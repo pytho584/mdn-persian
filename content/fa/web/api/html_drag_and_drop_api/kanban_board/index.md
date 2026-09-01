@@ -1,10 +1,4 @@
 ---
-title: "Kanban board with drag and drop"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Kanban_board"
-status: "needs-translation"
----
-
----
 title: Kanban board with drag and drop
 slug: Web/API/HTML_Drag_and_Drop_API/Kanban_board
 page-type: guide
@@ -12,11 +6,11 @@ page-type: guide
 
 {{DefaultAPISidebar("HTML Drag and Drop API")}}
 
-As mentioned on [the landing page](/en-US/docs/Web/API/HTML_Drag_and_Drop_API#concepts_and_usage), the Drag and Drop API simultaneously models three use cases: dragging elements within a page, dragging data out of a page, and dragging data into a page. This tutorial demonstrates the first use case: dragging elements within a page. We will be implementing a Kanban application, similar to the functionality provided by [GitHub projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects) or [Trello](https://trello.com/).
+همان‌طور که در [صفحه اصلی](/en-US/docs/Web/API/HTML_Drag_and_Drop_API#concepts_and_usage) اشاره شده است، API کشیدن و رها کردن (Drag and Drop) سه مورد استفاده را همزمان مدل‌سازی می‌کند: کشیدن عناصر درون یک صفحه، کشیدن داده‌ها به بیرون از صفحه، و کشیدن داده‌ها به داخل صفحه. این آموزش مورد استفاده اول را نشان می‌دهد: کشیدن عناصر درون یک صفحه. ما یک برنامه کانبان (Kanban) مشابه قابلیت‌های ارائه‌شده توسط [پروژه‌های گیت‌هاب](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects) یا [Trello](https://trello.com/) پیاده‌سازی خواهیم کرد.
 
-## Basic page layout
+## چیدمان پایه صفحه
 
-Because we are mainly demonstrating dragging and reordering here, we will omit some dynamic aspects of a real Kanban board, such as adding and removing tasks. Instead, all our columns and tasks will be hardcoded in the HTML.
+از آنجایی که تمرکز اصلی ما بر روی کشیدن و مرتب‌سازی مجدد است، برخی جنبه‌های پویای یک تخته کانبان واقعی مانند افزودن و حذف وظایف را حذف می‌کنیم. در عوض، تمام ستون‌ها و وظایف ما به صورت ثابت در HTML تعریف شده‌اند.
 
 ```html live-sample___kanban
 <div class="container">
@@ -95,19 +89,19 @@ body {
 }
 ```
 
-This defines the basic structure and styles for our application. The tasks are each made [draggable](/en-US/docs/Web/API/HTML_Drag_and_Drop_API#draggable_items), but they don't do anything when dragged yet.
+این ساختار پایه و استایل‌های برنامه ما را تعریف می‌کند. هر وظیفه [قابل کشیدن](/en-US/docs/Web/API/HTML_Drag_and_Drop_API#draggable_items) شده است، اما هنوز هنگام کشیدن کاری انجام نمی‌دهند.
 
-## Declaring drop targets
+## تعریف اهداف رها کردن
 
-We want to make the task columns into valid [drop targets](/en-US/docs/Web/API/HTML_Drag_and_Drop_API#drop_target) for the dragged tasks. As a baseline, we need to listen for {{domxref("HTMLElement/dragover_event", "dragover")}} and cancel it. However, we take care and only cancel the event if the drag event is dragging a task—if we are trying to drop anything else, the column should not be a drop target.
+ما می‌خواهیم ستون‌های وظایف را به [اهداف رها کردن](/en-US/docs/Web/API/HTML_Drag_and_Drop_API#drop_target) معتبر برای وظایف کشیده‌شده تبدیل کنیم. به عنوان پایه، باید به رویداد {{domxref("HTMLElement/dragover_event", "dragover")}} گوش دهیم و آن را لغو کنیم. اما دقت می‌کنیم که رویداد را فقط در صورتی لغو کنیم که رویداد کشیدن در حال کشیدن یک وظیفه باشد – اگر بخواهیم چیز دیگری را رها کنیم، ستون نباید هدف رها کردن باشد.
 
-First, save all columns in a global variable.
+ابتدا همه ستون‌ها را در یک متغیر سراسری ذخیره می‌کنیم.
 
 ```js live-sample___kanban
 const columns = document.querySelectorAll(".task-column");
 ```
 
-Then, declare a `dragover` event handler for each column—this event handler will be expanded later.
+سپس، یک کنترل‌کننده رویداد `dragover` برای هر ستون تعریف می‌کنیم – این کنترل‌کننده بعداً گسترش خواهد یافت.
 
 ```js
 columns.forEach((column) => {
@@ -120,13 +114,13 @@ columns.forEach((column) => {
 });
 ```
 
-Now, when a task is dragged over a column, you may see a [cursor effect](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_operations#drop_effects) such as a plus sign indicating that the task will be copied when dropped, because copying is the default action. Later, we will change this indicator because the task will actually be moved.
+اکنون، هنگامی که یک وظیفه روی یک ستون کشیده می‌شود، ممکن است یک [اثر مکان‌نما](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_operations#drop_effects) مانند علامت بعلاوه مشاهده کنید که نشان‌دهنده کپی شدن وظیفه هنگام رها کردن است، زیرا کپی کردن اقدام پیش‌فرض است. بعداً این نشانگر را تغییر می‌دهیم زیرا وظیفه در واقع جابه‌جا می‌شود.
 
-## Moving elements
+## جابه‌جایی عناصر
 
-Now we implement the core functionality: the ability to move tasks between columns. It consists of two steps: add the dragged element to the target column and remove it from the source column.
+اکنون عملکرد اصلی را پیاده‌سازی می‌کنیم: قابلیت جابه‌جایی وظایف بین ستون‌ها. این کار شامل دو مرحله است: افزودن عنصر کشیده‌شده به ستون مقصد و حذف آن از ستون مبدأ.
 
-We track the dragged element and the source column this way: on `dragstart`, we mark the dragged task with an `id`. Then on `drop`, we can use this ID to identify the task and remove it from the source column. Finally we remember to remove the ID on `dragend` so we don't create duplicate IDs on a later drag.
+عنصر کشیده‌شده و ستون مبدأ را به این ترتیب ردیابی می‌کنیم: در `dragstart`، وظیفه کشیده‌شده را با یک `id` علامت‌گذاری می‌کنیم. سپس در `drop`، می‌توانیم از این ID برای شناسایی وظیفه و حذف آن از ستون مبدأ استفاده کنیم. در نهایت فراموش نمی‌کنیم که ID را در `dragend` حذف کنیم تا در کشیدن بعدی IDهای تکراری ایجاد نشوند.
 
 ```js live-sample___kanban
 const tasks = document.querySelectorAll(".task");
@@ -145,13 +139,13 @@ tasks.forEach((task) => {
 });
 ```
 
-There are other options, such as giving each item a unique ID and then storing this ID inside the [`dataTransfer`](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_data_store), or storing a reference to the DOM element in a global variable. All these approaches have roughly the same effect.
+گزینه‌های دیگری نیز وجود دارد، مانند دادن یک ID منحصربه‌فرد به هر آیتم و سپس ذخیره این ID در داخل [`dataTransfer`](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_data_store)، یا ذخیره یک ارجاع به عنصر DOM در یک متغیر سراسری. همه این رویکردها تقریباً اثر یکسانی دارند.
 
-Because tasks are always supposed to be moved and never copied or linked, we also set the {{domxref("DataTransfer.effectAllowed")}} property to `"move"` so that it is the only effect allowed. This change updates the cursor effect to indicate a move operation. Furthermore we set a `dataTransfer` item of type `task` which is used to identify the dragged task as shown earlier.
+از آنجایی که وظایف همیشه قرار است جابه‌جا شوند و هرگز کپی یا پیوند داده نشوند، ویژگی {{domxref("DataTransfer.effectAllowed")}} را روی `"move"` تنظیم می‌کنیم تا تنها اثر مجاز باشد. این تغییر، اثر مکان‌نما را به‌روزرسانی می‌کند تا یک عملیات جابه‌جایی را نشان دهد. علاوه بر این، یک آیتم `dataTransfer` از نوع `task` تنظیم می‌کنیم که برای شناسایی وظیفه کشیده‌شده همان‌طور که قبلاً نشان داده شد استفاده می‌شود.
 
-As mentioned in [drop effects](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_operations#drop_effects), you may only set `effectAllowed` in the `dragstart` handler for the draggable element.
+همان‌طور که در [اثرات رها کردن](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_operations#drop_effects) ذکر شد، شما فقط می‌توانید `effectAllowed` را در کنترل‌کننده `dragstart` برای عنصر قابل کشیدن تنظیم کنید.
 
-Now, we can actually trigger the move action inside the {{domxref("HTMLElement/drop_event", "drop")}} handler on the target column. We can identify the dragged task by its ID, remove it from the DOM tree using {{domxref("Element.remove()")}}, and then reinsert it at the target column. Because we only allow dropping if the drag is actually dropping a task, we can proceed with confidence that `draggedTask` must exist.
+اکنون، می‌توانیم عمل جابه‌جایی را در داخل کنترل‌کننده {{domxref("HTMLElement/drop_event", "drop")}} در ستون مقصد فعال کنیم. می‌توانیم وظیفه کشیده‌شده را با ID آن شناسایی کنیم، آن را با استفاده از {{domxref("Element.remove()")}} از درخت DOM حذف کنیم، و سپس دوباره آن را در ستون مقصد قرار دهیم. از آنجایی که فقط در صورت رها شدن یک وظیفه اجازه رها کردن می‌دهیم، می‌توانیم با اطمینان ادامه دهیم که `draggedTask` وجود دارد.
 
 ```js
 columns.forEach((column) => {
@@ -165,13 +159,13 @@ columns.forEach((column) => {
 });
 ```
 
-At this point, the core UX is already there, and you can drag tasks between columns.
+در این مرحله، تجربه کاربری اصلی وجود دارد و می‌توانید وظایف را بین ستون‌ها بکشید.
 
-## Inserting at a particular location
+## درج در مکان مشخص
 
-Currently, the dropped task is always inserted at the end of the column regardless of where we dropped it. We now improve the dropping logic so it's inserted at the drop location instead. But how should we map the drop location to an insertion index in the target column? This is a judgment call, but we will use the following heuristic (feel free to pick your own): the item will be inserted at the index of the item that the cursor is hovering over. If the cursor is above the first item or below the last item, it will be inserted at the beginning or end of the column, respectively. If the cursor is between two items, it will be inserted at the index of the item below the cursor.
+در حال حاضر، وظیفه رها شده بدون توجه به جایی که رها کرده‌ایم، همیشه در انتهای ستون درج می‌شود. اکنون منطق رها کردن را بهبود می‌بخشیم تا به جای آن در محل رها شدن درج شود. اما چگونه باید محل رها شدن را به یک شاخص درج در ستون مقصد نگاشت کنیم؟ این یک قضاوت است، اما ما از اکتشافی زیر استفاده خواهیم کرد (در انتخاب اکتشافی دلخواه خود آزاد هستید): آیتم در شاخص آیتمی که مکان‌نما روی آن قرار دارد درج خواهد شد. اگر مکان‌نما بالای اولین آیتم یا پایین آخرین آیتم باشد، به ترتیب در ابتدا یا انتهای ستون درج می‌شود. اگر مکان‌نما بین دو آیتم باشد، در شاخص آیتم زیر مکان‌نما درج می‌شود.
 
-In order to make the drop location obvious, we will add a [visual indicator](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_operations#custom_drop_feedback) for the drop location. This can be done by inserting a placeholder element at the drop location, which will be replaced by the dragged task when the drop occurs. First define the creator function for the placeholder:
+برای مشخص کردن محل رها شدن، یک [نشانگر بصری](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_operations#custom_drop_feedback) برای محل رها شدن اضافه می‌کنیم. این کار را می‌توان با درج یک عنصر مکان‌نما (placeholder) در محل رها شدن انجام داد، که هنگام رها شدن با وظیفه کشیده‌شده جایگزین می‌شود. ابتدا تابع سازنده مکان‌نما را تعریف می‌کنیم:
 
 ```css live-sample___kanban
 .placeholder {
@@ -189,7 +183,7 @@ function makePlaceholder(draggedTask) {
 }
 ```
 
-This indicator will be moved around on {{domxref("HTMLElement/dragover_event", "dragover")}}. This is the most complex of all, so we've extracted it into a separate function. The previous code for the `dragover` event has been moved to this function. We first get the elements we need, safely aborting if the drag is not a task:
+این نشانگر در طول رویداد {{domxref("HTMLElement/dragover_event", "dragover")}} جابه‌جا می‌شود. این پیچیده‌ترین بخش است، بنابراین آن را در یک تابع جداگانه استخراج کرده‌ایم. کد قبلی برای رویداد `dragover` به این تابع منتقل شده است. ابتدا عناصر مورد نیاز را دریافت می‌کنیم و در صورت عدم کشیدن یک وظیفه، به طور ایمن از تابع خارج می‌شویم:
 
 ```js live-sample___kanban
 function movePlaceholder(event) {
@@ -204,7 +198,7 @@ function movePlaceholder(event) {
   const existingPlaceholder = column.querySelector(".placeholder");
 ```
 
-If there's already a placeholder, and the cursor is still inside it, we don't need to change anything. Note that we don't remove the existing placeholder at this point, because that would change the page's layout and potentially cause a flicker. We only change the layout once we've fully determined the new position.
+اگر از قبل یک مکان‌نما وجود داشته باشد و مکان‌نما هنوز داخل آن باشد، نیازی به تغییر چیزی نیست. توجه داشته باشید که در این مرحله مکان‌نمای موجود را حذف نمی‌کنیم، زیرا این کار باعث تغییر طرح‌بندی صفحه و احتمالاً ایجاد لرزش (flicker) می‌شود. فقط پس از تعیین کامل موقعیت جدید، طرح‌بندی را تغییر می‌دهیم.
 
 ```js live-sample___kanban
 if (existingPlaceholder) {
@@ -218,11 +212,11 @@ if (existingPlaceholder) {
 }
 ```
 
-Otherwise, we search for the first task that is not fully above the cursor. This task may either be the very first task if the cursor is above all items, the task that's containing the cursor, or the task below the cursor if the cursor is between two items. Our placeholder should be placed at the location of this task. Note that we only compare the Y coordinates: even if the cursor is in left or right margins, it should still be considered as being over the task. After finding the appropriate insertion point, we decide a few things:
+در غیر این صورت، به دنبال اولین وظیفه‌ای می‌گردیم که کاملاً بالای مکان‌نما نباشد. این وظیفه ممکن است اولین وظیفه باشد اگر مکان‌نما بالای همه آیتم‌ها باشد، وظیفه‌ای که مکان‌نما را در خود دارد، یا وظیفه زیر مکان‌نما اگر مکان‌نما بین دو آیتم باشد. مکان‌نمای ما باید در محل این وظیفه قرار گیرد. توجه داشته باشید که فقط مختصات Y را مقایسه می‌کنیم: حتی اگر مکان‌نما در حاشیه‌های چپ یا راست باشد، باید به عنوان قرار گرفتن روی وظیفه در نظر گرفته شود. پس از یافتن نقطه درج مناسب، چند چیز را تعیین می‌کنیم:
 
-- If the insertion point is already the placeholder, then we don't need to change anything. Note that this is not entirely the same as the condition above: this one might be true if the cursor is immediately above the placeholder between two items.
-- If, when the drop happens, the dragged item will be placed exactly where it started, we shouldn't indicate a placeholder at all. This happens when the placeholder is to be placed immediately next to the dragged task, so we check if either we are inserting immediately before `draggedTask` (`task === draggedTask`) or after it (`task.previousElementSibling === draggedTask`). In this case, we still remove the existing placeholder, if there's any.
-- Finally, we insert the placeholder at the determined position.
+- اگر نقطه درج همان مکان‌نما باشد، نیازی به تغییر چیزی نیست. توجه داشته باشید که این کاملاً با شرط بالا یکسان نیست: این یکی ممکن است درست باشد اگر مکان‌نما بلافاصله بالای مکان‌نما بین دو آیتم باشد.
+- اگر هنگام رها شدن، آیتم کشیده شده دقیقاً در جایی قرار گیرد که شروع کرده است، نباید اصلاً مکان‌نما نشان دهیم. این زمانی اتفاق می‌افتد که مکان‌نما قرار است بلافاصله در کنار وظیفه کشیده‌شده قرار گیرد، بنابراین بررسی می‌کنیم که آیا بلافاصله قبل از `draggedTask` (`task === draggedTask`) یا بعد از آن (`task.previousElementSibling === draggedTask`) درج می‌کنیم. در این صورت، همچنان مکان‌نمای موجود را در صورت وجود حذف می‌کنیم.
+- در نهایت، مکان‌نما را در موقعیت تعیین‌شده درج می‌کنیم.
 
 ```js live-sample___kanban
 for (const task of tasks.children) {
@@ -240,7 +234,7 @@ for (const task of tasks.children) {
 }
 ```
 
-If the above loop did not find a suitable task, it means all existing tasks are above the cursor, and we need to insert the placeholder at the end. Again, we don't add the placeholder if the dragged task is already the last item.
+اگر حلقه بالا یک وظیفه مناسب پیدا نکرد، به این معنی است که همه وظایف موجود بالای مکان‌نما هستند و باید مکان‌نما را در انتها درج کنیم. باز هم، اگر وظیفه کشیده‌شده از قبل آخرین آیتم باشد، مکان‌نما را اضافه نمی‌کنیم.
 
 ```js live-sample___kanban
   existingPlaceholder?.remove();
@@ -249,9 +243,9 @@ If the above loop did not find a suitable task, it means all existing tasks are 
 }
 ```
 
-Finally, the placeholder is removed on {{domxref("HTMLElement/dragleave_event", "dragleave")}} or {{domxref("HTMLElement/drop_event", "drop")}}. Note that the `dragleave` is fired when the cursor leaves the column to enter its child element. Because we only want to remove the placeholder when the cursor leaves the column entirely, we need to check if the {{domxref("MouseEvent/relatedTarget", "relatedTarget")}}, which is the element we are moving into, is a child of the column.
+در نهایت، مکان‌نما در هنگام {{domxref("HTMLElement/dragleave_event", "dragleave")}} یا {{domxref("HTMLElement/drop_event", "drop")}} حذف می‌شود. توجه داشته باشید که `dragleave` زمانی فعال می‌شود که مکان‌نما از ستون خارج شده و وارد عنصر فرزند آن شود. از آنجایی که فقط می‌خواهیم مکان‌نما را زمانی که مکان‌نما کاملاً از ستون خارج می‌شود حذف کنیم، باید بررسی کنیم که آیا {{domxref("MouseEvent/relatedTarget", "relatedTarget")}}، که عنصری است که به سمت آن حرکت می‌کنیم، فرزندی از ستون است یا خیر.
 
-The `drop` handler modifies what we implemented in [Moving elements](#moving_elements). Instead of appending the task at the end, we need to insert it in the middle, and we leverage the placeholder's position to do that.
+کنترل‌کننده `drop` چیزی را که در [جابه‌جایی عناصر](#جابه‌جایی-عناصر) پیاده‌سازی کردیم اصلاح می‌کند. به جای افزودن وظیفه در انتها، باید آن را در وسط درج کنیم و از موقعیت مکان‌نما برای این کار استفاده می‌کنیم.
 
 ```js live-sample___kanban
 columns.forEach((column) => {
@@ -276,9 +270,9 @@ columns.forEach((column) => {
 });
 ```
 
-## Graying out the original task
+## خاکستری کردن وظیفه اصلی
 
-During the course of the drag, it may appear that the original task is still in its place. To give a visual indication that the task is being moved, we can apply a "grayed out" effect. It's also common to just remove it from the DOM, but that might mess with all the other DOM measurement logic we've set up, so we can use CSS to achieve the desired effect. This is straightforward because we already have a stable ID for the dragged task.
+در طول کشیدن، ممکن است به نظر برسد که وظیفه اصلی همچنان در جای خود است. برای نشان دادن بصری اینکه وظیفه در حال جابجایی است، می‌توانیم یک اثر "خاکستری" (grayed out) اعمال کنیم. همچنین معمول است که آن را از DOM حذف کنیم، اما این ممکن است با سایر منطق‌های اندازه‌گیری DOM که تنظیم کرده‌ایم تداخل داشته باشد، بنابراین می‌توانیم از CSS برای دستیابی به اثر مطلوب استفاده کنیم. این کار ساده است زیرا ما از قبل یک ID پایدار برای وظیفه کشیده‌شده داریم.
 
 ```css live-sample___kanban
 #dragged-task {
@@ -286,11 +280,11 @@ During the course of the drag, it may appear that the original task is still in 
 }
 ```
 
-## Result
+## نتیجه
 
 {{EmbedLiveSample("kanban", "", 400)}}
 
-## See also
+## همچنین ببینید
 
 - [HTML Drag and Drop API](/en-US/docs/Web/API/HTML_Drag_and_Drop_API)
 - [Drag Operations](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_operations)
