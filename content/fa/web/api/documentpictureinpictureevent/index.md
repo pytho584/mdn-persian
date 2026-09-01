@@ -1,7 +1,5 @@
 ---
 title: "DocumentPictureInPictureEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DocumentPictureInPictureEvent"
-status: "needs-translation"
 ---
 
 ---
@@ -13,27 +11,27 @@ browser-compat: api.DocumentPictureInPictureEvent
 
 {{APIRef("Document Picture-in-Picture API")}}{{SecureContext_Header}}
 
-The **`DocumentPictureInPictureEvent`** interface of the {{domxref("Document Picture-in-Picture API", "Document Picture-in-Picture API", "", "nocode")}} is the event object for the {{domxref("DocumentPictureInPicture/enter_event", "enter")}} event, which fires when the Picture-in-Picture window is opened.
+رابطِ **`DocumentPictureInPictureEvent`** از {{domxref("Document Picture-in-Picture API", "Document Picture-in-Picture API", "", "nocode")}}، شیء رویداد برای رویداد {{domxref("DocumentPictureInPicture/enter_event", "enter")}} است که هنگام باز شدن پنجرهٔ تصویر-در-تصویر فعال می‌شود.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("DocumentPictureInPictureEvent.DocumentPictureInPictureEvent", "DocumentPictureInPictureEvent()")}}
-  - : Creates a new `DocumentPictureInPictureEvent` object instance.
+  - : یک نمونهٔ جدید از شیء `DocumentPictureInPictureEvent` ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{DOMxRef("Event")}}._
+_ویژگی‌ها را از والد خود، {{DOMxRef("Event")}}، به ارث می‌برد._
 
 - {{domxref("DocumentPictureInPictureEvent.window", "window")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref("Window")}} instance representing the browsing context inside the `DocumentPictureInPicture` window the event was fired on.
+  - : یک نمونه از {{domxref("Window")}} را برمی‌گرداند که بافتار مرور داخل پنجرهٔ `DocumentPictureInPicture` را که رویداد روی آن فعال شده است، نشان می‌دهد.
 
-## Instance methods
+## متدهای نمونه
 
-_Inherits methods from its parent, {{DOMxRef("Event")}}._
+_متدها را از والد خود، {{DOMxRef("Event")}}، به ارث می‌برد._
 
-## Examples
+## مثال‌ها
 
 ```js
 documentPictureInPicture.addEventListener("enter", (event) => {
@@ -57,15 +55,15 @@ documentPictureInPicture.addEventListener("enter", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Document Picture-in-Picture API", "Document Picture-in-Picture API", "", "nocode")}}
-- [Using the Document Picture-in-Picture API](/en-US/docs/Web/API/Document_Picture-in-Picture_API/Using)
+- [استفاده از API Document Picture-in-Picture](/en-US/docs/Web/API/Document_Picture-in-Picture_API/Using)
