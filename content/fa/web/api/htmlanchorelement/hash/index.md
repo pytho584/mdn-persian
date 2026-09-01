@@ -1,11 +1,5 @@
 ---
 title: "HTMLAnchorElement: hash property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement/hash"
-status: "needs-translation"
----
-
----
-title: "HTMLAnchorElement: hash property"
 short-title: hash
 slug: Web/API/HTMLAnchorElement/hash
 page-type: web-api-instance-property
@@ -14,19 +8,19 @@ browser-compat: api.HTMLAnchorElement.hash
 
 {{ APIRef("HTML DOM") }}
 
-The **`hash`** property of the {{domxref("HTMLAnchorElement")}} interface is a string containing a `"#"` followed by the fragment identifier of the `<a>` element's `href`. If the URL does not have a fragment identifier, this property contains an empty string, `""`.
+**`hash`** 属性属于 {{domxref("HTMLAnchorElement")}} 接口，是一个字符串，包含 `"#"` 后跟 `<a>` 元素的 `href` 的片段标识符。如果 URL 没有片段标识符，此属性包含空字符串 `""`。
 
-See {{domxref("URL.hash")}} for more information.
+更多信息请参见 {{domxref("URL.hash")}}。
 
-## Value
+## 值
 
-A string.
+一个字符串。
 
-## Examples
+## 示例
 
-### Getting the hash from an anchor link
+### 从锚链接获取 hash
 
-Given this HTML
+给定以下 HTML：
 
 ```html
 <a id="myAnchor" href="/en-US/docs/Web/API/HTMLAnchorElement/hash#examples">
@@ -34,21 +28,21 @@ Given this HTML
 </a>
 ```
 
-you can get the hash of the anchor like this:
+你可以这样获取锚点的 hash：
 
 ```js
 const anchor = document.getElementById("myAnchor");
 anchor.hash; // '#examples'
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
-- The {{domxref("HTMLAnchorElement")}} interface it belongs to.
+- 其所属的 {{domxref("HTMLAnchorElement")}} 接口。
