@@ -1,11 +1,5 @@
 ---
 title: "ErrorEvent: colno property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ErrorEvent/colno"
-status: "needs-translation"
----
-
----
-title: "ErrorEvent: colno property"
 short-title: colno
 slug: Web/API/ErrorEvent/colno
 page-type: web-api-instance-property
@@ -14,13 +8,13 @@ browser-compat: api.ErrorEvent.colno
 
 {{APIRef("HTML DOM")}}{{AvailableInWorkers}}
 
-The **`colno`** read-only property of the {{domxref("ErrorEvent")}} interface returns an integer containing the column number of the script file on which the error occurred.
+ویژگی **`colno`** (فقط‌خواندنی) از رابط {{domxref("ErrorEvent")}} یک عدد صحیح شامل شماره ستونِ فایل اسکریپتی که خطا در آن رخ داده است را برمی‌گرداند.
 
-## Value
+## مقدار
 
-An integer.
+یک عدد صحیح.
 
-## Examples
+## مثال‌ها
 
 ```js
 window.addEventListener("error", (ev) => {
@@ -28,10 +22,10 @@ window.addEventListener("error", (ev) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
