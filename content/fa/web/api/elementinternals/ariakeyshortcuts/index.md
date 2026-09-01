@@ -1,11 +1,5 @@
 ---
 title: "ElementInternals: ariaKeyShortcuts property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/ariaKeyShortcuts"
-status: "needs-translation"
----
-
----
-title: "ElementInternals: ariaKeyShortcuts property"
 short-title: ariaKeyShortcuts
 slug: Web/API/ElementInternals/ariaKeyShortcuts
 page-type: web-api-instance-property
@@ -14,27 +8,27 @@ browser-compat: api.ElementInternals.ariaKeyShortcuts
 
 {{APIRef("Web Components")}}
 
-The **`ariaKeyShortcuts`** property of the {{domxref("ElementInternals")}} interface reflects the value of the [`aria-keyshortcuts`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-keyshortcuts) attribute, which indicates keyboard shortcuts that an author has implemented to activate or give focus to an element.
+ویژگی **`ariaKeyShortcuts`** از رابط {{domxref("ElementInternals")}} منعکس‌کننده‌ی مقدار ویژگی [`aria-keyshortcuts`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-keyshortcuts) است که میان‌برهای صفحه‌کلیدی را مشخص می‌کند که نویسنده برای فعال‌سازی یا دادن تمرکز به یک عنصر پیاده‌سازی کرده‌است.
 
 > [!NOTE]
-> Setting aria attributes on `ElementInternals` allows default semantics to be defined on a custom element. These may be overwritten by author-defined attributes, but ensure that default semantics are retained should the author delete those attributes, or fail to add them at all. For more information see the [Accessibility Object Model explainer](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object).
+> تنظیم ویژگی‌های aria روی `ElementInternals` امکان تعریف معناشناسی پیش‌فرض را روی یک عنصر سفارشی فراهم می‌کند. این ویژگی‌ها ممکن است توسط ویژگی‌های تعریف‌شده توسط نویسنده بازنویسی شوند، اما تضمین می‌کنند که اگر نویسنده آن ویژگی‌ها را حذف کند یا اصلاً آن‌ها را اضافه نکرده باشد، معناشناسی پیش‌فرض حفظ شود. برای اطلاعات بیشتر، [توضیح‌دهنده‌ی Accessibility Object Model](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object) را ببینید.
 
-## Value
+## مقدار
 
-A string.
+یک رشته (string).
 
-## Examples
+## نمونه‌ها
 
-In this example the value of `ariaKeyShortcuts` is set to "Alt+Shift+A".
+در این مثال، مقدار `ariaKeyShortcuts` برابر با «"Alt+Shift+A"» قرار داده شده است.
 
 ```js
 this.internals_.ariaKeyShortcuts = "Alt+Shift+A";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
