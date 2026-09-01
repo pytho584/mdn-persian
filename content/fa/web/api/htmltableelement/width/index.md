@@ -1,11 +1,5 @@
 ---
 title: "HTMLTableElement: width property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/width"
-status: "needs-translation"
----
-
----
-title: "HTMLTableElement: width property"
 short-title: width
 slug: Web/API/HTMLTableElement/width
 page-type: web-api-instance-property
@@ -16,23 +10,22 @@ browser-compat: api.HTMLTableElement.width
 
 {{APIRef("HTML DOM")}} {{Deprecated_Header}}
 
-The **`HTMLTableElement.width`** property represents the
-desired width of the table.
+ویژگی **`HTMLTableElement.width`** نشان‌دهنده‌ی عرض مورد نظر جدول است.
 
-## Value
+## مقدار
 
-A string representing the width in number of pixels or as a percentage value.
+یک رشته که عرض را به تعداد پیکسل یا به صورت درصدی نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
 ```js
 myTable.width = "75%";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
