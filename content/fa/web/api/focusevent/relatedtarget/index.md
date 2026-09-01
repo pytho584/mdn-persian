@@ -1,11 +1,5 @@
 ---
 title: "FocusEvent: relatedTarget property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FocusEvent/relatedTarget"
-status: "needs-translation"
----
-
----
-title: "FocusEvent: relatedTarget property"
 short-title: relatedTarget
 slug: Web/API/FocusEvent/relatedTarget
 page-type: web-api-instance-property
@@ -14,12 +8,12 @@ browser-compat: api.FocusEvent.relatedTarget
 
 {{APIRef("UI Events")}}
 
-The **`relatedTarget`** read-only property of the {{domxref("FocusEvent")}} interface is the secondary target, depending on the type of event:
+ویژگی فقطخواندنی **`relatedTarget`** در رابط {{domxref("FocusEvent")}} هدف ثانویه است که بسته به نوع رویداد متفاوت است:
 
 <table class="no-markdown">
   <thead>
     <tr>
-      <th scope="col">Event name</th>
+      <th scope="col">نام رویداد</th>
       <th scope="col"><code>target</code></th>
       <th scope="col"><code>relatedTarget</code></th>
     </tr>
@@ -27,43 +21,43 @@ The **`relatedTarget`** read-only property of the {{domxref("FocusEvent")}} inte
   <tbody>
     <tr>
       <td>{{domxref("Element/blur_event", "blur")}}</td>
-      <td>The {{domxref("EventTarget")}} losing focus</td>
-      <td>The {{domxref("EventTarget")}} receiving focus (if any).</td>
+      <td>{{domxref("EventTarget")}} که فوکوس را از دست می‌دهد</td>
+      <td>{{domxref("EventTarget")}} که فوکوس را دریافت می‌کند (در صورت وجود).</td>
     </tr>
     <tr>
       <td>{{domxref("Element/focus_event", "focus")}}</td>
-      <td>The {{domxref("EventTarget")}} receiving focus</td>
-      <td>The {{domxref("EventTarget")}} losing focus (if any)</td>
+      <td>{{domxref("EventTarget")}} که فوکوس را دریافت می‌کند</td>
+      <td>{{domxref("EventTarget")}} که فوکوس را از دست می‌دهد (در صورت وجود)</td>
     </tr>
     <tr>
       <td>{{domxref("Element/focusin_event", "focusin")}}</td>
-      <td>The {{domxref("EventTarget")}} receiving focus</td>
-      <td>The {{domxref("EventTarget")}} losing focus (if any)</td>
+      <td>{{domxref("EventTarget")}} که فوکوس را دریافت می‌کند</td>
+      <td>{{domxref("EventTarget")}} که فوکوس را از دست می‌دهد (در صورت وجود)</td>
     </tr>
     <tr>
       <td>{{domxref("Element/focusout_event", "focusout")}}</td>
-      <td>The {{domxref("EventTarget")}} losing focus</td>
-      <td>The {{domxref("EventTarget")}} receiving focus (if any)</td>
+      <td>{{domxref("EventTarget")}} که فوکوس را از دست می‌دهد</td>
+      <td>{{domxref("EventTarget")}} که فوکوس را دریافت می‌کند (در صورت وجود)</td>
     </tr>
   </tbody>
 </table>
 
-Note that [many elements can't have focus](https://stackoverflow.com/questions/42764494/blur-event-relatedtarget-returns-null/42764495), which is a common reason for `relatedTarget` to be `null`. `relatedTarget` may also be set to `null` for security reasons, like when tabbing in or out of a page.
+توجه داشته باشید که [بسیاری از عناصر نمی‌توانند فوکوس بگیرند](https://stackoverflow.com/questions/42764494/blur-event-relatedtarget-returns-null/42764495) که دلیل رایجی برای `null` بودن `relatedTarget` است. همچنین `relatedTarget` ممکن است به دلایل امنیتی، مانند هنگام جابه‌جایی با Tab به داخل یا خارج از صفحه، `null` باشد.
 
-{{domxref("MouseEvent.relatedTarget")}} is a similar property for mouse events.
+{{domxref("MouseEvent.relatedTarget")}} ویژگی مشابهی برای رویدادهای ماوس است.
 
-## Value
+## مقدار
 
-An instance of {{domxref("EventTarget")}}.
+یک نمونه از {{domxref("EventTarget")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{ domxref("FocusEvent") }}
