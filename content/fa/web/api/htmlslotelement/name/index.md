@@ -1,11 +1,5 @@
 ---
 title: "HTMLSlotElement: name property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLSlotElement/name"
-status: "needs-translation"
----
-
----
-title: "HTMLSlotElement: name property"
 short-title: name
 slug: Web/API/HTMLSlotElement/name
 page-type: web-api-instance-property
@@ -14,17 +8,15 @@ browser-compat: api.HTMLSlotElement.name
 
 {{APIRef("Shadow DOM API")}}
 
-The **`name`** property of the {{domxref("HTMLSlotElement")}}
-interface returns or sets the slot name. A slot is a placeholder inside a web component
-that users can fill with their own markup.
+ویژگی **`name`** در رابط {{domxref("HTMLSlotElement")}}، نام اسلات را برمی‌گرداند یا تنظیم می‌کند. اسلات یک جایگاه خالی در یک کامپوننت وب است که کاربران می‌توانند آن را با نشانه‌گذاری (مارک‌آپ) خودشان پر کنند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته (string).
 
-## Examples
+## نمونه‌ها
 
-The following snippet is taken from our [slotchange example](https://github.com/mdn/web-components-examples/tree/main/slotchange) ([See it live](https://mdn.github.io/web-components-examples/slotchange/)).
+قطعه کد زیر از مثال [تغییر اسلات (slotchange)](https://github.com/mdn/web-components-examples/tree/main/slotchange) گرفته شده است ([نمایش زنده](https://mdn.github.io/web-components-examples/slotchange/)).
 
 ```js
 let slots = this.shadowRoot.querySelectorAll("slot");
@@ -36,17 +28,14 @@ slots[1].addEventListener("slotchange", (e) => {
 });
 ```
 
-Here we grab references to all the slots, then add a slotchange event listener to the
-2nd slot in the template — which is the one that keeps having its contents changed in
-the example.
+در اینجا، ارجاع‌هایی به همه اسلات‌ها می‌گیریم و سپس یک شنونده رویداد `slotchange` به دومین اسلات در قالب اضافه می‌کنیم — همان اسلاتی که در مثال محتوایش مدام تغییر می‌کند.
 
-Every time the element inserted in the slot changes, we log a report to the console
-saying which slot has changed, and what the new node inside the slot is.
+هر بار که عنصر درون اسلات تغییر می‌کند، گزارشی را در کنسول ثبت می‌کنیم که نشان می‌دهد کدام اسلات تغییر کرده و گره جدید داخل اسلات چیست.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
