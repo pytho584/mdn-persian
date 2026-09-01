@@ -1,7 +1,5 @@
 ---
 title: "Gamepad: connected property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Gamepad/connected"
-status: "needs-translation"
 ---
 
 ---
@@ -14,32 +12,29 @@ browser-compat: api.Gamepad.connected
 
 {{APIRef("Gamepad API")}}
 
-The **`Gamepad.connected`** property of the
-{{domxref("Gamepad") }} interface returns a boolean indicating whether the gamepad is
-still connected to the system.
+ویژگی **`Gamepad.connected`** از رابط {{domxref("Gamepad") }} یک مقدار بولین برمی‌گرداند که نشان می‌دهد آیا گیمپد همچنان به سیستم متصل است یا خیر.
 
-If the gamepad is connected, the value is `true`; if not, it is
-`false`.
+اگر گیمپد متصل باشد، مقدار `true` است؛ در غیر این صورت، مقدار `false` است.
 
-## Value
+## مقدار
 
-A boolean.
+یک مقدار بولین.
 
-## Examples
+## مثال‌ها
 
 ```js
 const gp = navigator.getGamepads()[0];
 console.log(gp.connected);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-[Using the Gamepad API](/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API)
+[استفاده از Gamepad API](/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API)
