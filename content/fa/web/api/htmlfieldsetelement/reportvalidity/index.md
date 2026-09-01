@@ -1,11 +1,5 @@
 ---
 title: "HTMLFieldSetElement: reportValidity() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLFieldSetElement/reportValidity"
-status: "needs-translation"
----
-
----
-title: "HTMLFieldSetElement: reportValidity() method"
 short-title: reportValidity()
 slug: Web/API/HTMLFieldSetElement/reportValidity
 page-type: web-api-instance-method
@@ -14,34 +8,34 @@ browser-compat: api.HTMLFieldSetElement.reportValidity
 
 {{APIRef("HTML DOM")}}
 
-The **`reportValidity()`** method of the {{domxref("HTMLFieldSetElement")}} interface performs the same validity checking steps as the {{domxref("HTMLFieldSetElement.checkValidity", "checkValidity()")}} method. It always returns true because {{HTMLElement("fieldset")}} elements are never candidates for [constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation).
+روش **`reportValidity()`** از رابط {{domxref("HTMLFieldSetElement")}} همان مراحل بررسی اعتبار را مانند روش {{domxref("HTMLFieldSetElement.checkValidity", "checkValidity()")}} انجام می‌دهد. این روش همیشه `true` برمی‌گرداند زیرا عناصر {{HTMLElement("fieldset")}} هرگز کاندیدای [اعتبارسنجی محدودیت‌ها](/en-US/docs/Web/HTML/Guides/Constraint_validation) نیستند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 reportValidity()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-A boolean value, `true`.
+یک مقدار بولین، `true`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLFieldSetElement.checkValidity()")}}
 - {{HTMLElement("fieldset")}}
 - {{HTMLElement("form")}}
-- [Learn: Client-side form validation](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
-- [Guide: Constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation)
+- [یادگیری: اعتبارسنجی فرم سمت کاربر](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
+- [راهنما: اعتبارسنجی محدودیت‌ها](/en-US/docs/Web/HTML/Guides/Constraint_validation)
