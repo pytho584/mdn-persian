@@ -1,11 +1,5 @@
 ---
 title: "ElementInternals: ariaInvalid property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/ariaInvalid"
-status: "needs-translation"
----
-
----
-title: "ElementInternals: ariaInvalid property"
 short-title: ariaInvalid
 slug: Web/API/ElementInternals/ariaInvalid
 page-type: web-api-instance-property
@@ -14,27 +8,27 @@ browser-compat: api.ElementInternals.ariaInvalid
 
 {{APIRef("Web Components")}}
 
-The **`ariaInvalid`** property of the {{domxref("ElementInternals")}} interface reflects the value of the [`aria-invalid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-invalid) attribute. Relevant for the [`application`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/application_role), [`checkbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/checkbox_role), [`combobox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/combobox_role), [`gridcell`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/gridcell_role), [`listbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/listbox_role), [`radiogroup`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/radiogroup_role), [`slider`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/slider_role), [`spinbutton`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/spinbutton_role), [`textbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role), and [`tree`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tree_role) roles, it indicates to the accessibility API whether the entered value does not conform to the format expected by the application.
+ویژگی **`ariaInvalid`** از رابط {{domxref("ElementInternals")}} مقدار ویژگی [`aria-invalid`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-invalid) را منعکس می‌کند. این ویژگی برای نقش‌های [`application`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/application_role)، [`checkbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/checkbox_role)، [`combobox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/combobox_role)، [`gridcell`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/gridcell_role)، [`listbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/listbox_role)، [`radiogroup`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/radiogroup_role)، [`slider`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/slider_role)، [`spinbutton`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/spinbutton_role)، [`textbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role) و [`tree`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tree_role) مرتبط است و به API دسترس‌پذیری نشان می‌دهد که آیا مقدار واردشده با قالبی که برنامه انتظار دارد ناسازگار است.
 
 > [!NOTE]
-> Setting ARIA attributes on `ElementInternals` allows default semantics to be defined on a custom element. These may be overwritten by author-defined attributes, but ensure that default semantics are retained should the author delete those attributes, or fail to add them at all. For more information see the [Accessibility Object Model explainer](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object).
+> تنظیم ویژگی‌های ARIA روی `ElementInternals` امکان تعریف معناشناسی‌های پیش‌فرض را روی یک عنصر سفارشی فراهم می‌کند. این معناشناسی‌ها ممکن است توسط ویژگی‌های تعریف‌شده توسط نویسنده بازنویسی شوند، اما این کار تضمین می‌کند که اگر نویسنده آن ویژگی‌ها را حذف کند یا اصلاً آن‌ها را اضافه نکند، معناشناسی‌های پیش‌فرض حفظ شوند. برای اطلاعات بیشتر، به [سند توضیحی مدل شیء دسترس‌پذیری](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object) مراجعه کنید.
 
-## Value
+## مقدار
 
-A string with one of the following values:
+یک رشته با یکی از مقادیر زیر:
 
 - `"true"`
-  - : The element is invalid.
-- `"false"` (default)
-  - : The element is not in an invalid state.
+  - : عنصر نامعتبر است.
+- `"false"` (پیش‌فرض)
+  - : عنصر در وضعیت نامعتبر نیست.
 - `"grammar"`
-  - : The element is in an invalid state because grammatical error was detected.
+  - : عنصر به این دلیل در وضعیت نامعتبر است که خطای گرامری تشخیص داده شده است.
 - `"spelling"`
-  - : The element is in an invalid state because spelling error was detected.
+  - : عنصر به این دلیل در وضعیت نامعتبر است که خطای املایی تشخیص داده شده است.
 
-## Examples
+## مثال‌ها
 
-In this example, we define and create a `<custom-text>` element, and then retrieve the value of `ariaInvalid` from the first `<custom-text>` element in the document.
+در این مثال، عنصر `<custom-text>` را تعریف و ایجاد می‌کنیم و سپس مقدار `ariaInvalid` را از اولین عنصر `<custom-text>` در سند بازیابی می‌کنیم.
 
 ```js
 class CustomControl extends HTMLElement {
@@ -52,15 +46,15 @@ const element = document.querySelector("custom-text");
 console.log(element._internals.ariaInvalid);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("ElementInternals.ariaRequired")}}
 - [`aria-required`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-required)
