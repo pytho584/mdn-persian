@@ -1,11 +1,5 @@
 ---
 title: "History: length property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/History/length"
-status: "needs-translation"
----
-
----
-title: "History: length property"
 short-title: length
 slug: Web/API/History/length
 page-type: web-api-instance-property
@@ -14,24 +8,22 @@ browser-compat: api.History.length
 
 {{APIRef("History API")}}
 
-The **`length`** read-only property of the {{DOMxRef("History")}} interface
-returns an integer representing the number of entries in the session
-history, including the currently loaded page.
+ویژگی فقط‌خواندنی **`length`** در رابط {{DOMxRef("History")}} یک عدد صحیح برمی‌گرداند که تعداد ورودی‌های تاریخچهٔ نشست را نشان می‌دهد؛ این تعداد با احتساب صفحهٔ بارگذاری‌شدهٔ فعلی است.
 
-For example, for a page loaded in a new tab this property returns `1`.
+برای مثال، برای صفحه‌ای که در یک تب جدید بارگذاری می‌شود، این ویژگی مقدار `1` را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A number.
+یک عدد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("History")}} interface it belongs to.
+- رابط {{domxref("History")}} که این ویژگی به آن تعلق دارد.
