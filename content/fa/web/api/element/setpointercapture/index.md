@@ -1,11 +1,5 @@
 ---
 title: "Element: setPointerCapture() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/setPointerCapture"
-status: "needs-translation"
----
-
----
-title: "Element: setPointerCapture() method"
 short-title: setPointerCapture()
 slug: Web/API/Element/setPointerCapture
 page-type: web-api-instance-method
@@ -14,14 +8,9 @@ browser-compat: api.Element.setPointerCapture
 
 {{APIRef("DOM")}}
 
-The **`setPointerCapture()`** method of the
-{{domxref("Element")}} interface is used to designate a specific element as the
-_capture target_ of future pointer events. Subsequent events for the pointer will
-be targeted at the capture element until capture is released (via
-{{domxref("Element.releasePointerCapture()")}} or the
-{{domxref("Element/pointerup_event", "pointerup")}} event is fired).
+متد **`setPointerCapture()`** از رابط {{domxref("Element")}} برای تعیین یک عنصر خاص به‌عنوان _هدفِ دریافتِ_ رویدادهای آیندهٔ اشاره‌گر استفاده می‌شود. رویدادهای بعدیِ این اشاره‌گر، تا وقتی که ضبط آزاد شود (از طریق {{domxref("Element.releasePointerCapture()")}} یا با رخ دادن رویداد {{domxref("Element/pointerup_event", "pointerup")}})، به همین عنصرِ ضبط‌کننده هدایت می‌شوند.
 
-See [pointer events](/en-US/docs/Web/API/Pointer_events#pointer_capture) for an overview and examples of how pointer capture works.
+برای مروری کلی و مثال‌هایی دربارهٔ چگونگی کارِ ضبطِ اشاره‌گر، به [رویدادهای اشاره‌گر](/en-US/docs/Web/API/Pointer_events#pointer_capture) مراجعه کنید.
 
 ## Syntax
 
@@ -32,23 +21,20 @@ setPointerCapture(pointerId)
 ### Parameters
 
 - `pointerId`
-  - : The {{domxref("PointerEvent.pointerId", "pointerId")}} of a
-    {{domxref("PointerEvent")}} object.
+  - : {{domxref("PointerEvent.pointerId", "pointerId")}} مربوط به یک شیء {{domxref("PointerEvent")}}.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
 ### Exceptions
 
 - `NotFoundError` {{domxref("DOMException")}}
-  - : Thrown if `pointerId` does not match any active pointer.
+  - : اگر `pointerId` با هیچ اشاره‌گرِ فعالی مطابقت نداشته باشد پرتاب می‌شود.
 
 ## Examples
 
-This example sets pointer capture on a {{HtmlElement("div")}} when you press down on
-it. This lets you slide the element horizontally, even when your pointer moves outside of
-its boundaries.
+این مثال، ضبطِ اشاره‌گر را روی یک {{HtmlElement("div")}} زمانی که روی آن فشار دهید، فعال می‌کند. این امکان را می‌دهد که عنصر را به‌صورت افقی بلغزانید، حتی وقتی نشانگر شما از مرزهای آن خارج می‌شود.
 
 ### HTML
 
@@ -109,4 +95,4 @@ slider.onpointerup = stopSliding;
 
 - {{domxref("Element.hasPointerCapture","Element.hasPointerCapture()")}}
 - {{domxref("Element.releasePointerCapture","Element.releasePointerCapture()")}}
-- [Pointer events](/en-US/docs/Web/API/Pointer_events)
+- [رویدادهای اشاره‌گر](/en-US/docs/Web/API/Pointer_events)
