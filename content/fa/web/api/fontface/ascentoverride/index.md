@@ -1,11 +1,5 @@
 ---
 title: "FontFace: ascentOverride property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FontFace/ascentOverride"
-status: "needs-translation"
----
-
----
-title: "FontFace: ascentOverride property"
 short-title: ascentOverride
 slug: Web/API/FontFace/ascentOverride
 page-type: web-api-instance-property
@@ -14,17 +8,17 @@ browser-compat: api.FontFace.ascentOverride
 
 {{APIRef("CSS Font Loading API")}}{{AvailableInWorkers}}
 
-The **`ascentOverride`** property of the {{domxref("FontFace")}} interface returns and sets the ascent metric for the font, the height above the baseline that CSS uses to lay out line boxes in an inline formatting context.
+ویژگی **`ascentOverride`** از رابط {{domxref("FontFace")}}، معیار بالای خط (ascent) را برای فونت بازمی‌گرداند و تنظیم می‌کند؛ این معیار ارتفاع بالای خط پایه (baseline) است که CSS برای چیدمان جعبه‌های خط (line boxes) در یک بافت قالب‌بندی درون‌خطی (inline formatting context) استفاده می‌کند.
 
-This property is equivalent to the {{cssxref("@font-face/ascent-override")}} descriptor of {{cssxref("@font-face")}}.
+این ویژگی معادل توصیفگر {{cssxref("@font-face/ascent-override")}} در {{cssxref("@font-face")}} است.
 
-## Value
+## مقدار
 
-A string. The possible values are `normal`, indicating that the metric used should be obtained from the font file, or a percentage.
+یک رشته. مقادیر ممکن `normal` است، به این معنی که معیار مورد استفاده باید از فایل فونت گرفته شود، یا یک درصد.
 
-This property accepts the same values as the {{cssxref("@font-face/ascent-override")}} descriptor.
+این ویژگی مقادیر مشابه توصیفگر {{cssxref("@font-face/ascent-override")}} را می‌پذیرد.
 
-## Examples
+## مثال‌ها
 
 ```js
 let fontFace = new FontFace(
@@ -37,10 +31,10 @@ fontFace.ascentOverride = "normal";
 console.log(fontFace.ascentOverride); // 'normal'
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
