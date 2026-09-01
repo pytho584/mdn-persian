@@ -1,7 +1,5 @@
 ---
 title: "HTMLIFrameElement: csp property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/csp"
-status: "needs-translation"
 ---
 
 ---
@@ -16,13 +14,11 @@ browser-compat: api.HTMLIFrameElement.csp
 
 {{APIRef("HTML DOM")}}{{SeeCompatTable}}
 
-The **`csp`** property of the {{domxref("HTMLIFrameElement")}}
-interface specifies the [Content Security Policy](/en-US/docs/Web/HTTP/Guides/CSP) that an
-embedded document must agree to enforce upon itself.
+ویژگی **`csp`** از رابط {{domxref("HTMLIFrameElement")}}، [سیاست امنیت محتوا](/en-US/docs/Web/HTTP/Guides/CSP) ای را مشخص می‌کند که سند تعبیه‌شده باید بپذیرد تا آن را بر روی خود اعمال کند.
 
-## Value
+## مقدار
 
-A content security policy.
+یک سیاست امنیت محتوا.
 
 ## Specifications
 
