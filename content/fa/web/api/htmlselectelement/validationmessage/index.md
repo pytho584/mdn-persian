@@ -1,7 +1,5 @@
 ---
 title: "HTMLSelectElement: validationMessage property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/validationMessage"
-status: "needs-translation"
 ---
 
 ---
@@ -14,30 +12,30 @@ browser-compat: api.HTMLSelectElement.validationMessage
 
 {{APIRef("HTML DOM")}}
 
-The **`validationMessage`** read-only property of the {{domxref("HTMLSelectElement")}} interface returns a string representing a localized message that describes the validation constraints that the {{htmlelement("select")}} control does not satisfy (if any). This is the empty string if the control is not a candidate for constraint validation ({{domxref("HTMLSelectElement.willValidate")}} is `false`), or it satisfies its constraints.
+ویژگی فقط-خواندنی **`validationMessage`** از رابط {{domxref("HTMLSelectElement")}} رشته‌ای را برمی‌گرداند که یک پیام محلی‌سازی‌شده را نشان می‌دهد و محدودیت‌های اعتبارسنجی‌ای را توصیف می‌کند که کنترل {{htmlelement("select")}} (در صورت وجود) آن‌ها را برآورده نمی‌کند. اگر کنترل کاندیدای اعتبارسنجی محدودیت نباشد ({{domxref("HTMLSelectElement.willValidate")}} برابر با `false` باشد) یا محدودیت‌های خود را برآورده کند، این رشته خالی است.
 
-If the `<select>` element is a candidate for constraint validation (`willValidate` is `true`) and the constraints are not met (the {{domxref("HTMLSelectElement.validity")}} object's `valid` property is `false`), the value is the error message that would be shown to the user during validation.
+اگر عنصر `<select>` کاندیدای اعتبارسنجی محدودیت باشد (`willValidate` برابر با `true` باشد) و محدودیت‌ها برآورده نشوند (ویژگی `valid` شیء {{domxref("HTMLSelectElement.validity")}} برابر با `false` باشد)، آنگاه مقدار، پیام خطایی است که در طول اعتبارسنجی به کاربر نمایش داده می‌شود.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Example
+## مثال
 
 ```js
 const select = document.getElementById("mySelect");
 const errorMessage = select.validationMessage;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTMLelement("select")}}
 - {{domxref("HTMLSelectElement")}}
@@ -46,6 +44,6 @@ const errorMessage = select.validationMessage;
 - {{domxref("HTMLSelectElement.checkValidity()")}}
 - {{domxref("HTMLSelectElement.reportValidity()")}}
 - {{domxref("HTMLSelectElement.setCustomValidity()")}}
-- [Learn: Client-side form validation](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
-- [Guide: Constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation)
-- CSS {{cssxref(":valid")}} and {{cssxref(":invalid")}} pseudo-classes
+- [یادگیری: اعتبارسنجی فرم در سمت کلاینت](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
+- [راهنما: اعتبارسنجی محدودیت](/en-US/docs/Web/HTML/Guides/Constraint_validation)
+- شبه‌کلاس‌های CSS {{cssxref(":valid")}} و {{cssxref(":invalid")}}
