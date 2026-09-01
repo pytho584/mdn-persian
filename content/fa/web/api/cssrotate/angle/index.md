@@ -1,9 +1,4 @@
----
-title: "CSSRotate: angle property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSRotate/angle"
-status: "needs-translation"
----
-
+```yaml
 ---
 title: "CSSRotate: angle property"
 short-title: angle
@@ -11,24 +6,25 @@ slug: Web/API/CSSRotate/angle
 page-type: web-api-instance-property
 browser-compat: api.CSSRotate.angle
 ---
+```
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`angle`** property of the {{domxref("CSSRotate")}} interface gets and sets the angle of rotation.
-A positive angle denotes a clockwise rotation, a negative angle a counter-clockwise one.
+ویژگی **`angle`** از رابط {{domxref("CSSRotate")}} زاویه چرخش را دریافت و تنظیم می‌کند.
+یک زاویه مثبت نشان‌دهنده چرخش در جهت ساعت‌گرد و یک زاویه منفی نشان‌دهنده چرخش در جهت پادساعت‌گرد است.
 
-## Value
+## مقدار
 
-A {{domxref("CSSNumericValue")}}
+یک {{domxref("CSSNumericValue")}}
 
-## Examples
+## مثال‌ها
 
-To Do
+انجام شود
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
