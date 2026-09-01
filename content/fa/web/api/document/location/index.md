@@ -1,11 +1,5 @@
 ---
 title: "Document: location property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/location"
-status: "needs-translation"
----
-
----
-title: "Document: location property"
 short-title: location
 slug: Web/API/Document/location
 page-type: web-api-instance-property
@@ -14,35 +8,32 @@ browser-compat: api.Document.location
 
 {{APIRef("DOM")}}
 
-The read-only **`location`** property of the {{domxref("Document")}} interface returns a {{domxref("Location")}} object, which contains information about the URL of the document and provides methods for changing that URL and loading another URL.
+ویژگی فقط-خواندنی **`location`** در واسط {{domxref("Document")}} یک شیء {{domxref("Location")}} برمی‌گرداند که اطلاعاتی دربارهٔ URL سند دارد و روش‌هایی برای تغییر آن URL و بارگذاری URL دیگر ارائه می‌دهد.
 
-To retrieve just the URL as a string, the read-only {{domxref("document.URL")}}
-property can also be used.
+برای دریافت تنها URL به‌صورت یک رشته، می‌توان از ویژگی فقط-خواندنی {{domxref("document.URL")}} نیز استفاده کرد.
 
-## Value
+## مقدار
 
-A {{domxref("Location")}} object. If the current document is not in a browsing context, the returned value is
-`null`.
+یک شیء {{domxref("Location")}}. اگر سند جاری در یک بافت مرور (browsing context) نباشد، مقدار برگشتی `null` خواهد بود.
 
-Although the `location` property itself is read-only in the sense that you can't replace the `Location` object, you can still assign to the `location` property directly, which is equivalent to assigning to its {{domxref("Location/href", "href")}} property. You can also modify the `Location` object using the {{domxref("Location/assign", "assign()")}} and {{domxref("Location/replace", "replace()")}} methods.
+اگرچه خود ویژگی `location` از این نظر که نمی‌توانید شیء `Location` را جایگزین کنید فقط-خواندنی است، اما همچنان می‌توانید مستقیماً به ویژگی `location` مقداردهی کنید که معادل مقداردهی به ویژگی {{domxref("Location/href", "href")}} آن است. همچنین می‌توانید شیء `Location` را با استفاده از روش‌های {{domxref("Location/assign", "assign()")}} و {{domxref("Location/replace", "replace()")}} تغییر دهید.
 
-## Examples
+## مثال‌ها
 
 ```js
 console.log(document.location);
-// Prints a Location object to the console
+// یک شیء Location را در کنسول چاپ می‌کند
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface of the returned value, {{domxref("Location")}}
-- A similar information, but attached to the {{Glossary("browsing context")}},
-  {{domxref("Window.location")}}
+- واسط مقدار برگشتی، {{domxref("Location")}}
+- اطلاعات مشابه، اما متصل به {{Glossary("browsing context", "بافت مرور")}}، {{domxref("Window.location")}}
