@@ -1,11 +1,5 @@
 ---
 title: "CSSMathSum: values property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSMathSum/values"
-status: "needs-translation"
----
-
----
-title: "CSSMathSum: values property"
 short-title: values
 slug: Web/API/CSSMathSum/values
 page-type: web-api-instance-property
@@ -14,17 +8,17 @@ browser-compat: api.CSSMathSum.values
 
 {{APIRef("CSS Typed Object Model API")}}{{AvailableInWorkers}}
 
-The **`values`** read-only property of the {{domxref("CSSMathSum")}} interface returns a {{domxref("CSSNumericArray")}} containing the {{domxref("CSSNumericValue")}} objects being summed together.
+ویژگی فقط-خواندنی **`values`** از رابط {{domxref("CSSMathSum")}} یک {{domxref("CSSNumericArray")}} شامل اشیاء {{domxref("CSSNumericValue")}} که با هم جمع شده‌اند را بازمی‌گرداند.
 
-## Value
+## مقدار
 
-A {{domxref('CSSNumericArray')}}.
+یک {{domxref('CSSNumericArray')}}.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
-The following code creates a `CSSMathSum` object and logs its `values` and length.
+کد زیر یک شیء `CSSMathSum` ایجاد می‌کند و `values` و طول آن را در کنسول ثبت می‌کند.
 
 ```js
 const sum = new CSSMathSum(CSS.px(10), CSS.em(5), CSS.percent(50));
@@ -34,8 +28,7 @@ console.log(sum.values);
 console.log(sum.values.length); // 3
 ```
 
-We then iterate over the `values`, logging their type, value, unit, and stringified text.
-Each of these matches the {{domxref("CSSNumericValue")}} objects that were passed into the constructor (or the terms of the addition/subtraction it represents), in the same order.
+سپس روی `values` پیمایش می‌کنیم و نوع، مقدار، واحد و متن رشته‌ای آن‌ها را ثبت می‌کنیم. هر یک از این موارد با اشیاء {{domxref("CSSNumericValue")}} که به سازنده ارسال شده‌اند (یا عبارت‌های جمع/تفریقی که نشان می‌دهد) مطابقت دارد، به همان ترتیب.
 
 ```js
 for (const value of sum.values) {
@@ -49,10 +42,10 @@ for (const value of sum.values) {
 // CSSUnitValue: 50 percent (50%)
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
