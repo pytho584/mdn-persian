@@ -1,11 +1,5 @@
 ---
 title: "HTMLOutputElement: name property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLOutputElement/name"
-status: "needs-translation"
----
-
----
-title: "HTMLOutputElement: name property"
 short-title: name
 slug: Web/API/HTMLOutputElement/name
 page-type: web-api-instance-property
@@ -14,13 +8,13 @@ browser-compat: api.HTMLOutputElement.name
 
 {{ApiRef("HTML DOM")}}
 
-The **`name`** property of the {{domxref("HTMLOutputElement")}} interface indicates the name of the {{HTMLElement("output")}} element. It reflects the element's [`name`](/en-US/docs/Web/HTML/Reference/Elements/output#name) attribute.
+ویژگی **`name`** در رابط {{domxref("HTMLOutputElement")}} نام عنصر {{HTMLElement("output")}} را نشان می‌دهد. این ویژگی منعکس‌کنندهٔ ویژگی [`name`](/en-US/docs/Web/HTML/Reference/Elements/output#name) عنصر است.
 
-## Value
+## مقدار
 
-A string representing the element's name.
+یک رشته (string) که نام عنصر را نمایش می‌دهد.
 
-## Example
+## مثال
 
 ```js
 const outputElement = document.querySelector("#log");
@@ -28,15 +22,15 @@ console.log(`Element's name: ${outputElement.name}`);
 outputElement.name = "sum"; // sets or updates the element's name
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("HTMLOutputElement.defaultValue")}}
 - {{domxref("HTMLOutputElement.htmlFor")}}
