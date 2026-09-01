@@ -1,11 +1,5 @@
 ---
 title: "CSSTranslate: x property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSTranslate/x"
-status: "needs-translation"
----
-
----
-title: "CSSTranslate: x property"
 short-title: x
 slug: Web/API/CSSTranslate/x
 page-type: web-api-instance-property
@@ -14,20 +8,20 @@ browser-compat: api.CSSTranslate.x
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`x`** property of the {{domxref("CSSTranslate")}} interface gets and sets the abscissa or x-axis of the translating vector.
+ویژگی **`x`** از رابط {{domxref("CSSTranslate")}} مقدار مختصات افقی (یا محور x) بردار انتقال را دریافت و تنظیم می‌کند.
 
-## Value
+## مقدار
 
-A {{cssxref('length-percentage')}}
+یک {{cssxref('length-percentage')}}
 
-## Examples
+## مثال‌ها
 
-To Do
+در دست اقدام
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
