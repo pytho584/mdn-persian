@@ -1,11 +1,5 @@
 ---
 title: "HTMLElement: writingSuggestions property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/writingSuggestions"
-status: "needs-translation"
----
-
----
-title: "HTMLElement: writingSuggestions property"
 short-title: writingSuggestions
 slug: Web/API/HTMLElement/writingSuggestions
 page-type: web-api-instance-property
@@ -14,22 +8,22 @@ browser-compat: api.HTMLElement.writingSuggestions
 
 {{APIRef("HTML DOM")}}
 
-The **`writingSuggestions`** property of the {{domxref("HTMLElement")}} interface is a string indicating if browser-provided writing suggestions should be enabled under the scope of the element or not.
+ویژگی **`writingSuggestions`** از رابط {{domxref("HTMLElement")}} یک رشته است که نشان می‌دهد آیا پیشنهادهای نوشتاری ارائه‌شده توسط مرورگر باید در محدودهٔ این عنصر فعال شوند یا خیر.
 
-It reflects the value of the [`writingsuggestions`](/en-US/docs/Web/HTML/Reference/Global_attributes/writingsuggestions) HTML global attribute.
+این ویژگی منعکس‌کنندهٔ مقدار ویژگی عمومی HTML [`writingsuggestions`](/en-US/docs/Web/HTML/Reference/Global_attributes/writingsuggestions) است.
 
-## Value
+## مقدار
 
-An enumerated value; possible values are:
+یک مقدار شمارشی؛ مقادیر ممکن:
 
 - `"true"`
-  - : The browser automatically shows the virtual keyboard when the user taps or focuses the element.
+  - : مرورگر به‌طور خودکار صفحه‌کلید مجازی را هنگامی که کاربر روی عنصر ضربه می‌زند یا آن را متمرکز می‌کند، نمایش می‌دهد.
 - `"false"`
-  - : The browser does not automatically show the virtual keyboard: showing/hiding the virtual keyboard is handled manually by the script.
+  - : مرورگر به‌طور خودکار صفحه‌کلید مجازی را نمایش نمی‌دهد: نمایش/پنهان کردن صفحه‌کلید مجازی به‌صورت دستی توسط اسکریپت مدیریت می‌شود.
 
-## Examples
+## مثال‌ها
 
-The following example shows how to disable writing suggestions offered by user agents via script:
+مثال زیر نحوهٔ غیرفعال کردن پیشنهادهای نوشتاری ارائه‌شده توسط عامل‌های کاربر را از طریق اسکریپت نشان می‌دهد:
 
 ```js
 const element = document.querySelector("input");
@@ -38,14 +32,14 @@ const element = document.querySelector("input");
 element.writingSuggestions = "false";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [`writingsuggestions`](/en-US/docs/Web/HTML/Reference/Global_attributes/writingsuggestions) HTML global attribute
+- [`writingsuggestions`](/en-US/docs/Web/HTML/Reference/Global_attributes/writingsuggestions) ویژگی عمومی HTML
