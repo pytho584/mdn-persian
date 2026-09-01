@@ -1,11 +1,5 @@
 ---
 title: "HTMLTableCellElement: abbr property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableCellElement/abbr"
-status: "needs-translation"
----
-
----
-title: "HTMLTableCellElement: abbr property"
 short-title: abbr
 slug: Web/API/HTMLTableCellElement/abbr
 page-type: web-api-instance-property
@@ -14,21 +8,20 @@ browser-compat: api.HTMLTableCellElement.abbr
 
 {{ APIRef("HTML DOM") }}
 
-The **`abbr`** property of the {{domxref("HTMLTableCellElement")}} interface
-indicates an abbreviation associated with the cell. If the cell does not represent a header cell {{HTMLElement("th")}}, it is ignored.
+**`abbr`** 是 {{domxref("HTMLTableCellElement")}} 接口的一个属性，表示与该单元格关联的缩写。如果单元格不是标题单元格 {{HTMLElement("th")}}，则忽略该属性。
 
-It reflects the `abbr` attribute of the {{HTMLElement("th")}} element.
+它反映了 {{HTMLElement("th")}} 元素的 `abbr` 属性。
 
 > [!NOTE]
-> This property doesn't have a visual effect in browsers. It adds information to help assistive technology like screen readers that can use this abbreviation
+> 此属性在浏览器中没有视觉效果。它提供的信息可帮助辅助技术（如屏幕阅读器）使用此缩写。
 
-## Value
+## 值
 
-A string.
+一个字符串。
 
-## Examples
+## 示例
 
-This example adds prefixes with the abbreviation associated with the row header of each first cell.
+本示例在每个表格的第一列单元格中添加带有行标题相关联缩写的前缀。
 
 ### HTML
 
@@ -84,14 +77,14 @@ for (const cell of cells) {
 }
 ```
 
-### Results
+### 结果
 
 {{EmbedLiveSample("Examples", "100%", 220)}}
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
