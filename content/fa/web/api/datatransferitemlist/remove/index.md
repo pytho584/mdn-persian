@@ -1,11 +1,5 @@
 ---
 title: "DataTransferItemList: remove() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DataTransferItemList/remove"
-status: "needs-translation"
----
-
----
-title: "DataTransferItemList: remove() method"
 short-title: remove()
 slug: Web/API/DataTransferItemList/remove
 page-type: web-api-instance-method
@@ -14,38 +8,33 @@ browser-compat: api.DataTransferItemList.remove
 
 {{APIRef("HTML Drag and Drop API")}}
 
-The **`DataTransferItemList.remove()`** method removes the
-{{domxref("DataTransferItem")}} at the specified index from the list. If the index is
-less than zero or greater than one less than the length of the list, the list will not
-be changed.
+متد **`DataTransferItemList.remove()`**، شیء {{domxref("DataTransferItem")}} را در اندیس مشخص‌شده از فهرست حذف می‌کند. اگر اندیس کمتر از صفر یا بزرگ‌تر از یک واحد کمتر از طول فهرست باشد، فهرست تغییری نمی‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 remove(index)
 ```
 
-### Parameters
+### پارامترها
 
 - `index`
-  - : The zero-based index number of the item in the drag data list to remove. If the
-    `index` doesn't correspond to an existing item in the list, the list is
-    left unchanged.
+  - : شماره اندیس مبتنی بر صفر آیتمی در فهرست داده‌ی کشیدن (drag data list) که باید حذف شود. اگر `index` با هیچ آیتم موجودی در فهرست مطابقت نداشته باشد، فهرست بدون تغییر می‌ماند.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the drag data store is not in read/write mode and so the item cannot be removed.
+  - : اگر فروشگاه داده کشیدن (drag data store) در حالت خواندن/نوشتن نباشد و بنابراین آیتم قابل حذف نباشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Dragging and dropping an element
+### کشیدن و رها کردن یک عنصر
 
-This example shows the use of the `remove()` method.
+این مثال استفاده از متد `remove()` را نشان می‌دهد.
 
 #### HTML
 
@@ -145,14 +134,14 @@ target.addEventListener("drop", dropHandler);
 target.addEventListener("dragover", dragoverHandler);
 ```
 
-#### Result
+#### نتیجه
 
-{{ EmbedLiveSample('Dragging and dropping an element', 100, '300px')}}
+{{ EmbedLiveSample('Dragging and dropping an element', 100, '300px') }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
