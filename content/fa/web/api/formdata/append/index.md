@@ -1,7 +1,5 @@
 ---
 title: "FormData: append() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FormData/append"
-status: "needs-translation"
 ---
 
 ---
@@ -14,53 +12,53 @@ browser-compat: api.FormData.append
 
 {{APIRef("XMLHttpRequest API")}} {{AvailableInWorkers}}
 
-The **`append()`** method of the {{domxref("FormData")}} interface appends a new value onto an existing key inside a `FormData` object, or adds the key if it does not already exist.
+متد **`append()`** از رابط {{domxref("FormData")}} یک مقدار جدید را به یک کلید موجود درون یک شیء `FormData` اضافه می‌کند، یا اگر کلید وجود نداشته باشد، آن را ایجاد می‌کند.
 
-The difference between {{domxref("FormData.set", "set()")}} and `append()` is that if the specified key already exists, `set()` will overwrite all existing values with the new one, whereas `append()` will append the new value onto the end of the existing set of values.
+تفاوت بین {{domxref("FormData.set", "set()")}} و `append()` در این است که اگر کلید مشخص‌شده از قبل وجود داشته باشد، `set()` تمام مقادیر موجود را با مقدار جدید بازنویسی می‌کند، در حالی که `append()` مقدار جدید را به انتهای مجموعه مقادیر موجود اضافه می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 append(name, value)
 append(name, value, filename)
 ```
 
-### Parameters
+### پارامترها
 
 - `name`
-  - : The name of the field whose data is contained in `value`.
+  - : نام فیلدی که داده‌های آن در `value` قرار دارد.
 - `value`
-  - : The field's value. This can be a string or {{domxref("Blob")}} (including subclasses such as {{domxref("File")}}). If none of these are specified the value is converted to a string.
+  - : مقدار فیلد. این می‌تواند یک رشته یا {{domxref("Blob")}} (شامل زیرکلاس‌هایی مانند {{domxref("File")}}) باشد. اگر هیچ‌کدام از این‌ها مشخص نشده باشند، مقدار به یک رشته تبدیل می‌شود.
 - `filename` {{optional_inline}}
-  - : The filename reported to the server (a string), when a {{domxref("Blob")}} or {{domxref("File")}} is passed as the second parameter. The default filename for {{domxref("Blob")}} objects is "blob". The default filename for {{domxref("File")}} objects is the file's filename.
+  - : نام فایلی که به سرور گزارش می‌شود (یک رشته)، زمانی که یک {{domxref("Blob")}} یا {{domxref("File")}} به عنوان پارامتر دوم ارسال می‌شود. نام پیش‌فرض برای اشیاء {{domxref("Blob")}} "blob" است. نام پیش‌فرض برای اشیاء {{domxref("File")}}، نام خود فایل است.
 
 > [!NOTE]
-> If you specify a {{domxref("Blob")}} as the data to append to the `FormData` object, the filename that will be reported to the server in the "Content-Disposition" header used to vary from browser to browser.
+> اگر یک {{domxref("Blob")}} را به عنوان داده‌ای که به شیء `FormData` اضافه می‌شود مشخص کنید، نام فایلی که در هدر "Content-Disposition" به سرور گزارش می‌شود، در مرورگرهای مختلف متفاوت بوده است.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
 ```js
 formData.append("username", "Chris");
 ```
 
-When the value is a {{domxref("Blob")}} (or a {{domxref("File")}}), you can specify its name with the `filename` parameter:
+زمانی که مقدار یک {{domxref("Blob")}} (یا یک {{domxref("File")}}) است، می‌توانید نام آن را با پارامتر `filename` مشخص کنید:
 
 ```js
 formData.append("user-pic", myFileInput.files[0], "chris.jpg");
 ```
 
-As with regular form data, you can append multiple values with the same name:
+مانند داده‌های فرم معمولی، می‌توانید چندین مقدار با یک نام اضافه کنید:
 
 ```js
 formData.append("user-pic", myFileInput.files[0], "chris1.jpg");
 formData.append("user-pic", myFileInput.files[1], "chris2.jpg");
 ```
 
-If the value is not a string or a `Blob`, `append()` will convert it to a string automatically:
+اگر مقدار یک رشته یا `Blob` نباشد، `append()` به طور خودکار آن را به رشته تبدیل می‌کند:
 
 ```js
 formData.append("name", true);
@@ -68,15 +66,15 @@ formData.append("name", 72);
 formData.getAll("name"); // ["true", "72"]
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using FormData objects](/en-US/docs/Web/API/XMLHttpRequest_API/Using_FormData_Objects)
+- [استفاده از اشیاء FormData](/en-US/docs/Web/API/XMLHttpRequest_API/Using_FormData_Objects)
 - {{HTMLElement("Form")}}
