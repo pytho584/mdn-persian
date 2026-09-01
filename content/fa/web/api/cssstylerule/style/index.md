@@ -1,11 +1,5 @@
 ---
 title: "CSSStyleRule: style property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleRule/style"
-status: "needs-translation"
----
-
----
-title: "CSSStyleRule: style property"
 short-title: style
 slug: Web/API/CSSStyleRule/style
 page-type: web-api-instance-property
@@ -14,27 +8,27 @@ browser-compat: api.CSSStyleRule.style
 
 {{ APIRef("CSSOM") }}
 
-The read-only **`style`** property of the {{domxref("CSSStyleRule")}} interface contains a {{domxref("CSSStyleProperties")}} object representing the properties list in this style rule's body.
+ویژگی فقط‑خواندنی **`style`** از واسط {{domxref("CSSStyleRule")}} یک شیء {{domxref("CSSStyleProperties")}} را شامل می‌شود که فهرست ویژگی‌های درون بدنهٔ این قانون سبک را نمایش می‌دهد.
 
-Each [CSS property](/en-US/docs/Web/CSS/Reference/Properties) supported by the browser is present on the object.
-The properties that are not defined inline in the corresponding CSS declaration are set to the empty string (`""`).
+هر [ویژگی CSS](/en-US/docs/Web/CSS/Reference/Properties) که توسط مرورگر پشتیبانی می‌شود، روی این شیء وجود دارد.
+ویژگی‌هایی که درون اعلان CSS متناظر به‌صورت درون‌خطی (inline) تعریف نشده‌اند، برابر رشتهٔ خالی (`""`) تنظیم می‌شوند.
 
-## Value
+## مقدار
 
-A {{domxref("CSSStyleProperties")}} object.
+یک شیء {{domxref("CSSStyleProperties")}}.
 
 > [!NOTE]
-> Earlier versions of the specification returned a {{domxref("CSSStyleDeclaration")}}, which is now the base class of {{domxref("CSSStyleProperties")}}.
-> See the [browser compatibility](#browser_compatibility) table for browser support information.
+> نسخه‌های پیشین مشخصات یک {{domxref("CSSStyleDeclaration")}} را برمی‌گرداندند که اکنون کلاس پایهٔ {{domcursor("CSSStyleProperties")}} است.
+> برای اطلاعات پشتیبانی مرورگر به جدول [سازگاری مرورگر](#browser_compatibility) مراجعه کنید.
 
-Although the `style` property itself is read-only in the sense that you can't replace the `CSSStyleProperties` object, you can still assign to the `style` property directly, which is equivalent to assigning to its {{domxref("CSSStyleDeclaration/cssText", "cssText")}} property. You can also modify the `CSSStyleProperties` object using the {{domxref("CSSStyleDeclaration/setProperty", "setProperty()")}} and {{domxref("CSSStyleDeclaration/removeProperty", "removeProperty()")}} methods.
+اگرچه خود ویژگی `style` از این نظر فقط‑خواندنی است که نمی‌توانید شیء `CSSStyleProperties` را جایگزین کنید، اما همچنان می‌توانید مستقیماً به ویژگی `style` مقداردهی کنید که معادل مقداردهی به ویژگی {{domxref("CSSStyleDeclaration/cssText", "cssText")}} آن است. همچنین می‌توانید شیء `CSSStyleProperties` را با استفاده از روش‌های {{domxref("CSSStyleDeclaration/setProperty", "setProperty()")}} و {{domxref("CSSStyleDeclaration/removeProperty", "removeProperty()")}} تغییر دهید.
 
-## Examples
+## مثال‌ها
 
-### Getting the styles for a style rule
+### دریافت سبک‌های یک قانون سبک
 
-The CSS below defines the style rule for the `h1` selector, which is represented in code by a {{domxref("CSSStyleRule")}} instance.
-The declaration block is that part of the style rule that appears within the braces and that actually provides the style definitions (for the selector, the part that comes before the braces), which is represented in code by the `style` property.
+CSS زیر قانون سبک را برای انتخاب‌گر `h1` تعریف می‌کند که در کد با یک نمونهٔ {{domxref("CSSStyleRule")}} نمایش داده می‌شود.
+بلاک اعلان، آن بخش از قانون سبک است که درون آکولاد ظاهر می‌شود و در واقع تعاریف سبک را ارائه می‌دهد (برای انتخاب‌گر، بخشی که قبل از آکولاد می‌آید)، که در کد با ویژگی `style` نمایش داده می‌شود.
 
 ```css
 h1 {
@@ -42,18 +36,18 @@ h1 {
 }
 ```
 
-Assuming the above style rule is the first rule in the document, it will be the first {{domxref("CSSRule")}} returned by `document.styleSheets[0].cssRules`.
-`myRules[0].style` returns a {{domxref("CSSStyleProperties")}} object representing the declarations defined for `h1`.
+با فرض اینکه قانون سبک بالا اولین قانون در سند باشد، اولین {{domxref("CSSRule")}} بازگشتی از `document.styleSheets[0].cssRules` خواهد بود.
+`myRules[0].style` یک شیء {{domxref("CSSStyleProperties")}} را برمی‌گرداند که اعلان‌های تعریف‌شده برای `h1` را نمایش می‌دهد.
 
 ```js
 const myRules = document.styleSheets[0].cssRules;
-console.log(myRules[0].style); // a CSSStyleProperties representing the declarations on the h1.
+console.log(myRules[0].style); // یک CSSStyleProperties که اعلان‌های روی h1 را نمایش می‌دهد.
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
