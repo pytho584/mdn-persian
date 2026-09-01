@@ -1,11 +1,5 @@
 ---
 title: "Fence: getNestedConfigs() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Fence/getNestedConfigs"
-status: "needs-translation"
----
-
----
-title: "Fence: getNestedConfigs() method"
 short-title: getNestedConfigs()
 slug: Web/API/Fence/getNestedConfigs
 page-type: web-api-instance-method
@@ -16,27 +10,26 @@ browser-compat: api.Fence.getNestedConfigs
 
 {{SeeCompatTable}}{{APIRef("Fenced Frame API")}}
 
-The **`getNestedConfigs()`** method of the
-{{domxref("Fence")}} interface returns the {{domxref("FencedFrameConfig")}}s loaded into `<fencedframe>`s embedded inside the current `<fencedframe>`.
+**`getNestedConfigs()`** 方法属于 {{domxref("Fence")}} 接口，返回嵌入在当前 `<fencedframe>` 中的 `<fencedframe>` 所加载的 {{domxref("FencedFrameConfig")}} 配置列表。
 
-## Syntax
+## 语法
 
 ```js-nolint
 getNestedConfigs()
 ```
 
-### Parameters
+### 参数
 
-None.
+无。
 
-### Return value
+### 返回值
 
-`getNestedConfigs()` has two possible return values:
+`getNestedConfigs()` 有两种可能的返回值：
 
-- An array of 20 {{domxref("FencedFrameConfig")}} objects, if the current `<fencedframe>`'s config was created using an API that supports nested configs (for example [Protected Audience](https://privacysandbox.google.com/private-advertising/protected-audience)). Of these 20 configs, the first N configs are those registered through the API and the rest are padding configs that will navigate to `about:blank`, so that the number of configs is hidden and cannot leak any information.
-- `null` if the current `<fencedframe>`'s config was created using an API that does not support nested configs (for example [Shared Storage](/en-US/docs/Web/API/Shared_Storage_API)).
+- 如果当前 `<fencedframe>` 的配置是使用支持嵌套配置的 API（例如 [Protected Audience](https://privacysandbox.google.com/private-advertising/protected-audience)）创建的，则返回包含 20 个 {{domxref("FencedFrameConfig")}} 对象的数组。在这 20 个配置中，前 N 个是经由该 API 注册的配置，其余为填充（padding）配置，它们将导航到 `about:blank`，从而隐藏配置数量，避免泄露任何信息。
+- 如果当前 `<fencedframe>` 的配置是使用不支持嵌套配置的 API（例如 [Shared Storage](/en-US/docs/Web/API/Shared_Storage_API)）创建的，则返回 `null`。
 
-## Examples
+## 示例
 
 ```js
 // Run inside a <fencedframe>
@@ -49,15 +42,15 @@ const frame = document.createElement("fencedframe");
 frame.config = configs[0];
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
-- [Fenced frames](https://privacysandbox.google.com/private-advertising/fenced-frame) on privacysandbox.google.com
-- [The Privacy Sandbox](https://privacysandbox.google.com/) on privacysandbox.google.com
+- [Fenced frames](https://privacysandbox.google.com/private-advertising/fenced-frame) 位于 privacysandbox.google.com
+- [The Privacy Sandbox](https://privacysandbox.google.com/) 位于 privacysandbox.google.com
