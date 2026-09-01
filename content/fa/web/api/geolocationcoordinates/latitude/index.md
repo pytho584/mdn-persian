@@ -1,7 +1,5 @@
 ---
 title: "GeolocationCoordinates: latitude property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GeolocationCoordinates/latitude"
-status: "needs-translation"
 ---
 
 ---
@@ -14,11 +12,7 @@ browser-compat: api.GeolocationCoordinates.latitude
 
 {{securecontext_header}}{{APIRef("Geolocation API")}}
 
-The **`latitude`** read-only property of the {{domxref("GeolocationCoordinates")}} interface is a `double` representing the latitude of the position in decimal degrees.
-
-## Value
-
-A `double` representing the latitude of the position in decimal degrees.
+ویژگی فقط‌خواندنی **`latitude`** در رابط {{domxref("GeolocationCoordinates")}} یک `double` است که عرض جغرافیایی موقعیت را بر حسب درجه‌های اعشاری نشان می‌دهد.
 
 ## Specifications
 
