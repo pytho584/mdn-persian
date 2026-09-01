@@ -1,11 +1,5 @@
 ---
 title: "Headers: has() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Headers/has"
-status: "needs-translation"
----
-
----
-title: "Headers: has() method"
 short-title: has()
 slug: Web/API/Headers/has
 page-type: web-api-instance-method
@@ -14,13 +8,9 @@ browser-compat: api.Headers.has
 
 {{APIRef("Fetch API")}} {{AvailableInWorkers}}
 
-The **`has()`** method of the {{domxref("Headers")}} interface
-returns a boolean stating whether a `Headers` object contains a certain
-header.
+متد **`has()`** از رابط {{domxref("Headers")}} یک مقدار بولی برمی‌گرداند که نشان می‌دهد آیا یک شیء `Headers` حاوی هدر مشخصی است یا خیر.
 
-For security reasons, some headers can only be controlled by the user agent. These
-headers include the {{Glossary("Forbidden_request_header", "forbidden request headers")}}
-and {{Glossary("Forbidden_response_header_name", "forbidden response header names")}}.
+به دلایل امنیتی، برخی هدرها فقط توسط عامل کاربر (user agent) قابل کنترل هستند. این هدرها شامل {{Glossary("Forbidden_request_header", "هدرهای درخواست ممنوع")}} و {{Glossary("Forbidden_response_header_name", "نام‌های هدر پاسخ ممنوع")}} می‌شوند.
 
 ## Syntax
 
@@ -31,23 +21,21 @@ has(name)
 ### Parameters
 
 - `name`
-  - : The name of the HTTP header you want to test for. If the given name is not a valid
-    HTTP header name, this method throws a {{jsxref("TypeError")}}.
+  - : نام هدر HTTP که می‌خواهید وجود آن را بررسی کنید. اگر نام داده‌شده یک نام هدر HTTP معتبر نباشد، این متد یک {{jsxref("TypeError")}} پرتاب می‌کند.
 
 ### Return value
 
-A boolean value.
+یک مقدار بولی.
 
 ## Examples
 
-Creating an empty `Headers` object is simple:
+ساخت یک شیء `Headers` خالی ساده است:
 
 ```js
 const myHeaders = new Headers(); // Currently empty
 ```
 
-You could add a header to this using {{domxref("Headers.append")}}, then test for the
-existence of it using `has()`:
+می‌توانید با استفاده از {{domxref("Headers.append")}} یک هدر به آن اضافه کنید و سپس وجود آن را با `has()` بررسی کنید:
 
 ```js
 myHeaders.append("Content-Type", "image/jpeg");
