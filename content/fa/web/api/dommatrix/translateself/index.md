@@ -1,11 +1,5 @@
 ---
 title: "DOMMatrix: translateSelf() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/translateSelf"
-status: "needs-translation"
----
-
----
-title: "DOMMatrix: translateSelf() method"
 short-title: translateSelf()
 slug: Web/API/DOMMatrix/translateSelf
 page-type: web-api-instance-method
@@ -14,34 +8,31 @@ browser-compat: api.DOMMatrix.translateSelf
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The `translateSelf()` method of the {{domxref("DOMMatrix")}} interface is a mutable transformation method that modifies a matrix. It applies the specified vectors and returns the updated matrix. The default vector is `[0, 0, 0]`.
+متد `translateSelf()` از رابط {{domxref("DOMMatrix")}} یک متد تبدیل تغییرپذیر (mutable) است که یک ماتریس را اصلاح می‌کند. این متد بردار(های) مشخص‌شده را اعمال کرده و ماتریس به‌روزشده را بازمی‌گرداند. بردار پیش‌فرض `[0, 0, 0]` است.
 
-To translate a matrix without mutating it, see {{domxref("DOMMatrixReadOnly.translate()")}}
+برای انتقال یک ماتریس بدون تغییر دادن آن، به {{domxref("DOMMatrixReadOnly.translate()")}} مراجعه کنید.
 
-## Syntax
+## نحو
 
 ```js-nolint
 translateSelf(translateX, translateY)
 translateSelf(translateX, translateY, translateZ)
 ```
 
-### Parameters
+### پارامترها
 
 - `translateX`
-  - : A number representing the abscissa (x-coordinate) of the translating vector.
+  - : عددی که ابسیسا (مختصهٔ x) بردار انتقال را نشان می‌دهد.
 - `translateY`
-  - : A number representing the ordinate (y-coordinate) of the translating vector.
+  - : عددی که مختصهٔ y بردار انتقال را نشان می‌دهد.
 - `translateZ` {{optional_inline}}
-  - : A number representing the z component of the translating vector. If not supplied,
-    this defaults to 0. If this is anything other than 0, the resulting matrix will be
-    3D.
+  - : عددی که مؤلفهٔ z بردار انتقال را نشان می‌دهد. اگر ارائه نشود، پیش‌فرض آن 0 است. اگر این مقدار چیزی غیر از 0 باشد، ماتریس حاصل سه‌بعدی خواهد بود.
 
-### Return value
+### مقدار بازگشتی
 
-Returns itself; the [`DOMMatrix`](/en-US/docs/Web/API/DOMMatrix) translated by the given
-vector.
+خود ماتریس را بازمی‌گرداند؛ یعنی همان [`DOMMatrix`](/en-US/docs/Web/API/DOMMatrix) که با بردار داده‌شده انتقال یافته است.
 
-## Examples
+## مثال‌ها
 
 ```js
 const matrix = new DOMMatrix(); // create a matrix
@@ -50,15 +41,15 @@ matrix.translateSelf(25, 25); // mutate it
 console.log(matrix); // output: "matrix(1, 0, 0, 1, 25, 25)"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("DOMMatrixReadOnly.translate()")}}
 - CSS {{cssxref("transform")}} property
