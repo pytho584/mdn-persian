@@ -1,11 +1,5 @@
 ---
 title: "CSSPrimitiveValue: getStringValue() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSPrimitiveValue/getStringValue"
-status: "needs-translation"
----
-
----
-title: "CSSPrimitiveValue: getStringValue() method"
 short-title: getStringValue()
 slug: Web/API/CSSPrimitiveValue/getStringValue
 page-type: web-api-instance-method
@@ -17,18 +11,15 @@ browser-compat: api.CSSPrimitiveValue.getStringValue
 
 {{APIRef("CSSOM")}}{{deprecated_header}}{{non-standard_header}}
 
-The **`getStringValue()`** method of the
-{{domxref("CSSPrimitiveValue")}} interface is used to get a string value. If this CSS
-value doesn't contain a string value, a {{domxref("DOMException")}} is raised.
+**`getStringValue()`** 方法属于 {{domxref("CSSPrimitiveValue")}} 接口، برای دریافت یک مقدار رشته‌ای استفاده می‌شود. اگر این مقدار CSS حاوی مقدار رشته‌ای نباشد، یک {{domxref("DOMException")}} پرتاب می‌شود.
 
 > [!NOTE]
-> This method was part of an attempt to create a typed CSS Object Model. This attempt has been abandoned, and most browsers do
-> not implement it.
+> این روش بخشی از تلاش برای ایجاد یک مدل شیء CSS تایپ‌شده (Typed CSS Object Model) بود. این تلاش رها شده است و اکثر مرورگرها آن را پیاده‌سازی نمی‌کنند.
 >
-> To achieve your purpose, you can use:
+> برای رسیدن به هدف خود، می‌توانید از موارد زیر استفاده کنید:
 >
-> - the untyped [CSS Object Model](/en-US/docs/Web/API/CSS_Object_Model), widely supported, or
-> - the modern [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API), less supported and considered experimental.
+> - [مدل شیء CSS بدون تایپ](/en-US/docs/Web/API/CSS_Object_Model) که به‌طور گسترده پشتیبانی می‌شود، یا
+> - [API مدل شیء CSS تایپ‌شده مدرن](/en-US/docs/Web/API/CSS_Typed_OM_API) که پشتیبانی کمتری دارد و تجربی محسوب می‌شود.
 
 ## Syntax
 
@@ -38,17 +29,17 @@ getStringValue()
 
 ### Parameters
 
-None.
+هیچ.
 
 ### Return value
 
-A `string` value.
+یک مقدار از نوع `string`.
 
 ### Exceptions
 
-| **Type**       | **Description**                                                                    |
-| -------------- | ---------------------------------------------------------------------------------- |
-| `DOMException` | An `INVALID_ACCESS_ERR` is raised if the CSS value doesn't contain a string value. |
+| **Type**       | **Description**                                                                     |
+| -------------- | ----------------------------------------------------------------------------------- |
+| `DOMException` | اگر مقدار CSS حاوی مقدار رشته‌ای نباشد، یک خطای `INVALID_ACCESS_ERR` پرتاب می‌شود. |
 
 ## Examples
 
@@ -60,10 +51,9 @@ console.log(cssValue.getStringValue());
 
 ## Specifications
 
-This feature was originally defined in the [DOM Style Level 2](https://www.w3.org/TR/DOM-Level-2-Style/) specification, but has been dropped from any
-standardization effort since then.
+این ویژگی در ابتدا در مشخصات [DOM Style Level 2](https://www.w3.org/TR/DOM-Level-2-Style/) تعریف شده بود، اما از آن زمان از هرگونه تلاش برای استانداردسازی حذف شده است.
 
-It has been superseded by a modern, but incompatible, [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API) that is now on the standard track.
+اکنون با [API مدل شیء CSS تایپ‌شده](/en-US/docs/Web/API/CSS_Typed_OM_API) مدرن، اما ناسازگار، جایگزین شده است که در مسیر استاندارد قرار دارد.
 
 ## Browser compatibility
 
