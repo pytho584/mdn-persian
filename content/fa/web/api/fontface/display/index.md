@@ -1,11 +1,5 @@
 ---
 title: "FontFace: display property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FontFace/display"
-status: "needs-translation"
----
-
----
-title: "FontFace: display property"
 short-title: display
 slug: Web/API/FontFace/display
 page-type: web-api-instance-property
@@ -14,43 +8,36 @@ browser-compat: api.FontFace.display
 
 {{APIRef("CSS Font Loading API")}}{{AvailableInWorkers}}
 
-The **`display`** property of the {{domxref("FontFace")}} interface determines how a font face is displayed based on whether and when it is downloaded and ready to use.
-This property is equivalent to the CSS `font-display` descriptor.
+خاصیت **`display`** از رابط {{domxref("FontFace")}} تعیین می‌کند که یک فونت‌نما (font face) بر اساس این‌که آیا و چه زمانی دانلود و آماده استفاده شده است، چگونه نمایش داده شود. این خاصیت معادل توصیف‌گر CSS `font-display` است.
 
-When this property is used, font loading has a timeline with three periods.
-The lengths of the first two periods depend on the value of the property and the user agent.
-(See below.)
+وقتی از این خاصیت استفاده می‌شود، بارگذاری فونت یک جدول زمانی با سه دوره دارد. طول دو دوره اول به مقدار خاصیت و عامل کاربر (user agent) بستگی دارد. (به زیر مراجعه کنید.)
 
-- block period
-  - : The browser invisibly prepares a fallback font. If the font face loads during this time, it's used to display the text and display is complete.
-- swap period
-  - : If the font face is still not loaded, the fallback font will be shown.
-    When the font face loads, the fallback will be swapped for the downloaded font.
-- failure period
-  - : If the font face still is not loaded, the fallback font will be shown and no swap will occur.
+- **دوره مسدودیت (block period)**
+  - : مرورگر به‌طور نامرئی یک فونت جایگزین (fallback font) آماده می‌کند. اگر فونت‌نما در این مدت بارگذاری شود، برای نمایش متن استفاده می‌شود و نمایش کامل می‌شود.
+- **دوره جایگزینی (swap period)**
+  - : اگر فونت‌نما هنوز بارگذاری نشده باشد، فونت جایگزین نمایش داده می‌شود. وقتی فونت‌نما بارگذاری شد، فونت جایگزین با فونت دانلود شده جایگزین می‌شود.
+- **دوره شکست (failure period)**
+  - : اگر فونت‌نما همچنان بارگذاری نشده باشد، فونت جایگزین نمایش داده می‌شود و هیچ جایگزینی رخ نخواهد داد.
 
-## Value
+## مقدار
 
-A string with one of the following values.
+یک رشته با یکی از مقادیر زیر.
 
 - `auto`
-  - : Use the font display strategy provided by the user agent.
+  - : از استراتژی نمایش فونت ارائه‌شده توسط عامل کاربر استفاده کنید.
 - `block`
-  - : Gives the font face a short block period and an infinite swap period.
-    The spec recommends 3 seconds for the block period, though this may vary from browser to browser.
+  - : به فونت‌نما یک دوره مسدودیت کوتاه و یک دوره جایگزینی نامحدود می‌دهد. مشخصات فنی (spec) ۳ ثانیه را برای دوره مسدودیت توصیه می‌کند، اگرچه ممکن است از مرورگری به مرورگر دیگر متفاوت باشد.
 - `fallback`
-  - : Gives the font face a short block period and a short swap period.
-    The spec recommends 100 ms or less for the block period and 3 seconds for the swap period, though these values may vary from browser to browser.
+  - : به فونت‌نما یک دوره مسدودیت کوتاه و یک دوره جایگزینی کوتاه می‌دهد. مشخصات فنی ۱۰۰ میلی‌ثانیه یا کمتر را برای دوره مسدودیت و ۳ ثانیه را برای دوره جایگزینی توصیه می‌کند، اگرچه این مقادیر ممکن است از مرورگری به مرورگر دیگر متفاوت باشد.
 - `optional`
-  - : Gives the font face a short block period and no swap period.
-    The spec recommends 100 ms or less, though this may vary from browser to browser.
+  - : به فونت‌نما یک دوره مسدودیت کوتاه و بدون دوره جایگزینی می‌دهد. مشخصات فنی ۱۰۰ میلی‌ثانیه یا کمتر را توصیه می‌کند، اگرچه ممکن است از مرورگری به مرورگر دیگر متفاوت باشد.
 - `swap`
-  - : Gives the font face a 0 second block period and an infinite swap period.
+  - : به فونت‌نما یک دوره مسدودیت ۰ ثانیه و یک دوره جایگزینی نامحدود می‌دهد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
