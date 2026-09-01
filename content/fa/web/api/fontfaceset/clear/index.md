@@ -1,11 +1,5 @@
 ---
 title: "FontFaceSet: clear() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSet/clear"
-status: "needs-translation"
----
-
----
-title: "FontFaceSet: clear() method"
 short-title: clear()
 slug: Web/API/FontFaceSet/clear
 page-type: web-api-instance-method
@@ -14,7 +8,7 @@ browser-compat: api.FontFaceSet.clear
 
 {{APIRef("CSS Font Loading API")}}{{AvailableInWorkers}}
 
-The **`clear()`** method of the {{domxref("FontFaceSet")}} interface removes all fonts added via this interface. Fonts added with the {{cssxref("@font-face")}} rule are not removed.
+متد **`clear()`** در رابط {{domxref("FontFaceSet")}} همهٔ فونت‌هایی را که از طریق این رابط افزوده شده‌اند حذف می‌کند. فونت‌هایی که با قانون {{cssxref("@font-face")}} افزوده شده‌اند حذف نمی‌شوند.
 
 ## Syntax
 
@@ -24,11 +18,11 @@ clear()
 
 ### Parameters
 
-None.
+هیچ.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
 ## Specifications
 
