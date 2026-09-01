@@ -1,27 +1,16 @@
 ---
 title: "GPUCanvasContext: canvas property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUCanvasContext/canvas"
-status: "needs-translation"
----
-
----
-title: "GPUCanvasContext: canvas property"
-short-title: canvas
-slug: Web/API/GPUCanvasContext/canvas
-page-type: web-api-instance-property
-browser-compat: api.GPUCanvasContext.canvas
 ---
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`canvas`** read-only property of the
-{{domxref("GPUCanvasContext")}} interface returns a reference to the canvas that the context was created from.
+ویژگی فقط‑خواندنی **`canvas`** از رابط {{domxref("GPUCanvasContext")}} یک ارجاع به canvasای که بافتار (context) از آن ایجاد شده است برمی‌گرداند.
 
-## Value
+## مقدار
 
-An {{domxref("HTMLCanvasElement")}} or {{domxref("OffscreenCanvas")}} object instance.
+یک نمونه شیء (object instance) از {{domxref("HTMLCanvasElement")}} یا {{domxref("OffscreenCanvas")}}.
 
-## Examples
+## مثال‌ها
 
 ```js
 const canvas = document.querySelector("#gpuCanvas");
@@ -31,14 +20,14 @@ const context = canvas.getContext("webgpu");
 context.canvas;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
