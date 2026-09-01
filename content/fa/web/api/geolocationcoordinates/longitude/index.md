@@ -1,7 +1,5 @@
 ---
 title: "GeolocationCoordinates: longitude property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GeolocationCoordinates/longitude"
-status: "needs-translation"
 ---
 
 ---
@@ -14,31 +12,22 @@ browser-compat: api.GeolocationCoordinates.longitude
 
 {{securecontext_header}}{{APIRef("Geolocation API")}}
 
-The **`longitude`** read-only property of the {{domxref("GeolocationCoordinates")}} interface is a number which represents the longitude of a geographical position, specified in decimal degrees.
-Together with a timestamp, given as {{Glossary("Unix time")}} in milliseconds, indicating a time of measurement, the `GeolocationCoordinates` object is part of the {{domxref("GeolocationPosition")}} interface, which is the object type returned by Geolocation API functions that obtain and return a geographical position.
+ویژگی فقط‌خواندنی **`longitude`** از رابط {{domxref("GeolocationCoordinates")}} عددی است که طول جغرافیایی یک موقعیت را بر حسب درجه‌های اعشاری نشان می‌دهد. این شیء به همراه یک برچسب زمانی که به صورت {{Glossary("Unix time")}} بر حسب میلی‌ثانیه داده می‌شود و زمان اندازه‌گیری را نشان می‌دهد، بخشی از رابط {{domxref("GeolocationPosition")}} است؛ نوع شیئی که توابع Geolocation API برای دریافت و بازگرداندن یک موقعیت جغرافیایی برمی‌گردانند.
 
-## Value
+## مقدار
 
-The value in `longitude` is the geographical longitude of the location on
-Earth described by the `Coordinates` object, in decimal degrees. The value is
-defined by the World Geodetic System 1984 specification (WGS 84).
+مقدار در `longitude` طول جغرافیایی مکان روی زمین است که توسط شیء `Coordinates` توصیف شده و به درجه‌های اعشاری بیان می‌شود. این مقدار مطابق مشخصات سیستم ژئودتیک جهانی ۱۹۸۴ (WGS 84) تعریف شده است.
 
 > [!NOTE]
-> The zero meridian (also known as the prime meridian or the
-> reference meridian) is not precisely the same as the Greenwich meridian that most
-> people think of. It is, instead, the [IERS Reference Meridian](https://en.wikipedia.org/wiki/IERS_Reference_Meridian), which is located 5.3 [arcseconds](https://en.wikipedia.org/wiki/Arcseconds) (102
-> meters / 335 feet) east of the [Greenwich meridian](https://en.wikipedia.org/wiki/Greenwich_meridian). This
-> is the same standard used by the [Global Positioning System](https://en.wikipedia.org/wiki/Global_Positioning_System) (GPS).
+> نصف‌النهار مبدأ (که به‌عنوان نصف‌النهار نخست یا نصف‌النهار مرجع نیز شناخته می‌شود) دقیقاً همان نصف‌النهار گرینویچ نیست که بیشتر مردم تصور می‌کنند. بلکه [نصف‌النهار مرجع IERS](https://en.wikipedia.org/wiki/IERS_Reference_Meridian) است که در فاصله ۵٫۳ [ثانیه قوسی](https://en.wikipedia.org/wiki/Arcseconds) (۱۰۲ متر / ۳۳۵ فوت) به سمت شرق [نصف‌النهار گرینویچ](https://en.wikipedia.org/wiki/Greenwich_meridian) قرار دارد. این همان استانداردی است که توسط [سامانه موقعیت‌یاب جهانی](https://en.wikipedia.org/wiki/Global_Positioning_System) (GPS) استفاده می‌شود.
 
-## Examples
+## مثال‌ها
 
-In this simple example, we fetch the user's location and display the resulting
-coordinates once they're returned.
+در این مثال ساده، موقعیت کاربر را دریافت کرده و پس از بازگشت، مختصات حاصل را نمایش می‌دهیم.
 
 ### JavaScript
 
-The JavaScript code below creates an event listener so that when the user clicks on a
-button, the location information is retrieved and displayed.
+کد جاوااسکریپت زیر یک شنونده رویداد ایجاد می‌کند تا وقتی کاربر روی دکمه کلیک می‌کند، اطلاعات موقعیت دریافت و نمایش داده شود.
 
 ```js
 let button = document.getElementById("get-location");
@@ -56,27 +45,15 @@ button.addEventListener("click", () => {
 });
 ```
 
-After setting up variables to more conveniently reference the button element and the
-two elements into which the latitude and longitude will be drawn, the event listener is
-established by calling {{domxref("EventTarget.addEventListener", "addEventListener()")}}
-on the {{HTMLElement("button")}} element. When the user clicks the button, we'll fetch
-and display the location information.
+پس از تعریف متغیرها برای ارجاع آسان‌تر به عنصر دکمه و دو عنصری که عرض و طول جغرافیایی در آن‌ها نمایش داده می‌شود، شنونده رویداد با فراخوانی {{domxref("EventTarget.addEventListener", "addEventListener()")}} روی عنصر {{HTMLElement("button")}} ایجاد می‌شود. وقتی کاربر دکمه را کلیک کند، اطلاعات موقعیت را دریافت و نمایش می‌دهیم.
 
-Upon receiving a {{domxref("Element/click_event", "click")}} event, we call
-{{domxref("Geolocation.getCurrentPosition", "getCurrentPosition()")}} to request the
-device's current position. This is an asynchronous request, so we provide a callback
-which receives as in put a {{domxref("GeolocationPosition")}} object describing the
-determined position.
+پس از دریافت رویداد {{domxref("Element/click_event", "click")}}، تابع {{domxref("Geolocation.getCurrentPosition", "getCurrentPosition()")}} را برای درخواست موقعیت فعلی دستگاه فراخوانی می‌کنیم. این یک درخواست ناهمگام است، بنابراین یک تابع بازخورد (callback) ارائه می‌دهیم که یک شیء {{domxref("GeolocationPosition")}} را به‌عنوان ورودی دریافت می‌کند و موقعیت تعیین‌شده را توصیف می‌کند.
 
-From the `GeolocationPosition` object, we obtain the user's latitude and
-longitude using {{domxref("GeolocationCoordinates/latitude", "position.coords.latitude")}} and
-`position.coords.longitude` so we can update the displayed coordinates. The
-two {{HTMLElement("span")}} elements are updated to display the corresponding values
-after being converted to a value with two decimal places.
+از شیء `GeolocationPosition`، عرض و طول جغرافیایی کاربر را با استفاده از {{domxref("GeolocationCoordinates/latitude", "position.coords.latitude")}} و `position.coords.longitude` به دست می‌آوریم تا مختصات نمایش‌داده‌شده را به‌روز کنیم. دو عنصر {{HTMLElement("span")}} پس از تبدیل مقدار به عددی با دو رقم اعشار، به‌روز می‌شوند تا مقادیر مربوطه را نمایش دهند.
 
 ### HTML
 
-The HTML used to present the results looks like this:
+HTML مورد استفاده برای نمایش نتایج به این صورت است:
 
 ```html
 <p>
@@ -86,25 +63,22 @@ The HTML used to present the results looks like this:
 <button id="get-location">Get My Location</button>
 ```
 
-### Result
+### نتیجه
 
-Take this example for a test drive here:
+این مثال را می‌توانید اینجا آزمایش کنید:
 
 {{EmbedLiveSample("Examples", 600, 120)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Geolocation API](/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API)
-- The {{domxref("GeolocationCoordinates")}} interface it belongs to.
-- The {{domxref("GeolocationPosition")}} interface, which is the top-level interface
-  used to return geolocation data from the Geolocation API functions
-  {{domxref("Geolocation.getCurrentPosition()")}} and
-  {{domxref("Geolocation.watchPosition", "watchPosition()")}}.
+- [استفاده از Geolocation API](/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API)
+- رابط {{domxref("GeolocationCoordinates")}} که این ویژگی به آن تعلق دارد.
+- رابط {{domxref("GeolocationPosition")}} که رابط سطح بالایی است که برای بازگرداندن داده‌های موقعیت‌یابی از توابع Geolocation API، یعنی {{domxref("Geolocation.getCurrentPosition()")}} و {{domxref("Geolocation.watchPosition", "watchPosition()")}} استفاده می‌شود.
