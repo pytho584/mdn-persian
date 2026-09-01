@@ -1,11 +1,5 @@
 ---
 title: "CustomStateSet: delete() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CustomStateSet/delete"
-status: "needs-translation"
----
-
----
-title: "CustomStateSet: delete() method"
 short-title: delete()
 slug: Web/API/CustomStateSet/delete
 page-type: web-api-instance-method
@@ -14,27 +8,27 @@ browser-compat: api.CustomStateSet.delete
 
 {{APIRef("Web Components")}}
 
-The **`delete()`** method of the {{domxref("CustomStateSet")}} interface deletes a single value from the `CustomStateSet`.
+متد **`delete()`** از رابط {{domxref("CustomStateSet")}} یک مقدار واحد را از `CustomStateSet` حذف می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 delete(value)
 ```
 
-### Parameters
+### پارامترها
 
 - `value`
-  - : value to remove from the `CustomStateSet`.
+  - : مقداری که باید از `CustomStateSet` حذف شود.
 
-### Return value
+### مقدار بازگشتی
 
-Returns `true` if `value` was in the `CustomStateSet`; otherwise `false`.
+اگر `value` در `CustomStateSet` وجود داشته باشد `true` و در غیر این صورت `false` برمی‌گرداند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
