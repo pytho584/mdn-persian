@@ -1,11 +1,5 @@
 ---
 title: "Element: customElementRegistry property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/customElementRegistry"
-status: "needs-translation"
----
-
----
-title: "Element: customElementRegistry property"
 short-title: customElementRegistry
 slug: Web/API/Element/customElementRegistry
 page-type: web-api-instance-property
@@ -14,19 +8,19 @@ browser-compat: api.Element.customElementRegistry
 
 {{APIRef("Web Components")}}
 
-The **`customElementRegistry`** read-only property of the {{domxref("Element")}} interface returns the {{domxref("CustomElementRegistry")}} object associated with this element, or `null` if one has not been set.
+خاصیت فقط-خواندنی **`customElementRegistry`** در رابط {{domxref("Element")}}، شیء {{domxref("CustomElementRegistry")}} مرتبط با این عنصر را برمی‌گرداند، یا اگر تنظیم نشده باشد `null` را برمی‌گرداند.
 
-An element's `customElementRegistry` is set when the element is created (for example, via {{domxref("Document.createElement()")}} with the `customElementRegistry` option, or when parsed in a context that has a scoped registry). Once set to a `CustomElementRegistry` object, it cannot be changed. The registry determines which [custom element](/en-US/docs/Web/API/Web_components/Using_custom_elements) definitions are used when the element is [upgraded](/en-US/docs/Web/API/CustomElementRegistry/upgrade).
+`customElementRegistry` یک عنصر زمانی تنظیم می‌شود که عنصر ایجاد می‌شود (مثلاً از طریق {{domxref("Document.createElement()")}} با گزینه `customElementRegistry`، یا زمانی که در زمینه‌ای که دارای یک ثبت‌نام محدوده‌دار (scoped registry) است تجزیه می‌شود). پس از تنظیم بر روی یک شیء `CustomElementRegistry`، قابل تغییر نیست. این ثبت‌نامه تعیین می‌کند که از کدام تعاریف [عنصر سفارشی](/en-US/docs/Web/API/Web_components/Using_custom_elements) هنگامی که عنصر [ارتقا می‌یابد](/en-US/docs/Web/API/CustomElementRegistry/upgrade) استفاده شود.
 
-## Value
+## مقدار
 
-A {{domxref("CustomElementRegistry")}} object, or `null`.
+یک شیء {{domxref("CustomElementRegistry")}}، یا `null`.
 
-## Examples
+## مثال‌ها
 
-### Accessing an element's custom element registry
+### دسترسی به ثبت‌نامه عنصر سفارشی یک عنصر
 
-This example creates a scoped registry, attaches it to a shadow root, and then reads back the `customElementRegistry` property from an element inside the shadow tree to confirm it matches the scoped registry.
+این مثال یک ثبت‌نامه محدوده‌دار ایجاد می‌کند، آن را به یک ریشه سایه (shadow root) متصل می‌کند و سپس خاصیت `customElementRegistry` را از یک عنصر داخل درخت سایه می‌خواند تا تأیید کند که با ثبت‌نامه محدوده‌دار مطابقت دارد.
 
 ```js
 const myRegistry = new CustomElementRegistry();
@@ -51,17 +45,17 @@ const el = shadow.querySelector("my-element");
 console.log(el.customElementRegistry === myRegistry); // true
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Document.customElementRegistry")}}
 - {{domxref("ShadowRoot.customElementRegistry")}}
 - {{domxref("CustomElementRegistry")}}
-- [Using custom elements](/en-US/docs/Web/API/Web_components/Using_custom_elements)
+- [استفاده از عناصر سفارشی](/en-US/docs/Web/API/Web_components/Using_custom_elements)
