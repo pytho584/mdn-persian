@@ -1,11 +1,5 @@
 ---
 title: "HTMLObjectElement: checkValidity() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/checkValidity"
-status: "needs-translation"
----
-
----
-title: "HTMLObjectElement: checkValidity() method"
 short-title: checkValidity()
 slug: Web/API/HTMLObjectElement/checkValidity
 page-type: web-api-instance-method
@@ -14,43 +8,44 @@ browser-compat: api.HTMLObjectElement.checkValidity
 
 {{APIRef("HTML DOM")}}
 
-The **`checkValidity()`** method of the {{domxref("HTMLObjectElement")}} interface checks if the element is valid, but always returns true because {{HTMLElement("object")}} elements are never candidates for [constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation).
+متد **`checkValidity()`** در رابط {{domxref("HTMLObjectElement")}} بررسی می‌کند که آیا عنصر معتبر است یا نه، اما همیشه `true` برمی‌گرداند، زیرا عناصر {{HTMLElement("object")}} هرگز کاندیدای [اعتبارسنجی محدودیت‌ها](/en-US/docs/Web/HTML/Guides/Constraint_validation) نیستند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 checkValidity()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-A boolean value, `true`.
+یک مقدار بولی، `true`.
 
-## Examples
+## مثال‌ها
 
-In the following example, calling `checkValidity()` returns `true`.
+در مثال زیر، فراخوانی `checkValidity()` مقدار `true` را برمی‌گرداند.
 
 ```js
 const element = document.getElementById("myObjectElement");
 console.log(element.checkValidity());
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLObjectElement.reportValidity()")}}
 - {{HTMLElement("object")}}
 - {{HTMLElement("form")}}
-- [Learn: Client-side form validation](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
-- [Guide: Constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation)
+- [یادگیری: اعتبارسنجی فرم در سمت کلاینت](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
+- [راهنما: اعتبارسنجی محدودیت‌ها](/en-US/docs/Web/HTML/Guides/Constraint_validation)
+```
