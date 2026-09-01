@@ -1,7 +1,5 @@
 ---
 title: "Geolocation: getCurrentPosition() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/getCurrentPosition"
-status: "needs-translation"
 ---
 
 ---
@@ -14,11 +12,9 @@ browser-compat: api.Geolocation.getCurrentPosition
 
 {{securecontext_header}}{{APIRef("Geolocation API")}}
 
-The **`getCurrentPosition()`** method of the {{domxref("Geolocation")}} interface is used to get the current position of the device.
+متد **`getCurrentPosition()`** از رابط {{domxref("Geolocation")}} برای دریافت موقعیت فعلی دستگاه استفاده می‌شود.
 
-Note that in addition to requiring a secure context this feature may be blocked by the [`geolocation`](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy/geolocation) `Permissions-Policy`, and also requires that explicit permission be granted by the user.
-If required, the user will be prompted when this method is called.
-The permission state can be queried using the `geolocation` user permission in the [Permissions API](/en-US/docs/Web/API/Permissions_API).
+توجه داشته باشید که علاوه بر نیاز به زمینهٔ امن (secure context)، این قابلیت ممکن است توسط [`geolocation`](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy/geolocation) از نوع `Permissions-Policy` مسدود شود و همچنین به اجازهٔ صریح کاربر نیاز دارد. در صورت لزوم، هنگام فراخوانی این متد از کاربر درخواست مجوز می‌شود. وضعیت مجوز را می‌توان با استفاده از مجوز کاربر `geolocation` در [Permissions API](/en-US/docs/Web/API/Permissions_API) پرس‌وجو کرد.
 
 ## Syntax
 
@@ -31,23 +27,21 @@ getCurrentPosition(success, error, options)
 ### Parameters
 
 - `success`
-  - : A callback function that takes a {{domxref("GeolocationPosition")}} object as its
-    sole input parameter.
+  - : یک تابع callback که یک شیء {{domxref("GeolocationPosition")}} را به‌عنوان تنها ورودی خود دریافت می‌کند.
 - `error` {{optional_inline}}
-  - : An optional callback function that takes a {{domxref("GeolocationPositionError")}}
-    object as its sole input parameter.
+  - : یک تابع callback اختیاری که یک شیء {{domxref("GeolocationPositionError")}} را به‌عنوان تنها ورودی خود دریافت می‌کند.
 - `options` {{optional_inline}}
-  - : An optional object including the following parameters:
+  - : یک شیء اختیاری شامل پارامترهای زیر:
     - `maximumAge` {{optional_inline}}
-      - : A positive `long` value indicating the maximum age in milliseconds of a possible cached position that is acceptable to return. If set to `0`, it means that the device cannot use a cached position and must attempt to retrieve the real current position. If set to {{jsxref("Infinity")}} the device must return a cached position regardless of its age. Default: `0`.
+      - : یک مقدار `long` مثبت که حداکثر سن (به میلی‌ثانیه) یک موقعیت ذخیره‌شده (cached) را تعیین می‌کند که بازگرداندن آن قابل قبول است. اگر روی `0` تنظیم شود، به این معنی است که دستگاه نمی‌تواند از موقعیت ذخیره‌شده استفاده کند و باید تلاش کند موقعیت واقعی فعلی را بازیابی کند. اگر روی {{jsxref("Infinity")}} تنظیم شود، دستگاه باید بدون توجه به سن موقعیت، موقعیت ذخیره‌شده را بازگرداند. مقدار پیش‌فرض: `0`.
     - `timeout` {{optional_inline}}
-      - : A positive `long` value representing the maximum length of time (in milliseconds) the device is allowed to take in order to return a position. The default value is {{jsxref("Infinity")}}, meaning that `getCurrentPosition()` won't return until the position is available.
+      - : یک مقدار `long` مثبت که حداکثر زمان مجاز (به میلی‌ثانیه) برای بازگرداندن موقعیت توسط دستگاه را نشان می‌دهد. مقدار پیش‌فرض {{jsxref("Infinity")}} است، به این معنی که `getCurrentPosition()` تا زمانی که موقعیت در دسترس نباشد، بازنمی‌گردد.
     - `enableHighAccuracy` {{optional_inline}}
-      - : A boolean value that indicates the application would like to receive the best possible results. If `true` and if the device is able to provide a more accurate position, it will do so. Note that this can result in slower response times or increased power consumption (with a GPS chip on a mobile device for example). On the other hand, if `false`, the device can take the liberty to save resources by responding more quickly and/or using less power. Default: `false`.
+      - : یک مقدار بولین (boolean) که نشان می‌دهد برنامه مایل است بهترین نتایج ممکن را دریافت کند. اگر `true` باشد و دستگاه بتواند موقعیت دقیق‌تری ارائه دهد، این کار را انجام می‌دهد. توجه داشته باشید که این امر می‌تواند به زمان پاسخ‌دهی کندتر یا مصرف انرژی بیشتر منجر شود (مثلاً با تراشه GPS در دستگاه همراه). از سوی دیگر، اگر `false` باشد، دستگاه می‌تواند با پاسخ‌دهی سریع‌تر و/یا مصرف توان کمتر، منابع را ذخیره کند. مقدار پیش‌فرض: `false`.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
 ## Examples
 
@@ -84,5 +78,5 @@ navigator.geolocation.getCurrentPosition(success, error, options);
 
 ## See also
 
-- [Using the Geolocation API](/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API)
+- [استفاده از Geolocation API](/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API)
 - {{domxref("Navigator.geolocation")}}
