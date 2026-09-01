@@ -1,7 +1,5 @@
 ---
 title: "DataTransferItem: getAsString() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DataTransferItem/getAsString"
-status: "needs-translation"
 ---
 
 ---
@@ -14,28 +12,28 @@ browser-compat: api.DataTransferItem.getAsString
 
 {{APIRef("HTML Drag and Drop API")}}
 
-The **`DataTransferItem.getAsString()`** method invokes the given callback with the drag data item's string data as the argument if the item's {{domxref("DataTransferItem.kind","kind")}} is a _Plain unicode string_ (i.e., `kind` is `string`).
+متد **`DataTransferItem.getAsString()`**، زمانی که {{domxref("DataTransferItem.kind","kind")}} آیتم یک _رشته‌ی ساده‌ی یونیکد_ است (یعنی `kind` برابر با `string`)، تابع بازخوانی داده‌شده را با داده رشته‌ای آیتم داده درگ به‌عنوان آرگومان فراخوانی می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 getAsString(callbackFn)
 ```
 
-### Parameters
+### پارامترها
 
 - `callbackFn`
-  - : A callback function that receives following arguments:
+  - : تابع بازخوانی که آرگومان‌های زیر را دریافت می‌کند:
     - `data`
-      - : The {{domxref("DataTransferItem")}}'s string data.
+      - : داده رشته‌ای {{domxref("DataTransferItem")}}.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-This example shows the use of the `getAsString()` method as an _inline function_ in a {{domxref("HTMLElement/drop_event", "drop")}} event handler.
+این مثال استفاده از متد `getAsString()` را به‌عنوان یک _تابع درون‌خطی_ در یک مدیریت‌کننده رویداد {{domxref("HTMLElement/drop_event", "drop")}} نشان می‌دهد.
 
 ```js
 function dropHandler(ev) {
@@ -62,14 +60,14 @@ function dropHandler(ev) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("DataTransfer.getData()")}}
