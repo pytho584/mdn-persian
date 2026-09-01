@@ -1,11 +1,5 @@
 ---
 title: "Event: bubbles property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Event/bubbles"
-status: "needs-translation"
----
-
----
-title: "Event: bubbles property"
 short-title: bubbles
 slug: Web/API/Event/bubbles
 page-type: web-api-instance-property
@@ -14,16 +8,16 @@ browser-compat: api.Event.bubbles
 
 {{APIRef("DOM")}}{{AvailableInWorkers}}
 
-The **`bubbles`** read-only property of the {{domxref("Event")}} interface indicates whether the event bubbles up through the DOM tree or not.
+خاصیت فقط-خواندنی **`bubbles`** از رابط {{domxref("Event")}} مشخص می‌کند که آیا رویداد در درخت DOM به بالا منتشر می‌شود یا خیر.
 
 > [!NOTE]
-> See [Event bubbling](/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling) for more information on bubbling.
+> برای اطلاعات بیشتر درباره انتشار رویداد به بالا، به [حباب زدن رویداد](/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling) مراجعه کنید.
 
-## Value
+## مقدار
 
-A boolean value, which is `true` if the event bubbles up through the DOM tree.
+یک مقدار بولی که اگر رویداد در درخت DOM به بالا منتشر شود، `true` است.
 
-## Example
+## مثال
 
 ```js
 function handleInput(e) {
@@ -37,16 +31,16 @@ function handleInput(e) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("Event.stopPropagation", "stopPropagation()")}} to prevent further propagation of the current event in the capturing and bubbling phases
-- {{domxref("Event.stopImmediatePropagation", "stopImmediatePropagation()")}} to not call any further listeners for the same event at the same level in the DOM
-- {{domxref("Event.preventDefault", "preventDefault()")}} to allow propagation to continue but to disallow the browser to perform its default action should no listeners handle the event
+- {{domxref("Event.stopPropagation", "stopPropagation()")}} برای جلوگیری از انتشار بیشتر رویداد جاری در فازهای ثبت و حباب
+- {{domxref("Event.stopImmediatePropagation", "stopImmediatePropagation()")}} برای فراخوانی نکردن هیچ شنونده دیگری برای همان رویداد در همان سطح از DOM
+- {{domxref("Event.preventDefault", "preventDefault()")}} برای اجازه دادن به ادامه انتشار اما جلوگیری از انجام عمل پیش‌فرض مرورگر در صورتی که هیچ شنونده‌ای رویداد را مدیریت نکند
