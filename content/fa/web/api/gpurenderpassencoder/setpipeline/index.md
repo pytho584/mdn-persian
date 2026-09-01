@@ -1,7 +1,7 @@
 ---
 title: "GPURenderPassEncoder: setPipeline() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder/setPipeline"
-status: "needs-translation"
+
 ---
 
 ---
@@ -14,8 +14,7 @@ browser-compat: api.GPURenderPassEncoder.setPipeline
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`setPipeline()`** method of the
-{{domxref("GPURenderPassEncoder")}} interface sets the {{domxref("GPURenderPipeline")}} to use for subsequent render pass commands.
+متد **`setPipeline()`** از رابط {{domxref("GPURenderPassEncoder")}}، {{domxref("GPURenderPipeline")}} مورد استفاده برای دستورات بعدی رندر پاس را تنظیم می‌کند.
 
 ## Syntax
 
@@ -26,22 +25,22 @@ setPipeline(pipeline)
 ### Parameters
 
 - `pipeline`
-  - : The {{domxref("GPURenderPipeline")}} to use for subsequent render pass commands.
+  - : {{domxref("GPURenderPipeline")}} که برای دستورات بعدی رندر پاس استفاده می‌شود.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
 ### Validation
 
-The following criteria must be met when calling **`setPipeline()`**, otherwise a {{domxref("GPUValidationError")}} is generated and the {{domxref("GPURenderPassEncoder")}} becomes invalid:
+هنگام فراخوانی **`setPipeline()`** باید معیارهای زیر برآورده شوند، در غیر این صورت یک {{domxref("GPUValidationError")}} ایجاد شده و {{domxref("GPURenderPassEncoder")}} نامعتبر می‌شود:
 
-- If the {{domxref("GPURenderPipeline")}} writes to the depth component of the depth/stencil attachment, `depthReadOnly` (as specified in the descriptor of the originating {{domxref("GPUCommandEncoder.beginRenderPass()")}} call) is `true`.
-- If the {{domxref("GPURenderPipeline")}} writes to the stencil component of the depth/stencil attachment, `stencilReadOnly` (as specified in the descriptor of the originating {{domxref("GPUCommandEncoder.beginRenderPass()")}} call) is `true`.
+- اگر {{domxref("GPURenderPipeline")}} در مؤلفه عمقِ depth/stencil attachment بنویسد، باید `depthReadOnly` (همان‌طور که در توصیف‌گر فراخوانی {{domxref("GPUCommandEncoder.beginRenderPass()")}} مشخص شده است) برابر با `true` باشد.
+- اگر {{domxref("GPURenderPipeline")}} در مؤلفه stencilِ depth/stencil attachment بنویسد، باید `stencilReadOnly` (همان‌طور که در توصیف‌گر فراخوانی {{domxref("GPUCommandEncoder.beginRenderPass()")}} مشخص شده است) برابر با `true` باشد.
 
 ## Examples
 
-In our [basic render demo](https://mdn.github.io/dom-examples/webgpu-render-demo/), several commands are recorded via a {{domxref("GPUCommandEncoder")}}. Most of these commands originate from the `GPURenderPassEncoder` created via {{domxref("GPUCommandEncoder.beginRenderPass()")}}. `setPipeline()` is called in an appropriate place to set the render pipeline.
+در [نمونه رندر پایه](https://mdn.github.io/dom-examples/webgpu-render-demo/) ما، چندین دستور از طریق یک {{domxref("GPUCommandEncoder")}} ثبت می‌شوند. بیشتر این دستورات از `GPURenderPassEncoder` که از طریق {{domxref("GPUCommandEncoder.beginRenderPass()")}} ایجاد شده است، سرچشمه می‌گیرند. `setPipeline()` در جای مناسب برای تنظیم پایپ‌لاین رندر فراخوانی می‌شود.
 
 ```js
 // …
@@ -90,4 +89,4 @@ device.queue.submit([commandEncoder.finish()]);
 
 ## See also
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
