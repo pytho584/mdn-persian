@@ -1,11 +1,5 @@
 ---
 title: "HTMLOutputElement: type property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLOutputElement/type"
-status: "needs-translation"
----
-
----
-title: "HTMLOutputElement: type property"
 short-title: type
 slug: Web/API/HTMLOutputElement/type
 page-type: web-api-instance-property
@@ -14,28 +8,28 @@ browser-compat: api.HTMLOutputElement.type
 
 {{ApiRef("HTML DOM")}}
 
-The **`type`** read-only property of the {{domxref("HTMLOutputElement")}} interface returns the string `"output"`.
+ویژگی فقط‌خواندنی **`type`** در رابط {{domxref("HTMLOutputElement")}} رشتهٔ `"output"` را بازمی‌گرداند.
 
-## Value
+## مقدار
 
-The string `"output"`.
+رشتهٔ `"output"`.
 
-## Example
+## مثال
 
 ```js
 const output = document.querySelector("output");
 console.log(output.type); // "output"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLOutputElement")}}
 - {{HTMLElement("output")}}
