@@ -1,11 +1,5 @@
 ---
 title: "HTMLScriptElement: blocking property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLScriptElement/blocking"
-status: "needs-translation"
----
-
----
-title: "HTMLScriptElement: blocking property"
 short-title: blocking
 slug: Web/API/HTMLScriptElement/blocking
 page-type: web-api-instance-property
@@ -14,13 +8,13 @@ browser-compat: api.HTMLScriptElement.blocking
 
 {{APIRef("HTML DOM")}}
 
-The read-only **`blocking`** property of the {{domxref("HTMLScriptElement")}} returns a live {{domxref("DOMTokenList")}} object containing the operations that should be blocked on the fetching of an external resource. It reflects the {{HTMLElement("script")}} element's [`blocking`](/en-US/docs/Web/HTML/Reference/Elements/script#blocking) content attribute.
+ویژگی فقط‌خواندنی **`blocking`** از {{domxref("HTMLScriptElement")}} یک شیء زندهٔ {{domxref("DOMTokenList")}} برمی‌گرداند که شامل عملیات‌هایی است که باید هنگام واکشی یک منبع خارجی مسدود شوند. این ویژگی، ویژگی محتوایی [`blocking`](/en-US/docs/Web/HTML/Reference/Elements/script#blocking) عنصر {{HTMLElement("script")}} را بازتاب می‌دهد.
 
 ## Value
 
-A live {{domxref("DOMTokenList")}} object.
+یک شیء زندهٔ {{domxref("DOMTokenList")}}.
 
-Although the `blocking` property itself is read-only in the sense that you can't replace the `DOMTokenList` object, you can still assign to the `blocking` property directly, which is equivalent to assigning to its {{domxref("DOMTokenList/value", "value")}} property. You can also modify the `DOMTokenList` object using the {{domxref("DOMTokenList/add", "add()")}}, {{domxref("DOMTokenList/remove", "remove()")}}, {{domxref("DOMTokenList/replace", "replace()")}}, and {{domxref("DOMTokenList/toggle", "toggle()")}} methods.
+اگرچه خود ویژگی `blocking` به این معنا فقط‌خواندنی است که نمی‌توانید شیء `DOMTokenList` را جایگزین کنید، همچنان می‌توانید مستقیماً به ویژگی `blocking` مقدار اختصاص دهید که معادل مقداردهی به ویژگی {{domxref("DOMTokenList/value", "value")}} آن است. همچنین می‌توانید شیء `DOMTokenList` را با استفاده از متدهای {{domxref("DOMTokenList/add", "add()")}}، {{domxref("DOMTokenList/remove", "remove()")}}، {{domxref("DOMTokenList/replace", "replace()")}} و {{domxref("DOMTokenList/toggle", "toggle()")}} تغییر دهید.
 
 ## Examples
 
