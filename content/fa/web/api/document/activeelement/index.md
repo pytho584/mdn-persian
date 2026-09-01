@@ -1,11 +1,5 @@
 ---
 title: "Document: activeElement property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/activeElement"
-status: "needs-translation"
----
-
----
-title: "Document: activeElement property"
 short-title: activeElement
 slug: Web/API/Document/activeElement
 page-type: web-api-instance-property
@@ -14,39 +8,39 @@ browser-compat: api.Document.activeElement
 
 {{APIRef("DOM")}}
 
-The **`activeElement`** read-only property of the {{domxref("Document")}} interface returns the {{domxref("Element")}} within the DOM that is receiving keyboard events such as {{domxref("Element/keydown_event", "keydown")}} and {{domxref("Element/keyup_event", "keyup")}}. This is usually analogous to the focused element.
+خاصیت فقط‌خواندنی **`activeElement`** از رابط {{domxref("Document")}}، عنصر {{domxref("Element")}}ای را درون DOM بازمی‌گرداند که رویدادهای صفحه‌کلید مانند {{domxref("Element/keydown_event", "keydown")}} و {{domxref("Element/keyup_event", "keyup")}} را دریافت می‌کند. این معمولاً معادل عنصر متمرکز (focused) است.
 
-Which elements are focusable varies depending on the platform and the browser's current configuration. For example, on Safari, following the behavior of macOS, elements that aren't text input elements are not focusable by default, unless the "Full Keyboard Access" setting is enabled in System Settings.
+اینکه کدام عناصر قابل تمرکز هستند، به پلتفرم و پیکربندی فعلی مرورگر بستگی دارد. برای مثال، در Safari با پیروی از رفتار macOS، عناصری که ورودی متن نیستند به‌طور پیش‌فرض قابل تمرکز نیستند، مگر اینکه گزینه «Full Keyboard Access» در تنظیمات سیستم فعال شده باشد.
 
-Typically a user can press the <kbd>Tab</kbd> key to move the focus around the page among focusable elements, and use keyboard gestures such as <kbd>Space</kbd> or <kbd>Enter</kbd> to simulate clicks on the focused element.
+معمولاً کاربر می‌تواند با فشردن کلید <kbd>Tab</kbd>، فوکوس را بین عناصر قابل تمرکز در صفحه جابه‌جا کند و با حرکات صفحه‌کلید مانند <kbd>Space</kbd> یا <kbd>Enter</kbd>، کلیک روی عنصر متمرکز را شبیه‌سازی کند.
 
 > [!NOTE]
-> Focus (which element is receiving user input events) is not the same thing as selection (the currently highlighted part of the document). You can get the current selection using {{domxref("window.getSelection()")}}.
+> فوکوس (اینکه کدام عنصر رویدادهای ورودی کاربر را دریافت می‌کند) با انتخاب (selection) (بخش برجسته‌شده فعلی سند) یکسان نیست. می‌توانید انتخاب فعلی را با استفاده از {{domxref("window.getSelection()")}} به دست آورید.
 
-## Value
+## مقدار
 
-The deepest {{domxref('Element')}} which currently has focus.
+عمیق‌ترین {{domxref('Element')}}ای که در حال حاضر فوکوس دارد.
 
-- If the focused element is within a shadow tree within the current document (for example, the focused element is inside an `iframe`, and the invoking `document` contains that iframe), then this will be the root element of that tree (in this example, that `iframe`).
-- If the focused element is within a document tree that's not descended from the current document (for example, the focused element is in the main document, and the invoking `document` is an embedded iframe), then this will be `null`.
-- If there's no focused element, this is the {{domxref("Document.body")}} or {{domxref("Document.documentElement")}}.
+- اگر عنصر متمرکز درون یک درخت سایه (shadow tree) درون سند فعلی باشد (مثلاً عنصر متمرکز داخل یک `iframe` است و `document` فراخوانی‌شده شامل آن iframe است)، آنگاه این مقدار ریشهٔ آن درخت خواهد بود (در این مثال، همان `iframe`).
+- اگر عنصر متمرکز درون یک درخت سند باشد که از سند فعلی منشعب نشده است (مثلاً عنصر متمرکز در سند اصلی است و `document` فراخوانی‌شده یک iframe توکار است)، آنگاه این مقدار `null` خواهد بود.
+- اگر هیچ عنصر متمرکزی وجود نداشته باشد، این مقدار {{domxref("Document.body")}} یا {{domxref("Document.documentElement")}} است.
 
-## Examples
+## مثال‌ها
 
 ### HTML
 
 ```html
-<p>Select some text from one of the text areas below:</p>
+<p>متن زیر را از یکی از جعبه‌های متنی زیر انتخاب کنید:</p>
 
 <form>
   <textarea name="ta-example-one" id="ta-example-one" rows="7" cols="40">
-This is Text Area One. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt, lorem a porttitor molestie, odio nibh iaculis libero, et accumsan nunc orci eu dui.</textarea>
+این جعبه متن شماره یک است. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt, lorem a porttitor molestie, odio nibh iaculis libero, et accumsan nunc orci eu dui.</textarea>
   <textarea name="ta-example-two" id="ta-example-two" rows="7" cols="40">
-This is Text Area Two. Fusce ullamcorper, nisl ac porttitor adipiscing, urna orci egestas libero, ut accumsan orci lacus laoreet diam. Morbi sed euismod diam.</textarea>
+این جعبه متن شماره دو است. Fusce ullamcorper, nisl ac porttitor adipiscing, urna orci egestas libero, ut accumsan orci lacus laoreet diam. Morbi sed euismod diam.</textarea>
 </form>
 
-<p>Active element ID: <em id="output-element"></em></p>
-<p>Selected text: <em id="output-text"></em></p>
+<p>شناسه عنصر فعال: <em id="output-element"></em></p>
+<p>متن انتخاب‌شده: <em id="output-text"></em></p>
 ```
 
 ### JavaScript
@@ -71,18 +65,18 @@ textarea1.addEventListener("mouseup", onMouseUp);
 textarea2.addEventListener("mouseup", onMouseUp);
 ```
 
-### Result
+### نتیجه
 
 {{ EmbedLiveSample('Examples', '400', '400') }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Document.hasFocus")}}
