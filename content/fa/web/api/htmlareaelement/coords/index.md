@@ -1,11 +1,5 @@
 ---
 title: "HTMLAreaElement: coords property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLAreaElement/coords"
-status: "needs-translation"
----
-
----
-title: "HTMLAreaElement: coords property"
 short-title: coords
 slug: Web/API/HTMLAreaElement/coords
 page-type: web-api-instance-property
@@ -14,21 +8,21 @@ browser-compat: api.HTMLAreaElement.coords
 
 {{APIRef("HTML DOM")}}
 
-The **`coords`** property of the {{DOMxRef("HTMLAreaElement")}} interface specifies the coordinates of the element's shape as a list of floating-point numbers. It reflects the {{htmlelement("area")}} element's [`coords`](/en-US/docs/Web/HTML/Reference/Elements/area#coords) attribute.
+ویژگی **`coords`** در رابط {{DOMxRef("HTMLAreaElement")}} مختصات شکل عنصر را بهصورت فهرستی از اعداد اعشاری مشخص میکند. این ویژگی بازتابی از ویژگی [`coords`](/en-US/docs/Web/HTML/Reference/Elements/area#coords) عنصر {{htmlelement("area")}} است.
 
-If the `shape` is `rect`, the shape is a rectangle and the string value's four comma separated numbers specify the coordinates of the top-left and bottom-right corners of the rectangle. For example, `0,0,200,20` defines the coordinates as `0,0`, which is the top-left of the image map, and `200,20`, which is 200px from the left and 20px from the top of the top-left corner of the image map.
+اگر `shape` برابر با `rect` باشد، شکل یک مستطیل است و چهار عدد جداشده با کاما در مقدار رشته، مختصات گوشهٔ بالا-چپ و پایین-راست مستطیل را مشخص میکنند. برای مثال، `0,0,200,20` مختصات را بهصورت `0,0` (گوشهٔ بالا-چپ نقشهٔ تصویری) و `200,20` (۲۰۰ پیکسل از چپ و ۲۰ پیکسل از بالای گوشهٔ بالا-چپ نقشهٔ تصویری) تعریف میکند.
 
-If the `shape` is `circle`, the three comma-separated numbers represent the x and y coordinates of the circle's center and the radius.
+اگر `shape` برابر با `circle` باشد، سه عدد جداشده با کاما، مختصات x و y مرکز دایره و شعاع آن را نشان میدهند.
 
-If the shape is `poly`, the string consists of at least 6 comma-separated numbers representing at least 3 pairs of coordinates that define the vertices of the polygon.
+اگر شکل `poly` باشد، رشته شامل حداقل ۶ عدد جداشده با کاما است که حداقل ۳ جفت مختصات را نشان میدهند و رئوس چندضلعی را تعریف میکنند.
 
-For all coordinates, the origin is the top-left corner of the {{htmlelement("map")}} element's image.
+برای همهٔ مختصات، مبدأ، گوشهٔ بالا-چپ تصویر عنصر {{htmlelement("map")}} است.
 
-## Value
+## مقدار
 
-A string; composed of a comma separated series of numbers.
+یک رشته؛ شامل یک سری اعداد جدا شده با کاما.
 
-## Examples
+## مثال‌ها
 
 ```js
 const areaElement = document.getElementById("circleArea");
@@ -36,15 +30,15 @@ console.log(areaElement.coords);
 areaElement.coords = "25,25,25";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{DOMXref("HTMLAreaElement.shape")}}
 - {{DOMXref("HTMLAreaElement.alt")}}
