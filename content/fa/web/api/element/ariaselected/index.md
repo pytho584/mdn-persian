@@ -1,11 +1,5 @@
 ---
 title: "Element: ariaSelected property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaSelected"
-status: "needs-translation"
----
-
----
-title: "Element: ariaSelected property"
 short-title: ariaSelected
 slug: Web/API/Element/ariaSelected
 page-type: web-api-instance-property
@@ -14,22 +8,22 @@ browser-compat: api.Element.ariaSelected
 
 {{APIRef("DOM")}}
 
-The **`ariaSelected`** property of the {{domxref("Element")}} interface reflects the value of the [`aria-selected`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-selected) attribute, which indicates the current "selected" state of elements that have a selected state.
+ویژگی **`ariaSelected`** در رابط {{domxref("Element")}} منعکس‌کنندهٔ مقدار ویژگی [`aria-selected`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-selected) است که وضعیت «انتخاب‌شده» کنونی عناصر دارای حالت انتخاب را نشان می‌دهد.
 
-## Value
+## مقدار
 
-A string with one of the following values:
+رشته‌ای با یکی از مقادیر زیر:
 
 - `"true"`
-  - : The item is selected.
+  - : مورد انتخاب شده است.
 - `"false"`
-  - : The item is not selected.
+  - : مورد انتخاب نشده است.
 - `"undefined"`
-  - : The item is not selectable.
+  - : مورد قابل انتخاب نیست.
 
-## Examples
+## مثال‌ها
 
-In this example the `aria-selected` attribute on the element with an ID of `tab-id` is set to "true". Using `ariaSelected` we update the value to "false".
+در این مثال، ویژگی `aria-selected` روی عنصری با شناسهٔ `tab-id` برابر با `"true"` قرار داده شده است. با استفاده از `ariaSelected`، مقدار را به `"false"` به‌روزرسانی می‌کنیم.
 
 ```html
 <button role="tab" aria-selected="true" aria-controls="tabpanel-id" id="tab-id">
@@ -44,14 +38,14 @@ el.ariaSelected = "false";
 console.log(el.ariaSelected); // false
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [ARIA: tab role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tab_role)
+- [نقش tab در ARIA](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tab_role)
