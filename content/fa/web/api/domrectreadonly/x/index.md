@@ -1,11 +1,5 @@
 ---
 title: "DOMRectReadOnly: x property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly/x"
-status: "needs-translation"
----
-
----
-title: "DOMRectReadOnly: x property"
 short-title: x
 slug: Web/API/DOMRectReadOnly/x
 page-type: web-api-instance-property
@@ -14,20 +8,20 @@ browser-compat: api.DOMRectReadOnly.x
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The **`x`** read-only property of the **`DOMRectReadOnly`** interface represents the x coordinate of the `DOMRect`'s origin.
+ویژگی فقط‌خواندنی **`x`** در رابط **`DOMRectReadOnly`**، مختصه x مبدأ `DOMRect` را نشان می‌دهد.
 
-## Value
+## مقدار
 
-A double.
+یک عدد از نوع double.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("DOMRect")}}
