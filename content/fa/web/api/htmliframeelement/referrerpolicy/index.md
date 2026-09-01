@@ -1,11 +1,5 @@
 ---
 title: "HTMLIFrameElement: referrerPolicy property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/referrerPolicy"
-status: "needs-translation"
----
-
----
-title: "HTMLIFrameElement: referrerPolicy property"
 short-title: referrerPolicy
 slug: Web/API/HTMLIFrameElement/referrerPolicy
 page-type: web-api-instance-property
@@ -14,47 +8,31 @@ browser-compat: api.HTMLIFrameElement.referrerPolicy
 
 {{APIRef("HTML DOM")}}
 
-The
-**`HTMLIFrameElement.referrerPolicy`**
-property reflects the HTML [`referrerpolicy`](/en-US/docs/Web/HTML/Reference/Elements/iframe#referrerpolicy) attribute of the
-{{HTMLElement("iframe")}} element defining which referrer is sent when fetching the
-resource.
+ویژگی **`HTMLIFrameElement.referrerPolicy`** منعکس‌کنندهٔ ویژگی HTML [`referrerpolicy`](/en-US/docs/Web/HTML/Reference/Elements/iframe#referrerpolicy) عنصر {{HTMLElement("iframe")}} است که مشخص می‌کند هنگام واکشی منبع، کدام ارجاع‌دهنده (referrer) ارسال شود.
 
-## Value
+## مقدار
 
 - `no-referrer`
-  - : The {{HTTPHeader("Referer")}} header will be omitted entirely. No referrer
-    information is sent along with requests.
+  - : هدر {{HTTPHeader("Referer")}} به‌طور کامل حذف خواهد شد. هیچ اطلاعات ارجاع‌دهنده‌ای همراه با درخواست‌ها ارسال نمی‌شود.
 - `no-referrer-when-downgrade`
-  - : The URL is sent
-    as a referrer when the protocol security level stays the same (HTTP→HTTP,
-    HTTPS→HTTPS), but isn't sent to a less secure destination (HTTPS→HTTP).
+  - : URL به‌عنوان ارجاع‌دهنده زمانی ارسال می‌شود که سطح امنیت پروتکل یکسان بماند (HTTP→HTTP، HTTPS→HTTPS)، اما به مقصدی با امنیت کمتر (HTTPS→HTTP) ارسال نمی‌شود.
 - `origin`
-  - : Only send the origin of the document as the referrer in all cases.
-    The document `https://example.com/page.html` will send the referrer
-    `https://example.com/`.
+  - : در همه موارد فقط مبدأ (origin) سند را به‌عنوان ارجاع‌دهنده ارسال کن. سند `https://example.com/page.html` ارجاع‌دهنده `https://example.com/` را ارسال خواهد کرد.
 - `origin-when-cross-origin`
-  - : Send a full URL when performing a same-origin request, but only send the origin of
-    the document for other cases.
+  - : هنگام انجام درخواست هم‌مبدأ (same-origin) یک URL کامل ارسال شود، اما در موارد دیگر فقط مبدأ سند ارسال شود.
 - `same-origin`
-  - : A referrer will be sent for [same-site origins](/en-US/docs/Web/Security/Defenses/Same-origin_policy), but
-    cross-origin requests will contain no referrer information.
+  - : برای مبدأهای هم‌سایت (same-site) یک ارجاع‌دهنده ارسال خواهد شد، اما درخواست‌های بین‌مبدأ (cross-origin) هیچ اطلاعات ارجاع‌دهنده‌ای نخواهند داشت.
 - `strict-origin`
-  - : Only send the origin of the document as the referrer when the protocol security
-    level stays the same (HTTPS→HTTPS), but don't send it to a less secure destination
-    (HTTPS→HTTP).
-- `strict-origin-when-cross-origin` (default)
-  - : This is the user agent's default behavior if no policy is specified. Send a full URL when performing a same-origin request, only send the origin when the
-    protocol security level stays the same (HTTPS→HTTPS), and send no header to a less
-    secure destination (HTTPS→HTTP).
+  - : فقط مبدأ سند را به‌عنوان ارجاع‌دهنده زمانی ارسال کن که سطح امنیت پروتکل یکسان بماند (HTTPS→HTTPS)، اما به مقصدی با امنیت کمتر (HTTPS→HTTP) ارسال نکن.
+- `strict-origin-when-cross-origin` (پیش‌فرض)
+  - : این رفتار پیش‌فرض عامل کاربر (user agent) است اگر هیچ خط‌مشی‌ای مشخص نشده باشد. هنگام انجام درخواست هم‌مبدأ یک URL کامل ارسال شود، فقط زمانی مبدأ ارسال شود که سطح امنیت پروتکل یکسان بماند (HTTPS→HTTPS)، و هیچ هدری به مقصد با امنیت کمتر (HTTPS→HTTP) ارسال نشود.
 - `unsafe-url`
-  - : Send a full URL when performing a same-origin or cross-origin request.
+  - : هنگام انجام درخواست هم‌مبدأ یا بین‌مبدأ یک URL کامل ارسال شود.
 
     > [!NOTE]
-    > This policy will leak origins and paths from TLS-protected resources
-    > to insecure origins. Carefully consider the impact of this setting.
+    > این خط‌مشی باعث نشت مبدأها و مسیرها از منابع محافظت‌شده با TLS به مبدأهای ناامن می‌شود. تأثیر این تنظیم را با دقت در نظر بگیرید.
 
-## Examples
+## مثال‌ها
 
 ```js
 const iframe = document.createElement("iframe");
@@ -64,16 +42,16 @@ const body = document.querySelector("body");
 body.appendChild(iframe); // Fetch the image using the complete URL as the referrer
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("HTMLAnchorElement.referrerPolicy")}},
-  {{domxref("HTMLAreaElement.referrerPolicy")}}, and
+- {{domxref("HTMLAnchorElement.referrerPolicy")}}،
+  {{domxref("HTMLAreaElement.referrerPolicy")}}، و
   {{domxref("HTMLAreaElement.referrerPolicy")}}.
