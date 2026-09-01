@@ -1,11 +1,5 @@
 ---
 title: "ElementInternals: labels property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/labels"
-status: "needs-translation"
----
-
----
-title: "ElementInternals: labels property"
 short-title: labels
 slug: Web/API/ElementInternals/labels
 page-type: web-api-instance-property
@@ -14,16 +8,16 @@ browser-compat: api.ElementInternals.labels
 
 {{APIRef("Web Components")}}
 
-The **`labels`** read-only property of the {{domxref("ElementInternals")}} interface returns the labels associated with the element.
+ویژگی فقط‌خواندنی **`labels`** از رابط {{domxref("ElementInternals")}}، برچسب‌های مرتبط با عنصر را بازمی‌گرداند.
 
-## Value
+## مقدار
 
-A {{domxref("NodeList")}} containing all of the label elements associated with this element.
+یک {{domxref("NodeList")}} شامل تمام عناصر برچسب (label) مرتبط با این عنصر.
 
-## Examples
+## مثال‌ها
 
-The following example shows a custom checkbox component with a {{HTMLElement("label")}} element linked to it.
-Printing the value of `labels` to the console returns a {{domxref("NodeList")}} with one entry, representing this label.
+مثال زیر یک مؤلفه چک‌باکس سفارشی را نشان می‌دهد که یک عنصر {{HTMLElement("label")}} به آن متصل شده است.
+چاپ مقدار `labels` در کنسول یک {{domxref("NodeList")}} با یک ورودی را بازمی‌گرداند که نمایانگر این برچسب است.
 
 ```html
 <form id="myForm">
@@ -37,10 +31,10 @@ let element = document.getElementById("custom-checkbox");
 console.log(element.internals_.label);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
