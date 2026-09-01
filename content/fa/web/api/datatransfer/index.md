@@ -1,10 +1,4 @@
 ---
-title: "DataTransfer"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer"
-status: "needs-translation"
----
-
----
 title: DataTransfer
 slug: Web/API/DataTransfer
 page-type: web-api-interface
@@ -13,48 +7,48 @@ browser-compat: api.DataTransfer
 
 {{APIRef("HTML Drag and Drop API")}}
 
-The **`DataTransfer`** object is used to hold any data transferred between contexts, such as a drag and drop operation, or clipboard read/write. It may hold one or more data items, each of one or more data types.
+شیء **`DataTransfer`** برای نگهداری هر داده‌ای که بین زمینه‌ها منتقل می‌شود، مانند یک عملیات کشیدن و رها کردن (drag and drop) یا خواندن/نوشتن کلیپ‌بورد، استفاده می‌شود. این شیء ممکن است یک یا چند آیتم داده را نگه دارد که هر یک از یک یا چند نوع داده تشکیل شده است.
 
-`DataTransfer` was primarily designed for the [HTML Drag and Drop API](/en-US/docs/Web/API/HTML_Drag_and_Drop_API), as the {{domxref("DragEvent.dataTransfer")}} property, and is still specified in the HTML drag-and-drop section, but it is now also used by other APIs, such as {{domxref("ClipboardEvent.clipboardData")}} and {{domxref("InputEvent.dataTransfer")}}. However, other APIs only use certain parts of its interface, ignoring properties such as `dropEffect`. Documentation of `DataTransfer` will primarily discuss its usage in drag-and-drop operations, and you should refer to the other APIs' documentation for usage of `DataTransfer` in those contexts.
+`DataTransfer` در ابتدا به‌عنوان ویژگی {{domxref("DragEvent.dataTransfer")}} برای [API کشیدن و رها کردن HTML](/en-US/docs/Web/API/HTML_Drag_and_Drop_API) طراحی شد و همچنان در بخش کشیدن و رها کردن HTML تعریف می‌شود، اما اکنون APIهای دیگری مانند {{domxref("ClipboardEvent.clipboardData")}} و {{domxref("InputEvent.dataTransfer")}} نیز از آن استفاده می‌کنند. با این حال، سایر APIها فقط از بخش‌های خاصی از رابط آن استفاده می‌کنند و ویژگی‌هایی مانند `dropEffect` را نادیده می‌گیرند. مستندات `DataTransfer` عمدتاً کاربرد آن را در عملیات کشیدن و رها کردن بررسی خواهند کرد؛ برای کاربرد `DataTransfer` در آن زمینه‌ها باید به مستندات سایر APIها مراجعه کنید.
 
-## Constructor
+## سازنده
 
 - {{domxref("DataTransfer.DataTransfer","DataTransfer()")}}
-  - : Creates and returns a new `DataTransfer` object.
+  - : یک شیء جدید `DataTransfer` ایجاد کرده و آن را برمی‌گرداند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("DataTransfer.dropEffect")}}
-  - : Gets the type of drag-and-drop operation currently selected or sets the operation to a new type. The value must be `none`, `copy`, `link` or `move`.
+  - : نوع عملیات کشیدن و رها کردن انتخاب‌شده را دریافت می‌کند یا عملیات را به نوع جدیدی تنظیم می‌کند. مقدار باید `none`، `copy`، `link` یا `move` باشد.
 - {{domxref("DataTransfer.effectAllowed")}}
-  - : Provides all of the types of operations that are possible. Must be one of `none`, `copy`, `copyLink`, `copyMove`, `link`, `linkMove`, `move`, `all` or `uninitialized`.
+  - : همه انواع عملیات‌های ممکن را فراهم می‌کند. باید یکی از مقادیر `none`، `copy`، `copyLink`، `copyMove`، `link`، `linkMove`، `move`، `all` یا `uninitialized` باشد.
 - {{domxref("DataTransfer.files")}} {{ReadOnlyInline}}
-  - : Contains a list of all the local files available on the data transfer. If the drag operation doesn't involve dragging files, this property is an empty list.
+  - : فهرستی از تمام فایل‌های محلی موجود در انتقال داده را در بر می‌گیرد. اگر عملیات کشیدن شامل کشیدن فایل‌ها نباشد، این ویژگی یک فهرست خالی است.
 - {{domxref("DataTransfer.items")}} {{ReadOnlyInline}}
-  - : Gives a {{domxref("DataTransferItemList")}} object which is a list of all of the drag data.
+  - : یک شیء {{domxref("DataTransferItemList")}} را فراهم می‌کند که فهرستی از تمام داده‌های کشیدن است.
 - {{domxref("DataTransfer.types")}} {{ReadOnlyInline}}
-  - : An array of strings giving the formats that were set in the {{domxref("HTMLElement/dragstart_event", "dragstart")}} event.
+  - : آرایه‌ای از رشته‌ها که قالب‌های تنظیم‌شده در رویداد {{domxref("HTMLElement/dragstart_event", "dragstart")}} را ارائه می‌دهد.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("DataTransfer.addElement()")}} {{experimental_inline}} {{non-standard_inline}}
-  - : Sets the drag source for the given element. This will be the element on which {{domxref("HTMLElement/drag_event", "drag")}} and {{domxref("HTMLElement/dragend_event", "dragend")}} events are fired, and not the default target (the node that was dragged). Firefox-specific.
+  - : منبع کشیدن را برای عنصر مشخص‌شده تنظیم می‌کند. این عنصر، عنصری خواهد بود که رویدادهای {{domxref("HTMLElement/drag_event", "drag")}} و {{domxref("HTMLElement/dragend_event", "dragend")}} روی آن فعال می‌شوند، نه هدف پیش‌فرض (گره‌ای که کشیده شده است). مخصوص فایرفاکس.
 - {{domxref("DataTransfer.clearData()")}}
-  - : Remove the data associated with a given type. The type argument is optional. If the type is empty or not specified, the data associated with all types is removed. If data for the specified type does not exist, or the data transfer contains no data, this method will have no effect.
+  - : داده‌های مرتبط با یک نوع مشخص را حذف می‌کند. آرگومان type اختیاری است. اگر type خالی یا مشخص نشده باشد، داده‌های مرتبط با همه انواع حذف می‌شوند. اگر داده‌های نوع مشخص‌شده وجود نداشته باشد یا انتقال داده حاوی داده‌ای نباشد، این روش هیچ تأثیری نخواهد داشت.
 - {{domxref("DataTransfer.getData()")}}
-  - : Retrieves the data for a given type, or an empty string if data for that type does not exist or the data transfer contains no data.
+  - : داده‌های یک نوع مشخص را بازیابی می‌کند، یا اگر داده‌های آن نوع وجود نداشته باشد یا انتقال داده حاوی داده‌ای نباشد، یک رشته خالی برمی‌گرداند.
 - {{domxref("DataTransfer.setData()")}}
-  - : Set the data for a given type. If data for the type does not exist, it is added at the end, such that the last item in the types list will be the new format. If data for the type already exists, the existing data is replaced in the same position.
+  - : داده‌های یک نوع مشخص را تنظیم می‌کند. اگر داده‌های آن نوع وجود نداشته باشد، در انتها اضافه می‌شود، به طوری که آخرین آیتم در فهرست types قالب جدید خواهد بود. اگر داده‌های آن نوع از قبل وجود داشته باشد، داده‌های موجود در همان موقعیت جایگزین می‌شوند.
 - {{domxref("DataTransfer.setDragImage()")}}
-  - : Set the image to be used for dragging if a custom one is desired.
+  - : تصویری را که برای کشیدن استفاده می‌شود تنظیم می‌کند، در صورتی که تصویر سفارشی مورد نظر باشد.
 
-## Examples
+## مثال‌ها
 
-Every method and property listed in this document has its own reference page and each reference page either directly includes an example of the interface or has a link to an example.
+هر روش و ویژگی فهرست‌شده در این سند، صفحه مرجع مخصوص به خود را دارد و هر صفحه مرجع یا مستقیماً شامل نمونه‌ای از این رابط است یا پیوندی به یک مثال دارد.
 
-### Reading the data in a paste or drop event
+### خواندن داده‌ها در رویداد جایگذاری یا رها کردن
 
-In the following example, we have a {{htmlelement("form")}} containing three different types of text inputs: a text {{htmlelement("input")}} element, a {{htmlelement("textarea")}} element, and a {{htmlelement("div")}} element with [`contenteditable`](/en-US/docs/Web/HTML/Reference/Global_attributes/contenteditable) set to `true`. The user can paste or drop text into any of these elements, and the data in the {{domxref("ClipboardEvent.clipboardData")}} or {{domxref("DragEvent.dataTransfer")}} object will be displayed.
+در مثال زیر، یک {{htmlelement("form")}} داریم که شامل سه نوع مختلف ورودی متنی است: یک عنصر {{htmlelement("input")}} متنی، یک عنصر {{htmlelement("textarea")}} و یک عنصر {{htmlelement("div")}} با ویژگی [`contenteditable`](/en-US/docs/Web/HTML/Reference/Global_attributes/contenteditable) که روی `true` تنظیم شده است. کاربر می‌تواند متن را در هر یک از این عناصر جایگذاری یا رها کند و داده‌های موجود در شیء {{domxref("ClipboardEvent.clipboardData")}} یا {{domxref("DragEvent.dataTransfer")}} نمایش داده خواهند شد.
 
 #### HTML
 
@@ -175,19 +169,19 @@ form.addEventListener("reset", () => {
 });
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Reading the data in a paste or drop event", "", 400, , , , , "allow-forms")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Drag and drop](/en-US/docs/Web/API/HTML_Drag_and_Drop_API)
 - [Drag Operations](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_operations)
