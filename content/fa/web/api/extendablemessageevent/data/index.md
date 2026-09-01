@@ -1,11 +1,5 @@
 ---
 title: "ExtendableMessageEvent: data property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ExtendableMessageEvent/data"
-status: "needs-translation"
----
-
----
-title: "ExtendableMessageEvent: data property"
 short-title: data
 slug: Web/API/ExtendableMessageEvent/data
 page-type: web-api-instance-property
@@ -14,20 +8,15 @@ browser-compat: api.ExtendableMessageEvent.data
 
 {{APIRef("Service Workers API")}}{{AvailableInWorkers("service")}}
 
-The **`data`** read-only property of the
-{{domxref("ExtendableMessageEvent")}} interface returns the event's data. It can be any
-data type.
+ویژگی فقط خواندنی **`data`** در رابط {{domxref("ExtendableMessageEvent")}} داده‌های رویداد را برمی‌گرداند. این ویژگی می‌تواند از هر نوع داده‌ای باشد.
 
-## Value
+## مقدار
 
-Any data type.
+هر نوع داده‌ای.
 
-## Examples
+## مثال‌ها
 
-When the following code is used inside a service worker to respond to a push messages
-by sending the data received via {{domxref("PushMessageData")}} to the main context via
-a [channel message](/en-US/docs/Web/API/Channel_Messaging_API), the event
-object of `onmessage` will be an `ExtendableMessageEvent`.
+هنگامی که از کد زیر درون یک سرویس‌ورکر برای پاسخ به پیام‌های پوش با ارسال داده‌های دریافت‌شده از طریق {{domxref("PushMessageData")}} به زمینه‌ی اصلی از طریق یک [پیام کانالی](/en-US/docs/Web/API/Channel_Messaging_API) استفاده می‌شود، شیء رویداد `onmessage` یک `ExtendableMessageEvent` خواهد بود.
 
 ```js
 let port;
@@ -48,16 +37,16 @@ self.onmessage = (e) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Using Service Workers](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
-- [Service workers basic code example](https://github.com/mdn/dom-examples/tree/main/service-worker/simple-service-worker)
-- [Channel Messaging](/en-US/docs/Web/API/Channel_Messaging_API)
+- [استفاده از Service Workers](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
+- [مثال کد پایه سرویس‌ورکرها](https://github.com/mdn/dom-examples/tree/main/service-worker/simple-service-worker)
+- [پیام‌رسانی کانالی](/en-US/docs/Web/API/Channel_Messaging_API)
