@@ -1,11 +1,5 @@
 ---
 title: "HTMLTableElement: tFoot property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/tFoot"
-status: "needs-translation"
----
-
----
-title: "HTMLTableElement: tFoot property"
 short-title: tFoot
 slug: Web/API/HTMLTableElement/tFoot
 page-type: web-api-instance-property
@@ -14,15 +8,13 @@ browser-compat: api.HTMLTableElement.tFoot
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLTableElement.tFoot`** property represents the
-{{HTMLElement("tfoot")}} element of a {{HTMLElement("table")}}. Its value will be
-`null` if there is no such element.
+ویژگی **`HTMLTableElement.tFoot`** عنصر {{HTMLElement("tfoot")}} متعلق به یک {{HTMLElement("table")}} را نشان می‌دهد. اگر چنین عنصری وجود نداشته باشد، مقدار آن `null` خواهد بود.
 
-## Value
+## مقدار
 
-A {{HTMLElement("tfoot")}} element or `null`.
+یک عنصر {{HTMLElement("tfoot")}} یا `null`.
 
-## Examples
+## مثال‌ها
 
 ```js
 if (table.tFoot === myFoot) {
@@ -30,14 +22,14 @@ if (table.tFoot === myFoot) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface implementing this property: {{domxref("HTMLTableElement")}}.
+- رابطی که این ویژگی را پیاده‌سازی می‌کند: {{domxref("HTMLTableElement")}}.
