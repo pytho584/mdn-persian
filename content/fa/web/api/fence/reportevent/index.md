@@ -1,11 +1,5 @@
 ---
 title: "Fence: reportEvent() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Fence/reportEvent"
-status: "needs-translation"
----
-
----
-title: "Fence: reportEvent() method"
 short-title: reportEvent()
 slug: Web/API/Fence/reportEvent
 page-type: web-api-instance-method
@@ -16,11 +10,10 @@ browser-compat: api.Fence.reportEvent
 
 {{SeeCompatTable}}{{APIRef("Fenced Frame API")}}
 
-The **`reportEvent()`** method of the
-{{domxref("Fence")}} interface triggers the submission of report data via a [beacon](/en-US/docs/Web/API/Beacon_API) to one or more specific URLs registered via the {{domxref("InterestGroupReportingScriptRunnerGlobalScope.registerAdBeacon", "registerAdBeacon()")}} method of the [Protected Audience API](https://privacysandbox.google.com/private-advertising/protected-audience), for the purpose of collecting ad auction results.
+متد **`reportEvent()`** از رابط {{domxref("Fence")}} باعث ارسال داده‌های گزارش از طریق یک [beacon](/en-US/docs/Web/API/Beacon_API) به یک یا چند URL مشخص می‌شود که از طریق متد {{domxref("InterestGroupReportingScriptRunnerGlobalScope.registerAdBeacon", "registerAdBeacon()")}} از [Protected Audience API](https://privacysandbox.google.com/private-advertising/protected-audience) ثبت شده‌اند، به منظور جمع‌آوری نتایج حراج تبلیغات.
 
 > [!NOTE]
-> {{domxref("Fence.setReportEventDataForAutomaticBeacons", "setReportEventDataForAutomaticBeacons()")}} provides similar report data submission, except in that case the submission is triggered via a navigation rather than by an explicit method call.
+> {{domxref("Fence.setReportEventDataForAutomaticBeacons", "setReportEventDataForAutomaticBeacons()")}} ارسال داده‌های گزارش مشابهی را ارائه می‌دهد، با این تفاوت که در آن حالت ارسال به جای فراخوانی صریح متد، از طریق یک پیمایش (navigation) انجام می‌شود.
 
 ## Syntax
 
@@ -31,24 +24,24 @@ reportEvent(event)
 ### Parameters
 
 - `event`
-  - : An object or string representing the data to send.
-    - An object value defines a specific report event that you want to send. The required properties are as follows:
+  - : یک شیء یا رشته که داده‌های ارسالی را مشخص می‌کند.
+    - یک مقدار شیء، یک رویداد گزارش خاص را تعریف می‌کند که می‌خواهید ارسال کنید. ویژگی‌های مورد نیاز به شرح زیر است:
       - `eventType`
-        - : A string representing the type of event that is being reported — for example you might be interested in how many times an ad is clicked on. This string can be any relevant event name (for example [`click`](/en-US/docs/Web/API/Element/click_event)). This needs to match the event type specified in the associated {{domxref("InterestGroupReportingScriptRunnerGlobalScope.registerAdBeacon", "registerAdBeacon()")}} call in a [Protected Audience API](https://privacysandbox.google.com/private-advertising/protected-audience) worklet.
+        - : رشته‌ای که نوع رویداد گزارش‌شده را مشخص می‌کند – برای مثال ممکن است به تعداد دفعات کلیک روی یک آگهی علاقه‌مند باشید. این رشته می‌تواند هر نام رویداد مرتبطی باشد (مانند [`click`](/en-US/docs/Web/API/Element/click_event)). این مقدار باید با نوع رویداد مشخص‌شده در فراخوانی {{domxref("InterestGroupReportingScriptRunnerGlobalScope.registerAdBeacon", "registerAdBeacon()")}} در یک worklet از [Protected Audience API](https://privacysandbox.google.com/private-advertising/protected-audience) مطابقت داشته باشد.
       - `eventData`
-        - : A string representing the data to be sent.
+        - : رشته‌ای که داده‌های ارسالی را نشان می‌دهد.
       - `destination`
-        - : An array containing one or more enumerated values representing destination types. These are the involved parties that will receive the data to their registered URLs (i.e., via {{domxref("InterestGroupReportingScriptRunnerGlobalScope.registerAdBeacon", "registerAdBeacon()")}}). The possible values are:
-          - `"buyer"`: The bidder in the ad auction.
-          - `"seller"`: The top-level seller running the ad auction.
-          - `"component-seller"`: The seller for a component auction in a multi-level auction.
-          - `"direct-seller"`: The seller that directly ran the auction the buyer bid in. If the ad was a single-level auction, the value used will be `"seller"`. If the ad was a multi-level auction, the value used will be `"component-seller"`.
-          - `"shared-storage-select-url"`: A [Shared Storage API](https://privacysandbox.google.com/private-advertising/shared-storage) storage location, as defined in a {{domxref("WindowSharedStorage.selectURL", "Window.sharedStorage.selectURL()")}} method call.
-    - A string value represents an `eventType`, for example `"click"` (see the earlier definition of `eventType`). When an `eventType` string is passed as the value of `reportEvent()`, it triggers all Private Aggregation contributions that were made conditional on that event type (for example via {{domxref("PrivateAggregation.contributeToHistogramOnEvent()")}}) to be sent.
+        - : آرایه‌ای شامل یک یا چند مقدار شمارشی که انواع مقصد را مشخص می‌کند. این‌ها طرف‌های درگیر هستند که داده‌ها را به URLهای ثبت‌شده خود (یعنی از طریق {{domxref("InterestGroupReportingScriptRunnerGlobalScope.registerAdBeacon", "registerAdBeacon()")}}) دریافت می‌کنند. مقادیر ممکن عبارتند از:
+          - `"buyer"`: پیشنهاددهنده در حراج تبلیغات.
+          - `"seller"`: فروشنده سطح بالا که حراج تبلیغات را اجرا می‌کند.
+          - `"component-seller"`: فروشنده یک حراج جزء در یک حراج چندسطحی.
+          - `"direct-seller"`: فروشنده‌ای که مستقیماً حراجی را که خریدار در آن پیشنهاد داده اجرا کرده است. اگر آگهی مربوط به یک حراج تک‌سطحی باشد، مقدار استفاده‌شده `"seller"` خواهد بود. اگر آگهی مربوط به یک حراج چندسطحی باشد، مقدار استفاده‌شده `"component-seller"` خواهد بود.
+          - `"shared-storage-select-url"`: یک مکان ذخیره‌سازی از [Shared Storage API](https://privacysandbox.google.com/private-advertising/shared-storage) که در فراخوانی متد {{domxref("WindowSharedStorage.selectURL", "Window.sharedStorage.selectURL()")}} تعریف شده است.
+    - یک مقدار رشته‌ای یک `eventType` را نشان می‌دهد، برای مثال `"click"` (به تعریف قبلی `eventType` مراجعه کنید). هنگامی که یک رشته `eventType` به عنوان مقدار `reportEvent()` ارسال می‌شود، تمام مشارکت‌های Private Aggregation که به آن نوع رویداد وابسته شده‌اند (مثلاً از طریق {{domxref("PrivateAggregation.contributeToHistogramOnEvent()")}}) را برای ارسال فعال می‌کند.
 
 ### Return value
 
-None (`Undefined`).
+هیچ‌کدام (`Undefined`).
 
 ## Examples
 
