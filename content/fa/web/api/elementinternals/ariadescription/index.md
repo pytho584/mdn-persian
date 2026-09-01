@@ -1,11 +1,5 @@
 ---
 title: "ElementInternals: ariaDescription property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/ariaDescription"
-status: "needs-translation"
----
-
----
-title: "ElementInternals: ariaDescription property"
 short-title: ariaDescription
 slug: Web/API/ElementInternals/ariaDescription
 page-type: web-api-instance-property
@@ -14,18 +8,18 @@ browser-compat: api.ElementInternals.ariaDescription
 
 {{APIRef("Web Components")}}
 
-The **`ariaDescription`** property of the {{domxref("ElementInternals")}} interface reflects the value of the [`aria-description`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-description) attribute, which defines a string value that describes or annotates the current element.
+ویژگی **`ariaDescription`** در رابط {{domxref("ElementInternals")}} مقدار ویژگی [`aria-description`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-description) را بازتاب می‌دهد؛ ویژگی‌ای که یک رشته را تعریف می‌کند که عنصر فعلی را توصیف یا توضیح می‌دهد.
 
 > [!NOTE]
-> Setting aria attributes on `ElementInternals` allows default semantics to be defined on a custom element. These may be overwritten by author-defined attributes, but ensure that default semantics are retained should the author delete those attributes, or fail to add them at all. For more information see the [Accessibility Object Model explainer](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object).
+> تنظیم ویژگی‌های aria روی `ElementInternals` امکان تعریف معناشناسی پیش‌فرض را روی یک عنصر سفارشی فراهم می‌کند. این مقادیر ممکن است توسط ویژگی‌های تعریف‌شده توسط نویسنده بازنویسی شوند، اما تضمین می‌کنند که در صورت حذف آن ویژگی‌ها توسط نویسنده یا عدم افزودن آن‌ها، معناشناسی پیش‌فرض حفظ شود. برای اطلاعات بیشتر به [توضیح مدل شیء دسترس‌پذیری](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object) مراجعه کنید.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
-In this example the value of `ariaDescription` is set to "A description of this widget".
+در این مثال، مقدار `ariaDescription` روی «A description of this widget» تنظیم شده است.
 
 ```js
 class CustomControl extends HTMLElement {
@@ -38,10 +32,10 @@ class CustomControl extends HTMLElement {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
