@@ -1,11 +1,5 @@
 ---
 title: "Element: animationiteration event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/animationiteration_event"
-status: "needs-translation"
----
-
----
-title: "Element: animationiteration event"
 short-title: animationiteration
 slug: Web/API/Element/animationiteration_event
 page-type: web-api-event
@@ -14,11 +8,11 @@ browser-compat: api.Element.animationiteration_event
 
 {{APIRef("Web Animations")}}
 
-The **`animationiteration`** event is fired when an iteration of a [CSS Animation](/en-US/docs/Web/CSS/Guides/Animations) ends, and another one begins. This event does not occur at the same time as the {{domxref("Element/animationend_event", "animationend")}} event, and therefore does not occur for animations with an `animation-iteration-count` of one.
+رویداد **`animationiteration`** زمانی رخ می‌دهد که یک تکرار از [پویانمایی CSS](/en-US/docs/Web/CSS/Guides/Animations) به پایان برسد و تکرار دیگری آغاز شود. این رویداد همزمان با رویداد {{domxref("Element/animationend_event", "animationend")}} رخ نمی‌دهد و بنابراین برای پویانمایی‌هایی که `animation-iteration-count` آن‌ها برابر با یک است، رخ نمی‌دهد.
 
 ## Syntax
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای استفاده از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی مدیریت‌کنندهٔ رویداد را تنظیم کنید.
 
 ```js-nolint
 addEventListener("animationiteration", (event) => { })
@@ -28,13 +22,13 @@ onanimationiteration = (event) => { }
 
 ## Event type
 
-An {{domxref("AnimationEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("AnimationEvent")}}. از {{domxref("Event")}} به ارث می‌رسد.
 
 {{InheritanceDiagram("AnimationEvent")}}
 
 ## Examples
 
-This code uses `animationiteration` to keep track of the number of iterations an animation has completed:
+این کد از `animationiteration` برای پیگیری تعداد تکرارهای انجام‌شدهٔ یک پویانمایی استفاده می‌کند:
 
 ```js
 const animated = document.querySelector(".animated");
@@ -47,7 +41,7 @@ animated.addEventListener("animationiteration", () => {
 });
 ```
 
-The same, but using the `onanimationiteration` event handler property:
+همین کار، اما با استفاده از ویژگی مدیریت‌کنندهٔ رویداد `onanimationiteration`:
 
 ```js
 const animated = document.querySelector(".animated");
@@ -60,7 +54,7 @@ animated.onanimationiteration = () => {
 };
 ```
 
-### Live example
+### مثال زنده
 
 #### HTML
 
@@ -147,7 +141,7 @@ applyAnimation.addEventListener("click", () => {
 });
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Live_example', '100%', '150px') }}
 
@@ -161,7 +155,7 @@ applyAnimation.addEventListener("click", () => {
 
 ## See also
 
-- [CSS Animations](/en-US/docs/Web/CSS/Guides/Animations)
-- [Using CSS Animations](/en-US/docs/Web/CSS/Guides/Animations/Using)
+- [پویانمایی‌های CSS](/en-US/docs/Web/CSS/Guides/Animations)
+- [استفاده از پویانمایی‌های CSS](/en-US/docs/Web/CSS/Guides/Animations/Using)
 - {{domxref("AnimationEvent")}}
-- Related events: {{domxref("Element/animationstart_event", "animationstart")}}, {{domxref("Element/animationend_event", "animationend")}}, {{domxref("Element/animationcancel_event", "animationcancel")}}
+- رویدادهای مرتبط: {{domxref("Element/animationstart_event", "animationstart")}}، {{domxref("Element/animationend_event", "animationend")}}، {{domxref("Element/animationcancel_event", "animationcancel")}}
