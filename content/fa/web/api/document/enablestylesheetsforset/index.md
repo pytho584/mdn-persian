@@ -1,25 +1,10 @@
 ---
 title: "Document: enableStyleSheetsForSet() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/enableStyleSheetsForSet"
-status: "needs-translation"
----
-
----
-title: "Document: enableStyleSheetsForSet() method"
-short-title: enableStyleSheetsForSet()
-slug: Web/API/Document/enableStyleSheetsForSet
-page-type: web-api-instance-method
-status:
-  - deprecated
-  - non-standard
-browser-compat: api.Document.enableStyleSheetsForSet
 ---
 
 {{APIRef("DOM")}}{{deprecated_header}}{{Non-standard_header}}
 
-Enables the style sheets matching the specified name in the current style sheet set,
-and disables all other style sheets (except those without a title, which are always
-enabled).
+برگه‌های سبک (style sheets) مطابق با نام مشخص‌شده در مجموعه‌ی برگه‌های سبک فعلی را فعال می‌کند و تمام برگه‌های سبک دیگر را غیرفعال می‌کند (به جز آن‌هایی که عنوان ندارند، که همیشه فعال هستند).
 
 ## Syntax
 
@@ -30,25 +15,18 @@ enableStyleSheetsForSet(name)
 ### Parameters
 
 - `name`
-  - : The name of the style sheets to enable. All style sheets with a title that match
-    this name will be enabled, while all others that have a title will be disabled.
-    Specify an empty string for the _name_ parameter to disable all alternate and
-    preferred style sheets (but not the persistent style sheets; that is, those with no
-    `title` attribute).
+  - : نام برگه‌های سبکی که باید فعال شوند. تمام برگه‌های سبکی که عنوانی دارند و با این نام مطابقت دارند فعال می‌شوند، در حالی که سایر برگه‌هایی که عنوان دارند غیرفعال می‌شوند. برای غیرفعال کردن تمام برگه‌های سبک جایگزین و ترجیحی (اما نه برگه‌های سبک پایدار؛ یعنی آن‌هایی که ویژگی `title` ندارند)، یک رشته‌ی خالی برای پارامتر _name_ مشخص کنید.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
 ## Notes
 
-- Title matches are case-sensitive.
-- Calling this method with a `null` _name_ has no effect; if you
-  want to disable all alternate and preferred style sheets, you **must**
-  pass "", the empty string.
-- Stylesheets that don't have a title are never affected by this method.
-- This method never affects the values of {{domxref("document.lastStyleSheetSet")}} or
-  {{domxref("document.preferredStyleSheetSet")}}.
+- تطابق عنوان‌ها به حروف بزرگ و کوچک حساس است.
+- فراخوانی این متد با _name_ برابر با `null` اثری ندارد؛ اگر می‌خواهید تمام برگه‌های سبک جایگزین و ترجیحی را غیرفعال کنید، **باید** رشته‌ی خالی "" را ارسال کنید.
+- برگه‌های سبکی که عنوان ندارند، هرگز تحت تأثیر این متد قرار نمی‌گیرند.
+- این متد هرگز بر مقادیر {{domxref("document.lastStyleSheetSet")}} یا {{domxref("document.preferredStyleSheetSet")}} تأثیر نمی‌گذارد.
 
 ## Examples
 
@@ -58,7 +36,7 @@ document.enableStyleSheetsForSet("Some style sheet set name");
 
 ## Specifications
 
-Not part of any specification.
+بخشی از هیچ مشخصاتی نیست.
 
 ## Browser compatibility
 
