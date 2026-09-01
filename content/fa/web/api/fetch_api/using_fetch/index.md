@@ -1,26 +1,20 @@
 ---
-title: "Using the Fetch API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch"
-status: "needs-translation"
----
-
----
-title: Using the Fetch API
+title: "استفاده از Fetch API"
 slug: Web/API/Fetch_API/Using_Fetch
 page-type: guide
 ---
 
 {{DefaultAPISidebar("Fetch API")}}
 
-The [Fetch API](/en-US/docs/Web/API/Fetch_API) provides a JavaScript interface for making HTTP requests and processing the responses.
+[Fetch API](/en-US/docs/Web/API/Fetch_API) یک رابط جاوااسکریپتی برای ارسال درخواست‌های HTTP و پردازش پاسخ‌ها فراهم می‌کند.
 
-Fetch is the modern replacement for {{domxref("XMLHttpRequest")}}: unlike `XMLHttpRequest`, which uses callbacks, Fetch is promise-based and is integrated with features of the modern web such as [service workers](/en-US/docs/Web/API/Service_Worker_API) and [Cross-Origin Resource Sharing (CORS)](/en-US/docs/Web/HTTP/Guides/CORS).
+Fetch جایگزین مدرن {{domxref("XMLHttpRequest")}} است: برخلاف `XMLHttpRequest` که از callback استفاده می‌کند، Fetch مبتنی بر Promise بوده و با ویژگی‌های وب مدرن مانند [service workerها](/en-US/docs/Web/API/Service_Worker_API) و [اشتراک منابع بین‌منشأ (CORS)](/en-US/docs/Web/HTTP/Guides/CORS) یکپارچه شده است.
 
-With the Fetch API, you make a request by calling {{domxref("Window/fetch", "fetch()")}}, which is available as a global function in both {{domxref("Window", "window")}} and {{domxref("WorkerGlobalScope", "worker")}} contexts. You pass it a {{domxref("Request")}} object or a string containing the URL to fetch, along with an optional argument to configure the request.
+با Fetch API، با فراخوانی {{domxref("Window/fetch", "fetch()")}} که به عنوان یک تابع سراسری در هر دو زمینه {{domxref("Window", "window")}} و {{domxref("WorkerGlobalScope", "worker")}} در دسترس است، یک درخواست ارسال می‌کنید. شما یک شیء {{domxref("Request")}} یا یک رشته حاوی URL مورد نظر برای واکشی را به همراه یک آرگومان اختیاری برای پیکربندی درخواست به آن پاس می‌دهید.
 
-The `fetch()` function returns a {{jsxref("Promise")}} which is fulfilled with a {{domxref("Response")}} object representing the server's response. You can then check the request status and extract the body of the response in various formats, including text and JSON, by calling the appropriate method on the response.
+تابع `fetch()` یک {{jsxref("Promise")}} برمی‌گرداند که با یک شیء {{domxref("Response")}} نشان‌دهنده پاسخ سرور، fulfilled می‌شود. سپس می‌توانید وضعیت درخواست را بررسی کرده و بدنه پاسخ را در قالب‌های مختلف از جمله متن و JSON با فراخوانی متد مناسب روی پاسخ استخراج کنید.
 
-Here's a minimal function that uses `fetch()` to retrieve some JSON data from a server:
+در ادامه یک تابع حداقلی که از `fetch()` برای دریافت داده‌های JSON از یک سرور استفاده می‌کند آمده است:
 
 ```js
 async function getData() {
@@ -39,29 +33,29 @@ async function getData() {
 }
 ```
 
-We declare a string containing the URL and then call `fetch()`, passing the URL with no extra options.
+ما یک رشته حاوی URL را اعلام کرده و سپس `fetch()` را با ارسال URL بدون گزینه اضافی فراخوانی می‌کنیم.
 
-The `fetch()` function will reject the promise on some errors, but not if the server responds with an error status like {{httpstatus("404")}}: so we also check the response status and throw if it is not OK.
+تابع `fetch()` در برخی خطاها Promise را رد می‌کند، اما اگر سرور با یک وضعیت خطا مانند {{httpstatus("404")}} پاسخ دهد این کار را نمی‌کند: بنابراین ما وضعیت پاسخ را نیز بررسی کرده و در صورت عدم OK بودن، خطا پرتاب می‌کنیم.
 
-Otherwise, we fetch the response body content as {{glossary("JSON")}} by calling the {{domxref("Response.json()", "json()")}} method of `Response`, and log one of its values. Note that like `fetch()` itself, `json()` is asynchronous, as are all the other methods to access the response body content.
+در غیر این صورت، محتوای بدنه پاسخ را به صورت {{glossary("JSON")}} با فراخوانی متد {{domxref("Response.json()", "json()")}} از `Response` دریافت کرده و یکی از مقادیر آن را ثبت می‌کنیم. توجه داشته باشید که مانند خود `fetch()`، `json()` نیز ناهمگام است، همانند سایر متدهای دسترسی به محتوای بدنه پاسخ.
 
-In the rest of this page we'll look in more detail at the different stages of this process.
+در ادامه این صفحه، مراحل مختلف این فرآیند را با جزئیات بیشتری بررسی خواهیم کرد.
 
-## Making a request
+## ارسال یک درخواست
 
-To make a request, call `fetch()`, passing in:
+برای ارسال یک درخواست، `fetch()` را با ارسال موارد زیر فراخوانی کنید:
 
-1. a definition of the resource to fetch. This can be any one of:
-   - a string containing the URL
-   - an object, such as an instance of {{domxref("URL")}}, which has a {{glossary("stringifier")}} that produces a string containing the URL
-   - a {{domxref("Request")}} instance
-2. optionally, an object containing options to configure the request.
+1. یک تعریف از منبعی که باید واکشی شود. این می‌تواند یکی از موارد زیر باشد:
+   - یک رشته حاوی URL
+   - یک شیء، مانند نمونه‌ای از {{domxref("URL")}}، که دارای یک {{glossary("stringifier")}} است که رشته‌ای حاوی URL تولید می‌کند
+   - یک نمونه {{domxref("Request")}}
+2. به صورت اختیاری، یک شیء حاوی گزینه‌هایی برای پیکربندی درخواست.
 
-In this section we'll look at some of the most commonly-used options. To read about all the options that can be given, see the [`fetch()`](/en-US/docs/Web/API/Window/fetch) reference page.
+در این بخش، برخی از پرکاربردترین گزینه‌ها را بررسی می‌کنیم. برای مطالعه تمام گزینه‌های قابل ارائه، به صفحه مرجع [`fetch()`](/en-US/docs/Web/API/Window/fetch) مراجعه کنید.
 
-### Setting the method
+### تنظیم متد
 
-By default, `fetch()` makes a {{httpmethod("GET")}} request, but you can use the `method` option to use a different [request method](/en-US/docs/Web/HTTP/Reference/Methods):
+به طور پیش‌فرض، `fetch()` یک درخواست {{httpmethod("GET")}} ارسال می‌کند، اما می‌توانید از گزینه `method` برای استفاده از یک [متد درخواست](/en-US/docs/Web/HTTP/Reference/Methods) متفاوت استفاده کنید:
 
 ```js
 const response = await fetch("https://example.org/post", {
@@ -70,13 +64,13 @@ const response = await fetch("https://example.org/post", {
 });
 ```
 
-If the `mode` option is set to `no-cors`, then `method` must be one of `GET`, `POST` or `HEAD`.
+اگر گزینه `mode` روی `no-cors` تنظیم شده باشد، آنگاه `method` باید یکی از `GET`، `POST` یا `HEAD` باشد.
 
-### Setting a body
+### تنظیم یک بدنه
 
-The request body is the payload of the request: it's the thing the client is sending to the server. You cannot include a body with `GET` requests, but it's useful for requests that send content to the server, such as {{httpmethod("POST")}} or {{httpmethod("PUT")}} requests. For example, if you want to upload a file to the server, you might make a `POST` request and include the file as the request body.
+بدنه درخواست، بار (payload) درخواست است: چیزی است که کلاینت به سرور ارسال می‌کند. شما نمی‌توانید در درخواست‌های `GET` بدنه قرار دهید، اما برای درخواست‌هایی که محتوا را به سرور ارسال می‌کنند، مانند درخواست‌های {{httpmethod("POST")}} یا {{httpmethod("PUT")}} مفید است. برای مثال، اگر می‌خواهید یک فایل را به سرور آپلود کنید، می‌توانید یک درخواست `POST` ارسال کرده و فایل را به عنوان بدنه درخواست قرار دهید.
 
-To set a request body, pass it as the `body` option:
+برای تنظیم یک بدنه درخواست، آن را به عنوان گزینه `body` پاس دهید:
 
 ```js
 const response = await fetch("https://example.org/post", {
@@ -86,9 +80,9 @@ const response = await fetch("https://example.org/post", {
 });
 ```
 
-You can supply the body as an instance of any of the following types:
+می‌توانید بدنه را به عنوان نمونه‌ای از هر یک از انواع زیر ارائه دهید:
 
-- a string
+- یک رشته
 - {{jsxref("ArrayBuffer")}}
 - {{jsxref("TypedArray")}}
 - {{jsxref("DataView")}}
@@ -98,7 +92,7 @@ You can supply the body as an instance of any of the following types:
 - {{domxref("FormData")}}
 - {{domxref("ReadableStream")}}
 
-Other objects are converted to strings using their `toString()` method. For example, you can use a {{domxref("URLSearchParams")}} object to encode form data (see [setting headers](#setting_headers) for more information):
+سایر اشیاء با استفاده از متد `toString()` خود به رشته تبدیل می‌شوند. برای مثال، می‌توانید از یک شیء {{domxref("URLSearchParams")}} برای رمزگذاری داده‌های فرم استفاده کنید (برای اطلاعات بیشتر به [تنظیم هدرها](#setting_headers) مراجعه کنید):
 
 ```js
 const response = await fetch("https://example.org/post", {
@@ -106,13 +100,13 @@ const response = await fetch("https://example.org/post", {
   headers: {
     "Content-Type": "application/x-www-form-urlencoded",
   },
-  // Automatically converted to "username=example&password=password"
+  // به طور خودکار به "username=example&password=password" تبدیل می‌شود
   body: new URLSearchParams({ username: "example", password: "password" }),
   // …
 });
 ```
 
-Note that just like response bodies, request bodies are streams, and making the request reads the stream, so if a request contains a body, you can't make it twice:
+توجه داشته باشید که مانند بدنه پاسخ‌ها، بدنه درخواست‌ها نیز stream هستند و ارسال درخواست باعث خواندن stream می‌شود، بنابراین اگر یک درخواست حاوی بدنه باشد، نمی‌توانید آن را دو بار ارسال کنید:
 
 ```js example-bad
 const request = new Request("https://example.org/post", {
@@ -123,12 +117,12 @@ const request = new Request("https://example.org/post", {
 const response1 = await fetch(request);
 console.log(response1.status);
 
-// Will throw: "Body has already been consumed."
+// خطا: "Body has already been consumed."
 const response2 = await fetch(request);
 console.log(response2.status);
 ```
 
-Instead, you would need to {{domxref("Request.clone()", "create a clone", "", "nocode")}} of the request before sending it:
+در عوض، باید قبل از ارسال درخواست، یک {{domxref("Request.clone()", "clone", "", "nocode"}} از آن ایجاد کنید:
 
 ```js
 const request1 = new Request("https://example.org/post", {
@@ -145,15 +139,15 @@ const response2 = await fetch(request2);
 console.log(response2.status);
 ```
 
-See [Locked and disturbed streams](#locked_and_disturbed_streams) for more information.
+برای اطلاعات بیشتر به [Streamهای قفل شده و مختل شده](#locked_and_disturbed_streams) مراجعه کنید.
 
-### Setting headers
+### تنظیم هدرها
 
-Request headers give the server information about the request: for example, in a `POST` request, the {{httpheader("Content-Type")}} header tells the server the format of the request's body.
+هدرهای درخواست اطلاعاتی درباره درخواست به سرور می‌دهند: برای مثال، در یک درخواست `POST`، هدر {{httpheader("Content-Type")}} فرمت بدنه درخواست را به سرور می‌گوید.
 
-To set request headers, assign them to the `headers` option.
+برای تنظیم هدرهای درخواست، آن‌ها را به گزینه `headers` اختصاص دهید.
 
-You can pass an object literal here containing `header-name: header-value` properties:
+می‌توانید در اینجا یک شیء literal با خصوصیات `header-name: header-value` پاس دهید:
 
 ```js
 const response = await fetch("https://example.org/post", {
@@ -166,7 +160,7 @@ const response = await fetch("https://example.org/post", {
 });
 ```
 
-Alternatively, you can construct a {{domxref("Headers")}} object, add headers to that object using {{domxref("Headers.append()")}}, then assign the `Headers` object to the `headers` option:
+متناوباً، می‌توانید یک شیء {{domxref("Headers")}} بسازید، هدرها را با استفاده از {{domxref("Headers.append()")}} به آن اضافه کنید، سپس شیء `Headers` را به گزینه `headers` اختصاص دهید:
 
 ```js
 const myHeaders = new Headers();
@@ -180,63 +174,63 @@ const response = await fetch("https://example.org/post", {
 });
 ```
 
-Compared to using plain objects, the `Headers` object provides some additional input sanitization. For example, it normalizes header names to lowercase, strips leading and trailing whitespace from header values, and prevents certain headers from being set. Many headers are set automatically by the browser and can't be set by a script: these are called {{glossary("Forbidden request header", "Forbidden request headers")}}. If the {{domxref("Request.mode", "mode")}} option is set to `no-cors`, then the set of permitted headers is further restricted.
+در مقایسه با استفاده از اشیاء ساده، شیء `Headers` برخی پالایش‌های ورودی اضافی را فراهم می‌کند. برای مثال، نام هدرها را به حروف کوچک نرمال می‌کند، فاصله‌های ابتدا و انتهای مقادیر هدر را حذف می‌کند، و از تنظیم برخی هدرها جلوگیری می‌کند. بسیاری از هدرها به طور خودکار توسط مرورگر تنظیم می‌شوند و توسط اسکریپت قابل تنظیم نیستند: این هدرها {{glossary("Forbidden request header", "هدرهای درخواست ممنوعه")}} نامیده می‌شوند. اگر گزینه {{domxref("Request.mode", "mode")}} روی `no-cors` تنظیم شود، مجموعه هدرهای مجاز بیشتر محدود می‌شود.
 
-### Sending data in a GET request
+### ارسال داده در یک درخواست GET
 
-`GET` requests don't have a body, but you can still send data to the server by appending it to the URL as a query string. This is a common way to send form data to the server. You can do this by using {{domxref("URLSearchParams")}} to encode the data, and then appending it to the URL:
+درخواست‌های `GET` بدنه ندارند، اما همچنان می‌توانید با افزودن داده به عنوان query string به URL، داده‌ها را به سرور ارسال کنید. این یک روش رایج برای ارسال داده‌های فرم به سرور است. می‌توانید این کار را با استفاده از {{domxref("URLSearchParams")}} برای رمزگذاری داده‌ها و سپس افزودن آن به URL انجام دهید:
 
 ```js
 const params = new URLSearchParams();
 params.append("username", "example");
 
-// GET request sent to https://example.org/login?username=example
+// درخواست GET ارسال شده به https://example.org/login?username=example
 const response = await fetch(`https://example.org/login?${params}`);
 ```
 
-### Making cross-origin requests
+### ارسال درخواست‌های بین‌منشأ
 
-Whether a request can be made cross-origin or not is determined by the value of the {{domxref("RequestInit", "", "mode")}} option. This may take one of three values: `cors`, `same-origin`, or `no-cors`.
+اینکه آیا یک درخواست می‌تواند بین‌منشأ باشد یا خیر، با مقدار گزینه {{domxref("RequestInit", "", "mode")}} تعیین می‌شود. این گزینه می‌تواند یکی از سه مقدار `cors`، `same-origin` یا `no-cors` را داشته باشد.
 
-- For fetch requests the default value of `mode` is `cors`, meaning that if the request is cross-origin then it will use the [Cross-Origin Resource Sharing (CORS)](/en-US/docs/Web/HTTP/Guides/CORS) mechanism. This means that:
-  - if the request is a [simple request](/en-US/docs/Web/HTTP/Guides/CORS#simple_requests), then the request will always be sent, but the server must respond with the correct {{httpheader("Access-Control-Allow-Origin")}} header or the browser will not share the response with the caller.
-  - if the request is not a simple request, then the browser will send a [preflighted request](/en-US/docs/Web/HTTP/Guides/CORS#preflighted_requests) to check that the server understands CORS and allows the request, and the real request will not be sent unless the server responds to the preflighted request with the appropriate CORS headers.
+- برای درخواست‌های fetch، مقدار پیش‌فرض `mode` `cors` است، به این معنی که اگر درخواست بین‌منشأ باشد، از مکانیزم [اشتراک منابع بین‌منشأ (CORS)](/en-US/docs/Web/HTTP/Guides/CORS) استفاده می‌کند. این به این معنی است که:
+  - اگر درخواست یک [درخواست ساده](/en-US/docs/Web/HTTP/Guides/CORS#simple_requests) باشد، درخواست همیشه ارسال می‌شود، اما سرور باید با هدر صحیح {{httpheader("Access-Control-Allow-Origin")}} پاسخ دهد، در غیر این صورت مرورگر پاسخ را با فراخواننده به اشتراک نمی‌گذارد.
+  - اگر درخواست ساده نباشد، مرورگر یک [درخواست پیش‌پرواز](/en-US/docs/Web/HTTP/Guides/CORS#preflighted_requests) ارسال می‌کند تا بررسی کند که سرور CORS را درک می‌کند و درخواست را مجاز می‌داند، و درخواست واقعی ارسال نخواهد شد مگر اینکه سرور با هدرهای CORS مناسب به درخواست پیش‌پرواز پاسخ دهد.
 
-- Setting `mode` to `same-origin` disallows cross-origin requests completely.
+- تنظیم `mode` روی `same-origin` درخواست‌های بین‌منشأ را کاملاً غیرمجاز می‌کند.
 
-- Setting `mode` to `no-cors` disables CORS for cross-origin requests. This restricts the headers that may be set, and restricts methods to GET, HEAD, and POST. The response is _opaque_, meaning that its headers and body are not available to JavaScript. Most of the time a website should not use `no-cors`: the main application of it is for certain service worker use cases.
+- تنظیم `mode` روی `no-cors` CORS را برای درخواست‌های بین‌منشأ غیرفعال می‌کند. این کار هدرهای قابل تنظیم را محدود کرده و متدها را به GET، HEAD و POST محدود می‌کند. پاسخ _opaque_ است، به این معنی که هدرها و بدنه آن برای جاوااسکریپت در دسترس نیستند. بیشتر اوقات یک وب‌سایت نباید از `no-cors` استفاده کند: کاربرد اصلی آن برای برخی موارد استفاده از service worker است.
 
-See the reference documentation for {{domxref("RequestInit", "", "mode")}} for more details.
+برای جزئیات بیشتر به مستندات مرجع {{domxref("RequestInit", "", "mode")}} مراجعه کنید.
 
-### Including credentials
+### شامل کردن اعتبارنامه‌ها
 
-In the context of the Fetch API, a credential is an extra piece of data sent along with the request that the server may use to authenticate the user. All the following items are considered to be credentials:
+در زمینه Fetch API، اعتبارنامه یک قطعه داده اضافی است که همراه با درخواست ارسال می‌شود و سرور ممکن است از آن برای احراز هویت کاربر استفاده کند. تمام موارد زیر به عنوان اعتبارنامه در نظر گرفته می‌شوند:
 
-- HTTP cookies
-- {{glossary("TLS")}} client certificates
-- The {{httpheader("Authorization")}} and {{httpheader("Proxy-Authorization")}} headers.
+- کوکی‌های HTTP
+- گواهینامه‌های کلاینت {{glossary("TLS")}}
+- هدرهای {{httpheader("Authorization")}} و {{httpheader("Proxy-Authorization")}}
 
-By default, credentials are only included in same-origin requests. To customize this behavior, as well as to control whether the browser respects any **`Set-Cookie`** response headers, set the [`credentials`](/en-US/docs/Web/API/RequestInit#credentials) option, which can take one of the following three values:
+به طور پیش‌فرض، اعتبارنامه‌ها فقط در درخواست‌های هم‌منشأ گنجانده می‌شوند. برای سفارشی‌سازی این رفتار، و همچنین برای کنترل اینکه آیا مرورگر به هدرهای پاسخ **`Set-Cookie`** احترام می‌گذارد یا خیر، گزینه [`credentials`](/en-US/docs/Web/API/RequestInit#credentials) را تنظیم کنید که می‌تواند یکی از سه مقدار زیر را داشته باشد:
 
-- `omit`: never send credentials in the request or include credentials in the response.
-- `same-origin` (the default): only send and include credentials for same-origin requests.
-- `include`: always include credentials, even cross-origin.
+- `omit`: هرگز اعتبارنامه‌ها را در درخواست ارسال نکنید یا در پاسخ شامل نکنید.
+- `same-origin` (پیش‌فرض): فقط برای درخواست‌های هم‌منشأ اعتبارنامه ارسال و شامل کنید.
+- `include`: همیشه اعتبارنامه را شامل کنید، حتی بین‌منشأ.
 
-Note that if a cookie's [`SameSite`](/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie#samesitesamesite-value) attribute is set to `Strict` or `Lax`, then the cookie will not be sent cross-site, even if `credentials` is set to `include`.
+توجه داشته باشید که اگر ویژگی [`SameSite`](/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie#samesitesamesite-value) یک کوکی روی `Strict` یا `Lax` تنظیم شده باشد، آن کوکی بین‌سایتی ارسال نخواهد شد، حتی اگر `credentials` روی `include` تنظیم شده باشد.
 
-Including credentials in cross-origin requests can make a site vulnerable to {{glossary("CSRF")}} attacks, so even if `credentials` is set to `include`, the server must also agree to their inclusion by including the {{httpheader("Access-Control-Allow-Credentials")}} header in its response. Additionally, in this situation the server must explicitly specify the client's origin in the {{httpheader("Access-Control-Allow-Origin")}} response header (that is, `*` is not allowed).
+شامل کردن اعتبارنامه‌ها در درخواست‌های بین‌منشأ می‌تواند یک سایت را در برابر حملات {{glossary("CSRF")}} آسیب‌پذیر کند، بنابراین حتی اگر `credentials` روی `include` تنظیم شده باشد، سرور نیز باید با شامل کردن هدر {{httpheader("Access-Control-Allow-Credentials")}} در پاسخ خود با این کار موافقت کند. علاوه بر این، در این شرایط سرور باید مبدأ کلاینت را به صراحت در هدر پاسخ {{httpheader("Access-Control-Allow-Origin")}} مشخص کند (یعنی `*` مجاز نیست).
 
-This means that if `credentials` is set to `include` and the request is cross-origin, then:
+این بدان معناست که اگر `credentials` روی `include` تنظیم شده باشد و درخواست بین‌منشأ باشد، آنگاه:
 
-- If the request is a [simple request](/en-US/docs/Web/HTTP/Guides/CORS#simple_requests), then the request will be sent with credentials, but the server must set the {{httpheader("Access-Control-Allow-Credentials")}} and {{httpheader("Access-Control-Allow-Origin")}} response headers, or the browser will return a network error to the caller. If the server does set the correct headers, then the response, including credentials, will be delivered to the caller.
+- اگر درخواست یک [درخواست ساده](/en-US/docs/Web/HTTP/Guides/CORS#simple_requests) باشد، درخواست با اعتبارنامه ارسال می‌شود، اما سرور باید هدرهای پاسخ {{httpheader("Access-Control-Allow-Credentials")}} و {{httpheader("Access-Control-Allow-Origin")}} را تنظیم کند، در غیر این صورت مرورگر یک خطای شبکه به فراخواننده برمی‌گرداند. اگر سرور هدرهای صحیح را تنظیم کند، پاسخ شامل اعتبارنامه به فراخواننده تحویل داده می‌شود.
 
-- If the request is not a simple request, then the browser will send a [preflighted request](/en-US/docs/Web/HTTP/Guides/CORS#preflighted_requests) without credentials, and the server must set the {{httpheader("Access-Control-Allow-Credentials")}} and {{httpheader("Access-Control-Allow-Origin")}} response headers, or the browser will return a network error to the caller. If the server does set the correct headers, then the browser will follow up with the real request, including credentials, and will deliver the real response, including credentials, to the caller.
+- اگر درخواست ساده نباشد، مرورگر یک [درخواست پیش‌پرواز](/en-US/docs/Web/HTTP/Guides/CORS#preflighted_requests) بدون اعتبارنامه ارسال می‌کند و سرور باید هدرهای پاسخ {{httpheader("Access-Control-Allow-Credentials")}} و {{httpheader("Access-Control-Allow-Origin")}} را تنظیم کند، در غیر این صورت مرورگر یک خطای شبکه به فراخواننده برمی‌گرداند. اگر سرور هدرهای صحیح را تنظیم کند، مرورگر درخواست واقعی را با اعتبارنامه دنبال کرده و پاسخ واقعی را شامل اعتبارنامه به فراخواننده تحویل می‌دهد.
 
-### Creating a `Request` object
+### ایجاد یک شیء `Request`
 
-The {{domxref("Request.Request()", "Request()")}} constructor takes the same arguments as `fetch()` itself. This means that instead of passing options into `fetch()`, you can pass the same options to the `Request()` constructor, and then pass that object to `fetch()`.
+سازنده {{domxref("Request.Request()", "Request()")}} همان آرگومان‌های خود `fetch()` را می‌گیرد. این بدان معناست که به جای پاس دادن گزینه‌ها به `fetch()`، می‌توانید همان گزینه‌ها را به سازنده `Request()` پاس دهید و سپس آن شیء را به `fetch()` ارسال کنید.
 
-For example, we can make a POST request by passing options into `fetch()` using code like this:
+برای مثال، می‌توانیم یک درخواست POST با پاس دادن گزینه‌ها به `fetch()` با استفاده از کدی مانند زیر انجام دهیم:
 
 ```js
 const myHeaders = new Headers();
@@ -249,7 +243,7 @@ const response = await fetch("https://example.org/post", {
 });
 ```
 
-However, we could rewrite this to pass the same arguments to the `Request()` constructor:
+با این حال، می‌توانیم این را بازنویسی کنیم تا همان آرگومان‌ها را به سازنده `Request()` پاس دهیم:
 
 ```js
 const myHeaders = new Headers();
@@ -264,7 +258,7 @@ const myRequest = new Request("https://example.org/post", {
 const response = await fetch(myRequest);
 ```
 
-This also means that you can create a request from another request, while changing some of its properties using the second argument:
+این همچنین به این معنی است که می‌توانید یک درخواست را از درخواست دیگر ایجاد کنید، در حالی که برخی از خصوصیات آن را با استفاده از آرگومان دوم تغییر دهید:
 
 ```js
 async function post(request) {
@@ -293,11 +287,11 @@ post(request1);
 post(request2);
 ```
 
-## Canceling a request
+## لغو یک درخواست
 
-To make a request cancelable, create an {{domxref("AbortController")}}, and assign its {{domxref("AbortSignal")}} to the request's `signal` property.
+برای قابل لغو کردن یک درخواست، یک {{domxref("AbortController")}} ایجاد کرده و {{domxref("AbortSignal")}} آن را به خصوصیت `signal` درخواست اختصاص دهید.
 
-To cancel the request, call the controller's {{domxref("AbortController.abort()", "abort()")}} method. The `fetch()` call will reject the promise with an `AbortError` exception.
+برای لغو درخواست، متد {{domxref("AbortController.abort()", "abort()")}} کنترل‌کننده را فراخوانی کنید. فراخوانی `fetch()` Promise را با یک استثنای `AbortError` رد می‌کند.
 
 ```js
 const controller = new AbortController();
@@ -322,7 +316,7 @@ cancelButton.addEventListener("click", () => {
 });
 ```
 
-If the request is aborted after the `fetch()` call has been fulfilled but before the response body has been read, then attempting to read the response body will reject with an `AbortError` exception.
+اگر درخواست پس از fulfilled شدن فراخوانی `fetch()` اما قبل از خوانده شدن بدنه پاسخ لغو شود، تلاش برای خواندن بدنه پاسخ با یک استثنای `AbortError` رد می‌شود.
 
 ```js
 async function get() {
@@ -333,23 +327,23 @@ async function get() {
 
   const response = await fetch(request);
   controller.abort();
-  // The next line will throw `AbortError`
+  // خط بعدی `AbortError` پرتاب می‌کند
   const text = await response.text();
   console.log(text);
 }
 ```
 
-## Handling the response
+## مدیریت پاسخ
 
-As soon as the browser has received the response status and headers from the server (and potentially before the response body itself has been received), the promise returned by `fetch()` is fulfilled with a {{domxref("Response")}} object.
+به محض اینکه مرورگر وضعیت و هدرهای پاسخ را از سرور دریافت کرد (و احتمالاً قبل از دریافت خود بدنه پاسخ)، Promise بازگردانده شده توسط `fetch()` با یک شیء {{domxref("Response")}} fulfilled می‌شود.
 
-### Checking response status
+### بررسی وضعیت پاسخ
 
-The promise returned by `fetch()` will reject on some errors, such as a network error or a bad scheme. However, if the server responds with an error like {{httpstatus("404")}}, then `fetch()` fulfills with a `Response`, so we have to check the status before we can read the response body.
+Promise بازگردانده شده توسط `fetch()` در برخی خطاها مانند خطای شبکه یا طرح نامعتبر رد می‌شود. با این حال، اگر سرور با خطایی مانند {{httpstatus("404")}} پاسخ دهد، `fetch()` با یک `Response` fulfilled می‌شود، بنابراین باید قبل از خواندن بدنه پاسخ، وضعیت را بررسی کنیم.
 
-The {{domxref("Response.status")}} property tells us the numerical status code, and the {{domxref("Response.ok")}} property returns `true` if the status is in the [200 range](/en-US/docs/Web/HTTP/Reference/Status#successful_responses).
+خصوصیت {{domxref("Response.status")}} کد وضعیت عددی را به ما می‌گوید، و خصوصیت {{domxref("Response.ok")}} در صورتی که وضعیت در [محدوده 200](/en-US/docs/Web/HTTP/Reference/Status#successful_responses) باشد، `true` برمی‌گرداند.
 
-A common pattern is to check the value of `ok` and throw if it is `false`:
+یک الگوی رایج بررسی مقدار `ok` و پرتاب خطا در صورت `false` بودن است:
 
 ```js
 async function getData() {
@@ -366,28 +360,26 @@ async function getData() {
 }
 ```
 
-### Checking the response type
+### بررسی نوع پاسخ
 
-Responses have a {{domxref("Response.type", "type")}} property that can be one of the following:
+پاسخ‌ها دارای یک خصوصیت {{domxref("Response.type", "type")}} هستند که می‌تواند یکی از موارد زیر باشد:
 
-- `basic`: the request was a same-origin request.
-- `cors`: the request was a cross-origin CORS request.
-- `opaque`: the request was a cross-origin simple request made with the `no-cors` mode.
-- `opaqueredirect`: the request set the `redirect` option to `manual`, and the server returned a [redirect status](/en-US/docs/Web/HTTP/Reference/Status#redirection_messages).
+- `basic`: درخواست یک درخواست هم‌منشأ بود.
+- `cors`: درخواست یک درخواست CORS بین‌منشأ بود.
+- `opaque`: درخواست یک درخواست ساده بین‌منشأ بود که با حالت `no-cors` انجام شده است.
+- `opaqueredirect`: درخواست گزینه `redirect` را روی `manual` تنظیم کرده بود و سرور یک [وضعیت تغییر مسیر](/en-US/docs/Web/HTTP/Reference/Status#redirection_messages) برگرداند.
 
-The type determines the possible contents of the response, as follows:
+نوع محتویات احتمالی پاسخ را به صورت زیر تعیین می‌کند:
 
-- Basic responses exclude response headers from the {{glossary("Forbidden response header name")}} list.
+- پاسخ‌های basic هدرهای پاسخ را از لیست {{glossary("Forbidden response header name", "نام هدرهای پاسخ ممنوعه")}} حذف می‌کنند.
+- پاسخ‌های CORS فقط هدرهای پاسخ را از لیست {{glossary("CORS-safelisted response header", "هدرهای پاسخ ایمن CORS")}} شامل می‌شوند.
+- پاسخ‌های opaque و پاسخ‌های تغییر مسیر opaque دارای `status` برابر `0`، لیست هدر خالی و بدنه `null` هستند.
 
-- CORS responses include only response headers from the {{glossary("CORS-safelisted response header")}} list.
+### بررسی هدرها
 
-- Opaque responses and opaque redirect responses have a `status` of `0`, an empty header list, and a `null` body.
+مانند درخواست، پاسخ دارای یک خصوصیت {{domxref("Response.headers", "headers")}} است که یک شیء {{domxref("Headers")}} است و شامل هر هدر پاسخی است که در معرض اسکریپت‌ها قرار می‌گیرد، با توجه به استثناهای اعمال شده بر اساس نوع پاسخ.
 
-### Checking headers
-
-Just like the request, the response has a {{domxref("Response.headers", "headers")}} property which is a {{domxref("Headers")}} object, and this contains any response headers that are exposed to scripts, subject to the exclusions made based on the response type.
-
-A common use case for this is to check the content type before trying to read the body:
+یک مورد استفاده رایج برای این کار بررسی نوع محتوا قبل از تلاش برای خواندن بدنه است:
 
 ```js
 async function fetchJSON(request) {
@@ -397,16 +389,16 @@ async function fetchJSON(request) {
     if (!contentType || !contentType.includes("application/json")) {
       throw new TypeError("Oops, we haven't got JSON!");
     }
-    // Otherwise, we can read the body as JSON
+    // در غیر این صورت، می‌توانیم بدنه را به عنوان JSON بخوانیم
   } catch (error) {
     console.error("Error:", error);
   }
 }
 ```
 
-### Reading the response body
+### خواندن بدنه پاسخ
 
-The `Response` interface provides a number of methods to retrieve the entire body contents in a variety of different formats:
+رابط `Response` تعدادی متد برای بازیابی کل محتوای بدنه در قالب‌های مختلف ارائه می‌دهد:
 
 - {{domxref("Response.arrayBuffer()")}}
 - {{domxref("Response.blob()")}}
@@ -414,9 +406,9 @@ The `Response` interface provides a number of methods to retrieve the entire bod
 - {{domxref("Response.json()")}}
 - {{domxref("Response.text()")}}
 
-These are all asynchronous methods, returning a {{jsxref("Promise")}} which will be fulfilled with the body content.
+همه اینها متدهای ناهمگام هستند و یک {{jsxref("Promise")}} برمی‌گردانند که با محتوای بدنه fulfilled می‌شود.
 
-In this example, we fetch an image and read it as a {{domxref("Blob")}}, which we can then use to create an object URL:
+در این مثال، یک تصویر را واکشی کرده و به عنوان یک {{domxref("Blob")}} می‌خوانیم، که سپس می‌توانیم از آن برای ایجاد یک URL شیء استفاده کنیم:
 
 ```js
 const image = document.querySelector("img");
@@ -438,15 +430,15 @@ async function setImage() {
 }
 ```
 
-The method will throw an exception if the response body is not in the appropriate format: for example, if you call `json()` on a response that can't be parsed as JSON.
+اگر بدنه پاسخ در قالب مناسب نباشد، متد یک استثنا پرتاب می‌کند: برای مثال، اگر `json()` را روی پاسخی که قابل تجزیه به JSON نیست فراخوانی کنید.
 
-### Streaming the response body
+### استریم کردن بدنه پاسخ
 
-Request and response bodies are actually {{domxref("ReadableStream")}} objects, and whenever you read them, you're streaming the content. This is good for memory efficiency, because the browser doesn't have to buffer the entire response in memory before the caller retrieves it using a method like `json()`.
+بدنه درخواست‌ها و پاسخ‌ها در واقع اشیاء {{domxref("ReadableStream")}} هستند و هر زمان که آن‌ها را می‌خوانید، محتوا را استریم می‌کنید. این برای کارایی حافظه خوب است، زیرا مرورگر مجبور نیست کل پاسخ را قبل از بازیابی آن توسط فراخواننده با استفاده از متدی مانند `json()` در حافظه بافر کند.
 
-This also means that the caller can process the content incrementally as it is received.
+این همچنین به این معنی است که فراخواننده می‌تواند محتوا را به صورت تدریجی در حین دریافت پردازش کند.
 
-For example, consider a `GET` request that fetches a large text file and processes it in some way, or displays it to the user:
+برای مثال، یک درخواست `GET` را در نظر بگیرید که یک فایل متنی بزرگ را واکشی کرده و به نوعی پردازش می‌کند، یا آن را به کاربر نمایش می‌دهد:
 
 ```js
 const url = "https://www.example.org/a-large-file.txt";
@@ -466,9 +458,9 @@ async function fetchText(url) {
 }
 ```
 
-If we use {{domxref("Response.text()")}}, as above, we must wait until the whole file has been received before we can process any of it.
+اگر از {{domxref("Response.text()")}} مانند بالا استفاده کنیم، باید تا دریافت کامل فایل صبر کنیم تا بتوانیم هر بخشی از آن را پردازش کنیم.
 
-If we stream the response instead, we can process chunks of the body as they are received from the network:
+اگر به جای آن پاسخ را استریم کنیم، می‌توانیم تکه‌های بدنه را در حین دریافت از شبکه پردازش کنیم:
 
 ```js
 const url = "https://www.example.org/a-large-file.txt";
@@ -490,13 +482,13 @@ async function fetchTextAsStream(url) {
 }
 ```
 
-In this example, we {{jsxref("Statements/for-await...of", "iterate asynchronously", "", "nocode")}} over the stream, processing each chunk as it arrives.
+در این مثال، ما {{jsxref("Statements/for-await...of", "به صورت ناهمگام روی stream پیمایش می‌کنیم", "", "nocode"}} و هر تکه را در زمان رسیدن پردازش می‌کنیم.
 
-Note that when you access the body directly like this, you get the raw bytes of the response and must transform it yourself. In this case we call {{domxref("ReadableStream.pipeThrough()")}} to pipe the response through a {{domxref("TextDecoderStream")}}, which decodes the UTF-8-encoded body data as text.
+توجه داشته باشید که وقتی بدنه را مستقیماً به این صورت دسترسی می‌دهید، بایت‌های خام پاسخ را دریافت می‌کنید و باید خودتان آن را تبدیل کنید. در این مورد، {{domxref("ReadableStream.pipeThrough()")}} را فراخوانی می‌کنیم تا پاسخ را از طریق یک {{domxref("TextDecoderStream")}} عبور دهیم، که داده‌های بدنه رمزگذاری شده با UTF-8 را به عنوان متن رمزگشایی می‌کند.
 
-### Processing a text file line by line
+### پردازش یک فایل متنی خط به خط
 
-In the example below, we fetch a text resource and process it line by line, using a regular expression to look for line endings. For simplicity, we assume the text is UTF-8, and don't handle fetch errors:
+در مثال زیر، یک منبع متنی را واکشی کرده و آن را خط به خط با استفاده از یک عبارت منظم برای جستجوی انتهای خطوط پردازش می‌کنیم. برای سادگی، فرض می‌کنیم متن UTF-8 است و خطاهای fetch را مدیریت نمی‌کنیم:
 
 ```js
 async function* makeTextFileLineIterator(fileURL) {
@@ -523,7 +515,7 @@ async function* makeTextFileLineIterator(fileURL) {
   }
 
   if (startIndex < chunk.length) {
-    // Last line didn't end in a newline char
+    // آخرین خط با کاراکتر خط جدید خاتمه نیافته است
     yield chunk.substring(startIndex);
   }
 }
@@ -541,14 +533,14 @@ function processLine(line) {
 run("https://www.example.org/a-large-file.txt");
 ```
 
-### Locked and disturbed streams
+### Streamهای قفل شده و مختل شده
 
-The consequences of request and response bodies being streams are that:
+پیامدهای stream بودن بدنه درخواست‌ها و پاسخ‌ها به شرح زیر است:
 
-- if a reader has been attached to a stream using `ReadableStream.getReader()`, then the stream is _locked_, and nothing else can read the stream.
-- if any content has been read from the stream, then the stream is _disturbed_, and nothing else can read from the stream.
+- اگر یک reader با استفاده از `ReadableStream.getReader()` به یک stream متصل شده باشد، stream _قفل_ است و هیچ چیز دیگری نمی‌تواند stream را بخواند.
+- اگر هر محتوایی از stream خوانده شده باشد، stream _مختل_ است و هیچ چیز دیگری نمی‌تواند از stream بخواند.
 
-This means it's not possible to read the same response (or request) body more than once:
+این بدان معناست که نمی‌توان همان بدنه پاسخ (یا درخواست) را بیش از یک بار خواند:
 
 ```js example-bad
 async function getData() {
@@ -560,14 +552,14 @@ async function getData() {
     }
 
     const result1 = await response.json();
-    const result2 = await response.json(); // will throw
+    const result2 = await response.json(); // خطا پرتاب می‌کند
   } catch (error) {
     console.error(error.message);
   }
 }
 ```
 
-If you do need to read the body more than once, you must call {{domxref("Response.clone()")}} before reading the body:
+اگر نیاز به خواندن بدنه بیش از یک بار دارید، باید قبل از خواندن بدنه، {{domxref("Response.clone()")}} را فراخوانی کنید:
 
 ```js
 async function getData() {
@@ -588,7 +580,7 @@ async function getData() {
 }
 ```
 
-This is a common pattern when [implementing an offline cache with service workers](/en-US/docs/Web/Progressive_web_apps/Guides/Caching). The service worker wants to return the response to the app, but also to cache the response. So it clones the response, returns the original, and caches the clone:
+این یک الگوی رایج در [پیاده‌سازی کش آفلاین با service workerها](/en-US/docs/Web/Progressive_web_apps/Guides/Caching) است. service worker می‌خواهد پاسخ را به برنامه برگرداند، اما همچنین پاسخ را ذخیره کند. بنابراین پاسخ را clone می‌کند، نسخه اصلی را برمی‌گرداند و clone را ذخیره می‌کند:
 
 ```js
 async function cacheFirst(request) {
@@ -615,10 +607,10 @@ self.addEventListener("fetch", (event) => {
 });
 ```
 
-## See also
+## جستارهای وابسته
 
 - [Service Worker API](/en-US/docs/Web/API/Service_Worker_API)
 - [Streams API](/en-US/docs/Web/API/Streams_API)
 - [CORS](/en-US/docs/Web/HTTP/Guides/CORS)
 - [HTTP](/en-US/docs/Web/HTTP)
-- [Fetch examples on GitHub](https://github.com/mdn/dom-examples/tree/main/fetch)
+- [نمونه‌های Fetch در GitHub](https://github.com/mdn/dom-examples/tree/main/fetch)
