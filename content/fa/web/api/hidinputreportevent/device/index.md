@@ -1,11 +1,5 @@
 ---
 title: "HIDInputReportEvent: device property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HIDInputReportEvent/device"
-status: "needs-translation"
----
-
----
-title: "HIDInputReportEvent: device property"
 short-title: device
 slug: Web/API/HIDInputReportEvent/device
 page-type: web-api-instance-property
@@ -16,15 +10,15 @@ browser-compat: api.HIDInputReportEvent.device
 
 {{securecontext_header}}{{APIRef("WebHID API")}}{{SeeCompatTable}}{{AvailableInWorkers("window_and_worker_except_shared")}}
 
-The **`device`** property of the {{domxref("HIDInputReportEvent")}} interface returns the {{domxref("HIDDevice")}} instance that represents the HID interface that sent the input report.
+ویژگی **`device`** در رابط {{domxref("HIDInputReportEvent")}} نمونه‌ای از {{domxref("HIDDevice")}} را برمی‌گرداند که نمایانگر رابط HID ارسال‌کننده گزارش ورودی است.
 
-## Value
+## مقدار
 
-An {{domxref("HIDDevice")}}.
+یک {{domxref("HIDDevice")}}.
 
-## Examples
+## مثال‌ها
 
-In the following example `device` is a {{domxref("HIDDevice")}} instance, representing the device sending the report. The `productName` of this device is logged to the console.
+در مثال زیر، `device` یک نمونه {{domxref("HIDDevice")}} است که نمایانگر دستگاه ارسال‌کننده گزارش است. `productName` این دستگاه در کنسول ثبت می‌شود.
 
 ```js
 device.addEventListener("inputreport", (event) => {
@@ -33,10 +27,10 @@ device.addEventListener("inputreport", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
