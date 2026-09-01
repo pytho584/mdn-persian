@@ -1,7 +1,5 @@
 ---
 title: "FederatedCredentialInit"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FederatedCredentialInit"
-status: "needs-translation"
 ---
 
 ---
@@ -13,31 +11,31 @@ spec-urls: https://w3c.github.io/webappsec-credential-management/#dom-federatedc
 
 {{APIRef("Credential Management API")}}
 
-The **`FederatedCredentialInit`** dictionary represents the object passed to {{domxref("CredentialsContainer.create()")}} as the value of the `federated` option: that is, when creating a {{domxref("FederatedCredential")}} object representing a credential associated with a federated identify provider.
+دیکشنری **`FederatedCredentialInit`** شیءای را که به‌عنوان مقدار گزینهٔ `federated` به {{domxref("CredentialsContainer.create()")}} ارسال می‌شود، نشان می‌دهد؛ یعنی هنگام ایجاد یک شیء {{domxref("FederatedCredential")}} که نمایانگر اعتبارنامه‌ای مرتبط با یک تأمین‌کنندهٔ هویت فدرال است.
 
 > [!NOTE]
-> The [Federated Credential Management API (FedCM)](/en-US/docs/Web/API/FedCM_API) supersedes the {{domxref("FederatedCredential")}} interface in favor of the {{domxref("IdentityCredential")}} interface.
+> [Federated Credential Management API (FedCM)](/en-US/docs/Web/API/FedCM_API) جایگزین رابط {{domxref("FederatedCredential")}} شده و به‌جای آن از رابط {{domxref("IdentityCredential")}} استفاده می‌کند.
 >
-> The `FederatedCredentialInit` dictionary is not used when working with the `IdentityCredential` interface.
+> دیکشنری `FederatedCredentialInit` هنگام کار با رابط `IdentityCredential` استفاده نمی‌شود.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - `iconURL` {{optional_inline}}
-  - : A string representing the URL of an icon or avatar to be associated with the credential.
+  - : یک رشته که نشانی (URL) آیکون یا آواتار مرتبط با اعتبارنامه را نشان می‌دهد.
 - `id`
-  - : A string representing a unique ID for the credential.
+  - : یک رشته که شناسهٔ یکتای اعتبارنامه را نشان می‌دهد.
 - `name` {{optional_inline}}
-  - : A string representing the credential username.
+  - : یک رشته که نام کاربری اعتبارنامه را نشان می‌دهد.
 - `origin`
-  - : A string representing the credential's origin. {{domxref("FederatedCredential")}} objects are origin-bound, which means that they will only be usable on the specified origin they were intended to be used on.
+  - : یک رشته که مبدأ (origin) اعتبارنامه را نشان می‌دهد. اشیاء {{domxref("FederatedCredential")}} به مبدأ وابسته هستند (origin-bound)؛ به این معنی که فقط در همان مبدأ مشخصی که برای آن در نظر گرفته شده‌اند قابل استفاده خواهند بود.
 - `protocol` {{optional_inline}}
-  - : A string representing the protocol of the credentials' federated identity provider (for example, `"openidconnect"`).
+  - : یک رشته که پروتکل تأمین‌کنندهٔ هویت فدرال اعتبارنامه را نشان می‌دهد (مثلاً `"openidconnect"`).
 - `provider`
-  - : A string representing the credentials' federated identity provider (for example `"https://www.facebook.com"` or `"https://accounts.google.com"`).
+  - : یک رشته که تأمین‌کنندهٔ هویت فدرال اعتبارنامه را نشان می‌دهد (مثلاً `"https://www.facebook.com"` یا `"https://accounts.google.com"`).
 
-## Examples
+## مثال‌ها
 
-### Creating a federated identity credential
+### ایجاد یک اعتبارنامهٔ هویت فدرال
 
 ```js
 const credInit = {
@@ -59,6 +57,6 @@ makeCredential.addEventListener("click", async () => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
