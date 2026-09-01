@@ -1,7 +1,5 @@
 ---
 title: "HTMLImageElement: loading property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/loading"
-status: "needs-translation"
 ---
 
 ---
@@ -14,17 +12,17 @@ browser-compat: api.HTMLImageElement.loading
 
 {{APIRef("HTML DOM")}}
 
-The **`loading`** property of the {{domxref("HTMLImageElement")}} interface provides a hint to the browser on how to handle the loading of the image which is currently outside the window's {{Glossary("visual viewport")}}. This helps to optimize the loading of the document's contents by postponing loading the image until it's expected to be needed, rather than immediately during the initial page load. It reflects the `<img>` element's [`loading`](/en-US/docs/Web/HTML/Reference/Elements/img#loading) content attribute.
+ویژگی **`loading`** در رابط {{domxref("HTMLImageElement")}} به مرورگر راهنمایی می‌کند که بارگذاری تصویری را که در حال حاضر خارج از {{Glossary("visual viewport")}} پنجره است چگونه مدیریت کند. این ویژگی با به‌تأخیر انداختن بارگذاری تصویر تا زمانی که انتظار می‌رود به آن نیاز باشد — به‌جای بارگذاری فوری هنگام بارگذاری اولیهٔ صفحه — به بهینه‌سازی بارگذاری محتوای سند کمک می‌کند. این ویژگی، ویژگی محتوایی [`loading`](/en-US/docs/Web/HTML/Reference/Elements/img#loading) عنصر `<img>` را منعکس می‌کند.
 
-## Value
+## مقدار
 
-A string whose value is one of `eager` or `lazy`. For their meanings, see the HTML [`<img>`](/en-US/docs/Web/HTML/Reference/Elements/img#loading) reference.
+رشته‌ای که مقدار آن یکی از `eager` یا `lazy` است. برای آشنایی با معانی این مقادیر، به مرجع HTML عنصر [`<img>`](/en-US/docs/Web/HTML/Reference/Elements/img#loading) مراجعه کنید.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفادهٔ پایه
 
-The `addImageToList()` function shown below adds a photo thumbnail to a list of items, using lazy-loading to avoid loading the image from the network until it's actually needed.
+تابع `addImageToList()` که در زیر نشان داده شده است، یک تصویر بندانگشتی به فهرستی از آیتم‌ها اضافه می‌کند و از بارگذاری تنبل (lazy-loading) استفاده می‌کند تا تصویر تا زمانی که واقعاً به آن نیاز نیست از شبکه بارگذاری نشود.
 
 ```js
 function addImageToList(url) {
@@ -44,16 +42,16 @@ function addImageToList(url) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{HTMLElement("img")}} element
-- [Web performance](/en-US/docs/Learn_web_development/Extensions/Performance) in the MDN Learning Area
-- [Lazy loading](/en-US/docs/Web/Performance/Guides/Lazy_loading) in the MDN web performance guide
+- عنصر {{HTMLElement("img")}}
+- [عملکرد وب](/en-US/docs/Learn_web_development/Extensions/Performance) در بخش یادگیری MDN
+- [بارگذاری تنبل](/en-US/docs/Web/Performance/Guides/Lazy_loading) در راهنمای عملکرد وب MDN
