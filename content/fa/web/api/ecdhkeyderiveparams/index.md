@@ -1,7 +1,5 @@
 ---
 title: "EcdhKeyDeriveParams"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EcdhKeyDeriveParams"
-status: "needs-translation"
 ---
 
 ---
@@ -13,33 +11,32 @@ spec-urls: https://w3c.github.io/webcrypto/#dfn-EcdhKeyDeriveParams
 
 {{ APIRef("Web Crypto API") }}
 
-The **`EcdhKeyDeriveParams`** dictionary of the [Web Crypto API](/en-US/docs/Web/API/Web_Crypto_API) represents the object that should be passed as the `algorithm` parameter into {{domxref("SubtleCrypto.deriveKey()")}} and {{domxref("SubtleCrypto.deriveBits()")}}, when using the [ECDH](/en-US/docs/Web/API/SubtleCrypto/deriveKey#ecdh) or [X25519](/en-US/docs/Web/API/SubtleCrypto/deriveKey#x25519) algorithms.
+دیکشنری **`EcdhKeyDeriveParams`** از [Web Crypto API](/en-US/docs/Web/API/Web_Crypto_API) شیئی را نشان می‌دهد که باید به عنوان پارامتر `algorithm` به متدهای {{domxref("SubtleCrypto.deriveKey()")}} و {{domxref("SubtleCrypto.deriveBits()")}}، هنگام استفاده از الگوریتم‌های [ECDH](/en-US/docs/Web/API/SubtleCrypto/deriveKey#ecdh) یا [X25519](/en-US/docs/Web/API/SubtleCrypto/deriveKey#x25519) ارسال شود.
 
-ECDH enables two people who each have a key pair consisting of a public and a private key to derive a shared secret. They exchange public keys and use the combination of their private key and the other entity's public key to derive a secret key that they — and no one else — share.
+ECDH به دو نفر که هر کدام یک جفت کلید شامل یک کلید عمومی و یک کلید خصوصی دارند، امکان می‌دهد تا یک راز مشترک استخراج کنند. آنها کلیدهای عمومی را مبادله کرده و با ترکیب کلید خصوصی خود و کلید عمومی طرف مقابل، یک کلید مخفی را استخراج می‌کنند که تنها آنها — و هیچ‌کس دیگر — آن را به اشتراک می‌گذارند.
 
-The parameters for ECDH `deriveKey()` therefore include the other entity's public key, which is combined with this entity's private key to derive the shared secret.
+بنابراین پارامترهای `deriveKey()` در ECDH شامل کلید عمومی طرف مقابل است که با کلید خصوصی این طرف ترکیب می‌شود تا راز مشترک استخراج شود.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - `name`
-  - : A string.
-    This should be set to `ECDH` or `X25519`, depending on the algorithm used.
+  - : یک رشته. این باید بسته به الگوریتم مورد استفاده، روی `ECDH` یا `X25519` تنظیم شود.
 - `public`
-  - : A {{domxref("CryptoKey")}} object representing the public key of the other entity.
+  - : یک شیء {{domxref("CryptoKey")}} که کلید عمومی طرف مقابل را نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
-See the examples for {{domxref("SubtleCrypto.deriveKey()")}} and {{domxref("SubtleCrypto.deriveBits()")}}.
+مثال‌ها را در صفحات {{domxref("SubtleCrypto.deriveKey()")}} و {{domxref("SubtleCrypto.deriveBits()")}} مشاهده کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
-Browsers that support the "ECDH" or "X25519" algorithm for the {{domxref("SubtleCrypto.deriveKey()")}} method will support this type.
+مرورگرهایی که از الگوریتم "ECDH" یا "X25519" برای متد {{domxref("SubtleCrypto.deriveKey()")}} پشتیبانی می‌کنند، این نوع را نیز پشتیبانی خواهند کرد.
 
-## See also
+## همچنین ببینید
 
-- {{domxref("SubtleCrypto.deriveKey()")}}.
+- {{domxref("SubtleCrypto.deriveKey()")}}
 - {{domxref("SubtleCrypto.deriveBits()")}}
