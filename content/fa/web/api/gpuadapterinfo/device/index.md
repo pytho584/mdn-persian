@@ -1,11 +1,5 @@
 ---
 title: "GPUAdapterInfo: device property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUAdapterInfo/device"
-status: "needs-translation"
----
-
----
-title: "GPUAdapterInfo: device property"
 short-title: device
 slug: Web/API/GPUAdapterInfo/device
 page-type: web-api-instance-property
@@ -14,14 +8,13 @@ browser-compat: api.GPUAdapterInfo.device
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`device`** read-only property of the
-{{domxref("GPUAdapterInfo")}} interface returns a vendor-specific identifier for the adapter, or an empty string if it is not available.
+خاصیت فقط‌خواندنی **`device`** از رابط {{domxref("GPUAdapterInfo")}} یک شناسه مخصوص فروشنده برای آداپتور را بازمی‌گرداند، یا اگر در دسترس نباشد، یک رشته خالی.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```js
 const adapter = await navigator.gpu.requestAdapter();
@@ -33,14 +26,14 @@ const adapterInfo = adapter.info;
 console.log(adapterInfo.device);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- رابط [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
