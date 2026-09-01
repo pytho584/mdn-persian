@@ -1,11 +1,5 @@
 ---
 title: "HTMLImageElement: fetchPriority property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/fetchPriority"
-status: "needs-translation"
----
-
----
-title: "HTMLImageElement: fetchPriority property"
 short-title: fetchPriority
 slug: Web/API/HTMLImageElement/fetchPriority
 page-type: web-api-instance-property
@@ -14,13 +8,13 @@ browser-compat: api.HTMLImageElement.fetchPriority
 
 {{APIRef("HTML DOM")}}
 
-The **`fetchPriority`** property of the {{domxref("HTMLImageElement")}} interface represents a hint to the browser indicating how it should prioritize fetching a particular image relative to other images. It reflects the `<img>` element's [`fetchpriority`](/en-US/docs/Web/HTML/Reference/Elements/img#fetchpriority) content attribute.
+ویژگی **`fetchPriority`** از رابط {{domxref("HTMLImageElement")}} یک راهنمایی برای مرورگر است که نشان می‌دهد چگونه باید اولویت بارگیری یک تصویر خاص را نسبت به تصاویر دیگر تعیین کند. این ویژگی منعکس‌کنندهٔ ویژگی محتوایی [`fetchpriority`](/en-US/docs/Web/HTML/Reference/Elements/img#fetchpriority) عنصر `<img>` است.
 
-## Value
+## مقدار
 
-A string whose value is one of `high`, `low`, or `auto`. For their meanings, see the HTML [`fetchpriority`](/en-US/docs/Web/HTML/Reference/Attributes/fetchpriority) attribute.
+یک رشته که مقدار آن یکی از `high`، `low` یا `auto` است. برای معانی آن‌ها، به ویژگی HTML [`fetchpriority`](/en-US/docs/Web/HTML/Reference/Attributes/fetchpriority) مراجعه کنید.
 
-## Examples
+## مثال‌ها
 
 ```js
 const img = new Image();
@@ -28,17 +22,17 @@ img.fetchPriority = "high";
 img.src = "img/logo.png";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLLinkElement.fetchPriority")}}
 - {{domxref("HTMLScriptElement.fetchPriority")}}
-- HTTP {{httpheader("Link")}} header
-- [Optimize resource loading with the Fetch Priority API](https://web.dev/articles/fetch-priority?hl=en#browser_priority_and_fetchpriority) for information about how this API affects priorities on Chrome.
+- هدر HTTP {{httpheader("Link")}}
+- برای اطلاعات دربارهٔ چگونگی تأثیر این API بر اولویت‌ها در Chrome، مطلب [بهینه‌سازی بارگیری منابع با Fetch Priority API](https://web.dev/articles/fetch-priority?hl=en#browser_priority_and_fetchpriority) را مطالعه کنید.
