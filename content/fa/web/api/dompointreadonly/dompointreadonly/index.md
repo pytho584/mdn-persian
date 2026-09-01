@@ -1,11 +1,5 @@
 ---
 title: "DOMPointReadOnly: DOMPointReadOnly() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMPointReadOnly/DOMPointReadOnly"
-status: "needs-translation"
----
-
----
-title: "DOMPointReadOnly: DOMPointReadOnly() constructor"
 short-title: DOMPointReadOnly()
 slug: Web/API/DOMPointReadOnly/DOMPointReadOnly
 page-type: web-api-constructor
@@ -14,12 +8,9 @@ browser-compat: api.DOMPointReadOnly.DOMPointReadOnly
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The **`DOMPointReadOnly()`**
-constructor returns a new {{domxref("DOMPointReadOnly")}} object representing a point
-in 2D or 3D space, optionally with perspective, whose values cannot be altered by
-script code.
+سازنده **`DOMPointReadOnly()`** یک شیء جدید {{domxref("DOMPointReadOnly")}} برمی‌گرداند که یک نقطه را در فضای دوبعدی یا سه‌بعدی، به‌صورت اختیاری با پرسپکتیو، نشان می‌دهد و مقادیر آن را نمی‌توان توسط کد اسکریپت تغییر داد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 new DOMPointReadOnly()
@@ -29,33 +20,27 @@ new DOMPointReadOnly(x, y, z)
 new DOMPointReadOnly(x, y, z, w)
 ```
 
-### Parameters
+### پارامترها
 
 - `x` {{optional_inline}}
-  - : The value of the horizontal coordinate, x, as a floating point number. The default
-    value is 0.
+  - : مقدار مختصات افقی، x، به‌صورت یک عدد اعشاری. مقدار پیش‌فرض 0 است.
 - `y` {{optional_inline}}
-  - : The value of the vertical coordinate, y, as a floating point number. The default
-    value is 0.
+  - : مقدار مختصات عمودی، y، به‌صورت یک عدد اعشاری. مقدار پیش‌فرض 0 است.
 - `z` {{optional_inline}}
-  - : The value of the depth coordinate, z, as a floating point number. The default value
-    is 0.
+  - : مقدار مختصات عمق، z، به‌صورت یک عدد اعشاری. مقدار پیش‌فرض 0 است.
 - `w` {{optional_inline}}
-  - : The value of the perspective, w, as a floating point number. The default is 1.
+  - : مقدار پرسپکتیو، w، به‌صورت یک عدد اعشاری. مقدار پیش‌فرض 1 است.
 
 > [!NOTE]
-> Each of these values is what's called an _unrestricted_
-> number. In addition to any finite floating-point value, you may use special values
-> such as ±{{jsxref("Infinity")}} and {{jsxref("NaN")}}.
+> هر یک از این مقادیر چیزی است که به آن عدد _نامحدود_ (unrestricted number) گفته می‌شود. علاوه بر هر مقدار اعشاری متناهی، می‌توانید از مقادیر ویژه مانند ±{{jsxref("Infinity")}} و {{jsxref("NaN")}} نیز استفاده کنید.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("DOMPointReadOnly")}} object representing the specified location in
-space.
+یک شیء جدید {{domxref("DOMPointReadOnly")}} که مکان مشخص‌شده در فضا را نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
-The following code demonstrates creating both 2D and 3D points.
+کد زیر ساخت نقاط دوبعدی و سه‌بعدی را نشان می‌دهد.
 
 ```js
 const point2D = new DOMPointReadOnly(50, 25);
@@ -63,10 +48,10 @@ const point3D = new DOMPointReadOnly(50, 0, 10);
 const perspectivePoint3D = new DOMPointReadOnly(50, 50, 25, 0.5);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
