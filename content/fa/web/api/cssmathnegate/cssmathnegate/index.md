@@ -1,9 +1,4 @@
----
-title: "CSSMathNegate: CSSMathNegate() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSMathNegate/CSSMathNegate"
-status: "needs-translation"
----
-
+```markdown
 ---
 title: "CSSMathNegate: CSSMathNegate() constructor"
 short-title: CSSMathNegate()
@@ -14,28 +9,28 @@ browser-compat: api.CSSMathNegate.CSSMathNegate
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`CSSMathNegate()`** constructor creates a new {{domxref("CSSMathNegate")}} object which negates the value passed into it.
+سازندهٔ **`CSSMathNegate()`** یک شیء جدید از نوع {{domxref("CSSMathNegate")}} می‌سازد که مقدار داده‌شده به آن را منفی می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 new CSSMathNegate(arg)
 ```
 
-### Parameters
+### پارامترها
 
 - `arg`
-  - : A number or {{domxref("CSSNumericValue")}} that represents the value to negate.
+  - : یک عدد یا {{domxref("CSSNumericValue")}} که مقداری را که باید منفی شود نشان می‌دهد.
 
-### Exceptions
+### استثناها
 
-None.
+هیچ‌کدام.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفادهٔ پایه
 
-The following code creates a `CSSMathNegate` object from a length, then logs the constructor name, `value`, and the object's serialization (from {{domxref("CSSStyleValue/toString","toString()")}}).
+کد زیر یک شیء `CSSMathNegate` از یک طول می‌سازد و سپس نام سازنده، `value` و رشته‌سازی شیء (از طریق {{domxref("CSSStyleValue/toString","toString()")}}) را در کنسول ثبت می‌کند.
 
 ```js
 const negated = new CSSMathNegate(CSS.px(10));
@@ -45,7 +40,7 @@ console.log(negated.value); // CSSUnitValue {value: 10, unit: "px"}
 console.log(negated.toString()); // "calc(-10px)"
 ```
 
-Note that if a plain number is passed to `arg`, the `value` is rectified to a {{domxref("CSSUnitValue")}} with unit `"number"`:
+توجه کنید که اگر یک عدد ساده به `arg` داده شود، `value` به یک {{domxref("CSSUnitValue")}} با واحد `"number"` تبدیل می‌شود:
 
 ```js
 const negatedNumber = new CSSMathNegate(4);
@@ -53,10 +48,11 @@ const negatedNumber = new CSSMathNegate(4);
 console.log(negatedNumber.value); // CSSUnitValue {value: 4, unit: "number"}
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
+```
