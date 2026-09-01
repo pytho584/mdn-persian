@@ -1,11 +1,5 @@
 ---
 title: "EventSource: withCredentials property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EventSource/withCredentials"
-status: "needs-translation"
----
-
----
-title: "EventSource: withCredentials property"
 short-title: withCredentials
 slug: Web/API/EventSource/withCredentials
 page-type: web-api-instance-property
@@ -14,17 +8,13 @@ browser-compat: api.EventSource.withCredentials
 
 {{APIRef("Server Sent Events")}}{{AvailableInWorkers}}
 
-The **`withCredentials`** read-only property of the
-{{domxref("EventSource")}} interface returns a boolean value indicating whether
-the `EventSource` object was instantiated with CORS credentials set.
+خصوصیت فقط‌خواندنی **`withCredentials`** در رابط {{domxref("EventSource")}} یک مقدار بولی برمی‌گرداند که نشان می‌دهد آیا شیء `EventSource` با اعتبارنامه‌های CORS مقداردهی شده است یا خیر.
 
-## Value
+## مقدار
 
-A boolean value indicating whether the `EventSource` object was
-instantiated with CORS credentials set (`true`), or not (`false`,
-the default).
+یک مقدار بولی که نشان می‌دهد آیا شیء `EventSource` با اعتبارنامه‌های CORS ایجاد شده است (`true`) یا خیر (`false`، پیش‌فرض).
 
-## Examples
+## مثال‌ها
 
 ```js
 const evtSource = new EventSource("sse.php");
@@ -32,16 +22,16 @@ console.log(evtSource.withCredentials);
 ```
 
 > [!NOTE]
-> You can find a full example on GitHub — see [Simple SSE demo using PHP](https://github.com/mdn/dom-examples/tree/main/server-sent-events).
+> می‌توانید یک مثال کامل را در GitHub بیابید — به [نمونه ساده SSE با استفاده از PHP](https://github.com/mdn/dom-examples/tree/main/server-sent-events) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("EventSource")}}
