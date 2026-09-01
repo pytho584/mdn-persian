@@ -1,11 +1,5 @@
 ---
 title: "HTMLAnchorElement: protocol property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement/protocol"
-status: "needs-translation"
----
-
----
-title: "HTMLAnchorElement: protocol property"
 short-title: protocol
 slug: Web/API/HTMLAnchorElement/protocol
 page-type: web-api-instance-property
@@ -14,19 +8,19 @@ browser-compat: api.HTMLAnchorElement.protocol
 
 {{ApiRef("HTML DOM")}}
 
-The **`protocol`** property of the {{domxref("HTMLAnchorElement")}} interface is a string containing the protocol or scheme of the `<area>` element's `href`, including the final `":"`.
+ویژگی **`protocol`** در رابط {{domxref("HTMLAnchorElement")}} یک رشته است که پروتکل یا طرح (scheme) موجود در `href` عنصر `<area>` را شامل می‌شود، به همراه «`:`» پایانی.
 
-This property can be set to change the protocol of the URL. A `":"` is appended to the provided string if not provided. The provided scheme has to be compatible with the rest of the URL to be considered valid.
+این ویژگی قابل تنظیم است تا پروتکل URL تغییر کند. اگر رشتهٔ داده‌شده «`:`» انتهایی نداشته باشد، به آن اضافه می‌شود. طرح داده‌شده باید با بقیهٔ URL سازگار باشد تا معتبر در نظر گرفته شود.
 
-See {{domxref("URL.protocol")}} for more information.
+برای اطلاعات بیشتر، {{domxref("URL.protocol")}} را ببینید.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
-### Getting the protocol of an anchor link
+### دریافت پروتکل یک پیوند anchor
 
 ```js
 // An <a id="myAnchor" href="https://developer.mozilla.org/en-US/HTMLAnchorElement"> element is in the document
@@ -34,14 +28,14 @@ const anchor = document.getElementById("myAnchor");
 anchor.protocol; // returns 'https:'
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("HTMLAnchorElement")}} interface it belongs to.
+- رابط {{domxref("HTMLAnchorElement")}} که این ویژگی به آن تعلق دارد.
