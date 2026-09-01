@@ -1,7 +1,5 @@
 ---
 title: "Document: fonts property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/fonts"
-status: "needs-translation"
 ---
 
 ---
@@ -14,18 +12,17 @@ browser-compat: api.Document.fonts
 
 {{APIRef("DOM")}}
 
-The **`fonts`** property of the {{domxref("Document")}} interface returns the {{domxref("FontFaceSet")}} interface of the document.
+ویژگی **`fonts`** در رابط {{domxref("Document")}}، رابط {{domxref("FontFaceSet")}} سند را برمی‌گرداند.
 
-This feature is part of the [CSS Font Loading API](/en-US/docs/Web/API/CSS_Font_Loading_API).
+این قابلیت بخشی از [CSS Font Loading API](/en-US/docs/Web/API/CSS_Font_Loading_API) است.
 
-## Value
+## مقدار
 
-The returned value is the {{domxref("FontFaceSet")}} interface of the document.
-The `FontFaceSet` interface is useful for loading new fonts, checking the status of previously loaded fonts etc.
+مقدار بازگشتی، رابط {{domxref("FontFaceSet")}} سند است. رابط `FontFaceSet` برای بارگذاری فونت‌های جدید، بررسی وضعیت فونت‌های بارگذاری‌شدهٔ قبلی و موارد مشابه مفید است.
 
-## Examples
+## مثال‌ها
 
-### Doing operation after fonts are loaded
+### انجام عملیات پس از بارگذاری فونت‌ها
 
 ```js
 document.fonts.ready.then((fontFaceSet) => {
@@ -38,17 +35,17 @@ document.fonts.ready.then((fontFaceSet) => {
 });
 ```
 
-The promise fulfils when loading and layout operations of all used fonts are done. The set of used fonts can be different from the set of _declared_ fonts, e.g., if optional fonts (i.e., fonts declared via `font-display: optional`) were not able to load in time.
+این Promise زمانی برآورده می‌شود که عملیات بارگذاری و چیدمان همهٔ فونت‌های استفاده‌شده به پایان رسیده باشد. مجموعهٔ فونت‌های استفاده‌شده می‌تواند با مجموعهٔ فونت‌های _اعلام‌شده_ متفاوت باشد؛ برای مثال، اگر فونت‌های اختیاری (یعنی فونت‌هایی که از طریق `font-display: optional` اعلام شده‌اند) نتوانسته باشند به‌موقع بارگذاری شوند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("FontFaceSet")}} interface
+- رابط {{domxref("FontFaceSet")}}
 - {{domxref("FontFace")}}
