@@ -1,7 +1,5 @@
 ---
 title: "DocumentTimeline"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DocumentTimeline"
-status: "needs-translation"
 ---
 
 ---
@@ -13,31 +11,31 @@ browser-compat: api.DocumentTimeline
 
 {{ APIRef("Web Animations") }}
 
-The **`DocumentTimeline`** interface of the [Web Animations API](/en-US/docs/Web/API/Web_Animations_API) represents animation timelines, including the default document timeline (accessed via {{domxref("Document.timeline")}}).
+رابط **`DocumentTimeline`** در [Web Animations API](/en-US/docs/Web/API/Web_Animations_API) نشاندهندهٔ خط‌های زمانی انیمیشن است، از جمله خط زمانی پیش‌فرض سند (که از طریق {{domxref("Document.timeline")}} قابل دسترسی است).
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("DocumentTimeline.DocumentTimeline", "DocumentTimeline()")}}
-  - : Creates a new `DocumentTimeline` object associated with the active document of the current browsing context.
+  - : یک شیء `DocumentTimeline` جدید مرتبط با سند فعالِ بافتار مرور فعلی ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface inherits its property from its parent, {{domxref("AnimationTimeline")}}._
+_این رابط ویژگی خود را از والد خود، {{domxref("AnimationTimeline")}}، به ارث می‌برد._
 
 - {{domxref("AnimationTimeline.currentTime")}}
-  - : Returns the time value in milliseconds for this timeline or `null` if it is inactive.
+  - : مقدار زمان را بر حسب میلی‌ثانیه برای این خط زمانی برمی‌گرداند، یا اگر غیرفعال باشد، `null` را برمی‌گرداند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)
 - {{domxref("AnimationTimeline")}}
