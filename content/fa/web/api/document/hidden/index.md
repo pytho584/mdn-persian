@@ -1,7 +1,5 @@
 ---
 title: "Document: hidden property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/hidden"
-status: "needs-translation"
 ---
 
 ---
@@ -14,16 +12,15 @@ browser-compat: api.Document.hidden
 
 {{ ApiRef("DOM") }}
 
-The **`Document.hidden`** read-only property returns a Boolean value indicating if the page is considered hidden or not.
-This can be used to check whether the document is in the background or in a minimized window, or is otherwise not visible to the user.
+ویژگی فقطخواندنی **`Document.hidden`** یک مقدار بولین برمیگرداند که نشان میدهد آیا صفحه پنهان در نظر گرفته شده است یا خیر. میتوانید از این ویژگی برای بررسی اینکه آیا سند در پسزمینه است، در یک پنجرهٔ کوچکشده قرار دارد، یا به هر شکل دیگری برای کاربر قابل مشاهده نیست، استفاده کنید.
 
-The {{domxref("Document.visibilityState")}} property provides an alternative way to determine whether the page is hidden.
+ویژگی {{domxref("Document.visibilityState")}} روشی جایگزین برای تعیین پنهان بودن صفحه ارائه میدهد.
 
-## Value
+## مقدار
 
-A Boolean value, `true` if the page is hidden, and `false` otherwise.
+یک مقدار بولین؛ اگر صفحه پنهان باشد `true` و در غیر این صورت `false`.
 
-## Examples
+## نمونهها
 
 ```js
 document.addEventListener("visibilitychange", () => {
@@ -32,14 +29,14 @@ document.addEventListener("visibilitychange", () => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("Document.visibilityState")}}
