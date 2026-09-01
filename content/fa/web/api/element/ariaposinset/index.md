@@ -1,11 +1,5 @@
 ---
 title: "Element: ariaPosInSet property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaPosInSet"
-status: "needs-translation"
----
-
----
-title: "Element: ariaPosInSet property"
 short-title: ariaPosInSet
 slug: Web/API/Element/ariaPosInSet
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.Element.ariaPosInSet
 
 {{APIRef("DOM")}}
 
-The **`ariaPosInSet`** property of the {{domxref("Element")}} interface reflects the value of the [`aria-posinset`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-posinset) attribute, which defines an element's number or position in the current set of listitems or treeitems.
+ویژگی **`ariaPosInSet`** در رابط {{domxref("Element")}} مقدار ویژگی [`aria-posinset`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-posinset) را منعکس می‌کند که شماره یا موقعیت یک عنصر را در مجموعه فعلی از listitemها یا treeitemها تعریف می‌کند.
 
-## Value
+## مقدار
 
-A string containing an integer.
+یک رشته شامل یک عدد صحیح.
 
-## Examples
+## مثال‌ها
 
-In this example the `aria-posinset` attribute on the element with an ID of `article2` is set to "2". Using `ariaPosInSet` we update the value to "3".
+در این مثال، ویژگی `aria-posinset` روی عنصری با شناسه `article2` برابر با «2» تنظیم شده است. با استفاده از `ariaPosInSet` مقدار را به «3» تغییر می‌دهیم.
 
 ```html
 <article id="article1" aria-posinset="1">…</article>
@@ -36,10 +30,10 @@ el.ariaPosInSet = "3";
 console.log(el.ariaPosInSet); // "3"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
