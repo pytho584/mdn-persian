@@ -1,9 +1,4 @@
----
-title: "HTMLFieldSetElement: validationMessage property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLFieldSetElement/validationMessage"
-status: "needs-translation"
----
-
+```yaml
 ---
 title: "HTMLFieldSetElement: validationMessage property"
 short-title: validationMessage
@@ -14,11 +9,11 @@ browser-compat: api.HTMLFieldSetElement.validationMessage
 
 {{APIRef("HTML DOM")}}
 
-The **`validationMessage`** read-only property of the {{domxref("HTMLFieldSetElement")}} interface returns a string representing a localized message that describes the validation constraints that the {{htmlelement("fieldset")}} control does not satisfy (if any). This is the empty string as `<fieldset>` elements are not candidates for constraint validation ({{domxref("HTMLFieldSetElement.willValidate")}} is `false`).
+خاصیت فقط‌خواندنی **`validationMessage`** از رابط {{domxref("HTMLFieldSetElement")}} یک رشته را برمی‌گرداند که یک پیام محلی‌سازی‌شده را نشان می‌دهد و محدودیت‌های اعتبارسنجی را که کنترل {{htmlelement("fieldset")}} آن‌ها را برآورده نمی‌کند (در صورت وجود) توصیف می‌کند. این رشته خالی است زیرا عناصر `<fieldset>` کاندیدای اعتبارسنجی محدودیت نیستند ({{domxref("HTMLFieldSetElement.willValidate")}} برابر با `false` است).
 
 ## Value
 
-The empty string, `""`;
+رشته خالی، `""`;
 
 ## Specifications
 
@@ -40,3 +35,4 @@ The empty string, `""`;
 - [Learn: Client-side form validation](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
 - [Guide: Constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation)
 - CSS {{cssxref(":valid")}} and {{cssxref(":invalid")}} pseudo-classes
+```
