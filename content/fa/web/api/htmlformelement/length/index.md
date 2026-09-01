@@ -1,11 +1,5 @@
 ---
 title: "HTMLFormElement: length property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/length"
-status: "needs-translation"
----
-
----
-title: "HTMLFormElement: length property"
 short-title: length
 slug: Web/API/HTMLFormElement/length
 page-type: web-api-instance-property
@@ -14,28 +8,19 @@ browser-compat: api.HTMLFormElement.length
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLFormElement.length`**
-read-only property returns the number of controls in the {{HTMLElement("form")}}
-element.
+خاصیت فقط‌خواندنی **`HTMLFormElement.length`** تعداد کنترل‌ها در عنصر {{HTMLElement("form")}} را برمی‌گرداند.
 
-You can access the list of the form's controls using the
-{{domxref("HTMLFormElement.elements", "elements")}} property.
+می‌توانید فهرست کنترل‌های فرم را با استفاده از خاصیت {{domxref("HTMLFormElement.elements", "elements")}} به دست آورید.
 
-This includes both elements that are descendants of the `<form>`
-element as well as elements that are made members of the form using their
-`form` property.
+این تعداد شامل هم عناصری می‌شود که فرزندان عنصر `<form>` هستند و هم عناصری که با استفاده از خاصیت `form` خود به عضویت فرم درآمده‌اند.
 
-Elements that are considered for this property are: {{HTMLElement("button")}},
-{{HTMLElement("fieldset")}}, {{HTMLElement("input")}} (with the exception
-that any whose type is "image" are omitted for historical reasons),
-{{HTMLElement("object")}}, {{HTMLElement("output")}}, {{HTMLElement("select")}},
-and {{HTMLElement("textarea")}}.
+عناصری که برای این خاصیت در نظر گرفته می‌شوند عبارت‌اند از: {{HTMLElement("button")}}، {{HTMLElement("fieldset")}}، {{HTMLElement("input")}} (به استثنای آن‌هایی که نوعشان «image» است و به دلایل تاریخی حذف شده‌اند)، {{HTMLElement("object")}}، {{HTMLElement("output")}}، {{HTMLElement("select")}} و {{HTMLElement("textarea")}}.
 
-## Value
+## مقدار
 
-A number.
+یک عدد.
 
-## Examples
+## مثال‌ها
 
 ```js
 if (document.getElementById("form1").length > 1) {
@@ -43,10 +28,10 @@ if (document.getElementById("form1").length > 1) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
