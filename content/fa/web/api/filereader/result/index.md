@@ -1,11 +1,5 @@
 ---
 title: "FileReader: result property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileReader/result"
-status: "needs-translation"
----
-
----
-title: "FileReader: result property"
 short-title: result
 slug: Web/API/FileReader/result
 page-type: web-api-instance-property
@@ -14,24 +8,19 @@ browser-compat: api.FileReader.result
 
 {{APIRef("File API")}}{{AvailableInWorkers}}
 
-The **`result`** read-only property of the {{domxref("FileReader")}} interface returns the
-file's contents. This property is only valid after the read operation is complete, and
-the format of the data depends on which of the methods was used to initiate the read
-operation.
+خاصیت فقط‌خواندنی **`result`** در رابط {{domxref("FileReader")}} محتوای فایل را برمی‌گرداند. این خاصیت فقط پس از اتمام عملیات خواندن معتبر است و قالب داده‌ها به روشی بستگی دارد که برای شروع عملیات خواندن استفاده شده است.
 
-## Value
+## مقدار
 
-An appropriate string or {{jsxref("ArrayBuffer")}} based on which of the reading methods
-was used to initiate the read operation. The value is `null` if the reading
-is not yet complete or was unsuccessful.
+یک رشته (string) یا {{jsxref("ArrayBuffer")}} مناسب بر اساس اینکه کدام یک از روش‌های خواندن برای شروع عملیات استفاده شده است. اگر خواندن هنوز کامل نشده یا ناموفق باشد، مقدار `null` است.
 
-The result types are described below.
+انواع نتیجه در زیر توضیح داده شده‌اند.
 
 <table class="no-markdown">
   <thead>
     <tr>
-      <th scope="col">Method</th>
-      <th scope="col">Description</th>
+      <th scope="col">متد</th>
+      <th scope="col">توضیح</th>
     </tr>
   </thead>
   <tbody>
@@ -40,9 +29,8 @@ The result types are described below.
         {{domxref("FileReader/readAsArrayBuffer", "readAsArrayBuffer()")}}
       </td>
       <td>
-        The <code>result</code> is a JavaScript
-        {{jsxref("Global_Objects/ArrayBuffer", "ArrayBuffer")}}
-        containing binary data.
+        <code>result</code> یک {{jsxref("Global_Objects/ArrayBuffer", "ArrayBuffer")}}
+        جاوااسکریپت حاوی داده‌های باینری است.
       </td>
     </tr>
     <tr>
@@ -50,8 +38,8 @@ The result types are described below.
         {{domxref("FileReader/readAsBinaryString", "readAsBinaryString()")}}
       </td>
       <td>
-        The <code>result</code> contains the raw binary data from the file in a
-        string.
+        <code>result</code> داده‌های باینری خام فایل را به صورت یک رشته
+        شامل می‌شود.
       </td>
     </tr>
     <tr>
@@ -59,27 +47,27 @@ The result types are described below.
         {{domxref("FileReader/readAsDataURL", "readAsDataURL()")}}
       </td>
       <td>
-        The <code>result</code> is a string with a <code>data:</code> URL
-        representing the file's data.
+        <code>result</code> رشته‌ای با URL از نوع <code>data:</code>
+        است که داده‌های فایل را نمایش می‌دهد.
       </td>
     </tr>
     <tr>
       <td>
         {{domxref("FileReader/readAsText", "readAsText()")}}
       </td>
-      <td>The <code>result</code> is text in a string.</td>
+      <td><code>result</code> متن در قالب یک رشته است.</td>
     </tr>
   </tbody>
 </table>
 
-## Examples
+## مثال‌ها
 
-This example presents a function `reader()` which reads a file from a [file input](/en-US/docs/Web/HTML/Reference/Elements/input/file). It works by creating a {{domxref("FileReader")}} object and creating a listener for {{domxref("FileReader/load_event", "load")}} events, such that when then file is read, the `result` is obtained and passed to the callback function provided to `reader()`.
+این مثال تابع `reader()` را ارائه می‌دهد که یک فایل را از یک [ورودی فایل](/en-US/docs/Web/HTML/Reference/Elements/input/file) می‌خواند. این تابع با ایجاد یک شیء {{domxref("FileReader")}} و افزودن یک شنونده برای رویدادهای {{domxref("FileReader/load_event", "load")}} کار می‌کند، به طوری که وقتی فایل خوانده می‌شود، `result` به دست آمده و به تابع بازخواست (callback) که به `reader()` ارائه شده ارسال می‌شود.
 
-The content is handled as raw text data.
+محتوای فایل به عنوان داده متنی خام پردازش می‌شود.
 
 ```js
-// Given this HTMLInputElement of type="file":
+// با توجه به این HTMLInputElement از نوع type="file":
 // <input id="image" type="file" accept="image/*">
 
 function reader(file, callback) {
@@ -90,20 +78,20 @@ function reader(file, callback) {
 }
 
 document.querySelector("#image").addEventListener("change", (evt) => {
-  // No files, do nothing.
+  // اگر فایلی وجود نداشته باشد، کاری انجام نده.
   if (!evt.target.files) {
     return;
   }
   reader(evt.target.files[0], (err, res) => {
-    console.log(res); // Base64 `data:image/...` String result.
+    console.log(res); // نتیجه رشته‌ای Base64 از نوع `data:image/...`
   });
 });
 ```
 
-Given the asynchronous nature of {{domxref("FileReader")}}, you could use a Promise-based approach. Here's an example for a [file input](/en-US/docs/Web/HTML/Reference/Elements/input/file) with attribute `multiple` that returns a {{jsxref("Promise")}}.
+با توجه به ماهیت ناهمگام {{domxref("FileReader")}}، می‌توانید از رویکرد مبتنی بر Promise استفاده کنید. در اینجا مثالی برای یک [ورودی فایل](/en-US/docs/Web/HTML/Reference/Elements/input/file) با ویژگی `multiple` آورده شده است که یک {{jsxref("Promise")}} برمی‌گرداند.
 
 ```js
-// Given this HTMLInputElement:
+// با توجه به این HTMLInputElement:
 // <input id="images" type="file" accept="image/*" multiple>
 
 const reader = (file) =>
@@ -121,22 +109,22 @@ async function logImagesData(fileList) {
   try {
     fileResults = await Promise.all(frPromises);
   } catch (err) {
-    // In this specific case, Promise.all() might be preferred
-    // over Promise.allSettled(), since it isn't trivial to modify
-    // a FileList to a subset of files of what the user initially
-    // selected. Therefore, let's just stash the entire operation.
+    // در این مورد خاص، ممکن است Promise.all() ترجیح داده شود
+    // زیرا تغییر یک FileList به زیرمجموعه‌ای از فایل‌های انتخاب شده
+    // توسط کاربر کار ساده‌ای نیست. بنابراین، اجازه دهید کل عملیات
+    // را متوقف کنیم.
     console.error(err);
     return;
   }
 
   fileResults.forEach((fr) => {
-    console.log(fr.result); // Base64 `data:image/...` String result.
+    console.log(fr.result); // نتیجه رشته‌ای Base64 از نوع `data:image/...`
   });
 }
 
-// HTMLInputElement type="file" Event handler:
+// مدیریت رویداد HTMLInputElement از نوع type="file":
 document.querySelector("#images").addEventListener("change", (evt) => {
-  // If no files, do nothing.
+  // اگر فایلی وجود نداشته باشد، کاری انجام نده.
   if (!evt.target.files) {
     return;
   }
@@ -144,14 +132,14 @@ document.querySelector("#images").addEventListener("change", (evt) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("FileReader")}}
