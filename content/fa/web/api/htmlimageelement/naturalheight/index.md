@@ -1,11 +1,5 @@
 ---
 title: "HTMLImageElement: naturalHeight property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/naturalHeight"
-status: "needs-translation"
----
-
----
-title: "HTMLImageElement: naturalHeight property"
 short-title: naturalHeight
 slug: Web/API/HTMLImageElement/naturalHeight
 page-type: web-api-instance-property
@@ -14,22 +8,22 @@ browser-compat: api.HTMLImageElement.naturalHeight
 
 {{APIRef("HTML DOM")}}
 
-The read-only **`naturalHeight`** property of the {{domxref("HTMLImageElement")}} interface returns the intrinsic (natural), density-corrected height of the image in {{Glossary("CSS pixel", "CSS pixels")}}.
+ویژگی فقط خواندنی **`naturalHeight`** از رابط {{domxref("HTMLImageElement")}} ارتفاع ذاتی (طبیعی) و تصحیح‌شده بر اساس تراکم تصویر را در {{Glossary("CSS pixel", "پیکسل‌های CSS")}} برمی‌گرداند.
 
-This is the height the image is if drawn with nothing constraining its height; if you neither specify a height for the image nor place the image inside a container that limits or expressly specifies the image height, it will be rendered this tall.
+این ارتفاعی است که تصویر در صورت ترسیم بدون هیچ محدودیت ارتفاعی خواهد داشت؛ اگر ارتفاعی برای تصویر مشخص نکنید یا آن را درون ظرفی که ارتفاع را محدود یا صریحاً مشخص می‌کند قرار ندهید، تصویر با این ارتفاع نمایش داده می‌شود.
 
 > [!NOTE]
-> Most of the time the natural height is the actual height of the image sent by the server. Nevertheless, browsers can modify an image before pushing it to the renderer. For example, Chrome [degrades the resolution of images on low-end devices](https://crbug.com/1187043#c7). In such cases, `naturalHeight` will consider the height of the image modified by such browser interventions as the natural height, and returns this value.
+> در بیشتر مواقع، ارتفاع طبیعی برابر با ارتفاع واقعی تصویری است که توسط سرور ارسال می‌شود. با این حال، مرورگرها می‌توانند قبل از ارسال تصویر به رندرکننده، آن را تغییر دهند. به عنوان مثال، کروم [وضوح تصاویر را در دستگاه‌های کم‌قدرت کاهش می‌دهد](https://crbug.com/1187043#c7). در چنین مواردی، `naturalHeight` ارتفاع تصویر تغییر یافته توسط این مداخلات مرورگر را به عنوان ارتفاع طبیعی در نظر گرفته و این مقدار را برمی‌گرداند.
 
 ## Value
 
-An integer value indicating the intrinsic height of the image, in CSS pixels. This is the height at which the image is naturally drawn when no constraint or specific value is established for the image. This natural height is corrected for the pixel density of the device on which it's being presented, unlike {{domxref("HTMLImageElement.height", "height")}}.
+یک مقدار عدد صحیح که ارتفاع ذاتی تصویر را بر حسب پیکسل‌های CSS نشان می‌دهد. این ارتفاعی است که تصویر به طور طبیعی وقتی هیچ محدودیت یا مقدار مشخصی برای ارتفاع آن تعیین نشده است، ترسیم می‌شود. این ارتفاع طبیعی بر اساس تراکم پیکسلی دستگاهی که تصویر روی آن نمایش داده می‌شود تصحیح می‌شود، بر خلاف {{domxref("HTMLImageElement.height", "height")}}.
 
-If the intrinsic height is not available—either because the image does not specify an intrinsic height or because the image data is not available in order to obtain this information, `naturalHeight` returns 0.
+اگر ارتفاع ذاتی در دسترس نباشد - به دلیل اینکه تصویر ارتفاع ذاتی را مشخص نمی‌کند یا داده‌های تصویر برای به دست آوردن این اطلاعات در دسترس نیستند - `naturalHeight` مقدار 0 را برمی‌گرداند.
 
 ## Examples
 
-This example displays both the natural, density-adjusted size of an image as well as its rendered size as altered by the page's CSS and other factors.
+این مثال اندازه طبیعی و تنظیم‌شده بر اساس تراکم تصویر را به همراه اندازه رندر شده آن که توسط CSS صفحه و عوامل دیگر تغییر یافته است، نمایش می‌دهد.
 
 ### HTML
 
@@ -43,7 +37,7 @@ This example displays both the natural, density-adjusted size of an image as wel
 <pre></pre>
 ```
 
-The HTML features a 400x398 pixel image which is placed inside a {{HTMLElement("div")}}.
+HTML شامل یک تصویر 400x398 پیکسلی است که درون یک {{HTMLElement("div")}} قرار گرفته است.
 
 ### CSS
 
@@ -58,7 +52,7 @@ The HTML features a 400x398 pixel image which is placed inside a {{HTMLElement("
 }
 ```
 
-The main thing of note in the CSS above is that the style used for the container the image will be drawn in is 200px wide, and the image will be drawn to fill its width (100%).
+نکته قابل توجه در CSS بالا این است که استایل استفاده شده برای ظرفی که تصویر در آن ترسیم می‌شود 200 پیکسل عرض دارد و تصویر برای پر کردن عرض آن (100%) ترسیم می‌شود.
 
 ### JavaScript
 
@@ -75,7 +69,7 @@ Displayed size: ${width} x ${height} pixels
 });
 ```
 
-The JavaScript code dumps the natural and as-displayed sizes into the {{HTMLElement("pre")}}. This is done in response to the images's {{domxref("HTMLElement.load_event", "load")}} event handler, in order to ensure that the image is available before attempting to examine its width and height.
+کد جاوااسکریپت اندازه طبیعی و اندازه نمایش داده شده را درون {{HTMLElement("pre")}} قرار می‌دهد. این کار در پاسخ به کنترل‌کننده رویداد {{domxref("HTMLElement.load_event", "load")}} تصویر انجام می‌شود تا اطمینان حاصل شود که تصویر قبل از تلاش برای بررسی عرض و ارتفاع آن در دسترس است.
 
 ### Result
 
