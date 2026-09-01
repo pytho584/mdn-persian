@@ -1,7 +1,5 @@
 ---
 title: "HTMLImageElement: crossOrigin property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/crossOrigin"
-status: "needs-translation"
 ---
 
 ---
@@ -14,21 +12,21 @@ browser-compat: api.HTMLImageElement.crossOrigin
 
 {{APIRef("HTML DOM")}}
 
-The **`crossOrigin`** property of the {{domxref("HTMLImageElement")}} interface is a string which specifies the Cross-Origin Resource Sharing ({{Glossary("CORS")}}) setting to use when retrieving the image. It reflects the `<img>` element's [`crossorigin`](/en-US/docs/Web/HTML/Reference/Elements/img#crossorigin) content attribute.
+ویژگی **`crossOrigin`** در رابط {{domxref("HTMLImageElement")}} یک رشته است که تنظیمات اشتراک‌گذاری منابع متقاطع ({{Glossary("CORS")}}) را برای زمانی که تصویر دریافت می‌شود تعیین می‌کند. این ویژگی، ویژگی محتوایی [`crossorigin`](/en-US/docs/Web/HTML/Reference/Elements/img#crossorigin) عنصر `<img>` را بازتاب می‌دهد.
 
-## Value
+## مقدار
 
-A string whose value is one of `anonymous` or `use-credentials`. For their meanings, see the HTML [`crossorigin`](/en-US/docs/Web/HTML/Reference/Attributes/crossorigin) attribute reference.
+رشته‌ای که مقدار آن یکی از `anonymous` یا `use-credentials` است. برای آگاهی از معانی آن‌ها، به مرجع ویژگی [`crossorigin`](/en-US/docs/Web/HTML/Reference/Attributes/crossorigin) در HTML مراجعه کنید.
 
-## Examples
+## مثال‌ها
 
-### Setting the crossorigin attribute
+### تنظیم ویژگی crossorigin
 
-In this example, a new {{HTMLElement("img")}} element is created and added to the document, loading the image with the Anonymous state; the image will be loaded using CORS and credentials will be used for all cross-origin loads.
+در این مثال، یک عنصر جدید {{HTMLElement("img")}} ساخته و به سند اضافه می‌شود؛ تصویر با حالت Anonymous بارگذاری می‌شود. تصویر با استفاده از CORS بارگذاری خواهد شد و برای همه بارگذاری‌های متقاطع، از اعتبارنامه‌ها استفاده می‌شود.
 
 #### JavaScript
 
-The code below demonstrates setting the `crossOrigin` property on an `<img>` element to configure CORS access for the fetch of a newly-created image.
+کد زیر نحوه تنظیم ویژگی `crossOrigin` روی یک عنصر `<img>` را برای پیکربندی دسترسی CORS هنگام واکشی یک تصویر تازه‌ساخته‌شده نشان می‌دهد.
 
 ```js
 const container = document.querySelector(".container");
@@ -51,7 +49,7 @@ function loadImage(url) {
 loadImage("/shared-assets/images/examples/balloon.jpg");
 ```
 
-### HTML
+#### HTML
 
 ```html
 <div class="container">
@@ -63,7 +61,7 @@ loadImage("/shared-assets/images/examples/balloon.jpg");
 </div>
 ```
 
-### CSS
+#### CSS
 
 ```css
 body {
@@ -91,19 +89,19 @@ output {
 }
 ```
 
-### Result
+#### نتیجه
 
 {{EmbedLiveSample("Setting the crossorigin attribute", 600, 260)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLLinkElement.crossOrigin")}}
 - {{domxref("HTMLMediaElement.crossOrigin")}}
