@@ -1,7 +1,5 @@
 ---
 title: "HTMLMediaElement: play() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/play"
-status: "needs-translation"
 ---
 
 ---
@@ -14,87 +12,56 @@ browser-compat: api.HTMLMediaElement.play
 
 {{APIRef("HTML DOM")}}
 
-The {{domxref("HTMLMediaElement")}}
-**`play()`** method attempts to begin playback of the media.
-It returns a {{jsxref("Promise")}} which is resolved when playback has been
-successfully started.
+متد **`play()`** در {{domxref("HTMLMediaElement")}} تلاش می‌کند پخش رسانه را آغاز کند. این متد یک {{jsxref("Promise")}} برمی‌گرداند که وقتی پخش با موفقیت شروع شود، برآورده (resolve) می‌شود. اگر شروع پخش به هر دلیلی، مانند مشکلات مجوز، صورت نگیرد، پرامیس رد (reject) می‌شود.
 
-Failure to begin playback for any reason, such as
-permission issues, result in the promise being rejected.
-
-## Syntax
+## نحو
 
 ```js-nolint
 play()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} which is resolved when playback has been started, or is
-rejected if for any reason playback cannot be started.
+یک {{jsxref("Promise")}} که وقتی پخش شروع شده باشد برآورده می‌شود؛ یا اگر به هر دلیلی نتوان پخش را شروع کرد، رد می‌شود.
 
 > [!NOTE]
-> Browsers released before 2019 may not return a value from
-> `play()`.
+> مرورگرهای منتشرشده پیش از ۲۰۱۹ ممکن است از `play()` مقداری برنگردانند.
 
-### Exceptions
+### استثناها
 
-The promise's **rejection handler** is called with a {{domxref("DOMException")}} object
-passed in as its sole input parameter (as opposed to a traditional exception being
-thrown). Possible errors include:
+هندلر **رد** پرامیس با یک شیء {{domxref("DOMException")}} فراخوانی می‌شود که به‌عنوان تنها پارامتر ورودی به آن داده می‌شود (و نه یک استثنای سنتی که پرتاب شود). خطاهای احتمالی عبارت‌اند از:
 
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Provided if the user agent (browser) or operating system doesn't allow playback of media in the
-    current context or situation. The browser may require the user to explicitly start
-    media playback by clicking a "play" button, for example because of a [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy).
+  - : در مواردی ارائه می‌شود که عامل کاربر (مرورگر) یا سیستم‌عامل اجازهٔ پخش رسانه را در بافتار یا موقعیت فعلی ندهد. ممکن است مرورگر از کاربر بخواهد پخش رسانه را با کلیک روی دکمهٔ «پخش» به‌صورت صریح شروع کند؛ برای مثال به دلیل [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy).
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Provided if the media source (which may be specified as a {{domxref("MediaStream")}},
-    {{domxref("MediaSource")}}, {{domxref("Blob")}}, or {{domxref("File")}}, for example)
-    doesn't represent a supported media format.
+  - : در مواردی ارائه می‌شود که منبع رسانه (که ممکن است برای مثال به صورت {{domxref("MediaStream")}}، {{domxref("MediaSource")}}، {{domxref("Blob")}} یا {{domxref("File")}} مشخص شده باشد) قالب رسانه‌ای پشتیبانی‌شده‌ای را نشان ندهد.
 
-Other exceptions may be reported, depending on browser implementation details, media
-player implementation, and so forth.
+سایر استثناها نیز ممکن است بسته به جزئیات پیاده‌سازی مرورگر، پیاده‌سازی پخش‌کنندهٔ رسانه و موارد دیگر گزارش شوند.
 
-## Usage notes
+## یادداشت‌های استفاده
 
-Although the term "autoplay" is usually thought of as referring to pages that
-immediately begin playing media upon being loaded, web browsers' autoplay policies also
-apply to any script-initiated playback of media, including calls to `play()`.
+اگرچه اصطلاح «پخش خودکار» معمولاً به صفحه‌هایی اشاره دارد که بلافاصله پس از بارگذاری شروع به پخش رسانه می‌کنند، سیاست‌های پخش خودکار مرورگرها برای هرگونه پخش رسانه که توسط اسکریپت آغاز می‌شود نیز اعمال می‌شود، از جمله فراخوانی‌های `play()`.
 
-If the {{Glossary("user agent")}} is configured not to allow automatic or
-script-initiated playback of media, calling `play()` will cause the returned
-promise to be immediately rejected with a `NotAllowedError`. Websites should
-be prepared to handle this situation. For example, a site should not present a user
-interface that assumes playback has begun automatically, but should instead update their
-UI based on whether the returned promise is fulfilled or rejected. See the
-[example](#examples) below for more information.
+اگر عامل کاربر ({{Glossary("user agent")}}) به‌گونه‌ای پیکربندی شده باشد که اجازهٔ پخش خودکار یا پخش آغازشده توسط اسکریپت را ندهد، فراخوانی `play()` باعث می‌شود پرامیس بازگشتی بلافاصله با `NotAllowedError` رد شود. وب‌سایت‌ها باید برای این وضعیت آماده باشند. برای مثال، یک وب‌سایت نباید رابط کاربری‌ای ارائه دهد که فرض را بر شروع خودکار پخش بگذارد؛ بلکه باید رابط کاربری خود را بر اساس برآورده شدن یا رد شدن پرامیس بازگشتی به‌روزرسانی کند. برای اطلاعات بیشتر به [مثال](#examples) زیر مراجعه کنید.
 
 > [!NOTE]
-> The `play()` method may cause the user to be asked
-> to grant permission to play the media, resulting in a possible delay before the
-> returned promise is resolved. Be sure your code doesn't expect an immediate response.
+> متد `play()` ممکن است باعث شود از کاربر خواسته شود برای پخش رسانه اجازه بدهد، که می‌تواند تأخیری پیش از برآورده شدن پرامیس بازگشتی ایجاد کند. مطمئن شوید که کد شما انتظار پاسخ فوری ندارد.
 
-For even more in-depth information about autoplay and autoplay blocking, see our
-article [Autoplay guide for media and Web Audio APIs](/en-US/docs/Web/Media/Guides/Autoplay).
+برای اطلاعات عمیق‌تر دربارهٔ پخش خودکار و مسدودسازی آن، مقالهٔ [راهنمای پخش خودکار برای رسانه و Web Audio APIs](/en-US/docs/Web/Media/Guides/Autoplay) را ببینید.
 
-## Examples
+## مثال‌ها
 
-### Confirming playback and handling states
+### تأیید شروع پخش و مدیریت حالت‌ها
 
-This example demonstrates how to confirm that playback has begun and how to gracefully
-handle blocked automatic playback.
+این مثال نشان می‌دهد که چگونه تأیید کنیم پخش آغاز شده است و چگونه با مسدود شدن پخش خودکار به‌شکلی مناسب برخورد کنیم.
 
-When this example is executed, it begins by collecting references to the {{HTMLElement("video")}} element as well as the {{HTMLElement("button")}} used to toggle playback on and off.
-It then sets up an event handler for the {{domxref("Element/click_event", "click")}} event on the toggle button and attempts to automatically begin playback by calling the [`async`](/en-US/docs/Web/JavaScript/Reference/Statements/async_function) `playVideo()` function.
+این مثال هنگام اجرا، ابتدا ارجاع‌هایی به عنصر {{HTMLElement("video")}} و همچنین عنصر {{HTMLElement("button")}} که برای روشن و خاموش کردن پخش استفاده می‌شود جمع‌آوری می‌کند. سپس یک کنترل‌کنندهٔ رویداد برای رویداد {{domxref("Element/click_event", "click")}} روی دکمهٔ تغییر وضعیت تنظیم می‌کند و تلاش می‌کند پخش را به‌صورت خودکار با فراخوانی تابع `playVideo()` که [`async`](/en-US/docs/Web/JavaScript/Reference/Statements/async_function) است آغاز کند.
 
-A helper function `toggleButton()` lets us define what should happen in the code when we pass it a boolean value representing the playing state (e.g., `toggleButton(true)`)
-If playback is successful, the button text and its [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) changes to "Pause".
-If playback fails, the button and `aria-label` shows "Play".
-This ensures that the `playButton` matches the playback state by watching for the resolution or rejection of the {{jsxref("Promise")}} returned by `play()`:
+تابع کمکی `toggleButton()` به ما این امکان را می‌دهد که تعیین کنیم وقتی یک مقدار بولی نشان‌دهندهٔ وضعیت پخش به آن می‌دهیم (مثلاً `toggleButton(true)`) چه اتفاقی در کد بیفتد. اگر پخش موفق باشد، متن دکمه و [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) آن به «مکث» تغییر می‌کند. اگر پخش ناموفق باشد، دکمه و `aria-label` «پخش» را نشان می‌دهند. با این کار، با نظارت بر برآورده یا رد شدن {{jsxref("Promise")}} بازگشتی از `play()`، اطمینان حاصل می‌شود که `playButton` با وضعیت پخش هماهنگ بماند:
 
 ```html live-sample___handling-states
 <div class="video-box">
@@ -166,17 +133,17 @@ function handlePlayButton() {
 
 {{embedlivesample("handling-states", , "300")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Web media technologies](/en-US/docs/Web/Media)
-- Learning: [HTML video and audio](/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_video_and_audio)
-- [Autoplay guide for media and Web Audio APIs](/en-US/docs/Web/Media/Guides/Autoplay)
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [فناوری‌های رسانهٔ وب](/en-US/docs/Web/Media)
+- یادگیری: [ویدئو و صوتی HTML](/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_video_and_audio)
+- [راهنمای پخش خودکار برای رسانه و Web Audio APIs](/en-US/docs/Web/Media/Guides/Autoplay)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
