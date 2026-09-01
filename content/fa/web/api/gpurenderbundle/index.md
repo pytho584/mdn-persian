@@ -1,10 +1,4 @@
 ---
-title: "GPURenderBundle"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPURenderBundle"
-status: "needs-translation"
----
-
----
 title: GPURenderBundle
 slug: Web/API/GPURenderBundle
 page-type: web-api-interface
@@ -13,24 +7,24 @@ browser-compat: api.GPURenderBundle
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`GPURenderBundle`** interface of the {{domxref("WebGPU API", "WebGPU API", "", "nocode")}} represents a container for pre-recorded bundles of commands.
+**`GPURenderBundle`** 接口属于 {{domxref("WebGPU API", "WebGPU API", "", "nocode")}}，表示一个用于存储预先录制的命令包（bundle）的容器。
 
-The command bundles are encoded using a {{domxref("GPURenderBundleEncoder")}}; once the desired commands have been encoded, they are recorded into a `GPURenderBundle` object instance using the {{domxref("GPURenderBundleEncoder.finish()")}} method.
+这些命令包使用 {{domxref("GPURenderBundleEncoder")}} 进行编码；一旦所需命令编码完成，它们会通过 {{domxref("GPURenderBundleEncoder.finish()")}} 方法记录到 `GPURenderBundle` 对象实例中。
 
-These command bundles can then be reused across multiple render passes by passing the `GPURenderBundle` objects into {{domxref("GPURenderPassEncoder.executeBundles()")}} calls. Reusing pre-recoded commands can significantly improve app performance in situations where JavaScript draw call overhead is a bottleneck. Render bundles are most effective in situations where a batch of objects will be drawn the same way across multiple views or frames, with the only differences being the buffer content being used (such as updated matrix uniforms).
+随后，这些命令包可以通过将 `GPURenderBundle` 对象传入 {{domxref("GPURenderPassEncoder.executeBundles()")}} 调用，在多个渲染通道中重复使用。在 JavaScript 绘制调用开销成为瓶颈的情况下，重用预先录制的命令可以显著提升应用性能。当一批对象在多个视图或帧中以相同方式绘制，且唯一的差异是所使用的缓冲内容（例如更新后的矩阵 uniform）时，渲染包最为有效。
 
-A good example is VR rendering. Recording the rendering as a render bundle and then tweaking the view matrix and replaying it for each eye is a more efficient way to issue draw calls for both renderings of the scene.
+一个典型示例是 VR 渲染。将渲染过程录制为渲染包，然后调整视图矩阵并为每只眼睛重放，是向场景的两次渲染发出绘制调用的更高效方式。
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## 实例属性
 
 - {{domxref("GPURenderBundle.label", "label")}}
-  - : A string providing a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+  - : 一个字符串，提供可用于标识对象的标签，例如在 {{domxref("GPUError")}} 消息或控制台警告中。
 
-## Examples
+## 示例
 
-In the WebGPU Samples [Animometer example](https://webgpu.github.io/webgpu-samples/samples/animometer/), a lot of like operations are done on many different objects simultaneously. A render bundle is encoded using the following function:
+在 WebGPU 示例 [Animometer 示例](https://webgpu.github.io/webgpu-samples/samples/animometer/) 中，许多类似的操作会在多个不同对象上同时执行。渲染包通过以下函数进行编码：
 
 ```js
 function recordRenderPass(
@@ -56,7 +50,7 @@ function recordRenderPass(
 }
 ```
 
-Later on, a {{domxref("GPURenderBundleEncoder")}} is created, the function is invoked, and the render bundle is recorded using {{domxref("GPURenderBundleEncoder.finish()")}}:
+之后，创建一个 {{domxref("GPURenderBundleEncoder")}}，调用该函数，并使用 {{domxref("GPURenderBundleEncoder.finish()")}} 记录渲染包：
 
 ```js
 const renderBundleEncoder = device.createRenderBundleEncoder({
@@ -66,7 +60,7 @@ recordRenderPass(renderBundleEncoder);
 const renderBundle = renderBundleEncoder.finish();
 ```
 
-{{domxref("GPURenderPassEncoder.executeBundles()")}} is then used to reuse the work across multiple render passes to improve performance. Study the example code listing for the full context.
+然后使用 {{domxref("GPURenderPassEncoder.executeBundles()")}} 在多个渲染通道中重用这些工作以提升性能。请参阅示例代码列表以获取完整上下文。
 
 ```js
 // …
@@ -98,14 +92,14 @@ return function doDraw(timestamp) {
 // …
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
