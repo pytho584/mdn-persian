@@ -1,9 +1,4 @@
----
-title: "ElementInternals: setFormValue() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/setFormValue"
-status: "needs-translation"
----
-
+```
 ---
 title: "ElementInternals: setFormValue() method"
 short-title: setFormValue()
@@ -14,50 +9,50 @@ browser-compat: api.ElementInternals.setFormValue
 
 {{APIRef("Web Components")}}
 
-The **`setFormValue()`** method of the {{domxref("ElementInternals")}} interface sets the element's submission value and state, communicating these to the user agent.
+متد **`setFormValue()`** از رابط {{domxref("ElementInternals")}}، مقدار ارسالی و حالت عنصر را تنظیم می‌کند و این موارد را به عامل کاربر منتقل می‌کند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 setFormValue(value)
 setFormValue(value, state)
 ```
 
-### Parameters
+### پارامترها
 
 - `value`
-  - : A {{domxref("File")}}, a string, or a {{domxref("FormData")}} as the value to be submitted to the server.
+  - : یک {{domxref("File")}}، یک رشته یا یک {{domxref("FormData")}} به‌عنوان مقداری که باید به سرور ارسال شود.
 - `state` {{optional_inline}}
-  - : A {{domxref("File")}}, a string, or a {{domxref("FormData")}} representing the input made by the user.
-    This allows the application to re-display the information that the user submitted, in the form that they submitted it, if required.
+  - : یک {{domxref("File")}}، یک رشته یا یک {{domxref("FormData")}} که ورودی انجام‌شده توسط کاربر را نشان می‌دهد. این امکان را به برنامه می‌دهد تا در صورت نیاز، اطلاعات ارسال‌شده توسط کاربر را به همان شکلی که کاربر ارائه کرده است دوباره نمایش دهد.
 
 > [!NOTE]
-> In general, `state` is used to pass information specified by a user, the `value` is suitable for submission to a server, post sanitization.
-> For example, if a custom element asked a user to submit a date, the user might enter "3/15/2019".
-> This would be the `state`.
-> The server expects a date format of `2019-03-15`, the date in this format would be passed as the `value`.
+> به‌طور کلی، `state` برای انتقال اطلاعاتی استفاده می‌شود که توسط کاربر تعیین شده است، حال آنکه `value` برای ارسال به سرور، پس از پاکسازی (sanitization) مناسب است.
+> برای مثال، اگر یک عنصر سفارشی از کاربر بخواهد تاریخی را وارد کند، ممکن است کاربر «3/15/2019» را وارد کند.
+> این مقدار، `state` خواهد بود.
+> سرور یک قالب تاریخ مانند `2019-03-15` را انتظار دارد؛ تاریخی که در این قالب باشد به‌عنوان `value` ارسال می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-Undefined.
+undefined.
 
-### Exceptions
+### استثناها
 
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Thrown if the element does not have its `formAssociated` property set to `true`.
+  - : اگر عنصر ویژگی `formAssociated` خود را روی `true` تنظیم نکرده باشد، این خطا پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-In the following example, a checkbox custom element sets `on` as the value to send to the server, and `checked` as the state.
+در مثال زیر، یک عنصر سفارشی چک‌باکس مقدار `on` را به‌عنوان مقداری برای ارسال به سرور و `checked` را به‌عنوان state تنظیم می‌کند.
 
 ```js
 this.internals_.setFormValue("on", "checked");
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
+```
