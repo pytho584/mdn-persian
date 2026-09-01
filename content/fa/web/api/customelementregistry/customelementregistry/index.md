@@ -1,11 +1,5 @@
 ---
 title: "CustomElementRegistry: CustomElementRegistry() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/CustomElementRegistry"
-status: "needs-translation"
----
-
----
-title: "CustomElementRegistry: CustomElementRegistry() constructor"
 short-title: CustomElementRegistry()
 slug: Web/API/CustomElementRegistry/CustomElementRegistry
 page-type: web-api-constructor
@@ -14,12 +8,12 @@ browser-compat: api.CustomElementRegistry.CustomElementRegistry
 
 {{APIRef("Web Components")}}
 
-The **`CustomElementRegistry()`** constructor creates a new {{domxref("CustomElementRegistry")}} object for scoped usage.
+سازندهی **`CustomElementRegistry()`** یک شیء جدید {{domxref("CustomElementRegistry")}} برای استفادهی محدودشده (scoped) ایجاد می‌کند.
 
-The constructor is specifically used for creating scoped registries that limit [custom element](/en-US/docs/Web/API/Web_components/Using_custom_elements) definitions to a particular scope, such as an element or {{domxref("ShadowRoot")}}.
+این سازنده به‌طور خاص برای ایجاد رجیستری‌های محدودشده استفاده می‌شود که تعریف [custom element](/en-US/docs/Web/API/Web_components/Using_custom_elements) را به یک حوزهی خاص، مانند یک عنصر یا {{domxref("ShadowRoot")}} محدود می‌کنند.
 
 > [!NOTE]
-> The global `CustomElementRegistry` object associated with a {{domxref("Window")}} is not created using this constructor; it is automatically created when the window is set up, and is accessible via the {{domxref("window.customElements")}} property.
+> شیء سراسری `CustomElementRegistry` مرتبط با یک {{domxref("Window")}} با استفاده از این سازنده ساخته نمی‌شود؛ این شیء به‌طور خودکار هنگام راه‌اندازی پنجره ایجاد می‌شود و از طریق ویژگی {{domxref("window.customElements")}} در دسترس است.
 
 ## Syntax
 
@@ -29,26 +23,26 @@ new CustomElementRegistry()
 
 ### Parameters
 
-None.
+هیچ‌کدام.
 
 ### Return value
 
-A new {{domxref("CustomElementRegistry")}} object.
+یک شیء جدید {{domxref("CustomElementRegistry")}}.
 
 ## Description
 
-When you construct a `CustomElementRegistry` using `new CustomElementRegistry()`, the resulting registry is considered _scoped_. This means:
+وقتی یک `CustomElementRegistry` را با استفاده از `new CustomElementRegistry()` می‌سازید، رجیستری حاصل به‌عنوان _محدودشده_ در نظر گرفته می‌شود. این یعنی:
 
-- Custom element definitions added to it using {{domxref("CustomElementRegistry.define", "define()")}} are not globally available. They only apply to nodes that have been associated with this registry.
-- It does not support the `extends` option in `define()` (for creating [customized built-in elements](/en-US/docs/Web/API/Web_components/Using_custom_elements#types_of_custom_element)). Attempting to use `extends` with a scoped registry throws a `NotSupportedError` {{domxref("DOMException")}}.
+- تعریف‌های عناصر سفارشی که با استفاده از {{domxref("CustomElementRegistry.define", "define()")}} به آن اضافه می‌شوند، به‌صورت سراسری در دسترس نیستند. آن‌ها فقط روی گره‌هایی اعمال می‌شوند که با این رجیستری مرتبط شده‌اند.
+- این رجیستری از گزینهی `extends` در `define()` پشتیبانی نمی‌کند (برای ایجاد [customized built-in elements](/en-US/docs/Web/API/Web_components/Using_custom_elements#types_of_custom_element)). تلاش برای استفاده از `extends` با یک رجیستری محدودشده، یک `NotSupportedError` {{domxref("DOMException")}} پرتاب می‌کند.
 
-To associate a scoped registry with a DOM subtree, you can use the {{domxref("CustomElementRegistry.initialize()", "initialize()")}} method, pass it to {{domxref("Element.attachShadow()")}}, or use the {{domxref("Document.createElement()")}} method's `customElementRegistry` option.
+برای مرتبط‌کردن یک رجیستری محدودشده با یک زیردرخت DOM، می‌توانید از متد {{domxref("CustomElementRegistry.initialize()", "initialize()")}} استفاده کنید، آن را به {{domxref("Element.attachShadow()")}} ارسال کنید، یا از گزینهی `customElementRegistry` متد {{domxref("Document.createElement()")}} استفاده کنید.
 
 ## Examples
 
 ### Creating a scoped custom element registry
 
-This example creates a scoped registry, defines a custom element on it, and passes the registry to {{domxref("Element.attachShadow()")}}. When HTML containing `<my-element>` is added to the shadow root, the element is upgraded using the scoped registry's definition.
+این مثال یک رجیستری محدودشده ایجاد می‌کند، یک عنصر سفارشی روی آن تعریف می‌کند و رجیستری را به {{domxref("Element.attachShadow()")}} ارسال می‌کند. وقتی HTML حاوی `<my-element>` به ریشهی سایه اضافه می‌شود، عنصر با استفاده از تعریف رجیستری محدودشده ارتقا می‌یابد.
 
 ```js
 const myRegistry = new CustomElementRegistry();
