@@ -1,29 +1,18 @@
 ---
 title: "HTMLStyleElement: media property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLStyleElement/media"
-status: "needs-translation"
----
-
----
-title: "HTMLStyleElement: media property"
-short-title: media
-slug: Web/API/HTMLStyleElement/media
-page-type: web-api-instance-property
-browser-compat: api.HTMLStyleElement.media
 ---
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLStyleElement.media`** property specifies the
-intended destination medium for style information.
+ویژگی **`HTMLStyleElement.media`** رسانهٔ مقصد مورد نظر برای اطلاعات سبک را مشخص می‌کند.
 
-## Value
+## مقدار
 
-A string describing a single medium or a comma-separated list.
+یک رشته که یک رسانهٔ واحد یا یک لیست جدا شده با کاما را توصیف می‌کند.
 
-## Examples
+## مثال‌ها
 
-Suppose the `<head>` contains the following:
+فرض کنید در بخش `<head>` موارد زیر وجود دارد:
 
 ```html
 <style id="inline-style" media="screen, print">
@@ -33,7 +22,7 @@ Suppose the `<head>` contains the following:
 </style>
 ```
 
-Then:
+سپس:
 
 ```js
 const style = document.getElementById("inline-style");
@@ -41,10 +30,10 @@ const style = document.getElementById("inline-style");
 console.log(style.media); // 'screen, print'
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
