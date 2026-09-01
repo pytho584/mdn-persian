@@ -1,11 +1,5 @@
 ---
 title: "HTMLIFrameElement: width property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/width"
-status: "needs-translation"
----
-
----
-title: "HTMLIFrameElement: width property"
 short-title: width
 slug: Web/API/HTMLIFrameElement/width
 page-type: web-api-instance-property
@@ -14,13 +8,13 @@ browser-compat: api.HTMLIFrameElement.width
 
 {{APIRef("HTML DOM")}}
 
-The **`width`** property of the {{domxref("HTMLIFrameElement")}} interface returns a string that reflects the `width` attribute of the {{HTMLElement("iframe")}} element, indicating the width of the frame in CSS pixels.
+ویژگی **`width`** از رابط {{domxref("HTMLIFrameElement")}} یک رشته را برمی‌گرداند که منعکس‌کنندهٔ ویژگی `width` عنصر {{HTMLElement("iframe")}} است و عرض فریم را بر حسب پیکسل‌های CSS نشان می‌دهد.
 
-## Value
+## مقدار
 
-A string indicating the width of the frame in CSS pixels.
+یک رشته که عرض فریم را بر حسب پیکسل‌های CSS نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
 ```html
 <iframe id="el" width="800" height="600"></iframe>
@@ -31,15 +25,15 @@ const el = document.getElementById("el");
 console.log(el.width); // Output: '800'
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLCanvasElement.width")}}
 - {{domxref("HTMLEmbedElement.width")}}
