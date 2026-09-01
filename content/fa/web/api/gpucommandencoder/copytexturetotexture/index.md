@@ -1,11 +1,5 @@
 ---
 title: "GPUCommandEncoder: copyTextureToTexture() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder/copyTextureToTexture"
-status: "needs-translation"
----
-
----
-title: "GPUCommandEncoder: copyTextureToTexture() method"
 short-title: copyTextureToTexture()
 slug: Web/API/GPUCommandEncoder/copyTextureToTexture
 page-type: web-api-instance-method
@@ -14,81 +8,80 @@ browser-compat: api.GPUCommandEncoder.copyTextureToTexture
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}
 
-The **`copyTextureToTexture()`** method of the
-{{domxref("GPUCommandEncoder")}} interface encodes a command that copies data from one {{domxref("GPUTexture")}} to another.
+متد **`copyTextureToTexture()`** از رابط {{domxref("GPUCommandEncoder")}} دستوری را رمزگذاری می‌کند که داده‌ها را از یک {{domxref("GPUTexture")}} به دیگری کپی می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 copyTextureToTexture(source, destination, copySize)
 ```
 
-### Parameters
+### پارامترها
 
 - `source`
-  - : An object (see [Copy texture object structure](#copy_texture_object_structure)) defining the texture to copy the data from. Combined with `copySize`, this defines the region of the source texture subresource.
+  - : شیئی (به [ساختار شیء کپی بافت](#ساختار-شیء-کپی-بافت) مراجعه کنید) که بافت مبدأ برای کپی داده‌ها را تعریف می‌کند. این شیء به همراه `copySize`، ناحیه‌ی زیرمنبع (subresource) بافت مبدأ را مشخص می‌کند.
 - `destination`
-  - : An object (see [Copy texture object structure](#copy_texture_object_structure)) defining the texture to write the data to. Combined with `copySize`, this defines the region of the destination texture subresource.
+  - : شیئی (به [ساختار شیء کپی بافت](#ساختار-شیء-کپی-بافت) مراجعه کنید) که بافت مقصد برای نوشتن داده‌ها را تعریف می‌کند. این شیء به همراه `copySize`، ناحیه‌ی زیرمنبع بافت مقصد را مشخص می‌کند.
 - `copySize`
-  - : An object or array specifying the width, height, and depth/array layer count of the copied data. The width value must always be specified, while the height and depth/array layer count values are optional and will default to 1 if omitted.
+  - : یک شیء یا آرایه که عرض، ارتفاع و تعداد لایه‌های عمق/آرایه را برای داده‌های کپی‌شده مشخص می‌کند. مقدار `width` همیشه باید مشخص شود، در حالی که مقادیر `height` و تعداد لایه‌های عمق/آرایه اختیاری هستند و در صورت حذف، پیش‌فرض ۱ خواهند بود.
 
-    For example, you can pass an array `[16, 16, 2]`, or its equivalent object `{ width: 16, height: 16, depthOrArrayLayers: 2 }`.
+    برای مثال، می‌توانید آرایه‌ای مانند `[16, 16, 2]` یا شیء معادل آن `{ width: 16, height: 16, depthOrArrayLayers: 2 }` را عبور دهید.
 
-### Copy texture object structure
+### ساختار شیء کپی بافت
 
-A copy texture object has the following structure:
+یک شیء کپی بافت ساختار زیر را دارد:
 
 - `aspect` {{optional_inline}}
-  - : An enumerated value defining which aspects of the texture to copy the data from/to. Possible values are:
+  - : یک مقدار شمارشی که مشخص می‌کند کدام جنبه‌های بافت برای کپی داده‌ها مبدأ/مقصد قرار گیرند. مقادیر ممکن عبارت‌اند از:
     - `"all"`
-      - : All available aspects of the texture format will be copied from/to, which can mean all or any of color, depth, and stencil, depending on what kind of format you are dealing with.
+      - : تمام جنبه‌های موجود قالب بافت کپی می‌شوند؛ این می‌تواند همه یا هر کدام از رنگ (color)، عمق (depth) و استنسیل (stencil) باشد، بسته به نوع قالبی که با آن سروکار دارید.
     - `"depth-only"`
-      - : Only the depth aspect of a [depth-or-stencil format](https://gpuweb.github.io/gpuweb/#combined-depth-stencil-format) will be copied from/to.
+      - : فقط جنبه‌ی عمق یک [قالب عمق-یا-استنسیل](https://gpuweb.github.io/gpuweb/#combined-depth-stencil-format) کپی می‌شود.
     - `"stencil-only"`
-      - : Only the stencil aspect of a depth-or-stencil format will be copied from/to.
+      - : فقط جنبه‌ی استنسیل یک قالب عمق-یا-استنسیل کپی می‌شود.
 
-    If omitted, `aspect` takes a value of `"all"`.
+    اگر حذف شود، `aspect` مقدار `"all"` می‌گیرد.
 
 - `mipLevel` {{optional_inline}}
-  - : A number representing the mip-map level of the texture to copy the data from/to. If omitted, `mipLevel` defaults to 0.
+  - : عددی که سطح mip-map بافت را برای کپی داده‌ها از/به آن مشخص می‌کند. اگر حذف شود، `mipLevel` به‌طور پیش‌فرض ۰ است.
 - `origin` {{optional_inline}}
-  - : An object or array specifying the origin of the copy/destination — the minimum corner of the texture region to copy the data from/to. Together with `size`, this defines the full extent of the region to copy from/to. The `x`, `y`, and `z` values default to 0 if any of all of `origin` is omitted.
+  - : یک شیء یا آرایه که مبدأ کپی/مقصد را مشخص می‌کند — گوشه‌ی کمینه‌ی ناحیه‌ی بافت برای کپی داده‌ها از/به آن. همراه با `size`، این مقدار گستره‌ی کامل ناحیه‌ی کپی از/به را تعریف می‌کند. مقادیر `x`، `y` و `z` در صورت حذف `origin` (یا هر بخشی از آن) پیش‌فرض ۰ دارند.
 
-    For example, you can pass an array like `[0, 0, 0]`, or its equivalent object `{ x: 0, y: 0, z: 0 }`.
+    برای مثال، می‌توانید آرایه‌ای مانند `[0, 0, 0]` یا شیء معادل آن `{ x: 0, y: 0, z: 0 }` را عبور دهید.
 
 - `texture`
-  - : A {{domxref("GPUTexture")}} object representing the texture to copy the data from/to.
+  - : یک شیء {{domxref("GPUTexture")}} که بافت مبدأ/مقصد برای کپی داده‌ها را نشان می‌دهد.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-### Validation
+### اعتبارسنجی
 
-The following criteria must be met when calling **`copyTextureToTexture()`**, otherwise a {{domxref("GPUValidationError")}} is generated and the {{domxref("GPUCommandEncoder")}} becomes invalid.
+هنگام فراخوانی **`copyTextureToTexture()`** معیارهای زیر باید برقرار باشند، در غیر این صورت یک {{domxref("GPUValidationError")}} ایجاد شده و {{domxref("GPUCommandEncoder")}} نامعتبر می‌شود.
 
-For the `source`:
+برای `source`:
 
-- The `source`'s {{domxref("GPUTexture.usage")}} includes the `GPUTextureUsage.COPY_SRC` flag.
+- {{domxref("GPUTexture.usage")}} مربوط به `source` شامل پرچم `GPUTextureUsage.COPY_SRC` باشد.
 
-For the `destination`:
+برای `destination`:
 
-- The `source`'s {{domxref("GPUTexture.usage")}} includes the `GPUTextureUsage.COPY_DST` flag.
+- {{domxref("GPUTexture.usage")}} مربوط به `source` شامل پرچم `GPUTextureUsage.COPY_DST` باشد.
 
-For `source` and `destination`:
+برای `source` و `destination`:
 
-- `mipLevel` is less than the {{domxref("GPUTexture.mipLevelCount")}}.
-- `origin.x` is a multiple of the texel block width of the {{domxref("GPUTexture.format")}}.
-- `origin.y` is a multiple of the texel block height of the {{domxref("GPUTexture.format")}}.
-- The source and destination `texture` {{domxref("GPUTexture.format")}}s are copy-compatible.
-- The source and destination `texture` {{domxref("GPUTexture.sampleCount")}}s are equal.
-- If the {{domxref("GPUTexture.format")}} is a [depth-or-stencil format](https://gpuweb.github.io/gpuweb/#combined-depth-stencil-format) or {{domxref("GPUTexture.sampleCount")}} is more than 1, the subresource size is equal to `size`.
-- The `texture`'s {{domxref("GPUTexture.sampleCount")}} is 1.
-- `aspect` refers to a single aspect of the {{domxref("GPUTexture.format")}}.
-- That aspect is a valid image copy source/destination according to [depth-or-stencil formats](https://gpuweb.github.io/gpuweb/#combined-depth-stencil-format).
-- The `texture` is compatible with the `copySize`.
+- `mipLevel` کمتر از {{domxref("GPUTexture.mipLevelCount")}} باشد.
+- `origin.x` مضربی از عرض بلوک تکسِل (texel block) در {{domxref("GPUTexture.format")}} باشد.
+- `origin.y` مضربی از ارتفاع بلوک تکسِل در {{domxref("GPUTexture.format")}} باشد.
+- {{domxref("GPUTexture.format")}} مربوط به `texture` در مبدأ و مقصد از نظر کپی سازگار باشند.
+- {{domxref("GPUTexture.sampleCount")}} مربوط به `texture` در مبدأ و مقصد برابر باشند.
+- اگر {{domxref("GPUTexture.format")}} یک [قالب عمق-یا-استنسیل](https://gpuweb.github.io/gpuweb/#combined-depth-stencil-format) باشد یا {{domxref("GPUTexture.sampleCount")}} بیشتر از ۱ باشد، اندازه‌ی زیرمنبع برابر با `size` باشد.
+- {{domxref("GPUTexture.sampleCount")}} مربوط به `texture` برابر ۱ باشد.
+- `aspect` به یک جنبه‌ی واحد از {{domxref("GPUTexture.format")}} اشاره کند.
+- آن جنبه طبق [قالب‌های عمق-یا-استنسیل](https://gpuweb.github.io/gpuweb/#combined-depth-stencil-format) یک منبع/مقصد معتبر برای کپی تصویر باشد.
+- `texture` با `copySize` سازگار باشد.
 
-## Examples
+## مثال‌ها
 
 ```js
 commandEncoder.copyTextureToTexture(
@@ -106,14 +99,14 @@ commandEncoder.copyTextureToTexture(
 );
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
