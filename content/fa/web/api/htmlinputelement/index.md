@@ -1,10 +1,4 @@
 ---
-title: "HTMLInputElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement"
-status: "needs-translation"
----
-
----
 title: HTMLInputElement
 slug: Web/API/HTMLInputElement
 page-type: web-api-interface
@@ -13,234 +7,234 @@ browser-compat: api.HTMLInputElement
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLInputElement`** interface provides special properties and methods for manipulating the options, layout, and presentation of {{HTMLElement("input")}} elements.
+رابط **`HTMLInputElement`** ویژگی‌ها و روش‌های ویژه‌ای را برای دستکاری گزینه‌ها، طرح‌بندی و نمایش عناصر {{HTMLElement("input")}} فراهم می‌کند.
 
 {{InheritanceDiagram}}
 
 ## Instance properties
 
-_Also inherits properties from its parent interface, {{domxref("HTMLElement")}}._
+_همچنین ویژگی‌های رابط والد خود، {{domxref("HTMLElement")}} را به ارث می‌برد._
 
-Some properties only apply to input element types that support the corresponding attributes.
+برخی ویژگی‌ها فقط برای انواع عنصر ورودی که صفت‌های متناظر را پشتیبانی می‌کنند اعمال می‌شوند.
 
 - {{domxref("HTMLInputElement.align", "align")}} {{Deprecated_Inline}}
-  - : A string that represents the alignment of the element. _Use CSS instead._
+  - : رشته‌ای که ترازبندی عنصر را نمایش می‌دهد. _به جای آن از CSS استفاده کنید._
 
 - {{domxref("HTMLInputElement.alpha", "alpha")}} {{experimental_inline}}
-  - : A boolean that represents the element's [`alpha`](/en-US/docs/Web/HTML/Reference/Elements/input/color#alpha) attribute, indicating whether the color's alpha component can be manipulated by the end user and does not have to be fully opaque.
+  - : یک مقدار بولی که صفت [`alpha`](/en-US/docs/Web/HTML/Reference/Elements/input/color#alpha) عنصر را نمایش می‌دهد و نشان می‌دهد که آیا مؤلفه آلفای رنگ می‌تواند توسط کاربر نهایی دستکاری شود و لزومی ندارد که کاملاً کدر باشد.
 
 - {{domxref("HTMLInputElement.colorSpace", "colorSpace")}}
-  - : A string that represents the element's [`colorspace`](/en-US/docs/Web/HTML/Reference/Elements/input/color#colorspace) attribute, indicating the {{glossary("color space")}} of the serialized CSS color (sRGB or display-p3).
+  - : رشته‌ای که صفت [`colorspace`](/en-US/docs/Web/HTML/Reference/Elements/input/color#colorspace) عنصر را نشان می‌دهد و {{glossary("color space")}} رنگ CSS سریال‌شده (sRGB یا display-p3) را مشخص می‌کند.
 
 - {{domxref("HTMLInputElement.defaultValue", "defaultValue")}}
-  - : A string that represents the default value as originally specified in the HTML that created this object.
+  - : رشته‌ای که مقدار پیش‌فرض را همان‌طور که در HTML سازنده این شیء مشخص شده، نمایش می‌دهد.
 
 - {{domxref("HTMLInputElement.dirName", "dirName")}}
-  - : A string that represents the directionality of the element.
+  - : رشته‌ای که جهت (directionality) عنصر را نمایش می‌دهد.
 
 - {{domxref("HTMLInputElement.incremental", "incremental")}} {{Non-standard_Inline}}
-  - : A boolean that represents the search event fire mode, if `true`, fires on every keypress, or on clicking the cancel button; otherwise fires when pressing <kbd>Enter</kbd>.
+  - : یک مقدار بولی که حالت شلیک رویداد جستجو را نشان می‌دهد؛ اگر `true` باشد، رویداد با هر بار فشردن کلید یا کلیک بر دکمه لغو شلیک می‌شود؛ در غیر این صورت، هنگام فشردن <kbd>Enter</kbd> شلیک می‌شود.
 
 - {{domxref("HTMLInputElement.labels", "labels")}} {{ReadOnlyInline}}
-  - : Returns a list of {{ HTMLElement("label") }} elements that are labels for this element.
+  - : فهرستی از عناصر {{ HTMLElement("label") }} را برمی‌گرداند که برچسب‌های این عنصر هستند.
 
 - {{domxref("HTMLInputElement.list", "list")}} {{ReadOnlyInline}}
-  - : Returns the element pointed to by the [`list`](/en-US/docs/Web/HTML/Reference/Elements/input#list) attribute. The property may be `null` if no HTML element is found in the same tree.
+  - : عنصری را که صفت [`list`](/en-US/docs/Web/HTML/Reference/Elements/input#list) به آن اشاره می‌کند برمی‌گرداند. اگر هیچ عنصر HTML در همان درخت یافت نشود، این ویژگی ممکن است `null` باشد.
 
 - {{domxref("HTMLInputElement.multiple", "multiple")}}
-  - : A boolean that represents the element's [`multiple`](/en-US/docs/Web/HTML/Reference/Elements/input#multiple) attribute, indicating whether more than one value is possible (e.g., multiple files).
+  - : یک مقدار بولی که صفت [`multiple`](/en-US/docs/Web/HTML/Reference/Elements/input#multiple) عنصر را نمایش می‌دهد و نشان می‌دهد که آیا بیش از یک مقدار ممکن است (مثلاً چند فایل).
 
 - {{domxref("HTMLInputElement.name", "name")}}
-  - : A string that represents the element's [`name`](/en-US/docs/Web/HTML/Reference/Elements/input#name) attribute, containing a name that identifies the element when submitting the form.
+  - : رشته‌ای که صفت [`name`](/en-US/docs/Web/HTML/Reference/Elements/input#name) عنصر را نشان می‌دهد؛ شامل نامی که عنصر را هنگام ارسال فرم شناسایی می‌کند.
 
 - {{domxref("HTMLInputElement.popoverTargetAction", "popoverTargetAction")}}
-  - : Gets and sets the action to be performed (`"hide"`, `"show"`, or `"toggle"`) on a popover element being controlled by an {{HTMLElement("input")}} element of `type="button"`. It reflects the value of the [`popovertargetaction`](/en-US/docs/Web/HTML/Reference/Elements/input#popovertargetaction) HTML attribute.
+  - : عملیات مورد نظر (`"hide"`، `"show"` یا `"toggle"`) روی یک عنصر popover که توسط یک عنصر {{HTMLElement("input")}} از نوع `type="button"` کنترل می‌شود را دریافت و تنظیم می‌کند. این ویژگی مقدار صفت HTML [`popovertargetaction`](/en-US/docs/Web/HTML/Reference/Elements/input#popovertargetaction) را منعکس می‌کند.
 
 - {{domxref("HTMLInputElement.popoverTargetElement", "popoverTargetElement")}}
-  - : Gets and sets the popover element to control via an {{HTMLElement("input")}} element of `type="button"`. The JavaScript equivalent of the [`popovertarget`](/en-US/docs/Web/HTML/Reference/Elements/input#popovertarget) HTML attribute.
+  - : عنصر popover را که قرار است از طریق یک عنصر {{HTMLElement("input")}} از نوع `type="button"` کنترل شود، دریافت و تنظیم می‌کند. معادل جاوااسکریپتی صفت HTML [`popovertarget`](/en-US/docs/Web/HTML/Reference/Elements/input#popovertarget) است.
 
 - {{domxref("HTMLInputElement.step", "step")}}
-  - : A string that represents the element's [`step`](/en-US/docs/Web/HTML/Reference/Elements/input#step) attribute, which works with [`min`](/en-US/docs/Web/HTML/Reference/Elements/input#min) and [`max`](/en-US/docs/Web/HTML/Reference/Elements/input#max) to limit the increments at which a numeric or date-time value can be set. It can be the string `any` or a positive floating point number. If this is not set to `any`, the control accepts only values at multiples of the step value greater than the minimum.
+  - : رشته‌ای که صفت [`step`](/en-US/docs/Web/HTML/Reference/Elements/input#step) عنصر را نشان می‌دهد؛ این صفت با [`min`](/en-US/docs/Web/HTML/Reference/Elements/input#min) و [`max`](/en-US/docs/Web/HTML/Reference/Elements/input#max) کار می‌کند تا افزایش‌های مجاز برای تنظیم یک مقدار عددی یا تاریخ-زمان را محدود کند. می‌تواند رشته `any` یا یک عدد اعشاری مثبت باشد. اگر روی `any` تنظیم نشده باشد، کنترل فقط مقادیری را می‌پذیرد که مضربی از مقدار step و بزرگ‌تر از حداقل باشند.
 
 - {{domxref("HTMLInputElement.type", "type")}}
-  - : A string that represents the element's [`type`](/en-US/docs/Web/HTML/Reference/Elements/input#type) attribute, indicating the type of control to display. For possible values, see the documentation for the [`type`](/en-US/docs/Web/HTML/Reference/Elements/input#type) attribute.
+  - : رشته‌ای که صفت [`type`](/en-US/docs/Web/HTML/Reference/Elements/input#type) عنصر را نشان می‌دهد و نوع کنترلی که نمایش داده می‌شود را مشخص می‌کند. برای مقادیر ممکن، به مستندات صفت [`type`](/en-US/docs/Web/HTML/Reference/Elements/input#type) مراجعه کنید.
 
 - {{domxref("HTMLInputElement.useMap", "useMap")}} {{Deprecated_Inline}}
-  - : A string that represents a client-side image map.
+  - : رشته‌ای که یک نقشه تصویر سمت کلاینت را نشان می‌دهد.
 
 - {{domxref("HTMLInputElement.value", "value")}}
-  - : A string that represents the current value of the control. If the user enters a value different from the value expected, this may return an empty string.
+  - : رشته‌ای که مقدار فعلی کنترل را نشان می‌دهد. اگر کاربر مقداری متفاوت از مقدار مورد انتظار وارد کند، ممکن است این ویژگی یک رشته خالی برگرداند.
 
 - {{domxref("HTMLInputElement.valueAsDate", "valueAsDate")}}
-  - : A {{jsxref("Date")}} that represents the value of the element, interpreted as a date, or `null` if conversion is not possible.
+  - : یک {{jsxref("Date")}} که مقدار عنصر را به‌صورت تاریخ تفسیر می‌کند، یا اگر تبدیل ممکن نباشد `null` است.
 
 - {{domxref("HTMLInputElement.valueAsNumber", "valueAsNumber")}}
-  - : A number that represents the value of the element, interpreted as one of the following, in order: A time value, a number, or `NaN` if conversion is impossible.
+  - : عددی که مقدار عنصر را نشان می‌دهد و به ترتیب به‌صورت یکی از موارد زیر تفسیر می‌شود: یک مقدار زمانی، یک عدد، یا اگر تبدیل ممکن نباشد `NaN`.
 
 ### Instance properties related to the parent form
 
 - {{domxref("HTMLInputElement.form", "form")}} {{ReadOnlyInline}}
-  - : Returns a reference to the parent {{HTMLElement("form")}} element.
+  - : یک ارجاع به عنصر والد {{HTMLElement("form")}} برمی‌گرداند.
 
 - {{domxref("HTMLInputElement.formAction", "formAction")}}
-  - : A string that represents the element's [`formaction`](/en-US/docs/Web/HTML/Reference/Elements/input#formaction) attribute, containing the URL of a program that processes information submitted by the element. This overrides the [`action`](/en-US/docs/Web/HTML/Reference/Elements/form#action) attribute of the parent form.
+  - : رشته‌ای که صفت [`formaction`](/en-US/docs/Web/HTML/Reference/Elements/input#formaction) عنصر را نشان می‌دهد؛ شامل URL برنامه‌ای که اطلاعات ارسالی عنصر را پردازش می‌کند. این ویژگی صفت [`action`](/en-US/docs/Web/HTML/Reference/Elements/form#action) فرم والد را لغو می‌کند.
 
 - {{domxref("HTMLInputElement.formEnctype", "formEnctype")}}
-  - : A string that represents the element's [`formenctype`](/en-US/docs/Web/HTML/Reference/Elements/input#formenctype) attribute, containing the type of content that is used to submit the form to the server. This overrides the [`enctype`](/en-US/docs/Web/HTML/Reference/Elements/form#enctype) attribute of the parent form.
+  - : رشته‌ای که صفت [`formenctype`](/en-US/docs/Web/HTML/Reference/Elements/input#formenctype) عنصر را نشان می‌دهد؛ شامل نوع محتوایی که برای ارسال فرم به سرور استفاده می‌شود. این ویژگی صفت [`enctype`](/en-US/docs/Web/HTML/Reference/Elements/form#enctype) فرم والد را لغو می‌کند.
 
 - {{domxref("HTMLInputElement.formMethod", "formMethod")}}
-  - : A string that represents the element's [`formmethod`](/en-US/docs/Web/HTML/Reference/Elements/input#formmethod) attribute, containing the HTTP method that the browser uses to submit the form. This overrides the [`method`](/en-US/docs/Web/HTML/Reference/Elements/form#method) attribute of the parent form.
+  - : رشته‌ای که صفت [`formmethod`](/en-US/docs/Web/HTML/Reference/Elements/input#formmethod) عنصر را نشان می‌دهد؛ شامل روش HTTP که مرورگر برای ارسال فرم استفاده می‌کند. این ویژگی صفت [`method`](/en-US/docs/Web/HTML/Reference/Elements/form#method) فرم والد را لغو می‌کند.
 
 - {{domxref("HTMLInputElement.formNoValidate", "formNoValidate")}}
-  - : A boolean that represents the element's [`formnovalidate`](/en-US/docs/Web/HTML/Reference/Elements/input#formnovalidate) attribute, indicating that the form is not to be validated when it is submitted. This overrides the [`novalidate`](/en-US/docs/Web/HTML/Reference/Elements/form#novalidate) attribute of the parent form.
+  - : یک مقدار بولی که صفت [`formnovalidate`](/en-US/docs/Web/HTML/Reference/Elements/input#formnovalidate) عنصر را نشان می‌دهد و مشخص می‌کند که فرم هنگام ارسال نباید اعتبارسنجی شود. این ویژگی صفت [`novalidate`](/en-US/docs/Web/HTML/Reference/Elements/form#novalidate) فرم والد را لغو می‌کند.
 
 - {{domxref("HTMLInputElement.formTarget", "formTarget")}}
-  - : A string that represents the element's [`formtarget`](/en-US/docs/Web/HTML/Reference/Elements/input#formtarget) attribute, containing a name or keyword indicating where to display the response that is received after submitting the form. This overrides the [`target`](/en-US/docs/Web/HTML/Reference/Elements/form#target) attribute of the parent form.
+  - : رشته‌ای که صفت [`formtarget`](/en-US/docs/Web/HTML/Reference/Elements/input#formtarget) عنصر را نشان می‌دهد؛ شامل یک نام یا کلیدواژه که محل نمایش پاسخ دریافتی پس از ارسال فرم را مشخص می‌کند. این ویژگی صفت [`target`](/en-US/docs/Web/HTML/Reference/Elements/form#target) فرم والد را لغو می‌کند.
 
 ### Instance properties that apply to any type of input element that is not hidden
 
 - {{domxref("HTMLInputElement.disabled", "disabled")}}
-  - : A boolean that represents the element's [`disabled`](/en-US/docs/Web/HTML/Reference/Elements/input#disabled) attribute, indicating that the control is not available for interaction. The input values will not be submitted with the form. See also [`readonly`](/en-US/docs/Web/HTML/Reference/Elements/input#readonly).
+  - : یک مقدار بولی که صفت [`disabled`](/en-US/docs/Web/HTML/Reference/Elements/input#disabled) عنصر را نشان می‌دهد و مشخص می‌کند که کنترل برای تعامل در دسترس نیست. مقادیر ورودی همراه با فرم ارسال نخواهند شد. همچنین به [`readonly`](/en-US/docs/Web/HTML/Reference/Elements/input#readonly) مراجعه کنید.
 
 - {{domxref("HTMLInputElement.required", "required")}}
-  - : A boolean that represents the element's [`required`](/en-US/docs/Web/HTML/Reference/Elements/input#required) attribute, indicating that the user must fill in a value before submitting a form.
+  - : یک مقدار بولی که صفت [`required`](/en-US/docs/Web/HTML/Reference/Elements/input#required) عنصر را نشان می‌دهد و مشخص می‌کند که کاربر باید قبل از ارسال فرم یک مقدار وارد کند.
 
 - {{domxref("HTMLInputElement.validationMessage", "validationMessage")}} {{ReadOnlyInline}}
-  - : Returns a localized message that describes the validation constraints that the control does not satisfy (if any). This is the empty string if the control is not a candidate for constraint validation ({{domxref("HTMLInputElement.willValidate", "willValidate")}} is `false`), or it satisfies its constraints. This value can be set by the {{domxref("HTMLInputElement.setCustomValidity()", "setCustomValidity()")}} method.
+  - : یک پیام محلی‌سازی‌شده را برمی‌گرداند که محدودیت‌های اعتبارسنجی‌ای را توصیف می‌کند که کنترل آن‌ها را برآورده نمی‌کند (در صورت وجود). اگر کنترل کاندیدای اعتبارسنجی محدودیت نباشد ({{domxref("HTMLInputElement.willValidate", "willValidate")}} برابر `false` باشد) یا محدودیت‌های خود را برآورده کند، این رشته خالی است. این مقدار را می‌توان با متد {{domxref("HTMLInputElement.setCustomValidity()", "setCustomValidity()")}} تنظیم کرد.
 
 - {{domxref("HTMLInputElement.validity", "validity")}} {{ReadOnlyInline}}
-  - : Returns the element's current validity state.
+  - : وضعیت اعتبارسنجی فعلی عنصر را برمی‌گرداند.
 
 - {{domxref("HTMLInputElement.willValidate", "willValidate")}} {{ReadOnlyInline}}
-  - : Returns whether the element is a candidate for constraint validation. It is `false` if any conditions bar it from constraint validation, including: its `type` is one of `hidden`, `reset` or `button`, it has a {{HTMLElement("datalist")}} ancestor or its `disabled` property is `true`.
+  - : برمی‌گرداند که آیا عنصر کاندیدای اعتبارسنجی محدودیت است یا خیر. اگر هر شرایطی آن را از اعتبارسنجی محدودیت منع کند، `false` است؛ از جمله: `type` آن یکی از `hidden`، `reset` یا `button` باشد، دارای یک جد {{HTMLElement("datalist")}} باشد یا ویژگی `disabled` آن `true` باشد.
 
 ### Instance properties that apply only to elements of type checkbox or radio
 
 - {{domxref("HTMLInputElement.checked", "checked")}}
-  - : A boolean that represents the current state of the element.
+  - : یک مقدار بولی که وضعیت فعلی عنصر را نشان می‌دهد.
 
 - {{domxref("HTMLInputElement.defaultChecked", "defaultChecked")}}
-  - : A boolean that represents the default state of a radio button or checkbox as originally specified in HTML that created this object.
+  - : یک مقدار بولی که وضعیت پیش‌فرض یک دکمه رادیویی یا چک‌باکس را همان‌طور که در HTML سازنده این شیء مشخص شده، نشان می‌دهد.
 
 - {{domxref("HTMLInputElement.indeterminate", "indeterminate")}}
-  - : A boolean that represents whether the checkbox or radio button is in indeterminate state. For checkboxes, the effect is that the appearance of the checkbox is obscured/greyed in some way as to indicate its state is indeterminate (not checked but not unchecked). Does not affect the value of the `checked` attribute, and clicking the checkbox will set the value to false.
+  - : یک مقدار بولی که نشان می‌دهد چک‌باکس یا دکمه رادیویی در حالت نامعین (indeterminate) قرار دارد یا خیر. برای چک‌باکس‌ها، اثر آن این است که ظاهر چک‌باکس به‌گونه‌ای محو/خاکستری می‌شود که نشان دهد حالت آن نامعین است (نه تیک خورده و نه بدون تیک). این ویژگی بر مقدار صفت `checked` تأثیر نمی‌گذارد و کلیک روی چک‌باکس مقدار را روی `false` قرار می‌دهد.
 
 ### Instance properties that apply only to elements of type image
 
 - {{domxref("HTMLInputElement.alt", "alt")}}
-  - : A string that represents the element's [`alt`](/en-US/docs/Web/HTML/Reference/Elements/input#alt) attribute, containing alternative text to use.
+  - : رشته‌ای که صفت [`alt`](/en-US/docs/Web/HTML/Reference/Elements/input#alt) عنصر را نشان می‌دهد؛ شامل متن جایگزین برای استفاده.
 
 - {{domxref("HTMLInputElement.height", "height")}}
-  - : A string that represents the element's [`height`](/en-US/docs/Web/HTML/Reference/Elements/input#height) attribute, which defines the height of the image displayed for the button.
+  - : رشته‌ای که صفت [`height`](/en-US/docs/Web/HTML/Reference/Elements/input#height) عنصر را نشان می‌دهد؛ ارتفاع تصویر نمایش‌داده‌شده برای دکمه را تعریف می‌کند.
 
 - {{domxref("HTMLInputElement.src", "src")}}
-  - : A string that represents the element's [`src`](/en-US/docs/Web/HTML/Reference/Elements/input#src) attribute, which specifies a URI for the location of an image to display on the graphical submit button.
+  - : رشته‌ای که صفت [`src`](/en-US/docs/Web/HTML/Reference/Elements/input#src) عنصر را نشان می‌دهد؛ یک URI برای مکان تصویری که روی دکمه ارسال گرافیکی نمایش داده می‌شود را مشخص می‌کند.
 
 - {{domxref("HTMLInputElement.width", "width")}}
-  - : A string that represents the element's [`width`](/en-US/docs/Web/HTML/Reference/Elements/input#width) attribute, which defines the width of the image displayed for the button.
+  - : رشته‌ای که صفت [`width`](/en-US/docs/Web/HTML/Reference/Elements/input#width) عنصر را نشان می‌دهد؛ عرض تصویر نمایش‌داده‌شده برای دکمه را تعریف می‌کند.
 
 ### Instance properties that apply only to elements of type file
 
 - {{domxref("HTMLInputElement.accept", "accept")}}
-  - : A string that represents the element's [`accept`](/en-US/docs/Web/HTML/Reference/Elements/input#accept) attribute, containing comma-separated list of file types that can be selected.
+  - : رشته‌ای که صفت [`accept`](/en-US/docs/Web/HTML/Reference/Elements/input#accept) عنصر را نشان می‌دهد؛ شامل فهرستی از انواع فایل که با کاما جدا شده‌اند و می‌توانند انتخاب شوند.
 
 - {{domxref("HTMLInputElement.capture", "capture")}}
-  - : A string that represents the element's [`capture`](/en-US/docs/Web/HTML/Reference/Elements/input#capture) attribute, indicating the media capture input method in file upload controls.
+  - : رشته‌ای که صفت [`capture`](/en-US/docs/Web/HTML/Reference/Elements/input#capture) عنصر را نشان می‌دهد؛ روش ورودی ضبط رسانه را در کنترل‌های بارگذاری فایل مشخص می‌کند.
 
 - {{domxref("HTMLInputElement.files", "files")}}
-  - : A {{domxref("FileList")}} that represents the files selected for upload.
+  - : یک {{domxref("FileList")}} که فایل‌های انتخاب‌شده برای بارگذاری را نشان می‌دهد.
 
 - {{domxref("HTMLInputElement.webkitdirectory", "webkitdirectory")}}
-  - : A boolean that represents the [`webkitdirectory`](/en-US/docs/Web/HTML/Reference/Elements/input#webkitdirectory) attribute. If `true`, the file-system-picker interface only accepts directories instead of files.
+  - : یک مقدار بولی که صفت [`webkitdirectory`](/en-US/docs/Web/HTML/Reference/Elements/input#webkitdirectory) را نشان می‌دهد. اگر `true` باشد، رابط انتخاب فایل‌سیستم فقط دایرکتوری‌ها را به‌جای فایل‌ها می‌پذیرد.
 
 - {{domxref("HTMLInputElement.webkitEntries", "webkitEntries")}} {{ReadOnlyInline}}
-  - : Describes the currently selected files or directories.
+  - : فایل‌ها یا دایرکتوری‌های انتخاب‌شده فعلی را توصیف می‌کند.
 
 ### Instance properties that apply only to visible elements containing text or numbers
 
 - {{domxref("HTMLInputElement.autocomplete", "autocomplete")}}
-  - : A string that represents the element's [`autocomplete`](/en-US/docs/Web/HTML/Reference/Elements/input#autocomplete) attribute, indicating whether the value of the control can be automatically completed by the browser.
+  - : رشته‌ای که صفت [`autocomplete`](/en-US/docs/Web/HTML/Reference/Elements/input#autocomplete) عنصر را نشان می‌دهد و مشخص می‌کند که آیا مقدار کنترل می‌تواند به‌طور خودکار توسط مرورگر تکمیل شود.
 
 - {{domxref("HTMLInputElement.max", "max")}}
-  - : A string that represents the element's [`max`](/en-US/docs/Web/HTML/Reference/Elements/input#max) attribute, containing the maximum (numeric or date-time) value for this item, which must not be less than its minimum ([`min`](/en-US/docs/Web/HTML/Reference/Elements/input#min) attribute) value.
+  - : رشته‌ای که صفت [`max`](/en-US/docs/Web/HTML/Reference/Elements/input#max) عنصر را نشان می‌دهد؛ شامل حداکثر مقدار (عددی یا تاریخ-زمان) برای این مورد است که نباید از مقدار حداقل آن (صفت [`min`](/en-US/docs/Web/HTML/Reference/Elements/input#min)) کمتر باشد.
 
 - {{domxref("HTMLInputElement.maxLength", "maxLength")}}
-  - : A number that represents the element's [`maxlength`](/en-US/docs/Web/HTML/Reference/Elements/input#maxlength) attribute, containing the maximum number of characters (in Unicode code points) that the value can have.
+  - : عددی که صفت [`maxlength`](/en-US/docs/Web/HTML/Reference/Elements/input#maxlength) عنصر را نشان می‌دهد؛ شامل حداکثر تعداد نویسه‌ها (بر حسب نقاط کد یونیکد) که مقدار می‌تواند داشته باشد.
 
 - {{domxref("HTMLInputElement.min", "min")}}
-  - : A string that represents the element's [`min`](/en-US/docs/Web/HTML/Reference/Elements/input#min) attribute, containing the minimum (numeric or date-time) value for this item, which must not be greater than its maximum ([`max`](/en-US/docs/Web/HTML/Reference/Elements/input#max) attribute) value.
+  - : رشته‌ای که صفت [`min`](/en-US/docs/Web/HTML/Reference/Elements/input#min) عنصر را نشان می‌دهد؛ شامل حداقل مقدار (عددی یا تاریخ-زمان) برای این مورد است که نباید از حداکثر مقدار آن (صفت [`max`](/en-US/docs/Web/HTML/Reference/Elements/input#max)) بیشتر باشد.
 
 - {{domxref("HTMLInputElement.minLength", "minLength")}}
-  - : A number that represents the element's [`minlength`](/en-US/docs/Web/HTML/Reference/Elements/input#minlength) attribute, containing the minimum number of characters (in Unicode code points) that the value can have.
+  - : عددی که صفت [`minlength`](/en-US/docs/Web/HTML/Reference/Elements/input#minlength) عنصر را نشان می‌دهد؛ شامل حداقل تعداد نویسه‌ها (بر حسب نقاط کد یونیکد) که مقدار می‌تواند داشته باشد.
 
 - {{domxref("HTMLInputElement.pattern", "pattern")}}
-  - : A string that represents the element's [`pattern`](/en-US/docs/Web/HTML/Reference/Elements/input#pattern) attribute, containing a regular expression that the control's value is checked against. Use the [`title`](/en-US/docs/Web/HTML/Reference/Elements/input#title) attribute to describe the pattern to help the user. This attribute only applies when the value of the [`type`](/en-US/docs/Web/HTML/Reference/Elements/input#type) attribute is `text`, `search`, `tel`, `url` or `email`.
+  - : رشته‌ای که صفت [`pattern`](/en-US/docs/Web/HTML/Reference/Elements/input#pattern) عنصر را نشان می‌دهد؛ شامل یک عبارت باقاعده که مقدار کنترل بر اساس آن بررسی می‌شود. برای توصیف الگو به کمک کاربر، از صفت [`title`](/en-US/docs/Web/HTML/Reference/Elements/input#title) استفاده کنید. این صفت فقط زمانی اعمال می‌شود که مقدار صفت [`type`](/en-US/docs/Web/HTML/Reference/Elements/input#type) یکی از `text`، `search`، `tel`، `url` یا `email` باشد.
 
 - {{domxref("HTMLInputElement.placeholder", "placeholder")}}
-  - : A string that represents the element's [`placeholder`](/en-US/docs/Web/HTML/Reference/Elements/input#placeholder) attribute, containing a hint to the user of what can be entered in the control. The placeholder text must not contain carriage returns or line-feeds. This attribute only applies when the value of the [`type`](/en-US/docs/Web/HTML/Reference/Elements/input#type) attribute is `text`, `search`, `tel`, `url` or `email`.
+  - : رشته‌ای که صفت [`placeholder`](/en-US/docs/Web/HTML/Reference/Elements/input#placeholder) عنصر را نشان می‌دهد؛ شامل راهنمایی برای کاربر درباره آنچه می‌توان در کنترل وارد کرد. متن placeholder نباید شامل بازگشت به ابتدای سطر (carriage return) یا تغذیه خط (line-feed) باشد. این صفت فقط زمانی اعمال می‌شود که مقدار صفت [`type`](/en-US/docs/Web/HTML/Reference/Elements/input#type) یکی از `text`، `search`، `tel`، `url` یا `email` باشد.
 
 - {{domxref("HTMLInputElement.readOnly", "readOnly")}}
-  - : A boolean that represents the element's [`readonly`](/en-US/docs/Web/HTML/Reference/Elements/input#readonly) attribute, indicating that the user cannot modify the value of the control. This is ignored if the [`type`](/en-US/docs/Web/HTML/Reference/Elements/input#type) is `hidden`, `range`, `color`, `checkbox`, `radio`, `file`, or a button type.
+  - : یک مقدار بولی که صفت [`readonly`](/en-US/docs/Web/HTML/Reference/Elements/input#readonly) عنصر را نشان می‌دهد و مشخص می‌کند که کاربر نمی‌تواند مقدار کنترل را تغییر دهد. اگر [`type`](/en-US/docs/Web/HTML/Reference/Elements/input#type) برابر `hidden`، `range`، `color`، `checkbox`، `radio`، `file` یا یکی از انواع دکمه باشد، این ویژگی نادیده گرفته می‌شود.
 
 - {{domxref("HTMLInputElement.selectionDirection", "selectionDirection")}}
-  - : A string that represents the direction in which selection occurred. Possible values are: `forward` (the selection was performed in the start-to-end direction of the current locale), `backward` (the opposite direction) or `none` (the direction is unknown).
+  - : رشته‌ای که جهتی را که انتخاب در آن انجام شده است نشان می‌دهد. مقادیر ممکن عبارتند از: `forward` (انتخاب در جهت شروع به پایانِ locale فعلی انجام شده)، `backward` (جهت مخالف) یا `none` (جهت ناشناخته است).
 
 - {{domxref("HTMLInputElement.selectionEnd", "selectionEnd")}}
-  - : A number that represents the end index of the selected text. When there's no selection, this returns the offset of the character immediately following the current text input cursor position.
+  - : عددی که اندیس پایان متن انتخاب‌شده را نشان می‌دهد. وقتی انتخابی وجود نداشته باشد، این ویژگی offset نویسه بلافاصله پس از موقعیت فعلی مکان‌نمای ورودی متن را برمی‌گرداند.
 
 - {{domxref("HTMLInputElement.selectionStart", "selectionStart")}}
-  - : A number that represents the beginning index of the selected text. When nothing is selected, this returns the position of the text input cursor (caret) inside of the {{HTMLElement("input")}} element.
+  - : عددی که اندیس آغاز متن انتخاب‌شده را نشان می‌دهد. وقتی چیزی انتخاب نشده باشد، این ویژگی موقعیت مکان‌نمای ورودی متن (caret) را در داخل عنصر {{HTMLElement("input")}} برمی‌گرداند.
 
 - {{domxref("HTMLInputElement.size", "size")}}
-  - : A number that represents the element's [`size`](/en-US/docs/Web/HTML/Reference/Elements/input#size) attribute, containing visual size of the control. This value is in pixels unless the value of [`type`](/en-US/docs/Web/HTML/Reference/Elements/input#type) is `text` or `password`, in which case, it is an integer number of characters. Applies only when [`type`](/en-US/docs/Web/HTML/Reference/Elements/input#type) is set to `text`, `search`, `tel`, `url`, `email`, or `password`.
+  - : عددی که صفت [`size`](/en-US/docs/Web/HTML/Reference/Elements/input#size) عنصر را نشان می‌دهد؛ شامل اندازه بصری کنترل. این مقدار بر حسب پیکسل است مگر اینکه مقدار [`type`](/en-US/docs/Web/HTML/Reference/Elements/input#type) برابر `text` یا `password` باشد، که در آن صورت یک عدد صحیح از تعداد نویسه‌هاست. فقط زمانی اعمال می‌شود که [`type`](/en-US/docs/Web/HTML/Reference/Elements/input#type) روی `text`، `search`، `tel`، `url`، `email` یا `password` تنظیم شده باشد.
 
 ## Instance methods
 
-_Also inherits methods from its parent interface, {{domxref("HTMLElement")}}._
+_همچنین روش‌های رابط والد خود، {{domxref("HTMLElement")}} را به ارث می‌برد._
 
 - {{domxref("HTMLInputElement.checkValidity()", "checkValidity()")}}
-  - : Returns a boolean value that is `false` if the element is a candidate for constraint validation, and it does not satisfy its constraints. In this case, it also fires an {{domxref("HTMLInputElement/invalid_event", "invalid")}} event at the element. It returns `true` if the element is not a candidate for constraint validation, or if it satisfies its constraints.
+  - : یک مقدار بولی برمی‌گرداند که اگر عنصر کاندیدای اعتبارسنجی محدودیت باشد و محدودیت‌های خود را برآورده نکند، `false` است. در این حالت، یک رویداد {{domxref("HTMLInputElement/invalid_event", "invalid")}} نیز روی عنصر شلیک می‌کند. اگر عنصر کاندیدای اعتبارسنجی محدودیت نباشد یا محدودیت‌های خود را برآورده کند، `true` برمی‌گرداند.
 
 - {{domxref("HTMLInputElement.reportValidity()", "reportValidity()")}}
-  - : Runs the `checkValidity()` method, and if it returns false (for an invalid input or no pattern attribute provided), then it reports to the user that the input is invalid in the same manner as if you submitted a form.
+  - : متد `checkValidity()` را اجرا می‌کند و اگر false برگرداند (برای ورودی نامعتبر یا عدم وجود صفت pattern)، به کاربر گزارش می‌دهد که ورودی نامعتبر است، به همان شیوه‌ای که گویی فرم را ارسال کرده‌اید.
 
 - {{domxref("HTMLInputElement.select()", "select()")}}
-  - : Selects all the text in the input element, and focuses it so the user can subsequently replace all of its content.
+  - : تمام متن داخل عنصر ورودی را انتخاب می‌کند و آن را فوکوس می‌کند تا کاربر بتواند بعداً تمام محتوای آن را جایگزین کند.
 
 - {{domxref("HTMLInputElement.setCustomValidity()", "setCustomValidity()")}}
-  - : Sets a custom validity message for the element. If this message is not the empty string, then the element is suffering from a custom validity error, and does not validate.
+  - : یک پیام اعتبارسنجی سفارشی برای عنصر تنظیم می‌کند. اگر این پیام رشته خالی نباشد، عنصر از خطای اعتبارسنجی سفارشی رنج می‌برد و اعتبارسنجی نمی‌شود.
 
 - {{domxref("HTMLInputElement.setRangeText()", "setRangeText()")}}
-  - : Replaces a range of text in the input element with new text.
+  - : یک بازه از متن در عنصر ورودی را با متن جدید جایگزین می‌کند.
 
 - {{domxref("HTMLInputElement.setSelectionRange()", "setSelectionRange()")}}
-  - : Selects a range of text in the input element (but does not focus it).
+  - : یک بازه از متن در عنصر ورودی را انتخاب می‌کند (اما آن را فوکوس نمی‌کند).
 
 - {{domxref("HTMLInputElement.showPicker()", "showPicker()")}}
-  - : Shows a browser picker for date, time, color, and files.
+  - : یک انتخابگر مرورگر برای تاریخ، زمان، رنگ و فایل‌ها نمایش می‌دهد.
 
 - {{domxref("HTMLInputElement.stepDown()", "stepDown()")}}
-  - : Decrements the [`value`](/en-US/docs/Web/HTML/Reference/Elements/input#value) by ([`step`](/en-US/docs/Web/HTML/Reference/Elements/input#step) \* n), where n defaults to 1 if not specified.
+  - : مقدار [`value`](/en-US/docs/Web/HTML/Reference/Elements/input#value) را به اندازه ([`step`](/en-US/docs/Web/HTML/Reference/Elements/input#step) \* n) کاهش می‌دهد؛ اگر n مشخص نشده باشد، پیش‌فرض آن 1 است.
 
 - {{domxref("HTMLInputElement.stepUp()", "stepUp()")}}
-  - : Increments the [`value`](/en-US/docs/Web/HTML/Reference/Elements/input#value) by ([`step`](/en-US/docs/Web/HTML/Reference/Elements/input#step) \* n), where n defaults to 1 if not specified.
+  - : مقدار [`value`](/en-US/docs/Web/HTML/Reference/Elements/input#value) را به اندازه ([`step`](/en-US/docs/Web/HTML/Reference/Elements/input#step) \* n) افزایش می‌دهد؛ اگر n مشخص نشده باشد، پیش‌فرض آن 1 است.
 
 ## Events
 
-_Also inherits events from its parent interface, {{domxref("HTMLElement")}}._
+_همچنین رویدادهای رابط والد خود، {{domxref("HTMLElement")}} را به ارث می‌برد._
 
-Listen to these events using {{domxref("EventTarget.addEventListener", "addEventListener()")}} or by assigning an event listener to the `oneventname` property of this interface:
+به این رویدادها با استفاده از {{domxref("EventTarget.addEventListener", "addEventListener()")}} یا با اختصاص یک شنونده رویداد به ویژگی `oneventname` این رابط گوش دهید:
 
 - {{domxref("HTMLInputElement/cancel_event", "cancel")}} event
-  - : Fired when the user cancels the file picker dialog via the <kbd>Esc</kbd> key or the cancel button and when the user re-selects the same files that were previously selected.
+  - : وقتی کاربر گفتگوی انتخاب فایل را از طریق کلید <kbd>Esc</kbd> یا دکمه لغو می‌بندد و همچنین وقتی کاربر همان فایل‌هایی را که قبلاً انتخاب شده بودند دوباره انتخاب می‌کند، شلیک می‌شود.
 - {{domxref("HTMLInputElement/invalid_event", "invalid")}} event
-  - : Fired when an element does not satisfy its constraints during constraint validation.
+  - : وقتی یک عنصر در طول اعتبارسنجی محدودیت، محدودیت‌های خود را برآورده نمی‌کند، شلیک می‌شود.
 - {{domxref("HTMLInputElement/search_event", "search")}} event {{Non-standard_Inline}}
-  - : Fired when a search is initiated on an {{HTMLElement("input")}} of `type="search"`.
+  - : وقتی یک جستجو روی یک {{HTMLElement("input")}} از نوع `type="search"` آغاز می‌شود، شلیک می‌شود.
 - {{domxref("HTMLInputElement/select_event", "select")}} event
-  - : Fired when some text has been selected.
+  - : وقتی متنی انتخاب شده است، شلیک می‌شود.
 - {{domxref("HTMLInputElement/selectionchange_event", "selectionchange")}} event
-  - : Fires when the text selection in an {{HTMLElement("input")}} element has been changed.
+  - : وقتی انتخاب متن در یک عنصر {{HTMLElement("input")}} تغییر کرده است، شلیک می‌شود.
 
 ## Specifications
 
@@ -252,4 +246,4 @@ Listen to these events using {{domxref("EventTarget.addEventListener", "addEvent
 
 ## See also
 
-- HTML element implementing this interface: {{HTMLElement("input")}}
+- عنصر HTML پیاده‌ساز این رابط: {{HTMLElement("input")}}
