@@ -1,11 +1,5 @@
 ---
 title: "FontData: fullName property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FontData/fullName"
-status: "needs-translation"
----
-
----
-title: "FontData: fullName property"
 short-title: fullName
 slug: Web/API/FontData/fullName
 page-type: web-api-instance-property
@@ -16,9 +10,9 @@ browser-compat: api.FontData.fullName
 
 {{APIRef("Local Font Access API")}}{{SeeCompatTable}}
 
-The **`fullName`** read-only property of the {{domxref("FontData")}} interface returns the full name of the font face. This is usually a human-readable name used to identify the font, e.g., "Optima Bold".
+ویژگی فقط‌خواندنی **`fullName`** در رابط {{domxref("FontData")}} نام کامل قلم (font face) را برمی‌گرداند. این نام معمولاً یک نام قابل‌خواندن برای انسان است که برای شناسایی قلم استفاده می‌شود، مانند «Optima Bold».
 
-Examples include:
+مثال‌ها شامل موارد زیر هستند:
 
 - Apple SD Gothic Neo UltraLight
 - Arial Black
@@ -26,13 +20,13 @@ Examples include:
 - Katari Medium Italic
 - YuMincho +36p Kana Extrabold
 
-## Value
+## مقدار
 
-A string.
+یک رشته (string).
 
-## Examples
+## مثال‌ها
 
-The following snippet will query for all available fonts, and log metadata. This could be used, for example, to populate a font-picker control.
+قطعه کد زیر همه قلم‌های موجود را جستجو کرده و فراداده‌های آنها را ثبت می‌کند. این می‌تواند برای مثال برای پر کردن یک کنترل انتخاب‌کننده قلم استفاده شود.
 
 ```js
 async function logFontData() {
@@ -50,15 +44,15 @@ async function logFontData() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Use advanced typography with local fonts](https://developer.chrome.com/docs/capabilities/web-apis/local-fonts)
+- [استفاده از تایپوگرافی پیشرفته با قلم‌های محلی](https://developer.chrome.com/docs/capabilities/web-apis/local-fonts)
 - {{cssxref("@font-face")}}
