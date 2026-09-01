@@ -1,11 +1,5 @@
 ---
 title: "HTMLMediaElement: controller property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/controller"
-status: "needs-translation"
----
-
----
-title: "HTMLMediaElement: controller property"
 short-title: controller
 slug: Web/API/HTMLMediaElement/controller
 page-type: web-api-instance-property
@@ -17,16 +11,16 @@ browser-compat: api.HTMLMediaElement.controller
 
 {{APIRef("HTML DOM")}}{{Deprecated_Header}}{{Non-standard_Header}}
 
-The **`HTMLMediaElement.controller`** property represents the media controller assigned to the element.
+خصوصیت **`HTMLMediaElement.controller`** نمایانگر کنترل‌کننده رسانه (media controller) اختصاص داده شده به عنصر است.
 
-## Value
+## مقدار
 
-A `MediaController` object or `null` if no media controller is assigned to the element. The default is `null`.
+یک شیء `MediaController` یا `null` در صورتی که هیچ کنترل‌کننده رسانه‌ای به عنصر اختصاص داده نشده باشد. مقدار پیش‌فرض `null` است.
 
-## Specifications
+## مشخصات
 
-In 2016, the whole Media Controller feature was [removed from the HTML specification](https://github.com/w3c/html/issues/246). It is no longer on track to become a standard.
+در سال ۲۰۱۶، کل ویژگی Media Controller از [مشخصات HTML](https://github.com/w3c/html/issues/246) حذف شد. این ویژگی دیگر در مسیر تبدیل شدن به یک استاندارد نیست.
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
