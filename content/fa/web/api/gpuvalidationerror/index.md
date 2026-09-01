@@ -1,7 +1,5 @@
 ---
 title: "GPUValidationError"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUValidationError"
-status: "needs-translation"
 ---
 
 ---
@@ -13,32 +11,32 @@ browser-compat: api.GPUValidationError
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`GPUValidationError`** interface of the {{domxref("WebGPU API", "WebGPU API", "", "nocode")}} describes an application error indicating that an operation did not pass the WebGPU API's validation constraints.
+رابطهٔ **`GPUValidationError`** در {{domxref("WebGPU API", "WebGPU API", "", "nocode")}} خطایی مربوط به برنامه را توصیف می‌کند که نشان می‌دهد یک عملیات از محدودیت‌های اعتبارسنجی API وب‌GPU عبور نکرده است.
 
-It represents one of the types of errors surfaced by {{domxref("GPUDevice.popErrorScope")}} and the {{domxref("GPUDevice.uncapturederror_event", "uncapturederror")}} event.
+این رابط یکی از انواع خطاهایی است که توسط {{domxref("GPUDevice.popErrorScope")}} و رویداد {{domxref("GPUDevice.uncapturederror_event", "uncapturederror")}} نمایان می‌شود.
 
-Validation errors occur whenever invalid inputs are given to a WebGPU call. These are consistent, predictable, and should not occur provided your app is well-formed. They will occur in the same way on every device your code runs on, so once you've fixed any errors that show up during development you probably don't need to observe them directly most of the time. An exception to that rule is if you're consuming user-supplied assets, shaders, etc., in which case watching for validation errors while loading could be helpful.
+خطاهای اعتبارسنجی هر زمان که ورودی‌های نامعتبر به یک فراخوانی WebGPU داده شوند رخ می‌دهند. این خطاها سازگار و قابل پیش‌بینی هستند و تا زمانی که برنامهٔ شما به‌درستی نوشته شده باشد نباید رخ دهند. آن‌ها در هر دستگاهی که کد شما روی آن اجرا می‌شود به همان شکل رخ می‌دهند، بنابراین پس از رفع هر خطایی که در طول توسعه ظاهر می‌شود، معمولاً نیازی به مشاهدهٔ مستقیم آن‌ها ندارید. یک استثنا در این قاعده زمانی است که از دارایی‌ها، شیدرها و موارد مشابه ارائه‌شده توسط کاربر استفاده می‌کنید؛ در این صورت، بررسی خطاهای اعتبارسنجی در هنگام بارگذاری می‌تواند مفید باشد.
 
 > [!NOTE]
-> We have attempted to provide useful information to help you understand why validation errors are occurring in your WebGPU code in "Validation" sections where appropriate, which list criteria to meet to avoid validation errors. See for example the [`GPUDevice.createBindGroup()` Validation section](/en-US/docs/Web/API/GPUDevice/createBindGroup#validation).
+> ما سعی کرده‌ایم اطلاعات مفیدی برای کمک به درک دلیل رخ دادن خطاهای اعتبارسنجی در کد WebGPU شما در بخش‌های «Validation» (اعتبارسنجی) ارائه دهیم، که معیارهایی برای جلوگیری از خطاهای اعتبارسنجی فهرست می‌کنند. برای مثال، به [بخش اعتبارسنجی `GPUDevice.createBindGroup()`](/en-US/docs/Web/API/GPUDevice/createBindGroup#validation) مراجعه کنید.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("GPUValidationError.GPUValidationError", "GPUValidationError()")}}
-  - : Creates a new `GPUValidationError` object instance.
+  - : یک نمونهٔ جدید از شیء `GPUValidationError` می‌سازد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-The `message` property is inherited from its parent, {{domxref("GPUError")}}:
+ویژگی `message` از والد خود، {{domxref("GPUError")}}، به ارث رسیده است:
 
 - {{domxref("GPUError.message", "message")}} {{Experimental_Inline}} {{ReadOnlyInline}}
-  - : A string providing a human-readable message that explains why the error occurred.
+  - : یک رشته که پیامی قابل خواندن برای انسان ارائه می‌دهد و دلیل رخ دادن خطا را توضیح می‌دهد.
 
-## Examples
+## مثال‌ها
 
-The following example uses an error scope to capture a suspected validation error, logging it to the console.
+مثال زیر از یک scope خطا برای ثبت یک خطای اعتبارسنجی مشکوک استفاده می‌کند و آن را در کنسول ثبت می‌کند.
 
 ```js
 device.pushErrorScope("validation");
@@ -56,15 +54,15 @@ device.popErrorScope().then((error) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
-- [WebGPU Error Handling best practices](https://toji.dev/webgpu-best-practices/error-handling)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [بهترین روش‌های مدیریت خطا در WebGPU](https://toji.dev/webgpu-best-practices/error-handling)
