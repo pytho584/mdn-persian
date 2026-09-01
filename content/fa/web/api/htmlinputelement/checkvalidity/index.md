@@ -1,7 +1,6 @@
 ---
 title: "HTMLInputElement: checkValidity() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/checkValidity"
-status: "needs-translation"
 ---
 
 ---
@@ -14,10 +13,10 @@ browser-compat: api.HTMLInputElement.checkValidity
 
 {{APIRef("HTML DOM")}}
 
-The **`checkValidity()`** method of the {{domxref("HTMLInputElement")}} interface returns a boolean value which indicates if the element meets any [constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation) rules applied to it. If false, the method also fires an {{domxref("HTMLElement/invalid_event", "invalid")}} event on the element. Because there's no default browser behavior for `checkValidity()`, canceling this `invalid` event has no effect.
+متد **`checkValidity()`** در رابط {{domxref("HTMLInputElement")}} یک مقدار بولی (boolean) برمی‌گرداند که نشان می‌دهد آیا عنصر، تمام [قوانین اعتبارسنجی محدودیت‌ها](/en-US/docs/Web/HTML/Guides/Constraint_validation) اعمال‌شده بر روی خود را برآورده می‌کند یا خیر. اگر مقدار `false` باشد، این متد همچنین یک رویداد {{domxref("HTMLElement/invalid_event", "invalid")}} روی عنصر فعال می‌کند. از آنجا که `checkValidity()` رفتار پیش‌فرضی در مرورگر ندارد، لغو (cancel) کردن این رویداد `invalid` هیچ تأثیری ندارد.
 
 > [!NOTE]
-> An HTML {{htmlelement("input")}} element with a non-null {{domxref("HTMLInputElement.validationMessage", "validationMessage")}} is considered invalid, will match the CSS {{cssxref(":invalid")}} pseudo-class, and will cause `checkValidity()` to return false. Use the {{domxref("HTMLInputElement.setCustomValidity()")}} method to set the {{domxref("HTMLInputElement.validationMessage")}} to the empty string to set the {{domxref("HTMLInputElement.validity", "validity")}} state to be valid.
+> یک عنصر HTML {{htmlelement("input")}} با {{domxref("HTMLInputElement.validationMessage", "validationMessage")}} غیر خالی، نامعتبر در نظر گرفته می‌شود، با شبه‌کلاس CSS {{cssxref(":invalid")}} مطابقت خواهد داشت و باعث می‌شود `checkValidity()` مقدار `false` برگرداند. از متد {{domxref("HTMLInputElement.setCustomValidity()")}} برای تنظیم {{domxref("HTMLInputElement.validationMessage")}} روی رشته خالی استفاده کنید تا وضعیت {{domxref("HTMLInputElement.validity", "validity")}} معتبر باشد.
 
 ## Syntax
 
@@ -27,17 +26,17 @@ checkValidity()
 
 ### Parameters
 
-None.
+هیچ.
 
 ### Return value
 
-Returns `true` if the element's value has no validity problems; otherwise, returns `false`.
+اگر مقدار عنصر هیچ مشکل اعتبارسنجی نداشته باشد `true` و در غیر این صورت `false` برمی‌گرداند.
 
 ## Examples
 
 ### HTML
 
-We include a form containing a required number field and two buttons: one to check the form and the other to submit it.
+ما یک فرم شامل یک فیلد عددی اجباری و دو دکمه قرار می‌دهیم: یکی برای بررسی فرم و دیگری برای ارسال آن.
 
 ```html
 <form action="#" method="post">
@@ -74,7 +73,7 @@ checkButton.addEventListener("click", () => {
 
 {{EmbedLiveSample("Examples", "100%", 220)}}
 
-When `false`, if the value is missing, below 21, above 65, or otherwise invalid, the invalid event will be logged to the console. To report the error to the user, use {{domxref("HTMLInputElement.reportValidity()")}} instead.
+وقتی مقدار `false` باشد، اگر مقدار ورودی خالی، کمتر از 21، بیشتر از 65، یا به هر شکل دیگری نامعتبر باشد، رویداد `invalid` در کنسول ثبت (log) می‌شود. برای گزارش خطا به کاربر، به جای آن از {{domxref("HTMLInputElement.reportValidity()")}} استفاده کنید.
 
 ## Specifications
 
@@ -91,4 +90,4 @@ When `false`, if the value is missing, below 21, above 65, or otherwise invalid,
 - {{HTMLElement("form")}}
 - [Learn: Client-side form validation](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
 - [Guide: Constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation)
-- CSS {{cssxref(":valid")}} and {{cssxref(":invalid")}} pseudo-classes
+- شبه‌کلاس‌های CSS {{cssxref(":valid")}} و {{cssxref(":invalid")}}
