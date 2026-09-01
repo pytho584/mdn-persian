@@ -1,10 +1,4 @@
 ---
-title: "HTMLEmbedElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLEmbedElement"
-status: "needs-translation"
----
-
----
 title: HTMLEmbedElement
 slug: Web/API/HTMLEmbedElement
 page-type: web-api-interface
@@ -13,45 +7,45 @@ browser-compat: api.HTMLEmbedElement
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLEmbedElement`** interface provides special properties (beyond the regular {{domxref("HTMLElement")}} interface it also has available to it by inheritance) for manipulating {{HTMLElement("embed")}} elements.
+اینترفیس **`HTMLEmbedElement`** ویژگی‌های خاصی (فراتر از اینترفیس معمول {{domxref("HTMLElement")}} که به‌صورت ارث‌بری نیز در دسترس آن است) برای کار با عناصر {{HTMLElement("embed")}} فراهم می‌کند.
 
 > [!NOTE]
-> This topic describes the `HTMLEmbedElement` interface as defined in the standard. It does not address earlier, non-standardized version of the interface.
+> این موضوع، اینترفیس `HTMLEmbedElement` را طبق استاندارد توصیف می‌کند و به نسخه‌های قدیمی‌تر و غیراستاندارد این اینترفیس نمی‌پردازد.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("HTMLElement")}}._
+_ویژگی‌های والد خود، {{domxref("HTMLElement")}} را به ارث می‌برد._
 
 - {{domxref("HTMLEmbedElement.align")}} {{deprecated_inline}}
-  - : A string representing an enumerated property indicating alignment of the element's contents with respect to the surrounding context. The possible values are `"left"`, `"right"`, `"center"`, and `"justify"`.
+  - : رشته‌ای که یک ویژگی شمارشی را نشان می‌دهد و تراز محتوای عنصر را نسبت به زمینه اطراف مشخص می‌کند. مقادیر ممکن عبارتند از `"left"`، `"right"`، `"center"` و `"justify"`.
 - {{domxref("HTMLEmbedElement.height")}}
-  - : A string reflecting the [`height`](/en-US/docs/Web/HTML/Reference/Elements/embed#height) HTML attribute, containing the displayed height of the resource.
+  - : رشته‌ای که ویژگی HTML [`height`](/en-US/docs/Web/HTML/Reference/Elements/embed#height) را منعکس می‌کند و ارتفاع نمایش داده‌شده منبع را شامل می‌شود.
 - {{domxref("HTMLEmbedElement.name")}} {{deprecated_inline}}
-  - : A string representing the name of the embedded object.
+  - : رشته‌ای که نام شیء تعبیه‌شده را نشان می‌دهد.
 - {{domxref("HTMLEmbedElement.src")}}
-  - : A string that reflects the [`src`](/en-US/docs/Web/HTML/Reference/Elements/embed#src) HTML attribute, containing the address of the resource.
+  - : رشته‌ای که ویژگی HTML [`src`](/en-US/docs/Web/HTML/Reference/Elements/embed#src) را منعکس می‌کند و آدرس منبع را شامل می‌شود.
 - {{domxref("HTMLEmbedElement.type")}}
-  - : A string that reflects the [`type`](/en-US/docs/Web/HTML/Reference/Elements/embed#type) HTML attribute, containing the type of the resource.
+  - : رشته‌ای که ویژگی HTML [`type`](/en-US/docs/Web/HTML/Reference/Elements/embed#type) را منعکس می‌کند و نوع منبع را شامل می‌شود.
 - {{domxref("HTMLEmbedElement.width")}}
-  - : A string that reflects the [`width`](/en-US/docs/Web/HTML/Reference/Elements/embed#width) HTML attribute, containing the displayed width of the resource.
+  - : رشته‌ای که ویژگی HTML [`width`](/en-US/docs/Web/HTML/Reference/Elements/embed#width) را منعکس می‌کند و عرض نمایش داده‌شده منبع را شامل می‌شود.
 
-## Instance methods
+## روش‌های نمونه
 
-_Also inherits methods from its parent interface, {{domxref("HTMLElement")}}._
+_همچنین روش‌های اینترفیس والد خود، {{domxref("HTMLElement")}} را به ارث می‌برد._
 
 - {{domxref("HTMLEmbedElement.getSVGDocument()")}}
-  - : Returns the embedded SVG as a {{domxref("Document")}}.
+  - : SVG تعبیه‌شده را به‌صورت یک {{domxref("Document")}} برمی‌گرداند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- The HTML element implementing this interface: {{ HTMLElement("embed") }}
+- عنصر HTML که این اینترفیس را پیاده‌سازی می‌کند: {{ HTMLElement("embed") }}
