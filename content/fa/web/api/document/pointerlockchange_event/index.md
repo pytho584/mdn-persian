@@ -1,11 +1,5 @@
 ---
 title: "Document: pointerlockchange event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/pointerlockchange_event"
-status: "needs-translation"
----
-
----
-title: "Document: pointerlockchange event"
 short-title: pointerlockchange
 slug: Web/API/Document/pointerlockchange_event
 page-type: web-api-event
@@ -14,15 +8,15 @@ browser-compat: api.Document.pointerlockchange_event
 
 {{APIRef("Pointer Lock API")}}
 
-The **`pointerlockchange`** event is fired when the pointer is locked/unlocked.
+رویداد **`pointerlockchange`** زمانی فعال می‌شود که اشاره‌گر قفل یا باز شود.
 
-The event handler can use {{domxref("Document.pointerLockElement")}} to determine whether the pointer is locked, and if so, to which element it is locked.
+مدیریت‌کننده رویداد می‌تواند از {{domxref("Document.pointerLockElement")}} برای تعیین اینکه آیا اشاره‌گر قفل شده است و اگر چنین است، به کدام عنصر قفل شده است، استفاده کند.
 
-This event is not cancelable and does not bubble.
+این رویداد قابل لغو نیست و به بالا منتشر نمی‌شود.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی مدیریت‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("pointerlockchange", (event) => { })
@@ -30,13 +24,13 @@ addEventListener("pointerlockchange", (event) => { })
 onpointerlockchange = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## مثال‌ها
 
-Using `addEventListener()`:
+استفاده از `addEventListener()`:
 
 ```js
 addEventListener("pointerlockchange", (event) => {
@@ -48,7 +42,7 @@ addEventListener("pointerlockchange", (event) => {
 });
 ```
 
-Using the `onpointerlockchange` event handler property:
+استفاده از ویژگی مدیریت‌کننده رویداد `onpointerlockchange`:
 
 ```js
 document.onpointerlockchange = (event) => {
@@ -60,14 +54,14 @@ document.onpointerlockchange = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using Pointer Lock API](/en-US/docs/Web/API/Pointer_Lock_API)
+- [استفاده از API قفل اشاره‌گر](/en-US/docs/Web/API/Pointer_Lock_API)
