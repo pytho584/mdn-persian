@@ -1,11 +1,5 @@
 ---
 title: "CSSStyleSheet: deleteRule() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleSheet/deleteRule"
-status: "needs-translation"
----
-
----
-title: "CSSStyleSheet: deleteRule() method"
 short-title: deleteRule()
 slug: Web/API/CSSStyleSheet/deleteRule
 page-type: web-api-instance-method
@@ -14,45 +8,42 @@ browser-compat: api.CSSStyleSheet.deleteRule
 
 {{APIRef("CSSOM")}}
 
-The {{domxref("CSSStyleSheet")}} method
-**`deleteRule()`** removes a rule from the stylesheet
-object.
+متد **`deleteRule()`** در {{domxref("CSSStyleSheet")}} یک قانون را از شیء شیوه‌نامه حذف می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 deleteRule(index)
 ```
 
-### Parameters
+### پارامترها
 
 - `index`
-  - : The index into the stylesheet's {{domxref("CSSRuleList")}} indicating the rule to be
-    removed.
+  - : شاخص درون {{domxref("CSSRuleList")}} شیوه‌نامه که قانون مورد نظر برای حذف را مشخص می‌کند.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-This example removes the first rule from the stylesheet `myStyles`.
+این مثال اولین قانون را از شیوه‌نامه `myStyles` حذف می‌کند.
 
 ```js
 myStyles.deleteRule(0);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - [CSS Object Model](/en-US/docs/Web/API/CSS_Object_Model)
 - [Constructable Stylesheets](https://web.dev/articles/constructable-stylesheets) (web.dev)
-- [Using dynamic styling information](/en-US/docs/Web/API/CSS_Object_Model/Using_dynamic_styling_information)
+- [استفاده از اطلاعات سبک‌دهی پویا](/en-US/docs/Web/API/CSS_Object_Model/Using_dynamic_styling_information)
 - {{domxref("CSSStyleSheet.insertRule", "insertRule()")}}
