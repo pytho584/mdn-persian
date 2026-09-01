@@ -1,11 +1,5 @@
 ---
 title: "DOMMatrixReadOnly: transformPoint() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrixReadOnly/transformPoint"
-status: "needs-translation"
----
-
----
-title: "DOMMatrixReadOnly: transformPoint() method"
 short-title: transformPoint()
 slug: Web/API/DOMMatrixReadOnly/transformPoint
 page-type: web-api-instance-method
@@ -14,38 +8,37 @@ browser-compat: api.DOMMatrixReadOnly.transformPoint
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The **`transformPoint`** method of the
-{{domxref("DOMMatrixReadOnly")}} interface creates a new {{domxref("DOMPoint")}} object, transforming a specified point by the matrix. Neither the matrix nor the original point are altered.
+متد **`transformPoint`** از رابط {{domxref("DOMMatrixReadOnly")}} یک شیء {{domxref("DOMPoint")}} جدید می‌سازد که با تبدیل یک نقطهٔ مشخص توسط ماتریس به دست می‌آید. نه خود ماتریس و نه نقطهٔ اصلی تغییری نمی‌کنند.
 
-You can also create a new `DOMPoint` by applying a matrix to a point with the {{domxref("DOMPointReadOnly.matrixTransform()")}} method.
+همچنین می‌توانید با اعمال ماتریس بر روی یک نقطه، با استفاده از متد {{domxref("DOMPointReadOnly.matrixTransform()")}} یک `DOMPoint` جدید ایجاد کنید.
 
-## Syntax
+## نحو
 
 ```js-nolint
 transformPoint()
 transformPoint(point)
 ```
 
-### Parameters
+### پارامترها
 
 - `point`
-  - : A {{domxref("DOMPoint")}} or {{domxref("DOMPointReadOnly")}} instance, or an object containing up to four of the following properties:
+  - : یک نمونهٔ `DOMPoint` یا `DOMPointReadOnly`، یا یک شیء حاوی حداکثر چهار ویژگی از موارد زیر:
     - `x`
-      - : The `x`-coordinate of the point in space as a number. The default value is `0`.
+      - : مختصهٔ `x` نقطه در فضا به‌صورت عدد. مقدار پیش‌فرض `0` است.
     - `y`
-      - : The `y`-coordinate of the point in space as a number. The default value is `0`.
+      - : مختصهٔ `y` نقطه در فضا به‌صورت عدد. مقدار پیش‌فرض `0` است.
     - `z`
-      - : The `z`-coordinate, or depth coordinate, of the point in space as a number. The default value is `0`.; positive values are closer to the user and negative values retreat back into the screen.
+      - : مختصهٔ `z` یا عمق نقطه در فضا به‌صورت عدد. مقدار پیش‌فرض `0` است؛ مقادیر مثبت به کاربر نزدیک‌تر و مقادیر منفی به سمت داخل صفحه عقب می‌روند.
     - `w`
-      - : The `w` perspective value of the point, as a number. The default is `1`.
+      - : مقدار پرسپکتیو `w` نقطه به‌صورت عدد. مقدار پیش‌فرض `1` است.
 
-### Return value
+### مقدار برگشتی
 
-A {{domxref("DOMPoint")}}.
+یک {{domxref("DOMPoint")}}.
 
-## Examples
+## مثال‌ها
 
-### 2D transform
+### تبدیل دوبعدی
 
 ```js
 const matrix = new DOMMatrixReadOnly();
@@ -53,9 +46,9 @@ const point = new DOMPointReadOnly(10, 20); // DOMPointReadOnly {x: 10, y: 20, z
 let newPoint = matrix.transformPoint(point); // DOMPoint {x: 10, y: 20, z: 0, w: 1}
 ```
 
-### 3D transform
+### تبدیل سه‌بعدی
 
-In this example, we apply a 3D point to a 3D matrix:
+در این مثال، یک نقطهٔ سه‌بعدی را بر روی یک ماتریس سه‌بعدی اعمال می‌کنیم:
 
 ```js
 // Matrix with translate(22, 37, 10) applied
@@ -66,15 +59,15 @@ const point3D = new DOMPointReadOnly(5, 10, 3); // DOMPointReadOnly {x: 5, y: 10
 const transformedPoint3D = point3D.matrixTransform(matrix3D); // DOMPoint {x: 27, y: 47, z: 13, w: 1}
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("DOMPointReadOnly.matrixTransform()")}}
-- CSS {{cssxref("transform-function/matrix", "matrix()")}} and {{cssxref("transform-function/matrix3d", "matrix3d()")}} functions
+- تابع‌های CSS {{cssxref("transform-function/matrix", "matrix()")}} و {{cssxref("transform-function/matrix3d", "matrix3d()")}}
