@@ -1,11 +1,5 @@
 ---
 title: "FontFaceSet: values() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSet/values"
-status: "needs-translation"
----
-
----
-title: "FontFaceSet: values() method"
 short-title: values()
 slug: Web/API/FontFaceSet/values
 page-type: web-api-instance-method
@@ -14,26 +8,26 @@ browser-compat: api.FontFaceSet.values
 
 {{APIRef("CSS Font Loading API")}}{{AvailableInWorkers}}
 
-The **`values()`** method of the {{domxref("FontFaceSet")}} interface returns a new iterator object that yields the values for each element in the `FontFaceSet` object in insertion order.
+**`values()`** 方法属于 {{domxref("FontFaceSet")}} 接口，返回一个新的迭代器对象，该对象会按插入顺序生成 `FontFaceSet` 对象中每个元素的值。
 
-## Syntax
+## 语法
 
 ```js-nolint
 values()
 ```
 
-### Parameters
+### 参数
 
-None.
+无。
 
-### Return value
+### 返回值
 
-A new iterator object containing the values for each element in the given `FontFaceSet`, in insertion order.
+一个新的迭代器对象，包含给定 `FontFaceSet` 中每个元素的值，顺序为插入顺序。
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
