@@ -1,11 +1,5 @@
 ---
 title: "HTMLFontElement: face property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLFontElement/face"
-status: "needs-translation"
----
-
----
-title: "HTMLFontElement: face property"
 short-title: face
 slug: Web/API/HTMLFontElement/face
 page-type: web-api-instance-property
@@ -16,42 +10,37 @@ browser-compat: api.HTMLFontElement.face
 
 {{deprecated_header}}{{ APIRef("HTML DOM") }}
 
-The obsolete
-**`HTMLFontElement.face`**
-property is a string that reflects the [`face`](/en-US/docs/Web/HTML/Reference/Elements/font#face) HTML attribute, containing a comma-separated list of one or more font
-names.
+خاصیت منسوخ‌شدهٔ **`HTMLFontElement.face`** یک رشته است که ویژگی HTML [`face`](/en-US/docs/Web/HTML/Reference/Elements/font#face) را بازتاب می‌دهد و شامل یک فهرست جدا شده با کاما از یک یا چند نام قلم است.
 
-The document text, in the default style, is rendered as the first font face that the
-client's browser supports. If no font listed is installed on the local system, the
-browser typically defaults to the proportional or fixed-width font for that system.
+متن سند، در سبک پیش‌فرض، با اولین قلمی که مرورگر کلاینت از آن پشتیبانی می‌کند نمایش داده می‌شود. اگر هیچ‌یک از قلم‌های فهرست‌شده روی سیستم محلی نصب نباشند، مرورگر معمولاً از قلم متناسب یا ثابت‌پهنای همان سیستم استفاده می‌کند.
 
-The format of the string must follow one of the following HTML microsyntax:
+قالب این رشته باید یکی از میکرو نحوهای HTML زیر را دنبال کند:
 
-| Microsyntax                                 | Description                                                         | Examples          |
-| ------------------------------------------- | ------------------------------------------------------------------- | ----------------- |
-| List of one or more valid font family names | _A list of font names, that have to be present on the local system_ | `courier,verdana` |
+| میکرو نحو (Microsyntax)                              | توضیحات                                                         | مثال‌ها           |
+| ---------------------------------------------------- | --------------------------------------------------------------- | ----------------- |
+| فهرست یک یا چند نام خانواده‌قلم معتبر                 | _فهرستی از نام‌های قلم که باید در سیستم محلی موجود باشند_       | `courier,verdana` |
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```js
-// Assumes there is <font id="f"> element in the HTML
+// فرض می‌کنیم یک عنصر <font id="f"> در HTML وجود دارد
 
 const f = document.getElementById("f");
 f.face = "arial";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("HTMLFontElement")}} interface it belongs to.
+- رابط {{domxref("HTMLFontElement")}} که این خاصیت به آن تعلق دارد.
