@@ -1,7 +1,5 @@
 ---
 title: "Device Memory API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Device_Memory_API"
-status: "needs-translation"
 ---
 
 ---
@@ -17,15 +15,15 @@ spec-urls: https://www.w3.org/TR/device-memory/
 
 {{DefaultAPISidebar("Device Memory API")}}{{securecontext_header}}{{AvailableInWorkers}}
 
-The capabilities of a client device largely depend on the amount of available RAM. Traditionally, developers had to use heuristics and either benchmark a device or infer device capabilities based on other factors like the device manufacturer or User Agent strings.
+توانایی‌های یک دستگاه کلاینت تا حد زیادی به میزان RAM موجود بستگی دارد. به‌طور سنتی، توسعه‌دهندگان مجبور بودند از روش‌های اکتشافی استفاده کنند و یا به بنچمارک دستگاه بپردازند، یا توانایی‌های دستگاه را بر اساس عوامل دیگری مانند سازنده دستگاه یا رشته‌های User Agent استنتاج کنند.
 
-## Determining device memory
+## تعیین حافظه دستگاه
 
-There are two ways to determine the approximate amount of RAM a device has: use the Device Memory JavaScript API or accept Client Hints.
+دو روش برای تعیین تقریبی میزان RAM دستگاه وجود دارد: استفاده از Device Memory JavaScript API یا پذیرش Client Hints.
 
-### JavaScript API
+### API جاوااسکریپت
 
-You may query the approximate amount of RAM a device has by retrieving {{DOMxRef("Navigator.deviceMemory")}} or {{DOMxRef("WorkerNavigator.deviceMemory")}}.
+می‌توانید میزان تقریبی RAM دستگاه را با دریافت {{DOMxRef("Navigator.deviceMemory")}} یا {{DOMxRef("WorkerNavigator.deviceMemory")}} پرس‌وجو کنید.
 
 ```js
 const RAM = navigator.deviceMemory;
@@ -33,25 +31,25 @@ const RAM = navigator.deviceMemory;
 
 ### Client Hints
 
-You may also use the [Client Hints](/en-US/docs/Web/HTTP/Guides/Client_hints) HTTP Header with the `Device-Memory` directive to retrieve the same approximate RAM capacity.
+همچنین می‌توانید از هدر HTTP [Client Hints](/en-US/docs/Web/HTTP/Guides/Client_hints) با دایرکتیو `Device-Memory` برای دریافت همان ظرفیت تقریبی RAM استفاده کنید.
 
-## Interfaces
+## رابط‌ها
 
-### Extensions to other interfaces
+### افزونه‌هایی به رابط‌های دیگر
 
 - {{domxref("Navigator.deviceMemory")}} {{ReadOnlyInline}}
-  - : Returns the approximate amount of device memory in gigabytes.
+  - : میزان تقریبی حافظه دستگاه را بر حسب گیگابایت برمی‌گرداند.
 - {{domxref("WorkerNavigator.deviceMemory")}} {{ReadOnlyInline}}
-  - : Returns the approximate amount of device memory in gigabytes.
+  - : میزان تقریبی حافظه دستگاه را بر حسب گیگابایت برمی‌گرداند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{HTTPHeader("Sec-CH-Device-Memory")}} header
+- هدر {{HTTPHeader("Sec-CH-Device-Memory")}}
