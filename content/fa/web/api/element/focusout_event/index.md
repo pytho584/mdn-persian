@@ -1,7 +1,5 @@
 ---
 title: "Element: focusout event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/focusout_event"
-status: "needs-translation"
 ---
 
 ---
@@ -14,15 +12,15 @@ browser-compat: api.Element.focusout_event
 
 {{APIRef("UI Events")}}
 
-The **`focusout`** event fires when an element has lost focus, after the {{domxref("Element/blur_event", "blur")}} event. The two events differ in that `focusout` bubbles, while `blur` does not.
+رویداد **`focusout`** زمانی رخ می‌دهد که یک عنصر، تمرکز خود را از دست داده است؛ این رویداد پس از رویداد {{domxref("Element/blur_event", "blur")}} رخ می‌دهد. تفاوت این دو رویداد در این است که `focusout` حباب می‌زند، در حالی که `blur` حباب نمی‌زند.
 
-The opposite of `focusout` is the {{domxref("Element/focusin_event", "focusin")}} event, which fires when the element has received focus.
+رویداد مقابل «focusout»، رویداد {{domxref("Element/focusin_event", "focusin")}} است که زمانی رخ می‌دهد که عنصر، تمرکز را دریافت کرده است.
 
-The `focusout` event is not cancelable.
+رویداد `focusout` قابل‌لغو نیست.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("focusout", (event) => { })
@@ -30,15 +28,15 @@ addEventListener("focusout", (event) => { })
 onfocusout = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("FocusEvent")}}. Inherits from {{domxref("UIEvent")}} and {{domxref("Event")}}.
+یک {{domxref("FocusEvent")}} که از {{domxref("UIEvent")}} و {{domxref("Event")}} به ارث می‌برد.
 
 {{InheritanceDiagram("FocusEvent")}}
 
-## Examples
+## نمونه‌ها
 
-### Live example
+### مثال زنده
 
 #### HTML
 
@@ -69,22 +67,22 @@ form.addEventListener("focusout", (event) => {
 });
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Live_example", '100%', '50px')}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
 > [!NOTE]
-> The _UI Events_ specification describes an [order of focus events](/en-US/docs/Web/API/FocusEvent#order_of_events) that's different from what current browsers implement.
+> مشخصات _UI Events_ یک [ترتیب رویدادهای تمرکز](/en-US/docs/Web/API/FocusEvent#order_of_events) را توصیف می‌کند که با آنچه مرورگرهای فعلی پیاده‌سازی می‌کنند متفاوت است.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- Related events: {{domxref("Element/blur_event", "blur")}}, {{domxref("Element/focus_event", "focus")}}, {{domxref("Element/focusin_event", "focusin")}}
+- رویدادهای مرتبط: {{domxref("Element/blur_event", "blur")}}، {{domxref("Element/focus_event", "focus")}}، {{domxref("Element/focusin_event", "focusin")}}
 - [Focusing: focus/blur](https://javascript.info/focus-blur)
