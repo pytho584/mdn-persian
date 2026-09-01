@@ -1,7 +1,5 @@
 ---
 title: "HTMLPictureElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLPictureElement"
-status: "needs-translation"
 ---
 
 ---
@@ -13,27 +11,27 @@ browser-compat: api.HTMLPictureElement
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLPictureElement`** interface represents a {{HTMLElement("picture")}} HTML element. It doesn't implement specific properties or methods.
+رابط **`HTMLPictureElement`** نمایانگر عنصر HTML {{HTMLElement("picture")}} است. این رابط ویژگی‌ها یا متدهای خاصی را پیاده‌سازی نمی‌کند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_No specific property, but inherits properties from its parent, {{domxref("HTMLElement")}}._
+_هیچ ویژگی خاصی ندارد، اما ویژگی‌های والد خود، {{domxref("HTMLElement")}} را به ارث می‌برد._
 
-## Instance methods
+## متدهای نمونه
 
-_No specific method, but inherits methods from its parent, {{domxref("HTMLElement")}}._
+_هیچ متد خاصی ندارد، اما متدهای والد خود، {{domxref("HTMLElement")}} را به ارث می‌برد._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- The {{HTMLElement("picture")}} HTML element that implements it.
-- The {{domxref("HTMLImageElement")}} and {{domxref("HTMLSourceElement")}} interfaces, often used in conjunction with a {{HTMLElement("picture")}} element.
+- عنصر HTML {{HTMLElement("picture")}} که این رابط را پیاده‌سازی می‌کند.
+- رابط‌های {{domxref("HTMLImageElement")}} و {{domxref("HTMLSourceElement")}} که اغلب همراه با یک عنصر {{HTMLElement("picture")}} استفاده می‌شوند.
