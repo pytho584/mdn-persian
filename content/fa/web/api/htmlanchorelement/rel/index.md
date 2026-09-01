@@ -1,11 +1,5 @@
 ---
 title: "HTMLAnchorElement: rel property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement/rel"
-status: "needs-translation"
----
-
----
-title: "HTMLAnchorElement: rel property"
 short-title: rel
 slug: Web/API/HTMLAnchorElement/rel
 page-type: web-api-instance-property
@@ -14,13 +8,13 @@ browser-compat: api.HTMLAnchorElement.rel
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLAnchorElement.rel`** property reflects the [`rel`](/en-US/docs/Web/HTML/Reference/Attributes/rel) attribute. It is a string containing a space-separated list of link types indicating the relationship between the resource represented by the {{HTMLElement("a")}} element and the current document.
+خاصیت **`HTMLAnchorElement.rel`** ویژگی [`rel`](/en-US/docs/Web/HTML/Reference/Attributes/rel) را بازتاب می‌دهد. مقدار آن رشته‌ای است که فهرستی از انواع پیوند (link types) را شامل می‌شود؛ این انواع با فاصله از هم جدا شده‌اند و رابطهٔ بین منبعِ نمایش‌داده‌شده توسط عنصر {{HTMLElement("a")}} و سندِ فعلی را نشان می‌دهند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```js
 const anchors = document.getElementsByTagName("a");
@@ -29,16 +23,15 @@ for (const anchor of anchors) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The equivalent property on {{HTMLElement("area")}} and {{HTMLElement("link")}},
-  {{domxref("HTMLAreaElement.rel")}} and {{domxref("HTMLLinkElement.rel")}}.
-- The very same list but as tokens: {{domxref("HTMLAnchorElement.relList")}}
+- خاصیت معادل در {{HTMLElement("area")}} و {{HTMLElement("link")}}، یعنی {{domxref("HTMLAreaElement.rel")}} و {{domxref("HTMLLinkElement.rel")}}.
+- دقیقاً همان فهرست، اما به‌صورت توکن‌ها: {{domxref("HTMLAnchorElement.relList")}}
