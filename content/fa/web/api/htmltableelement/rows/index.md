@@ -1,7 +1,5 @@
 ---
 title: "HTMLTableElement: rows property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/rows"
-status: "needs-translation"
 ---
 
 ---
@@ -14,23 +12,15 @@ browser-compat: api.HTMLTableElement.rows
 
 {{APIRef("HTML DOM")}}
 
-The read-only {{domxref("HTMLTableElement")}}
-property **`rows`** returns a live
-{{domxref("HTMLCollection")}} of all the rows in the table, including the rows
-contained within any {{HTMLElement("thead")}}, {{HTMLElement("tfoot")}}, and
-{{HTMLElement("tbody")}} elements.
+ویژگی فقط‌خواندنی **`rows`** در {{domxref("HTMLTableElement")}} یک {{domxref("HTMLCollection")}} زنده از تمام ردیف‌های جدول برمی‌گرداند، از جمله ردیف‌هایی که درون عناصر {{HTMLElement("thead")}}، {{HTMLElement("tfoot")}} و {{HTMLElement("tbody")}} قرار دارند.
 
-Although the property itself is read-only, the returned object is live and allows the
-modification of its content.
+اگرچه خود ویژگی فقط‌خواندنی است، شیء بازگردانده‌شده زنده است و امکان تغییر محتوای آن را فراهم می‌کند.
 
-## Value
+## مقدار
 
-An {{domxref("HTMLCollection")}} providing a live-updating list of the
-{{domxref("HTMLTableRowElement")}} objects representing all of the {{HTMLElement("tr")}}
-elements contained in the table. This provides quick access to all of the table rows,
-without having to manually search for them.
+یک {{domxref("HTMLCollection")}} که فهرستی به‌روزشونده به صورت زنده از اشیای {{domxref("HTMLTableRowElement")}} ارائه می‌دهد؛ این اشیا نمایانگر تمام عناصر {{HTMLElement("tr")}} موجود در جدول هستند. این فهرست دسترسی سریع به تمام ردیف‌های جدول را بدون نیاز به جستجوی دستی آن‌ها فراهم می‌کند.
 
-## Examples
+## مثال‌ها
 
 ```js
 myRows = myTable.rows;
@@ -38,14 +28,12 @@ firstRow = myTable.rows[0];
 lastRow = myTable.rows.item(myTable.rows.length - 1);
 ```
 
-This demonstrates how you can use both indexed access and the
-{{domxref("HTMLCollection.item()")}} method to obtain individual rows in the
-table.
+این مثال نشان می‌دهد که چگونه می‌توانید هم از دسترسی ایندکس‌دار و هم از متد {{domxref("HTMLCollection.item()")}} برای دریافت ردیف‌های جداگانه جدول استفاده کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
