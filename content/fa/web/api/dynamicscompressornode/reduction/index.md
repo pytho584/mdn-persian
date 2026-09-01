@@ -1,11 +1,5 @@
 ---
 title: "DynamicsCompressorNode: reduction property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DynamicsCompressorNode/reduction"
-status: "needs-translation"
----
-
----
-title: "DynamicsCompressorNode: reduction property"
 short-title: reduction
 slug: Web/API/DynamicsCompressorNode/reduction
 page-type: web-api-instance-property
@@ -14,13 +8,13 @@ browser-compat: api.DynamicsCompressorNode.reduction
 
 {{ APIRef("Web Audio API") }}
 
-The **`reduction`** read-only property of the {{ domxref("DynamicsCompressorNode") }} interface is a float representing the amount of gain reduction currently applied by the compressor to the signal.
+ویژگی فقط خواندنی **`reduction`** در رابط {{ domxref("DynamicsCompressorNode") }} یک عدد اعشاری (float) است که میزان کاهش بهره‌ای (gain reduction) که در حال حاضر توسط کمپرسور روی سیگنال اعمال می‌شود را نشان می‌دهد.
 
-Intended for metering purposes, it returns a value in dB, or `0` (no gain reduction) if no signal is fed into the `DynamicsCompressorNode`. The range of this value is between `-20` and `0` (in dB).
+این ویژگی برای اهداف اندازه‌گیری (metering) در نظر گرفته شده است و مقداری بر حسب دسی‌بل (dB) برمی‌گرداند، یا اگر هیچ سیگنالی به `DynamicsCompressorNode` وارد نشود، `0` (بدون کاهش بهره) را برمی‌گرداند. محدوده این مقدار بین `20-` و `0` (بر حسب dB) است.
 
 ## Value
 
-A float.
+یک عدد اعشاری (float).
 
 ## Examples
 
@@ -30,7 +24,7 @@ const compressor = audioCtx.createDynamicsCompressor();
 const myReduction = compressor.reduction;
 ```
 
-See [`BaseAudioContext.createDynamicsCompressor()`](/en-US/docs/Web/API/BaseAudioContext/createDynamicsCompressor#examples) for more complete example code.
+برای کد مثال کامل‌تر به [`BaseAudioContext.createDynamicsCompressor()`](/en-US/docs/Web/API/BaseAudioContext/createDynamicsCompressor#examples) مراجعه کنید.
 
 ## Specifications
 
