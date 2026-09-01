@@ -1,11 +1,5 @@
 ---
 title: "Element: ariaDisabled property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaDisabled"
-status: "needs-translation"
----
-
----
-title: "Element: ariaDisabled property"
 short-title: ariaDisabled
 slug: Web/API/Element/ariaDisabled
 page-type: web-api-instance-property
@@ -14,23 +8,23 @@ browser-compat: api.Element.ariaDisabled
 
 {{APIRef("DOM")}}
 
-The **`ariaDisabled`** property of the {{domxref("Element")}} interface reflects the value of the [`aria-disabled`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-disabled) attribute, which indicates that the element is perceivable but disabled, so it is not editable or otherwise operable.
+ویژگی **`ariaDisabled`** از رابط {{domxref("Element")}} منعکس‌کنندهٔ مقدار ویژگی [`aria-disabled`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-disabled) است که نشان می‌دهد عنصر قابل درک (perceivable) است اما غیرفعال است، بنابراین قابل ویرایش یا تعامل نیست.
 
 > [!NOTE]
-> Where possible, use the {{htmlelement("input")}} element with `type="button"` or the {{htmlelement("button")}} element — because those elements have built in semantics and do not require ARIA attributes.
+> در صورت امکان، از عنصر {{htmlelement("input")}} با `type="button"` یا عنصر {{htmlelement("button")}} استفاده کنید — زیرا این عناصر دارای معناشناسی داخلی هستند و به ویژگی‌های ARIA نیازی ندارند.
 
-## Value
+## مقدار
 
-A string with one of the following values:
+یک رشته با یکی از مقادیر زیر:
 
 - `"true"`
-  - : The element and all focusable descendants are disabled, but perceivable, and their values cannot be changed by the user.
+  - : عنصر و همهٔ فرزندان قابل فوکوس‌شونده غیرفعال هستند، اما قابل درک‌اند و کاربر نمی‌تواند مقادیر آن‌ها را تغییر دهد.
 - `"false"`
-  - : The element is enabled.
+  - : عنصر فعال است.
 
-## Examples
+## مثال‌ها
 
-In this example the `aria-disabled` attribute on the element with an ID of `saveChanges` is set to "true" indicating that this input is currently disabled. Using `ariaDisabled` we update the value to "false".
+در این مثال، ویژگی `aria-disabled` روی عنصری با شناسهٔ `saveChanges` برابر با «true» تنظیم شده است که نشان می‌دهد این ورودی در حال حاضر غیرفعال است. با استفاده از `ariaDisabled` مقدار را به «false» تغییر می‌دهیم.
 
 ```html
 <div id="saveChanges" tabindex="0" role="button" aria-disabled="true">Save</div>
@@ -43,10 +37,10 @@ el.ariaDisabled = "false";
 console.log(el.ariaDisabled); // "false"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
