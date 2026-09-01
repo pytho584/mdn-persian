@@ -1,11 +1,5 @@
 ---
 title: "HTMLImageElement: naturalWidth property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/naturalWidth"
-status: "needs-translation"
----
-
----
-title: "HTMLImageElement: naturalWidth property"
 short-title: naturalWidth
 slug: Web/API/HTMLImageElement/naturalWidth
 page-type: web-api-instance-property
@@ -14,22 +8,22 @@ browser-compat: api.HTMLImageElement.naturalWidth
 
 {{APIRef("HTML DOM")}}
 
-The read-only **`naturalWidth`** property of the {{domxref("HTMLImageElement")}} interface returns the intrinsic (natural), density-corrected width of the image in {{Glossary("CSS pixel", "CSS pixels")}}.
+خاصیت فقط-خواندنی **`naturalWidth`** از رابط {{domxref("HTMLImageElement")}} عرض ذاتی (طبیعی) و تصحیح‌شده بر اساس تراکم تصویر را بر حسب {{Glossary("CSS pixel", "پیکسل‌های CSS")}} برمی‌گرداند.
 
-This is the width the image is if drawn with nothing constraining its width; if you neither specify a width for the image nor place the image inside a container that limits or expressly specifies the image width, it will be rendered this wide.
+این عرضی است که تصویر در صورت رسم بدون هیچ محدودیت عرضی خواهد داشت؛ اگر نه عرضی برای تصویر تعیین کنید و نه تصویر را درون ظرفی قرار دهید که عرض آن را محدود یا به‌صراحت مشخص کند، تصویر با این عرض نمایش داده می‌شود.
 
 > [!NOTE]
-> Most of the time the natural width is the actual width of the image sent by the server. Nevertheless, browsers can modify an image before pushing it to the renderer. For example, Chrome [degrades the resolution of images on low-end devices](https://crbug.com/1187043#c7). In such cases, `naturalWidth` will consider the width of the image modified by such browser interventions as the natural width, and returns this value.
+> در بیشتر مواقع، عرض طبیعی همان عرض واقعی تصویری است که توسط سرور ارسال شده است. با این حال، مرورگرها می‌توانند تصویر را قبل از ارسال به رندرکننده تغییر دهند. برای مثال، کروم [وضوح تصاویر را در دستگاه‌های کم‌قدرت کاهش می‌دهد](https://crbug.com/1187043#c7). در چنین مواردی، `naturalWidth` عرض تصویر تغییر یافته توسط این مداخلات مرورگر را به‌عنوان عرض طبیعی در نظر گرفته و این مقدار را برمی‌گرداند.
 
-## Value
+## مقدار
 
-An integer value indicating the intrinsic width of the image, in CSS pixels. This is the width at which the image is naturally drawn when no constraint or specific value is established for the image. This natural width is corrected for the pixel density of the device on which it's being presented, unlike {{domxref("HTMLImageElement.width", "width")}}.
+یک مقدار عدد صحیح که عرض ذاتی تصویر را بر حسب پیکسل‌های CSS نشان می‌دهد. این عرضی است که تصویر به‌طور طبیعی در زمانی که هیچ محدودیت یا مقدار مشخصی برای آن تعیین نشده است، رسم می‌شود. این عرض طبیعی برای تراکم پیکسلی دستگاهی که تصویر روی آن نمایش داده می‌شود تصحیح شده است، بر خلاف {{domxref("HTMLImageElement.width", "width")}}.
 
-If the intrinsic width is not available—either because the image does not specify an intrinsic width or because the image data is not available in order to obtain this information, `naturalWidth` returns 0.
+اگر عرض ذاتی در دسترس نباشد - یا به دلیل اینکه تصویر عرض ذاتی مشخص نکرده است یا به دلیل اینکه داده‌های تصویر برای به‌دست آوردن این اطلاعات در دسترس نیستند - `naturalWidth` مقدار 0 را برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-See [`HTMLImageElement.naturalHeight`](/en-US/docs/Web/API/HTMLImageElement/naturalHeight#examples) for example code that displays an image in both its natural "density-adjusted" size, and in its rendered size as altered by the page's CSS and other factors.
+برای مشاهده کد نمونه‌ای که یک تصویر را هم در اندازه طبیعی «تنظیم‌شده بر اساس تراکم» و هم در اندازه رندر شده‌اش که توسط CSS صفحه و سایر عوامل تغییر یافته است نمایش می‌دهد، به [`HTMLImageElement.naturalHeight`](/en-US/docs/Web/API/HTMLImageElement/naturalHeight#examples) مراجعه کنید.
 
 ## Specifications
 
