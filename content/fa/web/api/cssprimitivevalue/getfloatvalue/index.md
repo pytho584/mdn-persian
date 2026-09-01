@@ -1,11 +1,5 @@
 ---
 title: "CSSPrimitiveValue: getFloatValue() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSPrimitiveValue/getFloatValue"
-status: "needs-translation"
----
-
----
-title: "CSSPrimitiveValue: getFloatValue() method"
 short-title: getFloatValue()
 slug: Web/API/CSSPrimitiveValue/getFloatValue
 page-type: web-api-instance-method
@@ -17,19 +11,15 @@ browser-compat: api.CSSPrimitiveValue.getFloatValue
 
 {{APIRef("CSSOM")}}{{deprecated_header}}{{non-standard_header}}
 
-The **`getFloatValue()`** method of the
-{{domxref("CSSPrimitiveValue")}} interface is used to get a float value in a specified
-unit. If this CSS value doesn't contain a float value or can't be converted into the
-specified unit, a {{domxref("DOMException")}} is raised.
+**`getFloatValue()`** متدی از رابط {{domxref("CSSPrimitiveValue")}} است که برای دریافت یک مقدار اعشاری (float) در واحد مشخص‌شده استفاده می‌شود. اگر این مقدار CSS حاوی مقدار اعشاری نباشد یا نتوان آن را به واحد مشخص‌شده تبدیل کرد، یک {{domxref("DOMException")}} پرتاب می‌شود.
 
 > [!NOTE]
-> This method was part of an attempt to create a typed CSS Object Model. This attempt has been abandoned, and most browsers do
-> not implement it.
+> این روش بخشی از تلاشی برای ایجاد یک مدل شیء CSS تایپ‌شده بود. این تلاش کنار گذاشته شده است و اکثر مرورگرها آن را پیاده‌سازی نمی‌کنند.
 >
-> To achieve your purpose, you can use:
+> برای رسیدن به هدف خود، می‌توانید از:
 >
-> - the untyped [CSS Object Model](/en-US/docs/Web/API/CSS_Object_Model), widely supported, or
-> - the modern [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API), less supported and considered experimental.
+> - [مدل شیء CSS](/en-US/docs/Web/API/CSS_Object_Model) بدون تایپ که به‌طور گسترده پشتیبانی می‌شود، یا
+> - [API مدل شیء CSS تایپ‌شده](/en-US/docs/Web/API/CSS_Typed_OM_API) مدرن که کمتر پشتیبانی می‌شود و تجربی در نظر گرفته می‌شود، استفاده کنید.
 
 ## Syntax
 
@@ -40,50 +30,47 @@ getFloatValue(unit)
 ### Parameters
 
 - `unit`
-  - : An `unsigned short` representing the code for the unit type, in which the
-    value should be returned. Valid values are:
+  - : یک `unsigned short` که کد نوع واحد را نشان می‌دهد و مقدار باید در آن واحد برگردانده شود. مقادیر معتبر عبارتند از:
 
     | Constant         | Description                                                                                                            |
     | ---------------- | ---------------------------------------------------------------------------------------------------------------------- |
-    | `CSS_CM`         | The value is a {{cssxref("&lt;length&gt;")}} in centimeters.                                                           |
-    | `CSS_DEG`        | The value is an {{cssxref("&lt;angle&gt;")}} in degrees.                                                               |
-    | `CSS_DIMENSION`  | The value is a {{cssxref("&lt;number&gt;")}} with an unknown dimension.                                                |
-    | `CSS_EMS`        | The value is a {{cssxref("&lt;length&gt;")}} in em units.                                                              |
-    | `CSS_EXS`        | The value is a {{cssxref("&lt;length&gt;")}} in ex units.                                                              |
-    | `CSS_GRAD`       | The value is an {{cssxref("&lt;angle&gt;")}} in grads.                                                                 |
-    | `CSS_HZ`         | The value is a {{cssxref("&lt;frequency&gt;")}} in Hertz. The value can be obtained by using the getFloatValue method. |
-    | `CSS_IN`         | The value is a {{cssxref("&lt;length&gt;")}} in inches.                                                                |
-    | `CSS_KHZ`        | The value is a {{cssxref("&lt;frequency&gt;")}} in Kilohertz.                                                          |
-    | `CSS_MM`         | The value is a {{cssxref("&lt;length&gt;")}} in millimeters.                                                           |
-    | `CSS_MS`         | The value is a {{cssxref("&lt;time&gt;")}} in milliseconds.                                                            |
-    | `CSS_NUMBER`     | The value is a simple {{cssxref("&lt;number&gt;")}}.                                                                   |
-    | `CSS_PC`         | The value is a {{cssxref("&lt;length&gt;")}} in picas.                                                                 |
-    | `CSS_PERCENTAGE` | The value is a {{cssxref("&lt;percentage&gt;")}}.                                                                      |
-    | `CSS_PT`         | The value is a {{cssxref("&lt;length&gt;")}} in points.                                                                |
-    | `CSS_PX`         | The value is a {{cssxref("&lt;length&gt;")}} in pixels.                                                                |
-    | `CSS_RAD`        | The value is an {{cssxref("&lt;angle&gt;")}} in radians.                                                               |
-    | `CSS_S`          | The value is a {{cssxref("&lt;time&gt;")}} in seconds.                                                                 |
+    | `CSS_CM`         | مقدار یک {{cssxref("&lt;length&gt;")}} بر حسب سانتی‌متر است.                                                           |
+    | `CSS_DEG`        | مقدار یک {{cssxref("&lt;angle&gt;")}} بر حسب درجه است.                                                                 |
+    | `CSS_DIMENSION`  | مقدار یک {{cssxref("&lt;number&gt;")}} با بُعد ناشناخته است.                                                          |
+    | `CSS_EMS`        | مقدار یک {{cssxref("&lt;length&gt;")}} بر حسب واحد em است.                                                             |
+    | `CSS_EXS`        | مقدار یک {{cssxref("&lt;length&gt;")}} بر حسب واحد ex است.                                                             |
+    | `CSS_GRAD`       | مقدار یک {{cssxref("&lt;angle&gt;")}} بر حسب grad است.                                                                 |
+    | `CSS_HZ`         | مقدار یک {{cssxref("&lt;frequency&gt;")}} بر حسب هرتز است. این مقدار را می‌توان با استفاده از متد getFloatValue به دست آورد. |
+    | `CSS_IN`         | مقدار یک {{cssxref("&lt;length&gt;")}} بر حسب اینچ است.                                                                |
+    | `CSS_KHZ`        | مقدار یک {{cssxref("&lt;frequency&gt;")}} بر حسب کیلوهرتز است.                                                         |
+    | `CSS_MM`         | مقدار یک {{cssxref("&lt;length&gt;")}} بر حسب میلی‌متر است.                                                            |
+    | `CSS_MS`         | مقدار یک {{cssxref("&lt;time&gt;")}} بر حسب میلی‌ثانیه است.                                                            |
+    | `CSS_NUMBER`     | مقدار یک {{cssxref("&lt;number&gt;")}} ساده است.                                                                      |
+    | `CSS_PC`         | مقدار یک {{cssxref("&lt;length&gt;")}} بر حسب پیکا است.                                                                |
+    | `CSS_PERCENTAGE` | مقدار یک {{cssxref("&lt;percentage&gt;")}} است.                                                                       |
+    | `CSS_PT`         | مقدار یک {{cssxref("&lt;length&gt;")}} بر حسب پوینت است.                                                               |
+    | `CSS_PX`         | مقدار یک {{cssxref("&lt;length&gt;")}} بر حسب پیکسل است.                                                               |
+    | `CSS_RAD`        | مقدار یک {{cssxref("&lt;angle&gt;")}} بر حسب رادیان است.                                                               |
+    | `CSS_S`          | مقدار یک {{cssxref("&lt;time&gt;")}} بر حسب ثانیه است.                                                                 |
 
 ### Return value
 
-A `float` value in the specified unit.
+یک مقدار `float` در واحد مشخص‌شده.
 
 ### Exceptions
 
 <table class="no-markdown">
   <thead>
     <tr>
-      <th scope="col"><strong>Type</strong></th>
-      <th scope="col"><strong>Description</strong></th>
+      <th scope="col"><strong>نوع</strong></th>
+      <th scope="col"><strong>توضیحات</strong></th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td><code>DOMException</code></td>
       <td>
-        An <code>INVALID_ACCESS_ERR</code> is raised if the CSS value doesn't
-        contain a float value or if the float value can't be converted into the
-        specified unit.
+        اگر مقدار CSS حاوی مقدار اعشاری نباشد یا اگر مقدار اعشاری نتواند به واحد مشخص‌شده تبدیل شود، یک <code>INVALID_ACCESS_ERR</code> پرتاب می‌شود.
       </td>
     </tr>
   </tbody>
@@ -99,10 +86,9 @@ console.log(cssValue.getFloatValue(CSSPrimitiveValue.CSS_CM));
 
 ## Specifications
 
-This feature was originally defined in the [DOM Style Level 2](https://www.w3.org/TR/DOM-Level-2-Style/) specification, but has been dropped from any
-standardization effort since then.
+این ویژگی در اصل در مشخصات [DOM Style Level 2](https://www.w3.org/TR/DOM-Level-2-Style/) تعریف شده بود، اما از آن زمان از هرگونه تلاش استانداردسازی حذف شده است.
 
-It has been superseded by a modern, but incompatible, [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API) that is now on the standard track.
+این ویژگی توسط [API مدل شیء CSS تایپ‌شده](/en-US/docs/Web/API/CSS_Typed_OM_API) مدرن، اما ناسازگار، که اکنون در مسیر استاندارد قرار دارد، جایگزین شده است.
 
 ## Browser compatibility
 
