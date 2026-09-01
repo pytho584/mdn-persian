@@ -1,11 +1,5 @@
 ---
 title: "Element: getAttribute() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttribute"
-status: "needs-translation"
----
-
----
-title: "Element: getAttribute() method"
 short-title: getAttribute()
 slug: Web/API/Element/getAttribute
 page-type: web-api-instance-method
@@ -14,30 +8,28 @@ browser-compat: api.Element.getAttribute
 
 {{APIRef("DOM")}}
 
-The **`getAttribute()`** method of the
-{{domxref("Element")}} interface returns the value of a specified attribute on the
-element.
+متد **`getAttribute()`** در رابط {{domxref("Element")}} مقدار یک ویژگی مشخص را روی عنصر برمی‌گرداند.
 
-If the given attribute does not exist, the value returned will be `null`.
+اگر ویژگی موردنظر وجود نداشته باشد، مقدار بازگشتی `null` خواهد بود.
 
-If you need to inspect the {{domxref("Attr")}} node's properties, you can use the {{domxref("Element.getAttributeNode()", "getAttributeNode()")}} method instead.
+اگر نیاز به بررسی ویژگی‌های گره {{domxref("Attr")}} دارید، می‌توانید به جای آن از متد {{domxref("Element.getAttributeNode()", "getAttributeNode()")}} استفاده کنید.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 getAttribute(attributeName)
 ```
 
-### Parameters
+### پارامترها
 
 - `attributeName`
-  - : The name of the attribute whose value you want to get.
+  - : نام ویژگی‌ای که می‌خواهید مقدار آن را دریافت کنید.
 
-### Return value
+### مقدار بازگشتی
 
-A string containing the value of `attributeName` if the attribute exists, otherwise `null`.
+اگر ویژگی وجود داشته باشد، رشته‌ای حاوی مقدار `attributeName` است؛ در غیر این صورت `null` برمی‌گردد.
 
-## Examples
+## مثال‌ها
 
 ```html
 <!-- example div in an HTML DOC -->
@@ -55,56 +47,52 @@ const lang = div1.getAttribute("lang");
 // null
 ```
 
-## Description
+## توضیحات
 
-### Lower casing
+### تبدیل به حروف کوچک
 
-When called on an HTML element in a DOM flagged as an HTML document,
-`getAttribute()` lower-cases its argument before proceeding.
+وقتی `getAttribute()` روی یک عنصر HTML در DOM که به‌عنوان سند HTML علامت‌گذاری شده فراخوانی شود، قبل از ادامه، آرگومان خود را به حروف کوچک تبدیل می‌کند.
 
-### Decoded character references in attribute values
+### رمزگشایی مراجع کاراکتری در مقادیر ویژگی
 
-HTML [character references](/en-US/docs/Glossary/Character_reference) in an attribute's source markup (for example, `&lt;`, `&amp;`, or `&#x3C;`) are decoded by the HTML parser when the document is parsed, so `getAttribute()` returns the decoded value, not the original source.
+[مراجع کاراکتری](/en-US/docs/Glossary/Character_reference) HTML موجود در نشانه‌گذاری منبع یک ویژگی (مانند `&lt;`، `&amp;` یا `&#x3C;`) هنگام تجزیه سند توسط تجزیه‌گر HTML رمزگشایی می‌شوند؛ بنابراین `getAttribute()` مقدار رمزگشایی‌شده را برمی‌گرداند، نه کد منبع اصلی را.
 
-Given:
+با فرض کد زیر:
 
 ```html
 <div id="example" data-payload="&lt;b&gt;hi&lt;/b&gt;"></div>
 ```
 
-calling `document.getElementById("example").getAttribute("data-payload")` returns the string `"<b>hi</b>"`.
+فراخوانی `document.getElementById("example").getAttribute("data-payload")` رشته `"<b>hi</b>"` را برمی‌گرداند.
 
-Treating the return value from `getAttribute()` as already-escaped HTML is unsafe. If you read an attribute that holds untrusted data and then assign it to {{domxref("Element.innerHTML", "innerHTML")}} or insert it into the document as markup, any HTML references used to escape special characters will already be decoded, and the result can be exploited for [cross-site scripting (XSS)](/en-US/docs/Web/Security/Attacks/XSS).
+در نظر گرفتن مقدار بازگشتی `getAttribute()` به‌عنوان HTML از پیش فرار داده‌شده ناامن است. اگر ویژگی‌ای را بخوانید که داده‌ای غیرقابل‌اعتماد دارد و سپس آن را به {{domxref("Element.innerHTML", "innerHTML")}} اختصاص دهید یا به‌عنوان نشانه‌گذاری در سند درج کنید، هر مرجع HTML که برای فرار دادن کاراکترهای خاص استفاده شده بود قبلاً رمزگشایی شده است و نتیجه می‌تواند برای [حمله اسکریپت بین‌سایتی (XSS)](/en-US/docs/Web/Security/Attacks/XSS) مورد سوءاستفاده قرار گیرد.
 
-Use {{domxref("Node.textContent", "textContent")}} (or another text-safe API) for untrusted data instead of `innerHTML`.
+برای داده‌های غیرقابل‌اعتماد به‌جای `innerHTML` از {{domxref("Node.textContent", "textContent")}} (یا هر API امن متنی دیگر) استفاده کنید.
 
-### Retrieving nonce values
+### دریافت مقادیر nonce
 
-For security reasons, [CSP](/en-US/docs/Web/HTTP/Guides/CSP) nonces from non-script
-sources, such as CSS selectors, and `.getAttribute("nonce")` calls are
-hidden.
+به دلایل امنیتی، nonceهای [CSP](/en-US/docs/Web/HTTP/Guides/CSP) از منابع غیر اسکریپتی مانند انتخابگرهای CSS و همچنین فراخوانی‌های `.getAttribute("nonce")` پنهان می‌شوند.
 
 ```js example-bad
 let nonce = script.getAttribute("nonce");
 // returns empty string
 ```
 
-Instead of retrieving the nonce from the content attribute, use the
-{{domxref("HTMLElement/nonce", "nonce")}} property:
+به‌جای دریافت nonce از ویژگی محتوایی، از ویژگی {{domxref("HTMLElement/nonce", "nonce")}} استفاده کنید:
 
 ```js
 let nonce = script.nonce;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Element.hasAttribute()")}}
 - {{domxref("Element.setAttribute()")}}
