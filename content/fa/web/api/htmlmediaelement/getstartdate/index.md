@@ -1,11 +1,5 @@
 ---
 title: "HTMLMediaElement: getStartDate() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/getStartDate"
-status: "needs-translation"
----
-
----
-title: "HTMLMediaElement: getStartDate() method"
 short-title: getStartDate()
 slug: Web/API/HTMLMediaElement/getStartDate
 page-type: web-api-instance-method
@@ -14,48 +8,48 @@ browser-compat: api.HTMLMediaElement.getStartDate
 
 {{APIRef("HTML DOM")}}
 
-The **`getStartDate()`** method of the {{domxref("HTMLMediaElement")}} interface returns a new {{jsxref("Date")}} object representing the real-world date and time corresponding to the beginning of the media.
+متد **`getStartDate()`** در رابط {{domxref("HTMLMediaElement")}} یک شیء جدید از نوع {{jsxref("Date")}} برمی‌گرداند که تاریخ و زمان واقعی (جهان واقعی) متناظر با شروع رسانه را نشان می‌دهد.
 
-This is useful for media streams that are anchored to a real-world clock, such as a live broadcast that began at a specific date and time. For media that does not include date and time information, the returned `Date` object will have a time value of {{jsxref("NaN")}}.
+این متد برای جریان‌های رسانه‌ای که به یک ساعت واقعی متصل هستند (مانند پخش زنده‌ای که در یک تاریخ و زمان مشخص شروع شده است) مفید است. برای رسانه‌ای که حاوی اطلاعات تاریخ و زمان نیست، شیء `Date` برگشتی دارای مقدار زمانی {{jsxref("NaN")}} خواهد بود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 getStartDate()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Date")}} object representing the start date and time of the media. If the media does not include date and time information, the returned `Date` object will have a time value of `NaN`.
+یک {{jsxref("Date")}} که تاریخ و زمان شروع رسانه را نشان می‌دهد. اگر رسانه حاوی اطلاعات تاریخ و زمان نباشد، شیء `Date` برگشتی دارای مقدار زمانی `NaN` خواهد بود.
 
-## Description
+## توضیحات
 
-Internally, each media element tracks a start date, which begins as `NaN` (not set). Once the browser has loaded enough data to read the media's metadata, it sets the start date to the real-world time that corresponds to the beginning of the media — if the format provides one. If it doesn't, the start date stays `NaN`.
+در داخل، هر عنصر رسانه یک تاریخ شروع را ردیابی می‌کند که در ابتدا `NaN` (تنظیم نشده) است. پس از اینکه مرورگر داده‌های کافی برای خواندن فراداده‌ی رسانه بارگذاری کرد، تاریخ شروع را به زمان واقعی که متناظر با شروع رسانه است تنظیم می‌کند – اگر قالب رسانه آن را فراهم کند. در غیر این صورت، تاریخ شروع `NaN` باقی می‌ماند.
 
-For media that does specify a start time and date (for example, a live TV broadcast streamed over the web), `getStartDate()` returns a `Date` object corresponding to the real-world time at which the media begins. This allows media player controls to display absolute times (such as "2:30 PM") rather than times relative to the start of playback (such as "3 hours, 12 minutes").
+برای رسانه‌ای که زمان و تاریخ شروع را مشخص می‌کند (مثلاً یک پخش زنده تلویزیونی که از طریق وب پخش می‌شود)، `getStartDate()` یک شیء `Date` متناظر با زمان واقعی شروع رسانه برمی‌گرداند. این امکان را فراهم می‌کند که کنترل‌های پخش‌کننده‌ی رسانه، زمان‌های مطلق (مانند «۲:۳۰ بعد از ظهر») را به جای زمان‌های نسبی به شروع پخش (مانند «۳ ساعت و ۱۲ دقیقه») نمایش دهند.
 
-The returned `Date` will have a time value of `NaN` (making it an [invalid date](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#the_epoch_timestamps_and_invalid_date)) in either of the following cases:
+شیء `Date` برگشتی در هر یک از موارد زیر مقدار زمانی `NaN` خواهد داشت (که آن را به یک [تاریخ نامعتبر](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#the_epoch_timestamps_and_invalid_date) تبدیل می‌کند):
 
-- No data has been loaded yet ({{domxref("HTMLMediaElement.readyState", "readyState")}} is `HAVE_NOTHING`), so the start date hasn't been set.
-- The media format doesn't include date and time information.
+- هنوز داده‌ای بارگذاری نشده است ({{domxref("HTMLMediaElement.readyState", "readyState")}} برابر `HAVE_NOTHING` است)، بنابراین تاریخ شروع تنظیم نشده است.
+- قالب رسانه شامل اطلاعات تاریخ و زمان نیست.
 
-The start date is not guaranteed to be available as soon as the {{domxref("HTMLMediaElement/loadedmetadata_event", "loadedmetadata")}} event fires. For example, [HLS](https://developer.apple.com/documentation/http-live-streaming) streams carry dates in segment-level `#EXT-X-PROGRAM-DATE-TIME` tags, which may not have been read yet at that point. Listening for the {{domxref("HTMLMediaElement/loadeddata_event", "loadeddata")}} event instead is more reliable across formats, because by then the browser has loaded enough data to determine the start date.
+تاریخ شروع تضمین نمی‌شود که بلافاصله پس از رویداد {{domxref("HTMLMediaElement/loadedmetadata_event", "loadedmetadata")}} در دسترس باشد. برای مثال، جریان‌های [HLS](https://developer.apple.com/documentation/http-live-streaming) تاریخ‌ها را در برچسب‌های `#EXT-X-PROGRAM-DATE-TIME` در سطح سگمنت حمل می‌کنند، که ممکن است در آن نقطه هنوز خوانده نشده باشند. گوش دادن به رویداد {{domxref("HTMLMediaElement/loadeddata_event", "loadeddata")}} در عوض در میان قالب‌ها قابل اطمینان‌تر است، زیرا تا آن زمان مرورگر داده‌های کافی برای تعیین تاریخ شروع بارگذاری کرده است.
 
-## Examples
+## مثال‌ها
 
-### Displaying the start date of a live stream
+### نمایش تاریخ شروع یک جریان زنده
 
-This example retrieves the start date of a live stream — the real-world date and time at which the broadcast began, as embedded in the stream by the server — and displays it. It listens for the {{domxref("HTMLMediaElement/loadeddata_event", "loadeddata")}} event, which fires once enough data has been loaded for the start date to be available.
+این مثال تاریخ شروع یک جریان زنده را بازیابی می‌کند – تاریخ و زمان واقعی که پخش در آن شروع شده است، همانطور که توسط سرور در جریان تعبیه شده است – و آن را نمایش می‌دهد. به رویداد {{domxref("HTMLMediaElement/loadeddata_event", "loadeddata")}} گوش می‌دهد، که پس از بارگذاری داده‌های کافی برای در دسترس بودن تاریخ شروع، فعال می‌شود.
 
 #### HTML
 
 ```html
 <video src="livestream.m3u8" controls></video>
-<output>Start date: loading…</output>
+<output>تاریخ شروع: در حال بارگذاری…</output>
 ```
 
 #### JavaScript
@@ -68,29 +62,29 @@ video.addEventListener("loadeddata", () => {
   const startDate = video.getStartDate();
 
   if (isNaN(startDate.getTime())) {
-    display.textContent = "Start date: not available";
+    display.textContent = "تاریخ شروع: در دسترس نیست";
   } else {
-    display.textContent = `Start date: ${startDate.toLocaleString()}`;
+    display.textContent = `تاریخ شروع: ${startDate.toLocaleString()}`;
   }
 });
 ```
 
-#### Result
+#### نتیجه
 
-The output below shows the start date of the media, as provided by the server.
-Note that this is encoded in the example metadata in [stream.m3u8](https://github.com/mdn/dom-examples/blob/main/media/getstartdate/stream.m3u8).
+خروجی زیر تاریخ شروع رسانه را، همانطور که توسط سرور ارائه شده است، نشان می‌دهد.
+توجه داشته باشید که این در فراداده‌های مثال موجود در [stream.m3u8](https://github.com/mdn/dom-examples/blob/main/media/getstartdate/stream.m3u8) رمزگذاری شده است.
 
 {{EmbedGHLiveSample("dom-examples/media/getstartdate/", '100%', 400)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLMediaElement")}}
 - {{domxref("HTMLMediaElement.currentTime")}}
