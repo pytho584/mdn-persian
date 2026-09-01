@@ -1,7 +1,5 @@
 ---
 title: "HIDDevice"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HIDDevice"
-status: "needs-translation"
 ---
 
 ---
@@ -15,50 +13,50 @@ browser-compat: api.HIDDevice
 
 {{securecontext_header}}{{APIRef("WebHID API")}}{{SeeCompatTable}}{{AvailableInWorkers("window_and_worker_except_shared")}}
 
-The **`HIDDevice`** interface of the [WebHID API](/en-US/docs/Web/API/WebHID_API) represents a HID Device. It provides properties for accessing information about the device, methods for opening and closing the connection, and the sending and receiving of reports.
+رابط **`HIDDevice`** از [WebHID API](/en-US/docs/Web/API/WebHID_API) یک دستگاه HID را نمایش می‌دهد. این رابط ویژگی‌هایی برای دسترسی به اطلاعات دستگاه، روش‌هایی برای باز و بسته کردن اتصال، و همچنین ارسال و دریافت گزارش‌ها فراهم می‌کند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-This interface also inherits properties from {{domxref("EventTarget")}}.
+این رابط همچنین ویژگی‌های {{domxref("EventTarget")}} را به ارث می‌برد.
 
 - {{domxref("HIDDevice.opened")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a {{jsxref("Boolean")}}, true if the device has an open connection.
+  - : یک {{jsxref("Boolean")}} برمی‌گرداند که در صورت باز بودن اتصال دستگاه، مقدار آن `true` است.
 - {{domxref("HIDDevice.vendorId")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns the vendorId of the HID device.
+  - : مقدار `vendorId` دستگاه HID را برمی‌گرداند.
 - {{domxref("HIDDevice.productId")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns the productId of the HID device.
+  - : مقدار `productId` دستگاه HID را برمی‌گرداند.
 - {{domxref("HIDDevice.productName")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a string containing the product name of the HID device.
+  - : رشته‌ای شامل نام محصول دستگاه HID را برمی‌گرداند.
 - {{domxref("HIDDevice.collections")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns an array of report formats for the HID device.
+  - : آرایه‌ای از قالب‌های گزارش (report formats) برای دستگاه HID را برمی‌گرداند.
 
-### Events
+### رویدادها
 
 - {{domxref("HIDDevice.inputreport_event", "inputreport")}} {{Experimental_Inline}}
-  - : Fires when a report is sent from the device.
+  - : هنگامی که گزارشی از دستگاه ارسال می‌شود، این رویداد فعال می‌شود.
 
-## Instance methods
+## روش‌های نمونه
 
-This interface also inherits methods from {{domxref("EventTarget")}}.
+این رابط همچنین روش‌های {{domxref("EventTarget")}} را به ارث می‌برد.
 
 - {{domxref("HIDDevice.open()")}} {{Experimental_Inline}}
-  - : Opens a connection to this HID device, and returns a {{jsxref("Promise")}} which resolves once the connection has been successful.
+  - : اتصالی به این دستگاه HID باز می‌کند و یک {{jsxref("Promise")}} برمی‌گرداند که پس از موفقیت‌آمیز بودن اتصال حل می‌شود.
 - {{domxref("HIDDevice.close()")}} {{Experimental_Inline}}
-  - : Closes the connection to this HID device, and returns a {{jsxref("Promise")}} which resolves once the connection has been closed.
+  - : اتصال به این دستگاه HID را می‌بندد و یک {{jsxref("Promise")}} برمی‌گرداند که پس از بسته شدن اتصال حل می‌شود.
 - {{domxref("HIDDevice.forget()")}} {{Experimental_Inline}}
-  - : Closes the connection to this HID device and resets access permission, and returns a {{jsxref("Promise")}} which resolves once the permission was reset.
+  - : اتصال به این دستگاه HID را می‌بندد و مجوز دسترسی را بازنشانی می‌کند و یک {{jsxref("Promise")}} برمی‌گرداند که پس از بازنشانی مجوز حل می‌شود.
 - {{domxref("HIDDevice.sendReport()")}} {{Experimental_Inline}}
-  - : Sends an output report to this HID Device, and returns a {{jsxref("Promise")}} which resolves once the report has been sent.
+  - : یک گزارش خروجی به این دستگاه HID می‌فرستد و یک {{jsxref("Promise")}} برمی‌گرداند که پس از ارسال گزارش حل می‌شود.
 - {{domxref("HIDDevice.sendFeatureReport()")}} {{Experimental_Inline}}
-  - : Sends a feature report to this HID device, and returns a {{jsxref("Promise")}} which resolves once the report has been sent.
+  - : یک گزارش ویژگی (feature report) به این دستگاه HID می‌فرستد و یک {{jsxref("Promise")}} برمی‌گرداند که پس از ارسال گزارش حل می‌شود.
 - {{domxref("HIDDevice.receiveFeatureReport()")}} {{Experimental_Inline}}
-  - : Receives a feature report from this HID device in the form of a {{jsxref("Promise")}} which resolves with a {{jsxref("DataView")}}. This allows typed access to the contents of this message.
+  - : یک گزارش ویژگی از این دستگاه HID دریافت می‌کند و آن را به صورت یک {{jsxref("Promise")}} برمی‌گرداند که با یک {{jsxref("DataView")}} حل می‌شود. این کار امکان دسترسی نوع‌دار (typed) به محتوای این پیام را فراهم می‌کند.
 
-## Examples
+## مثال‌ها
 
-The following example demonstrates listening for an `inputreport` event that will allow the application to detect which button is pressed on a Joy-Con Right device.
+مثال زیر نحوه گوش دادن به رویداد `inputreport` را نشان می‌دهد که به برنامه امکان می‌دهد تشخیص دهد کدام دکمه روی دستگاه Joy-Con Right فشرده شده است.
 
 ```js
 device.addEventListener("inputreport", (event) => {
@@ -75,7 +73,7 @@ device.addEventListener("inputreport", (event) => {
 });
 ```
 
-In the following example `sendFeatureReport` is used to make a device blink.
+در مثال زیر از `sendFeatureReport` برای چشمک زدن یک دستگاه استفاده شده است.
 
 ```js
 const reportId = 1;
@@ -89,12 +87,12 @@ for (let i = 0; i < 10; i++) {
 }
 ```
 
-You can see more examples, and live demos in the article [Connecting to uncommon HID devices](https://developer.chrome.com/docs/capabilities/hid).
+نمونه‌های بیشتر و نسخه‌های نمایشی زنده را می‌توانید در مقاله [Connecting to uncommon HID devices](https://developer.chrome.com/docs/capabilities/hid) ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
