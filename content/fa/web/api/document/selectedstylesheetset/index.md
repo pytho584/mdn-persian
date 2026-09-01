@@ -1,11 +1,5 @@
 ---
 title: "Document: selectedStyleSheetSet property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/selectedStyleSheetSet"
-status: "needs-translation"
----
-
----
-title: "Document: selectedStyleSheetSet property"
 short-title: selectedStyleSheetSet
 slug: Web/API/Document/selectedStyleSheetSet
 page-type: web-api-instance-property
@@ -17,23 +11,22 @@ browser-compat: api.Document.selectedStyleSheetSet
 
 {{APIRef("DOM")}}{{deprecated_header}}{{Non-standard_header}}
 
-The **`selectedStyleSheetSet`** property indicates the name of the style sheet set that's currently in use.
+ویژگی **`selectedStyleSheetSet`** نام مجموعه‌ی برگه‌های سبکی را که در حال حاضر استفاده می‌شود، نشان می‌دهد.
 
-## Value
+## مقدار
 
-The name of the style sheet set currently in use. You can also set the current style sheet set using this property.
+نام مجموعه‌ی برگه‌های سبکی که در حال حاضر در حال استفاده است. همچنین می‌توانید مجموعه‌ی برگه‌های سبکی فعلی را با استفاده از این ویژگی تنظیم کنید.
 
-Setting the value of this property is equivalent to calling
-{{domxref("document.enableStyleSheetsForSet()")}} with the value of
-`currentStyleSheetSet`, then setting the value of
-`lastStyleSheetSet` to that value as well.
+تنظیم مقدار این ویژگی معادل فراخوانی
+{{domxref("document.enableStyleSheetsForSet()")}} با مقدار
+`currentStyleSheetSet` و سپس تنظیم مقدار
+`lastStyleSheetSet` بر روی همان مقدار است.
 
 > [!NOTE]
-> This attribute's value is live; directly changing
-> the `disabled` attribute on style sheets will affect the value of this
-> attribute.
+> مقدار این ویژگی زنده است؛ تغییر مستقیم
+> ویژگی `disabled` روی برگه‌های سبک، بر مقدار این ویژگی نیز تأثیر می‌گذارد.
 
-## Examples
+## مثال‌ها
 
 ```js
 console.log(`Current style sheet set: ${document.selectedStyleSheetSet}`);
@@ -41,11 +34,11 @@ console.log(`Current style sheet set: ${document.selectedStyleSheetSet}`);
 document.selectedStyleSheetSet = "Some other style sheet";
 ```
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("document.lastStyleSheetSet")}}
 - {{domxref("document.preferredStyleSheetSet")}}
