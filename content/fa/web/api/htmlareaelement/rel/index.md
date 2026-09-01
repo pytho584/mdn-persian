@@ -1,11 +1,5 @@
 ---
 title: "HTMLAreaElement: rel property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLAreaElement/rel"
-status: "needs-translation"
----
-
----
-title: "HTMLAreaElement: rel property"
 short-title: rel
 slug: Web/API/HTMLAreaElement/rel
 page-type: web-api-instance-property
@@ -14,13 +8,13 @@ browser-compat: api.HTMLAreaElement.rel
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLAreaElement.rel`** property reflects the [`rel`](/en-US/docs/Web/HTML/Reference/Attributes/rel) attribute. It is a string containing a space-separated list of link types indicating the relationship between the resource represented by the {{HTMLElement("area")}} element and the current document.
+ویژگی **`HTMLAreaElement.rel`** صفت [`rel`](/en-US/docs/Web/HTML/Reference/Attributes/rel) را منعکس می‌کند. این یک رشته است که شامل فهرست جداشده با فاصله از انواع پیوند است و رابطهٔ میان سند جاری و منبعی را نشان می‌دهد که عنصر {{HTMLElement("area")}} نمایندهٔ آن است.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```js
 const areas = document.getElementsByTagName("area");
@@ -29,16 +23,16 @@ for (const area of areas) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The equivalent property on {{HTMLElement("a")}} and {{HTMLElement("link")}},
-  {{domxref("HTMLAnchorElement.rel")}} and {{domxref("HTMLLinkElement.rel")}}.
-- The very same list but as tokens: {{domxref("HTMLAreaElement.relList")}}
+- ویژگی معادل در عناصر {{HTMLElement("a")}} و {{HTMLElement("link")}}:
+  {{domxref("HTMLAnchorElement.rel")}} و {{domxref("HTMLLinkElement.rel")}}.
+- دقیقاً همان فهرست، اما به‌صورت توکن‌ها: {{domxref("HTMLAreaElement.relList")}}
