@@ -1,11 +1,5 @@
 ---
 title: "DocumentFragment: querySelector() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment/querySelector"
-status: "needs-translation"
----
-
----
-title: "DocumentFragment: querySelector() method"
 short-title: querySelector()
 slug: Web/API/DocumentFragment/querySelector
 page-type: web-api-instance-method
@@ -14,51 +8,40 @@ browser-compat: api.DocumentFragment.querySelector
 
 {{ApiRef("DOM")}}
 
-The **`DocumentFragment.querySelector()`** method returns the
-first element, or `null` if no matches are found, within the
-{{domxref("DocumentFragment")}} (using depth-first pre-order traversal of the
-document's nodes) that matches the specified group of selectors.
+متد **`DocumentFragment.querySelector()`** نخستین عنصری را بازمی‌گرداند که با مجموعه‌ی انتخابگرهای داده‌شده مطابقت دارد، یا در صورت نبودِ هیچ تطابقی، مقدار `null` را برمی‌گرداند. این جستجو درون {{domxref("DocumentFragment")}} و با استفاده از پیمایش پیش‌ترتیبی عمق‌اول (depth-first pre-order) روی گره‌های سند انجام می‌شود.
 
-If the selector matches an ID and this ID is erroneously used several times in the
-document, it returns the first matching element.
+اگر انتخابگر با یک شناسه (ID) مطابقت داشته باشد و این شناسه چند بار به‌طور نادرست در سند استفاده شده باشد، این متد نخستین عنصر منطبق را بازمی‌گرداند.
 
-If the selectors specified in parameter are invalid a {{domxref("DOMException")}} with
-a `SYNTAX_ERR` value is raised.
+اگر انتخابگرهای مشخص‌شده در پارامتر نامعتبر باشند، یک {{domxref("DOMException")}} با مقدار `SYNTAX_ERR` پرتاب می‌شود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 querySelector(selectors)
 ```
 
-### Parameters
+### پارامترها
 
 - `selectors`
-  - : A string containing one or more CSS selectors separated by
-    commas.
+  - : رشته‌ای شامل یک یا چند انتخابگر CSS که با کاما از هم جدا شده‌اند.
 
-### Return value
+### مقدار بازگشتی
 
-An {{domxref("Element")}} object representing the first element in the document
-that matches the specified set of [CSS selectors](/en-US/docs/Web/CSS/Guides/Selectors), or `null` is returned if there are no matches.
+یک شیء {{domxref("Element")}} که نخستین عنصر منطبق با مجموعه‌ی [انتخابگرهای CSS](/en-US/docs/Web/CSS/Guides/Selectors) مشخص‌شده را نشان می‌دهد. اگر هیچ تطابقی وجود نداشته باشد، `null` بازگردانده می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Basic example
+### مثال ابتدایی
 
-In this basic example, the first element in the {{domxref("DocumentFragment")}} with
-the class `myclass` is returned:
+در این مثال ابتدایی، نخستین عنصر درون {{domxref("DocumentFragment")}} که کلاس `myclass` را دارد بازگردانده می‌شود:
 
 ```js
 const el = documentfragment.querySelector(".myclass");
 ```
 
-### CSS syntax and the method's argument
+### نحو CSS و آرگومان متد
 
-The string argument pass to `querySelector` must follow the CSS syntax. To
-match ID or selectors that do not follow the CSS syntax (by using semicolon or space
-inappropriately for example), it's mandatory to escape the wrong character with a
-double back slash:
+آرگومان رشته‌ای که به `querySelector` داده می‌شود باید از نحو CSS پیروی کند. برای مطابقت با شناسه‌ها یا انتخابگرهایی که از نحو CSS پیروی نمی‌کنند (مثلاً استفاده‌ی نادرست از نقطه‌ویرگول یا فاصله)، الزامی است که کاراکتر نامعتبر را با دو بک‌اسلش escape کنید:
 
 ```html
 <div id="foo\bar"></div>
@@ -72,14 +55,14 @@ document.querySelector("#foo:bar"); // Does not match anything
 document.querySelector("#foo\\:bar"); // Match the second div
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("DocumentFragment")}} interface it belongs to.
+- رابط {{domxref("DocumentFragment")}} که این متد به آن تعلق دارد.
