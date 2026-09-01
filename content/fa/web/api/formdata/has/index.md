@@ -1,11 +1,5 @@
 ---
 title: "FormData: has() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FormData/has"
-status: "needs-translation"
----
-
----
-title: "FormData: has() method"
 short-title: has()
 slug: Web/API/FormData/has
 page-type: web-api-instance-method
@@ -14,7 +8,7 @@ browser-compat: api.FormData.has
 
 {{APIRef("XMLHttpRequest API")}} {{AvailableInWorkers}}
 
-The **`has()`** method of the {{domxref("FormData")}} interface returns whether a `FormData` object contains a certain key.
+متد **`has()`** از رابط {{domxref("FormData")}} مشخص می‌کند که آیا یک شیء `FormData` حاوی یک کلید مشخص است یا خیر.
 
 ## Syntax
 
@@ -25,15 +19,15 @@ has(name)
 ### Parameters
 
 - `name`
-  - : A string representing the name of the key you want to test for.
+  - : یک رشته که نام کلیدی را که می‌خواهید آزمایش کنید، نشان می‌دهد.
 
 ### Return value
 
-`true` if a key of `FormData` matches the specified `name`. Otherwise, `false`.
+`true` اگر کلیدی از `FormData` با `name` مشخص شده مطابقت داشته باشد. در غیر این صورت `false`.
 
 ## Examples
 
-The following snippet shows the results of testing for the existence of `username` in a `FormData` object, before and after appending a `username` value to it with {{domxref("FormData.append", "append()")}}:
+قطعه کد زیر نتایج آزمایش وجود `username` در یک شیء `FormData` را قبل و بعد از افزودن مقدار `username` به آن با استفاده از {{domxref("FormData.append", "append()")}} نشان می‌دهد:
 
 ```js
 formData.has("username"); // Returns false
