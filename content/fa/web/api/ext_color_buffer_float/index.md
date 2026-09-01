@@ -1,10 +1,4 @@
 ---
-title: "EXT_color_buffer_float extension"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EXT_color_buffer_float"
-status: "needs-translation"
----
-
----
 title: EXT_color_buffer_float extension
 short-title: EXT_color_buffer_float
 slug: Web/API/EXT_color_buffer_float
@@ -14,35 +8,35 @@ browser-compat: api.EXT_color_buffer_float
 
 {{APIRef("WebGL")}}
 
-The **`EXT_color_buffer_float`** extension is part of [WebGL](/en-US/docs/Web/API/WebGL_API) and adds the ability to render a variety of floating point formats.
+افزونهٔ **`EXT_color_buffer_float`** بخشی از [WebGL](/en-US/docs/Web/API/WebGL_API) است و امکان رندر کردن انواع مختلفی از قالب‌های ممیز شناور را فراهم می‌کند.
 
-WebGL extensions are available using the {{domxref("WebGLRenderingContext.getExtension()")}} method. For more information, see also [Using Extensions](/en-US/docs/Web/API/WebGL_API/Using_Extensions) in the [WebGL tutorial](/en-US/docs/Web/API/WebGL_API/Tutorial).
+افزونه‌های WebGL با استفاده از متد {{domxref("WebGLRenderingContext.getExtension()")}} در دسترس قرار می‌گیرند. برای اطلاعات بیشتر، مقالهٔ [استفاده از افزونه‌ها](/en-US/docs/Web/API/WebGL_API/Using_Extensions) را در [آموزش WebGL](/en-US/docs/Web/API/WebGL_API/Tutorial) ببینید.
 
 > [!NOTE]
-> This extension is available to {{domxref("WebGL2RenderingContext", "WebGL 2", "", 1)}} contexts only.
+> این افزونه فقط در زمینه‌های {{domxref("WebGL2RenderingContext", "WebGL 2", "", 1)}} در دسترس است.
 >
-> For {{domxref("WebGLRenderingContext", "WebGL 1", "", 1)}}, see the {{domxref("EXT_color_buffer_half_float")}} and {{domxref("WEBGL_color_buffer_float")}} extensions.
+> برای {{domxref("WebGLRenderingContext", "WebGL 1", "", 1)}}، افزونه‌های {{domxref("EXT_color_buffer_half_float")}} و {{domxref("WEBGL_color_buffer_float")}} را ببینید.
 
-## Extended methods
+## متدهای گسترش‌یافته
 
-The following sized formats become **color-renderable**:
+قالب‌های اندازه‌دار زیر **رندرپذیر رنگی (color-renderable)** می‌شوند:
 
-- `gl.R16F`,
-- `gl.RG16F`,
-- `gl.RGBA16F`,
-- `gl.R32F`,
-- `gl.RG32F`,
-- `gl.RGBA32F`,
-- `gl.R11F_G11F_B10F`.
+- `gl.R16F`
+- `gl.RG16F`
+- `gl.RGBA16F`
+- `gl.R32F`
+- `gl.RG32F`
+- `gl.RGBA32F`
+- `gl.R11F_G11F_B10F`
 
-**Color-renderable** means:
+منظور از **رندرپذیر رنگی** این است که:
 
-- The {{domxref("WebGLRenderingContext.renderbufferStorage()")}} method now accepts these formats.
-- Framebuffers with attached textures of these formats may now be **FRAMEBUFFER_COMPLETE**.
+- متد {{domxref("WebGLRenderingContext.renderbufferStorage()")}} اکنون این قالب‌ها را می‌پذیرد.
+- فریم‌بافرهایی که بافت‌هایی با این قالب‌ها به آن‌ها متصل شده‌اند، اکنون می‌توانند وضعیت **FRAMEBUFFER_COMPLETE** داشته باشند.
 
-## Examples
+## مثال‌ها
 
-`gl` must be a {{domxref("WebGL2RenderingContext")}}. This extension does not work in WebGL 1 contexts.
+`gl` باید یک {{domxref("WebGL2RenderingContext")}} باشد. این افزونه در زمینه‌های WebGL 1 کار نمی‌کند.
 
 ```js
 const ext = gl.getExtension("EXT_color_buffer_float");
@@ -50,15 +44,15 @@ const ext = gl.getExtension("EXT_color_buffer_float");
 gl.renderbufferStorage(gl.RENDERBUFFER, gl.RGBA16F, 256, 256);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("WebGLRenderingContext.getExtension()")}}
 - {{domxref("WebGLRenderingContext.renderbufferStorage()")}}
