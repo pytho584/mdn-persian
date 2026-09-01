@@ -1,11 +1,5 @@
 ---
 title: "HTMLLinkElement: type property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLLinkElement/type"
-status: "needs-translation"
----
-
----
-title: "HTMLLinkElement: type property"
 short-title: type
 slug: Web/API/HTMLLinkElement/type
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.HTMLLinkElement.type
 
 {{APIRef("HTML DOM")}}
 
-The **`type`** property of the {{domxref("HTMLLinkElement")}} interface is a string that reflects the {{glossary("MIME type")}} of the linked resource.
+ویژگی **`type`** در رابط {{domxref("HTMLLinkElement")}} یک رشته است که {{glossary("MIME type","نوع MIME")}} منبع مرتبط‌شده را بازتاب می‌دهد.
 
-It reflects the `type` attribute of the {{HTMLElement("link")}} element.
+این ویژگی، ویژگی `type` عنصر {{HTMLElement("link")}} را بازتاب می‌دهد.
 
-## Value
+## مقدار
 
-A string, which must be a valid MIME type string.
+یک رشته که باید یک رشته معتبر از نوع MIME باشد.
 
-## Examples
+## مثال‌ها
 
 ```html
 <link
@@ -38,10 +32,10 @@ const el = document.getElementById("el");
 console.log(el.type); // Output: "image/png"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
