@@ -1,11 +1,5 @@
 ---
 title: "FileSystemWritableFileStream: truncate() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemWritableFileStream/truncate"
-status: "needs-translation"
----
-
----
-title: "FileSystemWritableFileStream: truncate() method"
 short-title: truncate()
 slug: Web/API/FileSystemWritableFileStream/truncate
 page-type: web-api-instance-method
@@ -14,53 +8,53 @@ browser-compat: api.FileSystemWritableFileStream.truncate
 
 {{securecontext_header}}{{APIRef("File System API")}}{{AvailableInWorkers}}
 
-The **`truncate()`** method of the {{domxref("FileSystemWritableFileStream")}} interface resizes the file associated with the stream to the specified size in bytes.
+متد **`truncate()`** از رابط {{domxref("FileSystemWritableFileStream")}}، اندازهٔ فایل مرتبط با جریان را به اندازهٔ مشخص‌شده (بر حسب بایت) تغییر می‌دهد.
 
-If the size specified is larger than the current file size the file is padded with `0x00` bytes.
+اگر اندازهٔ مشخص‌شده بزرگ‌تر از اندازهٔ فعلی فایل باشد، فایل با بایت‌های `0x00` پر می‌شود.
 
-The file cursor is also updated when `truncate()` is called.
-If the offset is smaller than the size, it remains unchanged.
-If the offset is larger than size, the offset is set to that size.
-This ensures that subsequent writes do not error.
+مکان‌نمای (cursor) فایل نیز هنگام فراخوانی `truncate()` به‌روزرسانی می‌شود.
+اگر آفست کوچک‌تر از اندازه باشد، بدون تغییر می‌ماند.
+اگر آفست بزرگ‌تر از اندازه باشد، آفست روی همان اندازه تنظیم می‌شود.
+این کار تضمین می‌کند که نوشتن‌های بعدی با خطا مواجه نشوند.
 
-No changes are written to the actual file on disk until the stream has been closed.
-Changes are typically written to a temporary file instead.
+تا زمانی که جریان بسته نشده است، هیچ تغییری در فایل واقعی روی دیسک اعمال نمی‌شود.
+تغییرات معمولاً به‌جای آن در یک فایل موقت نوشته می‌شوند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 truncate(size)
 ```
 
-### Parameters
+### پارامترها
 
 - `size`
-  - : A number specifying the number of bytes to resize the stream to.
+  - : عددی که مشخص می‌کند اندازهٔ جریان به چند بایت تغییر یابد.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref('Promise')}} that returns `undefined`.
+یک {{jsxref('Promise')}} که مقدار `undefined` را برمی‌گرداند.
 
-### Exceptions
+### استثناها
 
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if {{domxref('PermissionStatus.state')}} is not `granted`.
+  - : اگر {{domxref('PermissionStatus.state')}} برابر با `granted` نباشد، پرتاب می‌شود.
 - {{domxref("QuotaExceededError")}}
-  - : Thrown if the new size of the file is larger than the original size of the file, and exceeds the browser's [storage quota](/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria).
+  - : اگر اندازهٔ جدید فایل بزرگ‌تر از اندازهٔ اصلی فایل باشد و از [سهمیهٔ ذخیره‌سازی](/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria) مرورگر فراتر رود، پرتاب می‌شود.
 - {{jsxref("TypeError")}}
-  - : Thrown if `size` is not a number or not defined.
+  - : اگر `size` یک عدد نباشد یا تعریف نشده باشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-The following asynchronous function opens the 'Save File' picker, which returns a {{domxref('FileSystemFileHandle')}} once a file is selected. From this, a writable stream is created using the {{domxref('FileSystemFileHandle.createWritable()')}} method.
+تابع ناهمگام زیر، انتخابگر «ذخیرهٔ فایل» (Save File) را باز می‌کند که پس از انتخاب یک فایل، یک {{domxref('FileSystemFileHandle')}} برمی‌گرداند. سپس با استفاده از متد {{domxref('FileSystemFileHandle.createWritable()')}} یک جریان قابل‌نوشتن ایجاد می‌شود.
 
-Next, we write to the stream:
+در ادامه، در این جریان می‌نویسیم:
 
-1. A text string is written to the stream.
-2. The `truncate()` method is used to resize the file to 8 bytes.
-3. A second text string is written to the start of the stream, overwriting the first write.
+1. یک رشتهٔ متنی در جریان نوشته می‌شود.
+2. از متد `truncate()` برای تغییر اندازهٔ فایل به ۸ بایت استفاده می‌شود.
+3. یک رشتهٔ متنی دوم در ابتدای جریان نوشته می‌شود و نوشتهٔ اول را بازنویسی می‌کند.
 
-The stream is then closed.
+سپس جریان بسته می‌شود.
 
 ```js
 async function saveFile() {
@@ -84,17 +78,17 @@ async function saveFile() {
 }
 ```
 
-If you run the above function and then open the resulting file created on disk, you should see the text "This is my second file content".
+اگر تابع بالا را اجرا کنید و سپس فایل حاصل را که روی دیسک ایجاد شده است باز کنید، باید متن «This is my second file content» را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [File System API](/en-US/docs/Web/API/File_System_API)
 - [The File System Access API: simplifying access to local files](https://developer.chrome.com/docs/capabilities/web-apis/file-system-access)
