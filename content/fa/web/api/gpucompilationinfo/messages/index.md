@@ -1,11 +1,5 @@
 ---
 title: "GPUCompilationInfo: messages property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUCompilationInfo/messages"
-status: "needs-translation"
----
-
----
-title: "GPUCompilationInfo: messages property"
 short-title: messages
 slug: Web/API/GPUCompilationInfo/messages
 page-type: web-api-instance-property
@@ -14,25 +8,24 @@ browser-compat: api.GPUCompilationInfo.messages
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`messages`** read-only property of the
-{{domxref("GPUCompilationInfo")}} interface is an array of {{domxref("GPUCompilationMessage")}} objects, each one containing the details of an individual shader compilation message. Messages can be informational, warnings, or errors.
+ویژگی فقط‌خواندنی **`messages`** در رابط {{domxref("GPUCompilationInfo")}} آرایه‌ای از اشیاء {{domxref("GPUCompilationMessage")}} است که هر یک جزئیات یک پیام کامپایل شیدر را شامل می‌شود. پیام‌ها می‌توانند اطلاع‌رسانی، هشدار یا خطا باشند.
 
-## Value
+## مقدار
 
-An array of {{domxref("GPUCompilationMessage")}} objects.
+آرایه‌ای از اشیاء {{domxref("GPUCompilationMessage")}}.
 
-## Examples
+## مثال‌ها
 
-See the main [`GPUCompilationInfo` page](/en-US/docs/Web/API/GPUCompilationInfo#examples) for an example.
+برای مشاهدهٔ مثال، به صفحهٔ اصلی [`GPUCompilationInfo`](/en-US/docs/Web/API/GPUCompilationInfo#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
