@@ -1,11 +1,5 @@
 ---
 title: "Document: timeline property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/timeline"
-status: "needs-translation"
----
-
----
-title: "Document: timeline property"
 short-title: timeline
 slug: Web/API/Document/timeline
 page-type: web-api-instance-property
@@ -14,19 +8,18 @@ browser-compat: api.Document.timeline
 
 {{ APIRef("Web Animations") }}
 
-The `timeline` readonly property of the {{domxref("Document")}} interface represents the default timeline of the current document. This timeline is a special instance of {{domxref("DocumentTimeline")}}.
+ویژگی فقط‌خواندنی `timeline` در رابط {{domxref("Document")}}، خط‌زمان پیش‌فرض سند جاری را نشان می‌دهد. این خط‌زمان یک نمونهٔ ویژه از {{domxref("DocumentTimeline")}} است.
 
-This timeline is unique to each `document` and persists for the lifetime of the `document` including calls to {{domxref("Document.open()")}}.
+این خط‌زمان منحصر به هر `document` است و در تمام طول عمر آن سند، از جمله در فراخوانی‌های {{domxref("Document.open()")}}، پابرجا می‌ماند.
 
-This timeline expresses the time in milliseconds since {{domxref("Performance.timeOrigin")}}.
-Prior to the time origin, the timeline is inactive, and its {{domxref("AnimationTimeline.currentTime","currentTime")}} is `null`.
+این خط‌زمان زمان را بر حسب میلی‌ثانیه از {{domxref("Performance.timeOrigin")}} بیان می‌کند. پیش از مبدأ زمان، خط‌زمان غیرفعال است و {{domxref("AnimationTimeline.currentTime","currentTime")}} آن `null` است.
 
 > [!NOTE]
-> A document timeline that is associated with a non-active document (a {{domxref("Document")}} not associated with a {{domxref("Window")}}, {{htmlelement("iframe")}}, or {{htmlelement("frame")}}) is also considered to be inactive.
+> خط‌زمان سندی که با یک سند غیرفعال مرتبط باشد (یک {{domxref("Document")}} که با {{domxref("Window")}}، {{htmlelement("iframe")}} یا {{htmlelement("frame")}} مرتبط نیست) نیز غیرفعال در نظر گرفته می‌شود.
 
 ## Value
 
-A {{domxref("DocumentTimeline")}} object.
+یک شیء {{domxref("DocumentTimeline")}}.
 
 ## Specifications
 
