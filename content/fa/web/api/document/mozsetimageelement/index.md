@@ -1,11 +1,5 @@
 ---
 title: "Document: mozSetImageElement() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/mozSetImageElement"
-status: "needs-translation"
----
-
----
-title: "Document: mozSetImageElement() method"
 short-title: mozSetImageElement()
 slug: Web/API/Document/mozSetImageElement
 page-type: web-api-instance-method
@@ -16,37 +10,30 @@ browser-compat: api.Document.mozSetImageElement
 
 {{ ApiRef("DOM") }}{{ non-standard_header() }}
 
-The **`Document.mozSetImageElement()`** method changes the
-element being used as the CSS background for a background with a given background
-element ID.
+متد **`Document.mozSetImageElement()`**، عنصری را که به‌عنوان پس‌زمینهٔ CSS برای یک پس‌زمینه با شناسهٔ عنصر پس‌زمینهٔ معین استفاده می‌شود، تغییر می‌دهد.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 mozSetImageElement(imageElementId, imageElement)
 ```
 
-### Parameters
+### پارامترها
 
 - `imageElementId`
-  - : A string indicating the name of an element that has
-    been specified as a background image using the {{ cssxref("element", "-moz-element") }} CSS
-    function.
+  - : رشته‌ای که نام عنصری را مشخص می‌کند که به‌عنوان تصویر پس‌زمینه با استفاده از تابع CSS {{ cssxref("element", "-moz-element") }} تعیین شده است.
 - `imageElement`
-  - : The new element to use as the background corresponding
-    to that image element string. Specify `null` to remove the background
-    element.
+  - : عنصر جدیدی که به‌عنوان پس‌زمینهٔ متناظر با آن رشتهٔ عنصر تصویر استفاده می‌شود. برای حذف عنصر پس‌زمینه، `null` را مشخص کنید.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-This example changes the background of a {{ HTMLElement("div") }} block each time the
-block is clicked by the user.
+این مثال، پس‌زمینهٔ یک بلوک {{ HTMLElement("div") }} را هر بار که کاربر روی آن کلیک می‌کند تغییر می‌دهد.
 
-[View this example live](https://mdn.dev/archives/media/samples/domref/mozSetImageElement.html).
+[مشاهدهٔ این مثال به‌صورت زنده](https://mdn.dev/archives/media/samples/domref/mozSetImageElement.html).
 
 ```css
 #my-box {
@@ -58,7 +45,7 @@ block is clicked by the user.
 }
 ```
 
-The CSS defined above is used by our {{HTMLElement("div")}} to use an element with the id "canvas-bg" as its background.
+CSS تعریف‌شده در بالا توسط {{HTMLElement("div")}} ما استفاده می‌شود تا عنصری با شناسهٔ «canvas-bg» را به‌عنوان پس‌زمینهٔ خود به کار گیرد.
 
 ```js
 let c = 0x00;
@@ -80,25 +67,18 @@ function clicked() {
 }
 ```
 
-The code here is called each time the user clicks the {{ HTMLElement("div") }} element.
-It creates a new {{ HTMLElement("canvas") }} with the width and height set to 100
-pixels, then draws into it a 50 by 50 pixel square. Each time the function is called,
-the square is a different color (its red component is increased each time), so each time
-the user clicks the element, the background is filled with a brighter and brighter
-pattern of red tiles.
+کد اینجا هر بار که کاربر روی عنصر {{ HTMLElement("div") }} کلیک می‌کند فراخوانی می‌شود. یک {{ HTMLElement("canvas") }} جدید با عرض و ارتفاع 100 پیکسل ایجاد می‌کند و سپس یک مربع 50 در 50 پیکسل در آن رسم می‌کند. هر بار که این تابع فراخوانی می‌شود، مربع رنگی متفاوت دارد (مؤلفهٔ قرمز آن هر بار افزایش می‌یابد)، بنابراین هر بار که کاربر روی عنصر کلیک می‌کند، پس‌زمینه با الگوی هر چه روشن‌تری از کاشی‌های قرمز پر می‌شود.
 
-Once the canvas is drawn, `document.mozSetImageElement()` is called to set
-the background for any CSS using the ID "canvas-bg" as its background element ID to be
-our new canvas.
+پس از رسم بوم، `document.mozSetImageElement()` فراخوانی می‌شود تا پس‌زمینهٔ هر CSS که از شناسهٔ «canvas-bg» به‌عنوان شناسهٔ عنصر پس‌زمینه استفاده می‌کند، به بوم جدید ما تنظیم شود.
 
-## Specifications
+## مشخصات
 
-Not part of any specification.
+بخشی از هیچ مشخصاتی نیست.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{ cssxref("element", "-moz-element") }}
