@@ -1,11 +1,5 @@
 ---
 title: "CSSNumericValue: to() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSNumericValue/to"
-status: "needs-translation"
----
-
----
-title: "CSSNumericValue: to() method"
 short-title: to()
 slug: Web/API/CSSNumericValue/to
 page-type: web-api-instance-method
@@ -14,47 +8,47 @@ browser-compat: api.CSSNumericValue.to
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`to()`** method of the {{domxref("CSSNumericValue")}} interface converts a numeric value from one unit to another.
+متد **`to()`** از رابط {{domxref("CSSNumericValue")}} یک مقدار عددی را از یک واحد به واحد دیگر تبدیل می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 to(unit)
 ```
 
-### Parameters
+### پارامترها
 
 - `unit`
-  - : The unit to which you want to convert.
+  - : واحدی که می‌خواهید به آن تبدیل کنید.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref('CSSUnitValue')}}.
+یک {{domxref('CSSUnitValue')}}.
 
-### Exceptions
+### استثناها
 
 - `SyntaxError` {{domxref("DOMException")}}
-  - : Thrown if an invalid unit was passed to the method.
+  - : در صورت ارسال یک واحد نامعتبر به متد پرتاب می‌شود.
 - {{jsxref("TypeError")}}
-  - : Thrown if:
-    - The `CSSNumericValue` on which the method is being called can't be resolved to a single value and type.
-      This might occur if the value is calculated from a variable when the value of that variable can't be known in the context.
-    - The value can't be converted to the new unit because it's not of the same category.
-      For example, you can't convert meters to seconds.
+  - : در صورت بروز هر یک از موارد زیر پرتاب می‌شود:
+    - مقدار `CSSNumericValue` که متد روی آن فراخوانی می‌شود نتواند به یک مقدار و نوع واحد تفکیک شود.
+      این ممکن است زمانی رخ دهد که مقدار از یک متغیر محاسبه شده باشد و مقدار آن متغیر در این بافت قابل دانستن نباشد.
+    - مقدار نتواند به واحد جدید تبدیل شود، زیرا در دسته‌بندی یکسانی قرار ندارد.
+      برای مثال، نمی‌توانید متر را به ثانیه تبدیل کنید.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
 ```js
-// Prints "0.608542cm"
+// چاپ می‌کند "0.608542cm"
 console.log(CSS.px("23").to("cm").toString());
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
