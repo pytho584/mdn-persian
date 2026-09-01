@@ -1,11 +1,5 @@
 ---
 title: "HTMLInputElement: height property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/height"
-status: "needs-translation"
----
-
----
-title: "HTMLInputElement: height property"
 short-title: height
 slug: Web/API/HTMLInputElement/height
 page-type: web-api-instance-property
@@ -14,30 +8,30 @@ browser-compat: api.HTMLInputElement.height
 
 {{APIRef("HTML DOM")}}
 
-The **`height`** property of the {{DOMxRef("HTMLInputElement")}} interface specifies the height of a control. It reflects the {{htmlelement("input")}} element's [`height`](/en-US/docs/Web/HTML/Reference/Elements/input#height) attribute.
+ویژگی **`height`** در رابط {{DOMxRef("HTMLInputElement")}} ارتفاع یک کنترل را مشخص می‌کند. این ویژگی، بازتاب‌دهنده ویژگی [`height`](/en-US/docs/Web/HTML/Reference/Elements/input#height) عنصر {{htmlelement("input")}} است.
 
-The `height` property is valid for the [`image`](/en-US/docs/Web/HTML/Reference/Elements/input/image) type only. It defines the vertical dimension of the image button, in pixels. If CSS sizing properties apply to the control, the value is the height of the content box of the rendered control, not the value of the `height` attribute. If no `height` is set and CSS does not impact the control's size, the `height` will be the intrinsic height of the image. If the image didn't load, the value will be the height of the `alt` text. The `height` will be `0` if the height is not known; if no `height` is set, CSS doesn't impact the height, the image didn't load, and either the value of the {{DOMxRef("HTMLInputElement.alt", "alt")}} is the empty string or no `src` is set.
+ویژگی `height` فقط برای نوع [`image`](/en-US/docs/Web/HTML/Reference/Elements/input/image) معتبر است. بُعد عمودی دکمه تصویری را بر حسب پیکسل تعریف می‌کند. اگر ویژگی‌های اندازه‌گذاری CSS روی کنترل اعمال شوند، مقدار این ویژگی، ارتفاع جعبه محتوای کنترل رندر شده است، نه مقدار ویژگی `height`. اگر `height` تنظیم نشده باشد و CSS اندازه کنترل را تحت تأثیر قرار ندهد، مقدار `height` برابر با ارتفاع ذاتی تصویر خواهد بود. اگر تصویر بارگیری نشود، مقدار برابر با ارتفاع متن `alt` خواهد بود. اگر ارتفاع مشخص نباشد، `height` برابر با `0` خواهد بود؛ این حالت وقتی رخ می‌دهد که `height` تنظیم نشده باشد، CSS ارتفاع را تحت تأثیر قرار ندهد، تصویر بارگیری نشود، و یا مقدار {{DOMxRef("HTMLInputElement.alt", "alt")}} رشته خالی باشد یا `src` تنظیم نشده باشد.
 
-## Value
+## مقدار
 
-A number.
+یک عدد.
 
-## Examples
+## مثال‌ها
 
 ```js
 const inputElement = document.getElementById("imageButton");
 console.log(inputElement.height);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{DOMxRef("HTMLInputElement.width")}}
 - {{DOMxRef("HTMLInputElement.src")}}
@@ -46,7 +40,7 @@ console.log(inputElement.height);
 - {{HTMLElement("button")}}
 - {{HTMLElement("input")}}
 - {{HTMLElement("img")}}
-- CSS {{CSSXRef("inline-size")}} property
-- CSS {{CSSXRef("height")}} property
-- CSS {{CSSXRef("aspect-ratio")}} property
-- [CSS box sizing](/en-US/docs/Web/CSS/Guides/Box_sizing) module
+- ویژگی CSS {{CSSXRef("inline-size")}}
+- ویژگی CSS {{CSSXRef("height")}}
+- ویژگی CSS {{CSSXRef("aspect-ratio")}}
+- ماژول [CSS box sizing](/en-US/docs/Web/CSS/Guides/Box_sizing)
