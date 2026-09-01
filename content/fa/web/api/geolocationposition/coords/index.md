@@ -1,11 +1,5 @@
 ---
 title: "GeolocationPosition: coords property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GeolocationPosition/coords"
-status: "needs-translation"
----
-
----
-title: "GeolocationPosition: coords property"
 short-title: coords
 slug: Web/API/GeolocationPosition/coords
 page-type: web-api-instance-property
@@ -14,21 +8,21 @@ browser-compat: api.GeolocationPosition.coords
 
 {{securecontext_header}}{{APIRef("Geolocation API")}}
 
-The **`coords`** read-only property of the {{domxref("GeolocationPosition")}} interface returns a {{domxref("GeolocationCoordinates")}} object representing a geographic position. It contains the location, that is longitude and latitude on the Earth, the altitude, and the speed of the object concerned, regrouped inside the returned value. It also contains accuracy information about these values.
+ویژگی فقط‌خواندنی **`coords`** در رابط {{domxref("GeolocationPosition")}} یک شیء {{domxref("GeolocationCoordinates")}} برمی‌گرداند که یک موقعیت جغرافیایی را نشان می‌دهد. این شیء شامل موقعیت، یعنی طول و عرض جغرافیایی روی زمین، ارتفاع و سرعت شیء موردنظر است که همگی در مقدار بازگشتی تجمیع شده‌اند. همچنین شامل اطلاعات دقت مربوط به این مقادیر است.
 
-## Value
+## مقدار
 
-A {{domxref("GeolocationCoordinates")}} object instance.
+یک نمونه از شیء {{domxref("GeolocationCoordinates")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Geolocation API](/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API)
+- [استفاده از API موقعیت‌یابی](/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API)
 - {{domxref("GeolocationPosition")}}
