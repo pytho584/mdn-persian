@@ -1,7 +1,6 @@
+```
 ---
 title: "GPUCommandEncoder: writeTimestamp() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder/writeTimestamp"
-status: "needs-translation"
 ---
 
 ---
@@ -17,38 +16,37 @@ browser-compat: api.GPUCommandEncoder.writeTimestamp
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{deprecated_header}}{{non-standard_header}}{{AvailableInWorkers}}
 
-The **`writeTimestamp()`** method of the
-{{domxref("GPUCommandEncoder")}} interface encodes a command that writes a timestamp into a {{domxref("GPUQuerySet")}} once the previous commands recorded into the same queued {{domxref("GPUCommandBuffer")}} have been executed by the GPU.
+متد **`writeTimestamp()`** از رابط {{domxref("GPUCommandEncoder")}} دستوری را کدگذاری می‌کند که پس از اجرای دستورات قبلیِ ثبت‌شده در همان {{domxref("GPUCommandBuffer")}} در صف، توسط GPU، یک مهر زمانی در {{domxref("GPUQuerySet")}} می‌نویسد.
 
 > [!NOTE]
-> To use timestamp queries, the `timestamp-query` {{domxref("GPUSupportedFeatures", "feature", "", "nocode")}} must be enabled in the {{domxref("GPUDevice")}}.
+> برای استفاده از پرس‌وجوهای مهر زمانی، قابلیت `timestamp-query` {{domxref("GPUSupportedFeatures", "feature", "", "nocode")}} باید در {{domxref("GPUDevice")}} فعال باشد.
 
-## Syntax
+## نحو
 
 ```js-nolint
 writeTimestamp(querySet, queryIndex)
 ```
 
-### Parameters
+### پارامترها
 
 - `querySet`
-  - : A {{domxref("GPUQuerySet")}} object representing the query set that will store the timestamp values.
+  - : یک شیء {{domxref("GPUQuerySet")}} که مجموعه پرس‌وجویی را نشان می‌دهد که مقادیر مهر زمانی را ذخیره خواهد کرد.
 - `queryIndex`
-  - : A number representing the index of the query in the query set.
+  - : عددی که شاخص پرس‌وجو را در مجموعه پرس‌وجو مشخص می‌کند.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Validation
+### اعتبارسنجی
 
-The following criteria must be met when calling **`writeTimestamp()`**, otherwise a {{domxref("GPUValidationError")}} is generated and the {{domxref("GPUCommandEncoder")}} becomes invalid:
+هنگام فراخوانی **`writeTimestamp()`**، معیارهای زیر باید برقرار باشند؛ در غیر این صورت یک {{domxref("GPUValidationError")}} تولید شده و {{domxref("GPUCommandEncoder")}} نامعتبر می‌شود:
 
-- The `timestamp-query` {{domxref("GPUSupportedFeatures", "feature", "", "nocode")}} is enabled in the {{domxref("GPUDevice")}}.
-- The `querySet` {{domxref("GPUQuerySet.type")}} is `"timestamp"`
-- The `queryIndex` value is less than the {{domxref("GPUQuerySet.count")}}.
+- قابلیت `timestamp-query` {{domxref("GPUSupportedFeatures", "feature", "", "nocode")}} در {{domxref("GPUDevice")}} فعال باشد.
+- `querySet` طوری باشد که {{domxref("GPUQuerySet.type")}} آن `"timestamp"` باشد.
+- مقدار `queryIndex` کمتر از {{domxref("GPUQuerySet.count")}} باشد.
 
-## Examples
+## مثال‌ها
 
 ```js
 // …
@@ -65,14 +63,15 @@ commandEncoder.writeTimestamp(querySet, 0);
 // …
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+```
