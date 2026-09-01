@@ -1,10 +1,4 @@
 ---
-title: "GPUOutOfMemoryError"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUOutOfMemoryError"
-status: "needs-translation"
----
-
----
 title: GPUOutOfMemoryError
 slug: Web/API/GPUOutOfMemoryError
 page-type: web-api-interface
@@ -13,29 +7,29 @@ browser-compat: api.GPUOutOfMemoryError
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`GPUOutOfMemoryError`** interface of the {{domxref("WebGPU API", "WebGPU API", "", "nocode")}} describes an out-of-memory (oom) error indicating that there was not enough free memory to complete the requested operation.
+رابط **`GPUOutOfMemoryError`** از {{domxref("WebGPU API", "WebGPU API", "", "nocode")}}، یک خطای کمبود حافظه (OOM) را توصیف می‌کند که نشان می‌دهد حافظه آزاد کافی برای تکمیل عملیات درخواستی وجود نداشته است.
 
-It represents one of the types of errors surfaced by {{domxref("GPUDevice.popErrorScope")}} and the {{domxref("GPUDevice.uncapturederror_event", "uncapturederror")}} event.
+این رابط یکی از انواع خطاهایی است که توسط {{domxref("GPUDevice.popErrorScope")}} و رویداد {{domxref("GPUDevice.uncapturederror_event", "uncapturederror")}} گزارش می‌شوند.
 
-Out-of-memory errors should be relatively rare in a well-behaved app but are less predictable than {{domxref("GPUValidationError")}}s. This is because they are dependent on the device your app is running on as well as other apps that are using GPU resources at the time.
+خطاهای کمبود حافظه در یک برنامه‌ی خوش‌رفتار باید نسبتاً نادر باشند، اما نسبت به خطاهای {{domxref("GPUValidationError")}} کمتر قابل پیش‌بینی هستند. دلیل این امر آن است که این خطاها به دستگاهی که برنامه‌ی شما روی آن اجرا می‌شود و همچنین به سایر برنامه‌هایی که در آن زمان از منابع GPU استفاده می‌کنند بستگی دارند.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("GPUOutOfMemoryError.GPUOutOfMemoryError", "GPUOutOfMemoryError()")}}
-  - : Creates a new `GPUOutOfMemoryError` object instance.
+  - : یک نمونه جدید از شیء `GPUOutOfMemoryError` ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-The `message` property is inherited from its parent, {{domxref("GPUError")}}:
+ویژگی `message` از والد خود، یعنی {{domxref("GPUError")}}، به ارث رسیده است:
 
 - {{domxref("GPUError.message", "message")}} {{Experimental_Inline}} {{ReadOnlyInline}}
-  - : A string providing a human-readable message that explains why the error occurred.
+  - : یک رشته که پیامی قابل‌فهم برای انسان ارائه می‌دهد و دلیل رخ دادن خطا را توضیح می‌دهد.
 
-## Examples
+## مثال‌ها
 
-The following example uses an error scope to capture an out-of-memory error, logging it to the console.
+مثال زیر از یک حوزه خطا (error scope) برای دریافت یک خطای کمبود حافظه استفاده می‌کند و آن را در کنسول ثبت می‌کند.
 
 ```js
 device.pushErrorScope("out-of-memory");
@@ -54,15 +48,16 @@ device.popErrorScope().then((error) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
-- [WebGPU Error Handling best practices](https://toji.dev/webgpu-best-practices/error-handling)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [بهترین روش‌های مدیریت خطا در WebGPU](https://toji.dev/webgpu-best-practices/error-handling)
+```
