@@ -1,11 +1,5 @@
 ---
 title: "HTMLLinkElement: href property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLLinkElement/href"
-status: "needs-translation"
----
-
----
-title: "HTMLLinkElement: href property"
 short-title: href
 slug: Web/API/HTMLLinkElement/href
 page-type: web-api-instance-property
@@ -14,18 +8,18 @@ browser-compat: api.HTMLLinkElement.href
 
 {{APIRef("HTML DOM")}}
 
-The **`href`** property of the {{domxref("HTMLLinkElement")}} interface contains a string that is the URL associated with the link.
+ویژگی **`href`** در رابط {{domxref("HTMLLinkElement")}} شامل یک رشته (string) است که URL مرتبط با پیوند را نشان می‌دهد.
 
-It reflects the `href` attribute of the {{HTMLElement("link")}} element. If the element does not have an `href` attribute, then this property's value is the empty string (`""`).
+این ویژگی بازتاب‌دهندهٔ ویژگی `href` عنصر {{HTMLElement("link")}} است. اگر عنصر فاقد ویژگی `href` باشد، مقدار این ویژگی رشتهٔ خالی (`""`) خواهد بود.
 
 > [!NOTE]
-> Every `<link>` element must contain either one or both of the `href` or [`imagesrcset`](/en-US/docs/Web/HTML/Reference/Elements/link#imagesrcset) attributes. This means, for each valid `<link>`, either this property or {{domxref("HTMLLinkElement.imageSrcset", "imageSrcset")}} will not be empty.
+> هر عنصر `<link>` باید شامل یکی یا هر دوی ویژگی‌های `href` یا [`imagesrcset`](/en-US/docs/Web/HTML/Reference/Elements/link#imagesrcset) باشد. این یعنی برای هر `<link>` معتبر، یا این ویژگی یا {{domxref("HTMLLinkElement.imageSrcset", "imageSrcset")}} خالی نخواهد بود.
 
-## Value
+## مقدار
 
-A string that contains a URL, or the empty string (`""`) if there is no `href` element.
+یک رشته که شامل URL است، یا رشتهٔ خالی (`""`) اگر ویژگی `href` وجود نداشته باشد.
 
-## Examples
+## مثال‌ها
 
 ```html
 <link rel="stylesheet" href="example.css" />
@@ -36,15 +30,15 @@ const link = document.getElementsByTag("link")[0];
 console.log(link.href); // 'example.css'
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- {{domxref("HTMLLinkElement.imageSrcset")}} property
-- {{domxref("HTMLAnchorElement.href")}} property
+- ویژگی {{domxref("HTMLLinkElement.imageSrcset")}}
+- ویژگی {{domxref("HTMLAnchorElement.href")}}
