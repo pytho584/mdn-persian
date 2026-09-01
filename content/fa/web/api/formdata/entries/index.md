@@ -1,11 +1,5 @@
 ---
 title: "FormData: entries() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FormData/entries"
-status: "needs-translation"
----
-
----
-title: "FormData: entries() method"
 short-title: entries()
 slug: Web/API/FormData/entries
 page-type: web-api-instance-method
@@ -14,23 +8,23 @@ browser-compat: api.FormData.entries
 
 {{APIRef("XMLHttpRequest API")}} {{AvailableInWorkers}}
 
-The **`FormData.entries()`** method returns an [iterator](/en-US/docs/Web/JavaScript/Reference/Iteration_protocols) which iterates through all key/value pairs contained in the {{domxref("FormData")}}. The key of each pair is a string, and the value is either a string or a {{domxref("Blob")}}.
+متد **`FormData.entries()`** یک [iterator](/en-US/docs/Web/JavaScript/Reference/Iteration_protocols) (تکرارگر) برمی‌گرداند که روی تمام جفت‌های کلید/مقدار موجود در {{domxref("FormData")}} پیمایش می‌کند. کلید هر جفت یک رشته (string) است و مقدار آن یا یک رشته است یا یک {{domxref("Blob")}}.
 
-## Syntax
+## نحو
 
 ```js-nolint
 entries()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-An [iterator](/en-US/docs/Web/JavaScript/Reference/Iteration_protocols) of {{domxref("FormData")}}'s key/value pairs.
+یک [iterator](/en-US/docs/Web/JavaScript/Reference/Iteration_protocols) (تکرارگر) از جفت‌های کلید/مقدار {{domxref("FormData")}}.
 
-## Examples
+## مثال‌ها
 
 ```js
 formData.append("key1", "value1");
@@ -42,22 +36,22 @@ for (const pair of formData.entries()) {
 }
 ```
 
-The result is:
+نتیجه به این صورت است:
 
 ```plain
 key1 value1
 key2 value2
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Using FormData objects](/en-US/docs/Web/API/XMLHttpRequest_API/Using_FormData_Objects)
 - {{HTMLElement("Form")}}
