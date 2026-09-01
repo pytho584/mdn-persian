@@ -1,11 +1,5 @@
 ---
 title: "HTMLAnchorElement: href property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement/href"
-status: "needs-translation"
----
-
----
-title: "HTMLAnchorElement: href property"
 short-title: href
 slug: Web/API/HTMLAnchorElement/href
 page-type: web-api-instance-property
@@ -14,67 +8,67 @@ browser-compat: api.HTMLAnchorElement.href
 
 {{ApiRef("HTML DOM")}}
 
-The **`href`** property of the {{domxref("HTMLAnchorElement")}} interface is a {{Glossary("stringifier")}} that returns the absolute URL corresponding to the element's `href` attribute (or an empty string if `href` is unset). Setting this property updates the element's `href` attribute to the provided value.
+ویژگی **`href`** در رابط {{domxref("HTMLAnchorElement")}} یک {{Glossary("stringifier")}} است که URL مطلق متناظر با ویژگی `href` عنصر را برمیگرداند (یا اگر `href` تنظیم نشده باشد، یک رشتهٔ خالی). تنظیم این ویژگی، ویژگی `href` عنصر را به مقدار داده‌شده به‌روزرسانی می‌کند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-- If the `href` attribute is absent, the value is an empty string (`""`).
-- If the `href` attribute is present but is not a valid relative or absolute URL, the value is the attribute's value as-is.
-- If the `href` attribute is present and is a valid relative or absolute URL, the value is the absolute URL, resolved relative to the document's base URL. The empty string (`""`) is considered a valid relative URL, resolving to the document's base URL.
+- اگر ویژگی `href` وجود نداشته باشد، مقدار یک رشتهٔ خالی (`""`) است.
+- اگر ویژگی `href` وجود داشته باشد اما URL نسبی یا مطلق معتبری نباشد، مقدار، همان مقدار ویژگی است.
+- اگر ویژگی `href` وجود داشته باشد و یک URL نسبی یا مطلق معتبر باشد، مقدار، URL مطلق است که نسبت به URL پایهٔ سند (base URL) تفکیک می‌شود. رشتهٔ خالی (`""`) یک URL نسبی معتبر در نظر گرفته می‌شود و به URL پایهٔ سند تفکیک می‌شود.
 
-## Examples
+## مثال‌ها
 
-A freshly created `<a>` element has no `href` attribute, so its `href` property returns an empty string.
+یک عنصر `<a>` که تازه ایجاد شده، ویژگی `href` ندارد، بنابراین ویژگی `href` آن یک رشتهٔ خالی برمی‌گرداند.
 
 ```js
 const anchor = document.createElement("a");
 console.log(anchor.href); // ""
 ```
 
-If the attribute is set to an empty string, the property returns the document's base URL because the empty string is a valid relative URL.
+اگر ویژگی روی یک رشتهٔ خالی تنظیم شود، ویژگی مذکور URL پایهٔ سند را برمی‌گرداند، زیرا رشتهٔ خالی یک URL نسبی معتبر است.
 
 ```js
 anchor.href = "";
 console.log(anchor.href); // "https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement/href"
 ```
 
-If the attribute is set to a relative URL, the property returns the absolute URL resolved against the document's base URL.
+اگر ویژگی روی یک URL نسبی تنظیم شود، ویژگی مذکور URL مطلق تفکیک‌شده نسبت به URL پایهٔ سند را برمی‌گرداند.
 
 ```js
 anchor.href = "../../..";
 console.log(anchor.href); // "https://developer.mozilla.org/en-US/docs/"
 ```
 
-Note that the attribute's value remains as set, without resolution.
+توجه داشته باشید که مقدار ویژگی بدون تفکیک، همان‌طور که تنظیم شده باقی می‌ماند.
 
 ```js
 console.log(anchor.getAttribute("href")); // "../../.."
 ```
 
-If the attribute is set to an absolute URL, the property returns that absolute URL as-is.
+اگر ویژگی روی یک URL مطلق تنظیم شود، ویژگی مذکور همان URL مطلق را بدون تغییر برمی‌گرداند.
 
 ```js
 anchor.href = "https://example.com/path";
 console.log(anchor.href); // "https://example.com/path"
 ```
 
-If the attribute is set to an invalid URL, the property returns the attribute's value as-is.
+اگر ویژگی روی یک URL نامعتبر تنظیم شود، ویژگی مذکور مقدار ویژگی را بدون تغییر برمی‌گرداند.
 
 ```js
 anchor.href = "https://";
 console.log(anchor.href); // "https://"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("HTMLAnchorElement")}} interface it belongs to.
+- رابط {{domxref("HTMLAnchorElement")}} که این ویژگی به آن تعلق دارد.
