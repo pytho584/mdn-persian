@@ -1,9 +1,4 @@
----
-title: "HTMLSpanElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLSpanElement"
-status: "needs-translation"
----
-
+```markdown
 ---
 title: HTMLSpanElement
 slug: Web/API/HTMLSpanElement
@@ -13,26 +8,27 @@ browser-compat: api.HTMLSpanElement
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLSpanElement`** interface represents a {{HTMLElement("span")}} element and derives from the {{DOMxRef("HTMLElement")}} interface, but without implementing any additional properties or methods.
+رابط **`HTMLSpanElement`** نمایانگر یک عنصر {{HTMLElement("span")}} است و از رابط {{DOMxRef("HTMLElement")}} مشتق می‌شود، اما هیچ ویژگی یا متد اضافی‌ای را پیاده‌سازی نمی‌کند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface has no properties, but inherits properties from: {{DOMxRef("HTMLElement")}}._
+_این رابط هیچ ویژگی ندارد، اما ویژگی‌های خود را از {{DOMxRef("HTMLElement")}} به ارث می‌برد._
 
-## Instance methods
+## متدهای نمونه
 
-_This interface has no methods, but inherits methods from: {{DOMxRef("HTMLElement")}}._
+_این رابط هیچ متدی ندارد، اما متدهای خود را از {{DOMxRef("HTMLElement")}} به ارث می‌برد._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The HTML element implementing this interface: {{HTMLElement("span")}}.
+- عنصر HTML که این رابط را پیاده‌سازی می‌کند: {{HTMLElement("span")}}.
+```
