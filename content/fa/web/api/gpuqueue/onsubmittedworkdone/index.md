@@ -1,11 +1,5 @@
 ---
 title: "GPUQueue: onSubmittedWorkDone() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUQueue/onSubmittedWorkDone"
-status: "needs-translation"
----
-
----
-title: "GPUQueue: onSubmittedWorkDone() method"
 short-title: onSubmittedWorkDone()
 slug: Web/API/GPUQueue/onSubmittedWorkDone
 page-type: web-api-instance-method
@@ -14,16 +8,15 @@ browser-compat: api.GPUQueue.onSubmittedWorkDone
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`onSubmittedWorkDone()`** method of the
-{{domxref("GPUQueue")}} interface returns a {{jsxref("Promise")}} that resolves when all the work submitted to the GPU via this `GPUQueue` at the point the method is called has been processed.
+متد **`onSubmittedWorkDone()`** در رابط {{domxref("GPUQueue")}} یک {{jsxref("Promise")}} برمی‌گرداند که زمانی حل می‌شود که تمام کارهایی که در لحظهٔ فراخوانی متد از طریق این `GPUQueue` به GPU ارسال شده‌اند، پردازش شده باشند.
 
-This includes the completion of any {{domxref("GPUBuffer.mapAsync", "mapAsync()")}} calls made on `GPUBuffer`s used in commands submitted to the queue, before `onSubmittedWorkDone()` is called.
+این شامل تکمیل هرگونه فراخوانی {{domxref("GPUBuffer.mapAsync", "mapAsync()")}} روی `GPUBuffer`هایی است که در دستورات ارسال‌شده به صف استفاده شده‌اند، پیش از فراخوانی `onSubmittedWorkDone()`.
 
-Note: In most cases, you do _not_ need to call `onSubmittedWorkDone()`. You do **_not_** need to call it for mapping a buffer. `mapAsync` guarantees work submitted to the queue before calling `mapAsync` happens before the `mapAsync` returns (see [WebGPU spec](https://gpuweb.github.io/gpuweb/#buffer-mapping)).
+توجه: در بیشتر موارد _نیازی_ به فراخوانی `onSubmittedWorkDone()` ندارید. برای نگاشت (mapping) یک بافر نیز **_نیازی_** به فراخوانی آن ندارید. `mapAsync` تضمین می‌کند که کارهای ارسال‌شده به صف قبل از فراخوانی `mapAsync`، پیش از بازگشت `mapAsync` انجام می‌شوند (به [مشخصات WebGPU](https://gpuweb.github.io/gpuweb/#buffer-mapping) مراجعه کنید).
 
-The two use cases for `onSubmittedWorkDone`
+دو کاربرد `onSubmittedWorkDone`:
 
-1. Waiting for multiple buffer mapping (slow)
+1. انتظار برای نگاشت چند بافر (کند)
 
    ```js
    // good
@@ -48,30 +41,27 @@ The two use cases for `onSubmittedWorkDone`
    data3 = buffer3.getMappedRange();
    ```
 
-   The reason the second method is slow is, the implementation may be able to map the buffers before all the submitted work is done.
-   For example, if all the buffers are finished being used, but more work (unrelated to the buffers) is already submitted, then
-   you'll end up waiting longer using the second method than the first.
+   دلیل کند بودن روش دوم این است که پیاده‌سازی ممکن است بتواند بافرها را قبل از اتمام تمام کارهای ارسال‌شده نگاشت کند. برای مثال، اگر استفاده از همهٔ بافرها تمام شده باشد، اما کارهای بیشتری (نامرتبط با بافرها) از قبل ارسال شده باشند، در این صورت با روش دوم بیشتر از روش اول منتظر می‌مانید.
 
-2. Throttling work
+2. محدود کردن نرخ کار
 
-   If you are doing heavy compute work and you submit too much work at once, the browser may kill your work.
-   You can throttle the work by only submitting more work when the work you've already submitted is done.
+   اگر در حال انجام کار محاسباتی سنگین هستید و یکباره کار زیادی ارسال کنید، ممکن است مرورگر کار شما را متوقف کند. می‌توانید با ارسال کار بیشتر فقط زمانی که کارهای از قبل ارسال‌شده تمام شده‌اند، نرخ کار را محدود کنید.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 onSubmittedWorkDone()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with {{jsxref("undefined")}}.
+یک {{jsxref("Promise")}} که با {{jsxref("undefined")}} حل می‌شود.
 
-## Examples
+## مثال‌ها
 
 ```js
 device.queue.submit([commandEncoder.finish()]);
@@ -80,14 +70,14 @@ device.queue.onSubmittedWorkDone().then(() => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
