@@ -1,11 +1,5 @@
 ---
 title: "DecompressionStream: readable property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DecompressionStream/readable"
-status: "needs-translation"
----
-
----
-title: "DecompressionStream: readable property"
 short-title: readable
 slug: Web/API/DecompressionStream/readable
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.DecompressionStream.readable
 
 {{APIRef("Compression Streams API")}}{{AvailableInWorkers}}
 
-The **`readable`** read-only property of the {{domxref("DecompressionStream")}} interface returns a {{domxref("ReadableStream")}} that emits decompressed data as {{jsxref("Uint8Array")}} chunks.
+ویژگی فقط خواندنی **`readable`** از رابط {{domxref("DecompressionStream")}} یک {{domxref("ReadableStream")}} برمی‌گرداند که داده‌های فشرده‌شده را به صورت قطعات {{jsxref("Uint8Array")}} منتشر می‌کند.
 
-## Value
+## مقدار
 
-A {{domxref("ReadableStream")}}.
+یک {{domxref("ReadableStream")}}.
 
-## Examples
+## مثال‌ها
 
-This example creates a `DecompressionStream` that performs gzip decompression. It writes some compressed binary data to the `writable` stream, then reads the decompressed data from the `readable` stream, decoding it as UTF-8 text.
+این مثال یک `DecompressionStream` ایجاد می‌کند که فشرده‌سازی gzip را انجام می‌دهد. مقداری داده باینری فشرده شده را در جریان `writable` می‌نویسد، سپس داده‌های فشرده‌شده را از جریان `readable` می‌خواند و به صورت متن UTF-8 رمزگشایی می‌کند.
 
 ```js
 const stream = new DecompressionStream("gzip");
@@ -49,14 +43,14 @@ while (!done) {
 console.log(new TextDecoder().decode(new Uint8Array(output))); // Hello, world!
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("TransformStream.readable")}}
