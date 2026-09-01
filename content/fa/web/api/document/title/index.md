@@ -1,39 +1,24 @@
 ---
 title: "Document: title property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/title"
-status: "needs-translation"
----
-
----
-title: "Document: title property"
-short-title: title
-slug: Web/API/Document/title
-page-type: web-api-instance-property
-browser-compat: api.Document.title
 ---
 
 {{APIRef("DOM")}}
 
-The **`document.title`** property gets or sets the current title of the document.
-When present, it defaults to the value of the [`<title>`](/en-US/docs/Web/HTML/Reference/Elements/title).
+ویژگی **`document.title`** عنوان فعلی سند را دریافت یا تنظیم می‌کند. در صورت وجود، مقدار پیش‌فرض آن مقدار عنصر [`<title>`](/en-US/docs/Web/HTML/Reference/Elements/title) است.
 
-## Value
+## مقدار
 
-A string containing the _document_'s title. If the title was overridden by setting `document.title`, it contains that value. Otherwise, it contains the title specified in the [`<title>`](/en-US/docs/Web/HTML/Reference/Elements/title) element.
+یک رشته شامل عنوان _سند_. اگر عنوان با تنظیم `document.title` بازنویسی شده باشد، این مقدار را شامل می‌شود. در غیر این صورت، عنوان مشخص‌شده در عنصر [`<title>`](/en-US/docs/Web/HTML/Reference/Elements/title) را شامل می‌شود.
 
 ```js
 document.title = newTitle;
 ```
 
-`newTitle` is the new title of the document. The assignment
-affects the return value of `document.title`, the title displayed for the
-document (e.g., in the titlebar of the window or tab), and it also affects the DOM of the
-document (e.g., the content of the `<title>` element in an HTML
-document).
+`newTitle` عنوان جدید سند است. این انتساب بر مقدار بازگشتی `document.title`، عنوان نمایش‌داده‌شده برای سند (مثلاً در نوار عنوان پنجره یا برگه) تأثیر می‌گذارد و همچنین بر DOM سند (مثلاً محتوای عنصر `<title>` در یک سند HTML) تأثیر می‌گذارد.
 
-## Examples
+## مثال‌ها
 
-Assume the document's `<head>` looks like:
+فرض کنید `<head>` سند به صورت زیر است:
 
 ```html
 <head>
@@ -48,10 +33,10 @@ document.title = "Goodbye World!"; // Page title changed
 console.log(document.title); // "Goodbye World!"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
