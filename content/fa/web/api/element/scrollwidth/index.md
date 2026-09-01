@@ -1,11 +1,5 @@
 ---
 title: "Element: scrollWidth property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollWidth"
-status: "needs-translation"
----
-
----
-title: "Element: scrollWidth property"
 short-title: scrollWidth
 slug: Web/API/Element/scrollWidth
 page-type: web-api-instance-property
@@ -14,19 +8,19 @@ browser-compat: api.Element.scrollWidth
 
 {{APIRef("DOM")}}
 
-The **`scrollWidth`** read-only property of the {{domxref("Element")}} interface is a measurement of the width of an element's content, including content not visible on the screen due to overflow.
+ویژگی فقط‌خواندنی **`scrollWidth`** از رابط {{domxref("Element")}} اندازه‌گیری عرض محتوای یک عنصر است، از جمله محتوایی که به دلیل سرریز روی صفحه نمایش دیده نمی‌شود.
 
-The `scrollWidth` value is equal to the minimum width the element would require in order to fit all the content in the viewport without using a horizontal scrollbar. The width is measured in the same way as {{domxref("Element.clientWidth", "clientWidth")}}: it includes the element's padding, but not its border, margin or vertical scrollbar (if present). It can also include the width of pseudo-elements such as {{cssxref("::before")}} or {{cssxref("::after")}}. If the element's content can fit without a need for horizontal scrollbar, its `scrollWidth` is equal to {{domxref("Element.clientWidth", "clientWidth")}}.
+مقدار `scrollWidth` برابر است با حداقل عرضی که عنصر برای جای دادن تمام محتوا در نمایشگر (viewport) بدون نیاز به نوار پیمایش افقی لازم دارد. عرض به همان روش {{domxref("Element.clientWidth", "clientWidth")}} اندازه‌گیری می‌شود: شامل فاصلهٔ داخلی (padding) عنصر است، اما شامل مرز (border)، فاصلهٔ بیرونی (margin) یا نوار پیمایش عمودی (در صورت وجود) نمی‌شود. همچنین می‌تواند عرض شبه‌عنصرهایی مانند {{cssxref("::before")}} یا {{cssxref("::after")}} را نیز شامل شود. اگر محتوای عنصر بدون نیاز به نوار پیمایش افقی جا شود، `scrollWidth` آن برابر با {{domxref("Element.clientWidth", "clientWidth")}} خواهد بود.
 
-## Value
+## مقدار
 
-An integer.
+یک عدد صحیح.
 
-## Examples
+## مثال‌ها
 
-### Detecting overflowing content
+### تشخیص محتوای سرریزشده
 
-In this example, we use the `scrollWidth` property to check if the content of an element is overflowing its boundaries. We have two `div` elements, the first with a width of `100px`, and the second without a fixed width. Their content is exactly the same, and we display a message about whether each one is overflowing its container.
+در این مثال، از ویژگی `scrollWidth` برای بررسی اینکه آیا محتوای یک عنصر از مرزهای آن سرریز شده است استفاده می‌کنیم. دو عنصر `div` داریم: اولی با عرض `100px` و دومی بدون عرض ثابت. محتوای آنها دقیقاً یکسان است و پیامی دربارهٔ اینکه آیا هر کدام از ظرف خود سرریز شده‌اند نمایش می‌دهیم.
 
 #### HTML
 
@@ -100,21 +94,21 @@ button2.addEventListener("click", () => {
 });
 ```
 
-#### Result
+#### نتیجه
 
-Click the buttons to check if the content is overflowing the containers.
+برای بررسی اینکه آیا محتوا از ظرف‌ها سرریز شده است، روی دکمه‌ها کلیک کنید.
 
 {{EmbedLiveSample("detecting_overflowing_content", "100%", "190")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Determining the dimensions of elements](/en-US/docs/Web/API/CSS_Object_Model/Determining_the_dimensions_of_elements)
 - {{domxref("HTMLElement.offsetWidth")}}
