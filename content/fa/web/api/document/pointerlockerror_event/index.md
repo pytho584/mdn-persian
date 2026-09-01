@@ -1,11 +1,5 @@
 ---
 title: "Document: pointerlockerror event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/pointerlockerror_event"
-status: "needs-translation"
----
-
----
-title: "Document: pointerlockerror event"
 short-title: pointerlockerror
 slug: Web/API/Document/pointerlockerror_event
 page-type: web-api-event
@@ -14,13 +8,13 @@ browser-compat: api.Document.pointerlockerror_event
 
 {{APIRef("Pointer Lock API")}}
 
-The **`pointerlockerror`** event is fired when locking the pointer failed (for technical reasons or because the permission was denied).
+رویداد **`pointerlockerror`** زمانی رخ می‌دهد که قفل کردن نشانگر (pointer) ناموفق باشد (به دلایل فنی یا به دلیل رد شدن مجوز).
 
-This event is not cancelable and does not bubble.
+این رویداد قابل لغو (cancelable) نیست و حباب (bubble) نمی‌زند.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("pointerlockerror", (event) => { })
@@ -28,13 +22,13 @@ addEventListener("pointerlockerror", (event) => { })
 onpointerlockerror = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## مثال‌ها
 
-Using `addEventListener()`:
+استفاده از `addEventListener()`:
 
 ```js
 const para = document.querySelector("p");
@@ -44,7 +38,7 @@ document.addEventListener("pointerlockerror", (event) => {
 });
 ```
 
-Using the `onpointerlockerror` event handler property:
+استفاده از ویژگی کنترل‌کننده رویداد `onpointerlockerror`:
 
 ```js
 document.onpointerlockerror = (event) => {
@@ -52,14 +46,14 @@ document.onpointerlockerror = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using Pointer Lock API](/en-US/docs/Web/API/Pointer_Lock_API)
+- [استفاده از Pointer Lock API](/en-US/docs/Web/API/Pointer_Lock_API)
