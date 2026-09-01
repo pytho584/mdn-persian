@@ -1,11 +1,5 @@
 ---
 title: "HTMLLinkElement: integrity property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLLinkElement/integrity"
-status: "needs-translation"
----
-
----
-title: "HTMLLinkElement: integrity property"
 short-title: integrity
 slug: Web/API/HTMLLinkElement/integrity
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.HTMLLinkElement.integrity
 
 {{APIRef("HTML DOM")}}
 
-The **`integrity`** property of the {{domxref("HTMLLinkElement")}} interface is a string containing inline metadata that a browser can use to verify that a fetched resource has been delivered without unexpected manipulation.
+ویژگی **`integrity`** در رابط {{domxref("HTMLLinkElement")}} یک رشته است که شامل ابرداده‌های درون‌خطی (inline metadata) می‌باشد. مرورگر می‌تواند از این ابرداده برای تأیید این‌که منبع دریافت‌شده بدون دستکاری غیرمنتظره تحویل داده شده است استفاده کند.
 
-It reflects the `integrity` attribute of the {{HTMLElement("link")}} element.
+این ویژگی منعکس‌کنندهٔ ویژگی `integrity` عنصر {{HTMLElement("link")}} است.
 
-## Value
+## مقدار
 
-A string.
+یک رشته (string).
 
-## Examples
+## مثال‌ها
 
 ```html
 <link
@@ -38,15 +32,15 @@ const el = document.getElementById("el");
 console.log(el.integrity); // Output: "sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLScriptElement.integrity")}}
-- [Subresource Integrity](/en-US/docs/Web/Security/Defenses/Subresource_Integrity)
+- [یکپارچگی زیرمنبع (Subresource Integrity)](/en-US/docs/Web/Security/Defenses/Subresource_Integrity)
