@@ -1,7 +1,5 @@
 ---
 title: "FileSystemFileHandle"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemFileHandle"
-status: "needs-translation"
 ---
 
 ---
@@ -13,36 +11,32 @@ browser-compat: api.FileSystemFileHandle
 
 {{securecontext_header}}{{APIRef("File System API")}}{{AvailableInWorkers}}
 
-The **`FileSystemFileHandle`** interface of the {{domxref("File System API", "File System API", "", "nocode")}} represents a handle to a file system entry. The interface is accessed through the {{domxref('window.showOpenFilePicker()')}} method.
+رابط **`FileSystemFileHandle`** از {{domxref("File System API", "File System API", "", "nocode")}} نمایانگر دسته‌ای به یک ورودی سیستم فایل است. این رابط از طریق متد {{domxref('window.showOpenFilePicker()')}} در دسترس قرار می‌گیرد.
 
-Note that read and write operations depend on file-access permissions that do not persist after a page refresh if no other tabs for that origin remain open. The {{domxref("FileSystemHandle.queryPermission()", "queryPermission")}} method of the {{domxref("FileSystemHandle")}} interface can be used to verify permission state before accessing a file.
+توجه داشته باشید که عملیات خواندن و نوشتن به مجوزهای دسترسی به فایل وابسته‌اند؛ اگر هیچ تب دیگری از همان خاستگاه (origin) باز نمانده باشد، این مجوزها پس از بازخوانی صفحه پایدار نمی‌مانند. می‌توان از متد {{domxref("FileSystemHandle.queryPermission()", "queryPermission")}} در رابط {{domxref("FileSystemHandle")}} برای بررسی وضعیت مجوز پیش از دسترسی به یک فایل استفاده کرد.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{DOMxRef("FileSystemHandle")}}._
+_ویژگی‌هایی را از والد خود، {{DOMxRef("FileSystemHandle")}}، به ارث می‌برد._
 
-## Instance methods
+## متدهای نمونه
 
-_Inherits methods from its parent, {{DOMxRef("FileSystemHandle")}}._
+_متدهایی را از والد خود، {{DOMxRef("FileSystemHandle")}}، به ارث می‌برد._
 
 - {{domxref('FileSystemFileHandle.getFile', 'getFile()')}}
-  - : Returns a {{jsxref('Promise')}} which resolves to a {{domxref('File')}} object
-    representing the state on disk of the entry represented by the handle.
+  - : یک {{jsxref('Promise')}} برمی‌گرداند که به یک شیء {{domxref('File')}} resolve می‌شود و وضعیت روی دیسکِ ورودیِ متناظر با این دسته را نشان می‌دهد.
 - {{domxref('FileSystemFileHandle.createSyncAccessHandle', 'createSyncAccessHandle()')}}
-  - : Returns a {{jsxref('Promise')}} which resolves to a {{domxref('FileSystemSyncAccessHandle')}} object
-    that can be used to synchronously read from and write to a file. The synchronous nature of this method brings performance advantages,
-    but it is only usable inside dedicated [Web Workers](/en-US/docs/Web/API/Web_Workers_API).
+  - : یک {{jsxref('Promise')}} برمی‌گرداند که به یک شیء {{domxref('FileSystemSyncAccessHandle')}} resolve می‌شود و می‌توان از آن برای خواندن و نوشتن همگام (synchronously) در یک فایل استفاده کرد. ماهیت همگام بودن این متد مزیت‌های عملکردی به همراه دارد، اما فقط در [Web Workers](/en-US/docs/Web/API/Web_Workers_API) اختصاصی قابل استفاده است.
 - {{domxref('FileSystemFileHandle.createWritable', 'createWritable()')}}
-  - : Returns a {{jsxref('Promise')}} which resolves to a newly created {{domxref('FileSystemWritableFileStream')}}
-    object that can be used to write to a file.
+  - : یک {{jsxref('Promise')}} برمی‌گرداند که به یک شیء {{domxref('FileSystemWritableFileStream')}} تازه‌ساخته‌شده resolve می‌شود و می‌توان از آن برای نوشتن در یک فایل استفاده کرد.
 
-## Examples
+## مثال‌ها
 
-### Reading a File
+### خواندن یک فایل
 
-The following asynchronous function presents a file picker and once a file is chosen, uses the `getFile()` method to retrieve the contents.
+تابع ناهمگام زیر یک انتخابگر فایل ارائه می‌دهد و به محض انتخاب یک فایل، از متد `getFile()` برای بازیابی محتوا استفاده می‌کند.
 
 ```js
 async function getTheFile() {
@@ -67,9 +61,9 @@ async function getTheFile() {
 }
 ```
 
-### Writing a File
+### نوشتن یک فایل
 
-The following asynchronous function writes the given contents to the file handle, and thus to disk.
+تابع ناهمگام زیر محتوای داده‌شده را به دسته فایل و در نتیجه به دیسک می‌نویسد.
 
 ```js
 async function writeFile(fileHandle, contents) {
@@ -84,15 +78,15 @@ async function writeFile(fileHandle, contents) {
 }
 ```
 
-### Synchronously reading and writing a file
+### خواندن و نوشتن همگام یک فایل
 
-The following asynchronous event handler function is contained inside a Web Worker. On receiving a message from the main thread it:
+تابع مدیریت رویداد ناهمگام زیر درون یک Web Worker قرار دارد. هنگام دریافت پیام از نخ اصلی، کارهای زیر را انجام می‌دهد:
 
-- Creates a synchronous file access handle.
-- Gets the size of the file and creates an {{jsxref("ArrayBuffer")}} to contain it.
-- Reads the file contents into the buffer.
-- Encodes the message and writes it to the end of the file.
-- Persists the changes to disk and closes the access handle.
+- یک دسته دسترسی همگام به فایل ایجاد می‌کند.
+- اندازه فایل را می‌گیرد و یک {{jsxref("ArrayBuffer")}} برای نگهداشتن محتوای فایل ایجاد می‌کند.
+- محتوای فایل را در بافر می‌خواند.
+- پیام را کدگذاری می‌کند و آن را به انتهای فایل می‌نویسد.
+- تغییرات را روی دیسک ماندگار می‌کند و دسته دسترسی را می‌بندد.
 
 ```js
 onmessage = async (e) => {
@@ -125,17 +119,17 @@ onmessage = async (e) => {
 ```
 
 > [!NOTE]
-> In earlier versions of the spec, {{domxref("FileSystemSyncAccessHandle.close()", "close()")}}, {{domxref("FileSystemSyncAccessHandle.flush()", "flush()")}}, {{domxref("FileSystemSyncAccessHandle.getSize()", "getSize()")}}, and {{domxref("FileSystemSyncAccessHandle.truncate()", "truncate()")}} were wrongly specified as asynchronous methods, and older versions of some browsers implement them in this way. However, all current browsers that support these methods implement them as synchronous methods.
+> در نسخه‌های قبلی مشخصات (spec)، متدهای {{domxref("FileSystemSyncAccessHandle.close()", "close()")}}، {{domxref("FileSystemSyncAccessHandle.flush()", "flush()")}}، {{domxref("FileSystemSyncAccessHandle.getSize()", "getSize()")}} و {{domxref("FileSystemSyncAccessHandle.truncate()", "truncate()")}} به اشتباه به‌عنوان متدهای ناهمگام مشخص شده بودند و نسخه‌های قدیمی‌تر برخی مرورگرها آن‌ها را به این صورت پیاده‌سازی می‌کنند. با این حال، همه مرورگرهای فعلی که از این متدها پشتیبانی می‌کنند، آن‌ها را به‌صورت متدهای همگام پیاده‌سازی می‌کنند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [File System API](/en-US/docs/Web/API/File_System_API)
-- [The File System Access API: simplifying access to local files](https://developer.chrome.com/docs/capabilities/web-apis/file-system-access)
+- [File System Access API: ساده‌سازی دسترسی به فایل‌های محلی](https://developer.chrome.com/docs/capabilities/web-apis/file-system-access)
