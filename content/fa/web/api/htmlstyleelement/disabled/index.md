@@ -1,11 +1,5 @@
 ---
 title: "HTMLStyleElement: disabled property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLStyleElement/disabled"
-status: "needs-translation"
----
-
----
-title: "HTMLStyleElement: disabled property"
 short-title: disabled
 slug: Web/API/HTMLStyleElement/disabled
 page-type: web-api-instance-property
@@ -14,28 +8,28 @@ browser-compat: api.HTMLStyleElement.disabled
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLStyleElement.disabled`** property can be used to get and set whether the stylesheet is disabled (`true`) or not (`false`).
+ویژگی **`HTMLStyleElement.disabled`** برای خواندن و تنظیم اینکه آیا شیوه‌نامه غیرفعال است (`true`) یا نه (`false`) استفاده می‌شود.
 
-Note that there is no corresponding `disabled` attribute on the [HTML `<style>` element](/en-US/docs/Web/HTML/Reference/Elements/style).
+توجه داشته باشید که هیچ ویژگی `disabled` متناظری روی [عنصر `<style>` در HTML](/en-US/docs/Web/HTML/Reference/Elements/style) وجود ندارد.
 
-## Value
+## مقدار
 
-Returns `true` if the stylesheet is disabled, or there is no associated stylesheet; otherwise `false`.
-The value is `false` by default (if there is an associated stylesheet).
+اگر شیوه‌نامه غیرفعال باشد یا شیوه‌نامه مرتبطی وجود نداشته باشد، `true` برمی‌گرداند؛ در غیر این صورت `false`.
+مقدار پیش‌فرض `false` است (اگر شیوه‌نامه مرتبطی وجود داشته باشد).
 
-The property can be used to enable or disable an associated stylesheet.
-Setting the property to `true` when there is no associated stylesheet has no effect.
+از این ویژگی می‌توان برای فعال یا غیرفعال کردن یک شیوه‌نامه مرتبط استفاده کرد.
+تنظیم این ویژگی روی `true` وقتی شیوه‌نامه مرتبطی وجود نداشته باشد، هیچ اثری ندارد.
 
-## Examples
+## مثال‌ها
 
-### Disabling an inline style
+### غیرفعال کردن یک سبک درون‌خطی
 
-This example demonstrates programmatically setting the disabled property on a style that was defined in the HTML using the [HTML `<style>` element](/en-US/docs/Web/HTML/Reference/Elements/style).
-Note that you can also access any/all stylesheets in the document using [`Document.styleSheets`](/en-US/docs/Web/API/Document/styleSheets).
+این مثال تنظیم برنامه‌نویسی‌شده ویژگی `disabled` را بر روی یک سبک که در HTML با استفاده از [عنصر `<style>` در HTML](/en-US/docs/Web/HTML/Reference/Elements/style) تعریف شده است، نشان می‌دهد.
+توجه داشته باشید که می‌توانید به همه شیوه‌نامه‌های سند نیز با استفاده از [`Document.styleSheets`](/en-US/docs/Web/API/Document/styleSheets) دسترسی داشته باشید.
 
 #### HTML
 
-The HTML contains an HTML [`<style>`](/en-US/docs/Web/HTML/Reference/Elements/style) element that makes paragraph elements blue, a paragraph element, and a button that will be used to enabled and disable the style.
+HTML شامل یک عنصر [`<style>`](/en-US/docs/Web/HTML/Reference/Elements/style) است که عناصر پاراگراف را آبی می‌کند، یک عنصر پاراگراف، و یک دکمه که برای فعال و غیرفعال کردن سبک استفاده خواهد شد.
 
 ```html
 <button>Enable</button>
@@ -48,17 +42,17 @@ The HTML contains an HTML [`<style>`](/en-US/docs/Web/HTML/Reference/Elements/st
 <p></p>
 ```
 
-#### JavaScript
+#### جاوااسکریپت
 
-The code below gets the `style` element using its id, and then sets it as disabled.
-As the style already exists, as it is defined in the SVG, this should succeed.
+کد زیر عنصر `style` را با استفاده از شناسه آن دریافت می‌کند و سپس آن را غیرفعال می‌کند.
+از آنجا که این سبک از قبل وجود دارد (چون در SVG تعریف شده است)، این عمل باید موفق باشد.
 
 ```js
 const style = document.getElementById("InlineStyle");
 style.disabled = true;
 ```
 
-We then add an event handler for the button that toggles the `disabled` value and button text.
+سپس یک رویدادگردان برای دکمه اضافه می‌کنیم که مقدار `disabled` و متن دکمه را تغییر می‌دهد.
 
 ```js
 const button = document.querySelector("button");
@@ -70,20 +64,20 @@ button.addEventListener("click", () => {
 });
 ```
 
-#### Result
+#### نتیجه
 
-The result is shown below.
-Press the button to toggle the `disabled` property value on the style used for the paragraph text.
+نتیجه در زیر نمایش داده شده است.
+دکمه را فشار دهید تا مقدار ویژگی `disabled` روی سبک مورد استفاده برای متن پاراگراف تغییر کند.
 
 {{EmbedLiveSample("Disabling a style defined in the SVG")}}
 
-### Disabling a programmatically defined style
+### غیرفعال کردن یک سبک تعریف‌شده به صورت برنامه‌نویسی
 
-This example is very similar to the one above, except that the style is defined programmatically.
+این مثال بسیار شبیه به مثال بالا است، با این تفاوت که سبک به صورت برنامه‌نویسی تعریف می‌شود.
 
 #### HTML
 
-The HTML is similar to the previous case, but the definition does not include any default styling.
+HTML مشابه حالت قبلی است، اما تعریف شامل هیچ استایل پیش‌فرضی نیست.
 
 ```html
 <button>Enable</button>
@@ -91,10 +85,10 @@ The HTML is similar to the previous case, but the definition does not include an
 <p></p>
 ```
 
-#### JavaScript
+#### جاوااسکریپت
 
-First we create the new style element on the HTML.
-This is done by first creating a style element using [`Document.createElement()`](/en-US/docs/Web/API/Document/createElement), creating and appending a text node with the style definition, and then appending the style element to the document body.
+ابتدا عنصر سبک جدید را روی HTML ایجاد می‌کنیم.
+این کار با ایجاد یک عنصر `style` با استفاده از [`Document.createElement()`](/en-US/docs/Web/API/Document/createElement)، ایجاد و افزودن یک گره متنی شامل تعریف سبک، و سپس افزودن عنصر سبک به بدنه سند انجام می‌شود.
 
 ```js
 // Create the `style` element
@@ -104,16 +98,16 @@ style.appendChild(node);
 document.body.appendChild(style);
 ```
 
-We can then disable the style as shown below.
-Note that this is the earliest point at which setting the property to `true` will succeed.
-Before this point the document did not have an associated style, and so the value defaults to `false`.
+سپس می‌توانیم سبک را همانطور که در زیر نشان داده شده است غیرفعال کنیم.
+توجه داشته باشید که این اولین نقطه‌ای است که تنظیم ویژگی روی `true` موفق خواهد بود.
+قبل از این نقطه، سند سبک مرتبطی نداشت و بنابراین مقدار پیش‌فرض `false` است.
 
 ```js
 // Disable the style
 style.disabled = true;
 ```
 
-Last of all we add an event handler for the button that toggles the disabled state and button text (this is the same as in the previous example).
+در نهایت، یک رویدادگردان برای دکمه اضافه می‌کنیم که وضعیت غیرفعال و متن دکمه را تغییر می‌دهد (همانند مثال قبلی).
 
 ```js
 const button = document.querySelector("button");
@@ -125,21 +119,21 @@ button.addEventListener("click", () => {
 });
 ```
 
-#### Result
+#### نتیجه
 
-The result is shown below.
-Press the button to toggle the `disabled` state on the style used for the text.
+نتیجه در زیر نمایش داده شده است.
+دکمه را فشار دهید تا وضعیت `disabled` روی سبک مورد استفاده برای متن تغییر کند.
 
 {{EmbedLiveSample("Disabling a programmatically defined style")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("SVGStyleElement.disabled")}}
