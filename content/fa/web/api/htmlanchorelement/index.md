@@ -1,10 +1,4 @@
 ---
-title: "HTMLAnchorElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement"
-status: "needs-translation"
----
-
----
 title: HTMLAnchorElement
 slug: Web/API/HTMLAnchorElement
 page-type: web-api-interface
@@ -13,89 +7,89 @@ browser-compat: api.HTMLAnchorElement
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLAnchorElement`** interface represents hyperlink elements and provides special properties and methods (beyond those of the regular {{domxref("HTMLElement")}} object interface that they inherit from) for manipulating the layout and presentation of such elements. This interface corresponds to [`<a>`](/en-US/docs/Web/HTML/Reference/Elements/a) element; not to be confused with [`<link>`](/en-US/docs/Web/HTML/Reference/Elements/link), which is represented by [`HTMLLinkElement`](/en-US/docs/Web/API/HTMLLinkElement).
+رابط (interface) **`HTMLAnchorElement`** نمایندهٔ عناصر لینک (hyperlinks) است و ویژگی‌ها و روش‌های خاصی (علاوه بر مواردی که از رابط شیء معمولی {{domxref("HTMLElement")}} به ارث می‌برد) برای دستکاری چیدمان و نمایش این عناصر فراهم می‌کند. این رابط با عنصر [`<a>`](/en-US/docs/Web/HTML/Reference/Elements/a) مطابقت دارد؛ نباید با عنصر [`<link>`](/en-US/docs/Web/HTML/Reference/Elements/link) که توسط [`HTMLLinkElement`](/en-US/docs/Web/API/HTMLLinkElement) نمایش داده می‌شود، اشتباه گرفته شود.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه (Instance properties)
 
-_Inherits properties from its parent, {{domxref("HTMLElement")}}._
+_ویژگی‌های والد خود، {{domxref("HTMLElement")}} را به ارث می‌برد._
 
 - {{domxref("HTMLAnchorElement.attributionSourceId")}}
-  - : A non-negative integer representing the attribution source identifier used for [Private Click Measurement](https://privacycg.github.io/private-click-measurement/). Valid values are from `0` to `255`.
+  - : یک عدد صحیح غیرمنفی که شناسهٔ منبع انتساب (attribution source identifier) مورد استفاده برای [Private Click Measurement](https://privacycg.github.io/private-click-measurement/) را نشان می‌دهد. مقادیر معتبر از `0` تا `255` هستند.
 - {{domxref("HTMLAnchorElement.attributionSrc")}} {{securecontext_inline}} {{deprecated_inline}} {{non-standard_inline}}
-  - : Gets and sets the [`attributionsrc`](/en-US/docs/Web/HTML/Reference/Elements/a#attributionsrc) attribute on an {{htmlelement("a")}} element programmatically, reflecting the value of that attribute. `attributionsrc` specifies that you want the browser to send an {{httpheader("Attribution-Reporting-Eligible")}} header. On the server-side this is used to trigger sending an {{httpheader("Attribution-Reporting-Register-Source")}} header in the response, to register a navigation-based attribution source.
+  - : ویژگی [`attributionsrc`](/en-US/docs/Web/HTML/Reference/Elements/a#attributionsrc) را در یک عنصر {{htmlelement("a")}} به صورت برنامه‌نویسی دریافت و تنظیم می‌کند و مقدار آن ویژگی را منعکس می‌کند. `attributionsrc` مشخص می‌کند که می‌خواهید مرورگر هدر {{httpheader("Attribution-Reporting-Eligible")}} را ارسال کند. در سمت سرور، این برای راه‌اندازی ارسال هدر {{httpheader("Attribution-Reporting-Register-Source")}} در پاسخ، به منظور ثبت یک منبع انتساب مبتنی بر ناوبری (navigation-based attribution source) استفاده می‌شود.
 - {{domxref("HTMLAnchorElement.download")}}
-  - : A string indicating that the linked resource is intended to be downloaded rather than displayed in the browser. The value represents the proposed name of the file. If the name is not a valid filename of the underlying OS, the browser will adapt it.
+  - : یک رشته (string) که نشان می‌دهد منبع لینک شده قرار است دانلود شود نه اینکه در مرورگر نمایش داده شود. مقدار آن نام پیشنهادی فایل را نشان می‌دهد. اگر نام، یک نام فایل معتبر برای سیستم‌عامل زیرین نباشد، مرورگر آن را تطبیق می‌دهد.
 - {{domxref("HTMLAnchorElement.hash")}}
-  - : A string representing the fragment identifier, including the leading hash mark (`#`), if any, in the referenced URL.
+  - : یک رشته که شناسهٔ قطعه (fragment identifier) را شامل می‌شود، همراه با علامت هش (`#`) ابتدایی (در صورت وجود)، در URL ارجاع‌داده‌شده.
 - {{domxref("HTMLAnchorElement.host")}}
-  - : A string representing the hostname and port (if it's not the default port) in the referenced URL.
+  - : یک رشته که نام میزبان (hostname) و پورت (port) را (در صورتی که پورت پیش‌فرض نباشد) در URL ارجاع‌داده‌شده نشان می‌دهد.
 - {{domxref("HTMLAnchorElement.hostname")}}
-  - : A string representing the hostname in the referenced URL.
+  - : یک رشته که نام میزبان را در URL ارجاع‌داده‌شده نشان می‌دهد.
 - {{domxref("HTMLAnchorElement.href")}}
-  - : A string that is the result of parsing the [`href`](/en-US/docs/Web/HTML/Reference/Elements/a#href) HTML attribute relative to the document, containing a valid URL of a linked resource.
+  - : یک رشته که نتیجهٔ تجزیه (parsing) ویژگی HTML [`href`](/en-US/docs/Web/HTML/Reference/Elements/a#href) نسبت به سند (document) است و یک URL معتبر از یک منبع لینک شده را شامل می‌شود.
 - {{domxref("HTMLAnchorElement.hreflang")}}
-  - : A string that reflects the [`hreflang`](/en-US/docs/Web/HTML/Reference/Elements/a#hreflang) HTML attribute, indicating the language of the linked resource.
+  - : یک رشته که ویژگی HTML [`hreflang`](/en-US/docs/Web/HTML/Reference/Elements/a#hreflang) را منعکس می‌کند و زبان منبع لینک شده را نشان می‌دهد.
 - {{domxref("HTMLAnchorElement.interestForElement")}} {{experimental_inline}} {{non-standard_inline}}
-  - : Gets or sets the target element of an interest invoker, in cases where the associated {{htmlelement("a")}} element is specified as an [interest invoker](/en-US/docs/Web/API/Popover_API/Using_interest_invokers#creating_an_interest_invoker).
+  - : عنصر هدف یک فراخوان‌کنندهٔ علاقه (interest invoker) را دریافت یا تنظیم می‌کند، در مواردی که عنصر {{htmlelement("a")}} مرتبط به عنوان یک [فراخوان‌کنندهٔ علاقه](/en-US/docs/Web/API/Popover_API/Using_interest_invokers#creating_an_interest_invoker) مشخص شده است.
 - {{domxref("HTMLAnchorElement.origin")}} {{ReadOnlyInline}}
-  - : Returns a string containing the origin of the URL, that is its scheme, its domain and its port.
+  - : یک رشته شامل مبدأ (origin) URL، یعنی طرح (scheme)، دامنه (domain) و پورت (port) آن را برمی‌گرداند.
 - {{domxref("HTMLAnchorElement.password")}}
-  - : A string containing the password specified before the domain name.
+  - : یک رشته شامل رمز عبور (password) مشخص‌شده قبل از نام دامنه.
 - {{domxref("HTMLAnchorElement.pathname")}}
-  - : A string containing an initial `/` followed by the path of the URL, not including the query string or fragment.
+  - : یک رشته شامل یک `/` ابتدایی و به دنبال آن مسیر (path) URL، بدون رشتهٔ جستجو (query string) یا قطعه (fragment).
 - {{domxref("HTMLAnchorElement.ping")}}
-  - : A space-separated list of URLs. When the link is followed, the browser will send {{HTTPMethod("POST")}} requests with the body PING to the URLs.
+  - : یک لیست از URLها که با فاصله از هم جدا شده‌اند. وقتی لینک دنبال می‌شود، مرورگر درخواست‌های {{HTTPMethod("POST")}} با بدنهٔ PING به این URLها ارسال می‌کند.
 - {{domxref("HTMLAnchorElement.port")}}
-  - : A string representing the port component, if any, of the referenced URL.
+  - : یک رشته که جزء پورت (port component) را در URL ارجاع‌داده‌شده نشان می‌دهد (در صورت وجود).
 - {{domxref("HTMLAnchorElement.protocol")}}
-  - : A string representing the protocol component, including trailing colon (`:`), of the referenced URL.
+  - : یک رشته که جزء پروتکل (protocol component) را شامل می‌شود، همراه با دونقطه (`:`) دنباله‌دار، در URL ارجاع‌داده‌شده.
 - {{domxref("HTMLAnchorElement.referrerPolicy")}}
-  - : A string that reflects the [`referrerpolicy`](/en-US/docs/Web/HTML/Reference/Elements/a#referrerpolicy) HTML attribute indicating which referrer to use.
+  - : یک رشته که ویژگی HTML [`referrerpolicy`](/en-US/docs/Web/HTML/Reference/Elements/a#referrerpolicy) را منعکس می‌کند و مشخص می‌کند از کدام referrer استفاده شود.
 - {{domxref("HTMLAnchorElement.rel")}}
-  - : A string that reflects the [`rel`](/en-US/docs/Web/HTML/Reference/Elements/a#rel) HTML attribute, specifying the relationship of the target object to the linked object.
+  - : یک رشته که ویژگی HTML [`rel`](/en-US/docs/Web/HTML/Reference/Elements/a#rel) را منعکس می‌کند و رابطهٔ شیء هدف با شیء لینک شده را مشخص می‌کند.
 - {{domxref("HTMLAnchorElement.relList")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref("DOMTokenList")}} that reflects the [`rel`](/en-US/docs/Web/HTML/Reference/Elements/a#rel) HTML attribute, as a list of tokens.
+  - : یک {{domxref("DOMTokenList")}} برمی‌گرداند که ویژگی HTML [`rel`](/en-US/docs/Web/HTML/Reference/Elements/a#rel) را به صورت یک لیست از توکن‌ها منعکس می‌کند.
 - {{domxref("HTMLAnchorElement.search")}}
-  - : A string representing the search element, including leading question mark (`?`), if any, of the referenced URL.
+  - : یک رشته که عنصر جستجو (search element) را شامل می‌شود، همراه با علامت سؤال (`?`) ابتدایی (در صورت وجود)، در URL ارجاع‌داده‌شده.
 - {{domxref("HTMLAnchorElement.target")}}
-  - : A string that reflects the [`target`](/en-US/docs/Web/HTML/Reference/Elements/a#target) HTML attribute, indicating where to display the linked resource.
+  - : یک رشته که ویژگی HTML [`target`](/en-US/docs/Web/HTML/Reference/Elements/a#target) را منعکس می‌کند و مشخص می‌کند که منبع لینک شده کجا نمایش داده شود.
 - {{domxref("HTMLAnchorElement.text")}}
-  - : A string being a synonym for the {{domxref("Node.textContent")}} property.
+  - : یک رشته که مترادف خاصیت {{domxref("Node.textContent")}} است.
 - {{domxref("HTMLAnchorElement.type")}}
-  - : A string that reflects the [`type`](/en-US/docs/Web/HTML/Reference/Elements/a#type) HTML attribute, indicating the MIME type of the linked resource.
+  - : یک رشته که ویژگی HTML [`type`](/en-US/docs/Web/HTML/Reference/Elements/a#type) را منعکس می‌کند و نوع MIME منبع لینک شده را نشان می‌دهد.
 - {{domxref("HTMLAnchorElement.username")}}
-  - : A string containing the username specified before the domain name.
+  - : یک رشته شامل نام کاربری (username) مشخص‌شده قبل از نام دامنه.
 
-### Obsolete properties
+### ویژگی‌های منسوخ (Obsolete properties)
 
 - `HTMLAnchorElement.charset` {{deprecated_inline}}
-  - : A string representing the character encoding of the linked resource.
+  - : یک رشته که نشان‌دهندهٔ رمزگذاری نویسه (character encoding) منبع لینک شده بود.
 - `HTMLAnchorElement.coords` {{deprecated_inline}}
-  - : A string representing a comma-separated list of coordinates.
+  - : یک رشته که یک لیست از مختصات (coordinates) جدا شده با کاما را نشان می‌داد.
 - `HTMLAnchorElement.name` {{deprecated_inline}}
-  - : A string representing the anchor name.
+  - : یک رشته که نام لنگر (anchor name) را نشان می‌داد.
 - `HTMLAnchorElement.rev` {{deprecated_inline}}
-  - : A string representing that the [`rev`](/en-US/docs/Web/HTML/Reference/Elements/a#rev) HTML attribute, specifying the relationship of the link object to the target object.
+  - : یک رشته که ویژگی HTML [`rev`](/en-US/docs/Web/HTML/Reference/Elements/a#rev) را نشان می‌داد و رابطهٔ شیء لینک با شیء هدف را مشخص می‌کرد.
 - `HTMLAnchorElement.shape` {{deprecated_inline}}
-  - : A string representing the shape of the active area.
+  - : یک رشته که شکل ناحیهٔ فعال (active area) را نشان می‌داد.
 
-## Instance methods
+## روش‌های نمونه (Instance methods)
 
-_Inherits methods from its parent, {{domxref("HTMLElement")}}._
+_روش‌های والد خود، {{domxref("HTMLElement")}} را به ارث می‌برد._
 
 - {{domxref("HTMLAnchorElement.toString()")}}
-  - : Returns a string containing the whole URL. It is a synonym for {{domxref("HTMLAnchorElement.href")}}, though it can't be used to modify the value.
+  - : یک رشته شامل کل URL را برمی‌گرداند. این یک مترادف برای {{domxref("HTMLAnchorElement.href")}} است، اگرچه نمی‌توان از آن برای تغییر مقدار استفاده کرد.
 
-## Specifications
+## مشخصات (Specifications)
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر (Browser compatibility)
 
 {{Compat}}
 
-## See also
+## همچنین ببینید (See also)
 
-- The HTML element implementing this interface: {{HTMLElement("a")}}
+- عنصر HTML که این رابط را پیاده‌سازی می‌کند: {{HTMLElement("a")}}
