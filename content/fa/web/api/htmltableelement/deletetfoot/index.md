@@ -1,7 +1,5 @@
 ---
 title: "HTMLTableElement: deleteTFoot() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/deleteTFoot"
-status: "needs-translation"
 ---
 
 ---
@@ -14,26 +12,25 @@ browser-compat: api.HTMLTableElement.deleteTFoot
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLTableElement.deleteTFoot()`** method removes the
-{{HTMLElement("tfoot")}} element from a given {{HtmlElement("table")}}.
+**`HTMLTableElement.deleteTFoot()`** 方法将一个给定 {{HtmlElement("table")}} 中的 {{HTMLElement("tfoot")}} 元素移除。
 
-## Syntax
+## 语法
 
 ```js-nolint
 deleteTFoot()
 ```
 
-### Parameters
+### 参数
 
-None.
+无。
 
-### Return value
+### 返回值
 
-None ({{jsxref("undefined")}}).
+无（{{jsxref("undefined")}}）。
 
-## Examples
+## 示例
 
-This example uses JavaScript to delete a table's footer.
+此示例使用 JavaScript 删除表格的页脚。
 
 ### HTML
 
@@ -71,14 +68,14 @@ let table = document.querySelector("table");
 table.deleteTFoot();
 ```
 
-### Result
+### 结果
 
 {{EmbedLiveSample("Examples")}}
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
