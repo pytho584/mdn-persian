@@ -1,11 +1,5 @@
 ---
 title: "GPURenderPassEncoder: draw() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder/draw"
-status: "needs-translation"
----
-
----
-title: "GPURenderPassEncoder: draw() method"
 short-title: draw()
 slug: Web/API/GPURenderPassEncoder/draw
 page-type: web-api-instance-method
@@ -14,10 +8,9 @@ browser-compat: api.GPURenderPassEncoder.draw
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`draw()`** method of the
-{{domxref("GPURenderPassEncoder")}} interface draws primitives based on the vertex buffers provided by {{domxref("GPURenderPassEncoder.setVertexBuffer", "setVertexBuffer()")}}.
+متد **`draw()`** در رابط {{domxref("GPURenderPassEncoder")}}، primitivesها را بر اساس بافرهای رأس (vertex buffers) که توسط {{domxref("GPURenderPassEncoder.setVertexBuffer", "setVertexBuffer()")}} فراهم شده‌اند، ترسیم می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 draw(vertexCount)
@@ -26,24 +19,24 @@ draw(vertexCount, instanceCount, firstVertex)
 draw(vertexCount, instanceCount, firstVertex, firstInstance)
 ```
 
-### Parameters
+### پارامترها
 
 - `vertexCount`
-  - : A number defining the number of vertices to draw.
+  - : عددی است که تعداد رأس‌هایی را که باید ترسیم شوند، مشخص می‌کند.
 - `instanceCount` {{optional_inline}}
-  - : A number defining the number of instances to draw. If omitted, `instanceCount` defaults to 1.
+  - : عددی است که تعداد نمونه‌ها (instances) را که باید ترسیم شوند، مشخص می‌کند. اگر حذف شود، `instanceCount` به‌صورت پیش‌فرض برابر 1 است.
 - `firstVertex` {{optional_inline}}
-  - : A number defining the offset into the vertex buffers, in vertices, to begin drawing from. If omitted, `firstVertex` defaults to 0.
+  - : عددی که افست (offset) در بافرهای رأس، بر حسب رأس، را برای شروع ترسیم مشخص می‌کند. اگر حذف شود، `firstVertex` به‌صورت پیش‌فرض برابر 0 است.
 - `firstInstance` {{optional_inline}}
-  - : A number defining the first instance to draw. If omitted, `firstInstance` defaults to 0.
+  - : عددی که اولین نمونه‌ای (instance) را که باید ترسیم شود، مشخص می‌کند. اگر حذف شود، `firstInstance` به‌صورت پیش‌فرض برابر 0 است.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-In our [basic render demo](https://mdn.github.io/dom-examples/webgpu-render-demo/), several commands are recorded via a {{domxref("GPUCommandEncoder")}}. Most of these commands originate from the `GPURenderPassEncoder` created via {{domxref("GPUCommandEncoder.beginRenderPass()")}}. `draw()` is used to specify that three vertices should be drawn to create our triangle.
+در [نمایش رندر پایه](https://mdn.github.io/dom-examples/webgpu-render-demo/) ما، چندین دستور از طریق یک {{domxref("GPUCommandEncoder")}} ثبت می‌شوند. بیشتر این دستورها از `GPURenderPassEncoder` که توسط {{domxref("GPUCommandEncoder.beginRenderPass()")}} ساخته شده، منشأ می‌گیرند. از `draw()` برای مشخص کردن اینکه سه رأس برای ایجاد مثلث ما ترسیم شوند استفاده می‌شود.
 
 ```js
 // …
@@ -82,14 +75,14 @@ device.queue.submit([commandEncoder.finish()]);
 // …
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
