@@ -1,11 +1,5 @@
 ---
 title: "Element: elementTiming property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/elementTiming"
-status: "needs-translation"
----
-
----
-title: "Element: elementTiming property"
 short-title: elementTiming
 slug: Web/API/Element/elementTiming
 page-type: web-api-instance-property
@@ -16,17 +10,17 @@ browser-compat: api.Element.elementTiming
 
 {{APIRef("DOM")}}{{SeeCompatTable}}
 
-The **`elementTiming`** property of the {{domxref("Element")}} interface identifies elements for observation in the {{domxref("PerformanceElementTiming")}} API. The `elementTiming` property reflects the value of the [`elementtiming`](/en-US/docs/Web/HTML/Reference/Attributes/elementtiming) attribute.
+ویژگی **`elementTiming`** از رابط {{domxref("Element")}} عناصری را که قرار است در API {{domxref("PerformanceElementTiming")}} مشاهده شوند، مشخص می‌کند. ویژگی `elementTiming` مقدار صفت [`elementtiming`](/en-US/docs/Web/HTML/Reference/Attributes/elementtiming) را منعکس می‌کند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
-### Logging the value of `elementTiming`
+### ثبت مقدار `elementTiming`
 
-In this example, adding the [`elementtiming`](/en-US/docs/Web/HTML/Reference/Attributes/elementtiming) attribute to the {{HTMLElement("img")}} element sets the image to be observed.
+در این مثال، افزودن صفت [`elementtiming`](/en-US/docs/Web/HTML/Reference/Attributes/elementtiming) به عنصر {{HTMLElement("img")}} باعث می‌شود تصویر مورد مشاهده قرار گیرد.
 
 ```html
 <img
@@ -36,24 +30,24 @@ In this example, adding the [`elementtiming`](/en-US/docs/Web/HTML/Reference/Att
   id="myImage" />
 ```
 
-You can get the string value of the `elementtiming` HTML attribute by calling `el.elementTiming`.
+می‌توانید مقدار رشته‌ایِ صفت HTML یعنی `elementtiming` را با فراخواندن `el.elementTiming` به دست آورید.
 
 ```js
 const el = document.getElementById("myImage");
 console.log(el.elementTiming); // "big-image"
 ```
 
-For a more complete example on how to use the Element Timing API, see {{domxref("PerformanceElementTiming")}}.
+برای مثال کامل‌تر در مورد نحوه استفاده از Element Timing API، به {{domxref("PerformanceElementTiming")}} مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("PerformanceElementTiming")}}
-- [`elementtiming`](/en-US/docs/Web/HTML/Reference/Attributes/elementtiming) HTML attribute
+- [`elementtiming`](/en-US/docs/Web/HTML/Reference/Attributes/elementtiming) صفت HTML
