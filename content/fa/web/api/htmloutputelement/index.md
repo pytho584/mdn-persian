@@ -1,10 +1,4 @@
 ---
-title: "HTMLOutputElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLOutputElement"
-status: "needs-translation"
----
-
----
 title: HTMLOutputElement
 slug: Web/API/HTMLOutputElement
 page-type: web-api-interface
@@ -13,78 +7,78 @@ browser-compat: api.HTMLOutputElement
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLOutputElement`** interface provides properties and methods (beyond those inherited from {{domxref("HTMLElement")}}) for manipulating the layout and presentation of {{HTMLElement("output")}} elements.
+رابط **`HTMLOutputElement`** ویژگی‌ها و روش‌هایی (فراتر از موارد به‌ارث‌برده از {{domxref("HTMLElement")}}) برای دستکاری چیدمان و نمایش عناصر {{HTMLElement("output")}} فراهم می‌کند.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("HTMLOutputElement.HTMLOutputElement", "HTMLOutputElement()")}} {{experimental_inline}}
-  - : Creates a new `HTMLOutputElement` object.
+  - : یک شی `HTMLOutputElement` جدید ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface also inherits properties from its parent, {{domxref("HTMLElement")}}._
+_این رابط همچنین ویژگی‌هایی را از والد خود، {{domxref("HTMLElement")}}، به ارث می‌برد._
 
 - {{domxref("HTMLOutputElement.defaultValue")}}
-  - : A string representing the default value of the element, initially the empty string.
+  - : یک رشته که مقدار پیش‌فرض عنصر را نشان می‌دهد، در ابتدا رشتهٔ خالی.
 - {{domxref("HTMLOutputElement.form")}} {{ReadOnlyInline}}
-  - : An {{domxref("HTMLFormElement")}} indicating the form associated with the control, reflecting the [`form`](/en-US/docs/Web/HTML/Reference/Elements/output#form) HTML attribute if it is defined.
+  - : یک {{domxref("HTMLFormElement")}} که فرم مرتبط با کنترل را نشان می‌دهد و منعکس‌کنندهٔ ویژگی HTML [`form`](/en-US/docs/Web/HTML/Reference/Elements/output#form) در صورت تعریف شدن است.
 - {{domxref("HTMLOutputElement.htmlFor")}} {{ReadOnlyInline}}
-  - : A {{domxref("DOMTokenList")}} reflecting the [`for`](/en-US/docs/Web/HTML/Reference/Elements/output#for) HTML attribute, containing a list of IDs of other elements in the same document that contribute to (or otherwise affect) the calculated `value`.
+  - : یک {{domxref("DOMTokenList")}} که منعکس‌کنندهٔ ویژگی HTML [`for`](/en-US/docs/Web/HTML/Reference/Elements/output#for) است و شامل لیستی از شناسه‌های عناصر دیگر در همان سند است که در مقدار محاسبه‌شدهٔ `value` مشارکت دارند (یا به‌نوعی بر آن تأثیر می‌گذارند).
 - {{domxref("HTMLOutputElement.labels")}} {{ReadOnlyInline}}
-  - : A {{domxref("NodeList")}} of {{HTMLElement("label")}} elements associated with the element.
+  - : یک {{domxref("NodeList")}} از عناصر {{HTMLElement("label")}} مرتبط با عنصر.
 - {{domxref("HTMLOutputElement.name")}}
-  - : A string reflecting the [`name`](/en-US/docs/Web/HTML/Reference/Elements/output#name) HTML attribute, containing the name for the control that is submitted with form data.
+  - : یک رشته که منعکس‌کنندهٔ ویژگی HTML [`name`](/en-US/docs/Web/HTML/Reference/Elements/output#name) است و حاوی نام کنترلی است که با داده‌های فرم ارسال می‌شود.
 - {{domxref("HTMLOutputElement.type")}} {{ReadOnlyInline}}
-  - : The string `"output"`.
+  - : رشتهٔ `"output"`.
 - {{domxref("HTMLOutputElement.validationMessage")}} {{ReadOnlyInline}}
-  - : A string representing a localized message that describes the validation constraints that the control does not satisfy (if any). This is the empty string if the control is not a candidate for constraint validation (`willValidate` is `false`), or it satisfies its constraints.
+  - : یک رشته که یک پیام بومی‌سازی‌شده را نشان می‌دهد و محدودیت‌های اعتبارسنجی را که کنترل برآورده نمی‌کند (در صورت وجود) توصیف می‌کند. اگر کنترل کاندیدای اعتبارسنجی محدودیت نباشد (`willValidate` برابر `false` باشد) یا محدودیت‌های خود را برآورده کند، این رشته خالی است.
 - {{domxref("HTMLOutputElement.validity")}} {{ReadOnlyInline}}
-  - : A {{domxref("ValidityState")}} representing the validity states that this element is in.
+  - : یک {{domxref("ValidityState")}} که وضعیت‌های اعتبار این عنصر را نشان می‌دهد.
 - {{domxref("HTMLOutputElement.value")}}
-  - : A string representing the value of the contents of the elements. Behaves like the {{domxref("Node.textContent")}} property.
+  - : یک رشته که مقدار محتویات عنصر را نشان می‌دهد. مانند ویژگی {{domxref("Node.textContent")}} رفتار می‌کند.
 - {{domxref("HTMLOutputElement.willValidate")}} {{ReadOnlyInline}}
-  - : Returns a boolean value that indicates whether the element is a candidate for constraint validation. Always `false` for `HTMLOutputElement` objects.
+  - : یک مقدار بولی برمی‌گرداند که نشان می‌دهد آیا عنصر کاندیدای اعتبارسنجی محدودیت است یا خیر. برای اشیاء `HTMLOutputElement` همیشه `false` است.
 
-## Instance methods
+## روش‌های نمونه
 
-_This interface also inherits methods from its parent, {{domxref("HTMLElement")}}._
+_این رابط همچنین روش‌هایی را از والد خود، {{domxref("HTMLElement")}}، به ارث می‌برد._
 
 - {{domxref("HTMLOutputElement.checkValidity()")}}
-  - : Checks the validity of the element and returns a boolean value holding the check result.
+  - : اعتبار عنصر را بررسی می‌کند و یک مقدار بولی حاوی نتیجهٔ بررسی برمی‌گرداند.
 - {{domxref("HTMLOutputElement.reportValidity()")}}
-  - : This method reports the problems with the constraints on the element, if any, to the user. If there are problems, fires an {{domxref("HTMLInputElement/invalid_event", "invalid")}} event at the element, and returns `false`; if there are no problems, it returns `true`.
+  - : این روش مشکلات مربوط به محدودیت‌های عنصر (در صورت وجود) را به کاربر گزارش می‌دهد. اگر مشکلی وجود داشته باشد، یک رویداد {{domxref("HTMLInputElement/invalid_event", "invalid")}} در عنصر ایجاد می‌کند و `false` برمی‌گرداند؛ اگر مشکلی نباشد، `true` برمی‌گرداند.
 
-    When the problem is reported, the user agent may focus the element and change the scrolling position of the document or perform some other action that brings the element to the user's attention. User agents may report more than one constraint violation if this element suffers from multiple problems at once. If the element is not rendered, then the user agent may report the error for the running script instead of notifying the user.
+    هنگامی که مشکل گزارش می‌شود، عامل کاربر ممکن است عنصر را متمرکز کرده و موقعیت پیمایش سند را تغییر دهد یا اقدام دیگری انجام دهد که توجه کاربر را به عنصر جلب کند. اگر عنصر از چندین مشکل به‌طور همزمان رنج ببرد، عامل کاربر ممکن است بیش از یک نقض محدودیت را گزارش دهد. اگر عنصر رندر نشود، عامل کاربر ممکن است خطا را برای اسکریپت در حال اجرا گزارش دهد به‌جای اینکه کاربر را مطلع کند.
 
 - {{domxref("HTMLOutputElement.setCustomValidity()")}}
-  - : Sets a custom validity message for the element. If this message is not the empty string, then the element is suffering from a custom validity error, and does not validate.
+  - : یک پیام اعتبار سفارشی برای عنصر تنظیم می‌کند. اگر این پیام رشتهٔ خالی نباشد، عنصر از یک خطای اعتبار سفارشی رنج می‌برد و اعتبارسنجی نمی‌شود.
 
-## Modes
+## حالت‌ها
 
-This element behaves in one of two modes: _default_ mode and _value_ mode.
+این عنصر در یکی از دو حالت عمل می‌کند: _حالت پیش‌فرض_ و _حالت مقدار_.
 
-### Default mode
+### حالت پیش‌فرض
 
-Initially, the element is in default mode, and so the contents of the element represent both the value of the element and its default value.
+در ابتدا، عنصر در حالت پیش‌فرض است، بنابراین محتویات عنصر هم مقدار عنصر و هم مقدار پیش‌فرض آن را نشان می‌دهد.
 
-If the element is in default mode when the descendants of the element are changed in any way, the `defaultValue` property is set to the value of the {{domxref("Node.textContent","textContent")}} property.
+اگر عنصر در حالت پیش‌فرض باشد و نوادگان عنصر به هر نحوی تغییر کنند، ویژگی `defaultValue` به مقدار ویژگی {{domxref("Node.textContent","textContent")}} تنظیم می‌شود.
 
-Resetting the form puts the element into default mode, and sets the {{domxref("Node.textContent","textContent")}} property to the value of the `defaultValue` property.
+بازنشانی فرم، عنصر را به حالت پیش‌فرض برمی‌گرداند و ویژگی {{domxref("Node.textContent","textContent")}} را به مقدار ویژگی `defaultValue` تنظیم می‌کند.
 
-### Value mode
+### حالت مقدار
 
-The element goes into value mode when the contents of the `value` property are set. The `value` property otherwise behaves like the {{domxref("Node.textContent","textContent")}} property. When the element is in value mode, the default value is accessible only through the `defaultValue` property.
+عنصر زمانی وارد حالت مقدار می‌شود که محتویات ویژگی `value` تنظیم شوند. در غیر این صورت ویژگی `value` مانند ویژگی {{domxref("Node.textContent","textContent")}} رفتار می‌کند. هنگامی که عنصر در حالت مقدار است، مقدار پیش‌فرض فقط از طریق ویژگی `defaultValue` قابل دسترسی است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The HTML element implementing this interface: {{HTMLElement("output")}}.
+- عنصر HTML که این رابط را پیاده‌سازی می‌کند: {{HTMLElement("output")}}.
