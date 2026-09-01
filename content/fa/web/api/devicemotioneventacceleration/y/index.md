@@ -1,11 +1,5 @@
 ---
 title: "DeviceMotionEventAcceleration: y property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEventAcceleration/y"
-status: "needs-translation"
----
-
----
-title: "DeviceMotionEventAcceleration: y property"
 short-title: y
 slug: Web/API/DeviceMotionEventAcceleration/y
 page-type: web-api-instance-property
@@ -14,19 +8,16 @@ browser-compat: api.DeviceMotionEventAcceleration.y
 
 {{APIRef("Device Orientation Events")}}{{securecontext_header}}
 
-The **`y`** read-only property of the {{domxref("DeviceMotionEventAcceleration")}} interface indicates the amount of acceleration that occurred along the Y
-axis in a [`DeviceMotionEventAcceleration`](/en-US/docs/Web/API/DeviceMotionEventAcceleration)
-object.
+خاصیت فقط خواندنی **`y`** از رابط {{domxref("DeviceMotionEventAcceleration")}} میزان شتابی را که در امتداد محور Y در یک شیء [`DeviceMotionEventAcceleration`](/en-US/docs/Web/API/DeviceMotionEventAcceleration) رخ داده است، نشان می‌دهد.
 
-## Value
+## مقدار
 
-A `double` indicating the amount of acceleration along the Y axis.
-See [Accelerometer values explained](/en-US/docs/Web/API/Device_orientation_events/Detecting_device_orientation) for details.
+یک `double` (عدد اعشاری) که میزان شتاب در امتداد محور Y را نشان می‌دهد. برای جزئیات به [توضیح مقادیر شتاب‌سنج](/en-US/docs/Web/API/Device_orientation_events/Detecting_device_orientation) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
