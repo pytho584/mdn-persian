@@ -1,11 +1,5 @@
 ---
 title: "EventSource: error event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EventSource/error_event"
-status: "needs-translation"
----
-
----
-title: "EventSource: error event"
 short-title: error
 slug: Web/API/EventSource/error_event
 page-type: web-api-event
@@ -14,13 +8,13 @@ browser-compat: api.EventSource.error_event
 
 {{APIRef("Server Sent Events")}}{{AvailableInWorkers}}
 
-The **`error`** event of the {{domxref("EventSource")}} API is fired when a connection with an event source fails to be opened.
+رویداد **`error`** در رابط برنامه‌نویسی {{domxref("EventSource")}} زمانی رخ می‌دهد که اتصال به یک منبع رویداد (event source) با شکست مواجه شده و باز نشود.
 
-This event is not cancelable and does not bubble.
+این رویداد غیرقابل‌لغو است و به سمت بالا منتشر نمی‌شود (bubble نمی‌کند).
 
 ## Syntax
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای استفاده از این رویداد، نام آن را در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} به‌کار ببرید، یا یک ویژگی کنترل‌کننده رویداد (event handler property) را تنظیم کنید.
 
 ```js-nolint
 addEventListener("error", (event) => { })
@@ -30,7 +24,7 @@ onerror = (event) => { }
 
 ## Event type
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
 ## Examples
 
