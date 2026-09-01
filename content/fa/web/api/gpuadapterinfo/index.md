@@ -1,7 +1,5 @@
 ---
 title: "GPUAdapterInfo"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUAdapterInfo"
-status: "needs-translation"
 ---
 
 ---
@@ -13,34 +11,34 @@ browser-compat: api.GPUAdapterInfo
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`GPUAdapterInfo`** interface of the {{domxref("WebGPU API", "WebGPU API", "", "nocode")}} contains identifying information about a {{domxref("GPUAdapter")}}.
+`GPUAdapterInfo` 接口属于 {{domxref("WebGPU API", "WebGPU API", "", "nocode")}}，包含关于 {{domxref("GPUAdapter")}} 的标识信息。
 
-An adapter's `GPUAdapterInfo` can be retrieved using the {{domxref("GPUAdapter.info")}} property of the adapter itself, or the {{domxref("GPUDevice.adapterInfo")}} property of a device that originated from the adapter.
+可以通过适配器自身的 {{domxref("GPUAdapter.info")}} 属性来获取适配器的 `GPUAdapterInfo`，也可以通过由该适配器创建的设备的 {{domxref("GPUDevice.adapterInfo")}} 属性来获取。
 
-This object allows developers to access specific details about the user's GPU so that they can preemptively apply workarounds for GPU-specific bugs, or provide different codepaths to better suit different GPU architectures. Providing such information does present a security risk — it could be used for fingerprinting — therefore the information shared is kept at a minimum, and different browser vendors are likely to share different information types and granularities.
+该对象允许开发者访问用户 GPU 的具体细节，以便他们能够预先针对 GPU 特有的错误采取规避措施，或提供不同的代码路径以更好地适应不同的 GPU 架构。提供此类信息确实存在安全风险——它可能被用于指纹识别——因此共享的信息被限制在最低限度，且不同的浏览器供应商可能会共享不同种类和粒度的信息。
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## 实例属性
 
 - {{domxref("GPUAdapterInfo.architecture", "architecture")}} {{ReadOnlyInline}}
-  - : The name of the family or class of GPUs the adapter belongs to. Returns an empty string if it is not available.
+  - : 适配器所属 GPU 家族或类别的名称。如果不可用，则返回空字符串。
 - {{domxref("GPUAdapterInfo.description", "description")}} {{ReadOnlyInline}}
-  - : A human-readable string describing the adapter. Returns an empty string if it is not available.
+  - : 描述适配器的人类可读字符串。如果不可用，则返回空字符串。
 - {{domxref("GPUAdapterInfo.device", "device")}} {{ReadOnlyInline}}
-  - : A vendor-specific identifier for the adapter. Returns an empty string if it is not available.
+  - : 适配器的供应商特定标识符。如果不可用，则返回空字符串。
 - {{domxref("GPUAdapterInfo.isFallbackAdapter", "isFallbackAdapter")}} {{ReadOnlyInline}}
-  - : A boolean value. Returns `true` if the adapter is a [fallback adapter](/en-US/docs/Web/API/GPU/requestAdapter#fallback_adapters), and `false` if not.
+  - : 一个布尔值。如果适配器是[آداپتور جایگزین (fallback adapter)](/en-US/docs/Web/API/GPU/requestAdapter#fallback_adapters)，则返回 `true`，否则返回 `false`。
 - {{domxref("GPUAdapterInfo.subgroupMaxSize", "subgroupMaxSize")}} {{ReadOnlyInline}}
-  - : The maximum supported [subgroup size](https://gpuweb.github.io/gpuweb/wgsl/#subgroup-size) for the {{domxref("GPUAdapter")}}.
+  - : 该 {{domxref("GPUAdapter")}} 支持的最大[اندازه زیرگروه (subgroup size)](https://gpuweb.github.io/gpuweb/wgsl/#subgroup-size)。
 - {{domxref("GPUAdapterInfo.subgroupMinSize", "subgroupMinSize")}} {{ReadOnlyInline}}
-  - : The minimum supported [subgroup size](https://gpuweb.github.io/gpuweb/wgsl/#subgroup-size) for the {{domxref("GPUAdapter")}}.
+  - : 该 {{domxref("GPUAdapter")}} 支持的最小[اندازه زیرگروه (subgroup size)](https://gpuweb.github.io/gpuweb/wgsl/#subgroup-size)。
 - {{domxref("GPUAdapterInfo.vendor", "vendor")}} {{ReadOnlyInline}}
-  - : The name of the adapter vendor. Returns an empty string if it is not available.
+  - : 适配器供应商的名称。如果不可用，则返回空字符串。
 
-## Examples
+## 示例
 
-### Access GPUAdapterInfo via GPUAdapter.info
+### 通过 GPUAdapter.info 访问 GPUAdapterInfo
 
 ```js
 const adapter = await navigator.gpu.requestAdapter();
@@ -53,7 +51,7 @@ console.log(adapterInfo.vendor);
 console.log(adapterInfo.architecture);
 ```
 
-### Access GPUAdapterInfo via GPUDevice.adapterInfo
+### 通过 GPUDevice.adapterInfo 访问 GPUAdapterInfo
 
 ```js
 const adapter = await navigator.gpu.requestAdapter();
@@ -74,15 +72,15 @@ function optimizeForGpuDevice(device) {
 optimizeForGpuDevice(myDevice);
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
 - {{domxref("GPUAdapter.info")}}
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
