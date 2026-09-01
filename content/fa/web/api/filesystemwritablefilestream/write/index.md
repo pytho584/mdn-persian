@@ -1,11 +1,5 @@
 ---
 title: "FileSystemWritableFileStream: write() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemWritableFileStream/write"
-status: "needs-translation"
----
-
----
-title: "FileSystemWritableFileStream: write() method"
 short-title: write()
 slug: Web/API/FileSystemWritableFileStream/write
 page-type: web-api-instance-method
@@ -14,10 +8,9 @@ browser-compat: api.FileSystemWritableFileStream.write
 
 {{securecontext_header}}{{APIRef("File System API")}}{{AvailableInWorkers}}
 
-The **`write()`** method of the {{domxref("FileSystemWritableFileStream")}} interface writes content into the file the method is called on, at the current file cursor offset.
+متد **`write()`** در interface {{domxref("FileSystemWritableFileStream")}} محتوایی را در فایلی که متد روی آن فراخوانی شده است، در آفست فعلی مکان‌نمای فایل می‌نویسد.
 
-No changes are written to the actual file on disk until the stream has been closed.
-Changes are typically written to a temporary file instead. This method can also be used to seek to a byte point within the stream and truncate to modify the total bytes the file contains.
+هیچ تغییری در فایل واقعی روی دیسک نوشته نمی‌شود تا زمانی که stream بسته شود. تغییرات معمولاً به‌جای آن در یک فایل موقت نوشته می‌شوند. این متد همچنین می‌تواند برای جابجایی به یک نقطه بایتی خاص در stream و برش (truncate) برای تغییر تعداد کل بایت‌های فایل استفاده شود.
 
 ## Syntax
 
@@ -28,36 +21,36 @@ write(data)
 ### Parameters
 
 - `data`
-  - : Can be one of the following:
-    - The file data to write, in the form of an {{jsxref("ArrayBuffer")}}, {{jsxref("TypedArray")}}, {{jsxref("DataView")}}, {{domxref('Blob')}}, or string.
-    - An object containing the following properties:
+  - : می‌تواند یکی از موارد زیر باشد:
+    - داده‌های فایل برای نوشتن، در قالب یک {{jsxref("ArrayBuffer")}}، {{jsxref("TypedArray")}}، {{jsxref("DataView")}}، {{domxref('Blob')}}، یا string.
+    - یک شیء شامل ویژگی‌های زیر:
       - `type`
-        - : A string that is one of `"write"`, `"seek"`, or `"truncate"`.
+        - : رشته‌ای که یکی از مقادیر `"write"`، `"seek"` یا `"truncate"` است.
       - `data`
-        - : The file data to write. Can be an {{jsxref("ArrayBuffer")}}, {{jsxref("TypedArray")}}, {{jsxref("DataView")}}, {{domxref('Blob')}}, or string. This property is required if `type` is set to `"write"`.
+        - : داده‌های فایل برای نوشتن. می‌تواند یک {{jsxref("ArrayBuffer")}}، {{jsxref("TypedArray")}}، {{jsxref("DataView")}}، {{domxref('Blob')}} یا string باشد. این ویژگی اگر `type` برابر با `"write"` باشد الزامی است.
       - `position`
-        - : The byte position the current file cursor should move to if type `"seek"` is used. Can also be set if `type` is `"write"`, in which case the write will start at the specified position.
+        - : موقعیت بایتی که مکان‌نمای فعلی فایل باید به آن منتقل شود اگر نوع `"seek"` استفاده شود. همچنین می‌تواند اگر `type` برابر با `"write"` باشد تنظیم شود، در این صورت نوشتن از موقعیت مشخص‌شده شروع می‌شود.
       - `size`
-        - : A number representing the number of bytes the stream should contain. This property is required if `type` is set to `"truncate"`.
+        - : عددی که نشان‌دهنده تعداد بایت‌هایی است که stream باید شامل شود. این ویژگی اگر `type` برابر با `"truncate"` باشد الزامی است.
 
 ### Return value
 
-A {{jsxref('Promise')}} that returns `undefined`.
+یک {{jsxref('Promise')}} که به `undefined` برمی‌گردد.
 
 ### Exceptions
 
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if {{domxref('PermissionStatus.state')}} is not `granted`.
+  - : اگر {{domxref('PermissionStatus.state')}} برابر با `granted` نباشد پرتاب می‌شود.
 - {{domxref("QuotaExceededError")}}
-  - : Thrown if the new size of the file is larger than the original size of the file, and exceeds the browser's [storage quota](/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria).
+  - : اگر اندازه جدید فایل بزرگ‌تر از اندازه اصلی فایل باشد و از [سهمیه ذخیره‌سازی](/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria) مرورگر فراتر رود، پرتاب می‌شود.
 - {{jsxref("TypeError")}}
-  - : Thrown if `data` is undefined, or if `position` or `size` aren't valid.
+  - : اگر `data` تعریف‌نشده باشد، یا اگر `position` یا `size` معتبر نباشند، پرتاب می‌شود.
 
 ## Examples
 
-The following asynchronous function opens the 'Save File' picker, which returns a {{domxref('FileSystemFileHandle')}} once a file is selected. From this, a writable stream is created using the {{domxref('FileSystemFileHandle.createWritable()')}} method.
+تابع ناهمگام زیر انتخاب‌گر «ذخیره فایل» را باز می‌کند که پس از انتخاب یک فایل، یک {{domxref('FileSystemFileHandle')}} برمی‌گرداند. از این طریق، یک stream قابل نوشتن با استفاده از متد {{domxref('FileSystemFileHandle.createWritable()')}} ایجاد می‌شود.
 
-A text string is then written to the stream, which is subsequently closed.
+سپس یک رشته متنی در stream نوشته می‌شود که متعاقباً بسته می‌شود.
 
 ```js
 async function saveFile() {
@@ -79,7 +72,7 @@ async function saveFile() {
 }
 ```
 
-The following examples show different options that can be passed into the `write()` method.
+مثال‌های زیر گزینه‌های مختلفی را نشان می‌دهند که می‌توانند به متد `write()` ارسال شوند.
 
 ```js
 // just pass in the data (no options)
