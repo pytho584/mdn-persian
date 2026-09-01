@@ -1,11 +1,5 @@
 ---
 title: "Document: createTreeWalker() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/createTreeWalker"
-status: "needs-translation"
----
-
----
-title: "Document: createTreeWalker() method"
 short-title: createTreeWalker()
 slug: Web/API/Document/createTreeWalker
 page-type: web-api-instance-method
@@ -14,7 +8,7 @@ browser-compat: api.Document.createTreeWalker
 
 {{ApiRef("Document")}}
 
-The **`Document.createTreeWalker()`** creator method returns a newly created {{domxref("TreeWalker")}} object.
+متد **`Document.createTreeWalker()`** یک شیء {{domxref("TreeWalker")}} تازه‌ساخته را بازمی‌گرداند.
 
 ## Syntax
 
@@ -24,48 +18,48 @@ createTreeWalker(root, whatToShow)
 createTreeWalker(root, whatToShow, filter)
 ```
 
-### Parameters
+### پارامترها
 
 - `root`
-  - : A {{domxref("Node")}} representing the root of the `TreeWalker` object, which is the initial value of {{domxref("TreeWalker.currentNode")}}.
+  - : یک {{domxref("Node")}} که ریشهٔ شیء `TreeWalker` را نشان می‌دهد و مقدار اولیهٔ {{domxref("TreeWalker.currentNode")}} است.
 
 - `whatToShow` {{optional_inline}}
-  - : An `unsigned long` representing a bitmask created by combining the constant properties of [`NodeFilter`](https://dom.spec.whatwg.org/#interface-nodefilter). It is a convenient way of filtering for certain types of node. It defaults to `0xFFFFFFFF`, representing the `NodeFilter.SHOW_ALL` constant.
+  - : یک `unsigned long` که یک bitmask را نشان می‌دهد و با ترکیب ثابت‌های [`NodeFilter`](https://dom.spec.whatwg.org/#interface-nodefilter) ساخته می‌شود. این یک روش مناسب برای فیلتر کردن نوع‌های خاصی از گره‌هاست. مقدار پیش‌فرض آن `0xFFFFFFFF` است که ثابت `NodeFilter.SHOW_ALL` را نشان می‌دهد.
 
-    | Constant                                                 | Numerical value | Description                                       |
-    | -------------------------------------------------------- | --------------- | ------------------------------------------------- |
-    | `NodeFilter.SHOW_ALL`                                    | `0xFFFFFFFF`    | Shows all nodes.                                  |
-    | `NodeFilter.SHOW_ATTRIBUTE`                              | `0x2`           | Shows {{domxref("Attr")}} nodes.                  |
-    | `NodeFilter.SHOW_CDATA_SECTION`                          | `0x8`           | Shows {{domxref("CDATASection")}} nodes.          |
-    | `NodeFilter.SHOW_COMMENT`                                | `0x80`          | Shows {{domxref("Comment")}} nodes.               |
-    | `NodeFilter.SHOW_DOCUMENT`                               | `0x100`         | Shows {{domxref("Document")}} nodes.              |
-    | `NodeFilter.SHOW_DOCUMENT_FRAGMENT`                      | `0x400`         | Shows {{domxref("DocumentFragment")}} nodes.      |
-    | `NodeFilter.SHOW_DOCUMENT_TYPE`                          | `0x200`         | Shows {{domxref("DocumentType")}} nodes.          |
-    | `NodeFilter.SHOW_ELEMENT`                                | `0x1`           | Shows {{domxref("Element")}} nodes.               |
-    | `NodeFilter.SHOW_ENTITY` {{deprecated_inline}}           | `0x20`          | Legacy, no longer effective.                      |
-    | `NodeFilter.SHOW_ENTITY_REFERENCE` {{deprecated_inline}} | `0x10`          | Legacy, no longer effective.                      |
-    | `NodeFilter.SHOW_NOTATION` {{deprecated_inline}}         | `0x800`         | Legacy, no longer effective.                      |
-    | `NodeFilter.SHOW_PROCESSING_INSTRUCTION`                 | `0x40`          | Shows {{domxref("ProcessingInstruction")}} nodes. |
-    | `NodeFilter.SHOW_TEXT`                                   | `0x4`           | Shows {{domxref("Text")}} nodes.                  |
+    | ثابت                                                     | مقدار عددی      | توضیحات                                         |
+    | -------------------------------------------------------- | --------------- | ----------------------------------------------- |
+    | `NodeFilter.SHOW_ALL`                                    | `0xFFFFFFFF`    | همهٔ گره‌ها را نشان می‌دهد.                     |
+    | `NodeFilter.SHOW_ATTRIBUTE`                              | `0x2`           | گره‌های {{domxref("Attr")}} را نشان می‌دهد.     |
+    | `NodeFilter.SHOW_CDATA_SECTION`                          | `0x8`           | گره‌های {{domxref("CDATASection")}} را نشان می‌دهد. |
+    | `NodeFilter.SHOW_COMMENT`                                | `0x80`          | گره‌های {{domxref("Comment")}} را نشان می‌دهد.  |
+    | `NodeFilter.SHOW_DOCUMENT`                               | `0x100`         | گره‌های {{domxref("Document")}} را نشان می‌دهد. |
+    | `NodeFilter.SHOW_DOCUMENT_FRAGMENT`                      | `0x400`         | گره‌های {{domxref("DocumentFragment")}} را نشان می‌دهد. |
+    | `NodeFilter.SHOW_DOCUMENT_TYPE`                          | `0x200`         | گره‌های {{domxref("DocumentType")}} را نشان می‌دهد. |
+    | `NodeFilter.SHOW_ELEMENT`                                | `0x1`           | گره‌های {{domxref("Element")}} را نشان می‌دهد.  |
+    | `NodeFilter.SHOW_ENTITY` {{deprecated_inline}}           | `0x20`          | قدیمی، دیگر مؤثر نیست.                          |
+    | `NodeFilter.SHOW_ENTITY_REFERENCE` {{deprecated_inline}} | `0x10`          | قدیمی، دیگر مؤثر نیست.                          |
+    | `NodeFilter.SHOW_NOTATION` {{deprecated_inline}}         | `0x800`         | قدیمی، دیگر مؤثر نیست.                          |
+    | `NodeFilter.SHOW_PROCESSING_INSTRUCTION`                 | `0x40`          | گره‌های {{domxref("ProcessingInstruction")}} را نشان می‌دهد. |
+    | `NodeFilter.SHOW_TEXT`                                   | `0x4`           | گره‌های {{domxref("Text")}} را نشان می‌دهد.     |
 
     > [!NOTE]
-    > The `NodeFilter.SHOW_ATTRIBUTE` constant is only effective when the root is an attribute node. Since the parent of any `Attr` node is always `null`, {{DOMXref("TreeWalker.nextNode()")}} and {{DOMXref("TreeWalker.previousNode()")}} will never return an `Attr` node. To traverse `Attr` nodes, use {{DOMXref("Element.attributes")}} instead.
+    > ثابت `NodeFilter.SHOW_ATTRIBUTE` تنها زمانی مؤثر است که ریشه یک گرهٔ ویژگی (attribute) باشد. از آنجا که والد هر گرهٔ `Attr` همیشه `null` است، {{DOMXref("TreeWalker.nextNode()")}} و {{DOMXref("TreeWalker.previousNode()")}} هرگز یک گرهٔ `Attr` را برنمی‌گردانند. برای پیمایش گره‌های `Attr`، از {{DOMXref("Element.attributes")}} استفاده کنید.
 
 - `filter` {{optional_inline}}
-  - : A callback function or an object with an `acceptNode()` method, which returns `NodeFilter.FILTER_ACCEPT`, `NodeFilter.FILTER_REJECT`, or `NodeFilter.FILTER_SKIP`. The function or method will be called for each node in the subtree based at `root` which is accepted as included by the `whatToShow` flag to determine whether or not to include it in the list of iterable nodes:
-    - If the return value is `NodeFilter.FILTER_ACCEPT`, this node is included.
-    - If the return value is `NodeFilter.FILTER_REJECT`, any node in the subtree based at this node is not included.
-    - If the return value is `NodeFilter.FILTER_SKIP`, this node is not included.
+  - : یک تابع callback یا یک شیء با متد `acceptNode()` که یکی از مقادیر `NodeFilter.FILTER_ACCEPT`، `NodeFilter.FILTER_REJECT` یا `NodeFilter.FILTER_SKIP` را برمی‌گرداند. این تابع یا متد برای هر گره در زیردرخت مبتنی بر `root` که توسط پرچم `whatToShow` پذیرفته شده باشد فراخوانی می‌شود تا مشخص شود که آیا آن گره در فهرست گره‌های قابل پیمایش قرار گیرد یا خیر:
+    - اگر مقدار بازگشتی `NodeFilter.FILTER_ACCEPT` باشد، این گره شامل می‌شود.
+    - اگر مقدار بازگشتی `NodeFilter.FILTER_REJECT` باشد، هیچ گره‌ای در زیردرخت مبتنی بر این گره شامل نمی‌شود.
+    - اگر مقدار بازگشتی `NodeFilter.FILTER_SKIP` باشد، این گره شامل نمی‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("TreeWalker")}} object.
+یک شیء جدید {{domxref("TreeWalker")}}.
 
-## Examples
+## مثال‌ها
 
-### Using whatToShow
+### استفاده از whatToShow
 
-This example uses `whatToShow` to transform text contents into upper case. Note that the text nodes of the descendants of the `#root` element are also traversed despite of the fact that they are not child nodes of the `#root` element.
+این مثال از `whatToShow` برای تبدیل محتوای متنی به حروف بزرگ استفاده می‌کند. توجه کنید که گره‌های متنی از فرزندان عنصر `#root` نیز پیمایش می‌شوند، با وجود اینکه آن‌ها گره‌های فرزند مستقیم عنصر `#root` نیستند.
 
 #### HTML
 
@@ -98,13 +92,13 @@ while (treeWalker.nextNode()) {
 }
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("using_whattoshow", "100%", 100)}}
 
-### Using filter
+### استفاده از filter
 
-This example uses `filter` to escape text contents. For any text node, its content will be escaped using {{JSXref("encodeURI()")}} if it is a descendant of an `.escape` element but not of any `.no-escape` element.
+این مثال از `filter` برای escaping محتوای متنی استفاده می‌کند. برای هر گرهٔ متنی، اگر آن گره از نوادگان یک عنصر `.escape` باشد اما از نوادگان هیچ عنصر `.no-escape` نباشد، محتوای آن با استفاده از {{JSXref("encodeURI()")}} escaping می‌شود.
 
 #### HTML
 
@@ -175,18 +169,18 @@ while (treeWalker.nextNode()) {
 }
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("using_filter", "100%", 400)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("TreeWalker")}}: Related interface
+- {{domxref("TreeWalker")}}: رابط مرتبط
