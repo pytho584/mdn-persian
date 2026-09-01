@@ -1,7 +1,5 @@
 ---
 title: "HTMLMediaElement: seeking property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/seeking"
-status: "needs-translation"
 ---
 
 ---
@@ -14,30 +12,30 @@ browser-compat: api.HTMLMediaElement.seeking
 
 {{APIRef("HTML DOM")}}
 
-The **`seeking`** read-only property of the {{domxref("HTMLMediaElement")}} interface is a Boolean indicating whether the resource, the {{htmlelement("audio")}} or {{htmlelement("video")}}, is in the process of seeking to a new position.
+ویژگی فقط‌خواندنی **`seeking`** از رابط {{domxref("HTMLMediaElement")}} یک مقدار بولین است که نشان می‌دهد آیا منبع، یعنی {{htmlelement("audio")}} یا {{htmlelement("video")}}، در حال جست‌وجو (seeking) به موقعیتی جدید است.
 
-## Value
+## مقدار
 
-A boolean value.
+یک مقدار بولین.
 
-## Examples
+## مثال‌ها
 
 ```js
 const el = document.querySelector("video");
 console.log(el.seeking); // true or false
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("HTMLMediaElement.seeking_event", "seeking")}} event
-- {{domxref("HTMLMediaElement.seeked_event", "seeked")}} event
+- رویداد {{domxref("HTMLMediaElement.seeking_event", "seeking")}}
+- رویداد {{domxref("HTMLMediaElement.seeked_event", "seeked")}}
 - {{domxref("HTMLVideoElement")}}
 - {{domxref("HTMLAudioElement")}}
