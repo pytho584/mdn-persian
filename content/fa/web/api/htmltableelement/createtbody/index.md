@@ -1,11 +1,5 @@
 ---
 title: "HTMLTableElement: createTBody() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/createTBody"
-status: "needs-translation"
----
-
----
-title: "HTMLTableElement: createTBody() method"
 short-title: createTBody()
 slug: Web/API/HTMLTableElement/createTBody
 page-type: web-api-instance-method
@@ -14,42 +8,36 @@ browser-compat: api.HTMLTableElement.createTBody
 
 {{APIRef("HTML DOM")}}
 
-The **`createTBody()`** method of
-{{domxref("HTMLTableElement")}} objects creates and returns a new
-{{HTMLElement("tbody")}} element associated with a given {{HtmlElement("table")}}.
+متد **`createTBody()`** از اشیاء {{domxref("HTMLTableElement")}} یک عنصر جدید {{HTMLElement("tbody")}} مرتبط با یک {{HtmlElement("table")}} مشخص ایجاد کرده و برمی‌گرداند.
 
 > [!NOTE]
-> Unlike {{domxref("HTMLTableElement.createTHead()")}} and
-> {{domxref("HTMLTableElement.createTFoot()")}}, `createTBody()`
-> systematically creates a new `<tbody>` element, even if the table
-> already contains one or more bodies. If so, the new one is inserted after the existing
-> ones.
+> برخلاف {{domxref("HTMLTableElement.createTHead()")}} و {{domxref("HTMLTableElement.createTFoot()")}}، `createTBody()` به طور سیستماتیک یک عنصر `<tbody>` جدید ایجاد می‌کند، حتی اگر جدول از قبل یک یا چند بدنه داشته باشد. در این صورت، عنصر جدید بعد از بدنه‌های موجود درج می‌شود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 createTBody()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
 {{domxref("HTMLTableSectionElement")}}
 
-## Examples
+## مثال‌ها
 
 ```js
 let myBody = myTable.createTBody();
 // Now this should be true: myBody === myTable.tBodies.item(myTable.tBodies.length - 1)
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
