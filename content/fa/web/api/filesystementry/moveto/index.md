@@ -1,11 +1,5 @@
 ---
 title: "FileSystemEntry: moveTo() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry/moveTo"
-status: "needs-translation"
----
-
----
-title: "FileSystemEntry: moveTo() method"
 short-title: moveTo()
 slug: Web/API/FileSystemEntry/moveTo
 page-type: web-api-instance-method
@@ -17,25 +11,17 @@ browser-compat: api.FileSystemEntry.moveTo
 
 {{APIRef("File and Directory Entries API")}}{{Deprecated_Header}}{{Non-standard_Header}}
 
-The {{domxref("FileSystemEntry")}} interface's method
-**`moveTo()`** moves the file
-specified by the entry to a new location on the file system, or renames the file if
-the destination directory is the same as the source.
+متد **`moveTo()`** در رابط {{domxref("FileSystemEntry")}} فایل مشخص‌شده توسط این ورودی را به مکان جدیدی در سیستم فایل منتقل می‌کند، یا اگر دایرکتوری مقصد با دایرکتوری مبدأ یکسان باشد، فایل را تغییر نام می‌دهد.
 
-There are some typical
-restrictions on what you can do:
+برخی محدودیت‌های معمول برای کاری که می‌توانید انجام دهید وجود دارد:
 
-- A directory can't be moved into itself.
-- An entry can't be moved into its parent directory unless you specify a new name.
-  Specifying a new name lets `moveTo()` double as a rename operation.
-- When moving a directory, the move is always recursive; you can't leave out
-  subfolders.
-- You can't move a file such that it replaces an existing directory, and you can't
-  move a directory such that it replaces an existing file. However, a file can replace a
-  file and a directory can replace a directory.
-- You can only overwrite a directory if it's empty.
+- یک دایرکتوری نمی‌تواند به درون خودش منتقل شود.
+- یک ورودی نمی‌تواند به دایرکتوری والد خود منتقل شود، مگر اینکه نام جدیدی را مشخص کنید. مشخص کردن نام جدید به `moveTo()` اجازه می‌دهد تا به‌عنوان یک عملیات تغییر نام نیز عمل کند.
+- هنگام انتقال یک دایرکتوری، انتقال همیشه به‌صورت بازگشتی انجام می‌شود؛ نمی‌توانید زیرشاخه‌ها را کنار بگذارید.
+- نمی‌توانید فایلی را طوری منتقل کنید که جایگزین یک دایرکتوری موجود شود، و همچنین نمی‌توانید دایرکتوری را طوری منتقل کنید که جایگزین یک فایل موجود شود. با این حال، یک فایل می‌تواند جایگزین یک فایل شود و یک دایرکتوری می‌تواند جایگزین یک دایرکتوری شود.
+- فقط زمانی می‌توانید یک دایرکتوری را بازنویسی کنید که خالی باشد.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 moveTo(newParent, newName)
@@ -43,40 +29,31 @@ moveTo(newParent, newName, successCallback)
 moveTo(newParent, newName, successCallback, errorCallback)
 ```
 
-### Parameters
+### پارامترها
 
 - `newParent`
-  - : A {{domxref("FileSystemDirectoryEntry")}} object specifying the destination
-    directory for the move operation.
+  - : یک شیء {{domxref("FileSystemDirectoryEntry")}} که دایرکتوری مقصد را برای عملیات انتقال مشخص می‌کند.
 - `newName` {{optional_inline}}
-  - : If this parameter is provided, the entry is renamed to have this string as its new
-    file or directory name.
+  - : اگر این پارامتر ارائه شود، ورودی تغییر نام می‌یابد تا این رشته به‌عنوان نام جدید فایل یا دایرکتوری آن استفاده شود.
 - `successCallback` {{optional_inline}}
-  - : A function which is called when the move operation is successfully completed.
-    Receives a single input parameter: a {{domxref("FileSystemEntry")}} based object
-    providing the moved item's new details.
+  - : تابعی که پس از تکمیل موفقیت‌آمیز عملیات انتقال فراخوانی می‌شود. این تابع یک پارامتر ورودی واحد دریافت می‌کند: یک شیء مبتنی بر {{domxref("FileSystemEntry")}} که جزئیات جدید آیتم منتقل‌شده را فراهم می‌کند.
 - `errorCallback` {{optional_inline}}
-  - : An optional callback which is executed if an error occurs while moving the items.
-    There's a single parameter: a {{domxref("DOMException")}} describing what went wrong.
+  - : یک callback اختیاری که در صورت بروز خطا هنگام انتقال آیتم‌ها اجرا می‌شود. این تابع یک پارامتر دارد: یک {{domxref("DOMException")}} که خطای رخ‌داده را توصیف می‌کند.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `DOMException.INVALID_MODIFICATION_ERR`
-  - : The requested operation involves an impossible change, such as moving a directory
-    inside itself or one of its own child directories, or copying an item within the same
-    directory without renaming it.
+  - : عملیات درخواستی شامل یک تغییر غیرممکن است، مانند انتقال یک دایرکتوری به درون خودش یا یکی از دایرکتوری‌های فرزند خودش، یا کپی کردن یک آیتم در همان دایرکتوری بدون تغییر نام آن.
 - `DOMException.QUOTA_EXCEEDED_ERR`
-  - : The operation exceeded the user's storage quota, or there isn't enough storage space
-    left to complete the operation.
+  - : عملیات از سهمیه ذخیره‌سازی کاربر فراتر رفته است، یا فضای ذخیره‌سازی کافی برای تکمیل عملیات باقی نمانده است.
 
-## Examples
+### مثال‌ها
 
-This example shows how a temporary log file might be moved into a more permanent "log"
-directory when it exceeds a megabyte in size.
+این مثال نشان می‌دهد که چگونه ممکن است یک فایل گزارش موقت، زمانی که اندازه‌اش از یک مگابایت فراتر می‌رود، به یک دایرکتوری دائمی‌تر به نام "log" منتقل شود.
 
 ```js
 workingDirectory.getFile(
@@ -100,11 +77,11 @@ workingDirectory.getFile(
 );
 ```
 
-## Browser compatibility
+### سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+### همچنین ببینید
 
 - [File and Directory Entries API](/en-US/docs/Web/API/File_and_Directory_Entries_API)
 - {{domxref("FileSystemEntry.copyTo()")}}
