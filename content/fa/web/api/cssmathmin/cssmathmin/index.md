@@ -1,11 +1,5 @@
 ---
 title: "CSSMathMin: CSSMathMin() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSMathMin/CSSMathMin"
-status: "needs-translation"
----
-
----
-title: "CSSMathMin: CSSMathMin() constructor"
 short-title: CSSMathMin()
 slug: Web/API/CSSMathMin/CSSMathMin
 page-type: web-api-constructor
@@ -16,9 +10,9 @@ browser-compat: api.CSSMathMin.CSSMathMin
 
 {{SeeCompatTable}}{{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`CSSMathMin()`** constructor creates a new {{domxref("CSSMathMin")}} object that represents the CSS {{CSSXref('min','min()')}} function.
+سازنده‌ی **`CSSMathMin()`** یک شیء جدید از نوع {{domxref("CSSMathMin")}} می‌سازد که تابع CSS {{CSSXref('min','min()')}} را نمایش می‌دهد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 new CSSMathMin(arg1)
@@ -26,23 +20,23 @@ new CSSMathMin(arg1, arg2)
 new CSSMathMin(arg1, arg2, /* …, */ argN)
 ```
 
-### Parameters
+### پارامترها
 
-- `arg1`, …, `argN`
-  - : A list of numbers or {{domxref("CSSNumericValue")}} objects.
+- `arg1`، …, `argN`
+  - : فهرستی از اعداد یا اشیاء {{domxref("CSSNumericValue")}}.
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `SyntaxError` {{domxref("DOMException")}}
-  - : Thrown if no arguments are passed.
+  - : اگر هیچ آرگومانی ارسال نشود، پرتاب می‌شود.
 - {{jsxref("TypeError")}}
-  - : Thrown if `arg1`, …, `argN` have incompatible types (for example, mixing a {{cssxref('length')}} with an {{cssxref('angle')}}), so a common type cannot be determined for comparison.
+  - : اگر نوع `arg1`، …, `argN` ناسازگار باشد (مثلاً ترکیب یک {{cssxref('length')}} با یک {{cssxref('angle')}})، طوری که نوع مشترکی برای مقایسه قابل تعیین نباشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده‌ی پایه
 
-The following code creates a `CSSMathMin` instance from three values, then reads back its `operator` and `values` properties.
+کد زیر یک نمونه `CSSMathMin` از سه مقدار می‌سازد و سپس ویژگی‌های `operator` و `values` آن را بازخوانی می‌کند.
 
 ```js
 const min = new CSSMathMin(CSS.px(10), CSS.em(5), CSS.percent(50));
@@ -53,14 +47,14 @@ console.log(min.values); // CSSNumericArray {0: CSSUnitValue, 1: CSSUnitValue, 2
 console.log(min.values[0]); // CSSUnitValue {value: 10, unit: "px"}
 ```
 
-### Handling incompatible types
+### مدیریت نوع‌های ناسازگار
 
-The constructor throws a `TypeError` if the values don't resolve to a compatible type.
-In the following code we mix a length with a time, and log the error.
+اگر مقادیر به یک نوع سازگار قابل تبدیل نباشند، سازنده یک `TypeError` پرتاب می‌کند.
+در کد زیر یک طول (length) را با یک زمان (time) ترکیب می‌کنیم و خطا را در خروجی ثبت می‌کنیم.
 
 ```js
 try {
-  // Mixes a length (px) with a time (s): incompatible types
+  // ترکیب یک طول (px) با یک زمان (s): نوع‌های ناسازگار
   new CSSMathMin(CSS.px(10), CSS.s(2));
 } catch (e) {
   console.log(e instanceof TypeError); // true
@@ -68,9 +62,9 @@ try {
 }
 ```
 
-### Empty arguments
+### آرگومان‌های خالی
 
-The constructor throws a `SyntaxError` if called with no arguments.
+اگر سازنده بدون هیچ آرگومانی فراخوانی شود، یک `SyntaxError` پرتاب می‌کند.
 
 ```js
 try {
@@ -81,10 +75,10 @@ try {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
