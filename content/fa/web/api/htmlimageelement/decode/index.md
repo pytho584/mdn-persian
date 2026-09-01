@@ -1,11 +1,5 @@
 ---
 title: "HTMLImageElement: decode() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/decode"
-status: "needs-translation"
----
-
----
-title: "HTMLImageElement: decode() method"
 short-title: decode()
 slug: Web/API/HTMLImageElement/decode
 page-type: web-api-instance-method
@@ -14,38 +8,37 @@ browser-compat: api.HTMLImageElement.decode
 
 {{APIRef("HTML DOM")}}
 
-The **`decode()`** method of the {{domxref("HTMLImageElement")}} interface returns a {{jsxref("Promise")}} that resolves once the image is decoded and is safe to be appended to the DOM.
+متد **`decode()`** از رابط {{domxref("HTMLImageElement")}} یک {{jsxref("Promise")}} برمی‌گرداند که پس از رمزگشایی تصویر و آماده بودن آن برای افزودن به DOM، حل می‌شود.
 
-This can be used to initiate loading of the image prior to attaching it to an element in the DOM (or adding it to the DOM as a new element), so that the image can be rendered immediately upon being added to the DOM. This, in turn, prevents the rendering of the next frame after adding the image to the DOM from causing a delay while the image loads.
+از این متد می‌توان برای شروع بارگذاری تصویر قبل از الصاق آن به یک عنصر در DOM (یا افزودن آن به عنوان یک عنصر جدید به DOM) استفاده کرد، به طوری که تصویر بلافاصله پس از افزوده شدن به DOM قابل رندر شدن باشد. این کار به نوبه خود از تأخیر در رندر فریم بعدی پس از افزودن تصویر به DOM که در اثر بارگذاری تصویر رخ می‌دهد، جلوگیری می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 decode()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref('Promise')}} that fulfills with `undefined` once the image data is ready to be used.
+یک {{jsxref('Promise')}} که پس از آماده شدن داده‌های تصویر برای استفاده، با مقدار `undefined` fulfillment می‌شود.
 
-### Exceptions
+### استثناها
 
 - `EncodingError` {{domxref("DOMException")}}
-  - : An error occurred while decoding the image. This can happen if:
-    - The request failed
-    - The image request changed after calling `decode()` (for example, by changing its `src`)
-    - The image's data is corrupted
+  - : در حین رمزگشایی تصویر خطایی رخ داده است. این اتفاق می‌تواند در موارد زیر رخ دهد:
+    - درخواست با شکست مواجه شود
+    - درخواست تصویر پس از فراخوانی `decode()` تغییر کند (مثلاً با تغییر `src` آن)
+    - داده‌های تصویر خراب باشند
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
-The following example shows how to use the `decode()` method to control when
-an image is appended to the DOM.
+مثال زیر نحوه استفاده از متد `decode()` را برای کنترل زمان افزودن تصویر به DOM نشان می‌دهد.
 
 ```js
 const img = new Image();
@@ -56,16 +49,16 @@ img
     document.body.appendChild(img);
   })
   .catch((encodingError) => {
-    // Do something with the error.
+    // با خطا کاری انجام دهید.
   });
 ```
 
 > [!NOTE]
-> Without a {{jsxref('Promise')}}-returning method, you would add the image to the DOM in a {{domxref("Window/load_event", "load")}} event handler, and handle the error in the {{domxref("HTMLElement/error_event", "error")}} event's handler.
+> بدون یک متد بازگرداننده {{jsxref('Promise')}}، شما تصویر را در یک مدیریت‌کننده رویداد {{domxref("Window/load_event", "load")}} به DOM اضافه می‌کردید و خطا را در مدیریت‌کننده رویداد {{domxref("HTMLElement/error_event", "error")}} مدیریت می‌کردید.
 
-### Avoiding empty images
+### جلوگیری از تصاویر خالی
 
-In the below example, you'll likely get an empty image shown on the page as the image is downloaded:
+در مثال زیر، احتمالاً یک تصویر خالی در صفحه نمایش داده می‌شود زیرا تصویر در حال دانلود است:
 
 ```js
 const img = new Image();
@@ -73,7 +66,7 @@ img.src = "img/logo.png";
 document.body.appendChild(img);
 ```
 
-Using `decode()` will delay inserting the image into the DOM until it is fully downloaded and decoded, thereby avoiding the empty image problem:
+استفاده از `decode()` باعث می‌شود که درج تصویر در DOM تا زمانی که کاملاً دانلود و رمزگشایی نشده، به تأخیر بیفتد و در نتیجه از مشکل تصویر خالی جلوگیری شود:
 
 ```js
 async function getImage() {
@@ -82,22 +75,22 @@ async function getImage() {
   await img.decode();
   document.body.appendChild(img);
   const p = document.createElement("p");
-  p.textContent = "Image is fully loaded!";
+  p.textContent = "تصویر کاملاً بارگذاری شد!";
   document.body.appendChild(p);
 }
 ```
 
-This is particularly useful if you're dynamically swapping an existing image for a new one, and also prevents unrelated paints outside of this code from being held up while the image is decoding. For example, in an online photo album, you can present a low resolution thumbnail image initially and then replace that image with the full-resolution image by instantiating a new {{domxref("HTMLImageElement")}}, setting its source to the full-resolution image's URL, then using `decode()` to get a promise which is resolved once the full-resolution image is ready for use. At that time, you can then replace the low-resolution image with the full-resolution one that's now available.
+این کار به ویژه زمانی مفید است که به صورت پویا یک تصویر موجود را با یک تصویر جدید جایگزین می‌کنید، و همچنین از نگه داشته شدن paint‌های نامرتبط خارج از این کد در حین رمزگشایی تصویر جلوگیری می‌کند. به عنوان مثال، در یک آلبوم عکس آنلاین، می‌توانید ابتدا یک تصویر بندانگشتی با وضوح پایین نمایش دهید و سپس آن تصویر را با تصویر با وضوح کامل جایگزین کنید، با نمونه‌سازی یک {{domxref("HTMLImageElement")}} جدید، تنظیم منبع آن بر روی URL تصویر با وضوح کامل، و سپس استفاده از `decode()` برای دریافت یک promise که پس از آماده شدن تصویر با وضوح کامل برای استفاده، حل می‌شود. در آن زمان، می‌توانید تصویر با وضوح پایین را با تصویر با وضوح کامل که اکنون در دسترس است جایگزین کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [What does the image decoding attribute actually do?](https://www.tunetheweb.com/blog/what-does-the-image-decoding-attribute-actually-do/) on tunetheweb.com (2023)
-- The {{domxref("HTMLImageElement.decoding")}} property
+- [ویژگی decoding تصویر واقعاً چه کاری انجام می‌دهد؟](https://www.tunetheweb.com/blog/what-does-the-image-decoding-attribute-actually-do/) در tunetheweb.com (2023)
+- ویژگی {{domxref("HTMLImageElement.decoding")}}
