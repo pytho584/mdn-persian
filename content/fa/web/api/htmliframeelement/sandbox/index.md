@@ -1,11 +1,5 @@
 ---
 title: "HTMLIFrameElement: sandbox property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/sandbox"
-status: "needs-translation"
----
-
----
-title: "HTMLIFrameElement: sandbox property"
 short-title: sandbox
 slug: Web/API/HTMLIFrameElement/sandbox
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.HTMLIFrameElement.sandbox
 
 {{APIRef("HTML DOM")}}
 
-The read-only **`sandbox`** property of the {{domxref("HTMLIFrameElement")}} returns a live {{domxref("DOMTokenList")}} object indicating extra restrictions on the behavior of the nested content. It reflects the {{HTMLElement("iframe")}} element's [`sandbox`](/en-US/docs/Web/HTML/Reference/Elements/iframe#sandbox) content attribute.
+ویژگی فقط‌خواندنی **`sandbox`** در {{domxref("HTMLIFrameElement")}} یک شیء زندهٔ {{domxref("DOMTokenList")}} برمی‌گرداند که محدودیت‌های اضافی اعمال‌شده بر رفتار محتوای تودرتو را نشان می‌دهد. این ویژگی، صفت محتوایی [`sandbox`](/en-US/docs/Web/HTML/Reference/Elements/iframe#sandbox) عنصر {{HTMLElement("iframe")}} را بازتاب می‌دهد.
 
-## Value
+## مقدار
 
-A live {{domxref("DOMTokenList")}} object.
+یک شیء زندهٔ {{domxref("DOMTokenList")}}.
 
-Although the `sandbox` property itself is read-only in the sense that you can't replace the `DOMTokenList` object, you can still assign to the `sandbox` property directly, which is equivalent to assigning to its {{domxref("DOMTokenList/value", "value")}} property. You can also modify the `DOMTokenList` object using the {{domxref("DOMTokenList/add", "add()")}}, {{domxref("DOMTokenList/remove", "remove()")}}, {{domxref("DOMTokenList/replace", "replace()")}}, and {{domxref("DOMTokenList/toggle", "toggle()")}} methods.
+اگرچه خودِ ویژگی `sandbox` به این معنا فقط‌خواندنی است که نمی‌توانید شیء `DOMTokenList` را جایگزین کنید، اما همچنان می‌توانید مستقیماً به ویژگی `sandbox` مقداردهی کنید که معادل مقداردهی به ویژگی {{domxref("DOMTokenList/value", "value")}} آن است. همچنین می‌توانید شیء `DOMTokenList` را با روش‌های {{domxref("DOMTokenList/add", "add()")}}، {{domxref("DOMTokenList/remove", "remove()")}}، {{domxref("DOMTokenList/replace", "replace()")}} و {{domxref("DOMTokenList/toggle", "toggle()")}} تغییر دهید.
 
-## Examples
+## مثال‌ها
 
 ```html
 <iframe
@@ -34,16 +28,16 @@ Although the `sandbox` property itself is read-only in the sense that you can't 
 
 ```js
 const el = document.getElementById("el");
-console.log(Array.from(el.sandbox)); // Output: ["allow-same-origin", "allow-scripts"]
+console.log(Array.from(el.sandbox)); // خروجی: ["allow-same-origin", "allow-scripts"]
 
 el.sandbox = "";
-console.log(Array.from(el.sandbox)); // Output: []
+console.log(Array.from(el.sandbox)); // خروجی: []
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
