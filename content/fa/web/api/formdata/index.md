@@ -1,10 +1,4 @@
 ---
-title: "FormData"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FormData"
-status: "needs-translation"
----
-
----
 title: FormData
 slug: Web/API/FormData
 page-type: web-api-interface
@@ -13,47 +7,47 @@ browser-compat: api.FormData
 
 {{APIRef("XMLHttpRequest API")}} {{AvailableInWorkers}}
 
-The **`FormData`** interface provides a way to construct a set of key/value pairs representing form fields and their values, which can be sent using the {{domxref("Window/fetch", "fetch()")}}, {{domxref("XMLHttpRequest.send()")}} or {{domxref("navigator.sendBeacon()")}} methods. It uses the same format a form would use if the encoding type were set to `"multipart/form-data"`.
+رابط **`FormData`** روشی برای ساخت مجموعه‌ای از جفت‌های کلید/مقدار فراهم می‌کند که نشان‌دهنده فیلدهای فرم و مقادیر آن‌ها هستند و می‌توان آن‌ها را با استفاده از روش‌های {{domxref("Window/fetch", "fetch()")}}، {{domxref("XMLHttpRequest.send()")}} یا {{domxref("navigator.sendBeacon()")}} ارسال کرد. این رابط از همان قالبی استفاده می‌کند که یک فرم در صورت تنظیم نوع رمزگذاری بر روی `"multipart/form-data"` استفاده می‌کرد.
 
-You can also pass it directly to the {{domxref("URLSearchParams")}} constructor if you want to generate query parameters in the way a {{HTMLElement("form")}} would do if it were using simple `GET` submission.
+همچنین می‌توانید آن را مستقیماً به سازنده {{domxref("URLSearchParams")}} ارسال کنید، اگر بخواهید پارامترهای query را به همان شکلی تولید کنید که یک {{HTMLElement("form")}} در صورت استفاده از ارسال ساده `GET` تولید می‌کرد.
 
-An object implementing `FormData` can directly be used in a {{jsxref("Statements/for...of", "for...of")}} structure, instead of {{domxref('FormData.entries()', 'entries()')}}: `for (const p of myFormData)` is equivalent to `for (const p of myFormData.entries())`.
+یک شیء پیاده‌ساز `FormData` می‌تواند مستقیماً در ساختار {{jsxref("Statements/for...of", "for...of")}} به جای {{domxref('FormData.entries()', 'entries()')}} استفاده شود: `for (const p of myFormData)` معادل `for (const p of myFormData.entries())` است.
 
-## Constructor
+## سازنده
 
 - {{domxref("FormData.FormData","FormData()")}}
-  - : Creates a new `FormData` object.
+  - : یک شیء `FormData` جدید ایجاد می‌کند.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("FormData.append()")}}
-  - : Appends a new value onto an existing key inside a `FormData` object, or adds the key if it does not already exist.
+  - : یک مقدار جدید به یک کلید موجود در شیء `FormData` اضافه می‌کند، یا اگر کلید وجود نداشته باشد آن را اضافه می‌کند.
 - {{domxref("FormData.delete()")}}
-  - : Deletes a key/value pair from a `FormData` object.
+  - : یک جفت کلید/مقدار را از یک شیء `FormData` حذف می‌کند.
 - {{domxref("FormData.entries()")}}
-  - : Returns an [iterator](/en-US/docs/Web/JavaScript/Reference/Iteration_protocols) that iterates through all key/value pairs contained in the `FormData`.
+  - : یک [تکرارگر](/en-US/docs/Web/JavaScript/Reference/Iteration_protocols) برمی‌گرداند که از میان همه جفت‌های کلید/مقدار موجود در `FormData` عبور می‌کند.
 - {{domxref("FormData.get()")}}
-  - : Returns the first value associated with a given key from within a `FormData` object.
+  - : اولین مقدار مرتبط با یک کلید معین را از درون یک شیء `FormData` برمی‌گرداند.
 - {{domxref("FormData.getAll()")}}
-  - : Returns an array of all the values associated with a given key from within a `FormData`.
+  - : آرایه‌ای از همه مقادیر مرتبط با یک کلید معین را از درون یک `FormData` برمی‌گرداند.
 - {{domxref("FormData.has()")}}
-  - : Returns whether a `FormData` object contains a certain key.
+  - : بررسی می‌کند که آیا یک شیء `FormData` حاوی کلید خاصی است یا خیر.
 - {{domxref("FormData.keys()")}}
-  - : Returns an [iterator](/en-US/docs/Web/JavaScript/Reference/Iteration_protocols) iterates through all keys of the key/value pairs contained in the `FormData`.
+  - : یک [تکرارگر](/en-US/docs/Web/JavaScript/Reference/Iteration_protocols) برمی‌گرداند که از میان همه کلیدهای جفت‌های کلید/مقدار موجود در `FormData` عبور می‌کند.
 - {{domxref("FormData.set()")}}
-  - : Sets a new value for an existing key inside a `FormData` object, or adds the key/value if it does not already exist.
+  - : یک مقدار جدید برای یک کلید موجود در شیء `FormData` تنظیم می‌کند، یا اگر کلید/مقدار وجود نداشته باشد آن را اضافه می‌کند.
 - {{domxref("FormData.values()")}}
-  - : Returns an [iterator](/en-US/docs/Web/JavaScript/Reference/Iteration_protocols) that iterates through all values contained in the `FormData`.
+  - : یک [تکرارگر](/en-US/docs/Web/JavaScript/Reference/Iteration_protocols) برمی‌گرداند که از میان همه مقادیر موجود در `FormData` عبور می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using FormData objects](/en-US/docs/Web/API/XMLHttpRequest_API/Using_FormData_Objects)
+- [استفاده از اشیاء FormData](/en-US/docs/Web/API/XMLHttpRequest_API/Using_FormData_Objects)
 - {{HTMLElement("Form")}}
