@@ -1,7 +1,5 @@
 ---
 title: "ElementInternals: shadowRoot property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/shadowRoot"
-status: "needs-translation"
 ---
 
 ---
@@ -14,15 +12,15 @@ browser-compat: api.ElementInternals.shadowRoot
 
 {{APIRef("Web Components")}}
 
-The **`shadowRoot`** read-only property of the {{domxref("ElementInternals")}} interface returns the {{domxref("ShadowRoot")}} for this element.
+ویژگی فقط‌خواندنی **`shadowRoot`** در رابط {{domxref("ElementInternals")}}، {{domxref("ShadowRoot")}} مربوط به این عنصر را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A {{domxref("ShadowRoot")}} if the element has a shadow root, otherwise `null`.
+در صورتی که عنصر دارای shadow root باشد، یک {{domxref("ShadowRoot")}} برمی‌گرداند؛ در غیر این صورت `null` برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-The following example prints the value of `shadowRoot` to the console, immediately after calling {{domxref("HTMLElement.attachInternals()")}}. At this point the value is `null`. After calling {{domxref("Element.attachShadow()")}} the element has a Shadow Root, and `shadowRoot` returns the object representing it.
+در مثال زیر، مقدار `shadowRoot` بلافاصله پس از فراخوانی {{domxref("HTMLElement.attachInternals()")}} در کنسول چاپ می‌شود. در این لحظه مقدار آن `null` است. پس از فراخوانی {{domxref("Element.attachShadow()")}}، عنصر دارای Shadow Root می‌شود و `shadowRoot` آبجکتِ متناظر با آن را بازمی‌گرداند.
 
 ```js
 class MyCustomElement extends HTMLElement {
@@ -39,10 +37,10 @@ class MyCustomElement extends HTMLElement {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
