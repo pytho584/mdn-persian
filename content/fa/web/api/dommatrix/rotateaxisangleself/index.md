@@ -1,11 +1,5 @@
 ---
 title: "DOMMatrix: rotateAxisAngleSelf() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/rotateAxisAngleSelf"
-status: "needs-translation"
----
-
----
-title: "DOMMatrix: rotateAxisAngleSelf() method"
 short-title: rotateAxisAngleSelf()
 slug: Web/API/DOMMatrix/rotateAxisAngleSelf
 page-type: web-api-instance-method
@@ -14,9 +8,9 @@ browser-compat: api.DOMMatrix.rotateAxisAngleSelf
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The `rotateAxisAngleSelf()` method of the {{domxref("DOMMatrix")}} interface is a transformation method that rotates the source matrix by the given vector and angle, returning the altered matrix.
+متد `rotateAxisAngleSelf()` از رابط {{domxref("DOMMatrix")}} یک متد تبدیل است که ماتریس مبدأ را با بردار و زاویه داده‌شده می‌چرخاند و ماتریس تغییر یافته را برمی‌گرداند.
 
-To rotate a matrix without mutating it, see {{domxref("DOMMatrixReadOnly.rotateAxisAngle()")}}, which creates a new rotated matrix while leaving the original unchanged.
+برای چرخاندن یک ماتریس بدون تغییر آن، به {{domxref("DOMMatrixReadOnly.rotateAxisAngle()")}} مراجعه کنید که یک ماتریس چرخیده جدید ایجاد می‌کند و ماتریس اصلی را بدون تغییر باقی می‌گذارد.
 
 ## Syntax
 
@@ -31,19 +25,19 @@ rotateAxisAngleSelf(rotX, rotY, rotZ, angle)
 ### Parameters
 
 - `rotX`
-  - : A number; the x-coordinate of the vector denoting the axis of rotation. If non-zero, {{domxref("DOMMatrixReadOnly.is2D", "is2D")}} is false.
+  - : یک عدد؛ مختصات x بردار مشخص‌کننده محور چرخش. اگر غیرصفر باشد، {{domxref("DOMMatrixReadOnly.is2D", "is2D")}} `false` است.
 - `rotY` {{optional_inline}}
-  - : A number; the y-coordinate of the vector denoting the axis of rotation. If undefined, the `rotX` value is used. If non-zero, {{domxref("DOMMatrixReadOnly.is2D", "is2D")}} is false.
+  - : یک عدد؛ مختصات y بردار مشخص‌کننده محور چرخش. اگر تعریف نشده باشد، مقدار `rotX` استفاده می‌شود. اگر غیرصفر باشد، {{domxref("DOMMatrixReadOnly.is2D", "is2D")}} `false` است.
 - `rotZ` {{optional_inline}}
-  - : A number; the z-coordinate of the vector denoting the axis of rotation. If undefined, the `rotX` value is used.
+  - : یک عدد؛ مختصات z بردار مشخص‌کننده محور چرخش. اگر تعریف نشده باشد، مقدار `rotX` استفاده می‌شود.
 - `angle` {{optional_inline}}
-  - : A number; the angle of the rotation around the axis vector, in degrees.
+  - : یک عدد؛ زاویه چرخش حول بردار محور، بر حسب درجه.
 
-If `rotY` and `rotZ` are both missing, `rotZ` is set to the value of `rotX`, and both `rotX` and `rotY` are `0`.
+اگر هر دو `rotY` و `rotZ` وجود نداشته باشند، `rotZ` به مقدار `rotX` تنظیم می‌شود و هر دو `rotX` و `rotY` برابر `0` می‌وند.
 
 ### Return value
 
-A [`DOMMatrix`](/en-US/docs/Web/API/DOMMatrix).
+یک [`DOMMatrix`](/en-US/docs/Web/API/DOMMatrix).
 
 ## Examples
 
@@ -76,8 +70,8 @@ console.log(matrix.toString());
 - {{domxref("DOMMatrixReadOnly.rotateAxisAngle()")}}
 - {{domxref("DOMMatrix.rotateSelf()")}}
 - {{domxref("DOMMatrix.rotateFromVectorSelf()")}}
-- CSS {{cssxref("transform")}} property and {{cssxref("transform-function/rotate3d", "rotate3d()")}} function
-- CSS {{cssxref("rotate")}} property
-- [CSS transforms](/en-US/docs/Web/CSS/Guides/Transforms) module
-- SVG [`transform`](/en-US/docs/Web/SVG/Reference/Attribute/transform) attribute
-- {{domxref("CanvasRenderingContext2D")}} interface and {{domxref("CanvasRenderingContext2D.rotate()", "rotate()")}} method
+- ویژگی {{cssxref("transform")}} در CSS و تابع {{cssxref("transform-function/rotate3d", "rotate3d()")}}
+- ویژگی {{cssxref("rotate")}} در CSS
+- ماژول [CSS transforms](/en-US/docs/Web/CSS/Guides/Transforms)
+- ویژگی SVG [`transform`](/en-US/docs/Web/SVG/Reference/Attribute/transform)
+- رابط {{domxref("CanvasRenderingContext2D")}} و متد {{domxref("CanvasRenderingContext2D.rotate()", "rotate()")}}
