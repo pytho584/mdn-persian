@@ -1,11 +1,5 @@
 ---
 title: "HTMLFormElement: enctype property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/enctype"
-status: "needs-translation"
----
-
----
-title: "HTMLFormElement: enctype property"
 short-title: enctype
 slug: Web/API/HTMLFormElement/enctype
 page-type: web-api-instance-property
@@ -14,31 +8,28 @@ browser-compat: api.HTMLFormElement.enctype
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLFormElement.enctype`** property is the {{Glossary("MIME_type", "MIME type")}} of content that is used
-to submit the form to the server. Possible values are:
+ویژگی **`HTMLFormElement.enctype`**، نوع {{Glossary("MIME_type", "MIME")}} محتوایی است که برای ارسال فرم به سرور استفاده می‌شود. مقادیر ممکن عبارتند از:
 
-- `application/x-www-form-urlencoded`: The initial default type.
-- `multipart/form-data`: The type that allows file {{HTMLElement("input")}}
-  element(s) to upload file data.
-- `text/plain`: Ambiguous format, human-readable content not reliably interpretable by computer.
+- `application/x-www-form-urlencoded`: نوع پیش‌فرض اولیه.
+- `multipart/form-data`: نوعی که به عنصر(های) {{HTMLElement("input")}} اجازه می‌دهد داده فایل را بارگذاری کنند.
+- `text/plain`: قالب مبهم؛ محتوای قابل خواندن برای انسان که توسط رایانه به‌طور قابل اطمینان تفسیر نمی‌شود.
 
-This value can be overridden by a [`formenctype`](/en-US/docs/Web/HTML/Reference/Elements/button#formenctype) attribute
-on a {{HTMLElement("button")}} or {{HTMLElement("input")}} element.
+این مقدار می‌تواند توسط ویژگی [`formenctype`](/en-US/docs/Web/HTML/Reference/Elements/button#formenctype) روی یک عنصر {{HTMLElement("button")}} یا {{HTMLElement("input")}} بازنویسی شود.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```js
 form.enctype = "application/x-www-form-urlencoded";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
