@@ -1,11 +1,5 @@
 ---
 title: "Element: scrollIntoViewIfNeeded() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoViewIfNeeded"
-status: "needs-translation"
----
-
----
-title: "Element: scrollIntoViewIfNeeded() method"
 short-title: scrollIntoViewIfNeeded()
 slug: Web/API/Element/scrollIntoViewIfNeeded
 page-type: web-api-instance-method
@@ -16,27 +10,27 @@ browser-compat: api.Element.scrollIntoViewIfNeeded
 
 {{APIRef("DOM")}}{{Non-standard_header}}
 
-The **`Element.scrollIntoViewIfNeeded()`** method scrolls the current element into the visible area of the browser window if it's not already within the visible area of the browser window. If the element is already within the visible area of the browser window, then no scrolling takes place. This method is a proprietary variation of the standard [`Element.scrollIntoView()`](/en-US/docs/Web/API/Element/scrollIntoView) method.
+روش **`Element.scrollIntoViewIfNeeded()`** عنصر جاری را به ناحیهٔ قابل مشاهدهٔ پنجرهٔ مرورگر اسکرول می‌کند اگر قبلاً در آن ناحیه نباشد. اگر عنصر از قبل در ناحیهٔ قابل مشاهده باشد، هیچ اسکرولی انجام نمی‌شود. این روش یک نوع اختصاصی از روش استاندارد [`Element.scrollIntoView()`](/en-US/docs/Web/API/Element/scrollIntoView) است.
 
-## Syntax
+## نحو
 
 ```js-nolint
 scrollIntoViewIfNeeded()
 scrollIntoViewIfNeeded(centerIfNeeded)
 ```
 
-### Parameters
+### پارامترها
 
 - `centerIfNeeded` {{optional_inline}}
-  - : An optional boolean value with a default of `true`:
-    - If `true`, the element will be aligned so it is centered within the visible area of the scrollable ancestor.
-    - If `false`, the element will be aligned to the nearest edge of the visible area of the scrollable ancestor. Depending on which edge of the visible area is closest to the element, either the top of the element will be aligned to the top edge of the visible area, or the bottom edge of the element will be aligned to the bottom edge of the visible area.
+  - : یک مقدار بولی اختیاری با پیش‌فرض `true`:
+    - اگر `true` باشد، عنصر به گونه‌ای تراز می‌شود که در مرکز ناحیهٔ قابل مشاهدهٔ جد اسکرول‌پذیر قرار گیرد.
+    - اگر `false` باشد، عنصر به نزدیک‌ترین لبهٔ ناحیهٔ قابل مشاهدهٔ جد اسکرول‌پذیر تراز می‌شود. بسته به اینکه کدام لبهٔ ناحیهٔ قابل مشاهده به عنصر نزدیک‌تر است، یا بالای عنصر با لبهٔ بالایی ناحیهٔ قابل مشاهده تراز می‌شود، یا لبهٔ پایینی عنصر با لبهٔ پایینی ناحیهٔ قابل مشاهده تراز می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
 ```js
 const element = document.getElementById("my-el");
@@ -45,14 +39,14 @@ element.scrollIntoViewIfNeeded(); // Centers the element in the visible area
 element.scrollIntoViewIfNeeded(false); // Aligns the element to the nearest edge in the visible area
 ```
 
-## Specifications
+## مشخصات
 
-Not part of any specification. This is a proprietary, WebKit-specific method.
+بخشی از هیچ مشخصه‌ای نیست. این یک روش اختصاصی و مخصوص WebKit است.
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [W3C CSSOM bug 17152: Support centering an element when scrolling into view.](https://www.w3.org/Bugs/Public/show_bug.cgi?id=17152) (feature request for a standardized equivalent to `scrollIntoViewIfNeeded`)
+- [اشکال W3C CSSOM شماره 17152: پشتیبانی از مرکز کردن یک عنصر هنگام اسکرول به درون نما](https://www.w3.org/Bugs/Public/show_bug.cgi?id=17152) (درخواست ویژگی برای یک معادل استاندارد شده برای `scrollIntoViewIfNeeded`)
