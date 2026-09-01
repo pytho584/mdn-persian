@@ -1,11 +1,5 @@
 ---
 title: "HTMLSelectElement: reportValidity() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/reportValidity"
-status: "needs-translation"
----
-
----
-title: "HTMLSelectElement: reportValidity() method"
 short-title: reportValidity()
 slug: Web/API/HTMLSelectElement/reportValidity
 page-type: web-api-instance-method
@@ -14,35 +8,35 @@ browser-compat: api.HTMLSelectElement.reportValidity
 
 {{APIRef("HTML DOM")}}
 
-The **`reportValidity()`** method of the {{domxref("HTMLSelectElement")}} interface performs the same validity checking steps as the {{domxref("HTMLSelectElement.checkValidity", "checkValidity()")}} method. In addition, if the {{domxref("HTMLElement/invalid_event", "invalid")}} event is not canceled, the browser displays the problem to the user.
+متد **`reportValidity()`** از رابط {{domxref("HTMLSelectElement")}} همان مراحل بررسی اعتبار را انجام می‌دهد که متد {{domxref("HTMLSelectElement.checkValidity", "checkValidity()")}} انجام می‌دهد. علاوه بر این، اگر رویداد {{domxref("HTMLElement/invalid_event", "invalid")}} لغو نشود، مرورگر مشکل را به کاربر نمایش می‌دهد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 reportValidity()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-Returns `true` if the element's value has no validity problems; otherwise, returns `false`.
+اگر مقدار عنصر هیچ مشکل اعتباری نداشته باشد، `true` و در غیر این صورت `false` برمی‌گرداند.
 
-## Specifications
+## مشخصات (Specifications)
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر (Browser compatibility)
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLSelectElement.checkValidity()")}}
 - {{HTMLElement("select")}}
 - {{HTMLElement("form")}}
-- [Learn: Client-side form validation](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
-- [Guide: Constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation)
-- CSS {{cssxref(":valid")}} and {{cssxref(":invalid")}} pseudo-classes
+- [یادگیری: اعتبارسنجی فرم در سمت کاربر](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
+- [راهنما: اعتبارسنجی محدودیت‌ها](/en-US/docs/Web/HTML/Guides/Constraint_validation)
+- کلاس‌های شبه CSS {{cssxref(":valid")}} و {{cssxref(":invalid")}}
