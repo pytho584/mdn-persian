@@ -1,11 +1,6 @@
+```markdown
 ---
 title: "CSSUnparsedValue"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSUnparsedValue"
-status: "needs-translation"
----
-
----
-title: CSSUnparsedValue
 slug: Web/API/CSSUnparsedValue
 page-type: web-api-interface
 browser-compat: api.CSSUnparsedValue
@@ -13,45 +8,44 @@ browser-compat: api.CSSUnparsedValue
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`CSSUnparsedValue`** interface of the [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Object_Model) represents property values that reference [custom properties](/en-US/docs/Web/CSS/Guides/Cascading_variables).
-It consists of a list of string fragments and variable references.
+رابط **`CSSUnparsedValue`** از [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Object_Model) نمایانگر مقادیر ویژگی‌هایی است که به [ویژگی‌های سفارشی](/en-US/docs/Web/CSS/Guides/Cascading_variables) ارجاع می‌دهند. این رابط از فهرستی از قطعات رشته‌ای و ارجاعات متغیر تشکیل شده است.
 
-Custom properties are represented by `CSSUnparsedValue` and {{cssxref("var", "var()")}} references are represented using {{domxref('CSSVariableReferenceValue')}}.
+ویژگی‌های سفارشی توسط `CSSUnparsedValue` و ارجاعات {{cssxref("var", "var()")}} با استفاده از {{domxref('CSSVariableReferenceValue')}} نمایش داده می‌شوند.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("CSSUnparsedValue.CSSUnparsedValue", "CSSUnparsedValue()")}}
-  - : Creates a new `CSSUnparsedValue` object.
+  - : یک شیء جدید `CSSUnparsedValue` می‌سازد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref('CSSUnparsedValue.length')}} {{ReadOnlyInline}}
-  - : Returns the number of items in the `CSSUnparsedValue` object.
+  - : تعداد آیتم‌های موجود در شیء `CSSUnparsedValue` را بازمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
-_Also inherits methods from its parent interface, {{DOMxRef("CSSStyleValue")}}._
+_همچنین روش‌ها را از رابط والد خود، {{DOMxRef("CSSStyleValue")}} به ارث می‌برد._
 
 - {{domxref('CSSUnparsedValue.entries()')}}
-  - : Returns an array of a given object's own enumerable property `[key, value]` pairs in the same order as that provided by a {{jsxref("Statements/for...in", "for...in")}} loop (the difference being that a for-in loop enumerates properties in the prototype chain as well).
+  - : یک آرایه از جفت‌های `[key, value]` ویژگی‌های قابل شمارش خود شیء را به همان ترتیبی که توسط حلقه {{jsxref("Statements/for...in", "for...in")}} ارائه می‌شود، بازمی‌گرداند (تفاوت در این است که حلقه for-in ویژگی‌های موجود در زنجیرهٔ prototype را نیز شمارش می‌کند).
 - {{domxref('CSSUnparsedValue.forEach()')}}
-  - : Executes a provided function once for each element of the `CSSUnparsedValue` object.
+  - : یک تابع ارائه‌شده را یک بار برای هر عنصر از شیء `CSSUnparsedValue` اجرا می‌کند.
 - {{domxref('CSSUnparsedValue.keys()')}}
-  - : Returns a new _array iterator_ object that contains the keys for each index in the `CSSUnparsedValue` object.
+  - : یک شیء _تکرارکننده آرایه_ جدید بازمی‌گرداند که شامل کلیدهای هر شاخص در شیء `CSSUnparsedValue` است.
 - {{domxref('CSSUnparsedValue.values()')}}
-  - : Returns a new _array iterator_ object that contains the values for each index in the `CSSUnparsedValue` object.
+  - : یک شیء _تکرارکننده آرایه_ جدید بازمی‌گرداند که شامل مقادیر هر شاخص در شیء `CSSUnparsedValue` است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref('CSSImageValue')}}
 - {{domxref('CSSKeywordValue')}}
@@ -60,3 +54,4 @@ _Also inherits methods from its parent interface, {{DOMxRef("CSSStyleValue")}}._
 - {{domxref('CSSTransformValue')}}
 - [Using the CSS Typed OM](/en-US/docs/Web/API/CSS_Typed_OM_API/Guide)
 - [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API)
+```
