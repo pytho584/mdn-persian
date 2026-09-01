@@ -1,11 +1,5 @@
 ---
 title: "HTMLCollection: length property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLCollection/length"
-status: "needs-translation"
----
-
----
-title: "HTMLCollection: length property"
 short-title: length
 slug: Web/API/HTMLCollection/length
 page-type: web-api-instance-property
@@ -14,18 +8,15 @@ browser-compat: api.HTMLCollection.length
 
 {{APIRef("DOM")}}
 
-The **`HTMLCollection.length`** property returns the number of
-items in a {{domxref("HTMLCollection")}}.
+ویژگی **`HTMLCollection.length`** تعداد آیتم‌های موجود در یک {{domxref("HTMLCollection")}} را برمی‌گرداند.
 
-## Value
+## مقدار
 
-An integer value representing the number of items in a `HTMLCollection`.
+یک عدد صحیح که تعداد آیتم‌های یک `HTMLCollection` را نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
-The `length` property is often useful in DOM programming. It's often used to
-test the length of a list, to see if it exists at all. It's also commonly used as the
-iterator in a `for` loop, as in this example.
+ویژگی `length` اغلب در برنامه‌نویسی DOM مفید است. معمولاً برای بررسی طول یک فهرست و اطمینان از اینکه اصلاً وجود دارد استفاده می‌شود. همچنین معمولاً به‌عنوان شمارنده در یک حلقه `for` به کار می‌رود، همان‌طور که در این مثال می‌بینید.
 
 ```js
 // All the elements with the class ".test" in the document
@@ -41,10 +32,10 @@ for (let i = 0; i < items.length; i++) {
 // gross is now all the HTML for the test elements
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
