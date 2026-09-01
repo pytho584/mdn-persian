@@ -1,11 +1,5 @@
 ---
 title: "DataTransfer: addElement() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/addElement"
-status: "needs-translation"
----
-
----
-title: "DataTransfer: addElement() method"
 short-title: addElement()
 slug: Web/API/DataTransfer/addElement
 page-type: web-api-instance-method
@@ -17,13 +11,10 @@ browser-compat: api.DataTransfer.addElement
 
 {{APIRef("HTML Drag and Drop API")}}{{SeeCompatTable}}{{Non-standard_header}}
 
-The **`DataTransfer.addElement()`** method sets the drag source
-to the given element. This element will be the element to which {{domxref("HTMLElement/drag_event", "drag")}} and
-{{domxref("HTMLElement/dragend_event", "dragend")}} events are fired, and not the default target (the node that was
-dragged).
+روش **`DataTransfer.addElement()`**، منبع کشیدن (drag source) را به عنصر داده‌شده تنظیم می‌کند. این عنصر، عنصری خواهد بود که رویدادهای {{domxref("HTMLElement/drag_event", "drag")}} و {{domxref("HTMLElement/dragend_event", "dragend")}} به آن فرستاده می‌شوند، و نه هدف پیش‌فرض (گره‌ای که کشیده شد).
 
 > [!NOTE]
-> This method is Firefox-specific.
+> این روش مختص فایرفاکس است.
 
 ## Syntax
 
@@ -34,15 +25,15 @@ addElement(element)
 ### Parameters
 
 - `element`
-  - : The {{domxref("Element")}} to set as the drag source.
+  - : {{domxref("Element")}}ای که به عنوان منبع کشیدن تنظیم می‌شود.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
 ## Examples
 
-This example shows the use of the `addElement()` method
+این مثال استفاده از روش `addElement()` را نشان می‌دهد.
 
 ```js
 function changeDragNode(event, node) {
@@ -53,7 +44,7 @@ function changeDragNode(event, node) {
 
 ## Specifications
 
-This method is not defined in any Web standard.
+این روش در هیچ استاندارد وب تعریف نشده است.
 
 ## Browser compatibility
 
@@ -61,6 +52,6 @@ This method is not defined in any Web standard.
 
 ## See also
 
-- [Drag and drop](/en-US/docs/Web/API/HTML_Drag_and_Drop_API)
-- [Drag Operations](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_operations)
-- [Working with the drag data store](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_data_store)
+- [کشیدن و رها کردن](/en-US/docs/Web/API/HTML_Drag_and_Drop_API)
+- [عملیات کشیدن](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_operations)
+- [کار با ذخیره‌گاه داده‌ی کشیدن](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_data_store)
