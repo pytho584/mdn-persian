@@ -1,11 +1,5 @@
 ---
 title: "CSSPageRule: style property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSPageRule/style"
-status: "needs-translation"
----
-
----
-title: "CSSPageRule: style property"
 short-title: style
 slug: Web/API/CSSPageRule/style
 page-type: web-api-instance-property
@@ -14,23 +8,23 @@ browser-compat: api.CSSPageRule.style
 
 {{APIRef("CSSOM")}}
 
-The read-only **`style`** property of the {{domxref("CSSPageRule")}} interface contains a {{domxref("CSSPageDescriptors")}} object representing the descriptors available in the {{cssxref("@page")}} rule's body.
+ویژگی فقط‌خواندنی **`style`** در رابط {{domxref("CSSPageRule")}} شامل یک شیء {{domxref("CSSPageDescriptors")}} است که توصیف‌گرهای (descriptors) موجود در بدنهٔ قانون {{cssxref("@page")}} را نمایش می‌دهد.
 
-## Value
+## مقدار
 
-A {{domxref("CSSPageDescriptors")}} object.
+یک شیء {{domxref("CSSPageDescriptors")}}.
 
 > [!NOTE]
-> Earlier versions of the specification defined this property as a {{domxref("CSSStyleDeclaration")}}.
-> Check the compatibility data below for your browser.
+> نسخه‌های قبلی مشخصات، این ویژگی را به‌عنوان یک {{domxref("CSSStyleDeclaration")}} تعریف کرده بودند.
+> برای مرورگر خود، داده‌های سازگاری زیر را بررسی کنید.
 
-Although the `style` property itself is read-only in the sense that you can't replace the `CSSPageDescriptors` object, you can still assign to the `style` property directly, which is equivalent to assigning to its {{domxref("CSSStyleDeclaration/cssText", "cssText")}} property. You can also modify the `CSSPageDescriptors` object using the {{domxref("CSSStyleDeclaration/setProperty", "setProperty()")}} and {{domxref("CSSStyleDeclaration/removeProperty", "removeProperty()")}} methods.
+اگرچه خود ویژگی `style` از این نظر فقط‌خواندنی است که نمی‌توانید شیء `CSSPageDescriptors` را جایگزین کنید، اما همچنان می‌توانید مستقیماً به `style` مقدار نسبت دهید که معادل نسبت دادن به ویژگی {{domxref("CSSStyleDeclaration/cssText", "cssText")}} آن است. همچنین می‌توانید شیء `CSSPageDescriptors` را با استفاده از روش‌های {{domxref("CSSStyleDeclaration/setProperty", "setProperty()")}} و {{domxref("CSSStyleDeclaration/removeProperty", "removeProperty()")}} تغییر دهید.
 
-## Examples
+## مثال‌ها
 
-### Inspecting a page rule
+### بررسی یک قانون صفحه
 
-This example uses the Web API to inspect the content of a {{cssxref("@page")}} rule.
+این مثال از Web API برای بررسی محتوای یک قانون {{cssxref("@page")}} استفاده می‌کند.
 
 ```html hidden
 <pre id="log"></pre>
@@ -55,10 +49,10 @@ function log(text) {
 
 #### CSS
 
-Below we define styles for the page using a {{cssxref("@page")}} rule.
-We assign different values for each margin property using the `margin` shorthand, and also specify the `size`.
-We don't set the `page-orientation`.
-This allows us to see how the properties map in the Web API object.
+در زیر، سبک‌های صفحه را با استفاده از یک قانون {{cssxref("@page")}} تعریف می‌کنیم.
+برای هر ویژگی حاشیه (margin) با استفاده از شكل کوتاه‌شدهٔ `margin` مقادیر مختلفی تعیین می‌کنیم و همچنین `size` را مشخص می‌کنیم.
+ویژگی `page-orientation` را تنظیم نمی‌کنیم.
+این به ما امکان می‌دهد ببینیم ویژگی‌ها چگونه در شیء Web API نگاشت می‌شوند.
 
 ```css
 @page {
@@ -68,16 +62,16 @@ This allows us to see how the properties map in the Web API object.
 }
 ```
 
-#### JavaScript
+#### جاوااسکریپت
 
-The MDN [live sample](/en-US/docs/MDN/Writing_guidelines/Page_structures/Live_samples) infrastructure combines all the CSS blocks in the example into a single inline style with the id `css-output`, so we first use {{domxref("document.getElementById()")}} to find that sheet.
+زیرساخت [نمونه زنده](/en-US/docs/MDN/Writing_guidelines/Page_structures/Live_samples) MDN تمام بلوک‌های CSS موجود در مثال را در یک استایل درون‌خطی با شناسه `css-output` ترکیب می‌کند، بنابراین ابتدا از {{domxref("document.getElementById()")}} برای یافتن آن شیوه‌نامه استفاده می‌کنیم.
 
 ```js
 const myRules = document.getElementById("css-output").sheet.cssRules;
 ```
 
-We then iterate through the rules defined for the live example and match any that are of type `CSSPageRule`, as these correspond to `@page` rules.
-For the matching objects we then log the `style` and all its values.
+سپس روی قوانین تعریف‌شده برای مثال زنده پیمایش می‌کنیم و هر قاعده‌ای را که از نوع `CSSPageRule` باشد مطابقت می‌دهیم، زیرا این قوانین معادل قانون‌های `@page` هستند.
+برای اشیاء مطابق‌شده، سپس `style` و تمام مقادیر آن را ثبت می‌کنیم.
 
 ```js
 for (const rule of myRules) {
@@ -85,14 +79,14 @@ for (const rule of myRules) {
     log(`${rule.style}`);
     log(`margin: ${rule.style.margin}`);
 
-    // Access properties using CamelCase properties
+    // دسترسی به ویژگی‌ها با استفاده از نام‌های camelCase
     log(`marginTop: ${rule.style.marginTop}`);
     log(`marginRight: ${rule.style.marginRight}`);
     log(`marginBottom: ${rule.style.marginBottom}`);
     log(`marginLeft: ${rule.style.marginLeft}`);
     log(`pageOrientation: ${rule.style.pageOrientation}`);
 
-    // Access properties using snake-case properties
+    // دسترسی به ویژگی‌ها با استفاده از نام‌های خط تیره‌دار
     log(`margin-top: ${rule.style["margin-top"]}`);
     log(`margin-right: ${rule.style["margin-right"]}`);
     log(`margin-left: ${rule.style["margin-left"]}`);
@@ -105,18 +99,18 @@ for (const rule of myRules) {
 }
 ```
 
-#### Results
+#### نتایج
 
-The results are shown below.
-Note that the object should be a `CSSPageDescriptors` to match the current specification, but may be a `CSSStyleDeclaration` in some browsers.
-Note also that the corresponding values for properties in camel- and snake-case match each other and the `@page` declaration, and that `page-orientation` is the empty string `""` because it is not defined in `@page`.
+نتایج در زیر نشان داده شده است.
+توجه داشته باشید که شیء باید یک `CSSPageDescriptors` باشد تا با مشخصات فعلی مطابقت داشته باشد، اما ممکن است در برخی مرورگرها یک `CSSStyleDeclaration` باشد.
+همچنین توجه داشته باشید که مقادیر متناظر برای ویژگی‌ها در حالت camelCase و خط تیره‌دار با یکدیگر و با اعلان `@page` مطابقت دارند و `page-orientation` رشتهٔ خالی `""` است چون در `@page` تعریف نشده است.
 
 {{EmbedLiveSample("Inspecting a page rule", "100%", "300px")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
