@@ -1,11 +1,5 @@
 ---
 title: "HIDConnectionEvent: device property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HIDConnectionEvent/device"
-status: "needs-translation"
----
-
----
-title: "HIDConnectionEvent: device property"
 short-title: device
 slug: Web/API/HIDConnectionEvent/device
 page-type: web-api-instance-property
@@ -16,15 +10,15 @@ browser-compat: api.HIDConnectionEvent.device
 
 {{securecontext_header}}{{APIRef("WebHID API")}}{{SeeCompatTable}}{{AvailableInWorkers("window_and_worker_except_shared")}}
 
-The **`device`** read-only property of the {{domxref("HIDConnectionEvent")}} interface returns the {{domxref("HIDDevice")}} associated with this connection event.
+{{domxref("HIDConnectionEvent")}} 接口的 **`device`** 只读属性返回与此连接事件关联的 {{domxref("HIDDevice")}}。
 
-## Value
+## 值
 
-A {{domxref("HIDDevice")}}.
+一个 {{domxref("HIDDevice")}}。
 
-## Examples
+## 示例
 
-The following example registers event listeners for `connect` and `disconnect` events, then prints the {{domxref("HIDDevice.productName")}} to the console.
+以下示例为 `connect` 和 `disconnect` 事件注册监听器，然后将 {{domxref("HIDDevice.productName")}} 打印到控制台。
 
 ```js
 navigator.hid.addEventListener("connect", ({ device }) => {
@@ -36,10 +30,10 @@ navigator.hid.addEventListener("disconnect", ({ device }) => {
 });
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
