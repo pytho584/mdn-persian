@@ -1,7 +1,5 @@
 ---
 title: "HTMLDocument"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLDocument"
-status: "needs-translation"
 ---
 
 ---
@@ -13,12 +11,12 @@ browser-compat: api.HTMLDocument
 
 {{APIRef("HTML DOM")}}
 
-For historical reasons, {{domxref("Window")}} objects have a `window.HTMLDocument` property whose value is the {{DOMxRef("Document")}} interface. So you can think of `HTMLDocument` as an alias for {{DOMxRef("Document")}}, and you can find documentation for `HTMLDocument` members under the documentation for the {{DOMxRef("Document")}} interface.
+به دلایل تاریخی، اشیاء {{domxref("Window")}} دارای خاصیت `window.HTMLDocument` هستند که مقدار آن رابط {{DOMxRef("Document")}} است. بنابراین میتوانید `HTMLDocument` را بهعنوان یک نام مستعار برای {{DOMxRef("Document")}} در نظر بگیرید و مستندات اعضای `HTMLDocument` را در مستندات رابط {{DOMxRef("Document")}} بیابید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
