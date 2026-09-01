@@ -1,7 +1,6 @@
 ---
 title: "EncodedAudioChunk: byteLength property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/EncodedAudioChunk/byteLength"
-status: "needs-translation"
 ---
 
 ---
@@ -14,15 +13,15 @@ browser-compat: api.EncodedAudioChunk.byteLength
 
 {{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`byteLength`** read-only property of the {{domxref("EncodedAudioChunk")}} interface returns the length in bytes of the encoded audio data.
+ویژگی فقط‌خواندنی **`byteLength`** در رابط {{domxref("EncodedAudioChunk")}} طول داده‌های صوتی کدشده را بر حسب بایت برمی‌گرداند.
 
-## Value
+## مقدار
 
-An integer.
+یک عدد صحیح.
 
-## Examples
+## مثال‌ها
 
-In the following example the `byteLength` is printed to the console.
+در مثال زیر، مقدار `byteLength` در کنسول چاپ می‌شود.
 
 ```js
 const init = {
@@ -36,10 +35,10 @@ const chunk = new EncodedAudioChunk(init);
 console.log(chunk.byteLength); // 352800
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
