@@ -1,11 +1,5 @@
 ---
 title: "FileSystemEntry: getParent() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry/getParent"
-status: "needs-translation"
----
-
----
-title: "FileSystemEntry: getParent() method"
 short-title: getParent()
 slug: Web/API/FileSystemEntry/getParent
 page-type: web-api-instance-method
@@ -14,47 +8,41 @@ browser-compat: api.FileSystemEntry.getParent
 
 {{APIRef("File and Directory Entries API")}}
 
-The {{domxref("FileSystemEntry")}} interface's method
-**`getParent()`** obtains a
-{{domxref("FileSystemDirectoryEntry")}}.
+در رابط {{domxref("FileSystemEntry")}}، متد
+**`getParent()`** یک
+{{domxref("FileSystemDirectoryEntry")}} به دست می‌آورد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 getParent(successCallback, errorCallback)
 getParent(successCallback)
 ```
 
-### Parameters
+### پارامترها
 
 - `successCallback`
-  - : A function which is called when the parent directory entry has been retrieved. The
-    callback receives a single input parameter: a {{domxref("FileSystemDirectoryEntry")}}
-    object representing the parent directory. The parent of the root directory is
-    considered to be the root directory, itself, so be sure to watch for that.
+  - : تابعی که وقتی ورودی دایرکتوری والد بازیابی شد فراخوانی می‌شود. این تابع یک پارامتر ورودی دریافت می‌کند: یک شیء {{domxref("FileSystemDirectoryEntry")}} که نمایانگر دایرکتوری والد است. والد دایرکتوری ریشه، خودِ دایرکتوری ریشه در نظر گرفته می‌شود، پس حتماً مراقب این مورد باشید.
 - `errorCallback` {{optional_inline}}
-  - : An optional callback which is executed if an error occurs. There's a single
-    parameter: a {{domxref("DOMException")}} describing what went wrong.
+  - : یک回调 اختیاری که در صورت بروز خطا اجرا می‌شود. این تابع یک پارامتر دارد: یک {{domxref("DOMException")}} که شرح می‌دهد چه چیزی اشتباه رخ داده است.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `DOMException.INVALID_STATE_ERR`
-  - : The operation failed because the file system's state doesn't permit it. This can
-    happen, for example, if the file system's cached state differs from the actual state
-    of the file system.
+  - : عملیات ناموفق بود زیرا وضعیت سیستم فایل اجازه آن را نمی‌دهد. این می‌تواند برای مثال زمانی رخ دهد که وضعیت کش‌شده سیستم فایل با وضعیت واقعی آن متفاوت باشد.
 - `DOMException.NOT_FOUND_ERR`
-  - : The specified path could not be found.
+  - : مسیر مشخص‌شده یافت نشد.
 - `DOMException.SECURITY_ERR`
-  - : Security restrictions prohibit obtaining the parent directory's information.
+  - : محدودیت‌های امنیتی از به دست آوردن اطلاعات دایرکتوری والد جلوگیری می‌کنند.
 
-## Examples
+## مثال‌ها
 
-This example renames the file specified by the variable `fileEntry` to
-`"newname.html"`.
+این مثال فایل مشخص‌شده توسط متغیر `fileEntry` را به
+`"newname.html"` تغییر نام می‌دهد.
 
 ```js
 fileEntry.getParent(
@@ -71,15 +59,11 @@ fileEntry.getParent(
 );
 ```
 
-This is accomplished by first obtaining a {{domxref("FileSystemDirectoryEntry")}}
-object representing the directory the file is currently located in. Then
-{{domxref("FileSystemEntry.moveTo", "moveTo()")}} is used to rename the file within that
-directory.
+این کار ابتدا با به دست آوردن یک شیء {{domxref("FileSystemDirectoryEntry")}} که نمایانگر دایرکتوری حاوی فایل است انجام می‌شود. سپس از {{domxref("FileSystemEntry.moveTo", "moveTo()")}} برای تغییر نام فایل در آن دایرکتوری استفاده می‌شود.
 
-## Using promises
+## استفاده از Promiseها
 
-Currently, there isn't a {{jsxref("Promise")}}-based version of this method. You can,
-however, create a simple helper function to adapt it, like this:
+در حال حاضر، نسخه‌ای مبتنی بر {{jsxref("Promise")}} برای این متد وجود ندارد. با این حال، می‌توانید یک تابع کمکی ساده برای سازگار کردن آن ایجاد کنید، مانند این:
 
 ```js
 function getParentPromise(entry) {
@@ -89,16 +73,16 @@ function getParentPromise(entry) {
 }
 ```
 
-A similar approach can be taken elsewhere in the File and Directory Entries API.
+رویکرد مشابهی را می‌توان در جای دیگر در API ورودی‌های فایل و دایرکتوری به کار برد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [File and Directory Entries API](/en-US/docs/Web/API/File_and_Directory_Entries_API)
+- [API ورودی‌های فایل و دایرکتوری](/en-US/docs/Web/API/File_and_Directory_Entries_API)
