@@ -1,9 +1,4 @@
----
-title: "HTMLTableElement: bgColor property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/bgColor"
-status: "needs-translation"
----
-
+```markdown
 ---
 title: "HTMLTableElement: bgColor property"
 short-title: bgColor
@@ -16,34 +11,34 @@ browser-compat: api.HTMLTableElement.bgColor
 
 {{APIRef("HTML DOM")}} {{Deprecated_Header}}
 
-The **`bgcolor`** property of the {{domxref("HTMLTableElement")}} represents the
-background color of the table.
+خاصیت **`bgcolor`** از {{domxref("HTMLTableElement")}} رنگ پس‌زمینه جدول را مشخص می‌کند.
 
 > [!NOTE]
-> Do not use this attribute anymore. Instead, use the CSS {{cssxref("background-color")}} property by modifying the element's [`style`](/en-US/docs/Web/API/HTMLElement/style) attribute or using a style rule.
+> دیگر از این ویژگی استفاده نکنید. در عوض، از ویژگی CSS {{cssxref("background-color")}} با تغییر ویژگی [`style`](/en-US/docs/Web/API/HTMLElement/style) عنصر یا با استفاده از یک قانون سبک استفاده کنید.
 
-## Value
+## مقدار
 
-A string representing a color value.
+یک رشته (string) که یک مقدار رنگ را نمایش می‌دهد.
 
-When set to the `null` value, that `null` value is converted to the empty string (`""`), so `elt.bgColor = null` is equivalent to `elt.bgColor = ""`.
+وقتی مقدار `null` تنظیم شود، آن مقدار `null` به رشته خالی (`""`) تبدیل می‌شود، بنابراین `elt.bgColor = null` معادل `elt.bgColor = ""` است.
 
-## Examples
+## مثال‌ها
 
 ```js
-// Set table background color to lightblue
+// تنظیم رنگ پس‌زمینه جدول به آبی روشن
 const t = document.getElementById("TableA");
 t.bgColor = "lightblue";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{cssxref("background-color")}}
+```
