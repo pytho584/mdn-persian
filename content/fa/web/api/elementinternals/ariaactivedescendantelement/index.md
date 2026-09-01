@@ -1,11 +1,5 @@
 ---
 title: "Element: ariaActiveDescendantElement property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/ariaActiveDescendantElement"
-status: "needs-translation"
----
-
----
-title: "Element: ariaActiveDescendantElement property"
 short-title: ariaActiveDescendantElement
 slug: Web/API/ElementInternals/ariaActiveDescendantElement
 page-type: web-api-instance-property
@@ -14,33 +8,33 @@ browser-compat: api.ElementInternals.ariaActiveDescendantElement
 
 {{APIRef("DOM")}}
 
-The **`ariaActiveDescendantElement`** property of the {{domxref("ElementInternals")}} interface represents the current active element when focus is on a [`composite`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/composite_role) widget, [`combobox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/combobox_role), [`textbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role), [`group`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role), or [`application`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/application_role).
+خاصیت **`ariaActiveDescendantElement`** از رابط {{domxref("ElementInternals")}} نمایانگر عنصر فعال کنونی زمانی است که تمرکز روی یک ویجت [`composite`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/composite_role)، [`combobox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/combobox_role)، [`textbox`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role)، [`group`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/group_role) یا [`application`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/application_role) باشد.
 
-The [`aria-activedescendant`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-activedescendant) topic contains additional information about how the attribute and property should be used.
+مبحث [`aria-activedescendant`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-activedescendant) اطلاعات بیشتری درباره نحوه استفاده از این ویژگی و خاصیت در اختیار شما قرار می‌دهد.
 
-## Value
+## مقدار
 
-A subclass of {{domxref("HTMLElement")}} that represents the active descendant, or `null` if there is no active descendant.
+یک زیرکلاس از {{domxref("HTMLElement")}} که نمایانگر فرزند فعال است، یا در صورت نبود فرزند فعال، مقدار `null`.
 
-## Description
+## توضیحات
 
-The property is a flexible alternative to using the [`aria-activedescendant`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-activedescendant) attribute.
-Unlike `aria-activedescendant`, the element assigned to this property does not have to have an [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) attribute.
+این خاصیت یک جایگزین انعطاف‌پذیر برای استفاده از ویژگی [`aria-activedescendant`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-activedescendant) است.
+برخلاف `aria-activedescendant`، عنصری که به این خاصیت نسبت داده می‌شود لزومی ندارد دارای ویژگی [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) باشد.
 
-The property reflects the element's [`aria-activedescendant`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-errormessage) attribute when it is defined, but only for reference `id` values that match valid in-scope elements.
-If the property is set, then the corresponding attribute is cleared.
-For more information about reflected element references and scope see [Reflected element references](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references) in the _Reflected attributes_ guide.
+این خاصیت ویژگی [`aria-activedescendant`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-activedescendant) عنصر را زمانی که تعریف شده باشد بازتاب می‌دهد، اما فقط برای مقادیر `id` مرجع که با عناصر معتبر درون‌حوزه مطابقت دارند.
+اگر این خاصیت تنظیم شود، ویژگی متناظر پاک می‌شود.
+برای اطلاعات بیشتر درباره مراجع عناصر بازتاب‌شده و حوزه، به [مراجع عناصر بازتاب‌شده](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references) در راهنمای _ویژگی‌های بازتاب‌شده_ مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [`aria-activedescendant`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-activedescendant) attribute
+- ویژگی [`aria-activedescendant`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-activedescendant)
 - {{domxref("Element.ariaActiveDescendantElement")}}
-- [Reflected element references](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references) in the _Attribute reflection_ guide.
+- [مراجع عناصر بازتاب‌شده](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references) در راهنمای _بازتاب ویژگی‌ها_.
