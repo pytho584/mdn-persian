@@ -1,11 +1,5 @@
 ---
 title: "FontFace: family property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FontFace/family"
-status: "needs-translation"
----
-
----
-title: "FontFace: family property"
 short-title: family
 slug: Web/API/FontFace/family
 page-type: web-api-instance-property
@@ -14,18 +8,18 @@ browser-compat: api.FontFace.family
 
 {{APIRef("CSS Font Loading API")}}{{AvailableInWorkers}}
 
-The **`FontFace.family`** property allows the author to get or set the font family of a {{domxref("FontFace")}} object.
+ویژگی **`FontFace.family`** به نویسنده اجازه می‌دهد تا خانواده فونت یک شیء {{domxref("FontFace")}} را دریافت یا تنظیم کند.
 
-The value is used for name matching against a particular font face when styling elements using the {{cssxref("font-family")}} property.
-Any name may be used, and this overrides any name specified in the underlying font data.
+این مقدار برای تطبیق نام با یک فونت خاص هنگام استایل‌دهی به عناصر با استفاده از ویژگی {{cssxref("font-family")}} استفاده می‌شود.
+هر نامی می‌تواند استفاده شود و این نام، هر نامی را که در داده‌های اصلی فونت مشخص شده است، لغو می‌کند.
 
-This property is equivalent to the {{cssxref("@font-face/font-family", "font-family")}} descriptor of {{cssxref("@font-face")}}.
+این ویژگی معادل توصیف‌گر {{cssxref("@font-face/font-family", "font-family")}} در {{cssxref("@font-face")}} است.
 
-## Value
+## مقدار
 
-A string.
+یک رشته (string).
 
-## Examples
+## مثال‌ها
 
 ```js
 let fontFace = new FontFace(
@@ -38,10 +32,10 @@ fontFace.family = "newRoboto";
 console.log(fontFace.family); // 'newRoboto'
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
