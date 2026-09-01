@@ -1,11 +1,5 @@
 ---
 title: "FencedFrameConfig: setSharedStorageContext() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FencedFrameConfig/setSharedStorageContext"
-status: "needs-translation"
----
-
----
-title: "FencedFrameConfig: setSharedStorageContext() method"
 short-title: setSharedStorageContext()
 slug: Web/API/FencedFrameConfig/setSharedStorageContext
 page-type: web-api-instance-method
@@ -16,8 +10,7 @@ browser-compat: api.FencedFrameConfig.setSharedStorageContext
 
 {{APIRef("Fenced Frame API")}}{{SeeCompatTable}}
 
-The **`setSharedStorageContext()`** method of the
-{{domxref("FencedFrameConfig")}} interface passes in contextual data from the embedding document to the `<fencedframe>`'s [shared storage](https://privacysandbox.google.com/private-advertising/shared-storage).
+متد **`setSharedStorageContext()`** از رابط {{domxref("FencedFrameConfig")}} داده‌های زمینه‌ای را از سند جاساز به [shared storage](https://privacysandbox.google.com/private-advertising/shared-storage) درون `<fencedframe>` منتقل می‌کند.
 
 ## Syntax
 
@@ -28,21 +21,21 @@ setSharedStorageContext(context)
 ### Parameters
 
 - `context`
-  - : A string representing the contextual data to pass into shared storage. Once set, this will be stored in the {{domxref("FencedFrameConfig")}} instance's internal config.
+  - : یک رشته (string) که نشان‌دهنده داده‌های زمینه‌ای برای ارسال به shared storage است. پس از تنظیم، این داده در پیکربندی داخلی نمونه {{domxref("FencedFrameConfig")}} ذخیره می‌شود.
 
 ### Return value
 
-None (`Undefined`).
+هیچ‌کدام (`Undefined`).
 
 ## Examples
 
-### Passing contextual data via `setSharedStorageContext()`
+### ارسال داده‌های زمینه‌ای از طریق `setSharedStorageContext()`
 
-You can use the [Private Aggregation API](https://privacysandbox.google.com/private-advertising/private-aggregation) to create reports that combine event-level data inside fenced frames with contextual data from the embedding document. `setSharedStorageContext()` can be used to pass contextual data from the embedder to shared storage worklets initiated by the [Protected Audience API](https://privacysandbox.google.com/private-advertising/protected-audience).
+شما می‌توانید از [Private Aggregation API](https://privacysandbox.google.com/private-advertising/private-aggregation) برای ایجاد گزارش‌هایی استفاده کنید که داده‌های سطح رویداد داخل fenced frames را با داده‌های زمینه‌ای از سند جاساز ترکیب می‌کنند. `setSharedStorageContext()` می‌تواند برای ارسال داده‌های زمینه‌ای از جاساز (embedder) به worklet‌های shared storage که توسط [Protected Audience API](https://privacysandbox.google.com/private-advertising/protected-audience) آغاز شده‌اند، استفاده شود.
 
-In the following example, we store data from both the embedding page and the fenced frame in [shared storage](https://privacysandbox.google.com/private-advertising/shared-storage).
+در مثال زیر، داده‌هایی از هر دو صفحه جاساز و fenced frame در [shared storage](https://privacysandbox.google.com/private-advertising/shared-storage) ذخیره می‌کنیم.
 
-In the embedding page, we will set a mock event ID as the shared storage context using `setSharedStorageContext()`:
+در صفحه جاساز، یک شناسه رویداد ساختگی را به عنوان زمینه shared storage با استفاده از `setSharedStorageContext()` تنظیم می‌کنیم:
 
 ```js
 const frameConfig = await navigator.runAdAuction({ resolveToConfig: true });
@@ -54,7 +47,7 @@ const frame = document.createElement("fencedframe");
 frame.config = frameConfig;
 ```
 
-Inside the fenced frame, we add the worklet module with {{domxref("Worklet.addModule","window.sharedStorage.worklet.addModule()")}}, and then send the event-level data into the shared storage worklet using {{domxref("WindowSharedStorage.run","window.sharedStorage.run()")}} (this is unrelated to the contextual data from the embedding document):
+در داخل fenced frame، ماژول worklet را با {{domxref("Worklet.addModule","window.sharedStorage.worklet.addModule()")}} اضافه می‌کنیم و سپس داده‌های سطح رویداد را با استفاده از {{domxref("WindowSharedStorage.run","window.sharedStorage.run()")}} به worklet shared storage ارسال می‌کنیم (این کار ربطی به داده‌های زمینه‌ای از سند جاساز ندارد):
 
 ```js
 const frameData = {
@@ -70,7 +63,7 @@ await window.sharedStorage.run("send-report", {
 });
 ```
 
-In the `reporting-worklet.js` worklet, we read the embedding document's event ID from `sharedStorage.context` and the frame's event-level data from the data object, then report them through Private Aggregation:
+در worklet `reporting-worklet.js`، شناسه رویداد سند جاساز را از `sharedStorage.context` و داده‌های سطح رویداد فریم را از شیء داده می‌خوانیم و سپس آن‌ها را از طریق Private Aggregation گزارش می‌دهیم:
 
 ```js
 class ReportingOperation {
@@ -108,5 +101,5 @@ register("send-report", ReportingOperation);
 
 ## See also
 
-- [Fenced frames](https://privacysandbox.google.com/private-advertising/fenced-frame) on privacysandbox.google.com
-- [The Privacy Sandbox](https://privacysandbox.google.com/) on privacysandbox.google.com
+- [Fenced frames](https://privacysandbox.google.com/private-advertising/fenced-frame) در privacysandbox.google.com
+- [The Privacy Sandbox](https://privacysandbox.google.com/) در privacysandbox.google.com
