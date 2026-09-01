@@ -1,11 +1,5 @@
 ---
 title: "GPUDevice: createRenderPipelineAsync() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createRenderPipelineAsync"
-status: "needs-translation"
----
-
----
-title: "GPUDevice: createRenderPipelineAsync() method"
 short-title: createRenderPipelineAsync()
 slug: Web/API/GPUDevice/createRenderPipelineAsync
 page-type: web-api-instance-method
@@ -14,11 +8,10 @@ browser-compat: api.GPUDevice.createRenderPipelineAsync
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`createRenderPipelineAsync()`** method of the
-{{domxref("GPUDevice")}} interface returns a {{jsxref("Promise")}} that fulfills with a {{domxref("GPURenderPipeline")}}, which can control the vertex and fragment shader stages and be used in a {{domxref("GPURenderPassEncoder")}} or {{domxref("GPURenderBundleEncoder")}}, once the pipeline can be used without any stalling.
+متد **`createRenderPipelineAsync()`** از رابط {{domxref("GPUDevice")}} یک {{jsxref("Promise}} برمی‌گرداند که با یک {{domxref("GPURenderPipeline")}} تحقق می‌یابد. این شیء می‌تواند مراحل سایه‌زن رأس و قطعه را کنترل کند و در یک {{domxref("GPURenderPassEncoder")}} یا {{domxref("GPURenderBundleEncoder")}} استفاده شود، به شرطی که پایپ‌لاین بدون هیچ تأخیری قابل استفاده باشد.
 
 > [!NOTE]
-> It is generally preferable to use this method over {{domxref("GPUDevice.createRenderPipeline()")}} whenever possible, as it prevents blocking of GPU operation execution on pipeline compilation.
+> به طور کلی ترجیح داده می‌شود تا حد امکان از این متد به جای {{domxref("GPUDevice.createRenderPipeline()")}} استفاده شود، زیرا از مسدود شدن اجرای عملیات GPU در هنگام کامپایل پایپ‌لاین جلوگیری می‌کند.
 
 ## Syntax
 
@@ -29,44 +22,44 @@ createRenderPipelineAsync(descriptor)
 ### Parameters
 
 - `descriptor`
-  - : See the descriptor definition for the [`GPUDevice.createRenderPipeline()`](/en-US/docs/Web/API/GPUDevice/createRenderPipeline#syntax) method.
+  - : تعریف توصیف‌کننده را برای متد [`GPUDevice.createRenderPipeline()`](/en-US/docs/Web/API/GPUDevice/createRenderPipeline#syntax) ببینید.
 
 ### Return value
 
-A {{jsxref("Promise")}} that fulfills with a {{domxref("GPURenderPipeline")}} object instance when the created pipeline is ready to be used without additional delay.
+یک {{jsxref("Promise")}} که با یک نمونه از شیء {{domxref("GPURenderPipeline")}} تحقق می‌یابد زمانی که پایپ‌لاین ایجاد شده آماده استفاده بدون تأخیر اضافی باشد.
 
 ### Validation
 
-If pipeline creation fails and the resulting pipeline becomes invalid as a result, the returned promise rejects with a {{domxref("GPUPipelineError")}}:
+اگر ایجاد پایپ‌لاین ناموفق باشد و در نتیجه پایپ‌لاین حاصل نامعتبر شود، promise برگشتی با یک {{domxref("GPUPipelineError")}} رد می‌شود:
 
-- If this is due to an internal error, the {{domxref("GPUPipelineError")}} will have a `reason` of `"internal"`.
-- If this is due to a validation error, the {{domxref("GPUPipelineError")}} will have a `reason` of `"validation"`.
+- اگر این به دلیل یک خطای داخلی باشد، {{domxref("GPUPipelineError")}} دارای `reason` برابر با `"internal"` خواهد بود.
+- اگر این به دلیل یک خطای اعتبارسنجی باشد، {{domacro("GPUPipelineError")}} دارای `reason` برابر با `"validation"` خواهد بود.
 
-A validation error can occur if any of the following are false:
+یک خطای اعتبارسنجی می‌تواند در صورت نادرست بودن هر یک از موارد زیر رخ دهد:
 
-- For `depthStencil` objects:
-  - `format` is a [`depth-or-stencil`](https://gpuweb.github.io/gpuweb/#depth-or-stencil-format) format.
-  - The [`depthBias`](/en-US/docs/Web/API/GPUDevice/createRenderPipeline#depthbias), [`depthBiasClamp`](/en-US/docs/Web/API/GPUDevice/createRenderPipeline#depthbiasclamp), and [`depthBiasSlopeScale`](/en-US/docs/Web/API/GPUDevice/createRenderPipeline#depthbiasslopescale) properties are set to <code>0</code> for line and point topologies, i.e., if [`topology`](/en-US/docs/Web/API/GPUDevice/createRenderPipeline#topology) is set to `"line-list"`, `"line-strip"`, or `"point-list"`.
-  - If `depthWriteEnabled` is `true` or `depthCompare` is not `"always"`, `format` has a depth component.
-  - If `stencilFront` or `stencilBack`'s properties are not at their default values, `format` has a stencil component.
-- For `fragment` objects:
-  - `targets.length` is less than or equal to the {{domxref("GPUDevice")}}'s `maxColorAttachments` {{domxref("GPUSupportedLimits", "limit", "", "nocode")}}.
-  - For each `target`, `writeMask`'s numeric equivalent is less than 16.
-  - If any of the used blend factor operations use the source alpha channel (for example `"src-alpha-saturated"`), the output has an alpha channel (that is, it must be a `vec4`).
-  - If the `entryPoint` property is omitted, the shader code contains a single fragment shader entry point function for the browser to use as the default entry point.
-- For `primitive` objects:
-  - If the `unclippedDepth` property is used, the `depth-clip-control` [feature](/en-US/docs/Web/API/GPUSupportedFeatures) is enabled.
-- For `vertex` objects:
-  - If the `entryPoint` property is omitted, the shader code contains a single vertex shader entry point function for the browser to use as the default entry point.
+- برای اشیاء `depthStencil`:
+  - `format` یک فرمت [`depth-or-stencil`](https://gpuweb.github.io/gpuweb/#depth-or-stencil-format) است.
+  - ویژگی‌های [`depthBias`](/en-US/docs/Web/API/GPUDevice/createRenderPipeline#depthbias)، [`depthBiasClamp`](/en-US/docs/Web/API/GPUDevice/createRenderPipeline#depthbiasclamp) و [`depthBiasSlopeScale`](/en-US/docs/Web/API/GPUDevice/createRenderPipeline#depthbiasslopescale) برای توپولوژی‌های خط و نقطه (یعنی اگر [`topology`](/en-US/docs/Web/API/GPUDevice/createRenderPipeline#topology) برابر با `"line-list"`، `"line-strip"` یا `"point-list"` باشد) روی <code>0</code> تنظیم شده‌اند.
+  - اگر `depthWriteEnabled` `true` باشد یا `depthCompare` `"always"` نباشد، `format` یک مؤلفه عمق دارد.
+  - اگر ویژگی‌های `stencilFront` یا `stencilBack` در مقادیر پیش‌فرض خود نباشند، `format` یک مؤلفه شابلون دارد.
+- برای اشیاء `fragment`:
+  - `targets.length` کمتر یا مساوی با {{domxref("GPUDevice")}}'s `maxColorAttachments` {{domxref("GPUSupportedLimits", "limit", "", "nocode")}} است.
+  - برای هر `target`، معادل عددی `WriteMask` کمتر از 16 است.
+  - اگر هر یک از عملیات‌های عامل ترکیب استفاده شده از کانال آلفای منبع استفاده کنند (مثلاً `"src-alpha-saturated"`)، خروجی دارای یک کانال آلفا است (یعنی باید یک `vec4` باشد).
+  - اگر ویژگی `entryPoint` حذف شود، کد سایه‌زن شامل یک تابع نقطه ورود سایه‌زن قطعه واحد برای استفاده مرورگر به عنوان نقطه ورود پیش‌فرض است.
+- برای اشیاء `primitive`:
+  - اگر ویژگی `unclippedDepth` استفاده شود، ویژگی `depth-clip-control` [feature](/en-US/docs/Web/API/GPUSupportedFeatures) فعال است.
+- برای اشیاء `vertex`:
+  - اگر ویژگی `entryPoint` حذف شود، کد سایه‌زن شامل یک تابع نقطه ورود سایه‌زن رأس واحد برای استفاده مرورگر به عنوان نقطه ورود پیش‌فرض است.
 
 ## Examples
 
 > [!NOTE]
-> The [WebGPU samples](https://webgpu.github.io/webgpu-samples/) feature many more examples.
+> نمونه‌های [WebGPU samples](https://webgpu.github.io/webgpu-samples/) شامل مثال‌های بسیار بیشتری هستند.
 
 ### Basic example
 
-The following example shows a basic example of the construction of a valid render pipeline descriptor object, which is then used to create a {{domxref("GPURenderPipeline")}} via a `createRenderPipelineAsync()` call.
+مثال زیر یک نمونه ساده از ساخت یک شیء توصیف‌کننده پایپ‌لاین رندر معتبر را نشان می‌دهد که سپس برای ایجاد یک {{domxref("GPURenderPipeline")}} از طریق فراخوانی `createRenderPipelineAsync()` استفاده می‌شود.
 
 ```js
 async function init() {
@@ -129,4 +122,4 @@ async function init() {
 
 ## See also
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [رابط WebGPU API](/en-US/docs/Web/API/WebGPU_API)
