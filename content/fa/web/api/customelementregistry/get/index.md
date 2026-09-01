@@ -1,11 +1,5 @@
 ---
 title: "CustomElementRegistry: get() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/get"
-status: "needs-translation"
----
-
----
-title: "CustomElementRegistry: get() method"
 short-title: get()
 slug: Web/API/CustomElementRegistry/get
 page-type: web-api-instance-method
@@ -14,26 +8,24 @@ browser-compat: api.CustomElementRegistry.get
 
 {{APIRef("Web Components")}}
 
-The **`get()`** method of the
-{{domxref("CustomElementRegistry")}} interface returns the constructor for a
-previously-defined custom element.
+متد **`get()`** از رابط {{domxref("CustomElementRegistry")}} سازنده (constructor) یک عنصر سفارشی که قبلاً تعریف شده است را بازمی‌گرداند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 get(name)
 ```
 
-### Parameters
+### پارامترها
 
 - `name`
-  - : The name of the custom element.
+  - : نام عنصر سفارشی.
 
-### Return value
+### مقدار بازگشتی
 
-The constructor for the named custom element, or {{jsxref("undefined")}} if there is no custom element defined with the name.
+سازنده عنصر سفارشی با نام مشخص شده، یا {{jsxref("undefined")}} اگر هیچ عنصر سفارشی با این نام تعریف نشده باشد.
 
-## Examples
+## مثال‌ها
 
 ```js
 customElements.define(
@@ -52,10 +44,10 @@ customElements.define(
 const ctor = customElements.get("my-paragraph");
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
