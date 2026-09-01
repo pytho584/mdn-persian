@@ -1,10 +1,4 @@
 ---
-title: "HTML DOM API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API"
-status: "needs-translation"
----
-
----
 title: HTML DOM API
 slug: Web/API/HTML_DOM_API
 page-type: web-api-overview
@@ -13,78 +7,77 @@ browser-compat: api.HTMLElement
 
 {{DefaultAPISidebar("HTML DOM")}}
 
-The **HTML DOM API** is made up of the interfaces that define the functionality of each of the {{Glossary("element", "elements")}} in {{Glossary("HTML")}}, as well as any supporting types and interfaces they rely upon.
+**HTML DOM API** از مجموعه‌ای از رابط‌ها (interfaces) تشکیل شده است که عملکرد هر یک از {{Glossary("element", "عنصرهای")}} موجود در {{Glossary("HTML")}} و همچنین انواع و رابط‌های پشتیبانی‌کننده‌ای که آن‌ها به آن وابسته هستند را تعریف می‌کنند.
 
-The functional areas included in the HTML DOM API include:
+حوزه‌های عملکردی موجود در HTML DOM API عبارتند از:
 
-- Access to and control of HTML elements via the {{Glossary("DOM")}}.
-- Access to and manipulation of form data.
-- Interacting with the contents of 2D images and the context of an HTML {{HTMLElement("canvas")}}, for example to draw on top of them.
-- Management of media connected to the HTML media elements ({{HTMLElement("audio")}} and {{HTMLElement("video")}}).
-- Dragging and dropping of content on webpages.
-- Access to the browser navigation history
-- Supporting and connective interfaces for other APIs such as [Web Components](/en-US/docs/Web/API/Web_components), {{DOMxRef("Web_Storage_API", "Web Storage", "", "1")}}, {{DOMxRef("Web_Workers_API", "Web Workers", "", "1")}}, {{DOMxRef("WebSockets_API", "WebSocket", "", "1")}}, and {{DOMxRef("Server-sent_events", "Server-sent events", "", "1")}}.
+- دسترسی به عناصر HTML و کنترل آن‌ها از طریق {{Glossary("DOM")}}.
+- دسترسی به داده‌های فرم و دستکاری آن‌ها.
+- تعامل با محتویات تصاویر دو بعدی و بافت (context) یک {{HTMLElement("canvas")}} در HTML، برای مثال برای ترسیم روی آن‌ها.
+- مدیریت رسانه‌های متصل به عناصر رسانه‌ای HTML ({{HTMLElement("audio")}} و {{HTMLElement("video")}}).
+- کشیدن و رها کردن (drag and drop) محتوا در صفحات وب.
+- دسترسی به تاریخچه پیمایش مرورگر.
+- رابط‌های پشتیبان و اتصالی برای سایر APIها مانند [Web Components](/en-US/docs/Web/API/Web_components)، {{DOMxRef("Web_Storage_API", "Web Storage", "", "1")}}، {{DOMxRef("Web_Workers_API", "Web Workers", "", "1")}}، {{DOMxRef("WebSockets_API", "WebSocket", "", "1")}} و {{DOMxRef("Server-sent_events", "Server-sent events", "", "1")}}.
 
-## HTML DOM concepts and usage
+## مفاهیم و کاربرد HTML DOM
 
-In this article, we'll focus on the parts of the HTML DOM that involve engaging with HTML elements. Discussion of other areas, such as {{DOMxRef("HTML_Drag_and_Drop_API", "Drag and Drop", "", "1")}}, {{DOMxRef("WebSockets_API", "WebSockets", "", "1")}}, {{DOMxRef("Web_Storage_API", "Web Storage", "", "1")}}, etc. can be found in the documentation for those APIs.
+در این مقاله، بر بخش‌هایی از HTML DOM تمرکز خواهیم کرد که با عناصر HTML سروکار دارند. بحث درباره حوزه‌های دیگر، مانند {{DOMxRef("HTML_Drag_and_Drop_API", "Drag and Drop", "", "1")}}، {{DOMxRef("WebSockets_API", "WebSockets", "", "1")}}، {{DOMxRef("Web_Storage_API", "Web Storage", "", "1")}} و غیره، در مستندات مربوط به آن APIها یافت می‌شود.
 
-### Structure of an HTML document
+### ساختار یک سند HTML
 
-The Document Object Model ({{Glossary("DOM")}}) is an architecture that describes the structure of a {{domxref("document")}}; each document is represented by an instance of the interface {{domxref("Document")}}. A document, in turn, consists of a hierarchical tree of **nodes**, in which a node is a fundamental record representing a single object within the document (such as an element or text node).
+مدل شیء سند (Document Object Model یا {{Glossary("DOM")}}) معماری‌ای است که ساختار یک {{domxref("document")}} را توصیف می‌کند؛ هر سند با یک نمونه از رابط {{domxref("Document")}} نمایش داده می‌شود. یک سند به نوبه خود از یک درخت سلسله‌مراتبی از **گره‌ها** (nodes) تشکیل شده است که در آن هر گره یک رکورد بنیادی است که یک شیء واحد درون سند (مانند یک عنصر یا گره متنی) را نمایش می‌دهد.
 
-Nodes may be strictly organizational, providing a means for grouping other nodes together or for providing a point at which a hierarchy can be constructed; other nodes may represent visible components of a document. Each node is based on the {{domxref("Node")}} interface, which provides properties for getting information about the node as well as methods for creating, deleting, and organizing nodes within the DOM.
+گره‌ها ممکن است صرفاً سازمانی باشند، یعنی وسیله‌ای برای گروه‌بندی گره‌های دیگر یا فراهم کردن نقطه‌ای برای ساخت سلسله‌مراتب فراهم کنند؛ گره‌های دیگر ممکن است اجزای قابل مشاهده یک سند را نمایش دهند. هر گره بر اساس رابط {{domxref("Node")}} است که ویژگی‌هایی برای دریافت اطلاعات درباره گره و همچنین روش‌هایی برای ایجاد، حذف و سازماندهی گره‌ها در DOM فراهم می‌کند.
 
-Nodes don't have any concept of including the content that is actually displayed in the document. They're empty vessels. The fundamental notion of a node that can represent visual content is introduced by the {{domxref("Element")}} interface. An `Element` object instance represents a single element in a document created using either HTML or an {{glossary("XML")}} vocabulary such as {{glossary("SVG")}}.
+گره‌ها هیچ مفهوم وابسته به محتوایی که واقعاً در سند نمایش داده می‌شود ندارند. آن‌ها ظرف‌های خالی هستند. مفهوم بنیادی گره‌ای که می‌تواند محتوای بصری را نمایش دهد توسط رابط {{domxref("Element")}} معرفی می‌شود. یک نمونه شیء `Element` یک عنصر واحد در سند را نمایش می‌دهد که با استفاده از HTML یا یک واژگان {{glossary("XML")}} مانند {{glossary("SVG")}} ایجاد شده است.
 
-For example, consider a document with two elements, one of which has two more elements nested inside it:
+برای مثال، سندی با دو عنصر در نظر بگیرید که یکی از آن‌ها دو عنصر دیگر را درون خود جای داده است:
 
-![Structure of a document with elements inside a document in a window](dom-structure.svg)
+![ساختار یک سند با عناصر داخل یک سند در یک پنجره](dom-structure.svg)
 
-While the {{domxref("Document")}} interface is defined as part of the {{DOMxRef("Document_Object_Model", "DOM", "", "1")}} specification, the HTML specification significantly enhances it to add information specific to using the DOM in the context of a web browser, as well as to using it to represent HTML documents specifically.
+در حالی که رابط {{domxref("Document")}} به عنوان بخشی از مشخصات {{DOMxRef("Document_Object_Model", "DOM", "", "1")}} تعریف شده است، مشخصات HTML آن را به‌طور قابل توجهی گسترش می‌دهد تا اطلاعات خاص استفاده از DOM در زمینه مرورگر وب، و همچنین استفاده از آن برای نمایش اسناد HTML را به‌طور خاص اضافه کند.
 
-Among the things added to `Document` by the HTML standard are:
+از جمله مواردی که توسط استاندارد HTML به `Document` اضافه شده است:
 
-- Support for accessing various information provided by the {{Glossary("HTTP")}} headers when loading the page, such as the {{DOMxRef("Document/location", "location", "", "1")}} from which the document was loaded, {{DOMxRef("Document/cookie", "cookies", "", "1")}}, {{DOMxRef("Document/lastModified", "modification date", "", "1")}}, {{DOMxRef("Document/referrer", "referring site", "", "1")}}, and so forth.
-- Access to lists of elements in the document's {{HTMLElement("head")}} block and {{DOMxRef("Document/body", "body", "", "1")}}, as well as lists of the {{DOMxRef("Document/images", "images", "", "1")}}, {{DOMxRef("Document/links", "links", "", "1")}}, {{DOMxRef("Document/scripts", "scripts", "", "1")}}, etc. contained in the document.
-- Support for interacting with the user by examining {{DOMxRef("Document/hasFocus", "focus", "", "1")}} and by executing commands on [editable content](/en-US/docs/Web/HTML/Reference/Global_attributes/contenteditable).
-- Event handlers for document events defined by the HTML standard to allow access to {{DOMxRef("MouseEvent", "mouse", "", "1")}} and {{DOMxRef("KeyboardEvent", "keyboard", "", "1")}} events, {{DOMxRef("HTML_Drag_and_Drop_API", "drag and drop", "", "1")}}, {{DOMxRef("HTMLMediaElement", "media control", "", "1")}}, and more.
-- Event handlers for events that can be delivered to both elements and documents; these presently include only {{DOMxRef("Element/copy_event", "copy")}}, {{DOMxRef("Element/cut_event", "cut")}}, and {{DOMxRef("Element/paste_event", "paste")}} actions.
+- پشتیبانی از دسترسی به اطلاعات مختلف ارائه‌شده توسط سرصفحه‌های {{Glossary("HTTP")}} هنگام بارگذاری صفحه، مانند {{DOMxRef("Document/location", "location", "", "1")}} (مکان) که سند از آن بارگذاری شده، {{DOMxRef("Document/cookie", "cookies", "", "1")}} (کوکی‌ها)، {{DOMxRef("Document/lastModified", "modification date", "", "1")}} (تاریخ تغییر)، {{DOMxRef("Document/referrer", "referring site", "", "1")}} (سایت ارجاع‌دهنده) و غیره.
+- دسترسی به فهرست عناصر در بلوک {{HTMLElement("head")}} سند و {{DOMxRef("Document/body", "body", "", "1")}}، و همچنین فهرست‌های {{DOMxRef("Document/images", "images", "", "1")}} (تصاویر)، {{DOMxRef("Document/links", "links", "", "1")}} (پیوندها)، {{DOMxRef("Document/scripts", "scripts", "", "1")}} (اسکریپت‌ها) و غیره موجود در سند.
+- پشتیبانی از تعامل با کاربر با بررسی {{DOMxRef("Document/hasFocus", "focus", "", "1")}} (فوکوس) و با اجرای دستورات روی [محتوای قابل ویرایش](/en-US/docs/Web/HTML/Reference/Global_attributes/contenteditable).
+- مدیریت‌کننده‌های رویداد برای رویدادهای سند که توسط استاندارد HTML تعریف شده‌اند تا امکان دسترسی به رویدادهای {{DOMxRef("MouseEvent", "mouse", "", "1")}} و {{DOMxRef("KeyboardEvent", "keyboard", "", "1")}}، {{DOMxRef("HTML_Drag_and_Drop_API", "drag and drop", "", "1")}}، {{DOMxRef("HTMLMediaElement", "media control", "", "1")}} و موارد دیگر فراهم شود.
+- مدیریت‌کننده‌های رویداد برای رویدادهایی که می‌توانند به عناصر و اسناد تحویل داده شوند؛ این موارد در حال حاضر فقط شامل اقدامات {{DOMxRef("Element/copy_event", "copy")}} (کپی)، {{DOMxRef("Element/cut_event", "cut")}} (برش) و {{DOMxRef("Element/paste_event", "paste")}} (چسباندن) هستند.
 
-### HTML element interfaces
+### رابط‌های عنصر HTML
 
-The `Element` interface has been further adapted to represent HTML elements specifically by introducing the {{domxref("HTMLElement")}} interface, which all more specific HTML element classes inherit from. This expands the `Element` class to add HTML-specific general features to the element nodes. Properties added by `HTMLElement` include for example {{domxref("HTMLElement.hidden", "hidden")}} and {{domxref("HTMLElement.innerText", "innerText")}}.
+رابط `Element` بیشتر برای نمایش عناصر HTML به‌طور خاص با معرفی رابط {{domxref("HTMLElement")}} سازگار شده است، که همه کلاس‌های خاص‌تر عنصر HTML از آن ارث می‌برند. این کار کلاس `Element` را گسترش می‌دهد تا ویژگی‌های عمومی خاص HTML را به گره‌های عنصر اضافه کند. ویژگی‌های اضافه‌شده توسط `HTMLElement` عبارتند از برای مثال {{domxref("HTMLElement.hidden", "hidden")}} و {{domxref("HTMLElement.innerText", "innerText")}}.
 
-An {{Glossary("HTML")}} document is a DOM tree in which each of the nodes is an HTML element, represented by the {{domxref("HTMLElement")}} interface. The `HTMLElement` class, in turn, implements `Node`, so every element is also a node (but not the other way around). This way, the structural features implemented by the {{domxref("Node")}} interface are also available to HTML elements, allowing them to be nested within each other, created and deleted, moved around, and so forth.
+یک سند {{Glossary("HTML")}} یک درخت DOM است که در آن هر گره یک عنصر HTML است که توسط رابط {{domxref("HTMLElement")}} نمایش داده می‌شود. کلاس `HTMLElement` به نوبه خود `Node` را پیاده‌سازی می‌کند، بنابراین هر عنصر یک گره نیز هست (اما عکس آن درست نیست). به این ترتیب، ویژگی‌های ساختاری پیاده‌سازی‌شده توسط رابط {{domxref("Node")}} نیز در دسترس عناصر HTML قرار می‌گیرند و به آن‌ها اجازه می‌دهند درون یکدیگر تودرتو شوند، ایجاد و حذف شوند، جابجا شوند و غیره.
 
-The `HTMLElement` interface is generic, however, providing only the functionality common to all HTML elements such as the element's ID, its coordinates, the HTML making up the element, information about scroll position, and so forth.
+با این حال، رابط `HTMLElement` عمومی است و فقط عملکرد مشترک میان همه عناصر HTML را فراهم می‌کند، مانند شناسه عنصر، مختصات آن، HTML سازنده عنصر، اطلاعات مربوط به موقعیت اسکرول و غیره.
 
-In order to expand upon the functionality of the core `HTMLElement` interface to provide the features needed by a specific element, the `HTMLElement` class is subclassed to add the needed properties and methods. For example, the {{HTMLElement("canvas")}} element is represented by an object of type {{domxref("HTMLCanvasElement")}}. `HTMLCanvasElement` augments the `HTMLElement` type by adding properties such as {{domxref("HTMLCanvasElement.height", "height")}} and methods like {{domxref("HTMLCanvasElement.getContext", "getContext()")}} to provide canvas-specific features.
+برای گسترش عملکرد رابط اصلی `HTMLElement` به منظور فراهم کردن ویژگی‌های مورد نیاز یک عنصر خاص، کلاس `HTMLElement` زیرکلاس‌سازی می‌شود تا خواص و روش‌های لازم اضافه شود. برای مثال، عنصر {{HTMLElement("canvas")}} توسط یک شیء از نوع {{domxref("HTMLCanvasElement")}} نمایش داده می‌شود. `HTMLCanvasElement` نوع `HTMLElement` را با افزودن ویژگی‌هایی مانند {{domxref("HTMLCanvasElement.height", "height")}} و روش‌هایی مانند {{domxref("HTMLCanvasElement.getContext", "getContext()")}} برای فراهم کردن ویژگی‌های خاص بوم (canvas) تقویت می‌کند.
 
-The overall inheritance for HTML element classes looks like this:
+سلسله‌مراتب کلی ارث‌بری برای کلاس‌های عنصر HTML به این شکل است:
 
-![Hierarchy of interfaces for HTML elements](html-dom-hierarchy.svg)
+![سلسله‌مراتب رابط‌ها برای عناصر HTML](html-dom-hierarchy.svg)
 
-As such, an element inherits the properties and methods of all of its ancestors. For example, consider an {{HTMLElement("a")}} element, which is represented in the DOM by an object of type {{domxref("HTMLAnchorElement")}}. The element, then, includes the anchor-specific properties and methods described in that class's documentation, but also those defined by {{domxref("HTMLElement")}} and {{domxref("Element")}}, as well as from {{domxref("Node")}} and, finally, {{domxref("EventTarget")}}.
+بنابراین، یک عنصر ویژگی‌ها و روش‌های همه اجداد خود را به ارث می‌برد. برای مثال، یک عنصر {{HTMLElement("a")}} را در نظر بگیرید که در DOM توسط یک شیء از نوع {{domxref("HTMLAnchorElement")}} نمایش داده می‌شود. بنابراین، عنصر شامل ویژگی‌ها و روش‌های خاص پیوند (anchor) است که در مستندات آن کلاس توضیح داده شده است، اما همچنین آن‌هایی که توسط {{domxref("HTMLElement")}} و {{domxref("Element")}} تعریف شده‌اند، و همچنین از {{domxref("Node")}} و در نهایت {{domxref("EventTarget")}}.
 
-Each level defines a key aspect of the utility of the element. From `Node`, the element inherits concepts surrounding the ability for the element to be contained by another element, and to contain other elements itself. Of special importance is what is gained by inheriting from `EventTarget`: the ability to receive and handle events such as mouse clicks, play and pause events, and so forth.
+هر سطح یک جنبه کلیدی از کاربرد عنصر را تعریف می‌کند. از `Node`، عنصر مفاهیم مربوط به توانایی عنصر برای قرار گرفتن درون عنصر دیگر و نیز در بر گرفتن عناصر دیگر را به ارث می‌برد. از اهمیت ویژه‌ای برخوردار است آنچه از ارث بردن از `EventTarget` به دست می‌آید: توانایی دریافت و مدیریت رویدادهایی مانند کلیک‌های ماوس، رویدادهای پخش و توقف و غیره.
 
-There are elements that share commonalities and thus have an additional intermediary type. For example, the {{HTMLElement("audio")}} and {{HTMLElement("video")}} elements both present audiovisual media. The corresponding types, {{domxref("HTMLAudioElement")}} and {{domxref("HTMLVideoElement")}}, are both based upon the common type {{domxref("HTMLMediaElement")}}, which in turn is based upon {{domxref("HTMLElement")}} and so forth. `HTMLMediaElement` defines the methods and properties held in common between audio and video elements.
+عناصری وجود دارند که اشتراکاتی دارند و بنابراین یک نوع واسط اضافی دارند. برای مثال، عناصر {{HTMLElement("audio")}} و {{HTMLElement("video")}} هر دو رسانه دیداری-شنیداری ارائه می‌دهند. انواع متناظر، {{domxref("HTMLAudioElement")}} و {{domxref("HTMLVideoElement")}}، هر دو بر اساس نوع مشترک {{domxref("HTMLMediaElement")}} هستند، که به نوبه خود بر اساس {{domxref("HTMLElement")}} و غیره است. `HTMLMediaElement` روش‌ها و ویژگی‌های مشترک بین عناصر صوتی و تصویری را تعریف می‌کند.
 
-These element-specific interfaces make up the majority of the HTML DOM API, and are the focus of this article. The [DOM](/en-US/docs/Web/API/Document_Object_Model) article provides a general introduction to the DOM and its concepts.
+این رابط‌های خاص عنصر، بخش عمده HTML DOM API را تشکیل می‌دهند و تمرکز این مقاله هستند. مقاله [DOM](/en-US/docs/Web/API/Document_Object_Model) مقدمه‌ای کلی درباره DOM و مفاهیم آن ارائه می‌دهد.
 
-## HTML DOM target audience
+## مخاطب هدف HTML DOM
 
-The features exposed by the HTML DOM are among the most commonly-used APIs in a web developer's toolkit.
-All but the most simple web applications will use some features of the HTML DOM.
+ویژگی‌های ارائه‌شده توسط HTML DOM از پرکاربردترین APIها در جعبه‌ابزار توسعه‌دهنده وب هستند. تقریباً همه برنامه‌های وب به جز ساده‌ترین آن‌ها از برخی ویژگی‌های HTML DOM استفاده خواهند کرد.
 
-## HTML DOM API interfaces
+## رابط‌های API HTML DOM
 
-The majority of the interfaces that comprise the HTML DOM API map almost one-to-one to individual HTML elements, or to a small group of elements with similar functionality. In addition, the HTML DOM API includes a few interfaces and types to support the HTML element interfaces.
+بیشتر رابط‌هایی که HTML DOM API را تشکیل می‌دهند تقریباً یک‌به‌یک با عناصر HTML منفرد یا گروه کوچکی از عناصر با عملکرد مشابه مطابقت دارند. علاوه بر این، HTML DOM API شامل چند رابط و نوع برای پشتیبانی از رابط‌های عنصر HTML است.
 
-### HTML element interfaces
+### رابط‌های عنصر HTML
 
-These interfaces represent specific HTML elements (or sets of related elements which have the same properties and methods associated with them).
+این رابط‌ها عناصر HTML خاص (یا مجموعه‌هایی از عناصر مرتبط که ویژگی‌ها و روش‌های یکسانی دارند) را نمایش می‌دهند.
 
 - {{DOMxRef("HTMLAnchorElement")}}
 - {{DOMxRef("HTMLAreaElement")}}
@@ -153,223 +146,24 @@ These interfaces represent specific HTML elements (or sets of related elements w
 - {{DOMxRef("HTMLUnknownElement")}}
 - {{DOMxRef("HTMLVideoElement")}}
 
-#### Deprecated HTML Element Interfaces
+#### رابط‌های عنصر HTML منسوخ‌شده
 
 - {{DOMxRef("HTMLMarqueeElement")}} {{deprecated_inline}}
 
-#### Obsolete HTML Element Interfaces
+#### رابط‌های عنصر HTML منسوخ‌شده (obsolete)
 
 - {{DOMxRef("HTMLFontElement")}} {{deprecated_inline}}
 - {{DOMxRef("HTMLFrameElement")}} {{deprecated_inline}}
 - {{DOMxRef("HTMLFrameSetElement")}} {{deprecated_inline}}
 
-### Web app and browser integration interfaces
+### رابط‌های برنامه وب و یکپارچه‌سازی مرورگر
 
-These interfaces offer access to the browser window and document that contain the HTML, as well as to the browser's state, available plugins (if any), and various configuration options.
+این رابط‌ها دسترسی به پنجره مرورگر و سندی که HTML را در بر دارد، و همچنین به وضعیت مرورگر، افزونه‌های موجود (در صورت وجود) و گزینه‌های پیکربندی مختلف را فراهم می‌کنند.
 
 - {{DOMxRef("BarProp")}}
 - {{DOMxRef("Navigator")}}
 - {{DOMxRef("Window")}}
 
-#### Obsolete web app and browser integration interfaces
+#### رابط‌های منسوخ‌شده برنامه وب و یکپارچه‌سازی مرورگر
 
-- {{DOMxRef("Plugin")}} {{deprecated_inline}}
-- {{DOMxRef("PluginArray")}} {{deprecated_inline}}
-
-### Form support interfaces
-
-These interfaces provide structure and functionality required by the elements used to create and manage forms, including the {{HTMLElement("form")}} and {{HTMLElement("input")}} elements.
-
-- {{DOMxRef("FormDataEvent")}}
-- {{DOMxRef("HTMLFormControlsCollection")}}
-- {{DOMxRef("HTMLOptionsCollection")}}
-- {{DOMxRef("RadioNodeList")}}
-- {{DOMxRef("ValidityState")}}
-
-### Canvas and image interfaces
-
-These interfaces represent objects used by the Canvas API as well as the {{HTMLElement("img")}} element and {{HTMLElement("picture")}} elements.
-
-- {{DOMxRef("CanvasGradient")}}
-- {{DOMxRef("CanvasPattern")}}
-- {{DOMxRef("CanvasRenderingContext2D")}}
-- {{DOMxRef("ImageBitmap")}}
-- {{DOMxRef("ImageBitmapRenderingContext")}}
-- {{DOMxRef("ImageData")}}
-- {{DOMxRef("OffscreenCanvas")}}
-- {{DOMxRef("OffscreenCanvasRenderingContext2D")}}
-- {{DOMxRef("Path2D")}}
-- {{DOMxRef("TextMetrics")}}
-
-### Media interfaces
-
-The media interfaces provide HTML access to the contents of the media elements: {{HTMLElement("audio")}} and {{HTMLElement("video")}}.
-
-- {{DOMxRef("AudioTrack")}}
-- {{DOMxRef("AudioTrackList")}}
-- {{DOMxRef("MediaError")}}
-- {{DOMxRef("TextTrack")}}
-- {{DOMxRef("TextTrackCue")}}
-- {{DOMxRef("TextTrackCueList")}}
-- {{DOMxRef("TextTrackList")}}
-- {{DOMxRef("TimeRanges")}}
-- {{DOMxRef("TrackEvent")}}
-- {{DOMxRef("VideoTrack")}}
-- {{DOMxRef("VideoTrackList")}}
-
-### Drag and drop interfaces
-
-These interfaces are used by the [HTML Drag and Drop API](/en-US/docs/Web/API/HTML_Drag_and_Drop_API) to represent individual draggable (or dragged) items, groups of dragged or draggable items, and to handle the drag and drop process.
-
-- {{DOMxRef("DataTransfer")}}
-- {{DOMxRef("DataTransferItem")}}
-- {{DOMxRef("DataTransferItemList")}}
-- {{DOMxRef("DragEvent")}}
-
-### Page history interfaces
-
-The History API interfaces let you access information about the browser's history, as well as to shift the browser's current tab forward and backward through that history.
-
-- {{DOMxRef("BeforeUnloadEvent")}}
-- {{DOMxRef("HashChangeEvent")}}
-- {{DOMxRef("History")}}
-- {{DOMxRef("Location")}}
-- {{DOMxRef("PageRevealEvent")}}
-- {{DOMxRef("PageSwapEvent")}}
-- {{DOMxRef("PageTransitionEvent")}}
-- {{DOMxRef("PopStateEvent")}}
-
-### Web Components interfaces
-
-These interfaces are used by the [Web Components API](/en-US/docs/Web/API/Web_components) to create and manage the available [custom elements](/en-US/docs/Web/API/Web_components/Using_custom_elements).
-
-- {{DOMxRef("CustomElementRegistry")}}
-
-### Miscellaneous and supporting interfaces
-
-These supporting object types are used in a variety of ways in the HTML DOM API. In addition, {{domxref("PromiseRejectionEvent")}} represents the event delivered when a {{Glossary("JavaScript")}} {{jsxref("Promise")}} is rejected.
-
-- {{DOMxRef("DOMStringList")}}
-- {{DOMxRef("DOMStringMap")}}
-- {{DOMxRef("ErrorEvent")}}
-- {{DOMxRef("HTMLAllCollection")}}
-- {{DOMxRef("MimeType")}}
-- {{DOMxRef("MimeTypeArray")}}
-- {{DOMxRef("PromiseRejectionEvent")}}
-
-### Interfaces belonging to other APIs
-
-Several interfaces are technically defined in the HTML specification while actually being part of other APIs.
-
-#### Web storage interfaces
-
-The {{DOMxRef("Web_Storage_API", "Web Storage API", "", "1")}} provides the ability for websites to store data either temporarily or permanently on the user's device for later re-use.
-
-- {{DOMxRef("Storage")}}
-- {{DOMxRef("StorageEvent")}}
-
-#### Web Workers interfaces
-
-These interfaces are used by the {{DOMxRef("Web_Workers_API", "Web Workers API", "", "1")}} both to establish the ability for workers to interact with an app and its content, but also to support messaging between windows or apps.
-
-- {{DOMxRef("BroadcastChannel")}}
-- {{DOMxRef("DedicatedWorkerGlobalScope")}}
-- {{DOMxRef("MessageChannel")}}
-- {{DOMxRef("MessageEvent")}}
-- {{DOMxRef("MessagePort")}}
-- {{DOMxRef("SharedWorker")}}
-- {{DOMxRef("SharedWorkerGlobalScope")}}
-- {{DOMxRef("Worker")}}
-- {{DOMxRef("WorkerGlobalScope")}}
-- {{DOMxRef("WorkerLocation")}}
-- {{DOMxRef("WorkerNavigator")}}
-
-#### WebSocket interfaces
-
-These interfaces, defined by the HTML specification, are used by the {{DOMxRef("WebSockets_API", "WebSockets API", "", "1")}}.
-
-- {{DOMxRef("CloseEvent")}}
-- {{DOMxRef("WebSocket")}}
-
-#### Server-sent events interfaces
-
-The {{domxref("EventSource")}} interface represents the source which sent or is sending {{DOMxRef("Server-sent_events", "server-sent events", "", "1")}}.
-
-- {{DOMxRef("EventSource")}}
-
-## Examples
-
-In this example, an {{HTMLElement("input")}} element's {{domxref("Element/input_event", "input")}} event is monitored in order to update the state of a form's "submit" button based on whether or not a given field currently has a value.
-
-### JavaScript
-
-```js
-const nameField = document.getElementById("userName");
-const sendButton = document.getElementById("sendButton");
-
-sendButton.disabled = true;
-// [note: this is disabled since it causes this article to always load with this example focused and scrolled into view]
-// nameField.focus();
-
-nameField.addEventListener("input", (event) => {
-  const elem = event.target;
-  const valid = elem.value.length !== 0;
-
-  if (valid && sendButton.disabled) {
-    sendButton.disabled = false;
-  } else if (!valid && !sendButton.disabled) {
-    sendButton.disabled = true;
-  }
-});
-```
-
-This code uses the {{domxref("Document")}} interface's {{domxref("Document.getElementById", "getElementById()")}} method to get the DOM object representing the {{HTMLElement("input")}} elements whose IDs are `userName` and `sendButton`. With these, we can access the properties and methods that provide information about and grant control over these elements.
-
-The {{domxref("HTMLInputElement")}} object for the "Send" button's {{domxref("HTMLInputElement.disabled", "disabled")}} property is set to `true`, which disables the "Send" button so it can't be clicked. In addition, the user name input field is made the active focus by calling the {{domxref("HTMLElement/focus", "focus()")}} method it inherits from {{domxref("HTMLElement")}}.
-
-Then {{domxref("EventTarget.addEventListener", "addEventListener()")}} is called to add a handler for the `input` event to the user name input. This code looks at the length of the current value of the input; if it's zero, then the "Send" button is disabled if it's not already disabled. Otherwise, the code ensures that the button is enabled.
-
-With this in place, the "Send" button is always enabled whenever the user name input field has a value, and disabled when it's empty.
-
-### HTML
-
-The HTML for the form looks like this:
-
-```html
-<p>Please provide the information below. Items marked with "*" are required.</p>
-<form action="" method="get">
-  <p>
-    <label for="userName" required>Your name:</label>
-    <input type="text" id="userName" /> (*)
-  </p>
-  <p>
-    <label for="userEmail">Email:</label>
-    <input type="email" id="userEmail" />
-  </p>
-  <input type="submit" value="Send" id="sendButton" />
-</form>
-```
-
-### Result
-
-{{EmbedLiveSample("Examples", 640, 300)}}
-
-## Specifications
-
-{{Specifications}}
-
-## Browser compatibility
-
-{{Compat}}
-
-## See also
-
-### References
-
-- [HTML elements reference](/en-US/docs/Web/HTML/Reference/Elements)
-- [HTML attribute reference](/en-US/docs/Web/HTML/Reference/Attributes)
-- {{DOMxRef("Document_Object_Model", "Document Object Model (DOM)", "", "1")}} reference
-
-### Guides
-
-- [DOM scripting introduction](/en-US/docs/Learn_web_development/Core/Scripting/DOM_scripting)
+- {{DOMxRef("Plugin")}} {{dep
