@@ -1,11 +1,5 @@
 ---
 title: "HTMLElement: dataset property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset"
-status: "needs-translation"
----
-
----
-title: "HTMLElement: dataset property"
 short-title: dataset
 slug: Web/API/HTMLElement/dataset
 page-type: web-api-instance-property
@@ -14,83 +8,56 @@ browser-compat: api.HTMLElement.dataset
 
 {{APIRef("HTML DOM")}}
 
-The **`dataset`** read-only property
-of the {{DOMxRef("HTMLElement")}} interface provides read/write access to [custom data attributes](/en-US/docs/Web/HTML/Reference/Global_attributes/data-*)
-(`data-*`) on elements. It exposes a map of strings
-({{domxref("DOMStringMap")}}) with an entry for each `data-*` attribute.
+ویژگی فقط‌خواندنی **`dataset`** در رابط {{DOMxRef("HTMLElement")}} دسترسی خواندن/نوشتن به [ویژگی‌های داده سفارشی](/en-US/docs/Web/HTML/Reference/Global_attributes/data-*) (`data-*`) روی عناصر را فراهم می‌کند. این ویژگی یک نقشه از رشته‌ها ({{domxref("DOMStringMap")}}) را با یک ورودی برای هر ویژگی `data-*` ارائه می‌دهد.
 
 > [!NOTE]
-> The `dataset` property itself can be read, but not directly written.
-> Instead, all writes must be to the individual properties within the
-> `dataset`, which in turn represent the data attributes.
+> ویژگی `dataset` خودش قابل خواندن است، اما نمی‌توان مستقیماً به آن نوشت. در عوض، تمام نوشته‌ها باید روی ویژگی‌های منفرد درون `dataset` انجام شوند که به نوبه خود نشان‌دهنده ویژگی‌های داده هستند.
 
-## Value
+## مقدار
 
-A {{domxref("DOMStringMap")}}.
+یک {{domxref("DOMStringMap")}}.
 
-An HTML `data-*` attribute and its corresponding DOM
-`dataset.property` modify their shared name according to where
-they are read or written:
+یک ویژگی HTML `data-*` و ویژگی `dataset.property` متناظر در DOM نام مشترک خود را با توجه به جایی که خوانده یا نوشته می‌شوند تغییر می‌دهند:
 
-- In HTML
-  - : The attribute name begins with `data-`. It can contain only letters,
-    numbers, dashes (`-`), periods (`.`), colons (`:`),
-    and underscores (`_`). Any {{Glossary("ASCII")}} capital letters (`A` to
-    `Z`) are converted to lowercase.
-- In JavaScript
-  - : The property name of a custom data attribute is the same as the HTML attribute
-    without the `data-` prefix. Single dashes (`-`) are removed, and the next ASCII
-    character after a removed dash is capitalized to form the property's camel-cased name.
+- در HTML
+  - : نام ویژگی با `data-` شروع می‌شود. فقط می‌تواند شامل حروف، اعداد، خط تیره (`-`)، نقطه (`.`)، دونقطه (`:`) و زیرخط (`_`) باشد. هر حرف بزرگ {{Glossary("ASCII")}} (از `A` تا `Z`) به حروف کوچک تبدیل می‌شود.
+- در JavaScript
+  - : نام ویژگی یک ویژگی داده سفارشی همان نام ویژگی HTML بدون پیشوند `data-` است. خط تیره‌های تکی (`-`) حذف می‌شوند و کاراکتر ASCII بعد از یک خط تیره حذف شده بزرگ می‌شود تا نام CamelCase شکل بگیرد.
 
-Details and examples of converting between the HTML and JavaScript forms is described in more detail in the next section.
+جزئیات و مثال‌های تبدیل بین فرم HTML و JavaScript در بخش بعدی با جزئیات بیشتر توضیح داده شده است.
 
-In addition to the information below, you'll find a how-to guide for using HTML data
-attributes in our article [_Using data attributes_](/en-US/docs/Web/HTML/How_to/Use_data_attributes).
+علاوه بر اطلاعات زیر، یک راهنمای عملی برای استفاده از ویژگی‌های داده HTML در مقاله [_Using data attributes_](/en-US/docs/Web/HTML/How_to/Use_data_attributes) خواهید یافت.
 
-### Name conversion
+### تبدیل نام
 
-- `dash-style` to `camelCase` conversion
-  - : A custom data attribute name is transformed to a key for the
-    {{domxref("DOMStringMap") }} entry by the following:
-    1. Lowercase all ASCII capital letters (`A` to
-       `Z`);
-    2. Remove the prefix `data-` (including the dash);
-    3. For any dash (`U+002D`) followed by an ASCII lowercase letter
-       `a` to `z`, remove the dash and uppercase the letter;
-    4. Other characters (including other dashes) are left unchanged.
+- تبدیل `dash-style` به `camelCase`
+  - : یک نام ویژگی داده سفارشی به یک کلید برای ورودی {{domxref("DOMStringMap")}} با مراحل زیر تبدیل می‌شود:
+    1. تمام حروف بزرگ ASCII (`A` تا `Z`) را به حروف کوچک تبدیل کنید.
+    2. پیشوند `data-` (شامل خط تیره) را حذف کنید.
+    3. برای هر خط تیره (`U+002D`) که با یک حرف کوچک ASCII `a` تا `z` دنبال می‌شود، خط تیره را حذف کرده و حرف را بزرگ کنید.
+    4. سایر کاراکترها (از جمله خط تیره‌های دیگر) بدون تغییر باقی می‌مانند.
 
-- `camelCase` to `dash-style` conversion
-  - : The opposite transformation, which maps a key to an attribute name, uses the
-    following:
-    1. **Restriction:** Before transformation, a dash _must not_ be
-       immediately followed by an ASCII lowercase letter `a` to
-       `z`;
-    2. Add the `data-` prefix;
-    3. Add a dash before any ASCII uppercase letter `A` to `Z`,
-       then lowercase the letter;
-    4. Other characters are left unchanged.
+- تبدیل `camelCase` به `dash-style`
+  - : تبدیل معکوس که یک کلید را به یک نام ویژگی نگاشت می‌کند، از مراحل زیر استفاده می‌کند:
+    1. **محدودیت:** قبل از تبدیل، یک خط تیره _نباید_ بلافاصله با یک حرف کوچک ASCII `a` تا `z` دنبال شود.
+    2. پیشوند `data-` را اضافه کنید.
+    3. قبل از هر حرف بزرگ ASCII `A` تا `Z` یک خط تیره اضافه کنید، سپس حرف را کوچک کنید.
+    4. سایر کاراکترها بدون تغییر باقی می‌مانند.
 
-For example, a `data-abc-def` attribute corresponds to
-`dataset.abcDef`.
+به عنوان مثال، یک ویژگی `data-abc-def` به `dataset.abcDef` مربوط می‌شود.
 
-### Accessing values
+### دسترسی به مقادیر
 
-- Attributes can be set and read by the camelCase name/key as an object property of
-  the dataset: `element.dataset.keyname`.
-- Attributes can also be set and read using bracket syntax:
-  `element.dataset['keyname']`.
-- The [`in` operator](/en-US/docs/Web/JavaScript/Reference/Operators/in) can check if a given attribute exists:
-  `'keyname' in element.dataset`. Note that this will walk the [prototype chain](/en-US/docs/Web/JavaScript/Guide/Inheritance_and_the_prototype_chain) of `dataset` and may be unsafe if you have external code that may pollute the prototype chain. Several alternatives exist, such as {{jsxref("Object/hasOwn", "Object.hasOwn(element.dataset, 'keyname')")}}, or just checking if `element.dataset.keyname !== undefined`.
+- ویژگی‌ها را می‌توان با نام/کلید CamelCase به عنوان یک ویژگی شیء از dataset تنظیم و خواند: `element.dataset.keyname`.
+- ویژگی‌ها را می‌توان با استفاده از نحو براکت نیز تنظیم و خواند: `element.dataset['keyname']`.
+- عملگر [`in`](/en-US/docs/Web/JavaScript/Reference/Operators/in) می‌تواند بررسی کند که آیا یک ویژگی خاص وجود دارد: `'keyname' in element.dataset`. توجه داشته باشید که این کار زنجیره [پروتوتایپ](/en-US/docs/Web/JavaScript/Guide/Inheritance_and_the_prototype_chain) `dataset` را طی می‌کند و ممکن است در صورت وجود کد خارجی که زنجیره پروتوتایپ را آلوده کند، ناامن باشد. چندین جایگزین وجود دارد، مانند {{jsxref("Object/hasOwn", "Object.hasOwn(element.dataset, 'keyname')")}}، یا فقط بررسی اینکه `element.dataset.keyname !== undefined`.
 
-### Setting values
+### تنظیم مقادیر
 
-- When the attribute is set, its value is always converted to a string.
-  For example: `element.dataset.example = null` is
-  converted into `data-example="null"`.
+- هنگامی که ویژگی تنظیم می‌شود، مقدار آن همیشه به یک رشته تبدیل می‌شود. به عنوان مثال: `element.dataset.example = null` به `data-example="null"` تبدیل می‌شود.
+- برای حذف یک ویژگی، می‌توانید از [عملگر `delete`](/en-US/docs/Web/JavaScript/Reference/Operators/delete) استفاده کنید: `delete element.dataset.keyname`.
 
-- To remove an attribute, you can use the [`delete` operator](/en-US/docs/Web/JavaScript/Reference/Operators/delete): `delete element.dataset.keyname`.
-
-## Examples
+## مثال‌ها
 
 ```html
 <div id="user" data-id="1234567890" data-user="carinaanand" data-date-of-birth>
@@ -122,17 +89,16 @@ if (el.dataset.someDataAttr === undefined) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The HTML [`data-*`](/en-US/docs/Web/HTML/Reference/Global_attributes/data-*) class
-  of global attributes
-- [Using data attributes](/en-US/docs/Web/HTML/How_to/Use_data_attributes)
-- {{DOMxRef("Element.getAttribute()")}} and {{DOMxRef("Element.setAttribute()")}}
+- کلاس ویژگی‌های سراسری HTML [`data-*`](/en-US/docs/Web/HTML/Reference/Global_attributes/data-*)
+- [استفاده از ویژگی‌های داده](/en-US/docs/Web/HTML/How_to/Use_data_attributes)
+- {{DOMxRef("Element.getAttribute()")}} و {{DOMxRef("Element.setAttribute()")}}
