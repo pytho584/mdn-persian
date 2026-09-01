@@ -1,11 +1,5 @@
 ---
 title: "HTMLElement: dragleave event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dragleave_event"
-status: "needs-translation"
----
-
----
-title: "HTMLElement: dragleave event"
 short-title: dragleave
 slug: Web/API/HTMLElement/dragleave_event
 page-type: web-api-event
@@ -14,13 +8,13 @@ browser-compat: api.HTMLElement.dragleave_event
 
 {{APIRef("HTML Drag and Drop API")}}
 
-The `dragleave` event is fired when a dragged element or text selection leaves a valid drop target.
+رویداد `dragleave` زمانی رخ می‌دهد که یک عنصر یا انتخابِ متنیِ در حال کشیدن، یک هدف رهاسازی معتبر را ترک کند.
 
-This event is not cancelable and may bubble up to the {{domxref("Document")}} and {{domxref("Window")}} objects.
+این رویداد قابل لغو (cancelable) نیست و ممکن است تا اشیاء {{domxref("Document")}} و {{domxref("Window")}} بالا برود (bubble).
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی مدیریت‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("dragleave", (event) => { })
@@ -28,21 +22,21 @@ addEventListener("dragleave", (event) => { })
 ondragleave = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("DragEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("DragEvent")}} که از {{domxref("Event")}} به ارث می‌رسد.
 
 {{InheritanceDiagram("DragEvent")}}
 
-## Examples
+## مثال‌ها
 
-### Resetting drop zone styles on dragleave
+### بازنشانی استایل‌های ناحیه رهاسازی هنگام خروج
 
-In this example, we have a draggable element inside a container. Try grabbing the element, dragging it over the other container, and releasing it.
+در این مثال، یک عنصر قابل کشیدن داخل یک ظرف (container) داریم. سعی کنید عنصر را بگیرید، آن را روی ظرف دیگر بکشید و رها کنید.
 
-We give the other container a purple background while the draggable element is over to signal that it could be dropped onto the container. We listen for the `dragleave` event to reset the container background when dragging the draggable element off the container.
+وقتی عنصر قابل کشیدن روی ظرف دیگر قرار می‌گیرد، به آن ظرف یک پس‌زمینه بنفش می‌دهیم تا نشان دهیم که عنصر می‌تواند روی آن رها شود. به رویداد `dragleave` گوش می‌دهیم تا وقتی عنصر قابل کشیدن از ظرف خارج می‌شود، پس‌زمینه ظرف به حالت اول بازگردد.
 
-However, in this partial example, we haven't implemented dropping: for a complete example of drag and drop, see the page for the [`drag`](/en-US/docs/Web/API/HTMLElement/drag_event) event.
+البته در این مثال جزئی، قابلیت رهاسازی پیاده‌سازی نشده است: برای یک مثال کامل از کشیدن و رها کردن، به صفحه رویداد [`drag`](/en-US/docs/Web/API/HTMLElement/drag_event) مراجعه کنید.
 
 #### HTML
 
@@ -98,21 +92,21 @@ target.addEventListener("dragleave", (event) => {
 });
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample('Resetting drop zone styles on dragleave')}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- Other drag and drop events:
+- سایر رویدادهای کشیدن و رها کردن:
   - {{domxref("HTMLElement/drag_event", "drag")}}
   - {{domxref("HTMLElement/dragstart_event", "dragstart")}}
   - {{domxref("HTMLElement/dragend_event", "dragend")}}
