@@ -1,11 +1,5 @@
 ---
 title: "HTMLTableColElement: span property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableColElement/span"
-status: "needs-translation"
----
-
----
-title: "HTMLTableColElement: span property"
 short-title: span
 slug: Web/API/HTMLTableColElement/span
 page-type: web-api-instance-property
@@ -14,18 +8,18 @@ browser-compat: api.HTMLTableColElement.span
 
 {{ APIRef("HTML DOM") }}
 
-The **`span`** property of the {{domxref("HTMLTableColElement")}} interface represents the number of columns this {{htmlelement("col")}} or {{htmlelement("colgroup")}} must span; this lets the column occupy space across multiple columns of the table. It reflects the [`span`](/en-US/docs/Web/HTML/Reference/Elements/col#span) attribute.
+ویژگی **`span`** از رابط {{domxref("HTMLTableColElement")}} تعداد ستون‌هایی را که این عنصر {{htmlelement("col")}} یا {{htmlelement("colgroup")}} باید بپوشاند، مشخص می‌کند. این ویژگی به ستون اجازه می‌دهد فضای چندین ستون از جدول را اشغال کند. این ویژگی منعکس‌کنندهٔ ویژگی [`span`](/en-US/docs/Web/HTML/Reference/Elements/col#span) است.
 
-## Value
+## مقدار
 
-A positive number representing the number of columns.
+یک عدد مثبت که تعداد ستون‌ها را نشان می‌دهد.
 
 > [!NOTE]
-> When setting a new value, the value is _clamped_ to the nearest strictly positive number (up to 1000).
+> هنگام تنظیم یک مقدار جدید، مقدار به نزدیک‌ترین عدد کاملاً مثبت (تا ۱۰۰۰) _محدود_ می‌شود.
 
-## Examples
+## مثال‌ها
 
-This example provides two buttons to modify the column span of the first cell of the body.
+این مثال دو دکمه برای تغییر پوشش ستون اولین سلول بدنه ارائه می‌دهد.
 
 ### HTML
 
@@ -108,18 +102,18 @@ decreaseButton.addEventListener("click", () => {
 });
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples", "100%", 175)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLTableCellElement.colSpan")}}
