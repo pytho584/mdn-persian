@@ -1,11 +1,5 @@
 ---
 title: "Element: compositionend event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/compositionend_event"
-status: "needs-translation"
----
-
----
-title: "Element: compositionend event"
 short-title: compositionend
 slug: Web/API/Element/compositionend_event
 page-type: web-api-event
@@ -14,13 +8,13 @@ browser-compat: api.Element.compositionend_event
 
 {{APIRef("UI Events")}}
 
-The **`compositionend`** event is fired when a text composition system such as an {{glossary("input method editor")}} completes or cancels the current composition session.
+رویداد **`compositionend`** زمانی پرتاب می‌شود که یک سامانهٔ ترکیب متن، مانند یک {{glossary("input method editor")}} (ویرایشگر روش ورودی)، نشستِ ترکیبِ فعلی را کامل یا لغو کند.
 
-For example, this event could be fired after a user finishes entering a Chinese character using a [Pinyin](https://en.wikipedia.org/wiki/Pinyin) {{glossary("Input method editor")}}.
+برای نمونه، این رویداد می‌تواند پس از آنکه کاربر با استفاده از یک {{glossary("Input method editor")}} (ویرایشگر روش ورودی) مبتنی بر [پینیین](https://en.wikipedia.org/wiki/Pinyin) یک نویسهٔ چینی را وارد کرد، پرتاب شود.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای استفاده از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} یا تنظیم یک ویژگیِ کنترل‌کنندهٔ رویداد (event handler property) می‌توانید از آن بهره ببرید.
 
 ```js-nolint
 addEventListener("compositionend", (event) => { })
@@ -28,13 +22,13 @@ addEventListener("compositionend", (event) => { })
 oncompositionend = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("CompositionEvent")}}. Inherits from {{domxref("UIEvent")}} and {{domxref("Event")}}.
+یک {{domxref("CompositionEvent")}}. به ارث‌گرفته‌شده از {{domxref("UIEvent")}} و {{domxref("Event")}}.
 
 {{InheritanceDiagram("CompositionEvent")}}
 
-## Examples
+## مثال‌ها
 
 ```js
 const inputElement = document.querySelector('input[type="text"]');
@@ -44,7 +38,7 @@ inputElement.addEventListener("compositionend", (event) => {
 });
 ```
 
-### Live example
+### مثال زنده
 
 #### HTML
 
@@ -106,7 +100,7 @@ kbd {
 }
 ```
 
-#### JavaScript
+#### جاوااسکریپت
 
 ```js
 const inputElement = document.querySelector('input[type="text"]');
@@ -126,18 +120,18 @@ inputElement.addEventListener("compositionupdate", handleEvent);
 inputElement.addEventListener("compositionend", handleEvent);
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Live_example', '100%', '180px') }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- Related events: {{domxref("Element/compositionstart_event", "compositionstart")}}, {{domxref("Element/compositionupdate_event", "compositionupdate")}}.
+- رویدادهای مرتبط: {{domxref("Element/compositionstart_event", "compositionstart")}}، {{domxref("Element/compositionupdate_event", "compositionupdate")}}.
