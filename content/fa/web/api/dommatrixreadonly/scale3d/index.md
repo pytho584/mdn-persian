@@ -1,9 +1,4 @@
----
-title: "DOMMatrixReadOnly: scale3d() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrixReadOnly/scale3d"
-status: "needs-translation"
----
-
+```
 ---
 title: "DOMMatrixReadOnly: scale3d() method"
 short-title: scale3d()
@@ -14,12 +9,11 @@ browser-compat: api.DOMMatrixReadOnly.scale3d
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The **`scale3d()`** method of the {{domxref("DOMMatrixReadOnly")}} interface creates a new matrix which is the result of a 3D scale transform being applied
-to the matrix. It returns a new {{domxref("DOMMatrix")}} created by scaling the source 3d matrix by the given scale factor centered on the origin point specified by the origin parameters, with a default origin of `(0, 0, 0)`. The original matrix is not modified.
+متد **`scale3d()`** از رابط {{domxref("DOMMatrixReadOnly")}} یک ماتریس جدید ایجاد می‌کند که نتیجهٔ اعمال یک تبدیل مقیاس سه‌بعدی (3D scale) روی ماتریس است. این متد یک {{domxref("DOMMatrix")}} جدید برمی‌گرداند که با مقیاس‌دادن ماتریس سه‌بعدی مبدأ با ضریب مقیاس داده‌شده و حول نقطهٔ مبدأ مشخص‌شده توسط پارامترهای origin ساخته می‌شود؛ مبدأ پیش‌فرض `(0, 0, 0)` است. ماتریس اصلی تغییری نمی‌کند.
 
-To mutate the matrix as you 3D-scale it, see {{domxref("DOMMatrix.scale3dSelf()")}}
+برای تغییر ماتریس هنگام اعمال مقیاس سه‌بعدی، به {{domxref("DOMMatrix.scale3dSelf()")}} مراجعه کنید.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 scale3d()
@@ -29,22 +23,22 @@ scale3d(scale, originX, originY)
 scale3d(scale, originX, originY, originZ)
 ```
 
-### Parameters
+### پارامترها
 
 - `scale`
-  - : A multiplier; the scale value. If no scale is supplied, this defaults to `1`.
+  - : یک ضریب؛ مقدار مقیاس. اگر مقداری برای scale داده نشود، پیش‌فرض آن `1` است.
 - `originX` {{optional_inline}}
-  - : An x-coordinate for the origin of the transformation. If no origin is supplied, this defaults to `0`.
+  - : مختصات x برای مبدأ تبدیل. اگر مبدأی داده نشود، پیش‌فرض آن `0` است.
 - `originY` {{optional_inline}}
-  - : A y-coordinate for the origin of the transformation. If no origin is supplied, this defaults to `0`.
+  - : مختصات y برای مبدأ تبدیل. اگر مبدأی داده نشود، پیش‌فرض آن `0` است.
 - `originZ` {{optional_inline}}
-  - : A z-coordinate for the origin of the transformation. If this value is `0`, the default if omitted, the resulting matrix may not be 3d.
+  - : مختصات z برای مبدأ تبدیل. اگر این مقدار `0` باشد (که پیش‌فرض در صورت حذف‌شدن است)، ماتریس حاصل ممکن است سه‌بعدی نباشد.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("DOMMatrix")}}.
+یک {{domxref("DOMMatrix")}}.
 
-## Examples
+## مثال‌ها
 
 ```js
 const matrix = new DOMMatrix();
@@ -67,19 +61,20 @@ console.log(matrix.toString()); // original matrix is unchanged
 // matrix(1, 0, 0, 1, 0, 0)
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("DOMMatrix.scale3dSelf()")}}
 - {{domxref("DOMMatrixReadOnly.scale()")}}
-- CSS {{cssxref("transform")}} property and {{cssxref("transform-function/scale3d", "scale3d()")}} and {{cssxref("transform-function/matrix3d", "matrix3d()")}} functions
-- [CSS transforms](/en-US/docs/Web/CSS/Guides/Transforms) module
-- SVG [`transform`](/en-US/docs/Web/SVG/Reference/Attribute/transform) attribute
-- {{domxref("CanvasRenderingContext2D")}} interface's {{domxref("CanvasRenderingContext2D.transform()")}} method
+- ویژگی CSS {{cssxref("transform")}} و توابع {{cssxref("transform-function/scale3d", "scale3d()")}} و {{cssxref("transform-function/matrix3d", "matrix3d()")}}
+- ماژول [تبدیل‌های CSS](/en-US/docs/Web/CSS/Guides/Transforms)
+- ویژگی [`transform`](/en-US/docs/Web/SVG/Reference/Attribute/transform) در SVG
+- متد {{domxref("CanvasRenderingContext2D.transform()")}} از رابط {{domxref("CanvasRenderingContext2D")}}
+```
