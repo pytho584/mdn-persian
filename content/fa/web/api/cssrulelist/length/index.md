@@ -1,11 +1,5 @@
 ---
 title: "CSSRuleList: length property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSRuleList/length"
-status: "needs-translation"
----
-
----
-title: "CSSRuleList: length property"
 short-title: length
 slug: Web/API/CSSRuleList/length
 page-type: web-api-instance-property
@@ -14,25 +8,25 @@ browser-compat: api.CSSRuleList.length
 
 {{ APIRef("CSSOM") }}
 
-The **`length`** property of the {{domxref("CSSRuleList")}} interface returns the number of {{domxref("CSSRule")}} objects in the list.
+خاصیت **`length`** در رابط {{domxref("CSSRuleList")}} تعداد اشیاء {{domxref("CSSRule")}} موجود در فهرست را برمی‌گرداند.
 
-## Value
+## مقدار
 
-An integer.
+یک عدد صحیح.
 
-## Examples
+## مثال‌ها
 
-In the following example the number of items in the {{domxref("CSSRuleList")}} named `myRules` is printed to the console.
+در مثال زیر، تعداد آیتم‌های موجود در {{domxref("CSSRuleList")}} به نام `myRules` در کنسول چاپ می‌شود.
 
 ```js
 let myRules = document.styleSheets[0].cssRules;
 console.log(myRules.length);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
