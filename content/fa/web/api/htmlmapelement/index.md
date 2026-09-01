@@ -1,7 +1,5 @@
 ---
 title: "HTMLMapElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMapElement"
-status: "needs-translation"
 ---
 
 ---
@@ -13,31 +11,31 @@ browser-compat: api.HTMLMapElement
 
 {{ APIRef("HTML DOM") }}
 
-The **`HTMLMapElement`** interface provides special properties and methods (beyond those of the regular object {{domxref("HTMLElement")}} interface it also has available to it by inheritance) for manipulating the layout and presentation of map elements.
+接口 **`HTMLMapElement`** 提供了特殊的属性和方法（除了其通过继承自普通对象 {{domxref("HTMLElement")}} 接口可用的那些之外），用于操作 map 元素的布局和呈现。
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## 实例属性
 
-_Inherits properties from its parent, {{domxref("HTMLElement")}}._
+_继承其父级 {{domxref("HTMLElement")}} 的属性。_
 
 - {{domxref("HTMLMapElement.name")}}
-  - : A string representing the {{HTMLElement("map")}} element for referencing it other context. If the `id` attribute is set, this must have the same value; and it cannot be `null` or empty.
+  - : 一个字符串，表示 {{HTMLElement("map")}} 元素，用于在其他上下文中引用它。如果设置了 `id` 属性，则此属性的值必须与之相同；并且它不能为 `null` 或空字符串。
 - {{domxref("HTMLMapElement.areas")}} {{ReadOnlyInline}}
-  - : A live {{domxref("HTMLCollection")}} representing the {{HTMLElement("area")}} elements associated to this {{HTMLElement("map")}}.
+  - : 一个实时的 {{domxref("HTMLCollection")}}，表示与此 {{HTMLElement("map")}} 关联的 {{HTMLElement("area")}} 元素。
 
-## Instance methods
+## 实例方法
 
-_No specific method; inherits methods from its parent, {{domxref("HTMLElement")}} ._
+_没有特定方法；继承其父级 {{domxref("HTMLElement")}} 的方法。_
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
-- HTML element implementing this interface: {{ HTMLElement("map") }}.
+- 实现此接口的 HTML 元素：{{ HTMLElement("map") }}。
