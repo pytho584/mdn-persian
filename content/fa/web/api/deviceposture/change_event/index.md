@@ -1,7 +1,5 @@
 ---
 title: "DevicePosture: change event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DevicePosture/change_event"
-status: "needs-translation"
 ---
 
 ---
@@ -16,11 +14,11 @@ browser-compat: api.DevicePosture.change_event
 
 {{APIRef("Device Posture API")}}{{SeeCompatTable}}
 
-The **`change`** event of the {{domxref("DevicePosture")}} interface fires when the device's posture changes, for example when a foldable device goes from `folded` to `continuous` posture.
+**`change`** رویدادِ رابط {{domxref("DevicePosture")}} زمانی پرتاب می‌شود که وضعیت (posture) دستگاه تغییر کند، مثلاً وقتی یک دستگاه تاشو از وضعیت `folded` به `continuous` می‌رود.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی مدیریت‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("change", (event) => { })
@@ -28,11 +26,11 @@ addEventListener("change", (event) => { })
 onchange = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## مثال‌ها
 
 ```js
 const postureOutput = document.getElementById("currentPosture");
@@ -45,16 +43,16 @@ function reportPostureOutput() {
 navigator.devicePosture.addEventListener("change", reportPostureOutput);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- CSS {{cssxref("@media/device-posture", "device-posture")}} `@media` feature
+- ویژگی CSS {{cssxref("@media/device-posture", "device-posture")}} در `@media`
 - [Device Posture API](/en-US/docs/Web/API/Device_Posture_API)
-- [Origin trial for Foldable APIs](https://developer.chrome.com/blog/foldable-apis-ot) on developer.chrome.com (2024)
+- [Origin trial for Foldable APIs](https://developer.chrome.com/blog/foldable-apis-ot) در developer.chrome.com (2024)
