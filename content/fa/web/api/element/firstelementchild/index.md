@@ -1,11 +1,5 @@
 ---
 title: "Element: firstElementChild property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/firstElementChild"
-status: "needs-translation"
----
-
----
-title: "Element: firstElementChild property"
 short-title: firstElementChild
 slug: Web/API/Element/firstElementChild
 page-type: web-api-instance-property
@@ -14,18 +8,15 @@ browser-compat: api.Element.firstElementChild
 
 {{ APIRef("DOM") }}
 
-The **`Element.firstElementChild`** read-only property
-returns an element's first child {{domxref("Element")}}, or `null` if there
-are no child elements.
+خاصیت فقط‌خواندنی **`Element.firstElementChild`** اولین عنصر فرزند ({{domxref("Element")}}) یک عنصر را برمی‌گرداند، یا اگر هیچ عنصر فرزندی وجود نداشته باشد، `null` را برمی‌گرداند.
 
-`Element.firstElementChild` includes only element nodes.
-To get all child nodes, including non-element nodes like text and comment nodes, use {{domxref("Node.firstChild")}}.
+`Element.firstElementChild` فقط گره‌های عنصر را شامل می‌شود. برای دریافت همهٔ گره‌های فرزند، از جمله گره‌های غیرعنصر مانند متن و کامنت، از {{domxref("Node.firstChild")}} استفاده کنید.
 
-## Value
+## مقدار
 
-An {{domxref("Element")}} object, or `null`.
+یک شیء {{domxref("Element")}}، یا `null`.
 
-## Examples
+## مثال‌ها
 
 ```html
 <ul id="list">
@@ -38,18 +29,18 @@ An {{domxref("Element")}} object, or `null`.
 ```js
 const list = document.getElementById("list");
 console.log(list.firstElementChild.textContent);
-// logs "First (1)"
+// "First (1)" را در کنسول ثبت می‌کند
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Element.nextElementSibling")}}
 - {{domxref("Element.lastElementChild")}}
