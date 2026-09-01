@@ -1,7 +1,5 @@
 ---
 title: "DOMMatrixReadOnly: DOMMatrixReadOnly() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrixReadOnly/DOMMatrixReadOnly"
-status: "needs-translation"
 ---
 
 ---
@@ -14,7 +12,7 @@ browser-compat: api.DOMMatrixReadOnly.DOMMatrixReadOnly
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The **`DOMMatrixReadOnly()`** constructor creates a new {{domxref("DOMMatrixReadOnly")}} object which represents a 4x4 matrix, suitable for 2D and 3D operations.
+سازندهٔ **`DOMMatrixReadOnly()`** یک شیء جدید {{domxref("DOMMatrixReadOnly")}} می‌سازد که یک ماتریس 4×4 را نشان می‌دهد و برای عملیات دوبعدی و سه‌بعدی مناسب است.
 
 ## Syntax
 
@@ -27,26 +25,26 @@ new DOMMatrixReadOnly(initArray)
 ### Parameters
 
 - `initString` {{optional_inline}}
-  - : A string representing a 2D or 3D matrix in CSS {{cssxref("transform-function/matrix", "matrix()")}} or {{cssxref("transform-function/matrix3d", "matrix3d()")}} format.
+  - : رشته‌ای که یک ماتریس دوبعدی یا سه‌بعدی را در قالب CSS {{cssxref("transform-function/matrix", "matrix()")}} یا {{cssxref("transform-function/matrix3d", "matrix3d()")}} نشان می‌دهد.
 - `initArray` {{optional_inline}}
-  - : An array containing either 6 or 16 numbers in column-major order. Other array lengths throw a {{jsxref("TypeError")}}.
-    - A 6-element array is interpreted as the matrix components `[m11, m12, m21, m22, m41, m42]`, creating a 2D matrix.
-    - A 16-element array is interpreted as the matrix components `[m11, m12, m13, m14, m21, m22, m23, m24, m31, m32, m33, m34, m41, m42, m43, m44]`, creating a 3D matrix.
+  - : آرایه‌ای شامل ۶ یا ۱۶ عدد به ترتیب ستون‌محور (column-major). طول‌های دیگر آرایه یک {{jsxref("TypeError")}} ایجاد می‌کنند.
+    - یک آرایهٔ ۶-عنصری به عنوان اجزای ماتریس `[m11, m12, m21, m22, m41, m42]` تفسیر می‌شود و یک ماتریس دوبعدی می‌سازد.
+    - یک آرایهٔ ۱۶-عنصری به عنوان اجزای ماتریس `[m11, m12, m13, m14, m21, m22, m23, m24, m31, m32, m33, m34, m41, m42, m43, m44]` تفسیر می‌شود و یک ماتریس سه‌بعدی می‌سازد.
 
-    If this argument is omitted, an identity matrix is created, i.e., equivalent to `[1, 0, 0, 1, 0, 0]`.
+    اگر این آرگومان حذف شود، یک ماتریس همانی (identity matrix) ساخته می‌شود، یعنی معادل `[1, 0, 0, 1, 0, 0]`.
 
-    If this argument is provided as a {{jsxref("Float32Array")}} or {{jsxref("Float64Array")}}, consider using the more performant static methods {{domxref("DOMMatrixReadOnly.fromFloat32Array_static", "DOMMatrixReadOnly.fromFloat32Array()")}} or {{domxref("DOMMatrixReadOnly.fromFloat64Array_static", "DOMMatrixReadOnly.fromFloat64Array()")}} instead.
+    اگر این آرگومان به صورت {{jsxref("Float32Array")}} یا {{jsxref("Float64Array")}} ارائه شود، بهتر است از روش‌های ایستای سریع‌تر {{domxref("DOMMatrixReadOnly.fromFloat32Array_static", "DOMMatrixReadOnly.fromFloat32Array()")}} یا {{domxref("DOMMatrixReadOnly.fromFloat64Array_static", "DOMMatrixReadOnly.fromFloat64Array()")}} استفاده کنید.
 
 ### Return value
 
-A new {{domxref("DOMMatrixReadOnly")}} object.
+یک شیء جدید {{domxref("DOMMatrixReadOnly")}}.
 
 ### Exceptions
 
 - {{jsxref("TypeError")}}
-  - : Thrown if the argument is not a string or an array with a length other than 6 or 16.
+  - : اگر آرگومان یک رشته نباشد یا آرایه‌ای با طولی غیر از ۶ یا ۱۶ باشد، پرتاب می‌شود.
 - {{jsxref("SyntaxError")}}
-  - : Thrown if the string argument is not in a valid CSS {{cssxref("transform-function/matrix", "matrix()")}} or {{cssxref("transform-function/matrix3d", "matrix3d()")}} format.
+  - : اگر آرگومان رشته‌ای در قالب معتبر CSS {{cssxref("transform-function/matrix", "matrix()")}} یا {{cssxref("transform-function/matrix3d", "matrix3d()")}} نباشد، پرتاب می‌شود.
 
 ## Examples
 
