@@ -1,7 +1,5 @@
 ---
 title: "HTMLMediaElement: disableRemotePlayback property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/disableRemotePlayback"
-status: "needs-translation"
 ---
 
 ---
@@ -14,12 +12,11 @@ browser-compat: api.HTMLMediaElement.disableRemotePlayback
 
 {{APIRef("Remote Playback API")}}
 
-The **`disableRemotePlayback`** property of the {{domxref("HTMLMediaElement")}} interface determines whether the media element is allowed to have a remote playback UI.
+ویژگی **`disableRemotePlayback`** در رابط {{domxref("HTMLMediaElement")}} تعیین میکند که آیا عنصر رسانه مجاز به داشتن رابط پخش از راه دور است یا خیر.
 
 ## Value
 
-A boolean value indicating whether the media element may have a remote playback
-UI. (`false` means "not disabled", which means "enabled")
+یک مقدار بولی که نشان میدهد آیا عنصر رسانه میتواند رابط پخش از راه دور داشته باشد یا خیر. (`false` یعنی «غیرفعال نیست» که به معنای «فعال» است).
 
 ## Example
 
@@ -38,5 +35,5 @@ obj.disableRemotePlayback = true;
 
 ## See also
 
-- [The `disableremoteplayback` attribute of the `<audio>` element](/en-US/docs/Web/HTML/Reference/Elements/audio#disableremoteplayback)
-- [The `disableremoteplayback` attribute of the `<video>` element](/en-US/docs/Web/HTML/Reference/Elements/video#disableremoteplayback)
+- [ویژگی `disableremoteplayback` در عنصر `<audio>`](/en-US/docs/Web/HTML/Reference/Elements/audio#disableremoteplayback)
+- [ویژگی `disableremoteplayback` در عنصر `<video>`](/en-US/docs/Web/HTML/Reference/Elements/video#disableremoteplayback)
