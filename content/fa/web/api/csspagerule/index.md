@@ -1,11 +1,5 @@
 ---
 title: "CSSPageRule"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSPageRule"
-status: "needs-translation"
----
-
----
-title: CSSPageRule
 slug: Web/API/CSSPageRule
 page-type: web-api-interface
 browser-compat: api.CSSPageRule
@@ -13,28 +7,28 @@ browser-compat: api.CSSPageRule
 
 {{APIRef("CSSOM")}}
 
-**`CSSPageRule`** represents a single CSS {{cssxref("@page")}} rule.
+**`CSSPageRule`** یک قانون CSS {{cssxref("@page")}} را نمایش می‌دهد.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its ancestors {{domxref("CSSGroupingRule")}} and {{domxref("CSSRule")}}._
+_ویژگی‌ها را از آباء خود {{domxref("CSSGroupingRule")}} و {{domxref("CSSRule")}} به ارث می‌برد._
 
 - {{domxref("CSSPageRule.selectorText")}}
-  - : Represents the text of the page selector associated with the at-rule.
+  - : متن انتخابگر صفحه مرتبط با at-rule را نمایش می‌دهد.
 - {{domxref("CSSPageRule.style")}} {{ReadOnlyInline}}
-  - : Returns the [declaration block](/en-US/docs/Web/API/CSS_Object_Model/CSS_Declaration_Block) associated with the at-rule.
+  - : بلوک اظهارنامه (declaration block) مرتبط با at-rule را برمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
-_Inherits methods from its ancestors {{domxref("CSSGroupingRule")}} and {{domxref("CSSRule")}}._
+_روش‌ها را از آباء خود {{domxref("CSSGroupingRule")}} و {{domxref("CSSRule")}} به ارث می‌برد._
 
-## Examples
+## مثال‌ها
 
-### Filtering for page rules
+### فیلتر کردن برای قوانین صفحه
 
-This example shows how you can find `CSSPageRule` objects for {{cssxref("@page")}} rules loaded by the document.
+این مثال نشان می‌دهد که چگونه می‌توانید اشیاء `CSSPageRule` را برای قوانین {{cssxref("@page")}} بارگذاری شده توسط سند پیدا کنید.
 
 ```html hidden
 <pre id="log"></pre>
@@ -59,7 +53,7 @@ function log(text) {
 
 #### CSS
 
-Below we define styles for the page using a {{cssxref("@page")}} rule.
+در زیر، استایل‌هایی برای صفحه با استفاده از یک قانون {{cssxref("@page")}} تعریف می‌کنیم.
 
 ```css
 @page {
@@ -69,8 +63,7 @@ Below we define styles for the page using a {{cssxref("@page")}} rule.
 
 #### JavaScript
 
-The code iterates through all the sheets in the document, and through all the `cssRules` in each sheet, logging the sheet index, the number of rules, and the type of each rule object.
-We then detect `CSSPageRule` objects using their type (doing nothing with the information).
+کد از میان تمام sheets در سند و از میان تمام `cssRules` در هر sheet پیمایش می‌کند و اندیس sheet، تعداد قوانین، و نوع هر شیء قانون را ثبت می‌کند. سپس اشیاء `CSSPageRule` را با استفاده از نوع آن‌ها تشخیص می‌دهیم (با اطلاعات کاری انجام نمی‌دهیم).
 
 ```js
 for (
@@ -92,17 +85,16 @@ for (
 }
 ```
 
-#### Results
+#### نتایج
 
-The results are shown below.
-As you can see there are a two sheets, corresponding to this main document and the example code frame, and each have a number of rules, only one of which is our `CSSPageRule`.
+نتایج در زیر نشان داده شده است. همانطور که می‌بینید دو sheet وجود دارد که مربوط به این سند اصلی و فریم کد مثال هستند، و هر کدام تعدادی قانون دارند که تنها یکی از آن‌ها `CSSPageRule` ما است.
 
 {{EmbedLiveSample("Filtering for page rules", "100%", "300px")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
