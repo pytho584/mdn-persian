@@ -1,11 +1,5 @@
 ---
 title: "HTMLDialogElement: cancel event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/cancel_event"
-status: "needs-translation"
----
-
----
-title: "HTMLDialogElement: cancel event"
 short-title: cancel
 slug: Web/API/HTMLDialogElement/cancel_event
 page-type: web-api-event
@@ -14,22 +8,21 @@ browser-compat: api.HTMLDialogElement.cancel_event
 
 {{APIRef("HTML DOM")}}
 
-The **`cancel`** event fires on a {{HTMLElement("dialog")}} element when the user triggers a close request.
+رویداد **`cancel`** هنگامی بر روی یک عنصر {{HTMLElement("dialog")}} رخ می‌دهد که کاربر یک درخواست بستن را ایجاد کند.
 
-The `cancel` event handler can be used to override the default behavior on receiving a close request, and prevent the dialog from closing.
-If the default behavior is not prevented, the dialog will close and fire a {{domxref("HTMLDialogElement/close_event", "close")}} event.
+از کنترل‌کننده رویداد `cancel` می‌توان برای نادیده گرفتن رفتار پیش‌فرض در هنگام دریافت درخواست بستن و جلوگیری از بسته شدن دیالوگ استفاده کرد. اگر رفتار پیش‌فرض لغو نشود، دیالوگ بسته می‌شود و یک رویداد {{domxref("HTMLDialogElement/close_event", "close")}} را فعال می‌کند.
 
-Close requests might be triggered by:
+درخواست‌های بستن ممکن است توسط موارد زیر ایجاد شوند:
 
-- Pressing the <kbd>Esc</kbd> key on desktop platforms
-- Calling the {{domxref("HTMLDialogElement.requestClose()", "requestClose()")}} method
-- The back button on mobile platforms
+- فشار دادن کلید <kbd>Esc</kbd> در پلتفرم‌های رومیزی
+- فراخوانی متد {{domxref("HTMLDialogElement.requestClose()", "requestClose()")}}
+- دکمه بازگشت در پلتفرم‌های موبایل
 
-This event is cancelable and does not bubble.
+این رویداد قابل لغو است و حباب نمی‌زند.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("cancel", (event) => { })
@@ -37,20 +30,19 @@ addEventListener("cancel", (event) => { })
 oncancel = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## مثال‌ها
 
-### Canceling a dialog
+### لغو یک دیالوگ
 
-The following example shows a button that, when clicked, opens a {{htmlelement("dialog")}} using the {{domxref("HTMLDialogElement.showModal()", "showModal()")}} method.
+مثال زیر یک دکمه را نشان می‌دهد که با کلیک روی آن، یک {{htmlelement("dialog")}} با استفاده از متد {{domxref("HTMLDialogElement.showModal()", "showModal()")}} باز می‌شود.
 
-You can trigger the `cancel` event by either clicking the _Request Close_ button to close the dialog (via the {{domxref("HTMLDialogElement.requestClose()", "requestClose()")}} method) or by pressing the <kbd>Esc</kbd> key.
+می‌توانید رویداد `cancel` را با کلیک کردن روی دکمه _Request Close_ برای بستن دیالوگ (از طریق متد {{domxref("HTMLDialogElement.requestClose()", "requestClose()")}}) یا با فشار دادن کلید <kbd>Esc</kbd> فعال کنید.
 
-Note that the `cancel` event handler logs the event and then returns, allowing the dialog to close (which in turn causes the `close` event to be emitted).
-You can uncomment the line containing `event.preventDefault()` to cancel the event.
+توجه داشته باشید که کنترل‌کننده رویداد `cancel` رویداد را ثبت می‌کند و سپس برمی‌گردد و اجازه می‌دهد دیالوگ بسته شود (که به نوبه خود باعث انتشار رویداد `close` می‌شود). می‌توانید خط حاوی `event.preventDefault()` را از حالت توضیح خارج کنید تا رویداد لغو شود.
 
 #### HTML
 
@@ -122,18 +114,18 @@ dialog.addEventListener("close", (event) => {
 });
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Canceling a dialog', '100%', '250px') }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- HTML {{HTMLElement("dialog")}} element
+- عنصر HTML {{HTMLElement("dialog")}}
