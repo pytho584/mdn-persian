@@ -1,11 +1,5 @@
 ---
 title: "CSSTransformValue: is2D property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSTransformValue/is2D"
-status: "needs-translation"
----
-
----
-title: "CSSTransformValue: is2D property"
 short-title: is2D
 slug: Web/API/CSSTransformValue/is2D
 page-type: web-api-instance-property
@@ -14,22 +8,22 @@ browser-compat: api.CSSTransformValue.is2D
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`is2D`** read-only property of the {{domxref("CSSTransformValue")}} interface returns whether the transform is 2D or 3D.
+خاصیت فقط‌خواندنی **`is2D`** در رابط {{domxref("CSSTransformValue")}} مشخص می‌کند که تبدیل (transform) دوبعدی است یا سه‌بعدی.
 
-In the case of the `CSSTransformValue`, this property returns true unless any of the individual functions return false for `Is2D`, in which case, it returns false.
+در مورد `CSSTransformValue`، این خاصیت `true` را برمی‌گرداند، مگر اینکه هر یک از تابع‌های منفرد برای `Is2D` مقدار `false` برگردانند؛ در این صورت مقدار `false` برمی‌گردد.
 
-## Value
+## مقدار
 
-A boolean. True indicates that the transform is a 2D transform, false that it is a 3D transform.
+یک مقدار بولی. `true` نشان می‌دهد که تبدیل یک تبدیل دوبعدی است و `false` نشان می‌دهد که یک تبدیل سه‌بعدی است.
 
-## Examples
+## مثال‌ها
 
-To Do
+به‌زودی تکمیل می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
