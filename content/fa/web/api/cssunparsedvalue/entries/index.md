@@ -1,11 +1,5 @@
 ---
 title: "CSSUnparsedValue: entries() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSUnparsedValue/entries"
-status: "needs-translation"
----
-
----
-title: "CSSUnparsedValue: entries() method"
 short-title: entries()
 slug: Web/API/CSSUnparsedValue/entries
 page-type: web-api-instance-method
@@ -14,37 +8,37 @@ browser-compat: api.CSSUnparsedValue.entries
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`CSSUnparsedValue.entries()`** method returns an array of a given object's own enumerable property `[key, value]` pairs in the same order as that provided by a {{jsxref("Statements/for...in", "for...in")}} loop (the difference being that a for-in loop enumerates properties in the prototype chain as well).
+متد **`CSSUnparsedValue.entries()`** آرایه‌ای از جفت‌های `[key, value]` ویژگی‌های شمارش‌پذیر متعلق به خودِ یک شیء مشخص برمی‌گرداند، به همان ترتیبی که توسط حلقهٔ {{jsxref("Statements/for...in", "for...in")}} ارائه می‌شود (با این تفاوت که حلقهٔ for-in ویژگی‌های موجود در زنجیرهٔ prototype را نیز شمارش می‌کند).
 
-## Syntax
+## دستور زبان
 
 ```js-nolint
 entries(obj)
 ```
 
-### Parameters
+### پارامترها
 
 - `obj`
-  - : The {{domxref('CSSUnparsedValue')}} whose enumerable own property `[key, value]` pairs are to be returned.
+  - یک {{domxref('CSSUnparsedValue')}} که قرار است جفت‌های `[key, value]` ویژگی‌های شمارش‌پذیر متعلق به خودِ آن بازگردانده شوند.
 
-### Return value
+### مقدار بازگشتی
 
-An array of the given `CSSUnparsedValue` object's own enumerable property `[key, value]` pairs.
+آرایه‌ای از جفت‌های `[key, value]` ویژگی‌های شمارش‌پذیر متعلق به خودِ شیء `CSSUnparsedValue` داده‌شده.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("CSSUnparsedValue.CSSUnparsedValue", "CSSUnparsedValue()")}}
 - {{domxref("CSSUnparsedValue.forEach")}}
 - {{domxref("CSSUnparsedValue.keys")}}
 - {{domxref("CSSUnparsedValue.length")}}
 - {{domxref("CSSUnparsedValue.values")}}
-- [Using the CSS Typed OM](/en-US/docs/Web/API/CSS_Typed_OM_API/Guide)
+- [استفاده از CSS Typed OM](/en-US/docs/Web/API/CSS_Typed_OM_API/Guide)
 - [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API)
