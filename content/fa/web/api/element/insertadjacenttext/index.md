@@ -1,11 +1,5 @@
 ---
 title: "Element: insertAdjacentText() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentText"
-status: "needs-translation"
----
-
----
-title: "Element: insertAdjacentText() method"
 short-title: insertAdjacentText()
 slug: Web/API/Element/insertAdjacentText
 page-type: web-api-instance-method
@@ -14,36 +8,36 @@ browser-compat: api.Element.insertAdjacentText
 
 {{APIRef("DOM")}}
 
-The **`insertAdjacentText()`** method of the {{domxref("Element")}} interface, given a relative position and a string, inserts a new text node at the given position relative to the element it is called from.
+متد **`insertAdjacentText()`** از رابط {{domxref("Element")}}، با دریافت یک موقعیت نسبی و یک رشته، یک گره متنی جدید را در موقعیت داده‌شده نسبت به عنصری که از آن فراخوانی شده است، درج می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 insertAdjacentText(where, data)
 ```
 
-### Parameters
+### پارامترها
 
 - `where`
-  - : A string representing the position relative to the element the method is called from; must be one of the following strings:
-    - `'beforebegin'`: Before the `element` itself.
-    - `'afterbegin'`: Just inside the `element`, before its first child.
-    - `'beforeend'`: Just inside the `element`, after its last child.
-    - `'afterend'`: After the `element` itself.
+  - : رشته‌ای که موقعیت نسبت به عنصر فراخوانی‌کننده متد را مشخص می‌کند؛ باید یکی از رشته‌های زیر باشد:
+    - `'beforebegin'`: قبل از خود `element`.
+    - `'afterbegin'': درست درون `element`، قبل از اولین فرزند آن.
+    - `'beforeend'`: درست درون `element`، بعد از آخرین فرزند آن.
+    - `'afterend'`: بعد از خود `element`.
 
 - `data`
-  - : A string from which to create a new text node to insert at the given position `where` relative to the element the method is called from.
+  - : رشته‌ای که از آن یک گره متنی جدید برای درج در موقعیت `where` نسبت به عنصر فراخوانی‌کننده متد ساخته می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `SyntaxError` {{domxref("DOMException")}}
-  - : Thrown if `where` is not a recognized value.
+  - : اگر `where` یک مقدار مجاز نباشد، پرتاب می‌شود.
 
-### Visualization of position names
+### نمایش بصری موقعیت‌ها
 
 ```html
 <!-- beforebegin -->
@@ -56,11 +50,9 @@ None ({{jsxref("undefined")}}).
 ```
 
 > [!NOTE]
-> The `beforebegin` and
-> `afterend` positions work only if the node is in a tree and has an element
-> parent.
+> موقعیت‌های `beforebegin` و `afterend` تنها زمانی کار می‌کنند که گره در درخت (DOM) باشد و یک عنصر والد داشته باشد.
 
-## Examples
+## مثال‌ها
 
 ```js
 beforeBtn.addEventListener("click", () => {
@@ -72,22 +64,17 @@ afterBtn.addEventListener("click", () => {
 });
 ```
 
-Have a look at our [insertAdjacentText.html](https://mdn.github.io/dom-examples/insert-adjacent/insertAdjacentText.html)
-demo on GitHub (see the [source code](https://github.com/mdn/dom-examples/blob/main/insert-adjacent/insertAdjacentText.html) too.) Here we have a simple paragraph. You can enter some text into the form
-element, then press the _Insert before_ and _Insert after_ buttons to
-insert it before or after the existing paragraph text using
-`insertAdjacentText()`. Note that the existing text node is not added to —
-further text nodes are created containing the new additions.
+نمایش [insertAdjacentText.html](https://mdn.github.io/dom-examples/insert-adjacent/insertAdjacentText.html) را در GitHub ببینید (همچنین [کد منبع](https://github.com/mdn/dom-examples/blob/main/insert-adjacent/insertAdjacentText.html)). در اینجا یک پاراگراف ساده داریم. می‌توانید متنی را در عنصر فرم وارد کنید، سپس دکمه‌های _Insert before_ و _Insert after_ را فشار دهید تا آن را با استفاده از `insertAdjacentText()` قبل یا بعد از متن پاراگراف موجود درج کنید. توجه کنید که گره متنی موجود تغییر نمی‌کند – گره‌های متنی جدید حاوی افزوده‌های جدید ایجاد می‌شوند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Element.insertAdjacentElement()")}}
 - {{domxref("Element.insertAdjacentHTML()")}}
