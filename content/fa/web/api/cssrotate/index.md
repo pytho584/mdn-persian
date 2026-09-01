@@ -1,52 +1,43 @@
 ---
 title: "CSSRotate"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSRotate"
-status: "needs-translation"
----
-
----
-title: CSSRotate
-slug: Web/API/CSSRotate
-page-type: web-api-interface
-browser-compat: api.CSSRotate
 ---
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`CSSRotate`** interface of the [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Object_Model) represents the rotate value of the individual {{CSSXRef('transform')}} property in CSS.
+رابطهٔ **`CSSRotate`** در [API مدل شیء تایپ‌شدهٔ CSS](/en-US/docs/Web/API/CSS_Object_Model)، مقدار چرخش ویژگی تکی {{CSSXRef('transform')}} را در CSS نشان می‌دهد.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("CSSRotate.CSSRotate", "CSSRotate()")}}
-  - : Creates a new `CSSRotate` object.
+  - : یک شیء `CSSRotate` جدید می‌سازد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Also inherits properties from its parent interface, {{DOMxRef("CSSTransformComponent")}}._
+_همچنین ویژگی‌های رابط والد خود، {{DOMxRef("CSSTransformComponent")}} را به ارث می‌برد._
 
 - {{domxref('CSSRotate.x','x')}}
-  - : Returns or sets the x-axis value.
+  - : مقدار محور x را برمی‌گرداند یا تنظیم می‌کند.
 - {{domxref('CSSRotate.y','y')}}
-  - : Returns or sets the y-axis value.
+  - : مقدار محور y را برمی‌گرداند یا تنظیم می‌کند.
 - {{domxref('CSSRotate.z','z')}}
-  - : Returns or sets the z-axis value.
+  - : مقدار محور z را برمی‌گرداند یا تنظیم می‌کند.
 - {{domxref('CSSRotate.angle','angle')}}
-  - : Returns or sets the angle value.
+  - : مقدار زاویه را برمی‌گرداند یا تنظیم می‌کند.
 
-## Instance methods
+## روش‌های نمونه
 
-_Also inherits methods from its parent interface, {{DOMxRef("CSSTransformComponent")}}._
+_همچنین روش‌های رابط والد خود، {{DOMxRef("CSSTransformComponent")}} را به ارث می‌برد._
 
-## Examples
+## مثال‌ها
 
-To do.
+در دست ساخت.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
