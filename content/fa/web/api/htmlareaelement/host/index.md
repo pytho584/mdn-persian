@@ -1,11 +1,5 @@
 ---
 title: "HTMLAreaElement: host property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLAreaElement/host"
-status: "needs-translation"
----
-
----
-title: "HTMLAreaElement: host property"
 short-title: host
 slug: Web/API/HTMLAreaElement/host
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.HTMLAreaElement.host
 
 {{ApiRef("HTML DOM")}}
 
-The **`host`** property of the {{domxref("HTMLAreaElement")}} interface is a string containing the host, which is the {{domxref("HTMLAreaElement.hostname", "hostname")}}, and then, if the {{glossary("port")}} of the URL is nonempty, a `":"`, followed by the {{domxref("HTMLAreaElement.port", "port")}} of the URL. If the URL does not have a `hostname`, this property contains an empty string, `""`.
+ویژگی **`host`** در رابط {{domxref("HTMLAreaElement")}} یک رشته است که شامل میزبان (host) می‌باشد، یعنی {{domxref("HTMLAreaElement.hostname", "hostname")}} و سپس، اگر {{glossary("port")}} نشانی اینترنتی (URL) غیرخالی باشد، یک `":"` و به دنبال آن {{domxref("HTMLAreaElement.port", "port")}} نشانی اینترنتی. اگر نشانی اینترنتی `hostname` نداشته باشد، این ویژگی شامل یک رشتهٔ خالی، `""`، خواهد بود.
 
-See {{domxref("URL.host")}} for more information.
+برای اطلاعات بیشتر به {{domxref("URL.host")}} مراجعه کنید.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```js
 const area = document.createElement("area");
@@ -32,20 +26,20 @@ area.host === "developer.mozilla.org";
 
 area.href = "https://developer.mozilla.org:443/en-US/HTMLAreaElement";
 area.host === "developer.mozilla.org";
-// The port number is not included because 443 is the scheme's default port
+// شمارهٔ پورت درج نمی‌شود زیرا ۴۴۳ پورت پیش‌فرض پروتکل است
 
 area.href = "https://developer.mozilla.org:4097/en-US/HTMLAreaElement";
 area.host === "developer.mozilla.org:4097";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("HTMLAreaElement")}} interface it belongs to.
+- رابط {{domxref("HTMLAreaElement")}} که این ویژگی به آن تعلق دارد.
