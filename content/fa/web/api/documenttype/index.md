@@ -1,7 +1,5 @@
 ---
 title: "DocumentType"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DocumentType"
-status: "needs-translation"
 ---
 
 ---
@@ -13,45 +11,43 @@ browser-compat: api.DocumentType
 
 {{APIRef("DOM")}}
 
-The **`DocumentType`** interface represents a {{domxref("Node")}} containing a doctype.
+interface **`DocumentType`** نمایانگر یک {{domxref("Node")}} حاوی doctype است.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگیهای نمونه
 
-_Inherits properties from its parent, {{domxref("Node")}}._
+_ویژگیهای والد خود، {{domxref("Node")}} را به ارث میبرد._
 
 - {{domxref("DocumentType.name")}} {{ReadOnlyInline}}
-  - : The type of the document. It is always `"html"` for HTML documents, but will vary for XML documents.
+  - : نوع سند. برای اسناد HTML همیشه `"html"` است، اما برای اسناد XML متغیر خواهد بود.
 - {{domxref("DocumentType.publicId")}} {{ReadOnlyInline}}
-  - : A string with an identifier of the type of document. Empty if the doctype given specifies no public ID.
+  - : یک رشته شامل شناسه نوع سند. اگر doctype داده‌شده شناسه عمومی مشخص نکرده باشد، خالی است.
 - {{domxref("DocumentType.systemId")}} {{ReadOnlyInline}}
-  - : A string containing the URL to the associated DTD. Empty if the doctype given specifies no system ID.
+  - : یک رشته شامل URL مربوط به DTD مرتبط. اگر doctype داده‌شده شناسه سیستمی مشخص نکرده باشد، خالی است.
 
-## Instance methods
+## روش‌های نمونه
 
-_Inherits methods from its parent, {{domxref("Node")}}._
+_روش‌های والد خود، {{domxref("Node")}} را به ارث می‌برد._
 
 - {{domxref("DocumentType.after()")}}
-  - : Inserts a set of {{domxref("Node")}} objects or strings in the children list of the
-    object's parent, just after this node.
+  - : مجموعه‌ای از اشیاء {{domxref("Node")}} یا رشته‌ها را در فهرست فرزندان والدِ شیء، دقیقاً بعد از این گره درج می‌کند.
 - {{domxref("DocumentType.before()")}}
-  - : Inserts a set of {{domxref("Node")}} objects or strings in the children list of the
-    object's parent, just before this node.
+  - : مجموعه‌ای از اشیاء {{domxref("Node")}} یا رشته‌ها را در فهرست فرزندان والدِ شیء، دقیقاً قبل از این گره درج می‌کند.
 - {{domxref("DocumentType.remove()")}}
-  - : Removes this object from its parent children list.
+  - : این شیء را از فهرست فرزندان والدش حذف می‌کند.
 - {{domxref("DocumentType.replaceWith()")}}
-  - : Replaces the document type with a set of given nodes.
+  - : نوع سند را با مجموعه‌ای از گره‌های داده‌شده جایگزین می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [The DOM interfaces index.](/en-US/docs/Web/API/Document_Object_Model)
-- {{domxref("DOMImplementation.createDocumentType()")}} to create a new `DocumentType` node.
+- [فهرست interfaceهای DOM.](/en-US/docs/Web/API/Document_Object_Model)
+- {{domxref("DOMImplementation.createDocumentType()")}} برای ایجاد یک گره `DocumentType` جدید.
