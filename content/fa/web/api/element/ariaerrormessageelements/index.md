@@ -1,11 +1,5 @@
 ---
 title: "Element: ariaErrorMessageElements property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaErrorMessageElements"
-status: "needs-translation"
----
-
----
-title: "Element: ariaErrorMessageElements property"
 short-title: ariaErrorMessageElements
 slug: Web/API/Element/ariaErrorMessageElements
 page-type: web-api-instance-property
@@ -14,37 +8,31 @@ browser-compat: api.Element.ariaErrorMessageElements
 
 {{APIRef("DOM")}}
 
-The **`ariaErrorMessageElements`** property of the {{domxref("Element")}} interface is an array containing the element (or elements) that provide an error message for the element it is applied to.
+ویژگی **`ariaErrorMessageElements`** در رابط {{domxref("Element")}} آرایه‌ای است شامل عنصر (یا عناصر) که برای عنصرِ اعمال‌شده، پیام خطا فراهم می‌کنند.
 
-The [`aria-errormessage`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-errormessage) topic contains additional information about how the attribute and property should be used.
+مبحث [`aria-errormessage`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-errormessage) اطلاعات بیشتری درباره نحوه استفاده از این صفت و ویژگی ارائه می‌دهد.
 
-## Value
+## مقدار
 
-An array of subclasses of {{domxref("HTMLElement")}}.
-The inner text of these elements can be joined with spaces to get the error message.
+آرایه‌ای از زیرکلاس‌های {{domxref("HTMLElement")}}. متن داخلی این عناصر را می‌توان با فاصله (اسپیس) به هم پیوست تا پیام خطا به دست آید.
 
-When read, the returned array is a static and read-only.
-When written, the assigned array is copied: subsequent changes to the array do not affect the value of the property.
+هنگام خواندن، آرایه بازگشت‌داده‌شده ایستا و فقط‌خواندنی است. هنگام نوشتن، آرایه تخصیص‌یافته کپی می‌شود: تغییرات بعدی در آرایه بر مقدار ویژگی تأثیر نمی‌گذارد.
 
-## Description
+## توضیحات
 
-The property is a flexible alternative to using the [`aria-errormessage`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-errormessage) attribute to set the error message for an element.
-Unlike `aria-errormessage`, the elements assigned to this property do not have to have an [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) attribute.
+این ویژگی جایگزینی انعطاف‌پذیر برای استفاده از صفت [`aria-errormessage`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-errormessage) به منظور تنظیم پیام خطای یک عنصر است. برخلاف `aria-errormessage`، عناصر تخصیص‌یافته به این ویژگی لزومی به داشتن صفت [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) ندارند.
 
-The property reflects the element's [`aria-errormessage`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-errormessage) attribute when it is defined, but only for listed reference `id` values that match valid in-scope elements.
-If the property is set, then the corresponding attribute is cleared.
-For more information about reflected element references and scope see [Reflected element references](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references) in the _Reflected attributes_ guide.
+این ویژگی صفت `aria-errormessage` عنصر را بازتاب می‌کند؛ اما فقط برای مقادیر مرجع `id` فهرست‌شده که با عناصر معتبرِ در محدوده مطابقت دارند. اگر این ویژگی تنظیم شود، صفت متناظر پاک می‌شود. برای اطلاعات بیشتر درباره ارجاع‌های بازتاب‌شده عناصر و محدوده، بخش [ارجاع‌های بازتاب‌شده عناصر](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references) را در راهنمای _بازتاب صفت‌ها_ ببینید.
 
-## Examples
+## مثال‌ها
 
-### Email input with error message
+### ورودی ایمیل با پیام خطا
 
-This example shows how we use the `aria-errormessage` to set the error message for reporting entry of an invalid email address, and demonstrates how we can get and set the message using `ariaErrorMessageElements`.
+این مثال نشان می‌دهد که چگونه از `aria-errormessage` برای تنظیم پیام خطای گزارش ورود یک آدرس ایمیل نامعتبر استفاده کنیم و چطور می‌توانیم پیام را با استفاده از `ariaErrorMessageElements` دریافت و تنظیم کنیم.
 
 #### HTML
 
-First we define an HTML email input, setting its `aria-errormessage` attribute to reference an element with the `id` of `err1`.
-We then define a `<span>` element that has this id, and which contains an error message.
+ابتدا یک ورودی ایمیل HTML تعریف می‌کنیم و صفت `aria-errormessage` آن را به عنصری با `id` برابر با `err1` ارجاع می‌دهیم. سپس یک عنصر `<span>` با همین شناسه تعریف می‌کنیم که حاوی پیام خطاست.
 
 ```html
 <p>
@@ -56,7 +44,7 @@ We then define a `<span>` element that has this id, and which contains an error 
 
 #### CSS
 
-We create some styles to hide the error message by default, but make it visible and styled as an error when `aria-invalid` is set on the element.
+برای پنهان‌سازی پیش‌فرض پیام خطا، استایل‌هایی ایجاد می‌کنیم؛ اما وقتی `aria-invalid` روی عنصر تنظیم شود، پیام خطا نمایان شده و به‌صورت خطا استایل می‌گیرد.
 
 ```css
 .errormessage {
@@ -74,8 +62,7 @@ We create some styles to hide the error message by default, but make it visible 
 
 #### JavaScript
 
-We then check for input, and set {{domxref("Element/ariaInvalid", "ariaInvalid")}} to `true` or `false` based on the [`typeMismatch`](/en-US/docs/Web/API/ValidityState/typeMismatch) constraint violation.
-`ariaInvalid` is in turn reflected in the `aria-invalid` attribute, which hides and displays the error as needed.
+سپس ورودی را بررسی کرده و {{domxref("Element/ariaInvalid", "ariaInvalid")}} را بر اساس نقض محدودیت [`typeMismatch`](/en-US/docs/Web/API/ValidityState/typeMismatch) روی `true` یا `false` تنظیم می‌کنیم. به نوبه خود، `ariaInvalid` در صفت `aria-invalid` بازتاب می‌شود که بسته به نیاز، خطا را پنهان یا نمایش می‌دهد.
 
 ```js
 const email = document.querySelector("#email");
@@ -110,7 +97,7 @@ function log(text) {
 }
 ```
 
-We then log the value of the `aria-errormessage` attribute, the `ariaErrorMessageElements` and the inner text of the `ariaErrorMessageElements`
+سپس مقدار صفت `aria-errormessage`، `ariaErrorMessageElements` و متن داخلی `ariaErrorMessageElements` را ثبت (log) می‌کنیم.
 
 ```js
 log(`aria-errormessage: ${email.getAttribute("aria-errormessage")}`);
@@ -128,23 +115,22 @@ if ("ariaErrorMessageElements" in Element.prototype) {
 }
 ```
 
-#### Result
+#### نتیجه
 
-As you enter an email address, the error text will be displayed until the email address is valid.
-Note that the log shows the error message reference read from the attribute, the element from `ariaErrorMessageElements`, and the inner text of the element, which is its error message.
+هنگام وارد کردن آدرس ایمیل، متن خطا تا زمانی که آدرس ایمیل معتبر باشد نمایش داده می‌شود. توجه کنید که گزارش، ارجاع پیام خطای خوانده‌شده از صفت، عنصر بهدست‌آمده از `ariaErrorMessageElements`، و متن داخلی عنصر را نشان می‌دهد که همان پیام خطاست.
 
 {{EmbedLiveSample("Email input with error message","100%","180px")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [`aria-errormessage`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-errormessage) attribute
+- صفت [`aria-errormessage`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-errormessage)
 - {{domxref("ElementInternals.ariaErrorMessageElements")}}
-- [Reflected element references](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references) in the _Attribute reflection_ guide.
+- [ارجاع‌های بازتاب‌شده عناصر](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references) در راهنمای _بازتاب صفت‌ها_.
