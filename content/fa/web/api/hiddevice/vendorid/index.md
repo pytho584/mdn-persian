@@ -1,7 +1,5 @@
 ---
 title: "HIDDevice: vendorId property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HIDDevice/vendorId"
-status: "needs-translation"
 ---
 
 ---
@@ -16,15 +14,15 @@ browser-compat: api.HIDDevice.vendorId
 
 {{securecontext_header}}{{APIRef("WebHID API")}}{{SeeCompatTable}}{{AvailableInWorkers("window_and_worker_except_shared")}}
 
-The **`vendorId`** read-only property of the {{domxref("HIDDevice")}} interface returns the vendor ID of the connected HID device. This identifies the vendor of the device.
+ویژگی فقط‌خواندنی **`vendorId`** در رابط {{domxref("HIDDevice")}} شناسه فروشنده (vendor ID) دستگاه HID متصل را بازمی‌گرداند. این مقدار فروشنده دستگاه را مشخص می‌کند.
 
 ## Value
 
-An integer. If the device has no vendor ID, or the vendor ID cannot be accessed this will return `0`.
+یک عدد صحیح (integer). اگر دستگاه شناسه فروشنده نداشته باشد، یا شناسه فروشنده قابل دسترسی نباشد، این ویژگی مقدار `0` را برمی‌گرداند.
 
 ## Examples
 
-The following example retrieves devices with {{domxref("HID.getDevices()")}} and logs the value of `vendorId` to the console.
+مثال زیر دستگاه‌ها را با {{domxref("HID.getDevices()")}} دریافت می‌کند و مقدار `vendorId` را در کنسول ثبت می‌کند.
 
 ```js
 let devices = await navigator.hid.getDevices();
