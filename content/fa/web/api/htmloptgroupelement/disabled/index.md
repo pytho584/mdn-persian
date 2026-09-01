@@ -1,7 +1,5 @@
 ---
 title: "HTMLOptGroupElement: disabled property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLOptGroupElement/disabled"
-status: "needs-translation"
 ---
 
 ---
@@ -14,15 +12,15 @@ browser-compat: api.HTMLOptGroupElement.disabled
 
 {{ APIRef("HTML DOM") }}
 
-The **`disabled`** property of the {{domxref("HTMLOptGroupElement")}} interface is a boolean value that reflects the {{htmlelement("optgroup")}} element's [`disabled`](/en-US/docs/Web/HTML/Reference/Elements/optgroup#disabled) attribute, which indicates whether the control is disabled.
+ویژگی **`disabled`** از رابط {{domxref("HTMLOptGroupElement")}} یک مقدار بولی است که ویژگی [`disabled`](/en-US/docs/Web/HTML/Reference/Elements/optgroup#disabled) عنصر {{htmlelement("optgroup")}} را منعکس می‌کند و نشان می‌دهد که آیا کنترل غیرفعال است یا نه.
 
-When disabled, the {{htmlelement("option")}} element descendants of the `<optgroup>` element are unusable, un-clickable, and unselectable. These disabled `<option>`s will match the {{cssxref(":disabled")}} selector, even if their `disabled` property value is false.
+هنگامی که غیرفعال باشد، عناصر فرعی {{htmlelement("option")}} که فرزندان عنصر `<optgroup>` هستند، غیرقابل استفاده، غیرقابل کلیک و غیرقابل انتخاب می‌شوند. این `<option>`های غیرفعال با انتخابگر {{cssxref(":disabled")}} مطابقت می‌کنند، حتی اگر مقدار ویژگی `disabled` آن‌ها `false` باشد.
 
-## Value
+## مقدار
 
-A boolean value.
+یک مقدار بولی.
 
-## Examples
+## مثال‌ها
 
 ```js
 const optionGroup = document.getElementById("groupB");
@@ -30,15 +28,15 @@ console.log(optionGroup.disabled);
 optionGroup.disabled = true;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- HTML [`disabled`](/en-US/docs/Web/HTML/Reference/Attributes/disabled) attribute
-- CSS {{cssxref(":disabled")}} and {{cssxref(":enabled")}} pseudoclasses
+- ویژگی [`disabled`](/en-US/docs/Web/HTML/Reference/Attributes/disabled) در HTML
+- شبه‌کلاس‌های CSS {{cssxref(":disabled")}} و {{cssxref(":enabled")}}
