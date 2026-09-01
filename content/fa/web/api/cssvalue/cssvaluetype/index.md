@@ -1,7 +1,6 @@
 ---
 title: "CSSValue: cssValueType property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSValue/cssValueType"
-status: "needs-translation"
 ---
 
 ---
@@ -17,65 +16,59 @@ browser-compat: api.CSSValue.cssValueType
 
 {{APIRef("CSSOM")}}{{Deprecated_header}}{{non-standard_header}}
 
-The **`cssValueType`** read-only property of the
-{{domxref("CSSValue")}} interface represents the type of the current computed CSS
-property value.
+ویژگی فقط‌خواندنی **`cssValueType`** از رابط {{domxref("CSSValue")}} نوع مقدار محاسبه‌شدهٔ فعلی ویژگی CSS را نشان می‌دهد.
 
 > [!NOTE]
-> This property was part of an attempt to create a typed CSS Object Model. This attempt has been abandoned, and most browsers do
-> not implement it.
+> این ویژگی بخشی از تلاشی برای ایجاد یک مدل شیء CSS تایپ‌شده بود. این تلاش رها شده است و اکثر مرورگرها آن را پیاده‌سازی نمی‌کنند.
 >
-> To achieve your purpose, you can use:
+> برای رسیدن به هدف خود می‌توانید از این‌ها استفاده کنید:
 >
-> - the untyped [CSS Object Model](/en-US/docs/Web/API/CSS_Object_Model), widely supported, or
-> - the modern [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API), less supported and considered experimental.
+> - [مدل شیء CSS](/en-US/docs/Web/API/CSS_Object_Model) بدون تایپ که به‌طور گسترده پشتیبانی می‌شود، یا
+> - [API مدل شیء CSS تایپ‌شدهٔ مدرن](/en-US/docs/Web/API/CSS_Typed_OM_API) که پشتیبانی کمتری دارد و آزمایشی در نظر گرفته می‌شود.
 
-## Value
+## مقدار
 
-An `unsigned short` representing a code defining the type of the value.
-Possible values are:
+یک `unsigned short` که کدی را نشان می‌دهد و نوع مقدار را مشخص می‌کند. مقادیر ممکن عبارت‌اند از:
 
 <table class="no-markdown">
   <thead>
     <tr>
-      <th>Constant</th>
-      <th>Description</th>
+      <th>ثابت</th>
+      <th>توضیحات</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td><code>CSS_CUSTOM</code></td>
-      <td>The value is a custom value.</td>
+      <td>مقدار، یک مقدار سفارشی است.</td>
     </tr>
     <tr>
       <td><code>CSS_INHERIT</code></td>
       <td>
-        The value is inherited and the <code>cssText</code> contains
-        <code>"inherit"</code>.
+        مقدار به ارث رسیده است و <code>cssText</code> شامل
+        <code>"inherit"</code> است.
       </td>
     </tr>
     <tr>
       <td><code>CSS_PRIMITIVE_VALUE</code></td>
       <td>
-        The value is a primitive value and an instance of the
-        {{domxref("CSSPrimitiveValue")}} interface can be obtained
-        by using binding-specific casting methods on this instance of the
-        <code>CSSValue</code> interface.
+        مقدار یک مقدار ابتدایی است و می‌توان نمونه‌ای از رابط
+        {{domxref("CSSPrimitiveValue")}} را با استفاده از روش‌های تبدیل (casting) مختص زبانِ اتصال (binding) روی این نمونه از رابط
+        <code>CSSValue</code> به دست آورد.
       </td>
     </tr>
     <tr>
       <td><code>CSS_VALUE_LIST</code></td>
       <td>
-        The value is a <code>CSSValue</code> list and an instance of the
-        {{domxref("CSSValueList")}} interface can be obtained by using
-        binding-specific casting methods on this instance of the
-        <code>CSSValue</code> interface.
+        مقدار یک فهرست <code>CSSValue</code> است و می‌توان نمونه‌ای از رابط
+        {{domxref("CSSValueList")}} را با استفاده از روش‌های تبدیل مختص زبانِ اتصال روی این نمونه از رابط
+        <code>CSSValue</code> به دست آورد.
       </td>
     </tr>
   </tbody>
 </table>
 
-## Examples
+## نمونه‌ها
 
 ```js
 const styleDeclaration = document.styleSheets[0].cssRules[0].style;
@@ -83,13 +76,12 @@ const cssValue = styleDeclaration.getPropertyCSSValue("color");
 console.log(cssValue.cssValueType);
 ```
 
-## Specifications
+## مشخصات
 
-This feature was originally defined in the [DOM Style Level 2](https://www.w3.org/TR/DOM-Level-2-Style/) specification, but has been dropped from any
-standardization effort since then.
+این ویژگی در ابتدا در مشخصات [DOM Style Level 2](https://www.w3.org/TR/DOM-Level-2-Style/) تعریف شده بود، اما از آن زمان از هر گونه تلاش استانداردسازی حذف شده است.
 
-It has been superseded by a modern, but incompatible, [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API) that is now on the standard track.
+اکنون [API مدل شیء CSS تایپ‌شده](/en-US/docs/Web/API/CSS_Typed_OM_API) مدرن، اما ناسازگار، جایگزین آن شده است که در مسیر استاندارد قرار دارد.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
