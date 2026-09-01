@@ -1,11 +1,5 @@
 ---
 title: "Element: childElementCount property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/childElementCount"
-status: "needs-translation"
----
-
----
-title: "Element: childElementCount property"
 short-title: childElementCount
 slug: Web/API/Element/childElementCount
 page-type: web-api-instance-property
@@ -14,10 +8,9 @@ browser-compat: api.Element.childElementCount
 
 {{ APIRef("DOM") }}
 
-The **`Element.childElementCount`** read-only property
-returns the number of child elements of this element.
+ویژگی فقط‌خواندنی **`Element.childElementCount`** تعداد عناصر فرزند این عنصر را برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
 ```js
 let sidebar = document.getElementById("sidebar");
@@ -26,15 +19,15 @@ if (sidebar.childElementCount > 0) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Document.childElementCount")}}
 - {{domxref("DocumentFragment.childElementCount")}}
