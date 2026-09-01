@@ -1,7 +1,5 @@
 ---
 title: "Element: toggleAttribute() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/toggleAttribute"
-status: "needs-translation"
 ---
 
 ---
@@ -14,42 +12,36 @@ browser-compat: api.Element.toggleAttribute
 
 {{APIRef("DOM")}}
 
-The **`toggleAttribute()`** method of the {{domxref("Element")}} interface toggles a Boolean attribute on the given element, removing it if present and adding it if not present.
+متد **`toggleAttribute()`** از رابط {{domxref("Element")}} یک ویژگی بولین (Boolean attribute) را روی عنصر مورد نظر تغییر وضعیت می‌دهد؛ به این صورت که اگر ویژگی وجود داشته باشد آن را حذف می‌کند و اگر وجود نداشته باشد آن را اضافه می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 toggleAttribute(name)
 toggleAttribute(name, force)
 ```
 
-### Parameters
+### پارامترها
 
-- `name`
-  - : A string specifying the name of the attribute to be toggled.
-    The attribute name is automatically converted to all lower-case when `toggleAttribute()` is called on an HTML element in an HTML document.
-- `force` {{optional_inline}}
-  - : A boolean value which has the following effects:
-    - if not specified at all, the `toggleAttribute` method "toggles" the attribute named `name` — removing it if it is present, or else adding it if it is not present
-    - if true, the `toggleAttribute` method adds an attribute named `name`
-    - if false, the `toggleAttribute` method removes the attribute named `name`
+- `name`: یک رشته که نام ویژگی مورد نظر برای تغییر وضعیت را مشخص می‌کند. وقتی `toggleAttribute()` روی یک عنصر HTML در یک سند HTML فراخوانی شود، نام ویژگی به‌طور خودکار به حروف کوچک تبدیل می‌شود.
+- `force` {{optional_inline}}: یک مقدار بولین که اثرات زیر را دارد:
+  - اگر اصلاً مشخص نشود، متد `toggleAttribute` ویژگی‌ای با نام `name` را «تغییر وضعیت» می‌دهد — اگر وجود داشته باشد آن را حذف می‌کند، و اگر وجود نداشته باشد آن را اضافه می‌کند.
+  - اگر `true` باشد، متد `toggleAttribute` ویژگی‌ای با نام `name` اضافه می‌کند.
+  - اگر `false` باشد، متد `toggleAttribute` ویژگی‌ای با نام `name` حذف می‌کند.
 
-### Return value
+### مقدار بازگشتی
 
-`true` if attribute **`name`** is eventually
-present, and `false` otherwise.
+اگر ویژگی **`name`** در نهایت وجود داشته باشد، `true` و در غیر این صورت `false` بازگردانده می‌شود.
 
-### Exceptions
+### استثناها
 
-- `InvalidCharacterError` {{domxref("DOMException")}}
-  - : The specified attribute `name` contains one or more characters that are not valid in attribute names.
-    The `name` must have at least one character, and may not contain ASCII whitespace, `NULL`, `/`, `=` or `>` (U+0000, U+002F, U+003D, or U+003E, respectively).
+- `InvalidCharacterError` {{domxref("DOMException")}}: ویژگی `name` مشخص‌شده شامل یک یا چند نویسه است که در نام‌های ویژگی معتبر نیستند. `name` باید حداقل یک نویسه داشته باشد و نباید شامل فضای سفید ASCII، `NULL`، `/`، `=` یا `>` باشد (به ترتیب U+0000، U+002F، U+003D یا U+003E).
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### کاربرد پایه
 
-In the following example, `toggleAttribute()` is used to toggle the `disabled` attribute of an {{HTMLElement("input")}}.
+در مثال زیر، از `toggleAttribute()` برای تغییر وضعیت ویژگی `disabled` در یک عنصر {{HTMLElement("input")}} استفاده شده است.
 
 ### HTML
 
@@ -68,19 +60,19 @@ button.addEventListener("click", () => {
 });
 ```
 
-### Result
+### نتیجه
 
 {{ EmbedLiveSample('Examples', '300', '50') }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Element.hasAttribute()")}}
 - {{domxref("Element.getAttribute()")}}
