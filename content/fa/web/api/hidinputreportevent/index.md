@@ -1,10 +1,4 @@
 ---
-title: "HIDInputReportEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HIDInputReportEvent"
-status: "needs-translation"
----
-
----
 title: HIDInputReportEvent
 slug: Web/API/HIDInputReportEvent
 page-type: web-api-interface
@@ -15,28 +9,28 @@ browser-compat: api.HIDInputReportEvent
 
 {{securecontext_header}}{{APIRef("WebHID API")}}{{SeeCompatTable}}{{AvailableInWorkers("window_and_worker_except_shared")}}
 
-The **`HIDInputReportEvent`** interface of the [WebHID API](/en-US/docs/Web/API/WebHID_API) is passed to {{domxref("HIDDevice.inputreport_event", "inputreport")}} event of `HIDDevice` when an input report is received from any associated HID device.
+رابط **`HIDInputReportEvent`** از [WebHID API](/en-US/docs/Web/API/WebHID_API) به رویداد {{domxref("HIDDevice.inputreport_event", "inputreport")}} از `HIDDevice` ارسال می‌شود زمانی که یک گزارش ورودی از هر دستگاه HID مرتبط دریافت می‌شود.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface also inherits properties from {{domxref("Event")}}._
+_این رابط همچنین ویژگی‌هایی را از {{domxref("Event")}} به ارث می‌برد._
 
 - {{domxref("HIDInputReportEvent.data")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : A {{jsxref("DataView")}} containing the data from the input report, excluding the `reportId` if the HID interface uses report IDs.
+  - : یک {{jsxref("DataView")}} که داده‌های گزارش ورودی را شامل می‌شود، به جز `reportId` اگر رابط HID از شناسه‌های گزارش استفاده کند.
 - {{domxref("HIDInputReportEvent.device")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : The {{domxref("HIDDevice")}} instance that represents the HID interface that sent the input report.
+  - : نمونه {{domxref("HIDDevice")}} که نشان‌دهنده رابط HID است که گزارش ورودی را ارسال کرده است.
 - {{domxref("HIDInputReportEvent.reportId")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : The one-byte identification prefix for this report, or 0 if the HID interface does not use report IDs.
+  - : پیشوند شناسایی یک‌بایتی برای این گزارش، یا 0 اگر رابط HID از شناسه‌های گزارش استفاده نکند.
 
-## Instance methods
+## روش‌های نمونه
 
-_This interface inherits methods from its parent, {{domxref("Event")}}._
+_این رابط روش‌هایی را از والد خود، {{domxref("Event")}} به ارث می‌برد._
 
-## Examples
+## مثال‌ها
 
-The following example demonstrates listening for an `inputReport` that will allow the application to detect which button is pressed on a Joy-Con Right device. You can see more examples, and live demos in the article [Connecting to uncommon HID devices](https://developer.chrome.com/docs/capabilities/hid).
+مثال زیر نحوه گوش دادن به یک `inputReport` را نشان می‌دهد که به برنامه امکان می‌دهد تشخیص دهد کدام دکمه روی یک دستگاه Joy-Con Right فشار داده شده است. مثال‌های بیشتر و دموهای زنده را در مقاله [اتصال به دستگاه‌های HID غیرمعمول](https://developer.chrome.com/docs/capabilities/hid) مشاهده کنید.
 
 ```js
 device.addEventListener("inputreport", (event) => {
@@ -53,10 +47,10 @@ device.addEventListener("inputreport", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
