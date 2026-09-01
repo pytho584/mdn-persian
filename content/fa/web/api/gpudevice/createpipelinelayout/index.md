@@ -1,11 +1,5 @@
 ---
 title: "GPUDevice: createPipelineLayout() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createPipelineLayout"
-status: "needs-translation"
----
-
----
-title: "GPUDevice: createPipelineLayout() method"
 short-title: createPipelineLayout()
 slug: Web/API/GPUDevice/createPipelineLayout
 page-type: web-api-instance-method
@@ -14,8 +8,7 @@ browser-compat: api.GPUDevice.createPipelineLayout
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`createPipelineLayout()`** method of the
-{{domxref("GPUDevice")}} interface creates a {{domxref("GPUPipelineLayout")}} that defines the {{domxref("GPUBindGroupLayout")}}s used by a pipeline. {{domxref("GPUBindGroup")}}s used with the pipeline during command encoding must have compatible {{domxref("GPUBindGroupLayout")}}s.
+متد **`createPipelineLayout()`** از رابط {{domxref("GPUDevice")}} یک {{domxref("GPUPipelineLayout")}} (طرح خط لوله) ایجاد می‌کند که {{domxref("GPUBindGroupLayout")}}های (طرح‌های گروه اتصال) مورد استفاده توسط یک خط لوله (pipeline) را تعریف می‌کند. {{domxref("GPUBindGroup")}}هایی (گروه‌های اتصال) که در هنگام رمزگذاری دستورات با خط لوله استفاده می‌شوند باید دارای {{domxref("GPUBindGroupLayout")}}های سازگار باشند.
 
 ## Syntax
 
@@ -23,39 +16,39 @@ The **`createPipelineLayout()`** method of the
 createPipelineLayout(descriptor)
 ```
 
-### Parameters
+### پارامترها
 
 - `descriptor`
-  - : An object containing the following properties:
+  - : یک شیء حاوی ویژگی‌های زیر:
     - `bindGroupLayouts`
-      - : An array of values representing the bind group layouts for a pipeline. Each value can be:
-        - A {{domxref("GPUBindGroupLayout")}} object, created via a call to {{domxref("GPUDevice.createBindGroupLayout()")}}. Each object corresponds to a [`@group`](https://gpuweb.github.io/gpuweb/wgsl/#attribute-binding) attribute in the shader code contained in the {{domxref("GPUShaderModule")}} used in a related pipeline.
-        - `null`, which represents an empty bind group layout. `null` values are ignored when creating a pipeline layout.
+      - : آرایه‌ای از مقادیر که نشان‌دهنده طرح‌های گروه اتصال برای یک خط لوله هستند. هر مقدار می‌تواند:
+        - یک شیء {{domxref("GPUBindGroupLayout")}} (طرح گروه اتصال) که با فراخوانی {{domxref("GPUDevice.createBindGroupLayout()")}} ایجاد شده است. هر شیء معادل یک ویژگی [`@group`](https://gpuweb.github.io/gpuweb/wgsl/#attribute-binding) در کد شیدر موجود در {{domxref("GPUShaderModule")}} مورد استفاده در یک خط لوله مرتبط است.
+        - `null`، که نشان‌دهنده یک طرح گروه اتصال خالی است. مقادیر `null` هنگام ایجاد یک طرح خط لوله نادیده گرفته می‌شوند.
     - `label` {{optional_inline}}
-      - : A string providing a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+      - : یک رشته که یک برچسب برای شناسایی شیء فراهم می‌کند، برای مثال در پیام‌های {{domxref("GPUError")}} یا هشدارهای کنسول.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("GPUPipelineLayout")}} object instance.
+یک نمونه از شیء {{domxref("GPUPipelineLayout")}} (طرح خط لوله).
 
-### Validation
+### اعتبارسنجی
 
-The following criteria must be met when calling **`createPipelineLayout()`**, otherwise a {{domxref("GPUValidationError")}} is generated and an invalid {{domxref("GPUPipelineLayout")}} object is returned:
+معیارهای زیر باید هنگام فراخوانی **`createPipelineLayout()`** برآورده شوند، در غیر این صورت یک {{domxref("GPUValidationError")}} تولید شده و یک شیء {{domxref("GPUPipelineLayout")}} نامعتبر بازگردانده می‌شود:
 
-- The {{domxref("GPUBindGroupLayout")}} objects in `bindGroupLayouts` are valid.
-- The number of {{domxref("GPUBindGroupLayout")}} objects in `bindGroupLayouts` is less than the {{domxref("GPUDevice")}}'s `maxBindGroups` {{domxref("GPUSupportedLimits", "limit", "", "nocode")}}.
+- اشیاء {{domxref("GPUBindGroupLayout")}} (طرح گروه اتصال) در `bindGroupLayouts` معتبر هستند.
+- تعداد اشیاء {{domxref("GPUBindGroupLayout")}} در `bindGroupLayouts` کمتر از `maxBindGroups` {{domxref("GPUDevice")}} (محدودیت {{domxref("GPUSupportedLimits", "limit", "", "nocode")}}) است.
 
-## Examples
+## مثال‌ها
 
 > [!NOTE]
-> The [WebGPU samples](https://webgpu.github.io/webgpu-samples/) feature many more examples.
+> [نمونه‌های WebGPU](https://webgpu.github.io/webgpu-samples/) شامل مثال‌های بیشتری هستند.
 
-### Multiple bind group layouts, bind group, and pipeline layout
+### چندین طرح گروه اتصال، گروه اتصال و طرح خط لوله
 
-The following snippet:
+قطعه کد زیر:
 
-- Creates a {{domxref("GPUBindGroupLayout")}} that describes a binding with a buffer, a texture, and a sampler.
-- Creates a {{domxref("GPUPipelineLayout")}} based on the {{domxref("GPUBindGroupLayout")}}.
+- یک {{domxref("GPUBindGroupLayout")}} (طرح گروه اتصال) ایجاد می‌کند که یک اتصال با یک بافر، یک بافت و یک نمونه‌بردار را توصیف می‌کند.
+- یک {{domxref("GPUPipelineLayout")}} (طرح خط لوله) بر اساس {{domxref("GPUBindGroupLayout")}} ایجاد می‌کند.
 
 ```js
 // …
@@ -87,9 +80,9 @@ const pipelineLayout = device.createPipelineLayout({
 // …
 ```
 
-### Specifying an empty bind group layout
+### مشخص کردن یک طرح گروه اتصال خالی
 
-In this snippet, we create three bind group layouts, with bind group layout 1 representing fragment data and bind group layout 2 representing vertex data. If we want to create a pipeline that uses only bind group layouts 0 and 2, we can pass `null` for bind group layout 1 and then render without a fragment shader.
+در این قطعه، سه طرح گروه اتصال ایجاد می‌کنیم، که طرح گروه اتصال ۱ نشان‌دهنده داده‌های قطعه و طرح گروه اتصال ۲ نشان‌دهنده داده‌های رأس است. اگر بخواهیم یک خط لوله ایجاد کنیم که فقط از طرح‌های گروه اتصال ۰ و ۲ استفاده کند، می‌توانیم برای طرح گروه اتصال ۱ مقدار `null` را ارسال کرده و سپس بدون شیدر قطعه رندر کنیم.
 
 ```js
 const bgl0 = device.createBindGroupLayout({ entries: myGlobalEntries });
@@ -110,6 +103,6 @@ const pipelineLayout = device.createPipelineLayout({
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
