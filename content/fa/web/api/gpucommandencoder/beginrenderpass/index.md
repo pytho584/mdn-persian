@@ -1,7 +1,5 @@
 ---
 title: "GPUCommandEncoder: beginRenderPass() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder/beginRenderPass"
-status: "needs-translation"
 ---
 
 ---
@@ -14,8 +12,7 @@ browser-compat: api.GPUCommandEncoder.beginRenderPass
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`beginRenderPass()`** method of the
-{{domxref("GPUCommandEncoder")}} interface starts encoding a render pass, returning a {{domxref("GPURenderPassEncoder")}} that can be used to control rendering.
+متد **`beginRenderPass()`** از رابط {{domxref("GPUCommandEncoder")}} رمزگذاری یک پاس رندر را آغاز می‌کند و یک {{domxref("GPURenderPassEncoder")}} برمی‌گرداند که می‌توان از آن برای کنترل رندر استفاده کرد.
 
 ## Syntax
 
@@ -26,167 +23,173 @@ beginRenderPass(descriptor)
 ### Parameters
 
 - `descriptor`
-  - : An object containing the following properties:
+  - : یک شیء شامل ویژگی‌های زیر:
     - `colorAttachments`
-      - : An array of objects (see [Color attachment object structure](#color_attachment_object_structure)) defining the color attachments that will be output to when executing this render pass.
+      - : آرایه‌ای از اشیاء (به [Color attachment object structure](#color_attachment_object_structure) مراجعه کنید) که پیوست‌های رنگی مورد استفاده برای خروجی هنگام اجرای این پاس رندر را تعریف می‌کند.
     - `depthStencilAttachment` {{optional_inline}}
-      - : An object (see [Depth/stencil attachment object structure](#depthstencil_attachment_object_structure)) defining the depth/stencil attachment that will be output to and tested against when executing this render pass.
+      - : یک شیء (به [Depth/stencil attachment object structure](#depthstencil_attachment_object_structure) مراجعه کنید) که پیوست عمق/استنسیل مورد استفاده برای خروجی و آزمایش هنگام اجرای این پاس رندر را تعریف می‌کند.
     - `label` {{optional_inline}}
-      - : A string providing a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+      - : رشته‌ای که برچسبی برای شناسایی شیء فراهم می‌کند؛ برای مثال در پیام‌های {{domxref("GPUError")}} یا هشدارهای کنسول.
     - `maxDrawCount` {{optional_inline}}
-      - : A number indicating the maximum number of draw calls that will be done in the render pass. This is used by some implementations to size work injected before the render pass. You should keep the default value — 50000000 — unless you know that more draw calls will be done.
+      - : عددی که حداکثر تعداد فراخوانی‌های draw انجام‌شده در پاس رندر را مشخص می‌کند. برخی پیاده‌سازی‌ها از این مقدار برای اندازه‌دهی کار تزریق‌شده قبل از پاس رندر استفاده می‌کنند. بهتر است مقدار پیش‌فرض یعنی 50000000 را حفظ کنید، مگر اینکه بدانید تعداد فراخوانی‌های draw بیشتری انجام خواهد شد.
     - `occlusionQuerySet` {{optional_inline}}
-      - : The {{domxref("GPUQuerySet")}} that will store the occlusion query results for this pass.
+      - : {{domxref("GPUQuerySet")}}ای که نتایج پرس‌وجوی occlusion را برای این پاس ذخیره می‌کند.
     - `timestampWrites` {{optional_inline}}
-      - : An array of objects defining where and when timestamp query values will be written for this pass. These objects have the following properties:
+      - : آرایه‌ای از اشیاء که مشخص می‌کند مقادیر پرس‌وجوی timestamp کجا و چه زمانی برای این پاس نوشته می‌شوند. این اشیاء ویژگی‌های زیر را دارند:
         - `querySet`
-          - : A {{domxref("GPUQuerySet")}} of type `"timestamp"` that the timestamp query results will be written to.
+          - : یک {{domxref("GPUQuerySet")}} از نوع `"timestamp"` که نتایج پرس‌وجوی timestamp در آن نوشته می‌شود.
         - `beginningOfPassWriteIndex`
-          - : A number specifying the query index in `querySet` where the timestamp at the beginning of the render pass will be written. This is optional - if not defined, no timestamp will be written for the beginning of the pass.
+          - : عددی که ایندکس پرس‌وجو در `querySet` را مشخص می‌کند و timestamp مربوط به ابتدای پاس رندر در آن نوشته می‌شود. این ویژگی اختیاری است — اگر تعریف نشود، هیچ timestampای برای ابتدای پاس نوشته نمی‌شود.
         - `endOfPassWriteIndex`
-          - : A number specifying the query index in `querySet` where the timestamp at the end of the render pass will be written. This is optional - if not defined, no timestamp will be written for the end of the pass.
+          - : عددی که ایندکس پرس‌وجو در `querySet` را مشخص می‌کند و timestamp مربوط به پایان پاس رندر در آن نوشته می‌شود. این ویژگی اختیاری است — اگر تعریف نشود، هیچ timestampای برای پایان پاس نوشته نمی‌شود.
 
         > [!NOTE]
-        > The `timestamp-query` [feature](/en-US/docs/Web/API/GPUSupportedFeatures) needs to be enabled to use timestamp queries. Timestamp query values are written in nanoseconds, but how the value is determined is implementation-defined.
+        > برای استفاده از پرس‌وجوهای timestamp باید [feature](/en-US/docs/Web/API/GPUSupportedFeatures) به نام `timestamp-query` فعال باشد. مقادیر پرس‌وجوی timestamp بر حسب نانوثانیه نوشته می‌شوند، اما نحوه تعیین این مقدار به پیاده‌سازی وابسته است.
 
 ### Color attachment object structure
 
-Color attachment objects can have the following properties:
+اشیاء پیوست رنگ می‌توانند ویژگی‌های زیر را داشته باشند:
 
 - `clearValue` {{optional_inline}}
-  - : A color value to clear the `view` texture to, prior to executing the render pass. This value is ignored if `loadOp` is not set to `"clear"`. `clearValue` takes an array or object representing the four color components `r`, `g`, `b`, and `a` as decimals.
+  - : مقدار رنگی که بافت `view` پیش از اجرای پاس رندر با آن پاک‌سازی می‌شود. اگر `loadOp` برابر `"clear"` نباشد، این مقدار نادیده گرفته می‌شود. `clearValue` یک آرایه یا شیء شامل چهار مؤلفه رنگ `r`، `g`، `b` و `a` به صورت اعشاری دریافت می‌کند.
 
-    For example, you can pass an array like `[0.0, 0.5, 1.0, 1.0]`, or its equivalent object `{ r: 0.0, g: 0.5, b: 1.0, a: 1.0 }`.
+    برای مثال، می‌توانید آرایه‌ای مانند `[0.0, 0.5, 1.0, 1.0]` یا شیء معادل آن `{ r: 0.0, g: 0.5, b: 1.0, a: 1.0 }` را پاس دهید.
 
-    If `clearValue` is omitted, it defaults to `{ r: 0, g: 0, b: 0, a: 0 }`.
+    اگر `clearValue` حذف شود، مقدار پیش‌فرض آن `{ r: 0, g: 0, b: 0, a: 0 }` است.
 
 - `depthSlice` {{optional_inline}}
-  - : A number representing the index of the 3D depth slice that will be output to for this color attachment, in the case of a 3D {{domxref("GPUTextureView")}} `view`. When specified, this allows WebGPU to render directly to slices of 3D textures within render passes.
+  - : عددی که ایندکس برش عمق سه‌بعدی را مشخص می‌کند و در مورد یک `view` از نوع {{domxref("GPUTextureView")}} سه‌بعدی، خروجی این پیوست رنگ به آن برش نوشته می‌شود. وقتی این مقدار مشخص شود، WebGPU می‌تواند مستقیماً به برش‌های بافت‌های سه‌بعدی درون پاس‌های رندر رندر کند.
 
 - `loadOp`
-  - : An enumerated value indicating the load operation to perform on `view` prior to executing the render pass. Possible values are:
-    - `"clear"`: Loads the `clearValue` for this attachment into the render pass.
-    - `"load"`: Loads the existing value for this attachment into the render pass.
+  - : یک مقدار شمارشی که عملیات بارگذاری مورد نظر برای `view` پیش از اجرای پاس رندر را مشخص می‌کند. مقادیر ممکن عبارت‌اند از:
+    - `"clear"`: مقدار `clearValue` را برای این پیوست در پاس رندر بارگذاری می‌کند.
+    - `"load"`: مقدار موجود این پیوست را در پاس رندر بارگذاری می‌کند.
 
     > [!NOTE]
-    > It is recommended to always use `"clear"` in cases where the initial value doesn't matter, as it will give better performance on some devices such as mobiles.
+    > توصیه می‌شود در مواردی که مقدار اولیه مهم نیست همیشه از `"clear"` استفاده کنید، زیرا روی برخی دستگاه‌ها مانند گوشی‌های موبایل عملکرد بهتری خواهد داشت.
 
 - `storeOp`
-  - : An enumerated value indicating the store operation to perform on `view` after executing the render pass. Possible values are:
-    - `"discard"`: Discards the resulting value of the render pass for this attachment.
-    - `"store"`: Stores the resulting value of the render pass for this attachment.
+  - : یک مقدار شمارشی که عملیات ذخیره‌سازی مورد نظر برای `view` پس از اجرای پاس رندر را مشخص می‌کند. مقادیر ممکن عبارت‌اند از:
+    - `"discard"`: مقدار حاصل از پاس رندر را برای این پیوست دور می‌ریزد.
+    - `"store"`: مقدار حاصل از پاس رندر را برای این پیوست ذخیره می‌کند.
+
 - `resolveTarget` {{optional_inline}}
-  - : An object representing the texture subresource that will receive the resolved output for this color attachment if `view` is multisampled. This can be one of the following:
+  - : شیءای که زیرمنبع بافت دریافت‌کننده خروجی resolve شده این پیوست رنگ را مشخص می‌کند، اگر `view` چندنمونه‌ای (multisampled) باشد. این می‌تواند یکی از موارد زیر باشد:
     - {{domxref("GPUTextureView")}}
-    - {{domxref("GPUTexture")}}: Can be used in place of a `GPUTextureView`, provided a default view is desired. When used in this context, `GPUTexture` is equivalent to a `GPUTextureView` object created using a {{domxref("GPUTexture.createView()")}} call with no argument specified.
+    - {{domxref("GPUTexture")}}: در صورت تمایل به نمای پیش‌فرض می‌تواند به جای `GPUTextureView` استفاده شود. در این زمینه، `GPUTexture` معادل شیء `GPUTextureView`ای است که با فراخوانی {{domxref("GPUTexture.createView()")}} بدون آرگومان ساخته شده باشد.
+
 - `view`
-  - : An object representing the texture subresource that will be output to for this color attachment. This can be one of the following:
+  - : شیءای که زیرمنبع بافت مورد نظر برای خروجی این پیوست رنگ را مشخص می‌کند. این می‌تواند یکی از موارد زیر باشد:
     - {{domxref("GPUTextureView")}}
-    - {{domxref("GPUTexture")}}: Can be used in place of a `GPUTextureView`, provided a default view is desired. When used in this context, `GPUTexture` is equivalent to a `GPUTextureView` object created using a {{domxref("GPUTexture.createView()")}} call with no argument specified.
+    - {{domxref("GPUTexture")}}: در صورت تمایل به نمای پیش‌فرض می‌تواند به جای `GPUTextureView` استفاده شود. در این زمینه، `GPUTexture` معادل شیء `GPUTextureView`ای است که با فراخوانی {{domxref("GPUTexture.createView()")}} بدون آرگومان ساخته شده باشد.
 
     > [!NOTE]
-    > Each color or depth/stencil attachment must be a unique texture subresource, and texture subresources used as attachments cannot be used inside the render pass.
+    > هر پیوست رنگ یا عمق/استنسیل باید یک زیرمنبع بافت یکتا باشد و زیرمنبع‌های بافتی که به عنوان پیوست استفاده می‌شوند نمی‌توانند داخل پاس رندر استفاده شوند.
 
 ### Depth/stencil attachment object structure
 
-The `depthStencilAttachment` object can have the following properties:
+شیء `depthStencilAttachment` می‌تواند ویژگی‌های زیر را داشته باشد:
 
 - `depthClearValue` {{optional_inline}}
-  - : A number indicating the value to clear `view`'s depth component prior to executing the render pass. This is ignored if `depthLoadOp` is not set to `"clear"`.
+  - : عددی که مقدار پاک‌سازی مؤلفه عمق `view` پیش از اجرای پاس رندر را مشخص می‌کند. اگر `depthLoadOp` برابر `"clear"` نباشد، این مقدار نادیده گرفته می‌شود.
 
-    The value must be between 0.0 and 1.0, inclusive.
+    مقدار باید بین 0.0 و 1.0 باشد (شمول).
 
 - `depthLoadOp` {{optional_inline}}
-  - : An enumerated value indicating the load operation to perform on `view`'s depth component prior to executing the render pass. Possible values are:
-    - `"clear"`: Loads the `clearValue` for this attachment into the render pass.
-    - `"load"`: Loads the existing value for this attachment into the render pass.
+  - : یک مقدار شمارشی که عملیات بارگذاری مورد نظر برای مؤلفه عمق `view` پیش از اجرای پاس رندر را مشخص می‌کند. مقادیر ممکن عبارت‌اند از:
+    - `"clear"`: مقدار `clearValue` را برای این پیوست در پاس رندر بارگذاری می‌کند.
+    - `"load"`: مقدار موجود این پیوست را در پاس رندر بارگذاری می‌کند.
 
     > [!NOTE]
-    > It is recommended to always use `"clear"` in cases where the initial value doesn't matter, as it will give better performance on some devices such as mobiles.
+    > توصیه می‌شود در مواردی که مقدار اولیه مهم نیست همیشه از `"clear"` استفاده کنید، زیرا روی برخی دستگاه‌ها مانند گوشی‌های موبایل عملکرد بهتری خواهد داشت.
 
 - `depthReadOnly` {{optional_inline}}
-  - : A boolean. Setting the value to `true` causes the depth component of `view` to be read-only. If `depthReadOnly` is omitted, it defaults to `false`.
-- `depthStoreOp` {{optional_inline}}
-  - : An enumerated value indicating the store operation to perform on `view`'s depth component after executing the render pass. Possible values are:
-    - `"discard"`: Discards the resulting value of the render pass for this attachment.
-    - `"store"`: Stores the resulting value of the render pass for this attachment.
-- `stencilClearValue` {{optional_inline}}
-  - : A number indicating the value to clear `view`'s stencil component to prior to executing the render pass. This is ignored if `stencilLoadOp` is not set to `"clear"`.
+  - : یک مقدار بولی. قرار دادن این مقدار روی `true` باعث می‌شود مؤلفه عمق `view` فقط‌خواندنی شود. اگر `depthReadOnly` حذف شود، مقدار پیش‌فرض آن `false` است.
 
-    If `stencilClearValue` is omitted, it defaults to 0.
+- `depthStoreOp` {{optional_inline}}
+  - : یک مقدار شمارشی که عملیات ذخیره‌سازی مورد نظر برای مؤلفه عمق `view` پس از اجرای پاس رندر را مشخص می‌کند. مقادیر ممکن عبارت‌اند از:
+    - `"discard"`: مقدار حاصل از پاس رندر را برای این پیوست دور می‌ریزد.
+    - `"store"`: مقدار حاصل از پاس رندر را برای این پیوست ذخیره می‌کند.
+
+- `stencilClearValue` {{optional_inline}}
+  - : عددی که مقدار پاک‌سازی مؤلفه استنسیل `view` پیش از اجرای پاس رندر را مشخص می‌کند. اگر `stencilLoadOp` برابر `"clear"` نباشد، این مقدار نادیده گرفته می‌شود.
+
+    اگر `stencilClearValue` حذف شود، مقدار پیش‌فرض آن 0 است.
 
 - `stencilLoadOp` {{optional_inline}}
-  - : An enumerated value indicating the load operation to perform on `view`'s stencil component prior to executing the render pass. Possible values are:
-    - `"clear"`: Loads the `clearValue` for this attachment into the render pass.
-    - `"load"`: Loads the existing value for this attachment into the render pass.
+  - : یک مقدار شمارشی که عملیات بارگذاری مورد نظر برای مؤلفه استنسیل `view` پیش از اجرای پاس رندر را مشخص می‌کند. مقادیر ممکن عبارت‌اند از:
+    - `"clear"`: مقدار `clearValue` را برای این پیوست در پاس رندر بارگذاری می‌کند.
+    - `"load"`: مقدار موجود این پیوست را در پاس رندر بارگذاری می‌کند.
 
     > [!NOTE]
-    > It is recommended to always use `"clear"` in cases where the initial value doesn't matter, as it will give better performance on some devices such as mobiles.
+    > توصیه می‌شود در مواردی که مقدار اولیه مهم نیست همیشه از `"clear"` استفاده کنید، زیرا روی برخی دستگاه‌ها مانند گوشی‌های موبایل عملکرد بهتری خواهد داشت.
 
 - `stencilReadOnly` {{optional_inline}}
-  - : A boolean. Setting the value to `true` causes the stencil component of `view` to be read-only. If `stencilReadOnly` is omitted, it defaults to `false`.
+  - : یک مقدار بولی. قرار دادن این مقدار روی `true` باعث می‌شود مؤلفه استنسیل `view` فقط‌خواندنی شود. اگر `stencilReadOnly` حذف شود، مقدار پیش‌فرض آن `false` است.
+
 - `stencilStoreOp` {{optional_inline}}
-  - : An enumerated value indicating the store operation to perform on `view`'s stencil component after executing the render pass. Possible values are:
-    - `"discard"`: Discards the resulting value of the render pass for this attachment.
-    - `"store"`: Stores the resulting value of the render pass for this attachment.
+  - : یک مقدار شمارشی که عملیات ذخیره‌سازی مورد نظر برای مؤلفه استنسیل `view` پس از اجرای پاس رندر را مشخص می‌کند. مقادیر ممکن عبارت‌اند از:
+    - `"discard"`: مقدار حاصل از پاس رندر را برای این پیوست دور می‌ریزد.
+    - `"store"`: مقدار حاصل از پاس رندر را برای این پیوست ذخیره می‌کند.
+
 - `view`
-  - : An object representing the texture subresource that will be output to and read from for this depth/stencil attachment. This can be one of the following:
+  - : شیءای که زیرمنبع بافت مورد نظر برای خروجی و خواندن در این پیوست عمق/استنسیل را مشخص می‌کند. این می‌تواند یکی از موارد زیر باشد:
     - {{domxref("GPUTextureView")}}
-    - {{domxref("GPUTexture")}}: Can be used in place of a `GPUTextureView`, provided a default view is desired. When used in this context, `GPUTexture` is equivalent to a `GPUTextureView` object created using a {{domxref("GPUTexture.createView()")}} call with no argument specified.
+    - {{domxref("GPUTexture")}}: در صورت تمایل به نمای پیش‌فرض می‌تواند به جای `GPUTextureView` استفاده شود. در این زمینه، `GPUTexture` معادل شیء `GPUTextureView`ای است که با فراخوانی {{domxref("GPUTexture.createView()")}} بدون آرگومان ساخته شده باشد.
 
 ### Return value
 
-A {{domxref("GPURenderPassEncoder")}} object instance.
+یک نمونه از شیء {{domxref("GPURenderPassEncoder")}}.
 
 ### Validation
 
-The following criteria must be met when calling **`beginRenderPass()`**, otherwise a {{domxref("GPUValidationError")}} is generated and an invalid {{domxref("GPURenderPassEncoder")}} is returned.
+هنگام فراخوانی **`beginRenderPass()`** باید معیارهای زیر برقرار باشند؛ در غیر این صورت یک {{domxref("GPUValidationError")}} تولید می‌شود و یک {{domxref("GPURenderPassEncoder")}} نامعتبر بازگردانده می‌شود.
 
-General:
+عمومی:
 
-- `colorAttachments.length` is less than or equal to the {{domxref("GPUDevice")}}'s `maxColorAttachments` {{domxref("GPUSupportedLimits", "limit", "", "nocode")}}.
-- If `colorAttachments` contains only `null` values, `depthStencilAttachment` is provided.
-- All `view`s in `colorAttachments` and `depthStencilAttachment` have equal {{domxref("GPUTexture.sampleCount")}} values and render extents ({{domxref("GPUTexture.height")}}, {{domxref("GPUTexture.width")}}, and {{domxref("GPUTexture.depthOrArrayLayers")}}).
-- If `occlusionQuerySet` is set, the referenced {{domxref("GPUQuerySet")}} has a `type` of `"occlusion"`.
+- `colorAttachments.length` کمتر یا مساوی `maxColorAttachments` (یکی از {{domxref("GPUSupportedLimits", "limit", "", "nocode")}} در {{domxref("GPUDevice")}}) است.
+- اگر `colorAttachments` فقط شامل مقادیر `null` باشد، `depthStencilAttachment` ارائه می‌شود.
+- همه `view`ها در `colorAttachments` و `depthStencilAttachment` دارای مقادیر {{domxref("GPUTexture.sampleCount")}} و ابعاد رندر یکسان هستند ({{domxref("GPUTexture.height")}}، {{domxref("GPUTexture.width")}} و {{domxref("GPUTexture.depthOrArrayLayers")}}).
+- اگر `occlusionQuerySet` تنظیم شده باشد، {{domxref("GPUQuerySet")}} ارجاع‌داده‌شده دارای `type` از نوع `"occlusion"` است.
 
-For color attachment objects
+برای اشیاء پیوست رنگ:
 
-- The `view` is renderable, and the `view`'s format (i.e., specified in the descriptor of the originating {{domxref("GPUTexture.createView()")}} call) is a color renderable format.
-- If `resolveTarget` is provided:
-  - The `view`'s originating {{domxref("GPUTexture")}}'s {{domxref("GPUTexture.sampleCount", "sampleCount")}} is greater than 1.
-  - The `resolveTarget`'s originating {{domxref("GPUTexture")}}'s {{domxref("GPUTexture.sampleCount", "sampleCount")}} is 1.
-  - `resolveTarget` is renderable.
-  - The sizes of the subresources that `view` and `resolveTarget` provide a view of match.
-  - `view`'s and `resolveTarget`'s formats match.
-- [Color attachments bytes per sample](https://gpuweb.github.io/gpuweb/#abstract-opdef-validating-gpurenderpassdescriptors-color-attachment-bytes-per-sample) is less than or equal to the {{domxref("GPUDevice")}}'s `maxColorAttachmentBytesPerSample` {{domxref("GPUSupportedLimits", "limit", "", "nocode")}}.
-- If the [`usage`](/en-US/docs/Web/API/GPUTexture/createView#usage) of the `GPUTexture.createView()` operation that created the associated view includes the `TRANSIENT_ATTACHMENT` bit:
-  - `loadOp` is `"clear"`.
-  - `storeOp` is `"discard"`.
+- `view` قابل رندر است و قالب `view` (یعنی قالبی که در توصیفگر فراخوانی مبدأ {{domxref("GPUTexture.createView()")}} مشخص شده است) یک قالب رنگی قابل رندر است.
+- اگر `resolveTarget` ارائه شده باشد:
+  - مقدار {{domxref("GPUTexture.sampleCount", "sampleCount")}} بافت مبدأ `view` بزرگ‌تر از 1 است.
+  - مقدار {{domxref("GPUTexture.sampleCount", "sampleCount")}} بافت مبدأ `resolveTarget` برابر 1 است.
+  - `resolveTarget` قابل رندر است.
+  - اندازه زیرمنبع‌هایی که `view` و `resolveTarget` نمای آن‌ها را ارائه می‌دهند با هم مطابقت دارند.
+  - قالب‌های `view` و `resolveTarget` با هم مطابقت دارند.
+- مقدار [Color attachments bytes per sample](https://gpuweb.github.io/gpuweb/#abstract-opdef-validating-gpurenderpassdescriptors-color-attachment-bytes-per-sample) کمتر یا مساوی `maxColorAttachmentBytesPerSample` (یکی از {{domxref("GPUSupportedLimits", "limit", "", "nocode")}} در {{domxref("GPUDevice")}}) است.
+- اگر [`usage`](/en-US/docs/Web/API/GPUTexture/createView#usage) عملیات `GPUTexture.createView()` که نمای مرتبط را ایجاد کرده شامل بیت `TRANSIENT_ATTACHMENT` باشد:
+  - `loadOp` برابر `"clear"` است.
+  - `storeOp` برابر `"discard"` است.
 
-For depth/stencil attachment objects:
+برای اشیاء پیوست عمق/استنسیل:
 
-- The `view` is renderable, and its format is a [depth-or-stencil](https://gpuweb.github.io/gpuweb/#depth-or-stencil-format) format.
-- If `depthLoadOp` is set to `"clear"`, a valid `depthClearValue` is provided.
-- If `view`'s format is a combined depth-or-stencil format, `depthReadOnly` matches `stencilReadOnly`.
-- If `view`'s format has a depth aspect, and `depthReadOnly` is `false`, `depthLoadOp` and `depthStoreOp` are provided.
-- If `view`'s format has a depth aspect, and `depthReadOnly` is `true`, `depthLoadOp` and `depthStoreOp` are not provided.
-- If `view`'s format has a stencil aspect, and `stencilReadOnly` is `false`, `stencilLoadOp` and `stencilStoreOp` are provided.
-- If `view`'s format has a stencil aspect, and `stencilReadOnly` is `true`, `stencilLoadOp` and `stencilStoreOp` are not provided.
-- If the [`usage`](/en-US/docs/Web/API/GPUTexture/createView#usage) of the `GPUTexture.createView()` operation that created the associated view includes the `TRANSIENT_ATTACHMENT` bit:
-  - If `view`'s format has a depth aspect:
-    - `depthLoadOp` is `"clear"`.
-    - `depthStoreOp` is `"discard"`.
-  - If `view`'s format has a stencil aspect:
-    - `stencilLoadOp` is `"clear"`.
-    - `stencilStoreOp` is `"discard"`.
+- `view` قابل رندر است و قالب آن یک قالب [depth-or-stencil](https://gpuweb.github.io/gpuweb/#depth-or-stencil-format) است.
+- اگر `depthLoadOp` برابر `"clear"` تنظیم شده باشد، یک `depthClearValue` معتبر ارائه شده است.
+- اگر قالب `view` یک قالب ترکیبی depth-or-stencil باشد، `depthReadOnly` با `stencilReadOnly` مطابقت دارد.
+- اگر قالب `view` دارای جنبه عمق باشد و `depthReadOnly` برابر `false` باشد، `depthLoadOp` و `depthStoreOp` ارائه شده‌اند.
+- اگر قالب `view` دارای جنبه عمق باشد و `depthReadOnly` برابر `true` باشد، `depthLoadOp` و `depthStoreOp` ارائه نشده‌اند.
+- اگر قالب `view` دارای جنبه استنسیل باشد و `stencilReadOnly` برابر `false` باشد، `stencilLoadOp` و `stencilStoreOp` ارائه شده‌اند.
+- اگر قالب `view` دارای جنبه استنسیل باشد و `stencilReadOnly` برابر `true` باشد، `stencilLoadOp` و `stencilStoreOp` ارائه نشده‌اند.
+- اگر [`usage`](/en-US/docs/Web/API/GPUTexture/createView#usage) عملیات `GPUTexture.createView()` که نمای مرتبط را ایجاد کرده شامل بیت `TRANSIENT_ATTACHMENT` باشد:
+  - اگر قالب `view` دارای جنبه عمق است:
+    - `depthLoadOp` برابر `"clear"` است.
+    - `depthStoreOp` برابر `"discard"` است.
+  - اگر قالب `view` دارای جنبه استنسیل است:
+    - `stencilLoadOp` برابر `"clear"` است.
+    - `stencilStoreOp` برابر `"discard"` است.
 
-For timestamp queries:
+برای پرس‌وجوهای timestamp:
 
-- The `timestamp-query` {{domxref("GPUSupportedFeatures", "feature", "", "nocode")}} is enabled in the {{domxref("GPUDevice")}}.
+- ویژگی `timestamp-query` ({{domxref("GPUSupportedFeatures", "feature", "", "nocode")}}) در {{domxref("GPUDevice")}} فعال شده است.
 
 ## Examples
 
-In our [basic render demo](https://mdn.github.io/dom-examples/webgpu-render-demo/), a number of commands are recorded via a {{domxref("GPUCommandEncoder")}}. These commands originate from the {{domxref("GPURenderPassEncoder")}} created via `beginRenderPass()` :
+در [basic render demo](https://mdn.github.io/dom-examples/webgpu-render-demo/) ما، تعدادی دستور از طریق یک {{domxref("GPUCommandEncoder")}} ثبت می‌شوند. این دستورها از {{domxref("GPURenderPassEncoder")}}ای که با `beginRenderPass()` ایجاد شده سرچشمه می‌گیرند:
 
 ```js
 // …
