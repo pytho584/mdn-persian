@@ -1,11 +1,5 @@
 ---
 title: "HTMLButtonElement: command property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLButtonElement/command"
-status: "needs-translation"
----
-
----
-title: "HTMLButtonElement: command property"
 short-title: command
 slug: Web/API/HTMLButtonElement/command
 page-type: web-api-instance-property
@@ -14,17 +8,17 @@ browser-compat: api.HTMLButtonElement.command
 
 {{APIRef("Invoker Commands API")}}
 
-The **`command`** property of the {{domxref("HTMLButtonElement")}} interface gets and sets the action to be performed on an element being controlled by this button. For this to have an effect, [`commandfor`](/en-US/docs/Web/HTML/Reference/Elements/button#commandfor) must be set.
+ویژگی **`command`** در رابط {{domxref("HTMLButtonElement")}}، عملیاتی را که قرار است روی عنصری که توسط این دکمه کنترل می‌شود انجام شود، دریافت و تنظیم می‌کند. برای اینکه این ویژگی اثر داشته باشد، باید [`commandfor`](/en-US/docs/Web/HTML/Reference/Elements/button#commandfor) تنظیم شده باشد.
 
-It reflects the [`command`](/en-US/docs/Web/HTML/Reference/Elements/button#command) HTML attribute.
+این ویژگی، ویژگی HTML [`command`](/en-US/docs/Web/HTML/Reference/Elements/button#command) را بازتاب می‌دهد.
 
-## Value
+## مقدار
 
-A string. See the [`command`](/en-US/docs/Web/HTML/Reference/Elements/button#command) attribute for valid values.
+یک رشته (string). برای مقادیر معتبر، به ویژگی [`command`](/en-US/docs/Web/HTML/Reference/Elements/button#command) مراجعه کنید.
 
-## Examples
+## مثال‌ها
 
-### Basic example
+### مثال پایه
 
 ```html
 <button id="toggleBtn" commandfor="mypopover" command="toggle-popover">
@@ -43,10 +37,10 @@ const toggleBtn = document.getElementById("toggleBtn");
 toggleBtn.command = "show-popover";
 ```
 
-### Using custom values for commands
+### استفاده از مقادیر سفارشی برای فرمان‌ها
 
-In this example, three buttons have been created using [custom values](/en-US/docs/Web/HTML/Reference/Elements/button#custom_values) for `command`.
-Each button targets the same image using the `commandfor` attribute.
+در این مثال، سه دکمه با استفاده از [مقادیر سفارشی](/en-US/docs/Web/HTML/Reference/Elements/button#custom_values) برای `command` ساخته شده‌اند.
+هر دکمه با استفاده از ویژگی `commandfor` به همان تصویر اشاره می‌کند.
 
 ```html
 <div class="controls">
@@ -67,8 +61,8 @@ Each button targets the same image using the `commandfor` attribute.
 }
 ```
 
-An event listener is attached to the image using the [`command` event](/en-US/docs/Web/API/CommandEvent).
-When one of the buttons is clicked, the listener runs code based on the custom `command` value assigned to the button, rotating the image and also updating it's `alt` text to indicate the new angle of the image.
+یک شنونده رویداد (event listener) با استفاده از [رویداد `command`](/en-US/docs/Web/API/CommandEvent) به تصویر متصل شده است.
+وقتی یکی از دکمه‌ها کلیک می‌شود، شنونده کدی را بر اساس مقدار سفارشی `command` اختصاص‌یافته به دکمه اجرا می‌کند، تصویر را می‌چرخاند و متن `alt` آن را نیز برای نشان دادن زاویه جدید تصویر به‌روزرسانی می‌کند.
 
 ```js
 const image = document.getElementById("the-image");
@@ -91,17 +85,17 @@ image.addEventListener("command", (event) => {
 
 {{EmbedLiveSample('using_custom_values_for_commands', '100%', "220")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Invoker Commands API", "Invoker Commands API", "", "nocode")}}
 - {{domxref("HTMLButtonElement.commandForElement")}}
 - {{domxref("CommandEvent")}}
-- [`<button>` `command` attribute](/en-US/docs/Web/HTML/Reference/Elements/button#command)
+- [ویژگی `command` در `<button>`](/en-US/docs/Web/HTML/Reference/Elements/button#command)
