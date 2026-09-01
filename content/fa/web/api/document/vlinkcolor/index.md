@@ -1,11 +1,5 @@
 ---
 title: "Document: vlinkColor property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/vlinkColor"
-status: "needs-translation"
----
-
----
-title: "Document: vlinkColor property"
 short-title: vlinkColor
 slug: Web/API/Document/vlinkColor
 page-type: web-api-instance-property
@@ -16,26 +10,24 @@ browser-compat: api.Document.vlinkColor
 
 {{APIRef("DOM")}} {{Deprecated_Header}}
 
-The **`Document.vlinkColor`** property gets/sets the color of
-links that the user has visited in the document.
+خاصیت **`Document.vlinkColor`** رنگ پیوندهایی را که کاربر در سند بازدید کرده است، دریافت یا تعیین می‌کند.
 
-## Value
+## مقدار
 
-A string representing the color as a word (e.g., `"red"`) or hexadecimal value (e.g., `"#ff0000"`).
+یک رشته که رنگ را به صورت یک کلمه (مانند `"red"`) یا مقدار هگزادسیمال (مانند `"#ff0000"`) نشان می‌دهد.
 
-When set to the `null` value, that `null` value is converted to the empty string (`""`), so `document.vlinkColor = null` is equivalent to `document.vlinkColor = ""`.
+وقتی مقدار `null` تنظیم شود، آن مقدار `null` به رشته خالی (`""`) تبدیل می‌شود، بنابراین `document.vlinkColor = null` معادل `document.vlinkColor = ""` است.
 
-## Notes
+## نکات
 
-- The default value for this property in Mozilla Firefox is purple
-  (`#551a8b` in hexadecimal).
-- `Document.vlinkColor` is deprecated in [the HTML specification](https://html.spec.whatwg.org/multipage/obsolete.html#dom-document-vlinkcolor).
-- The recommended alternative is to get/set the color of the CSS {{Cssxref(":visited")}} pseudo-class on HTML {{HtmlElement("a")}} elements (e.g., `a:visited {color:red;}`).
+- مقدار پیش‌فرض این خاصیت در Mozilla Firefox بنفش است (`#551a8b` در هگزادسیمال).
+- `Document.vlinkColor` در [مشخصات HTML](https://html.spec.whatwg.org/multipage/obsolete.html#dom-document-vlinkcolor) منسوخ شده است.
+- جایگزین پیشنهادی، دریافت/تنظیم رنگ شبه‌کلاس CSS {{Cssxref(":visited")}} بر روی عناصر HTML {{HtmlElement("a")}} است (مثلاً `a:visited {color:red;}`).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
