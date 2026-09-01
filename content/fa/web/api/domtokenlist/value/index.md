@@ -1,11 +1,5 @@
 ---
 title: "DOMTokenList: value property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/value"
-status: "needs-translation"
----
-
----
-title: "DOMTokenList: value property"
 short-title: value
 slug: Web/API/DOMTokenList/value
 page-type: web-api-instance-property
@@ -14,29 +8,24 @@ browser-compat: api.DOMTokenList.value
 
 {{APIRef("DOM")}}
 
-The **`value`** property of the {{domxref("DOMTokenList")}}
-interface is a {{Glossary("stringifier")}} that returns the value of the list serialized as a
-string, or clears and sets the list to the given value.
+ویژگی **`value`** در واسط {{domxref("DOMTokenList")}} یک {{Glossary("stringifier")}} است که مقدار فهرست را به‌صورت رشته‌ای بازمی‌گرداند، یا فهرست را پاک کرده و آن را با مقدار داده‌شده تنظیم می‌کند.
 
-## Value
+## مقدار
 
-A string representing the serialized content of the list.
-Each item is separated by a space.
+یک رشته که محتوای سریالیزه‌شدهٔ فهرست را نشان می‌دهد.
+هر آیتم با یک فاصله از دیگری جدا می‌شود.
 
-## Examples
+## مثال‌ها
 
-In the following example we retrieve the list of classes set on a
-{{htmlelement("span")}} element as a `DOMTokenList` using
-{{domxref("Element.classList")}}, then write the value of the list to the
-`<span>`'s {{domxref("Node.textContent")}}.
+در مثال زیر، فهرست کلاس‌های تنظیم‌شده روی یک عنصر {{htmlelement("span")}} را به‌صورت یک `DOMTokenList` با استفاده از {{domxref("Element.classList")}} دریافت می‌کنیم، سپس مقدار فهرست را در {{domxref("Node.textContent")}} آن `<span>` می‌نویسیم.
 
-First, the HTML:
+ابتدا HTML:
 
 ```html
 <span class="a b c"></span>
 ```
 
-Now the JavaScript:
+حالا جاوااسکریپت:
 
 ```js
 const span = document.querySelector("span");
@@ -44,14 +33,14 @@ const classes = span.classList;
 span.textContent = classes.value;
 ```
 
-The output looks like this:
+خروجی به این صورت است:
 
 {{ EmbedLiveSample('Examples', '100%', 60) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
