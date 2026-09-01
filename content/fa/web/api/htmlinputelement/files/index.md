@@ -1,11 +1,5 @@
 ---
 title: "HTMLInputElement: files property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/files"
-status: "needs-translation"
----
-
----
-title: "HTMLInputElement: files property"
 short-title: files
 slug: Web/API/HTMLInputElement/files
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.HTMLInputElement.files
 
 {{APIRef("File and Directory Entries API")}}
 
-The **`HTMLInputElement.files`** property allows you to access the {{domxref("FileList")}} selected with the [`<input type="file">`](/en-US/docs/Web/HTML/Reference/Elements/input/file) element.
+ویژگی **`HTMLInputElement.files`** به شما امکان دسترسی به {{domxref("FileList")}} انتخاب‌شده با عنصر [`<input type="file">`](/en-US/docs/Web/HTML/Reference/Elements/input/file) را می‌دهد.
 
-## Value
+## مقدار
 
-A {{domxref("FileList")}} object listing the selected files, if any, or `null` if the **`HTMLInputElement`** is not of `type="file"`.
+یک شیء {{domxref("FileList")}} که فایل‌های انتخاب‌شده را فهرست می‌کند (در صورت وجود)، یا `null` اگر **`HTMLInputElement`** از نوع `type="file"` نباشد.
 
-## Examples
+## مثال‌ها
 
-The example below shows how you can access the **`HTMLInputElement.files`** property and log the name, date modified, size, and type of each file selected by the user.
+مثال زیر نشان می‌دهد که چگونه می‌توانید به ویژگی **`HTMLInputElement.files`** دسترسی پیدا کنید و نام، تاریخ تغییر، اندازه و نوع هر فایل انتخاب‌شده توسط کاربر را در کنسول ثبت کنید.
 
 ### HTML
 
@@ -32,9 +26,7 @@ The example below shows how you can access the **`HTMLInputElement.files`** prop
 
 ### JavaScript
 
-Note that **`HTMLInputElement.files`** still returns an instance of {{domxref("FileList")}} even if no files are
-selected.
-Therefore it's safe to iterate through it with {{JSxref("Statements/for...of", "for...of")}} without checking if any files are selected.
+توجه داشته باشید که **`HTMLInputElement.files`** حتی اگر فایلی انتخاب نشده باشد، همچنان یک نمونه از {{domxref("FileList")}} برمی‌گرداند. بنابراین پیمایش آن با {{JSxref("Statements/for...of", "for...of")}} بدون نیاز به بررسی وجود فایل‌ها ایمن است.
 
 ```js
 const fileInput = document.getElementById("files");
@@ -52,14 +44,14 @@ for (const file of fileInput.files) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{ Specifications }}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("DataTransfer.files")}}
