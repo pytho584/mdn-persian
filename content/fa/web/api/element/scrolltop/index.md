@@ -1,12 +1,5 @@
 ---
 title: "Element: scrollTop property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollTop"
-status: "needs-translation"
----
-
----
-title: "Element: scrollTop property"
-short-title: scrollTop
 slug: Web/API/Element/scrollTop
 page-type: web-api-instance-property
 browser-compat: api.Element.scrollTop
@@ -14,23 +7,23 @@ browser-compat: api.Element.scrollTop
 
 {{APIRef("DOM")}}
 
-The **`scrollTop`** property of the {{domxref("Element")}} interface gets or sets the number of pixels by which an element's content is scrolled from its top edge. This value is subpixel precise in modern browsers, meaning that it isn't necessarily a whole number.
+ویژگی **`scrollTop`** در رابط {{domxref("Element")}} تعداد پیکسل‌هایی را که محتوای یک عنصر از لبه بالایی آن اسکرول شده است، دریافت یا تنظیم می‌کند. این مقدار در مرورگرهای مدرن با دقت زیرپیکسلی محاسبه می‌شود؛ به این معنی که لزوماً یک عدد صحیح نیست.
 
-## Value
+## مقدار
 
-A double-precision floating-point value indicating the number of pixels by which the element is currently scrolled vertically from the origin, where a positive value means the element is scrolled down (to reveal more content to the bottom). If the element isn't scrolled at all up or down, then `scrollTop` is 0. If the document is not the active document, the returned value is 0. If the document is rendered on a subpixel-precise device, then the returned value is also subpixel-precise and may contain a decimal component.
+یک مقدار ممیز شناور با دقت دوگانه که نشان می‌دهد عنصر در حال حاضر از مبدأ، به‌صورت عمودی چند پیکسل اسکرول شده است. مقدار مثبت به این معنی است که عنصر به سمت پایین اسکرول شده (برای نمایش محتوای بیشتر در پایین). اگر عنصر اصلاً به بالا یا پایین اسکرول نشده باشد، `scrollTop` برابر با `0` است. اگر سند، سند فعال نباشد، مقدار بازگشتی `0` خواهد بود. اگر سند روی دستگاهی با دقت زیرپیکسلی رندر شود، مقدار بازگشتی نیز زیرپیکسلی خواهد بود و ممکن است شامل جزء اعشاری باشد.
 
-It's possible for `scrollTop` to be negative if the element can be scrolled up from the initial containing block. For example, if the element's {{cssxref("flex-direction")}} is `column-reverse` and content grows upwards, then `scrollTop` is `0` when the scrollbar is at its bottommost position (at the start of the scrolled content), and then increasingly negative as you scroll towards the end of the content.
+ممکن است `scrollTop` منفی باشد اگر عنصر بتواند از بلوک شامل اولیه به سمت بالا اسکرول شود. برای مثال، اگر {{cssxref("flex-direction")}} عنصر برابر با `column-reverse` باشد و محتوا به سمت بالا رشد کند، `scrollTop` وقتی اسکرول‌بار در پایین‌ترین موقعیت خود قرار دارد (در ابتدای محتوای اسکرول‌شده) برابر با `0` است و با اسکرول به سمت انتهای محتوا، به‌طور فزاینده‌ای منفی می‌شود.
 
-Safari responds to overscrolling by updating `scrollTop` beyond the maximum scroll position (unless the default "bounce" effect is disabled, such as by setting {{cssxref("overscroll-behavior")}} to `none`), while Chrome and Firefox do not. For example, `scrollTop` may be negative on Safari just by continuing to scroll up when the element is already at the top.
+سافاری به اسکرول بیش از حد با به‌روزرسانی `scrollTop` فراتر از حداکثر موقعیت اسکرول پاسخ می‌دهد (مگر اینکه افکت پیش‌فرض «جهش» غیرفعال شده باشد، مثلاً با تنظیم {{cssxref("overscroll-behavior")}} روی `none`)؛ در حالی که کروم و فایرفاکس چنین نمی‌کنند. برای مثال، `scrollTop` می‌تواند در سافاری فقط با ادامه اسکرول به بالا وقتی عنصر از قبل در بالای صفحه است، منفی شود.
 
-The `scrollTop` property can be set, which causes the element to scroll to the specified vertical position, in the same way as using {{domxref("Element.scroll()")}} with `behavior: "auto"`.
+ویژگی `scrollTop` قابل تنظیم است و باعث می‌شود عنصر به موقعیت عمودی مشخص‌شده اسکرول شود، به همان روشی که از {{domxref("Element.scroll()")}} با `behavior: "auto"` استفاده می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Scrolling an element
+### اسکرول یک عنصر
 
-In this example, try scrolling the container with the dashed border, and see how the value of `scrollTop` changes.
+در این مثال، سعی کنید ظرف را با حاشیه خط‌چین اسکرول کنید و ببینید که مقدار `scrollTop` چگونه تغییر می‌کند.
 
 #### HTML
 
@@ -75,21 +68,21 @@ container.addEventListener("scroll", (event) => {
 });
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Scrolling_an_element", 400, 250)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Determining the dimensions of elements](/en-US/docs/Web/API/CSS_Object_Model/Determining_the_dimensions_of_elements)
+- [تعیین ابعاد عناصر](/en-US/docs/Web/API/CSS_Object_Model/Determining_the_dimensions_of_elements)
 - {{domxref("HTMLElement.offsetTop")}}
 - {{domxref("Element.clientTop")}}
 - {{domxref("Element.scrollHeight")}}
