@@ -1,11 +1,5 @@
 ---
 title: "GPUOutOfMemoryError: GPUOutOfMemoryError() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUOutOfMemoryError/GPUOutOfMemoryError"
-status: "needs-translation"
----
-
----
-title: "GPUOutOfMemoryError: GPUOutOfMemoryError() constructor"
 short-title: GPUOutOfMemoryError()
 slug: Web/API/GPUOutOfMemoryError/GPUOutOfMemoryError
 page-type: web-api-constructor
@@ -14,8 +8,7 @@ browser-compat: api.GPUOutOfMemoryError.GPUOutOfMemoryError
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`GPUOutOfMemoryError()`** constructor creates a new
-{{domxref("GPUOutOfMemoryError")}} object instance.
+سازندهٔ **`GPUOutOfMemoryError()`** یک نمونهٔ جدید از شیء {{domxref("GPUOutOfMemoryError")}} می‌سازد.
 
 ## Syntax
 
@@ -23,26 +16,26 @@ The **`GPUOutOfMemoryError()`** constructor creates a new
 new GPUOutOfMemoryError(message)
 ```
 
-### Parameters
+### پارامترها
 
 - `message`
-  - : A string providing a human-readable message that explains why the error occurred.
+  - : رشته‌ای که پیامی قابل‌خواندن برای انسان ارائه می‌دهد و دلیل بروز خطا را توضیح می‌دهد.
 
-## Examples
+## مثال‌ها
 
-A developer would not manually use the constructor to create a `GPUOutOfMemoryError` object. The user agent uses this constructor to create an appropriate object when an out-of-memory error is surfaced by {{domxref("GPUDevice.popErrorScope")}} or the {{domxref("GPUDevice.uncapturederror_event", "uncapturederror")}} event.
+یک توسعه‌دهنده معمولاً به‌صورت دستی از سازنده برای ایجاد یک شیء `GPUOutOfMemoryError` استفاده نمی‌کند. عامل کاربر (user agent) از این سازنده برای ایجاد شیء مناسب زمانی استفاده می‌کند که خطای کمبود حافظه توسط {{domxref("GPUDevice.popErrorScope")}} یا رویداد {{domxref("GPUDevice.uncapturederror_event", "uncapturederror")}} نمایان شود.
 
-See the main [`GPUOutOfMemoryError`](/en-US/docs/Web/API/GPUOutOfMemoryError#examples) page for a specific example involving a `GPUOutOfMemoryError` object instance.
+برای یک مثال خاص که شامل یک نمونهٔ شیء `GPUOutOfMemoryError` است، به صفحهٔ اصلی [`GPUOutOfMemoryError`](/en-US/docs/Web/API/GPUOutOfMemoryError#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
-- [WebGPU Error Handling best practices](https://toji.dev/webgpu-best-practices/error-handling)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [بهترین روش‌های مدیریت خطا در WebGPU](https://toji.dev/webgpu-best-practices/error-handling)
