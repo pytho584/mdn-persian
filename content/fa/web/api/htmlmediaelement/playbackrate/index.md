@@ -1,11 +1,5 @@
 ---
 title: "HTMLMediaElement: playbackRate property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/playbackRate"
-status: "needs-translation"
----
-
----
-title: "HTMLMediaElement: playbackRate property"
 short-title: playbackRate
 slug: Web/API/HTMLMediaElement/playbackRate
 page-type: web-api-instance-property
@@ -14,35 +8,35 @@ browser-compat: api.HTMLMediaElement.playbackRate
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLMediaElement.playbackRate`** property sets the rate at which the media is being played back. This is used to implement user controls for fast forward, slow motion, and so forth. The normal playback rate is multiplied by this value to obtain the current rate, so a value of 1.0 indicates normal speed.
+ویژگی **`HTMLMediaElement.playbackRate`** نرخ پخش رسانه را تنظیم می‌کند. از این ویژگی برای پیاده‌سازی کنترل‌های کاربر برای جلو بردن سریع، آهسته‌کردن حرکت و موارد مشابه استفاده می‌شود. نرخ پخش عادی در این مقدار ضرب می‌شود تا نرخ فعلی به دست آید؛ بنابراین مقدار `1.0` به معنای سرعت عادی است.
 
-A negative `playbackRate` value indicates that the media should be played backwards, but support for this is not yet widespread. (See [browser compatibility](#browser_compatibility) for details.)
+مقدار منفی برای `playbackRate` نشان می‌دهد که رسانه باید به صورت معکوس پخش شود، اما پشتیبانی از این ویژگی هنوز فراگیر نیست. (برای جزئیات به [سازگاری مرورگر](#browser_compatibility) مراجعه کنید.)
 
-The audio is muted when the fast forward or slow motion is outside a useful range (for example, Gecko mutes the sound outside the range `0.25` to `4.0`).
+وقتی سرعت پخش سریع یا آهسته از محدودهٔ مفید خارج شود، صدا قطع می‌شود (برای مثال، در Gecko صدا در خارج از بازهٔ `0.25` تا `4.0` قطع می‌شود).
 
-The pitch of the audio is corrected by default. You can disable pitch correction using the {{domxref("HTMLMediaElement.preservesPitch")}} property.
+زیروبمی صدا به طور پیش‌فرض تصحیح می‌شود. می‌توانید تصحیح زیروبمی را با استفاده از ویژگی {{domxref("HTMLMediaElement.preservesPitch")}} غیرفعال کنید.
 
-## Value
+## مقدار
 
-A [`double`](https://en.wikipedia.org/wiki/Double-precision_floating-point_format). `1.0` is "normal speed," values lower than `1.0` make the media play slower than normal, higher values make it play faster. (**Default:** `1.0`)
+یک [`double`](https://en.wikipedia.org/wiki/Double-precision_floating-point_format). مقدار `1.0` به معنای «سرعت عادی» است؛ مقادیر کمتر از `1.0` رسانه را آهسته‌تر از حالت عادی پخش می‌کنند و مقادیر بیشتر باعث پخش سریع‌تر می‌شوند. (**پیش‌فرض:** `1.0`)
 
-## Examples
+## مثال‌ها
 
 ```js
 const obj = document.createElement("video");
 console.log(obj.playbackRate); // Expected Output: 1
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("HTMLMediaElement")}}: Interface used to define the `HTMLMediaElement.playbackRate` property
-- Browser bug reports to support negative `playbackRate` in [Firefox](https://bugzil.la/1468019) and [Blink](https://crbug.com/40410591) (Chrome, etc.)
-- The Web Hypertext Application Technology Working Group (WHATWG) [issue to require support for negative `playbackRate`](https://github.com/whatwg/html/issues/3754)
+- {{domxref("HTMLMediaElement")}}: رابطی که برای تعریف ویژگی `HTMLMediaElement.playbackRate` استفاده می‌شود
+- گزارش‌های باگ مرورگر برای پشتیبانی از `playbackRate` منفی در [Firefox](https://bugzil.la/1468019) و [Blink](https://crbug.com/40410591) (کروم و غیره)
+- مسئلهٔ Web Hypertext Application Technology Working Group (WHATWG) برای [الزام پشتیبانی از `playbackRate` منفی](https://github.com/whatwg/html/issues/3754)
