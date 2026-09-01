@@ -1,11 +1,5 @@
 ---
 title: "HTMLDialogElement: show() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/show"
-status: "needs-translation"
----
-
----
-title: "HTMLDialogElement: show() method"
 short-title: show()
 slug: Web/API/HTMLDialogElement/show
 page-type: web-api-instance-method
@@ -14,38 +8,38 @@ browser-compat: api.HTMLDialogElement.show
 
 {{ APIRef("HTML DOM") }}
 
-The **`show()`** method of the {{domxref("HTMLDialogElement")}} interface displays the dialog as a non-modal dialog.
+متد **`show()`** از رابط {{domxref("HTMLDialogElement")}} گفتگو را به‌عنوان یک گفتگوی غیرحالت‌دار (non-modal) نمایش می‌دهد.
 
-A non-modal dialog is one where users can interact with content outside/behind the open dialog.
+گفتگوی غیرحالت‌دار، گفتگویی است که کاربران می‌توانند با محتوای بیرون/پشت گفتگوی باز شده تعامل داشته باشند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 show()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the dialog is already open and modal (i.e., if the dialog has already been opened with {{domxref("HTMLDialogElement.showModal()")}}).
+  - : اگر گفتگو از قبل باز و حالت‌دار (modal) باشد، پرتاب می‌شود (یعنی اگر گفتگو قبلاً با {{domxref("HTMLDialogElement.showModal()")}} باز شده باشد).
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفادهٔ پایه
 
-The following example shows a simple button that, when clicked, opens a {{htmlelement("dialog")}} using the `show()` method.
+مثال زیر یک دکمهٔ ساده را نشان می‌دهد که با کلیک روی آن، یک {{htmlelement("dialog")}} با استفاده از متد `show()` باز می‌شود.
 
-When the dialog is open, you can still interact with the rest of the page, including clicking the _Click me_ button that triggers an alert.
+وقتی گفتگو باز است، همچنان می‌توانید با بقیهٔ صفحه تعامل داشته باشید، از جمله کلیک روی دکمهٔ _Click me_ که یک هشدار (alert) را فعال می‌کند.
 
-You can click the _Close dialog_ button to close the dialog (via the {{domxref("HTMLDialogElement.close()", "close()")}} method).
+می‌توانید روی دکمهٔ _Close dialog_ کلیک کنید تا گفتگو بسته شود (از طریق متد {{domxref("HTMLDialogElement.close()", "close()")}}).
 
 #### HTML
 
@@ -82,19 +76,19 @@ closeButton.addEventListener("click", () => {
 });
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Basic usage", '100%', "250px")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- HTML {{htmlelement("dialog")}} element
+- عنصر HTML {{htmlelement("dialog")}}
 - {{domxref("HTMLDialogElement.showModal()")}}
