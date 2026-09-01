@@ -1,7 +1,5 @@
 ---
 title: "HTMLButtonElement: checkValidity() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLButtonElement/checkValidity"
-status: "needs-translation"
 ---
 
 ---
@@ -14,10 +12,10 @@ browser-compat: api.HTMLButtonElement.checkValidity
 
 {{APIRef("HTML DOM")}}
 
-The **`checkValidity()`** method of the {{domxref("HTMLButtonElement")}} interface returns a boolean value which indicates if the element meets any [constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation) rules applied to it. If false, the method also fires an {{domxref("HTMLElement/invalid_event", "invalid")}} event on the element. Because there's no default browser behavior for `checkValidity()`, canceling this `invalid` event has no effect. It always returns true if the {{HTMLElement("button")}} element's {{domxref("HTMLButtonElement/type", "type")}} is `"button"` or `"reset"`, because such buttons are never candidates for [constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation).
+متد **`checkValidity()`** در رابط {{domxref("HTMLButtonElement")}} یک مقدار بولین برمی‌گرداند که نشان می‌دهد آیا عنصر هر یک از قوانین [constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation) اعمال‌شده بر آن را برآورده می‌کند یا نه. اگر نتیجه `false` باشد، این متد همچنین یک رویداد {{domxref("HTMLElement/invalid_event", "invalid")}} روی عنصر صادر می‌کند. از آنجا که رفتار پیش‌فرض مرورگر برای `checkValidity()` وجود ندارد، لغو کردن این رویداد `invalid` هیچ اثری ندارد. اگر {{domxref("HTMLButtonElement/type", "type")}} عنصر {{HTMLElement("button")}} برابر `"button"` یا `"reset"` باشد، این متد همیشه `true` برمی‌گرداند، زیرا چنین دکمه‌هایی هرگز نامزد [constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation) نیستند.
 
 > [!NOTE]
-> An HTML {{htmlelement("button")}} element of the `"submit"` type with a non-null {{domxref("HTMLButtonElement.validationMessage", "validationMessage")}} is considered invalid, will match the CSS {{cssxref(":invalid")}} pseudo-class, and will cause `checkValidity()` to return false. Use the {{domxref("HTMLButtonElement.setCustomValidity()")}} method to set the {{domxref("HTMLButtonElement.validationMessage")}} to the empty string to set the {{domxref("HTMLButtonElement.validity", "validity")}} state to be valid.
+> یک عنصر HTML {{htmlelement("button")}} از نوع `"submit"` که {{domxref("HTMLButtonElement.validationMessage", "validationMessage")}} آن نال (null) نباشد، نامعتبر در نظر گرفته می‌شود، با شبه‌کلاس CSS {{cssxref(":invalid")}} مطابقت می‌یابد و باعث می‌شود `checkValidity()` مقدار `false` برگرداند. از متد {{domxref("HTMLButtonElement.setCustomValidity()")}} استفاده کنید تا {{domxref("HTMLButtonElement.validationMessage")}} را روی رشتهٔ خالی تنظیم کنید و وضعیت {{domxref("HTMLButtonElement.validity", "validity")}} را معتبر کنید.
 
 ## Syntax
 
@@ -27,15 +25,15 @@ checkValidity()
 
 ### Parameters
 
-None.
+هیچ.
 
 ### Return value
 
-Returns `true` if the element's value has no validity problems; otherwise, returns `false`.
+اگر مقدار عنصر هیچ مشکل اعتباری نداشته باشد، `true` و در غیر این صورت `false` برمی‌گرداند.
 
 ## Examples
 
-In the following example, calling `checkValidity()` returns either `true` or `false`.
+در مثال زیر، فراخوانی `checkValidity()` مقدار `true` یا `false` برمی‌گرداند.
 
 ```js
 const element = document.getElementById("myButton");
@@ -57,4 +55,4 @@ console.log(element.checkValidity());
 - {{HTMLElement("form")}}
 - [Learn: Client-side form validation](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
 - [Guide: Constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation)
-- CSS {{cssxref(":valid")}} and {{cssxref(":invalid")}} pseudo-classes
+- شبه‌کلاس‌های CSS {{cssxref(":valid")}} و {{cssxref(":invalid")}}
