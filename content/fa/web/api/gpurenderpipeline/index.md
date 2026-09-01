@@ -1,10 +1,4 @@
 ---
-title: "GPURenderPipeline"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPipeline"
-status: "needs-translation"
----
-
----
 title: GPURenderPipeline
 slug: Web/API/GPURenderPipeline
 page-type: web-api-interface
@@ -13,30 +7,30 @@ browser-compat: api.GPURenderPipeline
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`GPURenderPipeline`** interface of the {{domxref("WebGPU API", "WebGPU API", "", "nocode")}} represents a pipeline that controls the vertex and fragment shader stages and can be used in a {{domxref("GPURenderPassEncoder")}} or {{domxref("GPURenderBundleEncoder")}}.
+رابطهٔ **`GPURenderPipeline`** در {{domxref("WebGPU API", "WebGPU API", "", "nocode")}} یک پایپلاین را نشان می‌دهد که مراحل شیدر رأس و فرگمنت را کنترل می‌کند و می‌تواند در یک {{domxref("GPURenderPassEncoder")}} یا {{domxref("GPURenderBundleEncoder")}} استفاده شود.
 
-A `GPURenderPipeline` object instance can be created using the {{domxref("GPUDevice.createRenderPipeline()")}} or {{domxref("GPUDevice.createRenderPipelineAsync()")}} methods.
+یک نمونه از شیء `GPURenderPipeline` را می‌توان با استفاده از متدهای {{domxref("GPUDevice.createRenderPipeline()")}} یا {{domxref("GPUDevice.createRenderPipelineAsync()")}} ایجاد کرد.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("GPURenderPipeline.label", "label")}}
-  - : A string providing a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+  - : یک رشته که برچسبی برای شناسایی شیء فراهم می‌کند، برای مثال در پیام‌های {{domxref("GPUError")}} یا هشدارهای کنسول.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("GPURenderPipeline.getBindGroupLayout", "getBindGroupLayout()")}}
-  - : Returns the pipeline's {{domxref("GPUBindGroupLayout")}} object with the given index (i.e., included in the originating {{domxref("GPUDevice.createRenderPipeline()")}} or {{domxref("GPUDevice.createRenderPipelineAsync()")}} call's pipeline layout).
+  - : شیء {{domxref("GPUBindGroupLayout")}} پایپلاین را با ایندکس داده‌شده برمی‌گرداند (یعنی آن‌که در چیدمان پایپلاینِ فراخوانیِ {{domxref("GPUDevice.createRenderPipeline()")}} یا {{domxref("GPUDevice.createRenderPipelineAsync()")}} اولیه گنجانده شده است).
 
-## Examples
+## مثال‌ها
 
 > [!NOTE]
-> The [WebGPU samples](https://webgpu.github.io/webgpu-samples/) feature many more examples.
+> [نمونه‌های WebGPU](https://webgpu.github.io/webgpu-samples/) نمونه‌های بسیار بیشتری را ارائه می‌دهند.
 
-### Basic example
+### مثال پایه
 
-Our [basic render demo](https://mdn.github.io/dom-examples/webgpu-render-demo/) provides an example of the construction of a valid render pipeline descriptor object, which is then used to create a `GPURenderPipeline` via a `createRenderPipeline()` call.
+[دموی رندر پایه](https://mdn.github.io/dom-examples/webgpu-render-demo/) ما مثالی از ساخت یک شیء توصیف‌گر پایپلاین رندر معتبر ارائه می‌دهد که سپس برای ایجاد یک `GPURenderPipeline` از طریق فراخوانی `createRenderPipeline()` استفاده می‌شود.
 
 ```js
 // …
@@ -86,14 +80,14 @@ const renderPipeline = device.createRenderPipeline(pipelineDescriptor);
 // …
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
