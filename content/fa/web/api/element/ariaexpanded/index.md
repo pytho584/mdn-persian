@@ -1,11 +1,5 @@
 ---
 title: "Element: ariaExpanded property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaExpanded"
-status: "needs-translation"
----
-
----
-title: "Element: ariaExpanded property"
 short-title: ariaExpanded
 slug: Web/API/Element/ariaExpanded
 page-type: web-api-instance-property
@@ -14,22 +8,22 @@ browser-compat: api.Element.ariaExpanded
 
 {{APIRef("DOM")}}
 
-The **`ariaExpanded`** property of the {{domxref("Element")}} interface reflects the value of the [`aria-expanded`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-expanded) attribute, which indicates whether a grouping element owned or controlled by this element is expanded or collapsed.
+ویژگی **`ariaExpanded`** در رابط {{domxref("Element")}}، مقدار ویژگی [`aria-expanded`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-expanded) را بازتاب می‌دهد؛ این ویژگی نشان می‌دهد که آیا عنصر گروهی متعلق به این عنصر یا تحت کنترل آن، باز یا بسته است.
 
-## Value
+## مقدار
 
-A string with one of the following values:
+یک رشته با یکی از مقادیر زیر:
 
 - `"true"`
-  - : The grouping element this element owns or controls is expanded.
+  - : عنصر گروهی که این عنصر مالک آن است یا آن را کنترل می‌کند، باز است.
 - `"false"`
-  - : The grouping element this element owns or controls is collapsed.
+  - : عنصر گروهی که این عنصر مالک آن است یا آن را کنترل می‌کند، بسته است.
 - `"undefined"`
-  - : The element does not own or control a grouping element that is expandable.
+  - : این عنصر، عنصر گروهی قابل باز و بسته شدن را در اختیار ندارد یا کنترل نمی‌کند.
 
-## Examples
+## مثال‌ها
 
-In this example the `aria-expanded` attribute on the element with an ID of `animal` is set to "false". Using `ariaExpanded` we update the value to "true".
+در این مثال، ویژگی `aria-expanded` روی عنصری با شناسه `animal` روی `"false"` تنظیم شده است. با استفاده از `ariaExpanded` مقدار آن را به `"true"` تغییر می‌دهیم.
 
 ```html
 <div class="animals-combobox">
@@ -56,10 +50,10 @@ el.ariaExpanded = "true";
 console.log(el.ariaExpanded); // true
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
