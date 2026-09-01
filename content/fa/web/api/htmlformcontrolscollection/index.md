@@ -1,9 +1,4 @@
----
-title: "HTMLFormControlsCollection"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormControlsCollection"
-status: "needs-translation"
----
-
+```
 ---
 title: HTMLFormControlsCollection
 slug: Web/API/HTMLFormControlsCollection
@@ -13,33 +8,34 @@ browser-compat: api.HTMLFormControlsCollection
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLFormControlsCollection`** interface represents a _collection_ of HTML _form control elements_, returned by the {{domxref("HTMLFormElement")}} interface's {{domxref("HTMLFormElement.elements", "elements")}} property.
+رابط **`HTMLFormControlsCollection`** یک _مجموعه_ از _عناصر کنترلی فرم_ HTML را نشان می‌دهد که توسط خاصیت {{domxref("HTMLFormElement.elements", "elements")}} از رابط {{domxref("HTMLFormElement")}} بازگردانده می‌شود.
 
-The collection returned by {{domxref("HTMLFormElement.elements")}} includes the form's associated listed form controls. See {{domxref("HTMLFormElement.elements")}} for the list of [listed form controls](/en-US/docs/Web/API/HTMLFormElement/elements#value) and an explanation of [form association](/en-US/docs/Web/API/HTMLFormElement/elements#associated_form_controls).
+مجموعه بازگردانده‌شده توسط {{domxref("HTMLFormElement.elements")}} شامل کنترل‌های فرم فهرست‌شده (listed form controls) مرتبط با آن فرم است. برای فهرست [کنترل‌های فرم فهرست‌شده](/en-US/docs/Web/API/HTMLFormElement/elements#value) و توضیح [ارتباط با فرم](/en-US/docs/Web/API/HTMLFormElement/elements#associated_form_controls) به {{domxref("HTMLFormElement.elements")}} مراجعه کنید.
 
-This interface replaces one method from {{domxref("HTMLCollection")}}, on which it is based.
+این رابط یک متد از {{domxref("HTMLCollection")}} را که بر پایه آن ساخته شده است، جایگزین می‌کند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface inherits the properties of its parent, {{domxref("HTMLCollection")}}._
+_این رابط ویژگی‌های والد خود، {{domxref("HTMLCollection")}}، را به ارث می‌برد._
 
-## Instance methods
+## روش‌های نمونه
 
-_This interface inherits the methods of its parent, {{domxref("HTMLCollection")}}._
+_این رابط روش‌های والد خود، {{domxref("HTMLCollection")}}، را به ارث می‌برد._
 
 - {{domxref("HTMLFormControlsCollection.namedItem()")}}
-  - : Returns the {{domxref("RadioNodeList")}} or the {{domxref("Element")}} in the collection whose `name` or `id` matches the specified name, or `null` if no nodes match. Note that this version of `namedItem()` hides the one inherited from {{domxref("HTMLCollection")}}. Like that method, using the JavaScript array bracket syntax with a {{jsxref("String")}}, as in `collection["value"]`, is equivalent to `collection.namedItem("value")`.
+  - : عنصر {{domxref("RadioNodeList")}} یا {{domxref("Element")}} در مجموعه را برمی‌گرداند که `name` یا `id` آن با نام مشخص‌شده مطابقت داشته باشد، یا اگر هیچ گرهی مطابقت نداشت `null` را برمی‌گرداند. توجه کنید که این نسخه از `namedItem()`، نسخه به ارث رسیده از {{domxref("HTMLCollection")}} را پنهان می‌کند. مانند آن روش، استفاده از نحو براکت آرایه جاوااسکریپت با {{jsxref("String")}}، مانند `collection["value"]`، معادل `collection.namedItem("value")` است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLCollection")}}, {{domxref("RadioNodeList")}}, {{domxref("HTMLOptionsCollection")}}
+```
