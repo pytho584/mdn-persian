@@ -1,11 +1,5 @@
 ---
 title: "EditContext: characterBoundsRangeStart property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EditContext/characterBoundsRangeStart"
-status: "needs-translation"
----
-
----
-title: "EditContext: characterBoundsRangeStart property"
 short-title: characterBoundsRangeStart
 slug: Web/API/EditContext/characterBoundsRangeStart
 page-type: web-api-instance-property
@@ -16,18 +10,18 @@ browser-compat: api.EditContext.characterBoundsRangeStart
 
 {{APIRef("EditContext API")}}{{SeeCompatTable}}
 
-The **`characterBoundsRangeStart`** read-only property of the {{domxref("EditContext")}} interface indicates the index of the character, within the editable text content, that corresponds to the first item in the {{domxref("EditContext.characterBounds()", "characterBounds")}} array.
+ویژگی فقط‌خواندنی **`characterBoundsRangeStart`** از رابط {{domxref("EditContext")}}، شاخص کاراکتری را در محتوای متنی قابل ویرایش نشان می‌دهد که با اولین آیتم در آرایه {{domxref("EditContext.characterBounds()", "characterBounds")}} مطابقت دارد.
 
-For example, if the `EditContent` contains the characters `abc`, and if `characterBoundRangeStart` is `1`, the first item in the `characterBounds` array contains the bounds for the character `b`.
+برای مثال، اگر `EditContext` شامل کاراکترهای `abc` باشد و `characterBoundsRangeStart` برابر با `1` باشد، اولین آیتم در آرایه `characterBounds` شامل مرزهای کاراکتر `b` خواهد بود.
 
-## Value
+## مقدار
 
-A {{jsxref("Number")}}.
+یک {{jsxref("Number")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
