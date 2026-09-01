@@ -1,11 +1,5 @@
 ---
 title: "Element: ariaChecked property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaChecked"
-status: "needs-translation"
----
-
----
-title: "Element: ariaChecked property"
 short-title: ariaChecked
 slug: Web/API/Element/ariaChecked
 page-type: web-api-instance-property
@@ -14,27 +8,27 @@ browser-compat: api.Element.ariaChecked
 
 {{APIRef("DOM")}}
 
-The **`ariaChecked`** property of the {{domxref("Element")}} interface reflects the value of the [`aria-checked`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-checked) attribute, which indicates the current "checked" state of checkboxes, radio buttons, and other widgets that have a checked state.
+ویژگی **`ariaChecked`** از رابط {{domxref("Element")}} منعکس‌کننده مقدار ویژگی [`aria-checked`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-checked) است که وضعیت «تیک‌خورده» فعلی چک‌باکس‌ها، دکمه‌های رادیویی و سایر ابزارک‌هایی که حالت تیک‌خورده دارند را نشان می‌دهد.
 
 > [!NOTE]
-> Where possible use an HTML {{htmlelement("input")}} element with `type="checkbox"` as this element has built in semantics and does not require ARIA attributes.
+> در صورت امکان، از عنصر HTML {{htmlelement("input")}} با `type="checkbox"` استفاده کنید، زیرا این عنصر معناشناسی داخلی دارد و به ویژگی‌های ARIA نیازی ندارد.
 
-## Value
+## مقدار
 
-A string with one of the following values:
+یک رشته با یکی از مقادیر زیر:
 
 - `"true"`
-  - : The element is checked.
+  - : عنصر تیک خورده است.
 - `"mixed"`
-  - : Indicates a mixed mode value for a tri-state checkbox or menuitemcheckbox.
+  - : حالت ترکیبی را برای یک چک‌باکس یا منوی آیتم‌چک‌باکس سه‌حالته نشان می‌دهد.
 - `"false"`
-  - : The element supports being checked but is not currently checked.
+  - : عنصر از تیک‌خوردن پشتیبانی می‌کند اما در حال حاضر تیک نخورده است.
 - `"undefined"`
-  - : The element does not support being checked.
+  - : عنصر از تیک‌خوردن پشتیبانی نمی‌کند.
 
-## Examples
+## مثال‌ها
 
-In this example the `aria-checked` attribute on the element with an ID of `checkBoxInput` is set to "false" indicating that this input is currently unchecked. Using `ariaChecked` we update the value to "true".
+در این مثال، ویژگی `aria-checked` روی عنصری با شناسه `checkBoxInput` روی «false» تنظیم شده است که نشان می‌دهد این ورودی در حال حاضر تیک نخورده است. با استفاده از `ariaChecked` مقدار آن را به «true» به‌روزرسانی می‌کنیم.
 
 ```html
 <span
@@ -54,14 +48,14 @@ el.ariaChecked = "true";
 console.log(el.ariaChecked); // "true"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [ARIA: checkbox role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/checkbox_role)
+- [ARIA: نقش checkbox](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/checkbox_role)
