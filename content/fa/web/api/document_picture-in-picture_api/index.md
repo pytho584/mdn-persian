@@ -1,9 +1,4 @@
----
-title: "Document Picture-in-Picture API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document_Picture-in-Picture_API"
-status: "needs-translation"
----
-
+```
 ---
 title: Document Picture-in-Picture API
 slug: Web/API/Document_Picture-in-Picture_API
@@ -13,70 +8,71 @@ browser-compat: api.Window.documentPictureInPicture
 
 {{DefaultAPISidebar("Document Picture-in-Picture API")}}{{securecontext_header}}
 
-The **Document Picture-in-Picture API** makes it possible to open an always-on-top window that can be populated with arbitrary HTML content — for example a video with custom controls or a set of streams showing the participants of a video conference call. It extends the earlier [Picture-in-Picture API for `<video>`](/en-US/docs/Web/API/Picture-in-Picture_API), which specifically enables an HTML {{htmlelement("video")}} element to be put into an always-on-top window.
+**Document Picture-in-Picture API** این امکان را فراهم می‌کند که یک پنجره‌ی همیشه‌دربالا باز کنید که می‌توان آن را با محتوای دلخواه HTML پر کرد — برای مثال یک ویدیو با کنترل‌های سفارشی یا مجموعه‌ای از استریم‌ها که شرکت‌کنندگان یک کنفرانس ویدیویی را نشان می‌دهند. این API، [Picture-in-Picture API اولیه برای `<video>`](/en-US/docs/Web/API/Picture-in-Picture_API) را گسترش می‌دهد که به‌طور خاص یک عنصر HTML {{htmlelement("video")}} را قادر می‌سازد در یک پنجره‌ی همیشه‌دربالا قرار گیرد.
 
-## Concepts and usage
+## مفاهیم و کاربرد
 
-It is often helpful to have a different window available to a web app in addition to the main window in which the app is running. You might want to browse other windows while keeping specific app content in view, or you might want to give that content its own space while keeping the main app window freed up to display other content. You could handle this by just opening a regular new browser window, but this has two major issues:
+اغلب مفید است که یک وب‌اپلیکیشن علاوه بر پنجره‌ی اصلی که در آن اجرا می‌شود، پنجره‌ی جداگانه‌ای نیز در دسترس داشته باشد. ممکن است بخواهید در حالی که محتوای خاصی از برنامه را در دید دارید، پنجره‌های دیگر را مرور کنید، یا بخواهید به آن محتوا فضای مخصوص خود را بدهید و در عین حال پنجره‌ی اصلی برنامه را برای نمایش محتوای دیگر خالی نگه دارید. می‌توانید این کار را صرفاً با باز کردن یک پنجره‌ی جدید مرورگر معمولی انجام دهید، اما این کار دو مشکل اساسی دارد:
 
-1. You have to handle sharing of state information between the two windows.
-2. The additional app window doesn't always stay on top, and can therefore get hidden by other windows.
+1. باید به اشتراک‌گذاری اطلاعات وضعیت بین دو پنجره را مدیریت کنید.
+2. پنجره‌ی اضافی برنامه همیشه در بالا باقی نمی‌ماند و بنابراین می‌تواند توسط پنجره‌های دیگر پوشانده شود.
 
-To solve these problems, web browsers have introduced APIs allowing apps to spawn an always-on-top window that is part of the same session. The first recognized use case was keeping video content playing in a separate window so that the user can continue to consume it while looking at other content. This is handled using the [Picture-in-Picture API for `<video>`](/en-US/docs/Web/API/Picture-in-Picture_API), which is directly used on a {{htmlelement("video")}} element to place it into the separate window.
+برای حل این مشکلات، مرورگرهای وب APIهایی معرفی کرده‌اند که به برنامه‌ها اجازه می‌دهند یک پنجره‌ی همیشه‌دربالا ایجاد کنند که بخشی از همان نشست (session) است. اولین مورد استفاده‌ی شناخته‌شده، نگه داشتن پخش محتوای ویدیویی در یک پنجره‌ی جداگانه بود تا کاربر بتواند در حالی که به محتوای دیگر نگاه می‌کند، به تماشای آن ادامه دهد. این کار با استفاده از [Picture-in-Picture API برای `<video>`](/en-US/docs/Web/API/Picture-in-Picture_API) انجام می‌شود که مستقیماً روی یک عنصر {{htmlelement("video")}} برای قرار دادن آن در پنجره‌ی جداگانه به کار می‌رود.
 
-However, this API has been found to be somewhat limiting — you can only put a single `<video>` element into the always-on-top window, with minimal browser-generated controls. To provide more flexibility, the **Document Picture-in-Picture API** has been introduced. This allows _any_ content to be placed in the always-on-top window for a wide range of use cases, including:
+اما این API تا حدودی محدودکننده تشخیص داده شده است — شما فقط می‌توانید یک عنصر `<video>` را در پنجره‌ی همیشه‌دربالا قرار دهید، آن هم با کنترل‌های حداقلی که مرورگر تولید می‌کند. برای ایجاد انعطاف‌پذیری بیشتر، **Document Picture-in-Picture API** معرفی شده است. این API به شما اجازه می‌دهد _هر_ محتوایی را در پنجره‌ی همیشه‌دربالا قرار دهید، برای طیف گسترده‌ای از موارد استفاده، از جمله:
 
-- An always-on-top custom video player showing one or multiple videos with custom controls and styling.
-- A video conferencing system that allows the user to always see the other participant's streams, plus controls for presenting content, muting, ending calls, etc.
-- Always-visible productivity tools such as timers, notes, to-do lists, messenger tools, etc.
-- A separate window in which to keep additional content while the main app window is kept free of clutter. For example, you might have an action or roleplaying game running where you want to show the game controls, instructions, or lore in an additional window, keeping the main window free for displaying the game locations and map.
+- یک پخش‌کننده‌ی ویدیوی سفارشی همیشه‌دربالا که یک یا چند ویدیو را با کنترل‌ها و استایل سفارشی نشان می‌دهد.
+- یک سیستم کنفرانس ویدیویی که به کاربر اجازه می‌دهد همواره استریم‌های سایر شرکت‌کنندگان را ببیند، به همراه کنترل‌هایی برای ارائه‌ی محتوا، قطع صدا، پایان دادن به تماس و غیره.
+- ابزارهای بهره‌وری که همیشه قابل مشاهده هستند، مانند تایمر، یادداشت، فهرست کارها، ابزارهای پیام‌رسان و غیره.
+- یک پنجره‌ی جداگانه برای نگهداری محتوای اضافی در حالی که پنجره‌ی اصلی برنامه از شلوغی دور نگه داشته می‌شود. برای مثال، ممکن است یک بازی اکشن یا نقش‌آفرینی اجرا کنید و بخواهید کنترل‌های بازی، دستورالعمل‌ها یا داستان بازی را در یک پنجره‌ی اضافی نمایش دهید و پنجره‌ی اصلی را برای نمایش مکان‌ها و نقشه‌ی بازی خالی نگه دارید.
 
-### How does it work?
+### چگونه کار می‌کند؟
 
-A new {{domxref("DocumentPictureInPicture")}} object instance representing the always-on-top Picture-in-Picture window for the current document context is available via {{domxref("Window.documentPictureInPicture")}}. The Picture-in-Picture window is opened by calling the {{domxref("DocumentPictureInPicture.requestWindow()")}} method, which returns a {{jsxref("Promise")}} that fulfills with the window's own {{domxref("Window")}} object.
+یک نمونه‌ی جدید از شیء {{domxref("DocumentPictureInPicture")}} که نشان‌دهنده‌ی پنجره‌ی Picture-in-Picture همیشه‌دربالا برای بافت (context) سند فعلی است، از طریق {{domxref("Window.documentPictureInPicture")}} در دسترس قرار می‌گیرد. پنجره‌ی Picture-in-Picture با فراخوانی متد {{domxref("DocumentPictureInPicture.requestWindow()")}} باز می‌شود که یک {{jsxref("Promise")}} برمی‌گرداند که با شیء {{domxref("Window")}} متعلق به خود پنجره fulfilled می‌شود.
 
-The Picture-in-Picture window is similar to a blank same-origin window opened via {{domxref("Window.open()")}}, with some differences:
+پنجره‌ی Picture-in-Picture شبیه به یک پنجره‌ی خالی با همان مبدا (same-origin) است که از طریق {{domxref("Window.open()")}} باز می‌شود، با چند تفاوت:
 
-- The Picture-in-Picture window floats on top of other windows.
-- The Picture-in-Picture window never outlives the opening window.
-- The Picture-in-Picture window cannot be navigated.
-- The Picture-in-Picture window position cannot be set by the website.
-- The Picture-in-Picture window is limited to one per browser tab at a time, with the user agent potentially further restricting the global number of Picture-in-Picture windows open.
+- پنجره‌ی Picture-in-Picture بالای سایر پنجره‌ها شناور است.
+- پنجره‌ی Picture-in-Picture هرگز بیشتر از پنجره‌ی بازکننده عمر نمی‌کند.
+- پنجره‌ی Picture-in-Picture قابل پیمایش (navigate) نیست.
+- موقعیت پنجره‌ی Picture-in-Picture نمی‌تواند توسط وب‌سایت تنظیم شود.
+- پنجره‌ی Picture-in-Picture به یک پنجره در هر تب مرورگر در یک زمان محدود است و عامل کاربر (user agent) ممکن است تعداد کل پنجره‌های Picture-in-Picture باز را بیشتر محدود کند.
 
-Apart from that, you can manipulate the Picture-in-Picture window's `Window` instance however you want, for example appending the content you want to display there onto its DOM, and copying stylesheets to it so that the appended content will be styled the same way as when it is in the main window. You can also close the Picture-in-Picture window (by clicking the browser-provided control, or by running {{domxref("Window.close()")}} on it), and then react to it closing using the standard [`pagehide`](/en-US/docs/Web/API/Window/pagehide_event). When it closes, you'll want to put the content it was showing back into the main app window.
+علاوه بر آن، می‌توانید نمونه‌ی `Window` پنجره‌ی Picture-in-Picture را هر طور که می‌خواهید دستکاری کنید، مثلاً محتوایی که می‌خواهید نمایش دهید را به DOM آن اضافه کنید و استایل‌ها را به آن کپی کنید تا محتوای اضافه‌شده به همان شکلی که در پنجره‌ی اصلی بود استایل‌دهی شود. همچنین می‌توانید پنجره‌ی Picture-in-Picture را ببندید (با کلیک روی کنترل ارائه‌شده توسط مرورگر یا با اجرای {{domxref("Window.close()")}} روی آن) و سپس با استفاده از رویداد استاندارد [`pagehide`](/en-US/docs/Web/API/Window/pagehide_event) به بسته شدن آن واکنش نشان دهید. هنگام بسته شدن، باید محتوایی را که نمایش می‌داد به پنجره‌ی اصلی برنامه بازگردانید.
 
-See [Using the Document Picture-in-Picture API](/en-US/docs/Web/API/Document_Picture-in-Picture_API/Using) for a detailed usage guide.
+برای راهنمای دقیق استفاده، به [استفاده از Document Picture-in-Picture API](/en-US/docs/Web/API/Document_Picture-in-Picture_API/Using) مراجعه کنید.
 
 > [!NOTE]
-> You can run code when the always-on-top window is programmatically opened, using the {{domxref("DocumentPictureInPicture.enter_event", "enter")}} event. However, this event isn't fired when the browser itself (rather than your code) triggers moving content into the always-on-top window. This can occur, for example, due to the content being occluded, by the displayed tab being switched, or by the user selecting a "picture-in-picture" option from some relevant content's context menu or the browser chrome.
+> شما می‌توانید زمانی که پنجره‌ی همیشه‌دربالا به صورت برنامه‌نویسی باز می‌شود، با استفاده از رویداد {{domxref("DocumentPictureInPicture.enter_event", "enter")}} کد اجرا کنید. با این حال، این رویداد زمانی که خود مرورگر (و نه کد شما) انتقال محتوا به پنجره‌ی همیشه‌دربالا را آغاز می‌کند، فعال نمی‌شود. این اتفاق ممکن است برای مثال به دلیل پوشیده شدن محتوا، تغییر تب نمایش‌داده‌شده، یا انتخاب گزینه‌ی «picture-in-picture» توسط کاربر از منوی زمینه‌ی محتوای مرتبط یا رابط مرورگر رخ دهد.
 >
-> To run code in response to such actions, set up a media session action handler using {{domxref("MediaSession.setActionHandler()")}} with a `type` of `enterpictureinpicture`.
+> برای اجرای کد در پاسخ به چنین اقداماتی، یک هندلر اکشن رسانه (media session action handler) با استفاده از {{domxref("MediaSession.setActionHandler()")}} با `type` برابر `enterpictureinpicture` راه‌اندازی کنید.
 
-## Interfaces
+## رابط‌ها
 
 - {{domxref("DocumentPictureInPicture")}}
-  - : The entry point for creating and handling document Picture-in-Picture windows.
+  - : نقطه‌ی ورود برای ایجاد و مدیریت پنجره‌های Picture-in-Picture سند.
 - {{domxref("DocumentPictureInPictureEvent")}}
-  - : Event object for the {{domxref("DocumentPictureInPicture/enter_event", "enter")}} event, which fires when the Picture-in-Picture window is opened.
+  - : شیء رویداد برای رویداد {{domxref("DocumentPictureInPicture/enter_event", "enter")}} که زمانی که پنجره‌ی Picture-in-Picture باز می‌شود، فعال می‌گردد.
 
-## Extensions to other interfaces
+## افزونه‌هایی به رابط‌های دیگر
 
 - {{domxref("Window.documentPictureInPicture")}}
-  - : Returns a reference to the {{domxref("DocumentPictureInPicture")}} object for the current document context.
+  - : یک ارجاع به شیء {{domxref("DocumentPictureInPicture")}} برای بافت سند فعلی برمی‌گرداند.
 
-## CSS additions
+## افزوده‌های CSS
 
-- {{cssxref("@media/display-mode", "display-mode")}}, the `picture-in-picture` value
-  - : A [CSS](/en-US/docs/Web/CSS) [media feature](/en-US/docs/Web/CSS/Reference/At-rules/@media#media_features) value that allows developers to apply CSS to a document based on whether it is being displayed in Picture-in-Picture mode.
+- {{cssxref("@media/display-mode", "display-mode")}}، مقدار `picture-in-picture`
+  - : مقداری از [ویژگی رسانه‌ای](/en-US/docs/Web/CSS/Reference/At-rules/@media#media_features) [CSS](/en-US/docs/Web/CSS) که به توسعه‌دهندگان اجازه می‌دهد CSS را بر اساس اینکه سند در حالت Picture-in-Picture نمایش داده می‌شود یا خیر، روی سند اعمال کنند.
 
-## Examples
+## مثال‌ها
 
-See [Document Picture-in-Picture API Example](https://mdn.github.io/dom-examples/document-picture-in-picture/) for a full working demo (see the full [source code](https://github.com/mdn/dom-examples/tree/main/document-picture-in-picture) also).
+برای یک دموی کامل و قابل اجرا به [مثال Document Picture-in-Picture API](https://mdn.github.io/dom-examples/document-picture-in-picture/) مراجعه کنید (همچنین [کد منبع](https://github.com/mdn/dom-examples/tree/main/document-picture-in-picture) کامل را ببینید).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
+```
