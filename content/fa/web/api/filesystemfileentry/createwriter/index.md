@@ -1,11 +1,5 @@
 ---
 title: "FileSystemFileEntry: createWriter() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemFileEntry/createWriter"
-status: "needs-translation"
----
-
----
-title: "FileSystemFileEntry: createWriter() method"
 short-title: createWriter()
 slug: Web/API/FileSystemFileEntry/createWriter
 page-type: web-api-instance-method
@@ -17,9 +11,7 @@ browser-compat: api.FileSystemFileEntry.createWriter
 
 {{APIRef("File and Directories Entries API")}}{{deprecated_header}}{{Non-standard_header}}
 
-The {{domxref("FileSystemFileEntry")}} interface's method
-**`createWriter()`** returns a {{domxref("FileWriter")}} object
-which can be used to write data into the file represented by the directory entry.
+متد **`createWriter()`** از رابط {{domxref("FileSystemFileEntry")}} یک شیء {{domxref("FileWriter")}} را برمی‌گرداند که می‌توان از آن برای نوشتن داده‌ها در فایل نمایش‌داده‌شده توسط ورودی دایرکتوری استفاده کرد.
 
 ## Syntax
 
@@ -31,22 +23,17 @@ createWriter(successCallback, errorCallback)
 ### Parameters
 
 - `successCallback`
-  - : A callback function which is called when the {{domxref("FileWriter")}} has been
-    created successfully; the `FileWriter` is passed into the callback as the
-    only parameter.
+  - : یک تابع callback که هنگام ایجاد موفقیت‌آمیز {{domxref("FileWriter")}} فراخوانی می‌شود؛ `FileWriter` به عنوان تنها پارامتر به callback ارسال می‌شود.
 - `errorCallback` {{optional_inline}}
-  - : If provided, this must be a method which is called when an error occurs while trying
-    to create the {{domxref("FileWriter")}}. This callback receives as input a
-    {{domxref("DOMException")}} object describing the error.
+  - : در صورت ارائه، این باید یک متد باشد که هنگام بروز خطا در تلاش برای ایجاد {{domxref("FileWriter")}} فراخوانی می‌شود. این callback یک شیء {{domxref("DOMException")}} را به عنوان ورودی دریافت می‌کند که خطا را توصیف می‌کند.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
 ## Examples
 
-This example establishes a method, `writeToFileEntry()`, which outputs a
-text string to the file corresponding to the passed-in directory entry.
+این مثال یک متد به نام `writeToFileEntry()` ایجاد می‌کند که یک رشته متنی را در فایل متناظر با ورودی دایرکتوری داده‌شده می‌نویسد.
 
 ```js
 function writeToFileEntry(entry, text) {
@@ -57,20 +44,17 @@ function writeToFileEntry(entry, text) {
       fileWriter.write(data);
     },
     (error) => {
-      /* do whatever to handle the error */
+      /* برای مدیریت خطا هر کاری لازم است انجام دهید */
     },
   );
 }
 ```
 
-The success callback for the `createWriter()` call takes the text which was
-passed in and creates a new {{domxref("Blob")}} object of type `text/plain`
-that contains the passed text. This blob is then output to the {{domxref("FileWriter")}}
-object to be written to the file.
+callback موفقیت برای فراخوانی `createWriter()` متنی را که ارسال شده دریافت کرده و یک شیء جدید {{domxref("Blob")}} از نوع `text/plain` ایجاد می‌کند که حاوی متن ارسالی است. سپس این blob به شیء {{domxref("FileWriter")}} خروجی داده می‌شود تا در فایل نوشته شود.
 
 ## Specifications
 
-This feature is not part of any specification anymore. It is no longer on track to become a standard.
+این ویژگی دیگر بخشی از هیچ مشخصاتی نیست. دیگر در مسیر تبدیل شدن به یک استاندارد قرار ندارد.
 
 ## Browser compatibility
 
