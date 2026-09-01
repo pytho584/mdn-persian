@@ -1,10 +1,4 @@
 ---
-title: "CSSValueList"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSValueList"
-status: "needs-translation"
----
-
----
 title: CSSValueList
 slug: Web/API/CSSValueList
 page-type: web-api-interface
@@ -16,47 +10,45 @@ browser-compat: api.CSSValueList
 
 {{APIRef("CSSOM")}}{{Deprecated_Header}}{{non-standard_header}}
 
-The **`CSSValueList`** interface derives from the {{DOMxRef("CSSValue")}} interface and provides the abstraction of an ordered collection of CSS values.
+رابطهٔ **`CSSValueList`** از رابط {{DOMxRef("CSSValue")}} مشتق می‌شود و انتزاعی از یک مجموعهٔ مرتب از مقادیر CSS را فراهم می‌کند.
 
 > [!NOTE]
-> This interface was part of an attempt to create a typed CSS Object Model. This attempt has been abandoned, and most browsers do
-> not implement it.
+> این رابط بخشی از تلاش برای ایجاد یک مدل شیءِ CSS تایپ‌شده بود. این تلاش کنار گذاشته شده است و بیشتر مرورگرها آن را پیاده‌سازی نمی‌کنند.
 >
-> To achieve your purpose, you can use:
+> برای رسیدن به هدف خود، می‌توانید از این‌ها استفاده کنید:
 >
-> - the untyped [CSS Object Model](/en-US/docs/Web/API/CSS_Object_Model), widely supported, or
-> - the modern [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API), less supported and considered experimental.
+> - [مدل شیء CSS](/en-US/docs/Web/API/CSS_Object_Model) بدون تایپ، که به‌طور گسترده پشتیبانی می‌شود، یا
+> - [API مدل شیءِ CSS تایپ‌شدهٔ مدرن](/en-US/docs/Web/API/CSS_Typed_OM_API)، که پشتیبانی کمتری دارد و آزمایشی در نظر گرفته می‌شود.
 
-Some properties allow an empty list in their syntax. In that case, these properties take the `none` identifier. So, an empty list means that the property has the value `none`.
+برخی از ویژگی‌ها در نحو (syntax) خود یک لیست خالی را مجاز می‌دانند. در آن صورت، این ویژگی‌ها شناسهٔ `none` را می‌گیرند. بنابراین، یک لیست خالی به این معناست که ویژگی مقدار `none` را دارد.
 
-The items in the `CSSValueList` are accessible via an integral index, starting from 0.
+عناصر موجود در `CSSValueList` از طریق یک شاخص صحیح (integral index) که از ۰ شروع می‌شود، قابل دسترسی هستند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{DOMxRef("CSSValue")}}_.
+_ویژگی‌های والد خود، {{DOMxRef("CSSValue")}} را به ارث می‌برد._
 
 - {{DOMxRef("CSSValueList.length")}} {{ReadOnlyInline}} {{Deprecated_Inline}} {{non-standard_inline}}
-  - : An `unsigned long` representing the number of `CSSValues` in the list.
+  - : یک `unsigned long` که تعداد `CSSValue`های موجود در لیست را نشان می‌دهد.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{DOMxRef("CSSValueList.item()")}} {{Deprecated_Inline}} {{non-standard_inline}}
-  - : This method is used to retrieve a {{DOMxRef("CSSValue")}} by ordinal index. The order in this collection represents the order of the values in the CSS style property. If index is greater than or equal to the number of values in the list, this returns `null`.
+  - : این روش برای بازیابی یک {{DOMxRef("CSSValue")}} با شاخص ترتیبی (ordinal index) استفاده می‌شود. ترتیب در این مجموعه نشان‌دهندهٔ ترتیب مقادیر در ویژگی سبک CSS است. اگر شاخص بزرگ‌تر یا مساوی تعداد مقادیر موجود در لیست باشد، این روش `null` برمی‌گرداند.
 
-## Specifications
+## مشخصات
 
-This feature was originally defined in the [DOM Style Level 2](https://www.w3.org/TR/DOM-Level-2-Style/) specification, but has been dropped from any
-standardization effort since then.
+این ویژگی در اصل در مشخصات [DOM Style Level 2](https://www.w3.org/TR/DOM-Level-2-Style/) تعریف شده بود، اما از آن زمان از هرگونه تلاش استانداردسازی حذف شده است.
 
-It has been superseded by a modern, but incompatible, [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API) that is now on the standard track.
+اکنون با [API مدل شیءِ CSS تایپ‌شدهٔ مدرن](/en-US/docs/Web/API/CSS_Typed_OM_API) که مدرن اما ناسازگار است و در مسیر استاندارد قرار دارد، جایگزین شده است.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{DOMxRef("CSSPrimitiveValue")}}
 - {{DOMxRef("CSSValue")}}
