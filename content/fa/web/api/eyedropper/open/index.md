@@ -1,7 +1,5 @@
 ---
 title: "EyeDropper: open() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EyeDropper/open"
-status: "needs-translation"
 ---
 
 ---
@@ -16,52 +14,52 @@ browser-compat: api.EyeDropper.open
 
 {{securecontext_header}}{{APIRef("EyeDropper API")}}{{SeeCompatTable}}
 
-The **`EyeDropper.open()`** method starts the eyedropper mode, returning a promise which is fulfilled once the user has selected a color and exited the eyedropper mode.
+متد **`EyeDropper.open()`** حالت قطره‌چکان را آغاز می‌کند و یک {{jsxref("Promise")}} برمی‌گرداند که پس از انتخاب رنگ توسط کاربر و خروج از حالت قطره‌چکان، برآورده (fulfilled) می‌شود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 open()
 open(options)
 ```
 
-### Parameters
+### پارامترها
 
 - `options` {{optional_inline}}
-  - : An options object to pass an {{domxref("AbortSignal")}} signal:
+  - : یک شیء گزینه‌ها برای ارسال سیگنال {{domxref("AbortSignal")}}:
     - `signal` {{optional_inline}}
-      - : An {{domxref("AbortSignal")}}. The eyedropper mode will be aborted when the `AbortSignal`'s {{domxref("AbortController/abort()", "abort()")}} method is called.
+      - : یک {{domxref("AbortSignal")}}. هرگاه متد {{domxref("AbortController/abort()", "abort()")}} متعلق به این `AbortSignal` فراخوانی شود، حالت قطره‌چکان لغو خواهد شد.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that eventually resolves when the user selects a pixel color from the screen.
+یک {{jsxref("Promise")}} که وقتی کاربر رنگی را از صفحه انتخاب کند، در نهایت resolve می‌شود.
 
-The promise resolves to an object with the following property:
+این Promise به شیئی با ویژگی زیر resolve می‌شود:
 
 - `sRGBHex`
-  - : A string representing the selected color, in hexadecimal sRGB format (`#aabbcc`).
+  - : رشته‌ای که رنگ انتخاب‌شده را در قالب sRGB هگزادسیمال (`#aabbcc`) نمایش می‌دهد.
 
-### Exceptions
+### استثناها
 
-Exceptions are not thrown but returned when the {{jsxref("Promise")}} is rejected.
+استثناها پرتاب نمی‌شوند، بلکه هنگام رد شدن (reject) {{jsxref("Promise")}} بازگردانده می‌شوند.
 
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if `open()` is not called via a [transient user activation](/en-US/docs/Glossary/Transient_activation).
+  - : اگر `open()` از طریق یک [فعال‌سازی گذرای کاربر](/en-US/docs/Glossary/Transient_activation) فراخوانی نشود، رخ می‌دهد.
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if another eye dropper has already opened.
+  - : اگر یک قطره‌چکان دیگر از قبل باز شده باشد، رخ می‌دهد.
 - `AbortError` {{domxref("DOMException")}}
-  - : Thrown if the user aborts the selection by pressing the <kbd>Esc</kbd> key or if the selection is aborted by an {{domxref("AbortController")}} being passed as an argument to `open()`.
+  - : اگر کاربر با فشردن کلید <kbd>Esc</kbd> انتخاب را لغو کند، یا اگر انتخاب توسط یک {{domxref("AbortController")}} که به عنوان آرگومان به `open()` ارسال شده، لغو شود، رخ می‌دهد.
 - `OperationError` {{domxref("DOMException")}}
-  - : Thrown if the selection fails for other reasons.
+  - : اگر انتخاب به دلایل دیگری با شکست مواجه شود، رخ می‌دهد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{DOMxRef("EyeDropper")}} interface it belongs to.
+- رابط {{DOMxRef("EyeDropper")}} که این متد به آن تعلق دارد.
