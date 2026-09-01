@@ -1,10 +1,4 @@
 ---
-title: "CSSUnitValue"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSUnitValue"
-status: "needs-translation"
----
-
----
 title: CSSUnitValue
 slug: Web/API/CSSUnitValue
 page-type: web-api-interface
@@ -13,38 +7,38 @@ browser-compat: api.CSSUnitValue
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`CSSUnitValue`** interface of the [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API) represents values that contain a single [unit type](/en-US/docs/Web/CSS/Guides/Values_and_units#units).
+رابط **`CSSUnitValue`** از [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API) مقادیری را نشان می‌دهد که شامل یک [نوع واحد](/en-US/docs/Web/CSS/Guides/Values_and_units#units) هستند.
 
-For example, the value `42px` (a {{cssxref("&lt;dimension&gt;")}}) would be represented by a `CSSNumericValue`.
+برای مثال، مقدار `42px` (یک {{cssxref("&lt;dimension&gt;")}}) توسط یک `CSSNumericValue` نمایش داده می‌شود.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("CSSUnitValue.CSSUnitValue", "CSSUnitValue()")}}
-  - : Creates a new `CSSUnitValue` object.
+  - : یک شیء جدید `CSSUnitValue` ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref('CSSUnitValue.value')}}
-  - : A number representing the number of units.
-    For a `CSSNumericValue` representing `42px`, this would be `42`.
+  - : یک عدد که تعداد واحدها را نشان می‌دهد.
+    برای یک `CSSNumericValue` که `42px` را نمایش می‌دهد، این مقدار `42` خواهد بود.
 - {{domxref('CSSUnitValue.unit')}} {{ReadOnlyInline}}
-  - : Returns a string indicating the type of unit. For a `CSSNumericValue` representing `42px`, this would be `"px"`.
+  - : یک رشته که نوع واحد را نشان می‌دهد. برای یک `CSSNumericValue` که `42px` را نمایش می‌دهد، این مقدار `"px"` خواهد بود.
 
-## Static methods
+## روش‌های ایستا
 
-_Also inherits methods from its parent interface, {{DOMxRef("CSSNumericValue")}}._
+_همچنین روش‌هایی را از رابط والد خود، {{DOMxRef("CSSNumericValue")}}، به ارث می‌برد._
 
-## Instance methods
+## روش‌های نمونه
 
-_Also inherits methods from its parent interface, {{DOMxRef("CSSNumericValue")}}._
+_همچنین روش‌هایی را از رابط والد خود، {{DOMxRef("CSSNumericValue")}}، به ارث می‌برد._
 
-## Examples
+## نمونه‌ها
 
-### Basic usage
+### استفاده پایه
 
-The following shows a method of creating a {{domxref('CSSPositionValue')}} from individual `CSSUnitValue` constructors.
+نمونه زیر روش ایجاد یک {{domxref('CSSPositionValue')}} از سازنده‌های جداگانه `CSSUnitValue` را نشان می‌دهد.
 
 ```js
 let pos = new CSSPositionValue(
@@ -53,15 +47,15 @@ let pos = new CSSPositionValue(
 );
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [CSS numeric data types](/en-US/docs/Web/CSS/Guides/Values_and_units/Numeric_data_types)
-- [CSS values and units](/en-US/docs/Web/CSS/Guides/Values_and_units), a listing of all possible units and data types
+- [انواع داده عددی CSS](/en-US/docs/Web/CSS/Guides/Values_and_units/Numeric_data_types)
+- [مقادیر و واحدهای CSS](/en-US/docs/Web/CSS/Guides/Values_and_units)، فهرستی از تمام واحدها و انواع داده ممکن
