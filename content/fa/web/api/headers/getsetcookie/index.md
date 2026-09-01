@@ -1,11 +1,5 @@
 ---
 title: "Headers: getSetCookie() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Headers/getSetCookie"
-status: "needs-translation"
----
-
----
-title: "Headers: getSetCookie() method"
 short-title: getSetCookie()
 slug: Web/API/Headers/getSetCookie
 page-type: web-api-instance-method
@@ -14,29 +8,29 @@ browser-compat: api.Headers.getSetCookie
 
 {{APIRef("Fetch API")}} {{AvailableInWorkers}}
 
-The **`getSetCookie()`** method of the {{domxref("Headers")}} interface returns an array containing the values of all {{httpheader("Set-Cookie")}} headers associated with a response. This allows {{domxref("Headers")}} objects to handle having multiple `Set-Cookie` headers, which wasn't possible prior to its implementation.
+متد **`getSetCookie()`** از رابط {{domxref("Headers")}} آرایه‌ای شامل مقادیر تمام هدرهای {{httpheader("Set-Cookie")}} مرتبط با یک پاسخ را برمی‌گرداند. این امکان را به اشیاء {{domxref("Headers")}} می‌دهد که چندین هدر `Set-Cookie` را مدیریت کنند، کاری که قبل از پیاده‌سازی این متد ممکن نبود.
 
-This method is intended for use on server environments (for example Node.js). Browsers block frontend JavaScript code from accessing the {{httpheader("Set-Cookie")}} header, as required by the Fetch spec, which defines `Set-Cookie` as a [forbidden response-header name](https://fetch.spec.whatwg.org/#forbidden-response-header-name) that [must be filtered out](https://fetch.spec.whatwg.org/#ref-for-forbidden-response-header-name%E2%91%A0) from any response exposed to frontend code.
+این متد برای استفاده در محیط‌های سرور (مانند Node.js) در نظر گرفته شده است. مرورگرها دسترسی کد جاوااسکریپت سمت کاربر (frontend) به هدر {{httpheader("Set-Cookie")}} را مسدود می‌کنند، همانطور که توسط مشخصات Fetch الزامی شده است، که `Set-Cookie` را به عنوان [نام هدر پاسخ ممنوع](https://fetch.spec.whatwg.org/#forbidden-response-header-name) تعریف می‌کند که باید از هر پاسخی که در معرض کد سمت کاربر قرار می‌گیرد [فیلتر شود](https://fetch.spec.whatwg.org/#ref-for-forbidden-response-header-name%E2%91%A0).
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 getSetCookie()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-An array of strings representing the values of all the different `Set-Cookie` headers associated with a response.
+آرایه‌ای از رشته‌ها که مقادیر تمام هدرهای `Set-Cookie` مختلف مرتبط با یک پاسخ را نشان می‌دهد.
 
-If no `Set-Cookie` headers are set, the method will return an empty array (`[ ]`).
+اگر هیچ هدر `Set-Cookie`ای تنظیم نشده باشد، متد یک آرایه خالی (`[ ]`) برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-As alluded to above, running code like the following on the client won't return any results — `Set-Cookie` is filtered out from {{domxref("Headers")}} retrieved over the network.
+همانطور که در بالا اشاره شد، اجرای کدی مانند زیر در سمت کلاینت هیچ نتیجه‌ای برنمی‌گرداند — `Set-Cookie` از {{domxref("Headers")}} دریافت‌شده از طریق شبکه فیلتر می‌شود.
 
 ```js
 fetch("https://example.com").then((response) => {
@@ -45,7 +39,7 @@ fetch("https://example.com").then((response) => {
 });
 ```
 
-However, the following could be used to query multiple `Set-Cookie` values. This is much more useful on the server, but it would also work on the client.
+با این حال، می‌توان از کد زیر برای پرس‌وجوی چندین مقدار `Set-Cookie` استفاده کرد. این کار در سمت سرور بسیار مفیدتر است، اما در سمت کلاینت نیز کار می‌کند.
 
 ```js
 const headers = new Headers({
@@ -58,15 +52,15 @@ headers.getSetCookie();
 // Returns ["name1=value1", "name2=value2"]
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [HTTP](/en-US/docs/Web/HTTP)
 - {{httpheader("Set-Cookie")}}
