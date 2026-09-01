@@ -1,11 +1,5 @@
 ---
 title: "Document: anchors property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/anchors"
-status: "needs-translation"
----
-
----
-title: "Document: anchors property"
 short-title: anchors
 slug: Web/API/Document/anchors
 page-type: web-api-instance-property
@@ -16,16 +10,15 @@ browser-compat: api.Document.anchors
 
 {{APIRef("DOM")}} {{Deprecated_Header}}
 
-The **`anchors`** read-only property of the
-{{domxref("Document")}} interface returns a list of all of the anchors in the document.
+ویژگی فقط‌خواندنی **`anchors`** در رابط {{domxref("Document")}} فهرستی از تمام لنگرگاه‌های (Anchor) سند را برمی‌گرداند.
 
-## Value
+## مقدار
 
-An {{domxref("HTMLCollection")}}.
+یک {{domxref("HTMLCollection")}}.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفادهٔ پایه
 
 ```js
 if (document.anchors.length >= 5) {
@@ -33,10 +26,9 @@ if (document.anchors.length >= 5) {
 }
 ```
 
-### Creating a table of contents
+### ایجاد فهرست مطالب
 
-The following is an example that auto populates a Table of Contents with every anchor
-on the page:
+مثال زیر فهرست مطالب را به‌صورت خودکار با تمام لنگرگاه‌های صفحه پر می‌کند:
 
 ```html
 <h1>Title</h1>
@@ -72,16 +64,14 @@ for (const anchor of document.anchors) {
 
 {{EmbedLiveSample("Creating a table of contents", "", 500)}}
 
-## Notes
+## نکات
 
-For reasons of backwards compatibility, the returned set of anchors only contains those
-anchors created with the `name` attribute, not those created with the
-`id` attribute.
+به دلایل سازگاری با نسخه‌های قبلی، مجموعهٔ بازگردانده‌شده از لنگرگاه‌ها فقط آنهایی را شامل می‌شود که با ویژگی `name` ساخته شده‌اند، نه آنهایی که با ویژگی `id` ساخته شده‌اند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
