@@ -1,11 +1,5 @@
 ---
 title: "Element: clientWidth property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/clientWidth"
-status: "needs-translation"
----
-
----
-title: "Element: clientWidth property"
 short-title: clientWidth
 slug: Web/API/Element/clientWidth
 page-type: web-api-instance-property
@@ -14,29 +8,29 @@ browser-compat: api.Element.clientWidth
 
 {{APIRef("DOM")}}
 
-The **`clientWidth`** read-only property of the {{domxref("Element")}} interface is zero for inline elements and elements with no CSS; otherwise, it's the inner width of an element in pixels. It includes padding but excludes borders, margins, and vertical scrollbars (if present).
+خاصیت فقط-خواندنی **`clientWidth`** در رابط {{domxref("Element")}} برای عناصر درون‌خطی (inline) و عناصر بدون CSS برابر صفر است؛ در غیر این صورت، عرض داخلی یک عنصر را بر حسب پیکسل برمی‌گرداند. این مقدار شامل padding (حاشیه داخلی) می‌شود، اما border (حاشیه)، margin (حاشیه خارجی)، و نوار پیمایش عمودی (در صورت وجود) را شامل نمی‌شود.
 
-When `clientWidth` is used on the root element (the `<html>` element), (or on `<body>` if the document is in quirks mode), the viewport's width (excluding any scrollbar) is returned.
+هنگامی که `clientWidth` روی عنصر ریشه (عنصر `<html>`) (یا روی `<body>` اگر سند در حالت quirks mode باشد) استفاده شود، عرض viewport (به استثنای هر نوار پیمایش) بازگردانده می‌شود.
 
-## Value
+## مقدار
 
-An integer.
+یک عدد صحیح.
 
-## Examples
+## مثال‌ها
 
 ![An example element with large padding, border and margin. clientWidth is the inner width of the element including its padding, and excluding its margin, border, and vertical scrollbar.](dimensions-client.png)
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Determining the dimensions of elements](/en-US/docs/Web/API/CSS_Object_Model/Determining_the_dimensions_of_elements)
+- [تعیین ابعاد عناصر](/en-US/docs/Web/API/CSS_Object_Model/Determining_the_dimensions_of_elements)
 - {{domxref("HTMLElement.offsetWidth")}}
 - {{domxref("Element.scrollWidth")}}
 - {{domxref("Element.clientHeight")}}
