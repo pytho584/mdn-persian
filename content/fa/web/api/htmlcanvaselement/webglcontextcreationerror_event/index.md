@@ -1,11 +1,5 @@
 ---
 title: "HTMLCanvasElement: webglcontextcreationerror event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/webglcontextcreationerror_event"
-status: "needs-translation"
----
-
----
-title: "HTMLCanvasElement: webglcontextcreationerror event"
 short-title: webglcontextcreationerror
 slug: Web/API/HTMLCanvasElement/webglcontextcreationerror_event
 page-type: web-api-event
@@ -14,15 +8,15 @@ browser-compat: api.HTMLCanvasElement.webglcontextcreationerror_event
 
 {{APIRef("WebGL API")}}
 
-The **`webglcontextcreationerror`** event of the [WebGL API](/en-US/docs/Web/API/WebGL_API) is fired if the user agent is unable to create a {{domxref("WebGLRenderingContext")}} context.
+رویداد **`webglcontextcreationerror`** از [WebGL API](/en-US/docs/Web/API/WebGL_API) زمانی فعال می‌شود که عامل کاربر نتواند یک بافت {{domxref("WebGLRenderingContext")}} ایجاد کند.
 
-This event has a {{domxref("WebGLContextEvent.statusMessage")}} property, which can contain a platform dependent string with more information about the failure.
+این رویداد دارای یک ویژگی {{domxref("WebGLContextEvent.statusMessage")}} است که می‌تواند یک رشته وابسته به پلتفرم با اطلاعات بیشتر در مورد شکست را شامل شود.
 
-This event does not bubble.
+این رویداد به بالا منتشر نمی‌شود (bubble نمی‌کند).
 
 ## Syntax
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی مدیریت‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("webglcontextcreationerror", (event) => { })
@@ -32,7 +26,7 @@ onwebglcontextcreationerror = (event) => { }
 
 ## Event type
 
-A {{domxref("WebGLContextEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("WebGLContextEvent")}}. از {{domxref("Event")}} ارث‌بری می‌کند.
 
 {{InheritanceDiagram("WebGLContextEvent")}}
 
@@ -57,7 +51,7 @@ const gl = canvas.getContext("webgl");
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("WebGLContextEvent")}}
 - {{domxref("WebGLRenderingContext.isContextLost()")}}
