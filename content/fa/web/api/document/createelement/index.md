@@ -1,7 +1,5 @@
 ---
 title: "Document: createElement() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement"
-status: "needs-translation"
 ---
 
 ---
@@ -14,60 +12,53 @@ browser-compat: api.Document.createElement
 
 {{APIRef("DOM")}}
 
-The **`createElement()`** method of the {{domxref("Document")}} interface creates a new {{domxref("HTMLElement")}} that has the specified `localName`.
+متد **`createElement()`** در رابط {{domxref("Document")}} یک {{domxref("HTMLElement")}} جدید ایجاد می‌کند که `localName` مشخص‌شده را دارد.
 
-If `localName` isn't recognized, the method creates an {{domxref("HTMLUnknownElement")}}.
+اگر `localName` شناسایی نشود، متد یک {{domxref("HTMLUnknownElement")}} می‌سازد.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 createElement(localName)
 createElement(localName, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `localName`
-  - : A string that specifies the type of element to be created.
-    Don't use qualified names (like "html:a") with this method.
-    When called on an HTML document, `createElement()` converts `localName` to lowercase before creating the element.
-    In Firefox, Opera, and Chrome, `createElement(null)` works like `createElement("null")`.
+  - : رشته‌ای که نوع عنصر مورد ایجاد را مشخص می‌کند. در این متد از نام‌های دارای پیشوند (مانند «html:a») استفاده نکنید. وقتی روی یک سند HTML فراخوانی شود، `createElement()` قبل از ایجاد عنصر، `localName` را به حروف کوچک تبدیل می‌کند. در Firefox، Opera و Chrome، `createElement(null)` مانند `createElement("null")` عمل می‌کند.
 - `options` {{Optional_Inline}}
-  - : An object with the following optional properties (note that only one of `is` and `customElementRegistry` may be set):
+  - : یک شی با ویژگی‌های اختیاری زیر (توجه داشته باشید که فقط یکی از `is` و `customElementRegistry` می‌تواند تنظیم شود):
     - `is` {{Optional_Inline}}
-      - : A string defining the tag name for a custom element previously defined using {{domxref("CustomElementRegistry/define", "customElements.define()")}}.
-        The new element will be given an `is` attribute whose value is the custom element's tag name.
-        See [Web component example](#web_component_example) for more details.
+      - : رشته‌ای که نام تگ را برای یک عنصر سفارشی که قبلاً با {{domxref("CustomElementRegistry/define", "customElements.define()")}} تعریف شده است، تعیین می‌کند. عنصر جدید یک ویژگی `is` دریافت می‌کند که مقدار آن نام تگ عنصر سفارشی است. برای جزئیات بیشتر به [مثال کامپوننت وب](#web_component_example) مراجعه کنید.
     - `customElementRegistry` {{Optional_Inline}}
-      - : A {{domxref("CustomElementRegistry")}} that sets the [Scoped custom element registry](/en-US/docs/Web/API/Web_components/Using_custom_elements#scoped_custom_element_registries) of a custom element.
+      - : یک {{domxref("CustomElementRegistry")}} که [ثبت‌کننده عنصر سفارشی محدوده‌دار](/en-US/docs/Web/API/Web_components/Using_custom_elements#scoped_custom_element_registries) یک عنصر سفارشی را تنظیم می‌کند.
 
-### Return value
+### مقدار بازگشتی
 
-The new {{domxref("Element")}}.
+عنصر جدید {{domxref("Element")}}.
 
 > [!NOTE]
-> A new {{domxref("HTMLElement", "HTMLElement", "", "1")}} is returned if the document is an {{domxref("HTMLDocument", "HTMLDocument", "", "1")}}, which is the most common case.
-> Otherwise a new {{domxref("Element","Element","","1")}} is returned.
+> اگر سند یک {{domxref("HTMLDocument", "HTMLDocument", "", "1")}} باشد (که معمول‌ترین حالت است)، یک {{domxref("HTMLElement", "HTMLElement", "", "1")}} جدید بازگردانده می‌شود. در غیر این صورت یک {{domxref("Element","Element","","1")}} جدید بازگردانده می‌شود.
 
-### Exceptions
+### استثناها
 
 - `InvalidCharacterError` {{domxref("DOMException")}}
-  - : Thrown if the [`localName`](#localname) value is not a valid element name.
-    A string is a valid element name if its length is at least 1 and:
-    - it starts with an alphabet character and does not contain ASCII whitespace, `NULL`, `/`, or `>` (U+0000, U+002F, or U+003E, respectively).
-    - it starts with `:` (U+003A), `_` (U+005F), or any characters in the range U+0080 to U+10FFFF (inclusive), _and_ the remaining code points only include those same characters along with the ASCII alphanumeric characters, `-` (U+002D), and `.` (U+002E),
+  - : اگر مقدار [`localName`](#localname) نام عنصر معتبری نباشد، پرتاب می‌شود. یک رشته نام عنصر معتبر است اگر طول آن حداقل ۱ باشد و:
+    - با یک حرف الفبا شروع شود و شامل فضای خالی ASCII، `NULL`، `/` یا `>` (به ترتیب U+0000، U+002F یا U+003E) نباشد.
+    - با `:` (U+003A)، `_` (U+005F) یا هر کاراکتری در محدوده U+0080 تا U+10FFFF (شامل) شروع شود، _و_ بقیه کدپوینت‌ها فقط شامل همان کاراکترها به همراه کاراکترهای الفبایی-عددی ASCII، `-` (U+002D) و `.` (U+002E) باشند.
 
     > [!NOTE]
-    > Earlier versions of the specification were more restrictive, requiring that the `localName` be a valid [XML name](https://www.w3.org/TR/xml/#dt-name).
+    > نسخه‌های قبلی مشخصات محدودتر بودند و نیاز داشتند که `localName` یک [نام XML](https://www.w3.org/TR/xml/#dt-name) معتبر باشد.
 
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Thrown if both the [`is`](#is) and [`customElementRegistry`](#customelementregistry) options are specified.
+  - : اگر هر دو گزینه [`is`](#is) و [`customElementRegistry`](#customelementregistry) مشخص شده باشند، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Basic example
+### مثال پایه
 
-This creates a new `<div>` and inserts it before the element with the ID `div1`.
+این مثال یک `<div>` جدید ایجاد می‌کند و آن را قبل از عنصری با شناسه `div1` درج می‌کند.
 
 #### HTML
 
@@ -105,16 +96,16 @@ function addElement() {
 addElement();
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Basic_example", 500, 80)}}
 
-### Web component example
+### مثال کامپوننت وب
 
 > [!NOTE]
-> Check the [browser compatibility](#browser_compatibility) section for support, and the [`is`](/en-US/docs/Web/HTML/Reference/Global_attributes/is) attribute reference for caveats on implementation reality of customized built-in elements.
+> برای پشتیبانی، بخش [سازگاری مرورگر](#browser_compatibility) را بررسی کنید، و برای نکات مربوط به واقعیت پیاده‌سازی عناصر داخلی سفارشی‌شده، به مرجع ویژگی [`is`](/en-US/docs/Web/HTML/Reference/Global_attributes/is) مراجعه کنید.
 
-The following example snippet is taken from our [expanding-list-web-component](https://github.com/mdn/web-components-examples/tree/main/expanding-list-web-component) example ([see it live also](https://mdn.github.io/web-components-examples/expanding-list-web-component/)). In this case, our custom element extends the {{domxref("HTMLUListElement")}}, which represents the {{htmlelement("ul")}} element.
+قطعه کد مثال زیر از مثال [expanding-list-web-component](https://github.com/mdn/web-components-examples/tree/main/expanding-list-web-component) ما گرفته شده است ([همچنین نسخه زنده آن را ببینید](https://mdn.github.io/web-components-examples/expanding-list-web-component/)). در این مورد، عنصر سفارشی ما از {{domxref("HTMLUListElement")}} ارث می‌برد که عنصر {{htmlelement("ul")}} را نمایش می‌دهد.
 
 ```js
 // Create a class for the element
@@ -132,30 +123,30 @@ class ExpandingList extends HTMLUListElement {
 customElements.define("expanding-list", ExpandingList, { extends: "ul" });
 ```
 
-If we wanted to create an instance of this element programmatically, we'd use a call along the following lines:
+اگر بخواهیم نمونه‌ای از این عنصر را به صورت برنامه‌نویسی ایجاد کنیم، از فراخوانی‌ای به شکل زیر استفاده می‌کنیم:
 
 ```js
 let expandingList = document.createElement("ul", { is: "expanding-list" });
 ```
 
-The new element will be given an [`is`](/en-US/docs/Web/HTML/Reference/Global_attributes/is) attribute whose value is the custom element's tag name.
+عنصر جدید یک ویژگی [`is`](/en-US/docs/Web/HTML/Reference/Global_attributes/is) دریافت می‌کند که مقدار آن نام تگ عنصر سفارشی است.
 
 > [!NOTE]
-> For backwards compatibility, some browsers will allow you to pass a string here instead of an object, where the string's value is the custom element's tag name.
+> برای سازگاری با عقب، برخی مرورگرها به شما اجازه می‌دهند به جای یک شیء، یک رشته در اینجا پاس دهید، که مقدار رشته نام تگ عنصر سفارشی است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Node.removeChild()")}}
 - {{domxref("Node.replaceChild()")}}
 - {{domxref("Node.appendChild()")}}
 - {{domxref("Node.insertBefore()")}}
 - {{domxref("Node.hasChildNodes()")}}
-- {{domxref("document.createElementNS()")}} — to explicitly specify the namespace URI for the element.
+- {{domxref("document.createElementNS()")}} — برای مشخص کردن صریح URI فضای نام عنصر.
