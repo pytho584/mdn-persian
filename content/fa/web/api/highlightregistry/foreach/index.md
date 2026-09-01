@@ -1,7 +1,5 @@
 ---
 title: "HighlightRegistry: forEach() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HighlightRegistry/forEach"
-status: "needs-translation"
 ---
 
 ---
@@ -15,38 +13,38 @@ spec-urls: https://tc39.es/ecma262/multipage/keyed-collections.html#sec-map.prot
 
 {{APIRef("CSS Custom Highlight API")}}
 
-The **`forEach()`** method of the {{domxref("HighlightRegistry")}} interface executes a provided function once for each {{domxref("Highlight")}} object in the registry, in insertion order.
+متد **`forEach()`** در رابط {{domxref("HighlightRegistry")}}، یک تابع ارائه‌شده را یک‌بار برای هر شیء {{domxref("Highlight")}} در رجیستری، به ترتیب درج، اجرا می‌کند.
 
-`HighlightRegistry` is a {{jsxref("Map")}}-like object, so this is similar to using {{jsxref("Map.forEach()")}}.
+`HighlightRegistry` یک شیء شبیه به {{jsxref("Map")}} است، بنابراین این کار مشابه استفاده از {{jsxref("Map.forEach()")}} است.
 
-## Syntax
+## نحو
 
 ```js-nolint
 forEach(callbackFn)
 forEach(callbackFn, thisArg)
 ```
 
-### Parameters
+### پارامترها
 
 - `callback`
-  - : Function to execute for each `Highlight` object, taking three arguments:
+  - : تابعی که برای هر شیء `Highlight` اجرا می‌شود و سه آرگومان می‌گیرد:
     - `highlight`
-      - : The current highlight.
+      - : هایلایت کنونی.
     - `name`
-      - : The highlight name.
+      - : نام هایلایت.
     - `registry`
-      - : The registry object which `forEach()` was called upon.
+      - : شیء رجیستری که `forEach()` روی آن فراخوانی شده است.
 
 - `thisArg`
-  - : Value to use as `this` when executing `callbackFn`.
+  - : مقداری که هنگام اجرای `callbackFn` به‌عنوان `this` استفاده می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-The code snippet below shows how create a new highlight with two ranges, and then log the ranges by using the `forEach()` method:
+قطعه کد زیر نحوه ایجاد یک هایلایت جدید با دو بازه و سپس ثبت این بازه‌ها در خروجی را با استفاده از متد `forEach()` نشان می‌دهد:
 
 ```js
 function logAllHighlights(highlight, name) {
@@ -64,15 +62,15 @@ CSS.highlights.set("custom-highlight-3", customHighlight3);
 CSS.highlights.forEach(logAllHighlights);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("css_custom_highlight_api", "The CSS Custom Highlight API", "", "nocode")}}
 - [CSS Custom Highlight API: The Future of Highlighting Text Ranges on the Web](https://css-tricks.com/css-custom-highlight-api-early-look/)
