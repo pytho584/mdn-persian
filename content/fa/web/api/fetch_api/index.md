@@ -1,11 +1,5 @@
 ---
 title: "Fetch API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API"
-status: "needs-translation"
----
-
----
-title: Fetch API
 slug: Web/API/Fetch_API
 page-type: web-api-overview
 browser-compat:
@@ -15,62 +9,62 @@ browser-compat:
 
 {{DefaultAPISidebar("Fetch API")}}
 
-The Fetch API provides an interface for fetching resources (including across the network). It is a more powerful and flexible replacement for {{DOMxRef("XMLHttpRequest")}}.
+Fetch API واسطه‌ای برای دریافت منابع (از جمله از طریق شبکه) فراهم می‌کند. این API جایگزینی قدرتمندتر و انعطاف‌پذیرتر برای {{DOMxRef("XMLHttpRequest")}} است.
 
-## Concepts and usage
+## مفاهیم و کاربرد
 
-The Fetch API uses {{DOMxRef("Request")}} and {{DOMxRef("Response")}} objects (and other things involved with network requests), as well as related concepts such as CORS and the HTTP Origin header semantics.
+Fetch API از اشیاء {{DOMxRef("Request")}} و {{DOMxRef("Response")}} (و سایر موارد مرتبط با درخواست‌های شبکه)، و همچنین مفاهیم مرتبط مانند CORS و معنا‌شناسی هدر HTTP Origin استفاده می‌کند.
 
-For making a request and fetching a resource, use the {{domxref("Window/fetch", "fetch()")}} method. It is a global method in both {{DOMxRef("Window")}} and {{DOMxRef("WorkerGlobalScope", "Worker")}} contexts. This makes it available in pretty much any context you might want to fetch resources in.
+برای ارسال درخواست و دریافت یک منبع، از متد {{domxref("Window/fetch", "fetch()")}} استفاده کنید. این یک متد سراسری در هر دو بافتار {{DOMxRef("Window")}} و {{DOMxRef("WorkerGlobalScope", "Worker")}} است. این موضوع باعث می‌شود که تقریباً در هر بافتاری که بخواهید منابعی را دریافت کنید، در دسترس باشد.
 
-The `fetch()` method takes one mandatory argument, the path to the resource you want to fetch. It returns a {{JSxRef("Promise")}} that resolves to the {{DOMxRef("Response")}} to that request — as soon as the server responds with headers — **even if the server response is an HTTP error status**. You can also optionally pass in an `init` options object as the second argument (see {{DOMxRef("Request")}}).
+متد `fetch()` یک آرگومان اجباری می‌گیرد: مسیر منبعی که می‌خواهید دریافت کنید. این متد یک {{JSxRef("Promise")}} برمی‌گرداند که با {{DOMxRef("Response")}} به آن درخواست حل می‌شود — به محض اینکه سرور با هدرها پاسخ دهد — **حتی اگر پاسخ سرور یک وضعیت خطای HTTP باشد**. همچنین می‌توانید به‌صورت اختیاری یک شیء گزینه `init` را به‌عنوان آرگومان دوم پاس دهید (به {{DOMxRef("Request")}} مراجعه کنید).
 
-Once a {{DOMxRef("Response")}} is retrieved, there are a number of methods available to define what the body content is and how it should be handled.
+پس از دریافت {{DOMxRef("Response")}}، روش‌های متعددی برای تعیین محتوای بدنه و نحوه مدیریت آن در دسترس هستند.
 
-You can create a request and response directly using the {{DOMxRef("Request.Request", "Request()")}} and {{DOMxRef("Response.Response", "Response()")}} constructors, but it's uncommon to do this directly. Instead, these are more likely to be created as results of other API actions (for example, {{DOMxRef("FetchEvent.respondWith()")}} from service workers).
+می‌توانید مستقیماً با استفاده از سازنده‌های {{DOMxRef("Request.Request", "Request()")}} و {{DOMxRef("Response.Response", "Response()")}} یک درخواست و پاسخ ایجاد کنید، اما انجام مستقیم این کار رایج نیست. در عوض، این اشیاء معمولاً به‌عنوان نتایج سایر اقدامات API ایجاد می‌شوند (برای مثال، {{DOMxRef("FetchEvent.respondWith()")}} در service workerها).
 
-Find out more about using the Fetch API features in [Using Fetch](/en-US/docs/Web/API/Fetch_API/Using_Fetch).
+برای آشنایی بیشتر با امکانات Fetch API، به [استفاده از Fetch](/en-US/docs/Web/API/Fetch_API/Using_Fetch) مراجعه کنید.
 
-### Deferred Fetch
+### دریافت معوق (Deferred Fetch)
 
-The {{domxref("Window/fetchLater", "fetchLater()")}} API enables a developer to request a _deferred fetch_, that can be sent after a specified period of time, or when the page is closed or navigated away from. See [Using Deferred Fetch](/en-US/docs/Web/API/Fetch_API/Using_Deferred_Fetch).
+API مربوط به {{domxref("Window/fetchLater", "fetchLater()")}} به توسعه‌دهنده امکان می‌دهد یک _دریافت معوق_ درخواست کند که می‌تواند پس از مدت زمان مشخصی، یا زمانی که صفحه بسته می‌شود یا از آن خارج می‌شوید، ارسال شود. به [استفاده از دریافت معوق](/en-US/docs/Web/API/Fetch_API/Using_Deferred_Fetch) مراجعه کنید.
 
-## Interfaces
+## رابط‌ها (Interfaces)
 
-- {{domxref("Window.fetch()")}} and {{domxref("WorkerGlobalScope.fetch()")}}
-  - : The `fetch()` method used to fetch a resource.
+- {{domxref("Window.fetch()")}} و {{domxref("WorkerGlobalScope.fetch()")}}
+  - : متد `fetch()` که برای دریافت یک منبع استفاده می‌شود.
 - {{domxref("Window.fetchLater()")}}
-  - : Used to make a deferred fetch request.
+  - : برای انجام یک درخواست دریافت معوق استفاده می‌شود.
 - {{domxref("DeferredRequestInit")}}
-  - : Represents the set of options that can be used to configure a deferred fetch request.
+  - : مجموعه گزینه‌هایی را نشان می‌دهد که می‌توانند برای پیکربندی یک درخواست دریافت معوق استفاده شوند.
 - {{domxref("FetchLaterResult")}}
-  - : Represents the result of requesting a deferred fetch.
+  - : نتیجه درخواست یک دریافت معوق را نشان می‌دهد.
 - {{DOMxRef("Headers")}}
-  - : Represents response/request headers, allowing you to query them and take different actions depending on the results.
+  - : هدرهای پاسخ/درخواست را نشان می‌دهد و به شما امکان می‌دهد آن‌ها را جستجو کرده و بسته به نتایج، اقدامات متفاوتی انجام دهید.
 - {{DOMxRef("Request")}}
-  - : Represents a resource request.
+  - : یک درخواست منبع را نشان می‌دهد.
 - {{DOMxRef("Response")}}
-  - : Represents the response to a request.
+  - : پاسخ به یک درخواست را نشان می‌دهد.
 
-## HTTP headers
+## هدرهای HTTP
 
 - {{HTTPHeader("Permissions-Policy/deferred-fetch", "deferred-fetch")}}
-  - : Controls the [top-level quota](/en-US/docs/Web/API/Fetch_API/Using_Deferred_Fetch#quotas) for the `fetchLater()` API.
+  - : [سهمیه سطح بالا](/en-US/docs/Web/API/Fetch_API/Using_Deferred_Fetch#quotas) برای API مربوط به `fetchLater()` را کنترل می‌کند.
 - {{HTTPHeader("Permissions-Policy/deferred-fetch-minimal", "deferred-fetch-minimal")}}
-  - : Controls the [shared cross-origin subframe quota](/en-US/docs/Web/API/Fetch_API/Using_Deferred_Fetch#quotas) for the `fetchLater()` API.
+  - : [سهمیه مشترک زیر‌فریم متقاطع‌المنشأ](/en-US/docs/Web/API/Fetch_API/Using_Deferred_Fetch#quotas) برای API مربوط به `fetchLater()` را کنترل می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using Fetch](/en-US/docs/Web/API/Fetch_API/Using_Fetch)
+- [استفاده از Fetch](/en-US/docs/Web/API/Fetch_API/Using_Fetch)
 - [Service Worker API](/en-US/docs/Web/API/Service_Worker_API)
-- [HTTP access control (CORS)](/en-US/docs/Web/HTTP/Guides/CORS)
+- [کنترل دسترسی HTTP (CORS)](/en-US/docs/Web/HTTP/Guides/CORS)
 - [HTTP](/en-US/docs/Web/HTTP)
-- [Local network access](/en-US/docs/Web/Security/Defenses/Local_network_access)
+- [دسترسی به شبکه محلی](/en-US/docs/Web/Security/Defenses/Local_network_access)
