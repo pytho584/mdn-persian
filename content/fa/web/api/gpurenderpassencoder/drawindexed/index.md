@@ -1,11 +1,5 @@
 ---
 title: "GPURenderPassEncoder: drawIndexed() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder/drawIndexed"
-status: "needs-translation"
----
-
----
-title: "GPURenderPassEncoder: drawIndexed() method"
 short-title: drawIndexed()
 slug: Web/API/GPURenderPassEncoder/drawIndexed
 page-type: web-api-instance-method
@@ -14,10 +8,9 @@ browser-compat: api.GPURenderPassEncoder.drawIndexed
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`drawIndexed()`** method of the
-{{domxref("GPURenderPassEncoder")}} interface draws indexed primitives based on the vertex and index buffers provided by {{domxref("GPURenderPassEncoder.setVertexBuffer", "setVertexBuffer()")}} and {{domxref("GPURenderPassEncoder.setIndexBuffer", "setIndexBuffer()")}}.
+متد **`drawIndexed()`** از رابط {{domxref("GPURenderPassEncoder")}} اولیه‌های شاخص‌دار را بر اساس بافرهای رأس و شاخص که توسط {{domxref("GPURenderPassEncoder.setVertexBuffer", "setVertexBuffer()")}} و {{domxref("GPURenderPassEncoder.setIndexBuffer", "setIndexBuffer()")}} فراهم شده‌اند، ترسیم می‌کند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 drawIndexed(indexCount)
@@ -27,26 +20,26 @@ drawIndexed(indexCount, instanceCount, firstIndex, baseVertex)
 drawIndexed(indexCount, instanceCount, firstIndex, baseVertex, firstInstance)
 ```
 
-### Parameters
+### پارامترها
 
 - `indexCount`
-  - : A number defining the number of indices to draw.
+  - : عددی که تعداد شاخص‌هایی که باید ترسیم شوند را مشخص می‌کند.
 - `instanceCount` {{optional_inline}}
-  - : A number defining the number of instances to draw. If omitted, `instanceCount` defaults to 1.
+  - : عددی که تعداد نمونه‌ها (instance) را برای ترسیم مشخص می‌کند. اگر حذف شود، `instanceCount` به‌صورت پیش‌فرض 1 است.
 - `firstIndex` {{optional_inline}}
-  - : A number defining the offset into the index buffer, in indices, to begin drawing from. If omitted, `firstIndex` defaults to 0.
+  - : عددی که افست (offset) در بافر شاخص را، بر حسب شاخص، برای شروع ترسیم مشخص می‌کند. اگر حذف شود، `firstIndex` به‌صورت پیش‌فرض 0 است.
 - `baseVertex` {{optional_inline}}
-  - : A number added to each index value before indexing into the vertex buffers. If omitted, `baseVertex` defaults to 0.
+  - : عددی که پیش از شاخص‌گذاری در بافرهای رأس، به هر مقدار شاخص اضافه می‌شود. اگر حذف شود، `baseVertex` به‌صورت پیش‌فرض 0 است.
 - `firstInstance` {{optional_inline}}
-  - : A number defining the first instance to draw. If omitted, `firstInstance` defaults to 0.
+  - : عددی که اولین نمونه (instance) را برای ترسیم مشخص می‌کند. اگر حذف شود، `firstInstance` به‌صورت پیش‌فرض 0 است.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-In the WebGPU Samples [Shadow Mapping](https://webgpu.github.io/webgpu-samples/samples/shadowMapping/) example, `drawIndexed()` is used in two separate render passes in each animation frame, one to populate the shadow buffer and one to draw the primary view of the scene. Study the example code listing for the full context.
+در مثال [Shadow Mapping](https://webgpu.github.io/webgpu-samples/samples/shadowMapping/) از WebGPU Samples، متد `drawIndexed()` در هر فریم انیمیشن در دو رندر پاس مجزا استفاده می‌شود؛ یکی برای پر کردن بافر سایه و دیگری برای ترسیم نمای اصلی صحنه. برای دریافت زمینه کامل، فهرست کد مثال را بررسی کنید.
 
 ```js
 // …
@@ -78,14 +71,14 @@ const commandEncoder = device.createCommandEncoder();
 // …
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [رابط برنامه‌نویسی WebGPU](/en-US/docs/Web/API/WebGPU_API)
