@@ -1,11 +1,5 @@
 ---
 title: "HTMLMediaElement: crossOrigin property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/crossOrigin"
-status: "needs-translation"
----
-
----
-title: "HTMLMediaElement: crossOrigin property"
 short-title: crossOrigin
 slug: Web/API/HTMLMediaElement/crossOrigin
 page-type: web-api-instance-property
@@ -14,30 +8,30 @@ browser-compat: api.HTMLMediaElement.crossOrigin
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLMediaElement.crossOrigin`** property is the CORS setting for this media element. See [CORS settings attributes](/en-US/docs/Web/HTML/Reference/Attributes/crossorigin) for details.
+ویژگی **`HTMLMediaElement.crossOrigin`** تنظیمات CORS برای این عنصر رسانهای است. برای جزئیات بیشتر به [ویژگیهای تنظیمات CORS](/en-US/docs/Web/HTML/Reference/Attributes/crossorigin) مراجعه کنید.
 
-## Value
+## مقدار
 
-A string of a keyword specifying the CORS mode to use when fetching the resource. Possible values are:
+رشتهای از یک کلیدواژه که حالت CORS را هنگام دریافت منبع مشخص میکند. مقادیر ممکن عبارتند از:
 
-- `anonymous` or the empty string (`""`)
-  - : Requests sent by the {{domxref("HTMLMediaElement")}} will use the `cors` {{domxref("Request.mode", "mode", "", "nocode")}} and the `same-origin` {{domxref("Request.credentials", "credentials", "", "nocode")}} mode. This means that CORS is enabled and credentials are sent _if_ the resource is fetched from the same origin from which the document was loaded.
+- `anonymous` یا رشتهٔ خالی (`""`)
+  - : درخواستهای ارسالی توسط {{domxref("HTMLMediaElement")}} از حالت `cors` {{domxref("Request.mode", "mode", "", "nocode")}} و حالت `same-origin` {{domxref("Request.credentials", "credentials", "", "nocode")}} استفاده خواهند کرد. این بدان معناست که CORS فعال است و اعتبارنامهها _فقط در صورتی_ ارسال میشوند که منبع از همان مبدأیی که سند از آن بارگذاری شده دریافت شود.
 - `use-credentials`
-  - : Requests sent by the {{domxref("HTMLMediaElement")}} will use the `cors` {{domxref("Request.mode", "mode", "", "nocode")}} and the `include` {{domxref("Request.credentials", "credentials", "", "nocode")}} mode. All resources requests by the element will use CORS, regardless of what domain the fetch is from.
+  - : درخواستهای ارسالی توسط {{domxref("HTMLMediaElement")}} از حالت `cors` {{domxref("Request.mode", "mode", "", "nocode")}} و حالت `include` {{domxref("Request.credentials", "credentials", "", "nocode")}} استفاده خواهند کرد. تمام درخواستهای منابع توسط عنصر، بدون توجه به دامنهای که دریافت از آن انجام میشود، از CORS استفاده خواهند کرد.
 
-If the `crossOrigin` property is specified with any other value, it is the same as specifying as the `anonymous`.
+اگر ویژگی `crossOrigin` با هر مقدار دیگری مشخص شود، همانند مشخص کردن `anonymous` خواهد بود.
 
-If the `crossOrigin` property is not specified, the resource is fetched without CORS (the `no-cors` {{domxref("Request.mode", "mode", "", "nocode")}} and the `same-origin` {{domxref("Request.credentials", "credentials", "", "nocode")}} mode).
+اگر ویژگی `crossOrigin` مشخص نشده باشد، منبع بدون CORS دریافت میشود (حالت `no-cors` {{domxref("Request.mode", "mode", "", "nocode")}} و حالت `same-origin` {{domxref("Request.credentials", "credentials", "", "nocode")}}).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLImageElement.crossOrigin")}}
 - {{domxref("HTMLLinkElement.crossOrigin")}}
