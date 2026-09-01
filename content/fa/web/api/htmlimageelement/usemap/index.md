@@ -1,7 +1,5 @@
 ---
 title: "HTMLImageElement: useMap property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/useMap"
-status: "needs-translation"
 ---
 
 ---
@@ -14,17 +12,17 @@ browser-compat: api.HTMLImageElement.useMap
 
 {{APIRef("HTML DOM")}}
 
-The **`useMap`** property of the {{domxref("HTMLImageElement")}} interface providing the name of the client-side image map to apply to the image. It reflects the `<img>` element's [`usemap`](/en-US/docs/Web/HTML/Reference/Elements/img#usemap) content attribute.
+ویژگی **`useMap`** از رابط {{domxref("HTMLImageElement")}} نامِ نقشهٔ تصویر سمت کلاینت را که باید روی تصویر اعمال شود، فراهم می‌کند. این ویژگی، ویژگیِ محتوایی [`usemap`](/en-US/docs/Web/HTML/Reference/Elements/img#usemap) عنصر `<img>` را منعکس می‌کند.
 
-## Value
+## مقدار
 
-A string containing the hash `#` symbol followed by the [`name`](/en-US/docs/Web/HTML/Reference/Elements/map#name) of the {{HTMLElement("map")}} element which defines the image map to apply to the image.
+یک رشته (string) شامل نماد هش `#` و سپس [`name`](/en-US/docs/Web/HTML/Reference/Elements/map#name) عنصر {{HTMLElement("map")}} که نقشهٔ تصویریِ اعمال‌شده روی تصویر را تعریف می‌کند.
 
-## Examples
+## مثال‌ها
 
-### Using useMap
+### استفاده از useMap
 
-Consider a `<map>` that looks like this:
+یک `<map>` با این مشخصات را در نظر بگیرید:
 
 ```html
 <map name="mainmenu-map">
@@ -37,7 +35,7 @@ Consider a `<map>` that looks like this:
 </map>
 ```
 
-Given the image map named `mainmenu-map`, you can dynamically construct images that reference the image map as follows:
+با توجه به نقشهٔ تصویری به نام `mainmenu-map`، می‌توانید تصاویری را به‌صورت پویا بسازید که به این نقشهٔ تصویری ارجاع می‌دهند:
 
 ```js
 const image = new Image();
@@ -46,18 +44,18 @@ image.alt = "";
 image.useMap = "#mainmenu-map";
 ```
 
-For additional examples (including interactive ones), see the articles about the {{HTMLElement("map")}} and {{HTMLElement("area")}} elements, as well as the [guide to using image maps](/en-US/docs/Web/HTML/How_to/Add_a_hit_map_on_top_of_an_image).
+برای مثال‌های بیشتر (از جمله مثال‌های تعاملی)، مقاله‌های مربوط به عناصر {{HTMLElement("map")}} و {{HTMLElement("area")}} و همچنین [راهنمای استفاده از نقشه‌های تصویری](/en-US/docs/Web/HTML/How_to/Add_a_hit_map_on_top_of_an_image) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Add a hitmap on top of an image](/en-US/docs/Web/HTML/How_to/Add_a_hit_map_on_top_of_an_image)
+- [افزودن hitmap روی تصویر](/en-US/docs/Web/HTML/How_to/Add_a_hit_map_on_top_of_an_image)
 - {{HTMLElement("map")}}
 - {{HTMLElement("area")}}
