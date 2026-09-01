@@ -1,7 +1,6 @@
 ---
 title: "DOMQuad: p1 property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMQuad/p1"
-status: "needs-translation"
 ---
 
 ---
@@ -14,28 +13,28 @@ browser-compat: api.DOMQuad.p1
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The **`DOMQuad`** interface's **`p1`** property holds the {{domxref("DOMPoint")}} object that represents one of the four corners of the `DOMQuad`. When created from {{domxref("DOMQuad.fromRect_static", "DOMQuad.fromRect()")}}, it is the point (x, y).
+ویژگی **`p1`** در رابط **`DOMQuad`**، شیء {{domxref("DOMPoint")}} را نگه می‌دارد که یکی از چهار گوشهٔ `DOMQuad` را نشان می‌دهد. وقتی با استفاده از {{domxref("DOMQuad.fromRect_static", "DOMQuad.fromRect()")}} ساخته شود، این نقطه برابر با (x, y) است.
 
-## Value
+## مقدار
 
-The {{domxref("DOMPoint")}} object includes the following double-precision floating-point values:
+شیء {{domxref("DOMPoint")}} شامل مقادیر اعشاری با دقت دوگانهٔ زیر است:
 
-- {{domxref("DOMPoint.x")}}: The horizontal coordinate.
-- {{domxref("DOMPoint.y")}}: The vertical coordinate.
-- {{domxref("DOMPoint.z")}}: The depth coordinate.
-- {{domxref("DOMPoint.w")}}: The perspective value. The default value is 1.0.
+- {{domxref("DOMPoint.x")}}: مختصات افقی.
+- {{domxref("DOMPoint.y")}}: مختصات عمودی.
+- {{domxref("DOMPoint.z")}}: مختصات عمق.
+- {{domxref("DOMPoint.w")}}: مقدار پرسپکتیو. مقدار پیش‌فرض 1.0 است.
 
-Each of these values is **unrestricted**, meaning that it is allowed to be infinite or invalid (that is, its value may be {{jsxref("NaN")}} or {{jsxref("Infinity", "±Infinity")}}).
+هر یک از این مقادیر **نامحدود** هستند، یعنی می‌توانند بی‌نهایت یا نامعتبر باشند (به عبارت دیگر، مقدارشان می‌تواند {{jsxref("NaN")}} یا {{jsxref("Infinity", "±Infinity")}} باشد).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The other `DOMPoint` properties: {{domxref("DOMQuad.p2", "p2")}},
-  {{domxref("DOMQuad.p3", "p3")}}, and {{domxref("DOMQuad.p4", "p4")}}.
+- سایر ویژگی‌های `DOMPoint`: {{domxref("DOMQuad.p2", "p2")}}،
+  {{domxref("DOMQuad.p3", "p3")}} و {{domxref("DOMQuad.p4", "p4")}}.
