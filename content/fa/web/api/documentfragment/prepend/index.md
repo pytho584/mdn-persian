@@ -1,11 +1,5 @@
 ---
 title: "DocumentFragment: prepend() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment/prepend"
-status: "needs-translation"
----
-
----
-title: "DocumentFragment: prepend() method"
 short-title: prepend()
 slug: Web/API/DocumentFragment/prepend
 page-type: web-api-instance-method
@@ -14,14 +8,11 @@ browser-compat: api.DocumentFragment.prepend
 
 {{APIRef("DOM")}}
 
-The **`DocumentFragment.prepend()`** method
-inserts a set of {{domxref("Node")}} objects or strings before
-the first child of the document fragment. Strings
-are inserted as equivalent {{domxref("Text")}} nodes.
+**`DocumentFragment.prepend()`** 方法将一组 {{domxref("Node")}} 对象或字符串插入到文档片段的第一个子节点之前。字符串会作为等效的 {{domxref("Text")}} 节点插入。
 
-This method prepends a child to a `DocumentFragment`. To prepend to an arbitrary element in the tree, see {{domxref("Element.prepend()")}}.
+此方法会将一个子节点前置到 `DocumentFragment` 中。若要向前置到树中的任意元素，请参阅 {{domxref("Element.prepend()")}}。
 
-## Syntax
+## 语法
 
 ```js-nolint
 prepend(param1)
@@ -29,23 +20,23 @@ prepend(param1, param2)
 prepend(param1, param2, /* …, */ paramN)
 ```
 
-### Parameters
+### 参数
 
 - `param1`, …, `paramN`
-  - : A set of {{domxref("Node")}} objects or strings to insert.
+  - : 要插入的一组 {{domxref("Node")}} 对象或字符串。
 
-### Return value
+### 返回值
 
-None ({{jsxref("undefined")}}).
+无（{{jsxref("undefined")}}）。
 
-### Exceptions
+### 异常
 
 - `HierarchyRequestError` {{DOMxRef("DOMException")}}
-  - : Thrown when the node cannot be inserted at the specified point in the hierarchy.
+  - : 当节点无法插入到层级中的指定位置时抛出。
 
-## Examples
+## 示例
 
-### Prepending an element to a document fragment
+### 将元素前置到文档片段
 
 ```js
 let fragment = new DocumentFragment();
@@ -57,15 +48,15 @@ fragment.prepend(div);
 fragment.children; // HTMLCollection [<div>, <p>]
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
 - {{domxref("DocumentFragment.append()")}}
 - {{domxref("Element.prepend()")}}
