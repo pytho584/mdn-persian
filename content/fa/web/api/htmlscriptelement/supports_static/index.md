@@ -1,11 +1,5 @@
 ---
 title: "HTMLScriptElement: supports() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLScriptElement/supports_static"
-status: "needs-translation"
----
-
----
-title: "HTMLScriptElement: supports() static method"
 short-title: supports()
 slug: Web/API/HTMLScriptElement/supports_static
 page-type: web-api-static-method
@@ -14,40 +8,40 @@ browser-compat: api.HTMLScriptElement.supports_static
 
 {{APIRef("HTML DOM")}}
 
-The **`supports()`** static method of the {{domxref("HTMLScriptElement")}} interface provides a simple and consistent method to feature-detect what types of scripts are supported by the user agent.
+متد ایستا (static) **`supports()`** در رابط {{domxref("HTMLScriptElement")}} یک روش ساده و یکپارچه برای تشخیص ویژگی (feature-detection) نوع اسکریپت‌هایی که توسط عامل کاربر (user agent) پشتیبانی می‌شوند، ارائه می‌دهد.
 
-The method is expected to return `true` for classic and module scripts, which are supported by most modern browsers.
+انتظار می‌رود این متد برای اسکریپت‌های کلاسیک (classic) و ماژول (module) که توسط بیشتر مرورگرهای مدرن پشتیبانی می‌شوند، مقدار `true` را بازگرداند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 HTMLScriptElement.supports(type)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string literal that indicates the type of script for which support is to be checked.
-    Supported values are case sensitive, and include:
+  - : یک رشته (string literal) که نوع اسکریپتی را که باید پشتیبانی آن بررسی شود، مشخص می‌کند.
+    مقادیر پشتیبانی‌شده به حروف بزرگ و کوچک حساس هستند (case sensitive) و شامل موارد زیر می‌باشند:
     - `"classic"`
-      - : Test if _classic scripts_ are supported.
-        "Classic" scripts are the normal/traditional JavaScript files that predate module scripts.
+      - : بررسی می‌کند که آیا _اسکریپت‌های کلاسیک_ پشتیبانی می‌شوند.
+        اسکریپت‌های «کلاسیک» همان فایل‌های جاوااسکریپت معمولی/سنتی هستند که پیش از اسکریپت‌های ماژول وجود داشتند.
     - `"module"`
-      - : Test if [module scripts](/en-US/docs/Web/JavaScript/Guide/Modules) are supported.
+      - : بررسی می‌کند که آیا [اسکریپت‌های ماژول](/en-US/docs/Web/JavaScript/Guide/Modules) پشتیبانی می‌شوند.
     - `"importmap"`
-      - : Test if [import maps](/en-US/docs/Web/HTML/Reference/Elements/script/type/importmap) are supported.
+      - : بررسی می‌کند که آیا [نقشه‌های واردات (import maps)](/en-US/docs/Web/HTML/Reference/Elements/script/type/importmap) پشتیبانی می‌شوند.
     - `"speculationrules"`
-      - : Test if [speculation rules](/en-US/docs/Web/API/Speculation_Rules_API) are supported and enabled.
+      - : بررسی می‌کند که آیا [قوانین حدس (speculation rules)](/en-US/docs/Web/API/Speculation_Rules_API) پشتیبانی و فعال هستند.
 
-    Any other value will cause the method to return `false`.
+    هر مقدار دیگری باعث می‌شود متد `false` را بازگرداند.
 
-### Return value
+### مقدار بازگشتی
 
-Returns `true` if the indicated script type is supported and `false` otherwise.
+در صورت پشتیبانی از نوع اسکریپت مشخص‌شده، مقدار `true` و در غیر این صورت `false` را بازمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-The code below shows how to check if `HTMLScriptElement.supports()` is defined, and if so, to use it to test whether particular types of scripts are supported.
+کد زیر نشان می‌دهد که چگونه می‌توان بررسی کرد که آیا `HTMLScriptElement.supports()` تعریف شده است و در صورت تعریف، از آن برای تست پشتیبانی از انواع خاص اسکریپت‌ها استفاده کرد.
 
 ```js
 const log = document.getElementById("log");
@@ -76,17 +70,17 @@ if (typeof HTMLScriptElement.supports === "undefined") {
 
 {{ EmbedLiveSample('Examples') }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLScriptElement")}}
 - {{HTMLElement("script")}}
-- [JavaScript modules](/en-US/docs/Web/JavaScript/Guide/Modules)
-- {{domxref("Worker/Worker","Worker")}} constructor
+- [ماژول‌های جاوااسکریپت](/en-US/docs/Web/JavaScript/Guide/Modules)
+- سازنده {{domxref("Worker/Worker","Worker")}}
