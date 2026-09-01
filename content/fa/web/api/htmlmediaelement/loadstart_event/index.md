@@ -1,11 +1,5 @@
 ---
 title: "HTMLMediaElement: loadstart event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/loadstart_event"
-status: "needs-translation"
----
-
----
-title: "HTMLMediaElement: loadstart event"
 short-title: loadstart
 slug: Web/API/HTMLMediaElement/loadstart_event
 page-type: web-api-event
@@ -14,11 +8,11 @@ browser-compat: api.HTMLMediaElement.loadstart_event
 
 {{APIRef("HTML DOM")}}
 
-The **`loadstart`** event is fired when the browser has started to load a resource.
+رویداد **`loadstart`** زمانی رخ می‌دهد که مرورگر بارگذاری یک منبع را آغاز کرده است.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در متدهایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("loadstart", (event) => { })
@@ -26,13 +20,13 @@ addEventListener("loadstart", (event) => { })
 onloadstart = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## مثال‌ها
 
-### Live example
+### مثال زنده
 
 #### HTML
 
@@ -114,19 +108,19 @@ loadVideo.addEventListener("click", () => {
 });
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Live_example', '100%', '200px') }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLAudioElement")}}
 - {{domxref("HTMLVideoElement")}}
