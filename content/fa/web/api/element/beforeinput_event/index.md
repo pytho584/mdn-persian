@@ -1,7 +1,5 @@
 ---
 title: "Element: beforeinput event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/beforeinput_event"
-status: "needs-translation"
 ---
 
 ---
@@ -14,18 +12,18 @@ browser-compat: api.Element.beforeinput_event
 
 {{APIRef("UI Events")}}
 
-The DOM **`beforeinput`** event fires when the value of an {{HTMLElement("input")}} or {{HTMLElement("textarea")}} element is about to be modified. But in contrast to the {{domxref("Element/input_event", "input")}} event, it does not fire on the {{HTMLElement("select")}} element. The event also applies to elements with {{domxref("HTMLElement.contentEditable", "contenteditable")}} enabled, and to any element when {{domxref("Document.designMode", "designMode")}} is turned on.
+رویداد **`beforeinput`** در DOM زمانی فعال می‌شود که مقدار یک عنصر {{HTMLElement("input")}} یا {{HTMLElement("textarea")}} در آستانه تغییر باشد. اما بر خلاف رویداد {{domxref("Element/input_event", "input")}}، روی عنصر {{HTMLElement("select")}} فعال نمی‌شود. این رویداد همچنین برای عناصری که {{domxref("HTMLElement.contentEditable", "contenteditable")}} در آن‌ها فعال است و همچنین برای هر عنصری وقتی {{domxref("Document.designMode", "designMode")}} روشن باشد، اعمال می‌شود.
 
-This allows web apps to override text edit behavior before the browser modifies the DOM tree, and provides more control over input events to improve performance.
+این امکان را به برنامه‌های وب می‌دهد تا قبل از اینکه مرورگر درخت DOM را تغییر دهد، رفتار ویرایش متن را بازنویسی کنند و کنترل بیشتری روی رویدادهای ورودی برای بهبود کارایی فراهم می‌کند.
 
-In the case of `contenteditable` and `designMode`, the event target is the **editing host**. If these properties apply to multiple elements, the editing host is the nearest ancestor element whose parent isn't editable.
+در مورد `contenteditable` و `designMode`، هدف رویداد **میزبان ویرایش** است. اگر این ویژگی‌ها روی چند عنصر اعمال شوند، میزبان ویرایش نزدیک‌ترین عنصر جد است که والد آن قابل ویرایش نیست.
 
 > [!NOTE]
-> Not every user modification results in `beforeinput` firing. Also the event may fire but be non-cancelable. This may happen when the modification is done by autocomplete, by accepting a correction from a spell checker, by password manager autofill, by {{Glossary("Input method editor", "IME")}}, or in other ways. The details vary by browser and OS. To override the edit behavior in all situations, the code needs to handle the `input` event and possibly revert any modifications that were not handled by the `beforeinput` handler. See bugs [1673558](https://bugzil.la/1673558) and [1763669](https://bugzil.la/1763669).
+> هر تغییری توسط کاربر منجر به فعال شدن `beforeinput` نمی‌شود. همچنین ممکن است رویداد فعال شود اما قابل لغو (cancelable) نباشد. این اتفاق ممکن است زمانی رخ دهد که تغییر توسط تکمیل خودکار (autocomplete)، پذیرش اصلاحیه از غلط‌یاب املایی، تکمیل خودکار مدیریت رمز عبور، توسط {{Glossary("Input method editor", "IME")}} یا به روش‌های دیگر انجام شود. جزئیات بسته به مرورگر و سیستم‌عامل متفاوت است. برای بازنویسی رفتار ویرایش در همه شرایط، کد باید رویداد `input` را مدیریت کند و احتمالاً تغییراتی را که توسط کنترل‌کننده `beforeinput` مدیریت نشده‌اند، بازگرداند. به باگ‌های [1673558](https://bugzil.la/1673558) و [1763669](https://bugzil.la/1763669) مراجعه کنید.
 
-## Syntax
+## سینتکس
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("beforeinput", (event) => { })
@@ -33,17 +31,17 @@ addEventListener("beforeinput", (event) => { })
 onbeforeinput = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-An {{domxref("InputEvent")}}. Inherits from {{domxref("UIEvent")}}.
+یک {{domxref("InputEvent")}}. به ارث‌برده شده از {{domxref("UIEvent")}}.
 
 {{InheritanceDiagram("InputEvent")}}
 
-## Examples
+## مثال‌ها
 
-### Feature Detection
+### تشخیص ویژگی
 
-The following function returns true if `beforeinput`, and thus `getTargetRanges`, is supported.
+تابع زیر مقدار `true` را برمی‌گرداند اگر `beforeinput` و بنابراین `getTargetRanges` پشتیبانی شود.
 
 ```js
 function isBeforeInputEventAvailable() {
@@ -54,9 +52,9 @@ function isBeforeInputEventAvailable() {
 }
 ```
 
-### Simple logger
+### ثبت‌کننده ساده
 
-This example logs the current value of the element, immediately before replacing that value with the new one applied to the {{HtmlElement("input")}} element.
+این مثال مقدار فعلی عنصر را، بلافاصله قبل از جایگزینی آن مقدار با مقدار جدید اعمال‌شده روی عنصر {{HtmlElement("input")}}، ثبت می‌کند.
 
 #### HTML
 
@@ -78,18 +76,18 @@ function updateValue(e) {
 }
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Simple_logger")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- Related event: {{domxref("Element/input_event", "input")}}
+- رویداد مرتبط: {{domxref("Element/input_event", "input")}}
