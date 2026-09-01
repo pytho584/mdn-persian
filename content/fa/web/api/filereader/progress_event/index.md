@@ -1,7 +1,5 @@
 ---
 title: "FileReader: progress event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileReader/progress_event"
-status: "needs-translation"
 ---
 
 ---
@@ -14,13 +12,13 @@ browser-compat: api.FileReader.progress_event
 
 {{APIRef("File API")}}{{AvailableInWorkers}}
 
-The **`progress`** event of the {{domxref("FileReader")}} interface is fired periodically as the `FileReader` reads data.
+رویداد **`progress`** از رابط {{domxref("FileReader")}} به‌صورت دوره‌ای، هنگام خواندن داده‌ها توسط `FileReader`، صادر می‌شود.
 
-This event is not cancelable and does not bubble.
+این رویداد قابل لغو نیست و bubble نمی‌شود.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+نام رویداد را در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} به‌کار ببرید، یا یک ویژگی مدیریت رویداد (event handler) تنظیم کنید.
 
 ```js-nolint
 addEventListener("progress", (event) => { })
@@ -28,15 +26,15 @@ addEventListener("progress", (event) => { })
 onprogress = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("ProgressEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("ProgressEvent")}} که از {{domxref("Event")}} به ارث می‌رسد.
 
 {{InheritanceDiagram("ProgressEvent")}}
 
-## Examples
+## مثال‌ها
 
-### Live example
+### مثال زنده
 
 #### HTML
 
@@ -135,18 +133,18 @@ function handleSelected(e) {
 fileInput.addEventListener("change", handleSelected);
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Live_example', '100%', '300px') }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- Related events: {{domxref("FileReader.loadstart_event", "loadstart")}}, {{domxref("FileReader.loadend_event", "loadend")}}, {{domxref("FileReader.load_event", "load")}}, {{domxref("FileReader.error_event", "error")}}, {{domxref("FileReader.abort_event", "abort")}}
+- رویدادهای مرتبط: {{domxref("FileReader.loadstart_event", "loadstart")}}, {{domxref("FileReader.loadend_event", "loadend")}}, {{domxref("FileReader.load_event", "load")}}, {{domxref("FileReader.error_event", "error")}}, {{domxref("FileReader.abort_event", "abort")}}
