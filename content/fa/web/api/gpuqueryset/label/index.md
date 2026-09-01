@@ -1,11 +1,5 @@
 ---
 title: "GPUQuerySet: label property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUQuerySet/label"
-status: "needs-translation"
----
-
----
-title: "GPUQuerySet: label property"
 short-title: label
 slug: Web/API/GPUQuerySet/label
 page-type: web-api-instance-property
@@ -14,18 +8,17 @@ browser-compat: api.GPUQuerySet.label
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`label`** property of the
-{{domxref("GPUQuerySet")}} interface is a string providing a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+ویژگی **`label`** از رابط {{domxref("GPUQuerySet")}} یک رشته است که برچسبی را فراهم می‌کند که می‌توان از آن برای شناسایی شیء استفاده کرد، برای مثال در پیام‌های {{domxref("GPUError")}} یا هشدارهای کنسول.
 
-This can be set by providing a `label` property in the descriptor object passed into the originating {{domxref("GPUDevice.createQuerySet()")}} call, or you can get and set it directly on the `GPUQuerySet` object.
+این ویژگی می‌تواند با ارائهٔ یک ویژگی `label` در شیء توصیف‌کننده‌ای که به فراخوانی {{domxref("GPUDevice.createQuerySet()")}} اصلی ارسال می‌شود، تنظیم گردد، یا می‌توانید آن را مستقیماً روی شیء `GPUQuerySet` دریافت و تنظیم کنید.
 
-## Value
+## مقدار
 
-A string. If this has not been previously set as described above, it will be an empty string.
+یک رشته. اگر این مقدار قبلاً به‌صورت گفته شده تنظیم نشده باشد، یک رشتهٔ خالی خواهد بود.
 
-## Examples
+## نمونه‌ها
 
-Setting and getting a label via `GPUQuerySet.label`:
+تنظیم و دریافت یک برچسب از طریق `GPUQuerySet.label`:
 
 ```js
 const querySet = device.createQuerySet({
@@ -38,7 +31,7 @@ querySet.label = "my_query_set";
 console.log(querySet.label); // "my_query_set"
 ```
 
-Setting a label via the originating {{domxref("GPUDevice.createQuerySet()")}} call, and then getting it via `GPUQuerySet.label`:
+تنظیم یک برچسب از طریق فراخوانی {{domxref("GPUDevice.createQuerySet()")}} اصلی و سپس دریافت آن از طریق `GPUQuerySet.label`:
 
 ```js
 const querySet = device.createQuerySet({
@@ -50,14 +43,14 @@ const querySet = device.createQuerySet({
 console.log(querySet.label); // "my_query_set"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
