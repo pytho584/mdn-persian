@@ -1,10 +1,4 @@
 ---
-title: "GPUBindGroupLayout"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUBindGroupLayout"
-status: "needs-translation"
----
-
----
 title: GPUBindGroupLayout
 slug: Web/API/GPUBindGroupLayout
 page-type: web-api-interface
@@ -13,25 +7,25 @@ browser-compat: api.GPUBindGroupLayout
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`GPUBindGroupLayout`** interface of the {{domxref("WebGPU API", "WebGPU API", "", "nocode")}} defines the structure and purpose of related GPU resources such as buffers that will be used in a pipeline, and is used as a template when creating {{domxref("GPUBindGroup")}}s.
+رابط **`GPUBindGroupLayout`** در {{domxref("WebGPU API", "WebGPU API", "", "nocode")}} ساختار و هدف منابع مرتبط با GPU مانند بافرهایی که در یک پایپلاین استفاده می‌شوند را تعریف می‌کند و به عنوان یک الگو برای ایجاد {{domxref("GPUBindGroup")}}ها به کار می‌رود.
 
-A `GPUBindGroupLayout` object instance is created using the {{domxref("GPUDevice.createBindGroupLayout()")}} method.
+یک نمونه از شیء `GPUBindGroupLayout` با استفاده از متد {{domxref("GPUDevice.createBindGroupLayout()")}} ایجاد می‌شود.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("GPUBindGroupLayout.label", "label")}}
-  - : A string providing a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+  - : یک رشته که برچسبی برای شناسایی شیء فراهم می‌کند، مثلاً در پیام‌های {{domxref("GPUError")}} یا هشدارهای کنسول.
 
-## Examples
+## مثال‌ها
 
 > [!NOTE]
-> The [WebGPU samples](https://webgpu.github.io/webgpu-samples/) feature many more examples.
+> [نمونه‌های WebGPU](https://webgpu.github.io/webgpu-samples/) شامل مثال‌های بسیار بیشتری هستند.
 
-### Basic example
+### مثال پایه
 
-Our [basic compute demo](https://mdn.github.io/dom-examples/webgpu-compute-demo/) shows an example of creating a bind group layout and then using that as a template when creating a bind group.
+[نمونه محاسبات پایه](https://mdn.github.io/dom-examples/webgpu-compute-demo/) ما نحوه ایجاد یک طرح بایند گروه و سپس استفاده از آن به عنوان الگو برای ایجاد یک بایند گروه را نشان می‌دهد.
 
 ```js
 // …
@@ -63,14 +57,14 @@ const bindGroup = device.createBindGroup({
 // …
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
