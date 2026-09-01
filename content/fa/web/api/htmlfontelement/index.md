@@ -1,10 +1,4 @@
 ---
-title: "HTMLFontElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLFontElement"
-status: "needs-translation"
----
-
----
 title: HTMLFontElement
 slug: Web/API/HTMLFontElement
 page-type: web-api-interface
@@ -15,33 +9,33 @@ browser-compat: api.HTMLFontElement
 
 {{APIRef("HTML DOM")}}{{Deprecated_Header}}
 
-Implements the document object model (DOM) representation of the font element. The HTML Font Element {{HTMLElement("font")}} defines the font size, font face and color of text.
+این رابط، نمایش مدل شیء سند (DOM) عنصر font را پیاده‌سازی می‌کند. عنصر HTML Font ({{HTMLElement("font")}}) اندازه فونت، نوع فونت و رنگ متن را تعریف می‌کند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("HTMLElement")}}._
+ویژگی‌ها را از والد خود، {{domxref("HTMLElement")}}، به ارث می‌برد.
 
 - {{domxref("HTMLFontElement.color")}} {{Deprecated_Inline}}
-  - : A string that reflects the [`color`](/en-US/docs/Web/HTML/Reference/Elements/font#color) HTML attribute, containing either a named color or a color specified in the hexadecimal #RRGGBB format.
+  - : رشته‌ای که ویژگی HTML [`color`](/en-US/docs/Web/HTML/Reference/Elements/font#color) را منعکس می‌کند؛ شامل یک رنگ نام‌گذاری‌شده یا رنگی که در قالب هگزادسیمال #RRGGBB مشخص شده است.
 - {{domxref("HTMLFontElement.face")}} {{Deprecated_Inline}}
-  - : A string that reflects the [`face`](/en-US/docs/Web/HTML/Reference/Elements/font#face) HTML attribute, containing a comma-separated list of one or more font names.
+  - : رشته‌ای که ویژگی HTML [`face`](/en-US/docs/Web/HTML/Reference/Elements/font#face) را منعکس می‌کند؛ شامل فهرستی از یک یا چند نام فونت که با کاما از هم جدا شده‌اند.
 - {{domxref("HTMLFontElement.size")}} {{Deprecated_Inline}}
-  - : A string that reflects the [`size`](/en-US/docs/Web/HTML/Reference/Elements/font#size) HTML attribute, containing either a font size ranging from 1 to 7 or a number relative to the default value 3, for example -2 or +1.
+  - : رشته‌ای که ویژگی HTML [`size`](/en-US/docs/Web/HTML/Reference/Elements/font#size) را منعکس می‌کند؛ شامل اندازه فونتی از ۱ تا ۷ یا عددی نسبت به مقدار پیش‌فرض ۳، برای مثال -2 یا +1.
 
-## Instance methods
+## روش‌های نمونه
 
-_No specific method; inherits methods from its parent, {{domxref("HTMLElement")}}._
+روش خاصی ندارد؛ روش‌ها را از والد خود، {{domxref("HTMLElement")}}، به ارث می‌برد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The HTML element implementing this interface: {{HTMLElement("font")}}.
+- عنصر HTML که این رابط را پیاده‌سازی می‌کند: {{HTMLElement("font")}}.
