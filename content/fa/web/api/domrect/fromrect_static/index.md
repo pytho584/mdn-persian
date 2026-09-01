@@ -1,11 +1,5 @@
 ---
 title: "DOMRect: fromRect() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMRect/fromRect_static"
-status: "needs-translation"
----
-
----
-title: "DOMRect: fromRect() static method"
 short-title: fromRect()
 slug: Web/API/DOMRect/fromRect_static
 page-type: web-api-static-method
@@ -14,35 +8,32 @@ browser-compat: api.DOMRect.fromRect_static
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The **`fromRect()`** static method of the
-{{domxref("DOMRect")}} object creates a new `DOMRect`
-object with a given location and dimensions.
+متد ایستای **`fromRect()`** از شیء {{domxref("DOMRect")}} یک شیء `DOMRect` جدید با موقعیت و ابعاد مشخص‌شده می‌سازد.
 
-## Syntax
+## نحو
 
 ```js-nolint
 DOMRect.fromRect()
 DOMRect.fromRect(rectangle)
 ```
 
-### Parameters
+### پارامترها
 
 - `rectangle` {{optional_inline}}
-  - : An object specifying the location and dimensions of a rectangle. All properties
-    default to `0`. The properties are:
-    - `x`: The coordinate of the left side of the rectangle.
-    - `y`: The coordinate of the top side of the rectangle.
-    - `width`: The width of the rectangle.
-    - `height`: The height of the rectangle.
+  - : شیءای که موقعیت و ابعاد یک مستطیل را مشخص می‌کند. همهٔ ویژگی‌ها به‌صورت پیش‌فرض `0` هستند. ویژگی‌ها عبارت‌اند از:
+    - `x`: مختصات سمت چپ مستطیل.
+    - `y`: مختصات سمت بالای مستطیل.
+    - `width`: عرض مستطیل.
+    - `height`: ارتفاع مستطیل.
 
-### Return value
+### مقدار بازگشتی
 
-An instance of {{domxref("DOMRect")}}.
+یک نمونه از {{domxref("DOMRect")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
