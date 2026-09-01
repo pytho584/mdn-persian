@@ -1,11 +1,5 @@
 ---
 title: "DOMRectReadOnly: DOMRectReadOnly() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly/DOMRectReadOnly"
-status: "needs-translation"
----
-
----
-title: "DOMRectReadOnly: DOMRectReadOnly() constructor"
 short-title: DOMRectReadOnly()
 slug: Web/API/DOMRectReadOnly/DOMRectReadOnly
 page-type: web-api-constructor
@@ -14,30 +8,28 @@ browser-compat: api.DOMRectReadOnly.DOMRectReadOnly
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The **`DOMRectReadOnly()`** constructor creates a new {{domxref("DOMRectReadOnly")}} object.
+سازنده **`DOMRectReadOnly()`** یک شیء جدید {{domxref("DOMRectReadOnly")}} ایجاد می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 new DOMRectReadOnly(x, y, width, height)
 ```
 
-### Parameters
+### پارامترها
 
 - `x`
-  - : The `x` coordinate of the `DOMRectReadOnly`'s
-    origin.
+  - : مختصات `x` مبدأ `DOMRectReadOnly`.
 - `y`
-  - : The `y` coordinate of the `DOMRectReadOnly`'s
-    origin.
+  - : مختصات `y` مبدأ `DOMRectReadOnly`.
 - `width`
-  - : The width of the `DOMRectReadOnly`.
+  - : عرض `DOMRectReadOnly`.
 - `height`
-  - : The height of the `DOMRectReadOnly`.
+  - : ارتفاع `DOMRectReadOnly`.
 
-## Examples
+## مثال‌ها
 
-To create a new `DOMRectReadOnly`, you could run a line of code like so:
+برای ایجاد یک `DOMRectReadOnly` جدید، می‌توانید خط کدی مانند زیر اجرا کنید:
 
 ```js
 const myDOMRect = new DOMRectReadOnly(0, 0, 100, 100);
@@ -45,15 +37,15 @@ const myDOMRect = new DOMRectReadOnly(0, 0, 100, 100);
 // DOMRectReadOnly { x: 0, y: 0, width: 100, height: 100, top: 0, right: 100, bottom: 100, left: 0 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("DOMPoint")}}
 - {{domxref("DOMRect")}}
