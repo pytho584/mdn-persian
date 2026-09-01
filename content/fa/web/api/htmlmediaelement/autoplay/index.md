@@ -1,11 +1,5 @@
 ---
 title: "HTMLMediaElement: autoplay property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/autoplay"
-status: "needs-translation"
----
-
----
-title: "HTMLMediaElement: autoplay property"
 short-title: autoplay
 slug: Web/API/HTMLMediaElement/autoplay
 page-type: web-api-instance-property
@@ -14,39 +8,23 @@ browser-compat: api.HTMLMediaElement.autoplay
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLMediaElement.autoplay`**
-property reflects the [`autoplay`](/en-US/docs/Web/HTML/Reference/Elements/video#autoplay) HTML attribute, indicating
-whether playback should automatically begin as soon as enough media is available to do
-so without interruption.
+ویژگی **`HTMLMediaElement.autoplay`** منعکس‌کنندهٔ ویژگی HTML [`autoplay`](/en-US/docs/Web/HTML/Reference/Elements/video#autoplay) است که نشان می‌دهد آیا پخش باید به‌محض در دسترس بودن رسانه‌ی کافی برای انجام آن بدون وقفه، به‌طور خودکار آغاز شود یا خیر.
 
-A media element whose source is a {{domxref("MediaStream")}} and whose
-`autoplay` property is `true` will begin playback when it becomes
-active (that is, when {{domxref("MediaStream.active")}} becomes `true`).
+یک عنصر رسانه‌ای که منبع آن یک {{domxref("MediaStream")}} است و ویژگی `autoplay` آن `true` باشد، هنگامی که فعال شود (یعنی زمانی که {{domxref("MediaStream.active")}} به `true` تبدیل شود)، پخش را آغاز خواهد کرد.
 
 > [!NOTE]
-> Sites which automatically play audio (or videos with an audio
-> track) can be an unpleasant experience for users, so it should be avoided when
-> possible. If you must offer autoplay functionality, you should make it opt-in
-> (requiring a user to specifically enable it). However, autoplay can be useful when
-> creating media elements whose source will be set at a later time, under user control.
+> سایت‌هایی که به‌طور خودکار صدا (یا ویدئوهای دارای مسیر صوتی) را پخش می‌کنند، می‌توانند تجربه‌ای ناخوشایند برای کاربران باشند، بنابراین در صورت امکان باید از آن خودداری کرد. اگر مجبور به ارائه قابلیت پخش خودکار هستید، باید آن را به‌صورت انتخابی (opt-in) قرار دهید (یعنی کاربر باید به‌طور خاص آن را فعال کند). با این حال، پخش خودکار می‌تواند هنگام ایجاد عناصر رسانه‌ای که منبع آن‌ها بعداً و تحت کنترل کاربر تنظیم می‌شود، مفید باشد.
 
-For a much more in-depth look at autoplay, autoplay blocking, and how to respond when
-autoplay is blocked by the user's browser, see our article [Autoplay guide for media and Web Audio APIs](/en-US/docs/Web/Media/Guides/Autoplay).
+برای بررسی عمیق‌تر پخش خودکار، مسدودسازی پخش خودکار و نحوه واکنش زمانی که پخش خودکار توسط مرورگر کاربر مسدود می‌شود، مقالهٔ [راهنمای پخش خودکار برای رسانه و APIهای Web Audio](/en-US/docs/Web/Media/Guides/Autoplay) را ببینید.
 
-## Value
+## مقدار
 
-A boolean value which is `true` if the media element will
-begin playback as soon as enough content has loaded to allow it to do so without
-interruption.
+یک مقدار بولی که اگر عنصر رسانه به‌محض بارگذاری محتوای کافی برای انجام پخش بدون وقفه، پخش را آغاز کند، `true` است.
 
 > [!NOTE]
-> Some browsers offer users the ability to override
-> `autoplay` in order to prevent disruptive audio or video from playing
-> without permission or in the background. Do not rely on `autoplay` actually
-> starting playback and instead use {{domxref("HTMLMediaElement.play_event", 'play')}}
-> event.
+> برخی مرورگرها به کاربران امکان بازنویسی (override) `autoplay` را می‌دهند تا از پخش صدا یا ویدئوی مزاحم بدون اجازه یا در پس‌زمینه جلوگیری کنند. به شروع واقعی پخش توسط `autoplay` اعتماد نکنید و به جای آن از رویداد {{domxref("HTMLMediaElement.play_event", 'play')}} استفاده کنید.
 
-## Examples
+## نمونه‌ها
 
 ```html
 <video id="video" controls>
@@ -56,20 +34,20 @@ interruption.
 ```
 
 ```js
-// Disable autoplay (recommended)
-// false is the default value
+// غیرفعال کردن پخش خودکار (توصیه می‌شود)
+// false مقدار پیش‌فرض است
 document.querySelector("#video").autoplay = false;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("HTMLMediaElement")}}: Interface used to define the `HTMLMediaElement.autoplay` property
-- {{HTMLElement("audio")}}, {{HTMLElement("video")}}
+- {{domxref("HTMLMediaElement")}}: رابط (interface) مورد استفاده برای تعریف ویژگی `HTMLMediaElement.autoplay`
+- {{HTMLElement("audio")}}، {{HTMLElement("video")}}
