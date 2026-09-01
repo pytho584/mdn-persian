@@ -1,11 +1,5 @@
 ---
 title: "ExtendableCookieChangeEvent: ExtendableCookieChangeEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ExtendableCookieChangeEvent/ExtendableCookieChangeEvent"
-status: "needs-translation"
----
-
----
-title: "ExtendableCookieChangeEvent: ExtendableCookieChangeEvent() constructor"
 short-title: ExtendableCookieChangeEvent()
 slug: Web/API/ExtendableCookieChangeEvent/ExtendableCookieChangeEvent
 page-type: web-api-constructor
@@ -14,40 +8,37 @@ browser-compat: api.ExtendableCookieChangeEvent.ExtendableCookieChangeEvent
 
 {{securecontext_header}}{{APIRef("Cookie Store API")}}{{AvailableInWorkers("service")}}
 
-The **`ExtendableCookieChangeEvent()`** constructor creates a new {{domxref("ExtendableCookieChangeEvent")}} object
-which is the event type passed to {{domxref("ServiceWorkerGlobalScope/cookiechange_event", "cookiechange")}} event fired at the {{domxref("ServiceWorkerGlobalScope")}} when any cookie changes occur which match the service worker's cookie change subscription list.
-This constructor is called by the browser when a change event occurs.
+سازندهٔ **`ExtendableCookieChangeEvent()`** یک شیء جدید از نوع {{domxref("ExtendableCookieChangeEvent")}} می‌سازد. این نوع رویداد، همان رویدادی است که به {{domxref("ServiceWorkerGlobalScope/cookiechange_event", "cookiechange")}} ارسال می‌شود؛ رویدادی که در {{domputed("ServiceWorkerGlobalScope")}} هنگام تغییر هر کوکی‌ای که با فهرست اشتراک تغییر کوکی سرویس‌کارگر مطابقت دارد، رخ می‌دهد. این سازنده توسط مرورگر هنگام وقوع یک تغییر فراخوانی می‌شود.
 
 > [!NOTE]
-> This event constructor is generally not needed for production websites. It's primary use is for tests that require an instance of this event.
+> به‌طور کلی، این سازندهٔ رویداد برای وب‌سایت‌های تولیدی مورد نیاز نیست. کاربرد اصلی آن در تست‌هایی است که به یک نمونه از این رویداد نیاز دارند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 new ExtendableCookieChangeEvent(type)
 new ExtendableCookieChangeEvent(type, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string with the name of the event.
-    It is case-sensitive and browsers always set it to `cookiechange`.
+  - : یک رشته شامل نام رویداد. این مقدار به حروف بزرگ و کوچک حساس است و مرورگرها همیشه آن را به `cookiechange` تنظیم می‌کنند.
 - `options` {{optional_inline}}
-  - : An object that, _in addition of the properties defined in {{domxref("ExtendableEvent/ExtendableEvent", "ExtendableEvent()")}}_, can have the following properties:
+  - : یک شیء که _علاوه بر ویژگی‌های تعریف‌شده در {{domxref("ExtendableEvent/ExtendableEvent", "ExtendableEvent()")}}_، می‌تواند دارای ویژگی‌های زیر باشد:
     - `changed` {{optional_inline}}
-      - : An array containing a changed cookie.
+      - : آرایه‌ای شامل یک کوکی تغییر یافته.
     - `deleted` {{optional_inline}}
-      - : An array containing a deleted cookie.
+      - : آرایه‌ای شامل یک کوکی حذف شده.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("ExtendableCookieChangeEvent")}} object.
+یک شیء جدید از نوع {{domxref("ExtendableCookieChangeEvent")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
