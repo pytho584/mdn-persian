@@ -1,11 +1,5 @@
 ---
 title: "HTMLElement: attachInternals() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/attachInternals"
-status: "needs-translation"
----
-
----
-title: "HTMLElement: attachInternals() method"
 short-title: attachInternals()
 slug: Web/API/HTMLElement/attachInternals
 page-type: web-api-instance-method
@@ -14,8 +8,7 @@ browser-compat: api.HTMLElement.attachInternals
 
 {{APIRef("Web Components")}}
 
-The **`HTMLElement.attachInternals()`** method returns an {{domxref("ElementInternals")}} object.
-This method allows a [custom element](/en-US/docs/Web/API/Web_components/Using_custom_elements) to participate in HTML forms. The `ElementInternals` interface provides utilities for working with these elements in the same way you would work with any standard HTML form element, and also exposes the [Accessibility Object Model](https://wicg.github.io/aom/explainer.html) to the element.
+متد **`HTMLElement.attachInternals()`** یک شیء {{domxref("ElementInternals")}} برمی‌گرداند. این متد به یک [عنصر سفارشی](/en-US/docs/Web/API/Web_components/Using_custom_elements) اجازه می‌دهد در فرم‌های HTML شرکت کند. رابط `ElementInternals` ابزارهایی برای کار با این عناصر به همان روشی که با هر عنصر فرم استاندارد HTML کار می‌کنید فراهم می‌کند و همچنین [Accessibility Object Model](https://wicg.github.io/aom/explainer.html) (مدل شیء دسترسی‌پذیری) را در معرض عنصر قرار می‌دهد.
 
 ## Syntax
 
@@ -25,24 +18,24 @@ attachInternals()
 
 ### Parameters
 
-None.
+هیچکدام.
 
 ### Return value
 
-An {{domxref("ElementInternals")}} object.
+یک شیء {{domxref("ElementInternals")}}.
 
 ### Exceptions
 
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Thrown if the element is not a custom element.
+  - اگر عنصر یک عنصر سفارشی نباشد، پرتاب می‌شود.
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Thrown if the "internals" feature was disabled as part of the element definition.
+  - اگر ویژگی «internals» به عنوان بخشی از تعریف عنصر غیرفعال شده باشد، پرتاب می‌شود.
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Thrown if this method is called twice on the same element.
+  - اگر این متد دو بار روی یک عنصر فراخوانی شود، پرتاب می‌شود.
 
 ## Examples
 
-The following example demonstrates how to create a custom form-associated element with `HTMLElement.attachInternals`. The {{domxref("ElementInternals.form")}} property is then printed to the console to demonstrate that we have an {{domxref("ElementInternals")}} object.
+مثال زیر نحوه ایجاد یک عنصر سفارشی مرتبط با فرم با استفاده از `HTMLElement.attachInternals` را نشان می‌دهد. سپس ویژگی {{domxref("ElementInternals.form")}} در کنسول چاپ می‌شود تا نشان دهد که یک شیء {{domxref("ElementInternals")}} داریم.
 
 ```js
 class CustomCheckbox extends HTMLElement {
@@ -71,5 +64,5 @@ console.log(element.internals_.form);
 
 ## See also
 
-- [More capable form controls](https://web.dev/articles/more-capable-form-controls)
-- [Creating custom form controls with ElementInternals](https://css-tricks.com/creating-custom-form-controls-with-elementinternals/)
+- [کنترل‌های فرم توانمندتر](https://web.dev/articles/more-capable-form-controls)
+- [ایجاد کنترل‌های فرم سفارشی با ElementInternals](https://css-tricks.com/creating-custom-form-controls-with-elementinternals/)
