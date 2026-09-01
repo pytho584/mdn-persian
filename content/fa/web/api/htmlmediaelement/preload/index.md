@@ -1,7 +1,5 @@
 ---
 title: "HTMLMediaElement: preload property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/preload"
-status: "needs-translation"
 ---
 
 ---
@@ -14,24 +12,24 @@ browser-compat: api.HTMLMediaElement.preload
 
 {{APIRef("HTML DOM")}}
 
-The **`preload`** property of the {{domxref("HTMLMediaElement")}} interface is a string that provides a hint to the browser about what the author thinks will lead to the best user experience.
+ویژگی **`preload`** از رابط {{domxref("HTMLMediaElement")}} رشته‌ای است که به مرورگر راهنمایی می‌دهد درباره آنچه نویسنده فکر می‌کند بهترین تجربه کاربری را به همراه خواهد داشت.
 
-It reflects the `preload` attribute of the {{HTMLElement("audio")}} element and the {{HTMLElement("video")}} element.
+این ویژگی، صفت `preload` عنصر {{HTMLElement("audio")}} و عنصر {{HTMLElement("video")}} را بازتاب می‌دهد.
 
-## Value
+## مقدار
 
-A string. Possible values are as follows:
+یک رشته. مقادیر ممکن به این شرح است:
 
 - `none`
-  - : Indicates that the media should not be preloaded.
+  - : نشان می‌دهد که رسانه نباید از پیش بارگیری شود.
 - `metadata`
-  - : Indicates that only media metadata (e.g., length) is fetched.
+  - : نشان می‌دهد که تنها فرادادهٔ رسانه (مثلاً مدت‌زمان) دریافت می‌شود.
 - `auto`
-  - : Indicates that the whole media file can be downloaded, even if the user is not expected to use it.
-- _empty string_
-  - : A synonym of the `auto` value.
+  - : نشان می‌دهد که کل فایل رسانه می‌تواند دانلود شود، حتی اگر انتظار نمی‌رود کاربر از آن استفاده کند.
+- _رشتهٔ خالی_
+  - : مترادفی برای مقدار `auto` است.
 
-## Examples
+## مثال‌ها
 
 ```html
 <video
@@ -53,10 +51,10 @@ const el = document.getElementById("el");
 console.log(el.preload); // Output: "metadata"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
