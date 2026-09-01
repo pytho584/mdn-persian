@@ -1,11 +1,5 @@
 ---
 title: "EventSource: readyState property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EventSource/readyState"
-status: "needs-translation"
----
-
----
-title: "EventSource: readyState property"
 short-title: readyState
 slug: Web/API/EventSource/readyState
 page-type: web-api-instance-property
@@ -14,22 +8,20 @@ browser-compat: api.EventSource.readyState
 
 {{APIRef("Server Sent Events")}}{{AvailableInWorkers}}
 
-The **`readyState`** read-only property of the
-{{domxref("EventSource")}} interface returns a number representing the state of the
-connection.
+ویژگی فقط خواندنی **`readyState`** از رابط {{domxref("EventSource")}} عددی را برمی‌گرداند که وضعیت اتصال را نشان می‌دهد.
 
-## Value
+## مقدار
 
-A number which is one of the three possible state constants defined on the {{domxref("EventSource")}} interface:
+عددی که یکی از سه ثابت وضعیت ممکن تعریف‌شده در رابط {{domxref("EventSource")}} است:
 
 - `EventSource.CONNECTING` (0)
-  - : The connection is not yet open.
+  - : اتصال هنوز باز نشده است.
 - `EventSource.OPEN` (1)
-  - : The connection is open and ready to communicate.
+  - : اتصال باز است و آمادهٔ ارتباط.
 - `EventSource.CLOSED` (2)
-  - : The connection is closed or couldn't be opened.
+  - : اتصال بسته است یا نمی‌تواند باز شود.
 
-## Examples
+## مثال‌ها
 
 ```js
 const evtSource = new EventSource("sse.php");
@@ -37,16 +29,16 @@ console.log(evtSource.readyState);
 ```
 
 > [!NOTE]
-> You can find a full example on GitHub — see [Simple SSE demo using PHP](https://github.com/mdn/dom-examples/tree/main/server-sent-events).
+> می‌توانید یک مثال کامل را در GitHub پیدا کنید — به [دموی ساده SSE با استفاده از PHP](https://github.com/mdn/dom-examples/tree/main/server-sent-events) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("EventSource")}}
