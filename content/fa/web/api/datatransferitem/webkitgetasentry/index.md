@@ -1,11 +1,5 @@
 ---
 title: "DataTransferItem: webkitGetAsEntry() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DataTransferItem/webkitGetAsEntry"
-status: "needs-translation"
----
-
----
-title: "DataTransferItem: webkitGetAsEntry() method"
 short-title: webkitGetAsEntry()
 slug: Web/API/DataTransferItem/webkitGetAsEntry
 page-type: web-api-instance-method
@@ -14,11 +8,10 @@ browser-compat: api.DataTransferItem.webkitGetAsEntry
 
 {{APIRef("HTML Drag and Drop API")}}
 
-If the item described by the {{domxref("DataTransferItem")}} is a file, `webkitGetAsEntry()` returns a {{domxref("FileSystemFileEntry")}} or {{domxref("FileSystemDirectoryEntry")}} representing it. If the item isn't a file, `null` is returned.
+اگر آیتم توصیف‌شده توسط {{domxref("DataTransferItem")}} یک فایل باشد، `webkitGetAsEntry()` یک {{domxref("FileSystemFileEntry")}} یا {{domxref("FileSystemDirectoryEntry")}} متناظر با آن را بازمی‌گرداند. اگر آیتم فایل نباشد، مقدار `null` بازگردانده می‌شود.
 
 > [!NOTE]
-> This function is implemented as `webkitGetAsEntry()` in non-WebKit browsers including Firefox at this time; it may be renamed to
-> `getAsEntry()` in the future, so you should code defensively, looking for both.
+> این تابع هم‌اکنون در مرورگرهای غیر-WebKit از جمله Firefox با نام `webkitGetAsEntry()` پیاده‌سازی شده است؛ ممکن است در آینده به `getAsEntry()` تغییر نام دهد؛ بنابراین بهتر است کد خود را به‌صورت دفاعی بنویسید و هر دو حالت را پوشش دهید.
 
 ## Syntax
 
@@ -28,23 +21,19 @@ webkitGetAsEntry()
 
 ### Parameters
 
-None.
+هیچ‌کدام.
 
 ### Return value
 
-A {{domxref("FileSystemEntry")}}-based object describing the dropped item.
-This will be either {{domxref("FileSystemFileEntry")}} or {{domxref("FileSystemDirectoryEntry")}}.
-The method aborts and returns `null` if the dropped item isn't a file, or if the {{domxref("DataTransferItem")}} object is not in read or read/write mode.
+یک شیء مبتنی بر {{domxref("FileSystemEntry")}} که آیتم رهاشده را توصیف می‌کند. این مقدار یا {{domxref("FileSystemFileEntry")}} خواهد بود یا {{domxref("FileSystemDirectoryEntry")}}. اگر آیتم رهاشده یک فایل نباشد، یا اگر شیء {{domxref("DataTransferItem")}} در حالت خواندن یا خواندن/نوشتن نباشد، متد کار خود را متوقف کرده و مقدار `null` را بازمی‌گرداند.
 
 ## Examples
 
-In this example, a drop zone is created, which responds to the {{domxref("HTMLElement/drop_event", "drop")}} event
-by scanning through the dropped files and directories, outputting a hierarchical
-directory listing.
+در این مثال، یک ناحیه رهاسازی ایجاد می‌شود که به رویداد {{domxref("HTMLElement/drop_event", "drop")}} پاسخ می‌دهد و با اسکن فایل‌ها و پوشه‌های رهاشده، یک فهرست سلسله‌مراتبی از پوشه‌ها را به نمایش درمی‌آورد.
 
 ### HTML
 
-The HTML establishes the drop zone itself, which is a {{HTMLElement("div")}} element with the ID `"dropzone"`, and an unordered list element with the ID `"listing"`.
+بخش HTML، خودِ ناحیه رهاسازی را ایجاد می‌کند که یک عنصر {{HTMLElement("div")}} با شناسه `"dropzone"` است، و همچنین یک عنصر فهرست بدون ترتیب با شناسه `"listing"`.
 
 ```html
 <p>Drag files and/or directories to the box below!</p>
@@ -60,7 +49,7 @@ The HTML establishes the drop zone itself, which is a {{HTMLElement("div")}} ele
 
 ### CSS
 
-The styles used by the example are shown here.
+استایل‌های استفاده‌شده در این مثال در ادامه نشان داده شده‌اند.
 
 ```css
 #dropzone {
@@ -94,12 +83,10 @@ body {
 
 ### JavaScript
 
-First, let's look at the recursive `scanFiles()` function.
-This function takes as input a {{domxref("FileSystemEntry")}} representing an entry in the file system to be scanned and processed (the `item` parameter), and an element into which to insert the list of contents (the `container` parameter).
+ابتدا به تابع بازگشتی `scanFiles()` نگاه می‌کنیم. این تابع یک {{domxref("FileSystemEntry")}} را به‌عنوان ورودی می‌گیرد که نمایانگر یک ورودی در سیستم فایل است و باید اسکن و پردازش شود (پارامتر `item`)؛ همچنین یک عنصر دریافت می‌کند که فهرست محتویات باید در آن درج شود (پارامتر `container`).
 
 > [!NOTE]
-> To read all files in a directory, `readEntries` needs to be called repeatedly until it returns an empty array.
-> In Chromium-based browsers, the following example will only return a max of 100 entries.
+> برای خواندن همه فایل‌های موجود در یک پوشه، باید `readEntries` به‌طور مکرر فراخوانی شود تا زمانی که یک آرایه خالی بازگرداند. در مرورگرهای مبتنی بر Chromium، مثال زیر حداکثر ۱۰۰ ورودی را بازمی‌گرداند.
 
 ```js
 let dropzone = document.getElementById("dropzone");
@@ -123,20 +110,13 @@ function scanFiles(item, container) {
 }
 ```
 
-`scanFiles()` begins by creating a new {{HTMLElement("li")}} element to represent the item being scanned, inserts the name of the item into it as its text content, and then appends it to the container.
-The container is always a list element in this example, as you'll see shortly.
+تابع `scanFiles()` کار خود را با ایجاد یک عنصر جدید {{HTMLElement("li")}} برای نمایش آیتمِ در حال اسکن آغاز می‌کند، نام آیتم را به‌عنوان محتوای متنی آن قرار می‌دهد و سپس آن را به ظرف اضافه می‌کند. در این مثال، همان‌طور که به‌زودی خواهید دید، ظرف همیشه یک عنصر فهرست است.
 
-Once the current item is in the list, the item's {{domxref("FileSystemEntry.isDirectory", "isDirectory")}} property is checked.
-If the item is a directory, we need to recurse into that directory.
-The first step is to create a {{domxref("FileSystemDirectoryReader")}} to handle fetching the directory's contents.
-That's done by calling the item's {{domxref("FileSystemDirectoryEntry.createReader", "createReader()")}} method.
-Then a new {{HTMLElement("ul")}} is created and appended to the parent list; this will contain the directory's contents in the next level down in the list's hierarchy.
+پس از قرار گرفتن آیتم جاری در فهرست، ویژگی {{domxref("FileSystemEntry.isDirectory", "isDirectory")}} آیتم بررسی می‌شود. اگر آیتم یک پوشه باشد، باید به‌صورت بازگشتی وارد آن پوشه شویم. اولین قدم ایجاد یک {{domxref("FileSystemDirectoryReader")}} برای دریافت محتویات پوشه است. این کار با فراخوانی متد {{domxref("FileSystemDirectoryEntry.createReader", "createReader()")}} روی آیتم انجام می‌شود. سپس یک {{HTMLElement("ul")}} جدید ساخته شده و به فهرست والد اضافه می‌شود؛ این عنصر، محتویات پوشه را در سطح بعدی سلسله‌مراتب فهرست در بر خواهد گرفت.
 
-After that, {{domxref("FileSystemDirectoryReader.readEntries", "directoryReader.readEntries()")}} is called to read in all the entries in the directory.
-These are each, in turn, passed into a recursive call to `scanFiles()` to process them.
-Any of them which are files are inserted into the list; any which are directories are inserted into the list and a new level of the list's hierarchy is added below, and so forth.
+پس از آن، {{domxref("FileSystemDirectoryReader.readEntries", "directoryReader.readEntries()")}} فراخوانی می‌شود تا همه ورودی‌های داخل پوشه خوانده شوند. سپس هر یک از این ورودی‌ها به نوبه خود در یک فراخوانی بازگشتی به `scanFiles()` برای پردازش ارسال می‌شوند. ورودی‌هایی که فایل هستند در فهرست درج می‌شوند؛ ورودی‌هایی که پوشه هستند نیز در فهرست درج شده و سطح جدیدی از سلسله‌مراتب فهرست در زیر آن‌ها افزوده می‌شود و همین روند ادامه می‌یابد.
 
-Then come the event handlers. First, we prevent the {{domxref("HTMLElement/dragover_event", "dragover")}} event from being handled by the default handler, so that our drop zone can receive the drop:
+سپس نوبت به مدیریت‌کننده‌های رویداد می‌رسد. ابتدا جلوگیری می‌کنیم تا رویداد {{domxref("HTMLElement/dragover_event", "dragover")}} توسط مدیریت‌کننده پیش‌فرض پردازش نشود؛ به این ترتیب ناحیه رهاسازی ما می‌تواند رویداد drop را دریافت کند:
 
 ```js
 dropzone.addEventListener("dragover", (event) => {
@@ -144,7 +124,7 @@ dropzone.addEventListener("dragover", (event) => {
 });
 ```
 
-The event handler that kicks everything off, of course, is the handler for the {{domxref("HTMLElement/drop_event", "drop")}} event:
+البته مدیریت‌کننده‌ای که همه‌چیز را شروع می‌کند، مدیریت‌کننده رویداد {{domxref("HTMLElement/drop_event", "drop")}} است:
 
 ```js
 dropzone.addEventListener("drop", (event) => {
@@ -163,19 +143,15 @@ dropzone.addEventListener("drop", (event) => {
 });
 ```
 
-This fetches the list of {{domxref("DataTransferItem")}} objects representing the items dropped from `event.dataTransfer.items`.
-Then we call {{domxref("Event.preventDefault()")}} to prevent the event from being handled further after we're done.
+این کد فهرست اشیاء {{domxref("DataTransferItem")}} را که نمایانگر آیتم‌های رهاشده هستند، از `event.dataTransfer.items` دریافت می‌کند. سپس {{domxref("Event.preventDefault()")}} را فراخوانی می‌کنیم تا رویداد پس از پایان کار ما بیشتر پردازش نشود.
 
-Now it's time to start building the list. First, the list is emptied by setting {{domxref("Node.textContent", "listing.textContent")}} to be empty.
-That leaves us with an empty {{HTMLElement("ul")}} to begin inserting directory entries into.
+حالا زمان شروع ساخت فهرست فرا رسیده است. ابتدا فهرست با خالی کردن مقدار {{domxref("Node.textContent", "listing.textContent")}} پاک می‌شود. در نتیجه یک {{HTMLElement("ul")}} خالی در اختیار داریم که می‌توانیم درج ورودی‌های پوشه را در آن آغاز کنیم.
 
-Then we iterate over the items in the list of dropped items.
-For each one, we call its `webkitGetAsEntry()` method to obtain a {{domxref("FileSystemEntry")}} representing the file.
-If that's successful, we call `scanFiles()` to process the item—either by adding it to the list if it's just a file or by adding it and walking down into it if it's a directory.
+سپس روی آیتم‌های موجود در فهرست آیتم‌های رهاشده پیمایش می‌کنیم. برای هر یک از آن‌ها، متد `webkitGetAsEntry()` را فراخوانی می‌کنیم تا یک {{domxref("FileSystemEntry")}} نمایانگر فایل به دست آوریم. اگر این فراخوانی موفق باشد، تابع `scanFiles()` را برای پردازش آیتم فراخوانی می‌کنیم — یا اگر صرفاً یک فایل است، آن را به فهرست اضافه می‌کنیم، و یا اگر پوشه است، آن را اضافه کرده و به داخل آن نیز می‌رویم.
 
 ### Result
 
-You can see how this works by trying it out below. Find some files and directories and drag them in, and take a look at the resulting output.
+می‌توانید عملکرد این مثال را با امتحان کردن آن در پایین مشاهده کنید. چند فایل و پوشه پیدا کنید و آن‌ها را به داخل این ناحیه بکشید و سپس خروجی حاصل را بررسی کنید.
 
 {{EmbedLiveSample('Examples', 600, 400)}}
 
@@ -191,5 +167,5 @@ You can see how this works by trying it out below. Find some files and directori
 
 - [File and Directory Entries API](/en-US/docs/Web/API/File_and_Directory_Entries_API)
 - {{domxref("DataTransferItem")}}
-- {{domxref("FileSystemEntry")}}, {{domxref("FileSystemFileEntry")}}, and {{domxref("FileSystemDirectoryEntry")}}
-- Events: {{domxref("HTMLElement/dragover_event", "dragover")}} and {{domxref("HTMLElement/drop_event", "drop")}}
+- {{domxref("FileSystemEntry")}}، {{domxref("FileSystemFileEntry")}} و {{domxref("FileSystemDirectoryEntry")}}
+- رویدادها: {{domxref("HTMLElement/dragover_event", "dragover")}} و {{domxref("HTMLElement/drop_event", "drop")}}
