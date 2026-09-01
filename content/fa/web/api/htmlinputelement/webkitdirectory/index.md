@@ -1,7 +1,5 @@
 ---
 title: "HTMLInputElement: webkitdirectory property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/webkitdirectory"
-status: "needs-translation"
 ---
 
 ---
@@ -14,23 +12,20 @@ browser-compat: api.HTMLInputElement.webkitdirectory
 
 {{APIRef("File and Directory Entries API")}}
 
-The **`webkitdirectory`** property of the {{domxref("HTMLInputElement")}} interface reflects the [`webkitdirectory`](/en-US/docs/Web/HTML/Reference/Elements/input/file#webkitdirectory) HTML attribute, which indicates that [`<input type="file">`](/en-US/docs/Web/HTML/Reference/Elements/input/file) elements can only select directories instead of files.
+ویژگی **`webkitdirectory`** در رابط {{domxref("HTMLInputElement")}}، بازتاب‌دهندهٔ ویژگی HTML [`webkitdirectory`](/en-US/docs/Web/HTML/Reference/Elements/input/file#webkitdirectory) است که نشان می‌دهد عناصر [`<input type="file">`](/en-US/docs/Web/HTML/Reference/Elements/input/file) می‌توانند فقط پوشه‌ها را انتخاب کنند، نه فایل‌ها را.
 
-When a directory is selected, the directory and its entire hierarchy of contents are included in the set of selected items.
-The selected file system entries can be obtained using the {{domxref("HTMLInputElement.webkitEntries", "webkitEntries")}} property.
+هنگامی که یک پوشه انتخاب می‌شود، آن پوشه و کل سلسله‌مراتب محتویات آن در مجموعهٔ موارد انتخاب‌شده قرار می‌گیرند. ورودی‌های (entries) سیستم فایل انتخاب‌شده را می‌توان با استفاده از ویژگی {{domxref("HTMLInputElement.webkitEntries", "webkitEntries")}} به دست آورد.
 
 > [!NOTE]
-> This property is called `webkitdirectory` in the specification due to its origins as a Google Chrome-specific API.
+> این ویژگی در مشخصات «webkitdirectory» نامیده می‌شود، زیرا ریشه در یک API ویژهٔ Google Chrome دارد.
 
-## Value
+## مقدار
 
-A Boolean; `true` if the {{HTMLElement("input")}} element should allow picking only directories or `false` if only files should be selectable.
+یک مقدار بولی (Boolean)؛ `true` اگر عنصر {{HTMLElement("input")}} باید فقط انتخاب پوشه‌ها را مجاز کند، و `false` اگر فقط فایل‌ها قابل انتخاب باشند.
 
-## Description
+## توضیحات
 
-Setting `webkitdirectory` to `true` causes the input element to offer directories for the user to select instead of files.
-After the user chooses a directory, each {{domxref("File")}} object in the returned `files` has its {{domxref("File.webkitRelativePath")}} property set to a path relative to the selected ancestor directory.
-For example, consider this file system:
+تنظیم `webkitdirectory` به `true` باعث می‌شود عنصر ورودی به‌جای فایل‌ها، پوشه‌هایی را برای انتخاب به کاربر ارائه دهد. پس از اینکه کاربر یک پوشه را انتخاب کرد، هر شیء {{domxref("File")}} در مجموعهٔ `files` بازگشت‌داده‌شده، ویژگی {{domxref("File.webkitRelativePath")}} را به مسیری نسبی نسبت به پوشهٔ والد انتخاب‌شده تنظیم کرده است. برای مثال، این سیستم فایل را در نظر بگیرید:
 
 ```plain
 PhotoAlbums
@@ -48,18 +43,15 @@ PhotoAlbums
         └── PIC5712.jpg
 ```
 
-If the user chooses the `PhotoAlbums` directory, the list reported by files will contain {{domxref("File")}} objects for every file.
-The entry for `PIC2343.jpg` will have a `webkitRelativePath` of `PhotoAlbums/Birthdays/Don's 40th birthday/PIC2343.jpg`.
-This makes it possible to determine the selected directory's hierarchy even though the {{domxref("FileList")}} is flat.
+اگر کاربر پوشهٔ `PhotoAlbums` را انتخاب کند، فهرست گزارش‌شده توسط `files` برای هر فایل یک شیء {{domxref("File")}} خواهد داشت. ورودی مربوط به `PIC2343.jpg` دارای `webkitRelativePath` به شکل `PhotoAlbums/Birthdays/Don's 40th birthday/PIC2343.jpg` خواهد بود. این کار تعیین سلسله‌مراتب پوشهٔ انتخاب‌شده را ممکن می‌سازد، حتی اگر {{domxref("FileList")}} تخت (flat) باشد.
 
 > [!NOTE]
-> The behavior of `webkitRelativePath` is different in _Chromium < 72_.
-> See [this bug](https://crbug.com/124187) for further details.
+> رفتار `webkitRelativePath` در _Chromium < 72_ متفاوت است.
+> برای جزئیات بیشتر به [این باگ](https://crbug.com/124187) مراجعه کنید.
 
-## Examples
+## مثال‌ها
 
-In this example, a directory picker is presented which lets the user choose one or more directories.
-When the {{domxref("HTMLElement/change_event", "change")}} event occurs, a list of all files contained within the selected directory hierarchies is created and displayed.
+در این مثال، یک انتخاب‌گر پوشه نمایش داده می‌شود که به کاربر اجازه می‌دهد یک یا چند پوشه را انتخاب کند. هنگامی که رویداد {{domxref("HTMLElement/change_event", "change")}} رخ می‌دهد، فهرستی از همهٔ فایل‌های موجود در سلسله‌مراتب پوشه‌های انتخاب‌شده ایجاد و نمایش داده می‌شود.
 
 ### HTML
 
@@ -81,19 +73,19 @@ document.getElementById("file-picker").addEventListener("change", (event) => {
 });
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample('Examples')}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [File and Directory Entries API](/en-US/docs/Web/API/File_and_Directory_Entries_API)
 - {{domxref("HTMLInputElement.webkitEntries")}}
