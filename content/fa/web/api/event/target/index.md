@@ -1,11 +1,5 @@
 ---
 title: "Event: target property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Event/target"
-status: "needs-translation"
----
-
----
-title: "Event: target property"
 short-title: target
 slug: Web/API/Event/target
 page-type: web-api-instance-property
@@ -14,22 +8,18 @@ browser-compat: api.Event.target
 
 {{APIRef("DOM")}}{{AvailableInWorkers}}
 
-The read-only **`target`** property of the
-{{domxref("Event")}} interface is a reference to the object onto which the event was
-dispatched. It is different from {{domxref("Event.currentTarget")}} when the event
-handler is called during the bubbling or capturing phase of the event.
+ویژگی فقط‑خواندنی **`target`** در رابط {{domxref("Event")}} ارجاعی به شیئی است که رویداد به آن ارسال شده است. این ویژگی با {{domxref("Event.currentTarget")}} تفاوت دارد زمانی که تابع‌گردان رویداد در مرحله‌ی حباب یا گرفتن رویداد فراخوانی می‌شود.
 
-## Value
+## مقدار
 
-The associated {{domxref("EventTarget")}}.
+{{domxref("EventTarget")}} مرتبط.
 
-## Example
+## مثال
 
-The `event.target` property can be used in order to implement **event
-delegation**.
+از ویژگی `event.target` می‌توان برای پیاده‌سازی **تفویض رویداد** استفاده کرد.
 
 ```js
-// Make a list
+// ساخت یک لیست
 const ul = document.createElement("ul");
 document.body.appendChild(ul);
 
@@ -39,24 +29,24 @@ ul.appendChild(li1);
 ul.appendChild(li2);
 
 function hide(evt) {
-  // evt.target refers to the clicked <li> element
-  // This is different from evt.currentTarget, which would refer to the parent <ul> in this context
+  // evt.target به عنصر <li> کلیک‌شده اشاره دارد
+  // این با evt.currentTarget که در این زمینه به <ul> والد اشاره می‌کند متفاوت است
   evt.target.style.visibility = "hidden";
 }
 
-// Attach the listener to the list
-// It will fire when each <li> is clicked
+// الصاق شنونده به لیست
+// این شنونده هنگام کلیک روی هر <li> فعال می‌شود
 ul.addEventListener("click", hide);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Learn: Event bubbling](/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling)
+- [یادگیری: حباب رویداد](/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling)
