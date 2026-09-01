@@ -1,11 +1,5 @@
 ---
 title: "EXT_disjoint_timer_query: createQueryEXT() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EXT_disjoint_timer_query/createQueryEXT"
-status: "needs-translation"
----
-
----
-title: "EXT_disjoint_timer_query: createQueryEXT() method"
 short-title: createQueryEXT()
 slug: Web/API/EXT_disjoint_timer_query/createQueryEXT
 page-type: webgl-extension-method
@@ -14,41 +8,38 @@ browser-compat: api.EXT_disjoint_timer_query.createQueryEXT
 
 {{APIRef("WebGL")}}
 
-The **`EXT_disjoint_timer_query.createQueryEXT()`** method of
-the [WebGL API](/en-US/docs/Web/API/WebGL_API) creates and initializes
-{{domxref("WebGLQuery")}} objects, which track the time needed to fully complete
-a set of GL commands.
+متد **`EXT_disjoint_timer_query.createQueryEXT()`** از [WebGL API](/en-US/docs/Web/API/WebGL_API) اشیاء {{domxref("WebGLQuery")}} را ساخته و مقداردهی اولیه می‌کند. این اشیاء زمان لازم برای تکمیل کامل مجموعه‌ای از دستورات GL را پیگیری می‌کنند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 createQueryEXT()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("WebGLQuery")}} object.
+یک شیء {{domxref("WebGLQuery")}}.
 
-## Examples
+## مثال‌ها
 
 ```js
 const ext = gl.getExtension("EXT_disjoint_timer_query");
 const query = ext.createQueryExt();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("WebGLRenderingContext.getExtension()")}}
 - {{domxref("WebGLQuery")}}
