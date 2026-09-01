@@ -1,24 +1,16 @@
 ---
 title: "Guide to the Fullscreen API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API/Guide"
-status: "needs-translation"
----
-
----
-title: Guide to the Fullscreen API
-slug: Web/API/Fullscreen_API/Guide
-page-type: guide
 ---
 
 {{DefaultAPISidebar("Fullscreen API")}}
 
-This article demonstrates how to use the [Fullscreen API](/en-US/docs/Web/API/Fullscreen_API) to place a given element into fullscreen mode, as well as how to detect when the browser enters or exits fullscreen mode.
+این مقاله نحوه استفاده از [Fullscreen API](/en-US/docs/Web/API/Fullscreen_API) را برای قرار دادن یک عنصر مشخص در حالت تمام‌صفحه و همچنین تشخیص ورود یا خروج مرورگر از حالت تمام‌صفحه نشان می‌دهد.
 
-## Activating fullscreen mode
+## فعال‌سازی حالت تمام‌صفحه
 
-Given an element that you'd like to present in fullscreen mode (such as a {{HTMLElement("video")}}, for example), you can present it in fullscreen mode by calling its {{DOMxRef("Element.requestFullscreen", "requestFullscreen()")}} method.
+با فرض یک عنصر که می‌خواهید در حالت تمام‌صفحه نمایش دهید (مثلاً یک {{HTMLElement("video")}})، می‌توانید با فراخوانی متد {{DOMxRef("Element.requestFullscreen", "requestFullscreen()")}} آن را در حالت تمام‌صفحه نمایش دهید.
 
-Let's consider this {{HTMLElement("video")}} element:
+این عنصر {{HTMLElement("video")}} را در نظر بگیرید:
 
 ```html
 <video controls id="my-video">
@@ -27,7 +19,7 @@ Let's consider this {{HTMLElement("video")}} element:
 </video>
 ```
 
-We can put that video into fullscreen mode as follows:
+می‌توانیم آن ویدیو را به صورت زیر در حالت تمام‌صفحه قرار دهیم:
 
 ```js
 const elem = document.getElementById("my-video");
@@ -36,63 +28,63 @@ if (elem.requestFullscreen) {
 }
 ```
 
-This code checks for the existence of the `requestFullscreen()` method before calling it.
+این کد وجود متد `requestFullscreen()` را قبل از فراخوانی آن بررسی می‌کند.
 
-Once an element is in fullscreen mode, it is matched by {{cssxref(":fullscreen")}}, which gives it some default styles like taking up the entire screen. It is also placed in the {{glossary("top layer")}}.
+هنگامی که یک عنصر در حالت تمام‌صفحه قرار می‌گیرد، با {{cssxref(":fullscreen")}} مطابقت داده می‌شود که برخی سبک‌های پیش‌فرض مانند اشغال کل صفحه را به آن اعمال می‌کند. همچنین در {{glossary("top layer")}} (لایه بالایی) قرار می‌گیرد.
 
-If multiple elements are requested to be displayed in fullscreen mode, they all get matched by {{cssxref(":fullscreen")}} and are all in the top layer. They stack on top each other, with more recently requested elements on top of older ones. The most recently requested element gets displayed and is returned by {{domxref("Document.fullscreenElement")}}.
+اگر چندین عنصر برای نمایش در حالت تمام‌صفحه درخواست شوند، همه آن‌ها با {{cssxref(":fullscreen")}} مطابقت داده می‌شوند و در لایه بالایی هستند. آن‌ها روی هم انباشته می‌شوند، به طوری که عناصر جدیدتر در بالای عناصر قدیمی‌تر قرار می‌گیرند. جدیدترین عنصر درخواست‌شده نمایش داده می‌شود و توسط {{domxref("Document.fullscreenElement")}} بازگردانده می‌شود.
 
-### Notification
+### اعلان (Notification)
 
-When fullscreen mode is successfully engaged, the document which contains the element receives a {{domxref("Element/fullscreenchange_event", "fullscreenchange")}} event. When fullscreen mode is exited, the document again receives a {{domxref("Document/fullscreenchange_event", "fullscreenchange")}} event. Note that the {{domxref("Document/fullscreenchange_event", "fullscreenchange")}} event doesn't provide any information itself as to whether the document is entering or exiting fullscreen mode, but if the document has a non null {{DOMxRef("document.fullscreenElement", "fullscreenElement")}}, you know you're in fullscreen mode.
+هنگامی که حالت تمام‌صفحه با موفقیت فعال شود، سندی که حاوی عنصر است، یک رویداد {{domxref("Element/fullscreenchange_event", "fullscreenchange")}} دریافت می‌کند. هنگامی که از حالت تمام‌صفحه خارج می‌شوید، سند دوباره یک رویداد {{domxref("Document/fullscreenchange_event", "fullscreenchange")}} دریافت می‌کند. توجه داشته باشید که رویداد {{domxref("Document/fullscreenchange_event", "fullscreenchange")}} خود اطلاعاتی در مورد اینکه سند وارد حالت تمام‌صفحه می‌شود یا از آن خارج می‌شود، ارائه نمی‌دهد، اما اگر سند دارای یک {{DOMxRef("document.fullscreenElement", "fullscreenElement")}} غیر null باشد، متوجه می‌شوید که در حالت تمام‌صفحه هستید.
 
-### When a fullscreen request fails
+### زمانی که درخواست تمام‌صفحه شکست می‌خورد
 
-It's not guaranteed that you'll be able to switch into fullscreen mode. For example, {{HTMLElement("iframe")}} elements have the [`allowfullscreen`](/en-US/docs/Web/HTML/Reference/Elements/iframe#allowfullscreen) attribute in order to opt-in to allowing their content to be displayed in fullscreen mode. In addition, certain kinds of content, such as windowed plug-ins, cannot be presented in fullscreen mode. Attempting to put an element which can't be displayed in fullscreen mode (or the parent or descendant of such an element) won't work. Instead, the element which requested fullscreen will receive a `fullscreenerror` event. When a fullscreen request fails, Firefox will log an error message to the Web Console explaining why the request failed. In Chrome and newer versions of Opera however, no such warning is generated.
+تضمینی وجود ندارد که بتوانید به حالت تمام‌صفحه بروید. به عنوان مثال، عناصر {{HTMLElement("iframe")}} دارای ویژگی [`allowfullscreen`](/en-US/docs/Web/HTML/Reference/Elements/iframe#allowfullscreen) هستند تا اجازه دهند محتوای آن‌ها در حالت تمام‌صفحه نمایش داده شود. علاوه بر این، انواع خاصی از محتوا، مانند افزونه‌های پنجره‌ای (windowed plug-ins)، نمی‌توانند در حالت تمام‌صفحه نمایش داده شوند. تلاش برای قرار دادن عنصری که نمی‌تواند در حالت تمام‌صفحه نمایش داده شود (یا والد یا فرزند چنین عنصری) کار نخواهد کرد. در عوض، عنصری که درخواست تمام‌صفحه کرده است، یک رویداد `fullscreenerror` دریافت می‌کند. هنگامی که درخواست تمام‌صفحه شکست می‌خورد، فایرفاکس یک پیام خطا در کنسول وب (Web Console) ثبت می‌کند که دلیل شکست را توضیح می‌دهد. با این حال، در کروم و نسخه‌های جدیدتر اپرا، چنین هشداری تولید نمی‌شود.
 
 > [!NOTE]
-> Fullscreen requests need to be called from within an event handler or otherwise they will be denied.
+> درخواست‌های تمام‌صفحه باید از درون یک کنترل‌کننده رویداد (event handler) فراخوانی شوند، در غیر این صورت رد می‌شوند.
 
-## Getting out of full screen mode
+## خروج از حالت تمام‌صفحه
 
-The user always has the ability to exit fullscreen mode of their own accord; see [Things your users want to know](#things_your_users_want_to_know). You can also do so programmatically by calling the {{DOMxRef("Document.exitFullscreen()")}} method.
+کاربر همیشه می‌تواند به میل خود از حالت تمام‌صفحه خارج شود؛ به بخش [نکاتی که کاربران شما باید بدانند](#things_your_users_want_to_know) مراجعه کنید. همچنین می‌توانید به صورت برنامه‌نویسی با فراخوانی متد {{DOMxRef("Document.exitFullscreen()")}} این کار را انجام دهید.
 
-If there are multiple elements in fullscreen mode, calling `exitFullscreen()` only exits the topmost element, revealing the next element below it. Pressing <kbd>Esc</kbd> or <kbd>F11</kbd> exits all fullscreen elements.
+اگر چندین عنصر در حالت تمام‌صفحه وجود داشته باشند، فراخوانی `exitFullscreen()` فقط بالاترین عنصر را از حالت تمام‌صفحه خارج می‌کند و عنصر بعدی زیر آن را نمایان می‌سازد. فشار دادن <kbd>Esc</kbd> یا <kbd>F11</kbd> همه عناصر تمام‌صفحه را خارج می‌کند.
 
-## Other information
+## سایر اطلاعات
 
-The {{DOMxRef("Document")}} provides some additional information that can be useful when developing fullscreen web applications:
+{{DOMxRef("Document")}} اطلاعات اضافی دیگری را ارائه می‌دهد که می‌تواند هنگام توسعه برنامه‌های وب تمام‌صفحه مفید باشد:
 
 - {{DOMxRef("Document.fullscreenElement")}} / {{DOMxRef("ShadowRoot.fullscreenElement")}}
-  - : The `fullscreenElement` property tells you the {{DOMxRef("Element")}} that's currently being displayed fullscreen. If this is non-null, the document (or shadow DOM) is in fullscreen mode. If this is null, the document (or shadow DOM) is not in fullscreen mode.
+  - : ویژگی `fullscreenElement` به شما {{DOMxRef("Element")}}ای را می‌گوید که در حال حاضر به صورت تمام‌صفحه نمایش داده می‌شود. اگر این مقدار non-null باشد، سند (یا shadow DOM) در حالت تمام‌صفحه است. اگر null باشد، سند (یا shadow DOM) در حالت تمام‌صفحه نیست.
 - {{DOMxRef("Document.fullscreenEnabled")}}
-  - : The `fullscreenEnabled` property tells you whether or not the document is currently in a state that would allow fullscreen mode to be requested.
+  - : ویژگی `fullscreenEnabled` به شما می‌گوید که آیا سند در حال حاضر در وضعیتی است که امکان درخواست حالت تمام‌صفحه وجود دارد یا خیر.
 
-### Viewport scaling in mobile browsers
+### مقیاس‌گذاری viewport در مرورگرهای موبایل
 
-Some mobile browsers while in fullscreen mode ignore viewport meta-tag settings and block user scaling; for example: a "pinch to zoom" gesture may not work on a page presented in fullscreen mode — even if, when not in fullscreen mode, the page can be scaled using pinch to zoom.
+برخی مرورگرهای موبایل در حالت تمام‌صفحه تنظیمات متا تگ viewport را نادیده گرفته و مقیاس‌گذاری کاربر را مسدود می‌کنند؛ به عنوان مثال: ژست "pinch to zoom" (نیشگون گرفتن برای بزرگ‌نمایی) ممکن است در صفحه‌ای که در حالت تمام‌صفحه ارائه شده است کار نکند — حتی اگر در حالت غیر تمام‌صفحه، صفحه با استفاده از pinch to zoom قابل مقیاس‌گذاری باشد.
 
-## Things your users want to know
+## نکاتی که کاربران شما باید بدانند
 
-You'll want to be sure to let your users know that they can press the <kbd>Esc</kbd> key (or <kbd>F11</kbd>) to exit fullscreen mode.
+حتماً به کاربران خود اطلاع دهید که می‌توانند کلید <kbd>Esc</kbd> (یا <kbd>F11</kbd>) را فشار دهند تا از حالت تمام‌صفحه خارج شوند.
 
-In addition, navigating to another page, changing tabs, or switching to another application (using, for example, <kbd>Alt</kbd>-<kbd>Tab</kbd>) while in fullscreen mode exits fullscreen mode as well.
+علاوه بر این، رفتن به صفحه دیگر، تغییر زبانه (tab) یا جابجایی به برنامه دیگر (به عنوان مثال با استفاده از <kbd>Alt</kbd>-<kbd>Tab</kbd>) در حالت تمام‌صفحه نیز باعث خروج از حالت تمام‌صفحه می‌شود.
 
-## Example
+## مثال
 
-The [mdn/dom-examples GitHub repo](https://github.com/mdn/) has a complete example of the Fullscreen API.
+مخزن GitHub [mdn/dom-examples](https://github.com/mdn/) شامل یک مثال کامل از Fullscreen API است.
 
-[Run the example](https://mdn.github.io/dom-examples/fullscreen-api/index.html) and [browse the source code](https://github.com/mdn/dom-examples/tree/main/fullscreen-api).
+[اجرای مثال](https://mdn.github.io/dom-examples/fullscreen-api/index.html) و [مرور کد منبع](https://github.com/mdn/dom-examples/tree/main/fullscreen-api).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - [Using fullscreen mode](/en-US/docs/Web/API/Fullscreen_API)
 - {{DOMxRef("Element.requestFullscreen()")}}
