@@ -1,10 +1,4 @@
 ---
-title: "File API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/File_API"
-status: "needs-translation"
----
-
----
 title: File API
 slug: Web/API/File_API
 page-type: web-api-overview
@@ -13,51 +7,51 @@ spec-urls: https://w3c.github.io/FileAPI/
 
 {{DefaultAPISidebar("File API")}}{{AvailableInWorkers}}
 
-## Concepts and Usage
+## مفهوم و کاربرد
 
-The File API enables web applications to access files and their contents.
+File API به برنامه‌های وب امکان می‌دهد تا به فایل‌ها و محتوای آن‌ها دسترسی داشته باشند.
 
-Web applications can access files when the user makes them available, either using a [file `<input>` element](/en-US/docs/Web/HTML/Reference/Elements/input/file) or [via drag and drop](/en-US/docs/Web/API/DataTransfer/files).
+برنامه‌های وب می‌توانند زمانی به فایل‌ها دسترسی پیدا کنند که کاربر آن‌ها را در دسترس قرار دهد، چه با استفاده از [یک عنصر `<input>` فایل](/en-US/docs/Web/HTML/Reference/Elements/input/file) و چه [از طریق کشیدن و رها کردن](/en-US/docs/Web/API/DataTransfer/files).
 
-Sets of files made available in this way are represented as {{domxref("FileList")}} objects, which enable a web application to retrieve individual {{domxref("File")}} objects. In turn {{domxref("File")}} objects provide access to metadata such as the file's name, size, type, and last modified date.
+مجموعه‌هایی از فایل‌ها که به این شکل در دسترس قرار می‌گیرند به صورت اشیاء {{domxref("FileList")}} نمایش داده می‌شوند که به برنامه وب امکان می‌دهند اشیاء {{domxref("File")}} تکی را بازیابی کند. به نوبه خود، اشیاء {{domxref("File")}} دسترسی به فراداده‌هایی مانند نام، اندازه، نوع و تاریخ آخرین تغییر فایل را فراهم می‌کنند.
 
-{{domxref("File")}} objects can be passed to {{domxref("FileReader")}} objects to access the contents of the file. The {{domxref("FileReader")}} interface is asynchronous, but a synchronous version, available only in [web workers](/en-US/docs/Web/API/Web_Workers_API), is provided by the {{domxref("FileReaderSync")}} interface.
+اشیاء {{domxref("File")}} را می‌توان به اشیاء {{domxref("FileReader")}} ارسال کرد تا به محتوای فایل دسترسی پیدا کنند. رابط {{domxref("FileReader")}} ناهمگام است، اما یک نسخه همگام که فقط در [web workers](/en-US/docs/Web/API/Web_Workers_API) در دسترس است توسط رابط {{domxref("FileReaderSync")}} ارائه می‌شود.
 
-## Relationship to other file-related APIs
+## رابطه با APIهای دیگر مرتبط با فایل
 
-There are two other major APIs that also deal with files: [File and Directory Entries API](/en-US/docs/Web/API/File_and_Directory_Entries_API) and [File System API](/en-US/docs/Web/API/File_System_API).
+دو API مهم دیگر نیز وجود دارند که با فایل‌ها سروکار دارند: [File and Directory Entries API](/en-US/docs/Web/API/File_and_Directory_Entries_API) و [File System API](/en-US/docs/Web/API/File_System_API).
 
-The File API is the most basic one. It supports reading and processing file data explicitly provided by the user in the form of a form element input or drag-and-drop operation. It also enables binary data handling via blobs.
+File API پایه‌ای‌ترین آن‌هاست. این API از خواندن و پردازش داده‌های فایل که به طور صریح توسط کاربر در قالب یک ورودی عنصر فرم یا عملیات کشیدن و رها کردن ارائه شده است، پشتیبانی می‌کند. همچنین امکان مدیریت داده‌های دودویی را از طریق blobs فراهم می‌کند.
 
-The File and Directory Entries API, like the File API, also deals with files provided by the user via form inputs or drag-and-drop operations. However, instead of a single file, the input element now allows the selection of a directory or multiple files. The API then provides a way to process the directory or files. It is mostly Chrome's own invention—you will find that its extensions to other interfaces are all prefixed with `webkit`. The [File and Directory Entries API](/en-US/docs/Web/API/File_and_Directory_Entries_API#history) has a more complete story about its implementation and standardization. It was originally intended to support a full virtual file system, but now only supports read operations on user-provided data.
+File and Directory Entries API، مانند File API، با فایل‌هایی سروکار دارد که توسط کاربر از طریق ورودی‌های فرم یا عملیات کشیدن و رها کردن ارائه می‌شوند. با این حال، عنصر ورودی اکنون به جای یک فایل، امکان انتخاب یک دایرکتوری یا چندین فایل را فراهم می‌کند. سپس API راهی برای پردازش دایرکتوری یا فایل‌ها ارائه می‌دهد. این عمدتاً اختراع خود کروم است – متوجه خواهید شد که افزونه‌های آن به سایر رابط‌ها همگی با پیشوند `webkit` هستند. [File and Directory Entries API](/en-US/docs/Web/API/File_and_Directory_Entries_API#history) داستان کامل‌تری درباره پیاده‌سازی و استانداردسازی خود دارد. این API در ابتدا برای پشتیبانی از یک سیستم فایل مجازی کامل در نظر گرفته شده بود، اما اکنون فقط از عملیات خواندن بر روی داده‌های ارائه شده توسط کاربر پشتیبانی می‌کند.
 
-The File System API provides a virtual file system for web applications, so that they can persistently store data in a virtual system which is private to the document's origin (known as an [Origin private file system (OPFS)](/en-US/docs/Web/API/File_System_API/Origin_private_file_system)). The File System Access API further extends the File System API to allow websites to read and write user files, subject to user consent. Unlike the File API and the File and Directory Entries API, the File System API is purely JavaScript and does not deal with form inputs.
+File System API یک سیستم فایل مجازی برای برنامه‌های وب فراهم می‌کند، به طوری که آن‌ها بتوانند داده‌ها را به صورت پایدار در یک سیستم مجازی که خصوصی به مبدأ سند است (که به عنوان [سیستم فایل خصوصی مبدأ (OPFS)](/en-US/docs/Web/API/File_System_API/Origin_private_file_system) شناخته می‌شود) ذخیره کنند. File System Access API بیشتر File System API را گسترش می‌دهد تا به وب‌سایت‌ها اجازه دهد فایل‌های کاربر را بخوانند و بنویسند، مشروط به رضایت کاربر. بر خلاف File API و File and Directory Entries API، File System API صرفاً جاوااسکریپتی است و با ورودی‌های فرم سروکار ندارد.
 
-## Interfaces
+## رابط‌ها
 
 - {{domxref("Blob")}}
-  - : Represents a "Binary Large Object", meaning a file-like object of immutable, raw data; a {{domxref("Blob")}} can be read as text or binary data, or converted into a {{domxref("ReadableStream")}} so its methods can be used for processing the data.
+  - : نمایانگر یک "شیء بزرگ دودویی" است، به معنای یک شیء شبیه فایل از داده‌های خام تغییرناپذیر؛ یک {{domxref("Blob")}} می‌تواند به صورت متن یا داده‌های دودویی خوانده شود، یا به یک {{domxref("ReadableStream")}} تبدیل شود تا از روش‌های آن برای پردازش داده‌ها استفاده شود.
 - {{domxref("File")}}
-  - : Provides information about a file and allows JavaScript in a web page to access its content.
+  - : اطلاعاتی درباره یک فایل ارائه می‌دهد و به جاوااسکریپت در یک صفحه وب اجازه می‌دهد به محتوای آن دسترسی پیدا کند.
 - {{domxref("FileList")}}
-  - : Returned by the `files` property of the HTML {{HTMLElement("input")}} element; this lets you access the list of files selected with the `<input type="file">` element. It's also used for a list of files dropped into web content when using the drag and drop API; see the {{domxref("DataTransfer")}} object for details on this usage.
+  - : توسط ویژگی `files` عنصر HTML {{HTMLElement("input")}} بازگردانده می‌شود؛ این به شما امکان می‌دهد به لیست فایل‌های انتخاب شده با عنصر `<input type="file">` دسترسی پیدا کنید. همچنین برای لیستی از فایل‌هایی که هنگام استفاده از API کشیدن و رها کردن به محتوای وب رها می‌شوند استفاده می‌شود؛ برای جزئیات بیشتر در مورد این کاربرد، شیء {{domxref("DataTransfer")}} را ببینید.
 - {{domxref("FileReader")}}
-  - : Enables web applications to asynchronously read the contents of files (or raw data buffers) stored on the user's computer, using {{domxref("File")}} or {{domxref("Blob")}} objects to specify the file or data to read.
+  - : به برنامه‌های وب امکان می‌دهد تا به صورت ناهمگام محتوای فایل‌ها (یا بافرهای داده خام) ذخیره شده روی رایانه کاربر را با استفاده از اشیاء {{domxref("File")}} یا {{domxref("Blob")}} برای مشخص کردن فایل یا داده مورد نظر برای خواندن، بخوانند.
 - {{domxref("FileReaderSync")}}
-  - : Enables web applications to synchronously read the contents of files (or raw data buffers) stored on the user's computer, using {{domxref("File")}} or {{domxref("Blob")}} objects to specify the file or data to read.
+  - : به برنامه‌های وب امکان می‌دهد تا به صورت همگام محتوای فایل‌ها (یا بافرهای داده خام) ذخیره شده روی رایانه کاربر را با استفاده از اشیاء {{domxref("File")}} یا {{domxref("Blob")}} برای مشخص کردن فایل یا داده مورد نظر برای خواندن، بخوانند.
 
-### Extensions to other interfaces
+### افزونه‌ها به سایر رابط‌ها
 
 - {{domxref("URL.createObjectURL_static", "URL.createObjectURL()")}}
-  - : Creates a URL that can be used to fetch a {{domxref("File")}} or {{domxref("Blob")}} object.
+  - : یک URL ایجاد می‌کند که می‌تواند برای واکشی یک شیء {{domxref("File")}} یا {{domxref("Blob")}} استفاده شود.
 - {{domxref("URL.revokeObjectURL_static", "URL.revokeObjectURL()")}}
-  - : Releases an existing object URL which was previously created by calling {{domxref("URL.createObjectURL_static", "URL.createObjectURL()")}}.
+  - : یک URL شیء موجود را که قبلاً با فراخوانی {{domxref("URL.createObjectURL_static", "URL.createObjectURL()")}} ایجاد شده بود، آزاد می‌کند.
 
-## Examples
+## مثال‌ها
 
-### Reading a file
+### خواندن یک فایل
 
-In this example, we provide a [file `<input>` element](/en-US/docs/Web/HTML/Reference/Elements/input/file), and when the user selects a file, we read the contents of the first file selected as text, and display the result in a {{HTMLElement("div")}}.
+در این مثال، یک [عنصر `<input>` فایل](/en-US/docs/Web/HTML/Reference/Elements/input/file) ارائه می‌دهیم، و هنگامی که کاربر فایلی را انتخاب می‌کند، محتوای اولین فایل انتخاب شده را به صورت متن می‌خوانیم و نتیجه را در یک {{HTMLElement("div")}} نمایش می‌دهیم.
 
 #### HTML
 
@@ -91,16 +85,16 @@ fileInput.addEventListener("change", async () => {
 });
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Reading a file", "", "300")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- [`<input type="file">`](/en-US/docs/Web/HTML/Reference/Elements/input/file): the file input element
+- [`<input type="file">`](/en-US/docs/Web/HTML/Reference/Elements/input/file): عنصر ورودی فایل
 - {{domxref("Blob.text()")}}
-- The {{domxref("DataTransfer")}} interface
+- رابط {{domxref("DataTransfer")}}
