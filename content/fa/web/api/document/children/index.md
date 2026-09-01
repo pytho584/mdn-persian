@@ -1,11 +1,5 @@
 ---
 title: "Document: children property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/children"
-status: "needs-translation"
----
-
----
-title: "Document: children property"
 short-title: children
 slug: Web/API/Document/children
 page-type: web-api-instance-property
@@ -14,25 +8,19 @@ browser-compat: api.Document.children
 
 {{ APIRef("DOM") }}
 
-The read-only **`children`** property returns a live {{domxref("HTMLCollection")}}
-which contains all of the child {{domxref("Element", "elements")}} of the document upon which it was called.
+خاصیت فقط‌خواندنی **`children`** یک {{domxref("HTMLCollection")}} زنده برمی‌گرداند که شامل تمام عناصر فرزند ({{domxref("Element", "elements")}}) سندی است که روی آن فراخوانی شده است.
 
-For HTML documents, this is usually only the root `<html>` element.
+برای اسناد HTML، این معمولاً فقط عنصر ریشه `<html>` است.
 
-See {{domxref("Element.children")}} for child elements of specific HTML elements within the document.
+برای عناصر فرزند المان‌های HTML خاص درون سند، به {{domxref("Element.children")}} مراجعه کنید.
 
-## Value
+## مقدار
 
-An {{ domxref("HTMLCollection") }} which is a live, ordered collection of the DOM
-elements which are children of the current document. You can access the
-individual child nodes in the collection by using either the
-{{domxref("HTMLCollection.item()", "item()")}} method on the collection, or by using
-JavaScript array-style notation.
+یک {{ domxref("HTMLCollection") }} که یک مجموعه زنده و مرتب از المان‌های DOM است که فرزندان سند جاری هستند. می‌توانید به گره‌های فرزند جداگانه در مجموعه دسترسی داشته باشید یا با استفاده از متد {{domxref("HTMLCollection.item()", "item()")}} روی مجموعه، یا با استفاده از نماد آرایه‌ای جاوااسکریپت.
 
-If the document has no element children, then `children` is an empty list with a
-`length` of `0`.
+اگر سند هیچ عنصر فرزندی نداشته باشد، `children` یک لیست خالی با `length` برابر `0` است.
 
-## Examples
+## مثال‌ها
 
 ```js
 document.children;
@@ -40,17 +28,17 @@ document.children;
 // Usually only contains the root <html> element, the document's only direct child
 ```
 
-See {{domxref("Element.children")}} for child elements of specific HTML elements within the document.
+برای عناصر فرزند المان‌های HTML خاص درون سند، به {{domxref("Element.children")}} مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Element.children")}}
 - {{domxref("Node.childNodes")}}
