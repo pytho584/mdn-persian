@@ -1,11 +1,5 @@
 ---
 title: "DeviceMotionEvent: DeviceMotionEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEvent/DeviceMotionEvent"
-status: "needs-translation"
----
-
----
-title: "DeviceMotionEvent: DeviceMotionEvent() constructor"
 short-title: DeviceMotionEvent()
 slug: Web/API/DeviceMotionEvent/DeviceMotionEvent
 page-type: web-api-constructor
@@ -14,39 +8,38 @@ browser-compat: api.DeviceMotionEvent.DeviceMotionEvent
 
 {{APIRef("Device Orientation Events")}}{{securecontext_header}}
 
-The **`DeviceMotionEvent()`** constructor creates a new {{DOMxRef("DeviceMotionEvent")}} object.
+سازندهٔ **`DeviceMotionEvent()`** یک شیء جدید از نوع {{DOMxRef("DeviceMotionEvent")}} می‌سازد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 new DeviceMotionEvent(type)
 new DeviceMotionEvent(type, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string with the name of the event.
-    It is case-sensitive and browsers always set it to `devicemotion`.
+  - : رشته‌ای است با نام رویداد. این رشته به بزرگی/کوچکی حروف حساس است و مرورگرها همیشه آن را برابر با `devicemotion` قرار می‌دهند.
 - `options` {{Optional_Inline}}
-  - : An object that, _in addition of the properties defined in {{domxref("Event/Event", "Event()")}}_, can have the following properties:
+  - : یک شیء که _علاوه بر ویژگی‌های تعریف‌شده در {{domxref("Event/Event", "Event()")}}_، می‌تواند ویژگی‌های زیر را داشته باشد:
     - `acceleration` {{Optional_Inline}}
-      - : A {{domxref("DeviceMotionEventAcceleration")}} object giving the acceleration of the device on the three axis X, Y and Z. Acceleration is expressed in [m/s²](https://en.wikipedia.org/wiki/Meter_per_second_squared). If not specified, every properties in the object will be `null`.
+      - : یک {{domxref("DeviceMotionEventAcceleration")}} که شتاب دستگاه را در سه محور X، Y و Z می‌دهد. شتاب بر حسب [m/s²](https://en.wikipedia.org/wiki/Meter_per_second_squared) بیان می‌شود. اگر مشخص نشود، همهٔ ویژگی‌های داخل شیء `null` خواهند بود.
     - `accelerationIncludingGravity` {{Optional_Inline}}
-      - : A {{domxref("DeviceMotionEventAcceleration")}} object giving the acceleration of the device on the three axis X, Y and Z with the effect of gravity. Acceleration is expressed in [m/s²](https://en.wikipedia.org/wiki/Meter_per_second_squared). If not specified, every properties in the object will be `null`.
+      - : یک {{domxref("DeviceMotionEventAcceleration")}} که شتاب دستگاه را در سه محور X، Y و Z با تأثیر گرانش می‌دهد. شتاب بر حسب [m/s²](https://en.wikipedia.org/wiki/Meter_per_second_squared) بیان می‌شود. اگر مشخص نشود، همهٔ ویژگی‌های داخل شیء `null` خواهند بود.
     - `rotationRate` {{Optional_Inline}}
-      - : A {{domxref("DeviceMotionEventRotationRate")}} object giving the rate of change of the device's orientation on the three orientation axis alpha, beta and gamma. Rotation rate is express in degrees per seconds. If not specified, every properties in the object will be `null`.
+      - : یک {{domxref("DeviceMotionEventRotationRate")}} که نرخ تغییر جهت‌گیری دستگاه را در سه محور جهت‌گیری آلفا، بتا و گاما می‌دهد. نرخ چرخش بر حسب درجه بر ثانیه بیان می‌شود. اگر مشخص نشود، همهٔ ویژگی‌های داخل شیء `null` خواهند بود.
     - `interval` {{Optional_Inline}}
-      - : A number representing the interval of time, in milliseconds, at which data is obtained from the device. It defaults to `0`.
+      - : یک عدد که بازهٔ زمانی (به میلی‌ثانیه) را نشان می‌دهد که داده‌ها از دستگاه دریافت می‌شوند. مقدار پیش‌فرض آن `0` است.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("DeviceMotionEvent")}} object.
+یک شیء جدید از {{domxref("DeviceMotionEvent")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
