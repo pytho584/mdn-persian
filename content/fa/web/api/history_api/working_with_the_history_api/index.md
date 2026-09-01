@@ -1,10 +1,4 @@
 ---
-title: "Working with the History API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/History_API/Working_with_the_History_API"
-status: "needs-translation"
----
-
----
 title: Working with the History API
 slug: Web/API/History_API/Working_with_the_History_API
 page-type: guide
@@ -12,53 +6,53 @@ page-type: guide
 
 {{DefaultAPISidebar("History API")}}
 
-The History API enables a website to interact with the browser's session history: that is, the list of pages that the user has visited in a given window. As the user visits new pages, for example by clicking links, those new pages are added to the session history. The user can also move back and forth through the history using the browser's "Back" and "Forward" buttons.
+تاریخچه API (History API) به وب‌سایت‌ها امکان می‌دهد تا با تاریخچه جلسه مرورگر (لیست صفحاتی که کاربر در یک پنجره خاص بازدید کرده است) تعامل داشته باشند. وقتی کاربر صفحات جدیدی را بازدید می‌کند، مثلاً با کلیک روی لینک‌ها، آن صفحات جدید به تاریخچه جلسه اضافه می‌شوند. کاربر همچنین می‌تواند از دکمه‌های «Back» و «Forward» مرورگر برای حرکت به جلو و عقب در تاریخچه استفاده کند.
 
-The main interface defined in the History API is the {{domxref("History")}} interface, and this defines two quite distinct sets of methods:
+رابط اصلی تعریف شده در History API، رابط {{domxref("History")}} است که دو مجموعه نسبتاً متفاوت از متدها را تعریف می‌کند:
 
-1. Methods to navigate to a page in the session history:
+1. متدهایی برای پیمایش به یک صفحه در تاریخچه جلسه:
    - {{domxref("History.back()")}}
    - {{domxref("History.forward()")}}
    - {{domxref("History.go()")}}
 
-2. Methods to modify the session history:
+2. متدهایی برای تغییر تاریخچه جلسه:
    - {{domxref("History.pushState()")}}
    - {{domxref("History.replaceState()")}}
 
-In this guide, we'll cover only the second set of methods.
+در این راهنما، تنها مجموعه دوم متدها را پوشش می‌دهیم.
 
-The `pushState()` method adds a new entry to the session history, while the `replaceState()` method updates the session history entry for the current page. Both these methods take a `state` parameter which can contain any {{Glossary("Serializable_object", "serializable object")}}. When the browser navigates to this history entry, the browser fires a {{domxref("Window.popstate_event", "popstate")}} event, which contains the state object associated with that entry.
+متد `pushState()` یک ورودی جدید به تاریخچه جلسه اضافه می‌کند، در حالی که متد `replaceState()` ورودی تاریخچه جلسه مربوط به صفحه فعلی را به‌روزرسانی می‌کند. هر دو این متدها یک پارامتر `state` می‌پذیرند که می‌تواند حاوی هر {{Glossary("Serializable_object", "شیء قابل سریال‌سازی")}} باشد. وقتی مرورگر به این ورودی تاریخچه پیمایش می‌کند، رویداد {{domxref("Window.popstate_event", "popstate")}} را فعال می‌کند که شامل شیء state مرتبط با آن ورودی است.
 
-The main purpose of these APIs is to support websites like {{Glossary("SPA", "Single-page applications")}}, that use JavaScript APIs such as {{domxref("Window/fetch", "fetch()")}} to update the page with new content, instead of loading a whole new page.
+هدف اصلی این APIها پشتیبانی از وب‌سایت‌هایی مانند {{Glossary("SPA", "برنامه‌های تک صفحه‌ای")}} (Single-page applications) است که با استفاده از APIهای جاوااسکریپت مانند {{domxref("Window/fetch", "fetch()")}} صفحه را با محتوای جدید به‌روزرسانی می‌کنند، به جای بارگذاری یک صفحه کاملاً جدید.
 
-## Single-page applications and session history
+## برنامه‌های تک صفحه‌ای و تاریخچه جلسه
 
-Traditionally, websites are implemented as a collection of pages. When users navigate to different parts of the site by clicking links, the browser loads a whole new page each time.
+به طور سنتی، وب‌سایت‌ها به صورت مجموعه‌ای از صفحات پیاده‌سازی می‌شوند. وقتی کاربران با کلیک روی لینک‌ها به بخش‌های مختلف سایت می‌روند، مرورگر هر بار یک صفحه کاملاً جدید بارگذاری می‌کند.
 
-While this is great for many sites, it can have some disadvantages:
+اگرچه این روش برای بسیاری از سایت‌ها عالی است، اما ممکن است معایبی داشته باشد:
 
-- It can be inefficient to load a whole page every time, when only part of the page needs to be updated.
-- It is hard to maintain application state when navigating across pages.
+- بارگذاری یک صفحه کامل هر بار می‌تواند ناکارآمد باشد، در حالی که تنها بخشی از صفحه نیاز به به‌روزرسانی دارد.
+- هنگام پیمایش بین صفحات، حفظ وضعیت برنامه دشوار است.
 
-For these reasons, a popular pattern for web apps is the {{Glossary("SPA", "single-page application")}} (SPA). When a user clicks a link, the SPA performs the following steps:
+به همین دلایل، یک الگوی محبوب برای برنامه‌های وب، {{Glossary("SPA", "برنامه تک صفحه‌ای")}} (SPA) است. وقتی کاربر روی یک لینک کلیک می‌کند، SPA مراحل زیر را انجام می‌دهد:
 
-1. Prevents the default behavior of loading a new page.
-2. {{domxref("Window/fetch", "Fetches", "", "nocode")}} new content to display.
-3. Updates the page with the new content.
+1. از رفتار پیش‌فرض بارگذاری یک صفحه جدید جلوگیری می‌کند.
+2. محتوای جدید برای نمایش را {{domxref("Window/fetch", "واکشی می‌کند", "", "nocode")}}.
+3. صفحه را با محتوای جدید به‌روزرسانی می‌کند.
 
-For example:
+به عنوان مثال:
 
 ```js
 document.addEventListener("click", async (event) => {
   const creature = event.target.getAttribute("data-creature");
   if (creature) {
-    // Prevent a new page from loading
+    // از بارگذاری یک صفحه جدید جلوگیری کنید
     event.preventDefault();
     try {
-      // Fetch new content
+      // محتوای جدید را واکشی کنید
       const response = await fetch(`creatures/${creature}.json`);
       const result = await response.json();
-      // Update the page with the new content
+      // صفحه را با محتوای جدید به‌روزرسانی کنید
       displayContent(result);
     } catch (err) {
       console.error(err);
@@ -67,9 +61,9 @@ document.addEventListener("click", async (event) => {
 });
 ```
 
-In this click handler, if the link contains a data attribute `"data-creature"`, then we use the value of that attribute to fetch a JSON file containing the new content for the page.
+در این مدیریت‌کننده کلیک، اگر لینک حاوی یک ویژگی داده `"data-creature"` باشد، از مقدار آن ویژگی برای واکشی یک فایل JSON حاوی محتوای جدید برای صفحه استفاده می‌کنیم.
 
-The JSON file might look like this:
+فایل JSON ممکن است به این شکل باشد:
 
 ```json
 {
@@ -82,10 +76,10 @@ The JSON file might look like this:
 }
 ```
 
-Our `displayContent()` function updates the page with the JSON:
+تابع `displayContent()` ما صفحه را با JSON به‌روزرسانی می‌کند:
 
 ```js
-// Update the page with the new content
+// صفحه را با محتوای جدید به‌روزرسانی کنید
 function displayContent(content) {
   document.title = `Creatures: ${content.name}`;
 
@@ -98,17 +92,17 @@ function displayContent(content) {
 }
 ```
 
-The problem is that it breaks the expected behavior of the browser's "Back" and "Forward" buttons.
+مشکل این است که رفتار مورد انتظار دکمه‌های «Back» و «Forward» مرورگر را مختل می‌کند.
 
-From the user's point of view, they clicked a link and the page updated, so it looks like a new page. If they then press the browser's "Back" button, they expect to go to the state before they clicked the link.
+از دیدگاه کاربر، آنها روی یک لینک کلیک کرده‌اند و صفحه به‌روزرسانی شده است، بنابراین به نظر می‌رسد که یک صفحه جدید است. اگر سپس دکمه «Back» مرورگر را فشار دهند، انتظار دارند که به وضعیت قبل از کلیک روی لینک برگردند.
 
-But as far as the browser is concerned, the last link didn't load a new page, so "Back" will take the browser to whichever page was loaded before the user opened the SPA.
+اما از نظر مرورگر، آخرین لینک یک صفحه جدید بارگذاری نکرده است، بنابراین «Back» مرورگر را به صفحه‌ای می‌برد که قبل از باز کردن SPA بارگذاری شده بود.
 
-This is essentially the problem that `pushState()`, `replaceState()`, and the `popstate` event solve. They enable us to synthesize history entries, and to be notified when the current session history entry changes to one of these entries (for example, because the user pressed the "Back" or "Forward" buttons).
+این اساساً مشکلی است که `pushState()`، `replaceState()` و رویداد `popstate` حل می‌کنند. آنها به ما امکان می‌دهند ورودی‌های تاریخچه را شبیه‌سازی کنیم و زمانی که ورودی تاریخچه جلسه فعلی به یکی از این ورودی‌ها تغییر می‌کند (مثلاً به دلیل فشار دادن دکمه «Back» یا «Forward» توسط کاربر) مطلع شویم.
 
-## Using `pushState()`
+## استفاده از `pushState()`
 
-We can add a history entry to the click handler above as follows:
+می‌توانیم یک ورودی تاریخچه را به مدیریت‌کننده کلیک بالا به صورت زیر اضافه کنیم:
 
 ```js
 document.addEventListener("click", async (event) => {
@@ -119,8 +113,8 @@ document.addEventListener("click", async (event) => {
       const response = await fetch(`creatures/${creature}.json`);
       const result = await response.json();
       displayContent(result);
-      // Add a new entry to the history.
-      // This simulates loading a new page.
+      // یک ورودی جدید به تاریخچه اضافه کنید.
+      // این کار بارگذاری یک صفحه جدید را شبیه‌سازی می‌کند.
       history.pushState(result, "", creature);
     } catch (err) {
       console.error(err);
@@ -129,48 +123,48 @@ document.addEventListener("click", async (event) => {
 });
 ```
 
-Here, we're calling `pushState()` with three arguments:
+در اینجا، ما `pushState()` را با سه آرگومان فراخوانی می‌کنیم:
 
-- `result`: This is the content we just fetched. It will be stored with the history entry, and later included as the {{domxref("PopStateEvent.state", "state")}} property of the argument passed to the `popstate` event handler.
-- `""`: This is needed for backward compatibility with legacy sites, and should always be an empty string.
-- `creature`: This will be used as the URL for the entry. It will be shown in the browser's URL bar, and will be used as the value of the {{httpheader("Referer")}} header in any HTTP requests that the page makes. Note that this must be {{Glossary("Same-origin policy", "same-origin")}} with the page.
+- `result`: این محتوایی است که تازه واکشی کرده‌ایم. این محتوا همراه با ورودی تاریخچه ذخیره می‌شود و بعداً به عنوان ویژگی {{domxref("PopStateEvent.state", "state")}} آرگومان ارسال شده به مدیریت‌کننده رویداد `popstate` گنجانده می‌شود.
+- `""`: این برای سازگاری به عقب با سایت‌های قدیمی ضروری است و باید همیشه یک رشته خالی باشد.
+- `creature`: این به عنوان URL برای ورودی استفاده می‌شود. در نوار آدرس مرورگر نمایش داده می‌شود و به عنوان مقدار هدر {{httpheader("Referer")}} در هر درخواست HTTP که صفحه انجام می‌دهد استفاده می‌شود. توجه داشته باشید که این باید با صفحه {{Glossary("Same-origin policy", "هم‌ریشه")}} باشد.
 
-## Using the `popstate` event
+## استفاده از رویداد `popstate`
 
-Suppose the user performs the following steps:
+فرض کنید کاربر مراحل زیر را انجام می‌دهد:
 
-1. Clicks a link in our SPA, so we update the page and add history entry A using `pushState()`.
-2. Clicks another link in our SPA, so we update the page and add history entry B using `pushState()`.
-3. Presses the "Back" button.
+1. روی یک لینک در SPA ما کلیک می‌کند، بنابراین ما صفحه را به‌روزرسانی کرده و با استفاده از `pushState()` ورودی تاریخچه A را اضافه می‌کنیم.
+2. روی لینک دیگری در SPA ما کلیک می‌کند، بنابراین ما صفحه را به‌روزرسانی کرده و با استفاده از `pushState()` ورودی تاریخچه B را اضافه می‌کنیم.
+3. دکمه «Back» را فشار می‌دهد.
 
-Now the new current history entry is A, so the browser fires the `popstate` event, and the event handler argument includes the JSON that we passed to `pushState()` when we handled the navigation to A. This means we can restore the correct content with an event handler like this:
+اکنون ورودی تاریخچه جاری جدید A است، بنابراین مرورگر رویداد `popstate` را فعال می‌کند و آرگومان مدیریت‌کننده رویداد شامل JSON است که هنگام مدیریت پیمایش به A به `pushState()` ارسال کردیم. این بدان معناست که می‌توانیم محتوای صحیح را با یک مدیریت‌کننده رویداد مانند زیر بازیابی کنیم:
 
 ```js
-// Handle forward/back buttons
+// دکمه‌های جلو/عقب را مدیریت کنید
 window.addEventListener("popstate", (event) => {
-  // If a state has been provided, we have a "simulated" page
-  // and we update the current page.
+  // اگر یک state ارائه شده باشد، ما یک صفحه "شبیه‌سازی شده" داریم
+  // و صفحه فعلی را به‌روزرسانی می‌کنیم.
   if (event.state) {
-    // Simulate the loading of the previous page
+    // بارگذاری صفحه قبلی را شبیه‌سازی کنید
     displayContent(event.state);
   }
 });
 ```
 
-## Using `replaceState()`
+## استفاده از `replaceState()`
 
-There's one more piece we need to add. When the user loads the SPA, the browser adds a history entry. Because this was an actual page load, the entry has no state associated with it. So suppose the user does the following:
+یک بخش دیگر نیز باید اضافه کنیم. وقتی کاربر SPA را بارگذاری می‌کند، مرورگر یک ورودی تاریخچه اضافه می‌کند. از آنجایی که این یک بارگذاری واقعی صفحه بود، ورودی هیچ state مرتبطی ندارد. بنابراین فرض کنید کاربر موارد زیر را انجام می‌دهد:
 
-1. Loads the SPA, so the browser adds a history entry.
-2. Clicks a link inside the SPA, so the click handler updates the page and adds a history entry with `pushState()`.
-3. Presses the "Back" button.
+1. SPA را بارگذاری می‌کند، بنابراین مرورگر یک ورودی تاریخچه اضافه می‌کند.
+2. روی یک لینک داخل SPA کلیک می‌کند، بنابراین مدیریت‌کننده کلیک صفحه را به‌روزرسانی کرده و با `pushState()` یک ورودی تاریخچه اضافه می‌کند.
+3. دکمه «Back» را فشار می‌دهد.
 
-Now we want to go back to the SPA's initial state, but since this is a navigation in the same document, the page will not be reloaded, and since the history entry for the initial page has no state, we can't use `popstate` to restore it.
+اکنون می‌خواهیم به وضعیت اولیه SPA برگردیم، اما از آنجایی که این یک پیمایش در همان سند است، صفحه دوباره بارگذاری نمی‌شود، و از آنجایی که ورودی تاریخچه برای صفحه اولیه هیچ state ندارد، نمی‌توانیم از `popstate` برای بازیابی آن استفاده کنیم.
 
-The solution here is to use `replaceState()` to set the state object for the initial page. For example:
+راه حل در اینجا استفاده از `replaceState()` برای تنظیم شیء state برای صفحه اولیه است. به عنوان مثال:
 
 ```js
-// Create state on page load and replace the current history with it
+// هنگام بارگذاری صفحه state ایجاد کنید و تاریخچه فعلی را با آن جایگزین کنید
 const image = document.querySelector("#photo");
 const initialState = {
   description: document.querySelector("#description").textContent,
@@ -183,15 +177,15 @@ const initialState = {
 history.replaceState(initialState, "", document.location.href);
 ```
 
-On page load, we collect all the parts of the page that we need to restore when the user returns to the starting point for the SPA. This has the same structure as the JSON we fetch when handling other navigations. We pass this `initialState` object into `replaceState()`, which effectively adds the state object to the current history entry.
+در هنگام بارگذاری صفحه، تمام بخش‌های صفحه را که برای بازیابی زمانی که کاربر به نقطه شروع SPA بازمی‌گردد نیاز داریم جمع‌آوری می‌کنیم. این ساختار مشابه JSON است که هنگام مدیریت سایر پیمایش‌ها واکشی می‌کنیم. این شیء `initialState` را به `replaceState()` ارسال می‌کنیم، که عملاً شیء state را به ورودی تاریخچه فعلی اضافه می‌کند.
 
-When the user returns to our starting point, the `popstate` event will contain this initial state, and we can use our `displayContent()` function to update the page.
+وقتی کاربر به نقطه شروع ما بازمی‌گردد، رویداد `popstate` حاوی این state اولیه خواهد بود و می‌توانیم از تابع `displayContent()` خود برای به‌روزرسانی صفحه استفاده کنیم.
 
-## Complete History API example
+## مثال کامل History API
 
-You can find this complete example at <https://github.com/mdn/dom-examples/tree/main/history-api>, and see the demo live at <https://mdn.github.io/dom-examples/history-api/>.
+می‌توانید این مثال کامل را در <https://github.com/mdn/dom-examples/tree/main/history-api> پیدا کنید و نسخه نمایشی زنده را در <https://mdn.github.io/dom-examples/history-api/> مشاهده کنید.
 
-## See also
+## همچنین ببینید
 
 - [History API](/en-US/docs/Web/API/History_API)
-- {{domxref("window.history", "history")}} global object
+- شیء سراسری {{domxref("window.history", "history")}}
