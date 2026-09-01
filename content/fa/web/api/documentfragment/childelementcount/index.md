@@ -1,11 +1,5 @@
 ---
 title: "DocumentFragment: childElementCount property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment/childElementCount"
-status: "needs-translation"
----
-
----
-title: "DocumentFragment: childElementCount property"
 short-title: childElementCount
 slug: Web/API/DocumentFragment/childElementCount
 page-type: web-api-instance-property
@@ -14,14 +8,13 @@ browser-compat: api.DocumentFragment.childElementCount
 
 {{ APIRef("DOM") }}
 
-The **`DocumentFragment.childElementCount`** read-only property
-returns the number of child elements of a `DocumentFragment`.
+خاصیت فقط خواندنی **`DocumentFragment.childElementCount`** تعداد عناصر فرزند یک `DocumentFragment` را برمی‌گرداند.
 
-To get the number of children of a specific element, see {{domxref("Element.childElementCount")}}.
+برای دریافت تعداد فرزندان یک عنصر خاص، به {{domxref("Element.childElementCount")}} مراجعه کنید.
 
 ## Value
 
-A number representing the number of children of the document fragment.
+یک عدد که تعداد فرزندان قطعه سند (document fragment) را نشان می‌دهد.
 
 ## Examples
 
