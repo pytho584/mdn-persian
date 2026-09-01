@@ -1,11 +1,5 @@
 ---
 title: "HTMLAreaElement: pathname property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLAreaElement/pathname"
-status: "needs-translation"
----
-
----
-title: "HTMLAreaElement: pathname property"
 short-title: pathname
 slug: Web/API/HTMLAreaElement/pathname
 page-type: web-api-instance-property
@@ -14,18 +8,15 @@ browser-compat: api.HTMLAreaElement.pathname
 
 {{ApiRef("HTML DOM")}}
 
-The **`HTMLAreaElement.pathname`** property is a
-string containing an initial `'/'` followed by the path of
-the URL not including the query string or fragment (or the empty string if there is no
-path).
+ویژگی **`HTMLAreaElement.pathname`** یک رشته است که شامل یک `'/'` ابتدایی و به دنبال آن مسیر URL است، بدون رشتهٔ جستجو (query string) یا قطعه (fragment). اگر مسیری وجود نداشته باشد، این رشته خالی است.
 
-The pathname is {{Glossary("Percent-encoding", "percent-encoded")}} when setting but not percent-decoded when read.
+هنگام تنظیم، pathname به‌صورت {{Glossary("Percent-encoding", "percent-encoded")}} (درصد-رمزگذاری‌شده) درمی‌آید؛ اما هنگام خواندن، درصد-رمزگشایی نمی‌شود.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```js
 // An <area id="myArea" href="/en-US/docs/HTMLAreaElement"> element is in the document
@@ -33,14 +24,14 @@ const area = document.getElementById("myArea");
 area.pathname; // returns '/en-US/docs/HTMLAreaElement'
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("HTMLAreaElement")}} interface it belongs to.
+- رابط {{domxref("HTMLAreaElement")}} که این ویژگی به آن تعلق دارد.
