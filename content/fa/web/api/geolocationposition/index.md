@@ -1,10 +1,4 @@
 ---
-title: "GeolocationPosition"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GeolocationPosition"
-status: "needs-translation"
----
-
----
 title: GeolocationPosition
 slug: Web/API/GeolocationPosition
 page-type: web-api-interface
@@ -13,33 +7,33 @@ browser-compat: api.GeolocationPosition
 
 {{securecontext_header}}{{APIRef("Geolocation API")}}
 
-The **`GeolocationPosition`** interface represents the position of the concerned device at a given time. The position, represented by a {{domxref("GeolocationCoordinates")}} object, comprehends the 2D position of the device, on a spheroid representing the Earth, but also its altitude and its speed.
+رابط **`GeolocationPosition`** موقعیت دستگاه مورد نظر را در یک زمان معین نشان می‌دهد. این موقعیت که توسط یک شیء {{domxref("GeolocationCoordinates")}} نمایش داده می‌شود، موقعیت دوبعدی دستگاه را روی یک شبه‌کره که نمایانگر زمین است، به همراه ارتفاع و سرعت آن در بر می‌گیرد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_The `GeolocationPosition` interface doesn't inherit any properties._
+_رابط `GeolocationPosition` هیچ ویژگی‌ای را به ارث نمی‌برد._
 
 - {{domxref("GeolocationPosition.coords")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref("GeolocationCoordinates")}} object defining the current location.
+  - : یک شیء {{domxref("GeolocationCoordinates")}} برمی‌گرداند که موقعیت فعلی را تعریف می‌کند.
 - {{domxref("GeolocationPosition.timestamp")}} {{ReadOnlyInline}}
-  - : Returns a timestamp, given as {{Glossary("Unix time")}} in milliseconds, representing the time at which the location was retrieved.
+  - : یک برچسب زمانی برمی‌گرداند که به‌صورت {{Glossary("Unix time")}} بر حسب میلی‌ثانیه ارائه شده و نشان‌دهندهٔ زمانی است که مکان بازیابی شده است.
 
-## Instance methods
+## متدهای نمونه
 
-_The `GeolocationPosition` interface doesn't inherit any methods._
+_رابط `GeolocationPosition` هیچ متدی را به ارث نمی‌برد._
 
 - {{domxref("GeolocationPosition.toJSON()")}}
-  - : Returns a JSON representation of the `GeolocationPosition` object and enables serialization with {{jsxref("JSON.stringify()")}}.
+  - : یک نمایش JSON از شیء `GeolocationPosition` برمی‌گرداند و سریال‌سازی را با {{jsxref("JSON.stringify()")}} امکان‌پذیر می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Using the Geolocation API](/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API)
 - {{domxref("Geolocation")}}
