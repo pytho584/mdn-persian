@@ -1,11 +1,5 @@
 ---
 title: "Document: documentURI property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/documentURI"
-status: "needs-translation"
----
-
----
-title: "Document: documentURI property"
 short-title: documentURI
 slug: Web/API/Document/documentURI
 page-type: web-api-instance-property
@@ -14,14 +8,13 @@ browser-compat: api.Document.documentURI
 
 {{ApiRef("DOM")}}
 
-The **`documentURI`** read-only property of the
-{{domxref("Document")}} interface returns the document location as a string.
+ویژگی فقط‌خواندنی **`documentURI`** در رابط {{domxref("Document")}}، مکان (آدرس) سند را به‌صورت یک رشته بازمی‌گرداند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ### JavaScript
 
@@ -38,18 +31,18 @@ document.getElementById("url").textContent = document.documentURI;
 </p>
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples", "100%", 100)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("document.URL")}} property which returns the same value.
+- ویژگی {{domxref("document.URL")}} که همان مقدار را بازمی‌گرداند.
