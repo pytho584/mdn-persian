@@ -1,7 +1,5 @@
 ---
 title: "CSSTranslate"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSTranslate"
-status: "needs-translation"
 ---
 
 ---
@@ -13,38 +11,38 @@ browser-compat: api.CSSTranslate
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`CSSTranslate`** interface of the [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Object_Model) represents the {{cssxref("transform-function/translate", "translate()")}} value of the individual {{CSSXRef('transform')}} property in CSS.
+اینترفیس **`CSSTranslate`** از [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Object_Model)، مقدار {{cssxref("transform-function/translate", "translate()")}} را برای ویژگی مجزای {{CSSXRef('transform')}} در CSS نشان می‌دهد.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("CSSTranslate.CSSTranslate", "CSSTranslate()")}}
-  - : Creates a new `CSSTranslate` object.
+  - : یک شیء `CSSTranslate` جدید ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Also inherits properties from its parent interface, {{DOMxRef("CSSTransformComponent")}}._
+_همچنین ویژگی‌های رابط والد خود، {{DOMxRef("CSSTransformComponent")}} را به ارث می‌برد._
 
 - {{domxref('CSSTranslate.x','x')}}
-  - : Returns or sets the x-axis value.
+  - : مقدار محور x را برمی‌گرداند یا آن را تنظیم می‌کند.
 - {{domxref('CSSTranslate.y','y')}}
-  - : Returns or sets the y-axis value.
+  - : مقدار محور y را برمی‌گرداند یا آن را تنظیم می‌کند.
 - {{domxref('CSSTranslate.z','z')}}
-  - : Returns or sets the z-axis value.
+  - : مقدار محور z را برمی‌گرداند یا آن را تنظیم می‌کند.
 
-## Instance methods
+## روش‌های نمونه
 
-_Also inherits methods from its parent interface, {{DOMxRef("CSSTransformComponent")}}._
+_همچنین روش‌های رابط والد خود، {{DOMxRef("CSSTransformComponent")}} را به ارث می‌برد._
 
-## Examples
+## مثال‌ها
 
-To do.
+هنوز انجام نشده است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
