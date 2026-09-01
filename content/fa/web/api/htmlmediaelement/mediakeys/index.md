@@ -1,11 +1,5 @@
 ---
 title: "HTMLMediaElement: mediaKeys property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/mediaKeys"
-status: "needs-translation"
----
-
----
-title: "HTMLMediaElement: mediaKeys property"
 short-title: mediaKeys
 slug: Web/API/HTMLMediaElement/mediaKeys
 page-type: web-api-instance-property
@@ -14,20 +8,20 @@ browser-compat: api.HTMLMediaElement.mediaKeys
 
 {{APIRef("Encrypted Media Extensions")}}{{SecureContext_Header}}
 
-The read-only **`HTMLMediaElement.mediaKeys`** property returns a {{domxref("MediaKeys")}} object, that is a set of keys that the element can use for decryption of media data during playback.
+ویژگی فقط‌خواندنی **`HTMLMediaElement.mediaKeys`** یک شیء {{domxref("MediaKeys")}} را برمی‌گرداند که مجموعه‌ای از کلیدهاست که عنصر می‌تواند برای رمزگشایی داده‌های رسانه‌ای در حین پخش استفاده کند.
 
-## Value
+## مقدار
 
-A {{domxref("MediaKeys")}} object, or `null` if no key is available.
+یک شیء {{domxref("MediaKeys")}}، یا `null` در صورتی که هیچ کلیدی در دسترس نباشد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("MediaKeys")}}
