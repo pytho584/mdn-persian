@@ -1,7 +1,5 @@
 ---
 title: "File: lastModified property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/File/lastModified"
-status: "needs-translation"
 ---
 
 ---
@@ -14,18 +12,15 @@ browser-compat: api.File.lastModified
 
 {{APIRef("File API")}}{{AvailableInWorkers}}
 
-The **`lastModified`** read-only property of the {{domxref("File")}} interface provides the
-last modified date of the file as the number of milliseconds since the Unix
-epoch (January 1, 1970 at midnight). Files without a known last modified date return the
-current date.
+ویژگی فقط‌خواندنی **`lastModified`** از رابط {{domxref("File")}} تاریخ آخرین تغییر فایل را به‌صورت تعداد میلی‌ثانیه از مبدأ Unix (نیمه‌شب اول ژانویه ۱۹۷۰) ارائه می‌دهد. فایل‌هایی که تاریخ آخرین تغییر مشخصی ندارند، تاریخ فعلی را برمی‌گردانند.
 
-## Value
+## مقدار
 
-A number that represents the number of milliseconds since the Unix epoch.
+عددی که تعداد میلی‌ثانیه از مبدأ Unix را نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
-The example below will loop through the files you choose, and print whether each file was modified within the past year.
+مثال زیر فایل‌هایی را که انتخاب می‌کنید حلقه می‌زند و مشخص می‌کند که آیا هر فایل در یک سال گذشته تغییر کرده است یا خیر.
 
 ### HTML
 
@@ -54,68 +49,65 @@ filePicker.addEventListener("change", (event) => {
 
   for (const file of files) {
     const date = new Date(file.lastModified);
-    // true if the file hasn't been modified for more than 1 year
+    // true اگر فایل بیش از 1 سال تغییر نکرده باشد
     const stale = now.getTime() - file.lastModified > 31_536_000_000;
-    output.textContent += `${file.name} is ${
-      stale ? "stale" : "fresh"
-    } (${date}).\n`;
+    output.textContent += `${file.name} ${
+      stale ? "کهنه" : "تازه"
+    } است (${date}).\n`;
   }
 });
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample('Examples')}}
 
-### Dynamically created files
+### فایل‌های ساخته‌شده به‌صورت پویا
 
-If a File is created dynamically, the last modified time can be supplied in the
-{{domxref("File.File()", "File()")}} constructor function. If it is missing,
-`lastModified` inherits the current time from {{jsxref("Date.now()")}} at the
-moment the `File` object gets created.
+اگر یک فایل به‌صورت پویا ساخته شود، زمان آخرین تغییر را می‌توان در تابع سازنده {{domxref("File.File()", "File()")}} مشخص کرد. اگر این زمان ذکر نشود، `lastModified` زمان فعلی را از {{jsxref("Date.now()")}} در لحظه ایجاد شیء `File` به ارث می‌برد.
 
 ```js
 const fileWithDate = new File([], "file.bin", {
   lastModified: new Date(2017, 1, 1),
 });
-console.log(fileWithDate.lastModified); // returns 1485903600000
+console.log(fileWithDate.lastModified); // 1485903600000 را برمی‌گرداند
 
 const fileWithoutDate = new File([], "file.bin");
-console.log(fileWithoutDate.lastModified); // returns current time
+console.log(fileWithoutDate.lastModified); // زمان فعلی را برمی‌گرداند
 ```
 
-## Reduced time precision
+## کاهش دقت زمان
 
-To offer protection against timing attacks and [fingerprinting](/en-US/docs/Glossary/Fingerprinting), the precision of `someFile.lastModified` might get rounded depending on browser settings. In Firefox, the `privacy.reduceTimerPrecision` preference is enabled by default and defaults to 2ms. You can also enable `privacy.resistFingerprinting`, in which case the precision will be 100ms or the value of `privacy.resistFingerprinting.reduceTimerPrecision.microseconds`, whichever is larger.
+برای محافظت در برابر حملات زمان‌بندی و [اثر انگشت‌برداری](/en-US/docs/Glossary/Fingerprinting)، دقت `someFile.lastModified` ممکن است بسته به تنظیمات مرورگر گرد شود. در Firefox، اولویت `privacy.reduceTimerPrecision` به‌طور پیش‌فرض فعال است و مقدار پیش‌فرض آن ۲ میلی‌ثانیه است. همچنین می‌توانید `privacy.resistFingerprinting` را فعال کنید، که در این صورت دقت ۱۰۰ میلی‌ثانیه یا مقدار `privacy.resistFingerprinting.reduceTimerPrecision.microseconds` (هر کدام بزرگ‌تر باشد) خواهد بود.
 
-For example, with reduced time precision, the result of `someFile.lastModified` will always be a multiple of 2, or a multiple of 100 (or `privacy.resistFingerprinting.reduceTimerPrecision.microseconds`) with `privacy.resistFingerprinting` enabled.
+برای مثال، با کاهش دقت زمان، نتیجه `someFile.lastModified` همیشه مضربی از ۲ یا مضربی از ۱۰۰ (یا `privacy.resistFingerprinting.reduceTimerPrecision.microseconds`) با فعال بودن `privacy.resistFingerprinting` خواهد بود.
 
 ```js
-// reduced time precision (2ms) in Firefox 60
+// کاهش دقت زمان (2ms) در Firefox 60
 someFile.lastModified;
-// Might be:
+// ممکن است:
 // 1519211809934
 // 1519211810362
 // 1519211811670
 // …
 
-// reduced time precision with `privacy.resistFingerprinting` enabled
+// کاهش دقت زمان با فعال بودن `privacy.resistFingerprinting`
 someFile.lastModified;
-// Might be:
+// ممکن است:
 // 1519129853500
 // 1519129858900
 // 1519129864400
 // …
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("File")}}
