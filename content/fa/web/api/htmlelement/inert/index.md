@@ -1,7 +1,6 @@
+```
 ---
 title: "HTMLElement: inert property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/inert"
-status: "needs-translation"
 ---
 
 ---
@@ -14,15 +13,15 @@ browser-compat: api.HTMLElement.inert
 
 {{ APIRef("HTML DOM") }}
 
-The {{domxref("HTMLElement")}} property **`inert`** reflects the value of the element's [`inert`](/en-US/docs/Web/HTML/Reference/Global_attributes/inert) attribute. It is a boolean value that, when present, makes the browser "ignore" user input events for the element, including focus events and events from assistive technologies. The browser may also ignore page search and text selection in the element. This can be useful when building UIs such as modals where you would want to "trap" the focus inside the modal when it's visible.
+ویژگی **`inert`** در {{domxref("HTMLElement")}}، مقدار ویژگی [`inert`](/en-US/docs/Web/HTML/Reference/Global_attributes/inert) عنصر را بازتاب می‌دهد. این یک مقدار بولی است که وقتی وجود داشته باشد، باعث می‌شود مرورگر رویدادهای ورودی کاربر را برای آن عنصر «نادیده» بگیرد، از جمله رویدادهای فوکوس و رویدادهای فناوری‌های کمکی. مرورگر ممکن است جستجوی صفحه و انتخاب متن را در آن عنصر نیز نادیده بگیرد. این موضوع هنگام ساخت رابط‌های کاربری مانند مودال‌ها مفید است که در آن‌ها می‌خواهید وقتی مودال قابل مشاهده است، فوکوس را در همان مودال «به دام بیندازید».
 
-Note that if the `inert` attribute is unspecified, the element itself may still inherit inertness from its parent. However, that inherited inertness is not reflected by this property's value. Explicitly setting the property to `false` cannot revert inertness inherited from the parent.
+توجه داشته باشید که اگر ویژگی `inert` مشخص نشده باشد، خود عنصر ممکن است همچنان بی‌اثری را از والد خود به ارث ببرد. با این حال، این بی‌اثری به ارث رسیده در مقدار این ویژگی بازتاب نمی‌یابد. تنظیم صریح این ویژگی به `false` نمی‌تواند بی‌اثری به ارث رسیده از والد را معکوس کند.
 
-## Value
+## مقدار
 
-A Boolean which is `true` if the element is inert; otherwise, the value is `false`.
+یک مقدار بولی که اگر عنصر بی‌اثر (inert) باشد، `true` است؛ در غیر این صورت مقدار آن `false` است.
 
-## Examples
+## مثال‌ها
 
 ### HTML
 
@@ -48,19 +47,20 @@ A Boolean which is `true` if the element is inert; otherwise, the value is `fals
 {{ EmbedLiveSample('Examples', 560, 200) }}
 
 > [!NOTE]
-> This attribute, by itself, will not cause any visual change to the content as displayed in the browser. In the example above, CSS has been applied so that any direct descendant of an element with the inert attribute is rendered semi-opaque.
+> این ویژگی به‌تنهایی هیچ تغییر بصری در محتوای نمایش‌داده‌شده در مرورگر ایجاد نمی‌کند. در مثال بالا، CSS اعمال شده است تا هر فرزند مستقیم عنصری که ویژگی `inert` دارد، به‌صورت نیمه‌شفاف نمایش داده شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Global attribute: `inert`](/en-US/docs/Web/HTML/Reference/Global_attributes/inert)
+- [ویژگی سراسری: `inert`](/en-US/docs/Web/HTML/Reference/Global_attributes/inert)
 - {{domxref("HTMLInputElement.disabled", "disabled")}}
 - {{HTMLElement("dialog")}}
-- CSS {{cssxref("interactivity")}} property
+- ویژگی CSS {{cssxref("interactivity")}}
+```
