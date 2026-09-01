@@ -1,11 +1,5 @@
 ---
 title: "DOMMatrixReadOnly: toJSON() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrixReadOnly/toJSON"
-status: "needs-translation"
----
-
----
-title: "DOMMatrixReadOnly: toJSON() method"
 short-title: toJSON()
 slug: Web/API/DOMMatrixReadOnly/toJSON
 page-type: web-api-instance-method
@@ -14,23 +8,23 @@ browser-compat: api.DOMMatrixReadOnly.toJSON
 
 {{APIRef("DOM")}}
 
-The **`toJSON()`** method of the {{domxref("DOMMatrixReadOnly")}} interface creates and returns a {{jsxref("JSON")}} object. The JSON object includes the 2D matrix elements `a` through `f`, the 16 elements of the 4X4 3D matrix, `m[1-4][1-4]`, the boolean {{domxref("DOMMatrixReadOnly.is2D", "is2D")}} property, and the boolean {{domxref("DOMMatrixReadOnly.isIdentity", "isIdentity")}} property.
+متد **`toJSON()`** از رابط {{domxref("DOMMatrixReadOnly")}} یک شیء {{jsxref("JSON")}} ساخته و بازمی‌گرداند. این شیء JSON شامل عناصر ماتریس ۲ بعدی `a` تا `f`، ۱۶ عنصر ماتریس ۴×۴ سه‌دی (`m[1-4][1-4]`) خاصیت بولی {{domxref("DOMMatrixReadOnly.is2D", "is2D")}} و خاصیت بولی {{domxref("DOMMatrixReadOnly.isIdentity", "isIdentity")}} است.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 toJSON()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("JSON")}} object; a JSON representation of the `DOMMatrixReadOnly` object.
+یک شیء {{jsxref("JSON")}}؛ نمایش JSON از شیء `DOMMatrixReadOnly`.
 
-## Examples
+## مثال‌ها
 
 ```js
 const matrix = new DOMMatrixReadOnly();
@@ -94,15 +88,15 @@ console.log(matrix.translate(22, 55, 66).toJSON());
 */
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("DOMMatrixReadOnly.toString()")}}
 - {{domxref("DOMMatrix.setMatrixValue()")}}
