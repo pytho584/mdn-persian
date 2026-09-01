@@ -1,11 +1,5 @@
 ---
 title: "HTMLIFrameElement: credentialless property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/credentialless"
-status: "needs-translation"
----
-
----
-title: "HTMLIFrameElement: credentialless property"
 short-title: credentialless
 slug: Web/API/HTMLIFrameElement/credentialless
 page-type: web-api-instance-property
@@ -16,21 +10,21 @@ browser-compat: api.HTMLIFrameElement.credentialless
 
 {{APIRef("HTML DOM")}}{{SeeCompatTable}}
 
-The **`credentialless`** property of the {{domxref("HTMLIFrameElement")}} interface indicates whether the {{htmlelement("iframe")}} is credentialless, meaning that documents inside will be loaded using new, ephemeral contexts.
+ویژگی **`credentialless`** در رابط {{domxref("HTMLIFrameElement")}} مشخص می‌کند که آیا {{htmlelement("iframe")}} بدونِ اعتبار (credentialless) است یا خیر؛ یعنی اسناد داخل آن با استفاده از زمینه‌های جدید و موقتی بارگذاری می‌شوند.
 
-Those contexts do not have access to their network, cookies and storage data associated with their origin. Instead, they use new ones, local to the top-level document lifetime. It means any data stored won't be accessible anymore after the user navigates away from the page or reloads it.
+این زمینه‌ها به شبکه، کوکی‌ها و داده‌های ذخیره‌سازی مرتبط با مبدأ خود دسترسی ندارند. در عوض، از داده‌های جدیدی استفاده می‌کنند که فقط در طول عمر سند سطح بالا معتبر هستند. این یعنی پس از اینکه کاربر از صفحه خارج شد یا آن را دوباره بارگذاری کرد، هیچ‌یک از داده‌های ذخیره‌شده دیگر قابل دسترسی نخواهند بود.
 
-In return, the {{httpheader("Cross-Origin-Embedder-Policy")}} (COEP) embedding rules can be lifted, so documents with COEP set can embed third-party documents that do not. See [IFrame credentialless](/en-US/docs/Web/HTTP/Guides/IFrame_credentialless) for a deeper explanation.
+در مقابل، قوانین جاسازی {{httpheader("Cross-Origin-Embedder-Policy")}} (COEP) قابل برداشتن هستند؛ بنابراین اسنادی که COEP را تنظیم کرده‌اند می‌توانند اسناد شخص ثالثی را که این خط‌مشی را ندارند جاسازی کنند. برای توضیحات بیشتر به [IFrame credentialless](/en-US/docs/Web/HTTP/Guides/IFrame_credentialless) مراجعه کنید.
 
-## Value
+## مقدار
 
-A boolean. The default value is `false`; set it to `true` to make the `<iframe>` credentialless.
+یک مقدار بولین (boolean). مقدار پیش‌فرض `false` است؛ آن را روی `true` قرار دهید تا `<iframe>` بدونِ اعتبار شود.
 
-## Examples
+## مثال‌ها
 
-### Get
+### خواندن
 
-Specify a credentialless `<iframe>` like so:
+یک `<iframe>` بدونِ اعتبار را به این صورت تعریف کنید:
 
 ```html
 <iframe
@@ -41,22 +35,22 @@ Specify a credentialless `<iframe>` like so:
   credentialless></iframe>
 ```
 
-Return the `credentialless` property value:
+مقدار ویژگی `credentialless` را برگردانید:
 
 ```js
 const iframeElem = document.querySelector("iframe");
 console.log(iframeElem.credentialless); // will return true in supporting browsers
 ```
 
-### Set
+### تنظیم
 
-Alternatively, specify the minimum of details in the HTML:
+یا اینکه در HTML فقط حداقل جزئیات را مشخص کنید:
 
 ```html
 <iframe width="960" height="600"> </iframe>
 ```
 
-And set `credentialless` to `true` then load the `<iframe>` contents via script:
+سپس `credentialless` را روی `true` قرار دهید و محتوای `<iframe>` را از طریق اسکریپت بارگذاری کنید:
 
 ```js
 const iframeElem = document.querySelector("iframe");
@@ -67,15 +61,15 @@ iframeElem.src =
   "https://en.wikipedia.org/wiki/Spectre_(security_vulnerability)";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [IFrame credentialless](/en-US/docs/Web/HTTP/Guides/IFrame_credentialless)
 - {{htmlelement("iframe")}}
