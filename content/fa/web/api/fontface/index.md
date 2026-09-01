@@ -1,11 +1,5 @@
 ---
 title: "FontFace"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FontFace"
-status: "needs-translation"
----
-
----
-title: FontFace
 slug: Web/API/FontFace
 page-type: web-api-interface
 browser-compat: api.FontFace
@@ -13,53 +7,51 @@ browser-compat: api.FontFace
 
 {{APIRef("CSS Font Loading API")}}{{AvailableInWorkers}}
 
-The **`FontFace`** interface of the [CSS Font Loading API](/en-US/docs/Web/API/CSS_Font_Loading_API) represents a single usable font face.
+رابط **`FontFace`** از [API بارگذاری فونت CSS](/en-US/docs/Web/API/CSS_Font_Loading_API) نشان‌دهنده‌ی یک قلم (font face) قابل استفاده است.
 
-This interface defines the source of a font face, either a URL to an external resource or a buffer, and font properties such as `style`, `weight`, and so on.
-For URL font sources it allows authors to trigger when the remote font is fetched and loaded, and to track loading status.
+این رابط منبع یک قلم را تعریف می‌کند، خواه یک URL به یک منبع خارجی یا یک بافر (buffer) باشد، و همچنین ویژگی‌های قلم مانند `style`، `weight` و غیره را مشخص می‌کند. برای منابع قلم مبتنی بر URL، به نویسندگان امکان می‌دهد تا زمان واکشی و بارگذاری قلم از راه دور را تعیین کرده و وضعیت بارگذاری را پیگیری کنند.
 
-## Constructor
+## سازنده
 
 - {{domxref("FontFace.FontFace", "FontFace()")}}
-  - : Constructs and returns a new `FontFace` object, built from an external resource described by a URL or from an {{jsxref("ArrayBuffer")}}.
+  - : یک شیء جدید `FontFace` می‌سازد و برمی‌گرداند که از یک منبع خارجی توصیف‌شده توسط یک URL یا از یک {{jsxref("ArrayBuffer")}} ساخته شده است.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("FontFace.ascentOverride")}}
-  - : A string that retrieves or sets the _ascent metric_ of the font. It is equivalent to the {{cssxref("@font-face/ascent-override", "ascent-override")}} descriptor.
+  - : یک رشته که معیار بالای (ascent metric) قلم را بازیابی یا تنظیم می‌کند. معادل توصیفگر {{cssxref("@font-face/ascent-override", "ascent-override")}} است.
 - {{domxref("FontFace.descentOverride")}}
-  - : A string that retrieves or sets the _descent metric_ of the font. It is equivalent to the {{cssxref("@font-face/descent-override", "descent-override")}} descriptor.
+  - : یک رشته که معیار پایین (descent metric) قلم را بازیابی یا تنظیم می‌کند. معادل توصیفگر {{cssxref("@font-face/descent-override", "descent-override")}} است.
 - {{domxref("FontFace.display")}}
-  - : A string that determines how a font face is displayed based on whether and when it is downloaded and ready to use.
+  - : یک رشته که نحوه نمایش قلم را بر اساس اینکه آیا بارگذاری شده و آماده استفاده است تعیین می‌کند.
 - {{domxref("FontFace.family")}}
-  - : A string that retrieves or sets the _family_ of the font. It is equivalent to the {{cssxref("@font-face/font-family", "font-family")}} descriptor.
+  - : یک رشته که خانواده (family) قلم را بازیابی یا تنظیم می‌کند. معادل توصیفگر {{cssxref("@font-face/font-family", "font-family")}} است.
 - {{domxref("FontFace.featureSettings")}}
-  - : A string that retrieves or sets infrequently used font features that are not available from a font's variant properties. It is equivalent to the CSS {{cssxref("font-feature-settings")}} property.
+  - : یک رشته که ویژگی‌های کم‌استفاده قلم را که از طریق ویژگی‌های variant در دسترس نیستند، بازیابی یا تنظیم می‌کند. معادل ویژگی CSS {{cssxref("font-feature-settings")}} است.
 - {{domxref("FontFace.lineGapOverride")}}
-  - : A string that retrieves or sets the _line-gap metric_ of the font. It is equivalent to the {{cssxref("@font-face/line-gap-override", "line-gap-override")}} descriptor.
+  - : یک رشته که معیار فاصله خط (line-gap metric) قلم را بازیابی یا تنظیم می‌کند. معادل توصیفگر {{cssxref("@font-face/line-gap-override", "line-gap-override")}} است.
 - {{domxref("FontFace.loaded")}} {{ReadOnlyInline}}
-  - : Returns a {{jsxref("Promise")}} that resolves with the current `FontFace` object when the font specified in the object's constructor is done loading or rejects with a `SyntaxError` {{domxref("DOMException")}}.
+  - : یک {{jsxref("Promise")}} برمی‌گرداند که وقتی قلم مشخص‌شده در سازنده‌ی شیء بارگذاری کامل شود، با شیء `FontFace` فعلی حل می‌شود (resolve) و در صورت خطا با یک `SyntaxError` {{domxref("DOMException")}} رد می‌شود (reject).
 - {{domxref("FontFace.status")}} {{ReadOnlyInline}}
-  - : Returns an enumerated value indicating the status of the font, one of `"unloaded"`, `"loading"`, `"loaded"`, or `"error"`.
+  - : یک مقدار شمارشی (enumerated) برمی‌گرداند که وضعیت قلم را نشان می‌دهد، یکی از `"unloaded"`، `"loading"`، `"loaded"` یا `"error"`.
 - {{domxref("FontFace.stretch")}}
-  - : A string that retrieves or sets how the font _stretches_. It is equivalent to the {{cssxref("@font-face/font-stretch", "font-stretch")}} descriptor.
+  - : یک رشته که نحوه‌ی کشیدگی (stretch) قلم را بازیابی یا تنظیم می‌کند. معادل توصیفگر {{cssxref("@font-face/font-stretch", "font-stretch")}} است.
 - {{domxref("FontFace.style")}}
-  - : A string that retrieves or sets the _style_ of the font. It is equivalent to the {{cssxref("@font-face/font-style", "font-style")}} descriptor.
+  - : یک رشته که سبک (style) قلم را بازیابی یا تنظیم می‌کند. معادل توصیفگر {{cssxref("@font-face/font-style", "font-style")}} است.
 - {{domxref("FontFace.unicodeRange")}}
-  - : A string that retrieves or sets the _range of unicode code points_ encompassing the font. It is equivalent to the {{cssxref("@font-face/unicode-range", "unicode-range")}} descriptor.
+  - : یک رشته که محدوده نقاط کد یونیکد (unicode code points) پوشش‌دهنده قلم را بازیابی یا تنظیم می‌کند. معادل توصیفگر {{cssxref("@font-face/unicode-range", "unicode-range")}} است.
 - {{domxref("FontFace.variant")}} {{non-standard_inline}}
-  - : A string that retrieves or sets the _variant_ of the font.
+  - : یک رشته که نوع (variant) قلم را بازیابی یا تنظیم می‌کند.
 - {{domxref("FontFace.variationSettings")}}
-  - : A string that retrieves or sets the _variation settings_ of the font. It is equivalent to the {{cssxref("@font-face/font-variation-settings", "font-variation-settings")}} descriptor.
+  - : یک رشته که تنظیمات تغییرات (variation settings) قلم را بازیابی یا تنظیم می‌کند. معادل توصیفگر {{cssxref("@font-face/font-variation-settings", "font-variation-settings")}} است.
 - {{domxref("FontFace.weight")}}
-  - : A string that contains the _weight_ of the font. It is equivalent to the {{cssxref("@font-face/font-weight", "font-weight")}} descriptor.
+  - : یک رشته که وزن (weight) قلم را بازیابی یا تنظیم می‌کند. معادل توصیفگر {{cssxref("@font-face/font-weight", "font-weight")}} است.
 - {{domxref("FontFace.load()")}}
-  - : Loads a font based on current object's constructor-passed requirements, including a location or source buffer, and returns a {{jsxref('Promise')}} that resolves with the current FontFace object.
+  - : یک قلم را بر اساس نیازهای ارسال‌شده به سازنده‌ی شیء فعلی (شامل یک مکان یا بافر منبع) بارگذاری می‌کند و یک {{jsxref('Promise')}} برمی‌گرداند که با شیء FontFace فعلی حل می‌شود.
 
-## Examples
+## مثال‌ها
 
-The code below defines a font face using data at the URL "my-font.woff" with a few font descriptors.
-Just to show how it works, we then define the `stretch` descriptor using a property.
+کد زیر یک قلم را با استفاده از داده‌های موجود در URL "my-font.woff" به همراه چند توصیفگر قلم تعریف می‌کند. فقط برای نشان دادن نحوه کار، سپس توصیفگر `stretch` را با استفاده از یک ویژگی تعریف می‌کنیم.
 
 ```js
 // Define a FontFace
@@ -71,7 +63,7 @@ const font = new FontFace("my-font", 'url("my-font.woff")', {
 font.stretch = "condensed";
 ```
 
-Next we load the font using {{domxref("FontFace.load()")}} and use the returned promise to track completion or report an error.
+سپس قلم را با استفاده از {{domxref("FontFace.load()")}} بارگذاری می‌کنیم و از promise بازگشتی برای پیگیری اتمام یا گزارش خطا استفاده می‌کنیم.
 
 ```js
 // Load the font
@@ -85,19 +77,18 @@ font.load().then(
 );
 ```
 
-To actually _use_ the font we will need to add it to a {{domxref("FontFaceSet")}}.
-We could do that before or after loading the font.
+برای استفاده‌ی واقعی از قلم، باید آن را به یک {{domxref("FontFaceSet")}} اضافه کنیم. می‌توانیم این کار را قبل یا بعد از بارگذاری قلم انجام دهیم.
 
-For additional examples see [CSS Font Loading API > Examples](/en-US/docs/Web/API/CSS_Font_Loading_API#examples).
+برای مثال‌های بیشتر به [CSS Font Loading API > Examples](/en-US/docs/Web/API/CSS_Font_Loading_API#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{cssxref("@font-face")}}
