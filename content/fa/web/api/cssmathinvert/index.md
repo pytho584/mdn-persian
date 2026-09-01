@@ -1,7 +1,5 @@
 ---
 title: "CSSMathInvert"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSMathInvert"
-status: "needs-translation"
 ---
 
 ---
@@ -13,48 +11,45 @@ browser-compat: api.CSSMathInvert
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`CSSMathInvert`** interface of the [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Object_Model) represents the inverse (reciprocal) of a {{domxref('CSSNumericValue')}}.
+رابطِ **`CSSMathInvert`** در [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Object_Model) وارون (معکوس) یک {{domxref('CSSNumericValue')}} را نمایش می‌دهد.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("CSSMathInvert.CSSMathInvert", "CSSMathInvert()")}}
-  - : Creates a new `CSSMathInvert` object.
+  - : یک شیء `CSSMathInvert` جدید می‌سازد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Also inherits properties from its parent interface, {{DOMxRef("CSSMathValue")}}._
+_همچنین ویژگی‌های رابط والد خود، {{DOMxRef("CSSMathValue")}} را به ارث می‌برد._
 
 - {{domxref('CSSMathInvert.value')}} {{ReadOnlyInline}}
-  - : Returns a {{domxref('CSSNumericValue')}} object containing the value being inverted.
+  - : یک شیء {{domxref('CSSNumericValue')}} حاوی مقداری که قرار است معکوس شود را بازمی‌گرداند.
 
-## Static methods
+## روش‌های ایستا
 
-_Also inherits methods from its parent interface, {{DOMxRef("CSSMathValue")}}._
+_همچنین روش‌های رابط والد خود، {{DOMxRef("CSSMathValue")}} را به ارث می‌برد._
 
-## Instance methods
+## روش‌های نمونه
 
-_Also inherits methods from its parent interface, {{DOMxRef("CSSMathValue")}}._
+_همچنین روش‌های رابط والد خود، {{DOMxRef("CSSMathValue")}} را به ارث می‌برد._
 
-## Description
+## توضیحات
 
-When you divide one {{domxref('CSSNumericValue')}} by another using {{domxref('CSSNumericValue.div', 'div()')}}, if the divisor is a plain number, it can immediately be scaled into a value of the original type.
+وقتی یک {{domxref('CSSNumericValue')}} را با استفاده از {{domxref('CSSNumericValue.div', 'div()')}} بر مقدار دیگری تقسیم می‌کنید، اگر مقسوم‌علیه یک عدد ساده باشد، بلافاصله می‌تواند به مقداری از همان نوع اصلی مقیاس‌بندی شود.
 
-If the divisor is a different type, the result can't be resolved to a single object.
-In this case, the [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Object_Model) represents the divisor as a `CSSMathInvert`.
+اگر مقسوم‌علیه از نوع دیگری باشد، نتیجه را نمی‌توان به یک شیء واحد تبدیل کرد. در این حالت، [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Object_Model) مقسوم‌علیه را به صورت یک `CSSMathInvert` نمایش می‌دهد.
 
-Generally you won't construct a `CSSMathInvert` directly.
-It's produced when `div()` is called with a divisor that isn't a plain number: the result is a {{domxref('CSSMathProduct')}}, and `CSSMathInvert` is the operand holding that divisor — found by walking the product's operands, or by checking {{domxref('CSSMathValue.operator')}} for the string `"invert"`.
+به‌طور معمول شما مستقیماً یک `CSSMathInvert` نمی‌سازید. این شیء زمانی تولید می‌شود که `div()` با مقسوم‌علیه‌ای غیر از عدد ساده فراخوانی شود: نتیجه یک {{domxref('CSSMathProduct')}} است و `CSSMathInvert` عملوندی است که آن مقسوم‌علیه را نگه می‌دارد — که با پیمایش عملوندهای حاصل‌ضرب، یا با بررسی {{domxref('CSSMathValue.operator')}} برای رشته `"invert"` پیدا می‌شود.
 
-`CSSMathInvert` serializes using CSS {{CSSXref('calc','calc()')}} syntax, as `calc(1 / <value>)`.
+`CSSMathInvert` با استفاده از نحو CSS {{CSSXref('calc','calc()')}} به صورت `calc(1 / <value>)` سریال‌سازی می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Constructing a CSSMathInvert with a non-number divisor
+### ساخت CSSMathInvert با مقسوم‌علیه غیرعددی
 
-This example shows how you can use {{domxref('CSSNumericValue.div', 'div()')}} with a divisor that isn't a plain number to get a {{domxref('CSSMathProduct')}} that has a `CSSMathInvert` as one of its operands.
-The value and serialization of that operand are also logged.
+این مثال نشان می‌دهد که چگونه می‌توانید از {{domxref('CSSNumericValue.div', 'div()')}} با مقسوم‌علیه‌ای که عدد ساده نیست استفاده کنید تا یک {{domxref('CSSMathProduct')}} به دست آورید که یکی از عملوندهای آن `CSSMathInvert` است. مقدار و سریال‌سازی آن عملوند نیز در خروجی ثبت می‌شود.
 
 ```js
 const product = CSS.px(200).div(CSS.percent(4));
@@ -65,15 +60,15 @@ console.log(product.values[1].value); // CSSUnitValue {value: 4, unit: "percent"
 console.log(product.toString()); // "calc(200px / 4%)"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("CSSNumericValue.div", "div()")}}
 - {{domxref("CSSMathNegate")}}
