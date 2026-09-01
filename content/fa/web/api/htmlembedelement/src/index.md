@@ -1,11 +1,5 @@
 ---
 title: "HTMLEmbedElement: src property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLEmbedElement/src"
-status: "needs-translation"
----
-
----
-title: "HTMLEmbedElement: src property"
 short-title: src
 slug: Web/API/HTMLEmbedElement/src
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.HTMLEmbedElement.src
 
 {{APIRef("HTML DOM")}}
 
-The **`src`** property of the {{domxref("HTMLEmbedElement")}} interface returns a string that indicates the URL of the resource being embedded.
+ویژگی **`src`** از رابط {{domxref("HTMLEmbedElement")}} یک رشته را برمی‌گرداند که نشانی اینترنتی (URL) منبع جاسازی‌شده را نشان می‌دهد.
 
-It reflects the `src` attribute of the {{HTMLElement("embed")}} element.
+این ویژگی منعکس‌کنندهٔ ویژگی `src` عنصر {{HTMLElement("embed")}} است.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```html
 <embed
@@ -39,10 +33,10 @@ const el = document.getElementById("el");
 console.log(el.src); // Output: "movie.mov"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
