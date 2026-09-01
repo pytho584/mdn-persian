@@ -1,11 +1,5 @@
 ---
 title: "CSSMathSum: CSSMathSum() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSMathSum/CSSMathSum"
-status: "needs-translation"
----
-
----
-title: "CSSMathSum: CSSMathSum() constructor"
 short-title: CSSMathSum()
 slug: Web/API/CSSMathSum/CSSMathSum
 page-type: web-api-constructor
@@ -16,12 +10,12 @@ browser-compat: api.CSSMathSum.CSSMathSum
 
 {{APIRef("CSS Typed Object Model API")}}{{AvailableInWorkers}}{{SeeCompatTable}}
 
-The **`CSSMathSum()`** constructor creates a new {{domxref("CSSMathSum")}} object representing the sum of the arguments passed into it.
+سازندهٔ **`CSSMathSum()`** یک شیء جدید {{domxref("CSSMathSum")}} می‌سازد که مجموع آرگومان‌های ارسال‌شده به آن را نشان می‌دهد.
 
-Numeric arguments are wrapped into {{domxref("CSSUnitValue")}} objects with a unit of `"number"`.
-All arguments are stored as separate items in its {{domxref("CSSMathSum/values","values")}} property.
+آرگومان‌های عددی در شیءهای {{domxref("CSSUnitValue")}} با واحد `"number"` قرار می‌گیرند.
+همهٔ آرگومان‌ها به عنوان موارد جداگانه در ویژگی {{domxref("CSSMathSum/values","values")}} آن ذخیره می‌شوند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 new CSSMathSum(arg1)
@@ -29,23 +23,23 @@ new CSSMathSum(arg1, arg2)
 new CSSMathSum(arg1, arg2, /* …, */ argN)
 ```
 
-### Parameters
+### پارامترها
 
-- `arg1`, …, `argN`
-  - : One or more numbers or {{domxref("CSSNumericValue")}} objects.
+- `arg1`، …، `argN`
+  - : یک یا چند عدد یا شیء {{domxref("CSSNumericValue")}}.
 
-### Exceptions
+### استثناها
 
 - `SyntaxError` {{domxref("DOMException")}}
-  - : Thrown if no arguments are passed.
+  - : اگر هیچ آرگومانی ارسال نشود پرتاب می‌شود.
 - {{jsxref("TypeError")}}
-  - : Thrown if `arg1`, …, `argN` have incompatible types.
+  - : اگر نوع‌های `arg1`، …، `argN` ناسازگار باشند پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفادهٔ پایه
 
-The following code creates a `CSSMathSum` instance from three values, then reads back its `operator` and `values` properties.
+کد زیر یک نمونهٔ `CSSMathSum` از سه مقدار می‌سازد و سپس ویژگی‌های `operator` و `values` آن را می‌خواند.
 
 ```js
 const sum = new CSSMathSum(CSS.px(10), CSS.em(5), CSS.percent(50));
@@ -56,9 +50,9 @@ console.log(sum.values); // CSSNumericArray {0: CSSUnitValue, 1: CSSUnitValue, 2
 console.log(sum.values[0]); // CSSUnitValue {value: 10, unit: "px"}
 ```
 
-### Empty arguments
+### آرگومان‌های خالی
 
-The constructor throws a `SyntaxError` if called with no arguments.
+اگر سازنده بدون آرگومان فراخوانی شود، یک `SyntaxError` پرتاب می‌کند.
 
 ```js
 try {
@@ -69,14 +63,14 @@ try {
 }
 ```
 
-### Handling incompatible types
+### مدیریت نوع‌های ناسازگار
 
-The constructor throws a `TypeError` if the values don't resolve to a compatible type.
-In the following code we mix a length with a time, and log the error.
+اگر مقدارها به یک نوع سازگار تبدیل نشوند، سازنده یک `TypeError` پرتاب می‌کند.
+در کد زیر یک طول را با یک زمان ترکیب می‌کنیم و خطا را ثبت می‌کنیم.
 
 ```js
 try {
-  // Mixes a length (px) with a time (s): incompatible types
+  // طول (px) را با زمان (s) ترکیب می‌کند: نوع‌های ناسازگار
   new CSSMathSum(CSS.px(10), CSS.s(2));
 } catch (e) {
   console.log(e instanceof TypeError); // true
@@ -84,10 +78,10 @@ try {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
