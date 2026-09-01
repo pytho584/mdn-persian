@@ -1,7 +1,5 @@
 ---
 title: "FileSystemDirectoryEntry: createReader() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemDirectoryEntry/createReader"
-status: "needs-translation"
 ---
 
 ---
@@ -14,10 +12,7 @@ browser-compat: api.FileSystemDirectoryEntry.createReader
 
 {{APIRef("File and Directory Entries API")}}
 
-The {{domxref("FileSystemDirectoryEntry")}} interface's method
-**`createReader()`** returns a
-{{domxref("FileSystemDirectoryReader")}} object which can be used to read the entries in
-the directory.
+متد **`createReader()`** در رابط {{domxref("FileSystemDirectoryEntry")}} یک شیء {{domxref("FileSystemDirectoryReader")}} بازمی‌گرداند که می‌توان از آن برای خواندن ورودی‌های دایرکتوری استفاده کرد.
 
 ## Syntax
 
@@ -27,18 +22,15 @@ createReader()
 
 ### Parameters
 
-None.
+پارامتری ندارد.
 
 ### Return value
 
-A {{domxref("FileSystemDirectoryReader")}} object which can be used to read the
-directory's entries.
+یک شیء {{domxref("FileSystemDirectoryReader")}} که می‌توان از آن برای خواندن ورودی‌های دایرکتوری استفاده کرد.
 
 ## Examples
 
-This example creates an async function called `readDirectory()`, which fetches all of
-the entries in the specified {{domxref("FileSystemDirectoryEntry")}} and returns them in
-an array.
+این مثال یک تابع ناهمگام به نام `readDirectory()` ایجاد می‌کند که همهٔ ورودی‌های موجود در {{domxref("FileSystemDirectoryEntry")}} داده‌شده را دریافت کرده و آن‌ها را در یک آرایه بازمی‌گرداند.
 
 ```js
 async function readDirectory(directory) {
@@ -63,7 +55,7 @@ async function readDirectory(directory) {
 }
 ```
 
-This works by calling {{domxref("FileSystemDirectoryReader.readEntries", "readEntries()")}} repetitively to get all the entries in the directory, concatenating each batch to the array. When it returns an empty array, all entries have been read, and the loop ends.
+این کار با فراخوانی تکراری {{domxref("FileSystemDirectoryReader.readEntries", "readEntries()")}} انجام می‌شود تا همهٔ ورودی‌های دایرکتوری دریافت شوند و هر دسته از نتایج به آرایه اضافه شود. وقتی یک آرایهٔ خالی بازگردانده شود، یعنی همهٔ ورودی‌ها خوانده شده‌اند و حلقه پایان می‌یابد.
 
 ## Specifications
 
