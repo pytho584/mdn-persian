@@ -1,11 +1,5 @@
 ---
 title: "Element: mouseover event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseover_event"
-status: "needs-translation"
----
-
----
-title: "Element: mouseover event"
 short-title: mouseover
 slug: Web/API/Element/mouseover_event
 page-type: web-api-event
@@ -14,13 +8,13 @@ browser-compat: api.Element.mouseover_event
 
 {{APIRef("UI Events")}}
 
-The **`mouseover`** event is fired at an {{domxref("Element")}} when a pointing device (such as a mouse or trackpad) is used to move the cursor onto the element or one of its child elements.
+رویداد **`mouseover`** روی یک {{domxref("Element")}} شلیک می‌شود؛ زمانی که یک دستگاه اشاره‌گر (مانند ماوس یا ترک‌پد) نشانگر را روی آن عنصر یا یکی از عناصر فرزندش قرار دهد.
 
-If the target element has child elements, `mouseout` and `mouseover` events fire as the mouse moves over the boundaries of these elements too, not just the target element itself. Usually, `mouseenter` and `mouseleave` events' behavior is more sensible, because they are not affected by moving into child elements.
+اگر عنصر هدف دارای عناصر فرزند باشد، رویدادهای `mouseover` و `mouseout` هنگام عبور ماوس از مرزهای این فرزندان نیز شلیک می‌شوند، نه فقط هنگام عبور از مرز خود عنصر. معمولاً رفتار رویدادهای `mouseenter` و `mouseleave` مناسب‌تر است؛ زیرا ورود به عناصر فرزند روی آن‌ها تأثیری ندارد.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای شنیدن این رویداد، نام رویداد را در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} به‌کار ببرید یا یک ویژگی کنترل‌کننده رویداد (event handler property) تنظیم کنید.
 
 ```js-nolint
 addEventListener("mouseover", (event) => { })
@@ -28,15 +22,15 @@ addEventListener("mouseover", (event) => { })
 onmouseover = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("MouseEvent")}}. Inherits from {{domxref("UIEvent")}} and {{domxref("Event")}}.
+یک {{domxref("MouseEvent")}} که از {{domxref("UIEvent")}} و {{domxref("Event")}} به ارث می‌رسد.
 
 {{InheritanceDiagram("MouseEvent")}}
 
-## Examples
+## مثال‌ها
 
-The following example illustrates the difference between `mouseover` and {{domxref("Element/mouseenter_event", "mouseenter")}} events.
+مثال زیر تفاوت بین رویدادهای `mouseover` و {{domxref("Element/mouseenter_event", "mouseenter")}} را نشان می‌دهد.
 
 ### HTML
 
@@ -78,21 +72,21 @@ test.addEventListener("mouseover", (event) => {
 });
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample('Examples')}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Learn: Introduction to events](/en-US/docs/Learn_web_development/Core/Scripting/Events)
+- [یادگیری: مقدمه‌ای بر رویدادها](/en-US/docs/Learn_web_development/Core/Scripting/Events)
 - {{domxref("Element/mousedown_event", "mousedown")}}
 - {{domxref("Element/mouseup_event", "mouseup")}}
 - {{domxref("Element/mousemove_event", "mousemove")}}
