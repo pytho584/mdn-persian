@@ -1,11 +1,5 @@
 ---
 title: "HTMLObjectElement: reportValidity() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/reportValidity"
-status: "needs-translation"
----
-
----
-title: "HTMLObjectElement: reportValidity() method"
 short-title: reportValidity()
 slug: Web/API/HTMLObjectElement/reportValidity
 page-type: web-api-instance-method
@@ -14,34 +8,34 @@ browser-compat: api.HTMLObjectElement.reportValidity
 
 {{APIRef("HTML DOM")}}
 
-The **`reportValidity()`** method of the {{domxref("HTMLObjectElement")}} interface performs the same validity checking steps as the {{domxref("HTMLObjectElement.checkValidity", "checkValidity()")}} method. It always returns true because {{HTMLElement("object")}} elements are never candidates for [constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation).
+متد **`reportValidity()`** در رابط {{domxref("HTMLObjectElement")}} همان مراحل بررسی اعتبار متد {{domxref("HTMLObjectElement.checkValidity", "checkValidity()")}} را انجام می‌دهد. این متد همیشه `true` برمی‌گرداند، زیرا عناصر {{HTMLElement("object")}} هرگز کاندیدای [اعتبارسنجی محدودیت](/en-US/docs/Web/HTML/Guides/Constraint_validation) نیستند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 reportValidity()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A boolean value, `true`.
+یک مقدار بولی، `true`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLObjectElement.checkValidity()")}}
 - {{HTMLElement("object")}}
 - {{HTMLElement("form")}}
-- [Learn: Client-side form validation](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
-- [Guide: Constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation)
+- [یادگیری: اعتبارسنجی فرم سمت کاربر](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
+- [راهنما: اعتبارسنجی محدودیت](/en-US/docs/Web/HTML/Guides/Constraint_validation)
