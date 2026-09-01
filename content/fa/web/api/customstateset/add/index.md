@@ -1,11 +1,5 @@
 ---
 title: "CustomStateSet: add() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CustomStateSet/add"
-status: "needs-translation"
----
-
----
-title: "CustomStateSet: add() method"
 short-title: add()
 slug: Web/API/CustomStateSet/add
 page-type: web-api-instance-method
@@ -14,28 +8,28 @@ browser-compat: api.CustomStateSet.add
 
 {{APIRef("Web Components")}}
 
-The **`add`** method of the {{domxref("CustomStateSet")}} interface adds value representing a custom state to the `CustomStateSet`.
+`add` 方法属于 {{domxref("CustomStateSet")}} 接口，用于向 `CustomStateSet` 添加一个表示自定义状态的值。
 
-Custom elements with a specific state can be selected using the {{cssxref(":state()")}} pseudo-class, specifying the desired state as an argument.
+具有特定状态的自定义元素可以通过 {{cssxref(":state()")}} 伪类进行选择，并将所需状态作为参数传递。
 
-## Syntax
+## 语法
 
 ```js-nolint
 add(value)
 ```
 
-### Parameters
+### 参数
 
 - `value`
-  - : A string that represents the custom state.
+  - : 表示自定义状态的字符串。
 
-### Return value
+### 返回值
 
-Undefined.
+无（`undefined`）。
 
-## Examples
+## 示例
 
-The following function adds the state `checked` to a `CustomStateSet`.
+以下函数将状态 `checked` 添加到 `CustomStateSet` 中。
 
 ```js
 class MyCustomElement extends HTMLElement {
@@ -47,10 +41,10 @@ class MyCustomElement extends HTMLElement {
 }
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
