@@ -1,11 +1,5 @@
 ---
 title: "History: pushState() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/History/pushState"
-status: "needs-translation"
----
-
----
-title: "History: pushState() method"
 short-title: pushState()
 slug: Web/API/History/pushState
 page-type: web-api-instance-method
@@ -14,75 +8,55 @@ browser-compat: api.History.pushState
 
 {{APIRef("History API")}}
 
-The **`pushState()`** method of the {{domxref("History")}} interface adds an entry to the browser's
-session history stack.
+متد **`pushState()`** از رابط {{domxref("History")}} یک ورودی به پشتهٔ تاریخچهٔ نشست مرورگر اضافه می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 pushState(state, unused)
 pushState(state, unused, url)
 ```
 
-### Parameters
+### پارامترها
 
 - `state`
-  - : The `state` object is a JavaScript object which is associated with the
-    new history entry created by `pushState()`. Whenever the user navigates to
-    the new `state`, a {{domxref("Window/popstate_event", "popstate")}} event is fired, and
-    the `state` property of the event contains a copy of the history entry's
-    `state` object.
+  - : شیء `state` یک شیء جاوااسکریپتی است که با ورودی جدید تاریخچه که توسط `pushState()` ساخته می‌شود مرتبط است. هر زمان که کاربر به `state` جدید پیمایش کند، رویداد {{domxref("Window/popstate_event", "popstate")}} صادر می‌شود و ویژگی `state` آن رویداد حاوی کپی‌ای از شیء `state` ورودی تاریخچه است.
 
-    The `state` object can be anything that can be serialized.
+    شیء `state` می‌تواند هر چیزی باشد که قابل سریال‌سازی است.
 
     > [!NOTE]
-    > Some browsers save `state` objects to the user's disk so they can be restored after the user restarts the browser, and impose a size limit on the serialized representation of a `state` object, and will throw an exception if you pass a `state` object whose serialized representation is larger than that size limit. So in cases where you want to ensure you have more space than what some browsers might impose, you're encouraged to use {{domxref("Window.sessionStorage", "sessionStorage")}} and/or {{domxref("Window.localStorage", "localStorage")}}.
+    > برخی از مرورگرها شیءهای `state` را روی دیسک کاربر ذخیره می‌کنند تا پس از راه‌اندازی مجدد مرورگر بازیابی شوند و برای نمایش سریال‌سازی‌شدهٔ یک شیء `state` محدودیت اندازه تعیین می‌کنند. اگر شیء `state`ای را ارسال کنید که نمایش سریال‌سازی‌شده‌اش بزرگ‌تر از آن محدودیت باشد، استثنا پرتاب می‌شود. بنابراین، در مواردی که می‌خواهید مطمئن شوید فضای بیشتری نسبت به آنچه برخی مرورگرها ممکن است اعمال کنند در اختیار دارید، توصیه می‌شود از {{domxref("Window.sessionStorage", "sessionStorage")}} و/یا {{domxref("Window.localStorage", "localStorage")}} استفاده کنید.
 
 - `unused`
-  - : This parameter exists for historical reasons, and cannot be omitted; passing an empty string is safe against future changes to the method.
+  - : این پارامتر به دلایل تاریخی وجود دارد و نمی‌توان آن را حذف کرد؛ ارسال یک رشتهٔ خالی برای تغییرات آیندهٔ این متد امن است.
 
 - `url` {{optional_inline}}
-  - : The new history entry's URL. Note that the browser won't
-    attempt to load this URL after a call to `pushState()`, but it may
-    attempt to load the URL later, for instance, after the user restarts the browser. The
-    new URL does not need to be absolute; if it's relative, it's resolved relative to the
-    current URL. The new URL must be of the same {{glossary("origin")}} as the current
-    URL; otherwise, `pushState()` will throw an exception. If this parameter
-    isn't specified, it's set to the document's current URL.
+  - : نشانی اینترنتی ورودی جدید تاریخچه. توجه داشته باشید که مرورگر پس از فراخوانی `pushState()` تلاشی برای بارگیری این نشانی نخواهد کرد، اما ممکن است بعداً، مثلاً پس از راه‌اندازی مجدد مرورگر، آن را بارگیری کند. نشانی جدید لازم نیست مطلق باشد؛ اگر نسبی باشد، نسبت به نشانی فعلی تفسیر می‌شود. نشانی جدید باید با نشانی فعلی دارای مبدأ (origin) یکسان باشد؛ در غیر این صورت، `pushState()` استثنا پرتاب خواهد کرد. اگر این پارامتر مشخص نشود، روی نشانی فعلی سند تنظیم می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `SecurityError` {{domxref("DOMException")}}
-  - : Thrown if the associated document is not fully active, or if the provided `url` parameter is not a valid URL, or if the method is called too frequently.
+  - : اگر سند مرتبط کاملاً فعال نباشد، یا اگر پارامتر `url` ارائه‌شده یک نشانی معتبر نباشد، یا اگر متد بیش از حد مکرر فراخوانی شود، این استثنا پرتاب می‌شود.
 - `DataCloneError` {{domxref("DOMException")}}
-  - : Thrown if the provided `state` parameter is not serializable.
+  - : اگر پارامتر `state` ارائه‌شده قابل سریال‌سازی نباشد، این استثنا پرتاب می‌شود.
 
-## Description
+## توضیحات
 
-In a sense, calling `pushState()` is similar to
-setting `window.location = "#foo"`, in that both will also create and
-activate another history entry associated with the current document.
-But `pushState()` has a few advantages:
+به یک معنا، فراخوانی `pushState()` شبیه تنظیم `window.location = "#foo"` است، زیرا هر دو نیز ورودی تاریخچه‌ای ایجاد و فعال می‌کنند که با سند فعلی مرتبط است. اما `pushState()` مزیت‌های زیر را دارد:
 
-- The new URL can be any URL in the same origin as the current URL. In contrast,
-  setting {{domxref("window.location")}} keeps you at the same document only if you
-  modify only the hash.
-- Changing the page's URL is optional. In contrast,
-  setting `window.location = "#foo";` only creates a new history entry if the
-  current hash isn't `#foo`.
-- You can associate arbitrary data with your new history entry. With the hash-based
-  approach, you need to encode all of the relevant data into a short string.
+- نشانی جدید می‌تواند هر نشانی در همان مبدأ نشانی فعلی باشد. در مقابل، تنظیم {{domxref("window.location")}} فقط در صورتی شما را در همان سند نگه می‌دارد که تنها هش را تغییر دهید.
+- تغییر نشانی صفحه اختیاری است. در مقابل، تنظیم `window.location = "#foo";` تنها زمانی یک ورودی تاریخچهٔ جدید ایجاد می‌کند که هش فعلی `#foo` نباشد.
+- می‌توانید داده‌های دلخواه را با ورودی تاریخچهٔ جدید خود مرتبط کنید. در رویکرد مبتنی بر هش، باید تمام داده‌های مرتبط را در یک رشتهٔ کوتاه رمزگذاری کنید.
 
-Note that `pushState()` never causes a {{domxref("Window/hashchange_event", "hashchange")}} event to be
-fired, even if the new URL differs from the old URL only in its hash.
+توجه داشته باشید که `pushState()` هرگز باعث صادر شدن رویداد {{domxref("Window/hashchange_event", "hashchange")}} نمی‌شود، حتی اگر نشانی جدید فقط از نظر هش با نشانی قدیمی تفاوت داشته باشد.
 
-## Examples
+## مثال‌ها
 
-This creates a new browser history entry setting the _state_ and _url_.
+این مثال یک ورودی تاریخچهٔ مرورگر جدید ایجاد می‌کند و _state_ و _url_ را تعیین می‌کند.
 
 ### JavaScript
 
@@ -93,7 +67,7 @@ const url = "hello-world.html";
 history.pushState(state, "", url);
 ```
 
-### Change a query parameter
+### تغییر یک پارامتر پرس‌وجو
 
 ```js
 const url = new URL(location);
@@ -101,15 +75,15 @@ url.searchParams.set("foo", "bar");
 history.pushState({}, "", url);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Working with the History API](/en-US/docs/Web/API/History_API/Working_with_the_History_API)
-- [Window: popstate event](/en-US/docs/Web/API/Window/popstate_event)
+- [کار با History API](/en-US/docs/Web/API/History_API/Working_with_the_History_API)
+- [Window: رویداد popstate](/en-US/docs/Web/API/Window/popstate_event)
