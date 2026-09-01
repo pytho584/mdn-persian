@@ -1,11 +1,5 @@
 ---
 title: "HTMLInputElement: maxLength property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/maxLength"
-status: "needs-translation"
----
-
----
-title: "HTMLInputElement: maxLength property"
 short-title: maxLength
 slug: Web/API/HTMLInputElement/maxLength
 page-type: web-api-instance-property
@@ -14,18 +8,18 @@ browser-compat: api.HTMLInputElement.maxLength
 
 {{ApiRef("HTML DOM")}}
 
-The **`maxLength`** property of the {{domxref("HTMLInputElement")}} interface indicates the maximum number of characters (in {{glossary("UTF-16", "UTF-16 code units")}}) allowed to be entered for the value of the {{HTMLElement("input")}} element, and the maximum number of characters allowed for the value to be valid. It reflects the element's [`maxlength`](/en-US/docs/Web/HTML/Reference/Elements/input#maxlength) attribute. `-1` means there is no limit on the length of the value.
+خصوصیت **`maxLength`** در رابط {{domxref("HTMLInputElement")}}، حداکثر تعداد نویسه‌ها (بر حسب {{glossary("UTF-16", "UTF-16 code units")}}) را مشخص می‌کند که می‌توان برای مقدار عنصر {{HTMLElement("input")}} وارد کرد و همچنین حداکثر تعداد نویسه‌هایی است که برای معتبر بودن مقدار مجاز شمرده می‌شود. این ویژگی، خصوصیت [`maxlength`](/en-US/docs/Web/HTML/Reference/Elements/input#maxlength) عنصر را بازتاب می‌دهد. مقدار `-1` به این معناست که هیچ محدودیتی برای طول مقدار وجود ندارد.
 
 > [!NOTE]
-> Browser generally prevent users from entering more characters than the `maxlength` attribute allows. Should the length be longer, the element is considered invalid and the {{domxref("ValidityState")}} object's {{domxref("ValidityState.tooLong", "tooLong")}} property will be `true`.
+> مرورگرها معمولاً از وارد کردن نویسه‌های بیشتر از آنچه ویژگی `maxlength` مجاز می‌داند، جلوگیری می‌کنند. اگر طول مقدار بیشتر از این حد باشد، عنصر نامعتبر در نظر گرفته می‌شود و ویژگی {{domxref("ValidityState.tooLong", "tooLong")}} در شیء {{domxref("ValidityState")}} برابر با `true` خواهد بود.
 
-## Value
+## مقدار
 
-A number representing the element's `maxlength` if present, or `-1`.
+عددی که نشان‌دهندهٔ `maxlength` عنصر است، در صورت وجود؛ در غیر این صورت `-1`.
 
-## Example
+## مثال
 
-Given the following HTML:
+با توجه به HTML زیر:
 
 ```html
 <p>
@@ -34,7 +28,7 @@ Given the following HTML:
 </p>
 ```
 
-You can use the `maxLength` property to retrieve or set the `<input>`'s `maxlength` attribute value:
+می‌توانید از خصوصیت `maxLength` برای دریافت یا تنظیم مقدار ویژگی `maxlength` عنصر `<input>` استفاده کنید:
 
 ```js
 const inputElement = document.querySelector("#password");
@@ -42,15 +36,15 @@ console.log(`Element's maxLength: ${inputElement.maxLength}`); // "Element's max
 inputElement.maxLength = 18; // updates the element's maxlength attribute value
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLInputElement.value")}}
 - {{domxref("HTMLInputElement.minLength")}}
