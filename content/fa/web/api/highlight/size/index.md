@@ -1,11 +1,5 @@
 ---
 title: "Highlight: size property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Highlight/size"
-status: "needs-translation"
----
-
----
-title: "Highlight: size property"
 short-title: size
 slug: Web/API/Highlight/size
 page-type: web-api-instance-property
@@ -15,16 +9,15 @@ spec-urls: https://tc39.es/ecma262/multipage/keyed-collections.html#sec-get-set.
 
 {{APIRef("CSS Custom Highlight API")}}
 
-The **`size`** property returns the number of {{domxref("AbstractRange")}} objects in a
-{{domxref("Highlight")}} object.
+ویژگی **`size`** تعداد اشیاء {{domxref("AbstractRange")}} موجود در یک شیء {{domxref("Highlight")}} را برمیگرداند.
 
-## Value
+## مقدار
 
-The value of `size` is a read-only integer representing how many entries the highlight object has.
+مقدار `size` یک عدد صحیح فقط‌خواندنی است که تعداد ورودی‌های شیء highlight را نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
-### Using size
+### استفاده از size
 
 ```js
 const highlight = new Highlight();
@@ -35,15 +28,15 @@ highlight.add(range3);
 console.log(highlight.size); // 3
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("css_custom_highlight_api", "The CSS Custom Highlight API", "", "nocode")}}
 - [CSS Custom Highlight API: The Future of Highlighting Text Ranges on the Web](https://css-tricks.com/css-custom-highlight-api-early-look/)
