@@ -1,11 +1,5 @@
 ---
 title: "HTMLFormElement: name property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/name"
-status: "needs-translation"
----
-
----
-title: "HTMLFormElement: name property"
 short-title: name
 slug: Web/API/HTMLFormElement/name
 page-type: web-api-instance-property
@@ -14,17 +8,15 @@ browser-compat: api.HTMLFormElement.name
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLFormElement.name`** property represents the name of
-the current {{HtmlElement("form")}} element as a string.
+ویژگی **`HTMLFormElement.name`** نمایانگر نام عنصر {{HtmlElement("form")}} جاری به صورت یک رشته است.
 
-If your {{HTMLElement("Form")}} element contains an element named _name_ then
-that element overrides the `form.name` property, so that you can't access it.
+اگر عنصر {{HTMLElement("Form")}} شما شامل عنصری با نام _name_ باشد، آن عنصر ویژگی `form.name` را بازنویسی می‌کند و بنابراین نمی‌توانید به آن دسترسی داشته باشید.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```js
 const form1name = document.getElementById("form1").name;
@@ -34,10 +26,10 @@ if (form1name !== document.form.form1) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
