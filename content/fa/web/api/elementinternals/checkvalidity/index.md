@@ -1,11 +1,5 @@
 ---
 title: "ElementInternals: checkValidity() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/checkValidity"
-status: "needs-translation"
----
-
----
-title: "ElementInternals: checkValidity() method"
 short-title: checkValidity()
 slug: Web/API/ElementInternals/checkValidity
 page-type: web-api-instance-method
@@ -14,32 +8,32 @@ browser-compat: api.ElementInternals.checkValidity
 
 {{APIRef("Web Components")}}
 
-The **`checkValidity()`** method of the {{domxref("ElementInternals")}} interface checks if the element meets any [constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation) rules applied to it.
+متد **`checkValidity()`** از رابط {{domxref("ElementInternals")}} بررسی می‌کند که آیا عنصر، تمام قوانین [اعتبارسنجی محدودیت‌ها](/en-US/docs/Web/HTML/Guides/Constraint_validation) اعمال‌شده بر روی خود را برآورده می‌کند یا خیر.
 
-If `checkValidity` returns `false` then a cancelable [invalid event](/en-US/docs/Web/API/HTMLInputElement/invalid_event) is fired on the element.
+اگر `checkValidity` مقدار `false` برگرداند، یک [رویداد invalid] قابل‌لغو (/en-US/docs/Web/API/HTMLInputElement/invalid_event) روی عنصر صادر می‌شود.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 checkValidity()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A boolean value, `true` if the element meets all validation constraints.
+یک مقدار بولی؛ اگر عنصر تمام محدودیت‌های اعتبارسنجی را برآورده کند `true` است.
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Thrown if the element does not have its `formAssociated` property set to `true`.
+  - : اگر ویژگی `formAssociated` عنصر روی `true` تنظیم نشده باشد، این خطا پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-In the following example {{domxref("ElementInternals.setValidity()")}} is used to indicate that the element does not meet validation rules. Calling `checkValidity()` returns `false`. After calling `setValidity` again, this time indicating that all rules are marked false, `checkValidity()` returns `true`.
+در مثال زیر، از {{domxref("ElementInternals.setValidity()")}} برای نشان‌دادن این استفاده شده است که عنصر قوانین اعتبارسنجی را برآورده نمی‌کند. فراخوانی `checkValidity()` مقدار `false` برمی‌گرداند. پس از فراخوانی دوباره `setValidity`، این بار با نشان‌دادن اینکه همه قوانین برآورده شده‌اند، `checkValidity()` مقدار `true` برمی‌گرداند.
 
 ```js
 let element = document.getElementById("join-checkbox");
@@ -49,10 +43,11 @@ element.internals_.setValidity({});
 console.log(element.internals_.checkValidity()); // true
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
+```
