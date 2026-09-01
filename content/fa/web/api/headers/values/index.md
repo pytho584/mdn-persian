@@ -1,11 +1,5 @@
 ---
 title: "Headers: values() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Headers/values"
-status: "needs-translation"
----
-
----
-title: "Headers: values() method"
 short-title: values()
 slug: Web/API/Headers/values
 page-type: web-api-instance-method
@@ -14,9 +8,7 @@ browser-compat: api.Headers.values
 
 {{APIRef("Fetch API")}} {{AvailableInWorkers}}
 
-The **`Headers.values()`** method returns an
-{{jsxref("Iteration_protocols",'iterator')}} allowing to go through all values contained
-in this object. The values are {{jsxref("String")}} objects.
+متد **`Headers.values()`** یک {{jsxref("Iteration_protocols",'iterator')}} برمی‌گرداند که امکان عبور از تمام مقادیر موجود در این شیء را فراهم می‌کند. مقادیر، اشیاء {{jsxref("String")}} هستند.
 
 ## Syntax
 
@@ -26,11 +18,11 @@ values()
 
 ### Parameters
 
-None.
+هیچ.
 
 ### Return value
 
-Returns an {{jsxref("Iteration_protocols","iterator")}}.
+یک {{jsxref("Iteration_protocols","iterator")}} برمی‌گرداند.
 
 ## Examples
 
@@ -46,7 +38,7 @@ for (const value of myHeaders.values()) {
 }
 ```
 
-The result is:
+نتیجه به صورت زیر است:
 
 ```plain
 text/xml
