@@ -1,7 +1,5 @@
 ---
 title: "FileSystemEntry: isFile property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry/isFile"
-status: "needs-translation"
 ---
 
 ---
@@ -14,29 +12,20 @@ browser-compat: api.FileSystemEntry.isFile
 
 {{APIRef("File and Directory Entries API")}}
 
-The read-only **`isFile`** property of
-the {{domxref("FileSystemEntry")}} interface is `true` if the entry
-represents a file (meaning it's a {{domxref("FileSystemFileEntry")}}) and
-`false` if it's not.
+ویژگی فقط‌خواندنی **`isFile`** از رابط {{domxref("FileSystemEntry")}}، اگر ورودی (entry) یک فایل را نشان دهد (یعنی یک {{domxref("FileSystemFileEntry")}} باشد)، مقدار `true` و در غیر این صورت مقدار `false` را دارد.
 
-You can also use {{domxref("FileSystemEntry.isDirectory", "isDirectory")}} to determine
-if the entry is a directory.
+همچنین می‌توانید از {{domxref("FileSystemEntry.isDirectory", "isDirectory")}} برای تعیین اینکه آیا ورودی یک پوشه (دایرکتوری) است استفاده کنید.
 
 > [!WARNING]
-> You should not assume that any entry which isn't a file is a directory or vice versa.
-> There are other types of file descriptors on many operating systems. Be sure to use
-> both `isDirectory` and `isFile` as needed to ensure that the
-> entry is something you know how to work with.
+> نباید فرض کنید که هر ورودی‌ای که فایل نیست، پوشه است یا برعکس. در بسیاری از سیستم‌عامل‌ها انواع دیگری از توصیفگرهای فایل (file descriptors) نیز وجود دارند. حتماً در صورت نیاز از هر دو `isDirectory` و `isFile` استفاده کنید تا مطمئن شوید ورودی موردنظر از نوعی است که می‌دانید چگونه با آن کار کنید.
 
-## Value
+## مقدار
 
-A Boolean indicating whether or not the {{domxref("FileSystemEntry")}} is a file.
+یک مقدار بولین (Boolean) که نشان می‌دهد آیا {{domxref("FileSystemEntry")}} یک فایل است یا خیر.
 
-## Examples
+## مثال‌ها
 
-This example shows how this property might be used to determine whether to process the
-entry as a directory or file. If the entry is neither, an error handler is called with
-an appropriate message.
+این مثال نشان می‌دهد که چگونه می‌توان از این ویژگی برای تعیین اینکه ورودی باید به‌عنوان پوشه پردازش شود یا فایل استفاده کرد. اگر ورودی هیچ‌کدام نباشد، یک مدیریت‌کننده خطا (error handler) با پیام مناسب فراخوانی می‌شود.
 
 ```js
 if (entry.isDirectory) {
@@ -48,15 +37,15 @@ if (entry.isDirectory) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [File and Directory Entries API](/en-US/docs/Web/API/File_and_Directory_Entries_API)
 - {{domxref("FileSystemEntry")}}
