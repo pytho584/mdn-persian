@@ -1,11 +1,5 @@
 ---
 title: "GPURenderPassEncoder: beginOcclusionQuery() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder/beginOcclusionQuery"
-status: "needs-translation"
----
-
----
-title: "GPURenderPassEncoder: beginOcclusionQuery() method"
 short-title: beginOcclusionQuery()
 slug: Web/API/GPURenderPassEncoder/beginOcclusionQuery
 page-type: web-api-instance-method
@@ -14,45 +8,44 @@ browser-compat: api.GPURenderPassEncoder.beginOcclusionQuery
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`beginOcclusionQuery()`** method of the
-{{domxref("GPURenderPassEncoder")}} interface begins an occlusion query at the specified index of the relevant {{domxref("GPUQuerySet")}} (provided as the value of the `occlusionQuerySet` descriptor property when invoking {{domxref("GPUCommandEncoder.beginRenderPass()")}} to run the render pass).
+متد **`beginOcclusionQuery()`** از رابط {{domxref("GPURenderPassEncoder")}} یک پرس‌وجوی محو شدگی (occlusion query) را در ایندکس مشخص شده از {{domxref("GPUQuerySet")}} مرتبط شروع می‌کند (این `GPUQuerySet` به عنوان مقدار ویژگی `occlusionQuerySet` در توصیف‌کننده هنگام فراخوانی {{domxref("GPUCommandEncoder.beginRenderPass()")}} برای اجرای رندرپس ارائه می‌شود).
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 beginOcclusionQuery(queryIndex)
 ```
 
-### Parameters
+### پارامترها
 
 - `queryIndex`
-  - : The index in the {{domxref("GPUQuerySet")}} to begin the occlusion query at.
+  - : ایندکس در {{domxref("GPUQuerySet")}} که پرس‌وجوی محو شدگی از آن شروع می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-### Validation
+### اعتبارسنجی (Validation)
 
-The following criteria must be met when calling **`beginOcclusionQuery()`**, otherwise a {{domxref("GPUValidationError")}} is generated and the {{domxref("GPURenderPassEncoder")}} becomes invalid:
+هنگام فراخوانی **`beginOcclusionQuery()`** معیارهای زیر باید برآورده شوند، در غیر این صورت یک {{domxref("GPUValidationError")}} ایجاد می‌شود و {{domxref("GPURenderPassEncoder")}} نامعتبر می‌گردد:
 
-- A {{domxref("GPUQuerySet")}} was specified in the `occlusionQuerySet` descriptor property when invoking the originating {{domxref("GPUCommandEncoder.beginRenderPass()")}}.
-- `queryIndex` is smaller than {{domxref("GPUQuerySet.count")}}.
-- The `queryIndex` has not already been written to in the same render pass.
-- An occlusion query is not already active for this render pass (i.e., via a previous `beginOcclusionQuery()` call).
+- یک {{domxref("GPUQuerySet")}} در ویژگی `occlusionQuerySet` توصیف‌کننده هنگام فراخوانی {{domxref("GPUCommandEncoder.beginRenderPass()")}} مبدأ مشخص شده باشد.
+- `queryIndex` کوچکتر از {{domxref("GPUQuerySet.count")}} باشد.
+- `queryIndex` قبلاً در همان رندرپس نوشته نشده باشد.
+- هیچ پرس‌وجوی محو شدگی دیگری برای این رندرپس فعال نباشد (یعنی از طریق فراخوانی قبلی `beginOcclusionQuery()`).
 
-## Examples
+## مثال‌ها
 
 ```js
 // …
 
-// Create a query set to hold the occlusion queries
+// ساخت یک مجموعه پرس‌وجو برای نگهداری پرس‌وجوهای محو شدگی
 const querySet = device.createQuerySet({
   type: "occlusion",
   count: 32,
 });
 
-// Render pass descriptor object, including the querySet
+// شیء توصیف‌کننده رندرپس، شامل querySet
 const renderPassDescriptor = {
   colorAttachments: [
     {
@@ -65,31 +58,31 @@ const renderPassDescriptor = {
   occlusionQuerySet: querySet,
 };
 
-// Begin the render pass
+// شروع رندرپس
 const passEncoder = commandEncoder.beginRenderPass(renderPassDescriptor);
 
-// Begin an occlusion query at index 0
+// شروع یک پرس‌وجوی محو شدگی در ایندکس 0
 passEncoder.beginOcclusionQuery(0);
 
-// Run some rendering commands
+// اجرای برخی دستورات رندرینگ
 passEncoder.setPipeline(renderPipeline);
 passEncoder.setVertexBuffer(0, vertexBuffer);
 passEncoder.draw(3);
 
-// End the occlusion query
+// پایان پرس‌وجوی محو شدگی
 passEncoder.endOcclusionQuery();
 
 // …
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
