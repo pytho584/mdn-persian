@@ -1,10 +1,4 @@
 ---
-title: "Encoding API Encodings"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Encoding_API/Encodings"
-status: "needs-translation"
----
-
----
 title: Encoding API Encodings
 slug: Web/API/Encoding_API/Encodings
 page-type: guide
@@ -12,14 +6,14 @@ page-type: guide
 
 {{DefaultAPISidebar("Encoding API")}}
 
-The constructors for the [Encoding API](/en-US/docs/Web/API/Encoding_API) interfaces {{domxref("TextDecoder")}} and {{domxref("TextDecoderStream")}} can be passed an optional `label` argument, which identifies the encoding to be used.
+سازنده‌های رابط‌های [Encoding API](/en-US/docs/Web/API/Encoding_API) یعنی {{domxref("TextDecoder")}} و {{domxref("TextDecoderStream")}} می‌توانند یک آرگومان اختیاری `label` دریافت کنند که编码 مورد استفاده را مشخص می‌کند.
 
-The following table lists all encoding labels that user agents must support, along with the encoding that the label identifies. Note that most encodings have more than one label.
+جدول زیر تمام برچسب‌های encoding را فهرست می‌کند که عامل‌های کاربر (user agents) باید از آن‌ها پشتیبانی کنند، به همراه encoding که هر برچسب به آن اشاره دارد. توجه داشته باشید که بیشتر encodingها بیش از یک برچسب دارند.
 
 <table class="no-markdown">
   <thead>
     <tr>
-      <th scope="col">Label</th>
+      <th scope="col">برچسب</th>
       <th scope="col">Encoding</th>
     </tr>
   </thead>
@@ -340,52 +334,4 @@ The following table lists all encoding labels that user agents must support, alo
         <code>"x-euc-jp"</code>
       </td>
       <td>
-        <a href="https://en.wikipedia.org/wiki/Extended_Unix_Code#EUC-JP">euc-jp</a>
-      </td>
-    </tr>
-    <tr>
-      <td><code>"csiso2022jp"</code>, <code>"iso-2022-jp"</code></td>
-      <td>
-        <a href="https://en.wikipedia.org/wiki/ISO/IEC_2022#ISO-2022-JP">iso-2022-jp</a>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <code>"csshiftjis"</code>, <code>"ms_kanji"</code>,
-        <code>"shift-jis"</code>, <code>"shift_jis"</code>, <code>"sjis"</code>,
-        <code>"windows-31j"</code>, <code>"x-sjis"</code>
-      </td>
-      <td>
-        <a href="https://en.wikipedia.org/wiki/Shift_JIS">shift_jis</a>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <code>"cseuckr"</code>, <code>"csksc56011987"</code>,
-        <code>"euc-kr"</code>, <code>"iso-ir-149"</code>, <code>"korean"</code>,
-        <code>"ks_c_5601-1987"</code>, <code>"ks_c_5601-1989"</code>,
-        <code>"ksc5601"</code>, <code>"ksc_5601"</code>,
-        <code>"windows-949"</code>
-      </td>
-      <td>
-        <a href="https://en.wikipedia.org/wiki/Extended_Unix_Code#EUC-KR">euc-kr</a>
-      </td>
-    </tr>
-    <tr>
-      <td><code>"utf-16be"</code></td>
-      <td>
-        <a href="https://en.wikipedia.org/wiki/UTF-16#Byte_order_encoding_schemes">utf-16be</a>
-      </td>
-    </tr>
-    <tr>
-      <td><code>"utf-16"</code>, <code>"utf-16le"</code></td>
-      <td>
-        <a href="https://en.wikipedia.org/wiki/UTF-16#Byte_order_encoding_schemes">utf-16le</a>
-      </td>
-    </tr>
-    <tr>
-      <td><code>"x-user-defined"</code></td>
-      <td><code>"x-user-defined"</code></td>
-    </tr>
-  </tbody>
-</table>
+        <a href="https://en.wikipedia.org/wiki/Extended_Unix_Code#EUC-JP">euc-jp
