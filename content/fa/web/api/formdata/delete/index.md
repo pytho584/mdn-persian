@@ -1,11 +1,5 @@
 ---
 title: "FormData: delete() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FormData/delete"
-status: "needs-translation"
----
-
----
-title: "FormData: delete() method"
 short-title: delete()
 slug: Web/API/FormData/delete
 page-type: web-api-instance-method
@@ -14,40 +8,40 @@ browser-compat: api.FormData.delete
 
 {{APIRef("XMLHttpRequest API")}} {{AvailableInWorkers}}
 
-The **`delete()`** method of the {{domxref("FormData")}} interface deletes a key and its value(s) from a `FormData` object.
+متد **`delete()`** از رابط {{domxref("FormData")}} یک کلید و مقدار(های) آن را از یک شیء `FormData` حذف می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 delete(name)
 ```
 
-### Parameters
+### پارامترها
 
 - `name`
-  - : The name of the key you want to delete.
+  - : نام کلیدی است که می‌خواهید حذف کنید.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-You can delete a key and its values using `delete()`:
+می‌توانید یک کلید و مقادیر آن را با استفاده از `delete()` حذف کنید:
 
 ```js
 formData.delete("username");
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using FormData objects](/en-US/docs/Web/API/XMLHttpRequest_API/Using_FormData_Objects)
+- [استفاده از اشیاء FormData](/en-US/docs/Web/API/XMLHttpRequest_API/Using_FormData_Objects)
 - {{HTMLElement("Form")}}
