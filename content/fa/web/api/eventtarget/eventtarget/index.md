@@ -1,11 +1,5 @@
 ---
 title: "EventTarget: EventTarget() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/EventTarget"
-status: "needs-translation"
----
-
----
-title: "EventTarget: EventTarget() constructor"
 short-title: EventTarget()
 slug: Web/API/EventTarget/EventTarget
 page-type: web-api-constructor
@@ -14,30 +8,30 @@ browser-compat: api.EventTarget.EventTarget
 
 {{APIRef("DOM")}}{{AvailableInWorkers}}
 
-The **`EventTarget()`** constructor creates a new {{domxref("EventTarget")}} object instance.
+سازندهی **`EventTarget()`** یک نمونهی جدید از شیء {{domxref("EventTarget")}} ایجاد میکند.
 
 > [!NOTE]
-> It is fairly rare to explicitly call this constructor. Most of the time, this constructor is used inside the constructor of an object extending the {{domxref("EventTarget")}} interface, using the [`super`](/en-US/docs/Web/JavaScript/Reference/Operators/super) keyword.
+> فراخوانی صریح این سازنده نسبتاً نادر است. در بیشتر موارد، این سازنده در درون سازندهی یک شیء که از رابط {{domxref("EventTarget")}} ارث میبرد، با استفاده از کلیدواژهی [`super`](/en-US/docs/Web/JavaScript/Reference/Operators/super) استفاده میشود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 new EventTarget()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+پارامتری ندارد.
 
-### Return value
+### مقدار بازگشتی
 
-A new instance of the {{domxref("EventTarget")}} object.
+یک نمونهی جدید از شیء {{domxref("EventTarget")}}.
 
-## Examples
+## مثالها
 
-### Implementing a counter
+### پیادهسازی یک شمارنده
 
-This example implements a `Counter` class, with `increment()` and `decrement()` methods. It fires a custom `"valuechange"` event when either of these methods is called.
+این مثال کلاس `Counter` را با متدهای `increment()` و `decrement()` پیادهسازی میکند. زمانی که هر یک از این متدها فراخوانی شود، یک رویداد سفارشی `"valuechange"` صادر میشود.
 
 #### HTML
 
@@ -88,18 +82,18 @@ document.querySelector("#dec").addEventListener("click", () => {
 });
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Implementing a counter")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("EventTarget")}}
