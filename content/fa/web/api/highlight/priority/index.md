@@ -1,11 +1,5 @@
 ---
 title: "Highlight: priority property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Highlight/priority"
-status: "needs-translation"
----
-
----
-title: "Highlight: priority property"
 short-title: priority
 slug: Web/API/Highlight/priority
 page-type: web-api-instance-property
@@ -14,23 +8,23 @@ browser-compat: api.Highlight.priority
 
 {{APIRef("CSS Custom Highlight API")}}
 
-The `priority` property of the {{domxref("Highlight")}} interface is a number used to determine which highlight's styles should be used to resolve style conflicts in overlapping parts. Highlights with a higher `priority` number have preference over those with a lower `priority`.
+ویژگی `priority` از رابط {{domxref("Highlight")}} عددی است که برای تعیین اینکه در بخش‌های همپوشان، سبک‌های کدام هایلایت باید برای حل تعارض‌های سبک استفاده شوند، به کار می‌رود. هایلایت‌هایی که عدد `priority` بالاتری دارند، نسبت به هایلایت‌هایی با `priority` کمتر اولویت دارند.
 
-It is possible to create {{domxref("AbstractRange")}} objects that overlap in a document.
+می‌توان اشیاء {{domxref("AbstractRange")}} را ایجاد کرد که در یک سند با یکدیگر همپوشانی دارند.
 
-When overlapping ranges are used by multiple different {{domxref("Highlight")}} objects, and when those highlights are styled using {{cssxref("::highlight")}} pseudo-elements, this may lead to conflicting styles.
+هنگامی که محدوده‌های همپوشان متعلق به چندین شیء متفاوت {{domxref("Highlight")}} باشند و آن هایلایت‌ها با شبه‌عنصرهای {{cssxref("::highlight")}} استایل‌بندی شده باشند، ممکن است سبک‌هایی متعارض به وجود آید.
 
-If two text ranges overlap and are both highlighted using the {{domxref("css_custom_highlight_api", "CSS Custom Highlight API", "", "nocode")}}, and if they're both styled using the `color` CSS property, the browser needs to decide which color should be used for styling the text in the overlapping part.
+اگر دو محدوده متنی همپوشانی داشته باشند و هر دو با استفاده از {{domxref("css_custom_highlight_api", "The CSS Custom Highlight API", "", "nocode")}} هایلایت شده باشند و هر دو با ویژگی `color` در CSS استایل‌بندی شده باشند، مرورگر باید تصمیم بگیرد که در بخش همپوشان از کدام رنگ برای استایل‌بندی متن استفاده کند.
 
-If no `priority` is set, all highlights have the same priority, and the browser chooses the most recently registered highlight to style the overlapping parts.
+اگر `priority` تنظیم نشده باشد، همه هایلایت‌ها اولویت یکسانی دارند و مرورگر جدیدترین هایلایت ثبت‌شده را برای استایل‌بندی بخش‌های همپوشان انتخاب می‌کند.
 
-Note that all the styles of a highlight are applied and the browser only needs to resolve conflicts when the same CSS properties are used by multiple overlapping highlights. The highlight style conflict resolution also does not depend on the order in which the {{cssxref("::highlight")}} pseudo-elements rules appear in the source, or whether or not CSS properties are marked as `!important`.
+توجه داشته باشید که تمام سبک‌های یک هایلایت اعمال می‌شوند و مرورگر فقط زمانی نیاز به حل تعارض دارد که ویژگی‌های یکسانی از CSS توسط چند هایلایت همپوشان استفاده شده باشند. همچنین، حل تعارض سبک هایلایت‌ها به ترتیب ظاهر شدن قواعد شبه‌عنصرهای {{cssxref("::highlight")}} در سورس بستگی ندارد و نیز به این بستگی ندارد که ویژگی‌های CSS با `!important` علامت‌گذاری شده باشند یا خیر.
 
-## Value
+## مقدار
 
-An integer.
+یک عدد صحیح.
 
-## Examples
+## مثال‌ها
 
 ### Default priority
 
@@ -74,9 +68,9 @@ CSS.highlights.set("highlight-1", highlight1);
 CSS.highlights.set("highlight-2", highlight2);
 ```
 
-#### Result
+#### نتیجه
 
-As seen below, by default, the part of the text node where the two registered highlights overlap is displayed in blue because `highlight-2` is registered after `highlight-1`. The background color defined by `highlight-1` includes the entire `range1` range because it does not conflict with another background color.
+همان‌طور که در زیر می‌بینید، به‌طور پیش‌فرض، بخشی از گره متنی که دو هایلایت ثبت‌شده در آن همپوشانی دارند، به رنگ آبی نمایش داده می‌شود، زیرا `highlight-2` پس از `highlight-1` ثبت شده است. رنگ پس‌زمینه تعریف‌شده توسط `highlight-1` کل محدوده `range1` را در بر می‌گیرد، زیرا با رنگ پس‌زمینه دیگری تعارضی ندارد.
 
 {{EmbedLiveSample("Default priority")}}
 
@@ -145,21 +139,21 @@ reset.addEventListener("click", () => {
 });
 ```
 
-#### Result
+#### نتیجه
 
-As seen below, by default, the part of the text node where the two registered highlights overlap is displayed in blue because `highlight-2` is registered after `highlight-1`.
+همان‌طور که در زیر می‌بینید، به‌طور پیش‌فرض، بخشی از گره متنی که دو هایلایت ثبت‌شده در آن همپوشانی دارند، به رنگ آبی نمایش داده می‌شود، زیرا `highlight-2` پس از `highlight-1` ثبت شده است.
 
 {{EmbedLiveSample("Setting priority")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("css_custom_highlight_api", "The CSS Custom Highlight API", "", "nocode")}}
-- [CSS Custom Highlight API: The Future of Highlighting Text Ranges on the Web](https://css-tricks.com/css-custom-highlight-api-early-look/)
+- [CSS Custom Highlight API: آینده برجسته‌سازی محدوده‌های متنی در وب](https://css-tricks.com/css-custom-highlight-api-early-look/)
