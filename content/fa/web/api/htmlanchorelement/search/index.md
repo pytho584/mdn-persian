@@ -1,7 +1,5 @@
 ---
 title: "HTMLAnchorElement: search property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement/search"
-status: "needs-translation"
 ---
 
 ---
@@ -14,27 +12,23 @@ browser-compat: api.HTMLAnchorElement.search
 
 {{ApiRef("HTML DOM")}}
 
-The **`search`** property of the {{domxref("HTMLAnchorElement")}} interface is a search string, also called a _query string_, that is a string containing a `"?"` followed by the parameters of the `<a>` element's `href`. If the URL does not have a search query, this property contains an empty string, `""`.
+ویژگی **`search`** در رابط {{domxref("HTMLAnchorElement")}} یک رشتهٔ جستجو است که به آن _رشتهٔ پرس‌وجو (query string)_ نیز گفته می‌شود؛ این رشته شامل یک `"?"` و به دنبال آن پارامترهای `href` عنصر `<a>` است. اگر URL پرس‌وجوی جستجو نداشته باشد، این ویژگی شامل یک رشتهٔ خالی، `""`، است.
 
-This property can be set to change the query string of the URL. When setting, a single `"?"` prefix is added to the provided value, if not already present. Setting it to `""` removes the query string.
+این ویژگی را می‌توان برای تغییر رشتهٔ پرس‌وجوی URL مقداردهی کرد. هنگام مقداردهی، اگر مقدار داده‌شده از قبل پیشوند `"?"` نداشته باشد، یک `"?"` به ابتدای آن اضافه می‌شود. تنظیم آن به `""` رشتهٔ پرس‌وجو را حذف می‌کند.
 
-The query is {{Glossary("Percent-encoding", "percent-encoded")}} when setting but not percent-decoded when reading.
+پرس‌وجو هنگام مقداردهی {{Glossary("Percent-encoding", "percent-encoded")}} می‌شود، اما هنگام خواندن percent-decoded نمی‌شود.
 
-Modern browsers provide
-[`URLSearchParams`](/en-US/docs/Web/API/URLSearchParams/get#examples)
-and
-[`URL.searchParams`](/en-US/docs/Web/API/URL/searchParams#examples)
-to make it easy to parse out the parameters from the query string.
+مرورگرهای مدرن امکانات [`URLSearchParams`](/en-US/docs/Web/API/URLSearchParams/get#examples) و [`URL.searchParams`](/en-US/docs/Web/API/URL/searchParams#examples) را فراهم می‌کنند تا تجزیهٔ پارامترهای رشتهٔ پرس‌وجو آسان شود.
 
-See {{domxref("URL.search")}} for more information.
+برای اطلاعات بیشتر به {{domxref("URL.search")}} مراجعه کنید.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
-### Getting the search string from an anchor link
+### دریافت رشتهٔ جستجو از یک پیوند anchor
 
 ```js
 // An <a id="myAnchor" href="/en-US/docs/HTMLAnchorElement?q=123"> element is in the document
@@ -42,23 +36,23 @@ const anchor = document.getElementById("myAnchor");
 anchor.search; // returns '?q=123'
 ```
 
-### Advanced parsing using URLSearchParams
+### تجزیهٔ پیشرفته با استفاده از URLSearchParams
 
-Alternatively, [`URLSearchParams`](/en-US/docs/Web/API/URLSearchParams/get#examples) can be used:
+به‌عنوان جایگزین، می‌توان از [`URLSearchParams`](/en-US/docs/Web/API/URLSearchParams/get#examples) استفاده کرد:
 
 ```js
 let params = new URLSearchParams(queryString);
 let q = parseInt(params.get("q"), 10); // returns the number 123
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("HTMLAnchorElement")}} interface it belongs to.
+- رابط {{domxref("HTMLAnchorElement")}} که این ویژگی به آن تعلق دارد.
