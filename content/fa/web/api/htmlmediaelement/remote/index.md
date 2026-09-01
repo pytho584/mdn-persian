@@ -1,11 +1,5 @@
 ---
 title: "HTMLMediaElement: remote property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/remote"
-status: "needs-translation"
----
-
----
-title: "HTMLMediaElement: remote property"
 short-title: remote
 slug: Web/API/HTMLMediaElement/remote
 page-type: web-api-instance-property
@@ -14,13 +8,13 @@ browser-compat: api.HTMLMediaElement.remote
 
 {{APIRef("Remote Playback API")}}
 
-The **`remote`** read-only property of the {{domxref("HTMLMediaElement")}} interface returns the {{domxref("RemotePlayback")}} object associated with the media element. The `RemotePlayback` object allow the control of remote devices playing the media.
+ویژگی فقط‌خواندنی **`remote`** در رابط {{domxref("HTMLMediaElement")}}، شیء {{domxref("RemotePlayback")}} مرتبط با عنصر رسانه‌ای را برمی‌گرداند. شیء `RemotePlayback` امکان کنترل دستگاه‌های راه‌دور را که در حال پخش رسانه هستند فراهم می‌کند.
 
-## Value
+## مقدار
 
-A {{domxref("RemotePlayback")}} object associated with the media element.
+یک شیء {{domxref("RemotePlayback")}} مرتبط با عنصر رسانه‌ای.
 
-## Example
+## مثال
 
 ```js
 const el = document.createElement("audio");
@@ -31,10 +25,10 @@ remotePlayback.watchAvailability((availability) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
