@@ -1,9 +1,4 @@
----
-title: "HTMLCollection: item() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLCollection/item"
-status: "needs-translation"
----
-
+```yaml
 ---
 title: "HTMLCollection: item() method"
 short-title: item()
@@ -14,56 +9,47 @@ browser-compat: api.HTMLCollection.item
 
 {{APIRef("HTML DOM")}}
 
-The {{domxref("HTMLCollection")}} method `item()`
-returns the element located at the specified offset into the collection.
+متد `item()` از {{domxref("HTMLCollection")}}، عنصری را که در موقعیت (ایندکس) مشخص‌شده در مجموعه قرار دارد، برمی‌گرداند.
 
 > [!NOTE]
-> Because the contents of an `HTMLCollection` are
-> live, changes to the underlying DOM can and will cause the position of individual
-> elements in the collection to change, so the index value will not necessarily remain
-> constant for a given element.
+> از آنجا که محتویات یک `HTMLCollection` زنده (live) هستند، تغییرات در DOM زمینه‌ای می‌تواند باعث تغییر موقعیت عناصر منفرد در مجموعه شود؛ بنابراین مقدار ایندکس برای یک عنصر خاص لزوماً ثابت نخواهد ماند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 item(index)
 ```
 
-### Parameters
+### پارامترها
 
 - `index`
-  - : The position of the {{domxref("Element")}} to be returned. Elements appear in an
-    `HTMLCollection` in the same order in which they appear in the document's
-    source.
+  - : موقعیت {{domxref("Element")}}ای که باید برگردانده شود. عناصر در یک `HTMLCollection` به همان ترتیبی ظاهر می‌شوند که در منبع سند (source) آمده‌اند.
 
-### Return value
+### مقدار بازگشتی
 
-The {{domxref("Element")}} at the specified index, or `null` if
-`index` is less than zero or greater than or equal to the length property.
+{{domxref("Element")}} در ایندکس مشخص‌شده، یا اگر `index` کمتر از صفر یا بزرگ‌تر یا مساوی خصوصیت `length` باشد، `null` برگردانده می‌شود.
 
-## Usage notes
+## نکات استفاده
 
-The `item()` method returns a numbered element from an
-`HTMLCollection`. In JavaScript, it is easier to treat the
-`HTMLCollection` as an array and to index it using array notation. See the
-[example](#examples) below.
+متد `item()` یک عنصر شماره‌دار را از یک `HTMLCollection` برمی‌گرداند. در جاوااسکریپت، ساده‌تر است که `HTMLCollection` را مانند یک آرایه در نظر بگیرید و با نماد آرایه به آن ایندکس بدهید. به [مثال‌ها](#examples) در زیر مراجعه کنید.
 
-## Examples
+## مثال‌ها
 
 ```js
-const images = document.images; // This is an HTMLCollection
-const img0 = images.item(0); // You can use the item() method this way
-const img1 = images[1]; // But this notation is easier and more common
+const images = document.images; // این یک HTMLCollection است
+const img0 = images.item(0); // می‌توانید از متد item() به این صورت استفاده کنید
+const img1 = images[1]; // اما این نماد ساده‌تر و رایج‌تر است
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("NodeList.item()")}}
+```
