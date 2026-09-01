@@ -1,10 +1,4 @@
 ---
-title: "File"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/File"
-status: "needs-translation"
----
-
----
 title: File
 slug: Web/API/File
 page-type: web-api-interface
@@ -13,53 +7,53 @@ browser-compat: api.File
 
 {{APIRef("File API")}}{{AvailableInWorkers}}
 
-The **`File`** interface provides information about files and allows JavaScript in a web page to access their content.
+رابطهٔ **`File`** اطلاعاتی دربارهٔ پرونده‌ها فراهم می‌کند و به جاوااسکریپت در یک صفحهٔ وب اجازه می‌دهد تا به محتوای آن‌ها دسترسی یابد.
 
-`File` objects are generally retrieved from a {{DOMxRef("FileList")}} object returned as a result of a user selecting files using the {{HTMLElement("input")}} element, or from a drag and drop operation's {{DOMxRef("DataTransfer")}} object.
+اشیاء `File` معمولاً از یک شیء {{DOMxRef("FileList")}} به دست می‌آیند که در نتیجهٔ انتخاب پرونده‌ها توسط کاربر از طریق عنصر {{HTMLElement("input")}} بازگردانده می‌شود، یا از شیء {{DOMxRef("DataTransfer")}} مربوط به عملیات کشیدن و رها کردن.
 
-A `File` object is a specific kind of {{DOMxRef("Blob")}}, and can be used in any context that a Blob can. In particular, the following APIs accept both `Blob`s and `File` objects:
+یک شیء `File` نوعی خاص از {{DOMxRef("Blob")}} است و می‌تواند در هر زمینه‌ای که یک Blob قابل استفاده است به کار رود. به‌ویژه، APIهای زیر هر دو نوع اشیاء `Blob` و `File` را می‌پذیرند:
 
 - {{DOMxRef("FileReader")}}
 - {{DOMxRef("URL.createObjectURL_static", "URL.createObjectURL()")}}
-- {{DOMxRef("Window.createImageBitmap()")}} and {{DOMxRef("WorkerGlobalScope.createImageBitmap()")}}
-- the [`body`](/en-US/docs/Web/API/RequestInit#body) option to {{domxref("Window/fetch", "fetch()")}}
+- {{DOMxRef("Window.createImageBitmap()")}} و {{DOMxRef("WorkerGlobalScope.createImageBitmap()")}}
+- گزینهٔ [`body`](/en-US/docs/Web/API/RequestInit#body) در {{domxref("Window/fetch", "fetch()")}}
 - {{DOMxRef("XMLHttpRequest.send()")}}
 
-See [Using files from web applications](/en-US/docs/Web/API/File_API/Using_files_from_web_applications) for more information and examples.
+برای اطلاعات بیشتر و مثال‌ها، [استفاده از پرونده‌ها در برنامه‌های وب](/en-US/docs/Web/API/File_API/Using_files_from_web_applications) را ببینید.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{DOMxRef("File.File", "File()")}}
-  - : Returns a newly constructed `File`.
+  - : یک `File` تازه‌ساخته را برمی‌گرداند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_The `File` interface also inherits properties from the {{DOMxRef("Blob")}} interface._
+_رابطهٔ `File` همچنین ویژگی‌هایی را از رابطهٔ {{DOMxRef("Blob")}} به ارث می‌برد._
 
 - {{DOMxRef("File.lastModified")}} {{ReadOnlyInline}}
-  - : Returns the last modified time of the file, in millisecond since the UNIX epoch (January 1st, 1970 at Midnight).
+  - : زمان آخرین تغییر پرونده را بر حسب میلی‌ثانیه از مبدأ یونیکس (نیمه‌شب ۱ ژانویهٔ ۱۹۷۰) برمی‌گرداند.
 - {{DOMxRef("File.lastModifiedDate")}} {{Deprecated_Inline}} {{ReadOnlyInline}} {{Non-standard_Inline}}
-  - : Returns the last modified {{JSxRef("Date")}} of the file referenced by the `File` object.
+  - : آخرین تاریخ تغییر {{JSxRef("Date")}} پرونده‌ای که شیء `File` به آن ارجاع می‌دهد را برمی‌گرداند.
 - {{DOMxRef("File.name")}} {{ReadOnlyInline}}
-  - : Returns the name of the file referenced by the `File` object.
+  - : نام پرونده‌ای که شیء `File` به آن ارجاع می‌دهد را برمی‌گرداند.
 - {{DOMxRef("File.webkitRelativePath")}} {{ReadOnlyInline}}
-  - : Returns the path the URL of the `File` is relative to.
+  - : مسیری که URL مربوط به `File` نسبت به آن سنجیده می‌شود را برمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
-_The `File` interface also inherits methods from the {{DOMxRef("Blob")}} interface._
+_رابطهٔ `File` همچنین روش‌هایی را از رابطهٔ {{DOMxRef("Blob")}} به ارث می‌برد._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using files from web applications](/en-US/docs/Web/API/File_API/Using_files_from_web_applications)
+- [استفاده از پرونده‌ها در برنامه‌های وب](/en-US/docs/Web/API/File_API/Using_files_from_web_applications)
 - {{DOMxRef("FileReader")}}
