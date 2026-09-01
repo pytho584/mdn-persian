@@ -1,11 +1,5 @@
 ---
 title: "DataTransfer: effectAllowed property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/effectAllowed"
-status: "needs-translation"
----
-
----
-title: "DataTransfer: effectAllowed property"
 short-title: effectAllowed
 slug: Web/API/DataTransfer/effectAllowed
 page-type: web-api-instance-property
@@ -14,55 +8,42 @@ browser-compat: api.DataTransfer.effectAllowed
 
 {{APIRef("HTML Drag and Drop API")}}
 
-The **`DataTransfer.effectAllowed`** property specifies the
-effect that is allowed for a drag operation. The _copy_ operation is used to
-indicate that the data being dragged will be copied from its present location to the
-drop location. The _move_ operation is used to indicate that the data being
-dragged will be moved, and the _link_ operation is used to indicate that some
-form of relationship or connection will be created between the source and drop
-locations.
+ویژگی **`DataTransfer.effectAllowed`** اثری را که برای عملیات کشیدن (drag) مجاز است مشخص می‌کند. عملیات _copy_ برای نشان دادن این استفاده می‌شود که داده‌های در حال کشیده شدن از مکان فعلی خود به مکان رها شدن کپی خواهند شد. عملیات _move_ برای نشان دادن جابه‌جایی داده‌های در حال کشیده شدن به کار می‌رود، و عملیات _link_ برای نشان دادن ایجاد نوعی رابطه یا ارتباط بین مبدأ و مکان رها شدن استفاده می‌شود.
 
-This property should be set in the {{domxref("HTMLElement/dragstart_event", "dragstart")}} event to set the desired drag
-effect for the drag source. Within the {{domxref("HTMLElement/dragenter_event", "dragenter")}} and {{domxref("HTMLElement/dragover_event", "dragover")}}
-event handlers, this property will be set to whatever value was assigned during the
-{{domxref("HTMLElement/dragstart_event", "dragstart")}} event, thus `effectAllowed` may be used to determine
-which effect is permitted.
+این ویژگی باید در رویداد {{domxref("HTMLElement/dragstart_event", "dragstart")}} تنظیم شود تا اثر کشیدن مورد نظر برای مبدأ کشیدن تعیین گردد. درون دست‌کننده‌های رویداد {{domxref("HTMLElement/dragenter_event", "dragenter")}} و {{domxref("HTMLElement/dragover_event", "dragover")}}، این ویژگی به هر مقداری که در طول رویداد {{domxref("HTMLElement/dragstart_event", "dragstart")}} اختصاص داده شده است، تنظیم می‌شود؛ بنابراین `effectAllowed` می‌تواند برای تعیین اینکه کدام اثر مجاز است استفاده شود.
 
-Assigning a value to `effectAllowed` in events other than
-{{domxref("HTMLElement/dragstart_event", "dragstart")}} has no effect.
+اختصاص مقدار به `effectAllowed` در رویدادهایی غیر از {{domxref("HTMLElement/dragstart_event", "dragstart")}} هیچ تأثیری ندارد.
 
-## Value
+## مقدار
 
-A string representing the drag operation that is allowed. The
-possible values are:
+یک رشته که عملیات کشیدن مجاز را نشان می‌دهد. مقادیر ممکن عبارتند از:
 
 - `none`
-  - : The item may not be dropped.
+  - : مورد قابل رها شدن نیست.
 - `copy`
-  - : A copy of the source item may be made at the new location.
+  - : یک کپی از مورد مبدأ در مکان جدید ایجاد می‌شود.
 - `copyLink`
-  - : A copy or link operation is permitted.
+  - : عملیات کپی یا پیوند مجاز است.
 - `copyMove`
-  - : A copy or move operation is permitted.
+  - : عملیات کپی یا جابه‌جایی مجاز است.
 - `link`
-  - : A link may be established to the source at the new location.
+  - : یک پیوند به مبدأ در مکان جدید برقرار می‌شود.
 - `linkMove`
-  - : A link or move operation is permitted.
+  - : عملیات پیوند یا جابه‌جایی مجاز است.
 - `move`
-  - : An item may be moved to a new location.
+  - : یک مورد ممکن است به مکان جدید منتقل شود.
 - `all`
-  - : All operations are permitted.
+  - : همه عملیات مجاز هستند.
 - `uninitialized`
-  - : The default value when the effect has not been set, equivalent to all.
+  - : مقدار پیش‌فرض زمانی که اثری تنظیم نشده است، معادل `all`.
 
-Assigning any other value to `effectAllowed` has no effect and the old value
-is retained.
+اختصاص هر مقدار دیگری به `effectAllowed` تأثیری ندارد و مقدار قبلی حفظ می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Setting effectAllowed
+### تنظیم effectAllowed
 
-In this example we set `effectAllowed` to `"move"` in the `dragstart` handler.
+در این مثال، `effectAllowed` را در دست‌کننده `dragstart` به `"move"` تنظیم می‌کنیم.
 
 #### HTML
 
@@ -101,7 +82,7 @@ div {
 }
 ```
 
-#### JavaScript
+#### جاوااسکریپت
 
 ```js
 function dragstartHandler(ev) {
@@ -144,20 +125,20 @@ const reset = document.querySelector("#reset");
 reset.addEventListener("click", () => document.location.reload());
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Setting effectAllowed", 0, 400)}}
 
-## Specifications
+## مشخصات‌ها
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Drag and drop](/en-US/docs/Web/API/HTML_Drag_and_Drop_API)
-- [Drag Operations](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_operations)
-- [Working with the drag data store](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_data_store)
+- [کشیدن و رها کردن](/en-US/docs/Web/API/HTML_Drag_and_Drop_API)
+- [عملیات کشیدن](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_operations)
+- [کار با فروشگاه داده کشیدن](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_data_store)
