@@ -1,11 +1,5 @@
 ---
 title: "EventSource: EventSource() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EventSource/EventSource"
-status: "needs-translation"
----
-
----
-title: "EventSource: EventSource() constructor"
 short-title: EventSource()
 slug: Web/API/EventSource/EventSource
 page-type: web-api-constructor
@@ -14,9 +8,7 @@ browser-compat: api.EventSource.EventSource
 
 {{APIRef("Server Sent Events")}}{{AvailableInWorkers}}
 
-The **`EventSource()`**
-constructor returns a newly-created {{domxref("EventSource")}}, which represents a
-remote resource.
+سازندهٔ **`EventSource()`** یک شیء {{domxref("EventSource")}} تازهساختهشده را برمیگرداند که یک منبع راه‌دور را نمایش می‌دهد.
 
 ## Syntax
 
@@ -25,18 +17,16 @@ new EventSource(url)
 new EventSource(url, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `url`
-  - : A string that represents the location of the remote resource
-    serving the events/messages.
+  - : یک رشته که مکان منبع راه‌دوری را نشان می‌دهد که رویدادها/پیام‌ها را سرو می‌کند.
 - `options` {{optional_inline}}
-  - : Provides options to configure the new connection. The possible entries are:
+  - : گزینه‌هایی برای پیکربندی اتصال جدید فراهم می‌کند. ورودی‌های ممکن عبارت‌اند از:
     - `withCredentials` {{optional_inline}}
-      - : A boolean value, defaulting to `false`, indicating
-        if CORS should be set to `include` credentials.
+      - : یک مقدار بولی، که پیش‌فرض آن `false` است، نشان می‌دهد که آیا CORS باید برای شامل‌کردن اعتبارنامه‌ها (credentials) روی `include` تنظیم شود یا نه.
 
-## Examples
+## مثال‌ها
 
 ```js
 const evtSource = new EventSource("sse.php");
@@ -51,16 +41,16 @@ evtSource.onmessage = (e) => {
 ```
 
 > [!NOTE]
-> You can find a full example on GitHub — see [Simple SSE demo using PHP](https://github.com/mdn/dom-examples/tree/main/server-sent-events).
+> می‌توانید یک مثال کامل را در GitHub بیابید — [نمونهٔ سادهٔ SSE با استفاده از PHP](https://github.com/mdn/dom-examples/tree/main/server-sent-events).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("EventSource")}}
