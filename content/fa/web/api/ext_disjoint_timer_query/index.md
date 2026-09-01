@@ -1,10 +1,4 @@
 ---
-title: "EXT_disjoint_timer_query extension"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EXT_disjoint_timer_query"
-status: "needs-translation"
----
-
----
 title: EXT_disjoint_timer_query extension
 short-title: EXT_disjoint_timer_query
 slug: Web/API/EXT_disjoint_timer_query
@@ -14,77 +8,77 @@ browser-compat: api.EXT_disjoint_timer_query
 
 {{APIRef("WebGL")}}
 
-The **EXT_disjoint_timer_query** extension is part of the [WebGL API](/en-US/docs/Web/API/WebGL_API) and provides a way to measure the duration of a set of GL commands, without stalling the rendering pipeline.
+افزونه **EXT_disjoint_timer_query** بخشی از [WebGL API](/en-US/docs/Web/API/WebGL_API) است و راهی برای اندازه‌گیری مدت زمان اجرای مجموعه‌ای از دستورات GL فراهم می‌کند، بدون اینکه خط لوله رندر را متوقف کند.
 
-WebGL extensions are available using the {{domxref("WebGLRenderingContext.getExtension()")}} method. For more information, see also [Using Extensions](/en-US/docs/Web/API/WebGL_API/Using_Extensions) in the [WebGL tutorial](/en-US/docs/Web/API/WebGL_API/Tutorial).
+افزونه‌های WebGL از طریق متد {{domxref("WebGLRenderingContext.getExtension()")}} در دسترس هستند. برای اطلاعات بیشتر، به [استفاده از افزونه‌ها](/en-US/docs/Web/API/WebGL_API/Using_Extensions) در [آموزش WebGL](/en-US/docs/Web/API/WebGL_API/Tutorial) مراجعه کنید.
 
 > [!NOTE]
-> This extension should be available in {{domxref("WebGLRenderingContext", "WebGL1", "", 1)}} contexts only. {{domxref("EXT_disjoint_timer_query_webgl2")}} is available in {{domxref("WebGL2RenderingContext", "WebGL 2", "", 1)}} contexts.
+> این افزونه فقط در بسترهای {{domxref("WebGLRenderingContext", "WebGL1", "", 1)}} در دسترس است. {{domxref("EXT_disjoint_timer_query_webgl2")}} در بسترهای {{domxref("WebGL2RenderingContext", "WebGL 2", "", 1)}} در دسترس است.
 >
-> In WebGL 2, the OpenGL method `getQueryObject()` is renamed to {{domxref("WebGL2RenderingContext.getQueryParameter")}}.
-> In WebGL 2, other queries (such as occlusion queries and primitive queries) are possible using {{domxref("WebGLQuery")}} objects.
+> در WebGL 2، متد OpenGL `getQueryObject()` به {{domxref("WebGL2RenderingContext.getQueryParameter")}} تغییر نام داده است.
+> در WebGL 2، پرس‌وجوهای دیگر (مانند پرس‌وجوهای occlusion و پرس‌وجوهای اولیه) با استفاده از اشیاء {{domxref("WebGLQuery")}} امکان‌پذیر است.
 
-## Types
+## انواع
 
-This extension exposes a new type:
+این افزونه یک نوع جدید را معرفی می‌کند:
 
 - `GLuint64EXT`
-  - : Unsigned 64-bit integer number.
+  - : عدد صحیح ۶۴ بیتی بدون علامت.
 
-## Constants
+## ثابت‌ها
 
-This extension exposes seven new constants.
+این افزونه هفت ثابت جدید را معرفی می‌کند.
 
 - `ext.QUERY_COUNTER_BITS_EXT`
-  - : A {{domxref("WebGL_API/Types", "GLint")}} indicating the number of bits used to hold the query result for the given target.
+  - : یک {{domxref("WebGL_API/Types", "GLint")}} که تعداد بیت‌های استفاده‌شده برای نگهداری نتیجه پرس‌وجو برای هدف داده شده را نشان می‌دهد.
 - `ext.CURRENT_QUERY_EXT`
-  - : A {{domxref("WebGLQuery")}} object, which is the currently active query for the given target.
+  - : یک شیء {{domxref("WebGLQuery")}} که پرس‌وجوی فعال فعلی برای هدف داده شده است.
 - `ext.QUERY_RESULT_EXT`
-  - : A {{domxref("WebGL_API/Types", "GLuint64EXT")}} containing the query result.
+  - : یک {{domxref("WebGL_API/Types", "GLuint64EXT")}} شامل نتیجه پرس‌وجو.
 - `ext.QUERY_RESULT_AVAILABLE_EXT`
-  - : A {{domxref("WebGL_API/Types", "GLboolean")}} indicating whether or not a query result is available.
+  - : یک {{domxref("WebGL_API/Types", "GLboolean")}} که نشان می‌دهد آیا نتیجه پرس‌وجو در دسترس است یا خیر.
 - `ext.TIME_ELAPSED_EXT`
-  - : Elapsed time (in nanoseconds).
+  - : زمان سپری شده (به نانوثانیه).
 - `ext.TIMESTAMP_EXT`
-  - : The current time.
+  - : زمان فعلی.
 - `ext.GPU_DISJOINT_EXT`
-  - : A {{domxref("WebGL_API/Types", "GLboolean")}} indicating whether or not the GPU performed any disjoint operation.
+  - : یک {{domxref("WebGL_API/Types", "GLboolean")}} که نشان می‌دهد آیا GPU هرگونه عملیات ناپیوسته (disjoint) انجام داده است یا خیر.
 
-## Instance methods
+## متدهای نمونه
 
-This extension exposes eight new methods.
+این افزونه هشت متد جدید را معرفی می‌کند.
 
 - {{domxref("EXT_disjoint_timer_query.createQueryEXT()", "ext.createQueryEXT()")}}
-  - : Creates a new {{domxref("WebGLQuery")}}.
+  - : یک {{domxref("WebGLQuery")}} جدید ایجاد می‌کند.
 - {{domxref("EXT_disjoint_timer_query.deleteQueryEXT()", "ext.deleteQueryEXT()")}}
-  - : Deletes a given {{domxref("WebGLQuery")}}.
+  - : یک {{domxref("WebGLQuery")}} داده شده را حذف می‌کند.
 - {{domxref("EXT_disjoint_timer_query.isQueryEXT()", "ext.isQueryEXT()")}}
-  - : Returns `true` if a given object is a valid {{domxref("WebGLQuery")}}.
+  - : اگر یک شیء داده شده یک {{domxref("WebGLQuery")}} معتبر باشد، `true` برمی‌گرداند.
 - {{domxref("EXT_disjoint_timer_query.beginQueryEXT()", "ext.beginQueryEXT()")}}
-  - : The timer starts when all commands prior to `beginQueryEXT` have been fully executed.
+  - : تایمر زمانی شروع می‌شود که تمام دستورات قبل از `beginQueryEXT` به طور کامل اجرا شده باشند.
 - {{domxref("EXT_disjoint_timer_query.endQueryEXT()", "ext.endQueryEXT()")}}
-  - : The timer stops when all commands prior to `endQueryEXT` have been fully executed.
+  - : تایمر زمانی متوقف می‌شود که تمام دستورات قبل از `endQueryEXT` به طور کامل اجرا شده باشند.
 - {{domxref("EXT_disjoint_timer_query.queryCounterEXT()", "ext.queryCounterEXT()")}}
-  - : Records the current time into the corresponding query object.
+  - : زمان فعلی را در شیء پرس‌وجوی مربوطه ثبت می‌کند.
 - {{domxref("EXT_disjoint_timer_query.getQueryEXT()", "ext.getQueryEXT()")}}
-  - : Returns information about a query target.
+  - : اطلاعاتی درباره یک هدف پرس‌وجو برمی‌گرداند.
 - {{domxref("EXT_disjoint_timer_query.getQueryObjectEXT()", "ext.getQueryObjectEXT()")}}
-  - : Return the state of a query object.
+  - : وضعیت یک شیء پرس‌وجو را برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
 ```js
 const ext = gl.getExtension("EXT_disjoint_timer_query");
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("WebGLRenderingContext.getExtension()")}}
