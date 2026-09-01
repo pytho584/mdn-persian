@@ -1,11 +1,5 @@
 ---
 title: "HTMLGeolocationElement: initialPermissionStatus property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLGeolocationElement/initialPermissionStatus"
-status: "needs-translation"
----
-
----
-title: "HTMLGeolocationElement: initialPermissionStatus property"
 short-title: initialPermissionStatus
 slug: Web/API/HTMLGeolocationElement/initialPermissionStatus
 page-type: web-api-instance-property
@@ -16,27 +10,28 @@ browser-compat: api.HTMLGeolocationElement.initialPermissionStatus
 
 {{APIRef("Navigation API")}}{{SeeCompatTable}}
 
-The **`initialPermissionStatus`** read-only property of the {{domxref("HTMLGeolocationElement")}} interface returns an enumerated value representing the permission status for the `geolocation` feature when the page first loads.
+خاصیت فقطخواندنی **`initialPermissionStatus`** از رابط {{domxref("HTMLGeolocationElement")}} یک مقدار شمارشی برمی‌گرداند که وضعیت مجوز قابلیت `geolocation` را هنگام بارگذاری اولیهٔ صفحه نشان می‌دهد.
 
-If you want to access the current permission status for the `geolocation` feature, use the {{domxref("HTMLGeolocationElement.permissionStatus")}} property.
+اگر می‌خواهید به وضعیت فعلی مجوز قابلیت `geolocation` دسترسی داشته باشید، از خاصیت {{domxref("HTMLGeolocationElement.permissionStatus")}} استفاده کنید.
 
-## Value
+## مقدار
 
-An enumerated value, which can be one of:
+یک مقدار شمارشی که می‌تواند یکی از موارد زیر باشد:
 
 - `granted`
-  - : The user previously granted permission for the browser to use the `geolocation` feature, either via the {{htmlelement("geolocation")}} element or some other mechanism. When using the `<geolocation>` element, this means that the user previously pressed the rendered button and selected an "allow" option.
+  - : کاربر قبلاً به مرورگر اجازهٔ استفاده از قابلیت `geolocation` را داده است، چه از طریق عنصر {{htmlelement("geolocation")}} و چه از طریق سازوکاری دیگر. هنگام استفاده از عنصر `<geolocation>`، این بدان معناست که کاربر قبلاً دکمهٔ رندرشده را فشار داده و گزینهٔ «allow» (اجازه) را انتخاب کرده است.
 
-    If the `<geolocation>` element has its [`autolocate`](/en-US/docs/Web/HTML/Reference/Elements/geolocation#autolocate) attribute set to `true`, and permission was previously granted, the browser will start to request location data as soon as the page loads, without requiring the user to press the button.
+    اگر عنصر `<geolocation>` ویژگی [`autolocate`](/en-US/docs/Web/HTML/Reference/Elements/geolocation#autolocate) را با مقدار `true` داشته باشد و مجوز قبلاً داده شده باشد، مرورگر به محض بارگذاری صفحه شروع به درخواست داده‌های موقعیت مکانی می‌کند، بدون اینکه کاربر نیازی به فشار دادن دکمه داشته باشد.
 
 - `denied`
-  - : The user previously denied permission for the browser to use the `geolocation` feature, either via the `<geolocation>` element or some other mechanism. When using the `<geolocation>` element, this means that the user previously pressed the rendered button and selected a "don't allow" option.
+  - : کاربر قبلاً اجازهٔ استفاده از قابلیت `geolocation` را به مرورگر رد کرده است، چه از طریق عنصر `<geolocation>` و چه از طریق سازوکاری دیگر. هنگام استفاده از عنصر `<geolocation>`، این بدان معناست که کاربر قبلاً دکمهٔ رندرشده را فشار داده و گزینهٔ «don't allow» (عدم اجازه) را انتخاب کرده است.
+
 - `prompt`
-  - : The user has not previously granted or denied permission for the browser to use the `geolocation` feature. When using the `<geolocation>` element, this means that the user has not previously pressed the rendered button.
+  - : کاربر قبلاً اجازهٔ استفاده از قابلیت `geolocation` را نه داده و نه رد کرده است. هنگام استفاده از عنصر `<geolocation>`، این بدان معناست که کاربر قبلاً دکمهٔ رندرشده را فشار نداده است.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفادهٔ پایه
 
 ```html
 <geolocation></geolocation>
@@ -48,13 +43,13 @@ console.log(geo.initialPermissionStatus);
 // "granted" if the user previously granted permission before reloading the page
 ```
 
-### Using initial permission status to inform the user on page load
+### استفاده از وضعیت مجوز اولیه برای اطلاع‌رسانی به کاربر هنگام بارگذاری صفحه
 
-In this example, we use initial permission status to print an appropriate message to the screen informing the user what action the {{htmlelement("geolocation")}} button will perform.
+در این مثال، از وضعیت مجوز اولیه استفاده می‌کنیم تا پیام مناسبی روی صفحه چاپ کنیم و به کاربر اطلاع دهیم که دکمهٔ {{htmlelement("geolocation")}} چه اقدامی انجام خواهد داد.
 
 #### HTML
 
-We include a `<geolocation>` element and two {{htmlelement("p")}} elements, one to output permission status messages to, and one to output location data to.
+ما یک عنصر `<geolocation>` و دو عنصر {{htmlelement("p")}} قرار می‌دهیم؛ یکی برای خروجی پیام‌های وضعیت مجوز و دیگری برای خروجی داده‌های موقعیت مکانی.
 
 ```html
 <geolocation>
@@ -66,7 +61,7 @@ We include a `<geolocation>` element and two {{htmlelement("p")}} elements, one 
 
 #### JavaScript
 
-In our JavaScript, we start by grabbing references to all three of our HTML elements:
+در جاوااسکریپت خود، ابتدا به هر سه عنصر HTML اشاره (reference) می‌گیریم:
 
 ```js
 const statusElem = document.querySelector("#status");
@@ -74,7 +69,7 @@ const outputElem = document.querySelector("#output");
 const geo = document.querySelector("geolocation");
 ```
 
-Next, we include an `if...else if` structure that checks what the `initialPermissionStatus` is, and prints a status message to the screen to inform the user what the status is, what they need to do to use the app, and what the button will do when pressed.
+در مرحلهٔ بعد، یک ساختار `if...else if` قرار می‌دهیم که مقدار `initialPermissionStatus` را بررسی می‌کند و یک پیام وضعیت روی صفحه چاپ می‌کند تا به کاربر اطلاع دهد وضعیت فعلی چیست، برای استفاده از برنامه چه کاری باید انجام دهد، و دکمه هنگام فشار دادن چه کاری انجام خواهد داد.
 
 ```js
 if (geo.initialPermissionStatus === "prompt") {
@@ -89,7 +84,7 @@ if (geo.initialPermissionStatus === "prompt") {
 }
 ```
 
-Finally, we add a {{domxref("HTMLGeolocationElement.location_event", "location")}} event listener to the `HTMLGeolocationElement` object, to detect when the location data request is returned. If the data is returned successfully, we access it via the {{domxref("HTMLGeolocationElement.position")}} property, and print the latitude and longitude values to the output paragraph. If the data request fails, we access the error via the {{domxref("HTMLGeolocationElement.error")}} property and print it to the output paragraph.
+در نهایت، یک شنوندهٔ رویداد (event listener) برای رویداد {{domxref("HTMLGeolocationElement.location_event", "location")}} به شیء `HTMLGeolocationElement` اضافه می‌کنیم تا وقتی درخواست دادهٔ موقعیت مکانی برگردانده شد، آن را تشخیص دهیم. اگر داده با موفقیت برگردانده شود، از طریق خاصیت {{domxref("HTMLGeolocationElement.position")}} به آن دسترسی پیدا می‌کنیم و مقادیر طول و عرض جغرافیایی را در پاراگراف خروجی چاپ می‌کنیم. اگر درخواست داده با شکست مواجه شود، خطا را از طریق خاصیت {{domxref("HTMLGeolocationElement.error")}} دریافت و آن را در پاراگراف خروجی چاپ می‌کنیم.
 
 ```js
 geo.addEventListener("location", () => {
@@ -102,18 +97,18 @@ geo.addEventListener("location", () => {
 });
 ```
 
-#### Result
+#### نتیجه
 
-See the example [running live](https://mdn.github.io/dom-examples/geolocation-element/initial-permission-status/) ([source code](https://github.com/mdn/dom-examples/tree/main/geolocation-element/initial-permission-status)). Try selecting the `<geolocation>` button multiple times, choosing a different option from the resulting dialog each time and reloading the page, to see how the output message changes to reflect the situation.
+نمونهٔ [اجرای زنده](https://mdn.github.io/dom-examples/geolocation-element/initial-permission-status/) را ببینید ([کد منبع](https://github.com/mdn/dom-examples/tree/main/geolocation-element/initial-permission-status)). چند بار دکمهٔ `<geolocation>` را انتخاب کنید و هر بار گزینهٔ متفاوتی را از کادر محاوره‌ای ظاهر شده برگزینید و صفحه را دوباره بارگذاری کنید تا ببینید پیام خروجی چگونه برای انعکاس وضعیت تغییر می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- {{htmlelement("geolocation")}} element
+- عنصر {{htmlelement("geolocation")}}
