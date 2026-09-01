@@ -1,11 +1,5 @@
 ---
 title: "HTMLAreaElement: protocol property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLAreaElement/protocol"
-status: "needs-translation"
----
-
----
-title: "HTMLAreaElement: protocol property"
 short-title: protocol
 slug: Web/API/HTMLAreaElement/protocol
 page-type: web-api-instance-property
@@ -14,19 +8,19 @@ browser-compat: api.HTMLAreaElement.protocol
 
 {{ApiRef("HTML DOM")}}
 
-The **`protocol`** property of the {{domxref("HTMLAreaElement")}} interface is a string containing the protocol or scheme of the `<area>` element's `href`, including the final `":"`.
+ویژگی **`protocol`** از رابط {{domxref("HTMLAreaElement")}}، رشته‌ای است که پروتکل یا طرح (scheme) `href` عنصر `<area>` را به‌همراه `":"` پایانی در بر می‌گیرد.
 
-This property can be set to change the protocol of the URL. A `":"` is appended to the provided string if not provided. The provided scheme has to be compatible with the rest of the URL to be considered valid.
+این ویژگی قابل تنظیم است تا پروتکل URL تغییر کند. اگر کاراکتر `":"` در انتهای رشتهٔ ارائه‌شده وجود نداشته باشد، به آن اضافه می‌شود. برای اینکه طرح ارائه‌شده معتبر باشد، باید با بقیهٔ URL سازگار باشد.
 
-See {{domxref("URL.protocol")}} for more information.
+برای اطلاعات بیشتر، {{domxref("URL.protocol")}} را ببینید.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
-### Getting the protocol of an area link
+### گرفتن پروتکل یک پیوند area
 
 ```js
 // An <area id="myArea" href="https://developer.mozilla.org/en-US/HTMLAreaElement"> element is in the document
@@ -34,14 +28,14 @@ const area = document.getElementById("myArea");
 area.protocol; // returns 'https:'
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("HTMLAreaElement")}} interface it belongs to.
+- رابط {{domxref("HTMLAreaElement")}} که این ویژگی به آن تعلق دارد.
