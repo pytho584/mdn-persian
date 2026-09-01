@@ -1,11 +1,5 @@
 ---
 title: "Document: prerendering property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/prerendering"
-status: "needs-translation"
----
-
----
-title: "Document: prerendering property"
 short-title: prerendering
 slug: Web/API/Document/prerendering
 page-type: web-api-instance-property
@@ -16,15 +10,15 @@ browser-compat: api.Document.prerendering
 
 {{ APIRef("Speculation Rules API") }}{{seecompattable}}
 
-The **`prerendering`** read-only property of the {{domxref("Document")}} interface returns `true` if the document is currently in the process of prerendering, as initiated via the [Speculation Rules API](/en-US/docs/Web/API/Speculation_Rules_API).
+ویژگی فقط خواندنی **`prerendering`** از رابط {{domxref("Document")}} مقدار `true` را برمی‌گرداند اگر سند در حال حاضر در فرآیند پیش‌رندرینگ (prerendering) باشد، همانطور که از طریق [Speculation Rules API](/en-US/docs/Web/API/Speculation_Rules_API) آغاز شده است.
 
-## Value
+## مقدار
 
-A boolean. Returns `true` if the document is currently in the process of prerendering, and `false` if it is not. `false` will be returned for documents that have finished prerendering, and documents that were not prerendered.
+یک مقدار بولی. اگر سند در حال حاضر در فرآیند پیش‌رندرینگ باشد، `true` و در غیر این صورت `false` برمی‌گرداند. `false` برای اسنادی که پیش‌رندرینگ را به پایان رسانده‌اند و اسنادی که پیش‌رندر نشده‌اند، برگردانده می‌شود.
 
-## Examples
+## مثال‌ها
 
-To run an activity while the page is prerendering, you can check for the `prerendering` property. You could for example run some analytics:
+برای اجرای یک فعالیت در حالی که صفحه در حال پیش‌رندرینگ است، می‌توانید ویژگی `prerendering` را بررسی کنید. برای مثال می‌توانید برخی تحلیل‌ها را اجرا کنید:
 
 ```js
 if (document.prerendering) {
@@ -32,7 +26,7 @@ if (document.prerendering) {
 }
 ```
 
-When a prerendered document is activated, {{domxref("PerformanceNavigationTiming.activationStart")}} is set to a {{domxref("DOMHighResTimeStamp")}} value representing the time between when the prerender was started and the document was actually activated. The following function can check for prerendering _and_ prerendered pages:
+هنگامی که یک سند پیش‌رندر شده فعال می‌شود، {{domxref("PerformanceNavigationTiming.activationStart")}} به یک مقدار {{domxref("DOMHighResTimeStamp")}} تنظیم می‌شود که نشان‌دهنده زمان بین شروع پیش‌رندرینگ و فعال شدن واقعی سند است. تابع زیر می‌تواند صفحات در حال پیش‌رندرینگ _و_ پیش‌رندر شده را بررسی کند:
 
 ```js
 function pagePrerendered() {
@@ -43,7 +37,7 @@ function pagePrerendered() {
 }
 ```
 
-When the prerendered page is activated by the user viewing the page, the {{domxref("Document.prerenderingchange_event", "prerenderingchange")}} event will fire. This can be used to enable activities that previously would be started by default on page load but which you wish to delay until the page is actually viewed by the user. The following code sets up an event listener to run a function once prerendering has finished, on a prerendered page, or runs it immediately on a non-prerendered page:
+هنگامی که صفحه پیش‌رندر شده توسط کاربر (با مشاهده صفحه) فعال می‌شود، رویداد {{domxref("Document.prerenderingchange_event", "prerenderingchange")}} فعال می‌شود. این می‌تواند برای فعال‌سازی فعالیت‌هایی استفاده شود که قبلاً به صورت پیش‌فرض در بارگذاری صفحه شروع می‌شدند، اما شما می‌خواهید تا زمانی که کاربر واقعاً صفحه را مشاهده می‌کند، به تأخیر بیفتند. کد زیر یک شنونده رویداد تنظیم می‌کند تا یک تابع را پس از اتمام پیش‌رندرینگ روی یک صفحه پیش‌رندر شده اجرا کند، یا آن را بلافاصله روی یک صفحه غیر پیش‌رندر شده اجرا کند:
 
 ```js
 if (document.prerendering) {
@@ -56,9 +50,9 @@ if (document.prerendering) {
 ```
 
 > [!NOTE]
-> See the [Speculation Rules API](/en-US/docs/Web/API/Speculation_Rules_API) landing page and particularly the [Unsafe speculative loading conditions](/en-US/docs/Web/API/Speculation_Rules_API#unsafe_speculative_loading_conditions) section for more information on the kinds of activities you might wish to delay.
+> برای اطلاعات بیشتر در مورد انواع فعالیت‌هایی که ممکن است بخواهید به تأخیر بیندازید، به صفحه اصلی [Speculation Rules API](/en-US/docs/Web/API/Speculation_Rules_API) و به ویژه بخش [شرایط بارگذاری گمانه‌زنی ناایمن](/en-US/docs/Web/API/Speculation_Rules_API#unsafe_speculative_loading_conditions) مراجعه کنید.
 
-To measure how often a prerender is activated, combine all three APIs: `document.prerendering` to detect cases where the page is currently prerendering, `prerenderingchange` to watch for activations in that case, and `activationStart` to check for cases where the page was prerendered in the past.
+برای اندازه‌گیری تعداد دفعاتی که یک پیش‌رندر فعال می‌شود، هر سه API را ترکیب کنید: `document.prerendering` برای تشخیص مواردی که صفحه در حال پیش‌رندرینگ است، `prerenderingchange` برای نظارت بر فعال‌سازی‌ها در آن مورد، و `activationStart` برای بررسی مواردی که صفحه در گذشته پیش‌رندر شده است.
 
 ```js
 if (document.prerendering) {
@@ -76,16 +70,16 @@ if (document.prerendering) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Speculation Rules API](/en-US/docs/Web/API/Speculation_Rules_API)
-- {{domxref("Document.prerenderingchange_event", "prerenderingchange")}} event
-- {{domxref("PerformanceNavigationTiming.activationStart")}} property
+- رویداد {{domxref("Document.prerenderingchange_event", "prerenderingchange")}}
+- ویژگی {{domxref("PerformanceNavigationTiming.activationStart")}}
