@@ -1,11 +1,5 @@
 ---
 title: "FileSystemFileEntry: file() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemFileEntry/file"
-status: "needs-translation"
----
-
----
-title: "FileSystemFileEntry: file() method"
 short-title: file()
 slug: Web/API/FileSystemFileEntry/file
 page-type: web-api-instance-method
@@ -14,38 +8,29 @@ browser-compat: api.FileSystemFileEntry.file
 
 {{APIRef("File and Directory Entries API")}}
 
-The {{domxref("FileSystemFileEntry")}} interface's method
-**`file()`** returns a
-{{domxref("File")}} object which can be used to read data from the file represented by
-the directory entry.
+متد **`file()`** در رابط {{domxref("FileSystemFileEntry")}} یک شیء {{domxref("File")}} برمی‌گرداند که می‌توان از آن برای خواندن داده‌های فایلِ متناظر با این ورودی دایرکتوری استفاده کرد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 file(successCallback)
 file(successCallback, errorCallback)
 ```
 
-### Parameters
+### پارامترها
 
 - `successCallback`
-  - : A callback function which is called when the {{domxref("File")}} has been created
-    successfully; the `File` is passed into the callback as the only parameter.
+  - : یک تابع回调 که وقتی {{domxref("File")}} با موفقیت ساخته شد فراخوانی می‌شود؛ شیء `File` به‌عنوان تنها پارامتر به این تابع回调 ارسال می‌شود.
 - `errorCallback` {{optional_inline}}
-  - : If provided, this must be a method which is called when an error occurs while trying
-    to create the {{domxref("File")}}. This callback receives as input a
-    {{domxref("DOMException")}} object describing the error.
+  - : در صورت ارائه، این باید تابعی باشد که هنگام بروز خطا در تلاش برای ساخت {{domxref("File")}} فراخوانی می‌شود. این تابع回调 یک شیء {{domxref("DOMException")}} شامل شرح خطا را به‌عنوان ورودی دریافت می‌کند.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-This example establishes a method, `readFile()`, reads a text file and calls
-a specified callback function with the received text (in a string)
-once the read is completed. If an error occurs, a specified (optional) error callback is
-called.
+این مثال یک متد به نام `readFile()` ایجاد می‌کند که یک فایل متنی را می‌خواند و پس از اتمام خواندن، متن دریافتی (به‌صورت رشته) را به یک تابع回调 مشخص‌شده ارسال می‌کند. اگر خطایی رخ دهد، یک تابع خطا (اختیاری) فراخوانی می‌شود.
 
 ```js
 function readFile(entry, successCallback, errorCallback) {
@@ -65,21 +50,16 @@ function readFile(entry, successCallback, errorCallback) {
 }
 ```
 
-This function calls `file()`, specifying as its success callback a method
-which proceeds to use a {{domxref("FileReader")}} to read the file as text. The
-FileReader's {{domxref("FileReader/load_event", "load")}} event handler is set up to deliver the loaded string to
-the `successCallback` specified when the `readFile()` method was
-called; similarly, its {{domxref("FileReader/error_event", "error")}} handler is set up to call the
-`errorCallback` specified.
+این تابع `file()` را فراخوانی می‌کند و به‌عنوان تابع موفقیت، تابعی را مشخص می‌کند که از {{domxref("FileReader")}} برای خواندن فایل به‌صورت متن استفاده می‌کند. رویداد {{domxref("FileReader/load_event", "load")}} مربوط به FileReader طوری تنظیم شده است که رشته بارگذاری‌شده را به `successCallback` که هنگام فراخوانی متد `readFile()` مشخص شده تحویل دهد؛ به همین ترتیب، رویداد {{domxref("FileReader/error_event", "error")}} آن نیز برای فراخوانی `errorCallback` تنظیم شده است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [File and Directory Entries API](/en-US/docs/Web/API/File_and_Directory_Entries_API)
