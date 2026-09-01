@@ -1,11 +1,5 @@
 ---
 title: "Event: type property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Event/type"
-status: "needs-translation"
----
-
----
-title: "Event: type property"
 short-title: type
 slug: Web/API/Event/type
 page-type: web-api-instance-property
@@ -14,19 +8,15 @@ browser-compat: api.Event.type
 
 {{APIRef("DOM")}}{{AvailableInWorkers}}
 
-The **`type`** read-only property of the {{domxref("Event")}}
-interface returns a string containing the event's type. It is set when the event is
-constructed and is the name commonly used to refer to the specific event, such as
-`click`, `load`, or `error`.
+ویژگی فقط‌خواندنی **`type`** از رابط {{domxref("Event")}} رشته‌ای شامل نوع رویداد را برمی‌گرداند. این مقدار هنگام ساخته‌شدن رویداد تنظیم می‌شود و نامی است که معمولاً برای ارجاع به رویداد خاص استفاده می‌شود، مانند `click`، `load` یا `error`.
 
-## Value
+## مقدار
 
-A string containing the type of {{domxref("Event")}}.
+رشته‌ای که نوع {{domxref("Event")}} را شامل می‌شود.
 
-## Example
+## مثال
 
-This example logs the event type whenever you press a keyboard key or click a mouse
-button.
+این مثال، نوع رویداد را هر بار که یک کلید صفحه‌کلید را فشار دهید یا دکمه‌ای از ماوس را کلیک کنید، ثبت می‌کند.
 
 ### HTML
 
@@ -54,19 +44,19 @@ document.addEventListener("mouseup", getEventType); // second
 document.addEventListener("click", getEventType); // third
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample('Example')}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{ domxref("EventTarget.addEventListener()") }}
 - {{ domxref("EventTarget.removeEventListener()") }}
