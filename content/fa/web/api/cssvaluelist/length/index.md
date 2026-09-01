@@ -1,11 +1,5 @@
 ---
 title: "CSSValueList: length property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSValueList/length"
-status: "needs-translation"
----
-
----
-title: "CSSValueList: length property"
 short-title: length
 slug: Web/API/CSSValueList/length
 page-type: web-api-instance-property
@@ -17,31 +11,26 @@ browser-compat: api.CSSValueList.length
 
 {{APIRef("CSSOM")}}{{Deprecated_header}}{{non-standard_header}}
 
-The **`length`** read-only property of the
-{{domxref("CSSValueList")}} interface represents the number of {{domxref("CSSValue")}}s
-in the list. The range of valid values of the indices is `0` to
-`length-1` inclusive.
+ویژگی فقط‌خواندنی **`length`** در رابط {{domxref("CSSValueList")}} تعداد {{domxref("CSSValue")}}‌های موجود در فهرست را نشان می‌دهد. محدودهٔ مقادیر معتبر شاخص‌ها، بازه‌ای بسته از `0` تا `length-1` است.
 
 > [!NOTE]
-> This property was part of an attempt to create a typed CSS Object Model. This attempt has been abandoned, and most browsers do
-> not implement it.
+> این ویژگی بخشی از تلاشی برای ایجاد یک CSS Object Model تایپ‌شده بود. این تلاش رها شده است و بیشتر مرورگرها آن را پیاده‌سازی نمی‌کنند.
 >
-> To achieve your purpose, you can use:
+> برای دستیابی به هدف خود، می‌توانید از موارد زیر استفاده کنید:
 >
-> - the untyped [CSS Object Model](/en-US/docs/Web/API/CSS_Object_Model), widely supported, or
-> - the modern [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API), less supported and considered experimental.
+> - [CSS Object Model](/en-US/docs/Web/API/CSS_Object_Model) بدون تایپ، که پشتیبانی گسترده‌ای دارد، یا
+> - [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API) مدرن، که پشتیبانی کمتری دارد و آزمایشی در نظر گرفته می‌شود.
 
-## Value
+## مقدار
 
-An `unsigned long` representing the number of {{domxref("CSSValue")}}s.
+یک `unsigned long` که تعداد {{domxref("CSSValue")}}‌ها را نشان می‌دهد.
 
-## Specifications
+## مشخصات
 
-This feature was originally defined in the [DOM Style Level 2](https://www.w3.org/TR/DOM-Level-2-Style/) specification, but has been dropped from any
-standardization effort since then.
+این ویژگی در اصل در مشخصات [DOM Style Level 2](https://www.w3.org/TR/DOM-Level-2-Style/) تعریف شده بود، اما از آن زمان از هرگونه تلاش برای استانداردسازی حذف شده است.
 
-It has been superseded by a modern, but incompatible, [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API) that is now on the standard track.
+این ویژگی با [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API) مدرن، اما ناسازگار، جایگزین شده است؛ این API اکنون در مسیر استانداردسازی قرار دارد.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
