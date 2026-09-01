@@ -1,11 +1,5 @@
 ---
 title: "Headers: delete() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Headers/delete"
-status: "needs-translation"
----
-
----
-title: "Headers: delete() method"
 short-title: delete()
 slug: Web/API/Headers/delete
 page-type: web-api-instance-method
@@ -14,12 +8,9 @@ browser-compat: api.Headers.delete
 
 {{APIRef("Fetch API")}} {{AvailableInWorkers}}
 
-The **`delete()`** method of the {{domxref("Headers")}}
-interface deletes a header from the current `Headers` object.
+متد **`delete()`** از رابط {{domxref("Headers")}} یک هدر را از شیء `Headers` جاری حذف می‌کند.
 
-For security reasons, some headers can only be controlled by the user agent. These
-headers include the {{Glossary("Forbidden_request_header", "forbidden request headers")}}
-and {{Glossary("Forbidden_response_header_name", "forbidden response header names")}}.
+به دلایل امنیتی، برخی هدرها فقط توسط عامل کاربر قابل کنترل هستند. این هدرها شامل {{Glossary("Forbidden_request_header", "هدرهای درخواست ممنوع")}} و {{Glossary("Forbidden_response_header_name", "نام‌های هدر پاسخ ممنوع")}} می‌شوند.
 
 ## Syntax
 
@@ -27,31 +18,31 @@ and {{Glossary("Forbidden_response_header_name", "forbidden response header name
 delete(name)
 ```
 
-### Parameters
+### پارامترها
 
 - `name`
-  - : The name of the HTTP header you want to delete from the `Headers` object.
+  - : نام هدر HTTP که می‌خواهید از شیء `Headers` حذف کنید.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-Creating an empty `Headers` object is simple:
+ایجاد یک شیء خالی `Headers` ساده است:
 
 ```js
 const myHeaders = new Headers(); // Currently empty
 ```
 
-You could add a header to this using {{domxref("Headers.append")}}:
+می‌توانید با استفاده از {{domxref("Headers.append")}} یک هدر به آن اضافه کنید:
 
 ```js
 myHeaders.append("Content-Type", "image/jpeg");
 myHeaders.get("Content-Type"); // Returns 'image/jpeg'
 ```
 
-You can then delete it again:
+سپس می‌توانید دوباره آن را حذف کنید:
 
 ```js
 myHeaders.delete("Content-Type");
@@ -66,7 +57,7 @@ myHeaders.get("Content-Type"); // Returns null, as it has been deleted
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [ServiceWorker API](/en-US/docs/Web/API/Service_Worker_API)
 - [HTTP access control (CORS)](/en-US/docs/Web/HTTP/Guides/CORS)
