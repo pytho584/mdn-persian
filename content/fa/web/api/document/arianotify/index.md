@@ -1,11 +1,5 @@
 ---
 title: "Document: ariaNotify() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/ariaNotify"
-status: "needs-translation"
----
-
----
-title: "Document: ariaNotify() method"
 short-title: ariaNotify()
 slug: Web/API/Document/ariaNotify
 page-type: web-api-instance-method
@@ -14,7 +8,7 @@ browser-compat: api.Document.ariaNotify
 
 {{ApiRef("DOM")}}
 
-The **`ariaNotify()`** method of the {{domxref("Document")}} interface queues a string of text to be announced by a {{glossary("screen reader")}}.
+متد **`ariaNotify()`** در رابط {{domxref("Document")}} رشته‌ای متنی را برای اعلام شدن توسط یک {{glossary("screen reader")}} در صف قرار می‌دهد.
 
 ## Syntax
 
@@ -26,76 +20,76 @@ ariaNotify(announcement, options)
 ### Parameters
 
 - `announcement`
-  - : A string specifying the text to be announced.
+  - : رشته‌ای که متنی را که باید اعلام شود مشخص می‌کند.
 - `options` {{optional_inline}}
-  - : An options object containing the following properties:
+  - : یک شیء گزینه‌ها شامل ویژگی‌های زیر:
     - `priority`
-      - : An enumerated value specifying the priority of the announcement.
-        Possible values are:
+      - : یک مقدار شمارشی که اولویت اعلان را مشخص می‌کند.
+        مقادیر ممکن عبارتند از:
         - `normal`
-          - : The announcement has normal priority.
-            It will be spoken after any announcement that a screen reader is currently making.
-            This is the default value.
+          - : اعلان اولویت عادی دارد.
+            پس از هر اعلانی که صفحه‌خوان در حال حاضر بیان می‌کند، خوانده خواهد شد.
+            این مقدار پیش‌فرض است.
         - `high`
-          - : The announcement has high priority.
-            It will be spoken immediately, interrupting any announcement that a screen reader is currently making.
+          - : اعلان اولویت بالایی دارد.
+            بلافاصله خوانده می‌شود و هر اعلانی را که صفحه‌خوان در حال حاضر بیان می‌کند قطع می‌کند.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ مقداری ({{jsxref("undefined")}}).
 
 ## Description
 
-The **`ariaNotify()`** method can be used to programmatically trigger a screen reader announcement. This method provides similar functionality to [ARIA live regions](/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions), with some advantages:
+متد **`ariaNotify()`** را می‌توان برای راه‌اندازی برنامه‌ریزی‌شدهٔ اعلان صفحه‌خوان استفاده کرد. این متد کارکردی مشابه [منطقه‌های زنده ARIA](/en-US/docs/Web/Accessibility/ARIA/Guides/Live_regions) با چند مزیت فراهم می‌کند:
 
-- Live regions can only make announcements following changes to the DOM, whereas an `ariaNotify()` announcement can be made at any time.
-- Live region announcements involve reading out the updated content of the changed DOM node, whereas `ariaNotify()` announcement content can be defined independently of DOM content.
+- منطقه‌های زنده فقط پس از تغییرات DOM می‌توانند اعلان کنند، در حالی که اعلان `ariaNotify()` را می‌توان در هر زمانی صادر کرد.
+- اعلان‌های منطقهٔ زنده شامل خواندن محتوای به‌روزشدهٔ گره DOM تغییر یافته هستند، در حالی که محتوای اعلان `ariaNotify()` می‌تواند مستقل از محتوای DOM تعریف شود.
 
-Developers often work around the limitations of live regions using hidden DOM nodes with live regions set on them, which have their contents updated with the content to be announced. This is inefficient and error-prone, and `ariaNotify()` provides a way to avoid such issues.
+توسعه‌دهندگان اغلب برای دور زدن محدودیت‌های منطقه‌های زنده، از گره‌های DOM پنهانی که منطقهٔ زنده روی آن‌ها تنظیم شده استفاده می‌کنند و محتوای آن‌ها را با متن موردنظر برای اعلان به‌روزرسانی می‌کنند. این کار ناکارآمد و مستعد خطاست و `ariaNotify()` راهی برای جلوگیری از چنین مشکلاتی فراهم می‌کند.
 
-Some screen readers will read out multiple `ariaNotify()` announcements in order, but this cannot be guaranteed across all screen readers and platforms. Normally, only the most recent announcement is spoken. It is more reliable to combine multiple announcements into one.
+برخی صفحه‌خوان‌ها چند اعلان `ariaNotify()` را به ترتیب می‌خوانند، اما این رفتار در همهٔ صفحه‌خوان‌ها و پلتفرم‌ها تضمین نمی‌شود. معمولاً فقط آخرین اعلان بیان می‌شود. ترکیب چند اعلان در یک اعلان، روش مطمئن‌تری است.
 
-For example, the following calls:
+برای مثال، فراخوانی‌های زیر:
 
 ```js
 document.ariaNotify("Hello there.");
 document.ariaNotify("The time is now 8 o'clock.");
 ```
 
-would be better combined:
+بهتر است به شکل زیر ترکیب شوند:
 
 ```js
 document.ariaNotify("Hello there. The time is now 8 o'clock.");
 ```
 
-`ariaNotify()` announcements do not require {{glossary("transient activation")}}; you should take care not to spam screen reader users with too many notifications, as this could create a bad user experience.
+اعلان‌های `ariaNotify()` به {{glossary("transient activation")}} نیاز ندارند؛ باید مراقب باشید کاربران صفحه‌خوان را با اعلان‌های زیاد بمباران نکنید، زیرا این کار می‌تواند تجربهٔ کاربری بدی ایجاد کند.
 
 ### Announcement priorities
 
-An `ariaNotify()` announcement with `priority: high` set is announced before an `ariaNotify()` announcement with `priority: normal` set.
+یک اعلان `ariaNotify()` با `priority: high` قبل از یک اعلان `ariaNotify()` با `priority: normal` اعلام می‌شود.
 
-`ariaNotify()` announcements are roughly equivalent to ARIA live region announcements as follows:
+اعلان‌های `ariaNotify()` تقریباً معادل اعلان‌های منطقهٔ زندهٔ ARIA هستند، به این صورت:
 
 - `ariaNotify()` `priority: high`: `aria-live="assertive"`.
 - `ariaNotify()` `priority: normal`: `aria-live="polite"`.
 
-However, `aria-live` announcements will take priority over `ariaNotify()` announcements.
+با این حال، اعلان‌های `aria-live` بر اعلان‌های `ariaNotify()` اولویت خواهند داشت.
 
 ### Language selection
 
-Screen readers choose an appropriate voice with which to read `ariaNotify()` announcements (in terms of accent, pronunciation, etc.) based on the language specified in the {{htmlelement("html")}} element's [`lang`](/en-US/docs/Web/HTML/Reference/Global_attributes/lang) attribute, or the user agent's default language if no `lang` attribute is set.
+صفحه‌خوان‌ها صدای مناسب برای خواندن اعلان‌های `ariaNotify()` را (از نظر لهجه، تلفظ و غیره) بر اساس زبان مشخص‌شده در ویژگی [`lang`](/en-US/docs/Web/HTML/Reference/Global_attributes/lang) عنصر {{htmlelement("html")}} انتخاب می‌کنند؛ و اگر ویژگی `lang` تنظیم نشده باشد، از زبان پیش‌فرض عامل کاربر استفاده می‌شود.
 
 ### Permissions policy integration
 
-Usage of `ariaNotify()` in a document or {{htmlelement("iframe")}} can be controlled by an {{httpheader("Permissions-Policy/aria-notify", "aria-notify")}} [Permission Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy).
+استفاده از `ariaNotify()` در یک سند یا {{htmlelement("iframe")}} می‌تواند توسط یک [Permission Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) با نام {{httpheader("Permissions-Policy/aria-notify", "aria-notify")}} کنترل شود.
 
-Specifically, where a defined policy blocks usage, any announcements created using `ariaNotify()` silently fail (they will not be sent).
+به‌طور مشخص، وقتی یک سیاست تعریف‌شده استفاده را مسدود کند، هر اعلانی که با `ariaNotify()` ساخته شود بی‌صدا رد می‌شود (ارسال نخواهد شد).
 
 ## Examples
 
 ### Basic `ariaNotify()` usage
 
-This example includes a {{htmlelement("button")}} that fires a screen reader announcement when clicked.
+این مثال شامل یک {{htmlelement("button")}} است که هنگام کلیک، اعلانی توسط صفحه‌خوان پخش می‌کند.
 
 ```html live-sample___basic-arianotify
 <button>Press</button>
@@ -122,21 +116,21 @@ document.querySelector("button").addEventListener("click", () => {
 
 #### Result
 
-The output is as follows:
+خروجی به صورت زیر است:
 
 {{EmbedLiveSample("basic-arianotify", "100%", 60, , , , "aria-notify")}}
 
-Try activating a screen reader and then pressing the button. You should hear "Hi there, I'm Ed Winchester." spoken by the screen reader.
+یک صفحه‌خوان را فعال کنید و دکمه را فشار دهید. باید بشنوید که صفحه‌خوان «Hi there, I'm Ed Winchester.» را می‌خواند.
 
 ### Accessible shopping list example
 
-This example is a shopping list that allows you to add and remove items, and keeps track of the total cost of all items. When an item is added or removed, screen readers will read out an announcement to say what item was added/removed, and what the updated total is.
+این مثال یک فهرست خرید است که به شما امکان افزودن و حذف اقلام را می‌دهد و هزینهٔ کل همهٔ اقلام را پیگیری می‌کند. وقتی آیتمی اضافه یا حذف می‌شود، صفحه‌خوان‌ها اعلانی را می‌خوانند که می‌گوید چه آیتمی اضافه/حذف شده و جمع کل به‌روزشده چقدر است.
 
 #### HTML
 
-Our HTML features a {{htmlelement("form")}} containing two {{htmlelement("input")}} elements — one `text` input to enter item names into, and one `number` input to enter prices into. Both inputs are [`required`](/en-US/docs/Web/HTML/Reference/Attributes/required), and the `number` input has a [`step`](/en-US/docs/Web/HTML/Reference/Attributes/step) value of `0.01` to stop non-price values (like large decimals) being entered.
+اچ‌تی‌ام‌ال ما شامل یک {{htmlelement("form")}} با دو {{htmlelement("input")}} است — یک ورودی `text` برای وارد کردن نام آیتم و یک ورودی `number` برای وارد کردن قیمت. هر دو ورودی [`required`](/en-US/docs/Web/HTML/Reference/Attributes/required) هستند و ورودی `number` دارای مقدار [`step`](/en-US/docs/Web/HTML/Reference/Attributes/step) برابر با `0.01` است تا از وارد شدن مقادیر غیرقیمتی (مانند اعداد اعشاری بزرگ) جلوگیری شود.
 
-Below the form we have an [unordered list](/en-US/docs/Web/HTML/Reference/Elements/ul) to render added items in, and a {{htmlelement("p")}} element to display the total cost.
+در زیر فرم، یک [فهرست بدون ترتیب](/en-US/docs/Web/HTML/Reference/Elements/ul) برای نمایش آیتم‌های اضافه‌شده و یک عنصر {{htmlelement("p")}} برای نمایش هزینهٔ کل داریم.
 
 ```html live-sample___shopping-list
 <h1><code>ariaNotify</code> demo: shopping list</h1>
@@ -210,7 +204,7 @@ li button {
 
 #### JavaScript
 
-Our script starts with several constant definitions to store references to the `<form>`, our two `<input>` elements, and our `<ul>` and `<p>` elements. We also include a `total` variable to store the total price of all items.
+اسکریپت ما با چند تعریف ثابت شروع می‌شود که ارجاع‌هایی به `<form>`، دو عنصر `<input>` و عناصر `<ul>` و `<p>` را ذخیره می‌کنند. همچنین یک متغیر `total` برای ذخیرهٔ قیمت کل همهٔ آیتم‌ها داریم.
 
 ```js live-sample___shopping-list
 const form = document.querySelector("form");
@@ -222,7 +216,7 @@ const totalOutput = document.querySelector("p");
 let total = 0;
 ```
 
-In our next code block, we define a function called `updateTotal()` that has one job — it updates the price displayed in the `<p>` element to equal the current value of the `total` variable:
+در بلوک کد بعدی، تابعی به نام `updateTotal()` تعریف می‌کنیم که فقط یک کار انجام می‌دهد: قیمت نمایش‌داده‌شده در عنصر `<p>` را به مقدار فعلی متغیر `total` به‌روزرسانی می‌کند:
 
 ```js live-sample___shopping-list
 function updateTotal() {
@@ -230,9 +224,9 @@ function updateTotal() {
 }
 ```
 
-Next, we define a function called `addItemToList()`. Inside the function body we first create an {{htmlelement("li")}} element to store a newly-added item. We store the item name and price in [`data-*`](/en-US/docs/Web/HTML/Reference/Global_attributes/data-*) attributes on the element, and make its text content equal to a string containing the item and price. We also create a {{htmlelement("button")}} element with text of "Remove &lt;item-name>", then append the list item to the unordered list, and the button to the list item.
+سپس تابعی به نام `addItemToList()` تعریف می‌کنیم. در بدنهٔ تابع ابتدا یک عنصر {{htmlelement("li")}} می‌سازیم تا آیتم تازه‌اضافه‌شده را ذخیره کند. نام و قیمت آیتم را در ویژگی‌های [`data-*`](/en-US/docs/Web/HTML/Reference/Global_attributes/data-*) روی عنصر ذخیره می‌کنیم و متن آن را برابر رشته‌ای شامل آیتم و قیمت قرار می‌دهیم. همچنین یک عنصر {{htmlelement("button")}} با متن «Remove &lt;item-name&gt;» می‌سازیم؛ سپس آیتم فهرست را به فهرست بدون ترتیب و دکمه را به آیتم فهرست اضافه می‌کنیم.
 
-The second major part of the function body is a `click` event listener definition on the button. When the button is clicked, we first grab a reference to the button's parent node — the list item it is inside. We then subtract the number contained in the list item's `data-price` attribute from the `total` variable, call the `updateTotal()` function to update the shown total price, then call `ariaNotify()` to announce the item that was removed, and what the new total is. Finally, we remove the list item from the DOM.
+بخش دوم اصلی بدنهٔ تابع، تعریف یک شنوندهٔ رویداد `click` روی دکمه است. وقتی دکمه کلیک می‌شود، ابتدا ارجاعی به گرهٔ والد دکمه — یعنی آیتم فهرستی که داخل آن است — می‌گیریم. سپس عدد موجود در ویژگی `data-price` آیتم فهرست را از متغیر `total` کم می‌کنیم، تابع `updateTotal()` را برای به‌روزرسانی قیمت کل نمایش‌داده‌شده صدا می‌زنیم و سپس `ariaNotify()` را برای اعلام آیتم حذف‌شده و جمع کل جدید فراخوانی می‌کنیم. در نهایت، آیتم فهرست را از DOM حذف می‌کنیم.
 
 ```js live-sample___shopping-list
 function addItemToList(item, price) {
@@ -263,7 +257,7 @@ function addItemToList(item, price) {
 }
 ```
 
-Our final code block add a `submit` event listener to the `<form>`. Inside the handler function, we first call {{domxref("Event.preventDefault", "preventDefault()")}} on the event object to stop the form submitting. We then call `addItemToList()` to display the new item and its price in the list, add the price to the `total` variable, call the `updateTotal()` to update the displayed total, then call `ariaNotify()` to announce the item that was added, and what the new total is. Finally, we clear out the current input field values ready for the next item to be added.
+آخرین بلوک کد ما یک شنوندهٔ رویداد `submit` به `<form>` اضافه می‌کند. در داخل تابع کنترل‌کننده، ابتدا {{domxref("Event.preventDefault", "preventDefault()")}} را روی شیء رویداد صدا می‌زنیم تا از ارسال فرم جلوگیری شود. سپس `addItemToList()` را برای نمایش آیتم جدید و قیمتش در فهرست فراخوانی می‌کنیم، قیمت را به متغیر `total` اضافه می‌کنیم، `updateTotal()` را برای به‌روزرسانی جمع کل نمایش‌داده‌شده صدا می‌زنیم و سپس `ariaNotify()` را برای اعلام آیتم اضافه‌شده و جمع کل جدید فراخوانی می‌کنیم. در پایان، مقادیر فعلی فیلدهای ورودی را پاک می‌کنیم تا برای افزودن آیتم بعدی آماده شوند.
 
 ```js live-sample___shopping-list
 form.addEventListener("submit", (e) => {
@@ -289,11 +283,11 @@ form.addEventListener("submit", (e) => {
 
 #### Result
 
-The output is as follows:
+خروجی به صورت زیر است:
 
 {{EmbedLiveSample("shopping-list", "100%", 500, , , , "aria-notify")}}
 
-Try activating a screen reader and then adding and removing some items. You should hear them announced by the screen reader.
+یک صفحه‌خوان را فعال کنید و چند آیتم اضافه و حذف کنید. باید بشنوید که توسط صفحه‌خوان اعلام می‌شوند.
 
 ## Specifications
 
