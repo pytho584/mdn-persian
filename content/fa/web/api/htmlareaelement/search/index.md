@@ -1,40 +1,26 @@
 ---
 title: "HTMLAreaElement: search property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLAreaElement/search"
-status: "needs-translation"
----
-
----
-title: "HTMLAreaElement: search property"
-short-title: search
-slug: Web/API/HTMLAreaElement/search
-page-type: web-api-instance-property
-browser-compat: api.HTMLAreaElement.search
 ---
 
 {{ApiRef("HTML DOM")}}
 
-The **`search`** property of the {{domxref("HTMLAreaElement")}} interface is a search string, also called a _query string_, that is a string containing a `"?"` followed by the parameters of the `<area>` element's `href`. If the URL does not have a search query, this property contains an empty string, `""`.
+خاصیت **`search`** از رابط {{domxref("HTMLAreaElement")}} یک رشته جست‌وجو (که به آن _رشته پرس‌وجو_ یا query string نیز گفته می‌شود) است. این رشته شامل یک `"?"` به همراه پارامترهای `href` عنصر `<area>` می‌باشد. اگر URL فاقد رشته جست‌وجو باشد، این خاصیت شامل یک رشته خالی `""` خواهد بود.
 
-This property can be set to change the query string of the URL. When setting, a single `"?"` prefix is added to the provided value, if not already present. Setting it to `""` removes the query string.
+این خاصیت قابل تنظیم است تا رشته پرس‌وجوی URL تغییر کند. هنگام تنظیم، یک پیشوند `"?"` به مقدار ارائه‌شده اضافه می‌شود، مگر اینکه از قبل وجود داشته باشد. تنظیم آن به `""` باعث حذف رشته پرس‌وجو می‌شود.
 
-The query is {{Glossary("Percent-encoding", "percent-encoded")}} when setting but not percent-decoded when reading.
+رشته پرس‌وجو هنگام تنظیم {{Glossary("Percent-encoding", "درصد-کدگذاری")}} می‌شود اما هنگام خواندن درصد-کدگشایی نمی‌شود.
 
-Modern browsers provide
-[`URLSearchParams`](/en-US/docs/Web/API/URLSearchParams/get#examples)
-and
-[`URL.searchParams`](/en-US/docs/Web/API/URL/searchParams#examples)
-to make it easy to parse out the parameters from the query string.
+مرورگرهای مدرن [`URLSearchParams`](/en-US/docs/Web/API/URLSearchParams/get#examples) و [`URL.searchParams`](/en-US/docs/Web/API/URL/searchParams#examples) را ارائه می‌دهند تا تجزیه پارامترها از رشته پرس‌وجو آسان‌تر شود.
 
-See {{domxref("URL.search")}} for more information.
+برای اطلاعات بیشتر به {{domxref("URL.search")}} مراجعه کنید.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
-### Getting the search string from an area link
+### دریافت رشته جست‌وجو از یک پیوند ناحیه
 
 ```js
 // An <area id="myArea" href="/en-US/docs/HTMLAreaElement?q=123"> element is in the document
@@ -42,23 +28,23 @@ const area = document.getElementById("myArea");
 area.search; // returns '?q=123'
 ```
 
-### Advanced parsing using URLSearchParams
+### تجزیه پیشرفته با استفاده از URLSearchParams
 
-Alternatively, [`URLSearchParams`](/en-US/docs/Web/API/URLSearchParams/get#examples) can be used:
+همچنین می‌توان از [`URLSearchParams`](/en-US/docs/Web/API/URLSearchParams/get#examples) استفاده کرد:
 
 ```js
 let params = new URLSearchParams(queryString);
 let q = parseInt(params.get("q"), 10); // returns the number 123
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("HTMLAreaElement")}} interface it belongs to.
+- رابط {{domxref("HTMLAreaElement")}} که این خاصیت به آن تعلق دارد.
