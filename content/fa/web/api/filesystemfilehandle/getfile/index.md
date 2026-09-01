@@ -1,11 +1,5 @@
 ---
 title: "FileSystemFileHandle: getFile() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemFileHandle/getFile"
-status: "needs-translation"
----
-
----
-title: "FileSystemFileHandle: getFile() method"
 short-title: getFile()
 slug: Web/API/FileSystemFileHandle/getFile
 page-type: web-api-instance-method
@@ -14,12 +8,9 @@ browser-compat: api.FileSystemFileHandle.getFile
 
 {{securecontext_header}}{{APIRef("File System API")}}{{AvailableInWorkers}}
 
-The **`getFile()`** method of the
-{{domxref("FileSystemFileHandle")}} interface returns a {{jsxref('Promise')}} which resolves to a
-{{domxref('File')}} object representing the state on disk of the entry represented by the handle.
+متد **`getFile()`** در رابط {{domxref("FileSystemFileHandle")}} یک {{jsxref('Promise')}} برمی‌گرداند که به یک شیء {{domxref('File')}} تبدیل می‌شود. این شیء نمایانگر وضعیت فعلی ورودی‌ای است که این هندل (handle) به آن اشاره می‌کند، در دیسک.
 
-If the file on disk changes or is removed after this method is called, the returned
-{{domxref('File')}} object will likely be no longer readable.
+اگر فایل موجود در دیسک پس از فراخوانی این متد تغییر کند یا حذف شود، احتمالاً شیء {{domxref('File')}} برگشتی دیگر قابل خواندن نخواهد بود.
 
 ## Syntax
 
@@ -29,23 +20,22 @@ getFile()
 
 ### Parameters
 
-None.
+هیچ‌کدام.
 
 ### Return value
 
-A {{jsxref('Promise')}} which resolves to a {{domxref('File')}} object.
+یک {{jsxref('Promise')}} که به یک شیء {{domxref('File')}} تبدیل می‌شود.
 
 ### Exceptions
 
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if the {{domxref('PermissionStatus.state')}} is not `granted` in `read` mode.
+  - : اگر {{domxref('PermissionStatus.state')}} در حالت `read` برابر با `granted` نباشد، این خطا پرتاب می‌شود.
 - `NotFoundError` {{domxref("DOMException")}}
-  - : Thrown if current entry is not found.
+  - : اگر ورودی جاری یافت نشود، این خطا پرتاب می‌شود.
 
 ## Examples
 
-The following asynchronous function presents a file picker and once a file is chosen,
-uses the `getFile()` method to retrieve the contents.
+تابع ناهمگام زیر یک انتخاب‌گر فایل را نمایش می‌دهد و پس از انتخاب فایل، با استفاده از متد `getFile()` محتوا را بازیابی می‌کند.
 
 ```js
 async function getTheFile() {
