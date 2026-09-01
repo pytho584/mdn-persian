@@ -1,11 +1,5 @@
 ---
 title: "ElementInternals: role property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/role"
-status: "needs-translation"
----
-
----
-title: "ElementInternals: role property"
 short-title: role
 slug: Web/API/ElementInternals/role
 page-type: web-api-instance-property
@@ -14,16 +8,16 @@ browser-compat: api.ElementInternals.role
 
 {{APIRef("Web Components")}}
 
-The **`role`** property of the {{domxref("ElementInternals")}} interface returns the [WAI-ARIA role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles) for the element. For example, a checkbox might have [`role="checkbox"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/checkbox_role). It reflects the `role` attribute; it does not return the element's implicit ARIA role, if any, unless explicitly set.
+ویژگی **`role`** در رابط {{domxref("ElementInternals")}}، نقش [WAI-ARIA](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles) عنصر را بازمی‌گرداند. برای مثال، یک چک‌باکس ممکن است [`role="checkbox"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/checkbox_role) داشته باشد. این ویژگی منعکس‌کنندهٔ صفت `role` است؛ نقش ضمنی ARIA عنصر (در صورت وجود) را بازنمی‌گرداند، مگر اینکه به‌صورت صریح تنظیم شده باشد.
 
-## Value
+## مقدار
 
-A string which contains an ARIA role. A full list of ARIA roles can be found on the [ARIA techniques page](/en-US/docs/Web/Accessibility/ARIA/Guides/Techniques).
+رشته‌ای که شامل یک نقش ARIA است. فهرست کامل نقش‌های ARIA را می‌توانید در [صفحهٔ تکنیک‌های ARIA](/en-US/docs/Web/Accessibility/ARIA/Guides/Techniques) مشاهده کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
