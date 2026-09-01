@@ -1,11 +1,5 @@
 ---
 title: "HTMLInputElement: name property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/name"
-status: "needs-translation"
----
-
----
-title: "HTMLInputElement: name property"
 short-title: name
 slug: Web/API/HTMLInputElement/name
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.HTMLInputElement.name
 
 {{ApiRef("HTML DOM")}}
 
-The **`name`** property of the {{domxref("HTMLInputElement")}} interface indicates the name of the {{HTMLElement("input")}} element. It reflects the element's [`name`](/en-US/docs/Web/HTML/Reference/Elements/input#name) attribute.
+خاصیت **`name`** از رابط {{domxref("HTMLInputElement")}} نشان‌دهندهٔ نام عنصر {{HTMLElement("input")}} است. این خاصیت ویژگی [`name`](/en-US/docs/Web/HTML/Reference/Elements/input#name) عنصر را منعکس می‌کند.
 
-## Value
+## مقدار
 
-A string representing the element's name.
+یک رشته که نام عنصر را نشان می‌دهد.
 
-## Example
+## مثال
 
-Given the following HTML:
+با توجه به HTML زیر:
 
 ```html
 <p>
@@ -31,7 +25,7 @@ Given the following HTML:
 </p>
 ```
 
-You can use the `name` property to retrieve or set the `<input>`'s name:
+می‌توانید از خاصیت `name` برای دریافت یا تنظیم نام `<input>` استفاده کنید:
 
 ```js
 const inputElement = document.querySelector("#planet");
@@ -39,15 +33,15 @@ console.log(`Element's name: ${inputElement.name}`); // "Element's name: origin"
 inputElement.name = "planet"; // updates the element's name
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLInputElement.value")}}
 - {{domxref("HTMLInputElement.type")}}
