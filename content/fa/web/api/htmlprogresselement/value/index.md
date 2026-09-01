@@ -1,11 +1,5 @@
 ---
 title: "HTMLProgressElement: value property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLProgressElement/value"
-status: "needs-translation"
----
-
----
-title: "HTMLProgressElement: value property"
 short-title: value
 slug: Web/API/HTMLProgressElement/value
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.HTMLProgressElement.value
 
 {{APIRef("HTML DOM")}}
 
-The **`value`** property of the {{DOMxRef("HTMLProgressElement")}} interface represents the current progress of the {{HTMLElement("progress")}} element.
+ویژگی **`value`** در رابط {{DOMxRef("HTMLProgressElement")}}، پیشرفت فعلی عنصر {{HTMLElement("progress")}} را نمایش می‌دهد.
 
-## Value
+## مقدار
 
-A floating point number. If {{DOMxRef("HTMLProgressElement.max", "max")}} value is not set on the progress bar then value ranges between 0.0 and 1.0. If the `max` value is set then the `value` ranges between `0` and the `max` value.
+یک عدد اعشاری. اگر مقدار {{DOMxRef("HTMLProgressElement.max", "max")}} روی نوار پیشرفت تنظیم نشده باشد، مقدار `value` بین ۰٫۰ و ۱٫۰ خواهد بود. اگر مقدار `max` تنظیم شده باشد، `value` بین `0` و مقدار `max` خواهد بود.
 
-If the `value` property is not set on {{DOMxRef("HTMLProgressElement")}} object, then the progress bar remains indeterminate.
+اگر ویژگی `value` بر روی شیء {{DOMxRef("HTMLProgressElement")}} تنظیم نشده باشد، نوار پیشرفت نامعین (indeterminate) باقی می‌ماند.
 
-## Examples
+### مثال‌ها
 
 ### HTML
 
@@ -50,10 +44,10 @@ setInterval(() => {
 
 {{EmbedLiveSample("Examples", "100%", 30)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
