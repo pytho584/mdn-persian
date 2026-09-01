@@ -1,10 +1,4 @@
 ---
-title: "DelegatedInkTrailPresenter"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DelegatedInkTrailPresenter"
-status: "needs-translation"
----
-
----
 title: DelegatedInkTrailPresenter
 slug: Web/API/DelegatedInkTrailPresenter
 page-type: web-api-interface
@@ -15,32 +9,32 @@ browser-compat: api.DelegatedInkTrailPresenter
 
 {{APIRef("Ink API")}}{{SeeCompatTable}}
 
-The **`DelegatedInkTrailPresenter`** interface of the [Ink API](/en-US/docs/Web/API/Ink_API) provides the ability to instruct the OS-level compositor to render ink strokes between pointer event dispatches.
+رابط **`DelegatedInkTrailPresenter`** از [Ink API](/en-US/docs/Web/API/Ink_API) قابلیت دستور به کامپوزیتور سطح سیستم‌عامل برای رندر کردن خطوط جوهر بین ارسال‌های رویداد اشاره‌گر را فراهم می‌کند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("DelegatedInkTrailPresenter.expectedImprovement", "expectedImprovement")}} {{Deprecated_Inline}} {{Non-standard_Inline}} {{ReadOnlyInline}}
-  - : Returns a value, in milliseconds, indicating the latency improvement that can be expected using this presenter.
+  - : مقداری را بر حسب میلی‌ثانیه برمی‌گرداند که نشان‌دهنده بهبود تأخیر قابل انتظار با استفاده از این ارائه‌دهنده است.
 - {{domxref("DelegatedInkTrailPresenter.presentationArea", "presentationArea")}} {{Experimental_Inline}} {{ReadOnlyInline}}
-  - : Returns the {{domxref("Element")}} inside which rendering of ink strokes is confined.
+  - : {{domxref("Element")}}ای را برمی‌گرداند که رندر کردن خطوط جوهر درون آن محدود شده است.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("DelegatedInkTrailPresenter.updateInkTrailStartPoint", "updateInkTrailStartPoint()")}} {{Experimental_Inline}}
-  - : Passes the {{domxref("PointerEvent")}} that was used as the last rendering point for the current frame, allowing the OS-level compositor to render a delegated ink trail ahead of the next pointer event being dispatched.
+  - : {{domxref("PointerEvent")}}ای را که به عنوان آخرین نقطه رندر برای فریم فعلی استفاده شده است، ارسال می‌کند و به کامپوزیتور سطح سیستم‌عامل اجازه می‌دهد یک رد جوهر تفویض‌شده را جلوتر از ارسال رویداد اشاره‌گر بعدی رندر کند.
 
-## Example
+## مثال
 
-In this example, we draw a trail onto a 2D canvas. Near the start of the code, we call {{domxref("Ink.requestPresenter()")}}, passing it the canvas as the presentation area for it to take care of and storing the promise it returns in the `presenter` variable.
+در این مثال، یک رد روی بوم دوبعدی رسم می‌کنیم. در نزدیکی شروع کد، {{domxref("Ink.requestPresenter()")}} را فراخوانی می‌کنیم، بوم را به عنوان منطقه ارائه برای آن ارسال می‌کنیم و پرامیسی که برمی‌گرداند را در متغیر `presenter` ذخیره می‌کنیم.
 
-Later on, in the `pointermove` event listener, the new position of the trailhead is drawn onto the canvas each time the event fires. In addition, the `DelegatedInkTrailPresenter` object returned when the `presenter` promise fulfills has its {{domxref("DelegatedInkTrailPresenter.updateInkTrailStartPoint", "updateInkTrailStartPoint()")}} method invoked; this is passed:
+بعداً، در شنونده رویداد `pointermove`، موقعیت جدید سر رد هر بار که رویداد رخ می‌دهد روی بوم رسم می‌شود. علاوه بر این، شیء `DelegatedInkTrailPresenter` که وقتی پرامیس `presenter` fulfilled می‌شود برگردانده می‌شود، متد {{domxref("DelegatedInkTrailPresenter.updateInkTrailStartPoint", "updateInkTrailStartPoint()")}} آن فراخوانی می‌شود؛ این متد ارسال می‌کند:
 
-- The last trusted pointer event representing the rendering point for the current frame.
-- A `style` object containing color and diameter settings.
+- آخرین رویداد اشاره‌گر معتبر که نقطه رندر برای فریم جاری را نشان می‌دهد.
+- یک شیء `style` شامل تنظیمات رنگ و قطر.
 
-The result is that a delegated ink trail is drawn ahead of the default browser rendering on the app's behalf, in the specified style, until the next time it receives a `pointermove` event.
+نتیجه این است که یک رد جوهر تفویض‌شده جلوتر از رندر پیش‌فرض مرورگر به نمایندگی از برنامه، با سبک مشخص‌شده، تا زمانی که رویداد `pointermove` بعدی دریافت شود، رسم می‌شود.
 
 ```js
 const ctx = canvas.getContext("2d");
@@ -86,12 +80,12 @@ canvas.height = window.innerHeight;
 ```
 
 > [!NOTE]
-> See this example running live — [Delegated ink trail](https://mabian-ms.github.io/delegated-ink-trail.html).
+> این مثال را به صورت زنده ببینید — [رد جوهر تفویض‌شده](https://mabian-ms.github.io/delegated-ink-trail.html).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
