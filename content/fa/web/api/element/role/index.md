@@ -1,7 +1,6 @@
+```
 ---
 title: "Element: role property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/role"
-status: "needs-translation"
 ---
 
 ---
@@ -14,19 +13,19 @@ browser-compat: api.Element.role
 
 {{ ApiRef("DOM") }}
 
-The **`role`** property of the {{domxref("Element")}} interface returns the explicitly set [WAI-ARIA role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles) for the element.
+ویژگی **`role`** در رابط {{domxref("Element")}}، نقش [WAI-ARIA](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles) را که به‌صورت صریح برای عنصر تعیین شده است، بازمی‌گرداند.
 
-All HTML elements have an implicit ARIA role, even if that role is [`generic`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/generic_role). This semantic association allows tools to present and support interaction with the object in a manner that is consistent with user expectations about other objects of that type. The `role` attribute is used to explicitly set the element's ARIA role, overriding the implicit role. For example, a {{htmlelement("ul")}}, which has an implicit [`list`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/list_role) role, might have [`role="treegrid"`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/treegrid_role) explicitly set. The `role` property reflects the explicitly set value of the `role` attribute—in this case `treegrid`; it does not return the element's implicit `list` role unless explicitly set.
+همه عناصر HTML یک نقش ARIA ضمنی دارند، حتی اگر آن نقش [`generic`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/generic_role) باشد. این ارتباط معنایی به ابزارها امکان می‌دهد تا شیء را به شکلی ارائه و تعامل با آن را پشتیبانی کنند که با انتظارات کاربران از سایر اشیاء هم‌نوع سازگار باشد. ویژگی `role` برای تعیین صریح نقش ARIA عنصر استفاده می‌شود و نقش ضمنی را بازنویسی می‌کند. برای مثال، یک {{htmlelement("ul")}} که نقش ضمنی [`list`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/list_role) را دارد، ممکن است ویژگی `role="treegrid"` به‌صورت صریح برای آن تنظیم شده باشد. ویژگی `role` مقدار صریحاً تنظیم‌شده ویژگی `role` را بازتاب می‌دهد — در این مورد `treegrid`؛ و نقش ضمنی `list` عنصر را بازنمی‌گرداند مگر اینکه به‌صورت صریح تنظیم شده باشد.
 
-The full list of defined ARIA roles can be found on the [ARIA roles](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles) reference page.
+فهرست کامل نقش‌های تعریف‌شده ARIA را می‌توانید در صفحه مرجع [نقش‌های ARIA](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles) مشاهده کنید.
 
-## Value
+## مقدار
 
-A string; the value of the `role` attribute or `null` if not explicitly set.
+یک رشته (string)؛ مقدار ویژگی `role` یا اگر به‌صورت صریح تنظیم نشده باشد، `null`.
 
-## Examples
+## مثال‌ها
 
-In this example, images with empty or missing `alt` attributes are given a `role` of [`presentation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role):
+در این مثال، به تصاویری که ویژگی `alt` آن‌ها خالی یا وجود ندارد، نقش [`presentation`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/presentation_role) داده می‌شود:
 
 ```js
 const images = document.querySelectorAll("img");
@@ -37,15 +36,16 @@ images.forEach((image) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("ElementInternals.role")}}
-- [ARIA attributes](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes)
+- [ویژگی‌های ARIA](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes)
+```
