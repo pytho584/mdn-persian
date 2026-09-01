@@ -1,11 +1,5 @@
 ---
 title: "HTMLLinkElement: disabled property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLLinkElement/disabled"
-status: "needs-translation"
----
-
----
-title: "HTMLLinkElement: disabled property"
 short-title: disabled
 slug: Web/API/HTMLLinkElement/disabled
 page-type: web-api-instance-property
@@ -14,17 +8,17 @@ browser-compat: api.HTMLLinkElement.disabled
 
 {{APIRef("HTML DOM")}}
 
-The **`disabled`** property of the {{domxref("HTMLLinkElement")}} interface is a boolean value that represents whether the link is disabled. It only has an effect with style sheet links (`rel` property set to `stylesheet`).
+ویژگی **`disabled`** در رابط {{domxref("HTMLLinkElement")}} یک مقدار بولی است که نشان می‌دهد آیا پیوند غیرفعال است یا نه. این ویژگی تنها روی پیوندهای استایل‌شیت تأثیر می‌گذارد (زمانی که ویژگی `rel` برابر با `stylesheet` باشد).
 
-If `disabled` attribute is specified in the HTML when it is loaded, the stylesheet will not be loaded during page load. Instead, the stylesheet will be loaded only when the `disabled` property is set to `false` or removed. Setting the `disabled` property using JavaScript causes the stylesheet to be removed from the document's {{domxref("Document.styleSheets")}} list.
+اگر هنگام بارگذاری HTML، ویژگی `disabled` در آن مشخص شده باشد، استایل‌شیت در طول بارگذاری صفحه بارگذاری نمی‌شود. در عوض، استایل‌شیت تنها زمانی بارگذاری می‌شود که ویژگی `disabled` روی `false` تنظیم شود یا حذف گردد. تنظیم ویژگی `disabled` با استفاده از جاوااسکریپت باعث می‌شود استایل‌شیت از فهرست {{domxref("Document.styleSheets")}} سند حذف شود.
 
-It reflects the `disabled` attribute of the {{HTMLElement("link")}} element.
+این ویژگی منعکس‌کنندهٔ ویژگی `disabled` عنصر {{HTMLElement("link")}} است.
 
-## Value
+## مقدار
 
-A boolean.
+یک مقدار بولی.
 
-## Examples
+## مثال‌ها
 
 ```html
 <link
@@ -44,15 +38,15 @@ el.disabled = false;
 console.log(el.disabled); // Output: false
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("HTMLScriptElement.integrity")}}
 - [Subresource Integrity](/en-US/docs/Web/Security/Defenses/Subresource_Integrity)
