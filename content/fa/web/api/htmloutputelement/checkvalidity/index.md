@@ -1,7 +1,5 @@
 ---
 title: "HTMLOutputElement: checkValidity() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLOutputElement/checkValidity"
-status: "needs-translation"
 ---
 
 ---
@@ -14,43 +12,43 @@ browser-compat: api.HTMLOutputElement.checkValidity
 
 {{APIRef("HTML DOM")}}
 
-The **`checkValidity()`** method of the {{domxref("HTMLOutputElement")}} interface checks if the element is valid, but always returns true because {{HTMLElement("output")}} elements are never candidates for [constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation).
+متد **`checkValidity()`** در رابط {{domxref("HTMLOutputElement")}} بررسی می‌کند که آیا عنصر معتبر است یا خیر، اما همیشه `true` برمی‌گرداند، زیرا عناصر {{HTMLElement("output")}} هرگز برای [اعتبارسنجی محدودیت‌ها](/en-US/docs/Web/HTML/Guides/Constraint_validation) در نظر گرفته نمی‌شوند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 checkValidity()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A boolean value, `true`.
+یک مقدار بولین، `true`.
 
-## Examples
+## مثال‌ها
 
-In the following example, calling `checkValidity()` returns `true`.
+در مثال زیر، فراخوانی `checkValidity()` مقدار `true` برمی‌گرداند.
 
 ```js
 const element = document.getElementById("myOutput");
 console.log(element.checkValidity());
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLOutputElement.reportValidity()")}}
 - {{HTMLElement("output")}}
 - {{HTMLElement("form")}}
-- [Learn: Client-side form validation](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
-- [Guide: Constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation)
+- [یادگیری: اعتبارسنجی فرم سمت کلاینت](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
+- [راهنما: اعتبارسنجی محدودیت‌ها](/en-US/docs/Web/HTML/Guides/Constraint_validation)
