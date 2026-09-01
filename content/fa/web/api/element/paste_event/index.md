@@ -1,11 +1,5 @@
 ---
 title: "Element: paste event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/paste_event"
-status: "needs-translation"
----
-
----
-title: "Element: paste event"
 short-title: paste
 slug: Web/API/Element/paste_event
 page-type: web-api-event
@@ -14,21 +8,21 @@ browser-compat: api.Element.paste_event
 
 {{APIRef("Clipboard API")}}
 
-The **`paste`** event of the [Clipboard API](/en-US/docs/Web/API/Clipboard_API) is fired when the user has initiated a "paste" action through the browser's user interface.
+رویداد **`paste`** از [Clipboard API](/en-US/docs/Web/API/Clipboard_API) زمانی فعال می‌شود که کاربر از طریق رابط کاربری مرورگر یک عمل «چسباندن» (paste) را آغاز کرده باشد.
 
-If the cursor is in an editable context (for example, in a {{HTMLElement("textarea")}} or an element with [`contenteditable`](/en-US/docs/Web/HTML/Reference/Global_attributes/contenteditable) attribute set to `true`) then the default action is to insert the contents of the clipboard into the document at the cursor position.
+اگر مکان‌نما (cursor) در یک بافت قابل ویرایش قرار داشته باشد (مثلاً در یک {{HTMLElement("textarea")}} یا عنصری که ویژگی [`contenteditable`](/en-US/docs/Web/HTML/Reference/Global_attributes/contenteditable) آن روی `true` تنظیم شده است)، آنگاه عمل پیش‌فرض این است که محتویات کلیپ‌بورد در محل مکان‌نما درون سند درج شود.
 
-A handler for this event can access the clipboard contents by calling {{domxref("DataTransfer/getData", "getData()")}} on the event's `clipboardData` property.
+یک کنترل‌کننده (handler) برای این رویداد می‌تواند با فراخوانی {{domxref("DataTransfer/getData", "getData()")}} روی ویژگی `clipboardData` رویداد، به محتویات کلیپ‌بورد دسترسی پیدا کند.
 
-To override the default behavior (for example to insert some different data or a transformation of the clipboard contents) an event handler must cancel the default action using {{domxref("Event/preventDefault", "event.preventDefault()")}}, and then insert its desired data manually.
+برای لغو رفتار پیش‌فرض (مثلاً برای درج داده‌ای متفاوت یا یک تبدیل از محتویات کلیپ‌بورد)، یک کنترل‌کننده رویداد باید با استفاده از {{domxref("Event/preventDefault", "event.preventDefault()")}} عمل پیش‌فرض را لغو کرده و سپس داده‌های مورد نظر خود را به‌صورت دستی درج کند.
 
-It's possible to construct and dispatch a [synthetic](/en-US/docs/Web/API/Document_Object_Model/Events#creating_and_dispatching_events) `paste` event, but this will not affect the document's contents.
+می‌توان یک رویداد `paste` [مصنوعی (synthetic)](/en-US/docs/Web/API/Document_Object_Model/Events#creating_and_dispatching_events) ساخت و ارسال کرد، اما این کار بر محتویات سند تأثیری نخواهد گذاشت.
 
-This event [bubbles](/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling) up the DOM tree, eventually to {{domxref("Document")}} and {{domxref("Window")}}, is [cancelable](/en-US/docs/Web/API/Event/cancelable) and is [composed](/en-US/docs/Web/API/Event/composed).
+این رویداد در درخت DOM به سمت بالا [حباب می‌زند (bubbles)](/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling) و در نهایت به {{domxref("Document")}} و {{domxref("Window")}} می‌رسد، [قابل لغو (cancelable)](/en-US/docs/Web/API/Event/cancelable) است و [مرکب (composed)](/en-US/docs/Web/API/Event/composed) می‌باشد.
 
 ## Syntax
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در متدهایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد (event handler property) تنظیم نمایید.
 
 ```js-nolint
 addEventListener("paste", (event) => { })
@@ -38,13 +32,13 @@ onpaste = (event) => { }
 
 ## Event type
 
-A {{domxref("ClipboardEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("ClipboardEvent")}}. از {{domxref("Event")}} ارث‌بری می‌کند.
 
 {{InheritanceDiagram("ClipboardEvent")}}
 
 ## Examples
 
-### Live example
+### نمونه زنده
 
 #### HTML
 
