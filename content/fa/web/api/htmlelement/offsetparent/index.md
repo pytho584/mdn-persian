@@ -1,7 +1,5 @@
 ---
 title: "HTMLElement: offsetParent property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetParent"
-status: "needs-translation"
 ---
 
 ---
@@ -14,40 +12,34 @@ browser-compat: api.HTMLElement.offsetParent
 
 {{ APIRef("HTML DOM") }}
 
-The **`HTMLElement.offsetParent`** read-only property returns a
-reference to the element which is the closest (nearest in the containment hierarchy)
-positioned ancestor element.
+ویژگی فقطخواندنی **`HTMLElement.offsetParent`** ارجاعی به عنصری برمی‌گرداند که نزدیک‌ترین جدِ دارای موقعیت (positioned ancestor) است؛ یعنی نزدیک‌ترین عنصر در زنجیرهٔ دربرگیری والدها.
 
-A positioned ancestor might be:
+یک جدِ موقعیت‌دار می‌تواند یکی از موارد زیر باشد:
 
-- a [containing block](/en-US/docs/Web/CSS/Guides/Display/Containing_block#identifying_the_containing_block) for absolutely-positioned elements
-- an element with a different effective [zoom](/en-US/docs/Web/CSS/Reference/Properties/zoom) value (that is, the product of all zoom scales of its parents) from this element
-- `td`, `th`, `table` in case the element itself is static positioned.
+- یک [containing block](/en-US/docs/Web/CSS/Guides/Display/Containing_block#identifying_the_containing_block) برای عناصر دارای موقعیت مطلق (absolutely positioned)
+- عنصری که مقدار [zoom](/en-US/docs/Web/CSS/Reference/Properties/zoom) مؤثر آن (یعنی حاصل‌ضرب تمام مقیاس‌های zoom والدهایش) با مقدار zoom این عنصر متفاوت باشد
+- عناصر `td`، `th` یا `table` در صورتی که خودِ عنصر دارای موقعیت static باشد
 
-If there is no positioned ancestor element, the `body` is returned.
+اگر هیچ عنصر جدِ موقعیت‌داری وجود نداشته باشد، عنصر `body` برگردانده می‌شود.
 
 > [!NOTE]
-> `offsetParent` returns `null` in the following situations:
+> `offsetParent` در شرایط زیر مقدار `null` برمی‌گرداند:
 >
-> - The element or any ancestor has the `display` property set to
->   `none`.
-> - The element has the `position` property set to `fixed` and its containing block is the viewport.
->   If the containing block is not the viewport, `offsetParent` returns the nearest ancestor that forms
->   a containing block, for example, an ancestor with `transform`, `perspective`, or `filter` styles set.
-> - The element is `<body>` or `<html>`.
+> - عنصر یا هر یک از اجدادش، ویژگی `display` را روی `none` تنظیم کرده باشد.
+> - عنصر ویژگی `position` را روی `fixed` داشته باشد و containing block آن، viewport باشد.
+>   اگر containing block، viewport نباشد، `offsetParent` نزدیک‌ترین جدی را برمی‌گرداند که یک containing block تشکیل می‌دهد؛ مثلاً جدی که استایل‌های `transform`، `perspective` یا `filter` روی آن تنظیم شده است.
+> - عنصر، `<body>` یا `<html>` باشد.
 
-`offsetParent` is useful because
-{{domxref("HTMLElement.offsetTop","offsetTop")}} and
-{{domxref("HTMLElement.offsetLeft","offsetLeft")}} are relative to its padding edge.
+`offsetParent` مفید است، زیرا {{domxref("HTMLElement.offsetTop","offsetTop")}} و {{domxref("HTMLElement.offsetLeft","offsetLeft")}} نسبت به لبهٔ padding عنصر `offsetParent` سنجیده می‌شوند.
 
-## Value
+## مقدار
 
-An object reference to the element in which the current element is offset.
+یک ارجاع شیء به عنصری که عنصر فعلی نسبت به آن آفست (offset) شده است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
