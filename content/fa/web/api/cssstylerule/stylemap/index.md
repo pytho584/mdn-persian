@@ -1,11 +1,5 @@
 ---
 title: "CSSStyleRule: styleMap property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleRule/styleMap"
-status: "needs-translation"
----
-
----
-title: "CSSStyleRule: styleMap property"
 short-title: styleMap
 slug: Web/API/CSSStyleRule/styleMap
 page-type: web-api-instance-property
@@ -14,18 +8,15 @@ browser-compat: api.CSSStyleRule.styleMap
 
 {{APIRef("CSSOM")}}
 
-The **`styleMap`** read-only property of the
-{{domxref("CSSStyleRule")}} interface returns a {{domxref('StylePropertyMap')}} object
-which provides access to the rule's property-value pairs.
+خاصیت فقطخواندنی **`styleMap`** در رابط {{domxref("CSSStyleRule")}} یک شیء {{domxref('StylePropertyMap')}} برمیگرداند که دسترسی به جفتهای ویژگی-مقدار قانون را فراهم میکند.
 
-## Value
+## مقدار
 
-A {{domxref('StylePropertyMap')}} object.
+یک شیء {{domxref('StylePropertyMap')}}.
 
-## Example
+## مثال
 
-The following example shows `styleMap` being used to modify a style using
-the {{domxref('StylePropertyMap.set()')}} method.
+مثال زیر نشان میدهد که چگونه از `styleMap` برای تغییر یک استایل با استفاده از متد {{domxref('StylePropertyMap.set()')}} استفاده میشود.
 
 ```js
 const stylesheet = document.styleSheets[0];
@@ -37,10 +28,10 @@ Object.values(stylesheet.cssRules).forEach((block) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
