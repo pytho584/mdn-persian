@@ -1,11 +1,5 @@
 ---
 title: "Element: blur event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event"
-status: "needs-translation"
----
-
----
-title: "Element: blur event"
 short-title: blur
 slug: Web/API/Element/blur_event
 page-type: web-api-event
@@ -14,21 +8,19 @@ browser-compat: api.Element.blur_event
 
 {{APIRef("UI Events")}}
 
-The **`blur`** event fires when an element has lost focus. The event does not bubble, but the related {{domxref("Element/focusout_event", "focusout")}} event that follows does bubble.
+رویداد **`blur`** زمانی فعال می‌شود که یک عنصر focus (تمرکز) خود را از دست بدهد. این رویداد به بیرون انتشار نمی‌یابد (bubble نمی‌کند)، اما رویداد مرتبط {{domxref("Element/focusout_event", "focusout")}} که پس از آن رخ می‌دهد، انتشار می‌یابد.
 
-An element will lose focus if another element is selected.
-An element will also lose focus if a style that does not allow focus is applied, such as `hidden`, or if the element is removed from the document — in both of these cases focus moves to the `body` element (viewport).
-Note that browser behavior differs when a focused element is removed from the document. In Chromium-based browsers, removing a focused element triggers a `blur` event, while in Firefox it does not.
+یک عنصر در صورتی focus خود را از دست می‌دهد که عنصر دیگری انتخاب شود. همچنین اگر سبکی که اجازه focus نمی‌دهد اعمال شود، مانند `hidden`، یا اگر عنصر از سند حذف شود، عنصر focus خود را از دست می‌دهد — در هر دو مورد focus به عنصر `body` (viewport) منتقل می‌شود. توجه داشته باشید که رفتار مرورگرها هنگام حذف یک عنصر متمرکز متفاوت است. در مرورگرهای مبتنی بر Chromium، حذف یک عنصر متمرکز باعث فعال شدن رویداد `blur` می‌شود، در حالی که در Firefox این اتفاق نمی‌افتد.
 
 <!-- Prior to FF110 elements did not lose focus if the style changed to hidden (say) -->
 
-The opposite of `blur` is the {{domxref("Element/focus_event", "focus")}} event, which fires when the element has _received_ focus.
+مخالف `blur` رویداد {{domxref("Element/focus_event", "focus")}} است که زمانی فعال می‌شود که عنصر focus را _دریافت_ کرده است.
 
-The `blur` event is not cancelable.
+رویداد `blur` قابل لغو (cancel) نیست.
 
 ## Syntax
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی مدیریت‌کننده رویداد (event handler property) تنظیم کنید.
 
 ```js-nolint
 addEventListener("blur", (event) => { })
@@ -38,7 +30,7 @@ onblur = (event) => { }
 
 ## Event type
 
-A {{domxref("FocusEvent")}}. Inherits from {{domxref("UIEvent")}} and {{domxref("Event")}}.
+یک {{domxref("FocusEvent")}}. از {{domxref("UIEvent")}} و {{domxref("Event")}} ارث‌بری می‌کند.
 
 {{InheritanceDiagram("FocusEvent")}}
 
@@ -81,7 +73,7 @@ password.addEventListener("blur", (event) => {
 
 ### Event delegation
 
-There are two ways of implementing event delegation for this event: by using the {{domxref("Element/focusout_event", "focusout")}} event, or by setting the `useCapture` parameter of {{domxref("EventTarget.addEventListener()", "addEventListener()")}} to `true`.
+دو روش برای پیاده‌سازی واگذاری رویداد (event delegation) برای این رویداد وجود دارد: با استفاده از رویداد {{domxref("Element/focusout_event", "focusout")}}، یا با تنظیم پارامتر `useCapture` در {{domxref("EventTarget.addEventListener()", "addEventListener()")}} روی `true`.
 
 #### HTML
 
@@ -132,11 +124,11 @@ form.addEventListener(
 
 {{Compat}}
 
-The value of {{DOMxRef("Document.activeElement")}} varies across browsers while this event is being handled ([Firefox bug 452307](https://bugzil.la/452307)): IE10 sets it to the element that the focus will move to, while Firefox and Chrome often set it to the `body` of the document.
+مقدار {{DOMxRef("Document.activeElement")}} در مرورگرهای مختلف در هنگام پردازش این رویداد متفاوت است ([اشکال Firefox 452307](https://bugzil.la/452307)): IE10 آن را به عنصری که focus به سمت آن حرکت می‌کند تنظیم می‌کند، در حالی که Firefox و Chrome اغلب آن را روی `body` سند تنظیم می‌کنند.
 
 ## See also
 
 - The {{domxref("HTMLElement.blur()")}} method
-- Related events: {{domxref("Element/focus_event", "focus")}}, {{domxref("Element/focusin_event", "focusin")}}, {{domxref("Element/focusout_event", "focusout")}}
-- This event on `Window` targets: {{domxref("Window/blur_event", "blur")}} event
+- رویدادهای مرتبط: {{domxref("Element/focus_event", "focus")}}, {{domxref("Element/focusin_event", "focusin")}}, {{domxref("Element/focusout_event", "focusout")}}
+- این رویداد روی اهداف `Window`: رویداد {{domxref("Window/blur_event", "blur")}}
 - [Focusing: focus/blur](https://javascript.info/focus-blur)
