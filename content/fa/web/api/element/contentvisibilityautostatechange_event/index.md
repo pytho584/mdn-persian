@@ -1,11 +1,5 @@
 ---
-title: "Element: contentvisibilityautostatechange event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/contentvisibilityautostatechange_event"
-status: "needs-translation"
----
-
----
-title: "Element: contentvisibilityautostatechange event"
+title: "Element: رویداد contentvisibilityautostatechange"
 short-title: contentvisibilityautostatechange
 slug: Web/API/Element/contentvisibilityautostatechange_event
 page-type: web-api-event
@@ -14,16 +8,15 @@ browser-compat: api.Element.contentvisibilityautostatechange_event
 
 {{APIRef("CSS Containment")}}
 
-The **`contentvisibilityautostatechange`** event fires on any element with {{cssxref("content-visibility", "content-visibility: auto")}} set on it when it starts or stops being [relevant to the user](/en-US/docs/Web/CSS/Guides/Containment/Using#relevant_to_the_user) and [skipping its contents](/en-US/docs/Web/CSS/Guides/Containment/Using#skips_its_contents).
+رویداد **`contentvisibilityautostatechange`** روی هر عنصری که دارای ویژگی {{cssxref("content-visibility", "content-visibility: auto")}} باشد، زمانی که آن عنصر شروع به مرتبط بودن با کاربر یا توقف آن کند (و محتوایش را نادیده بگیرد) رخ می‌دهد. (مفاهیم [مرتبط با کاربر](/en-US/docs/Web/CSS/Guides/Containment/Using#relevant_to_the_user) و [نادیده گرفتن محتوا](/en-US/docs/Web/CSS/Guides/Containment/Using#skips_its_contents))
 
-While the element is not relevant (between the start and end events), the user agent skips an element's rendering, including layout and painting, which can significantly improve page rendering speed.
-The `contentvisibilityautostatechange` event provides a way for an app's code to also start or stop rendering processes (e.g., drawing on a {{htmlelement("canvas")}}) when they are not needed, thereby conserving processing power.
+تا زمانی که عنصر مرتبط نباشد (بین رویدادهای شروع و پایان)، عامل کاربر (user agent) رندر عنصر شامل چیدمان و نقاشی را نادیده می‌گیرد که می‌تواند سرعت رندر صفحه را به طور قابل توجهی بهبود بخشد. رویداد `contentvisibilityautostatechange` راهی را فراهم می‌کند تا کد برنامه نیز بتواند فرآیندهای رندر را (مانند رسم روی یک {{htmlelement("canvas")}}) در صورت عدم نیاز شروع یا متوقف کند، در نتیجه توان پردازش را ذخیره کند.
 
-Note that even when hidden from view, element contents will remain semantically relevant (e.g., to assistive technology users), so this signal should not be used to skip significant semantic DOM updates.
+توجه داشته باشید که حتی وقتی از دید پنهان است، محتوای عنصر همچنان از نظر معنایی مرتبط باقی می‌ماند (مثلاً برای کاربران فناوری‌های کمکی)، بنابراین این سیگنال نباید برای نادیده گرفتن به‌روزرسانی‌های معنایی مهم DOM استفاده شود.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد (event handler property) تنظیم کنید.
 
 ```js-nolint
 addEventListener("contentvisibilityautostatechange", (event) => { })
@@ -31,11 +24,11 @@ addEventListener("contentvisibilityautostatechange", (event) => { })
 oncontentvisibilityautostatechange = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("ContentVisibilityAutoStateChangeEvent")}}.
+یک {{domxref("ContentVisibilityAutoStateChangeEvent")}}.
 
-## Examples
+## مثال‌ها
 
 ```js
 const canvasElem = document.querySelector("canvas");
@@ -51,28 +44,28 @@ function stateChanged(event) {
   }
 }
 
-// Call this when the canvas updates need to start.
+// زمانی که نیاز به شروع به‌روزرسانی‌های canvas است، این تابع را فراخوانی کنید.
 function startCanvasUpdates(canvas) {
   // …
 }
 
-// Call this when the canvas updates need to stop.
+// زمانی که نیاز به توقف به‌روزرسانی‌های canvas است، این تابع را فراخوانی کنید.
 function stopCanvasUpdates(canvas) {
   // …
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("ContentVisibilityAutoStateChangeEvent")}}
 - [CSS Containment](/en-US/docs/Web/CSS/Guides/Containment)
-- The {{cssxref("content-visibility")}} property
-- The {{cssxref("contain")}} property
+- ویژگی {{cssxref("content-visibility")}}
+- ویژگی {{cssxref("contain")}}
