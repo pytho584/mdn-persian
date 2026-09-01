@@ -1,10 +1,4 @@
 ---
-title: "FileSystemSync"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemSync"
-status: "needs-translation"
----
-
----
 title: FileSystemSync
 slug: Web/API/FileSystemSync
 page-type: web-api-interface
@@ -16,31 +10,31 @@ browser-compat: api.FileSystemSync
 
 {{APIRef("File and Directory Entries API")}}{{Non-standard_Header}}{{Deprecated_Header}}
 
-In the [File and Directory Entries API](/en-US/docs/Web/API/File_and_Directory_Entries_API), a `FileSystemSync` object represents a file system. It has two properties.
+در [File and Directory Entries API](/en-US/docs/Web/API/File_and_Directory_Entries_API)، شیء `FileSystemSync` یک سامانهٔ فایل را نشان می‌دهد و دو ویژگی دارد.
 
 > [!WARNING]
-> This interface is deprecated and is no more on the standard track.
-> _Do not use it anymore._ Use the [File System API](/en-US/docs/Web/API/File_System_API) instead.
+> این رابط منسوخ شده و دیگر در مسیر استاندارد نیست.
+> _دیگر از آن استفاده نکنید._ به‌جای آن از [File System API](/en-US/docs/Web/API/File_System_API) استفاده کنید.
 
-## Basic concepts
+## مفاهیم پایه
 
-The `FileSystemSync` object is your gateway to the entire API and you will use it a lot. So once you have a reference, cache the object in a global variable or class property.
+شیء `FileSystemSync` دروازهٔ ورود به کل این API است و زیاد از آن استفاده خواهید کرد. پس به محض دریافت ارجاع، آن را در یک متغیر سراسری یا ویژگی کلاس ذخیره کنید.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - `name` {{ReadOnlyInline}} {{Non-standard_Inline}} {{Deprecated_Inline}}
-  - : A string that represents the name of the file system. The name must be unique across the list of exposed file systems.
+  - : رشته‌ای که نام سامانهٔ فایل را نشان می‌دهد. این نام باید در فهرست سامانه‌های فایلِ در دسترس یکتا باشد.
 - `root` {{ReadOnlyInline}} {{Non-standard_Inline}} {{Deprecated_Inline}}
-  - : A `DirectoryEntry` that is the root directory of the file system.
+  - : یک `DirectoryEntry` که دایرکتوری ریشهٔ سامانهٔ فایل است.
 
-## Specifications
+## مشخصات
 
-This feature is not part of any specification anymore. It is no longer on track to become a standard.
+این قابلیت دیگر بخشی از هیچ مشخصاتی نیست و در مسیر تبدیل‌شدن به استاندارد نیز نیست.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - [File and Directory Entries API](/en-US/docs/Web/API/File_and_Directory_Entries_API)
