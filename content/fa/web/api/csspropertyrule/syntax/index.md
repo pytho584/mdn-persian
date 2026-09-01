@@ -1,11 +1,5 @@
 ---
 title: "CSSPropertyRule: syntax property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSPropertyRule/syntax"
-status: "needs-translation"
----
-
----
-title: "CSSPropertyRule: syntax property"
 short-title: syntax
 slug: Web/API/CSSPropertyRule/syntax
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.CSSPropertyRule.syntax
 
 {{APIRef("CSS Properties and Values API")}}
 
-The read-only **`syntax`** property of the {{domxref("CSSPropertyRule")}} interface returns the literal syntax of the custom property registration represented by the {{cssxref("@property")}} rule, controlling how the property's value is parsed at computed-value time.
+خاصیت فقط‌خواندنی **`syntax`** از رابط {{domxref("CSSPropertyRule")}}، نحوِ (syntax) تحت‌اللفظی ثبتِ ویژگی سفارشی را که توسط قانون {{cssxref("@property")}} نمایش داده می‌شود، برمی‌گرداند. این نحو نحوهٔ تجزیهٔ مقدار ویژگی را در زمان مقدار محاسبه‌شده کنترل می‌کند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته (string).
 
-## Examples
+## مثال‌ها
 
-This stylesheet contains a single {{cssxref("@property")}} rule. The first {{domxref("CSSRule")}} returned will be a `CSSPropertyRule` representing this rule. The `syntax` property returns the literal string `"<color>"`.
+این شیوه‌نامه (stylesheet) شامل یک قانون {{cssxref("@property")}} است. اولین {{domxref("CSSRule")}} بازگشت‌داده‌شده، یک `CSSPropertyRule` خواهد بود که این قانون را نمایش می‌دهد. خاصیت `syntax` رشتهٔ تحت‌اللفظی `"<color>"` را برمی‌گرداند.
 
 ```css
 @property --property-name {
@@ -37,10 +31,10 @@ const myRules = document.styleSheets[0].cssRules;
 console.log(myRules[0].syntax); // "<color>"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
