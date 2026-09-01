@@ -1,11 +1,5 @@
 ---
 title: "Element: ariaValueText property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaValueText"
-status: "needs-translation"
----
-
----
-title: "Element: ariaValueText property"
 short-title: ariaValueText
 slug: Web/API/Element/ariaValueText
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.Element.ariaValueText
 
 {{APIRef("DOM")}}
 
-The **`ariaValueText`** property of the {{domxref("Element")}} interface reflects the value of the [`aria-valuetext`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuetext) attribute, which defines the human-readable text alternative of aria-valuenow for a range widget.
+ویژگی **`ariaValueText`** از رابط {{domxref("Element")}} منعکس‌کنندهٔ مقدار ویژگی [`aria-valuetext`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuetext) است که متن جایگزین قابل‌خواندن برای انسان از `aria-valuenow` در یک ابزارک محدوده (range widget) را تعریف می‌کند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته (string).
 
-## Examples
+## مثال‌ها
 
-In this example the `aria-valuetext` attribute on the element with an ID of `slider` is set to "Sunday" to give a human-readable value for the range. Using `ariaValueText` we update the value to "Monday".
+در این مثال، ویژگی `aria-valuetext` روی عنصری با شناسه `slider` به «Sunday» تنظیم شده است تا یک مقدار قابل‌خواندن برای انسان برای محدوده ارائه دهد. با استفاده از `ariaValueText` مقدار را به «Monday» به‌روزرسانی می‌کنیم.
 
 ```html
 <div
@@ -41,10 +35,10 @@ el.ariaValueText = "Monday";
 console.log(el.ariaValueText); // Monday
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
