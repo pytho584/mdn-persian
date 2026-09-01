@@ -1,10 +1,4 @@
 ---
-title: "CSSViewTransitionRule"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSViewTransitionRule"
-status: "needs-translation"
----
-
----
 title: CSSViewTransitionRule
 slug: Web/API/CSSViewTransitionRule
 page-type: web-api-interface
@@ -13,28 +7,28 @@ browser-compat: api.CSSViewTransitionRule
 
 {{APIRef("CSSOM")}}
 
-The **`CSSViewTransitionRule`** interface represents a CSS {{cssxref("@view-transition")}} [at-rule](/en-US/docs/Web/CSS/Guides/Syntax/At-rules).
+**`CSSViewTransitionRule`** 接口表示一条 CSS {{cssxref("@view-transition")}} [at-rule](/en-US/docs/Web/CSS/Guides/Syntax/At-rules)。
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## 实例属性
 
-_Inherits properties from its ancestor, {{domxref("CSSRule")}}._
+_继承自其祖先 {{domxref("CSSRule")}} 的属性。_
 
 - {{domxref("CSSViewTransitionRule.navigation", "navigation")}} {{readonlyinline}}
-  - : Returns the `@view-transition` at-rule's `navigation` descriptor value.
+  - : 返回 `@view-transition` at-rule 的 `navigation` 描述符值。
 - {{domxref("CSSViewTransitionRule.types", "types")}} {{readonlyinline}}
-  - : Returns an array containing the `@view-transition` at-rule's `types` descriptor values.
+  - : 返回一个数组，包含 `@view-transition` at-rule 的 `types` 描述符值。
 
-## Instance methods
+## 实例方法
 
-_Inherits methods from its ancestor, {{domxref("CSSRule")}}._
+_继承自其祖先 {{domxref("CSSRule")}} 的方法。_
 
-## Examples
+## 示例
 
-### Basic usage
+### 基本用法
 
-A stylesheet includes a {{cssxref("@view-transition")}} [at-rule](/en-US/docs/Web/CSS/Guides/Syntax/At-rules), with `navigation` and `types` descriptors set:
+样式表中包含一条 {{cssxref("@view-transition")}} [at-rule](/en-US/docs/Web/CSS/Guides/Syntax/At-rules)，并设置了 `navigation` 和 `types` 描述符：
 
 ```css
 @view-transition {
@@ -43,7 +37,7 @@ A stylesheet includes a {{cssxref("@view-transition")}} [at-rule](/en-US/docs/We
 }
 ```
 
-In script, we grab a reference to the `@view-transition` at-rule using `document.styleSheets[0].cssRules`, then log the corresponding `CSSViewTransitionRule` object and its `navigation` and `types` properties to the console. The `types` property returns an array containing the values set for the `types` descriptor.
+在脚本中，我们通过 `document.styleSheets[0].cssRules` 获取对 `@view-transition` at-rule 的引用，然后将相应的 `CSSViewTransitionRule` 对象及其 `navigation` 和 `types` 属性记录到控制台。`types` 属性返回一个数组，包含为 `types` 描述符设置的值。
 
 ```js
 let myRule = document.styleSheets[0].cssRules;
@@ -52,15 +46,15 @@ console.log(myRule[0].navigation); // "auto"
 console.log(myRule[0].types); // ["slide", "rotate"]
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
 - {{cssxref("@view-transition")}}
 - [View Transition API](/en-US/docs/Web/API/View_Transition_API)
