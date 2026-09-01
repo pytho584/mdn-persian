@@ -1,11 +1,5 @@
 ---
 title: "Element: id property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/id"
-status: "needs-translation"
----
-
----
-title: "Element: id property"
 short-title: id
 slug: Web/API/Element/id
 page-type: web-api-instance-property
@@ -14,33 +8,27 @@ browser-compat: api.Element.id
 
 {{ ApiRef("DOM") }}
 
-The **`id`** property of the {{domxref("Element")}} interface
-represents the element's identifier, reflecting the
-[**`id`**](/en-US/docs/Web/HTML/Reference/Global_attributes/id)
-global attribute.
+خاصیت **`id`** در رابط {{domxref("Element")}} نشان‌دهنده شناسه عنصر است و بازتاب‌دهنده ویژگی سراسری [**`id`**](/en-US/docs/Web/HTML/Reference/Global_attributes/id) می‌باشد.
 
-If the `id` value is not the empty string, it must be unique in a document.
+اگر مقدار `id` رشته خالی نباشد، باید در یک سند منحصربه‌فرد باشد.
 
-The `id` is often used with {{domxref("Document.getElementById()", "getElementById()")}} to retrieve a particular element.
-Another common case is to use an element's [ID as a selector](/en-US/docs/Web/CSS/Reference/Selectors/ID_selectors) when styling the document with [CSS](/en-US/docs/Web/CSS).
+از `id` اغلب به همراه {{domxref("Document.getElementById()", "getElementById()")}} برای بازیابی یک عنصر خاص استفاده می‌شود. یک مورد رایج دیگر استفاده از [ID یک عنصر به عنوان انتخابگر](/en-US/docs/Web/CSS/Reference/Selectors/ID_selectors) هنگام استایل‌دهی سند با [CSS](/en-US/docs/Web/CSS) است.
 
 > [!NOTE]
-> Identifiers are case-sensitive, but you should avoid creating
-> IDs that differ only in the capitalization.
+> شناسه‌ها به حروف بزرگ و کوچک حساس هستند، اما باید از ایجاد IDهایی که فقط از نظر حروف بزرگ و کوچک تفاوت دارند خودداری کنید.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The DOM [**id**](/en-US/docs/Web/HTML/Reference/Global_attributes/id)
-  global attribute.
+- ویژگی سراسری [**id**](/en-US/docs/Web/HTML/Reference/Global_attributes/id) در DOM.
