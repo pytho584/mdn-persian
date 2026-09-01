@@ -1,11 +1,5 @@
 ---
 title: "Element: auxclick event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/auxclick_event"
-status: "needs-translation"
----
-
----
-title: "Element: auxclick event"
 short-title: auxclick
 slug: Web/API/Element/auxclick_event
 page-type: web-api-event
@@ -14,13 +8,13 @@ browser-compat: api.Element.auxclick_event
 
 {{APIRef("UI Events")}}
 
-The **`auxclick`** event is fired at an {{domxref("Element")}} when a non-primary pointing device button (any mouse button other than the primary—usually leftmost—button) has been pressed and released both within the same element.
+رویداد **`auxclick`** روی یک {{domxref("Element")}} زمانی شلیک می‌شود که یک دکمه غیراصلی از دستگاه اشاره‌گر (هر دکمه ماوس به جز دکمه اصلی - معمولاً چپ‌ترین دکمه) درون همان عنصر فشار داده و رها شود.
 
-`auxclick` is fired after the {{domxref("Element/mousedown_event", "mousedown")}} and {{domxref("Element/mouseup_event", "mouseup")}} events have been fired, in that order.
+رویداد `auxclick` پس از رویدادهای {{domxref("Element/mousedown_event", "mousedown")}} و {{domxref("Element/mouseup_event", "mouseup")}} به ترتیب شلیک می‌شود.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در متدهایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("auxclick", (event) => { })
@@ -28,26 +22,26 @@ addEventListener("auxclick", (event) => { })
 onauxclick = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("PointerEvent")}}. Inherits from {{domxref("MouseEvent")}}.
+یک {{domxref("PointerEvent")}} که از {{domxref("MouseEvent")}} ارث‌بری می‌کند.
 
 {{InheritanceDiagram("PointerEvent")}}
 
 > [!NOTE]
-> In earlier versions of the specification, the event type for this event was a {{domxref("MouseEvent")}}. Check [browser compatibility](#browser_compatibility) for more information.
+> در نسخه‌های قبلی مشخصات، نوع رویداد برای این رویداد یک {{domxref("MouseEvent")}} بود. برای اطلاعات بیشتر [سازگاری مرورگر](#browser_compatibility) را بررسی کنید.
 
-## Preventing default actions
+## جلوگیری از اقدامات پیش‌فرض
 
-For the vast majority of browsers that map middle click to opening a link in a new tab, including Firefox, it is possible to cancel this behavior by calling {{domxref("Event.preventDefault()", "preventDefault()")}} from within an `auxclick` event handler.
+برای اکثر مرورگرهایی که کلیک وسط را به باز کردن لینک در تب جدید نسبت می‌دهند، از جمله فایرفاکس، می‌توان با فراخوانی {{domxref("Event.preventDefault()", "preventDefault()")}} درون یک کنترل‌کننده رویداد `auxclick` این رفتار را لغو کرد.
 
-When listening for `auxclick` events originating on elements that do not support input or navigation, you will often want to explicitly prevent other default actions mapped to the down action of the middle mouse button. On Windows this is usually autoscroll, and on macOS and Linux this is usually clipboard paste. This can be done by preventing the default behavior of the {{domxref("Element/mousedown_event", "mousedown")}} or {{domxref("Element/pointerdown_event", "pointerdown")}} event.
+هنگام گوش دادن به رویدادهای `auxclick` روی عناصری که ورودی یا ناوبری را پشتیبانی نمی‌کنند، اغلب می‌خواهید به صراحت از سایر اقدامات پیش‌فرض که به عمل پایین دکمه وسط ماوس نگاشت شده‌اند جلوگیری کنید. در ویندوز این معمولاً اسکرول خودکار است و در macOS و لینوکس معمولاً چسباندن کلیپ‌بورد است. این کار را می‌توان با جلوگیری از رفتار پیش‌فرض رویداد {{domxref("Element/mousedown_event", "mousedown")}} یا {{domxref("Element/pointerdown_event", "pointerdown")}} انجام داد.
 
-Additionally, you may need to avoid opening a system context menu after a right click. Due to timing differences between operating systems, this too is not a preventable default behavior of `auxclick`. Instead, this can be done by preventing the default behavior of the {{domxref("Element/contextmenu_event", "contextmenu")}} event.
+علاوه بر این، ممکن است نیاز داشته باشید از باز شدن منوی زمینه سیستم پس از کلیک راست جلوگیری کنید. به دلیل تفاوت‌های زمانی بین سیستم‌عامل‌ها، این نیز یک رفتار پیش‌فرض قابل جلوگیری برای `auxclick` نیست. در عوض، این کار را می‌توان با جلوگیری از رفتار پیش‌فرض رویداد {{domxref("Element/contextmenu_event", "contextmenu")}} انجام داد.
 
-## Examples
+## مثال‌ها
 
-In this example we define functions for two event handlers — {{domxref("Element.click_event", "onclick")}} and `onauxclick`. The former changes the color of the button background, while the latter changes the button foreground (text) color. You also can see the two functions in action by trying the demo out with a multi-button mouse ([see it live on GitHub](https://mdn.github.io/dom-examples/auxclick/); also [see the source code](https://github.com/mdn/dom-examples/blob/main/auxclick/index.html)).
+در این مثال ما توابعی را برای دو کنترل‌کننده رویداد تعریف می‌کنیم - {{domxref("Element.click_event", "onclick")}} و `onauxclick`. اولی رنگ پس‌زمینه دکمه را تغییر می‌دهد، در حالی که دومی رنگ پیش‌زمینه (متن) دکمه را تغییر می‌دهد. همچنین می‌توانید این دو تابع را در عمل با امتحان کردن دمو با یک ماوس چند دکمه‌ای ببینید ([مشاهده زنده در GitHub](https://mdn.github.io/dom-examples/auxclick/)؛ همچنین [کد منبع](https://github.com/mdn/dom-examples/blob/main/auxclick/index.html) را ببینید).
 
 ### JavaScript
 
@@ -76,8 +70,6 @@ button.oncontextmenu = (e) => {
   e.preventDefault();
 };
 ```
-
-Notice that in addition to capturing the `auxclick` event using `onauxclick`, the {{domxref("Element.contextmenu_event", "contextmenu")}} event is also captured, and {{domxref("Event.preventDefault", "preventDefault()")}} called on that event, in order to prevent the context menu from popping up after the color change is applied.
 
 ### HTML
 
@@ -113,19 +105,19 @@ button {
 {{EmbedLiveSample("Examples", 640, 300)}}
 
 > [!NOTE]
-> If you are using a three-button mouse, you'll notice that the `onauxclick` handler is run when any of the non-left mouse buttons are clicked (usually including any "special" buttons on gaming mice).
+> اگر از ماوس سه دکمه‌ای استفاده می‌کنید، متوجه خواهید شد که کنترل‌کننده `onauxclick` زمانی اجرا می‌شود که هر یک از دکمه‌های غیرچپ ماوس کلیک شوند (معمولاً شامل هر دکمه "ویژه" روی ماوس‌های بازی نیز می‌شود).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Learn: Introduction to events](/en-US/docs/Learn_web_development/Core/Scripting/Events)
+- [یادگیری: مقدمه‌ای بر رویدادها](/en-US/docs/Learn_web_development/Core/Scripting/Events)
 - {{domxref("Element/click_event", "click")}}
 - {{domxref("Element/contextmenu_event", "contextmenu")}}
 - {{domxref("Element/dblclick_event", "dblclick")}}
