@@ -1,10 +1,4 @@
 ---
-title: "CSSRule"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSRule"
-status: "needs-translation"
----
-
----
 title: CSSRule
 slug: Web/API/CSSRule
 page-type: web-api-interface
@@ -13,7 +7,7 @@ browser-compat: api.CSSRule
 
 {{APIRef("CSSOM")}}
 
-The **`CSSRule`** interface represents a single CSS rule. There are several types of rules which inherit properties from `CSSRule`.
+رابط **`CSSRule`** یک قانون منفرد CSS را نمایش می‌دهد. چندین نوع قانون وجود دارند که ویژگی‌های خود را از `CSSRule` به ارث می‌برند.
 
 - {{DOMXRef("CSSGroupingRule")}}
 - {{DOMXRef("CSSStyleRule")}}
@@ -35,36 +29,36 @@ The **`CSSRule`** interface represents a single CSS rule. There are several type
 - {{DOMXRef("CSSNestedDeclarations")}}
 - {{DOMXRef("CSSViewTransitionRule")}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-The `CSSRule` interface specifies the properties common to all rules, while properties unique to specific rule types are specified in the more specialized interfaces for those rules' respective types.
+رابط `CSSRule` ویژگی‌های مشترک میان همهٔ قوانین را مشخص می‌کند، در حالی که ویژگی‌های منحصربه‌فرد برای انواع خاص قانون در رابط‌های تخصصی‌تر آن انواع قانون تعریف شده‌اند.
 
 - {{domxref("CSSRule.cssText")}}
-  - : Represents the textual representation of the rule, e.g., `"h1,h2 { font-size: 16pt }"` or `"@import 'url'"`. To access or modify parts of the rule (e.g., the value of "font-size" in the example) use the properties on the specialized interface for the rule's type (see above).
+  - : نمایش متنی قانون را نشان می‌دهد، برای مثال `"h1,h2 { font-size: 16pt }"` یا `"@import 'url'"`. برای دسترسی یا تغییر بخش‌هایی از قانون (مثلاً مقدار `font-size` در مثال بالا) از ویژگی‌های رابط تخصصی آن نوع قانون استفاده کنید (به بالا مراجعه کنید).
 - {{domxref("CSSRule.parentRule")}} {{ReadOnlyInline}}
-  - : Returns the containing rule, otherwise `null`. E.g. if this rule is a style rule inside an {{cssxref("@media")}} block, the parent rule would be that {{domxref("CSSMediaRule")}}.
+  - : قانون والد را برمی‌گرداند، در غیر این صورت `null`. برای مثال اگر این قانون یک قانون استایل درون یک بلوک {{cssxref("@media")}} باشد، قانون والد همان {{domxref("CSSMediaRule")}} خواهد بود.
 - {{domxref("CSSRule.parentStyleSheet")}} {{ReadOnlyInline}}
-  - : Returns the {{domxref("CSSStyleSheet")}} object for the style sheet that contains this rule
+  - : شیء {{domxref("CSSStyleSheet")}} مربوط به برگه‌ی استایلی که این قانون را شامل می‌شود برمی‌گرداند.
 - {{domxref("CSSRule.type")}} {{ReadOnlyInline}} {{deprecated_inline}}
-  - : Returns one of the Type constants to determine which type of rule is represented.
+  - : یکی از ثابت‌های نوع را برای تعیین نوع قانون بازمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-References to a `CSSRule` may be obtained by looking at a {{domxref("CSSStyleSheet")}}'s `cssRules` list.
+می‌توان با بررسی فهرست `cssRules` یک {{domxref("CSSStyleSheet")}} به ارجاع‌هایی از `CSSRule` دست یافت.
 
 ```js
-let myRules = document.styleSheets[0].cssRules; // Returns a CSSRuleList
+let myRules = document.styleSheets[0].cssRules; // یک CSSRuleList برمی‌گرداند
 console.log(myRules);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Using dynamic styling information](/en-US/docs/Web/API/CSS_Object_Model/Using_dynamic_styling_information)
+- [استفاده از اطلاعات استایل‌دهی پویا](/en-US/docs/Web/API/CSS_Object_Model/Using_dynamic_styling_information)
