@@ -1,11 +1,5 @@
 ---
 title: "Element: mouseup event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseup_event"
-status: "needs-translation"
----
-
----
-title: "Element: mouseup event"
 short-title: mouseup
 slug: Web/API/Element/mouseup_event
 page-type: web-api-event
@@ -14,15 +8,15 @@ browser-compat: api.Element.mouseup_event
 
 {{APIRef("UI Events")}}
 
-The **`mouseup`** event is fired at an {{domxref("Element")}} when a button on a pointing device (such as a mouse or trackpad) is released while the pointer is located inside it.
+رویداد **`mouseup`** روی یک {{domxref("Element")}} زمانی رخ می‌دهد که دکمه‌ای روی یک دستگاه اشاره‌گر (مانند ماوس یا ترک‌پد) در حالی که نشانگر داخل آن عنصر قرار دارد، رها شود.
 
-`mouseup` events are the counterpoint to {{domxref("Element.mousedown_event", "mousedown")}} events.
+رویدادهای `mouseup` در مقابل رویدادهای {{domxref("Element.mousedown_event", "mousedown")}} قرار می‌گیرند.
 
-This behavior is different from {{domxref("Element/pointerup_event", "pointerup")}} events. When using a physical mouse, `mouseup` events fire whenever any button on a mouse is released. `pointerup` events fire only upon the last button release; previous button releases, while other buttons are held down, don't fire `pointerup` events.
+این رفتار با رویدادهای {{domxref("Element/pointerup_event", "pointerup")}} تفاوت دارد. هنگام استفاده از ماوس فیزیکی، رویدادهای `mouseup` هر زمان که هر دکمه‌ای روی ماوس رها شود، رخ می‌دهند. رویدادهای `pointerup` فقط با رها شدن آخرین دکمه فعال می‌شوند؛ رها شدن دکمه‌های قبلی، در حالی که دکمه‌های دیگر هنوز نگه داشته شده‌اند، رویداد `pointerup` را فعال نمی‌کنند.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده‌ی رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("mouseup", (event) => { })
@@ -30,27 +24,27 @@ addEventListener("mouseup", (event) => { })
 onmouseup = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("MouseEvent")}}. Inherits from {{domxref("UIEvent")}} and {{domxref("Event")}}.
+یک {{domxref("MouseEvent")}}. از {{domxref("UIEvent")}} و {{domxref("Event")}} به ارث می‌برد.
 
 {{InheritanceDiagram("MouseEvent")}}
 
-## Examples
+## مثال‌ها
 
-See [`mousemove` event](/en-US/docs/Web/API/Element/mousemove_event#examples) for example code.
+برای کد نمونه، به رویداد [`mousemove`](/en-US/docs/Web/API/Element/mousemove_event#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Learn: Introduction to events](/en-US/docs/Learn_web_development/Core/Scripting/Events)
+- [یادگیری: مقدمه‌ای بر رویدادها](/en-US/docs/Learn_web_development/Core/Scripting/Events)
 - {{domxref("Element/mousedown_event", "mousedown")}}
 - {{domxref("Element/mousemove_event", "mousemove")}}
 - {{domxref("Element/click_event", "click")}}
