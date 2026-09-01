@@ -1,11 +1,5 @@
 ---
 title: "HTMLTableElement: cellSpacing property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/cellSpacing"
-status: "needs-translation"
----
-
----
-title: "HTMLTableElement: cellSpacing property"
 short-title: cellSpacing
 slug: Web/API/HTMLTableElement/cellSpacing
 page-type: web-api-instance-property
@@ -16,32 +10,27 @@ browser-compat: api.HTMLTableElement.cellSpacing
 
 {{APIRef("HTML DOM")}}{{deprecated_header}}
 
-While you should instead use the CSS
-{{cssxref("border-spacing")}} property, the obsolete {{domxref("HTMLTableElement")}}
-interface's **`cellSpacing`** property represents the spacing
-around the individual {{HTMLElement("th")}} and {{HTMLElement("td")}} elements
-representing a table's cells. Any two cells are separated by the sum of the
-`cellSpacing` of each of the two cells.
+اگرچه باید به جای آن از ویژگی CSS {{cssxref("border-spacing")}} استفاده کنید، ویژگی **`cellSpacing`** در رابط منسوخ {{domxref("HTMLTableElement")}} فاصلهٔ اطراف عناصر {{HTMLElement("th")}} و {{HTMLElement("td")}} را که نشان‌دهندهٔ سلول‌های یک جدول هستند، مشخص می‌کند. هر دو سلول با مجموع `cellSpacing` هر یک از آن دو سلول از یکدیگر جدا می‌شوند.
 
-## Value
+## مقدار
 
-A string which is either a number of pixels (such as `"10"`) or a percentage value (like `"10%"`).
+یک رشته (string) که یا یک عدد بر حسب پیکسل (مانند `"10"`) است یا یک مقدار درصدی (مانند `"10%"`).
 
-When set to the `null` value, that `null` value is converted to the empty string (`""`), so `elt.cellSpacing = null` is equivalent to `elt.cellSpacing = ""`.
+هنگامی که روی مقدار `null` تنظیم شود، آن مقدار `null` به رشتهٔ خالی (`""`) تبدیل می‌شود، بنابراین `elt.cellSpacing = null` معادل `elt.cellSpacing = ""` است.
 
-## Examples
+## مثال‌ها
 
-This example sets cell spacing for a given table to 10 pixels.
+این مثال فاصله سلول‌ها را برای یک جدول مشخص به ۱۰ پیکسل تنظیم می‌کند.
 
 ```js
 const t = document.getElementById("TableA");
 t.cellSpacing = "10";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
