@@ -1,7 +1,6 @@
 ---
 title: "CSSMediaRule: media property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSMediaRule/media"
-status: "needs-translation"
 ---
 
 ---
@@ -14,20 +13,17 @@ browser-compat: api.CSSMediaRule.media
 
 {{ APIRef("CSSOM") }}
 
-The read-only **`media`** property of the {{domxref("CSSMediaRule")}} interface contains a {{domxref("MediaList")}} object representing the media query list of the {{cssxref("@media")}} rule.
+ویژگی فقط‌خواندنی **`media`** از رابط {{domxref("CSSMediaRule")}} شامل یک شیء {{domxref("MediaList")}} است که فهرست رسانه‌ای (media query list) قانون {{cssxref("@media")}} را نمایش می‌دهد.
 
-## Value
+## مقدار
 
-A {{domxref("MediaList")}} object.
+یک شیء {{domxref("MediaList")}}.
 
-Although the `media` property itself is read-only in the sense that you can't replace the `MediaList` object, you can still assign to the `media` property directly, which is equivalent to assigning to its {{domxref("MediaList/mediaText", "mediaText")}} property. You can also modify the `MediaList` object using the {{domxref("MediaList/appendMedium", "appendMedium()")}} and {{domxref("MediaList/deleteMedium", "deleteMedium()")}} methods.
+اگرچه خود ویژگی `media` به این معنا فقط‌خواندنی است که نمی‌توانید شیء `MediaList` را جایگزین کنید، اما همچنان می‌توانید مستقیماً به ویژگی `media` مقدار اختصاص دهید که معادل اختصاص مقدار به ویژگی {{domxref("MediaList/mediaText", "mediaText")}} آن است. همچنین می‌توانید شیء `MediaList` را با استفاده از روش‌های {{domxref("MediaList/appendMedium", "appendMedium()")}} و {{domxref("MediaList/deleteMedium", "deleteMedium()")}} تغییر دهید.
 
-## Examples
+## مثال‌ها
 
-The CSS includes a media query with one style rule. This will be the first
-{{domxref("CSSRule")}} returned by `document.styleSheets[0].cssRules`.
-Calling `myRules[0].media` therefore returns a {{domxref("MediaList")}}
-object representing the media query.
+CSS شامل یک media query با یک قانون سبک است. این اولین {{domxref("CSSRule")}} خواهد بود که توسط `document.styleSheets[0].cssRules` بازگردانده می‌شود. بنابراین فراخوانی `myRules[0].media` یک شیء {{domxref("MediaList")}} برمی‌گرداند که media query را نمایش می‌دهد.
 
 ```css
 @media (width >= 500px) {
@@ -39,13 +35,13 @@ object representing the media query.
 
 ```js
 let myRules = document.styleSheets[0].cssRules;
-console.log(myRules[0].media); // a MediaList
+console.log(myRules[0].media); // یک MediaList
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
