@@ -1,11 +1,5 @@
 ---
 title: "CSSRotate: x property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSRotate/x"
-status: "needs-translation"
----
-
----
-title: "CSSRotate: x property"
 short-title: x
 slug: Web/API/CSSRotate/x
 page-type: web-api-instance-property
@@ -14,20 +8,20 @@ browser-compat: api.CSSRotate.x
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`x`** property of the {{domxref("CSSRotate")}} interface gets and sets the abscissa or x-axis of the translating vector.
+خصوصیت **`x`** از رابط {{domxref("CSSRotate")}}، مؤلفهٔ افقی (محور x) بردار ترجمه را دریافت و تنظیم میکند.
 
-## Value
+## مقدار
 
-A {{domxref("CSSNumericValue")}}. Can be set to a number, which is wrapped in a {{domxref("CSSUnitValue")}} of `unit: "number"`.
+یک {{domxref("CSSNumericValue")}}. میتواند به یک عدد تنظیم شود که در یک {{domxref("CSSUnitValue")}} با `unit: "number"` قرار میگیرد.
 
-## Examples
+## مثالها
 
-To Do
+برای انجام
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
