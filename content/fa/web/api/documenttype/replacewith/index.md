@@ -1,11 +1,5 @@
 ---
 title: "DocumentType: replaceWith() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DocumentType/replaceWith"
-status: "needs-translation"
----
-
----
-title: "DocumentType: replaceWith() method"
 short-title: replaceWith()
 slug: Web/API/DocumentType/replaceWith
 page-type: web-api-instance-method
@@ -14,9 +8,9 @@ browser-compat: api.DocumentType.replaceWith
 
 {{APIRef("DOM")}}
 
-The **`DocumentType.replaceWith()`** method replaces the document type with a set of given nodes.
+متد **`DocumentType.replaceWith()`** نوع سند را با مجموعه‌ای از گره‌های داده‌شده جایگزین می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 replaceWith(node1)
@@ -24,23 +18,23 @@ replaceWith(node1, node2)
 replaceWith(node1, node2, /* …, */ nodeN)
 ```
 
-### Parameters
+### پارامترها
 
-- `node1`, …, `nodeN`
-  - : A set of nodes to replace the {{domxref("DocumentType")}} with.
+- `node1`، …، `nodeN`
+  - : مجموعه‌ای از گره‌ها که قرار است {{domxref("DocumentType")}} با آن‌ها جایگزین شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `HierarchyRequestError` {{DOMxRef("DOMException")}}
-  - : Thrown when the node cannot be inserted at the specified point in the hierarchy.
+  - : زمانی پرتاب می‌شود که گره نتواند در نقطه مشخص‌شده در سلسله‌مراتب درج شود.
 
-## Examples
+## مثال‌ها
 
-### Using `replaceWith()`
+### استفاده از `replaceWith()`
 
 ```js
 let svgDt = document.implementation.createDocumentType(
@@ -52,15 +46,15 @@ let svgDt = document.implementation.createDocumentType(
 document.doctype.replaceWith(svgDt);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("CharacterData.replaceWith()")}}
 - {{domxref("Element.replaceWith()")}}
