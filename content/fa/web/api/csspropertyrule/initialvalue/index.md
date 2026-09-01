@@ -1,11 +1,5 @@
 ---
 title: "CSSPropertyRule: initialValue property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSPropertyRule/initialValue"
-status: "needs-translation"
----
-
----
-title: "CSSPropertyRule: initialValue property"
 short-title: initialValue
 slug: Web/API/CSSPropertyRule/initialValue
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.CSSPropertyRule.initialValue
 
 {{APIRef("CSS Properties and Values API")}}
 
-The read-only **`initialValue`** nullable property of the {{domxref("CSSPropertyRule")}} interface returns the initial value of the custom property registration represented by the {{cssxref("@property")}} rule, controlling the property's initial value.
+خاصیت فقط‌خواندنی **`initialValue`** از رابط {{domxref("CSSPropertyRule")}} مقدار اولیهٔ ثبتِ ویژگی سفارشی نمایش‌داده‌شده توسط قانون {{cssxref("@property")}} را برمی‌گرداند و مقدار اولیهٔ آن ویژگی را کنترل می‌کند.
 
-## Value
+## مقدار
 
-A string which is a [`<declaration-value>`](https://drafts.csswg.org/css-syntax/#typedef-declaration-value).
+یک رشته که یک [`<declaration-value>`](https://drafts.csswg.org/css-syntax/#typedef-declaration-value) است.
 
-## Examples
+## مثال‌ها
 
-This stylesheet contains a single {{cssxref("@property")}} rule. The first {{domxref("CSSRule")}} returned will be a `CSSPropertyRule` representing this rule. The `initialValue` property returns the string `"#c0ffee"` this being the value of the `initial-value` property in the CSS.
+این استایل‌شیت شامل یک قانون {{cssxref("@property")}} است. اولین {{domxref("CSSRule")}} برگشتی یک `CSSPropertyRule` خواهد بود که این قانون را نمایش می‌دهد. خاصیت `initialValue` رشتهٔ `"#c0ffee"` را برمی‌گرداند که همان مقدار خصوصیت `initial-value` در CSS است.
 
 ```css
 @property --property-name {
@@ -37,10 +31,11 @@ const myRules = document.styleSheets[0].cssRules;
 console.log(myRules[0].initialValue); // "#c0ffee"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
+```
