@@ -1,11 +1,5 @@
 ---
 title: "CSSUnparsedValue: length property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSUnparsedValue/length"
-status: "needs-translation"
----
-
----
-title: "CSSUnparsedValue: length property"
 short-title: length
 slug: Web/API/CSSUnparsedValue/length
 page-type: web-api-instance-property
@@ -14,17 +8,17 @@ browser-compat: api.CSSUnparsedValue.length
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`length`** read-only property of the {{domxref("CSSUnparsedValue")}} interface returns the number of items in the object.
+ویژگی فقط‌خواندنی **`length`** در رابط {{domxref("CSSUnparsedValue")}} تعداد آیتم‌های موجود در شیء را برمی‌گرداند.
 
-## Value
+## مقدار
 
-An integer.
+یک عدد صحیح.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
-In this example, we use the {{domxref("CSSUnparsedValue.CSSUnparsedValue", "CSSUnparsedValue()")}} constructor, then query the length:
+در این مثال، از سازنده {{domxref("CSSUnparsedValue.CSSUnparsedValue", "CSSUnparsedValue()")}} استفاده می‌کنیم و سپس طول را پرس‌وجو می‌کنیم:
 
 ```js
 const values = new CSSUnparsedValue(["1em", "#445566", "-45px"]);
@@ -32,20 +26,20 @@ const values = new CSSUnparsedValue(["1em", "#445566", "-45px"]);
 console.log(values.length); // 3
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("CSSUnparsedValue.CSSUnparsedValue", "CSSUnparsedValue()")}}
 - {{domxref("CSSUnparsedValue.entries")}}
 - {{domxref("CSSUnparsedValue.forEach")}}
 - {{domxref("CSSUnparsedValue.keys")}}
 - {{domxref("CSSUnparsedValue.values")}}
-- [Using the CSS Typed OM](/en-US/docs/Web/API/CSS_Typed_OM_API/Guide)
+- [استفاده از CSS Typed OM](/en-US/docs/Web/API/CSS_Typed_OM_API/Guide)
 - [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API)
