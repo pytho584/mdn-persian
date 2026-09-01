@@ -1,11 +1,5 @@
 ---
 title: "HTMLIFrameElement: contentDocument property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/contentDocument"
-status: "needs-translation"
----
-
----
-title: "HTMLIFrameElement: contentDocument property"
 short-title: contentDocument
 slug: Web/API/HTMLIFrameElement/contentDocument
 page-type: web-api-instance-property
@@ -14,7 +8,7 @@ browser-compat: api.HTMLIFrameElement.contentDocument
 
 {{APIRef("HTML DOM")}}
 
-If the iframe and the iframe's parent document are [Same Origin](/en-US/docs/Web/Security/Defenses/Same-origin_policy), returns a [`Document`](/en-US/docs/Web/API/Document) (that is, the active document in the inline frame's nested browsing context), else returns `null`.
+اگر iframe و سندِ والدِ آن دارای [Same Origin](/en-US/docs/Web/Security/Defenses/Same-origin_policy) باشند، یک [`Document`](/en-US/docs/Web/API/Document) برمی‌گرداند (یعنی سندِ فعال در زمینهٔ مرورِ تودرتوی فریمِ درون‌خطی)؛ در غیر این صورت `null` برگردانده می‌شود.
 
 ## Example of contentDocument
 
