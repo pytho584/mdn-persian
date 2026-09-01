@@ -1,10 +1,4 @@
 ---
-title: "FileSystem"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystem"
-status: "needs-translation"
----
-
----
 title: FileSystem
 slug: Web/API/FileSystem
 page-type: web-api-interface
@@ -13,33 +7,33 @@ browser-compat: api.FileSystem
 
 {{APIRef("File and Directory Entries API")}}
 
-The File and Directory Entries API interface **`FileSystem`** is used to represent a file system. These objects can be obtained from the {{domxref("FileSystemEntry.filesystem", "filesystem")}} property on any file system entry. Some browsers offer additional APIs to create and manage file systems, such as Chrome's {{domxref("Window.requestFileSystem", "requestFileSystem()")}} method.
+اینترفیس **`FileSystem`** در File and Directory Entries API برای نمایش یک سیستم فایل استفاده می‌شود. این اشیا را می‌توان از طریق خاصیت {{domxref("FileSystemEntry.filesystem", "filesystem")}} روی هر ورودی سیستم فایل به دست آورد. برخی مرورگرها APIهای اضافی برای ایجاد و مدیریت سیستم‌های فایل ارائه می‌دهند، مانند متد {{domxref("Window.requestFileSystem", "requestFileSystem()")}} در کروم.
 
-This interface will not grant you access to the users' filesystem. Instead, you will have a "virtual drive" within the browser sandbox if you want to gain access to the users' file system, you need to invoke the user, for example by installing a Chrome extension. The relevant Chrome API can be found [in the Chrome developer docs](https://developer.chrome.com/docs/apps/reference/fileSystem).
+این اینترفیس به شما دسترسی به سیستم فایل کاربران نخواهد داد. در عوض، شما یک «درایو مجازی» در محیط شنی (sandbox) مرورگر خواهید داشت. اگر می‌خواهید به سیستم فایل کاربر دسترسی پیدا کنید، باید از کاربر اجازه بگیرید؛ مثلاً با نصب یک افزونه کروم. API مربوط به کروم را می‌توانید [در مستندات توسعه‌دهندگان کروم](https://developer.chrome.com/docs/apps/reference/fileSystem) بیابید.
 
-## Basic concepts
+## مفاهیم پایه
 
-There are two ways to get access to a `FileSystem` object:
+دو راه برای دسترسی به یک شیء `FileSystem` وجود دارد:
 
-1. You can directly ask for one representing a sandboxed file system created just for your web app directly by calling `window.requestFileSystem()`. If that call is successful, it executes a callback handler, which receives as a parameter a `FileSystem` object describing the file system.
-2. You can get it from a file system entry object, through its {{domxref("FileSystemEntry.filesystem", "filesystem")}} property.
+1. می‌توانید مستقیماً با فراخوانی `window.requestFileSystem()`، یک سیستم فایل در محیط شنی (sandboxed) را که مخصوصاً برای برنامه وب شما ایجاد شده است درخواست کنید. اگر این فراخوانی موفق باشد، یک تابع callback اجرا می‌شود که به‌عنوان پارامتر، یک شیء `FileSystem` توصیف‌کننده سیستم فایل دریافت می‌کند.
+2. می‌توانید آن را از یک شیء ورودی سیستم فایل، از طریق خاصیت {{domxref("FileSystemEntry.filesystem", "filesystem")}} آن دریافت کنید.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("FileSystem.name")}} {{ReadOnlyInline}}
-  - : A string representing the file system's name. This name is unique among the entire list of exposed file systems.
+  - : یک رشته (string) که نام سیستم فایل را نشان می‌دهد. این نام در میان تمام فهرست سیستم‌های فایل در دسترس یکتا است.
 - {{domxref("FileSystem.root")}} {{ReadOnlyInline}}
-  - : A {{domxref("FileSystemDirectoryEntry")}} object which represents the file system's root directory. Through this object, you can gain access to all files and directories in the file system.
+  - : یک شیء {{domxref("FileSystemDirectoryEntry")}} که پوشه ریشه سیستم فایل را نشان می‌دهد. از طریق این شیء می‌توانید به همه فایل‌ها و پوشه‌های موجود در سیستم فایل دسترسی پیدا کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [File and Directory Entries API](/en-US/docs/Web/API/File_and_Directory_Entries_API)
-- {{domxref("FileSystemEntry")}}, {{domxref("FileSystemFileEntry")}}, and {{domxref("FileSystemDirectoryEntry")}}
+- {{domxref("FileSystemEntry")}}، {{domxref("FileSystemFileEntry")}} و {{domxref("FileSystemDirectoryEntry")}}
