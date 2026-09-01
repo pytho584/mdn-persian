@@ -1,11 +1,5 @@
 ---
 title: "DocumentFragment: querySelectorAll() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment/querySelectorAll"
-status: "needs-translation"
----
-
----
-title: "DocumentFragment: querySelectorAll() method"
 short-title: querySelectorAll()
 slug: Web/API/DocumentFragment/querySelectorAll
 page-type: web-api-instance-method
@@ -14,13 +8,9 @@ browser-compat: api.DocumentFragment.querySelectorAll
 
 {{ApiRef("DOM")}}
 
-The **`DocumentFragment.querySelectorAll()`** method returns a
-{{domxref("NodeList")}} of elements within the {{domxref("DocumentFragment")}} (using
-depth-first pre-order traversal of the document's nodes) that matches the specified
-group of selectors.
+متد **`DocumentFragment.querySelectorAll()`** یک {{domxref("NodeList")}} از عناصر داخل {{domxref("DocumentFragment")}} را برمی‌گرداند (با استفاده از پیمایش پیش‌ترتیب عمق-اول گره‌های سند) که با گروه مشخص‌شده از انتخاب‌گرها مطابقت دارند.
 
-If the selectors specified in parameter are invalid a {{domxref("DOMException")}} with
-a `SYNTAX_ERR` value is raised.
+اگر انتخاب‌گرهای مشخص‌شده در پارامتر نامعتبر باشند، یک {{domxref("DOMException")}} با مقدار `SYNTAX_ERR` صادر می‌شود.
 
 ## Syntax
 
@@ -31,20 +21,15 @@ querySelectorAll(selectors)
 ### Parameters
 
 - `selectors`
-  - : A string containing one or more CSS selectors separated by
-    commas.
+  - : یک رشته شامل یک یا چند انتخاب‌گر CSS که با کاما از هم جدا شده‌اند.
 
 ### Return value
 
-A non-live {{domxref("NodeList")}} containing one {{domxref("Element")}} object for
-each element that matches at least one of the specified selectors or an empty
-{{domxref("NodeList")}} in case of no matches.
+یک {{domxref("NodeList")}} غیرزنده که شامل یک {{domxref("Element")}} برای هر عنصری است که حداقل با یکی از انتخاب‌گرهای مشخص‌شده مطابقت دارد، یا یک {{domxref("NodeList")}} خالی در صورت عدم تطابق.
 
 ## Examples
 
-This example returns a list of all `div` elements within the
-`DocumentFragment` with a class of either `note` or
-`alert`:
+این مثال لیستی از همه عناصر `div` داخل `DocumentFragment` را برمی‌گرداند که دارای کلاس `note` یا `alert` هستند:
 
 ```js
 const matches = documentFrag.querySelectorAll("div.note, div.alert");
@@ -60,4 +45,4 @@ const matches = documentFrag.querySelectorAll("div.note, div.alert");
 
 ## See also
 
-- The {{domxref("DocumentFragment")}} interface it belongs to.
+- {{domxref("DocumentFragment")}} — رابطی که این متد به آن تعلق دارد.
