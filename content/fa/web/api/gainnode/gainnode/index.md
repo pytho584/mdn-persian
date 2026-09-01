@@ -1,11 +1,5 @@
 ---
 title: "GainNode: GainNode() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GainNode/GainNode"
-status: "needs-translation"
----
-
----
-title: "GainNode: GainNode() constructor"
 short-title: GainNode()
 slug: Web/API/GainNode/GainNode
 page-type: web-api-constructor
@@ -14,48 +8,37 @@ browser-compat: api.GainNode.GainNode
 
 {{APIRef("Web Audio API")}}
 
-The **`GainNode()`** constructor of the [Web Audio API](/en-US/docs/Web/API/Web_Audio_API) creates a new
-{{domxref("GainNode")}} object which is an {{domxref("AudioNode")}} that represents a
-change in volume.
+**`GainNode()`** سازنده‌ی [Web Audio API](/en-US/docs/Web/API/Web_Audio_API) یک شیء {{domxref("GainNode")}} جدید می‌سازد که یک {{domxref("AudioNode")}} است و تغییر در بلندی صدا را نشان می‌دهد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 new GainNode(context, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `context`
-  - : A reference to a {{domxref("BaseAudioContext")}}, e.g., an {{domxref("AudioContext")}}.
+  - : ارجاعی به یک {{domxref("BaseAudioContext")}}، مانند یک {{domxref("AudioContext")}}.
 - `options` {{optional_inline}}
-  - : Options are as follows:
+  - : گزینه‌ها به شرح زیر هستند:
     - `gain`
-      - : The amount of gain to apply. This parameter is a- `rate`
-        and it's nominal range is (-∞,+∞). The default is `1`.
+      - : میزان بهره‌ای که اعمال می‌شود. این پارامتر یک `rate` است و محدوده‌ی اسمی آن (-∞,+∞) می‌باشد. مقدار پیش‌فرض `1` است.
     - `channelCount`
-      - : Represents an integer used to determine how many channels are used when [up-mixing and down-mixing](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) connections to any inputs to the node. (See
-        {{domxref("AudioNode.channelCount")}} for more information.) Its usage and precise
-        definition depend on the value of `channelCountMode`.
+      - : عددی صحیح است که تعیین می‌کند هنگام [افزایش و کاهش تعداد کانال‌ها](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) در اتصالات به ورودی‌های گره، چند کانال استفاده شود. (برای اطلاعات بیشتر به {{domxref("AudioNode.channelCount")}} مراجعه کنید.) نحوه استفاده و تعریف دقیق آن به مقدار `channelCountMode` بستگی دارد.
     - `channelCountMode`
-      - : Represents an enumerated value describing the way channels must be matched between
-        the node's inputs and outputs. (See {{domxref("AudioNode.channelCountMode")}} for more
-        information including default values.)
+      - : یک مقدار شمارشی است که نحوه تطبیق کانال‌ها بین ورودی‌ها و خروجی‌های گره را توصیف می‌کند. (برای اطلاعات بیشتر از جمله مقادیر پیش‌فرض به {{domxref("AudioNode.channelCountMode")}} مراجعه کنید.)
     - `channelInterpretation`
-      - : Represents an enumerated value describing the meaning of the channels. This
-        interpretation will define how audio [up-mixing and down-mixing](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) will happen.
-        The possible values are `"speakers"` or `"discrete"`. (See
-        {{domxref("AudioNode.channelInterpretation")}} for more information including default
-        values.)
+      - : یک مقدار شمارشی است که معنای کانال‌ها را توصیف می‌کند. این تفسیر تعیین می‌کند که [افزایش و کاهش تعداد کانال‌ها](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) چگونه انجام شود. مقادیر ممکن `"speakers"` یا `"discrete"` هستند. (برای اطلاعات بیشتر از جمله مقادیر پیش‌فرض به {{domxref("AudioNode.channelInterpretation")}} مراجعه کنید.)
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("GainNode")}} object instance.
+یک نمونه‌ی جدید از شیء {{domxref("GainNode")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
