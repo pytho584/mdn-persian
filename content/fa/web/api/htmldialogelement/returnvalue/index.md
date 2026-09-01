@@ -1,7 +1,5 @@
 ---
 title: "HTMLDialogElement: returnValue property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/returnValue"
-status: "needs-translation"
 ---
 
 ---
@@ -14,25 +12,23 @@ browser-compat: api.HTMLDialogElement.returnValue
 
 {{ APIRef("HTML DOM") }}
 
-The **`returnValue`** property of the {{domxref("HTMLDialogElement")}} interface is a string representing the return value for a {{htmlelement("dialog")}} element when it's closed.
-You can set the value directly (`dialog.returnValue = "result"`) or by providing the value as a string argument to {{domxref("HTMLDialogElement.close()", "close()")}} or {{domxref("HTMLDialogElement.requestClose()", "requestClose()")}}.
+ویژگی **`returnValue`** از رابط {{domxref("HTMLDialogElement")}} رشته‌ای است که مقدار بازگشتی برای یک عنصر {{htmlelement("dialog")}} را هنگام بسته‌شدن نشان می‌دهد. می‌توانید این مقدار را مستقیماً تنظیم کنید (`dialog.returnValue = "result"`) یا مقدار را به‌صورت آرگومان رشته‌ای به {{domxref("HTMLDialogElement.close()", "close()")}} یا {{domxref("HTMLDialogElement.requestClose()", "requestClose()")}} بدهید.
 
-## Value
+## مقدار
 
-A string representing the `returnValue` of the dialog.
-Defaults to an empty string (`""`).
+رشته‌ای که `returnValue` گفتگو را نشان می‌دهد. پیش‌فرض آن رشتهٔ خالی (`""`) است.
 
-## Examples
+## مثال‌ها
 
-### Checking the return value
+### بررسی مقدار بازگشتی
 
-The following example displays a button to open a dialog. The dialog asks the user if they want to accept a Terms of Service prompt.
+مثال زیر دکمه‌ای برای باز کردن یک گفتگو نشان می‌دهد. گفتگو از کاربر می‌پرسد که آیا با شرایط خدمات موافق است.
 
-The dialog contains "Accept" or "Decline" buttons: when the user clicks one of the buttons, the button's click handler closes the dialog, passing their choice into the {{domxref("HTMLDialogElement.close()", "close()")}} function. This assigns the choice to the dialog's `returnValue` property.
+گفتگو حاوی دکمه‌هایی به نام‌های «Accept» و «Decline» است: وقتی کاربر روی یکی از این دکمه‌ها کلیک می‌کند، کنترل‌کنندهٔ کلیکِ آن دکمه گفتگو را می‌بندد و انتخاب کاربر را به تابع {{domxref("HTMLDialogElement.close()", "close()")}} می‌فرستد. این کار انتخاب را به ویژگی `returnValue` گفتگو اختصاص می‌دهد.
 
-In the dialog's {{domxref("HTMLDialogElement.close_event", "close")}} event handler, the example updates the main page's status text to record the `returnValue`.
+در کنترل‌کنندهٔ رویداد {{domxref("HTMLDialogElement.close_event", "close")}} گفتگو، مثال متن وضعیتِ صفحهٔ اصلی را به‌روزرسانی می‌کند تا `returnValue` را ثبت کند.
 
-If the user dismisses the dialog without clicking a button (for example, by pressing the <kbd>Esc</kbd> key), then the return value is not set.
+اگر کاربر بدون کلیک روی هیچ دکمه‌ای گفتگو را ببندد (برای مثال با فشردن کلید <kbd>Esc</kbd>)، مقدار بازگشتی تنظیم نمی‌شود.
 
 #### HTML
 
@@ -97,21 +93,20 @@ acceptButton.addEventListener("click", closeDialog);
 dialog.addEventListener("close", updateReturnValue);
 ```
 
-#### Result
+#### نتیجه
 
-Click "Open Dialog", then choose the "Accept" or "Decline" buttons in the dialog, or dismiss the dialog by pressing the <kbd>Esc</kbd> key.
-Observe the different status updates.
+روی «Open Dialog» کلیک کنید، سپس در گفتگو دکمهٔ «Accept» یا «Decline» را انتخاب کنید، یا با فشردن کلید <kbd>Esc</kbd> گفتگو را ببندید. به‌روزرسانی‌های مختلف وضعیت را مشاهده کنید.
 
 {{ EmbedLiveSample('Checking the return value', '100%', "250px")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- HTML {{htmlelement("dialog")}} element
+- عنصر HTML {{htmlelement("dialog")}}
