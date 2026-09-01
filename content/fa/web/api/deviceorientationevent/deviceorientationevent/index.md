@@ -1,11 +1,5 @@
 ---
 title: "DeviceOrientationEvent: DeviceOrientationEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DeviceOrientationEvent/DeviceOrientationEvent"
-status: "needs-translation"
----
-
----
-title: "DeviceOrientationEvent: DeviceOrientationEvent() constructor"
 short-title: DeviceOrientationEvent()
 slug: Web/API/DeviceOrientationEvent/DeviceOrientationEvent
 page-type: web-api-constructor
@@ -14,49 +8,38 @@ browser-compat: api.DeviceOrientationEvent.DeviceOrientationEvent
 
 {{APIRef("Device Orientation Events")}}{{securecontext_header}}
 
-The **`DeviceOrientationEvent()`** constructor creates a new {{domxref("DeviceOrientationEvent")}} object.
+سازنده **`DeviceOrientationEvent()`** یک شیء جدید از نوع {{domxref("DeviceOrientationEvent")}} ایجاد می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 new DeviceOrientationEvent(type)
 new DeviceOrientationEvent(type, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string with the name of the event.
-    It is case-sensitive and browsers set it to `deviceorientation` or `deviceorientationabsolute`.
-    In the latter case, `options.absolute` is always `true`.
+  - : یک رشته (string) با نام رویداد. این رشته به حروف بزرگ و کوچک حساس است و مرورگرها آن را به `deviceorientation` یا `deviceorientationabsolute` تنظیم می‌کنند. در حالت دوم، `options.absolute` همیشه `true` است.
 - `options` {{optional_inline}}
-  - : An object that, _in addition of the properties defined in {{domxref("Event/Event", "Event()")}}_, can have the following properties:
+  - : یک شیء که، _علاوه بر ویژگی‌های تعریف‌شده در {{domxref("Event/Event", "Event()")}}_، می‌تواند دارای ویژگی‌های زیر باشد:
     - `alpha` {{optional_inline}}
-      - : A number representing the motion of the device around the z axis,
-        expressed in degrees with values ranging from 0 to 360.
-        It defaults to `null`.
+      - : یک عدد که حرکت دستگاه حول محور z را نشان می‌دهد، بر حسب درجه با مقادیر بین ۰ تا ۳۶۰. مقدار پیش‌فرض `null` است.
     - `beta` {{optional_inline}}
-      - : A number representing the motion of the device around the x axis,
-        expressed in degrees with values ranging from -180 to 180.
-        This represents a front to back motion of the device.
-        It defaults to `null`.
+      - : یک عدد که حرکت دستگاه حول محور x را نشان می‌دهد، بر حسب درجه با مقادیر بین ۱۸۰- تا ۱۸۰. این حرکت از جلو به عقب دستگاه را نشان می‌دهد. مقدار پیش‌فرض `null` است.
     - `gamma` {{optional_inline}}
-      - : A number representing the motion of the device around the y axis,
-        expressed in degrees with values ranging from -90 to 90.
-        This represents a left to right motion of the device.
-        It defaults to `null`.
+      - : یک عدد که حرکت دستگاه حول محور y را نشان می‌دهد، بر حسب درجه با مقادیر بین ۹۰- تا ۹۰. این حرکت از چپ به راست دستگاه را نشان می‌دهد. مقدار پیش‌فرض `null` است.
     - `absolute`
-      - : A boolean value that indicates whether or not the device is providing orientation data absolutely.
-        It defaults to `false`.
+      - : یک مقدار بولی (boolean) که نشان می‌دهد آیا دستگاه داده‌های جهت‌یابی را به صورت مطلق ارائه می‌دهد یا خیر. مقدار پیش‌فرض `false` است.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("DeviceOrientationEvent")}} object.
+یک شیء جدید از نوع {{domxref("DeviceOrientationEvent")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
