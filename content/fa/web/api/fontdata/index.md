@@ -1,10 +1,4 @@
 ---
-title: "FontData"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FontData"
-status: "needs-translation"
----
-
----
 title: FontData
 slug: Web/API/FontData
 page-type: web-api-interface
@@ -15,31 +9,31 @@ browser-compat: api.FontData
 
 {{APIRef("Local Font Access API")}}{{SeeCompatTable}}
 
-The **`FontData`** interface of the {{domxref("Local Font Access API", "Local Font Access API", "", "nocode")}} represents a single local font face.
+رابطه‌ی **`FontData`** در {{domxref("Local Font Access API", "Local Font Access API", "", "nocode")}} یک قلم‌رو (font face) محلی را نمایش می‌دهد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref('FontData.family')}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns the family of the font face.
+  - : خانواده‌ی قلم‌رو را برمی‌گرداند.
 - {{domxref('FontData.fullName')}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns the full name of the font face.
+  - : نام کامل قلم‌رو را برمی‌گرداند.
 - {{domxref('FontData.postscriptName')}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns the PostScript name of the font face.
+  - : نام PostScript قلم‌رو را برمی‌گرداند.
 - {{domxref('FontData.style')}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns the style of the font face.
+  - : سبک قلم‌رو را برمی‌گرداند.
 
-## Instance methods
+## متدهای نمونه
 
 - {{domxref('FontData.blob()')}} {{Experimental_Inline}}
-  - : Returns a {{jsxref("Promise")}} that fulfills with a {{domxref("Blob")}} containing the raw bytes of the underlying font file.
+  - : یک {{jsxref("Promise")}} برمی‌گرداند که با یک {{domxref("Blob")}} شامل بایت‌های خام فایل قلمِ زیرین تکمیل می‌شود.
 
-## Examples
+## مثال‌ها
 
-For a live example, see our [Local Font Access API demo](https://mdn.github.io/dom-examples/local-font-access/).
+برای یک مثال زنده، به [دموی Local Font Access API](https://mdn.github.io/dom-examples/local-font-access/) مراجعه کنید.
 
-### Font enumeration
+### شمارش قلم‌ها
 
-The following snippet will query for all available fonts, and log metadata. This could be used, for example, to populate a font-picker control.
+قطعه‌کد زیر همه‌ی قلم‌های موجود را جستجو می‌کند و فراداده‌ها را در کنسول ثبت می‌کند. به‌عنوان مثال می‌توان از آن برای پر کردن یک کنترل انتخاب‌گر قلم استفاده کرد.
 
 ```js
 async function logFontData() {
@@ -57,9 +51,9 @@ async function logFontData() {
 }
 ```
 
-### Accessing low-level data
+### دسترسی به داده‌های سطح پایین
 
-The {{domxref("FontData.blob", "blob()")}} method provides access to low-level [SFNT](https://en.wikipedia.org/wiki/SFNT) data — this is a font file format that can contain other font formats, such as PostScript, TrueType, OpenType, or Web Open Font Format (WOFF).
+متد {{domxref("FontData.blob", "blob()")}} به داده‌های سطح پایین [SFNT](https://en.wikipedia.org/wiki/SFNT) دسترسی می‌دهد — این یک فرمت فایل قلم است که می‌تواند شامل سایر فرمت‌های قلم مانند PostScript، TrueType، OpenType یا Web Open Font Format (WOFF) باشد.
 
 ```js
 async function computeOutlineFormat() {
@@ -95,15 +89,15 @@ async function computeOutlineFormat() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Use advanced typography with local fonts](https://developer.chrome.com/docs/capabilities/web-apis/local-fonts)
+- [استفاده از تایپوگرافی پیشرفته با قلم‌های محلی](https://developer.chrome.com/docs/capabilities/web-apis/local-fonts)
 - {{cssxref("@font-face")}}
