@@ -1,9 +1,4 @@
----
-title: "CSSPositionValue"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSPositionValue"
-status: "needs-translation"
----
-
+```yaml
 ---
 title: CSSPositionValue
 slug: Web/API/CSSPositionValue
@@ -12,31 +7,31 @@ status:
   - deprecated
   - non-standard
 browser-compat: api.CSSPositionValue
----
+```
 
 {{deprecated_header}}{{APIRef("CSS Typed Object Model API")}}{{Non-standard_header}}
 
-The **`CSSPositionValue`** interface of the [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Object_Model#css_typed_object_model) represents values for properties that take a position, for example {{cssxref('object-position')}}.
+رابط **`CSSPositionValue`** از [API مدل شیء تایپ‌شده CSS](/en-US/docs/Web/API/CSS_Object_Model#css_typed_object_model) مقادیر مربوط به ویژگی‌هایی را نشان می‌دهد که یک موقعیت را دریافت می‌کنند، برای مثال {{cssxref('object-position')}}.
 
-## Constructor
+## سازنده
 
 - {{domxref("CSSPositionValue.CSSPositionValue", "CSSPositionValue()")}} {{Non-standard_Inline}} {{Deprecated_Inline}}
-  - : Creates a new `CSSPositionValue` object.
+  - یک شیء `CSSPositionValue` جدید ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref('CSSPositionValue.x')}} {{Non-standard_Inline}} {{Deprecated_Inline}}
-  - : Returns the item's position along the web page's horizontal axis.
+  - موقعیت آیتم را در امتداد محور افقی صفحه وب برمی‌گرداند.
 - {{domxref('CSSPositionValue.y')}} {{Non-standard_Inline}} {{Deprecated_Inline}}
-  - : Returns the item's position along the vertical axis.
+  - موقعیت آیتم را در امتداد محور عمودی برمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
-None.
+هیچکدام.
 
-## Examples
+## نمونه‌ها
 
-The following example positions a container `<div>` 5 pixels from the top and 10 pixels from the left of the page.
+مثال زیر یک عنصر ظرف `<div>` را ۵ پیکسل از بالا و ۱۰ پیکسل از چپ صفحه قرار می‌دهد.
 
 ```js
 const replacedEl = document.getElementById("image");
@@ -47,7 +42,7 @@ console.log(position.x.value, position.y.value);
 console.log(replacedEl.computedStyleMap().get("object-position"));
 ```
 
-We set the {{cssxref('object-position')}} property, then check the values returned.
+ما ویژگی {{cssxref('object-position')}} را تنظیم می‌کنیم، سپس مقادیر بازگشتی را بررسی می‌کنیم.
 
 ```css hidden
 #image {
@@ -69,16 +64,16 @@ We set the {{cssxref('object-position')}} property, then check the values return
 
 {{EmbedLiveSample("Examples", 300, 300)}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref('CSSImageValue')}}
 - {{domxref('CSSKeywordValue')}}
 - {{domxref('CSSNumericValue')}}
 - {{domxref('CSSTransformValue')}}
 - {{domxref('CSSUnparsedValue')}}
-- [Using the CSS Typed OM](/en-US/docs/Web/API/CSS_Typed_OM_API/Guide)
+- [استفاده از CSS Typed OM](/en-US/docs/Web/API/CSS_Typed_OM_API/Guide)
 - [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API)
