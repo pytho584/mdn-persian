@@ -1,7 +1,5 @@
 ---
 title: "Document: hasRedemptionRecord() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/hasRedemptionRecord"
-status: "needs-translation"
 ---
 
 ---
@@ -16,33 +14,33 @@ browser-compat: api.Document.hasRedemptionRecord
 
 {{APIRef("Storage Access API")}}{{SeeCompatTable}}
 
-The **`hasRedemptionRecord()`** method of the {{domxref("Document")}} interface returns a promise that fulfills with a boolean indicating whether the browser has a [redemption record](/en-US/docs/Web/API/Private_State_Token_API/Using#redeeming_tokens) originating from a particular issuer.
+متد **`hasRedemptionRecord()`** از رابط {{domxref("Document")}} یک promise برمی‌گرداند که با یک مقدار بولی (boolean) تحقق می‌یابد و نشان می‌دهد که آیا مرورگر یک [redemption record](/en-US/docs/Web/API/Private_State_Token_API/Using#redeeming_tokens) (سابقهٔ بازخرید) متعلق به یک صادرکنندهٔ خاص دارد یا خیر.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 hasRedemptionRecord(issuer)
 ```
 
-### Parameters
+### پارامترها
 
 - `issuer`
-  - : A string representing the URL of an issuer server.
+  - : یک رشته (string) که URL سرور صادرکننده را نمایش می‌دهد.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with a boolean value indicating whether the browser has a redemption record stored that originates from the specified issuer server.
+یک {{jsxref("Promise")}} که با یک مقدار بولی resolve می‌شود و نشان می‌دهد که آیا مرورگر یک redemption record ذخیره‌شده دارد که از سرور صادرکنندهٔ مشخص‌شده منشأ گرفته است.
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the current {{domxref("Document")}} is not yet active.
+  - : اگر {{domxref("Document")}} فعلی هنوز فعال (active) نباشد، پرتاب می‌شود.
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if the current {{domxref("Document")}} is not loaded in a secure context.
+  - : اگر {{domxref("Document")}} فعلی در یک بافت امن (secure context) بارگذاری نشده باشد، پرتاب می‌شود.
 - `TypeError` {{domxref("DOMException")}}
-  - : Thrown if `issuer` is not a valid URL.
+  - : اگر `issuer` یک URL معتبر نباشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
 ```js
 const hasRR = await Document.hasRedemptionRecord(`issuer.example`);
@@ -58,14 +56,14 @@ if (hasRR) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Private State Token API](/en-US/docs/Web/API/Private_State_Token_API)
