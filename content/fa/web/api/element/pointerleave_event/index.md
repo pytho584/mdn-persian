@@ -1,11 +1,5 @@
 ---
 title: "Element: pointerleave event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/pointerleave_event"
-status: "needs-translation"
----
-
----
-title: "Element: pointerleave event"
 short-title: pointerleave
 slug: Web/API/Element/pointerleave_event
 page-type: web-api-event
@@ -14,11 +8,11 @@ browser-compat: api.Element.pointerleave_event
 
 {{APIRef("Pointer Events")}}
 
-The `pointerleave` event is fired when a pointing device is moved out of the hit test boundaries of an element. For pen devices, this event is fired when the stylus leaves the hover range detectable by the digitizer. Otherwise, `pointerleave` works the same as {{domxref("Element/mouseleave_event", "mouseleave")}}, and are dispatched at the same time. They are also dispatched at the same time as {{domxref("Element/mouseout_event", "mouseout")}} and {{domxref("Element/pointerout_event", "pointerout")}} events, if appropriate.
+رویداد `pointerleave` زمانی به‌کار می‌افتد که دستگاه اشاره‌گر از مرزهای hit test یک عنصر خارج شود. برای دستگاه‌های قلمی، این رویداد زمانی رخ می‌دهد که قلم از محدودهٔ hover قابل تشخیص توسط digitizer خارج شود. در غیر این صورت، رفتار `pointerleave` مانند {{domxref("Element/mouseleave_event", "mouseleave")}} است و هم‌زمان با آن ارسال می‌شود. همچنین در صورت لزوم، هم‌زمان با رویدادهای {{domxref("Element/mouseout_event", "mouseout")}} و {{domxref("Element/pointerout_event", "pointerout")}} نیز ارسال می‌شود.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی رویدادگردان (event handler property) تنظیم کنید.
 
 ```js-nolint
 addEventListener("pointerleave", (event) => { })
@@ -26,15 +20,15 @@ addEventListener("pointerleave", (event) => { })
 onpointerleave = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("PointerEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("PointerEvent")}}. به‌ارث‌برده شده از {{domxref("Event")}}.
 
 {{InheritanceDiagram("PointerEvent")}}
 
-## Examples
+## مثال‌ها
 
-Using `addEventListener()`:
+استفاده از `addEventListener()`:
 
 ```js
 const para = document.querySelector("p");
@@ -44,7 +38,7 @@ para.addEventListener("pointerleave", (event) => {
 });
 ```
 
-Using the `onpointerleave` event handler property:
+استفاده از ویژگی رویدادگردان `onpointerleave`:
 
 ```js
 const para = document.querySelector("p");
@@ -54,17 +48,17 @@ para.onpointerleave = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- Related events
+- رویدادهای مرتبط
   - {{domxref('Element/gotpointercapture_event', 'gotpointercapture')}}
   - {{domxref('Element/lostpointercapture_event', 'lostpointercapture')}}
   - {{domxref('Element/pointerover_event', 'pointerover')}}
