@@ -1,7 +1,5 @@
 ---
 title: "FetchEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent"
-status: "needs-translation"
 ---
 
 ---
@@ -13,85 +11,85 @@ browser-compat: api.FetchEvent
 
 {{APIRef("Service Workers API")}}{{AvailableInWorkers("service")}}
 
-This is the event type for `fetch` events dispatched on the {{domxref("ServiceWorkerGlobalScope", "service worker global scope", "", 1)}}. It contains information about the fetch, including the request and how the receiver will treat the response. It provides the {{domxref("FetchEvent.respondWith", "event.respondWith()")}} method, which allows us to provide a response to this fetch.
+این نوع رویداد برای رویدادهای `fetch` است که در {{domxref("ServiceWorkerGlobalScope", "حوزهٔ سراسری سرویس‌ورکر", "", 1)}} ارسال می‌شوند. این رویداد شامل اطلاعاتی دربارهٔ درخواست (fetch) است، از جمله خود درخواست و نحوهٔ برخورد گیرنده با پاسخ. همچنین متد {{domxref("FetchEvent.respondWith", "event.respondWith()")}} را فراهم می‌کند که به ما امکان می‌دهد پاسخی برای این درخواست ارائه دهیم.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("FetchEvent.FetchEvent()", "FetchEvent()")}}
-  - : Creates a new `FetchEvent` object. This constructor is not typically used. The browser creates these objects and provides them to `fetch` event callbacks.
+  - : یک شیء جدید `FetchEvent` ایجاد می‌کند. معمولاً از این سازنده استفاده نمی‌شود؛ مرورگر این اشیاء را می‌سازد و آن‌ها را به فراخوانی‌های رویداد `fetch` ارائه می‌دهد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its ancestor, {{domxref("Event")}}_.
+_ویژگی‌ها را از ancestor خود، {{domxref("Event")}} به ارث می‌برد._
 
 - {{domxref("FetchEvent.clientId")}} {{ReadOnlyInline}}
-  - : The {{domxref("Client.id", "id")}} of the same-origin {{domxref("Client", "client")}} that initiated the fetch.
+  - : {{domxref("Client.id", "شناسه")}} {{domxref("Client", "کلاینتی")}} که درخواست را آغاز کرده و هم‌ریشه (same-origin) است.
 - {{domxref("FetchEvent.handled")}} {{ReadOnlyInline}}
-  - : A promise that is pending while the event has not been handled, and fulfilled once it has.
+  - : یک وعده (promise) که تا زمانی که رویداد مدیریت نشده در حالت معلق است و پس از مدیریت، fulfilled می‌شود.
 - {{domxref("FetchEvent.isReload")}} {{ReadOnlyInline}} {{Deprecated_inline}} {{Non-standard_inline}}
-  - : Returns `true` if the event was dispatched by the user attempting to reload the page, and `false` otherwise.
+  - : اگر رویداد توسط کاربری که سعی در بارگذاری مجدد صفحه دارد ارسال شده باشد، `true` و در غیر این صورت `false` برمی‌گرداند.
 - {{domxref("FetchEvent.preloadResponse")}} {{ReadOnlyInline}}
-  - : A {{jsxref("Promise")}} for a {{domxref("Response")}}, or `undefined` if this fetch is not a navigation, or [navigation preload](/en-US/docs/Web/API/NavigationPreloadManager) is not enabled.
+  - : یک {{jsxref("Promise")}} برای یک {{domxref("Response")}}، یا اگر این درخواست یک ناوبری نباشد یا [بارگذاری پیش‌گیرانهٔ ناوبری](/en-US/docs/Web/API/NavigationPreloadManager) فعال نبوده باشد، `undefined` برمی‌گرداند.
 - {{domxref("FetchEvent.replacesClientId")}} {{ReadOnlyInline}}
-  - : The {{domxref("Client.id", "id")}} of the {{domxref("Client", "client")}} that is being replaced during a page navigation.
+  - : {{domxref("Client.id", "شناسه")}} {{domxref("Client", "کلاینتی")}} که در طول ناوبری صفحه جایگزین می‌شود.
 - {{domxref("FetchEvent.resultingClientId")}} {{ReadOnlyInline}}
-  - : The {{domxref("Client.id", "id")}} of the {{domxref("Client", "client")}} that replaces the previous client during a page navigation.
+  - : {{domxref("Client.id", "شناسه")}} {{domxref("Client", "کلاینتی")}} که در طول ناوبری صفحه، کلاینت قبلی را جایگزین می‌کند.
 - {{domxref("FetchEvent.request")}} {{ReadOnlyInline}}
-  - : The {{domxref("Request")}} the browser intends to make.
+  - : {{domxref("Request")}} که مرورگر قصد ارسال آن را دارد.
 
-## Instance methods
+## روش‌های نمونه
 
-_Inherits methods from its parent, {{domxref("ExtendableEvent")}}_.
+_روش‌ها را از والد خود، {{domxref("ExtendableEvent")}} به ارث می‌برد._
 
 - {{domxref("FetchEvent.respondWith()")}}
-  - : Prevent the browser's default fetch handling, and provide (a promise for) a response yourself.
+  - : از مدیریت پیش‌فرض fetch توسط مرورگر جلوگیری کرده و خودتان (وعده‌ای برای) یک پاسخ ارائه می‌دهید.
 - {{domxref("ExtendableEvent.waitUntil()")}}
-  - : Extends the lifetime of the event. Used to notify the browser of tasks that extend beyond the returning of a response, such as streaming and caching.
+  - : طول عمر رویداد را افزایش می‌دهد. برای اطلاع‌رسانی به مرورگر دربارهٔ کارهایی که فراتر از بازگرداندن یک پاسخ هستند (مانند استریم و کش‌کردن) استفاده می‌شود.
 
-## Examples
+## مثال‌ها
 
-This fetch event uses the browser default for non-GET requests.
-For GET requests it tries to return a match in the cache, and falls back to the network. If it finds a match in the cache, it asynchronously updates the cache for next time.
+این رویداد fetch برای درخواست‌های غیر از GET از رفتار پیش‌فرض مرورگر استفاده می‌کند.
+برای درخواست‌های GET، تلاش می‌کند یک مورد منطبق در کش پیدا کند و در نبود آن به شبکه مراجعه می‌کند. اگر مورد منطبق در کش یافت شود، به‌صورت ناهمگام کش را برای دفعهٔ بعد به‌روزرسانی می‌کند.
 
 ```js
 self.addEventListener("fetch", (event) => {
-  // Let the browser do its default thing
-  // for non-GET requests.
+  // بگذارید مرورگر کار پیش‌فرض خود را
+  // برای درخواست‌های غیر از GET انجام دهد.
   if (event.request.method !== "GET") return;
 
-  // Prevent the default, and handle the request ourselves.
+  // جلوگیری از رفتار پیش‌فرض، و مدیریت خودمان درخواست.
   event.respondWith(
     (async () => {
-      // Try to get the response from a cache.
+      // تلاش برای دریافت پاسخ از کش.
       const cache = await caches.open("dynamic-v1");
       const cachedResponse = await cache.match(event.request);
 
       if (cachedResponse) {
-        // If we found a match in the cache, return it, but also
-        // update the entry in the cache in the background.
+        // اگر مورد منطبق در کش یافت شد، آن را برگردان، اما
+        // ورودی مربوطه در کش را نیز در پس‌زمینه به‌روزرسانی کن.
         event.waitUntil(cache.add(event.request));
         return cachedResponse;
       }
 
-      // If we didn't find a match in the cache, use the network.
+      // اگر مورد منطبق در کش یافت نشد، از شبکه استفاده کن.
       return fetch(event.request);
     })(),
   );
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [`fetch` event](/en-US/docs/Web/API/ServiceWorkerGlobalScope/fetch_event)
+- [رویداد `fetch`](/en-US/docs/Web/API/ServiceWorkerGlobalScope/fetch_event)
 - {{jsxref("Promise")}}
 - [Fetch API](/en-US/docs/Web/API/Fetch_API)
