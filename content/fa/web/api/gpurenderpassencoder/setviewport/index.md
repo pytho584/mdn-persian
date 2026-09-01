@@ -1,7 +1,6 @@
 ---
 title: "GPURenderPassEncoder: setViewport() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder/setViewport"
-status: "needs-translation"
 ---
 
 ---
@@ -14,8 +13,7 @@ browser-compat: api.GPURenderPassEncoder.setViewport
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`setViewport()`** method of the
-{{domxref("GPURenderPassEncoder")}} interface sets the viewport used during the rasterization stage to linearly map from normalized device coordinates to viewport coordinates.
+متد **`setViewport()`** در رابط {{domxref("GPURenderPassEncoder")}}، نمای دید (viewport) مورد استفاده در مرحلهٔ رasterization را برای نگاشت خطی از مختصات دستگاه نرمال‌شده به مختصات نمای دید تنظیم می‌کند.
 
 ## Syntax
 
@@ -26,43 +24,43 @@ setViewport(x, y, width, height, minDepth, maxDepth)
 ### Parameters
 
 - `x`
-  - : A number representing the minimum X value of the viewport, in pixels.
+  - : عددی که کمینه مقدار X نمای دید را بر حسب پیکسل نشان می‌دهد.
 - `y`
-  - : A number representing the minimum Y value of the viewport, in pixels.
+  - : عددی که کمینه مقدار Y نمای دید را بر حسب پیکسل نشان می‌دهد.
 - `width`
-  - : A number representing the width of the viewport, in pixels.
+  - : عددی که عرض نمای دید را بر حسب پیکسل نشان می‌دهد.
 - `height`
-  - : A number representing the height of the viewport, in pixels.
+  - : عددی که ارتفاع نمای دید را بر حسب پیکسل نشان می‌دهد.
 - `minDepth`
-  - : A number representing the minimum depth value of the viewport.
+  - : عددی که کمینه مقدار عمق نمای دید را نشان می‌دهد.
 - `maxDepth`
-  - : A number representing the maximum depth value of the viewport.
+  - : عددی که بیشینه مقدار عمق نمای دید را نشان می‌دهد.
 
 > [!NOTE]
-> If a `setViewport()` call is not made, the default values are `(0, 0, attachment width, attachment height, 0, 1)` for each render pass.
+> اگر فراخوانی `setViewport()` انجام نشود، مقادیر پیش‌فرض برای هر پاس رندر `(0, 0, عرض پیوست, ارتفاع پیوست, 0, 1)` خواهد بود.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
 ### Validation
 
-The following criteria must be met when calling **`setViewport()`**, otherwise a {{domxref("GPUValidationError")}} is generated and the {{domxref("GPURenderPassEncoder")}} becomes invalid:
+برای فراخوانی **`setViewport()`** باید معیارهای زیر برقرار باشند؛ در غیر این صورت یک {{domxref("GPUValidationError")}} تولید شده و {{domxref("GPURenderPassEncoder")}} نامعتبر می‌شود:
 
-- `x`, `y`, `width`, and `height` are all greater than or equal to 0.
-- `x` + `width` is less than or equal to the width of the render pass's render attachments (see note below).
-- `y` + `height` is less than or equal to the height of the render pass's render attachments (see note below).
-- `minDepth` and `maxDepth` are both inside the range 0.0–1.0 inclusive.
-- `minDepth` is less than `maxDepth`.
+- `x`، `y`، `width` و `height` همگی بزرگ‌تر یا مساوی ۰ هستند.
+- `x` + `width` کمتر یا مساوی عرض پیوست‌های رندر پاس رندر است (به یادداشت زیر مراجعه کنید).
+- `y` + `height` کمتر یا مساوی ارتفاع پیوست‌های رندر پاس رندر است (به یادداشت زیر مراجعه کنید).
+- `minDepth` و `maxDepth` هر دو در بازه ۰٫۰ تا ۱٫۰ شامل قرار دارند.
+- `minDepth` کوچک‌تر از `maxDepth` است.
 
 > [!NOTE]
-> See the color and depth/stencil attachments specified in the descriptor of {{domxref("GPUCommandEncoder.beginRenderPass()")}}; the width and height are based on that of the {{domxref("GPUTexture")}} that their `view`s originate from.
+> به پیوست‌های رنگ و عمق/استنسیل مشخص‌شده در توصیفگر {{domxref("GPUCommandEncoder.beginRenderPass()")}} مراجعه کنید؛ عرض و ارتفاع بر اساس {{domxref("GPUTexture")}}ای که `view`های آن‌ها از آن منشأ می‌گیرند تعیین می‌شود.
 
 ## Examples
 
 ### Basic snippet
 
-In a typical canvas render, the following could be used to halve the width and height of the rendered graphics:
+در یک رندر معمولی روی بوم (canvas)، می‌توان از کد زیر برای نصف کردن عرض و ارتفاع گرافیک رندر شده استفاده کرد:
 
 ```js
 passEncoder.setViewport(0, 0, canvas.width / 2, canvas.height / 2, 0, 1);
@@ -70,9 +68,9 @@ passEncoder.setViewport(0, 0, canvas.width / 2, canvas.height / 2, 0, 1);
 
 ### In context
 
-In the WebGPU Samples [reversedZ example](https://webgpu.github.io/webgpu-samples/samples/reversedZ/), `setViewport` is used several times to set the viewport for the different render passes. Study the example code listing for the full context.
+در نمونه‌های WebGPU، در مثال [reversedZ](https://webgpu.github.io/webgpu-samples/samples/reversedZ/)، از `setViewport` چندین بار برای تنظیم نمای دید در پاس‌های رندر مختلف استفاده شده است. برای مشاهدهٔ کامل زمینه، فهرست کد مثال را مطالعه کنید.
 
-For example:
+مثلاً:
 
 ```js
 // …
@@ -99,4 +97,4 @@ colorPass.setViewport(
 
 ## See also
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
