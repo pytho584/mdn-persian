@@ -1,11 +1,5 @@
 ---
 title: "Element: touchmove event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/touchmove_event"
-status: "needs-translation"
----
-
----
-title: "Element: touchmove event"
 short-title: touchmove
 slug: Web/API/Element/touchmove_event
 page-type: web-api-event
@@ -14,11 +8,11 @@ browser-compat: api.Element.touchmove_event
 
 {{APIRef("Touch Events")}}
 
-The `touchmove` event is fired when one or more touch points are moved along the touch surface.
+رویداد `touchmove` زمانی شلیک می‌شود که یک یا چند نقطهٔ لمس (touch point) در امتداد سطح لمس حرکت کنند.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در متدهایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی مدیریت رویداد (event handler) تنظیم کنید.
 
 ```js-nolint
 addEventListener("touchmove", (event) => { })
@@ -26,25 +20,25 @@ addEventListener("touchmove", (event) => { })
 ontouchmove = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("TouchEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("TouchEvent")}} که از {{domxref("Event")}} به ارث می‌برد.
 
 {{InheritanceDiagram("TouchEvent")}}
 
-## Examples
+## مثال‌ها
 
-Code samples for those events are available on the dedicated page: [Touch events](/en-US/docs/Web/API/Touch_events).
+نمونه‌کدهای مربوط به این رویدادها در صفحهٔ اختصاصی [رویدادهای لمس (Touch events)](/en-US/docs/Web/API/Touch_events) در دسترس هستند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Touch events](/en-US/docs/Web/API/Touch_events)
+- [رویدادهای لمس (Touch events)](/en-US/docs/Web/API/Touch_events)
 - {{domxref("Element/mousemove_event", "mousemove")}}
