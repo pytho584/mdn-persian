@@ -1,7 +1,6 @@
 ---
 title: "Element: pointerrawupdate event"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/pointerrawupdate_event"
-status: "needs-translation"
 ---
 
 ---
@@ -14,21 +13,17 @@ browser-compat: api.Element.pointerrawupdate_event
 
 {{APIRef("Pointer Events")}}{{secureContext_header}}
 
-The **`pointerrawupdate`** event is fired when a pointer changes any properties that don't fire {{domxref('Element/pointerdown_event', 'pointerdown')}} or {{domxref('Element/pointerup_event', 'pointerup')}} events.
-See {{domxref('Element/pointermove_event', 'pointermove')}} for a list of these properties.
+رویداد **`pointerrawupdate`** زمانی فعال میشود که یک اشارهگر (pointer) هر ویژگی‌ای را تغییر دهد که رویدادهای {{domxref('Element/pointerdown_event', 'pointerdown')}} یا {{domxref('Element/pointerup_event', 'pointerup')}} را فعال نمی‌کند. برای فهرست این ویژگی‌ها به {{domxref('Element/pointermove_event', 'pointermove')}} مراجعه کنید.
 
-The `pointerrawupdate` event may have coalesced events if there is already another `pointerrawupdate` event with the same pointer ID that hasn't been dispatched in the event loop.
-For information on coalesced events, see the {{domxref("PointerEvent.getCoalescedEvents()")}} documentation.
+رویداد `pointerrawupdate` ممکن است دارای رویدادهای ادغام‌شده (coalesced events) باشد، اگر از قبل رویداد `pointerrawupdate` دیگری با همان شناسه اشارهگر وجود داشته باشد که هنوز در حلقه رویداد (event loop) ارسال نشده است. برای اطلاعات درباره رویدادهای ادغام‌شده، مستندات {{domxref("PointerEvent.getCoalescedEvents()")}} را ببینید.
 
-`pointerrawupdate` is intended for applications that require high-precision input handling and cannot achieve smooth interaction using coalesced [`pointermove`](/en-US/docs/Web/API/Element/pointermove_event) events alone.
-However, because listening to `pointerrawupdate` events can affect performance, you should add these listeners only if your JavaScript needs high-frequency events and can handle them as quickly as they are dispatched.
-For most use cases, other pointer event types should suffice.
+`pointerrawupdate` برای برنامه‌هایی در نظر گرفته شده است که به پردازش ورودی با دقت بالا نیاز دارند و نمی‌توانند با استفاده از رویدادهای ادغام‌شده [`pointermove`](/en-US/docs/Web/API/Element/pointermove_event) به تنهایی تعامل روانی را به دست آورند. با این حال، چون گوش دادن به رویدادهای `pointerrawupdate` می‌تواند بر عملکرد تأثیر بگذارد، باید این شنونده‌ها را تنها زمانی اضافه کنید که جاوااسکریپت شما به رویدادهای با فرکانس بالا نیاز دارد و می‌تواند آن‌ها را به همان سرعتی که ارسال می‌شوند پردازش کند. برای بیشتر موارد استفاده، سایر انواع رویدادهای اشارهگر کافی هستند.
 
-This event [bubbles](/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling) and is [composed](/en-US/docs/Web/API/Event/composed), but is not [cancelable](/en-US/docs/Web/API/Event/cancelable) and has no default action.
+این رویداد [حباب می‌زند](/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling) و [ترکیب‌پذیر](/en-US/docs/Web/API/Event/composed) است، اما [قابل لغو](/en-US/docs/Web/API/Event/cancelable) نیست و هیچ اقدام پیش‌فرضی ندارد.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("pointerrawupdate", (event) => { })
@@ -36,13 +31,13 @@ addEventListener("pointerrawupdate", (event) => { })
 onpointerrawupdate = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("PointerEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("PointerEvent")}} که از {{domxref("Event")}} به ارث رسیده است.
 
 {{InheritanceDiagram("PointerEvent")}}
 
-## Example
+## مثال
 
 ```js
 addEventListener("pointerrawupdate", (event) => {
@@ -58,17 +53,17 @@ addEventListener("pointerrawupdate", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- Related events
+- رویدادهای مرتبط
   - {{domxref('Element/gotpointercapture_event', 'gotpointercapture')}}
   - {{domxref('Element/lostpointercapture_event', 'lostpointercapture')}}
   - {{domxref('Element/pointerover_event', 'pointerover')}}
