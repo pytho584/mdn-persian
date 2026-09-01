@@ -1,11 +1,5 @@
 ---
 title: "ElementInternals: ariaLabel property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/ariaLabel"
-status: "needs-translation"
----
-
----
-title: "ElementInternals: ariaLabel property"
 short-title: ariaLabel
 slug: Web/API/ElementInternals/ariaLabel
 page-type: web-api-instance-property
@@ -14,18 +8,18 @@ browser-compat: api.ElementInternals.ariaLabel
 
 {{APIRef("Web Components")}}
 
-The **`ariaLabel`** property of the {{domxref("ElementInternals")}} interface reflects the value of the [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) attribute, which defines a string value that labels the current Element.
+خاصیت **`ariaLabel`** از رابط {{domxref("ElementInternals")}} منعکس‌کنندهٔ مقدار ویژگی [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label) است که یک رشته مقداری را تعریف می‌کند که عنصر جاری را برچسب‌گذاری می‌کند.
 
 > [!NOTE]
-> Setting aria attributes on `ElementInternals` allows default semantics to be defined on a custom element. These may be overwritten by author-defined attributes, but ensure that default semantics are retained should the author delete those attributes, or fail to add them at all. For more information see the [Accessibility Object Model explainer](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object).
+> تنظیم ویژگی‌های aria بر روی `ElementInternals` امکان تعریف معناشناسی پیش‌فرض را روی یک عنصر سفارشی فراهم می‌کند. این مقادیر ممکن است توسط ویژگی‌های تعریف‌شده توسط نویسنده بازنویسی شوند، اما تضمین می‌کنند که اگر نویسنده آن ویژگی‌ها را حذف کند یا اصلاً آن‌ها را اضافه نکند، معناشناسی پیش‌فرض حفظ شود. برای اطلاعات بیشتر به [توضیح‌دهنده مدل شیء دسترسی‌پذیری](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object) مراجعه کنید.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
-In this example the value of `ariaLabel` is set to "close".
+در این مثال مقدار `ariaLabel` به `"close"` تنظیم شده است.
 
 ```js
 class CustomControl extends HTMLElement {
@@ -38,10 +32,10 @@ class CustomControl extends HTMLElement {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
