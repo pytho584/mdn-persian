@@ -1,11 +1,5 @@
 ---
 title: "DocumentPictureInPictureEvent: window property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DocumentPictureInPictureEvent/window"
-status: "needs-translation"
----
-
----
-title: "DocumentPictureInPictureEvent: window property"
 short-title: window
 slug: Web/API/DocumentPictureInPictureEvent/window
 page-type: web-api-instance-property
@@ -14,14 +8,13 @@ browser-compat: api.DocumentPictureInPictureEvent.window
 
 {{APIRef("Document Picture-in-Picture API")}}{{SecureContext_Header}}
 
-The **`window`** read-only property of the
-{{domxref("DocumentPictureInPictureEvent")}} interface returns a {{domxref("Window")}} instance representing the browsing context inside the `DocumentPictureInPicture` window the event was fired on.
+ویژگی فقط‌خواندنی **`window`** در رابط {{domxref("DocumentPictureInPictureEvent")}} یک نمونه از {{domxref("Window")}} را برمی‌گرداند که بافت مرور (browsing context) داخل پنجره `DocumentPictureInPicture` را نشان می‌دهد؛ همان پنجره‌ای که رویداد روی آن رخ داده است.
 
-## Value
+## مقدار
 
-A {{domxref("Window")}} object instance.
+یک نمونه از شیء {{domxref("Window")}}.
 
-## Examples
+## مثال‌ها
 
 ```js
 documentPictureInPicture.addEventListener("enter", (event) => {
@@ -45,15 +38,15 @@ documentPictureInPicture.addEventListener("enter", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Document Picture-in-Picture API", "Document Picture-in-Picture API", "", "nocode")}}
-- [Using the Document Picture-in-Picture API](/en-US/docs/Web/API/Document_Picture-in-Picture_API/Using)
+- [استفاده از Document Picture-in-Picture API](/en-US/docs/Web/API/Document_Picture-in-Picture_API/Using)
