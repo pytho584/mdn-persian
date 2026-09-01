@@ -1,10 +1,4 @@
 ---
-title: "EventSource"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EventSource"
-status: "needs-translation"
----
-
----
 title: EventSource
 slug: Web/API/EventSource
 page-type: web-api-interface
@@ -13,56 +7,56 @@ browser-compat: api.EventSource
 
 {{APIRef("Server Sent Events")}}{{AvailableInWorkers}}
 
-The **`EventSource`** interface is web content's interface to [server-sent events](/en-US/docs/Web/API/Server-sent_events).
+رابط **`EventSource`** درگاه محتوای وب به [رویدادهای ارسال‌شده از سمت سرور](/en-US/docs/Web/API/Server-sent_events) است.
 
-An `EventSource` instance opens a persistent connection to an [HTTP](/en-US/docs/Web/HTTP) server, which sends [events](/en-US/docs/Learn_web_development/Core/Scripting/Events) in `text/event-stream` format. The connection remains open until closed by calling {{domxref("EventSource.close()")}}.
+یک نمونه از `EventSource` یک اتصال پایدار به یک سرور [HTTP](/en-US/docs/Web/HTTP) باز می‌کند که رویدادها را در قالب `text/event-stream` ارسال می‌کند. این اتصال تا زمانی که با فراخوانی {{domxref("EventSource.close()")}} بسته نشود، باز می‌ماند.
 
 {{InheritanceDiagram}}
 
-Once the connection is opened, incoming messages from the server are delivered to your code in the form of events. If there is an event field in the incoming message, the triggered event is the same as the event field value. If no event field is present, then a generic {{domxref("EventSource/message_event", "message")}} event is fired.
+هنگامی که اتصال برقرار شد، پیام‌های دریافتی از سرور در قالب رویداد به کد شما تحویل داده می‌شوند. اگر پیام دریافتی دارای فیلد `event` باشد، رویداد فعال‌شده همان مقدار آن فیلد است. اگر فیلد `event` وجود نداشته باشد، یک رویداد {{domxref("EventSource/message_event", "message")}} عمومی صادر می‌شود.
 
-Unlike [WebSockets](/en-US/docs/Web/API/WebSockets_API), server-sent events are unidirectional; that is, data messages are delivered in one direction, from the server to the client (such as a user's web browser). That makes them an excellent choice when there's no need to send data from the client to the server in message form. For example, `EventSource` is a useful approach for handling things like social media status updates, news feeds, or delivering data into a [client-side storage](/en-US/docs/Learn_web_development/Extensions/Client-side_APIs/Client-side_storage) mechanism like [IndexedDB](/en-US/docs/Web/API/IndexedDB_API) or [web storage](/en-US/docs/Web/API/Web_Storage_API).
+برخلاف [WebSockets](/en-US/docs/Web/API/WebSockets_API)، رویدادهای ارسال‌شده از سمت سرور یک‌طرفه هستند؛ یعنی پیام‌های داده فقط در یک جهت، از سرور به کلاینت (مانند مرورگر وب کاربر)، ارسال می‌شوند. همین ویژگی آن‌ها را به گزینه‌ای بسیار مناسب تبدیل می‌کند وقتی نیازی به ارسال داده از سمت کلاینت به سرور در قالب پیام وجود ندارد. برای مثال، `EventSource` رویکردی مفید برای مدیریت چیزهایی مانند به‌روزرسانی وضعیت شبکه‌های اجتماعی، خوراک‌های خبری، یا انتقال داده به سازوکار ذخیره‌سازی سمت کلاینت مانند [IndexedDB](/en-US/docs/Web/API/IndexedDB_API) یا [web storage](/en-US/docs/Web/API/Web_Storage_API) است.
 
 > [!WARNING]
-> When **not used over HTTP/2**, SSE suffers from a limitation to the maximum number of open connections, which can be specially painful when opening various tabs as the limit is _per browser_ and set to a very low number (6). The issue has been marked as "Won't fix" in [Chrome](https://crbug.com/275955) and [Firefox](https://bugzil.la/906896). This limit is per browser + domain, so that means that you can open 6 SSE connections across all of the tabs to `www.example1.com` and another 6 SSE connections to `www.example2.com`. (from [Stack Overflow](https://stackoverflow.com/questions/5195452/websockets-vs-server-sent-events-eventsource/5326159)). When using HTTP/2, the maximum number of simultaneous _HTTP streams_ is negotiated between the server and the client (defaults to 100).
+> وقتی از **HTTP/2 استفاده نشود**، SSE با محدودیت حداکثر تعداد اتصال‌های باز مواجه است؛ این محدودیت به‌ویژه زمانی آزاردهنده است که تب‌های مختلفی باز می‌کنید، چون سقف مجاز _به‌ازای هر مرورگر_ است و عدد بسیار کمی (۶) تعیین شده است. این مشکل در [Chrome](https://crbug.com/275955) و [Firefox](https://bugzil.la/906896) با وضعیت «Won't fix» (قابل اصلاح نیست) علامت‌گذاری شده است. این محدودیت به‌ازای هر مرورگر + دامنه اعمال می‌شود؛ یعنی می‌توانید در همه تب‌ها ۶ اتصال SSE به `www.example1.com` و ۶ اتصال SSE جداگانه به `www.example2.com` باز کنید (برگرفته از [Stack Overflow](https://stackoverflow.com/questions/5195452/websockets-vs-server-sent-events-eventsource/5326159)). هنگام استفاده از HTTP/2، حداکثر تعداد _جریان‌های HTTP_ همزمان بین سرور و کلاینت توافق می‌شود (پیش‌فرض ۱۰۰).
 
-## Constructor
+## سازنده
 
 - {{domxref("EventSource.EventSource", "EventSource()")}}
-  - : Creates a new `EventSource` to handle receiving server-sent events from a specified URL, optionally in credentials mode.
+  - : یک `EventSource` جدید برای دریافت رویدادهای ارسال‌شده از سمت سرور از یک URL مشخص می‌سازد؛ به صورت اختیاری در حالت credentials (اعتبارنامه).
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface also inherits properties from its parent, {{domxref("EventTarget")}}._
+_این رابط همچنین ویژگی‌های والد خود، {{domxref("EventTarget")}} را به ارث می‌برد._
 
 - {{domxref("EventSource.readyState")}} {{ReadOnlyInline}}
-  - : A number representing the state of the connection. Possible values are `CONNECTING` (`0`), `OPEN` (`1`), or `CLOSED` (`2`).
+  - : عددی که وضعیت اتصال را نشان می‌دهد. مقادیر ممکن عبارت‌اند از `CONNECTING` (`0`)، `OPEN` (`1`) یا `CLOSED` (`2`).
 - {{domxref("EventSource.url")}} {{ReadOnlyInline}}
-  - : A string representing the URL of the source.
+  - : رشته‌ای که URL منبع رویداد را نشان می‌دهد.
 - {{domxref("EventSource.withCredentials")}} {{ReadOnlyInline}}
-  - : A boolean value indicating whether the `EventSource` object was instantiated with cross-origin ([CORS](/en-US/docs/Web/HTTP/Guides/CORS)) credentials set (`true`), or not (`false`, the default).
+  - : مقدار بولی که مشخص می‌کند آیا شیء `EventSource` با اعتبارنامه‌های متقاطع-مبدأ ([CORS](/en-US/docs/Web/HTTP/Guides/CORS)) ساخته شده است (`true`) یا نه (`false`، پیش‌فرض).
 
-## Instance methods
+## متدهای نمونه
 
-_This interface also inherits methods from its parent, {{domxref("EventTarget")}}._
+_این رابط همچنین متدهای والد خود، {{domxref("EventTarget")}} را به ارث می‌برد._
 
 - {{domxref("EventSource.close()")}}
-  - : Closes the connection, if any, and sets the `readyState` attribute to `CLOSED`. If the connection is already closed, the method does nothing.
+  - : اگر اتصالی برقرار باشد، آن را می‌بندد و ویژگی `readyState` را روی `CLOSED` تنظیم می‌کند. اگر اتصال از قبل بسته شده باشد، این متد هیچ کاری انجام نمی‌دهد.
 
-## Events
+## رویدادها
 
 - {{domxref("EventSource/error_event", "error")}}
-  - : Fired when a connection to an event source failed to open.
+  - : زمانی صادر می‌شود که اتصال به یک منبع رویداد باز نشود.
 - {{domxref("EventSource/message_event", "message")}}
-  - : Fired when data is received from an event source.
+  - : زمانی صادر می‌شود که داده‌ای از یک منبع رویداد دریافت شود.
 - {{domxref("EventSource/open_event", "open")}}
-  - : Fired when a connection to an event source has opened.
+  - : زمانی صادر می‌شود که اتصال به یک منبع رویداد باز شده باشد.
 
-Additionally, the event source itself may send messages with an event field, which will create ad hoc events keyed to that value.
+علاوه بر این، خود منبع رویداد ممکن است پیام‌هایی با فیلد `event` ارسال کند که رویدادهای موردی (ad hoc) کلیدخورده با همان مقدار ایجاد می‌کنند.
 
-## Examples
+## مثال‌ها
 
-In this basic example, an `EventSource` is created to receive unnamed events from the server; a page with the name `sse.php` is responsible for generating the events.
+در این مثال ساده، یک `EventSource` برای دریافت رویدادهای بدون نام از سرور ساخته شده است؛ صفحه‌ای با نام `sse.php` مسئول تولید این رویدادهاست.
 
 ```js
 const evtSource = new EventSource("sse.php");
@@ -76,12 +70,12 @@ evtSource.onmessage = (e) => {
 };
 ```
 
-Each received event causes our `EventSource` object's `onmessage` event handler to be run. It, in turn, creates a new {{HTMLElement("li")}} element and writes the message's data into it, then appends the new element to the list element already in the document.
+هر رویداد دریافتی باعث اجرای هندلر رویداد `onmessage` در شیء `EventSource` ما می‌شود. این هندلر به نوبه خود یک عنصر جدید {{HTMLElement("li")}} می‌سازد، داده پیام را در آن می‌نویسد و عنصر جدید را به عنصر فهرست موجود در سند اضافه می‌کند.
 
 > [!NOTE]
-> You can find a full example on GitHub — see [Simple SSE demo using PHP](https://github.com/mdn/dom-examples/tree/main/server-sent-events).
+> می‌توانید یک مثال کامل را روی GitHub ببینید — [Simple SSE demo using PHP](https://github.com/mdn/dom-examples/tree/main/server-sent-events).
 
-To listen to named events, you'll require a listener for each type of event sent.
+برای گوش دادن به رویدادهای نام‌دار، باید برای هر نوع رویداد ارسالی یک شنونده (listener) داشته باشید.
 
 ```js
 const sse = new EventSource("/api/v1/sse");
@@ -118,15 +112,15 @@ sse.addEventListener("message", (e) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Server-sent events](/en-US/docs/Web/API/Server-sent_events)
-- [Using server-sent events](/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events)
+- [رویدادهای ارسال‌شده از سمت سرور](/en-US/docs/Web/API/Server-sent_events)
+- [استفاده از رویدادهای ارسال‌شده از سمت سرور](/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events)
