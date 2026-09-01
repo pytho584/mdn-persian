@@ -1,7 +1,5 @@
 ---
 title: "Document: caretPositionFromPoint() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/caretPositionFromPoint"
-status: "needs-translation"
 ---
 
 ---
@@ -14,46 +12,45 @@ browser-compat: api.Document.caretPositionFromPoint
 
 {{APIRef("CSSOM view API")}}
 
-The **`caretPositionFromPoint()`** method of the {{domxref("Document")}} interface returns a {{domxref('CaretPosition')}} object, containing the DOM node, along with the caret and caret's character offset within that node.
+متد **`caretPositionFromPoint()`** از رابط {{domxref("Document")}} یک شیء {{domxref('CaretPosition')}} برمی‌گرداند که شامل گره DOM، و همچنین مکان‌نما و افست کاراکتری مکان‌نما درون آن گره است.
 
-## Syntax
+## نحو
 
 ```js-nolint
 caretPositionFromPoint(x, y)
 caretPositionFromPoint(x, y, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `x`
-  - : The horizontal coordinate of a point.
+  - : مختصات افقی یک نقطه.
 - `y`
-  - : The vertical coordinate of a point.
+  - : مختصات عمودی یک نقطه.
 - `options` {{optional_inline}}
-  - : The following optional properties may also be specified.
+  - : ویژگی‌های اختیاری زیر نیز می‌توانند مشخص شوند.
     - `shadowRoots` {{optional_inline}}
-      - : An array of {{domxref("ShadowRoot")}} objects.
-        The method can return a caret position for a node that is defined within the shadow DOM of a supplied shadow root.
-        If the caret position falls within a shadow root that is not supplied, the returned `CaretPosition` will be remapped to the node that is the host of the shadow root.
+      - : آرایه‌ای از شیءهای {{domxref("ShadowRoot")}}.
+        این متد می‌تواند موقعیت مکان‌نما را برای گره‌ای که درون Shadow DOM یک ریشه سایه‌ی ارائه‌شده تعریف شده است بازگرداند.
+        اگر موقعیت مکان‌نما درون یک ریشه سایه باشد که ارائه نشده است، {{domxref('CaretPosition')}} بازگشتی به گره‌ای که میزبان ریشه سایه است نقشه‌برداری مجدد می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref('CaretPosition')}} object or `null`.
+یک شیء {{domxref('CaretPosition')}} یا `null`.
 
-The returned value is `null` if there is no viewport associated with the document, if the `x` or `y` are negative or outside of the viewport region, or if the coordinates indicate a point where no text insertion point indicator could be inserted.
+اگر هیچ نمای دید (viewport) مرتبط با سند وجود نداشته باشد، اگر `x` یا `y` منفی یا خارج از ناحیه نمای دید باشند، یا اگر مختصات به نقطه‌ای اشاره کنند که در آن هیچ نشانگر نقطه‌ی درج متن نمی‌تواند قرار گیرد، مقدار بازگشتی `null` خواهد بود.
 
-## Examples
+## مثال‌ها
 
-### Split text nodes at caret position in DOM
+### تقسیم گره‌های متنی در موقعیت مکان‌نما در DOM
 
-This example demonstrates how to get the caret position from a selected DOM node, use the position to split the node, and insert a line break between the two nodes.
-The example uses `caretPositionFromPoint()` to get the caret position if supported, with the non-standard {{domxref("Document.caretRangeFromPoint()")}} method as a fallback.
+این مثال نشان می‌دهد که چگونه می‌توان موقعیت مکان‌نما را از یک گره DOM انتخاب‌شده به‌دست آورد، از این موقعیت برای تقسیم گره استفاده کرد، و یک شکست خط (line break) بین دو گره درج کرد. این مثال از `caretPositionFromPoint()` برای دریافت موقعیت مکان‌نما در صورت پشتیبانی استفاده می‌کند و در غیر این صورت از متد غیراستاندارد {{domxref("Document.caretRangeFromPoint()")}} به‌عنوان جایگزین استفاده می‌کند.
 
-Note that some parts of the code are hidden, including code used for logging, as this is not useful for understanding this method.
+توجه داشته باشید که بخش‌هایی از کد، از جمله کد مورد استفاده برای ثبت وقایع (logging)، پنهان شده‌اند؛ زیرا برای درک این متد مفید نیستند.
 
 #### HTML
 
-The HTML defines a paragraph of text.
+HTML یک پاراگراف متن را تعریف می‌کند.
 
 ```html hidden
 <div id="message">
@@ -117,10 +114,9 @@ reload.addEventListener("click", () => {
 
 #### JavaScript
 
-The method below first checks for `document.caretPositionFromPoint` support and uses it to get the text node and offset at the caret position.
-If the browser doesn't support that method, the code then checks for {{domxref("Document.caretRangeFromPoint", "document.caretRangeFromPoint")}}, and uses that instead.
+متد زیر ابتدا پشتیبانی از `document.caretPositionFromPoint` را بررسی می‌کند و از آن برای دریافت گره متنی و افست در موقعیت مکان‌نما استفاده می‌کند. اگر مرورگر از آن متد پشتیبانی نکند، کد سپس {{domxref("Document.caretRangeFromPoint", "document.caretRangeFromPoint")}} را بررسی کرده و به‌جای آن از آن استفاده می‌کند.
 
-If the node at the caret position is a text node, the code then [splits the node](/en-US/docs/Web/API/Text/splitText) into two at the selected offset, and inserts a line break between the two nodes.
+اگر گره در موقعیت مکان‌نما یک گره متنی باشد، کد سپس [گره را](/en-US/docs/Web/API/Text/splitText) در افست انتخاب‌شده به دو بخش تقسیم می‌کند و یک شکست خط بین دو گره درج می‌کند.
 
 ```js
 function insertBreakAtPoint(e) {
@@ -159,7 +155,7 @@ function insertBreakAtPoint(e) {
 }
 ```
 
-The method is the added as the click event handler for any paragraph elements.
+این متد به‌عنوان کنترل‌کننده رویداد کلیک برای هر عنصر پاراگراف اضافه شده است.
 
 ```js
 const paragraphs = document.getElementsByTagName("p");
@@ -192,26 +188,21 @@ if (document.caretPositionFromPoint) {
 }
 ```
 
-#### Results
+#### نتایج
 
-Click anywhere in the **Lorem ipsum ...** paragraph below to insert a line break at the point where you click.
-Note that the log shows the `nodeName`, the offset, and a fragment of the selected node with a `^` character at the offset.
+برای درج شکست خط در نقطه‌ای که کلیک می‌کنید، در هر جای پاراگراف **Lorem ipsum ...** زیر کلیک کنید. توجه داشته باشید که گزارش (log) نام گره (`nodeName`)، افست، و بخشی از گره انتخاب‌شده را با کاراکتر `^` در محل افست نشان می‌دهد.
 
 {{EmbedLiveSample('Split text nodes at caret position in DOM','100%','400px')}}
 
-### Split text nodes at caret positions in a Shadow DOM
+### تقسیم گره‌های متنی در موقعیت‌های مکان‌نما در یک Shadow DOM
 
-This example demonstrates how to get the caret position from a selected node within a shadow root.
-The example is very similar to the DOM-only example above, except that some of the text is inside a shadow root.
-We provide a button to allow you to see the difference when a shadow root is passed/not passed to `caretPositionFromPoint()`.
+این مثال نشان می‌دهد که چگونه می‌توان موقعیت مکان‌نما را از یک گره انتخاب‌شده درون یک ریشه سایه (shadow root) به‌دست آورد. این مثال بسیار شبیه به مثال فقط-DOM در بالا است، با این تفاوت که بخشی از متن درون یک ریشه سایه قرار دارد. ما یک دکمه برای این فراهم کرده‌ایم تا تفاوت زمانی که یک ریشه سایه به `caretPositionFromPoint()` ارسال می‌شود/ارسال نمی‌شود را ببینید.
 
-Note that some parts of the code are hidden, including code used for logging, as this is not useful for understanding this method.
+توجه داشته باشید که بخش‌هایی از کد، از جمله کد مورد استفاده برای ثبت وقایع (logging)، پنهان شده‌اند؛ زیرا برای درک این متد مفید نیستند.
 
 #### HTML
 
-The HTML defines a paragraph of text inside a {{htmlelement("div")}} element.
-The paragraph contains a {{htmlelement("span")}} element with the `id` of "host" that we will use as the host for a shadow root.
-There are also some buttons that we'll use to reset the example, and to Add/Remove the shadow root option argument to `caretPositionFromPoint()`.
+HTML یک پاراگراف متن را درون یک عنصر {{htmlelement("div")}} تعریف می‌کند. پاراگراف شامل یک عنصر {{htmlelement("span")}} با `id` برابر با "host" است که از آن به‌عنوان میزبان یک ریشه سایه استفاده خواهیم کرد. همچنین چند دکمه وجود دارد که برای بازنشانی مثال و برای افزودن/حذف آرگومان گزینه‌ی ریشه سایه به `caretPositionFromPoint()` استفاده می‌کنیم.
 
 ```html hidden
 <div id="message">
@@ -240,8 +231,7 @@ There are also some buttons that we'll use to reset the example, and to Add/Remo
 
 #### CSS
 
-Here we use CSS to make the `#host` element red and bold.
-This makes it easier to distinguish between text in the DOM and text in the shadow DOM.
+در اینجا از CSS استفاده می‌کنیم تا عنصر `#host` قرمز و توپُر (bold) شود. این کار تمایز بین متن در DOM و متن در Shadow DOM را آسان‌تر می‌کند.
 
 ```css
 #host {
@@ -288,9 +278,7 @@ reload.addEventListener("click", () => {
 });
 ```
 
-First we have some code to populate our shadow DOM.
-We're using JavaScript to attach a shadow root dynamically, because the MDN example system does not allow us to do this declaratively using the {{htmlelement("template")}} element.
-The content of the shadow DOM is a {{htmlelement("span")}} element that contains the text "I'm in the shadow DOM".
+ابتدا کدی داریم که Shadow DOM ما را پر می‌کند. ما از JavaScript برای پیوست کردن یک ریشه سایه به‌صورت پویا استفاده می‌کنیم، زیرا سیستم مثال‌های MDN به ما اجازه نمی‌دهد این کار را به‌صورت اعلانی (declarative) با استفاده از عنصر {{htmlelement("template")}} انجام دهیم. محتوای Shadow DOM یک عنصر {{htmlelement("span")}} است که متن «I'm in the shadow DOM» را در خود دارد.
 
 ```js
 const host = document.querySelector("#host");
@@ -300,8 +288,7 @@ shadowSpan.textContent = "I'm in the shadow DOM";
 shadow.appendChild(shadowSpan);
 ```
 
-Next we add a handler for our "Enable/Disable shadow" button.
-This code toggles the value of the `useShadows` variable and updates the button text appropriately.
+سپس یک کنترل‌کننده رویداد برای دکمهٔ «Enable/Disable shadow» اضافه می‌کنیم. این کد مقدار متغیر `useShadows` را تغییر می‌دهد و متن دکمه را به‌طور مناسب به‌روزرسانی می‌کند.
 
 ```js
 let useShadows = false;
@@ -313,12 +300,11 @@ shadowButton.addEventListener("click", () => {
 });
 ```
 
-The method below first checks for `document.caretPositionFromPoint` support and uses it to get the text node and offset at the caret position.
-The value of the `useShadows` variable is used to determine whether the shadow root hosted in our text is passed to `caretPositionFromPoint()`.
+متد زیر ابتدا پشتیبانی از `document.caretPositionFromPoint` را بررسی می‌کند و از آن برای دریافت گره متنی و افست در موقعیت مکان‌نما استفاده می‌کند. مقدار متغیر `useShadows` برای تعیین اینکه آیا ریشه سایه میزبانی‌شده در متن ما به `caretPositionFromPoint()` ارسال شود یا نه استفاده می‌شود.
 
-- If the browser doesn't support that method, the code then checks for {{domxref("Document.caretRangeFromPoint", "document.caretRangeFromPoint")}}, and uses that instead.
-- If the node at the caret position is a text node, the code then splits the node at the selected offset, and inserts a line break between them.
-- If the node is an element node, then the code inserts a line break element node at the offset.
+- اگر مرورگر از آن متد پشتیبانی نکند، کد سپس {{domxref("Document.caretRangeFromPoint", "document.caretRangeFromPoint")}} را بررسی کرده و به‌جای آن از آن استفاده می‌کند.
+- اگر گره در موقعیت مکان‌نما یک گره متنی باشد، کد سپس گره را در افست انتخاب‌شده تقسیم می‌کند و یک شکست خط بین آنها درج می‌کند.
+- اگر گره یک گره عنصر باشد، کد یک گره عنصر شکست خط را در افست درج می‌کند.
 
 ```js
 function insertBreakAtPoint(e) {
@@ -381,8 +367,7 @@ ${caretInText}`,
 }
 ```
 
-Finally we add two click event handlers for paragraph elements in the DOM and in the shadow root, respectively.
-Note that we need to specifically query the elements within the `shadowRoot` as they are not visible to normal DOM query methods.
+در نهایت، دو کنترل‌کننده رویداد کلیک برای عناصر پاراگراف به‌ترتیب در DOM و در ریشه سایه اضافه می‌کنیم. توجه داشته باشید که باید عناصر درون `shadowRoot` را به‌طور خاص جست‌وجو کنیم، زیرا آنها برای روش‌های معمول جست‌وجوی DOM قابل مشاهده نیستند.
 
 ```js
 // Click event handler <p> elements in the DOM
@@ -423,28 +408,24 @@ if (document.caretPositionFromPoint) {
 }
 ```
 
-#### Results
+#### نتایج
 
-Click in the **Lorem ipsum ...** paragraph before or after the shadow DOM text to insert a line break at the point where you click.
-Note that in this case the log shows you have selected a `TEXT_NODE`, the offset, and a fragment of the selected node with a `^` character at the offset.
+در پاراگراف **Lorem ipsum ...** قبل یا بعد از متن Shadow DOM کلیک کنید تا در نقطه‌ای که کلیک می‌کنید یک شکست خط درج شود. توجه کنید که در این حالت، گزارش به شما نشان می‌دهد که یک `TEXT_NODE` انتخاب کرده‌اید، همچنین افست و بخشی از گره انتخاب‌شده با کاراکتر `^` در محل افست.
 
-Initially the shadow root is not passed to `caretPositionFromPoint()`, so if you click on the text "I'm in the shadow DOM", the returned caret position node is the parent node of the host, at the offset of the shadow root.
-The line break therefore gets added before the node rather than the point you selected.
-Note that the caret position node in this case has the type `ELEMENT_NODE`.
+در ابتدا ریشه سایه به `caretPositionFromPoint()` ارسال نمی‌شود، بنابراین اگر روی متن «I'm in the shadow DOM» کلیک کنید، گره موقعیت مکان‌نمای بازگشتی، گره والد میزبان، در افست ریشه سایه خواهد بود. بنابراین شکست خط قبل از گره اضافه می‌شود، نه در نقطه‌ای که انتخاب کرده‌اید. توجه داشته باشید که در این حالت گره موقعیت مکان‌نما دارای نوع `ELEMENT_NODE` است.
 
-If you click the "Add shadow" button, the shadow root is passed to `caretPositionFromPoint()`, so the returned caret position is the specific selected node within the shadow DOM.
-This makes the shadow DOM text behave like the other paragraph text.
+اگر روی دکمه «Add shadow» کلیک کنید، ریشه سایه به `caretPositionFromPoint()` ارسال می‌شود، بنابراین موقعیت مکان‌نمای بازگشتی، گره انتخاب‌شده‌ی خاص درون Shadow DOM است. این کار باعث می‌شود متن Shadow DOM مانند سایر متن‌های پاراگراف رفتار کند.
 
 {{EmbedLiveSample('Split text nodes at caret positions in a Shadow DOM','100%','400px')}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref('CaretPosition')}}
