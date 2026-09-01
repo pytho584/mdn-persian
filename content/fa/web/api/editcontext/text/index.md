@@ -1,11 +1,5 @@
 ---
 title: "EditContext: text property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EditContext/text"
-status: "needs-translation"
----
-
----
-title: "EditContext: text property"
 short-title: text
 slug: Web/API/EditContext/text
 page-type: web-api-instance-property
@@ -16,21 +10,21 @@ browser-compat: api.EditContext.text
 
 {{APIRef("EditContext API")}}{{SeeCompatTable}}
 
-The **`text`** read-only property of the {{domxref("EditContext")}} interface represents the editable content of the element.
+خاصیت فقط‌خواندنی **`text`** در رابط {{domxref("EditContext")}} محتوای قابل‌ویرایش عنصر را نمایش می‌دهد.
 
-## Value
+## مقدار
 
-A string containing the current editable content of the element that's attached to the `EditContext` object. Its initial value is the empty string.
+یک رشته که محتوای قابل‌ویرایش فعلی عنصر متصل به شیء `EditContext` را شامل می‌شود. مقدار اولیهٔ آن، رشتهٔ خالی است.
 
-This string may or may not be equal to the value of the {{domxref("Node.textContent", "textContent")}} property of the DOM element that's associated to the `EditContext`. The associated element might, for example, be a `<canvas>` element, which doesn't have a `textContent` property. Or, the associated element might be a `<div>` element that contains text that's different than the `EditContext.text` value, for more advanced rendering.
+این رشته ممکن است با مقدار خاصیت {{domxref("Node.textContent", "textContent")}} عنصر DOM مرتبط با `EditContext` برابر باشد یا نباشد. برای مثال، عنصر مرتبط می‌تواند یک عنصر `<canvas>` باشد که خاصیت `textContent` ندارد. یا عنصر مرتبط می‌تواند یک عنصر `<div>` باشد که متنی متفاوت از مقدار `EditContext.text` را برای رندر پیشرفته‌تر در خود جای می‌دهد.
 
-The `text` property of the `EditContext` object can be used as the model for the editable text region. Other properties of the `EditContext` object, such as `selectionStart` and `selectionEnd` refer to offsets within the `text` string.
+خاصیت `text` شیء `EditContext` می‌تواند به‌عنوان مدل ناحیهٔ متن قابل‌ویرایش استفاده شود. سایر ویژگی‌های شیء `EditContext` مانند `selectionStart` و `selectionEnd` به آفست‌هایی درون رشتهٔ `text` اشاره می‌کنند.
 
-## Examples
+## مثال‌ها
 
-### Using `text` to render the text in an editable canvas
+### استفاده از `text` برای رندر کردن متن در یک بوم قابل‌ویرایش
 
-In the following example, the EditContext API is used to render the text a user enters in a `<canvas>` element.
+در مثال زیر، از EditContext API برای رندر کردن متنی که کاربر در یک عنصر `<canvas>` وارد می‌کند، استفاده شده است.
 
 ```html
 <canvas id="editor-canvas"></canvas>
@@ -53,10 +47,10 @@ editContext.addEventListener("textupdate", (e) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
