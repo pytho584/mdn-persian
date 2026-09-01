@@ -1,11 +1,5 @@
 ---
 title: "GPURenderPassEncoder: setScissorRect() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder/setScissorRect"
-status: "needs-translation"
----
-
----
-title: "GPURenderPassEncoder: setScissorRect() method"
 short-title: setScissorRect()
 slug: Web/API/GPURenderPassEncoder/setScissorRect
 page-type: web-api-instance-method
@@ -14,8 +8,7 @@ browser-compat: api.GPURenderPassEncoder.setScissorRect
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`setScissorRect()`** method of the
-{{domxref("GPURenderPassEncoder")}} interface sets the scissor rectangle used during the rasterization stage. After transformation into viewport coordinates any fragments that fall outside the scissor rectangle will be discarded.
+متد **`setScissorRect()`** از رابط {{domxref("GPURenderPassEncoder")}} مستطیل برش (scissor rectangle) مورد استفاده در مرحله راستری‌سازی را تنظیم می‌کند. پس از تبدیل به مختصات viewport، هر قطعه‌ای که خارج از مستطیل برش قرار گیرد، دور انداخته می‌شود.
 
 ## Syntax
 
@@ -26,36 +19,36 @@ setScissorRect(x, y, width, height)
 ### Parameters
 
 - `x`
-  - : A number representing the minimum X value of the scissor rectangle, in pixels.
+  - : عددی که نشان‌دهنده حداقل مقدار X مستطیل برش، بر حسب پیکسل است.
 - `y`
-  - : A number representing the minimum Y value of the scissor rectangle, in pixels.
+  - : عددی که نشان‌دهنده حداقل مقدار Y مستطیل برش، بر حسب پیکسل است.
 - `width`
-  - : A number representing the width of the scissor rectangle, in pixels.
+  - : عددی که نشان‌دهنده عرض مستطیل برش، بر حسب پیکسل است.
 - `height`
-  - : A number representing the height of the scissor rectangle, in pixels.
+  - : عددی که نشان‌دهنده ارتفاع مستطیل برش، بر حسب پیکسل است.
 
 > [!NOTE]
-> If a `setScissorRect()` call is not made, the default values are `(0, 0, attachment width, attachment height)` for each render pass.
+> اگر فراخوانی `setScissorRect()` انجام نشود، مقادیر پیش‌فرض برای هر رندر پاس `(0, 0, عرض attachment, ارتفاع attachment)` خواهد بود.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
 ### Validation
 
-The following criteria must be met when calling **`setViewport()`**, otherwise a {{domxref("GPUValidationError")}} is generated and the {{domxref("GPURenderPassEncoder")}} becomes invalid:
+معیارهای زیر باید هنگام فراخوانی **`setViewport()`** رعایت شوند، در غیر این صورت یک {{domxref("GPUValidationError")}} تولید شده و {{domxref("GPURenderPassEncoder")}} نامعتبر می‌شود:
 
-- `x` + `width` is less than or equal to the width of the render pass's render attachments (see note below).
-- `y` + `height` is less than or equal to the height of the render pass's render attachments (see note below).
+- `x` + `width` کمتر یا مساوی عرض attachment‌های رندر رندر پاس است (به یادداشت زیر مراجعه کنید).
+- `y` + `height` کمتر یا مساوی ارتفاع attachment‌های رندر رندر پاس است (به یادداشت زیر مراجعه کنید).
 
 > [!NOTE]
-> See the color and depth/stencil attachments specified in the descriptor of {{domxref("GPUCommandEncoder.beginRenderPass()")}}; the width and height are based on that of the {{domxref("GPUTexture")}} that their `view`s originate from.
+> به attachment‌های رنگ و عمق/استنسیل مشخص‌شده در توصیف‌گر {{domxref("GPUCommandEncoder.beginRenderPass()")}} مراجعه کنید؛ عرض و ارتفاع بر اساس عرض و ارتفاع {{domxref("GPUTexture")}}ای است که `view`های آن از آن منشأ می‌گیرند.
 
 ## Examples
 
-### Basic snippet
+### مثال پایه
 
-In a typical canvas render, the following could be used to discard any rendering outside of the top-left quarter of the canvas:
+در یک رندر معمولی canvas، می‌توان از کد زیر برای دور انداختن هر رندرگیری خارج از ربع بالا-چپ canvas استفاده کرد:
 
 ```js
 passEncoder.setScissorRect(0, 0, canvas.width / 2, canvas.height / 2);
@@ -71,4 +64,4 @@ passEncoder.setScissorRect(0, 0, canvas.width / 2, canvas.height / 2);
 
 ## See also
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- رابط [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
