@@ -1,11 +1,5 @@
 ---
 title: "HTMLIFrameElement: name property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/name"
-status: "needs-translation"
----
-
----
-title: "HTMLIFrameElement: name property"
 short-title: name
 slug: Web/API/HTMLIFrameElement/name
 page-type: web-api-instance-property
@@ -14,13 +8,13 @@ browser-compat: api.HTMLIFrameElement.name
 
 {{APIRef("HTML DOM")}}
 
-The **`name`** property of the {{domxref("HTMLIFrameElement")}} interface is a string value that reflects the `name` attribute of the {{HTMLElement("iframe")}} element, indicating the specific name of the `<iframe>` element.
+ویژگی **`name`** در رابط {{domxref("HTMLIFrameElement")}} یک رشته است که ویژگی `name` عنصر {{HTMLElement("iframe")}} را بازتاب می‌دهد و نام خاص عنصر `<iframe>` را مشخص می‌کند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## نمونه‌ها
 
 ```html
 <iframe id="el" name="example"></iframe>
@@ -31,10 +25,10 @@ const el = document.getElementById("el");
 console.log(el.name); // Output: "example"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
