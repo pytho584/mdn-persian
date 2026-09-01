@@ -1,11 +1,5 @@
 ---
 title: "Document: fullscreenElement property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/fullscreenElement"
-status: "needs-translation"
----
-
----
-title: "Document: fullscreenElement property"
 short-title: fullscreenElement
 slug: Web/API/Document/fullscreenElement
 page-type: web-api-instance-property
@@ -14,29 +8,17 @@ browser-compat: api.Document.fullscreenElement
 
 {{ApiRef("Fullscreen API")}}
 
-The
-**`Document.fullscreenElement`** read-only
-property returns the {{ domxref("Element") }} that is currently being presented in
-fullscreen mode in this document, or `null` if fullscreen mode is not
-currently in use.
+ویژگی فقط-خواندنی **`Document.fullscreenElement`**، عنصر {{domxref("Element")}}ای را برمی‌گرداند که در حال حاضر در این سند در حالت تمام‌صفحه نمایش داده می‌شود؛ یا اگر حالت تمام‌صفحه در حال استفاده نباشد، مقدار `null` را برمی‌گرداند.
 
-Although this property is read-only, it will not throw if it is modified (even in
-strict mode); the setter is a no-operation and it will be ignored.
+اگرچه این ویژگی فقط-خواندنی است، اما در صورت تغییر آن (حتی در حالت سخت‌گیرانه) خطایی پرتاب نمی‌کند؛ ست‌کننده‌ی آن هیچ کاری انجام نمی‌دهد و نادیده گرفته می‌شود.
 
-## Value
+## مقدار
 
-The {{domxref("Element")}} object that's currently in fullscreen mode; if fullscreen
-mode isn't currently in use by the `document`, the returned
-value is `null`. If there are multiple elements in fullscreen mode, the topmost (most recently requested) element is returned.
+شیء {{domxref("Element")}} که در حال حاضر در حالت تمام‌صفحه قرار دارد؛ اگر حالت تمام‌صفحه در حال حاضر توسط `document` استفاده نشود، مقدار بازگشتی `null` است. اگر چندین عنصر در حالت تمام‌صفحه باشند، بالاترین عنصر (عنصری که آخرین بار درخواست شده) بازگردانده می‌شود.
 
-## Examples
+## مثال‌ها
 
-This example presents a function, `isVideoInFullscreen()`, which looks at
-the value returned by `fullscreenElement`; if the document is in fullscreen
-mode (`fullscreenElement` isn't `null`) and the fullscreen
-element's {{domxref("Node.nodeName", "nodeName")}} is `VIDEO`, indicating a
-{{HTMLElement("video")}} element, the function returns `true`, indicating
-that the video is in fullscreen mode.
+این مثال تابعی به نام `isVideoInFullscreen()` ارائه می‌دهد که مقدار بازگشتی `fullscreenElement` را بررسی می‌کند؛ اگر سند در حالت تمام‌صفحه باشد (`fullscreenElement` برابر با `null` نباشد) و {{domxref("Node.nodeName", "nodeName")}} عنصر تمام‌صفحه، `VIDEO` باشد — که نشان‌دهنده‌ی یک عنصر {{HTMLElement("video")}} است — تابع مقدار `true` برمی‌گرداند و نشان می‌دهد که ویدئو در حالت تمام‌صفحه است.
 
 ```js
 function isVideoInFullscreen() {
@@ -47,20 +29,19 @@ function isVideoInFullscreen() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Fullscreen API](/en-US/docs/Web/API/Fullscreen_API)
-- [Guide to the Fullscreen API](/en-US/docs/Web/API/Fullscreen_API/Guide)
+- [API تمام‌صفحه](/en-US/docs/Web/API/Fullscreen_API)
+- [راهنمای استفاده از API تمام‌صفحه](/en-US/docs/Web/API/Fullscreen_API/Guide)
 - {{ domxref("Element.requestFullscreen()") }}
 - {{ domxref("Document.exitFullscreen()") }}
-- {{ cssxref(":fullscreen") }} and {{cssxref("::backdrop")}}
-- The {{HTMLElement("iframe")}} [`allowfullscreen`](/en-US/docs/Web/HTML/Reference/Elements/iframe#allowfullscreen)
-  attribute
+- {{ cssxref(":fullscreen") }} و {{cssxref("::backdrop")}}
+- ویژگی [`allowfullscreen`](/en-US/docs/Web/HTML/Reference/Elements/iframe#allowfullscreen) عنصر {{HTMLElement("iframe")}}
