@@ -1,7 +1,5 @@
 ---
 title: "DOMRect"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMRect"
-status: "needs-translation"
 ---
 
 ---
@@ -13,59 +11,59 @@ browser-compat: api.DOMRect
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-A **`DOMRect`** describes the size and position of a rectangle.
+یک **`DOMRect`** اندازه و موقعیت یک مستطیل را توصیف می‌کند.
 
-The type of box represented by the `DOMRect` is specified by the method or property that returned it. For example, {{domxref("Range.getBoundingClientRect()")}} specifies the rectangle that bounds the content of the range using such objects.
+نوع جعبه‌ای که توسط `DOMRect` نمایش داده می‌شود، توسط متد یا ویژگی‌ای که آن را بازگردانده است، مشخص می‌شود. برای مثال، {{domxref("Range.getBoundingClientRect()")}} مستطیلی را مشخص می‌کند که محتوای محدوده را با استفاده از چنین اشیایی در بر می‌گیرد.
 
-It inherits from its parent, {{domxref("DOMRectReadOnly")}}.
+این رابط از والد خود، {{domxref("DOMRectReadOnly")}}، ارث‌بری می‌کند.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("DOMRect.DOMRect","DOMRect()")}}
-  - : Creates a new `DOMRect` object.
+  - : یک شیء `DOMRect` جدید ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_`DOMRect` inherits properties from its parent, {{domxref("DOMRectReadOnly")}}. The difference is that they are not read-only anymore._
+_`DOMRect` ویژگی‌ها را از والد خود، {{domxref("DOMRectReadOnly")}}، به ارث می‌برد. تفاوت در این است که آن‌ها دیگر فقط‌خواندنی نیستند._
 
 - {{domxref("DOMRect.x")}}
-  - : The x coordinate of the `DOMRect`'s origin (typically the top-left corner of the rectangle).
+  - : مختصات x مبدأ `DOMRect` (معمولاً گوشهٔ بالا-چپ مستطیل).
 - {{domxref("DOMRect.y")}}
-  - : The y coordinate of the `DOMRect`'s origin (typically the top-left corner of the rectangle).
+  - : مختصات y مبدأ `DOMRect` (معمولاً گوشهٔ بالا-چپ مستطیل).
 - {{domxref("DOMRect.width")}}
-  - : The width of the `DOMRect`.
+  - : عرض `DOMRect`.
 - {{domxref("DOMRect.height")}}
-  - : The height of the `DOMRect`.
+  - : ارتفاع `DOMRect`.
 - {{domxref("DOMRectReadOnly.top")}}
-  - : Returns the top coordinate value of the `DOMRect` (has the same value as `y`, or `y + height` if `height` is negative).
+  - : مقدار مختصات بالای `DOMRect` را برمی‌گرداند (همان مقدار `y`، یا اگر `height` منفی باشد، `y + height`).
 - {{domxref("DOMRectReadOnly.right")}}
-  - : Returns the right coordinate value of the `DOMRect` (has the same value as `x + width`, or `x` if `width` is negative).
+  - : مقدار مختصات راست `DOMRect` را برمی‌گرداند (همان مقدار `x + width`، یا اگر `width` منفی باشد، `x`).
 - {{domxref("DOMRectReadOnly.bottom")}}
-  - : Returns the bottom coordinate value of the `DOMRect` (has the same value as `y + height`, or `y` if `height` is negative).
+  - : مقدار مختصات پایین `DOMRect` را برمی‌گرداند (همان مقدار `y + height`، یا اگر `height` منفی باشد، `y`).
 - {{domxref("DOMRectReadOnly.left")}}
-  - : Returns the left coordinate value of the `DOMRect` (has the same value as `x`, or `x + width` if `width` is negative).
+  - : مقدار مختصات چپ `DOMRect` را برمی‌گرداند (همان مقدار `x`، یا اگر `width` منفی باشد، `x + width`).
 
-## Static methods
+## متدهای ایستا
 
-_`DOMRect` may also inherit static methods from its parent, {{domxref("DOMRectReadOnly")}}._
+_`DOMRect` ممکن است متدهای ایستا را نیز از والد خود، {{domxref("DOMRectReadOnly")}}، به ارث ببرد._
 
 - {{domxref("DOMRect/fromRect_static", "DOMRect.fromRect()")}}
-  - : Creates a new `DOMRect` object with a given location and dimensions.
+  - : یک شیء `DOMRect` جدید با موقعیت و ابعاد معین ایجاد می‌کند.
 
-## Instance methods
+## متدهای نمونه
 
-_`DOMRect` may inherit methods from its parent, {{domxref("DOMRectReadOnly")}}._
+_`DOMRect` ممکن است متدهایی را از والد خود، {{domxref("DOMRectReadOnly")}}، به ارث ببرد._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("DOMPoint")}}
