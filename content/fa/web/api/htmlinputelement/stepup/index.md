@@ -1,11 +1,5 @@
 ---
 title: "HTMLInputElement: stepUp() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/stepUp"
-status: "needs-translation"
----
-
----
-title: "HTMLInputElement: stepUp() method"
 short-title: stepUp()
 slug: Web/API/HTMLInputElement/stepUp
 page-type: web-api-instance-method
@@ -14,52 +8,44 @@ browser-compat: api.HTMLInputElement.stepUp
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLInputElement.stepUp()`** method increments the value
-of a numeric type of {{HTMLElement("input")}} element by the value of the
-[`step`](/en-US/docs/Web/HTML/Reference/Attributes/step) attribute, or the
-default `step` value if the step attribute is not explicitly set. The method,
-when invoked, increments the [`value`](/en-US/docs/Web/HTML/Reference/Elements/input#value) by
-([`step`](/en-US/docs/Web/HTML/Reference/Elements/input#step) \* n), where `n` defaults to
-`1` if not specified, and
-[`step`](/en-US/docs/Web/HTML/Reference/Attributes/step) defaults to the
-default value for `step` if not specified.
+متد **`HTMLInputElement.stepUp()`** مقدار یک عنصر {{HTMLElement("input")}} از نوع عددی را به اندازه‌ی مقدار ویژگی [`step`](/en-US/docs/Web/HTML/Reference/Attributes/step) یا در صورت عدم تعیین صریح ویژگی `step`، به اندازه‌ی مقدار پیش‌فرض `step` افزایش می‌دهد. این متد هنگام فراخوانی، مقدار [`value`](/en-US/docs/Web/HTML/Reference/Elements/input#value) را به اندازه‌ی ([`step`](/en-US/docs/Web/HTML/Reference/Elements/input#step) \* n) افزایش می‌دهد، که در آن `n` در صورت عدم مشخص‌شدن پیش‌فرض `1` است و [`step`](/en-US/docs/Web/HTML/Reference/Attributes/step) در صورت عدم مشخص‌شدن، مقدار پیش‌فرض خود را دارد.
 
 <table class="no-markdown">
   <thead>
     <tr>
-      <th>Input type</th>
-      <th>Default step value</th>
-      <th>Example step declaration</th>
+      <th>نوع ورودی</th>
+      <th>مقدار گام پیش‌فرض</th>
+      <th>نمونه اعلام گام</th>
     </tr>
     <tr>
       <td>{{HTMLElement("input/date", "date")}}</td>
-      <td><code>1</code> (day)</td>
+      <td><code>1</code> (روز)</td>
       <td>
-        7 day (one week) increments:<br />
+        افزایش‌های ۷ روزه (یک هفته):<br />
         <code>&#x3C;input type="date" min="2019-12-25" step="7"></code>
       </td>
     </tr>
     <tr>
       <td>{{HTMLElement("input/month", "month")}}</td>
-      <td><code>1</code> (month)</td>
+      <td><code>1</code> (ماه)</td>
       <td>
-        12 month (one year) increments:<br />
+        افزایش‌های ۱۲ ماهه (یک سال):<br />
         <code>&#x3C;input type="month" min="2019-12" step="12"></code>
       </td>
     </tr>
     <tr>
       <td>{{HTMLElement("input/week", "week")}}</td>
-      <td><code>1</code> (week)</td>
+      <td><code>1</code> (هفته)</td>
       <td>
-        Two week increments:<br />
+        افزایش‌های دو هفته‌ای:<br />
         <code>&#x3C;input type="week" min="2019-W23" step="2"></code>
       </td>
     </tr>
     <tr>
       <td>{{HTMLElement("input/time", "time")}}</td>
-      <td><code>60</code> (seconds)</td>
+      <td><code>60</code> (ثانیه)</td>
       <td>
-        900 second (15 minute) increments:<br />
+        افزایش‌های ۹۰۰ ثانیه‌ای (۱۵ دقیقه):<br />
         <code>&#x3C;input type="time" min="09:00" step="900"></code>
       </td>
     </tr>
@@ -67,9 +53,9 @@ default value for `step` if not specified.
       <td>
         {{HTMLElement("input/datetime-local", "datetime-local")}}
       </td>
-      <td><code>1</code> (day)</td>
+      <td><code>1</code> (روز)</td>
       <td>
-        Same day of the week:<br />
+        همان روز هفته:<br />
         <code>&#x3C;input type="datetime-local" min="019-12-25T19:30"
           step="7"></code>
       </td>
@@ -78,7 +64,7 @@ default value for `step` if not specified.
       <td>{{HTMLElement("input/number", "number")}}</td>
       <td><code>1</code></td>
       <td>
-        0.1 increments<br />
+        افزایش‌های ۰٫۱:<br />
         <code>&#x3C;input type="number" min="0" step="0.1" max="10"></code>
       </td>
     </tr>
@@ -86,74 +72,61 @@ default value for `step` if not specified.
       <td>{{HTMLElement("input/range", "range")}}</td>
       <td><code>1</code></td>
       <td>
-        Increments by 2:<br />
+        افزایش‌های ۲ تایی:<br />
         <code>&#x3C;input type="range" min="0" step="2" max="10"></code>
       </td>
     </tr>
   </thead>
 </table>
 
-The method, when invoked, changes the form control's value by the value given in the
-`step` attribute, multiplied by the parameter, within the constraints set on
-the form control. The default value for the parameter, if no value is passed, is
-`1`. The method will not cause the value to exceed the
-set [`max`](/en-US/docs/Web/HTML/Reference/Attributes/max) value, or defy
-the constraints set by the
-[`step`](/en-US/docs/Web/HTML/Reference/Attributes/step) attribute.
+این متد هنگام فراخوانی، مقدار کنترل فرم را به اندازه‌ی مقدار داده شده در ویژگی `step` ضرب‌در پارامتر، در محدوده‌ی قیود تعیین‌شده روی کنترل فرم تغییر می‌دهد. مقدار پیش‌فرض پارامتر در صورت عدم ارسال مقدار، `1` است. این متد باعث نمی‌شود که مقدار از مقدار تعیین‌شده‌ی [`max`](/en-US/docs/Web/HTML/Reference/Attributes/max) فراتر رود یا قیود تعیین‌شده توسط ویژگی [`step`](/en-US/docs/Web/HTML/Reference/Attributes/step) را نقض کند.
 
-If the value before invoking the `stepUp()` method is invalid—for example,
-if it doesn't match the constraints set by the step attribute—invoking the
-`stepUp()` method will return a value that does match the form controls
-constraints.
+اگر مقدار قبل از فراخوانی متد `stepUp()` نامعتبر باشد – برای مثال، با قیود تعیین‌شده توسط ویژگی step مطابقت نداشته باشد – فراخوانی متد `stepUp()` مقداری را برمی‌گرداند که با قیود کنترل فرم مطابقت داشته باشد.
 
-If the form control is non time, date, or numeric in nature, and therefore does not
-support the `step` attribute (see the list of supported input types in the
-table above), or if the step value is set to `any`, an
-`InvalidStateError` exception is thrown.
+اگر کنترل فرم از نوع غیر زمانی، تاریخی یا عددی باشد و بنابراین از ویژگی `step` پشتیبانی نکند (لیست انواع ورودی پشتیبانی‌شده را در جدول بالا ببینید)، یا اگر مقدار step برابر `any` تنظیم شده باشد، یک استثنا از نوع `InvalidStateError` پرتاب می‌شود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 stepUp()
 stepUp(stepIncrement)
 ```
 
-### Parameters
+### پارامترها
 
 - `stepIncrement` {{optional_inline}}
-  - : A numeric value. If no parameter is passed, `stepIncrement` defaults to `1`.
+  - : یک مقدار عددی. اگر پارامتری ارسال نشود، `stepIncrement` برابر `1` در نظر گرفته می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-Click the button in this example to increment the {{HTMLElement("input/number", "number")}} input type:
+روی دکمه در این مثال کلیک کنید تا نوع ورودی {{HTMLElement("input/number", "number")}} افزایش یابد:
 
 ### HTML
 
 ```html
 <p>
   <label for="theNumber">
-    Enter a number between 0 and 400 that is divisible by 5:
+    عددی بین 0 تا 400 که بر 5 بخش‌پذیر است وارد کنید:
   </label>
   <input type="number" step="5" id="theNumber" min="0" max="400" />
 </p>
 <p>
   <label>
-    Enter how many values of step you would like to increment by or leave it
-    blank:
+    تعداد مراحل گامی که می‌خواهید افزایش دهید را وارد کنید (یا خالی بگذارید):
   </label>
   <input type="number" step="1" id="incrementInput" min="0" max="25" />
 </p>
-<input type="button" value="Increment" id="theButton" />
+<input type="button" value="افزایش" id="theButton" />
 ```
 
 ### JavaScript
 
 ```js
-/* make the button call the function */
+/* دکمه را برای فراخوانی تابع تنظیم کنید */
 const button = document.getElementById("theButton");
 button.addEventListener("click", () => {
   stepOnUp();
@@ -164,10 +137,10 @@ function stepOnUp() {
   let val = document.getElementById("incrementInput").value;
 
   if (val) {
-    /* increment with a parameter */
+    /* افزایش با پارامتر */
     input.stepUp(val);
   } else {
-    /* or without a parameter. Try it with 0 */
+    /* یا بدون پارامتر. با 0 امتحان کنید */
     input.stepUp();
   }
 }
@@ -181,38 +154,27 @@ input:invalid {
 }
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples")}}
 
-Note if you don't pass a parameter to the `stepUp` method, it defaults to
-`1`. Any other value is a multiplier of the `step` attribute
-value, which in this case is `5`. If you pass `4` as the
-`stepIncrement`, the input will `stepUp` by
-`4 * 5`, or `20`. If the parameter is `0`, the number
-will not be incremented. The stepUp will not allow the input to out of range, in this
-case stopping when it reaches `400`, and rounding down any floats that are
-passed as a parameter.
+توجه کنید که اگر پارامتری به متد `stepUp` ارسال نکنید، مقدار پیش‌فرض آن `1` است. هر مقدار دیگر ضریبی از مقدار ویژگی `step` است که در اینجا `5` می‌باشد. اگر `4` را به عنوان `stepIncrement` ارسال کنید، ورودی به اندازه‌ی `4 * 5` یا `20` افزایش می‌یابد. اگر پارامتر `0` باشد، عدد افزایش نمی‌یابد. `stepUp` اجازه نمی‌دهد ورودی از محدوده خارج شود، در اینجا هنگام رسیدن به `400` متوقف می‌شود و هر عدد اعشاری که به عنوان پارامتر ارسال شود را به پایین گرد می‌کند.
 
-Try setting the step increment input to `1.2`. What happens when you invoke the
-method?
+سعی کنید ورودی افزایش گام را روی `1.2` تنظیم کنید. هنگام فراخوانی متد چه اتفاقی می‌افتد؟
 
-Try setting the value to `4`, which is not valid. What happens when you
-invoke the method?
+سعی کنید مقدار را روی `4` تنظیم کنید که معتبر نیست. هنگام فراخوانی متد چه اتفاقی می‌افتد؟
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTMLElement("input")}}
 - {{domxref("HTMLInputElement")}}
 - {{domxref("HTMLInputElement.stepDown")}}
-- [`step`](/en-US/docs/Web/HTML/Reference/Attributes/step),
-  [`min`](/en-US/docs/Web/HTML/Reference/Attributes/min) and
-  [`max`](/en-US/docs/Web/HTML/Reference/Attributes/max) attributes
+- ویژگی‌های [`step`](/en-US/docs/Web/HTML/Reference/Attributes/step)، [`min`](/en-US/docs/Web/HTML/Reference/Attributes/min) و [`max`](/en-US/docs/Web/HTML/Reference/Attributes/max)
