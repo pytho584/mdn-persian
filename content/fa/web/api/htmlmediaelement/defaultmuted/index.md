@@ -1,9 +1,4 @@
----
-title: "HTMLMediaElement: defaultMuted property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/defaultMuted"
-status: "needs-translation"
----
-
+```markdown
 ---
 title: "HTMLMediaElement: defaultMuted property"
 short-title: defaultMuted
@@ -14,13 +9,13 @@ browser-compat: api.HTMLMediaElement.defaultMuted
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLMediaElement.defaultMuted`** property reflects the [`muted`](/en-US/docs/Web/HTML/Reference/Elements/video#muted) HTML attribute, which indicates whether the media element's audio output should be muted by default. This property has no dynamic effect. To mute and unmute the audio output, use the {{domxref("HTMLMediaElement.muted", "muted")}} property.
+ویژگی **`HTMLMediaElement.defaultMuted`** منعکس‌کنندهٔ [`ویژگی HTML`](/en-US/docs/Web/HTML/Reference/Elements/video#muted) `muted` است که مشخص می‌کند آیا خروجی صدای عنصر رسانه باید به‌طور پیش‌فرض بی‌صدا باشد. این ویژگی هیچ اثر پویایی ندارد. برای بی‌صدا کردن و بازگرداندن صدا، از ویژگی {{domxref("HTMLMediaElement.muted", "muted")}} استفاده کنید.
 
-## Value
+## مقدار
 
-A boolean value. A value of `true` means that the audio output will be muted by default.
+یک مقدار بولی. مقدار `true` به این معنی است که خروجی صدا به‌طور پیش‌فرض بی‌صدا خواهد بود.
 
-## Examples
+## مثال‌ها
 
 ```js
 const videoEle = document.createElement("video");
@@ -28,16 +23,17 @@ videoEle.defaultMuted = true;
 console.log(videoEle.outerHTML); // <video muted=""></video>
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("HTMLMediaElement")}}: Interface used to define the `HTMLMediaElement.defaultMuted` property
+- {{domxref("HTMLMediaElement")}}: رابطی که برای تعریف ویژگی `HTMLMediaElement.defaultMuted` استفاده شده است
 - {{domxref("HTMLMediaElement.muted")}}
 - {{domxref("HTMLMediaElement.volume")}}
+```
