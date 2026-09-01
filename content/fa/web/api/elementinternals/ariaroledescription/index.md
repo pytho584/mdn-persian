@@ -1,9 +1,4 @@
----
-title: "ElementInternals: ariaRoleDescription property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/ariaRoleDescription"
-status: "needs-translation"
----
-
+```
 ---
 title: "ElementInternals: ariaRoleDescription property"
 short-title: ariaRoleDescription
@@ -14,18 +9,18 @@ browser-compat: api.ElementInternals.ariaRoleDescription
 
 {{APIRef("Web Components")}}
 
-The **`ariaRoleDescription`** property of the {{domxref("ElementInternals")}} interface reflects the value of the [`aria-roledescription`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-roledescription) attribute, which defines a human-readable, author-localized description for the role of an element.
+ویژگی **`ariaRoleDescription`** از رابط {{domxref("ElementInternals")}} مقدار ویژگی [`aria-roledescription`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-roledescription) را منعکس می‌کند. این ویژگی یک توضیح خوانا برای انسان و بومی‌سازی‌شده توسط نویسنده برای نقش یک عنصر تعریف می‌کند.
 
 > [!NOTE]
-> Setting aria attributes on `ElementInternals` allows default semantics to be defined on a custom element. These may be overwritten by author-defined attributes, but ensure that default semantics are retained should the author delete those attributes, or fail to add them at all. For more information see the [Accessibility Object Model explainer](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object).
+> تنظیم ویژگی‌های aria بر روی `ElementInternals` امکان تعریف معناشناسی پیش‌فرض را روی یک عنصر سفارشی فراهم می‌کند. این ویژگی‌ها ممکن است توسط ویژگی‌های تعریف‌شده توسط نویسنده بازنویسی شوند، اما تضمین می‌کنند که در صورت حذف آن ویژگی‌ها توسط نویسنده یا عدم اضافه کردن آن‌ها به طور کلی، معناشناسی پیش‌فرض حفظ شود. برای اطلاعات بیشتر به [توضیح‌دهنده مدل شیء دسترسی‌پذیری](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object) مراجعه کنید.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
-In this example the value of `ariaRoleDescription` is set to "My custom widget".
+در این مثال مقدار `ariaRoleDescription` به "My custom widget" تنظیم شده است.
 
 ```js
 class CustomEl extends HTMLElement {
@@ -38,14 +33,15 @@ class CustomEl extends HTMLElement {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [ARIA: application role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/application_role)
+- [ARIA: نقش application](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/application_role)
+```
