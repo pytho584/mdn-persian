@@ -1,11 +1,5 @@
 ---
 title: "HTMLAreaElement: port property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLAreaElement/port"
-status: "needs-translation"
----
-
----
-title: "HTMLAreaElement: port property"
 short-title: port
 slug: Web/API/HTMLAreaElement/port
 page-type: web-api-instance-property
@@ -14,40 +8,40 @@ browser-compat: api.HTMLAreaElement.port
 
 {{ApiRef("HTML DOM")}}
 
-The **`port`** property of the {{domxref("HTMLAreaElement")}} interface is a string containing the port number of the `<area>` element's `href`. If the port is the default for the protocol (`80` for `ws:` and `http:`, `443` for `wss:` and `https:`, and `21` for `ftp:`), this property contains an empty string, `""`.
+ویژگی **`port`** در رابط {{domxref("HTMLAreaElement")}} یک رشته (string) است که شماره پورت `href` عنصر `<area>` را شامل می‌شود. اگر پورت، پورت پیش‌فرض پروتکل باشد (`80` برای `ws:` و `http:`، `443` برای `wss:` و `https:` و `21` برای `ftp:`)، این ویژگی شامل یک رشته خالی، `""` است.
 
-This property can be set to change the port of the URL. If the URL has no {{domxref("HTMLAnchorElement.host", "host")}} or its scheme is `file:`, then setting this property has no effect. It also silently ignores invalid port numbers.
+این ویژگی قابل تنظیم است تا پورت URL تغییر کند. اگر URL دارای {{domxref("HTMLAnchorElement.host", "host")}} نباشد یا طرح (scheme) آن `file:` باشد، تنظیم این ویژگی هیچ اثری ندارد. همچنین شماره پورت‌های نامعتبر را بی‌صدا نادیده می‌گیرد.
 
-See {{domxref("URL.port")}} for more information.
+برای اطلاعات بیشتر به {{domxref("URL.port")}} مراجعه کنید.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
-### Getting the port from an area link
+### دریافت پورت از یک پیوند area
 
 ```js
-// An <area id="myArea" href="https://developer.mozilla.org:443/en-US/docs/HTMLAreaElement"> element is in the document
+// یک عنصر <area id="myArea" href="https://developer.mozilla.org:443/en-US/docs/HTMLAreaElement"> در سند وجود دارد
 const area = document.getElementByID("myArea");
-area.port; // Returns ''
+area.port; // ‏'‎'‎' را برمی‌گرداند
 ```
 
 ```js
-// Another <area id="myArea" href="https://developer.mozilla.org:8888/en-US/docs/HTMLAreaElement"> element is in the document
+// یک عنصر <area id="myArea" href="https://developer.mozilla.org:8888/en-US/docs/HTMLAreaElement"> دیگر در سند وجود دارد
 const area = document.getElementByID("myArea");
-area.port; // Returns:'8888'
+area.port; // ‏'8888' را برمی‌گرداند
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("HTMLAreaElement")}} interface it belongs to.
+- رابط {{domxref("HTMLAreaElement")}} که این ویژگی به آن تعلق دارد.
