@@ -1,11 +1,5 @@
 ---
 title: "HTMLCanvasElement: mozOpaque property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/mozOpaque"
-status: "needs-translation"
----
-
----
-title: "HTMLCanvasElement: mozOpaque property"
 short-title: mozOpaque
 slug: Web/API/HTMLCanvasElement/mozOpaque
 page-type: web-api-instance-property
@@ -17,33 +11,24 @@ browser-compat: api.HTMLCanvasElement.mozOpaque
 
 {{APIRef("Canvas API")}}{{deprecated_header}}{{non-standard_header}}
 
-The non-standard **`HTMLCanvasElement.mozOpaque`** property is
-a boolean value reflecting the [`moz-opaque`](/en-US/docs/Web/HTML/Reference/Elements/canvas#moz-opaque) HTML
-attribute of the {{HTMLElement("canvas")}} element. It lets the canvas know whether or
-not translucency will be a factor. If the canvas knows there's no translucency, painting
-performance can be optimized.
+ویژگی غیراستاندارد **`HTMLCanvasElement.mozOpaque`** یک مقدار بولین است که بازتاب‌دهندهٔ ویژگی HTML [`moz-opaque`](/en-US/docs/Web/HTML/Reference/Elements/canvas#moz-opaque) عنصر {{HTMLElement("canvas")}} می‌باشد. این ویژگی به canvas اطلاع می‌دهد که آیا نیمه‌شفافی نقشی دارد یا نه. اگر canvas بداند که نیمه‌شفافی وجود ندارد، می‌توان عملکرد ترسیم را بهینه کرد.
 
 > [!NOTE]
-> This has been standardized as setting the `alpha` option to
-> `false` when creating a drawing context with
-> {{domxref("HTMLCanvasElement.getContext()")}}. Use of `mozOpaque` should be
-> avoided. Firefox will stop supporting it in the future.
+> این ویژگی به‌صورت استاندارد با تنظیم گزینهٔ `alpha` روی `false` هنگام ایجاد context ترسیم با {{domxref("HTMLCanvasElement.getContext()")}} جایگزین شده است. استفاده از `mozOpaque` باید اجتناب شود. فایرفاکس در آینده پشتیبانی از آن را متوقف خواهد کرد.
 
-## Value
+## مقدار
 
-A boolean value.
+یک مقدار بولین.
 
-## Examples
+## مثال‌ها
 
-Given this {{HTMLElement("canvas")}} element:
+با توجه به عنصر {{HTMLElement("canvas")}} زیر:
 
 ```html
 <canvas id="canvas" width="300" height="300" moz-opaque></canvas>
 ```
 
-You can get or set the `mozOpaque` property. For example, you could
-conditionally set it to `true` if `mimeType === 'image/jpeg'`, or
-similar, to gain performance in your application when translucency is not needed.
+می‌توانید ویژگی `mozOpaque` را بخوانید یا تنظیم کنید. برای مثال، می‌توانید به‌صورت شرطی آن را روی `true` تنظیم کنید اگر `mimeType === 'image/jpeg'` یا موارد مشابه باشد، تا زمانی که نیمه‌شفافی موردنیاز نیست، عملکرد برنامه‌تان بهبود یابد.
 
 ```js
 const canvas = document.getElementById("canvas");
@@ -52,16 +37,16 @@ console.log(canvas.mozOpaque); // true
 canvas.mozOpaque = false;
 ```
 
-## Specifications
+## مشخصات
 
-Not part of any standard.
+بخشی از هیچ استانداردی نیست.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("HTMLCanvasElement")}}: Interface used to define the `HTMLCanvasElement.mozOpaque` property
-- [`moz-opaque`](/en-US/docs/Web/HTML/Reference/Elements/canvas#moz-opaque): HTML attribute of the {{HTMLElement("canvas")}} element
-- [Optimizing your JavaScript game for Firefox OS](https://hacks.mozilla.org/2013/05/optimizing-your-javascript-game-for-firefox-os/)
+- {{domxref("HTMLCanvasElement")}}: رابطی که ویژگی `HTMLCanvasElement.mozOpaque` را تعریف می‌کند
+- [`moz-opaque`](/en-US/docs/Web/HTML/Reference/Elements/canvas#moz-opaque): ویژگی HTML عنصر {{HTMLElement("canvas")}}
+- [بهینه‌سازی بازی جاوااسکریپتی شما برای Firefox OS](https://hacks.mozilla.org/2013/05/optimizing-your-javascript-game-for-firefox-os/)
