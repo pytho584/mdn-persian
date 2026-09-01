@@ -1,11 +1,5 @@
 ---
 title: "CSSPropertyRule"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSPropertyRule"
-status: "needs-translation"
----
-
----
-title: CSSPropertyRule
 slug: Web/API/CSSPropertyRule
 page-type: web-api-interface
 browser-compat: api.CSSPropertyRule
@@ -13,30 +7,30 @@ browser-compat: api.CSSPropertyRule
 
 {{APIRef("CSS Properties and Values API")}}
 
-The **`CSSPropertyRule`** interface of the [CSS Properties and Values API](/en-US/docs/Web/API/CSS_Properties_and_Values_API) represents a single CSS {{cssxref("@property")}} rule.
+رابط **`CSSPropertyRule`** از [CSS Properties and Values API](/en-US/docs/Web/API/CSS_Properties_and_Values_API) یک قانون CSS {{cssxref("@property")}} را نمایش می‌دهد.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its ancestor {{domxref("CSSRule")}}._
+ویژگی‌های جد خود {{domxref("CSSRule")}} را به ارث می‌برد.
 
 - {{domxref("CSSPropertyRule.inherits")}} {{ReadOnlyInline}}
-  - : Returns the inherit flag of the custom property.
+  - : پرچم inherit (به‌ارث‌بری) ویژگی سفارشی را برمی‌گرداند.
 - {{domxref("CSSPropertyRule.initialValue")}} {{ReadOnlyInline}}
-  - : Returns the initial value of the custom property.
+  - : مقدار اولیه ویژگی سفارشی را برمی‌گرداند.
 - {{domxref("CSSPropertyRule.name")}} {{ReadOnlyInline}}
-  - : Returns the name of the custom property.
+  - : نام ویژگی سفارشی را برمی‌گرداند.
 - {{domxref("CSSPropertyRule.syntax")}} {{ReadOnlyInline}}
-  - : Returns the literal syntax of the custom property.
+  - : نحو (syntax) تحت‌اللفظی ویژگی سفارشی را برمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
-_No specific methods; inherits methods from its ancestor {{domxref("CSSRule")}}._
+روش خاصی ندارد؛ روش‌ها را از جد خود {{domxref("CSSRule")}} به ارث می‌برد.
 
-## Examples
+## مثال‌ها
 
-This stylesheet contains a single {{cssxref("@property")}} rule. The first {{domxref("CSSRule")}} returned will be a `CSSPropertyRule` with the properties and values as defined by the rule in CSS.
+این شیوه‌نامه (stylesheet) شامل یک قانون {{cssxref("@property")}} است. اولین {{domxref("CSSRule")}} که بازگردانده می‌شود یک `CSSPropertyRule` با ویژگی‌ها و مقادیر تعریف‌شده توسط قانون در CSS خواهد بود.
 
 ```css
 @property --property-name {
@@ -51,10 +45,10 @@ const myRules = document.styleSheets[0].cssRules;
 console.log(myRules[0]); // A CSSPropertyRule
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
