@@ -1,9 +1,4 @@
----
-title: "DOMPoint: y property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMPoint/y"
-status: "needs-translation"
----
-
+```
 ---
 title: "DOMPoint: y property"
 short-title: y
@@ -14,29 +9,23 @@ browser-compat: api.DOMPoint.y
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The **`DOMPoint`** interface's
-**`y`** property holds the vertical coordinate, _y_,
-for a point in space.
+ویژگی **`y`** در رابط **`DOMPoint`**، مختصات عمودی (y) یک نقطه در فضا را نگهداری میکند.
 
-Unless transforms have been applied to alter the
-orientation, the value of `y` increases downward and decreases upward.
+مگر اینکه تبدیل‌هایی برای تغییر جهت اعمال شده باشد، مقدار `y` به سمت پایین افزایش و به سمت بالا کاهش می‌یابد.
 
-## Value
+## مقدار
 
-A double-precision floating-point value indicating the _y_ coordinate's value
-for the point. This value is **unrestricted**, meaning that it is allowed
-to be infinite or invalid (that is, its value may be {{jsxref("NaN")}} or
-{{jsxref("Infinity", "±Infinity")}}).
+یک مقدار اعشاری با دقت دوبرابر که مقدار مختصات y را برای نقطه نشان می‌دهد. این مقدار **نامحدود** است، به این معنی که می‌تواند بینهایت یا نامعتبر باشد (یعنی مقدار آن ممکن است {{jsxref("NaN")}} یا {{jsxref("Infinity", "±Infinity")}} باشد).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The other coordinate properties: {{domxref("DOMPoint.x", "x")}},
-  {{domxref("DOMPoint.z", "z")}}, and the perspective value, {{domxref("DOMPoint.w", "w")}}.
+- سایر ویژگی‌های مختصات: {{domxref("DOMPoint.x", "x")}}، {{domxref("DOMPoint.z", "z")}} و مقدار پرسپکتیو، {{domxref("DOMPoint.w", "w")}}.
+```
