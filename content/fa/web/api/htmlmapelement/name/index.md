@@ -1,9 +1,4 @@
----
-title: "HTMLMapElement: name property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMapElement/name"
-status: "needs-translation"
----
-
+```
 ---
 title: "HTMLMapElement: name property"
 short-title: name
@@ -14,16 +9,15 @@ browser-compat: api.HTMLMapElement.name
 
 {{ApiRef("HTML DOM")}}
 
-The **`name`** property of the {{domxref("HTMLMapElement")}} represents the unique name `<map>` element.
-Its value can be used with the `useMap` attribute of the {{HTMLElement("img")}} element to reference a `<map>` element.
+خاصیت **`name`** از {{domxref("HTMLMapElement")}} نشان‌دهنده‌ی نام یکتای عنصر `<map>` است. مقدار این خاصیت می‌تواند با ویژگی `useMap` در عنصر {{HTMLElement("img")}} برای ارجاع به یک عنصر `<map>` استفاده شود.
 
-If an `id` attribute is set on the {{HTMLElement("map")}} element, then this `name` property should be the same as this `id`.
+اگر یک ویژگی `id` روی عنصر {{HTMLElement("map")}} تنظیم شده باشد، این خاصیت `name` باید با همان `id` یکسان باشد.
 
-## Value
+## مقدار
 
-A non-empty string without whitespaces.
+یک رشته‌ی غیر خالی بدون فاصله (whitespace).
 
-## Example
+## مثال
 
 ```html
 <map name="image-map">
@@ -33,18 +27,19 @@ A non-empty string without whitespaces.
 
 ```js
 const mapElement = document.getElementsByName("image-map")[0];
-console.log(mapElement.name); // output: "image-map"
+console.log(mapElement.name); // خروجی: "image-map"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("HTMLImageElement.useMap")}} property
-- {{domxref("HTMLAreaElement")}} element
+- خاصیت {{domxref("HTMLImageElement.useMap")}}
+- عنصر {{domxref("HTMLAreaElement")}}
+```
