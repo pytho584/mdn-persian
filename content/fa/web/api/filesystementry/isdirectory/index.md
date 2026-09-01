@@ -1,11 +1,5 @@
 ---
 title: "FileSystemEntry: isDirectory property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry/isDirectory"
-status: "needs-translation"
----
-
----
-title: "FileSystemEntry: isDirectory property"
 short-title: isDirectory
 slug: Web/API/FileSystemEntry/isDirectory
 page-type: web-api-instance-property
@@ -14,29 +8,20 @@ browser-compat: api.FileSystemEntry.isDirectory
 
 {{APIRef("File and Directory Entries API")}}
 
-The read-only **`isDirectory`**
-property of the {{domxref("FileSystemEntry")}} interface is `true` if the
-entry represents a directory (meaning it's a {{domxref("FileSystemDirectoryEntry")}})
-and `false` if it's not.
+خاصیت فقط خواندنی **`isDirectory`** در رابط {{domxref("FileSystemEntry")}} اگر ورودی یک دایرکتوری باشد (یعنی یک {{domxref("FileSystemDirectoryEntry")}} باشد) مقدار `true` و در غیر این صورت `false` است.
 
-You can also use {{domxref("FileSystemEntry.isFile", "isFile")}} to determine if the
-entry is a file.
+همچنین می‌توانید از {{domxref("FileSystemEntry.isFile", "isFile")}} برای تشخیص فایل بودن ورودی استفاده کنید.
 
 > [!WARNING]
-> You should not assume that any entry which isn't a directory is a file or vice versa.
-> There are other types of file descriptors on many operating systems. Be sure to use
-> both `isDirectory` and `isFile` as needed to ensure that the
-> entry is something you know how to work with.
+> نباید فرض کنید هر ورودی که دایرکتوری نیست حتماً فایل است یا برعکس. در بسیاری از سیستم‌عامل‌ها انواع دیگری از توصیف‌کننده‌های فایل وجود دارند. حتماً هر دو ویژگی `isDirectory` و `isFile` را در صورت نیاز به‌کار ببرید تا مطمئن شوید ورودی از نوعی است که می‌توانید با آن کار کنید.
 
-## Value
+## مقدار
 
-A Boolean indicating whether or not the {{domxref("FileSystemEntry")}} is a directory.
+یک مقدار بولی (Boolean) که نشان می‌دهد {{domxref("FileSystemEntry")}} یک دایرکتوری است یا خیر.
 
-## Examples
+## مثال‌ها
 
-This example shows how this property might be used to determine whether to process the
-entry as a directory or file. If the entry is neither, an error handler is called with
-an appropriate message.
+این مثال نحوه استفاده از این ویژگی را برای تصمیم‌گیری درباره پردازش ورودی به‌عنوان دایرکتوری یا فایل نشان می‌دهد. اگر ورودی هیچ‌کدام نباشد، یک تابع مدیریت خطا با پیام مناسب فراخوانی می‌شود.
 
 ```js
 if (entry.isDirectory) {
@@ -44,21 +29,21 @@ if (entry.isDirectory) {
 } else if (entry.isFile) {
   processFile(entry);
 } else {
-  displayErrorMessage("Unsupported file system entry specified.");
+  displayErrorMessage("ورودی سیستم فایل پشتیبانی‌نشده مشخص شده است.");
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [File and Directory Entries API](/en-US/docs/Web/API/File_and_Directory_Entries_API)
+- [API ورودی‌های فایل و دایرکتوری](/en-US/docs/Web/API/File_and_Directory_Entries_API)
 - {{domxref("FileSystemEntry")}}
 - {{domxref("FileSystemEntry.isFile")}}
 - {{domxref("FileSystemDirectoryEntry")}}
