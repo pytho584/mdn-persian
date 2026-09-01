@@ -1,11 +1,5 @@
 ---
 title: "DOMPointReadOnly: matrixTransform() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMPointReadOnly/matrixTransform"
-status: "needs-translation"
----
-
----
-title: "DOMPointReadOnly: matrixTransform() method"
 short-title: matrixTransform()
 slug: Web/API/DOMPointReadOnly/matrixTransform
 page-type: web-api-instance-method
@@ -14,33 +8,33 @@ browser-compat: api.DOMPointReadOnly.matrixTransform
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The **`matrixTransform()`** method of the {{domxref("DOMPointReadOnly")}} interface applies a matrix transform specified as an object to the DOMPointReadOnly object, creating and returning a new `DOMPointReadOnly` object. Neither the matrix nor the point are altered.
+متد **`matrixTransform()`** از رابط {{domxref("DOMPointReadOnly")}} یک تبدیل ماتریسی را که به‌صورت یک شیء مشخص شده است روی شیء `DOMPointReadOnly` اعمال می‌کند و یک شیء جدید `DOMPointReadOnly` می‌سازد و برمی‌گرداند. هیچ‌کدام از ماتریس و نقطه تغییر نمی‌کند.
 
-If the matrix passed as a parameter is 2D (the {{domxref("DOMMatrixReadOnly.is2D", "is2D")}} is `true`) then this is a 2D transformation and the point's `z` coordinate will be `0` and point's `w` perspective will be `1`. Otherwise this is a 3D transformation.
+اگر ماتریس ارسال‌شده به‌عنوان پارامتر دوبعدی باشد ({{domxref("DOMMatrixReadOnly.is2D", "is2D")}} برابر با `true` است)، این یک تبدیل دوبعدی خواهد بود و مختصات `z` نقطه برابر `0` و پرسپکتیو `w` نقطه برابر `1` خواهد بود. در غیر این صورت، این یک تبدیل سه‌بعدی است.
 
-You can also create a new `DOMPoint` with a point and matrix with the {{domxref("DOMMatrixReadOnly.transformPoint()")}} method.
+همچنین می‌توانید با استفاده از متد {{domxref("DOMMatrixReadOnly.transformPoint()")}} یک `DOMPoint` جدید از روی یک نقطه و یک ماتریس ایجاد کنید.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 matrixTransform()
 matrixTransform(matrix)
 ```
 
-### Parameters
+### پارامترها
 
 - `matrix`
-  - : A {{domxref("DOMMatrix")}} or {{domxref("DOMMatrixReadOnly")}} object.
+  - : یک شیء {{domxref("DOMMatrix")}} یا {{domxref("DOMMatrixReadOnly")}}.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("DOMPoint")}} object.
+یک شیء جدید {{domxref("DOMPoint")}}.
 
-## Examples
+## مثال‌ها
 
-### 2D transform
+### تبدیل دوبعدی
 
-In this example, we apply a 2D matrix transform to a `DOMPointReadOnly`, creating a new `DOMPoint`:
+در این مثال، یک تبدیل ماتریسی دوبعدی را روی یک `DOMPointReadOnly` اعمال می‌کنیم که یک `DOMPoint` جدید می‌سازد:
 
 ```js
 const originalPoint = new DOMPointReadOnly(10, 20); // DOMPointReadOnly {x: 10, y: 20, z: 0, w: 1}
@@ -51,9 +45,9 @@ const transformedPoint = originalPoint.matrixTransform(matrix); // DOMPoint {x: 
 console.log(transformedPoint.toJSON()); // output: {x: 25, y: 50, z: 0, w: 1}
 ```
 
-### 3D transform
+### تبدیل سه‌بعدی
 
-In this example, we apply a 3D matrix transform to a `DOMPointReadOnly`:
+در این مثال، یک تبدیل ماتریسی سه‌بعدی را روی یک `DOMPointReadOnly` اعمال می‌کنیم:
 
 ```js
 const point = new DOMPointReadOnly(5, 10); // DOMPointReadOnly {x: 5, y: 10, z: 0, w: 1}
@@ -61,17 +55,17 @@ const matrix3D = new DOMMatrix().translate(0, 0, 10);
 const transformedPoint = point.matrixTransform(matrix3D); // DOMPoint {x: 5, y: 10, z: 10, w: 1}
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("DOMPoint")}}
 - {{domxref("DOMMatrix")}}
 - {{domxref("DOMMatrixReadOnly.transformPoint()")}}
-- CSS {{cssxref("transform-function/matrix", "matrix()")}} and {{cssxref("transform-function/matrix3d", "matrix3d()")}} functions
+- توابع CSS {{cssxref("transform-function/matrix", "matrix()")}} و {{cssxref("transform-function/matrix3d", "matrix3d()")}}
