@@ -1,7 +1,5 @@
 ---
 title: "DOMMatrixReadOnly: fromFloat32Array() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrixReadOnly/fromFloat32Array_static"
-status: "needs-translation"
 ---
 
 ---
@@ -14,35 +12,35 @@ browser-compat: api.DOMMatrixReadOnly.fromFloat32Array_static
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The **`fromFloat32Array()`** static method of the {{domxref("DOMMatrixReadOnly")}} interface creates a new {{domxref("DOMMatrixReadOnly")}} object given an array of single-precision (32-bit) floating-point values.
+متد ایستای **`fromFloat32Array()`** در رابط {{domxref("DOMMatrixReadOnly")}} یک شیء جدید {{domxref("DOMMatrixReadOnly")}} را با گرفتن آرایه‌ای از مقادیر ممیز شناور تک‌دقتی (32 بیتی) ایجاد می‌کند.
 
-If the array has 6 values, the result is a 2D matrix; if the array has 16 values, the result is a 3D matrix. Otherwise, a {{jsxref("TypeError")}} exception is thrown.
+اگر آرایه ۶ مقدار داشته باشد، نتیجه یک ماتریس دوبعدی است؛ اگر ۱۶ مقدار داشته باشد، نتیجه یک ماتریس سه‌بعدی است. در غیر این صورت، استثنای {{jsxref("TypeError")}} پرتاب می‌شود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 DOMMatrixReadOnly.fromFloat32Array(array)
 ```
 
-### Parameters
+### پارامترها
 
 - `array`
-  - : A {{jsxref("Float32Array")}} with 6 or 16 elements in column-major order.
+  - : یک {{jsxref("Float32Array")}} با ۶ یا ۱۶ عنصر به ترتیب ستون‌محور (column-major).
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("DOMMatrixReadOnly")}} object.
+یک شیء {{domxref("DOMMatrixReadOnly")}}.
 
-### Exceptions
+### استثناها
 
 - {{jsxref("TypeError")}}
-  - : Thrown if the length of the `array` parameter is not 6 or 16.
+  - : زمانی پرتاب می‌شود که طول پارامتر `array` برابر ۶ یا ۱۶ نباشد.
 
-## Examples
+## مثال‌ها
 
-### Creating a 2D matrix from a Float32Array
+### ساخت ماتریس دوبعدی از یک Float32Array
 
-This example creates a 2D matrix from a 6-element `Float32Array`.
+این مثال یک ماتریس دوبعدی را از یک `Float32Array` شش‌عنصری می‌سازد.
 
 ```js
 const float32Array = new Float32Array([1, 0, 0, 1, 10, 20]);
@@ -55,9 +53,9 @@ console.log(matrix2D.is2D);
 // Output: true
 ```
 
-### Creating a 3D matrix from a Float32Array
+### ساخت ماتریس سه‌بعدی از یک Float32Array
 
-This example creates a 3D matrix from a 16-element `Float32Array`.
+این مثال یک ماتریس سه‌بعدی را از یک `Float32Array` شانزده‌عنصری می‌سازد.
 
 ```js
 const float32Array = new Float32Array([
@@ -72,15 +70,15 @@ console.log(matrix3D.m41, matrix3D.m42, matrix3D.m43);
 // Output: 10 20 30
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("DOMMatrixReadOnly/DOMMatrixReadOnly", "DOMMatrixReadOnly()")}}
 - {{domxref("DOMMatrixReadOnly.toFloat32Array()")}}
