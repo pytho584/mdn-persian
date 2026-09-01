@@ -1,9 +1,4 @@
----
-title: "HTMLElement: autocapitalize property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/autocapitalize"
-status: "needs-translation"
----
-
+```
 ---
 title: "HTMLElement: autocapitalize property"
 short-title: autocapitalize
@@ -14,31 +9,31 @@ browser-compat: api.HTMLElement.autocapitalize
 
 {{APIRef("HTML DOM")}}
 
-The **`autocapitalize`** property of the {{domxref("HTMLElement")}} interface represents the element's capitalization behavior for user input. It is available on all HTML elements, though it doesn't affect all of them, including:
+**`autocapitalize`** — ویژگی From the {{domxref("HTMLElement")}} interface، رفتار حروف بزرگ کردن ورودی کاربر را نشان میدهد. این ویژگی روی همهٔ تگهای HTML در دسترس است، اما روی همهٔ آنها تأثیر نمیگذارد؛ تگهای متأثر عبارتند از:
 
-- {{htmlelement("input")}} and {{htmlelement("textarea")}} elements.
-- Any element with [`contenteditable`](/en-US/docs/Web/HTML/Reference/Global_attributes/contenteditable) set on it.
+- عناصر {{htmlelement("input")}} و {{htmlelement("textarea")}}.
+- هر عنصری که ویژگی [`contenteditable`](/en-US/docs/Web/HTML/Reference/Global_attributes/contenteditable) روی آن تنظیم شده باشد.
 
-`autocapitalize` doesn't affect behavior when typing on a physical keyboard. It affects the behavior of other input mechanisms such as virtual keyboards on mobile devices and voice input. This can assist users by making data entry quicker and easier, for example by automatically capitalizing the first letter of each sentence.
+`autocapitalize` وقتی کاربر با صفحهکلید فیزیکی تایپ میکند، هیچ تأثیری ندارد؛ بلکه بر رفتار سایر روشهای ورودی مانند صفحهکلید مجازی در دستگاههای همراه و ورودی صوتی تأثیر میگذارد. این قابلیت میتواند با بزرگ کردن خودکار حرف اول هر جمله، ورود داده را سریعتر و آسانتر کند.
 
-It reflects the value of the [`autocapitalize`](/en-US/docs/Web/HTML/Reference/Global_attributes/autocapitalize) HTML global attribute.
+این ویژگی، مقدار ویژگی سراسری HTML [`autocapitalize`](/en-US/docs/Web/HTML/Reference/Global_attributes/autocapitalize) را بازتاب میدهد.
 
-## Value
+## مقدار
 
-A string that represents the element's capitalization behavior for user input. Valid values are as follows:
+یک رشته که رفتار بزرگ کردن حروف را برای ورودی کاربر در آن عنصر نشان میدهد. مقادیر معتبر به این شرح است:
 
-- `none` or `off`
-  - : No autocapitalization should be applied, that is, all letters should default to lowercase.
-- `sentences` or `on`
-  - : The first letter of each sentence should default to a capital letter; all other letters should default to lowercase.
+- `none` یا `off`
+  - : هیچ بزرگنویسی خودکاری اعمال نشود؛ یعنی همهٔ حروف به صورت پیشفرض کوچک باشند.
+- `sentences` یا `on`
+  - : حرف اول هر جمله به صورت پیشفرض بزرگ باشد؛ بقیهٔ حروف کوچک بمانند.
 - `words`
-  - : The first letter of each word should default to a capital letter; all other letters should default to lowercase.
+  - : حرف اول هر کلمه به صورت پیشفرض بزرگ باشد؛ بقیهٔ حروف کوچک بمانند.
 - `characters`
-  - : All letters should default to uppercase.
+  - : همهٔ حروف به صورت پیشفرض بزرگ باشند.
 
-## Examples
+## مثالها
 
-The following example shows how to control capitalization behavior for user input via script:
+مثال زیر نشان میدهد که چگونه میتوان رفتار بزرگنویسی ورودی کاربر را با اسکریپت کنترل کرد:
 
 ```html
 <div>Current capitalization behavior is: <span id="ac-label"></span></div>
@@ -68,14 +63,15 @@ controller.addEventListener("input", (e) => {
 
 {{EmbedLiveSample('Examples', 600, 200)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [`autocapitalize`](/en-US/docs/Web/HTML/Reference/Global_attributes/autocapitalize) HTML global attribute
+- ویژگی سراسری HTML [`autocapitalize`](/en-US/docs/Web/HTML/Reference/Global_attributes/autocapitalize)
+```
