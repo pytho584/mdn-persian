@@ -1,11 +1,5 @@
 ---
 title: "GPUAdapter: isFallbackAdapter property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUAdapter/isFallbackAdapter"
-status: "needs-translation"
----
-
----
-title: "GPUAdapter: isFallbackAdapter property"
 short-title: isFallbackAdapter
 slug: Web/API/GPUAdapter/isFallbackAdapter
 page-type: web-api-instance-property
@@ -17,16 +11,15 @@ browser-compat: api.GPUAdapter.isFallbackAdapter
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}{{deprecated_header}}{{non-standard_header}}
 
-The **`isFallbackAdapter`** read-only property of the
-{{domxref("GPUAdapter")}} interface returns `true` if the adapter is a [fallback adapter](/en-US/docs/Web/API/GPU/requestAdapter#fallback_adapters), and `false` if not.
+{{domxref("GPUAdapter")}} 接口的 **`isFallbackAdapter`** 只读属性，如果适配器是[备用适配器](/en-US/docs/Web/API/GPU/requestAdapter#fallback_adapters)，则返回 `true`，否则返回 `false`。
 
-This property has been removed from the web platform. Use {{domxref("GPUAdapterInfo.isFallbackAdapter")}} instead.
+此属性已从 Web 平台中移除。请改用 {{domxref("GPUAdapterInfo.isFallbackAdapter")}}。
 
-## Value
+## 值
 
-A boolean.
+一个布尔值。
 
-## Examples
+## 示例
 
 ```js
 async function init() {
@@ -46,14 +39,14 @@ async function init() {
 }
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
