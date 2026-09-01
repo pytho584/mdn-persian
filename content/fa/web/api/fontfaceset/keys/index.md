@@ -1,7 +1,5 @@
 ---
 title: "FontFaceSet: keys() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSet/keys"
-status: "needs-translation"
 ---
 
 ---
@@ -14,26 +12,26 @@ browser-compat: api.FontFaceSet.keys
 
 {{APIRef("CSS Font Loading API")}}{{AvailableInWorkers}}
 
-The **`keys()`** method of the {{domxref("FontFaceSet")}} interface is an alias for {{domxref("FontFaceSet.values")}}.
+**`keys()`** 方法属于 {{domxref("FontFaceSet")}} 接口，是 {{domxref("FontFaceSet.values")}} 的一个别名。
 
-## Syntax
+## 语法
 
 ```js-nolint
 keys()
 ```
 
-### Parameters
+### 参数
 
-None.
+无。
 
-### Return value
+### 返回值
 
-A new iterator object containing the values for each element in the given `FontFaceSet`, in insertion order.
+一个按照插入顺序包含给定 `FontFaceSet` 中每个元素值的新的迭代器对象。
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
