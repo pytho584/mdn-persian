@@ -1,11 +1,5 @@
 ---
 title: "Highlight: keys() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Highlight/keys"
-status: "needs-translation"
----
-
----
-title: "Highlight: keys() method"
 short-title: keys()
 slug: Web/API/Highlight/keys
 page-type: web-api-instance-method
@@ -15,9 +9,9 @@ spec-urls: https://tc39.es/ecma262/multipage/keyed-collections.html#sec-set.prot
 
 {{APIRef("CSS Custom Highlight API")}}
 
-The **`keys()`** method of the {{domxref("Highlight")}} interface is an alias for the {{domxref("Highlight.values()", "values()")}} method.
+متد **`keys()`** در رابط {{domxref("Highlight")}} یک نام مستعار (alias) برای متد {{domxref("Highlight.values()", "values()")}} است.
 
-`Highlight` is a {{jsxref("Set")}}-like object, so this is similar to using {{jsxref("Set.keys()")}}.
+`Highlight` یک شیء شبیه به {{jsxref("Set")}} است، بنابراین این متد مشابه استفاده از {{jsxref("Set.keys()")}} عمل می‌کند.
 
 ## Syntax
 
@@ -27,11 +21,11 @@ keys()
 
 ### Parameters
 
-None.
+هیچ.
 
 ### Return value
 
-A new iterator object containing each `AbstractRange` object in the given `Highlight`, in insertion order.
+یک شیء iterator جدید که شامل هر شیء `AbstractRange` در `Highlight` داده‌شده، به ترتیب درج، است.
 
 ## Specifications
 
