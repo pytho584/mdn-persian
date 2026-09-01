@@ -1,10 +1,4 @@
 ---
-title: "GPUAdapter"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUAdapter"
-status: "needs-translation"
----
-
----
 title: GPUAdapter
 slug: Web/API/GPUAdapter
 page-type: web-api-interface
@@ -13,34 +7,34 @@ browser-compat: api.GPUAdapter
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`GPUAdapter`** interface of the {{domxref("WebGPU API", "WebGPU API", "", "nocode")}} represents a GPU adapter. From this you can request a {{domxref("GPUDevice")}}, adapter info, features, and limits.
+رابطهٔ **`GPUAdapter`** در {{domxref("WebGPU API", "WebGPU API", "", "nocode")}} یک آداپتور GPU را نشان می‌دهد. از طریق این رابط می‌توانید یک {{domxref("GPUDevice")}}، اطلاعات آداپتور، ویژگی‌ها و محدودیت‌ها را درخواست کنید.
 
-A `GPUAdapter` object is requested using the {{domxref("GPU.requestAdapter()")}} method.
+یک شیء `GPUAdapter` با استفاده از روش {{domxref("GPU.requestAdapter()")}} درخواست می‌شود.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("GPUAdapter.features", "features")}} {{ReadOnlyInline}}
-  - : A {{domxref("GPUSupportedFeatures")}} object that describes additional functionality supported by the adapter.
+  - : یک شیء {{domxref("GPUSupportedFeatures")}} که عملکردهای اضافی پشتیبانی‌شده توسط آداپتور را توصیف می‌کند.
 - {{domxref("GPUAdapter.info", "info")}} {{ReadOnlyInline}}
-  - : A {{domxref("GPUAdapterInfo")}} object containing identifying information about the adapter.
+  - : یک شیء {{domxref("GPUAdapterInfo")}} حاوی اطلاعات شناسایی دربارهٔ آداپتور.
 - {{domxref("GPUAdapter.limits", "limits")}} {{ReadOnlyInline}}
-  - : A {{domxref("GPUSupportedLimits")}} object that describes the limits supported by the adapter.
+  - : یک شیء {{domxref("GPUSupportedLimits")}} که محدودیت‌های پشتیبانی‌شده توسط آداپتور را توصیف می‌کند.
 
-### Deprecated properties
+### ویژگی‌های منسوخ‌شده
 
 - {{domxref("GPUAdapter.isFallbackAdapter", "isFallbackAdapter")}} {{ReadOnlyInline}} {{deprecated_inline}} {{non-standard_inline}}
-  - : A boolean value. Returns `true` if the adapter is a [fallback adapter](/en-US/docs/Web/API/GPU/requestAdapter#fallback_adapters), and `false` if not. This property has been removed from the web platform. Use {{domxref("GPUAdapterInfo.isFallbackAdapter")}} instead.
+  - : یک مقدار بولین. اگر آداپتور یک [آداپتور جایگزین (fallback)](/en-US/docs/Web/API/GPU/requestAdapter#fallback_adapters) باشد، `true` و در غیر این صورت `false` برمی‌گرداند. این ویژگی از پلتفرم وب حذف شده است. به جای آن از {{domxref("GPUAdapterInfo.isFallbackAdapter")}} استفاده کنید.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("GPUAdapter.requestAdapterInfo", "requestAdapterInfo()")}} {{deprecated_inline}} {{non-standard_inline}}
-  - : Returns a {{jsxref("Promise")}} that fulfills with a {{domxref("GPUAdapterInfo")}} object containing identifying information about the adapter.
+  - : یک {{jsxref("Promise")}} برمی‌گرداند که با یک شیء {{domxref("GPUAdapterInfo")}} حاوی اطلاعات شناسایی دربارهٔ آداپتور تکمیل می‌شود.
 - {{domxref("GPUAdapter.requestDevice", "requestDevice()")}}
-  - : Returns a {{jsxref("Promise")}} that fulfills with a {{domxref("GPUDevice")}} object, which is the primary interface for communicating with the GPU.
+  - : یک {{jsxref("Promise")}} برمی‌گرداند که با یک شیء {{domxref("GPUDevice")}} تکمیل می‌شود؛ این شیء رابط اصلی برای ارتباط با GPU است.
 
-## Examples
+## مثال‌ها
 
 ```js
 async function init() {
@@ -59,14 +53,14 @@ async function init() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
