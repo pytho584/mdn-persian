@@ -1,11 +1,5 @@
 ---
 title: "HTMLSelectElement: options property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/options"
-status: "needs-translation"
----
-
----
-title: "HTMLSelectElement: options property"
 short-title: options
 slug: Web/API/HTMLSelectElement/options
 page-type: web-api-instance-property
@@ -14,16 +8,13 @@ browser-compat: api.HTMLSelectElement.options
 
 {{APIRef("DOM")}}
 
-The **`HTMLSelectElement.options`** read-only property returns
-a {{domxref("HTMLOptionsCollection")}} of the {{HTMLElement("option")}} elements
-contained by the {{HTMLElement("select")}} element.
+ویژگی فقط‌خواندنی **`HTMLSelectElement.options`** یک {{domxref("HTMLOptionsCollection")}} از عناصر {{HTMLElement("option")}} موجود در عنصر {{HTMLElement("select")}} را بازمی‌گرداند.
 
-## Value
+## مقدار
 
-A {{domxref("HTMLOptionsCollection")}} containing the `<option>`
-elements contained by the `<select>` element.
+یک {{domxref("HTMLOptionsCollection")}} شامل عناصر `<option>` موجود در عنصر `<select>`.
 
-## Examples
+## مثال‌ها
 
 ### HTML
 
@@ -46,10 +37,10 @@ for (const option of select.options) {
 
 {{EmbedLiveSample("Examples", "100%", 30)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
