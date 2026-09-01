@@ -1,11 +1,5 @@
 ---
 title: "CSSTransition: transitionProperty property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSTransition/transitionProperty"
-status: "needs-translation"
----
-
----
-title: "CSSTransition: transitionProperty property"
 short-title: transitionProperty
 slug: Web/API/CSSTransition/transitionProperty
 page-type: web-api-instance-property
@@ -14,24 +8,17 @@ browser-compat: api.CSSTransition.transitionProperty
 
 {{APIRef("Web Animations")}}
 
-The **`transitionProperty`** property of the
-{{domxref("CSSTransition")}} interface returns the **expanded transition property
-name** of the transition. This is the longhand CSS property for which the
-transition was generated.
+ویژگی **`transitionProperty`** در رابط {{domxref("CSSTransition")}}، **نام گسترش‌یافتهٔ ویژگی انتقال** (transition) را برمی‌گرداند. این، همان ویژگی CSS بلندنویسی (longhand) است که انتقال برای آن ایجاد شده است.
 
-## Value
+## مقدار
 
-A string.
+یک رشته (string).
 
-## Examples
+## مثال‌ها
 
-### Returning the transitionProperty
+### بازگرداندن transitionProperty
 
-The transition in the following example changes the width of the box on hover. Calling
-{{domxref("Element.getAnimations()")}} returns an array of all {{domxref("Animation")}}
-objects. In our case this returns a `CSSTransition` object, representing the
-animation created. The `transitionProperty` property returns the property
-that the transition is created for, which is `width`.
+در مثال زیر، انتقال، عرض جعبه را هنگام hover تغییر می‌دهد. فراخوانی {{domxref("Element.getAnimations()")}} آرایه‌ای از همهٔ اشیاء {{domxref("Animation")}} را برمی‌گرداند. در این مورد، یک شیء `CSSTransition` بازگردانده می‌شود که نمایانگر انیمیشن ایجادشده است. ویژگی `transitionProperty` نام ویژگی‌ای را برمی‌گرداند که انتقال برای آن ساخته شده است، یعنی `width`.
 
 ```css
 .box {
@@ -55,10 +42,10 @@ item.addEventListener("transitionrun", () => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
