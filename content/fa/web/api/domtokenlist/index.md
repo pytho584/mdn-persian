@@ -1,10 +1,4 @@
 ---
-title: "DOMTokenList"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList"
-status: "needs-translation"
----
-
----
 title: DOMTokenList
 slug: Web/API/DOMTokenList
 page-type: web-api-interface
@@ -13,55 +7,55 @@ browser-compat: api.DOMTokenList
 
 {{APIRef("DOM")}}
 
-The **`DOMTokenList`** interface represents a set of space-separated tokens. Such a set is returned by {{domxref("Element.classList")}} or {{domxref("HTMLLinkElement.relList")}}, and many others.
+رابطهٔ **`DOMTokenList`** مجموعه‌ای از توکن‌های جدا شده با فاصله را نمایش می‌دهد. چنین مجموعه‌ای توسط {{domxref("Element.classList")}} یا {{domxref("HTMLLinkElement.relList")}} و بسیاری دیگر بازگردانده می‌شود.
 
-A `DOMTokenList` is indexed beginning with `0` as with JavaScript {{jsxref("Array")}} objects. `DOMTokenList` is always case-sensitive.
+یک `DOMTokenList` درست مانند اشیاء {{jsxref("Array")}} در جاوااسکریپت، از ایندکس `0` شماره‌گذاری می‌شود. `DOMTokenList` همیشه به بزرگی و کوچکی حروف حساس است.
 
 ## Instance properties
 
 - {{domxref("DOMTokenList.length")}} {{ReadOnlyInline}}
-  - : An `integer` representing the number of objects stored in the object.
+  - : یک `integer` که تعداد اشیاء ذخیره‌شده در این شیء را نشان می‌دهد.
 - {{domxref("DOMTokenList.value")}}
-  - : A {{Glossary("stringifier")}} property that returns the value of the list as a string.
+  - : یک ویژگی {{Glossary("stringifier")}} که مقدار فهرست را به‌صورت یک رشته بازمی‌گرداند.
 
 ## Instance methods
 
 - {{domxref("DOMTokenList.item()")}}
-  - : Returns the item in the list by its index, or `null` if the index is greater than or equal to the list's `length`.
+  - : آیتم فهرست را بر اساس ایندکس آن بازمی‌گرداند؛ اگر ایندکس بزرگ‌تر یا مساوی `length` فهرست باشد، `null` بازمی‌گرداند.
 - {{domxref("DOMTokenList.contains()")}}
-  - : Returns `true` if the list contains the given token, otherwise `false`.
+  - : اگر فهرست حاوی توکن داده‌شده باشد، `true` و در غیر این صورت `false` بازمی‌گرداند.
 - {{domxref("DOMTokenList.add()")}}
-  - : Adds the specified tokens to the list.
+  - : توکن‌های مشخص‌شده را به فهرست اضافه می‌کند.
 - {{domxref("DOMTokenList.remove()")}}
-  - : Removes the specified tokens from the list.
+  - : توکن‌های مشخص‌شده را از فهرست حذف می‌کند.
 - {{domxref("DOMTokenList.replace()")}}
-  - : Replaces the token with another one.
+  - : توکن را با توکن دیگری جایگزین می‌کند.
 - {{domxref("DOMTokenList.supports()")}}
-  - : Returns `true` if the given token is in the associated attribute's supported tokens.
+  - : اگر توکن داده‌شده در میان توکن‌های پشتیبانی‌شدهٔ ویژگی (attribute) مرتبط باشد، `true` بازمی‌گرداند.
 - {{domxref("DOMTokenList.toggle()")}}
-  - : Removes the token from the list if it exists, or adds it to the list if it doesn't. Returns a boolean indicating whether the token is in the list after the operation.
+  - : اگر توکن در فهرست وجود داشته باشد آن را حذف می‌کند و اگر وجود نداشته باشد آن را به فهرست اضافه می‌کند. یک مقدار بولین بازمی‌گرداند که نشان می‌دهد پس از عملیات، آیا توکن در فهرست وجود دارد یا خیر.
 - {{domxref("DOMTokenList.entries()")}}
-  - : Returns an {{jsxref("Iteration_protocols", "iterator", "", 1)}}, allowing you to go through all key/value pairs contained in this object.
+  - : یک {{jsxref("Iteration_protocols", "iterator", "", 1)}} بازمی‌گرداند که به شما امکان می‌دهد از میان تمام جفت‌های کلید/مقدار موجود در این شیء پیمایش کنید.
 - {{domxref("DOMTokenList.forEach()")}}
-  - : Executes a provided callback function once for each `DOMTokenList` element.
+  - : یک تابع callback داده‌شده را یک‌بار برای هر عنصر `DOMTokenList` اجرا می‌کند.
 - {{domxref("DOMTokenList.keys()")}}
-  - : Returns an {{jsxref("Iteration_protocols", "iterator", "", 1)}}, allowing you to go through all keys of the key/value pairs contained in this object.
+  - : یک {{jsxref("Iteration_protocols", "iterator", "", 1)}} بازمی‌گرداند که به شما امکان می‌دهد از میان تمام کلیدهای جفت‌های کلید/مقدار موجود در این شیء پیمایش کنید.
 - {{domxref("DOMTokenList.toString()")}}
-  - : Returns the {{domxref("DOMTokenList.value")}}, the space-separated values of the list as a string.
+  - : مقدار {{domxref("DOMTokenList.value")}} را به‌صورت یک رشته، شامل مقادیر فهرست که با فاصله جدا شده‌اند، بازمی‌گرداند.
 - {{domxref("DOMTokenList.values()")}}
-  - : Returns an {{jsxref("Iteration_protocols", "iterator", "", 1)}}, allowing you to go through all values of the key/value pairs contained in this object.
+  - : یک {{jsxref("Iteration_protocols", "iterator", "", 1)}} بازمی‌گرداند که به شما امکان می‌دهد از میان تمام مقادیر جفت‌های کلید/مقدار موجود در این شیء پیمایش کنید.
 
 ## Examples
 
-In the following simple example, we retrieve the list of classes set on a {{htmlelement("p")}} element as a `DOMTokenList` using {{domxref("Element.classList")}}, add a class using {{domxref("DOMTokenList.add()")}}, and then update the {{domxref("Node.textContent")}} of the `<p>` to equal the `DOMTokenList`.
+در مثال سادهٔ زیر، فهرست کلاس‌های اعمال‌شده روی یک عنصر {{htmlelement("p")}} را با استفاده از {{domxref("Element.classList")}} به‌صورت یک `DOMTokenList` دریافت می‌کنیم، با استفاده از {{domxref("DOMTokenList.add()")}} یک کلاس اضافه می‌کنیم و سپس {{domxref("Node.textContent")}} عنصر `<p>` را برابر با آن `DOMTokenList` قرار می‌دهیم.
 
-First, the HTML:
+ابتدا، HTML:
 
 ```html
 <p class="a b c"></p>
 ```
 
-Now the JavaScript:
+حالا جاوااسکریپت:
 
 ```js
 let para = document.querySelector("p");
@@ -70,13 +64,13 @@ para.classList.add("d");
 para.textContent = `paragraph classList is "${classes}"`;
 ```
 
-The output looks like this:
+خروجی به این شکل است:
 
 {{ EmbedLiveSample('Examples', '100%', 60) }}
 
 ## Trimming of whitespace and removal of duplicates
 
-Methods that modify the `DOMTokenList` (such as {{domxref("DOMTokenList.add()")}}) automatically trim any excess {{Glossary("Whitespace")}} and remove duplicate values from the list. For example:
+متدهایی که `DOMTokenList` را تغییر می‌دهند (مانند {{domxref("DOMTokenList.add()")}}) به‌طور خودکار هر {{Glossary("Whitespace")}} اضافی را حذف (trim) کرده و مقادیر تکراری را از فهرست حذف می‌کنند. برای مثال:
 
 ```html
 <span class="    d   d e f"></span>
@@ -89,7 +83,7 @@ span.classList.add("x");
 span.textContent = `span classList is "${classes}"`;
 ```
 
-The output looks like this:
+خروجی به این شکل است:
 
 {{ EmbedLiveSample('Trimming_of_whitespace_and_removal_of_duplicates', '100%', 60) }}
 
