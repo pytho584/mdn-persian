@@ -1,11 +1,5 @@
 ---
 title: "HTMLAllCollection"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLAllCollection"
-status: "needs-translation"
----
-
----
-title: HTMLAllCollection
 slug: Web/API/HTMLAllCollection
 page-type: web-api-interface
 browser-compat: api.HTMLAllCollection
@@ -13,64 +7,64 @@ browser-compat: api.HTMLAllCollection
 
 {{APIRef("DOM")}}{{Deprecated_Header}}
 
-The **`HTMLAllCollection`** interface represents a collection of _all_ of the document's elements, accessible by index (like an array) and by the element's [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id). It is returned by the {{domxref("document.all")}} property.
+رابط **`HTMLAllCollection`** مجموعه‌ای از _همه_ عناصر سند را نشان می‌دهد که با استفاده از ایندکس (مانند آرایه) و با ویژگی [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) عنصر قابل دسترسی است. این رابط توسط ویژگی {{domxref("document.all")}} بازگردانده می‌شود.
 
-`HTMLAllCollection` has a very similar shape to {{domxref("HTMLCollection")}}, but there are many subtle behavior differences — for example, `HTMLAllCollection` can be called as a function, and its `item()` method can be called with a string representing an element's `id` or `name` attribute.
+`HTMLAllCollection` از نظر ساختار بسیار شبیه به {{domxref("HTMLCollection")}} است، اما تفاوت‌های رفتاری ظریف زیادی وجود دارد — برای مثال، `HTMLAllCollection` می‌تواند به عنوان یک تابع فراخوانی شود، و متد `item()` آن را می‌توان با یک رشته که نمایانگر ویژگی `id` یا `name` یک عنصر است فراخوانی کرد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("HTMLAllCollection.length")}} {{ReadOnlyInline}}
-  - : Returns the number of items in the collection.
+  - : تعداد آیتم‌های موجود در مجموعه را بازمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("HTMLAllCollection.item()")}}
-  - : Returns the element located at the specified offset into the collection, or the element with the specified value for its `id` or `name` attribute. Returns `null` if no element is found.
+  - : عنصری را که در افست مشخص شده در مجموعه قرار دارد، یا عنصری را که دارای مقدار مشخص شده برای ویژگی `id` یا `name` است بازمی‌گرداند. اگر هیچ عنصری یافت نشود، `null` بازمی‌گرداند.
 - {{domxref("HTMLAllCollection.namedItem()")}}
-  - : Returns the first [element](/en-US/docs/Web/API/Element) in the collection whose [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) or `name` attribute match the given string name, or `null` if no element matches.
+  - : اولین [عنصر](/en-US/docs/Web/API/Element) در مجموعه را که ویژگی [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) یا `name` آن با نام رشته داده شده مطابقت دارد بازمی‌گرداند، یا اگر هیچ عنصری مطابقت نداشت `null` بازمی‌گرداند.
 
-## Usage in JavaScript
+## استفاده در جاوا اسکریپت
 
-### Indexed access
+### دسترسی ایندکسی
 
-In addition to the methods above, elements in an `HTMLAllCollection` can be accessed by integer indices and string property names. The HTML `id` attribute may contain `:` and `.` as valid characters, which would necessitate using bracket notation for property access. `collection[i]` is equivalent to `collection.item(i)`, where `i` can be an integer, a string containing an integer, or a string representing an `id`.
+علاوه بر متدهای فوق، عناصر موجود در یک `HTMLAllCollection` می‌توانند با ایندکس‌های صحیح و نام‌های ویژگی رشته‌ای نیز قابل دسترسی باشند. ویژگی `id` در HTML ممکن است حاوی کاراکترهای معتبر `:` و `.` باشد که برای دسترسی به ویژگی نیاز به استفاده از نماد براکت (bracket notation) دارد. `collection[i]` معادل `collection.item(i)` است، که در آن `i` می‌تواند یک عدد صحیح، یک رشته حاوی عدد صحیح، یا یک رشته نمایانگر یک `id` باشد.
 
-### Calling as a function
+### فراخوانی به عنوان تابع
 
-An `HTMLAllCollection` object is callable. When it's called with no arguments or with `undefined`, it returns `null`. Otherwise, it returns the same value as the {{domxref("HTMLAllCollection/item", "item()")}} method when given the same arguments.
+یک شیء `HTMLAllCollection` قابل فراخوانی است. هنگامی که بدون آرگومان یا با `undefined` فراخوانی شود، `null` بازمی‌گرداند. در غیر این صورت، همان مقدار متد {{domxref("HTMLAllCollection/item", "item()")}} را با همان آرگومان‌ها بازمی‌گرداند.
 
-### Special type conversion behavior
+### رفتار ویژه تبدیل نوع
 
-For historical reasons, `document.all` is an object that in the following ways behaves like `undefined`:
+به دلایل تاریخی، `document.all` یک شیء است که به روش‌های زیر مانند `undefined` رفتار می‌کند:
 
-- It is [loosely equal](/en-US/docs/Web/JavaScript/Reference/Operators/Equality) to `undefined` and `null`.
-- It is [falsy](/en-US/docs/Glossary/Falsy) in boolean contexts.
-- Its [`typeof`](/en-US/docs/Web/JavaScript/Reference/Operators/typeof) is `"undefined"`.
+- این شیء با `undefined` و `null` [برابر سست](/en-US/docs/Web/JavaScript/Reference/Operators/Equality) است.
+- در زمینه‌های بولی [falsy](/en-US/docs/Glossary/Falsy) است.
+- [`typeof`](/en-US/docs/Web/JavaScript/Reference/Operators/typeof) آن `"undefined"` است.
 
-These special behaviors ensure that code like:
+این رفتارهای خاص تضمین می‌کنند که کدی مانند:
 
 ```js
 if (document.all) {
-  // Assume that we are in IE; provide special logic
+  // فرض می‌کنیم در IE هستیم؛ منطق ویژه ارائه دهید
 }
-// Assume that we are in a modern browser
+// فرض می‌کنیم در یک مرورگر مدرن هستیم
 ```
 
-Will continue to provide modern behavior even if the code is run in a browser that implements `document.all` for compatibility reasons.
+حتی اگر کد در مرورگری اجرا شود که `document.all` را به دلایل سازگاری پیاده‌سازی کرده است، به ارائه رفتار مدرن ادامه خواهد داد.
 
-However, in all other contexts, `document.all` remains an object. For example:
+با این حال، در سایر زمینه‌ها، `document.all` یک شیء باقی می‌ماند. برای مثال:
 
-- It is not [strictly equal](/en-US/docs/Web/JavaScript/Reference/Operators/Strict_equality) to either `undefined` or `null`.
-- When used on the left-hand side of the [nullish coalescing operator](/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing) (`??`) or the [optional chaining operator](/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining) (`?.`), it will not cause the expression to short-circuit.
+- این شیء با `undefined` یا `null` [به طور مساوی سخت‌گیرانه](/en-US/docs/Web/JavaScript/Reference/Operators/Strict_equality) برابر نیست.
+- هنگامی که در سمت چپ [عملگر nullish coalescing](/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing) (`??`) یا [عملگر زنجیره اختیاری](/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining) (`?.`) استفاده شود، باعث اتصال کوتاه (short-circuit) عبارت نمی‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLCollection")}}
