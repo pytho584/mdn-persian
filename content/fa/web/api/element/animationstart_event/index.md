@@ -1,11 +1,5 @@
 ---
 title: "Element: animationstart event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/animationstart_event"
-status: "needs-translation"
----
-
----
-title: "Element: animationstart event"
 short-title: animationstart
 slug: Web/API/Element/animationstart_event
 page-type: web-api-event
@@ -14,11 +8,11 @@ browser-compat: api.Element.animationstart_event
 
 {{APIRef("Web Animations")}}
 
-The **`animationstart`** event is fired when a [CSS Animation](/en-US/docs/Web/CSS/Guides/Animations) has started. If there is an {{cssxref("animation-delay")}}, this event will fire once the delay period has expired. A negative delay will cause the event to fire with an {{domxref("AnimationEvent/elapsedTime", "elapsedTime")}} equal to the absolute value of the delay (and, correspondingly, the animation will begin playing at that time index into the sequence).
+رویداد **`animationstart`** زمانی رخ می‌دهد که یک [انیمیشن CSS](/en-US/docs/Web/CSS/Guides/Animations) شروع شده باشد. اگر {{cssxref("animation-delay")}} تنظیم شده باشد، این رویداد پس از پایان دوره تأخیر فعال می‌شود. تأخیر منفی باعث می‌شود رویداد با {{domxref("AnimationEvent/elapsedTime", "elapsedTime")}} برابر قدر مطلق تأخیر فعال شود (و به همین ترتیب، انیمیشن از همان شاخص زمانی در دنباله شروع به پخش خواهد کرد).
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در متدهایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی مدیریت رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("animationstart", (event) => { })
@@ -26,15 +20,15 @@ addEventListener("animationstart", (event) => { })
 onanimationstart = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-An {{domxref("AnimationEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("AnimationEvent")}}. از {{domxref("Event")}} به ارث می‌رسد.
 
 {{InheritanceDiagram("AnimationEvent")}}
 
-## Examples
+## مثال‌ها
 
-This listens for the `animationstart` event and logs a message when it is fired:
+در این مثال به رویداد `animationstart` گوش داده می‌شود و وقتی رخ دهد، پیامی در کنسول ثبت می‌شود:
 
 ```js
 const animated = document.querySelector(".animated");
@@ -44,7 +38,7 @@ animated.addEventListener("animationstart", () => {
 });
 ```
 
-The same, but using `onanimationstart`:
+همین کار، اما با استفاده از `onanimationstart`:
 
 ```js
 const animated = document.querySelector(".animated");
@@ -54,7 +48,7 @@ animated.onanimationstart = () => {
 };
 ```
 
-### Live example
+### مثال زنده
 
 #### HTML
 
@@ -141,21 +135,21 @@ applyAnimation.addEventListener("click", () => {
 });
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Live_example', '100%', '150px') }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [CSS Animations](/en-US/docs/Web/CSS/Guides/Animations)
-- [Using CSS Animations](/en-US/docs/Web/CSS/Guides/Animations/Using)
+- [انیمیشن‌های CSS](/en-US/docs/Web/CSS/Guides/Animations)
+- [استفاده از انیمیشن‌های CSS](/en-US/docs/Web/CSS/Guides/Animations/Using)
 - {{domxref("AnimationEvent")}}
-- Related events: {{domxref("Element/animationend_event", "animationend")}}, {{domxref("Element/animationiteration_event", "animationiteration")}}, {{domxref("Element/animationcancel_event", "animationcancel")}}
+- رویدادهای مرتبط: {{domxref("Element/animationend_event", "animationend")}}, {{domxref("Element/animationiteration_event", "animationiteration")}}, {{domxref("Element/animationcancel_event", "animationcancel")}}
