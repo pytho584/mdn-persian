@@ -1,11 +1,5 @@
 ---
 title: "Element: getElementsByClassName() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/getElementsByClassName"
-status: "needs-translation"
----
-
----
-title: "Element: getElementsByClassName() method"
 short-title: getElementsByClassName()
 slug: Web/API/Element/getElementsByClassName
 page-type: web-api-instance-method
@@ -14,14 +8,9 @@ browser-compat: api.Element.getElementsByClassName
 
 {{APIRef("DOM")}}
 
-The {{domxref("Element")}} method
-**`getElementsByClassName()`** returns a live
-{{domxref("HTMLCollection")}} which contains every descendant element which has the
-specified class name or names.
+متد {{domxref("Element")}} با نام **`getElementsByClassName()`** یک {{domxref("HTMLCollection")}} زنده (live) برمی‌گرداند که شامل تمام عناصر فرزند (descendant) است که نام کلاس یا کلاس‌های مشخص‌شده را دارند.
 
-The method {{domxref("Document.getElementsByClassName", "getElementsByClassName()")}}
-on the {{domxref("Document")}} interface works essentially the same way, except it acts
-on the entire document, starting at the document root.
+متد {{domxref("Document.getElementsByClassName", "getElementsByClassName()")}} در رابط {{domxref("Document")}} تقریباً به همین صورت کار می‌کند، با این تفاوت که روی کل سند و از ریشه سند (document root) اعمال می‌شود.
 
 ## Syntax
 
@@ -32,44 +21,32 @@ getElementsByClassName(names)
 ### Parameters
 
 - `names`
-  - : A string containing one or more class names to match on, separated
-    by whitespace.
+  - : یک رشته شامل یک یا چند نام کلاس که با فاصله از هم جدا شده‌اند.
 
 ### Return value
 
-An {{domxref("HTMLCollection")}} providing a live-updating list of every element which
-is a member of every class in `names`.
+یک {{domxref("HTMLCollection")}} که فهرستی به‌روز شونده (live-updating) از تمام عناصر عضو هر کلاس در `names` ارائه می‌دهد.
 
 ## Usage notes
 
-As always, the returned collection is _live_, meaning that it always reflects
-the current state of the DOM tree rooted at the element on which the function was
-called. As new elements that match `names` are added to the subtree, they
-immediately appear in the collection. Similarly, if an existing element that doesn't
-match `names` has its set of classes adjusted so that it matches, it
-immediately appears in the collection.
+همانند همیشه، مجموعه بازگشتی _زنده (live)_ است، به این معنی که همیشه وضعیت فعلی درخت DOM ریشه‌شده در عنصری که تابع روی آن فراخوانی شده را منعکس می‌کند. به محض اینکه عناصر جدیدی که با `names` مطابقت دارند به زیردرخت اضافه شوند، بلافاصله در مجموعه ظاهر می‌شوند. به همین ترتیب، اگر یک عنصر موجود که با `names` مطابقت ندارد، مجموعه کلاس‌هایش طوری تنظیم شود که مطابقت پیدا کند، بلافاصله در مجموعه ظاهر می‌شود.
 
-The opposite is also true; as elements no longer match the set of names, they are
-immediately removed from the collection.
+عکس این نیز صادق است: به محض اینکه عناصر دیگر با مجموعه نام‌ها مطابقت نداشته باشند، بلافاصله از مجموعه حذف می‌شوند.
 
 > [!NOTE]
-> In [quirks mode](/en-US/docs/Web/HTML/Guides/Quirks_mode_and_standards_mode), the
-> class names are compared in a case-insensitive fashion. Otherwise, they're case
-> sensitive.
+> در [حالت quirks](/en-US/docs/Web/HTML/Guides/Quirks_mode_and_standards_mode)، نام کلاس‌ها به صورت غیرحساس به بزرگی/کوچکی حروف (case-insensitive) مقایسه می‌شوند. در غیر این صورت، به حروف حساس هستند.
 
 ## Examples
 
 ### Matching a single class
 
-To look for elements that include among their classes a single specified class, we just
-provide that class name when calling `getElementsByClassName()`:
+برای جستجوی عناصری که در میان کلاس‌های خود یک کلاس مشخص را دارند، کافی است هنگام فراخوانی `getElementsByClassName()` آن نام کلاس را ارائه دهیم:
 
 ```js
 element.getElementsByClassName("test");
 ```
 
-This example finds all elements that have a class of `test`, which are also
-a descendant of the element that has the `id` of `main`:
+این مثال تمام عناصری را پیدا می‌کند که کلاس `test` دارند و همچنین فرزند عنصری هستند که `id` برابر `main` دارد:
 
 ```js
 document.getElementById("main").getElementsByClassName("test");
@@ -77,8 +54,7 @@ document.getElementById("main").getElementsByClassName("test");
 
 ### Matching multiple classes
 
-To find elements whose class lists include both the `red` and
-`test` classes:
+برای یافتن عناصری که فهرست کلاس‌هایشان شامل هر دو کلاس `red` و `test` است:
 
 ```js
 element.getElementsByClassName("red test");
@@ -86,11 +62,7 @@ element.getElementsByClassName("red test");
 
 ### Examining the results
 
-You can use either the {{domxref("HTMLCollection.item", "item()")}} method on the
-returned `HTMLCollection` or standard array syntax to examine individual
-elements in the collection. However, the following code will not
-work as one might expect because `"matches"` will change as
-soon as any `"color-box"` class is removed.
+می‌توانید از متد {{domxref("HTMLCollection.item", "item()")}} روی `HTMLCollection` بازگشتی یا از نحو آرایه استاندارد برای بررسی عناصر منفرد در مجموعه استفاده کنید. با این حال، کد زیر آنطور که انتظار می‌رود کار نخواهد کرد زیرا `"matches"` به محض حذف هر کلاس `"color-box"` تغییر می‌کند.
 
 ```js
 const matches = element.getElementsByClassName("color-box");
@@ -101,7 +73,7 @@ for (let i = 0; i < matches.length; i++) {
 }
 ```
 
-Instead, use another method, such as:
+در عوض، از روش دیگری مانند زیر استفاده کنید:
 
 ```js
 const matches = element.getElementsByClassName("color-box");
@@ -112,14 +84,11 @@ while (matches.length > 0) {
 }
 ```
 
-This code finds descendant elements with the `"color-box"` class, adds the
-class `"hue-frame"`, by calling `item(0)`, then removes
-`"color-box"` (using array notation). Another element (if any are left) will
-then become `item(0)`.
+این کد عناصر فرزند دارای کلاس `"color-box"` را پیدا می‌کند، با فراخوانی `item(0)` کلاس `"hue-frame"` را اضافه می‌کند و سپس `"color-box"` را (با استفاده از نماد آرایه) حذف می‌کند. عنصر دیگری (اگر باقی مانده باشد) سپس به `item(0)` تبدیل می‌شود.
 
 ### Filtering the results using array methods
 
-We can also use {{jsxref("Array")}} methods on any {{domxref("HTMLCollection")}} by passing the {{domxref("HTMLCollection")}} as the method's `this` value. Here we'll find all {{HTMLElement("div")}} elements that have a class of `test`:
+همچنین می‌توانیم از متدهای {{jsxref("Array")}} روی هر {{domxref("HTMLCollection")}} با ارسال {{domxref("HTMLCollection")}} به عنوان مقدار `this` متد استفاده کنیم. در اینجا تمام عناصر {{HTMLElement("div")}} را که دارای کلاس `test` هستند پیدا می‌کنیم:
 
 ```js
 const testElements = document.getElementsByClassName("test");
