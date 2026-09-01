@@ -1,7 +1,5 @@
 ---
 title: "Element: gesturestart event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/gesturestart_event"
-status: "needs-translation"
 ---
 
 ---
@@ -16,13 +14,13 @@ browser-compat: api.Element.gesturestart_event
 
 {{APIRef}}{{Non-standard_header}}
 
-The **`gesturestart`** event is fired when multiple fingers contact the touch surface, thus starting a new gesture. During the gesture, {{domxref("Element/gesturechange_event", "gesturechange")}} events will be fired. When the gesture has ended, a {{domxref("Element/gestureend_event", "gestureend")}} event will be fired.
+رویداد **`gesturestart`** زمانی صادر می‌شود که چند انگشت با سطح لمسی تماس برقرار کنند و در نتیجه یک ژست جدید شروع شود. در طول ژست، رویدادهای {{domxref("Element/gesturechange_event", "gesturechange")}} صادر خواهند شد. وقتی ژست به پایان برسد، رویداد {{domxref("Element/gestureend_event", "gestureend")}} صادر می‌شود.
 
-It is a proprietary event specific to WebKit.
+این یک رویداد اختصاصی مخصوص WebKit است.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+نام رویداد را در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی مدیریت‌کننده رویداد را تنظیم کنید.
 
 ```js-nolint
 addEventListener("gesturestart", (event) => { })
@@ -30,20 +28,20 @@ addEventListener("gesturestart", (event) => { })
 ongesturestart = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("GestureEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("GestureEvent")}}. از {{domxref("Event")}} به ارث می‌رسد.
 
 {{InheritanceDiagram("GestureEvent")}}
 
-## Specifications
+## مشخصات
 
-Not part of any specification.
+بخشی از هیچ مشخصه‌ای نیست.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [GestureEventClassReference at the Safari Developer Library](https://developer.apple.com/documentation/webkitjs/gestureevent)
+- [مرجع کلاس GestureEvent در کتابخانه توسعه‌دهندگان Safari](https://developer.apple.com/documentation/webkitjs/gestureevent)
