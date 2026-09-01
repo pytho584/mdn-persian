@@ -1,11 +1,5 @@
 ---
 title: "FileSystemDirectoryEntry: getDirectory() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemDirectoryEntry/getDirectory"
-status: "needs-translation"
----
-
----
-title: "FileSystemDirectoryEntry: getDirectory() method"
 short-title: getDirectory()
 slug: Web/API/FileSystemDirectoryEntry/getDirectory
 page-type: web-api-instance-method
@@ -14,12 +8,9 @@ browser-compat: api.FileSystemDirectoryEntry.getDirectory
 
 {{APIRef("File and Directory Entries API")}}
 
-The {{domxref("FileSystemDirectoryEntry")}} interface's method
-**`getDirectory()`** returns a
-{{domxref("FileSystemDirectoryEntry")}} object corresponding to a directory contained
-somewhere within the directory subtree rooted at the directory on which it's called.
+متد {{domxref("FileSystemDirectoryEntry")}} با نام **`getDirectory()`** یک شیء {{domxref("FileSystemDirectoryEntry")}} را برمی‌گرداند که متناظر با یک دایرکتوری درون زیردرخت دایرکتوری ریشه‌شده در دایرکتوری‌ای است که بر روی آن فراخوانی شده است.
 
-## Syntax
+## نحوه استفاده
 
 ```js-nolint
 getDirectory()
@@ -29,70 +20,53 @@ getDirectory(path, options, successCallback)
 getDirectory(path, options, successCallback, errorCallback)
 ```
 
-### Parameters
+### پارامترها
 
 - `path` {{optional_inline}}
-  - : A string representing an absolute path or a path relative to the
-    directory on which the method is called, describing which directory entry to return.
-    Absolute paths may not be able to be used, for security reasons.
+  - : یک رشته که یک مسیر مطلق یا یک مسیر نسبی نسبت به دایرکتوری‌ای که متد بر روی آن فراخوانی شده است را نشان می‌دهد و مشخص می‌کند کدام ورودی دایرکتوری برگردانده شود. مسیرهای مطلق ممکن است به دلایل امنیتی قابل استفاده نباشند.
 - `options` {{optional_inline}}
-  - : An object which allows you
-    to specify whether or not to create the entry if it's missing and if it's an error if
-    the file already exists. These options are currently not useful in Web contexts.
-    See the [options parameter](#options_parameter) section for more details.
+  - : یک شیء که به شما امکان می‌دهد مشخص کنید آیا در صورت وجود نداشتن ورودی، آن را ایجاد کند یا خیر و آیا وجود فایل از قبل خطا محسوب می‌شود یا خیر. این گزینه‌ها در حال حاضر در بستر وب مفید نیستند. برای جزئیات بیشتر به بخش [پارامتر options](#options-parameter) مراجعه کنید.
 - `successCallback` {{optional_inline}}
-  - : A method to be called once the {{domxref("FileSystemDirectoryEntry")}} has been
-    created. The method receives a single parameter: the
-    `FileSystemDirectoryEntry` object representing the directory in question.
+  - : متدی که پس از ایجاد {{domxref("FileSystemDirectoryEntry")}} فراخوانی می‌شود. این متد یک پارامتر دریافت می‌کند: شیء `FileSystemDirectoryEntry` که نمایانگر دایرکتوری مورد نظر است.
 - `errorCallback` {{optional_inline}}
-  - : A method to be called if an error occurs. Receives as its sole input parameter a
-    {{domxref("DomException")}} object describing the error which occurred.
+  - : متدی که در صورت بروز خطا فراخوانی می‌شود. به عنوان تنها پارامتر ورودی، یک شیء {{domxref("DomException")}} دریافت می‌کند که خطای رخ داده را توصیف می‌کند.
 
-#### `options` parameter
+#### پارامتر `options`
 
-The `options` parameter object accepts the following parameters:
+شیء پارامتر `options` پارامترهای زیر را می‌پذیرد:
 
 - `create` {{optional_inline}}
-  - : If this property is `true`, and the requested directory doesn't exist, the user agent should create it.
-    The default is `false`.
-    The parent directory must already exist.
+  - : اگر این ویژگی `true` باشد و دایرکتوری درخواستی وجود نداشته باشد، عامل کاربر باید آن را ایجاد کند. مقدار پیش‌فرض `false` است. دایرکتوری والد باید از قبل وجود داشته باشد.
 - `exclusive` {{optional_inline}}
-  - : If `true`, and the `create` option is also `true`, the directory must not exist prior to issuing the call.
-    Instead, it must be possible for it to be created newly at call time.
-    The default is `false`. This parameter is ignored if `create` is `false`.
+  - : اگر `true` باشد و همچنین گزینه `create` نیز `true` باشد، دایرکتوری نباید قبل از فراخوانی وجود داشته باشد. در عوض، باید بتوان آن را در زمان فراخوانی به صورت جدید ایجاد کرد. مقدار پیش‌فرض `false` است. اگر `create` `false` باشد، این پارامتر نادیده گرفته می‌شود.
 
-The table below describes the result of each possible combination of these flags depending on whether or not the target directory path already exists.
+جدول زیر نتیجه هر ترکیب ممکن از این پرچم‌ها را بسته به اینکه مسیر دایرکتوری هدف از قبل وجود داشته باشد یا خیر، توصیف می‌کند.
 
-| `create` option | `exclusive` option | Path condition                 | Result                                                                                                                                              |
-| --------------- | ------------------ | ------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `false`         | _Ignored_          | Path exists and is a directory | The `successCallback` is called with a {{domxref("FileSystemDirectoryEntry")}}.                                                                     |
-| `false`         | _Ignored_          | Path exists but is a file      | The `errorCallback` is called with an appropriate error code (if the callback was provided).                                                        |
-| `true`          | `false`            | Path exists                    | The existing directory is removed and replaced with a new one, then the `successCallback` is called with a {{domxref("FileSystemDirectoryEntry")}}. |
-| `true`          | `false`            | Path doesn't exist             | The directory is created, then a {{domxref("FileSystemDirectoryEntry")}} is passed to the `successCallback`.                                        |
-| `true`          | `true`             | Path exists                    | The `errorCallback` is called with an appropriate error, such as `DOMException.PATH_EXISTS_ERR`.                                                    |
-| `true`          | `true`             | Path doesn't exist             | The directory is created, then a {{domxref("FileSystemDirectoryEntry")}} is passed to the `successCallback`.                                        |
+| گزینه `create` | گزینه `exclusive` | وضعیت مسیر                         | نتیجه                                                                                                                                                 |
+| -------------- | ----------------- | ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `false`        | _نادیده گرفته شده_ | مسیر وجود دارد و یک دایرکتوری است | `successCallback` با یک {{domxref("FileSystemDirectoryEntry")}} فراخوانی می‌شود.                                                                      |
+| `false`        | _نادیده گرفته شده_ | مسیر وجود دارد اما یک فایل است     | `errorCallback` با یک کد خطای مناسب فراخوانی می‌شود (اگر تابع بازگشتی ارائه شده باشد).                                                                |
+| `true`         | `false`           | مسیر وجود دارد                     | دایرکتوری موجود حذف شده و با یک دایرکتوری جدید جایگزین می‌شود، سپس `successCallback` با یک {{domxref("FileSystemDirectoryEntry")}} فراخوانی می‌شود. |
+| `true`         | `false`           | مسیر وجود ندارد                    | دایرکتوری ایجاد می‌شود، سپس یک {{domxref("FileSystemDirectoryEntry")}} به `successCallback` ارسال می‌شود.                                            |
+| `true`         | `true`            | مسیر وجود دارد                     | `errorCallback` با یک خطای مناسب، مانند `DOMException.PATH_EXISTS_ERR`، فراخوانی می‌شود.                                                              |
+| `true`         | `true`            | مسیر وجود ندارد                    | دایرکتوری ایجاد می‌شود، سپس یک {{domxref("FileSystemDirectoryEntry")}} به `successCallback` ارسال می‌شود.                                            |
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `NotFoundError` {{domxref("DOMException")}}
-  - : Thrown if the `create` option was not specified (or was specified as
-    `false`), and the directory doesn't exist.
+  - : اگر گزینه `create` مشخص نشده باشد (یا به صورت `false` مشخص شده باشد) و دایرکتوری وجود نداشته باشد، پرتاب می‌شود.
 - `SecurityError` {{domxref("DOMException")}}
-  - : Thrown if the request to access the directory was denied for security reasons.
+  - : اگر به دلایل امنیتی درخواست دسترسی به دایرکتوری رد شود، پرتاب می‌شود.
 - `TypeMismatchError` {{domxref("DOMException")}}
-  - : Thrown if the path specified is not a directory; it's probably a file, but might be an
-    unsupported file descriptor such as a pipe; this depends on the user agent to some
-    extent.
+  - : اگر مسیر مشخص شده یک دایرکتوری نباشد، پرتاب می‌شود؛ احتمالاً یک فایل است، اما ممکن است یک توصیف‌کننده فایل پشتیبانی‌نشده مانند یک پایپ (pipe) باشد؛ این موضوع تا حدودی به عامل کاربر بستگی دارد.
 
-## Examples
+## مثال‌ها
 
-In this example, a function is presented whose job it is to locate within a user's app
-data directory a JSON file containing a user dictionary for a specified language, then
-load that dictionary.
+در این مثال، تابعی ارائه شده است که وظیفه آن یافتن یک فایل JSON حاوی دیکشنری کاربر برای یک زبان مشخص در دایرکتوری داده‌های برنامه کاربر است و سپس آن دیکشنری را بارگذاری می‌کند.
 
 ```js
 let dictionary = null;
@@ -116,26 +90,17 @@ function loadDictionaryForLanguage(appDataDirEntry, lang) {
 }
 ```
 
-The `loadDictionaryForLanguage()` function starts by using
-`getDirectory()` to obtain the {{domxref("FileSystemDirectoryEntry")}} object
-representing a subfolder named "Dictionaries" located inside the specified app data
-directory. The success callback for this takes the resulting directory entry object and
-calls {{domxref("FileSystemDirectoryEntry.getFile", "getFile()")}} to get a
-{{domxref("FileSystemFileEntry")}} object representing the dictionary file; the success
-callback for this, in turn, creates a new {{domxref("FileReader")}} and uses it to load
-the contents of the file. When that is loaded successfully (as indicated by the
-{{domxref("FileReader/loadend_event", "loadend")}} event being fired), the loaded text is passed into
-{{jsxref("JSON.parse()")}} to be reconstituted into a JavaScript object.
+تابع `loadDictionaryForLanguage()` با استفاده از `getDirectory()` شروع می‌کند تا شیء {{domxref("FileSystemDirectoryEntry")}} مربوط به زیرپوشه‌ای به نام "Dictionaries" که در داخل دایرکتوری داده‌های برنامه مشخص شده قرار دارد، به دست آورد. تابع بازگشتی موفقیت این مرحله، شیء ورودی دایرکتوری حاصل را گرفته و {{domxref("FileSystemDirectoryEntry.getFile", "getFile()")}} را فراخوانی می‌کند تا یک شیء {{domxref("FileSystemFileEntry")}} مربوط به فایل دیکشنری به دست آورد. تابع بازگشتی موفقیت این مرحله نیز به نوبه خود یک {{domxref("FileReader")}} جدید ایجاد کرده و از آن برای بارگذاری محتویات فایل استفاده می‌کند. هنگامی که این بارگذاری با موفقیت انجام شود (که با فعال شدن رویداد {{domxref("FileReader/loadend_event", "loadend")}} مشخص می‌شود)، متن بارگذاری شده به {{jsxref("JSON.parse()")}} ارسال می‌شود تا به یک شیء جاوااسکریپت تبدیل شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [File and Directory Entries API](/en-US/docs/Web/API/File_and_Directory_Entries_API)
+- [API ورودی‌های فایل و دایرکتوری](/en-US/docs/Web/API/File_and_Directory_Entries_API)
 - {{domxref("FileSystemDirectoryEntry")}}
