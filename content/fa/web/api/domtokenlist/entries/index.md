@@ -1,11 +1,5 @@
 ---
 title: "DOMTokenList: entries() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/entries"
-status: "needs-translation"
----
-
----
-title: "DOMTokenList: entries() method"
 short-title: entries()
 slug: Web/API/DOMTokenList/entries
 page-type: web-api-instance-method
@@ -14,41 +8,33 @@ browser-compat: api.DOMTokenList.entries
 
 {{APIRef("DOM")}}
 
-The **`entries()`** method of the {{domxref("DOMTokenList")}} interface
-returns an {{jsxref("Iteration_protocols",'iterator')}} allowing you
-to go through all key/value pairs contained in this object. The values are
-{{jsxref("Array")}}s which have [key, value] pairs, each representing a single token.
+متد **`entries()``** از رابط {{domxref("DOMTokenList")}} یک {{jsxref("Iteration_protocols","تکرارگر (iterator)")}} بازمی‌گرداند که به شما امکان می‌دهد تمام جفت‌های کلید/مقدار موجود در این شیء را پیمایش کنید. مقادیر، {{jsxref("Array")}}هایی هستند که هر کدام یک جفت [کلید, مقدار] را نشان می‌دهند و هر جفت نمایانگر یک توکن است.
 
-## Syntax
+## نحو
 
 ```js-nolint
 entries()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-Returns an {{jsxref("Iteration_protocols","iterator")}}.
+یک {{jsxref("Iteration_protocols","تکرارگر (iterator)")}} بازمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-In the following example we retrieve the list of classes set on a
-{{htmlelement("span")}} element as a `DOMTokenList` using
-{{domxref("Element.classList")}}. We when retrieve an iterator containing the key/value
-pairs using `entries()`, then iterate through each one using a
-{{jsxref("Statements/for...of", "for...of")}} loop, writing them to the
-`<span>`'s {{domxref("Node.textContent")}}.
+در مثال زیر، فهرست کلاس‌های تنظیم‌شده روی یک عنصر {{htmlelement("span")}} را به صورت یک `DOMTokenList` با استفاده از {{domxref("Element.classList")}} دریافت می‌کنیم. سپس یک تکرارگر حاوی جفت‌های کلید/مقدار را با استفاده از `entries()` به دست می‌آوریم و با یک حلقه {{jsxref("Statements/for...of", "for...of")}} روی آن‌ها پیمایش می‌کنیم و هر جفت را در {{domxref("Node.textContent")}} عنصر `<span>` می‌نویسیم.
 
-First, the HTML:
+ابتدا، HTML:
 
 ```html
 <span class="a b c"></span>
 ```
 
-Now the JavaScript:
+حالا جاوااسکریپت:
 
 ```js
 const span = document.querySelector("span");
@@ -60,18 +46,18 @@ for (const value of iterator) {
 }
 ```
 
-The output looks like this:
+خروجی به صورت زیر است:
 
 {{ EmbedLiveSample('Examples', '100%', 60) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("DOMTokenList.foreach()")}}, {{domxref("DOMTokenList.keys")}} and {{domxref("DOMTokenList.values")}}.
+- {{domxref("DOMTokenList.foreach()")}}, {{domxref("DOMTokenList.keys")}} و {{domxref("DOMTokenList.values")}}.
