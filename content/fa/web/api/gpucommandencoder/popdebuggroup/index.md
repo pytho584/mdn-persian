@@ -1,7 +1,5 @@
 ---
 title: "GPUCommandEncoder: popDebugGroup() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder/popDebugGroup"
-status: "needs-translation"
 ---
 
 ---
@@ -14,32 +12,31 @@ browser-compat: api.GPUCommandEncoder.popDebugGroup
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`popDebugGroup()`** method of the
-{{domxref("GPUCommandEncoder")}} interface ends a debug group, which is begun with a {{domxref("GPUCommandEncoder.pushDebugGroup", "pushDebugGroup()")}} call.
+متد **`popDebugGroup()`** از رابط {{domxref("GPUCommandEncoder")}} یک گروه اشکال‌زدایی (debug group) را پایان می‌دهد که با فراخوانی {{domxref("GPUCommandEncoder.pushDebugGroup", "pushDebugGroup()")}} شروع شده است.
 
-This could be used for telemetry, or may be utilized in {{domxref("GPUError")}} messages, browser dev tools, or other services in the future to help with debugging.
+این قابلیت می‌تواند برای تله‌متری استفاده شود، یا ممکن است در پیام‌های {{domxref("GPUError")}}، ابزارهای توسعه‌دهنده مرورگر، یا سایر سرویس‌ها در آینده برای کمک به اشکال‌زدایی به کار رود.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 popDebugGroup()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ پارامتری.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Validation
+### اعتبارسنجی
 
-The following criteria must be met when calling **`popDebugGroup()`**, otherwise a {{domxref("GPUValidationError")}} is generated and the {{domxref("GPUCommandEncoder")}} becomes invalid:
+هنگام فراخوانی **`popDebugGroup()`** معیارهای زیر باید برآورده شوند؛ در غیر این صورت یک {{domxref("GPUValidationError")}} تولید می‌شود و {{domxref("GPUCommandEncoder")}} نامعتبر می‌شود:
 
-- The command encoder's debug stack is not empty (i.e., at least one debug group was previously started with {{domxref("GPUCommandEncoder.pushDebugGroup", "pushDebugGroup()")}}).
+- پشته اشکال‌زدایی (debug stack) رمزگذار فرمان خالی نیست (یعنی حداقل یک گروه اشکال‌زدایی قبلاً با {{domxref("GPUCommandEncoder.pushDebugGroup", "pushDebugGroup()")}} شروع شده است).
 
-## Examples
+## مثال‌ها
 
 ```js
 // …
@@ -59,14 +56,14 @@ commandEncoder.popDebugGroup(); // End labeled debug group
 // …
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
