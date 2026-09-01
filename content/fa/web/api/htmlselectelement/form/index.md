@@ -1,11 +1,5 @@
 ---
 title: "HTMLSelectElement: form property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/form"
-status: "needs-translation"
----
-
----
-title: "HTMLSelectElement: form property"
 short-title: form
 slug: Web/API/HTMLSelectElement/form
 page-type: web-api-instance-property
@@ -14,24 +8,24 @@ browser-compat: api.HTMLSelectElement.form
 
 {{APIRef("HTML DOM")}}
 
-The **`form`** read-only property of the {{domxref("HTMLSelectElement")}} interface returns an {{domxref("HTMLFormElement")}} object that owns this {{htmlelement("select")}}, or `null` if this select is not owned by any form.
+ویژگی فقط‌خواندنی **`form`** در رابط {{domxref("HTMLSelectElement")}}، شیء {{domxref("HTMLFormElement")}} را برمی‌گرداند که مالک این عنصر {{htmlelement("select")}} است. اگر این عنصر به هیچ فرمی تعلق نداشته باشد، مقدار `null` برمی‌گردد.
 
-## Value
+## مقدار
 
-An {{domxref("HTMLFormElement")}} or `null`.
+یک {{domxref("HTMLFormElement")}} یا `null`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("HTMLSelectElement")}}
 - {{domxref("HTMLFormElement")}}
 - {{HTMLElement("select")}}
-- HTML [`form`](/en-US/docs/Web/HTML/Reference/Attributes/form) attribute
-- [HTML forms guide](/en-US/docs/Learn_web_development/Extensions/Forms)
+- صفت HTML [`form`](/en-US/docs/Web/HTML/Reference/Attributes/form)
+- [راهنمای فرم‌های HTML](/en-US/docs/Learn_web_development/Extensions/Forms)
