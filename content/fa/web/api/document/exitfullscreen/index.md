@@ -1,11 +1,5 @@
 ---
 title: "Document: exitFullscreen() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/exitFullscreen"
-status: "needs-translation"
----
-
----
-title: "Document: exitFullscreen() method"
 short-title: exitFullscreen()
 slug: Web/API/Document/exitFullscreen
 page-type: web-api-instance-method
@@ -14,32 +8,25 @@ browser-compat: api.Document.exitFullscreen
 
 {{ApiRef("Fullscreen API")}}
 
-The {{domxref("Document")}} method
-**`exitFullscreen()`** requests that the element on this
-document which is currently being presented in fullscreen mode be taken out of
-fullscreen mode, restoring the previous state of the screen. This usually
-reverses the effects of a previous call to {{domxref("Element.requestFullscreen()")}}.
+متد **`exitFullscreen()`** از {{domxref("Document")}} درخواست می‌دهد که عنصری از این سند که در حال حاضر در حالت تمام‌صفحه نمایش داده می‌شود، از حالت تمام‌صفحه خارج شود و وضعیت قبلی صفحه بازگردانی شود. این کار معمولاً اثرات فراخوانی قبلی {{domxref("Element.requestFullscreen()")}} را معکوس می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 exitFullscreen()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} which is resolved once the {{Glossary("user agent")}} has
-finished exiting fullscreen mode. If an error occurs while attempting to exit
-fullscreen mode, the `catch()` handler for the promise is called.
+یک {{jsxref("Promise")}} که زمانی که {{Glossary("user agent")}} خروج از حالت تمام‌صفحه را به پایان برساند، resolve می‌شود. اگر هنگام تلاش برای خروج از حالت تمام‌صفحه خطایی رخ دهد، کنترل‌کننده `catch()` برای آن promise فراخوانی می‌شود.
 
-## Examples
+## مثال‌ها
 
-This example causes the current document to toggle in and out of a fullscreen
-presentation whenever the mouse button is clicked within it.
+این مثال باعث می‌شود سند فعلی با هر کلیک ماوس در داخل آن، بین حالت تمام‌صفحه و حالت عادی جابه‌جا شود.
 
 ```js
 document.onclick = (event) => {
@@ -55,23 +42,22 @@ document.onclick = (event) => {
 ```
 
 > [!NOTE]
-> For a more complete example, see the
-> [`Element.requestFullscreen()` examples](/en-US/docs/Web/API/Element/requestFullscreen#examples).
+> برای یک مثال کامل‌تر، به
+> [مثال‌های `Element.requestFullscreen()`](/en-US/docs/Web/API/Element/requestFullscreen#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - [Fullscreen API](/en-US/docs/Web/API/Fullscreen_API)
-- [Guide to the Fullscreen API](/en-US/docs/Web/API/Fullscreen_API/Guide)
+- [راهنمای Fullscreen API](/en-US/docs/Web/API/Fullscreen_API/Guide)
 - {{ domxref("Element.requestFullscreen()") }}
 - {{ domxref("Document.fullscreenElement") }}
-- {{ cssxref(":fullscreen") }} and {{cssxref("::backdrop")}}
-- The {{HTMLElement("iframe")}} [`allowfullscreen`](/en-US/docs/Web/HTML/Reference/Elements/iframe#allowfullscreen)
-  attribute
+- {{ cssxref(":fullscreen") }} و {{cssxref("::backdrop")}}
+- ویژگی [`allowfullscreen`](/en-US/docs/Web/HTML/Reference/Elements/iframe#allowfullscreen) در عنصر {{HTMLElement("iframe")}}
