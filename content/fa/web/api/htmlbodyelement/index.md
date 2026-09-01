@@ -1,10 +1,4 @@
 ---
-title: "HTMLBodyElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLBodyElement"
-status: "needs-translation"
----
-
----
 title: HTMLBodyElement
 slug: Web/API/HTMLBodyElement
 page-type: web-api-interface
@@ -13,99 +7,99 @@ browser-compat: api.HTMLBodyElement
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLBodyElement`** interface provides special properties (beyond those inherited from the regular {{ domxref("HTMLElement") }} interface) for manipulating {{HtmlElement("body")}} elements.
+رابط **`HTMLBodyElement`** ویژگی‌های خاصی (فراتر از آنچه از رابط معمولی {{ domxref("HTMLElement") }} به ارث برده است) را برای دستکاری عناصر {{HtmlElement("body")}} فراهم می‌کند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("HTMLElement")}}._
+_ویژگی‌های والد خود، {{domxref("HTMLElement")}} را به ارث می‌برد._
 
 - {{domxref("HTMLBodyElement.aLink")}} {{deprecated_inline}}
-  - : A string that represents the color of active hyperlinks.
+  - : یک رشته که رنگ پیوند‌های فعال را نشان می‌دهد.
 - {{domxref("HTMLBodyElement.background")}} {{deprecated_inline}}
-  - : A string that represents the description of the location of the background image resource. Note that this is not a URI, though some older version of some browsers do expect it.
+  - : یک رشته که توضیح مکان منبع تصویر پس‌زمینه را نشان می‌دهد. توجه داشته باشید که این یک URI نیست، اگرچه برخی از نسخه‌های قدیمی برخی مرورگرها آن را به عنوان URI انتظار دارند.
 - {{domxref("HTMLBodyElement.bgColor")}} {{deprecated_inline}}
-  - : A string that represents the background color for the document.
+  - : یک رشته که رنگ پس‌زمینه سند را نشان می‌دهد.
 - {{domxref("HTMLBodyElement.link")}} {{deprecated_inline}}
-  - : A string that represents the color of unvisited links.
+  - : یک رشته که رنگ پیوند‌های بازدید نشده را نشان می‌دهد.
 - {{domxref("HTMLBodyElement.text")}} {{deprecated_inline}}
-  - : A string that represents the foreground color of text.
+  - : یک رشته که رنگ پیش‌زمینه متن را نشان می‌دهد.
 - {{domxref("HTMLBodyElement.vLink")}} {{deprecated_inline}}
-  - : A string that represents the color of visited links.
+  - : یک رشته که رنگ پیوند‌های بازدید شده را نشان می‌دهد.
 
-## Instance methods
+## روش‌های نمونه
 
-_No specific methods; inherits methods from its parent, {{domxref("HTMLElement")}}._
+_بدون روش خاص؛ روش‌های والد خود، {{domxref("HTMLElement")}} را به ارث می‌برد._
 
-## Event handlers
+## مدیریت‌کننده‌های رویداد
 
-The {{domxref("HTMLElement")}} events are inherited.
+رویدادهای {{domxref("HTMLElement")}} به ارث می‌رسند.
 
-The following {{domxref("Window")}} `onXYZ` event handler properties are also available as aliases targeting the `window` object. However, it is advised to listen to them on the `window` object directly rather than on `HTMLBodyElement`.
+ویژگی‌های مدیریت‌کننده رویداد `onXYZ` زیر از {{domxref("Window")}} نیز به عنوان نام‌های مستعار در دسترس هستند که به شیء `window` اشاره می‌کنند. با این حال، توصیه می‌شود که مستقیماً به رویدادهای روی شیء `window` گوش دهید، نه روی `HTMLBodyElement`.
 
 > [!NOTE]
-> Using `addEventListener()` on `HTMLBodyElement` will not work for the `onXYZ` event handlers listed below. Listen to the events on the {{domxref("window")}} object instead.
+> استفاده از `addEventListener()` روی `HTMLBodyElement` برای مدیریت‌کننده‌های رویداد `onXYZ` فهرست شده در زیر کار نخواهد کرد. در عوض، به رویدادهای روی شیء {{domxref("window")}} گوش دهید.
 
 - {{domxref("window.afterprint_event", "HTMLBodyElement.onafterprint")}}
-  - : Fired after the associated document has started printing or the print preview has been closed.
+  - : زمانی که چاپ سند مرتبط شروع شده یا پیش‌نمایش چاپ بسته شده است، فعال می‌شود.
 - {{domxref("window.beforeprint_event", "HTMLBodyElement.onbeforeprint")}}
-  - : Fired when the associated document is about to be printed or previewed for printing.
+  - : زمانی که سند مرتبط در شرف چاپ یا پیش‌نمایش برای چاپ است، فعال می‌شود.
 - {{domxref("window.beforeunload_event", "HTMLBodyElement.onbeforeunload")}}
-  - : Fired when the window, the document and its resources are about to be unloaded.
+  - : زمانی که پنجره، سند و منابع آن در شرف تخلیه هستند، فعال می‌شود.
 - {{domxref("window.blur_event", "HTMLBodyElement.onblur")}}
-  - : Fired when the window loses focus.
+  - : زمانی که پنجره فوکوس خود را از دست می‌دهد، فعال می‌شود.
 - {{domxref("window.error_event", "HTMLBodyElement.onerror")}}
-  - : Fired when an error occurs and bubbles up to the window.
+  - : زمانی که خطایی رخ می‌دهد و به سمت پنجره بالا می‌آید، فعال می‌شود.
 - {{domxref("window.focus_event", "HTMLBodyElement.onfocus")}}
-  - : Fired when the window gains focus.
+  - : زمانی که پنجره فوکوس می‌گیرد، فعال می‌شود.
 - {{domxref("window.gamepadconnected_event", "HTMLBodyElement.ongamepadconnected")}}
-  - : Fired when the browser detects that a gamepad has been connected or the first time a button/axis of the gamepad is used.
+  - : زمانی که مرورگر تشخیص می‌دهد یک گیم‌پد متصل شده است یا اولین بار که یک دکمه/محور از گیم‌پد استفاده می‌شود، فعال می‌شود.
 - {{domxref("window.gamepaddisconnected_event", "HTMLBodyElement.ongamepaddisconnected")}}
-  - : Fired when the browser detects that a gamepad has been disconnected.
+  - : زمانی که مرورگر تشخیص می‌دهد یک گیم‌پد قطع شده است، فعال می‌شود.
 - {{domxref("window.hashchange_event", "HTMLBodyElement.onhashchange")}}
-  - : Fired when the fragment identifier of the URL has changed (the part of the URL beginning with and following the `#` symbol).
+  - : زمانی که شناسه قطعه URL تغییر می‌کند (بخشی از URL که با نماد `#` شروع می‌شود و پس از آن می‌آید)، فعال می‌شود.
 - {{domxref("window.languagechange_event", "HTMLBodyElement.onlanguagechange")}}
-  - : Fired when the user's preferred language changes.
+  - : زمانی که زبان ترجیحی کاربر تغییر می‌کند، فعال می‌شود.
 - {{domxref("window.load_event", "HTMLBodyElement.onload")}}
-  - : Fired when the document has finished loading.
+  - : زمانی که بارگذاری سند به پایان رسیده است، فعال می‌شود.
 - {{domxref("window.message_event", "HTMLBodyElement.onmessage")}}
-  - : Fired when the window receives a message, for example from a call to [`Window.postMessage()`](/en-US/docs/Web/API/Window/postMessage) from another browsing context.
+  - : زمانی که پنجره یک پیام دریافت می‌کند، مثلاً از یک فراخوانی [`Window.postMessage()`](/en-US/docs/Web/API/Window/postMessage) از یک زمینه مرور دیگر، فعال می‌شود.
 - {{domxref("window.messageerror_event", "HTMLBodyElement.onmessageerror")}}
-  - : Fired when the window receives a message that can't be deserialized.
+  - : زمانی که پنجره پیامی دریافت می‌کند که قابل deserialize نیست، فعال می‌شود.
 - {{domxref("window.offline_event", "HTMLBodyElement.onoffline")}}
-  - : Fired when the browser has lost access to the network and the value of {{domxref("Navigator.onLine")}} switches to `false`.
+  - : زمانی که مرورگر دسترسی به شبکه را از دست داده است و مقدار {{domxref("Navigator.onLine")}} به `false` تغییر می‌کند، فعال می‌شود.
 - {{domxref("window.online_event", "HTMLBodyElement.ononline")}}
-  - : Fired when the browser has gained access to the network and the value of {{domxref("Navigator.onLine")}} switches to `true`.
+  - : زمانی که مرورگر دسترسی به شبکه پیدا کرده است و مقدار {{domxref("Navigator.onLine")}} به `true` تغییر می‌کند، فعال می‌شود.
 - {{domxref("window.pagehide_event", "HTMLBodyElement.onpagehide")}}
-  - : Fired when the browser hides the current page in the process of presenting a different page from the session's history.
+  - : زمانی که مرورگر صفحه فعلی را در فرآیند نمایش یک صفحه متفاوت از تاریخچه جلسه پنهان می‌کند، فعال می‌شود.
 - {{domxref("window.pageshow_event", "HTMLBodyElement.onpageshow")}}
-  - : Fired when the browser displays the window's document due to navigation.
+  - : زمانی که مرورگر سند پنجره را به دلیل ناوبری نمایش می‌دهد، فعال می‌شود.
 - {{domxref("window.popstate_event", "HTMLBodyElement.onpopstate")}}
-  - : Fired when the active history entry changes while the user navigates the session history.
+  - : زمانی که ورودی تاریخچه فعال در حین ناوبری کاربر در تاریخچه جلسه تغییر می‌کند، فعال می‌شود.
 - {{domxref("window.rejectionhandled_event", "HTMLBodyElement.onrejectionhandled")}}
-  - : Fired whenever a JavaScript {{jsxref("Promise")}} is rejected and the rejection has been handled.
+  - : هر زمان که یک {{jsxref("Promise")}} جاوااسکریپت رد شود و رد شدن مدیریت شده باشد، فعال می‌شود.
 - {{domxref("window.resize_event", "HTMLBodyElement.onresize")}}
-  - : Fired when the document view has been resized.
+  - : زمانی که نمای سند تغییر اندازه داده شده است، فعال می‌شود.
 - {{domxref("window.scroll_event", "HTMLBodyElement.onscroll")}}
-  - : Fired when the document view or an element has been scrolled.
+  - : زمانی که نمای سند یا یک عنصر اسکرول شده است، فعال می‌شود.
 - {{domxref("window.storage_event", "HTMLBodyElement.onstorage")}}
-  - : Fired when a storage area (`localStorage`) has been modified in the context of another document.
+  - : زمانی که یک ناحیه ذخیره‌سازی (`localStorage`) در زمینه یک سند دیگر تغییر یافته است، فعال می‌شود.
 - {{domxref("window.unhandledrejection_event", "HTMLBodyElement.onunhandledrejection")}}
-  - : Fired whenever a {{jsxref("Promise")}} is rejected but the rejection was not handled.
+  - : هر زمان که یک {{jsxref("Promise")}} رد شود اما رد شدن مدیریت نشده باشد، فعال می‌شود.
 - {{domxref("window.unload_event", "HTMLBodyElement.onunload")}}
-  - : Fired when the document is being unloaded.
+  - : زمانی که سند در حال تخلیه است، فعال می‌شود.
 
-Note that while `onblur`, `onerror`, `onfocus`, `onload`, `onresize`, and `onscroll` are available on any element, their meanings on the `<body>` element are not the same as on other elements. They listen for events on the `window` object instead.
+توجه داشته باشید که اگرچه `onblur`، `onerror`، `onfocus`، `onload`، `onresize` و `onscroll` روی هر عنصری در دسترس هستند، معانی آنها روی عنصر `<body>` با عناصر دیگر یکسان نیست. آنها به جای آن به رویدادهای روی شیء `window` گوش می‌دهند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- HTML element implementing this interface: {{ HTMLElement("body") }}
+- عنصر HTML که این رابط را پیاده‌سازی می‌کند: {{ HTMLElement("body") }}
