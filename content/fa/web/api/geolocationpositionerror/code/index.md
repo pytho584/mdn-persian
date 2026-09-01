@@ -1,11 +1,5 @@
 ---
 title: "GeolocationPositionError: code property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GeolocationPositionError/code"
-status: "needs-translation"
----
-
----
-title: "GeolocationPositionError: code property"
 short-title: code
 slug: Web/API/GeolocationPositionError/code
 page-type: web-api-instance-property
@@ -14,16 +8,16 @@ browser-compat: api.GeolocationPositionError.code
 
 {{securecontext_header}}{{APIRef("Geolocation API")}}
 
-The **`code`** read-only property of the {{domxref("GeolocationPositionError")}} interface is an `unsigned short` representing the error code.
+ویژگی فقط‌خواندنی **`code`** در رابط {{domxref("GeolocationPositionError")}} یک `unsigned short` است که کد خطا را نشان می‌دهد.
 
-The following values are possible:
+مقادیر زیر امکان‌پذیر هستند:
 
 <table class="no-markdown">
   <thead>
     <tr>
-      <th scope="col">Value</th>
-      <th scope="col">Associated constant</th>
-      <th scope="col">Description</th>
+      <th scope="col">مقدار</th>
+      <th scope="col">ثابت مرتبط</th>
+      <th scope="col">توضیحات</th>
     </tr>
   </thead>
   <tbody>
@@ -31,34 +25,33 @@ The following values are possible:
       <td><code>1</code></td>
       <td><code>PERMISSION_DENIED</code></td>
       <td>
-        The acquisition of the geolocation information failed because the page
-        didn't have the permission to do it.
+        دریافت اطلاعات موقعیت مکانی به این دلیل که صفحه مجوز انجام آن را نداشت، ناموفق بود.
       </td>
     </tr>
     <tr>
       <td><code>2</code></td>
       <td><code>POSITION_UNAVAILABLE</code></td>
       <td>
-        The acquisition of the geolocation failed because one or several internal sources of position returned an internal error.
+        دریافت اطلاعات موقعیت مکانی به دلیل بازگشت یک خطای داخلی از یک یا چند منبع داخلی موقعیت، ناموفق بود.
       </td>
     </tr>
     <tr>
       <td><code>3</code></td>
       <td><code>TIMEOUT</code></td>
-      <td>Geolocation information was not obtained in the allowed time.</td>
+      <td>اطلاعات موقعیت مکانی در مدت زمان مجاز به دست نیامد.</td>
     </tr>
   </tbody>
 </table>
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using geolocation](/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API)
+- [استفاده از geolocation](/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API)
 - {{domxref("GeolocationPositionError")}}
