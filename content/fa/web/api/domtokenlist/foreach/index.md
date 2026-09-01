@@ -1,11 +1,5 @@
 ---
 title: "DOMTokenList: forEach() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/forEach"
-status: "needs-translation"
----
-
----
-title: "DOMTokenList: forEach() method"
 short-title: forEach()
 slug: Web/API/DOMTokenList/forEach
 page-type: web-api-instance-method
@@ -14,42 +8,36 @@ browser-compat: api.DOMTokenList.forEach
 
 {{APIRef("DOM")}}
 
-The **`forEach()`** method of the {{domxref("DOMTokenList")}} interface
-calls the callback given in parameter once for each value pair in the list, in
-insertion order.
+متد **`forEach()`** در رابط {{domxref("DOMTokenList")}}، تابعِ داده‌شده در پارامتر را یک‌بار برای هر جفت مقدار در فهرست، به ترتیب درج، فراخوانی می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 forEach(callback)
 forEach(callback, thisArg)
 ```
 
-### Parameters
+### پارامترها
 
 - `callback`
-  - : The function to execute for each element, eventually taking three arguments:
+  - : تابعی که برای هر عنصر اجرا می‌شود و در نهایت سه آرگومان می‌گیرد:
     - `currentValue`
-      - : The current element being processed in the array.
+      - : عنصر فعلی که در آرایه در حال پردازش است.
     - `currentIndex`
-      - : The index of the current element being processed in the array.
+      - : اندیس عنصر فعلی که در آرایه در حال پردازش است.
     - `listObj`
-      - : The array that `forEach()` is being applied to.
+      - : آرایه‌ای که `forEach()` روی آن اعمال می‌شود.
 
 - `thisArg` {{Optional_inline}}
-  - : The value to use as {{jsxref("this")}} when executing `callback`.
+  - : مقداری که هنگام اجرای `callback` به‌عنوان {{jsxref("this")}} استفاده می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-None.
+هیچ‌کدام.
 
-## Example
+## مثال
 
-In the following example we retrieve the list of classes set on a
-{{htmlelement("pre")}} element as a `DOMTokenList` using
-{{domxref("Element.classList")}}. We when retrieve an iterator containing the values
-using `forEach()`, writing each one to the `<pre>`'s
-{{domxref("Node.textContent")}} inside the `forEach()` inner function.
+در مثال زیر، فهرست کلاس‌های تنظیم‌شده روی یک عنصر {{htmlelement("pre")}} را به‌عنوان یک `DOMTokenList` با استفاده از {{domxref("Element.classList")}} دریافت می‌کنیم. سپس با استفاده از `forEach()` یک تکرارگر (iterator) حاوی مقادیر را دریافت کرده و هر مقدار را در داخل تابع داخلی `forEach()` در {{domxref("Node.textContent")}} عنصر `<pre>` می‌نویسیم.
 
 ### HTML
 
@@ -69,18 +57,18 @@ classes.forEach(function (value, key, listObj) {
 }, "arg");
 ```
 
-### Result
+### نتیجه
 
 {{ EmbedLiveSample('Example', '100%', 100) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("DOMTokenList.entries()")}}, {{domxref("DOMTokenList.keys")}} and {{domxref("DOMTokenList.values")}}.
+- {{domxref("DOMTokenList.entries()")}}، {{domxref("DOMTokenList.keys")}} و {{domxref("DOMTokenList.values")}}.
