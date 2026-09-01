@@ -1,11 +1,5 @@
 ---
 title: "ElementInternals: ariaHasPopup property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/ariaHasPopup"
-status: "needs-translation"
----
-
----
-title: "ElementInternals: ariaHasPopup property"
 short-title: ariaHasPopup
 slug: Web/API/ElementInternals/ariaHasPopup
 page-type: web-api-instance-property
@@ -14,33 +8,33 @@ browser-compat: api.ElementInternals.ariaHasPopup
 
 {{APIRef("Web Components")}}
 
-The **`ariaHasPopup`** property of the {{domxref("ElementInternals")}} interface reflects the value of the [`aria-haspopup`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-haspopup) attribute, which indicates the availability and type of interactive popup element, such as menu or dialog, that can be triggered by an element.
+ویژگی **`ariaHasPopup`** در رابط {{domxref("ElementInternals")}}، مقدار ویژگی [`aria-haspopup`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-haspopup) را منعکس می‌کند که نشان‌دهنده وجود و نوع عنصر بازشوی تعاملی (مانند منو یا دیالوگ) است که می‌تواند توسط یک عنصر فعال شود.
 
 > [!NOTE]
-> Setting aria attributes on `ElementInternals` allows default semantics to be defined on a custom element. These may be overwritten by author-defined attributes, but ensure that default semantics are retained should the author delete those attributes, or fail to add them at all. For more information see the [Accessibility Object Model explainer](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object).
+> تنظیم ویژگی‌های aria روی `ElementInternals` امکان تعریف معنای پیش‌فرض را برای یک عنصر سفارشی فراهم می‌کند. این مقادیر ممکن است توسط ویژگی‌های تعریف‌شده توسط نویسنده بازنویسی شوند، اما تضمین می‌کنند که در صورت حذف آن ویژگی‌ها توسط نویسنده یا عدم افزودن آن‌ها، معنای پیش‌فرض حفظ شود. برای اطلاعات بیشتر به [توضیح مدل شیء دسترس‌پذیری](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object) مراجعه کنید.
 
-## Value
+## مقدار
 
-A string with one of the following values:
+یک رشته با یکی از مقادیر زیر:
 
 - `"false"`
-  - : The element does not have a popup.
+  - : عنصر هیچ عنصر بازشویی ندارد.
 - `"true"`
-  - : The element has a popup that is a menu.
+  - : عنصر دارای یک عنصر بازشو از نوع منو است.
 - `"menu"`
-  - : The element has a popup that is a menu.
+  - : عنصر دارای یک عنصر بازشو از نوع منو است.
 - `"listbox"`
-  - : The element has a popup that is a listbox.
+  - : عنصر دارای یک عنصر بازشو از نوع فهرست (listbox) است.
 - `"tree"`
-  - : The element has a popup that is a tree.
+  - : عنصر دارای یک عنصر بازشو از نوع درخت (tree) است.
 - `"grid"`
-  - : The element has a popup that is a grid.
+  - : عنصر دارای یک عنصر بازشو از نوع شبکه (grid) است.
 - `"dialog"`
-  - : The element has a popup that is a dialog.
+  - : عنصر دارای یک عنصر بازشو از نوع دیالوگ است.
 
-## Examples
+## مثال‌ها
 
-In this example the value of `ariaHasPopup` is set to "true".
+در این مثال، مقدار `ariaHasPopup` روی `"true"` تنظیم شده است.
 
 ```js
 class CustomControl extends HTMLElement {
@@ -53,10 +47,10 @@ class CustomControl extends HTMLElement {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
