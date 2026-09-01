@@ -1,11 +1,5 @@
 ---
 title: "HTMLImageElement: alt property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/alt"
-status: "needs-translation"
----
-
----
-title: "HTMLImageElement: alt property"
 short-title: alt
 slug: Web/API/HTMLImageElement/alt
 page-type: web-api-instance-property
@@ -14,17 +8,17 @@ browser-compat: api.HTMLImageElement.alt
 
 {{APIRef("HTML DOM")}}
 
-The **`alt`** property of the {{domxref("HTMLImageElement")}} interface provides fallback (alternate) text to display when the image specified by the {{HTMLElement("img")}} element is not displayed, whether because of an error, because the user has disabled the loading of images, or because the image hasn't finished loading yet. It reflects the `<img>` element's [`alt`](/en-US/docs/Web/HTML/Reference/Elements/img#alt) content attribute.
+ویژگی **`alt`** از رابط {{domxref("HTMLImageElement")}}، متن جایگزین (fallback) را برای نمایش در زمانی‌که تصویر مشخص‌شده توسط عنصر {{HTMLElement("img")}} نمایش داده نمی‌شود، فراهم می‌کند؛ خواه به دلیل خطا، غیرفعال بودن بارگذاری تصاویر توسط کاربر، یا تکمیل نشدن بارگذاری تصویر. این ویژگی منعکس‌کننده ویژگی محتوایی [`alt`](/en-US/docs/Web/HTML/Reference/Elements/img#alt) عنصر `<img>` است.
 
-There are important accessibility implications of providing appropriate alt text, and the requirements may differ based on the purpose of the image. See the HTML [`<img>`](/en-US/docs/Web/HTML/Reference/Elements/img#authoring_meaningful_alternate_descriptions) reference for more information.
+ارائه متن جایگزین مناسب پیامدهای مهمی برای دسترسی‌پذیری دارد و الزامات ممکن است بسته به هدف تصویر متفاوت باشد. برای اطلاعات بیشتر به مرجع HTML [`<img>`](/en-US/docs/Web/HTML/Reference/Elements/img#authoring_meaningful_alternate_descriptions) مراجعه کنید.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
-### Setting the alt attribute
+### تنظیم ویژگی alt
 
 ```js
 const img = new Image();
@@ -32,10 +26,10 @@ img.src = "example.png";
 img.alt = "An example picture";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
