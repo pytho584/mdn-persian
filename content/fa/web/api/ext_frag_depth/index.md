@@ -1,11 +1,5 @@
 ---
 title: "EXT_frag_depth extension"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EXT_frag_depth"
-status: "needs-translation"
----
-
----
-title: EXT_frag_depth extension
 short-title: EXT_frag_depth
 slug: Web/API/EXT_frag_depth
 page-type: webgl-extension
@@ -14,22 +8,22 @@ browser-compat: api.EXT_frag_depth
 
 {{APIRef("WebGL")}}
 
-The **`EXT_frag_depth`** extension is part of the [WebGL API](/en-US/docs/Web/API/WebGL_API) and enables to set a depth value of a fragment from within the fragment shader.
+افزونهٔ **`EXT_frag_depth`** بخشی از [WebGL API](/en-US/docs/Web/API/WebGL_API) است و امکان تنظیم مقدار عمق یک فرگمنت را از درون شیدر فرگمنت فراهم می‌کند.
 
-WebGL extensions are available using the {{domxref("WebGLRenderingContext.getExtension()")}} method. For more information, see also [Using Extensions](/en-US/docs/Web/API/WebGL_API/Using_Extensions) in the [WebGL tutorial](/en-US/docs/Web/API/WebGL_API/Tutorial).
+افزونه‌های WebGL با استفاده از روش {{domxref("WebGLRenderingContext.getExtension()")}} در دسترس هستند. برای اطلاعات بیشتر، به [استفاده از افزونه‌ها](/en-US/docs/Web/API/WebGL_API/Using_Extensions) در [آموزش WebGL](/en-US/docs/Web/API/WebGL_API/Tutorial) مراجعه کنید.
 
 > [!NOTE]
-> This extension is only available to {{domxref("WebGLRenderingContext", "WebGL1", "", 1)}} contexts. In {{domxref("WebGL2RenderingContext", "WebGL2", "", 1)}}, the functionality of this extension is available on the WebGL2 context by default. It requires GLSL `#version 300 es`.
+> این افزونه تنها در بافت‌های {{domxref("WebGLRenderingContext", "WebGL1", "", 1)}} قابل استفاده است. در {{domxref("WebGL2RenderingContext", "WebGL2", "", 1)}}، عملکرد این افزونه به‌طور پیش‌فرض در بافت WebGL2 در دسترس است. نیاز به GLSL `#version 300 es` دارد.
 
-## Examples
+## مثال‌ها
 
-Enable the extension:
+فعال‌سازی افزونه:
 
 ```js
 gl.getExtension("EXT_frag_depth");
 ```
 
-Now the output variable `gl_FragDepthEXT` is available to set a depth value of a fragment from within the fragment shader:
+اکنون متغیر خروجی `gl_FragDepthEXT` در دسترس است تا بتوانید مقدار عمق یک فرگمنت را از درون شیدر فرگمنت تنظیم کنید:
 
 ```html
 <script type="x-shader/x-fragment">
@@ -40,14 +34,14 @@ Now the output variable `gl_FragDepthEXT` is available to set a depth value of a
 </script>
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("WebGLRenderingContext.getExtension()")}}
