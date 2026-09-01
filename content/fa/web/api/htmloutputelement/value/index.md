@@ -1,11 +1,5 @@
 ---
 title: "HTMLOutputElement: value property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLOutputElement/value"
-status: "needs-translation"
----
-
----
-title: "HTMLOutputElement: value property"
 short-title: value
 slug: Web/API/HTMLOutputElement/value
 page-type: web-api-instance-property
@@ -14,31 +8,31 @@ browser-compat: api.HTMLOutputElement.value
 
 {{ APIRef("HTML DOM") }}
 
-The **`value`** property of the {{DOMxRef("HTMLOutputElement")}} interface represents the value of the {{htmlelement("output")}} element as a string, or the empty string if no value is set. It returns or sets the contents of the element, similar to the {{domxref("Node.textContent","textContent")}} property.
+خاصیت **`value`** از رابط {{DOMxRef("HTMLOutputElement")}} مقدار عنصر {{htmlelement("output")}} را به صورت یک رشته نمایش می‌دهد، یا اگر مقداری تنظیم نشده باشد، رشته خالی. این خاصیت محتویات عنصر را برمی‌گرداند یا تنظیم می‌کند، مشابه خاصیت {{domxref("Node.textContent","textContent")}}.
 
 > [!NOTE]
-> When the `value` property of an `<output>` element is set, the element goes into value mode and the default value is accessible only through the {{DOMXref("HTMLOutputElement.defaultValue")}} property.
+> هنگامی که خاصیت `value` یک عنصر `<output>` تنظیم می‌شود، عنصر وارد حالت value می‌شود و مقدار پیش‌فرض فقط از طریق خاصیت {{DOMXref("HTMLOutputElement.defaultValue")}} قابل دسترسی است.
 
-## Value
+## مقدار
 
-A string containing the contents of the {{htmlelement("output")}} element.
+یک رشته شامل محتویات عنصر {{htmlelement("output")}}.
 
-## Examples
+## مثال‌ها
 
 ```js
 const outputElement = document.getElementById("log");
 console.log(`value: ${outputElement.value}`);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTMLElement("output")}}
 - {{DOMXref("HTMLOutputElement.defaultValue")}}
