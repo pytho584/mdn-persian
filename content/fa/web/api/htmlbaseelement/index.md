@@ -1,10 +1,4 @@
 ---
-title: "HTMLBaseElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLBaseElement"
-status: "needs-translation"
----
-
----
 title: HTMLBaseElement
 slug: Web/API/HTMLBaseElement
 page-type: web-api-interface
@@ -13,31 +7,31 @@ browser-compat: api.HTMLBaseElement
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLBaseElement`** interface contains the base URI for a document. This object inherits all of the properties and methods as described in the {{domxref("HTMLElement")}} interface.
+رابط **`HTMLBaseElement`** شامل URI پایه برای یک سند است. این شیء تمام ویژگی‌ها و متدهای توضیح‌داده‌شده در رابط {{domxref("HTMLElement")}} را به ارث می‌برد.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("HTMLElement")}}._
+_ویژگی‌های والد خود، {{domxref("HTMLElement")}} را به ارث می‌برد._
 
 - {{domxref("HTMLBaseElement.href")}}
-  - : A string that reflects the [`href`](/en-US/docs/Web/HTML/Reference/Elements/base#href) HTML attribute, containing a base URL for relative URLs in the document.
+  - : یک رشته که ویژگی HTML [`href`](/en-US/docs/Web/HTML/Reference/Elements/base#href) را منعکس می‌کند و شامل یک URL پایه برای URL‌های نسبی در سند است.
 - {{domxref("HTMLBaseElement.target")}}
-  - : A string that reflects the [`target`](/en-US/docs/Web/HTML/Reference/Elements/base#target) HTML attribute, containing a default target browsing context or frame for elements that do not have a target reference specified.
+  - : یک رشته که ویژگی HTML [`target`](/en-US/docs/Web/HTML/Reference/Elements/base#target) را منعکس می‌کند و شامل یک زمینه مرورگر یا فریم پیش‌فرض برای عناصری است که مرجع هدف مشخصی ندارند.
 
-## Instance methods
+## متدهای نمونه
 
-_No specific method; inherits methods from its parent, {{domxref("HTMLElement")}}._
+_متد خاصی ندارد؛ متدهای والد خود، {{domxref("HTMLElement")}} را به ارث می‌برد._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- HTML element implementing this interface: {{ HTMLElement("base") }}
+- عنصر HTML پیاده‌کننده این رابط: {{ HTMLElement("base") }}
