@@ -1,11 +1,5 @@
 ---
 title: "DataTransfer: setDragImage() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/setDragImage"
-status: "needs-translation"
----
-
----
-title: "DataTransfer: setDragImage() method"
 short-title: setDragImage()
 slug: Web/API/DataTransfer/setDragImage
 page-type: web-api-instance-method
@@ -14,60 +8,48 @@ browser-compat: api.DataTransfer.setDragImage
 
 {{APIRef("HTML Drag and Drop API")}}
 
-When a drag occurs, a translucent image is generated from the drag target (the element
-the {{domxref("HTMLElement/dragstart_event", "dragstart")}} event is fired at), and follows the mouse pointer during the
-drag. This image is created automatically, so you do not need to create it yourself.
-However, if a custom image is desired, the
-**`DataTransfer.setDragImage()`** method can be used to set the
-custom image to be used. The image will typically be an {{HTMLElement("img")}} element
-but it can also be a {{HTMLElement("canvas")}} or any other visible element.
+هنگامی که یک عملیات کشیدن (drag) رخ می‌دهد، یک تصویر نیمه‌شفاف از هدف کشیدن (عنصری که رویداد {{domxref("HTMLElement/dragstart_event", "dragstart")}} روی آن فعال می‌شود) تولید شده و در طول کشیدن، موس را دنبال می‌کند. این تصویر به‌طور خودکار ساخته می‌شود، بنابراین نیازی به ایجاد آن ندارید. با این حال، اگر تصویر سفارشی‌ای مد نظر باشد، می‌توان از متد **`DataTransfer.setDragImage()`** برای تنظیم تصویر سفارشی استفاده کرد. این تصویر معمولاً یک عنصر {{HTMLElement("img")}} خواهد بود، اما می‌تواند یک {{HTMLElement("canvas")}} یا هر عنصر قابل مشاهدهٔ دیگری نیز باشد.
 
-The method's `x` and `y` coordinates define how the image should
-appear relative to the mouse pointer. These coordinates define the offset into the image
-where the mouse cursor should be. For instance, to display the image so that the pointer
-is at its center, use values that are half the width and height of the image.
+مختصات `x` و `y` متد نحوهٔ نمایش تصویر نسبت به اشاره‌گر موس را مشخص می‌کنند. این مختصات، offset درون تصویر را تعیین می‌کنند که مکان قرارگیری مکان‌نمای موس در آن نقطه باشد. برای مثال، برای نمایش تصویر به‌طوری که اشاره‌گر دقیقاً در مرکز آن قرار گیرد، از مقادیری معادل نصف عرض و نصف ارتفاع تصویر استفاده کنید.
 
-This method must be called in the {{domxref("HTMLElement/dragstart_event", "dragstart")}} event handler.
+این متد باید درونیابندهٔ رویداد {{domxref("HTMLElement/dragstart_event", "dragstart")}} فراخوانی شود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 setDragImage(imgElement, xOffset, yOffset)
 ```
 
-### Parameters
+### پارامترها
 
 - `imgElement`
-  - : An image {{domxref("Element")}} element to use for the drag feedback image.
+  - : یک عنصر {{domxref("Element")}} تصویری که برای تصویر بازخورد کشیدن استفاده می‌شود.
 
-    If {{domxref("Element")}} is an img element, then set the drag data store bitmap to
-    the element's image (at its intrinsic size); otherwise, set the drag data store bitmap
-    to an image generated from the given element (the exact mechanism for doing so is not
-    currently specified).
+    اگر {{domxref("Element")}} یک عنصر img باشد، بیت‌مپ ذخیره‌گاه دادهٔ کشیدن را به تصویر آن عنصر (در اندازهٔ ذاتی خود) تنظیم می‌کند؛ در غیر این صورت، بیت‌مپ ذخیره‌گاه دادهٔ کشیدن را به تصویری که از عنصر داده شده تولید می‌شود تنظیم می‌کند (مکانیزم دقیق این کار در حال حاضر مشخص نشده است).
 
-    Note: If the {{domxref("Element")}} is an existing {{domxref("HTMLElement")}} it needs to be visible in the viewport in order to be shown as a drag feedback image. Alternatively, you can create a new DOM element that might be off-screen specifically for this purpose.
+    توجه: اگر {{domxref("Element")}} یک {{domxref("HTMLElement")}} موجود باشد، باید در viewport قابل مشاهده باشد تا به‌عنوان تصویر بازخورد کشیدن نمایش داده شود. همچنین می‌توانید یک عنصر DOM جدید که ممکن است خارج از صفحه باشد، به‌طور خاص برای این منظور ایجاد کنید.
 
 - `xOffset`
-  - : A `long` indicating the horizontal offset within the image.
+  - : یک `long` که offset افقی درون تصویر را نشان می‌دهد.
 - `yOffset`
-  - : A `long` indicating the vertical offset within the image.
+  - : یک `long` که offset عمودی درون تصویر را نشان می‌دهد.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-### Using setDragImage()
+### استفاده از setDragImage()
 
 ```html
 <div>
   <p id="source" draggable="true">
-    Select this element, drag it to the Drop Zone and then release the selection
-    to move the element.
+    این عنصر را انتخاب کنید، آن را به محل رها کردن بکشید و سپس انتخاب را رها کنید
+    تا عنصر جابجا شود.
   </p>
 </div>
-<div id="target">Drop Zone</div>
+<div id="target">محل رها کردن</div>
 ```
 
 ```css
@@ -88,13 +70,13 @@ div {
 const source = document.getElementById("source");
 const target = document.getElementById("target");
 
-// Create an image and use it for the drag image
-// Use the image URL that you desire
+// یک تصویر ایجاد کرده و از آن برای تصویر کشیدن استفاده کنید
+// از URL تصویر دلخواه خود استفاده کنید
 const img = new Image();
 img.src = "/shared-assets/images/examples/favicon32.png";
 
 source.addEventListener("dragstart", (ev) => {
-  // Set the drag's format and data. Use the event target's id for the data
+  // قالب و دادهٔ کشیدن را تنظیم کنید. از id هدف رویداد برای داده استفاده کنید
   ev.dataTransfer.setData("text/plain", ev.target.id);
   ev.dataTransfer.setDragImage(img, 10, 10);
 });
@@ -105,7 +87,7 @@ target.addEventListener("dragover", (ev) => {
 
 target.addEventListener("drop", (ev) => {
   ev.preventDefault();
-  // Get the data, which is the id of the drop target
+  // داده را دریافت کنید، که id هدف رها کردن است
   const data = ev.dataTransfer.getData("text");
   ev.target.appendChild(document.getElementById(data));
 });
@@ -113,16 +95,16 @@ target.addEventListener("drop", (ev) => {
 
 {{EmbedLiveSample("Using setDragImage", "", 300)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Drag and drop](/en-US/docs/Web/API/HTML_Drag_and_Drop_API)
-- [Drag Operations](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_operations)
-- [Working with the drag data store](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_data_store)
+- [کشیدن و رها کردن](/en-US/docs/Web/API/HTML_Drag_and_Drop_API)
+- [عملیات کشیدن](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_operations)
+- [کار با ذخیره‌گاه دادهٔ کشیدن](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_data_store)
