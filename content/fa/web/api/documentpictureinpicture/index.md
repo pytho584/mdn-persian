@@ -1,7 +1,5 @@
 ---
 title: "DocumentPictureInPicture"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DocumentPictureInPicture"
-status: "needs-translation"
 ---
 
 ---
@@ -13,34 +11,34 @@ browser-compat: api.DocumentPictureInPicture
 
 {{APIRef("Document Picture-in-Picture API")}}{{securecontext_header}}
 
-The **`DocumentPictureInPicture`** interface of the {{domxref("Document Picture-in-Picture API", "Document Picture-in-Picture API", "", "nocode")}} is the entry point for creating and handling document picture-in-picture windows.
+**`DocumentPictureInPicture`** یک رابط (interface) از {{domxref("Document Picture-in-Picture API", "Document Picture-in-Picture API", "", "nocode")}} است که نقطه ورود برای ایجاد و مدیریت پنجره‌های تصویر-در-تصویر سند به شمار می‌رود.
 
-It is accessed via the {{domxref("Window.documentPictureInPicture")}} property.
+از طریق ویژگی {{domxref("Window.documentPictureInPicture")}} قابل دسترسی است.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{DOMxRef("EventTarget")}}._
+_ویژگی‌های والد خود، یعنی {{DOMxRef("EventTarget")}} را به ارث می‌برد._
 
 - {{domxref("DocumentPictureInPicture.window", "window")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref("Window")}} instance representing the browsing context inside the Picture-in-Picture window.
+  - : یک نمونه {{domxref("Window")}} را برمی‌گرداند که زمینه مرور داخل پنجره تصویر-در-تصویر را نشان می‌دهد.
 
-## Instance methods
+## روش‌های نمونه
 
-_Inherits methods from its parent, {{DOMxRef("EventTarget")}}._
+_روش‌های والد خود، یعنی {{DOMxRef("EventTarget")}} را به ارث می‌برد._
 
 - {{domxref("DocumentPictureInPicture.requestWindow", "requestWindow()")}}
-  - : Opens the Picture-in-Picture window for the current main browsing context. Returns a {{jsxref("Promise")}} that fulfills with a {{domxref("Window")}} instance representing the browsing context inside the Picture-in-Picture window.
+  - : پنجره تصویر-در-تصویر را برای زمینه مرور اصلی فعلی باز می‌کند. یک {{jsxref("Promise")}} برمی‌گرداند که با یک نمونه {{domxref("Window")}}، نشان‌دهنده زمینه مرور داخل پنجره تصویر-در-تصویر، برآورده (fulfill) می‌شود.
 
-## Events
+## رویدادها
 
-_Inherits events from its parent, {{DOMxRef("EventTarget")}}._
+_رویدادهای والد خود، یعنی {{DOMxRef("EventTarget")}} را به ارث می‌برد._
 
 - {{domxref("DocumentPictureInPicture/enter_event", "enter")}}
-  - : Fired when the Picture-in-Picture window is successfully opened.
+  - : زمانی که پنجره تصویر-در-تصویر با موفقیت باز شود، این رویداد فعال می‌شود.
 
-## Examples
+## مثال‌ها
 
 ```js
 const videoPlayer = document.getElementById("player");
@@ -56,17 +54,17 @@ const pipWindow = await window.documentPictureInPicture.requestWindow({
 // …
 ```
 
-See [Document Picture-in-Picture API Example](https://mdn.github.io/dom-examples/document-picture-in-picture/) for a full working demo (see the full [source code](https://github.com/mdn/dom-examples/tree/main/document-picture-in-picture) also).
+برای مشاهده یک دموی کامل و کاربردی، به [Document Picture-in-Picture API Example](https://mdn.github.io/dom-examples/document-picture-in-picture/) مراجعه کنید (همچنین [source code](https://github.com/mdn/dom-examples/tree/main/document-picture-in-picture) کامل را ببینید).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Document Picture-in-Picture API", "Document Picture-in-Picture API", "", "nocode")}}
 - [Using the Document Picture-in-Picture API](/en-US/docs/Web/API/Document_Picture-in-Picture_API/Using)
