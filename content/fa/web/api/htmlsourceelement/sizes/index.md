@@ -1,11 +1,5 @@
 ---
 title: "HTMLSourceElement: sizes property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLSourceElement/sizes"
-status: "needs-translation"
----
-
----
-title: "HTMLSourceElement: sizes property"
 short-title: sizes
 slug: Web/API/HTMLSourceElement/sizes
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.HTMLSourceElement.sizes
 
 {{APIRef("HTML DOM")}}
 
-The **`sizes`** property of the {{domxref("HTMLSourceElement")}} interface is a string representing a list of one or more sizes, representing sizes between breakpoints, to which the resource applies.
+خاصیت **`sizes`** از رابط {{domxref("HTMLSourceElement")}} یک رشته است که فهرستی از یک یا چند اندازه را نشان می‌دهد. این اندازه‌ها بیانگر ابعاد بین نقاط شکست (breakpoints) هستند که منبع به آن‌ها اعمال می‌شود.
 
-It reflects the `sizes` attribute of the {{HTMLElement("source")}} element.
+این خاصیت، ویژگی `sizes` عنصر {{HTMLElement("source")}} را منعکس می‌کند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```html
 <picture>
@@ -41,15 +35,15 @@ console.log(el.sizes); // Output: "(50em <= width <= 60px) 50em, (30em <= width 
 el.sizes = "(50em <= width <= 60px) 100em, (30em <= width < 50em) 60em"; // Updates the sizes value
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLImageElement.sizes")}}
 - {{domxref("HTMLSourceElement.media")}}
