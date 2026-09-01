@@ -1,11 +1,5 @@
 ---
 title: "HTMLOptGroupElement: label property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLOptGroupElement/label"
-status: "needs-translation"
----
-
----
-title: "HTMLOptGroupElement: label property"
 short-title: label
 slug: Web/API/HTMLOptGroupElement/label
 page-type: web-api-instance-property
@@ -14,13 +8,13 @@ browser-compat: api.HTMLOptGroupElement.label
 
 {{ APIRef("HTML DOM") }}
 
-The **`label`** property of the {{domxref("HTMLOptGroupElement")}} interface is a string value that reflects the {{htmlelement("optgroup")}} element's [`label`](/en-US/docs/Web/HTML/Reference/Elements/optgroup#label) attribute, which provides a textual label to the group of options.
+ویژگی **`label`** در رابط {{domxref("HTMLOptGroupElement")}} یک مقدار رشتهای است که صفت [`label`](/en-US/docs/Web/HTML/Reference/Elements/optgroup#label) عنصر {{htmlelement("optgroup")}} را بازتاب می‌دهد؛ این صفت یک برچسب متنی برای گروه گزینه‌ها فراهم می‌کند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```js
 const optionGroup = document.getElementById("groupB");
@@ -28,15 +22,15 @@ console.log(optionGroup.label);
 optionGroup.label = `${optionGroup.label} (${optionGroup.children.length})`;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{htmlelement("optgroup")}}
-- HTML [`label`](/en-US/docs/Web/HTML/Reference/Elements/optgroup#label) attribute
+- صفت [`label`](/en-US/docs/Web/HTML/Reference/Elements/optgroup#label) در HTML
