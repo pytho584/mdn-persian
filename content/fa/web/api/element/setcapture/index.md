@@ -1,7 +1,5 @@
 ---
 title: "Element: setCapture() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/setCapture"
-status: "needs-translation"
 ---
 
 ---
@@ -17,34 +15,29 @@ browser-compat: api.Element.setCapture
 
 {{Deprecated_Header}}{{non-standard_header}}{{ APIRef("DOM") }}
 
-Call this method during the handling of a mousedown event to retarget all mouse events
-to this element until the mouse button is released or {{domxref("document.releaseCapture()")}} is called.
+این متد را در هنگام مدیریت رویداد `mousedown` فراخوانی کنید تا تمام رویدادهای ماوس به این عنصر هدایت شوند تا زمانی که دکمه ماوس رها شود یا {{domxref("document.releaseCapture()")}} فراخوانی شود.
 
 > [!WARNING]
-> This interface never had much cross-browser
-> support and you are probably looking for {{domxref("element.setPointerCapture")}} instead,
-> from the Pointer Events API.
+> این رابط هیچ‌گاه پشتیبانی بین‌مرورگری چندانی نداشته است؛ احتمالاً به دنبال {{domxref("element.setPointerCapture")}} از API رویدادهای اشاره‌گر (Pointer Events) هستید.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 setCapture(retargetToElement)
 ```
 
-### Parameters
+### پارامترها
 
 - `retargetToElement`
-  - : If `true`, all events are targeted directly to this element; if
-    `false`, events can also fire at descendants of this element.
+  - : اگر `true` باشد، همه رویدادها مستقیماً به این عنصر هدایت می‌شوند؛ اگر `false` باشد، رویدادها می‌توانند بر روی فرزندان این عنصر نیز رخ دهند.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-In this example, the current mouse coordinates are drawn while you mouse around after
-clicking and holding down on an element.
+در این مثال، مختصات فعلی ماوس، در حالی که پس از کلیک‌کردن و نگه‌داشتن روی یک عنصر، ماوس را حرکت می‌دهید، رسم می‌شود.
 
 ```html
 <p>This is an example of how to use mouse capture on elements in Gecko 2.0.</p>
@@ -86,22 +79,21 @@ if (btn.setCapture) {
 }
 ```
 
-[View Live Examples](https://mdn.dev/archives/media/samples/domref/mousecapture.html)
+[مشاهده مثال‌های زنده](https://mdn.dev/archives/media/samples/domref/mousecapture.html)
 
-## Notes
+## یادداشت‌ها
 
-The element may not be scrolled completely to the top or bottom, depending on the
-layout of other elements.
+بسته به چیدمان عناصر دیگر، ممکن است عنصر کاملاً به بالا یا پایین اسکرول نشود.
 
-## Specifications
+## مشخصات
 
-Not part of any specification.
+بخشی از هیچ مشخصاتی نیست.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{ domxref("document.releaseCapture()") }}
 - {{domxref("element.setPointerCapture")}}
