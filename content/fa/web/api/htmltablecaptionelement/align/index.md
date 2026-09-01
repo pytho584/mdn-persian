@@ -1,11 +1,5 @@
 ---
 title: "HTMLTableCaptionElement: align property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableCaptionElement/align"
-status: "needs-translation"
----
-
----
-title: "HTMLTableCaptionElement: align property"
 short-title: align
 slug: Web/API/HTMLTableCaptionElement/align
 page-type: web-api-instance-property
@@ -16,36 +10,36 @@ browser-compat: api.HTMLTableCaptionElement.align
 
 {{APIRef("HTML DOM")}}{{deprecated_header}}
 
-The **`align`** property of the {{domxref("HTMLTableCaptionElement")}} interface is a string indicating how to horizontally align text in the {{htmlelement("caption")}} table element.
+ویژگی **`align`** در رابط {{domxref("HTMLTableCaptionElement")}} یک رشته است که نحوه تراز افقی متن را در عنصر جدول {{htmlelement("caption")}} مشخص می‌کند.
 
 > [!NOTE]
-> This property is deprecated, and CSS should be used to align text horizontally in a cell. Use the CSS {{cssxref("text-align")}} property, which takes precedence, to horizontally align text in the caption cell instead.
+> این ویژگی منسوخ شده است و برای تراز افقی متن در یک سلول باید از CSS استفاده شود. به جای آن از ویژگی CSS {{cssxref("text-align")}} استفاده کنید که اولویت دارد و متن را به صورت افقی در سلول عنوان جدول تراز می‌کند.
 
-## Value
+## مقدار
 
-The possible values are:
+مقادیر ممکن عبارتند از:
 
 - `left`
-  - : Align the text to the left. Use `text-align: left` instead.
+  - : تراز کردن متن به چپ. به جای آن از `text-align: left` استفاده کنید.
 - `right`
-  - : Align the text to the right. Use `text-align: right` instead.
+  - : تراز کردن متن به راست. به جای آن از `text-align: right` استفاده کنید.
 - `center`
-  - : Center the text in the cell. Use `text-align: center` instead.
+  - : وسط‌چین کردن متن در سلول. به جای آن از `text-align: center` استفاده کنید.
 
-## Examples
+## مثال‌ها
 
-Use CSS `text-align` instead. An [example](/en-US/docs/Web/CSS/Reference/Properties/text-align#table_alignment) is available on the {{cssxref("text-align")}} page.
+به جای آن از CSS `text-align` استفاده کنید. یک [مثال](/en-US/docs/Web/CSS/Reference/Properties/text-align#table_alignment) در صفحه {{cssxref("text-align")}} موجود است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{cssxref("text-align")}}
 - {{cssxref("caption-side")}}
-- [Learn: Styling tables](/en-US/docs/Learn_web_development/Core/Styling_basics/Tables)
+- [یادگیری: استایل‌دهی به جدول‌ها](/en-US/docs/Learn_web_development/Core/Styling_basics/Tables)
