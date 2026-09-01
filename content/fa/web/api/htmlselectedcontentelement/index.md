@@ -1,10 +1,4 @@
 ---
-title: "HTMLSelectedContentElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectedContentElement"
-status: "needs-translation"
----
-
----
 title: HTMLSelectedContentElement
 slug: Web/API/HTMLSelectedContentElement
 page-type: web-api-interface
@@ -13,26 +7,26 @@ browser-compat: api.HTMLSelectedContentElement
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLSelectedContentElement`** interface represents a {{HTMLElement("selectedcontent")}} element in the [DOM](/en-US/docs/Web/API/Document_Object_Model).
+رابط **`HTMLSelectedContentElement`** نمایانگر یک عنصر {{HTMLElement("selectedcontent")}} در [DOM](/en-US/docs/Web/API/Document_Object_Model) است.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface has no properties, but inherits properties from: {{DOMxRef("HTMLElement")}}._
+این رابط هیچ ویژگی‌ای ندارد، اما ویژگی‌های {{DOMxRef("HTMLElement")}} را به ارث می‌برد.
 
-## Instance methods
+## متدهای نمونه
 
-_This interface has no methods, but inherits methods from: {{DOMxRef("HTMLElement")}}._
+این رابط هیچ متدی ندارد، اما متدهای {{DOMxRef("HTMLElement")}} را به ارث می‌برد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The HTML element implementing this interface: {{HTMLElement("selectedcontent")}}.
+- عنصر HTML پیاده‌ساز این رابط: {{HTMLElement("selectedcontent")}}.
