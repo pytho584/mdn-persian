@@ -1,11 +1,6 @@
+```yaml
 ---
 title: "EXT_color_buffer_half_float extension"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EXT_color_buffer_half_float"
-status: "needs-translation"
----
-
----
-title: EXT_color_buffer_half_float extension
 short-title: EXT_color_buffer_half_float
 slug: Web/API/EXT_color_buffer_half_float
 page-type: webgl-extension
@@ -14,38 +9,38 @@ browser-compat: api.EXT_color_buffer_half_float
 
 {{APIRef("WebGL")}}
 
-The **`EXT_color_buffer_half_float`** extension is part of the [WebGL API](/en-US/docs/Web/API/WebGL_API) and adds the ability to render to 16-bit floating-point color buffers.
+افزونهٔ **`EXT_color_buffer_half_float`** بخشی از [WebGL API](/en-US/docs/Web/API/WebGL_API) است و امکان رندر کردن به بافرهای رنگی ۱۶-بیتی ممیز شناور (floating-point) را اضافه می‌کند.
 
-WebGL extensions are available using the {{domxref("WebGLRenderingContext.getExtension()")}} method. For more information, see also [Using Extensions](/en-US/docs/Web/API/WebGL_API/Using_Extensions) in the [WebGL tutorial](/en-US/docs/Web/API/WebGL_API/Tutorial).
+افزونه‌های WebGL با استفاده از متد {{domxref("WebGLRenderingContext.getExtension()")}} در دسترس هستند. برای اطلاعات بیشتر، همچنین به [استفاده از افزونه‌ها](/en-US/docs/Web/API/WebGL_API/Using_Extensions) در [آموزش WebGL](/en-US/docs/Web/API/WebGL_API/Tutorial) مراجعه کنید.
 
 > [!NOTE]
-> This extension is available to both, {{domxref("WebGLRenderingContext", "WebGL1", "", 1)}} and {{domxref("WebGL2RenderingContext", "WebGL2", "", 1)}} contexts. On WebGL 2, it's an alternative to using the {{domxref("EXT_color_buffer_float")}} extension on platforms that support 16-bit floating point render targets but not 32-bit floating point render targets.
+> این افزونه برای هر دو زمینه (context) {{domxref("WebGLRenderingContext", "WebGL1", "", 1)}} و {{domxref("WebGL2RenderingContext", "WebGL2", "", 1)}} در دسترس است. در WebGL 2، این یک جایگزین برای استفاده از افزونهٔ {{domxref("EXT_color_buffer_float")}} در پلتفرم‌هایی است که از اهداف رندر ۱۶-بیتی ممیز شناور پشتیبانی می‌کنند اما از اهداف رندر ۳۲-بیتی ممیز شناور پشتیبانی نمی‌کنند.
 >
-> The {{domxref("OES_texture_half_float")}} extension implicitly enables this extension.
+> افزونهٔ {{domxref("OES_texture_half_float")}} به طور ضمنی این افزونه را فعال می‌کند.
 
-## Constants
+## ثابت‌ها
 
 - `ext.RGBA16F_EXT`
-  - : RGBA 16-bit floating-point color-renderable format.
+  - : فرمت RGBA ۱۶-بیتی ممیز شناور قابل رندر کردن به رنگ.
 - `ext.RGB16F_EXT`
-  - : RGB 16-bit floating-point format. In WebGL 1.0, this may be color-renderable (implementation-dependent). In WebGL 2.0, this format is not color-renderable.
+  - : فرمت RGB ۱۶-بیتی ممیز شناور. در WebGL 1.0، این ممکن است قابل رندر کردن به رنگ باشد (وابسته به پیاده‌سازی). در WebGL 2.0، این فرمت قابل رندر کردن به رنگ نیست.
 - `ext.FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE_EXT`
-  - : Passed to {{domxref("WebGLRenderingContext.getFramebufferAttachmentParameter()")}} to get the framebuffer type.
+  - : به متد {{domxref("WebGLRenderingContext.getFramebufferAttachmentParameter()")}} داده می‌شود تا نوع فریم‌بافر را دریافت کند.
 - `ext.UNSIGNED_NORMALIZED_EXT`
-  - : The framebuffer contains unsigned fixed-point components.
+  - : فریم‌بافر شامل مؤلفه‌های نقطه ثابت بدون علامت (unsigned fixed-point) است.
 
-## Extended methods
+## متدهای گسترش‌یافته
 
-This extension extends {{domxref("WebGLRenderingContext.renderbufferStorage()")}}:
+این افزونه متد {{domxref("WebGLRenderingContext.renderbufferStorage()")}} را گسترش می‌دهد:
 
-- In WebGL 1.0 contexts, the `internalFormat` parameter now accepts `ext.RGBA16F_EXT` and `ext.RGB16F_EXT`. However, `ext.RGB16F_EXT` support is optional and applications must check framebuffer completeness to determine if it's supported.
-- In WebGL 2.0 contexts, the `internalFormat` parameter now accepts `ext.RGBA16F_EXT`. The `RGB16F` format is not color-renderable in WebGL 2.0.
+- در زمینه‌های WebGL 1.0، پارامتر `internalFormat` اکنون مقادیر `ext.RGBA16F_EXT` و `ext.RGB16F_EXT` را می‌پذیرد. با این حال، پشتیبانی از `ext.RGB16F_EXT` اختیاری است و برنامه‌ها باید کامل بودن فریم‌بافر را بررسی کنند تا مشخص شود آیا پشتیبانی می‌شود یا خیر.
+- در زمینه‌های WebGL 2.0، پارامتر `internalFormat` اکنون `ext.RGBA16F_EXT` را می‌پذیرد. فرمت `RGB16F` در WebGL 2.0 قابل رندر کردن به رنگ نیست.
 
-It extends {{domxref("WebGLRenderingContext.getFramebufferAttachmentParameter()")}}:
+همچنین متد {{domxref("WebGLRenderingContext.getFramebufferAttachmentParameter()")}} را گسترش می‌دهد:
 
-- In WebGL 1.0 contexts, the `pname` parameter now accepts `ext.FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE_EXT`. An `INVALID_OPERATION` error is generated if `attachment` is `DEPTH_STENCIL_ATTACHMENT` and `pname` is `FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE_EXT`. When `pname` is `ext.FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE_EXT`, `getFramebufferAttachmentParameter()` returns either `gl.FLOAT` or `gl.UNSIGNED_NORMALIZED_EXT` for floating-point or unsigned fixed-point components respectively.
+- در زمینه‌های WebGL 1.0، پارامتر `pname` اکنون `ext.FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE_EXT` را می‌پذیرد. اگر `attachment` برابر `DEPTH_STENCIL_ATTACHMENT` و `pname` برابر `FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE_EXT` باشد، خطای `INVALID_OPERATION` تولید می‌شود. وقتی `pname` برابر `ext.FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE_EXT` است، `getFramebufferAttachmentParameter()` به ترتیب برای مؤلفه‌های ممیز شناور یا نقطه ثابت بدون علامت، `gl.FLOAT` یا `gl.UNSIGNED_NORMALIZED_EXT` را برمی‌گرداند.
 
-## Examples
+## مثال
 
 ```js
 const ext = gl.getExtension("EXT_color_buffer_half_float");
@@ -53,16 +48,17 @@ const ext = gl.getExtension("EXT_color_buffer_half_float");
 gl.renderbufferStorage(gl.RENDERBUFFER, ext.RGBA16F_EXT, 256, 256);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("WebGLRenderingContext.getExtension()")}}
 - {{domxref("WebGLRenderingContext.renderbufferStorage()")}}
 - {{domxref("OES_texture_half_float")}}
+```
