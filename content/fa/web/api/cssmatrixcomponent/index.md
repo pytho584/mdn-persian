@@ -1,7 +1,5 @@
 ---
 title: "CSSMatrixComponent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSMatrixComponent"
-status: "needs-translation"
 ---
 
 ---
@@ -13,34 +11,34 @@ browser-compat: api.CSSMatrixComponent
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`CSSMatrixComponent`** interface of the [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Object_Model) represents the {{cssxref("transform-function/matrix", "matrix()")}} and {{cssxref("transform-function/matrix3d", "matrix3d()")}} values of the individual {{CSSXRef('transform')}} property in CSS.
+**`CSSMatrixComponent`** رابطی از [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Object_Model) است که مقادیر {{cssxref("transform-function/matrix", "matrix()")}} و {{cssxref("transform-function/matrix3d", "matrix3d()")}} مربوط به ویژگی {{CSSXRef('transform')}} را در CSS نشان می‌دهد.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("CSSMatrixComponent.CSSMatrixComponent", "CSSMatrixComponent()")}}
-  - : Creates a new `CSSMatrixComponent` object.
+  - : یک شیء جدید `CSSMatrixComponent` ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Also inherits properties from its parent interface, {{DOMxRef("CSSTransformComponent")}}._
+_همچنین ویژگی‌های رابط والد خود، {{DOMxRef("CSSTransformComponent")}} را به ارث می‌برد._
 
 - {{domxref('CSSMatrixComponent.matrix','matrix')}}
-  - : A {{domxref("DOMMatrix")}} object.
+  - : یک شیء {{domxref("DOMMatrix")}}.
 
-## Instance methods
+## روش‌های نمونه
 
-_Also inherits methods from its parent interface, {{DOMxRef("CSSTransformComponent")}}._
+_همچنین روش‌های رابط والد خود، {{DOMxRef("CSSTransformComponent")}} را به ارث می‌برد._
 
-## Examples
+## مثال‌ها
 
-To do.
+در دست انجام.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
