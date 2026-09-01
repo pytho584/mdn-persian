@@ -1,11 +1,5 @@
 ---
 title: "GPURenderPassEncoder: endOcclusionQuery() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder/endOcclusionQuery"
-status: "needs-translation"
----
-
----
-title: "GPURenderPassEncoder: endOcclusionQuery() method"
 short-title: endOcclusionQuery()
 slug: Web/API/GPURenderPassEncoder/endOcclusionQuery
 page-type: web-api-instance-method
@@ -14,30 +8,29 @@ browser-compat: api.GPURenderPassEncoder.endOcclusionQuery
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`endOcclusionQuery()`** method of the
-{{domxref("GPURenderPassEncoder")}} interface ends an active occlusion query previously started with {{domxref("GPURenderPassEncoder.beginOcclusionQuery", "beginOcclusionQuery()")}}.
+متد **`endOcclusionQuery()`** در رابط {{domxref("GPURenderPassEncoder")}} یک پرس‌وجوی انسداد فعال را که قبلاً با {{domxref("GPURenderPassEncoder.beginOcclusionQuery", "beginOcclusionQuery()")}} شروع شده است، به پایان می‌رساند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 endOcclusionQuery()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Validation
+### اعتبارسنجی
 
-The following criteria must be met when calling **`endOcclusionQuery()`**, otherwise a {{domxref("GPUValidationError")}} is generated and the {{domxref("GPURenderPassEncoder")}} becomes invalid:
+هنگام فراخوانی **`endOcclusionQuery()`**، معیارهای زیر باید برقرار باشند؛ در غیر این صورت، یک {{domxref("GPUValidationError")}} تولید شده و {{domxref("GPURenderPassEncoder")}} نامعتبر می‌شود:
 
-- An occlusion query is active for this render pass (i.e., via a previous `beginOcclusionQuery()` call).
+- یک پرس‌وجوی انسداد برای این گذر رندر فعال باشد (یعنی از طریق فراخوانی قبلی `beginOcclusionQuery()`).
 
-## Examples
+## مثال‌ها
 
 ```js
 // …
@@ -78,14 +71,14 @@ passEncoder.endOcclusionQuery();
 // …
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
