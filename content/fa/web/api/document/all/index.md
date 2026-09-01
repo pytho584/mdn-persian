@@ -1,11 +1,5 @@
 ---
 title: "Document: all property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/all"
-status: "needs-translation"
----
-
----
-title: "Document: all property"
 short-title: all
 slug: Web/API/Document/all
 page-type: web-api-instance-property
@@ -16,22 +10,22 @@ browser-compat: api.Document.all
 
 {{APIRef("DOM")}}{{Deprecated_Header}}
 
-The {{DOMxRef("Document")}} interface's read-only **`all`** property returns an {{DOMxRef("HTMLAllCollection")}} rooted at the document node.
+خاصیت **`all`** فقط خواندنی (read-only) از رابط (interface) {{DOMxRef("Document")}} یک {{DOMxRef("HTMLAllCollection")}} برمی‌گرداند که ریشه در گره سند (document node) دارد.
 
-Rather than using `document.all` to return an {{DOMxRef("HTMLAllCollection")}} of all the document's elements in document order, you can use {{DOMxRef("Document.querySelectorAll")}} to return a {{DOMxRef("NodeList")}} of all the document's elements in document order:
+به جای استفاده از `document.all` برای دریافت یک {{DOMxRef("HTMLAllCollection")}} از تمام عناصر سند به ترتیب سند (document order)، می‌توانید از {{DOMxRef("Document.querySelectorAll")}} استفاده کنید تا یک {{DOMxRef("NodeList")}} از تمام عناصر سند به ترتیب سند دریافت کنید:
 
 ```js
 const allElements = document.querySelectorAll("*");
 ```
 
-## Value
+## مقدار
 
-An {{DOMxRef("HTMLAllCollection")}} which contains every element in the document.
+یک {{DOMxRef("HTMLAllCollection")}} که شامل تمام عناصر موجود در سند است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
