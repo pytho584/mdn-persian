@@ -1,7 +1,5 @@
 ---
 title: "Element: animate() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/animate"
-status: "needs-translation"
 ---
 
 ---
@@ -14,54 +12,47 @@ browser-compat: api.Element.animate
 
 {{APIRef("Web Animations")}}
 
-The {{domxref("Element")}} interface's **`animate()`** method
-is a shortcut method which creates a new {{domxref("Animation")}}, applies it to the
-element, then plays the animation. It returns the created {{domxref("Animation")}}
-object instance.
+متد **`animate()`** در رابط {{domxref("Element")}} یک روش میانبر است که یک {{domxref("Animation")}} جدید ایجاد می‌کند، آن را روی عنصر اعمال می‌کند و سپس انیمیشن را اجرا می‌کند. این متد نمونه شی {{domxref("Animation")}} ایجادشده را بازمی‌گرداند.
 
 > [!NOTE]
-> Elements can have multiple animations applied to them. You can get a list of the
-> animations that affect an element by calling {{domxref("Element.getAnimations()")}}.
+> عناصر می‌توانند چندین انیمیشن روی آن‌ها اعمال شود. برای دریافت فهرست انیمیشن‌هایی که روی یک عنصر اثر می‌گذارند، می‌توانید با {{domxref("Element.getAnimations()")}} تماس بگیرید.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 animate(keyframes, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `keyframes`
-  - : Either an array of keyframe objects, **or** a keyframe object whose
-    properties are arrays of values to iterate over. See [Keyframe Formats](/en-US/docs/Web/API/Web_Animations_API/Keyframe_Formats) for more details.
+  - : یا آرایه‌ای از اشیاء keyframe، **یا** شیء keyframe که خصوصیات آن آرایه‌هایی از مقادیر برای پیمایش هستند. برای جزئیات بیشتر به [قالب‌های Keyframe](/en-US/docs/Web/API/Web_Animations_API/Keyframe_Formats) مراجعه کنید.
 - `options`
-  - : Either an **integer representing the animation's duration** (in
-    milliseconds), **or** an Object containing one or more timing properties described in the [`KeyframeEffect()` options parameter](/en-US/docs/Web/API/KeyframeEffect/KeyframeEffect#parameters) and/or the following options:
+  - : یا یک **عدد صحیح که نشان‌دهنده مدت زمان انیمیشن** (بر حسب میلی‌ثانیه) است، **یا** یک شیء شامل یک یا چند ویژگی زمان‌بندی که در [پارامتر options مربوط به `KeyframeEffect()`](/en-US/docs/Web/API/KeyframeEffect/KeyframeEffect#parameters) توضیح داده شده است و/یا گزینه‌های زیر:
+
     - `id` {{optional_inline}}
-      - : A property unique to `animate()`: A string with which to reference the animation.
+      - : ویژگی‌ای مختص `animate()`: رشته‌ای که برای ارجاع به انیمیشن استفاده می‌شود.
     - `rangeEnd` {{optional_inline}}
-      - : Specifies the end of an animation's attachment range along its timeline, i.e., where along the timeline an animation will end. The JavaScript equivalent of the CSS {{cssxref("animation-range-end")}} property. `rangeEnd` can take several different value types, as follows:
-        - A string that can be `normal` (meaning no change to the animation's attachment range), a CSS {{cssxref("length-percentage")}} representing an offset, a `<timeline-range-name>`, or a `<timeline-range-name>` with a `<length-percentage>` following it. For example: `"normal"`, `"entry"`, or `"cover 100%"`.
+      - : پایان محدوده اتصال انیمیشن را در طول خط زمانی آن مشخص می‌کند، یعنی جایی در طول خط زمانی که انیمیشن در آن به پایان می‌رسد. معادل جاوااسکریپتی ویژگی CSS {{cssxref("animation-range-end")}}. `rangeEnd` می‌تواند انواع مختلفی از مقادیر را بپذیرد، به شرح زیر:
+        - یک رشته که می‌تواند `normal` باشد (به این معنی که تغییری در محدوده اتصال انیمیشن ایجاد نمی‌شود)، یک {{cssxref("length-percentage")}} CSS که یک آفست را نشان می‌دهد، یک `<timeline-range-name>`، یا یک `<timeline-range-name>` به‌همراه یک `<length-percentage>` که پس از آن می‌آید. برای مثال: `"normal"`، `"entry"` یا `"cover 100%"`.
 
-          See {{cssxref("animation-range")}} for a detailed description of the available values. Also check out the [View Timeline Ranges Visualizer](https://scroll-driven-animations.style/tools/view-timeline/ranges/), which shows exactly what the different values mean in an easy visual format.
-
-        - An object containing `rangeName` (a string) and `offset` (a {{domxref("CSSNumericValue")}}) properties representing a `<timeline-range-name>` and `<length-percentage>`, as described in the previous bullet. For example: `{ rangeName: "entry", offset: CSS.percent("100") }`.
-        - A {{domxref("CSSNumericValue")}} representing an offset, for example: `CSS.percent("100")`.
-
+          برای توضیح دقیق مقادیر موجود، به {{cssxref("animation-range")}} مراجعه کنید. همچنین [تجسم‌گر محدوده‌های خط زمانی](https://scroll-driven-animations.style/tools/view-timeline/ranges/) را ببینید که دقیقاً نشان می‌دهد مقادیر مختلف در قالبی بصری و آسان چه معنایی دارند.
+        - یک شیء حاوی خصوصیات `rangeName` (یک رشته) و `offset` (یک {{domxref("CSSNumericValue")}}) که یک `<timeline-range-name>` و یک `<length-percentage>` را نشان می‌دهند، همانطور که در مورد قبلی توضیح داده شد. برای مثال: `{ rangeName: "entry", offset: CSS.percent("100") }`.
+        - یک {{domxref("CSSNumericValue")}} که یک آفست را نشان می‌دهد، برای مثال: `CSS.percent("100")`.
     - `rangeStart` {{optional_inline}}
-      - : Specifies the start of an animation's attachment range along its timeline, i.e., where along the timeline an animation will start. The JavaScript equivalent of the CSS {{cssxref("animation-range-start")}} property. `rangeStart` can take the same value types as `rangeEnd`.
+      - : شروع محدوده اتصال انیمیشن را در طول خط زمانی آن مشخص می‌کند، یعنی جایی در طول خط زمانی که انیمیشن در آن شروع می‌شود. معادل جاوااسکریپتی ویژگی CSS {{cssxref("animation-range-start")}}. `rangeStart` می‌تواند همان انواع مقادیری را بپذیرد که `rangeEnd` می‌پذیرد.
     - `timeline` {{optional_inline}}
-      - : A property unique to `animate()`: The {{domxref("AnimationTimeline")}} to associate with the animation. Defaults to {{domxref("Document.timeline")}}. The JavaScript equivalent of the CSS {{cssxref("animation-timeline")}} property.
+      - : ویژگی‌ای مختص `animate()`: {{domxref("AnimationTimeline")}} که باید با انیمیشن مرتبط شود. به‌طور پیش‌فرض {{domxref("Document.timeline")}} است. معادل جاوااسکریپتی ویژگی CSS {{cssxref("animation-timeline")}}.
 
-### Return value
+### مقدار بازگشتی
 
-Returns an {{domxref("Animation")}}.
+یک {{domxref("Animation")}} بازمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-### Rotating and scaling
+### چرخش و تغییر مقیاس
 
-In this example we use the `animate()` method to rotate and scale an element.
+در این مثال از متد `animate()` برای چرخش و تغییر مقیاس یک عنصر استفاده می‌کنیم.
 
 #### HTML
 
@@ -113,16 +104,13 @@ newspaper.addEventListener("click", () => {
 });
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Rotating and scaling")}}
 
-### Down the Rabbit Hole demo
+### دموی Down the Rabbit Hole
 
-In the demo [Down the Rabbit Hole (with the Web Animation API)](/en-US/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API#moving_it_to_javascript), we use the convenient
-`animate()` method to immediately create and play an animation on the
-`#tunnel` element to make it flow upwards, infinitely. Notice the array of
-objects passed as keyframes and also the timing options block.
+در دموی [Down the Rabbit Hole (با Web Animation API)](/en-US/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API#moving_it_to_javascript)، از متد راحت `animate()` استفاده می‌کنیم تا بلافاصله یک انیمیشن روی عنصر `#tunnel` ایجاد و اجرا کنیم تا آن را به‌طور نامحدود به سمت بالا جاری کند. به آرایه اشیاء ارسال‌شده به‌عنوان keyframe و همچنین بلوک گزینه‌های زمان‌بندی توجه کنید.
 
 ```js
 document.getElementById("tunnel").animate(
@@ -139,9 +127,9 @@ document.getElementById("tunnel").animate(
 );
 ```
 
-### Implicit to/from keyframes
+### کیفریم‌های ضمنی از/به
 
-The browser can infer the start or end state of an animation by using the current state. By default, if a single keyframe is provided, it's treated as the end state, and the start state is inferred from the element's current computed style. However, you can specify the `offset` to indicate where the provided keyframe should be placed in the animation timeline.
+مرورگر می‌تواند حالت شروع یا پایان انیمیشن را با استفاده از حالت فعلی استنتاج کند. به‌طور پیش‌فرض، اگر یک keyframe واحد ارائه شود، به‌عنوان حالت پایان در نظر گرفته می‌شود و حالت شروع از سبک محاسبه‌شده فعلی عنصر استنتاج می‌شود. با این حال، می‌توانید `offset` را برای مشخص کردن اینکه keyframe ارائه‌شده در کجای خط زمانی انیمیشن قرار گیرد، تعیین کنید.
 
 ```html hidden
 <div>
@@ -179,13 +167,13 @@ document.getElementById("run3").addEventListener("click", () => {
 });
 ```
 
-We specified a single frame in the timeline, and the start and/or end states can be filled in to create a complete animation.
+ما یک فریم واحد در خط زمانی مشخص کرده‌ایم و حالت‌های شروع و/یا پایان می‌توانند پر شوند تا یک انیمیشن کامل ایجاد شود.
 
 {{EmbedLiveSample("Implicit to/from keyframes", "", 300)}}
 
-### timeline, rangeStart, and rangeEnd
+### timeline، rangeStart و rangeEnd
 
-Typical usage of the `timeline`, `rangeStart`, and `rangeEnd` properties might look like this:
+استفاده معمول از ویژگی‌های `timeline`، `rangeStart` و `rangeEnd` ممکن است به این شکل باشد:
 
 ```js
 const img = document.querySelector("img");
@@ -210,18 +198,18 @@ img.animate(
 );
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Animation")}}
 - {{domxref("Element.getAnimations()")}}
-- {{cssxref("animation-range-end")}}, {{cssxref("animation-range-start")}}, {{cssxref("animation-timeline")}}
-- [CSS scroll-driven animations](/en-US/docs/Web/CSS/Guides/Scroll-driven_animations)
+- {{cssxref("animation-range-end")}}، {{cssxref("animation-range-start")}}، {{cssxref("animation-timeline")}}
+- [انیمیشن‌های مبتنی بر اسکرول CSS](/en-US/docs/Web/CSS/Guides/Scroll-driven_animations)
 - [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)
