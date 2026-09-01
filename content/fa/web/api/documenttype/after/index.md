@@ -1,11 +1,5 @@
 ---
 title: "DocumentType: after() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DocumentType/after"
-status: "needs-translation"
----
-
----
-title: "DocumentType: after() method"
 short-title: after()
 slug: Web/API/DocumentType/after
 page-type: web-api-instance-method
@@ -14,12 +8,9 @@ browser-compat: api.DocumentType.after
 
 {{APIRef("DOM")}}
 
-The **`DocumentType.after()`** method inserts a set of
-{{domxref("Node")}} objects or strings in the children list of the
-`DocumentType`'s parent, just after the `DocumentType`.
-Strings are inserted as equivalent {{domxref("Text")}} nodes.
+متد **`DocumentType.after()`** مجموعه‌ای از اشیاء {{domxref("Node")}} یا رشته‌ها را در لیست فرزندان والد `DocumentType`، درست بعد از `DocumentType` درج می‌کند. رشته‌ها به عنوان گره‌های {{domxref("Text")}} معادل درج می‌شوند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 after(param1)
@@ -27,21 +18,21 @@ after(param1, param2)
 after(param1, param2, /* …, */ paramN)
 ```
 
-### Parameters
+### پارامترها
 
 - `param1`, …, `paramN`
-  - : A set of {{domxref("Node")}} objects or strings to insert.
+  - : مجموعه‌ای از اشیاء {{domxref("Node")}} یا رشته‌ها برای درج.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `HierarchyRequestError` {{DOMxRef("DOMException")}}
-  - : Thrown when the node cannot be inserted at the specified point in the hierarchy.
+  - : زمانی پرتاب می‌شود که گره در نقطه مشخص‌شده در سلسله‌مراتب قابل درج نباشد.
 
-## Examples
+## مثال‌ها
 
 ```js
 let docType = document.implementation.createDocumentType("html", "", "");
@@ -53,15 +44,15 @@ myDoc.childNodes;
 // NodeList [<!DOCTYPE html>, <html>]
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("DocumentType.before()")}}
 - {{domxref("CharacterData.after()")}}
