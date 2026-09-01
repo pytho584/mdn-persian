@@ -1,11 +1,5 @@
 ---
 title: "Element: DOMActivate event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/DOMActivate_event"
-status: "needs-translation"
----
-
----
-title: "Element: DOMActivate event"
 short-title: DOMActivate
 slug: Web/API/Element/DOMActivate_event
 page-type: web-api-event
@@ -16,28 +10,28 @@ browser-compat: api.Element.DOMActivate_event
 
 {{APIRef}}{{Deprecated_Header}}
 
-The **`DOMActivate`** event is fired at an element when it becomes active, such as when it is clicked on using the mouse or a keypress is used to navigate to it.
+رویداد **`DOMActivate`** روی یک عنصر هنگامی که فعال می‌شود - مانند زمانی که با ماوس کلیک می‌شود یا با کلید فشرده به آن پیمایش می‌شود - فعال می‌گردد.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید.
 
 ```js-nolint
 addEventListener("DOMActivate", (event) => { })
 ```
 
 > [!NOTE]
-> There is no `onDOMActivate` event handler property for this event.
+> برای این رویداد، ویژگی رویدادگردان `onDOMActivate` وجود ندارد.
 
-## Event type
+## نوع رویداد
 
-A {{domxref("UIEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("UIEvent")}}. از {{domxref("Event")}} به ارث می‌برد.
 
 {{InheritanceDiagram("UIEvent")}}
 
-## Examples
+## مثال‌ها
 
-This example listens for `DOMActivate` on a {{HtmlElement("button")}} element and displays its {{domxref("UIEvent/detail", "detail")}}.
+این مثال به رویداد `DOMActivate` روی یک عنصر {{HtmlElement("button")}} گوش می‌دهد و {{domxref("UIEvent/detail", "detail")}} آن را نمایش می‌دهد.
 
 ### HTML
 
@@ -55,21 +49,21 @@ button.addEventListener("DOMActivate", (event) => {
 });
 ```
 
-### Result
+### نتیجه
 
-Note that `detail` of the `DOMActivate` event may have browser-specific behavior. It may either always be `0`, or have similar behavior as the {{domxref("Element/click_event", "click")}} event's `detail` (i.e., indicating the number of consecutive clicks).
+توجه داشته باشید که `detail` رویداد `DOMActivate` ممکن است رفتار خاص مرورگر داشته باشد. ممکن است همیشه `0` باشد یا رفتاری مشابه `detail` رویداد {{domxref("Element/click_event", "click")}} داشته باشد (یعنی نشان‌دهنده تعداد کلیک‌های متوالی).
 
 {{EmbedLiveSample("Examples")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("UIEvent")}}
 - {{domxref("Element/click_event", "click")}}
