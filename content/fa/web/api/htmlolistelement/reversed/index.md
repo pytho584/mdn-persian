@@ -1,11 +1,5 @@
 ---
 title: "HTMLOListElement: reversed property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLOListElement/reversed"
-status: "needs-translation"
----
-
----
-title: "HTMLOListElement: reversed property"
 short-title: reversed
 slug: Web/API/HTMLOListElement/reversed
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.HTMLOListElement.reversed
 
 {{ApiRef("HTML DOM")}}
 
-The **`reversed`** property of the {{domxref("HTMLOListElement")}} interface indicates order of a list.
+ویژگی **`reversed`** در رابط {{domxref("HTMLOListElement")}} ترتیب یک فهرست را نشان می‌دهد.
 
-It reflects the [`reversed`](/en-US/docs/Web/HTML/Reference/Elements/ol#reversed) attribute of the {{HTMLElement("ol")}} element.
+این ویژگی منعکس‌کنندهٔ ویژگی [`reversed`](/en-US/docs/Web/HTML/Reference/Elements/ol#reversed) عنصر {{HTMLElement("ol")}} است.
 
-## Value
+## مقدار
 
-A `boolean` value. If `true`, it indicates that the list is a descending list (..., 3, 2, 1).
+یک مقدار بولی (`boolean`). اگر `true` باشد، نشان می‌دهد که فهرست به صورت نزولی (..., 3, 2, 1) است.
 
-## Examples
+## نمونه‌ها
 
 ### HTML
 
@@ -44,14 +38,14 @@ olElement.reversed = "true";
 console.log(olElement.reversed); // Output: "true"
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples", 400, 100)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
