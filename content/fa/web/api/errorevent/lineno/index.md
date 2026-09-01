@@ -1,9 +1,4 @@
----
-title: "ErrorEvent: lineno property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ErrorEvent/lineno"
-status: "needs-translation"
----
-
+```
 ---
 title: "ErrorEvent: lineno property"
 short-title: lineno
@@ -14,13 +9,13 @@ browser-compat: api.ErrorEvent.lineno
 
 {{APIRef("HTML DOM")}}{{AvailableInWorkers}}
 
-The **`lineno`** read-only property of the {{domxref("ErrorEvent")}} interface returns an integer containing the line number of the script file on which the error occurred.
+ویژگی فقط‌خواندنی **`lineno`** از رابط {{domxref("ErrorEvent")}} یک عدد صحیح برمی‌گرداند که شامل شماره خط فایل اسکریپتی است که خطا در آن رخ داده است.
 
-## Value
+## مقدار
 
-An integer.
+یک عدد صحیح.
 
-## Examples
+## مثال‌ها
 
 ```js
 window.addEventListener("error", (ev) => {
@@ -28,10 +23,11 @@ window.addEventListener("error", (ev) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
+```
