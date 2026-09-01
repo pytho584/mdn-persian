@@ -1,7 +1,5 @@
 ---
 title: "GainNode"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GainNode"
-status: "needs-translation"
 ---
 
 ---
@@ -13,9 +11,9 @@ browser-compat: api.GainNode
 
 {{ APIRef("Web Audio API") }}
 
-The `GainNode` interface represents a change in volume. It is an {{domxref("AudioNode")}} audio-processing module that causes a given gain to be applied to the input data before its propagation to the output. A `GainNode` always has exactly one input and one output, both with the same number of channels.
+رابطه `GainNode` تغییر در حجم صدا را نشان می‌دهد. این یک ماژول پردازش صوتی {{domxref("AudioNode")}} است که باعث می‌شود یک بهره (gain) معین به داده ورودی اعمال شود و سپس به خروجی منتقل شود. یک `GainNode` همیشه دقیقاً یک ورودی و یک خروجی دارد، هر دو با تعداد کانال‌های یکسان.
 
-The gain is a unitless value, changing with time, that is multiplied to each corresponding sample of all input channels. If modified, the new gain is instantly applied, causing unaesthetic 'clicks' in the resulting audio. To prevent this from happening, never change the value directly but use the exponential interpolation methods on the {{domxref("AudioParam")}} interface.
+بهره یک مقدار بدون واحد است که با زمان تغییر می‌کند و در هر نمونه متناظر از تمام کانال‌های ورودی ضرب می‌شود. اگر تغییر داده شود، بهره جدید بلافاصله اعمال می‌شود که باعث ایجاد «کلیک»های ناخوشایند در صدای حاصل می‌شود. برای جلوگیری از این اتفاق، هرگز مقدار را مستقیماً تغییر ندهید؛ بلکه از روش‌های درون‌یابی نمایی در رابط {{domxref("AudioParam")}} استفاده کنید.
 
 ![The GainNode is increasing the gain of the output.](webaudiogainnode.png)
 
@@ -24,56 +22,56 @@ The gain is a unitless value, changing with time, that is multiplied to each cor
 <table class="properties">
   <tbody>
     <tr>
-      <th scope="row">Number of inputs</th>
+      <th scope="row">تعداد ورودی‌ها</th>
       <td><code>1</code></td>
     </tr>
     <tr>
-      <th scope="row">Number of outputs</th>
+      <th scope="row">تعداد خروجی‌ها</th>
       <td><code>1</code></td>
     </tr>
     <tr>
-      <th scope="row">Channel count mode</th>
+      <th scope="row">حالت تعداد کانال</th>
       <td><code>"max"</code></td>
     </tr>
     <tr>
-      <th scope="row">Channel count</th>
-      <td><code>2</code> (not used in the default count mode)</td>
+      <th scope="row">تعداد کانال</th>
+      <td><code>2</code> (در حالت پیش‌فرض تعداد کانال استفاده نمی‌شود)</td>
     </tr>
     <tr>
-      <th scope="row">Channel interpretation</th>
+      <th scope="row">تفسیر کانال</th>
       <td><code>"speakers"</code></td>
     </tr>
   </tbody>
 </table>
 
-## Constructor
+## سازنده
 
 - {{domxref("GainNode.GainNode", "GainNode()")}}
-  - : Creates and returns a new `GainNode` object. As an alternative, you can use the {{domxref("BaseAudioContext.createGain()")}} factory method; see [Creating an AudioNode](/en-US/docs/Web/API/AudioNode#creating_an_audionode).
+  - : یک شیء `GainNode` جدید ایجاد کرده و آن را برمی‌گرداند. به عنوان جایگزین، می‌توانید از متد کارخانه‌ای {{domxref("BaseAudioContext.createGain()")}} استفاده کنید؛ به [ایجاد یک AudioNode](/en-US/docs/Web/API/AudioNode#creating_an_audionode) مراجعه کنید.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("AudioNode")}}_.
+_ویژگی‌ها را از والد خود، {{domxref("AudioNode")}}، به ارث می‌برد._
 
 - {{domxref("GainNode.gain")}} {{ReadOnlyInline}}
-  - : An [a-rate](/en-US/docs/Web/API/AudioParam#a-rate) {{domxref("AudioParam")}} representing the amount of gain to apply. You have to set {{domxref("AudioParam.value")}} or use the methods of `AudioParam` to change the effect of gain.
+  - : یک {{domxref("AudioParam")}} از نوع [a-rate](/en-US/docs/Web/API/AudioParam#a-rate) که میزان بهره مورد اعمال را نشان می‌دهد. برای تغییر اثر بهره، باید {{domxref("AudioParam.value")}} را تنظیم کنید یا از روش‌های `AudioParam` استفاده کنید.
 
-## Instance methods
+## روش‌های نمونه
 
-_No specific method; inherits methods from its parent, {{domxref("AudioNode")}}_.
+_روش خاصی ندارد؛ روش‌ها را از والد خود، {{domxref("AudioNode")}}، به ارث می‌برد._
 
-## Example
+## مثال
 
-See [`BaseAudioContext.createGain()`](/en-US/docs/Web/API/BaseAudioContext/createGain#examples) for example code showing how to use an `AudioContext` to create a `GainNode`.
+برای مشاهده کد نمونه‌ای که نحوه استفاده از یک `AudioContext` برای ایجاد یک `GainNode` را نشان می‌دهد، به [`BaseAudioContext.createGain()`](/en-US/docs/Web/API/BaseAudioContext/createGain#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
