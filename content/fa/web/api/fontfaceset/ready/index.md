@@ -1,11 +1,5 @@
 ---
 title: "FontFaceSet: ready property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSet/ready"
-status: "needs-translation"
----
-
----
-title: "FontFaceSet: ready property"
 short-title: ready
 slug: Web/API/FontFaceSet/ready
 page-type: web-api-instance-property
@@ -14,17 +8,17 @@ browser-compat: api.FontFaceSet.ready
 
 {{APIRef("CSS Font Loading API")}}{{AvailableInWorkers}}
 
-The `ready` read-only property of the {{domxref("FontFaceSet")}} interface returns a {{jsxref("Promise")}} that resolves to the given {{domxref("FontFaceSet")}}.
+ویژگی فقط‑خواندنی `ready` از رابط {{domxref("FontFaceSet")}} یک {{jsxref("Promise")}} برمی‌گرداند که با همان {{domxref("FontFaceSet")}} داده شده، برآورده می‌شود.
 
-The promise will only resolve once the document has completed loading fonts, layout operations are completed, and no further font loads are needed.
+این پرامیس تنها زمانی برآورده می‌شود که بارگذاری قلم‌ها در سند کامل شده، عملیات چیدمان به پایان رسیده و بارگذاری قلم بیشتری نیاز نباشد.
 
-## Value
+## مقدار
 
-A {{jsxref("Promise")}} that resolves to the given {{domxref("FontFaceSet")}}.
+یک {{jsxref("Promise")}} که با {{domxref("FontFaceSet")}} داده شده برآورده می‌شود.
 
-## Examples
+## مثال‌ها
 
-In the following example the value of `ready` is printed to the console once the promise has resolved.
+در مثال زیر، مقدار `ready` پس از برآورده شدن پرامیس در کنسول چاپ می‌شود.
 
 ```js
 async function isReady() {
@@ -35,10 +29,10 @@ async function isReady() {
 isReady();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
