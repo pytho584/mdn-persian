@@ -1,11 +1,5 @@
 ---
 title: "HTMLScriptElement: noModule property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLScriptElement/noModule"
-status: "needs-translation"
----
-
----
-title: "HTMLScriptElement: noModule property"
 short-title: noModule
 slug: Web/API/HTMLScriptElement/noModule
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.HTMLScriptElement.noModule
 
 {{APIRef("HTML DOM")}}
 
-The **`noModule`** property of the {{domxref("HTMLScriptElement")}} interface is a boolean value that indicates whether the script should be executed in browsers that support [ES modules](/en-US/docs/Web/JavaScript/Guide/Modules). Practically, this can be used to serve fallback scripts to older browsers that do not support JavaScript modules.
+ویژگی **`noModule`** در رابط {{domxref("HTMLScriptElement")}} یک مقدار بولی است که نشان می‌دهد آیا اسکریپت باید در مرورگرهایی که از [ماژول‌های ES](/en-US/docs/Web/JavaScript/Guide/Modules) پشتیبانی می‌کنند اجرا شود یا خیر. در عمل، می‌توان از این ویژگی برای ارائه‌ی اسکریپت‌های جایگزین (fallback) به مرورگرهای قدیمی‌تری استفاده کرد که از ماژول‌های جاوااسکریپت پشتیبانی نمی‌کنند.
 
-It reflects the `nomodule` attribute of the {{HTMLElement("script")}} element.
+این ویژگی، صفت `nomodule` عنصر {{HTMLElement("script")}} را منعکس می‌کند.
 
-## Value
+## مقدار
 
-A boolean, `true` means that the script should not be executed in browsers that support ES modules, `false` otherwise.
+یک مقدار بولی؛ `true` به این معناست که اسکریپت نباید در مرورگرهایی که از ماژول‌های ES پشتیبانی می‌کنند اجرا شود و `false` به این معناست که اسکریپت می‌تواند اجرا شود.
 
-## Examples
+## مثال‌ها
 
 ```html
 <script id="el" nomodule>
@@ -36,10 +30,10 @@ const el = document.getElementById("el");
 console.log(el.noModule); // Output: true
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
