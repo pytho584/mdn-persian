@@ -1,11 +1,5 @@
 ---
 title: "HTMLMediaElement: setMediaKeys() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/setMediaKeys"
-status: "needs-translation"
----
-
----
-title: "HTMLMediaElement: setMediaKeys() method"
 short-title: setMediaKeys()
 slug: Web/API/HTMLMediaElement/setMediaKeys
 page-type: web-api-instance-method
@@ -14,9 +8,9 @@ browser-compat: api.HTMLMediaElement.setMediaKeys
 
 {{APIRef("HTML DOM")}}{{SecureContext_Header}}
 
-The **`setMediaKeys()`** method of the {{domxref("HTMLMediaElement")}} interface sets the {{domxref("MediaKeys")}} that will be used to decrypt media during playback.
+متد **`setMediaKeys()`** در رابط {{domxref("HTMLMediaElement")}}، شیء {{domxref("MediaKeys")}} را تنظیم می‌کند که برای رمزگشایی رسانه در حین پخش استفاده خواهد شد.
 
-It returns a {{jsxref("Promise")}} that fulfils if the new keys are successfully set, or rejects if keys cannot be set.
+این متد یک {{jsxref("Promise")}} برمی‌گرداند که در صورت تنظیم موفق کلیدهای جدید، fulfilled می‌شود و در صورت عدم امکان تنظیم کلیدها، rejected می‌شود.
 
 ## Syntax
 
@@ -27,22 +21,22 @@ setMediaKeys(mediaKeys)
 ### Parameters
 
 - `mediaKeys`
-  - : A {{domxref("MediaKeys")}} object that the {{domxref("HTMLMediaElement")}} can use for decryption of media data during playback.
+  - : یک شیء {{domxref("MediaKeys")}} که {{domxref("HTMLMediaElement")}} می‌تواند برای رمزگشایی داده‌های رسانه در حین پخش از آن استفاده کند.
 
 ### Return value
 
-A {{jsxref("Promise")}} that fulfills with {{jsxref('undefined')}}.
+یک {{jsxref("Promise")}} که با {{jsxref('undefined')}} fulfilled می‌شود.
 
 ### Exceptions
 
-The returned promise may reject an error:
+پرامیسی که برگردانده می‌شود ممکن است با یک خطا rejected شود:
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Media keys are already in the process of being attached, or the previous keys cannot be removed at the current time (for example, because the particular implementation does not allow removal during playback).
+  - : کلیدهای رسانه قبلاً در حال اتصال هستند، یا امکان حذف کلیدهای قبلی در زمان فعلی وجود ندارد (مثلاً به این دلیل که پیاده‌سازی خاص، حذف را در حین پخش مجاز نمی‌کند).
 - {{domxref("QuotaExceededError")}}
-  - : The passed keys are already in use by another element, or the browser is unable to use it with this element for other reasons.
+  - : کلیدهای ارسال‌شده قبلاً توسط عنصر دیگری استفاده می‌شوند، یا مرورگر به دلایل دیگر قادر به استفاده از آن با این عنصر نیست.
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : The media keys that are currently associated with the media cannot be disassociated, because this is not supported by either the CDM or the browser.
+  - : کلیدهای رسانه‌ای که در حال حاضر با رسانه مرتبط هستند نمی‌توانند از آن جدا شوند، زیرا این کار توسط CDM یا مرورگر پشتیبانی نمی‌شود.
 
 ## Specifications
 
