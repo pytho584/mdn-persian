@@ -1,11 +1,5 @@
 ---
 title: "HTMLImageElement: complete property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/complete"
-status: "needs-translation"
----
-
----
-title: "HTMLImageElement: complete property"
 short-title: complete
 slug: Web/API/HTMLImageElement/complete
 page-type: web-api-instance-property
@@ -14,31 +8,31 @@ browser-compat: api.HTMLImageElement.complete
 
 {{APIRef("HTML DOM")}}
 
-The **`complete`** read-only property of the {{domxref("HTMLImageElement")}} interface is a Boolean value indicating whether or not the image has completely loaded.
+ویژگی فقط‌خواندنی **`complete`** در رابط {{domxref("HTMLImageElement")}} یک مقدار بولی است که نشان می‌دهد آیا تصویر به طور کامل بارگذاری شده است یا خیر.
 
-## Value
+## مقدار
 
-A Boolean value which is `true` if the image has completely loaded; otherwise, the value is `false`.
+یک مقدار بولی که در صورت بارگذاری کامل تصویر `true` و در غیر این صورت `false` است.
 
-The image is considered completely loaded if any of the following are true:
+تصویر زمانی کاملاً بارگذاری شده در نظر گرفته می‌شود که هر یک از موارد زیر صادق باشد:
 
-- Neither the [`src`](/en-US/docs/Web/HTML/Reference/Elements/img#src) nor the [`srcset`](/en-US/docs/Web/HTML/Reference/Elements/img#srcset) attribute is specified.
-- The `srcset` attribute is absent and the `src` attribute, while specified, is the empty string (`""`).
-- The image resource has been fully fetched and has been queued for rendering/compositing.
-- The image element has previously determined that the image is fully available and ready for use.
-- The image is "broken;" that is, the image failed to load due to an error or because image loading is disabled.
+- هیچ‌یک از ویژگی‌های [`src`](/en-US/docs/Web/HTML/Reference/Elements/img#src) یا [`srcset`](/en-US/docs/Web/HTML/Reference/Elements/img#srcset) مشخص نشده باشد.
+- ویژگی `srcset` وجود نداشته باشد و ویژگی `src`، اگرچه مشخص شده، رشته خالی (`""`) باشد.
+- منبع تصویر به طور کامل دریافت شده و برای رندر/ترکیب در صف قرار گرفته باشد.
+- عنصر تصویر قبلاً تشخیص داده باشد که تصویر کاملاً در دسترس و آماده استفاده است.
+- تصویر «خراب» باشد؛ یعنی به دلیل خطا یا غیرفعال بودن بارگذاری تصویر، بارگذاری نشده باشد.
 
-It's worth noting that due to the image potentially being received asynchronously, the value of `complete` may change while your script is running.
+شایان ذکر است که به دلیل احتمال دریافت ناهمزمان تصویر، مقدار `complete` ممکن است در حین اجرای اسکریپت شما تغییر کند.
 
-## Examples
+## مثال‌ها
 
-### Executing functions on loaded images only
+### اجرای توابع فقط روی تصاویر بارگذاری شده
 
-Consider a photo library app that provides the ability to open images into a lightbox mode for improved viewing as well as editing of the image. These photos may be very large, so you don't want to wait for them to load, so your code uses `async`/`await` to load the images in the background.
+برنامه‌ای از کتابخانه عکس را در نظر بگیرید که قابلیت باز کردن تصاویر در حالت جعبه نوری (lightbox) برای مشاهده بهتر و همچنین ویرایش تصویر را فراهم می‌کند. این تصاویر ممکن است بسیار بزرگ باشند، بنابراین نمی‌خواهید منتظر بارگذاری آن‌ها بمانید. از این رو کد شما از `async`/`await` برای بارگذاری تصاویر در پس‌زمینه استفاده می‌کند.
 
-But imagine that you have other code that needs to only run when the image has completed loading, such as a command that performs red-eye removal on the image in the lightbox. While ideally this command wouldn't even be executed if the image hasn't fully loaded, for improved reliability you want to check to ensure this is the case.
+اما تصور کنید کد دیگری دارید که فقط زمانی باید اجرا شود که تصویر کاملاً بارگذاری شده باشد، مثلاً دستوری که حذف قرمزی چشم را روی تصویر در جعبه نوری انجام می‌دهد. در حالت ایده‌آل، این دستور حتی اگر تصویر به طور کامل بارگذاری نشده باشد اجرا نمی‌شود، اما برای قابلیت اطمینان بیشتر می‌خواهید مطمئن شوید که این طور است.
 
-So the `fixRedEyeCommand()` function, which is called by the button that triggers red-eye removal, checks the value of the lightbox image's `complete` property before attempting to do its work. This is demonstrated in the code below.
+بنابراین تابع `fixRedEyeCommand()` که توسط دکمه‌ای که حذف قرمزی چشم را فعال می‌کند فراخوانی می‌شود، قبل از انجام کار خود، مقدار ویژگی `complete` تصویر جعبه نوری را بررسی می‌کند. این موضوع در کد زیر نشان داده شده است.
 
 ```js
 const lightboxElem = document.querySelector("#lightbox");
@@ -65,15 +59,15 @@ function fixRedEyeCommand() {
   if (lightboxElem.style.display === "block" && lightboxImgElem.complete) {
     fixRedEye(lightboxImgElem);
   } else {
-    /* can't start doing this until the image is fully loaded */
+    /* نمی‌توان این کار را تا زمانی که تصویر کاملاً بارگذاری نشده شروع کرد */
   }
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
