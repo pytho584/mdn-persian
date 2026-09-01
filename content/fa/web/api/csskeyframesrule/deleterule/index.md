@@ -1,11 +1,5 @@
 ---
 title: "CSSKeyframesRule: deleteRule() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSKeyframesRule/deleteRule"
-status: "needs-translation"
----
-
----
-title: "CSSKeyframesRule: deleteRule() method"
 short-title: deleteRule()
 slug: Web/API/CSSKeyframesRule/deleteRule
 page-type: web-api-instance-method
@@ -14,7 +8,7 @@ browser-compat: api.CSSKeyframesRule.deleteRule
 
 {{APIRef("CSSOM") }}
 
-The **`deleteRule()`** method of the {{domxref("CSSKeyframeRule")}} interface deletes the {{domxref("CSSKeyFrameRule")}} that matches the specified keyframe selector.
+متد **`deleteRule()`** در رابط {{domxref("CSSKeyframeRule")}}، قانون {{domxref("CSSKeyFrameRule")}}ای را که با انتخابگر keyframe مشخصشده همخوانی دارد حذف میکند.
 
 ## Syntax
 
@@ -22,25 +16,25 @@ The **`deleteRule()`** method of the {{domxref("CSSKeyframeRule")}} interface de
 deleteRule(select)
 ```
 
-### Parameters
+### پارامترها
 
 - `select`
-  - : A string which contains the [keyframe selector](/en-US/docs/Web/CSS/Reference/Selectors/Keyframe_selectors) of the rule to be deleted, which must be:
-    - a comma-separated list of percentage values between 0% and 100%;
-    - or, the keywords `from` or `to`
+  - : رشتهای شامل [انتخابگر keyframe](/en-US/docs/Web/CSS/Reference/Selectors/Keyframe_selectors) قانون موردنظر برای حذف، که باید یکی از اینها باشد:
+    - فهرستی از مقادیر درصدی که با کاما از هم جدا شدهاند، بین ۰٪ و ۱۰۰٪؛
+    - یا کلیدواژههای `from` یا `to`.
 
-    Note that the number and order of the values in the specified keyframe selector must match those of the targeted keyframe rule(s). White-space is disregarded.
+    توجه داشته باشید که تعداد و ترتیب مقادیر در انتخابگر keyframe مشخصشده باید با قانون(های) keyframe هدف مطابقت داشته باشد. فاصلههای خالی نادیده گرفته میشوند.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثالها
 
-The CSS includes a keyframes at-rule. This will be the first {{domxref("CSSRule")}} returned by `document.styleSheets[0].cssRules`.
-`myRules[0]` returns a {{domxref("CSSKeyframesRule")}} object. Returning the `cssRules` property would return a {{domxref("CSSRuleList")}} containing two rules.
+CSS شامل یک at-rule به نام keyframes است. این قانون، اولین {{domxref("CSSRule")}} خواهد بود که توسط `document.styleSheets[0].cssRules` بازگردانده میشود.
+`myRules[0]` یک شیء {{domxref("CSSKeyframesRule")}} برمیگرداند. بازگرداندن ویژگی `cssRules` یک {{domxref("CSSRuleList")}} شامل دو قانون را برمیگرداند.
 
-After deleting a rule with `deleteRule()` the `cssRules` property returns a {{domxref("CSSRuleList")}} containing one rule.
+پس از حذف یک قانون با استفاده از `deleteRule()`، ویژگی `cssRules` یک {{domxref("CSSRuleList")}} شامل یک قانون را برمیگرداند.
 
 ```css
 @keyframes slide-in {
@@ -56,15 +50,15 @@ After deleting a rule with `deleteRule()` the `cssRules` property returns a {{do
 
 ```js
 let myRules = document.styleSheets[0].cssRules;
-let keyframes = myRules[0]; // a CSSKeyframesRule
+let keyframes = myRules[0]; // یک CSSKeyframesRule
 keyframes.deleteRule("to");
-console.log(keyframes.cssRules); // a CSSRuleList object with one rule
+console.log(keyframes.cssRules); // یک شیء CSSRuleList با یک قانون
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
