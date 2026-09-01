@@ -1,11 +1,5 @@
 ---
 title: "HTMLMediaElement: load() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/load"
-status: "needs-translation"
----
-
----
-title: "HTMLMediaElement: load() method"
 short-title: load()
 slug: Web/API/HTMLMediaElement/load
 page-type: web-api-instance-method
@@ -14,20 +8,11 @@ browser-compat: api.HTMLMediaElement.load
 
 {{APIRef("HTML DOM")}}
 
-The {{domxref("HTMLMediaElement")}} method
-**`load()`** resets the media element to its initial state and
-begins the process of selecting a media source and loading the media in preparation
-for playback to begin at the beginning.
+متود **`load()`** مربوط به {{domxref("HTMLMediaElement")}}، عنصر رسانه را به حالت اولیه خود بازنمی‌گرداند و فرآیند انتخاب منبع رسانه و بارگذاری رسانه را برای آماده‌سازی پخش از ابتدا آغاز می‌کند.
 
-The amount of media data that is
-prefetched is determined by the value of the element's [`preload`](/en-US/docs/Web/HTML/Reference/Elements/video#preload) attribute.
+میزان داده‌های رسانه‌ای که از قبل دریافت می‌شود، با توجه به مقدار ویژگی [`preload`](/en-US/docs/Web/HTML/Reference/Elements/video#preload) عنصر تعیین می‌شود.
 
-This method is generally only useful when you've made dynamic changes to the set of
-sources available for the media element, either by changing the element's
-[`src`](/en-US/docs/Web/HTML/Reference/Elements/video#src) attribute or by adding or removing
-{{HTMLElement("source")}} elements nested within the media element itself.
-`load()` will reset the element and rescan the available sources, thereby
-causing the changes to take effect.
+این متود معمولاً تنها زمانی مفید است که تغییرات پویایی در مجموعه منابع موجود برای عنصر رسانه ایجاد کرده‌اید، یا با تغییر ویژگی [`src`](/en-US/docs/Web/HTML/Reference/Elements/video#src) عنصر یا با افزودن یا حذف عناصر {{HTMLElement("source")}} که در داخل خود عنصر رسانه قرار دارند. `load()` عنصر را بازنشانی می‌کند و منابع موجود را دوباره اسکن می‌کند و در نتیجه تغییرات اعمال می‌شوند.
 
 ## Syntax
 
@@ -37,45 +22,29 @@ load()
 
 ### Parameters
 
-None.
+هیچ.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
 ## Usage notes
 
-Calling `load()` aborts all ongoing operations involving this media element,
-then begins the process of selecting and loading an appropriate media resource given the
-options specified in the {{HTMLElement("audio")}} or {{HTMLElement("video")}} element
-and its [`src`](/en-US/docs/Web/HTML/Reference/Elements/video#src) attribute or child {{HTMLElement("source")}}
-element(s). This is described in more detail in the
-[HTML video and audio](/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_video_and_audio#using_multiple_source_formats_to_improve_compatibility) page.
+فراخوانی `load()` تمام عملیات در حال انجام مربوط به این عنصر رسانه را لغو می‌کند و سپس فرآیند انتخاب و بارگذاری یک منبع رسانه مناسب را با توجه به گزینه‌های مشخص‌شده در عنصر {{HTMLElement("audio")}} یا {{HTMLElement("video")}} و ویژگی [`src`](/en-US/docs/Web/HTML/Reference/Elements/video#src) یا عنصر(های) فرزند {{HTMLElement("source")}} آغاز می‌کند. این موضوع با جزئیات بیشتر در صفحه [ویدئو و صوتی HTML](/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_video_and_audio#using_multiple_source_formats_to_improve_compatibility) توضیح داده شده است.
 
-The process of aborting any ongoing activities will cause any outstanding
-{{jsxref("Promise")}}s returned by {{domxref("HTMLMediaElement.play", "play()")}} being
-fulfilled or rejected as appropriate based on their status before the loading of new
-media can begin. Pending play promises are aborted with an `"AbortError"`
-{{domxref("DOMException")}}.
+فرآیند لغو هر فعالیت در حال انجام باعث می‌شود که هر {{jsxref("Promise")}} معلق برگردانده‌شده توسط {{domxref("HTMLMediaElement.play", "play()")}} بسته به وضعیت آن‌ها قبل از شروع بارگذاری رسانه جدید، fulfilled یا rejected شود. Promiseهای پخش معلق با یک {{domxref("DOMException")}} از نوع `"AbortError"` لغو می‌شوند.
 
-Appropriate events will be sent to the media element itself as the load process
-proceeds:
+همان‌طور که فرآیند بارگذاری پیش می‌رود، رویدادهای مناسب به خود عنصر رسانه ارسال می‌شوند:
 
-- If the element is already in the process of loading media, that load process is
-  aborted and the **{{domxref("HTMLMediaElement/abort_event", "abort")}}** event is sent.
-- If the element has already been initialized with media, the
-  **{{domxref("HTMLMediaElement/emptied_event", "emptied")}}** event is sent.
-- If resetting the playback position to the beginning of the media actually changes
-  the playback position (that is, it was not already at the beginning), a
-  **{{domxref("HTMLMediaElement/timeupdate_event", "timeupdate")}}** event is sent.
-- Once media has been selected and loading is ready to begin, the
-  **{{domxref("HTMLMediaElement/loadstart_event", "loadstart")}}** event is delivered.
-- From this point onward, events are sent just like any media load.
+- اگر عنصر از قبل در حال بارگذاری رسانه باشد، آن فرآیند بارگذاری لغو می‌شود و رویداد **{{domxref("HTMLMediaElement/abort_event", "abort")}}** ارسال می‌شود.
+- اگر عنصر قبلاً با رسانه مقداردهی شده باشد، رویداد **{{domxref("HTMLMediaElement/emptied_event", "emptied")}}** ارسال می‌شود.
+- اگر بازنشانی موقعیت پخش به ابتدای رسانه در واقع موقعیت پخش را تغییر دهد (یعنی از قبل در ابتدا نبوده باشد)، رویداد **{{domxref("HTMLMediaElement/timeupdate_event", "timeupdate")}}** ارسال می‌شود.
+- پس از انتخاب رسانه و آماده‌شدن بارگذاری، رویداد **{{domxref("HTMLMediaElement/loadstart_event", "loadstart")}}** تحویل داده می‌شود.
+- از این نقطه به بعد، رویدادها دقیقاً مانند هر بارگذاری رسانه‌ای ارسال می‌شوند.
 
 ## Examples
 
-This example finds a {{HTMLElement("video")}} element in the document and resets it by
-calling `load()`.
+این مثال یک عنصر {{HTMLElement("video")}} را در سند پیدا می‌کند و با فراخوانی `load()` آن را بازنشانی می‌کند.
 
 ```js
 const mediaElem = document.querySelector("video");
