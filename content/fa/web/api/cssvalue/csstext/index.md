@@ -1,11 +1,5 @@
 ---
 title: "CSSValue: cssText property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSValue/cssText"
-status: "needs-translation"
----
-
----
-title: "CSSValue: cssText property"
 short-title: cssText
 slug: Web/API/CSSValue/cssText
 page-type: web-api-instance-property
@@ -17,23 +11,21 @@ browser-compat: api.CSSValue.cssText
 
 {{APIRef("CSSOM")}}{{Deprecated_header}}{{non-standard_header}}
 
-The **`cssText`** property of the {{domxref("CSSValue")}}
-interface represents the current computed CSS property value.
+ویژگی **`cssText`** از واسط {{domxref("CSSValue")}} نشان‌دهندهٔ مقدار جاریِ محاسبه‌شدهٔ ویژگی CSS است.
 
 > [!NOTE]
-> This property was part of an attempt to create a typed CSS Object Model. This attempt has been abandoned, and most browsers do
-> not implement it.
+> این ویژگی بخشی از تلاش برای ایجاد یک CSS Object Model تایپ‌شده (typed CSS Object Model) بود. این تلاش کنار گذاشته شده و بیشتر مرورگرها آن را پیاده‌سازی نمی‌کنند.
 >
-> To achieve your purpose, you can use:
+> برای رسیدن به هدف خود می‌توانید از موارد زیر استفاده کنید:
 >
-> - the untyped [CSS Object Model](/en-US/docs/Web/API/CSS_Object_Model), widely supported, or
-> - the modern [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API), less supported and considered experimental.
+> - [CSS Object Model](/en-US/docs/Web/API/CSS_Object_Model) بدون تایپ که پشتیبانی گسترده‌ای دارد، یا
+> - [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API) مدرن که پشتیبانی کمتری دارد و آزمایشی محسوب می‌شود.
 
-## Value
+## مقدار
 
-A string representing the current CSS property value.
+یک رشته که مقدار جاری ویژگی CSS را نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
 ```js
 const styleDeclaration = document.styleSheets[0].cssRules[0].style;
@@ -41,17 +33,16 @@ const cssValue = styleDeclaration.getPropertyCSSValue("color");
 console.log(cssValue.cssText);
 ```
 
-## Specifications
+## مشخصات
 
-This feature was originally defined in the [DOM Style Level 2](https://www.w3.org/TR/DOM-Level-2-Style/) specification, but has been dropped from any
-standardization effort since then.
+این ویژگی در ابتدا در مشخصات [DOM Style Level 2](https://www.w3.org/TR/DOM-Level-2-Style/) تعریف شده بود، اما از آن زمان از تمام تلاش‌های استانداردسازی حذف شده است.
 
-It has been superseded by a modern, but incompatible, [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API) that is now on the standard track.
+این ویژگی با [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API) مدرن، اما ناسازگار، جایگزین شده است که اکنون در مسیر استاندارد قرار دارد.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("CSSStyleDeclaration.getPropertyCSSValue()")}}
