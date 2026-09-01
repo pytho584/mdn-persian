@@ -1,11 +1,5 @@
 ---
 title: "HTMLOutputElement: reportValidity() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLOutputElement/reportValidity"
-status: "needs-translation"
----
-
----
-title: "HTMLOutputElement: reportValidity() method"
 short-title: reportValidity()
 slug: Web/API/HTMLOutputElement/reportValidity
 page-type: web-api-instance-method
@@ -14,34 +8,34 @@ browser-compat: api.HTMLOutputElement.reportValidity
 
 {{APIRef("HTML DOM")}}
 
-The **`reportValidity()`** method of the {{domxref("HTMLOutputElement")}} interface performs the same validity checking steps as the {{domxref("HTMLOutputElement.checkValidity", "checkValidity()")}} method. It always returns true because {{HTMLElement("output")}} elements are never candidates for [constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation).
+متد **`reportValidity()`** در واسط {{domxref("HTMLOutputElement")}} همان مراحل بررسی اعتبار را انجام می‌دهد که متد {{domxref("HTMLOutputElement.checkValidity", "checkValidity()")}} انجام می‌دهد. این متد همیشه `true` برمی‌گرداند، زیرا عناصر {{HTMLElement("output")}} هرگز نامزد [اعتبارسنجی محدودیت](/en-US/docs/Web/HTML/Guides/Constraint_validation) نیستند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 reportValidity()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A boolean value, `true`.
+یک مقدار بولی، `true`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("HTMLOutputElement.checkValidity()")}}
 - {{HTMLElement("output")}}
 - {{HTMLElement("form")}}
-- [Learn: Client-side form validation](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
-- [Guide: Constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation)
+- [آموزش: اعتبارسنجی فرم سمت کلاینت](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
+- [راهنما: اعتبارسنجی محدودیت](/en-US/docs/Web/HTML/Guides/Constraint_validation)
