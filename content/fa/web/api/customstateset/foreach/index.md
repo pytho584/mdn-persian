@@ -1,11 +1,5 @@
 ---
 title: "CustomStateSet: forEach() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CustomStateSet/forEach"
-status: "needs-translation"
----
-
----
-title: "CustomStateSet: forEach() method"
 short-title: forEach()
 slug: Web/API/CustomStateSet/forEach
 page-type: web-api-instance-method
@@ -14,34 +8,34 @@ browser-compat: api.CustomStateSet.forEach
 
 {{APIRef("Web Components")}}
 
-The **`forEach()`** method of the {{domxref("CustomStateSet")}} interface executes a provided function for each value in the `CustomStateSet` object.
+متد **`forEach()`** از رابط {{domxref("CustomStateSet")}} یک تابع ارائه‌شده را برای هر مقدار در شیء `CustomStateSet` اجرا می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 forEach(callbackFn)
 forEach(callbackFn, thisArg)
 ```
 
-### Parameters
+### پارامترها
 
 - `callbackFn`
-  - : Function to execute for each element, taking three arguments:
+  - : تابعی که برای هر عنصر اجرا می‌شود و سه آرگومان می‌گیرد:
     - `value`, `key`
-      - : The current element being processed in the `CustomStateSet`. As there are no keys in a `CustomStateSet`, the value is passed for both arguments.
+      - : عنصر فعلی که در `CustomStateSet` پردازش می‌شود. از آنجا که در `CustomStateSet` کلیدی وجود ندارد، مقدار برای هر دو آرگومان ارسال می‌شود.
     - `set`
-      - : The `CustomStateSet` which `forEach()` was called upon.
+      - : شیء `CustomStateSet` که متد `forEach()` روی آن فراخوانی شده است.
 - `thisArg`
-  - : Value to use as `this` when executing `callbackFn`.
+  - : مقداری که هنگام اجرای `callbackFn` به عنوان `this` استفاده می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-Undefined.
+undefined.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
