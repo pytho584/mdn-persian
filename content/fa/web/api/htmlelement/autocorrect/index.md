@@ -1,11 +1,5 @@
 ---
 title: "HTMLElement: autocorrect property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/autocorrect"
-status: "needs-translation"
----
-
----
-title: "HTMLElement: autocorrect property"
 short-title: autocorrect
 slug: Web/API/HTMLElement/autocorrect
 page-type: web-api-instance-property
@@ -14,28 +8,28 @@ browser-compat: api.HTMLElement.autocorrect
 
 {{APIRef("HTML DOM")}}
 
-The **`autocorrect`** property of the {{domxref("HTMLElement")}} interface controls whether or not autocorrection of editable text is enabled for spelling and/or punctuation errors.
+ویژگی **`autocorrect`** از رابط {{domxref("HTMLElement")}} کنترل می‌کند که آیا تصحیح خودکار متن قابل ویرایش برای خطاهای املایی و/یا نگارشی فعال است یا خیر.
 
-The specific autocorrection behavior, including which words are substituted, depends on the user agent and the services provided by the underlying device.
-For example, on macOS a user agent might rely on [registered replacement text and punctuation](https://support.apple.com/en-vn/guide/mac-help/mh35735/mac).
-Other devices and browsers may use a different approach.
+رفتار خاص تصحیح خودکار، از جمله اینکه کدام واژه‌ها جایگزین می‌شوند، به عامل کاربر (user agent) و سرویس‌های ارائه‌شده توسط دستگاه زیربنایی بستگی دارد.
+برای مثال، در macOS ممکن است یک عامل کاربر بر [متن‌های جایگزین و علائم نگارشی ثبت‌شده](https://support.apple.com/en-vn/guide/mac-help/mh35735/mac) تکیه کند.
+سایر دستگاه‌ها و مرورگرها ممکن است از رویکرد متفاوتی استفاده کنند.
 
-The property reflects the value of the [`autocorrect`](/en-US/docs/Web/HTML/Reference/Global_attributes/autocorrect) HTML global attribute.
+این ویژگی منعکس‌کننده مقدار [ویژگی سراسری HTML `autocorrect`](/en-US/docs/Web/HTML/Reference/Global_attributes/autocorrect) است.
 
-## Value
+## مقدار
 
-`true` if auto-correction is enabled for the element, and `false` otherwise.
+اگر تصحیح خودکار برای عنصر فعال باشد `true` و در غیر این صورت `false`.
 
-## Examples
+## مثال‌ها
 
-### Enable and disable autocorrection
+### فعال و غیرفعال کردن تصحیح خودکار
 
-This example shows how you can enable and disable autocorrection.
+این مثال نشان می‌دهد که چگونه می‌توانید تصحیح خودکار را فعال و غیرفعال کنید.
 
 #### HTML
 
-The HTML markup defines a toggle button and an {{htmlelement("input")}} element of [`type="search"`](/en-US/docs/Web/HTML/Reference/Elements/input/search).
-Note that if auto-correction is supported, it will be enabled by default.
+مارک‌آپ HTML شامل یک دکمه تغییر وضعیت (toggle) و یک عنصر {{htmlelement("input")}} با [`type="search"`](/en-US/docs/Web/HTML/Reference/Elements/input/search) است.
+توجه داشته باشید که اگر تصحیح خودکار پشتیبانی شود، به‌طور پیش‌فرض فعال خواهد بود.
 
 ```html
 <button id="toggleAutocorrect">Unknown</button>
@@ -65,9 +59,9 @@ function log(text) {
 
 #### JavaScript
 
-The code first checks whether the `autocorrect` is supported by checking if it is present on the `HTMLElement` prototype.
-If it is present, a click handler is added to allow you to toggle the value.
-If it is not present, the UI hides the interactive elements and logs that `autocorrect` is not supported.
+کد ابتدا بررسی می‌کند که آیا `autocorrect` پشتیبانی می‌شود یا خیر، با بررسی وجود آن در پروتوتایپ `HTMLElement`.
+اگر وجود داشته باشد، یک کنترل‌کننده کلیک اضافه می‌شود که به شما امکان می‌دهد مقدار را تغییر دهید.
+اگر وجود نداشته باشد، رابط کاربری عناصر تعاملی را پنهان می‌کند و پیامی مبنی بر عدم پشتیبانی از `autocorrect` ثبت می‌کند.
 
 ```js
 const toggleButton = document.querySelector("button");
@@ -92,24 +86,24 @@ if (`autocorrect` in HTMLElement.prototype) {
 }
 ```
 
-#### Result
+#### نتیجه
 
 <!-- cSpell:ignore Carot -->
 
-Activate the button to toggle the autocorrect value.
-Enter invalid text into the text box, such as "Carot".
-When the autocorrect is enabled, and if the implementation has the appropriate substitute word "carrot", the text should automatically be corrected.
+دکمه را برای تغییر مقدار تصحیح خودکار فعال کنید.
+متن نامعتبری مانند «Carot» را در کادر متن وارد کنید.
+وقتی تصحیح خودکار فعال باشد و اگر پیاده‌سازی واژه جایگزین مناسب یعنی «carrot» را داشته باشد، متن به‌طور خودکار اصلاح می‌شود.
 
 {{EmbedLiveSample("Enable and disable autocorrection", "100%", "200")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [`autocapitalize`](/en-US/docs/Web/HTML/Reference/Global_attributes/autocapitalize) HTML global attribute
+- [`autocapitalize`](/en-US/docs/Web/HTML/Reference/Global_attributes/autocapitalize) ویژگی سراسری HTML
