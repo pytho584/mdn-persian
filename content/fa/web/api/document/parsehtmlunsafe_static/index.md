@@ -1,11 +1,5 @@
 ---
 title: "Document: parseHTMLUnsafe() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/parseHTMLUnsafe_static"
-status: "needs-translation"
----
-
----
-title: "Document: parseHTMLUnsafe() static method"
 short-title: parseHTMLUnsafe()
 slug: Web/API/Document/parseHTMLUnsafe_static
 page-type: web-api-static-method
@@ -15,16 +9,16 @@ browser-compat: api.Document.parseHTMLUnsafe_static
 {{APIRef("DOM")}}
 
 > [!WARNING]
-> This method parses its input as HTML, writing the result into the DOM.
-> APIs like this are known as [injection sinks](/en-US/docs/Web/API/Trusted_Types_API#concepts_and_usage), and are potentially a vector for [cross-site scripting (XSS)](/en-US/docs/Web/Security/Attacks/XSS) attacks, if the input originally came from an attacker.
+> این متد ورودی خود را به‌عنوان HTML تجزیه و نتیجه را در DOM می‌نویسد.
+> چنین APIهایی به نام [sink های تزریق](/en-US/docs/Web/API/Trusted_Types_API#concepts_and_usage) شناخته می‌شوند و اگر ورودی در اصل از طرف یک مهاجم باشد، به‌طور بالقوه بردار حمله‌ای برای [اسکریپت‌های بین‌سایتی (XSS)](/en-US/docs/Web/Security/Attacks/XSS) هستند.
 >
-> You can mitigate this risk by always passing `TrustedHTML` objects instead of strings and [enforcing trusted types](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types).
-> See [Security considerations](#security_considerations) for more information.
+> برای کاهش این ریسک، همیشه اشیاء `TrustedHTML` را به‌جای رشته‌ها عبور دهید و [مکانیزم انواع قابل اعتماد را اعمال کنید](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types).
+> برای اطلاعات بیشتر به [ملاحظات امنیتی](#security_considerations) مراجعه کنید.
 
 > [!NOTE]
-> {{domxref("Document/parseHTML_static", "Document.parseHTML()")}} should almost always be used instead of this method — on browsers where it is supported — as it always removes XSS-unsafe HTML entities.
+> در مرورگرهایی که از آن پشتیبانی می‌کنند، تقریباً همیشه بهتر است به‌جای این متد از {{domxref("Document/parseHTML_static", "Document.parseHTML()")}} استفاده کنید؛ زیرا این متد همیشه موجودیت‌های HTML ناامن در برابر XSS را حذف می‌کند.
 
-The **`parseHTMLUnsafe()`** static method of the {{domxref("Document")}} object is used to parse HTML input, optionally filtering unwanted HTML elements and attributes, in order to create a new {{domxref("Document")}} instance.
+متد ایستای **`parseHTMLUnsafe()`** در شیء {{domxref("Document")}} برای تجزیه ورودی HTML و به‌صورت اختیاری فیلتر کردن عناصر و ویژگی‌های ناخواسته HTML به‌کار می‌رود تا یک نمونه جدید از {{domxref("Document")}} ایجاد کند.
 
 ## Syntax
 
@@ -33,71 +27,71 @@ Document.parseHTMLUnsafe(input)
 Document.parseHTMLUnsafe(input, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `input`
-  - : A {{domxref("TrustedHTML")}} instance or a string defining HTML to be parsed.
+  - : یک نمونه {{domxref("TrustedHTML")}} یا رشته‌ای که HTML موردنظر برای تجزیه را تعریف می‌کند.
 - `options` {{optional_inline}}
-  - : An options object with the following optional parameters:
+  - : یک شیء گزینه‌ها با پارامترهای اختیاری زیر:
     - `sanitizer` {{optional_inline}}
-      - : A {{domxref("Sanitizer")}} or {{domxref("SanitizerConfig")}} object which defines what elements of the input will be allowed or removed.
-        This can also be a string with the value `"default"`, which applies a `Sanitizer` with the (XSS-safe) [default sanitizer configuration](/en-US/docs/Web/API/HTML_Sanitizer_API/Default_sanitizer_configuration).
-        If not specified, no sanitizer is used.
+      - : یک شیء {{domxref("Sanitizer")}} یا {{domxref("SanitizerConfig")}} که تعیین می‌کند کدام عناصر ورودی مجاز یا حذف شوند.
+        همچنین می‌تواند رشته‌ای با مقدار `"default"` باشد که یک `Sanitizer` را با [پیکربندی پیش‌فرض sanitizer (ایمن در برابر XSS)](/en-US/docs/Web/API/HTML_Sanitizer_API/Default_sanitizer_configuration) اعمال می‌کند.
+        اگر مشخص نشود، هیچ sanitizer استفاده نمی‌شود.
 
-        Note that if you're using the same configuration multiple times, it's expected to be more efficient to use a `Sanitizer` and modify it when you need to.
+        توجه داشته باشید اگر چندین بار از همان پیکربندی استفاده می‌کنید، انتظار می‌رود استفاده از یک `Sanitizer` و تغییر آن هنگام نیاز، کارآمدتر باشد.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("Document")}}.
+یک {{domxref("Document")}}.
 
-### Exceptions
+### استثناها
 
 - `TypeError`
-  - : This is thrown if:
-    - `html` is passed a string when [Trusted Types](/en-US/docs/Web/API/Trusted_Types_API) are [enforced by a CSP](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types) and no default policy is defined.
-    - `options.sanitizer` is passed a:
-      - {{domxref("SanitizerConfig")}} that isn't [valid](/en-US/docs/Web/API/SanitizerConfig#valid_configuration).
-        For example, a configuration that includes both "allowed" and "removed" configuration settings.
-      - string that does not have the value `"default"`.
-      - value that is not a {{domxref("Sanitizer")}}, {{domxref("SanitizerConfig")}}, or string.
+  - : در شرایط زیر پرتاب می‌شود:
+    - وقتی [Trusted Types](/en-US/docs/Web/API/Trusted_Types_API) توسط [CSP اعمال شده باشد](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types) و سیاست پیش‌فرضی تعریف نشده باشد و `html` به‌صورت رشته‌ای عبور داده شود.
+    - وقتی به `options.sanitizer` مقدار زیر داده شود:
+      - یک {{domxref("SanitizerConfig")}} که [معتبر](/en-US/docs/Web/API/SanitizerConfig#valid_configuration) نیست.
+        مثلاً پیکربندی که شامل هر دو تنظیم «مجاز» و «حذف‌شده» باشد.
+      - رشته‌ای که مقدار آن `"default"` نباشد.
+      - مقداری که نه {{domxref("Sanitizer")}} باشد، نه {{domxref("SanitizerConfig")}} و نه رشته.
 
-## Description
+## توضیحات
 
-The **`parseHTMLUnsafe()`** static method can be used to create a new {{domxref("Document")}} instance, optionally filter out unwanted elements and attributes.
-The resulting `Document` will have a [content type](/en-US/docs/Web/API/Document/contentType) of "text/html", a [character set](/en-US/docs/Web/API/Document/characterSet) of UTF-8, and a URL of "about:blank".
+متد ایستای **`parseHTMLUnsafe()`** برای ایجاد یک نمونه جدید از {{domxref("Document")}} و به‌صورت اختیاری فیلتر کردن عناصر و ویژگی‌های ناخواسته استفاده می‌شود.
+`Document` حاصل دارای [نوع محتوا](/en-US/docs/Web/API/Document/contentType) «text/html»، [مجموعه کاراکتر](/en-US/docs/Web/API/Document/characterSet) UTF-8 و آدرس «about:blank» خواهد بود.
 
-The input HTML may include [declarative shadow roots](/en-US/docs/Web/HTML/Reference/Elements/template#declarative_shadow_dom).
-If the string of HTML defines more than one [declarative shadow root](/en-US/docs/Web/HTML/Reference/Elements/template#declarative_shadow_dom) in a particular shadow host then only the first {{domxref("ShadowRoot")}} is created — subsequent declarations are parsed as {{htmlelement("template")}} elements within that shadow root.
+ورودی HTML ممکن است شامل [ریشه‌های سایه اعلانی](/en-US/docs/Web/HTML/Reference/Elements/template#declarative_shadow_dom) باشد.
+اگر رشته HTML بیش از یک [ریشه سایه اعلانی](/en-US/docs/Web/HTML/Reference/Elements/template#declarative_shadow_dom) را در یک میزبان سایه خاص تعریف کند، تنها اولین {{domxref("ShadowRoot")}} ایجاد می‌شود — اعلان‌های بعدی به‌عنوان عناصر {{htmlelement("template")}} درون آن ریشه سایه تجزیه می‌شوند.
 
-`parseHTMLUnsafe()` doesn't perform any sanitization by default.
-If no sanitizer is passed as a parameter, all HTML entities in the input will be injected.
+`parseHTMLUnsafe()` به‌طور پیش‌فرض هیچ پاک‌سازی (sanitization) انجام نمی‌دهد.
+اگر هیچ sanitizer به‌عنوان پارامتر عبور داده نشود، تمام موجودیت‌های HTML ورودی تزریق می‌شوند.
 
-### Security considerations
+### ملاحظات امنیتی
 
-The suffix "Unsafe" in the method name indicates that it does not enforce removal of all XSS-unsafe HTML entities (unlike {{domxref("Document/parseHTML_static", "Document.parseHTML()")}}).
-While it can do so if used with an appropriate sanitizer, it doesn't have to use an effective sanitizer, or any sanitizer at all!
-The method is therefore a possible vector for [cross-site scripting (XSS)](/en-US/docs/Web/Security/Attacks/XSS) attacks, where potentially unsafe strings provided by a user are injected into the DOM without first being sanitized.
+پسوند «Unsafe» در نام متد نشان می‌دهد که این متد حذف تمام موجودیت‌های HTML ناامن در برابر XSS را اعمال نمی‌کند (برخلاف {{domxref("Document/parseHTML_static", "Document.parseHTML()")}}).
+اگرچه در صورت استفاده با یک sanitizer مناسب می‌تواند این کار را انجام دهد، اما الزاماً از یک sanitizer مؤثر یا اصلاً از هیچ sanitizer استفاده نمی‌کند!
+بنابراین این متد یک بردار احتمالی برای حملات [اسکریپت‌های بین‌سایتی (XSS)](/en-US/docs/Web/Security/Attacks/XSS) است؛ جایی که رشته‌های بالقوه ناامن ارائه‌شده توسط کاربر بدون پاک‌سازی قبلی به DOM تزریق می‌شوند.
 
-You should mitigate this risk by always passing {{domxref("TrustedHTML")}} objects instead of strings, and [enforcing trusted types](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types) using the [`require-trusted-types-for`](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/require-trusted-types-for) CSP directive.
-This ensures that the input is passed through a transformation function, which has the chance to [sanitize](/en-US/docs/Web/Security/Attacks/XSS#sanitization) the input to remove potentially dangerous markup (such as {{htmlelement("script")}} elements and event handler attributes), before it is injected.
+باید این ریسک را با همیشه عبور دادن اشیاء {{domxref("TrustedHTML")}} به‌جای رشته‌ها و [اعمال مکانیزم انواع قابل اعتماد](/en-US/docs/Web/API/Trusted_Types_API#using_a_csp_to_enforce_trusted_types) با استفاده از دستور CSP [`require-trusted-types-for`](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/require-trusted-types-for) کاهش دهید.
+این کار تضمین می‌کند که ورودی از یک تابع تبدیل عبور می‌کند که این فرصت را دارد تا ورودی را [پاک‌سازی](/en-US/docs/Web/Security/Attacks/XSS#sanitization) کند و نشانه‌گذاری بالقوه خطرناک (مانند عناصر {{htmlelement("script")}} و ویژگی‌های کنترل‌کننده رویداد) را قبل از تزریق حذف کند.
 
-Using `TrustedHTML` makes it possible to audit and check that sanitization code is effective in just a few places, rather than scattered across all your injection sinks.
-You should not need to pass a sanitizer to the method when using `TrustedHTML`.
+استفاده از `TrustedHTML` این امکان را می‌دهد که اثربخشی کد پاک‌سازی را تنها در چند مکان بررسی و ممیزی کرد، نه اینکه در تمام sink های تزریق شما پراکنده باشد.
+وقتی از `TrustedHTML` استفاده می‌کنید، نیازی به عبور دادن sanitizer به متد نیست.
 
-If for any reason you can't use `TrustedHTML` (or even better, `setHTML()`) then the next safest option is to use `setHTMLUnsafe()` with the XSS-safe [default sanitizer configuration](/en-US/docs/Web/API/HTML_Sanitizer_API/Default_sanitizer_configuration).
+اگر به هر دلیلی نمی‌توانید از `TrustedHTML` (یا حتی بهتر از آن، `setHTML()`) استفاده کنید، سپس امن‌ترین گزینه استفاده از `setHTMLUnsafe()` با [پیکربندی پیش‌فرض sanitizer ایمن در برابر XSS](/en-US/docs/Web/API/HTML_Sanitizer_API/Default_sanitizer_configuration) است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Document.parseHTML_static", "Document.parseHTML()")}}
-- {{domxref("Element.setHTML()")}} and {{domxref("Element.setHTMLUnsafe()")}}
-- {{domxref("ShadowRoot.setHTML()")}} and {{domxref("ShadowRoot.setHTMLUnsafe()")}}
-- {{domxref("DOMParser.parseFromString()")}} for parsing HTML or XML into a DOM tree
+- {{domxref("Element.setHTML()")}} و {{domxref("Element.setHTMLUnsafe()")}}
+- {{domxref("ShadowRoot.setHTML()")}} و {{domxref("ShadowRoot.setHTMLUnsafe()")}}
+- {{domxref("DOMParser.parseFromString()")}} برای تجزیه HTML یا XML به یک درخت DOM
 - [HTML Sanitizer API](/en-US/docs/Web/API/HTML_Sanitizer_API)
