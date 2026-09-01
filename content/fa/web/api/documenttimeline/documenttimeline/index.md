@@ -1,11 +1,5 @@
 ---
 title: "DocumentTimeline: DocumentTimeline() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DocumentTimeline/DocumentTimeline"
-status: "needs-translation"
----
-
----
-title: "DocumentTimeline: DocumentTimeline() constructor"
 short-title: DocumentTimeline()
 slug: Web/API/DocumentTimeline/DocumentTimeline
 page-type: web-api-constructor
@@ -14,45 +8,40 @@ browser-compat: api.DocumentTimeline.DocumentTimeline
 
 {{ APIRef("Web Animations") }}
 
-The **`DocumentTimeline()`** constructor of the [Web Animations API](/en-US/docs/Web/API/Web_Animations_API) creates a new instance of the {{domxref("DocumentTimeline")}} object associated with the active document of the current browsing context.
+سازنده **`DocumentTimeline()`** از [Web Animations API](/en-US/docs/Web/API/Web_Animations_API) یک نمونه جدید از شی {{domxref("DocumentTimeline")}} ایجاد می‌کند که با سند فعال زمینه مرور فعلی مرتبط است.
 
-## Syntax
+## نحو
 
 ```js-nolint
 new DocumentTimeline(options)
 ```
 
-### Parameters
+### پارامترها
 
 - `options` {{optional_inline}}
-  - : An object specifying options for the new timeline. The following properties are available:
+  - : یک شی که گزینه‌های زمان‌بندی جدید را مشخص می‌کند. ویژگی‌های زیر در دسترس هستند:
     - `originTime` {{optional_inline}}
-      - : A `number` that specifies the zero time for the {{domxref("DocumentTimeline")}}
-        as a number of milliseconds relative to {{domxref("Performance.timeOrigin")}}.
-        Defaults to `0`.
+      - : یک `number` که زمان صفر را برای {{domxref("DocumentTimeline")}} به عنوان تعداد میلی‌ثانیه نسبت به {{domxref("Performance.timeOrigin")}} مشخص می‌کند. پیش‌فرض `0`.
 
-## Examples
+## مثال‌ها
 
-### Origin time
+### زمان مبدأ
 
-A {{domxref("DocumentTimeline")}} with an `originTime` of zero counts time
-starting from {{domxref("Performance.timeOrigin")}}. This is the same behavior
-as {{domxref("Document.timeline")}}.
+یک {{domxref("DocumentTimeline")}} با `originTime` صفر، زمان را از {{domxref("Performance.timeOrigin")}} شروع می‌کند. این همان رفتار {{domxref("Document.timeline")}} است.
 
 ```js
 const timeline = new DocumentTimeline();
 console.log(timeline.currentTime === document.timeline.currentTime); // true
 ```
 
-Setting a non-zero `originTime` will offset the {{domxref("DocumentTimeline")}}
-from {{domxref("Document.timeline")}} by that amount:
+تنظیم یک `originTime` غیر صفر، {{domxref("DocumentTimeline")}} را به میزان آن مقدار از {{domxref("Document.timeline")}} جابه‌جا می‌کند:
 
 ```js
 const offsetTimeline = new DocumentTimeline({ originTime: 500 });
 console.log(document.timeline.currentTime - offsetTimeline.currentTime); // 500
 ```
 
-A {{domxref("DocumentTimeline")}} relative to the current moment can be constructed with:
+یک {{domxref("DocumentTimeline")}} نسبی به لحظه فعلی می‌تواند به صورت زیر ساخته شود:
 
 ```js
 const nowTimeline = new DocumentTimeline({
@@ -61,15 +50,15 @@ const nowTimeline = new DocumentTimeline({
 console.log(nowTimeline.currentTime); // 0
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)
 - {{domxref("AnimationTimeline")}}
