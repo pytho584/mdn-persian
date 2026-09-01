@@ -1,11 +1,5 @@
 ---
 title: "CSSPrimitiveValue: setStringValue() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSPrimitiveValue/setStringValue"
-status: "needs-translation"
----
-
----
-title: "CSSPrimitiveValue: setStringValue() method"
 short-title: setStringValue()
 slug: Web/API/CSSPrimitiveValue/setStringValue
 page-type: web-api-instance-method
@@ -17,61 +11,54 @@ browser-compat: api.CSSPrimitiveValue.setStringValue
 
 {{APIRef("CSSOM")}}{{deprecated_header}}{{non-standard_header}}
 
-The **`setStringValue()`** method of the
-{{domxref("CSSPrimitiveValue")}} interface is used to set a string value. If the
-property attached to this value can't accept the specified unit or the string value, the
-value will be unchanged and a {{domxref("DOMException")}} will be raised.
+متد **`setStringValue()`** از رابط {{domxref("CSSPrimitiveValue")}} برای تنظیم یک مقدار رشته‌ای استفاده می‌شود. اگر ویژگی متصل به این مقدار نتواند واحد مشخص‌شده یا مقدار رشته‌ای را بپذیرد، مقدار بدون تغییر باقی می‌ماند و یک {{domxref("DOMException")}} پرتاب می‌شود.
 
 > [!NOTE]
-> This method was part of an attempt to create a typed CSS Object Model. This attempt has been abandoned, and most browsers do
-> not implement it.
+> این متد بخشی از تلاش برای ایجاد یک مدل شیء CSS تایپ‌شده (typed CSS Object Model) بود. این تلاش رها شده است و اکثر مرورگرها آن را پیاده‌سازی نمی‌کنند.
 >
-> To achieve your purpose, you can use:
+> برای دستیابی به هدف خود می‌توانید از موارد زیر استفاده کنید:
 >
-> - the untyped [CSS Object Model](/en-US/docs/Web/API/CSS_Object_Model), widely supported, or
-> - the modern [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API), less supported and considered experimental.
+> - [مدل شیء CSS بدون تایپ (untyped CSS Object Model)](/en-US/docs/Web/API/CSS_Object_Model) که به‌طور گسترده پشتیبانی می‌شود، یا
+> - [API مدل شیء CSS تایپ‌شده مدرن (CSS Typed Object Model API)](/en-US/docs/Web/API/CSS_Typed_OM_API) که پشتیبانی کمتری دارد و آزمایشی در نظر گرفته می‌شود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 setStringValue(stringType, stringValue)
 ```
 
-### Parameters
+### پارامترها
 
 - `stringType`
-  - : An `unsigned short` representing the type of the value. Possible values
-    are:
+  - : یک `unsigned short` که نوع مقدار را نشان می‌دهد. مقادیر ممکن عبارتند از:
 
-    | Constant     | Description                                             |
-    | ------------ | ------------------------------------------------------- |
-    | `CSS_ATTR`   | The value is an {{cssxref("attr", "attr()")}} function. |
-    | `CSS_IDENT`  | The value is an identifier.                             |
-    | `CSS_STRING` | The value is a {{cssxref("&lt;string&gt;")}}.           |
-    | `CSS_URI`    | The value is a {{cssxref("url_value", "&lt;url&gt;")}}. |
+    | ثابت          | توضیحات                                                |
+    | ------------- | ------------------------------------------------------ |
+    | `CSS_ATTR`    | مقدار یک تابع {{cssxref("attr", "attr()")}} است.       |
+    | `CSS_IDENT`   | مقدار یک شناسه (identifier) است.                       |
+    | `CSS_STRING`  | مقدار یک {{cssxref("&lt;string&gt;")}} است.             |
+    | `CSS_URI`     | مقدار یک {{cssxref("url_value", "&lt;url&gt;")}} است. |
 
 - `stringValue`
-  - : A string representing the new string value.
+  - : یک رشته که مقدار رشته‌ای جدید را نشان می‌دهد.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `InvalidAccessError` {{domxref("DOMException")}}
-  - : Thrown if the CSS value doesn't contain a string value
-    or if the string value can't be converted into the specified unit.
+  - : اگر مقدار CSS حاوی یک مقدار رشته‌ای نباشد یا مقدار رشته‌ای نتواند به واحد مشخص‌شده تبدیل شود، پرتاب می‌شود.
 - `NoModificationAllowedError` {{domxref("DOMException")}}
-  - : Thrown if the property is read-only.
+  - : اگر ویژگی فقط خواندنی باشد، پرتاب می‌شود.
 
-## Specifications
+## مشخصات
 
-This feature was originally defined in the [DOM Style Level 2](https://www.w3.org/TR/DOM-Level-2-Style/) specification, but has been dropped from any
-standardization effort since then.
+این ویژگی در اصل در مشخصات [DOM Style Level 2](https://www.w3.org/TR/DOM-Level-2-Style/) تعریف شده بود، اما از آن زمان از هرگونه تلاش استانداردسازی حذف شده است.
 
-It has been superseded by a modern, but incompatible, [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API) that is now on the standard track.
+این ویژگی توسط [API مدل شیء CSS تایپ‌شده (CSS Typed Object Model API)](/en-US/docs/Web/API/CSS_Typed_OM_API) مدرن اما ناسازگار جایگزین شده است که اکنون در مسیر استاندارد قرار دارد.
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
