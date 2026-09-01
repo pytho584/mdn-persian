@@ -1,7 +1,6 @@
 ---
 title: "DOMMatrixReadOnly"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrixReadOnly"
-status: "needs-translation"
 ---
 
 ---
@@ -13,29 +12,29 @@ browser-compat: api.DOMMatrixReadOnly
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The **`DOMMatrixReadOnly`** interface represents a read-only 4×4 matrix, suitable for 2D and 3D operations. The {{domxref("DOMMatrix")}} interface — which is based upon `DOMMatrixReadOnly`—adds [mutability](https://en.wikipedia.org/wiki/Immutable_object), allowing you to alter the matrix after creating it.
+رابطهٔ **`DOMMatrixReadOnly`** یک ماتریس ۴×۴ فقط‌خواندنی را نشان می‌دهد که برای عملیات دوبعدی و سه‌بعدی مناسب است. رابط {{domxref("DOMMatrix")}} که بر پایهٔ `DOMMatrixReadOnly` ساخته شده، [قابلیت تغییرپذیری](https://en.wikipedia.org/wiki/Immutable_object) را اضافه می‌کند و به شما اجازه می‌دهد پس از ایجاد ماتریس، آن را تغییر دهید.
 
-This interface should be available inside [web workers](/en-US/docs/Web/API/Web_Workers_API), though some implementations doesn't allow it yet.
+این رابط باید در [web workers](/en-US/docs/Web/API/Web_Workers_API) در دسترس باشد، هرچند برخی پیاده‌سازی‌ها هنوز آن را مجاز نمی‌دانند.
 
-## Constructor
+## سازنده
 
 - {{domxref("DOMMatrixReadOnly.DOMMatrixReadOnly", "DOMMatrixReadOnly()")}}
-  - : Creates a new `DOMMatrixReadOnly` object.
+  - : یک شیء جدید `DOMMatrixReadOnly` ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface doesn't inherit any properties._
+_این رابط هیچ ویژگی‌ای را به ارث نمی‌برد._
 
 - {{domxref("DOMMatrixReadOnly.is2D")}} {{ReadOnlyInline}}
-  - : A Boolean flag whose value is `true` if the matrix was initialized as a 2D matrix. If `false`, the matrix is 3D.
+  - : یک پرچم بولی که مقدار آن `true` است اگر ماتریس به‌عنوان ماتریس دوبعدی مقداردهی شده باشد. اگر `false` باشد، ماتریس سه‌بعدی است.
 - {{domxref("DOMMatrixReadOnly.isIdentity")}} {{ReadOnlyInline}}
-  - : A Boolean whose value is `true` if the matrix is an [identity matrix](https://en.wikipedia.org/wiki/Identity_matrix).
+  - : یک بولی که مقدار آن `true` است اگر ماتریس یک [ماتریس همانی](https://en.wikipedia.org/wiki/Identity_matrix) باشد.
 - `m11`, `m12`, `m13`, `m14`, `m21`, `m22`, `m23`, `m24`, `m31`, `m32`, `m33`, `m34`, `m41`, `m42`, `m43`, `m44`
-  - : Double-precision floating-point values representing each component of a 4×4 matrix, where `m11` through `m14` are the first column, `m21` through `m24` are the second column, and so forth.
+  - : مقادیر ممیز شناور با دقت دوگانه که هر مؤلفهٔ یک ماتریس ۴×۴ را نشان می‌دهند؛ به‌طوری که `m11` تا `m14` ستون اول، `m21` تا `m24` ستون دوم و به همین ترتیب هستند.
 - `a`, `b`, `c`, `d`, `e`, `f`
-  - : Double-precision floating-point values representing the components of a 4×4 matrix which are required in order to perform 2D rotations and translations. These are aliases for specific components of a 4×4 matrix, as shown below.
+  - : مقادیر ممیز شناور با دقت دوگانه که مؤلفه‌های موردنیاز یک ماتریس ۴×۴ را برای انجام چرخش‌ها و انتقال‌های دوبعدی نشان می‌دهند. این‌ها نام‌های مستعار برای مؤلفه‌های خاصی از ماتریس ۴×۴ هستند، همان‌طور که در زیر نشان داده شده است.
 
-    | 2D  | 3D equivalent |
+    | 2D  | معادل 3D |
     | --- | ------------- |
     | `a` | `m11`         |
     | `b` | `m12`         |
@@ -44,65 +43,65 @@ _This interface doesn't inherit any properties._
     | `e` | `m41`         |
     | `f` | `m42`         |
 
-## Instance methods
+## روش‌های نمونه
 
-_This interface doesn't inherit any methods. None of the following methods alter the original matrix._
+_این رابط هیچ روشی را به ارث نمی‌برد. هیچ‌یک از روش‌های زیر ماتریس اصلی را تغییر نمی‌دهند._
 
 - {{domxref("DOMMatrixReadOnly.flipX()")}}
-  - : Returns a new {{domxref("DOMMatrix")}} created by flipping the source matrix around its X-axis. This is equivalent to multiplying the matrix by `DOMMatrix(-1, 0, 0, 1, 0, 0)`. The original matrix is not modified.
+  - : یک {{domxref("DOMMatrix")}} جدید برمی‌گرداند که با چرخاندن ماتریس منبع حول محور X آن ایجاد شده است. این معادل ضرب ماتریس در `DOMMatrix(-1, 0, 0, 1, 0, 0)` است. ماتریس اصلی تغییر نمی‌کند.
 - {{domxref("DOMMatrixReadOnly.flipY()")}}
-  - : Returns a new {{domxref("DOMMatrix")}} created by flipping the source matrix around its Y-axis. This is equivalent to multiplying the matrix by `DOMMatrix(1, 0, 0, -1, 0, 0)`. The original matrix is not modified.
+  - : یک {{domxref("DOMMatrix")}} جدید برمی‌گرداند که با چرخاندن ماتریس منبع حول محور Y آن ایجاد شده است. این معادل ضرب ماتریس در `DOMMatrix(1, 0, 0, -1, 0, 0)` است. ماتریس اصلی تغییر نمی‌کند.
 - {{domxref("DOMMatrixReadOnly.inverse()")}}
-  - : Returns a new {{domxref("DOMMatrix")}} created by inverting the source matrix. The original matrix is not altered.
+  - : یک {{domxref("DOMMatrix")}} جدید برمی‌گرداند که با معکوس کردن ماتریس منبع ایجاد شده است. ماتریس اصلی تغییر نمی‌کند.
 - {{domxref("DOMMatrixReadOnly.multiply()")}}
-  - : Returns a new {{domxref("DOMMatrix")}} created by computing the dot product of the source matrix and the specified matrix. The original matrix is not
+  - : یک {{domxref("DOMMatrix")}} جدید برمی‌گرداند که با محاسبهٔ ضرب داخلی ماتریس منبع و ماتریس مشخص‌شده ایجاد شده است. ماتریس اصلی تغییر نمی‌کند.
 - {{domxref("DOMMatrixReadOnly.rotateAxisAngle()")}}
-  - : Returns a new {{domxref("DOMMatrix")}} created by rotating the source matrix by the given angle around the specified vector. The original matrix is not modified.
+  - : یک {{domxref("DOMMatrix")}} جدید برمی‌گرداند که با چرخاندن ماتریس منبع به اندازهٔ زاویهٔ داده‌شده حول بردار مشخص‌شده ایجاد شده است. ماتریس اصلی تغییر نمی‌کند.
 - {{domxref("DOMMatrixReadOnly.rotate()")}}
-  - : Returns a new {{domxref("DOMMatrix")}} created by rotating the source matrix around each of its axes by the specified number of degrees. The original matrix is not altered.
+  - : یک {{domxref("DOMMatrix")}} جدید برمی‌گرداند که با چرخاندن ماتریس منبع حول هر یک از محورهای آن به اندازهٔ درجه‌های مشخص‌شده ایجاد شده است. ماتریس اصلی تغییر نمی‌کند.
 - {{domxref("DOMMatrixReadOnly.rotateFromVector()")}}
-  - : Returns a new {{domxref("DOMMatrix")}} created by rotating the source matrix by the angle between the specified vector and `(1, 0)`. The original matrix is not modified.
+  - : یک {{domxref("DOMMatrix")}} جدید برمی‌گرداند که با چرخاندن ماتریس منبع به اندازهٔ زاویهٔ بین بردار مشخص‌شده و `(1, 0)` ایجاد شده است. ماتریس اصلی تغییر نمی‌کند.
 - {{domxref("DOMMatrixReadOnly.scale()")}}
-  - : Returns a new {{domxref("DOMMatrix")}} created by scaling the source matrix by the amount specified for each axis, centered on the given origin. By default, the X and Z axes are scaled by `1` and the Y axis has no default scaling value. The default origin is `(0, 0, 0)`. The original matrix is not modified.
+  - : یک {{domxref("DOMMatrix")}} جدید برمی‌گرداند که با مقیاس‌دهی ماتریس منبع به اندازهٔ مشخص‌شده برای هر محور، حول مبدأ داده‌شده ایجاد شده است. به‌طور پیش‌فرض، محورهای X و Z با ضریب `1` مقیاس می‌خورند و محور Y مقدار پیش‌فرض مقیاس ندارد. مبدأ پیش‌فرض `(0, 0, 0)` است. ماتریس اصلی تغییر نمی‌کند.
 - {{domxref("DOMMatrixReadOnly.scale3d()")}}
-  - : Returns a new {{domxref("DOMMatrix")}} created by scaling the source 3D matrix by the given factor along all its axes, centered on the specified origin point. The default origin is `(0, 0, 0)`. The original matrix is not modified.
+  - : یک {{domxref("DOMMatrix")}} جدید برمی‌گرداند که با مقیاس‌دهی ماتریس سه‌بعدی منبع به اندازهٔ ضریب داده‌شده در امتداد همهٔ محورهای آن، حول نقطهٔ مبدأ مشخص‌شده ایجاد شده است. مبدأ پیش‌فرض `(0, 0, 0)` است. ماتریس اصلی تغییر نمی‌کند.
 - {{domxref("DOMMatrixReadOnly.scaleNonUniform()")}} {{deprecated_inline}}
-  - : Returns a new {{domxref("DOMMatrix")}} created by applying the specified scaling on the X, Y, and Z axes, centered at the given origin. By default, the Y and Z axes' scaling factors are both `1`, but the scaling factor for X must be specified. The default origin is `(0, 0, 0)`. The original matrix is not changed.
+  - : یک {{domxref("DOMMatrix")}} جدید برمی‌گرداند که با اعمال مقیاس مشخص‌شده بر محورهای X، Y و Z، حول مبدأ داده‌شده ایجاد شده است. به‌طور پیش‌فرض، ضرایب مقیاس محورهای Y و Z هر دو `1` هستند، اما ضریب مقیاس برای X باید مشخص شود. مبدأ پیش‌فرض `(0, 0, 0)` است. ماتریس اصلی تغییر نمی‌کند.
 - {{domxref("DOMMatrixReadOnly.skewX()")}}
-  - : Returns a new {{domxref("DOMMatrix")}} created by applying the specified skew transformation to the source matrix along its X-axis. The original matrix is not modified.
+  - : یک {{domxref("DOMMatrix")}} جدید برمی‌گرداند که با اعمال تبدیل کج‌سازی مشخص‌شده به ماتریس منبع در امتداد محور X آن ایجاد شده است. ماتریس اصلی تغییر نمی‌کند.
 - {{domxref("DOMMatrixReadOnly.skewY()")}}
-  - : Returns a new {{domxref("DOMMatrix")}} created by applying the specified skew transformation to the source matrix along its Y-axis. The original matrix is not modified.
+  - : یک {{domxref("DOMMatrix")}} جدید برمی‌گرداند که با اعمال تبدیل کج‌سازی مشخص‌شده به ماتریس منبع در امتداد محور Y آن ایجاد شده است. ماتریس اصلی تغییر نمی‌کند.
 - {{domxref("DOMMatrixReadOnly.toFloat32Array()")}}
-  - : Returns a new {{jsxref("Float32Array")}} of single-precision floating-point numbers, containing all 16 elements which comprise the matrix.
+  - : یک {{jsxref("Float32Array")}} جدید از اعداد ممیز شناور تک‌دقت برمی‌گرداند که شامل هر ۱۶ عنصر تشکیل‌دهندهٔ ماتریس است.
 - {{domxref("DOMMatrixReadOnly.toFloat64Array()")}}
-  - : Returns a new {{jsxref("Float64Array")}} of double-precision floating-point numbers, containing all 16 elements which comprise the matrix.
+  - : یک {{jsxref("Float64Array")}} جدید از اعداد ممیز شناور دوگانه‌دقت برمی‌گرداند که شامل هر ۱۶ عنصر تشکیل‌دهندهٔ ماتریس است.
 - {{domxref("DOMMatrixReadOnly.toJSON()")}}
-  - : Returns a JSON representation of the `DOMMatrixReadOnly` object.
+  - : یک نمایش JSON از شیء `DOMMatrixReadOnly` برمی‌گرداند.
 - {{domxref("DOMMatrixReadOnly.toString()")}}
-  - : Creates and returns a string representation of the matrix in CSS matrix syntax, using the appropriate CSS matrix notation.
+  - : یک نمایش رشته‌ای از ماتریس در نحو ماتریس CSS، با استفاده از نمادگذاری ماتریس CSS مناسب، ایجاد و برمی‌گرداند.
 - {{domxref("DOMMatrixReadOnly.transformPoint()")}}
-  - : Transforms the specified point using the matrix, returning a new {{domxref("DOMPoint")}} object containing the transformed point. Neither the matrix nor the original point are altered.
+  - : نقطهٔ مشخص‌شده را با استفاده از ماتریس تبدیل می‌کند و یک شیء {{domxref("DOMPoint")}} جدید حاوی نقطهٔ تبدیل‌شده برمی‌گرداند. نه ماتریس و نه نقطهٔ اصلی تغییر نمی‌کنند.
 - {{domxref("DOMMatrixReadOnly.translate()")}}
-  - : Returns a new {{domxref("DOMMatrix")}} containing a matrix calculated by translating the source matrix using the specified vector. By default, the vector is `(0, 0, 0)`. The original matrix is not changed.
+  - : یک {{domxref("DOMMatrix")}} جدید شامل ماتریسی برمی‌گرداند که با انتقال ماتریس منبع با استفاده از بردار مشخص‌شده محاسبه شده است. به‌طور پیش‌فرض، بردار `(0, 0, 0)` است. ماتریس اصلی تغییر نمی‌کند.
 
-## Static methods
+## روش‌های ایستا
 
 - {{domxref("DOMMatrixReadOnly.fromFloat32Array_static", "fromFloat32Array()")}}
-  - : Creates a new `DOMMatrixReadOnly` object given a {{jsxref("Float32Array")}} of 6 or 16 single-precision (32-bit) floating-point values.
+  - : یک شیء جدید `DOMMatrixReadOnly` با دریافت یک {{jsxref("Float32Array")}} شامل ۶ یا ۱۶ مقدار ممیز شناور تک‌دقت (۳۲ بیتی) ایجاد می‌کند.
 - {{domxref("DOMMatrixReadOnly.fromFloat64Array_static", "fromFloat64Array()")}}
-  - : Creates a new `DOMMatrixReadOnly` object given a {{jsxref("Float64Array")}} of 6 or 16 double-precision (64-bit) floating-point values.
+  - : یک شیء جدید `DOMMatrixReadOnly` با دریافت یک {{jsxref("Float64Array")}} شامل ۶ یا ۱۶ مقدار ممیز شناور دوگانه‌دقت (۶۴ بیتی) ایجاد می‌کند.
 - {{domxref("DOMMatrixReadOnly.fromMatrix_static", "fromMatrix()")}}
-  - : Creates a new `DOMMatrixReadOnly` object given an existing matrix or an object which provides the values for its properties.
+  - : یک شیء جدید `DOMMatrixReadOnly` با دریافت یک ماتریس موجود یا یک شیء که مقادیر ویژگی‌های آن را فراهم می‌کند ایجاد می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The mutable matrix type, {{domxref("DOMMatrix")}}, which is based on this one.
-- The CSS {{cssxref("transform-function/matrix", "matrix()")}} and {{cssxref("transform-function/matrix3d", "matrix3d()")}} functional notation that can be generated from this interface to be used in a CSS {{cssxref("transform")}}.
+- نوع ماتریس تغییرپذیر، {{domxref("DOMMatrix")}}، که بر پایهٔ همین نوع ساخته شده است.
+- نمادگذاری تابعی CSS {{cssxref("transform-function/matrix", "matrix()")}} و {{cssxref("transform-function/matrix3d", "matrix3d()")}} که می‌توانند از این رابط تولید شوند و در {{cssxref("transform")}} CSS استفاده شوند.
