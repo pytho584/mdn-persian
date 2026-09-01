@@ -1,11 +1,5 @@
 ---
 title: "FetchLaterResult: activated property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FetchLaterResult/activated"
-status: "needs-translation"
----
-
----
-title: "FetchLaterResult: activated property"
 short-title: activated
 slug: Web/API/FetchLaterResult/activated
 page-type: web-api-instance-property
@@ -16,15 +10,15 @@ browser-compat: api.FetchLaterResult.activated
 
 {{APIRef("fetchLater API")}}{{SeeCompatTable}}
 
-The **`activated`** read-only property of the {{domxref("FetchLaterResult")}} interface returns a boolean specifying whether the deferred fetch has been sent.
+خاصیت فقط خواندنی **`activated`** از رابط {{domxref("FetchLaterResult")}} یک مقدار بولی (boolean) برمی‌گرداند که مشخص می‌کند آیا درخواست واکشی به تعویق افتاده (deferred fetch) ارسال شده است یا خیر.
 
-## Value
+## مقدار
 
-A {{jsxref('Boolean')}}.
+یک {{jsxref('Boolean')}}.
 
-## Examples
+## مثال‌ها
 
-### Defer a `POST` request for around one minute and create a function to check if sent
+### یک درخواست `POST` را برای حدود یک دقیقه به تعویق بیندازید و تابعی برای بررسی ارسال آن ایجاد کنید
 
 ```js
 const result = fetchLater("https://report.example.com", {
@@ -38,10 +32,10 @@ function checkIfFetched() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
