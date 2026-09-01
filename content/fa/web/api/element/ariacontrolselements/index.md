@@ -1,7 +1,5 @@
 ---
 title: "Element: ariaControlsElements property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaControlsElements"
-status: "needs-translation"
 ---
 
 ---
@@ -14,37 +12,27 @@ browser-compat: api.Element.ariaControlsElements
 
 {{APIRef("DOM")}}
 
-The **`ariaControlsElements`** property of the {{domxref("Element")}} interface is an array containing the elements that are controlled by the element it is applied to.
-For example, this might be set on a [combobox](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/combobox_role) to indicate the element that it pops up, or on a [`scrollbar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/scrollbar_role) to indicate the ID of the element it controls.
+ویژگی **`ariaControlsElements`** از رابط {{domxref("Element")}} یک آرایه شامل عناصری است که توسط عنصر مورد نظر کنترل می‌شوند. به عنوان مثال، این ویژگی ممکن است روی یک [combobox](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/combobox_role) (جعبه ترکیبی) تنظیم شود تا عنصری که باز می‌شود را مشخص کند، یا روی یک [`scrollbar`](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/scrollbar_role) (نوار پیمایش) برای نشان دادن شناسه عنصری که کنترل می‌کند، تنظیم شود.
 
-The [`aria-controls`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-controls) topic contains additional information about how the attribute and property should be used.
+مبحث [`aria-controls`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-controls) حاوی اطلاعات بیشتری در مورد نحوه استفاده از این صفت و ویژگی است.
 
-## Value
+## مقدار
 
-An array of subclasses of {{domxref("HTMLElement")}}, representing the elements that are controlled by this element.
+یک آرایه از زیرکلاس‌های {{domxref("HTMLElement")}} که نشان‌دهنده عناصر کنترل‌شده توسط این عنصر است. هنگام خواندن، آرایه بازگشتی ایستا و فقط‌خواندنی است. هنگام نوشتن، آرایه تخصیص‌یافته کپی می‌شود: تغییرات بعدی در آرایه بر مقدار ویژگی تأثیر نمی‌گذارد.
 
-When read, the returned array is static and read-only.
-When written, the assigned array is copied: subsequent changes to the array do not affect the value of the property.
+## توضیحات
 
-## Description
+این ویژگی یک جایگزین انعطاف‌پذیر برای استفاده از صفت [`aria-controls`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-controls) جهت تنظیم عناصر کنترل‌شده است. بر خلاف `aria-controls`، عناصر تخصیص‌یافته به این ویژگی نیازی به داشتن صفت [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) ندارند. این ویژگی منعکس‌کننده صفت [`aria-controls`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-controls) در زمانی است که تعریف شده باشد، اما فقط برای مقادیر `id` مرجع فهرست‌شده‌ای که با عناصر معتبر درون‌حوزه مطابقت دارند. اگر ویژگی تنظیم شود، صفت مربوطه پاک می‌شود. برای اطلاعات بیشتر در مورد مراجع عناصر منعکس‌شده و حوزه، به [مراجع عناصر منعکس‌شده](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references) در راهنمای _Reflected attributes_ مراجعه کنید.
 
-The property is a flexible alternative to using the [`aria-controls`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-controls) attribute to set the controlled elements.
-Unlike `aria-controls`, the elements assigned to this property do not have to have an [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) attribute.
+## مثال‌ها
 
-The property reflects the [`aria-controls`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-controls) attribute when it is defined, but only for listed reference `id` values that match valid in-scope elements.
-If the property is set, then the corresponding attribute is cleared.
-For more information about reflected element references and scope see [Reflected element references](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references) in the _Reflected attributes_ guide.
+### دریافت عناصر کنترل‌شده
 
-## Examples
-
-### Get the controlled elements
-
-This example shows how `ariaControlsElements` can be used to get the controlled elements that were set using `aria-controls`.
+این مثال نحوه استفاده از `ariaControlsElements` را برای دریافت عناصر کنترل‌شده‌ای که با استفاده از `aria-controls` تنظیم شده‌اند نشان می‌دهد.
 
 #### HTML
 
-The HTML defines first defines a {{htmlelement("button")}} element and two {{htmlelement("div")}} elements, `panel1` and `panel2`, that it controls.
-The references to the controlled panels are listed in the button's `aria-controls` attribute.
+HTML ابتدا یک عنصر {{htmlelement("button")}} و دو عنصر {{htmlelement("div")}} به نام‌های `panel1` و `panel2` که توسط آن کنترل می‌شوند را تعریف می‌کند. ارجاع به پنل‌های کنترل‌شده در صفت `aria-controls` دکمه فهرست شده است.
 
 ```html
 <button id="toggleButton" aria-controls="panel1 panel2" aria-expanded="false">
@@ -84,7 +72,7 @@ The references to the controlled panels are listed in the button's `aria-control
 
 #### JavaScript
 
-The code first sets up the panels to be toggled open or hidden based on the [`aria-expanded`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-expanded) attribute of the button.
+کد ابتدا پنل‌ها را طوری تنظیم می‌کند که بر اساس صفت [`aria-expanded`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-expanded) دکمه باز یا پنهان شوند.
 
 ```js hidden
 const logElement = document.querySelector("#log");
@@ -111,9 +99,7 @@ toggleButton.addEventListener("click", () => {
 });
 ```
 
-Next the example gets the value of the `aria-controls` attribute with {{domxref("Element.getAttribute()")}} (a string listing the `id` values of the referenced elements).
-It then checks whether the `ariaControlsElements` property is supported, and if so, logs its value.
-Finally it returns and logs the inner text for each of the controlled elements.
+سپس مثال مقدار صفت `aria-controls` را با استفاده از {{domxref("Element.getAttribute()")}} (یک رشته که مقادیر `id` عناصر ارجاع‌شده را فهرست می‌کند) دریافت می‌کند. سپس بررسی می‌کند که آیا ویژگی `ariaControlsElements` پشتیبانی می‌شود یا خیر، و در صورت پشتیبانی، مقدار آن را ثبت می‌کند. در نهایت، متن درونی هر یک از عناصر کنترل‌شده را بازگردانده و ثبت می‌کند.
 
 ```js
 log(`aria-controls: ${toggleButton.getAttribute("aria-controls")}`);
@@ -132,23 +118,22 @@ if ("ariaControlsElements" in Element.prototype) {
 }
 ```
 
-#### Result
+#### نتیجه
 
-Click the button below to show and hide the panels.
-The log shows the original element references, the associated/returned elements, and the inner text of each element.
+روی دکمه زیر کلیک کنید تا پنل‌ها را نشان داده و پنهان کنید. لاگ، مراجع عناصر اصلی، عناصر مرتبط/بازگشتی، و متن درونی هر عنصر را نشان می‌دهد.
 
 {{EmbedLiveSample("Get the controlled elements","100%","280px")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [`aria-controls`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-controls) attribute
+- صفت [`aria-controls`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-controls)
 - {{domxref("ElementInternals.ariaControlsElements")}}
-- [Reflected element references](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references) in the _Attribute reflection_ guide
+- [مراجع عناصر منعکس‌شده](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references) در راهنمای _Attribute reflection_
