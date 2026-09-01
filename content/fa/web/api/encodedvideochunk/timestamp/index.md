@@ -1,11 +1,5 @@
 ---
 title: "EncodedVideoChunk: timestamp property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EncodedVideoChunk/timestamp"
-status: "needs-translation"
----
-
----
-title: "EncodedVideoChunk: timestamp property"
 short-title: timestamp
 slug: Web/API/EncodedVideoChunk/timestamp
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.EncodedVideoChunk.timestamp
 
 {{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`timestamp`** read-only property of the {{domxref("EncodedVideoChunk")}} interface returns an integer indicating the timestamp of the video in microseconds.
+ویژگی فقط‌خواندنی **`timestamp`** از رابط {{domxref("EncodedVideoChunk")}} یک عدد صحیح را برمی‌گرداند که نشان‌دهندهٔ برچسب زمانی ویدیو بر حسب میکروثانیه است.
 
-## Value
+## مقدار
 
-An integer.
+یک عدد صحیح.
 
-## Examples
+## نمونه‌ها
 
-In the following example the `timestamp` is printed to the console.
+در نمونهٔ زیر، `timestamp` در کنسول چاپ می‌شود.
 
 ```js
 const init = {
@@ -35,10 +29,10 @@ const chunk = new EncodedVideoChunk(init);
 console.log(chunk.timestamp); // 23000000
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
