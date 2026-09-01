@@ -1,11 +1,5 @@
 ---
 title: "HTMLAnchorElement: hreflang property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement/hreflang"
-status: "needs-translation"
----
-
----
-title: "HTMLAnchorElement: hreflang property"
 short-title: hreflang
 slug: Web/API/HTMLAnchorElement/hreflang
 page-type: web-api-instance-property
@@ -14,19 +8,19 @@ browser-compat: api.HTMLAnchorElement.hreflang
 
 {{ApiRef("HTML DOM")}}
 
-The **`hreflang`** property of the {{domxref("HTMLAnchorElement")}} interface is a string that is the language of the linked resource.
+ویژگی **`hreflang`** از رابط {{domxref("HTMLAnchorElement")}} یک رشته است که زبان منبع پیوند‌شده را مشخص می‌کند.
 
-It reflects the `hreflang` attribute of the {{HTMLElement("a")}} element and is the empty string (`""`) if there is no `hreflang` element.
+این ویژگی منعکس‌کنندهٔ ویژگی `hreflang` عنصر {{HTMLElement("a")}} است و در صورت نبودن عنصر `hreflang`، رشتهٔ خالی (`""`) خواهد بود.
 
-Web browsers and search engines may use this information to understand the language of the linked content better, but they are not required to follow it. The value provided for the `hreflang` attribute adheres to the {{glossary("BCP 47 language tag")}} format. If not, it is ignored.
+مرورگرهای وب و موتورهای جستجو ممکن است از این اطلاعات برای درک بهتر زبان محتوای پیوند‌شده استفاده کنند، اما الزامی به پیروی از آن ندارند. مقدار ارائه‌شده برای ویژگی `hreflang` از قالب {{glossary("BCP 47 language tag", "برچسب زبان BCP 47")}} پیروی می‌کند. در غیر این صورت، نادیده گرفته می‌شود.
 
-Web browsers do not rely solely on the `hreflang` attribute after fetching the linked resource. Instead, they use language information directly associated with the resource (e.g., through HTTP headers) to determine its language.
+مرورگرهای وب پس از واکشی منبع پیوند‌شده صرفاً به ویژگی `hreflang` متکی نیستند. در عوض، آنها از اطلاعات زبان مستقیماً مرتبط با منبع (مثلاً از طریق هدرهای HTTP) برای تعیین زبان آن استفاده می‌کنند.
 
-## Value
+## مقدار
 
-A string that contains a language tag, or the empty string (`""`) if there is no `hreflang` element.
+یک رشته که شامل یک برچسب زبان است، یا در صورت نبودن عنصر `hreflang`، رشتهٔ خالی (`""`).
 
-## Example
+## مثال
 
 ```html
 <a id="exampleLink" href="https://example.com" hreflang="en-IN">Example Link</a>
@@ -46,18 +40,18 @@ console.log(anchorElement.hreflang); // Outputs: "en-IN"
 pTag.textContent = anchorElement.hreflang;
 ```
 
-## Result
+## نتیجه
 
 {{EmbedLiveSample("Example",100,100)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("HTMLLinkElement.hreflang")}} property
+- ویژگی {{domxref("HTMLLinkElement.hreflang")}}
