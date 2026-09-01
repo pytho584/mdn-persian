@@ -1,7 +1,5 @@
 ---
 title: "HTMLImageElement: height property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/height"
-status: "needs-translation"
 ---
 
 ---
@@ -14,22 +12,22 @@ browser-compat: api.HTMLImageElement.height
 
 {{APIRef("HTML DOM")}}
 
-The **`height`** property of the {{domxref("HTMLImageElement")}} interface indicates the height at which the image is drawn, in {{Glossary("CSS pixel", "CSS pixels")}}, if the image is being drawn or rendered to any visual medium such as a screen or printer. Otherwise, it's the natural, pixel density-corrected height of the image.
+ویژگی **`height`** رابط {{domxref("HTMLImageElement")}} ارتفاعی را که تصویر در آن رسم می‌شود، بر حسب {{Glossary("CSS pixel", "پیکسل‌های CSS")}} مشخص می‌کند، در صورتی که تصویر به هر رسانه بصری مانند صفحه نمایش یا چاپگر رسم یا رندر شود. در غیر این صورت، این ارتفاع طبیعیِ تصحیح‌شده بر اساس تراکم پیکسل تصویر است.
 
-## Value
+## مقدار
 
-An integer value indicating the height of the image. The way the height is defined depends on whether the image is being rendered to a visual medium or not.
+مقداری صحیح که ارتفاع تصویر را نشان می‌دهد. نحوه تعریف ارتفاع بستگی به این دارد که آیا تصویر به یک رسانه بصری رندر می‌شود یا خیر.
 
-- If the image is being rendered to a visual medium such as a screen or printer, the height is expressed in {{Glossary("CSS pixel", "CSS pixels")}}.
-- Otherwise, the image's height is represented using its natural (intrinsic) height, adjusted for the display density as indicated by {{domxref("HTMLImageElement.naturalHeight", "naturalHeight")}}.
+- اگر تصویر به یک رسانه بصری مانند صفحه نمایش یا چاپگر رندر شود، ارتفاع بر حسب {{Glossary("CSS pixel", "پیکسل‌های CSS")}} بیان می‌شود.
+- در غیر این صورت، ارتفاع تصویر با استفاده از ارتفاع طبیعی (ذاتی) آن، تنظیم‌شده برای تراکم نمایشگر، که توسط {{domxref("HTMLImageElement.naturalHeight", "naturalHeight")}} نشان داده می‌شود، نمایش داده می‌شود.
 
-## Examples
+## مثال‌ها
 
-In this example, two different sizes are provided for an image of a clock using the [`srcset`](/en-US/docs/Web/HTML/Reference/Elements/img#srcset) attribute. One is 200px wide and the other is 400px wide. Further, the [`sizes`](/en-US/docs/Web/HTML/Reference/Elements/img#sizes) attribute is provided to specify the width at which the image should be drawn given the viewport's width.
+در این مثال، دو اندازه مختلف برای تصویر یک ساعت با استفاده از ویژگی [`srcset`](/en-US/docs/Web/HTML/Reference/Elements/img#srcset) ارائه شده است. یکی ۲۰۰ پیکسل عرض و دیگری ۴۰۰ پیکسل عرض دارد. علاوه بر این، ویژگی [`sizes`](/en-US/docs/Web/HTML/Reference/Elements/img#sizes) برای مشخص کردن عرضی که تصویر باید با توجه به عرض viewport در آن رسم شود، ارائه شده است.
 
 ### HTML
 
-For viewports up to 400px wide, the image is drawn at a width of 200px. Otherwise, it's drawn at 400px.
+برای viewportهایی با عرض حداکثر ۴۰۰ پیکسل، تصویر با عرض ۲۰۰ پیکسل رسم می‌شود. در غیر این صورت، با عرض ۴۰۰ پیکسل رسم می‌شود.
 
 ```html
 <p>Image height: <span class="size">?</span>px (resize to update)</p>
@@ -43,9 +41,9 @@ For viewports up to 400px wide, the image is drawn at a width of 200px. Otherwis
   sizes="(width <= 400px) 200px, 300px" />
 ```
 
-### JavaScript
+### جاوااسکریپت
 
-The JavaScript code looks at the `height` to determine the height of the image given the width at which it's currently drawn.
+کد جاوااسکریپت به `height` نگاه می‌کند تا ارتفاع تصویر را با توجه به عرضی که در حال حاضر در آن رسم شده است تعیین کند.
 
 ```js
 const clockImage = document.querySelector("img");
@@ -59,21 +57,21 @@ updateHeight();
 window.addEventListener("resize", updateHeight);
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples", 640, 450)}}
 
-This example may be easier to try out {{LiveSampleLink('Examples', 'in its own window')}}.
+ممکن است آزمایش این مثال در {{LiveSampleLink('Examples', 'پنجره جداگانه')}} آسان‌تر باشد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLImageElement.width")}}
 - {{domxref("HTMLImageElement.naturalHeight")}}
