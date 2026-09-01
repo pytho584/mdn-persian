@@ -1,9 +1,4 @@
----
-title: "DataTransferItemList"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DataTransferItemList"
-status: "needs-translation"
----
-
+```
 ---
 title: DataTransferItemList
 slug: Web/API/DataTransferItemList
@@ -13,31 +8,31 @@ browser-compat: api.DataTransferItemList
 
 {{APIRef("HTML Drag and Drop API")}}
 
-The **`DataTransferItemList`** object is a list of {{domxref("DataTransferItem")}} objects representing items being dragged. During a _drag operation_, each {{domxref("DragEvent")}} has a {{domxref("DragEvent.dataTransfer","dataTransfer")}} property and that property is a `DataTransferItemList`.
+شیء **`DataTransferItemList`** فهرستی از اشیاء {{domxref("DataTransferItem")}} است که آیتم‌های در حال کشیده‌شدن را نمایش می‌دهد. در طی یک _عملیات کشیدن_، هر {{domxref("DragEvent")}} دارای یک ویژگی {{domxref("DragEvent.dataTransfer","dataTransfer")}} است و آن ویژگی یک `DataTransferItemList` است.
 
-The individual items can be accessed using the [bracket notation](/en-US/docs/Web/JavaScript/Reference/Operators/Property_accessors#bracket_notation) `[]`.
+آیتم‌های جداگانه را می‌توان با استفاده از [نشانه‌گذاری براکت](/en-US/docs/Web/JavaScript/Reference/Operators/Property_accessors#bracket_notation) `[]` مورد دسترسی قرار داد.
 
-`DataTransferItemList` was primarily designed for the [HTML Drag and Drop API](/en-US/docs/Web/API/HTML_Drag_and_Drop_API), and is still specified in the HTML drag-and-drop section, but it is now also used by other APIs, such as {{domxref("ClipboardEvent.clipboardData")}} and {{domxref("InputEvent.dataTransfer")}}. Documentation of `DataTransferItemList` will primarily discuss its usage in drag-and-drop operations, and you should refer to the other APIs' documentation for usage of `DataTransferItemList` in those contexts.
+`DataTransferItemList` در اصل برای [API کشیدن و رها کردن HTML](/en-US/docs/Web/API/HTML_Drag_and_Drop_API) طراحی شده بود و همچنان در بخش کشیدن و رها کردنِ HTML مشخص شده است، اما اکنون توسط سایر APIها مانند {{domxref("ClipboardEvent.clipboardData")}} و {{domxref("InputEvent.dataTransfer")}} نیز استفاده می‌شود. مستندات `DataTransferItemList` عمدتاً کاربرد آن را در عملیات کشیدن و رها کردن بررسی می‌کند و برای کاربرد `DataTransferItemList` در آن زمینه‌ها باید به مستندات سایر APIها مراجعه کنید.
 
-This interface has no constructor.
+این اینترفیس سازنده‌ای ندارد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("DataTransferItemList.length")}} {{ReadOnlyInline}}
-  - : An `unsigned long` that is the number of drag items in the list.
+  - : یک `unsigned long` که تعداد آیتم‌های drag در فهرست است.
 
-## Instance methods
+## متدهای نمونه
 
 - {{domxref("DataTransferItemList.add()")}}
-  - : Adds an item (either a {{domxref("File")}} object or a string) to the drag item list and returns a {{domxref("DataTransferItem")}} object for the new item.
+  - : یک آیتم (یا یک شیء {{domxref("File")}} یا یک رشته) را به فهرست آیتم‌های drag اضافه می‌کند و یک شیء {{domxref("DataTransferItem")}} برای آیتم جدید برمی‌گرداند.
 - {{domxref("DataTransferItemList.remove()")}}
-  - : Removes the drag item from the list at the given index.
+  - : آیتم drag را با شاخص داده‌شده از فهرست حذف می‌کند.
 - {{domxref("DataTransferItemList.clear()")}}
-  - : Removes all of the drag items from the list.
+  - : همه آیتم‌های drag را از فهرست حذف می‌کند.
 
-## Example
+## مثال
 
-This example shows how to use drag and drop.
+این مثال نحوه استفاده از کشیدن و رها کردن را نشان می‌دهد.
 
 ### HTML
 
@@ -130,14 +125,15 @@ target.addEventListener("dragover", (ev) => {
 });
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample('Example', '35%', '250px')}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
+```
