@@ -1,11 +1,5 @@
 ---
 title: "HTMLElement: click() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/click"
-status: "needs-translation"
----
-
----
-title: "HTMLElement: click() method"
 short-title: click()
 slug: Web/API/HTMLElement/click
 page-type: web-api-instance-method
@@ -14,7 +8,7 @@ browser-compat: api.HTMLElement.click
 
 {{ APIRef("HTML DOM") }}
 
-The **`HTMLElement.click()`** method simulates a mouse click on an element. When called on an element, the element's {{domxref("Element/click_event", "click")}} event is fired (unless its [`disabled`](/en-US/docs/Web/HTML/Reference/Attributes/disabled) attribute is set).
+متد **`HTMLElement.click()`** یک کلیک ماوس بر روی یک عنصر را شبیه‌سازی می‌کند. هنگامی که روی یک عنصر فراخوانی شود، رویداد {{domxref("Element/click_event", "click")}} آن عنصر (مگر اینکه ویژگی [`disabled`](/en-US/docs/Web/HTML/Reference/Attributes/disabled) آن تنظیم شده باشد) فعال می‌شود.
 
 ## Syntax
 
@@ -22,17 +16,17 @@ The **`HTMLElement.click()`** method simulates a mouse click on an element. When
 click()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچکدام ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-Simulate a mouse-click when moving the mouse pointer over a checkbox:
+شبیه‌سازی کلیک ماوس هنگام حرکت نشانگر ماوس بر روی یک چک‌باکس:
 
 ### HTML
 
@@ -58,17 +52,17 @@ checkbox.addEventListener("click", () => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- Related event handlers
+- مدیریت‌کننده‌های رویداد مرتبط
   - {{domxref("Element.click_event", "Element.onclick")}}
   - {{domxref("Element.dblclick_event", "Element.ondblclick")}}
   - {{domxref("Element.auxclick_event", "Element.onauxclick")}}
