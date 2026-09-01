@@ -1,12 +1,6 @@
 ---
-title: "DOMQuad: DOMQuad() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMQuad/DOMQuad"
-status: "needs-translation"
----
-
----
-title: "DOMQuad: DOMQuad() constructor"
-short-title: DOMQuad()
+title: "DOMQuad: DOMQuad() سازنده"
+short-title: "DOMQuad()"
 slug: Web/API/DOMQuad/DOMQuad
 page-type: web-api-constructor
 browser-compat: api.DOMQuad.DOMQuad
@@ -14,11 +8,11 @@ browser-compat: api.DOMQuad.DOMQuad
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The **`DOMQuad()`** constructor creates and returns a new {{domxref("DOMQuad")}} object, given the values for some or all of its properties.
+سازنده **`DOMQuad()`** یک شیء جدید {{domxref("DOMQuad")}} ایجاد و برمی‌گرداند. این سازنده مقادیر برخی یا تمام ویژگی‌های آن را می‌گیرد.
 
-You can also create a `DOMQuad` by calling the {{domxref("DOMQuad.fromRect_static", "DOMQuad.fromRect()")}} or {{domxref("DOMQuad.fromQuad_static", "DOMQuad.fromQuad()")}} static function. These functions accept any object with the required parameters, including a {{domxref("DOMRect")}}, {{domxref("DOMRectReadOnly")}}, or another `DOMQuad`.
+همچنین می‌توانید با استفاده از توابع استاتیک {{domxref("DOMQuad.fromRect_static", "DOMQuad.fromRect()")}} یا {{domxref("DOMQuad.fromQuad_static", "DOMQuad.fromQuad()")}} یک `DOMQuad` ایجاد کنید. این توابع هر شیءای را که پارامترهای مورد نیاز را داشته باشد، از جمله یک {{domxref("DOMRect")}}، {{domxref("DOMRectReadOnly")}}، یا یک `DOMQuad` دیگر، می‌پذیرند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 new DOMQuad()
@@ -28,14 +22,14 @@ new DOMQuad(p1, p2, p3)
 new DOMQuad(p1, p2, p3, p4)
 ```
 
-### Parameters
+### پارامترها
 
-- {{domxref("DOMQuad/p1", "p1")}} {{optional_inline}}, {{domxref("DOMQuad/p2", "p2")}} {{optional_inline}}, {{domxref("DOMQuad/p3", "p3")}} {{optional_inline}}, {{domxref("DOMQuad/p4", "p4")}} {{optional_inline}}
-  - : Each a {{domxref("DOMPoint")}} or an object with the same properties representing one corner of the quad.
+- {{domxref("DOMQuad/p1", "p1")}} {{optional_inline}}، {{domxref("DOMQuad/p2", "p2")}} {{optional_inline}}، {{domxref("DOMQuad/p3", "p3")}} {{optional_inline}}، {{domxref("DOMQuad/p4", "p4")}} {{optional_inline}}
+  - : هر کدام یک {{domxref("DOMPoint")}} یا یک شیء با ویژگی‌های مشابه که نماینده یک گوشه از چهارضلعی است.
 
-## Examples
+## مثال‌ها
 
-This example creates a `DOMQuad` using a {{domxref("DOMPoint")}} and three additional points defined as objects.
+این مثال یک `DOMQuad` با استفاده از یک {{domxref("DOMPoint")}} و سه نقطه اضافی که به عنوان اشیاء تعریف شده‌اند، ایجاد می‌کند.
 
 ```js
 const point = new DOMPoint(2, 0);
@@ -47,15 +41,15 @@ const quad = new DOMQuad(
 );
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("DOMPoint")}}
 - {{domxref("DOMRect")}}
