@@ -1,11 +1,5 @@
 ---
 title: "CSSRule: parentStyleSheet property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSRule/parentStyleSheet"
-status: "needs-translation"
----
-
----
-title: "CSSRule: parentStyleSheet property"
 short-title: parentStyleSheet
 slug: Web/API/CSSRule/parentStyleSheet
 page-type: web-api-instance-property
@@ -14,25 +8,23 @@ browser-compat: api.CSSRule.parentStyleSheet
 
 {{ APIRef("CSSOM") }}
 
-The **`parentStyleSheet`** property of the
-{{domxref("CSSRule")}} interface returns the {{domxref("StyleSheet")}} object in which
-the current rule is defined.
+ویژگی **`parentStyleSheet`** در رابط {{domxref("CSSRule")}}، شیء {{domxref("StyleSheet")}}ای را برمیگرداند که قانون (rule) جاری در آن تعریف شده است.
 
-## Value
+## مقدار
 
-A {{domxref("StyleSheet")}} object.
+یک شیء {{domxref("StyleSheet")}}.
 
-## Examples
+## مثالها
 
 ```js
 const docRules = document.styleSheets[0].cssRules;
 console.log(docRules[0].parentStyleSheet === document.styleSheets[0]); // returns true
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
