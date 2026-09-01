@@ -1,11 +1,5 @@
 ---
 title: "EncodedVideoChunk: type property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EncodedVideoChunk/type"
-status: "needs-translation"
----
-
----
-title: "EncodedVideoChunk: type property"
 short-title: type
 slug: Web/API/EncodedVideoChunk/type
 page-type: web-api-instance-property
@@ -14,20 +8,20 @@ browser-compat: api.EncodedVideoChunk.type
 
 {{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`type`** read-only property of the {{domxref("EncodedVideoChunk")}} interface returns a value indicating whether the video chunk is a key chunk, which does not rely on other frames for decoding.
+خاصیت فقط‌خواندنی **`type`** از رابط {{domxref("EncodedVideoChunk")}} مقداری را برمی‌گرداند که نشان می‌دهد آیا تکه ویدیو یک تکه کلیدی است که برای رمزگشایی به فریم‌های دیگر وابسته نیست.
 
-## Value
+## مقدار
 
-A string, one of:
+یک رشته، یکی از موارد زیر:
 
 - `"key"`
-  - : The data is a key chunk.
+  - : داده یک تکه کلیدی است.
 - `"delta"`
-  - : The data is not a key chunk.
+  - : داده یک تکه کلیدی نیست.
 
-## Examples
+## مثال‌ها
 
-In the following example the `type` is printed to the console.
+در مثال زیر، `type` در کنسول چاپ می‌شود.
 
 ```js
 const init = {
@@ -41,10 +35,10 @@ const chunk = new EncodedVideoChunk(init);
 console.log(chunk.type); // "key"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
