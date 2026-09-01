@@ -1,11 +1,5 @@
 ---
 title: "Event: stopImmediatePropagation() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Event/stopImmediatePropagation"
-status: "needs-translation"
----
-
----
-title: "Event: stopImmediatePropagation() method"
 short-title: stopImmediatePropagation()
 slug: Web/API/Event/stopImmediatePropagation
 page-type: web-api-instance-method
@@ -14,10 +8,9 @@ browser-compat: api.Event.stopImmediatePropagation
 
 {{APIRef("DOM")}}{{AvailableInWorkers}}
 
-The **`stopImmediatePropagation()`** method of the
-{{domxref("Event")}} interface prevents other listeners of the same event from being called.
+متد **`stopImmediatePropagation()`** از رابط {{domxref("Event")}} از فراخوانی شنوندگان (listeners) دیگر همان رویداد جلوگیری می‌کند.
 
-If several listeners are attached to the same element for the same event type, they are called in the order in which they were added. If `stopImmediatePropagation()` is invoked during one such call, no remaining listeners will be called, either on that element or any other element.
+اگر چندین شنونده به یک عنصر برای یک نوع رویداد یکسان متصل شده باشند، آنها به ترتیبی که اضافه شده‌اند فراخوانی می‌شوند. اگر `stopImmediatePropagation()` در حین یکی از این فراخوانی‌ها فراخوانده شود، هیچ‌یک از شنوندگان باقی‌مانده، چه روی آن عنصر و چه روی هر عنصر دیگر، فراخوانی نخواهند شد.
 
 ## Syntax
 
@@ -25,23 +18,23 @@ If several listeners are attached to the same element for the same event type, t
 stopImmediatePropagation()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-### Comparing event-stopping functions
+### مقایسه توابع توقف رویداد
 
-The example below has three buttons inside of three nested divs. Each button has three event listeners registered for click events, and each div has an event listener, also registered for click events.
+مثال زیر شامل سه دکمه درون سه div تو در تو است. هر دکمه سه شنونده رویداد برای رویدادهای کلیک ثبت کرده است، و هر div نیز یک شنونده رویداد برای رویدادهای کلیک دارد.
 
-- The top button allows normal event propagation.
-- The middle button calls `stopPropagation()` in its first event handler.
-- The bottom button calls `stopImmediatePropagation()` in its first event handler.
+- دکمه بالایی امکان انتشار عادی رویداد را می‌دهد.
+- دکمه وسطی در اولین کنترل‌کننده رویداد خود `stopPropagation()` را فراخوانی می‌کند.
+- دکمه پایینی در اولین کنترل‌کننده رویداد خود `stopImmediatePropagation()` را فراخوانی می‌کند.
 
 #### HTML
 
@@ -125,16 +118,16 @@ document
   );
 ```
 
-#### Result
+#### نتیجه
 
-Each click-event handler displays a status message when it is called. If you press the middle button, you will see that `stopPropagation()` allows all of the event handlers registered for clicks on that button to execute but prevents execution of the click-event handlers for the divs, which would normally follow. However, if you press the bottom button, `stopImmediatePropagation()` stops all propagation after the event that called it.
+هر کنترل‌کننده رویداد کلیک هنگام فراخوانی یک پیام وضعیت نمایش می‌دهد. اگر دکمه وسطی را فشار دهید، خواهید دید که `stopPropagation()` به همه کنترل‌کننده‌های رویداد ثبت‌شده برای کلیک روی آن دکمه اجازه اجرا می‌دهد، اما از اجرای کنترل‌کننده‌های رویداد کلیک برای divها که معمولاً به دنبال آن می‌آیند جلوگیری می‌کند. با این حال، اگر دکمه پایینی را فشار دهید، `stopImmediatePropagation()` تمام انتشار پس از رویدادی که آن را فراخوانی کرد متوقف می‌کند.
 
 {{ EmbedLiveSample("Comparing event-stopping functions", 500, 550) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
