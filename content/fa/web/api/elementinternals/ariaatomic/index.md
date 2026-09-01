@@ -1,11 +1,5 @@
 ---
 title: "ElementInternals: ariaAtomic property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/ariaAtomic"
-status: "needs-translation"
----
-
----
-title: "ElementInternals: ariaAtomic property"
 short-title: ariaAtomic
 slug: Web/API/ElementInternals/ariaAtomic
 page-type: web-api-instance-property
@@ -14,23 +8,23 @@ browser-compat: api.ElementInternals.ariaAtomic
 
 {{APIRef("Web Components")}}
 
-The **`ariaAtomic`** property of the {{domxref("ElementInternals")}} interface reflects the value of the [`aria-atomic`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-atomic) attribute, which indicates whether assistive technologies will present all, or only parts of, the changed region based on the change notifications defined by the `aria-relevant` attribute.
+ویژگی **`ariaAtomic`** از رابط {{domxref("ElementInternals")}} منعکس‌کنندهٔ مقدار ویژگی [`aria-atomic`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-atomic) است، که نشان می‌دهد آیا فناوری‌های کمکی همهٔ ناحیهٔ تغییر یافته را ارائه می‌دهند یا فقط بخشی از آن را، بر اساس اعلان‌های تغییر تعریف‌شده توسط ویژگی `aria-relevant`.
 
 > [!NOTE]
-> Setting aria attributes on `ElementInternals` allows default semantics to be defined on a custom element. These may be overwritten by author-defined attributes, but ensure that default semantics are retained should the author delete those attributes, or fail to add them at all. For more information see the [Accessibility Object Model explainer](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object).
+> تنظیم ویژگی‌های aria روی `ElementInternals` امکان تعریف معناشناسی پیش‌فرض را برای یک عنصر سفارشی فراهم می‌کند. این مقادیر ممکن است توسط ویژگی‌های تعریف‌شده توسط نویسنده بازنویسی شوند، اما تضمین می‌کنند که اگر نویسنده آن ویژگی‌ها را حذف کند یا اصلاً آن‌ها را اضافه نکند، معناشناسی پیش‌فرض حفظ شود. برای اطلاعات بیشتر به [توضیح مدل شیء دسترس‌پذیری](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object) مراجعه کنید.
 
-## Value
+## مقدار
 
-A string with one of the following values:
+یک رشته با یکی از مقادیر زیر:
 
 - `"false"`
-  - : Assistive technologies will present only the changed node or nodes.
+  - : فناوری‌های کمکی فقط گره یا گره‌های تغییر یافته را ارائه می‌دهند.
 - `"true"`
-  - : Assistive technologies will present the entire changed region as a whole, including the author-defined label if one exists.
+  - : فناوری‌های کمکی کل ناحیهٔ تغییر یافته را به‌عنوان یک کل ارائه می‌دهند، از جمله برچسب تعریف‌شده توسط نویسنده در صورت وجود.
 
-## Examples
+## نمونه‌ها
 
-In this example the value of `ariaAtomic` is set to "true" in the constructor for a custom element.
+در این مثال، مقدار `ariaAtomic` در سازندهٔ یک عنصر سفارشی روی «true» تنظیم شده است.
 
 ```js
 class MyCustomElement extends HTMLElement {
@@ -42,10 +36,10 @@ class MyCustomElement extends HTMLElement {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
