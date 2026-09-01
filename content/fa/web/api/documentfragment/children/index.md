@@ -1,11 +1,5 @@
 ---
 title: "DocumentFragment: children property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment/children"
-status: "needs-translation"
----
-
----
-title: "DocumentFragment: children property"
 short-title: children
 slug: Web/API/DocumentFragment/children
 page-type: web-api-instance-property
@@ -14,21 +8,15 @@ browser-compat: api.DocumentFragment.children
 
 {{ APIRef("DOM") }}
 
-The read-only **`children`** property returns a live {{domxref("HTMLCollection")}}
-which contains all of the child {{domxref("Element", "elements")}} of the document fragment upon which it was called.
+ویژگی فقط‌خواندنی **`children`** یک {{domxref("HTMLCollection")}} زنده را برمی‌گرداند که شامل همهٔ {{domxref("Element", "elements")}} فرزندِ قطعه سند (document fragment) است که روی آن فراخوانی شده است.
 
-## Value
+## مقدار
 
-An {{ domxref("HTMLCollection") }} which is a live, ordered collection of the DOM
-elements which are children of the document fragment. You can access the
-individual child nodes in the collection by using either the
-{{domxref("HTMLCollection.item()", "item()")}} method on the collection, or by using
-JavaScript array-style notation.
+یک {{ domxref("HTMLCollection") }} که مجموعهٔ زنده و مرتبی از عنصرهای DOM است که فرزندِ قطعه سند هستند. می‌توانید به گره‌های فرزندِ منفرد در این مجموعه یا با متد {{domxref("HTMLCollection.item()", "item()")}} روی خود مجموعه دسترسی پیدا کنید، یا از نماد آرایه‌مانند جاوااسکریپت استفاده کنید.
 
-If the document fragment has no element children, then `children` is an empty list with a
-`length` of `0`.
+اگر قطعه سند هیچ عنصر فرزندی نداشته باشد، `children` یک فهرست خالی با `length` برابر با `0` است.
 
-## Examples
+## مثال‌ها
 
 ```js
 let fragment = new DocumentFragment();
@@ -40,14 +28,14 @@ fragment.appendChild(paragraph);
 fragment.children; // HTMLCollection [<p>]
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Node.childNodes")}}
