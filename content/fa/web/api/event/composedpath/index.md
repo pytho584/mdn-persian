@@ -1,11 +1,5 @@
 ---
 title: "Event: composedPath() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Event/composedPath"
-status: "needs-translation"
----
-
----
-title: "Event: composedPath() method"
 short-title: composedPath()
 slug: Web/API/Event/composedPath
 page-type: web-api-instance-method
@@ -14,34 +8,25 @@ browser-compat: api.Event.composedPath
 
 {{APIRef("Shadow DOM")}}{{AvailableInWorkers}}
 
-The **`composedPath()`** method of the {{domxref("Event")}}
-interface returns the event's path which is an array of the objects on which listeners
-will be invoked. This does not include nodes in shadow trees if the shadow root was
-created with its {{domxref("ShadowRoot.mode")}} closed.
+متد **`composedPath()`** در رابط {{domxref("Event")}} مسیر رویداد را برمی‌گرداند؛ آرایه‌ای از اشیایی که شنونده‌های رویداد روی آن‌ها فراخوانی خواهند شد. اگر ریشه سایه (shadow root) با {{domxref("ShadowRoot.mode")}} برابر با `closed` ساخته شده باشد، این مسیر شامل گره‌های داخل درخت سایه نمی‌شود.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 composedPath()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-An array of {{domxref("EventTarget")}} objects representing the objects on which an
-event listener will be invoked.
+آرایه‌ای از اشیاء {{domxref("EventTarget")}} که اشیایی را نشان می‌دهد که شنونده رویداد روی آن‌ها فراخوانی خواهد شد.
 
-## Examples
+## مثال‌ها
 
-In the following example, which you can try out at [https://mdn.github.io/web-components-examples/composed-composed-path/](https://mdn.github.io/web-components-examples/composed-composed-path/), we define two trivial custom
-elements, `<open-shadow>` and `<closed-shadow>`, both
-of which take the contents of their text attribute and insert them into the element's
-shadow DOM as the text content of a `<p>` element. The only difference
-between the two is that their shadow roots are attached with their modes set to
-`open` and `closed` respectively.
+در مثال زیر، که می‌توانید آن را در [https://mdn.github.io/web-components-examples/composed-composed-path/](https://mdn.github.io/web-components-examples/composed-composed-path/) امتحان کنید، دو عنصر سفارشی ساده تعریف کرده‌ایم: `<open-shadow>` و `<closed-shadow>`. هر دوی این عناصر محتوای ویژگی text خود را می‌گیرند و آن را به‌عنوان محتوای متنی یک عنصر `<p>` در DOM سایه خود وارد می‌کنند. تنها تفاوت بین این دو این است که ریشه‌های سایه آن‌ها به ترتیب با حالت `open` و `closed` متصل شده‌اند.
 
 ```js
 customElements.define(
@@ -75,14 +60,14 @@ customElements.define(
 );
 ```
 
-We then insert one of each element into our page:
+سپس یکی از هر عنصر را در صفحه خود قرار می‌دهیم:
 
 ```html
 <open-shadow text="I have an open shadow root"></open-shadow>
 <closed-shadow text="I have a closed shadow root"></closed-shadow>
 ```
 
-Then include a click event listener on the `<html>` element:
+و یک شنونده رویداد کلیک روی عنصر `<html>` اضافه می‌کنیم:
 
 ```js
 document.querySelector("html").addEventListener("click", (e) => {
@@ -91,31 +76,24 @@ document.querySelector("html").addEventListener("click", (e) => {
 });
 ```
 
-When you click on the `<open-shadow>` element and then the
-`<closed-shadow>` element, you'll notice two things. First, the
-`composed` property returns `true` because the `click`
-event is always able to propagate across shadow boundaries. Second, you'll notice a
-difference in the value of `composedPath` for the two elements. The
-`<open-shadow>` element's composed path is this:
+وقتی روی عنصر `<open-shadow>` و سپس روی عنصر `<closed-shadow>` کلیک کنید، دو نکته را متوجه خواهید شد. اول اینکه ویژگی `composed` مقدار `true` را برمی‌گرداند، زیرا رویداد `click` همیشه می‌تواند از مرزهای سایه عبور کند. دوم اینکه تفاوتی در مقدار `composedPath` برای این دو عنصر مشاهده می‌کنید. مسیر ترکیبی عنصر `<open-shadow>` به این صورت است:
 
 ```plain
 Array [ p, ShadowRoot, open-shadow, body, html, HTMLDocument https://mdn.github.io/web-components-examples/composed-composed-path/, Window ]
 ```
 
-Whereas the `<closed-shadow>` element's composed path is a follows:
+در حالی که مسیر ترکیبی عنصر `<closed-shadow>` به این صورت است:
 
 ```plain
 Array [ closed-shadow, body, html, HTMLDocument https://mdn.github.io/web-components-examples/composed-composed-path/, Window ]
 ```
 
-In the second case, the event listeners only propagate as far as the
-`<closed-shadow>` element itself, but not to the nodes inside the
-shadow boundary.
+در حالت دوم، شنونده‌های رویداد فقط تا خود عنصر `<closed-shadow>` propagate می‌شوند و به گره‌های داخل مرز سایه نمی‌رسند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
