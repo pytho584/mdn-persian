@@ -1,7 +1,5 @@
 ---
 title: "HIDConnectionEvent: HIDConnectionEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HIDConnectionEvent/HIDConnectionEvent"
-status: "needs-translation"
 ---
 
 ---
@@ -16,32 +14,31 @@ browser-compat: api.HIDConnectionEvent.HIDConnectionEvent
 
 {{securecontext_header}}{{APIRef("WebHID API")}}{{SeeCompatTable}}{{AvailableInWorkers("window_and_worker_except_shared")}}
 
-The **`HIDConnectionEvent()`** constructor creates a new {{domxref("HIDConnectionEvent")}} object. Typically this constructor is not used as events are created when a device's connection state changes.
+سازندهٔ **`HIDConnectionEvent()`** یک شیء جدید از {{domxref("HIDConnectionEvent")}} می‌سازد. معمولاً از این سازنده استفاده نمی‌شود، زیرا رویدادها هنگام تغییر وضعیت اتصال دستگاه ساخته می‌شوند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 new HIDConnectionEvent(type, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string with the name of the event.
-    It is case-sensitive and browsers set it to `connect` or `disconnect`.
+  - : رشته‌ای که نام رویداد را مشخص می‌کند. این مقدار به بزرگی و کوچکی حروف حساس است و مرورگرها آن را روی `connect` یا `disconnect` تنظیم می‌کنند.
 - `options`
-  - : An object that, _in addition of the properties defined in {{domxref("Event/Event", "Event()")}}_, can have the following properties:
+  - : شیئی که، _علاوه بر ویژگی‌های تعریف‌شده در {{domxref("Event/Event", "Event()")}}_، می‌تواند ویژگی‌های زیر را داشته باشد:
     - `device`
-      - : The {{domxref("HIDDevice")}} instance representing the device being connected or disconnected.
+      - : نمونهٔ {{domxref("HIDDevice")}} که نشان‌دهندهٔ دستگاهی است که متصل یا قطع شده است.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("HIDConnectionEvent")}} object.
+یک شیء جدید از {{domxref("HIDConnectionEvent")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
