@@ -1,7 +1,5 @@
 ---
 title: "CSSMathValue"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSMathValue"
-status: "needs-translation"
 ---
 
 ---
@@ -13,28 +11,28 @@ browser-compat: api.CSSMathValue
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`CSSMathValue`** interface of the [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Object_Model) is the base interface for objects representing complex numeric values produced by the CSS {{cssxref("calc()")}}, {{cssxref("min()")}}, {{cssxref("max()")}}, and {{cssxref("clamp()")}} functions.
+اینترفیسِ **`CSSMathValue`** از [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Object_Model)، اینترفیس پایه برای اشیایی است که مقادیر عددیِ پیچیدهٔ تولیدشده توسط توابع CSS {{cssxref("calc()")}}، {{cssxref("min()")}}، {{cssxref("max()")}} و {{cssxref("clamp()")}} را نشان می‌دهند.
 
 > [!NOTE]
-> `CSSMathValue` cannot be constructed directly.
-> Instances are returned by the platform (for example via {{domxref("StylePropertyMapReadOnly.get()")}}) as one of its subtypes, listed below.
+> `CSSMathValue` نمی‌تواند به‌طور مستقیم ساخته شود.
+> نمونه‌ها توسط پلتفرم (مثلاً از طریق {{domxref("StylePropertyMapReadOnly.get()")}}) به‌عنوان یکی از زیرانواعِ آن، که در ادامه فهرست شده‌اند، بازگردانده می‌شوند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref('CSSMathValue.operator')}} {{ReadOnlyInline}}
-  - : Returns the operator that the current subtype represents.
+  - : عملگری را که زیرنوعِ فعلی نشان می‌دهد، برمی‌گرداند.
 
-## Static methods
+## متدهای ایستا
 
-_Also inherits methods from its parent interface, {{DOMxRef("CSSNumericValue")}}._
+_همچنین متدهایی را از اینترفیس والد خود، {{DOMxRef("CSSNumericValue")}}، به ارث می‌برد._
 
-## Instance methods
+## متدهای نمونه
 
-_Also inherits methods from its parent interface, {{DOMxRef("CSSNumericValue")}}._
+_همچنین متدهایی را از اینترفیس والد خود، {{DOMxRef("CSSNumericValue")}}، به ارث می‌برد._
 
-## Interfaces based on CSSMathValue
+## اینترفیس‌های مبتنی بر CSSMathValue
 
 - {{DOMxRef('CSSMathClamp')}}
 - {{domxref('CSSMathInvert')}}
@@ -44,11 +42,11 @@ _Also inherits methods from its parent interface, {{DOMxRef("CSSNumericValue")}}
 - {{domxref('CSSMathProduct')}}
 - {{domxref('CSSMathSum')}}
 
-## Examples
+## مثال‌ها
 
-### `calc()` representations
+### بازنمایی‌های `calc()`
 
-This example shows how the {{domxref("CSSMathValue.operator", "operator")}} property identifies the operation represented by a {{cssxref("calc()")}} value's `CSSMathValue` subtype, including for a nested value.
+این مثال نشان می‌دهد که ویژگی {{domxref("CSSMathValue.operator", "operator")}} چگونه عملیاتِ بازنمایی‌شده توسط زیرنوعِ `CSSMathValue` یک مقدار {{cssxref("calc()")}} را شناسایی می‌کند؛ از جمله برای یک مقدار تودرتو.
 
 #### HTML
 
@@ -62,7 +60,7 @@ This example shows how the {{domxref("CSSMathValue.operator", "operator")}} prop
 
 #### CSS
 
-`width` is set using a `calc()` subtraction, which is represented as a `CSSMathSum` whose second term is negated.
+مقدار `width` با استفاده از یک تفریق `calc()` تنظیم می‌شود، که به‌صورت یک `CSSMathSum` بازنمایی می‌شود و جملهٔ دوم آن نفی شده است.
 
 ```css
 #demoBox {
@@ -88,7 +86,7 @@ function log(text) {
 }
 ```
 
-We read the `width` value using {{domxref("Element.computedStyleMap()", "computedStyleMap()")}}, then log its `operator` and the `operator` of its nested value.
+مقدار `width` را با استفاده از {{domxref("Element.computedStyleMap()", "computedStyleMap()")}} می‌خوانیم و سپس `operator` آن و `operator` مقدار تودرتوی آن را در خروجی ثبت می‌کنیم.
 
 ```js
 const styleMap = document.querySelector("#demoBox").computedStyleMap();
@@ -100,17 +98,16 @@ log(`nested value type: ${width.values[1].constructor.name}`);
 log(`nested value operator: ${width.values[1].operator}`);
 ```
 
-#### Result
+#### نتیجه
 
-`width` is represented by a `CSSMathSum` object whose `operator` is `"sum"`, because `calc(30% - 20px)` is represented as an addition of `30%` and the negation of `20px`.
-The second nested value's type is `CSSMathNegate` and its `operator` is `"negate"` (reflecting that negation).
+`width` توسط یک شیءِ `CSSMathSum` بازنمایی می‌شود که `operator` آن `"sum"` است؛ زیرا `calc(30% - 20px)` به‌صورت جمعِ `30%` و نفیِ `20px` بازنمایی می‌شود. نوعِ دومین مقدار تودرتو `CSSMathNegate` است و `operator` آن `"negate"` است (که منعکس‌کنندهٔ همان نفی است).
 
 {{EmbedLiveSample("`calc()` representations", 300, 170)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
