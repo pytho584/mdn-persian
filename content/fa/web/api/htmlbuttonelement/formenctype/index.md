@@ -1,11 +1,5 @@
 ---
 title: "HTMLButtonElement: formEnctype property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLButtonElement/formEnctype"
-status: "needs-translation"
----
-
----
-title: "HTMLButtonElement: formEnctype property"
 short-title: formEnctype
 slug: Web/API/HTMLButtonElement/formEnctype
 page-type: web-api-instance-property
@@ -14,33 +8,33 @@ browser-compat: api.HTMLButtonElement.formEnctype
 
 {{APIRef("HTML DOM")}}
 
-The **`formEnctype`** property of the {{domxref("HTMLButtonElement")}} interface is the {{Glossary("MIME_type", "MIME type")}} of the content sent to the server when the form is submitted. It reflects the value of the `<button>`'s [`formenctype`](/en-US/docs/Web/HTML/Reference/Elements/button#formenctype) attribute.
+ویژگی **`formEnctype`** در رابط {{domxref("HTMLButtonElement")}}، نوع {{Glossary("MIME_type", "MIME")}} محتوایی است که هنگام ارسال فرم به سرور فرستاده می‌شود. این ویژگی مقدار ویژگی [`formenctype`](/en-US/docs/Web/HTML/Reference/Elements/button#formenctype) عنصر `<button>` را بازتاب می‌دهد.
 
-The value overrides the {{domxref("HTMLFormElement.enctype", "enctype")}} property of the {{domxref("HTMLFormElement")}} interface if the form is submitted via the submit button. This property can be retrieved or set. If not set, the value is the empty string (`""`).
+اگر فرم از طریق دکمه ارسال (submit) ارسال شود، این مقدار، ویژگی {{domxref("HTMLFormElement.enctype", "enctype")}} در رابط {{domxref("HTMLFormElement")}} را بازنویسی می‌کند. این ویژگی قابل خواندن و تنظیم است. اگر تنظیم نشده باشد، مقدار آن رشتهٔ خالی (`""`) است.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## نمونه‌ها
 
 ```js
 btnEl.formEnctype = "application/x-www-form-urlencoded";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("HTMLButtonElement.formAction")}}
 - {{domxref("HTMLButtonElement.formMethod")}}
 - {{domxref("HTMLButtonElement.formNoValidate")}}
 - {{domxref("HTMLButtonElement.formTarget")}}
 - {{domxref("HTMLFormElement.enctype")}}
-- [Sending form data](/en-US/docs/Learn_web_development/Extensions/Forms/Sending_and_retrieving_form_data)
+- [ارسال داده‌های فرم](/en-US/docs/Learn_web_development/Extensions/Forms/Sending_and_retrieving_form_data)
