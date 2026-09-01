@@ -1,28 +1,18 @@
 ---
 title: "HTMLMeterElement: low property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMeterElement/low"
-status: "needs-translation"
----
-
----
-title: "HTMLMeterElement: low property"
-short-title: low
-slug: Web/API/HTMLMeterElement/low
-page-type: web-api-instance-property
-browser-compat: api.HTMLMeterElement.low
 ---
 
 {{ APIRef("HTML DOM") }}
 
-The **`low`** property of the {{DOMxRef("HTMLMeterElement")}} interface represents the low boundary of the {{htmlelement("meter")}} element as a floating-point number. It reflects the element's [`low`](/en-US/docs/Web/HTML/Reference/Elements/meter#low) attribute, or the value of `min` if not defined. The value of `low` is clamped by the `min` and `max` values.
+ویژگی **`low`** از رابط {{DOMxRef("HTMLMeterElement")}} مرز پایینی عنصر {{htmlelement("meter")}} را به صورت یک عدد اعشاری (floating-point) نمایش می‌دهد. این ویژگی منعکس‌کنندهٔ ویژگی [`low`](/en-US/docs/Web/HTML/Reference/Elements/meter#low) عنصر است، یا اگر تعریف نشده باشد، مقدار `min` را نشان می‌دهد. مقدار `low` توسط مقادیر `min` و `max` محدود می‌شود.
 
-This property can also be set directly, for example to set a default value based on some condition.
+این ویژگی را می‌توان مستقیماً نیز تنظیم کرد، مثلاً برای تعیین یک مقدار پیش‌فرض بر اساس یک شرط.
 
-## Value
+## مقدار
 
-A number that is not less than {{DOMxRef("HTMLMeterElement.min")}} nor greater than {{DOMxRef("HTMLMeterElement.max")}}.
+عددی که نه کمتر از {{DOMxRef("HTMLMeterElement.min")}} و نه بیشتر از {{DOMxRef("HTMLMeterElement.max")}} است.
 
-## Examples
+## مثال‌ها
 
 ```html
 <label for="fuel">Current fuel level:</label>
@@ -43,15 +33,15 @@ console.log(meterElement.low); // 15
 console.log(meterElement.low); // 14
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTMLElement("meter")}}
 - {{DOMXref("HTMLMeterElement.value")}}
