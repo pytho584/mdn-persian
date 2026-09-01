@@ -1,11 +1,5 @@
 ---
 title: "Document: releaseCapture() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/releaseCapture"
-status: "needs-translation"
----
-
----
-title: "Document: releaseCapture() method"
 short-title: releaseCapture()
 slug: Web/API/Document/releaseCapture
 page-type: web-api-instance-method
@@ -16,39 +10,36 @@ browser-compat: api.Document.releaseCapture
 
 {{ApiRef("DOM")}}{{Non-standard_header}}
 
-The **`releaseCapture()`** method releases mouse capture if
-it's currently enabled on an element within this document.
-Once mouse capture is released, mouse events will no longer all be directed to the element on which capture is enabled.
+متد **`releaseCapture()`** اگر در حال حاضر بر روی یک عنصر در این سند، گرفتن ماوس فعال شده باشد، آن را آزاد می‌کند. پس از آزاد شدن گرفتن ماوس، رویدادهای ماوس دیگر همه به عنصری که گرفتن روی آن فعال شده بود هدایت نخواهند شد.
 
-Enabling mouse capture on an element is done by calling {{domxref("element.setCapture()")}}.
+فعال کردن گرفتن ماوس بر روی یک عنصر با فراخوانی {{domxref("element.setCapture()")}} انجام می‌شود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 releaseCapture()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-See the [example](/en-US/docs/Web/API/Element/setCapture#examples) for
-{{domxref("element.setCapture()")}}.
+برای مثال به [example](/en-US/docs/Web/API/Element/setCapture#examples) مربوط به {{domxref("element.setCapture()")}} مراجعه کنید.
 
-## Specifications
+## مشخصات
 
-Not part of any specification.
+بخشی از هیچ مشخصاتی نیست.
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("element.setCapture()")}}
