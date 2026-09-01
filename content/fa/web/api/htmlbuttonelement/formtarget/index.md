@@ -1,7 +1,5 @@
 ---
 title: "HTMLButtonElement: formTarget property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLButtonElement/formTarget"
-status: "needs-translation"
 ---
 
 ---
@@ -14,33 +12,33 @@ browser-compat: api.HTMLButtonElement.formTarget
 
 {{APIRef("HTML DOM")}}
 
-The **`formTarget`** property of the {{domxref("HTMLButtonElement")}} interface is the tab, window, or iframe where the response of the submitted {{HtmlElement("form")}} is to be displayed. It reflects the value of the {{HTMLElement("button")}} element's [`formtarget`](/en-US/docs/Web/HTML/Reference/Elements/button#formtarget) attribute.
+ویژگی **`formTarget`** از رابط {{domxref("HTMLButtonElement")}} مشخص می‌کند که پاسخ فرم ارسال‌شده ({{HtmlElement("form")}}) در کدام تب، پنجره، یا iframe نمایش داده شود. این ویژگی، مقدار ویژگی [`formtarget`](/en-US/docs/Web/HTML/Reference/Elements/button#formtarget) عنصر {{HTMLElement("button")}} را منعکس می‌کند.
 
-The value overrides the {{domxref("HTMLFormElement.target", "target")}} property of the {{domxref("HTMLFormElement")}} interface if the form is submitted via the button. This property can be retrieved or set. If not set, the value is the empty string (`""`).
+اگر فرم از طریق این دکمه ارسال شود، این مقدار، ویژگی {{domxref("HTMLFormElement.target", "target")}} رابط {{domxref("HTMLFormElement")}} را نادیده می‌گیرد. این ویژگی قابل خواندن و تنظیم است. اگر تنظیم نشده باشد، مقدار آن رشتهٔ خالی (`""`) است.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## نمونه‌ها
 
 ```js
 btnEl.formTarget = "_self";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLButtonElement.formAction")}}
 - {{domxref("HTMLButtonElement.formEnctype")}}
 - {{domxref("HTMLButtonElement.formNoValidate")}}
 - {{domxref("HTMLButtonElement.formMethod")}}
 - {{domxref("HTMLFormElement.target")}}
-- [Sending form data](/en-US/docs/Learn_web_development/Extensions/Forms/Sending_and_retrieving_form_data)
+- [ارسال داده‌های فرم](/en-US/docs/Learn_web_development/Extensions/Forms/Sending_and_retrieving_form_data)
