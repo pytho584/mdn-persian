@@ -1,10 +1,4 @@
 ---
-title: "DirectoryReaderSync"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DirectoryReaderSync"
-status: "needs-translation"
----
-
----
 title: DirectoryReaderSync
 slug: Web/API/DirectoryReaderSync
 page-type: web-api-interface
@@ -16,19 +10,19 @@ browser-compat: api.DirectoryReaderSync
 
 {{APIRef("File and Directory Entries API")}}{{Non-standard_Header}}{{Deprecated_Header}}
 
-The `DirectoryReaderSync` interface lets you read the entries in a directory.
+رابط `DirectoryReaderSync` به شما امکان خواندن ورودی‌های یک دایرکتوری را می‌دهد.
 
 > [!WARNING]
-> This interface is deprecated and is no more on the standard track.
-> _Do not use it anymore._ Use the [File and Directory Entries API](/en-US/docs/Web/API/File_and_Directory_Entries_API) instead.
+> این رابط منسوخ شده است و دیگر در مسیر استاندارد قرار ندارد.
+> _از آن استفاده نکنید._ به جای آن از [File and Directory Entries API](/en-US/docs/Web/API/File_and_Directory_Entries_API) استفاده کنید.
 
-## Basic concepts
+## مفاهیم پایه
 
-Before you call the only method in this interface, [`readEntries()`](#readentries), create the [`DirectoryEntrySync`](/en-US/docs/Web/API/DirectoryEntrySync) object. But DirectoryEntrySync (as well as [`FileEntrySync`](/en-US/docs/Web/API/FileEntrySync)) is not a data type that you can pass between a calling app and Web Worker thread. It's not a big deal, because you don't really need to have the main app and the worker thread see the same JavaScript object; you just need them to access the same files. You can do that by passing a list of `filesystem:` URLs—which are just strings—instead of a list of entries. You can also use the `filesystem:` URL to look up the entry with `resolveLocalFileSystemURL()`. That gets you back to a DirectoryEntrySync (as well as FileEntrySync) object.
+پیش از فراخوانی تنها متد این رابط، یعنی [`readEntries()`](#readentries)، شیء [`DirectoryEntrySync`](/en-US/docs/Web/API/DirectoryEntrySync) را ایجاد کنید. اما DirectoryEntrySync (و همچنین [`FileEntrySync`](/en-US/docs/Web/API/FileEntrySync)) یک نوع داده نیست که بتوانید بین یک برنامهٔ فراخوان و یک رشتهٔ Web Worker جابه‌جا کنید. این مسئله مشکل بزرگی نیست، زیرا واقعاً نیازی ندارید که برنامهٔ اصلی و رشتهٔ worker همان شیء جاوااسکریپت را ببینند؛ فقط باید به همان فایل‌ها دسترسی داشته باشند. می‌توانید با ارسال فهرستی از URLهای `filesystem:` (که فقط رشته هستند) به جای فهرستی از ورودی‌ها، این کار را انجام دهید. همچنین می‌توانید از URL `filesystem:` برای جستجوی ورودی با `resolveLocalFileSystemURL()` استفاده کنید. این کار شما را به یک شیء DirectoryEntrySync (و همچنین FileEntrySync) بازمی‌گرداند.
 
-### Example
+### مثال
 
-In the following code snippet from [HTML5Rocks (web.dev)](https://web.dev/articles/filesystem-sync), we create Web Workers and pass data from it to the main app.
+در قطعه کد زیر از [HTML5Rocks (web.dev)](https://web.dev/articles/filesystem-sync)، Web Worker ایجاد می‌کنیم و داده را از آن به برنامهٔ اصلی ارسال می‌کنیم.
 
 ```js
 // Taking care of the browser-specific prefixes.
@@ -50,7 +44,7 @@ worker.onmessage = (e) => {
 worker.postMessage({ cmd: "list" });
 ```
 
-The following is `worker.js` code that gets the contents of the directory.
+در ادامه کد `worker.js` است که محتویات دایرکتوری را دریافت می‌کند.
 
 ```js
 // worker.js
@@ -101,44 +95,44 @@ self.onmessage = (e) => {
 };
 ```
 
-## Method
+## متد
 
 ### readEntries()
 
-Returns a list of entries from a specific directory. Call this method until an empty array is returned.
+یک فهرست از ورودی‌های یک دایرکتوری خاص را بازمی‌گرداند. این متد را تا زمانی که یک آرایهٔ خالی بازگردانده شود، فراخوانی کنید.
 
-#### Syntax
+#### نحو
 
 ```js-nolint
 readEntries()
 ```
 
-##### Parameters
+##### پارامترها
 
-None.
+هیچ.
 
-##### Return value
+##### مقدار بازگشتی
 
-Array containing [`FileEntrySync`](/en-US/docs/Web/API/FileEntrySync) and [`DirectoryEntrySync`](/en-US/docs/Web/API/DirectoryEntrySync).
+آرایه‌ای شامل [`FileEntrySync`](/en-US/docs/Web/API/FileEntrySync) و [`DirectoryEntrySync`](/en-US/docs/Web/API/DirectoryEntrySync).
 
-##### Exceptions
+##### استثناها
 
-This method can raise a [DOMException](/en-US/docs/Web/API/DOMException) with the following codes:
+این متد می‌تواند یک [`DOMException`](/en-US/docs/Web/API/DOMException) با کدهای زیر ایجاد کند:
 
-| Exception           | Description                                                                        |
-| ------------------- | ---------------------------------------------------------------------------------- |
-| `NOT_FOUND_ERR`     | The directory does not exist.                                                      |
-| `INVALID_STATE_ERR` | The directory has been modified since the first call to readEntries was processed. |
-| `SECURITY_ERR`      | The browser determined that it was not safe to look up the metadata.               |
+| استثنا               | توضیحات                                                                        |
+| -------------------- | ------------------------------------------------------------------------------ |
+| `NOT_FOUND_ERR`      | دایرکتوری وجود ندارد.                                                          |
+| `INVALID_STATE_ERR`  | دایرکتوری از زمان اولین فراخوانی readEntries تغییر کرده است.                    |
+| `SECURITY_ERR`       | مرورگر تشخیص داده است که جستجوی فراداده (metadata) ایمن نیست.                  |
 
-## Specifications
+## مشخصات
 
-This feature is not part of any specification anymore. It is no longer on track to become a standard.
+این ویژگی دیگر بخشی از هیچ مشخصاتی نیست. در مسیر تبدیل شدن به یک استاندارد قرار ندارد.
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [File and Directory Entries API](/en-US/docs/Web/API/File_and_Directory_Entries_API)
