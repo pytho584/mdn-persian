@@ -1,11 +1,5 @@
 ---
 title: "CSSTransformValue: keys() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSTransformValue/keys"
-status: "needs-translation"
----
-
----
-title: "CSSTransformValue: keys() method"
 short-title: keys()
 slug: Web/API/CSSTransformValue/keys
 page-type: web-api-instance-method
@@ -14,7 +8,7 @@ browser-compat: api.CSSTransformValue.keys
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`CSSTransformValue.keys()`** method returns a new _array iterator_ object that contains the keys for each index in the array.
+متد **`CSSTransformValue.keys()`** یک شیء _تکرارکننده آرایه_ جدید برمی‌گرداند که کلیدهای هر اندیس در آرایه را شامل می‌شود.
 
 ## Syntax
 
@@ -24,11 +18,11 @@ keys()
 
 ### Parameters
 
-None.
+هیچ‌کدام.
 
 ### Return value
 
-A new {{jsxref("Array")}}.
+یک {{jsxref("Array")}} جدید.
 
 ## Examples
 
