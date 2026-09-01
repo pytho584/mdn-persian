@@ -1,11 +1,5 @@
 ---
 title: "FileReaderSync: readAsDataURL() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileReaderSync/readAsDataURL"
-status: "needs-translation"
----
-
----
-title: "FileReaderSync: readAsDataURL() method"
 short-title: readAsDataURL()
 slug: Web/API/FileReaderSync/readAsDataURL
 page-type: web-api-instance-method
@@ -14,48 +8,48 @@ browser-compat: api.FileReaderSync.readAsDataURL
 
 {{APIRef("File API")}} {{AvailableInWorkers("worker_except_service")}}
 
-The **`readAsDataURL()`** method of the {{DOMxRef("FileReaderSync")}} interface allows to read {{DOMxRef("File")}} or {{DOMxRef("Blob")}} objects in a synchronous way into a string representing a data URL. This interface is [only available](/en-US/docs/Web/API/Web_Workers_API/Functions_and_classes_available_to_workers) in [workers](/en-US/docs/Web/API/Worker) as it enables synchronous I/O that could potentially block.
+متد **`readAsDataURL()`** از رابط {{DOMxRef("FileReaderSync")}} امکان خواندن همزمان اشیاء {{DOMxRef("File")}} یا {{DOMxRef("Blob")}} را به صورت یک رشته که یک داده URL را نشان می‌دهد، فراهم می‌کند. این رابط [فقط در workerها](/en-US/docs/Web/API/Web_Workers_API/Functions_and_classes_available_to_workers) [در دسترس](/en-US/docs/Web/API/Worker) است، زیرا ورودی/خروجی همزمان را فعال می‌کند که به طور بالقوه می‌تواند مسدودکننده باشد.
 
-## Syntax
+## نحو
 
 ```js-nolint
 readAsDataURL(blob)
 ```
 
-### Parameters
+### پارامترها
 
 - `blob`
-  - : The {{DOMxRef("File")}} or {{DOMxRef("Blob")}} to read.
+  - : شیء {{DOMxRef("File")}} یا {{DOMxRef("Blob")}} که باید خوانده شود.
 
-### Return value
+### مقدار بازگشتی
 
-A string representing the input data as a data URL.
+رشته‌ای که داده ورودی را به صورت یک داده URL نشان می‌دهد.
 
-### Exceptions
+### استثناها
 
-The following exceptions can be raised by this method:
+استثناهای زیر می‌توانند توسط این متد ایجاد شوند:
 
 - `NotFoundError` {{domxref("DOMException")}}
-  - : Thrown if the resource represented by the DOM {{DOMxRef("File")}} or {{DOMxRef("Blob")}} cannot be found, e.g., because it has been erased.
+  - : اگر منبعی که توسط {{DOMxRef("File")}} یا {{DOMxRef("Blob")}} نمایش داده می‌شود پیدا نشود، مثلاً به دلیل پاک شدن، پرتاب می‌شود.
 - `SecurityError` {{domxref("DOMException")}}
-  - : Thrown if one of the following problematic situation is detected:
-    - the resource has been modified by a third party;
-    - too many read operations are performed simultaneously;
-    - the file pointed by the resource is unsafe for a use from the Web (like it is a system file).
+  - : اگر یکی از وضعیت‌های مشکل‌ساز زیر شناسایی شود، پرتاب می‌شود:
+    - منبع توسط شخص ثالث تغییر کرده باشد؛
+    - عملیات خواندن بیش از حد به طور همزمان انجام شود؛
+    - فایلی که منبع به آن اشاره می‌کند برای استفاده از وب امن نباشد (مانند فایل‌های سیستم).
 - `NotReadableError` {{domxref("DOMException")}}
-  - : Thrown if the resource cannot be read due to a permission problem, like a concurrent lock.
+  - : اگر منبع به دلیل مشکل مجوز مانند قفل همزمان قابل خواندن نباشد، پرتاب می‌شود.
 - `EncodingError` {{domxref("DOMException")}}
-  - : Thrown if the resource is a data URL and exceed the limit length defined by each browser.
+  - : اگر منبع یک داده URL باشد و از حداکثر طول تعیین‌شده توسط هر مرورگر فراتر رود، پرتاب می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [File and Directory Entries API](/en-US/docs/Web/API/File_and_Directory_Entries_API)
 - {{DOMxRef("File")}}
