@@ -1,11 +1,5 @@
 ---
 title: "HTMLInputElement: reportValidity() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/reportValidity"
-status: "needs-translation"
----
-
----
-title: "HTMLInputElement: reportValidity() method"
 short-title: reportValidity()
 slug: Web/API/HTMLInputElement/reportValidity
 page-type: web-api-instance-method
@@ -14,29 +8,29 @@ browser-compat: api.HTMLInputElement.reportValidity
 
 {{APIRef("HTML DOM")}}
 
-The **`reportValidity()`** method of the {{domxref("HTMLInputElement")}} interface performs the same validity checking steps as the {{domxref("HTMLInputElement.checkValidity", "checkValidity()")}} method. In addition, if the {{domxref("HTMLElement/invalid_event", "invalid")}} event is not canceled, the browser displays the problem to the user.
+متد **`reportValidity()`** از رابط {{domxref("HTMLInputElement")}} همان مراحل بررسی اعتبار را که متد {{domxref("HTMLInputElement.checkValidity", "checkValidity()")}} انجام می‌دهد، انجام می‌دهد. علاوه بر این، اگر رویداد {{domxref("HTMLElement/invalid_event", "invalid")}} لغو نشود، مرورگر مشکل را به کاربر نمایش می‌دهد.
 
-## Syntax
+## نحو
 
 ```js-nolint
 reportValidity()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-Returns `true` if the element's value has no validity problems; otherwise, returns `false`.
+در صورتی که مقدار عنصر هیچ مشکل اعتباری نداشته باشد، `true` و در غیر این صورت `false` برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
 #### HTML
 
-We include a form containing a required number field and two buttons: one to check the form and the other to submit it.
+یک فرم شامل یک فیلد عددی اجباری (required) و دو دکمه قرار می‌دهیم: یکی برای بررسی فرم و دیگری برای ارسال آن.
 
 ```html
 <form action="#" method="post">
@@ -52,9 +46,9 @@ We include a form containing a required number field and two buttons: one to che
 </form>
 ```
 
-#### JavaScript
+#### جاوااسکریپت
 
-When the "reportValidity()" button is activated, we use the `reportValidity()` method to check if the input's value meets its constraints. We log the return value. If `false`, we also display the validation message and capture the `invalid` event.
+هنگامی که دکمه «reportValidity()» فعال می‌شود، از متد `reportValidity()` برای بررسی اینکه آیا مقدار ورودی با محدودیت‌های آن مطابقت دارد استفاده می‌کنیم. مقدار بازگشتی را ثبت می‌کنیم. اگر `false` باشد، پیام اعتبارسنجی را نیز نمایش می‌دهیم و رویداد `invalid` را دریافت می‌کنیم.
 
 ```js
 const output = document.querySelector("#log");
@@ -74,19 +68,19 @@ reportButton.addEventListener("click", () => {
 });
 ```
 
-#### Results
+#### نتایج
 
 {{EmbedLiveSample("Basic usage", "100%", 120)}}
 
-When `false`, if the value is missing, is below 21, is above 65, or is otherwise invalid, an error message appears, an invalid event is fired, and we log that invalid event to the console.
+هنگامی که `false` باشد، اگر مقدار خالی باشد، کمتر از ۲۱ باشد، بیشتر از ۶۵ باشد، یا به هر شکل نامعتبر باشد، یک پیام خطا ظاهر می‌شود، رویداد `invalid` فعال می‌شود و ما آن رویداد را در کنسول ثبت می‌کنیم.
 
-### Custom error message
+### پیام خطای سفارشی
 
-This example demonstrates how a custom error message can cause a `false` return value when the value is otherwise valid.
+این مثال نشان می‌دهد که چگونه یک پیام خطای سفارشی می‌تواند باعث شود متد `false` برگرداند در حالی که مقدار در غیر این صورت معتبر است.
 
 #### HTML
 
-We add a "Fix me" button to the HTML from the previous example.
+یک دکمه «Fix me» به HTML مثال قبلی اضافه می‌کنیم.
 
 ```html hidden
 <form action="#" method="post">
@@ -103,9 +97,9 @@ We add a "Fix me" button to the HTML from the previous example.
 </form>
 ```
 
-#### JavaScript
+#### جاوااسکریپت
 
-We expand on the JavaScript from the basic example above, adding a function that used the {{domxref("HTMLInputElement.setCustomValidity()")}} method to provide custom error messages. The `validateAge()` function only sets the error message to an empty string if the input is valid AND the `enableValidation` variable is `true`, with `enableValidation` being `false` until the "fix issues" button has been activated.
+ما JavaScript مثال پایه بالا را گسترش می‌دهیم و یک تابع اضافه می‌کنیم که از متد {{domxref("HTMLInputElement.setCustomValidity()")}} برای ارائه پیام‌های خطای سفارشی استفاده می‌کند. تابع `validateAge()` فقط اگر ورودی معتبر باشد و متغیر `enableValidation` برابر `true` باشد، پیام خطا را به رشته خالی تنظیم می‌کند؛ `enableValidation` تا زمانی که دکمه «fix issues» فعال نشده باشد، `false` باقی می‌ماند.
 
 ```js
 const output = document.querySelector("#log");
@@ -144,25 +138,25 @@ function validateAge() {
 }
 ```
 
-#### Results
+#### نتایج
 
 {{EmbedLiveSample("Custom error message", "100%", 120)}}
 
-If you activate the "reportValidity()" button before entering an age, the `reportValidity()` method returns `false` because it does not meet `required` constraint validation. This method fires an `invalid` event on the input and reports the problem to the user, displaying the custom error message "Please set an age (required)". As long as a custom error message is set, activating the "reportValidity()" button will continue to display an error even if you select a valid age. To enable validation, we have to set the custom error message to the empty string, which is done by clicking the "Fix issues" button.
+اگر قبل از وارد کردن سن، دکمه «reportValidity()» را فعال کنید، متد `reportValidity()` مقدار `false` برمی‌گرداند، زیرا محدودیت اعتبارسنجی `required` برآورده نشده است. این متد رویداد `invalid` را روی ورودی فعال می‌کند و مشکل را به کاربر گزارش می‌دهد و پیام خطای سفارشی «Please set an age (required)» را نمایش می‌دهد. تا زمانی که یک پیام خطای سفارشی تنظیم شده باشد، فعال کردن دکمه «reportValidity()» همچنان یک خطا نمایش می‌دهد، حتی اگر سن معتبری انتخاب کنید. برای فعال کردن اعتبارسنجی، باید پیام خطای سفارشی را به رشته خالی تنظیم کنیم، که با کلیک روی دکمه «Fix issues» انجام می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLInputElement.checkValidity()")}}
 - {{HTMLElement("input")}}
 - {{HTMLElement("form")}}
-- [Learn: Client-side form validation](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
-- [Guide: Constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation)
-- CSS {{cssxref(":valid")}} and {{cssxref(":invalid")}} pseudo-classes
+- [یادگیری: اعتبارسنجی فرم در سمت کلاینت](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
+- [راهنما: اعتبارسنجی محدودیت‌ها](/en-US/docs/Web/HTML/Guides/Constraint_validation)
+- شبه‌کلاس‌های CSS {{cssxref(":valid")}} و {{cssxref(":invalid")}}
