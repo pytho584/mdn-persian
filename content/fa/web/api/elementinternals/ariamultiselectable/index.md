@@ -1,11 +1,5 @@
 ---
 title: "ElementInternals: ariaMultiSelectable property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/ariaMultiSelectable"
-status: "needs-translation"
----
-
----
-title: "ElementInternals: ariaMultiSelectable property"
 short-title: ariaMultiSelectable
 slug: Web/API/ElementInternals/ariaMultiSelectable
 page-type: web-api-instance-property
@@ -14,23 +8,23 @@ browser-compat: api.ElementInternals.ariaMultiSelectable
 
 {{APIRef("Web Components")}}
 
-The **`ariaMultiSelectable`** property of the {{domxref("ElementInternals")}} interface reflects the value of the [`aria-multiselectable`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-multiselectable) attribute, which indicates that the user may select more than one item from the current selectable descendants.
+ویژگی **`ariaMultiSelectable`** از رابط {{domxref("ElementInternals")}} مقدار ویژگی [`aria-multiselectable`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-multiselectable) را منعکس می‌کند که نشان می‌دهد آیا کاربر می‌تواند بیش از یک مورد را از میان فرزندان قابل انتخاب فعلی انتخاب کند یا خیر.
 
 > [!NOTE]
-> Setting aria attributes on `ElementInternals` allows default semantics to be defined on a custom element. These may be overwritten by author-defined attributes, but ensure that default semantics are retained should the author delete those attributes, or fail to add them at all. For more information see the [Accessibility Object Model explainer](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object).
+> تنظیم ویژگی‌های aria روی `ElementInternals` امکان تعریف معناشناسی پیش‌فرض را روی یک عنصر سفارشی فراهم می‌کند. این ویژگی‌ها ممکن است توسط ویژگی‌های تعریف‌شده توسط نویسنده بازنویسی شوند، اما تضمین می‌کنند که معناشناسی پیش‌فرض در صورت حذف آن ویژگی‌ها توسط نویسنده، یا عدم افزودن آن‌ها، حفظ شود. برای اطلاعات بیشتر به [توضیح مدل شیء دسترس‌پذیری](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object) مراجعه کنید.
 
-## Value
+## مقدار
 
-A string with one of the following values:
+یک رشته با یکی از مقادیر زیر:
 
 - `"true"`
-  - : More than one item may be selected at a time.
+  - : بیش از یک مورد می‌تواند در یک زمان انتخاب شود.
 - `"false"`
-  - : Only one item may be selected.
+  - : فقط یک مورد می‌تواند انتخاب شود.
 
-## Examples
+## مثال‌ها
 
-In this example the value of `ariaMultiSelectable` is set to "true".
+در این مثال، مقدار `ariaMultiSelectable` روی «true» تنظیم شده است.
 
 ```js
 class CustomControl extends HTMLElement {
@@ -43,14 +37,14 @@ class CustomControl extends HTMLElement {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [ARIA: listbox role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/listbox_role)
+- [ARIA: نقش listbox](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/listbox_role)
