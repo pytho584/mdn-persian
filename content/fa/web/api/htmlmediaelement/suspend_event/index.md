@@ -1,11 +1,5 @@
 ---
 title: "HTMLMediaElement: suspend event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/suspend_event"
-status: "needs-translation"
----
-
----
-title: "HTMLMediaElement: suspend event"
 short-title: suspend
 slug: Web/API/HTMLMediaElement/suspend_event
 page-type: web-api-event
@@ -14,13 +8,13 @@ browser-compat: api.HTMLMediaElement.suspend_event
 
 {{APIRef("HTMLMediaElement")}}
 
-The `suspend` event is fired when the user agent is intentionally not fetching media data, in which case {{domxref("HTMLMediaElement.networkState")}} is set to `HTMLMediaElement.NETWORK_IDLE`. This can happen if there's no more data to load, or if loading is unnecessary; for example, the browser may decide to only buffer 5 minutes of a video in advance, in which case loading is suspended until the user watches more of the video.
+رویداد `suspend` زمانی رخ می‌دهد که عامل کاربر (user agent) عمداً داده‌های رسانه را واکشی نمی‌کند. در این حالت، {{domxref("HTMLMediaElement.networkState")}} به `HTMLMediaElement.NETWORK_IDLE` تنظیم می‌شود. این اتفاق می‌تواند زمانی رخ دهد که داده‌ای برای بارگیری وجود نداشته باشد، یا بارگیری غیرضروری باشد؛ برای مثال، مرورگر ممکن است تصمیم بگیرد فقط ۵ دقیقه از یک ویدیو را از پیش بافر کند، که در این صورت بارگیری تا زمانی که کاربر بخش بیشتری از ویدیو را تماشا کند، متوقف می‌شود.
 
-This event is not cancelable and does not bubble.
+این رویداد غیرقابل لغو است و منتشر نمی‌شود.
 
 ## Syntax
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در متدهایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی (property) برای کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("suspend", (event) => { })
@@ -28,15 +22,15 @@ addEventListener("suspend", (event) => { })
 onsuspend = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## مثال‌ها
 
-These examples add an event listener for the HTMLMediaElement's `suspend` event, then post a message when that event handler has reacted to the event firing.
+این مثال‌ها یک شنونده رویداد برای رویداد `suspend` در HTMLMediaElement اضافه می‌کنند و سپس هنگامی که کنترل‌کننده رویداد به وقوع رویداد واکنش نشان می‌دهد، پیامی ارسال می‌کنند.
 
-Using `addEventListener()`:
+استفاده از `addEventListener()`:
 
 ```js
 const video = document.querySelector("video");
@@ -46,7 +40,7 @@ video.addEventListener("suspend", (event) => {
 });
 ```
 
-Using the `onsuspend` event handler property:
+استفاده از ویژگی کنترل‌کننده رویداد `onsuspend`:
 
 ```js
 const video = document.querySelector("video");
@@ -64,7 +58,7 @@ video.onsuspend = (event) => {
 
 {{Compat}}
 
-## Related Events
+## رویدادهای مرتبط
 
 - The HTMLMediaElement {{domxref("HTMLMediaElement.playing_event", 'playing')}} event
 - The HTMLMediaElement {{domxref("HTMLMediaElement.waiting_event", 'waiting')}} event
@@ -84,7 +78,7 @@ video.onsuspend = (event) => {
 - The HTMLMediaElement {{domxref("HTMLMediaElement.emptied_event", 'emptied')}} event
 - The HTMLMediaElement {{domxref("HTMLMediaElement.stalled_event", 'stalled')}} event
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLAudioElement")}}
 - {{domxref("HTMLVideoElement")}}
