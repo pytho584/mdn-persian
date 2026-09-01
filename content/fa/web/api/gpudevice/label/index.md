@@ -1,11 +1,5 @@
 ---
 title: "GPUDevice: label property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/label"
-status: "needs-translation"
----
-
----
-title: "GPUDevice: label property"
 short-title: label
 slug: Web/API/GPUDevice/label
 page-type: web-api-instance-property
@@ -14,14 +8,13 @@ browser-compat: api.GPUDevice.label
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`label`** read-only property of the
-{{domxref("GPUDevice")}} interface is a string providing a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+ویژگی فقط‑خواندنی **`label`** در رابط {{domxref("GPUDevice")}} یک رشته است که برچسبی را ارائه می‌دهد که می‌توان از آن برای شناسایی شیء استفاده کرد، مثلاً در پیام‌های {{domxref("GPUError")}} یا هشدارهای کنسول.
 
-## Value
+## مقدار
 
-A string. If no label value has previously been set, getting the label returns an empty string.
+یک رشته. اگر قبلاً هیچ مقدار برچسبی تنظیم نشده باشد، دریافت برچسب یک رشته خالی برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
 ```js
 async function init() {
@@ -47,14 +40,14 @@ async function init() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
