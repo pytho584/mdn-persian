@@ -1,11 +1,5 @@
 ---
 title: "HTMLLinkElement: blocking property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLLinkElement/blocking"
-status: "needs-translation"
----
-
----
-title: "HTMLLinkElement: blocking property"
 short-title: blocking
 slug: Web/API/HTMLLinkElement/blocking
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.HTMLLinkElement.blocking
 
 {{APIRef("HTML DOM")}}
 
-The read-only **`blocking`** property of the {{domxref("HTMLLinkElement")}} returns a live {{domxref("DOMTokenList")}} object containing the operations that should be blocked on the fetching of an external resource. It reflects the {{HTMLElement("link")}} element's [`blocking`](/en-US/docs/Web/HTML/Reference/Elements/link#blocking) content attribute.
+خاصیت فقط‌خواندنی **`blocking`** در {{domxref("HTMLLinkElement")}} یک شیء {{domxref("DOMTokenList")}} زنده را برمی‌گرداند که شامل عملیاتی است که باید در هنگام واکشی یک منبع خارجی مسدود شوند. این خاصیت، ویژگی محتوایی [`blocking`](/en-US/docs/Web/HTML/Reference/Elements/link#blocking) عنصر {{HTMLElement("link")}} را منعکس می‌کند.
 
-## Value
+## مقدار
 
-A live {{domxref("DOMTokenList")}} object.
+یک شیء {{domxref("DOMTokenList")}} زنده.
 
-Although the `blocking` property itself is read-only in the sense that you can't replace the `DOMTokenList` object, you can still assign to the `blocking` property directly, which is equivalent to assigning to its {{domxref("DOMTokenList/value", "value")}} property. You can also modify the `DOMTokenList` object using the {{domxref("DOMTokenList/add", "add()")}}, {{domxref("DOMTokenList/remove", "remove()")}}, {{domxref("DOMTokenList/replace", "replace()")}}, and {{domxref("DOMTokenList/toggle", "toggle()")}} methods.
+اگرچه خود خاصیت `blocking` از نظر اینکه نمی‌توانید شیء `DOMTokenList` را جایگزین کنید، فقط‌خواندنی است، اما همچنان می‌توانید مستقیماً به خاصیت `blocking` مقداردهی کنید، که معادل مقداردهی به خاصیت {{domxref("DOMTokenList/value", "value")}} آن است. همچنین می‌توانید با استفاده از روش‌های {{domxref("DOMTokenList/add", "add()")}}، {{domxref("DOMTokenList/remove", "remove()")}}، {{domxref("DOMTokenList/replace", "replace()")}} و {{domxref("DOMTokenList/toggle", "toggle()")}} شیء `DOMTokenList` را تغییر دهید.
 
-## Examples
+## مثال‌ها
 
 ```html
 <link
@@ -38,15 +32,15 @@ const el = document.getElementById("el");
 console.log(el.blocking); // Output: DOMTokenList ["render"]
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLScriptElement.blocking")}}
 - {{domxref("HTMLStyleElement.blocking")}}
