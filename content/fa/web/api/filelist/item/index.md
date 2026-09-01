@@ -1,11 +1,5 @@
 ---
 title: "FileList: item() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileList/item"
-status: "needs-translation"
----
-
----
-title: "FileList: item() method"
 short-title: item()
 slug: Web/API/FileList/item
 page-type: web-api-instance-method
@@ -14,28 +8,28 @@ browser-compat: api.FileList.item
 
 {{APIRef("File API")}}{{AvailableInWorkers}}
 
-The **`item()`** method of the {{domxref("FileList")}} interface returns a {{domxref("File")}} object representing the file at the specified index in the file list.
+متد **`item()`** از رابط {{domxref("FileList")}} یک شی {{domxref("File")}} را برمی‌گرداند که نمایانگر فایل در اندیس مشخص‌شده در فهرست فایل‌ها است.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 item(index)
 ```
 
-### Parameters
+### پارامترها
 
 - `index`
-  - : The zero-based index of the file to retrieve from the list.
+  - اندیس مبتنی بر صفر فایلی که باید از فهرست دریافت شود.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("File")}} object representing the requested file.
+یک شی {{domxref("File")}} که نمایانگر فایل درخواستی است.
 
-## Examples
+## مثال‌ها
 
-### Printing the name of a file
+### چاپ نام یک فایل
 
-In this example, we use `item()` to select the first item in the `FileList`.
+در این مثال، از `item()` برای انتخاب اولین آیتم در `FileList` استفاده می‌کنیم.
 
 #### HTML
 
@@ -44,7 +38,7 @@ In this example, we use `item()` to select the first item in the `FileList`.
 <div class="output"></div>
 ```
 
-#### JavaScript
+#### جاوااسکریپت
 
 ```js
 const fileInput = document.querySelector("input[type=file]");
@@ -59,14 +53,14 @@ fileInput.addEventListener("change", () => {
 });
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Printing the name of a file")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
