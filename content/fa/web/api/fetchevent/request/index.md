@@ -1,11 +1,5 @@
 ---
 title: "FetchEvent: request property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent/request"
-status: "needs-translation"
----
-
----
-title: "FetchEvent: request property"
 short-title: request
 slug: Web/API/FetchEvent/request
 page-type: web-api-instance-property
@@ -14,30 +8,19 @@ browser-compat: api.FetchEvent.request
 
 {{APIRef("Service Workers API")}}{{AvailableInWorkers("service")}}
 
-The **`request`** read-only property of the
-{{domxref("FetchEvent")}} interface returns the {{domxref("Request")}} that triggered
-the event handler.
+ویژگی فقط‌خواندنی **`request`** در رابط {{domxref("FetchEvent")}}، شیء {{domxref("Request")}}ای را که رویداد handler را فعال کرده است، برمی‌گرداند.
 
-This property is non-nullable (since version 46, in the case of Firefox.) If a request
-is not provided by some other means, the constructor `options` object must
-contain a request (see {{domxref("FetchEvent.FetchEvent", "FetchEvent()")}}.)
+این ویژگی غیرقابل‌نمایش (non-nullable) است (از نسخه ۴۶ به بعد در فایرفاکس). اگر درخواستی از طریق روش دیگری ارائه نشود، شیء `options` سازنده باید شامل یک درخواست باشد (به {{domxref("FetchEvent.FetchEvent", "FetchEvent()")}} مراجعه کنید).
 
-## Value
+## مقدار
 
-A {{domxref("Request")}} object.
+یک شیء {{domxref("Request")}}.
 
-## Examples
+## مثال‌ها
 
-This code snippet is from the [service worker fetch sample](https://github.com/GoogleChrome/samples/blob/gh-pages/service-worker/prefetch/service-worker.js) ([run the fetch sample live](https://googlechrome.github.io/samples/service-worker/prefetch/)). The {{domxref("ServiceWorkerGlobalScope.fetch_event", "onfetch")}} event handler
-listens for the `fetch` event. When fired, pass a promise that back to the
-controlled page to {{domxref("FetchEvent.respondWith", "FetchEvent.respondWith()")}}.
-This promise resolves to the first matching URL request in the {{domxref("Cache")}}
-object. If no match is found, the code fetches a response from the network.
+این قطعه کد از [نمونهٔ service worker fetch](https://github.com/GoogleChrome/samples/blob/gh-pages/service-worker/prefetch/service-worker.js) گرفته شده است ([اجرای زندهٔ نمونهٔ fetch](https://googlechrome.github.io/samples/service-worker/prefetch/)). رویدادگردان {{domxref("ServiceWorkerGlobalScope.fetch_event", "onfetch")}} به رویداد `fetch` گوش می‌دهد. وقتی این رویداد رخ دهد، یک Promise به صفحهٔ کنترل‌شده بازگردانده می‌شود که به {{domxref("FetchEvent.respondWith", "FetchEvent.respondWith()")}} ارسال می‌شود. این Promise به اولین پاسخِ تطبیق‌یافته با URL درخواست در شیء {{domxref("Cache")}} منتهی می‌شود. اگر هیچ تطبیقی یافت نشود، کد پاسخ را از شبکه دریافت می‌کند.
 
-The code also handles exceptions thrown from the
-{{domxref("Window/fetch", "fetch()")}} operation. Note that an HTTP error
-response (e.g., 404) will not trigger an exception. It will return a normal response
-object that has the appropriate error code set.
+کد همچنین استثناهایی را که از عملیات {{domxref("Window/fetch", "fetch()")}} پرتاب می‌شوند مدیریت می‌کند. توجه داشته باشید که پاسخ خطای HTTP (مثلاً 404) باعث ایجاد استثنا نمی‌شود؛ بلکه یک شیء پاسخ عادی با کد خطای مناسب برمی‌گرداند.
 
 ```js
 self.addEventListener("fetch", (event) => {
@@ -68,16 +51,16 @@ self.addEventListener("fetch", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using Service Workers](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
-- [Service workers basic code example](https://github.com/mdn/dom-examples/tree/main/service-worker/simple-service-worker)
-- [Using web workers](/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)
+- [استفاده از Service Workers](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
+- [مثال کد پایهٔ Service workers](https://github.com/mdn/dom-examples/tree/main/service-worker/simple-service-worker)
+- [استفاده از Web Workers](/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)
