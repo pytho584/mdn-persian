@@ -1,11 +1,5 @@
 ---
 title: "FileSystem: root property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystem/root"
-status: "needs-translation"
----
-
----
-title: "FileSystem: root property"
 short-title: root
 slug: Web/API/FileSystem/root
 page-type: web-api-instance-property
@@ -14,30 +8,27 @@ browser-compat: api.FileSystem.root
 
 {{APIRef("File and Directory Entries API")}}
 
-The read-only **`root`** property of the
-{{domxref("FileSystem")}} interface specifies a {{domxref("FileSystemDirectoryEntry")}}
-object representing the root directory of the file system, for use with the [File and Directory Entries API](/en-US/docs/Web/API/File_and_Directory_Entries_API).
+ویژگی فقط‌خواندنی **`root`** در رابط {{domxref("FileSystem")}} یک شیء {{domxref("FileSystemDirectoryEntry")}} را تعیین می‌کند که نشان‌دهندهٔ دایرکتوری ریشهٔ سیستم فایل است و برای استفاده با [File and Directory Entries API](/en-US/docs/Web/API/File_and_Directory_Entries_API) در نظر گرفته شده است.
 
-## Value
+## مقدار
 
-A {{domxref("FileSystemDirectoryEntry")}} representing the file system's root
-directory.
+یک {{domxref("FileSystemDirectoryEntry")}} که دایرکتوری ریشهٔ سیستم فایل را نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
 ```js
 // tbd
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [File and Directory Entries API](/en-US/docs/Web/API/File_and_Directory_Entries_API)
 - {{domxref("FileSystem")}}
