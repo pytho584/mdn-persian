@@ -1,11 +1,5 @@
 ---
 title: "HTMLMeterElement: min property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMeterElement/min"
-status: "needs-translation"
----
-
----
-title: "HTMLMeterElement: min property"
 short-title: min
 slug: Web/API/HTMLMeterElement/min
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.HTMLMeterElement.min
 
 {{ APIRef("HTML DOM") }}
 
-The **`min`** property of the {{DOMxRef("HTMLMeterElement")}} interface represents the minimum value of the {{htmlelement("meter")}} element as a floating-point number. It reflects the element's [`min`](/en-US/docs/Web/HTML/Reference/Elements/meter#min) attribute, or `0` if no `min` is defined.
+خاصیت **`min`** از رابط {{DOMxRef("HTMLMeterElement")}}، مقدار حداقل عنصر {{htmlelement("meter")}} را به صورت یک عدد اعشاری نمایش می‌دهد. این خاصیت منعکس‌کننده ویژگی [`min`](/en-US/docs/Web/HTML/Reference/Elements/meter#min) عنصر است، یا اگر `min` تعریف نشده باشد، مقدار `0` را برمی‌گرداند.
 
-This property can also be set directly, for example to set a default value based on some condition.
+این خاصیت همچنین می‌تواند مستقیماً تنظیم شود، مثلاً برای تنظیم یک مقدار پیش‌فرض بر اساس یک شرط.
 
-## Value
+## مقدار
 
-A number.
+یک عدد.
 
-## Examples
+## مثال‌ها
 
 ```html
 <label for="fuel">Current fuel level:</label>
@@ -43,15 +37,15 @@ console.log(meterElement.min); // 0
 console.log(meterElement.min); // 1
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTMLElement("meter")}}
 - {{DOMXref("HTMLMeterElement.value")}}
