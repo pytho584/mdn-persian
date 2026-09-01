@@ -1,11 +1,5 @@
 ---
 title: "GPUBindGroup: label property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUBindGroup/label"
-status: "needs-translation"
----
-
----
-title: "GPUBindGroup: label property"
 short-title: label
 slug: Web/API/GPUBindGroup/label
 page-type: web-api-instance-property
@@ -14,18 +8,17 @@ browser-compat: api.GPUBindGroup.label
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`label`** property of the
-{{domxref("GPUBindGroup")}} interface provides a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+ویژگی **`label`** در رابط {{domxref("GPUBindGroup")}} برچسبی را فراهم می‌کند که می‌توان از آن برای شناسایی شیء استفاده کرد، مثلاً در پیام‌های {{domxref("GPUError")}} یا هشدارهای کنسول.
 
-This can be set by providing a `label` property in the descriptor object passed into the originating {{domxref("GPUDevice.createBindGroup()")}} call, or you can get and set it directly on the `GPUBindGroup` object.
+این مقدار را می‌توان با ارائه یک ویژگی `label` در شیء توصیف‌کننده‌ای که به فراخوانی مبدأ {{domxref("GPUDevice.createBindGroup()")}} منتقل می‌شود تنظیم کرد، یا می‌توانید آن را مستقیماً روی شیء `GPUBindGroup` بخوانید و بنویسید.
 
-## Value
+## مقدار
 
-A string. If this has not been previously set as described above, it will be an empty string.
+یک رشته. اگر قبلاً به صورت فوق تنظیم نشده باشد، یک رشته خالی خواهد بود.
 
-## Examples
+## مثال‌ها
 
-Setting and getting a label via `GPUBindGroup.label`:
+تنظیم و خواندن برچسب از طریق `GPUBindGroup.label`:
 
 ```js
 // …
@@ -47,7 +40,7 @@ bindGroup.label = "my_bind_group";
 console.log(bindGroup.label); // "my_bind_group"
 ```
 
-Setting a label via the originating {{domxref("GPUDevice.createBindGroup()")}} call, and then getting it via `GPUBindGroup.label`:
+تنظیم برچسب از طریق فراخوانی مبدأ {{domxref("GPUDevice.createBindGroup()")}} و سپس خواندن آن از طریق `GPUBindGroup.label`:
 
 ```js
 // …
@@ -68,14 +61,14 @@ const bindGroup = device.createBindGroup({
 console.log(bindGroup.label); // "my_bind_group"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
