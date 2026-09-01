@@ -1,7 +1,5 @@
 ---
 title: "HTMLCanvasElement: webglcontextrestored event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/webglcontextrestored_event"
-status: "needs-translation"
 ---
 
 ---
@@ -14,15 +12,15 @@ browser-compat: api.HTMLCanvasElement.webglcontextrestored_event
 
 {{APIRef("WebGL API")}}
 
-The **`webglcontextrestored`** event of the [WebGL API](/en-US/docs/Web/API/WebGL_API) is fired if the user agent restores the drawing buffer for a {{domxref("WebGLRenderingContext")}} object.
+رویداد **`webglcontextrestored`** از [WebGL API](/en-US/docs/Web/API/WebGL_API) زمانی رخ می‌دهد که عامل کاربر (user agent) بافر ترسیم را برای یک شیء {{domxref("WebGLRenderingContext")}} بازیابی کند.
 
-Once the context is restored, WebGL resources such as textures and buffers that were created before the context was lost are no longer valid. You need to reinitialize the state of your WebGL application and recreate resources.
+هنگامی که زمینه بازیابی شد، منابع WebGL مانند بافت‌ها و بافرهایی که پیش از از دست رفتن زمینه ساخته شده‌اند، دیگر معتبر نیستند. باید وضعیت برنامهٔ WebGL خود را از نو مقداردهی کنید و منابع را دوباره بسازید.
 
-This event does not bubble.
+این رویداد حباب نمی‌زند (bubbling ندارد).
 
 ## Syntax
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی event handler تنظیم کنید.
 
 ```js-nolint
 addEventListener("webglcontextrestored", (event) => { })
@@ -32,13 +30,13 @@ onwebglcontextrestored = (event) => { }
 
 ## Event type
 
-A {{domxref("WebGLContextEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("WebGLContextEvent")}}. از {{domxref("Event")}} به ارث می‌برد.
 
 {{InheritanceDiagram("WebGLContextEvent")}}
 
 ## Example
 
-With the help of the {{domxref("WEBGL_lose_context")}} extension, you can simulate the `webglcontextrestored` event:
+با کمک افزونهٔ {{domxref("WEBGL_lose_context")}} می‌توانید رویداد `webglcontextrestored` را شبیه‌سازی کنید:
 
 ```js
 const canvas = document.getElementById("canvas");
