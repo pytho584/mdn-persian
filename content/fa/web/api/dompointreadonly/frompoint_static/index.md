@@ -1,11 +1,5 @@
 ---
 title: "DOMPointReadOnly: fromPoint() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMPointReadOnly/fromPoint_static"
-status: "needs-translation"
----
-
----
-title: "DOMPointReadOnly: fromPoint() static method"
 short-title: fromPoint()
 slug: Web/API/DOMPointReadOnly/fromPoint_static
 page-type: web-api-static-method
@@ -14,56 +8,46 @@ browser-compat: api.DOMPointReadOnly.fromPoint_static
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The static **{{domxref("DOMPointReadOnly")}}**
-method `fromPoint()` creates and returns a new
-`DOMPointReadOnly` object given a source point.
+متد استاتیک **{{domxref("DOMPointReadOnly")}}** به نام `fromPoint()` یک شیء جدید `DOMPointReadOnly` را بر اساس یک نقطهٔ مبدأ ایجاد و بازمی‌گرداند.
 
-You can also create a new `DOMPointReadOnly` object using the
-{{domxref("DOMPointReadOnly.DOMPointReadOnly", "DOMPointReadOnly()")}} constructor.
+همچنین می‌توانید با استفاده از سازندهٔ {{domxref("DOMPointReadOnly.DOMPointReadOnly", "DOMPointReadOnly()")}} یک شیء جدید `DOMPointReadOnly` ایجاد کنید.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 DOMPointReadOnly.fromPoint(sourcePoint)
 ```
 
-### Parameters
+### پارامترها
 
 - `sourcePoint`
-  - : A {{domxref("DOMPoint")}} or {{domxref("DOMPointReadOnly")}} instance, or an object containing the following properties, from which to take the
-    values of the new point's properties:
+  - : یک نمونه از {{domxref("DOMPoint")}} یا {{domxref("DOMPointReadOnly")}}، یا یک شیء حاوی ویژگی‌های زیر که مقادیر ویژگی‌های نقطهٔ جدید از آن گرفته می‌شود:
     - `x`
-      - : An unrestricted floating-point value indicating the `x`-coordinate of the point in space. This is generally the horizontal coordinate, with positive values being to the right and negative values to the left. The default value is `0`.
+      - : یک عدد اعشاری بدون محدودیت که مختصات `x` نقطه در فضا را نشان می‌دهد. این معمولاً مختصات افقی است، با مقادیر مثبت به سمت راست و مقادیر منفی به سمت چپ. مقدار پیش‌فرض `0` است.
     - `y`
-      - : An unrestricted floating-point number providing the point's `y`-coordinate. This is the vertical coordinate, and barring any transforms applied to the coordinate system, positive values are downward and negative values upward toward the top of the screen. The default is `0`.
+      - : یک عدد اعشاری بدون محدودیت که مختصات `y` نقطه را فراهم می‌کند. این مختصات عمودی است و مادامی‌که تبدیل‌هایی بر روی سیستم مختصات اعمال نشده باشد، مقادیر مثبت به سمت پایین و مقادیر منفی به سمت بالای صفحه هستند. مقدار پیش‌فرض `0` است.
     - `z`
-      - : An unrestricted floating-point value which gives the point's `z`-coordinate, which is (assuming no transformations that alter the situation) the depth coordinate; positive values are closer to the user and negative values retreat back into the screen. The default value is `0`.
+      - : یک عدد اعشاری بدون محدودیت که مختصات `z` نقطه را می‌دهد. این مختصات (با فرض نبودن تبدیل‌هایی که وضعیت را تغییر دهند) مختصات عمق است؛ مقادیر مثبت به کاربر نزدیک‌تر و مقادیر منفی به سمت داخل صفحه عقب می‌روند. مقدار پیش‌فرض `0` است.
     - `w`
-      - : The point's `w` perspective value, given as an unrestricted floating-point number. The default is `1`.
+      - : مقدار پرسپکتیو `w` نقطه، به صورت یک عدد اعشاری بدون محدودیت. مقدار پیش‌فرض `1` است.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("DOMPointReadOnly")}} object (which is identical to the source point).
+یک شیء جدید {{domxref("DOMPointReadOnly")}} (که با نقطهٔ مبدأ یکسان است).
 
-## Examples
+## مثال‌ها
 
-### Creating a 2D point
+### ایجاد یک نقطهٔ دوبعدی
 
-This sample creates a 2D point, specifying an inline object that includes the values to
-use for {{domxref("DOMPointReadOnly.x", "x")}} and {{domxref("DOMPointReadOnly.y", "y")}}.
-The `z` and `w` properties are allowed to keep their
-default values (`0` and `1` respectively).
+این نمونه یک نقطهٔ دوبعدی ایجاد می‌کند و یک شیء درون‌خطی شامل مقادیر مورد استفاده برای {{domxref("DOMPointReadOnly.x", "x")}} و {{domxref("DOMPointReadOnly.y", "y")}} را مشخص می‌کند. ویژگی‌های `z` و `w` اجازه دارند مقادیر پیش‌فرض خود را حفظ کنند (به ترتیب `0` و `1`).
 
 ```js
 const point2D = DOMPointReadOnly.fromPoint({ x: 25, y: 25 });
 ```
 
-### Creating a 3D point using an existing point
+### ایجاد یک نقطهٔ سه‌بعدی با استفاده از یک نقطهٔ موجود
 
-This example creates a point, `origPoint`, of type
-{{domxref("DOMPoint")}}, using {{domxref("DOMPoint.DOMPoint", "DOMPoint()")}}. That
-point is then used as the input for `fromPoint()` to create a new point,
-`newPoint`.
+این مثال نقطه‌ای به نام `origPoint` از نوع {{domxref("DOMPoint")}} را با استفاده از {{domxref("DOMPoint.DOMPoint", "DOMPoint()")}} ایجاد می‌کند. سپس آن نقطه به عنوان ورودی `fromPoint()` برای ایجاد نقطهٔ جدید، `newPoint`، استفاده می‌شود.
 
 ```js
 const origPoint = new DOMPoint(25, 25, 100, 0.5);
@@ -71,10 +55,10 @@ const origPoint = new DOMPoint(25, 25, 100, 0.5);
 const newPoint = DOMPointReadOnly.fromPoint(origPoint);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
