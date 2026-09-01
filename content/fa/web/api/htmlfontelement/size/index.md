@@ -1,11 +1,5 @@
 ---
 title: "HTMLFontElement: size property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLFontElement/size"
-status: "needs-translation"
----
-
----
-title: "HTMLFontElement: size property"
 short-title: size
 slug: Web/API/HTMLFontElement/size
 page-type: web-api-instance-property
@@ -16,32 +10,28 @@ browser-compat: api.HTMLFontElement.size
 
 {{deprecated_header}}{{ APIRef("HTML DOM") }}
 
-The obsolete
-**`HTMLFontElement.size`** property is a
-string that reflects the [`size`](/en-US/docs/Web/HTML/Reference/Elements/font#size) HTML
-attribute. It contains either a font size ranging from 1 to 7 or a
-number relative to the default value 3, for example -2 or +1.
+ویژگی منسوخ‌شده **`HTMLFontElement.size`** یک رشته است که صفت HTML [`size`](/en-US/docs/Web/HTML/Reference/Elements/font#size) را منعکس می‌کند. این ویژگی شامل یک اندازه قلم از ۱ تا ۷، یا یک عدد نسبی نسبت به مقدار پیش‌فرض ۳ (مثلاً ۲- یا ۱+) است.
 
-The format of the string must follow one of the following HTML microsyntaxes:
+قالب رشته باید از یکی از ریز-نحوهای HTML زیر پیروی کند:
 
 <table class="no-markdown">
   <thead>
     <tr>
-      <th scope="col">Microsyntax</th>
-      <th scope="col">Description</th>
-      <th scope="col">Examples</th>
+      <th scope="col">ریز-نحو</th>
+      <th scope="col">توضیحات</th>
+      <th scope="col">مثال‌ها</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Valid size number string</td>
-      <td><em>integer number in the range of 1-7</em></td>
+      <td>رشته شماره اندازه معتبر</td>
+      <td><em>عدد صحیح در بازه ۱ تا ۷</em></td>
       <td><code>6</code></td>
     </tr>
     <tr>
-      <td>Relative size string</td>
+      <td>رشته اندازه نسبی</td>
       <td>
-        <em>+x or -x, where x is a number relative to 3 (the result should be in the range of 1-7)</em>
+        <em>+x یا -x، که در آن x عددی نسبی نسبت به ۳ است (نتیجه باید در بازه ۱ تا ۷ باشد)</em>
       </td>
       <td>
         <code>+2<br />-1</code>
@@ -50,27 +40,26 @@ The format of the string must follow one of the following HTML microsyntaxes:
   </tbody>
 </table>
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```js
-// Assumes there is <font id="f"> element in the HTML
-
+// فرض می‌شود که عنصر <font id="f"> در HTML وجود دارد
 const f = document.getElementById("f");
 f.size = "6";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("HTMLFontElement")}} interface it belongs to.
+- رابط {{domxref("HTMLFontElement")}} که این ویژگی به آن تعلق دارد.
