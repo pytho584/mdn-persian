@@ -1,11 +1,5 @@
 ---
 title: "Headers: Headers() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Headers/Headers"
-status: "needs-translation"
----
-
----
-title: "Headers: Headers() constructor"
 short-title: Headers()
 slug: Web/API/Headers/Headers
 page-type: web-api-constructor
@@ -14,8 +8,7 @@ browser-compat: api.Headers.Headers
 
 {{APIRef("Fetch API")}} {{AvailableInWorkers}}
 
-The **`Headers()`** constructor creates a new
-{{domxref("Headers")}} object.
+سازندهٔ **`Headers()`** یک شیء جدید {{domxref("Headers")}} ایجاد می‌کند.
 
 ## Syntax
 
@@ -27,30 +20,24 @@ new Headers(init)
 ### Parameters
 
 - `init` {{optional_inline}}
-  - : An object containing any [HTTP headers](/en-US/docs/Web/HTTP/Reference/Headers)
-    that you want to pre-populate your `Headers` object with. This can be a
-    simple object literal with {{jsxref("String")}} values, an array of name-value pairs, where each pair is a 2-element string array; or an existing
-    `Headers` object. In the last case, the new `Headers` object
-    copies its data from the existing `Headers` object.
+  - : یک شیء شامل هر [سرآیند HTTP](/en-US/docs/Web/HTTP/Reference/Headers) که می‌خواهید شیء `Headers` خود را با آن از پیش پر کنید. این می‌تواند یک شیء ساده با مقادیر {{jsxref("String")}}، یک آرایه از جفت‌های نام-مقدار که هر جفت یک آرایهٔ دو عضوی از رشته‌ها است، یا یک شیء `Headers` موجود باشد. در حالت آخر، شیء جدید `Headers` داده‌های خود را از شیء `Headers` موجود کپی می‌کند.
 
 ## Examples
 
-Creating an empty `Headers` object is simple:
+ایجاد یک شیء خالی `Headers` ساده است:
 
 ```js
 const myHeaders = new Headers(); // Currently empty
 ```
 
-You could add a header to this using {{domxref("Headers.append")}}:
+می‌توانید با استفاده از {{domxref("Headers.append")}} یک سرآیند به آن اضافه کنید:
 
 ```js
 myHeaders.append("Content-Type", "image/jpeg");
 myHeaders.get("Content-Type"); // Returns 'image/jpeg'
 ```
 
-Or you can add the headers you want as the `Headers` object is created. In
-the following snippet we create a new {{domxref("Headers")}} object, adding some headers
-by passing the constructor an init object as an argument:
+یا می‌توانید سرآیندهای مورد نظر خود را در هنگام ایجاد شیء `Headers` اضافه کنید. در قطعه کد زیر، یک شیء جدید {{domxref("Headers")}} ایجاد می‌کنیم و با ارسال یک شیء init به سازنده، چند سرآیند اضافه می‌کنیم:
 
 ```js
 const httpHeaders = {
@@ -60,17 +47,14 @@ const httpHeaders = {
 const myHeaders = new Headers(httpHeaders);
 ```
 
-You can now create another `Headers` object, passing it the first
-`Headers` object as its init object:
+اکنون می‌توانید یک شیء `Headers` دیگر ایجاد کنید و اولین شیء `Headers` را به عنوان شیء init آن ارسال کنید:
 
 ```js
 const secondHeadersObj = new Headers(myHeaders);
 secondHeadersObj.get("Content-Type"); // Would return 'image/jpeg' — it inherits it from the first headers object
 ```
 
-You can also add the headers you want as the `Headers` object is created by using a two-dimensional array to add multiple headers with the same values. In
-the following snippet we create a new {{domxref("Headers")}} object with multiple `Set-Cookie` headers
-by passing the constructor an init array as an argument:
+همچنین می‌توانید سرآیندهای مورد نظر خود را در هنگام ایجاد شیء `Headers` با استفاده از یک آرایه دو بعدی برای اضافه کردن چندین سرآیند با مقادیر یکسان اضافه کنید. در قطعه کد زیر، یک شیء جدید {{domxref("Headers")}} با چندین سرآیند `Set-Cookie` با ارسال یک آرایه init به سازنده ایجاد می‌کنیم:
 
 ```js
 const headers = [
