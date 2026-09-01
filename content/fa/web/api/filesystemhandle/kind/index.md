@@ -1,11 +1,5 @@
 ---
 title: "FileSystemHandle: kind property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemHandle/kind"
-status: "needs-translation"
----
-
----
-title: "FileSystemHandle: kind property"
 short-title: kind
 slug: Web/API/FileSystemHandle/kind
 page-type: web-api-instance-property
@@ -14,23 +8,18 @@ browser-compat: api.FileSystemHandle.kind
 
 {{securecontext_header}}{{APIRef("File System API")}}{{AvailableInWorkers}}
 
-The **`kind`** read-only property of the
-{{domxref("FileSystemHandle")}} interface returns the type of entry. This is
-`'file'` if the associated entry is a file or `'directory'`. It is
-used to distinguish files from directories when iterating over the contents of a
-directory.
+ویژگی فقط‌خواندنی **`kind`** در رابط {{domxref("FileSystemHandle")}} نوع ورودی را برمی‌گرداند. این مقدار اگر ورودی مرتبط یک فایل باشد `'file'` و اگر دایرکتوری باشد `'directory'` است. از این ویژگی برای تشخیص فایل‌ها از دایرکتوری‌ها هنگام پیمایش محتویات یک دایرکتوری استفاده می‌شود.
 
-## Value
+## مقدار
 
-A string that can be:
+یک رشته که می‌تواند یکی از موارد زیر باشد:
 
-- `'file'`: If the handle is a {{domxref('FileSystemFileHandle')}}.
-- `'directory'`: If the handle is a {{domxref('FileSystemDirectoryHandle')}}.
+- `'file'`: اگر هندل یک {{domxref('FileSystemFileHandle')}} باشد.
+- `'directory'`: اگر هندل یک {{domxref('FileSystemDirectoryHandle')}} باشد.
 
-## Examples
+## مثال‌ها
 
-The following function allows the user to choose a file from the file picker and then
-tests to see whether the handle returned is a file or directory
+تابع زیر به کاربر اجازه می‌دهد یک فایل را از انتخاب‌گر فایل انتخاب کند و سپس بررسی می‌کند که هندل برگشت‌داده‌شده فایل است یا دایرکتوری:
 
 ```js
 // store a reference to our file handle
@@ -48,15 +37,15 @@ async function getFile() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [File System API](/en-US/docs/Web/API/File_System_API)
 - [The File System Access API: simplifying access to local files](https://developer.chrome.com/docs/capabilities/web-apis/file-system-access)
