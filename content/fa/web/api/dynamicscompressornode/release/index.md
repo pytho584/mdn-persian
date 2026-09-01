@@ -1,11 +1,5 @@
 ---
 title: "DynamicsCompressorNode: release property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DynamicsCompressorNode/release"
-status: "needs-translation"
----
-
----
-title: "DynamicsCompressorNode: release property"
 short-title: release
 slug: Web/API/DynamicsCompressorNode/release
 page-type: web-api-instance-property
@@ -14,18 +8,18 @@ browser-compat: api.DynamicsCompressorNode.release
 
 {{ APIRef("Web Audio API") }}
 
-The `release` property of the {{ domxref("DynamicsCompressorNode") }} interface Is a [k-rate](/en-US/docs/Web/API/AudioParam#k-rate) {{domxref("AudioParam")}} representing the amount of time, in seconds, required to increase the gain by 10 dB. It defines how quick the signal is adapted when its volume is reduced.
+ویژگی `release` در رابط {{ domxref("DynamicsCompressorNode") }} یک {{domxref("AudioParam")}} از نوع [k-rate](/en-US/docs/Web/API/AudioParam#k-rate) است که مدت‌زمان لازم برای افزایش بهره (gain) به اندازهٔ ۱۰ دسیبل را بر حسب ثانیه نشان می‌دهد. این ویژگی مشخص می‌کند که با کاهش حجم صدا، سیگنال با چه سرعتی تطبیق داده می‌شود.
 
-The `release` property's default value is `0.25` and it can be set between `0` and `1`.
+مقدار پیش‌فرض ویژگی `release` برابر با `0.25` است و می‌توان آن را بین `0` و `1` تنظیم کرد.
 
-## Value
+## مقدار
 
-An {{domxref("AudioParam")}}.
+یک {{domxref("AudioParam")}}.
 
 > [!NOTE]
-> Though the {{domxref("AudioParam")}} returned is read-only, the value it represents is not.
+> اگرچه {{domxref("AudioParam")}} بازگشتی فقط‌خواندنی (read-only) است، مقداری که نشان می‌دهد فقط‌خواندنی نیست.
 
-## Examples
+## مثال‌ها
 
 ```js
 const audioCtx = new AudioContext();
@@ -33,16 +27,16 @@ const compressor = audioCtx.createDynamicsCompressor();
 compressor.release.value = 0.25;
 ```
 
-See [`BaseAudioContext.createDynamicsCompressor()`](/en-US/docs/Web/API/BaseAudioContext/createDynamicsCompressor#examples) for more complete example code.
+برای مشاهدهٔ کد مثال کامل‌تر به [`BaseAudioContext.createDynamicsCompressor()`](/en-US/docs/Web/API/BaseAudioContext/createDynamicsCompressor#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
