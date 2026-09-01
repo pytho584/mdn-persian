@@ -1,7 +1,5 @@
 ---
 title: "DocumentType: publicId property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DocumentType/publicId"
-status: "needs-translation"
 ---
 
 ---
@@ -14,15 +12,15 @@ browser-compat: api.DocumentType.publicId
 
 {{APIRef("DOM")}}
 
-The read-only **`publicId`** property of the {{domxref("DocumentType")}} returns a formal identifier of the document.
+ویژگی فقطخواندنی **`publicId`** در {{domxref("DocumentType")}} یک شناسهٔ رسمی سند را بازمی‌گرداند.
 
-For synthetic `DocumentType`, this property reflects the value given in parameter to {{domxref("DOMImplementation.createDocumentType()")}}.
+برای `DocumentType` مصنوعی، این ویژگی مقداری را که به‌عنوان پارامتر به {{domxref("DOMImplementation.createDocumentType()")}} داده شده است منعکس می‌کند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```js
 const docType = document.implementation.createDocumentType(
@@ -34,10 +32,10 @@ const docType = document.implementation.createDocumentType(
 console.log(docType.publicId); // Displays "-//W3C//DTD SVG 1.1//EN"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
