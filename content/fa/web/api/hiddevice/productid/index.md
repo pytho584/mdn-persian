@@ -1,11 +1,5 @@
 ---
 title: "HIDDevice: productId property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HIDDevice/productId"
-status: "needs-translation"
----
-
----
-title: "HIDDevice: productId property"
 short-title: productId
 slug: Web/API/HIDDevice/productId
 page-type: web-api-instance-property
@@ -16,15 +10,15 @@ browser-compat: api.HIDDevice.productId
 
 {{securecontext_header}}{{APIRef("WebHID API")}}{{SeeCompatTable}}{{AvailableInWorkers("window_and_worker_except_shared")}}
 
-The **`productId`** read-only property of the {{domxref("HIDDevice")}} interface returns the product ID of the connected HID device.
+ویژگی فقط‌خواندنی **`productId`** در رابط {{domxref("HIDDevice")}}، شناسه محصول دستگاه HID متصل را برمی‌گرداند.
 
-## Value
+## مقدار
 
-An integer. If the device has no product ID, or the product ID cannot be accessed this will return `0`.
+یک عدد صحیح. اگر دستگاه شناسه محصول نداشته باشد یا شناسه محصول قابل دسترسی نباشد، این ویژگی مقدار `0` برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-The following example retrieves devices with {{domxref("HID.getDevices()")}} and logs the value of `productId` to the console.
+مثال زیر دستگاه‌ها را با {{domxref("HID.getDevices()")}} بازیابی می‌کند و مقدار `productId` را در کنسول ثبت می‌کند.
 
 ```js
 let devices = await navigator.hid.getDevices();
@@ -33,10 +27,10 @@ devices.forEach((device) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
