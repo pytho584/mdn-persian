@@ -1,11 +1,5 @@
 ---
 title: "GPUDevice: limits property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/limits"
-status: "needs-translation"
----
-
----
-title: "GPUDevice: limits property"
 short-title: limits
 slug: Web/API/GPUDevice/limits
 page-type: web-api-instance-property
@@ -14,21 +8,20 @@ browser-compat: api.GPUDevice.limits
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`limits`** read-only property of the
-{{domxref("GPUDevice")}} interface returns a {{domxref("GPUSupportedLimits")}} object that describes the limits supported by the device. All limit values will be included, and the limits requested during the creation of the device (i.e., when {{domxref("GPUAdapter.requestDevice()")}} is called) will be reflected in those values.
+ویژگی فقط‌خواندنیِ **`limits`** در رابط {{domxref("GPUDevice")}} یک شیء {{domxref("GPUSupportedLimits")}} بازمی‌گرداند که محدودیت‌های پشتیبانی‌شده توسط دستگاه را توصیف می‌کند. همهٔ مقادیر محدودیت‌ها در این شیء گنجانده می‌شوند و محدودیت‌هایی که هنگام ایجاد دستگاه درخواست شده‌اند (یعنی زمانی که {{domxref("GPUAdapter.requestDevice()")}} فراخوانی می‌شود) در این مقادیر منعکس خواهند شد.
 
 > [!NOTE]
-> Not all limits will be reported as expected, even if they are supported by the underlying hardware. See {{domxref("GPUAdapter.limits")}} for more details.
+> همهٔ محدودیت‌ها لزوماً مطابق انتظار گزارش نمی‌شوند، حتی اگر توسط سخت‌افزار زیرین پشتیبانی شوند. برای جزئیات بیشتر به {{domxref("GPUAdapter.limits")}} مراجعه کنید.
 
-## Value
+## مقدار
 
-A {{domxref("GPUSupportedLimits")}} object instance.
+یک نمونهٔ شیء {{domxref("GPUSupportedLimits")}}.
 
-## Examples
+## مثال‌ها
 
-In the following code we query the `GPUAdapter.limits` value of `maxBindGroups` to see if it is equal to or greater than 6. Our theoretical example app ideally needs 6 bind groups, so if the returned value is >= 6, we add a maximum limit of 6 to the `requiredLimits` object.
+در کد زیر، مقدار `maxBindGroups` را از طریق `GPUAdapter.limits` بررسی می‌کنیم تا ببینیم آیا برابر با ۶ یا بیشتر است. برنامهٔ نمونهٔ فرضی ما در حالت ایده‌آل به ۶ گروه bind نیاز دارد، بنابراین اگر مقدار بازگشتی >= 6 باشد، یک حداکثر محدودیت ۶ را به شیء `requiredLimits` اضافه می‌کنیم.
 
-We then check that the expected limit has been set on the resulting device by logging its value to the console.
+سپس با چاپ مقدار آن در کنسول، بررسی می‌کنیم که محدودیت مورد انتظار روی دستگاه نهایی اعمال شده است.
 
 ```js
 async function init() {
@@ -58,14 +51,14 @@ async function init() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
