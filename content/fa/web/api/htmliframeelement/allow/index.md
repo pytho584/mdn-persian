@@ -1,11 +1,5 @@
 ---
 title: "HTMLIFrameElement: allow property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/allow"
-status: "needs-translation"
----
-
----
-title: "HTMLIFrameElement: allow property"
 short-title: allow
 slug: Web/API/HTMLIFrameElement/allow
 page-type: web-api-instance-property
@@ -14,19 +8,19 @@ browser-compat: api.HTMLIFrameElement.allow
 
 {{APIRef("HTML DOM")}}
 
-The **`allow`** property of the {{domxref("HTMLIFrameElement")}} interface indicates the [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) specified for this `<iframe>` element. The policy defines what features are available to the `<iframe>` element (for example, access to the `microphone`, `camera`, `battery`, `web-share`, etc.) based on the origin of the request.
+ویژگی **`allow`** در رابط {{domxref("HTMLIFrameElement")}}، [سیاست مجوزها (Permissions Policy)](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) مشخص‌شده برای این عنصر `<iframe>` را نشان می‌دهد. این سیاست تعیین می‌کند که بر اساس مبدأ (origin) درخواست، چه قابلیت‌هایی برای عنصر `<iframe>` در دسترس باشد (برای مثال دسترسی به `microphone`، `camera`، `battery`، `web-share` و غیره).
 
-The Permissions Policy specified by the `allow` attribute implements a further restriction on top of the policy specified in the {{HTTPHeader("Permissions-Policy")}} header. It doesn't replace it.
+سیاست مجوزهایی که با ویژگی `allow` مشخص می‌شود، محدودیت بیشتری را بر سیاست تعیین‌شده در هدر {{HTTPHeader("Permissions-Policy")}} اعمال می‌کند و جایگزین آن نمی‌شود.
 
-See [`<iframe>`'s Permissions Policy syntax](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy#iframes) for more details.
+برای جزئیات بیشتر، [نحو سیاست مجوزها در `<iframe>`](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy#iframes) را ببینید.
 
-It reflects the `allow` attribute of the {{HTMLElement("iframe")}} element.
+این ویژگی، ویژگی `allow` عنصر {{HTMLElement("iframe")}} را منعکس می‌کند.
 
-## Value
+## مقدار
 
-A string indicates the [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) specified for this {{HTMLElement("iframe")}} element, each policy must be separated by space.
+این ویژگی یک رشته (string) است که [سیاست مجوزها](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) مشخص‌شده برای این عنصر {{HTMLElement("iframe")}} را نشان می‌دهد؛ هر سیاست باید با فاصله از دیگری جدا شود.
 
-## Examples
+## مثال‌ها
 
 ```html
 <iframe
@@ -40,16 +34,16 @@ const el = document.getElementById("el");
 console.log(el.allow); // Output: "geolocation 'self' https://a.example.com https://b.example.com; fullscreen 'none'"
 ```
 
-See [Permissions Policy in `<iframe>` element](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy#iframes) for more available examples.
+برای مثال‌های بیشتر، [سیاست مجوزها در عنصر `<iframe>`](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy#iframes) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy)
+- [سیاست مجوزها](/en-US/docs/Web/HTTP/Guides/Permissions_Policy)
