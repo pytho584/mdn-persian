@@ -1,20 +1,10 @@
 ---
 title: "FontFace: FontFace() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FontFace/FontFace"
-status: "needs-translation"
----
-
----
-title: "FontFace: FontFace() constructor"
-short-title: FontFace()
-slug: Web/API/FontFace/FontFace
-page-type: web-api-constructor
-browser-compat: api.FontFace.FontFace
 ---
 
 {{APIRef("CSS Font Loading API")}}{{AvailableInWorkers}}
 
-The **`FontFace()`** constructor creates a new {{domxref("FontFace")}} object.
+سازنده‌ی **`FontFace()`** یک شیء جدید از {{domxref("FontFace")}} می‌سازد.
 
 ## Syntax
 
@@ -23,51 +13,45 @@ new FontFace(family, source)
 new FontFace(family, source, descriptors)
 ```
 
-### Parameters
+### پارامترها
 
 - `family`
-  - : Specifies a font family name that can be used to match against this font face when styling elements.
-
-    Takes the same type of values as the {{cssxref("@font-face/font-family", "font-family")}} descriptor of {{cssxref("@font-face")}}.
-    This value may also be read and set using the [`FontFace.family`](/en-US/docs/Web/API/FontFace/family) property.
+  - : یک نام خانوادگی فونت را مشخص می‌کند که می‌توان برای تطبیق با این font face (چهره فونت) هنگام استایل‌دهی عناصر استفاده کرد. همان نوع مقادیر توصیف‌کننده‌ی {{cssxref("@font-face/font-family", "font-family")}} در {{cssxref("@font-face")}} را می‌پذیرد. این مقدار را می‌توان با استفاده از ویژگی [`FontFace.family`](/en-US/docs/Web/API/FontFace/family) نیز خواند و تنظیم کرد.
 
 - `source`
-  - : The font source.
-    This can be either:
-    - A URL to a font face file.
-    - Binary font face data in an [`ArrayBuffer`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) or a [`TypedArray`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray).
+  - : منبع فونت. این می‌تواند یکی از موارد زیر باشد:
+    - یک URL به یک فایل فونت.
+    - داده‌های باینری فونت در یک [`ArrayBuffer`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) یا یک [`TypedArray`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray).
 
 - `descriptors` {{optional_inline}}
-  - : A set of optional descriptors passed as an object.
-    It can contain any of the descriptors available for `@font-face`:
+  - : مجموعه‌ای از توصیف‌کننده‌های اختیاری که به صورت یک شیء ارسال می‌شوند. می‌تواند هر یک از توصیف‌کننده‌های موجود برای `@font-face` را شامل شود:
     - `ascentOverride`
-      - : With an allowable value for {{cssxref("@font-face/ascent-override")}}.
+      - : با یک مقدار مجاز برای {{cssxref("@font-face/ascent-override")}}.
     - `descentOverride`
-      - : With an allowable value for {{cssxref("@font-face/descent-override")}}.
+      - : با یک مقدار مجاز برای {{cssxref("@font-face/descent-override")}}.
     - `display`
-      - : With an allowable value for {{cssxref("@font-face/font-display")}}.
+      - : با یک مقدار مجاز برای {{cssxref("@font-face/font-display")}}.
     - `featureSettings`
-      - : With an allowable value for {{cssxref("font-feature-settings")}}.
+      - : با یک مقدار مجاز برای {{cssxref("font-feature-settings")}}.
     - `lineGapOverride`
-      - : With an allowable value for {{cssxref("@font-face/line-gap-override")}}.
+      - : با یک مقدار مجاز برای {{cssxref("@font-face/line-gap-override")}}.
     - `stretch`
-      - : With an allowable value for {{cssxref("@font-face/font-stretch")}}.
+      - : با یک مقدار مجاز برای {{cssxref("@font-face/font-stretch")}}.
     - `style`
-      - : With an allowable value for {{cssxref("@font-face/font-style")}}.
+      - : با یک مقدار مجاز برای {{cssxref("@font-face/font-style")}}.
     - `unicodeRange`
-      - : With an allowable value for {{cssxref("@font-face/unicode-range")}}.
+      - : با یک مقدار مجاز برای {{cssxref("@font-face/unicode-range")}}.
     - `variationSettings`
-      - : With an allowable value for {{cssxref("@font-face/font-variation-settings")}}.
+      - : با یک مقدار مجاز برای {{cssxref("@font-face/font-variation-settings")}}.
     - `weight`
-      - : With an allowable value for {{cssxref("@font-face/font-weight")}}.
+      - : با یک مقدار مجاز برای {{cssxref("@font-face/font-weight")}}.
 
-### Exceptions
+### استثناها
 
 - `SyntaxError` {{domxref("DOMException")}}
-  - : Thrown when a descriptor string does not match the grammar of the corresponding {{cssxref("@font-face")}} descriptor, or the specified binary source cannot be loaded.
-    This error results in {{domxref("FontFace.status")}} being set to `error`.
+  - : زمانی پرتاب می‌شود که یک رشته‌ی توصیف‌کننده با دستور زبان توصیف‌کننده‌ی متناظر {{cssxref("@font-face")}} مطابقت نداشته باشد، یا منبع باینری مشخص‌شده قابل بارگیری نباشد. این خطا باعث می‌شود {{domxref("FontFace.status")}} روی `error` تنظیم شود.
 
-## Examples
+## مثال‌ها
 
 ```js
 async function loadFonts() {
@@ -85,14 +69,14 @@ async function loadFonts() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{cssxref("@font-face")}}
