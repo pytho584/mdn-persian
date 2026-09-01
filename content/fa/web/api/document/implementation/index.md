@@ -1,11 +1,5 @@
 ---
 title: "Document: implementation property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/implementation"
-status: "needs-translation"
----
-
----
-title: "Document: implementation property"
 short-title: implementation
 slug: Web/API/Document/implementation
 page-type: web-api-instance-property
@@ -14,14 +8,13 @@ browser-compat: api.Document.implementation
 
 {{ ApiRef("DOM") }}
 
-The **`Document.implementation`** property returns a
-{{domxref("DOMImplementation")}} object associated with the current document.
+ویژگی **`Document.implementation`** یک شیء {{domxref("DOMImplementation")}} مرتبط با سند فعلی را بازمی‌گرداند.
 
-## Value
+## مقدار
 
-A {{domxref("DOMImplementation")}} object.
+یک شیء {{domxref("DOMImplementation")}}.
 
-## Examples
+## مثال‌ها
 
 ```js
 const modName = "HTML";
@@ -34,22 +27,16 @@ console.log(`DOM ${modName} ${modVer} supported?: ${conformTest}`);
 ```
 
 > [!WARNING]
-> Do not use this for feature detection. The `hasFeature()` method always returns true.
+> از این ویژگی برای تشخیص قابلیت‌ها استفاده نکنید. متد `hasFeature()` همیشه `true` برمی‌گرداند.
 
-## Notes
+## نکات
 
-The W3C's DOM Level 1 Recommendation only specified the `hasFeature` method,
-which is one way to determine if a DOM module is supported by a browser (see example
-above and [What does your user agent claim to support?](https://www.w3.org/2003/02/06-dom-support.html)). If available, other `DOMImplementation`
-methods provide services for controlling things outside of a single document. For
-example, the `DOMImplementation` interface includes a
-`createDocumentType` method with which DTDs can be created for one or more
-documents managed by the implementation.
+توصیه‌نامه سطح ۱ DOM کنسرسیوم جهانی وب فقط متد `hasFeature` را مشخص کرده بود؛ این متد یکی از راه‌های تعیین این است که آیا یک ماژول DOM توسط مرورگر پشتیبانی می‌شود یا خیر (به مثال بالا و [What does your user agent claim to support?](https://www.w3.org/2003/02/06-dom-support.html) مراجعه کنید). در صورت در دسترس بودن، سایر متدهای `DOMImplementation` خدماتی برای کنترل موارد خارج از یک سند واحد فراهم می‌کنند. برای مثال، رابط `DOMImplementation` شامل متد `createDocumentType` است که با آن می‌توان DTDها را برای یک یا چند سند مدیریت‌شده توسط آن پیاده‌سازی ایجاد کرد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
