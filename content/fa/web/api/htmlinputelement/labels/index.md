@@ -1,11 +1,5 @@
 ---
 title: "HTMLInputElement: labels property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/labels"
-status: "needs-translation"
----
-
----
-title: "HTMLInputElement: labels property"
 short-title: labels
 slug: Web/API/HTMLInputElement/labels
 page-type: web-api-instance-property
@@ -14,17 +8,13 @@ browser-compat: api.HTMLInputElement.labels
 
 {{APIRef("DOM")}}
 
-The **`HTMLInputElement.labels`** read-only property returns a
-{{domxref("NodeList")}} of the {{HTMLElement("label")}} elements associated with the
-{{HTMLElement("input")}} element, if the element is not hidden. If the element has the
-type `hidden`, the property returns `null`.
+ویژگی فقط‌خواندنی **`HTMLInputElement.labels`** یک {{domxref("NodeList")}} از عناصر {{HTMLElement("label")}} مرتبط با عنصر {{HTMLElement("input")}} را برمی‌گرداند، به شرطی که عنصر مخفی نباشد. اگر نوع عنصر `hidden` باشد، این ویژگی `null` را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A {{domxref("NodeList")}} containing the `<label>` elements associated
-with the `<input>` element.
+یک {{domxref("NodeList")}} شامل عناصر `<label>` که با عنصر `<input>` مرتبط هستند.
 
-## Examples
+## مثال‌ها
 
 ### HTML
 
@@ -45,10 +35,10 @@ for (const label of input.labels) {
 
 {{EmbedLiveSample("Examples", "100%", 30)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
