@@ -1,9 +1,4 @@
----
-title: "GPUCompilationMessage: type property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUCompilationMessage/type"
-status: "needs-translation"
----
-
+```markdown
 ---
 title: "GPUCompilationMessage: type property"
 short-title: type
@@ -14,21 +9,20 @@ browser-compat: api.GPUCompilationMessage.type
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`type`** read-only property of the
-{{domxref("GPUCompilationMessage")}} interface is an enumerated value representing the type of the message. Each type represents a different severity level.
+ویژگی فقط‌خواندنی **`type`** از رابط {{domxref("GPUCompilationMessage")}} یک مقدار شمارشی است که نوع پیام را نشان می‌دهد. هر نوع نشان‌دهنده سطحی از شدت است.
 
-## Value
+## مقدار
 
-An enumerated value. Possible values are:
+یک مقدار شمارشی. مقادیر ممکن عبارتند از:
 
 - `"error"`
-  - : A shader-creation error, which stops successful compilation.
+  - : یک خطای ایجاد شیدر که کامپایل موفق را متوقف می‌کند.
 - `"info"`
-  - : A purely informative message, which is low severity.
+  - : یک پیام صرفاً اطلاعاتی که شدت پایینی دارد.
 - `"warning"`
-  - : A warning about an issue that will not stop successful compilation, but merits attention by the developer. An example is usage of deprecated functions or syntax.
+  - : هشداری در مورد یک مشکل که کامپایل موفق را متوقف نمی‌کند اما نیازمند توجه توسعه‌دهنده است. نمونه‌اش استفاده از توابع یا نحو منسوخ است.
 
-## Examples
+## مثال‌ها
 
 ```js
 const shaderModule = device.createShaderModule({
@@ -40,16 +34,17 @@ const firstMessage = shaderInfo.messages[0];
 console.log(firstMessage.type);
 ```
 
-See the main [`GPUCompilationInfo` page](/en-US/docs/Web/API/GPUCompilationInfo#examples) for a more detailed example.
+برای یک مثال دقیق‌تر به صفحه اصلی [`GPUCompilationInfo`](/en-US/docs/Web/API/GPUCompilationInfo#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- ر[WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+```
