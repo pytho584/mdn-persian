@@ -1,11 +1,5 @@
 ---
 title: "EditContext: attachedElements() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EditContext/attachedElements"
-status: "needs-translation"
----
-
----
-title: "EditContext: attachedElements() method"
 short-title: attachedElements()
 slug: Web/API/EditContext/attachedElements
 page-type: web-api-instance-method
@@ -16,29 +10,29 @@ browser-compat: api.EditContext.attachedElements
 
 {{APIRef("EditContext API")}}{{SeeCompatTable}}
 
-The **`attachedElements()`** method of the {{domxref("EditContext")}} interface returns an {{jsxref("Array")}} that contains only one item. This item is the element that's associated with the `EditContext` object.
+متد **`attachedElements()`** در واسط {{domxref("EditContext")}} یک {{jsxref("Array")}} برمی‌گرداند که فقط یک آیتم دارد. این آیتم عنصری است که با شیء `EditContext` مرتبط شده است.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 attachedElements()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-An {{jsxref("Array")}} containing one {{domxref("HTMLElement")}} object.
+یک {{jsxref("Array")}} شامل یک شیء {{domxref("HTMLElement")}}.
 
-There can only be one element associated to an `EditContext` instance, so the returned array will always contain one element. If the API is extended in the future to support multiple associated elements, the return value will be an array containing multiple elements.
+فقط یک عنصر می‌تواند با یک نمونه `EditContext` مرتبط شود، بنابراین آرایه بازگشتی همیشه فقط یک عنصر خواهد داشت. اگر در آینده این API گسترش یابد تا از چند عنصر مرتبط پشتیبانی کند، مقدار بازگشتی آرایه‌ای شامل چند عنصر خواهد بود.
 
-## Examples
+## مثال‌ها
 
-### Getting the element associated with an `EditContext` instance
+### دریافت عنصر مرتبط با یک نمونه `EditContext`
 
-This example shows how to use the `attachedElements` method to get the element that's associated with an `EditContext` instance.
+این مثال نحوه استفاده از متد `attachedElements` را برای دریافت عنصر مرتبط با یک نمونه `EditContext` نشان می‌دهد.
 
 ```html
 <canvas id="editor-canvas"></canvas>
@@ -53,14 +47,14 @@ const attachedElements = editContext.attachedElements();
 console.log(attachedElements[0] === canvas); // true
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{DOMxRef("EditContext")}} interface it belongs to.
+- واسط {{DOMxRef("EditContext")}} که این متد به آن تعلق دارد.
