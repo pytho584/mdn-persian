@@ -1,11 +1,5 @@
 ---
 title: "CSSStyleSheet: CSSStyleSheet() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleSheet/CSSStyleSheet"
-status: "needs-translation"
----
-
----
-title: "CSSStyleSheet: CSSStyleSheet() constructor"
 short-title: CSSStyleSheet()
 slug: Web/API/CSSStyleSheet/CSSStyleSheet
 page-type: web-api-constructor
@@ -14,44 +8,42 @@ browser-compat: api.CSSStyleSheet.CSSStyleSheet
 
 {{APIRef("CSSOM")}}
 
-The **`CSSStyleSheet()`** constructor creates a new {{domxref("CSSStyleSheet")}} object which represents a single [Stylesheet](/en-US/docs/Glossary/Style_sheet).
+سازندهٔ **`CSSStyleSheet()`** یک شیء جدید {{domxref("CSSStyleSheet")}} می‌سازد که به‌عنوان یک [استایل‌شیت](/en-US/docs/Glossary/Style_sheet) واحد در نظر گرفته می‌شود.
 
-After constructing a stylesheet the {{domxref("CSSStyleSheet.replace()")}}, {{domxref("CSSStyleSheet.replaceSync()")}}, {{domxref("CSSStyleSheet.insertRule()")}}, and {{domxref("CSSStyleSheet.deleteRule()")}} methods can be used to modify the rules of the new stylesheet.
+پس از ساخته‌شدن استایل‌شیت، می‌توان از متدهای {{domxref("CSSStyleSheet.replace()")}}، {{domxref("CSSStyleSheet.replaceSync()")}}، {{domxref("CSSStyleSheet.insertRule()")}} و {{domxref("CSSStyleSheet.deleteRule()")}} برای تغییر قواعد (rules) استایل‌شیت جدید استفاده کرد.
 
-A stylesheet created using this method is referred to as a "constructed stylesheet".
-A constructed stylesheet can be shared between a document and its shadow DOM subtrees using {{domxref("ShadowRoot.adoptedStyleSheets")}} and {{domxref("Document.adoptedStyleSheets")}}.
+به استایل‌شیتی که با استفاده از این متد ساخته می‌شود، «استایل‌شیت ساخته‌شده» (constructed stylesheet) گفته می‌شود. یک استایل‌شیت ساخته‌شده را می‌توان با استفاده از {{domxref("ShadowRoot.adoptedStyleSheets")}} و {{domxref("Document.adoptedStyleSheets")}} بین یک سند و زیردرخت‌های shadow DOM آن به اشتراک گذاشت.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 new CSSStyleSheet()
 new CSSStyleSheet(options)
 ```
 
-### Parameters
+### پارامترها
 
 - `options` {{optional_inline}}
-  - : An object containing the following:
+  - : یک شیء شامل موارد زیر:
     - `baseURL` {{optional_inline}}
-      - : A string containing the `baseURL` used to resolve relative URLs in the stylesheet.
+      - : رشته‌ای حاوی `baseURL` که برای حل‌کردن (resolve) آدرس‌های نسبی در استایل‌شیت استفاده می‌شود.
     - `media` {{optional_inline}}
-      - : A {{domxref("MediaList")}} containing a list of media rules, or a string containing a single rule.
+      - : یک {{domxref("MediaList")}} که شامل فهرستی از قواعد رسانه‌ای است، یا رشته‌ای که شامل یک قاعدهٔ واحد است.
     - `disabled` {{optional_inline}}
-      - : A {{jsxref("Boolean")}} indicating whether the stylesheet is disabled. False by default.
+      - : یک {{jsxref("Boolean")}} که مشخص می‌کند آیا استایل‌شیت غیرفعال است یا نه. به‌طور پیش‌فرض `false` است.
 
-## Examples
+## مثال‌ها
 
-In the following example, a new {{domxref("CSSStyleSheet")}} is constructed with a media rule of `"print"`.
-Printing {{domxref("StyleSheet.media")}} to the console returns a {{domxref("MediaList")}} with a single entry for this print rule.
+در مثال زیر، یک {{domxref("CSSStyleSheet")}} جدید با قاعدهٔ رسانه‌ای `"print"` ساخته می‌شود. چاپ {{domxref("StyleSheet.media")}} در کنسول، یک {{domxref("MediaList")}} با یک ورودی برای این قاعدهٔ چاپ برمی‌گرداند.
 
 ```js
 let stylesheet = new CSSStyleSheet({ media: "print" });
 console.log(stylesheet.media);
 ```
 
-### Sharing stylesheets with a shadow DOM
+### به اشتراک‌گذاشتن استایل‌شیت‌ها با shadow DOM
 
-The code below shows the sheet being constructed and then {{domxref("CSSStyleSheet.replaceSync()")}} is called to add a rule to the sheet.
+کد زیر نشان می‌دهد که استایل‌شیت ساخته می‌شود و سپس {{domxref("CSSStyleSheet.replaceSync()")}} برای افزودن یک قاعده به استایل‌شیت فراخوانی می‌شود.
 
 ```js
 // Create an empty "constructed" stylesheet
@@ -60,7 +52,7 @@ const sheet = new CSSStyleSheet();
 sheet.replaceSync("a { color: red; }");
 ```
 
-We then create a {{domxref("ShadowRoot")}} and pass the sheet object to the {{domxref("ShadowRoot.adoptedStyleSheets")}} property inside an array.
+سپس یک {{domxref("ShadowRoot")}} ساخته و شیء استایل‌شیت را در یک آرایه به ویژگی {{domxref("ShadowRoot.adoptedStyleSheets")}} پاس می‌دهیم.
 
 ```js
 // Create an element in the document and then create a shadow root:
@@ -71,28 +63,26 @@ const shadow = node.attachShadow({ mode: "open" });
 shadow.adoptedStyleSheets = [sheet];
 ```
 
-We can modify the stylesheets after they have been added to the array.
-Below we append a new rule to the same sheet using {{domxref("CSSStyleSheet.insertRule()")}}.
+پس از اضافه‌شدن استایل‌شیت‌ها به آرایه، می‌توان آن‌ها را تغییر داد. در ادامه، یک قاعدهٔ جدید را با استفاده از {{domxref("CSSStyleSheet.insertRule()")}} به همان استایل‌شیت اضافه می‌کنیم.
 
 ```js
 sheet.insertRule("* { background-color: blue; }");
 // The document will now have blue background.
 ```
 
-The same sheet can be shared with multiple shadow subtrees in the same document.
-For more examples see {{domxref("ShadowRoot.adoptedStyleSheets")}}.
+همان استایل‌شیت را می‌توان با چندین زیردرخت shadow در همان سند به اشتراک گذاشت. برای مثال‌های بیشتر، {{domxref("ShadowRoot.adoptedStyleSheets")}} را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Document.adoptedStyleSheets")}}
 - [Constructable Stylesheets](https://web.dev/articles/constructable-stylesheets) (web.dev)
-- [Using the Shadow DOM](/en-US/docs/Web/API/Web_components/Using_shadow_DOM)
+- [استفاده از Shadow DOM](/en-US/docs/Web/API/Web_components/Using_shadow_DOM)
 - [construct-style-sheets-polyfill](https://www.npmjs.com/package/construct-style-sheets-polyfill)
