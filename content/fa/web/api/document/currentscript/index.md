@@ -1,11 +1,5 @@
 ---
 title: "Document: currentScript property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/currentScript"
-status: "needs-translation"
----
-
----
-title: "Document: currentScript property"
 short-title: currentScript
 slug: Web/API/Document/currentScript
 page-type: web-api-instance-property
@@ -14,19 +8,17 @@ browser-compat: api.Document.currentScript
 
 {{APIRef("DOM")}}
 
-The **`Document.currentScript`** property returns the {{HTMLElement("script")}} element whose script is currently being processed and [isn't a JavaScript module](https://github.com/whatwg/html/issues/997). (For modules use [`import.meta`](/en-US/docs/Web/JavaScript/Reference/Operators/import.meta) instead.)
+خاصیت **`Document.currentScript`** عنصر {{HTMLElement("script")}}ای را برمی‌گرداند که اسکریپت آن در حال پردازش است و [یک ماژول جاوااسکریپت نیست](https://github.com/whatwg/html/issues/997). (برای ماژول‌ها به جای آن از [`import.meta`](/en-US/docs/Web/JavaScript/Reference/Operators/import.meta) استفاده کنید.)
 
-It's important to note that this will not reference the {{HTMLElement("script")}}
-element if the code in the script is being called as a callback or event handler; it
-will only reference the element while it's initially being processed.
+توجه به این نکته مهم است که اگر کد موجود در اسکریپت به عنوان یک callback یا کنترل‌کننده رویداد فراخوانی شود، این خاصیت به عنصر {{HTMLElement("script")}} اشاره نخواهد کرد؛ بلکه فقط در زمانی که اسکریپت به صورت اولیه در حال پردازش است به آن عنصر اشاره می‌کند.
 
-## Value
+## مقدار
 
-A {{domxref("HTMLScriptElement")}} or null.
+یک {{domxref("HTMLScriptElement")}} یا null.
 
-## Examples
+## مثال‌ها
 
-This example checks to see if the script is being executed asynchronously:
+این مثال بررسی می‌کند که آیا اسکریپت به صورت ناهمگام (async) اجرا می‌شود یا خیر:
 
 ```js
 if (document.currentScript.async) {
@@ -36,19 +28,19 @@ if (document.currentScript.async) {
 }
 ```
 
-[View Live Examples](https://mdn.dev/archives/media/samples/html/currentScript.html)
+[مشاهده نمونه‌های زنده](https://mdn.dev/archives/media/samples/html/currentScript.html)
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [`import.meta`](/en-US/docs/Web/JavaScript/Reference/Operators/import.meta)
 - {{HTMLElement("script")}}
-- {{DOMxRef("document.afterscriptexecute_event", "afterscriptexecute")}} event of `Document`
-- {{DOMxRef("document.beforescriptexecute_event", "beforescriptexecute")}} event of `Document`
+- رویداد {{DOMxRef("document.afterscriptexecute_event", "afterscriptexecute")}} از `Document`
+- رویداد {{DOMxRef("document.beforescriptexecute_event", "beforescriptexecute")}} از `Document`
