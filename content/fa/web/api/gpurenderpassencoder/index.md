@@ -1,10 +1,4 @@
 ---
-title: "GPURenderPassEncoder"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder"
-status: "needs-translation"
----
-
----
 title: GPURenderPassEncoder
 slug: Web/API/GPURenderPassEncoder
 page-type: web-api-interface
@@ -13,71 +7,66 @@ browser-compat: api.GPURenderPassEncoder
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`GPURenderPassEncoder`** interface of the {{domxref("WebGPU API", "WebGPU API", "", "nocode")}} encodes commands related to controlling the vertex and fragment shader stages, as issued by a {{domxref("GPURenderPipeline")}}. It forms part of the overall encoding activity of a {{domxref("GPUCommandEncoder")}}.
+رابط **`GPURenderPassEncoder`** از {{domxref("WebGPU API", "WebGPU API", "", "nocode")}} دستورات مربوط به کنترل مراحل شیدر رأس و شیدر قطعه را که توسط {{domxref("GPURenderPipeline")}} صادر می‌شوند، رمزگذاری می‌کند. این بخشی از فعالیت کلی رمزگذاری یک {{domxref("GPUCommandEncoder")}} است.
 
-A render pipeline renders graphics to {{domxref("GPUTexture")}} attachments, typically intended for display in a {{htmlelement("canvas")}} element, but it could also render to textures used for other purposes that never appear onscreen. It has two main stages:
+یک خط لوله رندر، گرافیک را به پیوست‌های {{domxref("GPUTexture")}} رندر می‌کند که معمولاً برای نمایش در یک عنصر {{htmlelement("canvas")}} در نظر گرفته شده است، اما می‌تواند به بافت‌هایی که برای اهداف دیگر استفاده می‌شوند و هرگز روی صفحه ظاهر نمی‌شوند نیز رندر کند. این خط لوله دو مرحله اصلی دارد:
 
-- A vertex stage, in which a vertex shader takes positioning data fed into the GPU and uses it to position a series of vertices in 3D space by applying specified effects like rotation, translation, or perspective. The vertices are then assembled into primitives such as triangles (the basic building block of rendered graphics) and rasterized by the GPU to figure out what pixels each one should cover on the drawing canvas.
+- **مرحله رأس**: در این مرحله، یک شیدر رأس داده‌های موقعیت‌دهی وارد شده به GPU را دریافت کرده و با اعمال اثراتی مانند چرخش، انتقال یا پرسپکتیو، از آن برای قرار دادن مجموعه‌ای از رئوس در فضای سه‌بعدی استفاده می‌کند. سپس رئوس به صورت ابتدایی‌هایی مانند مثلث (بلوک ساختمانی اصلی گرافیک رندر شده) مونتاژ شده و توسط GPU شطرنجی می‌شوند تا مشخص شود هر کدام از آن‌ها چه پیکسل‌هایی را روی بوم نقاشی پوشش می‌دهند.
+- **مرحله قطعه**: در این مرحله، یک شیدر قطعه رنگ هر پیکسل تحت پوشش ابتدایی‌های تولید شده توسط شیدر رأس را محاسبه می‌کند. این محاسبات اغلب از ورودی‌هایی مانند تصاویر (به صورت بافت) که جزئیات سطح و موقعیت و رنگ نورهای مجازی را فراهم می‌کنند، استفاده می‌کنند.
 
-- A fragment stage, in which a fragment shader computes the color for each pixel covered by the primitives produced by the vertex shader. These computations frequently use inputs such as images (in the form of textures) that provide surface details and the position and color of virtual lights.
-
-A `GPURenderPassEncoder` object instance is created via the {{domxref("GPUCommandEncoder.beginRenderPass()")}} property.
+یک نمونه شیء `GPURenderPassEncoder` از طریق متد {{domxref("GPUCommandEncoder.beginRenderPass()")}} ایجاد می‌شود.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("GPURenderPassEncoder.label", "label")}}
-  - : A string providing a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+  - : یک رشته که برچسبی را ارائه می‌دهد که می‌تواند برای شناسایی شیء استفاده شود، مثلاً در پیام‌های {{domxref("GPUError")}} یا هشدارهای کنسول.
 
-## Instance methods
+## متدهای نمونه
 
 - {{domxref("GPURenderPassEncoder.beginOcclusionQuery", "beginOcclusionQuery()")}}
-  - : Begins an occlusion query at the specified index of the relevant {{domxref("GPUQuerySet")}} (provided as the value of the `occlusionQuerySet` descriptor property when invoking {{domxref("GPUCommandEncoder.beginRenderPass()")}} to run the render pass).
+  - : یک پرس‌وجوی occlusio را در شاخص مشخص شده از {{domxref("GPUQuerySet")}} مربوطه آغاز می‌کند (که به عنوان مقدار ویژگی توصیف‌کننده `occlusionQuerySet` هنگام فراخوانی {{domxref("GPUCommandEncoder.beginRenderPass()")}} برای اجرای پاس رندر ارائه می‌شود).
 - {{domxref("GPURenderPassEncoder.draw", "draw()")}}
-  - : Draw primitives based on the vertex buffers provided by {{domxref("GPURenderPassEncoder.setVertexBuffer", "setVertexBuffer()")}}.
+  - : ابتدا‌یی‌ها را بر اساس بافرهای رأس ارائه شده توسط {{domxref("GPURenderPassEncoder.setVertexBuffer", "setVertexBuffer()")}} رسم می‌کند.
 - {{domxref("GPURenderPassEncoder.drawIndexed", "drawIndexed()")}}
-  - : Draw indexed primitives based on the vertex and index buffers provided by {{domxref("GPURenderPassEncoder.setVertexBuffer", "setVertexBuffer()")}} and {{domxref("GPURenderPassEncoder.setIndexBuffer", "setIndexBuffer()")}}
+  - : ابتدا‌یی‌های نمایه‌دار را بر اساس بافرهای رأس و نمایه ارائه شده توسط {{domxref("GPURenderPassEncoder.setVertexBuffer", "setVertexBuffer()")}} و {{domxref("GPURenderPassEncoder.setIndexBuffer", "setIndexBuffer()")}} رسم می‌کند.
 - {{domxref("GPURenderPassEncoder.drawIndirect", "drawIndirect()")}}
-  - : Draw primitives using parameters read from a {{domxref("GPUBuffer")}}.
+  - : ابتدا‌یی‌ها را با استفاده از پارامترهای خوانده شده از یک {{domxref("GPUBuffer")}} رسم می‌کند.
 - {{domxref("GPURenderPassEncoder.drawIndexedIndirect", "drawIndexedIndirect()")}}
-  - : Draw indexed primitives using parameters read from a {{domxref("GPUBuffer")}}.
-
+  - : ابتدا‌یی‌های نمایه‌دار را با استفاده از پارامترهای خوانده شده از یک {{domxref("GPUBuffer")}} رسم می‌کند.
 - {{domxref("GPURenderPassEncoder.end", "end()")}}
-  - : Completes recording of the current render pass command sequence.
+  - : ثبت توالی دستورات پاس رندر فعلی را تکمیل می‌کند.
 - {{domxref("GPURenderPassEncoder.endOcclusionQuery", "endOcclusionQuery()")}}
-  - : Ends an active occlusion query previously started with {{domxref("GPURenderPassEncoder.beginOcclusionQuery", "beginOcclusionQuery()")}}.
+  - : یک پرس‌وجوی occlusio فعال را که قبلاً با {{domxref("GPURenderPassEncoder.beginOcclusionQuery", "beginOcclusionQuery()")}} شروع شده بود، پایان می‌دهد.
 - {{domxref("GPURenderPassEncoder.executeBundles", "executeBundles()")}}
-  - : Executes commands previously recorded into the referenced {{domxref("GPURenderBundle")}}s, as part of this render pass.
+  - : دستوراتی را که قبلاً در {{domxref("GPURenderBundle")}}های ارجاع داده شده ثبت شده‌اند، به عنوان بخشی از این پاس رندر اجرا می‌کند.
 - {{domxref("GPURenderPassEncoder.insertDebugMarker", "insertDebugMarker()")}}
-  - : Marks a specific point in a series of encoded commands with a label.
+  - : یک نقطه خاص در یک سری از دستورات رمزگذاری شده را با یک برچسب علامت‌گذاری می‌کند.
 - {{domxref("GPURenderPassEncoder.popDebugGroup", "popDebugGroup()")}}
-  - : Ends a debug group, which is begun with a {{domxref("GPURenderPassEncoder.pushDebugGroup", "pushDebugGroup()")}} call.
+  - : یک گروه دیباگ را که با فراخوانی {{domxref("GPURenderPassEncoder.pushDebugGroup", "pushDebugGroup()")}} شروع شده است، پایان می‌دهد.
 - {{domxref("GPURenderPassEncoder.pushDebugGroup", "pushDebugGroup()")}}
-  - : Begins a debug group, which is marked with a specified label, and will contain all subsequent encoded commands up until a {{domxref("GPURenderPassEncoder.popDebugGroup", "popDebugGroup()")}} method is invoked.
+  - : یک گروه دیباگ را شروع می‌کند که با یک برچسب مشخص علامت‌گذاری شده است و تمام دستورات رمزگذاری شده بعدی را تا زمانی که متد {{domxref("GPURenderPassEncoder.popDebugGroup", "popDebugGroup()")}} فراخوانی شود، در خود جای می‌دهد.
 - {{domxref("GPURenderPassEncoder.setBindGroup", "setBindGroup()")}}
-  - : Sets the {{domxref("GPUBindGroup")}} to use for subsequent render commands, for a given index.
+  - : {{domxref("GPUBindGroup")}} را برای استفاده در دستورات رندر بعدی، برای یک شاخص معین تنظیم می‌کند.
 - {{domxref("GPURenderPassEncoder.setBlendConstant", "setBlendConstant()")}}
-  - : Sets the constant blend color and alpha values used with `"constant"` and `"one-minus-constant"` blend factors (as set in the descriptor of the {{domxref("GPUDevice.createRenderPipeline()")}} method, in the `blend` property).
-
+  - : رنگ ثابت blend و مقادیر آلفا را که با فاکتورهای blend `"constant"` و `"one-minus-constant"` استفاده می‌شوند، تنظیم می‌کند (همانطور که در توصیف‌کننده متد {{domxref("GPUDevice.createRenderPipeline()")}}، در ویژگی `blend` تنظیم شده است).
 - {{domxref("GPURenderPassEncoder.setIndexBuffer", "setIndexBuffer()")}}
-  - : Sets the current {{domxref("GPUBuffer")}} that will provide index data for subsequent drawing commands.
-
+  - : {{domxref("GPUBuffer")}} فعلی را که داده‌های نمایه را برای دستورات رسم بعدی فراهم می‌کند، تنظیم می‌کند.
 - {{domxref("GPURenderPassEncoder.setPipeline", "setPipeline()")}}
-  - : Sets the {{domxref("GPURenderPipeline")}} to use for this render pass.
+  - : {{domxref("GPURenderPipeline")}} را برای استفاده در این پاس رندر تنظیم می‌کند.
 - {{domxref("GPURenderPassEncoder.setScissorRect", "setScissorRect()")}}
-  - : Sets the scissor rectangle used during the rasterization stage. After transformation into viewport coordinates any fragments that fall outside the scissor rectangle will be discarded.
+  - : مستطیل قیچی (scissor) را که در مرحله شطرنجی‌سازی استفاده می‌شود، تنظیم می‌کند. پس از تبدیل به مختصات viewport، هر قطعه‌ای که خارج از مستطیل قیچی قرار گیرد، دور انداخته می‌شود.
 - {{domxref("GPURenderPassEncoder.setStencilReference", "setStencilReference()")}}
-  - : Sets the stencil reference value using during stencil tests with the `"replace"` stencil operation (as set in the descriptor of the {{domxref("GPUDevice.createRenderPipeline()")}} method, in the properties defining the various stencil operations).
-
+  - : مقدار مرجع stencil را که در طول تست‌های stencil با عملیات stencil `"replace"` استفاده می‌شود، تنظیم می‌کند (همانطور که در توصیف‌کننده متد {{domxref("GPUDevice.createRenderPipeline()")}}، در ویژگی‌های تعریف‌کننده عملیات مختلف stencil تنظیم شده است).
 - {{domxref("GPURenderPassEncoder.setVertexBuffer", "setVertexBuffer()")}}
-  - : Sets or unsets the current {{domxref("GPUBuffer")}} that will provide vertex data for subsequent drawing commands.
+  - : {{domxref("GPUBuffer")}} فعلی را که داده‌های رأس را برای دستورات رسم بعدی فراهم می‌کند، تنظیم یا لغو تنظیم می‌کند.
 - {{domxref("GPURenderPassEncoder.setViewport", "setViewport()")}}
-  - : Sets the viewport used during the rasterization stage to linearly map from normalized device coordinates to viewport coordinates.
+  - : viewport مورد استفاده در مرحله شطرنجی‌سازی را برای نگاشت خطی از مختصات دستگاه نرمال‌شده به مختصات viewport تنظیم می‌کند.
 
-## Examples
+## مثال‌ها
 
-In our [basic render demo](https://mdn.github.io/dom-examples/webgpu-render-demo/), several commands are recorded via a {{domxref("GPUCommandEncoder")}}. Most of these commands originate from the `GPURenderPassEncoder` created via {{domxref("GPUCommandEncoder.beginRenderPass()")}}.
+در [نمایش رندر پایه](https://mdn.github.io/dom-examples/webgpu-render-demo/) ما، چندین دستور از طریق یک {{domxref("GPUCommandEncoder")}} ثبت می‌شوند. بیشتر این دستورات از `GPURenderPassEncoder` ایجاد شده از طریق {{domxref("GPUCommandEncoder.beginRenderPass()")}} نشأت می‌گیرند.
 
 ```js
 // …
@@ -124,6 +113,6 @@ device.queue.submit([commandEncoder.finish()]);
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
