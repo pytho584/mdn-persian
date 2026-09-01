@@ -1,11 +1,5 @@
 ---
 title: "CustomElementRegistry: upgrade() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/upgrade"
-status: "needs-translation"
----
-
----
-title: "CustomElementRegistry: upgrade() method"
 short-title: upgrade()
 slug: Web/API/CustomElementRegistry/upgrade
 page-type: web-api-instance-method
@@ -14,42 +8,38 @@ browser-compat: api.CustomElementRegistry.upgrade
 
 {{APIRef("Web Components")}}
 
-The **`upgrade()`** method of the
-{{domxref("CustomElementRegistry")}} interface upgrades all shadow-containing custom
-elements in a {{domxref("Node")}} subtree, even before they are connected to the main
-document.
+متد **`upgrade()`** از رابط {{domxref("CustomElementRegistry")}} تمام عناصر سفارشی که دارای سایه (shadow) هستند را در یک زیردرخت {{domxref("Node")}} ارتقا می‌دهد، حتی پیش از آنکه به سند اصلی متصل شوند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 upgrade(root)
 ```
 
-### Parameters
+### پارامترها
 
 - `root`
-  - : A {{domxref("Node")}} instance with shadow-containing descendant elements to upgrade. If there are no descendant elements that can be upgraded, no error is
-    thrown.
+  - : یک نمونه از {{domxref("Node")}} که شامل عناصر نزولی دارای سایه برای ارتقا است. اگر هیچ عنصر نزولی قابل ارتقایی وجود نداشته باشد، خطایی پرتاب نمی‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-## Description
+## توضیحات
 
-When an HTML element is parsed or created, it may use a tag name that corresponds to a [custom element](/en-US/docs/Web/API/Web_components/Using_custom_elements) (e.g., `<my-element>`). If the custom element's class has not yet been registered with the appropriate {{domxref("CustomElementRegistry")}} at the time the element is created, the element exists as an undefined, plain {{domxref("HTMLElement")}}. It looks and behaves like any unknown element — it has no special behavior, lifecycle callbacks, or custom prototype methods.
+هنگامی که یک عنصر HTML تجزیه یا ایجاد می‌شود، ممکن است از یک نام برچسب استفاده کند که منطبق با یک [عنصر سفارشی](/en-US/docs/Web/API/Web_components/Using_custom_elements) است (مانند `<my-element>`). اگر کلاس عنصر سفارشی در زمان ایجاد عنصر هنوز در {{domxref("CustomElementRegistry")}} مناسب ثبت نشده باشد، عنصر به عنوان یک {{domxref("HTMLElement")}} تعریف‌نشده و ساده وجود دارد. این عنصر مانند هر عنصر ناشناخته‌ای ظاهر و رفتار می‌کند – هیچ رفتار خاصی، فراخوان‌های چرخه حیات یا متدهای نمونه اولیه سفارشی ندارد.
 
-**Upgrading** is the process of retroactively promoting such an element to a full-fledged custom element once its definition becomes available. When an element is upgraded:
+**ارتقا** فرآیند ارتقای پس‌نگرانه چنین عنصری به یک عنصر سفارشی کامل است، زمانی که تعریف آن در دسترس قرار می‌گیرد. هنگامی که یک عنصر ارتقا می‌یابد:
 
-1. Its prototype is swapped to the custom element class that was registered with {{domxref("CustomElementRegistry.define()", "define()")}}.
-2. Its {{domxref("HTMLElement/connectedCallback", "connectedCallback()")}} and any other applicable [lifecycle callbacks](/en-US/docs/Web/API/Web_components/Using_custom_elements#custom_element_lifecycle_callbacks) are invoked.
-3. If the class defines {{domxref("HTMLElement/observedAttributes", "observedAttributes")}}, the {{domxref("HTMLElement/attributeChangedCallback", "attributeChangedCallback()")}} is called for each attribute that already has a value.
+1. نمونه اولیه (prototype) آن به کلاس عنصر سفارشی که با {{domxref("CustomElementRegistry.define()", "define()")}} ثبت شده است، تغییر می‌یابد.
+2. {{domxref("HTMLElement/connectedCallback", "connectedCallback()")}} و هر فراخوان چرخه حیات [دیگر](/en-US/docs/Web/API/Web_components/Using_custom_elements#custom_element_lifecycle_callbacks) که قابل اعمال است، فراخوانی می‌شود.
+3. اگر کلاس {{domxref("HTMLElement/observedAttributes", "observedAttributes")}} را تعریف کند، {{domxref("HTMLElement/attributeChangedCallback", "attributeChangedCallback()")}} برای هر ویژگی که قبلاً مقدار دارد، فراخوانی می‌شود.
 
-Normally, elements are upgraded automatically when their definition is registered via `define()`, but only if they are already connected to the document. The `upgrade()` method is useful when you need to upgrade elements that exist in a disconnected DOM subtree (for example, elements created via {{domxref("Document.createElement()")}} or parsed into a {{domxref("DocumentFragment")}}) before they are inserted into the document.
+به طور معمول، عناصر به طور خودکار هنگامی که تعریف آنها از طریق `define()` ثبت می‌شود، ارتقا می‌یابند، اما تنها در صورتی که قبلاً به سند متصل باشند. متد `upgrade()` زمانی مفید است که نیاز به ارتقای عناصری دارید که در یک زیردرخت DOM غیرمتصل وجود دارند (به عنوان مثال، عناصری که از طریق {{domxref("Document.createElement()")}} ایجاد شده‌اند یا در یک {{domxref("DocumentFragment")}} تجزیه شده‌اند) پیش از آنکه به سند وارد شوند.
 
-## Examples
+## مثال‌ها
 
-Taken from the [HTML spec](https://html.spec.whatwg.org/multipage/custom-elements.html#dom-customelementregistry-upgrade):
+برگرفته از [مشخصات HTML](https://html.spec.whatwg.org/multipage/custom-elements.html#dom-customelementregistry-upgrade):
 
 ```js
 const el = document.createElement("spider-man");
@@ -57,16 +47,16 @@ const el = document.createElement("spider-man");
 class SpiderMan extends HTMLElement {}
 customElements.define("spider-man", SpiderMan);
 
-console.assert(!(el instanceof SpiderMan)); // not yet upgraded
+console.assert(!(el instanceof SpiderMan)); // هنوز ارتقا نیافته است
 
 customElements.upgrade(el);
-console.assert(el instanceof SpiderMan); // upgraded!
+console.assert(el instanceof SpiderMan); // اکنون ارتقا یافته است!
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
