@@ -1,10 +1,4 @@
 ---
-title: "Geolocation"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Geolocation"
-status: "needs-translation"
----
-
----
 title: Geolocation
 slug: Web/API/Geolocation
 page-type: web-api-interface
@@ -13,36 +7,36 @@ browser-compat: api.Geolocation
 
 {{securecontext_header}}{{APIRef("Geolocation API")}}
 
-The **`Geolocation`** interface represents an object able to obtain the position of the device programmatically. It gives Web content access to the location of the device. This allows a website or app to offer customized results based on the user's location.
+رابطِ **`Geolocation`** شیئی را نشان می‌دهد که می‌تواند موقعیت دستگاه را به صورت برنامه‌نویسی به دست آورد. این رابط به محتوای وب امکان دسترسی به موقعیت دستگاه را می‌دهد. این امکان به وب‌سایت‌ها یا اپلیکیشن‌ها اجازه می‌دهد تا بر اساس موقعیت کاربر، نتایج سفارشی ارائه دهند.
 
-An object with this interface is obtained using the {{domxref("navigator.geolocation")}} property implemented by the {{domxref("Navigator")}} object.
+یک شیء با این رابط از طریق ویژگیِ {{domxref("navigator.geolocation")}} که توسط شیء {{domxref("Navigator")}} پیاده‌سازی شده است، به دست می‌آید.
 
 > [!NOTE]
-> For security reasons, when a web page tries to access location information, the user is notified and asked to grant permission. Be aware that each browser has its own policies and methods for requesting this permission.
+> به دلایل امنیتی، وقتی یک صفحه وب تلاش می‌کند به اطلاعات موقعیت مکانی دسترسی پیدا کند، به کاربر اطلاع داده می‌شود و از او اجازه خواسته می‌شود. توجه داشته باشید که هر مرورگر سیاست‌ها و روش‌های خاص خود را برای درخواست این اجازه دارد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_The `Geolocation` interface neither implements, nor inherits any property._
+_رابطِ `Geolocation` هیچ ویژگی‌ای را پیاده‌سازی نمی‌کند و هیچ ویژگی‌ای را به ارث نمی‌برد._
 
-## Instance methods
+## متدهای نمونه
 
-_The `Geolocation` interface doesn't inherit any method._
+_رابطِ `Geolocation` هیچ متدی را به ارث نمی‌برد._
 
 - {{domxref("Geolocation.getCurrentPosition()")}}
-  - : Determines the device's current location and gives back a {{domxref("GeolocationPosition")}} object with the data.
+  - : موقعیت فعلی دستگاه را تعیین می‌کند و یک شیء {{domxref("GeolocationPosition")}} شامل داده‌های موقعیت را بازمی‌گرداند.
 - {{domxref("Geolocation.watchPosition()")}}
-  - : Returns a `long` value representing the newly established callback function to be invoked whenever the device location changes.
+  - : یک مقدار `long` بازمی‌گرداند که نشان‌دهندهٔ تابع بازخوانی (callback) تازه‌ثبت‌شده‌ای است که هر بار موقعیت دستگاه تغییر کند، فراخوانی می‌شود.
 - {{domxref("Geolocation.clearWatch()")}}
-  - : Removes the particular handler previously installed using `watchPosition()`.
+  - : هندلر مشخصی را که قبلاً با `watchPosition()` نصب شده بود حذف می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using geolocation](/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API)
+- [استفاده از موقعیت‌یابی جغرافیایی](/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API)
