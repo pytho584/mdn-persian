@@ -1,11 +1,5 @@
 ---
 title: "DOMPointReadOnly: x property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMPointReadOnly/x"
-status: "needs-translation"
----
-
----
-title: "DOMPointReadOnly: x property"
 short-title: x
 slug: Web/API/DOMPointReadOnly/x
 page-type: web-api-instance-property
@@ -14,30 +8,22 @@ browser-compat: api.DOMPointReadOnly.x
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The **`DOMPointReadOnly`** interface's
-**`x`** property holds the horizontal coordinate, x, for a
-read-only point in space. This property cannot be changed by JavaScript code in this
-read-only version of the `DOMPoint` object.
+خاصیت **`x`** در رابط **`DOMPointReadOnly`**، مختصات افقی (x) را برای یک نقطه‌ی فقط‌خواندنی در فضا نگه می‌دارد. در این نسخه‌ی فقط‌خواندنی از شیء `DOMPoint`، این خاصیت توسط کدهای جاوااسکریپت قابل تغییر نیست.
 
-In general, positive values `x` mean to the right, and negative values of
-`x` means to the left, assuming no transforms have resulted in a reversal.
+به‌طور کلی، مقادیر مثبت `x` به معنای حرکت به سمت راست و مقادیر منفی `x` به معنای حرکت به سمت چپ هستند، به شرطی که هیچ تبدیلی باعث وارونگی نشده باشد.
 
-## Value
+## مقدار
 
-A double-precision floating-point value indicating the x coordinate's value for the
-point. This value is **unrestricted**, meaning that it is allowed to be
-infinite or invalid (that is, its value may be {{jsxref("NaN")}} or {{jsxref("Infinity", "±Infinity")}}).
+یک عدد ممیز شناور با دقت دوبرابر که مقدار مختصات x را برای نقطه نشان می‌دهد. این مقدار **نامحدود** است، یعنی می‌تواند بینهایت یا نامعتبر باشد (مقدار آن می‌تواند {{jsxref("NaN")}} یا {{jsxref("Infinity", "±Infinity")}} باشد).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The other coordinate properties: {{domxref("DOMPointReadOnly.y", "y")}},
-  {{domxref("DOMPointReadOnly.z", "z")}}, and the perspective value,
-  {{domxref("DOMPointReadOnly.w", "w")}}.
+- سایر خاصیت‌های مختصات: {{domxref("DOMPointReadOnly.y", "y")}}، {{domxref("DOMPointReadOnly.z", "z")}} و مقدار پرسپکتیو، {{domxref("DOMPointReadOnly.w", "w")}}.
