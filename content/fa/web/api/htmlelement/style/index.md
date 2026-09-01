@@ -1,11 +1,5 @@
 ---
 title: "HTMLElement: style property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style"
-status: "needs-translation"
----
-
----
-title: "HTMLElement: style property"
 short-title: style
 slug: Web/API/HTMLElement/style
 page-type: web-api-instance-property
@@ -14,51 +8,45 @@ browser-compat: api.HTMLElement.style
 
 {{APIRef("CSSOM")}}
 
-The read-only **`style`** property of the {{domxref("HTMLElement")}} interface returns the _inline_ [`style`](/en-US/docs/Web/HTML/Reference/Global_attributes/style) of an element in the form of a live {{domxref("CSSStyleProperties")}} object.
-This object can be used to get and set the inline styles of an element.
+ویژگی فقط-خواندنی **`style`** در رابط {{domxref("HTMLElement")}}، شیوه‌نامه‌ی _درون‌خطی_ (inline) [`style`](/en-US/docs/Web/HTML/Reference/Global_attributes/style) یک عنصر را به صورت یک شیء زنده از نوع {{domxref("CSSStyleProperties")}} بازمی‌گرداند. از این شیء می‌توان برای دریافت و تنظیم شیوه‌های درون‌خطی یک عنصر استفاده کرد.
 
-## Value
+## مقدار
 
-A live {{domxref("CSSStyleProperties")}} object.
-
-> [!NOTE]
-> Earlier versions of the specification returned a {{domxref("CSSStyleDeclaration")}} (from which {{domxref("CSSStyleProperties")}} is derived).
-> See the [browser compatibility](#browser_compatibility) table for browser support information.
-
-Although the `style` property itself is read-only in the sense that you can't replace the `CSSStyleProperties` object, you can still assign to the `style` property directly, which is equivalent to assigning to its {{domxref("CSSStyleDeclaration/cssText", "cssText")}} property. You can also modify the `CSSStyleProperties` object using the {{domxref("CSSStyleDeclaration/setProperty", "setProperty()")}} and {{domxref("CSSStyleDeclaration/removeProperty", "removeProperty()")}} methods.
-
-## Description
-
-The values of the inline styles set in the element's [`style`](/en-US/docs/Web/HTML/Reference/Global_attributes/style) attribute are reflected by corresponding properties of the returned {{domxref("CSSStyleProperties")}} object.
+یک شیء زنده از نوع {{domxref("CSSStyleProperties")}}.
 
 > [!NOTE]
-> {{domxref("CSSStyleProperties")}} has dash-named and corresponding {{Glossary("camel_case", "camel-case")}} named properties for **all** [CSS properties](/en-US/docs/Web/CSS/Reference/Properties) supported by the browser (not just those with inline styles).
-> Properties that don't have a corresponding inline style are set to `""`.
+> نسخه‌های قدیمی‌تر مشخصات، یک {{domxref("CSSStyleDeclaration")}} (که {{domxref("CSSStyleProperties")}} از آن مشتق شده است) را بازمی‌گرداندند.
+> برای اطلاعات پشتیبانی مرورگرها، جدول [سازگاری مرورگر](#سازگاری_مرورگر) را ببینید.
 
-Shorthand CSS properties of the element are expanded to their corresponding long-form properties.
-For example, an element with style `"border-top: 1px solid black"` would be represented in the returned object by properties with the names {{cssxref("border-top")}} and `borderTop`, and the corresponding longhand properties {{cssxref("border-top-color")}} and `borderTopColor`, {{cssxref("border-top-style")}} and `borderTopStyle`, and {{cssxref("border-top-width")}} and `borderTopWidth`.
+اگرچه خود ویژگی `style` فقط-خواندنی است (به این معنا که نمی‌توانید شیء `CSSStyleProperties` را جایگزین کنید)، اما همچنان می‌توانید مستقیماً به ویژگی `style` مقداردهی کنید که معادل مقداردهی به ویژگی {{domxref("CSSStyleDeclaration/cssText", "cssText")}} آن است. همچنین می‌توانید شیء `CSSStyleProperties` را با استفاده از روش‌های {{domxref("CSSStyleDeclaration/setProperty", "setProperty()")}} و {{domxref("CSSStyleDeclaration/removeProperty", "removeProperty()")}} تغییر دهید.
 
-To add specific styles to an element without altering other style values, it is generally preferable to set individual properties on the {{domxref("CSSStyleProperties")}} object.
-For example, you can write `element.style.backgroundColor = "red"`.
-A style declaration is reset by setting it to `null` or an empty string, e.g., `element.style.color = null`.
+## توضیحات
 
-The `style` property has the same priority in the CSS cascade as an inline style declaration set via the `style` attribute.
+مقادیر شیوه‌های درون‌خطی تنظیم‌شده در ویژگی [`style`](/en-US/docs/Web/HTML/Reference/Global_attributes/style) عنصر، توسط ویژگی‌های متناظر در شیء برگشتی {{domxref("CSSStyleProperties")}} بازتاب داده می‌شوند.
 
-## Examples
+> [!NOTE]
+> {{domxref("CSSStyleProperties")}} دارای ویژگی‌های نام‌گذاری‌شده با خط تیره و همچنین نام‌گذاری‌شده با الگوی {{Glossary("camel_case", "camelCase")}} برای **تمام** ویژگی‌های [CSS](/en-US/docs/Web/CSS/Reference/Properties) پشتیبانی‌شده توسط مرورگر است (نه فقط آنهایی که شیوه درون‌خطی دارند). ویژگی‌هایی که شیوه درون‌خطی متناظر ندارند، روی `""` تنظیم می‌شوند.
 
-### Basic usage
+ویژگی‌های CSS کوتاه‌نویس (shorthand) یک عنصر به ویژگی‌های بلندنویس (longhand) متناظر خود گسترش می‌یابند. برای مثال، یک عنصر با شیوه `"border-top: 1px solid black"` در شیء برگشتی با ویژگی‌های دارای نام {{cssxref("border-top")}} و `borderTop`، و همچنین ویژگی‌های بلندنویس متناظر یعنی {{cssxref("border-top-color")}} و `borderTopColor`، {{cssxref("border-top-style")}} و `borderTopStyle`، و {{cssxref("border-top-width")}} و `borderTopWidth` نمایش داده می‌شود.
 
-This code example shows how you can read the inline styles of an element.
-In each case it reads the dash-named style properties using {{DOMxRef("CSSStyleDeclaration/getPropertyPriority", "getPropertyValue()")}} and gets the camel case properties using the dot operator.
+برای افزودن شیوه‌های خاص به یک عنصر بدون تغییر سایر مقادیر شیوه، معمولاً بهتر است ویژگی‌های جداگانه روی شیء {{domxref("CSSStyleProperties")}} تنظیم شوند. برای مثال می‌توانید بنویسید `element.style.backgroundColor = "red"`. یک اعلان شیوه با تنظیم آن به `null` یا یک رشته خالی بازنشانی می‌شود، مانند: `element.style.color = null`.
+
+ویژگی `style` در آبشار CSS همان اولویتی را دارد که یک اعلان شیوه درون‌خطی تنظیم‌شده از طریق ویژگی `style` دارد.
+
+## مثال‌ها
+
+### استفاده پایه
+
+این مثال کد نشان می‌دهد که چگونه می‌توان شیوه‌های درون‌خطی یک عنصر را خواند. در هر مورد، ویژگی‌های شیوه با نام خط تیره‌دار با استفاده از {{DOMxRef("CSSStyleDeclaration/getPropertyPriority", "getPropertyValue()")}} خوانده می‌شوند و ویژگی‌های camelCase با استفاده از عملگر نقطه (dot) دریافت می‌شوند.
 
 #### HTML
 
-First we define a {{htmlelement("div")}} element and nested element that define different inline styles, using both shorthand and longhand form.
+ابتدا یک عنصر {{htmlelement("div")}} و یک عنصر تو در تو تعریف می‌کنیم که شیوه‌های درون‌خطی متفاوتی را با استفاده از هر دو حالت کوتاه‌نویس و بلندنویس تعریف می‌کنند.
 
 ```html
 <div style="font-weight: bold;">
   <div style="border-top: 1px solid blue; color: red;" id="elt">
-    An example div
+    یک div نمونه
   </div>
   <pre id="log"></pre>
 </div>
@@ -83,17 +71,17 @@ function log(text) {
 }
 ```
 
-The following code gets the inner element, reads its style, and logs the dash-named and camel-case named CSS style properties.
+کد زیر عنصر داخلی را دریافت می‌کند، شیوه آن را می‌خواند و ویژگی‌های شیوه CSS با نام خط تیره‌دار و camelCase را ثبت می‌کند.
 
 ```js
 const element = document.getElementById("elt");
 const elementStyle = element.style;
 
-// Longhand styles
+// شیوه‌های بلندنویس
 log(`"border-top" = '${elementStyle.getPropertyValue("border-top")}'`);
 log(`"borderTop" = '${elementStyle.borderTop}'`);
 
-// Expanded longhand styles
+// شیوه‌های بلندنویس گسترش‌یافته
 log(
   `"border-top-width" = '${elementStyle.getPropertyValue("border-top-width")}'`,
 );
@@ -109,39 +97,35 @@ log(
 );
 log(`"borderTopColor" = '${elementStyle.borderTopColor}'`);
 
-// Original shorthand style
+// شیوه کوتاه‌نویس اصلی
 log(`"color" = '${elementStyle.getPropertyValue("color")}'`);
 log(`"color" = '${elementStyle.color}'`);
 
-// Defined on parent
+// تعریف‌شده روی والد
 log(`"font-weight" = '${elementStyle.getPropertyValue("font-weight")}'`);
 log(`"fontWeight" = '${elementStyle.fontWeight}'`);
 ```
 
-#### Results
+#### نتایج
 
-The result is shown below.
-In each case we see that the styles read using the dash and camel-case named properties are the same.
-We also see that the {{cssxref("border-top")}} property corresponding to the element's `style` attribute is present, and that a longhand property is defined for each of its parts ({{cssxref("border-top-color")}}, {{cssxref("border-top-style")}}, and {{cssxref("border-top-width")}}).
+نتیجه در زیر نشان داده شده است. در هر مورد می‌بینیم که شیوه‌های خوانده‌شده با استفاده از ویژگی‌های نام خط تیره‌دار و camelCase یکسان هستند. همچنین می‌بینیم که ویژگی {{cssxref("border-top")}} متناظر با ویژگی `style` عنصر وجود دارد و یک ویژگی بلندنویس برای هر یک از اجزای آن ({{cssxref("border-top-color")}}، {{cssxref("border-top-style")}}، و {{cssxref("border-top-width")}}) تعریف شده است.
 
-{{EmbedLiveSample("Basic usage", "100", "280")}}
+{{EmbedLiveSample("استفاده پایه", "100", "280")}}
 
-Note that `font-weight` is defined on the `CSSStyleProperties` (as are all other CSS properties, though we have not logged them).
-However it is not an inline style for the nested element, so its value is set to the empty string (`""`).
+توجه کنید که `font-weight` روی `CSSStyleProperties` تعریف شده است (همانند سایر ویژگی‌های CSS، اگرچه ما آنها را ثبت نکرده‌ایم). با این حال، این یک شیوه درون‌خطی برای عنصر تودرتو نیست، بنابراین مقدار آن روی رشته خالی (`""`) تنظیم شده است.
 
-### Enumerating style information
+### شمارش اطلاعات شیوه
 
-This example demonstrates how we can enumerate the dash-named properties of {{domxref("CSSStyleProperties")}}.
+این مثال نشان می‌دهد که چگونه می‌توان ویژگی‌های با نام خط تیره‌دار {{domxref("CSSStyleProperties")}} را شمارش کرد.
 
 #### HTML
 
-First we define a {{htmlelement("div")}} element and nested element that define different inline styles, using both shorthand and longhand form.
-This is the same HTML as in the previous example.
+ابتدا یک عنصر {{htmlelement("div")}} و یک عنصر تودرتو تعریف می‌کنیم که شیوه‌های درون‌خطی متفاوتی را با استفاده از هر دو حالت کوتاه‌نویس و بلندنویس تعریف می‌کنند. این همان HTML مثال قبلی است.
 
 ```html
 <div style="font-weight: bold;">
   <div style="border-top: 1px solid blue; color: red;" id="elt">
-    An example div
+    یک div نمونه
   </div>
   <pre id="log"></pre>
 </div>
@@ -166,16 +150,16 @@ function log(text) {
 }
 ```
 
-The following code iterates the enumerable properties of the `CSSStyleProperties` and logs the result.
+کد زیر ویژگی‌های قابل شمارش `CSSStyleProperties` را پیمایش می‌کند و نتیجه را ثبت می‌کند.
 
 ```js
 const element = document.getElementById("elt");
 const elementStyle = element.style;
 
-// Loop through all the element's styles using `for...in`
+// پیمایش همه شیوه‌های عنصر با استفاده از `for...in`
 for (const prop in elementStyle) {
-  // Check the property belongs to the CSSStyleProperties instance
-  // Ensure the property is a numeric index (indicating a dash-named/inline style)
+  // بررسی اینکه ویژگی متعلق به نمونه CSSStyleProperties است
+  // اطمینان از اینکه ویژگی یک شاخص عددی است (نشان‌دهنده شیوه با نام خط تیره‌دار/درون‌خطی)
   if (
     Object.hasOwn(elementStyle, prop) &&
     !Number.isNaN(Number.parseInt(prop, 10))
@@ -189,20 +173,19 @@ for (const prop in elementStyle) {
 }
 ```
 
-#### Results
+#### نتایج
 
-The result is shown below.
-Note that only the element's longhand CSS properties are enumerated values (the inline shorthand property is not enumerated).
+نتیجه در زیر نشان داده شده است. توجه کنید که فقط ویژگی‌های بلندنویس CSS عنصر به عنوان مقادیر شمارش‌شده ظاهر می‌شوند (ویژگی کوتاه‌نویس درون‌خطی شمارش نمی‌شود).
 
-{{EmbedLiveSample("Enumerating style information", "100", "180")}}
+{{EmbedLiveSample("شمارش اطلاعات شیوه", "100", "180")}}
 
-### Updating border style
+### به‌روزرسانی شیوه حاشیه
 
 ```html
 <div id="box"></div>
 
-<button id="btn1">Make border 20px-wide</button>
-<button id="btn2">Make border 5px-wide</button>
+<button id="btn1">حاشیه ۲۰ پیکسل</button>
+<button id="btn2">حاشیه ۵ پیکسل</button>
 ```
 
 ```css
@@ -226,15 +209,15 @@ document.getElementById("btn2").addEventListener("click", () => {
 });
 ```
 
-{{EmbedLiveSample("Updating border style", "", "200")}}
+{{EmbedLiveSample("به‌روزرسانی شیوه حاشیه", "", "200")}}
 
-### Manipulating styles
+### دستکاری شیوه‌ها
 
-In this example, some basic style properties of an HTML paragraph element are accessed using the style object on the element and that object's CSS style properties, which can be retrieved and set from the DOM. In this case, you are manipulating the individual styles directly. You can also use {{domxref("document.styleSheets", "styleSheets")}} and their rules to change styles for whole documents.
+در این مثال، برخی ویژگی‌های شیوه پایه یک عنصر پاراگراف HTML با استفاده از شیء style روی عنصر و ویژگی‌های شیوه CSS آن شیء که می‌توان از DOM دریافت و تنظیم کرد، دسترسی داده می‌شوند. در این حالت، شما مستقیماً شیوه‌های فردی را دستکاری می‌کنید. همچنین می‌توانید از {{domxref("document.styleSheets", "styleSheets")}} و قوانین آنها برای تغییر شیوه‌های کل اسناد استفاده کنید.
 
 ```html
-<p id="pid">Some text</p>
-<p><button type="button">Change text</button></p>
+<p id="pid">متن</p>
+<p><button type="button">تغییر متن</button></p>
 ```
 
 ```js
@@ -250,20 +233,20 @@ document.querySelector("button").addEventListener("click", () => {
 });
 ```
 
-{{EmbedLiveSample("Manipulating styles", "", "200")}}
+{{EmbedLiveSample("دستکاری شیوه‌ها", "", "200")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Using dynamic styling information](/en-US/docs/Web/API/CSS_Object_Model/Using_dynamic_styling_information)
+- [استفاده از اطلاعات شیوه‌دهی پویا](/en-US/docs/Web/API/CSS_Object_Model/Using_dynamic_styling_information)
 - {{domxref("SVGElement.style")}}
 - {{domxref("MathMLElement.style")}}
 - {{domxref("HTMLElement.attributeStyleMap")}}
-- HTML [`style`](/en-US/docs/Web/HTML/Reference/Global_attributes/style) attribute
+- ویژگی HTML [`style`](/en-US/docs/Web/HTML/Reference/Global_attributes/style)
