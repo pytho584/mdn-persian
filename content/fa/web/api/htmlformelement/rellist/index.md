@@ -1,11 +1,5 @@
 ---
 title: "HTMLFormElement: relList property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/relList"
-status: "needs-translation"
----
-
----
-title: "HTMLFormElement: relList property"
 short-title: relList
 slug: Web/API/HTMLFormElement/relList
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.HTMLFormElement.relList
 
 {{APIRef("HTML DOM")}}
 
-The read-only **`relList`** property of the {{domxref("HTMLFormElement")}} returns a live {{domxref("DOMTokenList")}} object containing the set of link types indicating the relationship between the resource represented by the {{HTMLElement("form")}} element and the current document. It reflects the {{HTMLElement("form")}} element's [`rel`](/en-US/docs/Web/HTML/Reference/Attributes/rel) content attribute.
+ویژگی فقط‌خواندنی **`relList`** در {{domxref("HTMLFormElement")}} یک شیء زنده از نوع {{domxref("DOMTokenList")}} برمی‌گرداند که شامل مجموعه‌ای از انواع پیوند است؛ این انواع، رابطه بین منبع نمایش‌داده‌شده توسط عنصر {{HTMLElement("form")}} و سند فعلی را نشان می‌دهند. این ویژگی، ویژگی محتوایی [`rel`](/en-US/docs/Web/HTML/Reference/Attributes/rel) عنصر {{HTMLElement("form")}} را بازتاب می‌دهد.
 
-## Value
+## مقدار
 
-A live {{domxref("DOMTokenList")}} object.
+یک شیء زنده از نوع {{domxref("DOMTokenList")}}.
 
-Although the `relList` property itself is read-only in the sense that you can't replace the `DOMTokenList` object, you can still assign to the `relList` property directly, which is equivalent to assigning to its {{domxref("DOMTokenList/value", "value")}} property. You can also modify the `DOMTokenList` object using the {{domxref("DOMTokenList/add", "add()")}}, {{domxref("DOMTokenList/remove", "remove()")}}, {{domxref("DOMTokenList/replace", "replace()")}}, and {{domxref("DOMTokenList/toggle", "toggle()")}} methods.
+اگرچه خود ویژگی `relList` از این نظر فقط‌خواندنی است که نمی‌توانید شیء `DOMTokenList` را جایگزین کنید، اما همچنان می‌توانید مستقیماً به ویژگی `relList` مقدار بدهید؛ این کار معادل مقداردهی به ویژگی {{domxref("DOMTokenList/value", "value")}} آن است. همچنین می‌توانید شیء `DOMTokenList` را با استفاده از متدهای {{domxref("DOMTokenList/add", "add()")}}، {{domxref("DOMTokenList/remove", "remove()")}}، {{domxref("DOMTokenList/replace", "replace()")}} و {{domxref("DOMTokenList/toggle", "toggle()")}} تغییر دهید.
 
-## Examples
+## مثال‌ها
 
 ```js
 const form = document.querySelector("form");
@@ -31,15 +25,15 @@ form.relList.forEach((relEntry) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLAnchorElement.relList")}}
 - {{domxref("HTMLLinkElement.relList")}}
