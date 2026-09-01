@@ -1,11 +1,5 @@
 ---
 title: "HTMLInputElement: willValidate property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/willValidate"
-status: "needs-translation"
----
-
----
-title: "HTMLInputElement: willValidate property"
 short-title: willValidate
 slug: Web/API/HTMLInputElement/willValidate
 page-type: web-api-instance-property
@@ -14,25 +8,25 @@ browser-compat: api.HTMLInputElement.willValidate
 
 {{APIRef("HTML DOM")}}
 
-The **`willValidate`** read-only property of the {{domxref("HTMLInputElement")}} interface indicates whether the {{htmlelement("input")}} element is a candidate for [constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation). It is `false` if any conditions bar it from constraint validation, including:
+ویژگی فقط‌خواندنی **`willValidate`** در رابط {{domxref("HTMLInputElement")}} مشخص می‌کند که آیا عنصر {{htmlelement("input")}} کاندیدای [constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation) (اعتبارسنجی محدودیت‌ها) است یا نه. اگر هر شرایطی آن را از اعتبارسنجی محدودیت‌ها بازدارد، مقدار این ویژگی `false` است؛ از جمله:
 
-- Its {{domxref("HTMLInputElement.type", "type")}} is one of `hidden`, `reset` or `button`;
-- It has a {{HTMLElement("datalist")}} ancestor;
-- Its {{domxref("HTMLInputElement.disabled", "disabled")}} property is `true`.
+- {{domxref("HTMLInputElement.type", "type")}} آن یکی از مقادیر `hidden`، `reset` یا `button` باشد؛
+- یک جد (ancestor) از نوع {{HTMLElement("datalist")}} داشته باشد؛
+- خاصیت {{domxref("HTMLInputElement.disabled", "disabled")}} آن برابر `true` باشد.
 
-## Value
+## مقدار
 
-A boolean value.
+یک مقدار بولین.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLInputElement.checkValidity()")}}
 - {{HTMLElement("input")}}
