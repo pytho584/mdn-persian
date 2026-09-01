@@ -1,11 +1,5 @@
 ---
 title: "HTMLTableElement: deleteTHead() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableElement/deleteTHead"
-status: "needs-translation"
----
-
----
-title: "HTMLTableElement: deleteTHead() method"
 short-title: deleteTHead()
 slug: Web/API/HTMLTableElement/deleteTHead
 page-type: web-api-instance-method
@@ -14,26 +8,25 @@ browser-compat: api.HTMLTableElement.deleteTHead
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLTableElement.deleteTHead()`** removes the
-{{HTMLElement("thead")}} element from a given {{HtmlElement("table")}}.
+متد **`HTMLTableElement.deleteTHead()`** عنصر {{HTMLElement("thead")}} را از یک جدول معین حذف می‌کند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 deleteTHead()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-This example uses JavaScript to delete a table's header.
+این مثال از JavaScript برای حذف سربرگ یک جدول استفاده می‌کند.
 
 ### HTML
 
@@ -65,14 +58,14 @@ let table = document.querySelector("table");
 table.deleteTHead();
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
