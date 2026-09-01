@@ -1,11 +1,5 @@
 ---
 title: "GPUBuffer: getMappedRange() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUBuffer/getMappedRange"
-status: "needs-translation"
----
-
----
-title: "GPUBuffer: getMappedRange() method"
 short-title: getMappedRange()
 slug: Web/API/GPUBuffer/getMappedRange
 page-type: web-api-instance-method
@@ -14,12 +8,11 @@ browser-compat: api.GPUBuffer.getMappedRange
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`getMappedRange()`** method of the
-{{domxref("GPUBuffer")}} interface returns an {{jsxref("ArrayBuffer")}} containing the mapped contents of the `GPUBuffer` in the specified range.
+متد **`getMappedRange()`** از رابط {{domxref("GPUBuffer")}} یک {{jsxref("ArrayBuffer")}} شامل محتویات نگاشت‌شدهٔ `GPUBuffer` را در محدودهٔ مشخص‌شده بازمی‌گرداند.
 
-This can only happen once the `GPUBuffer` has been successfully mapped with {{domxref("GPUBuffer.mapAsync()")}} (this can be checked via {{domxref("GPUBuffer.mapState")}}). While the `GPUBuffer` is mapped it cannot be used in any GPU commands.
+این کار تنها پس از آن امکان‌پذیر است که `GPUBuffer` با موفقیت با استفاده از {{domxref("GPUBuffer.mapAsync()")}} نگاشت شده باشد (می‌توان این موضوع را با {{domxref("GPUBuffer.mapState")}} بررسی کرد). در حالی که `GPUBuffer` نگاشت شده است، نمی‌توان از آن در هیچ دستور GPU استفاده کرد.
 
-When you have finished working with the `GPUBuffer` values, call {{domxref("GPUBuffer.unmap()")}} to unmap it, making it accessible to the GPU again. A `TypeError` is thrown if an attempt is made to detach the {{jsxref("ArrayBuffer")}} in any way other than via {{domxref("GPUBuffer.unmap()")}}, such as by calling {{jsxref("ArrayBuffer/transfer", "transfer()")}}.
+هنگامی که کار با مقادیر `GPUBuffer` به پایان رسید، با فراخوانی {{domxref("GPUBuffer.unmap()")}} آن را از نگاشت خارج کنید تا دوباره در دسترس GPU قرار گیرد. اگر تلاش شود که {{jsxref("ArrayBuffer")}} به هر طریقی غیر از {{domxref("GPUBuffer.unmap()")}} جدا شود (مثلاً با فراخوانی {{jsxref("ArrayBuffer/transfer", "transfer()")}})، یک `TypeError` پرتاب می‌شود.
 
 ## Syntax
 
@@ -29,37 +22,37 @@ getMappedRange(offset)
 getMappedRange(offset, size)
 ```
 
-### Parameters
+### پارامترها
 
 - `offset` {{optional_inline}}
-  - : A number representing the offset, in bytes, from the start of the `GPUBuffer`'s mapped range to the start of the range to be returned in the {{jsxref("ArrayBuffer")}}. If `offset` is omitted, it defaults to 0.
+  - : عددی که نشان‌دهندهٔ offset (بر حسب بایت) از ابتدای محدودهٔ نگاشت‌شدهٔ `GPUBuffer` تا ابتدای محدوده‌ای است که باید در {{jsxref("ArrayBuffer")}} برگردانده شود. اگر `offset` حذف شود، مقدار پیش‌فرض آن 0 است.
 - `size` {{optional_inline}}
-  - : A number representing the size, in bytes, of the {{jsxref("ArrayBuffer")}} to return. If `size` is omitted, the range extends to the end of the `GPUBuffer`'s mapped range.
+  - : عددی که اندازهٔ (بر حسب بایت) {{jsxref("ArrayBuffer")}} مورد نظر برای بازگرداندن را مشخص می‌کند. اگر `size` حذف شود، محدوده تا انتهای محدودهٔ نگاشت‌شدهٔ `GPUBuffer` ادامه می‌یابد.
 
-### Return value
+### مقدار بازگشتی
 
-An {{jsxref("ArrayBuffer")}}.
+یک {{jsxref("ArrayBuffer")}}.
 
-### Validation
+### اعتبارسنجی
 
-The following criteria must be met when calling **`getMappedRange()`**, otherwise an `OperationError` {{domxref("DOMException")}} is thrown:
+هنگام فراخوانی **`getMappedRange()`** معیارهای زیر باید رعایت شوند، در غیر این صورت یک `OperationError` {{domxref("DOMException")}} پرتاب می‌شود:
 
-- `offset` is a multiple of 8.
-- The total range to be mapped (`size` if specified, or mapped range length - `offset` if not) is a multiple of 4.
-- The total range is inside the bounds of the mapped range and does not overlap with the {{jsxref("ArrayBuffer")}} ranges specified by any other active `getMappedRange()` calls.
+- `offset` مضربی از 8 است.
+- کل محدوده‌ای که باید نگاشت شود (اگر `size` مشخص شده باشد، همان `size`؛ در غیر این صورت طول محدودهٔ نگاشت‌شده منهای `offset`) مضربی از 4 است.
+- کل محدوده درون مرزهای محدودهٔ نگاشت‌شده قرار دارد و با محدوده‌های {{jsxref("ArrayBuffer")}} مشخص‌شده توسط سایر فراخوانی‌های فعال `getMappedRange()` همپوشانی ندارد.
 
-## Examples
+## مثال‌ها
 
-See the [main `GPUBuffer` page](/en-US/docs/Web/API/GPUBuffer#examples) for an example.
+برای مشاهدهٔ مثال به [صفحهٔ اصلی `GPUBuffer`](/en-US/docs/Web/API/GPUBuffer#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
