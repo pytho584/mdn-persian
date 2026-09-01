@@ -1,11 +1,5 @@
 ---
 title: "Gamepad: pose property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Gamepad/pose"
-status: "needs-translation"
----
-
----
-title: "Gamepad: pose property"
 short-title: pose
 slug: Web/API/Gamepad/pose
 page-type: web-api-instance-property
@@ -16,25 +10,25 @@ browser-compat: api.Gamepad.pose
 
 {{APIRef("Gamepad")}}{{SeeCompatTable}}
 
-The **`pose`** read-only property of the {{domxref("Gamepad")}} interface returns a {{domxref("GamepadPose")}} object representing the pose information associated with a WebVR controller (e.g., its position and orientation in 3D space).
+خاصیت فقط‌خواندنی **`pose`** در رابط {{domxref("Gamepad")}} یک شیء {{domxref("GamepadPose")}} برمی‌گرداند که اطلاعات وضعیت مرتبط با یک کنترلر WebVR را نشان می‌دهد (برای مثال موقعیت و جهت آن در فضای سه‌بعدی).
 
-## Value
+## مقدار
 
-A {{domxref("GamepadPose")}} object.
+یک شیء {{domxref("GamepadPose")}}.
 
-## Examples
+## مثال‌ها
 
-TBC
+به‌زودی
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Gamepad API](/en-US/docs/Web/API/Gamepad_API)
 - [WebVR API](/en-US/docs/Web/API/WebVR_API)
