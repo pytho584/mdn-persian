@@ -1,11 +1,5 @@
 ---
 title: "Gyroscope: x property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Gyroscope/x"
-status: "needs-translation"
----
-
----
-title: "Gyroscope: x property"
 short-title: x
 slug: Web/API/Gyroscope/x
 page-type: web-api-instance-property
@@ -14,18 +8,15 @@ browser-compat: api.Gyroscope.x
 
 {{securecontext_header}}{{APIRef("Sensor API")}}
 
-The **`x`** read-only property of the
-{{domxref("Gyroscope")}} interface returns a number specifying the
-angular velocity of the device along its x-axis.
+خاصیت فقط‌خواندنی **`x`** در رابط {{domxref("Gyroscope")}} عددی را برمی‌گرداند که سرعت زاویه‌ای دستگاه را حول محور x آن مشخص می‌کند.
 
-## Value
+## مقدار
 
-A {{jsxref('Number')}}.
+یک {{jsxref('Number')}}.
 
-## Examples
+## مثال‌ها
 
-The gyroscope is typically read in the {{domxref('Sensor.reading_event', 'reading')}} event callback.
-In the example below this occurs sixty times a second.
+معمولاً ژیروسکوپ در تابع بازخوانی رویداد {{domxref('Sensor.reading_event', 'reading')}} خوانده می‌شود. در مثال زیر این کار شصت بار در ثانیه انجام می‌شود.
 
 ```js
 let gyroscope = new Gyroscope({ frequency: 60 });
@@ -38,10 +29,10 @@ gyroscope.addEventListener("reading", (e) => {
 gyroscope.start();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
