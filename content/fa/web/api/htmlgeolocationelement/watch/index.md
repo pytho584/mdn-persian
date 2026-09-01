@@ -1,11 +1,5 @@
 ---
 title: "HTMLGeolocationElement: watch property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLGeolocationElement/watch"
-status: "needs-translation"
----
-
----
-title: "HTMLGeolocationElement: watch property"
 short-title: watch
 slug: Web/API/HTMLGeolocationElement/watch
 page-type: web-api-instance-property
@@ -16,22 +10,22 @@ browser-compat: api.HTMLGeolocationElement.watch
 
 {{APIRef("Navigation API")}}{{SeeCompatTable}}
 
-The **`watch`** property of the {{domxref("HTMLGeolocationElement")}} interface gets and sets a boolean value indicating whether the browser should continuously update the user's location data whenever the position of their device changes, or only retrieve it once.
+ویژگی **`watch`** در واسط {{domxref("HTMLGeolocationElement")}} یک مقدار بولی را دریافت و تنظیم می‌کند که نشان می‌دهد مرورگر باید هر بار که موقعیت دستگاه کاربر تغییر می‌کند، داده‌های موقعیت را به‌طور پیوسته به‌روزرسانی کند یا فقط یک بار آن را بازیابی کند.
 
-It reflects the value of the `<geolocation>` [`watch`](/en-US/docs/Web/HTML/Reference/Elements/geolocation#watch) attribute.
+این ویژگی مقدار صفت [`watch`](/en-US/docs/Web/HTML/Reference/Elements/geolocation#watch) عنصر `<geolocation>` را منعکس می‌کند.
 
-## Value
+## مقدار
 
-A boolean value:
+یک مقدار بولی:
 
-- If `true`, location data is requested continuously, as if the {{domxref("Geolocation.watchPosition()")}} method was called.
-- If `false`, location data is only requested once, as if the {{domxref("Geolocation.getCurrentPosition()")}} method was called.
+- اگر `true` باشد، داده‌های موقعیت به‌طور پیوسته درخواست می‌شوند، مانند حالتی که متد {{domxref("Geolocation.watchPosition()")}} فراخوانی شده باشد.
+- اگر `false` باشد، داده‌های موقعیت فقط یک بار درخواست می‌شوند، مانند حالتی که متد {{domxref("Geolocation.getCurrentPosition()")}} فراخوانی شده باشد.
 
-Defaults to `false`.
+مقدار پیش‌فرض `false` است.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفادهٔ پایه
 
 ```html
 <geolocation watch></geolocation>
@@ -42,22 +36,22 @@ const geo = document.querySelector("geolocation");
 console.log(geo.watch); // true
 ```
 
-### Retrieving location data continuously
+### بازیابی پیوستهٔ داده‌های موقعیت
 
-In this example, we retrieve location data continuously and print it to the page.
+در این مثال، داده‌های موقعیت را به‌طور پیوسته بازیابی کرده و در صفحه چاپ می‌کنیم.
 
 #### HTML
 
-We include a {{htmlelement("geolocation")}} element with a `watch` attribute set on it. When the user clicks on the resulting button and grants permission to use the `geolocation` feature, the browser will start to request location data continuously, whenever the position of the user's device changes. We also include a {{htmlelement("p")}} element to output location data and errors into.
+ما یک عنصر {{htmlelement("geolocation")}} با صفت `watch` تنظیم‌شده روی آن قرار می‌دهیم. هنگامی که کاربر روی دکمهٔ حاصل از این عنصر کلیک می‌کند و اجازهٔ استفاده از قابلیت `geolocation` را می‌دهد، مرورگر هر بار که موقعیت دستگاه کاربر تغییر کند، شروع به درخواست پیوستهٔ داده‌های موقعیت می‌کند. همچنین یک عنصر {{htmlelement("p")}} اضافه می‌کنیم تا داده‌های موقعیت و خطاها در آن نمایش داده شود.
 
 ```html
 <geolocation watch></geolocation>
 <p id="output"></p>
 ```
 
-#### JavaScript
+#### جاوااسکریپت
 
-In our JavaScript, we start by grabbing references to the output paragraph and `<geolocation>` element, and test the `watch` value by accessing the `watch` property.
+در جاوااسکریپت، ابتدا ارجاع‌هایی به پاراگراف خروجی و عنصر `<geolocation>` می‌گیریم و مقدار ویژگی `watch` را با دسترسی به خاصیت `watch` بررسی می‌کنیم.
 
 ```js
 const outputElem = document.querySelector("#output");
@@ -65,7 +59,7 @@ const geo = document.querySelector("geolocation");
 console.log(geo.watch); // true
 ```
 
-Next, we add a {{domxref("HTMLGeolocationElement.location_event", "location")}} event listener to the resulting `HTMLGeolocationElement` object, to detect when the location data request is returned. If the data is returned successfully, we access it via the {{domxref("HTMLGeolocationElement.position")}} property, and print the latitude and longitude values to output paragraph. If the data request fails, we access the error via the {{domxref("HTMLGeolocationElement.error")}} property and print the error message to the output paragraph.
+سپس یک شنوندهٔ رویداد {{domxref("HTMLGeolocationElement.location_event", "location")}} به شیء `HTMLGeolocationElement` حاصل اضافه می‌کنیم تا زمانی که درخواست دادهٔ موقعیت بازگردانده می‌شود را تشخیص دهیم. اگر داده با موفقیت بازگردانده شود، از طریق ویژگی {{domxref("HTMLGeolocationElement.position")}} به آن دسترسی پیدا کرده و مقادیر عرض و طول جغرافیایی را در پاراگراف خروجی چاپ می‌کنیم. اگر درخواست داده ناموفق باشد، خطا را از طریق ویژگی {{domxref("HTMLGeolocationElement.error")}} دریافت کرده و پیام خطا را در پاراگراف خروجی چاپ می‌کنیم.
 
 ```js
 geo.addEventListener("location", () => {
@@ -77,22 +71,22 @@ geo.addEventListener("location", () => {
 });
 ```
 
-#### Result
+#### نتیجه
 
-See this code [running live](https://mdn.github.io/dom-examples/geolocation-element/basic-watch-example/) ([source code](https://github.com/mdn/dom-examples/tree/main/geolocation-element/basic-watch-example)). The full code also includes a fallback for browsers that don't support the `<geolocation>` element.
+این کد را به‌صورت [اجرای زنده](https://mdn.github.io/dom-examples/geolocation-element/basic-watch-example/) ([کد منبع](https://github.com/mdn/dom-examples/tree/main/geolocation-element/basic-watch-example)) ببینید. کد کامل همچنین شامل یک راه‌حل جایگزین (fallback) برای مرورگرهایی است که عنصر `<geolocation>` را پشتیبانی نمی‌کنند.
 
-Try viewing the demo in a supported browser and an unsupported browser if possible, and note the difference in permissions dialog flow when you choose to allow or deny permission to use `geolocation`.
+در صورت امکان، نمایش را در یک مرورگر پشتیبانی‌شده و یک مرورگر پشتیبانی‌نشده ببینید و به تفاوت در روند نمایش گفتگوی مجوز هنگامی که انتخاب می‌کنید اجازهٔ استفاده از `geolocation` را بدهید یا رد کنید، توجه کنید.
 
-Note also that, because the `<geolocation>` `watch` attribute is set to `true`, the location data will be requested and the `location` event will fire continuously, each time the user changes location.
+همچنین توجه داشته باشید که چون صفت `watch` عنصر `<geolocation>` روی `true` تنظیم شده است، داده‌های موقعیت درخواست می‌شوند و رویداد `location` هر بار که کاربر مکان خود را تغییر می‌دهد، به‌طور پیوسته رخ می‌دهد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{htmlelement("geolocation")}} element
+- عنصر {{htmlelement("geolocation")}}
