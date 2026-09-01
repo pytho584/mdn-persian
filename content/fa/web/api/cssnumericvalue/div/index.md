@@ -1,11 +1,5 @@
 ---
 title: "CSSNumericValue: div() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSNumericValue/div"
-status: "needs-translation"
----
-
----
-title: "CSSNumericValue: div() method"
 short-title: div()
 slug: Web/API/CSSNumericValue/div
 page-type: web-api-instance-method
@@ -14,9 +8,9 @@ browser-compat: api.CSSNumericValue.div
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`div()`** method of the {{domxref("CSSNumericValue")}} interface divides the `CSSNumericValue` by the supplied value.
+متد **`div()`** از رابط {{domxref("CSSNumericValue")}}، مقدار `CSSNumericValue` را بر مقدار داده‌شده تقسیم می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 div()
@@ -25,36 +19,36 @@ div(number1, number2)
 div(number1, number2, /* …, */ numberN)
 ```
 
-### Parameters
+### پارامترها
 
-- `number1`, …, `numberN` {{optional_inline}}
-  - : Either a number or a {{domxref('CSSNumericValue')}}.
+- `number1`، …، `numberN` {{optional_inline}}
+  - : یا یک عدد یا یک {{domxref('CSSNumericValue')}}.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref('CSSMathProduct')}}, or a {{domxref('CSSUnitValue')}} if `this` and every argument are plain numbers, or all but one of them are.
+یک {{domxref('CSSMathProduct')}}، یا یک {{domxref('CSSUnitValue')}} اگر `this` و همه آرگومان‌ها اعداد ساده باشند، یا همه به‌جز یکی از آن‌ها.
 
-### Exceptions
+### استثناها
 
 - {{jsxref("TypeError")}}
-  - : Thrown if an invalid type was passed to the method.
+  - : اگر نوع نامعتبری به متد ارسال شده باشد پرتاب می‌شود.
 - [`RangeError`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError)
-  - : Thrown if any of `number1`, …, `numberN` is, or resolves to, 0 or -0.
+  - : اگر هر یک از `number1`، …، `numberN` برابر با 0 یا 0- باشد (یا به آن‌ها تبدیل شود) پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
 ```js
 let mathProduct = CSS.px(24).div(CSS.percent(4));
-// Prints "calc(24px / 4%)"
+// چاپ می‌کند "calc(24px / 4%)"
 mathProduct.toString();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
