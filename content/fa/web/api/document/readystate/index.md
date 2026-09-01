@@ -1,11 +1,5 @@
 ---
 title: "Document: readyState property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/readyState"
-status: "needs-translation"
----
-
----
-title: "Document: readyState property"
 short-title: readyState
 slug: Web/API/Document/readyState
 page-type: web-api-instance-property
@@ -14,39 +8,39 @@ browser-compat: api.Document.readyState
 
 {{APIRef("DOM")}}
 
-The **`Document.readyState`** property describes the loading state of the {{domxref("document")}}.
-When the value of this property changes, a {{domxref("Document/readystatechange_event", "readystatechange")}} event fires on the {{domxref("document")}} object.
+ویژگی **`Document.readyState`** وضعیت بارگذاری {{domxref("document")}} را توصیف می‌کند.
+هنگامی که مقدار این ویژگی تغییر می‌کند، رویداد {{domxref("Document/readystatechange_event", "readystatechange")}} روی شیء {{domxref("document")}} فعال می‌شود.
 
-## Value
+## مقدار
 
-The `readyState` of a document can be one of following:
+`readyState` یک سند می‌تواند یکی از موارد زیر باشد:
 
 - `loading`
-  - : The {{domxref("document")}} is still loading (that is, the HTML parser is still working).
+  - : {{domxref("document")}} هنوز در حال بارگذاری است (یعنی تجزیه‌کننده HTML هنوز در حال کار است).
 - `interactive`
-  - : The document has been parsed but sub-resources such as {{domxref("HTMLScriptElement/defer", "deferred", "", "nocode")}} and [module](/en-US/docs/Web/JavaScript/Guide/Modules) scripts, images, stylesheets, and frames are still loading. Once in this state, and the deferred and module scripts have executed, the {{domxref("Document/DOMContentLoaded_event", "DOMContentLoaded")}} event fires.
+  - : سند تجزیه شده است، اما زیرمنابعی مانند اسکریپت‌های {{domxref("HTMLScriptElement/defer", "deferred", "", "nocode")}} و [ماژول](/en-US/docs/Web/JavaScript/Guide/Modules)، تصاویر، برگه‌های سبک و فریم‌ها هنوز در حال بارگذاری هستند. هنگامی که به این حالت برسد و اسکریپت‌های معوق و ماژول اجرا شوند، رویداد {{domxref("Document/DOMContentLoaded_event", "DOMContentLoaded")}} فعال می‌شود.
 - `complete`
-  - : The document and all sub-resources have finished loading. The state indicates that the {{domxref("Window/load_event", "load")}} event is about to fire.
+  - : سند و تمام زیرمنابع بارگذاری شده‌اند. این حالت نشان می‌دهد که رویداد {{domxref("Window/load_event", "load")}} به زودی فعال می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Different states of readiness
+### حالت‌های مختلف آمادگی
 
 ```js
 switch (document.readyState) {
   case "loading":
-    // The document is loading.
+    // سند در حال بارگذاری است.
     break;
   case "interactive": {
-    // The document has finished loading and we can access DOM elements.
-    // Sub-resources such as scripts, images, stylesheets and frames are still loading.
+    // سند بارگذاری شده است و می‌توانیم به عناصر DOM دسترسی داشته باشیم.
+    // زیرمنابعی مانند اسکریپت‌ها، تصاویر، برگه‌های سبک و فریم‌ها هنوز در حال بارگذاری هستند.
     const span = document.createElement("span");
     span.textContent = "A <span> element.";
     document.body.appendChild(span);
     break;
   }
   case "complete":
-    // The page is fully loaded.
+    // صفحه کاملاً بارگذاری شده است.
     console.log(
       `The first CSS rule is: ${document.styleSheets[0].cssRules[0].cssText}`,
     );
@@ -54,10 +48,10 @@ switch (document.readyState) {
 }
 ```
 
-### readystatechange as an alternative to DOMContentLoaded event
+### readystatechange به عنوان جایگزینی برای رویداد DOMContentLoaded
 
 ```js
-// Alternative to DOMContentLoaded event
+// جایگزین رویداد DOMContentLoaded
 document.onreadystatechange = () => {
   if (document.readyState === "interactive") {
     initApplication();
@@ -65,10 +59,10 @@ document.onreadystatechange = () => {
 };
 ```
 
-### readystatechange as an alternative to load event
+### readystatechange به عنوان جایگزینی برای رویداد load
 
 ```js
-// Alternative to load event
+// جایگزین رویداد load
 document.onreadystatechange = () => {
   if (document.readyState === "complete") {
     initApplication();
@@ -76,7 +70,7 @@ document.onreadystatechange = () => {
 };
 ```
 
-### readystatechange as event listener to insert or modify the DOM before DOMContentLoaded
+### readystatechange به عنوان شنونده رویداد برای درج یا تغییر DOM قبل از DOMContentLoaded
 
 ```js
 document.addEventListener("readystatechange", (event) => {
@@ -88,17 +82,17 @@ document.addEventListener("readystatechange", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- Related events:
+- رویدادهای مرتبط:
   - {{domxref("Document/readystatechange_event", "readystatechange")}}
   - {{domxref("Document/DOMContentLoaded_event", "DOMContentLoaded")}}
   - {{domxref("Window/load_event", "load")}}
