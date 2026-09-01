@@ -1,53 +1,44 @@
 ---
 title: "HTMLOListElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLOListElement"
-status: "needs-translation"
----
-
----
-title: HTMLOListElement
-slug: Web/API/HTMLOListElement
-page-type: web-api-interface
-browser-compat: api.HTMLOListElement
 ---
 
 {{ APIRef("HTML DOM") }}
 
-The **`HTMLOListElement`** interface provides special properties (beyond those defined on the regular {{domxref("HTMLElement")}} interface it also has available to it by inheritance) for manipulating ordered list elements.
+رابط **`HTMLOListElement`** ویژگی‌های خاصی (علاوه بر ویژگی‌های تعریف‌شده در رابط {{domxref("HTMLElement")}} که به صورت ارث‌بری در دسترس است) برای کار با عناصر لیست مرتب‌شده فراهم می‌کند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("HTMLElement")}}._
+_ویژگی‌های رابط والد خود، {{domxref("HTMLElement")}} را به ارث می‌برد._
 
 - {{domxref("HTMLOListElement.reversed")}}
-  - : A boolean value reflecting the [`reversed`](/en-US/docs/Web/HTML/Reference/Elements/ol#reversed) and defining if the numbering is descending, that is its value is `true`, or ascending (`false`).
+  - : یک مقدار بولی که منعکس‌کننده ویژگی [`reversed`](/en-US/docs/Web/HTML/Reference/Elements/ol#reversed) است و مشخص می‌کند که شماره‌گذاری نزولی است (یعنی مقدار آن `true` است) یا صعودی (`false`).
 - {{domxref("HTMLOListElement.start")}}
-  - : A `long` value reflecting the [`start`](/en-US/docs/Web/HTML/Reference/Elements/ol#start) and defining the value of the first number of the first element of the list.
+  - : یک مقدار از نوع `long` که منعکس‌کننده ویژگی [`start`](/en-US/docs/Web/HTML/Reference/Elements/ol#start) است و مقدار اولین عدد از اولین عنصر لیست را مشخص می‌کند.
 - {{domxref("HTMLOListElement.type")}}
-  - : A string value reflecting the [`type`](/en-US/docs/Web/HTML/Reference/Elements/ol#type) and defining the kind of marker to be used to display. It can have the following values:
-    - `'1'` meaning that decimal numbers are used: `1`, `2`, `3`, `4`, `5`, …
-    - `'a'` meaning that the lowercase latin alphabet is used: `a`, `b`, `c`, `d`, `e`, …
-    - `'A'` meaning that the uppercase latin alphabet is used: `A`, `B`, `C`, `D`, `E`, …
-    - `'i'` meaning that the lowercase latin numerals are used: `i`, `ii`, `iii`, `iv`, `v`, …
-    - `'I'` meaning that the uppercase latin numerals are used: `I`, `II`, `III`, `IV`, `V`, …
+  - : یک مقدار رشته‌ای که منعکس‌کننده ویژگی [`type`](/en-US/docs/Web/HTML/Reference/Elements/ol#type) است و نوع نشانگر مورد استفاده برای نمایش را تعیین می‌کند. می‌تواند مقادیر زیر را داشته باشد:
+    - `'1'` به این معنی که از اعداد اعشاری استفاده می‌شود: `1`، `2`، `3`، `4`، `5`، …
+    - `'a'` به این معنی که از الفبای لاتین کوچک استفاده می‌شود: `a`، `b`، `c`، `d`، `e`، …
+    - `'A'` به این معنی که از الفبای لاتین بزرگ استفاده می‌شود: `A`، `B`، `C`، `D`، `E`، …
+    - `'i'` به این معنی که از اعداد لاتین کوچک استفاده می‌شود: `i`، `ii`، `iii`، `iv`، `v`، …
+    - `'I'` به این معنی که از اعداد لاتین بزرگ استفاده می‌شود: `I`، `II`، `III`، `IV`، `V`، …
 
 - {{domxref("HTMLOListElement.compact")}} {{deprecated_inline}}
-  - : A boolean value indicating that spacing between list items should be reduced. This property reflects the [`compact`](/en-US/docs/Web/HTML/Reference/Elements/ol#compact) attribute only, it doesn't consider the {{cssxref("line-height")}} CSS property used for that behavior in modern pages.
+  - : یک مقدار بولی که نشان می‌دهد فاصله بین آیتم‌های لیست باید کاهش یابد. این ویژگی فقط منعکس‌کننده صفت [`compact`](/en-US/docs/Web/HTML/Reference/Elements/ol#compact) است و ویژگی CSS {{cssxref("line-height")}} که در صفحات مدرن برای این رفتار استفاده می‌شود را در نظر نمی‌گیرد.
 
-## Instance methods
+## روش‌های نمونه
 
-_No specific method; inherits methods from its parent, {{domxref("HTMLElement")}}._
+_هیچ متد خاصی ندارد؛ متدهای خود را از والد خود، {{domxref("HTMLElement")}} به ارث می‌برد._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The HTML element implementing this interface: {{ HTMLElement("ol") }}.
+- عنصر HTML که این رابط را پیاده‌سازی می‌کند: {{ HTMLElement("ol") }}.
