@@ -1,11 +1,5 @@
 ---
 title: "EventSource: open event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EventSource/open_event"
-status: "needs-translation"
----
-
----
-title: "EventSource: open event"
 short-title: open
 slug: Web/API/EventSource/open_event
 page-type: web-api-event
@@ -14,13 +8,13 @@ browser-compat: api.EventSource.open_event
 
 {{APIRef("Server Sent Events")}}{{AvailableInWorkers}}
 
-The **`open`** event of the {{domxref("EventSource")}} interface is fired when a connection with an event source is opened.
+رویداد **`open`** در رابط {{domxref("EventSource")}} زمانی که یک اتصال با یک منبع رویداد باز می‌شود، فعال می‌گردد.
 
-This event is not cancelable and does not bubble.
+این رویداد قابل لغو نیست و منتشر نمی‌شود.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("open", (event) => { })
@@ -28,11 +22,11 @@ addEventListener("open", (event) => { })
 onopen = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## مثال‌ها
 
 ```js
 const evtSource = new EventSource("sse.php");
@@ -48,16 +42,16 @@ evtSource.onopen = (e) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using server-sent events](/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events)
+- [استفاده از رویدادهای ارسال‌شده توسط سرور](/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events)
 - {{domxref("EventSource/error_event", "error")}}
 - {{domxref("EventSource/message_event", "message")}}
