@@ -1,11 +1,5 @@
 ---
 title: "CSSStyleDeclaration: getPropertyPriority() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/getPropertyPriority"
-status: "needs-translation"
----
-
----
-title: "CSSStyleDeclaration: getPropertyPriority() method"
 short-title: getPropertyPriority()
 slug: Web/API/CSSStyleDeclaration/getPropertyPriority
 page-type: web-api-instance-method
@@ -14,9 +8,7 @@ browser-compat: api.CSSStyleDeclaration.getPropertyPriority
 
 {{ APIRef("CSSOM") }}
 
-The **CSSStyleDeclaration.getPropertyPriority()** method interface returns
-a string that provides all explicitly set priorities on the CSS
-property.
+متد **CSSStyleDeclaration.getPropertyPriority()** رشته‌ای را برمی‌گرداند که تمام اولویت‌های صریحاً تعیین‌شده را روی ویژگی CSS نشان می‌دهد.
 
 ## Syntax
 
@@ -24,20 +16,18 @@ property.
 getPropertyPriority(property)
 ```
 
-### Parameters
+### پارامترها
 
 - `property`
-  - : A string representing the property name to be checked.
+  - : رشته‌ای که نام ویژگی مورد بررسی را نشان می‌دهد.
 
-### Return value
+### مقدار بازگشتی
 
-A string that represents the priority (e.g., `"important"`) if one exists.
-If none exists, returns the empty string.
+رشته‌ای که اولویت (مثلاً `"important"`) را نشان می‌دهد، در صورتی که وجود داشته باشد. اگر هیچ اولویتی وجود نداشته باشد، رشتهٔ خالی را برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-The following JavaScript code checks whether `margin` is marked as important
-in a CSS selector rule:
+کد جاوااسکریپت زیر بررسی می‌کند که آیا `margin` در یک قانون انتخاب‌گر CSS به‌عنوان important علامت‌گذاری شده است:
 
 ```js
 const declaration = document.styleSheets[0].cssRules[0].style;
@@ -48,6 +38,6 @@ const isImportant = declaration.getPropertyPriority("margin") === "important";
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
