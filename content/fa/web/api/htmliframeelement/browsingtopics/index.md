@@ -1,7 +1,5 @@
 ---
 title: "HTMLIFrameElement: browsingTopics property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/browsingTopics"
-status: "needs-translation"
 ---
 
 ---
@@ -18,19 +16,19 @@ browser-compat: api.HTMLIFrameElement.browsingTopics
 {{APIRef("HTML DOM")}}{{non-standard_header}}{{deprecated_header}}
 
 > [!WARNING]
-> This feature is currently opposed by two browser vendors. See the [Standards positions](/en-US/docs/Web/API/Topics_API#standards_positions) section for details of opposition.
+> این ویژگی در حال حاضر با مخالفت دو فروشندهٔ مرورگر مواجه است. برای جزئیات مخالفت، بخش [مواضع استانداردها](/en-US/docs/Web/API/Topics_API#standards_positions) را ببینید.
 
-The **`browsingTopics`** property of the {{domxref("HTMLIFrameElement")}} interface is a boolean specifying that the selected topics for the current user should be sent with the request for the associated {{htmlelement("iframe")}}'s source in a {{httpheader("Sec-Browsing-Topics")}} header. This reflects the `browsingtopics` HTML attribute.
+ویژگی **`browsingTopics`** از رابط {{domxref("HTMLIFrameElement")}} یک مقدار بولی است که مشخص می‌کند موضوعات انتخاب‌شده برای کاربر فعلی باید همراه با درخواست منبع {{htmlelement("iframe")}} مرتبط، در یک هدر {{httpheader("Sec-Browsing-Topics")}} ارسال شوند. این ویژگی منعکس‌کنندهٔ ویژگی HTML «browsingtopics» است.
 
-## Value
+## مقدار
 
-A boolean. The default value is `false`; set it to `true` to send the associated `<iframe>` source request with a {{httpheader("Sec-Browsing-Topics")}} header containing the selected topics for the current user.
+یک مقدار بولی. مقدار پیش‌فرض `false` است؛ برای ارسال درخواست منبع `<iframe>` مرتبط با هدر {{httpheader("Sec-Browsing-Topics")}} حاوی موضوعات انتخاب‌شده برای کاربر فعلی، آن را روی `true` قرار دهید.
 
-## Examples
+## مثال‌ها
 
-### Get
+### دریافت
 
-Set `browsingtopics` to `true` then load the `<iframe>` contents declaratively:
+مقدار `browsingtopics` را روی `true` قرار دهید و سپس محتوای `<iframe>` را به‌صورت اعلامی بارگذاری کنید:
 
 ```html
 <iframe browsingtopics title="Advertising container" src="ad-tech1.example">
@@ -38,22 +36,22 @@ Set `browsingtopics` to `true` then load the `<iframe>` contents declaratively:
 </iframe>
 ```
 
-Log the `browsingTopics` value via script:
+مقدار `browsingTopics` را از طریق اسکریپت ثبت (لاگ) کنید:
 
 ```js
 const iframeElem = document.querySelector("iframe");
 console.log(iframeElem.browsingTopics); // will return true in supporting browsers
 ```
 
-### Set
+### تنظیم
 
-Specify a minimum `<iframe>`:
+یک `<iframe>` حداقلی مشخص کنید:
 
 ```html
 <iframe> ... </iframe>
 ```
 
-Set `browsingtopics` to `true` then load the `<iframe>` contents via script:
+مقدار `browsingtopics` را روی `true` قرار دهید و سپس محتوای `<iframe>` را از طریق اسکریپت بارگذاری کنید:
 
 ```js
 const iframeElem = document.querySelector("iframe");
@@ -63,14 +61,14 @@ iframeElem.title = "Advertising container";
 iframeElem.src = "ad-tech1.example";
 ```
 
-## Specifications
+## مشخصات
 
-This feature is not part of an official standard, although it is specified in the [Topics API Unofficial Proposal Draft](https://patcg-individual-drafts.github.io/topics/).
+این ویژگی بخشی از هیچ استاندارد رسمی نیست، اگرچه در [پیش‌نویس پیشنهادی غیررسمی Topics API](https://patcg-individual-drafts.github.io/topics/) مشخص شده است.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Topics API](/en-US/docs/Web/API/Topics_API)
