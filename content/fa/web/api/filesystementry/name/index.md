@@ -1,11 +1,5 @@
 ---
 title: "FileSystemEntry: name property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry/name"
-status: "needs-translation"
----
-
----
-title: "FileSystemEntry: name property"
 short-title: name
 slug: Web/API/FileSystemEntry/name
 page-type: web-api-instance-property
@@ -14,20 +8,15 @@ browser-compat: api.FileSystemEntry.name
 
 {{APIRef("File and Directory Entries API")}}
 
-The read-only **`name`** property of
-the {{domxref("FileSystemEntry")}} interface returns a string
-specifying the entry's name; this is the entry within its parent directory (the last
-component of the path as indicated by the {{domxref("FileSystemEntry.fullPath", "fullPath")}} property).
+خاصیت فقط-خواندنی **`name`** در رابط {{domxref("FileSystemEntry")}} یک رشته برمی‌گرداند که نام ورودی را مشخص می‌کند؛ این نام، همان ورودی در داخل پوشه‌ی والد آن است (آخرین جزء مسیر که توسط خاصیت {{domxref("FileSystemEntry.fullPath", "fullPath")}} نشان داده می‌شود).
 
-## Value
+## مقدار
 
-A string indicating the entry's name.
+یک رشته که نام ورودی را نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
-This example shows a function called `isFileWithExtension()` which returns
-true if the specified {{domxref("FileSystemEntry")}} is both a file and the file's name
-ends with a given extension.
+این مثال تابعی به نام `isFileWithExtension()` را نشان می‌دهد که اگر {{domxref("FileSystemEntry")}} داده‌شده هم یک فایل باشد و هم نام فایل به پسوند مشخصی ختم شود، مقدار `true` برمی‌گرداند.
 
 ```js
 function isFileWithExtension(entry, extension) {
@@ -35,16 +24,16 @@ function isFileWithExtension(entry, extension) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [File and Directory Entries API](/en-US/docs/Web/API/File_and_Directory_Entries_API)
+- [رابط API ورودی‌های فایل و پوشه](/en-US/docs/Web/API/File_and_Directory_Entries_API)
 - {{domxref("FileSystemEntry")}}
 - {{domxref("FileSystemEntry.fullPath")}}
