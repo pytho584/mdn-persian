@@ -1,11 +1,5 @@
 ---
 title: "Element: classList property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/classList"
-status: "needs-translation"
----
-
----
-title: "Element: classList property"
 short-title: classList
 slug: Web/API/Element/classList
 page-type: web-api-instance-property
@@ -14,17 +8,17 @@ browser-compat: api.Element.classList
 
 {{APIRef("DOM")}}
 
-The read-only **`classList`** property of the {{domxref("Element")}} interface contains a live {{domxref("DOMTokenList")}} collection representing the `class` attribute of the element. This can then be used to manipulate the class list.
+ویژگی فقط‌خواندنی **`classList`** در رابط {{domxref("Element")}} شامل یک مجموعهٔ زندهٔ {{domxref("DOMTokenList")}} است که صفت `class` عنصر را نمایش می‌دهد. سپس می‌توان از این مجموعه برای دستکاری فهرست کلاس‌ها استفاده کرد.
 
-Using `classList` is a convenient alternative to accessing an element's list of classes as a space-delimited string via {{domxref("element.className")}}.
+استفاده از `classList` جایگزین مناسبی برای دسترسی به فهرست کلاس‌های یک عنصر به‌صورت رشته‌ای جدا شده با فاصله از طریق {{domxref("element.className")}} است.
 
-## Value
+## مقدار
 
-A {{domxref("DOMTokenList")}} object representing the contents of the element's `class` attribute. If the `class` attribute is not set or empty, it returns an empty `DOMTokenList`, i.e., a `DOMTokenList` with the `length` property equal to `0`.
+یک شیء {{domxref("DOMTokenList")}} که محتوای صفت `class` عنصر را نشان می‌دهد. اگر صفت `class` تنظیم نشده باشد یا خالی باشد، یک `DOMTokenList` خالی برمی‌گرداند؛ یعنی یک `DOMTokenList` که ویژگی `length` آن برابر با `0` است.
 
-Although the `classList` property itself is read-only in the sense that you can't replace the `DOMTokenList` object, you can still assign to the `classList` property directly, which is equivalent to assigning to its {{domxref("DOMTokenList/value", "value")}} property. You can also modify the `DOMTokenList` object using the {{domxref("DOMTokenList/add", "add()")}}, {{domxref("DOMTokenList/remove", "remove()")}}, {{domxref("DOMTokenList/replace", "replace()")}}, and {{domxref("DOMTokenList/toggle", "toggle()")}} methods.
+اگرچه خود ویژگی `classList` از این نظر فقط‌خواندنی است که نمی‌توانید شیء `DOMTokenList` را جایگزین کنید، اما همچنان می‌توانید مستقیماً به `classList` مقدار اختصاص دهید که معادل اختصاص دادن به ویژگی {{domxref("DOMTokenList/value", "value")}} آن است. همچنین می‌توانید شیء `DOMTokenList` را با استفاده از روش‌های {{domxref("DOMTokenList/add", "add()")}}، {{domxref("DOMTokenList/remove", "remove()")}}، {{domxref("DOMTokenList/replace", "replace()")}} و {{domxref("DOMTokenList/toggle", "toggle()")}} تغییر دهید.
 
-## Examples
+## مثال‌ها
 
 ```js
 const div = document.createElement("div");
@@ -62,15 +56,15 @@ div.classList.remove(...cls);
 div.classList.replace("foo", "bar");
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Element.className")}}
 - {{domxref("DOMTokenList")}}
