@@ -1,11 +1,5 @@
 ---
 title: "HTMLElement: spellcheck property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/spellcheck"
-status: "needs-translation"
----
-
----
-title: "HTMLElement: spellcheck property"
 short-title: spellcheck
 slug: Web/API/HTMLElement/spellcheck
 page-type: web-api-instance-property
@@ -14,17 +8,17 @@ browser-compat: api.HTMLElement.spellcheck
 
 {{APIRef("HTML DOM")}}
 
-The **`spellcheck`** property of the {{domxref("HTMLElement")}} interface represents a boolean value that controls the [spell-checking](/en-US/docs/Web/HTML/Reference/Global_attributes/spellcheck) hint. It is available on all HTML elements, though it doesn't affect all of them.
+ویژگی **`spellcheck`** در رابط {{domxref("HTMLElement")}} یک مقدار بولی است که نشانهٔ [بررسی املا](/en-US/docs/Web/HTML/Reference/Global_attributes/spellcheck) را کنترل می‌کند. این ویژگی روی همهٔ عناصر HTML در دسترس است، هرچند روی همهٔ آن‌ها تأثیر ندارد.
 
-It reflects the value of the [`spellcheck`](/en-US/docs/Web/HTML/Reference/Global_attributes/spellcheck) HTML global attribute.
+این ویژگی منعکس‌کنندهٔ مقدار صفت سراسری HTML [`spellcheck`](/en-US/docs/Web/HTML/Reference/Global_attributes/spellcheck) است.
 
-## Value
+## مقدار
 
-A boolean value that is `true` if the spelling and grammar of the text content in the element may be checked, `false` otherwise.
+یک مقدار بولی: اگر املا و دستور زبان محتوای متنی عنصر قابل بررسی باشد، `true` و در غیر این صورت `false` خواهد بود.
 
-## Examples
+## مثال‌ها
 
-The following example shows how to control the [spell-checking](/en-US/docs/Web/HTML/Reference/Global_attributes/spellcheck) hint via script:
+مثال زیر نشان می‌دهد که چگونه می‌توان نشانهٔ [بررسی املا](/en-US/docs/Web/HTML/Reference/Global_attributes/spellcheck) را از طریق اسکریپت کنترل کرد:
 
 ```html
 <div>
@@ -53,16 +47,16 @@ controller.addEventListener("change", (e) => {
 
 {{EmbedLiveSample('Examples', 600, 200)}}
 
-Note that you must enable the browser setting to check spelling and grammar.
+توجه داشته باشید که باید تنظیمات مرورگر را برای بررسی املا و دستور زبان فعال کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [`spellcheck`](/en-US/docs/Web/HTML/Reference/Global_attributes/spellcheck) HTML global attribute
+- [`spellcheck`](/en-US/docs/Web/HTML/Reference/Global_attributes/spellcheck) صفت سراسری HTML
