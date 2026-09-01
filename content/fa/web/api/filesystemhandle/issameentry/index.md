@@ -1,11 +1,5 @@
 ---
 title: "FileSystemHandle: isSameEntry() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemHandle/isSameEntry"
-status: "needs-translation"
----
-
----
-title: "FileSystemHandle: isSameEntry() method"
 short-title: isSameEntry()
 slug: Web/API/FileSystemHandle/isSameEntry
 page-type: web-api-instance-method
@@ -14,29 +8,26 @@ browser-compat: api.FileSystemHandle.isSameEntry
 
 {{securecontext_header}}{{APIRef("File System API")}}{{AvailableInWorkers}}
 
-The **`isSameEntry()`** method of the
-{{domxref("FileSystemHandle")}} interface compares two {{domxref("FileSystemHandle", "handles")}} to see if the associated entries (either a file or directory) match.
+متد **`isSameEntry()`** از رابط {{domxref("FileSystemHandle")}} دو {{domxref("FileSystemHandle", "handles")}} را مقایسه می‌کند تا ببیند آیا ورودی‌های مرتبط (چه فایل و چه دایرکتوری) با هم مطابقت دارند یا نه.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 isSameEntry(fileSystemHandle)
 ```
 
-### Parameters
+### پارامترها
 
 - {{domxref("FileSystemHandle")}}
-  - : The `FileSystemHandle` to match against the handle on which the method is
-    invoked.
+  - : یک `FileSystemHandle` که باید با handle ای که متد روی آن فراخوانی شده است مطابقت داده شود.
 
-### Return value
+### مقدار بازگشتی
 
-A Promise that fulfills with a {{jsxref('Boolean')}}.
+یک {{jsxref("Promise")}} که با یک {{jsxref('Boolean')}} تحقق می‌یابد.
 
-## Examples
+## مثال‌ها
 
-The following function compares a single entry with an array of entries, and returns a
-{{jsxref("Promise")}} that fulfils with a new array with any matching entries removed.
+تابع زیر یک ورودی واحد را با یک آرایه از ورودی‌ها مقایسه می‌کند و یک {{jsxref("Promise")}} برمی‌گرداند که با یک آرایه جدید که شامل ورودی‌های غیرمطابقت‌دار است، تحقق می‌یابد (ورودی‌های مطابقت‌دار حذف شده‌اند).
 
 ```js
 async function removeMatches(fileEntry, entriesArr) {
@@ -50,15 +41,15 @@ async function removeMatches(fileEntry, entriesArr) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [File System API](/en-US/docs/Web/API/File_System_API)
 - [The File System Access API: simplifying access to local files](https://developer.chrome.com/docs/capabilities/web-apis/file-system-access)
