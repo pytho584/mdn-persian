@@ -1,11 +1,5 @@
 ---
 title: "HTMLInputElement: selectionStart property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/selectionStart"
-status: "needs-translation"
----
-
----
-title: "HTMLInputElement: selectionStart property"
 short-title: selectionStart
 slug: Web/API/HTMLInputElement/selectionStart
 page-type: web-api-instance-property
@@ -14,19 +8,18 @@ browser-compat: api.HTMLInputElement.selectionStart
 
 {{ApiRef("HTML DOM")}}
 
-The **`selectionStart`** property of the {{domxref("HTMLInputElement")}} interface is a number that represents the beginning index of the selected text. When nothing is selected, it returns the position of the text input cursor (caret) inside of the `<input>` element.
+ویژگی **`selectionStart`** در واسط {{domxref("HTMLInputElement")}} عددی است که اندیس شروع متن انتخاب‌شده را نشان می‌دهد. وقتی چیزی انتخاب نشده باشد، موقعیت مکان‌نمای ورودی متن (caret) را درون عنصر `<input>` برمی‌گرداند.
 
 > [!NOTE]
-> According to the [WHATWG forms spec](https://html.spec.whatwg.org/multipage/forms.html#concept-input-apply), the `selectionStart` property applies only to inputs of types text, search, URL, tel, and password. On other input types, reading `selectionStart` returns `null`, and setting it throws an `InvalidStateError`.
+> طبق [مشخصات فرم‌های WHATWG](https://html.spec.whatwg.org/multipage/forms.html#concept-input-apply)، ویژگی `selectionStart` فقط برای ورودی‌هایی از انواع text، search، URL، tel و password کاربرد دارد. در سایر انواع ورودی، خواندن `selectionStart` مقدار `null` برمی‌گرداند و تنظیم آن خطای `InvalidStateError` ایجاد می‌کند.
 
-If `selectionStart` is greater than `selectionEnd`, then both are
-treated as the value of `selectionEnd`.
+اگر `selectionStart` بزرگ‌تر از `selectionEnd` باشد، هر دو به‌عنوان مقدار `selectionEnd` در نظر گرفته می‌شوند.
 
-## Value
+## مقدار
 
-A non-negative number.
+یک عدد نامنفی.
 
-## Examples
+## مثال‌ها
 
 ### HTML
 
@@ -47,7 +40,7 @@ A non-negative number.
 </fieldset>
 ```
 
-### JavaScript
+### جاوااسکریپت
 
 ```js
 const inputElement = document.getElementById("statement");
@@ -64,20 +57,20 @@ statementBtn.addEventListener("click", () => {
 console.log(colorStart.selectionStart); // Output : null
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("HTMLTextAreaElement.selectionStart")}} property
-- {{domxref("HTMLInputElement.selectionEnd")}} property
-- {{domxref("HTMLInputElement.setSelectionRange")}} method
+- ویژگی {{domxref("HTMLTextAreaElement.selectionStart")}}
+- ویژگی {{domxref("HTMLInputElement.selectionEnd")}}
+- روش {{domxref("HTMLInputElement.setSelectionRange")}}
