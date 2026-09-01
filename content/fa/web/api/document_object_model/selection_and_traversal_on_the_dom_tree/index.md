@@ -1,61 +1,55 @@
 ---
-title: "Selection and traversal on the DOM tree"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Selection_and_traversal_on_the_DOM_tree"
-status: "needs-translation"
----
-
----
-title: Selection and traversal on the DOM tree
+title: انتخاب و پیمایش در درخت DOM
 slug: Web/API/Document_Object_Model/Selection_and_traversal_on_the_DOM_tree
 page-type: guide
 ---
 
 {{DefaultAPISidebar("DOM")}}
 
-The Selectors API provides methods that make it quick and easy to retrieve {{domxref("Element")}} nodes from the DOM by matching against a set of [selectors](/en-US/docs/Web/CSS/Guides/Selectors). This is much faster than past techniques, wherein it was necessary to, for example, use a loop in JavaScript code to locate the specific items you needed to find.
+API انتخابگرها (Selectors API) روش‌هایی را فراهم می‌کند که بازیابی گره‌های {{domxref("Element")}} را از DOM با تطبیق دادن با مجموعه‌ای از [انتخابگرها](/en-US/docs/Web/CSS/Guides/Selectors) سریع و آسان می‌سازد. این روش بسیار سریع‌تر از تکنیک‌های قدیمی است که در آن‌ها برای مثال لازم بود از یک حلقه در کد جاوااسکریپت برای یافتن آیتم‌های موردنظر استفاده کنید.
 
-## The NodeSelector interface
+## رابط NodeSelector
 
-This specification adds two new methods to any objects implementing the {{domxref("Document")}}, {{domxref("DocumentFragment")}}, or {{domxref("Element")}} interfaces:
+این مشخصات دو روش جدید به هر شیءای که رابط‌های {{domxref("Document")}}، {{domxref("DocumentFragment")}} یا {{domxref("Element")}} را پیاده‌سازی می‌کند اضافه می‌کند:
 
 - {{domxref("Element.querySelector", "querySelector()")}}
-  - : Returns the first matching {{domxref("Element")}} node within the node's subtree. If no matching node is found, `null` is returned.
+  - : اولین گره {{domxref("Element")}} مطابق را در زیردرخت آن گره برمی‌گرداند. اگر گره‌ای مطابق یافت نشود، `null` برگردانده می‌شود.
 - {{domxref("Element.querySelectorAll", "querySelectorAll()")}}
-  - : Returns a {{domxref("NodeList")}} containing all matching `Element` nodes within the node's subtree, or an empty `NodeList` if no matches are found.
+  - : یک {{domxref("NodeList")}} شامل همه گره‌های `Element` مطابق در زیردرخت آن گره برمی‌گرداند، یا اگر موردی یافت نشود، یک `NodeList` خالی.
 
 > [!NOTE]
-> The {{domxref("NodeList")}} returned by {{domxref("Element.querySelectorAll()", "querySelectorAll()")}} is not live, which means that changes in the DOM are not reflected in the collection. This is different from other DOM querying methods that return live node lists.
+> {{domxref("NodeList")}} که توسط {{domxref("Element.querySelectorAll()", "querySelectorAll()")}} برگردانده می‌شود زنده (live) نیست؛ یعنی تغییرات DOM در این مجموعه منعکس نمی‌شود. این با سایر روش‌های جست‌وجوی DOM که فهرست گره‌های زنده برمی‌گردانند متفاوت است.
 
-You may find examples and details by reading the documentation for the {{domxref("Element.querySelector()")}} and {{domxref("Element.querySelectorAll()")}} methods.
+می‌توانید مثال‌ها و جزئیات را با مطالعه مستندات روش‌های {{domxref("Element.querySelector()")}} و {{domxref("Element.querySelectorAll()")}} بیابید.
 
-## Selectors
+## انتخابگرها
 
-The selector methods accept [selectors](/en-US/docs/Web/CSS/Guides/Selectors) to determine what element or elements should be returned. This includes [selector lists](/en-US/docs/Web/CSS/Reference/Selectors/Selector_list) so you can group multiple selectors in a single query.
+روش‌های انتخابگر، [انتخابگرها](/en-US/docs/Web/CSS/Guides/Selectors) را برای تعیین اینکه کدام عنصر یا عناصر باید برگردانده شوند می‌پذیرند. این شامل [فهرست انتخابگرها](/en-US/docs/Web/CSS/Reference/Selectors/Selector_list) نیز می‌شود، بنابراین می‌توانید چندین انتخابگر را در یک پرس‌وجوی واحد گروه‌بندی کنید.
 
-To protect the user's privacy, some [pseudo-classes](/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-classes) are not supported or behave differently. For example {{cssxref(":visited")}} will return no matches and {{cssxref(":link")}} is treated as {{cssxref(":any-link")}}.
+برای محافظت از حریم خصوصی کاربر، برخی [شبه‌کلاس‌ها](/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-classes) پشتیبانی نمی‌شوند یا رفتار متفاوتی دارند. برای مثال {{cssxref(":visited")}} هیچ موردی را برنمی‌گرداند و {{cssxref(":link")}} به‌عنوان {{cssxref(":any-link")}} در نظر گرفته می‌شود.
 
-Only elements can be selected, so [pseudo-classes](/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-classes) are not supported.
+فقط عناصر قابل انتخاب هستند، بنابراین [شبه‌عنصرها](/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-elements) پشتیبانی نمی‌شوند.
 
-## Examples
+## مثال‌ها
 
-To select all paragraph (`p`) elements in a document whose classes include `warning` or `note`, you can do the following:
+برای انتخاب همه عناصر پاراگراف (`p`) در یک سند که کلاس‌هایشان شامل `warning` یا `note` است، می‌توانید به این صورت عمل کنید:
 
 ```js
 const special = document.querySelectorAll("p.warning, p.note");
 ```
 
-You can also query by ID. For example:
+همچنین می‌توانید با شناسه (ID) جست‌وجو کنید. برای مثال:
 
 ```js
 const el = document.querySelector("#main, #basic, #exclamation");
 ```
 
-After executing the above code, `el` contains the first element in the document whose ID is one of `main`, `basic`, or `exclamation`.
+پس از اجرای کد بالا، `el` شامل اولین عنصر در سند است که شناسه آن یکی از `main`، `basic` یا `exclamation` باشد.
 
-## See also
+## همچنین ببینید
 
-- [Selectors specification](https://drafts.csswg.org/selectors/)
-- [CSS Selectors](/en-US/docs/Web/CSS/Guides/Selectors)
+- [مشخصات انتخابگرها](https://drafts.csswg.org/selectors/)
+- [انتخابگرهای CSS](/en-US/docs/Web/CSS/Guides/Selectors)
 - {{domxref("Element.querySelector()")}}
 - {{domxref("Element.querySelectorAll()")}}
 - {{domxref("Document.querySelector()")}}
