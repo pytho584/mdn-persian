@@ -1,11 +1,5 @@
 ---
 title: "Document: body property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/body"
-status: "needs-translation"
----
-
----
-title: "Document: body property"
 short-title: body
 slug: Web/API/Document/body
 page-type: web-api-instance-property
@@ -14,19 +8,17 @@ browser-compat: api.Document.body
 
 {{APIRef("DOM")}}
 
-The **`Document.body`** property represents the
-{{HTMLElement("body")}} or {{HTMLElement("frameset")}} node of the current document, or
-`null` if no such element exists.
+خاصیت **`Document.body`** نمایانگر گره (node) {{HTMLElement("body")}} یا {{HTMLElement("frameset")}} سند فعلی است، یا اگر چنین عنصری وجود نداشته باشد `null` برمی‌گرداند.
 
-## Value
+## مقدار
 
-One of the following:
+یکی از موارد زیر:
 
 - {{domxref("HTMLBodyElement")}}
 - {{domxref("HTMLFrameSetElement")}}
 - `null`
 
-## Examples
+## مثال‌ها
 
 ```js
 // Given this HTML: <body id="oldBodyElement"></body>
@@ -39,16 +31,11 @@ document.body = newBodyElement;
 alert(document.body.id); // "newBodyElement"
 ```
 
-## Notes
+## یادداشت‌ها
 
-`document.body` is the element that contains the content for the document.
-In documents with `<body>` contents, returns the
-`<body>` element, and in frameset documents, this returns the outermost
-`<frameset>` element.
+`document.body` عنصری است که محتوای سند را در خود دارد. در اسناد دارای محتوای `<body>`، عنصر `<body>` را برمی‌گرداند، و در اسناد frameset، بیرونی‌ترین عنصر `<frameset>` را برمی‌گرداند.
 
-Though the `body` property is settable, setting a new body on a document
-will effectively remove all the current children of the existing
-`<body>` element.
+اگرچه خاصیت `body` قابل تنظیم است، تنظیم یک body جدید روی یک سند به طور مؤثر تمام فرزندان فعلی عنصر `<body>` موجود را حذف خواهد کرد.
 
 ## Specifications
 
@@ -58,6 +45,6 @@ will effectively remove all the current children of the existing
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("document.head")}}
