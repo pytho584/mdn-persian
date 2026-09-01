@@ -1,40 +1,34 @@
 ---
 title: "Relying party federated sign-in"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FedCM_API/RP_sign-in"
-status: "needs-translation"
----
-
----
-title: Relying party federated sign-in
 slug: Web/API/FedCM_API/RP_sign-in
 page-type: guide
 ---
 
 {{DefaultAPISidebar("FedCM API")}}
 
-This article describes the process by which a {{glossary("Relying party", "relying party")}} (RP) can use the [Federated Credential Management (FedCM) API](/en-US/docs/Web/API/FedCM_API) to perform a federated sign-in via an {{glossary("Identity provider", "identity provider")}} (IdP).
+این مقاله فرآیندی را توصیف می‌کند که در آن یک طرف متکی (RP) می‌تواند از [API مدیریت اعتبارنامه فدرال (FedCM)](/en-US/docs/Web/API/FedCM_API) برای انجام ورود به سیستم فدرال از طریق یک ارائه‌دهنده هویت (IdP) استفاده کند.
 
-## Calling the `get()` method
+## فراخوانی متد `get()`
 
-RPs can call {{domxref("CredentialsContainer.get", "navigator.credentials.get()")}} with an `identity` option to request that a user be given the option to sign in to the RP with a choice of existing IdP accounts. The IdPs identify the RP by its `clientId`, which was issued by each IdP to the RP in a separate IdP-specific process. The chosen IdP identifies the specific user who is attempting to sign-in with the credentials (cookies) provided to the browser during the [sign-in flow](#fedcm_sign-in_flow).
+طرف‌های متکی (RP) می‌توانند متد {{domxref("CredentialsContainer.get", "navigator.credentials.get()")}} را با گزینه `identity` فراخوانی کنند تا به کاربر امکان انتخاب یک حساب موجود از IdP و ورود به RP داده شود. IdPها با استفاده از `clientId` که هر IdP به صورت جداگانه به RP اختصاص داده است، RP را شناسایی می‌کنند. IdP انتخاب شده، کاربر خاصی را که در تلاش برای ورود است با استفاده از اعتبارنامه‌ها (cookies) ارائه‌شده به مرورگر در طول [فرآیند ورود به IdP](#فرآیند-ورود-fedcm) شناسایی می‌کند.
 
-If the user has never signed into an IdP or is logged out, `CredentialsContainer.get()` rejects with an error and the RP can direct the user to an IdP page to sign in or create an account.
+اگر کاربر هرگز به IdP وارد نشده باشد یا از آن خارج شده باشد، متد `CredentialsContainer.get()` با یک خطا رد می‌شود و RP می‌تواند کاربر را به صفحه IdP هدایت کند تا وارد شود یا یک حساب ایجاد کند.
 
-Otherwise, if the user identity is successfully validated by the chosen IdP, `CredentialsContainer.get()` returns a promise that fulfills with an {{domxref("IdentityCredential")}} object.
+در غیر این صورت، اگر هویت کاربر توسط IdP انتخاب‌شده با موفقیت تأیید شود، `CredentialsContainer.get()` یک قول (Promise) برمی‌گرداند که با یک شیء {{domxref("IdentityCredential")}} حل می‌شود.
 
-### The `IdentityCredential.token` object
+### شیء `IdentityCredential.token`
 
-The `IdentityCredential` includes a `token` property which the RP can use to sign the user in.
+`IdentityCredential` شامل یک ویژگی `token` است که RP می‌تواند از آن برای ورود کاربر استفاده کند.
 
-The FedCM API does not define the structure of the `token` object or what the RP should do with it: this depends entirely on the federated identity protocol that the IdP implements.
+API FedCM ساختار شیء `token` یا نحوه استفاده RP از آن را تعریف نمی‌کند: این کاملاً به پروتکل هویت فدرال بستگی دارد که IdP پیاده‌سازی می‌کند.
 
-For example, in the [FedCM for OAuth](https://github.com/aaronpk/oauth-fedcm-profile) profile, which describes how the [OpenID Connect (OIDC)](/en-US/docs/Web/Security/Authentication/Federated_identity#openid_connect) protocol could be implemented using FedCM, the token returned by `CredentialsContainer.get()` is an OAuth authorization code. The RP uses this code to retrieve the identity token from the IdP's token endpoint.
+برای مثال، در پروفایل [FedCM for OAuth](https://github.com/aaronpk/oauth-fedcm-profile)، که نحوه پیاده‌سازی پروتکل [OpenID Connect (OIDC)](/en-US/docs/Web/Security/Authentication/Federated_identity#openid_connect) با استفاده از FedCM را توصیف می‌کند، توکن بازگردانده‌شده توسط `CredentialsContainer.get()` یک کد مجوز OAuth است. RP از این کد برای بازیابی توکن هویت از نقطه پایانی (endpoint) توکن IdP استفاده می‌کند.
 
-When an RP chooses to work with a particular IdP, the IdP will provide instructions for how to use the returned `token` value.
+هنگامی که یک RP تصمیم به همکاری با یک IdP خاص می‌گیرد، IdP دستورالعمل‌هایی را برای نحوه استفاده از مقدار `token` بازگردانده‌شده ارائه می‌دهد.
 
-### Example request
+### مثال درخواست
 
-A typical request might look like this:
+یک درخواست معمولی ممکن است به این شکل باشد:
 
 ```js
 async function signIn() {
@@ -45,7 +39,7 @@ async function signIn() {
         {
           configURL: "https://accounts.idp.example/config.json",
           clientId: "********",
-          params: {/* IdP-specific parameters */},
+          params: {/* پارامترهای خاص IdP */},
           loginHint: "user1@example.com",
         },
         {
@@ -57,68 +51,68 @@ async function signIn() {
 }
 ```
 
-The `identity.providers` property takes an array containing one or more objects specifying the path to each IdP's config file (`configURL`) and the RP's client identifier (`clientId`) issued by the IdP.
+ویژگی `identity.providers` یک آرایه شامل یک یا چند شیء را می‌گیرد که مسیر فایل پیکربندی هر IdP (`configURL`) و شناسه مشتری RP (`clientId`) صادرشده توسط IdP را مشخص می‌کند.
 
-The previous example also includes some optional features:
+مثال بالا همچنین شامل برخی ویژگی‌های اختیاری است:
 
-- `identity.context` specifies the context in which the user is authenticating with FedCM. For example, is it a first-time signup for this account, or a sign-in with an existing account? The browser uses this information to vary the text in its FedCM UI to better suit the context.
-- The `params` property contains any parameters that this IdP needs. Its structure and content is determined by the specific IdP.
-- The `loginHint` property provides a hint about the account option(s) the browser should present for user sign-in. This hint is matched against the `login_hints` values that the IdP provides at the [accounts list endpoint](/en-US/docs/Web/API/FedCM_API/IDP_integration#the_accounts_list_endpoint).
+- `identity.context` مشخص می‌کند که کاربر در چه زمینه‌ای با FedCM احراز هویت می‌کند. به عنوان مثال، آیا این اولین ثبت‌نام برای این حساب است یا ورود با یک حساب موجود؟ مرورگر از این اطلاعات برای تغییر متن در رابط کاربری FedCM خود استفاده می‌کند تا با زمینه بهتر مطابقت داشته باشد.
+- ویژگی `params` شامل هر پارامتری است که این IdP نیاز دارد. ساختار و محتوای آن توسط IdP خاص تعیین می‌شود.
+- ویژگی `loginHint` یک راهنمایی درباره گزینه(های) حسابی که مرورگر باید برای ورود کاربر ارائه دهد، فراهم می‌کند. این راهنما با مقادیر `login_hints` که IdP در [نقطه پایانی لیست حساب‌ها](/en-US/docs/Web/API/FedCM_API/IDP_integration#the_accounts_list_endpoint) ارائه می‌دهد، مطابقت داده می‌شود.
 
-The browser requests the IdP config files and carries out the sign-in flow detailed below. For more information on the kind of interaction a user might expect from the browser-supplied UI, see [Implement an identity solution with FedCM on the Relying Party side](https://developer.chrome.com/docs/identity/fedcm/implement/relying-party).
+مرورگر فایل‌های پیکربندی IdP را درخواست می‌کند و فرآیند ورود به سیستم را که در زیر توضیح داده شده است، انجام می‌دهد. برای اطلاعات بیشتر در مورد نوع تعاملی که کاربر ممکن است از رابط کاربری ارائه‌شده توسط مرورگر انتظار داشته باشد، به [Implement an identity solution with FedCM on the Relying Party side](https://developer.chrome.com/docs/identity/fedcm/implement/relying-party) مراجعه کنید.
 
-## FedCM sign-in flow
+## فرآیند ورود FedCM
 
-There are three parties involved in the sign-in flow — the RP app, the browser itself, and the IdP. The following diagram summarizes what is happening visually.
+سه طرف در فرآیند ورود شرکت دارند: برنامه RP، خود مرورگر و IdP. نمودار زیر به صورت بصری خلاصه‌ای از آنچه در جریان است را نشان می‌دهد.
 
 ![a visual representation of the flow described in detail below](fedcm-flow.png)
 
-The flow is as follows:
+فرآیند به شرح زیر است:
 
-1. The RP invokes {{domxref("CredentialsContainer.get", "navigator.credentials.get()")}} to start off the sign-in flow.
+1. RP متد {{domxref("CredentialsContainer.get", "navigator.credentials.get()")}} را فراخوانی می‌کند تا فرآیند ورود آغاز شود.
 
-2. From the `configURL` provided for each IdP, the browser requests two files:
-   1. The well-known file (`/.well-known/web-identity`), available from `/.well-known/web-identity` at the {{glossary("registrable domain")}} of the `configURL`.
-   2. The [IdP config file](/en-US/docs/Web/API/FedCM_API/IDP_integration#provide_a_config_file_and_endpoints) (`/config.json`), available at the `configURL`.
+2. مرورگر از `configURL` ارائه‌شده برای هر IdP، دو فایل را درخواست می‌کند:
+   1. فایل well-known (`/.well-known/web-identity`)، که در آدرس `/.well-known/web-identity` در {{glossary("registrable domain", "دامنه قابل ثبت")}} `configURL` در دسترس است.
+   2. [فایل پیکربندی IdP](/en-US/docs/Web/API/FedCM_API/IDP_integration#provide_a_config_file_and_endpoints) (`/config.json`)، که در `configURL` در دسترس است.
 
-   These are both [`GET`](/en-US/docs/Web/HTTP/Reference/Methods/GET) requests, which don't have cookies and don't follow redirects. This effectively prevents IdPs from learning who made the request and which RP is attempting to connect.
+   این درخواست‌ها هر دو از نوع [`GET`](/en-US/docs/Web/HTTP/Reference/Methods/GET) هستند، کوکی ندارند و از تغییر مسیرها پیروی نمی‌کنند. این کار عملاً از اطلاع IdP از اینکه چه کسی درخواست را انجام داده و کدام RP در تلاش برای اتصال است، جلوگیری می‌کند.
 
-   All requests sent from the browser via FedCM include a `{{httpheader("Sec-Fetch-Dest")}}: webidentity` header to prevent {{glossary("CSRF")}} attacks. All IdP endpoints must confirm this header is included.
+   تمام درخواست‌های ارسالی از مرورگر از طریق FedCM شامل یک هدر {{httpheader("Sec-Fetch-Dest")}}: `webidentity` هستند تا از حملات {{glossary("CSRF")}} جلوگیری شود. همه نقاط پایانی IdP باید تأیید کنند که این هدر وجود دارد.
 
-3. The IdPs respond with the requested well-known file and `config.json` files. The browser validates the config file URL in the `get()` request against the list of valid config URLs inside the well-known file.
+3. IdPها با فایل‌های well-known و `config.json` درخواست‌شده پاسخ می‌دهند. مرورگر URL فایل پیکربندی در درخواست `get()` را با لیست URLهای معتبر پیکربندی درون فایل well-known اعتبارسنجی می‌کند.
 
-4. If the browser has an [IdP's login status](/en-US/docs/Web/API/FedCM_API/IDP_integration#update_login_status_using_the_login_status_api) set to `"logged-in"`, it makes a credentialed request (i.e., with a cookie that identifies the user that is signed in) to the [`accounts_endpoint`](/en-US/docs/Web/API/FedCM_API/IDP_integration#the_accounts_list_endpoint) inside the IdP config file for the user's account details. This is a `GET` request with cookies, but without a `client_id` parameter or the {{httpheader("Origin")}} header. This effectively prevents IdPs from learning which RP the user is trying to sign in to. As a result, the list of accounts returned is RP-agnostic.
-
-   > [!NOTE]
-   > If the IdPs' login statuses are all `"logged-out"`, the `get()` call rejects with a `NetworkError` {{domxref("DOMException")}} and does not make a request to any IdP's `accounts_endpoint`. In this case it is up to the developer to handle the flow, for example by prompting the user to go and sign in to a suitable IdP. Note that there may be some delay in the rejection to avoid leaking IdP login status to the RP.
-
-5. The IdPs respond with the account information requested from their `accounts_endpoint`s. These are arrays of all accounts associated with the user's IdP cookies for any RPs associated with an IdP.
-
-6. {{optional_inline}} If included in an IdP config file, the browser makes an uncredentialed request to the [`client_metadata_endpoint`](/en-US/docs/Web/API/FedCM_API/IDP_integration#the_client_metadata_endpoint) for the location of the RP terms of service and privacy policy pages. This is a `GET` request sent with the `clientId` passed into the `get()` call as a parameter, without cookies.
-
-7. {{optional_inline}} The IdPs respond with the URLs requested from the `client_metadata_endpoint`.
-
-8. The browser uses the information obtained by the previous two sets of requests to create the UI asking the user to choose an IdP (if more than one is signed-in) and an account to sign in to the RP with. The UI also asks the user for permission to sign in to the RP using their chosen federated IdP account.
+4. اگر مرورگر [وضعیت ورود IdP](/en-US/docs/Web/API/FedCM_API/IDP_integration#update_login_status_using_the_login_status_api) را روی `"logged-in"` تنظیم کرده باشد، یک درخواست دارای اعتبارنامه (یعنی با کوکی که کاربر واردشده را شناسایی می‌کند) به [`accounts_endpoint`](/en-US/docs/Web/API/FedCM_API/IDP_integration#the_accounts_list_endpoint) درون فایل پیکربندی IdP برای دریافت جزئیات حساب کاربر ارسال می‌کند. این یک درخواست `GET` با کوکی‌ها است، اما بدون پارامتر `client_id` یا هدر {{httpheader("Origin")}}. این کار عملاً از اطلاع IdP از اینکه کاربر در تلاش برای ورود به کدام RP است، جلوگیری می‌کند. در نتیجه، لیست حساب‌های بازگردانده‌شده مستقل از RP است.
 
    > [!NOTE]
-   > At this stage, if the user has previously authenticated with a federated RP account in the current browser instance (that is, created a new account with the RP or signed into the RP's website using an existing account), they may be able to **auto-reauthenticate**, depending on what the [`mediation`](/en-US/docs/Web/API/CredentialsContainer/get#mediation) option is set to in the `get()` call. If so, the user will be signed in automatically without entering their credentials, as soon as `get()` is invoked. See the [Auto-reauthentication](#auto-reauthentication) section for more details.
+   > اگر وضعیت ورود همه IdPها `"logged-out"` باشد، فراخوانی `get()` با یک {{domxref("DOMException")}} از نوع `NetworkError` رد می‌شود و درخواستی به `accounts_endpoint` هیچ IdP ارسال نمی‌کند. در این صورت، این وظیفه توسعه‌دهنده است که جریان را مدیریت کند، مثلاً با درخواست از کاربر برای رفتن و ورود به یک IdP مناسب. توجه داشته باشید که ممکن است در رد شدن تأخیری وجود داشته باشد تا از افشای وضعیت ورود IdP به RP جلوگیری شود.
 
-9. If the user grants permission to do so, the browser makes a credentialed request to the [`id_assertion_endpoint`](/en-US/docs/Web/API/FedCM_API/IDP_integration#the_id_assertion_endpoint) to request a validation token from the chosen IdP for the selected account.
+5. IdPها با اطلاعات حساب درخواست‌شده از `accounts_endpoint` خود پاسخ می‌دهند. این‌ها آرایه‌هایی از تمام حساب‌های مرتبط با کوکی‌های IdP کاربر برای هر RP مرتبط با یک IdP هستند.
 
-   The credentials are sent in an HTTP [`POST`](/en-US/docs/Web/HTTP/Reference/Methods/POST) request with cookies and a content type of `application/x-www-form-urlencoded`.
+6. {{optional_inline}} اگر در فایل پیکربندی IdP گنجانده شده باشد، مرورگر یک درخواست بدون اعتبارنامه به [`client_metadata_endpoint`](/en-US/docs/Web/API/FedCM_API/IDP_integration#the_client_metadata_endpoint) برای دریافت مکان صفحات شرایط استفاده و سیاست حفظ حریم خصوصی RP ارسال می‌کند. این یک درخواست `GET` است که با `clientId` واردشده در فراخوانی `get()` به عنوان پارامتر ارسال می‌شود، بدون کوکی.
 
-   If the call fails, an error payload is returned as explained in [ID assertion error responses](/en-US/docs/Web/API/FedCM_API/IDP_integration#id_assertion_error_responses) and the promise returned by `get()` will reject with the error.
+7. {{optional_inline}} IdPها با URLهای درخواست‌شده از `client_metadata_endpoint` پاسخ می‌دهند.
 
-10. The chosen IdP checks that the account ID sent by the RP matches the ID for the account that is already signed in, and that the `Origin` matches the origin of the RP, which will have been registered in advance with the IdP. If everything looks good, it responds with the requested validation token.
+8. مرورگر از اطلاعات به‌دست‌آمده از دو مجموعه درخواست قبلی برای ایجاد رابط کاربری استفاده می‌کند که از کاربر می‌خواهد یک IdP (اگر بیش از یک IdP وارد شده است) و یک حساب برای ورود به RP انتخاب کند. رابط کاربری همچنین از کاربر اجازه می‌خواهد تا با استفاده از حساب IdP فدرال انتخاب‌شده خود وارد RP شود.
+
+   > [!NOTE]
+   > در این مرحله، اگر کاربر قبلاً در نمونه جاری مرورگر با یک حساب RP فدرال احراز هویت کرده باشد (یعنی یک حساب جدید با RP ایجاد کرده یا با استفاده از یک حساب موجود وارد وب‌سایت RP شده باشد)، ممکن است بتواند **به‌طور خودکار دوباره احراز هویت کند**، بسته به اینکه گزینه [`mediation`](/en-US/docs/Web/API/CredentialsContainer/get#mediation) در فراخوانی `get()` چه مقداری تنظیم شده باشد. اگر چنین باشد، کاربر به‌طور خودکار و بدون وارد کردن اعتبارنامه، بلافاصله پس از فراخوانی `get()` وارد سیستم می‌شود. برای جزئیات بیشتر، بخش [احراز هویت مجدد خودکار](#احراز-هویت-مجدد-خودکار) را ببینید.
+
+9. اگر کاربر اجازه دهد، مرورگر یک درخواست دارای اعتبارنامه به [`id_assertion_endpoint`](/en-US/docs/Web/API/FedCM_API/IDP_integration#the_id_assertion_endpoint) ارسال می‌کند تا یک توکن تأیید از IdP انتخاب‌شده برای حساب انتخاب‌شده دریافت کند.
+
+   اعتبارنامه‌ها در یک درخواست HTTP [`POST`](/en-US/docs/Web/HTTP/Reference/Methods/POST) با کوکی‌ها و نوع محتوای `application/x-www-form-urlencoded` ارسال می‌شوند.
+
+   اگر فراخوانی ناموفق باشد، یک بار خطا مطابق با [پاسخ‌های خطای تأیید هویت](/en-US/docs/Web/API/FedCM_API/IDP_integration#id_assertion_error_responses) بازگردانده می‌شود و قول بازگردانده‌شده توسط `get()` با خطا رد می‌شود.
+
+10. IdP انتخاب‌شده بررسی می‌کند که شناسه حساب ارسال‌شده توسط RP با شناسه حسابی که قبلاً وارد شده است مطابقت دارد و `Origin` با مبدأ RP، که قبلاً در IdP ثبت شده است، مطابقت دارد. اگر همه چیز درست باشد، با توکن تأیید درخواست‌شده پاسخ می‌دهد.
 
     > [!NOTE]
-    > The origin of the RP will be registered with the IdP in a completely separate process when the RP first integrates with the IdP. This process will be specific to each IdP.
+    > مبدأ RP در یک فرآیند کاملاً جداگانه زمانی که RP برای اولین بار با IdP ادغام می‌شود، در IdP ثبت می‌شود. این فرآیند مخصوص هر IdP خواهد بود.
 
-11. When the flow is complete, the `get()` promise resolves with an {{domxref("IdentityCredential")}} object, which provides further RP functionality. Most notably, this object contains a token that the RP can verify comes from the IdP (using a certificate) and that contains trusted information about the signed in user. Once the RP validates the token, they can use the contained information to sign the user in and start a new session, sign them up to their service, etc. The format and structure of the token depends on the IdP and has nothing to do with the FedCM API (the RP needs to follow the IdP's instructions).
+11. هنگامی که فرآیند کامل شد، قول `get()` با یک شیء {{domxref("IdentityCredential")}} حل می‌شود که عملکردهای بیشتری از RP را فراهم می‌کند. مهمتر از همه، این شیء شامل یک توکن است که RP می‌تواند تأیید کند که از IdP آمده است (با استفاده از یک گواهی) و حاوی اطلاعات قابل اعتمادی درباره کاربر واردشده است. پس از اینکه RP توکن را تأیید کرد، می‌تواند از اطلاعات موجود برای ورود کاربر و شروع یک جلسه جدید، ثبت‌نام کاربر در سرویس خود و غیره استفاده کند. قالب و ساختار توکن به IdP بستگی دارد و هیچ ارتباطی با API FedCM ندارد (RP باید دستورالعمل‌های IdP را دنبال کند).
 
-## Active versus passive mode
+## حالت فعال در مقابل حالت غیرفعال
 
-There are two different UI modes the browser can provide to an RP user when they sign-in via the FedCM API, **`active`** and **`passive`** mode. Which mode is used for sign-in is controlled by the [`mode`](/en-US/docs/Web/API/IdentityCredentialRequestOptions#mode) option of the `identity` object:
+دو حالت مختلف رابط کاربری وجود دارد که مرورگر می‌تواند در هنگام ورود کاربر از طریق API FedCM ارائه دهد: حالت **`active`** و **`passive`**. اینکه کدام حالت برای ورود استفاده می‌شود توسط گزینه [`mode`](/en-US/docs/Web/API/IdentityCredentialRequestOptions#mode) شیء `identity` کنترل می‌شود:
 
 ```js
 async function signIn() {
@@ -136,19 +130,19 @@ async function signIn() {
 }
 ```
 
-The default value for `mode` is `passive`. If `mode` is not set, or is set explicitly to `passive`, the browser can initiate the sign-in flow via a `get()` call without direct user interaction. For example, you might want to initiate the sign-in flow as soon as the user navigates to the sign-in page, provided they have IdP accounts to sign in with. In this mode, browsers typically present the user with a sign-in dialog window containing all the different sign-in options specified in the `providers` object, and they can choose whichever one suits them best and then enter the appropriate credentials.
+مقدار پیش‌فرض برای `mode` برابر `passive` است. اگر `mode` تنظیم نشده باشد یا به صراحت روی `passive` تنظیم شده باشد، مرورگر می‌تواند فرآیند ورود را از طریق یک فراخوانی `get()` بدون تعامل مستقیم کاربر آغاز کند. به عنوان مثال، ممکن است بخواهید به محض اینکه کاربر به صفحه ورود هدایت شد، فرآیند ورود را آغاز کنید، به شرطی که حساب‌های IdP برای ورود داشته باشد. در این حالت، مرورگرها معمولاً یک پنجره گفتگوی ورود شامل تمام گزینه‌های ورود مشخص‌شده در شیء `providers` به کاربر نشان می‌دهند و کاربر می‌تواند هر گزینه‌ای که برایش مناسب است را انتخاب کرده و سپس اعتبارنامه مناسب را وارد کند.
 
-If `mode` is set to `active`, the browser requires the sign-in flow to be initiated via a user action such as clicking a button ({{glossary("transient activation")}} is required), and the `providers` object can only have a length of `1`, otherwise the `get()` promise will reject. This mode is typically used when the RP wishes to provide a separate button for each IdP choice. When the user clicks one of those buttons, a simplified dialog window appears that just requires them to enter the credentials for that account.
+اگر `mode` روی `active` تنظیم شده باشد، مرورگر نیاز دارد که فرآیند ورود توسط یک اقدام کاربر مانند کلیک روی یک دکمه ({{glossary("transient activation", "فعال‌سازی موقت")}} مورد نیاز است) آغاز شود و شیء `providers` فقط می‌تواند طول `1` داشته باشد، در غیر این صورت قول `get()` رد می‌شود. این حالت معمولاً زمانی استفاده می‌شود که RP می‌خواهد برای هر انتخاب IdP یک دکمه جداگانه ارائه دهد. هنگامی که کاربر روی یکی از آن دکمه‌ها کلیک می‌کند، یک پنجره گفتگوی ساده‌شده ظاهر می‌شود که فقط باید اعتبارنامه آن حساب را وارد کند.
 
-See [FedCM UI modes](https://developer.chrome.com/docs/identity/fedcm/overview#fedcm_ui_modes) on developer.chrome.com for an example of how the different UI modes are presented in Google Chrome.
+برای مشاهده نمونه‌ای از نحوه ارائه حالت‌های مختلف رابط کاربری در Google Chrome، به [FedCM UI modes](https://developer.chrome.com/docs/identity/fedcm/overview#fedcm_ui_modes) در developer.chrome.com مراجعه کنید.
 
-## Auto-reauthentication
+## احراز هویت مجدد خودکار
 
-FedCM auto-reauthentication lets users reauthenticate automatically when they try to sign in to an RP again after their initial authentication using FedCM. "Initial authentication" refers to when the user creates an account or signs into the RP's website via the FedCM sign-in dialog for the first time on the RP site, on the same browser instance.
+احراز هویت مجدد خودکار FedCM به کاربران اجازه می‌دهد پس از احراز هویت اولیه با استفاده از FedCM، هنگام تلاش برای ورود دوباره به یک RP، به‌طور خودکار دوباره احراز هویت شوند. "احراز هویت اولیه" به زمانی اشاره دارد که کاربر در اولین بار در وب‌سایت RP، در همان نمونه مرورگر، از طریق گفتگوی ورود FedCM یک حساب ایجاد می‌کند یا وارد وب‌سایت RP می‌شود.
 
-After the initial authentication, auto-reauthentication can be used to sign into the RP website again automatically, without needing to show the user a "Continue as..." confirmation prompt. If the user has recently granted permission to allow federated sign-in to occur with a particular account, there's no privacy or security benefit to immediately enforcing another explicit user confirmation.
+پس از احراز هویت اولیه، می‌توان از احراز هویت مجدد خودکار برای ورود خودکار به وب‌سایت RP بدون نیاز به نمایش یک اعلان تأیید "ادامه به عنوان..." استفاده کرد. اگر کاربر اخیراً اجازه داده است که ورود فدرال با یک حساب خاص انجام شود، هیچ مزیت حریم خصوصی یا امنیتی در اعمال فوری یک تأیید صریح دیگر کاربر وجود ندارد.
 
-Auto-reauthentication behavior is controlled by the [`mediation`](/en-US/docs/Web/API/CredentialsContainer/get#mediation) option in the `get()` call:
+رفتار احراز هویت مجدد خودکار توسط گزینه [`mediation`](/en-US/docs/Web/API/CredentialsContainer/get#mediation) در فراخوانی `get()` کنترل می‌شود:
 
 ```js
 async function signIn() {
@@ -161,38 +155,38 @@ async function signIn() {
         },
       ],
     },
-    mediation: "optional", // this is the default
+    mediation: "optional", // این مقدار پیش‌فرض است
   });
 
-  // isAutoSelected is true if auto-reauthentication occurred.
+  // اگر احراز هویت مجدد خودکار رخ داده باشد، isAutoSelected برابر true است.
   const isAutoSelected = identityCredential.isAutoSelected;
 }
 ```
 
-Auto-reauthentication can occur if `mediation` is set to `optional` or `silent`.
+احراز هویت مجدد خودکار می‌تواند رخ دهد اگر `mediation` روی `optional` یا `silent` تنظیم شده باشد.
 
-With these `mediation` options, auto-reauthentication will occur under the following conditions:
+با این گزینه‌های `mediation`، احراز هویت مجدد خودکار تحت شرایط زیر رخ می‌دهد:
 
-- FedCM is available to use. For example, the user has not disabled FedCM either globally or in the RP's settings.
-- The user has only used one account to sign into the RP website on this browser via FedCM. If accounts exist for multiple IdPs, the user won't be automatically re-authenticated.
-- The user is signed into the IdP with that account.
-- Auto-reauthentication didn't happen within the last 10 minutes. This restriction is put into place to stop users being auto-reauthenticated immediately after they sign out — which would make for a pretty confusing user experience.
-- The RP hasn't called {{domxref("CredentialsContainer.preventSilentAccess", "preventSilentAccess()")}} after the previous sign in. This can be used by an RP to explicitly disable auto-reauthentication if desired.
-- The UI mode is [passive](<>).
+- FedCM برای استفاده در دسترس است. به عنوان مثال، کاربر FedCM را به‌طور کلی یا در تنظیمات RP غیرفعال نکرده است.
+- کاربر فقط از یک حساب برای ورود به وب‌سایت RP در این مرورگر از طریق FedCM استفاده کرده است. اگر حساب‌هایی برای چندین IdP وجود داشته باشد، کاربر به‌طور خودکار دوباره احراز هویت نمی‌شود.
+- کاربر با آن حساب وارد IdP شده است.
+- احراز هویت مجدد خودکار در ۱۰ دقیقه گذشته رخ نداده است. این محدودیت برای جلوگیری از احراز هویت مجدد خودکار کاربر بلافاصله پس از خروج از سیستم اعمال می‌شود، که تجربه کاربری بسیار گیج‌کننده‌ای ایجاد می‌کند.
+- RP پس از ورود قبلی، متد {{domxref("CredentialsContainer.preventSilentAccess", "preventSilentAccess()")}} را فراخوانی نکرده است. این می‌تواند توسط RP برای غیرفعال کردن صریح احراز هویت مجدد خودکار در صورت تمایل استفاده شود.
+- حالت رابط کاربری [غیرفعال (passive)](#) است.
 
-When these conditions are met, an attempt to automatically reauthenticate the user starts as soon as the `get()` is invoked. If auto-reauthentication is successful, the user will log into the RP site again, without being shown a confirmation prompt, using the same IdP account and validated token as they did before.
+هنگامی که این شرایط برآورده شوند، تلاش برای احراز هویت مجدد خودکار کاربر به محض فراخوانی `get()` آغاز می‌شود. اگر احراز هویت مجدد خودکار موفقیت‌آمیز باشد، کاربر بدون نمایش اعلان تأیید، با استفاده از همان حساب IdP و توکن تأیید شده قبلی، دوباره وارد وب‌سایت RP می‌شود.
 
-If auto-reauthentication fails, the behavior depends on the `mediation` value that was chosen:
+اگر احراز هویت مجدد خودکار ناموفق باشد، رفتار بستگی به مقدار `mediation` انتخاب‌شده دارد:
 
-- `optional`: the user _will_ be shown the dialog box and asked for confirmation again. As a result, this option tends to make sense to use on a page where a user journey is not in mid-flow, such an RP sign-in page.
-- `silent`: The `get()` promise will reject and the developer will need to handle guiding the user back to the sign-in page to start the process again. This option makes sense on pages where a user journey is in flow and you need to keep them signed in until completion, for example the pages of a checkout flow on an e-commerce website.
+- `optional`: کاربر دوباره پنجره گفتگو را مشاهده کرده و از او تأیید خواسته می‌شود. در نتیجه، این گزینه معمولاً در صفحه‌ای که سفر کاربر در میان جریان نیست، مانند صفحه ورود RP، منطقی است.
+- `silent`: قول `get()` رد می‌شود و توسعه‌دهنده باید هدایت کاربر به صفحه ورود را برای شروع مجدد فرآیند مدیریت کند. این گزینه در صفحه‌هایی که سفر کاربر در جریان است و باید تا تکمیل وارد سیستم باقی بماند، منطقی است، به عنوان مثال صفحات فرآیند تسویه حساب در یک وب‌سایت تجارت الکترونیک.
 
 > [!NOTE]
-> The {{domxref("IdentityCredential.isAutoSelected")}} property provides an indication of whether the federated sign-in was carried out using auto-reauthentication. This is helpful to evaluate the API performance and improve UX accordingly. Also, when it's unavailable, the user may be prompted to sign in with explicit user mediation, which is a `get()` call with `mediation: required`.
+> ویژگی {{domxref("IdentityCredential.isAutoSelected")}} نشان می‌دهد که آیا ورود فدرال با استفاده از احراز هویت مجدد خودکار انجام شده است یا خیر. این برای ارزیابی عملکرد API و بهبود تجربه کاربری مفید است. همچنین، زمانی که در دسترس نیست، ممکن است از کاربر خواسته شود با میانجی‌گری صریح کاربر وارد شود، که یک فراخوانی `get()` با `mediation: required` است.
 
-## Disconnecting a federated sign-in
+## قطع ارتباط ورود فدرال
 
-The RP may disconnect a specified federated sign-in account from the associated IdP by invoking {{domxref("IdentityCredential.disconnect_static", "IdentityCredential.disconnect()")}}. This function can be called from a top-level RP frame.
+RP می‌تواند یک حساب ورود فدرال مشخص را از IdP مرتبط با فراخوانی {{domxref("IdentityCredential.disconnect_static", "IdentityCredential.disconnect()")}} جدا کند. این تابع می‌تواند از یک فریم سطح بالای RP فراخوانی شود.
 
 ```js
 IdentityCredential.disconnect({
@@ -202,8 +196,8 @@ IdentityCredential.disconnect({
 });
 ```
 
-For a `disconnect()` call to work, the IdP must include a [`disconnect_endpoint`](/en-US/docs/Web/API/FedCM_API/IDP_integration#disconnect_endpoint) in its config file. See [The disconnect endpoint](/en-US/docs/Web/API/FedCM_API/IDP_integration#the_disconnect_endpoint) for more details of the underlying HTTP communication.
+برای اینکه فراخوانی `disconnect()` کار کند، IdP باید یک [`disconnect_endpoint`](/en-US/docs/Web/API/FedCM_API/IDP_integration#disconnect_endpoint) در فایل پیکربندی خود داشته باشد. برای جزئیات بیشتر در مورد ارتباطات HTTP زیربنایی، به [نقطه پایانی قطع ارتباط](/en-US/docs/Web/API/FedCM_API/IDP_integration#the_disconnect_endpoint) مراجعه کنید.
 
-## See also
+## همچنین ببینید
 
-- [Federated Credential Management API](https://developer.chrome.com/docs/identity/fedcm/overview) on developer.chrome.com (2023)
+- [Federated Credential Management API](https://developer.chrome.com/docs/identity/fedcm/overview) در developer.chrome.com (2023)
