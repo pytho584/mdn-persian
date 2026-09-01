@@ -1,10 +1,4 @@
 ---
-title: "HTMLTableColElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableColElement"
-status: "needs-translation"
----
-
----
 title: HTMLTableColElement
 slug: Web/API/HTMLTableColElement
 page-type: web-api-interface
@@ -13,39 +7,39 @@ browser-compat: api.HTMLTableColElement
 
 {{ APIRef("HTML DOM") }}
 
-The **`HTMLTableColElement`** interface provides properties for manipulating single or grouped table column elements.
+رابط **`HTMLTableColElement`** ویژگی‌هایی را برای دستکاری عناصر ستون جدول تکی یا گروه‌بندی شده فراهم می‌کند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("HTMLElement")}}_.
+_ویژگی‌ها را از والد خود، {{domxref("HTMLElement")}} به ارث می‌برد._
 
 - {{domxref("HTMLTableColElement.align")}} {{deprecated_inline}}
-  - : A string that indicates the horizontal alignment of the cell data in the column.
+  - : یک رشته که تراز افقی داده‌های سلول در ستون را مشخص می‌کند.
 - {{domxref("HTMLTableColElement.ch")}} {{deprecated_inline}}
-  - : A string representing the alignment character for cell data.
+  - : یک رشته که نشان‌دهنده کاراکتر تراز برای داده‌های سلول است.
 - {{domxref("HTMLTableColElement.chOff")}} {{deprecated_inline}}
-  - : A string representing the offset for the alignment character.
+  - : یک رشته که نشان‌دهنده افست برای کاراکتر تراز است.
 - {{domxref("HTMLTableColElement.span")}}
-  - : A positive number that reflects the [`span`](/en-US/docs/Web/HTML/Reference/Elements/col#span) HTML attribute, indicating the number of columns to apply this object's attributes to.
+  - : یک عدد مثبت که منعکس‌کننده ویژگی HTML [`span`](/en-US/docs/Web/HTML/Reference/Elements/col#span) است و تعداد ستون‌هایی را که ویژگی‌های این شیء روی آن‌ها اعمال می‌شود، مشخص می‌کند.
 - {{domxref("HTMLTableColElement.vAlign")}} {{deprecated_inline}}
-  - : A string that indicates the vertical alignment of the cell data in the column.
+  - : یک رشته که تراز عمودی داده‌های سلول در ستون را مشخص می‌کند.
 - {{domxref("HTMLTableColElement.width")}} {{deprecated_inline}}
-  - : A string representing the default column width.
+  - : یک رشته که نمایانگر عرض پیش‌فرض ستون است.
 
-## Instance methods
+## روش‌های نمونه
 
-_No specific method; inherits methods from its parent, {{domxref("HTMLElement")}}_.
+_روش خاصی ندارد؛ روش‌ها را از والد خود، {{domxref("HTMLElement")}} به ارث می‌برد._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The HTML element implementing this interface: {{HTMLElement("col")}} and {{HTMLElement("colgroup")}}.
+- عناصر HTML که این رابط را پیاده‌سازی می‌کنند: {{HTMLElement("col")}} و {{HTMLElement("colgroup")}}.
