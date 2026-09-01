@@ -1,11 +1,5 @@
 ---
 title: "HTMLFencedFrameElement: config property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLFencedFrameElement/config"
-status: "needs-translation"
----
-
----
-title: "HTMLFencedFrameElement: config property"
 short-title: config
 slug: Web/API/HTMLFencedFrameElement/config
 page-type: web-api-instance-property
@@ -16,26 +10,26 @@ browser-compat: api.HTMLFencedFrameElement.config
 
 {{SeeCompatTable}}{{APIRef("Fenced Frame API")}}
 
-The **`config`** property of the {{domxref("HTMLFencedFrameElement")}} contains a {{domxref("FencedFrameConfig")}} object, which represents the navigation of a {{htmlelement("fencedframe")}}, i.e., what content will be displayed in it. A `FencedFrameConfig` is returned from a source such as the [Protected Audience API](https://privacysandbox.google.com/private-advertising/protected-audience).
+خاصیت **`config`** در {{domxref("HTMLFencedFrameElement")}} حاوی یک شیء {{domxref("FencedFrameConfig")}} است که نشان‌دهندهٔ مسیریابی یک {{htmlelement("fencedframe")}} می‌باشد؛ یعنی محتوایی که در آن نمایش داده خواهد شد. یک `FencedFrameConfig` از منابعی مانند [Protected Audience API](https://privacysandbox.google.com/private-advertising/protected-audience) بازگردانده می‌شود.
 
-## Value
+## مقدار
 
-The value of `config` is initially `null`.
+مقدار `config` در ابتدا `null` است.
 
-When its value is set to a {{domxref("FencedFrameConfig")}} object instance, the `FencedFrameConfig`'s internal properties (for example `mappedURL`) determine what is loaded inside the associated `<fencedframe>`. In addition:
+زمانی که مقدار آن به یک نمونه شیء {{domxref("FencedFrameConfig")}} تنظیم شود، خصوصیات داخلی `FencedFrameConfig` (برای مثال `mappedURL`) تعیین می‌کنند که چه چیزی درون `<fencedframe>` مرتبط بارگذاری شود. علاوه بر این:
 
-- The navigation type will be `"replace"` (see {{domxref("NavigateEvent.navigationType")}}), meaning that the current history entry is replaced with the new entry, rather adding a new history entry for it.
-- The navigation's {{httpheader("Referrer-Policy")}} is set to `"no-referrer"`.
+- نوع مسیریابی `"replace"` خواهد بود (به {{domxref("NavigateEvent.navigationType")}} مراجعه کنید)، به این معنی که ورودی فعلی تاریخچه با ورودی جدید جایگزین می‌شود، به‌جای اینکه یک ورودی جدید به آن اضافه شود.
+- سیاست ارجاع‌دهنده ({{httpheader("Referrer-Policy")}}) مسیریابی روی `"no-referrer"` تنظیم می‌شود.
 
-## Examples
+## مثال‌ها
 
-To set what content will be shown in a `<fencedframe>`, a utilizing API (such as [Protected Audience](https://privacysandbox.google.com/private-advertising/protected-audience) or [Shared Storage](https://privacysandbox.google.com/private-advertising/shared-storage)) generates a {{domxref("FencedFrameConfig")}} object, which is then set as the value of the `<fencedframe>`'s `config` property.
+برای تنظیم محتوایی که در یک `<fencedframe>` نمایش داده می‌شود، یک API استفاده‌کننده (مانند [Protected Audience](https://privacysandbox.google.com/private-advertising/protected-audience) یا [Shared Storage](https://privacysandbox.google.com/private-advertising/shared-storage)) یک شیء {{domxref("FencedFrameConfig")}} تولید می‌کند که سپس به عنوان مقدار خاصیت `config` آن `<fencedframe>` تنظیم می‌شود.
 
-The following example gets a `FencedFrameConfig` from a Protected Audience API's ad auction, which is then used to display the winning ad in a `<fencedframe>`:
+مثال زیر یک `FencedFrameConfig` را از یک حراجی تبلیغات API Protected Audience دریافت می‌کند که سپس برای نمایش تبلیغ برنده در یک `<fencedframe>` استفاده می‌شود:
 
 ```js
 const frameConfig = await navigator.runAdAuction({
-  // … auction configuration
+  // … پیکربندی حراجی
   resolveToConfig: true,
 });
 
@@ -43,18 +37,17 @@ const frame = document.createElement("fencedframe");
 frame.config = frameConfig;
 ```
 
-> [!NOTE]
-> `resolveToConfig: true` must be passed in to the `runAdAuction()` call to obtain a `FencedFrameConfig` object. If it is not set, the resulting {{jsxref("Promise")}} will resolve to a URN that can only be used in an {{htmlelement("iframe")}}.
+> **توجه:** برای دریافت یک شیء `FencedFrameConfig`، باید `resolveToConfig: true` را در فراخوانی `runAdAuction()` ارسال کرد. اگر تنظیم نشود، {{jsxref("Promise")}} حاصل به یک URN تبدیل می‌شود که فقط در یک {{htmlelement("iframe")}} قابل استفاده است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Fenced frames](https://privacysandbox.google.com/private-advertising/fenced-frame) on privacysandbox.google.com
-- [The Privacy Sandbox](https://privacysandbox.google.com/) on privacysandbox.google.com
+- [Fenced frames](https://privacysandbox.google.com/private-advertising/fenced-frame) در privacysandbox.google.com
+- [The Privacy Sandbox](https://privacysandbox.google.com/) در privacysandbox.google.com
