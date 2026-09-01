@@ -1,7 +1,6 @@
 ---
 title: "Element: getAttributeNodeNS() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttributeNodeNS"
-status: "needs-translation"
 ---
 
 ---
@@ -14,12 +13,11 @@ browser-compat: api.Element.getAttributeNodeNS
 
 {{ APIRef("DOM") }}
 
-The **`getAttributeNodeNS()`** method of the {{domxref("Element")}} interface returns the namespaced {{domxref("Attr")}} node of an element.
+متد **`getAttributeNodeNS()`** در رابط {{domxref("Element")}}، گره {{domxref("Attr")}} دارای فضای نام (namespace) یک عنصر را برمی‌گرداند.
 
-This method is useful if you need the namespaced attribute's [instance properties](/en-US/docs/Web/API/Attr#instance_properties).
-If you only need the namespaced attribute's value, you can use the {{domxref("Element.getAttributeNS()", "getAttributeNS()")}} method instead.
+این متد زمانی مفید است که به [ویژگی‌های نمونه](/en-US/docs/Web/API/Attr#instance_properties) مربوط به ویژگی دارای فضای نام نیاز داشته باشید. اگر فقط مقدار ویژگی دارای فضای نام را نیاز دارید، می‌توانید به جای آن از متد {{domxref("Element.getAttributeNS()", "getAttributeNS()")}} استفاده کنید.
 
-If you need the {{domxref("Attr")}} node of an element in HTML documents and the attribute is not namespaced, use the {{domxref("Element.getAttributeNode()", "getAttributeNode()")}} method instead.
+اگر در اسناد HTML به گره {{domxref("Attr")}} یک عنصر نیاز دارید و ویژگی دارای فضای نام نیست، به جای آن از متد {{domxref("Element.getAttributeNode()", "getAttributeNode()")}} استفاده کنید.
 
 ## Syntax
 
@@ -30,17 +28,17 @@ getAttributeNodeNS(namespace, nodeName)
 ### Parameters
 
 - `namespace`
-  - : A string specifying the namespace of the attribute.
+  - : رشته‌ای که فضای نام ویژگی را مشخص می‌کند.
 - `nodeName`
-  - : A string specifying the name of the attribute.
+  - : رشته‌ای که نام ویژگی را مشخص می‌کند.
 
 ### Return value
 
-The node for specified attribute.
+گره مربوط به ویژگی مشخص‌شده.
 
 ## Notes
 
-`getAttributeNodeNS` is more specific than [getAttributeNode](/en-US/docs/Web/API/Element/getAttributeNode) in that it allows you to specify attributes that are part of a particular namespace. The corresponding setter method is [setAttributeNodeNS](/en-US/docs/Web/API/Element/setAttributeNodeNS).
+`getAttributeNodeNS` نسبت به [getAttributeNode](/en-US/docs/Web/API/Element/getAttributeNode) دقیق‌تر است، زیرا به شما امکان می‌دهد ویژگی‌هایی را که بخشی از یک فضای نام خاص هستند مشخص کنید. متد تنظیم‌کننده متناظر با آن، [setAttributeNodeNS](/en-US/docs/Web/API/Element/setAttributeNodeNS) است.
 
 ## Specifications
 
