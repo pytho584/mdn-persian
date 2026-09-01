@@ -1,11 +1,5 @@
 ---
 title: "HTMLAreaElement: password property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLAreaElement/password"
-status: "needs-translation"
----
-
----
-title: "HTMLAreaElement: password property"
 short-title: password
 slug: Web/API/HTMLAreaElement/password
 page-type: web-api-instance-property
@@ -14,34 +8,34 @@ browser-compat: api.HTMLAreaElement.password
 
 {{ApiRef("HTML DOM")}}
 
-The **`password`** property of the {{domxref("HTMLAreaElement")}} interface is a string containing the password component of the `<area>` element's `href`. If the URL does not have a password, this property contains an empty string, `""`.
+خاصیت **`password`** از رابط {{domxref("HTMLAreaElement")}} یک رشته است که مؤلفه‌ی رمز عبور (password) از `href` عنصر `<area>` را شامل می‌شود. اگر URL رمز عبور نداشته باشد، این خاصیت یک رشته‌ی خالی `""` را برمی‌گرداند.
 
-This property can be set to change the password of the URL. If the URL has no {{domxref("HTMLAreaElement.host", "host")}} or its scheme is `file:`, then setting this property has no effect.
+این خاصیت قابل تنظیم است تا رمز عبور URL تغییر کند. اگر URL فاقد {{domxref("HTMLAreaElement.host", "host")}} باشد یا طرح آن `file:` باشد، تنظیم این خاصیت تأثیری ندارد.
 
-The password is {{Glossary("Percent-encoding", "percent-encoded")}} when setting but not percent-decoded when reading.
+رمز عبور هنگام تنظیم {{Glossary("Percent-encoding", "درصد-کدگذاری")}} می‌شود، اما هنگام خواندن درصد-کدگشایی نمی‌شود.
 
-See {{domxref("URL.password")}} for more information.
+برای اطلاعات بیشتر به {{domxref("URL.password")}} مراجعه کنید.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```js
-// An <area id="myArea" href="https://anonymous:flabada@developer.mozilla.org/en-US/docs/HTMLAreaElement"> is in the document
+// یک <area id="myArea" href="https://anonymous:flabada@developer.mozilla.org/en-US/docs/HTMLAreaElement"> در سند وجود دارد
 const area = document.getElementByID("myArea");
-area.password; // returns 'flabada'
+area.password; // 'flabada' را برمی‌گرداند
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("HTMLAreaElement")}} interface it belongs to.
+- رابط {{domxref("HTMLAreaElement")}} که این خاصیت به آن تعلق دارد.
