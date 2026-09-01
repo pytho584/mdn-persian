@@ -1,10 +1,4 @@
 ---
-title: "FileSystemHandle"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemHandle"
-status: "needs-translation"
----
-
----
 title: FileSystemHandle
 slug: Web/API/FileSystemHandle
 page-type: web-api-interface
@@ -13,40 +7,40 @@ browser-compat: api.FileSystemHandle
 
 {{securecontext_header}}{{APIRef("File System API")}}{{AvailableInWorkers}}
 
-The **`FileSystemHandle`** interface of the {{domxref('File System API', '', '', 'nocode')}} is an object which represents a file or directory entry. Multiple handles can represent the same entry. For the most part you do not work with `FileSystemHandle` directly but rather its child interfaces {{domxref('FileSystemFileHandle')}} and {{domxref('FileSystemDirectoryHandle')}}.
+رابط **`FileSystemHandle`** در {{domxref('File System API', '', '', 'nocode')}} یک شیء است که یک ورودی (entry) فایل یا دایرکتوری را نمایش می‌دهد. چندین handle می‌توانند نمایانگر یک ورودی یکسان باشند. در بیشتر موارد، به‌طور مستقیم با `FileSystemHandle` کار نمی‌کنید، بلکه با رابط‌های فرزند آن یعنی {{domxref('FileSystemFileHandle')}} و {{domxref('FileSystemDirectoryHandle')}} سروکار دارید.
 
-## Interfaces based on FileSystemHandle
+## رابط‌های مبتنی بر FileSystemHandle
 
-Below is a list of interfaces based on the `FileSystemHandle` interface.
+در ادامه فهرستی از رابط‌های مبتنی بر رابط `FileSystemHandle` آورده شده است.
 
 - {{domxref("FileSystemFileHandle")}}
-  - : Represents a handle to a file entry.
+  - : نمایانگر یک handle به یک ورودی فایل است.
 - {{domxref("FileSystemDirectoryHandle")}}
-  - : Provides a handle to a directory entry.
+  - : یک handle به یک ورودی دایرکتوری فراهم می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref('FileSystemHandle.kind','kind')}} {{ReadOnlyInline}}
-  - : Returns the type of entry. This is `'file'` if the associated entry is a file or `'directory'`.
+  - : نوع ورودی را بازمی‌گرداند. اگر ورودی مرتبط یک فایل باشد، مقدار `'file'` و اگر دایرکتوری باشد، مقدار `'directory'` است.
 - {{domxref('FileSystemHandle.name', 'name')}} {{ReadOnlyInline}}
-  - : Returns the name of the associated entry.
+  - : نام ورودی مرتبط را بازمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref('FileSystemHandle.isSameEntry()', 'isSameEntry()')}}
-  - : Compares two handles to see if the associated entries (either a file or directory) match.
+  - : دو handle را با هم مقایسه می‌کند تا ببیند آیا ورودی‌های مرتبط (فایل یا دایرکتوری) یکسان هستند یا نه.
 - {{domxref('FileSystemHandle.queryPermission()', 'queryPermission()')}} {{Experimental_Inline}}
-  - : Queries the current permission state of the current handle.
+  - : وضعیت فعلی مجوزِ handle جاری را پرس‌وجو می‌کند.
 - {{domxref('FileSystemHandle.remove', 'remove()')}} {{Experimental_Inline}} {{Non-standard_Inline}}
-  - : Requests removal of the entry represented by the handle from the underlying file system.
+  - : درخواست حذف ورودیِ نمایش‌داده‌شده توسط handle را از سیستم فایل زیرین می‌دهد.
 - {{domxref('FileSystemHandle.requestPermission', 'requestPermission()')}} {{Experimental_Inline}}
-  - : Requests read or readwrite permissions for the file handle.
+  - : برای handle فایل، مجوز خواندن یا خواندن/نوشتن را درخواست می‌کند.
 
-## Examples
+## مثال‌ها
 
-### Checking Type
+### بررسی نوع
 
-The below code allows the user to choose a file from the file picker and then tests to see whether the handle returned is a file or directory
+کد زیر به کاربر اجازه می‌دهد یک فایل را از انتخابگر فایل انتخاب کند و سپس بررسی می‌کند که آیا handle بازگشتی یک فایل است یا یک دایرکتوری.
 
 ```js
 // store a reference to our file handle
@@ -64,9 +58,9 @@ async function getFile() {
 }
 ```
 
-### Query/Request Permissions
+### پرس‌وجو/درخواست مجوزها
 
-The following asynchronous function returns true if user has granted read or readwrite permissions to the file handle. Permission is requested if not.
+تابع ناهمگام زیر مقدار `true` را بازمی‌گرداند اگر کاربر مجوز خواندن یا خواندن/نوشتن را به handle فایل داده باشد. در غیر این صورت، مجوز درخواست می‌شود.
 
 ```js
 // fileHandle is a FileSystemFileHandle
@@ -93,9 +87,9 @@ async function verifyPermission(fileHandle, withWrite) {
 }
 ```
 
-### Comparing Entries
+### مقایسه ورودی‌ها
 
-The following function compares a single entry with an array of entries, and returns a new array with any matching entries removed.
+تابع زیر یک ورودی را با یک آرایه از ورودی‌ها مقایسه می‌کند و آرایه جدیدی را برمی‌گرداند که در آن هر ورودیِ منطبق حذف شده است.
 
 ```js
 function removeMatches(fileEntry, entriesArr) {
@@ -105,15 +99,15 @@ function removeMatches(fileEntry, entriesArr) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [File System API](/en-US/docs/Web/API/File_System_API)
 - [The File System Access API: simplifying access to local files](https://developer.chrome.com/docs/capabilities/web-apis/file-system-access)
