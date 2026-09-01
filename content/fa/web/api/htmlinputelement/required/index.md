@@ -1,11 +1,5 @@
 ---
 title: "HTMLInputElement: required property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/required"
-status: "needs-translation"
----
-
----
-title: "HTMLInputElement: required property"
 short-title: required
 slug: Web/API/HTMLInputElement/required
 page-type: web-api-instance-property
@@ -14,17 +8,17 @@ browser-compat: api.HTMLInputElement.required
 
 {{ APIRef("HTML DOM") }}
 
-The **`required`** property of the {{DOMxRef("HTMLInputElement")}} interface specifies that the user must fill in a value before submitting a form. It reflects the {{htmlelement("input")}} element's [`required`](/en-US/docs/Web/HTML/Reference/Elements/input#required) attribute.
+ویژگی **`required`** از رابط {{DOMxRef("HTMLInputElement")}} مشخص می‌کند که کاربر باید قبل از ارسال فرم، مقدار را پر کند. این ویژگی، منعکس‌کنندهٔ صفت [`required`](/en-US/docs/Web/HTML/Reference/Elements/input#required) عنصر {{htmlelement("input")}} است.
 
-While the HTML boolean `required` attribute is ignored if the type is `hidden`, `range`, `color`, `submit`, `reset`, `button`, and `image`, the `required` property is `true` for these input types if the attribute is present, `false` otherwise.
+هرچند صفت بولی `required` در HTML برای تایپ‌های ورودی `hidden`، `range`، `color`، `submit`، `reset`، `button` و `image` نادیده گرفته می‌شود، ویژگی `required` برای این تایپ‌ها در صورت وجود این صفت مقدار `true` و در غیر این صورت `false` است.
 
-If a required input doesn't have a value, the {{domxref('ValidityState')}} object's read-only {{domxref('ValidityState.valueMissing','valueMissing')}} property will be true.
+اگر یک ورودی الزامی مقدار نداشته باشد، ویژگی فقط‌خواندنی {{domxref('ValidityState.valueMissing','valueMissing')}} از شیء {{domxref('ValidityState')}} مقدار `true` خواهد بود.
 
-## Value
+## مقدار
 
-A boolean.
+یک بولی.
 
-## Examples
+## مثال‌ها
 
 ```js
 const inputElement = document.getElementById("name");
@@ -32,16 +26,16 @@ console.log(inputElement.required);
 inputElement.required = true;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTMLElement("input")}}
 - {{DOMXref("HTMLInputElement.validity")}}
-- {{cssxref(":required")}} pseudo-class
+- {{cssxref(":required")}} شبه‌کلاس
