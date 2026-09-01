@@ -1,11 +1,5 @@
 ---
 title: "DataTransferItemList: add() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DataTransferItemList/add"
-status: "needs-translation"
----
-
----
-title: "DataTransferItemList: add() method"
 short-title: add()
 slug: Web/API/DataTransferItemList/add
 page-type: web-api-instance-method
@@ -14,11 +8,7 @@ browser-compat: api.DataTransferItemList.add
 
 {{APIRef("HTML Drag and Drop API")}}
 
-The **`DataTransferItemList.add()`** method creates a new
-{{domxref("DataTransferItem")}} using the specified data and adds it to the drag data
-list. The item may be a {{domxref("File")}} or a string of a
-given type. If the item is successfully added to the list, the newly-created
-{{domxref("DataTransferItem")}} object is returned.
+متد **`DataTransferItemList.add()`** یک {{domxref("DataTransferItem")}} جدید با استفاده از داده‌های مشخص‌شده ایجاد می‌کند و آن را به فهرست داده‌ی کشیدن (drag data list) اضافه می‌کند. آیتم می‌تواند یک {{domxref("File")}} یا یک رشته با نوع مشخص‌شده باشد. اگر آیتم با موفقیت به فهرست اضافه شود، شیء {{domxref("DataTransferItem")}} تازه‌ساخته بازگردانده می‌شود.
 
 ## Syntax
 
@@ -30,29 +20,25 @@ add(file)
 ### Parameters
 
 - `data`
-  - : A string representing the drag item's data.
+  - : رشته‌ای که داده‌های آیتم کشیدن را نشان می‌دهد.
 - `type`
-  - : A string of the drag item's type. Some example types are
-    `text/html` and `text/plain`.
+  - : رشته‌ای که نوع آیتم کشیدن را مشخص می‌کند. چند نمونه نوع عبارت‌اند از
+    `text/html` و `text/plain`.
 - `file`
-  - : A {{domxref("File")}} object. No type needs to be given in this case.
+  - : یک شیء {{domxref("File")}}. در این حالت نیازی به ارائه‌ی type نیست.
 
 ### Return value
 
-A {{domxref("DataTransferItem")}} containing the specified data. If the drag item
-couldn't be created (for example, if the associated {{domxref("DataTransfer")}} object
-has no data store), `null` is returned.
+یک {{domxref("DataTransferItem")}} که شامل داده‌های مشخص‌شده است. اگر آیتم کشیدن نتواند ساخته شود (مثلاً اگر شیء {{domxref("DataTransfer")}} مرتبط هیچ مخزن داده‌ای نداشته باشد)، `null` بازگردانده می‌شود.
 
 ### Exceptions
 
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Thrown if the string `data` parameter was provided, and the list already contains an
-    item whose {{domxref("DataTransferItem.kind","kind")}} is `"Plain Unicode string"` and
-    whose type is equal to the specified type parameter.
+  - : اگر پارامتر رشته‌ای `data` ارائه شده باشد و فهرست از قبل شامل آیتمی باشد که {{domxref("DataTransferItem.kind","kind")}} آن `"Plain Unicode string"` است و نوع آن با پارامتر type مشخص‌شده یکسان باشد، پرتاب می‌شود.
 
 ## Examples
 
-This example shows the use of the `add()` method.
+این مثال کاربرد متد `add()` را نشان می‌دهد.
 
 ### HTML
 
