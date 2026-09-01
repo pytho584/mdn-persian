@@ -1,11 +1,5 @@
 ---
 title: "DOMTokenList: toggle() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/toggle"
-status: "needs-translation"
----
-
----
-title: "DOMTokenList: toggle() method"
 short-title: toggle()
 slug: Web/API/DOMTokenList/toggle
 page-type: web-api-instance-method
@@ -14,47 +8,39 @@ browser-compat: api.DOMTokenList.toggle
 
 {{APIRef("DOM")}}
 
-The **`toggle()`** method of the {{domxref("DOMTokenList")}} interface
-removes an existing token from the list and returns `false`.
-If the token doesn't exist it's added and the function returns `true`.
+متد **`toggle()`** از رابط {{domxref("DOMTokenList")}} یک نشانهٔ موجود را از فهرست حذف می‌کند و `false` برمی‌گرداند. اگر نشانه وجود نداشته باشد، اضافه می‌شود و تابع `true` برمی‌گرداند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 toggle(token)
 toggle(token, force)
 ```
 
-### Parameters
+### پارامترها
 
 - `token`
-  - : A string representing the token you want to toggle.
+  - : رشته‌ای است که نشانه‌ای را که می‌خواهید تغییر وضعیت دهید، مشخص می‌کند.
 - `force` {{optional_inline}}
-  - : If included, turns the toggle into a one way-only operation.
-    If set to `false`, then `token` will _only_ be removed, but not added.
-    If set to `true`, then `token` will _only_ be added, but not removed.
+  - : در صورت ذکر شدن، عملیات تغییر وضعیت را به یک عملیات یک‌طرفه تبدیل می‌کند. اگر `false` باشد، `token` _فقط_ حذف می‌شود و اضافه نخواهد شد. اگر `true` باشد، `token` _فقط_ اضافه می‌شود و حذف نخواهد شد.
 
-### Return value
+### مقدار بازگشتی
 
-A boolean value, `true` or `false`, indicating whether `token` is in the
-list after the call or not.
+یک مقدار بولین، `true` یا `false`، که نشان می‌دهد پس از فراخوانی، `token` در فهرست وجود دارد یا نه.
 
-## Examples
+## مثال‌ها
 
-### Toggling a class on click
+### تغییر وضعیت یک کلاس با کلیک
 
-In the following example we retrieve the list of classes set on a
-{{htmlelement("span")}} element as a `DOMTokenList` using
-{{domxref("Element.classList")}}. We then replace a token in the list, and write the
-list into the `<span>`'s {{domxref("Node.textContent")}}.
+در مثال زیر، فهرست کلاس‌های تنظیم‌شده روی یک عنصر {{htmlelement("span")}} را با استفاده از {{domxref("Element.classList")}} به‌عنوان یک `DOMTokenList` دریافت می‌کنیم. سپس وضعیت یک نشانه را در فهرست تغییر می‌دهیم و فهرست را درون {{domxref("Node.textContent")}} آن `<span>` می‌نویسیم.
 
-First, the HTML:
+ابتدا، HTML:
 
 ```html
 <span class="a b">classList is 'a b'</span>
 ```
 
-Now the JavaScript:
+حالا جاوااسکریپت:
 
 ```js
 const span = document.querySelector("span");
@@ -68,22 +54,22 @@ span.addEventListener("click", () => {
 });
 ```
 
-The output looks like this and it will change each time you click on the text:
+خروجی به این شکل است و هر بار که روی متن کلیک کنید تغییر می‌کند:
 
 {{ EmbedLiveSample('Toggling_a_class_on_click', '100%', 60) }}
 
-### Setting the force parameter
+### تنظیم پارامتر force
 
-The second parameter can be used to determine whether the class is included or not. This example would include the 'c' class only if the browser window is over 1000 pixels wide:
+پارامتر دوم را می‌توان برای تعیین اینکه آیا کلاس لحاظ شود یا نه به کار برد. این مثال تنها در صورتی کلاس 'c' را اضافه می‌کند که عرض پنجرهٔ مرورگر بیشتر از ۱۰۰۰ پیکسل باشد:
 
 ```js
 span.classList.toggle("c", window.innerWidth > 1000);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
