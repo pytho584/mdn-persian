@@ -1,11 +1,5 @@
 ---
 title: "Element: ariaModal property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaModal"
-status: "needs-translation"
----
-
----
-title: "Element: ariaModal property"
 short-title: ariaModal
 slug: Web/API/Element/ariaModal
 page-type: web-api-instance-property
@@ -14,20 +8,18 @@ browser-compat: api.Element.ariaModal
 
 {{APIRef("DOM")}}
 
-The **`ariaModal`** property of the {{domxref("Element")}} interface reflects the value of the `aria-modal` attribute, which indicates whether an element is modal when displayed. Applying the `aria-modal` property to an element with `role="dialog"` replaces the technique of using aria-hidden on the background for informing assistive technologies that content outside a dialog is inert.
+ویژگی **`ariaModal`** از رابط {{domxref("Element")}} مقدار ویژگی `aria-modal` را منعکس می‌کند که نشان می‌دهد آیا یک عنصر هنگام نمایش مودال است یا خیر. اعمال ویژگی `aria-modal` به یک عنصر با `role="dialog"` جایگزین روش استفاده از `aria-hidden` در پس‌زمینه برای اطلاع‌رسانی به فناوری‌های کمکی می‌شود که محتوای خارج از دیالوگ غیرفعال است.
 
-## Value
+## مقدار
 
-A string with one of the following values:
+یک رشته با یکی از مقادیر زیر:
 
-- `"true"`
-  - : The element is modal.
-- `"false"`
-  - : The element is not modal.
+- `"true"`: عنصر مودال است.
+- `"false"`: عنصر مودال نیست.
 
-## Examples
+## مثال‌ها
 
-In this example the `aria-modal` attribute on the element with an ID of `address-modal` is set to "true" indicating that this is a modal dialog. Using `ariaModal` we update the value to "false".
+در این مثال، ویژگی `aria-modal` روی عنصری با شناسه `address-modal` به `"true"` تنظیم شده است که نشان می‌دهد این یک دیالوگ مودال است. با استفاده از `ariaModal` مقدار را به `"false"` به‌روز می‌کنیم.
 
 ```html
 <div
@@ -45,14 +37,14 @@ el.ariaModal = "false";
 console.log(el.ariaModal); // "false"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [ARIA: dialog role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/dialog_role)
