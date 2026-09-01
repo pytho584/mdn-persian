@@ -1,11 +1,5 @@
 ---
 title: "HTMLScriptElement: crossOrigin property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLScriptElement/crossOrigin"
-status: "needs-translation"
----
-
----
-title: "HTMLScriptElement: crossOrigin property"
 short-title: crossOrigin
 slug: Web/API/HTMLScriptElement/crossOrigin
 page-type: web-api-instance-property
@@ -14,30 +8,30 @@ browser-compat: api.HTMLScriptElement.crossOrigin
 
 {{APIRef("HTML DOM")}}
 
-The **`crossOrigin`** property of the {{domxref("HTMLScriptElement")}} interface reflects the {{Glossary("CORS", "Cross-Origin Resource Sharing")}} settings for the script element. For classic scripts from other [origins](/en-US/docs/Glossary/Origin), this controls if full error information will be exposed. For module scripts, it controls the script itself and any script it imports. See [CORS settings attributes](/en-US/docs/Web/HTML/Reference/Attributes/crossorigin) for details.
+ویژگی **`crossOrigin`** در رابط {{domxref("HTMLScriptElement")}} بازتابی از تنظیمات {{Glossary("CORS", "اشتراک منابع بین‌دامنه (CORS)")}} برای عنصر اسکریپت است. برای اسکریپت‌های کلاسیک که از [ریشه‌های](/en-US/docs/Glossary/Origin) دیگر می‌آیند، این ویژگی تعیین می‌کند که آیا اطلاعات کامل خطا در معرض دید قرار می‌گیرد یا خیر. برای اسکریپت‌های ماژولار، این ویژگی هم بر خود اسکریپت و هم بر هر اسکریپتی که ایمپورت می‌کند تأثیر می‌گذارد. برای جزئیات بیشتر به [ویژگی‌های تنظیمات CORS](/en-US/docs/Web/HTML/Reference/Attributes/crossorigin) مراجعه کنید.
 
-## Value
+## مقدار
 
-A string of a keyword specifying the CORS mode to use when fetching the resource. Possible values are:
+یک رشته شامل یک کلیدواژه که حالت CORS مورد استفاده هنگام دریافت منبع را مشخص می‌کند. مقادیر ممکن عبارتند از:
 
-- `anonymous` or an empty string (`""`)
-  - : Requests sent by the {{domxref("HTMLScriptElement")}} will use the `cors` {{domxref("Request.mode", "mode", "", "nocode")}} and the `same-origin` {{domxref("Request.credentials", "credentials", "", "nocode")}} mode. This means that CORS is enabled and credentials are sent _if_ the resource is fetched from the same origin from which the document was loaded.
+- `anonymous` یا یک رشته خالی (`""`)
+  - : درخواست‌هایی که توسط {{domxref("HTMLScriptElement")}} ارسال می‌شوند از حالت `cors` برای {{domxref("Request.mode", "mode", "", "nocode")}} و حالت `same-origin` برای {{domxref("Request.credentials", "credentials", "", "nocode")}} استفاده می‌کنند. این بدان معناست که CORS فعال است و اعتبارنامه‌ها _فقط در صورتی_ ارسال می‌شوند که منبع از همان ریشه‌ای دریافت شود که سند از آن بارگذاری شده است.
 - `use-credentials`
-  - : Requests sent by the {{domxref("HTMLScriptElement")}} will use the `cors` {{domxref("Request.mode", "mode", "", "nocode")}} and the `include` {{domxref("Request.credentials", "credentials", "", "nocode")}} mode. All resources requests by the element will use CORS, regardless of which domain the fetch is from.
+  - : درخواست‌هایی که توسط {{domxref("HTMLScriptElement")}} ارسال می‌شوند از حالت `cors` برای {{domxref("Request.mode", "mode", "", "nocode")}} و حالت `include` برای {{domxref("Request.credentials", "credentials", "", "nocode")}} استفاده می‌کنند. همه درخواست‌های منابع توسط این عنصر از CORS استفاده می‌کنند، صرف‌نظر از اینکه دریافت از کدام دامنه انجام می‌شود.
 
-If the `crossOrigin` property is specified with any other value, it is the same as specifying it as the `anonymous`.
+اگر ویژگی `crossOrigin` با هر مقدار دیگری مشخص شود، همانند این است که مقدار `anonymous` تعیین شده باشد.
 
-If the `crossOrigin` property is not specified, the resource is fetched without CORS (the `no-cors` {{domxref("Request.mode", "mode", "", "nocode")}} and the `same-origin` {{domxref("Request.credentials", "credentials", "", "nocode")}} mode).
+اگر ویژگی `crossOrigin` مشخص نشود، منبع بدون CORS دریافت می‌شود (حالت `no-cors` برای {{domxref("Request.mode", "mode", "", "nocode")}} و حالت `same-origin` برای {{domxref("Request.credentials", "credentials", "", "nocode")}}).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLImageElement.crossOrigin")}}
 - {{domxref("HTMLLinkElement.crossOrigin")}}
