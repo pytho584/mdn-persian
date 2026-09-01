@@ -1,11 +1,5 @@
 ---
 title: "GPUDevice: pushErrorScope() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/pushErrorScope"
-status: "needs-translation"
----
-
----
-title: "GPUDevice: pushErrorScope() method"
 short-title: pushErrorScope()
 slug: Web/API/GPUDevice/pushErrorScope
 page-type: web-api-instance-method
@@ -14,35 +8,34 @@ browser-compat: api.GPUDevice.pushErrorScope
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`pushErrorScope()`** method of the
-{{domxref("GPUDevice")}} interface pushes a new GPU error scope onto the device's error scope stack, allowing you to capture errors of a particular type.
+متد **`pushErrorScope()`** از رابط {{domxref("GPUDevice")}} یک دامنه خطای GPU جدید را به پشته دامنه خطای دستگاه اضافه می‌کند و به شما امکان می‌دهد خطاهای یک نوع خاص را دریافت کنید.
 
-Once you are done capturing errors, you can end capture by invoking {{domxref("GPUDevice.popErrorScope()")}}. This pops the scope from the stack and returns a {{jsxref("Promise")}} that resolves to an object describing the first error captured in the scope, or `null` if no errors were captured.
+پس از اتمام دریافت خطاها، می‌توانید با فراخوانی {{domxref("GPUDevice.popErrorScope()")}} به دریافت پایان دهید. این کار دامنه را از پشته حذف می‌کند و یک {{jsxref("Promise")}} برمی‌گرداند که به یک شیء حاوی توضیح اولین خطای دریافت‌شده در آن دامنه، یا `null` در صورت عدم دریافت خطا، تبدیل می‌شود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 pushErrorScope(filter)
 ```
 
-### Parameters
+### پارامترها
 
 - `filter`
-  - : An enumerated value that specifies what type of error will be caught in this particular error scope. Possible values are:
+  - : یک مقدار شمارشی که نوع خطایی را که در این دامنه خطای خاص دریافت می‌شود مشخص می‌کند. مقادیر ممکن عبارتند از:
     - `"internal"`
-      - : The error scope will catch a {{domxref("GPUInternalError")}}.
+      - : دامنه خطا یک {{domxref("GPUInternalError")}} را دریافت می‌کند.
     - `"out-of-memory"`
-      - : The error scope will catch a {{domxref("GPUOutOfMemoryError")}}.
+      - : دامنه خطا یک {{domxref("GPUOutOfMemoryError")}} را دریافت می‌کند.
     - `"validation"`
-      - : The error scope will catch a {{domxref("GPUValidationError")}}.
+      - : دامنه خطا یک {{domxref("GPUValidationError")}} را دریافت می‌کند.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-The following example uses an error scope to capture a suspected validation error, logging it to the console.
+مثال زیر از یک دامنه خطا برای دریافت یک خطای اعتبارسنجی مشکوک استفاده می‌کند و آن را در کنسول ثبت می‌کند.
 
 ```js
 device.pushErrorScope("validation");
@@ -59,16 +52,16 @@ device.popErrorScope().then((error) => {
 });
 ```
 
-See [WebGPU Error Handling best practices](https://toji.dev/webgpu-best-practices/error-handling) for a lot more examples and information.
+برای مثال‌ها و اطلاعات بیشتر به [بهترین روش‌های مدیریت خطای WebGPU](https://toji.dev/webgpu-best-practices/error-handling) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
