@@ -1,11 +1,5 @@
 ---
 title: "Document: createEvent() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/createEvent"
-status: "needs-translation"
----
-
----
-title: "Document: createEvent() method"
 short-title: createEvent()
 slug: Web/API/Document/createEvent
 page-type: web-api-instance-method
@@ -17,29 +11,27 @@ browser-compat: api.Document.createEvent
 {{APIRef("DOM")}}{{deprecated_header}}
 
 > [!WARNING]
-> Many methods used with `createEvent`, such as `initCustomEvent`, are deprecated.
-> Use [event constructors](/en-US/docs/Web/API/CustomEvent) instead.
+> بسیاری از روشهایی که با `createEvent` به کار میروند، مانند `initCustomEvent`، منسوخ شدهاند.
+> به جای آن از [سازندههای رویداد](/en-US/docs/Web/API/CustomEvent) استفاده کنید.
 
-Creates an [event](/en-US/docs/Web/API/Event) of the type specified. The
-returned object should be first initialized and can then be passed to
-{{domxref("EventTarget.dispatchEvent")}}.
+یک [رویداد](/en-US/docs/Web/API/Event) از نوع مشخصشده ایجاد میکند. شیء بازگشتیدادهشده ابتدا باید مقداردهی اولیه شود و سپس میتوان آن را به {{domxref("EventTarget.dispatchEvent")}} ارسال کرد.
 
-## Syntax
+## نحو
 
 ```js-nolint
 createEvent(type)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string that represents the type of event to be created. Possible event types include `"UIEvents"`, `"MouseEvents"`, `"MutationEvents"`, and `"HTMLEvents"`. See [Notes](#notes) section for details.
+  - : رشتهای که نوع رویداد مورد نظر برای ایجاد را نشان میدهد. انواع رویداد ممکن شامل `"UIEvents"`، `"MouseEvents"`، `"MutationEvents"` و `"HTMLEvents"` است. برای جزئیات بیشتر، بخش [یادداشتها](#notes) را ببینید.
 
-### Return value
+### مقدار بازگشتی
 
-An [Event](/en-US/docs/Web/API/Event) object.
+یک شیء [Event](/en-US/docs/Web/API/Event).
 
-## Examples
+## مثالها
 
 ```js
 // Create the event.
@@ -57,20 +49,18 @@ elem.addEventListener("build", (e) => {
 elem.dispatchEvent(event);
 ```
 
-## Notes
+## یادداشتها
 
-Event type strings suitable for passing to `createEvent()` are listed in the
-[DOM standard — see the table in step 2](https://dom.spec.whatwg.org/#dom-document-createevent). Bear in mind that most event objects now have constructors, which
-are the modern recommended way to create event object instances.
+رشتههای نوع رویداد مناسب برای ارسال به `createEvent()` در [استاندارد DOM — جدول مرحله ۲ را ببینید](https://dom.spec.whatwg.org/#dom-document-createevent) فهرست شدهاند. توجه داشته باشید که اکنون بیشتر اشیاء رویداد سازندههای مخصوص به خود را دارند که روش مدرن و توصیهشده برای ایجاد نمونههای شیء رویداد هستند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Creating and dispatching events](/en-US/docs/Web/API/Document_Object_Model/Events#creating_and_dispatching_events)
+- [ایجاد و ارسال رویدادها](/en-US/docs/Web/API/Document_Object_Model/Events#creating_and_dispatching_events)
