@@ -1,11 +1,5 @@
 ---
 title: "Document: scroll event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/scroll_event"
-status: "needs-translation"
----
-
----
-title: "Document: scroll event"
 short-title: scroll
 slug: Web/API/Document/scroll_event
 page-type: web-api-event
@@ -14,13 +8,11 @@ browser-compat: api.Document.scroll_event
 
 {{APIRef("CSSOM view API")}}
 
-The **`scroll`** event fires when the document view has been scrolled.
-To detect when scrolling has completed, see the {{domxref("Document/scrollend_event", "scrollend")}} event of `Document`.
-For element scrolling, see {{domxref("Element/scroll_event", "scroll")}} event of `Element`.
+رویداد **`scroll`** زمانی رخ می‌دهد که نمای سند (document view) پیمایش (scroll) شده باشد. برای تشخیص پایان پیمایش، به رویداد {{domxref("Document/scrollend_event", "scrollend")}} در `Document` مراجعه کنید. برای پیمایش عناصر، به رویداد {{domxref("Element/scroll_event", "scroll")}} در `Element` مراجعه کنید.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد (event handler property) تنظیم کنید.
 
 ```js-nolint
 addEventListener("scroll", (event) => { })
@@ -28,31 +20,31 @@ addEventListener("scroll", (event) => { })
 onscroll = (event) => { }
 ```
 
-## Event type
+## نوع رویداد (Event type)
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## مثال‌ها
 
-### Scroll event throttling
+### محدودسازی نرخ رویداد (Throttling) scroll
 
-Since `scroll` events can fire at a high rate, the event handler shouldn't execute computationally expensive operations such as DOM modifications. If you notice a {{glossary("jank")}} while fast scrolling, you should consider {{glossary("throttle", "throttling")}} the event.
+از آنجا که رویدادهای `scroll` می‌توانند با نرخ بالایی رخ دهند، کنترل‌کننده رویداد نباید عملیات‌های محاسباتی سنگین مانند تغییرات DOM را اجرا کند. اگر هنگام پیمایش سریع متوجه {{glossary("jank", "لرزش (jank)")}} شدید، باید محدودسازی نرخ ({{glossary("throttle", "throttling")}}) رویداد را در نظر بگیرید.
 
-Note that you may see code that throttles the `scroll` event handler using {{domxref("Window.requestAnimationFrame()", "requestAnimationFrame()")}}. This is _useless_ because animation frame callbacks are fired at the same rate as `scroll` event handlers. Instead, you must measure the timeout yourself, such as by using {{domxref("Window.setTimeout", "setTimeout()")}}.
+توجه داشته باشید که ممکن است کدی ببینید که کنترل‌کننده رویداد `scroll` را با استفاده از {{domxref("Window.requestAnimationFrame()", "requestAnimationFrame()")}} محدود می‌کند. این کار _بی‌فایده_ است زیرا فراخوانی‌های فریم انیمیشن با همان نرخ کنترل‌کننده‌های رویداد `scroll` اجرا می‌شوند. در عوض، باید خودتان زمان‌بندی (timeout) را اندازه‌گیری کنید، مثلاً با استفاده از {{domxref("Window.setTimeout", "setTimeout()")}}.
 
 ```js
 let lastKnownScrollPosition = 0;
 let ticking = false;
 
 function doSomething(scrollPos) {
-  // Do something with the scroll position
+  // با موقعیت پیمایش کاری انجام دهید
 }
 
 document.addEventListener("scroll", (event) => {
   lastKnownScrollPosition = window.scrollY;
 
   if (!ticking) {
-    // Throttle the event to "do something" every 20ms
+    // رویداد را محدود کنید تا هر ۲۰ میلی‌ثانیه "کاری انجام دهد"
     setTimeout(() => {
       doSomething(lastKnownScrollPosition);
       ticking = false;
@@ -63,18 +55,18 @@ document.addEventListener("scroll", (event) => {
 });
 ```
 
-Alternatively, consider using {{domxref("IntersectionObserver")}} instead, which allows threshold-based listening.
+به‌عنوان جایگزین، استفاده از {{domxref("IntersectionObserver")}} را در نظر بگیرید که امکان شنود مبتنی بر آستانه (threshold) را فراهم می‌کند.
 
-## Specifications
+## مشخصات (Specifications)
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر (Browser compatibility)
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Document: `scrollend` event](/en-US/docs/Web/API/Document/scrollend_event)
-- [Element: `scroll` event](/en-US/docs/Web/API/Element/scroll_event)
-- [Element: `scrollend` event](/en-US/docs/Web/API/Element/scrollend_event)
+- [Document: رویداد `scrollend`](/en-US/docs/Web/API/Document/scrollend_event)
+- [Element: رویداد `scroll`](/en-US/docs/Web/API/Element/scroll_event)
+- [Element: رویداد `scrollend`](/en-US/docs/Web/API/Element/scrollend_event)
