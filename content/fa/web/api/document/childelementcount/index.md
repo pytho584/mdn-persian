@@ -1,11 +1,5 @@
 ---
 title: "Document: childElementCount property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/childElementCount"
-status: "needs-translation"
----
-
----
-title: "Document: childElementCount property"
 short-title: childElementCount
 slug: Web/API/Document/childElementCount
 page-type: web-api-instance-property
@@ -14,34 +8,33 @@ browser-compat: api.Document.childElementCount
 
 {{ APIRef("DOM") }}
 
-The **`Document.childElementCount`** read-only property
-returns the number of child elements of the document.
+خاصیت فقط‌خواندنی **`Document.childElementCount`** تعداد عناصر فرزند سند را برمی‌گرداند.
 
-To get the number of children of a specific element, see {{domxref("Element.childElementCount")}}.
+برای دریافت تعداد فرزندان یک عنصر خاص، به {{domxref("Element.childElementCount")}} مراجعه کنید.
 
-## Value
+## مقدار
 
-A number.
+یک عدد.
 
-## Examples
+## مثال‌ها
 
 ```js
 document.children;
-// HTMLCollection, usually containing an <html> element, the document's only child
+// HTMLCollection، معمولاً شامل یک عنصر <html> است که تنها فرزند سند است
 
 document.childElementCount;
 // 1
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Element.childElementCount")}}
 - {{domxref("DocumentFragment.childElementCount")}}
