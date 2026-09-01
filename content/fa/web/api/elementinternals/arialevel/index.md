@@ -1,11 +1,5 @@
 ---
 title: "ElementInternals: ariaLevel property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/ariaLevel"
-status: "needs-translation"
----
-
----
-title: "ElementInternals: ariaLevel property"
 short-title: ariaLevel
 slug: Web/API/ElementInternals/ariaLevel
 page-type: web-api-instance-property
@@ -14,18 +8,18 @@ browser-compat: api.ElementInternals.ariaLevel
 
 {{APIRef("Web Components")}}
 
-The **`ariaLevel`** property of the {{domxref("ElementInternals")}} interface reflects the value of the [`aria-level`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-level) attribute, which defines the hierarchical level of an element within a structure.
+ویژگی **`ariaLevel`** از رابط {{domxref("ElementInternals")}} منعکس‌کنندهٔ مقدار ویژگی [`aria-level`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-level) است که سطح سلسله‌مراتبی یک عنصر را در یک ساختار تعریف می‌کند.
 
 > [!NOTE]
-> Setting aria attributes on `ElementInternals` allows default semantics to be defined on a custom element. These may be overwritten by author-defined attributes, but ensure that default semantics are retained should the author delete those attributes, or fail to add them at all. For more information see the [Accessibility Object Model explainer](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object).
+> تنظیم صفات aria روی `ElementInternals` امکان تعریف معناشناسی (semantics) پیش‌فرض را برای یک عنصر سفارشی فراهم می‌کند. این صفات ممکن است توسط صفات تعریف‌شده توسط نویسنده بازنویسی شوند، اما اطمینان حاصل می‌شود که اگر نویسنده آن صفات را حذف کند یا اصلاً آن‌ها را اضافه نکند، معناشناسی پیش‌فرض حفظ شود. برای اطالع بیشتر به [توضیح‌دهنده مدل دسترسی‌پذیری (Accessibility Object Model explainer)](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object) مراجعه کنید.
 
-## Value
+## مقدار
 
-A string containing an integer.
+یک رشته شامل یک عدد صحیح.
 
-## Examples
+## نمونه‌ها
 
-In this example the value of `ariaLevel` is set to "1".
+در این مثال، مقدار `ariaLevel` به `"1"` تنظیم شده است.
 
 ```js
 class CustomEl extends HTMLElement {
@@ -38,14 +32,14 @@ class CustomEl extends HTMLElement {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همجنین ببینید
 
 - [ARIA: heading role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/heading_role)
