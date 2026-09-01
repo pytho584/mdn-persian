@@ -1,10 +1,4 @@
 ---
-title: "GPUComputePipeline"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUComputePipeline"
-status: "needs-translation"
----
-
----
 title: GPUComputePipeline
 slug: Web/API/GPUComputePipeline
 page-type: web-api-interface
@@ -13,34 +7,33 @@ browser-compat: api.GPUComputePipeline
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`GPUComputePipeline`** interface of the {{domxref("WebGPU API", "WebGPU API", "", "nocode")}} represents a pipeline that controls the compute shader stage and can be used in a {{domxref("GPUComputePassEncoder")}}.
+رابط **`GPUComputePipeline`** از {{domxref("WebGPU API", "WebGPU API", "", "nocode")}} یک pipeline را نشان می‌دهد که مرحله سایه‌زن محاسبه (compute shader) را کنترل می‌کند و می‌تواند در یک {{domxref("GPUComputePassEncoder")}} استفاده شود.
 
-A `GPUComputePipeline` object instance can be created using the {{domxref("GPUDevice.createComputePipeline()")}} or {{domxref("GPUDevice.createComputePipelineAsync()")}} methods.
+یک نمونه از شیء `GPUComputePipeline` را می‌توان با استفاده از متدهای {{domxref("GPUDevice.createComputePipeline()")}} یا {{domxref("GPUDevice.createComputePipelineAsync()")}} ایجاد کرد.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("GPUComputePipeline.label", "label")}}
-  - : A string providing a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+  - : یک رشته که یک برچسب (label) را ارائه می‌دهد که می‌تواند برای شناسایی شیء استفاده شود، مثلاً در پیام‌های {{domxref("GPUError")}} یا هشدارهای کنسول.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("GPUComputePipeline.getBindGroupLayout", "getBindGroupLayout()")}}
-  - : Returns the pipeline's {{domxref("GPUBindGroupLayout")}} object with the given index (i.e., included in the originating {{domxref("GPUDevice.createComputePipeline()")}} or {{domxref("GPUDevice.createComputePipelineAsync()")}} call's pipeline layout).
+  - : شیء {{domxref("GPUBindGroupLayout")}} pipeline را با ایندکس داده شده برمی‌گرداند (یعنی ایندکسی که در طرح‌بندی (layout) pipeline اصلی در فراخوانی {{domxref("GPUDevice.createComputePipeline()")}} یا {{domxref("GPUDevice.createComputePipelineAsync()")}} گنجانده شده است).
 
-## Examples
+## مثال‌ها
 
-> [!NOTE]
-> The [WebGPU samples](https://webgpu.github.io/webgpu-samples/) feature many more examples.
+> [!NOTE] نمونه‌های [WebGPU samples](https://webgpu.github.io/webgpu-samples/) شامل مثال‌های بسیار بیشتری هستند.
 
-### Basic example
+### مثال پایه
 
-Our [basic compute demo](https://mdn.github.io/dom-examples/webgpu-compute-demo/) shows a process of:
+دموی [محاسبه پایه](https://mdn.github.io/dom-examples/webgpu-compute-demo/) ما فرآیندی را نشان می‌دهد که شامل:
 
-- Creating a bind group layout with {{domxref("GPUDevice.createBindGroupLayout()")}}.
-- Feeding the `bindGroupLayout` into {{domxref("GPUDevice.createPipelineLayout()")}} to create a {{domxref("GPUPipelineLayout")}}.
-- Using that value immediately in a `createComputePipeline()` call to create a `GPUComputePipeline`.
+- ایجاد یک طرح‌بندی گروه اتصال (bind group layout) با {{domxref("GPUDevice.createBindGroupLayout()")}}.
+- وارد کردن `bindGroupLayout` به {{domxref("GPUDevice.createPipelineLayout()")}} برای ایجاد یک {{domxref("GPUPipelineLayout")}}.
+- استفاده مستقیم از آن مقدار در یک فراخوانی `createComputePipeline()` برای ایجاد یک `GPUComputePipeline`.
 
 ```js
 // …
@@ -70,14 +63,14 @@ const computePipeline = device.createComputePipeline({
 // …
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
