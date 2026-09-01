@@ -1,11 +1,5 @@
 ---
 title: "HTMLAnchorElement: password property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement/password"
-status: "needs-translation"
----
-
----
-title: "HTMLAnchorElement: password property"
 short-title: password
 slug: Web/API/HTMLAnchorElement/password
 page-type: web-api-instance-property
@@ -14,19 +8,19 @@ browser-compat: api.HTMLAnchorElement.password
 
 {{ApiRef("HTML DOM")}}
 
-The **`password`** property of the {{domxref("HTMLAnchorElement")}} interface is a string containing the password component of the `<a>` element's `href`. If the URL does not have a password, this property contains an empty string, `""`.
+ویژگی **`password`** در رابط {{domxref("HTMLAnchorElement")}} یک رشته است که بخش «رمز عبور» از `href` عنصر `<a>` را شامل می‌شود. اگر URL رمز عبور نداشته باشد، این ویژگی شامل یک رشته خالی، `""` خواهد بود.
 
-This property can be set to change the password of the URL. If the URL has no {{domxref("HTMLAnchorElement.host", "host")}} or its scheme is `file:`, then setting this property has no effect.
+این ویژگی قابل تنظیم است تا رمز عبور URL تغییر کند. اگر URL دارای {{domxref("HTMLAnchorElement.host", "host")}} نباشد یا پروتکل آن `file:` باشد، تنظیم این ویژگی هیچ تأثیری ندارد.
 
-The password is {{Glossary("Percent-encoding", "percent-encoded")}} when setting but not percent-decoded when reading.
+رمز عبور هنگام تنظیم، {{Glossary("Percent-encoding", "درصد-نشانه‌گذاری")}} می‌شود، اما هنگام خواندن، درصد-رمزگشایی نمی‌شود.
 
-See {{domxref("URL.password")}} for more information.
+برای اطلاعات بیشتر به {{domxref("URL.password")}} مراجعه کنید.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```js
 // An <a id="myAnchor" href="https://anonymous:flabada@developer.mozilla.org/en-US/docs/HTMLAnchorElement"> is in the document
@@ -34,14 +28,15 @@ const anchor = document.getElementByID("myAnchor");
 anchor.password; // returns 'flabada'
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("HTMLAnchorElement")}} interface it belongs to.
+- رابط {{domxref("HTMLAnchorElement")}} که این ویژگی به آن تعلق دارد.
+```
