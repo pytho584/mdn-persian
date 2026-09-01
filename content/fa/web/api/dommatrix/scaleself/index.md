@@ -1,11 +1,5 @@
 ---
 title: "DOMMatrix: scaleSelf() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/scaleSelf"
-status: "needs-translation"
----
-
----
-title: "DOMMatrix: scaleSelf() method"
 short-title: scaleSelf()
 slug: Web/API/DOMMatrix/scaleSelf
 page-type: web-api-instance-method
@@ -14,11 +8,11 @@ browser-compat: api.DOMMatrix.scaleSelf
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The **`scaleSelf()`** method of the {{domxref("DOMMatrix")}} interface is a mutable transformation method that modifies a matrix by applying a specified scaling factor, centered on the given origin, with a default origin of `(0, 0)`, returning the scaled matrix.
+متد **`scaleSelf()`** از رابط {{domxref("DOMMatrix")}} یک متد تبدیل درجا است که با اعمال ضریب مقیاس مشخص‌شده، حول مبدأ داده‌شده (با پیش‌فرض `(0, 0)`) ماتریس را تغییر می‌دهد و ماتریس مقیاس‌شده را برمی‌گرداند.
 
-To scale a matrix without mutating it, see {{domxref("DOMMatrixReadOnly.scale()")}}, which creates a new scaled matrix while leaving the original unchanged.
+برای اعمال مقیاس به یک ماتریس بدون تغییر آن، به {{domxref("DOMMatrixReadOnly.scale()")}} مراجعه کنید؛ این متد یک ماتریس مقیاس‌شدهٔ جدید می‌سازد و ماتریس اصلی را بدون تغییر باقی می‌گذارد.
 
-## Syntax
+## نحو
 
 ```js-nolint
 scaleSelf()
@@ -30,30 +24,28 @@ scaleSelf(scaleX, scaleY, scaleZ, originX, originY)
 scaleSelf(scaleX, scaleY, scaleZ, originX, originY, originZ)
 ```
 
-### Parameters
+### پارامترها
 
 - `scaleX` {{optional_inline}}
-  - : A multiplier for the scale value on the x-axis. If not supplied, this defaults to `1`.
+  - : ضریبی برای مقدار مقیاس در محور x. اگر ارائه نشود، به‌طور پیش‌فرض `1` است.
 - `scaleY` {{optional_inline}}
-  - : A multiplier for the scale value on the y-axis. If not supplied, this defaults to the value of `scaleX`.
+  - : ضریبی برای مقدار مقیاس در محور y. اگر ارائه نشود، به‌طور پیش‌فرض برابر با مقدار `scaleX` است.
 - `scaleZ` {{optional_inline}}
-  - : A multiplier for the scale value on the z-axis. If this value is anything other than 1, the resulting matrix will be 3D.
+  - : ضریبی برای مقدار مقیاس در محور z. اگر این مقدار چیزی غیر از 1 باشد، ماتریس حاصل سه‌بعدی خواهد بود.
 - `originX` {{optional_inline}}
-  - : An x-coordinate for the origin of the transformation. If no origin is supplied, this defaults to 0.
+  - : مختصات x برای مبدأ تبدیل. اگر مبدأ ارائه نشود، به‌طور پیش‌فرض 0 است.
 - `originY` {{optional_inline}}
-  - : A y-coordinate for the origin of the transformation. If no origin is supplied, this defaults to 0.
+  - : مختصات y برای مبدأ تبدیل. اگر مبدأ ارائه نشود، به‌طور پیش‌فرض 0 است.
 - `originZ` {{optional_inline}}
-  - : A z-coordinate for the origin of the transformation. If no origin is supplied, this defaults to 0. If this value is anything other than 0, the resulting matrix will be 3D.
+  - : مختصات z برای مبدأ تبدیل. اگر مبدأ ارائه نشود، به‌طور پیش‌فرض 0 است. اگر این مقدار چیزی غیر از 0 باشد، ماتریس حاصل سه‌بعدی خواهد بود.
 
-### Return value
+### مقدار بازگشتی
 
-Returns itself; a {{domxref("DOMMatrix")}}.
+خود ماتریس را برمی‌گرداند؛ یک {{domxref("DOMMatrix")}}. اگر مقیاس حول محور z اعمال شود، ماتریس یک ماتریس سه‌بعدی 4✕4 خواهد بود.
 
-If a scale is applied about the z-axis, the matrix will be a 4✕4 3D matrix.
+## مثال‌ها
 
-## Examples
-
-This SVG contains two semi-opaque squares, one red and one blue, each positioned at the document origin:
+این SVG شامل دو مربع نیمه‌شفاف، یکی قرمز و یکی آبی است که هر دو در مبدأ سند قرار دارند:
 
 ```html
 <svg viewBox="0 0 50 50" height="200">
@@ -62,11 +54,9 @@ This SVG contains two semi-opaque squares, one red and one blue, each positioned
 </svg>
 ```
 
-This JavaScript first creates a matrix, then scales the matrix to one that halves the width and doubles the height, using the `scaleSelf()` method.
+این جاوااسکریپت ابتدا یک ماتریس می‌سازد، سپس با استفاده از متد `scaleSelf()` ماتریس را طوری مقیاس می‌دهد که عرض آن نصف و ارتفاع آن دو برابر شود.
 
-The matrix is then applied to the blue square as a
-`transform`, changing its dimensions and position. The red square is left
-unchanged.
+سپس این ماتریس به‌عنوان یک `transform` روی مربع آبی اعمال می‌شود و ابعاد و موقعیت آن تغییر می‌کند. مربع قرمز بدون تغییر باقی می‌ماند.
 
 ```js
 const matrix = new DOMMatrix();
@@ -79,19 +69,19 @@ document
 
 {{EmbedLiveSample('Examples', '', '220')}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("DOMMatrixReadOnly.scale()")}}
 - {{domxref("DOMMatrix.scale3dSelf()")}}
-- CSS {{cssxref("transform")}} property and the {{cssxref("transform-function/scale", "scaleSelf()")}} and {{cssxref("transform-function/matrix", "matrix()")}} functions
-- [CSS transforms](/en-US/docs/Web/CSS/Guides/Transforms) module
-- SVG [`transform`](/en-US/docs/Web/SVG/Reference/Attribute/transform) attribute
-- {{domxref("CanvasRenderingContext2D")}} interface {{domxref("CanvasRenderingContext2D.transform()", "transform()")}} method
+- ویژگی CSS {{cssxref("transform")}} و توابع {{cssxref("transform-function/scale", "scaleSelf()")}} و {{cssxref("transform-function/matrix", "matrix()")}}
+- ماژول [تبدیل‌های CSS](/en-US/docs/Web/CSS/Guides/Transforms)
+- ویژگی [`transform`](/en-US/docs/Web/SVG/Reference/Attribute/transform) در SVG
+- متد {{domxref("CanvasRenderingContext2D.transform()", "transform()")}} از رابط {{domxref("CanvasRenderingContext2D")}}
