@@ -1,11 +1,5 @@
 ---
 title: "EncodedAudioChunk: timestamp property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EncodedAudioChunk/timestamp"
-status: "needs-translation"
----
-
----
-title: "EncodedAudioChunk: timestamp property"
 short-title: timestamp
 slug: Web/API/EncodedAudioChunk/timestamp
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.EncodedAudioChunk.timestamp
 
 {{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`timestamp`** read-only property of the {{domxref("EncodedAudioChunk")}} interface returns an integer indicating the timestamp of the audio in microseconds.
+ویژگی فقط‌خواندنی **`timestamp`** از رابط {{domxref("EncodedAudioChunk")}} یک عدد صحیح برمی‌گرداند که نشان‌دهندهٔ زمان‌بندی (timestamp) صوت برحسب میکروثانیه است.
 
-## Value
+## مقدار
 
-An integer.
+یک عدد صحیح.
 
-## Examples
+## مثال‌ها
 
-In the following example the `timestamp` is printed to the console.
+در مثال زیر، `timestamp` در کنسول چاپ می‌شود.
 
 ```js
 const init = {
@@ -36,10 +30,10 @@ const chunk = new EncodedAudioChunk(init);
 console.log(chunk.timestamp); // 23000000
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
