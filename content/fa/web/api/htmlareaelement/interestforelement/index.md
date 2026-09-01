@@ -1,7 +1,5 @@
 ---
 title: "HTMLAreaElement: interestForElement property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLAreaElement/interestForElement"
-status: "needs-translation"
 ---
 
 ---
@@ -17,23 +15,23 @@ browser-compat: api.HTMLAreaElement.interestForElement
 
 {{ApiRef("HTML DOM")}}{{SeeCompatTable}}{{non-standard_header}}
 
-The **`interestForElement`** property of the {{domxref("HTMLAreaElement")}} interface gets or sets the target element of an interest invoker, in cases where the associated {{htmlelement("area")}} element is specified as an interest invoker.
+ویژگی **`interestForElement`** از رابط {{domxref("HTMLAreaElement")}}، عنصر هدف یک فراخوانندهٔ علاقه (interest invoker) را در مواردی که عنصر {{htmlelement("area")}} مرتبط به‌عنوان فراخوانندهٔ علاقه مشخص شده است، دریافت یا تنظیم می‌کند.
 
-See [Creating an interest invoker](/en-US/docs/Web/API/Popover_API/Using_interest_invokers#creating_an_interest_invoker) for more details.
+برای جزئیات بیشتر، به [ایجاد یک فراخوانندهٔ علاقه](/en-US/docs/Web/API/Popover_API/Using_interest_invokers#creating_an_interest_invoker) مراجعه کنید.
 
 ## Value
 
-An {{domxref("Element")}} object instance, or `null` if the associated `<area>` element does not have a target element set.
+یک نمونهٔ شیء {{domxref("Element")}}، یا `null` در صورتی که عنصر `<area>` مرتبط، عنصر هدفی برایش تنظیم نشده باشد.
 
 ## Examples
 
-### Basic `interestForElement` usage
+### استفادهٔ پایه از `interestForElement`
 
-In this example, we use an `<area>` element's `interestForElement` property to set its target element and then retrieve the target element's `tagName`. The `tagName` is then printed in the `<area>` element's text content.
+در این مثال، از ویژگی `interestForElement` یک عنصر `<area>` برای تنظیم عنصر هدف آن استفاده می‌کنیم و سپس `tagName` عنصر هدف را بازیابی می‌کنیم. سپس `tagName` در محتوای متنی عنصر `<area>` چاپ می‌شود.
 
 #### HTML
 
-We include an `<area>` element and a `<div>` element. We turn the `<div>` element into a popover by setting a `popover` attribute on it.
+یک عنصر `<area>` و یک عنصر `<div>` قرار می‌دهیم. عنصر `<div>` را با قرار دادن یک ویژگی `popover` روی آن به یک popover تبدیل می‌کنیم.
 
 ```html live-sample___basic-interest-invoker
 <map name="example-map" id="example-map">
@@ -53,7 +51,7 @@ map {
 
 #### JavaScript
 
-We get references to the `<area>` and `<div>` elements in script, then declare an interest invoker-target relationship between the `<area>` and the `<div>` by setting the `<area>` element's `interestForElement` property equal to a reference to the `<div>`. We then set the `<area>` element's text content equal to a string containing the target element's `tagName`, retrieved via `invoker.interestForElement.tagName`.
+در اسکریپت، ارجاع‌هایی به عناصر `<area>` و `<div>` می‌گیریم. سپس با قرار دادن ویژگی `interestForElement` عنصر `<area>` برابر با ارجاعی به `<div>`، یک رابطهٔ فراخوانندهٔ علاقه-هدف بین `<area>` و `<div>` برقرار می‌کنیم. سپس محتوای متنی عنصر `<area>` را برابر با رشته‌ای قرار می‌دهیم که شامل `tagName` عنصر هدف است و از طریق `invoker.interestForElement.tagName` به دست آمده است.
 
 ```js live-sample___basic-interest-invoker
 const invoker = document.querySelector("area");
@@ -64,23 +62,23 @@ invoker.interestForElement = popover;
 invoker.textContent = `My target is a ${invoker.interestForElement.tagName} element`;
 ```
 
-#### Result
+#### نتیجه
 
-The example renders like this:
+مثال به این شکل نمایش داده می‌شود:
 
 {{embedlivesample("basic-interest-invoker", "100%", "100")}}
 
-Try showing interest in the area (for example, by hovering or focusing it) to make the `<div>` appear.
+برای ظاهر شدن `<div>`، به ناحیهٔ `<area>` علاقه نشان دهید (مثلاً با نشانگر روی آن بروید یا آن را فوکوس کنید).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Using interest invokers](/en-US/docs/Web/API/Popover_API/Using_interest_invokers)
-- [The Popover API](/en-US/docs/Web/API/Popover_API)
+- [استفاده از فراخواننده‌های علاقه](/en-US/docs/Web/API/Popover_API/Using_interest_invokers)
+- [API Popover](/en-US/docs/Web/API/Popover_API)
