@@ -1,10 +1,4 @@
 ---
-title: "GPUQueue"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUQueue"
-status: "needs-translation"
----
-
----
 title: GPUQueue
 slug: Web/API/GPUQueue
 page-type: web-api-interface
@@ -13,33 +7,33 @@ browser-compat: api.GPUQueue
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`GPUQueue`** interface of the {{domxref("WebGPU API", "WebGPU API", "", "nocode")}} controls execution of encoded commands on the GPU.
+رابط **`GPUQueue`** از {{domxref("WebGPU API", "WebGPU API", "", "nocode")}} اجرای دستورات رمزگذاری‌شده روی GPU را کنترل می‌کند.
 
-A device's primary queue is accessed via the {{domxref("GPUDevice.queue")}} property.
+صف اصلی یک دستگاه از طریق ویژگی {{domxref("GPUDevice.queue")}} قابل دسترسی است.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("GPUQueue.label", "label")}}
-  - : A string providing a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+  - : یک رشته که برچسبی برای شناسایی شیء فراهم می‌کند، مثلاً در پیام‌های {{domxref("GPUError")}} یا هشدارهای کنسول.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("GPUQueue.copyExternalImageToTexture", "copyExternalImageToTexture()")}}
-  - : Copies a snapshot taken from a source image, video, or canvas into a given {{domxref("GPUTexture")}}.
+  - : یک عکس فوری گرفته شده از یک تصویر منبع، ویدیو یا بوم را در یک {{domxref("GPUTexture")}} مشخص کپی می‌کند.
 - {{domxref("GPUQueue.onSubmittedWorkDone", "onSubmittedWorkDone()")}}
-  - : Returns a {{jsxref("Promise")}} that resolves when all the work submitted to the GPU via this `GPUQueue` at the point the method is called has been processed.
+  - : یک {{jsxref("Promise")}} برمی‌گرداند که زمانی حل می‌شود که تمام کارهای ارسال‌شده به GPU از طریق این `GPUQueue` در زمان فراخوانی روش پردازش شده باشند.
 - {{domxref("GPUQueue.submit", "submit()")}}
-  - : Schedules the execution of command buffers represented by one or more {{domxref("GPUCommandBuffer")}} objects by the GPU.
+  - : اجرای بافرهای دستوری که توسط یک یا چند شیء {{domxref("GPUCommandBuffer")}} نمایش داده می‌شوند را توسط GPU زمان‌بندی می‌کند.
 - {{domxref("GPUQueue.writeBuffer", "writeBuffer()")}}
-  - : Writes a provided data source into a given {{domxref("GPUBuffer")}}.
+  - : یک منبع داده ارائه‌شده را در یک {{domxref("GPUBuffer")}} مشخص می‌نویسد.
 - {{domxref("GPUQueue.writeTexture", "writeTexture()")}}
-  - : Writes a provided data source into a given {{domxref("GPUTexture")}}.
+  - : یک منبع داده ارائه‌شده را در یک {{domxref("GPUTexture")}} مشخص می‌نویسد.
 
-## Examples
+## مثال‌ها
 
-In our [basic render demo](https://mdn.github.io/dom-examples/webgpu-render-demo/), we define some vertex data in a {{jsxref("Float32Array")}} that we'll use to draw a triangle:
+در [basic render demo](https://mdn.github.io/dom-examples/webgpu-render-demo/) ما، برخی داده‌های رأس را در یک {{jsxref("Float32Array")}} تعریف می‌کنیم که برای رسم یک مثلث استفاده خواهیم کرد:
 
 ```js
 const vertices = new Float32Array([
@@ -48,7 +42,7 @@ const vertices = new Float32Array([
 ]);
 ```
 
-To use this data in a render pipeline, we need to put it into a {{domxref("GPUBuffer")}}. First we'll create the buffer:
+برای استفاده از این داده‌ها در یک خط لوله رندر، باید آن را در یک {{domxref("GPUBuffer")}} قرار دهیم. ابتدا بافر را ایجاد می‌کنیم:
 
 ```js
 const vertexBuffer = device.createBuffer({
@@ -57,29 +51,29 @@ const vertexBuffer = device.createBuffer({
 });
 ```
 
-To get the data into the buffer we can use the {{domxref("GPUQueue.writeBuffer", "writeBuffer()")}} function, which lets the user agent determine most efficient way to copy the data over:
+برای انتقال داده‌ها به بافر می‌توانیم از تابع {{domxref("GPUQueue.writeBuffer", "writeBuffer()")}} استفاده کنیم که به عامل کاربر اجازه می‌دهد کارآمدترین روش را برای کپی داده‌ها تعیین کند:
 
 ```js
 device.queue.writeBuffer(vertexBuffer, 0, vertices, 0, vertices.length);
 ```
 
-Later on, a set of commands is encoded into a {{domxref("GPUCommandBuffer")}} using the {{domxref("GPUCommandEncoder.finish()")}} method. The command buffer is then passed into the queue via a {{domxref("GPUQueue.submit", "submit()")}} call, ready to be processed by the GPU.
+بعداً، مجموعه‌ای از دستورات با استفاده از روش {{domxref("GPUCommandEncoder.finish()")}} در یک {{domxref("GPUCommandBuffer")}} رمزگذاری می‌شود. سپس بافر دستور از طریق فراخوانی {{domxref("GPUQueue.submit", "submit()")}} به صف ارسال می‌شود تا توسط GPU پردازش شود.
 
 ```js
 device.queue.submit([commandEncoder.finish()]);
 ```
 
 > [!NOTE]
-> Study the [WebGPU samples](https://webgpu.github.io/webgpu-samples/) to find more queue examples.
+> برای یافتن نمونه‌های بیشتر از صف، [WebGPU samples](https://webgpu.github.io/webgpu-samples/) را مطالعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
