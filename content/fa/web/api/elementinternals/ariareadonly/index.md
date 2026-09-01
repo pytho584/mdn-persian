@@ -1,11 +1,5 @@
 ---
 title: "ElementInternals: ariaReadOnly property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/ariaReadOnly"
-status: "needs-translation"
----
-
----
-title: "ElementInternals: ariaReadOnly property"
 short-title: ariaReadOnly
 slug: Web/API/ElementInternals/ariaReadOnly
 page-type: web-api-instance-property
@@ -14,23 +8,23 @@ browser-compat: api.ElementInternals.ariaReadOnly
 
 {{APIRef("Web Components")}}
 
-The **`ariaReadOnly`** property of the {{domxref("ElementInternals")}} interface reflects the value of the [`aria-readonly`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-readonly) attribute, which indicates that the element is not editable, but is otherwise operable.
+ویژگی **`ariaReadOnly`** در رابط {{domxref("ElementInternals")}} منعکس‌کنندهٔ مقدار ویژگی [`aria-readonly`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-readonly) است که نشان می‌دهد عنصر قابل ویرایش نیست، اما در سایر جنبه‌ها قابل استفاده است.
 
 > [!NOTE]
-> Setting aria attributes on `ElementInternals` allows default semantics to be defined on a custom element. These may be overwritten by author-defined attributes, but ensure that default semantics are retained should the author delete those attributes, or fail to add them at all. For more information see the [Accessibility Object Model explainer](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object).
+> تنظیم ویژگی‌های aria روی `ElementInternals` امکان تعریف معناشناسی پیش‌فرض را برای یک عنصر سفارشی فراهم می‌کند. این مقادیر ممکن است توسط ویژگی‌های تعریف‌شده توسط نویسنده بازنویسی شوند، اما تضمین می‌کنند که در صورت حذف یا عدم افزودن آن ویژگی‌ها توسط نویسنده، معناشناسی پیش‌فرض حفظ شود. برای اطلاعات بیشتر به [توضیح مدل شیء دسترس‌پذیری](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object) مراجعه کنید.
 
-## Value
+## مقدار
 
-A string with one of the following values:
+یک رشته با یکی از مقادیر زیر:
 
 - `"true"`
-  - : The user cannot change the value of the element.
+  - : کاربر نمی‌تواند مقدار عنصر را تغییر دهد.
 - `"false"`
-  - : The user can set the value of the element.
+  - : کاربر می‌تواند مقدار عنصر را تنظیم کند.
 
-## Examples
+## مثال‌ها
 
-In this example the value of `ariaReadOnly` is set to "true".
+در این مثال، مقدار `ariaReadOnly` روی `"true"` تنظیم شده است.
 
 ```js
 class CustomControl extends HTMLElement {
@@ -43,14 +37,14 @@ class CustomControl extends HTMLElement {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [ARIA: textbox role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role)
+- [نقش ARIA: textbox](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role)
