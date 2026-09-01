@@ -1,11 +1,5 @@
 ---
 title: "Element: closest() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/closest"
-status: "needs-translation"
----
-
----
-title: "Element: closest() method"
 short-title: closest()
 slug: Web/API/Element/closest
 page-type: web-api-instance-method
@@ -14,29 +8,29 @@ browser-compat: api.Element.closest
 
 {{APIRef("DOM")}}
 
-The **`closest()`** method of the {{domxref("Element")}} interface traverses the element and its parents (heading toward the document root) until it finds a node that matches the specified [CSS selector](/en-US/docs/Learn_web_development/Core/Styling_basics/Basic_selectors).
+**`closest()`** 方法属于 {{domxref("Element")}} 接口，它会遍历该元素及其父元素（朝着文档根节点方向），直到找到一个与指定的 [CSS 选择器](/en-US/docs/Learn_web_development/Core/Styling_basics/Basic_selectors)匹配的节点。
 
-## Syntax
+## 语法
 
 ```js-nolint
 closest(selectors)
 ```
 
-### Parameters
+### 参数
 
 - `selectors`
-  - : A string of valid [CSS selectors](/en-US/docs/Learn_web_development/Core/Styling_basics/Basic_selectors) to match the {{domxref("Element")}} and its ancestors against.
+  - : 一个包含有效 [CSS 选择器](/en-US/docs/Learn_web_development/Core/Styling_basics/Basic_selectors)的字符串，用于与 {{domxref("Element")}} 及其祖先进行匹配。
 
-### Return value
+### 返回值
 
-The closest ancestor {{domxref("Element")}} or itself, which matches the `selectors`. If there is no such element, `null` is returned.
+返回与 `selectors` 匹配的最近祖先 {{domxref("Element")}} 或元素自身。如果不存在这样的元素，则返回 `null`。
 
-### Exceptions
+### 异常
 
 - `SyntaxError` {{domxref("DOMException")}}
-  - : Thrown if the `selectors` is not a valid CSS selector.
+  - : 如果 `selectors` 不是有效的 CSS 选择器，则抛出该错误。
 
-## Examples
+## 示例
 
 ### HTML
 
@@ -70,22 +64,19 @@ console.log(el.closest("article > div")); // <div id="div-01">
 console.log(el.closest(":not(div)")); // <article>
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-### Compatibility notes
+### 兼容性说明
 
-- In Edge 15-18 `document.createElement(tagName).closest(tagName)` will
-  return `null` if the element is not first connected (directly or
-  indirectly) to the context object, for example the {{domxref("Document")}} object in
-  the case of the normal DOM.
+- 在 Edge 15–18 中，如果元素尚未（直接或间接）连接到上下文对象（例如常规 DOM 中的 {{domxref("Document")}} 对象），`document.createElement(tagName).closest(tagName)` 将返回 `null`。
 
-## See also
+## 参见
 
-- [CSS selectors](/en-US/docs/Web/CSS/Guides/Selectors) module
-- Other {{domxref("Element")}} methods that take selectors: {{domxref("Element.querySelector()")}}, {{domxref("Element.querySelectorAll()")}}, and {{domxref("Element.matches()")}}.
+- [CSS 选择器](/en-US/docs/Web/CSS/Guides/Selectors) 模块
+- 其他接受选择器的 {{domxref("Element")}} 方法：{{domxref("Element.querySelector()")}}、{{domxref("Element.querySelectorAll()")}} 和 {{domxref("Element.matches()")}}。
