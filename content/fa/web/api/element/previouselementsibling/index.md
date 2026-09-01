@@ -1,11 +1,5 @@
 ---
 title: "Element: previousElementSibling property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/previousElementSibling"
-status: "needs-translation"
----
-
----
-title: "Element: previousElementSibling property"
 short-title: previousElementSibling
 slug: Web/API/Element/previousElementSibling
 page-type: web-api-instance-property
@@ -14,15 +8,13 @@ browser-compat: api.Element.previousElementSibling
 
 {{APIRef("DOM")}}
 
-The **`Element.previousElementSibling`**
-read-only property returns the {{domxref("Element")}} immediately prior to the specified
-one in its parent's {{domxref("Element.children", "children")}} list, or `null` if the specified element is the first one in the list.
+ویژگی فقط-خواندنی **`Element.previousElementSibling`** عنصر {{domxref("Element")}} بلافاصله قبل از عنصر مشخص‌شده را در فهرست {{domxref("Element.children", "children")}} والد آن برمی‌گرداند، یا اگر عنصر مشخص‌شده اولین عنصر در فهرست باشد، `null` را برمی‌گرداند.
 
-## Value
+## مقدار
 
-An {{domxref("Element")}} object, or `null`.
+یک شیء {{domxref("Element")}}، یا `null`.
 
-## Examples
+## مثال‌ها
 
 ```html
 <div id="div-01">Here is div-01</div>
@@ -41,7 +33,7 @@ while (el) {
 }
 ```
 
-This example outputs the following into the page when it loads:
+این مثال هنگام بارگذاری صفحه، خروجی زیر را نمایش می‌دهد:
 
 ```plain
 Siblings of div-03:
@@ -51,14 +43,14 @@ DIV
 DIV
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Element.nextElementSibling")}}
