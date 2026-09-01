@@ -1,11 +1,5 @@
 ---
 title: "HTMLMediaElement: preservesPitch property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/preservesPitch"
-status: "needs-translation"
----
-
----
-title: "HTMLMediaElement: preservesPitch property"
 short-title: preservesPitch
 slug: Web/API/HTMLMediaElement/preservesPitch
 page-type: web-api-instance-property
@@ -14,19 +8,19 @@ browser-compat: api.HTMLMediaElement.preservesPitch
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLMediaElement.preservesPitch`** property determines whether or not the browser should adjust the pitch of the audio to compensate for changes to the playback rate made by setting {{domxref("HTMLMediaElement.playbackRate")}}.
+ویژگی **`HTMLMediaElement.preservesPitch`** تعیین می‌کند که آیا مرورگر باید زیر و بمی صدا را برای جبران تغییرات نرخ پخش که از طریق تنظیم {{domxref("HTMLMediaElement.playbackRate")}} ایجاد می‌شوند، تنظیم کند یا نه.
 
-## Value
+## مقدار
 
-A boolean value defaulting to `true`.
+یک مقدار بولی (Boolean) که پیش‌فرض آن `true` است.
 
-## Examples
+## مثال‌ها
 
-### Setting the preservesPitch property
+### تنظیم ویژگی preservesPitch
 
-In this example, we have an {{HTMLElement("audio")}} element, a range control that adjusts the playback rate, and a checkbox that sets `preservesPitch`.
+در این مثال، یک عنصر {{HTMLElement("audio")}}، یک کنترل لغزنده (range) که نرخ پخش را تنظیم می‌کند، و یک چک‌باکس که `preservesPitch` را تعیین می‌کند، داریم.
 
-Try playing the audio, then adjusting the playback rate, then enabling and disabling the checkbox.
+ابتدا صدا را پخش کنید، سپس نرخ پخش را تغییر دهید و بعد از آن چک‌باکس را فعال و غیرفعال کنید.
 
 ```html
 <audio
@@ -62,15 +56,15 @@ document.getElementById("pitch").addEventListener("change", (e) => {
 
 {{EmbedLiveSample("Setting the preservesPitch property")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLMediaElement.playbackRate")}}
 - [Web Audio playbackRate explained](/en-US/docs/Web/Media/Guides/Audio_and_video_delivery/WebAudio_playbackRate_explained)
