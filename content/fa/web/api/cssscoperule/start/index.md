@@ -1,11 +1,5 @@
 ---
 title: "CSSScopeRule: start property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSScopeRule/start"
-status: "needs-translation"
----
-
----
-title: "CSSScopeRule: start property"
 short-title: start
 slug: Web/API/CSSScopeRule/start
 page-type: web-api-instance-property
@@ -14,24 +8,24 @@ browser-compat: api.CSSScopeRule.start
 
 {{APIRef("CSSOM")}}
 
-The **`start`** property of the {{domxref("CSSScopeRule")}} interface returns a string containing the value of the `@scope` at-rule's scope root.
+ویژگی **`start`** در رابط {{domxref("CSSScopeRule")}} رشته‌ای را برمی‌گرداند که حاوی مقدار ریشهٔ محدوده در قاعدهٔ at-rule `@scope` است.
 
-## Value
+## مقدار
 
-A string, or `null` if the `@scope` at-rule has no scope root defined.
+یک رشته، یا اگر قاعدهٔ at-rule `@scope` ریشهٔ محدوده‌ای تعریف نکرده باشد، مقدار `null` است.
 
-## Example
+## مثال
 
-See the main {{domxref("CSSScopeRule")}} page for an example.
+برای نمونه به صفحهٔ اصلی {{domxref("CSSScopeRule")}} مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{CSSxRef("@scope")}}
