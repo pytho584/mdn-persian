@@ -1,11 +1,5 @@
 ---
 title: "DedicatedWorkerGlobalScope: name property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DedicatedWorkerGlobalScope/name"
-status: "needs-translation"
----
-
----
-title: "DedicatedWorkerGlobalScope: name property"
 short-title: name
 slug: Web/API/DedicatedWorkerGlobalScope/name
 page-type: web-api-instance-property
@@ -14,41 +8,36 @@ browser-compat: api.DedicatedWorkerGlobalScope.name
 
 {{APIRef("Web Workers API")}}{{AvailableInWorkers("dedicated")}}
 
-The **`name`** read-only property of the
-{{domxref("DedicatedWorkerGlobalScope")}} interface returns the name that the
-{{domxref("Worker")}} was (optionally) given when it was created. This is the name that
-the {{domxref("Worker.Worker", "Worker()")}} constructor can pass to get a reference to
-the {{domxref("DedicatedWorkerGlobalScope")}}.
+ویژگی فقط‌خواندنی **`name`** در رابط {{domxref("DedicatedWorkerGlobalScope")}} نامی را برمی‌گرداند که (به‌صورت اختیاری) هنگام ایجاد {{domxref("Worker")}} به آن داده شده است. این همان نامی است که سازندهٔ {{domxref("Worker.Worker", "Worker()")}} می‌تواند برای دریافت ارجاع به {{domxref("DedicatedWorkerGlobalScope")}} ارسال کند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
-If a worker is created using a constructor with a `name` option:
+اگر یک worker با استفاده از سازنده‌ای با گزینهٔ `name` ایجاد شود:
 
 ```js
 const myWorker = new Worker("worker.js", { name: "myWorker" });
 ```
 
-the {{domxref("DedicatedWorkerGlobalScope")}} will now have a name of "myWorker",
-returnable by running
+در این صورت {{domxref("DedicatedWorkerGlobalScope")}} نامی برابر با "myWorker" خواهد داشت که با اجرای:
 
 ```js
 self.name;
 ```
 
-from inside the worker.
+از داخل worker قابل بازگرداندن است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("DedicatedWorkerGlobalScope")}}
