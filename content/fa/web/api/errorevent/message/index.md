@@ -1,11 +1,5 @@
 ---
 title: "ErrorEvent: message property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ErrorEvent/message"
-status: "needs-translation"
----
-
----
-title: "ErrorEvent: message property"
 short-title: message
 slug: Web/API/ErrorEvent/message
 page-type: web-api-instance-property
@@ -14,13 +8,13 @@ browser-compat: api.ErrorEvent.message
 
 {{APIRef("HTML DOM")}}{{AvailableInWorkers}}
 
-The **`message`** read-only property of the {{domxref("ErrorEvent")}} interface returns a string containing a human-readable error message describing the problem.
+ویژگی فقط‌خواندنی **`message`** در رابط {{domxref("ErrorEvent")}} یک رشته (string) حاوی پیام خطای قابل فهم برای انسان که مشکل را شرح می‌دهد، بازمی‌گرداند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```js
 window.addEventListener("error", (ev) => {
@@ -28,10 +22,10 @@ window.addEventListener("error", (ev) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
