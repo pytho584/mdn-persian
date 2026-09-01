@@ -1,31 +1,21 @@
 ---
 title: "HTMLInputElement: list property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/list"
-status: "needs-translation"
----
-
----
-title: "HTMLInputElement: list property"
-short-title: list
-slug: Web/API/HTMLInputElement/list
-page-type: web-api-instance-property
-browser-compat: api.HTMLInputElement.list
 ---
 
 {{ApiRef("HTML DOM")}}
 
-The **`list`** read-only property of the {{domxref("HTMLInputElement")}} interface returns the {{domxref("HTMLDataListElement")}} pointed to by the [`list`](/en-US/docs/Web/HTML/Reference/Elements/input#list) attribute of the element, or `null` if the `list` attribute is not defined or the `list` attribute's value is not associated with any `<datalist>` in the same tree.
+خاصیت فقط خواندنی **`list`** از رابط {{domxref("HTMLInputElement")}}، عنصر {{domxref("HTMLDataListElement")}} که توسط ویژگی [`list`](/en-US/docs/Web/HTML/Reference/Elements/input#list) عنصر اشاره شده است را برمی‌گرداند، یا اگر ویژگی `list` تعریف نشده باشد یا مقدار ویژگی `list` با هیچ `<datalist>` در همان درخت مرتبط نباشد، `null` را برمی‌گرداند.
 
 > [!NOTE]
-> This is a read-only property. To associate a `<datalist>` with an element, set the value of the `list` attribute with {{domxref("Element.setAttribute", "setAttribute()")}}.
+> این یک خاصیت فقط خواندنی است. برای مرتبط کردن یک `<datalist>` با یک عنصر، مقدار ویژگی `list` را با استفاده از {{domxref("Element.setAttribute", "setAttribute()")}} تنظیم کنید.
 
-## Value
+## مقدار
 
-An {{domxref("HTMLDataListElement")}} or `null`.
+یک {{domxref("HTMLDataListElement")}} یا `null`.
 
-## Example
+## مثال
 
-Given the following HTML:
+با توجه به HTML زیر:
 
 ```html
 <label for="planet">Which planet are you from?</label>
@@ -37,22 +27,22 @@ Given the following HTML:
 </datalist>
 ```
 
-You can retrieve the `<datalist>` element associated with the `<input>`:
+می‌توانید عنصر `<datalist>` مرتبط با `<input>` را بازیابی کنید:
 
 ```js
 const inputElement = document.querySelector("#planet");
 console.log(inputElement.list); // returns the superhero HTMLDatalistElement
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLInputElement.value")}}
 - {{domxref("HTMLInputElement.type")}}
