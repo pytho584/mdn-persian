@@ -1,11 +1,5 @@
 ---
 title: "HTMLAnchorElement: attributionSourceId property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement/attributionSourceId"
-status: "needs-translation"
----
-
----
-title: "HTMLAnchorElement: attributionSourceId property"
 short-title: attributionSourceId
 slug: Web/API/HTMLAnchorElement/attributionSourceId
 page-type: web-api-instance-property
@@ -14,17 +8,17 @@ browser-compat: api.HTMLAnchorElement.attributionSourceId
 
 {{APIRef("HTML DOM")}}
 
-The **`attributionSourceId`** property of the {{domxref("HTMLAnchorElement")}} interface gets and sets the `attributionsourceid` HTML attribute on an {{htmlelement("a")}} element.
+ویژگی **`attributionSourceId`** از رابط {{domxref("HTMLAnchorElement")}}، مقدار ویژگی HTML `attributionsourceid` را روی یک عنصر {{htmlelement("a")}} دریافت و تنظیم می‌کند.
 
-The `attributionSourceId` is used as part of the [Private Click Measurement](https://privacycg.github.io/private-click-measurement/) specification to identify the content that was clicked when following a link to another site.
+`attributionSourceId` به‌عنوان بخشی از مشخصات [Private Click Measurement](https://privacycg.github.io/private-click-measurement/) برای شناسایی محتوایی استفاده می‌شود که هنگام دنبال کردن پیوند به سایت دیگر کلیک شده است.
 
-## Value
+## مقدار
 
-A number. Valid values for private click measurement are between `0` and `255`. The default value is `0`. Values outside this range will not cause an error when setting the property, but will be ignored by the browser for attribution purposes.
+یک عدد. مقادیر معتبر برای اندازه‌گیری کلیک خصوصی بین `0` و `255` است. مقدار پیش‌فرض `0` است. مقادیر خارج از این محدوده هنگام تنظیم ویژگی خطایی ایجاد نمی‌کنند، اما توسط مرورگر برای اهداف انتساب نادیده گرفته می‌شوند.
 
-## Examples
+## مثال‌ها
 
-### Setting an attribution source ID on a link
+### تنظیم شناسه منبع انتساب روی یک پیوند
 
 ```html
 <a
@@ -42,16 +36,16 @@ adLink.attributionSourceId = 17;
 console.log(adLink.attributionSourceId); // 17
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLAnchorElement")}}
-- {{htmlelement("a")}} HTML element
-- [Private Click Measurement](https://privacycg.github.io/private-click-measurement/) specification
+- عنصر HTML {{htmlelement("a")}}
+- مشخصات [Private Click Measurement](https://privacycg.github.io/private-click-measurement/)
