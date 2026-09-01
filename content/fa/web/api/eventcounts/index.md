@@ -1,10 +1,4 @@
 ---
-title: "EventCounts"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EventCounts"
-status: "needs-translation"
----
-
----
 title: EventCounts
 slug: Web/API/EventCounts
 page-type: web-api-interface
@@ -13,39 +7,39 @@ browser-compat: api.EventCounts
 
 {{APIRef("Performance API")}}
 
-The **`EventCounts`** interface of the [Performance API](/en-US/docs/Web/API/Performance_API) provides the number of events that have been dispatched for each event type.
+رابط **`EventCounts`** از [Performance API](/en-US/docs/Web/API/Performance_API) تعداد رویدادهایی را فراهم می‌کند که برای هر نوع رویداد ارسال شده‌اند.
 
-An `EventCounts` instance is a read-only [`Map`-like object](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map#map-like_browser_apis), in which each key is the name string for an event type, and the corresponding value is an integer indicating the number of events that have been dispatched for that event type.
+یک نمونه‌ی `EventCounts` یک [شیءِ شبیه به `Map`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map#map-like_browser_apis) فقط‌خواندنی است که در آن هر کلید، نام رشته‌ای (string) یک نوع رویداد است و مقدار متناظر با آن، یک عدد صحیح است که تعداد رویدادهای ارسال‌شده برای آن نوع رویداد را نشان می‌دهد.
 
-## Constructor
+## سازنده
 
-This interface has no constructor. You typically get an instance of this object using the {{domxref("performance.eventCounts")}} property.
+این رابط سازنده‌ای ندارد. معمولاً نمونه‌ای از این شیء را با استفاده از خاصیت {{domxref("performance.eventCounts")}} دریافت می‌کنید.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - `size`
-  - : See {{jsxref("Map.prototype.size")}} for details.
+  - برای جزئیات، {{jsxref("Map.prototype.size")}} را ببینید.
 
-## Instance methods
+## متدهای نمونه
 
 - `entries()`
-  - : See {{jsxref("Map.prototype.entries()")}} for details.
+  - برای جزئیات، {{jsxref("Map.prototype.entries()")}} را ببینید.
 - `forEach()`
-  - : See {{jsxref("Map.prototype.forEach()")}} for details.
+  - برای جزئیات، {{jsxref("Map.prototype.forEach()")}} را ببینید.
 - `get()`
-  - : See {{jsxref("Map.prototype.get()")}} for details.
+  - برای جزئیات، {{jsxref("Map.prototype.get()")}} را ببینید.
 - `has()`
-  - : See {{jsxref("Map.prototype.has()")}} for details.
+  - برای جزئیات، {{jsxref("Map.prototype.has()")}} را ببینید.
 - `keys()`
-  - : See {{jsxref("Map.prototype.keys()")}} for details.
+  - برای جزئیات، {{jsxref("Map.prototype.keys()")}} را ببینید.
 - `values()`
-  - : See {{jsxref("Map.prototype.values()")}} for details.
+  - برای جزئیات، {{jsxref("Map.prototype.values()")}} را ببینید.
 
-## Examples
+## مثال‌ها
 
-### Working with EventCount maps
+### کار با مپ‌های EventCount
 
-Below are a few examples to get information from an `EventCounts` map. Note that the map is read-only and the `clear()`, `delete()`, and `set()` methods aren't available.
+در زیر چند مثال برای دریافت اطلاعات از یک مپ `EventCounts` آورده شده است. توجه داشته باشید که این مپ فقط‌خواندنی است و متدهای `clear()`، `delete()` و `set()` در دسترس نیستند.
 
 ```js
 for (entry of performance.eventCounts.entries()) {
@@ -60,15 +54,15 @@ const exposedEventsCount = performance.eventCounts.size;
 const exposedEventsList = [...performance.eventCounts.keys()];
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("performance.eventCounts")}}
 - {{domxref("PerformanceEventTiming")}}
