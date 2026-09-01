@@ -1,11 +1,5 @@
 ---
 title: "HTMLButtonElement: name property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLButtonElement/name"
-status: "needs-translation"
----
-
----
-title: "HTMLButtonElement: name property"
 short-title: name
 slug: Web/API/HTMLButtonElement/name
 page-type: web-api-instance-property
@@ -14,13 +8,13 @@ browser-compat: api.HTMLButtonElement.name
 
 {{ApiRef("HTML DOM")}}
 
-The **`name`** property of the {{domxref("HTMLButtonElement")}} interface indicates the name of the {{HTMLElement("button")}} element or the empty string if the element has no name. It reflects the element's [`name`](/en-US/docs/Web/HTML/Reference/Elements/button#name) attribute.
+**`name`** 属性属于 {{domxref("HTMLButtonElement")}} 接口，表示 {{HTMLElement("button")}} 元素的名称；如果元素没有名称，则为空字符串。它反映了元素的 [`name`](/en-US/docs/Web/HTML/Reference/Elements/button#name) 属性。
 
-## Value
+## 值
 
-A string representing the element's name.
+一个字符串，表示元素的名称。
 
-## Example
+## 示例
 
 ```js
 const buttonElement = document.querySelector("#myButton");
@@ -28,15 +22,16 @@ console.log(`Element's name: ${buttonElement.name}`);
 buttonElement.name = "newName";
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
 - {{domxref("HTMLButtonElement.value")}}
 - {{domxref("HTMLButtonElement.type")}}
+```
