@@ -1,11 +1,5 @@
 ---
 title: "Highlight: forEach() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Highlight/forEach"
-status: "needs-translation"
----
-
----
-title: "Highlight: forEach() method"
 short-title: forEach()
 slug: Web/API/Highlight/forEach
 page-type: web-api-instance-method
@@ -15,37 +9,36 @@ spec-urls: https://tc39.es/ecma262/multipage/keyed-collections.html#sec-set.prot
 
 {{APIRef("CSS Custom Highlight API")}}
 
-The **`forEach()`** method of the {{domxref("Highlight")}} interface executes a provided function once for each {{domxref("AbstractRange")}} object in the `Highlight` object, in insertion order.
+متد **`forEach()`** در接口 {{domxref("Highlight")}} یک تابع داده‌شده را یک‌بار برای هر شیء {{domxref("AbstractRange")}} در شیء `Highlight`، به ترتیب درج، اجرا می‌کند.
 
-`Highlight` is a {{jsxref("Set")}}-like object, so this is similar to using {{jsxref("Set.forEach()")}}.
+`Highlight` یک شیء شبیه به {{jsxref("Set")}} است، بنابراین این متد مشابه استفاده از {{jsxref("Set.forEach()")}} است.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 forEach(callbackFn)
 forEach(callbackFn, thisArg)
 ```
 
-### Parameters
+### پارامترها
 
 - `callback`
-  - : Function to execute for each `AbstractRange` object, taking three arguments:
+  - : تابعی که برای هر شیء `AbstractRange` اجرا می‌شود و سه آرگومان می‌گیرد:
     - `range`, `key`
-      - : The current `AbstractRange` object being processed in the `Highlight`. As there are no
-        keys in `Highlight`, the `range` is passed for both arguments.
+      - : شیء `AbstractRange` فعلی که در `Highlight` پردازش می‌شود. از آنجا که در `Highlight` کلیدی وجود ندارد، `range` برای هر دو آرگومان ارسال می‌شود.
     - `highlight`
-      - : The `Highlight` object which `forEach()` was called upon.
+      - : شیء `Highlight` که `forEach()` روی آن فراخوانی شده است.
 
 - `thisArg`
-  - : Value to use as `this` when executing `callbackFn`.
+  - : مقداری که به‌عنوان `this` هنگام اجرای `callbackFn` استفاده می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-The code snippet below shows how create a new highlight with two ranges, and then log the ranges by using the `forEach()` method:
+قطعه کد زیر نحوه ایجاد یک هایلایت جدید با دو بازه و سپس ثبت (log) بازه‌ها با استفاده از متد `forEach()` را نشان می‌دهد:
 
 ```js
 function logRanges(range, key, highlight) {
@@ -69,15 +62,15 @@ myHighlight.add(range2);
 myHighlight.forEach(logRanges);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("css_custom_highlight_api", "The CSS Custom Highlight API", "", "nocode")}}
 - [CSS Custom Highlight API: The Future of Highlighting Text Ranges on the Web](https://css-tricks.com/css-custom-highlight-api-early-look/)
