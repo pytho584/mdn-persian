@@ -1,11 +1,5 @@
 ---
 title: "GPUCanvasContext: getCurrentTexture() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUCanvasContext/getCurrentTexture"
-status: "needs-translation"
----
-
----
-title: "GPUCanvasContext: getCurrentTexture() method"
 short-title: getCurrentTexture()
 slug: Web/API/GPUCanvasContext/getCurrentTexture
 page-type: web-api-instance-method
@@ -14,29 +8,29 @@ browser-compat: api.GPUCanvasContext.getCurrentTexture
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`getCurrentTexture()`** method of the
-{{domxref("GPUCanvasContext")}} interface returns the next {{domxref("GPUTexture")}} to be composited to the document by the canvas context.
+متد **`getCurrentTexture()`** در رابط
+{{domxref("GPUCanvasContext")}}، شیء {{domxref("GPUTexture")}} بعدی را که قرار است توسط بافت بوم (canvas) در سند ترکیب شود، برمی‌گرداند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 getCurrentTexture()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار برگشتی
 
-A {{domxref("GPUTexture")}} object instance.
+یک نمونه از شیء {{domxref("GPUTexture")}}.
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if `getCurrentTexture()` is called on the canvas context before it is configured (i.e., before {{domxref("GPUCanvasContext.configure()")}} has been called).
+  - : اگر `getCurrentTexture()` قبل از پیکربندی بافت بوم (یعنی قبل از فراخوانی {{domxref("GPUCanvasContext.configure()")}}) صدا زده شود، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
 ```js
 const canvas = document.querySelector("#gpuCanvas");
@@ -49,13 +43,13 @@ context.configure({
 });
 
 // …
-// Later on
+// بعداً
 const commandEncoder = device.createCommandEncoder();
 
 const renderPassDescriptor = {
   colorAttachments: [
     {
-      clearValue: [0, 0, 0, 1], // Opaque black
+      clearValue: [0, 0, 0, 1], // سیاه مات
       loadOp: "clear",
       storeOp: "store",
       view: context.getCurrentTexture().createView(),
@@ -66,14 +60,14 @@ const renderPassDescriptor = {
 const passEncoder = commandEncoder.beginRenderPass(renderPassDescriptor);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
