@@ -1,11 +1,5 @@
 ---
 title: "CSSPropertyRule: inherits property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSPropertyRule/inherits"
-status: "needs-translation"
----
-
----
-title: "CSSPropertyRule: inherits property"
 short-title: inherits
 slug: Web/API/CSSPropertyRule/inherits
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.CSSPropertyRule.inherits
 
 {{APIRef("CSS Properties and Values API")}}
 
-The read-only **`inherits`** property of the {{domxref("CSSPropertyRule")}} interface returns the inherit flag of the custom property registration represented by the {{cssxref("@property")}} rule, a boolean describing whether or not the property inherits by default.
+ویژگی فقط‌خواندنی **`inherits`** از رابط {{domxref("CSSPropertyRule")}}، پرچم ارث‌بریِ ثبتِ ویژگی سفارشی را که توسط قانون {{cssxref("@property")}} نمایش داده می‌شود، برمی‌گرداند؛ یک مقدار بولی که مشخص می‌کند آیا آن ویژگی به‌صورت پیش‌فرض ارث‌بری می‌شود یا نه.
 
-## Value
+## مقدار
 
-A boolean.
+یک مقدار بولی.
 
-## Examples
+## مثال‌ها
 
-This stylesheet contains a single {{cssxref("@property")}} rule. The first {{domxref("CSSRule")}} returned will be a `CSSPropertyRule` representing this rule. The `inherits` property returns the boolean `false`, this being the value of the `inherits` property in the CSS.
+این استایل‌شیت شامل یک قانون {{cssxref("@property")}} است. اولین {{domxref("CSSRule")}} بازگشت‌داده‌شده یک `CSSPropertyRule` خواهد بود که این قانون را نمایش می‌دهد. ویژگی `inherits` مقدار بولی `false` را برمی‌گرداند؛ این همان مقداری است که برای ویژگی `inherits` در CSS تعیین شده است.
 
 ```css
 @property --property-name {
@@ -37,10 +31,10 @@ const myRules = document.styleSheets[0].cssRules;
 console.log(myRules[0].inherits); // false
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
