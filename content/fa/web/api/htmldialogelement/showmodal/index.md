@@ -1,11 +1,5 @@
 ---
 title: "HTMLDialogElement: showModal() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/showModal"
-status: "needs-translation"
----
-
----
-title: "HTMLDialogElement: showModal() method"
 short-title: showModal()
 slug: Web/API/HTMLDialogElement/showModal
 page-type: web-api-instance-method
@@ -14,40 +8,40 @@ browser-compat: api.HTMLDialogElement.showModal
 
 {{ APIRef("HTML DOM") }}
 
-The **`showModal()`** method of the {{domxref("HTMLDialogElement")}} interface displays the dialog as a modal dialog, over the top of any other dialogs or elements that might be visible.
+متد **`showModal()`** از رابط {{domxref("HTMLDialogElement")}}، دیالوگ را به‌صورت یک دیالوگ مودال (modal) در بالای هر دیالوگ یا عنصر دیگری که ممکن است قابل مشاهده باشد، نمایش می‌دهد.
 
-A modal dialog displays in the {{glossary("top layer")}}, along with a {{cssxref('::backdrop')}} pseudo-element.
-Elements inside the same document as the dialog, except the dialog and its descendants, become _inert_ (as if the [`inert`](/en-US/docs/Web/HTML/Reference/Global_attributes/inert) attribute is specified).
-Only the containing document becomes blocked; if the dialog is rendered inside an iframe, the rest of the page remains interactive.
+یک دیالوگ مودال در {{glossary("top layer")}} (لایهٔ بالایی) به‌همراه یک شبه‌المان {{cssxref('::backdrop')}} نمایش داده می‌شود.
+عناصر داخل همان سندی که دیالوگ در آن قرار دارد، به‌جز خود دیالوگ و فرزندانش، _inert_ (غیرفعال) می‌شوند (انگار ویژگی [`inert`](/en-US/docs/Web/HTML/Reference/Global_attributes/inert) روی آن‌ها تنظیم شده باشد).
+فقط سندِ حاوی دیالوگ مسدود می‌شود؛ اگر دیالوگ داخل یک iframe رندر شده باشد، بقیهٔ صفحه همچنان قابل تعامل باقی می‌ماند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 showModal()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the dialog is already open and non-modal (i.e., if the dialog has already been opened with {{domxref("HTMLDialogElement.show()")}}).
+  - : اگر دیالوگ از قبل باز و غیرمودال باشد (یعنی قبلاً با استفاده از {{domxref("HTMLDialogElement.show()")}} باز شده باشد) پرتاب می‌شود.
 
-## Examples
+## نمونه‌ها
 
-### Basic usage
+### کاربرد پایه
 
-The following example shows a simple button that, when clicked, opens a {{htmlelement("dialog")}} using the `showModal()` method.
+مثال زیر یک دکمهٔ ساده را نشان می‌دهد که با کلیک‌شدن، یک {{htmlelement("dialog")}} را با استفاده از متد `showModal()` باز می‌کند.
 
-When the dialog is open, you cannot interact with the rest of the page, including clicking the _Click me_ button that would otherwise trigger an alert.
+وقتی دیالوگ باز است، نمی‌توانید با بقیهٔ صفحه تعامل کنید، از جمله کلیک روی دکمهٔ _Click me_ که در غیر این صورت یک alert را فعال می‌کرد.
 
-You can click the _Close dialog_ button to close the dialog (via the {{domxref("HTMLDialogElement.close()")}} method).
+می‌توانید دکمهٔ _Close dialog_ را کلیک کنید تا دیالوگ بسته شود (از طریق متد {{domxref("HTMLDialogElement.close()")}}).
 
 #### HTML
 
@@ -60,7 +54,7 @@ You can click the _Close dialog_ button to close the dialog (via the {{domxref("
 <p><button id="alert">Trigger alert</button></p>
 ```
 
-#### JavaScript
+#### جاوااسکریپت
 
 ```js
 const dialog = document.getElementById("dialog");
@@ -84,19 +78,19 @@ closeButton.addEventListener("click", () => {
 });
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Basic usage", '100%', "250px")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- HTML {{htmlelement("dialog")}} element
+- عنصر HTML {{htmlelement("dialog")}}
 - {{domxref("HTMLDialogElement.show()")}}
