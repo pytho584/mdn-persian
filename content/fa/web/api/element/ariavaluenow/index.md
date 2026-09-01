@@ -1,11 +1,5 @@
 ---
 title: "Element: ariaValueNow property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaValueNow"
-status: "needs-translation"
----
-
----
-title: "Element: ariaValueNow property"
 short-title: ariaValueNow
 slug: Web/API/Element/ariaValueNow
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.Element.ariaValueNow
 
 {{APIRef("DOM")}}
 
-The **`ariaValueNow`** property of the {{domxref("Element")}} interface reflects the value of the [`aria-valuenow`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuenow) attribute, which defines the current value for a range widget.
+ویژگی **`ariaValueNow`** در رابط {{domxref("Element")}} مقدار ویژگی [`aria-valuenow`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuenow) را بازتاب می‌دهد که مقدار فعلی یک ابزارک دامنه (range widget) را تعریف می‌کند.
 
-## Value
+## مقدار
 
-A string which contains a number.
+یک رشته (string) که شامل یک عدد است.
 
-## Examples
+## مثال‌ها
 
-In this example the [`aria-valuenow`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuenow) attribute on the element with an ID of `slider` is set to "1". Using `ariaValueNow` we update the value to "2".
+در این مثال، ویژگی [`aria-valuenow`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuenow) روی عنصری با شناسه `slider` برابر با «1» تنظیم شده است. با استفاده از `ariaValueNow` مقدار را به «2» به‌روزرسانی می‌کنیم.
 
 ```html
 <div
@@ -40,10 +34,10 @@ el.ariaValueNow = "2";
 console.log(el.ariaValueNow); // 2
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
