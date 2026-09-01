@@ -1,10 +1,4 @@
 ---
-title: "CSSKeyframesRule"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSKeyframesRule"
-status: "needs-translation"
----
-
----
 title: CSSKeyframesRule
 slug: Web/API/CSSKeyframesRule
 page-type: web-api-interface
@@ -13,38 +7,37 @@ browser-compat: api.CSSKeyframesRule
 
 {{APIRef("CSSOM")}}
 
-The **`CSSKeyframesRule`** interface describes an object representing a complete set of keyframes for a CSS animation. It corresponds to the contents of a whole {{cssxref("@keyframes")}} [at-rule](/en-US/docs/Web/CSS/Guides/Syntax/At-rules).
+رابطهٔ **`CSSKeyframesRule`** شیئی را توصیف می‌کند که یک مجموعهٔ کامل از keyframeها را برای یک انیمیشن CSS نشان می‌دهد. این رابط با محتویات کل یک [at-rule](/en-US/docs/Web/CSS/Guides/Syntax/At-rules) از نوع {{cssxref("@keyframes")}} مطابقت دارد.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its ancestor {{domxref("CSSRule")}}._
+_ویژگی‌ها را از کلاس والد خود، {{domxref("CSSRule")}}، به ارث می‌برد._
 
 - {{domxref("CSSKeyframesRule.name")}}
-  - : Represents the name of the keyframes, used by the {{cssxref("animation-name")}} property.
+  - : نام keyframeها را نشان می‌دهد که توسط ویژگی {{cssxref("animation-name")}} استفاده می‌شود.
 - {{domxref("CSSKeyframesRule.cssRules")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref("CSSRuleList")}} of the keyframes in the list.
+  - : یک {{domxref("CSSRuleList")}} از keyframeهای موجود در فهرست را برمی‌گرداند.
 - {{domxref("CSSKeyframesRule.length")}} {{ReadOnlyInline}}
-  - : Returns the number of keyframes in the list.
+  - : تعداد keyframeهای فهرست را برمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
-_Inherits methods from its ancestor {{domxref("CSSRule")}}._
+_روش‌ها را از کلاس والد خود، {{domxref("CSSRule")}}، به ارث می‌برد._
 
 - {{domxref("CSSKeyframesRule.appendRule()")}}
-  - : Inserts a new keyframe rule into the current CSSKeyframesRule. The parameter is a string containing a keyframe in the same format as an entry of a {{cssxref("@keyframes")}} at-rule. If it contains more than one keyframe rule, a {{domxref("DOMException")}} with a `SYNTAX_ERR` is thrown.
+  - : یک قانون keyframe جدید را در CSSKeyframesRule فعلی درج می‌کند. پارامتر رشته‌ای است شامل یک keyframe با همان قالبی که در یک at-rule از نوع {{cssxref("@keyframes")}} استفاده می‌شود. اگر بیش از یک قانون keyframe داشته باشد، یک {{domxref("DOMException")}} با `SYNTAX_ERR` پرتاب می‌شود.
 - {{domxref("CSSKeyframesRule.deleteRule()")}}
-  - : Deletes a keyframe rule from the current CSSKeyframesRule. The parameter is the index of the keyframe to be deleted, expressed as a string resolving as a number between `0%` and `100%`.
+  - : یک قانون keyframe را از CSSKeyframesRule فعلی حذف می‌کند. پارامتر، ایندکس keyframe موردنظر برای حذف است که به‌صورت یک رشته بیان می‌شود و به عددی بین `0%` و `100%` تفسیر می‌شود.
 - {{domxref("CSSKeyframesRule.findRule()")}}
-  - : Returns a keyframe rule corresponding to the given key. The key is a string containing an index of the keyframe to be returned, resolving to a percentage between `0%` and `100%`. If no such keyframe exists, `findRule` returns `null`.
+  - : یک قانون keyframe متناظر با کلید داده‌شده را برمی‌گرداند. کلید رشته‌ای است شامل ایندکس keyframeای که باید برگردانده شود و به درصدی بین `0%` و `100%` تفسیر می‌شود. اگر چنین keyframeای وجود نداشته باشد، `findRule` مقدار `null` را برمی‌گرداند.
 
-## Example
+## مثال
 
-### Using CSSKeyframesRule
+### استفاده از CSSKeyframesRule
 
-The CSS includes a keyframes at-rule. This will be the first {{domxref("CSSRule")}} returned by `document.styleSheets[0].cssRules`.
-`myRules[0]` returns a `CSSKeyframesRule` object.
+CSS شامل یک at-rule از نوع keyframes است. این، اولین {{domxref("CSSRule")}}ای خواهد بود که توسط `document.styleSheets[0].cssRules` برگردانده می‌شود. `myRules[0]` یک شیء `CSSKeyframesRule` برمی‌گرداند.
 
 ```css
 @keyframes slide-in {
@@ -63,9 +56,9 @@ const myRules = document.styleSheets[0].cssRules;
 const keyframes = myRules[0]; // a CSSKeyframesRule
 ```
 
-### Accessing indexes
+### دسترسی به ایندکس‌ها
 
-`CSSKeyframesRule` can be indexed like an array, and functions similar to its {{domxref("CSSKeyframesRule.cssRules", "cssRules")}} property.
+`CSSKeyframesRule` را می‌توان مانند یک آرایه ایندکس‌گذاری کرد و عملکردی مشابه ویژگی {{domxref("CSSKeyframesRule.cssRules", "cssRules")}} آن دارد.
 
 ```js
 const keyframes = document.styleSheets[0].cssRules[0];
@@ -79,15 +72,15 @@ for (let i = 0; i < keyframes.length; i++) {
 // 100%
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{cssxref("@keyframes")}}
 - {{domxref("CSSKeyFrameRule")}}
