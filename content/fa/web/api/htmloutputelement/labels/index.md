@@ -1,11 +1,5 @@
 ---
 title: "HTMLOutputElement: labels property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLOutputElement/labels"
-status: "needs-translation"
----
-
----
-title: "HTMLOutputElement: labels property"
 short-title: labels
 slug: Web/API/HTMLOutputElement/labels
 page-type: web-api-instance-property
@@ -14,16 +8,13 @@ browser-compat: api.HTMLOutputElement.labels
 
 {{APIRef("DOM")}}
 
-The **`HTMLOutputElement.labels`** read-only property returns a
-{{domxref("NodeList")}} of the {{HTMLElement("label")}} elements associated with the
-{{HTMLElement("output")}} element.
+خاصیتِ فقط‌خواندنی **`HTMLOutputElement.labels`** یک {{domxref("NodeList")}} از عناصر {{HTMLElement("label")}} مرتبط با عنصر {{HTMLElement("output")}} بازمی‌گرداند.
 
-## Value
+## مقدار
 
-A {{domxref("NodeList")}} containing the `<label>` elements associated
-with the `<output>` element.
+یک {{domxref("NodeList")}} شامل عناصر `<label>` مرتبط با عنصر `<output>`.
 
-## Examples
+## مثال‌ها
 
 ### HTML
 
@@ -44,10 +35,10 @@ for (const label of output.labels) {
 
 {{EmbedLiveSample("Examples", "100%", 30)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
