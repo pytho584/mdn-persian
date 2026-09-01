@@ -1,11 +1,5 @@
 ---
 title: "Document: linkColor property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/linkColor"
-status: "needs-translation"
----
-
----
-title: "Document: linkColor property"
 short-title: linkColor
 slug: Web/API/Document/linkColor
 page-type: web-api-instance-property
@@ -16,37 +10,33 @@ browser-compat: api.Document.linkColor
 
 {{APIRef("DOM")}} {{Deprecated_header}}
 
-The **`Document.linkColor`** property gets/sets the color of
-links within the document.
+**ویژگی `Document.linkColor`** رنگِ پیوندهای داخل سند را می‌خواند یا تنظیم می‌کند.
 
-This property is deprecated. As an alternative, you can set the CSS
-{{cssxref("color")}} property on either HTML anchor links ({{HtmlElement("a")}}) or on
-{{cssxref(":link")}} pseudo-classes.
+این ویژگی منسوخ شده است. به‌عنوان جایگزین، می‌توانید ویژگی CSS {{cssxref("color")}} را روی پیوندهای لنگر HTML ({{HtmlElement("a")}}) یا روی شبه‌کلاس‌های {{cssxref(":link")}} تنظیم کنید.
 
-## Value
+## مقدار
 
-A string representing the color as a word (e.g., `red`) or hexadecimal value (e.g., `#ff0000`).
+یک رشته که رنگ را به‌صورت یک واژه (مثلاً `red`) یا یک مقدار هگزادسیمال (مثلاً `#ff0000`) نشان می‌دهد.
 
-When set to the `null` value, that `null` value is converted to the empty string (`""`), so `document.linkColor = null` is equivalent to `document.linkColor = ""`.
+وقتی روی مقدار `null` تنظیم شود، آن مقدار `null` به رشتهٔ خالی (`""`) تبدیل می‌شود؛ بنابراین `document.linkColor = null` معادل `document.linkColor = ""` است.
 
-## Examples
+## مثال‌ها
 
 ```js
 document.linkColor = "blue";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-The default value for this property in Mozilla Firefox is blue (`#0000ee` in
-hexadecimal).
+مقدار پیش‌فرض این ویژگی در Mozilla Firefox آبی (`#0000ee` در هگزادسیمال) است.
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("document.vlinkColor")}}
 - {{domxref("document.alinkColor")}}
