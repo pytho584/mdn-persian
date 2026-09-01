@@ -1,11 +1,5 @@
 ---
 title: "HTMLAnchorElement: toString() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement/toString"
-status: "needs-translation"
----
-
----
-title: "HTMLAnchorElement: toString() method"
 short-title: toString()
 slug: Web/API/HTMLAnchorElement/toString
 page-type: web-api-instance-method
@@ -14,27 +8,25 @@ browser-compat: api.HTMLAnchorElement.toString
 
 {{ApiRef("URL API")}}
 
-The **`HTMLAnchorElement.toString()`** {{Glossary("stringifier")}}
-method returns a string containing the whole URL. It is a read-only
-version of {{domxref("HTMLAnchorElement.href")}}.
+متد **`HTMLAnchorElement.toString()`** {{Glossary("stringifier")}} یک رشته حاوی کل URL را برمی‌گرداند. این متد یک نسخهٔ فقط‌خواندنی از {{domxref("HTMLAnchorElement.href")}} است.
 
-## Syntax
+## نحو
 
 ```js-nolint
 toString()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A string containing the element's complete URL.
+یک رشته حاوی URL کامل عنصر.
 
-## Examples
+## مثال‌ها
 
-### Calling toString on an anchor element
+### فراخوانی toString روی یک عنصر anchor
 
 ```js
 // An <a id="myAnchor" href="/en-US/docs/HTMLAnchorElement"> element is in the document
@@ -42,14 +34,14 @@ const anchor = document.getElementById("myAnchor");
 anchor.toString(); // returns 'https://developer.mozilla.org/en-US/docs/HTMLAnchorElement'
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("HTMLAnchorElement")}} interface it belongs to.
+- رابط {{domxref("HTMLAnchorElement")}} که این متد به آن تعلق دارد.
