@@ -1,11 +1,5 @@
 ---
 title: "Gamepad: index property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Gamepad/index"
-status: "needs-translation"
----
-
----
-title: "Gamepad: index property"
 short-title: index
 slug: Web/API/Gamepad/index
 page-type: web-api-instance-property
@@ -14,18 +8,15 @@ browser-compat: api.Gamepad.index
 
 {{APIRef("Gamepad API")}}
 
-The **`Gamepad.index`** property of the {{domxref("Gamepad") }}
-interface returns an integer that is auto-incremented to be unique for each device
-currently connected to the system.
+ویژگی **`Gamepad.index`** از رابط {{domxref("Gamepad")}} یک عدد صحیح را برمی‌گرداند که به صورت خودکار افزایش می‌یابد تا برای هر دستگاه متصل به سیستم منحصربه‌فرد باشد.
 
-This can be used to distinguish multiple controllers; a gamepad that is disconnected
-and reconnected will retain the same index.
+می‌توان از این ویژگی برای تشخیص چند کنترلر استفاده کرد؛ یک گیم‌پد که قطع و دوباره وصل شود، همان اندیس قبلی را حفظ خواهد کرد.
 
-## Value
+## مقدار
 
-A {{jsxref("number") }}.
+یک {{jsxref("number")}}.
 
-## Examples
+## نمونه‌ها
 
 ```js
 window.addEventListener("gamepadconnected", () => {
@@ -34,14 +25,14 @@ window.addEventListener("gamepadconnected", () => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 [Using the Gamepad API](/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API)
