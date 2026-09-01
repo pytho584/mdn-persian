@@ -1,7 +1,5 @@
 ---
 title: "Element: keypress event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/keypress_event"
-status: "needs-translation"
 ---
 
 ---
@@ -16,16 +14,16 @@ browser-compat: api.Element.keypress_event
 
 {{APIRef("UI Events")}}{{deprecated_header}}
 
-The **`keypress`** event is fired when a [letter, number, punctuation, or symbol](https://w3c.github.io/uievents/#unicode-character-categories) key is pressed, or else when the <kbd>Enter</kbd> key is pressed — including when the <kbd>Enter</kbd> key is pressed in combination with the <kbd>Shift</kbd> key or <kbd>Ctrl</kbd> key. Otherwise, when a modifier key such as the <kbd>Alt</kbd>, <kbd>Shift</kbd>, <kbd>Ctrl</kbd>, <kbd>Meta</kbd>, <kbd>Esc</kbd>, or <kbd>Option</kbd> key is pressed in isolation, the `keypress` event is _not_ fired.
+رویداد **`keypress`** زمانی فعال می‌شود که کلیدی از نوع [حروف، اعداد، نقطه‌گذاری یا نمادها](https://w3c.github.io/uievents/#unicode-character-categories) فشرده شود، یا همچنین زمانی که کلید <kbd>Enter</kbd> فشرده شود — از جمله زمانی که کلید <kbd>Enter</kbd> همراه با کلید <kbd>Shift</kbd> یا <kbd>Ctrl</kbd> فشرده شود. در غیر این صورت، وقتی یک کلید اصلاح‌گر مانند <kbd>Alt</kbd>، <kbd>Shift</kbd>، <kbd>Ctrl</kbd>، <kbd>Meta</kbd>، <kbd>Esc</kbd> یا <kbd>Option</kbd> به‌تنهایی فشرده شود، رویداد `keypress` فعال _نمی‌شود_.
 
 > [!WARNING]
-> Since this event has been deprecated, you should use [`beforeinput`](/en-US/docs/Web/API/Element/beforeinput_event) or [`keydown`](/en-US/docs/Web/API/Element/keydown_event) instead.
+> از آنجا که این رویداد منسوخ‌شده است، به جای آن باید از [`beforeinput`](/en-US/docs/Web/API/Element/beforeinput_event) یا [`keydown`](/en-US/docs/Web/API/Element/keydown_event) استفاده کنید.
 
-The event [bubbles](/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling). It can reach {{domxref("Document")}} and {{domxref("Window")}}.
+این رویداد [حباب می‌زند](/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling) و می‌تواند به {{domxref("Document")}} و {{domxref("Window")}} برسد.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+نام رویداد را در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی مدیریت رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("keypress", (event) => { })
@@ -33,26 +31,26 @@ addEventListener("keypress", (event) => { })
 onkeypress = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("KeyboardEvent")}}. Inherits from {{domxref("UIEvent")}} and {{domxref("Event")}}.
+یک {{domxref("KeyboardEvent")}}. از {{domxref("UIEvent")}} و {{domxref("Event")}} ارث می‌برد.
 
 {{InheritanceDiagram("KeyboardEvent")}}
 
-## Examples
+## مثال
 
-### addEventListener keypress example
+### مثال استفاده از addEventListener برای رویداد keypress
 
-This example logs the {{domxref("KeyboardEvent.code")}} value whenever you press a key after focussing the {{htmlelement("input")}} element.
+این مثال مقدار {{domxref("KeyboardEvent.code")}} را هر بار که پس از فوکوس کردن عنصر {{htmlelement("input")}} یک کلید را فشار می‌دهید، ثبت می‌کند.
 
-To see which keys cause a `keypress` event to fire, and which keys don't, try pressing the following:
+برای اینکه ببینید کدام کلیدها باعث فعال‌شدن رویداد `keypress` می‌شوند و کدام‌ها نمی‌شوند، کلیدهای زیر را امتحان کنید:
 
-- letter keys, number keys, and punctuation keys
-- symbol keys such as the <kbd>$</kbd>, <kbd>+</kbd>, <kbd>=</kbd>, <kbd>%</kbd>, and <kbd>+</kbd> keys
-- modifier keys such as the <kbd>Alt</kbd>, <kbd>Shift</kbd>, <kbd>Ctrl</kbd>, <kbd>Meta</kbd>, <kbd>Esc</kbd>, <kbd>Option</kbd>, or <kbd>⌘</kbd> keys
-- the <kbd>Enter</kbd> key
-- the <kbd>Enter</kbd> key in combination with the <kbd>Shift</kbd> or <kbd>Ctrl</kbd> keys
-- the <kbd>Enter</kbd> key in combination with modifier keys other than the <kbd>Shift</kbd> or <kbd>Ctrl</kbd> keys
+- کلیدهای حروف، کلیدهای اعداد و کلیدهای نقطه‌گذاری
+- کلیدهای نماد مانند کلیدهای <kbd>$</kbd>، <kbd>+</kbd>، <kbd>=</kbd>، <kbd>%</kbd> و <kbd>+</kbd>
+- کلیدهای اصلاح‌گر مانند کلیدهای <kbd>Alt</kbd>، <kbd>Shift</kbd>، <kbd>Ctrl</kbd>، <kbd>Meta</kbd>، <kbd>Esc</kbd>، <kbd>Option</kbd> یا <kbd>⌘</kbd>
+- کلید <kbd>Enter</kbd>
+- کلید <kbd>Enter</kbd> همراه با کلیدهای <kbd>Shift</kbd> یا <kbd>Ctrl</kbd>
+- کلید <kbd>Enter</kbd> همراه با کلیدهای اصلاح‌گر غیر از <kbd>Shift</kbd> یا <kbd>Ctrl</kbd>
 
 ```html
 <div>
@@ -75,24 +73,24 @@ function logKey(e) {
 
 {{EmbedLiveSample("addEventListener_keypress_example")}}
 
-### onkeypress equivalent
+### معادل onkeypress
 
 ```js
 input.onkeypress = logKey;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("Document")}} interface, which the event also targets.
-- Related events:
+- اینترفیس {{domxref("Document")}} که این رویداد همچنین آن را هدف قرار می‌دهد.
+- رویدادهای مرتبط:
   - [`input`](/en-US/docs/Web/API/Element/input_event)
   - [`keydown`](/en-US/docs/Web/API/Element/keydown_event)
   - [`keyup`](/en-US/docs/Web/API/Element/keyup_event)
