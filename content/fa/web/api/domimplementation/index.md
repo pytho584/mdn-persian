@@ -1,10 +1,4 @@
 ---
-title: "DOMImplementation"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMImplementation"
-status: "needs-translation"
----
-
----
 title: DOMImplementation
 slug: Web/API/DOMImplementation
 page-type: web-api-interface
@@ -13,24 +7,24 @@ browser-compat: api.DOMImplementation
 
 {{ ApiRef("DOM") }}
 
-The **`DOMImplementation`** interface represents an object providing methods which are not dependent on any particular document. Such an object is returned by the {{domxref("Document.implementation")}} property.
+اینترفیس **`DOMImplementation`** شیئی را نشان می‌دهد که متدهایی را ارائه می‌کند که به هیچ سند خاصی وابسته نیستند. چنین شیئی توسط ویژگی {{domxref("Document.implementation")}} بازگردانده می‌شود.
 
 ## Property
 
-_This interface has no specific property and doesn't inherit any._
+این اینترفیس هیچ ویژگی خاصی ندارد و هیچ ویژگی‌ای را به ارث نمی‌برد.
 
 ## Instance methods
 
-_No inherited method._
+هیچ متد ارث‌برده‌شده‌ای وجود ندارد.
 
 - {{domxref("DOMImplementation.createDocument()")}}
-  - : Creates and returns an {{domxref("XMLDocument")}}.
+  - : یک {{domxref("XMLDocument")}} ایجاد و بازمی‌گرداند.
 - {{domxref("DOMImplementation.createDocumentType()")}}
-  - : Creates and returns a {{domxref("DocumentType")}}.
+  - : یک {{domxref("DocumentType")}} ایجاد و بازمی‌گرداند.
 - {{domxref("DOMImplementation.createHTMLDocument()")}}
-  - : Creates and returns an HTML {{domxref("Document")}}.
+  - : یک {{domxref("Document")}} اچ‌تی‌ام‌ال ایجاد و بازمی‌گرداند.
 - {{domxref("DOMImplementation.hasFeature()")}} {{Deprecated_Inline}}
-  - : Returns a boolean value indicating if a given feature is supported or not. This function is unreliable and kept for compatibility purpose alone: except for SVG-related queries, it always returns `true`. Old browsers are very inconsistent in their behavior.
+  - : یک مقدار بولین بازمی‌گرداند که نشان می‌دهد آیا یک قابلیت مشخص پشتیبانی می‌شود یا خیر. این تابع قابلیت اطمینان ندارد و صرفاً برای سازگاری نگهداری می‌شود: به‌جز پرس‌وجوهای مرتبط با SVG، همیشه `true` بازمی‌گرداند. مرورگرهای قدیمی در رفتار خود بسیار ناسازگارند.
 
 ## Specifications
 
@@ -42,4 +36,4 @@ _No inherited method._
 
 ## See also
 
-- [The DOM interfaces index.](/en-US/docs/Web/API/Document_Object_Model)
+- [فهرست رابط‌های DOM](/en-US/docs/Web/API/Document_Object_Model)
