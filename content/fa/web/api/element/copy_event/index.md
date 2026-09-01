@@ -1,11 +1,5 @@
 ---
 title: "Element: copy event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/copy_event"
-status: "needs-translation"
----
-
----
-title: "Element: copy event"
 short-title: copy
 slug: Web/API/Element/copy_event
 page-type: web-api-event
@@ -14,21 +8,21 @@ browser-compat: api.Element.copy_event
 
 {{APIRef("Clipboard API")}}
 
-The **`copy`** event of the [Clipboard API](/en-US/docs/Web/API/Clipboard_API) fires when the user initiates a copy action through the browser's user interface.
+رویداد **`copy`** از [Clipboard API](/en-US/docs/Web/API/Clipboard_API) زمانی رخ می‌دهد که کاربر از طریق رابط کاربری مرورگر، عمل کپی را آغاز کند.
 
-The event's default action is to copy the selection (if any) to the clipboard.
+عمل پیش‌فرض این رویداد، کپی‌کردن انتخاب فعلی (در صورت وجود) به کلیپ‌بورد است.
 
-A handler for this event can _modify_ the clipboard contents by calling {{domxref("DataTransfer.setData", "setData(format, data)")}} on the event's {{domxref("ClipboardEvent.clipboardData")}} property, and cancelling the event's default action using {{domxref("Event/preventDefault", "event.preventDefault()")}}.
+یک مدیریت‌کننده رویداد (handler) برای این رویداد می‌تواند با فراخوانی {{domxref("DataTransfer.setData", "setData(format, data)")}} روی ویژگی {{domxref("ClipboardEvent.clipboardData")}} رویداد، محتوای کلیپ‌بورد را _تغییر دهد_ و با استفاده از {{domxref("Event/preventDefault", "event.preventDefault()")}} عمل پیش‌فرض رویداد را لغو کند.
 
-However, the handler cannot _read_ the clipboard data.
+با این حال، مدیریت‌کننده رویداد نمی‌تواند داده‌های کلیپ‌بورد را _بخواند_.
 
-It's possible to construct and dispatch a [synthetic](/en-US/docs/Web/API/Document_Object_Model/Events#creating_and_dispatching_events) `copy` event, but this will not affect the system clipboard.
+امکان ساخت و ارسال یک رویداد `copy` [مصنوعی (synthetic)](/en-US/docs/Web/API/Document_Object_Model/Events#creating_and_dispatching_events) وجود دارد، اما این کار روی کلیپ‌بورد سیستمی تأثیری نخواهد گذاشت.
 
-This event [bubbles](/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling) up the DOM tree, eventually to {{domxref("Document")}} and {{domxref("Window")}}, is [cancelable](/en-US/docs/Web/API/Event/cancelable) and is [composed](/en-US/docs/Web/API/Event/composed).
+این رویداد در درخت DOM به سمت بالا [منتشر می‌شود](/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling) و در نهایت به {{domxref("Document")}} و {{domxref("Window")}} می‌رسد. این رویداد [لغوپذیر (cancelable)](/en-US/docs/Web/API/Event/cancelable) و [composed](/en-US/docs/Web/API/Event/composed) است.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+نام رویداد را در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} به کار ببرید، یا یک ویژگی مدیریت رویداد (event handler property) تنظیم کنید.
 
 ```js-nolint
 addEventListener("copy", (event) => { })
@@ -36,15 +30,15 @@ addEventListener("copy", (event) => { })
 oncopy = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("ClipboardEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("ClipboardEvent")}} که از {{domxref("Event")}} ارث می‌برد.
 
 {{InheritanceDiagram("ClipboardEvent")}}
 
-## Examples
+## مثال‌ها
 
-### Live example
+### مثال زنده
 
 #### HTML
 
@@ -76,19 +70,19 @@ source.addEventListener("copy", (event) => {
 });
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Live_example', '100%', '120px') }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("Element/cut_event", "cut")}} event
-- {{domxref("Element/paste_event", "paste")}} event
+- رویداد {{domxref("Element/cut_event", "cut")}}
+- رویداد {{domxref("Element/paste_event", "paste")}}
