@@ -1,11 +1,5 @@
 ---
 title: "HTMLCanvasElement: toBlob() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob"
-status: "needs-translation"
----
-
----
-title: "HTMLCanvasElement: toBlob() method"
 short-title: toBlob()
 slug: Web/API/HTMLCanvasElement/toBlob
 page-type: web-api-instance-method
@@ -14,16 +8,13 @@ browser-compat: api.HTMLCanvasElement.toBlob
 
 {{APIRef("Canvas API")}}
 
-The **`HTMLCanvasElement.toBlob()`** method creates a {{domxref("Blob")}} object representing the image contained in the canvas.
-This file may be cached on the disk or stored in memory at the discretion of the user agent.
+متد **`HTMLCanvasElement.toBlob()`** یک شیء {{domxref("Blob")}} می‌سازد که تصویر موجود در بوم (canvas) را نشان می‌دهد. این فایل ممکن است بنا به صلاحدید عامل کاربر در دیسک یا در حافظه ذخیره شود.
 
-The desired file format and image quality may be specified.
-If the file format is not specified, or if the given format is not supported, then the data will be exported as `image/png`.
-Browsers are required to support `image/png`; many will support additional formats including `image/jpeg` and `image/webp`.
+قالب فایل و کیفیت تصویر موردنظر را می‌توان مشخص کرد. اگر قالب فایل مشخص نشود، یا قالب داده‌شده پشتیبانی نشود، داده‌ها به‌صورت `image/png` صادر خواهند شد. مرورگرها موظف به پشتیبانی از `image/png` هستند؛ بسیاری از آن‌ها قالب‌های بیشتری مانند `image/jpeg` و `image/webp` را نیز پشتیبانی می‌کنند.
 
-The created image will have a resolution of 96dpi for file formats that support encoding resolution metadata.
+تصویر ایجادشده برای قالب‌های فایلی که رمزگذاری فرادادهٔ وضوح را پشتیبانی می‌کنند، وضوحی معادل ۹۶dpi خواهد داشت.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 toBlob(callback)
@@ -31,33 +22,29 @@ toBlob(callback, type)
 toBlob(callback, type, quality)
 ```
 
-### Parameters
+### پارامترها
 
 - `callback`
-  - : A callback function with the resulting {{domxref("Blob")}} object as a single argument.
-    `null` may be passed if the image cannot be created for any reason.
+  - : تابع بازگشتی (callback) که شیء {{domxref("Blob")}} حاصل را به‌عنوان تنها آرگومان دریافت می‌کند. اگر به هر دلیلی ایجاد تصویر میسر نشود، ممکن است `null` به آن ارسال شود.
 - `type` {{optional_inline}}
-  - : A string indicating the image format.
-    The default type is `image/png`; that type is also used if the given type isn't supported.
+  - : رشته‌ای که قالب تصویر را مشخص می‌کند. نوع پیش‌فرض `image/png` است؛ اگر نوع داده‌شده پشتیبانی نشود نیز از همین نوع استفاده می‌شود.
 - `quality` {{optional_inline}}
-  - : A {{jsxref("Number")}} between `0` and `1` indicating the image quality to be used when creating images using file formats that support lossy compression (such as `image/jpeg` or `image/webp`).
-    A user agent will use its default quality value if this option is not specified, or if the number is outside the allowed range.
+  - : یک {{jsxref("Number")}} بین `0` و `1` که کیفیت تصویر را هنگام ایجاد تصاویر با استفاده از قالب‌های فایلی که فشرده‌سازی با اتلاف (مانند `image/jpeg` یا `image/webp`) را پشتیبانی می‌کنند، تعیین می‌کند. اگر این گزینه مشخص نشود یا عدد خارج از محدودهٔ مجاز باشد، عامل کاربر از مقدار کیفیت پیش‌فرض خود استفاده می‌کند.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `SecurityError`
-  - : The canvas's bitmap is not origin-clean; at least some of its contents have or may have been loaded from a site other than the one from which the document itself was loaded.
+  - : نقشهٔ بیت (bitmap) بوم از نظر مبدأ (origin) تمیز نیست؛ دست‌کم برخی از محتویات آن از سایتی غیر از سایتی که خود سند از آن بارگذاری شده، بارگذاری شده‌اند یا احتمالاً بارگذاری شده‌اند.
 
-## Examples
+## مثال‌ها
 
-### Getting a file representing the canvas
+### دریافت فایلی که بوم را نشان می‌دهد
 
-Once you have drawn content into a canvas, you can convert it into a file of any supported image format.
-The code snippet below, for example, takes the image in the {{HTMLElement("canvas")}} element whose ID is "canvas", obtains a copy of it as a PNG image, then appends a new {{HTMLElement("img")}} element to the document, whose source image is the one created using the canvas.
+پس از اینکه محتوایی را روی یک بوم رسم کردید، می‌توانید آن را به فایلی با هر قالب تصویری پشتیبانی‌شده تبدیل کنید. برای مثال، قطعه‌کد زیر تصویر موجود در عنصر {{HTMLElement("canvas")}} با شناسهٔ «canvas» را برمی‌دارد، یک کپی از آن را به‌صورت تصویر PNG به دست می‌آورد و سپس یک عنصر جدید {{HTMLElement("img")}} به سند اضافه می‌کند که تصویر منبع آن، همان تصویر ساخته‌شده از بوم است.
 
 ```js
 const canvas = document.getElementById("canvas");
@@ -71,8 +58,7 @@ canvas.toBlob((blob) => {
 });
 ```
 
-Note that here we're creating a PNG image; if you add a second parameter to the `toBlob()` call, you can specify another image type supported by the user agent.
-For example, to get the image in JPEG format:
+توجه کنید که در اینجا یک تصویر PNG می‌سازیم؛ اگر پارامتر دومی به فراخوانی `toBlob()` اضافه کنید، می‌توانید نوع تصویر دیگری را که عامل کاربر پشتیبانی می‌کند مشخص کنید. برای مثال، برای دریافت تصویر در قالب JPEG:
 
 ```js
 canvas.toBlob(
@@ -84,16 +70,16 @@ canvas.toBlob(
 ); // JPEG at 95% quality
 ```
 
-Note that we don't immediately revoke the object URL after the image has loaded, because doing so would make the image unusable for user interactions (such as right-clicking to save the image or opening it in a new tab). For long-lived applications, you should revoke object URLs when they're no longer needed (such as when the image is removed from the DOM) to free up memory by calling the {{DOMxref("URL.revokeObjectURL_static", "URL.revokeObjectURL()")}} method and passing in the object URL string.
+توجه کنید که ما بلافاصله پس از بارگذاری تصویر، URL شیء را باطل نمی‌کنیم، زیرا این کار تصویر را برای تعاملات کاربر (مانند کلیک راست برای ذخیرهٔ تصویر یا باز کردن آن در یک تب جدید) غیرقابل استفاده می‌کند. در برنامه‌های طولانی‌مدت، باید URLهای شیء را زمانی که دیگر به آن‌ها نیازی نیست (مثلاً وقتی تصویر از DOM حذف می‌شود) با فراخوانی متد {{DOMxref("URL.revokeObjectURL_static", "URL.revokeObjectURL()")}} و ارسال رشتهٔ URL شیء باطل کنید تا حافظه آزاد شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Blob")}}
