@@ -1,11 +1,5 @@
 ---
 title: "Element: mouseenter event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseenter_event"
-status: "needs-translation"
----
-
----
-title: "Element: mouseenter event"
 short-title: mouseenter
 slug: Web/API/Element/mouseenter_event
 page-type: web-api-event
@@ -14,13 +8,13 @@ browser-compat: api.Element.mouseenter_event
 
 {{APIRef("UI Events")}}
 
-The **`mouseenter`** event is fired at an {{domxref("Element")}} when a pointing device (usually a mouse) is initially moved so that its hotspot is within the element at which the event was fired.
+رویداد **`mouseenter`** زمانی روی یک {{domxref("Element")}} شلیک می‌شود که یک دستگاه اشاره‌گر (معمولاً ماوس) ابتدا طوری حرکت داده شود که نقطه‌ی داغ (hotspot) آن داخل عنصری قرار گیرد که رویداد روی آن شلیک شده است.
 
-Note that "moving into an element" refers to the element's position in the DOM tree, not to its visual position. For example, if a child element is positioned so it is placed outside its parent, then moving into the child element will trigger `mouseenter` on the parent element, even though the pointer is still outside the bounds of the parent element.
+توجه داشته باشید که «حرکت به داخل یک عنصر» به موقعیت عنصر در درخت DOM اشاره دارد، نه به موقعیت بصری آن. برای مثال، اگر یک عنصر فرزند به‌گونه‌ای قرار گیرد که خارج از والد خود باشد، حرکت به داخل عنصر فرزند، رویداد `mouseenter` را روی عنصر والد شلیک می‌کند، حتی اگر نشانگر همچنان خارج از محدوده‌ی والد باشد.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده‌ی رویداد (event handler property) تنظیم کنید.
 
 ```js-nolint
 addEventListener("mouseenter", (event) => { })
@@ -28,38 +22,38 @@ addEventListener("mouseenter", (event) => { })
 onmouseenter = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("MouseEvent")}}. Inherits from {{domxref("UIEvent")}} and {{domxref("Event")}}.
+یک {{domxref("MouseEvent")}}. از {{domxref("UIEvent")}} و {{domxref("Event")}} به ارث برده است.
 
 {{InheritanceDiagram("MouseEvent")}}
 
-## Usage notes
+## نکات استفاده
 
-Though similar to {{domxref("Element/mouseover_event", "mouseover")}}, `mouseenter` differs in that it doesn't [bubble](/en-US/docs/Web/API/Event/bubbles) and it isn't sent to any descendants when the pointer is moved from one of its descendants' physical space to its own physical space. Other than that, enter and over events for the same situation are dispatched at the same time, if appropriate.
+اگرچه شبیه به {{domxref("Element/mouseover_event", "mouseover")}} است، اما `mouseenter` از این جهت متفاوت است که [حباب (bubble) نمی‌کند](/en-US/docs/Web/API/Event/bubbles) و وقتی نشانگر از فضای فیزیکی یکی از نوادگان به فضای فیزیکی خود عنصر حرکت می‌کند، به هیچ‌یک از نوادگان ارسال نمی‌شود. جدا از این، رویدادهای enter و over برای همان وضعیت، در صورت لزوم، همزمان شلیک می‌شوند.
 
-### Behavior of `mouseenter` events
+### رفتار رویدادهای `mouseenter`
 
-This describes the mouseenter events received by each of four concentric divs with no padding or margin, so the events all happen at the same time:
-![Mouseenter behavior diagram](mouseenter.png)
-One `mouseenter` event is sent to each element of the hierarchy when entering them. Here 4 events are sent to the four elements of the hierarchy when the pointer reaches the text.
+این توضیح، رویدادهای mouseenter دریافت‌شده توسط هر یک از چهار div هم‌مرکز را بدون padding یا margin توصیف می‌کند، بنابراین همه‌ی رویدادها در یک زمان رخ می‌دهند:
+![نمودار رفتار mouseenter](mouseenter.png)
+هنگام ورود به هر عنصر از سلسله‌مراتب، یک رویداد `mouseenter` به آن ارسال می‌شود. در اینجا وقتی نشانگر به متن می‌رسد، ۴ رویداد به چهار عنصر سلسله‌مراتب ارسال می‌شود.
 
-### Behavior of `mouseover` events
+### رفتار رویدادهای `mouseover`
 
-![Mouseover behavior diagram](mouseover.png)
-A single `mouseover` event is sent to the deepest element of the DOM tree, then it bubbles up the hierarchy until it is canceled by a handler or reaches the root.
+![نمودار رفتار mouseover](mouseover.png)
+یک رویداد `mouseover` به عمیق‌ترین عنصر درخت DOM ارسال می‌شود و سپس در سلسله‌مراتب به سمت بالا حباب می‌کند تا زمانی که توسط یک کنترل‌کننده لغو شود یا به ریشه برسد.
 
-With deep hierarchies, the number of `mouseenter` events sent can be quite huge and cause significant performance problems. In such cases, it is better to listen for `mouseover` events.
+با سلسله‌مراتب عمیق، تعداد رویدادهای `mouseenter` ارسال‌شده می‌تواند بسیار زیاد شود و مشکلات عملکردی قابل‌توجهی ایجاد کند. در چنین مواردی، بهتر است به رویدادهای `mouseover` گوش دهید.
 
-Combined with the corresponding `mouseleave` (which is fired at the element when the mouse exits its content area), the `mouseenter` event acts in a very similar way to the CSS {{cssxref(':hover')}} pseudo-class.
+ترکیب با رویداد متناظر `mouseleave` (که وقتی ماوس از ناحیه‌ی محتوایی عنصر خارج می‌شود، روی عنصر شلیک می‌شود)، رویداد `mouseenter` رفتاری بسیار مشابه با شبه‌کلاس CSS {{cssxref(':hover')}} دارد.
 
-## Examples
+## مثال‌ها
 
-The [`mouseover`](/en-US/docs/Web/API/Element/mouseover_event#examples) documentation has an example illustrating the difference between `mouseover` and `mouseenter`.
+مستندات [`mouseover`](/en-US/docs/Web/API/Element/mouseover_event#examples) مثالی دارد که تفاوت بین `mouseover` و `mouseenter` را نشان می‌دهد.
 
 ### mouseenter
 
-The following trivial example uses the `mouseenter` event to change the border on the `div` when the mouse enters the space allotted to it. It then adds an item to the list with the number of the `mouseenter` or `mouseleave` event.
+مثال ساده‌ی زیر از رویداد `mouseenter` برای تغییر حاشیه‌ی `div` هنگام ورود ماوس به فضای اختصاص‌داده‌شده به آن استفاده می‌کند. سپس آیتمی با شماره‌ی رویداد `mouseenter` یا `mouseleave` به فهرست اضافه می‌کند.
 
 #### HTML
 
@@ -73,7 +67,7 @@ The following trivial example uses the `mouseenter` event to change the border o
 
 #### CSS
 
-Styling the `div` to make it more visible.
+استایل‌دهی به `div` برای اینکه بیشتر قابل‌مشاهده باشد.
 
 ```css
 #mouseTarget {
@@ -118,21 +112,21 @@ function addListItem(text) {
 }
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample('mouseenter')}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Learn: Introduction to events](/en-US/docs/Learn_web_development/Core/Scripting/Events)
+- [یادگیری: مقدمه‌ای بر رویدادها](/en-US/docs/Learn_web_development/Core/Scripting/Events)
 - {{domxref("Element/mousedown_event", "mousedown")}}
 - {{domxref("Element/mouseup_event", "mouseup")}}
 - {{domxref("Element/mousemove_event", "mousemove")}}
