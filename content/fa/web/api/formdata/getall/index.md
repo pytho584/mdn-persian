@@ -1,11 +1,5 @@
 ---
 title: "FormData: getAll() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FormData/getAll"
-status: "needs-translation"
----
-
----
-title: "FormData: getAll() method"
 short-title: getAll()
 slug: Web/API/FormData/getAll
 page-type: web-api-instance-method
@@ -14,47 +8,47 @@ browser-compat: api.FormData.getAll
 
 {{APIRef("XMLHttpRequest API")}} {{AvailableInWorkers}}
 
-The **`getAll()`** method of the {{domxref("FormData")}} interface returns all the values associated with a given key from within a `FormData` object.
+متد **`getAll()`** در رابط {{domxref("FormData")}}، تمام مقادیر مرتبط با یک کلید مشخص را از درون یک شیء `FormData` بازمی‌گرداند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 getAll(name)
 ```
 
-### Parameters
+### پارامترها
 
 - `name`
-  - : A string representing the name of the key you want to retrieve.
+  - : رشته‌ای که نام کلیدی را که می‌خواهید بازیابی کنید نشان می‌دهد.
 
-### Return value
+### مقدار بازگشتی
 
-An array of values whose key matches the specified `name`. Otherwise, an empty list.
+آرایه‌ای از مقادیر که کلید آن‌ها با `name` مشخص‌شده مطابقت دارد. در غیر این صورت، یک لیست خالی.
 
-## Examples
+## مثال‌ها
 
-If we add two `username` values to a {{domxref("FormData")}} using {{domxref("FormData.append", "append()")}}:
+اگر دو مقدار `username` را با استفاده از {{domxref("FormData.append", "append()")}} به یک {{domxref("FormData")}} اضافه کنیم:
 
 ```js
 formData.append("username", "Chris");
 formData.append("username", "Bob");
 ```
 
-The following `getAll()` method will return both `username` values in an array:
+متد `getAll()` زیر هر دو مقدار `username` را در یک آرایه برمی‌گرداند:
 
 ```js
 formData.getAll("username"); // Returns ["Chris", "Bob"]
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using FormData objects](/en-US/docs/Web/API/XMLHttpRequest_API/Using_FormData_Objects)
+- [استفاده از شیءهای FormData](/en-US/docs/Web/API/XMLHttpRequest_API/Using_FormData_Objects)
 - {{HTMLElement("Form")}}
