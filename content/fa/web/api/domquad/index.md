@@ -1,7 +1,5 @@
 ---
 title: "DOMQuad"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMQuad"
-status: "needs-translation"
 ---
 
 ---
@@ -13,42 +11,42 @@ browser-compat: api.DOMQuad
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-A `DOMQuad` is a collection of four `DOMPoint`s defining the corners of an arbitrary quadrilateral. Returning `DOMQuad`s lets `getBoxQuads()` return accurate information even when arbitrary 2D or 3D transforms are present. It has a handy `bounds` attribute returning a `DOMRectReadOnly` for those cases where you just want an axis-aligned bounding rectangle.
+یک `DOMQuad` مجموعه‌ای از چهار `DOMPoint` است که گوشه‌های یک چهارضلعی دلخواه را تعریف می‌کند. بازگرداندن `DOMQuad`ها به `getBoxQuads()` امکان می‌دهد تا حتی در صورت وجود تبدیل‌های دلخواه دو بعدی یا سه بعدی، اطلاعات دقیقی را بازگرداند. دارای یک ویژگی مفید به نام `bounds` است که یک `DOMRectReadOnly` را برای مواردی که فقط یک مستطیل محصور هم‌محور (axis-aligned) می‌خواهید، بازمی‌گرداند.
 
-## Constructor
+## سازنده
 
 - {{domxref("DOMQuad.DOMQuad", "DOMQuad()")}}
-  - : Creates a new `DOMQuad` object.
+  - : یک شیء `DOMQuad` جدید ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("DOMQuad.p1")}} {{ReadOnlyInline}}
-  - : A {{domxref("DOMPoint")}} representing one corner of the `DOMQuad`.
+  - : یک {{domxref("DOMPoint")}} که یک گوشه از `DOMQuad` را نشان می‌دهد.
 - {{domxref("DOMQuad.p2")}} {{ReadOnlyInline}}
-  - : A {{domxref("DOMPoint")}} representing one corner of the `DOMQuad`.
+  - : یک {{domxref("DOMPoint")}} که یک گوشه از `DOMQuad` را نشان می‌دهد.
 - {{domxref("DOMQuad.p3")}} {{ReadOnlyInline}}
-  - : A {{domxref("DOMPoint")}} representing one corner of the `DOMQuad`.
+  - : یک {{domxref("DOMPoint")}} که یک گوشه از `DOMQuad` را نشان می‌دهد.
 - {{domxref("DOMQuad.p4")}} {{ReadOnlyInline}}
-  - : A {{domxref("DOMPoint")}} representing one corner of the `DOMQuad`.
+  - : یک {{domxref("DOMPoint")}} که یک گوشه از `DOMQuad` را نشان می‌دهد.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("DOMQuad.getBounds()")}}
-  - : Returns a {{domxref("DOMRect")}} object with the coordinates and dimensions of the `DOMQuad` object.
+  - : یک شیء {{domxref("DOMRect")}} با مختصات و ابعاد شیء `DOMQuad` بازمی‌گرداند.
 - {{domxref("DOMQuad.toJSON()")}}
-  - : Returns a JSON representation of the `DOMQuad` object.
+  - : یک نمایش JSON از شیء `DOMQuad` بازمی‌گرداند.
 
-## Static methods
+## روش‌های ایستا
 
 - {{domxref("DOMQuad.fromQuad_static", "DOMQuad.fromQuad()")}}
-  - : Returns a new `DOMQuad` object based on the provided set of coordinates in the shape of another `DOMQuad` object.
+  - : یک شیء `DOMQuad` جدید بر اساس مجموعه مختصات ارائه‌شده به شکل یک شیء `DOMQuad` دیگر بازمی‌گرداند.
 - {{domxref("DOMQuad.fromRect_static", "DOMQuad.fromRect()")}}
-  - : Returns a new `DOMQuad` object based on the provided set of coordinates in the shape of a {{domxref("DOMRect")}} object.
+  - : یک شیء `DOMQuad` جدید بر اساس مجموعه مختصات ارائه‌شده به شکل یک شیء {{domxref("DOMRect")}} بازمی‌گرداند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
