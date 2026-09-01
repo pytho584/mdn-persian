@@ -1,7 +1,5 @@
 ---
 title: "HTMLImageElement: align property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/align"
-status: "needs-translation"
 ---
 
 ---
@@ -16,17 +14,17 @@ browser-compat: api.HTMLImageElement.align
 
 {{APIRef("HTML DOM")}}{{deprecated_header}}
 
-The _deprecated_ **`align`** property of the {{domxref("HTMLImageElement")}} interface is a string which indicates how to position the image relative to its container. It reflects the `<img>` element's [`align`](/en-US/docs/Web/HTML/Reference/Elements/img#align) content attribute.
+ویژگیِ **`align`** (منسوخ‌شده) در رابط {{domxref("HTMLImageElement")}} رشته‌ای است که نحوهٔ قرارگیری تصویر را نسبت به ظرفِ (container) آن مشخص می‌کند. این ویژگی، ویژگی محتوایی [`align`](/en-US/docs/Web/HTML/Reference/Elements/img#align) عنصر `<img>` را بازتاب می‌دهد.
 
-You should instead use the CSS property {{cssxref("vertical-align")}}, which does in fact also work on images despite its name. You can also use the {{cssxref("float")}} property to float the image to the left or right margin.
+در عوض باید از ویژگی CSS {{cssxref("vertical-align")}} استفاده کنید که با وجود نامش، در واقع روی تصاویر نیز کار می‌کند. همچنین می‌توانید از ویژگی {{cssxref("float")}} برای شناور کردن تصویر به سمت حاشیهٔ چپ یا راست استفاده کنید.
 
-## Value
+## مقدار
 
-A string whose value is one of `top`, `middle`, `bottom`, `left`, or `right`. For their meanings, see the HTML [`<img>`](/en-US/docs/Web/HTML/Reference/Elements/img#align) reference.
+رشته‌ای که مقدار آن یکی از `top`، `middle`، `bottom`، `left` یا `right` است. برای آشنایی با معنی هر یک، به مرجع HTML [`<img>`](/en-US/docs/Web/HTML/Reference/Elements/img#align) مراجعه کنید.
 
-## Examples
+## مثال‌ها
 
-### Setting the align attribute
+### تنظیم ویژگی align
 
 ```js example-bad
 const img = new Image();
@@ -34,7 +32,7 @@ img.src = "example.png";
 img.align = "top";
 ```
 
-Instead of using the deprecated `align` property, consider setting the CSS `vertical-align` property instead:
+به‌جای استفاده از ویژگی منسوخ‌شدهٔ `align`، بهتر است ویژگی CSS `vertical-align` را تنظیم کنید:
 
 ```js example-good
 const img = new Image();
@@ -42,10 +40,10 @@ img.src = "example.png";
 img.style.verticalAlign = "top";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
