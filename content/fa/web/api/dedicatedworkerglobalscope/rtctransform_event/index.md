@@ -1,11 +1,5 @@
 ---
 title: "DedicatedWorkerGlobalScope: rtctransform event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DedicatedWorkerGlobalScope/rtctransform_event"
-status: "needs-translation"
----
-
----
-title: "DedicatedWorkerGlobalScope: rtctransform event"
 short-title: rtctransform
 slug: Web/API/DedicatedWorkerGlobalScope/rtctransform_event
 page-type: web-api-event
@@ -14,15 +8,15 @@ browser-compat: api.DedicatedWorkerGlobalScope.rtctransform_event
 
 {{APIRef("WebRTC")}}{{AvailableInWorkers("dedicated")}}
 
-The **`rtctransform`** event is fired at a worker's {{domxref('DedicatedWorkerGlobalScope')}} object when an encoded video or audio frame has been queued for processing by a {{domxref("WebRTC API/Using Encoded Transforms", "WebRTC Encoded Transform", "", "nocode")}}.
+رویداد **`rtctransform`** روی شیء {{domxref('DedicatedWorkerGlobalScope')}} یک worker زمانی شلیک می‌شود که یک فریم ویدیویی یا صوتی کدگذاری‌شده برای پردازش توسط یک {{domxref("WebRTC API/Using Encoded Transforms", "WebRTC Encoded Transform", "", "nocode")}} در صف قرار گرفته باشد.
 
-The event's {{domxref("RTCTransformEvent.transformer","transformer")}} property returns a {{domxref("RTCRtpScriptTransformer")}} that exposes the {{domxref("ReadableStream")}} on which the frame is queued, and a {{domxref("WritableStream")}} where the frame can be written to inject it back into the WebRTC pipeline.
+ویژگی {{domxref("RTCTransformEvent.transformer","transformer")}} رویداد، یک {{domxref("RTCRtpScriptTransformer")}} برمی‌گرداند که {{domxref("ReadableStream")}} را که فریم در آن صف‌بندی شده است و همچنین {{domxref("WritableStream")}} را که می‌توان فریم را در آن نوشت تا دوباره به خط لوله WebRTC تزریق شود، در دسترس قرار می‌دهد.
 
-This event is not cancellable and does not bubble.
+این رویداد لغوپذیر نیست و bubble نمی‌شود.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای استفاده از این رویداد، می‌توان از نام آن در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کرد یا یک ویژگی مدیریت‌کننده رویداد تنظیم کرد.
 
 ```js-nolint
 addEventListener("rtctransform", (event) => { })
@@ -30,16 +24,15 @@ addEventListener("rtctransform", (event) => { })
 onrtctransform = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("RTCTransformEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("RTCTransformEvent")}}. از {{domxref("Event")}} به ارث می‌برد.
 
 {{InheritanceDiagram("RTCTransformEvent")}}
 
-## Example
+## مثال
 
-The following code snippet shows a handler for the `rtctransform` event in the worker, added to the global scope using `addEventListener()`.
-The `event.transformer` is a {{domxref("RTCRtpScriptTransformer")}}, the worker side counterpart to {{domxref("RTCRtpScriptTransform")}}.
+قطعه کد زیر یک مدیریت‌کننده برای رویداد `rtctransform` در worker را نشان می‌دهد که با استفاده از `addEventListener()` به محدوده سراسری اضافه شده است. `event.transformer` یک {{domxref("RTCRtpScriptTransformer")}} است؛ همتای سمت worker برای {{domxref("RTCRtpScriptTransform")}}.
 
 ```js
 addEventListener("rtctransform", (event) => {
@@ -58,21 +51,18 @@ addEventListener("rtctransform", (event) => {
 });
 ```
 
-The `rtctransform` event is fired when an encoded frame is enqueued on the {{domxref("RTCRtpScriptTransformer")}} and just once when the transformer's corresponding {{domxref("RTCRtpScriptTransformer")}} is constructed.
-The code first determines what transform to apply using `name` value passed in the options (this allows {{domxref("RTCRtpScriptTransform")}} instances added to the incoming and outgoing WebRTC pipelines to share a single worker).
-Encoded frames are then piped from the readable, through the selected transform {{domxref("TransformStream")}}, to a writeable.
-The actual transforming code is not shown.
+رویداد `rtctransform` زمانی شلیک می‌شود که یک فریم کدگذاری‌شده روی {{domxref("RTCRtpScriptTransformer")}} در صف قرار می‌گیرد و فقط یکبار نیز هنگام ساخته‌شدن {{domxref("RTCRtpScriptTransformer")}} متناظر با آن، شلیک می‌شود. کد ابتدا با استفاده از مقدار `name` که در گزینه‌ها (options) ارسال شده است، مشخص می‌کند کدام تبدیل اعمال شود (این امکان را می‌دهد که نمونه‌های {{domxref("RTCRtpScriptTransform")}} اضافه‌شده به خطوط لوله ورودی و خروجی WebRTC از یک worker مشترک استفاده کنند). سپس فریم‌های کدگذاری‌شده از readable، از طریق {{domxref("TransformStream")}} انتخاب‌شده، به writeable هدایت می‌شوند. کد تبدیل واقعی در اینجا نشان داده نشده است.
 
-Note that this code is part of a more complete example provided in {{domxref("WebRTC API/Using Encoded Transforms", "Using WebRTC Encoded Transforms", "", "nocode")}}.
+توجه داشته باشید که این کد بخشی از یک مثال کامل‌تر است که در {{domxref("WebRTC API/Using Encoded Transforms", "Using WebRTC Encoded Transforms", "", "nocode")}} ارائه شده است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("WebRTC API/Using Encoded Transforms", "Using WebRTC Encoded Transforms", "", "nocode")}}
