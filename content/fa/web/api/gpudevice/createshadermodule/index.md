@@ -1,11 +1,5 @@
 ---
 title: "GPUDevice: createShaderModule() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createShaderModule"
-status: "needs-translation"
----
-
----
-title: "GPUDevice: createShaderModule() method"
 short-title: createShaderModule()
 slug: Web/API/GPUDevice/createShaderModule
 page-type: web-api-instance-method
@@ -14,50 +8,49 @@ browser-compat: api.GPUDevice.createShaderModule
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`createShaderModule()`** method of the
-{{domxref("GPUDevice")}} interface creates a {{domxref("GPUShaderModule")}} from a string of [WGSL](https://gpuweb.github.io/gpuweb/wgsl/) source code.
+متد **`createShaderModule()`** از رابط {{domxref("GPUDevice")}} یک {{domxref("GPUShaderModule")}} را از رشتهای از کد منبع [WGSL](https://gpuweb.github.io/gpuweb/wgsl/) می‌سازد.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 createShaderModule(descriptor)
 ```
 
-### Parameters
+### پارامترها
 
 - `descriptor`
-  - : An object containing the following properties:
+  - : یک شیء که شامل ویژگی‌های زیر است:
     - `code`
-      - : A string representing the WGSL source code for the shader module.
+      - : یک رشته که کد منبع WGSL ماژول شیدر را نمایش می‌دهد.
     - `hints` {{optional_inline}}
-      - : A sequence of record types, with the structure `("string", compilationHint)`. These behave like [ordered maps](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map). In each case, the `"string"` is a key used to identify or select the record, and the `compilationHint` is either a {{domxref("GPUPipelineLayout")}} object instance or an enumerated value of `"auto"`.
+      - : یک توالی از نوع‌های رکورد با ساختار `("string", compilationHint)`. این‌ها مانند [ordered maps](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) رفتار می‌کنند. در هر مورد، `"string"` کلیدی برای شناسایی یا انتخاب رکورد است و `compilationHint` یا یک نمونهٔ شیء {{domxref("GPUPipelineLayout")}} است یا یک مقدار شمارشی `"auto"`.
 
-        The point of `hints` is to provide information about the pipeline layout as early as possible to improve performance. The idea is to maximize the amount of compilation that can be done once by `createShaderModule()`, rather than multiple times in multiple calls to {{domxref("GPUDevice.createComputePipeline()")}} and {{domxref("GPUDevice.createRenderPipeline()")}}.
+        هدف `hints` ارائهٔ اطلاعات دربارهٔ چیدمان پایپلاین در اولین فرصت ممکن برای بهبود عملکرد است. ایده این است که میزان کامپایلی که می‌توان توسط `createShaderModule()` یک‌بار انجام داد بیشینه شود، به‌جای اینکه این کار چندین بار در فراخوانی‌های متعدد {{domxref("GPUDevice.createComputePipeline()")}} و {{domxref("GPUDevice.createRenderPipeline()")}} تکرار شود.
 
         > [!NOTE]
-        > Different implementations may handle `hints` in different ways, including possibly ignoring them entirely. Providing hints does not guarantee improved shader compilation performance on all browsers/systems.
+        > پیاده‌سازی‌های مختلف ممکن است `hints` را به شکل‌های متفاوتی پردازش کنند، از جمله اینکه کلاً آن‌ها را نادیده بگیرند. ارائهٔ `hints` تضمین نمی‌کند که عملکرد کامپایل شیدر در همهٔ مرورگرها/سیستم‌ها بهبود یابد.
 
     - `label` {{optional_inline}}
-      - : A string providing a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+      - : یک رشته که برچسبی برای شناسایی شیء فراهم می‌کند؛ مثلاً در پیام‌های {{domxref("GPUError")}} یا هشدارهای کنسول.
     - `sourceMap` {{optional_inline}}
-      - : A source map definition to provide developer tool integration such as source-language debugging. WGSL names (identifiers) in source maps should follow the rules defined in [WGSL identifier comparison](https://gpuweb.github.io/gpuweb/wgsl/#identifier-comparison). If defined, the source map may be interpreted as a [source-map-v3 format](https://tc39.es/ecma426/).
+      - : یک تعریف source map برای فراهم کردن یکپارچگی با ابزارهای توسعه‌دهنده مانند اشکال‌زدایی در زبان مبدأ. نام‌های WGSL (شناسه‌ها) در source mapها باید از قواعد تعریف‌شده در [WGSL identifier comparison](https://gpuweb.github.io/gpuweb/wgsl/#identifier-comparison) پیروی کنند. اگر تعریف شده باشد، source map ممکن است به‌صورت [source-map-v3 format](https://tc39.es/ecma426/) تفسیر شود.
 
         > [!NOTE]
-        > Different implementations may handle `sourceMap`s in different ways, including possibly ignoring them entirely.
+        > پیاده‌سازی‌های مختلف ممکن است `sourceMap`ها را به شکل‌های متفاوتی پردازش کنند، از جمله اینکه کلاً آن‌ها را نادیده بگیرند.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("GPUShaderModule")}} object instance.
+یک نمونهٔ شیء {{domxref("GPUShaderModule")}}.
 
-### Validation
+### اعتبارسنجی
 
-The following criteria must be met when calling **`createShaderModule()`**, otherwise a {{domxref("GPUValidationError")}} is generated and an invalid {{domxref("GPUShaderModule")}} object is returned:
+معیارهای زیر باید هنگام فراخوانی **`createShaderModule()`** برآورده شوند؛ در غیر این صورت یک {{domxref("GPUValidationError")}} تولید می‌شود و یک شیء نامعتبر {{domxref("GPUShaderModule")}} بازگردانده می‌شود:
 
-- If your shader's WGSL code uses the half-precision floating-point type [`f16`](https://gpuweb.github.io/gpuweb/wgsl/#extension-f16), it includes `enable f16;` at the top, and the associated {{domxref("GPUDevice")}} is created with the `shader-f16` [feature](/en-US/docs/Web/API/GPUSupportedFeatures) enabled.
+- اگر کد WGSL شیدر شما از نوع ممیز شناور نیمه‌دقیق [`f16`](https://gpuweb.github.io/gpuweb/wgsl/#extension-f16) استفاده می‌کند، باید شامل `enable f16;` در ابتدای کد باشد و {{domxref("GPUDevice")}} مرتبط با فعال بودن [feature](/en-US/docs/Web/API/GPUSupportedFeatures) به نام `shader-f16` ساخته شده باشد.
 
-## Examples
+### مثال‌ها
 
-In our [basic render demo](https://mdn.github.io/dom-examples/webgpu-render-demo/), our shader module is created using the following code:
+در [basic render demo](https://mdn.github.io/dom-examples/webgpu-render-demo/) خود، ماژول شیدر با استفاده از کد زیر ایجاد می‌شود:
 
 ```js
 const shaders = `
@@ -106,15 +99,15 @@ async function init() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
-- The [WebGPU Shading Language specification](https://gpuweb.github.io/gpuweb/wgsl/)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU Shading Language specification](https://gpuweb.github.io/gpuweb/wgsl/)
