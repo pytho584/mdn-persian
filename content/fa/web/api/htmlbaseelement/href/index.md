@@ -1,11 +1,5 @@
 ---
-title: "HTMLBaseElement: href property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLBaseElement/href"
-status: "needs-translation"
----
-
----
-title: "HTMLBaseElement: href property"
+title: "HTMLBaseElement: خاصیت href"
 short-title: href
 slug: Web/API/HTMLBaseElement/href
 page-type: web-api-instance-property
@@ -14,19 +8,19 @@ browser-compat: api.HTMLBaseElement.href
 
 {{APIRef("HTML DOM")}}
 
-The **`href`** property of the {{domxref("HTMLBaseElement")}} interface contains a string that is the URL to use as the base for [relative URLs](/en-US/docs/Learn_web_development/Howto/Web_mechanics/What_is_a_URL#absolute_urls_vs._relative_urls).
+خاصیت **`href`** از رابط {{domxref("HTMLBaseElement")}} یک رشته را شامل می‌شود که URL مورد استفاده به عنوان پایه برای [نشانی‌های نسبی (relative URLs)](/en-US/docs/Learn_web_development/Howto/Web_mechanics/What_is_a_URL#absolute_urls_vs._relative_urls) است.
 
-It reflects the `href` attribute of the {{HTMLElement("base")}} element.
+این خاصیت منعکس‌کنندهٔ ویژگی `href` عنصر {{HTMLElement("base")}} است.
 
-## Value
+## مقدار
 
-A string that contains a URL, or the empty string (`""`) if the corresponding `<base>` element does not include the `href` attribute.
+یک رشته که شامل یک URL است، یا رشتهٔ خالی (`""`) اگر عنصر `<base>` متناظر دارای ویژگی `href` نباشد.
 
-## Examples
+## مثال‌ها
 
-### HTML with base URL
+### HTML همراه با URL پایه
 
-This example demonstrates that the `href` attribute in `<base>` is reflected in the `href` property of `HTMLBaseElement`.
+این مثال نشان می‌دهد که ویژگی `href` در `<base>` در خاصیت `href` مربوط به `HTMLBaseElement` منعکس می‌شود.
 
 ```html hidden
 <pre id="log"></pre>
@@ -58,14 +52,14 @@ const base = document.getElementsByTagName("base")[0];
 log(`base.href="${base.href}"`);
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample('HTML with base URL', '100','50px')}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
