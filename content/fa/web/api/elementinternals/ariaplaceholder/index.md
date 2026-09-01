@@ -1,11 +1,5 @@
 ---
 title: "ElementInternals: ariaPlaceholder property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/ariaPlaceholder"
-status: "needs-translation"
----
-
----
-title: "ElementInternals: ariaPlaceholder property"
 short-title: ariaPlaceholder
 slug: Web/API/ElementInternals/ariaPlaceholder
 page-type: web-api-instance-property
@@ -14,18 +8,18 @@ browser-compat: api.ElementInternals.ariaPlaceholder
 
 {{APIRef("Web Components")}}
 
-The **`ariaPlaceholder`** property of the {{domxref("ElementInternals")}} interface reflects the value of the [`aria-placeholder`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-placeholder) attribute, which defines a short hint intended to aid the user with data entry when the control has no value.
+ویژگی **`ariaPlaceholder`** در رابط {{domxref("ElementInternals")}} مقدار ویژگی [`aria-placeholder`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-placeholder) را بازتاب می‌دهد. این ویژگی یک راهنمای کوتاه تعریف می‌کند که برای کمک به کاربر در ورود داده، هنگامی که کنترل مقداری ندارد، در نظر گرفته شده است.
 
 > [!NOTE]
-> Setting aria attributes on `ElementInternals` allows default semantics to be defined on a custom element. These may be overwritten by author-defined attributes, but ensure that default semantics are retained should the author delete those attributes, or fail to add them at all. For more information see the [Accessibility Object Model explainer](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object).
+> تنظیم ویژگی‌های aria روی `ElementInternals` امکان تعریف معناشناسی پیش‌فرض را برای یک عنصر سفارشی فراهم می‌کند. ممکن است این ویژگی‌ها توسط ویژگی‌های تعریف‌شده توسط نویسنده بازنویسی شوند، اما اگر نویسنده آن ویژگی‌ها را حذف کند یا اصلاً آن‌ها را اضافه نکرده باشد، معناشناسی پیش‌فرض حفظ می‌شود. برای اطلاعات بیشتر به [توضیح‌دهنده مدل شیء دسترس‌پذیری](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object) مراجعه کنید.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
-In this example the value of `ariaPlaceholder` is set to "12345".
+در این مثال، مقدار `ariaPlaceholder` به «12345» تنظیم شده است.
 
 ```js
 class CustomControl extends HTMLElement {
@@ -38,14 +32,14 @@ class CustomControl extends HTMLElement {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [ARIA: textbox role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role)
+- [نقش textbox در ARIA](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role)
