@@ -1,7 +1,5 @@
 ---
 title: "HTMLObjectElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement"
-status: "needs-translation"
 ---
 
 ---
@@ -13,80 +11,80 @@ browser-compat: api.HTMLObjectElement
 
 {{ APIRef("HTML DOM") }}
 
-The **`HTMLObjectElement`** interface provides special properties and methods (beyond those on the {{domxref("HTMLElement")}} interface it also has available to it by inheritance) for manipulating the layout and presentation of {{HTMLElement("object")}} element, representing external resources.
+رابط **`HTMLObjectElement`** ویژگی‌ها و روش‌های خاصی را (فراتر از ویژگی‌هایی که به‌صورت ارث‌بری از رابط {{domxref("HTMLElement")}} در اختیار دارد) برای دستکاری چیدمان و نمایش عنصر {{HTMLElement("object")}} فراهم می‌کند که نمایانگر منابع خارجی است.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("HTMLElement")}}._
+_ویژگی‌های والد خود، {{domxref("HTMLElement")}} را به ارث می‌برد._
 
 - {{domxref("HTMLObjectElement.align")}} {{deprecated_inline}}
-  - : A string representing an enumerated property indicating alignment of the element's contents with respect to the surrounding context. The possible values are `"left"`, `"right"`, `"justify"`, and `"center"`.
+  - : یک رشته که مشخصه‌ای شمارشی را نشان می‌دهد و ترازبندی محتویات عنصر را نسبت به بافت اطراف مشخص می‌کند. مقادیر ممکن عبارت‌اند از `"left"`، `"right"`، `"justify"` و `"center"`.
 - {{domxref("HTMLObjectElement.archive")}} {{deprecated_inline}}
-  - : A string that reflects the [`archive`](/en-US/docs/Web/HTML/Reference/Elements/object#archive) HTML attribute, containing a list of archives for resources for this object.
+  - : یک رشته که ویژگی HTML [`archive`](/en-US/docs/Web/HTML/Reference/Elements/object#archive) را بازتاب می‌دهد و حاوی فهرستی از بایگانی‌ها برای منابع این شیء است.
 - {{domxref("HTMLObjectElement.border")}} {{deprecated_inline}}
-  - : A string that reflects the [`border`](/en-US/docs/Web/HTML/Reference/Elements/object#border) HTML attribute, specifying the width of a border around the object.
+  - : یک رشته که ویژگی HTML [`border`](/en-US/docs/Web/HTML/Reference/Elements/object#border) را بازتاب می‌دهد و عرض حاشیه دور شیء را مشخص می‌کند.
 - {{domxref("HTMLObjectElement.code")}} {{deprecated_inline}}
-  - : A string representing the name of an applet class file, containing either the applet's subclass, or the path to get to the class, including the class file itself.
+  - : یک رشته که نام فایل کلاس یک اپلت را نشان می‌دهد و شامل زیرکلاس اپلت یا مسیر رسیدن به کلاس، از جمله خود فایل کلاس است.
 - {{domxref("HTMLObjectElement.codeBase")}} {{deprecated_inline}}
-  - : A string that reflects the [`codebase`](/en-US/docs/Web/HTML/Reference/Elements/object#codebase) HTML attribute, specifying the base path to use to resolve relative URIs.
+  - : یک رشته که ویژگی HTML [`codebase`](/en-US/docs/Web/HTML/Reference/Elements/object#codebase) را بازتاب می‌دهد و مسیر پایه را برای حل کردن URIهای نسبی مشخص می‌کند.
 - {{domxref("HTMLObjectElement.codeType")}} {{deprecated_inline}}
-  - : A string that reflects the [`codetype`](/en-US/docs/Web/HTML/Reference/Elements/object#codetype) HTML attribute, specifying the content type of the data.
+  - : یک رشته که ویژگی HTML [`codetype`](/en-US/docs/Web/HTML/Reference/Elements/object#codetype) را بازتاب می‌دهد و نوع محتوای داده را مشخص می‌کند.
 - {{domxref("HTMLObjectElement.contentDocument")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref("Document")}} representing the active document of the object element's nested browsing context, if any; otherwise `null`.
+  - : یک {{domxref("Document")}} برمی‌گرداند که نمایانگر سند فعالِ بافت مرور تو در توی عنصر object است؛ در صورت نبودِ آن، `null` برمی‌گرداند.
 - {{domxref("HTMLObjectElement.contentWindow")}} {{ReadOnlyInline}}
-  - : Returns a {{glossary("WindowProxy")}} representing the window proxy of the object element's nested browsing context, if any; otherwise `null`.
+  - : یک {{glossary("WindowProxy")}} برمی‌گرداند که نمایانگر پنجرهٔ proxy بافت مرور تو در توی عنصر object است؛ در صورت نبودِ آن، `null` برمی‌گرداند.
 - {{domxref("HTMLObjectElement.data")}}
-  - : Returns a string that reflects the [`data`](/en-US/docs/Web/HTML/Reference/Elements/object#data) HTML attribute, specifying the address of a resource's data.
+  - : یک رشته برمی‌گرداند که ویژگی HTML [`data`](/en-US/docs/Web/HTML/Reference/Elements/object#data) را بازتاب می‌دهد و آدرس داده‌های یک منبع را مشخص می‌کند.
 - {{domxref("HTMLObjectElement.declare")}} {{deprecated_inline}}
-  - : A boolean value that reflects the [`declare`](/en-US/docs/Web/HTML/Reference/Elements/object#declare) HTML attribute, indicating that this is a declaration, not an instantiation, of the object.
+  - : یک مقدار بولین که ویژگی HTML [`declare`](/en-US/docs/Web/HTML/Reference/Elements/object#declare) را بازتاب می‌دهد و نشان می‌دهد که این یک اعلان است، نه نمونه‌سازی، از شیء.
 - {{domxref("HTMLObjectElement.form")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref("HTMLFormElement")}} representing the object element's form owner, or null if there isn't one.
+  - : یک {{domxref("HTMLFormElement")}} برمی‌گرداند که نمایانگر فرم مالک عنصر object است؛ در صورت نبودِ آن، `null` برمی‌گرداند.
 - {{domxref("HTMLObjectElement.height")}}
-  - : Returns a string that reflects the [`height`](/en-US/docs/Web/HTML/Reference/Elements/object#height) HTML attribute, specifying the displayed height of the resource in CSS pixels.
+  - : یک رشته برمی‌گرداند که ویژگی HTML [`height`](/en-US/docs/Web/HTML/Reference/Elements/object#height) را بازتاب می‌دهد و ارتفاع نمایش‌داده‌شده منبع را بر حسب پیکسل CSS مشخص می‌کند.
 - {{domxref("HTMLObjectElement.hspace")}} {{deprecated_inline}}
-  - : A `long` representing the horizontal space in pixels around the control.
+  - : یک `long` که فاصله افقی دور کنترل را بر حسب پیکسل نشان می‌دهد.
 - {{domxref("HTMLObjectElement.name")}}
-  - : Returns a string that reflects the [`name`](/en-US/docs/Web/HTML/Reference/Elements/object#name) HTML attribute, specifying the name of the browsing context.
+  - : یک رشته برمی‌گرداند که ویژگی HTML [`name`](/en-US/docs/Web/HTML/Reference/Elements/object#name) را بازتاب می‌دهد و نام بافت مرور را مشخص می‌کند.
 - {{domxref("HTMLObjectElement.standby")}} {{deprecated_inline}}
-  - : A string that reflects the [`standby`](/en-US/docs/Web/HTML/Reference/Elements/object#standby) HTML attribute, specifying a message to display while the object loads.
+  - : یک رشته که ویژگی HTML [`standby`](/en-US/docs/Web/HTML/Reference/Elements/object#standby) را بازتاب می‌دهد و پیامی را مشخص می‌کند که هنگام بارگذاری شیء نمایش داده می‌شود.
 - {{domxref("HTMLObjectElement.type")}}
-  - : A string that reflects the [`type`](/en-US/docs/Web/HTML/Reference/Elements/object#type) HTML attribute, specifying the MIME type of the resource.
+  - : یک رشته که ویژگی HTML [`type`](/en-US/docs/Web/HTML/Reference/Elements/object#type) را بازتاب می‌دهد و نوع MIME منبع را مشخص می‌کند.
 - {{domxref("HTMLObjectElement.useMap")}} {{deprecated_inline}}
-  - : A string that reflects the [`usemap`](/en-US/docs/Web/HTML/Reference/Elements/object#usemap) HTML attribute, specifying a {{HTMLElement("map")}} element to use.
+  - : یک رشته که ویژگی HTML [`usemap`](/en-US/docs/Web/HTML/Reference/Elements/object#usemap) را بازتاب می‌دهد و عنصر {{HTMLElement("map")}} مورد استفاده را مشخص می‌کند.
 - {{domxref("HTMLObjectElement.validationMessage")}} {{ReadOnlyInline}}
-  - : Returns a string representing a localized message that describes the validation constraints that the control does not satisfy (if any). This is the empty string if the control is not a candidate for constraint validation (`willValidate` is `false`), or it satisfies its constraints.
+  - : یک رشته برمی‌گرداند که پیامی محلی‌شده را نشان می‌دهد و محدودیت‌های اعتبارسنجی را توصیف می‌کند که کنترل آن‌ها را برآورده نمی‌کند (در صورت وجود). اگر کنترل کاندیدای اعتبارسنجی محدودیت‌ها نباشد (`willValidate` برابر `false` است) یا محدودیت‌های خود را برآورده کند، این رشته خالی است.
 - {{domxref("HTMLObjectElement.validity")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref("ValidityState")}} with the validity states that this element is in.
+  - : یک {{domxref("ValidityState")}} برمی‌گرداند که حالت‌های اعتبارسنجی این عنصر را نشان می‌دهد.
 - {{domxref("HTMLObjectElement.vspace")}} {{deprecated_inline}}
-  - : A `long` representing the horizontal space in pixels around the control.
+  - : یک `long` که فاصله افقی دور کنترل را بر حسب پیکسل نشان می‌دهد.
 - {{domxref("HTMLObjectElement.width")}}
-  - : A string that reflects the [`width`](/en-US/docs/Web/HTML/Reference/Elements/object#width) HTML attribute, specifying the displayed width of the resource in CSS pixels.
+  - : یک رشته که ویژگی HTML [`width`](/en-US/docs/Web/HTML/Reference/Elements/object#width) را بازتاب می‌دهد و عرض نمایش‌داده‌شده منبع را بر حسب پیکسل CSS مشخص می‌کند.
 - {{domxref("HTMLObjectElement.willValidate")}} {{ReadOnlyInline}}
-  - : Returns a boolean value that indicates whether the element is a candidate for constraint validation. Always `false` for `HTMLObjectElement` objects.
+  - : یک مقدار بولین برمی‌گرداند که نشان می‌دهد آیا این عنصر کاندیدای اعتبارسنجی محدودیت‌ها است یا خیر. برای اشیاء `HTMLObjectElement` همیشه `false` است.
 
-## Instance methods
+## روش‌های نمونه
 
-_Inherits methods from its parent, {{domxref("HTMLElement")}}._
+_روش‌های والد خود، {{domxref("HTMLElement")}} را به ارث می‌برد._
 
 - {{domxref("HTMLObjectElement.checkValidity()")}}
-  - : Always returns `true` because {{HTMLElement("object")}} elements are never candidates for constraint validation.
+  - : همیشه `true` برمی‌گرداند، زیرا عناصر {{HTMLElement("object")}} هرگز کاندیدای اعتبارسنجی محدودیت‌ها نیستند.
 - {{domxref("HTMLObjectElement.getSVGDocument()")}}
-  - : Returns the embedded SVG as a {{domxref("Document")}}.
+  - : SVG تعبیه‌شده را به‌صورت یک {{domxref("Document")}} برمی‌گرداند.
 - {{domxref("HTMLObjectElement.reportValidity()")}}
-  - : Always returns `true` because {{HTMLElement("object")}} elements are never candidates for constraint validation.
+  - : همیشه `true` برمی‌گرداند، زیرا عناصر {{HTMLElement("object")}} هرگز کاندیدای اعتبارسنجی محدودیت‌ها نیستند.
 - {{domxref("HTMLObjectElement.setCustomValidity()")}}
-  - : Sets a custom validity message for the element. If this message is not the empty string, then the element is suffering from a custom validity error, and does not validate.
+  - : یک پیام اعتبارسنجی سفارشی برای عنصر تنظیم می‌کند. اگر این پیام رشته خالی نباشد، عنصر دچار خطای اعتبارسنجی سفارشی است و اعتبارسنجی نمی‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- The HTML element implementing this interface: {{HTMLElement("object")}}
+- عنصر HTML پیاده‌ساز این رابط: {{HTMLElement("object")}}
