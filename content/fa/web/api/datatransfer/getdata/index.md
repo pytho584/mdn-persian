@@ -1,7 +1,5 @@
 ---
 title: "DataTransfer: getData() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/getData"
-status: "needs-translation"
 ---
 
 ---
@@ -14,35 +12,30 @@ browser-compat: api.DataTransfer.getData
 
 {{APIRef("HTML DOM")}}
 
-The **`DataTransfer.getData()`**
-method retrieves drag data (as a string) for the specified type.
-If the drag operation does not include data, this method returns an empty
-string.
+متد **`DataTransfer.getData()`** دادهٔ کشیدن (drag data) را برای نوع مشخص‌شده به‌صورت یک رشته بازیابی می‌کند. اگر عملیات کشیدن داده‌ای نداشته باشد، این متد یک رشتهٔ خالی برمی‌گرداند.
 
-Example data types are `text/plain` and `text/uri-list`.
+نمونه‌هایی از انواع داده عبارت‌اند از `text/plain` و `text/uri-list`.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 getData(format)
 ```
 
-### Parameters
+### پارامترها
 
 - `format`
-  - : A string representing the type of data to retrieve.
+  - : رشته‌ای که نوع دادهٔ مورد نظر برای بازیابی را مشخص می‌کند.
 
-### Return value
+### مقدار بازگشتی
 
-A string representing the drag data for the specified `format`. If the drag operation has no data or the operation has no data for the specified `format`, this method returns an empty string.
+یک رشته که دادهٔ کشیدن را برای `format` مشخص‌شده نشان می‌دهد. اگر عملیات کشیدن داده‌ای نداشته باشد یا برای `format` مشخص‌شده داده‌ای موجود نباشد، این متد یک رشتهٔ خالی برمی‌گرداند.
 
-Note that `DataTransfer.getData()` may not return an expected value, because it only allows reading and writing data for specified events. During the `dragstart` and `drop` events, it is safe to access the data. For all other events, the data should be considered unavailable. Despite this, the items and their formats can still be enumerated.
+توجه داشته باشید که ممکن است `DataTransfer.getData()` مقدار مورد انتظار را برنگرداند؛ زیرا این متد فقط برای رویدادهای مشخصی امکان خواندن و نوشتن داده را فراهم می‌کند. در طول رویدادهای `dragstart` و `drop`، دسترسی به داده امن است. برای همهٔ رویدادهای دیگر، باید داده را در دسترس نبودن تلقی کرد. با وجود این، همچنان می‌توان آیتم‌ها و قالب‌های آن‌ها را برشمرد.
 
-## Examples
+## مثال‌ها
 
-This example shows the use of the {{domxref("DataTransfer")}} object's
-`getData()` and
-{{domxref("DataTransfer.setData()","setData()")}} methods.
+این مثال کاربرد متدهای `getData()` و {{domxref("DataTransfer.setData()","setData()")}} از شیء {{domxref("DataTransfer")}} را نشان می‌دهد.
 
 ### HTML
 
@@ -96,20 +89,20 @@ function drop(dropEvent) {
 }
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample('Examples', 600) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Drag and drop](/en-US/docs/Web/API/HTML_Drag_and_Drop_API)
-- [Drag Operations](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_operations)
-- [Working with the drag data store](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_data_store)
+- [کشیدن و رها کردن](/en-US/docs/Web/API/HTML_Drag_and_Drop_API)
+- [عملیات کشیدن](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_operations)
+- [کار با ذخیره‌گاه دادهٔ کشیدن](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_data_store)
