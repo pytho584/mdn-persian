@@ -1,7 +1,5 @@
 ---
 title: "HTMLOptionsCollection: length property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLOptionsCollection/length"
-status: "needs-translation"
 ---
 
 ---
@@ -14,15 +12,15 @@ browser-compat: api.HTMLOptionsCollection.length
 
 {{APIRef("DOM")}}
 
-The **`length`** property of the {{DOMxRef("HTMLOptionsCollection")}} interface returns the number of {{htmlelement("option")}} elements in the collection. The property can get or set the size of the collection.
+ویژگی **`length`** از رابط {{DOMxRef("HTMLOptionsCollection")}} تعداد عناصر {{htmlelement("option")}} موجود در مجموعه را بازمی‌گرداند. این ویژگی می‌تواند اندازهٔ مجموعه را بخواند یا آن را تنظیم کند.
 
-When setting `length` to a value smaller than the current, the options collection gets truncated; otherwise, new blank `<option>` elements are appended to the end of the `<select>`.
+هنگامی که `length` را روی مقداری کوچکتر از مقدار فعلی تنظیم کنید، مجموعهٔ گزینه‌ها کوتاه می‌شود؛ در غیر این صورت، عناصر جدید و خالی `<option>` به انتهای `<select>` اضافه می‌شوند.
 
-## Value
+## مقدار
 
-An integer value representing the number of items in this `HTMLOptionsCollection`.
+یک عدد صحیح که تعداد آیتم‌های این `HTMLOptionsCollection` را نشان می‌دهد.
 
-## Example
+## مثال
 
 ```js
 const optCollection = document.getElementById("fruits").options;
@@ -31,15 +29,15 @@ optCollection.length += 50; // adds 50 blank options to the collection
 optCollection.length = origLength; // truncates the list back to the original size
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{DOMxRef("HTMLOptionsCollection.add()")}}
 - {{DOMxRef("HTMLOptionsCollection.remove()")}}
