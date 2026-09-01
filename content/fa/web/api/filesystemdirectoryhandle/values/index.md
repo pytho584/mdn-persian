@@ -1,11 +1,5 @@
 ---
 title: "FileSystemDirectoryHandle: values() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemDirectoryHandle/values"
-status: "needs-translation"
----
-
----
-title: "FileSystemDirectoryHandle: values() method"
 short-title: values()
 slug: Web/API/FileSystemDirectoryHandle/values
 page-type: web-api-instance-method
@@ -14,35 +8,32 @@ browser-compat: api.FileSystemDirectoryHandle.values
 
 {{securecontext_header}}{{APIRef("File System API")}}{{AvailableInWorkers}}
 
-The **`values()`** method of the
-{{domxref("FileSystemDirectoryHandle")}} interface returns a new asynchronous iterator
-for the iteration of the value of the entries within the `FileSystemDirectoryHandle`
-on which this method is called.
+متد **`values()`** از رابط {{domxref("FileSystemDirectoryHandle")}} یک پیمایش‌گر ناهمگام جدید برای پیمایش مقادیرِ ورودی‌های درون `FileSystemDirectoryHandle`ای که این متد روی آن فراخوانی شده است، برمی‌گرداند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 values()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-A new asynchronous iterator containing the handles of each entry within the `FileSystemDirectoryHandle`.
+یک پیمایش‌گر ناهمگام جدید که شامل دسته‌های (handle) هر یک از ورودی‌های درون `FileSystemDirectoryHandle` است.
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if the {{domxref('PermissionStatus.state')}} for the handle is not `'granted'` in `read` mode.
+  - : در صورتی که {{domxref('PermissionStatus.state')}} برای دسته (handle) در حالت `read` برابر `'granted'` نباشد، پرتاب می‌شود.
 - `NotFoundError` {{domxref("DOMException")}}
-  - : Thrown if the current entry is not found.
+  - : در صورتی که ورودی جاری یافت نشود، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-Use the `for await...of` loop can simplify the iteration process.
+استفاده از حلقهٔ `for await...of` می‌تواند فرایند پیمایش را ساده‌تر کند.
 
 ```js
 const dirHandle = await window.showDirectoryPicker();
@@ -52,15 +43,15 @@ for await (const value of dirHandle.values()) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [File System API](/en-US/docs/Web/API/File_System_API)
 - [The File System Access API: simplifying access to local files](https://developer.chrome.com/docs/capabilities/web-apis/file-system-access)
