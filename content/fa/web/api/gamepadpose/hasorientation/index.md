@@ -1,11 +1,5 @@
 ---
 title: "GamepadPose: hasOrientation property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GamepadPose/hasOrientation"
-status: "needs-translation"
----
-
----
-title: "GamepadPose: hasOrientation property"
 short-title: hasOrientation
 slug: Web/API/GamepadPose/hasOrientation
 page-type: web-api-instance-property
@@ -16,25 +10,25 @@ browser-compat: api.GamepadPose.hasOrientation
 
 {{APIRef("WebVR API")}}{{SeeCompatTable}}
 
-The **`hasOrientation`** read-only property of the {{domxref("GamepadPose")}} interface returns a boolean value stating whether the {{domxref("Gamepad")}} can track and return orientation information.
+خاصیت خواندنی **`hasOrientation`** از رابط {{domxref("GamepadPose")}} یک مقدار بولین برمی‌گرداند که نشان می‌دهد آیا {{domxref("Gamepad")}} می‌تواند اطلاعات جهت‌گیری را ردیابی و بازگرداند یا خیر.
 
-## Value
+## مقدار
 
-A boolean value.
+یک مقدار بولین.
 
-## Examples
+## مثال‌ها
 
 TBD
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [WebVR API](/en-US/docs/Web/API/WebVR_API)
 - [Gamepad API](/en-US/docs/Web/API/Gamepad_API)
