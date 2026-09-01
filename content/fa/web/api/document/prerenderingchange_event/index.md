@@ -1,11 +1,5 @@
 ---
 title: "Document: prerenderingchange event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/prerenderingchange_event"
-status: "needs-translation"
----
-
----
-title: "Document: prerenderingchange event"
 short-title: prerenderingchange
 slug: Web/API/Document/prerenderingchange_event
 page-type: web-api-event
@@ -16,11 +10,11 @@ browser-compat: api.Document.prerenderingchange_event
 
 {{ APIRef("Speculation Rules API") }}{{seecompattable}}
 
-The **`prerenderingchange`** event is fired on a prerendered document when it is activated (i.e., the user views the page).
+رویداد **`prerenderingchange`** بر روی یک سند از پیش رندر شده (prerendered) هنگامی که فعال می‌شود (یعنی کاربر صفحه را مشاهده می‌کند) رخ می‌دهد.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در متدهایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد (event handler) تنظیم نمایید.
 
 ```js-nolint
 addEventListener("prerenderingchange", (event) => { })
@@ -28,19 +22,17 @@ addEventListener("prerenderingchange", (event) => { })
 onprerenderingchange = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## مثال‌ها
 
-### Preventing code from running during prerendering
+### جلوگیری از اجرای کد در حین از پیش رندر کردن
 
-The example shows how to defer code, that would otherwise run during prerendering, until after page activation.
-This is useful for deferring analytics code, which is only relevant when and if the page is actually viewed.
+این مثال نشان می‌دهد که چگونه می‌توان کدی را که در غیر این صورت در حین از پیش رندر کردن اجرا می‌شود، تا پس از فعال‌سازی صفحه به تعویق انداخت. این کار برای به تعویق انداختن کدهای تحلیلی (analytics) که فقط زمانی که صفحه واقعاً مشاهده می‌شود مرتبط هستند، مفید است.
 
-The code checks if prerendering is running using {{domxref("Document.prerendering")}}, and if so adds an event listener to run an analytics initialization function once the page is activated.
-On a page that is not prerendering the analytics code is run immediately.
+کد بررسی می‌کند که آیا از پیش رندر کردن با استفاده از {{domxref("Document.prerendering")}} در حال اجرا است یا خیر، و اگر چنین باشد، یک شنونده رویداد اضافه می‌کند تا پس از فعال‌سازی صفحه، تابع مقداردهی اولیه تحلیلی را اجرا کند. در صفحه‌ای که از پیش رندر نمی‌شود، کد تحلیلی بلافاصله اجرا می‌شود.
 
 ```js
 if (document.prerendering) {
@@ -52,15 +44,14 @@ if (document.prerendering) {
 }
 ```
 
-Note that this kind of code should not be used for measuring how often a prerender is activated, because the code may run after a prerendered page has already activated.
+توجه داشته باشید که نباید از این نوع کد برای اندازه‌گیری تعداد دفعات فعال‌سازی یک پیش‌رندر استفاده کرد، زیرا ممکن است کد پس از فعال‌شدن یک صفحه از پیش رندر شده اجرا شود.
 
 > [!NOTE]
-> See the [Speculation Rules API](/en-US/docs/Web/API/Speculation_Rules_API) landing page and particularly the [Unsafe speculative loading conditions](/en-US/docs/Web/API/Speculation_Rules_API#unsafe_speculative_loading_conditions) section for more information on the kinds of activities you might wish to delay until after prerendering has finished.
+> صفحه اصلی [Speculation Rules API](/en-US/docs/Web/API/Speculation_Rules_API) و به ویژه بخش [شرایط بارگذاری حدسی ناامن](/en-US/docs/Web/API/Speculation_Rules_API#unsafe_speculative_loading_conditions) را برای اطلاعات بیشتر در مورد انواع فعالیت‌هایی که ممکن است بخواهید تا پایان از پیش رندر کردن به تعویق بیندازید، ببینید.
 
-### Measuring prerendering activations
+### اندازه‌گیری فعال‌سازی‌های از پیش رندر کردن
 
-This code shows how to measure how often a prerender is activated.
-It uses the `prerenderingchange` to track activation events, and {{domxref("Performance.getEntriesByType()")}} to track navigation activations.
+این کد نشان می‌دهد که چگونه می‌توان تعداد دفعات فعال‌سازی یک پیش‌رندر را اندازه‌گیری کرد. از رویداد `prerenderingchange` برای ردیابی رویدادهای فعال‌سازی و از {{domxref("Performance.getEntriesByType()")}} برای ردیابی فعال‌سازی‌های ناوبری استفاده می‌کند.
 
 ```js
 if (document.prerendering) {
@@ -78,16 +69,16 @@ if (document.prerendering) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Speculation Rules API](/en-US/docs/Web/API/Speculation_Rules_API)
-- {{domxref("Document.prerendering", "prerendering")}} property
-- {{domxref("PerformanceNavigationTiming.activationStart")}} property
+- ویژگی {{domxref("Document.prerendering", "prerendering")}}
+- ویژگی {{domxref("PerformanceNavigationTiming.activationStart")}}
