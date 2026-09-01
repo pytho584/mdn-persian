@@ -1,11 +1,5 @@
 ---
 title: "Gamepad: hapticActuators property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Gamepad/hapticActuators"
-status: "needs-translation"
----
-
----
-title: "Gamepad: hapticActuators property"
 short-title: hapticActuators
 slug: Web/API/Gamepad/hapticActuators
 page-type: web-api-instance-property
@@ -16,13 +10,13 @@ browser-compat: api.Gamepad.hapticActuators
 
 {{APIRef("Gamepad")}}{{SeeCompatTable}}
 
-The **`hapticActuators`** read-only property of the {{domxref("Gamepad")}} interface returns an array containing {{domxref("GamepadHapticActuator")}} objects, each of which represents haptic feedback hardware available on the controller.
+ویژگی فقط‌خواندنی **`hapticActuators`** از رابط {{domxref("Gamepad")}} آرایه‌ای شامل اشیاء {{domxref("GamepadHapticActuator")}} برمی‌گرداند که هر یک نمایانگر سخت‌افزار بازخورد لمسی (haptic) موجود بر روی کنترلر است.
 
-## Value
+## مقدار
 
-An array containing {{domxref("GamepadHapticActuator")}} objects.
+آرایه‌ای شامل اشیاء {{domxref("GamepadHapticActuator")}}.
 
-## Examples
+## مثال‌ها
 
 ```js
 const gamepad = navigator.getGamepads()[0];
@@ -30,14 +24,14 @@ const gamepad = navigator.getGamepads()[0];
 gamepad.hapticActuators[0].pulse(1.0, 200);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Gamepad API](/en-US/docs/Web/API/Gamepad_API)
