@@ -1,11 +1,5 @@
 ---
 title: "FileSystemFileHandle: createWritable() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemFileHandle/createWritable"
-status: "needs-translation"
----
-
----
-title: "FileSystemFileHandle: createWritable() method"
 short-title: createWritable()
 slug: Web/API/FileSystemFileHandle/createWritable
 page-type: web-api-instance-method
@@ -14,55 +8,50 @@ browser-compat: api.FileSystemFileHandle.createWritable
 
 {{securecontext_header}}{{APIRef("File System API")}}{{AvailableInWorkers}}
 
-The **`createWritable()`** method of the {{domxref("FileSystemFileHandle")}} interface creates a {{domxref('FileSystemWritableFileStream')}} that can be used to write to a file.
-The method returns a {{jsxref('Promise')}} which resolves to this created stream.
+متد **`createWritable()`** از رابط {{domxref("FileSystemFileHandle")}} یک {{domxref('FileSystemWritableFileStream')}} ایجاد می‌کند که می‌توان از آن برای نوشتن در یک فایل استفاده کرد. این متد یک {{jsxref('Promise')}} برمی‌گرداند که به این استریم ایجاد شده حل می‌شود.
 
-Any changes made through the stream won't be reflected in the file represented by the file handle until the stream has been closed.
-This is typically implemented by writing data to a temporary file, and only replacing the file represented by file handle with the temporary file when the writable file stream is closed.
+هر تغییری که از طریق استریم اعمال شود تا زمانی که استریم بسته نشده است در فایل نمایش‌داده‌شده توسط دسته‌فایل منعکس نخواهد شد. این معمولاً با نوشتن داده‌ها در یک فایل موقت پیاده‌سازی می‌شود و تنها زمانی که استریم فایل قابل‌نوشتن بسته می‌شود، فایل نمایش‌داده‌شده توسط دسته‌فایل با فایل موقت جایگزین می‌گردد.
 
-## Syntax
+## نحو
 
 ```js-nolint
 createWritable()
 createWritable(options)
 ```
 
-### Parameters
+### پارامترها
 
 - `options` {{optional_inline}}
-  - : An object with the following properties:
+  - : یک شی با ویژگی‌های زیر:
     - `keepExistingData` {{optional_inline}}
-      - : A {{jsxref('Boolean')}}. Default `false`.
-        When set to `true` if the file exists, the existing file is first copied to the temporary file.
-        Otherwise the temporary file starts out empty.
+      - : یک {{jsxref('Boolean')}} است. پیش‌فرض `false`. اگر روی `true` تنظیم شود و فایل وجود داشته باشد، فایل موجود ابتدا به فایل موقت کپی می‌شود. در غیر این صورت فایل موقت خالی شروع می‌شود.
     - `mode` {{optional_inline}} {{non-standard_inline}}
-      - : A string specifying the locking mode for the writable file stream. The default value is `"siloed"`.
-        Possible values are:
+      - : یک رشته که حالت قفل‌گذاری را برای استریم فایل قابل‌نوشتن مشخص می‌کند. مقدار پیش‌فرض `"siloed"` است. مقادیر ممکن:
         - `"exclusive"`
-          - : Only one `FileSystemWritableFileStream` writer can be opened. Attempting to open subsequent writers before the first writer is closed results in a `NoModificationAllowedError` exception being thrown.
+          - : فقط یک نویسنده `FileSystemWritableFileStream` می‌تواند باز شود. تلاش برای باز کردن نویسندگان بعدی قبل از بسته شدن اولین نویسنده باعث ایجاد استثنای `NoModificationAllowedError` می‌شود.
         - `"siloed"`
-          - : Multiple `FileSystemWritableFileStream` writers can be opened at the same time, each with its own swap file, for example when using the same app in multiple tabs. The last writer opened has its data written, as the data gets flushed when each writer is closed.
+          - : چندین نویسنده `FileSystemWritableFileStream` می‌توانند همزمان باز شوند، هر کدام با فایل مبادله‌ای خود، مثلاً هنگام استفاده از همان برنامه در چند زبانه. آخرین نویسنده باز شده داده‌های خود را می‌نویسد، زیرا داده‌ها هنگام بسته شدن هر نویسنده تخلیه می‌شوند.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref('Promise')}} which resolves to a {{domxref('FileSystemWritableFileStream')}} object.
+یک {{jsxref('Promise')}} که به یک شی {{domxref('FileSystemWritableFileStream')}} حل می‌شود.
 
-### Exceptions
+### استثناها
 
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if the {{domxref('PermissionStatus.state')}} for the handle is not `'granted'` in `readwrite` mode.
+  - : اگر {{domxref('PermissionStatus.state')}} برای دسته‌فایل در حالت `readwrite` برابر `'granted'` نباشد، پرتاب می‌شود.
 - `NotFoundError` {{domxref("DOMException")}}
-  - : Thrown if current entry is not found.
+  - : اگر ورودی جاری یافت نشود، پرتاب می‌شود.
 - `NoModificationAllowedError` {{domxref("DOMException")}}
-  - : Thrown if the browser is not able to acquire a lock on the file associated with the file handle. This could be because `mode` is set to `exclusive` and an attempt is made to open multiple writers simultaneously.
+  - : اگر مرورگر نتواند روی فایل مرتبط با دسته‌فایل قفل بگیرد، پرتاب می‌شود. این می‌تواند به دلیل تنظیم `mode` روی `exclusive` و تلاش برای باز کردن همزمان چند نویسنده باشد.
 - `AbortError` {{domxref("DOMException")}}
-  - : Thrown if implementation-defined malware scans and safe-browsing checks fails.
+  - : اگر اسکن‌های بدافزار و بررسی‌های امنیتی تعریف‌شده توسط پیاده‌سازی ناموفق باشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
-The following asynchronous function writes the given contents to the file handle, and thus to disk.
+تابع ناهمگام زیر محتوای داده شده را در دسته‌فایل می‌نویسد و در نتیجه روی دیسک ذخیره می‌کند.
 
 ```js
 async function writeFile(fileHandle, contents) {
@@ -77,19 +66,19 @@ async function writeFile(fileHandle, contents) {
 }
 ```
 
-### Expanded usage with options
+### استفاده گسترده با گزینه‌ها
 
-Our [`createWritable()` mode test](https://mdn.github.io/dom-examples/file-system-api/createwritable-mode/) example (see the [source code](https://github.com/mdn/dom-examples/tree/main/file-system-api/createwritable-mode)) provides a {{htmlelement("button")}} to select a file to write to, a text {{htmlelement("input")}} field into which you can enter some text to write to the file, and a second `<button>` to write the text to the file.
+مثال [آزمون حالت `createWritable()`](https://mdn.github.io/dom-examples/file-system-api/createwritable-mode/) (کد منبع را [اینجا](https://github.com/mdn/dom-examples/tree/main/file-system-api/createwritable-mode) ببینید) یک {{htmlelement("button")}} برای انتخاب فایل برای نوشتن، یک فیلد متنی {{htmlelement("input")}} برای وارد کردن متن برای نوشتن در فایل، و یک دکمه `<button>` دوم برای نوشتن متن در فایل ارائه می‌دهد.
 
-In the demo above, try selecting a text file on your file system (or entering a new file name), entering some text into the input field, and writing the text to the file. Open the file on your file system to check whether the write was successful.
+در دموی بالا، سعی کنید یک فایل متنی از سیستم فایل خود انتخاب کنید (یا یک نام فایل جدید وارد کنید)، متنی را در فیلد ورودی وارد کنید و متن را در فایل بنویسید. فایل را در سیستم فایل خود باز کنید تا بررسی کنید نوشتن موفقیت‌آمیز بوده است.
 
-Also, try opening the page in two browser tabs simultaneously. Select a file to write to in the first tab, and then immediately try selecting the same file to write to in the second tab. You should get an error message because we set `mode: "exclusive"` in the `createWritable()` call.
+همچنین، سعی کنید صفحه را در دو زبانه مرورگر به طور همزمان باز کنید. در زبانه اول یک فایل برای نوشتن انتخاب کنید و سپس بلافاصله سعی کنید همان فایل را در زبانه دوم انتخاب کنید. باید یک پیام خطا دریافت کنید زیرا در فراخوانی `createWritable()` از `mode: "exclusive"` استفاده کرده‌ایم.
 
-Below we'll explore the code.
+در ادامه کد را بررسی می‌کنیم.
 
 #### HTML
 
-The two {{htmlelement("button")}} elements and text {{htmlelement("input")}} field look like this:
+دو عنصر {{htmlelement("button")}} و فیلد متنی {{htmlelement("input")}} به این شکل هستند:
 
 ```html
 <ol>
@@ -107,7 +96,7 @@ The two {{htmlelement("button")}} elements and text {{htmlelement("input")}} fie
 </ol>
 ```
 
-The text input field and the write text button are set to be disabled initially via the [`disabled`](/en-US/docs/Web/HTML/Reference/Attributes/disabled) attribute — they shouldn't be used until the user has selected a file to write to.
+فیلد ورودی متن و دکمه نوشتن متن ابتدا با ویژگی [`disabled`](/en-US/docs/Web/HTML/Reference/Attributes/disabled) غیرفعال شده‌اند — تا زمانی که کاربر فایلی را برای نوشتن انتخاب نکرده باشد نباید قابل استفاده باشند.
 
 ```css hidden
 li {
@@ -117,7 +106,7 @@ li {
 
 #### JavaScript
 
-We start by grabbing references to the select file button, the write text button, and the text input field. We also declare a global variable `writableStream`, which will store a reference to the writeable stream for writing the text to the file, once created. We initially set it to `null`.
+ابتدا ارجاع‌هایی به دکمه انتخاب فایل، دکمه نوشتن متن و فیلد ورودی متن می‌گیریم. همچنین یک متغیر سراسری `writableStream` اعلام می‌کنیم که پس از ایجاد، ارجاعی به استریم قابل‌نوشتن برای نوشتن متن در فایل ذخیره می‌کند. در ابتدا آن را روی `null` تنظیم می‌کنیم.
 
 ```js
 const selectBtn = document.querySelector(".select");
@@ -127,14 +116,14 @@ const fileText = document.querySelector("#file-text");
 let writableStream = null;
 ```
 
-Next, we create an async function called `selectFile()`, which we'll invoke when the select button is pressed. This uses the {{domxref("Window.showSaveFilePicker()")}} method to show the user a file picker dialog and create a file handle to the file they choose. On that handle, we invoke the `createWritable()` method to create a stream to write the text to the selected file. If the call fails, we log an error to the console.
+سپس یک تابع ناهمگام به نام `selectFile()` ایجاد می‌کنیم که وقتی دکمه انتخاب فشرده می‌شود فراخوانی می‌شود. این تابع از متد {{domxref("Window.showSaveFilePicker()")}} برای نمایش یک دیالوگ انتخاب فایل به کاربر و ایجاد یک دسته‌فایل برای فایل انتخابی استفاده می‌کند. روی آن دسته، متد `createWritable()` را فراخوانی می‌کنیم تا یک استریم برای نوشتن متن در فایل انتخاب شده ایجاد کند. اگر فراخوانی ناموفق باشد، خطا را در کنسول ثبت می‌کنیم.
 
-We pass `createWritable()` an options object containing the following options:
+یک شی گزینه شامل گزینه‌های زیر به `createWritable()` ارسال می‌کنیم:
 
-- `keepExistingData: true`: If the selected file already exists, and data contained within it is copied to the temporary file before writing commences.
-- `mode: "exclusive"`: States that only one writer can be open on the file handle simultaneously. If a second user loads the example and tries to select a file, they will get an error.
+- `keepExistingData: true`: اگر فایل انتخاب شده از قبل وجود داشته باشد، داده‌های موجود در آن قبل از شروع نوشتن به فایل موقت کپی می‌شوند.
+- `mode: "exclusive"`: بیان می‌کند که فقط یک نویسنده می‌تواند همزمان روی دسته‌فایل باز باشد. اگر کاربر دوم مثال را بارگذاری کند و سعی کند فایلی را انتخاب کند، خطا دریافت می‌کند.
 
-Last of all, we enable the input field and the write text button, as they are needed for the next step, and disable the select file button (this is not currently needed).
+در نهایت، فیلد ورودی و دکمه نوشتن متن را فعال می‌کنیم (چون برای مرحله بعد نیاز هستند) و دکمه انتخاب فایل را غیرفعال می‌کنیم (در حال حاضر به آن نیاز نیست).
 
 ```js
 async function selectFile() {
@@ -164,7 +153,7 @@ async function selectFile() {
 }
 ```
 
-Our next function, `writeFile()`, writes the text entered into the input field to the chosen file using {{domxref("FileSystemWritableFileStream.write()")}}, then empties the input field. We then close the writable stream using {{domxref("WritableStream.close()")}}, and reset the demo so it can be run again — the `disabled` states of the controls are toggled back to their original states, and the `writableStream` variable is set back to `null`.
+تابع بعدی ما، `writeFile()`، متن وارد شده در فیلد ورودی را با استفاده از {{domxref("FileSystemWritableFileStream.write()")}} در فایل انتخاب شده می‌نویسد، سپس فیلد ورودی را خالی می‌کند. سپس استریم قابل‌نوشتن را با استفاده از {{domxref("WritableStream.close()")}} می‌بندیم و دمو را به حالت اولیه بازنشانی می‌کنیم تا بتوان دوباره اجرا کرد — وضعیت `disabled` کنترل‌ها به حالت اولیه برمی‌گردد و متغیر `writableStream` دوباره روی `null` تنظیم می‌شود.
 
 ```js
 async function writeFile() {
@@ -185,22 +174,22 @@ async function writeFile() {
 }
 ```
 
-To get the demo running, we set event listeners on the buttons so that the relevant function is run when each one is clicked.
+برای اجرای دمو، شنوندگان رویداد را روی دکمه‌ها تنظیم می‌کنیم تا هنگام کلیک روی هر کدام، تابع مربوطه اجرا شود.
 
 ```js
 selectBtn.addEventListener("click", selectFile);
 writeBtn.addEventListener("click", writeFile);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [File System API](/en-US/docs/Web/API/File_System_API)
 - [The File System Access API: simplifying access to local files](https://developer.chrome.com/docs/capabilities/web-apis/file-system-access)
