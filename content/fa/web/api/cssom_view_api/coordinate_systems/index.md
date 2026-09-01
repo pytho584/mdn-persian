@@ -1,10 +1,4 @@
 ---
-title: "Coordinate systems"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSOM_view_API/Coordinate_systems"
-status: "needs-translation"
----
-
----
 title: Coordinate systems
 slug: Web/API/CSSOM_view_API/Coordinate_systems
 page-type: guide
@@ -12,71 +6,71 @@ page-type: guide
 
 {{DefaultAPISidebar("CSSOM view API")}}
 
-When specifying the location of a pixel in a graphics context (just like when specifying coordinate systems in [algebra](https://en.wikipedia.org/wiki/Algebra)), its position is defined relative to a fixed point in the context. This fixed point is called the [origin](<https://en.wikipedia.org/wiki/Origin_(mathematics)>). The position is specified as the number of pixels offset from the origin along each dimension of the context.
+هنگامی که مکان یک پیکسل را در یک بافت گرافیکی مشخص می‌کنیم (درست مانند زمانی که دستگاه‌های مختصات را در [جبر](https://en.wikipedia.org/wiki/Algebra) مشخص می‌کنیم)، موقعیت آن نسبت به یک نقطه ثابت در آن بافت تعریف می‌شود. به این نقطه ثابت، [مبدأ](<https://en.wikipedia.org/wiki/Origin_(mathematics)>) می‌گویند. موقعیت‌ها به صورت تعداد پیکسل‌هایی که از مبدأ در هر بُعد از بافت فاصله گرفته‌اند، مشخص می‌شوند.
 
-This guide describes the standard coordinate systems used by the CSS object model. These are generally only different in terms of where their origin is located.
+این راهنما دستگاه‌های مختصات استانداردی را که در مدل شیء CSS (CSS object model) استفاده می‌شوند توصیف می‌کند. این دستگاه‌ها معمولاً فقط از نظر موقعیت مبدأ خود با یکدیگر تفاوت دارند.
 
-## Dimensions
+## ابعاد
 
-In the coordinate systems used by web technologies, the horizontal offset is called the _x-coordinate_, where a negative value indicates a position to the left of the origin and a positive value is to the right of the origin. The _y-coordinate_ specifies the vertical offset, with a negative value being above the origin and a positive value being below the origin.
+در دستگاه‌های مختصاتی که در فناوری‌های وب استفاده می‌شوند، افست افقی _مختصات x_ نامیده می‌شود، که مقدار منفی نشان‌دهنده موقعیتی در سمت چپ مبدأ و مقدار مثبت نشان‌دهنده موقعیتی در سمت راست مبدأ است. _مختصات y_ افست عمودی را مشخص می‌کند؛ مقدار منفی بالای مبدأ و مقدار مثبت پایین مبدأ است.
 
-On the web, the default origin is the _top_-left corner of a given context (with positive y-coordinate values being below the origin). Note that this is unlike most mathematical models, where the origin is at the _bottom_-left corner, with positive y-coordinate values being above the origin.
+در وب، مبدأ پیش‌فرض، گوشه _بالا-چپ_ یک بافت مشخص است (که مقادیر مثبت مختصات y پایین‌تر از مبدأ هستند). توجه کنید که این برخلاف بسیاری از مدل‌های ریاضی است که در آن‌ها مبدأ در گوشه _پایین-چپ_ قرار دارد و مقادیر مثبت مختصات y بالاتر از مبدأ هستند.
 
-When using the third dimension to layer objects from front to back, we use the **z-axis**. The z-axis runs from the viewer to the screen's surface. The CSS {{cssxref("z-index")}} property value affects where positioned elements sit on this axis, giving the effect of moving away from or toward the viewer.
+هنگامی که از بُعد سوم برای لایه‌بندی اشیا از جلو به عقب استفاده می‌کنیم، از **محور z** استفاده می‌کنیم. محور z از سمت بیننده به سمت سطح صفحه نمایش امتداد می‌یابد. مقدار ویژگی {{cssxref("z-index")}} در CSS بر موقعیت عناصر جای‌گذاری‌شده روی این محور تأثیر می‌گذارد و این حس را ایجاد می‌کند که از بیننده دور می‌شوند یا به او نزدیک می‌شوند.
 
 > [!NOTE]
-> It's possible to change the definitions and orientations of these coordinate systems using CSS properties such as {{cssxref("transform")}}. However, we'll only talk about the standard coordinate system for now.
+> این امکان وجود دارد که تعاریف و جهت‌گیری‌های این دستگاه‌های مختصات را با استفاده از ویژگی‌های CSS مانند {{cssxref("transform")}} تغییر دهید. با این حال، در حال حاضر فقط درباره دستگاه مختصات استاندارد صحبت خواهیم کرد.
 
-## Standard CSSOM coordinate systems
+## دستگاه‌های مختصات استاندارد CSSOM
 
-There are four standard coordinate systems used by the CSS object model.
-To help visualize the main systems, the following diagram shows a monitor with a browser window that contains content scrolled outside of the {{glossary("viewport")}}.
-Page content that is scrolled outside of the viewport is shown as semi-transparent above the browser window to indicate where the origin for "page" coordinates would be.
-The origin of the "client", "page", and "viewport" coordinates systems are highlighted.
+چهار دستگاه مختصات استاندارد در مدل شیء CSS استفاده می‌شوند.
+برای کمک به تجسم این دستگاه‌های اصلی، نمودار زیر یک مانیتور با یک پنجره مرورگر را نشان می‌دهد که حاوی محتوایی است که به بیرون از {{glossary("viewport")}} اسکرول شده است.
+محتوای صفحه که به بیرون از viewport اسکرول شده است به صورت نیمه‌شفاف در بالای پنجره مرورگر نشان داده شده است تا مشخص کند مبدأ مختصات «page» کجاست.
+مبدأ دستگاه‌های مختصات «client»، «page» و «viewport» برجسته شده‌اند.
 
-![A large screen with a smaller browser window rendering a web page's bottom half; the top half is shown as scrolled outside the browser viewport. The top-left corners of the screen, page, and viewport are all labeled with coordinates of 0,0.](css-coords.svg)
+![یک صفحه نمایش بزرگ با یک پنجره مرورگر کوچک‌تر که نیمه پایینی یک صفحه وب را رندر می‌کند؛ نیمه بالایی به صورت اسکرول‌شده به بیرون از viewport مرورگر نشان داده شده است. گوشه‌های بالا-چپ صفحه، صفحه وب و viewport همگی با مختصات 0,0 برچسب‌گذاری شده‌اند.](css-coords.svg)
 
 ### Offset
 
-Coordinates specified using the "offset" model use the top-left corner of the element being examined, or on which an event has occurred.
+مختصاتی که با استفاده از مدل «offset» مشخص می‌شوند، از گوشه بالا-چپ عنصری که در حال بررسی است یا رویدادی روی آن رخ داده است، استفاده می‌کنند.
 
-For example, when a [mouse event](/en-US/docs/Web/API/MouseEvent) occurs, the position of the mouse as specified in the event's {{domxref("MouseEvent.offsetX", "offsetX")}} and {{domxref("MouseEvent.offsetY", "offsetY")}} properties are given relative to the top-left corner of the node to which the event has been delivered. The origin is inset by the _padding edge_, the edge between the padding area and the border area.
+برای مثال، هنگامی که یک [رویداد ماوس](/en-US/docs/Web/API/MouseEvent) رخ می‌دهد، موقعیت ماوس که در ویژگی‌های {{domxref("MouseEvent.offsetX", "offsetX")}} و {{domacro("MouseEvent.offsetY", "offsetY")}} رویداد مشخص شده است، نسبت به گوشه بالا-چپ گره‌ای که رویداد به آن تحویل داده شده است، داده می‌شود. مبدأ با _لبه padding_، یعنی لبه بین ناحیه padding و ناحیه border، فاصله دارد.
 
 ### Viewport
 
-The "viewport" (or "client") coordinate system uses as its origin the top-left corner of the viewport or browsing context in which the event occurred. This is the entire viewing area in which the document is presented.
+دستگاه مختصات «viewport» (یا «client») از گوشه بالا-چپ viewport یا زمینه مرورگری که رویداد در آن رخ داده است به عنوان مبدأ خود استفاده می‌کند. این کل ناحیه نمایشی است که سند در آن ارائه می‌شود.
 
-On a desktop computer, for example, the {{domxref("MouseEvent.clientX")}} and {{domxref("MouseEvent.clientY")}} properties indicate the position of the mouse cursor at the moment the event occurred, relative to the top-left corner of the {{domxref("window")}}.
-When using a stylus or a pointer, the {{domxref("Touch.clientX")}} and {{domxref("Touch.clientY")}} coordinates in a [touch event](/en-US/docs/Web/API/TouchEvent) are relative to the same origin.
+برای مثال، در یک رایانه رومیزی، ویژگی‌های {{domxref("MouseEvent.clientX")}} و {{domacro("MouseEvent.clientY")}} موقعیت مکان‌نمای ماوس را در لحظه رخ دادن رویداد، نسبت به گوشه بالا-چپ {{domxref("window")}} نشان می‌دهند.
+هنگام استفاده از قلم یا اشاره‌گر، مختصات {{domxref("Touch.clientX")}} و {{domxref("Touch.clientY")}} در یک [رویداد لمسی](/en-US/docs/Web/API/TouchEvent) نسبت به همان مبدأ هستند.
 
-The top-left corner of the window is always `(0, 0)`, regardless of the content of the document or any scrolling that may have been done. In other words, scrolling the document will change the viewport coordinates of a given position within the document.
+گوشه بالا-چپ پنجره همیشه `(0, 0)` است، صرف‌نظر از محتوای سند یا هر اسکرولی که انجام شده باشد. به عبارت دیگر، اسکرول کردن سند، مختصات viewport یک موقعیت مشخص درون سند را تغییر می‌دهد.
 
 ### Page
 
-The "page" coordinate system gives the position of a pixel relative to the top-left corner of the entire rendered {{domxref("Document")}}.
-That means that a point in an element within the document will have the same coordinates after the user scrolls horizontally or vertically in the document unless the element moves via layout changes.
+دستگاه مختصات «page» موقعیت یک پیکسل را نسبت به گوشه بالا-چپ کل {{domxref("Document")}} رندر شده می‌دهد.
+این بدان معناست که یک نقطه در یک عنصر درون سند پس از اینکه کاربر به صورت افقی یا عمودی در سند اسکرول کند، مختصات یکسانی خواهد داشت، مگر اینکه عنصر در اثر تغییرات چیدمان جابه‌جا شود.
 
-Mouse events' {{domxref("MouseEvent.pageX", "pageX")}} and {{domxref("MouseEvent.pageY", "pageY")}} properties provide the position of the mouse at the time the event was generated, given relative to the top-left corner of the document.
-{{domxref("Touch.pageX")}} and {{domxref("Touch.pageY")}} coordinates in a [touch event](/en-US/docs/Web/API/TouchEvent) are relative to the same origin.
+ویژگی‌های {{domxref("MouseEvent.pageX", "pageX")}} و {{domacro("MouseEvent.pageY", "pageY")}} رویدادهای ماوس، موقعیت ماوس را در زمان تولید رویداد، نسبت به گوشه بالا-چپ سند ارائه می‌دهند.
+مختصات {{domxref("Touch.pageX")}} و {{domxref("Touch.pageY")}} در یک [رویداد لمسی](/en-US/docs/Web/API/TouchEvent) نسبت به همان مبدأ هستند.
 
 ### Screen
 
-Finally, we come to the "screen" model where the origin is the top-left corner of the user's screen space.
-Each point in this coordinate system represents a single logical pixel, and so values increment and decrement by integer values along each axis.
-The position of a given point within a document will change if the containing window is moved, for example, or if the user's screen geometry changes (by changing display resolution or by adding or removing monitors to their system).
+در نهایت به مدل «screen» می‌رسیم که در آن مبدأ، گوشه بالا-چپ فضای صفحه نمایش کاربر است.
+هر نقطه در این دستگاه مختصات نمایانگر یک پیکسل منطقی واحد است و بنابراین مقادیر در امتداد هر محور به صورت اعداد صحیح افزایش و کاهش می‌یابند.
+موقعیت یک نقطه مشخص درون یک سند اگر پنجره‌ی حاوی آن جابه‌جا شود، یا اگر هندسه صفحه نمایش کاربر تغییر کند (مثلاً با تغییر وضوح نمایشگر یا افزودن/حذف مانیتور به سیستم)، تغییر خواهد کرد.
 
-The {{domxref("MouseEvent.screenX")}} and {{domxref("MouseEvent.screenY")}} properties give the coordinates of a mouse event's position relative to the screen's origin.
-{{domxref("Touch.screenX")}} and {{domxref("Touch.screenY")}} coordinates in a [touch event](/en-US/docs/Web/API/TouchEvent) are relative to the same origin.
+ویژگی‌های {{domxref("MouseEvent.screenX")}} و {{domxref("MouseEvent.screenY")}} مختصات موقعیت یک رویداد ماوس را نسبت به مبدأ صفحه نمایش می‌دهند.
+مختصات {{domxref("Touch.screenX")}} و {{domxref("Touch.screenY")}} در یک [رویداد لمسی](/en-US/docs/Web/API/TouchEvent) نسبت به همان مبدأ هستند.
 
-## Example
+## مثال
 
-Let's take a look at an example that logs mouse coordinates in an element.
-Whenever the mouse enters, moves around inside, or exits the inner box, the events are handled by logging the current mouse coordinates in each of the four available systems.
+بیایید به مثالی نگاه کنیم که مختصات ماوس را در یک عنصر ثبت می‌کند.
+هر زمان که ماوس وارد جعبه داخلی می‌شود، درون آن حرکت می‌کند یا از آن خارج می‌شود، رویدادها با ثبت مختصات فعلی ماوس در هر یک از چهار دستگاه موجود مدیریت می‌شوند.
 
-### JavaScript
+### جاوااسکریپت
 
-For the JavaScript, the code sets up the event handlers on the inner box by calling {{domxref("EventTarget.addEventListener", "addEventListener()")}} for each of the types {{domxref("Element/mouseenter_event", "mouseenter")}}, {{domxref("Element/mousemove_event", "mousemove")}}, and {{domxref("Element/mouseleave_event", "mouseleave")}}.
-For each of the events, we're calling the `setCoords()` function which sets the inner text of the `<p>` element with the coordinates for each system.
+برای جاوااسکریپت، کد با فراخوانی {{domxref("EventTarget.addEventListener", "addEventListener()")}} برای هر یک از انواع {{domxref("Element/mouseenter_event", "mouseenter")}}، {{domcaster("Element/mousemove_event", "mousemove")}} و {{domxref("Element/mouseleave_event", "mouseleave")}}، مدیریت‌کننده‌های رویداد را روی جعبه داخلی تنظیم می‌کند.
+برای هر یک از رویدادها، تابع `setCoords()` را فراخوانی می‌کنیم که متن داخلی عنصر `<p>` را با مختصات هر دستگاه تنظیم می‌کند.
 
 ```js
 const log = document.querySelector(".log");
@@ -97,7 +91,7 @@ inner.addEventListener("mouseleave", setCoords);
 
 ### HTML
 
-The HTML contains a `<p>` with the `"log"` class, which displays the data from the mouse events.
+HTML شامل یک `<p>` با کلاس `"log"` است که داده‌های رویدادهای ماوس را نمایش می‌دهد.
 
 ```html
 <div class="outer">
@@ -109,8 +103,7 @@ The HTML contains a `<p>` with the `"log"` class, which displays the data from t
 
 ### CSS
 
-The class `"outer"` for the containing box is intentionally too wide to view the effects of mouse coordinates when the content is scrolled.
-The `"inner"` paragraph is where mouse events are tracked and logged.
+کلاس `"outer"` برای جعبه‌ی حاوی، عمداً بیش از حد عریض است تا بتوانید اثرات مختصات ماوس را وقتی محتوا اسکرول می‌شود مشاهده کنید. پاراگراف `"inner"` همان جایی است که رویدادهای ماوس ردیابی و ثبت می‌شوند.
 
 ```css
 .outer {
@@ -137,23 +130,23 @@ The `"inner"` paragraph is where mouse events are tracked and logged.
 }
 ```
 
-### Result
+### نتیجه
 
-Here you can see the results in action. As you mouse in and around the blue box, watch the values of the mouse's X and Y coordinates change in the various coordinate systems.
+در اینجا نتیجه را در عمل می‌بینید. همان‌طور که ماوس را به داخل و اطراف جعبه آبی می‌برید، تغییر مقادیر مختصات X و Y ماوس را در دستگاه‌های مختصات مختلف مشاهده کنید.
 
 {{EmbedLiveSample("Example", 600, 250)}}
 
-## See also
+## همچنین ببینید
 
-- [Viewport concepts](/en-US/docs/Web/CSS/Guides/CSSOM_view/Viewport_concepts)
-- [Using CSS transforms](/en-US/docs/Web/CSS/Guides/Transforms/Using): how to alter a coordinate system
-- Coordinates of a {{domxref("MouseEvent")}}:
-  - {{domxref("MouseEvent.offsetX")}} and {{domxref("MouseEvent.offsetY")}}
-  - {{domxref("MouseEvent.clientX")}} and {{domxref("MouseEvent.clientY")}}
-  - {{domxref("MouseEvent.pageX")}} and {{domxref("MouseEvent.pageY")}}
-  - {{domxref("MouseEvent.screenX")}} and {{domxref("MouseEvent.screenY")}}
+- [مفاهیم Viewport](/en-US/docs/Web/CSS/Guides/CSSOM_view/Viewport_concepts)
+- [استفاده از تبدیل‌های CSS](/en-US/docs/Web/CSS/Guides/Transforms/Using): نحوه تغییر یک دستگاه مختصات
+- مختصات یک {{domxref("MouseEvent")}}:
+  - {{domxref("MouseEvent.offsetX")}} و {{domxref("MouseEvent.offsetY")}}
+  - {{domxref("MouseEvent.clientX")}} و {{domxref("MouseEvent.clientY")}}
+  - {{domxref("MouseEvent.pageX")}} و {{domxa("MouseEvent.pageY")}}
+  - {{domxref("MouseEvent.screenX")}} و {{domxref("MouseEvent.screenY")}}
 
-- Coordinates of a {{domxref("Touch")}}:
-  - {{domxref("Touch.clientX")}} and {{domxref("Touch.clientY")}}
-  - {{domxref("Touch.pageX")}} and {{domxref("Touch.pageY")}}
-  - {{domxref("Touch.screenX")}} and {{domxref("Touch.screenY")}}
+- مختصات یک {{domxref("Touch")}}:
+  - {{domxref("Touch.clientX")}} و {{domxref("Touch.clientY")}}
+  - {{domxref("Touch.pageX")}} و {{domxref("Touch.pageY")}}
+  - {{domxref("Touch.screenX")}} و {{domxref("Touch.screenY")}}
