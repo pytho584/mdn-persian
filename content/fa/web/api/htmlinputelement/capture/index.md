@@ -1,11 +1,5 @@
 ---
 title: "HTMLInputElement: capture property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/capture"
-status: "needs-translation"
----
-
----
-title: "HTMLInputElement: capture property"
 short-title: capture
 slug: Web/API/HTMLInputElement/capture
 page-type: web-api-instance-property
@@ -14,13 +8,13 @@ browser-compat: api.HTMLInputElement.capture
 
 {{ApiRef("HTML DOM")}}
 
-The **`capture`** property of the {{domxref("HTMLInputElement")}} interface reflects the {{HTMLElement("input")}} element's [`capture`](/en-US/docs/Web/HTML/Reference/Attributes/capture) attribute. Only relevant to the [`<input>` of type `file`](/en-US/docs/Web/HTML/Reference/Elements/input/file), the property and attribute specify whether, a new file should be captured from a user-facing (`user`) or outward facing (`environment`) camera or microphone. The type of file is defined the [`accept`](/en-US/docs/Web/HTML/Reference/Attributes/accept) attribute. If the attribute is not explicitly set, the `capture` property is an empty string.
+خصوصیت **`capture`** در رابط {{domxref("HTMLInputElement")}}، صفت [`capture`](/en-US/docs/Web/HTML/Reference/Attributes/capture) عنصر {{HTMLElement("input")}} را بازتاب می‌دهد. این خصوصیت و صفت فقط برای [`<input>` از نوع `file`](/en-US/docs/Web/HTML/Reference/Elements/input/file) کاربرد دارند و مشخص می‌کنند که آیا یک فایل جدید باید از دوربین یا میکروفونِ رو به کاربر (`user`) یا رو به بیرون (`environment`) گرفته شود. نوع فایل با صفت [`accept`](/en-US/docs/Web/HTML/Reference/Attributes/accept) تعیین می‌شود. اگر صفت به‌صورت صریح تنظیم نشده باشد، خصوصیت `capture` یک رشتهٔ خالی است.
 
-## Value
+## مقدار
 
-A string; generally either `user` or `environment`, or an empty string (`""`).
+یک رشته؛ معمولاً یا `user` یا `environment`، یا یک رشتهٔ خالی (`\"\"`).
 
-## Example
+## مثال
 
 ```js
 const inputElement = document.querySelector("avatar");
@@ -28,15 +22,15 @@ console.log(inputElement.capture); // the current value of the capture attribute
 inputElement.capture = "user"; // sets the capture value
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("HTMLInputElement.type")}}
 - {{domxref("HTMLInputElement.multiple")}}
