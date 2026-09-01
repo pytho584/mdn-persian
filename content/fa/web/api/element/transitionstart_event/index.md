@@ -1,11 +1,5 @@
 ---
 title: "Element: transitionstart event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/transitionstart_event"
-status: "needs-translation"
----
-
----
-title: "Element: transitionstart event"
 short-title: transitionstart
 slug: Web/API/Element/transitionstart_event
 page-type: web-api-event
@@ -14,13 +8,13 @@ browser-compat: api.Element.transitionstart_event
 
 {{APIRef}}
 
-The **`transitionstart`** event is fired when a [CSS transition](/en-US/docs/Web/CSS/Guides/Transitions/Using) has actually started, i.e., after any {{cssxref("transition-delay")}} has ended.
+رویداد **`transitionstart`** زمانی رخ می‌دهد که یک [گذر CSS](/en-US/docs/Web/CSS/Guides/Transitions/Using) واقعاً شروع شده باشد، یعنی پس از پایان هر {{cssxref("transition-delay")}}.
 
-This event is not cancelable.
+این رویداد قابل لغو (cancelable) نیست.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد (event handler property) تنظیم کنید.
 
 ```js-nolint
 addEventListener("transitionstart", (event) => { })
@@ -28,15 +22,15 @@ addEventListener("transitionstart", (event) => { })
 ontransitionstart = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("TransitionEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("TransitionEvent")}}. از {{domxref("Event")}} ارث‌بری می‌کند.
 
 {{InheritanceDiagram("TransitionEvent")}}
 
-## Examples
+## مثال‌ها
 
-This code adds a listener to the `transitionstart` event:
+این کد یک شنونده (listener) به رویداد `transitionstart` اضافه می‌کند:
 
 ```js
 element.addEventListener("transitionstart", () => {
@@ -44,7 +38,7 @@ element.addEventListener("transitionstart", () => {
 });
 ```
 
-The same, but using the `ontransitionstart` property instead of `addEventListener()`:
+همین کار، اما با استفاده از ویژگی `ontransitionstart` به جای `addEventListener()`:
 
 ```js
 element.ontransitionstart = () => {
@@ -52,9 +46,9 @@ element.ontransitionstart = () => {
 };
 ```
 
-### Live example
+### مثال زنده
 
-In the following example, we have a simple {{htmlelement("div")}} element, styled with a transition that includes a delay:
+در مثال زیر، یک عنصر ساده {{htmlelement("div")}} داریم که با یک گذر (transition) دارای تأخیر (delay) استایل‌دهی شده است:
 
 ```html
 <div class="transition">Hover over me</div>
@@ -77,7 +71,7 @@ In the following example, we have a simple {{htmlelement("div")}} element, style
 }
 ```
 
-To this, we'll add some JavaScript to indicate where the `transitionstart` and {{domxref("Element/transitionrun_event", "transitionrun")}} events fire.
+به این، مقداری جاوااسکریپت اضافه می‌کنیم تا مشخص کند رویدادهای `transitionstart` و {{domxref("Element/transitionrun_event", "transitionrun")}} چه زمانی رخ می‌دهند.
 
 ```js
 const transition = document.querySelector(".transition");
@@ -98,21 +92,21 @@ transition.addEventListener("transitionend", () => {
 
 {{ EmbedLiveSample('Live example', '100%', '170') }}
 
-The difference is that:
+تفاوت در این است که:
 
-- transitionrun fires when the transition is created (i.e., at the start of any delay).
-- transitionstart fires when the actual animation has begun (i.e., at the end of any delay).
+- `transitionrun` زمانی رخ می‌دهد که گذر ایجاد می‌شود (یعنی در شروع هر تأخیر).
+- `transitionstart` زمانی رخ می‌دهد که انیمیشن واقعی آغاز شده است (یعنی در پایان هر تأخیر).
 
-## Specifications
+## مشخصات (Specifications)
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر (Browser compatibility)
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("TransitionEvent")}} interface
-- CSS properties: {{cssxref("transition")}}, {{cssxref("transition-delay")}}, {{cssxref("transition-duration")}}, {{cssxref("transition-property")}}, {{cssxref("transition-timing-function")}}
-- Related events: {{domxref("Element/transitionend_event", "transitionend")}}, {{domxref("Element/transitionrun_event", "transitionrun")}}, {{domxref("Element/transitioncancel_event", "transitioncancel")}}
+- رابط {{domxref("TransitionEvent")}}
+- خصوصیات CSS: {{cssxref("transition")}}، {{cssxref("transition-delay")}}، {{cssxref("transition-duration")}}، {{cssxref("transition-property")}}، {{cssxref("transition-timing-function")}}
+- رویدادهای مرتبط: {{domxref("Element/transitionend_event", "transitionend")}}، {{domxref("Element/transitionrun_event", "transitionrun")}}، {{domxref("Element/transitioncancel_event", "transitioncancel")}}
