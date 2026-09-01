@@ -1,11 +1,5 @@
 ---
 title: "Document: readystatechange event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/readystatechange_event"
-status: "needs-translation"
----
-
----
-title: "Document: readystatechange event"
 short-title: readystatechange
 slug: Web/API/Document/readystatechange_event
 page-type: web-api-event
@@ -14,13 +8,13 @@ browser-compat: api.Document.readystatechange_event
 
 {{APIRef("DOM")}}
 
-The **`readystatechange`** event is fired when the {{domxref("Document.readyState", "readyState")}} attribute of a document has changed.
+رویداد **`readystatechange`** زمانی فعال می‌شود که ویژگی {{domxref("Document.readyState", "readyState")}} یک سند تغییر کند.
 
-This event is not cancelable and does not bubble.
+این رویداد قابل لغو نیست و به صورت حباب‌وار منتشر نمی‌شود.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("readystatechange", (event) => { })
@@ -28,13 +22,13 @@ addEventListener("readystatechange", (event) => { })
 onreadystatechange = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## مثال‌ها
 
-### Live example
+### مثال زنده
 
 #### HTML
 
@@ -113,18 +107,18 @@ document.addEventListener("DOMContentLoaded", (event) => {
 });
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Live_example', '100%', '160px') }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- Related events: [`DOMContentLoaded`](/en-US/docs/Web/API/Document/DOMContentLoaded_event), [`load`](/en-US/docs/Web/API/Window/load_event), [`beforeunload`](/en-US/docs/Web/API/Window/beforeunload_event), [`unload`](/en-US/docs/Web/API/Window/unload_event)
+- رویدادهای مرتبط: [`DOMContentLoaded`](/en-US/docs/Web/API/Document/DOMContentLoaded_event)، [`load`](/en-US/docs/Web/API/Window/load_event)، [`beforeunload`](/en-US/docs/Web/API/Window/beforeunload_event)، [`unload`](/en-US/docs/Web/API/Window/unload_event)
