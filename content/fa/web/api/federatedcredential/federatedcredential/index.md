@@ -1,11 +1,5 @@
 ---
 title: "FederatedCredential: FederatedCredential() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FederatedCredential/FederatedCredential"
-status: "needs-translation"
----
-
----
-title: "FederatedCredential: FederatedCredential() constructor"
 short-title: FederatedCredential()
 slug: Web/API/FederatedCredential/FederatedCredential
 page-type: web-api-constructor
@@ -16,32 +10,32 @@ browser-compat: api.FederatedCredential.FederatedCredential
 
 {{APIRef("Credential Management API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`FederatedCredential()`** constructor creates a new {{domxref("FederatedCredential")}} object. In supporting browsers, an instance of this class may be passed the `credential` received from the `init` object for global {{domxref("Window/fetch", "fetch()")}}.
+سازندهٔ **`FederatedCredential()`** یک شیء {{domxref("FederatedCredential")}} جدید ایجاد می‌کند. در مرورگرهای پشتیبانی‌کننده، نمونه‌ای از این کلاس می‌تواند به‌عنوان «credential» دریافت‌شده از شیء `init` برای تابع سراسری {{domxref("Window/fetch", "fetch()")}} ارسال شود.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 new FederatedCredential(data)
 ```
 
-### Parameters
+### پارامترها
 
 - `data`
-  - : A {{domxref("FederatedCredentialInit")}} object. An object with the following properties:
+  - : یک شیء {{domxref("FederatedCredentialInit")}} است. شیئی با ویژگی‌های زیر:
     - `name` {{optional_inline}}
-      - : A string representing the credential username.
+      - : رشته‌ای که نام کاربری credential را نشان می‌دهد.
     - `iconURL` {{optional_inline}}
-      - : A string representing the URL of an icon or avatar to be associated with the credential.
+      - : رشته‌ای که URL یک آیکون یا تصویر کاربری را نشان می‌دهد که باید با credential مرتبط شود.
     - `origin`
-      - : A string representing the credential's origin. {{domxref("FederatedCredential")}} objects are origin-bound, so they will only be usable on the origin specified here.
+      - : رشته‌ای که مبدأ (origin) credential را نشان می‌دهد. اشیاء {{domxref("FederatedCredential")}} به مبدأ وابسته هستند، بنابراین فقط در همان مبدأ مشخص‌شده قابل استفاده خواهند بود.
     - `provider`
-      - : A string which identifies the credentials' federated identity provider, specified as the origin that the provider uses to sign users in (for example `"https://www.facebook.com"` or `"https://accounts.google.com"`).
+      - : رشته‌ای که ارائه‌دهندهٔ هویت فدرال credential را مشخص می‌کند؛ به‌صورت مبدأیی که ارائه‌دهنده برای ورود کاربران استفاده می‌کند (مثلاً `"https://www.facebook.com"` یا `"https://accounts.google.com"`).
     - `protocol` {{optional_inline}}
-      - : A string representing the protocol of the credentials' federated identity provider (for example, `"openidconnect"`).
+      - : رشته‌ای که پروتکل ارائه‌دهندهٔ هویت فدرال credential را نشان می‌دهد (مثلاً `"openidconnect"`).
 
-## Examples
+## نمونه‌ها
 
-### Creating a federated identity credential
+### ایجاد یک credential هویت فدرال
 
 ```js
 const credData = {
@@ -54,16 +48,16 @@ const credData = {
 
 const fedCred = new FederatedCredential(credData);
 
-// Store it
+// ذخیرهٔ آن
 navigator.credentials.store(fedCred).then(() => {
-  // Do something else
+  // کار دیگری انجام بده
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
