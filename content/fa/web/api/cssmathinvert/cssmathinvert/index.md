@@ -1,20 +1,10 @@
 ---
 title: "CSSMathInvert: CSSMathInvert() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSMathInvert/CSSMathInvert"
-status: "needs-translation"
----
-
----
-title: "CSSMathInvert: CSSMathInvert() constructor"
-short-title: CSSMathInvert()
-slug: Web/API/CSSMathInvert/CSSMathInvert
-page-type: web-api-constructor
-browser-compat: api.CSSMathInvert.CSSMathInvert
 ---
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`CSSMathInvert()`** constructor creates a new {{domxref("CSSMathInvert")}} object which represents the inverse (reciprocal) of a {{domxref('CSSNumericValue')}}.
+سازنده‌ی **`CSSMathInvert()`** یک شیء جدید از {{domxref("CSSMathInvert")}} می‌سازد که معکوس (وارون) یک {{domxref('CSSNumericValue')}} را نمایش می‌دهد.
 
 ## Syntax
 
@@ -25,17 +15,17 @@ new CSSMathInvert(arg)
 ### Parameters
 
 - `arg`
-  - : A number or {{domxref('CSSNumericValue')}} that represents the value to invert.
+  - : یک عدد یا {{domxref('CSSNumericValue')}} که مقدار مورد نظر برای معکوس‌سازی را نمایش می‌دهد.
 
 ### Exceptions
 
-None.
+هیچکدام.
 
 ## Examples
 
-### Basic usage
+### استفاده پایه
 
-The following code creates a `CSSMathInvert` object from a percentage, then logs the constructor name, `value`, and the object's serialization (from {{domxref("CSSStyleValue/toString","toString()")}}).
+کد زیر یک شیء `CSSMathInvert` از یک درصد می‌سازد، سپس نام سازنده، `value` و رشته‌سازی شیء (از {{domxref("CSSStyleValue/toString","toString()")}}) را لاگ می‌کند.
 
 ```js
 const inverted = new CSSMathInvert(CSS.percent(4));
@@ -45,7 +35,7 @@ console.log(inverted.value); // CSSUnitValue {value: 4, unit: "percent"}
 console.log(inverted.toString()); // "calc(1 / 4%)"
 ```
 
-Note that if a plain number is passed to `arg`, the `value` is rectified to a {{domxref("CSSUnitValue")}} with unit `"number"`:
+توجه کنید که اگر یک عدد ساده به `arg` داده شود، `value` به یک {{domxref("CSSUnitValue")}} با واحد `"number"` تبدیل می‌شود:
 
 ```js
 const invertedNumber = new CSSMathInvert(4);
