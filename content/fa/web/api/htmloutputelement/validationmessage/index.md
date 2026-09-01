@@ -1,9 +1,4 @@
----
-title: "HTMLOutputElement: validationMessage property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLOutputElement/validationMessage"
-status: "needs-translation"
----
-
+```markdown
 ---
 title: "HTMLOutputElement: validationMessage property"
 short-title: validationMessage
@@ -14,21 +9,21 @@ browser-compat: api.HTMLOutputElement.validationMessage
 
 {{APIRef("HTML DOM")}}
 
-The **`validationMessage`** read-only property of the {{domxref("HTMLOutputElement")}} interface returns a string representing a localized message that describes the validation constraints that the {{htmlelement("output")}} control does not satisfy (if any). This is the empty string as `<output>` elements are not candidates for constraint validation ({{domxref("HTMLOutputElement.willValidate")}} is `false`).
+خاصیت فقط-خواندنی **`validationMessage`** از رابط {{domxref("HTMLOutputElement")}} یک رشته برمی‌گرداند که یک پیام بومی‌سازی‌شده را نشان می‌دهد و محدودیت‌های اعتبارسنجی را توصیف می‌کند که کنترل {{htmlelement("output")}} آن‌ها را برآورده نمی‌کند (در صورت وجود). این رشته خالی است زیرا عناصر `<output>` کاندیدایی برای اعتبارسنجی محدودیت‌ها نیستند ({{domxref("HTMLOutputElement.willValidate")}} `false` است).
 
-## Value
+## مقدار
 
-The empty string, `""`;
+رشته خالی، `""`؛
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTMLelement("output")}}
 - {{domxref("HTMLOutputElement")}}
@@ -37,6 +32,7 @@ The empty string, `""`;
 - {{domxref("HTMLOutputElement.checkValidity()")}}
 - {{domxref("HTMLOutputElement.reportValidity()")}}
 - {{domxref("HTMLOutputElement.setCustomValidity()")}}
-- [Learn: Client-side form validation](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
-- [Guide: Constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation)
-- CSS {{cssxref(":valid")}} and {{cssxref(":invalid")}} pseudo-classes
+- [یادگیری: اعتبارسنجی سمت کلاینت فرم](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
+- [راهنما: اعتبارسنجی محدودیت‌ها](/en-US/docs/Web/HTML/Guides/Constraint_validation)
+- شبه‌کلاس‌های CSS {{cssxref(":valid")}} و {{cssxref(":invalid")}}
+```
