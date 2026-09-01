@@ -1,11 +1,5 @@
 ---
 title: "Element: getAnimations() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/getAnimations"
-status: "needs-translation"
----
-
----
-title: "Element: getAnimations() method"
 short-title: getAnimations()
 slug: Web/API/Element/getAnimations
 page-type: web-api-instance-method
@@ -14,49 +8,45 @@ browser-compat: api.Element.getAnimations
 
 {{APIRef("Web Animations")}}
 
-The `getAnimations()` method of the {{domxref("Element")}} interface returns an array of all {{domxref("Animation")}} objects affecting this element, or that are scheduled to do so in the future.
-It can optionally return {{domxref("Animation")}} objects either for descendant elements and their [pseudo-elements](/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-elements) or just for the specified pseudo-element.
+متد `getAnimations()` در رابط {{domxref("Element")}} آرایه‌ای از تمام اشیاء {{domxref("Animation")}} را بازمی‌گرداند که روی این عنصر اثر می‌گذارند یا قرار است در آینده اثر بگذارند. این متد به‌صورت اختیاری می‌تواند اشیاء {{domxref("Animation")}} را برای عناصر فرزند و [شبه‌عنصرهای](/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-elements) آن‌ها، یا فقط برای شبه‌عنصر مشخص‌شده، بازگرداند.
 
 > [!NOTE]
-> This array includes [CSS Animations](/en-US/docs/Web/CSS/Guides/Animations), [CSS Transitions](/en-US/docs/Web/CSS/Guides/Transitions), and [Web Animations](/en-US/docs/Web/API/Web_Animations_API).
+> این آرایه شامل [انیمیشن‌های CSS](/en-US/docs/Web/CSS/Guides/Animations)، [ترنزیشن‌های CSS](/en-US/docs/Web/CSS/Guides/Transitions) و [انیمیشن‌های وب](/en-US/docs/Web/API/Web_Animations_API) است.
 
-## Syntax
+## نحو
 
 ```js-nolint
 getAnimations()
 getAnimations(options)
 ```
 
-### Parameters
+### پارامترها
 
 - `options` {{optional_inline}}
-  - : An options object containing the following properties:
+  - : یک شیء options شامل ویژگی‌های زیر:
     - `subtree`
-      - : A boolean value, which if `true`, causes animations that target descendants of _Element_ to be returned as well.
-        This includes animations that target any CSS [pseudo-elements](/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-elements) attached to _Element_ or one of its descendants.
-        Defaults to `false`.
+      - : یک مقدار بولین که اگر `true` باشد، باعث می‌شود انیمیشن‌هایی که فرزندانِ *Element* را هدف قرار می‌دهند نیز بازگردانده شوند. این شامل انیمیشن‌هایی است که هر [شبه‌عنصرِ](/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-elements) CSS متصل به *Element* یا یکی از فرزندان آن را هدف قرار می‌دهند. مقدار پیش‌فرض `false` است.
     - `pseudoElement`
-      - : A string that specifies a [pseudo-element](/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-elements) to be the target element, such as [`::after`](/en-US/docs/Web/CSS/Reference/Selectors/::after).
+      - : رشته‌ای که یک [شبه‌عنصر](/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-elements) را به‌عنوان عنصر هدف مشخص می‌کند، مانند [`::after`](/en-US/docs/Web/CSS/Reference/Selectors/::after).
 
-    Note that specifying both `pseudoElement` and `subtree` is equivalent to specifying just `pseudoElement`.
+    توجه داشته باشید که تعیین هم‌زمان `pseudoElement` و `subtree` معادل تعیین فقط `pseudoElement` است.
 
-### Return value
+### مقدار بازگشتی
 
-An {{jsxref("Array")}} of {{domxref("Animation")}} objects, each representing an animation currently targeting the {{domxref("Element")}}.
+یک {{jsxref("Array")}} از اشیاء {{domxref("Animation")}}، که هر کدام نمایانگر انیمیشنی است که در حال حاضر {{domxref("Element")}} را هدف قرار می‌دهد.
 
-If the `{ subtree: true }` parameter is specified, the returned value also includes animation objects targeting descendant elements, including pseudo-elements.
-If `options.pseudoElement` is specified, the return value includes just the animation objects that match the selected pseudo-element.
+اگر پارامتر `{ subtree: true }` مشخص شده باشد، مقدار بازگشتی شامل اشیاء انیمیشنی نیز می‌شود که عناصر فرزند، از جمله شبه‌عنصرها را هدف قرار می‌دهند. اگر `options.pseudoElement` مشخص شده باشد، مقدار بازگشتی فقط شامل اشیاء انیمیشنی است که با شبه‌عنصر انتخاب‌شده مطابقت دارند.
 
-### Exceptions
+### استثناها
 
 - `SyntaxError` {{domxref("DOMException")}}
-  - : An invalid pseudo-element was passed in the [`options.pseudoElement`](#pseudoelement) parameter.
+  - : یک شبه‌عنصر نامعتبر در پارامتر [`options.pseudoElement`](#pseudoelement) ارسال شده است.
 
-## Examples
+## مثال‌ها
 
-### Wait for all animations on an element and its descendants
+### منتظر ماندن برای تمام انیمیشن‌های یک عنصر و فرزندان آن
 
-The following code snippet will wait for all animations on `elem` and its descendants to finish before removing the element from the document.
+قطعه‌کد زیر منتظر می‌ماند تا همه انیمیشن‌های روی `elem` و فرزندانش تمام شوند و سپس عنصر را از سند حذف می‌کند.
 
 ```js
 Promise.all(
@@ -64,13 +54,11 @@ Promise.all(
 ).then(() => elem.remove());
 ```
 
-### Get animations for a pseudo-element target
+### دریافت انیمیشن‌های یک شبه‌عنصر هدف
 
-This example displays a progress bar using a pseudo-element.
-It uses `getAnimations()` to return the animations for the pseudo-element, starts them, and then removes the progress bar once the animation is complete.
+این مثال یک نوار پیشرفت را با استفاده از یک شبه‌عنصر نمایش می‌دهد. از `getAnimations()` برای بازگرداندن انیمیشن‌های آن شبه‌عنصر استفاده می‌کند، آن‌ها را اجرا می‌کند و پس از کامل شدن انیمیشن، نوار پیشرفت را حذف می‌کند.
 
-Note that the code uses a fallback approach to get the animations in case the `pseudoElement` option is not supported.
-There is also hidden code to display a "Restart" button.
+توجه داشته باشید که کد از یک رویکرد جایگزین (fallback) برای دریافت انیمیشن‌ها استفاده می‌کند، در صورتی که گزینه `pseudoElement` پشتیبانی نشود. همچنین کد پنهانی برای نمایش دکمه «Restart» وجود دارد.
 
 #### HTML
 
@@ -80,8 +68,7 @@ There is also hidden code to display a "Restart" button.
 
 #### CSS
 
-The CSS styles the progress bar element to animate across the width of its container in 3 seconds.
-The animation is initially paused so that we can start it in JavaScript.
+CSS عنصر نوار پیشرفت را به‌گونه‌ای استایل می‌دهد که در عرض ۳ ثانیه در طول ظرف خود حرکت کند. انیمیشن در ابتدا متوقف شده است تا بتوانیم آن را از طریق جاوااسکریپت شروع کنیم.
 
 ```css
 .progress-bar {
@@ -114,8 +101,7 @@ The animation is initially paused so that we can start it in JavaScript.
 
 #### JavaScript
 
-First we define a function to get the animations associated with a specified element and pseudo-element.
-It calls `getAnimations()` with the [`pseudoElement`](#pseudoelement) option, and if that doesn't return any animations, falls back to filtering the animations returned by [`subtree`](#subtree).
+ابتدا تابعی تعریف می‌کنیم که انیمیشن‌های مرتبط با یک عنصر و شبه‌عنصر مشخص را دریافت کند. این تابع `getAnimations()` را با گزینه [`pseudoElement`](#pseudoelement) فراخوانی می‌کند و اگر هیچ انیمیشنی برنگرداند، به فیلتر کردن انیمیشن‌های برگشتی از [`subtree`](#subtree) روی می‌آورد.
 
 ```js
 function getAnimationsForPseudo(element, pseudo) {
@@ -136,9 +122,7 @@ function getAnimationsForPseudo(element, pseudo) {
 }
 ```
 
-We use this function to get all the animations associated with the progress bar pseudo element.
-The code iterates through the animations to start them, and then removes the progress bar when all animations have finished.
-Note that we run the code in `requestAnimationFrame()` to ensure that the animation is ready to run before our JavaScript is executed.
+ما از این تابع برای دریافت تمام انیمیشن‌های مرتبط با شبه‌عنصر نوار پیشرفت استفاده می‌کنیم. کد روی انیمیشن‌ها پیمایش می‌کند تا آن‌ها را اجرا کند و سپس وقتی همه انیمیشن‌ها تمام شدند، نوار پیشرفت را حذف می‌کند. توجه داشته باشید که کد را در `requestAnimationFrame()` اجرا می‌کنیم تا مطمئن شویم انیمیشن قبل از اجرای جاوااسکریپت ما آماده است.
 
 ```js
 const bar = document.getElementById("bar");
@@ -162,25 +146,24 @@ reload.addEventListener("click", () => {
 });
 ```
 
-#### Result
+#### نتیجه
 
-The bar should progress across the width of its container and then disappear.
-You can restart it by pressing the "Restart" button.
+نوار باید در عرض ظرف خود پیشروی کند و سپس ناپدید شود. می‌توانید با فشردن دکمه «Restart» آن را دوباره شروع کنید.
 
 {{EmbedLiveSample("Get animations for a pseudo-element target", "100%", "50px")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)
-- [CSS Animations](/en-US/docs/Web/CSS/Guides/Animations)
-- [CSS Transitions](/en-US/docs/Web/CSS/Guides/Transitions)
-- {{domxref("Document.getAnimations()")}} - Fetch all animations in the document
+- [انیمیشن‌های CSS](/en-US/docs/Web/CSS/Guides/Animations)
+- [ترنزیشن‌های CSS](/en-US/docs/Web/CSS/Guides/Transitions)
+- {{domxref("Document.getAnimations()")}} - دریافت همه انیمیشن‌های سند
 - {{domxref("Animation")}}
