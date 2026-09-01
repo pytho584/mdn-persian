@@ -1,11 +1,5 @@
 ---
 title: "HTMLAnchorElement: download property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement/download"
-status: "needs-translation"
----
-
----
-title: "HTMLAnchorElement: download property"
 short-title: download
 slug: Web/API/HTMLAnchorElement/download
 page-type: web-api-instance-property
@@ -14,24 +8,19 @@ browser-compat: api.HTMLAnchorElement.download
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLAnchorElement.download`** property is a
-string indicating that the linked resource is intended to be
-downloaded rather than displayed in the browser. The value, if any, specifies the
-default file name for use in labeling the resource in a local file system. If the name
-is not a valid file name in the underlying OS, the browser will adjust it.
+ویژگی **`HTMLAnchorElement.download`** یک رشته (string) است که نشان می‌دهد منبعِ هدفِ پیوند برای دانلود در نظر گرفته شده است، نه برای نمایش در مرورگر. مقدار این ویژگی، در صورت وجود، نام پیش‌فرض فایل را برای ذخیرهٔ منبع در سیستم فایل محلی تعیین می‌کند. اگر این نام در سیستم‌عاملِ میزبان، نام فایل معتبری نباشد، مرورگر آن را اصلاح می‌کند.
 
 > [!NOTE]
-> This value might not be used for download. This value cannot
-> be used to determine whether the download will occur.
+> ممکن است از این مقدار برای دانلود استفاده نشود. همچنین نمی‌توان بر اساس این مقدار تعیین کرد که آیا دانلود انجام خواهد شد یا خیر.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
