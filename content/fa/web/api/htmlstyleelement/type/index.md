@@ -1,11 +1,5 @@
 ---
 title: "HTMLStyleElement: type property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLStyleElement/type"
-status: "needs-translation"
----
-
----
-title: "HTMLStyleElement: type property"
 short-title: type
 slug: Web/API/HTMLStyleElement/type
 page-type: web-api-instance-property
@@ -16,23 +10,22 @@ browser-compat: api.HTMLStyleElement.type
 
 {{APIRef("HTML DOM")}} {{Deprecated_Header}}
 
-The **`HTMLStyleElement.type`** property returns the type of the current style.
-The value mirrors the [HTML `<style>` element's `type` attribute](/en-US/docs/Web/HTML/Reference/Elements/style#type).
+ویژگی **`HTMLStyleElement.type`** نوعِ استایلِ فعلی را بازمی‌گرداند. این مقدار با [ویژگی `type` عنصر `<style>` در HTML](/en-US/docs/Web/HTML/Reference/Elements/style#type) یکسان است.
 
-Authors should not use this property or rely on the value.
+توسعه‌دهندگان نباید از این ویژگی استفاده کنند یا به مقدار آن اعتماد کنند.
 
-## Value
+## مقدار
 
-The permitted values are an empty string or a case-insensitive match for "text/css".
+مقادیر مجاز عبارت‌اند از یک رشتهٔ خالی یا رشته‌ای که بدون در نظر گرفتن بزرگی یا کوچکی حروف با `"text/css"` مطابقت داشته باشد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("SVGStyleElement.type")}}
