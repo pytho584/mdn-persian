@@ -1,11 +1,5 @@
 ---
 title: "Document: createProcessingInstruction() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/createProcessingInstruction"
-status: "needs-translation"
----
-
----
-title: "Document: createProcessingInstruction() method"
 short-title: createProcessingInstruction()
 slug: Web/API/Document/createProcessingInstruction
 page-type: web-api-instance-method
@@ -14,37 +8,37 @@ browser-compat: api.Document.createProcessingInstruction
 
 {{APIRef("DOM")}}
 
-`createProcessingInstruction()` generates a new [processing instruction](/en-US/docs/Web/API/ProcessingInstruction) node and returns it.
+`createProcessingInstruction()` یک گرهٔ [processing instruction](/en-US/docs/Web/API/ProcessingInstruction) جدید می‌سازد و آن را بازمی‌گرداند.
 
-The new node usually will be inserted into an XML document in order to accomplish anything with it, such as with {{ domxref("node.insertBefore") }}.
+معمولاً این گرهٔ جدید برای اینکه بتوان از آن استفاده کرد، در یک سند XML درج می‌شود؛ برای مثال با کمک {{ domxref("node.insertBefore") }}.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 createProcessingInstruction(target, data)
 ```
 
-### Parameters
+### پارامترها
 
 - `piNode`
-  - : The resulting {{ domxref("ProcessingInstruction") }} node.
+  - : گرهٔ حاصل از نوع {{ domxref("ProcessingInstruction") }}.
 - `target`
-  - : A string containing the first part of the processing instruction (i.e., `<?target … ?>`)
+  - : رشته‌ای که بخش نخست دستور پردازش را شامل می‌شود (یعنی `<?target … ?>`).
 - `data`
-  - : A string containing any information the processing instruction should carry, after the target. The data is up to you, but it can't contain `?>`, since that closes the processing instruction.
+  - : رشته‌ای شامل هرگونه اطلاعاتی که دستور پردازش باید پس از target به‌همراه داشته باشد. انتخاب داده‌ها با خودتان است، اما نمی‌تواند شامل `?>` باشد، چون این دنباله دستور پردازش را می‌بندد.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `InvalidCharacterError` {{domxref("DOMException")}}
-  - : Thrown if either of the following are true:
-    - The [`target`](#target) value is not a valid [XML name](https://www.w3.org/TR/xml/#dt-name); for example, it starts with a number, hyphen, or period, or contains characters other than alphanumeric characters, underscores, hyphens, or periods.
-    - The _closing processing instruction sequence_ (`?>`) is part of the [`data`](#data) value.
+  - : در صورت برقراری هر یک از شرایط زیر پرتاب می‌شود:
+    - مقدار [`target`](#target) یک [نام XML](https://www.w3.org/TR/xml/#dt-name) معتبر نیست؛ برای مثال، با عدد، خط تیره یا نقطه شروع می‌شود، یا حاوی نویسه‌هایی غیر از نویسه‌های الفبایی-عددی، زیرخط، خط تیره یا نقطه است.
+    - _دنبالهٔ پایانی دستور پردازش_ (`?>`) بخشی از مقدار [`data`](#data) باشد.
 
-## Examples
+## مثال‌ها
 
 ```js
 const doc = new DOMParser().parseFromString("<foo />", "application/xml");
@@ -59,10 +53,10 @@ console.log(new XMLSerializer().serializeToString(doc));
 // Displays: <?xml-stylesheet href="mycss.css" type="text/css"?><foo/>
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
