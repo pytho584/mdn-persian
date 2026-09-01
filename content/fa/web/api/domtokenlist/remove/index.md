@@ -1,11 +1,5 @@
 ---
 title: "DOMTokenList: remove() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/remove"
-status: "needs-translation"
----
-
----
-title: "DOMTokenList: remove() method"
 short-title: remove()
 slug: Web/API/DOMTokenList/remove
 page-type: web-api-instance-method
@@ -14,10 +8,9 @@ browser-compat: api.DOMTokenList.remove
 
 {{APIRef("DOM")}}
 
-The **`remove()`** method of the {{domxref("DOMTokenList")}} interface
-removes the specified _tokens_ from the list.
+متد **`remove()``** در رابط {{domxref("DOMTokenList")}} توکن‌های مشخص‌شده را از فهرست حذف می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 remove(token1)
@@ -25,30 +18,26 @@ remove(token1, token2)
 remove(token1, token2, /* …, */ tokenN)
 ```
 
-### Parameters
+### پارامترها
 
 - `token1`, …, `tokenN`
-  - : A string representing the token you want to remove from the list.
-    If the string is not in the list, no error is thrown, and nothing happens.
+  - : رشته‌ای که نشان‌دهنده توکنی است که می‌خواهید از فهرست حذف کنید. اگر رشته در فهرست وجود نداشته باشد، خطایی رخ نمی‌دهد و هیچ اتفاقی نمی‌افتد.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-In the following example we retrieve the list of classes set on a
-{{htmlelement("span")}} element as a `DOMTokenList` using
-{{domxref("Element.classList")}}. We then remove a token from the list, and write the
-list into the `<span>`'s {{domxref("Node.textContent")}}.
+در مثال زیر، فهرست کلاس‌های یک عنصر {{htmlelement("span")}} را به صورت `DOMTokenList` با استفاده از {{domxref("Element.classList")}} دریافت می‌کنیم. سپس یک توکن را از فهرست حذف کرده و فهرست را درون خاصیت {{domxref("Node.textContent")}} آن `<span>` می‌نویسیم.
 
-First, the HTML:
+ابتدا، HTML:
 
 ```html
 <span id="ab" class="a b c"></span> <span id="a" class="a b c"></span>
 ```
 
-Now the JavaScript:
+حالا JavaScript:
 
 ```js
 const span = document.getElementById("ab");
@@ -57,8 +46,7 @@ classes.remove("c");
 span.textContent = classes;
 ```
 
-To remove multiple classes at once, you can supply multiple tokens. The order you
-supply the tokens doesn't have to match the order they appear in the list:
+برای حذف چند کلاس به‌طور همزمان، می‌توانید چند توکن را ارائه دهید. ترتیب ارائه توکن‌ها نیازی به تطابق با ترتیب ظاهر شدن آن‌ها در فهرست ندارد:
 
 ```js
 const span2 = document.getElementById("a");
@@ -68,14 +56,14 @@ classes2.remove("c", "b");
 span2.textContent = classes2;
 ```
 
-The output looks like this:
+خروجی به این شکل است:
 
 {{ EmbedLiveSample('Examples', '100%', 60) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
