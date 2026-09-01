@@ -1,11 +1,5 @@
 ---
 title: "Element: scrollTopMax property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollTopMax"
-status: "needs-translation"
----
-
----
-title: "Element: scrollTopMax property"
 short-title: scrollTopMax
 slug: Web/API/Element/scrollTopMax
 page-type: web-api-instance-property
@@ -16,22 +10,20 @@ browser-compat: api.Element.scrollTopMax
 
 {{APIRef("DOM")}}{{Non-standard_header}}
 
-The **`Element.scrollTopMax`** read-only property returns a
-number representing the maximum top scroll offset possible for the
-element.
+خاصیت فقط‌خواندنی **`Element.scrollTopMax`** عددی را برمی‌گرداند که بیشینهٔ افست اسکرولِ بالایی ممکن برای آن عنصر را نشان می‌دهد.
 
-## Value
+## مقدار
 
-A number.
+یک عدد.
 
-## Specifications
+## مشخصات
 
-_This property is not part of any specification._
+_این خاصیت بخشی از هیچ مشخصات و استانداردی نیست._
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- {{domxref("Element.scrollLeftMax")}} giving the same information for the other axis.
+- {{domxref("Element.scrollLeftMax")}} که همین اطلاعات را برای محور دیگر فراهم می‌کند.
