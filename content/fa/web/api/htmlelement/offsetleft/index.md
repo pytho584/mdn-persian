@@ -1,11 +1,5 @@
 ---
 title: "HTMLElement: offsetLeft property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetLeft"
-status: "needs-translation"
----
-
----
-title: "HTMLElement: offsetLeft property"
 short-title: offsetLeft
 slug: Web/API/HTMLElement/offsetLeft
 page-type: web-api-instance-property
@@ -14,17 +8,17 @@ browser-compat: api.HTMLElement.offsetLeft
 
 {{ APIRef("HTML DOM") }}
 
-The **`offsetLeft`** read-only property of the {{domxref("HTMLElement")}} interface returns the number of pixels that the _upper left corner_ of the current element is offset to the left within the {{domxref("HTMLElement.offsetParent")}} node.
+ویژگی فقط‌خواندنی **`offsetLeft`** در رابط {{domxref("HTMLElement")}} تعداد پیکسل‌هایی را برمی‌گرداند که _گوشهٔ بالا-چپ_ عنصر جاری نسبت به گرهٔ {{domxref("HTMLElement.offsetParent")}} به سمت چپ جابه‌جا شده است.
 
-For block-level elements, `offsetTop`, `offsetLeft`, `offsetWidth`, and `offsetHeight` describe the border box of an element relative to the `offsetParent`.
+برای عناصر بلوکی، `offsetTop`، `offsetLeft`، `offsetWidth` و `offsetHeight`، جعبهٔ حاشیهٔ یک عنصر را نسبت به `offsetParent` توصیف می‌کنند.
 
-However, for inline-level elements (such as `<span>`) that can wrap from one line to the next, `offsetTop` and `offsetLeft` describe the positions of the _first_ border box (use {{domxref("Element.getClientRects()")}} to get its width and height), while `offsetWidth` and `offsetHeight` describe the dimensions of the _bounding_ border box (use {{domxref("Element.getBoundingClientRect()")}} to get its position). Therefore, a box with the left, top, width and height of `offsetLeft`, `offsetTop`, `offsetWidth` and `offsetHeight` will not be a bounding box for a span with wrapped text.
+با این حال، برای عناصر درون‌خطی (مانند `<span>`) که ممکن است از یک خط به خط بعد بپیچند، `offsetTop` و `offsetLeft` موقعیت _اولین_ جعبهٔ حاشیه را توصیف می‌کنند (برای دریافت عرض و ارتفاع آن از {{domxref("Element.getClientRects()")}} استفاده کنید)، در حالی که `offsetWidth` و `offsetHeight` ابعاد _جعبهٔ حاشیهٔ فراگیر_ را توصیف می‌کنند (برای دریافت موقعیت آن از {{domxref("Element.getBoundingClientRect()")}} استفاده کنید). بنابراین، جعبه‌ای با چپ، بالا، عرض و ارتفاع برابر با `offsetLeft`، `offsetTop`، `offsetWidth` و `offsetHeight`، برای یک `span` با متنی که به خط بعد رفته است، جعبهٔ مرزی (bounding box) نخواهد بود.
 
-## Value
+## مقدار
 
-An integer.
+یک عدد صحیح.
 
-## Examples
+## مثال‌ها
 
 ```js
 const colorTable = document.getElementById("t1");
@@ -35,9 +29,9 @@ if (tOLeft > 5) {
 }
 ```
 
-This example shows a 'long' sentence that wraps within a div with a blue border, and a red box that one might think should describe the boundaries of the span.
+این مثال یک جملهٔ «بلند» را نشان می‌دهد که درون یک `div` با حاشیهٔ آبی به خط بعد می‌رود و یک جعبهٔ قرمز که ممکن است تصور شود مرزهای آن `<span>` را توصیف می‌کند.
 
-![A sentence that reads: Short span. This text is completely within a div with a blue border. A sentence that reads: Long span that wraps within this div. The words "long span that wraps" is within a box with a red border. The words "within this div" are within the div with the blue border. ](offsetleft.jpg)
+![جمله‌ای با متن «Short span» که کاملاً داخل یک div با حاشیهٔ آبی قرار دارد. جمله‌ای با متن «Long span that wraps within this div». عبارت «long span that wraps» داخل یک جعبه با حاشیهٔ قرمز است و عبارت «within this div» داخل div با حاشیهٔ آبی قرار دارد.](offsetleft.jpg)
 
 ```html
 <div class="span-container">
@@ -74,17 +68,17 @@ box.style.width = `${longSpan.offsetWidth}px`;
 box.style.height = `${longSpan.offsetHeight}px`;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Determining the dimensions of elements](/en-US/docs/Web/API/CSS_Object_Model/Determining_the_dimensions_of_elements)
+- [تعیین ابعاد عناصر](/en-US/docs/Web/API/CSS_Object_Model/Determining_the_dimensions_of_elements)
 - {{domxref("Element.clientLeft")}}
 - {{domxref("Element.scrollLeft")}}
 - {{domxref("HTMLElement.offsetHeight")}}
