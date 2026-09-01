@@ -1,10 +1,4 @@
 ---
-title: "DynamicsCompressorNode"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DynamicsCompressorNode"
-status: "needs-translation"
----
-
----
 title: DynamicsCompressorNode
 slug: Web/API/DynamicsCompressorNode
 page-type: web-api-interface
@@ -13,75 +7,73 @@ browser-compat: api.DynamicsCompressorNode
 
 {{ APIRef("Web Audio API") }}
 
-The `DynamicsCompressorNode` interface provides a compression effect, which lowers the volume of the loudest parts of a signal.
-Compression can help prevent clipping and distortion when multiple sounds are combined, and it is also used in music production and game audio for dynamic control, tone shaping, and creative effects.
-`DynamicsCompressorNode` is an {{domxref("AudioNode")}} that has exactly one input and one output.
+رابطه `DynamicsCompressorNode` یک افکت فشرده‌سازی را فراهم می‌کند که صدای بلندترین بخش‌های سیگنال را کاهش می‌دهد. فشرده‌سازی می‌تواند به جلوگیری از کلیپینگ و اعوجاج هنگام ترکیب چند صدا کمک کند و همچنین در تولید موسیقی و صدای بازی برای کنترل دینامیک، شکل‌دهی تن و افکت‌های خلاقانه استفاده می‌شود. `DynamicsCompressorNode` یک {{domxref("AudioNode")}} با دقیقاً یک ورودی و یک خروجی است.
 
 {{InheritanceDiagram}}
 
 <table class="properties">
   <tbody>
     <tr>
-      <th scope="row">Number of inputs</th>
+      <th scope="row">تعداد ورودی‌ها</th>
       <td><code>1</code></td>
     </tr>
     <tr>
-      <th scope="row">Number of outputs</th>
+      <th scope="row">تعداد خروجی‌ها</th>
       <td><code>1</code></td>
     </tr>
     <tr>
-      <th scope="row">Channel count mode</th>
+      <th scope="row">حالت تعداد کانال‌ها</th>
       <td><code>"clamped-max"</code></td>
     </tr>
     <tr>
-      <th scope="row">Channel count</th>
+      <th scope="row">تعداد کانال‌ها</th>
       <td><code>2</code></td>
     </tr>
     <tr>
-      <th scope="row">Channel interpretation</th>
+      <th scope="row">تفسیر کانال‌ها</th>
       <td><code>"speakers"</code></td>
     </tr>
   </tbody>
 </table>
 
-## Constructor
+## سازنده
 
 - {{domxref("DynamicsCompressorNode.DynamicsCompressorNode", "DynamicsCompressorNode()")}}
-  - : Creates a new instance of a `DynamicsCompressorNode` object.
+  - : یک نمونه جدید از شیء `DynamicsCompressorNode` ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("AudioNode")}}_.
+_ویژگی‌ها را از والد خود، {{domxref("AudioNode")}}، به ارث می‌برد._
 
 - {{domxref("DynamicsCompressorNode.threshold")}} {{ReadOnlyInline}}
-  - : A [k-rate](/en-US/docs/Web/API/AudioParam#k-rate) {{domxref("AudioParam")}} representing the decibel value above which the compression will start taking effect.
+  - : یک {{domxref("AudioParam")}} از نوع [k-rate](/en-US/docs/Web/API/AudioParam#k-rate) که مقدار دسیبل بالای آستانه را نشان می‌دهد که در آن فشرده‌سازی شروع به اثر می‌کند.
 - {{domxref("DynamicsCompressorNode.knee")}} {{ReadOnlyInline}}
-  - : A [k-rate](/en-US/docs/Web/API/AudioParam#k-rate) {{domxref("AudioParam")}} containing a decibel value representing the range above the threshold where the curve smoothly transitions to the compressed portion.
+  - : یک {{domxref("AudioParam")}} از نوع [k-rate](/en-US/docs/Web/API/AudioParam#k-rate) شامل یک مقدار دسیبل که محدوده بالای آستانه را نشان می‌دهد، جایی که منحنی به نرمی به بخش فشرده‌شده گذر می‌کند.
 - {{domxref("DynamicsCompressorNode.ratio")}} {{ReadOnlyInline}}
-  - : A [k-rate](/en-US/docs/Web/API/AudioParam#k-rate) {{domxref("AudioParam")}} representing the amount of change, in dB, needed in the input for a 1 dB change in the output.
+  - : یک {{domxref("AudioParam")}} از نوع [k-rate](/en-US/docs/Web/API/AudioParam#k-rate) که میزان تغییر مورد نیاز ورودی، بر حسب دسیبل، برای یک تغییر 1 دسیبلی در خروجی را نشان می‌دهد.
 - {{domxref("DynamicsCompressorNode.reduction")}} {{ReadOnlyInline}}
-  - : A `float` representing the amount of gain reduction currently applied by the compressor to the signal.
+  - : یک `float` که میزان کاهش بهره‌ای که در حال حاضر توسط کمپرسور به سیگنال اعمال می‌شود را نشان می‌دهد.
 - {{domxref("DynamicsCompressorNode.attack")}} {{ReadOnlyInline}}
-  - : A [k-rate](/en-US/docs/Web/API/AudioParam#k-rate) {{domxref("AudioParam")}} representing the amount of time, in seconds, required to reduce the gain by 10 dB.
+  - : یک {{domxref("AudioParam")}} از نوع [k-rate](/en-US/docs/Web/API/AudioParam#k-rate) که مدت زمان لازم، بر حسب ثانیه، برای کاهش 10 دسیبلی بهره را نشان می‌دهد.
 - {{domxref("DynamicsCompressorNode.release")}} {{ReadOnlyInline}}
-  - : A [k-rate](/en-US/docs/Web/API/AudioParam#k-rate) {{domxref("AudioParam")}} representing the amount of time, in seconds, required to increase the gain by 10 dB.
+  - : یک {{domxref("AudioParam")}} از نوع [k-rate](/en-US/docs/Web/API/AudioParam#k-rate) که مدت زمان لازم، بر حسب ثانیه، برای افزایش 10 دسیبلی بهره را نشان می‌دهد.
 
-## Instance methods
+## متدهای نمونه
 
-_No specific methods; inherits methods from its parent, {{domxref("AudioNode")}}_.
+_هیچ متد خاصی ندارد؛ متدها را از والد خود، {{domxref("AudioNode")}}، به ارث می‌برد._
 
-## Example
+## مثال
 
-See [`BaseAudioContext.createDynamicsCompressor()`](/en-US/docs/Web/API/BaseAudioContext/createDynamicsCompressor#examples) example code.
+کد مثال را در [`BaseAudioContext.createDynamicsCompressor()`](/en-US/docs/Web/API/BaseAudioContext/createDynamicsCompressor#examples) ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
