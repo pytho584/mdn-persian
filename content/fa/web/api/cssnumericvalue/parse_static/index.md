@@ -1,11 +1,5 @@
 ---
 title: "CSSNumericValue: parse() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSNumericValue/parse_static"
-status: "needs-translation"
----
-
----
-title: "CSSNumericValue: parse() static method"
 short-title: parse()
 slug: Web/API/CSSNumericValue/parse_static
 page-type: web-api-static-method
@@ -14,11 +8,10 @@ browser-compat: api.CSSNumericValue.parse_static
 
 {{APIRef("CSS Typed Object Model API")}}
 
-The **`parse()`** static method of the {{domxref("CSSNumericValue")}} interface converts a value string into an object whose members are value and the units.
+متد استاتیک **`parse()`** از رابط {{domxref("CSSNumericValue")}} یک رشتهٔ مقدار را به یک شیء تبدیل می‌کند که اعضای آن مقدار و واحد هستند.
 
 > [!NOTE]
-> This method cannot be called in {{domxref("Worker")}} or {{domxref("Worklet")}} contexts — parsing CSS text is restricted to the main thread.
-> All other methods in the `CSSNumericValue` interface are available in workers and worklets.
+> این متد در زمینه‌های {{domxref("Worker")}} یا {{domxref("Worklet")}} قابل فراخوانی نیست — تجزیهٔ متن CSS به نخ اصلی محدود است. تمام متدهای دیگر در رابط `CSSNumericValue` در workerها و workletها در دسترس هستند.
 
 ## Syntax
 
@@ -29,11 +22,11 @@ CSSNumericValue.parse(cssText)
 ### Parameters
 
 - `cssText`
-  - : a string containing numeric and unit parts.
+  - : یک رشته که شامل بخش عددی و واحد است.
 
 ### Return value
 
-A {{domxref('CSSNumericValue')}}.
+یک {{domxref('CSSNumericValue')}}.
 
 ### Exceptions
 
@@ -42,9 +35,9 @@ A {{domxref('CSSNumericValue')}}.
 
 ## Examples
 
-### Basic usage
+### استفادهٔ پایه
 
-The following code returns a {{domxref('CSSUnitValue')}} object with a `unit` property equal to `"px"` and a `value` property equal to `42`.
+کد زیر یک شیء {{domxref('CSSUnitValue')}} را برمی‌گرداند که ویژگی `unit` آن برابر با `"px"` و ویژگی `value` آن برابر با `42` است.
 
 ```js
 let numValue = CSSNumericValue.parse("42.0px");
