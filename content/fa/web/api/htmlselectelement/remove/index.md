@@ -1,11 +1,5 @@
 ---
 title: "HTMLSelectElement: remove() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/remove"
-status: "needs-translation"
----
-
----
-title: "HTMLSelectElement: remove() method"
 short-title: remove()
 slug: Web/API/HTMLSelectElement/remove
 page-type: web-api-instance-method
@@ -14,26 +8,24 @@ browser-compat: api.HTMLSelectElement.remove
 
 {{ APIRef("HTML DOM") }}
 
-The **`HTMLSelectElement.remove()`** method removes the element
-at the specified index from the options collection for this select element.
+متد **`HTMLSelectElement.remove()`** عنصر موجود در اندیس مشخص‌شده را از مجموعه‌ی گزینه‌های این عنصر select حذف می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 remove(index)
 ```
 
-### Parameters
+### پارامترها
 
 - `index`
-  - : A zero-based integer for the index of the {{ domxref("HTMLOptionElement") }}
-    to remove from the collection. If the index is not found the method has no effect.
+  - : یک عدد صحیح مبتنی بر صفر برای اندیس {{ domxref("HTMLOptionElement") }} که باید از مجموعه حذف شود. اگر اندیس یافت نشود، متد هیچ اثری ندارد.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
 ```html
 <select id="existingList" name="existingList">
@@ -48,7 +40,7 @@ let sel = document.getElementById("existingList");
 sel.remove(1);
 ```
 
-HTML is now:
+HTML اکنون به این صورت است:
 
 ```html
 <select id="existingList" name="existingList">
@@ -57,16 +49,15 @@ HTML is now:
 </select>
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{ domxref("Element.remove") }}, the method that gets called when remove is called
-  without arguments on a {{ domxref("HTMLSelectElement") }}.
-- {{domxref("HTMLSelectElement") }} that implements it.
+- {{ domxref("Element.remove") }}، متدی که وقتی `remove` بدون آرگومان روی یک {{ domxref("HTMLSelectElement") }} فراخوانی می‌شود، صدا زده می‌شود.
+- {{domxref("HTMLSelectElement") }} که آن را پیاده‌سازی می‌کند.
