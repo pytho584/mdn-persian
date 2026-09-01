@@ -1,7 +1,5 @@
 ---
 title: "Element: ariaRequired property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaRequired"
-status: "needs-translation"
 ---
 
 ---
@@ -14,26 +12,26 @@ browser-compat: api.Element.ariaRequired
 
 {{APIRef("DOM")}}
 
-The **`ariaRequired`** property of the {{domxref("Element")}} interface reflects the value of the `aria-required` attribute, which indicates that user input is required on the element before a form may be submitted.
+ویژگی **`ariaRequired`** از رابط {{domxref("Element")}} منعکس‌کنندهٔ مقدار صفت `aria-required` است که نشان می‌دهد آیا ورودی کاربر در این عنصر قبل از ارسال فرم ضروری است یا خیر.
 
 > [!NOTE]
-> Where possible use an HTML {{htmlelement("input")}} element with `type="text"` or a {{htmlelement("textarea")}} as these have built in semantics and do not require ARIA attributes.
+> در صورت امکان از یک عنصر HTML {{htmlelement("input")}} با `type="text"` یا یک {{htmlelement("textarea")}} استفاده کنید زیرا این‌ها معنای داخلی دارند و به صفات ARIA نیاز ندارند.
 
-## Value
+## مقدار
 
-A string with one of the following values:
+یک رشته با یکی از مقادیر زیر:
 
 - `"true"`
-  - : Users need to provide input on an element before a form is submitted.
+  - : کاربران باید قبل از ارسال فرم، ورودی را در یک عنصر ارائه دهند.
 - `"false"`
-  - : User input is not necessary to submit the form.
+  - : ورودی کاربر برای ارسال فرم ضروری نیست.
 
-## Examples
+## مثال‌ها
 
-In this example the `aria-required` attribute on the element with an ID of `txtBoxInput` is set to "true" indicating that this input must be completed. Using `ariaRequired` we update the value to "false".
+در این مثال، صفت `aria-required` روی عنصری با شناسهٔ `txtBoxInput` روی `"true"` تنظیم شده است که نشان می‌دهد این ورودی باید تکمیل شود. با استفاده از `ariaRequired` مقدار را به `"false"` به‌روز می‌کنیم.
 
 ```html
-<div id="txtboxMultilineLabel">Enter the tags for the article</div>
+<div id="txtboxMultilineLabel">برچسب‌های مقاله را وارد کنید</div>
 <div
   role="textbox"
   id="txtBoxInput"
@@ -50,14 +48,14 @@ el.ariaRequired = "false";
 console.log(el.ariaRequired); // "false"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [ARIA: textbox role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role)
+- [ARIA: نقش textbox](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role)
