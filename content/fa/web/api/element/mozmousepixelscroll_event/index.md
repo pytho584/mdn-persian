@@ -1,7 +1,5 @@
 ---
 title: "Element: MozMousePixelScroll event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/MozMousePixelScroll_event"
-status: "needs-translation"
 ---
 
 ---
@@ -17,14 +15,14 @@ browser-compat: api.Element.MozMousePixelScroll_event
 
 {{APIRef("UI Events")}}{{deprecated_header}}{{Non-standard_header}}
 
-The Firefox-only, _non-standard_, and _obsolete_ **`MozMousePixelScroll`** event is fired at an {{domxref("Element")}} asynchronously when a mouse wheel or similar device is operated. It's represented by the {{ domxref("MouseScrollEvent") }} interface.
+رویداد **`MozMousePixelScroll`** که فقط در Firefox موجود است، _غیراستاندارد_ و _منسوخ_ است، به‌صورت ناهمزمان روی یک {{domxref("Element")}} هنگامی که چرخ ماوس یا وسیلهٔ مشابهی به‌کار گرفته می‌شود، صادر می‌شود. این رویداد توسط رابط {{ domxref("MouseScrollEvent") }} نمایش داده می‌شود.
 
 > [!NOTE]
-> Do not use this non-standard and obsolete event. Instead, you should always use the standard {{domxref("Element.wheel_event", "wheel")}} event.
+> از این رویداد غیراستاندارد و منسوخ استفاده نکنید. در عوض، همیشه باید از رویداد استاندارد {{domxref("Element.wheel_event", "wheel")}} استفاده کنید.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+نام رویداد را در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} به‌کار ببرید، یا یک ویژگیِ کنترل‌کنندهٔ رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("MozMousePixelScroll", (event) => { })
@@ -32,30 +30,30 @@ addEventListener("MozMousePixelScroll", (event) => { })
 onMozMousePixelScroll = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("WheelEvent")}}. Inherits from {{domxref("MouseEvent")}}, {{domxref("UIEvent")}} and {{domxref("Event")}}.
+یک {{domxref("WheelEvent")}}. از {{domxref("MouseEvent")}}، {{domxref("UIEvent")}} و {{domxref("Event")}} به ارث می‌برد.
 
 {{InheritanceDiagram("WheelEvent")}}
 
-## Getting the distance scrolled
+## دریافت فاصلهٔ پیمایش
 
-The event's {{domxref("UIEvent/detail", "detail")}} property indicates the scroll distance in terms of lines, with negative values indicating the scrolling movement is either toward the bottom or toward the right, and positive values indicating scrolling to the top or left.
+ویژگی {{domxref("UIEvent/detail", "detail")}} رویداد، فاصلهٔ پیمایش را بر حسب خط بیان می‌کند؛ مقادیر منفی نشان می‌دهند که پیمایش به سمت پایین یا راست انجام می‌شود و مقادیر مثبت نشان می‌دهند که پیمایش به سمت بالا یا چپ است.
 
-If the platform's native mouse wheel events indicate the scroll distance in terms of lines or pages, the value of `detail` is computed using that value and the line height or page width/height of the nearest ancestor scrollable element that contains the target element.
+اگر رویدادهای بومیِ چرخ ماوس در پلتفرم، فاصلهٔ پیمایش را بر حسب خط یا صفحه اعلام کنند، مقدار `detail` با استفاده از آن مقدار و ارتفاع خط یا عرض/ارتفاع صفحهٔ نزدیک‌ترین عنصرِ والدِ قابل‌پیمایش که شامل عنصر هدف است، محاسبه می‌شود.
 
 > [!NOTE]
-> On macOS, the scroll distance (and therefore the value of `detail`) is computed based on the accelerated scroll distance.
+> در macOS، فاصلهٔ پیمایش (و در نتیجه مقدار `detail`) بر اساس فاصلهٔ پیمایش شتاب‌دار محاسبه می‌شود.
 
-The value of `detail` is never 0 if the events are legitimate.
+اگر رویدادها معتبر باشند، مقدار `detail` هرگز ۰ نیست.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{ domxref("MouseScrollEvent") }}
-- Gecko's legacy line or page scroll event: `DOMMouseScroll`
-- Non-Gecko browsers' legacy mouse wheel event: `mousewheel`
-- Standardized wheel event: `wheel`
+- رویداد قدیمی پیمایش خط یا صفحه در Gecko: `DOMMouseScroll`
+- رویداد قدیمی چرخ ماوس در مرورگرهای غیر-Gecko: `mousewheel`
+- رویداد استانداردشدهٔ چرخ ماوس: `wheel`
