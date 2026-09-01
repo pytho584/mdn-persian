@@ -1,11 +1,5 @@
 ---
 title: "Element: removeAttributeNS() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/removeAttributeNS"
-status: "needs-translation"
----
-
----
-title: "Element: removeAttributeNS() method"
 short-title: removeAttributeNS()
 slug: Web/API/Element/removeAttributeNS
 page-type: web-api-instance-method
@@ -14,49 +8,47 @@ browser-compat: api.Element.removeAttributeNS
 
 {{ APIRef("DOM") }}
 
-The **`removeAttributeNS()`** method of the
-{{domxref("Element")}} interface removes the specified attribute with the specified namespace from an element.
+متد **`removeAttributeNS()`** در رابط {{domxref("Element")}}، ویژگی مشخص‌شده با فضای نام مشخص را از یک عنصر حذف می‌کند.
 
-If you are working with HTML and you don't need to specify the requested attribute as being part of a specific namespace, use the {{domxref("Element.removeAttribute()", "removeAttribute()")}} method instead.
+اگر با HTML کار می‌کنید و نیازی به مشخص کردن ویژگی درخواستی به عنوان بخشی از یک فضای نام خاص ندارید، به جای آن از متد {{domxref("Element.removeAttribute()", "removeAttribute()")}} استفاده کنید.
 
-## Syntax
+## نحو
 
 ```js-nolint
 removeAttributeNS(namespace, attrName)
 ```
 
-### Parameters
+### پارامترها
 
 - `namespace`
-  - : A string that contains the namespace of the attribute.
+  - : یک رشته که شامل فضای نام ویژگی است.
 - `attrName`
-  - : A string that names the attribute to be removed from the
-    current node.
+  - : یک رشته که نام ویژگی‌ای را مشخص می‌کند که باید از گره فعلی حذف شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
 ```js
-// Given:
+// با توجه به:
 //   <div id="div1" xmlns:special="http://www.mozilla.org/ns/specialspace"
 //     special:specialAlign="utterleft" width="200px" />
 d = document.getElementById("div1");
 d.removeAttributeNS("http://www.mozilla.org/ns/specialspace", "specialAlign");
-// Now: <div id="div1" width="200px" />
+// اکنون: <div id="div1" width="200px" />
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Element.hasAttributeNS()")}}
 - {{domxref("Element.getAttributeNS()")}}
