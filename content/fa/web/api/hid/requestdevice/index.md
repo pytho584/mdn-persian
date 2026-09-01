@@ -1,11 +1,5 @@
 ---
 title: "HID: requestDevice() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HID/requestDevice"
-status: "needs-translation"
----
-
----
-title: "HID: requestDevice() method"
 short-title: requestDevice()
 slug: Web/API/HID/requestDevice
 page-type: web-api-instance-method
@@ -16,53 +10,52 @@ browser-compat: api.HID.requestDevice
 
 {{securecontext_header}}{{APIRef("WebHID API")}}{{SeeCompatTable}}
 
-The **`requestDevice()`** method of the {{domxref("HID")}} interface requests access to a HID device.
+متد **`requestDevice()`** از رابط {{domxref("HID")}} درخواست دسترسی به یک دستگاه HID را انجام می‌دهد.
 
-The user agent will present a permission dialog including a list of connected devices, and ask the user to select and grant permission to one of these devices.
+عامل کاربر (user agent) یک گفتگوی مجوز شامل فهرستی از دستگاه‌های متصل را نمایش می‌دهد و از کاربر می‌خواهد یکی از این دستگاه‌ها را انتخاب کرده و به آن اجازهٔ دسترسی بدهد.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 requestDevice(options)
 ```
 
-### Parameters
+### پارامترها
 
 - `options`
-  - : An object containing an array of filter objects for possible devices to pair with. Each filter object can have the following properties:
+  - : شیئی که آرایه‌ای از اشیاء فیلتر برای دستگاه‌های احتمالی جهت جفت‌سازی را شامل می‌شود. هر شیء فیلتر می‌تواند ویژگی‌های زیر را داشته باشد:
     - `vendorId` {{optional_inline}}
-      - : An integer representing the vendorId of the requested HID device
+      - : یک عدد صحیح که vendorId دستگاه HID درخواستی را نشان می‌دهد.
     - `productId` {{optional_inline}}
-      - : An integer representing the productId of the requested HID device.
+      - : یک عدد صحیح که productId دستگاه HID درخواستی را نشان می‌دهد.
     - `usagePage` {{optional_inline}}
-      - : An integer representing the usage page component of the HID usage of the requested device. The usage for a top level collection is used to identify the device type.
+      - : یک عدد صحیح که مؤلفهٔ usage page از HID usage دستگاه درخواستی را نشان می‌دهد. usage مربوط به یک مجموعهٔ سطح بالا (top-level collection) برای شناسایی نوع دستگاه استفاده می‌شود.
 
-        Standard HID usage values can be found in the [HID Usage Tables](https://usb.org/document-library/hid-usage-tables-17) document
-
+        مقادیر استاندارد HID usage را می‌توان در سند [HID Usage Tables](https://usb.org/document-library/hid-usage-tables-17) یافت.
     - `usage` {{optional_inline}}
-      - : An integer representing the usage ID component of the HID usage of the requested device.
+      - : یک عدد صحیح که مؤلفهٔ usage ID از HID usage دستگاه درخواستی را نشان می‌دهد.
 
 > [!NOTE]
-> The device filters are used to narrow the list of devices presented to the user. If no filters are present, all connected devices are shown. When one or more filters are included, a device is included if any filter matches. To match a filter, all of the rules included in that filter must match.
+> فیلترهای دستگاه برای محدود کردن فهرست دستگاه‌هایی که به کاربر نمایش داده می‌شوند به کار می‌روند. اگر فیلتری وجود نداشته باشد، همهٔ دستگاه‌های متصل نمایش داده می‌شوند. وقتی یک یا چند فیلتر وجود داشته باشد، دستگاهی در فهرست قرار می‌گیرد که با حداقل یکی از فیلترها مطابقت داشته باشد. برای اینکه یک فیلتر مطابقت داشته باشد، همهٔ قواعد موجود در آن فیلتر باید مطابقت داشته باشند.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with an array of connected {{domxref("HIDDevice")}} objects that match the filters passed in.
+یک {{jsxref("Promise")}} که با آرایه‌ای از اشیاء {{domxref("HIDDevice")}} متصل که با فیلترهای ارسال‌شده مطابقت دارند، حل می‌شود.
 
-### Exceptions
+### استثناها
 
 - `SecurityError` {{domxref("DOMException")}}
-  - : Thrown if the page does not allow access to the HID feature.
+  - : اگر صفحه اجازهٔ دسترسی به قابلیت HID را ندهد، این خطا پرتاب می‌شود.
 
-## Security
+## امنیت
 
-[Transient user activation](/en-US/docs/Web/Security/Defenses/User_activation) is required. The user has to interact with the page or a UI element in order for this feature to work.
+[Transient user activation](/en-US/docs/Web/Security/Defenses/User_activation) الزامی است. کاربر باید با صفحه یا یک عنصر رابط کاربری تعامل کند تا این قابلیت کار کند.
 
-## Examples
+## مثال‌ها
 
-### Matching a device with all four filter rules
+### مطابقت یک دستگاه با هر چهار قانون فیلتر
 
-In the following example a HID device is requested that has a vendor ID of `0xABCD`, product ID of `0x1234`, usage page `0x0C` and usage ID `0x01`. Only devices that match all of these rules will be shown.
+در مثال زیر، یک دستگاه HID درخواست می‌شود که vendor ID آن `0xABCD`، product ID آن `0x1234`، usage page آن `0x0C` و usage ID آن `0x01` است. تنها دستگاه‌هایی که با همهٔ این قوانین مطابقت داشته باشند نمایش داده می‌شوند.
 
 ```js
 let requestButton = document.getElementById("request-hid-device");
@@ -92,9 +85,9 @@ requestButton.addEventListener("click", async () => {
 });
 ```
 
-### An example with two filters
+### مثالی با دو فیلتر
 
-This next example includes two filters. Devices will be shown if they match either of these filters.
+این مثال شامل دو فیلتر است. دستگاه‌هایی نشان داده می‌شوند که با یکی از این دو فیلتر مطابقت داشته باشند.
 
 ```js
 // Filter on devices with the Nintendo Switch Joy-Con USB Vendor/Product IDs.
@@ -113,10 +106,10 @@ const filters = [
 const [device] = await navigator.hid.requestDevice({ filters });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
