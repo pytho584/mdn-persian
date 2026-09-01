@@ -1,11 +1,5 @@
 ---
 title: "ElementInternals: ariaRequired property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/ariaRequired"
-status: "needs-translation"
----
-
----
-title: "ElementInternals: ariaRequired property"
 short-title: ariaRequired
 slug: Web/API/ElementInternals/ariaRequired
 page-type: web-api-instance-property
@@ -14,23 +8,23 @@ browser-compat: api.ElementInternals.ariaRequired
 
 {{APIRef("Web Components")}}
 
-The **`ariaRequired`** property of the {{domxref("ElementInternals")}} interface reflects the value of the [`aria-required`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-required) attribute, which indicates that user input is required on the element before a form may be submitted.
+ویژگی **`ariaRequired`** از رابط {{domxref("ElementInternals")}} منعکس‌کننده مقدار ویژگی [`aria-required`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-required) است که نشان می‌دهد آیا ورودی کاربر قبل از ارسال فرم الزامی است یا خیر.
 
 > [!NOTE]
-> Setting aria attributes on `ElementInternals` allows default semantics to be defined on a custom element. These may be overwritten by author-defined attributes, but ensure that default semantics are retained should the author delete those attributes, or fail to add them at all. For more information see the [Accessibility Object Model explainer](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object).
+> تنظیم ویژگی‌های aria روی `ElementInternals` امکان تعریف معناشناسی پیش‌فرض را برای یک عنصر سفارشی فراهم می‌کند. این مقادیر ممکن است توسط ویژگی‌های تعریف‌شده توسط مؤلف بازنویسی شوند، اما تضمین می‌کنند که در صورت حذف آن ویژگی‌ها توسط مؤلف یا عدم افزودن آن‌ها، معناشناسی پیش‌فرض حفظ شود. برای اطلاعات بیشتر به [توضیح‌دهنده مدل شیء دسترس‌پذیری](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object) مراجعه کنید.
 
-## Value
+## مقدار
 
-A string with one of the following values:
+رشته‌ای با یکی از مقادیر زیر:
 
 - `"true"`
-  - : Users need to provide input on an element before a form is submitted.
+  - : کاربران باید قبل از ارسال فرم، ورودی را روی عنصر ارائه دهند.
 - `"false"`
-  - : User input is not necessary to submit the form.
+  - : ورودی کاربر برای ارسال فرم ضروری نیست.
 
-## Examples
+## مثال‌ها
 
-In this example the value of `ariaRequired` is set to "true".
+در این مثال، مقدار `ariaRequired` روی «true» تنظیم شده است.
 
 ```js
 class CustomControl extends HTMLElement {
@@ -43,14 +37,14 @@ class CustomControl extends HTMLElement {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [ARIA: textbox role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role)
+- [ARIA: نقش textbox](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/textbox_role)
