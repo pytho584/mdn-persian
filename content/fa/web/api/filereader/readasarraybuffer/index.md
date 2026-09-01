@@ -1,11 +1,5 @@
 ---
 title: "FileReader: readAsArrayBuffer() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsArrayBuffer"
-status: "needs-translation"
----
-
----
-title: "FileReader: readAsArrayBuffer() method"
 short-title: readAsArrayBuffer()
 slug: Web/API/FileReader/readAsArrayBuffer
 page-type: web-api-instance-method
@@ -14,16 +8,10 @@ browser-compat: api.FileReader.readAsArrayBuffer
 
 {{APIRef("File API")}}{{AvailableInWorkers}}
 
-The **`readAsArrayBuffer()`** method of the {{domxref("FileReader")}} interface is used to start reading the
-contents of a specified {{domxref("Blob")}} or {{domxref("File")}}. When the read
-operation is finished, the {{domxref("FileReader.readyState","readyState")}} property becomes
-`DONE`, and the {{domxref("FileReader/loadend_event", "loadend")}} event is
-triggered. At that time, the {{domxref("FileReader.result","result")}} property
-contains an {{jsxref("ArrayBuffer")}} representing the file's data.
+متد **`readAsArrayBuffer()`** در رابط {{domxref("FileReader")}} برای شروع خواندن محتوای یک {{domxref("Blob")}} یا {{domxref("File")}} مشخص استفاده می‌شود. وقتی عملیات خواندن به پایان برسد، خاصیت {{domxref("FileReader.readyState","readyState")}} به مقدار `DONE` تغییر می‌کند و رویداد {{domxref("FileReader/loadend_event", "loadend")}} فعال می‌شود. در آن زمان، خاصیت {{domxref("FileReader.result","result")}} شامل یک {{jsxref("ArrayBuffer")}} است که داده‌های فایل را نشان می‌دهد.
 
 > [!NOTE]
-> The {{domxref("Blob.arrayBuffer()")}} method is a newer promise-based API to read a
-> file as an array buffer.
+> متد {{domxref("Blob.arrayBuffer()")}} یک API جدیدتر مبتنی بر Promise است که فایل را به صورت یک آرایه بافر (array buffer) می‌خواند.
 
 ## Syntax
 
@@ -34,11 +22,11 @@ readAsArrayBuffer(blob)
 ### Parameters
 
 - `blob`
-  - : The {{domxref("Blob")}} or {{domxref("File")}} from which to read.
+  - : {{domxref("Blob")}} یا {{domxref("File")}} که قرار است از آن خوانده شود.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ مقداری ({{jsxref("undefined")}}).
 
 ## Specifications
 
