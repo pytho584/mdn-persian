@@ -1,11 +1,5 @@
 ---
 title: "DocumentType: before() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DocumentType/before"
-status: "needs-translation"
----
-
----
-title: "DocumentType: before() method"
 short-title: before()
 slug: Web/API/DocumentType/before
 page-type: web-api-instance-method
@@ -14,12 +8,9 @@ browser-compat: api.DocumentType.before
 
 {{APIRef("DOM")}}
 
-The **`DocumentType.before()`** method inserts a set of
-{{domxref("Node")}} objects or strings in the children list of the
-`DocumentType`'s parent, just before the `DocumentType`.
-Strings are inserted as equivalent {{domxref("Text")}} nodes.
+متد **`DocumentType.before()`** مجموعه‌ای از اشیاء {{domxref("Node")}} یا رشته‌ها را در فهرست فرزندان والدِ `DocumentType`، دقیقاً قبل از خودِ `DocumentType` درج می‌کند. رشته‌ها به صورت گره‌های معادل {{domxref("Text")}} درج می‌شوند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 before(param1)
@@ -27,28 +18,25 @@ before(param1, param2)
 before(param1, param2, /* …, */ paramN)
 ```
 
-### Parameters
+### پارامترها
 
-- `param1`, …, `paramN`
-  - : A set of {{domxref("Node")}} objects or strings to insert.
+- `param1`، …، `paramN`
+  - : مجموعه‌ای از اشیاء {{domxref("Node")}} یا رشته‌ها برای درج.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `HierarchyRequestError` {{DOMxRef("DOMException")}}
-  - : Thrown when the node cannot be inserted at the specified point in the hierarchy.
+  - : زمانی پرتاب می‌شود که گره نتواند در نقطه مشخص‌شده در سلسله‌مراتب درج شود.
 
-## Examples
+## مثال‌ها
 
-### Adding a conditional comment
+### افزودن یک کامنت شرطی
 
-Comment nodes are valid before doctype declarations but not advisable
-given they trigger quirks mode in IE. A
-[conditional comment](https://www.sitepoint.com/internet-explorer-conditional-comments/)
-works for IE as well, though:
+گره‌های کامنت قبل از اعلان‌های doctype معتبر هستند، اما توصیه نمی‌شوند، زیرا در IE حالت quirks را فعال می‌کنند. با این حال، یک [کامنت شرطی](https://www.sitepoint.com/internet-explorer-conditional-comments/) برای IE نیز کار می‌کند:
 
 ```js
 let docType = document.implementation.createDocumentType("html", "", "");
@@ -62,15 +50,15 @@ myDoc.childNodes;
 // NodeList [<!--[if !IE]> conditional comment <![endif]-->, <!DOCTYPE html>]
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("DocumentType.after()")}}
 - {{domxref("CharacterData.before()")}}
