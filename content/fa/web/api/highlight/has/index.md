@@ -1,11 +1,5 @@
 ---
 title: "Highlight: has() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Highlight/has"
-status: "needs-translation"
----
-
----
-title: "Highlight: has() method"
 short-title: has()
 slug: Web/API/Highlight/has
 page-type: web-api-instance-method
@@ -15,28 +9,28 @@ spec-urls: https://tc39.es/ecma262/multipage/keyed-collections.html#sec-set.prot
 
 {{APIRef("CSS Custom Highlight API")}}
 
-The **`has()`** method of the {{domxref("Highlight")}} interface returns a boolean indicating whether an {{domxref("AbstractRange")}} object exists in a `Highlight` object or not.
+متد **`has()`** از رابط {{domxref("Highlight")}} یک مقدار بولی (boolean) برمی‌گرداند که نشان می‌دهد آیا یک شیء {{domxref("AbstractRange")}} در یک شیء `Highlight` وجود دارد یا خیر.
 
-`Highlight` is a {{jsxref("Set")}}-like object, so this is similar to using {{jsxref("Set.has()")}}.
+`Highlight` یک شیء شبیه به {{jsxref("Set")}} است، بنابراین این متد مشابه استفاده از {{jsxref("Set.has()")}} است.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 has(range)
 ```
 
-### Parameters
+### پارامترها
 
 - `range`
-  - : The `AbstractRange` object to test for presence in the `Highlight` object.
+  - : شیء `AbstractRange` که باید حضور آن در شیء `Highlight` بررسی شود.
 
-### Return value
+### مقدار بازگشتی
 
-Returns `true` if the specified range exists in the `Highlight` object; otherwise `false`.
+اگر بازه (range) مشخص‌شده در شیء `Highlight` وجود داشته باشد، `true` و در غیر این صورت `false` برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-The code snippet below creates two ranges, and a highlight object that contains one of them. The code then uses the `has()` method to check whether each range exists in the highlight:
+قطعه کد زیر دو بازه و یک شیء هایلایت که شامل یکی از آنهاست ایجاد می‌کند. سپس کد از متد `has()` برای بررسی وجود هر بازه در هایلایت استفاده می‌کند:
 
 ```js
 const range1 = new Range();
@@ -47,15 +41,15 @@ myHighlight.has(range1); // true
 myHighlight.has(range2); // false
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("css_custom_highlight_api", "The CSS Custom Highlight API", "", "nocode")}}
 - [CSS Custom Highlight API: The Future of Highlighting Text Ranges on the Web](https://css-tricks.com/css-custom-highlight-api-early-look/)
