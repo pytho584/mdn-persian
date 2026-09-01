@@ -1,11 +1,5 @@
 ---
 title: "HTMLMediaElement: textTracks property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/textTracks"
-status: "needs-translation"
----
-
----
-title: "HTMLMediaElement: textTracks property"
 short-title: textTracks
 slug: Web/API/HTMLMediaElement/textTracks
 page-type: web-api-instance-property
@@ -14,42 +8,23 @@ browser-compat: api.HTMLMediaElement.textTracks
 
 {{APIRef("HTML DOM")}}
 
-The read-only **`textTracks`**
-property on {{DOMxRef("HTMLMediaElement")}} objects returns a
-{{DOMxRef("TextTrackList")}} object listing all of the {{DOMxRef("TextTrack")}}
-objects representing the media element's text tracks, in the same order as in
-the list of text tracks.
+خاصیت فقط-خواندنی **`textTracks`** در اشیاء {{DOMxRef("HTMLMediaElement")}} یک شئ {{DOMxRef("TextTrackList")}} را برمی‌گرداند که تمام اشیاء {{DOMxRef("TextTrack")}} مربوط به رَک‌های متنی عنصر رسانه را به همان ترتیبی که در لیست رَک‌های متنی هستند، فهرست می‌کند.
 
-You can detect when tracks are added to and removed from an
-[`<audio>`](/en-US/docs/Web/HTML/Reference/Elements/audio) or
-[`<video>`](/en-US/docs/Web/HTML/Reference/Elements/video) element
-using the `addtrack` and `removetrack` events. However, these
-events aren't sent directly to the media element itself. Instead, they're sent to the
-track list object of the [`HTMLMediaElement`](/en-US/docs/Web/API/HTMLMediaElement)
-that corresponds to the type of track that was added to the element
+می‌توانید با استفاده از رویدادهای `addtrack` و `removetrack` تشخیص دهید که چه زمانی رَک‌هایی به یک عنصر [`<audio>`](/en-US/docs/Web/HTML/Reference/Elements/audio) یا [`<video>`](/en-US/docs/Web/HTML/Reference/Elements/video) اضافه یا از آن حذف می‌شوند. با این حال، این رویدادها مستقیماً به خود عنصر رسانه ارسال نمی‌شوند. در عوض، آنها به شئ لیست رَک‌های [`HTMLMediaElement`](/en-US/docs/Web/API/HTMLMediaElement) که مربوط به نوع رَک اضافه‌شده به عنصر است، ارسال می‌شوند.
 
-The returned list is _live_; that is, as tracks are added to and removed from
-the media element, the list's contents change dynamically. Once you have a reference to
-the list, you can monitor it for changes to detect when new text tracks are added or
-existing ones removed.
+لیست برگشتی _زنده_ است؛ یعنی با اضافه و حذف شدن رَک‌ها به عنصر رسانه، محتویات لیست به صورت پویا تغییر می‌کند. هنگامی که یک مرجع به لیست دارید، می‌توانید آن را برای تغییرات زیر نظر بگیرید تا زمانی که رَک‌های متنی جدید اضافه می‌شوند یا رَک‌های موجود حذف می‌شوند، تشخیص دهید.
 
-See [TextTrackList events](/en-US/docs/Web/API/TextTrackList#events) to learn
-more about watching for changes to a media element's track list.
+برای آشنایی بیشتر با نحوه نظارت بر تغییرات لیست رَک‌های یک عنصر رسانه، به [رویدادهای TextTrackList](/en-US/docs/Web/API/TextTrackList#events) مراجعه کنید.
 
-## Value
+## مقدار
 
-A {{DOMxRef("TextTrackList")}} object representing the list of text tracks included in the media element. The list of tracks can be accessed using `textTracks[n]` to get the n-th text track from the object's list of text tracks, or using the [`textTracks.getTrackById()`](/en-US/docs/Web/API/TextTrackList/getTrackById)
-method.
+یک شئ {{DOMxRef("TextTrackList")}} که لیست رَک‌های متنی موجود در عنصر رسانه را نشان می‌دهد. می‌توان از طریق `textTracks[n]` به n-امین رَک متنی از لیست رَک‌های شئ دسترسی داشت، یا با استفاده از متد [`textTracks.getTrackById()`](/en-US/docs/Web/API/TextTrackList/getTrackById).
 
-Each track is represented by a {{DOMxRef("TextTrack")}} object which provides
-information about the track.
+هر رَک توسط یک شئ {{DOMxRef("TextTrack")}} نمایش داده می‌شود که اطلاعاتی درباره آن رَک ارائه می‌دهد.
 
-## Examples
+## مثال‌ها
 
-We start with a
-[`<video>`](/en-US/docs/Web/HTML/Reference/Elements/video) that has
-several [`<track>`](/en-US/docs/Web/HTML/Reference/Elements/track)
-children
+ما با یک [`<video>`](/en-US/docs/Web/HTML/Reference/Elements/video) که چند فرزند [`<track>`](/en-US/docs/Web/HTML/Reference/Elements/track) دارد شروع می‌کنیم.
 
 ```html
 <video controls>
@@ -73,7 +48,7 @@ children
 </video>
 ```
 
-The `HTMLMediaElement.textTracks` returns a `TextTrackList` through which we can iterate. Here we set all three tracks to show simultaneously.
+`HTMLMediaElement.textTracks` یک `TextTrackList` برمی‌گرداند که می‌توانیم در آن پیمایش کنیم. در اینجا هر سه رَک را به طور همزمان نمایش می‌دهیم.
 
 ```js
 const tracks = document.querySelector("video").textTracks;
@@ -85,23 +60,23 @@ for (const track of tracks) {
 
 {{EmbedLiveSample("Examples", "100%", 350)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("HTMLMediaElement")}}: Interface used to define the `HTMLMediaElement.textTracks` property
+- {{domxref("HTMLMediaElement")}}: واسطی که برای تعریف خاصیت `HTMLMediaElement.textTracks` استفاده شده است
 - {{HTMLElement("audio")}}, {{HTMLElement("video")}}
 - {{DOMxRef("AudioTrack")}}, {{DOMxRef("AudioTrackList")}}
 - {{DOMxRef("VideoTrack")}}, {{DOMxRef("VideoTrackList")}}
 - [`addtrack`](/en-US/docs/Web/API/VideoTrackList/addtrack_event),
   [`change`](/en-US/docs/Web/API/VideoTrackList/change_event),
-  [`removetrack`](/en-US/docs/Web/API/VideoTrackList/removetrack_event): AudioTrackList events
+  [`removetrack`](/en-US/docs/Web/API/VideoTrackList/removetrack_event): رویدادهای AudioTrackList
 - [`addtrack`](/en-US/docs/Web/API/VideoTrackList/addtrack_event),
   [`change`](/en-US/docs/Web/API/VideoTrackList/change_event),
-  [`removetrack`](/en-US/docs/Web/API/VideoTrackList/removetrack_event): VideoTrackList events
+  [`removetrack`](/en-US/docs/Web/API/VideoTrackList/removetrack_event): رویدادهای VideoTrackList
