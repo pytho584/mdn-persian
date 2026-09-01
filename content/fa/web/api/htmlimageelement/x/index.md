@@ -1,11 +1,5 @@
 ---
 title: "HTMLImageElement: x property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/x"
-status: "needs-translation"
----
-
----
-title: "HTMLImageElement: x property"
 short-title: x
 slug: Web/API/HTMLImageElement/x
 page-type: web-api-instance-property
@@ -14,19 +8,19 @@ browser-compat: api.HTMLImageElement.x
 
 {{APIRef("HTML DOM")}}
 
-The read-only **`x`** property of the {{domxref("HTMLImageElement")}} interface indicates the x-coordinate of the {{HTMLElement("img")}} element's left border edge relative to the root element's origin.
+ویژگی فقط خواندنی **`x`** از رابط {{domxref("HTMLImageElement")}}، مختصات x لبه چپ حاشیه عنصر {{HTMLElement("img")}} را نسبت به مبدأ عنصر ریشه نشان می‌دهد.
 
-## Value
+## مقدار
 
-An integer value indicating the distance in pixels from the left edge of the element's nearest root element to the left edge of the {{HTMLElement("img")}} element's border box. The nearest root element is the outermost {{HTMLElement("html")}} element that contains the image. If the image is in an {{HTMLElement("iframe")}}, its `x` is relative to that frame.
+یک مقدار صحیح (integer) که فاصله را بر حسب پیکسل از لبه چپ نزدیکترین عنصر ریشه تا لبه چپ جعبه حاشیه (border box) عنصر {{HTMLElement("img")}} مشخص می‌کند. نزدیکترین عنصر ریشه، بیرونی‌ترین عنصر {{HTMLElement("html")}} است که تصویر را در خود دارد. اگر تصویر در یک {{HTMLElement("iframe")}} قرار داشته باشد، `x` آن نسبت به آن فریم محاسبه می‌شود.
 
-In the diagram below, the left border edge is the left edge of the blue padding area. So the value returned by `x` would be the distance from that point to the left edge of the content area.
+در نمودار زیر، لبه چپ حاشیه، همان لبه چپ ناحیه آبی padding است. بنابراین مقدار بازگشتی توسط `x`، فاصله از آن نقطه تا لبه چپ ناحیه محتوا خواهد بود.
 
-![Diagram showing the relationships between the various boxes associated with an element](boxmodel-3.png)
+![نموداری که روابط بین جعبه‌های مختلف مرتبط با یک عنصر را نشان می‌دهد](boxmodel-3.png)
 
-## Examples
+## مثال‌ها
 
-The example below demonstrates the use of the `HTMLImageElement` properties `x` and {{domxref("HTMLImageElement.y", "y")}}.
+مثال زیر استفاده از ویژگی‌های `x` و {{domxref("HTMLImageElement.y", "y")}} را در `HTMLImageElement` نشان می‌دهد.
 
 ### HTML
 
@@ -37,7 +31,7 @@ The example below demonstrates the use of the `HTMLImageElement` properties `x` 
 
 ### JavaScript
 
-The JavaScript code that fetches the image and looks up its `x` and `y` values is below.
+کد جاوااسکریپت که تصویر را دریافت کرده و مقادیر `x` و `y` آن را بررسی می‌کند در زیر آورده شده است.
 
 ```js
 const logBox = document.querySelector("pre");
@@ -48,15 +42,15 @@ const log = (msg) => {
 
 const image = document.getElementById("avatar");
 
-log(`Image's global X: ${image.x}`);
-log(`Image's global Y: ${image.y}`);
+log(`مختصات X تصویر: ${image.x}`);
+log(`مختصات Y تصویر: ${image.y}`);
 ```
 
-Finally, we can look up and display the values of the `HTMLImageElement`'s `x` and `y` properties.
+در نهایت، می‌توانیم مقادیر ویژگی‌های `x` و `y` این `HTMLImageElement` را بررسی و نمایش دهیم.
 
 ### CSS
 
-The CSS defining the image size and its position:
+CSS که اندازه و موقعیت تصویر را مشخص می‌کند:
 
 ```css
 img {
@@ -66,20 +60,20 @@ img {
 }
 ```
 
-### Result
+### نتیجه
 
-The resulting image looks like this:
+تصویر نهایی به این شکل خواهد بود:
 
 {{EmbedLiveSample("Example", 600, 200)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLImageElement.y")}}
