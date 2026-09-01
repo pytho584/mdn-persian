@@ -1,7 +1,5 @@
 ---
 title: "Document: hasPrivateToken() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/hasPrivateToken"
-status: "needs-translation"
 ---
 
 ---
@@ -16,7 +14,7 @@ browser-compat: api.Document.hasPrivateToken
 
 {{APIRef("Storage Access API")}}{{SeeCompatTable}}
 
-The **`hasPrivateToken()`** method of the {{domxref("Document")}} interface returns a promise that fulfills with a boolean indicating whether the browser has a [private state token](/en-US/docs/Web/API/Private_State_Token_API) stored from a particular issuer server.
+متد **`hasPrivateToken()`** از رابط {{domxref("Document")}} یک وعده (Promise) برمی‌گرداند که با یک مقدار بولی (boolean) انجام می‌شود و نشان می‌دهد که آیا مرورگر یک [private state token](/en-US/docs/Web/API/Private_State_Token_API) از یک سرور صادرکننده خاص ذخیره کرده است یا خیر.
 
 ## Syntax
 
@@ -24,27 +22,27 @@ The **`hasPrivateToken()`** method of the {{domxref("Document")}} interface retu
 hasPrivateToken(issuer)
 ```
 
-### Parameters
+### پارامترها
 
 - `issuer`
-  - : A string representing the URL of an issuer server.
+  - : یک رشته (string) که نشانی اینترنتی (URL) سرور صادرکننده را نشان می‌دهد.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with a boolean value indicating whether the browser has a private state token stored from the specified issuer server.
+یک {{jsxref("Promise")}} که با یک مقدار بولی (boolean) حل می‌شود و نشان می‌دهد که آیا مرورگر یک private state token از سرور صادرکننده مشخص شده ذخیره کرده است یا خیر.
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the current {{domxref("Document")}} is not yet active.
+  - : اگر {{domxref("Document")}} فعلی هنوز فعال نباشد، پرتاب می‌شود.
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if:
-    - The current {{domxref("Document")}} is not loaded in a [secure context](/en-US/docs/Glossary/Secure_Context).
-    - The maximum number of issuers per top level [origin](/en-US/docs/Glossary/Origin) (two) has been exceeded.
+  - : اگر یکی از شرایط زیر برقرار باشد، پرتاب می‌شود:
+    - {{domxref("Document")}} فعلی در یک [secure context (زمینه امن)](/en-US/docs/Glossary/Secure_Context) بارگذاری نشده باشد.
+    - حداکثر تعداد صادرکنندگان به ازای هر [origin (مبدا)](/en-US/docs/Glossary/Origin) سطح بالا (دو) بیش از حد مجاز شده باشد.
 - `TypeError` {{domxref("DOMException")}}
-  - : Thrown if `issuer` is not a valid URL.
+  - : اگر `issuer` یک URL معتبر نباشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
 ```js
 const hasToken = await Document.hasPrivateToken(`issuer.example`);
@@ -62,14 +60,14 @@ if (!hasToken) {
 }
 ```
 
-## Specifications
+## مشخصات فنی
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Private State Token API](/en-US/docs/Web/API/Private_State_Token_API)
