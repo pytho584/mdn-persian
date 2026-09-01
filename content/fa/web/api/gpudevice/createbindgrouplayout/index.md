@@ -1,11 +1,5 @@
 ---
 title: "GPUDevice: createBindGroupLayout() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createBindGroupLayout"
-status: "needs-translation"
----
-
----
-title: "GPUDevice: createBindGroupLayout() method"
 short-title: createBindGroupLayout()
 slug: Web/API/GPUDevice/createBindGroupLayout
 page-type: web-api-instance-method
@@ -14,142 +8,141 @@ browser-compat: api.GPUDevice.createBindGroupLayout
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`createBindGroupLayout()`** method of the
-{{domxref("GPUDevice")}} interface creates a {{domxref("GPUBindGroupLayout")}} that defines the structure and purpose of related GPU resources such as buffers that will be used in a pipeline, and is used as a template when creating {{domxref("GPUBindGroup")}}s.
+متد **`createBindGroupLayout()`** از رابط {{domxref("GPUDevice")}} یک {{domxref("GPUBindGroupLayout")}} می‌سازد که ساختار و هدف منابع GPU مرتبط، مانند بافرهایی که در یک پایپلاین استفاده خواهند شد، را تعریف می‌کند و هنگام ایجاد {{domxref("GPUBindGroup")}}ها به‌عنوان قالب استفاده می‌شود.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 createBindGroupLayout(descriptor)
 ```
 
-### Parameters
+### پارامترها
 
 - `descriptor`
-  - : An object containing the following properties:
+  - : یک شیء شامل ویژگی‌های زیر:
     - `entries`
-      - : An array of [entry objects](#entry_objects), each one of which describes a single shader resource binding to be included in the {{domxref("GPUBindGroupLayout")}}. Each entry will correspond to an entry defined in a {{domxref("GPUBindGroup")}} (created via a {{domxref("GPUDevice.createBindGroup()")}} call) that uses this {{domxref("GPUBindGroupLayout")}} object as a template.
+      - : آرایه‌ای از [شیءهای ورودی](#entry_objects) که هر کدام یک اتصال (binding) منبع شیدر را توصیف می‌کند که قرار است در {{domxref("GPUBindGroupLayout")}} گنجانده شود. هر ورودی با یک ورودی تعریف‌شده در {{domxref("GPUBindGroup")}} (که از طریق یک فراخوانی {{domxref("GPUDevice.createBindGroup()")}} ایجاد شده) متناظر خواهد بود و از این شیء {{domxref("GPUBindGroupLayout")}} به‌عنوان قالب استفاده می‌کند.
     - `label` {{optional_inline}}
-      - : A string providing a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+      - : رشته‌ای که برچسبی برای شناسایی شیء فراهم می‌کند، برای مثال در پیام‌های {{domxref("GPUError")}} یا هشدارهای کنسول.
 
-### Entry objects
+### شیءهای ورودی
 
-An entry object includes the following properties:
+یک شیء ورودی شامل ویژگی‌های زیر است:
 
 - `binding`
-  - : A number representing a unique identifier for this particular entry, which matches the `binding` value of a corresponding {{domxref("GPUBindGroup")}} entry. In addition, it matches the `n` index value of the corresponding [`@binding(n)`](https://gpuweb.github.io/gpuweb/wgsl/#attribute-binding) attribute in the shader ({{domxref("GPUShaderModule")}}) used in the related pipeline.
+  - : عددی که شناسه‌ای یکتا برای این ورودی خاص است و با مقدار `binding` یک ورودی متناظر در {{domxref("GPUBindGroup")}} مطابقت دارد. همچنین با مقدار اندیس `n` صفت [`@binding(n)`](https://gpuweb.github.io/gpuweb/wgsl/#attribute-binding) در شیدر ({{domxref("GPUShaderModule")}}) مورد استفاده در پایپلاین مرتبط مطابقت دارد.
 - `visibility`
-  - : One or more {{glossary("Bitwise_flags", "bitwise flags")}} defining the shader stages that a {{domxref("GPUBindGroup")}} entry corresponding to this entry will be visible to. Possible values are:
-    - `GPUShaderStage.COMPUTE`: The bind group entry will be accessible to compute shaders.
-    - `GPUShaderStage.FRAGMENT`: The bind group entry will be accessible to fragment shaders.
-    - `GPUShaderStage.VERTEX`: The bind group entry will be accessible to vertex shaders.
+  - : یک یا چند {{glossary("Bitwise_flags", "bitwise flags")}} که مرحله‌های شیدری را تعریف می‌کنند که یک ورودی {{domxref("GPUBindGroup")}} متناظر با این ورودی در آن‌ها قابل مشاهده خواهد بود. مقادیر ممکن عبارت‌اند از:
+    - `GPUShaderStage.COMPUTE`: ورودی bind group برای شیدرهای محاسباتی قابل دسترسی خواهد بود.
+    - `GPUShaderStage.FRAGMENT`: ورودی bind group برای شیدرهای فرگمنت قابل دسترسی خواهد بود.
+    - `GPUShaderStage.VERTEX`: ورودی bind group برای شیدرهای رأس قابل دسترسی خواهد بود.
 
-    Note that multiple stages can be specified by separating values with [bitwise OR](/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_OR), for example: `GPUShaderStage.FRAGMENT | GPUShaderStage.VERTEX`.
+    توجه داشته باشید که می‌توان چند مرحله را با جدا کردن مقادیر با [عملگر OR بیتی](/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_OR) مشخص کرد، برای مثال: `GPUShaderStage.FRAGMENT | GPUShaderStage.VERTEX`.
 
-- "Resource layout object"
-  - : An object that defines the required binding resource type and structure of the {{domxref("GPUBindGroup")}} entry corresponding to this entry. This property can be one of `buffer`, `externalTexture`, `sampler`, `storageTexture`, or `texture`, the object structures of which are described in the next section.
+- "شیء طرح‌بندی منبع (resource layout object)"
+  - : شیئی که نوع منبع اتصال الزامی و ساختار ورودی {{domxref("GPUBindGroup")}} متناظر با این ورودی را تعریف می‌کند. این ویژگی می‌تواند یکی از موارد `buffer`، `externalTexture`، `sampler`، `storageTexture` یا `texture` باشد که ساختار اشیاء آن‌ها در بخش بعد توضیح داده شده است.
 
-### Resource layout objects
+### شیءهای طرح‌بندی منبع
 
-The resource layout object can be one of the following (see also {{domxref("GPUDevice.createBindGroup()")}} for details of how the required resources for each entry are structured):
+شیء طرح‌بندی منبع می‌تواند یکی از موارد زیر باشد (همچنین به {{domxref("GPUDevice.createBindGroup()")}} مراجعه کنید تا جزئیات مربوط به ساختار منابع موردنیاز برای هر ورودی را مشاهده کنید):
 
-- `buffer`: Indicates that the corresponding {{domxref("GPUBindGroup")}} entry will be a `GPUBufferBinding` object, which contains a {{domxref("GPUBuffer")}} plus `offset` and `size` values. A `buffer` resource layout object can contain the following properties:
+- `buffer`: نشان می‌دهد که ورودی متناظر {{domxref("GPUBindGroup")}} یک شیء `GPUBufferBinding` خواهد بود، که شامل یک {{domxref("GPUBuffer")}} به همراه مقادیر `offset` و `size` است. یک شیء طرح‌بندی منبع `buffer` می‌تواند شامل ویژگی‌های زیر باشد:
   - `hasDynamicOffset` {{optional_inline}}
-    - : A boolean. If set to `true`, it indicates that this binding requires a dynamic offset, for example as set during a {{domxref("GPURenderPassEncoder.setBindGroup()")}} call. If omitted, `hasDynamicOffset` defaults to `false`.
+    - : یک مقدار بولین. اگر برابر با `true` باشد، نشان می‌دهد که این اتصال به یک آفست پویا (dynamic offset) نیاز دارد، مثلاً همان‌طور که در طی یک فراخوانی {{domxref("GPURenderPassEncoder.setBindGroup()")}} تنظیم می‌شود. اگر حذف شود، `hasDynamicOffset` به‌صورت پیش‌فرض `false` است.
 
   - `minBindingSize` {{optional_inline}}
-    - : A number indicating the minimum allowed size, in bytes, of bound buffers. If omitted, `minBindingSize` defaults to 0. If the value is 0, minimum buffer size is ignored during pipeline creation and is instead validated by issued draw/dispatch commands.
+    - : عددی که حداقل اندازه مجاز بافرهای متصل را بر حسب بایت نشان می‌دهد. اگر حذف شود، `minBindingSize` به‌صورت پیش‌فرض 0 است. اگر مقدار 0 باشد، حداقل اندازه بافر در هنگام ایجاد پایپلاین نادیده گرفته می‌شود و در عوض توسط دستورهای draw/dispatch صادرشده اعتبارسنجی می‌شود.
 
   - `type` {{optional_inline}}
-    - : An enumerated value specifying the required type for {{domxref("GPUBuffer")}}s bound to this binding (see {{domxref("GPUDevice.createBuffer()")}} for more information on buffer types). Possible values are:
-      - `"read-only-storage"`: A read-only buffer created with a `usage` of `GPUBufferUsage.STORAGE`.
-      - `"storage"`: A writable buffer created with a `usage` of `GPUBufferUsage.STORAGE`.
-      - `"uniform"`: A buffer created with a `usage` of `GPUBufferUsage.UNIFORM`.
+    - : یک مقدار شمارشی که نوع موردنیاز برای {{domxref("GPUBuffer")}}های متصل به این اتصال را مشخص می‌کند (برای اطلاعات بیشتر درباره انواع بافر به {{domxref("GPUDevice.createBuffer()")}} مراجعه کنید). مقادیر ممکن عبارت‌اند از:
+      - `"read-only-storage"`: یک بافر فقط‌خواندنی که با `usage` برابر با `GPUBufferUsage.STORAGE` ساخته شده است.
+      - `"storage"`: یک بافر قابل‌نوشتن که با `usage` برابر با `GPUBufferUsage.STORAGE` ساخته شده است.
+      - `"uniform"`: یک بافر که با `usage` برابر با `GPUBufferUsage.UNIFORM` ساخته شده است.
 
-      If omitted, `type` defaults to `"uniform"`.
+      اگر حذف شود، `type` به‌صورت پیش‌فرض `"uniform"` است.
 
-- `externalTexture`: Indicates that the corresponding {{domxref("GPUBindGroup")}} entry will be a {{domxref("GPUExternalTexture")}} object. An `externalTexture` resource layout object is empty — `{}`.
+- `externalTexture`: نشان می‌دهد که ورودی متناظر {{domxref("GPUBindGroup")}} یک شیء {{domxref("GPUExternalTexture")}} خواهد بود. یک شیء طرح‌بندی منبع `externalTexture` خالی است — `{}`.
 
-- `sampler`: Indicates that the corresponding {{domxref("GPUBindGroup")}} entry will be a {{domxref("GPUSampler")}} object. A `sampler` resource layout object can contain the following properties:
+- `sampler`: نشان می‌دهد که ورودی متناظر {{domxref("GPUBindGroup")}} یک شیء {{domxref("GPUSampler")}} خواهد بود. یک شیء طرح‌بندی منبع `sampler` می‌تواند شامل ویژگی‌های زیر باشد:
   - `type` {{optional_inline}}
-    - : An enumerated value specifying the required type for {{domxref("GPUSampler")}}s bound to this binding (see {{domxref("GPUDevice.createSampler()")}} for more information on sampler types). Possible values are:
-      - `"comparison"`: A comparison sampler.
-      - `"filtering"`: A filtering sampler.
-      - `"non-filtering"`: A non-filtering sampler.
+    - : یک مقدار شمارشی که نوع موردنیاز برای {{domxref("GPUSampler")}}های متصل به این اتصال را مشخص می‌کند (برای اطلاعات بیشتر درباره انواع سمپلر به {{domxref("GPUDevice.createSampler()")}} مراجعه کنید). مقادیر ممکن عبارت‌اند از:
+      - `"comparison"`: یک سمپلر مقایسه‌ای.
+      - `"filtering"`: یک سمپلر فیلتردار.
+      - `"non-filtering"`: یک سمپلر غیرفیلتردار.
 
-      If omitted, `type` defaults to `"filtering"`.
+      اگر حذف شود، `type` به‌صورت پیش‌فرض `"filtering"` است.
 
-- `storageTexture`: Indicates that the corresponding {{domxref("GPUBindGroup")}} entry will be a {{domxref("GPUTextureView")}} object. A `storageTexture` resource layout object can contain the following properties:
+- `storageTexture`: نشان می‌دهد که ورودی متناظر {{domxref("GPUBindGroup")}} یک شیء {{domxref("GPUTextureView")}} خواهد بود. یک شیء طرح‌بندی منبع `storageTexture` می‌تواند شامل ویژگی‌های زیر باشد:
   - `access` {{optional_inline}}
-    - : An enumerated value specifying whether texture views bound to this binding will be bound for read and/or write access. Possible values are:
-      - `"read-only"`: Enables WGSL code to read storage textures.
-      - `"read-write"`: Enables WGSL code to read and write to storage textures.
-      - `"write-only"`: The default value; enables WGSL code to write to storage textures.
+    - : یک مقدار شمارشی که مشخص می‌کند آیا نمای بافت‌های متصل به این اتصال برای دسترسی خواندن و/یا نوشتن متصل خواهند شد. مقادیر ممکن عبارت‌اند از:
+      - `"read-only"`: به کدهای WGSL اجازه می‌دهد تا بافت‌های ذخیره‌سازی (storage textures) را بخوانند.
+      - `"read-write"`: به کدهای WGSL اجازه می‌دهد تا بافت‌های ذخیره‌سازی را بخوانند و بنویسند.
+      - `"write-only"`: مقدار پیش‌فرض؛ به کدهای WGSL اجازه می‌دهد تا در بافت‌های ذخیره‌سازی بنویسند.
 
-      The `"read-only"` and `"read-write"` values can only be used if the [`"readonly_and_readwrite_storage_textures"`](/en-US/docs/Web/API/WGSLLanguageFeatures#readonly_and_readwrite_storage_textures) WGSL language extension is present in {{domxref("WGSLLanguageFeatures")}}. If this is not the case, a {{domxref("GPUValidationError")}} is generated.
+      مقادیر `"read-only"` و `"read-write"` فقط در صورتی قابل استفاده هستند که افزونه زبان WGSL [`"readonly_and_readwrite_storage_textures"`](/en-US/docs/Web/API/WGSLLanguageFeatures#readonly_and_readwrite_storage_textures) در {{domxref("WGSLLanguageFeatures")}} موجود باشد. اگر این‌طور نباشد، یک {{domxref("GPUValidationError")}} ایجاد می‌شود.
 
   - `format`
-    - : An enumerated value specifying the required format of texture views bound to this binding. See the specification's [Texture Formats](https://gpuweb.github.io/gpuweb/#enumdef-gputextureformat) section for all the available `format` values. Also see [Tier 1 and Tier 2 texture formats](/en-US/docs/Web/API/GPUDevice/createTexture#tier_1_and_tier_2_texture_formats).
+    - : یک مقدار شمارشی که قالب موردنیاز برای نمای بافت‌های متصل به این اتصال را مشخص می‌کند. برای مشاهده همه مقادیر `format` موجود به بخش [Texture Formats](https://gpuweb.github.io/gpuweb/#enumdef-gputextureformat) در مشخصات مراجعه کنید. همچنین [قالب‌های بافت Tier 1 و Tier 2](/en-US/docs/Web/API/GPUDevice/createTexture#tier_1_and_tier_2_texture_formats) را ببینید.
       > [!NOTE]
-      > Use of the `bgra8unorm` format for read-only storage textures is deprecated. The specification explicitly disallows this, as this format is intended for write-only access and is not portable. Any browser support for this combination is considered a bug.
+      > استفاده از قالب `bgra8unorm` برای بافت‌های ذخیره‌سازی فقط‌خواندنی منسوخ (deprecated) شده است. مشخصات به‌صراحت این کار را منع می‌کند، زیرا این قالب برای دسترسی فقط‌نوشتن در نظر گرفته شده است و قابل حمل نیست. هرگونه پشتیبانی مرورگر از این ترکیب به‌عنوان یک اشکال در نظر گرفته می‌شود.
   - `viewDimension` {{optional_inline}}
-    - : An enumerated value specifying the required dimension for texture views bound to this binding. Possible values are:
-      - `"1d"`: The texture is viewed as a one-dimensional image.
-      - `"2d"`: The texture is viewed as a single two-dimensional image.
-      - `"2d-array"`: The texture is viewed as an array of two-dimensional images.
-      - `"cube"`: The texture is viewed as a cubemap. The view has 6 array layers, corresponding to the `[+X, -X, +Y, -Y, +Z, -Z]` faces of the cube. Sampling is done seamlessly across the faces of the cubemap.
-      - `"cube-array"`: The texture is viewed as a packed array of `n` cubemaps, each with 6 array layers corresponding to the `[+X, -X, +Y, -Y, +Z, -Z]` faces of the cube. Sampling is done seamlessly across the faces of the cubemaps.
-      - `"3d"`: The texture is viewed as a three-dimensional image.
+    - : یک مقدار شمارشی که بعد (dimension) موردنیاز برای نمای بافت‌های متصل به این اتصال را مشخص می‌کند. مقادیر ممکن عبارت‌اند از:
+      - `"1d"`: بافت به‌عنوان یک تصویر یک‌بعدی دیده می‌شود.
+      - `"2d"`: بافت به‌عنوان یک تصویر دو بعدی دیده می‌شود.
+      - `"2d-array"`: بافت به‌عنوان آرایه‌ای از تصاویر دو بعدی دیده می‌شود.
+      - `"cube"`: بافت به‌عنوان یک نقشه مکعبی (cubemap) دیده می‌شود. نمای شامل ۶ لایه آرایه‌ای است که با وجوه `[+X, -X, +Y, -Y, +Z, -Z]` مکعب متناظرند. نمونه‌برداری به‌صورت یکپارچه در سراسر وجوه نقشه مکعبی انجام می‌شود.
+      - `"cube-array"`: بافت به‌عنوان آرایه‌ای فشرده از `n` نقشه مکعبی دیده می‌شود که هر کدام ۶ لایه آرایه‌ای متناظر با وجوه `[+X, -X, +Y, -Y, +Z, -Z]` مکعب دارند. نمونه‌برداری به‌صورت یکپارچه در سراسر وجوه نقشه‌های مکعبی انجام می‌شود.
+      - `"3d"`: بافت به‌عنوان یک تصویر سه‌بعدی دیده می‌شود.
 
-      If omitted, `viewDimension` defaults to `"2d"`.
+      اگر حذف شود، `viewDimension` به‌صورت پیش‌فرض `"2d"` است.
 
-- `texture`: Indicates that the corresponding {{domxref("GPUBindGroup")}} entry will be a {{domxref("GPUTextureView")}} object. A `texture` resource layout object can contain the following properties:
+- `texture`: نشان می‌دهد که ورودی متناظر {{domxref("GPUBindGroup")}} یک شیء {{domxref("GPUTextureView")}} خواهد بود. یک شیء طرح‌بندی منبع `texture` می‌تواند شامل ویژگی‌های زیر باشد:
   - `multisampled` {{optional_inline}}
-    - : A boolean. A value of `true` indicates that texture views bound to this binding must be multi-sampled. If omitted, `multisampled` defaults to `false`.
+    - : یک مقدار بولین. مقدار `true` نشان می‌دهد که نمای بافت‌های متصل به این اتصال باید چندنمونه‌ای (multi-sampled) باشند. اگر حذف شود، `multisampled` به‌صورت پیش‌فرض `false` است.
 
   - `sampleType` {{optional_inline}}
-    - : An enumerated value specifying the sample type required for texture views bound to this binding (see {{domxref("GPUDevice.createTexture()")}} for more information on texture view types). Possible values are:
+    - : یک مقدار شمارشی که نوع نمونه موردنیاز برای نمای بافت‌های متصل به این اتصال را مشخص می‌کند (برای اطلاعات بیشتر درباره انواع نمای بافت به {{domxref("GPUDevice.createTexture()")}} مراجعه کنید). مقادیر ممکن عبارت‌اند از:
       - `"depth"`
       - `"float"`
       - `"sint"`
       - `"uint"`
       - `"unfilterable-float"`
 
-      If omitted, `sampleType` defaults to `"float"`.
+      اگر حذف شود، `sampleType` به‌صورت پیش‌فرض `"float"` است.
 
   - `viewDimension` {{optional_inline}}
-    - : An enumerated value specifying the required dimension for texture views bound to this binding. Possible and default values are the same as for `storageTexture` resource layout objects — see above.
+    - : یک مقدار شمارشی که بعد موردنیاز برای نمای بافت‌های متصل به این اتصال را مشخص می‌کند. مقادیر ممکن و پیش‌فرض مانند شیء طرح‌بندی منبع `storageTexture` است — به بالا مراجعه کنید.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("GPUBindGroupLayout")}} object instance.
+یک نمونه از شیء {{domxref("GPUBindGroupLayout")}}.
 
-### Validation
+### اعتبارسنجی
 
-The following criteria must be met when calling **`createBindGroupLayout()`**, otherwise a {{domxref("GPUValidationError")}} is generated and an invalid {{domxref("GPUBindGroupLayout")}} object is returned:
+هنگام فراخوانی **`createBindGroupLayout()`** معیارهای زیر باید برقرار باشند؛ در غیر این صورت یک {{domxref("GPUValidationError")}} ایجاد می‌شود و یک شیء نامعتبر {{domxref("GPUBindGroupLayout")}} بازگردانده می‌شود:
 
-- Each entry's `binding` value is unique.
-- Each entry's `binding` value is less than the {{domxref("GPUDevice")}}'s `maxBindingsPerBindGroup` {{domxref("GPUSupportedLimits", "limit", "", "nocode")}}.
-- The number of entries does not exceed the [binding slot limits](https://gpuweb.github.io/gpuweb/#exceeds-the-binding-slot-limits).
-- Only 1 resource layout object is defined per entry.
-- If an entry's `visibility` includes `GPUShaderStage.VERTEX`:
-  - If its resource layout object is a `buffer`, its `type` is not `"storage"`.
-  - Its resource layout object is not a `storageTexture`.
-- If an entry's resource layout object is a `texture`, and its `multisampled` value is `true`:
-  - Its `viewDimension` is `"2d"`.
-  - Its `sampleType` is not `"float"`.
-- If an entry's resource layout object is a `storageTexture`:
-  - Its `viewDimension` is not `"cube"` or `"cube-array"`.
-  - Its `format` is a format that supports storage usage.
+- مقدار `binding` هر ورودی یکتا است.
+- مقدار `binding` هر ورودی کمتر از {{domxref("GPUSupportedLimits", "limit", "", "nocode")}} مربوط به `maxBindingsPerBindGroup` در {{domxref("GPUDevice")}} است.
+- تعداد ورودی‌ها از [محدودیت‌های اسلات binding](https://gpuweb.github.io/gpuweb/#exceeds-the-binding-slot-limits) تجاوز نمی‌کند.
+- فقط ۱ شیء طرح‌بندی منبع برای هر ورودی تعریف شده است.
+- اگر `visibility` یک ورودی شامل `GPUShaderStage.VERTEX` باشد:
+  - اگر شیء طرح‌بندی منبع آن یک `buffer` است، `type` آن `"storage"` نباشد.
+  - شیء طرح‌بندی منبع آن یک `storageTexture` نباشد.
+- اگر شیء طرح‌بندی منبع یک ورودی یک `texture` است و مقدار `multisampled` آن `true` است:
+  - `viewDimension` آن `"2d"` باشد.
+  - `sampleType` آن `"float"` نباشد.
+- اگر شیء طرح‌بندی منبع یک ورودی یک `storageTexture` است:
+  - `viewDimension` آن `"cube"` یا `"cube-array"` نباشد.
+  - `format` آن قالبی باشد که از استفاده ذخیره‌سازی پشتیبانی می‌کند.
 
-## Examples
+## مثال‌ها
 
 > [!NOTE]
-> The [WebGPU samples](https://webgpu.github.io/webgpu-samples/) feature many more examples.
+> [نمونه‌های WebGPU](https://webgpu.github.io/webgpu-samples/) شامل مثال‌های بسیار بیشتری هستند.
 
-### Basic example
+### مثال پایه
 
-Our [basic compute demo](https://mdn.github.io/dom-examples/webgpu-compute-demo/) shows an example of creating a bind group layout and then using that as a template when creating a bind group.
+[دموی محاسبات پایه](https://mdn.github.io/dom-examples/webgpu-compute-demo/) ما نمونه‌ای از ایجاد یک bind group layout و سپس استفاده از آن به‌عنوان قالب هنگام ایجاد یک bind group را نشان می‌دهد.
 
 ```js
 // …
@@ -181,14 +174,14 @@ const bindGroup = device.createBindGroup({
 // …
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [رابط WebGPU API](/en-US/docs/Web/API/WebGPU_API)
