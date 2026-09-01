@@ -1,11 +1,5 @@
 ---
 title: "CustomEvent: initCustomEvent() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/initCustomEvent"
-status: "needs-translation"
----
-
----
-title: "CustomEvent: initCustomEvent() method"
 short-title: initCustomEvent()
 slug: Web/API/CustomEvent/initCustomEvent
 page-type: web-api-instance-method
@@ -16,50 +10,49 @@ browser-compat: api.CustomEvent.initCustomEvent
 
 {{APIRef("DOM")}}{{Deprecated_header}}{{AvailableInWorkers}}
 
-The **`CustomEvent.initCustomEvent()`** method initializes a {{domxref("CustomEvent")}} object.
-If the event has already been dispatched, this method does nothing.
+متد **`CustomEvent.initCustomEvent()`** یک شیء {{domxref("CustomEvent")}} را مقداردهی اولیه می‌کند.
+اگر رویداد قبلاً ارسال شده باشد، این متد هیچ کاری انجام نمی‌دهد.
 
-Events initialized in this way must have been created with the {{domxref("Document.createEvent()")}} method.
-This method must be called to set the event before it is dispatched using {{ domxref("EventTarget.dispatchEvent()") }}.
-Once dispatched, it doesn't do anything anymore.
+رویدادهایی که به این روش مقداردهی می‌شوند باید با متد {{domxref("Document.createEvent()")}} ساخته شده باشند.
+این متد باید قبل از ارسال رویداد با استفاده از {{ domxref("EventTarget.dispatchEvent()") }} فراخوانی شود تا رویداد تنظیم گردد.
+پس از ارسال، دیگر هیچ کاری انجام نمی‌دهد.
 
 > [!NOTE]
-> **Do not use this method anymore, as it is deprecated.**
+> **دیگر از این متد استفاده نکنید، زیرا منسوخ شده است.**
 >
-> Rather than using the feature, instead use specific event constructors, like {{domxref("CustomEvent.CustomEvent", "CustomEvent()")}}.
-> The section on [Creating and dispatching events](/en-US/docs/Web/API/Document_Object_Model/Events#creating_and_dispatching_events) gives more information about the way to use those.
+> به‌جای استفاده از این قابلیت، از سازنده‌های اختصاصی رویداد مانند {{domxref("CustomEvent.CustomEvent", "CustomEvent()")}} استفاده کنید.
+> بخش [ایجاد و ارسال رویدادها](/en-US/docs/Web/API/Document_Object_Model/Events#creating_and_dispatching_events) اطلاعات بیشتری درباره نحوه استفاده از آن‌ها ارائه می‌دهد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 initCustomEvent(type, canBubble, cancelable, detail)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string containing the name of the event.
+  - : رشته‌ای شامل نام رویداد.
 - `canBubble`
-  - : A boolean value indicating whether the event bubbles up through the DOM
-    or not.
+  - : یک مقدار بولین که نشان می‌دهد آیا رویداد در DOM به سمت بالا منتشر می‌شود یا نه.
 - `cancelable`
-  - : A boolean value indicating whether the event is cancelable.
+  - : یک مقدار بولین که نشان می‌دهد آیا رویداد قابل لغو است یا نه.
 - `detail`
-  - : Any data that will be available to the handler through the {{domxref("CustomEvent.detail")}} property.
+  - : هر داده‌ای که از طریق ویژگی {{domxref("CustomEvent.detail")}} در اختیار handler قرار می‌گیرد.
 
-### Return value
+### مقدار بازگشتی
 
-None (`undefined`).
+هیچ (`undefined`).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("CustomEvent")}}
-- The constructor to use instead of this deprecated method: {{domxref("CustomEvent.CustomEvent", "CustomEvent()")}}.
+- سازنده‌ای که باید به‌جای این متد منسوخ استفاده شود: {{domxref("CustomEvent.CustomEvent", "CustomEvent()")}}.
