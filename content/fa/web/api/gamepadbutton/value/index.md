@@ -1,11 +1,5 @@
 ---
 title: "GamepadButton: value property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GamepadButton/value"
-status: "needs-translation"
----
-
----
-title: "GamepadButton: value property"
 short-title: value
 slug: Web/API/GamepadButton/value
 page-type: web-api-instance-property
@@ -14,13 +8,9 @@ browser-compat: api.GamepadButton.value
 
 {{APIRef("Gamepad API")}}{{SecureContext_Header}}
 
-The **`GamepadButton.value`** property of the
-{{domxref("GamepadButton")}} interface returns a double value used to represent the
-current state of analog buttons on many modern gamepads, such as the triggers.
+ویژگی **`GamepadButton.value`** از رابط {{domxref("GamepadButton")}} یک مقدار double برمی‌گرداند که برای نمایش وضعیت کنونی دکمه‌های آنالوگ در بسیاری از گیم‌پدهای مدرن، مانند تریگرها، استفاده می‌شود.
 
-The values are normalized to the range `0.0` — `1.0`, with
-`0.0` representing a button that is not pressed, and 1.0 representing a
-button that is fully pressed.
+مقادیر در محدودهٔ `0.0` تا `1.0` نرمال‌سازی شده‌اند؛ به‌طوری که `0.0` نشان‌دهندهٔ دکمه‌ای است که فشرده نشده و `1.0` نشان‌دهندهٔ دکمه‌ای است که کاملاً فشرده شده است.
 
 ## Examples
 
@@ -34,7 +24,7 @@ if (gp.buttons[0].value > 0) {
 
 ## Value
 
-A double.
+یک double.
 
 ## Specifications
 
