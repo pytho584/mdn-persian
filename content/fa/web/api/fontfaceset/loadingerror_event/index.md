@@ -1,11 +1,5 @@
 ---
 title: "FontFaceSet: loadingerror event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSet/loadingerror_event"
-status: "needs-translation"
----
-
----
-title: "FontFaceSet: loadingerror event"
 short-title: loadingerror
 slug: Web/API/FontFaceSet/loadingerror_event
 page-type: web-api-event
@@ -14,11 +8,11 @@ browser-compat: api.FontFaceSet.loadingerror_event
 
 {{APIRef("CSS Font Loading API")}}{{AvailableInWorkers}}
 
-The `loadingerror` event fires when fonts have finished loading, but some or all fonts have failed to load.
+رویداد `loadingerror` زمانی رخ می‌دهد که بارگذاری فونت‌ها به پایان رسیده باشد، اما برخی یا همهٔ فونت‌ها با شکست مواجه شده‌اند.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای استفاده از نام این رویداد می‌توانید از روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی (property) برای مدیریت رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("loadingerror", (event) => { })
@@ -26,9 +20,9 @@ addEventListener("loadingerror", (event) => { })
 onloadingerror = (event) => { }
 ```
 
-## Example
+## مثال
 
-In the following example, if the font `Ephesis` fails to load, "Font loading error" is printed to the console.
+در مثال زیر، اگر فونت `Ephesis` بارگذاری نشود، عبارت «خطای بارگذاری فونت» در کنسول چاپ می‌شود.
 
 ```js
 document.fonts.onloadingerror = () => {
@@ -40,10 +34,10 @@ document.fonts.onloadingerror = () => {
 })();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
