@@ -1,7 +1,5 @@
 ---
 title: "GPUInternalError"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUInternalError"
-status: "needs-translation"
 ---
 
 ---
@@ -13,29 +11,29 @@ browser-compat: api.GPUInternalError
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`GPUInternalError`** interface of the {{domxref("WebGPU API", "WebGPU API", "", "nocode")}} describes an application error indicating that an operation failed for a system or implementation-specific reason, even when all validation requirements were satisfied.
+**`GPUInternalError`** 接口属于 {{domxref("WebGPU API", "WebGPU API", "", "nocode")}}，用于描述一种应用错误，表示即使所有验证要求都已满足，操作仍因系统或实现特有的原因而失败。
 
-It represents one of the types of errors surfaced by {{domxref("GPUDevice.popErrorScope")}} and the {{domxref("GPUDevice.uncapturederror_event", "uncapturederror")}} event.
+它是 {{domxref("GPUDevice.popErrorScope")}} 和 {{domxref("GPUDevice.uncapturederror_event", "uncapturederror")}} 事件所暴露的错误类型之一。
 
-Internal errors occur when something happens in the WebGPU implementation that wasn't caught by validation and wasn't clearly identifiable as an out-of-memory error. It generally means that an operation your code performed hit a system limit in a way that was difficult to express with WebGPU's [supported limits](/en-US/docs/Web/API/GPUSupportedLimits). The same operation might succeed on a different device. These can only be raised by pipeline creation, usually if the shader is too complex for the device.
+内部错误发生在 WebGPU 实现中出现了未被验证捕获、且无法明确归类为内存不足错误的情况。它通常意味着你代码执行的操作触及了系统限制，而这种限制难以用 WebGPU 的[支持的限制](/en-US/docs/Web/API/GPUSupportedLimits)来表达。相同的操作在另一台设备上可能会成功。此类错误通常只在管线创建时出现，尤其是当着色器对于设备来说过于复杂时。
 
 {{InheritanceDiagram}}
 
-## Constructor
+## 构造函数
 
 - {{domxref("GPUInternalError.GPUInternalError", "GPUInternalError()")}}
-  - : Creates a new `GPUInternalError` object instance.
+  - : 创建一个新的 `GPUInternalError` 对象实例。
 
-## Instance properties
+## 实例属性
 
-The `message` property is inherited from its parent, {{domxref("GPUError")}}:
+`message` 属性继承自其父接口 {{domxref("GPUError")}}：
 
 - {{domxref("GPUError.message", "message")}} {{Experimental_Inline}} {{ReadOnlyInline}}
-  - : A string providing a human-readable message that explains why the error occurred.
+  - : 一个字符串，提供人类可读的消息，说明错误发生的原因。
 
-## Examples
+## 示例
 
-The following example uses an error scope to capture a suspected validation error, logging it to the console.
+以下示例使用错误作用域来捕获可能存在的验证错误，并将其记录到控制台。
 
 ```js
 device.pushErrorScope("internal");
@@ -53,15 +51,15 @@ device.popErrorScope().then((error) => {
 });
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
-- [WebGPU Error Handling best practices](https://toji.dev/webgpu-best-practices/error-handling)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU 错误处理最佳实践](https://toji.dev/webgpu-best-practices/error-handling)
