@@ -1,11 +1,5 @@
 ---
 title: "HTMLElement: title property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/title"
-status: "needs-translation"
----
-
----
-title: "HTMLElement: title property"
 short-title: title
 slug: Web/API/HTMLElement/title
 page-type: web-api-instance-property
@@ -14,15 +8,13 @@ browser-compat: api.HTMLElement.title
 
 {{ APIRef("HTML DOM") }}
 
-The **`HTMLElement.title`** property
-represents the title of the element: the text usually displayed in a 'tooltip' popup
-when the mouse is over the node.
+ویژگی **`HTMLElement.title`** عنوان عنصر را نمایش می‌دهد: متنی که معمولاً در یک پاپ‌آپ «راهنمای ابزار» (tooltip) هنگام قرار گرفتن موس روی آن نود نمایش داده می‌شود.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```js
 const link = document.createElement("a");
@@ -31,15 +23,14 @@ link.href = "https://en.wikipedia.org/wiki/Grape";
 link.title = "Wikipedia page on grapes";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The HTML [**title**](/en-US/docs/Web/HTML/Reference/Global_attributes/title)
-  global attribute.
+- ویژگی سراسری HTML [**title**](/en-US/docs/Web/HTML/Reference/Global_attributes/title)
