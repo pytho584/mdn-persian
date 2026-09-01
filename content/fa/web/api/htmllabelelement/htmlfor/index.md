@@ -1,9 +1,4 @@
----
-title: "HTMLLabelElement: htmlFor property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLLabelElement/htmlFor"
-status: "needs-translation"
----
-
+```yaml
 ---
 title: "HTMLLabelElement: htmlFor property"
 short-title: htmlFor
@@ -14,32 +9,28 @@ browser-compat: api.HTMLLabelElement.htmlFor
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLLabelElement.htmlFor`** property reflects the value
-of the [`for`](/en-US/docs/Web/HTML/Reference/Elements/label#for) content property. That means that this
-script-accessible property is used to set and read the value of the content property
-`for`, which is the ID of the label's associated control element.
+خاصیت **`HTMLLabelElement.htmlFor`** مقدار ویژگی محتوایی [`for`](/en-US/docs/Web/HTML/Reference/Elements/label#for) را منعکس می‌کند. به این معنا که این خاصیت قابل دسترس از طریق اسکریپت، برای تنظیم و خواندن مقدار ویژگی محتوایی `for` استفاده می‌شود که همان شناسه (ID) عنصر کنترلی مرتبط با برچسب است.
 
-## Value
+## مقدار
 
-A string which contains the ID string of the element which is
-associated with the control.
+یک رشته (String) که شامل رشته شناسه (ID) عنصری است که با کنترل مرتبط است.
 
 > [!NOTE]
-> If this property has a value, the {{domxref("HTMLLabelElement.control")}} property
-> must refer to the same control.
+> اگر این خاصیت مقداری داشته باشد، خاصیت {{domxref("HTMLLabelElement.control")}} باید به همان کنترل اشاره کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLLabelElement")}}
 - {{domxref("HTMLLabelElement.control")}}
 - {{domxref("HTMLElement")}}
 - {{HTMLElement("label")}}
-- [HTML forms guide](/en-US/docs/Learn_web_development/Extensions/Forms)
+- [راهنمای فرم‌های HTML](/en-US/docs/Learn_web_development/Extensions/Forms)
+```
