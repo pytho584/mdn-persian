@@ -1,11 +1,5 @@
 ---
 title: "Gyroscope: Gyroscope() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Gyroscope/Gyroscope"
-status: "needs-translation"
----
-
----
-title: "Gyroscope: Gyroscope() constructor"
 short-title: Gyroscope()
 slug: Web/API/Gyroscope/Gyroscope
 page-type: web-api-constructor
@@ -14,44 +8,37 @@ browser-compat: api.Gyroscope.Gyroscope
 
 {{securecontext_header}}{{APIRef("Sensor API")}}
 
-The **`Gyroscope()`** constructor
-creates a new {{domxref("Gyroscope")}} object which provides on each reading the
-angular velocity of the device along all three axes.
+سازندهی **`Gyroscope()`** یک شیء جدید {{domxref("Gyroscope")}} می‌سازد که در هر بار اندازه‌گیری، سرعت زاویه‌ای دستگاه را در هر سه محور فراهم می‌کند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 new Gyroscope()
 new Gyroscope(options)
 ```
 
-### Parameters
+### پارامترها
 
 - `options` {{optional_inline}}
-  - : Options are as follows:
+  - : گزینه‌ها به شرح زیر هستند:
     - `frequency` {{optional_inline}}
-      - : The desired number of times per second a sample should
-        be taken, meaning the number of times per second that the
-        {{domxref('sensor.reading_event', 'reading')}} event will be called. A whole number or decimal may be
-        used, the latter for frequencies less than a second. The actual reading frequency
-        depends device hardware and consequently may be less than requested.
+      - : تعداد دفعات مطلوب نمونه‌برداری در هر ثانیه؛ یعنی تعداد دفعاتی که رویداد {{domxref('sensor.reading_event', 'reading')}} در هر ثانیه فراخوانی می‌شود. می‌توانید از عدد صحیح یا اعشاری استفاده کنید؛ نوع اعشاری برای فرکانس‌های کمتر از یک ثانیه به کار می‌رود. فرکانس واقعی خواندن به سخت‌افزار دستگاه بستگی دارد و بنابراین ممکن است کمتر از مقدار درخواستی باشد.
     - `referenceFrame` {{optional_inline}}
-      - : Either `'device'` or
-        `'screen'`. The default is `'device'`.
+      - : یا `'device'` یا `'screen'`. مقدار پیش‌فرض `'device'` است.
 
-### Exceptions
+### استثناها
 
 - `SecurityError` {{domxref("DOMException")}}
-  - : Use of this feature was blocked by a [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy).
+  - : استفاده از این ویژگی توسط [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) مسدود شده است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref('sensor.reading_event', 'reading')}} event
+- رویداد {{domxref('sensor.reading_event', 'reading')}}
