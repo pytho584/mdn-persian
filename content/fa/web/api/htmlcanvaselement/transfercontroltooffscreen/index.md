@@ -1,11 +1,5 @@
 ---
 title: "HTMLCanvasElement: transferControlToOffscreen() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/transferControlToOffscreen"
-status: "needs-translation"
----
-
----
-title: "HTMLCanvasElement: transferControlToOffscreen() method"
 short-title: transferControlToOffscreen()
 slug: Web/API/HTMLCanvasElement/transferControlToOffscreen
 page-type: web-api-instance-method
@@ -14,7 +8,7 @@ browser-compat: api.HTMLCanvasElement.transferControlToOffscreen
 
 {{APIRef("Canvas API")}}
 
-The **`HTMLCanvasElement.transferControlToOffscreen()`** method transfers control to an {{domxref("OffscreenCanvas")}} object, either on the main thread or on a worker.
+متد **`HTMLCanvasElement.transferControlToOffscreen()`** کنترل را به یک شیء {{domxref("OffscreenCanvas")}} منتقل می‌کند، چه در ترد اصلی و چه در یک worker.
 
 ## Syntax
 
@@ -24,22 +18,22 @@ transferControlToOffscreen()
 
 ### Parameters
 
-None.
+هیچ.
 
 ### Return value
 
-An {{domxref("OffscreenCanvas")}} object.
+یک شیء {{domxref("OffscreenCanvas")}}.
 
 ### Exceptions
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Throws if:
-    - the canvas has been set a context mode by calling {{domxref("HTMLCanvasElement.getContext()")}}
-    - the canvas has already transferred its control to offscreen.
+  - : در موارد زیر پرتاب می‌شود:
+    - برای بوم (canvas) با فراخوانی {{domxref("HTMLCanvasElement.getContext()")}} یک حالت زمینه (context mode) تنظیم شده باشد.
+    - کنترل بوم قبلاً به حالت آف‌اسکرین منتقل شده باشد.
 
 ## Examples
 
-The following example shows how to transfer control to an {{domxref("OffscreenCanvas")}} object on the main thread.
+مثال زیر نحوه انتقال کنترل به یک شیء {{domxref("OffscreenCanvas")}} را در ترد اصلی نشان می‌دهد.
 
 ```js
 const htmlCanvas = document.createElement("canvas");
@@ -49,7 +43,7 @@ const gl = offscreen.getContext("webgl");
 // Some drawing using the gl context…
 ```
 
-The following example shows how to transfer control to an {{domxref("OffscreenCanvas")}} object on a worker.
+مثال زیر نحوه انتقال کنترل به یک شیء {{domxref("OffscreenCanvas")}} را در یک worker نشان می‌دهد.
 
 ```js
 const offscreen = document.querySelector("canvas").transferControlToOffscreen();
