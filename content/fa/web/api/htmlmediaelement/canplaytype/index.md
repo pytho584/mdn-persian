@@ -1,7 +1,5 @@
 ---
 title: "HTMLMediaElement: canPlayType() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/canPlayType"
-status: "needs-translation"
 ---
 
 ---
@@ -14,7 +12,7 @@ browser-compat: api.HTMLMediaElement.canPlayType
 
 {{APIRef("HTML DOM")}}
 
-The {{domxref("HTMLMediaElement")}} method **`canPlayType()`** reports how likely it is that the current browser will be able to play media of a given [MIME type](/en-US/docs/Web/HTTP/Guides/MIME_types).
+متد **`canPlayType()`** از {{domxref("HTMLMediaElement")}} گزارش می‌دهد که چقدر احتمال دارد مرورگر فعلی بتواند رسانه‌ای با [نوع MIME](/en-US/docs/Web/HTTP/Guides/MIME_types) مشخص‌شده را پخش کند.
 
 ## Syntax
 
@@ -25,19 +23,19 @@ canPlayType(type)
 ### Parameters
 
 - `type`
-  - : A string specifying the [MIME type](/en-US/docs/Web/HTTP/Guides/MIME_types) of the media and (optionally) a [`codecs` parameter](/en-US/docs/Web/Media/Guides/Formats/codecs_parameter) containing a comma-separated list of the supported codecs.
+  - : رشته‌ای که [نوع MIME](/en-US/docs/Web/HTTP/Guides/MIME_types) رسانه و (به‌صورت اختیاری) یک [`codecs` parameter](/en-US/docs/Web/Media/Guides/Formats/codecs_parameter) شامل فهرستی از کدک‌های پشتیبانی‌شده را که با کاما جدا شده‌اند، مشخص می‌کند.
 
 ### Return value
 
-A string indicating how likely it is that the media can be played.
-The string will be one of the following values:
+رشته‌ای که نشان می‌دهد چقدر احتمال دارد رسانه قابل پخش باشد.
+این رشته یکی از مقادیر زیر خواهد بود:
 
-- `""` (empty string)
-  - : The media cannot be played on the current device.
+- `""` (رشته خالی)
+  - : رسانه روی دستگاه فعلی قابل پخش نیست.
 - `probably`
-  - : The media is probably playable on this device.
+  - : رسانه به احتمال زیاد روی این دستگاه قابل پخش است.
 - `maybe`
-  - : There is not enough information to determine whether the media can play (until playback is actually attempted).
+  - : اطلاعات کافی برای تعیین اینکه رسانه قابل پخش است یا نه وجود ندارد (تا زمانی که پخش واقعاً امتحان نشود).
 
 ## Examples
 
@@ -56,8 +54,8 @@ console.log(obj.canPlayType("video/mp4")); // "maybe"
 
 ## See also
 
-- {{domxref("HTMLMediaElement")}}: Interface used to define the `HTMLMediaElement.canPlayType()` method
+- {{domxref("HTMLMediaElement")}}: رابطی که برای تعریف متد `HTMLMediaElement.canPlayType()` استفاده می‌شود
 - {{domxref("MediaCapabilities")}}
-- [Handling media support issues in web content](/en-US/docs/Web/Media/Guides/Formats/Support_issues)
-- [Media type and format guide](/en-US/docs/Web/Media/Guides/Formats)
-- [Codecs in common media types](/en-US/docs/Web/Media/Guides/Formats/codecs_parameter)
+- [رسیدگی به مشکلات پشتیبانی رسانه در محتوای وب](/en-US/docs/Web/Media/Guides/Formats/Support_issues)
+- [راهنمای نوع رسانه و فرمت](/en-US/docs/Web/Media/Guides/Formats)
+- [کدک‌ها در انواع رایج رسانه](/en-US/docs/Web/Media/Guides/Formats/codecs_parameter)
