@@ -1,11 +1,5 @@
 ---
 title: "GPUDevice: createCommandEncoder() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createCommandEncoder"
-status: "needs-translation"
----
-
----
-title: "GPUDevice: createCommandEncoder() method"
 short-title: createCommandEncoder()
 slug: Web/API/GPUDevice/createCommandEncoder
 page-type: web-api-instance-method
@@ -14,38 +8,37 @@ browser-compat: api.GPUDevice.createCommandEncoder
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`createCommandEncoder()`** method of the
-{{domxref("GPUDevice")}} interface creates a {{domxref("GPUCommandEncoder")}}, used to encode commands to be issued to the GPU.
+**`createCommandEncoder()`** 方法屬於 {{domxref("GPUDevice")}} 介面，用於建立一個 {{domxref("GPUCommandEncoder")}}，用來編碼要發送給 GPU 的指令。
 
-## Syntax
+## 語法
 
 ```js-nolint
 createCommandEncoder()
 createCommandEncoder(descriptor)
 ```
 
-### Parameters
+### 參數
 
 - `descriptor` {{optional_inline}}
-  - : An object containing the following properties:
+  - : 一個物件，包含以下屬性：
     - `label` {{optional_inline}}
-      - : A string providing a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+      - : 一個字串，提供可用於識別物件的標籤，例如在 {{domxref("GPUError")}} 訊息或主控台警告中。
 
-### Return value
+### 回傳值
 
-A {{domxref("GPUCommandEncoder")}} object instance.
+一個 {{domxref("GPUCommandEncoder")}} 物件實例。
 
-## Examples
+## 範例
 
-In our [basic render demo](https://mdn.github.io/dom-examples/webgpu-render-demo/), several commands are recorded via a {{domxref("GPUCommandEncoder")}} created via `createCommandEncoder()`:
+在我們的 [basic render demo](https://mdn.github.io/dom-examples/webgpu-render-demo/) 中，多個指令透過 `createCommandEncoder()` 建立的 {{domxref("GPUCommandEncoder")}} 來記錄：
 
 ```js
 // …
 
-// Create GPUCommandEncoder
+// 建立 GPUCommandEncoder
 const commandEncoder = device.createCommandEncoder();
 
-// Create GPURenderPassDescriptor to tell WebGPU which texture to draw into, then initiate render pass
+// 建立 GPURenderPassDescriptor 告訴 WebGPU 要繪製到哪個紋理，然後開始渲染通道
 const renderPassDescriptor = {
   colorAttachments: [
     {
@@ -59,34 +52,34 @@ const renderPassDescriptor = {
 
 const passEncoder = commandEncoder.beginRenderPass(renderPassDescriptor);
 
-// Draw a triangle
+// 繪製一個三角形
 passEncoder.setPipeline(renderPipeline);
 passEncoder.setVertexBuffer(0, vertexBuffer);
 passEncoder.draw(3);
 
-// End the render pass
+// 結束渲染通道
 passEncoder.end();
 
 // …
 ```
 
-The commands encoded by the {{domxref("GPUCommandEncoder")}} are recoded into a {{domxref("GPUCommandBuffer")}} using the {{domxref("GPUCommandEncoder.finish()")}} method. The command buffer is then passed into the queue via a {{domxref("GPUQueue.submit", "submit()")}} call, ready to be processed by the GPU.
+由 {{domxref("GPUCommandEncoder")}} 編碼的指令會透過 {{domxref("GPUCommandEncoder.finish()")}} 方法記錄到 {{domxref("GPUCommandBuffer")}} 中。接著，指令緩衝區會透過 {{domxref("GPUQueue.submit", "submit()")}} 呼叫傳入佇列，準備交由 GPU 處理。
 
 ```js
 device.queue.submit([commandEncoder.finish()]);
 ```
 
 > [!NOTE]
-> Study the [WebGPU samples](https://webgpu.github.io/webgpu-samples/) to find more command encoding examples.
+> 可以研究 [WebGPU samples](https://webgpu.github.io/webgpu-samples/) 以尋找更多指令編碼的範例。
 
-## Specifications
+## 規格
 
 {{Specifications}}
 
-## Browser compatibility
+## 瀏覽器相容性
 
 {{Compat}}
 
-## See also
+## 參見
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
