@@ -1,11 +1,5 @@
 ---
 title: "HTMLEmbedElement: type property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLEmbedElement/type"
-status: "needs-translation"
----
-
----
-title: "HTMLEmbedElement: type property"
 short-title: type
 slug: Web/API/HTMLEmbedElement/type
 page-type: web-api-instance-property
@@ -14,30 +8,30 @@ browser-compat: api.HTMLEmbedElement.type
 
 {{APIRef("HTML DOM")}}
 
-The **`type`** property of the {{domxref("HTMLEmbedElement")}} interface returns a string that reflects the `type` attribute of the {{HTMLElement("embed")}} element, indicating the {{glossary("MIME type")}} of the resource. It reflects the {{htmlelement("embed")}} element's [`type`](/en-US/docs/Web/HTML/Reference/Elements/embed#type) attribute
+**خاصیت `type`** در رابط {{domxref("HTMLEmbedElement")}} رشتهای را بازمیگرداند که ویژگی `type` عنصر {{HTMLElement("embed")}} را بازتاب میدهد و {{glossary("MIME type")}} منبع را نشان میدهد. این خاصیت، مشخصه [`type`](/en-US/docs/Web/HTML/Reference/Elements/embed#type) عنصر {{htmlelement("embed")}} را منعکس میکند.
 
-## Value
+## مقدار
 
-A string; the MIME type of the resource.
+یک رشته؛ نوع MIME منبع.
 
-## Examples
+## مثالها
 
 ```js
 const el = document.getElementById("el");
 console.log(el.type); // Output: "video/webp"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLObjectElement.type")}}
 - {{domxref("HTMLSourceElement.type")}}
-- [Media types found on the web](/en-US/docs/Web/Media/Guides/Formats)
-- [Important MIME types for web developers](/en-US/docs/Web/HTTP/Guides/MIME_types#important_mime_types_for_web_developers)
+- [انواع رسانه‌های موجود در وب](/en-US/docs/Web/Media/Guides/Formats)
+- [انواع MIME مهم برای توسعه‌دهندگان وب](/en-US/docs/Web/HTTP/Guides/MIME_types#important_mime_types_for_web_developers)
