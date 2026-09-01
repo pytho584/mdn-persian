@@ -1,11 +1,5 @@
 ---
 title: "HTMLScriptElement: fetchPriority property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLScriptElement/fetchPriority"
-status: "needs-translation"
----
-
----
-title: "HTMLScriptElement: fetchPriority property"
 short-title: fetchPriority
 slug: Web/API/HTMLScriptElement/fetchPriority
 page-type: web-api-instance-property
@@ -14,14 +8,13 @@ browser-compat: api.HTMLScriptElement.fetchPriority
 
 {{APIRef("HTML DOM")}}
 
-The **`fetchPriority`** property of the {{domxref("HTMLScriptElement")}} interface represents a hint to the browser indicating how it should prioritize fetching an external script relative to other external scripts.
-It reflects the `<script>` element's [`fetchpriority`](/en-US/docs/Web/HTML/Reference/Elements/script#fetchpriority) content attribute.
+ویژگی **`fetchPriority`** از رابط {{domxref("HTMLScriptElement")}} یک راهنمایی به مرورگر است که نشان می‌دهد چگونه اولویت بارگیری یک اسکریپت خارجی را نسبت به سایر اسکریپت‌های خارجی تعیین کند. این ویژگی، ویژگی محتوایی [`fetchpriority`](/en-US/docs/Web/HTML/Reference/Elements/script#fetchpriority) عنصر `<script>` را منعکس می‌کند.
 
-## Value
+## مقدار
 
-A string. For the permitted values, see the HTML [`fetchpriority`](/en-US/docs/Web/HTML/Reference/Attributes/fetchpriority) attribute.
+یک رشته. برای مقادیر مجاز، به ویژگی HTML [`fetchpriority`](/en-US/docs/Web/HTML/Reference/Attributes/fetchpriority) مراجعه کنید.
 
-## Examples
+## مثال‌ها
 
 ```html
 <script id="el" type="module" src="main.js" fetchpriority="high"></script>
@@ -29,20 +22,20 @@ A string. For the permitted values, see the HTML [`fetchpriority`](/en-US/docs/W
 
 ```js
 const el = document.getElementById("el");
-console.log(el.fetchPriority); // Output: "high"
+console.log(el.fetchPriority); // خروجی: "high"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLImageElement.fetchPriority")}}
 - {{domxref("HTMLLinkElement.fetchPriority")}}
-- HTTP {{httpheader("Link")}} header
-- [Optimize resource loading with the Fetch Priority API](https://web.dev/articles/fetch-priority?hl=en#browser_priority_and_fetchpriority) for information about how this API affects priorities on Chrome.
+- هدر HTTP {{httpheader("Link")}}
+- [بهینه‌سازی بارگیری منابع با Fetch Priority API](https://web.dev/articles/fetch-priority?hl=en#browser_priority_and_fetchpriority) برای اطلاعات درباره نحوه تأثیر این API بر اولویت‌ها در Chrome.
