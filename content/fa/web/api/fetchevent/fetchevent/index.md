@@ -1,11 +1,5 @@
 ---
 title: "FetchEvent: FetchEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent/FetchEvent"
-status: "needs-translation"
----
-
----
-title: "FetchEvent: FetchEvent() constructor"
 short-title: FetchEvent()
 slug: Web/API/FetchEvent/FetchEvent
 page-type: web-api-constructor
@@ -14,53 +8,48 @@ browser-compat: api.FetchEvent.FetchEvent
 
 {{APIRef("Service Workers API")}}{{AvailableInWorkers("service")}}
 
-The **`FetchEvent()`** constructor creates a new {{domxref("FetchEvent")}} object.
+سازندهٔ **`FetchEvent()`** یک شیء جدید {{domxref("FetchEvent")}} می‌سازد.
 
-## Syntax
+## نحو
 
 ```js-nolint
 new FetchEvent(type, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string with the name of the event.
-    It is case-sensitive and browsers always set it to `fetch`.
+  - : رشته‌ای شامل نام رویداد. به بزرگی و کوچکی حروف حساس است و مرورگرها همیشه آن را روی `fetch` قرار می‌دهند.
 - `options`
-  - : An object that, _in addition of the properties defined in {{domxref("ExtendableEvent/ExtendableEvent", "ExtendableEvent()")}}_, can have the following properties:
+  - : شیئی که _علاوه بر ویژگی‌های تعریف‌شده در {{domxref("ExtendableEvent/ExtendableEvent", "ExtendableEvent()")}}_، می‌تواند ویژگی‌های زیر را داشته باشد:
     - `request`
-      - : The {{domxref("Request")}} object that would have triggered the event handler.
+      - : شیء {{domxref("Request")}} که باعث فعال شدن کنترل‌کنندهٔ رویداد می‌شود.
     - `preloadResponse`
-      - : A {{jsxref("Promise")}} which returns a previously-loaded response to the client.
+      - : یک {{jsxref("Promise")}} که پاسخ بارگذاری‌شدهٔ قبلی را به کلاینت بازمی‌گرداند.
     - `clientId` {{optional_inline}}
-      - : The {{domxref("Client")}} that the current service worker is controlling. It defaults to `""`.
+      - : {{domxref("Client")}} که سرویس‌ورکر فعلی آن را کنترل می‌کند. پیش‌فرض آن `""` است.
     - `isReload` {{deprecated_inline}} {{optional_inline}}
-      - : A boolean value that signifies whether the page was reloaded or not when
-        the event was dispatched. `true` if yes, and `false` if not.
-        Typically, pressing the refresh button in a browser is a reload, while clicking a
-        link and pressing the back button is not. If not present, it defaults to
-        `false`.
+      - : یک مقدار بولین که نشان می‌دهد هنگام ارسال رویداد، صفحه بارگذاری مجدد شده است یا نه. اگر بله `true` و اگر نه `false`. به‌طور معمول، فشردن دکمهٔ بازنشانی (refresh) در مرورگر بارگذاری مجدد است، در حالی که کلیک روی یک پیوند و فشردن دکمهٔ بازگشت (back) این‌گونه نیست. اگر وجود نداشته باشد، پیش‌فرض `false` است.
     - `replacesClientId` {{optional_inline}}
-      - : A string which identifies the client which is being replaced by `resultingClientId`. It defaults to `""`.
+      - : رشته‌ای که کلاینتی را که توسط `resultingClientId` جایگزین می‌شود، مشخص می‌کند. پیش‌فرض آن `""` است.
     - `resultingClientId` {{optional_inline}}
-      - : A string containing the new `clientId` if the client changes as a result of the page load. It defaults to `""`
+      - : رشته‌ای حاوی `clientId` جدید، اگر در نتیجهٔ بارگذاری صفحه، کلاینت تغییر کند. پیش‌فرض آن `""` است.
     - `handled`
-      - : A _pending_ promise that will be fulfilled once the event has been handled.
+      - : یک promise _در حالت انتظار_ که پس از مدیریت شدن رویداد، fulfilled (برآورده) می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("FetchEvent")}} object.
+یک شیء جدید {{domxref("FetchEvent")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{jsxref("Promise")}}
 - [Fetch API](/en-US/docs/Web/API/Fetch_API)
