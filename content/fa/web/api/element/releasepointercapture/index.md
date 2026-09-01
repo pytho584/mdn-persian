@@ -1,11 +1,5 @@
 ---
 title: "Element: releasePointerCapture() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/releasePointerCapture"
-status: "needs-translation"
----
-
----
-title: "Element: releasePointerCapture() method"
 short-title: releasePointerCapture()
 slug: Web/API/Element/releasePointerCapture
 page-type: web-api-instance-method
@@ -14,36 +8,31 @@ browser-compat: api.Element.releasePointerCapture
 
 {{APIRef("DOM")}}
 
-The **`releasePointerCapture()`** method of the
-{{domxref("Element")}} interface releases (stops) [_pointer capture_](/en-US/docs/Web/API/Pointer_events#pointer_capture) that was
-previously set for a specific ({{domxref("PointerEvent")}}) _pointer_.
+متد **`releasePointerCapture()`** از رابط {{domxref("Element")}}، [گرفتن اشارهگر](/en-US/docs/Web/API/Pointer_events#pointer_capture) (*pointer capture*) را که قبلاً برای یک *اشارهگر* خاص ({{domxref("PointerEvent")}}) تنظیم شده بود، رها (متوقف) می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 releasePointerCapture(pointerId)
 ```
 
-### Parameters
+### پارامترها
 
 - `pointerId`
-  - : The {{domxref("PointerEvent.pointerId", "pointerId")}} of a
-    {{domxref("PointerEvent")}} object.
+  - : {{domxref("PointerEvent.pointerId", "pointerId")}} یک شیء {{domxref("PointerEvent")}}.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ مقداری ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `NotFoundError` {{domxref("DOMException")}}
-  - : Thrown if `pointerId` does not match any active pointer.
+  - : در صورتی که `pointerId` با هیچ اشاره‌گر فعالی مطابقت نداشته باشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-This example sets pointer capture on a {{HtmlElement("div")}} when you press down on
-it. This lets you slide the element horizontally, even when your pointer moves outside of
-its boundaries.
+این مثال، هنگام فشار دادن روی یک {{HtmlElement("div")}}، گرفتن اشاره‌گر را روی آن تنظیم می‌کند. این کار به شما امکان می‌دهد عنصر را به‌صورت افقی بلغزانید، حتی زمانی که اشاره‌گر شما از مرزهای آن خارج می‌شود.
 
 ### HTML
 
@@ -87,20 +76,20 @@ slider.onpointerdown = beginSliding;
 slider.onpointerup = stopSliding;
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{ domxref("Element.hasPointerCapture","Element.hasPointerCapture()") }}
 - {{ domxref("Element.setPointerCapture","Element.setPointerCapture()") }}
-- [Pointer events](/en-US/docs/Web/API/Pointer_events)
+- [رویدادهای اشاره‌گر](/en-US/docs/Web/API/Pointer_events)
