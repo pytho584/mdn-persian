@@ -1,11 +1,5 @@
 ---
 title: "Document: createRange() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/createRange"
-status: "needs-translation"
----
-
----
-title: "Document: createRange() method"
 short-title: createRange()
 slug: Web/API/Document/createRange
 page-type: web-api-instance-method
@@ -14,25 +8,23 @@ browser-compat: api.Document.createRange
 
 {{APIRef("DOM")}}
 
-The **`Document.createRange()`** method returns a new
-{{domxref("Range")}} object whose start and end are offset 0 of the {{domxref("Document")}}
-object on which it was called.
+متد **`Document.createRange()`** یک شیء {{domxref("Range")}} جدید بازمی‌گرداند که نقطهٔ آغاز و پایان آن در آفست ۰ از شیء {{domxref("Document")}}ای قرار دارد که این متد روی آن فراخوانی شده است.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 createRange()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-The created {{domxref("Range")}} object.
+شیء {{domxref("Range")}} ساخته‌شده.
 
-## Examples
+## مثال‌ها
 
 ```js
 const range = document.createRange();
@@ -41,15 +33,14 @@ range.setStart(startNode, startOffset);
 range.setEnd(endNode, endOffset);
 ```
 
-## Notes
+## نکات
 
-Once a `Range` is created, you need to set its boundary points before you
-can make use of most of its methods.
+پس از ایجاد یک `Range`، باید نقاط مرزی آن را تنظیم کنید تا بتوانید از بیشتر متدهای آن استفاده کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
