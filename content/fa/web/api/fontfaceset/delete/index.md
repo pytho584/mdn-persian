@@ -1,11 +1,5 @@
 ---
 title: "FontFaceSet: delete() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSet/delete"
-status: "needs-translation"
----
-
----
-title: "FontFaceSet: delete() method"
 short-title: delete()
 slug: Web/API/FontFaceSet/delete
 page-type: web-api-instance-method
@@ -14,9 +8,9 @@ browser-compat: api.FontFaceSet.delete
 
 {{APIRef("CSS Font Loading API")}}{{AvailableInWorkers}}
 
-The **`delete()`** method of the {{domxref("FontFaceSet")}} interface removes a font from the set.
+متد **`delete()`** در رابط {{domxref("FontFaceSet")}} یک فونت را از مجموعه حذف می‌کند.
 
-Font faces that were added to the set using the CSS {{cssxref("@font-face")}} rule remain connected to the corresponding CSS, and cannot be deleted.
+فونت‌هایی که با استفاده از قاعده CSS {{cssxref("@font-face")}} به مجموعه اضافه شده‌اند، همچنان به CSS مربوطه متصل می‌مانند و قابل حذف نیستند.
 
 ## Syntax
 
@@ -24,28 +18,28 @@ Font faces that were added to the set using the CSS {{cssxref("@font-face")}} ru
 delete(font)
 ```
 
-### Parameters
+### پارامترها
 
 - `font`
-  - : A {{domxref("FontFace")}} to be removed from the set.
+  - : یک {{domxref("FontFace")}} که باید از مجموعه حذف شود.
 
-### Return value
+### مقدار بازگشتی
 
-A boolean value which is `true` if the deletion was successful, and `false` otherwise.
+یک مقدار بولی که در صورت موفقیت‌آمیز بودن حذف، `true` و در غیر این صورت `false` است.
 
-## Examples
+## مثال‌ها
 
-In the following example a new {{domxref("FontFace")}} object is created and then deleted from the {{domxref("FontFaceSet")}}.
+در مثال زیر، یک شیء جدید {{domxref("FontFace")}} ساخته شده و سپس از {{domxref("FontFaceSet")}} حذف می‌شود.
 
 ```js
 const font = new FontFace("MyFont", 'url("myFont.woff2")');
 document.fonts.delete(font);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
