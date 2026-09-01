@@ -1,7 +1,5 @@
 ---
 title: "ElementInternals: ariaValueMin property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/ariaValueMin"
-status: "needs-translation"
 ---
 
 ---
@@ -14,18 +12,18 @@ browser-compat: api.ElementInternals.ariaValueMin
 
 {{APIRef("Web Components")}}
 
-The **`ariaValueMin`** property of the {{domxref("ElementInternals")}} interface reflects the value of the [`aria-valuemin`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemin) attribute, which defines the minimum allowed value for a range widget.
+ویژگی **`ariaValueMin`** در رابط {{domxref("ElementInternals")}} منعکس‌کنندهٔ مقدار ویژگی [`aria-valuemin`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemin) است که کمترین مقدار مجاز را برای یک ابزارک محدوده (range widget) تعریف می‌کند.
 
 > [!NOTE]
-> Setting aria attributes on `ElementInternals` allows default semantics to be defined on a custom element. These may be overwritten by author-defined attributes, but ensure that default semantics are retained should the author delete those attributes, or fail to add them at all. For more information see the [Accessibility Object Model explainer](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object).
+> تنظیم ویژگی‌های aria روی `ElementInternals` این امکان را فراهم می‌کند که معناشناسی پیش‌فرض (default semantics) برای یک عنصر سفارشی (custom element) تعریف شود. ممکن است این ویژگی‌ها توسط ویژگی‌هایی که نویسنده تعریف می‌کند بازنویسی شوند، اما تضمین می‌کنند که اگر نویسنده آن ویژگی‌ها را حذف کند یا اصلاً آن‌ها را اضافه نکرده باشد، معناشناسی پیش‌فرض حفظ شود. برای اطلاعات بیشتر به [مستند توضیحی مدل شیء دسترس‌پذیری (Accessibility Object Model)](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object) مراجعه کنید.
 
-## Value
+## مقدار
 
-A string which contains a number.
+یک رشته (string) که شامل یک عدد است.
 
-## Examples
+## مثال‌ها
 
-In this example the value of `ariaValueMin` is set to "10".
+در این مثال، مقدار `ariaValueMin` روی «10» تنظیم شده است.
 
 ```js
 class CustomControl extends HTMLElement {
@@ -38,10 +36,10 @@ class CustomControl extends HTMLElement {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
