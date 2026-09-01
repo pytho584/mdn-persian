@@ -1,10 +1,4 @@
 ---
-title: "CSSScale"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSScale"
-status: "needs-translation"
----
-
----
 title: CSSScale
 slug: Web/API/CSSScale
 page-type: web-api-interface
@@ -13,38 +7,38 @@ browser-compat: api.CSSScale
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`CSSScale`** interface of the [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Object_Model) represents the {{cssxref("transform-function/scale", "scale()")}} and {{cssxref("transform-function/scale3d", "scale3d()")}} values of the individual {{CSSXRef('transform')}} property in CSS.
+رابط **`CSSScale`** در [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Object_Model) نمایانگر مقادیر {{cssxref("transform-function/scale", "scale()")}} و {{cssxref("transform-function/scale3d", "scale3d()")}} از ویژگی مجزای {{CSSXRef('transform')}} در CSS است.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("CSSScale.CSSScale", "CSSScale()")}}
-  - : Creates a new `CSSScale` object.
+  - : یک شیء `CSSScale` جدید ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Also inherits properties from its parent interface, {{DOMxRef("CSSTransformComponent")}}._
+_همچنین ویژگی‌هایی را از رابط والد خود، {{DOMxRef("CSSTransformComponent")}} به ارث می‌برد._
 
 - {{domxref('CSSScale.x','x')}}
-  - : Returns or sets the x-axis value.
+  - : مقدار محور x را برمی‌گرداند یا تنظیم می‌کند.
 - {{domxref('CSSScale.y','y')}}
-  - : Returns or sets the y-axis value.
+  - : مقدار محور y را برمی‌گرداند یا تنظیم می‌کند.
 - {{domxref('CSSScale.z','z')}}
-  - : Returns or sets the z-axis value.
+  - : مقدار محور z را برمی‌گرداند یا تنظیم می‌کند.
 
-## Instance methods
+## روش‌های نمونه
 
-_Also inherits methods from its parent interface, {{DOMxRef("CSSTransformComponent")}}._
+_همچنین روش‌هایی را از رابط والد خود، {{DOMxRef("CSSTransformComponent")}} به ارث می‌برد._
 
-## Examples
+## مثال‌ها
 
-To do.
+در دست انجام.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
