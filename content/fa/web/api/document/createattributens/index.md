@@ -1,11 +1,5 @@
 ---
 title: "Document: createAttributeNS() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/createAttributeNS"
-status: "needs-translation"
----
-
----
-title: "Document: createAttributeNS() method"
 short-title: createAttributeNS()
 slug: Web/API/Document/createAttributeNS
 page-type: web-api-instance-method
@@ -14,69 +8,54 @@ browser-compat: api.Document.createAttributeNS
 
 {{ ApiRef("DOM") }}
 
-The **`createAttributeNS()`** method of the {{domxref("Document")}} interface creates a new attribute node with the specified namespace URI and qualified name.
+متد **`createAttributeNS()`** از رابط {{domxref("Document")}} یک گره ویژگی جدید با URI فضای نام و نام واجد شرایط مشخص شده ایجاد می‌کند.
 
-The object created is a node implementing the {{domxref("Attr")}} interface.
-The DOM does not enforce what sort of attributes can be added to a particular element in this manner.
+شیء ایجاد شده یک گره است که رابط {{domxref("Attr")}} را پیاده‌سازی می‌کند. DOM در این روش نوع ویژگی‌هایی که می‌توان به یک عنصر خاص اضافه کرد را محدود نمی‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 createAttributeNS(namespaceURI, qualifiedName)
 ```
 
-### Parameters
+### پارامترها
 
 - `namespaceURI`
-  - : A string that specifies the {{DOMxRef("Attr.namespaceURI", "namespaceURI")}} to associate with the attribute, or the empty string.
-    In HTML documents, most attributes are in the **null namespace** — use the empty string for these.
-    Use a specific namespace URI only when creating a namespaced attribute, such as `xml:lang` or `xml:space`.
-    Some namespace URIs are:
-    - XML: `http://www.w3.org/XML/1998/namespace` (for `xml:lang`, `xml:space`)
-    - XMLNS: `http://www.w3.org/2000/xmlns/` (for `xmlns`, `xmlns:*`)
-    - XLink: `http://www.w3.org/1999/xlink` (for `xlink:href`, `xlink:title`, etc.)
+  - : یک رشته که {{DOMxRef("Attr.namespaceURI", "namespaceURI")}} مرتبط با ویژگی را مشخص می‌کند، یا یک رشته خالی. در اسناد HTML، بیشتر ویژگی‌ها در **فضای نام null** هستند — برای این موارد از رشته خالی استفاده کنید. فقط زمانی از یک URI فضای نام خاص استفاده کنید که یک ویژگی دارای فضای نام مانند `xml:lang` یا `xml:space` ایجاد می‌کنید. برخی از URIهای فضای نام عبارتند از:
+    - XML: `http://www.w3.org/XML/1998/namespace` (برای `xml:lang`, `xml:space`)
+    - XMLNS: `http://www.w3.org/2000/xmlns/` (برای `xmlns`, `xmlns:*`)
+    - XLink: `http://www.w3.org/1999/xlink` (برای `xlink:href`, `xlink:title`, و غیره)
 - `qualifiedName`
-  - : A string containing the qualified name of the new attribute.
-    The {{DOMxRef("Attr.name", "name")}} property of the created attribute is initialized with this value.
-
-    The format of the qualified name is `prefix:localName` or `localName`, where the parts are defined as:
+  - : یک رشته حاوی نام واجد شرایط ویژگی جدید. ویژگی {{DOMxRef("Attr.name", "name")}} ویژگی ایجاد شده با این مقدار مقداردهی اولیه می‌شود. قالب نام واجد شرایط به صورت `prefix:localName` یا `localName` است، که بخش‌ها به صورت زیر تعریف می‌شوند:
     - `prefix` {{optional_inline}}
-      - : A "short alias" for the namespace.
-        The prefix is optional, but if it is specified the `namespaceURI` parameter must also be specified.
-        If the prefix is set to `xml` or `xmlns`, the `namespaceURI` must be set to `http://www.w3.org/XML/1998/namespace` or `http://www.w3.org/2000/xmlns/`, respectively.
-
-        The value is used to initialize the new attribute's {{DOMxRef("Attr.prefix", "prefix")}} property.
-        Defaults to `null`.
-
+      - : یک «نام مستعار کوتاه» برای فضای نام. پیشوند اختیاری است، اما اگر مشخص شود، پارامتر `namespaceURI` نیز باید مشخص شود. اگر پیشوند به `xml` یا `xmlns` تنظیم شود، `namespaceURI` باید به ترتیب به `http://www.w3.org/XML/1998/namespace` یا `http://www.w3.org/2000/xmlns/` تنظیم شود. این مقدار برای مقداردهی اولیه ویژگی {{DOMxRef("Attr.prefix", "prefix")}} ویژگی جدید استفاده می‌شود. پیش‌فرض `null` است.
     - `localName`
-      - : The local name of the attribute.
-        The value is used to initialize the new attribute's {{DOMxRef("Attr.localName", "localName")}} property.
+      - : نام محلی ویژگی. این مقدار برای مقداردهی اولیه ویژگی {{DOMxRef("Attr.localName", "localName")}} ویژگی جدید استفاده می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-The new {{domxref("Attr")}} node.
+گره {{domxref("Attr")}} جدید.
 
-### Exceptions
+### استثناها
 
 - `NamespaceError` {{domxref("DOMException")}}
-  - : Thrown if the [`namespaceURI`](#namespaceuri) value is:
-    - not a valid namespace URI.
-    - set to the empty string when `prefix` has a value.
-    - not the value `http://www.w3.org/XML/1998/namespace` or `http://www.w3.org/2000/xmlns/` when [`prefix`](#prefix) is set to `xml` or `xmlns`, respectively.
+  - : زمانی پرتاب می‌شود که مقدار [`namespaceURI`](#namespaceuri) دارای شرایط زیر باشد:
+    - یک URI فضای نام معتبر نباشد.
+    - وقتی `prefix` مقداری دارد، به رشته خالی تنظیم شده باشد.
+    - وقتی [`prefix`](#prefix) به ترتیب به `xml` یا `xmlns` تنظیم شده است، برابر با `http://www.w3.org/XML/1998/namespace` یا `http://www.w3.org/2000/xmlns/` نباشد.
 - `InvalidCharacterError` {{domxref("DOMException")}}
-  - : Thrown if either the `prefix` or `localName` is not valid:
-    - The `prefix` must have at least one character, and cannot contain ASCII whitespace, `NULL`, `/`, or `>` (U+0000, U+002F, or U+003E, respectively).
-    - The `localName` must have at least one character, and may not contain ASCII whitespace, `NULL`, `/`, `=` or `>` (U+0000, U+002F, U+003D, or U+003E, respectively).
+  - : زمانی پرتاب می‌شود که `prefix` یا `localName` معتبر نباشند:
+    - `prefix` باید حداقل یک کاراکتر داشته باشد و نمی‌تواند شامل فاصله سفید ASCII، `NULL`، `/`، یا `>` باشد (به ترتیب U+0000، U+002F، یا U+003E).
+    - `localName` باید حداقل یک کاراکتر داشته باشد و نمی‌تواند شامل فاصله سفید ASCII، `NULL`، `/`، `=` یا `>` باشد (به ترتیب U+0000، U+002F، U+003D، یا U+003E).
 
     > [!NOTE]
-    > Earlier versions of the specification were more restrictive, requiring that the `localName` be a valid [XML name](https://www.w3.org/TR/xml/#dt-name).
+    > نسخه‌های قبلی مشخصات محدودیت بیشتری داشتند و نیاز داشتند که `localName` یک [نام XML](https://www.w3.org/TR/xml/#dt-name) معتبر باشد.
 
-## Examples
+## مثال‌ها
 
-### Creating a namespaced attribute
+### ایجاد یک ویژگی دارای فضای نام
 
-This example creates an `xml:lang` attribute with the XML namespace and attaches it to a paragraph element.
-This attribute specifies the language of the element's content for XML processing.
+این مثال یک ویژگی `xml:lang` با فضای نام XML ایجاد می‌کند و آن را به یک عنصر پاراگراف متصل می‌کند. این ویژگی زبان محتوای عنصر را برای پردازش XML مشخص می‌کند.
 
 ```html
 <p id="greeting">Bonjour!</p>
@@ -92,10 +71,9 @@ attr.value = "fr";
 el.setAttributeNode(attr);
 ```
 
-### Creating an unprefixed attribute
+### ایجاد یک ویژگی بدون پیشوند
 
-In HTML documents, unprefixed attributes (such as SVG presentation attributes like `viewBox`) are in the null namespace.
-Use the empty string for the `namespaceURI` parameter to match this.
+در اسناد HTML، ویژگی‌های بدون پیشوند (مانند ویژگی‌های نمایشی SVG مانند `viewBox`) در فضای نام null هستند. برای تطبیق با این موضوع، از رشته خالی برای پارامتر `namespaceURI` استفاده کنید.
 
 ```html
 <svg id="svg"></svg>
@@ -109,21 +87,21 @@ svg.setAttributeNode(attr);
 console.log(svg.getAttribute("viewBox")); // "0 0 100 100"
 ```
 
-Note that, in most cases, you can use {{domxref("Element.setAttribute()")}} instead of `createAttributeNS()` for unprefixed attributes:
+توجه داشته باشید که در بیشتر موارد، می‌توانید از {{domxref("Element.setAttribute()")}} به جای `createAttributeNS()` برای ویژگی‌های بدون پیشوند استفاده کنید:
 
 ```js
 svg.setAttribute("viewBox", "0 0 100 100");
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Document.createAttribute()")}}
 - {{domxref("Document.createElementNS()")}}
