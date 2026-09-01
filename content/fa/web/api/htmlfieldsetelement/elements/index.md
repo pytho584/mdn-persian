@@ -1,11 +1,5 @@
 ---
 title: "HTMLFieldSetElement: elements property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLFieldSetElement/elements"
-status: "needs-translation"
----
-
----
-title: "HTMLFieldSetElement: elements property"
 short-title: elements
 slug: Web/API/HTMLFieldSetElement/elements
 page-type: web-api-instance-property
@@ -14,16 +8,15 @@ browser-compat: api.HTMLFieldSetElement.elements
 
 {{APIRef("HTML DOM")}}
 
-The **`elements`** read-only property of the {{domxref("HTMLFieldSetElement")}} interface returns an {{domxref("HTMLCollection")}} object containing all form control elements ({{htmlelement("button")}}, {{htmlelement("fieldset")}}, {{htmlelement("input")}}, {{htmlelement("object")}}, {{htmlelement("output")}}, {{htmlelement("select")}}, and {{htmlelement("textarea")}}) that are descendants of this field set.
+خاصیت فقط‌خواندنی **`elements`** از رابط {{domxref("HTMLFieldSetElement")}} یک شیء {{domxref("HTMLCollection")}} برمی‌گرداند که شامل تمام عناصر کنترل فرم ({{htmlelement("button")}}، {{htmlelement("fieldset")}}، {{htmlelement("input")}}، {{htmlelement("object")}}، {{htmlelement("output")}}، {{htmlelement("select")}} و {{htmlelement("textarea")}}) است که از فرزندان این fieldset محسوب می‌شوند.
 
-You can access a particular form control in the returned collection by using either an
-index or the element's `name` or `id` attributes. If multiple form controls share the same name, as is common with a group of radio buttons, using the shared name returns the first element with that value.
+می‌توانید با استفاده از یک ایندکس یا ویژگی‌های `name` یا `id` عنصر، به یک کنترل فرم خاص در مجموعه برگشتی دسترسی پیدا کنید. اگر چندین کنترل فرم نام یکسانی داشته باشند (که در مورد گروهی از دکمه‌های رادیو رایج است)، استفاده از نام مشترک اولین عنصر با آن مقدار را برمی‌گرداند.
 
-## Value
+## مقدار
 
-An {{domxref("HTMLCollection")}}.
+یک {{domxref("HTMLCollection")}}.
 
-## Examples
+## مثال‌ها
 
 ```html
 <form id="my-form">
@@ -51,15 +44,15 @@ console.log(fieldset.elements.length); // 3
 console.log(fieldset.elements["remember-me"].value); // "on"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLFieldSetElement")}}
 - {{domxref("HTMLFormElement.elements")}}
