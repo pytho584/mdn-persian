@@ -1,48 +1,41 @@
 ---
-title: "CustomElementRegistry"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry"
-status: "needs-translation"
----
-
----
 title: CustomElementRegistry
 slug: Web/API/CustomElementRegistry
 page-type: web-api-interface
 browser-compat: api.CustomElementRegistry
----
 
 {{APIRef("Web Components")}}
 
-The **`CustomElementRegistry`** interface provides methods for registering custom elements and querying registered elements. To get an instance of it, use the {{domxref("window.customElements")}} property. To create a scoped registry, use the {{domxref("CustomElementRegistry.CustomElementRegistry()", "CustomElementRegistry()")}} constructor.
+رابط **`CustomElementRegistry`** روش‌هایی برای ثبت عناصر سفارشی و پرس‌وجو از عناصر ثبت‌شده فراهم می‌کند. برای دریافت یک نمونه از آن، از ویژگی {{domxref("window.customElements")}} استفاده کنید. برای ایجاد یک ثبت‌نام محدوده‌ای (scoped registry)، از سازنده {{domxref("CustomElementRegistry.CustomElementRegistry()", "CustomElementRegistry()")}} استفاده کنید.
 
-## Constructor
+## سازنده
 
 - {{domxref("CustomElementRegistry.CustomElementRegistry()", "CustomElementRegistry()")}}
-  - : Creates a new `CustomElementRegistry` object, for scoped usage.
+  - : یک شیء `CustomElementRegistry` جدید برای استفاده محدوده‌ای ایجاد می‌کند.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("CustomElementRegistry.define()")}}
-  - : Defines a new [custom element](/en-US/docs/Web/API/Web_components/Using_custom_elements).
+  - : یک [عنصر سفارشی](/en-US/docs/Web/API/Web_components/Using_custom_elements) جدید تعریف می‌کند.
 - {{domxref("CustomElementRegistry.get()")}}
-  - : Returns the constructor for the named custom element, or {{jsxref("undefined")}} if the custom element is not defined.
+  - : سازنده عنصر سفارشی با نام داده‌شده را برمی‌گرداند، یا اگر عنصر سفارشی تعریف نشده باشد {{jsxref("undefined")}} را برمی‌گرداند.
 - {{domxref("CustomElementRegistry.getName()")}}
-  - : Returns the name for the already-defined custom element, or `null` if the custom element is not defined.
+  - : نام عنصر سفارشی از پیش تعریف‌شده را برمی‌گرداند، یا اگر عنصر سفارشی تعریف نشده باشد `null` را برمی‌گرداند.
 - {{domxref("CustomElementRegistry.upgrade()")}}
-  - : Upgrades a custom element directly, even before it is connected to its shadow root.
+  - : یک عنصر سفارشی را مستقیماً ارتقا می‌دهد، حتی پیش از آن که به ریشه سایه (shadow root) خود متصل شود.
 - {{domxref("CustomElementRegistry.initialize()")}}
-  - : Associates a scoped registry with a DOM subtree, setting the custom element registry on each inclusive descendant and upgrading any custom elements.
+  - : یک ثبت‌نام محدوده‌ای را با یک زیردرخت DOM مرتبط می‌کند، ثبت‌نام عنصر سفارشی را روی هر فرزند شامل‌شونده تنظیم کرده و هر عنصر سفارشی را ارتقا می‌دهد.
 - {{domxref("CustomElementRegistry.whenDefined()")}}
-  - : Returns an empty {{jsxref("Promise")}} that resolves when a custom element becomes defined with the given name. If such a custom element is already defined, the returned promise is immediately fulfilled.
+  - : یک {{jsxref("Promise")}} خالی برمی‌گرداند که وقتی یک عنصر سفارشی با نام داده‌شده تعریف شود، حل می‌شود. اگر چنین عنصر سفارشی از قبل تعریف شده باشد، پرامیس برگشتی بلافاصله برآورده می‌شود.
 
-## Examples
+## مثال‌ها
 
-See the [Examples](/en-US/docs/Web/API/Web_components/Using_custom_elements#examples) section in our [guide to using custom elements](/en-US/docs/Web/API/Web_components/Using_custom_elements).
+بخش [مثال‌ها](/en-US/docs/Web/API/Web_components/Using_custom_elements#examples) را در [راهنمای استفاده از عناصر سفارشی](/en-US/docs/Web/API/Web_components/Using_custom_elements) ما ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
