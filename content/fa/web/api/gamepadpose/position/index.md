@@ -1,11 +1,5 @@
 ---
 title: "GamepadPose: position property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GamepadPose/position"
-status: "needs-translation"
----
-
----
-title: "GamepadPose: position property"
 short-title: position
 slug: Web/API/GamepadPose/position
 page-type: web-api-instance-property
@@ -16,36 +10,36 @@ browser-compat: api.GamepadPose.position
 
 {{APIRef("WebVR API")}}{{SeeCompatTable}}
 
-The **`position`** read-only property of the {{domxref("GamepadPose")}} interface returns the position of the {{domxref("Gamepad")}} as a 3D vector.
+ویژگی فقطخواندنی **`position`** در رابط {{domxref("GamepadPose")}}، موقعیت {{domxref("Gamepad")}} را به‌صورت یک بردار سه‌بعدی بازمی‌گرداند.
 
-The coordinate system is as follows:
+سیستم مختصات به‌صورت زیر است:
 
-- Positive X is to the user's right.
-- Positive Y is up.
-- Positive Z is behind the user.
+- X مثبت به سمت راست کاربر است.
+- Y مثبت به سمت بالا است.
+- Z مثبت پشت سر کاربر است.
 
-Positions are measured in meters from an origin point — this point is the position the sensor was first read at.
+موقعیت‌ها بر حسب متر از یک نقطه مبدأ اندازه‌گیری می‌شوند — این نقطه همان موقعیتی است که سنسور برای اولین بار در آن خوانده شده است.
 
-## Value
+## مقدار
 
-A {{jsxref("Float32Array")}}, or `null` if the gamepad is not able to provide position data.
+یک {{jsxref("Float32Array")}}، یا اگر گیم‌پد قادر به ارائهٔ داده‌های موقعیت نباشد، مقدار `null`.
 
 > [!NOTE]
-> User agents may provide emulated position values through certain techniques; when doing so they should still report {{domxref("GamepadPose.hasPosition")}} as false.
+> عوامل کاربر ممکن است از طریق تکنیک‌هایی مقادیر موقعیت شبیه‌سازی‌شده را ارائه دهند؛ در این صورت، همچنان باید {{domxref("GamepadPose.hasPosition")}} را به‌صورت false گزارش کنند.
 
-## Examples
+## مثال‌ها
 
 TBD
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [WebVR API](/en-US/docs/Web/API/WebVR_API)
 - [Gamepad API](/en-US/docs/Web/API/Gamepad_API)
