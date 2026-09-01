@@ -1,11 +1,5 @@
 ---
 title: "Element: pointerout event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/pointerout_event"
-status: "needs-translation"
----
-
----
-title: "Element: pointerout event"
 short-title: pointerout
 slug: Web/API/Element/pointerout_event
 page-type: web-api-event
@@ -14,13 +8,13 @@ browser-compat: api.Element.pointerout_event
 
 {{APIRef("Pointer Events")}}
 
-The `pointerout` event is fired for several reasons including: pointing device is moved out of the _hit test_ boundaries of an element; firing the {{domxref("Element/pointerup_event", "pointerup")}} event for a device that does not support hover (see {{domxref("Element/pointerup_event", "pointerup")}}); after firing the {{domxref("Element/pointercancel_event", "pointercancel")}} event (see {{domxref("Element/pointercancel_event", "pointercancel")}}); when a pen stylus leaves the hover range detectable by the digitizer.
+رویداد `pointerout` به دلایل متعددی شلیک می‌شود، از جمله وقتی که دستگاه اشاره‌گر از مرزهای _hit test_ (آزمون برخورد) یک عنصر خارج می‌شود؛ وقتی که رویداد {{domxref("Element/pointerup_event", "pointerup")}} برای دستگاهی که از حالت hover (نگه‌داشتن اشاره‌گر روی عنصر) پشتیبانی نمی‌کند شلیک می‌شود (به {{domxref("Element/pointerup_event", "pointerup")}} مراجعه کنید)؛ پس از شلیک رویداد {{domxref("Element/pointercancel_event", "pointercancel")}} (به {{domxref("Element/pointercancel_event", "pointercancel")}} مراجعه کنید)؛ و زمانی که قلم دیجیتال از محدودهٔ hover قابل تشخیص توسط دیجیتایزر خارج شود.
 
-`pointerout` events have the same problems as {{domxref("Element/mouseout_event", "mouseout")}}. If the target element has child elements, `pointerout` and `pointerover` events fire as the pointer moves over the boundaries of these elements too, not just the target element itself. Usually, {{domxref("Element/pointerenter_event", "pointerenter")}} and {{domxref("Element/pointerleave_event", "pointerleave")}} events' behavior is more sensible, because they are not affected by moving into child elements.
+رویدادهای `pointerout` نیز همان مشکلات رویداد {{domxref("Element/mouseout_event", "mouseout")}} را دارند. اگر عنصر هدف دارای عناصر فرزند باشد، رویدادهای `pointerout` و `pointerover` هنگام حرکت اشاره‌گر روی مرزهای این عناصر نیز شلیک می‌شوند، نه فقط روی خود عنصر هدف. معمولاً رفتار رویدادهای {{domxref("Element/pointerenter_event", "pointerenter")}} و {{domxref("Element/pointerleave_event", "pointerleave")}} منطقی‌تر است، زیرا حرکت به داخل عناصر فرزند بر آن‌ها تأثیری نمی‌گذارد.
 
-## Syntax
+## سینتکس
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کنندهٔ رویداد را تنظیم کنید.
 
 ```js-nolint
 addEventListener("pointerout", (event) => { })
@@ -28,15 +22,15 @@ addEventListener("pointerout", (event) => { })
 onpointerout = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("PointerEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("PointerEvent")}}. از {{domxref("Event")}} به ارث می‌برد.
 
 {{InheritanceDiagram("PointerEvent")}}
 
-## Examples
+## مثال‌ها
 
-Using `addEventListener()`:
+استفاده از `addEventListener()`:
 
 ```js
 const para = document.querySelector("p");
@@ -46,7 +40,7 @@ para.addEventListener("pointerout", (event) => {
 });
 ```
 
-Using the `onpointerout` event handler property:
+استفاده از ویژگی کنترل‌کنندهٔ رویداد `onpointerout`:
 
 ```js
 const para = document.querySelector("p");
@@ -56,17 +50,17 @@ para.onpointerout = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- Related events
+- رویدادهای مرتبط
   - {{domxref('Element/gotpointercapture_event', 'gotpointercapture')}}
   - {{domxref('Element/lostpointercapture_event', 'lostpointercapture')}}
   - {{domxref('Element/pointerover_event', 'pointerover')}}
