@@ -1,11 +1,5 @@
 ---
 title: "HTMLLinkElement: hreflang property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLLinkElement/hreflang"
-status: "needs-translation"
----
-
----
-title: "HTMLLinkElement: hreflang property"
 short-title: hreflang
 slug: Web/API/HTMLLinkElement/hreflang
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.HTMLLinkElement.hreflang
 
 {{APIRef("HTML DOM")}}
 
-The **`hreflang`** property of the {{domxref("HTMLLinkElement")}} interface is used to indicate the language and the geographical targeting of a page. This hint can be used by browsers to select the more appropriate page or to improve {{Glossary("SEO")}}.
+ویژگی **`hreflang`** در رابط {{domxref("HTMLLinkElement")}} برای نشان‌دادن زبان و هدف جغرافیایی یک صفحه استفاده می‌شود. این نشانه می‌تواند توسط مرورگرها برای انتخاب صفحه مناسب‌تر یا بهبود {{Glossary("SEO")}} استفاده شود.
 
-It reflects the `hreflang` attribute of the {{HTMLElement("link")}} element and is the empty string (`""`) if there is no `hreflang` attribute.
+این ویژگی منعکس‌کنندهٔ صفت `hreflang` عنصر {{HTMLElement("link")}} است و اگر هیچ صفت `hreflang`ای وجود نداشته باشد، رشتهٔ خالی (`""`) خواهد بود.
 
-## Value
+## مقدار
 
-A string that contains a language tag, or the empty string (`""`) if there is no `hreflang` attribute.
+یک رشته که شامل یک برچسب زبان است، یا اگر هیچ صفت `hreflang`ای وجود نداشته باشد، رشتهٔ خالی (`""`).
 
-## Example
+## مثال
 
 ```html
 <link
@@ -48,18 +42,18 @@ const pTag = document.querySelector(".tag");
 pTag.textContent = myLink.hreflang;
 ```
 
-## Results
+## نتایج
 
 {{EmbedLiveSample("Example",100,100)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("HTMLAnchorElement.hreflang")}} property
+- ویژگی {{domxref("HTMLAnchorElement.hreflang")}}
