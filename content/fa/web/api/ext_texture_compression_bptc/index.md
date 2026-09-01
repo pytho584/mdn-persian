@@ -1,7 +1,5 @@
 ---
 title: "EXT_texture_compression_bptc extension"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EXT_texture_compression_bptc"
-status: "needs-translation"
 ---
 
 ---
@@ -14,29 +12,29 @@ browser-compat: api.EXT_texture_compression_bptc
 
 {{APIRef("WebGL")}}
 
-The `EXT_texture_compression_bptc` extension is part of the [WebGL API](/en-US/docs/Web/API/WebGL_API) and exposes 4 BPTC compressed texture formats. These compression formats are called [BC7](https://learn.microsoft.com/en-us/windows/win32/direct3d11/bc7-format) and [BC6H](https://learn.microsoft.com/en-us/windows/win32/direct3d11/bc6h-format) in [Microsoft's DirectX API](https://learn.microsoft.com/en-us/windows/win32/direct3d11/texture-block-compression-in-direct3d-11).
+افزونهٔ `EXT_texture_compression_bptc` بخشی از [WebGL API](/en-US/docs/Web/API/WebGL_API) است و ۴ قالب فشرده‌سازی بافت BPTC را در دسترس قرار می‌دهد. این قالب‌های فشرده‌سازی در [DirectX API مایکروسافت](https://learn.microsoft.com/en-us/windows/win32/direct3d11/texture-block-compression-in-direct3d-11) با نام‌های [BC7](https://learn.microsoft.com/en-us/windows/win32/direct3d11/bc7-format) و [BC6H](https://learn.microsoft.com/en-us/windows/win32/direct3d11/bc6h-format) شناخته می‌شوند.
 
-WebGL extensions are available using the {{domxref("WebGLRenderingContext.getExtension()")}} method. For more information, see also [Using Extensions](/en-US/docs/Web/API/WebGL_API/Using_Extensions) in the [WebGL tutorial](/en-US/docs/Web/API/WebGL_API/Tutorial).
+افزونه‌های WebGL از طریق متد {{domxref("WebGLRenderingContext.getExtension()")}} در دسترس هستند. برای اطلاعات بیشتر، همچنین [استفاده از افزونه‌ها](/en-US/docs/Web/API/WebGL_API/Using_Extensions) را در [آموزش WebGL](/en-US/docs/Web/API/WebGL_API/Tutorial) ببینید.
 
 > [!NOTE]
-> Support depends on the system's graphics driver. There is no support on Windows.
+> پشتیبانی به درایور گرافیکی سیستم بستگی دارد. در ویندوز پشتیبانی نمی‌شود.
 >
-> This extension is available to both, {{domxref("WebGLRenderingContext", "WebGL1", "", 1)}} and {{domxref("WebGL2RenderingContext", "WebGL2", "", 1)}} contexts.
+> این افزونه برای هر دو زمینه (context) {{domxref("WebGLRenderingContext", "WebGL1", "", 1)}} و {{domxref("WebGL2RenderingContext", "WebGL2", "", 1)}} در دسترس است.
 
-## Constants
+## ثابت‌ها
 
-The compressed texture formats are exposed by 4 constants and can be used in two functions: {{domxref("WebGLRenderingContext.compressedTexImage2D", "compressedTexImage2D()")}} and {{domxref("WebGLRenderingContext.compressedTexSubImage2D", "compressedTexSubImage2D()")}}.
+قالب‌های فشرده‌سازی بافت توسط ۴ ثابت ارائه می‌شوند و می‌توانند در دو تابع استفاده شوند: {{domxref("WebGLRenderingContext.compressedTexImage2D", "compressedTexImage2D()")}} و {{domxref("WebGLRenderingContext.compressedTexSubImage2D", "compressedTexSubImage2D()")}}.
 
 - `ext.COMPRESSED_RGBA_BPTC_UNORM_EXT`
-  - : Compresses 8-bit fixed-point data. Each 4x4 block of texels consists of 128 bits of RGBA or image data. See also [BC7 format](https://learn.microsoft.com/en-us/windows/win32/direct3d11/bc7-format).
+  - : داده‌های ۸ بیتی ممیز ثابت (fixed-point) را فشرده می‌کند. هر بلوک 4x4 تکسِل شامل 128 بیت دادهٔ RGBA یا تصویر است. همچنین ببینید: [قالب BC7](https://learn.microsoft.com/en-us/windows/win32/direct3d11/bc7-format).
 - `ext.COMPRESSED_SRGB_ALPHA_BPTC_UNORM_EXT`
-  - : Compresses 8-bit fixed-point data. Each 4x4 block of texels consists of 128 bits of SRGB_ALPHA or image data. See also [BC7 format](https://learn.microsoft.com/en-us/windows/win32/direct3d11/bc7-format).
+  - : داده‌های ۸ بیتی ممیز ثابت را فشرده می‌کند. هر بلوک 4x4 تکسِل شامل 128 بیت دادهٔ SRGB_ALPHA یا تصویر است. همچنین ببینید: [قالب BC7](https://learn.microsoft.com/en-us/windows/win32/direct3d11/bc7-format).
 - `ext.COMPRESSED_RGB_BPTC_SIGNED_FLOAT_EXT`
-  - : Compresses high dynamic range signed floating point values. Each 4x4 block of texels consists of 128 bits of RGB data. It only contains RGB data, so the returned alpha value is 1.0. See also [BC6H format](https://learn.microsoft.com/en-us/windows/win32/direct3d11/bc6h-format).
+  - : مقادیر ممیز شناور علامت‌دار با دامنهٔ پویای بالا را فشرده می‌کند. هر بلوک 4x4 تکسِل شامل 128 بیت دادهٔ RGB است. این قالب فقط دادهٔ RGB دارد، بنابراین مقدار آلفای بازگشتی 1.0 است. همچنین ببینید: [قالب BC6H](https://learn.microsoft.com/en-us/windows/win32/direct3d11/bc6h-format).
 - `ext.COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_EXT`
-  - : Compresses high dynamic range unsigned floating point values. Each 4x4 block of texels consists of 128 bits of RGB data. It only contains RGB data, so the returned alpha value is 1.0. See also [BC6H format](https://learn.microsoft.com/en-us/windows/win32/direct3d11/bc6h-format).
+  - : مقادیر ممیز شناور بدون علامت با دامنهٔ پویای بالا را فشرده می‌کند. هر بلوک 4x4 تکسِل شامل 128 بیت دادهٔ RGB است. این قالب فقط دادهٔ RGB دارد، بنابراین مقدار آلفای بازگشتی 1.0 است. همچنین ببینید: [قالب BC6H](https://learn.microsoft.com/en-us/windows/win32/direct3d11/bc6h-format).
 
-## Examples
+## مثال‌ها
 
 ```js
 const ext = gl.getExtension("EXT_texture_compression_bptc");
@@ -55,15 +53,15 @@ gl.compressedTexImage2D(
 );
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("WebGLRenderingContext.getExtension()")}}
 - {{domxref("WebGLRenderingContext.compressedTexImage2D()")}}
