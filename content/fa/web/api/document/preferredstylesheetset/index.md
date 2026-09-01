@@ -1,11 +1,5 @@
 ---
 title: "Document: preferredStyleSheetSet property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/preferredStyleSheetSet"
-status: "needs-translation"
----
-
----
-title: "Document: preferredStyleSheetSet property"
 short-title: preferredStyleSheetSet
 slug: Web/API/Document/preferredStyleSheetSet
 page-type: web-api-instance-property
@@ -17,17 +11,15 @@ browser-compat: api.Document.preferredStyleSheetSet
 
 {{APIRef("DOM")}}{{deprecated_header}}{{Non-standard_header}}
 
-The **`preferredStyleSheetSet`** property returns the preferred style sheet set as set by the page
-author.
+خاصیت **`preferredStyleSheetSet`**، مجموعه‌ی برگه‌ی سبک ترجیحی (preferred style sheet set) را که توسط نویسنده‌ی صفحه تعیین شده است، برمی‌گرداند.
 
-## Value
+## مقدار
 
-The author's preferred style sheet set. This is determined from the order of style sheet declarations and the
-`Default-Style` HTTP header.
+مجموعه‌ی برگه‌ی سبک ترجیحی نویسنده. این مقدار بر اساس ترتیب اعلام‌های برگه‌ی سبک و هدر HTTP `Default-Style` تعیین می‌شود.
 
-If there isn't a preferred style sheet set defined by the author, the empty string (`""`) is returned.
+اگر مجموعه‌ی برگه‌ی سبک ترجیحی توسط نویسنده تعریف نشده باشد، رشته‌ی خالی (`""`) برگردانده می‌شود.
 
-## Examples
+## مثال‌ها
 
 ```js
 if (document.preferredStyleSheetSet) {
@@ -39,11 +31,11 @@ if (document.preferredStyleSheetSet) {
 }
 ```
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("document.lastStyleSheetSet")}}
 - {{domxref("document.selectedStyleSheetSet")}}
