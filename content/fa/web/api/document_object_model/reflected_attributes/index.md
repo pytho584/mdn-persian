@@ -1,7 +1,5 @@
 ---
 title: "Attribute reflection"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes"
-status: "needs-translation"
 ---
 
 ---
@@ -12,92 +10,92 @@ page-type: guide
 
 {{DefaultAPISidebar("DOM")}}
 
-An {{glossary("attribute")}} extends an {{glossary("HTML")}}, {{glossary("XML")}}, {{glossary("SVG")}} or other {{glossary("element")}}, changing its behavior or providing metadata.
+یک {{glossary("attribute", "ویژگی")}} یک {{glossary("HTML")}}، {{glossary("XML")}}، {{glossary("SVG")}} یا {{glossary("element", "عنصر")}} دیگر را گسترش می‌دهد، رفتار آن را تغییر می‌دهد یا فراداده ارائه می‌کند.
 
-Many attributes are _reflected_ in the corresponding [DOM](/en-US/docs/Web/API/Document_Object_Model) interface.
-This means that the value of the attribute can be read or written directly in JavaScript through a property on the corresponding interface, and vice versa.
-The reflected properties offer a more natural programming approach than getting and setting attribute values using the {{domxref("Element.getAttribute()","getAttribute()")}} and {{domxref("Element.setAttribute()","setAttribute()")}} methods of the {{domxref("Element")}} interface.
+بسیاری از ویژگی‌ها در رابط {{glossary("DOM")}} متناظر _بازتابیده_ می‌شوند.
+این بدان معناست که مقدار ویژگی را می‌توان مستقیماً در جاوااسکریپت از طریق یک ویژگی (property) روی رابط متناظر خواند یا نوشت، و بالعکس.
+ویژگی‌های بازتابیده رویکرد برنامه‌نویسی طبیعی‌تری نسبت به دریافت و تنظیم مقادیر ویژگی با استفاده از روش‌های {{domxref("Element.getAttribute()","getAttribute()")}} و {{domxref("Element.setAttribute()","setAttribute()")}} رابط {{domxref("Element")}} ارائه می‌دهند.
 
-This guide provides an overview of reflected attributes and how they are used.
+این راهنما مروری بر ویژگی‌های بازتابیده و نحوه استفاده از آنها ارائه می‌دهد.
 
-## Attribute getter/setter
+## دریافت‌کننده/تنظیم‌کننده ویژگی
 
-First let's see the default mechanism for getting and setting an attribute, which can be used whether or not the attribute is reflected.
-To get the attribute you call the {{domxref("Element.getAttribute()","getAttribute()")}} method of the {{domxref("Element")}} interface, specifying the attribute name.
-To set the attribute you call the {{domxref("Element.setAttribute()","setAttribute()")}} methods, specifying the attribute name and new value.
+ابتدا مکانیسم پیش‌فرض برای دریافت و تنظیم یک ویژگی را بررسی می‌کنیم، که می‌تواند بدون توجه به بازتابیده بودن یا نبودن ویژگی استفاده شود.
+برای دریافت ویژگی، متد {{domxref("Element.getAttribute()","getAttribute()")}} رابط {{domxref("Element")}} را با مشخص کردن نام ویژگی فراخوانی می‌کنید.
+برای تنظیم ویژگی، متد {{domxref("Element.setAttribute()","setAttribute()")}} را با مشخص کردن نام ویژگی و مقدار جدید فراخوانی می‌کنید.
 
-Consider the following HTML:
+HTML زیر را در نظر بگیرید:
 
 ```html
-<input placeholder="Original placeholder" />
+<input placeholder="متن پیش‌فرض" />
 ```
 
-To get and set the [`placeholder`](/en-US/docs/Web/HTML/Reference/Attributes/placeholder) attribute:
+برای دریافت و تنظیم ویژگی [`placeholder`](/en-US/docs/Web/HTML/Reference/Attributes/placeholder):
 
 ```js
 const input = document.querySelector("input");
 
-// Get the placeholder attribute
+// دریافت ویژگی placeholder
 let attr = input.getAttribute("placeholder");
 
-// Set the placeholder attribute
-input.setAttribute("placeholder", "Modified placeholder");
+// تنظیم ویژگی placeholder
+input.setAttribute("placeholder", "متن تغییر یافته");
 ```
 
-## Reflected attributes
+## ویژگی‌های بازتابیده
 
-For an {{htmlelement("input")}} the `placeholder` attribute is reflected by the {{domxref("HTMLInputElement.placeholder")}} property.
-Given the same HTML as before:
+برای یک {{htmlelement("input")}}، ویژگی `placeholder` توسط ویژگی {{domxref("HTMLInputElement.placeholder")}} بازتابیده می‌شود.
+با همان HTML قبلی:
 
 ```html
-<input placeholder="Original placeholder" />
+<input placeholder="متن پیش‌فرض" />
 ```
 
-The same operation can be performed more naturally using the `placeholder` property:
+همان عملیات را می‌توان به طور طبیعی‌تری با استفاده از ویژگی `placeholder` انجام داد:
 
 ```js
 const input = document.querySelector("input");
 
-// Get the placeholder attribute
+// دریافت ویژگی placeholder
 let attr = input.placeholder;
 
-// Set the placeholder attribute
-input.placeholder = "Modified placeholder";
+// تنظیم ویژگی placeholder
+input.placeholder = "متن تغییر یافته";
 ```
 
-Note that the name of the reflected attribute and the property are the same: `placeholder`.
-This is not always the case: properties are usually named following the {{glossary("Camel case","camelCase")}} convention.
-This is particularly true for multi-word attribute names that contain characters that are not allowed in a property name, such as the hyphen.
-For example the [aria-checked](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-checked) attribute is reflected by the [`ariaChecked`](/en-US/docs/Web/API/Element/ariaChecked) property.
+توجه کنید که نام ویژگی بازتابیده و ویژگی (property) یکسان است: `placeholder`.
+همیشه اینطور نیست: ویژگی‌ها معمولاً با پیروی از قرارداد {{glossary("Camel case","camelCase")}} نام‌گذاری می‌شوند.
+این موضوع به ویژه برای نام ویژگی‌های چندکلمه‌ای که حاوی کاراکترهایی هستند که در نام ویژگی‌های جاوااسکریپت مجاز نیستند، مانند خط تیره، صادق است.
+برای مثال، ویژگی [aria-checked](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-checked) توسط ویژگی [`ariaChecked`](/en-US/docs/Web/API/Element/ariaChecked) بازتابیده می‌شود.
 
-### Boolean reflected attributes
+### ویژگی‌های بازتابیده بولی
 
-{{Glossary("Boolean/HTML", "Boolean attributes")}} are a little different than others in that they don't have to be declared with a name and a value.
-For example, the checkbox {{htmlelement("input")}} element below has the `checked` attribute, and will be checked on display:
+{{Glossary("Boolean/HTML", "ویژگی‌های بولی")}} کمی متفاوت از دیگران هستند زیرا نیازی به اعلام با نام و مقدار ندارند.
+برای مثال، عنصر checkbox {{htmlelement("input")}} زیر دارای ویژگی `checked` است و در نمایش علامت‌خورده خواهد بود:
 
 ```html
 <input type="checkbox" checked />
 ```
 
-The {{domxref("Element.getAttribute()")}} will return `""` if the input is checked or `null` if it is not.
-The corresponding {{domxref("HTMLInputElement.checked")}} property returns `true` or `false` for the checked state.
-Otherwise boolean reflected attributes are the same as any other reflected attributes.
+متد {{domxref("Element.getAttribute()")}} در صورت علامت‌خورده بودن ورودی رشته‌ی خالی `""` و در غیر این صورت `null` برمی‌گرداند.
+ویژگی متناظر {{domxref("HTMLInputElement.checked")}} برای وضعیت علامت‌خورده `true` یا `false` برمی‌گرداند.
+در غیر این صورت، ویژگی‌های بازتابیده بولی مانند سایر ویژگی‌های بازتابیده هستند.
 
-### Enumerated reflected attributes
+### ویژگی‌های بازتابیده شمارشی
 
-In HTML, [enumerated attributes](https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#enumerated-attribute) are attributes with a limited, predefined set of text values. For example, the global HTML [`dir`](/en-US/docs/Web/HTML/Reference/Global_attributes/dir) attribute has three valid values: `ltr`, `rtl`, and `auto`.
-
-```html
-<p dir="rtl">Right to left</p>
-```
-
-Like for HTML tag names, HTML enumerated attributes and their values are case-insensitive, so `LTR`, `RTL`, and `AUTO` will also work.
+در HTML، [ویژگی‌های شمارشی](https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#enumerated-attribute) ویژگی‌هایی با مجموعه محدود و از پیش تعریف‌شده‌ای از مقادیر متنی هستند. برای مثال، ویژگی سراسری HTML [`dir`](/en-US/docs/Web/HTML/Reference/Global_attributes/dir) سه مقدار معتبر دارد: `ltr`، `rtl` و `auto`.
 
 ```html
-<p dir="RTL">Right to left</p>
+<p dir="rtl">راست به چپ</p>
 ```
 
-The IDL-reflected property, {{domxref("HTMLElement.dir")}}, always returns a canonical value as provided in the specification (lowercased values in this example). Setting the value also serializes it to the canonical form.
+مانند نام تگ‌های HTML، ویژگی‌های شمارشی HTML و مقادیر آنها به حروف بزرگ و کوچک حساس نیستند، بنابراین `LTR`، `RTL` و `AUTO` نیز کار می‌کنند.
+
+```html
+<p dir="RTL">راست به چپ</p>
+```
+
+ویژگی بازتابیده IDL، {{domxref("HTMLElement.dir")}}، همیشه یک مقدار متعارف (canonical) را مطابق مشخصات (در این مثال مقادیر با حروف کوچک) برمی‌گرداند. تنظیم مقدار نیز آن را به شکل متعارف سریال‌سازی می‌کند.
 
 ```js
 const pElement = document.querySelector("p");
@@ -106,34 +104,34 @@ pElement.dir = "RTL";
 console.log(pElement.dir); // "rtl"
 ```
 
-Alternatively, you can use the {{domxref("Element.getAttribute()","getAttribute()")}} method of the {{domxref("Element")}} interface. It will get the attribute value from HTML without modifications.
+به طور جایگزین، می‌توانید از متد {{domxref("Element.getAttribute()","getAttribute()")}} رابط {{domxref("Element")}} استفاده کنید. این متد مقدار ویژگی را بدون تغییر از HTML دریافت می‌کند.
 
 ```js
 const pElement = document.querySelector("p");
 console.log(pElement.getAttribute("dir")); // "RTL"
 ```
 
-## Reflected element references
+## ارجاع‌های عنصر بازتابیده
 
 > [!NOTE]
-> This section applies to [reflected ARIA attributes that contain element references](/en-US/docs/Web/API/Element#instance_properties_reflected_from_aria_element_references).
-> The same considerations are likely to apply to other/future attributes that reflect element references.
+> این بخش در مورد [ویژگی‌های ARIA بازتابیده که حاوی ارجاع به عناصر هستند](/en-US/docs/Web/API/Element#instance_properties_reflected_from_aria_element_references) اعمال می‌شود.
+> ملاحظات مشابه احتمالاً برای سایر/ویژگی‌های آینده که ارجاع به عناصر را بازتاب می‌دهند نیز صادق است.
 
-Some attributes take element _references_ as values: either an element `id` value or a space-separated string of element `id` values.
-These `id` values refer to other elements which are related to the attribute, or that contain information needed by the attribute.
-These attributes are reflected by a corresponding property as an array of {{domxref("HTMLElement")}}-derived object instances that match the `id` values, with some caveats.
+برخی ویژگی‌ها ارجاع به _عناصر_ را به عنوان مقدار می‌پذیرند: یا یک مقدار `id` عنصر یا یک رشته از مقادیر `id` عنصر که با فاصله جدا شده‌اند.
+این مقادیر `id` به عناصر دیگری اشاره می‌کنند که با ویژگی مرتبط هستند، یا حاوی اطلاعاتی هستند که ویژگی به آنها نیاز دارد.
+این ویژگی‌ها توسط یک ویژگی متناظر به عنوان یک آرایه از نمونه‌های شیء مشتق‌شده از {{domxref("HTMLElement")}} که با مقادیر `id` مطابقت دارند، بازتابیده می‌شوند، با برخی ملاحظات.
 
-For example, the [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) attribute lists the `id` values of elements that contain the accessible name for an element in their inner text.
-The HTML below shows this for an {{htmlelement("input")}} that has a label defined in {{htmlelement("span")}} elements with `id` values of `label_1`, `label_2`, and `label_3`:
+برای مثال، ویژگی [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) مقادیر `id` عناصری را فهرست می‌کند که نام دسترس‌پذیر (accessible name) یک عنصر را در متن داخلی خود دارند.
+HTML زیر این را برای یک {{htmlelement("input")}} نشان می‌دهد که دارای برچسبی تعریف‌شده در عناصر {{htmlelement("span")}} با مقادیر `id` برابر با `label_1`، `label_2` و `label_3` است:
 
 ```html
-<span id="label_1">(Label 1 Text)</span>
-<span id="label_2">(Label 2 Text)</span>
+<span id="label_1">(متن برچسب ۱)</span>
+<span id="label_2">(متن برچسب ۲)</span>
 <input aria-labelledby="label_1 label_2 label_3" />
 ```
 
-This attribute is reflected by {{domxref("Element.ariaLabelledByElements")}} property, which returns the array of elements that have the corresponding `id` values.
-The attribute and corresponding property can be returned as shown:
+این ویژگی توسط ویژگی {{domxref("Element.ariaLabelledByElements")}} بازتابیده می‌شود که آرایه‌ای از عناصر دارای مقادیر `id` متناظر را برمی‌گرداند.
+ویژگی و ویژگی متناظر را می‌توان به صورت زیر برگرداند:
 
 ```js
 const inputElement = document.querySelector("input");
@@ -145,11 +143,11 @@ console.log(inputElement.ariaLabelledByElements);
 // [HTMLSpanElement, HTMLSpanElement]
 ```
 
-The first thing to note from the code above is that the attribute and the property contain different numbers of elements — the property doesn't _directly_ reflect the attribute because the reference `label_3` does not have a corresponding element.
-It is also possible that a reference will not match because the `id` is [out of scope for the element](#element_id_reference_scope).
-This can happen if the referenced element is not in the same DOM or shadow DOM as the element, since ids are only valid in the scope in which they are declared.
+نکته اول از کد بالا این است که ویژگی و ویژگی (property) تعداد متفاوتی از عناصر را شامل می‌شوند — ویژگی مستقیماً ویژگی را بازتاب نمی‌دهد زیرا ارجاع `label_3` عنصر متناظری ندارد.
+همچنین ممکن است یک ارجاع مطابقت نداشته باشد زیرا `id` [خارج از محدوده عنصر](#element_id_reference_scope) است.
+این می‌تواند زمانی اتفاق بیفتد که عنصر ارجاع‌شده در همان DOM یا shadow DOM عنصر نباشد، زیرا شناسه‌ها فقط در محدوده‌ای که اعلام شده‌اند معتبر هستند.
 
-We can iterate the elements in the property array, in this case to get the accessible name from their inner text (this is more natural than using the attribute, because we don't have to first get the element references and then use them to find the elements, and we only have to work with elements that we know to be available in the current scope):
+ما می‌توانیم عناصر موجود در آرایه ویژگی را پیمایش کنیم، در این مورد برای دریافت نام دسترس‌پذیر از متن داخلی آنها (این کار طبیعی‌تر از استفاده از ویژگی است، زیرا نیازی به دریافت اولیه ارجاع‌های عنصر و سپس استفاده از آنها برای یافتن عناصر نداریم، و فقط باید با عناصری کار کنیم که می‌دانیم در محدوده فعلی در دسترس هستند):
 
 ```js
 const inputElement = document.querySelector("input");
@@ -157,23 +155,23 @@ const accessibleName = inputElement.ariaLabelledByElements
   .map((e) => e.textContent.trim())
   .join(" ");
 console.log(accessibleName);
-// (Label 1 Text) (Label 2 Text)
+// (متن برچسب ۱) (متن برچسب ۲)
 ```
 
-### Setting the property and attribute
+### تنظیم ویژگی و ویژگی (property)
 
-For normal reflected properties, updates to the property are reflected in the corresponding attribute and vice versa.
-For reflected element references this is not the case.
-Instead, setting the property clears (unsets) the attribute, so that the property and attribute no longer reflect each other.
-For example, given the following HTML:
+برای ویژگی‌های بازتابیده معمولی، به‌روزرسانی‌های ویژگی (property) در ویژگی متناظر منعکس می‌شوند و بالعکس.
+برای ارجاع‌های عنصر بازتابیده اینطور نیست.
+در عوض، تنظیم ویژگی (property) ویژگی (attribute) را پاک می‌کند (تنظیم مجدد)، به طوری که ویژگی و ویژگی دیگر یکدیگر را بازتاب نمی‌دهند.
+برای مثال، با HTML زیر:
 
 ```html
-<span id="label_1">(Label 1 Text)</span>
-<span id="label_2">(Label 2 Text)</span>
+<span id="label_1">(متن برچسب ۱)</span>
+<span id="label_2">(متن برچسب ۲)</span>
 <input aria-labelledby="label_1 label_2" />
 ```
 
-The initial value of the `aria-labelledby` is `"label_1 label_2"`, but if we set it from the DOM API, the attribute is reset to `""`:
+مقدار اولیه `aria-labelledby` برابر با `"label_1 label_2"` است، اما اگر آن را از DOM API تنظیم کنیم، ویژگی به `""` بازنشانی می‌شود:
 
 ```js
 const inputElement = document.querySelector("input");
@@ -182,7 +180,7 @@ let attributeValue = inputElement.getAttribute("aria-labelledby");
 console.log(attributeValue);
 // "label_1 label_2"
 
-// Set attribute using the reflected property
+// تنظیم ویژگی با استفاده از ویژگی بازتابیده
 inputElement.ariaLabelledByElements = document.querySelectorAll("span");
 
 attributeValue = inputElement.getAttribute("aria-labelledby");
@@ -190,10 +188,10 @@ console.log(attributeValue);
 // ""
 ```
 
-This makes sense because you could otherwise assign elements to the property that don't have an `id` reference, and hence can't be represented in the attribute.
+این منطقی است زیرا در غیر این صورت می‌توانستید عناصری را به ویژگی اختصاص دهید که ارجاع `id` ندارند، و بنابراین نمی‌توانند در ویژگی نمایش داده شوند.
 
-Setting the attribute value restores the relationship between the attribute and the property.
-Continuing the example from above:
+تنظیم مقدار ویژگی، رابطه بین ویژگی و ویژگی (property) را بازمی‌گرداند.
+ادامه مثال بالا:
 
 ```js
 inputElement.setAttribute("aria-labelledby", "label_1");
@@ -202,54 +200,54 @@ attributeValue = inputElement.getAttribute("aria-labelledby");
 console.log(attributeValue);
 // "label_1"
 
-// Set attribute using the reflected property
+// تنظیم ویژگی با استفاده از ویژگی بازتابیده
 console.log(inputElement.ariaLabelledByElements);
-// [HTMLSpanElement] - for `label_1`
+// [HTMLSpanElement] - برای `label_1`
 ```
 
-The array returned by the property is static, so you can't modify the returned array to cause changes to the corresponding attribute.
-When an array is assigned to the property it is copied, so any changes to the attribute will not be reflected in a previously returned property array.
+آرایه برگردانده شده توسط ویژگی (property) ایستا است، بنابراین نمی‌توانید آرایه برگردانده شده را تغییر دهید تا باعث تغییرات در ویژگی متناظر شوید.
+هنگامی که یک آرایه به ویژگی اختصاص داده می‌شود، کپی می‌شود، بنابراین هر تغییری در ویژگی در آرایه ویژگی که قبلاً برگردانده شده منعکس نخواهد شد.
 
-### Element id reference scope
+### محدوده ارجاع شناسه عنصر
 
-Attribute element references can only refer to other elements that are in the same DOM or [Shadow DOM](/en-US/docs/Web/API/Web_components#shadow_dom_2), because element ids are only valid in the scope in which they are declared.
+ارجاع‌های ویژگی عنصر فقط می‌توانند به عناصر دیگری که در همان DOM یا [Shadow DOM](/en-US/docs/Web/API/Web_components#shadow_dom_2) هستند اشاره کنند، زیرا شناسه‌های عنصر فقط در محدوده‌ای که اعلام شده‌اند معتبر هستند.
 
-We can see this in the following code.
-The [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) attribute of the {{htmlelement("input")}} element references the elements with ids `label_1`, `label_2`, and `label_3`.
-However `label_3` is not a valid id in this case because it is not defined in the same scope as the {{htmlelement("input")}} element.
-As a result the label will only come from the elements with ids `label_1` and `label_2`.
+ما می‌توانیم این را در کد زیر ببینیم.
+ویژگی [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-labelledby) عنصر {{htmlelement("input")}} به عناصر با شناسه‌های `label_1`، `label_2` و `label_3` ارجاع می‌دهد.
+با این حال `label_3` در این مورد یک شناسه معتبر نیست زیرا در همان محدوده عنصر {{htmlelement("input")}} تعریف نشده است.
+در نتیجه، برچسب فقط از عناصر با شناسه‌های `label_1` و `label_2` خواهد آمد.
 
 ```html
 <div id="in_dom">
-  <span id="label_3">(Label 3 Text)</span>
+  <span id="label_3">(متن برچسب ۳)</span>
 </div>
 <div id="host">
   <template shadowrootmode="open">
-    <span id="label_1">(Label 1 Text)</span>
+    <span id="label_1">(متن برچسب ۱)</span>
     <input aria-labelledby="label_1 label_2 label_3" />
-    <span id="label_2">(Label 2 Text)</span>
+    <span id="label_2">(متن برچسب ۲)</span>
   </template>
 </div>
 ```
 
-### Reflected element reference scope
+### محدوده ارجاع عنصر بازتابیده
 
-When using the [instance properties reflected from ARIA element references](/en-US/docs/Web/API/Element#instance_properties_reflected_from_aria_element_references), such as {{domxref("Element.ariaLabelledByElements")}} for `aria-labelledby`, the scoping rules are a little different.
-To be in scope a target element must be in the same DOM as the referencing element, or a parent DOM.
-Elements in other DOMs, including shadow DOMs that are children or peers of the referring DOM, are out of scope.
+هنگام استفاده از [ویژگی‌های نمونه بازتابیده از ارجاع‌های عنصر ARIA](/en-US/docs/Web/API/Element#instance_properties_reflected_from_aria_element_references)، مانند {{domxref("Element.ariaLabelledByElements")}} برای `aria-labelledby`، قوانین محدوده کمی متفاوت است.
+برای اینکه در محدوده باشد، یک عنصر هدف باید در همان DOM عنصر ارجاع‌دهنده، یا یک DOM والد باشد.
+عناصر در DOMهای دیگر، از جمله shadow DOMهایی که فرزند یا هم‌سطح DOM ارجاع‌دهنده هستند، خارج از محدوده هستند.
 
-The example below shows the case where an element in a parent DOM (`label_3`) is set as a target, along with the elements with ids `label_1` and `label_2` which are declared in the same shadow root.
-This works because all the target elements are in scope for the referencing element.
+مثال زیر حالتی را نشان می‌دهد که یک عنصر در DOM والد (`label_3`) به عنوان هدف تنظیم می‌شود، همراه با عناصر با شناسه‌های `label_1` و `label_2` که در همان ریشه shadow اعلام شده‌اند.
+این کار می‌کند زیرا همه عناصر هدف برای عنصر ارجاع‌دهنده در محدوده هستند.
 
 ```html
 <div id="in_dom">
-  <span id="label_3">(Label 3 Text)</span>
+  <span id="label_3">(متن برچسب ۳)</span>
 </div>
 <div id="host">
   <template shadowrootmode="open">
-    <span id="label_1">(Label 1 Text)</span>
+    <span id="label_1">(متن برچسب ۱)</span>
     <input id="input" />
-    <span id="label_2">(Label 2 Text)</span>
+    <span id="label_2">(متن برچسب ۲)</span>
   </template>
 </div>
 ```
@@ -264,17 +262,17 @@ input.ariaLabelledByElements = [
 ];
 ```
 
-The equivalent code with an element in the DOM referencing another in the shadow DOM would not work, because target elements that are in nested shadow DOMs are not in scope:
+کد معادل با یک عنصر در DOM که به عنصری در shadow DOM ارجاع می‌دهد کار نخواهد کرد، زیرا عناصر هدفی که در shadow DOMهای تو در تو هستند در محدوده نیستند:
 
 ```html
 <div id="in_dom">
-  <span id="label_1">(Label 1 Text)</span>
+  <span id="label_1">(متن برچسب ۱)</span>
   <input id="input" />
-  <span id="label_2">(Label 2 Text)</span>
+  <span id="label_2">(متن برچسب ۲)</span>
 </div>
 <div id="host">
   <template shadowrootmode="open">
-    <span id="label_3">(Label 3 Text)</span>
+    <span id="label_3">(متن برچسب ۳)</span>
   </template>
 </div>
 ```
@@ -289,18 +287,18 @@ input.ariaLabelledByElements = [
 ];
 ```
 
-Note that an element may initially be "in scope" and then moved out of scope into a nested shadow root.
-In this case the referenced element will still be listed in the attribute, but will not be returned in the property.
-Note however that if the element is moved back into scope, it will again be present in the reflected property.
+توجه کنید که یک عنصر ممکن است در ابتدا "در محدوده" باشد و سپس به خارج از محدوده به یک ریشه shadow تو در تو منتقل شود.
+در این مورد، عنصر ارجاع‌شده همچنان در ویژگی فهرست می‌شود، اما در ویژگی (property) برگردانده نمی‌شود.
+با این حال توجه داشته باشید که اگر عنصر به محدوده بازگردانده شود، دوباره در ویژگی بازتابیده حضور خواهد داشت.
 
-### Summary of the attribute/property relationship
+### خلاصه رابطه ویژگی/ویژگی (property)
 
-The relationship between attributes containing element references and their corresponding property is as follows:
+رابطه بین ویژگی‌های حاوی ارجاع به عناصر و ویژگی متناظر آنها به شرح زیر است:
 
-- Attribute element `id` references are only [in-scope](#element_id_reference_scope) for target elements declared in the same DOM or shadow DOM as the element.
-- Properties that reflect ARIA element references can target elements in the same scope or a parent scope. Elements in nested scopes are not accessible.
-- Setting the property clears the attribute and the property and attribute no longer reflect each other.
-  If the attributes is read, with {{domxref("Element.getAttribute()")}}, the value is `""`.
-- Setting the attribute, with {{domxref("Element.setAttribute()")}}, also sets the property and restores the "reflection relationship".
-- Setting the attribute with a value reference that is subsequently moved out of scope will result in removal of the corresponding element from the property array.
-  Note however that the attribute still contains the reference, and if the element is moved back in-scope the property will again include the element (i.e., the relationship is restored).
+- ارجاع‌های `id` عنصر ویژگی فقط برای عناصر هدفی که در همان DOM یا shadow DOM عنصر اعلام شده‌اند [در محدوده](#element_id_reference_scope) هستند.
+- ویژگی‌هایی که ارجاع‌های عنصر ARIA را بازتاب می‌دهند می‌توانند عناصر را در همان محدوده یا یک محدوده والد هدف قرار دهند. عناصر در محدوده‌های تو در تو قابل دسترسی نیستند.
+- تنظیم ویژگی (property) ویژگی (attribute) را پاک می‌کند و ویژگی و ویژگی دیگر یکدیگر را بازتاب نمی‌دهند.
+  اگر ویژگی با {{domxref("Element.getAttribute()")}} خوانده شود، مقدار `""` است.
+- تنظیم ویژگی (attribute) با {{domxref("Element.setAttribute()")}} همچنین ویژگی (property) را تنظیم می‌کند و "رابطه بازتاب" را بازمی‌گرداند.
+- تنظیم ویژگی با یک مقدار ارجاع که متعاقباً از محدوده خارج می‌شود منجر به حذف عنصر متناظر از آرایه ویژگی می‌شود.
+  با این حال توجه داشته باشید که ویژگی همچنان حاوی ارجاع است، و اگر عنصر به محدوده بازگردانده شود، ویژگی دوباره عنصر را شامل می‌شود (یعنی رابطه بازسازی می‌شود).
