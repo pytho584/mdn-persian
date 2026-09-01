@@ -1,11 +1,5 @@
 ---
 title: "HTMLMediaElement: encrypted event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/encrypted_event"
-status: "needs-translation"
----
-
----
-title: "HTMLMediaElement: encrypted event"
 short-title: encrypted
 slug: Web/API/HTMLMediaElement/encrypted_event
 page-type: web-api-event
@@ -14,13 +8,13 @@ browser-compat: api.HTMLMediaElement.encrypted_event
 
 {{APIRef("Encrypted Media Extensions")}}
 
-The `encrypted` event is fired when initialization data is found in the media that indicates it is encrypted.
+رویداد `encrypted` زمانی فعال می‌شود که داده‌های اولیه‌سازی در رسانه یافت شود که نشان می‌دهد رسانه رمزنگاری شده است.
 
-This event is not cancelable and does not bubble.
+این رویداد قابل لغو کردن نیست و منتشر نمی‌شود (bubble نمی‌شود).
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی handler رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("encrypted", (event) => { })
@@ -28,21 +22,21 @@ addEventListener("encrypted", (event) => { })
 onencrypted = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("MediaEncryptedEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("MediaEncryptedEvent")}}. از {{domxref("Event")}} به ارث می‌برد.
 
 {{InheritanceDiagram("MediaEncryptedEvent")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("HTMLAudioElement")}}
 - {{domxref("HTMLVideoElement")}}
