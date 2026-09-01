@@ -1,11 +1,5 @@
 ---
 title: "GPUComputePassEncoder: dispatchWorkgroupsIndirect() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUComputePassEncoder/dispatchWorkgroupsIndirect"
-status: "needs-translation"
----
-
----
-title: "GPUComputePassEncoder: dispatchWorkgroupsIndirect() method"
 short-title: dispatchWorkgroupsIndirect()
 slug: Web/API/GPUComputePassEncoder/dispatchWorkgroupsIndirect
 page-type: web-api-instance-method
@@ -14,19 +8,18 @@ browser-compat: api.GPUComputePassEncoder.dispatchWorkgroupsIndirect
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`dispatchWorkgroupsIndirect()`** method of the
-{{domxref("GPUComputePassEncoder")}} interface dispatches a grid of workgroups, defined by the parameters of a {{domxref("GPUBuffer")}}, to perform the work being done by the current {{domxref("GPUComputePipeline")}} (i.e., set via {{domxref("GPUComputePassEncoder.setPipeline()")}}).
+متد **`dispatchWorkgroupsIndirect()`** از رابط {{domxref("GPUComputePassEncoder")}} شبکه‌ای از گروه‌های کاری را که ابعاد آن توسط پارامترهای یک {{domxref("GPUBuffer")}} تعریف شده است، برای انجام کار مربوط به {{domxref("GPUComputePipeline")}} جاری (یعنی خط لوله‌ای که با {{domxref("GPUComputePassEncoder.setPipeline()")}} تنظیم شده است) به اجرا درمی‌آورد.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 dispatchWorkgroupsIndirect(indirectBuffer, indirectOffset)
 ```
 
-### Parameters
+### پارامترها
 
 - `indirectBuffer`
-  - : A {{domxref("GPUBuffer")}} containing the X, Y, and Z dimensions of the grid of workgroups to dispatch. The buffer must contain a tightly packed block of three 32-bit unsigned integer values representing the dimensions (12 bytes total), given in the same order as the arguments for {{domxref("GPUComputePassEncoder.dispatchWorkgroups()")}}. So for example:
+  - : یک {{domxref("GPUBuffer")}} که ابعاد X، Y و Z شبکه گروه‌های کاری موردنظر برای اجرا را در خود دارد. این بافر باید شامل یک بلوک فشرده و پشت‌سرهم از سه مقدار عدد صحیح بدون علامت ۳۲-بیتی باشد که ابعاد را نشان می‌دهند (در مجموع ۱۲ بایت)، به همان ترتیبی که آرگومان‌های {{domxref("GPUComputePassEncoder.dispatchWorkgroups()")}} داده می‌شوند. بنابراین برای مثال:
 
     ```js
     const uint32 = new Uint32Array(3);
@@ -39,24 +32,24 @@ dispatchWorkgroupsIndirect(indirectBuffer, indirectOffset)
     ```
 
 - `indirectOffset`
-  - : The offset, in bytes, into `indirectBuffer` where the dimension data begins.
+  - : آفست (offset) بر حسب بایت در `indirectBuffer` که داده‌های ابعاد از آن‌جا شروع می‌شوند.
 
 > [!NOTE]
-> The X, Y, and Z dimension values passed to {{domxref("GPUComputePassEncoder.dispatchWorkgroups()")}} and `dispatchWorkgroupsIndirect()` are the number of workgroups to dispatch for each dimension, not the number of shader invocations to perform across each dimension. This matches the behavior of modern native GPU APIs, but differs from the behavior of OpenCL. This means that if a {{domxref("GPUShaderModule")}} defines an entry point with `@workgroup_size(4, 4)`, and work is dispatched to it with the call `dispatchWorkgroupsIndirect(indirectBuffer);` with `indirectBuffer` specifying X and Y dimensions of 8 and 8, the entry point will be invoked 1024 times total — Dispatching a 4 x 4 workgroup 8 times along both the X and Y axes. `4 * 4 * 8 * 8 = 1024`.
+> مقادیر ابعاد X، Y و Z که به {{domxref("GPUComputePassEncoder.dispatchWorkgroups()")}} و `dispatchWorkgroupsIndirect()` ارسال می‌شوند، تعداد گروه‌های کاری برای هر بعد هستند، نه تعداد فراخوانی‌های شیدر در هر بعد. این رفتار مطابق رفتار APIهای بومی مدرن GPU است، اما با رفتار OpenCL تفاوت دارد. به این معنا که اگر یک {{domxref("GPUShaderModule")}} نقطه ورود را با `@workgroup_size(4, 4)` تعریف کند و کار با فراخوانی `dispatchWorkgroupsIndirect(indirectBuffer);` در حالی که `indirectBuffer` ابعاد X و Y را ۸ و ۸ مشخص می‌کند، به آن ارسال شود، نقطه ورود در مجموع ۱۰۲۴ بار فراخوانی می‌شود — ارسال یک گروه کاری ۴×۴ به تعداد ۸ بار در امتداد هر دو محور X و Y. `4 * 4 * 8 * 8 = 1024`.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Validation
+### اعتبارسنجی
 
-The following criteria must be met when calling **`dispatchWorkgroupsIndirect()`**, otherwise a {{domxref("GPUValidationError")}} is generated and the {{domxref("GPUComputePassEncoder")}} becomes invalid:
+هنگام فراخوانی **`dispatchWorkgroupsIndirect()`** باید معیارهای زیر برقرار باشند، در غیر این صورت یک {{domxref("GPUValidationError")}} تولید می‌شود و {{domxref("GPUComputePassEncoder")}} نامعتبر می‌شود:
 
-- `indirectBuffer`'s {{domxref("GPUBuffer.usage")}} contains the `GPUBufferUsage.INDIRECT` flag.
-- `indirectOffset` + the total size specified by the `X`, `Y`, and `Z` dimensions is less than or equal to the `indirectBuffer`'s {{domxref("GPUBuffer.size")}}.
-- `indirectOffset` is a multiple of 4.
+- پرچم `GPUBufferUsage.INDIRECT` در {{domxref("GPUBuffer.usage")}} مربوط به `indirectBuffer` تنظیم شده باشد.
+- `indirectOffset` به‌علاوه اندازه کل مشخص‌شده توسط ابعاد `X`، `Y` و `Z` کمتر یا مساوی {{domxref("GPUBuffer.size")}} مربوط به `indirectBuffer` باشد.
+- `indirectOffset` مضربی از ۴ باشد.
 
-## Examples
+## مثال‌ها
 
 ```js
 // Set global buffer size
@@ -117,14 +110,14 @@ device.queue.submit([commandEncoder.finish()]);
 // …
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
