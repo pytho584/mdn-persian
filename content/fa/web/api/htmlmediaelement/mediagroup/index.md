@@ -1,11 +1,5 @@
 ---
 title: "HTMLMediaElement: mediaGroup property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/mediaGroup"
-status: "needs-translation"
----
-
----
-title: "HTMLMediaElement: mediaGroup property"
 short-title: mediaGroup
 slug: Web/API/HTMLMediaElement/mediaGroup
 page-type: web-api-instance-property
@@ -17,20 +11,20 @@ browser-compat: api.HTMLMediaElement.mediaGroup
 
 {{APIRef("HTML DOM")}}{{Deprecated_Header}}{{Non-standard_Header}}
 
-The **`HTMLMediaElement.mediaGroup`** property reflects the `mediagroup` HTML attribute, which indicates the name of the group of elements it belongs to. A group of media elements shares a common `controller`.
+خاصیت **`HTMLMediaElement.mediaGroup`** مشخصه‌ی HTML `mediagroup` را منعکس می‌کند که نام گروه عناصری را نشان می‌دهد که به آن تعلق دارد. یک گروه از عناصر رسانه‌ای یک کنترل‌کننده (`controller`) مشترک دارند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته (string).
 
-## Specifications
+## مشخصات
 
-In 2016, the whole Media Controller feature was [removed from the HTML specification](https://github.com/w3c/html/issues/246). It is no longer on track to become a standard.
+در سال ۲۰۱۶، کل ویژگی Media Controller از [مشخصات HTML](https://github.com/w3c/html/issues/246) حذف شد. دیگر در مسیر تبدیل شدن به یک استاندارد نیست.
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("HTMLMediaElement")}}: Interface used to define the `HTMLMediaElement.mediaGroup` property
+- {{domxref("HTMLMediaElement")}}: رابطی که برای تعریف خاصیت `HTMLMediaElement.mediaGroup` استفاده می‌شود.
