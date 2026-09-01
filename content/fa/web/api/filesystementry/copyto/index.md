@@ -1,11 +1,5 @@
 ---
 title: "FileSystemEntry: copyTo() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry/copyTo"
-status: "needs-translation"
----
-
----
-title: "FileSystemEntry: copyTo() method"
 short-title: copyTo()
 slug: Web/API/FileSystemEntry/copyTo
 page-type: web-api-instance-method
@@ -17,19 +11,15 @@ browser-compat: api.FileSystemEntry.copyTo
 
 {{APIRef("File and Directory Entries API")}}{{Deprecated_Header}}{{Non-standard_Header}}
 
-The {{domxref("FileSystemEntry")}} interface's method
-**`copyTo()`** copies the file
-specified by the entry to a new location on the file system.
+متد **`copyTo()`** در رابط {{domxref("FileSystemEntry")}}، فایل مشخص‌شده توسط ورودی را به مکان جدیدی در سیستم فایل کپی می‌کند.
 
-There are some
-typical restrictions on what you can do:
+برخی محدودیت‌های معمول در مورد کارهایی که می‌توان انجام داد وجود دارد:
 
-- A directory can't be copied into itself.
-- An entry can't be copied into its parent directory unless you specify a new name.
-- When copying a directory, the copy is always recursive; you can't leave out
-  subfolders.
+- یک پوشه نمی‌تواند در خودش کپی شود.
+- یک ورودی نمی‌تواند در پوشهٔ والد خود کپی شود، مگر اینکه نام جدیدی مشخص کنید.
+- هنگام کپی کردن یک پوشه، کپی همیشه به صورت بازگشتی انجام می‌شود؛ نمی‌توانید زیرپوشه‌ها را حذف کنید.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 copyTo(newParent)
@@ -38,40 +28,31 @@ copyTo(newParent, newName, successCallback)
 copyTo(newParent, newName, successCallback, errorCallback)
 ```
 
-### Parameters
+### پارامترها
 
 - `newParent`
-  - : A {{domxref("FileSystemDirectoryEntry")}} object specifying the destination
-    directory for the copy operation.
+  - : یک شیء {{domxref("FileSystemDirectoryEntry")}} که پوشهٔ مقصد را برای عملیات کپی مشخص می‌کند.
 - `newName` {{optional_inline}}
-  - : If this parameter is provided, the copy is given this string as its new file or
-    directory name.
+  - : اگر این پارامتر ارائه شود، کپی با این رشته به عنوان نام جدید فایل یا پوشه نام‌گذاری می‌شود.
 - `successCallback` {{optional_inline}}
-  - : A function which is called when the copy operation is successfully completed.
-    Receives a single input parameter: a {{domxref("FileSystemEntry")}} based object
-    providing the copied item's new details.
+  - : تابعی که وقتی عملیات کپی با موفقیت کامل شود فراخوانی می‌شود. یک پارامتر ورودی واحد دریافت می‌کند: یک شیء مبتنی بر {{domxref("FileSystemEntry")}} که اطلاعات جدید آیتم کپی‌شده را فراهم می‌کند.
 - `errorCallback` {{optional_inline}}
-  - : An optional callback which is executed if an error occurs while copying the items.
-    There's a single parameter: a {{domxref("DOMException")}} describing what went wrong.
+  - : یک تابع برگشت به اختیاری که در صورت بروز خطا هنگام کپی کردن آیتم‌ها اجرا می‌شود. یک پارامتر واحد دارد: یک {{domxref("DOMException")}} که شرح می‌دهد چه چیزی اشتباه رخ داده است.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `DOMException.INVALID_MODIFICATION_ERR`
-  - : The requested operation involves an impossible change, such as moving a directory
-    inside itself or one of its own child directories, or copying an item within the same
-    directory without renaming it.
+  - : عملیات درخواستی شامل یک تغییر غیرممکن است، مانند انتقال یک پوشه به داخل خودش یا یکی از زیرپوشه‌های خودش، یا کپی کردن یک آیتم در همان پوشه بدون تغییر نام آن.
 - `DOMException.QUOTA_EXCEEDED_ERR`
-  - : The operation exceeded the user's storage quota, or there isn't enough storage space
-    left to complete the operation.
+  - : عملیات از سهمیه ذخیره‌سازی کاربر فراتر رفته است، یا فضای ذخیره‌سازی کافی برای تکمیل عملیات وجود ندارد.
 
-## Examples
+## مثال‌ها
 
-This example shows how a temporary log file might be moved into a more permanent "log"
-directory.
+این مثال نشان می‌دهد که چگونه ممکن است یک فایل گزارش موقت به یک پوشه «log» دائمی‌تر منتقل شود.
 
 ```js
 workingDirectory.getFile(
@@ -91,10 +72,10 @@ workingDirectory.getFile(
 );
 ```
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [File and Directory Entries API](/en-US/docs/Web/API/File_and_Directory_Entries_API)
