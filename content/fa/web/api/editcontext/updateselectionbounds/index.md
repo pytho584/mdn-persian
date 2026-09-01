@@ -1,7 +1,5 @@
 ---
 title: "EditContext: updateSelectionBounds() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EditContext/updateSelectionBounds"
-status: "needs-translation"
 ---
 
 ---
@@ -16,38 +14,38 @@ browser-compat: api.EditContext.updateSelectionBounds
 
 {{APIRef("EditContext API")}}{{SeeCompatTable}}
 
-The **`EditContext.updateSelectionBounds()`** method of the {{domxref("EditContext")}} interface is used to inform the operating system about the bounds of the text selection within the editable region that's associated with the `EditContext` object.
+متد **`EditContext.updateSelectionBounds()`** از رابط {{domxref("EditContext")}} برای اطلاع‌رسانی به سیستم‌عامل درباره مرزهای انتخاب متن در ناحیهٔ قابل ویرایشی که با شیء `EditContext` مرتبط است، استفاده می‌شود.
 
-Call this method to tell the operating system the bounds of the user's current selection. You should call the method whenever the user's selection changes in the editable region. The selection bounds are used by the operating system to help position the IME window or any other platform-specific editing-related UI surfaces.
+این متد را فراخوانی کنید تا مرزهای انتخاب فعلی کاربر را به سیستم‌عامل اطلاع دهید. هر زمان که انتخاب کاربر در ناحیهٔ قابل ویرایش تغییر کند، باید این متد را فراخوانی کنید. سیستم‌عامل از مرزهای انتخاب برای کمک به تعیین موقعیت پنجرهٔ IME یا هر سطح رابط کاربری مرتبط با ویرایش که مختص پلتفرم است، استفاده می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 updateSelectionBounds(selectionBounds)
 ```
 
-### Parameters
+### پارامترها
 
 - `selectionBounds`
-  - : A {{domxref("DOMRect")}} object representing the new selection bounds.
+  - : یک شیء {{domxref("DOMRect")}} که مرزهای جدید انتخاب را نشان می‌دهد.
 
-### Return value
+### مقدار بازگشتی
 
-None (`undefined`).
+هیچ (`undefined`).
 
-### Exceptions
+### استثناها
 
 - {{jsxref("TypeError")}}
-  - : Thrown if the method is called with no arguments or if the provided argument is not a {{domxref("DOMRect")}} object.
+  - : اگر متد بدون آرگومان فراخوانی شود یا آرگومان ارائه‌شده یک شیء {{domxref("DOMRect")}} نباشد، این خطا پرتاب می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{DOMxRef("EditContext")}} interface it belongs to.
+- رابط {{DOMxRef("EditContext")}} که این متد به آن تعلق دارد.
