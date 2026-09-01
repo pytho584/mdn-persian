@@ -1,11 +1,5 @@
 ---
 title: "Element: gotpointercapture event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/gotpointercapture_event"
-status: "needs-translation"
----
-
----
-title: "Element: gotpointercapture event"
 short-title: gotpointercapture
 slug: Web/API/Element/gotpointercapture_event
 page-type: web-api-event
@@ -14,11 +8,11 @@ browser-compat: api.Element.gotpointercapture_event
 
 {{APIRef("Pointer Events")}}
 
-The **`gotpointercapture`** event is fired when an element captures a pointer using [`setPointerCapture()`](/en-US/docs/Web/API/Element/setPointerCapture).
+رویداد **`gotpointercapture`** زمانی رخ می‌دهد که یک عنصر، اشاره‌گر (pointer) را با استفاده از [`setPointerCapture()`](/en-US/docs/Web/API/Element/setPointerCapture) در اختیار می‌گیرد.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای استفاده از نام رویداد می‌توانید از روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی مدیریت‌کننده رویداد (event handler property) تنظیم کنید.
 
 ```js-nolint
 addEventListener("gotpointercapture", (event) => { })
@@ -26,21 +20,21 @@ addEventListener("gotpointercapture", (event) => { })
 ongotpointercapture = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("PointerEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("PointerEvent")}}. از {{domxref("Event")}} به ارث می‌برد.
 
 {{InheritanceDiagram("PointerEvent")}}
 
-## Examples
+## مثال‌ها
 
-This example gets a `<p>` element and listens for the `gotpointercapture` event. It then calls `setPointerCapture()` on the element on a `pointerdown` event, which will trigger `gotpointercapture`.
+در این مثال، یک عنصر `<p>` گرفته می‌شود و رویداد `gotpointercapture` گوش داده می‌شود. سپس در رویداد `pointerdown` متد `setPointerCapture()` روی آن عنصر فراخوانی می‌شود که باعث فعال شدن `gotpointercapture` می‌گردد.
 
 ```js
 const para = document.querySelector("p");
 
 para.addEventListener("gotpointercapture", () => {
-  console.log("I've been captured!");
+  console.log("من گرفته شدم!");
 });
 
 para.addEventListener("pointerdown", (event) => {
@@ -48,13 +42,13 @@ para.addEventListener("pointerdown", (event) => {
 });
 ```
 
-The same example, using the `ongotpointercapture` event handler property:
+همان مثال، با استفاده از ویژگی مدیریت‌کننده رویداد `ongotpointercapture`:
 
 ```js
 const para = document.querySelector("p");
 
 para.ongotpointercapture = () => {
-  console.log("I've been captured!");
+  console.log("من گرفته شدم!");
 };
 
 para.addEventListener("pointerdown", (event) => {
@@ -62,17 +56,17 @@ para.addEventListener("pointerdown", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- Related events
+- رویدادهای مرتبط
   - {{domxref('Element/lostpointercapture_event', 'lostpointercapture')}}
   - {{domxref('Element/pointerover_event', 'pointerover')}}
   - {{domxref('Element/pointerenter_event', 'pointerenter')}}
