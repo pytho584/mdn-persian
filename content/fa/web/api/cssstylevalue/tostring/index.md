@@ -1,7 +1,5 @@
 ---
 title: "CSSStyleValue: toString() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleValue/toString"
-status: "needs-translation"
 ---
 
 ---
@@ -14,35 +12,35 @@ browser-compat: api.CSSStyleValue.toString
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`toString()`** method of the {{domxref("CSSStyleValue")}} interface is a {{Glossary("stringifier")}} that returns the value formatted as a string of standard CSS text.
+متد **`toString()`** در رابط {{domxref("CSSStyleValue")}} یک {{Glossary("stringifier")}} است که مقدار را به‌صورت رشته‌ای از متن استاندارد CSS برمی‌گرداند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 toString()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A string.
+یک رشته.
 
-## Description
+## توضیحات
 
-The exact serialization of the object to a string depends on how the `CSSStyleValue` object was obtained:
+روش دقیق تبدیل این شیء به رشته به نحوهٔ به‌دست‌آوردن شیء `CSSStyleValue` بستگی دارد:
 
-- If the object was created by parsing a CSS string, such as with {{domxref("CSSStyleValue.parse_static", "CSSStyleValue.parse()")}}, the method returns the original string that was parsed.
-- If the object was constructed directly, such as with a [`CSS` factory function](/en-US/docs/Web/API/CSS/factory_functions_static) or a subclass constructor, the returned string is generated according to serialization rules specific to that subclass.
-- If the object was read from the CSSOM, such as with {{domxref("Element.computedStyleMap()")}} or {{domxref("HTMLElement.attributeStyleMap")}}, the returned string follows the CSSOM serialization rules.
+- اگر شیء از طریق تجزیهٔ یک رشتهٔ CSS ساخته شده باشد، مثلاً با {{domxref("CSSStyleValue.parse_static", "CSSStyleValue.parse()")}}، متد همان رشتهٔ اولیهٔ تجزیه‌شده را برمی‌گرداند.
+- اگر شیء مستقیماً ساخته شده باشد، مثلاً با [یک تابع کارخانه‌ای `CSS`](/en-US/docs/Web/API/CSS/factory_functions_static) یا سازندهٔ یک زیرکلاس، رشتهٔ بازگشتی طبق قوانین سریال‌سازیِ مخصوصِ آن زیرکلاس تولید می‌شود.
+- اگر شیء از CSSOM خوانده شده باشد، مثلاً با {{domxref("Element.computedStyleMap()")}} یا {{domxref("HTMLElement.attributeStyleMap")}}، رشتهٔ بازگشتی از قوانین سریال‌سازی CSSOM پیروی می‌کند.
 
-For more information about serialization rules see [When and how values are serialized](/en-US/docs/Web/API/CSS_Object_Model/CSS_value_serialization#when_and_how_values_are_serialized) in _CSS value serialization_.
+برای اطلاعات بیشتر دربارهٔ قوانین سریال‌سازی، به [زمان و نحوهٔ سریال‌سازی مقادیر](/en-US/docs/Web/API/CSS_Object_Model/CSS_value_serialization#when_and_how_values_are_serialized) در _سریال‌سازی مقادیر CSS_ مراجعه کنید.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفادهٔ پایه
 
 ```js
 // Parsed from a string: returns the original string
@@ -60,16 +58,16 @@ const length3 = element.attributeStyleMap.get("width");
 length3.toString(); // "42px"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Using the CSS Typed OM](/en-US/docs/Web/API/CSS_Typed_OM_API/Guide)
+- [استفاده از CSS Typed OM](/en-US/docs/Web/API/CSS_Typed_OM_API/Guide)
 - {{domxref("CSSStyleValue.parse_static", "CSSStyleValue.parse()")}}
 - {{domxref("CSSStyleValue.parseAll_static", "CSSStyleValue.parseAll()")}}
