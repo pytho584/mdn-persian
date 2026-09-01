@@ -1,11 +1,5 @@
 ---
 title: "Element: animationend event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/animationend_event"
-status: "needs-translation"
----
-
----
-title: "Element: animationend event"
 short-title: animationend
 slug: Web/API/Element/animationend_event
 page-type: web-api-event
@@ -14,11 +8,11 @@ browser-compat: api.Element.animationend_event
 
 {{APIRef("Web Animations")}}
 
-The **`animationend`** event is fired when a [CSS Animation](/en-US/docs/Web/CSS/Guides/Animations) has completed. If the animation aborts before reaching completion, such as if the element is removed from the DOM or the animation is removed from the element, the `animationend` event is not fired.
+رویداد **`animationend`** زمانی راه‌اندازی می‌شود که یک [انیمیشن CSS](/en-US/docs/Web/CSS/Guides/Animations) (CSS Animation) به پایان رسیده باشد. اگر انیمیشن قبل از اتمام لغو شود، مثلاً اگر عنصر از DOM حذف شود یا انیمیشن از عنصر حذف شود، رویداد `animationend` راه‌اندازی نخواهد شد.
 
 ## Syntax
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("animationend", (event) => { })
@@ -26,15 +20,15 @@ addEventListener("animationend", (event) => { })
 onanimationend = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-An {{domxref("AnimationEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("AnimationEvent")}}. از {{domxref("Event")}} ارث‌بری می‌کند.
 
 {{InheritanceDiagram("AnimationEvent")}}
 
-## Examples
+## مثال‌ها
 
-This example gets an element that's being animated and listens for the `animationend` event:
+این مثال یک عنصر را که در حال انیمیشن است انتخاب می‌کند و به رویداد `animationend` گوش می‌دهد:
 
 ```js
 const animated = document.querySelector(".animated");
@@ -44,7 +38,7 @@ animated.addEventListener("animationend", () => {
 });
 ```
 
-The same, but using the `onanimationend` event handler property:
+همین کار، اما با استفاده از ویژگی کنترل‌کننده رویداد `onanimationend`:
 
 ```js
 const animated = document.querySelector(".animated");
@@ -54,7 +48,7 @@ animated.onanimationend = () => {
 };
 ```
 
-### Live example
+### مثال زنده
 
 #### HTML
 
@@ -142,21 +136,21 @@ applyAnimation.addEventListener("click", () => {
 });
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Live_example', '100%', '150px') }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [CSS Animations](/en-US/docs/Web/CSS/Guides/Animations)
-- [Using CSS Animations](/en-US/docs/Web/CSS/Guides/Animations/Using)
+- [انیمیشن‌های CSS](/en-US/docs/Web/CSS/Guides/Animations) (CSS Animations)
+- [استفاده از انیمیشن‌های CSS](/en-US/docs/Web/CSS/Guides/Animations/Using) (Using CSS Animations)
 - {{domxref("AnimationEvent")}}
-- Related events: {{domxref("Element/animationstart_event", "animationstart")}}, {{domxref("Element/animationcancel_event", "animationcancel")}}, {{domxref("Element/animationiteration_event", "animationiteration")}}
+- رویدادهای مرتبط: {{domxref("Element/animationstart_event", "animationstart")}}، {{domxref("Element/animationcancel_event", "animationcancel")}}، {{domxref("Element/animationiteration_event", "animationiteration")}}
