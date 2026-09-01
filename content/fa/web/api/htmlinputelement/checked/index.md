@@ -1,11 +1,5 @@
 ---
 title: "HTMLInputElement: checked property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/checked"
-status: "needs-translation"
----
-
----
-title: "HTMLInputElement: checked property"
 short-title: checked
 slug: Web/API/HTMLInputElement/checked
 page-type: web-api-instance-property
@@ -14,21 +8,21 @@ browser-compat: api.HTMLInputElement.checked
 
 {{ APIRef("HTML DOM") }}
 
-The **`checked`** property of the {{DOMxRef("HTMLInputElement")}} interface specifies the current checkedness of the element; that is, whether the form control is checked or not.
+ویژگی **`checked`** در رابط {{DOMxRef("HTMLInputElement")}} وضعیتِ علامت‌خورده بودن فعلی عنصر را مشخص می‌کند؛ یعنی اینکه آیا کنترل فرم علامت خورده است یا خیر.
 
-The boolean `checked` property is relevant to the `radio` ([`<input type="radio">`](/en-US/docs/Web/HTML/Reference/Elements/input/radio)) and `checkbox` ([`<input type="checkbox">`](/en-US/docs/Web/HTML/Reference/Elements/input/checkbox)) input types.
+ویژگی بولی `checked` برای نوع ورودی‌های `radio` ([`<input type="radio">`](/en-US/docs/Web/HTML/Reference/Elements/input/radio)) و `checkbox` ([`<input type="checkbox">`](/en-US/docs/Web/HTML/Reference/Elements/input/checkbox)) کاربرد دارد.
 
-The presence of the HTML [`checked`](/en-US/docs/Web/HTML/Reference/Elements/input#checked) attribute indicates the checkbox is checked by default. It does not indicate whether this checkbox is currently checked: if the checkbox's state is changed, this content attribute does not reflect the change; only the `HTMLInputElement`'s `checked` IDL property is updated. The `checked` attribute is reflected by the {{domxref("HTMLInputElement.defaultChecked", "defaultChecked")}} property.
+وجود ویژگی HTML [`checked`](/en-US/docs/Web/HTML/Reference/Elements/input#checked) نشان می‌دهد که چک‌باکس به‌صورت پیش‌فرض علامت خورده است. اما نشان‌دهنده این نیست که آیا این چک‌باکس در حال حاضر علامت خورده است یا نه: اگر وضعیت چک‌باکس تغییر کند، این ویژگی محتوایی (content attribute) تغییر را منعکس نمی‌کند؛ فقط ویژگی IDL به‌نام `checked` در `HTMLInputElement` به‌روزرسانی می‌شود. ویژگی `checked` توسط ویژگی {{domxref("HTMLInputElement.defaultChecked", "defaultChecked")}} منعکس می‌شود.
 
-When a radio input `checked` property is `true`, all other radio inputs with the same {{DOMxRef("HTMLInputElement.name", "name")}} are `false`. If any radio button in a same-named group of radio buttons is {{DOMxRef("HTMLInputElement.required", "required")}}, as long as one button in the group is `checked`, the {{domxref('ValidityState')}} object's read-only {{domxref('ValidityState.valueMissing','valueMissing')}} property for each radio button in the group will be `false`.
+وقتی ویژگی `checked` یک ورودی رادیویی `true` باشد، تمام ورودی‌های رادیویی دیگری که {{DOMxRef("HTMLInputElement.name", "name")}} یکسانی دارند، `false` می‌شوند. اگر هر دکمه رادیویی در گروهی از دکمه‌های رادیویی با نام یکسان، {{DOMxRef("HTMLInputElement.required", "required")}} باشد، تا زمانی که حداقل یک دکمه در گروه `checked` باشد، ویژگیِ فقط‌خواندنی {{domxref('ValidityState.valueMissing','valueMissing')}} در شیء {{domxref('ValidityState')}} برای هر دکمه رادیویی در آن گروه، `false` خواهد بود.
 
-A checkbox's value is only included in the submitted data upon form submission if `checked` is true. The value of the {{DOMxRef("HTMLInputElement.indeterminate")}} property has no effect on a checkbox's `checked` value.
+مقدار یک چک‌باکس فقط زمانی در داده‌های ارسالی هنگام ارسال فرم گنجانده می‌شود که `checked` برابر با `true` باشد. مقدار ویژگی {{DOMxRef("HTMLInputElement.indeterminate")}} هیچ تأثیری بر مقدار `checked` چک‌باکس ندارد.
 
-## Value
+## مقدار
 
-A boolean.
+یک مقدار بولی (boolean).
 
-## Examples
+## مثال‌ها
 
 ```js
 const inputElement = document.getElementById("contactMail");
@@ -36,16 +30,16 @@ console.log(inputElement.checked);
 inputElement.checked = true;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTMLElement("input")}}
 - {{DOMXref("HTMLInputElement.validity")}}
-- {{cssxref(":checked")}} pseudo-class
+- شبه‌کلاس {{cssxref(":checked")}}
