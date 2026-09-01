@@ -1,11 +1,5 @@
 ---
 title: "DOMPointReadOnly: w property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMPointReadOnly/w"
-status: "needs-translation"
----
-
----
-title: "DOMPointReadOnly: w property"
 short-title: w
 slug: Web/API/DOMPointReadOnly/w
 page-type: web-api-instance-property
@@ -14,30 +8,22 @@ browser-compat: api.DOMPointReadOnly.w
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The **`DOMPointReadOnly`** interface's
-**`w`** property holds the point's perspective value,
-`w`, for a read-only point in space.
+ویژگی **`w`** در رابط **`DOMPointReadOnly`** مقدار پرسپکتیو نقطه (یعنی `w`) را برای یک نقطهٔ فقط‌خواندنی در فضا نگه می‌دارد.
 
-If your script needs to be able
-to change the value of this property, you should instead use the {{domxref("DOMPoint")}}
-object.
+اگر اسکریپت شما نیاز دارد که بتواند مقدار این ویژگی را تغییر دهد، به‌جای آن باید از شیء {{domxref("DOMPoint")}} استفاده کنید.
 
-## Value
+## مقدار
 
-A double-precision floating-point value indicating the `w` perspective value
-for the point. This value is **unrestricted**, meaning that it is allowed
-to be infinite or invalid (that is, its value may be {{jsxref("NaN")}} or
-{{jsxref("Infinity", "±Infinity")}}). The default is `1.0`.
+یک مقدار ممیز شناور با دقت دو برابر (double-precision floating-point) که مقدار پرسپکتیوِ `w` نقطه را نشان می‌دهد. این مقدار **بدون محدودیت** است، به این معنی که می‌تواند بی‌نهایت یا نامعتبر باشد (یعنی مقدار آن ممکن است {{jsxref("NaN")}} یا {{jsxref("Infinity", "±Infinity")}} باشد). پیش‌فرض `1.0` است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- The other coordinate properties: {{domxref("DOMPointReadOnly.x", "x")}},
-  {{domxref("DOMPointReadOnly.y", "y")}}, and {{domxref("DOMPointReadOnly.z", "z")}}.
+- سایر ویژگی‌های مختصات: {{domxref("DOMPointReadOnly.x", "x")}}، {{domxref("DOMPointReadOnly.y", "y")}} و {{domxref("DOMPointReadOnly.z", "z")}}.
