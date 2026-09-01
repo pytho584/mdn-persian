@@ -1,11 +1,5 @@
 ---
 title: "HTMLSelectElement: type property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/type"
-status: "needs-translation"
----
-
----
-title: "HTMLSelectElement: type property"
 short-title: type
 slug: Web/API/HTMLSelectElement/type
 page-type: web-api-instance-property
@@ -14,17 +8,16 @@ browser-compat: api.HTMLSelectElement.type
 
 {{ APIRef("HTML DOM") }}
 
-The **`HTMLSelectElement.type`**
-read-only property returns the form control's `type`.
+ویژگی فقط-خواندنی **`HTMLSelectElement.type`**، نوع کنترل فرم را برمی‌گرداند.
 
-## Value
+## مقدار
 
-One of the following:
+یکی از موارد زیر:
 
-- `"select-multiple"` if multiple values can be selected.
-- `"select-one"` if only one value can be selected.
+- `"select-multiple"` اگر بتوان چندین مقدار را انتخاب کرد.
+- `"select-one"` اگر فقط یک مقدار قابل انتخاب باشد.
 
-## Examples
+## مثال‌ها
 
 ```js
 switch (select.type) {
@@ -39,14 +32,14 @@ switch (select.type) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{HTMLElement("select")}} HTML element, implementing this interface.
+- عنصر HTML {{HTMLElement("select")}} که این رابط را پیاده‌سازی می‌کند.
