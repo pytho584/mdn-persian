@@ -1,7 +1,5 @@
 ---
 title: "Document: scrollsnapchanging event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/scrollsnapchanging_event"
-status: "needs-translation"
 ---
 
 ---
@@ -16,13 +14,13 @@ browser-compat: api.Document.scrollsnapchanging_event
 
 {{APIRef}}{{SeeCompatTable}}
 
-The **`scrollsnapchanging`** event of the {{domxref("Document")}} interface is fired on the [scroll container](/en-US/docs/Glossary/Scroll_container) when the browser determines a new scroll snap target is pending, i.e., it will be selected when the current scroll gesture ends.
+رویداد **`scrollsnapchanging`** از رابط {{domxref("Document")}} روی [ظرف اسکرول](/en-US/docs/Glossary/Scroll_container) صادر می‌شود، زمانی که مرورگر تشخیص دهد یک هدف اسنپ اسکرولِ جدید در انتظار است؛ یعنی هدفی که با پایان یافتن ژست اسکرولِ فعلی انتخاب خواهد شد.
 
-This event works in much the same way as the {{domxref("Element")}} interface's [`scrollsnapchanging`](/en-US/docs/Web/API/Element/scrollsnapchanging_event) event, except that the overall HTML document has to be set as the scroll snap container (i.e., {{cssxref("scroll-snap-type")}} is set on the {{htmlelement("html")}} element).
+این رویداد تقریباً به همان شیوهٔ رویداد [`scrollsnapchanging`](/en-US/docs/Web/API/Element/scrollsnapchanging_event) در رابط {{domxref("Element")}} کار می‌کند؛ با این تفاوت که کل سند HTML باید به عنوان ظرف اسنپ اسکرول تنظیم شده باشد (یعنی {{cssxref("scroll-snap-type")}} روی عنصر {{htmlelement("html")}} تنظیم شده باشد).
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کنندهٔ رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("scrollsnapchanging", (event) => { })
@@ -30,15 +28,15 @@ addEventListener("scrollsnapchanging", (event) => { })
 onscrollsnapchanging = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("SnapEvent")}}, which inherits from the generic {{domxref("Event")}} type.
+یک {{domxref("SnapEvent")}} که از نوع عمومی {{domxref("Event")}} به ارث می‌رسد.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### کاربرد پایه
 
-Let's say we have a {{htmlelement("main")}} element containing significant content that causes it to scroll:
+فرض کنید یک عنصر {{htmlelement("main")}} داریم که محتوای قابل توجهی دارد و باعث اسکرول شدن آن می‌شود:
 
 ```html
 <main>
@@ -46,7 +44,7 @@ Let's say we have a {{htmlelement("main")}} element containing significant conte
 </main>
 ```
 
-The `<main>` element can be turned into a scroll container using a combination of CSS properties, for example:
+عنصر `<main>` را می‌توان با استفاده از ترکیبی از ویژگی‌های CSS به یک ظرف اسکرول تبدیل کرد، برای مثال:
 
 ```css
 main {
@@ -56,7 +54,7 @@ main {
 }
 ```
 
-We can then implement scroll snapping behavior on the scrolling content by specifying the {{cssxref("scroll-snap-type")}} property on the {{htmlelement("html")}} element:
+سپس می‌توانیم با تنظیم ویژگی {{cssxref("scroll-snap-type")}} روی عنصر {{htmlelement("html")}}، رفتار اسنپ اسکرول را روی محتوای اسکرول‌شونده پیاده‌سازی کنیم:
 
 ```css
 html {
@@ -64,7 +62,7 @@ html {
 }
 ```
 
-The following JavaScript snippet would cause the `scrollsnapchanging` event to fire on the HTML document when a child of the `<main>` element becomes a pending snap target. In the handler function, we set a `pending` class on the child referenced by the {{domxref("SnapEvent.snapTargetBlock", "snapTargetBlock")}} property, which could be used to style it differently when the event fires.
+قطعه‌کد جاوااسکریپت زیر باعث می‌شود که رویداد `scrollsnapchanging` روی سند HTML صادر شود؛ زمانی که یکی از فرزندان عنصر `<main>` به هدف اسنپ اسکرولِ در انتظار تبدیل شود. در تابع کنترل‌کننده، کلاس `pending` را روی همان فرزندی تنظیم می‌کنیم که ویژگی {{domxref("SnapEvent.snapTargetBlock", "snapTargetBlock")}} به آن اشاره می‌کند. از این کلاس می‌توان برای استایل‌دهی متفاوت به آن عنصر هنگام صدور رویداد استفاده کرد.
 
 ```js
 document.addEventListener("scrollsnapchanging", (event) => {
@@ -79,22 +77,22 @@ document.addEventListener("scrollsnapchanging", (event) => {
 });
 ```
 
-At the start of the function, we select all elements that previously had the `pending` class applied and remove it, so that only the most recent pending snap target is styled.
+در ابتدای تابع، همهٔ عناصری را که قبلاً کلاس `pending` به آن‌ها اعمال شده بود انتخاب و این کلاس را حذف می‌کنیم؛ به این ترتیب فقط جدیدترین هدف اسنپ اسکرولِ در انتظار استایل می‌گیرد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("Document/scrollsnapchange_event", "scrollsnapchange")}} event
-- {{DOMxRef("Document/scrollend_event", "scrollend")}} event
+- رویداد {{domxref("Document/scrollsnapchange_event", "scrollsnapchange")}}
+- رویداد {{DOMxRef("Document/scrollend_event", "scrollend")}}
 - {{domxref("SnapEvent")}}
-- CSS {{cssxref("scroll-snap-type")}} property
-- [CSS scroll snap module](/en-US/docs/Web/CSS/Guides/Scroll_snap)
-- [Using scroll snap events](/en-US/docs/Web/CSS/Guides/Scroll_snap/Using_scroll_snap_events)
-- [Scroll Snap Events](https://developer.chrome.com/blog/scroll-snap-events) on developer.chrome.com (2024)
+- ویژگی CSS {{cssxref("scroll-snap-type")}}
+- [ماژول اسنپ اسکرول CSS](/en-US/docs/Web/CSS/Guides/Scroll_snap)
+- [استفاده از رویدادهای اسنپ اسکرول](/en-US/docs/Web/CSS/Guides/Scroll_snap/Using_scroll_snap_events)
+- [رویدادهای اسنپ اسکرول](https://developer.chrome.com/blog/scroll-snap-events) در developer.chrome.com (2024)
