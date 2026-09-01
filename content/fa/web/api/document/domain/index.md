@@ -1,7 +1,5 @@
 ---
 title: "Document: domain property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/domain"
-status: "needs-translation"
 ---
 
 ---
@@ -16,148 +14,103 @@ browser-compat: api.Document.domain
 
 {{APIRef("DOM")}}{{Deprecated_Header}}
 
-The **`domain`** property of the {{domxref("Document")}}
-interface gets/sets the domain portion of the {{glossary("origin")}} of the current
-document, as used by the [same-origin policy](/en-US/docs/Web/Security/Defenses/Same-origin_policy).
+ویژگی **`domain`** در رابط {{domxref("Document")}}، بخش دامنهٔ {{glossary("origin")}} سند فعلی را دریافت یا تنظیم می‌کند، همان‌طور که توسط [سیاست همان-ریشه](/en-US/docs/Web/Security/Defenses/Same-origin_policy) استفاده می‌شود.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-### Exceptions
+### استثناها
 
 - `SecurityError` {{domxref("DOMException")}}
-  - : The document is forbidden from setting its domain, for example it is sandboxed or has an opaque origin. See [Failures section](#failures) for details.
+  - : سند از تنظیم دامنهٔ خود منع شده است، مثلاً در حالت sandboxed (جعبه شنی) یا با مبدأ ناشفاف قرار دارد. برای جزئیات به [بخش خطاها](#failures) مراجعه کنید.
 
-## Examples
+## مثال‌ها
 
-### Getting the domain
+### دریافت دامنه
 
-For code running at the URL `https://developer.mozilla.org/en-US/docs/Web`,
-this example would set `currentDomain` to the string
-`"developer.mozilla.org"`.
+برای کدی که در نشانی `https://developer.mozilla.org/en-US/docs/Web` اجرا می‌شود، این مثال `currentDomain` را روی رشتهٔ `"developer.mozilla.org"` تنظیم می‌کند.
 
 ```js
 const currentDomain = document.domain;
 ```
 
-The getter for this property returns the domain portion of the current document's
-origin. In most cases, this will be the hostname portion of the document's URL. However,
-there are some exceptions:
+گیرنده (getter) این ویژگی، بخش دامنه از مبدأ سند فعلی را برمی‌گرداند. در بیشتر موارد، این همان بخش hostname از نشانی سند است. با این حال، استثناهایی وجود دارد:
 
-- If the page has an opaque {{glossary("origin")}}, e.g., for a page with a [data URL](/en-US/docs/Web/URI/Reference/Schemes/data), then it will
-  return the empty string.
-- If the `document.domain` [setter](#setting_the_domain) has been used, then
-  it will return the value that was set.
+- اگر صفحه دارای {{glossary("origin")}} ناشفاف باشد، مثلاً برای صفحه‌ای با [نشانی داده (data URL)](/en-US/docs/Web/URI/Reference/Schemes/data)، رشتهٔ خالی برمی‌گرداند.
+- اگر [تنظیم‌کننده (setter) `document.domain`](#setting_the_domain) استفاده شده باشد، مقدار تنظیم‌شده را برمی‌گرداند.
 
-Although the getter is not dangerous in the same way that the setter is, it is likely
-simpler and more useful to use the {{domxref("Location.hostname")}} property instead.
-Then you can avoid `document.domain` entirely:
+اگرچه گیرنده به اندازهٔ تنظیم‌کننده خطرناک نیست، اما احتمالاً ساده‌تر و کاربردی‌تر است که به جای آن از ویژگی {{domxref("Location.hostname")}} استفاده کنید. به این ترتیب می‌توانید به‌طور کامل از `document.domain` اجتناب کنید:
 
 ```js
 const currentHostname = location.hostname;
 ```
 
-For the URL `https://developer.mozilla.org/en-US/docs/Web`,
-`currentHostname` is also the string `"developer.mozilla.org"`.
-Other alternatives that provide slightly different information are
-{{domxref("Location.host")}}, which includes the port, and
-{{domxref("Window.origin")}}, which provides the full origin.
+برای نشانی `https://developer.mozilla.org/en-US/docs/Web`، `currentHostname` نیز رشتهٔ `"developer.mozilla.org"` است. جایگزین‌های دیگری که اطلاعات کمی متفاوت ارائه می‌دهند عبارت‌اند از {{domxref("Location.host")}} که شامل پورت است، و {{domxref("Window.origin")}} که مبدأ کامل را ارائه می‌دهد.
 
-### Setting the domain
+### تنظیم دامنه
 
 ```js
 document.domain = domainString;
 ```
 
-The setter for this property can be used to _change_ a page's
-{{glossary("origin")}}, and thus modify how certain security checks are performed. It
-can only be set to the same or a parent domain. For example, if
-`https://a.example.com` and `https://b.example.com` both use
+تنظیم‌کنندهٔ این ویژگی می‌تواند برای _تغییر_ {{glossary("origin")}} یک صفحه استفاده شود و بدین ترتیب نحوهٔ انجام برخی بررسی‌های امنیتی را تغییر دهد. این ویژگی فقط می‌تواند روی همان دامنه یا دامنهٔ والد تنظیم شود. برای مثال، اگر هر دو `https://a.example.com` و `https://b.example.com` از کد زیر استفاده کنند:
 
 ```js
 document.domain = "example.com";
 ```
 
-then they have both modified their origin to have the same domain, and they can now
-access each other's DOM directly—despite being cross-origin, which would normally
-prevent such access.
+آنگاه هر دو مبدأ خود را طوری تغییر داده‌اند که دامنهٔ یکسانی داشته باشند، و اکنون می‌توانند مستقیماً به DOM یکدیگر دسترسی پیدا کنند — علیرغم اینکه cross-origin هستند، که معمولاً چنین دسترسی را مسدود می‌کند.
 
-Note that setting `document.domain` to its current value is not a no-op. It
-still changes the origin. For example, if one page sets
+توجه داشته باشید که تنظیم `document.domain` روی مقدار فعلی آن یک عملیات بی‌اثر (no-op) نیست. همچنان مبدأ را تغییر می‌دهد. برای مثال، اگر صفحه‌ای کد زیر را اجرا کند:
 
 ```js
 document.domain = document.domain;
 ```
 
-then it will be counted as cross-origin from any other normally-same-origin pages that
-have not done the same thing.
+آنگاه آن صفحه نسبت به هر صفحهٔ دیگری که به‌طور عادی same-origin است و چنین کاری نکرده است، به عنوان cross-origin در نظر گرفته می‌شود.
 
-#### Deprecation
+#### منسوخ شدن
 
-The `document.domain` setter is deprecated. It undermines the security
-protections provided by the [same origin policy](/en-US/docs/Web/Security/Defenses/Same-origin_policy), and complicates the origin model in browsers, leading to
-interoperability problems and security bugs.
+تنظیم‌کنندهٔ `document.domain` منسوخ شده است. این ویژگی محافظت‌های امنیتی فراهم‌شده توسط [سیاست همان-ریشه](/en-US/docs/Web/Security/Defenses/Same-origin_policy) را تضعیف می‌کند و مدل مبدأ را در مرورگرها پیچیده می‌کند و در نتیجه مشکلات تعامل‌پذیری و باگ‌های امنیتی ایجاد می‌شود.
 
-Attempting to set `document.domain` is dangerous. It opens up full access to
-a page's DOM from _all_ subdomains, which is likely not what is intended. It
-also removes the port component from the origin, so now your page can be accessed by
-other pages with the same IP address or same host component, even on a different port.
+اقدام به تنظیم `document.domain` خطرناک است. این کار دسترسی کامل به DOM یک صفحه را از _همهٔ_ زیردامنه‌ها باز می‌کند، که احتمالاً مورد نظر نیست. همچنین مؤلفهٔ پورت را از مبدأ حذف می‌کند، بنابراین اکنون صفحات دیگری که همان آدرس IP یا همان مؤلفهٔ host را دارند، می‌توانند به صفحهٔ شما دسترسی پیدا کنند، حتی روی پورتی متفاوت.
 
-This is especially insecure on shared hosting. For example, another shared hosting
-customer is able to host a site at the same IP address but on a different port, then
-setting `document.domain` will remove the same-origin protection that
-normally protects you from that other customer's site accessing your site's data.
+این موضوع به‌ویژه در میزبانی اشتراکی (shared hosting) ناامن است. برای مثال، مشتری دیگری در همان میزبان اشتراکی می‌تواند سایتی را روی همان آدرس IP اما روی پورتی متفاوت میزبانی کند؛ سپس تنظیم `document.domain` حفاظت همان-ریشه را که به‌طور عادی از شما در برابر دسترسی آن سایتِ مشتری دیگر به داده‌های سایت شما محافظت می‌کند، از بین می‌برد.
 
-Similar problems occur with shared hosting sites that give each customer a different
-subdomain. If a site sets `document.domain`, any other customer on a
-different subdomain can now do the same thing, and start accessing the data of the
-original site.
+مشکلات مشابهی برای سایت‌های میزبانی اشتراکی که به هر مشتری یک زیردامنهٔ متفاوت می‌دهند، رخ می‌دهد. اگر سایتی `document.domain` را تنظیم کند، هر مشتری دیگری در یک زیردامنهٔ متفاوت می‌تواند همین کار را انجام دهد و به داده‌های سایت اصلی دسترسی یابد.
 
-Instead of using `document.domain` to facilitate cross-origin communication,
-you should use {{domxref("Window.postMessage")}} to send an asynchronous message to the
-other origin. This controlled access via message-passing is much more secure than the
-blanket exposure of all data caused by `document.domain`.
+به جای استفاده از `document.domain` برای تسهیل ارتباط cross-origin، باید از {{domxref("Window.postMessage")}} برای ارسال یک پیام ناهمگام به مبدأ دیگر استفاده کنید. این دسترسی کنترل‌شده از طریق ارسال پیام، بسیار امن‌تر از افشای کامل تمام داده‌هایی است که توسط `document.domain` ایجاد می‌شود.
 
-#### Failures
+#### خطاها
 
-The setter will throw a `SecurityError` {{domxref("DOMException")}} in
-several cases:
+تنظیم‌کننده در چند مورد یک `SecurityError` {{domxref("DOMException")}} پرتاب می‌کند:
 
-- The document is inside a sandboxed {{htmlelement("iframe")}}.
-- The document has no {{glossary("browsing context")}}.
-- The document's [effective domain](https://html.spec.whatwg.org/multipage/origin.html#concept-origin-effective-domain) is `null`.
-- The given value is neither the same as the page's current hostname, nor a parent
-  domain of it.
+- سند داخل یک {{htmlelement("iframe")}} جعبه‌ای (sandboxed) قرار دارد.
+- سند هیچ {{glossary("browsing context")}} ندارد.
+- [دامنهٔ مؤثر](https://html.spec.whatwg.org/multipage/origin.html#concept-origin-effective-domain) سند برابر `null` است.
+- مقدار داده‌شده نه با hostname فعلی صفحه یکسان است و نه دامنهٔ والد آن.
 
-As an example of this last failure case, trying to set `document.domain` to
-`"example.org"` when on `https://example.com/` will throw.
+به عنوان مثال از این مورد آخر، تلاش برای تنظیم `document.domain` روی `"example.org"` زمانی که در `https://example.com/` هستید، خطا پرتاب می‌کند.
 
-Additionally, as part of its deprecation, it will do nothing when combined with certain
-modern isolation features:
+علاوه بر این، به عنوان بخشی از فرایند منسوخ شدن، در ترکیب با برخی ویژگی‌های مدرن ایزوله‌سازی، هیچ کاری انجام نمی‌دهد:
 
-- If used on a cross-origin isolated page, i.e., one that uses the appropriate values
-  for the {{httpheader("Cross-Origin-Opener-Policy")}} and
-  {{httpheader("Cross-Origin-Embedder-Policy")}} HTTP headers
-- If used on an origin-isolated page, i.e., one that uses the
-  {{httpheader("Origin-Agent-Cluster")}} {{experimental_inline}} HTTP header
+- اگر در صفحه‌ای با ایزوله‌سازی cross-origin استفاده شود، یعنی صفحه‌ای که از مقادیر مناسب برای هدرهای HTTP {{httpheader("Cross-Origin-Opener-Policy")}} و {{httpheader("Cross-Origin-Embedder-Policy")}} استفاده می‌کند.
+- اگر در صفحه‌ای با ایزوله‌سازی مبدأ استفاده شود، یعنی صفحه‌ای که از هدر HTTP {{httpheader("Origin-Agent-Cluster")}} {{experimental_inline}} استفاده می‌کند.
 
-Finally, setting `document.domain` does not change the origin used for
-origin-checks by some Web APIs, preventing sub-domain access via this mechanism.
-Affected APIs include (but are not limited to):
-{{domxref("Window.localStorage")}}, [IndexDB API](/en-US/docs/Web/API/IndexedDB_API), {{domxref("BroadcastChannel")}}, {{domxref("SharedWorker")}}.
+در نهایت، تنظیم `document.domain` مبدأ مورد استفاده برای بررسی‌های مبدأ توسط برخی APIهای وب را تغییر نمی‌دهد و بدین ترتیب دسترسی زیردامنه از طریق این مکانیزم را مسدود می‌کند. APIهای تحت تأثیر شامل (اما نه محدود به) این موارد هستند: {{domxref("Window.localStorage")}}, [API IndexDB](/en-US/docs/Web/API/IndexedDB_API), {{domxref("BroadcastChannel")}}, {{domxref("SharedWorker")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Same-origin policy](/en-US/docs/Web/Security/Defenses/Same-origin_policy)
+- [سیاست همان-ریشه](/en-US/docs/Web/Security/Defenses/Same-origin_policy)
 - {{domxref("Location.hostname")}}
 - {{domxref("Location.host")}}
 - {{domxref("Window.origin")}}
