@@ -1,11 +1,5 @@
 ---
 title: "FileSystemEntry: remove() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry/remove"
-status: "needs-translation"
----
-
----
-title: "FileSystemEntry: remove() method"
 short-title: remove()
 slug: Web/API/FileSystemEntry/remove
 page-type: web-api-instance-method
@@ -17,14 +11,9 @@ browser-compat: api.FileSystemEntry.remove
 
 {{APIRef("File and Directory Entries API")}}{{Deprecated_Header}}{{Non-standard_Header}}
 
-The {{domxref("FileSystemEntry")}} interface's method
-**`remove()`** deletes the file
-or directory from the file system. Directories must be empty before they can be
-removed.
+متد **`remove()`** از رابط {{domxref("FileSystemEntry")}} فایل یا دایرکتوری را از سیستم فایل حذف می‌کند. دایرکتوری‌ها قبل از حذف باید خالی باشند.
 
-To recursively remove a directory as well as all of its contents and its
-subdirectories, call {{domxref("FileSystemDirectoryEntry.removeRecursively()")}}
-instead.
+برای حذف بازگشتی یک دایرکتوری به همراه تمام محتویات و زیرشاخه‌های آن، به جای آن از {{domxref("FileSystemDirectoryEntry.removeRecursively()")}} استفاده کنید.
 
 ## Syntax
 
@@ -36,33 +25,30 @@ remove(successCallback, errorCallback)
 ### Parameters
 
 - `successCallback`
-  - : A function which is called once the file has been successfully removed.
+  - : یک تابع که پس از موفقیت‌آمیز بودن حذف فایل فراخوانی می‌شود.
 - `errorCallback` {{optional_inline}}
-  - : An optional callback which is called if the attempt to remove the file fails.
+  - : یک callback اختیاری که در صورت شکست تلاش برای حذف فایل فراخوانی می‌شود.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
 ### Exceptions
 
 - `DOMException.INVALID_MODIFICATION_ERR`
-  - : The specified entry was the file system's root directory, or the specified entry is
-    a directory which isn't empty.
+  - : ورودی مشخص شده دایرکتوری ریشه سیستم فایل بوده یا یک دایرکتوری غیر خالی است.
 - `DOMException.INVALID_STATE_ERR`
-  - : The file system's cached state is inconsistent with its state on disk, so the file
-    could not be deleted for safety reasons.
+  - : وضعیت ذخیره شده سیستم فایل با وضعیت آن روی دیسک ناسازگار است، بنابراین به دلایل ایمنی فایل قابل حذف نیست.
 - `DOMException.NO_MODIFICATION_ALLOWED_ERR`
-  - : The file system's state doesn't permit removing the file or directory.
+  - : وضعیت سیستم فایل اجازه حذف فایل یا دایرکتوری را نمی‌دهد.
 - `DOMException.NOT_FOUND_ERR`
-  - : The file or directory doesn't exist.
+  - : فایل یا دایرکتوری وجود ندارد.
 - `DOMException.SECURITY_ERR`
-  - : The entry couldn't be removed due to permissions or other access constraints, or
-    because there are too many calls being made on file resources.
+  - : ورودی به دلیل محدودیت‌های دسترسی یا مجوزها، یا به دلیل تعداد زیاد فراخوانی روی منابع فایل، قابل حذف نیست.
 
 ## Examples
 
-This example deletes a temporary work file.
+این مثال یک فایل کاری موقت را حذف می‌کند.
 
 ```js
 workingDirectory.getFile(
