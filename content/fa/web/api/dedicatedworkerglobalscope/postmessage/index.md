@@ -1,11 +1,5 @@
 ---
 title: "DedicatedWorkerGlobalScope: postMessage() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DedicatedWorkerGlobalScope/postMessage"
-status: "needs-translation"
----
-
----
-title: "DedicatedWorkerGlobalScope: postMessage() method"
 short-title: postMessage()
 slug: Web/API/DedicatedWorkerGlobalScope/postMessage
 page-type: web-api-instance-method
@@ -14,18 +8,15 @@ browser-compat: api.DedicatedWorkerGlobalScope.postMessage
 
 {{APIRef("Web Workers API")}}{{AvailableInWorkers("dedicated")}}
 
-The **`postMessage()`** method of the {{domxref("DedicatedWorkerGlobalScope")}} interface sends a message to the main thread that spawned it.
+متد **`postMessage()`** از رابط {{domxref("DedicatedWorkerGlobalScope")}} پیامی را به ریسمان اصلی که آن را ایجاد کرده است می‌فرستد.
 
-This accepts a data parameter, which contains data to copy from the worker to the main thread.
-The data may be any value or JavaScript object handled by the [structured clone](/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm) algorithm, which includes cyclical references.
+این متد یک پارامتر داده می‌پذیرد که حاوی داده‌هایی است که باید از worker به ریسمان اصلی کپی شوند. داده می‌تواند هر مقدار یا شیء جاوااسکریپتی باشد که الگوریتم [structured clone](/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm) از آن پشتیبانی می‌کند، شامل ارجاع‌های چرخه‌ای.
 
-The method also accepts an optional array of [transferable objects](/en-US/docs/Web/API/Web_Workers_API/Transferable_objects) to _transfer_ to the main thread;
-Unlike the data parameter transferred objects are no longer usable in the worker thread.
-(Where possible, objects are transferred using a high performance zero-copy operation).
+این متد همچنین یک آرایه اختیاری از [اشیاء قابل انتقال (transferable objects)](/en-US/docs/Web/API/Web_Workers_API/Transferable_objects) برای _انتقال_ به ریسمان اصلی می‌پذیرد. برخلاف پارامتر داده، اشیاء منتقل‌شده دیگر در ریسمان worker قابل استفاده نیستند. (در صورت امکان، اشیاء با استفاده از عملیات کپی صفر (zero-copy) با کارایی بالا منتقل می‌شوند).
 
-The main scope that spawned the worker can send back information to the thread that spawned it using the {{domxref("Worker.postMessage")}} method.
+ریسمان اصلی که worker را ایجاد کرده است نیز می‌تواند با استفاده از متد {{domxref("Worker.postMessage")}} اطلاعات را به worker بازگرداند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 postMessage(message)
@@ -33,27 +24,26 @@ postMessage(message, transfer)
 postMessage(message, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `message`
-  - : The object to deliver to the main thread; this will be in the data field in the event delivered to the {{domxref("Window/message_event", "message")}} event.
-    This may be any value or JavaScript object handled by the [structured clone](/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm) algorithm, which includes cyclical references.
+  - : شیئی که باید به ریسمان اصلی تحویل داده شود؛ این شیء در فیلد `data` رویدادی که به رویداد {{domxref("Window/message_event", "message")}} تحویل داده می‌شود قرار خواهد گرفت. این می‌تواند هر مقدار یا شیء جاوااسکریپتی باشد که الگوریتم [structured clone](/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm) از آن پشتیبانی می‌کند، شامل ارجاع‌های چرخه‌ای.
 
 - `transfer` {{optional_inline}}
-  - : An optional [array](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) of [transferable objects](/en-US/docs/Web/API/Web_Workers_API/Transferable_objects) to transfer ownership of. The ownership of these objects is given to the destination side and they are no longer usable on the sending side. These transferable objects are not automatically sent; they must either be contained in the message or be accessible to the recipient via other means, such as {{domxref("MessagePort")}} via {{domxref("MessageEvent.ports")}}.
+  - : یک [آرایه](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) اختیاری از [اشیاء قابل انتقال (transferable objects)](/en-US/docs/Web/API/Web_Workers_API/Transferable_objects) برای انتقال مالکیت آن‌ها. مالکیت این اشیاء به سمت مقصد داده می‌شود و دیگر در سمت فرستنده قابل استفاده نیستند. این اشیاء قابل انتقال به‌طور خودکار ارسال نمی‌شوند؛ آن‌ها باید یا در پیام گنجانده شده باشند یا از طریق روش‌های دیگر در دسترس گیرنده قرار گیرند، مانند {{domxref("MessagePort")}} از طریق {{domxref("MessageEvent.ports")}}.
+
 - `options` {{optional_inline}}
-  - : An optional object containing the following properties:
+  - : یک شیء اختیاری حاوی ویژگی‌های زیر:
     - `transfer` {{optional_inline}}
-      - : Has the same meaning as the `transfer` parameter.
+      - : همان معنای پارامتر `transfer` را دارد.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-The following code snippet shows `worker.js`, in which an `onmessage` handler is used to handle messages from the main script.
-Inside the handler a calculation is done from which a result message is created; this is then sent back to the main thread using `postMessage(workerResult);`
+قطعه کد زیر `worker.js` را نشان می‌دهد، که در آن از یک هندلر `onmessage` برای مدیریت پیام‌های رسیده از اسکریپت اصلی استفاده شده است. در داخل هندلر یک محاسبه انجام می‌شود که از آن یک پیام نتیجه ساخته می‌شود؛ سپس این پیام با استفاده از `postMessage(workerResult);` به ریسمان اصلی بازگردانده می‌شود.
 
 ```js
 onmessage = (e) => {
@@ -64,21 +54,21 @@ onmessage = (e) => {
 };
 ```
 
-In the main script, `onmessage` would have to be called on a `Worker object`, whereas inside the worker script you just need `onmessage` because the worker is effectively the global scope ({{domxref("DedicatedWorkerGlobalScope")}}).
+در اسکریپت اصلی، `onmessage` باید روی یک `Worker object` فراخوانی شود، در حالی که در داخل اسکریپت worker فقط به `onmessage` نیاز دارید، زیرا worker عملاً حوزه سراسری ({{domxref("DedicatedWorkerGlobalScope")}}) است.
 
-For a full example, see our [Basic dedicated worker example](https://github.com/mdn/dom-examples/tree/main/web-workers/simple-web-worker) ([run dedicated worker](https://mdn.github.io/dom-examples/web-workers/simple-web-worker/)).
+برای مشاهده یک مثال کامل، به [نمونه worker اختصاصی پایه](https://github.com/mdn/dom-examples/tree/main/web-workers/simple-web-worker) مراجعه کنید ([اجرای worker اختصاصی](https://mdn.github.io/dom-examples/web-workers/simple-web-worker/)).
 
 > [!NOTE]
-> `postMessage()` can only send a single object at once. As seen above, if you want to pass multiple values you can send an array.
+> `postMessage()` فقط می‌تواند در هر بار یک شیء را ارسال کند. همانطور که در بالا مشاهده می‌کنید، اگر می‌خواهید چند مقدار را ارسال کنید، می‌توانید یک آرایه بفرستید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-The {{domxref("DedicatedWorkerGlobalScope")}} interface it belongs to.
+رابط {{domxref("DedicatedWorkerGlobalScope")}} که این متد به آن تعلق دارد.
