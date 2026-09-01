@@ -1,11 +1,5 @@
 ---
 title: "DOMMatrixReadOnly: translate() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrixReadOnly/translate"
-status: "needs-translation"
----
-
----
-title: "DOMMatrixReadOnly: translate() method"
 short-title: translate()
 slug: Web/API/DOMMatrixReadOnly/translate
 page-type: web-api-instance-method
@@ -14,40 +8,33 @@ browser-compat: api.DOMMatrixReadOnly.translate
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The `translate()` method of the {{domxref("DOMMatrixReadOnly")}} interface
-creates a new matrix being the result of the original matrix with a translation applied.
+متد `translate()` از رابط {{domxref("DOMMatrixReadOnly")}} یک ماتریس جدید ایجاد می‌کند که نتیجه اعمال یک ترجمه (translation) بر روی ماتریس اصلی است.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 translate(translateX, translateY)
 translate(translateX, translateY, translateZ)
 ```
 
-### Parameters
+### پارامترها
 
 - `translateX`
-  - : A number representing the abscissa (x-coordinate) of the translating vector.
+  - : عددی که ابسیسا (مختصات x) بردار انتقال‌دهنده را نشان می‌دهد.
 - `translateY`
-  - : A number representing the ordinate (y-coordinate) of the translating vector.
+  - : عددی که ترتیب (مختصات y) بردار انتقال‌دهنده را نشان می‌دهد.
 - `translateZ` {{optional_inline}}
-  - : A number representing the z component of the translating vector. If not supplied,
-    this defaults to 0. If this is anything other than 0, the resulting matrix will be
-    3D.
+  - : عددی که مؤلفه z بردار انتقال‌دهنده را نشان می‌دهد. اگر ارائه نشود، پیش‌فرض آن 0 است. اگر این مقدار غیر از 0 باشد، ماتریس حاصل سه‌بعدی خواهد بود.
 
-### Return value
+### مقدار بازگشتی
 
-Returns a [`DOMMatrix`](/en-US/docs/Web/API/DOMMatrix)
-containing a new matrix being the result of the matrix being translated by the given
-vector. The original matrix is not modified.
+یک [`DOMMatrix`](/en-US/docs/Web/API/DOMMatrix) برمی‌گرداند که شامل یک ماتریس جدید است که حاصل انتقال ماتریس اصلی توسط بردار داده‌شده می‌باشد. ماتریس اصلی تغییر نمی‌کند.
 
-If a translation is applied about the z-axis, the resulting matrix will be a 4x4 3D
-matrix.
+اگر یک ترجمه حول محور z اعمال شود، ماتریس حاصل یک ماتریس سه‌بعدی 4x4 خواهد بود.
 
-## Examples
+## مثال‌ها
 
-This SVG contains two squares, one red and one blue, each positioned at the document
-origin:
+این SVG شامل دو مربع، یکی قرمز و یکی آبی، هر کدام در مبدأ سند قرار دارند:
 
 ```html
 <svg width="250" height="250" viewBox="0 0 50 50">
@@ -56,9 +43,7 @@ origin:
 </svg>
 ```
 
-The following JavaScript first creates an identity matrix, then uses the
-`translate()` method to create a new, translated matrix — which is then
-applied to the blue square as a `transform`. The red square is left in place.
+جاوااسکریپت زیر ابتدا یک ماتریس همانی (identity matrix) ایجاد می‌کند، سپس از متد `translate()` برای ایجاد یک ماتریس جدید و منتقل‌شده استفاده می‌کند — که سپس به عنوان یک `transform` به مربع آبی اعمال می‌شود. مربع قرمز در جای خود باقی می‌ماند.
 
 ```js
 const matrix = new DOMMatrixReadOnly().translate(25, 25);
@@ -70,10 +55,10 @@ document
 
 {{EmbedLiveSample('Examples', '250', '250')}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
