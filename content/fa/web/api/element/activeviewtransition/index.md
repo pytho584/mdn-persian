@@ -1,11 +1,5 @@
 ---
 title: "Element: activeViewTransition property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/activeViewTransition"
-status: "needs-translation"
----
-
----
-title: "Element: activeViewTransition property"
 short-title: activeViewTransition
 slug: Web/API/Element/activeViewTransition
 page-type: web-api-instance-property
@@ -16,19 +10,19 @@ browser-compat: api.Element.activeViewTransition
 
 {{APIRef("View Transition API")}}{{SeeCompatTable}}
 
-The **`activeViewTransition`** read-only property of the {{domxref("Element")}} interface returns a {{domxref("ViewTransition")}} instance representing the [view transition](/en-US/docs/Web/API/View_Transition_API) currently active on an element. It provides a consistent way to access an active [element-scoped view transition](/en-US/docs/Web/API/View_Transition_API/Using_element-scoped) without needing to save a reference to it for later.
+ویژگی فقط‌خواندنی **`activeViewTransition`** در رابط {{domxref("Element")}} یک نمونه از {{domxref("ViewTransition")}} را برمی‌گرداند که نمایانگر [view transition](/en-US/docs/Web/API/View_Transition_API) (انتقال نما) فعال فعلی روی یک عنصر است. این ویژگی یک روش یکپارچه برای دسترسی به یک [view transition با دامنه عنصر](/en-US/docs/Web/API/View_Transition_API/Using_element-scoped) (element-scoped view transition) فعال فراهم می‌کند، بدون نیاز به ذخیره یک مرجع به آن برای استفاده بعدی.
 
-An element-scoped {{domxref("ViewTransition")}} can also be accessed via the return value of {{domxref("Element.startViewTransition()")}}.
+همچنین می‌توان یک {{domxref("ViewTransition")}} با دامنه عنصر را از طریق مقدار بازگشتی {{domxref("Element.startViewTransition()")}} نیز به دست آورد.
 
-## Value
+## مقدار
 
-A {{domxref("ViewTransition")}} or `null` if the element has no active view transition.
+یک {{domxref("ViewTransition")}} یا `null` اگر عنصر هیچ view transition فعالی نداشته باشد.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
-This snippet shows how to use `activeViewTransition` to retrieve a reference to an ongoing view transition.
+این قطعه کد نشان می‌دهد که چگونه از `activeViewTransition` برای دریافت یک مرجع به یک view transition در حال انجام استفاده کنید.
 
 ```js
 const myElement = document.querySelector(".my-element");
@@ -45,18 +39,18 @@ function handleVT() {
 myElement.activeViewTransition;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Element.startViewTransition()")}}
 - {{domxref("Document.activeViewTransition")}}
-- [Using element-scoped view transitions](/en-US/docs/Web/API/View_Transition_API/Using_element-scoped)
-- [View Transition API](/en-US/docs/Web/API/View_Transition_API)
+- [استفاده از view transitions با دامنه عنصر](/en-US/docs/Web/API/View_Transition_API/Using_element-scoped)
+- [API انتقال نما](/en-US/docs/Web/API/View_Transition_API)
 - {{domxref("ViewTransition")}}
