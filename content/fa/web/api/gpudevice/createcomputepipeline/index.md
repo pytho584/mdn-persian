@@ -1,11 +1,5 @@
 ---
 title: "GPUDevice: createComputePipeline() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUDevice/createComputePipeline"
-status: "needs-translation"
----
-
----
-title: "GPUDevice: createComputePipeline() method"
 short-title: createComputePipeline()
 slug: Web/API/GPUDevice/createComputePipeline
 page-type: web-api-instance-method
@@ -14,27 +8,26 @@ browser-compat: api.GPUDevice.createComputePipeline
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`createComputePipeline()`** method of the
-{{domxref("GPUDevice")}} interface creates a {{domxref("GPUComputePipeline")}} that can control the compute shader stage and be used in a {{domxref("GPUComputePassEncoder")}}.
+متد **`createComputePipeline()`** از رابط {{domxref("GPUDevice")}} یک شیء {{domxref("GPUComputePipeline")}} می‌سازد که می‌تواند مرحله‌ی شیدر محاسباتی را کنترل کند و در یک {{domxref("GPUComputePassEncoder")}} استفاده شود.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 createComputePipeline(descriptor)
 ```
 
-### Parameters
+### پارامترها
 
 - `descriptor`
-  - : An object containing the following properties:
+  - : یک شیء شامل ویژگی‌های زیر:
     - `compute`
-      - : An object describing the compute shader entry point of the pipeline. This object can contain the following properties:
+      - : یک شیء که نقطه‌ی ورود شیدر محاسباتی خط لوله را توصیف می‌کند. این شیء می‌تواند ویژگی‌های زیر را داشته باشد:
         - `constants` {{optional_inline}}
-          - : A sequence of record types, with the structure `(id, value)`, representing override values for [WGSL constants that can be overridden in the pipeline](https://gpuweb.github.io/gpuweb/#typedefdef-gpupipelineconstantvalue). These behave like [ordered maps](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map). In each case, the `id` is a key used to identify or select the record, and the `constant` is an enumerated value representing a WGSL.
+          - : دنباله‌ای از انواع رکورد، با ساختار `(id, value)`، که مقادیر جایگزینی را برای [ثابت‌های WGSL که می‌توانند در خط لوله جایگزین شوند](https://gpuweb.github.io/gpuweb/#typedefdef-gpupipelineconstantvalue) نمایش می‌دهند. این مقادیر مانند [نقشه‌های مرتب](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) رفتار می‌کنند. در هر مورد، `id` کلیدی است که برای شناسایی یا انتخاب رکورد استفاده می‌شود و `constant` یک مقدار شمارشی است که یک WGSL را نمایش می‌دهد.
 
-            Depending on which constant you want to override, the `id` may take the form of the numeric ID of the constant, if one is specified, or otherwise the constant's identifier name.
+            بسته به اینکه کدام ثابت را می‌خواهید جایگزین کنید، `id` ممکن است به شکل شناسه‌ی عددی ثابت (در صورت مشخص بودن) یا در غیر این صورت نام شناسه‌ی ثابت باشد.
 
-            A code snippet providing override values for several overridable constants might look like this:
+            یک قطعه کد که مقادیر جایگزینی را برای چند ثابت قابل جایگزینی فراهم می‌کند ممکن است به این شکل باشد:
 
             ```js
             ({
@@ -51,45 +44,45 @@ createComputePipeline(descriptor)
             ```
 
         - `entryPoint` {{optional_inline}}
-          - : The name of the function in the `module` that this stage will use to perform its work. The corresponding shader function must have the `@compute` attribute to be identified as this entry point. See [Entry Point Declaration](https://gpuweb.github.io/gpuweb/wgsl/#entry-point-decl) for more information.
+          - : نام تابعی در `module` که این مرحله برای انجام کار خود از آن استفاده خواهد کرد. تابع شیدر مربوطه باید ویژگی `@compute` داشته باشد تا به عنوان این نقطه‌ی ورود شناسایی شود. برای اطلاعات بیشتر به [اعلام نقطه‌ی ورود](https://gpuweb.github.io/gpuweb/wgsl/#entry-point-decl) مراجعه کنید.
 
-            You can omit the `entryPoint` property if your shader code contains a single function with the `@compute` attribute set — the browser will use this as the default entry point. If `entryPoint` is omitted and the browser cannot determine a default entry point, a {{domxref("GPUValidationError")}} is generated and the resulting {{domxref("GPUComputePipeline")}} will be invalid.
+            اگر کد شیدر شما فقط یک تابع با ویژگی `@compute` داشته باشد، می‌توانید ویژگی `entryPoint` را حذف کنید — مرورگر از این تابع به عنوان نقطه‌ی ورود پیش‌فرض استفاده خواهد کرد. اگر `entryPoint` حذف شود و مرورگر نتواند نقطه‌ی ورود پیش‌فرضی را تعیین کند، یک {{domxref("GPUValidationError")}} ایجاد می‌شود و {{domxref("GPUComputePipeline")}} حاصل نامعتبر خواهد بود.
 
         - `module`
-          - : A {{domxref("GPUShaderModule")}} object containing the [WGSL](https://gpuweb.github.io/gpuweb/wgsl/) code that this programmable stage will execute.
+          - : یک شیء {{domxref("GPUShaderModule")}} شامل کد [WGSL](https://gpuweb.github.io/gpuweb/wgsl/) که این مرحله‌ی برنامه‌پذیر اجرا خواهد کرد.
 
     - `label` {{optional_inline}}
-      - : A string providing a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+      - : رشته‌ای که برچسبی برای شناسایی شیء فراهم می‌کند، مثلاً در پیام‌های {{domxref("GPUError")}} یا هشدارهای کنسول.
     - `layout`
-      - : Defines the layout (structure, purpose, and type) of all the GPU resources (buffers, textures, etc.) used during the execution of the pipeline. Possible values are:
-        - A {{domxref("GPUPipelineLayout")}} object, created using {{domxref("GPUDevice.createPipelineLayout()")}}, which allows the GPU to figure out how to run the pipeline most efficiently ahead of time.
-        - A string of `"auto"`, which causes the pipeline to generate an implicit bind group layout based on any bindings defined in the shader code. If `"auto"` is used, the generated bind group layouts may only be used with the current pipeline.
+      - : چیدمان (ساختار، هدف و نوع) همه‌ی منابع GPU (بافرها، بافت‌ها و غیره) را که در طول اجرای خط لوله استفاده می‌شوند، تعریف می‌کند. مقادیر احتمالی عبارتند از:
+        - یک شیء {{domxref("GPUPipelineLayout")}} که با {{domxref("GPUDevice.createPipelineLayout()")}} ساخته شده است، که به GPU اجازه می‌دهد از قبل بفهمد چگونه خط لوله را به کارآمدترین شکل اجرا کند.
+        - رشته‌ی `"auto"` که باعث می‌شود خط لوله یک چیدمان گروه اتصال ضمنی بر اساس هر binding تعریف‌شده در کد شیدر ایجاد کند. اگر از `"auto"` استفاده شود، چیدمان‌های گروه اتصال تولیدشده فقط با خط لوله‌ی فعلی قابل استفاده هستند.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("GPUComputePipeline")}} object instance.
+یک شیء {{domxref("GPUComputePipeline")}}.
 
-### Validation
+### اعتبارسنجی
 
-The following criteria must be met when calling **`createComputePipeline()`**, otherwise a {{domxref("GPUValidationError")}} is generated and an invalid {{domxref("GPUComputePipeline")}} object is returned:
+هنگام فراخوانی **`createComputePipeline()`** معیارهای زیر باید برآورده شوند، در غیر این صورت یک {{domxref("GPUValidationError")}} ایجاد شده و یک شیء {{domxref("GPUComputePipeline")}} نامعتبر بازگردانده می‌شود:
 
-- The workgroup storage size used by the `module` referenced inside the `compute` property is less than or equal to the {{domxref("GPUDevice")}}'s `maxComputeWorkgroupStorageSize` {{domxref("GPUSupportedLimits", "limit", "", "nocode")}}.
-- The `module` uses a number of compute invocations per workgroup less than or equal to the {{domxref("GPUDevice")}}'s `maxComputeInvocationsPerWorkgroup` {{domxref("GPUSupportedLimits", "limit", "", "nocode")}}.
-- The `module`'s workgroup size is less than or equal to the {{domxref("GPUDevice")}}'s corresponding `maxComputeWorkgroupSizeX`, `maxComputeWorkgroupSizeY`, or `maxComputeWorkgroupSizeZ` {{domxref("GPUSupportedLimits", "limit", "", "nocode")}}.
-- If the `entryPoint` property is omitted, the shader code contains a single compute shader entry point function for the browser to use as the default entry point.
+- اندازه‌ی فضای ذخیره‌سازی workgroup استفاده‌شده توسط `module` ارجاع‌شده در ویژگی `compute` کمتر یا برابر با {{domxref("GPUDevice")}}'s `maxComputeWorkgroupStorageSize` {{domxref("GPUSupportedLimits", "limit", "", "nocode")}} باشد.
+- `module` از تعداد فراخوانی محاسباتی در هر workgroup کمتر یا برابر با {{domxref("GPUDevice")}}'s `maxComputeInvocationsPerWorkgroup` {{domxref("GPUSupportedLimits", "limit", "", "nocode")}} استفاده کند.
+- اندازه‌ی workgroup در `module` کمتر یا برابر با {{domxref("GPUDevice")}}'s متناظر `maxComputeWorkgroupSizeX`، `maxComputeWorkgroupSizeY` یا `maxComputeWorkgroupSizeZ` {{domxref("GPUSupportedLimits", "limit", "", "nocode")}} باشد.
+- اگر ویژگی `entryPoint` حذف شود، کد شیدر فقط یک تابع نقطه‌ی ورود شیدر محاسباتی داشته باشد تا مرورگر از آن به عنوان نقطه‌ی ورود پیش‌فرض استفاده کند.
 
-## Examples
+## مثال‌ها
 
 > [!NOTE]
-> The [WebGPU samples](https://webgpu.github.io/webgpu-samples/) feature many more examples.
+> [نمونه‌های WebGPU](https://webgpu.github.io/webgpu-samples/) مثال‌های بسیار بیشتری دارند.
 
-### Basic example
+### مثال پایه
 
-Our [basic compute demo](https://mdn.github.io/dom-examples/webgpu-compute-demo/) shows a process of:
+[نمونه‌ی محاسبات پایه‌ی ما](https://mdn.github.io/dom-examples/webgpu-compute-demo/) فرآیند زیر را نشان می‌دهد:
 
-- Creating a bind group layout with {{domxref("GPUDevice.createBindGroupLayout()")}}.
-- Feeding the `bindGroupLayout` into {{domxref("GPUDevice.createPipelineLayout()")}} to create a {{domxref("GPUPipelineLayout")}}.
-- Using that value immediately in a `createComputePipeline()` call to create a {{domxref("GPUComputePipeline")}}.
+- ایجاد یک چیدمان گروه اتصال با {{domxref("GPUDevice.createBindGroupLayout()")}}.
+- انتقال `bindGroupLayout` به {{domxref("GPUDevice.createPipelineLayout()")}} برای ایجاد یک {{domxref("GPUPipelineLayout")}}.
+- استفاده از آن مقدار مستقیماً در فراخوانی `createComputePipeline()` برای ایجاد یک {{domxref("GPUComputePipeline")}}.
 
 ```js
 // …
@@ -119,14 +112,14 @@ const computePipeline = device.createComputePipeline({
 // …
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
