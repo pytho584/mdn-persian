@@ -1,28 +1,22 @@
 ---
 title: "CSSStyleRule: selectorText property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleRule/selectorText"
-status: "needs-translation"
----
-
----
-title: "CSSStyleRule: selectorText property"
 short-title: selectorText
 slug: Web/API/CSSStyleRule/selectorText
 page-type: web-api-instance-property
 browser-compat: api.CSSStyleRule.selectorText
 ---
 
-{{APIRef("CSSOM") }}
+{{APIRef("CSSOM")}}
 
-The **`selectorText`** property of the {{domxref("CSSStyleRule")}} interface gets and sets the selectors associated with the `CSSStyleRule`.
+ویژگی **`selectorText`** از واسط {{domxref("CSSStyleRule")}}، انتخابگرهای مرتبط با `CSSStyleRule` را دریافت و تنظیم می‌کند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته (string).
 
-## Examples
+## مثال‌ها
 
-The CSS includes one style rule. This will be the first {{domxref("CSSRule")}} returned by `document.styleSheets[0].cssRules`. `myRules[0].selectorText` therefore returns a literal string of the selector, in this case `"h1"`.
+CSS شامل یک قانون استایل است. این قانون اولین {{domxref("CSSRule")}} خواهد بود که توسط `document.styleSheets[0].cssRules` بازگردانده می‌شود. بنابراین `myRules[0].selectorText` یک رشته تحت‌اللفظی از انتخابگر را برمی‌گرداند که در اینجا `"h1"` است.
 
 ```css
 h1 {
@@ -32,13 +26,13 @@ h1 {
 
 ```js
 let myRules = document.styleSheets[0].cssRules;
-console.log(myRules[0].selectorText); // a string containing "h1".
+console.log(myRules[0].selectorText); // یک رشته حاوی "h1".
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
