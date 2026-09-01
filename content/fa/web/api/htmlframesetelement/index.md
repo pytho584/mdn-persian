@@ -1,10 +1,4 @@
 ---
-title: "HTMLFrameSetElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLFrameSetElement"
-status: "needs-translation"
----
-
----
 title: HTMLFrameSetElement
 slug: Web/API/HTMLFrameSetElement
 page-type: web-api-interface
@@ -15,78 +9,78 @@ browser-compat: api.HTMLFrameSetElement
 
 {{APIRef("HTML DOM")}}{{deprecated_header}}
 
-The **`HTMLFrameSetElement`** interface provides special properties (beyond those of the regular {{domxref("HTMLElement")}} interface they also inherit) for manipulating {{HTMLElement("frameset")}} elements.
+رابطهٔ **`HTMLFrameSetElement`** ویژگی‌های خاصی را (فراتر از ویژگی‌های رابط معمولی {{domxref("HTMLElement")}} که از آن ارث می‌برد) برای دستکاری عناصر {{HTMLElement("frameset")}} فراهم می‌کند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("HTMLElement")}}._
+_ویژگی‌های والد خود، {{domxref("HTMLElement")}} را به ارث می‌برد._
 
 - {{domxref("HTMLFrameSetElement.cols")}} {{deprecated_inline}}
-  - : A string structured as a comma-separated list specifying the width of each column inside a frameset.
+  - : رشته‌ای به صورت فهرستی جدا شده با کاما که عرض هر ستون را در یک frameset مشخص می‌کند.
 - {{domxref("HTMLFrameSetElement.rows")}} {{deprecated_inline}}
-  - : A string structured as a comma-separated list specifying the height of each column inside a frameset.
+  - : رشته‌ای به صورت فهرستی جدا شده با کاما که ارتفاع هر ستون را در یک frameset مشخص می‌کند.
 
-## Instance methods
+## روش‌های نمونه
 
-_No specific method; inherits methods from its parent, {{domxref("HTMLElement")}}._
+_روش خاصی ندارد؛ روش‌های والد خود، {{domxref("HTMLElement")}} را به ارث می‌برد._
 
-## Event handlers
+## مدیریت‌کننده‌های رویداد
 
-The {{domxref("HTMLElement")}} events are inherited.
+رویدادهای {{domxref("HTMLElement")}} به ارث می‌رسند.
 
-The following {{domxref("Window")}} `onXYZ` event handler properties are also available as aliases targeting the `window` object. However, it is advised to listen to them on the `window` object directly rather than on `HTMLFrameSetElement`.
+ویژگی‌های مدیریت‌کننده رویداد `onXYZ` زیر از {{domxref("Window")}} نیز به عنوان نام‌های مستعار در دسترس هستند که هدف آن‌ها شیء `window` است. با این حال، توصیه می‌شود به جای `HTMLFrameSetElement` مستقیماً به شیء `window` گوش دهید.
 
 > [!NOTE]
-> Using `addEventListener()` on `HTMLFrameSetElement` will not work for the `onXYZ` event handlers listed below. Listen to the events on the {{domxref("window")}} object instead.
+> استفاده از `addEventListener()` روی `HTMLFrameSetElement` برای مدیریت‌کننده‌های رویداد `onXYZ` فهرست‌شده در زیر کار نخواهد کرد. به جای آن، به رویدادها روی شیء {{domxref("window")}} گوش دهید.
 
 - {{domxref("window.afterprint_event", "HTMLFrameSetElement.onafterprint")}}
-  - : Fired after the associated document has started printing or the print preview has been closed.
+  - : پس از شروع چاپ سند مرتبط یا بسته شدن پیش‌نمایش چاپ، فعال می‌شود.
 - {{domxref("window.beforeprint_event", "HTMLFrameSetElement.onbeforeprint")}}
-  - : Fired when the associated document is about to be printed or previewed for printing.
+  - : هنگامی که سند مرتبط در آستانه چاپ یا پیش‌نمایش برای چاپ است، فعال می‌شود.
 - {{domxref("window.beforeunload_event", "HTMLFrameSetElement.onbeforeunload")}}
-  - : Fired when the window, the document and its resources are about to be unloaded.
+  - : هنگامی که پنجره، سند و منابع آن در آستانه تخلیه (unload) هستند، فعال می‌شود.
 - {{domxref("window.gamepadconnected_event", "HTMLFrameSetElement.ongamepadconnected")}}
-  - : Fired when the browser detects that a gamepad has been connected or the first time a button/axis of the gamepad is used.
+  - : هنگامی که مرورگر تشخیص می‌دهد یک گیم‌پد متصل شده یا اولین بار که یک دکمه/محور از گیم‌پد استفاده می‌شود، فعال می‌شود.
 - {{domxref("window.gamepaddisconnected_event", "HTMLFrameSetElement.ongamepaddisconnected")}}
-  - : Fired when the browser detects that a gamepad has been disconnected.
+  - : هنگامی که مرورگر تشخیص می‌دهد یک گیم‌پد قطع شده است، فعال می‌شود.
 - {{domxref("window.hashchange_event", "HTMLFrameSetElement.onhashchange")}}
-  - : Fired when the fragment identifier of the URL has changed (the part of the URL beginning with and following the `#` symbol).
+  - : هنگامی که شناسه تکه‌ای (fragment identifier) URL تغییر می‌کند (بخشی از URL که با نماد `#` شروع شده و پس از آن می‌آید)، فعال می‌شود.
 - {{domxref("window.languagechange_event", "HTMLFrameSetElement.onlanguagechange")}}
-  - : Fired when the user's preferred language changes.
+  - : هنگامی که زبان ترجیحی کاربر تغییر می‌کند، فعال می‌شود.
 - {{domxref("window.message_event", "HTMLFrameSetElement.onmessage")}}
-  - : Fired when the window receives a message, for example from a call to [`Window.postMessage()`](/en-US/docs/Web/API/Window/postMessage) from another browsing context.
+  - : هنگامی که پنجره پیامی دریافت می‌کند، برای مثال از فراخوانی [`Window.postMessage()`](/en-US/docs/Web/API/Window/postMessage) از یک بافت مرور دیگر، فعال می‌شود.
 - {{domxref("window.messageerror_event", "HTMLFrameSetElement.onmessageerror")}}
-  - : Fired when the window receives a message that can't be deserialized.
+  - : هنگامی که پنجره پیامی دریافت می‌کند که نمی‌توان آن را از حالت سریالی (deserialize) خارج کرد، فعال می‌شود.
 - {{domxref("window.offline_event", "HTMLFrameSetElement.onoffline")}}
-  - : Fired when the browser has lost access to the network and the value of {{domxref("Navigator.onLine")}} switches to `false`.
+  - : هنگامی که مرورگر دسترسی خود به شبکه را از دست می‌دهد و مقدار {{domxref("Navigator.onLine")}} به `false` تغییر می‌کند، فعال می‌شود.
 - {{domxref("window.online_event", "HTMLFrameSetElement.ononline")}}
-  - : Fired when the browser has gained access to the network and the value of {{domxref("Navigator.onLine")}} switches to `true`.
+  - : هنگامی که مرورگر به شبکه دسترسی پیدا می‌کند و مقدار {{domxref("Navigator.onLine")}} به `true` تغییر می‌کند، فعال می‌شود.
 - {{domxref("window.pagehide_event", "HTMLFrameSetElement.onpagehide")}}
-  - : Fired when the browser hides the current page in the process of presenting a different page from the session's history.
+  - : هنگامی که مرورگر صفحه فعلی را در فرآیند نمایش صفحه‌ای دیگر از تاریخچه جلسه پنهان می‌کند، فعال می‌شود.
 - {{domxref("window.pageshow_event", "HTMLFrameSetElement.onpageshow")}}
-  - : Fired when the browser displays the window's document due to navigation.
+  - : هنگامی که مرورگر سند پنجره را به دلیل ناوبری نمایش می‌دهد، فعال می‌شود.
 - {{domxref("window.popstate_event", "HTMLFrameSetElement.onpopstate")}}
-  - : Fired when the active history entry changes while the user navigates the session history.
+  - : هنگامی که ورودی تاریخچه فعال در حالی که کاربر در تاریخچه جلسه حرکت می‌کند تغییر می‌کند، فعال می‌شود.
 - {{domxref("window.rejectionhandled_event", "HTMLFrameSetElement.onrejectionhandled")}}
-  - : Fired whenever a JavaScript {{jsxref("Promise")}} is rejected and the rejection has been handled.
+  - : هر زمان که یک {{jsxref("Promise")}} جاوااسکریپت رد شود و این رد شدن مدیریت شده باشد، فعال می‌شود.
 - {{domxref("window.storage_event", "HTMLFrameSetElement.onstorage")}}
-  - : Fired when a storage area (`localStorage`) has been modified in the context of another document.
+  - : هنگامی که یک ناحیه ذخیره‌سازی (`localStorage`) در بافت سند دیگری تغییر کند، فعال می‌شود.
 - {{domxref("window.unhandledrejection_event", "HTMLFrameSetElement.onunhandledrejection")}}
-  - : Fired whenever a {{jsxref("Promise")}} is rejected but the rejection was not handled.
+  - : هر زمان که یک {{jsxref("Promise")}} رد شود اما این رد شدن مدیریت نشده باشد، فعال می‌شود.
 - {{domxref("window.unload_event", "HTMLFrameSetElement.onunload")}}
-  - : Fired when the document is being unloaded.
+  - : هنگامی که سند در حال تخلیه (unload) است، فعال می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- HTML element implementing this interface: {{HTMLElement("frameset")}}
-- The equivalent of this element outside of frames: `HTMLFrameSetElement`.
+- عنصر HTML که این رابط را پیاده‌سازی می‌کند: {{HTMLElement("frameset")}}
+- معادل این عنصر خارج از فریم‌ها: `HTMLFrameSetElement`.
