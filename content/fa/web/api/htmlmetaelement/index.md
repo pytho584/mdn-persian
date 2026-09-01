@@ -1,10 +1,4 @@
 ---
-title: "HTMLMetaElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMetaElement"
-status: "needs-translation"
----
-
----
 title: HTMLMetaElement
 slug: Web/API/HTMLMetaElement
 page-type: web-api-interface
@@ -13,42 +7,39 @@ browser-compat: api.HTMLMetaElement
 
 {{ APIRef("HTML DOM") }}
 
-The **`HTMLMetaElement`** interface contains descriptive metadata about a document provided in HTML as [`<meta>`](/en-US/docs/Web/HTML/Reference/Elements/meta) elements.
-This interface inherits all of the properties and methods described in the {{domxref("HTMLElement")}} interface.
+رابط **`HTMLMetaElement`**، فراداده‌های توصیفی درباره سند را که در HTML به صورت عنصرهای [`<meta>`](/en-US/docs/Web/HTML/Reference/Elements/meta) ارائه می‌شوند، در بر می‌گیرد. این رابط تمام ویژگی‌ها و روش‌های شرح‌داده‌شده در رابط {{domxref("HTMLElement")}} را به ارث می‌برد.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("HTMLElement")}}._
+_ویژگی‌ها را از والد خود، {{domxref("HTMLElement")}}، به ارث می‌برد._
 
 - {{HTMLElement("meta#charset")}}
-  - : The character encoding for an HTML document.
+  - : رمزگذاری نویسه‌ها برای یک سند HTML.
 - {{domxref("HTMLMetaElement.content")}}
-  - : The 'value' part of the name-value pairs of the document metadata.
+  - : بخش «مقدار» از جفت‌های نام-مقدار فراداده‌های سند.
 - {{domxref("HTMLMetaElement.httpEquiv")}}
-  - : The name of the pragma directive, the HTTP response header, for a document.
+  - : نام دستور pragma (هدایت پردازش)، که همان هدر پاسخ HTTP برای یک سند است.
 - {{domxref("HTMLMetaElement.media")}}
-  - : The media context for a `theme-color` metadata property.
+  - : بافتار رسانه‌ای برای ویژگی فراداده‌ای `theme-color`.
 - {{domxref("HTMLMetaElement.name")}}
-  - : The 'name' part of the name-value pairs defining the named metadata of a document.
+  - : بخش «نام» از جفت‌های نام-مقدار که فراداده‌های نام‌دار یک سند را تعریف می‌کنند.
 - {{domxref("HTMLMetaElement.scheme")}} {{deprecated_inline}}
-  - : Defines the scheme of the value in the {{domxref("HTMLMetaElement.content")}} attribute.
-    This is deprecated and should not be used on new web pages.
+  - : طرح (scheme) مقدار موجود در ویژگی {{domxref("HTMLMetaElement.content")}} را تعریف می‌کند.
+    این ویژگی منسوخ شده است و نباید در صفحات وب جدید استفاده شود.
 
-## Instance methods
+## روش‌های نمونه
 
-_No specific method; inherits methods from its parent, {{domxref("HTMLElement")}}._
+_روش خاصی ندارد؛ روش‌ها را از والد خود، {{domxref("HTMLElement")}}، به ارث می‌برد._
 
-## Examples
+## مثال‌ها
 
-The following two examples show a general approach to using the `HTMLMetaElement` interface.
-For specific examples, see the pages for the individual properties as described in the [Instance properties](#instance_properties) section above.
+دو مثال زیر رویکرد کلی استفاده از رابط `HTMLMetaElement` را نشان می‌دهند. برای مثال‌های خاص، به صفحه‌های مربوط به هر ویژگی که در بخش [ویژگی‌های نمونه](#instance_properties) در بالا شرح داده شد مراجعه کنید.
 
-### Setting the page description metadata
+### تنظیم فرادادهٔ توضیح صفحه
 
-The following example creates a new `<meta>` element with a `name` attribute set to [`description`](/en-US/docs/Web/HTML/Reference/Elements/meta/name#meta_names_defined_in_the_html_specification).
-The `content` attribute sets a description of the document and is appended to the document `<head>`:
+مثال زیر یک عنصر `<meta>` جدید با ویژگی `name` تنظیم‌شده بر روی [`description`](/en-US/docs/Web/HTML/Reference/Elements/meta/name#meta_names_defined_in_the_html_specification) ایجاد می‌کند. ویژگی `content` یک توضیح برای سند تعیین می‌کند و به `<head>` سند اضافه می‌شود:
 
 ```js
 const meta = document.createElement("meta");
@@ -58,10 +49,9 @@ meta.content =
 document.head.appendChild(meta);
 ```
 
-### Setting the viewport metadata
+### تنظیم فرادادهٔ viewport
 
-The following example shows how to create a new `<meta>` element with a `name` attribute set to [`viewport`](/en-US/docs/Web/HTML/Reference/Elements/meta/name/viewport).
-The `content` attribute sets the viewport size and is appended to the document `<head>`:
+مثال زیر نحوه ایجاد یک عنصر `<meta>` جدید با ویژگی `name` تنظیم‌شده بر روی [`viewport`](/en-US/docs/Web/HTML/Reference/Elements/meta/name/viewport) را نشان می‌دهد. ویژگی `content` اندازه viewport را تعیین کرده و به `<head>` سند اضافه می‌شود:
 
 ```js
 const meta = document.createElement("meta");
@@ -70,16 +60,16 @@ meta.content = "width=device-width, initial-scale=1";
 document.head.appendChild(meta);
 ```
 
-For more information on setting the viewport, see [`<meta name="viewport">`](/en-US/docs/Web/HTML/Reference/Elements/meta/name/viewport).
+برای اطلاعات بیشتر درباره تنظیم viewport، به [`<meta name="viewport">`](/en-US/docs/Web/HTML/Reference/Elements/meta/name/viewport) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- The HTML element implementing this interface: {{HTMLElement("meta")}}
+- عنصر HTML که این رابط را پیاده‌سازی می‌کند: {{HTMLElement("meta")}}
