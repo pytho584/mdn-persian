@@ -1,11 +1,5 @@
 ---
 title: "HTMLTableCellElement: rowSpan property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableCellElement/rowSpan"
-status: "needs-translation"
----
-
----
-title: "HTMLTableCellElement: rowSpan property"
 short-title: rowSpan
 slug: Web/API/HTMLTableCellElement/rowSpan
 page-type: web-api-instance-property
