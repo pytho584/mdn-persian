@@ -1,11 +1,5 @@
 ---
 title: "Element: gesturechange event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/gesturechange_event"
-status: "needs-translation"
----
-
----
-title: "Element: gesturechange event"
 short-title: gesturechange
 slug: Web/API/Element/gesturechange_event
 page-type: web-api-event
@@ -16,13 +10,13 @@ browser-compat: api.Element.gesturechange_event
 
 {{APIRef}}{{Non-standard_header}}
 
-The **`gesturechange`** event is fired when digits move during a touch gesture.
+رویداد **`gesturechange`** زمانی صادر می‌شود که انگشتان در حین یک ژست لمسی حرکت کنند.
 
-It is a proprietary event specific to WebKit.
+این یک رویداد اختصاصی و مخصوص WebKit است.
 
 ## Syntax
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("gesturechange", (event) => { })
@@ -32,13 +26,13 @@ ongesturechange = (event) => { }
 
 ## Event type
 
-A {{domxref("GestureEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("GestureEvent")}}. این رویداد از {{domxref("Event")}} ارث می‌برد.
 
 {{InheritanceDiagram("GestureEvent")}}
 
 ## Specifications
 
-Not part of any specification.
+این رویداد بخشی از هیچ مشخصات استانداردی نیست.
 
 ## Browser compatibility
 
@@ -46,4 +40,4 @@ Not part of any specification.
 
 ## See also
 
-- [GestureEventClassReference at the Safari Developer Library](https://developer.apple.com/documentation/webkitjs/gestureevent)
+- [مرجع کلاس GestureEvent در کتابخانه توسعه‌دهندگان Safari](https://developer.apple.com/documentation/webkitjs/gestureevent)
