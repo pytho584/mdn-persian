@@ -1,11 +1,5 @@
 ---
 title: "CSSViewTransitionRule: types property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSViewTransitionRule/types"
-status: "needs-translation"
----
-
----
-title: "CSSViewTransitionRule: types property"
 short-title: types
 slug: Web/API/CSSViewTransitionRule/types
 page-type: web-api-instance-property
@@ -14,27 +8,27 @@ browser-compat: api.CSSViewTransitionRule.types
 
 {{APIRef("CSSOM")}}
 
-The **`types`** read-only property of the {{domxref("CSSViewTransitionRule")}} interface returns an array containing the associated {{cssxref("@view-transition")}} at-rule's `types` descriptor values.
+خاصیت فقط‌خواندنی **`types`** در رابط {{domxref("CSSViewTransitionRule")}} آرایه‌ای شامل مقادیر توصیفگر `types` از at-rule مربوط به {{cssxref("@view-transition")}} برمی‌گرداند.
 
-## Value
+## مقدار
 
-An array of strings.
+آرایه‌ای از رشته‌ها.
 
-If no `types` descriptor is set on the `@view-transition` at-rule, the `types` property is equal to an empty array.
+اگر هیچ توصیفگر `types` روی at-rule مربوط به `@view-transition` تنظیم نشده باشد، خاصیت `types` برابر با یک آرایه خالی است.
 
-## Examples
+## مثال‌ها
 
-See the main {{domxref("CSSViewTransitionRule")}} page for example usage.
+برای نمونه‌های استفاده، به صفحه اصلی {{domxref("CSSViewTransitionRule")}} مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{cssxref("@view-transition")}}
 - [View Transition API](/en-US/docs/Web/API/View_Transition_API)
