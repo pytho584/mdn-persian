@@ -1,7 +1,5 @@
 ---
 title: "EXT_disjoint_timer_query: endQueryEXT() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EXT_disjoint_timer_query/endQueryEXT"
-status: "needs-translation"
 ---
 
 ---
@@ -14,8 +12,7 @@ browser-compat: api.EXT_disjoint_timer_query.endQueryEXT
 
 {{APIRef("WebGL")}}
 
-The **`EXT_disjoint_timer_query.endQueryEXT()`** method of the
-[WebGL API](/en-US/docs/Web/API/WebGL_API) ends a timer query.
+متد **`EXT_disjoint_timer_query.endQueryEXT()`** در [WebGL API](/en-US/docs/Web/API/WebGL_API) یک پرس‌وجوی زمان‌سنج را پایان می‌دهد.
 
 ## Syntax
 
@@ -26,12 +23,11 @@ endQueryEXT(target)
 ### Parameters
 
 - `target`
-  - : A {{domxref("WebGL_API/Types", "GLenum")}} specifying the target of the time query. Must be
-    `ext.TIME_ELAPSED_EXT`.
+  - : یک {{domxref("WebGL_API/Types", "GLenum")}} که هدف پرس‌وجوی زمان را مشخص می‌کند. باید `ext.TIME_ELAPSED_EXT` باشد.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
 ## Examples
 
