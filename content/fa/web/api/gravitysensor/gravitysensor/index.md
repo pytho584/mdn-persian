@@ -1,7 +1,5 @@
 ---
 title: "GravitySensor: GravitySensor() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GravitySensor/GravitySensor"
-status: "needs-translation"
 ---
 
 ---
@@ -14,9 +12,7 @@ browser-compat: api.GravitySensor.GravitySensor
 
 {{securecontext_header}}{{APIRef("Sensor API")}}
 
-The **`GravitySensor()`**
-constructor creates a new {{domxref("GravitySensor")}} object which
-provides on each reading the gravity applied to the device along all three axes.
+سازندهٔ **`GravitySensor()`** یک شیء {{domxref("GravitySensor")}} جدید می‌سازد که در هر بار خواندن، گرانش وارد بر دستگاه را در هر سه محور فراهم می‌کند.
 
 ## Syntax
 
@@ -28,23 +24,16 @@ new GravitySensor(options)
 ### Parameters
 
 - `options` {{optional_inline}}
-  - : Options are as follows:
+  - : گزینه‌ها به شرح زیر هستند:
     - `frequency` {{optional_inline}}
-      - : The desired number of times per second a sample should
-        be taken, meaning the number of times per second that the
-        {{domxref('sensor.reading_event', 'reading')}} event will be called. A whole number or decimal may be
-        used, the latter for frequencies less than a second. The actual reading frequency
-        depends on device hardware and consequently may be less than requested. The default
-        frequency is the one defined by the underlying platform.
+      - : تعداد بارهای مورد نظر در هر ثانیه برای نمونه‌برداری، یعنی تعداد باری که رویداد {{domxref('sensor.reading_event', 'reading')}} در هر ثانیه فراخوانی می‌شود. می‌توان از یک عدد صحیح یا اعشاری استفاده کرد؛ عدد اعشاری برای فرکانس‌های کمتر از یک ثانیه. فرکانس واقعی خواندن به سخت‌افزار دستگاه بستگی دارد و در نتیجه ممکن است کمتر از مقدار درخواستی باشد. فرکانس پیش‌فرض، فرکانسی است که توسط پلتفرم زیرین تعریف شده است.
     - `referenceFrame` {{optional_inline}}
-      - : The local coordinate system representing
-        the reference frame. It can be either `'device'` or
-        `'screen'`. The default is `'device'`.
+      - : سیستم مختصات محلی که چارچوب مرجع را نشان می‌دهد. این مقدار می‌تواند `'device'` یا `'screen'` باشد. پیش‌فرض `'device'` است.
 
 ### Exceptions
 
 - `SecurityError` {{domxref("DOMException")}}
-  - : Use of this feature was blocked by a [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy).
+  - : استفاده از این ویژگی توسط یک [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) مسدود شده است.
 
 ## Specifications
 
@@ -56,4 +45,4 @@ new GravitySensor(options)
 
 ## See also
 
-- {{domxref('sensor.reading_event', 'reading')}} event
+- {{domxref('sensor.reading_event', 'reading')}} رویداد
