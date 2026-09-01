@@ -1,7 +1,5 @@
 ---
 title: "GPUPipelineLayout"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUPipelineLayout"
-status: "needs-translation"
 ---
 
 ---
@@ -13,28 +11,28 @@ browser-compat: api.GPUPipelineLayout
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`GPUPipelineLayout`** interface of the {{domxref("WebGPU API", "WebGPU API", "", "nocode")}} defines the {{domxref("GPUBindGroupLayout")}}s used by a pipeline. {{domxref("GPUBindGroup")}}s used with the pipeline during command encoding must have compatible {{domxref("GPUBindGroupLayout")}}s.
+**`GPUPipelineLayout`** واسطهای در {{domxref("WebGPU API", "WebGPU API", "", "nocode")}} است که {{domxref("GPUBindGroupLayout")}} های مورد استفاده توسط یک پایپلاین را تعریف میکند. {{domxref("GPUBindGroup")}} هایی که در طول رمزگذاری دستورات با پایپلاین استفاده میشوند، باید دارای {{domxref("GPUBindGroupLayout")}} سازگار باشند.
 
-A `GPUPipelineLayout` object instance is created using the {{domxref("GPUDevice.createPipelineLayout()")}} method.
+یک نمونه شیء `GPUPipelineLayout` با استفاده از روش {{domxref("GPUDevice.createPipelineLayout()")}} ایجاد میشود.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگیهای نمونه
 
 - {{domxref("GPUPipelineLayout.label", "label")}}
-  - : A string providing a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+  - : یک رشته که برچسبی برای شناسایی شیء فراهم میکند، مثلاً در پیامهای {{domxref("GPUError")}} یا هشدارهای کنسول.
 
-## Examples
+## مثالها
 
 > [!NOTE]
-> The [WebGPU samples](https://webgpu.github.io/webgpu-samples/) feature many more examples.
+> [نمونههای WebGPU](https://webgpu.github.io/webgpu-samples/) شامل مثالهای بسیار بیشتری هستند.
 
-### Basic pipeline layout example
+### مثال پایه چیدمان پایپلاین
 
-The following snippet:
+قطعه زیر:
 
-- Creates a {{domxref("GPUBindGroupLayout")}} that describes a binding with a buffer, a texture, and a sampler.
-- Creates a `GPUPipelineLayout` based on the {{domxref("GPUBindGroupLayout")}}.
+- یک {{domxref("GPUBindGroupLayout")}} ایجاد میکند که یک اتصال با یک بافر، یک بافت و یک سمپلر را توصیف میکند.
+- یک `GPUPipelineLayout` بر اساس {{domxref("GPUBindGroupLayout")}} ایجاد میکند.
 
 ```js
 // …
@@ -66,14 +64,14 @@ const pipelineLayout = device.createPipelineLayout({
 // …
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
