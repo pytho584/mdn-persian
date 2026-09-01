@@ -1,10 +1,4 @@
 ---
-title: "CSSPrimitiveValue"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSPrimitiveValue"
-status: "needs-translation"
----
-
----
 title: CSSPrimitiveValue
 slug: Web/API/CSSPrimitiveValue
 page-type: web-api-interface
@@ -16,88 +10,86 @@ browser-compat: api.CSSPrimitiveValue
 
 {{APIRef("CSSOM")}}{{deprecated_header}}{{non-standard_header}}
 
-The **`CSSPrimitiveValue`** interface derives from the {{DOMxRef("CSSValue")}} interface and represents the current computed value of a CSS property.
+رابط **`CSSPrimitiveValue`** از رابط {{DOMxRef("CSSValue")}} مشتق شده است و مقدار محاسبه‌شدهٔ فعلی یک ویژگی CSS را نشان می‌دهد.
 
 > [!NOTE]
-> This interface was part of an attempt to create a typed CSS Object Model. This attempt has been abandoned, and most browsers do
-> not implement it.
+> این اینترفیس بخشی از تلاش برای ایجاد یک مدل شیء CSS تایپ‌شده بود. این تلاش رها شده است و بیشتر مرورگرها آن را پیاده‌سازی نمی‌کنند.
 >
-> To achieve your purpose, you can use:
+> برای رسیدن به هدف خود، می‌توانید از موارد زیر استفاده کنید:
 >
-> - the untyped [CSS Object Model](/en-US/docs/Web/API/CSS_Object_Model), widely supported, or
-> - the modern [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API), less supported and considered experimental.
+> - [مدل شیء CSS](/en-US/docs/Web/API/CSS_Object_Model) بدون تایپ که به‌طور گسترده پشتیبانی می‌شود، یا
+> - [API مدل شیء CSS تایپ‌شده](/en-US/docs/Web/API/CSS_Typed_OM_API) جدید که پشتیبانی کمتری دارد و آزمایشی در نظر گرفته می‌شود.
 
-This interface represents a single CSS value. It may be used to determine the value of a specific style property currently set in a block or to set a specific style property explicitly within the block. An instance of this interface might be obtained from the {{DOMxRef("CSSStyleDeclaration.getPropertyCSSValue()", "getPropertyCSSValue()")}} method of the {{DOMxRef("CSSStyleDeclaration")}} interface. A `CSSPrimitiveValue` object only occurs in a context of a CSS property.
+این اینترفیس یک مقدار CSS تکی را نمایش می‌دهد. می‌توان از آن برای تعیین مقدار یک ویژگی استایل خاص که در حال حاضر در یک بلاک تنظیم شده است استفاده کرد، یا می‌توان یک ویژگی استایل خاص را به‌طور صریح درون بلاک تنظیم کرد. یک نمونه از این اینترفیس را می‌توان از روش {{DOMxRef("CSSStyleDeclaration.getPropertyCSSValue()", "getPropertyCSSValue()")}} در اینترفیس {{DOMxRef("CSSStyleDeclaration")}} به‌دست آورد. یک شیء `CSSPrimitiveValue` فقط در زمینهٔ یک ویژگی CSS ظاهر می‌شود.
 
-Conversions are allowed between absolute values (from millimeters to centimeters, from degrees to radians, and so on) but not between relative values. (For example, a pixel value cannot be converted to a centimeter value.) Percentage values can't be converted since they are relative to the parent value (or another property value). There is one exception for color percentage values: since a color percentage value is relative to the range 0-255, a color percentage value can be converted to a number (see also the {{DOMxRef("RGBColor")}} interface).
+تبدیل بین مقادیر مطلق مجاز است (از میلی‌متر به سانتی‌متر، از درجه به رادیان، و غیره) اما بین مقادیر نسبی مجاز نیست. (به عنوان مثال، یک مقدار پیکسل نمی‌تواند به مقدار سانتی‌متر تبدیل شود.) مقادیر درصدی قابل تبدیل نیستند زیرا نسبت به مقدار والد (یا مقدار ویژگی دیگر) تعریف می‌شوند. یک استثنا برای مقادیر درصدی رنگ وجود دارد: از آنجا که مقدار درصدی رنگ نسبت به محدوده ۰ تا ۲۵۵ است، یک مقدار درصدی رنگ می‌تواند به عدد تبدیل شود (همچنین به اینترفیس {{DOMxRef("RGBColor")}} مراجعه کنید).
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{DOMxRef("CSSValue")}}_.
+_ویژگی‌ها را از والد خود، {{DOMxRef("CSSValue")}}، به ارث می‌برد._
 
 - {{DOMxRef("CSSPrimitiveValue.primitiveType")}} {{ReadOnlyInline}} {{Deprecated_Inline}} {{non-standard_inline}}
-  - : An `unsigned short` representing the type of the value. Possible values are:
+  - : یک `unsigned short` که نوع مقدار را نشان می‌دهد. مقادیر ممکن عبارتند از:
 
-    | Constant         | Description                                                                                                                                                                 |
+    | Constant         | توصیف                                                                                                                                                                       |
     | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | `CSS_ATTR`       | The value is an {{CSSxRef("attr", "attr()")}} function. The value can be obtained by using the `getStringValue()` method.                                                   |
-    | `CSS_CM`         | The value is a {{CSSxRef("&lt;length&gt;")}} in centimeters. The value can be obtained by using the `getFloatValue()` method.                                               |
-    | `CSS_COUNTER`    | The value is a [counter or counters](/en-US/docs/Web/CSS/Guides/Counter_styles/Using_counters) function. The value can be obtained by using the `getCounterValue()` method. |
-    | `CSS_DEG`        | The value is an {{CSSxRef("&lt;angle&gt;")}} in degrees. The value can be obtained by using the `getFloatValue()` method.                                                   |
-    | `CSS_DIMENSION`  | The value is a {{CSSxRef("&lt;number&gt;")}} with an unknown dimension. The value can be obtained by using the `getFloatValue()` method.                                    |
-    | `CSS_EMS`        | The value is a {{CSSxRef("&lt;length&gt;")}} in em units. The value can be obtained by using the `getFloatValue()` method.                                                  |
-    | `CSS_EXS`        | The value is a {{CSSxRef("&lt;length&gt;")}} in ex units. The value can be obtained by using the `getFloatValue()` method.                                                  |
-    | `CSS_GRAD`       | The value is an {{CSSxRef("&lt;angle&gt;")}} in grads. The value can be obtained by using the `getFloatValue()` method.                                                     |
-    | `CSS_HZ`         | The value is a {{CSSxRef("&lt;frequency&gt;")}} in Hertz. The value can be obtained by using the getFloatValue method.                                                      |
-    | `CSS_IDENT`      | The value is an identifier. The value can be obtained by using the `getStringValue()` method.                                                                               |
-    | `CSS_IN`         | The value is a {{CSSxRef("&lt;length&gt;")}} in inches. The value can be obtained by using the `getFloatValue()` method.                                                    |
-    | `CSS_KHZ`        | The value is a {{CSSxRef("&lt;frequency&gt;")}} in Kilohertz. The value can be obtained by using the `getFloatValue()` method.                                              |
-    | `CSS_MM`         | The value is a {{CSSxRef("&lt;length&gt;")}} in millimeters. The value can be obtained by using the `getFloatValue()` method.                                               |
-    | `CSS_MS`         | The value is a {{CSSxRef("&lt;time&gt;")}} in milliseconds. The value can be obtained by using the `getFloatValue()` method.                                                |
-    | `CSS_NUMBER`     | The value is a simple {{CSSxRef("&lt;number&gt;")}}. The value can be obtained by using the `getFloatValue()` method.                                                       |
-    | `CSS_PC`         | The value is a {{CSSxRef("&lt;length&gt;")}} in picas. The value can be obtained by using the `getFloatValue()` method.                                                     |
-    | `CSS_PERCENTAGE` | The value is a {{CSSxRef("&lt;percentage&gt;")}}. The value can be obtained by using the `getFloatValue()` method.                                                          |
-    | `CSS_PT`         | The value is a {{CSSxRef("&lt;length&gt;")}} in points. The value can be obtained by using the `getFloatValue()` method.                                                    |
-    | `CSS_PX`         | The value is a {{CSSxRef("&lt;length&gt;")}} in pixels. The value can be obtained by using the `getFloatValue()` method.                                                    |
-    | `CSS_RAD`        | The value is an {{CSSxRef("&lt;angle&gt;")}} in radians. The value can be obtained by using the `getFloatValue()` method.                                                   |
-    | `CSS_RECT`       | The value is a {{CSSxRef("shape", "rect()", "#Syntax")}} function. The value can be obtained by using the `getRectValue()` method.                                          |
-    | `CSS_RGBCOLOR`   | The value is an {{CSSxRef("&lt;color&gt;")}}. The value can be obtained by using the `getRGBColorValue()` method.                                                           |
-    | `CSS_S`          | The value is a {{CSSxRef("&lt;time&gt;")}} in seconds. The value can be obtained by using the `getFloatValue()` method.                                                     |
-    | `CSS_STRING`     | The value is a {{CSSxRef("&lt;string&gt;")}}. The value can be obtained by using the `getStringValue()` method.                                                             |
-    | `CSS_UNKNOWN`    | The value is not a recognized CSS2 value. The value can only be obtained by using the {{DOMxRef("CSSValue.cssText", "cssText")}} attribute.                                 |
-    | `CSS_URI`        | The value is a {{cssxref("url_value", "&lt;url&gt;")}}. The value can be obtained by using the `getStringValue()` method.                                                   |
+    | `CSS_ATTR`       | مقدار یک تابع {{CSSxRef("attr", "attr()")}} است. مقدار را می‌توان با استفاده از روش `getStringValue()` به‌دست آورد.                                                   |
+    | `CSS_CM`         | مقدار یک {{CSSxRef("&lt;length&gt;")}} در سانتی‌متر است. مقدار را می‌توان با استفاده از روش `getFloatValue()` به‌دست آورد.                                               |
+    | `CSS_COUNTER`    | مقدار یک تابع [counter یا counters](/en-US/docs/Web/CSS/Guides/Counter_styles/Using_counters) است. مقدار را می‌توان با استفاده از روش `getCounterValue()` به‌دست آورد. |
+    | `CSS_DEG`        | مقدار یک {{CSSxRef("&lt;angle&gt;")}} در درجه است. مقدار را می‌توان با استفاده از روش `getFloatValue()` به‌دست آورد.                                                   |
+    | `CSS_DIMENSION`  | مقدار یک {{CSSxRef("&lt;number&gt;")}} با بُعد ناشناخته است. مقدار را می‌توان با استفاده از روش `getFloatValue()` به‌دست آورد.                                    |
+    | `CSS_EMS`        | مقدار یک {{CSSxRef("&lt;length&gt;")}} در واحد em است. مقدار را می‌توان با استفاده از روش `getFloatValue()` به‌دست آورد.                                                  |
+    | `CSS_EXS`        | مقدار یک {{CSSxRef("&lt;length&gt;")}} در واحد ex است. مقدار را می‌توان با استفاده از روش `getFloatValue()` به‌دست آورد.                                                  |
+    | `CSS_GRAD`       | مقدار یک {{CSSxRef("&lt;angle&gt;")}} در گراد است. مقدار را می‌توان با استفاده از روش `getFloatValue()` به‌دست آورد.                                                     |
+    | `CSS_HZ`         | مقدار یک {{CSSxRef("&lt;frequency&gt;")}} در هرتز است. مقدار را می‌توان با استفاده از روش `getFloatValue()` به‌دست آورد.                                                      |
+    | `CSS_IDENT`      | مقدار یک شناسه است. مقدار را می‌توان با استفاده از روش `getStringValue()` به‌دست آورد.                                                                               |
+    | `CSS_IN`         | مقدار یک {{CSSxRef("&lt;length&gt;")}} در اینچ است. مقدار را می‌توان با استفاده از روش `getFloatValue()` به‌دست آورد.                                                    |
+    | `CSS_KHZ`        | مقدار یک {{CSSxRef("&lt;frequency&gt;")}} در کیلوهرتز است. مقدار را می‌توان با استفاده از روش `getFloatValue()` به‌دست آورد.                                              |
+    | `CSS_MM`         | مقدار یک {{CSSxRef("&lt;length&gt;")}} در میلی‌متر است. مقدار را می‌توان با استفاده از روش `getFloatValue()` به‌دست آورد.                                               |
+    | `CSS_MS`         | مقدار یک {{CSSxRef("&lt;time&gt;")}} در میلی‌ثانیه است. مقدار را می‌توان با استفاده از روش `getFloatValue()` به‌دست آورد.                                                |
+    | `CSS_NUMBER`     | مقدار یک {{CSSxRef("&lt;number&gt;")}} ساده است. مقدار را می‌توان با استفاده از روش `getFloatValue()` به‌دست آورد.                                                       |
+    | `CSS_PC`         | مقدار یک {{CSSxRef("&lt;length&gt;")}} در پیکا است. مقدار را می‌توان با استفاده از روش `getFloatValue()` به‌دست آورد.                                                     |
+    | `CSS_PERCENTAGE` | مقدار یک {{CSSxRef("&lt;percentage&gt;")}} است. مقدار را می‌توان با استفاده از روش `getFloatValue()` به‌دست آورد.                                                          |
+    | `CSS_PT`         | مقدار یک {{CSSxRef("&lt;length&gt;")}} در پوینت است. مقدار را می‌توان با استفاده از روش `getFloatValue()` به‌دست آورد.                                                    |
+    | `CSS_PX`         | مقدار یک {{CSSxRef("&lt;length&gt;")}} در پیکسل است. مقدار را می‌توان با استفاده از روش `getFloatValue()` به‌دست آورد.                                                    |
+    | `CSS_RAD`        | مقدار یک {{CSSxRef("&lt;angle&gt;")}} در رادیان است. مقدار را می‌توان با استفاده از روش `getFloatValue()` به‌دست آورد.                                                   |
+    | `CSS_RECT`       | مقدار یک تابع {{CSSxRef("shape", "rect()", "#Syntax")}} است. مقدار را می‌توان با استفاده از روش `getRectValue()` به‌دست آورد.                                          |
+    | `CSS_RGBCOLOR`   | مقدار یک {{CSSxRef("&lt;color&gt;")}} است. مقدار را می‌توان با استفاده از روش `getRGBColorValue()` به‌دست آورد.                                                           |
+    | `CSS_S`          | مقدار یک {{CSSxRef("&lt;time&gt;")}} در ثانیه است. مقدار را می‌توان با استفاده از روش `getFloatValue()` به‌دست آورد.                                                     |
+    | `CSS_STRING`     | مقدار یک {{CSSxRef("&lt;string&gt;")}} است. مقدار را می‌توان با استفاده از روش `getStringValue()` به‌دست آورد.                                                             |
+    | `CSS_UNKNOWN`    | مقدار یک مقدار CSS2 شناخته‌شده نیست. مقدار فقط با استفاده از ویژگی {{DOMxRef("CSSValue.cssText", "cssText")}} قابل دریافت است.                                 |
+    | `CSS_URI`        | مقدار یک {{cssxref("url_value", "&lt;url&gt;")}} است. مقدار را می‌توان با استفاده از روش `getStringValue()` به‌دست آورد.                                                   |
 
-## Instance methods
+## روش‌های نمونه
 
 - {{DOMxRef("CSSPrimitiveValue.getCounterValue()")}} {{Deprecated_Inline}} {{non-standard_inline}}
-  - : This method is used to get the [counter](/en-US/docs/Web/CSS/Guides/Counter_styles/Using_counters) value. If this CSS value doesn't contain a counter value, a {{DOMxRef("DOMException")}} is raised. Modification to the corresponding style property can be achieved using the {{DOMxRef("Counter")}} interface.
+  - : این روش برای دریافت مقدار [counter](/en-US/docs/Web/CSS/Guides/Counter_styles/Using_counters) استفاده می‌شود. اگر این مقدار CSS حاوی مقدار counter نباشد، یک {{DOMxRef("DOMException")}} پرتاب می‌شود. اصلاح ویژگی استایل متناظر را می‌توان با استفاده از اینترفیس {{DOMxRef("Counter")}} انجام داد.
 - {{DOMxRef("CSSPrimitiveValue.getFloatValue()")}} {{Deprecated_Inline}} {{non-standard_inline}}
-  - : This method is used to get a float value in a specified unit. If this CSS value doesn't contain a float value or can't be converted into the specified unit, a {{DOMxRef("DOMException")}} is raised.
+  - : این روش برای دریافت یک مقدار اعشاری در یک واحد مشخص استفاده می‌شود. اگر این مقدار CSS حاوی مقدار اعشاری نباشد یا نتوان آن را به واحد مشخص‌شده تبدیل کرد، یک {{DOMxRef("DOMException")}} پرتاب می‌شود.
 - {{DOMxRef("CSSPrimitiveValue.getRGBColorValue()")}} {{Deprecated_Inline}} {{non-standard_inline}}
-  - : This method is used to get the RGB color. If this CSS value doesn't contain a RGB color value, a {{DOMxRef("DOMException")}} is raised. Modification to the corresponding style property can be achieved using the {{DOMxRef("RGBColor")}} interface.
+  - : این روش برای دریافت رنگ RGB استفاده می‌شود. اگر این مقدار CSS حاوی مقدار رنگ RGB نباشد، یک {{DOMxRef("DOMException")}} پرتاب می‌شود. اصلاح ویژگی استایل متناظر را می‌توان با استفاده از اینترفیس {{DOMxRef("RGBColor")}} انجام داد.
 - {{DOMxRef("CSSPrimitiveValue.getRectValue()")}} {{Deprecated_Inline}} {{non-standard_inline}}
-  - : This method is used to get the Rect value. If this CSS value doesn't contain a rect value, a {{DOMxRef("DOMException")}} is raised. Modification to the corresponding style property can be achieved using the {{DOMxRef("Rect")}} interface.
+  - : این روش برای دریافت مقدار Rect استفاده می‌شود. اگر این مقدار CSS حاوی مقدار rect نباشد، یک {{DOMxRef("DOMException")}} پرتاب می‌شود. اصلاح ویژگی استایل متناظر را می‌توان با استفاده از اینترفیس {{DOMxRef("Rect")}} انجام داد.
 - {{DOMxRef("CSSPrimitiveValue.getStringValue()")}} {{Deprecated_Inline}} {{non-standard_inline}}
-  - : This method is used to get the string value. If the CSS value doesn't contain a string value, a {{DOMxRef("DOMException")}} is raised.
+  - : این روش برای دریافت مقدار رشته استفاده می‌شود. اگر مقدار CSS حاوی مقدار رشته نباشد، یک {{DOMxRef("DOMException")}} پرتاب می‌شود.
 - {{DOMxRef("CSSPrimitiveValue.setFloatValue()")}} {{Deprecated_Inline}} {{non-standard_inline}}
-  - : A method to set the float value with a specified unit. If the property attached with this value can not accept the specified unit or the float value, the value will be unchanged and a {{DOMxRef("DOMException")}} will be raised.
+  - : روشی برای تنظیم مقدار اعشاری با یک واحد مشخص. اگر ویژگی متصل به این مقدار نتواند واحد مشخص‌شده یا مقدار اعشاری را بپذیرد، مقدار بدون تغییر می‌ماند و یک {{DOMxRef("DOMException")}} پرتاب می‌شود.
 - {{DOMxRef("CSSPrimitiveValue.setStringValue()")}} {{Deprecated_Inline}} {{non-standard_inline}}
-  - : A method to set the string value with the specified unit. If the property attached to this value can't accept the specified unit or the string value, the value will be unchanged and a {{DOMxRef("DOMException")}} will be raised.
+  - : روشی برای تنظیم مقدار رشته با واحد مشخص. اگر ویژگی متصل به این مقدار نتواند واحد مشخص‌شده یا مقدار رشته را بپذیرد، مقدار بدون تغییر می‌ماند و یک {{DOMxRef("DOMException")}} پرتاب می‌شود.
 
-## Specifications
+## مشخصات
 
-This feature was originally defined in the [DOM Style Level 2](https://www.w3.org/TR/DOM-Level-2-Style/) specification, but has been dropped from any
-standardization effort since then.
+این ویژگی در ابتدا در مشخصات [DOM Style Level 2](https://www.w3.org/TR/DOM-Level-2-Style/) تعریف شده بود، اما از آن زمان از هرگونه تلاش استانداردسازی حذف شده است.
 
-It has been superseded by a modern, but incompatible, [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API) that is now on the standard track.
+این ویژگی با API [CSS Typed Object Model](/en-US/docs/Web/API/CSS_Typed_OM_API) مدرن، اما ناسازگار، جایگزین شده است که اکنون در مسیر استاندارد قرار دارد.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{DOMxRef("CSSValue")}}
 - {{DOMxRef("CSSValueList")}}
