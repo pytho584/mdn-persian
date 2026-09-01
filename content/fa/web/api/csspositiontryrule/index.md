@@ -1,10 +1,4 @@
 ---
-title: "CSSPositionTryRule"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSPositionTryRule"
-status: "needs-translation"
----
-
----
 title: CSSPositionTryRule
 slug: Web/API/CSSPositionTryRule
 page-type: web-api-interface
@@ -13,26 +7,26 @@ browser-compat: api.CSSPositionTryRule
 
 {{APIRef("CSSOM")}}
 
-The **`CSSPositionTryRule`** interface describes an object representing a {{cssxref("@position-try")}} [at-rule](/en-US/docs/Web/CSS/Guides/Syntax/At-rules).
+رابط **`CSSPositionTryRule`** شیئی را توصیف می‌کند که نمایانگر یک [at-rule](/en-US/docs/Web/CSS/Guides/Syntax/At-rules) از نوع {{cssxref("@position-try")}} است.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its ancestor {{domxref("CSSRule")}}._
+_ویژگی‌هایی را از جد خود {{domxref("CSSRule")}} به ارث می‌برد._
 
 - {{domxref("CSSPositionTryRule.name")}} {{ReadOnlyInline}}
-  - : Represents the name of the position try option specified by the `@position-try` at-rule's {{cssxref("dashed-ident")}}.
+  - : نمایانگر نام گزینه‌ی موقعیت‌یابی (position try option) است که توسط {{cssxref("dashed-ident")}} در at-rule `@position-try` مشخص شده است.
 - {{domxref("CSSPositionTryRule.style")}} {{ReadOnlyInline}}
-  - : A {{domxref("CSSPositionTryDescriptors")}} object that represents the declarations set in the body of the `@position-try` at-rule.
+  - : یک شیء {{domxref("CSSPositionTryDescriptors")}} که نمایانگر اعلان‌های (declarations) تنظیم شده در بدنه‌ی at-rule `@position-try` است.
 
-## Instance methods
+## روش‌های نمونه
 
-_No specific methods; inherits methods from its ancestor {{domxref("CSSRule")}}._
+_روش‌های خاصی ندارد؛ روش‌ها را از جد خود {{domxref("CSSRule")}} به ارث می‌برد._
 
-## Examples
+## مثال‌ها
 
-The CSS includes a `@position-try` at-rule with a name of `--custom-left` and three descriptors.
+CSS شامل یک at-rule از نوع `@position-try` با نام `--custom-left` و سه توصیف‌گر (descriptor) است.
 
 ```css
 @position-try --custom-left {
@@ -52,19 +46,19 @@ console.log(tryOption.style); // "[object CSSPositionTryDescriptors]"
 console.log(tryOption.style.maxWidth); // "200px"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{DOMxRef("CSSPositionTryDescriptors")}}
 - {{cssxref("@position-try")}}
 - {{cssxref("position-try-fallbacks")}}
-- [CSS anchor positioning](/en-US/docs/Web/CSS/Guides/Anchor_positioning) module
+- ماژول [CSS anchor positioning](/en-US/docs/Web/CSS/Guides/Anchor_positioning)
 - [Using CSS anchor positioning](/en-US/docs/Web/CSS/Guides/Anchor_positioning/Using)
 - [Handling overflow: try options and conditional hiding](/en-US/docs/Web/CSS/Guides/Anchor_positioning/Try_options_hiding)
