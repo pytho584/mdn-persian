@@ -1,11 +1,5 @@
 ---
 title: "Element: touchend event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/touchend_event"
-status: "needs-translation"
----
-
----
-title: "Element: touchend event"
 short-title: touchend
 slug: Web/API/Element/touchend_event
 page-type: web-api-event
@@ -14,11 +8,11 @@ browser-compat: api.Element.touchend_event
 
 {{APIRef("Touch Events")}}
 
-The `touchend` event fires when one or more touch points are removed from the touch surface. Remember that it is possible to get a [`touchcancel`](/en-US/docs/Web/API/Element/touchcancel_event) event instead.
+رویداد `touchend` زمانی رخ می‌دهد که یک یا چند نقطهٔ لمس از سطح لمس حذف شوند. به یاد داشته باشید که به جای آن ممکن است رویداد [`touchcancel`](/en-US/docs/Web/API/Element/touchcancel_event) رخ دهد.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کنندهٔ رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("touchend", (event) => { })
@@ -26,24 +20,24 @@ addEventListener("touchend", (event) => { })
 ontouchend = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("TouchEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("TouchEvent")}}. از {{domxref("Event")}} به ارث می‌برد.
 
 {{InheritanceDiagram("TouchEvent")}}
 
-## Examples
+## مثال‌ها
 
-Code samples for those events are available on the dedicated page: [Touch events](/en-US/docs/Web/API/Touch_events).
+نمونه‌کدهای این رویدادها در صفحهٔ اختصاصی [رویدادهای لمس](/en-US/docs/Web/API/Touch_events) در دسترس هستند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Touch events](/en-US/docs/Web/API/Touch_events)
+- [رویدادهای لمس](/en-US/docs/Web/API/Touch_events)
