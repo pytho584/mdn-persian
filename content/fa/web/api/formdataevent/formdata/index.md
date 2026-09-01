@@ -1,11 +1,5 @@
 ---
 title: "FormDataEvent: formData property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FormDataEvent/formData"
-status: "needs-translation"
----
-
----
-title: "FormDataEvent: formData property"
 short-title: formData
 slug: Web/API/FormDataEvent/formData
 page-type: web-api-instance-property
@@ -14,15 +8,13 @@ browser-compat: api.FormDataEvent.formData
 
 {{APIRef("DOM")}}
 
-The `formData` read-only property of the {{domxref("FormDataEvent")}}
-interface contains the {{domxref("FormData")}} object representing the data contained in
-the form when the event was fired.
+ویژگی فقط‌خواندنی `formData` از رابط {{domxref("FormDataEvent")}}، حاوی شیء {{domxref("FormData")}} است که داده‌های موجود در فرم را هنگام رخ‌دادن رویداد نشان می‌دهد.
 
-## Value
+## مقدار
 
-A {{domxref("FormData")}} object.
+یک شیء {{domxref("FormData")}}.
 
-## Examples
+## مثال‌ها
 
 ```js
 // grab reference to form
@@ -57,17 +49,17 @@ formElem.addEventListener("formdata", (e) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("XMLHttpRequest")}}
-- [Using XMLHttpRequest](/en-US/docs/Web/API/XMLHttpRequest_API/Using_XMLHttpRequest)
-- [Using FormData objects](/en-US/docs/Web/API/XMLHttpRequest_API/Using_FormData_Objects)
+- [استفاده از XMLHttpRequest](/en-US/docs/Web/API/XMLHttpRequest_API/Using_XMLHttpRequest)
+- [استفاده از اشیاء FormData](/en-US/docs/Web/API/XMLHttpRequest_API/Using_FormData_Objects)
 - {{HTMLElement("Form")}}
