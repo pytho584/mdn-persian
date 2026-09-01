@@ -1,11 +1,5 @@
 ---
 title: "ElementInternals: ariaPressed property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/ariaPressed"
-status: "needs-translation"
----
-
----
-title: "ElementInternals: ariaPressed property"
 short-title: ariaPressed
 slug: Web/API/ElementInternals/ariaPressed
 page-type: web-api-instance-property
@@ -14,27 +8,27 @@ browser-compat: api.ElementInternals.ariaPressed
 
 {{APIRef("Web Components")}}
 
-The **`ariaPressed`** property of the {{domxref("ElementInternals")}} interface reflects the value of the [`aria-pressed`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-pressed) attribute, which indicates the current "pressed" state of toggle buttons.
+ویژگی **`ariaPressed`** از رابط {{domxref("ElementInternals")}} مقدار ویژگی [`aria-pressed`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-pressed) را منعکس می‌کند که وضعیت «فشرده» فعلی دکمه‌های تغییر وضعیت (toggle buttons) را نشان می‌دهد.
 
 > [!NOTE]
-> Setting aria attributes on `ElementInternals` allows default semantics to be defined on a custom element. These may be overwritten by author-defined attributes, but ensure that default semantics are retained should the author delete those attributes, or fail to add them at all. For more information see the [Accessibility Object Model explainer](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object).
+> تنظیم ویژگی‌های aria روی `ElementInternals` امکان تعریف معناشناسی پیش‌فرض را برای یک عنصر سفارشی فراهم می‌کند. این ویژگی‌ها ممکن است توسط ویژگی‌های تعریف‌شده توسط نویسنده بازنویسی شوند، اما اطمینان حاصل می‌شود که اگر نویسنده آن ویژگی‌ها را حذف کند یا اصلاً آن‌ها را اضافه نکند، معناشناسی پیش‌فرض حفظ می‌شود. برای اطلاعات بیشتر به [توضیح‌دهنده مدل شیء دسترس‌پذیری](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object) مراجعه کنید.
 
-## Value
+## مقدار
 
-A string with one of the following values:
+یک رشته با یکی از مقادیر زیر:
 
 - `"true"`
-  - : The element is pressed.
+  - : عنصر فشرده شده است.
 - `"false"`
-  - : The element supports being pressed but is not currently pressed.
+  - : عنصر قابلیت فشرده شدن را دارد اما در حال حاضر فشرده نیست.
 - `"mixed"`
-  - : Indicates a mixed mode value for a tri-state toggle button.
+  - : یک مقدار حالت ترکیبی برای دکمه تغییر وضعیت سه‌حالته را نشان می‌دهد.
 - `"undefined"`
-  - : The element does not support being pressed.
+  - : عنصر از فشرده شدن پشتیبانی نمی‌کند.
 
-## Examples
+## مثال‌ها
 
-In this example the value of `ariaPressed` is set to "true".
+در این مثال، مقدار `ariaPressed` روی "true" تنظیم شده است.
 
 ```js
 class CustomControl extends HTMLElement {
@@ -47,14 +41,14 @@ class CustomControl extends HTMLElement {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [ARIA: button role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/button_role)
+- [نقش دکمه ARIA](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/button_role)
