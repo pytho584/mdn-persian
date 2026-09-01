@@ -1,11 +1,5 @@
 ---
 title: "CSSPositionValue: y property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSPositionValue/y"
-status: "needs-translation"
----
-
----
-title: "CSSPositionValue: y property"
 short-title: y
 slug: Web/API/CSSPositionValue/y
 page-type: web-api-instance-property
@@ -17,17 +11,17 @@ browser-compat: api.CSSPositionValue.y
 
 {{deprecated_header}}{{APIRef("CSS Typed Object Model API")}}{{Non-standard_header}}
 
-The **`y`** property of the {{domxref("CSSPositionValue")}} interface returns the item's position along the vertical axis.
+ویژگی **`y`** در رابط {{domxref("CSSPositionValue")}} موقعیت عنصر را در امتداد محور عمودی بازمی‌گرداند.
 
-## Value
+## مقدار
 
-A {{domxref('CSSNumericValue')}}.
+یک {{domxref('CSSNumericValue')}}.
 
-## Examples
+## نمونه‌ها
 
-### Basic usage
+### کاربرد پایه
 
-The following example positions a container `<div>` 5 pixels from the top and 10 pixels from the left of the page.
+مثال زیر یک `<div>` ظرف را ۵ پیکسل از بالا و ۱۰ پیکسل از چپ صفحه قرار می‌دهد:
 
 ```js
 let replaceEl = document.getElementById("container");
@@ -37,11 +31,11 @@ replaceEl.attributeStyleMap.set("object-position", position);
 console.log(position.x.value, position.y.value);
 ```
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("CSSPositionValue.CSSPositionValue", "CSSPositionValue()")}}
 - {{domxref("CSSPositionValue.x")}}
