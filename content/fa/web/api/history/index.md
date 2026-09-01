@@ -1,7 +1,5 @@
 ---
 title: "History"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/History"
-status: "needs-translation"
 ---
 
 ---
@@ -13,53 +11,53 @@ browser-compat: api.History
 
 {{APIRef("History API")}}
 
-The **`History`** interface of the {{domxref("History API", "", "", "nocode")}} allows manipulation of the browser _session history_, that is the pages visited in the tab or frame that the current page is loaded in.
+**`History`** اینترفیس (رابط) در {{domxref("History API", "", "", "nocode")}} امکان دستکاری _تاریخچه نشست_ مرورگر را فراهم می‌کند؛ یعنی صفحاتی که در تب یا فریمِ صفحه فعلی باز شده‌اند.
 
-There is only one instance of `history` (It is a _singleton_.) accessible via the global object {{domxref("Window.history", "history")}}.
+تنها یک نمونه از `history` وجود دارد (به اصطلاح _تک‌نمونه_) که از طریق شیء سراسری {{domxref("Window.history", "history")}} قابل دسترسی است.
 
 > [!NOTE]
-> This interface is only available on the main thread ({{domxref("Window")}}). It cannot be accessed in {{domxref("Worker")}} or {{domxref("Worklet")}} contexts.
+> این اینترفیس فقط در نخ اصلی ({{domxref("Window")}}) در دسترس است. نمی‌توان در زمینه‌های {{domxref("Worker")}} یا {{domxref("Worklet")}} به آن دسترسی داشت.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_The `History` interface doesn't inherit any property._
+_اینترفیس `History` هیچ ویژگی‌ای را به ارث نمی‌برد._
 
 - {{domxref("History.length","length")}} {{ReadOnlyInline}}
-  - : Returns an `Integer` representing the number of elements in the session history, including the currently loaded page. For example, for a page loaded in a new tab this property returns `1`.
+  - : یک مقدار `Integer` برمی‌گرداند که تعداد عناصر موجود در تاریخچه نشست، از جمله صفحه بارگذاری‌شده فعلی، را نشان می‌دهد. به عنوان مثال، برای صفحه‌ای که در یک تب جدید باز شده باشد، این ویژگی مقدار `1` را برمی‌گرداند.
 - {{domxref("History.scrollRestoration","scrollRestoration")}}
-  - : Allows web applications to explicitly set default scroll restoration behavior on history navigation. This property can be either `auto` or `manual`.
+  - : به برنامه‌های وب اجازه می‌دهد تا رفتار بازگردانی اسکرول را هنگام پیمایش در تاریخچه به‌طور صریح تنظیم کنند. این ویژگی می‌تواند `auto` یا `manual` باشد.
 - {{domxref("History.state","state")}} {{ReadOnlyInline}}
-  - : Returns an `any` value representing the state at the top of the history stack. This is a way to look at the state without having to wait for a {{domxref("Window/popstate_event", "popstate")}} event.
+  - : یک مقدار `any` برمی‌گرداند که وضعیت (state) بالای پشته تاریخچه را نشان می‌دهد. این روشی برای بررسی وضعیت بدون نیاز به انتظار برای رویداد {{domxref("Window/popstate_event", "popstate")}} است.
 
-## Instance methods
+## روش‌های نمونه
 
-_The `History`_ _interface doesn't inherit any methods._
+_اینترفیس `History` هیچ روشی را به ارث نمی‌برد._
 
 - {{domxref("History.back","back()")}}
-  - : This asynchronous method goes to the previous page in session history, the same action as when the user clicks the browser's <kbd>Back</kbd> button. Equivalent to `history.go(-1)`.
+  - : این روش ناهمگام به صفحه قبلی در تاریخچه نشست می‌رود؛ همان عملی که وقتی کاربر دکمه <kbd>Back</kbd> مرورگر را کلیک می‌کند انجام می‌شود. معادل `history.go(-1)` است.
 
-    Calling this method to go back beyond the first page in the session history has no effect and doesn't raise an exception.
+    فراخوانی این روش برای بازگشت به قبل از اولین صفحه در تاریخچه نشست، هیچ اثری ندارد و استثنا (exception) ایجاد نمی‌کند.
 
 - {{domxref("History.forward","forward()")}}
-  - : This asynchronous method goes to the next page in session history, the same action as when the user clicks the browser's <kbd>Forward</kbd> button; this is equivalent to `history.go(1)`.
+  - : این روش ناهمگام به صفحه بعدی در تاریخچه نشست می‌رود؛ همان عملی که وقتی کاربر دکمه <kbd>Forward</kbd> مرورگر را کلیک می‌کند انجام می‌شود. این معادل `history.go(1)` است.
 
-    Calling this method to go forward beyond the most recent page in the session history has no effect and doesn't raise an exception.
+    فراخوانی این روش برای رفتن به بعد از آخرین صفحه در تاریخچه نشست، هیچ اثری ندارد و استثنا ایجاد نمی‌کند.
 
 - {{domxref("History.go","go()")}}
-  - : Asynchronously loads a page from the session history, identified by its relative location to the current page, for example `-1` for the previous page or `1` for the next page. If you specify an out-of-bounds value (for instance, specifying `-1` when there are no previously-visited pages in the session history), this method silently has no effect. Calling `go()` without parameters or a value of `0` reloads the current page.
+  - : به‌صورت ناهمگام صفحه‌ای را از تاریخچه نشست بارگذاری می‌کند که با موقعیت نسبی آن نسبت به صفحه فعلی مشخص می‌شود؛ مثلاً `-1` برای صفحه قبلی یا `1` برای صفحه بعدی. اگر مقدار خارج از محدوده مشخص کنید (مثلاً `-1` وقتی صفحه قبلی در تاریخچه نشست وجود ندارد)، این روش بی‌صدا هیچ اثری ندارد. فراخوانی `go()` بدون پارامتر یا با مقدار `0` باعث بارگذاری مجدد صفحه فعلی می‌شود.
 - {{domxref("History.pushState","pushState()")}}
-  - : Pushes the given data onto the session history stack with the specified title (and, if provided, URL). The data is treated as opaque by the DOM; you may specify any JavaScript object that can be serialized. Note that all browsers but Safari currently ignore the _title_ parameter. For more information, see [Working with the History API](/en-US/docs/Web/API/History_API/Working_with_the_History_API).
+  - : داده داده‌شده را با عنوان مشخص (و در صورت ارائه، URL) روی پشته تاریخچه نشست قرار می‌دهد. DOM این داده را به‌صورت مبهم (opaque) در نظر می‌گیرد؛ شما می‌توانید هر شیء جاوااسکریپتی که قابل سریال‌سازی باشد را مشخص کنید. توجه داشته باشید که همه مرورگرها به جز سافاری در حال حاضر پارامتر _title_ را نادیده می‌گیرند. برای اطلاعات بیشتر، به [کار با History API](/en-US/docs/Web/API/History_API/Working_with_the_History_API) مراجعه کنید.
 - {{domxref("History.replaceState","replaceState()")}}
-  - : Updates the most recent entry on the history stack to have the specified data, title, and, if provided, URL. The data is treated as opaque by the DOM; you may specify any JavaScript object that can be serialized. Note that all browsers but Safari currently ignore the _title_ parameter. For more information, see [Working with the History API](/en-US/docs/Web/API/History_API/Working_with_the_History_API).
+  - : آخرین ورودی پشته تاریخچه را با داده، عنوان و در صورت ارائه، URL مشخص‌شده به‌روزرسانی می‌کند. DOM این داده را به‌صورت مبهم در نظر می‌گیرد؛ شما می‌توانید هر شیء جاوااسکریپتی که قابل سریال‌سازی باشد را مشخص کنید. توجه داشته باشید که همه مرورگرها به جز سافاری در حال حاضر پارامتر _title_ را نادیده می‌گیرند. برای اطلاعات بیشتر، به [کار با History API](/en-US/docs/Web/API/History_API/Working_with_the_History_API) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("Window.history", "history")}} global object
+- شیء سراسری {{domxref("Window.history", "history")}}
