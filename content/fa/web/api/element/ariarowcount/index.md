@@ -1,11 +1,5 @@
 ---
 title: "Element: ariaRowCount property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaRowCount"
-status: "needs-translation"
----
-
----
-title: "Element: ariaRowCount property"
 short-title: ariaRowCount
 slug: Web/API/Element/ariaRowCount
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.Element.ariaRowCount
 
 {{APIRef("DOM")}}
 
-The **`ariaRowCount`** property of the {{domxref("Element")}} interface reflects the value of the [`aria-rowcount`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowcount) attribute, which defines the total number of rows in a table, grid, or treegrid.
+ویژگی **`ariaRowCount`** از رابط {{domxref("Element")}} منعکس‌کنندهٔ مقدار ویژگی [`aria-rowcount`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-rowcount) است که تعداد کل ردیف‌ها را در یک جدول، گرید یا درخت‌گرید تعریف می‌کند.
 
-## Value
+## مقدار
 
-A string which contains an integer.
+یک رشته که شامل یک عدد صحیح است.
 
-## Examples
+## مثال‌ها
 
-In this example the `aria-rowcount` attribute on the element with an ID of `semantic-table` is set to "100", representing the total number of rows in the table, rather than the currently visible rows. Using `ariaRowCount` we update the value to "101".
+در این مثال، ویژگی `aria-rowcount` روی عنصر با شناسهٔ `semantic-table` برابر با «100» تنظیم شده است که تعداد کل ردیف‌های جدول را نشان می‌دهد، نه ردیف‌های قابل مشاهدهٔ فعلی را. با استفاده از `ariaRowCount` مقدار را به «101» به‌روزرسانی می‌کنیم.
 
 ```html
 <table
@@ -70,14 +64,14 @@ el.ariaRowCount = "101";
 console.log(el.ariaRowCount); // 101
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [ARIA: table role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role)
+- [ARIA: نقش table](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/table_role)
