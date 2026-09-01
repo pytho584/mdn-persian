@@ -1,7 +1,5 @@
 ---
 title: "ElementInternals: ariaErrorMessageElements property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/ariaErrorMessageElements"
-status: "needs-translation"
 ---
 
 ---
@@ -14,44 +12,44 @@ browser-compat: api.ElementInternals.ariaErrorMessageElements
 
 {{APIRef("DOM")}}
 
-The **`ariaErrorMessageElements`** property of the {{domxref("ElementInternals")}} interface is an array containing the element (or elements) that provide an error message for the element it is applied to.
+خصوصیت **`ariaErrorMessageElements`** از رابط {{domxref("ElementInternals")}} آرایهای است که شامل عنصر (یا عناصر) فراهمکنندهٔ پیام خطا برای عنصری است که این خصوصیت به آن اعمال میشود.
 
-The [`aria-errormessage`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-errormessage) topic contains additional information about how the attribute and property should be used.
+مبحث [`aria-errormessage`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-errormessage) حاوی اطلاعات بیشتری دربارهٔ نحوهٔ استفاده از ویژگی (attribute) و خصوصیت (property) است.
 
-## Value
+## مقدار
 
-An array of subclasses of {{domxref("HTMLElement")}}.
-The inner text of these elements can be joined with spaces to get the error message.
+آرایهای از زیرکلاس‌های {{domxref("HTMLElement")}}.
+متن درونی این عناصر را می‌توان با فاصله (space) به هم متصل کرد تا پیام خطا به دست آید.
 
-When read, the returned array is a static and read-only.
-When written, the assigned array is copied: subsequent changes to the array do not affect the value of the property.
+هنگام خواندن، آرایهٔ بازگردانده‌شده ایستا و فقط‌خواندنی است.
+هنگام نوشتن، آرایهٔ تخصیص‌داده‌شده کپی می‌شود: تغییرات بعدی در آرایه بر مقدار این خصوصیت تأثیر نمی‌گذارد.
 
-## Description
+## توضیحات
 
-The property is a flexible alternative to using the [`aria-errormessage`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-errormessage) attribute to set the error message for an element.
-Unlike `aria-errormessage`, the elements assigned to this property do not have to have an [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) attribute.
+این خصوصیت جایگزینی انعطاف‌پذیر برای استفاده از ویژگی [`aria-errormessage`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-errormessage) به‌منظور تنظیم پیام خطای یک عنصر است.
+برخلاف `aria-errormessage`، عناصر اختصاص‌داده‌شده به این خصوصیت لزوماً نیازی به داشتن ویژگی [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) ندارند.
 
-The property reflects the element's [`aria-errormessage`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-errormessage) attribute when it is defined, but only for listed reference `id` values that match valid in-scope elements.
-If the property is set, then the corresponding attribute is cleared.
-For more information about reflected element references and scope see [Reflected element references](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references) in the _Reflected attributes_ guide.
+این خصوصیت ویژگی [`aria-errormessage`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-errormessage) عنصر را در صورت تعریف‌شدن بازتاب می‌دهد، اما فقط برای مقادیر `id` مرجع فهرست‌شده‌ای که با عناصر معتبر درون‌دامنه مطابقت دارند.
+اگر این خصوصیت تنظیم شود، ویژگی متناظر پاک می‌شود.
+برای اطلاعات بیشتر دربارهٔ مراجع عناصر بازتابی و دامنه، به [مراجع عناصر بازتابی](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references) در راهنمای _ویژگی‌های بازتابی_ مراجعه کنید.
 
-## Examples
+## مثال‌ها
 
-The examples in the following documents are relevant:
+مثال‌های موجود در اسناد زیر مرتبط هستند:
 
-- {{domxref("Element.ariaErrorMessageElements")}} is the DOM equivalent of this property.
-  It is used in the same way, but within the DOM instead of a shadow DOM and/or custom element.
+- {{domxref("Element.ariaErrorMessageElements")}} معادل DOM این خصوصیت است.
+  به همان روش استفاده می‌شود، اما در DOM به‌جای shadow DOM و/یا عنصر سفارشی.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [`aria-errormessage`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-errormessage) attribute
+- ویژگی [`aria-errormessage`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-errormessage)
 - {{domxref("Element.ariaErrorMessageElements")}}
-- [Reflected element references](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references) in the _Attribute reflection_ guide.
+- [مراجع عناصر بازتابی](/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes#reflected_element_references) در راهنمای _بازتاب ویژگی_.
