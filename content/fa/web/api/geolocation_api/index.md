@@ -1,10 +1,4 @@
 ---
-title: "Geolocation API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API"
-status: "needs-translation"
----
-
----
 title: Geolocation API
 slug: Web/API/Geolocation_API
 page-type: web-api-overview
@@ -13,89 +7,84 @@ browser-compat: api.Geolocation
 
 {{securecontext_header}}{{DefaultAPISidebar("Geolocation API")}}
 
-The **Geolocation API** allows the user to provide their location to web applications if they so desire. For privacy reasons, the user is asked for permission to report location information.
+**Geolocation API** 允许用户自愿将他们的位置信息提供给网络应用。出于隐私原因，在报告位置信息时，应用需要征求用户的许可。
 
-WebExtensions that wish to use the `Geolocation` object must add the `"geolocation"` permission to their manifest. The user's operating system will prompt the user to allow location access the first time it is requested.
+希望使用 `Geolocation` 对象的 WebExtensions 必须在其 manifest 中添加 `"geolocation"` 权限。用户的操作系统将在首次请求时提示用户允许位置访问。
 
 > [!NOTE]
-> The {{htmlelement("geolocation")}} element provides an alternative mechanism for accessing and handling geolocation data that solves some of the shortcomings of the Geolocation API: It provides a consistent UI, and a more intuitive permission management process.
+> {{htmlelement("geolocation")}} 元素提供了一种访问和处理地理位置数据的替代机制，解决了 Geolocation API 的一些缺点：它提供了一致的用户界面，以及更直观的权限管理流程。
 
-## Concepts and usage
+## 概念与用法
 
-You will often want to retrieve a user's location information in your web app, for example to plot their location on a map, or display personalized information relevant to their location.
+在您的 Web 应用中，您经常需要获取用户的位置信息，例如在地图上标记其位置，或显示与其位置相关的个性化信息。
 
-The Geolocation API is accessed via a call to {{domxref("Navigator.geolocation", "navigator.geolocation")}}; this will cause the user's browser to ask them for permission to access their location data. If they accept, then the browser will use the best available functionality on the device to access this information (for example, GPS).
+通过调用 {{domxref("Navigator.geolocation", "navigator.geolocation")}} 即可访问 Geolocation API；这将导致用户浏览器询问他们是否允许访问其位置数据。如果他们同意，浏览器将使用设备上可用的最佳功能（例如 GPS）来访问此信息。
 
-The developer can now access this location information in a couple of different ways:
+开发者现在可以通过以下几种方式来访问此位置信息：
 
-- {{domxref("Geolocation.getCurrentPosition()")}}: Retrieves the device's current location.
-- {{domxref("Geolocation.watchPosition()")}}: Registers a handler function that will be called automatically each time the position of the device changes, returning the updated location.
+- {{domxref("Geolocation.getCurrentPosition()")}}：获取设备的当前位置。
+- {{domxref("Geolocation.watchPosition()")}}：注册一个处理函数，该函数将在设备位置每次变化时自动调用，并返回更新的位置。
 
-In both cases, the method call takes up to three arguments:
+在两种情况下，方法调用最多接受三个参数：
 
-- A mandatory success callback: If the location retrieval is successful, the callback executes with a {{domxref("GeolocationPosition")}} object as its only parameter, providing access to the location data.
-- An optional error callback: If the location retrieval is unsuccessful, the callback executes with a {{domxref("GeolocationPositionError")}} object as its only parameter, providing access information on what went wrong.
-- An optional object which provides options for retrieval of the position data.
+- 必需的 success 回调：如果位置检索成功，则该回调执行，其唯一参数是一个 {{domxref("GeolocationPosition")}} 对象，用于提供对位置数据的访问。
+- 可选的 error 回调：如果位置检索失败，则该回调执行，其唯一参数是一个 {{domxref("GeolocationPositionError")}} 对象，用于提供关于出错原因的信息。
+- 一个可选的对象，用于提供位置数据检索的选项。
 
-For further information on Geolocation usage, read [Using the Geolocation API](/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API).
+有关 Geolocation 使用的更多信息，请参阅[使用 Geolocation API](/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API)。
 
-## Interfaces
+## 接口
 
 - {{domxref("Geolocation")}}
-  - : The main class of this API — contains methods to retrieve the user's current position, watch for changes in their position, and clear a previously-set watch.
+  - : 该 API 的主类——包含用于获取用户当前位置、监视位置变化以及清除先前设置的监视的方法。
 - {{domxref("GeolocationPosition")}}
-  - : Represents the position of a user. A `GeolocationPosition` instance is returned by a successful call to one of the methods contained inside {{domxref("Geolocation")}}, inside a success callback, and contains a timestamp plus a {{domxref("GeolocationCoordinates")}} object instance.
+  - : 表示用户的位置。成功调用 {{domxref("Geolocation")}} 中的某个方法后，在 success 回调中会返回一个 `GeolocationPosition` 实例，其中包含一个时间戳和一个 {{domxref("GeolocationCoordinates")}} 对象实例。
 - {{domxref("GeolocationCoordinates")}}
-  - : Represents the coordinates of a user's position; a `GeolocationCoordinates` instance contains latitude, longitude, and other important related information.
+  - : 表示用户位置的坐标；`GeolocationCoordinates` 实例包含纬度、经度以及其他重要的相关信息。
 - {{domxref("GeolocationPositionError")}}
-  - : A `GeolocationPositionError` is returned by an unsuccessful call to one of the methods contained inside {{domxref("Geolocation")}}, inside an error callback, and contains an error code and message.
+  - : 当对 {{domxref("Geolocation")}} 中的某个方法进行不成功的调用时，会在 error 回调中返回一个 `GeolocationPositionError`，其中包含错误代码和错误消息。
 
-### Extensions to other interfaces
+### 对其他接口的扩展
 
 - {{domxref("Navigator.geolocation")}}
-  - : The entry point into the API. Returns a {{domxref("Geolocation")}} object instance, from which all other functionality can be accessed.
+  - : API 的入口点。返回一个 {{domxref("Geolocation")}} 对象实例，通过它能够访问所有其他功能。
 
-## Security considerations
+## 安全注意事项
 
-The Geolocation API allows users to programmatically access location information in [secure contexts](/en-US/docs/Web/Security/Defenses/Secure_Contexts).
+Geolocation API 允许用户在[安全上下文](/en-US/docs/Web/Security/Defenses/Secure_Contexts)中以编程方式访问位置信息。
 
-Access may further be controlled by the [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) directive {{HTTPHeader("Permissions-Policy/geolocation","geolocation")}}.
-The default allowlist for `geolocation` is `self`, which allows access to location information in same-origin nested frames only.
-Third party usage is enabled by setting a `Permissions-Policy` response header to grant permission to a particular third party origin:
+进一步的访问控制可由[权限策略](/en-US/docs/Web/HTTP/Guides/Permissions_Policy)指令 {{HTTPHeader("Permissions-Policy/geolocation","geolocation")}} 进行。默认情况下，`geolocation` 的允许列表为 `self`，意味着仅允许同源嵌套框架访问位置信息。若要允许第三方使用，可以通过设置 `Permissions-Policy` 响应头来授予特定第三方来源权限：
 
 ```http
 Permissions-Policy: geolocation=(self b.example.com)
 ```
 
-The `allow="geolocation"` attribute must then be added to the iframe element with sources from that origin:
+随后需要在 iframe 元素上添加 `allow="geolocation"` 属性，且其来源需为该第三方来源：
 
 ```html
 <iframe src="https://b.example.com" allow="geolocation"></iframe>
 ```
 
-Geolocation data may reveal information that the device owner does not want to share.
-Therefore, users must grant explicit permission via a prompt when either {{domxref("Geolocation.getCurrentPosition()")}} or {{domxref("Geolocation.watchPosition()")}} is called (unless the permission state is already `granted` or `denied`).
-The lifetime of a granted permission depends on the user agent, and may be time based, session based, or even permanent.
-The [Permissions API](/en-US/docs/Web/API/Permissions_API) `geolocation` permission can be used to test whether access to use location information is `granted`, `denied` or `prompt` (requires user acknowledgement of a prompt).
+地理位置数据可能会泄露设备所有者不愿分享的信息。因此，在调用 {{domxref("Geolocation.getCurrentPosition()")}} 或 {{domxref("Geolocation.watchPosition()")}} 时，必须通过提示获得用户的明确许可（除非权限状态已经是 `granted` 或 `denied`）。已授予权限的生命周期取决于用户代理，可能基于时间、会话，甚至可能是永久的。可以使用[权限 API](/en-US/docs/Web/API/Permissions_API) 的 `geolocation` 权限来测试位置信息的访问权限是 `granted`、`denied` 还是 `prompt`（需要用户确认提示）。
 
-## Examples
+## 示例
 
-See [Using the Geolocation API](/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API#examples) for example code.
+示例代码请参阅[使用 Geolocation API](/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API#examples)。
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-### Availability
+### 可用性
 
-As Wi-Fi-based locating is often provided by Google, the vanilla Geolocation API may be unavailable in China. You may use local third-party providers such as [Baidu](https://lbsyun.baidu.com/index.php?title=jspopular/guide/geolocation), [Autonavi](https://lbs.amap.com/api/javascript-api/guide/services/geolocation#geolocation), or [Tencent](https://lbs.qq.com/service/webService/webServiceGuide/position/webServiceIp). These services use the user's IP address and/or a local app to provide enhanced positioning.
+由于基于 Wi-Fi 的定位通常由 Google 提供，默认的 Geolocation API 在中国可能不可用。您可以使用本地第三方服务提供商，例如[百度](https://lbsyun.baidu.com/index.php?title=jspopular/guide/geolocation)、[高德](https://lbs.amap.com/api/javascript-api/guide/services/geolocation#geolocation)或[腾讯](https://lbs.qq.com/service/webService/webServiceGuide/position/webServiceIp)。这些服务使用用户的 IP 地址和/或本地应用来提供增强定位。
 
-## See also
+## 参见
 
-- {{htmlelement("geolocation")}} element
-- [Using the Geolocation API](/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API)
-- [Who moved my geolocation?](https://hacks.mozilla.org/2013/10/who-moved-my-geolocation/) (Hacks blog)
+- {{htmlelement("geolocation")}} 元素
+- [使用 Geolocation API](/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API)
+- [谁移动了我的地理位置？](https://hacks.mozilla.org/2013/10/who-moved-my-geolocation/)（Hacks 博客）
