@@ -1,11 +1,5 @@
 ---
 title: "CSSTransformValue: length property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSTransformValue/length"
-status: "needs-translation"
----
-
----
-title: "CSSTransformValue: length property"
 short-title: length
 slug: Web/API/CSSTransformValue/length
 page-type: web-api-instance-property
@@ -14,20 +8,20 @@ browser-compat: api.CSSTransformValue.length
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`length`** read-only property of the {{domxref("CSSTransformValue")}} interface returns the number of transform components in the list.
+خاصیت فقط-خواندنی **`length`** از رابط {{domxref("CSSTransformValue")}} تعداد مؤلفه‌های تبدیل (transform) در لیست را برمی‌گرداند.
 
-## Value
+## مقدار
 
-An integer representing the number of transform components in the list.
+یک عدد صحیح که تعداد مؤلفه‌های تبدیل را در لیست نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
 To Do
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
