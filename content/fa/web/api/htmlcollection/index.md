@@ -1,7 +1,5 @@
 ---
 title: "HTMLCollection"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLCollection"
-status: "needs-translation"
 ---
 
 ---
@@ -13,38 +11,38 @@ browser-compat: api.HTMLCollection
 
 {{APIRef("DOM")}}
 
-The **`HTMLCollection`** interface represents a generic collection (array-like object similar to {{jsxref("Functions/arguments", "arguments")}}) of elements (in document order) and offers methods and properties for selecting from the list.
+رابطِ **`HTMLCollection`** یک مجموعهٔ عمومی (شیءِ شبیه به آرایه، مشابه {{jsxref("Functions/arguments", "arguments")}}) از عناصر (به ترتیب سند) را نشان می‌دهد و متدها و ویژگی‌هایی برای انتخاب از این فهرست ارائه می‌کند.
 
-An `HTMLCollection` in the HTML DOM is live; it is automatically updated when the underlying document is changed. For this reason it is a good idea to make a copy (e.g., using {{jsxref("Array/from", "Array.from")}}) to iterate over if adding, moving, or removing nodes.
+یک `HTMLCollection` در DOM اچ‌تی‌ام‌ال زنده است؛ یعنی وقتی سندِ زیرین تغییر کند، به‌طور خودکار به‌روزرسانی می‌شود. به همین دلیل، اگر می‌خواهید گره‌ها را اضافه، جابه‌جا یا حذف کنید، بهتر است (مثلاً با {{jsxref("Array/from", "Array.from")}}) یک کپی از آن بگیرید و روی آن تکرار کنید.
 
-This interface is called `HTMLCollection` for historical reasons, because before the modern DOM, collections implementing this interface could only have HTML elements as their items.
+این رابط به دلایل تاریخی `HTMLCollection` نامیده می‌شود؛ زیرا پیش از DOM مدرن، مجموعه‌هایی که این رابط را پیاده‌سازی می‌کردند فقط می‌توانستند عناصر HTML را به عنوان آیتم‌های خود داشته باشند.
 
-This interface was an [attempt to create an unmodifiable list](https://stackoverflow.com/questions/74630989/why-use-domstringlist-rather-than-an-array/74641156#74641156) and only continues to be supported to not break code that's already using it. Modern APIs represent list structures using types based on JavaScript [arrays](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array), thus making many array methods available, and at the same time imposing additional semantics on their usage (such as making their items read-only).
+این رابط یک [تلاش برای ایجاد فهرست غیرقابل‌تغییر](https://stackoverflow.com/questions/74630989/why-use-domstringlist-rather-than-an-array/74641156#74641156) بود و فقط برای اینکه کدهایی که از قبل از آن استفاده می‌کنند خراب نشوند همچنان پشتیبانی می‌شود. رابط‌های امروزی ساختارهای فهرستی را با انواع مبتنی بر [آرایه‌های](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) جاوااسکریپت نمایش می‌دهند؛ در نتیجه بسیاری از متدهای آرایه در دسترس قرار می‌گیرند و در عین حال معنای اضافی بر نحوهٔ استفاده از آن‌ها تحمیل می‌شود (مثل فقط‌خواندنی بودن آیتم‌هایشان).
 
-These historical reasons do not mean that you as a developer should avoid `HTMLCollection`. You don't create `HTMLCollection` objects yourself, but you get them from APIs such as {{domxref("Document.getElementsByClassName()")}}, and these APIs are not deprecated. However, be careful of the semantic differences from a real array.
+این دلایل تاریخی به این معنا نیست که شما به عنوان توسعه‌دهنده باید از `HTMLCollection` پرهیز کنید. شما خودتان اشیاء `HTMLCollection` را نمی‌سازید، بلکه آن‌ها را از APIهایی مانند {{domxref("Document.getElementsByClassName()")}} دریافت می‌کنید و این APIها منسوخ نشده‌اند. با این حال، مراقب تفاوت‌های معنایی آن با یک آرایهٔ واقعی باشید.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("HTMLCollection.length")}} {{ReadOnlyInline}}
-  - : Returns the number of items in the collection.
+  - : تعداد آیتم‌های مجموعه را برمی‌گرداند.
 
-## Instance methods
+## متدهای نمونه
 
 - {{domxref("HTMLCollection.item()")}}
-  - : Returns the specific element at the given zero-based `index` into the list. Returns `null` if the `index` is out of range.
+  - : عنصر مشخص را در `index` داده‌شده (بر پایهٔ صفر) در فهرست برمی‌گرداند. اگر `index` خارج از محدوده باشد، `null` برمی‌گرداند.
 
-    An alternative to accessing `collection[i]` (which instead returns `undefined` when `i` is out-of-bounds). This is mostly useful for non-JavaScript DOM implementations.
+    این یک جایگزین برای دسترسی `collection[i]` است (که در عوض وقتی `i` خارج از محدوده باشد، `undefined` برمی‌گرداند). این بیشتر برای پیاده‌سازی‌های DOM غیر جاوااسکریپت مفید است.
 
 - {{domxref("HTMLCollection.namedItem()")}}
-  - : Returns the specific node whose ID or, as a fallback, name matches the string specified by `name`. Matching by name is only done as a last resort, only in HTML, and only if the referenced element supports the `name` attribute. Returns `null` if no node exists by the given name.
+  - : گرهٔ مشخصی را برمی‌گرداند که شناسه (ID) یا، به عنوان جایگزین، نام آن با رشتهٔ تعیین‌شده توسط `name` مطابقت دارد. تطبیق بر اساس نام فقط به عنوان آخرین راه‌حل، فقط در HTML، و فقط زمانی انجام می‌شود که عنصر موردنظر از ویژگی `name` پشتیبانی کند. اگر گره‌ای با نام داده‌شده وجود نداشته باشد، `null` برمی‌گرداند.
 
-    An alternative to accessing `collection[name]` (which instead returns `undefined` when `name` does not exist). This is mostly useful for non-JavaScript DOM implementations.
+    این یک جایگزین برای دسترسی `collection[name]` است (که در عوض وقتی `name` وجود نداشته باشد، `undefined` برمی‌گرداند). این بیشتر برای پیاده‌سازی‌های DOM غیر جاوااسکریپت مفید است.
 
-## Usage in JavaScript
+## استفاده در جاوااسکریپت
 
-`HTMLCollection` also exposes its members as properties by name and index. HTML IDs may contain `:` and `.` as valid characters, which would necessitate using bracket notation for property access. Currently, an `HTMLCollection` object does not recognize purely numeric IDs, which would cause conflict with the array-style access, though HTML does permit these.
+`HTMLCollection` اعضای خود را به صورت ویژگی‌هایی با نام و اندیس نیز در دسترس قرار می‌دهد. شناسه‌های HTML ممکن است شامل `:` و `.` به عنوان کاراکترهای معتبر باشند. همین امر استفاده از نماد براکت را برای دسترسی به ویژگی‌ها ضروری می‌کند. در حال حاضر، یک شیء `HTMLCollection` شناسه‌های صرفاً عددی را تشخیص نمی‌دهد، زیرا این شناسه‌ها با دسترسی به سبک آرایه تداخل ایجاد می‌کنند؛ هرچند HTML این‌ها را مجاز می‌داند.
 
-For example, assuming there is one `<form>` element in the document and its `id` is `myForm`:
+برای مثال، فرض کنید یک عنصر `<form>` در سند وجود دارد و `id` آن `myForm` است:
 
 ```js
 let elem1, elem2;
@@ -64,15 +62,15 @@ alert(elem1 === elem2); // shows: "true"
 elem1 = document.forms["named.item.with.periods"];
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("NodeList")}}
 - {{domxref("HTMLFormControlsCollection")}}, {{domxref("HTMLOptionsCollection")}}
