@@ -1,7 +1,5 @@
 ---
 title: "CSSPerspective"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSPerspective"
-status: "needs-translation"
 ---
 
 ---
@@ -13,34 +11,34 @@ browser-compat: api.CSSPerspective
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`CSSPerspective`** interface of the [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Object_Model) represents the {{cssxref("transform-function/perspective", "perspective()")}} value of the individual {{CSSXRef('transform')}} property in CSS.
+رابطِ **`CSSPerspective`** از [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Object_Model)، نمایانگر مقدار {{cssxref("transform-function/perspective", "perspective()")}} مربوط به ویژگی {{CSSXref('transform')}} در CSS است.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("CSSPerspective.CSSPerspective", "CSSPerspective()")}}
-  - : Creates a new `CSSPerspective` object.
+  - : یک شیء `CSSPerspective` جدید می‌سازد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Also inherits properties from its parent interface, {{DOMxRef("CSSTransformComponent")}}._
+_همچنین ویژگی‌های رابط والد خود، {{DOMxRef("CSSTransformComponent")}} را به ارث می‌برد._
 
 - {{domxref('CSSPerspective.length','length')}}
-  - : Returns or sets the distance from z=0.
+  - : فاصله از z=0 را برمی‌گرداند یا تنظیم می‌کند.
 
-## Instance methods
+## متدهای نمونه
 
-_Also inherits methods from its parent interface, {{DOMxRef("CSSTransformComponent")}}._
+_همچنین متدهای رابط والد خود، {{DOMxRef("CSSTransformComponent")}} را به ارث می‌برد._
 
-## Examples
+## مثال
 
 To do
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
