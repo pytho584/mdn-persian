@@ -1,11 +1,5 @@
 ---
 title: "Element: replaceChildren() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/replaceChildren"
-status: "needs-translation"
----
-
----
-title: "Element: replaceChildren() method"
 short-title: replaceChildren()
 slug: Web/API/Element/replaceChildren
 page-type: web-api-instance-method
@@ -14,11 +8,9 @@ browser-compat: api.Element.replaceChildren
 
 {{APIRef("DOM")}}
 
-The **`Element.replaceChildren()`** method replaces the
-existing children of a {{domxref("Node")}} with a specified new set of children. These
-can be string or {{domxref("Node")}} objects.
+روش **`Element.replaceChildren()`** فرزندان موجود یک {{domxref("Node")}} را با مجموعه‌ای جدید از فرزندان مشخص شده جایگزین می‌کند. این فرزندان می‌توانند رشته‌ها یا اشیاء {{domxref("Node")}} باشند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 replaceChildren(param1)
@@ -26,83 +18,76 @@ replaceChildren(param1, param2)
 replaceChildren(param1, param2, /* …, */ paramN)
 ```
 
-### Parameters
+### پارامترها
 
 - `param1`, …, `paramN`
-  - : A set of {{domxref("Node")}} objects or strings to replace the
-    `Element`'s existing children with. If no replacement objects are
-    specified, then the `Element` is emptied of all child nodes.
+  - : مجموعه‌ای از اشیاء {{domxref("Node")}} یا رشته‌ها برای جایگزینی فرزندان موجود `Element`. اگر هیچ شیء جایگزینی مشخص نشود، `Element` از تمام گره‌های فرزند خالی می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `HierarchyRequestError` {{DOMxRef("DOMException")}}
-  - : Thrown when the [constraints of the node tree](https://dom.spec.whatwg.org/#concept-node-tree) are violated.
+  - : زمانی پرتاب می‌شود که [محدودیت‌های درخت گره](https://dom.spec.whatwg.org/#concept-node-tree) نقض شده باشند.
 
-## Examples
+## مثال‌ها
 
-### Emptying a node
+### خالی کردن یک گره
 
-`replaceChildren()` provides a very convenient mechanism for emptying a node
-of all its children. You call it on the parent node without any argument specified:
+`replaceChildren()` یک مکانیسم بسیار راحت برای خالی کردن یک گره از تمام فرزندانش فراهم می‌کند. شما آن را روی گره والد بدون هیچ آرگومانی فراخوانی می‌کنید:
 
 ```js
 myNode.replaceChildren();
 ```
 
-### Transferring nodes between elements
+### انتقال گره‌ها بین عناصر
 
-`replaceChildren()` enables you to easily transfer nodes between elements,
-without having to resort to verbose looping code. For example, say we have a simple
-application allowing you to choose what food you want for your party. This HTML might
-look something like this:
+`replaceChildren()` به شما امکان می‌دهد تا به راحتی گره‌ها را بین عناصر انتقال دهید، بدون نیاز به استفاده از کدهای حلقه‌ای طولانی. به عنوان مثال، فرض کنید یک برنامه ساده داریم که به شما امکان می‌دهد غذای مورد نظر خود را برای مهمانی انتخاب کنید. این HTML ممکن است چیزی شبیه به این باشد:
 
 ```html
-<h2>Party food option list</h2>
+<h2>لیست گزینه‌های غذای مهمانی</h2>
 
 <main>
   <div>
-    <label for="no">No thanks!</label>
+    <label for="no">نه، ممنون!</label>
 
     <select id="no" multiple size="10">
-      <option>Apples</option>
-      <option>Oranges</option>
-      <option>Grapes</option>
-      <option>Bananas</option>
-      <option>Kiwi fruits</option>
-      <option>Chocolate cookies</option>
-      <option>Peanut cookies</option>
-      <option>Chocolate bars</option>
-      <option>Ham Sandwiches</option>
-      <option>Cheese Sandwiches</option>
-      <option>Falafel sandwiches</option>
-      <option>Ice cream</option>
-      <option>Jelly</option>
-      <option>Carrot sticks and hummus</option>
-      <option>Margherita pizza</option>
-      <option>Pepperoni pizza</option>
-      <option>Vegan veggie pizza</option>
+      <option>سیب</option>
+      <option>پرتقال</option>
+      <option>انگور</option>
+      <option>موز</option>
+      <option>کیوی</option>
+      <option>کوکی شکلاتی</option>
+      <option>کوکی بادام‌زمینی</option>
+      <option>شکلات تخته‌ای</option>
+      <option>ساندویچ ژامبون</option>
+      <option>ساندویچ پنیر</option>
+      <option>ساندویچ فلافل</option>
+      <option>بستنی</option>
+      <option>ژله</option>
+      <option>چوب هویج و حمص</option>
+      <option>پیتزا مارگاریتا</option>
+      <option>پیتزا پپرونی</option>
+      <option>پیتزای گیاهی وگان</option>
     </select>
   </div>
 
   <div class="buttons">
-    <button id="to-yes">Transfer to "Yes" --&gt;</button>
-    <button id="to-no">&lt;-- Transfer to "No"</button>
+    <button id="to-yes">انتقال به "بله" --&gt;</button>
+    <button id="to-no">&lt;-- انتقال به "نه"</button>
   </div>
 
   <div>
-    <label for="yes">Yes please!</label>
+    <label for="yes">بله، لطفا!</label>
 
     <select id="yes" multiple size="10"></select>
   </div>
 </main>
 ```
 
-It would make sense to use some simple CSS to lay out the two select lists in a line
-alongside one another, with the control buttons in between them:
+منطقی است که از CSS ساده برای چیدمان دو لیست انتخابی در کنار هم با دکمه‌های کنترل بین آنها استفاده کنیم:
 
 ```css
 main {
@@ -129,15 +114,9 @@ select {
 }
 ```
 
-What we want to do is transfer any selected options in the "no" list over to the "yes"
-list when the "yes" button is pressed, and transfer any selected options in the "yes"
-list over to the "no" list when the "no" button is pressed.
+کاری که می‌خواهیم انجام دهیم این است که گزینه‌های انتخاب شده در لیست "نه" را با فشار دادن دکمه "بله" به لیست "بله" منتقل کنیم و گزینه‌های انتخاب شده در لیست "بله" را با فشار دادن دکمه "نه" به لیست "نه" منتقل کنیم.
 
-To do this, we give each of the buttons a click event handler, which collects together
-the selected options you want to transfer in one constant, and the existing options in
-the list you are transferring to in another constant. It then calls
-`replaceChildren()` on the list to transfer the options to, using the spread
-operator to pass in all the options contained in both constants.
+برای این کار، به هر یک از دکمه‌ها یک رویدادگردان کلیک می‌دهیم که گزینه‌های انتخاب شده را برای انتقال در یک ثابت و گزینه‌های موجود در لیست مقصد را در ثابت دیگر جمع‌آوری می‌کند. سپس `replaceChildren()` را روی لیست مقصد فراخوانی می‌کند و با استفاده از عملگر spread تمام گزینه‌های موجود در هر دو ثابت را به آن منتقل می‌کند.
 
 ```js
 const noSelect = document.getElementById("no");
@@ -161,19 +140,19 @@ noBtn.addEventListener("click", () => {
 });
 ```
 
-The end result looks like this:
+نتیجه نهایی به این شکل است:
 
 {{EmbedLiveSample('Transferring_nodes_between_elements', '100%', '350')}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Element.prepend()")}}
 - {{domxref("Element.append()")}}
