@@ -1,11 +1,5 @@
 ---
 title: "GeolocationCoordinates: toJSON() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GeolocationCoordinates/toJSON"
-status: "needs-translation"
----
-
----
-title: "GeolocationCoordinates: toJSON() method"
 short-title: toJSON()
 slug: Web/API/GeolocationCoordinates/toJSON
 page-type: web-api-instance-method
@@ -14,27 +8,27 @@ browser-compat: api.GeolocationCoordinates.toJSON
 
 {{APIRef("Geolocation API")}}
 
-The **`toJSON()`** method of the {{domxref("GeolocationCoordinates")}} interface is a {{Glossary("Serialization","serializer")}}; it returns a JSON representation of the {{domxref("GeolocationCoordinates")}} object.
+متد **`toJSON()`** از رابط {{domxref("GeolocationCoordinates")}} یک سریالساز است؛ این متد یک نمایش JSON از شیء {{domxref("GeolocationCoordinates")}} بازمی‌گرداند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 toJSON()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("JSON")}} object that is the serialization of the {{domxref("GeolocationCoordinates")}} object.
+یک شیء {{jsxref("JSON")}} که سریالسازی شیء {{domxref("GeolocationCoordinates")}} است.
 
-## Examples
+## مثال‌ها
 
-### Using the `toJSON()` method
+### استفاده از متد `toJSON()`
 
-In this example, calling `position.coords.toJSON()` returns a JSON representation of the `GeolocationCoordinates` object.
+در این مثال، فراخوانی `position.coords.toJSON()` یک نمایش JSON از شیء `GeolocationCoordinates` بازمی‌گرداند.
 
 ```js
 navigator.geolocation.getCurrentPosition((position) => {
@@ -42,7 +36,7 @@ navigator.geolocation.getCurrentPosition((position) => {
 });
 ```
 
-This would log a JSON object like so:
+این کار یک شیء JSON مانند زیر را ثبت می‌کند:
 
 ```json
 {
@@ -56,16 +50,16 @@ This would log a JSON object like so:
 }
 ```
 
-To get a JSON string, you can use [`JSON.stringify(position.coords)`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) directly; it will call `toJSON()` automatically.
+برای دریافت یک رشته JSON، می‌توانید مستقیماً از [`JSON.stringify(position.coords)`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) استفاده کنید؛ این متد به‌طور خودکار `toJSON()` را فراخوانی می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{jsxref("JSON")}}
