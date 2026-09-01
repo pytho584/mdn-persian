@@ -1,11 +1,5 @@
 ---
 title: "GeolocationCoordinates: altitudeAccuracy property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GeolocationCoordinates/altitudeAccuracy"
-status: "needs-translation"
----
-
----
-title: "GeolocationCoordinates: altitudeAccuracy property"
 short-title: altitudeAccuracy
 slug: Web/API/GeolocationCoordinates/altitudeAccuracy
 page-type: web-api-instance-property
@@ -14,22 +8,21 @@ browser-compat: api.GeolocationCoordinates.altitudeAccuracy
 
 {{securecontext_header}}{{APIRef("Geolocation API")}}
 
-The **`altitudeAccuracy`** read-only property of the {{domxref("GeolocationCoordinates")}} interface is a strictly positive `double` representing the accuracy, with a 95% confidence level, of the `altitude` expressed in meters. This value is `null` if the implementation doesn't support measuring altitude.
+خاصیت فقط-خواندنی **`altitudeAccuracy`** از رابط {{domxref("GeolocationCoordinates")}} یک `double` کاملاً مثبت است که دقت `altitude` را با سطح اطمینان ۹۵٪ و بر حسب متر نشان می‌دهد. اگر پیاده‌سازی از اندازه‌گیری ارتفاع پشتیبانی نکند، این مقدار `null` است.
 
-## Value
+## مقدار
 
-A positive `double` representing the accuracy, with a 95% confidence level,
-of the `altitude` expressed in meters.
+یک `double` مثبت که دقت `altitude` را با سطح اطمینان ۹۵٪ و بر حسب متر نشان می‌دهد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Geolocation API](/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API)
+- [استفاده از API موقعیت‌یابی جغرافیایی](/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API)
 - {{domxref("GeolocationCoordinates")}}
