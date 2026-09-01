@@ -1,11 +1,5 @@
 ---
 title: "HTMLObjectElement: data property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/data"
-status: "needs-translation"
----
-
----
-title: "HTMLObjectElement: data property"
 short-title: data
 slug: Web/API/HTMLObjectElement/data
 page-type: web-api-instance-property
@@ -14,19 +8,16 @@ browser-compat: api.HTMLObjectElement.data
 
 {{APIRef("HTML DOM")}}
 
-The **`data`** property of the
-{{domxref("HTMLObjectElement")}} interface returns a string that
-reflects the [`data`](/en-US/docs/Web/HTML/Reference/Elements/object#data) HTML attribute, specifying the address
-of a resource's data.
+ویژگی **`data`** در رابط {{domxref("HTMLObjectElement")}} یک رشته برمیگرداند که منعکسکنندهٔ ویژگی HTML [`data`](/en-US/docs/Web/HTML/Reference/Elements/object#data) است و آدرس دادههای یک منبع را مشخص میکند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
