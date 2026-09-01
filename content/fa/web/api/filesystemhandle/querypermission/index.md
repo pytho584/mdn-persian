@@ -1,11 +1,5 @@
 ---
 title: "FileSystemHandle: queryPermission() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemHandle/queryPermission"
-status: "needs-translation"
----
-
----
-title: "FileSystemHandle: queryPermission() method"
 short-title: queryPermission()
 slug: Web/API/FileSystemHandle/queryPermission
 page-type: web-api-instance-method
@@ -16,48 +10,39 @@ browser-compat: api.FileSystemHandle.queryPermission
 
 {{securecontext_header}}{{APIRef("File System API")}}{{AvailableInWorkers}}{{SeeCompatTable}}
 
-The **`queryPermission()`** method of the
-{{domxref("FileSystemHandle")}} interface queries the current permission state of the
-current handle.
+متد **`queryPermission()`** از رابط {{domxref("FileSystemHandle")}} وضعیت مجوز فعلیِ دسته‌ی جاری را بررسی می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 queryPermission(descriptor)
 ```
 
-### Parameters
+### پارامترها
 
 - `descriptor` {{optional_inline}}
-  - : An object which specifies the permission mode to query for. Options are as follows:
+  - : شیئی که حالت مجوز مورد نظر برای بررسی را مشخص می‌کند. گزینه‌ها به شرح زیر هستند:
     - `'mode'` {{optional_inline}}
-      - : Can be either `'read'`, `'write'`, or `'readwrite'`.
+      - : می‌تواند یکی از مقادیر `'read'`، `'write'` یا `'readwrite'` باشد.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with {{domxref('PermissionStatus.state')}} which is one of `'granted'`, `'denied'` or `'prompt'`. It may also reject with one of the exceptions below.
+یک {{jsxref("Promise")}} که با {{domxref('PermissionStatus.state')}} یکی از مقادیر `'granted'`، `'denied'` یا `'prompt'` حل می‌شود. همچنین ممکن است با یکی از استثناهای زیر رد شود.
 
-If this resolves with "prompt", the website will have to call `requestPermission()` before any
-operations on the handle can be done. If this resolves with "denied" any operations will
-reject. Usually handles returned by the local file system handle factories will
-initially resolves with "granted" for their read permission state. However, other than through
-the user revoking permission, a handle retrieved from IndexedDB is also likely to resolves with
-"prompt".
+اگر این Promise با مقدار "prompt" حل شود، وب‌سایت باید قبل از هرگونه عملیات روی دسته، متد `requestPermission()` را فراخوانی کند. اگر با "denied" حل شود، هر عملیاتی رد خواهد شد. معمولاً دسته‌هایی که توسط سازنده‌های دسته در سیستم فایل محلی بازگردانده می‌شوند، در ابتدا با حالت مجوز خواندن، مقدار "granted" را برمی‌گردانند. با این حال، به غیر از مواردی که کاربر مجوز را لغو کند، دسته‌ای که از IndexedDB بازیابی می‌شود نیز به احتمال زیاد با مقدار "prompt" حل می‌شود.
 
-### Exceptions
+### استثناها
 
 - {{jsxref("TypeError")}}
-  - : Thrown if `mode` is specified with a value other than
-    `'read'`, `'write'`, or `'readwrite'`
+  - : اگر `mode` با مقداری غیر از `'read'`، `'write'` یا `'readwrite'` مشخص شود، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-The following asynchronous function returns true if user has granted read or readwrite
-permissions to the file handle. Permission is requested if not.
+تابع ناهمگام زیر مقدار `true` را برمی‌گرداند اگر کاربر مجوز خواندن یا خواندن/نوشتن را به دسته‌ی فایل داده باشد. در صورت نبود مجوز، درخواست مجوز داده می‌شود.
 
 ```js
-// fileHandle is a FileSystemFileHandle
-// withWrite is a boolean set to true if write
+// fileHandle یک FileSystemFileHandle است
+// withWrite یک bool است که در صورت نیاز به نوشتن true می‌شود
 
 async function verifyPermission(fileHandle, withWrite) {
   const opts = {};
@@ -65,30 +50,30 @@ async function verifyPermission(fileHandle, withWrite) {
     opts.mode = "readwrite";
   }
 
-  // Check if we already have permission, if so, return true.
+  // بررسی کنید که آیا از قبل مجوز داریم؛ اگر بله، true برگردانید.
   if ((await fileHandle.queryPermission(opts)) === "granted") {
     return true;
   }
 
-  // Request permission to the file, if the user grants permission, return true.
+  // درخواست مجوز برای فایل؛ اگر کاربر مجوز داد، true برگردانید.
   if ((await fileHandle.requestPermission(opts)) === "granted") {
     return true;
   }
 
-  // The user did not grant permission, return false.
+  // کاربر مجوز نداد؛ false برگردانید.
   return false;
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [File System API](/en-US/docs/Web/API/File_System_API)
 - [The File System Access API: simplifying access to local files](https://developer.chrome.com/docs/capabilities/web-apis/file-system-access)
