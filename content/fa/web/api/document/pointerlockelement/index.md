@@ -1,7 +1,5 @@
 ---
 title: "Document: pointerLockElement property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/pointerLockElement"
-status: "needs-translation"
 ---
 
 ---
@@ -14,22 +12,21 @@ browser-compat: api.Document.pointerLockElement
 
 {{APIRef("Pointer Lock API")}}
 
-The **`pointerLockElement`** read-only property of the {{domxref("Document")}} interface provides the element set as the target for mouse events while the pointer is locked.
-It is `null` if lock is pending, pointer is unlocked, or the target is in another document.
+ویژگی فقط‌خواندنی **`pointerLockElement`** در رابط {{domxref("Document")}}، عنصری را برمی‌گرداند که هنگام قفل بودن اشاره‌گر به‌عنوان هدف رویدادهای ماوس تعیین شده است. اگر قفل در حالت انتظار (pending) باشد، اشاره‌گر قفل نباشد، یا هدف در سند دیگری قرار داشته باشد، مقدار آن `null` است.
 
-## Value
+## مقدار
 
-An {{domxref("Element")}} or `null`.
+یک {{domxref("Element")}} یا `null`.
 
-## Examples
+## مثال‌ها
 
-### Checking pointer lock status
+### بررسی وضعیت قفل اشاره‌گر
 
-This example contains a {{htmlelement("div")}} element that in turn contains a {{htmlelement("button")}}. Clicking the button requests pointer lock for the `<div>`.
+این مثال شامل یک عنصر {{htmlelement("div")}} است که درون خود یک {{htmlelement("button")}} دارد. با کلیک روی دکمه، قفل اشاره‌گر برای `<div>` درخواست می‌شود.
 
-The example also listens for the {{domxref("Document/pointerlockchange_event", "pointerlockchange")}} event: when this event is fired, the event handler disables the "Lock" button if an element in the document has the pointer lock, and enables the button otherwise.
+این مثال همچنین به رویداد {{domxref("Document/pointerlockchange_event", "pointerlockchange")}} گوش می‌دهد. وقتی این رویداد رخ دهد، کنترل‌کنندهٔ رویداد، اگر عنصری در سند قفل اشاره‌گر را در اختیار داشته باشد، دکمهٔ «Lock» را غیرفعال می‌کند و در غیر این صورت دکمه را فعال می‌کند.
 
-The effect of this is that if you click the "Lock" button, the pointer is locked and the button is disabled: if you then exit pointer lock (for example, by pressing the <kbd>Escape</kbd> key), the button is enabled again.
+نتیجهٔ این کار این است که اگر روی دکمهٔ «Lock» کلیک کنید، اشاره‌گر قفل می‌شود و دکمه غیرفعال می‌گردد؛ سپس اگر از حالت قفل اشاره‌گر خارج شوید (مثلاً با فشردن کلید <kbd>Escape</kbd>)، دکمه دوباره فعال می‌شود.
 
 #### HTML
 
@@ -65,19 +62,19 @@ document.addEventListener("pointerlockchange", () => {
 });
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Checking pointer lock status")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{ domxref("Document.exitPointerLock()") }}
 - {{ domxref("Element.requestPointerLock()") }}
