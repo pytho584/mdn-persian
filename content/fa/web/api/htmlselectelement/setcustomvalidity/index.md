@@ -1,11 +1,5 @@
 ---
 title: "HTMLSelectElement: setCustomValidity() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/setCustomValidity"
-status: "needs-translation"
----
-
----
-title: "HTMLSelectElement: setCustomValidity() method"
 short-title: setCustomValidity()
 slug: Web/API/HTMLSelectElement/setCustomValidity
 page-type: web-api-instance-method
@@ -14,34 +8,31 @@ browser-compat: api.HTMLSelectElement.setCustomValidity
 
 {{ APIRef("HTML DOM") }}
 
-The **`HTMLSelectElement.setCustomValidity()`** method sets the
-custom validity message for the selection element to the specified message. Use the
-empty string to indicate that the element does _not_ have a custom validity
-error.
+متد **`HTMLSelectElement.setCustomValidity()`** پیام اعتبارسنجی سفارشی عنصر انتخاب را با پیام مشخص‌شده تنظیم می‌کند. برای نشان دادن اینکه عنصر خطای اعتبارسنجی سفارشی _ندارد_، از رشته خالی استفاده کنید.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 setCustomValidity(string)
 ```
 
-### Parameters
+### پارامترها
 
 - `string`
-  - : The string containing the error message. The empty string removes any custom validity errors.
+  - : رشته‌ای شامل پیام خطا. رشته خالی هرگونه خطای اعتبارسنجی سفارشی را حذف می‌کند.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Form validation](/en-US/docs/Web/HTML/Guides/Constraint_validation).
+- [اعتبارسنجی فرم](/en-US/docs/Web/HTML/Guides/Constraint_validation).
