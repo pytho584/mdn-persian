@@ -1,11 +1,5 @@
 ---
 title: "Element: compositionstart event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/compositionstart_event"
-status: "needs-translation"
----
-
----
-title: "Element: compositionstart event"
 short-title: compositionstart
 slug: Web/API/Element/compositionstart_event
 page-type: web-api-event
@@ -14,13 +8,13 @@ browser-compat: api.Element.compositionstart_event
 
 {{APIRef("UI Events")}}
 
-The **`compositionstart`** event is fired when a text composition system such as an {{glossary("input method editor")}} starts a new composition session.
+هنگامی که یک سیستم ترکیب متن مانند {{glossary("input method editor")}} یک نشست جدیدِ ترکیب را آغاز می‌کند، رویداد **`compositionstart`** فعال می‌شود.
 
-For example, this event could be fired after a user starts entering a Chinese character using a [Pinyin](https://en.wikipedia.org/wiki/Pinyin) {{glossary("Input method editor")}}.
+برای مثال، این رویداد ممکن است پس از آن‌که کاربر با استفاده از یک {{glossary("Input method editor")}} مبتنی بر [پینیین](https://en.wikipedia.org/wiki/Pinyin) شروع به وارد کردن یک کاراکتر چینی می‌کند، فعال شود.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای استفاده از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} یا تنظیم ویژگیِ کنترل‌کننده رویداد، آن را به کار ببرید.
 
 ```js-nolint
 addEventListener("compositionstart", (event) => { })
@@ -28,13 +22,13 @@ addEventListener("compositionstart", (event) => { })
 oncompositionstart = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("CompositionEvent")}}. Inherits from {{domxref("UIEvent")}} and {{domxref("Event")}}.
+یک {{domxref("CompositionEvent")}}. به ارث‌برده از {{domxref("UIEvent")}} و {{domxref("Event")}}.
 
 {{InheritanceDiagram("CompositionEvent")}}
 
-## Examples
+## مثال‌ها
 
 ```js
 const inputElement = document.querySelector('input[type="text"]');
@@ -44,27 +38,27 @@ inputElement.addEventListener("compositionstart", (event) => {
 });
 ```
 
-### Live example
+### مثال زنده
 
 #### HTML
 
 ```html
 <div class="control">
   <label for="example">
-    Focus the text-input control, then open your IME and begin typing.
+    روی فیلد متنی تمرکز کنید، سپس روش ورودی (IME) خود را باز کرده و شروع به تایپ کنید.
   </label>
   <input type="text" id="example" name="example" />
 </div>
 
 <div class="event-log">
-  <label for="eventLog">Event log:</label>
+  <label for="eventLog">گزارش رویداد:</label>
   <textarea
     readonly
     class="event-log-contents"
     rows="8"
     cols="25"
     id="eventLog"></textarea>
-  <button class="clear-log">Clear</button>
+  <button class="clear-log">پاک کردن</button>
 </div>
 ```
 
@@ -123,18 +117,18 @@ inputElement.addEventListener("compositionupdate", handleEvent);
 inputElement.addEventListener("compositionend", handleEvent);
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Live_example', '100%', '180px') }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- Related events: {{domxref("Element/compositionend_event", "compositionend")}}, {{domxref("Element/compositionupdate_event", "compositionupdate")}}.
+- رویدادهای مرتبط: {{domxref("Element/compositionend_event", "compositionend")}}، {{domxref("Element/compositionupdate_event", "compositionupdate")}}.
