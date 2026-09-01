@@ -1,11 +1,5 @@
 ---
 title: "Element: prefix property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/prefix"
-status: "needs-translation"
----
-
----
-title: "Element: prefix property"
 short-title: prefix
 slug: Web/API/Element/prefix
 page-type: web-api-instance-property
@@ -14,36 +8,33 @@ browser-compat: api.Element.prefix
 
 {{APIRef("DOM")}}
 
-The **`Element.prefix`** read-only property returns the
-namespace prefix of the specified element, or `null` if no prefix is
-specified.
+ویژگی فقط‌خواندنی **`Element.prefix`** پیشوند فضای نام عنصر مشخص‌شده را برمی‌گرداند، یا اگر پیشوندی تعیین نشده باشد، مقدار `null` را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
-The following logs "x" to the console.
+کد زیر رشته «x» را در کنسول ثبت می‌کند.
 
 ```xml
 <x:div onclick="console.log(this.prefix)"/>
 ```
 
-## Notes
+## یادداشت‌ها
 
-This will only work when a namespace-aware parser is used, i.e., when a document is
-served with an XML MIME type. This will not work for HTML documents.
+این ویژگی فقط زمانی کار می‌کند که از تجزیه‌کننده‌ای استفاده شود که به فضای نام آگاه باشد؛ یعنی وقتی سند با یک نوع MIME مبتنی بر XML ارائه شود. این ویژگی برای اسناد HTML کار نخواهد کرد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Element.namespaceURI")}}
 - {{domxref("Element.localName")}}
