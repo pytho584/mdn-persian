@@ -1,11 +1,5 @@
 ---
 title: "Element: assignedSlot property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/assignedSlot"
-status: "needs-translation"
----
-
----
-title: "Element: assignedSlot property"
 short-title: assignedSlot
 slug: Web/API/Element/assignedSlot
 page-type: web-api-instance-property
@@ -14,28 +8,17 @@ browser-compat: api.Element.assignedSlot
 
 {{APIRef("Shadow DOM")}}
 
-The **`assignedSlot`** read-only
-property of the {{domxref("Element")}} interface returns an
-{{domxref("HTMLSlotElement")}} representing the {{htmlelement("slot")}} element the
-node is inserted in.
+خاصیت فقط‌خواندنی **`assignedSlot`** در رابط {{domxref("Element")}} یک {{domxref("HTMLSlotElement")}} برمی‌گرداند که نشان‌دهندهٔ عنصر {{htmlelement("slot")}} است که گره در آن درج شده است.
 
-## Value
+## مقدار
 
-An {{domxref('HTMLSlotElement')}} instance, or `null` if the element is not
-assigned to a slot, or if the associated shadow root was attached with its
-{{domxref("ShadowRoot.mode", "mode")}} set to `closed` (see
-{{domxref("Element.attachShadow")}} for further details).
+یک نمونه از {{domxref('HTMLSlotElement')}}، یا `null` اگر عنصر به هیچ اسلاتی اختصاص داده نشده باشد، یا اگر ریشهٔ سایه‌ای مرتبط با ویژگی {{domxref("ShadowRoot.mode", "mode")}} آن روی `closed` تنظیم شده باشد (برای جزئیات بیشتر به {{domxref("Element.attachShadow")}} مراجعه کنید).
 
-## Examples
+## مثال‌ها
 
-In our [simple-template example](https://github.com/mdn/web-components-examples/tree/main/simple-template) ([see it live](https://mdn.github.io/web-components-examples/simple-template/)), we create a trivial custom element example called
-`<my-paragraph>` in which a shadow root is attached and then populated
-using the contents of a template that contains a slot named `my-text`.
+در [مثال قالب ساده](https://github.com/mdn/web-components-examples/tree/main/simple-template) ما ([مشاهده زنده](https://mdn.github.io/web-components-examples/simple-template/))، یک مثال عنصر سفارشی ساده به نام `<my-paragraph>` ایجاد می‌کنیم که در آن یک ریشهٔ سایه‌ای متصل شده و سپس با استفاده از محتویات یک قالب که شامل یک اسلات به نام `my-text` است پر می‌شود.
 
-When `<my-paragraph>` is used in the document, the slot is populated
-by a slottable element by including it inside the element with a
-[`slot`](/en-US/docs/Web/HTML/Reference/Global_attributes/slot) attribute
-with the value `my-text`. Here is one such example:
+هنگامی که `<my-paragraph>` در سند استفاده می‌شود، اسلات توسط یک عنصر قابل‌اسلات‌گذاری پر می‌شود که آن را در داخل عنصر با یک ویژگی [`slot`](/en-US/docs/Web/HTML/Reference/Global_attributes/slot) با مقدار `my-text` قرار می‌دهیم. در اینجا یک نمونه از این چنین است:
 
 ```html
 <my-paragraph>
@@ -43,19 +26,17 @@ with the value `my-text`. Here is one such example:
 </my-paragraph>
 ```
 
-In our JavaScript file we get a reference to the {{htmlelement("span")}} shown above,
-then log a reference to the original `<slot>` element the
-`<span>` was inserted in.
+در فایل جاوااسکریپت خود، به عنصر {{htmlelement("span")}} نشان‌داده‌شده در بالا ارجاع می‌گیریم و سپس ارجاعی به عنصر اصلی `<slot>` که `<span>` در آن درج شده بود را ثبت می‌کنیم.
 
 ```js
 let slottedSpan = document.querySelector("my-paragraph span");
 console.log(slottedSpan.assignedSlot); // logs '<slot name="my-text">'
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
