@@ -1,10 +1,4 @@
 ---
-title: "GPUCommandEncoder"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder"
-status: "needs-translation"
----
-
----
 title: GPUCommandEncoder
 slug: Web/API/GPUCommandEncoder
 page-type: web-api-interface
@@ -13,51 +7,49 @@ browser-compat: api.GPUCommandEncoder
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`GPUCommandEncoder`** interface of the {{domxref("WebGPU API", "WebGPU API", "", "nocode")}} represents an encoder that collects a sequence of GPU commands to be issued to the GPU.
+رابط **`GPUCommandEncoder`** از {{domxref("WebGPU API", "WebGPU API", "", "nocode")}} نمایانگر یک رمزگذار (encoder) است که دنبالهای از دستورات GPU را برای ارسال به GPU جمعآوری میکند.
 
-A `GPUCommandEncoder` object instance is created via the {{domxref("GPUDevice.createCommandEncoder()")}} property.
+یک نمونه از شیء `GPUCommandEncoder` از طریق ویژگی {{domxref("GPUDevice.createCommandEncoder()")}} ساخته میشود.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگیهای نمونه
 
 - {{domxref("GPUCommandEncoder.label", "label")}}
-  - : A string providing a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+  - : رشته‌ای که برچسبی برای شناسایی شیء فراهم می‌کند، برای مثال در پیام‌های {{domxref("GPUError")}} یا هشدارهای کنسول.
 
-## Instance methods
+## متدهای نمونه
 
 - {{domxref("GPUCommandEncoder.beginComputePass", "beginComputePass()")}}
-  - : Starts encoding a compute pass, returning a {{domxref("GPUComputePassEncoder")}} that can be used to control computation.
+  - : شروع به رمزگذاری یک پاس محاسباتی می‌کند و یک {{domxref("GPUComputePassEncoder")}} برمی‌گرداند که می‌تواند برای کنترل محاسبات استفاده شود.
 - {{domxref("GPUCommandEncoder.beginRenderPass", "beginRenderPass()")}}
-  - : Starts encoding a render pass, returning a {{domxref("GPURenderPassEncoder")}} that can be used to control rendering.
+  - : شروع به رمزگذاری یک پاس رندر می‌کند و یک {{domxref("GPURenderPassEncoder")}} برمی‌گرداند که می‌تواند برای کنترل رندر استفاده شود.
 - {{domxref("GPUCommandEncoder.clearBuffer", "clearBuffer()")}}
-  - : Encodes a command that fills a region of a {{domxref("GPUBuffer")}} with zeroes.
+  - : دستوری را رمزگذاری می‌کند که ناحیه‌ای از یک {{domxref("GPUBuffer")}} را با صفر پر می‌کند.
 - {{domxref("GPUCommandEncoder.copyBufferToBuffer", "copyBufferToBuffer()")}}
-  - : Encodes a command that copies data from one {{domxref("GPUBuffer")}} to another.
+  - : دستوری را رمزگذاری می‌کند که داده‌ها را از یک {{domxref("GPUBuffer")}} به دیگری کپی می‌کند.
 - {{domxref("GPUCommandEncoder.copyBufferToTexture", "copyBufferToTexture()")}}
-  - : Encodes a command that copies data from a {{domxref("GPUBuffer")}} to a {{domxref("GPUTexture")}}.
+  - : دستوری را رمزگذاری می‌کند که داده‌ها را از یک {{domxref("GPUBuffer")}} به یک {{domxref("GPUTexture")}} کپی می‌کند.
 - {{domxref("GPUCommandEncoder.copyTextureToBuffer", "copyTextureToBuffer()")}}
-  - : Encodes a command that copies data from a {{domxref("GPUTexture")}} to a {{domxref("GPUBuffer")}}.
+  - : دستوری را رمزگذاری می‌کند که داده‌ها را از یک {{domxref("GPUTexture")}} به یک {{domxref("GPUBuffer")}} کپی می‌کند.
 - {{domxref("GPUCommandEncoder.copyTextureToTexture", "copyTextureToTexture()")}}
-  - : Encodes a command that copies data from one {{domxref("GPUTexture")}} to another.
+  - : دستوری را رمزگذاری می‌کند که داده‌ها را از یک {{domxref("GPUTexture")}} به دیگری کپی می‌کند.
 - {{domxref("GPUCommandEncoder.finish", "finish()")}}
-  - : Completes recording of the command sequence encoded on this `GPUCommandEncoder`, returning a corresponding {{domxref("GPUCommandBuffer")}}.
-
+  - : ضبط توالی دستورات رمزگذاری‌شده روی این `GPUCommandEncoder` را کامل می‌کند و یک {{domxref("GPUCommandBuffer")}} متناظر برمی‌گرداند.
 - {{domxref("GPUCommandEncoder.insertDebugMarker", "insertDebugMarker()")}}
-  - : Marks a specific point in a series of encoded commands with a label.
+  - : نقطه‌ای خاص در یک سری از دستورات رمزگذاری‌شده را با یک برچسب علامت‌گذاری می‌کند.
 - {{domxref("GPUCommandEncoder.popDebugGroup", "popDebugGroup()")}}
-  - : Ends a debug group, which is begun with a {{domxref("GPUCommandEncoder.pushDebugGroup", "pushDebugGroup()")}} call.
+  - : یک گروه اشکال‌زدایی را پایان می‌دهد که با فراخوانی {{domxref("GPUCommandEncoder.pushDebugGroup", "pushDebugGroup()")}} آغاز شده است.
 - {{domxref("GPUCommandEncoder.pushDebugGroup", "pushDebugGroup()")}}
-  - : Begins a debug group, which is marked with a specified label, and will contain all subsequent encoded commands up until a {{domxref("GPUCommandEncoder.popDebugGroup", "popDebugGroup()")}} method is invoked.
-
+  - : یک گروه اشکال‌زدایی را آغاز می‌کند که با برچسب مشخصی علامت‌گذاری می‌شود و تمام دستورات رمزگذاری‌شده بعدی را تا زمانی که متد {{domxref("GPUCommandEncoder.popDebugGroup", "popDebugGroup()")}} فراخوانی شود، در بر می‌گیرد.
 - {{domxref("GPUCommandEncoder.resolveQuerySet", "resolveQuerySet()")}}
-  - : Encodes a command that resolves a {{domxref("GPUQuerySet")}}, copying the results into a specified {{domxref("GPUBuffer")}}.
+  - : دستوری را رمزگذاری می‌کند که یک {{domxref("GPUQuerySet")}} را حل می‌کند و نتایج را در یک {{domxref("GPUBuffer")}} مشخص کپی می‌کند.
 - {{domxref("GPUCommandEncoder.writeTimestamp", "writeTimestamp()")}} {{non-standard_inline}} {{deprecated_inline}}
-  - : Encodes a command that writes a timestamp into a {{domxref("GPUQuerySet")}} once the previous commands recorded into the same queued {{domxref("GPUCommandBuffer")}} have been executed by the GPU.
+  - : دستوری را رمزگذاری می‌کند که یک برچسب زمانی را در یک {{domxref("GPUQuerySet")}} می‌نویسد، به شرطی که دستورات قبلی ضبط‌شده در همان {{domxref("GPUCommandBuffer")}} در صف توسط GPU اجرا شده باشند.
 
-## Examples
+## مثال‌ها
 
-In our [basic render demo](https://mdn.github.io/dom-examples/webgpu-render-demo/), several commands are recorded via a `GPUCommandEncoder`:
+در [نمایش رندر پایه](https://mdn.github.io/dom-examples/webgpu-render-demo/) ما، چندین دستور از طریق یک `GPUCommandEncoder` ضبط می‌شوند:
 
 ```js
 // …
@@ -93,23 +85,23 @@ passEncoder.end();
 // …
 ```
 
-The commands encoded by the `GPUCommandEncoder` are recorded into a {{domxref("GPUCommandBuffer")}} using the {{domxref("GPUCommandEncoder.finish()")}} method. The command buffer is then passed into the queue via a {{domxref("GPUQueue.submit", "submit()")}} call, ready to be processed by the GPU.
+دستورات رمزگذاری‌شده توسط `GPUCommandEncoder` با استفاده از متد {{domxref("GPUCommandEncoder.finish()")}} در یک {{domxref("GPUCommandBuffer")}} ضبط می‌شوند. سپس بافر فرمان از طریق یک فراخوانی {{domxref("GPUQueue.submit", "submit()")}} به صف ارسال می‌شود و آماده پردازش توسط GPU است.
 
 ```js
 device.queue.submit([commandEncoder.finish()]);
 ```
 
 > [!NOTE]
-> Study the [WebGPU samples](https://webgpu.github.io/webgpu-samples/) to find more command encoding examples.
+> برای یافتن مثال‌های بیشتر از رمزگذاری دستورات، [نمونه‌های WebGPU](https://webgpu.github.io/webgpu-samples/) را مطالعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
