@@ -1,11 +1,5 @@
 ---
 title: "HTMLElement: drag event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/drag_event"
-status: "needs-translation"
----
-
----
-title: "HTMLElement: drag event"
 short-title: drag
 slug: Web/API/HTMLElement/drag_event
 page-type: web-api-event
@@ -14,13 +8,13 @@ browser-compat: api.HTMLElement.drag_event
 
 {{APIRef("HTML Drag and Drop API")}}
 
-The `drag` event is fired every few hundred milliseconds as an element or text selection is being dragged by the user.
+رویداد `drag` هر چند صد میلی‌ثانیه یک بار، زمانی که کاربر یک عنصر یا متن انتخاب‌شده را می‌کشد، رخ می‌دهد.
 
-This event is cancelable and may bubble up to the {{domxref("Document")}} and {{domxref("Window")}} objects.
+این رویداد قابل‌لغو است و ممکن است به سمت بالا تا اشیاء {{domxref("Document")}} و {{domxref("Window")}} انتشار یابد.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی مدیریت‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("drag", (event) => { })
@@ -28,15 +22,15 @@ addEventListener("drag", (event) => { })
 ondrag = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("DragEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("DragEvent")}}. از {{domxref("Event")}} به ارث می‌برد.
 
 {{InheritanceDiagram("DragEvent")}}
 
-## Examples
+## مثال‌ها
 
-### Drag and drop example
+### مثال کشیدن و رها کردن
 
 #### HTML
 
@@ -132,19 +126,19 @@ target.addEventListener("drop", (event) => {
 });
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample('Drag and drop example')}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLElement/dragstart_event", "dragstart")}}
 - {{domxref("HTMLElement/dragend_event", "dragend")}}
