@@ -1,11 +1,5 @@
 ---
 title: "HTMLSelectElement: name property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/name"
-status: "needs-translation"
----
-
----
-title: "HTMLSelectElement: name property"
 short-title: name
 slug: Web/API/HTMLSelectElement/name
 page-type: web-api-instance-property
@@ -14,13 +8,13 @@ browser-compat: api.HTMLSelectElement.name
 
 {{ApiRef("HTML DOM")}}
 
-The **`name`** property of the {{domxref("HTMLSelectElement")}} interface indicates the name of the {{HTMLElement("select")}} element. It reflects the element's [`name`](/en-US/docs/Web/HTML/Reference/Elements/select#name) attribute.
+ویژگی **`name`** در رابط {{domxref("HTMLSelectElement")}} نام عنصر {{HTMLElement("select")}} را مشخص می‌کند. این ویژگی، صفت [`name`](/en-US/docs/Web/HTML/Reference/Elements/select#name) عنصر را بازتاب می‌دهد.
 
-## Value
+## مقدار
 
-A string representing the element's name.
+یک رشته که نشان‌دهندهٔ نام عنصر است.
 
-## Example
+## مثال
 
 ```js
 const selectElement = document.querySelector("#planets");
@@ -28,15 +22,15 @@ console.log(`Element's name: ${selectElement.name}`);
 selectElement.name = "galaxies"; // sets or updates the element's name
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLSelectElement.value")}}
 - {{domxref("HTMLSelectElement.selectedIndex")}}
