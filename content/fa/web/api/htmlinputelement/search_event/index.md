@@ -1,7 +1,5 @@
 ---
 title: "HTMLInputElement: search event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/search_event"
-status: "needs-translation"
 ---
 
 ---
@@ -16,17 +14,17 @@ browser-compat: api.HTMLInputElement.search_event
 
 {{APIRef("HTML DOM")}}{{non-standard_header}}
 
-The **`search`** event is fired when a search is initiated using an {{HTMLElement("input")}} element of `type="search"`.
+رویداد **`search`** زمانی شلیک می‌شود که یک جستجو با استفاده از عنصر {{HTMLElement("input")}} با `type="search"` آغاز شود.
 
-There are several ways a search can be initiated, such as by pressing <kbd>Enter</kbd> while the {{HTMLElement("input")}} is focused, or, if the [`incremental`](/en-US/docs/Web/HTML/Reference/Elements/input#incremental) attribute is present, after a UA-defined timeout elapses since the most recent keystroke (with new keystrokes resetting the timeout so the firing of the event is {{glossary("debounce", "debounced")}}).
+راه‌های متعددی برای شروع جستجو وجود دارد؛ برای مثال، فشار دادن <kbd>Enter</kbd> در حالی که {{HTMLElement("input")}} فوکوس شده است، یا اگر ویژگی [`incremental`](/en-US/docs/Web/HTML/Reference/Elements/input#incremental) موجود باشد، پس از گذشت یک مهلت زمانی تعریف‌شده توسط مرورگر (UA) از آخرین ضربه کلید (با این که هر ضربه کلید جدید مهلت زمانی را از نو تنظیم می‌کند، بنابراین فعال شدن رویداد {{glossary("debounce", "debounced")}} به تعویق می‌افتد).
 
-Current UA implementations of `<input type="search">` have an additional control to clear the field. Using this control also fires the `search` event. In that case the `value` of the {{HTMLElement("input")}} element will be the empty string.
+پیاده‌سازی‌های فعلی مرورگر (UA) از `<input type="search">` دارای یک کنترل اضافی برای پاک کردن فیلد هستند. استفاده از این کنترل همچنین رویداد `search` را فعال می‌کند. در این حالت، `value` عنصر {{HTMLElement("input")}} رشتهٔ خالی خواهد بود.
 
-This event is not cancelable.
+این رویداد قابل لغو (cancelable) نیست.
 
-## Syntax
+## سینتکس
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد (event handler) تنظیم کنید.
 
 ```js-nolint
 addEventListener("search", (event) => { })
@@ -34,11 +32,11 @@ addEventListener("search", (event) => { })
 onsearch = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## مثال‌ها
 
 ```js
 // addEventListener version
@@ -58,10 +56,10 @@ input.onsearch = () => {
 };
 ```
 
-## Specifications
+## مشخصات
 
-This event is not part of any specification.
+این رویداد بخشی از هیچ مشخصاتی نیست.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
