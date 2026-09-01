@@ -1,11 +1,5 @@
 ---
 title: "Document: getSelection() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/getSelection"
-status: "needs-translation"
----
-
----
-title: "Document: getSelection() method"
 short-title: getSelection()
 slug: Web/API/Document/getSelection
 page-type: web-api-instance-method
@@ -14,66 +8,63 @@ browser-compat: api.Document.getSelection
 
 {{APIRef("DOM")}}
 
-The **`getSelection()`** method of the {{DOMxRef("Document")}} interface returns the {{DOMxRef("Selection")}} object associated with this document, representing the range of text selected by the user, or the current position of the caret.
+متد **`getSelection()`** در رابط {{DOMxRef("Document")}}، شیء {{DOMxRef("Selection")}} مرتبط با این سند را برمی‌گرداند که محدوده متنی انتخاب‌شده توسط کاربر یا موقعیت فعلی مکان‌نما را نشان می‌دهد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 getSelection()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{DOMxRef("Selection")}} object, or `null` if the document has no [browsing context](/en-US/docs/Glossary/Browsing_context) (for example, it is the document of an {{htmlelement("iframe")}} that is not attached to a document).
+یک شیء {{DOMxRef("Selection")}}، یا اگر سند دارای [زمینه مرور (browsing context)](/en-US/docs/Glossary/Browsing_context) نباشد (مثلاً سند یک {{htmlelement("iframe")}} که به سندی متصل نیست)، مقدار `null` برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-### Getting a Selection object
+### به دست آوردن یک شیء Selection
 
 ```js
 const selection = document.getSelection();
 const selRange = selection.getRangeAt(0);
-// do stuff with the range
+// کارهای لازم با range انجام دهید
 
-console.log(selection); // Selection object
+console.log(selection); // شیء Selection
 ```
 
-### String representation of the Selection object
+### نمایش رشته‌ای از شیء Selection
 
-Some functions (like {{DOMxRef("Window.alert()")}}) call {{JSxRef("Object.toString", "toString()")}}
-automatically and the returned value is passed to the function. As a consequence, this will return the selected text
-and not the `Selection` object:
+برخی توابع (مانند {{DOMxRef("Window.alert()")}}) به‌طور خودکار {{JSxRef("Object.toString", "toString()")}} را فراخوانی می‌کنند و مقدار بازگشتی به تابع ارسال می‌شود. در نتیجه، این کار متن انتخاب‌شده را برمی‌گرداند و نه شیء `Selection` را:
 
 ```js
 alert(selection);
 ```
 
-However, not all functions call `toString()` automatically.
-To use a `Selection` object as a string, call its `toString()` method directly:
+با این حال، همه توابع به‌طور خودکار `toString()` را فراخوانی نمی‌کنند.
+برای استفاده از یک شیء `Selection` به‌عنوان رشته، متد `toString()` آن را مستقیماً فراخوانی کنید:
 
 ```js
 let selectedText = selection.toString();
 ```
 
-## Related objects
+## اشیاء مرتبط
 
-You can call {{domxref("Window.getSelection()")}}, which is identical to `window.document.getSelection()`.
+می‌توانید {{domxref("Window.getSelection()")}} را فراخوانی کنید که با `window.document.getSelection()` یکسان است.
 
-It is worth noting that currently `getSelection()` doesn't work on the
-content of {{htmlelement("input")}} elements in Firefox.
-{{domxref("HTMLInputElement.setSelectionRange()")}}) could be used to work around this.
+شایان ذکر است که در حال حاضر `getSelection()` روی محتوای عناصر {{htmlelement("input")}} در فایرفاکس کار نمی‌کند.
+برای دور زدن این مشکل می‌توان از {{domxref("HTMLInputElement.setSelectionRange()")}} استفاده کرد.
 
-Notice also the difference between _selection_ and _focus_.
-{{domxref("Document.activeElement")}} returns the focused element.
+همچنین به تفاوت بین _selection_ (انتخاب) و _focus_ (تمرکز) توجه کنید.
+{{domxref("Document.activeElement")}} عنصر دارای تمرکز را برمی‌گرداند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
