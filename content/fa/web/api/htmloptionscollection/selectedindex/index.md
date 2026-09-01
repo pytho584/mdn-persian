@@ -1,7 +1,5 @@
 ---
 title: "HTMLOptionsCollection: selectedIndex property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLOptionsCollection/selectedIndex"
-status: "needs-translation"
 ---
 
 ---
@@ -14,13 +12,13 @@ browser-compat: api.HTMLOptionsCollection.selectedIndex
 
 {{APIRef("HTML DOM")}}
 
-The **`selectedIndex`** property of the {{DOMxRef("HTMLOptionsCollection")}} interface is the numeric index of the first selected {{HTMLElement("option")}} element, if any, or `−1` if no `<option>` is selected. Setting this property selects the option at that index and deselects all other options in this collection, while setting it to `-1` deselects any currently selected elements. It is exactly equivalent to the {{domxref("HTMLSelectElement.selectedIndex", "selectedIndex")}} property of the {{domxref("HTMLSelectElement")}} that owns this collection.
+ویژگی **`selectedIndex`** رابط {{DOMxRef("HTMLOptionsCollection")}}، شاخص عددی اولین عنصر {{HTMLElement("option")}} انتخاب‌شده است، در صورت وجود؛ و در صورتی که هیچ `<option>`ای انتخاب نشده باشد، مقدار آن `−1` است. تنظیم این ویژگی، گزینهٔ موجود در آن شاخص را انتخاب می‌کند و همهٔ گزینه‌های دیگر این مجموعه را از حالت انتخاب خارج می‌کند؛ همچنین تنظیم آن به `-1`، هر گزینهٔ انتخاب‌شدهٔ فعلی را از حالت انتخاب خارج می‌کند. این ویژگی دقیقاً معادل ویژگی {{domxref("HTMLSelectElement.selectedIndex", "selectedIndex")}} در {{domxref("HTMLSelectElement")}} ای است که مالک این مجموعه است.
 
-## Value
+## مقدار
 
-A number.
+یک عدد.
 
-## Examples
+## مثال‌ها
 
 ```js
 const optionColl = document.getElementById("select").options;
@@ -29,15 +27,15 @@ optionColl.selectedIndex = 0; // selects the first item
 optionColl.selectedIndex = -1; // deselects any selected option
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{DOMxRef("HTMLOptionsCollection.length")}}
 - {{DOMxRef("HTMLOptionsCollection.add()")}}
