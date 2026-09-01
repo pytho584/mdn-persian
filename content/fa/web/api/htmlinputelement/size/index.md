@@ -1,11 +1,5 @@
 ---
 title: "HTMLInputElement: size property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/size"
-status: "needs-translation"
----
-
----
-title: "HTMLInputElement: size property"
 short-title: size
 slug: Web/API/HTMLInputElement/size
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.HTMLInputElement.size
 
 {{APIRef("HTML DOM")}}
 
-The **`size`** property of the {{DOMxRef("HTMLInputElement")}} interface defines the number of visible characters displayed. It reflects the {{htmlelement("input")}} element's [`size`](/en-US/docs/Web/HTML/Reference/Elements/input#size) attribute.
+خاصیت **`size`** در رابط {{DOMxRef("HTMLInputElement")}} تعداد کاراکترهای قابل مشاهده‌ای که نمایش داده می‌شود را مشخص می‌کند. این خاصیت منعکس‌کنندهٔ ویژگی [`size`](/en-US/docs/Web/HTML/Reference/Elements/input#size) عنصر {{htmlelement("input")}} است.
 
-The `size` property is relevant to the [`text`](/en-US/docs/Web/HTML/Reference/Elements/input/text), [`search`](/en-US/docs/Web/HTML/Reference/Elements/input/search), [`tel`](/en-US/docs/Web/HTML/Reference/Elements/input/tel), [`email`](/en-US/docs/Web/HTML/Reference/Elements/input/email), [`url`](/en-US/docs/Web/HTML/Reference/Elements/input/url), and [`password`](/en-US/docs/Web/HTML/Reference/Elements/input/password) input type only. The value is a non-negative integer greater than zero. If omitted or invalid, the value is `20`.
+خاصیت `size` فقط برای انواع ورودی [`text`](/en-US/docs/Web/HTML/Reference/Elements/input/text)، [`search`](/en-US/docs/Web/HTML/Reference/Elements/input/search)، [`tel`](/en-US/docs/Web/HTML/Reference/Elements/input/tel)، [`email`](/en-US/docs/Web/HTML/Reference/Elements/input/email)، [`url`](/en-US/docs/Web/HTML/Reference/Elements/input/url) و [`password`](/en-US/docs/Web/HTML/Reference/Elements/input/password) کاربرد دارد. مقدار آن یک عدد صحیح نامنفی بزرگ‌تر از صفر است. اگر حذف شود یا نامعتبر باشد، مقدار `20` در نظر گرفته می‌شود.
 
-## Value
+## مقدار
 
-An integer.
+یک عدد صحیح.
 
-## Examples
+## مثال‌ها
 
 ```js
 const inputElement = document.getElementById("password");
@@ -30,15 +24,15 @@ console.log(inputElement.size);
 inputElement.size = 12;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{DOMXref("HTMLInputElement.minLength")}}
 - {{DOMXref("HTMLInputElement.maxLength")}}
