@@ -1,11 +1,5 @@
 ---
 title: "FontFaceSetLoadEvent: fontfaces property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSetLoadEvent/fontfaces"
-status: "needs-translation"
----
-
----
-title: "FontFaceSetLoadEvent: fontfaces property"
 short-title: fontfaces
 slug: Web/API/FontFaceSetLoadEvent/fontfaces
 page-type: web-api-instance-property
@@ -14,18 +8,16 @@ browser-compat: api.FontFaceSetLoadEvent.fontfaces
 
 {{APIRef("CSS Font Loading API")}}{{AvailableInWorkers}}
 
-The **`fontfaces`** read-only property of the
-{{domxref("FontFaceSetLoadEvent")}} interface returns an array of
-{{domxref("FontFace")}} instances, each of which represents a single usable font.
+ویژگی فقط‌خواندنی **`fontfaces`** از رابط {{domxref("FontFaceSetLoadEvent")}} آرایه‌ای از نمونه‌های {{domxref("FontFace")}} را برمی‌گرداند که هر کدام نمایانگر یک فونت قابل استفاده است.
 
-## Value
+## مقدار
 
-An array of {{domxref("FontFace")}} instance.
+آرایه‌ای از نمونه‌های {{domxref("FontFace")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
