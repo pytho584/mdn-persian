@@ -1,10 +1,4 @@
 ---
-title: "HTMLSlotElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLSlotElement"
-status: "needs-translation"
----
-
----
 title: HTMLSlotElement
 slug: Web/API/HTMLSlotElement
 page-type: web-api-interface
@@ -13,40 +7,40 @@ browser-compat: api.HTMLSlotElement
 
 {{APIRef("Web Components")}}
 
-The **`HTMLSlotElement`** interface of the [Shadow DOM API](/en-US/docs/Web/API/Web_components/Using_shadow_DOM) enables access to the name and assigned nodes of an HTML {{HTMLElement("slot")}} element.
+رابط (interface) **`HTMLSlotElement`** در [Shadow DOM API](/en-US/docs/Web/API/Web_components/Using_shadow_DOM) امکان دسترسی به نام و گره‌های اختصاص‌یافته‌ی یک عنصر HTML {{HTMLElement("slot")}} را فراهم می‌کند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه (Instance properties)
 
-_Also inherits properties from its parent interface, {{domxref("HTMLElement")}}._
+_همچنین ویژگی‌هایی را از رابط والد خود، {{domxref("HTMLElement")}}، به ارث می‌برد._
 
 - {{domxref('HTMLSlotElement.name')}}
-  - : A string used to get and set the slot's name.
+  - : یک رشته (string) برای دریافت و تنظیم نام slot.
 
-## Instance methods
+## روش‌های نمونه (Instance methods)
 
-_Also inherits methods from its parent interface, {{domxref("HTMLElement")}}._
+_همچنین روش‌هایی را از رابط والد خود، {{domxref("HTMLElement")}}، به ارث می‌برد._
 
 - {{domxref('HTMLSlotElement.assign()')}}
-  - : Sets the manually assigned nodes for this slot to the given nodes.
+  - : گره‌های اختصاص‌یافته‌ی دستی برای این slot را به گره‌های داده شده تنظیم می‌کند.
 - {{domxref('HTMLSlotElement.assignedNodes()')}}
-  - : Returns a sequence of the nodes assigned to this slot. If the `flatten` option is set to `true`, it returns a sequence of both the nodes assigned to this slot, and the nodes assigned to any other slots that are descendants of this slot. If no assigned nodes are found, it returns the slot's fallback content.
+  - : دنباله‌ای از گره‌های اختصاص‌یافته به این slot را برمی‌گرداند. اگر گزینه `flatten` روی `true` تنظیم شده باشد، دنباله‌ای از هر دو گره‌های اختصاص‌یافته به این slot و گره‌های اختصاص‌یافته به هر slot دیگری که از فرزندان این slot هستند را برمی‌گرداند. اگر هیچ گره اختصاص‌یافته‌ای یافت نشود، محتوای جایگزین (fallback content) slot را برمی‌گرداند.
 - {{domxref('HTMLSlotElement.assignedElements()')}}
-  - : Returns a sequence of the elements assigned to this slot (and no other nodes). If the `flatten` option is set to `true`, it returns a sequence of both the elements assigned to this slot, and the elements assigned to any other slots that are descendants of this slot. If no assigned elements are found, it returns the slot's fallback content.
+  - : دنباله‌ای از عناصر اختصاص‌یافته به این slot (و نه گره‌های دیگر) را برمی‌گرداند. اگر گزینه `flatten` روی `true` تنظیم شده باشد، دنباله‌ای از هر دو عناصر اختصاص‌یافته به این slot و عناصر اختصاص‌یافته به هر slot دیگری که از فرزندان این slot هستند را برمی‌گرداند. اگر هیچ عنصر اختصاص‌یافته‌ای یافت نشود، محتوای جایگزین slot را برمی‌گرداند.
 
-## Events
+## رویدادها (Events)
 
-_Also inherits events from its parent interface, {{domxref("HTMLElement")}}._
+_همچنین رویدادهایی را از رابط والد خود، {{domxref("HTMLElement")}}، به ارث می‌برد._
 
-Listen to these events using {{DOMxRef("EventTarget.addEventListener", "addEventListener()")}} or by assigning an event listener to the `oneventname` property of this interface.
+به این رویدادها با استفاده از {{DOMxRef("EventTarget.addEventListener", "addEventListener()")}} یا با تخصیص یک شنونده رویداد به ویژگی `oneventname` این رابط گوش دهید.
 
 - {{domxref('HTMLSlotElement.slotchange_event', 'slotchange')}}
-  - : Fired on an `HTMLSlotElement` instance ([`<slot>`](/en-US/docs/Web/HTML/Reference/Elements/slot) element) when the node(s) contained in that slot change.
+  - : زمانی که گره(های) داخل آن slot تغییر می‌کند، روی یک نمونه `HTMLSlotElement` (عنصر [`<slot>`](/en-US/docs/Web/HTML/Reference/Elements/slot)) فعال می‌شود.
 
-## Examples
+## مثال‌ها
 
-The following snippet is taken from our [slotchange example](https://github.com/mdn/web-components-examples/tree/main/slotchange) ([see it live also](https://mdn.github.io/web-components-examples/slotchange/)).
+قطعه کد زیر از مثال [slotchange](https://github.com/mdn/web-components-examples/tree/main/slotchange) ما گرفته شده است (همچنین [به صورت زنده](https://mdn.github.io/web-components-examples/slotchange/) ببینید).
 
 ```js
 let slots = this.shadowRoot.querySelectorAll("slot");
@@ -58,14 +52,14 @@ slots[1].addEventListener("slotchange", (e) => {
 });
 ```
 
-Here we grab references to all the slots, then add a slotchange event listener to the 2nd slot in the template — which is the one that keeps having its contents changed in the example.
+در اینجا ما به ارجاع‌هایی از همه slotها دست می‌یابیم، سپس یک شنونده رویداد slotchange به slot دوم در الگو اضافه می‌کنیم – همان slotی که در مثال محتویات آن مدام تغییر می‌کند.
 
-Every time the element inserted in the slot changes, we log a report to the console saying which slot has changed, and what the new node inside the slot is.
+هر بار که عنصر درج‌شده در slot تغییر می‌کند، گزارشی به کنسول ثبت می‌کنیم که نشان می‌دهد کدام slot تغییر کرده و گره جدید داخل slot چیست.
 
-## Specifications
+## مشخصات (Specifications)
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر (Browser compatibility)
 
 {{Compat}}
