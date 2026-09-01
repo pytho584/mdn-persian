@@ -1,7 +1,5 @@
 ---
 title: "HTMLIFrameElement: allowPaymentRequest property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/allowPaymentRequest"
-status: "needs-translation"
 ---
 
 ---
@@ -17,18 +15,16 @@ browser-compat: api.HTMLIFrameElement.allowPaymentRequest
 
 {{APIRef("HTML DOM")}}{{Deprecated_Header}}{{Non-standard_Header}}
 
-The **`allowPaymentRequest`** property of the
-{{domxref("HTMLIFrameElement")}} interface returns a boolean value indicating
-whether the [Payment Request API](/en-US/docs/Web/API/Payment_Request_API) may be invoked on a cross-origin iframe.
+ویژگی **`allowPaymentRequest`** از رابط {{domxref("HTMLIFrameElement")}} یک مقدار بولی برمی‌گرداند که مشخص می‌کند آیا [Payment Request API](/en-US/docs/Web/API/Payment_Request_API) می‌تواند روی یک iframe با مبدأ متفاوت (cross-origin) فراخوانده شود یا نه.
 
-## Value
+## مقدار
 
-A boolean value.
+یک مقدار بولی.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Payment Request API](/en-US/docs/Web/API/Payment_Request_API)
