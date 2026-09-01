@@ -1,11 +1,5 @@
 ---
 title: "HTMLInputElement: setRangeText() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/setRangeText"
-status: "needs-translation"
----
-
----
-title: "HTMLInputElement: setRangeText() method"
 short-title: setRangeText()
 slug: Web/API/HTMLInputElement/setRangeText
 page-type: web-api-instance-method
@@ -14,11 +8,9 @@ browser-compat: api.HTMLInputElement.setRangeText
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLInputElement.setRangeText()`** method replaces a
-range of text in an {{HTMLElement("input")}} or {{HTMLElement("textarea")}} element with
-a new string.
+متد **`HTMLInputElement.setRangeText()`** یک محدوده از متن را در یک عنصر {{HTMLElement("input")}} یا {{HTMLElement("textarea")}} با یک رشته جدید جایگزین می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 setRangeText(replacement)
@@ -27,33 +19,28 @@ setRangeText(replacement, start, end)
 setRangeText(replacement, start, end, selectMode)
 ```
 
-### Parameters
+### پارامترها
 
 - `replacement`
-  - : The string to insert.
+  - : رشته‌ای که قرار است درج شود.
 - `start` {{optional_inline}}
-  - : The 0-based index of the first character to replace. Defaults to the current
-    `selectionStart` value (the start of the user's current selection).
+  - : شاخص مبتنی بر صفر اولین کاراکتری که باید جایگزین شود. پیش‌فرض مقدار فعلی `selectionStart` (آغاز انتخاب فعلی کاربر) است.
 - `end` {{optional_inline}}
-  - : The 0-based index of the character _after_ the last character to replace.
-    Defaults to the current `selectionEnd` value (the end of the user's current
-    selection).
+  - : شاخص مبتنی بر صفر کاراکتر _بعد از_ آخرین کاراکتری که باید جایگزین شود. پیش‌فرض مقدار فعلی `selectionEnd` (پایان انتخاب فعلی کاربر) است.
 - `selectMode` {{optional_inline}}
-  - : A string defining how the selection should be set after the text has been replaced.
-    Possible values:
-    - `"select"` selects the newly inserted text.
-    - `"start"` moves the selection to just before the inserted text.
-    - `"end"` moves the selection to just after the inserted text.
-    - `"preserve"` attempts to preserve the selection. This is the default.
+  - : رشته‌ای که نحوه تنظیم انتخاب پس از جایگزینی متن را مشخص می‌کند. مقادیر ممکن:
+    - `"select"` متن تازه درج شده را انتخاب می‌کند.
+    - `"start"` انتخاب را به درست قبل از متن درج شده منتقل می‌کند.
+    - `"end"` انتخاب را به درست بعد از متن درج شده منتقل می‌کند.
+    - `"preserve"` سعی می‌کند انتخاب را حفظ کند. این مقدار پیش‌فرض است.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-Click the button in this example to replace part of the text in the text box. The newly
-inserted text will be highlighted (selected) afterwards.
+برای جایگزینی بخشی از متن در جعبه متن، دکمه این مثال را کلیک کنید. متن تازه درج شده پس از آن برجسته (انتخاب) می‌شود.
 
 ### HTML
 
@@ -78,19 +65,19 @@ function selectText() {
 document.querySelector("button").addEventListener("click", selectText);
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTMLElement("input")}}
 - {{HTMLElement("textarea")}}
