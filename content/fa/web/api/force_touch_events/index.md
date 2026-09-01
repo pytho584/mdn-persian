@@ -1,11 +1,5 @@
 ---
 title: "Force Touch events"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Force_Touch_events"
-status: "needs-translation"
----
-
----
-title: Force Touch events
 slug: Web/API/Force_Touch_events
 page-type: web-api-overview
 status:
@@ -14,35 +8,35 @@ status:
 
 {{DefaultAPISidebar("Force Touch Events")}}{{Non-standard_header}}
 
-**Force Touch Events** are a proprietary, Apple-specific feature which makes possible (where supported by the input hardware) new interactions based on how hard the user clicks or presses down on the touchscreen or trackpad.
+**Force Touch Events** یک ویژگی اختصاصی و مخصوص اپل است که (در صورت پشتیبانی سخت‌افزار ورودی) تعامل‌های جدیدی را بر اساس میزان فشاری که کاربر روی صفحه لمسی یا ترک‌پد کلیک می‌کند یا آن را فشار می‌دهد، ممکن می‌سازد.
 
-## Events
+## رویدادها
 
 - {{domxref("Element/webkitmouseforcewillbegin_event", "webkitmouseforcewillbegin")}} {{non-standard_inline}}
-  - : This event is fired before the {{domxref("Element/mousedown_event", "mousedown")}} event. Its main use is that it can be {{domxref("Event.preventDefault()", "default-prevented", "", 1)}}.
+  - : این رویداد قبل از رویداد {{domxref("Element/mousedown_event", "mousedown")}} فعال می‌شود. کاربرد اصلی آن این است که می‌توان با {{domxref("Event.preventDefault()", "default-prevented", "", 1)}} از رفتار پیش‌فرض آن جلوگیری کرد.
 - {{domxref("Element/webkitmouseforcedown_event", "webkitmouseforcedown")}} {{non-standard_inline}}
-  - : This event is fired after the {{domxref("Element/mousedown_event", "mousedown")}} event as soon as sufficient pressure has been applied for it to qualify as a "force click".
+  - : این رویداد پس از رویداد {{domxref("Element/mousedown_event", "mousedown")}} فعال می‌شود، به محض اینکه فشار کافی اعمال شده باشد تا به‌عنوان یک «کلیک فشاری» (force click) تلقی شود.
 - {{domxref("Element/webkitmouseforceup_event", "webkitmouseforceup")}} {{non-standard_inline}}
-  - : This event is fired after the {{domxref("Element/webkitmouseforcedown_event", "webkitmouseforcedown")}} event as soon as the pressure has been reduced sufficiently to end the "force click".
+  - : این رویداد پس از رویداد {{domxref("Element/webkitmouseforcedown_event", "webkitmouseforcedown")}} فعال می‌شود، به محض اینکه فشار به اندازه کافی کاهش یابد تا «کلیک فشاری» پایان یابد.
 - {{domxref("Element/webkitmouseforcechanged_event", "webkitmouseforcechanged")}} {{non-standard_inline}}
-  - : This event is fired each time the amount of pressure changes. This event first fires after the {{domxref("Element/mousedown_event", "mousedown")}} event and stops firing before the {{domxref("Element/mouseup_event", "mouseup")}} event.
+  - : این رویداد هر بار که میزان فشار تغییر می‌کند فعال می‌شود. این رویداد ابتدا پس از رویداد {{domxref("Element/mousedown_event", "mousedown")}} فعال می‌شود و پیش از رویداد {{domxref("Element/mouseup_event", "mouseup")}} از فعال‌شدن بازمی‌ایستد.
 
-## Event properties
+## ویژگی‌های رویداد
 
-The following property is known to be available on the {{domxref("Element/webkitmouseforcewillbegin_event", "webkitmouseforcewillbegin")}}, {{domxref("Element/mousedown_event", "mousedown")}}, {{domxref("Element/webkitmouseforcechanged_event", "webkitmouseforcechanged")}}, {{domxref("Element/webkitmouseforcedown_event", "webkitmouseforcedown")}}, {{domxref("Element/webkitmouseforceup_event", "webkitmouseforceup")}}, {{domxref("Element/mousemove_event", "mousemove")}}, and {{domxref("Element/mouseup_event", "mouseup")}} event objects:
+ویژگی زیر بر روی آبجکت‌های رویدادهای {{domxref("Element/webkitmouseforcewillbegin_event", "webkitmouseforcewillbegin")}}، {{domxref("Element/mousedown_event", "mousedown")}}، {{domxref("Element/webkitmouseforcechanged_event", "webkitmouseforcechanged")}}، {{domxref("Element/webkitmouseforcedown_event", "webkitmouseforcedown")}}، {{domxref("Element/webkitmouseforceup_event", "webkitmouseforceup")}}، {{domxref("Element/mousemove_event", "mousemove")}} و {{domxref("Element/mouseup_event", "mouseup")}} در دسترس است:
 
 - {{domxref("MouseEvent.webkitForce")}} {{non-standard_inline()}} {{ReadOnlyInline}}
-  - : The amount of pressure currently being applied to the trackpad/touchscreen.
+  - : میزان فشاری که در حال حاضر به ترک‌پد یا صفحه لمسی وارد می‌شود.
 
-## Constants
+## ثابت‌ها
 
-These constants are useful for determining the relative intensity of the pressure indicated by {{domxref("MouseEvent.webkitForce")}}:
+این ثابت‌ها برای تعیین شدت نسبی فشاری که {{domxref("MouseEvent.webkitForce")}} نشان می‌دهد مفید هستند:
 
 - {{domxref("MouseEvent.WEBKIT_FORCE_AT_MOUSE_DOWN_static", "MouseEvent.WEBKIT_FORCE_AT_MOUSE_DOWN")}} {{non-standard_inline}} {{ReadOnlyInline}}
-  - : Minimum force necessary for a normal click.
+  - : حداقل نیروی لازم برای یک کلیک معمولی.
 - {{domxref("MouseEvent.WEBKIT_FORCE_AT_FORCE_MOUSE_DOWN_static", "MouseEvent.WEBKIT_FORCE_AT_FORCE_MOUSE_DOWN")}} {{non-standard_inline}} {{ReadOnlyInline}}
-  - : Minimum force necessary for a force click.
+  - : حداقل نیروی لازم برای یک کلیک فشاری (force click).
 
-## Specifications
+## مشخصات
 
-_Not part of any specification._ Apple has [a description at the Mac Developer Library](https://developer.apple.com/library/archive/documentation/AppleApplications/Conceptual/SafariJSProgTopics/RespondingtoForceTouchEventsfromJavaScript.html).
+_این ویژگی بخشی از هیچ specification (مشخصات) رسمی نیست._ اپل [توضیحاتی در Mac Developer Library](https://developer.apple.com/library/archive/documentation/AppleApplications/Conceptual/SafariJSProgTopics/RespondingtoForceTouchEventsfromJavaScript.html) ارائه کرده است.
