@@ -1,9 +1,4 @@
----
-title: "Document: documentElement property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/documentElement"
-status: "needs-translation"
----
-
+```
 ---
 title: "Document: documentElement property"
 short-title: documentElement
@@ -14,15 +9,13 @@ browser-compat: api.Document.documentElement
 
 {{ApiRef("DOM")}}
 
-The **`documentElement`** read-only property of the {{domxref("Document")}} interface returns the
-{{domxref("Element")}} that is the root element of the {{domxref("document")}} (for
-example, the {{HTMLElement("html")}} element for HTML documents).
+خاصیت فقط‌خواندنی **`documentElement`** در رابط {{domxref("Document")}}، عنصر ریشه‌ی سند ({{domxref("document")}}) را برمی‌گرداند؛ برای مثال، عنصر {{HTMLElement("html")}} در اسناد HTML.
 
-## Value
+## مقدار
 
-An {{domxref("Element")}} object.
+یک شیء {{domxref("Element")}}.
 
-## Examples
+## مثال‌ها
 
 ```js
 const rootElement = document.documentElement;
@@ -35,17 +28,15 @@ for (const child of firstTier) {
 }
 ```
 
-## Notes
+## نکات
 
-For any non-empty HTML document, `documentElement` will always be an
-{{HTMLElement("html")}} element. For any non-empty XML document,
-`documentElement` will always be whatever element is the root element of the
-document.
+برای هر سند HTML غیرخالی، `documentElement` همیشه یک عنصر {{HTMLElement("html")}} خواهد بود. برای هر سند XML غیرخالی، `documentElement` همیشه همان عنصری خواهد بود که عنصر ریشه‌ی سند است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
+```
