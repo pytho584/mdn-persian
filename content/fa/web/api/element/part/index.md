@@ -1,7 +1,5 @@
 ---
 title: "Element: part property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/part"
-status: "needs-translation"
 ---
 
 ---
@@ -14,20 +12,17 @@ browser-compat: api.Element.part
 
 {{ ApiRef("DOM") }}
 
-The read-only **`part`** property of the {{domxref("Element")}} interface contains a {{domxref("DOMTokenList")}} object representing the part identifier(s) of the element. It reflects the element's [`part`](/en-US/docs/Web/HTML/Reference/Global_attributes/part) content attribute. These can be used to style parts of a shadow DOM, via the {{cssxref("::part")}} pseudo-element.
+ویژگی فقط‌خواندنی **`part`** در رابط {{domxref("Element")}} شامل یک شیء {{domxref("DOMTokenList")}} است که شناسه‌(های) part عنصر را نشان می‌دهد. این ویژگی، ویژگی محتوایی [`part`](/en-US/docs/Web/HTML/Reference/Global_attributes/part) عنصر را بازتاب می‌دهد. از این شناسه‌ها می‌توان برای استایل‌دهی به بخش‌های یک shadow DOM از طریق شبه‌عنصر {{cssxref("::part")}} استفاده کرد.
 
-## Value
+## مقدار
 
-A {{domxref("DOMTokenList")}} object. If the `part` attribute is not set or empty, it returns an empty `DOMTokenList`, i.e., a `DOMTokenList` with the `length` property equal to `0`.
+یک شیء {{domxref("DOMTokenList")}}. اگر ویژگی `part` تنظیم نشده باشد یا خالی باشد، یک `DOMTokenList` خالی برمی‌گرداند؛ یعنی یک `DOMTokenList` که ویژگی `length` آن برابر با `0` است.
 
-Although the `part` property itself is read-only in the sense that you can't replace the `DOMTokenList` object, you can still assign to the `part` property directly, which is equivalent to assigning to its {{domxref("DOMTokenList/value", "value")}} property. You can also modify the `DOMTokenList` object using the {{domxref("DOMTokenList/add", "add()")}}, {{domxref("DOMTokenList/remove", "remove()")}}, {{domxref("DOMTokenList/replace", "replace()")}}, and {{domxref("DOMTokenList/toggle", "toggle()")}} methods.
+اگرچه ویژگی `part` به خودی خود فقط‌خواندنی است، به این معنا که نمی‌توانید شیء `DOMTokenList` را جایگزین کنید، اما همچنان می‌توانید مستقیماً به ویژگی `part` مقداردهی کنید، که معادل مقداردهی به ویژگی {{domxref("DOMTokenList/value", "value")}} آن است. همچنین می‌توانید شیء `DOMTokenList` را با استفاده از متدهای {{domxref("DOMTokenList/add", "add()")}}، {{domxref("DOMTokenList/remove", "remove()")}}، {{domxref("DOMTokenList/replace", "replace()")}} و {{domxref("DOMTokenList/toggle", "toggle()")}} تغییر دهید.
 
-## Examples
+## نمونه‌ها
 
-The following excerpt is from our [shadow-part](https://mdn.github.io/web-components-examples/shadow-part/)
-example. Here the `part` attribute is used to find the shadow parts, and the
-`part` property is then used to change the part identifiers of each tab so
-the correct styling is applied to the active tab when tabs are clicked.
+نمونه زیر برگرفته از مثال [shadow-part](https://mdn.github.io/web-components-examples/shadow-part/) ما است. در اینجا از ویژگی `part` برای یافتن بخش‌های shadow استفاده می‌شود و سپس از ویژگی `part` برای تغییر شناسه‌های part هر زبانه استفاده می‌شود تا هنگام کلیک روی زبانه‌ها، استایل صحیح به زبانه فعال اعمال شود.
 
 ```js
 const tabs = [];
@@ -51,15 +46,15 @@ tabs.forEach((tab) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{cssxref("::part")}}
 - [part](/en-US/docs/Web/HTML/Reference/Global_attributes/part)
