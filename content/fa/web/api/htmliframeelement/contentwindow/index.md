@@ -1,11 +1,5 @@
 ---
 title: "HTMLIFrameElement: contentWindow property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/contentWindow"
-status: "needs-translation"
----
-
----
-title: "HTMLIFrameElement: contentWindow property"
 short-title: contentWindow
 slug: Web/API/HTMLIFrameElement/contentWindow
 page-type: web-api-instance-property
@@ -14,40 +8,40 @@ browser-compat: api.HTMLIFrameElement.contentWindow
 
 {{APIRef("HTML DOM")}}
 
-The **`contentWindow`** property returns the [Window](/en-US/docs/Web/API/Window) object of an [HTMLIFrameElement](/en-US/docs/Web/API/HTMLIFrameElement).
+ویژگی **`contentWindow`**، شیء [Window](/en-US/docs/Web/API/Window) مربوط به یک [HTMLIFrameElement](/en-US/docs/Web/API/HTMLIFrameElement) را برمی‌گرداند.
 
-This attribute is read-only.
+این ویژگی فقط‌خواندنی است.
 
-## Value
+## مقدار
 
-A [Window](/en-US/docs/Web/API/Window) object.
+یک شیء [Window](/en-US/docs/Web/API/Window).
 
-## Description
+## توضیحات
 
-Access to the {{domxref("Window")}} returned by `contentWindow` is subject to the rules defined by the [same-origin policy](/en-US/docs/Web/Security/Defenses/Same-origin_policy), meaning that if the iframe is same-origin with the parent, then the parent can access the iframe's document and its internal DOM, and if they are cross-origin, it gets very limited access to the window's attributes. See ["Cross-origin script API access"](/en-US/docs/Web/Security/Defenses/Same-origin_policy#cross-origin_script_api_access) for details.
+دسترسی به {{domxref("Window")}} که توسط `contentWindow` برگردانده می‌شود، تابع قوانین [خط‌مشی همان‌مبدأ](/en-US/docs/Web/Security/Defenses/Same-origin_policy) است؛ به این معنی که اگر iframe با والد خود هم‌مبدأ باشد، والد می‌تواند به سند iframe و DOM داخلی آن دسترسی داشته باشد و اگر ناهم‌مبدأ باشند، دسترسی بسیار محدودی به ویژگی‌های پنجره خواهد داشت. برای جزئیات به [«دسترسی به API اسکریپت در حالت ناهم‌مبدأ»](/en-US/docs/Web/Security/Defenses/Same-origin_policy#cross-origin_script_api_access) مراجعه کنید.
 
-Pages can also use this property to find out which iframe sent a message using {{domxref("Window.postMessage()")}}, by comparing it with the message event's {{domxref("MessageEvent.source", "source")}} property.
+صفحات همچنین می‌توانند از این ویژگی برای یافتن اینکه کدام iframe پیامی را با استفاده از {{domxref("Window.postMessage()")}} ارسال کرده است استفاده کنند؛ بدین صورت که این ویژگی را با ویژگی {{domxref("MessageEvent.source", "source")}} رویداد پیام مقایسه می‌کنند.
 
-## Examples
+## مثال‌ها
 
-### Accessing an iframe's document
+### دسترسی به سند یک iframe
 
-This example modifies the `style` attribute of the document body.
+این مثال ویژگی `style` بدنهٔ سند را تغییر می‌دهد.
 
-Note that this only works if the iframe's window is same-origin with its parent: otherwise attempting to access `contentWindow.document` will throw an exception.
+توجه داشته باشید که این کار تنها زمانی کار می‌کند که پنجرهٔ iframe با والد خود هم‌مبدأ باشد؛ در غیر این صورت تلاش برای دسترسی به `contentWindow.document` یک استثنا پرتاب می‌کند.
 
 ```js
 const iframe = document.querySelector("iframe").contentWindow;
 
 iframe.document.querySelector("body").style.backgroundColor = "blue";
-// this would turn the 1st iframe in document blue.
+// این کار اولین iframe در سند را آبی می‌کند.
 ```
 
-### Mapping message sources to iframes
+### نگاشت فرستندگان پیام به iframeها
 
-This example could run in a page that hosts several iframes, any of which can send it messages using {{domxref("Window.postMessage()")}}. When the page receives a message, it wants to know which iframe contains the window that sent the message.
+این مثال می‌تواند در صفحه‌ای اجرا شود که چندین iframe را میزبانی می‌کند و هر یک از آن‌ها می‌توانند با استفاده از {{domxref("Window.postMessage()")}} برای آن پیام ارسال کنند. وقتی صفحه پیامی دریافت می‌کند، می‌خواهد بداند کدام iframe حاوی پنجره‌ای است که پیام را ارسال کرده است.
 
-To do this, when it receives a message, the page first checks that the message was from the expected origin, and then finds the iframe that was the source of the message by comparing the message event's {{domxref("MessageEvent.source", "source")}} property with the iframe's `contentWindow` property.
+برای این کار، صفحه هنگام دریافت پیام، ابتدا بررسی می‌کند که پیام از مبدأ مورد انتظار آمده باشد و سپس با مقایسهٔ ویژگی {{domxref("MessageEvent.source", "source")}} رویداد پیام با ویژگی `contentWindow` هر iframe، iframe مبدأ پیام را پیدا می‌کند.
 
 ```js
 const expectedOrigin = "https://example.org";
@@ -65,10 +59,10 @@ window.addEventListener("message", (e) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
