@@ -1,11 +1,5 @@
 ---
 title: "DOMRectReadOnly: y property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly/y"
-status: "needs-translation"
----
-
----
-title: "DOMRectReadOnly: y property"
 short-title: y
 slug: Web/API/DOMRectReadOnly/y
 page-type: web-api-instance-property
@@ -14,20 +8,20 @@ browser-compat: api.DOMRectReadOnly.y
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The **`y`** read-only property of the **`DOMRectReadOnly`** interface represents the y coordinate of the `DOMRect`'s origin.
+ویژگی فقط‌خواندنی **`y`** در رابط **`DOMRectReadOnly`** مختصات `y` مبدأ `DOMRect` را نشان می‌دهد.
 
-## Value
+## مقدار
 
-A double.
+یک عدد اعشاری (double).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("DOMRect")}}
