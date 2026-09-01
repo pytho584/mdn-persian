@@ -1,7 +1,5 @@
 ---
 title: "FileSystemEntry"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemEntry"
-status: "needs-translation"
 ---
 
 ---
@@ -13,19 +11,19 @@ browser-compat: api.FileSystemEntry
 
 {{APIRef("File and Directory Entries API")}}
 
-The **`FileSystemEntry`** interface of the File and Directory Entries API represents a single entry in a file system. The entry can be a file or a directory (directories are represented by the {{domxref("FileSystemDirectoryEntry")}} interface). It includes methods for working with files—including copying, moving, removing, and reading files—as well as information about a file it points to—including the file name and its path from the root to the entry.
+رابط **`FileSystemEntry`** در «File and Directory Entries API» یک ورودی واحد در یک سیستم فایل را نشان می‌دهد. این ورودی می‌تواند یک فایل یا یک دایرکتوری باشد (دایرکتوری‌ها توسط رابط {{domxref("FileSystemDirectoryEntry")}} نشان داده می‌شوند). این رابط شامل روش‌هایی برای کار با فایل‌ها—از جمله کپی، جابجایی، حذف و خواندن فایل‌ها—و همچنین اطلاعاتی درباره فایلی که به آن اشاره می‌کند—از جمله نام فایل و مسیر آن از ریشه تا ورودی—است.
 
-## Basic concepts
+## مفاهیم پایه
 
-You don't create `FileSystemEntry` objects directly. Instead, you will receive an object based on this interface through other APIs. This interface serves as a base class for the {{domxref("FileSystemFileEntry")}} and {{domxref("FileSystemDirectoryEntry")}} interfaces, which provide features specific to file system entries representing files and directories, respectively.
+شما مستقیماً اشیاء `FileSystemEntry` را ایجاد نمی‌کنید. در عوض، از طریق سایر APIها، شیئی بر اساس این رابط دریافت خواهید کرد. این رابط به عنوان کلاس پایه برای رابط‌های {{domxref("FileSystemFileEntry")}} و {{domxref("FileSystemDirectoryEntry")}} عمل می‌کند که به ترتیب ویژگی‌های خاصی را برای ورودی‌های سیستم فایل که نمایانگر فایل‌ها و دایرکتوری‌ها هستند فراهم می‌کنند.
 
-The `FileSystemEntry` interface includes methods that you would expect for manipulating files and directories, but it also includes a convenient method for obtaining the URL of the entry: [`toURL()`](/en-US/docs/Web/API/FileSystemEntry/toURL). It also introduces a new URL scheme: `filesystem:`.
+رابط `FileSystemEntry` شامل روش‌هایی است که انتظار دارید برای دستکاری فایل‌ها و دایرکتوری‌ها وجود داشته باشد، اما همچنین شامل یک روش مناسب برای به دست آوردن URL ورودی است: [`toURL()`](/en-US/docs/Web/API/FileSystemEntry/toURL). این رابط همچنین یک طرح URL جدید معرفی می‌کند: `filesystem:`.
 
-You can use the `filesystem:` scheme on Google Chrome to see all the files and folders that are stored in the origin of your app. Just use `filesystem:` scheme for the root directory of the origin of the app. For example, if your app is in [`http://www.example.com`](https://www.example.com/), open `filesystem:http://www.example.com/temporary/` in a tab. Chrome shows a read-only list of all the files and folders stored the origin of your app.
+می‌توانید از طرح `filesystem:` در گوگل کروم برای مشاهده همه فایل‌ها و پوشه‌هایی که در مبدأ (origin) برنامه‌تان ذخیره شده‌اند استفاده کنید. فقط از طرح `filesystem:` برای دایرکتوری ریشه مبدأ برنامه استفاده کنید. به عنوان مثال، اگر برنامه شما در [`http://www.example.com`](https://www.example.com/) است، `filesystem:http://www.example.com/temporary/` را در یک تب باز کنید. کروم یک فهرست فقط‌خواندنی از همه فایل‌ها و پوشه‌های ذخیره‌شده در مبدأ برنامه شما نشان می‌دهد.
 
-### Example
+### مثال
 
-To see an example of how `toURL()` works, see the [method description](/en-US/docs/Web/API/FileSystemEntry/toURL). The snippet below shows you how you can remove a file by name.
+برای مشاهده نمونه‌ای از نحوه کارکرد `toURL()`، به [توضیحات روش](/en-US/docs/Web/API/FileSystemEntry/toURL) مراجعه کنید. قطعه کد زیر نشان می‌دهد که چگونه می‌توانید یک فایل را با نام حذف کنید.
 
 ```js
 // Taking care of the browser-specific prefixes.
@@ -54,47 +52,47 @@ window.requestFileSystem(
 );
 ```
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface provides the following properties._
+_این رابط ویژگی‌های زیر را فراهم می‌کند._
 
 - {{domxref("FileSystemEntry.filesystem", "filesystem")}} {{ReadOnlyInline}}
-  - : A {{domxref("FileSystem")}} object representing the file system in which the entry is located.
+  - : یک شیء {{domxref("FileSystem")}} که نشان‌دهنده سیستم فایلی است که ورودی در آن قرار دارد.
 - {{domxref("FileSystemEntry.fullPath", "fullPath")}} {{ReadOnlyInline}}
-  - : A string which provides the full, absolute path from the file system's root to the entry; it can also be thought of as a path which is relative to the root directory, prepended with a "/" character.
+  - : رشته‌ای که مسیر کامل و مطلق از ریشه سیستم فایل تا ورودی را ارائه می‌دهد؛ همچنین می‌توان آن را به عنوان مسیری نسبی نسبت به دایرکتوری ریشه در نظر گرفت که در ابتدای آن کاراکتر "/" قرار دارد.
 - {{domxref("FileSystemEntry.isDirectory", "isDirectory")}} {{ReadOnlyInline}}
-  - : A boolean value which is `true` if the entry represents a directory; otherwise, it's `false`.
+  - : یک مقدار بولی که اگر ورودی نشان‌دهنده یک دایرکتوری باشد `true` است؛ در غیر این صورت، `false` است.
 - {{domxref("FileSystemEntry.isFile", "isFile")}} {{ReadOnlyInline}}
-  - : A Boolean which is `true` if the entry represents a file. If it's not a file, this value is `false`.
+  - : یک مقدار بولی که اگر ورودی نشان‌دهنده یک فایل باشد `true` است. اگر فایل نباشد، این مقدار `false` است.
 - {{domxref("FileSystemEntry.name", "name")}} {{ReadOnlyInline}}
-  - : A string containing the name of the entry (the final part of the path, after the last "/" character).
+  - : رشته‌ای شامل نام ورودی (بخش پایانی مسیر، بعد از آخرین کاراکتر "/").
 
-## Instance methods
+## روش‌های نمونه
 
-_This interface defines the following methods._
+_این رابط روش‌های زیر را تعریف می‌کند._
 
 - {{domxref("FileSystemEntry.copyTo", "copyTo()")}} {{Deprecated_Inline}} {{Non-standard_Inline}}
-  - : Copies the file or directory to a new location on the file system.
+  - : فایل یا دایرکتوری را به مکان جدیدی در سیستم فایل کپی می‌کند.
 - {{domxref("FileSystemEntry.getMetadata", "getMetadata()")}} {{Deprecated_Inline}} {{Non-standard_Inline}}
-  - : Obtains metadata about the file, such as its modification date and size.
+  - : فراداده (metadata) مربوط به فایل، مانند تاریخ تغییر و اندازه آن را به دست می‌آورد.
 - {{domxref("FileSystemEntry.getParent", "getParent()")}}
-  - : Returns a {{domxref("FileSystemDirectoryEntry")}} representing the entry's parent directory.
+  - : یک {{domxref("FileSystemDirectoryEntry")}} که نمایانگر دایرکتوری والد ورودی است را برمی‌گرداند.
 - {{domxref("FileSystemEntry.moveTo", "moveTo()")}} {{Deprecated_Inline}} {{Non-standard_Inline}}
-  - : Moves the file or directory to a new location on the file system, or renames the file or directory.
+  - : فایل یا دایرکتوری را به مکان جدیدی در سیستم فایل منتقل می‌کند، یا فایل یا دایرکتوری را تغییر نام می‌دهد.
 - {{domxref("FileSystemEntry.remove", "remove()")}} {{Deprecated_Inline}} {{Non-standard_Inline}}
-  - : Removes the specified file or directory. You can only remove directories which are empty.
+  - : فایل یا دایرکتوری مشخص‌شده را حذف می‌کند. شما فقط می‌توانید دایرکتوری‌هایی را حذف کنید که خالی هستند.
 - {{domxref("FileSystemEntry.toURL", "toURL()")}} {{Deprecated_Inline}} {{Non-standard_Inline}}
-  - : Creates and returns a URL which identifies the entry. This URL uses the URL scheme `"filesystem:"`.
+  - : یک URL که ورودی را شناسایی می‌کند ایجاد و برمی‌گرداند. این URL از طرح URL `"filesystem:"` استفاده می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [File and Directory Entries API](/en-US/docs/Web/API/File_and_Directory_Entries_API)
-- {{domxref("FileSystemFileEntry")}} and {{domxref("FileSystemDirectoryEntry")}} are based on `FileSystemEntry`.
+- {{domxref("FileSystemFileEntry")}} و {{domxref("FileSystemDirectoryEntry")}} بر اساس `FileSystemEntry` هستند.
