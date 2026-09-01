@@ -1,11 +1,5 @@
 ---
 title: "GeolocationCoordinates: heading property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GeolocationCoordinates/heading"
-status: "needs-translation"
----
-
----
-title: "GeolocationCoordinates: heading property"
 short-title: heading
 slug: Web/API/GeolocationCoordinates/heading
 page-type: web-api-instance-property
@@ -14,21 +8,21 @@ browser-compat: api.GeolocationCoordinates.heading
 
 {{securecontext_header}}{{APIRef("Geolocation API")}}
 
-The **`heading`** read-only property of the {{domxref("GeolocationCoordinates")}} interface is a `double` representing the direction in which the device is traveling. This value, specified in degrees, indicates how far off from heading due north the device is. `0` degrees represents true north, and the direction is determined clockwise (which means that east is `90` degrees and west is `270` degrees). If {{domxref("GeolocationCoordinates.speed")}} is `0` or the device is not able to provide heading information, `heading` is `null`.
+ویژگی فقط‌خواندنی **`heading`** در رابط {{domxref("GeolocationCoordinates")}} یک `double` است که جهتی را نشان می‌دهد که دستگاه در آن در حال حرکت است. این مقدار، که بر حسب درجه بیان می‌شود، میزان انحراف دستگاه از جهت شمال حقیقی را مشخص می‌کند. `0` درجه نمایانگر شمال حقیقی است و جهت به‌صورت ساعت‌گرد تعیین می‌شود (به این معنی که شرق `90` درجه و غرب `270` درجه است). اگر {{domxref("GeolocationCoordinates.speed")}} برابر `0` باشد یا دستگاه نتواند اطلاعات جهت را فراهم کند، `heading` برابر `null` خواهد بود.
 
-## Value
+## مقدار
 
-A `double` representing the direction in which the device is traveling.
+یک `double` که جهت حرکت دستگاه را نشان می‌دهد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Geolocation API](/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API)
+- [استفاده از Geolocation API](/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API)
 - {{domxref("GeolocationCoordinates")}}
