@@ -1,11 +1,5 @@
 ---
 title: "ElementInternals: setValidity() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/setValidity"
-status: "needs-translation"
----
-
----
-title: "ElementInternals: setValidity() method"
 short-title: setValidity()
 slug: Web/API/ElementInternals/setValidity
 page-type: web-api-instance-method
@@ -14,9 +8,9 @@ browser-compat: api.ElementInternals.setValidity
 
 {{APIRef("Web Components")}}
 
-The **`setValidity()`** method of the {{domxref("ElementInternals")}} interface sets the validity of the element.
+متد **`setValidity()`** از رابط {{domxref("ElementInternals")}} وضعیت اعتبار (validity) عنصر را تنظیم می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 setValidity(flags)
@@ -24,70 +18,70 @@ setValidity(flags, message)
 setValidity(flags, message, anchor)
 ```
 
-### Parameters
+### پارامترها
 
 - `flags` {{Optional_Inline}}
-  - : A dictionary object containing one or more flags indicating the validity state of the element:
+  - : یک شیء دیکشنری حاوی یک یا چند پرچم که وضعیت اعتبار عنصر را نشان می‌دهد:
     - `valueMissing`
-      - : A boolean value that is `true` if the element has a [`required`](/en-US/docs/Web/HTML/Reference/Elements/input#required) attribute, but no value, or `false` otherwise. If `true`, the element matches the {{cssxref(":invalid")}} CSS pseudo-class.
+      - : یک مقدار بولی که اگر عنصر دارای ویژگی [`required`](/en-US/docs/Web/HTML/Reference/Elements/input#required) باشد اما مقداری نداشته باشد `true` است، در غیر این صورت `false`. اگر `true` باشد، عنصر با کلاس شبه- CSS {{cssxref(":invalid")}} مطابقت دارد.
     - `typeMismatch`
-      - : A boolean value that is `true` if the value is not in the required syntax (when [`type`](/en-US/docs/Web/HTML/Reference/Elements/input#type) is `email` or `url`), or `false` if the syntax is correct. If `true`, the element matches the {{cssxref(":invalid")}} CSS pseudo-class.
+      - : یک مقدار بولی که اگر مقدار در نحو (syntax) مورد نیاز نباشد (زمانی که [`type`](/en-US/docs/Web/HTML/Reference/Elements/input#type) برابر `email` یا `url` باشد) `true` است، یا اگر نحو صحیح باشد `false`. اگر `true` باشد، عنصر با کلاس شبه- CSS {{cssxref(":invalid")}} مطابقت دارد.
     - `patternMismatch`
-      - : A boolean value that is `true` if the value does not match the specified [`pattern`](/en-US/docs/Web/HTML/Reference/Elements/input#pattern), and `false` if it does match. If `true`, the element matches the {{cssxref(":invalid")}} CSS pseudo-class.
+      - : یک مقدار بولی که اگر مقدار با [`pattern`](/en-US/docs/Web/HTML/Reference/Elements/input#pattern) مشخص شده مطابقت نداشته باشد `true` است، و اگر مطابقت داشته باشد `false`. اگر `true` باشد، عنصر با کلاس شبه- CSS {{cssxref(":invalid")}} مطابقت دارد.
     - `tooLong`
-      - : A boolean value that is `true` if the value exceeds the specified `maxlength` for {{domxref("HTMLInputElement")}} or {{domxref("HTMLTextAreaElement")}} objects, or `false` if its length is less than or equal to the maximum length. If `true`, the element matches the {{cssxref(":invalid")}} and {{cssxref(":out-of-range")}} CSS pseudo-classes.
+      - : یک مقدار بولی که اگر مقدار از `maxlength` مشخص شده برای اشیاء {{domxref("HTMLInputElement")}} یا {{domxref("HTMLTextAreaElement")}} تجاوز کند `true` است، یا اگر طول آن کمتر یا برابر با حداکثر طول باشد `false`. اگر `true` باشد، عنصر با کلاس‌های شبه- CSS {{cssxref(":invalid")}} و {{cssxref(":out-of-range")}} مطابقت دارد.
     - `tooShort`
-      - : A boolean value that is `true` if the value fails to meet the specified `minlength` for {{domxref("HTMLInputElement")}} or {{domxref("HTMLTextAreaElement")}} objects, or `false` if its length is greater than or equal to the minimum length. If `true`, the element matches the {{cssxref(":invalid")}} and {{cssxref(":out-of-range")}} CSS pseudo-classes.
+      - : یک مقدار بولی که اگر مقدار به `minlength` مشخص شده برای اشیاء {{domxref("HTMLInputElement")}} یا {{domxref("HTMLTextAreaElement")}} نرسد `true` است، یا اگر طول آن بزرگتر یا برابر با حداقل طول باشد `false`. اگر `true` باشد، عنصر با کلاس‌های شبه- CSS {{cssxref(":invalid")}} و {{cssxref(":out-of-range")}} مطابقت دارد.
     - `rangeUnderflow`
-      - : A boolean value that is `true` if the value is less than the minimum specified by the [`min`](/en-US/docs/Web/HTML/Reference/Elements/input#min) attribute, or `false` if it is greater than or equal to the minimum. If `true`, the element matches the {{cssxref(":invalid")}} and {{cssxref(":out-of-range")}} CSS pseudo-classes.
+      - : یک مقدار بولی که اگر مقدار کمتر از حداقل مشخص شده توسط ویژگی [`min`](/en-US/docs/Web/HTML/Reference/Elements/input#min) باشد `true` است، یا اگر بزرگتر یا برابر با حداقل باشد `false`. اگر `true` باشد، عنصر با کلاس‌های شبه- CSS {{cssxref(":invalid")}} و {{cssxref(":out-of-range")}} مطابقت دارد.
     - `rangeOverflow`
-      - : A boolean value that is `true` if the value is greater than the maximum specified by the [`max`](/en-US/docs/Web/HTML/Reference/Elements/input#max) attribute, or `false` if it is less than or equal to the maximum. If `true`, the element matches the {{cssxref(":invalid")}} and {{cssxref(":out-of-range")}} and CSS pseudo-classes.
+      - : یک مقدار بولی که اگر مقدار بیشتر از حداکثر مشخص شده توسط ویژگی [`max`](/en-US/docs/Web/HTML/Reference/Elements/input#max) باشد `true` است، یا اگر کمتر یا برابر با حداکثر باشد `false`. اگر `true` باشد، عنصر با کلاس‌های شبه- CSS {{cssxref(":invalid")}} و {{cssxref(":out-of-range")}} مطابقت دارد.
     - `stepMismatch`
-      - : A boolean value that is `true` if the value does not fit the rules determined by the [`step`](/en-US/docs/Web/HTML/Reference/Elements/input#step) attribute (that is, it's not evenly divisible by the step value), or `false` if it does fit the step rule. If `true`, the element matches the {{cssxref(":invalid")}} and {{cssxref(":out-of-range")}} CSS pseudo-classes.
+      - : یک مقدار بولی که اگر مقدار با قوانین تعیین شده توسط ویژگی [`step`](/en-US/docs/Web/HTML/Reference/Elements/input#step) مطابقت نداشته باشد (یعنی به طور مساوی بر مقدار گام تقسیم نشود) `true` است، یا اگر با قانون گام مطابقت داشته باشد `false`. اگر `true` باشد، عنصر با کلاس‌های شبه- CSS {{cssxref(":invalid")}} و {{cssxref(":out-of-range")}} مطابقت دارد.
     - `badInput`
-      - : A boolean value that is `true` if the user has provided input that the browser is unable to convert.
+      - : یک مقدار بولی که اگر کاربر ورودی‌ای ارائه کرده باشد که مرورگر قادر به تبدیل آن نیست `true` است.
     - `customError`
-      - : A boolean value indicating whether the element's custom validity message has been set to a non-empty string by calling the element's {{domxref('HTMLInputElement.setCustomValidity', 'setCustomValidity()')}} method.
+      - : یک مقدار بولی که نشان می‌دهد آیا پیام اعتبار سفارشی عنصر با فراخوانی متد {{domxref('HTMLInputElement.setCustomValidity', 'setCustomValidity()')}} عنصر روی یک رشته غیر خالی تنظیم شده است یا خیر.
 
     > [!NOTE]
-    > To set all flags to `false`, indicating that this element passes all constraints validation, pass in an empty object `{}`. In this case, you do not need to also pass a `message`.
+    > برای تنظیم همه پرچم‌ها روی `false`، که نشان می‌دهد این عنصر از تمام قوانین اعتبارسنجی عبور می‌کند، یک شیء خالی `{}` ارسال کنید. در این حالت، نیازی به ارسال `message` نیز ندارید.
 
 - `message` {{Optional_Inline}}
-  - : A string containing a message, which will be set if any `flags` are `true`. This parameter is only optional if all `flags` are `false`.
+  - : یک رشته حاوی یک پیام که اگر هر یک از `flags`ها `true` باشند تنظیم می‌شود. این پارامتر فقط در صورتی اختیاری است که همه `flags`ها `false` باشند.
 - `anchor` {{Optional_Inline}}
-  - : An {{domxref("HTMLElement")}} which can be used by the user agent to report problems with this form submission.
+  - : یک {{domxref("HTMLElement")}} که می‌تواند توسط عامل کاربر (user agent) برای گزارش مشکلات مربوط به این ارسال فرم استفاده شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Thrown if the element does not have its `formAssociated` property set to `true`.
+  - : اگر عنصر خاصیت `formAssociated` خود را روی `true` تنظیم نکرده باشد، پرتاب می‌شود.
 - {{jsxref("TypeError")}}
-  - : Thrown if one or more `flags` is `true`.
+  - : اگر یک یا چند `flags` `true` باشند، پرتاب می‌شود.
 - `NotFoundError` {{domxref("DOMException")}}
-  - : Thrown if `anchor` is given, but the anchor is not a shadow-including descendant of the element.
+  - : اگر `anchor` داده شده باشد، اما لنگر (anchor) یک فرزند سایه-شامل (shadow-including descendant) از عنصر نباشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-In the following example `setValidity` is called with an empty `flags` parameter to indicate that the element meets constraint validation rules.
+در مثال زیر، `setValidity` با یک پارامتر `flags` خالی فراخوانی می‌شود تا نشان دهد عنصر با قوانین اعتبارسنجی مطابقت دارد.
 
 ```js
 this.internals_.setValidity({});
 ```
 
-In the following example `setValidity` is called with the flag `valueMissing` set to `true`. A `message` parameter must then also be passed containing a message.
+در مثال زیر، `setValidity` با پرچم `valueMissing` تنظیم شده روی `true` فراخوانی می‌شود. سپس باید یک پارامتر `message` حاوی یک پیام نیز ارسال شود.
 
 ```js
 this.internals_.setValidity({ valueMissing: true }, "my message");
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
