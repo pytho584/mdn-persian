@@ -1,11 +1,5 @@
 ---
 title: "HTMLInputElement: alt property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/alt"
-status: "needs-translation"
----
-
----
-title: "HTMLInputElement: alt property"
 short-title: alt
 slug: Web/API/HTMLInputElement/alt
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.HTMLInputElement.alt
 
 {{APIRef("HTML DOM")}}
 
-The **`alt`** property of the {{DOMxRef("HTMLInputElement")}} interface defines the textual label for the button for users and user agents who cannot use the image. It reflects the {{htmlelement("input")}} element's [`alt`](/en-US/docs/Web/HTML/Reference/Elements/input#alt) attribute.
+خاصیت **`alt`** از اینترفیس {{DOMxRef("HTMLInputElement")}} برچسب متنی دکمه را برای کاربران و عامل‌های کاربری که نمی‌توانند از تصویر استفاده کنند تعریف می‌کند. این ویژگی منعکس‌کنندهٔ صفت [`alt`](/en-US/docs/Web/HTML/Reference/Elements/input#alt) در عنصر {{htmlelement("input")}} است.
 
-The `alt` property is valid for the [`image`](/en-US/docs/Web/HTML/Reference/Elements/input/image) type only. It should be a non-empty string giving the label that would be appropriate for an equivalent button if the image was unavailable.
+خاصیت `alt` فقط برای نوع [`image`](/en-US/docs/Web/HTML/Reference/Elements/input/image) معتبر است. باید یک رشتهٔ غیرخالی باشد که برچسب مناسب برای یک دکمهٔ معادل در صورت عدم دسترسی به تصویر را ارائه دهد.
 
-## Value
+## مقدار
 
-A string.
+یک رشته (string).
 
-## Examples
+## مثال‌ها
 
 ```js
 const inputElement = document.getElementById("imageButton");
@@ -30,20 +24,20 @@ console.log(inputElement.alt);
 inputElement.alt = "A much better description";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{DOMXref("HTMLImageElement.alt")}}
 - {{DOMXref("HTMLButtonElement")}}
 - {{HTMLElement("button")}}
 - {{HTMLElement("input")}}
 - {{HTMLElement("img")}}
-- [Good alt text, bad alt text — Making your content perceivable](https://www.wcag.com/blog/good-alt-text-bad-alt-text-making-your-content-perceivable/) on WCAG.com (2021)
-- [An alt Decision Tree](https://www.w3.org/WAI/tutorials/images/decision-tree/) on W3C Web Accessibility Initiative (WAI)
+- [متن alt خوب، متن alt بد — قابل درک کردن محتوای خود](https://www.wcag.com/blog/good-alt-text-bad-alt-text-making-your-content-perceivable/) در WCAG.com (2021)
+- [درخت تصمیم‌گیری برای alt](https://www.w3.org/WAI/tutorials/images/decision-tree/) در ابتکار دسترسی وب (WAI) کنسرسیوم وب جهان‌گستر (W3C)
