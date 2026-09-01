@@ -1,10 +1,4 @@
 ---
-title: "CSSSkew"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSSkew"
-status: "needs-translation"
----
-
----
 title: CSSSkew
 slug: Web/API/CSSSkew
 page-type: web-api-interface
@@ -13,36 +7,36 @@ browser-compat: api.CSSSkew
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`CSSSkew`** interface of the [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Object_Model) represents the {{cssxref("transform-function/skew", "skew()")}} value of the individual {{CSSXRef('transform')}} property in CSS.
+**`CSSSkew`** رابط [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Object_Model) مقدار {{cssxref("transform-function/skew", "skew()")}} ویژگی {{CSSXRef("transform")}} در CSS را نشان می‌دهد.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("CSSSkew.CSSSkew", "CSSSkew()")}}
-  - : Creates a new `CSSSkew` object.
+  - : یک شیء `CSSSkew` جدید ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Also inherits properties from its parent interface, {{DOMxRef("CSSTransformComponent")}}._
+_همچنین ویژگی‌های رابط والد خود، {{DOMxRef("CSSTransformComponent")}} را به ارث می‌برد._
 
-- {{domxref('CSSSkew.ax','ax')}}
-  - : Returns or sets the x-axis value.
-- {{domxref('CSSSkew.ay','ay')}}
-  - : Returns or sets the y-axis value.
+- {{domxref('CSSSkew.ax', 'ax')}}
+  - : مقدار محور x را برمی‌گرداند یا تنظیم می‌کند.
+- {{domxref('CSSSkew.ay', 'ay')}}
+  - : مقدار محور y را برمی‌گرداند یا تنظیم می‌کند.
 
-## Instance methods
+## روش‌های نمونه
 
-_Also inherits methods from its parent interface, {{DOMxRef("CSSTransformComponent")}}._
+_همچنین روش‌های رابط والد خود، {{DOMxRef("CSSTransformComponent")}} را به ارث می‌برد._
 
-## Examples
+## مثال‌ها
 
-To Do
+待编写
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
