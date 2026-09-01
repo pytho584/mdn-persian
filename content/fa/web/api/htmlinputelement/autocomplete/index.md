@@ -1,11 +1,5 @@
 ---
 title: "HTMLInputElement: autocomplete property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/autocomplete"
-status: "needs-translation"
----
-
----
-title: "HTMLInputElement: autocomplete property"
 short-title: autocomplete
 slug: Web/API/HTMLInputElement/autocomplete
 page-type: web-api-instance-property
@@ -14,31 +8,31 @@ browser-compat: api.HTMLInputElement.autocomplete
 
 {{ APIRef("HTML DOM") }}
 
-The **`autocomplete`** property of the {{DOMxRef("HTMLInputElement")}} interface indicates whether the value of the control can be automatically completed by the browser. It reflects the {{htmlelement("input")}} element's [`autocomplete`](/en-US/docs/Web/HTML/Reference/Attributes/autocomplete) attribute.
+ویژگی **`autocomplete`** در رابط {{DOMxRef("HTMLInputElement")}} مشخص می‌کند که آیا مقدار کنترل می‌تواند توسط مرورگر به‌طور خودکار تکمیل شود. این ویژگی منعکس‌کننده صفت [`autocomplete`](/en-US/docs/Web/HTML/Reference/Attributes/autocomplete) عنصر {{htmlelement("input")}} است.
 
-## Value
+## مقدار
 
-A string; the value of the `autocomplete` attribute (`"on"`, `"off"`, a [`<token-list>`](/en-US/docs/Web/HTML/Reference/Attributes/autocomplete#token_list_tokens)), or the empty string `""` if unspecified.
+یک رشته؛ مقدار صفت `autocomplete` (`"on"`، `"off"`، یک [`<token-list>`](/en-US/docs/Web/HTML/Reference/Attributes/autocomplete#token_list_tokens))، یا رشته خالی `""` در صورت عدم تعیین.
 
-## Examples
+## مثال‌ها
 
 ```js
 const inputElement = document.getElementById("name");
 console.log(inputElement.autocomplete);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{HTMLElement("input")}}
-- {{DOMxRef("HTMLInputElement.value")}}
-- HTML [`autocomplete`](/en-US/docs/Web/HTML/Reference/Attributes/autocomplete) attribute
-- ARIA [`aria-autocomplete`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-autocomplete) attribute
-- [Turning off autocompletion](/en-US/docs/Web/Security/Practical_implementation_guides/Turning_off_form_autocompletion)
+- عنصر {{HTMLElement("input")}}
+- ویژگی {{DOMxRef("HTMLInputElement.value")}}
+- صفت HTML [`autocomplete`](/en-US/docs/Web/HTML/Reference/Attributes/autocomplete)
+- صفت ARIA [`aria-autocomplete`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-autocomplete)
+- [غیرفعال‌سازی تکمیل خودکار](/en-US/docs/Web/Security/Practical_implementation_guides/Turning_off_form_autocompletion)
