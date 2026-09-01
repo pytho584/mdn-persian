@@ -1,11 +1,5 @@
 ---
 title: "HTMLLabelElement: form property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLLabelElement/form"
-status: "needs-translation"
----
-
----
-title: "HTMLLabelElement: form property"
 short-title: form
 slug: Web/API/HTMLLabelElement/form
 page-type: web-api-instance-property
@@ -14,26 +8,26 @@ browser-compat: api.HTMLLabelElement.form
 
 {{APIRef("HTML DOM")}}
 
-The **`form`** read-only property of the {{domxref("HTMLLabelElement")}} interface returns an {{domxref("HTMLFormElement")}} object that owns the {{domxref("HTMLLabelElement.control", "control")}} associated with this {{HTMLElement("label")}}, or `null` if this label is not associated with a [labelable](/en-US/docs/Web/HTML/Guides/Content_categories#labelable) [form-associated](/en-US/docs/Web/HTML/Guides/Content_categories#form-associated_content) element ({{htmlelement("button")}}, {{htmlelement("input")}}, {{htmlelement("output")}}, {{htmlelement("select")}}, {{htmlelement("textarea")}}, or [form-associated custom elements](https://html.spec.whatwg.org/multipage/custom-elements.html#form-associated-custom-element)) that is owned by a form.
+ویژگی فقط‌خواندنی **`form`** در رابط {{domxref("HTMLLabelElement")}}، یک شیء {{domxref("HTMLFormElement")}} برمی‌گرداند که مالک {{domxref("HTMLLabelElement.control", "کنترل")}} مرتبط با این {{HTMLElement("label")}} است، یا اگر این برچسب با هیچ عنصر [قابل برچسب‌گذاری](/en-US/docs/Web/HTML/Guides/Content_categories#labelable) [مرتبط با فرم](/en-US/docs/Web/HTML/Guides/Content_categories#form-associated_content) (شامل {{htmlelement("button")}}، {{htmlelement("input")}}، {{htmlelement("output")}}، {{htmlelement("select")}}، {{htmlelement("textarea")}} یا [عناصر سفارشی مرتبط با فرم](https://html.spec.whatwg.org/multipage/custom-elements.html#form-associated-custom-element)) که متعلق به یک فرم است، مرتبط نباشد، مقدار `null` را برمی‌گرداند.
 
-Unlike [form-associated elements](/en-US/docs/Web/HTML/Guides/Content_categories#form-associated_content), the `<label>` element does not have a [`form`](/en-US/docs/Web/HTML/Reference/Attributes/form) attribute. This property does not reflect any HTML attribute, but is just a shortcut for `label.control.form`.
+برخلاف [عناصر مرتبط با فرم](/en-US/docs/Web/HTML/Guides/Content_categories#form-associated_content)، عنصر `<label>` ویژگی [`form`](/en-US/docs/Web/HTML/Reference/Attributes/form) ندارد. این ویژگی هیچ ویژگی HTML را بازتاب نمی‌دهد و صرفاً یک میان‌بر برای `label.control.form` است.
 
-## Value
+## مقدار
 
-An {{domxref("HTMLFormElement")}} or `null`.
+یک {{domxref("HTMLFormElement")}} یا `null`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("HTMLLabelElement")}}
 - {{domxref("HTMLInputElement.form")}}
 - {{domxref("HTMLFormElement")}}
 - {{HTMLElement("label")}}
-- [HTML forms guide](/en-US/docs/Learn_web_development/Extensions/Forms)
+- [راهنمای فرم‌های HTML](/en-US/docs/Learn_web_development/Extensions/Forms)
