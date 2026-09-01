@@ -1,11 +1,5 @@
 ---
 title: "Document: querySelectorAll() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll"
-status: "needs-translation"
----
-
----
-title: "Document: querySelectorAll() method"
 short-title: querySelectorAll()
 slug: Web/API/Document/querySelectorAll
 page-type: web-api-instance-method
@@ -14,91 +8,74 @@ browser-compat: api.Document.querySelectorAll
 
 {{APIRef("DOM")}}
 
-The {{domxref("Document")}} method **`querySelectorAll()`**
-returns a static (not live) {{domxref("NodeList")}} representing a list of the
-document's elements that match the specified group of selectors.
+متد **`querySelectorAll()`** از {{domxref("Document")}} یک {{domxref("NodeList")}} ایستا (نه زنده) برمی‌گرداند که لیستی از عناصر سند را نشان می‌دهد که با گروه انتخابگرهای مشخص شده مطابقت دارند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 querySelectorAll(selectors)
 ```
 
-### Parameters
+### پارامترها
 
 - `selectors`
-  - : A string containing one or more selectors to match. This string
-    must be a valid CSS selector string; if it isn't, a `SyntaxError` exception
-    is thrown.
+  - : یک رشته شامل یک یا چند انتخابگر برای تطبیق. این رشته باید یک رشته انتخابگر CSS معتبر باشد؛ در غیر این صورت، یک استثنای `SyntaxError` پرتاب می‌شود.
 
-    Note that the HTML specification does not require attribute values to be valid CSS identifiers. If a [`class`](/en-US/docs/Web/HTML/Reference/Global_attributes/class) or [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) attribute value is not a valid CSS identifier, then you must escape it before using it in a selector, either by calling {{domxref("CSS.escape_static", "CSS.escape()")}} on the value, or using one of the techniques described in [Escaping characters](/en-US/docs/Web/CSS/Reference/Values/ident#escaping_characters). See [Escaping attribute values](#escaping_attribute_values) for an example.
+    توجه داشته باشید که مشخصات HTML الزامی نمی‌کند که مقادیر ویژگی‌ها شناسه‌های CSS معتبر باشند. اگر مقدار یک ویژگی [`class`](/en-US/docs/Web/HTML/Reference/Global_attributes/class) یا [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) یک شناسه CSS معتبر نباشد، باید قبل از استفاده از آن در یک انتخابگر، آن را escape کنید، یا با فراخوانی {{domxref("CSS.escape_static", "CSS.escape()")}} روی مقدار، یا با استفاده از یکی از تکنیک‌های توضیح داده شده در [escape کردن کاراکترها](/en-US/docs/Web/CSS/Reference/Values/ident#escaping_characters). برای مثال به [escape کردن مقادیر ویژگی‌ها](#escaping_attribute_values) مراجعه کنید.
 
-### Return value
+### مقدار بازگشتی
 
-A non-live {{domxref("NodeList")}} containing one {{domxref("Element")}} object for
-each element that matches at least one of the specified selectors or an empty
-{{domxref("NodeList")}} in case of no matches. The elements are in document order — that is, parents before children, earlier siblings before later siblings.
+یک {{domxref("NodeList")}} غیر زنده که شامل یک شی {{domxref("Element")}} برای هر عنصری است که با حداقل یکی از انتخابگرهای مشخص شده مطابقت دارد، یا یک {{domxref("NodeList")}} خالی در صورت عدم تطابق. عناصر به ترتیب سند هستند – یعنی والدین قبل از فرزندان، خواهر و برادرهای قبلی قبل از بعدی.
 
 > [!NOTE]
-> If the specified `selectors` include a [CSS pseudo-element](/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-elements), the returned list
-> is always empty.
+> اگر `selectors` مشخص شده شامل یک [شبه‌عنصر CSS](/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-elements) باشد، لیست برگشتی همیشه خالی است.
 
-### Exceptions
+### استثناها
 
 - `SyntaxError` {{domxref("DOMException")}}
-  - : Thrown if the syntax of the specified `selectors` string is not valid.
+  - : اگر نحو رشته `selectors` مشخص شده معتبر نباشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Obtaining a list of matches
+### به دست آوردن لیستی از تطابق‌ها
 
-To obtain a {{domxref("NodeList")}} of all of the {{HTMLElement("p")}} elements in the
-document:
+برای به دست آوردن یک {{domxref("NodeList")}} از تمام عناصر {{HTMLElement("p")}} در سند:
 
 ```js
 const matches = document.querySelectorAll("p");
 ```
 
-This example returns a list of all {{HTMLElement("div")}} elements within the document
-with a class of either `note` or `alert`:
+این مثال لیستی از تمام عناصر {{HTMLElement("div")}} درون سند را با کلاس `note` یا `alert` برمی‌گرداند:
 
 ```js
 const matches = document.querySelectorAll("div.note, div.alert");
 ```
 
-Here, we get a list of `<p>` elements whose immediate parent element
-is a {{HTMLElement("div")}} with the class `highlighted` and which are
-located inside a container whose ID is `test`.
+در اینجا، ما لیستی از عناصر `<p>` را دریافت می‌کنیم که عنصر والد بلافصل آنها یک {{HTMLElement("div")}} با کلاس `highlighted` است و درون یک ظرف با شناسه `test` قرار دارند.
 
 ```js
 const container = document.querySelector("#test");
 const matches = container.querySelectorAll("div.highlighted > p");
 ```
 
-This example uses an [attribute selector](/en-US/docs/Web/CSS/Reference/Selectors/Attribute_selectors) to return a list of the {{HTMLElement("iframe")}} elements in the
-document that contain an attribute named `data-src`:
+این مثال از یک [انتخگر ویژگی](/en-US/docs/Web/CSS/Reference/Selectors/Attribute_selectors) برای برگرداندن لیستی از عناصر {{HTMLElement("iframe")}} در سند استفاده می‌کند که دارای ویژگی به نام `data-src` هستند:
 
 ```js
 const matches = document.querySelectorAll("iframe[data-src]");
 ```
 
-Here, an attribute selector is used to return a list of the list items contained within
-a list whose ID is `user-list` which have a `data-active` attribute
-whose value is `1`:
+در اینجا، یک انتخابگر ویژگی برای برگرداندن لیستی از موارد لیست موجود در یک لیست با شناسه `user-list` استفاده می‌شود که دارای ویژگی `data-active` با مقدار `1` هستند:
 
 ```js
 const container = document.querySelector("#user-list");
 const matches = container.querySelectorAll("li[data-active='1']");
 ```
 
-### Accessing the matches
+### دسترسی به تطابق‌ها
 
-Once the {{domxref("NodeList")}} of matching elements is returned, you can examine it
-just like any array. If the array is empty (that is, its `length` property is
-0\), then no matches were found.
+هنگامی که {{domxref("NodeList")}} از عناصر منطبق برگردانده شد، می‌توانید آن را مانند هر آرایه‌ای بررسی کنید. اگر آرایه خالی باشد (یعنی ویژگی `length` آن 0 باشد)، هیچ تطابقی یافت نشده است.
 
-Otherwise, you can use standard array notation to access the contents of the list. You
-can use any common looping statement, such as:
+در غیر این صورت، می‌توانید از نماد استاندارد آرایه برای دسترسی به محتویات لیست استفاده کنید. می‌توانید از هر عبارت حلقه‌ای رایج مانند:
 
 ```js
 const highlightedItems = userList.querySelectorAll(".highlighted");
@@ -108,22 +85,22 @@ highlightedItems.forEach((userItem) => {
 });
 ```
 
-### Escaping attribute values
+### escape کردن مقادیر ویژگی‌ها
 
-This example shows that if an HTML document contains an [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) which is not a valid [CSS identifier](/en-US/docs/Web/CSS/Reference/Values/ident), then we must escape the attribute value before using it in `querySelectorAll()`.
+این مثال نشان می‌دهد که اگر یک سند HTML شامل یک [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) باشد که یک [شناسه CSS](/en-US/docs/Web/CSS/Reference/Values/ident) معتبر نیست، باید قبل از استفاده از آن در `querySelectorAll()`، مقدار ویژگی را escape کنیم.
 
 #### HTML
 
-In the following code, a {{htmlelement("div")}} element has an `id` of `"this?element"`, which is not a valid CSS identifier, because the `"?"` character is not allowed in CSS identifiers.
+در کد زیر، یک عنصر {{htmlelement("div")}} دارای `id` با مقدار `"this?element"` است که یک شناسه CSS معتبر نیست، زیرا کاراکتر `"?"` در شناسه‌های CSS مجاز نیست.
 
-We also have three buttons, and a {{htmlelement("pre")}} element for logging errors.
+ما همچنین سه دکمه و یک عنصر {{htmlelement("pre")}} برای ثبت خطاها داریم.
 
 ```html
 <div id="this?element"></div>
 
-<button id="no-escape">No escape</button>
+<button id="no-escape">بدون escape</button>
 <button id="css-escape">CSS.escape()</button>
-<button id="manual-escape">Manual escape</button>
+<button id="manual-escape">escape دستی</button>
 
 <pre id="log"></pre>
 ```
@@ -141,11 +118,11 @@ div {
 
 #### JavaScript
 
-All three buttons, when clicked, try to select the `<div>`, and then set its background color to a random value.
+هر سه دکمه، هنگام کلیک، سعی می‌کنند `<div>` را انتخاب کرده و سپس رنگ پس‌زمینه آن را به یک مقدار تصادفی تنظیم کنند.
 
-- The first button uses the `"this?element"` value directly.
-- The second button escapes the value using {{domxref("CSS.escape_static", "CSS.escape()")}}.
-- The third button explicitly escapes the `"?"` character using a backslash. Note that we must also escape the backslash itself, using another backslash, like: `"\\?"`.
+- دکمه اول مستقیماً از مقدار `"this?element"` استفاده می‌کند.
+- دکمه دوم مقدار را با استفاده از {{domxref("CSS.escape_static", "CSS.escape()")}} escape می‌کند.
+- دکمه سوم به طور صریح کاراکتر `"?"` را با استفاده از یک بک‌اسلش escape می‌کند. توجه داشته باشید که باید خود بک‌اسلش را نیز با استفاده از یک بک‌اسلش دیگر escape کنیم، مانند: `"\\?"`.
 
 ```js
 const log = document.querySelector("#log");
@@ -179,27 +156,26 @@ document.querySelector("#manual-escape").addEventListener("click", () => {
 });
 ```
 
-#### Result
+#### نتیجه
 
-Clicking the first button gives an error, while the second and third buttons work properly.
+کلیک روی دکمه اول یک خطا می‌دهد، در حالی که دکمه دوم و سوم به درستی کار می‌کنند.
 
 {{embedlivesample("escaping_attribute_values", "", 200)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Selection and traversal on the DOM tree](/en-US/docs/Web/API/Document_Object_Model/Selection_and_traversal_on_the_DOM_tree)
-- [Attribute selectors](/en-US/docs/Web/CSS/Reference/Selectors/Attribute_selectors) in the CSS
-  Guide
-- [Attribute selectors](/en-US/docs/Learn_web_development/Core/Styling_basics/Attribute_selectors) in the MDN Learning Area
-- {{domxref("Element.querySelector()")}} and {{domxref("Element.querySelectorAll()")}}
+- [انتخاب و پیمایش درخت DOM](/en-US/docs/Web/API/Document_Object_Model/Selection_and_traversal_on_the_DOM_tree)
+- [انتخابگرهای ویژگی](/en-US/docs/Web/CSS/Reference/Selectors/Attribute_selectors) در راهنمای CSS
+- [انتخابگرهای ویژگی](/en-US/docs/Learn_web_development/Core/Styling_basics/Attribute_selectors) در منطقه یادگیری MDN
+- {{domxref("Element.querySelector()")}} و {{domxref("Element.querySelectorAll()")}}
 - {{domxref("Document.querySelector()")}}
-- {{domxref("DocumentFragment.querySelector()")}} and
+- {{domxref("DocumentFragment.querySelector()")}} و
   {{domxref("DocumentFragment.querySelectorAll()")}}
