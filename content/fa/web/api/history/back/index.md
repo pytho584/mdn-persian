@@ -1,7 +1,6 @@
+```
 ---
 title: "History: back() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/History/back"
-status: "needs-translation"
 ---
 
 ---
@@ -14,15 +13,11 @@ browser-compat: api.History.back
 
 {{APIRef("History API")}}
 
-The **`back()`** method of the {{domxref("History")}} interface causes
-the browser to move back one page in the session history.
+متد **`back()`** از واسط {{domxref("History")}} باعث میشود مرورگر یک صفحه به عقب در تاریخچه نشست برود.
 
-It has the same
-effect as calling {{domxref("History.go", "history.go(-1)")}}. If there is no previous
-page, this method call does nothing.
+همان اثری را دارد که فراخوانی {{domxref("History.go", "history.go(-1)")}}. اگر صفحهٔ قبلی وجود نداشته باشد، این فراخوانی هیچ کاری انجام نمیدهد.
 
-This method is {{glossary("asynchronous")}}. Add a listener for the
-{{domxref("Window/popstate_event", "popstate")}} event in order to determine when the navigation has completed.
+این متد {{glossary("asynchronous")}} است. برای تعیین اینکه ناوبری چه زمانی تکمیل شده است، یک شنونده برای رویداد {{domxref("Window/popstate_event", "popstate")}} اضافه کنید.
 
 ## Syntax
 
@@ -32,21 +27,20 @@ back()
 
 ### Parameters
 
-None.
+هیچ.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
 ### Exceptions
 
 - `SecurityError` {{domxref("DOMException")}}
-  - : Thrown if the associated document is not fully active. Browsers also throttle navigations and may throw this error, generate a warning, or ignore the call if it's called too frequently.
+  - : اگر سند مرتبط کاملاً فعال نباشد، پرتاب میشود. مرورگرها همچنین ناوبریها را محدود میکنند و در صورت فراخوانی بیش از حد مکرر، ممکن است این خطا را پرتاب کنند، هشدار تولید کنند، یا از فراخوانی صرفنظر کنند.
 
 ## Examples
 
-The following short example causes a button on the page to navigate back one entry in
-the session history.
+مثال کوتاه زیر باعث میشود دکمهای در صفحه، یک ورودی در تاریخچه نشست به عقب برود.
 
 ### HTML
 
@@ -74,3 +68,4 @@ document.getElementById("go-back").addEventListener("click", () => {
 
 - {{domxref("History")}}
 - [Working with the History API](/en-US/docs/Web/API/History_API/Working_with_the_History_API)
+```
