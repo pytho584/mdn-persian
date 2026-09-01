@@ -1,11 +1,5 @@
 ---
 title: "GainNode: gain property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GainNode/gain"
-status: "needs-translation"
----
-
----
-title: "GainNode: gain property"
 short-title: gain
 slug: Web/API/GainNode/gain
 page-type: web-api-instance-property
@@ -14,27 +8,27 @@ browser-compat: api.GainNode.gain
 
 {{ APIRef("Web Audio API") }}
 
-The `gain` property of the {{ domxref("GainNode") }} interface is an [a-rate](/en-US/docs/Web/API/AudioParam#a-rate) {{domxref("AudioParam")}} representing the amount of gain to apply.
+ویژگی `gain` از رابط {{ domxref("GainNode") }} یک {{domxref("AudioParam")}} با نرخ [a-rate](/en-US/docs/Web/API/AudioParam#a-rate) است که میزان بهره (gain) اعمال‌شده را نشان می‌دهد.
 
-## Value
+## مقدار
 
-An {{domxref("AudioParam")}}.
+یک {{domxref("AudioParam")}}.
 
 > [!NOTE]
-> Though the `AudioParam` returned is read-only, the value it represents is not.
+> اگرچه `AudioParam` بازگشتی فقط‌خواندنی است، مقداری که نشان می‌دهد فقط‌خواندنی نیست.
 
-## Examples
+## مثال‌ها
 
-See [`BaseAudioContext.createGain()`](/en-US/docs/Web/API/BaseAudioContext/createGain#examples) for example code showing how to use an `AudioContext` to create a `GainNode`, which is then used to mute and unmute the audio by changing the gain property value.
+برای نمونه‌کد نحوه استفاده از `AudioContext` برای ایجاد یک `GainNode` که سپس با تغییر مقدار ویژگی gain برای قطع و وصل کردن صدا استفاده می‌شود، به [`BaseAudioContext.createGain()`](/en-US/docs/Web/API/BaseAudioContext/createGain#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
