@@ -1,11 +1,5 @@
 ---
 title: "Document: lastElementChild property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/lastElementChild"
-status: "needs-translation"
----
-
----
-title: "Document: lastElementChild property"
 short-title: lastElementChild
 slug: Web/API/Document/lastElementChild
 page-type: web-api-instance-property
@@ -14,33 +8,31 @@ browser-compat: api.Document.lastElementChild
 
 {{ APIRef("DOM") }}
 
-The **`Document.lastElementChild`** read-only property
-returns the document's last child {{domxref("Element")}}, or `null` if there
-are no child elements.
+ویژگی فقط‌خواندنی **`Document.lastElementChild`** آخرین عنصر فرزند سند را برمی‌گرداند، یا اگر هیچ عنصر فرزندی وجود نداشته باشد، مقدار `null` را برمی‌گرداند.
 
-For HTML documents, this is usually the only child, the root `<html>` element.
+برای اسناد HTML، این معمولاً تنها فرزند است، یعنی عنصر ریشهٔ `<html>`.
 
-See {{domxref("Element.lastElementChild")}} for the last child element of specific elements within a document.
+برای دریافت آخرین عنصر فرزند از عناصر خاص درون یک سند، به {{domxref("Element.lastElementChild")}} مراجعه کنید.
 
-## Value
+## مقدار
 
-The root `<html>` element.
+عنصر ریشهٔ `<html>`.
 
-## Examples
+## مثال‌ها
 
 ```js
 document.lastElementChild;
 // returns the root <html> element, the only child of the document
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Element.lastElementChild")}}
