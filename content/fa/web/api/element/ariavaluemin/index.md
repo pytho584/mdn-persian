@@ -1,11 +1,5 @@
 ---
 title: "Element: ariaValueMin property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaValueMin"
-status: "needs-translation"
----
-
----
-title: "Element: ariaValueMin property"
 short-title: ariaValueMin
 slug: Web/API/Element/ariaValueMin
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.Element.ariaValueMin
 
 {{APIRef("DOM")}}
 
-The **`ariaValueMin`** property of the {{domxref("Element")}} interface reflects the value of the [`aria-valuemin`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemin) attribute, which defines the minimum allowed value for a range widget.
+ویژگی **`ariaValueMin`** از رابط (interface) {{domxref("Element")}} منعکس‌کنندهٔ مقدار ویژگی [`aria-valuemin`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuemin) است که کمترین مقدار مجاز را برای یک ویجت محدوده (range widget) تعریف می‌کند.
 
-## Value
+## مقدار
 
-A string which contains a number.
+یک رشته (string) که شامل یک عدد است.
 
-## Examples
+## مثال‌ها
 
-In this example the `aria-valuemin` attribute on the element with an ID of `slider` is set to "1". Using `ariaValueMin` we update the value to "2".
+در این مثال، ویژگی `aria-valuemin` روی عنصری با شناسه `slider` به "1" تنظیم شده است. با استفاده از `ariaValueMin` مقدار را به "2" به‌روز می‌کنیم.
 
 ```html
 <div
@@ -40,10 +34,10 @@ el.ariaValueMin = "2";
 console.log(el.ariaValueMin); // 2
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
