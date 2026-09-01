@@ -1,11 +1,5 @@
 ---
 title: "HTMLMediaElement: waitingforkey event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/waitingforkey_event"
-status: "needs-translation"
----
-
----
-title: "HTMLMediaElement: waitingforkey event"
 short-title: waitingforkey
 slug: Web/API/HTMLMediaElement/waitingforkey_event
 page-type: web-api-event
@@ -14,14 +8,13 @@ browser-compat: api.HTMLMediaElement.waitingforkey_event
 
 {{APIRef("Encrypted Media Extensions")}}
 
-The `waitingforkey` event is fired at a media element when it is first unable to play because it needs a key to decode the following data, and playback is stopped.
+رویداد `waitingforkey` زمانی برای یک عنصر رسانه‌ای رخ می‌دهد که آن عنصر برای نخستین بار نتواند پخش را ادامه دهد، زیرا برای رمزگشایی داده‌های بعدی به کلید نیاز است و پخش متوقف شده است.
 
-If the video frame and/or audio data for the current playback position have been decoded, {{domxref("HTMLMediaElement.readyState", "readyState")}} is set to [`HAVE_CURRENT_DATA`](/en-US/docs/Web/API/HTMLMediaElement/readyState#htmlmediaelement.have_current_data).
-Otherwise, including if the data was previously available but isn't anymore, the `readyState` is set to [`HAVE_METADATA`](/en-US/docs/Web/API/HTMLMediaElement/readyState#htmlmediaelement.have_metadata).
+اگر فریم ویدیو و/یا داده‌های صوتی مربوط به موقعیت فعلی پخش رمزگشایی شده باشند، {{domxref("HTMLMediaElement.readyState", "readyState")}} روی [`HAVE_CURRENT_DATA`](/en-US/docs/Web/API/HTMLMediaElement/readyState#htmlmediaelement.have_current_data) تنظیم می‌شود. در غیر این صورت، از جمله اگر داده‌ها قبلاً در دسترس بوده‌اند اما دیگر در دسترس نیستند، `readyState` روی [`HAVE_METADATA`](/en-US/docs/Web/API/HTMLMediaElement/readyState#htmlmediaelement.have_metadata) تنظیم می‌شود.
 
-## Syntax
+## سینتکس
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("waitingforkey", (event) => { })
@@ -29,19 +22,19 @@ addEventListener("waitingforkey", (event) => { })
 onwaitingforkey = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-An {{domxref("Event")}}.
+یک {{domxref("Event")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLAudioElement")}}
 - {{domxref("HTMLVideoElement")}}
