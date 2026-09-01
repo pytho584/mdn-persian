@@ -1,11 +1,5 @@
 ---
 title: "GPUCommandEncoder: clearBuffer() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUCommandEncoder/clearBuffer"
-status: "needs-translation"
----
-
----
-title: "GPUCommandEncoder: clearBuffer() method"
 short-title: clearBuffer()
 slug: Web/API/GPUCommandEncoder/clearBuffer
 page-type: web-api-instance-method
@@ -14,10 +8,9 @@ browser-compat: api.GPUCommandEncoder.clearBuffer
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`clearBuffer()`** method of the
-{{domxref("GPUCommandEncoder")}} interface encodes a command that fills a region of a {{domxref("GPUBuffer")}} with zeroes.
+متد **`clearBuffer()`** از رابط {{domxref("GPUCommandEncoder")}} دستوری را کدگذاری می‌کند که ناحیه‌ای از یک {{domxref("GPUBuffer")}} را با صفر پر می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 clearBuffer(buffer)
@@ -25,28 +18,28 @@ clearBuffer(buffer, offset)
 clearBuffer(buffer, offset, size)
 ```
 
-### Parameters
+### پارامترها
 
 - `buffer`
-  - : A {{domxref("GPUBuffer")}} object representing the buffer to clear.
+  - : یک شیء {{domxref("GPUBuffer")}} که نمایانگر بافر مورد نظر برای پاک کردن است.
 - `offset` {{optional_inline}}
-  - : A number representing the offset, in bytes, from the start of the `buffer` to the sub-region to clear. If omitted, `offset` defaults to 0.
+  - : عددی که نشان‌دهندهٔ offset (به بایت) از ابتدای `buffer` تا زیرناحیه‌ای است که باید پاک شود. اگر حذف شود، `offset` به طور پیش‌فرض ۰ است.
 - `size` {{optional_inline}}
-  - : A number representing the size, in bytes, of the sub-region to clear. If omitted, `size` defaults to the `buffer` size - `offset`.
+  - : عددی که نشان‌دهندهٔ اندازه (به بایت) زیرناحیه‌ای است که باید پاک شود. اگر حذف شود، `size` به طور پیش‌فرض برابر `buffer` size - `offset` است.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-### Validation
+### اعتبارسنجی
 
-The following criteria must be met when calling **`clearBuffer()`**, otherwise a {{domxref("GPUValidationError")}} is generated and the {{domxref("GPUCommandEncoder")}} becomes invalid:
+هنگام فراخوانی **`clearBuffer()`** معیارهای زیر باید رعایت شوند، در غیر این صورت یک {{domxref("GPUValidationError")}} تولید شده و {{domxref("GPUCommandEncoder")}} نامعتبر می‌شود:
 
-- The `buffer`'s {{domxref("GPUBuffer.usage")}} includes the `GPUBufferUsage.COPY_DST` flag.
-- `offset` and `size` are both multiples of 4.
-- The `buffer`'s {{domxref("GPUBuffer.size")}} is greater than or equal to `offset` + `size`.
+- پرچم `GPUBufferUsage.COPY_DST` در {{domxref("GPUBuffer.usage")}} مربوط به `buffer` وجود داشته باشد.
+- `offset` و `size` هر دو مضرب ۴ باشند.
+- {{domxref("GPUBuffer.size")}} مربوط به `buffer` بزرگتر یا مساوی `offset + size` باشد.
 
-## Examples
+## مثال‌ها
 
 ```js
 // …
@@ -56,7 +49,7 @@ const buffer = device.createBuffer({
   usage: GPUBufferUsage.MAP_READ | GPUBufferUsage.COPY_DST,
 });
 
-// Later on
+// بعداً
 
 const commandBuffer = device.createCommandEncoder();
 commandEncoder.clearBuffer(buffer);
@@ -64,14 +57,14 @@ commandEncoder.clearBuffer(buffer);
 // …
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [API WebGPU](/en-US/docs/Web/API/WebGPU_API)
