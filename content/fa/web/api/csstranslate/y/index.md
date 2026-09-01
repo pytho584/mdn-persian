@@ -1,11 +1,5 @@
 ---
 title: "CSSTranslate: y property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSTranslate/y"
-status: "needs-translation"
----
-
----
-title: "CSSTranslate: y property"
 short-title: y
 slug: Web/API/CSSTranslate/y
 page-type: web-api-instance-property
@@ -14,20 +8,20 @@ browser-compat: api.CSSTranslate.y
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`y`** property of the {{domxref("CSSTranslate")}} interface gets and sets the ordinate or y-axis of the translating vector.
+ویژگی **`y`** از رابط {{domxref("CSSTranslate")}} مقدار مختصه y (محور عمودی) بردار انتقال را دریافت و تنظیم می‌کند.
 
-## Value
+## مقدار
 
-A {{cssxref('length-percentage')}}
+یک {{cssxref('length-percentage')}}
 
-## Examples
+## مثال‌ها
 
-To Do
+در دست تهیه
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
