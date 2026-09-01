@@ -1,11 +1,5 @@
 ---
 title: "FileReader: readyState property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readyState"
-status: "needs-translation"
----
-
----
-title: "FileReader: readyState property"
 short-title: readyState
 slug: Web/API/FileReader/readyState
 page-type: web-api-instance-property
@@ -14,21 +8,20 @@ browser-compat: api.FileReader.readyState
 
 {{APIRef("File API")}}{{AvailableInWorkers}}
 
-The **`readyState`** read-only property of the {{domxref("FileReader")}} interface provides the current state of the reading operation.
-This will be one of the states: `EMPTY`, `LOADING`, or `DONE`.
+ویژگی فقط‌خواندنی **`readyState`** در رابط {{domxref("FileReader")}} وضعیت فعلی عملیات خواندن را ارائه می‌دهد. این مقدار یکی از حالت‌های `EMPTY`، `LOADING` یا `DONE` خواهد بود.
 
-## Value
+## مقدار
 
-A number which is one of the three possible state constants defined on the {{domxref("FileReader")}} interface:
+عددی که یکی از سه ثابت حالت ممکن تعریف‌شده در رابط {{domxref("FileReader")}} است:
 
 - `FileReader.EMPTY` (0)
-  - : Reader has been created, but none of the read methods have been called yet.
+  - : شیء خوانده‌ساز (Reader) ایجاد شده است، اما هنوز هیچ‌کدام از متدهای خواندن فراخوانی نشده‌اند.
 - `FileReader.LOADING` (1)
-  - : A read method has been called. A {{domxref("File")}} or {{domxref("Blob")}} is being read, and no error has occurred yet.
+  - : یک متد خواندن فراخوانی شده است. یک {{domxref("File")}} یا {{domxref("Blob")}} در حال خوانده‌شدن است و هنوز خطایی رخ نداده است.
 - `FileReader.DONE` (2)
-  - : The read operation is complete. This could mean that: the entire {{domxref("File")}} or {{domxref("Blob")}} has been read into memory, a file read error occurred, or {{domxref("FileReader.abort()", "abort()")}} was called and the read was cancelled.
+  - : عملیات خواندن کامل شده است. این می‌تواند به این معنی باشد که: تمام {{domxref("File")}} یا {{domxref("Blob")}} در حافظه خوانده شده است، خطای خواندن فایل رخ داده است، یا {{domxref("FileReader.abort()", "abort()")}} فراخوانی شده و خواندن لغو شده است.
 
-## Examples
+## مثال‌ها
 
 ```js
 const reader = new FileReader();
@@ -42,14 +35,14 @@ reader.onloadend = () => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Blob")}}
