@@ -1,10 +1,4 @@
 ---
-title: "CSSNamespaceRule"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSNamespaceRule"
-status: "needs-translation"
----
-
----
 title: CSSNamespaceRule
 slug: Web/API/CSSNamespaceRule
 page-type: web-api-interface
@@ -13,26 +7,26 @@ browser-compat: api.CSSNamespaceRule
 
 {{APIRef("CSSOM")}}
 
-The **`CSSNamespaceRule`** interface describes an object representing a single CSS {{ cssxref("@namespace") }} [at-rule](/en-US/docs/Web/CSS/Guides/Syntax/At-rules).
+رابطه **`CSSNamespaceRule`** یک شیء را توصیف می‌کند که نماینده یک قاعده CSS {{ cssxref("@namespace") }} (یک at-rule) است.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its ancestor {{domxref("CSSRule")}}._
+_ویژگی‌ها را از جد خود {{domxref("CSSRule")}} به ارث می‌برد._
 
 - {{domxref("CSSNamespaceRule.namespaceURI")}}
-  - : Returns a string containing the text of the URI of the given namespace.
+  - : یک رشته شامل متن URI فضای نام داده شده را برمی‌گرداند.
 - {{domxref("CSSNamespaceRule.prefix")}}
-  - : Returns a string with the name of the prefix associated to this namespace. If there is no such prefix, returns an empty string.
+  - : یک رشته با نام پیشوند مرتبط با این فضای نام را برمی‌گرداند. اگر چنین پیشوندی وجود نداشته باشد، یک رشته خالی برمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
-_Inherits methods from its ancestor {{domxref("CSSRule")}}._
+_روش‌ها را از جد خود {{domxref("CSSRule")}} به ارث می‌برد._
 
-## Examples
+## مثال‌ها
 
-The stylesheet includes a namespace as the only rule. Therefore the first {{domxref("CSSRule")}} returned will be a `CSSNamespaceRule`.
+صفحه‌سبک (stylesheet) شامل یک فضای نام به عنوان تنها قاعده است. بنابراین اولین {{domxref("CSSRule")}} برگردانده شده یک `CSSNamespaceRule` خواهد بود.
 
 ```css
 @namespace url("http://www.w3.org/1999/xhtml");
@@ -43,10 +37,10 @@ const myRules = document.styleSheets[0].cssRules;
 console.log(myRules[0]); // A CSSNamespaceRule
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
