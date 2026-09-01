@@ -1,11 +1,5 @@
 ---
 title: "CSSPseudoElement: parent property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSPseudoElement/parent"
-status: "needs-translation"
----
-
----
-title: "CSSPseudoElement: parent property"
 short-title: parent
 slug: Web/API/CSSPseudoElement/parent
 page-type: web-api-instance-property
@@ -16,23 +10,23 @@ browser-compat: api.CSSPseudoElement.parent
 
 {{APIRef}}{{SeeCompatTable}}
 
-The **`parent`** read-only property of the {{DOMxRef("CSSPseudoElement")}} interface returns a reference to the immediate originating element of the pseudo-element, which can be an {{DOMxRef("Element")}}, or a `CSSPseudoElement` in the case of a [nested pseudo-element](/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-elements#nesting_pseudo-elements).
+خاصیت فقط‌خواندنی **`parent`** در رابط {{DOMxRef("CSSPseudoElement")}} ارجاعی به عنصر مبدأ بلافصل شبه‌المان برمی‌گرداند؛ این عنصر می‌تواند یک {{DOMxRef("Element")}} یا در مورد [شبه‌المان تودرتو](/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-elements#nesting_pseudo-elements) یک `CSSPseudoElement` باشد.
 
-This differs from the {{DOMxRef("CSSPseudoElement.element")}} property, which always returns an `Element`: A reference to the ultimate originating element of the pseudo-element.
+این رفتار با خاصیت {{DOMxRef("CSSPseudoElement.element")}} تفاوت دارد که همیشه یک `Element` برمی‌گرداند: ارجاعی به عنصر مبدأ نهایی شبه‌المان.
 
-## Value
+## مقدار
 
-An {{DOMxRef("Element")}} or a {{DOMxRef("CSSPseudoElement")}} representing the pseudo-element's immediate parent.
+یک {{DOMxRef("Element")}} یا {{DOMxRef("CSSPseudoElement")}} که والد بلافصل شبه‌المان را نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
-In this example, we demonstrate the difference between the `parent` and {{DOMxRef("CSSPseudoElement.element", "element")}} properties.
+در این مثال، تفاوت بین خاصیت‌های `parent` و {{DOMxRef("CSSPseudoElement.element", "element")}} را نشان می‌دهیم.
 
 #### HTML
 
-We include a {{htmlelement("p")}} element containing text, and an {{htmlelement("output")}} element to log output from JavaScript.
+یک عنصر {{htmlelement("p")}} حاوی متن و یک عنصر {{htmlelement("output")}} برای ثبت خروجی جاوااسکریپت اضافه می‌کنیم.
 
 ```html live-sample___basic
 <p>New York's hottest club is...</p>
@@ -41,7 +35,7 @@ We include a {{htmlelement("p")}} element containing text, and an {{htmlelement(
 
 #### CSS
 
-We give the `<p>` element's {{cssxref("::after")}} pseudo-element some {{cssxref("content")}} and set its {{cssxref("display")}} to `list-item` so it will generate a `::marker`. We also apply some basic styles.
+به شبه‌المان {{cssxref("::after")}} عنصر `<p>` یک مقدار {{cssxref("content")}} می‌دهیم و {{cssxref("display")}} آن را روی `list-item` تنظیم می‌کنیم تا یک `::marker` تولید کند. همچنین چند استایل پایه اعمال می‌کنیم.
 
 ```css hidden live-sample___basic
 body {
@@ -70,7 +64,7 @@ p::after::marker {
 
 #### JavaScript
 
-In our script, we grab references to our `<p>` and `<output>` elements, and retrieve `CSSPseudoElement` objects via the `pseudo()` method representing the `<p>` element's `::after` pseudo-element, and the `::after` pseudo-element's `::marker` pseudo-element. We then log some details of the child pseudo-element to our `<output>` element. We also include some rudimentary error handling via a [`try...catch`](/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) structure, to print an error message in non-supporting browsers.
+در اسکریپت خود، ارجاع‌هایی به عناصر `<p>` و `<output>` می‌گیریم و اشیاء `CSSPseudoElement` را از طریق متد `pseudo()` بازیابی می‌کنیم که شبه‌المان `::after` عنصر `<p>` و نیز شبه‌المان `::marker` مربوط به آن را نشان می‌دهند. سپس جزئیاتی از شبه‌المان فرزند را در عنصر `<output>` ثبت می‌کنیم. همچنین با استفاده از ساختار [`try...catch`](/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) مدیریت خطای ابتدایی اضافه کرده‌ایم تا در مرورگرهای غیرپشتیبان پیام خطا چاپ شود.
 
 ```js live-sample___basic
 const pElem = document.querySelector("p");
@@ -85,19 +79,19 @@ try {
 }
 ```
 
-#### Result
+#### نتیجه
 
 {{embedlivesample("basic", "100%", 200)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{DOMxRef("CSSPseudoElement.element")}}
 - {{DOMxRef("CSSPseudoElement.pseudo()")}}
