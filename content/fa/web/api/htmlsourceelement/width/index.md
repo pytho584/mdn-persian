@@ -1,9 +1,4 @@
----
-title: "HTMLSourceElement: width property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLSourceElement/width"
-status: "needs-translation"
----
-
+```markdown
 ---
 title: "HTMLSourceElement: width property"
 short-title: width
@@ -14,17 +9,17 @@ browser-compat: api.HTMLSourceElement.width
 
 {{APIRef("HTML DOM")}}
 
-The **`width`** property of the {{domxref("HTMLSourceElement")}} interface is a non-negative number indicating the width of the image resource in CSS pixels.
+ویژگی **`width`** در رابط {{domxref("HTMLSourceElement")}} یک عدد غیرمنفی است که عرض منبع تصویر را برحسب پیکسل‌های CSS نشان می‌دهد.
 
-The property has an effect only if the parent of the current {{HTMLElement("source")}} element is a {{HTMLElement("picture")}} element.
+این ویژگی تنها زمانی تأثیر دارد که والد عنصر کنونی {{HTMLElement("source")}} یک عنصر {{HTMLElement("picture")}} باشد.
 
-It reflects the `width` attribute of the {{HTMLElement("source")}} element.
+این ویژگی منعکس‌کنندهٔ ویژگی `width` عنصر {{HTMLElement("source")}} است.
 
-## Value
+## مقدار
 
-A non-negative number indicating the width of the image resource in CSS pixels.
+یک عدد غیرمنفی که عرض منبع تصویر را برحسب پیکسل‌های CSS نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
 ```html
 <picture id="img">
@@ -57,15 +52,15 @@ const sources = img.querySelectorAll("source");
 console.log(Array.from(sources).map((el) => el.width)); // Output: [1000, 800, 600]
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLCanvasElement.width")}}
 - {{domxref("HTMLEmbedElement.width")}}
@@ -73,3 +68,4 @@ console.log(Array.from(sources).map((el) => el.width)); // Output: [1000, 800, 6
 - {{domxref("HTMLImageElement.width")}}
 - {{domxref("HTMLObjectElement.width")}}
 - {{domxref("HTMLVideoElement.width")}}
+```
