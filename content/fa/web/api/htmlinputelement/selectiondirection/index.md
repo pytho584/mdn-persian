@@ -1,11 +1,5 @@
 ---
 title: "HTMLInputElement: selectionDirection property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/selectionDirection"
-status: "needs-translation"
----
-
----
-title: "HTMLInputElement: selectionDirection property"
 short-title: selectionDirection
 slug: Web/API/HTMLInputElement/selectionDirection
 page-type: web-api-instance-property
@@ -14,26 +8,26 @@ browser-compat: api.HTMLInputElement.selectionDirection
 
 {{ApiRef("HTML DOM")}}
 
-The **`selectionDirection`** property of the {{domxref("HTMLInputElement")}} interface is a string that indicates the direction in which the user is selecting the text.
+**ویژگی `selectionDirection`** در رابط {{domxref("HTMLInputElement")}} یک رشته است که جهتی را نشان می‌دهد که کاربر در حال انتخاب متن است.
 
-## Value
+## مقدار
 
-A string. It can have one of the following values:
+یک رشته. می‌تواند یکی از مقادیر زیر را داشته باشد:
 
 - `forward`
-  - : The user is extending the selection towards the end of the input text.
+  - کاربر در حال گسترش انتخاب به سمت انتهای متن ورودی است.
 - `backward`
-  - : The user is extending the selection towards the start of the input text.
+  - کاربر در حال گسترش انتخاب به سمت ابتدای متن ورودی است.
 - `none`
-  - : The user is not extending the selection.
+  - کاربر در حال گسترش انتخاب نیست.
 
 > [!NOTE]
-> On Windows, the direction indicates the position of the caret relative to the selection: a "forward" selection has the caret at the end of the selection and a "backward" selection has the caret at the start of the selection. Windows has no "none" direction.
+> در ویندوز، جهت نشان‌دهندهٔ موقعیت مکان‌نما نسبت به انتخاب است: انتخاب «forward» مکان‌نما را در انتهای انتخاب دارد و انتخاب «backward» مکان‌نما را در ابتدای انتخاب دارد. ویندوز جهت «none» ندارد.
 
 > [!NOTE]
-> On Mac, the direction indicates which end of the selection is affected when the user adjusts the size of the selection using the arrow keys with the Shift modifier: the "forward" direction means the end of the selection is modified, and the "backward" direction means the start of the selection is modified. The "none" direction is the default on Mac, it indicates that no particular direction has yet been selected. The user sets the direction implicitly when first adjusting the selection, based on which directional arrow key was used.
+> در مک، جهت نشان می‌دهد که هنگام تنظیم اندازهٔ انتخاب با استفاده از کلیدهای جهتنما و کلید Shift، کدام انتهای انتخاب تحت تأثیر قرار می‌گیرد: جهت «forward» به معنای تغییر انتهای انتخاب، و جهت «backward» به معنای تغییر ابتدای انتخاب است. جهت «none» پیش‌فرض در مک است و نشان می‌دهد که هنوز جهت خاصی انتخاب نشده است. کاربر هنگام اولین تنظیم انتخاب، بر اساس کلید جهتنمای فشرده‌شده، جهت را به‌طور ضمنی تعیین می‌کند.
 
-## Examples
+## مثال‌ها
 
 ### HTML
 
@@ -51,21 +45,21 @@ const pConsole = document.querySelector("#direction");
 pConsole.textContent = `Selection direction : ${textSelectionDirection.selectionDirection}`;
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("HTMLTextAreaElement.selectionDirection")}} property
-- {{domxref("HTMLInputElement.selectionStart")}} property
-- {{domxref("HTMLInputElement.selectionEnd")}} property
-- {{domxref("HTMLInputElement.setSelectionRange")}} method
+- {{domxref("HTMLTextAreaElement.selectionDirection")}} ویژگی
+- {{domxref("HTMLInputElement.selectionStart")}} ویژگی
+- {{domxref("HTMLInputElement.selectionEnd")}} ویژگی
+- {{domxref("HTMLInputElement.setSelectionRange")}} روش
