@@ -1,11 +1,5 @@
 ---
 title: "HTMLMediaElement: videoTracks property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/videoTracks"
-status: "needs-translation"
----
-
----
-title: "HTMLMediaElement: videoTracks property"
 short-title: videoTracks
 slug: Web/API/HTMLMediaElement/videoTracks
 page-type: web-api-instance-property
@@ -14,36 +8,26 @@ browser-compat: api.HTMLMediaElement.videoTracks
 
 {{APIRef("HTML DOM")}}
 
-The read-only **`videoTracks`**
-property on {{DOMxRef("HTMLMediaElement")}} objects returns a
-{{DOMxRef("VideoTrackList")}} object listing all of the {{DOMxRef("VideoTrack")}}
-objects representing the media element's video tracks.
+ویژگیِ فقط‌خواندنیِ **`videoTracks`** در اشیاء {{DOMxRef("HTMLMediaElement")}} یک شیء {{DOMxRef("VideoTrackList")}} برمی‌گرداند که همهٔ اشیاء {{DOMxRef("VideoTrack")}} نمایانگرِ ردهای ویدیوییِ عنصر رسانه را فهرست می‌کند.
 
-The returned list is _live_; that is, as tracks are added to and removed from
-the media element, the list's contents change dynamically. Once you have a reference to
-the list, you can monitor it for changes to detect when new video tracks are added or
-existing ones removed. See [VideoTrackList events](/en-US/docs/Web/API/VideoTrackList#events)
-to learn more about watching for changes to a media element's track list.
+لیست بازگشت‌داده‌شده _زنده_ است؛ یعنی هر زمان که ردی به عنصر رسانه اضافه یا از آن حذف شود، محتوای لیست به‌صورت پویا تغییر می‌کند. وقتی ارجاعی به لیست داشته باشید، می‌توانید آن را برای تغییرات زیر نظر بگیرید تا متوجه اضافه‌شدن ردهای ویدیویی جدید یا حذف ردهای موجود شوید. برای آشنایی بیشتر با نظارت بر تغییرات فهرست ردیِ یک عنصر رسانه، به [رویدادهای VideoTrackList](/en-US/docs/Web/API/VideoTrackList#events) مراجعه کنید.
 
-## Value
+## مقدار
 
-A {{DOMxRef("VideoTrackList")}} object representing the list of video tracks included
-in the media element. The list of tracks can be accessed using array notation, or using
-the object's {{domxref("VideoTrackList.getTrackById", "getTrackById()")}} method.
+یک شیء {{DOMxRef("VideoTrackList")}} که فهرست ردهای ویدیویی موجود در عنصر رسانه را نمایش می‌دهد. می‌توانید از طریق نمادِ آرایه یا با استفاده از متد {{domxref("VideoTrackList.getTrackById", "getTrackById()")}} به فهرست ردها دسترسی پیدا کنید.
 
-Each track is represented by a {{DOMxRef("VideoTrack")}} object which provides
-information about the track.
+هر ردی با یک شیء {{DOMxRef("VideoTrack")}} نمایش داده می‌شود که اطلاعاتی دربارهٔ آن ردی ارائه می‌دهد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- {{domxref("HTMLMediaElement")}}: Interface used to define the `HTMLMediaElement.videoTracks` property
+- {{domxref("HTMLMediaElement")}}: رابطی که برای تعریف ویژگیِ `HTMLMediaElement.videoTracks` استفاده می‌شود
 - {{HTMLElement("video")}}
-- {{DOMxRef("VideoTrack")}}, {{DOMxRef("VideoTrackList")}}
+- {{DOMxRef("VideoTrack")}}، {{DOMxRef("VideoTrackList")}}
