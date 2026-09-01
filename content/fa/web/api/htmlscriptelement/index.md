@@ -1,11 +1,5 @@
 ---
 title: "HTMLScriptElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLScriptElement"
-status: "needs-translation"
----
-
----
-title: HTMLScriptElement
 slug: Web/API/HTMLScriptElement
 page-type: web-api-interface
 browser-compat: api.HTMLScriptElement
@@ -13,80 +7,70 @@ browser-compat: api.HTMLScriptElement
 
 {{APIRef("HTML DOM")}}
 
-HTML {{HTMLElement("script")}} elements expose the **`HTMLScriptElement`** interface, which provides special properties and methods for manipulating the behavior and execution of `<script>` elements (beyond the inherited {{domxref("HTMLElement")}} interface).
+المان‌های HTML {{HTMLElement("script")}}، رابط `HTMLScriptElement` را نمایان می‌کنند که ویژگی‌ها و روش‌های خاصی برای دستکاری رفتار و اجرای المان‌های `<script>` (فراتر از رابط به‌ارث‌بردهٔ {{domxref("HTMLElement")}}) فراهم می‌کند.
 
-JavaScript files should be served with the `text/javascript` [MIME type](/en-US/docs/Web/HTTP/Guides/MIME_types), but browsers are lenient and block them only if the script is served with an image type (`image/*`), video type (`video/*`), audio type (`audio/*`), or `text/csv`. If the script is blocked, its element receives an {{domxref("HTMLElement/error_event", "error")}} event; otherwise, it receives a {{domxref("Window/load_event", "load")}} event.
+فایل‌های جاوااسکریپت باید با [نوع MIME](/en-US/docs/Web/HTTP/Guides/MIME_types) به‌صورت `text/javascript` ارائه شوند، اما مرورگرها انعطاف‌پذیر هستند و تنها در صورتی آن‌ها را مسدود می‌کنند که اسکریپت با یک نوع تصویری (`image/*`)، نوع ویدیویی (`video/*`)، نوع صوتی (`audio/*`) یا `text/csv` ارائه شود. اگر اسکریپت مسدود شود، المان آن رویداد {{domxref("HTMLElement/error_event", "error")}} دریافت می‌کند؛ در غیر این صورت، رویداد {{domxref("Window/load_event", "load")}} را دریافت می‌کند.
 
 > [!NOTE]
-> When inserted using the {{domxref("Document.write()")}} method, {{HTMLElement("script")}} elements execute (typically synchronously), but when inserted using {{domxref("Element.innerHTML")}} or {{domxref("Element.outerHTML")}}, they do not execute at all.
+> وقتی با استفاده از روش {{domxref("Document.write()")}} درج می‌شوند، المان‌های {{HTMLElement("script")}} (معمولاً به‌صورت همزمان) اجرا می‌شوند، اما وقتی با استفاده از {{domxref("Element.innerHTML")}} یا {{domxref("Element.outerHTML")}} درج می‌شوند، اصلاً اجرا نمی‌شوند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("HTMLElement")}}._
+_ویژگی‌های والد خود، {{domxref("HTMLElement")}} را به ارث می‌برد._
 
 - {{domxref("HTMLScriptElement.attributionSrc")}} {{securecontext_inline}} {{deprecated_inline}} {{non-standard_inline}}
-  - : Gets and sets the [`attributionsrc`](/en-US/docs/Web/HTML/Reference/Elements/script#attributionsrc) attribute on a {{htmlelement("script")}} element programmatically, reflecting the value of that attribute. `attributionsrc` specifies that you want the browser to send an {{httpheader("Attribution-Reporting-Eligible")}} header along with the script resource request. On the server-side this is used to trigger sending an {{httpheader("Attribution-Reporting-Register-Source")}} or {{httpheader("Attribution-Reporting-Register-Trigger")}} header in the response, to register a JavaScript-based [attribution source](/en-US/docs/Web/API/Attribution_Reporting_API/Registering_sources#javascript-based_event_sources) or [attribution trigger](/en-US/docs/Web/API/Attribution_Reporting_API/Registering_triggers#javascript-based_attribution_triggers), respectively.
+  - : ویژگی [`attributionsrc`](/en-US/docs/Web/HTML/Reference/Elements/script#attributionsrc) را روی یک المان {{htmlelement("script")}} به‌صورت برنامه‌نویسی‌شده تنظیم و بازیابی می‌کند و مقدار آن ویژگی را منعکس می‌کند. `attributionsrc` مشخص می‌کند که می‌خواهید مرورگر هدر {{httpheader("Attribution-Reporting-Eligible")}} را همراه با درخواست منبع اسکریپت ارسال کند. در سمت سرور، از این برای راه‌اندازی ارسال هدر {{httpheader("Attribution-Reporting-Register-Source")}} یا {{httpheader("Attribution-Reporting-Register-Trigger")}} در پاسخ استفاده می‌شود، به‌ترتیب برای ثبت یک [منبع attribution مبتنی بر جاوااسکریپت](/en-US/docs/Web/API/Attribution_Reporting_API/Registering_sources#javascript-based_event_sources) یا [trigger attribution](/en-US/docs/Web/API/Attribution_Reporting_API/Registering_triggers#javascript-based_attribution_triggers).
 - {{domxref("HTMLScriptElement.async")}}
-  - : A boolean value that controls how the script should be executed. For classic scripts, if the `async` property is set to `true`, the external script will be fetched in parallel to parsing and evaluated as soon as it is available. For [module scripts](/en-US/docs/Web/JavaScript/Guide/Modules), if the `async` property is set to `true`, the script and all their dependencies will be fetched in parallel to parsing and evaluated as soon as they are available.
+  - : یک مقدار بولی که نحوهٔ اجرای اسکریپت را کنترل می‌کند. برای اسکریپت‌های کلاسیک، اگر ویژگی `async` روی `true` تنظیم شود، اسکریپت خارجی به‌صورت موازی با تجزیهٔ (parsing) سند واکشی می‌شود و به محض در دسترس بودن ارزیابی می‌شود. برای [اسکریپت‌های ماژول](/en-US/docs/Web/JavaScript/Guide/Modules)، اگر ویژگی `async` روی `true` تنظیم شود، اسکریپت و همهٔ وابستگی‌های آن به‌صورت موازی با تجزیه واکشی می‌شوند و به محض در دسترس بودن ارزیابی می‌شوند.
 - {{domxref("HTMLScriptElement.blocking")}}
-  - : A string indicating that certain operations should be blocked on the fetching of the script. It reflects the `blocking` attribute of the {{HTMLElement("script")}} element.
+  - : یک رشته که نشان می‌دهد برخی عملیات خاص باید تا زمان واکشی اسکریپت مسدود شوند. این ویژگی، ویژگی `blocking` المان {{HTMLElement("script")}} را منعکس می‌کند.
 - `HTMLScriptElement.charset` {{deprecated_inline}}
-  - : A string representing the character encoding of an external script. It reflects the [`charset`](/en-US/docs/Web/HTML/Reference/Elements/script#charset) attribute.
+  - : یک رشته که نشان‌دهندهٔ encoding کاراکتر یک اسکریپت خارجی است. این ویژگی، ویژگی [`charset`](/en-US/docs/Web/HTML/Reference/Elements/script#charset) را منعکس می‌کند.
 - {{domxref("HTMLScriptElement.crossOrigin")}}
-  - : A string reflecting the [CORS setting](/en-US/docs/Web/HTML/Reference/Attributes/crossorigin) for the script element. For classic scripts from other [origins](/en-US/docs/Glossary/Origin), this controls if error information will be exposed.
+  - : یک رشته که [تنظیمات CORS](/en-US/docs/Web/HTML/Reference/Attributes/crossorigin) مربوط به المان اسکریپت را منعکس می‌کند. برای اسکریپت‌های کلاسیک از [originهای](/en-US/docs/Glossary/Origin) دیگر، این ویژگی کنترل می‌کند که آیا اطلاعات خطا در معرض نمایش قرار گیرند یا نه.
 - {{domxref("HTMLScriptElement.defer")}}
-  - : A boolean value that controls how the script should be executed. For classic scripts, if the `defer` property is set to `true`, the external script will be executed after the document has been parsed, but before firing {{domxref("Document/DOMContentLoaded_event", "DOMContentLoaded")}} event. For [module scripts](/en-US/docs/Web/JavaScript/Guide/Modules), the `defer` property has no effect.
+  - : یک مقدار بولی که نحوهٔ اجرای اسکریپت را کنترل می‌کند. برای اسکریپت‌های کلاسیک، اگر ویژگی `defer` روی `true` تنظیم شود، اسکریپت خارجی پس از تجزیهٔ سند، اما قبل از رویداد {{domxref("Document/DOMContentLoaded_event", "DOMContentLoaded")}} اجرا می‌شود. برای [اسکریپت‌های ماژول](/en-US/docs/Web/JavaScript/Guide/Modules)، ویژگی `defer` هیچ اثری ندارد.
 - `HTMLScriptElement.event` {{deprecated_inline}}
-  - : A string; an obsolete way of registering event handlers on elements in an HTML document.
+  - : یک رشته؛ روشی منسوخ برای ثبت مدیریت‌کننده‌های رویداد روی المان‌ها در یک سند HTML.
 - {{domxref("HTMLScriptElement.fetchPriority")}}
-  - : An optional string representing a hint given to the browser on how it should prioritize fetching of an external script relative to other external scripts. If this value is provided, it must be one of the possible permitted values: `high` to fetch at a high priority, `low` to fetch at a low priority, or `auto` to indicate no preference (which is the default). It reflects the `fetchpriority` attribute of the {{HTMLElement("script")}} element.
+  - : یک رشته اختیاری که نشان‌دهندهٔ یک راهنمایی (hint) به مرورگر است دربارهٔ اینکه چگونه باید واکشی یک اسکریپت خارجی را نسبت به سایر اسکریپت‌های خارجی اولویت‌بندی کند. اگر این مقدار ارائه شود، باید یکی از مقادیر مجاز باشد: `high` برای واکشی با اولویت بالا، `low` برای واکشی با اولویت پایین، یا `auto` برای نشان دادن بدون اولویت (که پیش‌فرض است). این ویژگی، ویژگی `fetchpriority` المان {{HTMLElement("script")}} را منعکس می‌کند.
 - {{domxref("HTMLScriptElement.innerText")}}
-  - : A property that represents the inline text content of the {{HTMLElement("script")}} element as though it were rendered text.
-    The property accepts either a {{domxref("TrustedScript")}} object or a string.
+  - : یک ویژگی که محتوای متنی درون‌خطی المان {{HTMLElement("script")}} را طوری نشان می‌دهد که گویی متن رندر شده است. این ویژگی یا یک شیء {{domxref("TrustedScript")}} یا یک رشته را می‌پذیرد.
 - {{domxref("HTMLScriptElement.integrity")}}
-  - : A string that contains inline metadata that a browser can use to verify that a fetched resource has been delivered without unexpected manipulation. It reflects the `integrity` attribute of the {{HTMLElement("script")}} element.
+  - : یک رشته که شامل فرادادهٔ درون‌خطی است که مرورگر می‌تواند از آن برای تأیید اینکه یک منبع واکشی‌شده بدون دستکاری غیرمنتظره تحویل داده شده است استفاده کند. این ویژگی، ویژگی `integrity` المان {{HTMLElement("script")}} را منعکس می‌کند.
 - {{domxref("HTMLScriptElement.noModule")}}
-  - : A boolean value that if true, stops the script's execution in browsers that support [ES modules](/en-US/docs/Web/JavaScript/Guide/Modules) — used to run fallback scripts in older browsers that do _not_ support JavaScript modules.
+  - : یک مقدار بولی که اگر `true` باشد، اجرای اسکریپت را در مرورگرهایی که از [ماژول‌های ES](/en-US/docs/Web/JavaScript/Guide/Modules) پشتیبانی می‌کنند متوقف می‌کند — این ویژگی برای اجرای اسکریپت‌های جایگزین در مرورگرهای قدیمی‌تری استفاده می‌شود که از ماژول‌های جاوااسکریپت پشتیبانی _نمی‌کنند_.
 - {{domxref("HTMLScriptElement.referrerPolicy")}}
-  - : A string that reflects the [`referrerPolicy`](/en-US/docs/Web/HTML/Reference/Elements/script#referrerpolicy) HTML attribute indicating which referrer to use when fetching the script, and fetches done by that script.
+  - : یک رشته که ویژگی HTML [`referrerPolicy`](/en-US/docs/Web/HTML/Reference/Elements/script#referrerpolicy) را منعکس می‌کند و نشان می‌دهد هنگام واکشی اسکریپت و واکشی‌هایی که توسط آن اسکریپت انجام می‌شود، کدام referrer استفاده شود.
 - {{domxref("HTMLScriptElement.src")}}
-  - : A {{domxref("TrustedScriptURL")}} or string representing the URL of an external script; this can be used as an alternative to embedding a script directly within a document.
-    It reflects the `src` attribute of the {{HTMLElement("script")}} element.
+  - : یک {{domxref("TrustedScriptURL")}} یا رشته که URL یک اسکریپت خارجی را نشان می‌دهد؛ این می‌تواند به عنوان جایگزینی برای جاسازی مستقیم اسکریپت در یک سند استفاده شود. این ویژگی، ویژگی `src` المان {{HTMLElement("script")}} را منعکس می‌کند.
 - {{domxref("HTMLScriptElement.text")}}
-  - : A property that represents the inline text content of the {{HTMLElement("script")}} element.
-    The property accepts either a {{domxref("TrustedScript")}} object or a string.
-    It acts the same way as the [`textContent`](/en-US/docs/Web/API/HTMLScriptElement/textContent) property.
+  - : یک ویژگی که محتوای متنی درون‌خطی المان {{HTMLElement("script")}} را نشان می‌دهد. این ویژگی یا یک شیء {{domxref("TrustedScript")}} یا یک رشته را می‌پذیرد. این ویژگی همانند ویژگی [`textContent`](/en-US/docs/Web/API/HTMLScriptElement/textContent) عمل می‌کند.
 - {{domxref("HTMLScriptElement.textContent")}}
-  - : A property that represents the inline text content of the {{HTMLElement("script")}} element.
-    The property is redefined from {{domxref("Node/textContent","Node")}} to support {{domxref("TrustedScript")}} as an input.
-    On this element it behaves exactly like the [`text`](/en-US/docs/Web/API/HTMLScriptElement/text) property.
+  - : یک ویژگی که محتوای متنی درون‌خطی المان {{HTMLElement("script")}} را نشان می‌دهد. این ویژگی از {{domxref("Node/textContent","Node")}} بازتعریف شده است تا از {{domxref("TrustedScript")}} به عنوان ورودی پشتیبانی کند. روی این المان دقیقاً مانند ویژگی [`text`](/en-US/docs/Web/API/HTMLScriptElement/text) رفتار می‌کند.
 - {{domxref("HTMLScriptElement.type")}}
-  - : A string representing the type of the script.
-    It reflects the `type` attribute of the {{HTMLElement("script")}} element.
+  - : یک رشته که نوع اسکریپت را نشان می‌دهد. این ویژگی، ویژگی `type` المان {{HTMLElement("script")}} را منعکس می‌کند.
 
-## Static methods
+## روش‌های ایستا
 
 - {{domxref("HTMLScriptElement.supports_static", "HTMLScriptElement.supports()")}}
-  - : Returns `true` if the browser supports scripts of the specified type and `false` otherwise.
-    This method provides a simple and unified method for script-related feature detection.
+  - : اگر مرورگر از اسکریپت‌های نوع مشخص‌شده پشتیبانی کند، `true` و در غیر این صورت `false` برمی‌گرداند. این روش یک سازوکار ساده و یکپارچه برای تشخیص ویژگی‌های مربوط به اسکریپت فراهم می‌کند.
 
-## Instance methods
+## روش‌های نمونه
 
-_No specific methods; inherits methods from its parent, {{domxref("HTMLElement")}}._
+_روش خاصی ندارد؛ روش‌های والد خود، {{domxref("HTMLElement")}} را به ارث می‌برد._
 
-## Events
+## رویدادها
 
-_No specific events; inherits events from its parent, {{domxref("HTMLElement")}}._
+_رویداد خاصی ندارد؛ رویدادهای والد خود، {{domxref("HTMLElement")}} را به ارث می‌برد._
 
-## Examples
+## مثال‌ها
 
-### Dynamically importing scripts
+### وارد کردن پویای اسکریپت‌ها
 
-Let's create a function that imports new scripts within a document creating a {{HTMLElement("script")}} node _immediately before_ the {{HTMLElement("script")}} that hosts the following code (through {{domxref("document.currentScript")}}).
-These scripts will be **asynchronously** executed.
-For more details, see the [`defer`](/en-US/docs/Web/API/HTMLScriptElement/defer) and [`async`](/en-US/docs/Web/API/HTMLScriptElement/async) properties.
+بیایید تابعی بسازیم که اسکریپت‌های جدید را در یک سند وارد می‌کند و یک گرهٔ {{HTMLElement("script")}} را _دقیقاً قبل از_ {{HTMLElement("script")}} که کد زیر را میزبانی می‌کند (از طریق {{domxref("document.currentScript")}}) ایجاد می‌کند. این اسکریپت‌ها به‌صورت **ناهمگام** اجرا خواهند شد. برای جزئیات بیشتر، ویژگی‌های [`defer`](/en-US/docs/Web/API/HTMLScriptElement/defer) و [`async`](/en-US/docs/Web/API/HTMLScriptElement/async) را ببینید.
 
 ```js
 function loadError(oError) {
@@ -107,7 +91,7 @@ function prefixScript(url, onloadFunction) {
 }
 ```
 
-This next function, instead of prepending the new scripts immediately before the {{domxref("document.currentScript")}} element, appends them as children of the {{HTMLElement("head")}} tag.
+تابع بعدی، به جای قرار دادن اسکریپت‌های جدید بلافاصله قبل از المان {{domxref("document.currentScript")}}، آن‌ها را به عنوان فرزندان تگ {{HTMLElement("head")}} اضافه می‌کند.
 
 ```js
 function loadError(oError) {
@@ -125,7 +109,7 @@ function affixScriptToHead(url, onloadFunction) {
 }
 ```
 
-Sample usage:
+نمونهٔ استفاده:
 
 ```js
 affixScriptToHead("myScript1.js");
@@ -134,11 +118,11 @@ affixScriptToHead("myScript2.js", () => {
 });
 ```
 
-### Checking if a script type is supported
+### بررسی اینکه آیا یک نوع اسکریپت پشتیبانی می‌شود
 
-{{domxref("HTMLScriptElement.supports_static", "HTMLScriptElement.supports()")}} provides a unified mechanism for checking whether a browser supports particular types of scripts.
+{{domxref("HTMLScriptElement.supports_static", "HTMLScriptElement.supports()")}} یک سازوکار یکپارچه برای بررسی اینکه آیا مرورگر از انواع خاصی از اسکریپت‌ها پشتیبانی می‌کند فراهم می‌کند.
 
-The example below shows how to check for module support, using the existence of the `noModule` attribute as a fallback.
+مثال زیر نحوهٔ بررسی پشتیبانی از ماژول‌ها را نشان می‌دهد و از وجود ویژگی `noModule` به عنوان راه‌حل جایگزین استفاده می‌کند.
 
 ```js
 function checkModuleSupport() {
@@ -149,19 +133,19 @@ function checkModuleSupport() {
 }
 ```
 
-Classic scripts are assumed to be supported on all browsers.
+فرض بر این است که اسکریپت‌های کلاسیک در همهٔ مرورگرها پشتیبانی می‌شوند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- HTML {{HTMLElement("script")}} element
-- HTML {{HTMLElement("noscript")}} element
+- المان HTML {{HTMLElement("script")}}
+- المان HTML {{HTMLElement("noscript")}}
 - {{domxref("document.currentScript")}}
-- [Web Workers](/en-US/docs/Web/API/Web_Workers_API/Using_web_workers) (code snippets similar to scripts but executed in [another global context](/en-US/docs/Web/API/DedicatedWorkerGlobalScope))
+- [Web Workers](/en-US/docs/Web/API/Web_Workers_API/Using_web_workers) (قطعه‌کدهای مشابه اسکریپت‌ها اما اجراشده در [زمینهٔ سراسری دیگری](/en-US/docs/Web/API/DedicatedWorkerGlobalScope))
