@@ -1,11 +1,5 @@
 ---
 title: "Element: mouseleave event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseleave_event"
-status: "needs-translation"
----
-
----
-title: "Element: mouseleave event"
 short-title: mouseleave
 slug: Web/API/Element/mouseleave_event
 page-type: web-api-event
@@ -14,17 +8,17 @@ browser-compat: api.Element.mouseleave_event
 
 {{APIRef("UI Events")}}
 
-The **`mouseleave`** event is fired at an {{domxref("Element")}} when the cursor of a pointing device (usually a mouse) is moved out of it.
+رویداد **`mouseleave`** زمانی روی یک {{domxref("Element")}} رخ می‌دهد که مکان‌نمای یک دستگاه اشاره‌گر (معمولاً ماوس) از آن عنصر خارج شود.
 
-`mouseleave` and {{domxref("Element/mouseout_event", "mouseout")}} are similar but differ in that `mouseleave` does not bubble and `mouseout` does. This means that `mouseleave` is fired when the pointer has exited the element _and_ all of its descendants, whereas `mouseout` is fired when the pointer leaves the element _or_ leaves one of the element's descendants, because of bubbling (even if the pointer is still within the element). Other than that, leave and out events for the same situation are dispatched at the same time, if appropriate.
+رویدادهای `mouseleave` و {{domxref("Element/mouseout_event", "mouseout")}} مشابه هستند اما تفاوت آن‌ها در این است که `mouseleave` حباب نمی‌شود (bubble نمی‌کند) اما `mouseout` حباب می‌شود. این بدان معناست که `mouseleave` زمانی رخ می‌دهد که اشاره‌گر از عنصر _و_ همهٔ فرزندان آن خارج شده باشد، در حالی که `mouseout` زمانی رخ می‌دهد که اشاره‌گر از عنصر _یا_ یکی از فرزندان آن خارج شود، به دلیل حباب‌شدن (حتی اگر اشاره‌گر همچنان داخل خود عنصر باشد). به‌جز این، در صورت اقتضا، رویدادهای خروج (leave و out) برای موقعیت یکسان، هم‌زمان ارسال می‌شوند.
 
-The `mouseleave` and `mouseout` events will not be triggered when the element is replaced or removed from the DOM.
+رویدادهای `mouseleave` و `mouseout` وقتی عنصر جایگزین یا از DOM حذف شود، فعال نخواهند شد.
 
-Note that "moving out of an element" refers to the element's position in the DOM tree, not to its visual position. For example, if two sibling elements are positioned so one is placed inside the other, then moving from the outer element into the inner element will trigger `mouseleave` on the outer element, even though the pointer is still in the bounds of the outer element.
+توجه داشته باشید که «خروج از یک عنصر» به جایگاه عنصر در درخت DOM اشاره دارد، نه به جایگاه بصری آن. برای مثال، اگر دو عنصر خواهر به‌گونه‌ای چیدمان شوند که یکی داخل دیگری قرار بگیرد، حرکت از عنصر بیرونی به عنصر داخلی باعث فعال‌شدن رویداد `mouseleave` روی عنصر بیرونی می‌شود، حتی اگر اشاره‌گر همچنان در محدودهٔ عنصر بیرونی باشد.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای استفاده از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} یا تنظیم ویژگیِ handler رویداد، به‌کار ببرید.
 
 ```js-nolint
 addEventListener("mouseleave", (event) => { })
@@ -32,33 +26,33 @@ addEventListener("mouseleave", (event) => { })
 onmouseleave = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("MouseEvent")}}. Inherits from {{domxref("UIEvent")}} and {{domxref("Event")}}.
+یک {{domxref("MouseEvent")}}. از {{domxref("UIEvent")}} و {{domxref("Event")}} به ارث می‌برد.
 
 {{InheritanceDiagram("MouseEvent")}}
 
-## Description
+## توضیحات
 
-### Behavior of `mouseleave` events
+### رفتار رویدادهای `mouseleave`
 
-![mouseleave behavior diagram](mouseleave.png)
+![نمودار رفتار mouseleave](mouseleave.png)
 
-One `mouseleave` event is sent to each element of the hierarchy when leaving them. Here four events are sent to the four elements of the hierarchy when the pointer moves from the text to an area outside of the most outer div represented here.
+هنگام خروج از عناصر، یک رویداد `mouseleave` به هر عنصر از سلسله‌مراتب ارسال می‌شود. در این‌جا وقتی اشاره‌گر از متن به ناحیه‌ای خارج از بیرونی‌ترین div نشان‌داده‌شده حرکت کند، چهار رویداد به چهار عنصر سلسله‌مراتب ارسال می‌شود.
 
-### Behavior of `mouseout` events
+### رفتار رویدادهای `mouseout`
 
-![mouseout behavior diagram](mouseout.png)
+![نمودار رفتار mouseout](mouseout.png)
 
-One single `mouseout` event is sent to the deepest element of the DOM tree, then it bubbles up the hierarchy until it is canceled by a handler or reaches the root.
+یک رویداد `mouseout` به عمیق‌ترین عنصر درخت DOM ارسال می‌شود و سپس در سلسله‌مراتب به سمت بالا حباب می‌شود تا زمانی که توسط یک handler لغو شود یا به ریشه برسد.
 
-## Examples
+## مثال‌ها
 
-The [`mouseout`](/en-US/docs/Web/API/Element/mouseout_event#examples) documentation has an example illustrating the difference between `mouseout` and `mouseleave`.
+مستندات [`mouseout`](/en-US/docs/Web/API/Element/mouseout_event#examples) نمونه‌ای دارد که تفاوت بین `mouseout` و `mouseleave` را نشان می‌دهد.
 
 ### mouseleave
 
-The following trivial example uses the `mouseenter` event to change the border on the `<div>` when the mouse enters the space allotted to it. It then adds an item to the list with the number of the `mouseenter` or `mouseleave` event.
+مثال سادهٔ زیر از رویداد `mouseenter` برای تغییر حاشیهٔ `<div>` هنگام ورود ماوس به فضای اختصاص‌داده‌شده به آن استفاده می‌کند. سپس آیتمی به فهرست اضافه می‌کند که شامل شمارهٔ رویداد `mouseenter` یا `mouseleave` است.
 
 #### HTML
 
@@ -72,7 +66,7 @@ The following trivial example uses the `mouseenter` event to change the border o
 
 #### CSS
 
-Styling the `<div>` to make it more visible.
+استایل‌دهی به `<div>` برای اینکه بیشتر دیده شود.
 
 ```css
 #mouseTarget {
@@ -117,21 +111,21 @@ function addListItem(text) {
 }
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample('mouseleave')}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Learn: Introduction to events](/en-US/docs/Learn_web_development/Core/Scripting/Events)
+- [یادگیری: آشنایی با رویدادها](/en-US/docs/Learn_web_development/Core/Scripting/Events)
 - {{domxref("Element/mousedown_event", "mousedown")}}
 - {{domxref("Element/mouseup_event", "mouseup")}}
 - {{domxref("Element/mousemove_event", "mousemove")}}
