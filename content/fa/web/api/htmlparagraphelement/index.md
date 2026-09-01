@@ -1,10 +1,4 @@
 ---
-title: "HTMLParagraphElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLParagraphElement"
-status: "needs-translation"
----
-
----
 title: HTMLParagraphElement
 slug: Web/API/HTMLParagraphElement
 page-type: web-api-interface
@@ -13,29 +7,29 @@ browser-compat: api.HTMLParagraphElement
 
 {{ APIRef("HTML DOM") }}
 
-The **`HTMLParagraphElement`** interface provides special properties (beyond those of the regular {{domxref("HTMLElement")}} object interface it inherits) for manipulating {{HTMLElement("p")}} elements.
+رابط `HTMLParagraphElement` ویژگی‌های خاصی را (فراتر از ویژگی‌های رابط شیء معمولی {{domxref("HTMLElement")}} که به ارث می‌برد) برای دستکاری عناصر {{HTMLElement("p")}} فراهم می‌کند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("HTMLElement")}}._
+_ویژگی‌های والد خود، {{domxref("HTMLElement")}}، را به ارث می‌برد._
 
 - {{domxref("HTMLParagraphElement.align")}} {{deprecated_inline}}
-  - : A string representing an enumerated property indicating alignment of the element's contents with respect to the surrounding context. The possible values are `"left"`, `"right"`, `"justify"`, and `"center"`.
+  - : رشته‌ای است که یک ویژگی شمارشی را نشان می‌دهد و تراز محتوای عنصر را نسبت به زمینه اطراف مشخص می‌کند. مقادیر ممکن عبارت‌اند از `"left"`، `"right"`، `"justify"` و `"center"`.
 
-## Instance methods
+## متدهای نمونه
 
-_No specific methods, inherits methods from its parent, {{domxref("HTMLElement")}}._
+_متد خاصی ندارد؛ متدهای والد خود، {{domxref("HTMLElement")}}، را به ارث می‌برد._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The HTML element implementing this interface: {{ HTMLElement("p") }}.
+- عنصر HTML که این رابط را پیاده‌سازی می‌کند: {{ HTMLElement("p") }}.
