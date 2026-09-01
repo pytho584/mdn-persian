@@ -1,11 +1,5 @@
 ---
 title: "EXT_disjoint_timer_query: getQueryEXT() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EXT_disjoint_timer_query/getQueryEXT"
-status: "needs-translation"
----
-
----
-title: "EXT_disjoint_timer_query: getQueryEXT() method"
 short-title: getQueryEXT()
 slug: Web/API/EXT_disjoint_timer_query/getQueryEXT
 page-type: webgl-extension-method
@@ -14,9 +8,8 @@ browser-compat: api.EXT_disjoint_timer_query.getQueryEXT
 
 {{APIRef("WebGL")}}
 
-The **`EXT_disjoint_timer_query.getQueryEXT()`** method of the
-[WebGL API](/en-US/docs/Web/API/WebGL_API) returns information about a query
-target.
+متد **`EXT_disjoint_timer_query.getQueryEXT()`** از
+[WebGL API](/en-US/docs/Web/API/WebGL_API) اطلاعاتی را دربارهٔ یک هدف پرس‌وجو بازمی‌گرداند.
 
 ## Syntax
 
@@ -27,22 +20,22 @@ getQueryEXT(target, pname)
 ### Parameters
 
 - `target`
-  - : A {{domxref("WebGL_API/Types", "GLenum")}} specifying the target of the time query. Must be
-    `ext.TIMESTAMP_EXT` or `ext.TIME_ELAPSED_EXT`.
+  - : یک {{domxref("WebGL_API/Types", "GLenum")}} که هدف پرس‌وجوی زمان را مشخص می‌کند. باید
+    `ext.TIMESTAMP_EXT` یا `ext.TIME_ELAPSED_EXT` باشد.
 - `pname`
-  - : A {{domxref("WebGL_API/Types", "GLenum")}} specifying which information to return. Must be
-    `ext.CURRENT_QUERY_EXT` or `ext.QUERY_COUNTER_BITS_EXT`.
+  - : یک {{domxref("WebGL_API/Types", "GLenum")}} که مشخص می‌کند کدام اطلاعات بازگردانده شود. باید
+    `ext.CURRENT_QUERY_EXT` یا `ext.QUERY_COUNTER_BITS_EXT` باشد.
 
 ### Return value
 
-Depends on `pname`:
+مقدار بازگشتی به `pname` بستگی دارد:
 
-- If `pname` is `ext.CURRENT_QUERY_EXT`: A
-  {{domxref("WebGLQuery")}} object, which is the currently active query for the
-  given target.
-- If `pname` is `ext.QUERY_COUNTER_BITS_EXT`: A
-  {{domxref("WebGL_API/Types", "GLint")}} indicating the number of bits used to hold the query result for
-  the given target.
+- اگر `pname` برابر با `ext.CURRENT_QUERY_EXT` باشد: یک
+  شیء {{domxref("WebGLQuery")}} که پرس‌وجوی فعال فعلی برای
+  هدف داده‌شده است.
+- اگر `pname` برابر با `ext.QUERY_COUNTER_BITS_EXT` باشد: یک
+  {{domxref("WebGL_API/Types", "GLint")}} که تعداد بیت‌های استفاده‌شده برای نگهداری نتیجهٔ پرس‌وجو برای
+  هدف داده‌شده را نشان می‌دهد.
 
 ## Examples
 
