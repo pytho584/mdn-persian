@@ -1,11 +1,5 @@
 ---
 title: "GPURenderPassEncoder: drawIndexedIndirect() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder/drawIndexedIndirect"
-status: "needs-translation"
----
-
----
-title: "GPURenderPassEncoder: drawIndexedIndirect() method"
 short-title: drawIndexedIndirect()
 slug: Web/API/GPURenderPassEncoder/drawIndexedIndirect
 page-type: web-api-instance-method
@@ -14,64 +8,63 @@ browser-compat: api.GPURenderPassEncoder.drawIndexedIndirect
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`drawIndexedIndirect()`** method of the
-{{domxref("GPURenderPassEncoder")}} interface draws indexed primitives using parameters read from a {{domxref("GPUBuffer")}}.
+متد **`drawIndexedIndirect()`** از رابط {{domxref("GPURenderPassEncoder")}}، پریمیتیوهای ایندکس‌دار را با استفاده از پارامترهایی که از یک {{domxref("GPUBuffer")}} خوانده می‌شوند، رسم می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 drawIndexedIndirect(indirectBuffer, indirectOffset)
 ```
 
-### Parameters
+### پارامترها
 
 - `indirectBuffer`
-  - : A {{domxref("GPUBuffer")}} containing the `indexCount`, `instanceCount`, `firstIndex`, `baseVertex`, and `firstInstance` values needed to carry out the drawing operation. The buffer must contain a tightly packed block of five 32-bit unsigned integer values representing the values (20 bytes total), given in the same order as the arguments for {{domxref("GPURenderPassEncoder.drawIndexed()")}}. So for example:
+  - : یک {{domxref("GPUBuffer")}} که شامل مقادیر `indexCount`، `instanceCount`، `firstIndex`، `baseVertex` و `firstInstance` مورد نیاز برای اجرای عملیات رسم است. بافر باید حاوی یک بلوک فشرده از پنج مقدار صحیح ۳۲ بیتی بدون علامت (مجموعاً ۲۰ بایت) باشد که به همان ترتیب آرگومان‌های {{domxref("GPURenderPassEncoder.drawIndexed()")}} مرتب شده‌اند. به عنوان مثال:
 
     ```js
     const uint32 = new Uint32Array(5);
-    uint32[0] = 3; // The indexCount value
-    uint32[1] = 1; // The instanceCount value
-    uint32[2] = 0; // The firstIndex value
-    uint32[3] = 0; // The baseVertex value
-    uint32[4] = 0; // The firstInstance value
+    uint32[0] = 3; // مقدار indexCount
+    uint32[1] = 1; // مقدار instanceCount
+    uint32[2] = 0; // مقدار firstIndex
+    uint32[3] = 0; // مقدار baseVertex
+    uint32[4] = 0; // مقدار firstInstance
 
-    // Write values into a GPUBuffer
+    // نوشتن مقادیر در یک GPUBuffer
     device.queue.writeBuffer(buffer, 0, uint32, 0, uint32.length);
     ```
 
     > [!NOTE]
-    > The `indirect-first-instance` [feature](/en-US/docs/Web/API/GPUSupportedFeatures) needs to be enabled for non-zero `firstInstance` values to be used. If the `indirect-first-instance` feature is not enabled and `firstInstance` is not zero, the `drawIndexedIndirect()` call will be treated as a no-op.
+    > برای استفاده از مقادیر غیرصفر `firstInstance`، باید [ویژگی](/en-US/docs/Web/API/GPUSupportedFeatures) `indirect-first-instance` فعال باشد. اگر این ویژگی فعال نباشد و `firstInstance` صفر نباشد، فراخوانی `drawIndexedIndirect()` به عنوان یک عملیات بی‌اثر (no-op) در نظر گرفته می‌شود.
 
 - `indirectOffset`
-  - : The offset, in bytes, into `indirectBuffer` where the value data begins.
+  - : افست (بر حسب بایت) درون `indirectBuffer` که داده‌های مقادیر از آنجا شروع می‌شوند.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-### Validation
+### اعتبارسنجی
 
-The following criteria must be met when calling **`drawIndirect()`**, otherwise a {{domxref("GPUValidationError")}} is generated and the {{domxref("GPURenderPassEncoder")}} becomes invalid:
+هنگام فراخوانی `drawIndexedIndirect()`، معیارهای زیر باید رعایت شوند، در غیر این صورت یک {{domxref("GPUValidationError")}} تولید شده و {{domxref("GPURenderPassEncoder")}} نامعتبر می‌شود:
 
-- `indirectBuffer`'s {{domxref("GPUBuffer.usage")}} contains the `GPUBufferUsage.INDIRECT` flag.
-- `indirectOffset` + the total size specified by the value parameters in the `indirectBuffer` is less than or equal to the `indirectBuffer`'s {{domxref("GPUBuffer.size")}}.
-- `indirectOffset` is a multiple of 4.
+- پرچم `GPUBufferUsage.INDIRECT` در {{domxref("GPUBuffer.usage")}} بافر `indirectBuffer` وجود داشته باشد.
+- مقدار `indirectOffset` + اندازه کل مشخص‌شده توسط پارامترهای مقدار در `indirectBuffer`، کمتر یا برابر با {{domxref("GPUBuffer.size")}} بافر `indirectBuffer` باشد.
+- `indirectOffset` مضربی از ۴ باشد.
 
-## Examples
+## مثال‌ها
 
 ```js
 // …
 
-// Create GPURenderPassEncoder
+// ایجاد GPURenderPassEncoder
 const passEncoder = commandEncoder.beginRenderPass(renderPassDescriptor);
 
-// Set pipeline and vertex buffer
+// تنظیم pipeline و بافر رأس
 passEncoder.setPipeline(renderPipeline);
 passEncoder.setVertexBuffer(0, vertexBuffer);
 passEncoder.setIndexBuffer(indexBuffer, "uint16");
 
-// Create drawIndexedIndirect values
+// ایجاد مقادیر drawIndexedIndirect
 const uint32 = new Uint32Array(5);
 uint32[0] = 3;
 uint32[1] = 1;
@@ -79,33 +72,33 @@ uint32[2] = 0;
 uint32[3] = 0;
 uint32[4] = 0;
 
-// Create a GPUBuffer and write the draw values into it
+// ایجاد یک GPUBuffer و نوشتن مقادیر رسم در آن
 const drawValues = device.createBuffer({
   size: 20,
   usage: GPUBufferUsage.COPY_DST | GPUBufferUsage.INDIRECT,
 });
 device.queue.writeBuffer(drawValues, 0, uint32, 0, uint32.length);
 
-// Draw the vertices
+// رسم رأس‌ها
 passEncoder.drawIndexedIndirect(drawValues, 0);
 
-// End the render pass
+// پایان دادن به پاس رندر
 passEncoder.end();
 
-// End frame by passing array of GPUCommandBuffers to command queue for execution
+// پایان فریم با ارسال آرایه‌ای از GPUCommandBufferها به صف فرمان برای اجرا
 device.queue.submit([commandEncoder.finish()]);
 
 // …
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
