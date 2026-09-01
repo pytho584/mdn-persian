@@ -1,7 +1,5 @@
 ---
 title: "DOMMatrix: setMatrixValue() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrix/setMatrixValue"
-status: "needs-translation"
 ---
 
 ---
@@ -14,26 +12,26 @@ browser-compat: api.DOMMatrix.setMatrixValue
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The **`setMatrixValue()`** method of the {{domxref("DOMMatrix")}} interface replaces the contents of the matrix with the matrix described by the specified transform or transforms, returning itself.
+متد **`setMatrixValue()`** از رابط {{domxref("DOMMatrix")}} محتوای ماتریس را با ماتریسی که توسط تبدیل یا تبدیل‌های مشخص‌شده توصیف می‌شود جایگزین می‌کند و خود ماتریس را برمی‌گرداند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 setMatrixValue(transformList)
 ```
 
-### Parameters
+### پارامترها
 
 - `transformList`
-  - : A string. Its value follows the same syntax as the CSS {{cssxref("transform")}} property value.
+  - : یک رشته. مقدار آن از همان سینتکس مقدار ویژگی CSS {{cssxref("transform")}} پیروی می‌کند.
 
-### Return value
+### مقدار بازگشتی
 
-Returns itself; the [`DOMMatrix`](/en-US/docs/Web/API/DOMMatrix) with updated values.
+خود ماتریس را برمی‌گرداند؛ یعنی [`DOMMatrix`](/en-US/docs/Web/API/DOMMatrix) با مقادیر به‌روزرسانی‌شده.
 
-## Examples
+## مثال‌ها
 
-In this example, we create a matrix, apply a 3D transform using the {{domxref("DOMMatrix.translateSelf()")}} method, revert it to a 2D transform using the `setMatrixValue()` method, then revert it back to a 3D transform with another `setMatrixValue()` method call.
+در این مثال، یک ماتریس می‌سازیم، با استفاده از متد {{domxref("DOMMatrix.translateSelf()")}} یک تبدیل سه‌بعدی روی آن اعمال می‌کنیم، با استفاده از متد `setMatrixValue()` آن را به یک تبدیل دوبعدی بازمی‌گردانیم و سپس با یک فراخوانی دیگر از متد `setMatrixValue()` دوباره به یک تبدیل سه‌بعدی برمی‌گردانیم.
 
 ```js
 const matrix = new DOMMatrix();
@@ -56,17 +54,17 @@ console.log(matrix.toString()); // matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 
 console.log(matrix.is2D); // false
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("DOMMatrix.translateSelf()")}}
 - {{domxref("DOMMatrixReadOnly.is2D")}}
-- CSS {{CSSxRef("transform-function/matrix", "matrix()")}} function
-- CSS {{CSSxRef("transform-function/matrix3d", "matrix3d()")}} function
+- تابع CSS {{CSSxRef("transform-function/matrix", "matrix()")}}
+- تابع CSS {{CSSxRef("transform-function/matrix3d", "matrix3d()")}}
