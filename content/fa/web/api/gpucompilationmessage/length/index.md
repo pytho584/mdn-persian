@@ -1,11 +1,5 @@
 ---
 title: "GPUCompilationMessage: length property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUCompilationMessage/length"
-status: "needs-translation"
----
-
----
-title: "GPUCompilationMessage: length property"
 short-title: length
 slug: Web/API/GPUCompilationMessage/length
 page-type: web-api-instance-property
@@ -14,16 +8,15 @@ browser-compat: api.GPUCompilationMessage.length
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`length`** read-only property of the
-{{domxref("GPUCompilationMessage")}} interface is a number representing the length of the substring that the message corresponds to.
+ویژگی فقط‑خواندنی **`length`** در رابط {{domxref("GPUCompilationMessage")}} عددی است که طول زیررشته‌ای را که پیام به آن مربوط می‌شود نشان می‌دهد.
 
-## Value
+## مقدار
 
-A number.
+یک عدد.
 
-To be precise, `length` is the number of {{glossary("UTF-16", "UTF-16 code units")}} in the shader code substring that the message corresponds to. If the message corresponds to a single point rather than a substring, `length` will be 0.
+به طور دقیق، `length` تعداد {{glossary("UTF-16", "واحد کد UTF‑16")}} در زیررشته کد شیدر است که پیام به آن اشاره دارد. اگر پیام به یک نقطهٔ واحد اشاره داشته باشد (نه یک زیررشته)، مقدار `length` صفر خواهد بود.
 
-## Examples
+## مثال‌ها
 
 ```js
 const shaderModule = device.createShaderModule({
@@ -35,16 +28,16 @@ const firstMessage = shaderInfo.messages[0];
 console.log(firstMessage.length);
 ```
 
-See the main [`GPUCompilationInfo` page](/en-US/docs/Web/API/GPUCompilationInfo#examples) for a more detailed example.
+برای یک مثال کامل‌تر، به صفحه اصلی [`GPUCompilationInfo`](/en-US/docs/Web/API/GPUCompilationInfo#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
