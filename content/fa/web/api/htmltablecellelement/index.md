@@ -1,7 +1,5 @@
 ---
 title: "HTMLTableCellElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableCellElement"
-status: "needs-translation"
 ---
 
 ---
@@ -13,63 +11,63 @@ browser-compat: api.HTMLTableCellElement
 
 {{ APIRef("HTML DOM") }}
 
-The **`HTMLTableCellElement`** interface provides special properties and methods (beyond the regular {{domxref("HTMLElement")}} interface it also has available to it by inheritance) for manipulating the layout and presentation of table cells, either header cells ({{HTMLElement("th")}}) or data cells ({{HTMLElement("td")}}), in an HTML document.
+**`HTMLTableCellElement`** 接口提供了特殊的属性和方法（超出了它通过继承可用的常规 {{domxref("HTMLElement")}} 接口），用于操作 HTML 文档中表格单元格的布局和呈现，无论是表头单元格（{{HTMLElement("th")}}）还是数据单元格（{{HTMLElement("td")}}）。
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## 实例属性
 
-_Inherits properties from its parent, {{domxref("HTMLElement")}}._
+_继承自其父接口 {{domxref("HTMLElement")}} 的属性。_
 
 - {{domxref("HTMLTableCellElement.abbr")}}
-  - : A string that can be used on `<th>` elements (not on {{HTMLElement("td")}}), specifying an alternative label for the header cell. This alternate label can be used in other contexts, such as when describing the headers that apply to a data cell. This is used to offer a shorter term for use by screen readers in particular; and is a valuable accessibility tool. Usually, the value of `abbr` is an abbreviation or acronym, but can be any text that's appropriate contextually.
+  - : 一个字符串，可用于 `<th>` 元素（不用于 {{HTMLElement("td")}}），指定表头单元格的替代标签。此替代标签可在其他上下文中使用，例如在描述适用于数据单元格的表头时。它特别用于为屏幕阅读器提供更简短的术语，是一种有价值的无障碍工具。通常，`abbr` 的值是缩写或首字母缩略词，但也可以是任何在上下文上合适的文本。
 - {{domxref("HTMLTableCellElement.cellIndex")}} {{ReadOnlyInline}}
-  - : A number representing the cell's position in the {{domxref("HTMLTableRowElement.cells", "cells")}} collection of the {{HTMLElement("tr")}} the cell is contained within. If the cell doesn't belong to a `<tr>`, it returns `-1`.
+  - : 一个数字，表示单元格在包含它的 {{HTMLElement("tr")}} 的 {{domxref("HTMLTableRowElement.cells", "cells")}} 集合中的位置。如果单元格不属于某个 `<tr>`，则返回 `-1`。
 - {{domxref("HTMLTableCellElement.colSpan")}}
-  - : A positive number indicating the number of columns this cell must span; this lets the cell occupy space across multiple columns of the table. It reflects the [`colspan`](/en-US/docs/Web/HTML/Reference/Elements/td#colspan) attribute.
+  - : 一个正数，表示该单元格必须跨越的列数；这允许单元格占据表格中多列的空间。它反映了 [`colspan`](/en-US/docs/Web/HTML/Reference/Elements/td#colspan) 属性。
 - {{domxref("HTMLTableCellElement.headers")}} {{ReadOnlyInline}}
-  - : A {{domxref("DOMTokenList")}} describing a list of `id` of {{HTMLElement("th")}} elements that represent headers associated with the cell. It reflects the [`headers`](/en-US/docs/Web/HTML/Reference/Elements/td#headers) attribute.
+  - : 一个 {{domxref("DOMTokenList")}}，描述与单元格关联的表头（{{HTMLElement("th")}} 元素）的 `id` 列表。它反映了 [`headers`](/en-US/docs/Web/HTML/Reference/Elements/td#headers) 属性。
 - {{domxref("HTMLTableCellElement.rowSpan")}}
-  - : A positive number indicating the number of rows this cell must span; this lets a cell occupy space across multiple rows of the table. It reflects the [`rowspan`](/en-US/docs/Web/HTML/Reference/Elements/td#rowspan) attribute.
+  - : 一个正数，表示该单元格必须跨越的行数；这允许单元格占据表格中多行的空间。它反映了 [`rowspan`](/en-US/docs/Web/HTML/Reference/Elements/td#rowspan) 属性。
 - {{domxref("HTMLTableCellElement.scope")}}
-  - : A string indicating the scope of a {{HTMLElement("th")}} cell. Possible values for `scope` are: `col`, `colgroup`, `row`, `rowgroup`, or the empty string (`""`).
+  - : 一个字符串，表示 {{HTMLElement("th")}} 单元格的范围。`scope` 的可能值为：`col`、`colgroup`、`row`、`rowgroup` 或空字符串（`""`）。
 
-## Instance methods
+## 实例方法
 
-_No specific method; inherits methods from its parent, {{domxref("HTMLElement")}}_.
+_没有特定方法；继承自其父接口 {{domxref("HTMLElement")}} 的方法。_
 
-## Deprecated properties
+## 已弃用的属性
 
 > [!WARNING]
-> These properties have been deprecated and should no longer be used. They are documented primarily to help understand older code bases.
+> 这些属性已被弃用，不应再使用。它们被记录主要是为了帮助理解较旧的代码库。
 
 - {{domxref("HTMLTableCellElement.align")}} {{deprecated_inline}}
-  - : A string containing the value of the [`align`](/en-US/docs/Web/HTML/Reference/Elements/td#align) attribute, if present, or empty string if not set. It can be used to set the alignment of the element's contents to the surrounding context of `"left"`, `"right"`, and `"center"`. Use the CSS {{cssxref("text-align")}} property instead.
+  - : 一个字符串，包含 [`align`](/en-US/docs/Web/HTML/Reference/Elements/td#align) 属性的值（如果存在），否则为空字符串。它可用于将元素内容的对齐方式设置为周围上下文中的 `"left"`、`"right"` 和 `"center"`。请改用 CSS {{cssxref("text-align")}} 属性。
 - {{domxref("HTMLTableCellElement.axis")}} {{deprecated_inline}}
-  - : A string containing a name grouping cells in virtual. It reflects the obsolete [`axis`](/en-US/docs/Web/HTML/Reference/Elements/td#axis) attribute.
+  - : 一个字符串，包含用于按虚拟分组单元格的名称。它反映了已废弃的 [`axis`](/en-US/docs/Web/HTML/Reference/Elements/td#axis) 属性。
 - {{domxref("HTMLTableCellElement.bgColor")}} {{deprecated_inline}}
-  - : A string containing the background color of the cells. It reflects the obsolete [`bgColor`](/en-US/docs/Web/HTML/Reference/Elements/td#bgcolor) attribute.
+  - : 一个字符串，包含单元格的背景颜色。它反映了已废弃的 [`bgColor`](/en-US/docs/Web/HTML/Reference/Elements/td#bgcolor) 属性。
 - {{domxref("HTMLTableCellElement.ch")}} {{deprecated_inline}}
-  - : A string containing one single character. This character is the one to align all the cells of a column on. It reflects the [`char`](/en-US/docs/Web/HTML/Reference/Elements/td#char) and defaults to the decimal points associated with the language, e.g., `'.'` for English, or `','` for French. This property was optional and was not very well supported.
+  - : 一个字符串，包含单个字符。此字符用于对齐列中的所有单元格。它反映了 [`char`](/en-US/docs/Web/HTML/Reference/Elements/td#char) 属性，并默认为与语言关联的小数点，例如英语用 `'.'`，法语用 `','`。此属性是可选的，且支持不佳。
 - {{domxref("HTMLTableCellElement.chOff")}} {{deprecated_inline}}
-  - : A string containing an integer indicating how many characters must be left at the right (for left-to-right scripts; or at the left for right-to-left scripts) of the character defined by `HTMLTableCellElement.ch`. This property was optional and was not very well supported.
+  - : 一个字符串，包含一个整数，指示在 `HTMLTableCellElement.ch` 定义的字符右侧（对于从左到右的脚本；或在左侧，对于从右到左的脚本）必须留下多少个字符。此属性是可选的，且支持不佳。
 - {{domxref("HTMLTableCellElement.height")}} {{deprecated_inline}}
-  - : A string containing a length of pixel of the hinted height of the cell. It reflects the obsolete [`height`](/en-US/docs/Web/HTML/Reference/Elements/td#height) attribute.
+  - : 一个字符串，包含单元格提示高度的像素长度。它反映了已废弃的 [`height`](/en-US/docs/Web/HTML/Reference/Elements/td#height) 属性。
 - {{domxref("HTMLTableCellElement.noWrap")}} {{deprecated_inline}}
-  - : A boolean value reflecting the `nowrap` attribute and indicating if cell content can be broken into several lines.
+  - : 一个布尔值，反映 `nowrap` 属性，指示单元格内容是否可以分成多行。
 - {{domxref("HTMLTableCellElement.vAlign")}} {{deprecated_inline}}
-  - : A string representing an enumerated value indicating how the content of the cell must be vertically aligned. It reflects the [`valign`](/en-US/docs/Web/HTML/Reference/Elements/td#valign) attribute and can have one of the following values: `"top"`, `"middle"`, `"bottom"`, or `"baseline"`. Use the CSS {{cssxref("vertical-align")}} property instead.
+  - : 一个字符串，表示一个枚举值，指示单元格内容必须如何垂直对齐。它反映了 [`valign`](/en-US/docs/Web/HTML/Reference/Elements/td#valign) 属性，可以具有以下值之一：`"top"`、`"middle"`、`"bottom"` 或 `"baseline"`。请改用 CSS {{cssxref("vertical-align")}} 属性。
 - {{domxref("HTMLTableCellElement.width")}} {{deprecated_inline}}
-  - : A string specifying the number of pixels wide the cell should be drawn, if possible. This property reflects the also obsolete [`width`](/en-US/docs/Web/HTML/Reference/Elements/td#width) attribute. Use the CSS {{cssxref("width")}} property instead.
+  - : 一个字符串，指定单元格应绘制的像素宽度（如果可能）。此属性反映了同样已废弃的 [`width`](/en-US/docs/Web/HTML/Reference/Elements/td#width) 属性。请改用 CSS {{cssxref("width")}} 属性。
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
-- The HTML elements implementing this interface: {{HTMLElement("th")}} and {{HTMLElement("td")}}.
+- 实现此接口的 HTML 元素：{{HTMLElement("th")}} 和 {{HTMLElement("td")}}。
