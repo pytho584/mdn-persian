@@ -1,7 +1,5 @@
 ---
 title: "GPUExternalTexture: label property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUExternalTexture/label"
-status: "needs-translation"
 ---
 
 ---
@@ -14,18 +12,17 @@ browser-compat: api.GPUExternalTexture.label
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`label`** property of the
-{{domxref("GPUExternalTexture")}} interface provides a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+خاصیت **`label`** در رابط {{domxref("GPUExternalTexture")}} برچسبی را فراهم می‌کند که می‌توان از آن برای شناسایی شیء استفاده کرد، برای مثال در پیام‌های {{domxref("GPUError")}} یا هشدارهای کنسول.
 
-This can be set by providing a `label` property in the descriptor object passed into the originating {{domxref("GPUDevice.importExternalTexture()")}} call, or you can get and set it directly on the `GPUExternalTexture` object.
+این مقدار را می‌توان با ارائه یک ویژگی `label` در شیء توصیف‌گری که به فراخوانی {{domxref("GPUDevice.importExternalTexture()")}} ارسال می‌شود تنظیم کرد، یا می‌توانید آن را مستقیماً روی شیء `GPUExternalTexture` بخوانید و بنویسید.
 
-## Value
+## مقدار
 
-A string. If this has not been previously set as described above, it will be an empty string.
+یک رشته. اگر قبلاً به شکلی که در بالا توضیح داده شد تنظیم نشده باشد، یک رشتهٔ خالی خواهد بود.
 
-## Examples
+## مثال‌ها
 
-Setting and getting a label via `GPUExternalTexture.label`:
+تنظیم و دریافت برچسب از طریق `GPUExternalTexture.label`:
 
 ```js
 // …
@@ -39,7 +36,7 @@ externalTexture.label = "my_ext_texture";
 console.log(externalTexture.label); // "my_ext_texture"
 ```
 
-Setting a label via the originating {{domxref("GPUDevice.importExternalTexture()")}} call, and then getting it via `GPUExternalTexture.label`:
+تنظیم برچسب از طریق فراخوانی {{domxref("GPUDevice.importExternalTexture()")}} مبدأ، و سپس دریافت آن از طریق `GPUExternalTexture.label`:
 
 ```js
 // …
@@ -52,14 +49,14 @@ const externalTexture = device.importExternalTexture({
 console.log(externalTexture.label); //  "my_ext_texture"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
