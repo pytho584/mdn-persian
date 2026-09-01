@@ -1,11 +1,5 @@
 ---
 title: "HTMLOptionsCollection: add() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLOptionsCollection/add"
-status: "needs-translation"
----
-
----
-title: "HTMLOptionsCollection: add() method"
 short-title: add()
 slug: Web/API/HTMLOptionsCollection/add
 page-type: web-api-instance-method
@@ -14,40 +8,40 @@ browser-compat: api.HTMLOptionsCollection.add
 
 {{APIRef("HTML DOM")}}
 
-The **`add()`** method of the {{DOMxRef("HTMLOptionsCollection")}} interface adds an {{domxref("HTMLOptionElement")}} or {{domxref("HTMLOptGroupElement")}} to this `HTMLOptionsCollection`.
+متد **`add()`** از رابط {{DOMxRef("HTMLOptionsCollection")}} یک {{domxref("HTMLOptionElement")}} یا {{domxref("HTMLOptGroupElement")}} را به این `HTMLOptionsCollection` اضافه می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 add(item)
 add(item, before)
 ```
 
-### Parameters
+### پارامترها
 
 - `item`
-  - : An {{domxref("HTMLOptionElement")}} or {{domxref("HTMLOptGroupElement")}}.
+  - : یک {{domxref("HTMLOptionElement")}} یا {{domxref("HTMLOptGroupElement")}}.
 - `before` {{optional_inline}}
-  - : An element of the collection, or a numeric 0-based index representing the element that the `item` should be inserted before. If omitted, `null`, or the index does not exist, the new element is appended to the end of the collection.
+  - : یک عنصر از مجموعه، یا یک اندیس عددی مبتنی بر ۰ که نشان‌دهنده عنصری است که `item` باید قبل از آن درج شود. اگر حذف شود، `null` باشد، یا اندیس وجود نداشته باشد، عنصر جدید به انتهای مجموعه اضافه می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `HierarchyRequestError` {{DOMxRef("DOMException")}}
-  - : Thrown if the `item` passed to the method is an ancestor of the element into which it is to be inserted.
+  - : اگر `item` ارسال‌شده به متد، نیای عنصری باشد که قرار است در آن درج شود، این خطا پرتاب می‌شود.
 
-## Description
+## توضیحات
 
-By default, the `add()` appends the {{HTMLelement("option")}} or {{HTMLelement("optgroup")}} passed as the parameter to the end of the collection. You can define where the added `<option>` or `<optgroup>` should be placed by specifying the `before` parameter. The `before` is the `<option>` element or a numeric `0`-based index of the `<option>` element the added element should precede.
+به‌طور پیش‌فرض، متد `add()` عنصر {{HTMLelement("option")}} یا {{HTMLelement("optgroup")}} که به عنوان پارامتر ارسال شده است را به انتهای مجموعه اضافه می‌کند. می‌توانید با تعیین پارامتر `before` مشخص کنید که `<option>` یا `<optgroup>` اضافه‌شده کجا قرار گیرد. `before` می‌تواند یک عنصر `<option>` یا یک اندیس عددی مبتنی بر ۰ از عنصر `<option>` باشد که عنصر اضافه‌شده باید قبل از آن قرار گیرد.
 
-If the `before` parameter is null or out of range (or omitted), the `<option>` or `<optgroup>` will be appended as the last element in the collection, outside of any {{HTMLelement("optgroup")}}. If the `<option>` referenced by the `before` parameter is in an {{HTMLelement("optgroup")}}, an added `HTMLOptionElement` will be in the same group.
+اگر پارامتر `before` null باشد یا خارج از محدوده باشد (یا حذف شود)، `<option>` یا `<optgroup>` به عنوان آخرین عنصر در مجموعه، خارج از هر {{HTMLelement("optgroup")}} اضافه می‌شود. اگر `<option>` که توسط پارامتر `before` ارجاع داده شده است درون یک {{HTMLelement("optgroup")}} باشد، `HTMLOptionElement` اضافه‌شده در همان گروه قرار می‌گیرد.
 
-The `<optgroup>` element can only contain `<option>` elements as child nodes. The `add()` method will successfully add an `HTMLOptGroupElement` to the end of the `HTMLOptionsCollection` or between `<optgroup>` elements only. In other words, attempting to add an `HTMLOptGroupElement` before an `<option>` within an `<optgroup>` may silently fail if the `<option>` referenced by the `before` parameter is not the first `<option>` within its `<optgroup>`.
+عنصر `<optgroup>` فقط می‌تواند حاوی عناصر `<option>` به عنوان گره‌های فرزند باشد. متد `add()` فقط می‌تواند یک `HTMLOptGroupElement` را با موفقیت به انتهای `HTMLOptionsCollection` یا بین عناصر `<optgroup>` اضافه کند. به عبارت دیگر، تلاش برای اضافه کردن یک `HTMLOptGroupElement` قبل از یک `<option>` درون یک `<optgroup>` ممکن است بی‌صدا شکست بخورد اگر `<option>` که توسط پارامتر `before` ارجاع داده شده است اولین `<option>` درون `<optgroup>` خود نباشد.
 
-## Examples
+## مثال‌ها
 
 ```js
 const optionList = document.querySelector("select").options;
@@ -57,15 +51,15 @@ optionList.add(firstOption, 0); // added as the first item
 optionList.add(optionList[0]); // moves the first item to the end
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTMLElement("select")}}
 - {{DOMxRef("HTMLOptionsCollection.remove")}}
