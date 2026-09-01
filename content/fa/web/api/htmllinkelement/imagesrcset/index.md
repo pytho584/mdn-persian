@@ -1,11 +1,5 @@
 ---
 title: "HTMLLinkElement: imageSrcset property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLLinkElement/imageSrcset"
-status: "needs-translation"
----
-
----
-title: "HTMLLinkElement: imageSrcset property"
 short-title: imageSrcset
 slug: Web/API/HTMLLinkElement/imageSrcset
 page-type: web-api-instance-property
@@ -14,25 +8,25 @@ browser-compat: api.HTMLLinkElement.imageSrcset
 
 {{APIRef("HTML DOM")}}
 
-The **`imageSrcset`** property of the {{domxref("HTMLLinkElement")}} interface is a string which identifies one or more comma-separated **image candidate strings**. This property reflects the value of the {{htmlelement("link")}} element's [`imagesrcset`](/en-US/docs/Web/HTML/Reference/Elements/link#imagesrcset) attribute. This property can retrieved or set the `imagesrcset` attribute value.
+ویژگی **`imageSrcset`** در رابط {{domxref("HTMLLinkElement")}}، رشته‌ای است که یک یا چند **رشتهٔ نامزد تصویر (image candidate string)** را با جداکنندهٔ کاما مشخص می‌کند. این ویژگی منعکس‌کنندهٔ مقدار ویژگی [`imagesrcset`](/en-US/docs/Web/HTML/Reference/Elements/link#imagesrcset) عنصر {{htmlelement("link")}} است و می‌توان از آن برای دریافت یا تنظیم مقدار ویژگی `imagesrcset` استفاده کرد.
 
-Each image candidate string contains an image URL and an optional width and/or pixel density descriptor indicating the conditions under which that candidate image should be used.
+هر رشتهٔ نامزد تصویر شامل یک URL تصویر و به‌صورت اختیاری یک توصیفگر عرض (width) و/یا تراکم پیکسلی (pixel density) است که شرایط استفاده از آن تصویر نامزد را مشخص می‌کند.
 
 ```plain
 "images/team-photo.jpg, images/team-photo-retina.jpg 2x, images/team-photo-large.jpg 1400w"
 ```
 
-For HTML {{htmlelement("link")}} elements with [`rel="preload"`](/en-US/docs/Web/HTML/Reference/Attributes/rel/preload) and [`as="image"`](/en-US/docs/Web/HTML/Reference/Elements/link#as) set, the `imagesrcset` attribute has similar syntax and semantics as the {{htmlelement("img")}} element's [`srcset`](/en-US/docs/Web/HTML/Reference/Elements/img#srcset) attribute, which indicates to preload the appropriate resource used by an `<img>` element with corresponding values for its `srcset` and `sizes` attributes.
+برای عناصر HTML {{htmlelement("link")}} که در آن‌ها [`rel="preload"`](/en-US/docs/Web/HTML/Reference/Attributes/rel/preload) و [`as="image"`](/en-US/docs/Web/HTML/Reference/Elements/link#as) تنظیم شده باشد، ویژگی `imagesrcset` از نظر نحو (syntax) و معناشناسی مشابه ویژگی [`srcset`](/en-US/docs/Web/HTML/Reference/Elements/img#srcset) عنصر {{htmlelement("img")}} است؛ این ویژگی نشان می‌دهد که منبع مناسبِ مورد استفاده توسط یک عنصر `<img>` با مقادیر متناظر در ویژگی‌های `srcset` و `sizes` آن، از پیش بارگذاری شود.
 
-If the `imageSrcset` property includes width descriptors, the {{domxref("HTMLLinkElement.imageSizes", "imageSizes")}} property must be non-null, or the `imageSrcset` value will be ignored.
+اگر ویژگی `imageSrcset` شامل توصیفگرهای عرض باشد، ویژگی {{domxref("HTMLLinkElement.imageSizes", "imageSizes")}} باید غیر از `null` باشد؛ در غیر این صورت مقدار `imageSrcset` نادیده گرفته می‌شود.
 
-## Value
+## مقدار
 
-A string composed of a comma-separated list of one or more image candidate strings, or the empty string `""` if unspecified..
+رشته‌ای متشکل از فهرستی با جداکنندهٔ کاما از یک یا چند رشتهٔ نامزد تصویر، یا رشتهٔ خالی `""` در صورت تعیین‌نشده.
 
-## Examples
+## مثال‌ها
 
-Given the following `<link>` element:
+با توجه به عنصر `<link>` زیر:
 
 ```html
 <link
@@ -62,7 +56,7 @@ function log(text) {
 }
 ```
 
-…we can access the `imagesrcset` attribute value, and update it, using the `imageSrcset` property:
+… می‌توانیم با استفاده از ویژگی `imageSrcset` مقدار ویژگی `imagesrcset` را بخوانیم و به‌روزرسانی کنیم:
 
 ```js
 const link = document.querySelector("link");
@@ -75,17 +69,17 @@ log(`Updated: ${link.imageSrcset}`);
 
 {{EmbedLiveSample('Examples',"","80")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLLinkElement.imageSizes")}}
 - {{domxref("HTMLImageElement.srcset")}}
-- [Speculative loading](/en-US/docs/Web/Performance/Guides/Speculative_loading#link_relpreload)
-- [Responsive images](/en-US/docs/Web/HTML/Guides/Responsive_images)
+- [بارگذاری پیش‌بینانه](/en-US/docs/Web/Performance/Guides/Speculative_loading#link_relpreload)
+- [تصاویر واکنش‌گرا](/en-US/docs/Web/HTML/Guides/Responsive_images)
