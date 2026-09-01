@@ -1,11 +1,5 @@
 ---
 title: "DOMParser: DOMParser() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMParser/DOMParser"
-status: "needs-translation"
----
-
----
-title: "DOMParser: DOMParser() constructor"
 short-title: DOMParser()
 slug: Web/API/DOMParser/DOMParser
 page-type: web-api-constructor
@@ -14,7 +8,7 @@ browser-compat: api.DOMParser.DOMParser
 
 {{APIRef("DOM")}}
 
-The **`DOMParser()`** constructor creates a new [`DOMParser`](/en-US/docs/Web/API/DOMParser) object. This object can be used to parse the text of a document using the `parseFromString()` method.
+سازنده‌ی **`DOMParser()`** یک شیء [`DOMParser`](/en-US/docs/Web/API/DOMParser) جدید می‌سازد. این شیء را می‌توان برای تجزیه‌ی متن یک سند با استفاده از متد `parseFromString()` به کار برد.
 
 ## Syntax
 
@@ -22,13 +16,13 @@ The **`DOMParser()`** constructor creates a new [`DOMParser`](/en-US/docs/Web/AP
 new DOMParser()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A new [`DOMParser`](/en-US/docs/Web/API/DOMParser) object. This object can be used to parse the text of a document using the `parseFromString()` method.
+یک شیء [`DOMParser`](/en-US/docs/Web/API/DOMParser) جدید. این شیء را می‌توان برای تجزیه‌ی متن یک سند با استفاده از متد `parseFromString()` به کار برد.
 
 ## Specifications
 
