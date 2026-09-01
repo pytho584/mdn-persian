@@ -1,11 +1,5 @@
 ---
 title: "Gamepad: displayId property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Gamepad/displayId"
-status: "needs-translation"
----
-
----
-title: "Gamepad: displayId property"
 short-title: displayId
 slug: Web/API/Gamepad/displayId
 page-type: web-api-instance-property
@@ -17,20 +11,20 @@ browser-compat: api.Gamepad.displayId
 
 {{APIRef("WebVR API")}}{{Deprecated_Header}}{{Non-standard_Header}}
 
-The **`displayId`** read-only property of the {{domxref("Gamepad")}} interface _returns the {{domxref("VRDisplay.displayId")}} of the associated {{domxref("VRDisplay")}} — the `VRDisplay` that the gamepad is controlling the displayed scene of._
+ویژگی فقط‌خواندنی **`displayId`** از رابط {{domxref("Gamepad")}} مقدار {{domxref("VRDisplay.displayId")}} از {{domxref("VRDisplay")}} مرتبط را برمی‌گرداند — یعنی همان `VRDisplay` که گیم‌پد صحنهٔ نمایش‌داده‌شدهٔ آن را کنترل می‌کند.
 
-A Gamepad is considered to be associated with a {{domxref("VRDisplay")}} if it reports a pose that is in the same space as the display's pose, see {{domxref("VRDisplay.getPose()")}}.
+یک گیم‌پد با یک {{domxref("VRDisplay")}} مرتبط در نظر گرفته می‌شود اگر ژست (pose) گزارش‌شده توسط آن در همان فضای ژست نمایشگر باشد؛ به {{domxref("VRDisplay.getPose()")}} مراجعه کنید.
 
 > [!NOTE]
-> This property was part of the old [WebVR API](https://immersive-web.github.io/webvr/spec/1.1/#gamepad-getvrdisplays-attribute). It has been superseded by the [WebXR Gamepads Module](https://immersive-web.github.io/webxr-gamepads-module/).
+> این ویژگی بخشی از [WebVR API](https://immersive-web.github.io/webvr/spec/1.1/#gamepad-getvrdisplays-attribute) قدیمی بود. این ویژگی توسط [WebXR Gamepads Module](https://immersive-web.github.io/webxr-gamepads-module/) جایگزین شده است.
 >
-> There is no direct replacement for this property. The {{domxref("Gamepad")}} object associated with an {{domxref("XRInputSource")}} can be obtained using the {{domxref("XRInputSource.gamepad")}} property.
+> هیچ جایگزین مستقیمی برای این ویژگی وجود ندارد. شیء {{domxref("Gamepad")}} مرتبط با یک {{domxref("XRInputSource")}} را می‌توان با استفاده از ویژگی {{domxref("XRInputSource.gamepad")}} به دست آورد.
 
-## Value
+## مقدار
 
-A number representing the associated {{domxref("VRDisplay.displayId")}}. If the number is 0, then the gamepad is not associated with a VR display.
+یک عدد که {{domxref("VRDisplay.displayId")}} مرتبط را نشان می‌دهد. اگر عدد ۰ باشد، گیم‌پد با هیچ نمایشگر VR مرتبط نیست.
 
-## Examples
+## مثال‌ها
 
 ```js
 window.addEventListener("gamepadconnected", (e) => {
@@ -44,16 +38,16 @@ window.addEventListener("gamepadconnected", (e) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
-This property was part of the old [WebVR API](https://immersive-web.github.io/webvr/spec/1.1/#gamepad-getvrdisplays-attribute) that has been superseded by the [WebXR Gamepads Module](https://immersive-web.github.io/webxr-gamepads-module/). It is no longer on track to becoming a standard.
+این ویژگی بخشی از [WebVR API](https://immersive-web.github.io/webvr/spec/1.1/#gamepad-getvrdisplays-attribute) قدیمی بود که توسط [WebXR Gamepads Module](https://immersive-web.github.io/webxr-gamepads-module/) جایگزین شده است. دیگر در مسیر تبدیل شدن به یک استاندارد قرار ندارد.
 
-Until all browsers have implemented the new [WebXR APIs](/en-US/docs/Web/API/WebXR_Device_API/Fundamentals), it is recommended to rely on frameworks, like [A-Frame](https://aframe.io/), [Babylon.js](https://www.babylonjs.com/), or [Three.js](https://threejs.org/), or a [polyfill](https://github.com/immersive-web/webxr-polyfill), to develop WebXR applications that will work across all browsers. Read [Meta's Porting from WebVR to WebXR](https://developers.meta.com/horizon/documentation/web/port-vr-xr/) guide for more information.
+تا زمانی که همهٔ مرورگرها [WebXR APIs](/en-US/docs/Web/API/WebXR_Device_API/Fundamentals) جدید را پیاده‌سازی نکرده‌اند، توصیه می‌شود برای توسعهٔ برنامه‌های WebXR که در همهٔ مرورگرها کار می‌کنند، به چارچوب‌هایی مانند [A-Frame](https://aframe.io/)، [Babylon.js](https://www.babylonjs.com/) یا [Three.js](https://threejs.org/) یا یک [polyfill](https://github.com/immersive-web/webxr-polyfill) تکیه کنید. برای اطلاعات بیشتر، راهنمای [انتقال از WebVR به WebXR در متا](https://developers.meta.com/horizon/documentation/web/port-vr-xr/) را مطالعه کنید.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - [WebVR API](/en-US/docs/Web/API/WebVR_API)
