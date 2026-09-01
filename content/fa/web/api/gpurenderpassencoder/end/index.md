@@ -1,21 +1,10 @@
 ---
 title: "GPURenderPassEncoder: end() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder/end"
-status: "needs-translation"
----
-
----
-title: "GPURenderPassEncoder: end() method"
-short-title: end()
-slug: Web/API/GPURenderPassEncoder/end
-page-type: web-api-instance-method
-browser-compat: api.GPURenderPassEncoder.end
 ---
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`end()`** method of the
-{{domxref("GPURenderPassEncoder")}} interface completes recording of the current render pass command sequence.
+متد **`end()`** از رابط {{domxref("GPURenderPassEncoder")}}، ضبط دنباله دستورات رندر پاس جاری را کامل می‌کند.
 
 ## Syntax
 
@@ -23,26 +12,26 @@ The **`end()`** method of the
 end()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Validation
+### اعتبارسنجی
 
-The following criteria must be met when calling **`end()`**, otherwise a {{domxref("GPUValidationError")}} is generated and the {{domxref("GPURenderPassEncoder")}} becomes invalid:
+معیارهای زیر باید هنگام فراخوانی **`end()`** رعایت شوند، در غیر این صورت یک {{domxref("GPUValidationError")}} تولید شده و {{domxref("GPURenderPassEncoder")}} نامعتبر می‌شود:
 
-- The {{domxref("GPURenderPassEncoder")}} is open (i.e., not already ended via an `end()` call).
-- There is no occlusion query (i.e., started via {{domxref("GPURenderPassEncoder.beginOcclusionQuery", "beginOcclusionQuery()")}}) active on the current render pass.
-- The debug stack for the current render pass is empty (i.e., no render pass debug group is currently open, as opened by {{domxref("GPURenderPassEncoder.pushDebugGroup", "pushDebugGroup()")}}).
-- The number of draw commands encoded in this render pass is less than or equal to the `maxDrawCount` property set in the {{domxref("GPUCommandEncoder.beginRenderPass()")}} descriptor.
+- {{domxref("GPURenderPassEncoder")}} باز است (یعنی قبلاً با یک فراخوانی `end()` پایان نیافته است).
+- هیچ پرس‌وجوی انسداد (occlusion query) فعالی (یعنی با {{domxref("GPURenderPassEncoder.beginOcclusionQuery", "beginOcclusionQuery()")}} شروع شده باشد) روی رندر پاس جاری وجود نداشته باشد.
+- پشته اشکال‌زدایی (debug stack) برای رندر پاس جاری خالی است (یعنی هیچ گروه اشکال‌زدایی رندر پاسی در حال حاضر باز نیست، مانند آنچه توسط {{domxref("GPURenderPassEncoder.pushDebugGroup", "pushDebugGroup()")}} باز می‌شود).
+- تعداد دستورات رسم (draw commands) کدگذاری شده در این رندر پاس، کمتر یا برابر با ویژگی `maxDrawCount` تعیین شده در توصیف‌گر {{domxref("GPUCommandEncoder.beginRenderPass()")}} باشد.
 
-## Examples
+## مثال‌ها
 
-In our [basic render demo](https://mdn.github.io/dom-examples/webgpu-render-demo/), several commands are recorded via a {{domxref("GPUCommandEncoder")}}. Most of these commands originate from the `GPURenderPassEncoder` created via {{domxref("GPUCommandEncoder.beginRenderPass()")}}. `end()` is called in an appropriate place to end the render pass.
+در [نمایش پایه رندر](https://mdn.github.io/dom-examples/webgpu-render-demo/) ما، چندین دستور از طریق یک {{domxref("GPUCommandEncoder")}} ضبط می‌شوند. بیشتر این دستورات از `GPURenderPassEncoder` ایجاد شده از طریق {{domxref("GPUCommandEncoder.beginRenderPass()")}} سرچشمه می‌گیرند. `end()` در مکان مناسبی برای پایان دادن به رندر پاس فراخوانی می‌شود.
 
 ```js
 // …
@@ -81,14 +70,14 @@ device.queue.submit([commandEncoder.finish()]);
 // …
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
