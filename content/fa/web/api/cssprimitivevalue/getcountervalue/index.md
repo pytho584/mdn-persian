@@ -1,7 +1,5 @@
 ---
 title: "CSSPrimitiveValue: getCounterValue() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSPrimitiveValue/getCounterValue"
-status: "needs-translation"
 ---
 
 ---
@@ -17,20 +15,15 @@ browser-compat: api.CSSPrimitiveValue.getCounterValue
 
 {{APIRef("CSSOM")}}{{deprecated_header}}{{non-standard_header}}
 
-The **`getCounterValue()`** method of the
-{{domxref("CSSPrimitiveValue")}} interface is used to get the [counter](/en-US/docs/Web/CSS/Guides/Counter_styles/Using_counters)
-value. If this CSS value doesn't contain a counter value, a {{domxref("DOMException")}}
-is raised. Modification to the corresponding style property can be achieved using the
-{{domxref("Counter")}} interface.
+متد **`getCounterValue()`** از رابط {{domxref("CSSPrimitiveValue")}} برای دریافت مقدار [counter](/en-US/docs/Web/CSS/Guides/Counter_styles/Using_counters) استفاده می‌شود. اگر این مقدار CSS حاوی مقدار counter نباشد، یک {{domxref("DOMException")}} برانگیخته می‌شود. اصلاح ویژگی استایل مربوطه را می‌توان از طریق رابط {{domxref("Counter")}} انجام داد.
 
 > [!NOTE]
-> This method was part of an attempt to create a typed CSS Object Model. This attempt has been abandoned, and most browsers do
-> not implement it.
+> این روش بخشی از تلاش برای ایجاد یک مدل شیء CSS تایپ‌شده بود. این تلاش رها شده است و بیشتر مرورگرها آن را پیاده‌سازی نمی‌کنند.
 >
-> To achieve your purpose, you can use:
+> برای رسیدن به هدف خود می‌توانید از موارد زیر استفاده کنید:
 >
-> - the untyped [CSS Object Model](/en-US/docs/Web/API/CSS_Object_Model), widely supported, or
-> - the modern [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API), less supported and considered experimental.
+> - [مدل شیء CSS](/en-US/docs/Web/API/CSS_Object_Model) بدون تایپ که به‌طور گسترده پشتیبانی می‌شود، یا
+> - [API مدل شیء تایپ‌شده CSS](/en-US/docs/Web/API/CSS_Typed_OM_API) مدرن که کمتر پشتیبانی می‌شود و آزمایشی در نظر گرفته می‌شود.
 
 ## Syntax
 
@@ -40,24 +33,23 @@ getCounterValue()
 
 ### Parameters
 
-None.
+هیچ.
 
 ### Return value
 
-A {{domxref("Counter")}} object representing the counter value.
+یک شیء {{domxref("Counter")}} که مقدار counter را نشان می‌دهد.
 
 ### Exceptions
 
 | **Type**       | **Description**                                                                                                         |
 | -------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| `DOMException` | An `INVALID_ACCESS_ERR` is raised if the CSS value doesn't contain a `Counter` value (e.g., this is not `CSS_COUNTER`). |
+| `DOMException` | اگر مقدار CSS حاوی مقدار `Counter` نباشد (مثلاً `CSS_COUNTER` نباشد)، خطای `INVALID_ACCESS_ERR` برانگیخته می‌شود. |
 
 ## Specifications
 
-This feature was originally defined in the [DOM Style Level 2](https://www.w3.org/TR/DOM-Level-2-Style/) specification, but has been dropped from any
-standardization effort since then.
+این ویژگی در ابتدا در مشخصات [DOM Style Level 2](https://www.w3.org/TR/DOM-Level-2-Style/) تعریف شده بود، اما از آن زمان از هرگونه تلاش استانداردسازی حذف شده است.
 
-It has been superseded by a modern, but incompatible, [CSS Typed Object Model API](/en-US/docs/Web/API/CSS_Typed_OM_API) that is now on the standard track.
+با [API مدل شیء تایپ‌شده CSS](/en-US/docs/Web/API/CSS_Typed_OM_API) مدرن اما ناسازگار جایگزین شده است که اکنون در مسیر استاندارد قرار دارد.
 
 ## Browser compatibility
 
