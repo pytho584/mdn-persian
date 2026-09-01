@@ -1,11 +1,5 @@
 ---
 title: "Document: parseHTML() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/parseHTML_static"
-status: "needs-translation"
----
-
----
-title: "Document: parseHTML() static method"
 short-title: parseHTML()
 slug: Web/API/Document/parseHTML_static
 page-type: web-api-static-method
@@ -14,7 +8,7 @@ browser-compat: api.Document.parseHTML_static
 
 {{APIRef("DOM")}}
 
-The **`parseHTML()`** static method of the {{domxref("Document")}} object provides an XSS-safe method to parse and sanitize a string of HTML in order to create a new {{domxref("Document")}} instance.
+متد ایستای **`parseHTML()`** در شیء {{domxref("Document")}} روشی ایمن در برابر حملات XSS برای تجزیه و پاکسازی یک رشته HTML به منظور ایجاد یک نمونه جدید {{domxref("Document")}} فراهم می‌کند.
 
 ## Syntax
 
@@ -26,47 +20,39 @@ Document.parseHTML(input, options)
 ### Parameters
 
 - `input`
-  - : A string defining HTML to be sanitized and injected into the shadow root.
+  - : یک رشته HTML که باید پاکسازی شده و به ریشه سایه (shadow root) تزریق شود.
 - `options` {{optional_inline}}
-  - : An options object with the following optional parameters:
+  - : یک شیء گزینه‌ها با پارامترهای اختیاری زیر:
     - `sanitizer`
-      - : A {{domxref("Sanitizer")}} or {{domxref("SanitizerConfig")}} object which defines what elements of the input will be allowed or removed, or the string `"default"` for the [default sanitizer configuration](/en-US/docs/Web/API/HTML_Sanitizer_API/Default_sanitizer_configuration).
-        The method will remove any XSS-unsafe elements and attributes, even if allowed by the sanitizer.
-        If not specified, the default `Sanitizer` configuration is used.
+      - : یک شیء {{domxref("Sanitizer")}} یا {{domxref("SanitizerConfig")}} که تعیین می‌کند چه عناصری از ورودی مجاز یا حذف شوند، یا رشته `"default"` برای [پیکربندی پیش‌فرض پاک‌ساز](/en-US/docs/Web/API/HTML_Sanitizer_API/Default_sanitizer_configuration). این متد هر عنصر و ویژگی ناایمن در برابر XSS را حتی اگر توسط پاک‌ساز مجاز شده باشد، حذف می‌کند. اگر مشخص نشود، از پیکربندی پیش‌فرض `Sanitizer` استفاده می‌شود.
 
-        Note that if you're using the same configuration multiple times, it's expected to be more efficient to use a `Sanitizer` and modify it when you need to.
+        توجه داشته باشید که اگر از یک پیکربندی یکسان چندین بار استفاده می‌کنید، انتظار می‌رود استفاده از یک `Sanitizer` و تغییر آن در زمان نیاز کارآمدتر باشد.
 
 ### Return value
 
-A {{domxref("Document")}}.
+یک {{domxref("Document")}}.
 
 ### Exceptions
 
 - `TypeError`
-  - : This is thrown if `options.sanitizer` is passed a:
-    - {{domxref("SanitizerConfig")}} that isn't [valid](/en-US/docs/Web/API/SanitizerConfig#valid_configuration).
-      For example, a configuration that includes both "allowed" and "removed" configuration settings.
-    - string that does not have the value `"default"`.
-    - value that is not a {{domxref("Sanitizer")}}, {{domxref("SanitizerConfig")}}, or string.
+  - : این خطا پرتاب می‌شود اگر `options.sanitizer` یکی از موارد زیر را دریافت کند:
+    - یک {{domxref("SanitizerConfig")}} که [معتبر](/en-US/docs/Web/API/SanitizerConfig#valid_configuration) نیست. به عنوان مثال، پیکربندی که شامل هر دو تنظیمات «مجاز» و «حذف شده» باشد.
+    - رشته‌ای که مقدار `"default"` را نداشته باشد.
+    - مقداری که {{domxref("Sanitizer")}}، {{domxref("SanitizerConfig")}} یا رشته نباشد.
 
 ## Description
 
-The **`parseHTML()`** method parses and sanitize a string of HTML in order to create a new {{domxref("Document")}} instance that is XSS-safe.
-The resulting `Document` will have a [content type](/en-US/docs/Web/API/Document/contentType) of "text/html", a [character set](/en-US/docs/Web/API/Document/characterSet) of UTF-8, and a URL of "about:blank".
+متد **`parseHTML()`** یک رشته HTML را تجزیه و پاکسازی می‌کند تا یک نمونه جدید {{domxref("Document")}} ایجاد کند که در برابر XSS ایمن باشد. `Document` حاصل دارای [نوع محتوا](/en-US/docs/Web/API/Document/contentType) "text/html"، [مجموعه کاراکتر](/en-US/docs/Web/API/Document/characterSet) UTF-8 و URL "about:blank" خواهد بود.
 
-If no sanitizer is specified in the `options.sanitizer` parameter, `parseHTML()` is used with the [default sanitizer configuration](/en-US/docs/Web/API/HTML_Sanitizer_API/Default_sanitizer_configuration).
-This configuration is suitable for the majority of use cases as it prevents XSS attacks, as well as other attacks like clickjacking or spoofing.
+اگر هیچ پاک‌سازی در پارامتر `options.sanitizer` مشخص نشود، `parseHTML()` با [پیکربندی پیش‌فرض پاک‌ساز](/en-US/docs/Web/API/HTML_Sanitizer_API/Default_sanitizer_configuration) استفاده می‌شود. این پیکربندی برای اکثر موارد استفاده مناسب است زیرا از حملات XSS و همچنین حملات دیگری مانند کلیک‌ربایی (clickjacking) یا جعل (spoofing) جلوگیری می‌کند.
 
-A custom `Sanitizer` or `SanitizerConfig` can be specified to choose which elements, attributes, and comments are allowed or removed.
-Note that even if unsafe options are allowed by the sanitizer, they will still be removed when using this method (it removes the same elements as a sanitizer on which {{domxref('Sanitizer.removeUnsafe()')}} has been called).
+یک `Sanitizer` یا `SanitizerConfig` سفارشی می‌تواند مشخص شود تا انتخاب کند کدام عناصر، ویژگی‌ها و نظرات مجاز یا حذف شوند. توجه داشته باشید که حتی اگر گزینه‌های ناایمن توسط پاک‌ساز مجاز شوند، باز هم در هنگام استفاده از این متد حذف خواهند شد (همان عناصری را حذف می‌کند که یک پاک‌ساز که {{domxref('Sanitizer.removeUnsafe()')}} روی آن فراخوانی شده است، حذف می‌کند).
 
-The input HTML may include [declarative shadow roots](/en-US/docs/Web/HTML/Reference/Elements/template#declarative_shadow_dom).
-If the string of HTML defines more than one [declarative shadow root](/en-US/docs/Web/HTML/Reference/Elements/template#declarative_shadow_dom) in a particular shadow host then only the first {{domxref("ShadowRoot")}} is created — subsequent declarations are parsed as {{htmlelement("template")}} elements within that shadow root.
+HTML ورودی ممکن است شامل [ریشه‌های سایه اعلانی (declarative shadow roots)](/en-US/docs/Web/HTML/Reference/Elements/template#declarative_shadow_dom) باشد. اگر رشته HTML بیش از یک [ریشه سایه اعلانی](/en-US/docs/Web/HTML/Reference/Elements/template#declarative_shadow_dom) را در یک میزبان سایه خاص تعریف کند، تنها اولین {{domxref("ShadowRoot")}} ایجاد می‌شود — اعلان‌های بعدی به عنوان عناصر {{htmlelement("template")}} درون آن ریشه سایه تجزیه می‌شوند.
 
-`parseHTML()` should be used instead of {{domxref("Document.parseHTMLUnsafe_static", "Document.parseHTMLUnsafe()")}}, unless there is a specific need to allow unsafe elements and attributes.
-If the HTML to be parsed doesn't need to contain unsafe HTML entities, then you should use `Document.parseHTML()`.
+`parseHTML()` باید به جای {{domxref("Document.parseHTMLUnsafe_static", "Document.parseHTMLUnsafe()")}} استفاده شود، مگر اینکه نیاز خاصی به مجاز کردن عناصر و ویژگی‌های ناایمن وجود داشته باشد. اگر HTML مورد تجزیه نیازی به شامل موجودیت‌های HTML ناایمن ندارد، باید از `Document.parseHTML()` استفاده کنید.
 
-Note that since this method always sanitizes input strings of XSS-unsafe entities, it is not secured or validated using the [Trusted Types API](/en-US/docs/Web/API/Trusted_Types_API).
+توجه داشته باشید که از آنجایی که این متد همواره رشته‌های ورودی را از موجودیت‌های ناایمن در برابر XSS پاکسازی می‌کند، با استفاده از [API انواع امن (Trusted Types API)](/en-US/docs/Web/API/Trusted_Types_API) ایمن یا تأیید نمی‌شود.
 
 ## Specifications
 
@@ -79,7 +65,7 @@ Note that since this method always sanitizes input strings of XSS-unsafe entitie
 ## See also
 
 - {{domxref("Document.parseHTMLUnsafe_static", "Document.parseHTMLUnsafe()")}}
-- {{domxref("Element.setHTML()")}} and {{domxref("Element.setHTMLUnsafe()")}}
-- {{domxref("ShadowRoot.setHTML()")}} and {{domxref("ShadowRoot.setHTMLUnsafe()")}}
-- {{domxref("DOMParser.parseFromString()")}} for parsing HTML or XML into a DOM tree
+- {{domxref("Element.setHTML()")}} و {{domxref("Element.setHTMLUnsafe()")}}
+- {{domxref("ShadowRoot.setHTML()")}} و {{domxref("ShadowRoot.setHTMLUnsafe()")}}
+- {{domxref("DOMParser.parseFromString()")}} برای تجزیه HTML یا XML به یک درخت DOM
 - [HTML Sanitizer API](/en-US/docs/Web/API/HTML_Sanitizer_API)
