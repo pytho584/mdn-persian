@@ -1,7 +1,5 @@
 ---
 title: "GPUError: message property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUError/message"
-status: "needs-translation"
 ---
 
 ---
@@ -14,30 +12,29 @@ browser-compat: api.GPUError.message
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`message`** read-only property of the
-{{domxref("GPUError")}} interface provides a human-readable message that explains why the error occurred.
+ویژگی فقطخواندنی **`message`** در رابط {{domxref("GPUError")}} پیامی قابلخواندن برای انسان فراهم میکند که دلیل وقوع خطا را توضیح میدهد.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثالها
 
-For usage examples of error objects based on `GPUError`, see:
+برای مثال‌های کاربرد آبجکت‌های خطا بر اساس `GPUError`، به موارد زیر مراجعه کنید:
 
 - [`GPUDevice.popErrorScope`](/en-US/docs/Web/API/GPUDevice/popErrorScope#examples)
 - [The `GPUDevice uncapturederror` event](/en-US/docs/Web/API/GPUDevice/uncapturederror_event#examples)
-- {{domxref("GPUInternalError")}}, {{domxref("GPUOutOfMemoryError")}}, and {{domxref("GPUValidationError")}}
+- {{domxref("GPUInternalError")}}، {{domxref("GPUOutOfMemoryError")}}، و {{domxref("GPUValidationError")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
 - [WebGPU Error Handling best practices](https://toji.dev/webgpu-best-practices/error-handling)
