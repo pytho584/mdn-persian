@@ -1,11 +1,5 @@
 ---
 title: "FontFace: featureSettings property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FontFace/featureSettings"
-status: "needs-translation"
----
-
----
-title: "FontFace: featureSettings property"
 short-title: featureSettings
 slug: Web/API/FontFace/featureSettings
 page-type: web-api-instance-property
@@ -14,18 +8,18 @@ browser-compat: api.FontFace.featureSettings
 
 {{APIRef("CSS Font Loading API")}}{{AvailableInWorkers}}
 
-The **`featureSettings`** property of the {{domxref("FontFace")}} interface retrieves or sets infrequently used font features that are not available from a font's variant properties.
+خاصیت **`featureSettings`** در رابط {{domxref("FontFace")}} ویژگی‌های فونت را که به ندرت استفاده می‌شوند و از طریق ویژگی‌های variant فونت در دسترس نیستند، بازیابی یا تنظیم می‌کند.
 
-This property is equivalent to the {{cssxref("font-feature-settings")}} descriptor.
+این خاصیت معادل توصیف‌گر {{cssxref("font-feature-settings")}} است.
 
-## Value
+## مقدار
 
-A string containing a descriptor.
+یک رشته شامل یک توصیف‌گر.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
