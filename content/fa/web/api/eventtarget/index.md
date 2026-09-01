@@ -1,10 +1,4 @@
 ---
-title: "EventTarget"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EventTarget"
-status: "needs-translation"
----
-
----
 title: EventTarget
 slug: Web/API/EventTarget
 page-type: web-api-interface
@@ -13,41 +7,38 @@ browser-compat: api.EventTarget
 
 {{APIRef("DOM")}}{{AvailableInWorkers}}
 
-The **`EventTarget`** interface is implemented by objects that can receive events and may have listeners for them.
-In other words, any target of events implements the three methods associated with this interface.
+رابط **`EventTarget`** توسط اشیایی پیاده‌سازی می‌شود که می‌توانند رویدادها را دریافت کنند و ممکن است برای آنها شنونده داشته باشند. به عبارت دیگر، هر هدف رویدادی سه روش مرتبط با این رابط را پیاده‌سازی می‌کند.
 
-{{domxref("Element")}}, and its children, as well as {{domxref("Document")}} and {{domxref("Window")}}, are the most common event targets,
-but other objects can be event targets, too.
-For example {{domxref("IDBRequest")}}, {{domxref("AudioNode")}}, and {{domxref("AudioContext")}} are also event targets.
+{{domxref("Element")}} و فرزندان آن، و همچنین {{domxref("Document")}} و {{domxref("Window")}}، رایج‌ترین اهداف رویداد هستند، اما اشیای دیگر نیز می‌توانند هدف رویداد باشند. برای مثال {{domxref("IDBRequest")}}، {{domxref("AudioNode")}} و {{domxref("AudioContext")}} نیز اهداف رویداد هستند.
 
-Many event targets (including elements, documents, and windows) also support [registering event handlers](/en-US/docs/Web/API/Document_Object_Model/Events#registering_event_handlers) via `onevent` properties and attributes.
+بسیاری از اهداف رویداد (شامل عناصر، اسناد و پنجره‌ها) همچنین از [ثبت مدیریت‌کننده‌های رویداد](/en-US/docs/Web/API/Document_Object_Model/Events#registering_event_handlers) از طریق ویژگی‌ها و صفت‌های `onevent` پشتیبانی می‌کنند.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("EventTarget.EventTarget()", "EventTarget()")}}
-  - : Creates a new `EventTarget` object instance.
+  - : یک نمونه شیء جدید از `EventTarget` ایجاد می‌کند.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("EventTarget.addEventListener()")}}
-  - : Registers an event handler of a specific event type on the `EventTarget`.
+  - : یک مدیریت‌کننده رویداد از نوع خاصی را روی `EventTarget` ثبت می‌کند.
 - {{domxref("EventTarget.removeEventListener()")}}
-  - : Removes an event listener from the `EventTarget`.
+  - : یک شنونده رویداد را از `EventTarget` حذف می‌کند.
 - {{domxref("EventTarget.dispatchEvent()")}}
-  - : Dispatches an event to this `EventTarget`.
+  - : یک رویداد را به این `EventTarget` ارسال می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Event index](/en-US/docs/Web/API/Document_Object_Model/Events#event_index)
-- [Introduction to events](/en-US/docs/Learn_web_development/Core/Scripting/Events)
-- {{domxref("Event")}} interface
+- [فهرست رویدادها](/en-US/docs/Web/API/Document_Object_Model/Events#event_index)
+- [مقدمه‌ای بر رویدادها](/en-US/docs/Learn_web_development/Core/Scripting/Events)
+- رابط {{domxref("Event")}}
