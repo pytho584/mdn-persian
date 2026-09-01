@@ -1,11 +1,5 @@
 ---
 title: "GPURenderBundleEncoder: popDebugGroup() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPURenderBundleEncoder/popDebugGroup"
-status: "needs-translation"
----
-
----
-title: "GPURenderBundleEncoder: popDebugGroup() method"
 short-title: popDebugGroup()
 slug: Web/API/GPURenderBundleEncoder/popDebugGroup
 page-type: web-api-instance-method
@@ -14,42 +8,41 @@ browser-compat: api.GPURenderBundleEncoder.popDebugGroup
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`popDebugGroup()`** method of the
-{{domxref("GPURenderBundleEncoder")}} interface ends a render bundle debug group, which is begun with a {{domxref("GPURenderBundleEncoder.pushDebugGroup", "pushDebugGroup()")}} call.
+**`popDebugGroup()`** 方法用于结束一个渲染捆绑包调试组，该调试组通过调用 {{domxref("GPURenderBundleEncoder.pushDebugGroup", "pushDebugGroup()")}} 开始。
 
-This could be used for telemetry, or may be utilized in {{domxref("GPUError")}} messages, browser dev tools, or other services in the future to help with debugging.
+此方法可用于遥测，也可能在未来被用于 {{domxref("GPUError")}} 消息、浏览器开发者工具或其他服务中，以辅助调试。
 
 > [!NOTE]
-> This method is functionally identical to its equivalent on {{domxref("GPURenderPassEncoder")}} — {{domxref("GPURenderPassEncoder.popDebugGroup", "popDebugGroup()")}}.
+> 此方法与 {{domxref("GPURenderPassEncoder")}} 上对应的 {{domxref("GPURenderPassEncoder.popDebugGroup", "popDebugGroup()")}} 在功能上完全相同。
 
-## Syntax
+## 语法
 
 ```js-nolint
 popDebugGroup()
 ```
 
-### Parameters
+### 参数
 
-None.
+无。
 
-### Return value
+### 返回值
 
-None ({{jsxref("undefined")}}).
+无（{{jsxref("undefined")}}）。
 
-### Validation
+### 验证
 
-The following criteria must be met when calling **`popDebugGroup()`**, otherwise a {{domxref("GPUValidationError")}} is generated and the {{domxref("GPURenderBundleEncoder")}} becomes invalid:
+调用 **`popDebugGroup()`** 时必须满足以下条件，否则会生成一个 {{domxref("GPUValidationError")}}，并且该 {{domxref("GPURenderBundleEncoder")}} 将变为无效：
 
-- The render bundle encoder's debug stack is not empty (i.e., at least one render bundle debug group was previously started with {{domxref("GPURenderBundleEncoder.pushDebugGroup", "pushDebugGroup()")}}).
+- 渲染捆绑包编码器的调试堆栈不为空（即至少有一个渲染捆绑包调试组先前通过 {{domxref("GPURenderBundleEncoder.pushDebugGroup", "pushDebugGroup()")}} 启动）。
 
-## Examples
+## 示例
 
 ```js
 // …
 
 const bundleEncoder = device.createRenderBundleEncoder(renderBundleDescriptor);
 
-bundleEncoder.pushDebugGroup("my_group_marker"); // Start labeled debug group
+bundleEncoder.pushDebugGroup("my_group_marker"); // 开始带标签的调试组
 
 bundleEncoder.setPipeline(renderPipeline);
 bundleEncoder.setVertexBuffer(0, vertexBuffer);
@@ -60,14 +53,14 @@ bundleEncoder.popDebugGroup();
 // …
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
