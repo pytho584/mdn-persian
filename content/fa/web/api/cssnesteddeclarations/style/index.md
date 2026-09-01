@@ -1,11 +1,5 @@
 ---
 title: "CSSNestedDeclarations: style property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSNestedDeclarations/style"
-status: "needs-translation"
----
-
----
-title: "CSSNestedDeclarations: style property"
 short-title: style
 slug: Web/API/CSSNestedDeclarations/style
 page-type: web-api-instance-property
@@ -14,19 +8,19 @@ browser-compat: api.CSSNestedDeclarations.style
 
 {{APIRef("CSSOM")}}
 
-The read-only **`style`** property of the {{domxref("CSSNestedDeclarations")}} interface represents the styles associated with the nested rules.
+ویژگی فقط‑خواندنی **`style`** از رابط {{domxref("CSSNestedDeclarations")}} نشان‌دهندهٔ سبک‌های مرتبط با قوانین تو در تو است.
 
-## Value
+## مقدار
 
-A {{domxref("CSSStyleProperties")}} object.
+یک شیء {{domxref("CSSStyleProperties")}}.
 
-Although the `style` property itself is read-only in the sense that you can't replace the `CSSStyleProperties` object, you can still assign to the `style` property directly, which is equivalent to assigning to its {{domxref("CSSStyleDeclaration/cssText", "cssText")}} property. You can also modify the `CSSStyleProperties` object using the {{domxref("CSSStyleDeclaration/setProperty", "setProperty()")}} and {{domxref("CSSStyleDeclaration/removeProperty", "removeProperty()")}} methods.
+اگرچه خود ویژگی `style` فقط‑خواندنی است به این معنا که نمی‌توانید شیء `CSSStyleProperties` را جایگزین کنید، اما همچنان می‌توانید مستقیماً به ویژگی `style` مقداردهی کنید که معادل مقداردهی به ویژگی {{domxref("CSSStyleDeclaration/cssText", "cssText")}} آن است. همچنین می‌توانید شیء `CSSStyleProperties` را با استفاده از متدهای {{domxref("CSSStyleDeclaration/setProperty", "setProperty()")}} و {{domxref("CSSStyleDeclaration/removeProperty", "removeProperty()")}} تغییر دهید.
 
-## Examples
+## مثال‌ها
 
-This stylesheet contains a nested {{domxref("cssRule","cssRules")}}.
+این شیوه‌نامه شامل یک {{domxref("cssRule","cssRules")}} تو در تو است.
 
-The first `console.log` shows the top-level `style`, the second shows the nested `@media` query with its nested style and the final shows the nested style declared after the `@media` query.
+اولین `console.log` ویژگی `style` سطح بالا را نشان می‌دهد، دومی پرس‌وجوی `@media` تو در تو را با سبک تو در توی آن نشان می‌دهد و سومی سبک تو در توی اعلام‌شده پس از پرس‌وجوی `@media` را نشان می‌دهد.
 
 ```css
 .foo {
@@ -49,15 +43,15 @@ console.log(myRules[0].cssRules[1].style);
 // { "0": "color" }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See Also
+## جستارهای وابسته
 
 - {{domxref("CSSNestedDeclarations")}}
-- [The Nested Declarations Rule](/en-US/docs/Web/CSS/Guides/Nesting/Using#nested_declarations_rule)
+- [قانون اعلام‌های تو در تو](/en-US/docs/Web/CSS/Guides/Nesting/Using#nested_declarations_rule)
