@@ -1,11 +1,5 @@
 ---
 title: "CSSMathClamp: value property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSMathClamp/value"
-status: "needs-translation"
----
-
----
-title: "CSSMathClamp: value property"
 short-title: value
 slug: Web/API/CSSMathClamp/value
 page-type: web-api-instance-property
@@ -14,17 +8,17 @@ browser-compat: api.CSSMathClamp.value
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`value`** read-only property of the {{domxref("CSSMathClamp")}} interface returns a {{domxref("CSSNumericValue")}} instance representing its preferred value.
+خاصیت فقط خواندنی **`value`** در رابط {{domxref("CSSMathClamp")}} یک نمونه {{domxref("CSSNumericValue")}} برمی‌گرداند که مقدار ترجیحی (preferred value) آن را نشان می‌دهد.
 
-## Value
+## مقدار
 
-A {{domxref("CSSNumericValue")}}.
+یک {{domxref("CSSNumericValue")}}.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
-The following code creates a `CSSMathClamp` object, then reads its `value`.
+کد زیر یک شیء `CSSMathClamp` می‌سازد و سپس `value` آن را می‌خواند.
 
 ```js
 const clamp = new CSSMathClamp(CSS.px(10), CSS.percent(50), CSS.px(500));
@@ -34,18 +28,17 @@ console.log(clamp.value.value); // 50
 console.log(clamp.value.unit); // "percent"
 ```
 
-`value` simply returns whatever {{domxref("CSSNumericValue")}} was passed into the constructor — here that's a {{domxref("CSSUnitValue")}}, since `CSS.percent(50)` is a `CSSUnitValue`.
-Passing a more complex expression, such as `CSS.percent(50).add(CSS.em(2))` (a {{domxref("CSSMathSum")}}), means `value` would return that `CSSMathSum` instead.
+`value` صرفاً هر {{domxref("CSSNumericValue")}} که به سازنده (constructor) داده شده است را برمی‌گرداند — در اینجا یک {{domxref("CSSUnitValue")}} است، زیرا `CSS.percent(50)` یک `CSSUnitValue` است. اگر یک عبارت پیچیده‌تر مانند `CSS.percent(50).add(CSS.em(2))` (یک {{domxref("CSSMathSum")}}) پاس داده شود، آنگاه `value` آن `CSSMathSum` را برمی‌گرداند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("CSSMathClamp.lower")}}
 - {{domxref("CSSMathClamp.upper")}}
