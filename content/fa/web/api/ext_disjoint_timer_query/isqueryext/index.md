@@ -1,7 +1,6 @@
+```
 ---
 title: "EXT_disjoint_timer_query: isQueryEXT() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EXT_disjoint_timer_query/isQueryEXT"
-status: "needs-translation"
 ---
 
 ---
@@ -14,28 +13,27 @@ browser-compat: api.EXT_disjoint_timer_query.isQueryEXT
 
 {{APIRef("WebGL")}}
 
-The **`EXT_disjoint_timer_query.isQueryEXT()`** method of the
-[WebGL API](/en-US/docs/Web/API/WebGL_API) returns `true` if the
-passed object is a {{domxref("WebGLQuery")}} object.
+متد **`EXT_disjoint_timer_query.isQueryEXT()`** از
+[WebGL API](/en-US/docs/Web/API/WebGL_API)، اگر شیءِ داده‌شده یک شیء {{domxref("WebGLQuery")}} باشد، مقدار `true` را برمی‌گرداند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 isQueryEXT(query)
 ```
 
-### Parameters
+### پارامترها
 
 - `query`
-  - : A {{domxref("WebGLQuery")}} object to test.
+  - : یک شیء {{domxref("WebGLQuery")}} برای آزمایش.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("WebGL_API/Types", "GLboolean")}} indicating whether the given object is a
-{{domxref("WebGLQuery")}} object (`true`) or not
-(`false`).
+یک {{domxref("WebGL_API/Types", "GLboolean")}} که نشان می‌دهد آیا شیءِ داده‌شده یک
+شیء {{domxref("WebGLQuery")}} است (`true`) یا
+نه (`false`).
 
-## Examples
+## مثال‌ها
 
 ```js
 const ext = gl.getExtension("EXT_disjoint_timer_query");
@@ -46,16 +44,17 @@ const query = ext.createQueryEXT();
 ext.isQueryEXT(query);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("WebGLRenderingContext.getExtension()")}}
 - {{domxref("WebGLQuery")}}
 - {{domxref("EXT_disjoint_timer_query")}}
+```
