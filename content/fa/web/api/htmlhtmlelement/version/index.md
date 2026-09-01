@@ -1,11 +1,5 @@
 ---
 title: "HTMLHtmlElement: version property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLHtmlElement/version"
-status: "needs-translation"
----
-
----
-title: "HTMLHtmlElement: version property"
 short-title: version
 slug: Web/API/HTMLHtmlElement/version
 page-type: web-api-instance-property
@@ -17,14 +11,14 @@ browser-compat: api.HTMLHtmlElement.version
 {{ APIRef("HTML DOM") }} {{deprecated_header}}
 
 > [!NOTE]
-> This property has been declared as deprecated by the W3C technical recommendation for HTML 4.01 in favor of use of the DTD for obtaining version information for a document.
+> این ویژگی توسط توصیه فنی W3C برای HTML 4.01 منسوخ (deprecated) اعلام شده است و به جای آن استفاده از DTD برای دریافت اطلاعات نسخه یک سند توصیه می‌شود.
 
-Returns version information about the document type definition (DTD) of a document. While this property is recognized by Mozilla, the return value for this property is always an empty string.
+اطلاعات نسخه مربوط به تعریف نوع سند (DTD) یک سند را برمی‌گرداند. اگرچه این ویژگی توسط Mozilla شناسایی می‌شود، اما مقدار بازگشتی آن همواره یک رشته خالی است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
