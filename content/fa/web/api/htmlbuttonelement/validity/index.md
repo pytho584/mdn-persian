@@ -1,11 +1,5 @@
 ---
 title: "HTMLButtonElement: validity property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLButtonElement/validity"
-status: "needs-translation"
----
-
----
-title: "HTMLButtonElement: validity property"
 short-title: validity
 slug: Web/API/HTMLButtonElement/validity
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.HTMLButtonElement.validity
 
 {{APIRef("HTML DOM")}}
 
-The **`validity`** read-only property of the {{domxref("HTMLButtonElement")}} interface returns a {{domxref("ValidityState")}} object that represents the validity states this element is in.
+ویژگی فقط‌خواندنی **`validity`** در رابط {{domxref("HTMLButtonElement")}} یک شیء {{domxref("ValidityState")}} برمی‌گرداند که وضعیت‌های اعتبارسنجی این عنصر را نشان می‌دهد.
 
-## Value
+## مقدار
 
-A {{domxref("ValidityState")}} object.
+یک شیء {{domxref("ValidityState")}}.
 
-## Examples
+## مثال‌ها
 
-The following example demonstrates that a `<button>` is in an invalid state when a {{domxref("ValidityState/customError", "customError")}} is set; in this state, the `validityState`'s `validity` property is `false`, while {{domxref("HTMLButtonElement/checkValidity", "checkValidity()")}} returns `true` if the button's {{domxref("HTMLButtonElement/type", "type")}} is not `"submit"`, because such buttons are not candidates for [constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation).
+مثال زیر نشان می‌دهد که یک `<button>` وقتی یک {{domxref("ValidityState/customError", "customError")}} تنظیم شده باشد در وضعیت نامعتبر قرار می‌گیرد؛ در این وضعیت، ویژگی `validity` در `validityState` برابر با `false` است، در حالی که {{domxref("HTMLButtonElement/checkValidity", "checkValidity()")}} اگر {{domxref("HTMLButtonElement/type", "type")}} دکمه `"submit"` نباشد `true` برمی‌گرداند، زیرا چنین دکمه‌هایی کاندیدای [اعتبارسنجی محدودیت‌ها](/en-US/docs/Web/HTML/Guides/Constraint_validation) نیستند.
 
 ```js
 const button = document.getElementById("myButton");
@@ -33,18 +27,18 @@ console.log(validityState.customError); // true
 console.log(button.checkValidity()); // false if the button is of the "submit" type, true otherwise
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("HTMLButtonElement.checkValidity()")}}
 - {{HTMLElement("button")}}
 - {{HTMLElement("form")}}
-- [Learn: Client-side form validation](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
-- [Guide: Constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation)
+- [یادگیری: اعتبارسنجی فرم در سمت کلاینت](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
+- [راهنما: اعتبارسنجی محدودیت‌ها](/en-US/docs/Web/HTML/Guides/Constraint_validation)
