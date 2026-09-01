@@ -1,11 +1,5 @@
 ---
 title: "GPUShaderModule: getCompilationInfo() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUShaderModule/getCompilationInfo"
-status: "needs-translation"
----
-
----
-title: "GPUShaderModule: getCompilationInfo() method"
 short-title: getCompilationInfo()
 slug: Web/API/GPUShaderModule/getCompilationInfo
 page-type: web-api-instance-method
@@ -14,28 +8,27 @@ browser-compat: api.GPUShaderModule.getCompilationInfo
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`getCompilationInfo()`** method of the
-{{domxref("GPUShaderModule")}} interface returns a {{jsxref("Promise")}} that fulfills with a {{domxref("GPUCompilationInfo")}} object containing messages generated during the `GPUShaderModule`'s compilation.
+متد **`getCompilationInfo()`** در رابط {{domxref("GPUShaderModule")}} یک {{jsxref("Promise")}} برمی‌گرداند که با یک شیء {{domxref("GPUCompilationInfo")}} شامل پیام‌های تولیدشده در حین کامپایل `GPUShaderModule` تکمیل می‌شود.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 getCompilationInfo()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that fulfills with a {{domxref("GPUCompilationInfo")}} object.
+یک {{jsxref("Promise")}} که با یک شیء {{domxref("GPUCompilationInfo")}} تکمیل می‌شود.
 
-{{domxref("GPUCompilationInfo")}} contains a `messages` property, which is an array of {{domxref("GPUCompilationMessage")}} objects, each one containing the details of an individual compilation message.
+{{domxref("GPUCompilationInfo")}} شامل یک ویژگی `messages` است که آرایه‌ای از اشیاء {{domxref("GPUCompilationMessage")}} می‌باشد و هر یک از آن‌ها جزئیات یک پیام کامپایل جداگانه را در بر دارد.
 
-## Examples
+## مثال‌ها
 
-In the example below, we have deliberately left a parenthesis out of a function declaration in our shader code:
+در مثال زیر، ما عمداً یک پرانتز را از اعلان تابع در کد شیدر خود حذف کرده‌ایم:
 
 ```js
 const shaders = `
@@ -62,7 +55,7 @@ fn fragment_main(fragData: VertexOut) -> @location(0) vec4f
 `;
 ```
 
-When we compile the shader module, we use `getCompilationInfo()` to grab some information about the resulting error:
+هنگامی که ماژول شیدر را کامپایل می‌کنیم، از `getCompilationInfo()` برای دریافت اطلاعاتی درباره خطای حاصل استفاده می‌کنیم:
 
 ```js
 async function init() {
@@ -83,14 +76,14 @@ async function init() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
