@@ -1,10 +1,4 @@
 ---
-title: "GPUError"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUError"
-status: "needs-translation"
----
-
----
 title: GPUError
 slug: Web/API/GPUError
 page-type: web-api-interface
@@ -13,32 +7,32 @@ browser-compat: api.GPUError
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`GPUError`** interface of the {{domxref("WebGPU API", "WebGPU API", "", "nocode")}} is the base interface for errors surfaced by {{domxref("GPUDevice.popErrorScope")}} and the {{domxref("GPUDevice.uncapturederror_event", "uncapturederror")}} event.
+رابط **`GPUError`** در {{domxref("WebGPU API", "WebGPU API", "", "nocode")}}، رابط پایه برای خطاهایی است که توسط {{domxref("GPUDevice.popErrorScope")}} و رویداد {{domxref("GPUDevice.uncapturederror_event", "uncapturederror")}} نمایان می‌شوند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("GPUError.message", "message")}} {{ReadOnlyInline}}
-  - : A string providing a human-readable message that explains why the error occurred.
+  - : رشته‌ای که پیامی قابل‌خواندن برای انسان ارائه می‌دهد و علت بروز خطا را توضیح می‌دهد.
 
-## Examples
+## مثال‌ها
 
-For usage examples of error objects based on `GPUError`, see:
+برای نمونه‌های استفاده از اشیاء خطا که بر اساس `GPUError` هستند، به موارد زیر مراجعه کنید:
 
 - [`GPUDevice.popErrorScope`](/en-US/docs/Web/API/GPUDevice/popErrorScope#examples)
-- [The `GPUDevice uncapturederror` event](/en-US/docs/Web/API/GPUDevice/uncapturederror_event#examples)
-- {{domxref("GPUInternalError")}}, {{domxref("GPUOutOfMemoryError")}}, and {{domxref("GPUValidationError")}}
+- رویداد [`GPUDevice uncapturederror`](/en-US/docs/Web/API/GPUDevice/uncapturederror_event#examples)
+- {{domxref("GPUInternalError")}}، {{domxref("GPUOutOfMemoryError")}} و {{domxref("GPUValidationError")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
-- [WebGPU Error Handling best practices](https://toji.dev/webgpu-best-practices/error-handling)
+- رابط [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [بهترین روش‌های مدیریت خطا در WebGPU](https://toji.dev/webgpu-best-practices/error-handling)
