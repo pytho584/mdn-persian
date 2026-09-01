@@ -1,7 +1,5 @@
 ---
 title: "HTMLSelectElement: add() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/add"
-status: "needs-translation"
 ---
 
 ---
@@ -14,39 +12,34 @@ browser-compat: api.HTMLSelectElement.add
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLSelectElement.add()`** method adds an element to the
-collection of `option` elements for this `select` element.
+متد **`HTMLSelectElement.add()`** یک عنصر را به مجموعه عناصر `option` برای این عنصر `select` اضافه می‌کند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 add(item)
 add(item, before)
 ```
 
-### Parameters
+### پارامترها
 
 - `item`
-  - : An {{domxref("HTMLOptionElement")}} or
-    {{domxref("HTMLOptGroupElement")}}
+  - : یک {{domxref("HTMLOptionElement")}} یا {{domxref("HTMLOptGroupElement")}}.
 - `before` {{optional_inline}}
-  - : An element of the collection, or an index of type
-    _long_, representing the _item_ should be inserted before. If this
-    parameter is `null` (or the index does not exist), the new element is
-    appended to the end of the collection.
+  - : یک عنصر از مجموعه، یا یک اندیس از نوع _long_، که نشان می‌دهد _item_ باید قبل از آن درج شود. اگر این پارامتر `null` باشد (یا اندیس وجود نداشته باشد)، عنصر جدید به انتهای مجموعه اضافه می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `HierarchyRequestError` {{DOMxRef("DOMException")}}
-  - : Thrown if the _item_ passed to the method is an ancestor of the {{domxref("HTMLSelectElement")}}.
+  - : زمانی پرتاب می‌شود که _item_ ارسال‌شده به متد، یکی از اجداد (ancestor) {{domxref("HTMLSelectElement")}} باشد.
 
-## Examples
+## مثال‌ها
 
-### Creating Elements from Scratch
+### ایجاد عناصر از ابتدا
 
 ```js
 const sel = document.createElement("select");
@@ -72,14 +65,14 @@ sel.add(opt2, null);
 */
 ```
 
-The before parameter is optional. So the following is accepted.
+پارامتر before اختیاری است. بنابراین کد زیر نیز پذیرفته می‌شود.
 
 ```js
 sel.add(opt1);
 sel.add(opt2);
 ```
 
-### Append to an Existing Collection
+### افزودن به یک مجموعه موجود
 
 ```js
 const sel = document.getElementById("existingList");
@@ -108,13 +101,13 @@ sel.add(opt, null);
 */
 ```
 
-The before parameter is optional. So the following is accepted.
+پارامتر before اختیاری است. بنابراین کد زیر نیز پذیرفته می‌شود.
 
 ```js
 sel.add(opt);
 ```
 
-### Inserting to an Existing Collection
+### درج در یک مجموعه موجود
 
 ```js
 const sel = document.getElementById("existingList");
@@ -143,10 +136,10 @@ sel.add(opt, sel.options[1]);
 */
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
