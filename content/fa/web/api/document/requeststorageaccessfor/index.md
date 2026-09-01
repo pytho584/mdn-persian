@@ -1,11 +1,5 @@
 ---
 title: "Document: requestStorageAccessFor() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/requestStorageAccessFor"
-status: "needs-translation"
----
-
----
-title: "Document: requestStorageAccessFor() method"
 short-title: requestStorageAccessFor()
 slug: Web/API/Document/requestStorageAccessFor
 page-type: web-api-instance-method
@@ -17,54 +11,54 @@ browser-compat: api.Document.requestStorageAccessFor
 
 {{APIRef("Storage Access API")}}{{deprecated_header}}{{non-standard_header}}
 
-The **`requestStorageAccessFor()`** method of the {{domxref("Document")}} interface allows top-level sites to request third-party cookie access on behalf of embedded content originating from another site in the same [related website set](https://privacysandbox.google.com/cookies/related-website-sets-integration). It returns a {{jsxref("Promise")}} that resolves if the access was granted, and rejects if access was denied.
+متد **`requestStorageAccessFor()`** از رابط {{domxref("Document")}} به سایت‌های سطح بالا (top-level) اجازه می‌دهد تا از طرف محتوای تعبیه‌شده که از سایتی دیگر در همان [مجموعه وب‌سایت‌های مرتبط](https://privacysandbox.google.com/cookies/related-website-sets-integration) است، دسترسی به کوکی‌های شخص ثالث را درخواست کنند. این متد یک {{jsxref("Promise")}} برمی‌گرداند که در صورت اعطای دسترسی حل می‌شود و در صورت رد شدن، رد می‌شود.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 requestStorageAccessFor(requestedOrigin)
 ```
 
-### Parameters
+### پارامترها
 
 - `requestedOrigin`
-  - : A string representing the URL of the origin you are requesting third-party cookie access for.
+  - : رشته‌ای که URL مبدأ را که برای آن دسترسی به کوکی‌های شخص ثالث درخواست می‌کنید، مشخص می‌کند.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that fulfills with `undefined` if the access to third-party cookies was granted and rejects if access was denied.
+یک {{jsxref("Promise")}} که اگر دسترسی به کوکی‌های شخص ثالث اعطا شود، با `undefined` fulfilled می‌شود و اگر دسترسی رد شود، rejected می‌شود.
 
-`requestStorageAccessFor()` requests are automatically denied unless the top-level content is currently processing a user gesture such as a tap or click ({{Glossary("transient activation")}}), or unless permission was already granted previously. If permission was not previously granted, they must run inside a user gesture-based event handler. The user gesture behavior depends on the state of the promise:
+درخواست‌های `requestStorageAccessFor()` به‌طور خودکار رد می‌شوند مگر اینکه محتوای سطح بالا در حال حاضر یک ژست کاربری (user gesture) مانند ضربه یا کلیک را پردازش کند ({{Glossary("transient activation")}})، یا اینکه قبلاً اجازه داده شده باشد. اگر قبلاً اجازه داده نشده باشد، باید در یک event handler مبتنی بر ژست کاربری اجرا شوند. رفتار ژست کاربری به وضعیت promise بستگی دارد:
 
-- If the promise resolves (i.e., permission was granted), then the user gesture has not been consumed, so the script can subsequently call APIs requiring a user gesture.
-- If the promise is rejected (i.e., permission was not granted), then the user gesture has been consumed, so the script can't do anything that requires a gesture. This prevents scripts from calling `requestStorageAccessFor()` again if permission is denied.
+- اگر promise حل شود (یعنی اجازه اعطا شده باشد)، ژست کاربری مصرف نشده است، بنابراین اسکریپت می‌تواند پس از آن APIهایی را که نیاز به ژست کاربری دارند فراخوانی کند.
+- اگر promise رد شود (یعنی اجازه اعطا نشده باشد)، ژست کاربری مصرف شده است، بنابراین اسکریپت نمی‌تواند کاری را که نیاز به ژست دارد انجام دهد. این کار از فراخوانی مجدد `requestStorageAccessFor()` در صورت رد شدن اجازه توسط اسکریپت جلوگیری می‌کند.
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the current {{domxref("Document")}} is not yet active.
+  - : اگر {{domxref("Document")}} فعلی هنوز فعال نباشد، پرتاب می‌شود.
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if:
-    - The document's window is not a [secure context](/en-US/docs/Web/Security/Defenses/Secure_Contexts).
-    - The document is not the top-level document.
-    - The document has a `null` origin.
-    - The supplied `requestedOrigin` is [opaque](https://html.spec.whatwg.org/multipage/browsers.html#concept-origin-opaque).
-    - The top-level and embedded sites are not in the same [related website set](https://privacysandbox.google.com/cookies/related-website-sets-integration).
-    - The embedding {{htmlelement("iframe")}} is sandboxed, and the `allow-storage-access-by-user-activation` token is not set.
-    - Usage is blocked by a {{httpheader("Permissions-Policy/storage-access", "storage-access")}} [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy).
-    - Usage is denied by the user agent's permission request to use the API.
+  - : در موارد زیر پرتاب می‌شود:
+    - پنجره سند یک [زمینه امن (secure context)](/en-US/docs/Web/Security/Defenses/Secure_Contexts) نباشد.
+    - سند، سند سطح بالا نباشد.
+    - سند دارای مبدأ `null` باشد.
+    - `requestedOrigin` ارائه‌شده [مات (opaque)](https://html.spec.whatwg.org/multipage/browsers.html#concept-origin-opaque) باشد.
+    - سایت سطح بالا و سایت تعبیه‌شده در یک [مجموعه وب‌سایت‌های مرتبط](https://privacysandbox.google.com/cookies/related-website-sets-integration) نباشند.
+    - {{htmlelement("iframe")}} حاوی محتوا sandbox شده باشد و توکن `allow-storage-access-by-user-activation` تنظیم نشده باشد.
+    - استفاده توسط یک [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) با هدر {{httpheader("Permissions-Policy/storage-access", "storage-access")}} مسدود شده باشد.
+    - استفاده توسط درخواست اجازه‌ی user agent برای استفاده از API رد شده باشد.
 - `TypeError`
-  - : Thrown if `requestedOrigin` is not a valid URL.
+  - : اگر `requestedOrigin` یک URL معتبر نباشد، پرتاب می‌شود.
 
-## Description
+## توضیحات
 
-The `requestStorageAccessFor()` method addresses challenges in adopting the Storage Access API on top-level sites that use cross-site images or scripts requiring cookies. It is relevant to user agents that by default block access to [third-party](/en-US/docs/Web/Privacy/Guides/Third-party_cookies), [unpartitioned](/en-US/docs/Web/API/Storage_Access_API#unpartitioned_versus_partitioned_cookies) cookies to improve privacy (e.g., to prevent tracking), and is a proposed extension of the [Storage Access API](/en-US/docs/Web/API/Storage_Access_API).
+متد `requestStorageAccessFor()` چالش‌های موجود در پذیرش Storage Access API در سایت‌های سطح بالایی که از تصاویر یا اسکریپت‌های متقابل-سایت (cross-site) نیازمند کوکی استفاده می‌کنند را برطرف می‌کند. این متد برای user agentهایی که به‌طور پیش‌فرض دسترسی به کوکی‌های [شخص ثالث](/en-US/docs/Web/Privacy/Guides/Third-party_cookies) و [بخش‌بندی‌نشده (unpartitioned)](/en-US/docs/Web/API/Storage_Access_API#unpartitioned_versus_partitioned_cookies) را برای بهبود حریم خصوصی (مثلاً برای جلوگیری از ردیابی) مسدود می‌کنند، مرتبط است و به‌عنوان یک افزونه پیشنهادی برای [Storage Access API](/en-US/docs/Web/API/Storage_Access_API) مطرح شده است.
 
-`requestStorageAccessFor()` can enable third-party cookie access for cross-site resources directly embedded into a top-level site that are unable to request storage access themselves, for example {{htmlelement("img")}} elements. Cross-site content embedded in `<iframe>`s that has its own logic and resources and needs third-party cookie access should request storage access via {{domxref("Document.requestStorageAccess()")}}.
+`requestStorageAccessFor()` می‌تواند دسترسی به کوکی‌های شخص ثالث را برای منابع متقابل-سایتی که مستقیماً در یک سایت سطح بالا تعبیه شده‌اند و خودشان قادر به درخواست دسترسی به حافظه نیستند، مانند عناصر {{htmlelement("img")}}، فراهم کند. محتوای متقابل-سایت تعبیه‌شده در `<iframe>`ها که منطق و منابع خاص خود را دارد و به کوکی‌های شخص ثالث نیاز دارد، باید از طریق {{domxref("Document.requestStorageAccess()")}} دسترسی به حافظه را درخواست کند.
 
-To check whether permission to access third-party cookies has already been granted via `requestStorageAccessFor()`, you can call {{domxref("Permissions.query()")}}, specifying the feature name `"top-level-storage-access"`. This is different from the feature name used for the regular {{domxref("Document.requestStorageAccess()")}} method, which is `"storage-access"`.
+برای بررسی اینکه آیا قبلاً از طریق `requestStorageAccessFor()` اجازه دسترسی به کوکی‌های شخص ثالث اعطا شده است یا خیر، می‌توانید با تعیین نام ویژگی `"top-level-storage-access"` متد {{domxref("Permissions.query()")}} را فراخوانی کنید. این با نام ویژگی‌ای که برای متد معمولی {{domxref("Document.requestStorageAccess()")}} استفاده می‌شود، یعنی `"storage-access"`، متفاوت است.
 
-The `Permissions.query()` call must specify the embedded origin; for example:
+فراخوانی `Permissions.query()` باید مبدأ تعبیه‌شده را مشخص کند؛ به عنوان مثال:
 
 ```js
 navigator.permissions.query({
@@ -74,9 +68,9 @@ navigator.permissions.query({
 ```
 
 > [!NOTE]
-> Usage of this feature may be blocked by a {{httpheader("Permissions-Policy/storage-access", "storage-access")}} [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) set on your server (the same one that controls the rest of the Storage Access API). In addition, the document must pass additional browser-specific checks such as allowlists, blocklists, on-device classification, user settings, or anti-[clickjacking](/en-US/docs/Web/Security/Attacks/Clickjacking) heuristics.
+> استفاده از این ویژگی ممکن است توسط یک [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) با هدر {{httpheader("Permissions-Policy/storage-access", "storage-access")}} که روی سرور شما تنظیم شده است (همان هدری که بقیه Storage Access API را کنترل می‌کند) مسدود شود. علاوه بر این، سند باید بررسی‌های اضافی مخصوص مرورگر مانند فهرست‌های مجاز، فهرست‌های مسدود، طبقه‌بندی روی دستگاه، تنظیمات کاربر، یا روش‌های اکتشافی ضد [clickjacking](/en-US/docs/Web/Security/Attacks/Clickjacking) را پشت سر بگذارد.
 
-## Examples
+## مثال‌ها
 
 ```js
 function rSAFor() {
@@ -94,9 +88,9 @@ function rSAFor() {
 }
 ```
 
-After a successful `requestStorageAccessFor()` call, cross-site requests will include cookies if they include [CORS](/en-US/docs/Web/HTTP/Guides/CORS) / [`crossorigin`](/en-US/docs/Web/HTML/Reference/Attributes/crossorigin), so sites may want to wait before triggering a request. Such requests must use the [`credentials: "include"`](/en-US/docs/Web/API/RequestInit#credentials) option and resources must include the `crossorigin="use-credentials"` attribute.
+پس از یک فراخوانی موفق `requestStorageAccessFor()`، درخواست‌های متقابل-سایت شامل کوکی‌ها خواهند بود اگر شامل [CORS](/en-US/docs/Web/HTTP/Guides/CORS) / [`crossorigin`](/en-US/docs/Web/HTML/Reference/Attributes/crossorigin) باشند؛ بنابراین سایت‌ها ممکن است بخواهند قبل از شروع یک درخواست صبر کنند. چنین درخواست‌هایی باید از گزینه [`credentials: "include"`](/en-US/docs/Web/API/RequestInit#credentials) استفاده کنند و منابع باید ویژگی `crossorigin="use-credentials"` را داشته باشند.
 
-For example:
+به عنوان مثال:
 
 ```js
 function checkCookie() {
@@ -112,18 +106,18 @@ function checkCookie() {
 ```
 
 > [!NOTE]
-> See [Using the Storage Access API](/en-US/docs/Web/API/Storage_Access_API/Using) for a more complete example.
+> برای یک مثال کامل‌تر به [استفاده از Storage Access API](/en-US/docs/Web/API/Storage_Access_API/Using) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("Document.hasStorageAccess()")}}, {{domxref("Document.hasUnpartitionedCookieAccess()")}}, {{domxref("Document.requestStorageAccess()")}}
-- [Using the Storage Access API](/en-US/docs/Web/API/Storage_Access_API/Using)
-- [Introducing Storage Access API](https://webkit.org/blog/8124/introducing-storage-access-api/) (WebKit blog)
+- {{domxref("Document.hasStorageAccess()")}}، {{domxref("Document.hasUnpartitionedCookieAccess()")}}، {{domxref("Document.requestStorageAccess()")}}
+- [استفاده از Storage Access API](/en-US/docs/Web/API/Storage_Access_API/Using)
+- [معرفی Storage Access API](https://webkit.org/blog/8124/introducing-storage-access-api/) (وبلاگ WebKit)
