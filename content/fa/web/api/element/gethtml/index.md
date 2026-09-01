@@ -1,11 +1,5 @@
 ---
 title: "Element: getHTML() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/getHTML"
-status: "needs-translation"
----
-
----
-title: "Element: getHTML() method"
 short-title: getHTML()
 slug: Web/API/Element/getHTML
 page-type: web-api-instance-method
@@ -14,51 +8,46 @@ browser-compat: api.Element.getHTML
 
 {{APIRef("DOM")}}
 
-The **`getHTML()`** method of the {{domxref("Element")}} interface is used to serialize an element's DOM to an HTML string.
+متد **`getHTML()`** از رابط {{domxref("Element")}} برای سریال‌سازی (تبدیل به رشته) DOM یک عنصر به یک رشته HTML استفاده می‌شود.
 
-The method provides an options argument that enables the serialization of child nodes that are shadow roots.
-The options can be used to include nested shadow roots that have been set as {{domxref("ShadowRoot/serializable","serializable")}}, and/or a specified array of {{domxref("ShadowRoot")}} objects, which may be either open or closed.
+این متد یک آرگومان `options` ارائه می‌دهد که امکان سریال‌سازی گره‌های فرزندی را که ریشه‌های سایه (shadow roots) هستند فراهم می‌کند. گزینه‌ها می‌توانند برای شامل شدن ریشه‌های سایه تو در تو که به عنوان {{domxref("ShadowRoot/serializable","serializable")}} (قابل سریال‌سازی) تنظیم شده‌اند، و/یا یک آرایه مشخص از اشیاء {{domxref("ShadowRoot")}} (که می‌توانند باز یا بسته باشند) استفاده شوند.
 
-Without arguments, child nodes that are shadow roots are not serialized, and this method behaves in the same way as reading the value of {{domxref("Element.innerHTML")}}.
+بدون آرگومان، گره‌های فرزندی که ریشه‌های سایه هستند سریال‌سازی نمی‌شوند و این متد دقیقاً مانند خواندن مقدار {{domxref("Element.innerHTML")}} عمل می‌کند.
 
-Note that some browsers serialize the `<` and `>` characters as `&lt;` and `&gt;` when they appear in attribute values (see [Browser compatibility](#browser_compatibility)).
-This is to prevent a potential security vulnerability ([mutation XSS](https://www.securitum.com/mutation-xss-via-mathml-mutation-dompurify-2-0-17-bypass.html)) in which an attacker can craft input that bypasses a [sanitization function](/en-US/docs/Web/Security/Attacks/XSS#sanitization), enabling a cross-site scripting (XSS) attack.
+توجه داشته باشید که برخی مرورگرها کاراکترهای `<` و `>` را به صورت `&lt;` و `&gt;` در مواقعی که در مقادیر ویژگی‌ها ظاهر می‌شوند، سریال‌سازی می‌کنند (به [سازگاری مرورگر](#browser_compatibility) مراجعه کنید). این کار برای جلوگیری از یک آسیب‌پذیری امنیتی بالقوه ([mutation XSS](https://www.securitum.com/mutation-xss-via-mathml-mutation-dompurify-2-0-17-bypass.html)) است که در آن یک مهاجم می‌تواند ورودی‌ای را طراحی کند که از [تابع پالایش](/en-US/docs/Web/Security/Attacks/XSS#sanitization) عبور کرده و یک حمله اسکریپت‌نویسی بین‌سایتی (XSS) را ممکن سازد.
 
-## Syntax
+## نحوه استفاده
 
 ```js-nolint
 getHTML(options)
 ```
 
-### Parameters
+### پارامترها
 
 - `options` {{optional_inline}}
-  - : An options object with the following optional parameters:
+  - : یک شیء options با پارامترهای اختیاری زیر:
     - `serializableShadowRoots`
-      - : A boolean value that specifies whether to include {{domxref("ShadowRoot/serializable","serializable")}} shadow roots.
-        The default value is `false`.
+      - : یک مقدار بولی که مشخص می‌کند آیا ریشه‌های سایه {{domxref("ShadowRoot/serializable","serializable")}} (قابل سریال‌سازی) شامل شوند یا خیر. مقدار پیش‌فرض `false` است.
     - `shadowRoots`
-      - : An array of {{domxref("ShadowRoot")}} objects to serialize.
-        These are included regardless of whether they are marked as `serializable`, or if they are open or closed.
-        The default value is an empty array.
+      - : یک آرایه از اشیاء {{domxref("ShadowRoot")}} برای سریال‌سازی. این اشیاء صرف‌نظر از اینکه به عنوان `serializable` علامت‌گذاری شده‌اند یا خیر، یا باز یا بسته هستند، شامل می‌شوند. مقدار پیش‌فرض یک آرایه خالی است.
 
-### Return value
+### مقدار بازگشتی
 
-A string that represents the HTML serialization of the element.
+یک رشته که نمایانگر سریال‌سازی HTML عنصر است.
 
-### Exceptions
+### استثناها
 
-None.
+هیچ‌کدام.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See Also
+## همچنین ببینید
 
 - {{domxref("ShadowRoot.getHTML()")}}
 - {{domxref("Element.innerHTML")}}
