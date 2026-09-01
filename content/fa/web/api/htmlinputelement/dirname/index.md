@@ -1,11 +1,5 @@
 ---
 title: "HTMLInputElement: dirName property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/dirName"
-status: "needs-translation"
----
-
----
-title: "HTMLInputElement: dirName property"
 short-title: dirName
 slug: Web/API/HTMLInputElement/dirName
 page-type: web-api-instance-property
@@ -14,30 +8,30 @@ browser-compat: api.HTMLInputElement.dirName
 
 {{APIRef("HTML DOM")}}
 
-The **`dirName`** property of the {{domxref("HTMLInputElement")}} interface is the directionality of the element and enables the submission of that value. It reflects the value of the {{htmlelement("input")}} element's [`dirName`](/en-US/docs/Web/HTML/Reference/Attributes/dirname) attribute. This property can be retrieved or set.
+ویژگی **`dirName`** در رابط {{domxref("HTMLInputElement")}} جهت عنصر را مشخص می‌کند و امکان ارسال این مقدار را فراهم می‌سازد. این ویژگی مقدار صفت [`dirName`](/en-US/docs/Web/HTML/Reference/Attributes/dirname) عنصر {{htmlelement("input")}} را بازتاب می‌دهد. این ویژگی قابل خواندن و نوشتن است.
 
-Valid only for [`hidden`](/en-US/docs/Web/HTML/Reference/Elements/input/hidden), [`text`](/en-US/docs/Web/HTML/Reference/Elements/input/text), [`search`](/en-US/docs/Web/HTML/Reference/Elements/input/search), [`url`](/en-US/docs/Web/HTML/Reference/Elements/input/url), [`tel`](/en-US/docs/Web/HTML/Reference/Elements/input/tel), and [`email`](/en-US/docs/Web/HTML/Reference/Elements/input/email) `<input>` types, the `dirname` attribute controls how the element's directionality is submitted. When included, the form control will submit with two name/value pairs: the first being the [`name`](/en-US/docs/Web/HTML/Reference/Elements/input#name) and [`value`](/en-US/docs/Web/HTML/Reference/Elements/input#value), and the second being the value of the [`dirname`](/en-US/docs/Web/HTML/Reference/Elements/input#dirname) attribute as the name, with a value of `ltr` or `rtl` as set by the browser.
+صفت `dirname` فقط برای `<input>`های نوع [`hidden`](/en-US/docs/Web/HTML/Reference/Elements/input/hidden)، [`text`](/en-US/docs/Web/HTML/Reference/Elements/input/text)، [`search`](/en-US/docs/Web/HTML/Reference/Elements/input/search)، [`url`](/en-US/docs/Web/HTML/Reference/Elements/input/url)، [`tel`](/en-US/docs/Web/HTML/Reference/Elements/input/tel) و [`email`](/en-US/docs/Web/HTML/Reference/Elements/input/email) معتبر است و نحوهٔ ارسال جهت عنصر را کنترل می‌کند. وقتی این صفت وجود داشته باشد، کنترل فرم با دو جفت نام/مقدار ارسال می‌شود: اولی جفت [`name`](/en-US/docs/Web/HTML/Reference/Elements/input#name) و [`value`](/en-US/docs/Web/HTML/Reference/Elements/input#value) خود عنصر، و دومی جفتی که نام آن مقدار صفت [`dirname`](/en-US/docs/Web/HTML/Reference/Elements/input#dirname) است و مقدار آن `ltr` یا `rtl` خواهد بود که توسط مرورگر تعیین می‌شود.
 
-## Value
+## مقدار
 
-A string. The direction of the element.
+یک رشته (string). جهت عنصر.
 
-## Examples
+## مثال‌ها
 
 ```js
 inputElement.dirName = "rtl";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLTextAreaElement.dirName")}}
-- [`dir` attribute](/en-US/docs/Web/HTML/Reference/Global_attributes/dir)
-- [Sending form data](/en-US/docs/Learn_web_development/Extensions/Forms/Sending_and_retrieving_form_data)
+- [صفت `dir`](/en-US/docs/Web/HTML/Reference/Global_attributes/dir)
+- [ارسال داده‌های فرم](/en-US/docs/Learn_web_development/Extensions/Forms/Sending_and_retrieving_form_data)
