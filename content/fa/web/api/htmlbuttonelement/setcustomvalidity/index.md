@@ -1,11 +1,5 @@
 ---
 title: "HTMLButtonElement: setCustomValidity() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLButtonElement/setCustomValidity"
-status: "needs-translation"
----
-
----
-title: "HTMLButtonElement: setCustomValidity() method"
 short-title: setCustomValidity()
 slug: Web/API/HTMLButtonElement/setCustomValidity
 page-type: web-api-instance-method
@@ -14,24 +8,24 @@ browser-compat: api.HTMLButtonElement.setCustomValidity
 
 {{ APIRef("HTML DOM") }}
 
-The **`setCustomValidity()`** method of the {{DOMxRef("HTMLButtonElement")}} interface sets the custom validity message for the {{htmlelement("button")}} element. Use the empty string to indicate that the element does _not_ have a custom validity error.
+متد **`setCustomValidity()`** از رابط {{DOMxRef("HTMLButtonElement")}} پیام اعتبارسنجی سفارشی را برای عنصر {{htmlelement("button")}} تنظیم می‌کند. برای نشان دادن اینکه عنصر خطای اعتبارسنجی سفارشی _ندارد_، از رشتهٔ خالی استفاده کنید.
 
-## Syntax
+## نحو
 
 ```js-nolint
 setCustomValidity(string)
 ```
 
-### Parameters
+### پارامترها
 
 - `string`
-  - : The string containing the error message. The empty string removes any custom validity errors.
+  - : رشته‌ای که پیام خطا را در بر می‌گیرد. رشتهٔ خالی هر خطای اعتبارسنجی سفارشی را حذف می‌کند.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
 ```js
 const errorButton = document.getElementById("checkErrors");
@@ -43,22 +37,22 @@ if (errors) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTMLelement("button")}}
 - {{domxref("HTMLButtonElement")}}
 - {{domxref("HTMLButtonElement.validity")}}
 - {{domxref("HTMLButtonElement.checkValidity()")}}
 - {{domxref("HTMLButtonElement.reportValidity()")}}
-- [Form validation](/en-US/docs/Web/HTML/Guides/Constraint_validation).
-- [Learn: Client-side form validation](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
-- [Guide: Constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation)
-- CSS {{cssxref(":valid")}} and {{cssxref(":invalid")}} pseudo-classes
+- [اعتبارسنجی فرم](/en-US/docs/Web/HTML/Guides/Constraint_validation).
+- [یادگیری: اعتبارسنجی فرم سمت کلاینت](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
+- [راهنما: اعتبارسنجی محدودیت](/en-US/docs/Web/HTML/Guides/Constraint_validation)
+- شبه‌کلاس‌های CSS {{cssxref(":valid")}} و {{cssxref(":invalid")}}
