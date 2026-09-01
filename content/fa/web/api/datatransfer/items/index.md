@@ -1,11 +1,5 @@
 ---
 title: "DataTransfer: items property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/items"
-status: "needs-translation"
----
-
----
-title: "DataTransfer: items property"
 short-title: items
 slug: Web/API/DataTransfer/items
 page-type: web-api-instance-property
@@ -14,20 +8,17 @@ browser-compat: api.DataTransfer.items
 
 {{APIRef("HTML Drag and Drop API")}}
 
-The read-only `items` property of the {{domxref("DataTransfer")}} interface is a
-{{domxref("DataTransferItemList","list")}} of the {{domxref("DataTransferItem","data transfer items", "", "nocode")}} in a drag operation. The list includes one item for each item in the operation and if the operation had no items, the list is empty.
+خاصیت فقط‌خواندنی `items` در واسط {{domxref("DataTransfer")}} یک {{domxref("DataTransferItemList","لیست")}} از {{domxref("DataTransferItem","آیتم‌های انتقال داده", "", "nocode")}} در یک عملیات کشیدن است. این لیست به ازای هر آیتم در عملیات یک مورد دارد و اگر عملیات هیچ آیتمی نداشته باشد، لیست خالی خواهد بود.
 
-## Value
+## مقدار
 
-A {{domxref("DataTransferItemList")}} object containing {{domxref("DataTransferItem")}}
-objects representing the items being dragged in a drag operation, one list item for each
-object being dragged. If the drag operation had no data, the list is empty.
+یک شیء {{domxref("DataTransferItemList")}} حاوی اشیاء {{domxref("DataTransferItem")}} که نشان‌دهندهٔ آیتم‌های در حال کشیده شدن در یک عملیات کشیدن هستند، به ازای هر شیء در حال کشیده شدن یک آیتم در لیست. اگر عملیات کشیدن داده‌ای نداشته باشد، لیست خالی است.
 
-## Examples
+## نمونه‌ها
 
-### Logging dragged items
+### ثبت آیتم‌های کشیده شده
 
-This example uses `items` to log information about dragged items.
+این مثال از `items` برای ثبت اطلاعات مربوط به آیتم‌های کشیده شده استفاده می‌کند.
 
 #### HTML
 
@@ -97,20 +88,20 @@ const reset = document.querySelector("#reset");
 reset.addEventListener("click", () => document.location.reload());
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Logging dragged items", 0, 400)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Drag and drop](/en-US/docs/Web/API/HTML_Drag_and_Drop_API)
-- [Drag Operations](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_operations)
-- [Working with the drag data store](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_data_store)
+- [کشیدن و رها کردن](/en-US/docs/Web/API/HTML_Drag_and_Drop_API)
+- [عملیات کشیدن](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_operations)
+- [کار با ذخیره‌گاه داده‌ی کشیدن](/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_data_store)
