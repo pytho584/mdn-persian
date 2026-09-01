@@ -1,11 +1,5 @@
 ---
 title: "HTMLElement: hidden property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/hidden"
-status: "needs-translation"
----
-
----
-title: "HTMLElement: hidden property"
 short-title: hidden
 slug: Web/API/HTMLElement/hidden
 page-type: web-api-instance-property
@@ -14,29 +8,28 @@ browser-compat: api.HTMLElement.hidden
 
 {{ APIRef("HTML DOM") }}
 
-The {{domxref("HTMLElement")}} property **`hidden`** reflects the value of the element's [`hidden`](/en-US/docs/Web/HTML/Reference/Global_attributes/hidden) attribute.
+خصوصیت **`hidden`** در {{domxref("HTMLElement")}} منعکس‌کنندهٔ مقدار ویژگی [`hidden`](/en-US/docs/Web/HTML/Reference/Global_attributes/hidden) آن عنصر است.
 
-## Value
+## مقدار
 
-This attribute may have one of three values:
+این خصوصیت می‌تواند یکی از سه مقدار زیر را داشته باشد:
 
 - `true`
-  - : The element is hidden.
+  - : عنصر پنهان است.
 - `false`
-  - : The element is not hidden. This is the default value for the attribute.
+  - : عنصر پنهان نیست. این مقدار پیش‌فرض برای ویژگی است.
 - `"until-found"`
-  - : The element is _hidden until found_, meaning that it is hidden but will be revealed if found through in page search or reached through fragment navigation.
+  - : عنصر «پنهان تا زمان یافتن» است؛ یعنی پنهان است، اما اگر از طریق جستجو در صفحه یافت شود یا با پیمایش به بخشی از صفحه (fragment navigation) به آن دسترسی پیدا شود، نمایان می‌گردد.
 
-For details on the usage of this attribute, see the page for the [`hidden`](/en-US/docs/Web/HTML/Reference/Global_attributes/hidden) HTML attribute that this property reflects.
+برای جزئیات کاربرد این ویژگی، به صفحهٔ ویژگی HTML [`hidden`](/en-US/docs/Web/HTML/Reference/Global_attributes/hidden) که این خصوصیت منعکس‌کنندهٔ آن است مراجعه کنید.
 
-## Examples
+## مثال‌ها
 
-Here's an example where a hidden block is used to contain a 'thank you' message that is
-displayed after a user agrees to an unusual request.
+در این مثال، یک بلوک پنهان برای نگهداری پیام «متشکریم» استفاده شده است که پس از موافقت کاربر با یک درخواست غیرمعمول نمایش داده می‌شود.
 
 ### HTML
 
-The HTML contains two panels: a welcome panel, that asks users to agree to be awesome, and a follow-up panel, which is initially hidden.
+کد HTML شامل دو پنل است: یک پنل خوش‌آمدگویی که از کاربران می‌خواهد موافقت کنند که فوق‌العاده باشند، و یک پنل پیگیری که در ابتدا پنهان است.
 
 ```html
 <div id="welcome" class="panel">
@@ -53,7 +46,7 @@ The HTML contains two panels: a welcome panel, that asks users to agree to be aw
 
 ### CSS
 
-The content is styled using the CSS below.
+محتوا با استفاده از CSS زیر استایل‌بندی شده است.
 
 ```css
 .panel {
@@ -85,7 +78,7 @@ h1 {
 
 ### JavaScript
 
-The JavaScript adds an event listener to the "OK" button, which hides the "welcome" panel and shows the "awesome" panel:
+کد JavaScript یک شنوندهٔ رویداد (event listener) به دکمهٔ «OK» اضافه می‌کند که پنل «خوش‌آمدگویی» را پنهان کرده و پنل «فوق‌العاده» را نمایش می‌دهد:
 
 ```js
 document.getElementById("okButton").addEventListener("click", () => {
@@ -94,19 +87,19 @@ document.getElementById("okButton").addEventListener("click", () => {
 });
 ```
 
-### Result
+### نتیجه
 
 {{ EmbedLiveSample('Examples', 560, 200) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [hidden](/en-US/docs/Web/HTML/Reference/Global_attributes/hidden) attribute
+- ویژگی [hidden](/en-US/docs/Web/HTML/Reference/Global_attributes/hidden)
 - {{cssxref("display")}}
