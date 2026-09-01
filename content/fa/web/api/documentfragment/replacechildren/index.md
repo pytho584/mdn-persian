@@ -1,11 +1,5 @@
 ---
 title: "DocumentFragment: replaceChildren() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment/replaceChildren"
-status: "needs-translation"
----
-
----
-title: "DocumentFragment: replaceChildren() method"
 short-title: replaceChildren()
 slug: Web/API/DocumentFragment/replaceChildren
 page-type: web-api-instance-method
@@ -14,11 +8,9 @@ browser-compat: api.DocumentFragment.replaceChildren
 
 {{APIRef("DOM")}}
 
-The **`DocumentFragment.replaceChildren()`** method replaces the
-existing children of a `DocumentFragment` with a specified new set of children. These
-can be string or {{domxref("Node")}} objects.
+**`DocumentFragment.replaceChildren()`** 方法用一组指定的新子节点替换 `DocumentFragment` 现有的子节点。这些新子节点可以是字符串或 {{domxref("Node")}} 对象。
 
-## Syntax
+## 语法
 
 ```js-nolint
 replaceChildren(param1)
@@ -26,28 +18,25 @@ replaceChildren(param1, param2)
 replaceChildren(param1, param2, /* …, */ paramN)
 ```
 
-### Parameters
+### 参数
 
 - `param1`, …, `paramN`
-  - : A set of {{domxref("Node")}} objects or strings to replace the
-    `DocumentFragment`'s existing children with. If no replacement objects are
-    specified, then the `DocumentFragment` is emptied of all child nodes.
+  - : 一组 {{domxref("Node")}} 对象或字符串，用于替换 `DocumentFragment` 现有的子节点。如果未指定任何替换对象，则 `DocumentFragment` 的所有子节点都将被清空。
 
-### Return value
+### 返回值
 
-None ({{jsxref("undefined")}}).
+无（{{jsxref("undefined")}}）。
 
-### Exceptions
+### 异常
 
 - `HierarchyRequestError` {{DOMxRef("DOMException")}}
-  - : Thrown when the [constraints of the node tree](https://dom.spec.whatwg.org/#concept-node-tree) are violated.
+  - : 当违反[节点树的约束](https://dom.spec.whatwg.org/#concept-node-tree)时抛出。
 
-## Examples
+## 示例
 
-### Emptying a document fragment
+### 清空文档片段
 
-`replaceChildren()` provides a very convenient mechanism for emptying a document fragment
-of all its children. You call it on the document fragment without any argument specified:
+`replaceChildren()` 提供了一种非常便捷的机制，用于清空文档片段中的所有子节点。你可以在不指定任何参数的情况下对文档片段调用它：
 
 ```js
 let fragment = new DocumentFragment();
@@ -63,15 +52,15 @@ fragment.replaceChildren();
 fragment.children; // HTMLCollection []
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
 - {{domxref("DocumentFragment.prepend()")}}
 - {{domxref("DocumentFragment.append()")}}
