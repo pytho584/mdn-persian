@@ -1,7 +1,5 @@
 ---
 title: "GPUQueue: submit() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUQueue/submit"
-status: "needs-translation"
 ---
 
 ---
@@ -14,44 +12,43 @@ browser-compat: api.GPUQueue.submit
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`submit()`** method of the
-{{domxref("GPUQueue")}} interface schedules the execution of command buffers represented by one or more {{domxref("GPUCommandBuffer")}} objects by the GPU.
+متود **`submit()`** از رابط {{domxref("GPUQueue")}} اجرای بافرهای فرمان را که توسط یک یا چند شیء {{domacro("GPUCommandBuffer")}} نمایش داده می‌شوند، توسط GPU زمان‌بندی می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 submit(commandBuffers)
 ```
 
-### Parameters
+### پارامترها
 
 - `commandBuffers`
-  - : An array of {{domxref("GPUCommandBuffer")}} objects containing the commands to be enqueued for processing by the GPU. The array must not contain duplicate `GPUCommandBuffer` objects — each one can only be submitted once per `submit()` call.
+  - : آرایه‌ای از اشیاء {{domxref("GPUCommandBuffer")}} شامل فرمان‌هایی که باید برای پردازش توسط GPU در صف قرار گیرند. این آرایه نباید حاوی اشیاء تکراری `GPUCommandBuffer` باشد — هر یک فقط می‌تواند یک بار در هر فراخوانی `submit()` ارسال شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Validation
+### اعتبارسنجی
 
-The following criteria must be met when calling **`submit()`**, otherwise a {{domxref("GPUValidationError")}} is generated and the {{domxref("GPUQueue")}} becomes invalid:
+هنگام فراخوانی **`submit()`** معیارهای زیر باید برآورده شوند، در غیر این صورت یک {{domxref("GPUValidationError")}} ایجاد شده و {{domxref("GPUQueue")}} نامعتبر می‌شود:
 
-- The array of {{domxref("GPUCommandBuffer")}} objects referenced in the `submit()` call does not contain duplicates.
-- Any {{domxref("GPUBuffer")}}, {{domxref("GPUTexture")}}, and {{domxref("GPUQuerySet")}} objects used in the encoded commands are available for use, i.e., not unavailable (`GPUBuffer`s are unavailable if they are currently {{domxref("GPUBuffer.mapAsync", "mapped", "", "nocode")}}) or destroyed (with the `destroy()` method).
-- Any {{domxref("GPUExternalTexture")}} objects used in the encoded commands are not expired (they expire automatically shortly after being imported via {{domxref("GPUDevice.importExternalTexture", "importExternalTexture()")}}).
-- If a {{domxref("GPUQuerySet")}} object used in an encoded command is of type `"occlusion"` query, it is not already used, except by {{domxref("GPURenderPassEncoder.beginOcclusionQuery()")}}.
+- آرایه‌ای از اشیاء {{domxref("GPUCommandBuffer")}} که در فراخوانی `submit()` ارجاع شده‌اند، حاوی موارد تکراری نباشد.
+- هر شیء {{domxref("GPUBuffer")}}، {{domxref("GPUTexture")}} و {{domxref("GPUQuerySet")}} که در فرمان‌های رمزگذاری‌شده استفاده شده‌اند، برای استفاده در دسترس باشند؛ یعنی در دسترس نبودن‌ (عدم دسترسی `GPUBuffer` زمانی است که در حال {{domxref("GPUBuffer.mapAsync", "mapped", "", "nocode")}} هستند یا با متود `destroy()` نابود شده‌اند) وجود نداشته باشد.
+- هر شیء {{domxref("GPUExternalTexture")}} که در فرمان‌های رمزگذاری‌شده استفاده شده‌اند منقضی نشده باشند (آن‌ها به طور خودکار مدت کوتاهی پس از وارد شدن از طریق {{domxref("GPUDevice.importExternalTexture", "importExternalTexture()")}} منقضی می‌شوند).
+- اگر شیء {{domxref("GPUQuerySet")}} مورد استفاده در یک فرمان رمزگذاری‌شده از نوع query `"occlusion"` باشد، قبلاً استفاده نشده باشد، به جز توسط {{domxref("GPURenderPassEncoder.beginOcclusionQuery()")}}.
 
-## Examples
+## مثال‌ها
 
-In our [basic render demo](https://mdn.github.io/dom-examples/webgpu-render-demo/), a number of commands are recorded via a {{domxref("GPUCommandEncoder")}}:
+در [نمونه‌ی رندر پایه](https://mdn.github.io/dom-examples/webgpu-render-demo/) ما، تعدادی فرمان از طریق یک {{domxref("GPUCommandEncoder")}} ثبت می‌شوند:
 
 ```js
 // …
 
-// Create GPUCommandEncoder
+// ایجاد GPUCommandEncoder
 const commandEncoder = device.createCommandEncoder();
 
-// Create GPURenderPassDescriptor to tell WebGPU which texture to draw into, then initiate render pass
+// ایجاد GPURenderPassDescriptor برای تعیین اینکه WebGPU به کدام بافت رسم کند، سپس شروع رندر پاس
 
 const renderPassDescriptor = {
   colorAttachments: [
@@ -66,36 +63,36 @@ const renderPassDescriptor = {
 
 const passEncoder = commandEncoder.beginRenderPass(renderPassDescriptor);
 
-// Draw a triangle
+// رسم یک مثلث
 
 passEncoder.setPipeline(renderPipeline);
 passEncoder.setVertexBuffer(0, vertexBuffer);
 passEncoder.draw(3);
 
-// End the render pass
+// پایان رندر پاس
 
 passEncoder.end();
 
 // …
 ```
 
-The commands encoded by the {{domxref("GPUCommandEncoder")}} are recoded into a {{domxref("GPUCommandBuffer")}} using the {{domxref("GPUCommandEncoder.finish()")}} method. The command buffer is then passed into the queue via a `submit()` call, ready to be processed by the GPU.
+فرمان‌های رمزگذاری‌شده توسط {{domxref("GPUCommandEncoder")}} با استفاده از متود {{domxref("GPUCommandEncoder.finish()")}} در یک {{domxref("GPUCommandBuffer")}} بازنویسی می‌شوند. سپس بافر فرمان از طریق یک فراخوانی `submit()` به صف ارسال می‌شود، آماده برای پردازش توسط GPU.
 
 ```js
 device.queue.submit([commandEncoder.finish()]);
 ```
 
 > [!NOTE]
-> Study the [WebGPU samples](https://webgpu.github.io/webgpu-samples/) to find more queue examples.
+> برای دیدن نمونه‌های بیشتر از صف، به [نمونه‌های WebGPU](https://webgpu.github.io/webgpu-samples/) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
