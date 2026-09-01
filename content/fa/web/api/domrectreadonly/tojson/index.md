@@ -1,11 +1,5 @@
 ---
 title: "DOMRectReadOnly: toJSON() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly/toJSON"
-status: "needs-translation"
----
-
----
-title: "DOMRectReadOnly: toJSON() method"
 short-title: toJSON()
 slug: Web/API/DOMRectReadOnly/toJSON
 page-type: web-api-instance-method
@@ -14,25 +8,25 @@ browser-compat: api.DOMRectReadOnly.toJSON
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The {{domxref("DOMRectReadOnly")}} method `toJSON()` returns a {{Glossary("JSON")}} representation of the `DOMRectReadOnly` object.
+متد `toJSON()` متعلق به {{domxref("DOMRectReadOnly")}}، یک نمایش {{Glossary("JSON")}} از شیء `DOMRectReadOnly` را بازمی‌گرداند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 toJSON()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A new object whose properties are set to the values in the `DOMRectReadOnly` on which the method was called.
+یک شیء جدید که ویژگی‌های آن با مقادیر موجود در `DOMRectReadOnly`ای که متد روی آن فراخوانی شده، تنظیم شده‌اند.
 
-## Examples
+## مثال‌ها
 
-This example creates a {{domxref("DOMRectReadOnly")}} that represents a rectangle at position `(10, 20)` with a width of `100` and a height of `50`. It then calls `toJSON()` to obtain a JSON representation of the rectangle.
+این مثال یک {{domxref("DOMRectReadOnly")}} می‌سازد که مستطیلی را در موقعیت `(10, 20)` با عرض `100` و ارتفاع `50` نشان می‌دهد. سپس برای دریافت نمایش JSON از این مستطیل، متد `toJSON()` را فراخوانی می‌کند.
 
 ```js
 const rect = new DOMRectReadOnly(10, 20, 100, 50);
@@ -42,10 +36,10 @@ console.log(rectJSON);
 // Output: { x: 10, y: 20, width: 100, height: 50, top: 20, right: 110, bottom: 70, left: 10 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
