@@ -1,11 +1,5 @@
 ---
 title: "Element: mousemove event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/mousemove_event"
-status: "needs-translation"
----
-
----
-title: "Element: mousemove event"
 short-title: mousemove
 slug: Web/API/Element/mousemove_event
 page-type: web-api-event
@@ -14,13 +8,13 @@ browser-compat: api.Element.mousemove_event
 
 {{APIRef("UI Events")}}
 
-The `mousemove` event is fired at an element when a pointing device (usually a mouse) is moved while the cursor's hotspot is inside it.
+رویداد `mousemove` زمانی روی یک عنصر صادر می‌شود که یک دستگاهِ اشاره‌گر (معمولاً ماوس) در حالی جابه‌جا شود که نقطه‌ی داغ نشانگر داخل آن عنصر قرار دارد.
 
-These events happen whether or not any mouse buttons are pressed. They can fire at a very high rate, depends on how fast the user moves the mouse, how fast the machine is, what other tasks and processes are happening, etc.
+این رویدادها صرف‌نظر از فشرده بودن یا نبودن دکمه‌های ماوس رخ می‌دهند. ممکن است با نرخ بسیار بالایی صادر شوند؛ این نرخ به سرعت حرکت ماوس توسط کاربر، سرعت دستگاه، و سایر وظایف و فرآیندهای در حال اجرا بستگی دارد.
 
 ## Syntax
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در متدهایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده‌ی رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("mousemove", (event) => { })
@@ -30,23 +24,23 @@ onmousemove = (event) => { }
 
 ## Event type
 
-A {{domxref("MouseEvent")}}. Inherits from {{domxref("UIEvent")}} and {{domxref("Event")}}.
+یک {{domxref("MouseEvent")}} که از {{domxref("UIEvent")}} و {{domxref("Event")}} ارث می‌برد.
 
 {{InheritanceDiagram("MouseEvent")}}
 
 ## Examples
 
-The following example uses the {{domxref("Element/mousedown_event", "mousedown")}}, `mousemove`, and {{domxref("Element/mouseup_event", "mouseup")}} events to allow the user to draw on an HTML [canvas](/en-US/docs/Web/API/Canvas_API). Its functionality is simple: the thickness of the line is set to 1, and the color is always black.
+مثال زیر از رویدادهای {{domxref("Element/mousedown_event", "mousedown")}}، `mousemove` و {{domxref("Element/mouseup_event", "mouseup")}} استفاده می‌کند تا به کاربر اجازه دهد روی [canvas](/en-US/docs/Web/API/Canvas_API) HTML نقاشی بکشد. عملکرد آن ساده است: ضخامت خط روی ۱ تنظیم شده و رنگ همیشه سیاه است.
 
-When the page loads, constants `myPics` and `context` are created to store a reference to the canvas and the 2d context we will use to draw.
+هنگام بارگذاری صفحه، ثابت‌های `myPics` و `context` ایجاد می‌شوند تا ارجاعی به canvas و بافت دوبعدی که برای رسم استفاده خواهیم کرد ذخیره کنند.
 
-Drawing begins when the `mousedown` event fires. First we store the x and y coordinates of the mouse pointer in the variables `x` and `y`, and then set `isDrawing` to true.
+رسم زمانی آغاز می‌شود که رویداد `mousedown` صادر شود. ابتدا مختصات x و y اشاره‌گر ماوس را در متغیرهای `x` و `y` ذخیره می‌کنیم و سپس `isDrawing` را برابر `true` قرار می‌دهیم.
 
-As the mouse moves over the page, the `mousemove` event fires. If `isDrawing` is true, the event handler calls the `drawLine` function to draw a line from the stored `x` and `y` values to the current location.
+با حرکت ماوس روی صفحه، رویداد `mousemove` صادر می‌شود. اگر `isDrawing` برابر `true` باشد، کنترل‌کننده‌ی رویداد تابع `drawLine` را فراخوانی می‌کند تا خطی از مقادیر ذخیره‌شده‌ی `x` و `y` تا مکان فعلی رسم کند.
 
-When the `drawLine()` function returns, we adjust the coordinates and then save them in `x` and `y`.
+وقتی تابع `drawLine()` برمی‌گردد، مختصات را به‌روزرسانی کرده و سپس آن‌ها را در `x` و `y` ذخیره می‌کنیم.
 
-The `mouseup` event draws the final line segment, sets `x` and `y` to `0`, and stops further drawing by setting `isDrawing` to `false`.
+رویداد `mouseup` بخش پایانی خط را رسم می‌کند، `x` و `y` را روی `0` تنظیم می‌کند، و با قرار دادن `isDrawing` برابر `false` از ادامه‌ی رسم جلوگیری می‌کند.
 
 ### HTML
 
