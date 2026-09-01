@@ -1,7 +1,5 @@
 ---
 title: "GPUBuffer: label property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPUBuffer/label"
-status: "needs-translation"
 ---
 
 ---
@@ -14,18 +12,17 @@ browser-compat: api.GPUBuffer.label
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`label`** property of the
-{{domxref("GPUBuffer")}} interface provides a label that can be used to identify the object, for example in {{domxref("GPUError")}} messages or console warnings.
+ویژگی **`label`** از رابط {{domxref("GPUBuffer")}} برچسبی را فراهم می‌کند که می‌توان از آن برای شناسایی شیء استفاده کرد؛ برای مثال در پیام‌های {{domxref("GPUError")}} یا هشدارهای کنسول.
 
-This can be set by providing a `label` property in the descriptor object passed into the originating {{domxref("GPUDevice.createBuffer()")}} call, or you can get and set it directly on the `GPUBuffer` object.
+این برچسب را می‌توان با قرار دادن یک ویژگی `label` در شیء توصیف‌گر (descriptor) که به فراخوانی {{domxref("GPUDevice.createBuffer()")}} برای ایجاد بافر ارسال می‌شود، تنظیم کرد؛ یا می‌توانید آن را مستقیماً روی شیء `GPUBuffer` بخوانید یا تنظیم کنید.
 
-## Value
+## مقدار
 
-A string. If this has not been previously set as described above, it will be an empty string.
+یک رشته. اگر این مقدار قبلاً به شکلی که در بالا توضیح داده شد تنظیم نشده باشد، یک رشتهٔ خالی خواهد بود.
 
-## Examples
+## مثال‌ها
 
-Setting and getting a label via `GPUBuffer.label`:
+تنظیم و خواندن یک برچسب از طریق `GPUBuffer.label`:
 
 ```js
 const output = device.createBuffer({
@@ -38,7 +35,7 @@ output.label = "my_buffer";
 console.log(output.label); // "my_buffer"
 ```
 
-Setting a label via the originating {{domxref("GPUDevice.createBuffer()")}} call, and then getting it via `GPUBuffer.label`:
+تنظیم یک برچسب از طریق فراخوانی {{domxref("GPUDevice.createBuffer()")}} و سپس خواندن آن با استفاده از `GPUBuffer.label`:
 
 ```js
 const output = device.createBuffer({
@@ -50,14 +47,14 @@ const output = device.createBuffer({
 console.log(output.label); // "my_buffer"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [رابط WebGPU](/en-US/docs/Web/API/WebGPU_API)
