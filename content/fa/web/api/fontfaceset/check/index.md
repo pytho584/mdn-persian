@@ -1,11 +1,5 @@
 ---
 title: "FontFaceSet: check() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FontFaceSet/check"
-status: "needs-translation"
----
-
----
-title: "FontFaceSet: check() method"
 short-title: check()
 slug: Web/API/FontFaceSet/check
 page-type: web-api-instance-method
@@ -14,36 +8,36 @@ browser-compat: api.FontFaceSet.check
 
 {{APIRef("CSS Font Loading API")}}{{AvailableInWorkers}}
 
-The `check()` method of the {{domxref("FontFaceSet")}} returns `true` if you can render some text using the given font specification without attempting to use any fonts in this `FontFaceSet` that are not yet fully loaded. This means you can use the font specification without causing a [font swap](/en-US/docs/Web/CSS/Reference/At-rules/@font-face/font-display).
+متد `check()` از {{domxref("FontFaceSet")}} مقدار `true` برمی‌گرداند اگر بتوانید متنی را با استفاده از مشخصات فونت داده‌شده رندر کنید، بدون آنکه تلاشی برای استفاده از فونت‌هایی در این `FontFaceSet` شود که هنوز به‌طور کامل بارگذاری نشده‌اند. این یعنی می‌توانید از مشخصات فونت بدون ایجاد [تعویض فونت](/en-US/docs/Web/CSS/Reference/At-rules/@font-face/font-display) استفاده کنید.
 
 > [!NOTE]
-> The `check()` method is not designed to verify whether a specific font style can be rendered or if a particular font is fully loaded. Instead, it returns `true` if the specified text can be rendered using the given font specification without causing a font swap. This means that even if the requested font isn't available or fully loaded, the method may still return `true`. This behavior helps avoid the visual issues associated with font swapping but may be counterintuitive if you're trying to confirm the availability of a specific font.
+> متد `check()` برای تأیید اینکه آیا یک سبک فونت خاص قابل رندر است یا یک فونت خاص به‌طور کامل بارگذاری شده است طراحی نشده است. در عوض، اگر متن مشخص‌شده با استفاده از مشخصات فونت داده‌شده بدون ایجاد تعویض فونت قابل رندر باشد، `true` برمی‌گرداند. این بدان معناست که حتی اگر فونت درخواستی موجود یا به‌طور کامل بارگذاری نشده باشد، متد ممکن است همچنان `true` برگرداند. این رفتار به جلوگیری از مشکلات بصری مرتبط با تعویض فونت کمک می‌کند، اما اگر در تلاش برای تأیید در دسترس بودن یک فونت خاص هستید، ممکن است غیرشهودی به نظر برسد.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 check(font)
 check(font, text)
 ```
 
-### Parameters
+### پارامترها
 
 - `font`
-  - : A font specification using the syntax for the CSS {{cssxref("font")}} property, for example `"italic bold 16px Roboto"`
+  - : یک مشخصات فونت با استفاده از سینتکس ویژگی {{cssxref("font")}} در CSS، برای مثال `"italic bold 16px Roboto"`
 - `text` {{optional_inline}}
-  - : Limit the font faces to those whose Unicode range contains at least one of the characters in text. This [does not check for individual glyph coverage](https://lists.w3.org/Archives/Public/www-style/2015Aug/0330.html). Defaults to a string containing a single space character (`" "`).
+  - : چهره‌های فونت (font faces) را به آن‌هایی محدود می‌کند که محدوده یونیکدشان حداقل یکی از کاراکترهای موجود در text را شامل شود. این [پوشش گلیف‌های منفرد را بررسی نمی‌کند](https://lists.w3.org/Archives/Public/www-style/2015Aug/0330.html). پیش‌فرض آن رشته‌ای متشکل از یک کاراکتر فاصله (`" "`) است.
 
-### Return value
+### مقدار برگشتی
 
-A {{jsxref("Boolean")}} value that is `true` if rendering text with the given font specification will not attempt to use any fonts in this `FontFaceSet` that are not yet fully loaded.
+یک مقدار {{jsxref("Boolean")}} که اگر رندر کردن متن با مشخصات فونت داده‌شده تلاشی برای استفاده از هیچ‌یک از فونت‌های این `FontFaceSet` که هنوز به‌طور کامل بارگذاری نشده‌اند نکند، `true` است.
 
-This means that all fonts in this `FontFaceSet` that are matched by the given font specification have a [`status`](/en-US/docs/Web/API/FontFace/status) property set to `"loaded"`.
+این بدان معناست که همه فونت‌های موجود در این `FontFaceSet` که با مشخصات فونت داده‌شده مطابقت دارند، ویژگی [`status`](/en-US/docs/Web/API/FontFace/status) آن‌ها روی `"loaded"` تنظیم شده است.
 
-Otherwise, this function returns `false`.
+در غیر این صورت، این تابع `false` برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-In the following example, we create a new `FontFace` and add it to the `FontFaceSet`:
+در مثال زیر، یک `FontFace` جدید می‌سازیم و آن را به `FontFaceSet` اضافه می‌کنیم:
 
 ```js
 const font = new FontFace("molot", 'url("/shared-assets/fonts/molot.woff2")', {
@@ -55,45 +49,45 @@ const font = new FontFace("molot", 'url("/shared-assets/fonts/molot.woff2")', {
 document.fonts.add(font);
 ```
 
-### Unloaded fonts
+### فونت‌های بارگذاری‌نشده
 
-The font is not yet loaded, so `check("12px molot")` returns `false`, indicating that if we try to use the given font specification, we will trigger a font load:
+فونت هنوز بارگذاری نشده است، بنابراین `check("12px molot")` مقدار `false` برمی‌گرداند و نشان می‌دهد که اگر سعی کنیم از مشخصات فونت داده‌شده استفاده کنیم، بارگذاری فونت را آغاز خواهیم کرد:
 
 ```js
 console.log(document.fonts.check("12px molot"));
 // false: the matching font is in the set, but is not yet loaded
 ```
 
-### System fonts
+### فونت‌های سیستمی
 
-If we specify only a system font in the argument to `check()`, it returns `true`, because we can use the system font without loading any fonts from the set:
+اگر فقط یک فونت سیستمی را در آرگومان `check()` مشخص کنیم، `true` برمی‌گرداند، زیرا می‌توانیم از فونت سیستمی بدون بارگذاری هیچ فونتی از مجموعه استفاده کنیم:
 
 ```js
 console.log(document.fonts.check("12px Courier"));
 // true: the matching font is a system font
 ```
 
-### Nonexistent fonts
+### فونت‌های ناموجود
 
-If we specify a font that is not in the `FontFaceSet` and is not a system font, `check()` returns `true`, because in this situation we will not rely on any fonts from the set:
+اگر فونتی را مشخص کنیم که در `FontFaceSet` نیست و فونت سیستمی هم نیست، `check()` مقدار `true` برمی‌گرداند، زیرا در این وضعیت به هیچ فونتی از مجموعه وابسته نخواهیم بود:
 
 ```js
 console.log(document.fonts.check("12px i-dont-exist"));
 // true: the matching font is a nonexistent font
 ```
 
-### System and unloaded fonts
+### فونت‌های سیستمی و بارگذاری‌نشده
 
-If we specify both a system font and a font in the set that is not yet loaded, then `check()` returns `false`:
+اگر هم یک فونت سیستمی و هم فونتی در مجموعه که هنوز بارگذاری نشده را مشخص کنیم، `check()` مقدار `false` برمی‌گرداند:
 
 ```js
 console.log(document.fonts.check("12px molot, Courier"));
 // false: `molot` is in the set but not yet loaded
 ```
 
-### Fonts that are loading
+### فونت‌های در حال بارگذاری
 
-If we specify a font from the set that is still loading, `check()` returns `false`:
+اگر فونتی از مجموعه را مشخص کنیم که هنوز در حال بارگذاری است، `check()` مقدار `false` برمی‌گرداند:
 
 ```js
 function check() {
@@ -107,9 +101,9 @@ function check() {
 check();
 ```
 
-### Fonts that have loaded
+### فونت‌های بارگذاری‌شده
 
-If we specify a font from the set that has loaded, `check()` returns `true`:
+اگر فونتی از مجموعه را مشخص کنیم که بارگذاری شده است، `check()` مقدار `true` برمی‌گرداند:
 
 ```js
 async function check() {
@@ -123,10 +117,10 @@ async function check() {
 check();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
