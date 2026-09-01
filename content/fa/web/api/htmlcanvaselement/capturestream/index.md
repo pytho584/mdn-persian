@@ -1,11 +1,5 @@
 ---
 title: "HTMLCanvasElement: captureStream() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/captureStream"
-status: "needs-translation"
----
-
----
-title: "HTMLCanvasElement: captureStream() method"
 short-title: captureStream()
 slug: Web/API/HTMLCanvasElement/captureStream
 page-type: web-api-instance-method
@@ -14,66 +8,57 @@ browser-compat: api.HTMLCanvasElement.captureStream
 
 {{APIRef("Media Capture and Streams")}}
 
-The **`captureStream()`** method of the {{domxref("HTMLCanvasElement")}} interface returns a {{domxref("MediaStream")}}
-which includes a {{domxref("CanvasCaptureMediaStreamTrack")}} containing a real-time video capture of the canvas's contents.
+متد **`captureStream()`** از رابط {{domxref("HTMLCanvasElement")}} یک {{domxref("MediaStream")}} برمی‌گرداند که شامل یک {{domxref("CanvasCaptureMediaStreamTrack")}} حاوی ویدئوی زنده از محتویات canvas است.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 captureStream()
 captureStream(frameRate)
 ```
 
-### Parameters
+### پارامترها
 
 - `frameRate` {{optional_inline}}
-  - : A double-precision floating-point value that indicates the rate of capture of each
-    frame. If not set, a new frame will be captured each time the canvas changes; if set
-    to `0`, frames will not be captured automatically; instead, they will only
-    be captured when the returned track's
-    {{domxref("CanvasCaptureMediaStreamTrack.requestFrame", "requestFrame()")}} method is
-    called.
+  - : یک مقدار اعشاری با دقت مضاعف که نرخ ضبط هر فریم را مشخص می‌کند. اگر تنظیم نشود، هر بار که canvas تغییر کند یک فریم جدید ضبط می‌شود؛ اگر روی `0` تنظیم شود، فریم‌ها به‌طور خودکار ضبط نمی‌شوند و تنها زمانی ضبط می‌شوند که متد {{domxref("CanvasCaptureMediaStreamTrack.requestFrame", "requestFrame()")}} مسیر برگشتی فراخوانی شود.
 
-### Return value
+### مقدار بازگشتی
 
-A reference to a {{domxref("MediaStream")}} object, which has a single
-{{domxref("CanvasCaptureMediaStreamTrack")}} in it.
+یک ارجاع به یک شی {{domxref("MediaStream")}} که حاوی یک {{domxref("CanvasCaptureMediaStreamTrack")}} است.
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Thrown if the value of `frameRate` is negative.
+  - : اگر مقدار `frameRate` منفی باشد، پرتاب می‌شود.
 
 - `SecurityError` {{domxref("DOMException")}}
-  - : The canvas's bitmap is not origin clean;
-    at least some of its contents have or may have been loaded from a site other than the one from which the document itself was loaded.
+  - : بیت‌مپ canvas از نظر مبدأ (origin) تمیز نیست؛ حداقل بخشی از محتویات آن از سایتی غیر از سایتی که سند از آن بارگذاری شده، بارگذاری شده یا ممکن است بارگذاری شده باشد.
 
-## Example
+## مثال
 
 ```js
-// Find the canvas element to capture
+// یافتن عنصر canvas برای ضبط
 const canvasElt = document.querySelector("canvas");
 
-// Get the stream
-const stream = canvasElt.captureStream(25); // 25 FPS
+// دریافت جریان (stream)
+const stream = canvasElt.captureStream(25); // 25 فریم در ثانیه
 
-// Do things to the stream
-// E.g. Send it to another computer using an RTCPeerConnection
-//      pc is an RTCPeerConnection created elsewhere
+// انجام کارهایی با جریان
+// مثلاً ارسال آن به کامپیوتر دیگر با استفاده از RTCPeerConnection
+//      pc یک RTCPeerConnection است که در جای دیگر ایجاد شده
 stream.getTracks().forEach((track) => pc.addTrack(track, stream));
 ```
 
-## Specifications
+## مشخصات (Specifications)
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر (Browser compatibility)
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("HTMLMediaElement.captureStream()")}}, which allows capturing a stream
-  from a media element.
+- {{domxref("HTMLMediaElement.captureStream()")}} که امکان ضبط جریان از یک عنصر رسانه را فراهم می‌کند.
 - {{domxref("MediaStream")}}
-- [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
+- [API ضبط و جریان‌های رسانه (Media Capture and Streams API)](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
