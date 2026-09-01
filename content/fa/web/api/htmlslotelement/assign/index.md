@@ -1,11 +1,5 @@
 ---
 title: "HTMLSlotElement: assign() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLSlotElement/assign"
-status: "needs-translation"
----
-
----
-title: "HTMLSlotElement: assign() method"
 short-title: assign()
 slug: Web/API/HTMLSlotElement/assign
 page-type: web-api-instance-method
@@ -14,12 +8,12 @@ browser-compat: api.HTMLSlotElement.assign
 
 {{APIRef("Shadow DOM API")}}
 
-The **`assign()`** method of the {{domxref("HTMLSlotElement")}} interface sets the slot's _manually assigned nodes_ to an ordered set of slottables. The manually assigned nodes set is initially empty until nodes are assigned using `assign()`.
+متد **`assign()`** در رابط {{domxref("HTMLSlotElement")}}، گره‌های _اختصاص‌یافته دستی_ اسلات را به یک مجموعه مرتب از عناصر قابل‌اسلات (slottables) تنظیم می‌کند. مجموعه گره‌های اختصاص‌یافته دستی در ابتدا خالی است تا زمانی که گره‌ها با استفاده از `assign()` اختصاص داده شوند.
 
 > [!NOTE]
-> You cannot mix manually (imperative) and named (declarative, automatic) slot assignments. Therefore, for this method to work, the shadow tree needs to have been [created](/en-US/docs/Web/API/Element/attachShadow) with the `slotAssignment: "manual"` option.
+> نمی‌توانید اختصاص اسلات دستی (امری) و نام‌گذاری‌شده (اعلانی، خودکار) را با هم ترکیب کنید. بنابراین، برای اینکه این متد کار کند، درخت سایه باید با گزینه `slotAssignment: "manual"` [ایجاد شده](/en-US/docs/Web/API/Element/attachShadow) باشد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 assign(node1)
@@ -27,23 +21,23 @@ assign(node1, node2)
 assign(node1, node2, /* …, */ nodeN)
 ```
 
-### Parameters
+### پارامترها
 
-- `node1`, …, `nodeN`
-  - : A set of {{domxref("Element")}} or {{domxref("Text")}} nodes.
+- `node1`، …، `nodeN`
+  - : مجموعه‌ای از گره‌های {{domxref("Element")}} یا {{domxref("Text")}}.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown when calling this method on an automatically assigned slot.
+  - : زمانی پرتاب می‌شود که این متد روی یک اسلات اختصاص‌یافته خودکار فراخوانی شود.
 
-## Examples
+## مثال‌ها
 
-In the example below, the `assign()` method is used to display the correct tab in a tabbed application. The function is called and passed the panel to show, which is then assigned to the slot.
+در مثال زیر، از متد `assign()` برای نمایش تب صحیح در یک برنامه مبتنی بر تب استفاده شده است. این تابع فراخوانی می‌شود و پنل موردنظر برای نمایش به آن منتقل می‌شود، که سپس به اسلات اختصاص داده می‌شود.
 
 ```js
 function UpdateDisplayTab(elem, tabIdx) {
@@ -58,14 +52,14 @@ function UpdateDisplayTab(elem, tabIdx) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Element.attachShadow()")}}
