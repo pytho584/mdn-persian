@@ -1,11 +1,5 @@
 ---
 title: "Element: scrollsnapchange event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollsnapchange_event"
-status: "needs-translation"
----
-
----
-title: "Element: scrollsnapchange event"
 short-title: scrollsnapchange
 slug: Web/API/Element/scrollsnapchange_event
 page-type: web-api-event
@@ -16,13 +10,13 @@ browser-compat: api.Element.scrollsnapchange_event
 
 {{APIRef}}{{SeeCompatTable}}
 
-The **`scrollsnapchange`** event of the {{domxref("Element")}} interface is fired on the [scroll container](/en-US/docs/Glossary/Scroll_container) at the end of a scrolling operation when a new scroll snap target has been selected, just before the corresponding {{domxref("Element/scrollend_event", "scrollend")}} event fires.
+رویداد **`scrollsnapchange`** از رابط {{domxref("Element")}} روی [scroll container](/en-US/docs/Glossary/Scroll_container) در پایان یک عملیات پیمایش، هنگامی که یک هدف snap پیمایش جدید انتخاب شده است، درست قبل از آن که رویداد متناظر {{domxref("Element/scrollend_event", "scrollend")}} فعال شود، فراخوانی می‌شود.
 
-A scrolling operation ends when the user finishes scrolling within a scroll container — for example using a touch gesture or by dragging the mouse pointer on a scroll bar — and releases the gesture.
+یک عملیات پیمایش زمانی پایان می‌یابد که کاربر پیمایش را درون یک ظرف پیمایش به پایان برساند — برای مثال با استفاده از یک حرکت لمسی یا با کشیدن اشاره‌گر ماوس روی نوار پیمایش — و حرکت را رها کند.
 
 ## Syntax
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("scrollsnapchange", (event) => { })
@@ -32,13 +26,13 @@ onscrollsnapchange = (event) => { }
 
 ## Event type
 
-A {{domxref("SnapEvent")}}, which inherits from the generic {{domxref("Event")}} type.
+یک {{domxref("SnapEvent")}} که از نوع عمومی {{domxref("Event")}} ارث‌بری می‌کند.
 
 ## Examples
 
 ### Basic usage
 
-Let's say we have a {{htmlelement("main")}} element containing significant content that causes it to scroll:
+فرض کنید یک عنصر {{htmlelement("main")}} داریم که حاوی محتوای قابل توجهی است و باعث پیمایش آن می‌شود:
 
 ```html
 <main>
@@ -46,7 +40,7 @@ Let's say we have a {{htmlelement("main")}} element containing significant conte
 </main>
 ```
 
-The `<main>` element can be turned into a scroll container that snaps to its children when scrolled using a combination of the CSS {{cssxref("scroll-snap-type")}} property and other properties. For example:
+عنصر `<main>` می‌تواند با استفاده از ترکیبی از ویژگی CSS {{cssxref("scroll-snap-type")}} و سایر ویژگی‌ها به یک ظرف پیمایش تبدیل شود که هنگام پیمایش به فرزندان خود snap کند. برای مثال:
 
 ```css
 main {
@@ -57,7 +51,7 @@ main {
 }
 ```
 
-The following JavaScript snippet would cause the `scrollsnapchange` event to fire on the `<main>` element when one of its children becomes a newly-selected snap target. In the handler function, we set a `selected` class on the child referenced by the {{domxref("SnapEvent.snapTargetBlock")}} property, which could be used to style it to look like it has been selected (for example, with an animation) when the event fires.
+قطعه کد JavaScript زیر باعث می‌شود رویداد `scrollsnapchange` روی عنصر `<main>` فعال شود زمانی که یکی از فرزندان آن به یک هدف snap تازه انتخاب شده تبدیل شود. در تابع کنترل‌کننده، یک کلاس `selected` روی فرزندی که توسط ویژگی {{domxref("SnapEvent.snapTargetBlock")}} ارجاع داده شده است قرار می‌دهیم، که می‌تواند برای استایل‌دهی به آن استفاده شود تا هنگام فعال شدن رویداد، ظاهر آن انتخاب شده به نظر برسد (مثلاً با یک انیمیشن).
 
 ```js
 const scrollingElem = document.querySelector("main");
