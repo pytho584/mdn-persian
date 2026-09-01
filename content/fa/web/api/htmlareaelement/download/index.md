@@ -1,11 +1,5 @@
 ---
 title: "HTMLAreaElement: download property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLAreaElement/download"
-status: "needs-translation"
----
-
----
-title: "HTMLAreaElement: download property"
 short-title: download
 slug: Web/API/HTMLAreaElement/download
 page-type: web-api-instance-property
@@ -14,18 +8,18 @@ browser-compat: api.HTMLAreaElement.download
 
 {{APIRef("HTML DOM")}}
 
-The **`download`** property of the {{domxref("HTMLAreaElement")}} interface is a string indicating that the linked resource is intended to be downloaded rather than displayed in the browser. The value represent the proposed name of the file. If the name is not a valid filename of the underlying OS, browser will adjust it accordingly.
+ویژگی **`download`** در رابط {{domxref("HTMLAreaElement")}} یک رشته است که نشان می‌دهد منبع پیوندشده قرار است دانلود شود نه در مرورگر نمایش داده شود. مقدار این ویژگی نام پیشنهادی برای فایل است. اگر این نام یک نام فایل معتبر در سیستم عامل زیرین نباشد، مرورگر آن را مطابق شرایط تنظیم می‌کند.
 
-It reflects the `download` attribute of the {{HTMLElement("area")}} element.
+این ویژگی منعکس‌کننده ویژگی `download` عنصر {{HTMLElement("area")}} است.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
