@@ -1,11 +1,5 @@
 ---
 title: "ElementInternals: ariaValueNow property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/ariaValueNow"
-status: "needs-translation"
----
-
----
-title: "ElementInternals: ariaValueNow property"
 short-title: ariaValueNow
 slug: Web/API/ElementInternals/ariaValueNow
 page-type: web-api-instance-property
@@ -14,18 +8,18 @@ browser-compat: api.ElementInternals.ariaValueNow
 
 {{APIRef("Web Components")}}
 
-The **`ariaValueNow`** property of the {{domxref("ElementInternals")}} interface reflects the value of the [`aria-valuenow`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuenow) attribute, which defines the current value for a range widget.
+خاصیت `ariaValueNow` از رابط {{domxref("ElementInternals")}} منعکس‌کننده‌ی مقدار صفت [`aria-valuenow`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-valuenow) است که مقدار فعلی یک ویجت محدوده (range widget) را تعریف می‌کند.
 
 > [!NOTE]
-> Setting aria attributes on `ElementInternals` allows default semantics to be defined on a custom element. These may be overwritten by author-defined attributes, but ensure that default semantics are retained should the author delete those attributes, or fail to add them at all. For more information see the [Accessibility Object Model explainer](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object).
+> تنظیم صفات aria روی `ElementInternals` امکان تعریف معناشناسی پیش‌فرض (default semantics) را برای یک عنصر سفارشی (custom element) فراهم می‌کند. این مقادیر ممکن است توسط صفات تعریف‌شده توسط نویسنده بازنویسی شوند، اما تضمین می‌کنند که در صورت حذف آن صفات توسط نویسنده یا عدم افزودن آن‌ها، معناشناسی پیش‌فرض حفظ شود. برای اطلاعات بیشتر به [توضیح‌دهنده‌ی مدل شیء دسترسی‌پذیری (Accessibility Object Model explainer)](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object) مراجعه کنید.
 
-## Value
+## مقدار
 
-A string which contains a number.
+یک رشته (string) که شامل یک عدد است.
 
-## Examples
+## مثال‌ها
 
-In this example the value of `ariaValueNow` is set to "1".
+در این مثال مقدار `ariaValueNow` به `"1"` تنظیم شده است.
 
 ```js
 class CustomControl extends HTMLElement {
@@ -38,10 +32,10 @@ class CustomControl extends HTMLElement {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
