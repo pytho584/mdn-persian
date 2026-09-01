@@ -1,11 +1,5 @@
 ---
 title: "FileSystemDirectoryHandle: getDirectoryHandle() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemDirectoryHandle/getDirectoryHandle"
-status: "needs-translation"
----
-
----
-title: "FileSystemDirectoryHandle: getDirectoryHandle() method"
 short-title: getDirectoryHandle()
 slug: Web/API/FileSystemDirectoryHandle/getDirectoryHandle
 page-type: web-api-instance-method
@@ -14,10 +8,7 @@ browser-compat: api.FileSystemDirectoryHandle.getDirectoryHandle
 
 {{securecontext_header}}{{APIRef("File System API")}}{{AvailableInWorkers}}
 
-The **`getDirectoryHandle()`** method of the
-{{domxref("FileSystemDirectoryHandle")}} interface returns a
-{{domxref('FileSystemDirectoryHandle')}} for a subdirectory with the specified name
-within the directory handle on which the method is called.
+متد **`getDirectoryHandle()`** در رابط {{domxref("FileSystemDirectoryHandle")}} یک {{domxref('FileSystemDirectoryHandle')}} برای زیرشاخه‌ای با نام مشخص‌شده، در داخل همان دسته‌دایرکتوری که متد روی آن فراخوانی شده است، برمی‌گرداند.
 
 ## Syntax
 
@@ -29,37 +20,30 @@ getDirectoryHandle(name, options)
 ### Parameters
 
 - `name`
-  - : A string representing the {{domxref('FileSystemHandle.name')}} of
-    the subdirectory you wish to retrieve.
+  - : یک رشته که {{domxref('FileSystemHandle.name')}} زیرشاخه‌ای را که می‌خواهید بازیابی کنید، نشان می‌دهد.
 - `options` {{optional_inline}}
-  - : An optional object containing options for the retrieved subdirectory. Options are as
-    follows:
+  - : یک شیء اختیاری حاوی گزینه‌هایی برای زیرشاخه بازیابی‌شده. گزینه‌ها به شرح زیر هستند:
     - `create` {{optional_inline}}
-      - : A boolean value, which defaults to `false`. When
-        set to `true` if the directory is not found, one with the specified
-        name will be created and returned.
+      - : یک مقدار بولی که به‌طور پیش‌فرض `false` است. اگر روی `true` تنظیم شود و دایرکتوری پیدا نشود، دایرکتوری‌ای با نام مشخص‌شده ایجاد و برگردانده می‌شود.
 
 ### Return value
 
-A {{jsxref('Promise')}} which resolves with a {{domxref('FileSystemDirectoryHandle')}}.
+یک {{jsxref('Promise')}} که با یک {{domxref('FileSystemDirectoryHandle')}} resolve می‌شود.
 
 ### Exceptions
 
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if the {{domxref('PermissionStatus.state')}} for the handle is not `'granted'` in `readwrite` mode if the `create` option is set to `true` or in `read` mode if the `create` option is set to `false`.
+  - : اگر {{domxref('PermissionStatus.state')}} برای handle در حالت `readwrite` (زمانی که گزینه `create` برابر `true` باشد) یا در حالت `read` (زمانی که گزینه `create` برابر `false` باشد) برابر `'granted'` نباشد، پرتاب می‌شود.
 - {{jsxref("TypeError")}}
-  - : Thrown if the name specified is not a valid string or contains characters that would
-    interfere with the native file system.
+  - : اگر نام مشخص‌شده یک رشته معتبر نباشد یا شامل کاراکترهایی باشد که با سیستم فایل بومی تداخل داشته باشند، پرتاب می‌شود.
 - `TypeMismatchError` {{domxref("DOMException")}}
-  - : Thrown if the returned entry is a file and not a directory.
+  - : اگر ورودی برگشتی یک فایل باشد نه یک دایرکتوری، پرتاب می‌شود.
 - `NotFoundError` {{domxref("DOMException")}}
-  - : Thrown if the current entry is not found or if the target directory doesn't exist and the `create` option is set to
-    `false`.
+  - : اگر ورودی فعلی پیدا نشود یا اگر دایرکتوری هدف وجود نداشته باشد و گزینه `create` برابر `false` باشد، پرتاب می‌شود.
 
 ## Examples
 
-The following example returns a directory handle with the specified name, if the
-directory does not exist it is created.
+مثال زیر یک handle دایرکتوری با نام مشخص‌شده را برمی‌گرداند؛ اگر دایرکتوری وجود نداشته باشد، ایجاد می‌شود.
 
 ```js
 const dirName = "directoryToGetName";
