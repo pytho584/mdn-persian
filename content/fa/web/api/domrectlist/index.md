@@ -1,10 +1,4 @@
 ---
-title: "DOMRectList"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMRectList"
-status: "needs-translation"
----
-
----
 title: DOMRectList
 slug: Web/API/DOMRectList
 page-type: web-api-interface
@@ -13,30 +7,30 @@ browser-compat: api.DOMRectList
 
 {{APIRef("Geometry Interfaces")}}
 
-The **`DOMRectList`** interface represents a collection of {{domxref("DOMRect")}} objects, typically used to hold the rectangles associated with a particular element, like bounding boxes returned by methods such as {{domxref("Element.getClientRects", "getClientRects()")}}. It provides access to each rectangle in the list via its index, along with a `length` property that indicates the total number of rectangles in the list.
+رابط **`DOMRectList`** مجموعه‌ای از اشیاء {{domxref("DOMRect")}} را نشان می‌دهد و معمولاً برای نگهداری مستطیل‌های مرتبط با یک عنصر خاص استفاده می‌شود؛ مانند جعبه‌های محدودکننده (bounding boxes) که توسط روش‌هایی مثل {{domxref("Element.getClientRects", "getClientRects()")}} بازگردانده می‌شوند. این رابط از طریق ایندکس، دسترسی به هر مستطیل در فهرست را فراهم می‌کند و همراه با آن، ویژگی `length` تعداد کل مستطیل‌ها را در فهرست نشان می‌دهد.
 
 > [!NOTE]
-> `DOMRectList` exists for compatibility with legacy Web content and is not recommended to be used when creating new APIs.
+> `DOMRectList` برای سازگاری با محتوای قدیمی وب وجود دارد و هنگام ایجاد APIهای جدید استفاده از آن توصیه نمی‌شود.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("DOMRectList.length")}} {{ReadOnlyInline}}
-  - : A read-only property that returns the total number of {{domxref("DOMRect")}} objects in the `DOMRectList`.
+  - : ویژگی فقط‌خواندنی که تعداد کل اشیاء {{domxref("DOMRect")}} را در `DOMRectList` برمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("DOMRectList.item")}}
-  - : Returns the {{domxref("DOMRect")}} object at the specified index. If the `index` is out of range, it returns `null`.
+  - : شیء {{domxref("DOMRect")}} را در ایندکس مشخص‌شده برمی‌گرداند. اگر `index` خارج از محدوده باشد، مقدار `null` بازگردانده می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("DOMRect")}}
 - {{domxref("DOMRectReadOnly")}}
