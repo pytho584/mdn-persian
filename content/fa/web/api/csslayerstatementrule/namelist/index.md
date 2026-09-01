@@ -1,7 +1,5 @@
 ---
 title: "CSSLayerStatementRule: nameList property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSLayerStatementRule/nameList"
-status: "needs-translation"
 ---
 
 ---
@@ -14,13 +12,13 @@ browser-compat: api.CSSLayerStatementRule.nameList
 
 {{APIRef("CSSOM")}}
 
-The read-only **`nameList`** property of the {{DOMxRef("CSSLayerStatementRule")}} interface return the list of associated cascade layer names. The names can't be modified.
+ویژگی فقط‌خواندنی **`nameList`** از رابط {{DOMxRef("CSSLayerStatementRule")}} فهرست نام‌های لایه‌های آبشاری مرتبط را برمی‌گرداند. این نام‌ها قابل تغییر نیستند.
 
-## Value
+## مقدار
 
-An {{jsxref("Array")}} of strings, each representing a cascade layer represented by the {{cssxref("@layer")}} statement rule.
+یک {{jsxref("Array")}} از رشته‌ها، که هر کدام نشان‌دهنده یک لایه آبشاری است که توسط قانون بیانیه {{cssxref("@layer")}} تعریف شده است.
 
-## Examples
+## مثال‌ها
 
 ### HTML
 
@@ -54,16 +52,16 @@ item.textContent = `@layer declares the following layers: ${layerStatementRule.n
 )}.`;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{DOMXRef("CSSLayerBlockRule.name")}}
 - {{CSSXref("@layer")}}
-- [The `@layer` statement at-rule for named layers](/en-US/docs/Learn_web_development/Core/Styling_basics/Cascade_layers#the_layer_statement_at-rule_for_named_layers)
+- [قانون بیانیه `@layer` برای لایه‌های نام‌دار](/en-US/docs/Learn_web_development/Core/Styling_basics/Cascade_layers#the_layer_statement_at-rule_for_named_layers)
