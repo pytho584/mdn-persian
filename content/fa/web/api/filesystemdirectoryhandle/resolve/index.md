@@ -1,11 +1,5 @@
 ---
 title: "FileSystemDirectoryHandle: resolve() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FileSystemDirectoryHandle/resolve"
-status: "needs-translation"
----
-
----
-title: "FileSystemDirectoryHandle: resolve() method"
 short-title: resolve()
 slug: Web/API/FileSystemDirectoryHandle/resolve
 page-type: web-api-instance-method
@@ -14,35 +8,30 @@ browser-compat: api.FileSystemDirectoryHandle.resolve
 
 {{securecontext_header}}{{APIRef("File System API")}}{{AvailableInWorkers}}
 
-The **`resolve()`** method of the
-{{domxref("FileSystemDirectoryHandle")}} interface returns an {{jsxref('Array')}} of
-directory names from the parent handle to the specified child entry, with the name of
-the child entry as the last array item.
+**`resolve()`** 方法属于 {{domxref("FileSystemDirectoryHandle")}} 接口，返回一个 {{jsxref('Array')}}，其中包含从父句柄到指定子条目的目录名称，且子条目的名称是数组的最后一项。
 
-## Syntax
+## 语法
 
 ```js-nolint
 resolve(possibleDescendant)
 ```
 
-### Parameters
+### 参数
 
 - `possibleDescendant`
-  - : The {{domxref('FileSystemHandle')}} from which to return the relative path.
+  - : 要返回其相对路径的 {{domxref('FileSystemHandle')}}。
 
-### Return value
+### 返回值
 
-A {{jsxref('Promise')}} which resolves with an {{jsxref('Array')}} of
-strings, or `null` if `possibleDescendant` is not a descendant of this {{domxref('FileSystemDirectoryHandle')}}.
+一个 {{jsxref('Promise')}}，解析为字符串数组（{{jsxref('Array')}}）；如果 `possibleDescendant` 不是此 {{domxref('FileSystemDirectoryHandle')}} 的后代，则解析为 `null`。
 
-### Exceptions
+### 异常
 
-No exceptions are thrown.
+不会抛出任何异常。
 
-## Examples
+## 示例
 
-The following asynchronous function uses `resolve()` to find the path to a
-chosen file, relative to a specified directory handle.
+以下异步函数使用 `resolve()` 来确定所选文件相对于指定目录句柄的路径。
 
 ```js
 async function returnPathDirectories(directoryHandle) {
@@ -68,15 +57,15 @@ async function returnPathDirectories(directoryHandle) {
 }
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
 - [File System API](/en-US/docs/Web/API/File_System_API)
-- [The File System Access API: simplifying access to local files](https://developer.chrome.com/docs/capabilities/web-apis/file-system-access)
+- [File System Access API：简化对本地文件的访问](https://developer.chrome.com/docs/capabilities/web-apis/file-system-access)
