@@ -1,11 +1,5 @@
 ---
 title: "ElementInternals: ariaBrailleLabel property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/ariaBrailleLabel"
-status: "needs-translation"
----
-
----
-title: "ElementInternals: ariaBrailleLabel property"
 short-title: ariaBrailleLabel
 slug: Web/API/ElementInternals/ariaBrailleLabel
 page-type: web-api-instance-property
@@ -14,20 +8,20 @@ browser-compat: api.ElementInternals.ariaBrailleLabel
 
 {{APIRef("Web Components")}}
 
-The **`ariaBrailleLabel`** property of the {{domxref("ElementInternals")}} interface reflects the value of the [`aria-braillelabel`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-braillelabel) attribute, which defines the ARIA braille label of the element.
+ویژگی **`ariaBrailleLabel`** از رابط {{domxref("ElementInternals")}} مقدار صفت [`aria-braillelabel`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-braillelabel) را منعکس می‌کند که برچسب بریل ARIA عنصر را تعریف می‌کند.
 
-This element label may be used by assistive technologies that can present content in braille, but should only be set if a braille-specific label would improve the user experience.
-The [`aria-braillelabel`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-braillelabel) contains additional information about when the property should be set.
+این برچسب عنصر ممکن است توسط فناوری‌های کمکی که قادر به نمایش محتوا به صورت بریل هستند استفاده شود، اما تنها زمانی باید تنظیم شود که یک برچسب مخصوص بریل تجربه کاربری را بهبود بخشد.
+صفت [`aria-braillelabel`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-braillelabel) حاوی اطلاعات بیشتری درباره زمان مناسب برای تنظیم این ویژگی است.
 
-## Value
+## مقدار
 
-A string that is intended to be converted into braille.
+یک رشته که قرار است به بریل تبدیل شود.
 
-## Examples
+## مثال‌ها
 
-This example shows how to get and set the `ariaBrailleLabel` property.
+این مثال نحوه دریافت و تنظیم ویژگی `ariaBrailleLabel` را نشان می‌دهد.
 
-Assuming we have defined a custom element called `<star-rating>`, in which the element internal's braille label is set to be the value of the element's `aria-braillelabel` attribute:
+فرض می‌کنیم یک عنصر سفارشی به نام `<star-rating>` تعریف کرده‌ایم که در آن برچسب بریل داخلی عنصر برابر با مقدار صفت `aria-braillelabel` عنصر تنظیم می‌شود:
 
 ```js
 class StarRating extends HTMLElement {
@@ -44,8 +38,8 @@ class StarRating extends HTMLElement {
 customElements.define("star-rating", StarRating);
 ```
 
-And we include the custom element with label text "3 out of 5 stars" and an `aria-braillelabel` attribute with a value of `"3"`.
-This allows a braille display to show "slider 3" in braille rather than the more verbose "slider gra 3 out of 5 stars".
+و عنصر سفارشی را با متن برچسب "3 out of 5 stars" و یک صفت `aria-braillelabel` با مقدار `"3"` قرار می‌دهیم.
+این کار باعث می‌شود نمایشگر بریل به جای نمایش "slider gra 3 out of 5 stars" (که طولانی‌تر است) عبارت "slider 3" را به صورت بریل نشان دهد.
 
 ```html
 <star-rating id="rate" aria-braillelabel="3">3 out of 5 stars</star-rating>
@@ -72,7 +66,7 @@ function log(text) {
 }
 ```
 
-The code uses the `ariaBrailleLabel` property to get and set the braille label.
+کد از ویژگی `ariaBrailleLabel` برای دریافت و تنظیم برچسب بریل استفاده می‌کند.
 
 ```js
 const el = document.querySelector("star-rating");
@@ -83,14 +77,14 @@ log(el._internals.ariaBrailleLabel);
 
 {{EmbedLiveSample("Examples")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("ElementInternals.ariaBrailleRoleDescription")}}
