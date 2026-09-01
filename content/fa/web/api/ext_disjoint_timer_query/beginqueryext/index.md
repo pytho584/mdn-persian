@@ -1,11 +1,5 @@
 ---
 title: "EXT_disjoint_timer_query: beginQueryEXT() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EXT_disjoint_timer_query/beginQueryEXT"
-status: "needs-translation"
----
-
----
-title: "EXT_disjoint_timer_query: beginQueryEXT() method"
 short-title: beginQueryEXT()
 slug: Web/API/EXT_disjoint_timer_query/beginQueryEXT
 page-type: webgl-extension-method
@@ -14,8 +8,7 @@ browser-compat: api.EXT_disjoint_timer_query.beginQueryEXT
 
 {{APIRef("WebGL")}}
 
-The **`EXT_disjoint_timer_query.beginQueryEXT()`** method of
-the [WebGL API](/en-US/docs/Web/API/WebGL_API) starts a timer query.
+متد **`EXT_disjoint_timer_query.beginQueryEXT()`** از [WebGL API](/en-US/docs/Web/API/WebGL_API) یک پرس‌وجوی زمان‌سنجی را آغاز می‌کند.
 
 ## Syntax
 
@@ -26,14 +19,13 @@ beginQueryEXT(target, query)
 ### Parameters
 
 - `target`
-  - : A {{domxref("WebGL_API/Types", "GLenum")}} specifying the target of the time query. Must be
-    `ext.TIME_ELAPSED_EXT`.
+  - : یک {{domxref("WebGL_API/Types", "GLenum")}} که هدف پرس‌وجوی زمان را مشخص می‌کند. باید برابر با `ext.TIME_ELAPSED_EXT` باشد.
 - `query`
-  - : A {{domxref("WebGLQuery")}} object for which to start the time querying.
+  - : یک شیء {{domxref("WebGLQuery")}} که پرس‌وجوی زمان برای آن شروع می‌شود.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
 ## Examples
 
