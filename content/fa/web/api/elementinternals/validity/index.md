@@ -1,9 +1,4 @@
----
-title: "ElementInternals: validity property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/validity"
-status: "needs-translation"
----
-
+```markdown
 ---
 title: "ElementInternals: validity property"
 short-title: validity
@@ -14,20 +9,20 @@ browser-compat: api.ElementInternals.validity
 
 {{APIRef("Web Components")}}
 
-The **`validity`** read-only property of the {{domxref("ElementInternals")}} interface returns a {{domxref("ValidityState")}} object which represents the different validity states the element can be in, with respect to constraint validation.
+خاصیت فقط خواندنی **`validity`** در رابط {{domxref("ElementInternals")}} یک شیء {{domxref("ValidityState")}} را برمی‌گرداند که وضعیت‌های اعتبار مختلفی را که عنصر می‌تواند داشته باشد، در رابطه با اعتبارسنجی محدودیت‌ها (constraint validation) نشان می‌دهد.
 
-## Value
+## مقدار
 
-A {{domxref("ValidityState")}} object.
+یک شیء {{domxref("ValidityState")}}.
 
-### Exceptions
+### استثناها
 
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Thrown if the element does not have its `formAssociated` property set to `true`.
+  - : اگر عنصر خاصیت `formAssociated` خود را روی `true` تنظیم نکرده باشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-The following example shows a custom checkbox component with `formAssociated` set to `true`, the value of `validity.valid` is logged to the console.
+در مثال زیر، یک مؤلفه‌ی چک‌باکس سفارشی با `formAssociated` تنظیم شده روی `true` نشان داده شده است. مقدار `validity.valid` در کنسول ثبت می‌شود.
 
 ```js
 class CustomCheckbox extends HTMLElement {
@@ -47,10 +42,11 @@ let element = document.getElementById("custom-checkbox");
 console.log(element.internals_.validity.valid);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
+```
