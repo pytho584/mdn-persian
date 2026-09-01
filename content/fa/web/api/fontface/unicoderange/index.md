@@ -1,11 +1,5 @@
 ---
 title: "FontFace: unicodeRange property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FontFace/unicodeRange"
-status: "needs-translation"
----
-
----
-title: "FontFace: unicodeRange property"
 short-title: unicodeRange
 slug: Web/API/FontFace/unicodeRange
 page-type: web-api-instance-property
@@ -14,18 +8,18 @@ browser-compat: api.FontFace.unicodeRange
 
 {{APIRef("CSS Font Loading API")}}{{AvailableInWorkers}}
 
-The **`unicodeRange`** property of the {{domxref("FontFace")}} interface retrieves or sets the range of unicode code points encompassing the font.
+**`unicodeRange`** 属性属于 {{domxref("FontFace")}} 接口，用于获取或设置包含该字体的 Unicode 码点范围。
 
-This property is equivalent to the {{cssxref("@font-face/unicode-range", "unicode-range")}} descriptor.
+此属性等同于 {{cssxref("@font-face/unicode-range", "unicode-range")}} 描述符。
 
-## Value
+## 值
 
-A string containing a descriptor as it would appear in a style sheet's `@font-face` rule.
+一个字符串，包含样式表 `@font-face` 规则中出现的描述符。
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
