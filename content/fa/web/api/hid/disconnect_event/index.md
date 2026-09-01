@@ -1,7 +1,5 @@
 ---
 title: "HID: disconnect event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HID/disconnect_event"
-status: "needs-translation"
 ---
 
 ---
@@ -16,11 +14,11 @@ browser-compat: api.HID.disconnect_event
 
 {{securecontext_header}}{{APIRef("WebHID API")}}{{SeeCompatTable}}{{AvailableInWorkers("window_and_worker_except_shared")}}
 
-The **`disconnect`** event of the {{domxref("HID")}} interface fires when the user agent disconnects a HID device.
+رویداد **`disconnect`** از رابط {{domxref("HID")}} زمانی رخ می‌دهد که عامل کاربر (user agent) یک دستگاه HID را قطع می‌کند.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد (event handler property) را تنظیم کنید.
 
 ```js-nolint
 addEventListener("disconnect", (event) => { })
@@ -28,15 +26,15 @@ addEventListener("disconnect", (event) => { })
 ondisconnect = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("HIDConnectionEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("HIDConnectionEvent")}}. از {{domxref("Event")}} به ارث می‌برد.
 
 {{InheritanceDiagram("HIDConnectionEvent")}}
 
-## Examples
+## مثال‌ها
 
-In the following example an event listener is registered to listen for the disconnection of a device. The name of the device is then printed to the console using {{domxref("HIDDevice.productName")}}.
+در مثال زیر، یک شنونده رویداد (event listener) برای گوش دادن به قطع اتصال دستگاه ثبت شده است. سپس نام دستگاه با استفاده از {{domxref("HIDDevice.productName")}} در کنسول چاپ می‌شود.
 
 ```js
 navigator.hid.addEventListener("disconnect", ({ device }) => {
@@ -44,10 +42,10 @@ navigator.hid.addEventListener("disconnect", ({ device }) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
