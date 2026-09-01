@@ -1,7 +1,5 @@
 ---
 title: "HTMLButtonElement: disabled property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLButtonElement/disabled"
-status: "needs-translation"
 ---
 
 ---
@@ -14,16 +12,16 @@ browser-compat: api.HTMLButtonElement.disabled
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLButtonElement.disabled`** property indicates whether the control is disabled, meaning that it does not accept any clicks.
+ویژگی **`HTMLButtonElement.disabled`** نشان می‌دهد که آیا کنترل غیرفعال است یا نه؛ به این معنی که هیچ کلیکی را نمی‌پذیرد.
 
-## Value
+## مقدار
 
-A boolean value.
+یک مقدار بولی (Boolean).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
