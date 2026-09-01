@@ -1,11 +1,5 @@
 ---
 title: "GeolocationPositionError: message property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GeolocationPositionError/message"
-status: "needs-translation"
----
-
----
-title: "GeolocationPositionError: message property"
 short-title: message
 slug: Web/API/GeolocationPositionError/message
 page-type: web-api-instance-property
@@ -14,21 +8,21 @@ browser-compat: api.GeolocationPositionError.message
 
 {{securecontext_header}}{{APIRef("Geolocation API")}}
 
-The **`message`** read-only property of the {{domxref("GeolocationPositionError")}} interface returns a human-readable string describing the details of the error.
+ویژگی فقط‌خواندنی **`message`** از رابط {{domxref("GeolocationPositionError")}} یک رشتهٔ قابل‌خواندن برای انسان برمی‌گرداند که جزئیات خطا را توصیف می‌کند.
 
-## Value
+## مقدار
 
-A human-readable string describing the details of the error.
+یک رشتهٔ قابل‌خواندن برای انسان که جزئیات خطا را توصیف می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Geolocation API](/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API)
+- [استفاده از Geolocation API](/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API)
 - {{domxref("GeolocationPositionError")}}
