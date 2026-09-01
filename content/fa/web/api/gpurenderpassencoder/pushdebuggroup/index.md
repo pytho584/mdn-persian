@@ -1,11 +1,5 @@
 ---
 title: "GPURenderPassEncoder: pushDebugGroup() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder/pushDebugGroup"
-status: "needs-translation"
----
-
----
-title: "GPURenderPassEncoder: pushDebugGroup() method"
 short-title: pushDebugGroup()
 slug: Web/API/GPURenderPassEncoder/pushDebugGroup
 page-type: web-api-instance-method
@@ -14,27 +8,26 @@ browser-compat: api.GPURenderPassEncoder.pushDebugGroup
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`pushDebugGroup()`** method of the
-{{domxref("GPURenderPassEncoder")}} interface begins a render pass debug group, which is marked with a specified label, and will contain all subsequent encoded commands up until a {{domxref("GPURenderPassEncoder.popDebugGroup", "popDebugGroup()")}} method is invoked.
+متد **`pushDebugGroup()`** از رابط {{domxref("GPURenderPassEncoder")}} یک گروه اشکال‌زدایی رندر پاس را آغاز می‌کند که با برچسب مشخصی علامت‌گذاری می‌شود و تمام دستورات رمزگذاری‌شدهٔ پس از خود را تا زمان فراخوانی متد {{domxref("GPURenderPassEncoder.popDebugGroup", "popDebugGroup()")}} در بر می‌گیرد.
 
-This could be used for telemetry, or may be utilized in {{domxref("GPUError")}} messages, browser dev tools, or other services in the future to help with debugging.
+این قابلیت می‌تواند برای تله‌متری استفاده شود، یا ممکن است در پیام‌های {{domxref("GPUError")}}، ابزارهای توسعه‌دهنده مرورگر یا سایر سرویس‌ها در آینده برای کمک به اشکال‌زدایی به کار رود.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 pushDebugGroup(groupLabel)
 ```
 
-### Parameters
+### پارامترها
 
 - `groupLabel`
-  - : A string representing the label for the debug group.
+  - : یک رشته (string) که برچسب گروه اشکال‌زدایی را نشان می‌دهد.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ مقداری ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
 ```js
 // …
@@ -52,14 +45,14 @@ passEncoder.popDebugGroup();
 // …
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
