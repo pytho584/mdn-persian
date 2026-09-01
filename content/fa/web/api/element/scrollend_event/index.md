@@ -1,11 +1,5 @@
 ---
 title: "Element: scrollend event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollend_event"
-status: "needs-translation"
----
-
----
-title: "Element: scrollend event"
 short-title: scrollend
 slug: Web/API/Element/scrollend_event
 page-type: web-api-event
@@ -14,18 +8,18 @@ browser-compat: api.Element.scrollend_event
 
 {{APIRef("CSSOM view API")}}
 
-The **`scrollend`** event fires when element scrolling has completed.
-Scrolling is considered completed when the scroll position has no more pending updates and the user has completed their gesture.
+رویداد **`scrollend`** زمانی رخ می‌دهد که پیمایش (scroll) یک عنصر به پایان رسیده است.
+پیمایش زمانی کامل در نظر گرفته می‌شود که موقعیت پیمایش هیچ به‌روزرسانی در انتظاری نداشته باشد و کاربر حرکت خود را به پایان رسانده باشد.
 
-Scroll position updates include smooth or instant mouse wheel scrolling, keyboard scrolling, scroll-snap events, or other APIs and gestures which cause the scroll position to update.
-User gestures like touch panning or trackpad scrolling aren't complete until pointers or keys have released.
-If the scroll position did not change, then no scrollend event fires.
+به‌روزرسانی‌های موقعیت پیمایش شامل پیمایش نرم یا آنی با چرخ ماوس، پیمایش با صفحه‌کلید، رویدادهای scroll-snap یا سایر APIها و حرکاتی که باعث به‌روزرسانی موقعیت پیمایش می‌شوند، می‌باشد.
+حرکات کاربر مانند پان کردن لمسی یا پیمایش با ترک‌پد تا زمانی که اشاره‌گرها یا کلیدها رها نشوند، کامل نیستند.
+اگر موقعیت پیمایش تغییر نکند، هیچ رویداد scrollend‌ای رخ نخواهد داد.
 
-For detecting when scrolling inside a Document is complete, see the {{domxref("Document/scrollend_event", "scrollend")}} event of `Document`.
+برای تشخیص پایان پیمایش درون یک سند، به رویداد {{domxref("Document/scrollend_event", "scrollend")}} در `Document` مراجعه کنید.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("scrollend", (event) => { })
@@ -33,15 +27,15 @@ addEventListener("scrollend", (event) => { })
 onscrollend = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Example
+## مثال
 
-### Using `scrollend` with an event listener
+### استفاده از `scrollend` با یک شنونده رویداد
 
-The following example shows how to use the `scrollend` event to detect when the user has stopped scrolling:
+مثال زیر نحوه استفاده از رویداد `scrollend` برای تشخیص زمانی که کاربر پیمایش را متوقف کرده است را نشان می‌دهد:
 
 ```css hidden
 #scroll-box {
@@ -93,9 +87,9 @@ element.addEventListener("scrollend", (event) => {
 
 {{EmbedLiveSample("Using_scrollend_with_an_event_listener", "100%", 130)}}
 
-### Using `onscrollend` event handler property
+### استفاده از ویژگی کنترل‌کننده رویداد `onscrollend`
 
-The following example shows how to use the `onscrollend` event handler property to detect when the user has stopped scrolling:
+مثال زیر نحوه استفاده از ویژگی کنترل‌کننده رویداد `onscrollend` برای تشخیص زمانی که کاربر پیمایش را متوقف کرده است را نشان می‌دهد:
 
 ```css hidden
 #scroll-box {
@@ -147,16 +141,16 @@ element.onscrollend = (event) => {
 
 {{EmbedLiveSample("Using_onscrollend_event_handler_property", "100%", 130)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Element `scroll` event](/en-US/docs/Web/API/Element/scroll_event)
-- [Document `scrollend` event](/en-US/docs/Web/API/Document/scrollend_event)
-- [Document `scroll` event](/en-US/docs/Web/API/Document/scroll_event)
+- [رویداد `scroll` در عنصر](/en-US/docs/Web/API/Element/scroll_event)
+- [رویداد `scrollend` در سند](/en-US/docs/Web/API/Document/scrollend_event)
+- [رویداد `scroll` در سند](/en-US/docs/Web/API/Document/scroll_event)
