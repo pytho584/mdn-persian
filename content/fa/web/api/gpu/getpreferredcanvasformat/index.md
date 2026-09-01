@@ -1,11 +1,5 @@
 ---
 title: "GPU: getPreferredCanvasFormat() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPU/getPreferredCanvasFormat"
-status: "needs-translation"
----
-
----
-title: "GPU: getPreferredCanvasFormat() method"
 short-title: getPreferredCanvasFormat()
 slug: Web/API/GPU/getPreferredCanvasFormat
 page-type: web-api-instance-method
@@ -14,10 +8,9 @@ browser-compat: api.GPU.getPreferredCanvasFormat
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`getPreferredCanvasFormat()`** method of the
-{{domxref("GPU")}} interface returns the optimal canvas texture format for displaying 8-bit depth, standard dynamic range content on the current system.
+متد **`getPreferredCanvasFormat()`** از رابط {{domxref("GPU")}} فرمت بهینه بافت canvas را برای نمایش محتوای 8 بیتی با عمق رنگ استاندارد (standard dynamic range) در سیستم فعلی بازمی‌گرداند.
 
-This is commonly used to provide a {{domxref("GPUCanvasContext.configure()")}} call with the optimal `format` value for the current system. This is recommended — if you don't use the preferred format when configuring the canvas context, you may incur additional overhead, such as additional texture copies, depending on the platform.
+این متد معمولاً برای ارائه‌ی مقدار بهینه‌ی `format` به فراخوانی {{domxref("GPUCanvasContext.configure()")}} استفاده می‌شود. این کار توصیه می‌شود — اگر هنگام پیکربندی بافت canvas از فرمت ترجیحی استفاده نکنید، ممکن است سربار اضافی مانند کپی‌های اضافی بافت بر اساس پلتفرم متحمل شوید.
 
 ## Syntax
 
@@ -27,15 +20,15 @@ getPreferredCanvasFormat()
 
 ### Parameters
 
-None.
+هیچ.
 
 ### Return value
 
-A string indicating a canvas texture format. The value can be `rgba8unorm` or `bgra8unorm`.
+یک رشته که فرمت بافت canvas را مشخص می‌کند. مقدار می‌تواند `rgba8unorm` یا `bgra8unorm` باشد.
 
 ### Exceptions
 
-None.
+هیچ.
 
 ## Examples
 
@@ -60,4 +53,4 @@ context.configure({
 
 ## See also
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
