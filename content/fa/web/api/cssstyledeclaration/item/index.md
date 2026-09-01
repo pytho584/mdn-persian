@@ -1,26 +1,12 @@
 ---
 title: "CSSStyleDeclaration: item() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/item"
-status: "needs-translation"
----
-
----
-title: "CSSStyleDeclaration: item() method"
-short-title: item()
-slug: Web/API/CSSStyleDeclaration/item
-page-type: web-api-instance-method
-browser-compat: api.CSSStyleDeclaration.item
 ---
 
 {{ APIRef("CSSOM") }}
 
-The `CSSStyleDeclaration.item()`
-method interface returns a CSS property name from a {{domxref('CSSStyleDeclaration')}}
-by index.
+متد `CSSStyleDeclaration.item()` یک نام خصوصیت CSS را از یک {{domxref('CSSStyleDeclaration')}} بر اساس ایندکس برمی‌گرداند.
 
-This method doesn't throw exceptions as long as you provide
-arguments; the empty string is returned if the index is out of range and a
-{{jsxref("TypeError")}} is thrown if no argument is provided.
+این متد تا زمانی که آرگومان ارائه دهید، استثنا پرتاب نمی‌کند؛ اگر ایندکس خارج از محدوده باشد، رشته خالی برگردانده می‌شود و اگر هیچ آرگومانی ارائه نشود، یک {{jsxref("TypeError")}} پرتاب می‌شود.
 
 ## Syntax
 
@@ -31,13 +17,13 @@ item(index)
 ### Parameters
 
 - `index`
-  - : The index of the node to be fetched. The index is zero-based.
+  - : ایندکس گره‌ای که باید دریافت شود. ایندکس از صفر شروع می‌شود.
 
 ### Return value
 
-A string that is the name of the CSS property at the specified index.
+یک رشته که نام خصوصیت CSS در ایندکس مشخص شده است.
 
-JavaScript has a special simpler syntax for obtaining an item from a NodeList by index:
+جاوااسکریپت یک نحو ساده‌تر ویژه برای دریافت یک آیتم از یک NodeList بر اساس ایندکس دارد:
 
 ```js
 const propertyName = style[index];
@@ -46,13 +32,13 @@ const propertyName = style[index];
 ### Exceptions
 
 - {{jsxref("TypeError")}}
-  - : Thrown if no argument is provided.
+  - : اگر هیچ آرگومانی ارائه نشود، پرتاب می‌شود.
 
 ## Examples
 
 ```js
 const style = document.getElementById("div1").style;
-const propertyName = style.item(1); // or style[1] - returns the second style listed
+const propertyName = style.item(1); // یا style[1] - دومین استایل لیست شده را برمی‌گرداند
 ```
 
 ## Specifications
