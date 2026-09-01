@@ -1,11 +1,5 @@
 ---
 title: "HTMLElement: change event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event"
-status: "needs-translation"
----
-
----
-title: "HTMLElement: change event"
 short-title: change
 slug: Web/API/HTMLElement/change_event
 page-type: web-api-event
@@ -14,20 +8,20 @@ browser-compat: api.HTMLElement.change_event
 
 {{APIRef("HTML DOM")}}
 
-The `change` event is fired for {{HTMLElement("input")}}, {{HTMLElement("select")}}, and {{HTMLElement("textarea")}} elements when the user modifies the element's value. Unlike the {{domxref("Element/input_event", "input")}} event, the `change` event is not necessarily fired for each alteration to an element's `value`.
+رویداد `change` برای عناصر {{HTMLElement("input")}}، {{HTMLElement("select")}} و {{HTMLElement("textarea")}} هنگامی که کاربر مقدار عنصر را تغییر می‌دهد، فعال می‌شود. برخلاف رویداد {{domxref("Element/input_event", "input")}}، رویداد `change` لزوماً برای هر تغییر در `value` عنصر فعال نمی‌شود.
 
-Depending on the kind of element being changed and the way the user interacts with the element, the `change` event fires at a different moment:
+بسته به نوع عنصر در حال تغییر و نحوه تعامل کاربر با آن، رویداد `change` در لحظه‌های متفاوتی فعال می‌شود:
 
-- When a `{{HTMLElement('input/checkbox', '&lt;input type="checkbox"&gt;')}}` element is checked or unchecked (by clicking or using the keyboard);
-- When a `{{HTMLElement('input/radio', '&lt;input type="radio"&gt;')}}` element is checked (but not when unchecked);
-- When the user commits the change explicitly (e.g., by selecting a value from a {{HTMLElement("select")}}'s dropdown with a mouse click, by selecting a date from a date picker for `{{HTMLElement('input/date', '&lt;input type="date"&gt;')}}`, by selecting a file in the file picker for `{{HTMLElement('input/file', '&lt;input type="file"&gt;')}}`, etc.);
-- When the element loses focus after its value was changed: for elements where the user's interaction is typing rather than selection, such as a {{HTMLElement("textarea")}} or the `{{HTMLElement('input/text', 'text')}}`, `{{HTMLElement('input/search', 'search')}}`, `{{HTMLElement('input/url', 'url')}}`, `{{HTMLElement('input/tel', 'tel')}}`, `{{HTMLElement('input/email', 'email')}}`, or `{{HTMLElement('input/password', 'password')}}` types of the {{HTMLElement('input')}} element.
+- هنگامی که یک عنصر `{{HTMLElement('input/checkbox', '&lt;input type="checkbox"&gt;')}}` علامت‌دار یا بی‌علامت می‌شود (با کلیک یا استفاده از صفحه‌کلید)؛
+- هنگامی که یک عنصر `{{HTMLElement('input/radio', '&lt;input type="radio"&gt;')}}` علامت‌دار می‌شود (اما نه زمانی که بی‌علامت می‌شود)؛
+- هنگامی که کاربر تغییر را به صورت صریح اعمال می‌کند (مثلاً با انتخاب یک مقدار از منوی کشویی {{HTMLElement("select")}} با کلیک ماوس، انتخاب یک تاریخ از انتخاب‌گر تاریخ برای `{{HTMLElement('input/date', '&lt;input type="date"&gt;')}}`، انتخاب یک فایل در انتخاب‌گر فایل برای `{{HTMLElement('input/file', '&lt;input type="file"&gt;')}}` و غیره)؛
+- هنگامی که عنصر پس از تغییر مقدار خود، فوکوس را از دست می‌دهد: برای عناصری که تعامل کاربر تایپ کردن است نه انتخاب کردن، مانند {{HTMLElement("textarea")}} یا انواع `{{HTMLElement('input/text', 'text')}}`، `{{HTMLElement('input/search', 'search')}}`، `{{HTMLElement('input/url', 'url')}}`، `{{HTMLElement('input/tel', 'tel')}}`، `{{HTMLElement('input/email', 'email')}}` یا `{{HTMLElement('input/password', 'password')}}` از عنصر {{HTMLElement('input')}}.
 
-The HTML specification lists [the `<input>` types that should fire the `change` event](https://html.spec.whatwg.org/multipage/forms.html#concept-input-apply).
+مشخصات HTML [انواع `<input>` که باید رویداد `change` را فعال کنند](https://html.spec.whatwg.org/multipage/forms.html#concept-input-apply) فهرست کرده است.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("change", (event) => { })
@@ -35,13 +29,13 @@ addEventListener("change", (event) => { })
 onchange = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## نمونه‌ها
 
-### \<select> element
+### عنصر `<select>`
 
 #### HTML
 
@@ -85,13 +79,13 @@ selectElement.addEventListener("change", (event) => {
 });
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('select_element', '100%', '75px') }}
 
-### Text input element
+### عنصر ورودی متنی
 
-For some elements, including `<input type="text">`, the `change` event doesn't fire until the control loses focus. Try entering something into the field below, and then click somewhere else to trigger the event.
+برای برخی عناصر، از جمله `<input type="text">`، رویداد `change` تا زمانی که کنترل فوکوس خود را از دست ندهد فعال نمی‌شود. سعی کنید چیزی در فیلد زیر وارد کنید، سپس روی جای دیگری کلیک کنید تا رویداد فعال شود.
 
 #### HTML
 
@@ -113,16 +107,16 @@ function updateValue(e) {
 }
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Text_input_element', '100%', '90px') }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-Different browsers do not always agree whether a `change` event should be fired for certain types of interaction. For example, keyboard navigation in {{HTMLElement("select")}} elements used to never fire a `change` event in Gecko until the user hit Enter or switched the focus away from the `<select>` (see [Firefox bug 126379](https://bugzil.la/126379)). Since Firefox 63 (Quantum), this behavior is consistent between all major browsers, however.
+مرورگرهای مختلف همیشه در مورد اینکه آیا رویداد `change` باید برای انواع خاصی از تعامل فعال شود یا خیر، توافق ندارند. به عنوان مثال، پیمایش صفحه‌کلید در عناصر {{HTMLElement("select")}} قبلاً هرگز رویداد `change` را در Gecko فعال نمی‌کرد تا زمانی که کاربر Enter را فشار دهد یا فوکوس را از `<select>` دور کند (به [باگ 126379 فایرفاکس](https://bugzil.la/126379) مراجعه کنید). از فایرفاکس 63 (Quantum) به بعد، این رفتار در همه مرورگرهای اصلی یکسان شده است.
