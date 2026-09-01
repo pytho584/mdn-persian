@@ -1,7 +1,5 @@
 ---
 title: "HTMLMediaElement: ended property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/ended"
-status: "needs-translation"
 ---
 
 ---
@@ -14,34 +12,31 @@ browser-compat: api.HTMLMediaElement.ended
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLMediaElement.ended`** property indicates whether the media
-element has ended playback.
+ویژگی **`HTMLMediaElement.ended`** نشان می‌دهد که آیا پخش رسانه در این عنصر به پایان رسیده است یا نه.
 
-## Value
+## مقدار
 
-A boolean value which is `true` if the media contained in the
-element has finished playing.
+یک مقدار بولین (Boolean) که اگر پخشِ رسانهٔ موجود در عنصر به پایان رسیده باشد، `true` است.
 
-If the source of the media is a {{domxref("MediaStream")}}, this value is
-`true` if the value of the stream's {{domxref("MediaStream.active", "active")}} property is `false`.
+اگر منبع رسانه یک {{domxref("MediaStream")}} باشد، این مقدار زمانی `true` است که مقدار ویژگی {{domxref("MediaStream.active", "active")}} جریان، `false` باشد.
 
-## Examples
+## مثال‌ها
 
 ```js
 const obj = document.createElement("video");
 console.log(obj.ended); // false
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("HTMLMediaElement")}}: Interface used to define the `HTMLMediaElement.ended` property
+- {{domxref("HTMLMediaElement")}}: رابطه‌ای که ویژگی `HTMLMediaElement.ended` را تعریف می‌کند
 - {{domxref("MediaStream")}}
 - {{domxref("MediaStream.active")}}
