@@ -1,11 +1,5 @@
 ---
 title: "Document: exitPointerLock() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Document/exitPointerLock"
-status: "needs-translation"
----
-
----
-title: "Document: exitPointerLock() method"
 short-title: exitPointerLock()
 slug: Web/API/Document/exitPointerLock
 page-type: web-api-instance-method
@@ -14,12 +8,12 @@ browser-compat: api.Document.exitPointerLock
 
 {{APIRef("Pointer Lock API")}}
 
-The **`exitPointerLock()`** method of the {{domxref("Document")}} interface asynchronously releases a pointer lock previously requested through {{domxref("Element.requestPointerLock")}}.
+روش **`exitPointerLock()`** در واسط {{domxref("Document")}} به صورت ناهمزمان (asynchronous) یک قفل اشاره‌گر (pointer lock) را که پیش‌تر از طریق {{domxref("Element.requestPointerLock")}} درخواست شده بود، آزاد می‌کند.
 
 > [!NOTE]
-> While the **`exitPointerLock()`** method is called on the document, the **`requestPointerLock()`** method is called on an element.
+> در حالی که روش **`exitPointerLock()`** روی سند (document) فراخوانی می‌شود، روش **`requestPointerLock()`** روی یک عنصر (element) فراخوانی می‌شود.
 
-To track the success or failure of the request, it is necessary to listen for the {{domxref("Document/pointerlockchange_event", "pointerlockchange")}} and {{domxref("Document/pointerlockerror_event", "pointerlockerror")}} events.
+برای پیگیری موفقیت یا شکست درخواست، لازم است به رویدادهای {{domxref("Document/pointerlockchange_event", "pointerlockchange")}} و {{domxref("Document/pointerlockerror_event", "pointerlockerror")}} گوش دهید.
 
 ## Syntax
 
@@ -29,11 +23,11 @@ exitPointerLock()
 
 ### Parameters
 
-None.
+هیچ.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
 ## Specifications
 
