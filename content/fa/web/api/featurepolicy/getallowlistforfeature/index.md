@@ -1,11 +1,5 @@
 ---
 title: "FeaturePolicy: getAllowlistForFeature() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/FeaturePolicy/getAllowlistForFeature"
-status: "needs-translation"
----
-
----
-title: "FeaturePolicy: getAllowlistForFeature() method"
 short-title: getAllowlistForFeature()
 slug: Web/API/FeaturePolicy/getAllowlistForFeature
 page-type: web-api-instance-method
@@ -17,40 +11,36 @@ browser-compat: api.FeaturePolicy.getAllowlistForFeature
 
 {{APIRef("Feature Policy API")}}{{SeeCompatTable}}{{non-standard_header}}
 
-The **`getAllowlistForFeature()`**
-method of the {{DOMxRef("FeaturePolicy")}} interface enables querying of the allowlist for a specific feature for the current Permissions Policy.
+متد **`getAllowlistForFeature()`** از رابط {{DOMxRef("FeaturePolicy")}} امکان پرس‌وجو از فهرست مجاز (allowlist) برای یک ویژگی خاص در سیاست مجوزهای (Permissions Policy) فعلی را فراهم می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 getAllowlistForFeature(feature)
 ```
 
-### Parameters
+### پارامترها
 
 - `feature`
-  - : The specific feature name to get its allowlist.
+  - : نام ویژگی خاصی که می‌خواهید فهرست مجاز آن را دریافت کنید.
 
-### Return value
+### مقدار بازگشتی
 
-An array of strings containing the serialized list of allowed origins for the feature. If a wildcard (`*`) is used, the array will contain `*`.
+آرایه‌ای از رشته‌ها شامل فهرست سریالی‌شده از مبدأهای مجاز برای آن ویژگی. اگر از کاراکتر wildcard (`*`) استفاده شده باشد، آرایه شامل `*` خواهد بود.
 
-### Exceptions
+### استثناها
 
-The function will raise a warning if the specified Permissions Policy directive name is not
-known. However, it will also return empty array, indicating that no origin is allowed to
-use the feature.
+اگر نام دستورالعمل Permissions Policy مشخص‌شده شناخته‌شده نباشد، تابع یک هشدار صادر می‌کند. با این حال، در این حالت نیز یک آرایه خالی برمی‌گرداند که نشان می‌دهد هیچ مبدأی اجازه استفاده از آن ویژگی را ندارد.
 
-## Example
+## مثال
 
-The following example prints all the origins that are allowed to use Camera API by the
-Permissions Policy. Please note that Camera API might also be restricted by the [Permissions API](/en-US/docs/Web/API/Permissions_API), if the user did not grant the corresponding permission.
+مثال زیر تمام مبدأهایی را چاپ می‌کند که طبق Permissions Policy مجاز به استفاده از Camera API هستند. توجه داشته باشید که Camera API ممکن است توسط [Permissions API](/en-US/docs/Web/API/Permissions_API) نیز محدود شده باشد، اگر کاربر مجوز مربوطه را اعطا نکرده باشد.
 
 ```js
-// First, get the FeaturePolicy object
+// ابتدا، شیء FeaturePolicy را دریافت کنید
 const featurePolicy = document.featurePolicy;
 
-// Query for specific feature
+// پرس‌وجو برای ویژگی خاص
 const allowlist = featurePolicy.getAllowlistForFeature("camera");
 
 for (const origin of allowlist) {
@@ -58,10 +48,10 @@ for (const origin of allowlist) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
