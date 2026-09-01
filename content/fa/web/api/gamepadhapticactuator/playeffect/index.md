@@ -1,7 +1,5 @@
 ---
 title: "GamepadHapticActuator: playEffect() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GamepadHapticActuator/playEffect"
-status: "needs-translation"
 ---
 
 ---
@@ -14,59 +12,59 @@ browser-compat: api.GamepadHapticActuator.playEffect
 
 {{APIRef("Gamepad API")}}
 
-The **`playEffect()`** method of the {{domxref("GamepadHapticActuator")}} interface causes the hardware to play a specific vibration effect.
+متد **`playEffect()`** در رابط {{domxref("GamepadHapticActuator")}} باعث می‌شود سخت‌افزار یک افکت لرزش مشخص را پخش کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 playEffect(type, params)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string representing the desired effect. Possible values are `"dual-rumble"` and `"trigger-rumble"`, and their effects can vary depending on the hardware type. See {{domxref("GamepadHapticActuator.effects")}} for further details of the effect types.
+  - : یک رشته (string) است که افکت مورد نظر را نشان می‌دهد. مقادیر ممکن عبارت‌اند از `"dual-rumble"` و `"trigger-rumble"`، و اثر آن‌ها بسته به نوع سخت‌افزار می‌تواند متفاوت باشد. برای جزئیات بیشتر درباره انواع افکت‌ها به {{domxref("GamepadHapticActuator.effects")}} مراجعه کنید.
 
 - `params`
-  - : An object to describe a desired haptic effect.
+  - : یک شیء برای توصیف افکت لرزشی موردنظر.
 
-    Expected values are:
+    مقادیر مورد انتظار عبارت‌اند از:
     - `duration` {{optional_inline}}
-      - : The duration of the effect in milliseconds.
-        Defaults to `0`.
+      - : مدت‌زمان افکت به میلی‌ثانیه.
+        پیش‌فرض: `0`.
     - `startDelay` {{optional_inline}}
-      - : The delay in milliseconds before the effect is started.
-        Defaults to `0`.
+      - : تأخیر (به میلی‌ثانیه) قبل از شروع افکت.
+        پیش‌فرض: `0`.
     - `strongMagnitude` {{optional_inline}}
-      - : The rumble intensity of the low-frequency (strong) rumble motors, normalized to the range between `0.0` and `1.0`.
-        Defaults to `0.0`.
+      - : شدت لرزش موتورهای لرزشی فرکانس پایین (قوی)، نرمال‌شده در بازه‌ی بین `0.0` و `1.0`.
+        پیش‌فرض: `0.0`.
     - `weakMagnitude` {{optional_inline}}
-      - : The rumble intensity of the high-frequency (weak) rumble motors, normalized to the range between `0.0` and `1.0`.
-        Defaults to `0.0`.
-    - `leftTrigger` (relevant to `"trigger-rumble"` effects only) {{optional_inline}}
-      - : The rumble intensity of the bottom-left front trigger, normalized to the range between `0.0` and `1.0`.
-        Defaults to `0.0`.
-    - `rightTrigger` (relevant to `"trigger-rumble"` effects only) {{optional_inline}}
-      - : The rumble intensity of the bottom-right front trigger, normalized to the range between `0.0` and `1.0`.
-        Defaults to `0.0`.
+      - : شدت لرزش موتورهای لرزشی فرکانس بالا (ضعیف)، نرمال‌شده در بازه‌ی بین `0.0` و `1.0`.
+        پیش‌فرض: `0.0`.
+    - `leftTrigger` (فقط برای افکت‌های `"trigger-rumble"` کاربرد دارد) {{optional_inline}}
+      - : شدت لرزش ماشه‌ی جلویی پایین-چپ، نرمال‌شده در بازه‌ی بین `0.0` و `1.0`.
+        پیش‌فرض: `0.0`.
+    - `rightTrigger` (فقط برای افکت‌های `"trigger-rumble"` کاربرد دارد) {{optional_inline}}
+      - : شدت لرزش ماشه‌ی جلویی پایین-راست، نرمال‌شده در بازه‌ی بین `0.0` و `1.0`.
+        پیش‌فرض: `0.0`.
 
 > [!NOTE]
-> A new call to `playEffect()` overrides a previous ongoing call.
+> یک فراخوانی جدید از `playEffect()` فراخوانی قبلی که هنوز در جریان است را لغو می‌کند.
 
-### Return value
+### مقدار بازگشتی
 
-A promise that resolves with `"complete"` when the effect successfully completes, or `"preempted"` if the current effect is stopped or replaced by another effect.
+یک Promise که در صورت تکمیل موفقیت‌آمیز افکت با مقدار `"complete"` resolve می‌شود، و در صورت توقف یا جایگزینی افکت فعلی با افکتی دیگر، با مقدار `"preempted"` resolve می‌شود.
 
-The promise may reject with the following exception types:
+این Promise ممکن است با انواع استثناهای زیر reject شود:
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : The current document is not active or hidden.
+  - : سند فعلی فعال نیست یا پنهان است.
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : The requested `type` is not supported by the current gamepad's actuator.
+  - : نوع (`type`) درخواستی توسط actuator گیمپد فعلی پشتیبانی نمی‌شود.
 - `TypeError` {{domxref("DOMException")}}
-  - : The requested `type` is not a valid effect type.
+  - : نوع (`type`) درخواستی یک نوع افکت معتبر نیست.
 
-## Examples
+## مثال‌ها
 
 ```js
 const gamepad = navigator.getGamepads()[0];
@@ -82,14 +80,14 @@ gamepad.vibrationActuator
 // Should log "complete" if effect successfully runs
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Gamepad API](/en-US/docs/Web/API/Gamepad_API)
