@@ -1,11 +1,5 @@
 ---
 title: "DOMMatrixReadOnly: is2D property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DOMMatrixReadOnly/is2D"
-status: "needs-translation"
----
-
----
-title: "DOMMatrixReadOnly: is2D property"
 short-title: is2D
 slug: Web/API/DOMMatrixReadOnly/is2D
 page-type: web-api-instance-property
@@ -14,13 +8,13 @@ browser-compat: api.DOMMatrixReadOnly.is2D
 
 {{APIRef("Geometry Interfaces")}}{{AvailableInWorkers}}
 
-The readonly **`is2D`** property of the {{domxref("DOMMatrixReadOnly")}} interface is a Boolean flag that is `true` when the matrix is 2D. The value is `true` if the matrix was initialized as a 2D matrix and only 2D transformation operations were applied. Otherwise, the matrix is defined in 3D, and `is2D` is `false`.
+ویژگی فقط‑خواندنی **`is2D`** از رابط {{domxref("DOMMatrixReadOnly")}} یک پرچم بولی است که وقتی ماتریس دو‑بعدی باشد، `true` است. مقدار آن `true` است اگر ماتریس به‌عنوان یک ماتریس دو‑بعدی مقداردهی اولیه شده باشد و فقط عملیات تبدیل دو‑بعدی روی آن اعمال شده باشد. در غیر این صورت، ماتریس در سه‑بعد تعریف می‌شود و `is2D` برابر `false` است.
 
-## Value
+## مقدار
 
-A Boolean value.
+یک مقدار بولی.
 
-## Examples
+## مثال‌ها
 
 ```js
 // Initialize a 2D matrix
@@ -34,20 +28,20 @@ console.log(matrix.rotate(30).is2D); // output: true
 console.log(matrix.rotate(10, 20, 1).is2D); // output: false
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("CSSTransformValue.is2D")}}
 - {{domxref("CSSTransformComponent.is2D")}}
-- CSS {{cssxref("transform-function")}} functions
-- CSS {{cssxref("transform")}} property
-- [CSS transforms](/en-US/docs/Web/CSS/Guides/Transforms) module
-- SVG [`transform`](/en-US/docs/Web/SVG/Reference/Attribute/transform) attribute
-- {{domxref("CanvasRenderingContext2D")}} interface
+- توابع CSS {{cssxref("transform-function")}}
+- ویژگی CSS {{cssxref("transform")}}
+- ماژول [تبدیل‌های CSS](/en-US/docs/Web/CSS/Guides/Transforms)
+- ویژگی SVG [`transform`](/en-US/docs/Web/SVG/Reference/Attribute/transform)
+- رابط {{domxref("CanvasRenderingContext2D")}}
