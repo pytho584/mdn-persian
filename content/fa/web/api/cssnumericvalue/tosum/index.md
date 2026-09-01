@@ -1,7 +1,5 @@
 ---
 title: "CSSNumericValue: toSum() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/CSSNumericValue/toSum"
-status: "needs-translation"
 ---
 
 ---
@@ -14,10 +12,9 @@ browser-compat: api.CSSNumericValue.toSum
 
 {{APIRef("CSS Typed Object Model API")}} {{AvailableInWorkers}}
 
-The **`toSum()`** method of the {{domxref("CSSNumericValue")}} interface converts the object's value to a {{domxref("CSSMathSum")}} of {{domxref("CSSUnitValue")}}s using only the specified units, if possible.
-If called with no units, it simplifies the value into a minimal sum of `CSSUnitValue`s instead.
+متد **`toSum()`** از رابط {{domxref("CSSNumericValue")}} مقدار شیء را به یک {{domxref("CSSMathSum")}} متشکل از {{domxref("CSSUnitValue")}}ها تبدیل می‌کند که در صورت امکان فقط از واحدهای مشخص‌شده استفاده می‌کند. اگر بدون واحد فراخوانی شود، به‌جای آن مقدار را به یک مجموعِ حداقلی از `CSSUnitValue`ها ساده‌سازی می‌کند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 toSum()
@@ -26,27 +23,27 @@ toSum(unit1, unit2)
 toSum(unit1, unit2, /* …, */ unitN)
 ```
 
-### Parameters
+### پارامترها
 
 - `unit1`, …, `unitN` {{optional_inline}}
-  - : The units to convert to.
+  - : واحدهایی که مقدار باید به آن‌ها تبدیل شود.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref('CSSMathSum')}}.
+یک {{domxref('CSSMathSum')}}.
 
-### Exceptions
+### استثناها
 
 - `SyntaxError` {{domxref("DOMException")}}
-  - : Thrown if any of `unit1`, …, `unitN` is not a valid unit identifier.
+  - : در صورتی پرتاب می‌شود که هر یک از `unit1`, …, `unitN` یک شناسهٔ واحد معتبر نباشد.
 - {{jsxref("TypeError")}}
-  - : Thrown if:
-    - The value can't be expressed as a sum of `CSSUnitValue`s — for example, because one of its terms has a compound unit (such as `px * s`) that can't be represented by a single `CSSUnitValue`.
-    - One or more units were passed to the method, and the value includes a term whose unit isn't compatible with any of them.
+  - : در شرایط زیر پرتاب می‌شود:
+    - مقدار نتواند به صورت مجموع `CSSUnitValue`ها بیان شود — برای مثال، چون یکی از جمله‌های آن واحد ترکیبی (مانند `px * s`) دارد که نمی‌توان آن را با یک `CSSUnitValue` تنها نشان داد.
+    - یک یا چند واحد به متد ارسال شده باشد و مقدار شامل جمله‌ای باشد که واحد آن با هیچ‌کدام از آن‌ها سازگار نیست.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفادهٔ پایه
 
 ```js
 let v = CSS.px("23").add(CSS.percent("4")).add(CSS.cm("3")).add(CSS.in("9"));
@@ -54,10 +51,10 @@ v.toString(); // => "calc(23px + 4% + 3cm + 9in)"
 v.toSum("px", "percent").toString(); // => "calc(1000.39px + 4%)"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
