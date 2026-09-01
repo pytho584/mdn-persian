@@ -1,7 +1,5 @@
 ---
 title: "Element: transitioncancel event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Element/transitioncancel_event"
-status: "needs-translation"
 ---
 
 ---
@@ -14,11 +12,11 @@ browser-compat: api.Element.transitioncancel_event
 
 {{APIRef}}
 
-The **`transitioncancel`** event is fired when a [CSS transition](/en-US/docs/Web/CSS/Guides/Transitions/Using) is canceled.
+رویداد **`transitioncancel`** زمانی رخ می‌دهد که یک [CSS transition](/en-US/docs/Web/CSS/Guides/Transitions/Using) لغو شود.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی مدیریت‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("transitioncancel", (event) => { })
@@ -26,15 +24,15 @@ addEventListener("transitioncancel", (event) => { })
 ontransitioncancel = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("TransitionEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("TransitionEvent")}}. از {{domxref("Event")}} به ارث می‌برد.
 
 {{InheritanceDiagram("TransitionEvent")}}
 
-## Examples
+## مثال‌ها
 
-This code gets an element that has a transition defined and adds a listener to the `transitioncancel` event:
+این کد یک عنصر را که ترنزیشن برای آن تعریف شده است دریافت می‌کند و یک شنونده به رویداد `transitioncancel` اضافه می‌کند:
 
 ```js
 const transition = document.querySelector(".transition");
@@ -44,7 +42,7 @@ transition.addEventListener("transitioncancel", () => {
 });
 ```
 
-The same, but using the `ontransitioncancel` property instead of `addEventListener()`:
+همین کار، اما با استفاده از ویژگی `ontransitioncancel` به جای `addEventListener()`:
 
 ```js
 const transition = document.querySelector(".transition");
@@ -54,9 +52,9 @@ transition.ontransitioncancel = () => {
 };
 ```
 
-### Live example
+### مثال زنده
 
-In the following example, we have a simple {{htmlelement("div")}} element, styled with a transition that includes a delay:
+در مثال زیر، یک عنصر ساده {{htmlelement("div")}} داریم که با یک ترنزیشن شامل تأخیر (delay) استایل داده شده است:
 
 ```html
 <div class="transition"></div>
@@ -79,7 +77,7 @@ In the following example, we have a simple {{htmlelement("div")}} element, style
 }
 ```
 
-To this, we'll add some JavaScript to indicate that the [`transitionstart`](/en-US/docs/Web/API/Element/transitionstart_event), [`transitionrun`](/en-US/docs/Web/API/Element/transitionrun_event), `transitioncancel`, and [`transitionend`](/en-US/docs/Web/API/Element/transitionend_event) events fire. In this example, to cancel the transition, stop hovering over the transitioning box before the transition ends. For the transition end event to fire, stay hovered over the transition until the transition ends.
+برای این کار، کمی جاوااسکریپت اضافه می‌کنیم تا مشخص شود که رویدادهای [`transitionstart`](/en-US/docs/Web/API/Element/transitionstart_event)، [`transitionrun`](/en-US/docs/Web/API/Element/transitionrun_event)، `transitioncancel` و [`transitionend`](/en-US/docs/Web/API/Element/transitionend_event) رخ می‌دهند. در این مثال، برای لغو ترنزیشن، قبل از پایان ترنزیشن، هاور کردن روی جعبه در حال انتقال را متوقف کنید. برای اینکه رویداد پایان ترنزیشن رخ دهد، تا پایان ترنزیشن روی آن هاور بمانید.
 
 ```js
 const message = document.querySelector(".message");
@@ -104,22 +102,22 @@ el.addEventListener("transitionend", () => {
 
 {{ EmbedLiveSample('Live_example', '100%', '150px') }}
 
-The `transitioncancel` event is fired if the transition is cancelled in either direction after the `transitionrun` event occurs and before the `transitionend` is fired.
+رویداد `transitioncancel` در صورتی رخ می‌دهد که ترنزیشن در هر جهتی، پس از رخ دادن رویداد `transitionrun` و قبل از رخ دادن `transitionend` لغو شود.
 
-If there is no transition delay or duration, if both are 0s or neither is declared, there is no transition, and none of the transition events are fired.
+اگر ترنزیشن هیچ تأخیر یا مدتی نداشته باشد، اگر هر دو 0s باشند یا هیچ‌کدام تعریف نشده باشند، ترنزیشنی وجود ندارد و هیچ‌یک از رویدادهای ترنزیشن رخ نمی‌دهند.
 
-If the `transitioncancel` event is fired, the `transitionend` event will not fire.
+اگر رویداد `transitioncancel` رخ دهد، رویداد `transitionend` رخ نخواهد داد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("TransitionEvent")}} interface
-- CSS properties: {{cssxref("transition")}}, {{cssxref("transition-delay")}}, {{cssxref("transition-duration")}}, {{cssxref("transition-property")}}, {{cssxref("transition-timing-function")}}
-- Related events: {{domxref("Element/transitionrun_event", "transitionrun")}}, {{domxref("Element/transitionstart_event", "transitionstart")}}, {{domxref("Element/transitionend_event", "transitionend")}}
+- رابط {{domxref("TransitionEvent")}}
+- ویژگی‌های CSS: {{cssxref("transition")}}, {{cssxref("transition-delay")}}, {{cssxref("transition-duration")}}, {{cssxref("transition-property")}}, {{cssxref("transition-timing-function")}}
+- رویدادهای مرتبط: {{domxref("Element/transitionrun_event", "transitionrun")}}, {{domxref("Element/transitionstart_event", "transitionstart")}}, {{domxref("Element/transitionend_event", "transitionend")}}
