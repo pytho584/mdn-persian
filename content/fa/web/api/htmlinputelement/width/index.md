@@ -1,11 +1,5 @@
 ---
 title: "HTMLInputElement: width property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/width"
-status: "needs-translation"
----
-
----
-title: "HTMLInputElement: width property"
 short-title: width
 slug: Web/API/HTMLInputElement/width
 page-type: web-api-instance-property
@@ -14,32 +8,32 @@ browser-compat: api.HTMLInputElement.width
 
 {{APIRef("HTML DOM")}}
 
-The **`width`** property of the {{DOMxRef("HTMLInputElement")}} interface specifies the width of a control. It reflects the {{htmlelement("input")}} element's [`width`](/en-US/docs/Web/HTML/Reference/Elements/input#width) attribute.
+ویژگی **`width`** در رابط {{DOMxRef("HTMLInputElement")}} عرض یک کنترل را مشخص می‌کند. این ویژگی، صفت [`width`](/en-US/docs/Web/HTML/Reference/Elements/input#width) عنصر {{htmlelement("input")}} را بازتاب می‌دهد.
 
-The `width` property is valid for the [`image`](/en-US/docs/Web/HTML/Reference/Elements/input/image) type only. It defines the preferred horizontal size of the image button, in pixels. The property value is the width of the [content-box](/en-US/docs/Web/CSS/Reference/Values/box-edge#content-box) of the rendered button. CSS box model properties impacting the size of the control take precedence.
+ویژگی `width` فقط برای نوع [`image`](/en-US/docs/Web/HTML/Reference/Elements/input/image) معتبر است. این ویژگی، اندازه افقی ترجیحی دکمه تصویری را بر حسب پیکسل تعریف می‌کند. مقدار ویژگی، عرض [جعبه محتوا](/en-US/docs/Web/CSS/Reference/Values/box-edge#content-box) دکمه رندر شده است. ویژگی‌های مدل جعبه CSS که بر اندازه کنترل تأثیر می‌گذارند، اولویت دارند.
 
-If no `width` is set and no CSS width properties impact the control, the `width` will be the intrinsic width of the image. If the image didn't load, the value will be the maximum intrinsic width of the `alt` text. The `width` will be `0` if the width is not known; if no `width` is set, no CSS dimensions apply, no image loaded, and either the value of the {{DOMxRef("HTMLInputElement.alt", "alt")}} is the empty string or no `src` is set.
+اگر هیچ `width` تنظیم نشده باشد و هیچ ویژگی عرض CSS بر کنترل تأثیر نگذارد، `width` برابر با عرض ذاتی تصویر خواهد بود. اگر تصویر بارگذاری نشده باشد، مقدار برابر با حداکثر عرض ذاتی متن `alt` خواهد بود. اگر عرض مشخص نباشد، `width` برابر با `0` خواهد بود؛ یعنی وقتی هیچ `width` تنظیم نشده، هیچ ابعاد CSS اعمال نشده، هیچ تصویری بارگذاری نشده، و مقدار {{DOMxRef("HTMLInputElement.alt", "alt")}} رشته خالی باشد یا هیچ `src` تنظیم نشده باشد.
 
-## Value
+## مقدار
 
-A number.
+یک عدد.
 
-## Examples
+## مثال‌ها
 
 ```js
 const inputElement = document.getElementById("imageButton");
 console.log(inputElement.width);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{DOMxRef("HTMLInputElement.height")}}
 - {{DOMxRef("HTMLInputElement.src")}}
@@ -48,7 +42,7 @@ console.log(inputElement.width);
 - {{HTMLElement("button")}}
 - {{HTMLElement("input")}}
 - {{HTMLElement("img")}}
-- CSS {{CSSXRef("inline-size")}} property
-- CSS {{CSSXRef("width")}} property
-- CSS {{CSSXRef("aspect-ratio")}} property
-- [CSS box sizing](/en-US/docs/Web/CSS/Guides/Box_sizing) module
+- ویژگی CSS {{CSSXRef("inline-size")}}
+- ویژگی CSS {{CSSXRef("width")}}
+- ویژگی CSS {{CSSXRef("aspect-ratio")}}
+- ماژول [اندازه‌گیری جعبه CSS](/en-US/docs/Web/CSS/Guides/Box_sizing)
