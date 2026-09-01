@@ -1,11 +1,5 @@
 ---
 title: "ElementInternals: ariaModal property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/ariaModal"
-status: "needs-translation"
----
-
----
-title: "ElementInternals: ariaModal property"
 short-title: ariaModal
 slug: Web/API/ElementInternals/ariaModal
 page-type: web-api-instance-property
@@ -14,23 +8,23 @@ browser-compat: api.ElementInternals.ariaModal
 
 {{APIRef("Web Components")}}
 
-The **`ariaModal`** property of the {{domxref("ElementInternals")}} interface reflects the value of the [`aria-modal`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-modal) attribute, which indicates whether an element is modal when displayed.
+ویژگی **`ariaModal`** از رابط {{domxref("ElementInternals")}}، مقدار ویژگی [`aria-modal`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-modal) را منعکس می‌کند؛ ویژگی‌ای که مشخص می‌کند آیا یک عنصر هنگام نمایش، وجهی (modal) است یا خیر.
 
 > [!NOTE]
-> Setting aria attributes on `ElementInternals` allows default semantics to be defined on a custom element. These may be overwritten by author-defined attributes, but ensure that default semantics are retained should the author delete those attributes, or fail to add them at all. For more information see the [Accessibility Object Model explainer](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object).
+> تنظیم ویژگی‌های aria روی `ElementInternals` امکان تعریف معناشناسی پیش‌فرض را روی یک عنصر سفارشی فراهم می‌کند. ممکن است این مقادیر توسط ویژگی‌های تعریف‌شده توسط نویسنده بازنویسی شوند، اما اگر نویسنده آن ویژگی‌ها را حذف کند یا اصلاً اضافه نکند، معناشناسی پیش‌فرض حفظ می‌شود. برای اطلاعات بیشتر به [توضیح‌دهنده (explainer) مدل شیء دسترس‌پذیری](https://wicg.github.io/aom/explainer.html#default-semantics-for-custom-elements-via-the-elementinternals-object) مراجعه کنید.
 
-## Value
+## مقدار
 
-A string with one of the following values:
+یک رشته (string) با یکی از مقادیر زیر:
 
 - `"true"`
-  - : The element is modal.
+  - : عنصر وجهی (modal) است.
 - `"false"`
-  - : The element is not modal.
+  - : عنصر وجهی (modal) نیست.
 
-## Examples
+## مثال‌ها
 
-In this example the value of `ariaModal` is set to "true".
+در این مثال، مقدار `ariaModal` برابر `"true"` تنظیم شده است.
 
 ```js
 class CustomEl extends HTMLElement {
@@ -43,14 +37,14 @@ class CustomEl extends HTMLElement {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [ARIA: dialog role](/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/dialog_role)
