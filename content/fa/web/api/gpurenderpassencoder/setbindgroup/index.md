@@ -1,11 +1,5 @@
 ---
 title: "GPURenderPassEncoder: setBindGroup() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/GPURenderPassEncoder/setBindGroup"
-status: "needs-translation"
----
-
----
-title: "GPURenderPassEncoder: setBindGroup() method"
 short-title: setBindGroup()
 slug: Web/API/GPURenderPassEncoder/setBindGroup
 page-type: web-api-instance-method
@@ -14,8 +8,7 @@ browser-compat: api.GPURenderPassEncoder.setBindGroup
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`setBindGroup()`** method of the
-{{domxref("GPURenderPassEncoder")}} interface sets the {{domxref("GPUBindGroup")}} to use for subsequent render commands, for a given index.
+متد **`setBindGroup()`** در رابط {{domxref("GPURenderPassEncoder")}}، {{domxref("GPUBindGroup")}} مورد استفاده برای دستورهای رندر بعدی را در یک شاخص مشخص تنظیم می‌کند.
 
 ## Syntax
 
@@ -29,47 +22,47 @@ setBindGroup(index, bindGroup, dynamicOffsets, dynamicOffsetsStart,
 ### Parameters
 
 - `index`
-  - : The index to set the bind group at. This matches the `n` index value of the corresponding [`@group(n)`](https://gpuweb.github.io/gpuweb/wgsl/#attribute-group) attribute in the shader code ({{domxref("GPUShaderModule")}}) used in the related pipeline.
+  - : شاخصی که bind group در آن تنظیم می‌شود. این مقدار با شاخص `n` در ویژگی [`@group(n)`](https://gpuweb.github.io/gpuweb/wgsl/#attribute-group) در کد شیدر ({{domxref("GPUShaderModule")}}) که در پایپ‌لاین مربوطه استفاده شده است، مطابقت دارد.
 - `bindGroup`
-  - : The {{domxref("GPUBindGroup")}} to use for subsequent render commands, or `null`, in which case any previously-set bind group in the given slot is unset.
+  - : {{domxref("GPUBindGroup")}} مورد استفاده برای دستورهای رندر بعدی، یا `null` که در این صورت هر bind group که قبلاً در این اسلات تنظیم شده بود، لغو می‌شود.
 - `dynamicOffsets` {{optional_inline}}
-  - : A value specifying the offset, in bytes, for each entry in `bindGroup` with `hasDynamicOffset: true` set (i.e., in the descriptor of the {{domxref("GPUDevice.createBindGroupLayout()")}} call that created the {{domxref("GPUBindGroupLayout")}} object that the `bindGroup` is based on). This value can be:
-    - An array of numbers specifying the different offsets.
-    - A {{jsxref("Uint32Array")}} containing numbers specifying the offsets.
+  - : مقداری که افست (به بایت) را برای هر ورودی در `bindGroup` که دارای `hasDynamicOffset: true` است (یعنی در توصیفگر فراخوانی {{domxref("GPUDevice.createBindGroupLayout()")}} که شیء {{domxref("GPUBindGroupLayout")}} را ساخته و `bindGroup` بر اساس آن است) مشخص می‌کند. این مقدار می‌تواند:
+    - یک آرایه از اعداد که افست‌های مختلف را مشخص می‌کند.
+    - یک {{jsxref("Uint32Array")}} شامل اعدادی که افست‌ها را مشخص می‌کنند.
 
-If a {{jsxref("Uint32Array")}} value is specified for `dynamicOffsets`, both of the following parameters are also required:
+اگر یک مقدار {{jsxref("Uint32Array")}} برای `dynamicOffsets` مشخص شود، هر دو پارامتر زیر نیز الزامی هستند:
 
 - `dynamicOffsetsStart`
-  - : A number specifying the offset, in array elements, into `dynamicOffsetsData`, where the dynamic offset data begins.
+  - : عددی که افست (بر حسب تعداد عناصر آرایه) را در `dynamicOffsetsData` مشخص می‌کند، جایی که داده‌های افست داینامیک شروع می‌شود.
 - `dynamicOffsetsLength`
-  - : A number specifying the number of dynamic offset values to be read from in `dynamicOffsetsData`.
+  - : عددی که تعداد مقادیر افست داینامیک را که باید از `dynamicOffsetsData` خوانده شود، مشخص می‌کند.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
 ### Exceptions
 
-For `setBindGroup()` calls that use a {{jsxref("Uint32Array")}} value for `dynamicOffsets`, the call will throw with a `RangeError` {{domxref("DOMException")}} if:
+برای فراخوانی‌های `setBindGroup()` که از مقدار {{jsxref("Uint32Array")}} برای `dynamicOffsets` استفاده می‌کنند، فراخوانی با یک `RangeError` {{domxref("DOMException")}} پرتاب می‌شود اگر:
 
-- `dynamicOffsetsStart` is less than 0.
-- `dynamicOffsetsStart` + `dynamicOffsetsLength` is greater than `dynamicOffsets.length`.
+- `dynamicOffsetsStart` کمتر از 0 باشد.
+- `dynamicOffsetsStart` + `dynamicOffsetsLength` بزرگ‌تر از `dynamicOffsets.length` باشد.
 
 ### Validation
 
-The following criteria must be met when calling **`setBindGroup()`**, otherwise a {{domxref("GPUValidationError")}} is generated and the {{domxref("GPURenderPassEncoder")}} becomes invalid:
+هنگام فراخوانی **`setBindGroup()`** معیارهای زیر باید برآورده شوند، در غیر این صورت یک {{domxref("GPUValidationError")}} تولید شده و {{domxref("GPURenderPassEncoder")}} نامعتبر می‌شود:
 
-- `index` is less than or equal to the {{domxref("GPUDevice")}}'s `maxBindGroups` {{domxref("GPUSupportedLimits", "limit", "", "nocode")}}.
-- `dynamicOffsets.length` is the same as the number of entries in `bindGroup` with `hasDynamicOffset: true` set.
-- For `bindGroup` entries where the bound `buffer`'s `type` is `"uniform"` (see {{domxref("GPUDevice.createBindGroupLayout()")}}), each number in `dynamicOffsets` is a multiple of the {{domxref("GPUDevice")}}'s `minUniformBufferOffsetAlignment` {{domxref("GPUSupportedLimits", "limit", "", "nocode")}}.
-- For `bindGroup` entries where the bound `buffer`'s `type` is `"storage"` or `"read-only-storage"` (see {{domxref("GPUDevice.createBindGroupLayout()")}}), each number in `dynamicOffsets` is a multiple of the {{domxref("GPUDevice")}}'s `minStorageBufferOffsetAlignment` {{domxref("GPUSupportedLimits", "limit", "", "nocode")}}.
-- For each `bindGroup` entry, the bound `buffer`'s `offset`, plus the corresponding layout entry's `minBindingSize`, plus the corresponding dynamic offset specified in `dynamicOffsets`, is less than or equal to the bound `buffer`'s `size`.
+- `index` کمتر یا مساوی با `maxBindGroups` در {{domxref("GPUDevice")}} (محدودیت {{domxref("GPUSupportedLimits", "limit", "", "nocode")}}) باشد.
+- `dynamicOffsets.length` با تعداد ورودی‌های `bindGroup` که دارای `hasDynamicOffset: true` هستند یکسان باشد.
+- برای ورودی‌های `bindGroup` که نوع `buffer` مقیدشده `"uniform"` است (به {{domxref("GPUDevice.createBindGroupLayout()")}} مراجعه کنید)، هر عدد در `dynamicOffsets` مضربی از `minUniformBufferOffsetAlignment` در {{domxref("GPUDevice")}} (محدودیت {{domxref("GPUSupportedLimits", "limit", "", "nocode")}}) باشد.
+- برای ورودی‌های `bindGroup` که نوع `buffer` مقیدشده `"storage"` یا `"read-only-storage"` است (به {{domxref("GPUDevice.createBindGroupLayout()")}} مراجعه کنید)، هر عدد در `dynamicOffsets` مضربی از `minStorageBufferOffsetAlignment` در {{domxref("GPUDevice")}} (محدودیت {{domxref("GPUSupportedLimits", "limit", "", "nocode")}}) باشد.
+- برای هر ورودی `bindGroup`، مجموع `offset` بافر مقیدشده، به‌علاوه `minBindingSize` ورودی layout مربوطه، به‌علاوه افست داینامیک متناظر که در `dynamicOffsets` مشخص شده، کمتر یا مساوی `size` بافر مقیدشده باشد.
 
 ## Examples
 
 ### Set bind group
 
-In the WebGPU Samples [Textured Cube example](https://webgpu.github.io/webgpu-samples/samples/texturedCube/), `setBindGroup()` is used to bind the `uniformBindGroup` to index position 0. Check out the example for the full context.
+در مثال [Textured Cube](https://webgpu.github.io/webgpu-samples/samples/texturedCube/) از نمونه‌های WebGPU، از `setBindGroup()` برای اتصال `uniformBindGroup` به شاخص 0 استفاده شده است. برای مشاهده کامل مثال به آن مراجعه کنید.
 
 ```js
 // …
@@ -87,15 +80,15 @@ device.queue.submit([commandEncoder.finish()]);
 ```
 
 > [!NOTE]
-> Study the other [WebGPU Samples](https://webgpu.github.io/webgpu-samples/) for more examples of `setBindGroup()` usage.
+> برای مثال‌های بیشتر از کاربرد `setBindGroup()`، سایر [نمونه‌های WebGPU](https://webgpu.github.io/webgpu-samples/) را بررسی کنید.
 
 ### Unset bind group
 
 ```js
-// Set bind group in slot 0
+// تنظیم bind group در اسلات 0
 passEncoder.setBindGroup(0, uniformBindGroup);
 
-// Later, unset bind group in slot 0
+// بعداً، لغو تنظیم bind group در اسلات 0
 passEncoder.setBindGroup(0, null);
 ```
 
@@ -109,4 +102,4 @@ passEncoder.setBindGroup(0, null);
 
 ## See also
 
-- The [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
+- [WebGPU API](/en-US/docs/Web/API/WebGPU_API)
