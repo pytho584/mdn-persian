@@ -1,10 +1,4 @@
 ---
-title: "DeprecationReport"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/DeprecationReport"
-status: "needs-translation"
----
-
----
 title: DeprecationReport
 slug: Web/API/DeprecationReport
 page-type: web-api-interface
@@ -13,52 +7,40 @@ browser-compat: api.ReportingObserver.ReportingObserver.options_parameter.types_
 
 {{APIRef("Reporting API")}}
 
-The `DeprecationReport` dictionary of the [Reporting API](/en-US/docs/Web/API/Reporting_API) represents a deprecation report.
+دیکشنری `DeprecationReport` از [Reporting API](/en-US/docs/Web/API/Reporting_API) یک گزارش منسوخ‌شدگی (deprecation report) را نمایش می‌دهد.
 
-A deprecation report may be generated when a deprecated feature (for example a deprecated API method) is used on a document.
-Note that receiving useful deprecation reports relies on browser vendors adding these warnings for deprecated features.
+یک گزارش منسوخ‌شدگی ممکن است هنگامی که یک ویژگی منسوخ‌شده (مثلاً یک متد API منسوخ‌شده) در یک سند استفاده می‌شود، تولید شود. توجه داشته باشید که دریافت گزارش‌های منسوخ‌شدگی مفید به این بستگی دارد که فروشندگان مرورگر این هشدارها را برای ویژگی‌های منسوخ‌شده اضافه کنند.
 
-Reports of this type can be observed from within a page using a {{domxref("ReportingObserver")}}, and a serialized version can be sent to the default [reporting server endpoint](/en-US/docs/Web/API/Reporting_API#reporting_server_endpoints).
+گزارش‌های این نوع را می‌توان با استفاده از یک {{domxref("ReportingObserver")}} درون یک صفحه مشاهده کرد، و یک نسخه سریال‌شده (serialized) را می‌توان به [نقطه پایانی سرور گزارش‌دهی پیش‌فرض](/en-US/docs/Web/API/Reporting_API#reporting_server_endpoints) ارسال کرد.
 
-## Instance properties
+## ویژگی‌های نمونه (Instance properties)
 
 - `body`
-  - : The body of the report.
-    This is an object with the following properties:
+  - : بدنه گزارش. این یک شیء با ویژگی‌های زیر است:
     - `id` {{experimental_inline}}
-      - : A string representing the feature or API that is deprecated, for example `NavigatorGetUserMedia`.
-        This can be used to group reports by deprecated feature.
+      - : یک رشته (string) که نشان‌دهنده ویژگی یا API منسوخ‌شده است، برای مثال `NavigatorGetUserMedia`. می‌توان از آن برای گروه‌بندی گزارش‌ها بر اساس ویژگی منسوخ‌شده استفاده کرد.
     - `anticipatedRemoval` {{Experimental_Inline}}
-      - : A {{jsxref("Date")}} object (rendered as a string) representing the date when the feature is expected to be removed from the current browser.
-        If the date is not known, this property will return `null`.
-        This value can be used to prioritize warnings.
-        If this property returns `null` because the date is unknown, then the deprecation should be considered low priority.
+      - : یک شیء {{jsxref("Date")}} (که به صورت رشته نمایش داده می‌شود) که تاریخ مورد انتظار حذف ویژگی از مرورگر فعلی را نشان می‌دهد. اگر تاریخ مشخص نباشد، این ویژگی `null` برمی‌گرداند. این مقدار می‌تواند برای اولویت‌بندی هشدارها استفاده شود. اگر این ویژگی به دلیل نامشخص بودن تاریخ `null` برگرداند، باید منسوخ‌شدگی را با اولویت پایین در نظر گرفت.
     - `message` {{experimental_inline}}
-      - : A string containing a human-readable description of the deprecation, including information such as what newer feature has superseded it, if any.
-        This typically matches the message a browser will display in its DevTools console when a deprecated feature is used, if one is available.
+      - : یک رشته حاوی توضیح قابل خواندن برای انسان از منسوخ‌شدگی، شامل اطلاعاتی مانند اینکه کدام ویژگی جدیدتر جایگزین آن شده است (در صورت وجود). این معمولاً با پیامی مطابقت دارد که مرورگر در کنسول DevTools خود هنگام استفاده از یک ویژگی منسوخ‌شده نمایش می‌دهد، در صورت وجود.
     - `sourceFile` {{experimental_inline}}
-      - : A string containing the path to the source file where the deprecated feature was used, if known, or `null` otherwise.
+      - : یک رشته حاوی مسیر فایل منبعی که ویژگی منسوخ‌شده در آن استفاده شده است، در صورت مشخص بودن، یا در غیر این صورت `null`.
     - `lineNumber` {{experimental_inline}}
-      - : A number representing the line in the source file in which the deprecated feature was used, if known, or `null` otherwise.
+      - : یک عدد که نشان‌دهنده خط در فایل منبعی است که ویژگی منسوخ‌شده در آن استفاده شده است، در صورت مشخص بودن، یا در غیر این صورت `null`.
     - `columnNumber` {{experimental_inline}}
-      - : A number representing the character position in the line of the source file in which the deprecated feature was first used, if known, or `null` otherwise.
-
+      - : یک عدد که نشان‌دهنده موقعیت کاراکتر در خط فایل منبعی است که ویژگی منسوخ‌شده برای اولین بار در آن استفاده شده است، در صورت مشخص بودن، یا در غیر این صورت `null`.
 - `type`
-  - : The string `"deprecation"` indicating that this is a deprecation report.
+  - : رشته `"deprecation"` که نشان می‌دهد این یک گزارش منسوخ‌شدگی است.
 - `url`
-  - : A string representing the URL of the document that generated the report.
+  - : رشته‌ای که URL سندی را که گزارش را تولید کرده است نشان می‌دهد.
 
-## Description
+## توضیحات
 
-A deprecation report may be generated when a deprecated feature (for example a deprecated API method) is used on a document.
+یک گزارش منسوخ‌شدگی ممکن است هنگامی که یک ویژگی منسوخ‌شده (مثلاً یک متد API منسوخ‌شده) در یک سند استفاده می‌شود، تولید شود.
 
-You can monitor for deprecation reports within the page in which they are triggered using the [Reporting API](/en-US/docs/Web/API/Reporting_API).
-To do this you create a {{domxref("ReportingObserver")}} object to listen for reports, passing a callback method, and optionally an `options` property specifying the types of reports that you want to report on.
-The callback method is then called with reports of the requested types, passing a report object.
-For deprecation reports, the object will be a `DeprecationReport` instance (which has the [`type`](#type) property set to `"deprecation"`).
+می‌توانید گزارش‌های منسوخ‌شدگی را در صفحه‌ای که در آن فعال می‌شوند با استفاده از [Reporting API](/en-US/docs/Web/API/Reporting_API) نظارت کنید. برای این کار یک شیء {{domxref("ReportingObserver")}} برای گوش دادن به گزارش‌ها ایجاد می‌کنید، یک متد بازخورد (callback) و به صورت اختیاری یک ویژگی `options` که انواع گزارش‌هایی را که می‌خواهید گزارش دهید مشخص می‌کند، ارسال می‌کنید. سپس متد بازخورد با گزارش‌های انواع درخواست‌شده فراخوانی می‌شود و یک شیء گزارش را ارسال می‌کند. برای گزارش‌های منسوخ‌شدگی، شیء یک نمونه `DeprecationReport` خواهد بود (که ویژگی [`type`](#type) آن روی `"deprecation"` تنظیم شده است).
 
-A typical deprecation report is shown below.
-Note that `url` represents the original page that was loaded, while `body.sourceFile`, `body.lineNumber` and `body.columnNumber` indicate the specific location of the API call that triggered the intervention (in this example they are the same file).
+یک گزارش منسوخ‌شدگی معمولی در زیر نشان داده شده است. توجه داشته باشید که `url` نمایانگر صفحه اصلی است که بارگذاری شده است، در حالی که `body.sourceFile`، `body.lineNumber` و `body.columnNumber` مکان خاص فراخوانی API را که باعث مداخله (intervention) شده است نشان می‌دهند (در این مثال آنها فایل یکسانی هستند).
 
 ```json
 {
@@ -75,10 +57,9 @@ Note that `url` represents the original page that was loaded, while `body.source
 }
 ```
 
-Deprecation reports are also sent as a JSON object in a {{httpmethod("POST")}} request to the [reporting server endpoint](/en-US/docs/Web/API/Reporting_API#reporting_server_endpoints) named `"default"`, if it is defined.
-The reporting server endpoint and its mapping to a particular URL are set using the {{httpheader("Reporting-Endpoints")}} header.
+گزارش‌های منسوخ‌شدگی همچنین به عنوان یک شیء JSON در یک درخواست {{httpmethod("POST")}} به [نقطه پایانی سرور گزارش‌دهی](/en-US/docs/Web/API/Reporting_API#reporting_server_endpoints) به نام `"default"` ارسال می‌شوند، در صورت تعریف شدن. نقطه پایانی سرور گزارش‌دهی و نگاشت آن به یک URL خاص با استفاده از هدر {{httpheader("Reporting-Endpoints")}} تنظیم می‌شود.
 
-The structure of the server report is almost exactly the same as `DeprecationReport`, except that it additionally includes `age` and `user_agent` fields.
+ساختار گزارش سرور تقریباً دقیقاً مشابه `DeprecationReport` است، با این تفاوت که به طور اضافی فیلدهای `age` و `user_agent` را شامل می‌شود.
 
 ```json
 {
@@ -97,11 +78,11 @@ The structure of the server report is almost exactly the same as `DeprecationRep
 }
 ```
 
-## Examples
+## مثال‌ها
 
-### Using the `ReportingObserver` interface
+### استفاده از رابط `ReportingObserver`
 
-This example shows how to observe `"deprecation"` reports within a page that triggers them.
+این مثال نشان می‌دهد که چگونه گزارش‌های `"deprecation"` را در صفحه‌ای که آنها را فعال می‌کند مشاهده کنید.
 
 ```html hidden
 <pre id="log"></pre>
@@ -127,7 +108,7 @@ function log(text) {
 
 #### JavaScript
 
-First we construct a new {{domxref("ReportingObserver")}} object to listen for reports with the type `"deprecation"`, passing a callback that will receive and log the reports.
+ابتدا یک شیء جدید {{domxref("ReportingObserver")}} می‌سازیم تا به گزارش‌هایی با نوع `"deprecation"` گوش دهد، و یک بازخورد (callback) ارسال می‌کنیم که گزارش‌ها را دریافت کرده و ثبت (log) می‌کند.
 
 ```js
 const options = {
@@ -141,12 +122,11 @@ const observer = new ReportingObserver((reports, observer) => {
   });
 }, options);
 
-// Start the observer
+// شروع observer
 observer.observe();
 ```
 
-We then call the following code which uses synchronous XHR (deprecated API).
-Note that this is defined after the observer it triggers once the observer is running.
+سپس کد زیر را فراخوانی می‌کنیم که از XHR همزمان (synchronous) (API منسوخ‌شده) استفاده می‌کند. توجه داشته باشید که این کد پس از تعریف observer تعریف شده است و پس از اجرای observer فعال می‌شود.
 
 ```js
 const xhr = new XMLHttpRequest();
@@ -154,20 +134,17 @@ xhr.open("GET", "/", false); // false = synchronous (deprecated)
 xhr.send();
 ```
 
-#### Results
+#### نتایج
 
-On browsers that support deprecation reports, a report should be displayed below.
-Note that the `type` is `"deprecation"`.
+در مرورگرهایی که از گزارش‌های منسوخ‌شدگی پشتیبانی می‌کنند، یک گزارش در زیر نمایش داده می‌شود. توجه داشته باشید که `type` برابر با `"deprecation"` است.
 
 {{EmbedLiveSample("Using the `ReportingObserver` interface", "100%", "280px")}}
 
-### Sending a report to a reporting endpoint
+### ارسال گزارش به یک نقطه پایانی گزارش‌دهی
 
-Configuring a web page to send a deprecation report requires that you set a [reporting server endpoint](/en-US/docs/Web/API/Reporting_API#reporting_server_endpoints) named "default" using the {{httpheader("Reporting-Endpoints")}} header.
-Below we set the `default` endpoint to `https://example.com/deprecation`:
+پیکربندی یک صفحه وب برای ارسال گزارش منسوخ‌شدگی نیاز دارد که یک [نقطه پایانی سرور گزارش‌دهی](/en-US/docs/Web/API/Reporting_API#reporting_server_endpoints) به نام "default" با استفاده از هدر {{httpheader("Reporting-Endpoints")}} تنظیم کنید. در زیر نقطه پایانی `default` را به `https://example.com/deprecation` تنظیم می‌کنیم:
 
-The report will then be sent as a JSON object in a {{httpmethod("POST")}} request to the endpoint whenever a deprecated API is used.
-It has the same structure as `DeprecationReport`, except for the addition of `age` and `user_agent` properties.
+سپس گزارش به عنوان یک شیء JSON در یک درخواست {{httpmethod("POST")}} به نقطه پایانی ارسال می‌شود هرگاه یک API منسوخ‌شده استفاده شود. این ساختار مشابه `DeprecationReport` دارد، به جز اضافه شدن ویژگی‌های `age` و `user_agent`.
 
 ```json
 [
@@ -188,15 +165,15 @@ It has the same structure as `DeprecationReport`, except for the addition of `ag
 ]
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("ReportingObserver")}}
 - {{HTTPHeader("Reporting-Endpoints")}}
