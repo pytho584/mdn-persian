@@ -1,11 +1,5 @@
 ---
 title: "EditContext: characterboundsupdate event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/EditContext/characterboundsupdate_event"
-status: "needs-translation"
----
-
----
-title: "EditContext: characterboundsupdate event"
 short-title: characterboundsupdate
 slug: Web/API/EditContext/characterboundsupdate_event
 page-type: web-api-event
@@ -16,17 +10,17 @@ browser-compat: api.EditContext.characterboundsupdate_event
 
 {{APIRef("EditContext API")}}{{SeeCompatTable}}
 
-The `characterboundsupdate` event fires when the operating system needs to know the bounds of certain characters within editable text region of the `EditContext` object.
+رویداد `characterboundsupdate` زمانی رخ می‌دهد که سیستم عامل نیاز به دانستن مرزهای (مختصات) برخی نویسه‌ها در ناحیهٔ متنی قابل ویرایشِ شیء `EditContext` داشته باشد.
 
-This happens when the operating system needs to display a platform-specific editing-related UI surface such as an {{glossary("Input Method Editor")}} (IME) window.
+این وضعیت وقتی پیش می‌آید که سیستم عامل بخواهد یک رابط کاربری مربوط به ویرایش را که مخصوص پلتفرم است، مانند پنجرهٔ {{glossary("Input Method Editor", "ویرایشگر ورودی (IME)")}}، نمایش دهد.
 
-When the `characterboundsupdate` event fires, you should calculate the character bounds for the text, and then call the {{domxref("EditContext.updateCharacterBounds()")}} method to give the operating system the information it needs.
+وقتی رویداد `characterboundsupdate` رخ می‌دهد، باید مرزهای نویسه‌ها را برای متن محاسبه کرده و سپس متد {{domxref("EditContext.updateCharacterBounds()")}} را فراخوانی کنید تا اطلاعات مورد نیاز سیستم عامل در اختیارش قرار گیرد.
 
-See the documentation of the {{domxref("EditContext.updateCharacterBounds()", "updateCharacterBounds")}} method for more information about when and how to use the `characterboundsupdate` event.
+برای اطلاعات بیشتر دربارهٔ زمان و نحوهٔ استفاده از رویداد `characterboundsupdate`، مستندات متد {{domxref("EditContext.updateCharacterBounds()", "updateCharacterBounds")}} را ببینید.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای استفاده، نام رویداد را در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} به کار ببرید، یا یک ویژگی کنترل‌کنندهٔ رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("characterboundsupdate", (event) => { })
@@ -34,15 +28,15 @@ addEventListener("characterboundsupdate", (event) => { })
 oncharacterboundsupdate = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("CharacterBoundsUpdateEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("CharacterBoundsUpdateEvent")}} که از {{domxref("Event")}} به ارث می‌رسد.
 
-## Examples
+## مثال‌ها
 
-### Updating the character bounds when needed
+### به‌روزرسانی مرزهای نویسه‌ها در صورت نیاز
 
-This example shows how to use the `updateCharacterBounds` method to update the character bounds in the `EditContext` of a `canvas` element when the operating system indicates that it requires the information. Note that the event listener callback is only called when using an IME window, or other platform-specific editing UI surfaces, to compose text.
+این مثال نشان می‌دهد چگونه از متد `updateCharacterBounds` برای به‌روزرسانی مرزهای نویسه‌ها در `EditContext` مربوط به یک عنصر `canvas` استفاده کنید، زمانی که سیستم عامل اعلام می‌کند به این اطلاعات نیاز دارد. توجه داشته باشید که فراخوانِ رویداد فقط هنگام استفاده از پنجرهٔ IME یا سایر رابط‌های ویرایش مخصوص پلتفرم برای ترکیب متن فراخوانی می‌شود.
 
 ```html
 <canvas id="editor-canvas"></canvas>
@@ -60,41 +54,15 @@ const editContext = new EditContext();
 canvas.editContext = editContext;
 
 function computeCharacterBound(offset) {
-  // Measure the width from the start of the text to the character.
+  // عرض از ابتدای متن تا نویسهٔ موردنظر را اندازه بگیر.
   const widthBeforeChar = ctx.measureText(
     editContext.text.substring(0, offset),
   ).width;
 
-  // Measure the character width.
+  // عرض نویسه را اندازه بگیر.
   const charWidth = ctx.measureText(editContext.text[offset]).width;
 
   const charX = canvas.offsetLeft + widthBeforeChar;
   const charY = canvas.offsetTop;
 
-  // Return a DOMRect representing the character bounds.
-  return DOMRect.fromRect({
-    x: charX,
-    y: charY - FONT_SIZE,
-    width: charWidth,
-    height: FONT_SIZE,
-  });
-}
-
-editContext.addEventListener("characterboundsupdate", (e) => {
-  const charBounds = [];
-  for (let offset = e.rangeStart; offset < e.rangeEnd; offset++) {
-    charBounds.push(computeCharacterBound(offset));
-  }
-
-  console.log("The required character bounds are", charBounds);
-  editContext.updateCharacterBounds(e.rangeStart, charBounds);
-});
-```
-
-## Specifications
-
-{{Specifications}}
-
-## Browser compatibility
-
-{{Compat}}
+  // یک DOMRect representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing representing
