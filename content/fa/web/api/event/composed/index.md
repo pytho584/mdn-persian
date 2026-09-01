@@ -1,11 +1,5 @@
 ---
 title: "Event: composed property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Event/composed"
-status: "needs-translation"
----
-
----
-title: "Event: composed property"
 short-title: composed
 slug: Web/API/Event/composed
 page-type: web-api-instance-property
@@ -14,39 +8,21 @@ browser-compat: api.Event.composed
 
 {{APIRef("Shadow DOM")}}{{AvailableInWorkers}}
 
-The read-only **`composed`** property of the
-{{domxref("Event")}} interface returns a boolean value which indicates whether
-or not the event will propagate across the shadow DOM boundary into the standard DOM.
+خاصیت فقط خواندنی **`composed`** از رابط {{domxref("Event")}} یک مقدار بولی بازمی‌گرداند که نشان می‌دهد آیا رویداد از مرز Shadow DOM به DOM استاندارد منتشر می‌شود یا خیر.
 
-All UA-dispatched UI events are composed (click/touch/mouseover/copy/paste, etc.). Most
-other types of events are not composed, and so will return `false`. For
-example, this includes synthetic events that are created without their
-`composed` option set to `true`.
+همه رویدادهای رابط کاربری (UI) که توسط عامل کاربر (UA) ارسال می‌شوند، composed هستند (مانند کلیک، لمس، موس‌رو، کپی، چسباندن و غیره). بیشتر انواع دیگر رویدادها composed نیستند و بنابراین `false` برمی‌گردانند. به عنوان مثال، این شامل رویدادهای مصنوعی (synthetic) می‌شود که بدون تنظیم گزینه `composed` آنها به `true` ایجاد شده‌اند.
 
-Propagation only occurs if the {{domxref("Event.bubbles", "bubbles")}} property is also
-`true`. However, capturing only composed events are also handled at host as
-if they were in `AT_TARGET` phase. You can determine the path the event will
-follow through the shadow root to the DOM root by calling
-{{domxref("Event.composedPath", "composedPath()")}}.
+انتشار (Propagation) فقط زمانی رخ می‌دهد که خاصیت {{domxref("Event.bubbles", "bubbles")}} نیز `true` باشد. با این حال، رویدادهای composed در فاز capturing نیز در میزبان (host) به گونه‌ای مدیریت می‌شوند که گویی در فاز `AT_TARGET` هستند. شما می‌توانید مسیری را که رویداد از طریق ریشه سایه (shadow root) به ریشه DOM دنبال می‌کند، با فراخوانی {{domxref("Event.composedPath", "composedPath()")}} تعیین کنید.
 
-## Value
+## مقدار
 
-A boolean value which is `true` if the event will cross from the
-shadow DOM into the standard DOM after reaching the shadow root. (That is, the first
-node in the shadow DOM in which the event began to propagate.)
+یک مقدار بولی که اگر رویداد پس از رسیدن به ریشه سایه (shadow root) از Shadow DOM به DOM استاندارد عبور کند، `true` است. (یعنی اولین گره در Shadow DOM که رویداد انتشار را از آنجا آغاز کرد.) اگر این مقدار `false` باشد، ریشه سایه آخرین گره‌ای خواهد بود که رویداد به آن ارائه می‌شود.
 
-If this value is `false`, the shadow root will be the last node to be
-offered the event.
+## مثال‌ها
 
-## Examples
+در این [مثال](https://mdn.github.io/web-components-examples/composed-composed-path/)، دو عنصر سفارشی ساده به نام‌های `<open-shadow>` و `<closed-shadow>` تعریف می‌کنیم. هر دو محتوای ویژگی text خود را گرفته و آن را به عنوان محتوای متنی یک عنصر `<p>` در Shadow DOM خود قرار می‌دهند. تنها تفاوت بین این دو این است که ریشه‌های سایه (shadow roots) آن‌ها به ترتیب با حالت‌های `open` و `closed` متصل شده‌اند.
 
-In this [example](https://mdn.github.io/web-components-examples/composed-composed-path/), we define two trivial custom elements, `<open-shadow>` and `<closed-shadow>`,
-both of which take the contents of their text attribute and insert them into the element's
-shadow DOM as the text content of a `<p>` element. The only difference
-between the two is that their shadow roots are attached with their modes set to
-`open` and `closed` respectively.
-
-The two definitions look like this:
+دو تعریف به این صورت هستند:
 
 ```js
 customElements.define(
@@ -86,14 +62,14 @@ customElements.define(
 );
 ```
 
-We then insert one of each element into our page:
+سپس یکی از هر عنصر را در صفحه خود قرار می‌دهیم:
 
 ```html
 <open-shadow text="I have an open shadow root"></open-shadow>
 <closed-shadow text="I have a closed shadow root"></closed-shadow>
 ```
 
-Then include a click event listener on the `<html>` element:
+سپس یک شنونده رویداد کلیک روی عنصر `<html>` قرار می‌دهیم:
 
 ```js
 document.querySelector("html").addEventListener("click", (e) => {
@@ -102,34 +78,29 @@ document.querySelector("html").addEventListener("click", (e) => {
 });
 ```
 
-When you click on the `<open-shadow>` element and then the
-`<closed-shadow>` element, you'll notice two things.
+وقتی روی عنصر `<open-shadow>` و سپس روی عنصر `<closed-shadow>` کلیک می‌کنید، دو چیز را متوجه خواهید شد.
 
-1. The `composed` property returns `true` because the
-   `click` event is always able to propagate across shadow boundaries.
-2. A difference in the value of `composedPath` for the two
-   elements.
+1. خاصیت `composed` مقدار `true` را برمی‌گرداند، زیرا رویداد `click` همیشه قادر به انتشار در سراسر مرزهای سایه است.
+2. تفاوت در مقدار `composedPath` برای دو عنصر.
 
-The `<open-shadow>` element's composed path is this:
+مسیر composed عنصر `<open-shadow>` به این صورت است:
 
 ```plain
 Array [ p, ShadowRoot, open-shadow, body, html, HTMLDocument https://mdn.github.io/web-components-examples/composed-composed-path/, Window ]
 ```
 
-Whereas the `<closed-shadow>` element's composed path is a follows:
+در حالی که مسیر composed عنصر `<closed-shadow>` به صورت زیر است:
 
 ```plain
 Array [ closed-shadow, body, html, HTMLDocument https://mdn.github.io/web-components-examples/composed-composed-path/, Window ]
 ```
 
-In the second case, the event listeners only propagate as far as the
-`<closed-shadow>` element itself, but not to the nodes inside the
-shadow boundary.
+در حالت دوم، شنونده‌های رویداد فقط تا خود عنصر `<closed-shadow>` انتشار می‌یابند، اما به گره‌های داخل مرز سایه نمی‌رسند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
