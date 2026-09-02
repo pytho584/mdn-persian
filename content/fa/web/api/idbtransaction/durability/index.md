@@ -1,7 +1,5 @@
 ---
 title: "IDBTransaction: durability property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction/durability"
-status: "needs-translation"
 ---
 
 ---
@@ -14,31 +12,29 @@ browser-compat: api.IDBTransaction.durability
 
 {{securecontext_header}}{{APIRef("IndexedDB")}}
 
-The **`durability`** read-only property of the {{domxref("IDBTransaction")}} interface returns the durability hint the transaction was created with.
-This is a hint to the user agent of whether to prioritize performance or durability when committing the transaction.
+خاصیتِ فقط‌خواندنیِ **`durability`** در رابط {{domxref("IDBTransaction")}}، راهنمای دوام (durability hint) را که تراکنش با آن ایجاد شده است برمی‌گرداند. این یک راهنما برای عامل کاربر (user agent) است که هنگام ثبت نهایی (commit) تراکنش، آیا عملکرد را در اولویت قرار دهد یا دوام را.
 
-The value of this property is defined in the [`options.durability`](/en-US/docs/Web/API/IDBDatabase/transaction#options) parameter when creating a transaction using {{domxref("IDBDatabase.transaction()")}}.
+مقدار این خاصیت در پارامتر [`options.durability`](/en-US/docs/Web/API/IDBDatabase/transaction#options) هنگام ایجاد یک تراکنش با استفاده از {{domxref("IDBDatabase.transaction()")}} تعریف می‌شود.
 
-## Value
+## مقدار
 
-Any of the following literal {{jsxref('String', 'strings')}}:
+هر یک از {{jsxref('String', 'strings')}} تحت‌اللفظی زیر:
 
 - `"strict"`
-  - : The user agent may consider that the transaction has successfully committed only after verifying that all outstanding changes have been successfully written to a persistent storage medium.
+  - : عامل کاربر فقط پس از تأیید اینکه همهٔ تغییراتِ در انتظار با موفقیت روی یک رسانهٔ ذخیره‌سازیِ پایدار نوشته شده‌اند، می‌تواند در نظر بگیرد که تراکنش با موفقیت ثبت نهایی شده است.
 - `"relaxed"`
-  - : The user agent may consider that the transaction has successfully committed as soon as all outstanding changes have been written to the operating system, without subsequent verification.
+  - : عامل کاربر می‌تواند به محض اینکه همهٔ تغییراتِ در انتظار به سیستم‌عامل نوشته شدند، بدون تأییدِ بیشتر، در نظر بگیرد که تراکنش با موفقیت ثبت نهایی شده است.
 - `"default"`
-  - : The user agent should use its default durability behavior for the storage bucket.
-    This is the default for transactions if not otherwise specified.
+  - : عامل کاربر باید رفتارِ پیش‌فرضِ دوام خود را برای سطل ذخیره‌سازی (storage bucket) به کار گیرد. اگر طور دیگری مشخص نشده باشد، این مقدار برای تراکنش‌ها پیش‌فرض است.
 
-## Examples
+## مثال‌ها
 
-For a full working example, see our [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) app ([view example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+برای یک مثال کامل و قابل اجرا، به برنامهٔ [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) مراجعه کنید ([مشاهدهٔ مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
