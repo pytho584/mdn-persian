@@ -1,11 +1,5 @@
 ---
 title: "MediaSource: sourceBuffers property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/sourceBuffers"
-status: "needs-translation"
----
-
----
-title: "MediaSource: sourceBuffers property"
 short-title: sourceBuffers
 slug: Web/API/MediaSource/sourceBuffers
 page-type: web-api-instance-property
@@ -14,18 +8,15 @@ browser-compat: api.MediaSource.sourceBuffers
 
 {{APIRef("Media Source Extensions")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`sourceBuffers`** read-only property of the
-{{domxref("MediaSource")}} interface returns a {{domxref("SourceBufferList")}} object
-containing the list of {{domxref("SourceBuffer")}} objects associated with this
-`MediaSource`.
+ویژگی فقط‌خواندنی **`sourceBuffers`** از رابط {{domxref("MediaSource")}} یک شیء {{domxref("SourceBufferList")}} برمی‌گرداند که شامل لیستی از اشیاء {{domxref("SourceBuffer")}} مرتبط با این `MediaSource` است.
 
-## Value
+## مقدار
 
-A {{domxref("SourceBufferList")}}.
+یک {{domxref("SourceBufferList")}}.
 
-## Examples
+## مثال‌ها
 
-The following snippet is based on an example written by Nick Desaulniers ([view the full demo live](https://nickdesaulniers.github.io/netfix/demo/bufferAll.html), or [download the source](https://github.com/nickdesaulniers/netfix/blob/gh-pages/demo/bufferAll.html) for further investigation). The function `getMediaSource()`, which is not defined here, returns a `MediaSource`.
+قطعه کد زیر بر اساس مثالی نوشته شده توسط Nick Desaulniers است ([نمایش نمایش زنده کامل](https://nickdesaulniers.github.io/netfix/demo/bufferAll.html) یا [دانلود سورس](https://github.com/nickdesaulniers/netfix/blob/gh-pages/demo/bufferAll.html) برای بررسی بیشتر). تابع `getMediaSource()` که در اینجا تعریف نشده است، یک `MediaSource` برمی‌گرداند.
 
 ```js
 const mediaSource = getMediaSource();
@@ -47,15 +38,15 @@ function sourceOpen() {
 // …
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("SourceBuffer")}}
 - {{domxref("SourceBufferList")}}
