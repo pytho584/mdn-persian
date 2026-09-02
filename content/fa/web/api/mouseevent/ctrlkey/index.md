@@ -1,7 +1,6 @@
 ---
 title: "MouseEvent: ctrlKey property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/ctrlKey"
-status: "needs-translation"
 ---
 
 ---
@@ -14,19 +13,19 @@ browser-compat: api.MouseEvent.ctrlKey
 
 {{APIRef("Pointer Events")}}
 
-The **`MouseEvent.ctrlKey`** read-only property is a boolean value that indicates whether the <kbd>ctrl</kbd> key was pressed or not when a given mouse event occurs.
+ویژگی فقط‌خواندنی **`MouseEvent.ctrlKey`** یک مقدار بولی است که نشان می‌دهد آیا کلید <kbd>ctrl</kbd> هنگام وقوع یک رویداد ماوس خاص فشرده شده بود یا نه.
 
-On Macintosh keyboards, this key is labeled the <kbd>control</kbd> key. Also, note that on a Mac, a click combined with the <kbd>control</kbd> key is intercepted by the operating system and used to open a context menu, so `ctrlKey` is not detectable on click events.
+در صفحه‌کلیدهای Macintosh، این کلید با نام <kbd>control</kbd> شناخته می‌شود. همچنین توجه داشته باشید که در مک، کلیک همراه با کلید <kbd>control</kbd> توسط سیستم عامل رهگیری شده و برای باز کردن منوی زمینه استفاده می‌شود، بنابراین `ctrlKey` در رویدادهای کلیک قابل تشخیص نیست.
 
-Pinch-zooming using a trackpad also sends a simulated {{domxref("Element/wheel_event", "wheel")}} event with `ctrlKey` set to true.
+بزرگ‌نمایی با حرکت پینچ روی ترک‌پد نیز یک رویداد {{domxref("Element/wheel_event", "wheel")}} شبیه‌سازی‌شده با `ctrlKey` برابر با `true` ارسال می‌کند.
 
-## Value
+## مقدار
 
-A boolean value, where `true` indicates that the key is pressed, and `false` indicates that the key is _not_ pressed.
+یک مقدار بولی، که `true` نشان می‌دهد کلید فشرده شده است و `false` نشان می‌دهد کلید _فشرده نشده_ است.
 
-## Examples
+## مثال‌ها
 
-This example logs the `ctrlKey` property when you trigger a {{domxref("Element/mousemove_event", "mousemove")}} event.
+این مثال، ویژگی `ctrlKey` را هنگام فعال‌شدن رویداد {{domxref("Element/mousemove_event", "mousemove")}} ثبت می‌کند.
 
 ### HTML
 
@@ -45,18 +44,18 @@ function logKey(e) {
 }
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{ domxref("MouseEvent") }}
