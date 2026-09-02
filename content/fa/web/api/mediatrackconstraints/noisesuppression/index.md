@@ -1,11 +1,5 @@
 ---
 title: "MediaTrackConstraints: noiseSuppression property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/noiseSuppression"
-status: "needs-translation"
----
-
----
-title: "MediaTrackConstraints: noiseSuppression property"
 short-title: noiseSuppression
 slug: Web/API/MediaTrackConstraints/noiseSuppression
 page-type: web-api-instance-property
@@ -14,41 +8,32 @@ browser-compat: api.MediaStreamTrack.applyConstraints.noiseSuppression_constrain
 
 {{APIRef("Media Capture and Streams")}}
 
-The {{domxref("MediaTrackConstraints")}} dictionary's **`noiseSuppression`** property is a [`ConstrainBoolean`](/en-US/docs/Web/API/MediaTrackConstraints#constrainboolean) describing the requested or mandatory constraints placed upon the value of the {{domxref("MediaTrackSettings.noiseSuppression","noiseSuppression")}} constrainable property.
+ویژگی **`noiseSuppression`** از دیکشنری {{domxref("MediaTrackConstraints")}} یک [`ConstrainBoolean`](/en-US/docs/Web/API/MediaTrackConstraints#constrainboolean) است که محدودیت‌های درخواستی یا اجباری اعمال‌شده بر مقدار ویژگی قابل‌محدودیت {{domxref("MediaTrackSettings.noiseSuppression","noiseSuppression")}} را توصیف می‌کند.
 
-If needed, you can determine whether or not this constraint is supported by checking
-the value of {{domxref("MediaTrackSupportedConstraints.noiseSuppression")}} as returned
-by a call to {{domxref("MediaDevices.getSupportedConstraints()")}}. However, typically
-this is unnecessary since browsers will ignore any constraints they're unfamiliar with.
+در صورت نیاز، می‌توانید با بررسی مقدار {{domxref("MediaTrackSupportedConstraints.noiseSuppression")}} که توسط فراخوانی {{domxref("MediaDevices.getSupportedConstraints()")}} بازگردانده می‌شود، تعیین کنید که آیا این محدودیت پشتیبانی می‌شود یا خیر. با این حال، معمولاً این کار ضروری نیست، زیرا مرورگرها هر محدودیتی را که با آن آشنا نباشند نادیده می‌گیرند.
 
-Noise suppression is typically provided by microphones, although it can be provided by
-other input sources as well.
+سرکوب نویز معمولاً توسط میکروفون‌ها ارائه می‌شود، اگرچه می‌تواند توسط سایر منابع ورودی نیز ارائه شود.
 
-## Value
+## مقدار
 
-If this value is a simple `true` or `false`, the user agent will
-attempt to obtain media with noise suppression enabled or disabled as specified, if
-possible, but will not fail if this can't be done. If, instead, the value is given as an
-object with an `exact` field, that field's Boolean value indicates a required
-setting for the noise suppression feature; if it can't be met, then the request will
-result in an error.
+اگر این مقدار یک `true` یا `false` ساده باشد، عامل کاربر (user agent) تلاش می‌کند تا در صورت امکان، رسانه‌ای با سرکوب نویز فعال یا غیرفعال (مطابق مشخص‌شده) به دست آورد، اما در صورت عدم امکان، شکست نخواهد خورد. اگر مقدار به‌جای آن به‌صورت یک شیء با فیلد `exact` داده شود، مقدار بولی آن فیلد یک تنظیم الزامی برای ویژگی سرکوب نویز را مشخص می‌کند. اگر این تنظیم قابل برآورده شدن نباشد، درخواست منجر به خطا خواهد شد.
 
-## Examples
+## مثال‌ها
 
-See the [Constraint exerciser](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#example_constraint_exerciser) example.
+به مثال [تمرین‌کننده محدودیت‌ها](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#example_constraint_exerciser) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
-- [Capabilities, constraints, and settings](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints)
+- [API ضبط و جریان‌های رسانه](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
+- [قابلیت‌ها، محدودیت‌ها و تنظیمات](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints)
 - {{domxref("MediaTrackConstraints")}}
 - {{domxref("MediaDevices.getSupportedConstraints()")}}
 - {{domxref("MediaTrackSupportedConstraints")}}
