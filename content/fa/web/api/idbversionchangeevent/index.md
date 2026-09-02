@@ -1,11 +1,5 @@
 ---
 title: "IDBVersionChangeEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBVersionChangeEvent"
-status: "needs-translation"
----
-
----
-title: IDBVersionChangeEvent
 slug: Web/API/IDBVersionChangeEvent
 page-type: web-api-interface
 browser-compat: api.IDBVersionChangeEvent
@@ -13,67 +7,67 @@ browser-compat: api.IDBVersionChangeEvent
 
 {{APIRef("IndexedDB")}} {{AvailableInWorkers}}
 
-The **`IDBVersionChangeEvent`** interface of the [IndexedDB API](/en-US/docs/Web/API/IndexedDB_API) indicates that the version of the database has changed, as the result of an {{domxref("IDBOpenDBRequest.upgradeneeded_event", "onupgradeneeded")}} event handler function.
+رابط **`IDBVersionChangeEvent`** در [API IndexedDB](/en-US/docs/Web/API/IndexedDB_API) نشان‌دهنده تغییر نسخه پایگاه داده است که در نتیجه اجرای تابع رویدادگردان {{domxref("IDBOpenDBRequest.upgradeneeded_event", "onupgradeneeded")}} رخ می‌دهد.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("IDBVersionChangeEvent.IDBVersionChangeEvent", "IDBVersionChangeEvent()")}}
-  - : Creates and returns a new `IDBVersionChangeEvent` object which is used to represent when a version of the database has changed.
+  - : یک شیء جدید `IDBVersionChangeEvent` ایجاد و برمی‌گرداند که برای نمایش تغییر نسخه پایگاه داده استفاده می‌شود.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Also inherits properties from its parent, {{domxref("Event")}} interface._
+_همچنین ویژگی‌هایی را از والد خود، یعنی رابط {{domxref("Event")}}، به ارث می‌برد._
 
 - {{ domxref("IDBVersionChangeEvent.oldVersion") }} {{ReadOnlyInline}}
-  - : Returns the old version of the database.
+  - : نسخه قدیمی پایگاه داده را برمی‌گرداند.
 - {{ domxref("IDBVersionChangeEvent.newVersion") }} {{ReadOnlyInline}}
-  - : Returns the new version of the database.
+  - : نسخه جدید پایگاه داده را برمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
-_No specific method, but inherits methods from its parent, {{domxref("Event")}} interface._
+_روش اختصاصی ندارد، اما روش‌های والد خود، یعنی رابط {{domxref("Event")}}، را به ارث می‌برد._
 
-## Example
+## مثال
 
-In the following code snippet, we make a request to open a database, and include handlers for the success and error cases. Upon a version change (after an `upgradeneeded` event), the `success` event will implement the `IDBVersionChangeEvent` interface. For a full working example, see our [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) app ([view example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+در قطعه کد زیر، یک درخواست برای باز کردن پایگاه داده ارسال می‌کنیم و برای موارد موفقیت و خطا، رویدادگردان‌هایی تعریف می‌کنیم. پس از تغییر نسخه (پس از رویداد `upgradeneeded`)، رویداد `success` رابط `IDBVersionChangeEvent` را پیاده‌سازی می‌کند. برای یک مثال کامل و عملی، برنامه [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) را مشاهده کنید ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
 
 ```js
 const note = document.querySelector("ul");
 
-// Let us open version 4 of our database
+// بیایید نسخه ۴ پایگاه داده خود را باز کنیم
 const DBOpenRequest = window.indexedDB.open("toDoList", 4);
 
-// these two event handlers act on the database being opened successfully, or not
+// این دو رویدادگردان به موفقیت‌آمیز بودن یا نبودن باز شدن پایگاه داده واکنش نشان می‌دهند
 DBOpenRequest.onerror = (event) => {
   note.appendChild(document.createElement("li")).textContent =
-    "Error loading database.";
+    "خطا در بارگذاری پایگاه داده.";
 };
 
 DBOpenRequest.onsuccess = (event) => {
   note.appendChild(document.createElement("li")).textContent =
-    "Database initialized.";
+    "پایگاه داده مقداردهی اولیه شد.";
 
-  // store the result of opening the database in the db variable. This is used a lot later on, for opening transactions and suchlike.
+  // نتیجه باز کردن پایگاه داده را در متغیر db ذخیره می‌کنیم. این متغیر بعداً برای باز کردن تراکنش‌ها و موارد مشابه بسیار استفاده می‌شود.
   const db = DBOpenRequest.result;
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم محدوده کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و ایجاد تغییرات در داده‌ها: {{domxref("IDBObjectStore")}}
+- استفاده از نشانگرها: {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
