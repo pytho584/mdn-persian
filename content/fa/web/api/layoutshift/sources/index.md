@@ -1,11 +1,5 @@
 ---
 title: "LayoutShift: sources property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/LayoutShift/sources"
-status: "needs-translation"
----
-
----
-title: "LayoutShift: sources property"
 short-title: sources
 slug: Web/API/LayoutShift/sources
 page-type: web-api-instance-property
@@ -16,15 +10,15 @@ browser-compat: api.LayoutShift.sources
 
 {{SeeCompatTable}}{{APIRef("Performance API")}}
 
-The **`sources`** read-only property of the {{domxref("LayoutShift")}} interface returns an array of {{domxref("LayoutShiftAttribution")}} objects that indicate the DOM elements that moved during the layout shift.
+خاصیت فقط خواندنی **`sources`** در رابط {{domxref("LayoutShift")}} یک آرایه از اشیاء {{domxref("LayoutShiftAttribution")}} برمی‌گرداند که عناصر DOM جابه‌جا شده در طول تغییر مکان طرح‌بندی را مشخص می‌کنند.
 
-## Value
+## مقدار
 
-An {{jsxref("Array")}} of {{domxref("LayoutShiftAttribution")}} objects. This array will not contain more than five sources. If there are more than five elements impacted by the layout shift, the five most impactful elements are reported.
+یک {{jsxref("Array")}} از اشیاء {{domxref("LayoutShiftAttribution")}}. این آرایه بیش از پنج منبع را شامل نخواهد شد. اگر بیش از پنج عنصر تحت تأثیر تغییر مکان طرح‌بندی قرار گرفته باشند، پنج عنصر با بیشترین تأثیر گزارش می‌شوند.
 
-## Examples
+## مثال‌ها
 
-### Logging layout shift sources
+### ثبت منابع تغییر مکان طرح‌بندی
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -38,14 +32,14 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "layout-shift", buffered: true });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("LayoutShiftAttribution")}}
