@@ -1,10 +1,4 @@
 ---
-title: "IDBTransaction"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction"
-status: "needs-translation"
----
-
----
 title: IDBTransaction
 slug: Web/API/IDBTransaction
 page-type: web-api-interface
@@ -13,11 +7,11 @@ browser-compat: api.IDBTransaction
 
 {{APIRef("IndexedDB")}} {{AvailableInWorkers}}
 
-The **`IDBTransaction`** interface of the [IndexedDB API](/en-US/docs/Web/API/IndexedDB_API) provides a static, asynchronous transaction on a database using event handler attributes. All reading and writing of data is done within transactions. You use {{domxref("IDBDatabase")}} to start transactions, `IDBTransaction` to set the mode of the transaction (e.g., is it `readonly` or `readwrite`), and you access an {{domxref("IDBObjectStore")}} to make a request. You can also use an `IDBTransaction` object to abort transactions.
+رابط **`IDBTransaction`** در [API IndexedDB](/en-US/docs/Web/API/IndexedDB_API) یک تراکنش ایستا و ناهمزمان روی پایگاه‌داده با استفاده از ویژگی‌های مدیریت‌کننده رویداد فراهم می‌کند. تمام خواندن و نوشتن داده‌ها درون تراکنش‌ها انجام می‌شود. از {{domxref("IDBDatabase")}} برای شروع تراکنش‌ها، از `IDBTransaction` برای تنظیم حالت تراکنش (مثلاً `readonly` یا `readwrite`) استفاده می‌کنید، و برای ارسال درخواست به یک {{domxref("IDBObjectStore")}} دسترسی پیدا می‌کنید. همچنین می‌توانید از یک شیء `IDBTransaction` برای لغو تراکنش‌ها استفاده کنید.
 
 {{InheritanceDiagram}}
 
-Transactions are started when the transaction is created, not when the first request is placed; for example consider this:
+تراکنش‌ها در زمان ایجاد شدن شروع می‌شوند، نه زمانی که اولین درخواست قرار داده می‌شود؛ برای مثال به این کد توجه کنید:
 
 ```js
 const trans1 = db.transaction("foo", "readwrite");
@@ -28,80 +22,80 @@ objectStore2.put("2", "key");
 objectStore1.put("1", "key");
 ```
 
-After the code is executed the object store should contain the value "2", since `trans2` should run after `trans1`.
+پس از اجرای کد، فروشگاه اشیاء باید حاوی مقدار "2" باشد، زیرا `trans2` باید پس از `trans1` اجرا شود.
 
-A transaction alternates between _active_ and _inactive_ states between event loop tasks. It's active in the task when it was created, and in each task of the requests' [`success`](/en-US/docs/Web/API/IDBRequest/success_event) or [`error`](/en-US/docs/Web/API/IDBRequest/error_event) event handlers. It's inactive in all other tasks, in which case placing requests will fail. If no new requests are placed when the transaction is active, and there are no other outstanding requests, the transaction will automatically commit.
+یک تراکنش بین حالت‌های _فعال_ و _غیرفعال_ در میان وظایف حلقه رویداد جابه‌جا می‌شود. در وظیفه‌ای که ایجاد شده و در هر وظیفه از مدیریت‌کننده‌های رویداد [`success`](/en-US/docs/Web/API/IDBRequest/success_event) یا [`error`](/en-US/docs/Web/API/IDBRequest/error_event) درخواست‌ها فعال است. در بقیه وظایف غیرفعال است، که در این صورت قرار دادن درخواست‌ها با شکست مواجه می‌شود. اگر در زمانی که تراکنش فعال است هیچ درخواست جدیدی قرار داده نشود و درخواست‌های معلق دیگری نیز وجود نداشته باشد، تراکنش به‌طور خودکار انجام می‌شود.
 
-## Transaction failures
+## شکست‌های تراکنش
 
-Transactions can fail for a fixed number of reasons, all of which (except the user agent crash) will trigger an abort callback:
+تراکنش‌ها می‌توانند به دلایل مشخصی شکست بخورند که همهٔ آنها (به جز خراب شدن مرورگر) باعث فراخوانی یک بازگشت لغو می‌شوند:
 
-- Abort due to bad requests, e.g., trying to `add()` the same key twice, or `put()` with the same index key with a uniqueness constraint. This causes an error on the request, which can bubble up to an error on the transaction, which aborts the transaction. This can be prevented by using `preventDefault()` on the error event on the request.
-- An explicit `abort()` call from script.
-- An uncaught exception in the request's `success`/`error` handler.
-- An I/O error (e.g., an actual failure to write to disk, or other OS/hardware failure).
-- Quota exceeded.
-- A user agent crash.
+- لغو به دلیل درخواست‌های نامعتبر، مانند تلاش برای `add()` کردن یک کلید تکراری، یا `put()` با کلید ایندکس تکراری و محدودیت یکتایی. این باعث خطا روی درخواست می‌شود که می‌تواند به خطا روی تراکنش منتقل شود و تراکنش را لغو کند. با استفاده از `preventDefault()` روی رویداد خطای درخواست می‌توان از این کار جلوگیری کرد.
+- فراخوانی صریح `abort()` از طرف اسکریپت.
+- یک استثنای مدیریت‌نشده در مدیریت‌کننده `success`/`error` درخواست.
+- یک خطای I/O (مثلاً شکست واقعی در نوشتن روی دیسک، یا سایر خرابی‌های سیستم‌عامل/سخت‌افزار).
+- تجاوز از سهمیه.
+- خراب شدن مرورگر.
 
-## Firefox durability guarantees
+## تضمین‌های ماندگاری در فایرفاکس
 
-Note that as of Firefox 40, IndexedDB transactions have relaxed durability guarantees to increase performance (see [Firefox bug 1112702](https://bugzil.la/1112702).) Previously in a `readwrite` transaction, a {{domxref("IDBTransaction.complete_event","complete")}} event was fired only when all data was guaranteed to have been flushed to disk. In Firefox 40+ the `complete` event is fired after the OS has been told to write the data but potentially before that data has actually been flushed to disk. The `complete` event may thus be delivered quicker than before, however, there exists a small chance that the entire transaction will be lost if the OS crashes or there is a loss of system power before the data is flushed to disk. Since such catastrophic events are rare, most consumers should not need to concern themselves further.
+توجه داشته باشید که از فایرفاکس ۴۰ به بعد، تراکنش‌های IndexedDB تضمین‌های ماندگاری سست‌تری برای افزایش کارایی دارند (به [بگ فایرفاکس 1112702](https://bugzil.la/1112702) مراجعه کنید). پیش‌تر در یک تراکنش `readwrite`، رویداد {{domxref("IDBTransaction.complete_event","complete")}} فقط زمانی فعال می‌شد که تضمین شود تمام داده‌ها روی دیسک نوشته شده‌اند. در فایرفاکس ۴۰+ رویداد `complete` پس از آنکه به سیستم‌عامل دستور نوشتن داده داده شد فعال می‌شود، اما احتمالاً قبل از اینکه آن داده واقعاً روی دیسک نوشته شود. بنابراین رویداد `complete` ممکن است سریع‌تر از قبل تحویل داده شود، اما احتمال کمی وجود دارد که کل تراکنش از بین برود اگر سیستم‌عامل خراب شود یا برق قبل از نوشتن داده روی دیسک قطع شود. از آنجایی که چنین رویدادهای فاجعه‌باری نادر هستند، بسیاری از مصرف‌کنندگان نیازی به نگرانی بیشتر ندارند.
 
-If you must ensure durability for some reason (e.g., you're storing critical data that cannot be recomputed later) you can force a transaction to flush to disk before delivering the `complete` event by creating a transaction using the experimental (non-standard) `readwriteflush` mode (see {{domxref("IDBDatabase.transaction")}}.
+اگر به هر دلیلی باید ماندگاری را تضمین کنید (مثلاً داده‌های بحرانی ذخیره می‌کنید که بعداً قابل محاسبه مجدد نیستند)، می‌توانید با ایجاد یک تراکنش با استفاده از حالت تجربی (غیراستاندارد) `readwriteflush`، تراکنش را مجبور به نوشتن روی دیسک قبل از تحویل رویداد `complete` کنید (به {{domxref("IDBDatabase.transaction")}} مراجعه کنید).
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("IDBTransaction.db")}} {{ReadOnlyInline}}
-  - : The database connection with which this transaction is associated.
+  - : اتصال پایگاه‌داده‌ای که این تراکنش با آن مرتبط است.
 - {{domxref("IDBTransaction.durability")}} {{ReadOnlyInline}}
-  - : Returns the durability hint the transaction was created with.
+  - : راهنمای ماندگاری که تراکنش با آن ایجاد شده را برمی‌گرداند.
 - {{domxref("IDBTransaction.error")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref("DOMException")}} indicating the type of error that occurred when there is an unsuccessful transaction. This property is `null` if the transaction is not finished, is finished and successfully committed, or was aborted with the {{domxref("IDBTransaction.abort()")}} function.
+  - : یک {{domxref("DOMException")}} را برمی‌گرداند که نوع خطای رخ‌داده را در صورت ناموفق بودن تراکنش نشان می‌دهد. این ویژگی اگر تراکنش تمام نشده باشد، تمام شده و با موفقیت انجام شده باشد، یا با تابع {{domxref("IDBTransaction.abort()")}} لغو شده باشد، `null` است.
 - {{domxref("IDBTransaction.mode")}} {{ReadOnlyInline}}
-  - : The mode for isolating access to data in the object stores that are in the scope of the transaction. The default value is `readonly`.
+  - : حالت دسترسی ایزوله به داده‌ها در فروشگاه‌های اشیاء در محدوده تراکنش. مقدار پیش‌فرض `readonly` است.
 - {{domxref("IDBTransaction.objectStoreNames")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref("DOMStringList")}} of the names of {{domxref("IDBObjectStore")}} objects associated with the transaction.
+  - : یک {{domxref("DOMStringList")}} از نام‌های اشیاء {{domxref("IDBObjectStore")}} مرتبط با تراکنش را برمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
-Inherits from: {{domxref("EventTarget")}}
+ارث‌بری از: {{domxref("EventTarget")}}
 
 - {{domxref("IDBTransaction.abort()")}}
-  - : Rolls back all the changes to objects in the database associated with this transaction. If this transaction has been aborted or completed, this method fires an error event.
+  - : تمام تغییرات روی اشیاء پایگاه‌داده مرتبط با این تراکنش را برمی‌گرداند. اگر این تراکنش لغو یا تکمیل شده باشد، این روش یک رویداد خطا فعال می‌کند.
 - {{domxref("IDBTransaction.objectStore()")}}
-  - : Returns an {{domxref("IDBObjectStore")}} object representing an object store that is part of the scope of this transaction.
+  - : یک شیء {{domxref("IDBObjectStore")}} را برمی‌گرداند که نمایانگر یک فروشگاه اشیاء در محدوده این تراکنش است.
 - {{domxref("IDBTransaction.commit()")}}
-  - : For an active transaction, commits the transaction. Note that this doesn't normally _have_ to be called — a transaction will automatically commit when all outstanding requests have been satisfied and no new requests have been made. `commit()` can be used to start the commit process without waiting for events from outstanding requests to be dispatched.
+  - : برای یک تراکنش فعال، تراکنش را انجام می‌دهد. توجه داشته باشید که معمولاً نیازی به فراخوانی این روش نیست - یک تراکنش به‌طور خودکار زمانی انجام می‌شود که تمام درخواست‌های معلق برآورده شده و هیچ درخواست جدیدی انجام نشده باشد. `commit()` می‌تواند برای شروع فرآیند انجام بدون انتظار برای ارسال رویدادهای درخواست‌های معلق استفاده شود.
 
-## Events
+## رویدادها
 
-Listen to these events using `addEventListener()` or by assigning an event listener to the `oneventname` property of this interface.
+به این رویدادها با استفاده از `addEventListener()` یا با اختصاص یک شنونده رویداد به ویژگی `oneventname` این رابط گوش دهید.
 
 - [`abort`](/en-US/docs/Web/API/IDBTransaction/abort_event)
-  - : An event fired when the `IndexedDB` transaction is aborted.
-    Also available via the `onabort` property; this event bubbles to {{domxref("IDBDatabase")}}.
+  - : رویدادی که وقتی تراکنش `IndexedDB` لغو می‌شود فعال می‌شود.
+    همچنین از طریق ویژگی `onabort` در دسترس است؛ این رویداد به {{domxref("IDBDatabase")}} منتقل می‌شود.
 - [`complete`](/en-US/docs/Web/API/IDBTransaction/complete_event)
-  - : An event fired when the transaction successfully completes.
-    Also available via the `oncomplete` property.
+  - : رویدادی که وقتی تراکنش با موفقیت به پایان می‌رسد فعال می‌شود.
+    همچنین از طریق ویژگی `oncomplete` در دسترس است.
 - [`error`](/en-US/docs/Web/API/IDBTransaction/error_event)
-  - : An event fired when a request returns an error and the event bubbles up to the connection object ({{domxref("IDBDatabase")}}).
-    Also available via the `onerror` property.
+  - : رویدادی که وقتی یک درخواست خطا برمی‌گرداند و رویداد به شیء اتصال ({{domxref("IDBDatabase")}}) منتقل می‌شود فعال می‌شود.
+    همچنین از طریق ویژگی `onerror` در دسترس است.
 
-## Mode constants
+## ثابت‌های حالت
 
 {{Deprecated_Header}}
 
 > [!WARNING]
-> These constants are no longer available — they were removed in Gecko 25. You should use the string constants directly instead. ([Firefox bug 888598](https://bugzil.la/888598))
+> این ثابت‌ها دیگر در دسترس نیستند - در Gecko 25 حذف شدند. باید مستقیماً از ثابت‌های رشته‌ای استفاده کنید. ([بگ فایرفاکس 888598](https://bugzil.la/888598))
 
-Transactions can have one of three modes:
+تراکنش‌ها می‌توانند یکی از سه حالت زیر را داشته باشند:
 
 <table class="standard-table">
   <thead>
     <tr>
-      <th scope="col">Constant</th>
-      <th scope="col">Value</th>
-      <th scope="col">Description</th>
+      <th scope="col">ثابت</th>
+      <th scope="col">مقدار</th>
+      <th scope="col">توضیحات</th>
     </tr>
   </thead>
   <tbody>
@@ -109,68 +103,64 @@ Transactions can have one of three modes:
       <td>
         <code><a>READ_ONLY</a></code>
       </td>
-      <td>"readonly" (0 in Chrome)</td>
-      <td><p>Allows data to be read but not changed.</p></td>
+      <td>"readonly" (0 در Chrome)</td>
+      <td><p>اجازه خواندن داده را می‌دهد اما تغییر آن را نه.</p></td>
     </tr>
     <tr>
       <td>
         <code><a>READ_WRITE</a></code>
       </td>
-      <td>"readwrite" (1 in Chrome)</td>
+      <td>"readwrite" (1 در Chrome)</td>
       <td>
-        Allows reading and writing of data in existing data stores to be
-        changed.
+        اجازه خواندن و نوشتن داده در فروشگاه‌های داده موجود برای تغییر را می‌دهد.
       </td>
     </tr>
     <tr>
       <td>
         <code><a>VERSION_CHANGE</a></code>
       </td>
-      <td>"versionchange" (2 in Chrome)</td>
+      <td>"versionchange" (2 در Chrome)</td>
       <td>
-        Allows any operation to be performed, including ones that delete and
-        create object stores and indexes. Transactions of this mode cannot run
-        concurrently with other transactions. Transactions in this mode are
-        known as "upgrade transactions."
+        اجازه انجام هر عملیاتی را می‌دهد، از جمله عملیاتی که فروشگاه‌های اشیاء و ایندکس‌ها را حذف و ایجاد می‌کنند. تراکنش‌های این حالت نمی‌توانند همزمان با سایر تراکنش‌ها اجرا شوند. تراکنش‌های این حالت به عنوان "تراکنش‌های ارتقا" شناخته می‌شوند.
       </td>
     </tr>
   </tbody>
 </table>
 
-Even if these constants are now deprecated, you can still use them to provide backward compatibility if required. You should code defensively in case the object is not available anymore:
+اگرچه این ثابت‌ها اکنون منسوخ شده‌اند، هنوز هم می‌توانید در صورت نیاز برای سازگاری با نسخه‌های قدیمی از آنها استفاده کنید. باید کد را به‌گونه‌ای بنویسید که در صورت عدم وجود شیء، به‌طور تدافعی عمل کند:
 
 ```js
 const myIDBTransaction = window.IDBTransaction ||
   window.webkitIDBTransaction || { READ_WRITE: "readwrite" };
 ```
 
-## Examples
+## مثال‌ها
 
-In the following code snippet, we open a read/write transaction on our database and add some data to an object store. Note also the functions attached to transaction event handlers to report on the outcome of the transaction opening in the event of success or failure. For a full working example, see our [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) app ([view example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+در قطعه کد زیر، یک تراکنش خواندن/نوشتن روی پایگاه‌داده خود باز می‌کنیم و داده‌هایی را به یک فروشگاه اشیاء اضافه می‌کنیم. همچنین به توابع متصل به مدیریت‌کننده‌های رویداد تراکنش توجه کنید که نتیجه باز شدن تراکنش را در صورت موفقیت یا شکست گزارش می‌دهند. برای یک مثال کامل کار، به برنامه [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ما مراجعه کنید ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
 
 ```js
 const note = document.getElementById("notifications");
 
-// an instance of a db object for us to store the IDB data in
+// یک نمونه از شیء db برای ذخیره داده‌های IDB
 let db;
 
-// Let us open our database
+// بیایید پایگاه‌داده را باز کنیم
 const DBOpenRequest = window.indexedDB.open("toDoList", 4);
 
 DBOpenRequest.onsuccess = (event) => {
   note.appendChild(document.createElement("li")).textContent =
-    "Database initialized.";
+    "پایگاه‌داده مقداردهی اولیه شد.";
 
-  // store the result of opening the database in the db
-  // variable. This is used a lot below
+  // نتیجه باز کردن پایگاه‌داده را در متغیر db ذخیره کنید
+  // این متغیر در ادامه بسیار استفاده می‌شود
   db = DBOpenRequest.result;
 
-  // Add the data to the database
+  // داده را به پایگاه‌داده اضافه کنید
   addData();
 };
 
 function addData() {
-  // Create a new object to insert into the IDB
+  // یک شیء جدید برای درج در IDB ایجاد کنید
   const newItem = [
     {
       taskTitle: "Walk dog",
@@ -183,48 +173,47 @@ function addData() {
     },
   ];
 
-  // open a read/write db transaction, ready to add data
+  // یک تراکنش خواندن/نوشتن db باز کنید، آماده برای اضافه کردن داده
   const transaction = db.transaction(["toDoList"], "readwrite");
 
-  // report on the success of opening the transaction
+  // موفقیت باز شدن تراکنش را گزارش دهید
   transaction.oncomplete = (event) => {
     note.appendChild(document.createElement("li")).textContent =
-      "Transaction completed: database modification finished.";
+      "تراکنش تکمیل شد: تغییر پایگاه‌داده به پایان رسید.";
   };
 
   transaction.onerror = (event) => {
     note.appendChild(document.createElement("li")).textContent =
-      "Transaction not opened due to error. Duplicate items not allowed.";
+      "تراکنش به دلیل خطا باز نشد. موارد تکراری مجاز نیستند.";
   };
 
-  // create an object store on the transaction
+  // یک فروشگاه اشیاء روی تراکنش ایجاد کنید
   const objectStore = transaction.objectStore("toDoList");
 
-  // add our newItem object to the object store
+  // شیء newItem را به فروشگاه اشیاء اضافه کنید
   const objectStoreRequest = objectStore.add(newItem[0]);
 
   objectStoreRequest.onsuccess = (event) => {
-    // report the success of the request (this does not mean the item
-    // has been stored successfully in the DB - for that you need transaction.oncomplete)
+    // موفقیت درخواست را گزارش دهید (این به معنای ذخیره موفقیت‌آمیز آیتم در DB نیست - برای آن به transaction.oncomplete نیاز دارید)
     note.appendChild(document.createElement("li")).textContent =
-      "Request successful.";
+      "درخواست موفقیت‌آمیز بود.";
   };
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- تنظیم بازه کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و ایجاد تغییرات در داده‌های خود: {{domxref("IDBObjectStore")}}
+- استفاده از نشانگرها: {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
