@@ -1,11 +1,5 @@
 ---
 title: "IDBTransaction: db property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction/db"
-status: "needs-translation"
----
-
----
-title: "IDBTransaction: db property"
 short-title: db
 slug: Web/API/IDBTransaction/db
 page-type: web-api-instance-property
@@ -14,20 +8,15 @@ browser-compat: api.IDBTransaction.db
 
 {{ APIRef("IndexedDB") }} {{AvailableInWorkers}}
 
-The **`db`** read-only property of the {{domxref("IDBTransaction")}} interface returns the database connection
-with which this transaction is associated.
+خاصیت خواندنی **`db`** از رابط {{domxref("IDBTransaction")}}، اتصال پایگاه‌داده‌ای که این تراکنش با آن مرتبط است را برمی‌گرداند.
 
-## Value
+## مقدار
 
-An {{domxref("IDBDatabase")}} object.
+یک شیء {{domxref("IDBDatabase")}}.
 
-## Examples
+## مثال‌ها
 
-In the following code snippet, we open a read/write transaction on our database and add
-some data to an object store. Note also the functions attached to transaction event
-handlers to report on the outcome of the transaction opening in the event of success or
-failure. At the end, we return the associated database connection using `db`.
-For a full working example, see our [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) app ([view example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+در قطعه کد زیر، یک تراکنش خواندن/نوشتن روی پایگاه‌داده خود باز می‌کنیم و داده‌هایی را به یک object store اضافه می‌کنیم. همچنین به توابع متصل به handlerهای رویداد تراکنش توجه کنید که نتیجه باز شدن تراکنش را در صورت موفقیت یا شکست گزارش می‌دهند. در پایان، اتصال پایگاه‌داده مرتبط را با استفاده از `db` برمی‌گردانیم. برای یک مثال کامل کاری، به برنامه [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) مراجعه کنید ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
 
 ```js
 const note = document.getElementById("notifications");
@@ -96,20 +85,20 @@ function addData() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم محدوده‌ای از کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و اعمال تغییرات در داده‌هایتان: {{domxref("IDBObjectStore")}}
+- استفاده از نشانگرها: {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
