@@ -1,11 +1,5 @@
 ---
 title: "Location: port property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Location/port"
-status: "needs-translation"
----
-
----
-title: "Location: port property"
 short-title: port
 slug: Web/API/Location/port
 page-type: web-api-instance-property
@@ -14,17 +8,17 @@ browser-compat: api.Location.port
 
 {{ApiRef("Location")}}
 
-The **`port`** property of the {{domxref("Location")}} interface is a string containing the port number of the location's URL. If the port is the default for the protocol (`80` for `ws:` and `http:`, `443` for `wss:` and `https:`, and `21` for `ftp:`), this property contains an empty string, `""`.
+ویژگی **`port`** از رابط {{domxref("Location")}} رشتهای است که شمارهٔ پورتِ URL را دربردارد. اگر پورت، مقدار پیشفرضِ پروتکل باشد (`80` برای `ws:` و `http:`، `443` برای `wss:` و `https:`، و `21` برای `ftp:`)، این ویژگی شامل یک رشتهٔ خالی (`""`) است.
 
-This property can be set to change the port of the URL. If the URL has no {{domxref("Location.host", "host")}} or its scheme is `file:`, then setting this property has no effect. It also silently ignores invalid port numbers.
+این ویژگی را میتوان برای تغییر پورتِ URL مقداردهی کرد. اگر URL هیچ {{domxref("Location.host", "host")}} نداشته باشد یا طرح (scheme) آن `file:` باشد، مقداردهی این ویژگی هیچ اثری ندارد. این ویژگی همچنین شماره‌های پورت نامعتبر را بی‌سروصدا نادیده می‌گیرد.
 
-See {{domxref("URL.port")}} for more information.
+برای اطلاعات بیشتر، به {{domxref("URL.port")}} مراجعه کنید.
 
-## Value
+## مقدار
 
-A string.
+یک رشته (string).
 
-## Examples
+## مثال‌ها
 
 ```js
 // Assume current page is at https://developer.mozilla.org/en-US/docs/Location/port
@@ -36,10 +30,10 @@ const result = location.port; // Returns:''
 const result = location.port; // Returns:'8888'
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
