@@ -1,11 +1,5 @@
 ---
 title: "MediaTrackSupportedConstraints: height property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSupportedConstraints/height"
-status: "needs-translation"
----
-
----
-title: "MediaTrackSupportedConstraints: height property"
 short-title: height
 slug: Web/API/MediaTrackSupportedConstraints/height
 page-type: web-api-instance-property
@@ -14,25 +8,15 @@ browser-compat: api.MediaStreamTrack.applyConstraints.height_constraint
 
 {{APIRef("Media Capture and Streams")}}
 
-The {{domxref("MediaTrackSupportedConstraints")}} dictionary's
-**`height`** property is a read-only Boolean value which is
-present (and set to `true`) in the object returned by
-{{domxref("MediaDevices.getSupportedConstraints()")}} if and only if the
-{{Glossary("user agent")}} supports the `height` constraint. If the
-constraint isn't supported, it's not included in the list, so this value will never be
-`false`.
+ویژگی **`height`** در فرهنگ لغت {{domxref("MediaTrackSupportedConstraints")}} یک مقدار بولین فقط‌خواندنی است که در شیء بازگردانده‌شده توسط {{domxref("MediaDevices.getSupportedConstraints()")}} وجود دارد (و برابر با `true` است) اگر و فقط اگر {{Glossary("user agent")}} از محدودیت `height` پشتیبانی کند. اگر این محدودیت پشتیبانی نشود، در فهرست گنجانده نمی‌شود، بنابراین این مقدار هرگز `false` نخواهد بود.
 
-You can access the supported constraints dictionary by calling
-`navigator.mediaDevices.getSupportedConstraints()`.
+می‌توانید با فراخوانی `navigator.mediaDevices.getSupportedConstraints()` به فرهنگ لغت محدودیت‌های پشتیبانی‌شده دسترسی پیدا کنید.
 
-## Value
+## مقدار
 
-This property is present in the dictionary (and its value is always `true`)
-if the user agent supports the `height` constraint. If the property isn't
-present, this property is missing from the supported constraints dictionary, and you'll
-get {{jsxref("undefined")}} if you try to look at its value.
+این ویژگی در فرهنگ لغت وجود دارد (و مقدار آن همیشه `true` است) اگر user agent از محدودیت `height` پشتیبانی کند. اگر این ویژگی وجود نداشته باشد، در فرهنگ لغت محدودیت‌های پشتیبانی‌شده غایب است و اگر بخواهید مقدار آن را بررسی کنید، {{jsxref("undefined")}} دریافت خواهید کرد.
 
-## Examples
+## نمونه‌ها
 
 ```html hidden
 <div id="result"></div>
@@ -52,21 +36,21 @@ const supported = navigator.mediaDevices.getSupportedConstraints().height;
 result.textContent = supported ? "Supported!" : "Not supported!";
 ```
 
-### Result
+### نتیجه
 
 {{ EmbedLiveSample('Examples', 600, 80) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
+- [API ضبط و جریان رسانه](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
 - {{domxref("MediaDevices.getSupportedConstraints()")}}
 - {{domxref("MediaTrackSupportedConstraints")}}
 - {{domxref("MediaStreamTrack")}}
