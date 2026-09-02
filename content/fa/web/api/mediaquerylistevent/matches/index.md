@@ -1,11 +1,5 @@
 ---
 title: "MediaQueryListEvent: matches property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryListEvent/matches"
-status: "needs-translation"
----
-
----
-title: "MediaQueryListEvent: matches property"
 short-title: matches
 slug: Web/API/MediaQueryListEvent/matches
 page-type: web-api-instance-property
@@ -14,47 +8,43 @@ browser-compat: api.MediaQueryListEvent.matches
 
 {{APIRef("CSSOM view API")}}
 
-The **`matches`** read-only property of the
-{{DOMxRef("MediaQueryListEvent")}} interface is a boolean value that is
-`true` if the {{DOMxRef("document")}} currently matches the media query list,
-or `false` if not.
+خاصیت فقط‑خواندنی **`matches`** از رابط {{DOMxRef("MediaQueryListEvent")}} یک مقدار بولین است که اگر {{DOMxRef("document")}} در حال حاضر با لیست پرس‌وجوی رسانه مطابقت داشته باشد، `true` و در غیر این صورت `false` است.
 
-## Value
+## مقدار
 
-A boolean value; returns `true` if the {{DOMxRef("document")}}
-currently matches the media query list, `false` if not.
+یک مقدار بولین؛ اگر {{DOMxRef("document")}} در حال حاضر با لیست پرس‌وجوی رسانه مطابقت داشته باشد `true` و در غیر این صورت `false` برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
 ```js
-const para = document.querySelector("p"); // This is the UI element where to display the text
+const para = document.querySelector("p"); // این عنصر UI است که متن در آن نمایش داده می‌شود
 const mql = window.matchMedia("(width <= 600px)");
 
 mql.addEventListener("change", (event) => {
   if (event.matches) {
-    // The viewport is 600 pixels wide or less
-    para.textContent = "This is a narrow screen — less than 600px wide.";
+    // viewport ۶۰۰ پیکسل یا کمتر عرض دارد
+    para.textContent = "این یک صفحه‌نمایش باریک است — کمتر از ۶۰۰ پیکسل عرض.";
     document.body.style.backgroundColor = "red";
   } else {
-    // The viewport is more than 600 pixels wide
-    para.textContent = "This is a wide screen — more than 600px wide.";
+    // viewport بیش از ۶۰۰ پیکسل عرض دارد
+    para.textContent = "این یک صفحه‌نمایش عریض است — بیش از ۶۰۰ پیکسل عرض.";
     document.body.style.backgroundColor = "blue";
   }
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Media queries](/en-US/docs/Web/CSS/Guides/Media_queries/Using)
-- [Using media queries from code](/en-US/docs/Web/CSS/Guides/Media_queries/Testing)
+- [پرس‌وجوهای رسانه](/en-US/docs/Web/CSS/Guides/Media_queries/Using)
+- [استفاده از پرس‌وجوهای رسانه در کد](/en-US/docs/Web/CSS/Guides/Media_queries/Testing)
 - {{DOMxRef("window.matchMedia()")}}
 - {{DOMxRef("MediaQueryList")}}
 - {{DOMxRef("MediaQueryListEvent")}}
