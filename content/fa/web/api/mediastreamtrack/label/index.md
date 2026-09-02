@@ -1,11 +1,5 @@
 ---
 title: "MediaStreamTrack: label property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/label"
-status: "needs-translation"
----
-
----
-title: "MediaStreamTrack: label property"
 short-title: label
 slug: Web/API/MediaStreamTrack/label
 page-type: web-api-instance-property
@@ -14,19 +8,18 @@ browser-compat: api.MediaStreamTrack.label
 
 {{APIRef("Media Capture and Streams")}}
 
-The **`label`** read-only property of the {{domxref("MediaStreamTrack")}} interface returns a string containing a {{glossary("user agent")}}-assigned label that identifies the track source, as in `"internal microphone"`.
+ویژگی فقط‌خواندنی **`label`** از رابط {{domxref("MediaStreamTrack")}} رشته‌ای شامل برچسب اختصاص‌داده‌شده توسط {{glossary("user agent")}} برمی‌گرداند که منبعِ track را شناسایی می‌کند، مانند `"internal microphone"`.
 
-The string may be left empty and is empty as long as no source has been connected.
-When the track is disassociated from its source, the label is not changed.
+این رشته ممکن است خالی باقی بماند و تا زمانی که هیچ منبعی متصل نشده باشد، خالی است. وقتی track از منبع خود جدا می‌شود، برچسب تغییر نمی‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [WebRTC](/en-US/docs/Web/API/WebRTC_API)
