@@ -1,11 +1,5 @@
 ---
 title: "LanguageModel: contextWindow property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/LanguageModel/contextWindow"
-status: "needs-translation"
----
-
----
-title: "LanguageModel: contextWindow property"
 short-title: contextWindow
 slug: Web/API/LanguageModel/contextWindow
 page-type: web-api-instance-property
@@ -14,21 +8,21 @@ browser-compat: api.LanguageModel.contextWindow
 
 {{APIRef("Prompt API")}}{{SecureContext_Header}}
 
-The **`contextWindow`** read-only property of the {{domxref("LanguageModel")}} interface returns the total number of context window tokens available for this session. It is set when the session is created and does not change during the session's lifetime.
+ویژگی فقط‌خواندنی **`contextWindow`** در رابط {{domxref("LanguageModel")}} تعداد کل توکن‌های پنجره زمینه موجود برای این نشست را برمی‌گرداند. این مقدار هنگام ایجاد نشست تنظیم می‌شود و در طول عمر نشست تغییر نمی‌کند.
 
-Compare `contextWindow` against {{domxref("LanguageModel.contextUsage", "contextUsage")}} to determine how many tokens remain. Use {{domxref("LanguageModel.measureContextUsage()", "measureContextUsage()")}} to estimate how many tokens a new prompt would consume before sending it.
+برای تعیین تعداد توکن‌های باقی‌مانده، `contextWindow` را با {{domxref("LanguageModel.contextUsage", "contextUsage")}} مقایسه کنید. از {{domxref("LanguageModel.measureContextUsage()", "measureContextUsage()")}} استفاده کنید تا قبل از ارسال، تخمین بزنید که یک درخواست جدید چند توکن مصرف می‌کند.
 
-The value is implementation-specific and varies depending on the model, device capabilities, and the session's configuration. A value of `Infinity` indicates that the user agent does not impose a hard limit.
+این مقدار به پیاده‌سازی وابسته است و بسته به مدل، قابلیت‌های دستگاه و پیکربندی نشست متفاوت است. مقدار `Infinity` نشان می‌دهد که عامل کاربر محدودیت سخت‌افزاری اعمال نمی‌کند.
 
-## Value
+## مقدار
 
-A number representing the session's context window capacity in tokens. This value may be `Infinity` if the user agent does not impose a specific limit beyond available memory or JavaScript string constraints.
+عددی که ظرفیت پنجره زمینه نشست را بر حسب توکن نشان می‌دهد. اگر عامل کاربر محدودیت خاصی فراتر از حافظه موجود یا محدودیت‌های رشته جاوااسکریپت اعمال نکند، این مقدار می‌تواند `Infinity` باشد.
 
-## Examples
+## مثال‌ها
 
-### Warning when the context is nearly full
+### هشدار هنگامی که زمینه تقریباً پر است
 
-The following example uses a function to verify that context is available before calling {{domxref("LanguageModel.prompt()")}}. It first calculates the remaining context and passes that value to `measureContextUsage()`. If `needed` is less than or equal to `remaining`, it returns `true` and the session continues.
+در مثال زیر از یک تابع برای بررسی وجود زمینه کافی قبل از فراخوانی {{domson("LanguageModel.prompt()")}} استفاده می‌شود. ابتدا زمینه باقی‌مانده محاسبه و این مقدار به `measureContextUsage()` ارسال می‌شود. اگر `needed` کمتر یا مساوی `remaining` باشد، تابع `true` برمی‌گرداند و نشست ادامه می‌یابد.
 
 ```js
 const promptText = "Let me ask you an interesting question...";
@@ -53,17 +47,17 @@ if (await contextAvailable(promptText)) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("LanguageModel.contextUsage")}}
 - {{domxref("LanguageModel.measureContextUsage()")}}
 - [Prompt API](/en-US/docs/Web/API/Prompt_API)
-- [Using the Prompt API](/en-US/docs/Web/API/Prompt_API/Using)
+- [استفاده از Prompt API](/en-US/docs/Web/API/Prompt_API/Using)
