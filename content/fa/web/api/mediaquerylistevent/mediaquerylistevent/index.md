@@ -1,11 +1,5 @@
 ---
 title: "MediaQueryListEvent: MediaQueryListEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryListEvent/MediaQueryListEvent"
-status: "needs-translation"
----
-
----
-title: "MediaQueryListEvent: MediaQueryListEvent() constructor"
 short-title: MediaQueryListEvent()
 slug: Web/API/MediaQueryListEvent/MediaQueryListEvent
 page-type: web-api-constructor
@@ -14,7 +8,7 @@ browser-compat: api.MediaQueryListEvent.MediaQueryListEvent
 
 {{APIRef("CSSOM view API")}}
 
-The **`MediaQueryListEvent()`** constructor creates a new {{domxref("MediaQueryListEvent")}} object.
+سازنده **`MediaQueryListEvent()`** یک شیء جدید از نوع {{domxref("MediaQueryListEvent")}} می‌سازد.
 
 ## Syntax
 
@@ -23,23 +17,22 @@ new MediaQueryListEvent(type)
 new MediaQueryListEvent(type, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string with the name of the event.
-    It is case-sensitive and browsers always set it to `change`.
+  - : یک رشته که نام رویداد را مشخص می‌کند. این مقدار به حروف بزرگ و کوچک حساس است و مرورگرها همیشه آن را `change` قرار می‌دهند.
 - `options` {{optional_inline}}
-  - : An object that, _in addition of the properties defined in {{domxref("Event/Event", "Event()")}}_, can have the following properties:
+  - : یک شیء که _علاوه بر ویژگی‌های تعریف‌شده در {{domxref("Event/Event", "Event()")}}_، می‌تواند ویژگی‌های زیر را داشته باشد:
     - `media` {{optional_inline}}
-      - : A string representing a serialized media query. It defaults to `""`.
+      - : یک رشته که یک پرسش رسانه‌ای (media query) سریالی‌شده را نشان می‌دهد. مقدار پیش‌فرض آن `""` است.
     - `matches` {{optional_inline}}
-      - : A boolean value representing the media query status; `true` if it matches, `false` if not. It defaults to `false`.
+      - : یک مقدار بولی که وضعیت پرسش رسانه‌ای را نشان می‌دهد؛ `true` اگر مطابقت داشته باشد و `false` اگر نداشته باشد. مقدار پیش‌فرض آن `false` است.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("MediaQueryListEvent")}} object.
+یک شیء جدید از نوع {{domxref("MediaQueryListEvent")}}.
 
-## Examples
+## مثال‌ها
 
 ```js
 const media = "(width <= 600px)";
@@ -51,18 +44,18 @@ const myMediaQueryListEvent = new MediaQueryListEvent("change", {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Media queries](/en-US/docs/Web/CSS/Guides/Media_queries/Using)
-- [Using media queries from code](/en-US/docs/Web/CSS/Guides/Media_queries/Testing)
+- [پرسش‌های رسانه‌ای (Media queries)](/en-US/docs/Web/CSS/Guides/Media_queries/Using)
+- [استفاده از پرسش‌های رسانه‌ای در کد](/en-US/docs/Web/CSS/Guides/Media_queries/Testing)
 - {{DOMxRef("window.matchMedia()")}}
 - {{DOMxRef("MediaQueryList")}}
 - {{DOMxRef("MediaQueryListEvent")}}
