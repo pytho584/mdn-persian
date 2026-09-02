@@ -1,10 +1,4 @@
 ---
-title: "LinearAccelerationSensor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/LinearAccelerationSensor"
-status: "needs-translation"
----
-
----
 title: LinearAccelerationSensor
 slug: Web/API/LinearAccelerationSensor
 page-type: web-api-interface
@@ -13,32 +7,32 @@ browser-compat: api.LinearAccelerationSensor
 
 {{securecontext_header}}{{APIRef("Sensor API")}}
 
-The **`LinearAccelerationSensor`** interface of the [Sensor APIs](/en-US/docs/Web/API/Sensor_APIs) provides on each reading the acceleration applied to the device along all three axes, but without the contribution of gravity.
+رابطهٔ **`LinearAccelerationSensor`** در [Sensor APIs](/en-US/docs/Web/API/Sensor_APIs) در هر بار خواندن، شتابِ واردشده به دستگاه را در هر سه محور ارائه می‌دهد، اما بدون سهم گرانش.
 
-To use this sensor, the user must grant permission to the `'accelerometer'` device sensor through the [Permissions API](/en-US/docs/Web/API/Permissions_API). In addition, this feature may be blocked by a [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) set on your server.
+برای استفاده از این سنسور، کاربر باید از طریق [Permissions API](/en-US/docs/Web/API/Permissions_API) به سنسور دستگاه `'accelerometer'` اجازه دهد. همچنین ممکن است این قابلیت توسط [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) تنظیم‌شده روی سرور شما مسدود شده باشد.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("LinearAccelerationSensor.LinearAccelerationSensor", "LinearAccelerationSensor()")}}
-  - : Creates a new `LinearAccelerationSensor` object.
+  - : یک شیء جدید `LinearAccelerationSensor` می‌سازد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its ancestors, {{domxref('Accelerometer')}}, {{domxref("Sensor")}}, and {{domxref("EventTarget")}}._
+_ویژگی‌ها را از اجداد خود، {{domxref('Accelerometer')}}، {{domxref("Sensor")}} و {{domxref("EventTarget")}} به ارث می‌برد._
 
-## Instance methods
+## روش‌های نمونه
 
-_`LinearAccelerationSensor` doesn't have own methods. However, it inherits methods from its parent interfaces, {{domxref("Sensor")}} and {{domxref("EventTarget")}}._
+_`LinearAccelerationSensor` روش‌های خاص خود را ندارد. با این حال، روش‌ها را از رابط‌های والد خود، {{domxref("Sensor")}} و {{domxref("EventTarget")}} به ارث می‌برد._
 
-## Events
+## رویدادها
 
-_`LinearAccelerationSensor` doesn't have own events. However, it inherits events from its parent interface, {{domxref('Sensor')}}._
+_`LinearAccelerationSensor` رویدادهای خاص خود را ندارد. با این حال، رویدادها را از رابط والد خود، {{domxref('Sensor')}} به ارث می‌برد._
 
-## Example
+## مثال
 
-Linear acceleration is typically read in the {{domxref('Sensor.reading_event', 'reading')}} event callback. In the example below this occurs sixty times a second.
+شتاب خطی معمولاً در فراخوان رویداد {{domxref('Sensor.reading_event', 'reading')}} خوانده می‌شود. در مثال زیر این کار شصت بار در ثانیه انجام می‌شود.
 
 ```js
 let laSensor = new LinearAccelerationSensor({ frequency: 60 });
@@ -51,10 +45,10 @@ laSensor.addEventListener("reading", (e) => {
 laSensor.start();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
