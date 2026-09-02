@@ -1,10 +1,4 @@
 ---
-title: "ImageData"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ImageData"
-status: "needs-translation"
----
-
----
 title: ImageData
 slug: Web/API/ImageData
 page-type: web-api-interface
@@ -13,37 +7,37 @@ browser-compat: api.ImageData
 
 {{APIRef("Canvas API")}}{{AvailableInWorkers}}
 
-The **`ImageData`** interface represents the underlying pixel data of an area of a {{HTMLElement("canvas")}} element.
+رابط **`ImageData`** داده‌های پیکسل زیرین یک ناحیه از عنصر {{HTMLElement("canvas")}} را نمایش می‌دهد.
 
-It is created using the {{domxref("ImageData.ImageData", "ImageData()")}} constructor or creator methods on the {{domxref("CanvasRenderingContext2D")}} object associated with a canvas: {{domxref("CanvasRenderingContext2D.createImageData", "createImageData()")}} and {{domxref("CanvasRenderingContext2D.getImageData", "getImageData()")}}. It can also be used to set a part of the canvas by using {{domxref("CanvasRenderingContext2D.putImageData", "putImageData()")}}.
+این رابط با استفاده از سازنده {{domxref("ImageData.ImageData", "ImageData()")}} یا روش‌های سازنده روی شی {{domxref("CanvasRenderingContext2D")}} مرتبط با یک بوم (canvas) ایجاد می‌شود: {{domxref("CanvasRenderingContext2D.createImageData", "createImageData()")}} و {{domxref("CanvasRenderingContext2D.getImageData", "getImageData()")}}. همچنین می‌توان از آن برای تنظیم بخشی از بوم با استفاده از {{domxref("CanvasRenderingContext2D.putImageData", "putImageData()")}} استفاده کرد.
 
-## Constructors
+## سازنده‌ها
 
 - {{domxref("ImageData.ImageData", "ImageData()")}}
-  - : Creates an `ImageData` object from a given {{jsxref("Uint8ClampedArray")}} or {{jsxref("Float16Array")}} and the size of the image it contains. If no array is given, it creates an image of a transparent black rectangle. Note that this is the most common way to create such an object in workers as {{domxref("CanvasRenderingContext2D.createImageData", "createImageData()")}} is not available there.
+  - : یک شی `ImageData` از یک {{jsxref("Uint8ClampedArray")}} یا {{jsxref("Float16Array")}} داده شده و اندازه تصویر ایجاد می‌کند. اگر آرایه‌ای داده نشود، تصویری از یک مستطیل سیاه شفاف ایجاد می‌کند. توجه داشته باشید که این رایج‌ترین روش ایجاد چنین شیئی در workerها است، زیرا {{domxref("CanvasRenderingContext2D.createImageData", "createImageData()")}} در آنجا در دسترس نیست.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("ImageData.data")}} {{ReadOnlyInline}}
-  - : A {{jsxref("Uint8ClampedArray")}} or {{jsxref("Float16Array")}} representing a one-dimensional array containing the data in the RGBA order. The order goes by rows from the top-left pixel to the bottom-right.
+  - : یک {{jsxref("Uint8ClampedArray")}} یا {{jsxref("Float16Array")}} که یک آرایه یک‌بعدی شامل داده‌ها به ترتیب RGBA را نمایش می‌دهد. ترتیب به صورت سطر به سطر از پیکسل بالا-چپ تا پایین-راست است.
 - {{domxref("ImageData.colorSpace")}} {{ReadOnlyInline}}
-  - : A string indicating the color space of the image data.
+  - : یک رشته که فضای رنگی داده‌های تصویر را نشان می‌دهد.
 - {{domxref("ImageData.height")}} {{ReadOnlyInline}}
-  - : An `unsigned long` representing the actual height, in pixels, of the `ImageData`.
+  - : یک `unsigned long` که ارتفاع واقعی `ImageData` را بر حسب پیکسل نمایش می‌دهد.
 - {{domxref("ImageData.width")}} {{ReadOnlyInline}}
-  - : An `unsigned long` representing the actual width, in pixels, of the `ImageData`.
+  - : یک `unsigned long` که عرض واقعی `ImageData` را بر حسب پیکسل نمایش می‌دهد.
 - {{domxref("ImageData.pixelFormat")}} {{ReadOnlyInline}} {{experimental_inline}}
-  - : A string indicating the format to use for the `ImageData`.
+  - : یک رشته که قالب مورد استفاده برای `ImageData` را نشان می‌دهد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("CanvasRenderingContext2D")}}
-- The {{HTMLElement("canvas")}} element and its associated interface, {{domxref("HTMLCanvasElement")}}.
+- عنصر {{HTMLElement("canvas")}} و رابط مرتبط با آن، {{domxref("HTMLCanvasElement")}}.
