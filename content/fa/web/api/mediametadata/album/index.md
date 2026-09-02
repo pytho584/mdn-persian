@@ -1,11 +1,5 @@
 ---
 title: "MediaMetadata: album property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaMetadata/album"
-status: "needs-translation"
----
-
----
-title: "MediaMetadata: album property"
 short-title: album
 slug: Web/API/MediaMetadata/album
 page-type: web-api-instance-property
@@ -14,18 +8,15 @@ browser-compat: api.MediaMetadata.album
 
 {{APIRef("Media Session API")}}
 
-The **`album`** property of the
-{{domxref("MediaMetadata")}} interface returns or sets the name of the album or
-collection containing the media to be played.
+ویژگی **`album`** در رابط {{domxref("MediaMetadata")}} نام آلبوم یا مجموعه‌ای را که رسانهٔ در حال پخش به آن تعلق دارد، برمی‌گرداند یا تنظیم می‌کند.
 
-## Value
+## مقدار
 
-A {{jsxref("String")}} containing the name of the album.
+یک {{jsxref("String")}} شامل نام آلبوم.
 
-## Examples
+## مثال‌ها
 
-The following example checks for browser compatibility and sets the current metadata
-for the media session.
+مثال زیر سازگاری مرورگر را بررسی می‌کند و فراداده‌های جلسهٔ رسانه را تنظیم می‌کند.
 
 ```js
 if ("mediaSession" in navigator) {
@@ -69,10 +60,10 @@ if ("mediaSession" in navigator) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
