@@ -1,11 +1,5 @@
 ---
 title: "Navigation: currentEntry property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigation/currentEntry"
-status: "needs-translation"
----
-
----
-title: "Navigation: currentEntry property"
 short-title: currentEntry
 slug: Web/API/Navigation/currentEntry
 page-type: web-api-instance-property
@@ -14,12 +8,11 @@ browser-compat: api.Navigation.currentEntry
 
 {{APIRef("Navigation API")}}
 
-The **`currentEntry`** read-only property of the
-{{domxref("Navigation")}} interface returns a {{domxref("NavigationHistoryEntry")}} object representing the location the user is currently navigated to right now.
+ویژگی فقط‑خواندنی **`currentEntry`** از رابط {{domxref("Navigation")}} یک شیء {{domxref("NavigationHistoryEntry")}} را برمی‌گرداند که مکان فعلی که کاربر در آن ناوبری شده است را نشان می‌دهد.
 
 ## Value
 
-A {{domxref("NavigationHistoryEntry")}} object.
+یک شیء {{domxref("NavigationHistoryEntry")}}.
 
 ## Examples
 
