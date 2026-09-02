@@ -1,7 +1,5 @@
 ---
 title: "HTMLTableRowElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableRowElement"
-status: "needs-translation"
 ---
 
 ---
@@ -13,54 +11,54 @@ browser-compat: api.HTMLTableRowElement
 
 {{ APIRef("HTML DOM") }}
 
-The **`HTMLTableRowElement`** interface provides special properties and methods (beyond the {{domxref("HTMLElement")}} interface it also has available to it by inheritance) for manipulating the layout and presentation of rows in an HTML table.
+رابط **`HTMLTableRowElement`** ویژگی‌ها و متدهای خاصی را برای دستکاری چیدمان و نمایش ردیف‌ها در یک جدول HTML فراهم می‌کند (علاوه بر رابط {{domxref("HTMLElement")}} که به‌صورت ارث‌بری در اختیار دارد).
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("HTMLElement")}}._
+_ویژگی‌های والد خود، یعنی {{domxref("HTMLElement")}}، را به ارث می‌برد._
 
 - {{domxref("HTMLTableRowElement.cells")}} {{ReadOnlyInline}}
-  - : Returns a live {{domxref("HTMLCollection")}} containing the cells in the row. The `HTMLCollection` is live and is automatically updated when cells are added or removed.
+  - : یک {{domxref("HTMLCollection")}} زنده شامل سلول‌های ردیف را بازمی‌گرداند. `HTMLCollection` زنده است و هنگام افزودن یا حذف سلول‌ها به‌طور خودکار به‌روزرسانی می‌شود.
 - {{domxref("HTMLTableRowElement.rowIndex")}} {{ReadOnlyInline}}
-  - : Returns a number that gives the logical position of the row within the entire table. If the row is not part of a table, returns `-1`.
+  - : عددی را بازمی‌گرداند که موقعیت منطقی ردیف را در کل جدول نشان می‌دهد. اگر ردیف بخشی از جدول نباشد، `-1` بازگردانده می‌شود.
 - {{domxref("HTMLTableRowElement.sectionRowIndex")}} {{ReadOnlyInline}}
-  - : Returns a number that gives the logical position of the row within the table section it belongs to. If the row is not part of a section, returns `-1`.
+  - : عددی را بازمی‌گرداند که موقعیت منطقی ردیف را در بخش جدولی که به آن تعلق دارد نشان می‌دهد. اگر ردیف بخشی از هیچ بخشی نباشد، `-1` بازگردانده می‌شود.
 
-## Instance methods
+## متدهای نمونه
 
-_Inherits methods from its parent, {{domxref("HTMLElement")}}_.
+_متدهای والد خود، یعنی {{domxref("HTMLElement")}}، را به ارث می‌برد._
 
 - {{domxref("HTMLTableRowElement.deleteCell()")}}
-  - : Removes the cell corresponding to `index`. If `index` is `-1`, the last cell of the row is removed. If `index` is less than `-1` or greater than the amount of cells in the collection, a {{DOMxRef("DOMException")}} with the value `IndexSizeError` is raised.
+  - : سلول متناظر با `index` را حذف می‌کند. اگر `index` برابر `-1` باشد، آخرین سلول ردیف حذف می‌شود. اگر `index` کمتر از `-1` یا بیشتر از تعداد سلول‌های مجموعه باشد، یک {{DOMxRef("DOMException")}} با مقدار `IndexSizeError` پرتاب می‌شود.
 - {{domxref("HTMLTableRowElement.insertCell()")}}
-  - : Returns an {{domxref("HTMLTableCellElement")}} representing a new cell of the row. The cell is inserted in the collection of cells immediately before the given `index` position in the row. If `index` is `-1`, the new cell is appended to the collection. If `index` is less than `-1` or greater than the number of cells in the collection, a {{DOMxRef("DOMException")}} with the value `IndexSizeError` is raised.
+  - : یک {{domxref("HTMLTableCellElement")}} بازمی‌گرداند که سلول جدیدی از ردیف را نشان می‌دهد. سلول درست قبل از موقعیت `index` در مجموعه سلول‌های ردیف درج می‌شود. اگر `index` برابر `-1` باشد، سلول جدید به انتهای مجموعه اضافه می‌شود. اگر `index` کمتر از `-1` یا بیشتر از تعداد سلول‌های مجموعه باشد، یک {{DOMxRef("DOMException")}} با مقدار `IndexSizeError` پرتاب می‌شود.
 
-## Deprecated properties
+## ویژگی‌های منسوخ‌شده
 
 > [!WARNING]
-> These properties have been deprecated and should no longer be used. They are documented primarily to help understand older code bases.
+> این ویژگی‌ها منسوخ شده‌اند و دیگر نباید استفاده شوند. مستند کردن آن‌ها عمدتاً برای کمک به درک پایگاه‌های کد قدیمی است.
 
 - {{domxref("HTMLTableRowElement.align")}} {{deprecated_inline}}
-  - : A string containing an enumerated value reflecting the [`align`](/en-US/docs/Web/HTML/Reference/Elements/tr#align) attribute. It indicates the alignment of the element's contents to the surrounding context. The possible values are `"left"`, `"right"`, and `"center"`.
+  - : رشته‌ای حاوی یک مقدار شمارشی که ویژگی [`align`](/en-US/docs/Web/HTML/Reference/Elements/tr#align) را بازتاب می‌دهد. تراز بودن محتویات عنصر را نسبت به بافت اطراف نشان می‌دهد. مقادیر ممکن عبارت‌اند از `"left"`, `"right"` و `"center"`.
 - {{domxref("HTMLTableRowElement.bgColor")}} {{deprecated_inline}}
-  - : A string containing the background color of the cells. It reflects the obsolete [`bgColor`](/en-US/docs/Web/HTML/Reference/Elements/tr#bgcolor) attribute.
+  - : رشته‌ای حاوی رنگ پس‌زمینه سلول‌ها. ویژگی منسوخ [`bgColor`](/en-US/docs/Web/HTML/Reference/Elements/tr#bgcolor) را بازتاب می‌دهد.
 - {{domxref("HTMLTableRowElement.ch")}} {{deprecated_inline}}
-  - : A string containing one single character. This character is the one to align all the cells of a column on. It reflects the [`char`](/en-US/docs/Web/HTML/Reference/Elements/tr#char) and defaults to the decimal points associated with the language, e.g., `'.'` for English, or `','` for French. This property was optional and was not very well supported.
+  - : رشته‌ای حاوی یک کاراکتر واحد. این کاراکتر، کاراکتری است که همه سلول‌های یک ستون بر اساس آن تراز می‌شوند. ویژگی [`char`](/en-US/docs/Web/HTML/Reference/Elements/tr#char) را بازتاب می‌دهد و به‌طور پیش‌فرض روی ممیز اعشاری مرتبط با زبان تنظیم می‌شود، مثلاً `'.'` برای انگلیسی یا `','` برای فرانسوی. این ویژگی اختیاری بود و پشتیبانی خوبی از آن نمی‌شد.
 - {{domxref("HTMLTableRowElement.chOff")}} {{deprecated_inline}}
-  - : A string containing an integer indicating how many characters must be left at the right (for left-to-right scripts; or at the left for right-to-left scripts) of the character defined by `HTMLTableRowElement.ch`. This property was optional and was not very well supported.
+  - : رشته‌ای حاوی یک عدد صحیح که مشخص می‌کند چند کاراکتر باید در سمت راست (برای نوشتن‌های چپ‌به‌راست؛ یا در سمت چپ برای نوشتن‌های راست‌به‌چپ) کاراکتر تعریف‌شده با `HTMLTableRowElement.ch` باقی بماند. این ویژگی اختیاری بود و پشتیبانی خوبی از آن نمی‌شد.
 - {{domxref("HTMLTableRowElement.vAlign")}} {{deprecated_inline}}
-  - : A string representing an enumerated value indicating how the content of the cell must be vertically aligned. It reflects the [`valign`](/en-US/docs/Web/HTML/Reference/Elements/tr#valign) attribute and can have one of the following values: `"top"`, `"middle"`, `"bottom"`, or `"baseline"`.
+  - : رشته‌ای که یک مقدار شمارشی را نشان می‌دهد و نحوه تراز عمودی محتوای سلول را تعیین می‌کند. ویژگی [`valign`](/en-US/docs/Web/HTML/Reference/Elements/tr#valign) را بازتاب می‌دهد و می‌تواند یکی از مقادیر زیر باشد: `"top"`, `"middle"`, `"bottom"` یا `"baseline"`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The HTML element implementing this interface: {{HTMLElement("tr")}}.
+- عنصر HTML که این رابط را پیاده‌سازی می‌کند: {{HTMLElement("tr")}}.
