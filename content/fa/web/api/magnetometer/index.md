@@ -1,10 +1,4 @@
 ---
-title: "Magnetometer"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Magnetometer"
-status: "needs-translation"
----
-
----
 title: Magnetometer
 slug: Web/API/Magnetometer
 page-type: web-api-interface
@@ -15,37 +9,37 @@ browser-compat: api.Magnetometer
 
 {{securecontext_header}}{{APIRef("Sensor API")}}{{SeeCompatTable}}
 
-The **`Magnetometer`** interface of the [Sensor APIs](/en-US/docs/Web/API/Sensor_APIs) provides information about the magnetic field as detected by the device's primary magnetometer sensor.
+رابطِ **`Magnetometer`** از [Sensor APIs](/en-US/docs/Web/API/Sensor_APIs) اطلاعاتی دربارهٔ میدان مغناطیسی ارائه می‌دهد که توسط سنسور مغناطیس‌سنج اصلی دستگاه شناسایی می‌شود.
 
-To use this sensor, the user must grant permission to the `'magnetometer'` device sensor through the [Permissions API](/en-US/docs/Web/API/Permissions_API). In addition, this feature may be blocked by a [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) set on your server.
+برای استفاده از این سنسور، کاربر باید از طریق [Permissions API](/en-US/docs/Web/API/Permissions_API) به سنسور دستگاهِ `'magnetometer'` دسترسی بدهد. علاوه بر این، ممکن است این قابلیت توسط [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) تنظیم‌شده روی سرور شما مسدود شود.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("Magnetometer.Magnetometer", "Magnetometer()")}} {{Experimental_Inline}}
-  - : Creates a new `Magnetometer` object.
+  - : یک شیء جدید `Magnetometer` می‌سازد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref('Magnetometer.x')}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a double containing the magnetic field around the device's x axis.
+  - : یک عدد double شامل میدان مغناطیسی اطراف محور x دستگاه را برمی‌گرداند.
 - {{domxref('Magnetometer.y')}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a double containing the magnetic field around the device's y axis.
+  - : یک عدد double شامل میدان مغناطیسی اطراف محور y دستگاه را برمی‌گرداند.
 - {{domxref('Magnetometer.z')}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a double containing the magnetic field around the device's z axis.
+  - : یک عدد double شامل میدان مغناطیسی اطراف محور z دستگاه را برمی‌گرداند.
 
-## Instance methods
+## متدهای نمونه
 
-_`Magnetometer` doesn't have own methods. However, it inherits methods from its parent interfaces, {{domxref("Sensor")}} and {{domxref("EventTarget")}}._
+_`Magnetometer` متدهای خاص خود را ندارد؛ با این حال، متدهای رابط‌های والد خود، یعنی {{domxref("Sensor")}} و {{domxref("EventTarget")}}، را به ارث می‌برد._
 
-## Events
+## رویدادها
 
-_`Magnetometer` doesn't have own events. However, it inherits events from its parent interface, {{domxref('Sensor')}}._
+_`Magnetometer` رویدادهای خاص خود را ندارد؛ با این حال، رویدادهای رابط والد خود، یعنی {{domxref('Sensor')}}، را به ارث می‌برد._
 
-## Example
+## مثال
 
-The magnetometer is typically read in the {{domxref('Sensor.reading_event', 'reading')}} event callback. In the example below this occurs sixty times a second.
+داده‌های سنسور مغناطیس‌سنج معمولاً در callback رویداد {{domxref('Sensor.reading_event', 'reading')}} خوانده می‌شوند. در مثال زیر، این کار شصت بار در ثانیه انجام می‌شود.
 
 ```js
 let magSensor = new Magnetometer({ frequency: 60 });
@@ -58,10 +52,10 @@ magSensor.addEventListener("reading", (e) => {
 magSensor.start();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
