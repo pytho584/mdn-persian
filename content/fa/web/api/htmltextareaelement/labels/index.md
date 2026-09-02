@@ -1,11 +1,5 @@
 ---
 title: "HTMLTextAreaElement: labels property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTextAreaElement/labels"
-status: "needs-translation"
----
-
----
-title: "HTMLTextAreaElement: labels property"
 short-title: labels
 slug: Web/API/HTMLTextAreaElement/labels
 page-type: web-api-instance-property
@@ -14,16 +8,13 @@ browser-compat: api.HTMLTextAreaElement.labels
 
 {{APIRef("DOM")}}
 
-The **`HTMLTextAreaElement.labels`** read-only property returns
-a {{domxref("NodeList")}} of the {{HTMLElement("label")}} elements associated with the
-{{HTMLElement("textArea")}} element.
+**`HTMLTextAreaElement.labels`** 只读属性返回一个 {{domxref("NodeList")}}，其中包含与 {{HTMLElement("textArea")}} 元素相关联的 {{HTMLElement("label")}} 元素。
 
-## Value
+## 值
 
-A {{domxref("NodeList")}} containing the `<label>` elements associated
-with the `<textArea>` element.
+一个 {{domxref("NodeList")}}，包含与 `<textArea>` 元素关联的 `<label>` 元素。
 
-## Examples
+## 示例
 
 ### HTML
 
@@ -44,10 +35,10 @@ for (const label of textArea.labels) {
 
 {{EmbedLiveSample("Examples", "100%", 100)}}
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
