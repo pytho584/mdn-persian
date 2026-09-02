@@ -1,11 +1,5 @@
 ---
 title: "IntersectionObserverEntry: isIntersecting property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry/isIntersecting"
-status: "needs-translation"
----
-
----
-title: "IntersectionObserverEntry: isIntersecting property"
 short-title: isIntersecting
 slug: Web/API/IntersectionObserverEntry/isIntersecting
 page-type: web-api-instance-property
@@ -14,17 +8,17 @@ browser-compat: api.IntersectionObserverEntry.isIntersecting
 
 {{APIRef("Intersection Observer API")}}
 
-The **`isIntersecting`** read-only property of the {{domxref("IntersectionObserverEntry")}} interface is a Boolean value which is `true` if the target element intersects with the intersection observer's root.
+ویژگی فقط‌خواندنی **`isIntersecting`** در رابط {{domxref("IntersectionObserverEntry")}} یک مقدار بولی است که اگر عنصرِ هدف با ریشهٔ (root) مشاهده‌گر تقاطع (intersection observer) تقاطع داشته باشد، `true` خواهد بود.
 
-If this is `true`, then, the `IntersectionObserverEntry` describes a transition into a state of intersection; if it's `false`, then you know the transition is from intersecting to not-intersecting.
+اگر این مقدار `true` باشد، آنگاه `IntersectionObserverEntry` گذار به حالت تقاطع را توصیف می‌کند؛ اگر `false` باشد، یعنی گذار از وضعیت تقاطع به وضعیت عدم تقاطع انجام شده است.
 
-## Value
+## مقدار
 
-A Boolean value which indicates whether the {{domxref("IntersectionObserverEntry.target", "target")}} element has transitioned into a state of intersection (`true`) or out of a state of intersection (`false`).
+یک مقدار بولی که نشان می‌دهد آیا عنصر {{domxref("IntersectionObserverEntry.target", "target")}} به حالت تقاطع وارد شده است (`true`) یا از حالت تقاطع خارج شده است (`false`).
 
-## Examples
+## مثال‌ها
 
-In this simple example, an intersection callback is used to update a counter of how many targeted elements are currently intersecting with the {{domxref("IntersectionObserver.root", "intersection root", "", 1)}}.
+در این مثال ساده، یک callback تقاطع برای به‌روزرسانی شمارنده‌ای به کار رفته است که تعداد عناصرِ هدفِ در حال تقاطع با {{domxref("IntersectionObserver.root", "intersection root", "", 1)}} را نشان می‌دهد.
 
 ```js
 function intersectionCallback(entries) {
@@ -38,12 +32,12 @@ function intersectionCallback(entries) {
 }
 ```
 
-To see a more concrete example, take a look at [Handling intersection changes](/en-US/docs/Web/API/Intersection_Observer_API/Timing_element_visibility#handling_intersection_changes).
+برای مشاهدهٔ یک مثال ملموس‌تر، به [مدیریت تغییرات تقاطع](/en-US/docs/Web/API/Intersection_Observer_API/Timing_element_visibility#handling_intersection_changes) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
