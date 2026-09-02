@@ -1,7 +1,5 @@
 ---
 title: "IDBCursor: request property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBCursor/request"
-status: "needs-translation"
 ---
 
 ---
@@ -14,15 +12,15 @@ browser-compat: api.IDBCursor.request
 
 {{APIRef("IndexedDB")}} {{AvailableInWorkers}}
 
-The **`request`** read-only property of the {{domxref("IDBCursor")}} interface returns the {{domxref("IDBRequest")}} used to obtain the cursor.
+ویژگی فقط‌خواندنی **`request`** از رابط {{domxref("IDBCursor")}}، شیء {{domxref("IDBRequest")}} مورد استفاده برای دریافت نشانگر را برمی‌گرداند.
 
-## Value
+## مقدار
 
-An {{domxref("IDBRequest")}} object instance.
+یک نمونه از شیء {{domxref("IDBRequest")}}.
 
-## Examples
+## مثال‌ها
 
-When you open a cursor, the `request` property is then available on that cursor object, to tell you what request object the cursor originated from. For example:
+وقتی یک نشانگر را باز می‌کنید، ویژگی `request` روی آن شیء نشانگر در دسترس است تا مشخص کند نشانگر از کدام شیء درخواست سرچشمه گرفته است. برای مثال:
 
 ```js
 function displayData() {
@@ -47,20 +45,20 @@ function displayData() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم محدوده‌ای از کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و ایجاد تغییرات در داده‌های خود: {{domxref("IDBObjectStore")}}
+- استفاده از نشانگرها: {{domxref("IDBCursor")}}
+- نمونه مرجع: [اعلان‌های کارها](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
