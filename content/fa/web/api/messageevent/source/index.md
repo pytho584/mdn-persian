@@ -1,11 +1,5 @@
 ---
 title: "MessageEvent: source property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MessageEvent/source"
-status: "needs-translation"
----
-
----
-title: "MessageEvent: source property"
 short-title: source
 slug: Web/API/MessageEvent/source
 page-type: web-api-instance-property
@@ -14,18 +8,13 @@ browser-compat: api.MessageEvent.source
 
 {{APIRef("HTML DOM")}}{{AvailableInWorkers}}
 
-The **`source`** read-only property of the
-{{domxref("MessageEvent")}} interface is a `MessageEventSource` (which can be
-a {{glossary("WindowProxy")}}, {{domxref("MessagePort")}}, or
-{{domxref("ServiceWorker")}} object) representing the message emitter.
+خاصیت فقط-خواندنی **`source`** از رابط {{domxref("MessageEvent")}} یک `MessageEventSource` است (که می‌تواند یک شیء {{glossary("WindowProxy")}}، {{domxref("MessagePort")}} یا {{domxref("ServiceWorker")}} باشد) و فرستنده پیام را نشان می‌دهد.
 
-## Value
+## مقدار
 
-a `MessageEventSource` (which can be a {{glossary("WindowProxy")}},
-{{domxref("MessagePort")}}, or {{domxref("ServiceWorker")}} object) representing the
-message emitter.
+یک `MessageEventSource` (که می‌تواند یک شیء {{glossary("WindowProxy")}}، {{domxref("MessagePort")}} یا {{domxref("ServiceWorker")}} باشد) که فرستنده پیام را نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
 ```js
 myWorker.onmessage = (e) => {
@@ -35,15 +24,14 @@ myWorker.onmessage = (e) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("ExtendableMessageEvent")}} — similar to this interface but used in
-  interfaces that needs to give more flexibility to authors.
+- {{domxref("ExtendableMessageEvent")}} — مشابه این رابط است اما در رابط‌هایی استفاده می‌شود که نیاز به انعطاف‌پذیری بیشتری برای نویسندگان دارند.
