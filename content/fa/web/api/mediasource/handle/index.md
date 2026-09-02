@@ -1,11 +1,5 @@
 ---
 title: "MediaSource: handle property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/handle"
-status: "needs-translation"
----
-
----
-title: "MediaSource: handle property"
 short-title: handle
 slug: Web/API/MediaSource/handle
 page-type: web-api-instance-property
@@ -14,20 +8,20 @@ browser-compat: api.MediaSource.handle
 
 {{APIRef("Media Source Extensions")}}{{AvailableInWorkers("dedicated")}}
 
-The **`handle`** read-only property of the {{domxref("MediaSource")}} interface returns a {{domxref("MediaSourceHandle")}} object, a proxy for the `MediaSource` that can be transferred from a dedicated worker back to the main thread and attached to a media element via its {{domxref("HTMLMediaElement.srcObject")}} property.
+ویژگی فقط‌خواندنی **`handle`** از رابط {{domxref("MediaSource")}} یک شیء {{domxref("MediaSourceHandle")}} برمی‌گرداند؛ یک نماینده (proxy) برای `MediaSource` که می‌تواند از یک worker اختصاصی به thread اصلی منتقل شود و از طریق ویژگی {{domxref("HTMLMediaElement.srcObject")}} به یک عنصر رسانه‌ای متصل شود.
 
 > [!NOTE]
-> `handle` is only visible on {{domxref("MediaSource")}} instances inside dedicated workers.
+> `handle` فقط روی نمونه‌های {{domxref("MediaSource")}} در workerهای اختصاصی در دسترس است.
 
-Each `MediaSource` object created inside a dedicated worker has its own distinct `MediaSourceHandle`. The `handle` getter will always return the `MediaSourceHandle` instance specific to the associated dedicated worker `MediaSource` instance. If the handle has already been transferred to the main thread using {{domxref("DedicatedWorkerGlobalScope.postMessage()", "postMessage()")}}, the handle instance in the worker is technically detached and can't be transferred again.
+هر شیء `MediaSource` که در داخل یک worker اختصاصی ساخته می‌شود، `MediaSourceHandle` متمایز خودش را دارد. getter مربوط به `handle` همیشه نمونه `MediaSourceHandle` مختص نمونه `MediaSource` موجود در worker اختصاصی مرتبط را برمی‌گرداند. اگر handle قبلاً با استفاده از {{domxref("DedicatedWorkerGlobalScope.postMessage()", "postMessage()")}} به thread اصلی منتقل شده باشد، نمونه handle در worker از نظر فنی جدا (detached) شده و نمی‌توان دوباره آن را انتقال داد.
 
-## Value
+## مقدار
 
-A {{domxref("MediaSourceHandle")}} object instance.
+یک نمونه شیء {{domxref("MediaSourceHandle")}}.
 
-## Examples
+## مثال‌ها
 
-The `handle` property can be accessed inside a dedicated worker and the resulting {{domxref("MediaSourceHandle")}} object is then transferred over to the thread that created the worker (in this case the main thread) via a {{domxref("DedicatedWorkerGlobalScope.postMessage()", "postMessage()")}} call:
+ویژگی `handle` را می‌توان در داخل یک worker اختصاصی فراخوانی کرد و شیء حاصل {{domxref("MediaSourceHandle")}} سپس از طریق یک فراخوانی {{domxref("DedicatedWorkerGlobalScope.postMessage()", "postMessage()")}} به thread سازنده worker (در اینجا thread اصلی) منتقل می‌شود:
 
 ```js
 // Inside dedicated worker
@@ -44,7 +38,7 @@ mediaSource.addEventListener("sourceopen", () => {
 });
 ```
 
-Over in the main thread, we receive the handle via a {{domxref("Worker.message_event", "message")}} event handler, attach it to a {{htmlelement("video")}} via its {{domxref("HTMLMediaElement.srcObject")}} property, and {{domxref("HTMLMediaElement.play()", "play")}} the video:
+در thread اصلی، ما handle را از طریق یک event handler مربوط به {{domxref("Worker.message_event", "message")}} دریافت می‌کنیم، آن را از طریق ویژگی {{domxref("HTMLMediaElement.srcObject")}} به یک {{htmlelement("video")}} متصل می‌کنیم و ویدیو را با {{domxref("HTMLMediaElement.play()", "play")}} پخش می‌کنیم:
 
 ```js
 worker.addEventListener("message", (msg) => {
@@ -55,19 +49,19 @@ worker.addEventListener("message", (msg) => {
 ```
 
 > [!NOTE]
-> {{domxref("MediaSourceHandle")}}s cannot be successfully transferred into or via a shared worker or service worker.
+> اشیاء {{domxref("MediaSourceHandle")}} را نمی‌توان با موفقیت به داخل یا از طریق یک shared worker یا service worker انتقال داد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [MSE-in-Workers Demo by Matt Wolenetz](https://wolenetz.github.io/mse-in-workers-demo/mse-in-workers-demo.html)
+- [نسخه نمایشی MSE-in-Workers اثر Matt Wolenetz](https://wolenetz.github.io/mse-in-workers-demo/mse-in-workers-demo.html)
 - {{domxref("Media Source Extensions API", "Media Source Extensions API", "", "nocode")}}
 - {{domxref("MediaSource")}}
 - {{domxref("SourceBuffer")}}
