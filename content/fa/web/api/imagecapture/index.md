@@ -1,11 +1,5 @@
 ---
 title: "ImageCapture"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ImageCapture"
-status: "needs-translation"
----
-
----
-title: ImageCapture
 slug: Web/API/ImageCapture
 page-type: web-api-interface
 browser-compat: api.ImageCapture
@@ -13,34 +7,34 @@ browser-compat: api.ImageCapture
 
 {{APIRef("Image Capture API")}}
 
-The **`ImageCapture`** interface of the [MediaStream Image Capture API](/en-US/docs/Web/API/MediaStream_Image_Capture_API) provides methods to enable the capture of images or photos from a camera or other photographic device. It provides an interface for capturing images from a photographic device referenced through a valid {{domxref("MediaStreamTrack")}}.
+رابط **`ImageCapture`** از [MediaStream Image Capture API](/en-US/docs/Web/API/MediaStream_Image_Capture_API) روش‌هایی را برای گرفتن تصاویر یا عکس‌ها از یک دوربین یا سایر دستگاه‌های عکاسی فراهم می‌کند. این رابط یک واسط برای گرفتن تصاویر از یک دستگاه عکاسی که از طریق یک {{domxref("MediaStreamTrack")}} معتبر ارجاع داده شده است، ارائه می‌دهد.
 
-## Constructor
+## سازنده
 
 - {{domxref("ImageCapture.ImageCapture()", "ImageCapture()")}}
-  - : Creates a new `ImageCapture` object which can be used to capture still frames (photos) from a given {{domxref("MediaStreamTrack")}} which represents a video stream.
+  - : یک شیء `ImageCapture` جدید ایجاد می‌کند که می‌تواند برای گرفتن فریم‌های ثابت (عکس) از یک {{domxref("MediaStreamTrack")}} داده شده که یک جریان ویدیویی را نشان می‌دهد، استفاده شود.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("ImageCapture.track")}} {{ReadOnlyInline}}
-  - : Returns a reference to the {{domxref("MediaStreamTrack")}} passed to the constructor.
+  - : یک ارجاع به {{domxref("MediaStreamTrack")}} ارسال شده به سازنده را برمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("ImageCapture.takePhoto()")}}
-  - : Takes a single exposure using the video capture device sourcing a {{domxref("MediaStreamTrack")}} and returns a {{jsxref("Promise")}} that resolves with a {{domxref("Blob")}} containing the data.
+  - : یک نوردهی واحد با استفاده از دستگاه ضبط ویدیو که یک {{domxref("MediaStreamTrack")}} را تأمین می‌کند، می‌گیرد و یک {{jsxref("Promise")}} برمی‌گرداند که با یک {{domxref("Blob")}} حاوی داده‌ها حل می‌شود.
 - {{domxref("ImageCapture.getPhotoCapabilities()")}}
-  - : Returns a {{jsxref("Promise")}} that resolves with an object containing the ranges of available configuration options.
+  - : یک {{jsxref("Promise")}} برمی‌گرداند که با یک شیء حاوی محدوده‌های گزینه‌های پیکربندی موجود حل می‌شود.
 - {{domxref("ImageCapture.getPhotoSettings()")}}
-  - : Returns a {{jsxref("Promise")}} that resolves with an object containing the current photo configuration settings.
+  - : یک {{jsxref("Promise")}} برمی‌گرداند که با یک شیء حاوی تنظیمات پیکربندی فعلی عکس حل می‌شود.
 - {{domxref("ImageCapture.grabFrame()")}}
-  - : Takes a snapshot of the live video in a {{domxref("MediaStreamTrack")}}, returning an {{domxref("ImageBitmap")}}, if successful.
+  - : یک عکس فوری از ویدیوی زنده در یک {{domxref("MediaStreamTrack")}} می‌گیرد و در صورت موفقیت، یک {{domxref("ImageBitmap")}} برمی‌گرداند.
 
-## Example
+## مثال
 
-The following code is taken from [Chrome's Grab Frame - Take Photo Sample](https://googlechrome.github.io/samples/image-capture/grab-frame-take-photo.html). Since `ImageCapture` requires some place to capture an image from, the example below starts with a device's media device (in other words a camera).
+کد زیر از [نمونه Grab Frame - Take Photo کروم](https://googlechrome.github.io/samples/image-capture/grab-frame-take-photo.html) گرفته شده است. از آنجایی که `ImageCapture` به مکانی برای گرفتن تصویر نیاز دارد، مثال زیر با یک دستگاه رسانه‌ای (یعنی یک دوربین) شروع می‌شود.
 
-This example shows, roughly, a {{domxref("MediaStreamTrack")}} extracted from a device's {{domxref("MediaStream")}}. The track is then used to create an `ImageCapture` object so that `takePhoto()` and `grabFrame()` can be called. Finally, it shows how to apply the results of these calls to a canvas object.
+این مثال تقریباً نشان می‌دهد که چگونه یک {{domxref("MediaStreamTrack")}} از یک {{domxref("MediaStream")}} دستگاه استخراج می‌شود. سپس از این track برای ایجاد یک شیء `ImageCapture` استفاده می‌شود تا بتوان `takePhoto()` و `grabFrame()` را فراخوانی کرد. در نهایت، نحوه اعمال نتایج این فراخوانی‌ها به یک شیء canvas نشان داده می‌شود.
 
 ```js
 let imageCapture;
@@ -108,10 +102,10 @@ document.querySelector("video").addEventListener("play", () => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
