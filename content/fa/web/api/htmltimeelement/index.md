@@ -1,10 +1,4 @@
 ---
-title: "HTMLTimeElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTimeElement"
-status: "needs-translation"
----
-
----
 title: HTMLTimeElement
 slug: Web/API/HTMLTimeElement
 page-type: web-api-interface
@@ -13,29 +7,29 @@ browser-compat: api.HTMLTimeElement
 
 {{ APIRef("HTML DOM") }}
 
-The **`HTMLTimeElement`** interface provides special properties (beyond the regular {{domxref("HTMLElement")}} interface it also has available to it by inheritance) for manipulating {{HTMLElement("time")}} elements.
+رابط **`HTMLTimeElement`** ویژگی‌های خاصی (فراتر از رابط معمول {{domxref("HTMLElement")}} که به‌صورت ارث‌بری نیز در اختیار آن است) برای دستکاری عناصر {{HTMLElement("time")}} فراهم می‌کند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("HTMLElement")}}._
+_ویژگی‌های والد خود، {{domxref("HTMLElement")}}، را به ارث می‌برد._
 
 - {{domxref("HTMLTimeElement.dateTime")}}
-  - : A string that reflects the [`datetime`](/en-US/docs/Web/HTML/Reference/Elements/time#datetime) HTML attribute, containing a machine-readable form of the element's date and time value.
+  - : رشته‌ای که ویژگی HTML [`datetime`](/en-US/docs/Web/HTML/Reference/Elements/time#datetime) را منعکس می‌کند و شامل شکلی ماشین‌خوان از مقدار تاریخ و زمان عنصر است.
 
-## Instance methods
+## متدهای نمونه
 
-_No specific method; inherits methods from its parent, {{domxref("HTMLElement")}}._
+_هیچ متد خاصی ندارد؛ متدهای والد خود، {{domxref("HTMLElement")}}، را به ارث می‌برد._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The HTML element implementing this interface: {{HTMLElement("time")}}.
+- عنصر HTML پیاده‌ساز این رابط: {{HTMLElement("time")}}.
