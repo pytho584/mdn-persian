@@ -1,7 +1,5 @@
 ---
 title: "MediaRecorder: audioBitrateMode property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/audioBitrateMode"
-status: "needs-translation"
 ---
 
 ---
@@ -16,21 +14,21 @@ browser-compat: api.MediaRecorder.audioBitrateMode
 
 {{APIRef("MediaStream Recording")}}{{SeeCompatTable}}
 
-The **`audioBitrateMode`** read-only property of the {{domxref("MediaRecorder")}} interface returns the bitrate mode used to encode audio tracks.
+ویژگی فقط‌خواندنی **`audioBitrateMode`** از رابط {{domxref("MediaRecorder")}} حالت نرخ بیت مورد استفاده برای رمزگذاری ترک‌های صوتی را باز می‌گرداند.
 
-## Value
+## مقدار
 
-One of the following:
+یکی از موارد زیر:
 
 - `constant`
-  - : The {{domxref("MediaRecorder")}} encodes at this constant bitrate.
+  - : {{domxref("MediaRecorder")}} با این نرخ بیت ثابت رمزگذاری می‌کند.
 - `variable`
-  - : The {{domxref("MediaRecorder")}} encodes using this variable bitrate, allowing more space to be used for complex signals and less space for less complex signals.
+  - : {{domxref("MediaRecorder")}} با استفاده از این نرخ بیت متغیر رمزگذاری می‌کند؛ به این ترتیب فضای بیشتری برای سیگنال‌های پیچیده و فضای کمتری برای سیگنال‌های ساده‌تر اختصاص می‌یابد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
