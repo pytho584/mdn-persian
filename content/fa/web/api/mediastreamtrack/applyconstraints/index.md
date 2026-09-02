@@ -1,11 +1,5 @@
 ---
 title: "MediaStreamTrack: applyConstraints() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/applyConstraints"
-status: "needs-translation"
----
-
----
-title: "MediaStreamTrack: applyConstraints() method"
 short-title: applyConstraints()
 slug: Web/API/MediaStreamTrack/applyConstraints
 page-type: web-api-instance-method
@@ -14,40 +8,40 @@ browser-compat: api.MediaStreamTrack.applyConstraints
 
 {{APIRef("Media Capture and Streams")}}
 
-The **`applyConstraints()`** method of the {{domxref("MediaStreamTrack")}} interface applies a set of constraints to the track; these constraints let the website or app establish ideal values and acceptable ranges of values for the constrainable properties of the track, such as frame rate, dimensions, echo cancellation, and so forth.
+متد **`applyConstraints()`** از رابط {{domxref("MediaStreamTrack")}} مجموعه‌ای از محدودیت‌ها را روی track اعمال می‌کند؛ این محدودیت‌ها به وب‌سایت یا برنامه اجازه می‌دهند مقادیر ایده‌آل و بازه‌های قابل قبول را برای ویژگی‌های قابل‌محدودیتِ track، مانند نرخ فریم، ابعاد، حذف پژواک و غیره تعیین کنند.
 
-Constraints can be used to ensure that the media meets certain guidelines you prefer.
-For example, you may prefer high-density video but require that the frame rate be a little low to help keep the data rate low enough not overtax the network.
-Constraints can also specify ideal and/or acceptable sizes or ranges of sizes.
-See [Applying constraints](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#applying_constraints) in [Capabilities, constraints, and settings](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints) for more information on how to apply your preferred constraints.
+از محدودیت‌ها می‌توان برای اطمینان از مطابقت رسانه با معیارهای خاصی که ترجیح می‌دهید استفاده کرد.
+برای مثال، ممکن است ویدیوی با کیفیت بالا ترجیح دهید اما نرخ فریم را کمی پایین نگه دارید تا نرخ داده به اندازه‌ای کم بماند که شبکه را تحت فشار نگذارد.
+محدودیت‌ها همچنین می‌توانند اندازه‌ها یا بازه‌های اندازه ایده‌آل و/یا قابل قبول را مشخص کنند.
+برای اطلاعات بیشتر در مورد نحوه اعمال محدودیت‌های دلخواه، به [اعمال محدودیت‌ها](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#applying_constraints) در [قابلیت‌ها، محدودیت‌ها و تنظیمات](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints) مراجعه کنید.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 applyConstraints()
 applyConstraints(constraints)
 ```
 
-### Parameters
+### پارامترها
 
 - `constraints` {{optional_inline}}
-  - : A {{domxref("MediaTrackConstraints")}} object listing the constraints to apply to the track's constrainable properties; any existing constraints are replaced with the new values specified, and any constrainable properties not included are restored to their default constraints.
-    If this parameter is omitted, all currently set custom constraints are cleared.
-    This object represents the basic set of constraints that must apply for the {{jsxref("Promise")}} to resolve.
-    The object may contain an advanced property containing an array of additional `MediaTrackConstraints` objects, which are treated as exact requires.
+  - : یک شیء {{domxref("MediaTrackConstraints")}} که محدودیت‌های مورد نظر برای اعمال بر ویژگی‌های قابل‌محدودیتِ track را فهرست می‌کند؛ هر محدودیت موجود با مقادیر جدید مشخص‌شده جایگزین می‌شود و هر ویژگی قابل‌محدودیتی که درج نشده باشد به محدودیت‌های پیش‌فرض خود بازنشانی می‌شود.
+    اگر این پارامتر حذف شود، تمام محدودیت‌های سفارشیِ در حال تنظیم پاک می‌شوند.
+    این شیء مجموعه محدودیت‌های پایه را نشان می‌دهد که برای حل شدن {{jsxref("Promise")}} باید اعمال شوند.
+    شیء ممکن است شامل یک ویژگی `advanced` باشد که آرایه‌ای از اشیاء `MediaTrackConstraints` اضافی را در خود دارد و به‌عنوان الزامات دقیق در نظر گرفته می‌شوند.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} which resolves when the constraints have been successfully applied.
-If the constraints cannot be applied, the promise is rejected with an {{domxref("OverconstrainedError")}} that is a {{domxref("DOMException")}} whose name is `OverconstrainedError` with additional parameters, and, to indicate that the constraints could not be met.
-This can happen if the specified constraints are too strict to find a match when attempting to configure the track.
+یک {{jsxref("Promise")}} که هنگام اعمال موفقیت‌آمیز محدودیت‌ها حل می‌شود.
+اگر محدودیت‌ها قابل اعمال نباشند، promise با یک {{domxref("OverconstrainedError")}} رد می‌شود که یک {{domxref("DOMException")}} با نام `OverconstrainedError` و پارامترهای اضافی است و نشان می‌دهد که محدودیت‌ها قابل برآورده شدن نبودند.
+این اتفاق می‌تواند رخ دهد اگر محدودیت‌های مشخص‌شده بیش از حد سخت‌گیرانه باشند و هنگام تلاش برای پیکربندی track مطابقت‌ای یافت نشود.
 
-## Examples
+## مثال‌ها
 
-The following shows how to specify a basic and advanced set of constraints.
-It specifies that the page or web app needs a width between 640 and 1280 and a height between 480 and 720, with the later number in each pair being preferred.
-The advanced property further specifies that an image size of 1920 by 1280 is the preferred or an {{glossary("aspect ratio")}} of 1.333 if that is not available.
-Note that these constraints also illustrate what the spec refers to as a _backoff strategy_.
+مثال زیر نحوه مشخص‌کردن مجموعه‌ای از محدودیت‌های پایه و پیشرفته را نشان می‌دهد.
+این مثال مشخص می‌کند که صفحه یا وب‌اپلیکیشن به عرضی بین ۶۴۰ و ۱۲۸۰ و ارتفاعی بین ۴۸۰ و ۷۲۰ نیاز دارد و عدد دوم در هر جفت ترجیح داده می‌شود.
+ویژگی `advanced` همچنین مشخص می‌کند که اندازه تصویر ۱۹۲۰ در ۱۲۸۰ ترجیح داده می‌شود یا اگر در دسترس نبود، یک {{glossary("aspect ratio")}} (نسبت ابعاد) برابر با ۱٫۳۳۳.
+توجه کنید که این محدودیت‌ها همچنین چیزی را نشان می‌دهند که مشخصات آن را _راهبرد عقب‌نشینی_ (backoff strategy) می‌نامند.
 
 ```js
 const constraints = {
@@ -61,22 +55,22 @@ navigator.mediaDevices.getUserMedia({ video: true }).then((mediaStream) => {
   track
     .applyConstraints(constraints)
     .then(() => {
-      // Do something with the track such as using the Image Capture API.
+      // کارهایی مانند استفاده از API تصویربرداری را با track انجام دهید.
     })
     .catch((e) => {
-      // The constraints could not be satisfied by the available devices.
+      // محدودیت‌ها توسط دستگاه‌های موجود قابل برآورده شدن نبودند.
     });
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [MediaStream Image Capture API](/en-US/docs/Web/API/MediaStream_Image_Capture_API)
