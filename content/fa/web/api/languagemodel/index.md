@@ -1,11 +1,5 @@
 ---
 title: "LanguageModel"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/LanguageModel"
-status: "needs-translation"
----
-
----
-title: LanguageModel
 slug: Web/API/LanguageModel
 page-type: web-api-interface
 browser-compat: api.LanguageModel
@@ -13,53 +7,53 @@ browser-compat: api.LanguageModel
 
 {{APIRef("Prompt API")}}{{SecureContext_Header}}
 
-The **`LanguageModel`** interface of the [Prompt API](/en-US/docs/Web/API/Prompt_API) represents a session with a browser-provided language model. It exposes static methods for creating sessions and checking availability, as well as instance methods for prompting the model, appending context, and managing the context window.
+رابط **`LanguageModel`** از [API Prompt](/en-US/docs/Web/API/Prompt_API) یک نشست (session) با یک مدل زبانی ارائه‌شده توسط مرورگر را نشان می‌دهد. این رابط متدهای ایستا برای ایجاد نشست‌ها و بررسی در دسترس بودن، و همچنین متدهای نمونه برای ارائه درخواست به مدل، افزودن زمینه (context) و مدیریت پنجره زمینه را ارائه می‌دهد.
 
-`LanguageModel` instances cannot be constructed directly. Instead, use the static {{domxref("LanguageModel.create_static", "LanguageModel.create()")}} method.
+نمونه‌های `LanguageModel` را نمی‌توان مستقیماً ساخت. در عوض، از متد ایستا {{domxref("LanguageModel.create_static", "LanguageModel.create()")}} استفاده کنید.
 
 {{InheritanceDiagram}}
 
-## Static methods
+## متدهای ایستا
 
 - {{domxref("LanguageModel.availability_static", "LanguageModel.availability()")}}
-  - : Returns a {{jsxref("Promise")}} that resolves with an enumerated value indicating whether the language model is available for the given options.
+  - : یک {{jsxref("Promise")}} بازمی‌گرداند که با یک مقدار شمارشی حل می‌شود و نشان می‌دهد که آیا مدل زبانی برای گزینه‌های داده شده در دسترس است یا خیر.
 - {{domxref("LanguageModel.create_static", "LanguageModel.create()")}}
-  - : Returns a {{jsxref("Promise")}} that resolves with a new `LanguageModel` session, downloading the model data if necessary.
+  - : یک {{jsxref("Promise")}} بازمی‌گرداند که با یک نشست جدید `LanguageModel` حل می‌شود و در صورت نیاز داده‌های مدل را دانلود می‌کند.
 
-## Instance methods
+## متدهای نمونه
 
 - {{domxref("LanguageModel.append()")}}
-  - : Returns a {{jsxref("Promise")}} that resolves when the given input has been added to the session's context window, without generating a response.
+  - : یک {{jsxref("Promise")}} بازمی‌گرداند که وقتی ورودی داده شده به پنجره زمینه نشست اضافه شود، بدون تولید پاسخ، حل می‌شود.
 - {{domxref("LanguageModel.clone()")}}
-  - : Returns a {{jsxref("Promise")}} that resolves with a new `LanguageModel` session that is a copy of the session it is called on, including all context.
+  - : یک {{jsxref("Promise")}} بازمی‌گرداند که با یک نشست جدید `LanguageModel` که کپی نشستی است که روی آن فراخوانی شده، شامل تمام زمینه، حل می‌شود.
 - {{domxref("LanguageModel.destroy()")}} {{experimental_inline}}
-  - : Releases the resources assigned to the `LanguageModel` instance it is called on and stops any further activity on it.
+  - : منابع اختصاص داده شده به نمونه `LanguageModel` که روی آن فراخوانی شده را آزاد می‌کند و هر فعالیت بیشتر روی آن را متوقف می‌کند.
 - {{domxref("LanguageModel.measureContextUsage()")}}
-  - : Returns a {{jsxref("Promise")}} that resolves with the number of context window tokens that the given input would consume if it were used in an operation such as `prompt()` or `append()`.
+  - : یک {{jsxref("Promise")}} بازمی‌گرداند که با تعداد توکن‌های پنجره زمینه که ورودی داده شده در صورت استفاده در عملیاتی مانند `prompt()` یا `append()` مصرف می‌کند، حل می‌شود.
 - {{domxref("LanguageModel.prompt()")}}
-  - : Returns a {{jsxref("Promise")}} that resolves with the model's complete response to the given input.
+  - : یک {{jsxref("Promise")}} بازمی‌گرداند که با پاسخ کامل مدل به ورودی داده شده حل می‌شود.
 - {{domxref("LanguageModel.promptStreaming()")}}
-  - : Returns a {{domxref("ReadableStream")}} that streams the model's response to the given input as it is generated.
+  - : یک {{domxref("ReadableStream")}} بازمی‌گرداند که پاسخ مدل به ورودی داده شده را به‌صورت جریانی در حین تولید، پخش می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("LanguageModel.contextUsage")}} {{ReadOnlyInline}}
-  - : Returns the number of context window tokens currently consumed by this session.
+  - : تعداد توکن‌های پنجره زمینه که در حال حاضر توسط این نشست مصرف شده است را بازمی‌گرداند.
 - {{domxref("LanguageModel.contextWindow")}} {{ReadOnlyInline}}
-  - : Returns the total context window size available for this session, in tokens.
+  - : اندازه کل پنجره زمینه در دسترس برای این نشست را بر حسب توکن بازمی‌گرداند.
 
-## Events
+## رویدادها
 
 - {{domxref("LanguageModel.contextoverflow_event", "contextoverflow")}}
-  - : Fired when a `prompt()`, `promptStreaming()`, or `append()` call exceeds the context window size.
+  - : زمانی رخ می‌دهد که یک فراخوانی `prompt()`، `promptStreaming()` یا `append()` از اندازه پنجره زمینه فراتر رود.
 
-## Examples
+## مثال‌ها
 
-### Creating a session and prompting the model
+### ایجاد یک نشست و ارائه درخواست به مدل
 
-This example first calls {{domxref("LanguageModel.create_static", "create()")}} to get a new session. It specifies that the language model adopt a `"system"` role and defines how it should behave. Note that the example uses `await` because `create()` returns a {{jsxref("Promise")}}. This may take some time to resolve if the model needs to be downloaded.
+این مثال ابتدا {{domxref("LanguageModel.create_static", "create()")}} را فراخوانی می‌کند تا یک نشست جدید دریافت کند. این مشخص می‌کند که مدل زبانی نقش `"system"` را اتخاذ کند و نحوه رفتار آن را تعریف می‌کند. توجه داشته باشید که مثال از `await` استفاده می‌کند زیرا `create()` یک {{jsxref("Promise")}} بازمی‌گرداند. اگر مدل نیاز به دانلود داشته باشد، حل شدن این Promise ممکن است مدتی طول بکشد.
 
-After creating the session, the example calls {{domxref("LanguageModel.prompt()", "prompt()")}} to ask a specific question.
+پس از ایجاد نشست، مثال {{domxref("LanguageModel.prompt()", "prompt()")}} را فراخوانی می‌کند تا یک سوال مشخص بپرسد.
 
 ```js
 const session = await LanguageModel.create({
@@ -75,9 +69,9 @@ const response = await session.prompt("What is the capital of France?");
 console.log(response); // "The capital of France is Paris."
 ```
 
-### Streaming a response
+### پخش جریانی پاسخ
 
-This example calls {{domxref("LanguageModel.promptStreaming()", "promptStreaming()")}} to get an instance of {{domxref("ReadableStream")}} and writes it to the console in chunks.
+این مثال {{domxref("LanguageModel.promptStreaming()", "promptStreaming()")}} را فراخوانی می‌کند تا یک نمونه از {{domxref("ReadableStream")}} دریافت کند و آن را به صورت تکه‌تکه در کنسول می‌نویسد.
 
 ```js
 const session = await LanguageModel.create();
@@ -88,14 +82,14 @@ for await (const chunk of readableStream) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - [Prompt API](/en-US/docs/Web/API/Prompt_API)
