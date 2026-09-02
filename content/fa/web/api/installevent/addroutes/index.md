@@ -1,11 +1,5 @@
 ---
 title: "InstallEvent: addRoutes() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/InstallEvent/addRoutes"
-status: "needs-translation"
----
-
----
-title: "InstallEvent: addRoutes() method"
 short-title: addRoutes()
 slug: Web/API/InstallEvent/addRoutes
 page-type: web-api-instance-method
@@ -14,7 +8,7 @@ browser-compat: api.InstallEvent.addRoutes
 
 {{APIRef("Service Workers API")}}
 
-The **`addRoutes()`** method of the {{domxref("InstallEvent")}} interface specifies one or more static routes, which define rules for fetching specified resources that will be used even before service worker startup. This allows you to, for example, bypass a service worker in cases where you always want to fetch a resource from the network or a browser {{domxref("Cache")}}, and avoids the performance overhead of unnecessary service worker cycles.
+متد **`addRoutes()`** از رابط {{domxref("InstallEvent")}} یک یا چند مسیر ایستا (static route) را مشخص می‌کند؛ این مسیرها قوانینی را برای واکشی منابع مشخص تعریف می‌کنند که حتی پیش از راه‌اندازی service worker استفاده خواهند شد. این امکان را به شما می‌دهد تا برای مثال در مواردی که همیشه می‌خواهید منبعی را از شبکه یا از {{domxref("Cache")}} مرورگر واکشی کنید، service worker را دور بزنید و از سربار عملکرد ناشی از چرخه‌های غیرضروری service worker جلوگیری کنید.
 
 ## Syntax
 
@@ -25,51 +19,50 @@ addRoutes(routerRules)
 ### Parameters
 
 - `routerRules`
-  - : A single object, or an array of one or more objects, representing rules for how certain resources should be fetched. Each `routerRules` object contains the following properties:
+  - : یک شیء منفرد، یا آرایه‌ای از یک یا چند شیء، که قوانینی را برای نحوه واکشی منابع مشخص نشان می‌دهد. هر شیء `routerRules` شامل ویژگی‌های زیر است:
     - `condition`
-      - : An object defining one or more conditions that specify which resources should match this rule. The following properties can be included; if multiple properties are used, a resource must meet all specified conditions to match the rule.
+      - : شیئی که یک یا چند شرط را تعریف می‌کند و مشخص می‌کند کدام منابع باید با این قانون مطابقت داشته باشند. ویژگی‌های زیر می‌توانند گنجانده شوند؛ اگر چند ویژگی استفاده شود، یک منبع باید همه شرایط مشخص‌شده را داشته باشد تا با قانون مطابقت کند.
         - `not` {{optional_inline}}
-          - : A `condition` object defining conditions that must explicitly **not** be met to match the rule. Conditions defined inside a `not` condition are mutually exclusive with other conditions.
+          - : یک شیء `condition` که شرایطی را تعریف می‌کند که برای مطابقت با قانون، به‌وضوح **نباید** برقرار باشند. شرایط تعریف‌شده درون یک شرط `not` با سایر شرایط متقابلاً انحصاری هستند.
         - `or` {{optional_inline}}
-          - : An array of `condition` objects. One set of these defined conditions must be met to match the rule. Conditions defined inside an `or` condition are mutually exclusive with other conditions.
+          - : آرایه‌ای از شیءهای `condition`. برای مطابقت با قانون، یکی از مجموعه‌های این شرایط تعریف‌شده باید برقرار باشد. شرایط تعریف‌شده درون یک شرط `or` با سایر شرایط متقابلاً انحصاری هستند.
         - `requestMethod` {{optional_inline}}
-          - : A string representing the [HTTP method](/en-US/docs/Web/HTTP/Reference/Methods) a request should be sent by for it to match the rule, such as `"get"`, `"put"`, or `"head"`.
+          - : رشته‌ای که [متد HTTP](/en-US/docs/Web/HTTP/Reference/Methods) را نشان می‌دهد که یک درخواست باید با آن ارسال شود تا با قانون مطابقت کند، مانند `"get"`, `"put"` یا `"head"`.
         - `requestMode` {{optional_inline}}
-          - : A string representing the [mode](/en-US/docs/Web/API/Request/mode) a request should have for it to match the rule, for example `"same-origin"`, `"no-cors"`, or `"cors"`.
+          - : رشته‌ای که [mode](/en-US/docs/Web/API/Request/mode) یک درخواست را نشان می‌دهد که باید داشته باشد تا با قانون مطابقت کند، برای مثال `"same-origin"`, `"no-cors"` یا `"cors"`.
         - `requestDestination` {{optional_inline}}
-          - : A string representing the [destination](/en-US/docs/Web/API/Request/destination) of a request, i.e., what content type should be requested, for it to match the rule. Examples include `"audio"`, `"document"`, `"script"`, and `"worker"`.
+          - : رشته‌ای که [destination](/en-US/docs/Web/API/Request/destination) یک درخواست را نشان می‌دهد، یعنی چه نوع محتوایی باید درخواست شود، تا با قانون مطابقت کند. مثال‌ها شامل `"audio"`, `"document"`, `"script"` و `"worker"` هستند.
         - `runningStatus` {{optional_inline}}
-          - : An enumerated value representing the required running status of the service worker for a request to match the rule. Values can be `"running"` or `"not-running"`.
+          - : یک مقدار شمارشی (enumerated) که وضعیت اجرای لازم service worker را برای مطابقت یک درخواست با قانون نشان می‌دهد. مقادیر می‌توانند `"running"` یا `"not-running"` باشند.
         - `urlPattern` {{optional_inline}}
-          - : A {{domxref("URLPattern")}} instance, or a `URLPattern()` constructor [`input`](/en-US/docs/Web/API/URLPattern/URLPattern#input) pattern representing the URLs that match the rule. Regular expression capturing groups are not allowed, so {{domxref("URLPattern.hasRegExpGroups")}} must be `false`.
-
+          - : یک نمونه {{domxref("URLPattern")}}، یا یک الگوی [`input`](/en-US/docs/Web/API/URLPattern/URLPattern#input) از سازنده `URLPattern()` که URLهای منطبق با قانون را نشان می‌دهد. گروه‌های ضبط عبارت باقاعده (regular expression capturing groups) مجاز نیستند، بنابراین {{domxref("URLPattern.hasRegExpGroups")}} باید `false` باشد.
     - `source`
-      - : An enumerated value or an object specifying the source from which matching resources will be loaded. Possible enumerated values are:
+      - : یک مقدار شمارشی یا یک شیء که منبع بارگذاری منابع منطبق را مشخص می‌کند. مقادیر شمارشی ممکن عبارتند از:
         - `"cache"`
-          - : Resources will be loaded from a browser {{domxref("Cache")}}.
+          - : منابع از {{domxref("Cache")}} مرورگر بارگذاری خواهند شد.
         - `"fetch-event"`
-          - : Resources will be loaded via the service worker's {{DOMxRef("ServiceWorkerGlobalScope.fetch_event", "fetch")}} event handler. This can be combined with the `"runningStatus"` condition to load resources from a service worker if it is running and fall back to a static route on the network if it is not.
+          - : منابع از طریق کنترل‌کننده رویداد {{DOMxRef("ServiceWorkerGlobalScope.fetch_event", "fetch")}} مربوط به service worker بارگذاری خواهند شد. این مقدار را می‌توان با شرط `"runningStatus"` ترکیب کرد تا اگر service worker در حال اجرا بود، منابع از آن بارگذاری شوند و اگر در حال اجرا نبود، به یک مسیر ایستا در شبکه بازگردد (fall back).
         - `"network"`
-          - : Resources will be loaded from the network.
+          - : منابع از شبکه بارگذاری خواهند شد.
         - `"race-network-and-fetch-handler"`
-          - : Attempts are made to load resources from the network and the service worker's {{DOMxRef("ServiceWorkerGlobalScope.fetch_event", "fetch")}} event handler simultaneously. Whichever one completes first is used.
+          - : تلاش می‌شود منابع به‌طور همزمان از شبکه و از کنترل‌کننده رویداد {{DOMxRef("ServiceWorkerGlobalScope.fetch_event", "fetch")}} مربوط به service worker بارگذاری شوند. هر کدام که زودتر کامل شود استفاده می‌شود.
 
-        The `source` value can also be set to an object containing a single property, `cacheName`, the value of which is a string representing the name of a browser {{domxref("Cache")}}. Matching resources will be loaded from this specific named cache if it exists.
+        مقدار `source` همچنین می‌تواند به یک شیء حاوی یک ویژگی واحد به نام `cacheName` تنظیم شود که مقدار آن رشته‌ای است نشان‌دهنده نام یک {{domxref("Cache")}} مرورگر. در صورت وجود، منابع منطبق از این حافظه نهان نامدار خاص بارگذاری خواهند شد.
 
 ### Return value
 
-A {{jsxref("Promise")}} that fulfills with `undefined`.
+یک {{jsxref("Promise")}} که با `undefined` تکمیل می‌شود.
 
 ### Exceptions
 
 - `TypeError` {{domxref("DOMException")}}
-  - : Thrown if one or more of the rules objects inside `routerRules` is invalid, or has a `source` value of `"fetch-event"` when the associated service worker does not have a {{DOMxRef("ServiceWorkerGlobalScope.fetch_event", "fetch")}} event handler. Also thrown if you try to combine `or` with another condition type.
+  - : در صورتی پرتاب می‌شود که یک یا چند شیء قانون درون `routerRules` نامعتبر باشد، یا دارای مقدار `"fetch-event"` برای `source` باشد در حالی که service worker مرتبط دارای کنترل‌کننده رویداد {{DOMxRef("ServiceWorkerGlobalScope.fetch_event", "fetch")}} نباشد. همچنین اگر بخواهید `or` را با نوع شرط دیگری ترکیب کنید، پرتاب می‌شود.
 
 ## Examples
 
 ### Route specific requests to the network if the service worker is not running
 
-In the following example, URLs that start with `/articles` are routed to the network if the service worker is not currently running:
+در مثال زیر، URLهایی که با `/articles` شروع می‌شوند، اگر service worker در حال حاضر در حال اجرا نباشد، به شبکه مسیریابی می‌شوند:
 
 ```js
 addEventListener("install", (event) => {
@@ -85,7 +78,7 @@ addEventListener("install", (event) => {
 
 ### Route form post requests to the network
 
-In the following example, [`POST`](/en-US/docs/Web/HTTP/Reference/Methods/POST) requests to a form are sent directly to the network and bypass the service worker:
+در مثال زیر، درخواست‌های [`POST`](/en-US/docs/Web/HTTP/Reference/Methods/POST) به یک فرم مستقیماً به شبکه ارسال می‌شوند و service worker را دور می‌زنند:
 
 ```js
 addEventListener("install", (event) => {
@@ -101,7 +94,7 @@ addEventListener("install", (event) => {
 
 ### Route certain image type requests to a named cache
 
-In the following example, the browser {{domxref("Cache")}} named `"pictures"` is used for fetching files with extensions of `.png` or `.jpg`:
+در مثال زیر، {{domxref("Cache")}} مرورگر با نام `"pictures"` برای واکشی فایل‌های با پسوند `.png` یا `.jpg` استفاده می‌شود:
 
 ```js
 addEventListener("install", (event) => {
@@ -117,9 +110,9 @@ addEventListener("install", (event) => {
 ```
 
 > [!NOTE]
-> If the cache does not exist, the browser defaults to using the network so that the requested resources can still be obtained provided the network is available.
+> اگر حافظه نهان وجود نداشته باشد، مرورگر به‌طور پیش‌فرض از شبکه استفاده می‌کند تا در صورت در دسترس بودن شبکه، منابع درخواستی همچنان قابل دریافت باشند.
 
-You can't combine `or` with another condition — this results in a `TypeError`. If for example you wanted to match files with extensions of `.png` or `.jpg` but only when the `requestMethod` is `get`, you'd need to specify two separate conditions:
+نمی‌توانید `or` را با شرط دیگری ترکیب کنید — این کار به `TypeError` منجر می‌شود. برای مثال، اگر بخواهید فایل‌هایی با پسوند `.png` یا `.jpg` را فقط زمانی مطابقت دهید که `requestMethod` برابر با `get` باشد، باید دو شرط جداگانه مشخص کنید:
 
 ```js
 addEventListener("install", (event) => {
@@ -157,6 +150,6 @@ addEventListener("install", (event) => {
 ## See also
 
 - {{domxref("InstallEvent")}}
-- [`install` event](/en-US/docs/Web/API/ServiceWorkerGlobalScope/install_event)
+- رویداد [`install`](/en-US/docs/Web/API/ServiceWorkerGlobalScope/install_event)
 - [Service Worker API](/en-US/docs/Web/API/Service_Worker_API)
-- [Use the Service Worker Static Routing API to bypass the service worker for specific paths](https://developer.chrome.com/blog/service-worker-static-routing) on `developer.chrome.com` (2024)
+- [استفاده از Service Worker Static Routing API برای دور زدن service worker در مسیرهای خاص](https://developer.chrome.com/blog/service-worker-static-routing) در `developer.chrome.com` (2024)
