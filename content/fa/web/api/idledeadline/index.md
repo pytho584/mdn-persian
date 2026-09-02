@@ -1,11 +1,5 @@
 ---
 title: "IdleDeadline"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IdleDeadline"
-status: "needs-translation"
----
-
----
-title: IdleDeadline
 slug: Web/API/IdleDeadline
 page-type: web-api-interface
 browser-compat: api.IdleDeadline
@@ -13,34 +7,34 @@ browser-compat: api.IdleDeadline
 
 {{APIRef("Background Tasks")}}
 
-The `IdleDeadline` interface is used as the data type of the input parameter to idle callbacks established by calling {{domxref("Window.requestIdleCallback()")}}. It offers a method, {{domxref("IdleDeadline.timeRemaining", "timeRemaining()")}}, which lets you determine how much longer the user agent estimates it will remain idle and a property, {{domxref("IdleDeadline.didTimeout", "didTimeout")}}, which lets you determine if your callback is executing because its timeout duration expired.
+رابط `IdleDeadline` به عنوان نوع دادهٔ پارامتر ورودی به callback‌های idle که با فراخوانی {{domxref("Window.requestIdleCallback()")}} ایجاد می‌شوند، استفاده می‌شود. این رابط یک متد به نام {{domxref("IdleDeadline.timeRemaining", "timeRemaining()")}} ارائه می‌دهد که به شما امکان می‌دهد تخمین بزنید عامل کاربر (user agent) تا چه مدت دیگر بیکار خواهد ماند، و همچنین یک ویژگی به نام {{domxref("IdleDeadline.didTimeout", "didTimeout")}} که به شما امکان می‌دهد تعیین کنید آیا callback شما به دلیل منقضی شدن مدت زمان وقفه (timeout) اجرا می‌شود یا خیر.
 
-To learn more about how request callbacks work, see [Collaborative Scheduling of Background Tasks](/en-US/docs/Web/API/Background_Tasks_API).
+برای آشنایی بیشتر با نحوهٔ کار callback‌های درخواست، به [زمان‌بندی مشارکتی وظایف پس‌زمینه](/en-US/docs/Web/API/Background_Tasks_API) مراجعه کنید.
 
-## Instance properties
+## ویژگی‌های نمونه (Instance properties)
 
 - {{domxref("IdleDeadline.didTimeout")}} {{ReadOnlyInline}}
-  - : A Boolean whose value is `true` if the callback is being executed because the timeout specified when the idle callback was installed has expired.
+  - : یک مقدار Boolean که اگر callback به دلیل منقضی شدن مدت زمان وقفه‌ای که هنگام نصب callback idle مشخص شده بود اجرا شود، مقدار آن `true` است.
 
-## Instance methods
+## روش‌های نمونه (Instance methods)
 
 - {{domxref("IdleDeadline.timeRemaining()")}}
-  - : Returns a {{domxref("DOMHighResTimeStamp")}}, which is a floating-point value providing an estimate of the number of milliseconds remaining in the current idle period. If the idle period is over, the value is 0. Your callback can call this repeatedly to see if there's enough time left to do more work before returning.
+  - : یک {{domxref("DOMHighResTimeStamp")}} برمی‌گرداند که یک مقدار اعشاری است و تخمینی از تعداد میلی‌ثانیه‌های باقی‌مانده در دورهٔ بیکاری (idle period) فعلی ارائه می‌دهد. اگر دورهٔ بیکاری به پایان رسیده باشد، مقدار 0 است. callback شما می‌تواند این متد را مکرراً فراخوانی کند تا ببیند آیا زمان کافی برای انجام کار بیشتر قبل از بازگشت وجود دارد یا خیر.
 
-## Example
+## مثال
 
-See our [complete example](/en-US/docs/Web/API/Background_Tasks_API#example) in the article [Cooperative Scheduling of Background Tasks API](/en-US/docs/Web/API/Background_Tasks_API).
+مثال کامل ما را در مقالهٔ [زمان‌بندی مشارکتی وظایف پس‌زمینه](/en-US/docs/Web/API/Background_Tasks_API#example) مشاهده کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Cooperative Scheduling of Background Tasks API](/en-US/docs/Web/API/Background_Tasks_API)
+- [زمان‌بندی مشارکتی وظایف پس‌زمینه](/en-US/docs/Web/API/Background_Tasks_API)
 - {{domxref("Window.requestIdleCallback()")}}
 - {{domxref("Window.cancelIdleCallback()")}}
