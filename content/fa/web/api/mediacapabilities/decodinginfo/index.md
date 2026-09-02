@@ -1,11 +1,5 @@
 ---
 title: "MediaCapabilities: decodingInfo() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaCapabilities/decodingInfo"
-status: "needs-translation"
----
-
----
-title: "MediaCapabilities: decodingInfo() method"
 short-title: decodingInfo()
 slug: Web/API/MediaCapabilities/decodingInfo
 page-type: web-api-instance-method
@@ -14,176 +8,174 @@ browser-compat: api.MediaCapabilities.decodingInfo
 
 {{APIRef("Media Capabilities API")}}{{AvailableInWorkers}}
 
-The **`decodingInfo()`** method of the {{domxref("MediaCapabilities")}} interface returns a promise that fulfils with information about how well the user agent can decode/display media with a given configuration.
+متد **`decodingInfo()`** از رابط {{domxref("MediaCapabilities")}} یک قول برمی‌گرداند که با اطلاعاتی درباره اینکه عامل کاربر (user agent) چقدر خوب می‌تواند رسانه‌ای با یک پیکربندی مشخص را رمزگشایی/نمایش دهد، fulfil می‌شود.
 
-The resolved object contains three boolean properties `supported`, `smooth`, and `powerefficient`, which indicate whether decoding the media described would be supported, and if so, whether decoding would be smooth and power-efficient.
+شیء resolved شامل سه ویژگی بولی `supported`، `smooth` و `powerefficient` است که نشان می‌دهد آیا رمزگشایی رسانه توصیف‌شده پشتیبانی می‌شود، و اگر بله، آیا رمزگشایی روان و کم‌مصرف خواهد بود.
 
-The method can also be used to test the user agent capabilities for decoding media encoded with a key system, but only when called in the main thread and in a secure context.
-If the configuration passed in the `configuration.keySystemConfiguration` property is supported for decoding the data, the resolved promise also includes a {{domxref("MediaKeySystemAccess")}} object that can be used to create a {{domxref("MediaKeys")}} object to setup encrypted playback.
+این متد همچنین می‌تواند برای تست قابلیت‌های عامل کاربر برای رمزگشایی رسانه‌ای که با یک سیستم کلید (key system) رمزگذاری شده است استفاده شود، اما فقط زمانی که در رشته اصلی (main thread) و در یک زمینه امن (secure context) فراخوانی شود.
+اگر پیکربندی ارسال‌شده در ویژگی `configuration.keySystemConfiguration` برای رمزگشایی داده‌ها پشتیبانی شود، قول resolved همچنین شامل یک شیء {{domxref("MediaKeySystemAccess")}} خواهد بود که می‌تواند برای ایجاد یک شیء {{domxref("MediaKeys")}} برای راه‌اندازی پخش رمزگذاری‌شده استفاده شود.
 
-> [!NOTE]
-> Calling `decodingInfo()` with this property may result in user-visible effects, such as asking for permission to access one or more system resources.
-> As such, this function should only be called when the application is ready to create and use a `MediaKeys` object with the provided configuration.
+> **یادداشت:** فراخوانی `decodingInfo()` با این ویژگی ممکن است اثرات قابل مشاهده برای کاربر داشته باشد، مانند درخواست مجوز برای دسترسی به یک یا چند منبع سیستم.
+> بنابراین، این تابع فقط زمانی باید فراخوانی شود که برنامه آماده ایجاد و استفاده از یک شیء `MediaKeys` با پیکربندی ارائه‌شده باشد.
 
-## Syntax
+## نحو
 
 ```js-nolint
 decodingInfo(configuration)
 ```
 
-### Parameters
+### پارامترها
 
 - `configuration`
-  - : An object with a property `type`, _either_ a `video` or `audio` property containing a configuration of the appropriate type, and optionally a `keySystemConfiguration` when decoding media encrypted with a key system: <!-- MediaDecodingConfiguration in the spec -->
+  - : یک شیء با یک ویژگی `type`، _یا_ یک ویژگی `video` یا `audio` حاوی یک پیکربندی از نوع مناسب، و به صورت اختیاری یک `keySystemConfiguration` هنگام رمزگشایی رسانه‌ای که با یک سیستم کلید رمزگذاری شده است: <!-- MediaDecodingConfiguration در مشخصات -->
     - `type`
-      - : The type of media being tested. This takes one of three values:
+      - : نوع رسانه‌ای که در حال تست است. یکی از سه مقدار زیر را می‌گیرد:
         - `file`
-          - : Represents a configuration that is meant to be used for a plain file playback.
+          - : نمایانگر یک پیکربندی است که برای پخش یک فایل ساده در نظر گرفته شده است.
         - `media-source`
-          - : Represents a configuration that is meant to be used for playback of a {{domxref("MediaSource")}}.
+          - : نمایانگر یک پیکربندی است که برای پخش یک {{domxref("MediaSource")}} در نظر گرفته شده است.
         - `webrtc`
-          - : Represents a configuration that is meant to be received using {{domxref("RTCPeerConnection")}} (not allowed when `keySystemConfiguration` is set).
+          - : نمایانگر یک پیکربندی است که قرار است با استفاده از {{domxref("RTCPeerConnection")}} دریافت شود (زمانی که `keySystemConfiguration` تنظیم شده باشد مجاز نیست).
 
     - `video`
-      - : Configuration object for a video media source.
-        This has the following properties: <!-- VideoConfiguration in the spec -->
+      - : شیء پیکربندی برای یک منبع رسانه ویدئویی.
+        دارای ویژگی‌های زیر است: <!-- VideoConfiguration در مشخصات -->
         - `contentType`
-          - : String containing a valid video MIME type, and (optionally) a [`codecs` parameter](/en-US/docs/Web/Media/Guides/Formats/codecs_parameter).
+          - : رشته‌ای حاوی یک نوع MIME ویدئویی معتبر، و (به صورت اختیاری) یک پارامتر [`codecs`](/en-US/docs/Web/Media/Guides/Formats/codecs_parameter).
         - `width`
-          - : The width of the video.
+          - : عرض ویدئو.
         - `height`
-          - : The height of the video.
+          - : ارتفاع ویدئو.
         - `bitrate`
-          - : The number of bits used to encode one second of the video file.
+          - : تعداد بیت‌هایی که برای رمزگذاری یک ثانیه از فایل ویدئویی استفاده شده است.
         - `framerate`
-          - : The number of frames making up one second of video playback.
+          - : تعداد فریم‌هایی که یک ثانیه از پخش ویدئو را تشکیل می‌دهند.
 
     - `audio`
-      - : Configuration object for an audio media source.
-        This has the following properties: <!-- AudioConfiguration in the spec -->
+      - : شیء پیکربندی برای یک منبع رسانه صوتی.
+        دارای ویژگی‌های زیر است: <!-- AudioConfiguration در مشخصات -->
         - `contentType`
-          - : String containing a valid audio MIME type, and (optionally) a [`codecs` parameter](/en-US/docs/Web/Media/Guides/Formats/codecs_parameter).
+          - : رشته‌ای حاوی یک نوع MIME صوتی معتبر، و (به صورت اختیاری) یک پارامتر [`codecs`](/en-US/docs/Web/Media/Guides/Formats/codecs_parameter).
         - `channels`
-          - : The number of channels used by the audio track.
+          - : تعداد کانال‌های استفاده‌شده توسط track صوتی.
         - `bitrate`
-          - : The number of bits used to encode one second of the audio file.
+          - : تعداد بیت‌هایی که برای رمزگذاری یک ثانیه از فایل صوتی استفاده شده است.
         - `samplerate`
-          - : The number of audio samples making up one second of the audio file.
+          - : تعداد نمونه‌های صوتی که یک ثانیه از فایل صوتی را تشکیل می‌دهند.
 
     - `keySystemConfiguration` {{optional_inline}}
-      - : Object specifying the key system configuration for encrypted media.
+      - : شیءای که پیکربندی سیستم کلید برای رسانه رمزگذاری‌شده را مشخص می‌کند.
 
-        > [!NOTE]
-        > [`Navigator.requestMediaKeySystemAccess()`](/en-US/docs/Web/API/Navigator/requestMediaKeySystemAccess) takes arrays some of the same data types in its `supportedConfigurations` argument.
+        > **یادداشت:** [`Navigator.requestMediaKeySystemAccess()`](/en-US/docs/Web/API/Navigator/requestMediaKeySystemAccess) در آرگومان `supportedConfigurations` خود آرایه‌هایی از برخی از انواع داده‌های مشابه می‌گیرد.
 
-        If specified, the [`type`](#type) must be `media-source` or `file` (not `webrtc`).
-        This has the following properties: <!-- MediaCapabilitiesKeySystemConfiguration in the spec -->
+        اگر مشخص شود، [`type`](#type) باید `media-source` یا `file` باشد (نه `webrtc`).
+        دارای ویژگی‌های زیر است: <!-- MediaCapabilitiesKeySystemConfiguration در مشخصات -->
         - `keySystem`
-          - : A string identifying the media key system.
-            For example `org.w3.clearkey` or `com.widevine.alpha`.
+          - : رشته‌ای که سیستم کلید رسانه را شناسایی می‌کند.
+            به عنوان مثال `org.w3.clearkey` یا `com.widevine.alpha`.
 
         - `initDataType` {{optional_inline}}
-          - : A string indicating the data type name the initialization data format, such as `"cenc"`, `"keyids"` and `"webm"`.
-            Allowed names are defined in the [Encrypted Media Extensions Initialization Data Format Registry](https://w3c.github.io/encrypted-media/format-registry/initdata/).
+          - : رشته‌ای که نام نوع داده قالب داده‌های مقداردهی اولیه را نشان می‌دهد، مانند `"cenc"`، `"keyids"` و `"webm"`.
+            نام‌های مجاز در [ثبت قالب داده‌های مقداردهی اولیه الحاقات رسانه رمزگذاری‌شده](https://w3c.github.io/encrypted-media/format-registry/initdata/) تعریف شده‌اند.
 
         - `distinctiveIdentifier` {{optional_inline}}
-          - : A string indicating whether the implementation may use "distinctive identifiers" (or distinctive permanent identifiers) for any operations associated with any object created from this configuration.
-            The allowed values are:
+          - : رشته‌ای که نشان می‌دهد آیا پیاده‌سازی ممکن است از "شناسه‌های متمایز" (یا شناسه‌های دائمی متمایز) برای هر عملیات مرتبط با هر شیء ایجاد شده از این پیکربندی استفاده کند.
+            مقادیر مجاز عبارتند از:
             - `required`
-              - : The returned object must support this feature.
+              - : شیء برگشتی باید از این ویژگی پشتیبانی کند.
             - `optional`
-              - : The returned object may support this feature.
-                This is the default
+              - : شیء برگشتی ممکن است از این ویژگی پشتیبانی کند.
+                این مقدار پیش‌فرض است.
             - `not-allowed`
-              - : The returned object must not support or use this feature.
+              - : شیء برگشتی نباید از این ویژگی پشتیبانی یا استفاده کند.
 
         - `persistentState` {{optional_inline}}
-          - : A string indicating whether the returned object must be able to persist session data or any other type of state.
-            The allowed values are:
+          - : رشته‌ای که نشان می‌دهد آیا شیء برگشتی باید بتواند داده‌های جلسه یا هر نوع وضعیت دیگری را ذخیره کند.
+            مقادیر مجاز عبارتند از:
             - `required`
-              - : The returned object must support this feature.
+              - : شیء برگشتی باید از این ویژگی پشتیبانی کند.
             - `optional`
-              - : The returned object may support this feature.
-                This is the default
+              - : شیء برگشتی ممکن است از این ویژگی پشتیبانی کند.
+                این مقدار پیش‌فرض است.
             - `not-allowed`
-              - : The returned object must not support or use this feature.
-                Only "temporary" sessions may be created when persistent state is not allowed.
+              - : شیء برگشتی نباید از این ویژگی پشتیبانی یا استفاده کند.
+                فقط جلسات "موقت" (temporary) زمانی که وضعیت پایدار مجاز نیست می‌توانند ایجاد شوند.
 
         - `sessionTypes` {{optional_inline}}
-          - : An array of strings indicating the session types that must be supported.
-            Permitted values include:
+          - : آرایه‌ای از رشته‌ها که انواع جلساتی را که باید پشتیبانی شوند نشان می‌دهد.
+            مقادیر مجاز شامل:
             - `temporary`
-              - : A session for which the license, key(s) and record of or data related to the session are not persisted.
-                The application does not need to manage such storage.
-                Implementations must support this option, and it is the default.
+              - : جلسه‌ای که مجوز، کلید(ها) و رکورد یا داده‌های مرتبط با جلسه در آن ذخیره نمی‌شوند.
+                برنامه نیازی به مدیریت چنین ذخیره‌سازی ندارد.
+                پیاده‌سازی‌ها باید از این گزینه پشتیبانی کنند و این گزینه پیش‌فرض است.
             - `persistent-license`
-              - : A session for which the license (and potentially other data related to the session) will be persisted.
-                A record of the license and associated keys persists even if the license is destroyed, providing an attestation that the license and key(s) it contains are no longer usable by the client.
+              - : جلسه‌ای که مجوز (و احتمالاً سایر داده‌های مرتبط با جلسه) در آن ذخیره خواهد شد.
+                یک رکورد از مجوز و کلیدهای مرتبط حتی اگر مجوز از بین برود باقی می‌ماند، و تأییدی ارائه می‌دهد که مجوز و کلید(های) موجود در آن دیگر توسط مشتری قابل استفاده نیستند.
 
         - `audio` {{optional_inline}}
-          - : The audio key system track configuration associated with the [`audio` configuration](#audio) above.
-            If set, then the [`audio` configuration](#audio) must also be set.
+          - : پیکربندی track سیستم کلید صوتی مرتبط با [`audio` configuration](#audio) بالا.
+            اگر تنظیم شود، [`audio` configuration](#audio) نیز باید تنظیم شود.
             - `encryptionScheme`
-              - : The encryption scheme associated with the content type, such as `cenc`, `cbcs`, `cbcs-1-9`.
-                This value should be set by an application (it defaults to `null`, indicating that any encryption scheme may be used).
+              - : طرح رمزگذاری مرتبط با نوع محتوا، مانند `cenc`، `cbcs`، `cbcs-1-9`.
+                این مقدار باید توسط یک برنامه تنظیم شود (پیش‌فرض `null` است، که نشان می‌دهد هر طرح رمزگذاری ممکن است استفاده شود).
             - `robustness`
-              - : The robustness level associated with the content type.
-                The empty string indicates that any ability to decrypt and decode the content type is acceptable.
+              - : سطح استحکام مرتبط با نوع محتوا.
+                رشته خالی نشان می‌دهد که هر توانایی برای رمزگشایی و رمزگشایی نوع محتوا قابل قبول است.
 
         - `video` {{optional_inline}}
-          - : The video key system track configuration associated with the [`video` configuration](#video) above.
-            If set, then the [`video` configuration](#video) must also be set.
+          - : پیکربندی track سیستم کلید ویدئویی مرتبط با [`video` configuration](#video) بالا.
+            اگر تنظیم شود، [`video` configuration](#video) نیز باید تنظیم شود.
             - `encryptionScheme`
-              - : The encryption scheme associated with the content type, such as `cenc`, `cbcs`, `cbcs-1-9`.
-                This value should be set by an application (it defaults to `null`, indicating that any encryption scheme may be used).
+              - : طرح رمزگذاری مرتبط با نوع محتوا، مانند `cenc`، `cbcs`، `cbcs-1-9`.
+                این مقدار باید توسط یک برنامه تنظیم شود (پیش‌فرض `null` است، که نشان می‌دهد هر طرح رمزگذاری ممکن است استفاده شود).
             - `robustness`
-              - : The robustness level associated with the content type.
-                The empty string indicates that any ability to decrypt and decode the content type is acceptable.
+              - : سطح استحکام مرتبط با نوع محتوا.
+                رشته خالی نشان می‌دهد که هر توانایی برای رمزگشایی و رمزگشایی نوع محتوا قابل قبول است.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref('Promise')}} fulfilling with an object containing the following attributes:
+یک {{jsxref('Promise')}} که با یک شیء حاوی ویژگی‌های زیر fulfil می‌شود:
 
 - `supported`
-  - : `true` if the media content can be decoded at all. Otherwise, it is `false`.
+  - : `true` اگر محتوای رسانه اصلاً قابل رمزگشایی باشد. در غیر این صورت `false` است.
 - `smooth`
-  - : `true` if playback of the media can be played at the frame rate specified by the configuration without needing to drop frames. Otherwise it is `false`.
+  - : `true` اگر پخش رسانه بتواند با نرخ فریم مشخص‌شده در پیکربندی بدون نیاز به انداختن فریم‌ها پخش شود. در غیر این صورت `false` است.
 - `powerEfficient`
-  - : `true` if playback of the media will be power efficient. Otherwise, it is `false`.
+  - : `true` اگر پخش رسانه کم‌مصرف باشد. در غیر این صورت `false` است.
 - `keySystemAccess`
-  - : A {{domxref("MediaKeySystemAccess")}} that can be used to create a {{domxref("MediaKeys")}} object to setup encrypted playback, or `null` if decoding is not supported using the supplied configuration.
+  - : یک {{domxref("MediaKeySystemAccess")}} که می‌تواند برای ایجاد یک شیء {{domxref("MediaKeys")}} برای راه‌اندازی پخش رمزگذاری‌شده استفاده شود، یا اگر رمزگشایی با پیکربندی ارائه‌شده پشتیبانی نشود `null` است.
 
-Browsers will report a supported media configuration as `smooth` and `powerEfficient` until stats on this device have been recorded.
-All supported audio codecs report `powerEfficient` as true.
+مرورگرها یک پیکربندی رسانه پشتیبانی‌شده را به عنوان `smooth` و `powerEfficient` گزارش می‌دهند تا زمانی که آمار روی این دستگاه ثبت شود.
+همه کدک‌های صوتی پشتیبانی‌شده `powerEfficient` را به عنوان `true` گزارش می‌دهند.
 
-### Exceptions
+### استثناها
 
 - {{jsxref("TypeError")}}
-  - : Thrown if the `configuration` passed to the `decodingInfo()` method is invalid, either because the type is not video or audio, the `contentType` is not a valid codec MIME type, the media decoding configuration is not a valid value for the `type` (file, media-source, or webrtc), or any other error in the media configuration passed to the method, including omitting any values.
+  - : اگر `configuration` ارسال‌شده به متد `decodingInfo()` نامعتبر باشد، چه به دلیل اینکه نوع آن ویدئو یا صوتی نیست، `contentType` یک نوع MIME کدک معتبر نیست، پیکربندی رمزگشایی رسانه یک مقدار معتبر برای `type` (file، media-source یا webrtc) نیست، یا هر خطای دیگری در پیکربندی رسانه ارسال‌شده به متد، از جمله حذف هر مقدار، پرتاب می‌شود.
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : The method is called in a worker when [`configuration.keySystemConfiguration`](#keysystemconfiguration) is defined.
+  - : متد در یک worker زمانی که [`configuration.keySystemConfiguration`](#keysystemconfiguration) تعریف شده است فراخوانی شود.
 
 - `SecurityError` {{domxref("DOMException")}}
-  - : The method is called outside of a secure context and [`configuration.keySystemConfiguration`](#keysystemconfiguration) is defined.
+  - : متد خارج از یک زمینه امن و زمانی که [`configuration.keySystemConfiguration`](#keysystemconfiguration) تعریف شده است فراخوانی شود.
 
-## Usage notes
+## نکات استفاده
 
-### Comparison with Navigator.requestMediaKeySystemAccess()
+### مقایسه با Navigator.requestMediaKeySystemAccess()
 
-`decodingInfo()` and the {{domxref("Navigator.requestMediaKeySystemAccess()")}} method of the [Encrypted Media Extensions API](/en-US/docs/Web/API/Encrypted_Media_Extensions_API) reflect fundamentally different approaches for selecting a configuration for decoding encrypted media.
+`decodingInfo()` و متد {{domxref("Navigator.requestMediaKeySystemAccess()")}} از [API الحاقات رسانه رمزگذاری‌شده](/en-US/docs/Web/API/Encrypted_Media_Extensions_API) رویکردهای اساساً متفاوتی را برای انتخاب یک پیکربندی برای رمزگشایی رسانه رمزگذاری‌شده منعکس می‌کنند.
 
-The configuration parameter for `Navigator.requestMediaKeySystemAccess()` takes an array of possible configurations and allows the system to choose the one that it considers appropriate.
+پارامتر پیکربندی برای `Navigator.requestMediaKeySystemAccess()` یک آرایه از پیکربندی‌های ممکن می‌گیرد و به سیستم اجازه می‌دهد تا پیکربندی‌ای را که مناسب می‌داند انتخاب کند.
 
-By contrast, `decodingInfo()` takes one configuration at a time.
-The expectation is that the caller will execute `decodingInfo()` multiple times, starting with the most preferred configurations and stopping as soon as it finds a configuration that meets application requirements for being smooth, power-efficient, or both.
-In other words, the selection decision is devolved to the caller.
+در مقابل، `decodingInfo()` یک پیکربندی را در یک زمان می‌گیرد.
+انتظار می‌رود که فراخواننده `decodingInfo()` را چندین بار اجرا کند، از پیکربندی‌های ترجیحی‌تر شروع کرده و به محض یافتن پیکربندی‌ای که نیازهای برنامه برای روان بودن، کم‌مصرف بودن یا هر دو را برآورده می‌کند، متوقف شود.
+به عبارت دیگر، تصمیم انتخاب به فراخواننده واگذار می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Getting decoding information for unencrypted media files
+### دریافت اطلاعات رمزگشایی برای فایل‌های رسانه رمزگذاری‌نشده
 
-This example shows how to create a media configuration for an audio file and then use it in `MediaCapabilities.decodingInfo()`.
+این مثال نحوه ایجاد یک پیکربندی رسانه برای یک فایل صوتی و سپس استفاده از آن در `MediaCapabilities.decodingInfo()` را نشان می‌دهد.
 
 ```css hidden
 #log {
@@ -230,7 +222,7 @@ navigator.mediaCapabilities.decodingInfo(audioConfig).then((result) => {
 });
 ```
 
-Similarly, the code below shows the configuration for a video file.
+به طور مشابه، کد زیر پیکربندی برای یک فایل ویدئویی را نشان می‌دهد.
 
 ```js
 const videoConfig = {
@@ -258,12 +250,12 @@ navigator.mediaCapabilities.decodingInfo(videoConfig).then((result) => {
 
 {{EmbedLiveSample("Getting decoding information for unencrypted media files")}}
 
-### Getting decoding information for encrypted media
+### دریافت اطلاعات رمزگشایی برای رسانه رمزگذاری‌شده
 
-This example shows how you might use `decodingInfo()` to select a media configuration for encrypted content.
+این مثال نحوه استفاده از `decodingInfo()` برای انتخاب یک پیکربندی رسانه برای محتوای رمزگذاری‌شده را نشان می‌دهد.
 
-As in the previous example we define a media configuration, but this time we use the `type` of `media-source` (rather than `file`), and specify both audio and video content.
-We also specify a simple `keySystemConfiguration`.
+مانند مثال قبلی یک پیکربندی رسانه تعریف می‌کنیم، اما این بار از نوع `media-source` (به جای `file`) استفاده می‌کنیم و محتوای صوتی و ویدئویی را مشخص می‌کنیم.
+همچنین یک `keySystemConfiguration` ساده مشخص می‌کنیم.
 
 ```css hidden
 #log {
@@ -310,8 +302,8 @@ const encryptedMediaConfig = {
 };
 ```
 
-In the previous example we used [promise chaining](/en-US/docs/Web/JavaScript/Guide/Using_promises#chaining), to wait on the result.
-Here we've chosen to use [`async` and `await`](/en-US/docs/Learn_web_development/Extensions/Async_JS/Promises#async_and_await) to wait on the result, and then log it.
+در مثال قبلی از [زنجیره‌سازی قول‌ها](/en-US/docs/Web/JavaScript/Guide/Using_promises#chaining) برای انتظار برای نتیجه استفاده کردیم.
+در اینجا ما انتخاب کرده‌ایم که از [`async` و `await`](/en-US/docs/Learn_web_development/Extensions/Async_JS/Promises#async_and_await) برای انتظار برای نتیجه استفاده کنیم و سپس آن را ثبت کنیم.
 
 ```js
 getDecodingInfo(encryptedMediaConfig);
@@ -337,17 +329,17 @@ async function getDecodingInfo(mediaConfig) {
 }
 ```
 
-The log output is shown below.
+خروجی ثبت شده در زیر نشان داده شده است.
 
 {{EmbedLiveSample("Getting decoding information for encrypted media")}}
 
-### Iterating through decoding information for encrypted media
+### پیمایش در اطلاعات رمزگشایی برای رسانه رمزگذاری‌شده
 
-The previous example showed how you can use `decodingInfo()` to get information for just one configuration.
-In reality the method would normally be called iteratively with a number of configurations, selecting the first supported configuration that matches the application's criteria for smooth playing or power efficiency.
-The way this works is described below.
+مثال قبلی نشان داد که چگونه می‌توانید از `decodingInfo()` برای دریافت اطلاعات فقط برای یک پیکربندی استفاده کنید.
+در واقعیت، این متد معمولاً به صورت تکراری با تعدادی پیکربندی فراخوانی می‌شود و اولین پیکربندی پشتیبانی‌شده‌ای که معیارهای برنامه برای پخش روان یا کم‌مصرف را برآورده می‌کند انتخاب می‌کند.
+نحوه کار این روش در زیر توضیح داده شده است.
 
-Assuming we already have an `Array` of media configurations named `orderedMediaConfigs`, which we have ordered from most to least wanted, we can use the [`Array.prototype.map()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) to call `decodingInfo()` for each configuration and get an array containing all the returned {{jsxref("Promise")}} objects.
+با فرض اینکه از قبل یک `Array` از پیکربندی‌های رسانه به نام `orderedMediaConfigs` داریم که به ترتیب از بیشترین به کمترین مطلوب مرتب شده‌اند، می‌توانیم از [`Array.prototype.map()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) برای فراخوانی `decodingInfo()` برای هر پیکربندی استفاده کنیم و آرایه‌ای حاوی تمام اشیاء {{jsxref("Promise")}} برگشتی بدست آوریم.
 
 ```js
 const capabilitiesPromises = orderedMediaConfigs.map((mediaConfig) =>
@@ -355,8 +347,8 @@ const capabilitiesPromises = orderedMediaConfigs.map((mediaConfig) =>
 );
 ```
 
-We then use a [`for await...of` loop](/en-US/docs/Web/JavaScript/Reference/Statements/for-await...of) to iterate the promises as they resolve.
-In the loop we store the last supported configuration to `nonSmoothConfig`, and we exit the loop as soon as we find a smooth configuration, setting this as our `bestConfig`.
+سپس از یک [حلقه `for await...of`](/en-US/docs/Web/JavaScript/Reference/Statements/for-await...of) برای پیمایش قول‌ها در حین resolve شدن استفاده می‌کنیم.
+در حلقه، آخرین پیکربندی پشتیبانی‌شده را در `nonSmoothConfig` ذخیره می‌کنیم و به محض یافتن یک پیکربندی روان، از حلقه خارج می‌شویم و این را به عنوان `bestConfig` خود تنظیم می‌کنیم.
 
 ```js
 // Assume this app wants a supported && smooth config.
@@ -375,9 +367,9 @@ for await (const mediaCapabilityInfo of capabilitiesPromises) {
 }
 ```
 
-If we found a smooth and supported configuration while looping (`bestConfig`) we use it to [create our media keys](/en-US/docs/Web/API/MediaKeySystemAccess/createMediaKeys) and decode the media.
-If we didn't discover any smooth configurations we might instead use `nonSmoothConfig` to decode the media.
-This will be the supported configuration that was found last, which because of the way we ordered the original `orderedMediaConfigs`, should be the one with the lowest framerate.
+اگر یک پیکربندی روان و پشتیبانی‌شده در حین حلقه پیدا کردیم (`bestConfig`)، از آن برای [ایجاد کلیدهای رسانه](/en-US/docs/Web/API/MediaKeySystemAccess/createMediaKeys) و رمزگشایی رسانه استفاده می‌کنیم.
+اگر هیچ پیکربندی روانی کشف نکردیم، ممکن است به جای آن از `nonSmoothConfig` برای رمزگشایی رسانه استفاده کنیم.
+این آخرین پیکربندی پشتیبانی‌شده‌ای خواهد بود که پیدا شده است، که به دلیل نحوه مرتب‌سازی `orderedMediaConfigs` اصلی، باید پیکربندی با کمترین نرخ فریم باشد.
 
 ```js
 let keys = null;
@@ -396,19 +388,19 @@ if (bestConfig) {
 }
 ```
 
-If there are no supported configuration, we have no choice but to fail and notify the user.
+اگر هیچ پیکربندی پشتیبانی‌شده‌ای وجود نداشته باشد، چاره‌ای جز شکست و اطلاع‌رسانی به کاربر نداریم.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("MediaCapabilities.encodingInfo()")}}
-- {{domxref("HTMLMediaElement.canPlayType()")}} for file
-- {{domxref("MediaSource.isTypeSupported_static", "MediaSource.isTypeSupported()")}} for media-source
+- {{domxref("HTMLMediaElement.canPlayType()")}} برای file
+- {{domxref("MediaSource.isTypeSupported_static", "MediaSource.isTypeSupported()")}} برای media-source
 - {{domxref("Navigator.requestMediaKeySystemAccess()")}}
