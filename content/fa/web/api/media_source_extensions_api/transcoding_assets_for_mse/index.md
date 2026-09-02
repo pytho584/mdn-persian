@@ -1,10 +1,4 @@
 ---
-title: "Transcoding assets for Media Source Extensions"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Media_Source_Extensions_API/Transcoding_assets_for_MSE"
-status: "needs-translation"
----
-
----
 title: Transcoding assets for Media Source Extensions
 slug: Web/API/Media_Source_Extensions_API/Transcoding_assets_for_MSE
 page-type: guide
@@ -12,40 +6,40 @@ page-type: guide
 
 {{DefaultAPISidebar("Media Source Extensions")}}
 
-When working with Media Source Extensions, it is likely that you need to condition your assets before you can stream them. This article takes you through the requirements and shows you a toolchain you can use to encode your assets appropriately.
+هنگام کار با Media Source Extensions، احتمالاً باید فایل‌های رسانه خود را پیش از استریم‌کردن آماده کنید. این مقاله شما را با الزامات لازم آشنا می‌کند و یک زنجیره ابزار (toolchain) برای رمزگذاری مناسب این فایل‌ها معرفی می‌کند.
 
-## Getting started
+## شروع به کار
 
-1. The first and most important step is to ensure that your files are comprised of a container and codec that users' browsers support.
-2. Depending on the codec, you might need to fragment the file to comply with the [ISO BMFF spec](https://w3c.github.io/mse-byte-stream-format-isobmff/).
-3. (Optional) If you decide to use Dynamic Adaptive Streaming over HTTP (DASH) for adaptive bitrate streaming, you need to transcode your assets into multiple resolutions. Most DASH clients expect a corresponding Media Presentation Description (MPD) manifest file, which is typically generated while generating the multiple resolution asset files.
+1. اولین و مهم‌ترین گام این است که مطمئن شوید فایل‌های شما از ترکیب یک کانتینر و کدک تشکیل شده‌اند که مرورگرهای کاربران از آن پشتیبانی می‌کنند.
+2. بسته به کدک، ممکن است لازم باشد فایل را برای مطابقت با [مشخصات ISO BMFF](https://w3c.github.io/mse-byte-stream-format-isobmff/) قطعه‌قطعه کنید.
+3. (اختیاری) اگر تصمیم دارید از Dynamic Adaptive Streaming over HTTP (DASH) برای استریم با نرخ بیت تطبیقی استفاده کنید، باید فایل‌های رسانه را به چند وضوح (رزولوشن) تبدیل کنید. اکثر مشتری‌های DASH انتظار یک فایل مانیفست Media Presentation Description (MPD) را دارند که معمولاً هنگام تولید فایل‌های رسانه با وضوح‌های مختلف تولید می‌شود.
 
-Below we'll cover all of these steps, but first let's look at a toolchain we can use to do this fairly easily.
+در ادامه همه این مراحل را پوشش خواهیم داد؛ اما ابتدا به یک زنجیره ابزار نگاه می‌کنیم که می‌توان با آن این کار را نسبتاً به‌راحتی انجام داد.
 
-### Sample Media
+### رسانه نمونه
 
-If you're looking to follow the steps listed here, but don't have any media to experiment with, you can grab the [trailer to Big Buck Bunny](https://web.archive.org/web/20161102172252id_/http://video.blendertestbuilds.de/download.php?file=download.blender.org/peach/trailer_1080p.mov). Big Buck Bunny copyrighted by the Blender Foundation and is licensed under the [Creative Commons Attribution 3.0](https://creativecommons.org/licenses/by/3.0/) license. Throughout this tutorial, you'll see the filename trailer_1080p.mov, which is the download.
+اگر می‌خواهید مراحل فهرست‌شده را دنبال کنید اما رسانه‌ای برای آزمایش ندارید، می‌توانید [تریلر Big Buck Bunny](https://web.archive.org/web/20161102172252id_/http://video.blendertestbuilds.de/download.php?file=download.blender.org/peach/trailer_1080p.mov) را دریافت کنید. ویدیوی Big Buck Bunny دارای حق نشر متعلق به Blender Foundation است و تحت مجوز [Creative Commons Attribution 3.0](https://creativecommons.org/licenses/by/3.0/) منتشر شده است. در این آموزش، نام فایل `trailer_1080p.mov` را خواهید دید که همان فایل دانلودشده است.
 
-### Tools required
+### ابزارهای لازم
 
-When working with MSE, the following tools are a must have:
+هنگام کار با MSE، ابزارهای زیر ضروری هستند:
 
-1. [ffmpeg](https://ffmpeg.org/) — A command-line utility for transcoding your media into the required formats. You can download a version for your system at the [Download FFmpeg page](https://ffmpeg.org/download.html). Extract the executable from the archive file and add it's location to your PATH statement. macOS users can also use [homebrew](https://brew.sh/) to install ffmpeg.
-2. [Bento4](https://github.com/axiomatic-systems/Bento4) — A set of command-line utilities for getting asset metadata and creating content for DASH. To install, you'll need to build/compile the application yourself from the provided project files/source files, depending on your OS and preferences. See the [Building instructions](https://github.com/axiomatic-systems/Bento4#building) for more details, or download the [prebuilt file](https://www.bento4.com/downloads/). Put the contents of the `bin` directory in the same place as ffmpeg.
-3. python2 — Bento4 uses it.
+1. [ffmpeg](https://ffmpeg.org/) — یک ابزار خط فرمان برای تبدیل رسانه شما به قالب‌های موردنیاز. می‌توانید نگارش مخصوص سیستم‌عامل خود را از [صفحه دانلود FFmpeg](https://ffmpeg.org/download.html) دریافت کنید. فایل اجرایی را از بایگانی استخراج و مسیر آن را به متغیر `PATH` اضافه کنید. کاربران macOS نیز می‌توانند با استفاده از [homebrew](https://brew.sh/) ffmpeg را نصب کنند.
+2. [Bento4](https://github.com/axiomatic-systems/Bento4) — مجموعه‌ای از ابزارهای خط فرمان برای دریافت فراداده (metadata) رسانه و تولید محتوای DASH. برای نصب، بسته به سیستم‌عامل و ترجیح خود، باید برنامه را از فایل‌های پروژه/منبع ارائه‌شده بسازید یا کامپایل کنید. جزئیات بیشتر را در [دستورالعمل‌های ساخت](https://github.com/axiomatic-systems/Bento4#building) ببینید یا [فایل از پیش ساخته‌شده](https://www.bento4.com/downloads/) را دانلود کنید. محتویات پوشه `bin` را در همان جایی قرار دهید که ffmpeg قرار دارد.
+3. python2 — Bento4 از آن استفاده می‌کند.
 
-Get these installed successfully before moving to the next step.
+پیش از رفتن به مرحله بعد، این ابزارها را با موفقیت نصب کنید.
 
-Sample media should be placed in the Bento4 `utils` directory and worked here.
+رسانه نمونه باید در پوشه `utils` بنتو۴ قرار داده شود و در همین‌جا پردازش شود.
 
 > [!NOTE]
-> The prebuilt ffmpeg does not include libfdk_aac due to licensing reasons. Bento4 uses this by default, so you need to compile ffmpeg if necessary. If you don't need it, add `--audio-codec=aac` to the `mp4-dash-encode.py` command line.
+> ffmpeg از پیش ساخته‌شده به دلیل محدودیت‌های مجوز، شامل libfdk_aac نیست. Bento4 به‌طور پیش‌فرض از این کتابخانه استفاده می‌کند، بنابراین در صورت نیاز باید ffmpeg را کامپایل کنید. اگر به آن نیازی ندارید، `--audio-codec=aac` را به خط فرمان `mp4-dash-encode.py` اضافه کنید.
 
-### Container and Codec Support
+## پشتیبانی از کانتینر و کدک
 
-As specified in [section 1.1 of the MSE spec: Goals](https://w3c.github.io/media-source/#goals), MSE is designed not to require support for any particular media format or codec. While this is true on paper, browser support varies for specific container/codec combinations.
+همان‌طور که در [بخش ۱.۱ از مشخصات MSE: اهداف](https://w3c.github.io/media-source/#goals) مشخص شده، MSE به‌گونه‌ای طراحی شده است که پشتیبانی از هیچ قالب رسانه یا کدک خاصی را الزام نکند. اگرچه این موضوع در تئوری درست است، پشتیبانی مرورگرها برای ترکیب‌های خاص کانتینر/کدک متفاوت است.
 
-To check if the browser supports a particular container, you can pass a string of the MIME type to the {{domxref("MediaSource.isTypeSupported_static", "MediaSource.isTypeSupported()")}} method:
+برای بررسی اینکه آیا مرورگر از یک کانتینر خاص پشتیبانی می‌کند، می‌توانید رشته نوع MIME را به متد {{domxref("MediaSource.isTypeSupported_static", "MediaSource.isTypeSupported()")}} ارسال کنید:
 
 ```js
 MediaSource.isTypeSupported("audio/mp3"); // false
@@ -53,59 +47,59 @@ MediaSource.isTypeSupported("video/mp4"); // true
 MediaSource.isTypeSupported('video/mp4; codecs="avc1.4D4028, mp4a.40.2"'); // true
 ```
 
-The string is the MIME type of the container, optionally followed by a list of codecs. While the MIME type is fairly simple to figure out, we can get the codec string using the [mp4info](https://nickdesaulniers.github.io/mp4info/) utility.
+این رشته، نوع MIME کانتینر است که به‌صورت اختیاری با فهرستی از کدک‌ها دنبال می‌شود. در حالی که تشخیص نوع MIME نسبتاً ساده است، می‌توانید رشته کدک را با استفاده از ابزار [mp4info](https://nickdesaulniers.github.io/mp4info/) به‌دست آورید.
 
-Currently, MP4 containers with H.264 video and AAC audio codecs have support across all modern browsers, while others don't.
+در حال حاضر، کانتینرهای MP4 با کدک ویدیویی H.264 و کدک صوتی AAC در همه مرورگرهای مدرن پشتیبانی می‌شوند؛ اما سایر ترکیب‌ها چنین نیستند.
 
-To convert our sample media from a QuickTime MOV container to an MP4 container, we can use ffmpeg. Because the audio codec in the MOV container is already AAC and the video codec is h.264, we can instruct ffmpeg not to perform transcoding. Instead, it will just copy the audio and video tracks over without performing any transcoding, which is relatively faster than having to transcode.
+برای تبدیل رسانه نمونه از کانتینر QuickTime MOV به کانتینر MP4 می‌توانید از ffmpeg استفاده کنید. از آنجا که کدک صوتی در کانتینر MOV از قبل AAC و کدک ویدیویی h.264 است، می‌توانید به ffmpeg بگویید که عمل تبدیل (transcoding) را انجام ندهد. در عوض، فقط مسیرهای صوتی و ویدیویی را بدون انجام هرگونه تبدیلی کپی می‌کند که نسبت به حالت تبدیل، سریع‌تر است.
 
 ```bash
 ffmpeg -i trailer_1080p.mov -c:v copy -c:a copy bunny.mp4
 ```
 
-### Checking Fragmentation
+## بررسی قطعه‌بندی
 
-In order to properly stream MP4, we need the asset to be an [ISO BMF](https://w3c.github.io/mse-byte-stream-format-isobmff/) format MP4. Without proper fragmentation, any given MP4 file is not guaranteed to work with MSE. This means that metadata within the container is spread out and not lumped together.
+برای پخش صحیح MP4، لازم است فایل رسانه به‌صورت MP4 با فرمت [ISO BMF](https://w3c.github.io/mse-byte-stream-format-isobmff/) باشد. بدون قطعه‌بندی مناسب، هیچ فایل MP4 خاصی تضمین نمی‌شود که با MSE کار کند. این بدان معناست که فراداده در کانتینر پراکنده است و به‌صورت یکجا جمع نشده است.
 
-To check whether an MP4 file is a proper MP4 stream, you can again use the [mp4info](https://nickdesaulniers.github.io/mp4info/) utility to list the atoms of an MP4.
+برای بررسی اینکه آیا یک فایل MP4 یک جریان MP4 مناسب است، می‌توانید دوباره از ابزار [mp4info](https://nickdesaulniers.github.io/mp4info/) برای فهرست‌کردن اتم‌های یک MP4 استفاده کنید.
 
 > [!NOTE]
-> The fragmented version is slightly larger than the original, due to additional metadata spread throughout the file. This is usually a file size increase of 1 percent or less.
+> نسخه قطعه‌قطعه‌شده به دلیل فراداده‌های اضافی که در کل فایل توزیع شده‌اند، کمی بزرگ‌تر از نسخه اصلی است. این افزایش معمولاً ۱ درصد یا کمتر است.
 
-### Fragmenting
+## قطعه‌قطعه کردن
 
-If you have an asset that is not already an MP4, ffmpeg can handle emitting a properly fragmented MP4 during the transcode process, with the `-movflags frag_keyframe+empty_moov` command line flag:
+اگر فایل رسانه‌ای دارید که از قبل MP4 نیست، ffmpeg می‌تواند با استفاده از پرچم خط فرمان `-movflags frag_keyframe+empty_moov` در طول فرآیند تبدیل، یک MP4 به‌درستی قطعه‌بندی‌شده تولید کند:
 
 ```bash
 ffmpeg -i trailer_1080p.mov -c:v copy -c:a copy -movflags frag_keyframe+empty_moov bunny_fragmented.mp4
 ```
 
-If you already have an MP4, but it's not properly fragmented, you can again use ffmpeg:
+اگر از قبل MP4 دارید اما به‌درستی قطعه‌بندی نشده است، می‌توانید دوباره از ffmpeg استفاده کنید:
 
 ```bash
 ffmpeg -i non_fragmented.mp4 -movflags frag_keyframe+empty_moov fragmented.mp4
 ```
 
-In both cases, Chrome may require an extra movie flag to be set:
+در هر دو حالت، Chrome ممکن است به یک پرچم movie اضافی نیاز داشته باشد:
 
 ```bash
 -movflags frag_keyframe+empty_moov+default_base_moof
 ```
 
-Having a properly fragmented MP4 file is all you need to get started. If you wish to employ adaptive bitrate streaming, you'll have to create encodings at multiple resolutions. While MSE is flexible enough to allow you to make your implementation, it's highly recommended to use an existing DASH client as DASH is a well-specified application protocol.
+داشتن یک فایل MP4 به‌درستی قطعه‌بندی‌شده تنها چیزی است که برای شروع لازم دارید. اگر می‌خواهید از استریم با نرخ بیت تطبیقی استفاده کنید، باید رمزگذاری‌هایی با وضوح‌های مختلف ایجاد کنید. اگرچه MSE به‌اندازه کافی انعطاف‌پذیر است که بتوانید پیاده‌سازی شخصی خود را انجام دهید، به‌شدت توصیه می‌شود از یک مشتری DASH موجود استفاده کنید، زیرا DASH یک پروتکل کاربردی کاملاً مشخص است.
 
-### Creating Content for DASH
+## ایجاد محتوا برای DASH
 
-Given that you have ffmpeg and Bento4's utilities accessible through your $PATH, you can run Bento4's `mp4-dash-encode.py` Python script to generate multiple encodings of your content at various resolutions. Bento4's `mp4-dash.py` Python script can then be used to generate the corresponding MPD file needed by clients.
+با فرض اینکه ffmpeg و ابزارهای بنتو۴ از طریق متغیر `$PATH` در دسترس هستند، می‌توانید اسکریپت پایتون `mp4-dash-encode.py` بنتو۴ را اجرا کنید تا چندین رمزگذاری از محتوای خود در وضوح‌های مختلف تولید کنید. سپس می‌توان از اسکریپت پایتون `mp4-dash.py` بنتو۴ برای تولید فایل MPD متناظر که مشتری‌ها به آن نیاز دارند استفاده کرد.
 
-Run the following commands:
+دستورات زیر را اجرا کنید:
 
 ```bash
 python mp4-dash-encode.py -b 5 -v bunny_fragmented.mp4
 python mp4-dash.py video_0*
 ```
 
-This should output the following files:
+این کار باید فایل‌های زیر را خروجی دهد:
 
 ```plain
 output
@@ -121,11 +115,11 @@ output
 ```
 
 > [!NOTE]
-> `mp4-dash-encode.py` does not display ffmpeg error messages. You can see it by specifying the `-d` option.
+> `mp4-dash-encode.py` پیام‌های خطای ffmpeg را نمایش نمی‌دهد. برای مشاهده این پیام‌ها می‌توانید از گزینه `-d` استفاده کنید.
 
 > [!NOTE]
-> If `"Invalid duration specification for force_key_frames: 'expr:eq(mod(n"` is displayed as an error message, modify `mp4-dash-encode.py` and remove two `"'"` from `"-force_key_frames 'expr:eq(mod(n,%d),0)'"`.
+> اگر پیام خطای `"Invalid duration specification for force_key_frames: 'expr:eq(mod(n"` نمایش داده شد، فایل `mp4-dash-encode.py` را ویرایش کنید و دو `"'"` را از `"-force_key_frames 'expr:eq(mod(n,%d),0)'"` حذف کنید.
 
-## Summary
+## خلاصه
 
-With your video properly encoded and adaptive bitrate media generated, you're now ready to begin adaptive bitrate streaming on the web using DASH and MSE.
+با رمزگذاری صحیح ویدیو و تولید رسانه با نرخ بیت تطبیقی، اکنون آماده‌اید تا با استفاده از DASH و MSE استریم تطبیقی را در وب آغاز کنید.
