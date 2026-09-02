@@ -1,11 +1,5 @@
 ---
 title: "MouseEvent: relatedTarget property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/relatedTarget"
-status: "needs-translation"
----
-
----
-title: "MouseEvent: relatedTarget property"
 short-title: relatedTarget
 slug: Web/API/MouseEvent/relatedTarget
 page-type: web-api-instance-property
@@ -14,14 +8,14 @@ browser-compat: api.MouseEvent.relatedTarget
 
 {{APIRef("Pointer Events")}}
 
-The **`MouseEvent.relatedTarget`** read-only property is the secondary target for the mouse event, if there is one.
+ویژگی فقط‑خواندنی **`MouseEvent.relatedTarget`**، هدف ثانویه برای رویداد ماوس است، در صورت وجود.
 
-That is:
+به عبارت دیگر:
 
 <table class="no-markdown">
   <thead>
     <tr>
-      <th>Event name</th>
+      <th>نام رویداد</th>
       <th><code>target</code></th>
       <th><code>relatedTarget</code></th>
     </tr>
@@ -30,72 +24,71 @@ That is:
     <tr>
       <td>{{domxref("Element/mouseenter_event", "mouseenter")}}</td>
       <td>
-        The {{domxref("EventTarget")}} the pointing device entered to
+        {{domxref("EventTarget")}}ای که اشاره‌گر وارد آن شده است
       </td>
       <td>
-        The {{domxref("EventTarget")}} the pointing device exited from
+        {{domxref("EventTarget")}}ای که اشاره‌گر از آن خارج شده است
       </td>
     </tr>
     <tr>
       <td>{{domxref("Element/mouseleave_event", "mouseleave")}}</td>
       <td>
-        The {{domxref("EventTarget")}} the pointing device exited from
+        {{domxref("EventTarget")}}ای که اشاره‌گر از آن خارج شده است
       </td>
       <td>
-        The {{domxref("EventTarget")}} the pointing device entered to
+        {{domxref("EventTarget")}}ای که اشاره‌گر وارد آن شده است
       </td>
     </tr>
     <tr>
       <td>{{domxref("Element/mouseout_event", "mouseout")}}</td>
       <td>
-        The {{domxref("EventTarget")}} the pointing device exited from
+        {{domxref("EventTarget")}}ای که اشاره‌گر از آن خارج شده است
       </td>
       <td>
-        The {{domxref("EventTarget")}} the pointing device entered to
+        {{domxref("EventTarget")}}ای که اشاره‌گر وارد آن شده است
       </td>
     </tr>
     <tr>
       <td>{{domxref("Element/mouseover_event", "mouseover")}}</td>
       <td>
-        The {{domxref("EventTarget")}} the pointing device entered to
+        {{domxref("EventTarget")}}ای که اشاره‌گر وارد آن شده است
       </td>
       <td>
-        The {{domxref("EventTarget")}} the pointing device exited from
+        {{domxref("EventTarget")}}ای که اشاره‌گر از آن خارج شده است
       </td>
     </tr>
     <tr>
       <td>{{domxref("HTMLElement/dragenter_event", "dragenter")}}</td>
       <td>
-        The {{domxref("EventTarget")}} the pointing device entered to
+        {{domxref("EventTarget")}}ای که اشاره‌گر وارد آن شده است
       </td>
       <td>
-        The {{domxref("EventTarget")}} the pointing device exited from
+        {{domxref("EventTarget")}}ای که اشاره‌گر از آن خارج شده است
       </td>
     </tr>
     <tr>
       <td>{{domxref("HTMLElement/dragleave_event", "dragleave")}}</td>
       <td>
-        The {{domxref("EventTarget")}} the pointing device exited from
+        {{domxref("EventTarget")}}ای که اشاره‌گر از آن خارج شده است
       </td>
       <td>
-        The {{domxref("EventTarget")}} the pointing device entered to
+        {{domxref("EventTarget")}}ای که اشاره‌گر وارد آن شده است
       </td>
     </tr>
   </tbody>
 </table>
 
-For events with no secondary target, `relatedTarget` returns
-`null`.
+برای رویدادهایی که هدف ثانویه ندارند، `relatedTarget` مقدار `null` را برمی‌گرداند.
 
-{{domxref("FocusEvent.relatedTarget")}} is a similar property for focus events.
+{{domxref("FocusEvent.relatedTarget")}} ویژگی مشابهی برای رویدادهای فوکوس است.
 
-## Value
+## مقدار
 
-An {{domxref("EventTarget")}} object or `null`.
+یک شیء {{domxref("EventTarget")}} یا `null`.
 
-## Examples
+## مثال‌ها
 
-Try moving your mouse cursor into and out of the red and blue boxes.
+نشانگر ماوس خود را به داخل و خارج جعبه‌های قرمز و آبی حرکت دهید.
 
 ### HTML
 
@@ -149,28 +142,28 @@ blue.addEventListener("mouseout", outListener);
 function outListener(event) {
   let related = event.relatedTarget ? event.relatedTarget.id : "unknown";
 
-  mouseoutLog.innerText = `\nfrom ${event.target.id} into ${related} ${mouseoutLog.innerText}`;
+  mouseoutLog.innerText = `\nاز ${event.target.id} به ${related} ${mouseoutLog.innerText}`;
 }
 
 function overListener(event) {
   let related = event.relatedTarget ? event.relatedTarget.id : "unknown";
 
-  mouseoutLog.innerText = `\ninto ${event.target.id} from ${related} ${mouseoutLog.innerText}`;
+  mouseoutLog.innerText = `\nبه ${event.target.id} از ${related} ${mouseoutLog.innerText}`;
 }
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples", 700, 280)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{ domxref("MouseEvent") }}
