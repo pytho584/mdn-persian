@@ -1,11 +1,5 @@
 ---
 title: "MouseEvent: buttons property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/buttons"
-status: "needs-translation"
----
-
----
-title: "MouseEvent: buttons property"
 short-title: buttons
 slug: Web/API/MouseEvent/buttons
 page-type: web-api-instance-property
@@ -14,39 +8,38 @@ browser-compat: api.MouseEvent.buttons
 
 {{APIRef("Pointer Events")}}
 
-The **`MouseEvent.buttons`** read-only property indicates which buttons are pressed on the mouse (or other input device) when a mouse event is triggered.
+ویژگی فقط‌خواندنی **`MouseEvent.buttons`** نشان می‌دهد که هنگام فعال شدن یک رویداد ماوس، کدام دکمه‌های ماوس (یا سایر دستگاه‌های ورودی) فشرده شده‌اند.
 
-Each button that can be pressed is represented by a given number (see below).
-If more than one button is pressed, the button values are added together to produce a new number.
-For example, if the secondary (`2`) and auxiliary (`4`) buttons are pressed simultaneously, the value is `6` (i.e., `2 + 4`).
+هر دکمه‌ای که قابل فشار دادن باشد با یک عدد مشخص نمایش داده می‌شود (در زیر آمده است).
+اگر بیش از یک دکمه فشرده شده باشد، مقادیر دکمه‌ها با هم جمع می‌شوند تا عدد جدیدی به دست آید.
+برای مثال، اگر دکمه فرعی (`2`) و کمکی (`4`) به طور همزمان فشرده شوند، مقدار `6` خواهد بود (یعنی `2 + 4`).
 
 > [!NOTE]
-> Do not confuse this property with the {{domxref("MouseEvent.button")}} property.
-> The `MouseEvent.buttons` property indicates the state of buttons pressed during any kind of mouse event,
-> while the {{domxref("MouseEvent.button")}} property only guarantees the correct value for mouse events caused by pressing or releasing one or multiple buttons.
+> این ویژگی را با ویژگی {{domxref("MouseEvent.button")}} اشتباه نگیرید.
+> ویژگی `MouseEvent.buttons` وضعیت دکمه‌های فشرده‌شده را در هر نوع رویداد ماوس نشان می‌دهد،
+> در حالی که ویژگی {{domxref("MouseEvent.button")}} فقط برای رویدادهای ماوس که در اثر فشار دادن یا رها کردن یک یا چند دکمه رخ می‌دهند، مقدار صحیح را تضمین می‌کند.
 
-## Value
+## مقدار
 
-A number representing one or more buttons.
-For more than one button pressed simultaneously, the values are combined (e.g., `3` is primary + secondary).
+عددی که یک یا چند دکمه را نشان می‌دهد.
+برای فشرده شدن همزمان بیش از یک دکمه، مقادیر با هم ترکیب می‌شوند (مثلاً `3` یعنی دکمه اصلی + فرعی).
 
-- `0`: No button or un-initialized
-- `1`: Primary button (usually the left button)
-- `2`: Secondary button (usually the right button)
-- `4`: Auxiliary button (usually the mouse wheel button or middle
-  button)
-- `8`: 4th button (typically the "Browser Back" button)
-- `16` : 5th button (typically the "Browser Forward" button)
+- `0`: بدون دکمه یا مقداردهی‌نشده
+- `1`: دکمه اصلی (معمولاً دکمه چپ)
+- `2`: دکمه فرعی (معمولاً دکمه راست)
+- `4`: دکمه کمکی (معمولاً دکمه چرخ ماوس یا دکمه وسط)
+- `8`: دکمه چهارم (معمولاً دکمه «بازگشت در مرورگر»)
+- `16` : دکمه پنجم (معمولاً دکمه «رفتن به جلو در مرورگر»)
 
-## Examples
+## مثال‌ها
 
-This example logs the `buttons` property when you trigger a {{domxref("Element/mousedown_event", "mousedown")}} event.
+این مثال وقتی رویداد {{domxref("Element/mousedown_event", "mousedown")}} را فعال می‌کنید، ویژگی `buttons` را ثبت می‌کند.
 
 ### HTML
 
 ```html
-<p>Click anywhere with one or more mouse buttons.</p>
-<pre id="log">[No clicks yet]</pre>
+<p>هر جا با یک یا چند دکمه ماوس کلیک کنید.</p>
+<pre id="log">[هنوز کلیکی انجام نشده]</pre>
 ```
 
 ### JavaScript
@@ -54,7 +47,7 @@ This example logs the `buttons` property when you trigger a {{domxref("Element/m
 ```js
 const buttonNames = ["left", "right", "wheel", "back", "forward"];
 function mouseButtonPressed(event, buttonName) {
-  // Use binary `&` with the relevant power of 2 to check if a given button is pressed
+  // برای بررسی فشرده شدن یک دکمه خاص از عملگر باینری `&` با توان مربوطه از 2 استفاده کنید
   return Boolean(event.buttons & (1 << buttonNames.indexOf(buttonName)));
 }
 
@@ -76,32 +69,31 @@ document.addEventListener("mouseup", logButtons);
 document.addEventListener("mousedown", logButtons);
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-### Firefox notes
+### یادداشت‌های فایرفاکس
 
-Firefox supports the `buttons` attribute on Windows, Linux (GTK), and macOS
-with the following restrictions:
+فایرفاکس از ویژگی `buttons` در ویندوز، لینوکس (GTK) و macOS با محدودیت‌های زیر پشتیبانی می‌کند:
 
-- Utilities allow customization of button actions.
-  Therefore, _primary_ might not be the left button on the device, _secondary_ might not be the right button, and so on.
-  Moreover, the middle (wheel) button, 4th button, and 5th button might not be assigned a value, even when they are pressed.
-- Single-button devices may emulate additional buttons with combinations of button and keyboard presses.
-- Touch devices may emulate buttons with configurable gestures (e.g., one-finger touch for _primary_, two-finger touch for _secondary_, etc.).
-- On Linux (GTK), the 4th button and the 5th button are not supported.
-  In addition, a {{domxref("Element/mouseup_event", "mouseup")}} event always includes the releasing button information in the `buttons` value.
-- On Mac OS X 10.5, the `buttons` attribute always returns `0` because there is no platform API for implementing this feature.
+- ابزارهای کاربردی امکان سفارشی‌سازی عملکرد دکمه‌ها را فراهم می‌کنند.
+  بنابراین، دکمه _اصلی_ ممکن است دکمه چپ دستگاه نباشد، دکمه _فرعی_ ممکن است دکمه راست نباشد و غیره.
+  همچنین، دکمه وسط (چرخ)، دکمه چهارم و دکمه پنجم ممکن است مقداری نداشته باشند، حتی زمانی که فشرده شده‌اند.
+- دستگاه‌های تک‌دکمه‌ای ممکن است دکمه‌های اضافی را با ترکیبی از فشردن دکمه و کلیدهای صفحه‌کلید شبیه‌سازی کنند.
+- دستگاه‌های لمسی ممکن است دکمه‌ها را با ژست‌های قابل تنظیم شبیه‌سازی کنند (مثلاً لمس یک انگشتی برای دکمه _اصلی_، لمس دو انگشتی برای دکمه _فرعی_ و غیره).
+- در لینوکس (GTK)، دکمه چهارم و دکمه پنجم پشتیبانی نمی‌شوند.
+  علاوه بر این، رویداد {{domxref("Element/mouseup_event", "mouseup")}} همیشه اطلاعات دکمه‌ای که رها شده را در مقدار `buttons` شامل می‌شود.
+- در Mac OS X 10.5، ویژگی `buttons` همیشه `0` برمی‌گرداند، زیرا هیچ API سیستمی برای پیاده‌سازی این قابلیت وجود ندارد.
 
-## See also
+## همچنین ببینید
 
 - {{domxref("MouseEvent")}}
