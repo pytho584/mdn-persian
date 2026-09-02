@@ -1,11 +1,5 @@
 ---
 title: "MediaKeySession: keystatuseschange event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaKeySession/keystatuseschange_event"
-status: "needs-translation"
----
-
----
-title: "MediaKeySession: keystatuseschange event"
 short-title: keystatuseschange
 slug: Web/API/MediaKeySession/keystatuseschange_event
 page-type: web-api-event
@@ -14,11 +8,11 @@ browser-compat: api.MediaKeySession.keystatuseschange_event
 
 {{APIRef("Encrypted Media Extensions")}}{{SecureContext_Header}}
 
-The **`keystatuseschange`** event of the {{domxref("MediaKeySession")}} API fires when there has been a change in the keys or their statuses within a session.
+رویداد **`keystatuseschange`** از API شیء {{domxref("MediaKeySession")}} هنگامی رخ می‌دهد که تغییری در کلیدها یا وضعیت‌های آن‌ها در یک نشست (session) ایجاد شده باشد.
 
-## Syntax
+## سینتکس
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای گوش دادن به این رویداد، نام رویداد را در متدهایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} به کار ببرید، یا یک ویژگی کنترل‌کنندهٔ رویداد (event handler) تنظیم کنید.
 
 ```js-nolint
 addEventListener("keystatuseschange", (event) => { })
@@ -26,16 +20,16 @@ addEventListener("keystatuseschange", (event) => { })
 onkeystatuseschange = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-An {{domxref("ExtendableEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("ExtendableEvent")}} که از {{domxref("Event")}} به ارث می‌برد.
 
 {{InheritanceDiagram("ExtendableEvent")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
