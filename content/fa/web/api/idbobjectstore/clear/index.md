@@ -1,11 +1,5 @@
 ---
 title: "IDBObjectStore: clear() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/clear"
-status: "needs-translation"
----
-
----
-title: "IDBObjectStore: clear() method"
 short-title: clear()
 slug: Web/API/IDBObjectStore/clear
 page-type: web-api-instance-method
@@ -14,15 +8,9 @@ browser-compat: api.IDBObjectStore.clear
 
 {{ APIRef("IndexedDB") }} {{AvailableInWorkers}}
 
-The **`clear()`** method of the {{domxref("IDBObjectStore")}}
-interface creates and immediately returns an {{domxref("IDBRequest")}} object, and
-clears this object store in a separate thread. This is for deleting all the current
-data out of an object store.
+متد **`clear()`** از رابط {{domxref("IDBObjectStore")}} یک شی {{domxref("IDBRequest")}} ایجاد کرده و بلافاصله آن را بازمی‌گرداند، و این object store را در یک رشته جداگانه پاک می‌کند. این کار برای حذف تمام داده‌های فعلی از یک object store است.
 
-Clearing an object store consists of removing all records from the object store and
-removing all records in indexes that reference the object store. To remove only some of
-the records in a store, use {{domxref("IDBObjectStore.delete")}} passing a key
-or {{domxref("IDBKeyRange")}}.
+پاک کردن یک object store شامل حذف تمام رکوردها از object store و حذف تمام رکوردها در ایندکس‌هایی است که به آن object store ارجاع می‌دهند. برای حذف تنها بخشی از رکوردها در یک store، از {{domxref("IDBObjectStore.delete")}} با ارسال یک کلید یا {{domxref("IDBKeyRange")}} استفاده کنید.
 
 ## Syntax
 
@@ -32,29 +20,24 @@ clear()
 
 ### Parameters
 
-None.
+هیچکدام.
 
 ### Return value
 
-An {{domxref("IDBRequest")}} object on which subsequent events related to this operation are fired.
-
-If the operation is successful, the value of the request's {{domxref("IDBRequest.result", "result")}} property is `undefined`.
+یک شی {{domxref("IDBRequest")}} که رویدادهای بعدی مربوط به این عملیات روی آن فعال می‌شوند. اگر عملیات موفقیت‌آمیز باشد، مقدار ویژگی {{domxref("IDBRequest.result", "result")}} درخواست `undefined` خواهد بود.
 
 ### Exceptions
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the object store has been deleted.
+  - : اگر object store حذف شده باشد، پرتاب می‌شود.
 - `ReadOnlyError` {{domxref("DOMException")}}
-  - : Thrown if the transaction associated with this operation is in read-only [mode](/en-US/docs/Web/API/IDBTransaction/mode).
+  - : اگر تراکنش مرتبط با این عملیات در [حالت فقط-خواندنی](/en-US/docs/Web/API/IDBTransaction/mode) باشد، پرتاب می‌شود.
 - `TransactionInactiveError` {{domxref("DOMException")}}
-  - : Thrown if this {{domxref("IDBObjectStore")}}'s transaction is inactive.
+  - : اگر تراکنش این {{domxref("IDBObjectStore")}} غیرفعال باشد، پرتاب می‌شود.
 
 ## Examples
 
-In the following code snippet, we open a read/write transaction on our database and
-clear all the current data out of the object store using `clear()`. For a
-full working example, see our [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) app
-([view example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+در قطعه کد زیر، یک تراکنش خواندن/نوشتن روی پایگاه داده خود باز می‌کنیم و تمام داده‌های فعلی را با استفاده از `clear()` از object store پاک می‌کنیم. برای یک مثال کامل و قابل اجرا، به برنامه [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ما مراجعه کنید ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
 
 ```js
 // Let us open our database
@@ -111,10 +94,10 @@ function clearData() {
 
 ## See also
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم محدوده کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و ایجاد تغییرات در داده‌های شما: {{domxref("IDBObjectStore")}}
+- استفاده از نشانگرها: {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
