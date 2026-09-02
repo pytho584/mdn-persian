@@ -1,7 +1,5 @@
 ---
 title: "Checking when a deadline is due"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Checking_when_a_deadline_is_due"
-status: "needs-translation"
 ---
 
 ---
@@ -12,29 +10,29 @@ page-type: guide
 
 {{DefaultAPISidebar("IndexedDB")}}
 
-In this article we look at a complex example involving checking the current time and date against a deadline stored via IndexedDB. The main complication here is checking the stored deadline info (month, hour, day, etc.) against the current time and date taken from a [Date](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) object.
+در این مقاله، به بررسی یک مثال پیچیده می‌پردازیم که شامل بررسی زمان و تاریخ فعلی در برابر یک مهلت ذخیره‌شده از طریق IndexedDB است. پیچیدگی اصلی اینجا، بررسی اطلاعات مهلت ذخیره‌شده (ماه، ساعت، روز و ...) در برابر زمان و تاریخ فعلی است که از یک شیء Date گرفته می‌شود.
 
 ![A screenshot of the sample app. A red main title saying To do app, a test to-do item, and a red form for users to enter new tasks](to-do-app.png)
 
-The main example application we will be referring to in this article is **To-do list notifications**, a simple to-do list application that stores task titles and deadline times and dates via [IndexedDB](/en-US/docs/Web/API/IndexedDB_API), and then provides users with notifications when deadline dates are reached, via the [Notification](/en-US/docs/Web/API/Notification), and [Vibration](/en-US/docs/Web/API/Vibration_API) APIs. You can [download the To-do list notifications app from GitHub](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) and play around with the source code, or [view the app running live](https://mdn.github.io/dom-examples/to-do-notifications/).
+برنامهٔ مثال اصلی که در این مقاله به آن اشاره می‌کنیم، **To-do list notifications** است؛ یک برنامهٔ سادهٔ فهرست کارها که عنوان کارها و زمان و تاریخ مهلت‌ها را از طریق IndexedDB ذخیره می‌کند و وقتی تاریخ‌های مهلت فرا می‌رسند، از طریق APIهای Notification و Vibration به کاربران اعلان می‌دهد. می‌توانید برنامهٔ To-do list notifications را از GitHub دانلود کنید و با کد منبع آن کار کنید، یا [برنامهٔ در حال اجرا را به‌صورت زنده ببینید](https://mdn.github.io/dom-examples/to-do-notifications/).
 
-## The basic problem
+## مسئلهٔ اصلی
 
-In the to-do app, we wanted to first record time and date information in a format that is both machine readable and human understandable when displayed, and then check whether each time and date is occurring at the current moment. Basically, we want to check what the time and date is right now, and then check each stored event to see if any of their deadlines match the current time and date. If they do, we want to let the user know with some kind of notification.
+در برنامهٔ فهرست کارها، ابتدا می‌خواستیم اطلاعات زمان و تاریخ را در قالبی ثبت کنیم که هم برای ماشین قابل‌خواندن باشد و هم هنگام نمایش برای انسان قابل‌درک؛ سپس بررسی کنیم که آیا هر زمان و تاریخ در لحظهٔ فعلی رخ می‌دهد یا نه. به‌طور اساسی، می‌خواهیم بدانیم اکنون زمان و تاریخ چیست و سپس هر رویداد ذخیره‌شده را بررسی کنیم تا ببینیم آیا هرکدام از مهلت‌هایشان با زمان و تاریخ فعلی مطابقت دارد یا نه. اگر مطابقت داشت، می‌خواهیم با نوعی اعلان به کاربر اطلاع دهیم.
 
-This would be easy if we were just comparing two {{jsxref("Global_Objects/Date", "Date")}} objects, but of course humans don't want to enter deadline information in the same format JavaScript understands. Human-readable dates are quite different, with a number of different representations.
+اگر فقط دو شیء Date را با هم مقایسه می‌کردیم، کار آسان بود؛ اما طبیعتاً کاربران نمی‌خواهند اطلاعات مهلت را در قالبی وارد کنند که جاوااسکریپت می‌فهمد. تاریخ‌های قابل‌خواندن برای انسان کاملاً متفاوت‌اند و بازنمایی‌های مختلفی دارند.
 
-### Recording the date information
+### ثبت اطلاعات تاریخ
 
-To provide a reasonable user experience on mobile devices, and to cut down on ambiguities, I decided to create an HTML form with:
+برای ارائهٔ تجربهٔ کاربری مناسب در دستگاه‌های همراه و کاهش ابهام‌ها، تصمیم گرفتم یک فرم HTML با این بخش‌ها بسازم:
 
 ![The form of the to-do app, containing fields to fill in a task title, and minute, hour, day, month and year values for the deadline.](to-do-app-form2.png)
 
-- A text input for entering a title for your to-do list. This is the least avoidable bit of user typing.
-- Number inputs for the hour and minute parts of the deadline. On browsers that support `type="number"`, you get a nice little up and down arrow number picker. On mobile platforms you tend to get a numeric keypad for entering data, which is helpful. On others you just get a standard text input, which is okay.
-- {{HTMLElement("select")}} elements for inputting the day, month and year of the deadline. Because these values are the most ambiguous for users to enter (7, sunday, sun? 04, 4, April, Apr? 2013, '13, 13?), I decided the best solution was to give them a choice to pick from, which also saves on annoying typing for mobile users. The days are recorded as numerical days of the month, the months are recorded as full month names, and the years are populated starting from the current year and 12 years into the future.
+- یک فیلد متنی برای وارد کردن عنوان کار در فهرست کارها. این بخش اجتناب‌ناپذیرترین بخش تایپ کاربر است.
+- فیلدهای عددی برای بخش ساعت و دقیقهٔ مهلت. در مرورگرهایی که از `type="number"` پشتیبانی می‌کنند، یک انتخابگر عددی کوچک با فلش‌های بالا و پایین می‌بینید. در پلتفرم‌های همراه معمولاً یک صفحه‌کلید عددی برای وارد کردن داده دریافت می‌کنید که مفید است. در بقیهٔ مرورگرها فقط یک فیلد متنی استاندارد می‌بینید که کافی است.
+- عنصرهای {{HTMLElement("select")}} برای وارد کردن روز، ماه و سال مهلت. از آنجا که این مقادیر مبهم‌ترین ورودی‌ها برای کاربران هستند (مثلاً 7، sunday، sun؟ یا 04، 4، April، Apr؟ یا 2013، '13، 13؟)، تصمیم گرفتم بهترین راه‌حل این باشد که به آنها یک گزینه برای انتخاب بدهیم؛ این کار همچنین تایپ آزاردهنده را برای کاربران همراه کاهش می‌دهد. روزها به‌صورت عددیِ روزِ ماه، ماه‌ها به‌صورت نام کامل ماه، و سال‌ها از سال فعلی تا ۱۲ سال بعد پر می‌شوند.
 
-During the app initialization, we populate the year dropdown and store the current year for later use:
+در هنگام راه‌اندازی برنامه، فهرست کشویی سال را پر می‌کنیم و سال فعلی را برای استفاده‌های بعدی ذخیره می‌کنیم:
 
 ```js
 const currentYear = new Date().getFullYear();
@@ -48,7 +46,7 @@ for (let i = 0; i <= 12; i++) {
 year.value = currentYear;
 ```
 
-When the form's submit button is pressed, we run the `addData()` function, which starts like this:
+وقتی دکمهٔ ارسال فرم فشرده می‌شود، تابع `addData()` را اجرا می‌کنیم که این‌گونه شروع می‌شود:
 
 ```js
 function addData(e) {
@@ -70,7 +68,7 @@ function addData(e) {
 }
 ```
 
-In this segment, we check to see if the form fields have all been filled in. If not, we drop a message into our developer notifications pane (see the bottom left of the app UI) to tell the user what is going on, and exit out of the function. This step is mainly for browsers that don't support HTML form validation (I have used the `required` attribute in my HTML to force validation, in those that do.)
+در این بخش، بررسی می‌کنیم که آیا همهٔ فیلدهای فرم پر شده‌اند یا نه. اگر پر نشده باشند، یک پیام در پنل اعلان‌های توسعه‌دهنده (سمت چپ پایین رابط کاربری برنامه) قرار می‌دهیم تا به کاربر بگوید چه اتفاقی افتاده است و از تابع خارج می‌شویم. این مرحله عمدتاً برای مرورگرهایی است که اعتبارسنجی فرم HTML را پشتیبانی نمی‌کنند (من در HTML خود از ویژگی `required` استفاده کرده‌ام تا در مرورگرهایی که پشتیبانی می‌کنند، اعتبارسنجی اجباری شود).
 
 ```js
 function addData(e) {
@@ -111,10 +109,10 @@ function addData(e) {
 }
 ```
 
-In this section we create an object called `newItem` that stores the data in the format required to insert it into the database. The next few lines open the database transaction and provide messages to notify the user if this was successful or failed. Then an `objectStore` is created into which the new item is added. The `notified` property of the data object indicates that the to-do list item's deadline has not yet come up and been notified - more on this later!
+در این بخش، یک شیء به نام `newItem` می‌سازیم که داده‌ها را در قالب لازم برای درج در پایگاه داده ذخیره می‌کند. چند خط بعد تراکنش پایگاه داده را باز می‌کنند و پیام‌هایی را برای اطلاع کاربر از موفقیت یا شکست این کار فراهم می‌کنند. سپس یک `objectStore` ساخته می‌شود که آیتم جدید به آن اضافه می‌شود. ویژگی `notified` در شیء داده نشان می‌دهد که مهلت آیتم فهرست کارها هنوز فرا نرسیده و اعلان آن ارسال نشده است — بعداً بیشتر دربارهٔ این توضیح می‌دهیم!
 
 > [!NOTE]
-> The `db` variable stores a reference to the IndexedDB database instance; we can then use various properties of this variable to manipulate the data.
+> متغیر `db` ارجاعی به نمونهٔ پایگاه دادهٔ IndexedDB نگهداری می‌کند؛ سپس می‌توانیم از ویژگی‌های مختلف این متغیر برای دستکاری داده‌ها استفاده کنیم.
 
 ```js
 function addData(e) {
@@ -135,11 +133,11 @@ function addData(e) {
 }
 ```
 
-This next section creates a log message to say the new item addition is successful, and resets the form so it's ready for the next task to be entered. Note that the year field is reset to `currentYear`, which is set when the app initializes. Last of all, we run the `displayData()` function, which updates the display of data in the app to show the new task that was just entered.
+بخش بعدی یک پیام لاگ می‌سازد که افزودن آیتم جدید موفق بوده است و فرم را بازنشانی می‌کند تا برای وارد کردن کار بعدی آماده باشد. توجه کنید که فیلد سال به `currentYear` بازنشانی می‌شود؛ مقداری که هنگام راه‌اندازی برنامه تنظیم شده است. در نهایت، تابع `displayData()` را اجرا می‌کنیم که نمایش داده‌ها را در برنامه به‌روزرسانی می‌کند تا کار تازه‌واردشده نشان داده شود.
 
-### Checking whether a deadline has been reached
+### بررسی اینکه آیا مهلتی فرا رسیده است
 
-At this point our data is in the database; now we want to check whether any of the deadlines have been reached. This is done by our `checkDeadlines()` function:
+در این مرحله داده‌های ما در پایگاه داده هستند؛ حالا می‌خواهیم بررسی کنیم که آیا هر یک از مهلت‌ها فرا رسیده‌اند یا نه. این کار با تابع `checkDeadlines()` انجام می‌شود:
 
 ```js
 function checkDeadlines() {
@@ -153,7 +151,7 @@ function checkDeadlines() {
 }
 ```
 
-First we grab the current date and time by creating a blank `Date` object. The `Date` object has a number of methods to extract various parts of the date and time inside it. Here we fetch the current minutes (gives an easy numerical value), hours (gives an easy numerical value), day of the month (`getDate()` is needed for this, as `getDay()` returns the day of the week, 0-6), month (returns a number from 0-11, see below), and year (`getFullYear()` is needed; `getYear()` is deprecated, and returns a weird value that is not much use to anyone!)
+ابتدا با ایجاد یک شیء خالی `Date`، تاریخ و زمان فعلی را می‌گیریم. شیء `Date` روش‌های متعددی برای استخراج بخش‌های مختلف تاریخ و زمان درون خود دارد. در اینجا دقیقه‌های فعلی (یک مقدار عددی ساده می‌دهد)، ساعت فعلی (یک مقدار عددی ساده می‌دهد)، روز ماه (`getDate()` برای این کار لازم است، چون `getDay()` روز هفته را از ۰ تا ۶ برمی‌گرداند)، ماه (عددی از ۰ تا ۱۱ برمی‌گرداند، به زیر مراجعه کنید) و سال را می‌گیریم (`getFullYear()` لازم است؛ `getYear()` منسوخ شده است و مقدار عجیبی برمی‌گرداند که به درد هیچ‌کس نمی‌خورد!)
 
 ```js
 function checkDeadlines() {
@@ -173,9 +171,9 @@ function checkDeadlines() {
 }
 ```
 
-Next we create another IndexedDB `objectStore`, and use the `openCursor()` method to open a cursor, which is basically a way in IndexedDB to iterate through all the items in the store. We then loop through all the items in the cursor for as long as there is a valid item left in the cursor. The last line of the function moves the cursor on, which causes the above deadline checking mechanism to be run for the next task stored in the IndexedDB.
+سپس یک `objectStore` دیگر IndexedDB می‌سازیم و با استفاده از متد `openCursor()` یک نشانگر (cursor) باز می‌کنیم که اساساً راهی در IndexedDB برای پیمایش همهٔ آیتم‌های موجود در فروشگاه است. سپس تا زمانی که آیتم معتبری در نشانگر باقی مانده باشد، از میان همهٔ آیتم‌های نشانگر حلقه می‌زنیم. آخرین خط تابع، نشانگر را به جلو می‌برد و باعث می‌شود سازوکار بررسی مهلت بالا برای کار بعدی ذخیره‌شده در IndexedDB اجرا شود.
 
-Now we start filling in the code in the `onsuccess` handler for checking deadlines.
+حالا شروع به پر کردن کد در کنترل‌کنندهٔ `onsuccess` برای بررسی مهلت‌ها می‌کنیم.
 
 ```js
 const { hours, minutes, day, month, year, notified, taskTitle } = cursor.value;
@@ -183,9 +181,9 @@ const monthNumber = MONTHS.indexOf(month);
 if (monthNumber === -1) throw new Error("Incorrect month entered in database.");
 ```
 
-The first thing we do is convert the month names we have stored in the database into a month number that JavaScript will understand. As we saw before, the JavaScript `Date` object creates month values as a number between 0 and 11.
+اولین کاری که انجام می‌دهیم این است که نام ماه‌های ذخیره‌شده در پایگاه داده را به شمارهٔ ماهی تبدیل کنیم که جاوااسکریپت آن را بفهمد. همان‌طور که قبلاً دیدیم، شیء `Date` در جاوااسکریپت مقدار ماه را به‌صورت عددی بین ۰ و ۱۱ می‌سازد.
 
-With the current time and date segments that we want to check against the IndexedDB stored values all assembled, it is time to perform the checks. We want all the values to match before we show the user some kind of notification to tell them their deadline is up. If the checks all match, we then run the `createNotification()` function to provide a notification to the user.
+حالا که بخش‌های زمان و تاریخ فعلی که می‌خواهیم با مقادیر ذخیره‌شده در IndexedDB مقایسه کنیم، همگی آماده شده‌اند، وقت انجام بررسی‌هاست. می‌خواهیم همهٔ مقادیر مطابقت داشته باشند تا به کاربر نوعی اعلان نشان دهیم که مهلتش فرا رسیده است. اگر همهٔ بررسی‌ها مطابقت داشتند، تابع `createNotification()` را اجرا می‌کنیم تا اعلانی به کاربر ارائه دهد.
 
 ```js
 let matched = parseInt(hours, 10) === hourCheck;
@@ -202,7 +200,7 @@ if (matched && notified === "no") {
 }
 ```
 
-The `notified === "no"` check is designed to make sure you will only get one notification per to-do item. When a notification is fired for each item object, its `notification` property is set to `"yes"` so this check will not pass on the next iteration, via the following code inside the `createNotification()` function (read [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB) for an explanation):
+بررسی `notified === "no"` برای این طراحی شده است که مطمئن شوید برای هر آیتم فهرست کارها فقط یک اعلان دریافت می‌کنید. وقتی برای هر شیء آیتم یک اعلان فعال می‌شود، ویژگی `notification` آن به `"yes"` تنظیم می‌شود؛ بنابراین این بررسی در تکرار بعدی موفق نخواهد بود. این کار از طریق کد زیر درون تابع `createNotification()` انجام می‌شود (برای توضیح بیشتر، [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB) را بخوانید):
 
 ```js
 // now we need to update the value of notified to "yes" in this particular data object, so the
@@ -233,9 +231,9 @@ objectStoreTitleRequest.onsuccess = () => {
 };
 ```
 
-### Keep on checking!
+### ادامهٔ بررسی!
 
-Of course, it is no use to just run the above deadline checking function once! We want to keep constantly checking all the deadlines to see if any of them are being reached. To do this, we are using `setInterval()` to run `checkDeadlines()` once per second:
+البته اجرای یک‌بارهٔ تابع بررسی مهلت بالا فایده‌ای ندارد! می‌خواهیم دائماً همهٔ مهلت‌ها را بررسی کنیم تا ببینیم آیا هر یک از آنها فرا می‌رسند یا نه. برای این کار، از `setInterval()` استفاده می‌کنیم تا تابع `checkDeadlines()` را هر ثانیه یک‌بار اجرا کند:
 
 ```js
 setInterval(checkDeadlines, 1000);
