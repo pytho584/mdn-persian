@@ -1,11 +1,5 @@
 ---
 title: "IDBTransaction: mode property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction/mode"
-status: "needs-translation"
----
-
----
-title: "IDBTransaction: mode property"
 short-title: mode
 slug: Web/API/IDBTransaction/mode
 page-type: web-api-instance-property
@@ -14,61 +8,45 @@ browser-compat: api.IDBTransaction.mode
 
 {{ APIRef("IndexedDB") }} {{AvailableInWorkers}}
 
-The **`mode`** read-only property of the
-{{domxref("IDBTransaction")}} interface returns the current mode for accessing the
-data in the object stores in the scope of the transaction (i.e., is the mode to be
-read-only, or do you want to write to the object stores?) The default value is
-`readonly`.
+ویژگی فقط‑خواندنی **`mode`** از رابط {{domxref("IDBTransaction")}} حالت فعلی دسترسی به داده‌ها در ذخیره‌گاه‌های شیء (object stores) در محدودهٔ تراکنش را برمی‌گرداند (یعنی آیا حالت فقط‑خواندنی است یا می‌خواهید در ذخیره‌گاه‌های شیء بنویسید؟). مقدار پیش‌فرض `readonly` است.
 
-## Value
+## مقدار
 
-An object defining the mode for isolating access to
-data in the current object stores:
-A string defining the mode for isolating access to data in the current object stores.
-The following values are available:
+یک رشته که حالت جداسازی دسترسی به داده‌ها در ذخیره‌گاه‌های شیء فعلی را تعریف می‌کند. مقادیر زیر در دسترس هستند:
 
 - `readonly`
-  - : Allows data to be read but not changed.
+  - : اجازه می‌دهد داده‌ها خوانده شوند اما تغییر نکنند.
 - `readwrite`
-  - : Allows reading and writing of data in existing data stores to be changed.
+  - : اجازه خواندن و نوشتن داده‌ها در ذخیره‌گاه‌های داده موجود را می‌دهد.
 - `versionchange`
-  - : Allows any operation, including ones that delete and
-    create object stores and indexes.
-    This mode is for updating the version number of transactions if the need is detected when calling {{domxref("IDBFactory.open()")}}.
-    Transactions of this mode cannot run concurrently with other transactions.
-    Transactions in this mode are known as _upgrade transactions_.
+  - : اجازه هر عملیاتی، از جمله عملیات حذف و ایجاد ذخیره‌گاه‌های شیء و ایندکس‌ها را می‌دهد. این حالت برای به‌روزرسانی شماره نسخه تراکنش‌ها در صورت تشخیص نیاز هنگام فراخوانی {{domxref("IDBFactory.open()")}} استفاده می‌شود. تراکنش‌های این حالت نمی‌توانند همزمان با سایر تراکنش‌ها اجرا شوند. تراکنش‌های در این حالت به عنوان _تراکنش‌های ارتقا_ (upgrade transactions) شناخته می‌شوند.
 
-## Examples
+## مثال‌ها
 
-In the following code snippet, we open a read/write transaction on our database and add
-some data to an object store. Note also the functions attached to transaction event
-handlers to report on the outcome of the transaction opening in the event of success or
-failure. At the end, we log the mode of the current transaction using `mode`.
-For a full working example, see our [To-do Notifications app](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([view example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+در قطعه کد زیر، یک تراکنش خواندن/نوشتن روی پایگاه داده خود باز می‌کنیم و داده‌هایی را به یک ذخیره‌گاه شیء اضافه می‌کنیم. همچنین به توابع متصل شده به رویدادگردان‌های تراکنش توجه کنید که نتیجه باز شدن تراکنش را در صورت موفقیت یا شکست گزارش می‌دهند. در پایان، حالت تراکنش فعلی را با استفاده از `mode` ثبت می‌کنیم. برای یک مثال کامل کار، به [برنامه اعلان‌های کارهای روزانه](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) مراجعه کنید ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
 
 ```js
 const note = document.getElementById("notifications");
 
-// an instance of a db object for us to store the IDB data in
+// یک نمونه از شیء db برای ذخیره داده‌های IDB
 let db;
 
-// Let us open our database
+// پایگاه داده خود را باز می‌کنیم
 const DBOpenRequest = window.indexedDB.open("toDoList", 4);
 
 DBOpenRequest.onsuccess = (event) => {
   note.appendChild(document.createElement("li")).textContent =
     "Database initialized.";
 
-  // store the result of opening the database in the db variable.
-  // This is used a lot below
+  // نتیجه باز شدن پایگاه داده را در متغیر db ذخیره می‌کنیم
   db = DBOpenRequest.result;
 
-  // Run the addData() function to add the data to the database
+  // تابع addData() را برای افزودن داده به پایگاه داده اجرا می‌کنیم
   addData();
 };
 
 function addData() {
-  // Create a new object ready for being inserted into the IDB
+  // یک شیء جدید برای درج در IDB ایجاد می‌کنیم
   const newItem = [
     {
       taskTitle: "Walk dog",
@@ -81,10 +59,10 @@ function addData() {
     },
   ];
 
-  // open a read/write db transaction, ready for adding the data
+  // یک تراکنش خواندن/نوشتن برای افزودن داده باز می‌کنیم
   const transaction = db.transaction(["toDoList"], "readwrite");
 
-  // report on the success of opening the transaction
+  // گزارش موفقیت باز شدن تراکنش
   transaction.oncomplete = (event) => {
     note.appendChild(document.createElement("li")).textContent =
       "Transaction completed: database modification finished.";
@@ -95,38 +73,37 @@ function addData() {
       "Transaction not opened due to error. Duplicate items not allowed.";
   };
 
-  // create an object store on the transaction
+  // یک ذخیره‌گاه شیء روی تراکنش ایجاد می‌کنیم
   const objectStore = transaction.objectStore("toDoList");
 
-  // add our newItem object to the object store
+  // شیء newItem را به ذخیره‌گاه شیء اضافه می‌کنیم
   const objectStoreRequest = objectStore.add(newItem[0]);
 
   objectStoreRequest.onsuccess = (event) => {
-    // report the success of the request (this does not mean the item
-    // has been stored successfully in the DB - for that you need transaction.onsuccess)
+    // گزارش موفقیت درخواست (این به معنای ذخیره موفق در پایگاه داده نیست؛ برای آن باید transaction.onsuccess را بررسی کنید)
     note.appendChild(document.createElement("li")).textContent =
       "Request successful.";
   };
 
-  // Return the mode this transaction has been opened in (should be "readwrite" in this case)
+  // حالت تراکنش باز شده را برمی‌گردانیم (در اینجا باید "readwrite" باشد)
   transaction.mode;
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم محدوده کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و ایجاد تغییرات در داده‌هایتان: {{domxref("IDBObjectStore")}}
+- استفاده از نشانگرها: {{domxref("IDBCursor")}}
+- مثال مرجع: [اعلان‌های کارهای روزانه](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/))
