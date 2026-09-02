@@ -1,7 +1,5 @@
 ---
 title: "IntersectionObserver"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver"
-status: "needs-translation"
 ---
 
 ---
@@ -13,41 +11,40 @@ browser-compat: api.IntersectionObserver
 
 {{APIRef("Intersection Observer API")}}
 
-The **`IntersectionObserver`** interface of the [Intersection Observer API](/en-US/docs/Web/API/Intersection_Observer_API) provides a way to asynchronously observe changes in the intersection of a target element with an ancestor element or with a top-level document's {{Glossary('viewport')}}. The ancestor element or viewport is referred to as the root.
+رابط **`IntersectionObserver`** از [Intersection Observer API](/en-US/docs/Web/API/Intersection_Observer_API) روشی برای مشاهدهٔ ناهمگام تغییرات در تقاطع یک عنصر هدف با یک عنصر بالادست یا با {{Glossary('viewport')}} سند سطح بالا فراهم می‌کند. به عنصر بالادست یا viewport، ریشه گفته می‌شود.
 
-When an `IntersectionObserver` is created, it's configured to watch for given ratios of visibility within the root. The configuration cannot be changed once the `IntersectionObserver` is created, so a given observer object is only useful for watching for specific changes in degree of visibility; however, you can watch multiple target elements with the same observer.
+هنگامی که یک `IntersectionObserver` ساخته می‌شود، برای نظارت بر نسبت‌های مشخصی از دید درون ریشه پیکربندی می‌شود. پس از ایجاد `IntersectionObserver`، این پیکربندی قابل تغییر نیست؛ بنابراین یک شیء observer معین فقط برای نظارت بر تغییرات خاص در میزان دید مفید است. با این حال، می‌توانید چندین عنصر هدف را با همان observer مشاهده کنید.
 
 ## Constructor
 
 - {{domxref("IntersectionObserver.IntersectionObserver", "IntersectionObserver()")}}
-  - : Creates a new `IntersectionObserver` object which will execute a specified callback function when it detects that a target element's visibility has crossed one or more thresholds.
+  - : یک شیء جدید `IntersectionObserver` می‌سازد که هنگام تشخیص عبور دید یک عنصر هدف از یک یا چند آستانه، یک تابع callback مشخص را اجرا می‌کند.
 
 ## Instance properties
 
 - {{domxref("IntersectionObserver.delay")}} {{ReadOnlyInline}} {{experimental_inline}}
-  - : An integer indicating the minimum delay between notifications from this observer.
+  - : یک عدد صحیح که کمترین تأخیر بین اعلان‌های این observer را نشان می‌دهد.
 - {{domxref("IntersectionObserver.root")}} {{ReadOnlyInline}}
-  - : The {{domxref("Element")}} or {{domxref("Document")}} whose bounds are used as the bounding box when testing for intersection. If no `root` value was passed to the constructor or its value is `null`, the top-level document's viewport is used.
+  - : {{domxref("Element")}} یا {{domxref("Document")}} که مرزهای آن به عنوان جعبه محدودکننده هنگام آزمایش تقاطع استفاده می‌شود. اگر هیچ مقدار `root` به سازنده ارسال نشده باشد یا مقدار آن `null` باشد، viewport سند سطح بالا استفاده می‌شود.
 - {{domxref("IntersectionObserver.rootMargin")}} {{ReadOnlyInline}}
-  - : An offset rectangle applied to the root's {{Glossary('bounding box')}} when calculating intersections, effectively shrinking or growing the root for calculation purposes. The value returned by this property may not be the same as the one specified when calling the constructor as it may be changed to match internal requirements. Each offset can be expressed in pixels (`px`) or percentages (`%`). The default is "0px 0px 0px 0px".
+  - : یک مستطیل افست که هنگام محاسبه تقاطع‌ها روی {{Glossary('bounding box')}} ریشه اعمال می‌شود و عملاً ریشه را برای اهداف محاسباتی کوچک‌تر یا بزرگ‌تر می‌کند. مقدار بازگردانده‌شده توسط این ویژگی ممکن است با مقداری که هنگام فراخوانی سازنده مشخص شده یکسان نباشد، زیرا ممکن است برای مطابقت با الزامات داخلی تغییر کند. هر افست می‌تواند بر حسب پیکسل (`px`) یا درصد (`%`) بیان شود. مقدار پیش‌فرض «0px 0px 0px 0px» است.
 - {{domxref("IntersectionObserver.scrollMargin")}} {{ReadOnlyInline}}
-  - : An offset rectangle applied to each {{glossary("scroll container")}} on the path from intersection root to target, effectively shrinking or growing the clip rectangles used to calculate intersections.
-    The value returned by this property may not be the same as the one specified when calling the constructor.
+  - : یک مستطیل افست که روی هر {{glossary("scroll container")}} در مسیر از ریشه تقاطع تا هدف اعمال می‌شود و عملاً مستطیل‌های برش مورد استفاده برای محاسبه تقاطع‌ها را کوچک‌تر یا بزرگ‌تر می‌کند. مقدار بازگردانده‌شده توسط این ویژگی ممکن است با مقداری که هنگام فراخوانی سازنده مشخص شده یکسان نباشد.
 - {{domxref("IntersectionObserver.thresholds")}} {{ReadOnlyInline}}
-  - : A list of thresholds, sorted in increasing numeric order, where each threshold is a ratio of intersection area to bounding box area of an observed target. Notifications for a target are generated when any of the thresholds are crossed for that target. If no value was passed to the constructor, 0 is used.
+  - : فهرستی از آستانه‌ها که به ترتیب عددی صعودی مرتب شده‌اند؛ هر آستانه نسبت مساحت تقاطع به مساحت جعبه محدودکننده یک هدف مشاهده‌شده است. برای یک هدف، زمانی اعلان تولید می‌شود که هر یک از آستانه‌ها برای آن هدف رد شود. اگر هیچ مقداری به سازنده ارسال نشود، از 0 استفاده می‌شود.
 - {{domxref("IntersectionObserver.trackVisibility")}} {{ReadOnlyInline}} {{experimental_inline}}
-  - : A boolean indicating whether this `IntersectionObserver` is checking that the target does not have compromised visibility.
+  - : یک مقدار بولی که نشان می‌دهد آیا این `IntersectionObserver` بررسی می‌کند که دید هدف به خطر نیفتاده باشد.
 
 ## Instance methods
 
 - {{domxref("IntersectionObserver.disconnect()")}}
-  - : Stops the `IntersectionObserver` object from observing any target.
+  - : مشاهده هر هدفی توسط شیء `IntersectionObserver` را متوقف می‌کند.
 - {{domxref("IntersectionObserver.observe()")}}
-  - : Tells the `IntersectionObserver` a target element to observe.
+  - : به `IntersectionObserver` می‌گوید که یک عنصر هدف را مشاهده کند.
 - {{domxref("IntersectionObserver.takeRecords()")}}
-  - : Returns an array of {{domxref("IntersectionObserverEntry")}} objects for all observed targets.
+  - : آرایه‌ای از اشیاء {{domxref("IntersectionObserverEntry")}} را برای همه اهداف مشاهده‌شده بازمی‌گرداند.
 - {{domxref("IntersectionObserver.unobserve()")}}
-  - : Tells the `IntersectionObserver` to stop observing a particular target element.
+  - : به `IntersectionObserver` می‌گوید که مشاهده یک عنصر هدف خاص را متوقف کند.
 
 ## Examples
 
