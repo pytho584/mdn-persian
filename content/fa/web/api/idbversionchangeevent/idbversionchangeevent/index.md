@@ -1,11 +1,5 @@
 ---
 title: "IDBVersionChangeEvent: IDBVersionChangeEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBVersionChangeEvent/IDBVersionChangeEvent"
-status: "needs-translation"
----
-
----
-title: "IDBVersionChangeEvent: IDBVersionChangeEvent() constructor"
 short-title: IDBVersionChangeEvent()
 slug: Web/API/IDBVersionChangeEvent/IDBVersionChangeEvent
 page-type: web-api-constructor
@@ -14,10 +8,7 @@ browser-compat: api.IDBVersionChangeEvent.IDBVersionChangeEvent
 
 {{securecontext_header}}{{APIRef("IndexedDB")}}
 
-The **`IDBVersionChangeEvent()`** constructor
-creates a new {{domxref("IDBVersionChangeEvent")}} object, which is used to represent
-when a version of the database has changed, as a result of the
-{{domxref('IDBOpenDBRequest.upgradeneeded_event', 'onupgradeneeded')}} event handler.
+سازنده **`IDBVersionChangeEvent()`** یک شیء جدید {{domxref("IDBVersionChangeEvent")}} ایجاد می‌کند که برای نمایش تغییر نسخه پایگاه داده، در نتیجه کنترل‌کننده رویداد {{domxref('IDBOpenDBRequest.upgradeneeded_event', 'onupgradeneeded')}} استفاده می‌شود.
 
 ## Syntax
 
@@ -29,23 +20,21 @@ new IDBVersionChangeEvent(type, options)
 ### Parameters
 
 - `type`
-  - : A string with the name of the event.
-    It is case-sensitive and browsers set it to `versionchange`, `success`, or `blocked`.
+  - : یک رشته با نام رویداد. به حروف بزرگ و کوچک حساس است و مرورگرها آن را به `versionchange`، `success` یا `blocked` تنظیم می‌کنند.
 - `options` {{optional_inline}}
-  - : An object that, _in addition of the properties defined in {{domxref("Event/Event", "Event()")}}_, can have the following properties:
+  - : یک شیء که _علاوه بر ویژگی‌های تعریف شده در {{domxref("Event/Event", "Event()")}}_، می‌تواند ویژگی‌های زیر را داشته باشد:
     - `oldVersion` {{optional_inline}}
-      - : A number representing the previous version of the database. It defaults to `0`.
+      - : یک عدد که نسخه قبلی پایگاه داده را نشان می‌دهد. مقدار پیش‌فرض آن `0` است.
     - `newVersion` {{optional_inline}}
-      - : An unsigned long representing the new version of the database,
-        or `null` if the database is being deleted. It defaults is `null`.
+      - : یک عدد صحیح بدون علامت (unsigned long) که نسخه جدید پایگاه داده را نشان می‌دهد، یا اگر پایگاه داده در حال حذف شدن است `null` باشد. مقدار پیش‌فرض آن `null` است.
 
 ### Return value
 
-A new {{domxref("IDBVersionChangeEvent")}} object.
+یک شیء جدید {{domxref("IDBVersionChangeEvent")}}.
 
 ## Examples
 
-For a full working example, see our [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) app ([view example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+برای یک مثال کامل کار شده، به برنامه [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) مراجعه کنید ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
 
 ## Specifications
 
