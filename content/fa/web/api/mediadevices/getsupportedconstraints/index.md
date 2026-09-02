@@ -1,11 +1,5 @@
 ---
 title: "MediaDevices: getSupportedConstraints() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getSupportedConstraints"
-status: "needs-translation"
----
-
----
-title: "MediaDevices: getSupportedConstraints() method"
 short-title: getSupportedConstraints()
 slug: Web/API/MediaDevices/getSupportedConstraints
 page-type: web-api-instance-method
@@ -14,26 +8,25 @@ browser-compat: api.MediaDevices.getSupportedConstraints
 
 {{APIRef("Media Capture and Streams")}}{{SecureContext_Header}}
 
-The **`getSupportedConstraints()`** method of the {{domxref("MediaDevices")}} interface returns an object based on the {{domxref("MediaTrackSupportedConstraints")}} dictionary, whose member fields each specify one of the constrainable properties the {{Glossary("user agent")}} understands.
+**`getSupportedConstraints()`** 方法属于 {{domxref("MediaDevices")}} 接口，它返回一个基于 {{domxref("MediaTrackSupportedConstraints")}} 字典的对象，该对象的每个成员字段分别指定了 {{Glossary("user agent")}}（用户代理）所理解的一个可约束属性。
 
-## Syntax
+## 语法
 
 ```js-nolint
 getSupportedConstraints()
 ```
 
-### Parameters
+### 参数
 
-None.
+无。
 
-### Return value
+### 返回值
 
-A new object based on the {{domxref("MediaTrackSupportedConstraints")}} dictionary listing the constraints supported by the user agent.
-Because only constraints supported by the user agent are included in the list, each of these Boolean properties has the value `true`.
+返回一个新的对象，它基于 {{domxref("MediaTrackSupportedConstraints")}} 字典，列出用户代理支持的约束。由于列表中只包含用户代理支持的约束，因此这些布尔属性中的每一个都具有值 `true`。
 
-## Examples
+## 示例
 
-This example outputs a list of the constraints supported by your browser.
+此示例输出浏览器支持的约束列表。
 
 ```html hidden
 <p>The following media constraints are supported by your browser:</p>
@@ -60,14 +53,14 @@ for (const constraint of Object.keys(supportedConstraints)) {
 }
 ```
 
-### Result
+### 结果
 
 {{ EmbedLiveSample('Examples', 600, 350) }}
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
