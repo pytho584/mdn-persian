@@ -1,11 +1,5 @@
 ---
 title: "ImageDecoder: reset() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ImageDecoder/reset"
-status: "needs-translation"
----
-
----
-title: "ImageDecoder: reset() method"
 short-title: reset()
 slug: Web/API/ImageDecoder/reset
 page-type: web-api-instance-method
@@ -14,25 +8,25 @@ browser-compat: api.ImageDecoder.reset
 
 {{securecontext_header}}{{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`reset()`** method of the {{domxref("ImageDecoder")}} interface aborts all pending `decode()` operations; rejecting all pending promises. All other state will be unchanged. Class methods can continue to be invoked after `reset()`. E.g., calling `decode()` after `reset()` is permitted.
+متد **`reset()`** از رابط {{domxref("ImageDecoder")}} تمام عملیات‌های `decode()` در انتظار را لغو می‌کند و تمام promises (وعده‌های) در انتظار را رد می‌کند. تمام حالت‌های دیگر بدون تغییر باقی می‌مانند. پس از `reset()` همچنان می‌توان متدهای کلاس را فراخوانی کرد. برای مثال، فراخوانی `decode()` پس از `reset()` مجاز است.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 reset()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-The following example resets the `ImageDecoder`.
+مثال زیر `ImageDecoder` را بازنشانی می‌کند.
 
 ```js
 for (let i = 0; i < imageDecoder.tracks.selectedTrack.frameCount; ++i)
@@ -41,10 +35,10 @@ imageDecoder.reset();
 imageDecoder.decode({ frameIndex: 0 }).then(console.log);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
