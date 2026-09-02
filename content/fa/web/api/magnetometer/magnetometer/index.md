@@ -1,7 +1,5 @@
 ---
 title: "Magnetometer: Magnetometer() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Magnetometer/Magnetometer"
-status: "needs-translation"
 ---
 
 ---
@@ -16,44 +14,42 @@ browser-compat: api.Magnetometer.Magnetometer
 
 {{securecontext_header}}{{APIRef("Sensor API")}}{{SeeCompatTable}}
 
-The **`Magnetometer()`** constructor
-creates a new {{domxref("Magnetometer")}} object which returns information about the
-magnetic field as detected by a device's primary magnetometer sensor.
+سازندهٔ **`Magnetometer()`** یک شیء جدید از {{domxref("Magnetometer")}} می‌سازد که اطلاعات میدان مغناطیسیِ شناسایی‌شده توسط حسگر اصلی مغناطیس‌سنج دستگاه را ارائه می‌دهد.
 
-## Syntax
+## نحو
 
 ```js-nolint
 new Magnetometer()
 new Magnetometer(options)
 ```
 
-### Parameters
+### پارامترها
 
 - `options` {{optional_inline}}
-  - : Options are as follows:
+  - : گزینه‌ها به شرح زیر هستند.
     - `frequency` {{optional_inline}}
-      - : The desired number of times per second a sample should
-        be taken, meaning the number of times per second that the
-        {{domxref('sensor.reading_event', 'reading')}} event will be called. A whole number or decimal may be
-        used, the latter for frequencies less than a second. The actual reading frequency
-        depends on device hardware and consequently may be less than requested.
+      - : تعداد دفعات موردنظر برای نمونه‌برداری در هر ثانیه، یعنی تعداد دفعاتی در هر
+        ثانیه که رویداد {{domxref('sensor.reading_event', 'reading')}} فراخوانی می‌شود. می‌توان
+        از عدد صحیح یا اعشاری استفاده کرد؛ مورد دوم برای فرکانس‌های کمتر از یک ثانیه
+        به کار می‌رود. فرکانس واقعی خواندن به سخت‌افزار دستگاه بستگی دارد و در نتیجه
+        ممکن است کمتر از مقدار درخواستی باشد.
     - `referenceFrame` {{optional_inline}}
-      - : Either `'device'` or
-        `'screen'`. The default is `'device'`.
+      - : یکی از مقادیر `'device'` یا
+        `'screen'`. مقدار پیش‌فرض `'device'` است.
 
-### Exceptions
+### استثناها
 
 - `SecurityError` {{domxref("DOMException")}}
-  - : Use of this feature was blocked by a [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy).
+  - : استفاده از این ویژگی توسط [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) (سیاست مجوزها) مسدود شده است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- {{domxref('sensor.reading_event', 'reading')}} event
+- رویداد {{domxref('sensor.reading_event', 'reading')}}
