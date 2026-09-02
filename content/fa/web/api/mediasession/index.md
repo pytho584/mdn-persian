@@ -1,10 +1,4 @@
 ---
-title: "MediaSession"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaSession"
-status: "needs-translation"
----
-
----
 title: MediaSession
 slug: Web/API/MediaSession
 page-type: web-api-interface
@@ -13,35 +7,35 @@ browser-compat: api.MediaSession
 
 {{APIRef("Media Session API")}}
 
-The **`MediaSession`** interface of the {{domxref("Media Session API", "", "", "nocode")}} allows a web page to provide custom behaviors for standard media playback interactions, and to report metadata that can be sent by the user agent to the device or operating system for presentation in standardized user interface elements.
+رابطهٔ **`MediaSession`** از {{domxref("Media Session API", "", "", "nocode")}} به صفحه‌های وب اجازه می‌دهد رفتارهای سفارشی برای تعامل‌های استاندارد پخش رسانه فراهم کنند و فراداده‌ای را گزارش دهند که عامل کاربر می‌تواند برای نمایش در عناصر رابط کاربری استاندارد به دستگاه یا سیستم‌عامل ارسال کند.
 
-For example, a smartphone might have a standard panel in its lock screen that provides controls for media playback and information display. A browser on the device can use `MediaSession` to make browser playback controllable from that standard/global user interface.
+برای مثال، یک گوشی هوشمند ممکن است پنلی استاندارد در صفحه‌قفل خود داشته باشد که کنترل‌هایی برای پخش رسانه و نمایش اطلاعات ارائه می‌دهد. مرورگر روی دستگاه می‌تواند از `MediaSession` استفاده کند تا پخش مرورگر از آن رابط کاربری استاندارد/سراسری قابل کنترل باشد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("MediaSession.metadata", "metadata")}}
-  - : Returns an instance of {{domxref("MediaMetadata")}}, which contains rich media metadata for display in a platform UI.
+  - : یک نمونه از {{domxref("MediaMetadata")}} برمی‌گرداند که فرادادهٔ غنی رسانه را برای نمایش در رابط کاربری پلتفرم شامل می‌شود.
 - {{domxref("MediaSession.playbackState", "playbackState")}}
-  - : Indicates whether the current media session is playing. Valid values are `none`, `paused`, or `playing`.
+  - : نشان می‌دهد که نشست رسانه‌ای فعلی در حال پخش است یا خیر. مقادیر معتبر عبارت‌اند از `none`، `paused` یا `playing`.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("MediaSession.setActionHandler", "setActionHandler()")}}
-  - : Sets an action handler for a media session action, such as play or pause.
+  - : یک کنترل‌کنندهٔ اقدام (action handler) برای یک اقدام نشست رسانه‌ای مانند پخش یا توقف موقت (play یا pause) تنظیم می‌کند.
 - {{domxref("MediaSession.setCameraActive", "setCameraActive()")}}
-  - : Indicates to the user agent whether the user's camera is considered to be active.
+  - : به عامل کاربر اعلام می‌کند که آیا دوربین کاربر فعال در نظر گرفته می‌شود یا نه.
 - {{domxref("MediaSession.setMicrophoneActive", "setMicrophoneActive()")}}
-  - : Indicates to the user agent whether the user's microphone is considered to be currently muted.
+  - : به عامل کاربر اعلام می‌کند که آیا میکروفون کاربر در حال حاضر بی‌صدا در نظر گرفته می‌شود یا نه.
 - {{domxref("MediaSession.setPositionState", "setPositionState()")}}
-  - : Sets the current playback position and speed of the media currently being presented.
+  - : موقعیت و سرعت پخش فعلی رسانه‌ای را که در حال ارائه است تنظیم می‌کند.
 - {{domxref("MediaSession.setScreenshareActive", "setScreenshareActive()")}} {{experimental_inline}}
-  - : Indicates to the user agent the screenshare capture state desired by the page.
+  - : وضعیت مورد نظر صفحه را برای اشتراک‌گذاری صفحه (screenshare) به عامل کاربر اعلام می‌کند.
 
-## Examples
+## مثال‌ها
 
-### Setting up action handlers for a music player
+### تنظیم کنترل‌کننده‌های اقدام برای یک پخش‌کنندهٔ موسیقی
 
-The following example creates a new media session and assigns action handlers to it:
+مثال زیر یک نشست رسانه‌ای جدید می‌سازد و کنترل‌کننده‌های اقدام را به آن اختصاص می‌دهد:
 
 ```js
 if ("mediaSession" in navigator) {
@@ -84,45 +78,45 @@ if ("mediaSession" in navigator) {
   });
 
   navigator.mediaSession.setActionHandler("play", () => {
-    /* Code excerpted. */
+    /* کد حذف شده است. */
   });
   navigator.mediaSession.setActionHandler("pause", () => {
-    /* Code excerpted. */
+    /* کد حذف شده است. */
   });
   navigator.mediaSession.setActionHandler("stop", () => {
-    /* Code excerpted. */
+    /* کد حذف شده است. */
   });
   navigator.mediaSession.setActionHandler("seekbackward", () => {
-    /* Code excerpted. */
+    /* کد حذف شده است. */
   });
   navigator.mediaSession.setActionHandler("seekforward", () => {
-    /* Code excerpted. */
+    /* کد حذف شده است. */
   });
   navigator.mediaSession.setActionHandler("seekto", () => {
-    /* Code excerpted. */
+    /* کد حذف شده است. */
   });
   navigator.mediaSession.setActionHandler("previoustrack", () => {
-    /* Code excerpted. */
+    /* کد حذف شده است. */
   });
   navigator.mediaSession.setActionHandler("nexttrack", () => {
-    /* Code excerpted. */
+    /* کد حذف شده است. */
   });
   navigator.mediaSession.setActionHandler("skipad", () => {
-    /* Code excerpted. */
+    /* کد حذف شده است. */
   });
   navigator.mediaSession.setActionHandler("togglecamera", () => {
-    /* Code excerpted. */
+    /* کد حذف شده است. */
   });
   navigator.mediaSession.setActionHandler("togglemicrophone", () => {
-    /* Code excerpted. */
+    /* کد حذف شده است. */
   });
   navigator.mediaSession.setActionHandler("hangup", () => {
-    /* Code excerpted. */
+    /* کد حذف شده است. */
   });
 }
 ```
 
-The following example sets up two functions for playing and pausing, then uses them as callbacks with the relevant action handlers.
+مثال زیر دو تابع برای پخش و توقف موقت تنظیم می‌کند و سپس آن‌ها را با کنترل‌کننده‌های اقدام مرتبط به‌عنوان تابع بازخواست (callback) استفاده می‌کند.
 
 ```js
 const actionHandlers = [
@@ -160,9 +154,9 @@ for (const [action, handler] of actionHandlers) {
 }
 ```
 
-### Using action handlers to control a slide presentation
+### استفاده از کنترل‌کننده‌های اقدام برای کنترل یک ارائهٔ اسلاید
 
-The `"previousslide"` and `"nextslide"` action handlers can be used to handle moving forward and backward through a slide presentation, for example when the user puts their presentation into a {{domxref("Picture-in-Picture API", "Picture-in-Picture", "", "nocode")}} window, and presses the browser-supplied controls for navigating through slides.
+کنترل‌کننده‌های اقدام «اسلاید قبلی» (`"previousslide"`) و «اسلاید بعدی» (`"nextslide"`) می‌توانند برای جابه‌جایی به جلو و عقب در یک ارائهٔ اسلاید استفاده شوند؛ مثلاً وقتی کاربر ارائهٔ خود را در یک پنجرهٔ {{domxref("Picture-in-Picture API", "Picture-in-Picture", "", "nocode")}} قرار می‌دهد و کنترل‌های مرورگر را برای مرور اسلایدها فشار می‌دهد.
 
 ```js
 try {
@@ -186,12 +180,12 @@ try {
 }
 ```
 
-See [Presenting Slides / Media Session Sample](https://googlechrome.github.io/samples/media-session/slides.html) for a working example.
+برای یک مثال عملی، به [نمونهٔ ارائهٔ اسلاید / Media Session](https://googlechrome.github.io/samples/media-session/slides.html) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
