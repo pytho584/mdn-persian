@@ -1,11 +1,5 @@
 ---
 title: "MediaStreamTrack: getConstraints() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/getConstraints"
-status: "needs-translation"
----
-
----
-title: "MediaStreamTrack: getConstraints() method"
 short-title: getConstraints()
 slug: Web/API/MediaStreamTrack/getConstraints
 page-type: web-api-instance-method
@@ -14,49 +8,30 @@ browser-compat: api.MediaStreamTrack.getConstraints
 
 {{APIRef("Media Capture and Streams")}}
 
-The **`getConstraints()`** method of
-the {{domxref("MediaStreamTrack")}} interface returns a
-{{domxref('MediaTrackConstraints')}} object containing the set of constraints most
-recently established for the track using a prior call to
-{{domxref("MediaStreamTrack.applyConstraints", "applyConstraints()")}}. These
-constraints indicate values and ranges of values that the website or application has
-specified are required or acceptable for the included constrainable properties.
+**`getConstraints()`** 方法屬於 {{domxref("MediaStreamTrack")}} 介面，會回傳一個 {{domxref('MediaTrackConstraints')}} 物件，其中包含先前透過呼叫 {{domxref("MediaStreamTrack.applyConstraints", "applyConstraints()")}} 為該軌道設定的最新限制。這些限制表示網站或應用程式已指定的、對所包含的可限制屬性而言為必要或可接受的值與值範圍。
 
-Constraints can be used to ensure that the media meets certain guidelines you prefer.
-For example, you may prefer high definition video but require that the frame rate be a
-little low to help keep the data rate low enough not overtax the network. Constraints
-can also specify ideal and/or acceptable sizes or ranges of sizes. See [Capabilities, constraints, and settings](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints) for details on how to work with constrainable properties.
+限制可用於確保媒體符合您偏好的某些準則。例如，您可能偏好高畫質影片，但要求影格率略低，以幫助將資料速率保持在不會過度負荷網路的範圍內。限制也可以指定理想及/或可接受的大小或大小範圍。如需如何操作可限制屬性的詳細資訊，請參閱[能力、限制與設定](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints)。
 
-## Syntax
+## 語法
 
 ```js-nolint
 getConstraints()
 ```
 
-### Parameters
+### 參數
 
-None.
+無。
 
-### Return value
+### 回傳值
 
-A {{domxref('MediaTrackConstraints')}} object which indicates the constrainable
-properties the website or app most recently set using
-{{domxref("MediaStreamTrack.applyConstraints", "applyConstraints()")}}. The properties
-in the returned object are listed in the same order as when they were set, and only
-properties specifically set by the site or app are included.
+一個 {{domxref('MediaTrackConstraints')}} 物件，表示網站或應用程式最近透過 {{domxref("MediaStreamTrack.applyConstraints", "applyConstraints()")}} 設定的可限制屬性。回傳物件中的屬性依設定時的順序列出，且僅包含網站或應用程式明確設定的屬性。
 
 > [!NOTE]
-> The returned set of constraints doesn't necessarily describe
-> the actual state of the media. Even if any of the constraints couldn't be met, they
-> are still included in the returned object as originally set by the site's code. To get
-> the currently active settings for all constrainable properties, you should instead
-> call {{domxref("MediaStreamTrack.getSettings", "getSettings()")}}.
+> 回傳的限制集合不一定描述媒體的實際狀態。即使其中某些限制無法滿足，它們仍會以網站程式碼原本設定的形式包含在回傳物件中。若要取得所有可限制屬性的目前使用中設定，您應該改為呼叫 {{domxref("MediaStreamTrack.getSettings", "getSettings()")}}。
 
-## Examples
+## 範例
 
-This example obtains the current constraints for a track, sets the
-{{domxref("MediaTrackConstraints.facingMode", "facingMode")}}, and applies the updated
-constraints.
+此範例取得軌道的目前限制，設定 {{domxref("MediaTrackConstraints.facingMode", "facingMode")}}，然後套用更新後的限制。
 
 ```js
 function switchCameras(track, camera) {
@@ -66,10 +41,10 @@ function switchCameras(track, camera) {
 }
 ```
 
-## Specifications
+## 規格
 
 {{Specifications}}
 
-## Browser compatibility
+## 瀏覽器相容性
 
 {{Compat}}
