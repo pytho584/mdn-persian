@@ -1,7 +1,5 @@
 ---
 title: "MIDIConnectionEvent: MIDIConnectionEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MIDIConnectionEvent/MIDIConnectionEvent"
-status: "needs-translation"
 ---
 
 ---
@@ -14,7 +12,7 @@ browser-compat: api.MIDIConnectionEvent.MIDIConnectionEvent
 
 {{securecontext_header}}{{APIRef("Web MIDI API")}}
 
-The **`MIDIConnectionEvent()`** constructor creates a new {{domxref("MIDIConnectionEvent")}} object. Typically this constructor is not used as events are created when a new port becomes available, and the object is passed to the {{domxref("MIDIAccess.statechange_event", "statechange")}} event.
+سازندهی **`MIDIConnectionEvent()`** یک شیء جدید از نوع {{domxref("MIDIConnectionEvent")}} می‌سازد. به‌طور معمول از این سازنده استفاده نمی‌شود، زیرا رویدادها زمانی ایجاد می‌شوند که یک درگاه جدید در دسترس قرار می‌گیرد و شیء به رویداد {{domxref("MIDIAccess.statechange_event", "statechange")}} منتقل می‌شود.
 
 ## Syntax
 
@@ -26,26 +24,22 @@ new MIDIConnectionEvent(type, midiConnectionEventInit)
 ### Parameters
 
 - `type`
-  - : A string with one of `"connect"` or `"disconnect"`.
+  - : یک رشته که یکی از مقادیر `"connect"` یا `"disconnect"` را دارد.
 - `midiConnectionEventInit` {{optional_inline}}
-  - : A dictionary including the following fields:
+  - : یک دیکشنری شامل فیلدهای زیر:
     - `port`
-      - : The {{domxref("MIDIPort")}} instance representing the port that has connected or disconnected.
+      - : نمونه‌ی {{domxref("MIDIPort")}} که درگاهی را که متصل یا قطع شده است نشان می‌دهد.
     - `bubbles` {{optional_inline}}
-      - : A boolean value indicating whether the event bubbles. The default is
-        `false`.
+      - : یک مقدار بولی که نشان می‌دهد آیا رویداد حباب می‌کند یا نه. پیش‌فرض `false` است.
     - `cancelable` {{optional_inline}}
-      - : A boolean value indicating whether the event can be cancelled. The
-        default is `false`.
+      - : یک مقدار بولی که نشان می‌دهد آیا رویداد قابل لغو است یا نه. پیش‌فرض `false` است.
     - `composed` {{optional_inline}}
-      - : A boolean value indicating whether the event will trigger listeners
-        outside of a shadow root (see {{domxref("Event.composed")}} for more details). The
-        default is `false`.
+      - : یک مقدار بولی که نشان می‌دهد آیا رویداد شنونده‌هایی خارج از ریشه سایه (shadow root) را فعال می‌کند یا نه (برای جزئیات بیشتر به {{domxref("Event.composed")}} مراجعه کنید). پیش‌فرض `false` است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
