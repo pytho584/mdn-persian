@@ -1,11 +1,5 @@
 ---
 title: "IdleDetector: change event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IdleDetector/change_event"
-status: "needs-translation"
----
-
----
-title: "IdleDetector: change event"
 short-title: change
 slug: Web/API/IdleDetector/change_event
 page-type: web-api-event
@@ -16,11 +10,11 @@ browser-compat: api.IdleDetector.change_event
 
 {{securecontext_header}}{{APIRef("Idle Detection API")}}{{SeeCompatTable}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`change`** event of the {{domxref("IdleDetector")}} interface fires when the value of `userState` or `screenState` has changed.
+رویداد **`change`** در واسط {{domxref("IdleDetector")}} زمانی رخ می‌دهد که مقدار `userState` یا `screenState` تغییر کرده باشد.
 
-## Syntax
+## نحو و دستور
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("change", (event) => { })
@@ -28,13 +22,13 @@ addEventListener("change", (event) => { })
 onchange = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Example
+## مثال
 
-In the following example, the `change` callback prints the status of `userState` and `screenState` to the console.
+در مثال زیر، فراخوان رویداد `change` وضعیت `userState` و `screenState` را در کنسول چاپ می‌کند.
 
 ```js
 idleDetector.addEventListener("change", () => {
@@ -44,10 +38,10 @@ idleDetector.addEventListener("change", () => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
