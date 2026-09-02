@@ -1,7 +1,5 @@
 ---
 title: "HTMLTableSectionElement: vAlign property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableSectionElement/vAlign"
-status: "needs-translation"
 ---
 
 ---
@@ -16,39 +14,39 @@ browser-compat: api.HTMLTableSectionElement.vAlign
 
 {{APIRef("HTML DOM")}}{{deprecated_header}}
 
-The **`vAlign`** property of the {{domxref("HTMLTableSectionElement")}} interface is a string indicating how to vertically align text in a {{htmlelement("thead")}}, {{htmlelement("tbody")}} or {{htmlelement("tfoot")}} table section. Individual rows and cells can override it.
+ویژگی **`vAlign`** از رابط {{domxref("HTMLTableSectionElement")}} یک رشته است که نشان می‌دهد متن در یک بخش جدول شامل {{htmlelement("thead")}}، {{htmlelement("tbody")}} یا {{htmlelement("tfoot")}} چگونه به‌صورت عمودی تراز شود. سطرها و سلول‌های منفرد می‌توانند آن را بازنویسی کنند.
 
 > [!NOTE]
-> This property is deprecated. Use the CSS {{cssxref("vertical-align")}} property to horizontally align text in section cells instead.
+> این ویژگی منسوخ شده است. به‌جای آن از ویژگی CSS {{cssxref("vertical-align")}} برای تراز عمودی متن در سلول‌های بخش استفاده کنید.
 
-## Value
+## مقدار
 
-The possible values are: `"top"`, `"middle"`, `"bottom"`, or `"baseline"`
+مقادیر ممکن عبارت‌اند از: `"top"`، `"middle"`، `"bottom"` یا `"baseline"`
 
 - `top`
-  - : Align the text to the top of the cell. Use `vertical-align: top` instead.
+  - : تراز کردن متن در بالای سلول. به‌جای آن از `vertical-align: top` استفاده کنید.
 - `center`
-  - : Vertically center the text in the cell. Synonym of `middle`. Use `vertical-align: middle` instead.
+  - : متن را به‌صورت عمودی در سلول وسط‌چین می‌کند. مترادف `middle` است. به‌جای آن از `vertical-align: middle` استفاده کنید.
 - `middle`
-  - : Vertically center the text in the cell. Use `vertical-align: middle` instead.
+  - : متن را به‌صورت عمودی در سلول وسط‌چین می‌کند. به‌جای آن از `vertical-align: middle` استفاده کنید.
 - `bottom`
-  - : Align the text to the bottom of the cell. Use `vertical-align: bottom` instead.
+  - : تراز کردن متن در پایین سلول. به‌جای آن از `vertical-align: bottom` استفاده کنید.
 - `baseline`
-  - : Similar to `top`, but align the baseline of the text as close to the top so no part of the character is outside of the cell.
+  - : مشابه `top` است، اما خط پایهٔ متن را تا حد امکان به بالای سلول نزدیک می‌کند، به‌گونه‌ای که هیچ بخشی از نویسه‌ها خارج از سلول نباشد.
 
-## Examples
+## مثال‌ها
 
-Use CSS {{cssxref("vertical-align")}} instead, which takes precedence, as demonstrated in the [vertical alignment table cells](/en-US/docs/Web/CSS/Reference/Properties/vertical-align#vertical_alignment_in_a_table_cell) example.
+به‌جای آن از {{cssxref("vertical-align")}} استفاده کنید که اولویت دارد؛ همان‌طور که در مثال [تراز عمودی سلول‌های جدول](/en-US/docs/Web/CSS/Reference/Properties/vertical-align#vertical_alignment_in_a_table_cell) نشان داده شده است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{cssxref("vertical-align")}}
-- [Learn: Styling tables](/en-US/docs/Learn_web_development/Core/Styling_basics/Tables)
+- [یادگیری: استایل‌دهی به جدول‌ها](/en-US/docs/Learn_web_development/Core/Styling_basics/Tables)
