@@ -1,11 +1,5 @@
 ---
 title: "HTMLTableRowElement: sectionRowIndex property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableRowElement/sectionRowIndex"
-status: "needs-translation"
----
-
----
-title: "HTMLTableRowElement: sectionRowIndex property"
 short-title: sectionRowIndex
 slug: Web/API/HTMLTableRowElement/sectionRowIndex
 page-type: web-api-instance-property
@@ -14,16 +8,15 @@ browser-compat: api.HTMLTableRowElement.sectionRowIndex
 
 {{ APIRef("HTML DOM") }}
 
-The **`sectionRowIndex`** read-only property of the {{domxref("HTMLTableRowElement")}} interface
-represents the position of a row within the current section ({{htmlelement("thead")}}, {{htmlelement("tbody")}}, or {{htmlelement("tfoot")}}).
+ویژگی فقط‌خواندنی **`sectionRowIndex`** در رابط {{domxref("HTMLTableRowElement")}} نشان‌دهندهٔ موقعیت یک ردیف در بخش فعلی جدول است ({{htmlelement("thead")}}، {{htmlelement("tbody")}} یا {{htmlelement("tfoot")}}).
 
-## Value
+## مقدار
 
-The index of the row, or `-1` if the row is not part of the section.
+اندیس ردیف، یا `1-` اگر ردیف بخشی از آن بخش نباشد.
 
-## Examples
+## مثال‌ها
 
-This example uses JavaScript to label all the row numbers of the `tbody`.
+این مثال با استفاده از جاوااسکریپت، شمارهٔ همهٔ ردیف‌های `tbody` را برچسب‌گذاری می‌کند.
 
 ### HTML
 
@@ -70,18 +63,18 @@ rows.forEach((row) => {
 });
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("HTMLTableRowElement.rowIndex")}}
