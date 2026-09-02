@@ -1,9 +1,4 @@
----
-title: "LayoutShiftAttribution: toJSON() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/LayoutShiftAttribution/toJSON"
-status: "needs-translation"
----
-
+```markdown
 ---
 title: "LayoutShiftAttribution: toJSON() method"
 short-title: toJSON()
@@ -16,25 +11,25 @@ browser-compat: api.LayoutShiftAttribution.toJSON
 
 {{APIRef("Performance API")}}{{SeeCompatTable}}
 
-The **`toJSON()`** method of the {{domxref("LayoutShiftAttribution")}} interface is a _serializer_ that returns a JSON representation of the `LayoutShiftAttribution` object.
+متد **`toJSON()`** از رابط {{domxref("LayoutShiftAttribution")}} یک _سریال‌ساز_ است که یک نمایش JSON از شیء `LayoutShiftAttribution` بازمی‌گرداند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 toJSON()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-A JSON object that is the serialization of the {{domxref("LayoutShiftAttribution")}} object.
+یک شیء JSON که سریال‌سازی شیء {{domxref("LayoutShiftAttribution")}} است.
 
-## Examples
+## مثال‌ها
 
-The following example prints a JSON representation of the first item in {{domxref("LayoutShift.sources")}} to the console.
+مثال زیر یک نمایش JSON از اولین آیتم در {{domxref("LayoutShift.sources")}} را در کنسول چاپ می‌کند.
 
 ```js
 new PerformanceObserver((list) => {
@@ -46,10 +41,11 @@ new PerformanceObserver((list) => {
 }).observe({ type: "layout-shift", buffered: true });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
+```
