@@ -1,7 +1,5 @@
 ---
 title: "MediaTrackConstraints: sampleSize property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/sampleSize"
-status: "needs-translation"
 ---
 
 ---
@@ -14,46 +12,33 @@ browser-compat: api.MediaStreamTrack.applyConstraints.sampleSize_constraint
 
 {{APIRef("Media Capture and Streams")}}
 
-The {{domxref("MediaTrackConstraints")}} dictionary's
-**`sampleSize`** property is a [`ConstrainULong`](/en-US/docs/Web/API/MediaTrackConstraints#constrainulong)
-describing the requested or mandatory constraints placed upon the value of the
-{{domxref("MediaTrackSettings.sampleSize", "sampleSize")}} constrainable property.
+ویژگی **`sampleSize`** از دیکشنری {{domxref("MediaTrackConstraints")}} یک [`ConstrainULong`](/en-US/docs/Web/API/MediaTrackConstraints#constrainulong) است که محدودیت‌های درخواستی یا اجباری اعمال‌شده بر مقدار ویژگی قابل‌محدودسازی {{domxref("MediaTrackSettings.sampleSize", "sampleSize")}} را توصیف می‌کند.
 
-If needed, you can determine whether or not this constraint is supported by checking
-the value of {{domxref("MediaTrackSupportedConstraints.sampleSize")}} as returned by a
-call to {{domxref("MediaDevices.getSupportedConstraints()")}}. However, typically this
-is unnecessary since browsers will ignore any constraints they're unfamiliar with.
+در صورت نیاز، می‌توانید با بررسی مقدار {{domxref("MediaTrackSupportedConstraints.sampleSize")}} که توسط فراخوانی {{domxref("MediaDevices.getSupportedConstraints()")}} بازگردانده می‌شود، تعیین کنید که آیا این محدودیت پشتیبانی می‌شود یا خیر. با این حال، معمولاً این کار ضروری نیست، زیرا مرورگرها هر محدودیتی را که با آن آشنایی نداشته باشند نادیده می‌گیرند.
 
-## Value
+## مقدار
 
-If this value is a number, the user agent will attempt to obtain media whose sample
-size (in bits per linear sample) is as close as possible to this number given the
-capabilities of the hardware and the other constraints specified. Otherwise, the value
-of this [`ConstrainULong`](/en-US/docs/Web/API/MediaTrackConstraints#constrainulong) will guide the user agent in its efforts to provide
-an exact match to the required sample size (if `exact` is specified or both
-`min` and `max` are provided and have the same value) or to a
-best-possible value.
+اگر این مقدار یک عدد باشد، عامل کاربر (user agent) تلاش می‌کند رسانه‌ای را به دست آورد که اندازه نمونه آن (بر حسب بیت به ازای هر نمونه خطی) با توجه به قابلیت‌های سخت‌افزار و سایر محدودیت‌های مشخص‌شده، تا حد ممکن به این عدد نزدیک باشد. در غیر این صورت، مقدار این [`ConstrainULong`](/en-US/docs/Web/API/MediaTrackConstraints#constrainulong) عامل کاربر را در تلاش برای ارائه تطابق دقیق با اندازه نمونه مورد نیاز (اگر `exact` مشخص شده باشد یا هر دو `min` و `max` ارائه شده و مقدار یکسانی داشته باشند) یا رسیدن به بهترین مقدار ممکن هدایت می‌کند.
 
 > [!NOTE]
-> Since this property can only represent linear sample sizes, this constraint can only
-> be met by devices that can produce audio with linear samples.
+> از آنجا که این ویژگی فقط می‌تواند اندازه‌های نمونه خطی را نشان دهد، این محدودیت تنها توسط دستگاه‌هایی قابل برآورده شدن است که می‌توانند صدایی با نمونه‌های خطی تولید کنند.
 
-## Examples
+## مثال‌ها
 
-See the [Constraint exerciser](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#example_constraint_exerciser) example.
+نمونه [Constraint exerciser](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#example_constraint_exerciser) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
-- [Capabilities, constraints, and settings](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints)
+- [قابلیت‌ها، محدودیت‌ها و تنظیمات](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints)
 - {{domxref("MediaTrackConstraints")}}
 - {{domxref("MediaDevices.getSupportedConstraints()")}}
 - {{domxref("MediaTrackSupportedConstraints")}}
