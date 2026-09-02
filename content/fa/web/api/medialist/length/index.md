@@ -1,11 +1,5 @@
 ---
 title: "MediaList: length property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaList/length"
-status: "needs-translation"
----
-
----
-title: "MediaList: length property"
 short-title: length
 slug: Web/API/MediaList/length
 page-type: web-api-instance-property
@@ -14,16 +8,15 @@ browser-compat: api.MediaList.length
 
 {{APIRef("CSSOM")}}
 
-The read-only **`length`** property of the {{DOMxRef("MediaList")}} interface returns the number of media queries in the list.
+ویژگی فقط‌خواندنی **`length`** در رابط {{DOMxRef("MediaList")}} تعداد کوئری‌های رسانه‌ای موجود در فهرست را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A positive integer.
+یک عدد صحیح مثبت.
 
-## Examples
+## مثال‌ها
 
-The following would log to the console the number of media queries stored in the
-`MediaList` associated with the first stylesheet applied to the current document.
+در مثال زیر، تعداد کوئری‌های رسانه‌ای ذخیره‌شده در `MediaList` مربوط به اولین stylesheet اعمال‌شده به سند فعلی، در کنسول ثبت می‌شود.
 
 ```js
 const stylesheets = document.styleSheets;
@@ -31,10 +24,10 @@ const stylesheet = stylesheets[0];
 console.log(stylesheet.media.length);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
