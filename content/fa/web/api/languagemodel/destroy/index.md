@@ -1,11 +1,5 @@
 ---
 title: "LanguageModel: destroy() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/LanguageModel/destroy"
-status: "needs-translation"
----
-
----
-title: "LanguageModel: destroy() method"
 short-title: destroy()
 slug: Web/API/LanguageModel/destroy
 page-type: web-api-instance-method
@@ -16,32 +10,32 @@ browser-compat: api.LanguageModel.destroy
 
 {{APIRef("Prompt API")}}{{SeeCompatTable}}{{securecontext_header}}
 
-The **`destroy()`** method of the {{domxref("LanguageModel")}} interface releases the resources assigned to the `LanguageModel` instance it is called on and stops any further activity on it. Any ongoing and subsequent method calls made on the `LanguageModel` will reject with an `AbortError`.
+متد **`destroy()`** از رابط {{domxref("LanguageModel")}}، منابع تخصیص‌داده‌شده به نمونه‌ای از `LanguageModel` را که روی آن فراخوانی می‌شود آزاد می‌کند و هر فعالیت بیشتری روی آن را متوقف می‌سازد. هر فراخوانی متدی که روی این `LanguageModel` در حال انجام باشد یا پس از آن انجام شود، با یک `AbortError` رد خواهد شد.
 
-It makes sense to destroy `LanguageModel` objects if they are no longer being used, as they tie up significant resources in their handling.
+اگر دیگر از اشیاء `LanguageModel` استفاده نمی‌کنید، منطقی است که آن‌ها را از بین ببرید؛ زیرا مدیریت آن‌ها منابع قابل توجهی را اشغال می‌کند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 destroy()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if usage of the method is blocked by a {{httpheader("Permissions-Policy/language-model", "language-model")}} {{httpheader("Permissions-Policy")}}.
+  - : اگر استفاده از این متد توسط یک {{httpheader("Permissions-Policy/language-model", "language-model")}} {{httpheader("Permissions-Policy")}} مسدود شده باشد، این استثنا پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Basic `destroy()` usage
+### استفاده‌ی پایه از `destroy()`
 
 ```js
 const session = await LanguageModel.create({
@@ -54,17 +48,17 @@ const session = await LanguageModel.create({
 session.destroy();
 ```
 
-See also [Using the Prompt API > Cancelling operations and destroying instances](/en-US/docs/Web/API/Prompt_API/Using#cancelling_operations_and_destroying_instances).
+همچنین ببینید: [استفاده از Prompt API > لغو عملیات‌ها و از بین بردن نمونه‌ها](/en-US/docs/Web/API/Prompt_API/Using#cancelling_operations_and_destroying_instances).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Prompt API](/en-US/docs/Web/API/Prompt_API)
-- [Using the Prompt API](/en-US/docs/Web/API/Prompt_API/Using)
+- [استفاده از Prompt API](/en-US/docs/Web/API/Prompt_API/Using)
