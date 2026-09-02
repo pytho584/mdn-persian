@@ -1,11 +1,5 @@
 ---
 title: "IdleDetector: requestPermission() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IdleDetector/requestPermission_static"
-status: "needs-translation"
----
-
----
-title: "IdleDetector: requestPermission() static method"
 short-title: requestPermission()
 slug: Web/API/IdleDetector/requestPermission_static
 page-type: web-api-static-method
@@ -16,32 +10,29 @@ browser-compat: api.IdleDetector.requestPermission_static
 
 {{securecontext_header}}{{APIRef("Idle Detection API")}}{{SeeCompatTable}}
 
-The **`requestPermission()`** static method of the {{domxref("IdleDetector")}}
-interface returns a {{jsxref('Promise')}} that resolves with a string when the user has chosen
-whether to grant the origin access to their idle state. Resolves with
-`"granted"` on acceptance and `"denied"` on refusal.
+متد ایستای **`requestPermission()`** از رابط {{domxref("IdleDetector")}} یک {{jsxref('Promise')}} برمی‌گرداند که وقتی کاربر انتخاب کرد که آیا به مبدأ (origin) دسترسی به وضعیت بیکاری (idle) خود را بدهد یا نه، با یک رشته (string) حل می‌شود. در صورت پذیرش با `"granted"` و در صورت رد با `"denied"` حل می‌شود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 IdleDetector.requestPermission()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-A `Promise` that resolves with `"granted"` or `"denied"`.
+یک `Promise` که با `"granted"` یا `"denied"` حل می‌شود.
 
-## Security
+## امنیت
 
-[Transient user activation](/en-US/docs/Web/Security/Defenses/User_activation) is required. The user has to interact with the page or a UI element in order for this feature to work.
+[فعال‌سازی کاربر گذرا](/en-US/docs/Web/Security/Defenses/User_activation) (Transient user activation) مورد نیاز است. کاربر باید با صفحه یا یک عنصر رابط کاربری تعامل کند تا این ویژگی کار کند.
 
-## Examples
+## مثال‌ها
 
-The following example uses a `click` event on a button to trigger requesting the user for permission to detect when user is idle.
+مثال زیر از یک رویداد `click` روی دکمه برای درخواست مجوز از کاربر جهت تشخیص زمانی که کاربر بیکار است استفاده می‌کند.
 
 ```js
 startButton.addEventListener("click", async () => {
@@ -52,10 +43,10 @@ startButton.addEventListener("click", async () => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
