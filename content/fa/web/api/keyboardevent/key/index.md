@@ -1,11 +1,5 @@
 ---
 title: "KeyboardEvent: key property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key"
-status: "needs-translation"
----
-
----
-title: "KeyboardEvent: key property"
 short-title: key
 slug: Web/API/KeyboardEvent/key
 page-type: web-api-instance-property
@@ -14,42 +8,42 @@ browser-compat: api.KeyboardEvent.key
 
 {{APIRef("UI Events")}}
 
-The {{domxref("KeyboardEvent")}} interface's **`key`** read-only property returns the value of the key pressed by the user, taking into consideration the state of modifier keys such as <kbd>Shift</kbd> as well as the keyboard locale and layout.
+ویژگی فقط‌خواندنی **`key`** در رابط {{domxref("KeyboardEvent")}}، مقدار کلیدی را که کاربر فشرده است برمی‌گرداند؛ به‌گونه‌ای که وضعیت کلیدهای اصلاح‌کننده مانند <kbd>Shift</kbd> و همچنین منطقه (locale) و چیدمان صفحه‌کلید را در نظر می‌گیرد.
 
-## Value
+## مقدار
 
-A string.
+یک رشته (string).
 
-Its value is determined as follows:
+مقدار آن به صورت زیر تعیین می‌شود:
 
-- If the pressed key has a printed representation, the returned value is a non-empty Unicode character string containing the printable representation of the key. For example: if the pressed key is the <kbd>Space</kbd> key, the returned value is a single space (`" "`). If the pressed key is the <kbd>B</kbd> key, the returned value is the string `"b"`. However, if the <kbd>Shift</kbd> key is pressed at the same time (so {{domxref("KeyboardEvent/shiftKey", "shiftKey")}} is `true`), the returned value is the string `"B"`.
-- If the pressed key is a control or special character, the returned value is one of the [pre-defined key values](/en-US/docs/Web/API/UI_Events/Keyboard_event_key_values).
-- If the `KeyboardEvent` represents the press of a [dead key](https://en.wikipedia.org/wiki/Dead_key), the key value must be `"Dead"`.
-- Some specialty keyboard keys (such as the extended keys for controlling media on multimedia keyboards) don't generate key codes on Windows; instead, they trigger `WM_APPCOMMAND` events. These events get mapped to DOM keyboard events, and are listed among the "Virtual key codes" for Windows, even though they aren't actually key codes.
-- If the key cannot be identified, the returned value is `Unidentified`.
+- اگر کلیدِ فشرده‌شده یک نمایشِ نوشتاری (قابل‌چاپ) داشته باشد، مقدار برگشتی یک رشته‌ی ناتهی از کاراکترهای یونیکد است که نمایشِ قابل‌چاپِ آن کلید را دربردارد. برای مثال: اگر کلید فشرده‌شده <kbd>Space</kbd> باشد، مقدار برگشتی یک فاصله (`" "`) است. اگر کلید فشرده‌شده <kbd>B</kbd> باشد، مقدار برگشتی رشته‌ی `"b"` است. با این حال، اگر هم‌زمان کلید <kbd>Shift</kbd> نیز فشرده شده باشد (یعنی {{domxref("KeyboardEvent/shiftKey", "shiftKey")}} برابر `true` باشد)، مقدار برگشتی رشته‌ی `"B"` خواهد بود.
+- اگر کلید فشرده‌شده یک کلید کنترلی یا کاراکتر ویژه باشد، مقدار برگشتی یکی از [مقدارهای کلیدِ از پیش تعریف‌شده](/en-US/docs/Web/API/UI_Events/Keyboard_event_key_values) است.
+- اگر {{domxref("KeyboardEvent")}} نمایانگر فشردن یک [کلید مُرده (dead key)](https://en.wikipedia.org/wiki/Dead_key) باشد، مقدار `key` باید `"Dead"` باشد.
+- برخی از کلیدهای ویژه‌ی صفحه‌کلید (مانند کلیدهای گسترش‌یافته برای کنترل رسانه در صفحه‌کلیدهای چندرسانه‌ای) در ویندوز کد کلید تولید نمی‌کنند؛ در عوض، رویدادهای `WM_APPCOMMAND` را راه‌اندازی می‌کنند. این رویدادها به رویدادهای صفحه‌کلید DOM نگاشت می‌شوند و در فهرست «Virtual key codes» ویندوز قرار می‌گیرند؛ حتی اگر در واقع کد کلید نباشند.
+- اگر کلید قابل شناسایی نباشد، مقدار برگشتی `Unidentified` است.
 
 > [!CALLOUT]
 >
-> [See a full list of key values](/en-US/docs/Web/API/UI_Events/Keyboard_event_key_values).
+> [فهرست کامل مقدارهای کلید را ببینید](/en-US/docs/Web/API/UI_Events/Keyboard_event_key_values).
 
-## KeyboardEvent sequence
+## توالی رویدادهای KeyboardEvent
 
-Every `KeyboardEvent` is fired in a pre-determined sequence. For a given key press, the sequence of `KeyboardEvent`s fired is as follows assuming that {{domxref("Event.preventDefault")}} is not called:
+هر رویداد {{domxref("KeyboardEvent")}} در یک توالیِ از پیش تعیین‌شده صادر می‌شود. برای یک بار فشردنِ کلید مشخص، با فرض اینکه {{domxref("Event.preventDefault")}} فراخوانی نشود، توالی رویدادهای {{domxref("KeyboardEvent")}} به این صورت است:
 
-1. A {{domxref("Element/keydown_event", "keydown")}} event is first fired. If the key is held down further and the key produces a character key, then the event continues to be emitted in a platform implementation dependent interval and the {{domxref("KeyboardEvent.repeat")}} read only property is set to `true`.
-2. If the key produces a character key that would result in a character being inserted into possibly an {{HTMLElement("input")}}, {{HTMLElement("textarea")}} or an element with {{domxref("HTMLElement.contentEditable")}} set to true, the {{domxref("Element/beforeinput_event", "beforeinput")}} and {{domxref("Element/input_event", "input")}} event types are fired in that order. Note that some other implementations may fire {{domxref("Element/keypress_event", "keypress")}} event if supported. The events will be fired repeatedly while the key is held down.
-3. A {{domxref("Element/keyup_event", "keyup")}} event is fired once the key is released. This completes the process.
+1. ابتدا یک رویداد {{domxref("Element/keydown_event", "keydown")}} صادر می‌شود. اگر کلید همچنان نگه داشته شود و آن کلید یک کلید کاراکتری تولید کند، رویداد در بازه‌ی زمانیِ وابسته به پیاده‌سازیِ سکو (platform) به انتشار ادامه می‌دهد و ویژگی فقط‌خواندنی {{domxref("KeyboardEvent.repeat")}} روی `true` تنظیم می‌شود.
+2. اگر کلیدِ فشرده‌شده یک کلید کاراکتری تولید کند که به درج شدن یک کاراکتر در یک {{HTMLElement("input")}}، {{HTMLElement("textarea")}} یا عنصری با {{domxref("HTMLElement.contentEditable")}} برابر `true` منجر شود، رویدادهای {{domxref("Element/beforeinput_event", "beforeinput")}} و {{domxref("Element/input_event", "input")}} به همین ترتیب صادر می‌شوند. توجه داشته باشید که برخی پیاده‌سازی‌های دیگر ممکن است در صورت پشتیبانی، رویداد {{domxref("Element/keypress_event", "keypress")}} را نیز صادر کنند. این رویدادها تا زمانی که کلید نگه داشته شده است، به‌طور مکرر صادر خواهند شد.
+3. به محض رها شدن کلید، یک رویداد {{domxref("Element/keyup_event", "keyup")}} صادر می‌شود. با این کار فرایند کامل می‌شود.
 
-In sequence 1 & 3, the `KeyboardEvent.key` attribute is defined and is set appropriately to a value according to the rules defined earlier.
+در مرحله‌های ۱ و ۳، ویژگی `KeyboardEvent.key` تعریف شده و مطابق قواعدی که پیش‌تر بیان شد، روی مقدار مناسبی تنظیم می‌شود.
 
-## KeyboardEvent sequence example
+## مثالی از توالی رویدادهای KeyboardEvent
 
-Consider the event sequence generated when we interact with the <kbd>Shift</kbd> and the <kbd>2</kbd> key using a U.S keyboard layout as compared to when we do so using a UK keyboard layout.
+توالی رویدادهایی را در نظر بگیرید که هنگام تعامل با کلیدهای <kbd>Shift</kbd> و <kbd>2</kbd> با چیدمان صفحه‌کلید آمریکایی (U.S) در مقایسه با چیدمان صفحه‌کلید بریتانیایی (UK) تولید می‌شود.
 
-Try experimenting using the following two test cases:
+با دو مورد آزمایشی زیر آزمایش کنید:
 
-1. Press and hold the <kbd>Shift</kbd> key, then press <kbd>2</kbd> and release it. Next, release the <kbd>Shift</kbd> key.
-2. Press and hold the <kbd>Shift</kbd> key, then press and hold <kbd>2</kbd>. Release the <kbd>Shift</kbd> key. Finally, release <kbd>2</kbd>.
+1. کلید <kbd>Shift</kbd> را فشار دهید و نگه دارید، سپس <kbd>2</kbd> را فشار دهید و رها کنید. در ادامه، کلید <kbd>Shift</kbd> را رها کنید.
+2. کلید <kbd>Shift</kbd> را فشار دهید و نگه دارید، سپس <kbd>2</kbd> را فشار دهید و نگه دارید. کلید <kbd>Shift</kbd> را رها کنید. در نهایت، <kbd>2</kbd> را رها کنید.
 
 ### HTML
 
@@ -137,36 +131,36 @@ btnReset.addEventListener("click", (e) => {
 });
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample('KeyboardEvent_sequence_example')}}
 
 > [!NOTE]
-> On browsers that don't fully implement the {{domxref("InputEvent")}} interface which is used for the {{domxref("Element/beforeinput_event", "beforeinput")}} and {{domxref("Element/input_event", "input")}} events, you may get incorrect output on those lines of the log output.
+> در مرورگرهایی که رابط {{domxref("InputEvent")}} را به‌طور کامل پیاده‌سازی نمی‌کنند — رابطی که برای رویدادهای {{domxref("Element/beforeinput_event", "beforeinput")}} و {{domxref("Element/input_event", "input")}} استفاده می‌شود — ممکن است خروجیِ آن خطوط در لاگ نادرست باشد.
 
-### Case 1
+### مورد ۱
 
-When the shift key is pressed, a {{domxref("Element/keydown_event", "keydown")}} event is first fired, and the `key` property value is set to the string `Shift`. As we keep holding this key, the {{domxref("Element/keydown_event", "keydown")}} event does not continue to fire repeatedly because it does not produce a character key.
+هنگامی که کلید Shift فشرده می‌شود، ابتدا یک رویداد {{domxref("Element/keydown_event", "keydown")}} صادر می‌شود و مقدار ویژگی `key` روی رشته‌ی `Shift` تنظیم می‌شود. تا زمانی که این کلید را نگه می‌داریم، رویداد {{domxref("Element/keydown_event", "keydown")}} به‌طور مکرر صادر نمی‌شود؛ زیرا این کلید، کلید کاراکتری تولید نمی‌کند.
 
-When `key 2` is pressed, another {{domxref("Element/keydown_event", "keydown")}} event is fired for this new key press, and the `key` property value for the event is set to the string `@` for the U.S keyboard type and `"` for the UK keyboard type, because of the active modifier `shift` key. The {{domxref("Element/beforeinput_event", "beforeinput")}} and {{domxref("Element/input_event", "input")}} events are fired next because a character key has been produced.
+هنگامی که کلید 2 فشرده می‌شود، رویداد {{domxref("Element/keydown_event", "keydown")}} دیگری نیز برای این فشردنِ جدید صادر می‌شود. به دلیل فعال بودن کلید اصلاح‌کننده‌ی `shift`، مقدار ویژگی `key` در این رویداد، برای چیدمان صفحه‌کلید آمریکایی رشته‌ی `@` و برای چیدمان صفحه‌کلید بریتانیایی رشته‌ی `"` است. سپس، چون یک کلید کاراکتری تولید شده است، رویدادهای {{domxref("Element/beforeinput_event", "beforeinput")}} و {{domxref("Element/input_event", "input")}} صادر می‌شوند.
 
-As we release the `key 2`, a {{domxref("Element/keyup_event", "keyup")}} event is fired and the `key` property will maintain the string values `@` and `"` for the different keyboard layouts respectively.
+هنگامی که کلید 2 را رها می‌کنیم، یک رویداد {{domxref("Element/keyup_event", "keyup")}} صادر می‌شود و ویژگی `key` مقدارهای رشته‌ای `@` و `"` را به‌ترتیب برای آن دو چیدمان مختلف صفحه‌کلید حفظ می‌کند.
 
-As we finally release the `shift` key, another {{domxref("Element/keyup_event", "keyup")}} event is fired for it, and the key attribute value remains `Shift`.
+در نهایت، وقتی کلید shift را رها می‌کنیم، رویداد {{domxref("Element/keyup_event", "keyup")}} دیگری برای آن صادر می‌شود و مقدار ویژگی `key` همچنان `Shift` باقی می‌ماند.
 
-### Case 2
+### مورد ۲
 
-When the shift key is pressed, a {{domxref("Element/keydown_event", "keydown")}} event is first fired, and the `key` property value is set to be the string `Shift`. As we keep holding this key, the {{domxref("Element/keydown_event", "keydown")}} event does not continue to fire repeatedly because it produced no character key.
+هنگامی که کلید Shift فشرده می‌شود، ابتدا یک رویداد {{domxref("Element/keydown_event", "keydown")}} صادر می‌شود و مقدار ویژگی `key` روی رشته‌ی `Shift` تنظیم می‌شود. تا وقتی این کلید را نگه می‌داریم، رویداد {{domxref("Element/keydown_event", "keydown")}} به‌طور مکرر صادر نمی‌شود؛ زیرا هیچ کلید کاراکتری تولید نکرده است.
 
-When `key 2` is pressed, another {{domxref("Element/keydown_event", "keydown")}} event is fired for this new key press, and the `key` property value for the event is set to be the string `@` for the U.S keyboard type and `"` for the UK keyboard type, because of the active modifier `shift` key. The {{domxref("Element/beforeinput_event", "beforeinput")}} and {{domxref("Element/input_event", "input")}} events are fired next because a character key has been produced. As we keep holding the key, the {{domxref("Element/keydown_event", "keydown")}} event continues to fire repeatedly and the {{domxref("KeyboardEvent.repeat")}} property is set to `true`. The {{domxref("Element/beforeinput_event", "beforeinput")}} and {{domxref("Element/input_event", "input")}} events are fired repeatedly as well.
+هنگامی که کلید 2 فشرده می‌شود، رویداد {{domxref("Element/keydown_event", "keydown")}} دیگری برای این فشردنِ جدید صادر می‌شود. به دلیل فعال بودن کلید اصلاح‌کننده‌ی `shift`، مقدار ویژگی `key` در این رویداد، برای چیدمان صفحه‌کلید آمریکایی `@` و برای چیدمان صفحه‌کلید بریتانیایی `"` خواهد بود. سپس، چون یک کلید کاراکتری تولید شده است، رویدادهای {{domxref("Element/beforeinput_event", "beforeinput")}} و {{domxref("Element/input_event", "input")}} صادر می‌شوند. تا وقتی که کلید را نگه داشته‌ایم، رویداد {{domxref("Element/keydown_event", "keydown")}} به‌طور مکرر صادر می‌شود و ویژگی {{domxref("KeyboardEvent.repeat")}} روی `true` تنظیم است. رویدادهای {{domxref("Element/beforeinput_event", "beforeinput")}} و {{domxref("Element/input_event", "input")}} نیز به‌طور مکرر صادر می‌شوند.
 
-As we release the `shift` key, a {{domxref("Element/keyup_event", "keyup")}} event is fired for it, and the key attribute value remains `Shift`. At this point, notice that the `key` property value for the repeating keydown event of the `key 2` key press is now "2" because the modifier `shift` key is no longer active. The same goes for the {{domxref("InputEvent.data")}} property of the {{domxref("Element/beforeinput_event", "beforeinput")}} and {{domxref("Element/input_event", "input")}} events.
+هنگامی که کلید Shift را رها می‌کنیم، یک رویداد {{domxref("Element/keyup_event", "keyup")}} برای آن صادر می‌شود و مقدار ویژگی `key` همچنان `Shift` است. در این مرحله توجه کنید که ویژگی `key` در رویداد keydown تکراریِ مربوط به فشردن کلید 2، حالا `"2"` است؛ زیرا کلید اصلاح‌کننده‌ی `shift` دیگر فعال نیست. در مورد ویژگی {{domxref("InputEvent.data")}} رویدادهای {{domxref("Element/beforeinput_event", "beforeinput")}} و {{domxref("Element/input_event", "input")}} نیز وضعیت به همین صورت است.
 
-As we finally release the `key 2`, a {{domxref("Element/keyup_event", "keyup")}} event is fired but the `key` property will be set to the string value `2` for both keyboard layouts because the modifier `shift` key is no longer active.
+در نهایت، وقتی کلید 2 را رها می‌کنیم، یک رویداد {{domxref("Element/keyup_event", "keyup")}} صادر می‌شود؛ اما چون کلید اصلاح‌کننده‌ی `shift` دیگر فعال نیست، ویژگی `key` برای هر دو چیدمان صفحه‌کلید روی مقدار رشته‌ای `2` تنظیم خواهد شد.
 
-## Examples
+## مثال‌ها
 
-This example uses {{domxref("EventTarget.addEventListener()")}} to listen for {{domxref("Element/keydown_event", "keydown")}} events. When they occur, the key's value is checked to see if it's one of the keys the code is interested in, and if it is, it gets processed in some way (possibly by steering a spacecraft, perhaps by changing the selected cell in a spreadsheet).
+در این مثال از {{domxref("EventTarget.addEventListener()")}} برای گوش دادن به رویدادهای {{domxref("Element/keydown_event", "keydown")}} استفاده شده است. هنگام وقوع این رویدادها، مقدار `key` بررسی می‌شود تا مشخص شود آیا یکی از کلیدهایی است که کد با آن‌ها کاری دارد یا نه؛ اگر بله، آن کلید به شکلی پردازش می‌شود (مثلاً برای هدایت یک فضاپیما یا تغییر سلول انتخاب‌شده در یک صفحه‌گسترده).
 
 ```js
 window.addEventListener("keydown", (event) => {
@@ -205,10 +199,10 @@ window.addEventListener("keydown", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
