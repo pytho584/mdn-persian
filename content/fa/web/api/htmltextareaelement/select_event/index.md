@@ -1,7 +1,5 @@
 ---
 title: "HTMLTextAreaElement: select event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTextAreaElement/select_event"
-status: "needs-translation"
 ---
 
 ---
@@ -14,11 +12,11 @@ browser-compat: api.HTMLTextAreaElement.select_event
 
 {{APIRef("Selection API")}}
 
-The **`select`** event fires when some text has been selected.
+رویداد **`select`** زمانی رخ می‌دهد که متنی انتخاب شده باشد.
 
 ## Syntax
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی مدیریت رویداد را تنظیم نمایید.
 
 ```js-nolint
 addEventListener("select", (event) => { })
@@ -28,11 +26,11 @@ onselect = (event) => { }
 
 ## Event type
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
 ## Examples
 
-### Selection logger
+### ثبت انتخاب
 
 ```html
 <textarea>Try selecting some text in this element.</textarea>
@@ -55,22 +53,22 @@ textarea.addEventListener("select", logSelection);
 
 {{EmbedLiveSample("Selection_logger")}}
 
-### onselect equivalent
+### معادل onselect
 
-You can also set up the event handler using the `onselect` property:
+همچنین می‌توانید مدیریت رویداد را با استفاده از ویژگی `onselect` تنظیم کنید:
 
 ```js
 textarea.onselect = logSelection;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLTextAreaElement.select()")}}
