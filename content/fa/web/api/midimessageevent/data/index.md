@@ -1,11 +1,5 @@
 ---
 title: "MIDIMessageEvent: data property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MIDIMessageEvent/data"
-status: "needs-translation"
----
-
----
-title: "MIDIMessageEvent: data property"
 short-title: data
 slug: Web/API/MIDIMessageEvent/data
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.MIDIMessageEvent.data
 
 {{securecontext_header}}{{APIRef("Web MIDI API")}}
 
-The **`data`** read-only property of the {{domxref("MIDIMessageEvent")}} interface returns the MIDI data bytes of a single MIDI message.
+**`data`**只读属性属于{{domxref("MIDIMessageEvent")}}接口，返回单条 MIDI 消息的 MIDI 数据字节。
 
-## Value
+## 值
 
-A {{jsxref("Uint8Array")}}.
+一个 {{jsxref("Uint8Array")}}。
 
-## Examples
+## 示例
 
-In the following example {{domxref("MIDIInput.midimessage_event", "midimessage")}} events are listened for on all input ports. When a message is received the value of `data` is printed to the console.
+在以下示例中，我们对所有输入端口监听 {{domxref("MIDIInput.midimessage_event", "midimessage")}} 事件。收到消息时，`data` 的值会被打印到控制台。
 
 ```js
 inputs.forEach((input) => {
@@ -32,10 +26,10 @@ inputs.forEach((input) => {
 });
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
