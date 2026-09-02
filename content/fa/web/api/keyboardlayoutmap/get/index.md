@@ -1,11 +1,5 @@
 ---
 title: "KeyboardLayoutMap: get() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/KeyboardLayoutMap/get"
-status: "needs-translation"
----
-
----
-title: "KeyboardLayoutMap: get() method"
 short-title: get()
 slug: Web/API/KeyboardLayoutMap/get
 page-type: web-api-instance-method
@@ -17,13 +11,11 @@ spec-urls: https://tc39.es/ecma262/multipage/keyed-collections.html#sec-map.prot
 
 {{APIRef("Keyboard API")}}{{SeeCompatTable}}
 
-The **`get()`** method of the
-{{domxref('KeyboardLayoutMap')}} interface returns the element with the given
-key.
+متد **`get()`** از رابط {{domxref('KeyboardLayoutMap')}}، عنصر مربوط به کلید داده‌شده را بازمی‌گرداند.
 
-A list of valid keys is found in the [UI Events KeyboardEvent code Values](https://w3c.github.io/uievents-code/) specification.
+فهرست کلیدهای معتبر در مشخصات [UI Events KeyboardEvent code Values](https://w3c.github.io/uievents-code/) موجود است.
 
-The method is otherwise the same as {{jsxref("Map.prototype.get()")}}.
+این متد در غیر این صورت مشابه {{jsxref("Map.prototype.get()")}} است.
 
 ## Syntax
 
@@ -31,18 +23,18 @@ The method is otherwise the same as {{jsxref("Map.prototype.get()")}}.
 get(key)
 ```
 
-### Parameters
+### پارامترها
 
 - `key`
-  - : The key of the item to return from the map.
+  - : کلید آیتمی که از نقشه بازگردانده می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-The value of the specified key.
+مقدار کلید مشخص‌شده.
 
-## Examples
+## مثال‌ها
 
-The following example demonstrates how to get the location- or layout-specific string associated with the keyboard code that corresponds to the 'W' key on an English QWERTY keyboard.
+مثال زیر نحوه دریافت رشته مختص موقعیت یا چیدمان مرتبط با کد صفحه‌کلید که مربوط به کلید 'W' در یک صفحه‌کلید انگلیسی QWERTY است را نشان می‌دهد.
 
 ```js
 navigator.keyboard.getLayoutMap().then((keyboardLayoutMap) => {
@@ -51,14 +43,14 @@ navigator.keyboard.getLayoutMap().then((keyboardLayoutMap) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{jsxref("Map.prototype.get()")}}
