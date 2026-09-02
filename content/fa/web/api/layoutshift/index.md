@@ -1,7 +1,5 @@
 ---
 title: "LayoutShift"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/LayoutShift"
-status: "needs-translation"
 ---
 
 ---
@@ -15,52 +13,52 @@ browser-compat: api.LayoutShift
 
 {{APIRef("Performance API")}}{{SeeCompatTable}}
 
-The `LayoutShift` interface of the [Performance API](/en-US/docs/Web/API/Performance_API) provides insights into the layout stability of web pages based on movements of the elements on the page.
+رابطهی `LayoutShift` در [API کارایی](/en-US/docs/Web/API/Performance_API)، بینش‌هایی در مورد پایداری چیدمان صفحات وب بر اساس جابه‌جایی عناصر در صفحه فراهم می‌کند.
 
-## Description
+## توضیحات
 
-A layout shift happens when any element that is visible in the viewport changes its position between two frames. These elements are described as being **unstable**, indicating a lack of visual stability.
+یک تغییر چیدمان زمانی رخ می‌دهد که هر عنصر قابل مشاهده در viewport بین دو فریم موقعیت خود را تغییر دهد. این عناصر به عنوان «ناپایدار» توصیف می‌شوند که نشان‌دهنده‌ی نبود پایداری بصری است.
 
-The Layout Instability API provides a way to measure and report on these layout shifts. All tools for debugging layout shifts, including those in the browser's developer tools, use this API. The API can also be used to observe and debug layout shifts by logging the information to the console, to send the data to a server endpoint, or to web page analytics.
+API ناپایداری چیدمان راهی برای اندازه‌گیری و گزارش این تغییرات چیدمان فراهم می‌کند. همه‌ی ابزارهای اشکال‌زدایی تغییرات چیدمان، از جمله ابزارهای موجود در ابزارهای توسعه‌دهنده‌ی مرورگر، از این API استفاده می‌کنند. این API همچنین می‌تواند برای مشاهده و اشکال‌زدایی تغییرات چیدمان با ثبت اطلاعات در کنسول، ارسال داده‌ها به یک نقطه‌ی پایانی سرور یا به تحلیل‌های صفحه‌ی وب استفاده شود.
 
-Performance tools can use this API to calculate a {{glossary("CLS")}} score.
+ابزارهای کارایی می‌توانند از این API برای محاسبه‌ی نمره‌ی {{glossary("CLS")}} استفاده کنند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-This interface extends the following {{domxref("PerformanceEntry")}} properties by qualifying them as follows:
+این رابط، ویژگی‌های زیر را از {{domxref("PerformanceEntry")}} با این شرایط گسترش می‌دهد:
 
 - {{domxref("PerformanceEntry.duration")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Always returns `0` (the concept of duration does not apply to layout shifts).
+  - : همیشه `0` برمی‌گرداند (مفهوم مدت زمان در تغییرات چیدمان کاربرد ندارد).
 - {{domxref("PerformanceEntry.entryType")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Always returns `"layout-shift"`.
+  - : همیشه `"layout-shift"` برمی‌گرداند.
 - {{domxref("PerformanceEntry.name")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Always returns `"layout-shift"`.
+  - : همیشه `"layout-shift"` برمی‌گرداند.
 - {{domxref("PerformanceEntry.startTime")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a {{domxref("DOMHighResTimeStamp")}} representing the time when the layout shift started.
+  - : یک {{domxref("DOMHighResTimeStamp")}} برمی‌گرداند که زمان شروع تغییر چیدمان را نشان می‌دهد.
 
-This interface also supports the following properties:
+این رابط همچنین از ویژگی‌های زیر پشتیبانی می‌کند:
 
 - {{domxref("LayoutShift.value")}} {{Experimental_Inline}}
-  - : Returns the layout shift score calculated as the impact fraction (fraction of the viewport that was shifted) multiplied by the distance fraction (distance moved as a fraction of viewport).
+  - : نمره‌ی تغییر چیدمان را برمی‌گرداند که به صورت کسر تأثیر (کسری از viewport که جابه‌جا شده) ضرب در کسر فاصله (میزان جابه‌جایی به صورت کسری از viewport) محاسبه می‌شود.
 - {{domxref("LayoutShift.hadRecentInput")}} {{Experimental_Inline}}
-  - : Returns `true` if {{domxref("LayoutShift.lastInputTime", "lastInputTime")}} is less than 500 milliseconds in the past.
+  - : اگر {{domxref("LayoutShift.lastInputTime", "lastInputTime")}} کمتر از ۵۰۰ میلی‌ثانیه در گذشته باشد، `true` برمی‌گرداند.
 - {{domxref("LayoutShift.lastInputTime")}} {{Experimental_Inline}}
-  - : Returns the time of the most recent excluding input (user input that would exclude this entry as a contributor to the CLS score) or `0` if no excluding input has occurred.
+  - : زمان آخرین ورودی حذف‌کننده (ورودی کاربر که این ورودی را به عنوان کمک‌کننده به نمره‌ی CLS حذف می‌کند) را برمی‌گرداند، یا اگر ورودی حذف‌کننده‌ای رخ نداده باشد `0`.
 - {{domxref("LayoutShift.sources")}} {{Experimental_Inline}}
-  - : Returns an array of {{domxref("LayoutShiftAttribution")}} objects with information on the elements that were shifted.
+  - : یک آرایه از اشیاء {{domxref("LayoutShiftAttribution")}} با اطلاعاتی درباره عناصری که جابه‌جا شده‌اند برمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("LayoutShift.toJSON()")}} {{Experimental_Inline}}
-  - : Converts the properties to JSON.
+  - : ویژگی‌ها را به JSON تبدیل می‌کند.
 
-## Examples
+## مثال‌ها
 
-### Logging layout shift values
+### ثبت مقادیر تغییر چیدمان
 
-The following example shows how to capture layout shifts and log them to the console.
+مثال زیر نشان می‌دهد که چگونه تغییرات چیدمان را ضبط کرده و در کنسول ثبت کنید.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -82,15 +80,15 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "layout-shift", buffered: true });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("LayoutShiftAttribution")}}
 - {{glossary("CLS")}}
