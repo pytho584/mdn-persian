@@ -1,10 +1,4 @@
 ---
-title: "IDBDatabase"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase"
-status: "needs-translation"
----
-
----
 title: IDBDatabase
 slug: Web/API/IDBDatabase
 page-type: web-api-interface
@@ -13,55 +7,55 @@ browser-compat: api.IDBDatabase
 
 {{APIRef("IndexedDB")}} {{AvailableInWorkers}}
 
-The **`IDBDatabase`** interface of the IndexedDB API provides a [connection to a database](/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology#database_connection); you can use an `IDBDatabase` object to open a [transaction](/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology#transaction) on your database then create, manipulate, and delete objects (data) in that database. The interface provides the only way to get and manage versions of the database.
+رابط **`IDBDatabase`** در API IndexedDB یک [اتصال به پایگاه داده](/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology#database_connection) فراهم می‌کند؛ می‌توانید از یک شیء `IDBDatabase` برای باز کردن یک [تراکنش](/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology#transaction) روی پایگاه داده استفاده کنید و سپس اشیاء (داده‌ها) را در آن پایگاه داده ایجاد، دستکاری، و حذف کنید. این رابط تنها راه دریافت و مدیریت نسخه‌های پایگاه داده است.
 
 > [!NOTE]
-> Everything you do in IndexedDB always happens in the context of a [transaction](/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology#transaction), representing interactions with data in the database. All objects in IndexedDB — including object stores, indexes, and cursors — are tied to a particular transaction. Thus, you cannot execute commands, access data, or open anything outside of a transaction.
+> هر کاری که در IndexedDB انجام می‌دهید همیشه در بستر یک [تراکنش](/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology#transaction) صورت می‌گیرد که تعامل با داده‌ها در پایگاه داده را نشان می‌دهد. همه اشیاء در IndexedDB — از جمله object storeها، ایندکس‌ها و cursorها — به یک تراکنش خاص وابسته هستند. بنابراین، نمی‌توانید خارج از یک تراکنش دستوری اجرا کنید، به داده‌ای دسترسی پیدا کنید، یا چیزی را باز کنید.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("IDBDatabase.name")}} {{ReadOnlyInline}}
-  - : A string that contains the name of the connected database.
+  - : یک رشته (string) که نام پایگاه داده متصل شده را در بر دارد.
 - {{domxref("IDBDatabase.version")}} {{ReadOnlyInline}}
-  - : A 64-bit integer that contains the version of the connected database. When a database is first created, this attribute is an empty string.
+  - : یک عدد صحیح ۶۴-بیتی که نسخه پایگاه داده متصل شده را شامل می‌شود. وقتی یک پایگاه داده برای اولین بار ایجاد می‌شود، این ویژگی یک رشته خالی است.
 - {{domxref("IDBDatabase.objectStoreNames")}} {{ReadOnlyInline}}
-  - : A {{ domxref("DOMStringList") }} that contains a list of the names of the [object stores](/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology#object_store) currently in the connected database.
+  - : یک {{ domxref("DOMStringList") }} که فهرستی از نام [object storeها](/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology#object_store) موجود در پایگاه داده متصل شده را شامل می‌شود.
 
-## Instance methods
+## متدهای نمونه
 
-Inherits from: [EventTarget](/en-US/docs/Web/API/EventTarget)
+ارث‌بری از: [EventTarget](/en-US/docs/Web/API/EventTarget)
 
 - {{domxref("IDBDatabase.close()")}}
-  - : Returns immediately and closes the connection to a database in a separate thread.
+  - : بلافاصله بازمی‌گردد و اتصال به پایگاه داده را در یک نخ (thread) جداگانه می‌بندد.
 - {{domxref("IDBDatabase.createObjectStore()")}}
-  - : Creates and returns a new object store or index.
+  - : یک object store یا ایندکس جدید ایجاد کرده و آن را بازمی‌گرداند.
 - {{domxref("IDBDatabase.deleteObjectStore()")}}
-  - : Destroys the object store with the given name in the connected database, along with any indexes that reference it.
+  - : object store با نام داده‌شده در پایگاه داده متصل را همراه با هر ایندکسی که به آن ارجاع می‌دهد، از بین می‌برد.
 - {{domxref("IDBDatabase.transaction()")}}
-  - : Immediately returns a transaction object ({{domxref("IDBTransaction")}}) containing the {{domxref("IDBTransaction.objectStore")}} method, which you can use to access your object store. Runs in a separate thread.
+  - : بلافاصله یک شیء تراکنش ({{domxref("IDBTransaction")}}) شامل متد {{domxref("IDBTransaction.objectStore")}} بازمی‌گرداند که می‌توانید از آن برای دسترسی به object store خود استفاده کنید. در یک نخ جداگانه اجرا می‌شود.
 
-## Events
+## رویدادها
 
-Listen to these events using `addEventListener()` or by assigning an event listener to the `oneventname` property of this interface.
+برای گوش دادن به این رویدادها می‌توانید از `addEventListener()` استفاده کنید یا یک شنونده رویداد را به ویژگی `oneventname` این رابط اختصاص دهید.
 
 - [`close`](/en-US/docs/Web/API/IDBDatabase/close_event)
-  - : An event fired when the database connection is unexpectedly closed.
+  - : رویدادی که هنگام بسته شدن غیرمنتظره اتصال پایگاه داده رخ می‌دهد.
 
 - [`versionchange`](/en-US/docs/Web/API/IDBDatabase/versionchange_event)
-  - : An event fired when a database structure change was requested.
+  - : رویدادی که هنگام درخواست تغییر ساختار پایگاه داده رخ می‌دهد.
 
-The following events are available to `IDBDatabase` via event bubbling from {{domxref("IDBTransaction")}}:
+رویدادهای زیر از طریق رویداد bubbling (بالارونده) از {{domxref("IDBTransaction")}} در دسترس `IDBDatabase` قرار می‌گیرند:
 
 - `IDBTransaction` [`abort`](/en-US/docs/Web/API/IDBTransaction/abort_event)
-  - : An event fired when a transaction is aborted.
+  - : رویدادی که هنگام لغو (abort) شدن یک تراکنش رخ می‌دهد.
 - `IDBTransaction` [`error`](/en-US/docs/Web/API/IDBTransaction/error_event)
-  - : An event fired when a request returns an error and the event bubbles up to the connection object.
+  - : رویدادی که وقتی یک درخواست خطا برمی‌گرداند و رویداد به سمت شیء اتصال بالا می‌آید، رخ می‌دهد.
 
-## Example
+## مثال
 
-In the following code snippet, we open a database asynchronously ({{domxref("IDBFactory")}}), handle success and error cases, and create a new object store in the case that an upgrade is needed (`IDBDatabase`). For a complete working example, see our [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) app ([view example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+در قطعه کد زیر، یک پایگاه داده را به‌صورت ناهمگام (asynchronous) باز می‌کنیم ({{domxref("IDBFactory")}})، موارد موفقیت و خطا را مدیریت می‌کنیم، و در صورت نیاز به ارتقا، یک object store جدید ایجاد می‌کنیم (`IDBDatabase`). برای یک مثال کامل و قابل اجرا، برنامه [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) را ببینید ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
 
 ```js
 // Let us open our database
@@ -122,7 +116,7 @@ DBOpenRequest.onupgradeneeded = (event) => {
 };
 ```
 
-This next line opens up a transaction on the Database, then opens an object store that we can then manipulate the data inside of.
+این خط بعدی یک تراکنش روی پایگاه داده باز می‌کند، سپس یک object store باز می‌کند که می‌توانیم داده‌های داخل آن را دستکاری کنیم.
 
 ```js
 const objectStore = db
@@ -130,19 +124,19 @@ const objectStore = db
   .objectStore("toDoList");
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- کار با تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم محدوده کلیدها: {{domxref("IDBKeyRange")}}
+- دریافت داده‌ها و ایجاد تغییرات در آن‌ها: {{domxref("IDBObjectStore")}}
+- کار با cursorها: {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
