@@ -1,7 +1,7 @@
+```markdown
 ---
 title: "MediaTrackSettings: volume property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/volume"
-status: "needs-translation"
 ---
 
 ---
@@ -17,36 +17,26 @@ browser-compat: api.MediaStreamTrack.applyConstraints.volume_constraint
 
 {{APIRef("Media Capture and Streams")}}{{Deprecated_Header}}{{Non-standard_Header}}
 
-The {{domxref("MediaTrackSettings")}} dictionary's **`volume`**
-property is a double-precision floating-point number indicating the volume of the
-{{domxref("MediaStreamTrack")}} as currently configured, as a value from 0.0 (silence)
-to 1.0 (maximum supported volume for the device). This lets you determine what value was
-selected to comply with your specified constraints for this property's value as
-described in the {{domxref("MediaTrackConstraints.volume")}} property you provided when
-calling either {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}} or
-{{domxref("MediaStreamTrack.applyConstraints()")}}.
+ویژگی **`volume`** در فرهنگ‌لغت {{domxref("MediaTrackSettings")}}، یک عدد اعشاری با دقت دوگانه (double-precision floating-point) است که میزان بلندی صدای {{domxref("MediaStreamTrack")}} را در پیکربندی فعلی نشان می‌دهد. این مقدار عددی بین 0.0 (سکوت) تا 1.0 (حداکثر بلندی صدای پشتیبانی‌شده توسط دستگاه) است. این ویژگی به شما امکان می‌دهد تعیین کنید که برای مطابقت با محدودیت‌های مشخص‌شده‌تان برای این ویژگی چه مقداری انتخاب شده است؛ همان محدودیت‌هایی که در ویژگی {{domxref("MediaTrackConstraints.volume")}} هنگام فراخوانی {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}} یا {{domacro({{domxref("MediaStreamTrack.applyConstraints()")}} تعیین کرده‌اید.
 
-If needed, you can determine whether or not this constraint is supported by checking
-the value of {{domxref("MediaTrackSupportedConstraints.volume")}} as returned by a call
-to {{domxref("MediaDevices.getSupportedConstraints()")}}. However, typically this is
-unnecessary since browsers will ignore any constraints they're unfamiliar with.
+در صورت نیاز، می‌توانید با بررسی مقدار {{domxref("MediaTrackSupportedConstraints.volume")}} که از فراخوانی {{domxref("MediaDevices.getSupportedConstraints()")}} بازگردانده می‌شود، تعیین کنید که آیا این محدودیت پشتیبانی می‌شود یا خیر. با این حال، معمولاً این کار ضروری نیست، زیرا مرورگرها هر محدودیت ناآشنایی را نادیده می‌گیرند.
 
-## Value
+## مقدار
 
-A double-precision floating-point number indicating the volume, from 0.0 to 1.0, of the
-audio track as currently configured.
+یک عدد اعشاری با دقت دوگانه که بلندی صدای ترک صوتی را در پیکربندی فعلی، از 0.0 تا 1.0، نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
-See the [Constraint exerciser](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#example_constraint_exerciser) example.
+به مثال [Constraint exerciser](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#example_constraint_exerciser) مراجعه کنید.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
 - [Capabilities, constraints, and settings](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints)
 - {{domxref("MediaTrackConstraints.volume")}}
 - {{domxref("MediaTrackSettings")}}
+```
