@@ -1,11 +1,5 @@
 ---
 title: "IIRFilterNode: getFrequencyResponse() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IIRFilterNode/getFrequencyResponse"
-status: "needs-translation"
----
-
----
-title: "IIRFilterNode: getFrequencyResponse() method"
 short-title: getFrequencyResponse()
 slug: Web/API/IIRFilterNode/getFrequencyResponse
 page-type: web-api-instance-method
@@ -14,50 +8,37 @@ browser-compat: api.IIRFilterNode.getFrequencyResponse
 
 {{ APIRef("Web Audio API") }}
 
-The `getFrequencyResponse()` method of the {{ domxref("IIRFilterNode") }}
-interface takes the current filtering algorithm's settings and calculates the
-frequency response for frequencies specified in a specified array of frequencies.
+متد `getFrequencyResponse()` از رابط {{ domxref("IIRFilterNode") }} تنظیمات فعلی الگوریتم فیلتر را گرفته و پاسخ فرکانسی را برای فرکانس‌های مشخص‌شده در یک آرایه‌ی فرکانسی معین محاسبه می‌کند.
 
-The two output arrays, `magResponseOutput` and
-`phaseResponseOutput`, must be created before calling this method; they
-must be the same size as the array of input frequency values
-(`frequencyArray`).
+دو آرایه‌ی خروجی، `magResponseOutput` و `phaseResponseOutput`، باید پیش از فراخوانی این متد ساخته شده باشند؛ اندازه‌ی آن‌ها باید با آرایه‌ی مقادیر فرکانس ورودی (`frequencyArray`) یکسان باشد.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 getFrequencyResponse(frequencyArray, magResponseOutput, phaseResponseOutput)
 ```
 
-### Parameters
+### پارامترها
 
 - `frequencyArray`
-  - : A {{jsxref("Float32Array")}} containing an array of frequencies, specified in Hertz,
-    which you want to filter.
+  - : یک {{jsxref("Float32Array")}} شامل آرایه‌ای از فرکانس‌ها بر حسب هرتز که می‌خواهید فیلتر کنید.
 - `magResponseOutput`
-  - : A {{jsxref("Float32Array")}} to receive the computed magnitudes of the frequency
-    response for each frequency value in the `frequencyArray`.
+  - : یک {{jsxref("Float32Array")}} برای دریافت بزرگی‌های محاسبه‌شده‌ی پاسخ فرکانسی برای هر مقدار فرکانس در `frequencyArray`.
 - `phaseResponseOutput`
-  - : A {{jsxref("Float32Array")}} to receive the computed phase response values in
-    radians for each frequency value in the input `frequencyArray`.
+  - : یک {{jsxref("Float32Array")}} برای دریافت مقادیر پاسخ فاز محاسبه‌شده بر حسب رادیان برای هر مقدار فرکانس در `frequencyArray` ورودی.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Thrown if the three arrays provided are not all of the same length.
+  - : اگر طول هر سه آرایه‌ی ارائه‌شده یکسان نباشد، این خطا پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-In the following example we are using an IIR filter on a media stream (for a complete
-full demo, see our [stream-source-buffer demo](https://mdn.github.io/webaudio-examples/stream-source-buffer/) live,
-or [read its source](https://github.com/mdn/webaudio-examples/blob/main/stream-source-buffer/index.html)). As part of this demo, we get the frequency responses for this IIR
-filter, for five sample frequencies. We first create the {{jsxref("Float32Array")}}
-objects we need, one containing the input frequencies, and two to receive the output
-magnitude and phase values:
+در مثال زیر، از یک فیلتر IIR روی یک جریان رسانه‌ای استفاده می‌کنیم (برای مشاهده‌ی کامل دمو، [دموی stream-source-buffer](https://mdn.github.io/webaudio-examples/stream-source-buffer/) را به‌صورت زنده ببینید یا [کد منبع آن را بخوانید](https://github.com/mdn/webaudio-examples/blob/main/stream-source-buffer/index.html)). به‌عنوان بخشی از این دمو، پاسخ فرکانسی این فیلتر IIR را برای پنج فرکانس نمونه به دست می‌آوریم. ابتدا اشیاء {{jsxref("Float32Array")}} موردنیاز را می‌سازیم؛ یکی شامل فرکانس‌های ورودی و دو تای دیگر برای دریافت مقادیر خروجی بزرگی و فاز:
 
 ```js
 const myFrequencyArray = new Float32Array(5);
@@ -71,8 +52,7 @@ const magResponseOutput = new Float32Array(5);
 const phaseResponseOutput = new Float32Array(5);
 ```
 
-Next we create a {{ htmlelement("ul") }} element in our HTML to contain our results,
-and grab a reference to it in our JavaScript:
+سپس یک عنصر {{ htmlelement("ul") }} در HTML خود برای نمایش نتایج ایجاد می‌کنیم و ارجاع آن را در جاوااسکریپت می‌گیریم:
 
 ```html
 <p>IIR filter frequency response for:</p>
@@ -83,9 +63,7 @@ and grab a reference to it in our JavaScript:
 const freqResponseOutput = document.querySelector(".freq-response-output");
 ```
 
-Finally, after creating our filter, we use `getFrequencyResponse()` to
-generate the response data and put it in our arrays, then loop through each data set and
-output them in a human-readable list at the bottom of the page:
+در نهایت، پس از ایجاد فیلتر، از `getFrequencyResponse()` برای تولید داده‌های پاسخ استفاده می‌کنیم و آن‌ها را در آرایه‌هایمان قرار می‌دهیم؛ سپس هر مجموعه داده را پیمایش کرده و به‌صورت فهرستی قابل‌خواندن در انتهای صفحه نمایش می‌دهیم:
 
 ```js
 const feedforwardCoefficients = [0.1, 0.2, 0.3, 0.4, 0.5];
@@ -115,16 +93,16 @@ function calcFrequencyResponse() {
 calcFrequencyResponse();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
 - {{domxref("IIRFilterNode")}}
 - {{domxref("AudioNode")}}
