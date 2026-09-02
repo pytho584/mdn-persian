@@ -1,7 +1,5 @@
 ---
 title: "ImageCapture: takePhoto() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ImageCapture/takePhoto"
-status: "needs-translation"
 ---
 
 ---
@@ -14,54 +12,42 @@ browser-compat: api.ImageCapture.takePhoto
 
 {{APIRef("Image Capture API")}}
 
-The **`takePhoto()`** method of the
-{{domxref("ImageCapture")}} interface takes a single exposure using the video capture
-device sourcing a {{domxref("MediaStreamTrack")}} and returns a {{jsxref("Promise")}}
-that resolves with a {{domxref("Blob")}} containing the data.
+متد **`takePhoto()`** از رابط {{domxref("ImageCapture")}} یک نوردهی واحد را با استفاده از دستگاه ضبط ویدیویی که یک {{domxref("MediaStreamTrack")}} را تأمین می‌کند، می‌گیرد و یک {{jsxref("Promise")}} برمی‌گرداند که با یک {{domxref("Blob")}} حاوی داده‌ها resolve می‌شود.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 takePhoto()
 takePhoto(photoSettings)
 ```
 
-### Parameters
+### پارامترها
 
 - `photoSettings` {{optional_inline}}
-  - : An object that sets options for the photo to be taken. The available options are:
+  - : یک شیء که گزینه‌های عکس گرفته‌شده را تنظیم می‌کند. گزینه‌های موجود عبارت‌اند از:
     - `fillLightMode`
-      - : The flash setting of the capture device, one of
-        `"auto"`, `"off"`, or `"flash"`.
+      - : تنظیم فلش دستگاه ضبط؛ یکی از `"auto"`، `"off"` یا `"flash"`.
     - `imageHeight`
-      - : The desired image height as an integer. The user agent
-        selects the closest height value to this setting if it only supports discrete
-        heights.
+      - : ارتفاع مطلوب تصویر به‌صورت یک عدد صحیح. اگر عامل کاربر (user agent) فقط ارتفاع‌های گسسته را پشتیبانی کند، نزدیک‌ترین مقدار ارتفاع به این تنظیم را انتخاب می‌کند.
     - `imageWidth`
-      - : The desired image width as an integer. The user agent
-        selects the closest width value to this setting if it only supports discrete
-        widths.
+      - : عرض مطلوب تصویر به‌صورت یک عدد صحیح. اگر عامل کاربر فقط عرض‌های گسسته را پشتیبانی کند، نزدیک‌ترین مقدار عرض به این تنظیم را انتخاب می‌کند.
     - `redEyeReduction`
-      - : A boolean indicating whether the red-eye reduction
-        should be used if it is available.
+      - : یک مقدار بولی که نشان می‌دهد در صورت موجود بودن، کاهش قرمزی چشم (red-eye reduction) استفاده شود یا نه.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with a {{domxref("Blob")}}.
+یک {{jsxref("Promise")}} که با یک {{domxref("Blob")}} resolve می‌شود.
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if `readyState` property of the `MediaStreamTrack` passing in the constructor is not `live`.
+  - : اگر ویژگی `readyState` متعلق به `MediaStreamTrack` که به سازنده (constructor) داده شده است، `live` نباشد، پرتاب می‌شود.
 - `UnknownError` {{domxref("DOMException")}}
-  - : Thrown if the operation can't complete for any reason.
+  - : اگر عملیات به هر دلیلی نتواند کامل شود، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-This example is extracted from this [Simple Image Capture demo](https://simpl.info/imagecapture/). It shows how to use the {{jsxref("Promise")}} returned by
-`takePhoto()` to copy the returned {{domxref("Blob")}} to an
-{{htmlelement("img")}} element. For simplicity it does not show how to instantiate the
-{{domxref("ImageCapture")}} object.
+این مثال از این [نمونهٔ Simple Image Capture](https://simpl.info/imagecapture/) استخراج شده است. نشان می‌دهد که چگونه از {{jsxref("Promise")}} بازگشتی توسط `takePhoto()` برای کپی کردن {{domxref("Blob")}} برگشتی در یک عنصر {{htmlelement("img")}} استفاده کنیم. برای سادگی، نحوهٔ نمونه‌سازی (instantiate) شیء {{domxref("ImageCapture")}} را نشان نمی‌دهد.
 
 ```js
 let takePhotoButton = document.querySelector("button#takePhoto");
@@ -83,10 +69,10 @@ function takePhoto() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
