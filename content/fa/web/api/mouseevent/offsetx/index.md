@@ -1,11 +1,5 @@
 ---
 title: "MouseEvent: offsetX property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/offsetX"
-status: "needs-translation"
----
-
----
-title: "MouseEvent: offsetX property"
 short-title: offsetX
 slug: Web/API/MouseEvent/offsetX
 page-type: web-api-instance-property
@@ -14,23 +8,23 @@ browser-compat: api.MouseEvent.offsetX
 
 {{APIRef("Pointer Events")}}
 
-The **`offsetX`** read-only property of the {{domxref("MouseEvent")}} interface provides the offset in the X coordinate of the mouse pointer between that event and the padding edge of the target node.
+ویژگی فقط‌خواندنی **`offsetX`** در رابط {{domxref("MouseEvent")}}، میزان جابجایی (افست) در مختصات X اشاره‌گر ماوس را بین آن رویداد و لبه padding (حاشیه داخلی) گره هدف فراهم می‌کند.
 
-## Value
+## مقدار
 
-A `double` floating point value in pixels.
+یک مقدار اعشاری از نوع `double` بر حسب پیکسل.
 
-Early versions of the spec defined this as an integer.
+نسخه‌های اولیه مشخصات این را به عنوان یک عدد صحیح تعریف کرده بودند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{ domxref("MouseEvent") }}
-- [Coordinate systems](/en-US/docs/Web/API/CSSOM_view_API/Coordinate_systems)
+- [سیستم‌های مختصات](/en-US/docs/Web/API/CSSOM_view_API/Coordinate_systems)
