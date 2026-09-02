@@ -1,7 +1,5 @@
 ---
 title: "MIDIPort"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MIDIPort"
-status: "needs-translation"
 ---
 
 ---
@@ -13,64 +11,64 @@ browser-compat: api.MIDIPort
 
 {{securecontext_header}}{{APIRef("Web MIDI API")}}
 
-The **`MIDIPort`** interface of the {{domxref('Web MIDI API','','',' ')}} represents a MIDI input or output port.
+رابط **`MIDIPort`** در {{domxref('Web MIDI API','','',' ')}} یک درگاه ورودی یا خروجی MIDI را نمایش می‌دهد.
 
-A `MIDIPort` instance is created when a new MIDI device is connected. Therefore it has no constructor.
+یک نمونه از `MIDIPort` زمانی ساخته می‌شود که یک دستگاه MIDI جدید متصل شود. بنابراین این رابط سازنده (constructor) ندارد.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("MIDIPort.id")}} {{ReadOnlyInline}}
-  - : Returns a string containing the unique ID of the port.
+  - : رشته‌ای شامل شناسه یکتای درگاه را برمی‌گرداند.
 - {{domxref("MIDIPort.manufacturer")}} {{ReadOnlyInline}}
-  - : Returns a string containing the manufacturer of the port.
+  - : رشته‌ای شامل نام تولیدکننده درگاه را برمی‌گرداند.
 - {{domxref("MIDIPort.name")}} {{ReadOnlyInline}}
-  - : Returns a string containing the system name of the port.
+  - : رشته‌ای شامل نام سیستمی درگاه را برمی‌گرداند.
 - {{domxref("MIDIPort.type")}} {{ReadOnlyInline}}
-  - : Returns a string containing the type of the port, one of:
+  - : رشته‌ای شامل نوع درگاه را برمی‌گرداند که یکی از این مقادیر است:
     - `"input"`
-      - : The `MIDIPort` is an input port.
+      - : این `MIDIPort` یک درگاه ورودی است.
     - `"output"`
-      - : The `MIDIPort` is an output port.
+      - : این `MIDIPort` یک درگاه خروجی است.
 
 - {{domxref("MIDIPort.version")}} {{ReadOnlyInline}}
-  - : Returns a string containing the version of the port.
+  - : رشته‌ای شامل نسخه درگاه را برمی‌گرداند.
 - {{domxref("MIDIPort.state")}} {{ReadOnlyInline}}
-  - : Returns a string containing the state of the port, one of:
+  - : رشته‌ای شامل وضعیت درگاه را برمی‌گرداند که یکی از این مقادیر است:
     - `"disconnected"`
-      - : The device that this `MIDIPort` represents is disconnected from the system.
+      - : دستگاهی که این `MIDIPort` نمایش می‌دهد از سیستم قطع شده است.
     - `"connected"`
-      - : The device that this `MIDIPort` represents is currently connected.
+      - : دستگاهی که این `MIDIPort` نمایش می‌دهد در حال حاضر متصل است.
 
 - {{domxref("MIDIPort.connection")}} {{ReadOnlyInline}}
-  - : Returns a string containing the connection state of the port, one of:
+  - : رشته‌ای شامل وضعیت اتصال درگاه را برمی‌گرداند که یکی از این مقادیر است:
     - `"open"`
-      - : The device that this `MIDIPort` represents has been opened and is available.
+      - : دستگاهی که این `MIDIPort` نمایش می‌دهد باز شده و در دسترس است.
     - `"closed"`
-      - : The device that this `MIDIPort` represents has not been opened, or has been closed.
+      - : دستگاهی که این `MIDIPort` نمایش می‌دهد باز نشده است یا بسته شده است.
     - `"pending"`
-      - : The device that this `MIDIPort` represents has been opened but has subsequently disconnected.
+      - : دستگاهی که این `MIDIPort` نمایش می‌دهد باز شده است اما پس از آن قطع شده است.
 
-## Instance methods
+## روش‌های نمونه
 
-_This interface also inherits methods from {{domxref("EventTarget")}}._
+_این رابط همچنین روش‌هایی را از {{domxref("EventTarget")}} به ارث می‌برد._
 
 - {{domxref("MIDIPort.open()")}}
-  - : Makes the MIDI device connected to this `MIDIPort` explicitly available, and returns a {{jsxref("Promise")}} which resolves once access to the port has been successful.
+  - : دستگاه MIDI متصل به این `MIDIPort` را به‌صورت صریح در دسترس قرار می‌دهد و یک {{jsxref("Promise")}} برمی‌گرداند که پس از موفقیت‌آمیز بودن دسترسی به درگاه حل می‌شود.
 - {{domxref("MIDIPort.close()")}}
-  - : Makes the MIDI device connected to this `MIDIPort` unavailable, changing the {{domxref("MIDIPort.state","state")}} from `"open"` to `"closed"`. This returns a {{jsxref("Promise")}} which resolves once the port has been closed.
+  - : دستگاه MIDI متصل به این `MIDIPort` را در دسترس‌ناپذیر می‌کند و {{domxref("MIDIPort.state","state")}} را از `"open"` به `"closed"` تغییر می‌دهد. این کار یک {{jsxref("Promise")}} برمی‌گرداند که پس از بسته شدن درگاه حل می‌شود.
 
-## Events
+## رویدادها
 
 - {{domxref("MIDIPort.statechange_event", "statechange")}}
-  - : Called when an existing port changes its state or connection.
+  - : زمانی فراخوانی می‌شود که یک درگاه موجود وضعیت یا اتصال خود را تغییر دهد.
 
-## Examples
+## مثال‌ها
 
-### List ports and their information
+### فهرست کردن درگاه‌ها و اطلاعات آن‌ها
 
-The following example lists input and output ports, and displays information about them using properties of `MIDIPort`.
+مثال زیر درگاه‌های ورودی و خروجی را فهرست می‌کند و اطلاعاتی درباره آن‌ها را با استفاده از ویژگی‌های `MIDIPort` نمایش می‌دهد.
 
 ```js
 function listInputsAndOutputs(midiAccess) {
@@ -90,9 +88,9 @@ function listInputsAndOutputs(midiAccess) {
 }
 ```
 
-### Add available ports to a select list
+### افزودن درگاه‌های موجود به یک فهرست انتخابی
 
-The following example takes the list of input ports and adds them to a select list, in order that a user can choose the device they want to use.
+مثال زیر فهرست درگاه‌های ورودی را گرفته و آن‌ها را به یک فهرست انتخابی (select) اضافه می‌کند تا کاربر بتواند دستگاهی را که می‌خواهد استفاده کند انتخاب نماید.
 
 ```js
 inputs.forEach((port, key) => {
@@ -102,10 +100,10 @@ inputs.forEach((port, key) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
