@@ -1,11 +1,5 @@
 ---
 title: "MIDIPort: connection property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MIDIPort/connection"
-status: "needs-translation"
----
-
----
-title: "MIDIPort: connection property"
 short-title: connection
 slug: Web/API/MIDIPort/connection
 page-type: web-api-instance-property
@@ -14,22 +8,22 @@ browser-compat: api.MIDIPort.connection
 
 {{securecontext_header}}{{APIRef("Web MIDI API")}}
 
-The **`connection`** read-only property of the {{domxref("MIDIPort")}} interface returns the connection state of the port.
+ویژگی فقط‌خواندنی **`connection`** در رابط {{domxref("MIDIPort")}} وضعیت اتصال پورت را برمی‌گرداند.
 
-## Value
+## مقدار
 
-Returns a string containing the connection state of the port, one of:
+رشته‌ای که وضعیت اتصال پورت را نشان می‌دهد، یکی از موارد زیر:
 
 - `"open"`
-  - : The device that this `MIDIPort` represents has been opened and is available.
+  - : دستگاهی که این `MIDIPort` نشان می‌دهد باز شده و در دسترس است.
 - `"closed"`
-  - : The device that this `MIDIPort` represents has not been opened, or has been closed.
+  - : دستگاهی که این `MIDIPort` نشان می‌دهد باز نشده است، یا بسته شده است.
 - `"pending"`
-  - : The device that this `MIDIPort` represents has been opened but has subsequently disconnected.
+  - : دستگاهی که این `MIDIPort` نشان می‌دهد باز شده اما پس از آن قطع شده است.
 
-## Examples
+## مثال‌ها
 
-The following example loops through all input ports and prints the connection status of each to the console.
+مثال زیر روی همه پورت‌های ورودی حلقه می‌زند و وضعیت اتصال هر یک را در کنسول چاپ می‌کند.
 
 ```js
 for (const entry of midiAccess.inputs) {
@@ -38,10 +32,10 @@ for (const entry of midiAccess.inputs) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
