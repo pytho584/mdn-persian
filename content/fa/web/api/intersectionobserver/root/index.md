@@ -1,9 +1,4 @@
----
-title: "IntersectionObserver: root property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/root"
-status: "needs-translation"
----
-
+```
 ---
 title: "IntersectionObserver: root property"
 short-title: root
@@ -14,33 +9,33 @@ browser-compat: api.IntersectionObserver.root
 
 {{APIRef("Intersection Observer API")}}
 
-The **`root`** read-only property of the {{domxref("IntersectionObserver")}} interface identifies the {{domxref("Element")}} or {{domxref("Document")}} whose bounds are treated as the {{Glossary("bounding box")}} of the {{Glossary("viewport")}} for the element which is the observer's target.
+ویژگی فقط‌خواندنی **`root`** در رابط {{domxref("IntersectionObserver")}}، عنصر ({{domxref("Element")}}) یا سند ({{domxref("Document")}})‌ای را مشخص می‌کند که مرزهای آن به عنوان {{Glossary("bounding box")}} (جعبه مرزی) {{Glossary("viewport")}} (نمایش‌گاه) برای عنصر هدف (هدف مشاهده‌گر) در نظر گرفته می‌شود.
 
-If the `root` is `null`, then the bounds of the actual document viewport are used.
+اگر `root` برابر با `null` باشد، از مرزهای نمایش‌گاه واقعی سند استفاده می‌شود.
 
-## Value
+## مقدار
 
-An {{domxref("Element")}} or {{domxref("Document")}} object whose bounding box is used as the bounds of the viewport for the purposes of determining how much of the target element is visible.
-The intersection of this bounding rectangle, offset by any margins specified in the options passed to the {{domxref("IntersectionObserver.IntersectionObserver", "IntersectionObserver()")}} constructor, the target element's bounds, minus the bounds of every element or other object which overlaps the target element, is considered to be the visible area of the target element.
+یک شیء {{domxref("Element")}} یا {{domxref("Document")}} که جعبه مرزی آن به عنوان مرزهای نمایش‌گاه برای تعیین میزان دید عنصر هدف استفاده می‌شود. تقاطع این مستطیل مرزی، با اعمال هر حاشیه (margin) مشخص‌شده در گزینه‌های ارسال‌شده به سازنده {{domxref("IntersectionObserver.IntersectionObserver", "IntersectionObserver()")}}، مرزهای عنصر هدف، منهای مرزهای هر عنصر یا شیء دیگری که با عنصر هدف هم‌پوشانی دارد، به عنوان ناحیه قابل مشاهده عنصر هدف در نظر گرفته می‌شود.
 
-If `root` is `null`, then the owning document is used as the root, and the bounds its viewport (that is, the visible area of the document) are used as the root bounds.
+اگر `root` برابر با `null` باشد، سند مالک (owning document) به عنوان ریشه استفاده می‌شود و مرزهای نمایش‌گاه آن (یعنی ناحیه قابل مشاهده سند) به عنوان مرزهای ریشه به کار می‌روند.
 
-## Examples
+## مثال‌ها
 
-This example sets the {{cssxref("border")}} of the intersection observer's root element to be a 2-pixel medium green line.
+این مثال، {{cssxref("border")}} (حاشیه) عنصر ریشه مشاهده‌گر تقاطع را به صورت یک خط سبز متوسط به ضخامت ۲ پیکسل تنظیم می‌کند.
 
 ```js
 observer.root.style.border = "2px solid #44aa44";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Timing element visibility with the Intersection Observer API](/en-US/docs/Web/API/Intersection_Observer_API/Timing_element_visibility)
+- [زمان‌بندی دید عناصر با استفاده از API Intersection Observer](/en-US/docs/Web/API/Intersection_Observer_API/Timing_element_visibility)
+```
