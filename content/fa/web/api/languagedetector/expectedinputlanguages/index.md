@@ -1,11 +1,5 @@
 ---
 title: "LanguageDetector: expectedInputLanguages property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/LanguageDetector/expectedInputLanguages"
-status: "needs-translation"
----
-
----
-title: "LanguageDetector: expectedInputLanguages property"
 short-title: expectedInputLanguages
 slug: Web/API/LanguageDetector/expectedInputLanguages
 page-type: web-api-instance-property
@@ -16,15 +10,15 @@ browser-compat: api.LanguageDetector.expectedInputLanguages
 
 {{APIRef("Translator and Language Detector APIs")}}{{SeeCompatTable}}{{securecontext_header}}
 
-The **`expectedInputLanguages`** read-only property of the {{domxref("LanguageDetector")}} interface returns the expected languages to be detected in the input text. Specifying expected input languages helps improve the accuracy of the language detection.
+ویژگی فقط‌خواندنی **`expectedInputLanguages`** از رابط {{domxref("LanguageDetector")}} زبان‌های مورد انتظار برای تشخیص در متن ورودی را برمی‌گرداند. مشخص کردن زبان‌های ورودی مورد انتظار به بهبود دقت تشخیص زبان کمک می‌کند.
 
-A `LanguageDetector` instance's `expectedInputLanguages` are set when creating it via a {{domxref("LanguageDetector.create_static", "create()")}} call.
+مقدار `expectedInputLanguages` یک نمونه `LanguageDetector` هنگام ایجاد آن از طریق فراخوانی {{domxref("LanguageDetector.create_static", "create()")}} تنظیم می‌شود.
 
-## Value
+## مقدار
 
-An array of strings specifying the expected input languages. These will be valid {{glossary("BCP 47 language tag", "BCP 47 language tags")}}.
+آرایه‌ای از رشته‌ها که زبان‌های ورودی مورد انتظار را مشخص می‌کند. این زبان‌ها {{glossary("BCP 47 language tag", "BCP 47 language tags")}} معتبر خواهند بود.
 
-## Examples
+## مثال‌ها
 
 ```js
 const detector = await LanguageDetector.create({
@@ -35,14 +29,14 @@ const detector = await LanguageDetector.create({
 console.log(detector.expectedInputLanguages);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Using the Translator and Language Detector APIs](/en-US/docs/Web/API/Translator_and_Language_Detector_APIs/Using)
