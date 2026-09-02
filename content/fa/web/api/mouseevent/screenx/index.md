@@ -1,11 +1,5 @@
 ---
 title: "MouseEvent: screenX property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/screenX"
-status: "needs-translation"
----
-
----
-title: "MouseEvent: screenX property"
 short-title: screenX
 slug: Web/API/MouseEvent/screenX
 page-type: web-api-instance-property
@@ -14,20 +8,20 @@ browser-compat: api.MouseEvent.screenX
 
 {{APIRef("Pointer Events")}}
 
-The **`screenX`** read-only property of the {{domxref("MouseEvent")}} interface provides the horizontal coordinate (offset) of the mouse pointer in [screen coordinates](/en-US/docs/Web/API/CSSOM_view_API/Coordinate_systems#screen).
+ویژگی فقط‌خواندنی **`screenX`** از رابط {{domxref("MouseEvent")}} مختصات افقی (offset) نشانگر ماوس را در [مختصات صفحه‌نمایش](/en-US/docs/Web/API/CSSOM_view_API/Coordinate_systems#screen) ارائه می‌دهد.
 
 > [!NOTE]
-> In a multiscreen environment, screens aligned horizontally will be treated as a single device, and so the range of the `screenX` value will increase to the combined width of the screens.
+> در محیط‌های چندنمایشگری، نمایشگرهایی که به‌صورت افقی کنار هم تراز شده‌اند به‌عنوان یک دستگاه واحد در نظر گرفته می‌شوند و بنابراین بازهٔ مقدار `screenX` تا پهنای ترکیبی این نمایشگرها گسترش می‌یابد.
 
-## Value
+## مقدار
 
-A `double` floating point value in pixels.
+یک مقدار ممیز شناور از نوع `double` بر حسب پیکسل.
 
-Early versions of the spec defined this as an integer referring to the number of pixels.
+نسخه‌های اولیهٔ مشخصات فنی، این ویژگی را به‌صورت یک عدد صحیح تعریف کرده بودند که به تعداد پیکسل‌ها اشاره داشت.
 
-## Examples
+## نمونه‌ها
 
-This example displays your mouse's coordinates whenever you trigger the {{domxref("Element/mousemove_event", "mousemove")}} event.
+این مثال، هر بار که رویداد {{domxref("Element/mousemove_event", "mousemove")}} رخ می‌دهد، مختصات ماوس شما را نمایش می‌دهد.
 
 ### HTML
 
@@ -49,13 +43,13 @@ function logKey(e) {
 }
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples")}}
 
-### Routing an event
+### مسیریابی یک رویداد
 
-When you trap events on the window, document, or other roomy elements, you can get the coordinates of that event (e.g., a click) and route it properly, as the following example demonstrates:
+هنگامی که رویدادها را روی window، document یا سایر عناصر بزرگ رهگیری می‌کنید، می‌توانید مختصات آن رویداد (مثلاً یک کلیک) را به‌دست آورید و آن را به‌درستی مسیریابی کنید؛ همان‌طور که مثال زیر نشان می‌دهد:
 
 ```js
 function checkClickMap(e) {
@@ -65,17 +59,17 @@ function checkClickMap(e) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{ domxref("MouseEvent") }}
 - {{ domxref("MouseEvent.screenY","screenY") }}
 - {{ domxref("MouseEvent.clientX","clientX") }} / {{ domxref("MouseEvent.clientY", "clientY") }}
-- [Coordinate systems](/en-US/docs/Web/API/CSSOM_view_API/Coordinate_systems)
+- [سیستم‌های مختصات](/en-US/docs/Web/API/CSSOM_view_API/Coordinate_systems)
