@@ -1,11 +1,5 @@
 ---
 title: "MediaQueryListEvent: media property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryListEvent/media"
-status: "needs-translation"
----
-
----
-title: "MediaQueryListEvent: media property"
 short-title: media
 slug: Web/API/MediaQueryListEvent/media
 page-type: web-api-instance-property
@@ -14,15 +8,13 @@ browser-compat: api.MediaQueryListEvent.media
 
 {{APIRef("CSSOM view API")}}
 
-The **`media`** read-only property of the
-{{DOMxRef("MediaQueryListEvent")}} interface is a string representing
-a serialized media query.
+ویژگی **`media`** از رابط {{DOMxRef("MediaQueryListEvent")}}، یک رشته است که یک media query سریال‌شده را نشان می‌دهد.
 
-## Value
+## مقدار
 
-A string representing a serialized media query.
+یک رشته که نمایانگر یک media query سریال‌شده است.
 
-## Examples
+## نمونه‌ها
 
 ```js
 const para = document.querySelector("p"); // This is the UI element where to display the text
@@ -43,18 +35,18 @@ mql.addEventListener("change", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Media queries](/en-US/docs/Web/CSS/Guides/Media_queries/Using)
-- [Using media queries from code](/en-US/docs/Web/CSS/Guides/Media_queries/Testing)
+- [پرس‌وجوهای رسانه‌ای](/en-US/docs/Web/CSS/Guides/Media_queries/Using)
+- [استفاده از media queries در کد](/en-US/docs/Web/CSS/Guides/Media_queries/Testing)
 - {{DOMxRef("window.matchMedia()")}}
 - {{DOMxRef("MediaQueryList")}}
 - {{DOMxRef("MediaQueryListEvent")}}
