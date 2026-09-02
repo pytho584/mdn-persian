@@ -1,11 +1,5 @@
 ---
 title: "HTMLTextAreaElement: readOnly property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTextAreaElement/readOnly"
-status: "needs-translation"
----
-
----
-title: "HTMLTextAreaElement: readOnly property"
 short-title: readOnly
 slug: Web/API/HTMLTextAreaElement/readOnly
 page-type: web-api-instance-property
@@ -14,29 +8,29 @@ browser-compat: api.HTMLTextAreaElement.readOnly
 
 {{ APIRef("HTML DOM") }}
 
-The **`readOnly`** property of the {{DOMxRef("HTMLTextAreaElement")}} interface indicates that the user cannot modify the value of the control. Unlike the {{domxref("HTMLTextAreaElement.disabled", "disabled")}} attribute, the `readonly` attribute does not prevent the user from clicking or selecting in the control. It reflects the {{htmlelement("textarea")}} element's [`readonly`](/en-US/docs/Web/HTML/Reference/Elements/textarea#readonly) attribute.
+ویژگی **`readOnly`** در رابط {{DOMxRef("HTMLTextAreaElement")}} نشان می‌دهد که کاربر نمی‌تواند مقدار کنترل را تغییر دهد. برخلاف ویژگی {{domxref("HTMLTextAreaElement.disabled", "disabled")}}، ویژگی `readonly` مانع کلیک کردن یا انتخاب کردن کاربر در کنترل نمی‌شود. این ویژگی، ویژگی [`readonly`](/en-US/docs/Web/HTML/Reference/Elements/textarea#readonly) عنصر {{htmlelement("textarea")}} را بازتاب می‌دهد.
 
-## Value
+## مقدار
 
-A boolean.
+یک مقدار بولی.
 
-## Examples
+## مثال‌ها
 
 ```js
 const textareaElement = document.getElementById("comment");
 console.log(textArea.readOnly);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{HTMLElement("textarea")}}
 - {{DOMXref("HTMLTextAreaElement.disabled")}}
-- {{cssxref(":read-only")}} pseudo-class
+- شبه‌کلاس {{cssxref(":read-only")}}
