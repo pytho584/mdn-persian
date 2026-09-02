@@ -1,11 +1,5 @@
 ---
 title: "MediaStream: id property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaStream/id"
-status: "needs-translation"
----
-
----
-title: "MediaStream: id property"
 short-title: id
 slug: Web/API/MediaStream/id
 page-type: web-api-instance-property
@@ -14,15 +8,13 @@ browser-compat: api.MediaStream.id
 
 {{APIRef("Media Capture and Streams")}}
 
-The **`id`** read-only property of the {{domxref("MediaStream")}} interface is a
-string containing 36 characters denoting a unique identifier (GUID)
-for the object.
+ویژگی فقط‌خواندنی **`id`** در رابط {{domxref("MediaStream")}}، رشته‌ای متشکل از ۳۶ نویسه است که شناسهٔ یکتا (GUID) را برای این شیء مشخص می‌کند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```js
 const promise = navigator.mediaDevices.getUserMedia({
@@ -35,14 +27,14 @@ promise.then((stream) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("MediaStream")}}, the interface this property belongs to.
+- {{domxref("MediaStream")}}، رابطی که این ویژگی به آن تعلق دارد.
