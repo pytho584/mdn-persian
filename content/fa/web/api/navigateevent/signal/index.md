@@ -1,7 +1,10 @@
+Here is the Persian translation of the MDN documentation for the NavigateEvent signal property:
+
+---
+
 ---
 title: "NavigateEvent: signal property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigateEvent/signal"
-status: "needs-translation"
 ---
 
 ---
@@ -14,16 +17,15 @@ browser-compat: api.NavigateEvent.signal
 
 {{APIRef("Navigation API")}}
 
-The **`signal`** read-only property of the
-{{domxref("NavigateEvent")}} interface returns an {{domxref("AbortSignal")}}, which will become aborted if the navigation is cancelled (e.g., by the user pressing the browser's "Stop" button, or another navigation starting and thus cancelling the ongoing one).
+ویژگی فقط‌خواندنی **`signal`** در رابط {{domxref("NavigateEvent")}} یک {{domxref("AbortSignal")}} برمی‌گرداند که در صورت لغو شدن ناوبری (مثلاً با فشردن دکمه «توقف» توسط کاربر در مرورگر، یا شروع یک ناوبری دیگر که منجر به لغو ناوبری جاری می‌شود) قطع (abort) خواهد شد.
 
-## Value
+## مقدار
 
-An {{domxref("AbortSignal")}} object.
+یک شیء {{domxref("AbortSignal")}}.
 
-## Examples
+## مثال‌ها
 
-The general idea here is that the `signal` property can be passed to an associated {{domxref("Window/fetch", "fetch()")}} operation so that if the navigation is cancelled, the `fetch()` operation can be safely aborted, avoiding wasting bandwidth on fetches that are no longer needed.
+ایده کلی در اینجا این است که می‌توان ویژگی `signal` را به یک عملیات {{domxref("Window/fetch", "fetch()")}} مرتبط ارسال کرد تا در صورت لغو ناوبری، عملیات `fetch()` به‌طور امن قطع شود و از هدر رفتن پهنای باند برای دریافت‌هایی (fetch) که دیگر موردنیاز نیستند جلوگیری به عمل آید.
 
 ```js
 navigation.addEventListener("navigate", (event) => {
@@ -40,17 +42,17 @@ navigation.addEventListener("navigate", (event) => {
 ```
 
 > [!NOTE]
-> See [Example: next/previous buttons](https://github.com/WICG/navigation-api#example-nextprevious-buttons) for a more detailed example.
+> برای یک مثال دقیق‌تر، بخش [Example: next/previous buttons](https://github.com/WICG/navigation-api#example-nextprevious-buttons) را مشاهده کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
 - [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
