@@ -1,10 +1,4 @@
 ---
-title: "MediaTrackSettings"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings"
-status: "needs-translation"
----
-
----
 title: MediaTrackSettings
 slug: Web/API/MediaTrackSettings
 page-type: web-api-interface
@@ -15,105 +9,101 @@ spec-urls:
 
 {{APIRef("Media Capture and Streams")}}
 
-The **`MediaTrackSettings`** dictionary is used to return the current values configured for each of a {{domxref("MediaStreamTrack")}}'s settings. These values will adhere as closely as possible to any constraints previously described using a {{domxref("MediaTrackConstraints")}} object and set using {{domxref("MediaStreamTrack.applyConstraints", "applyConstraints()")}}, and will adhere to the default constraints for any properties whose constraints haven't been changed, or whose customized constraints couldn't be matched.
+دیکشنری **`MediaTrackSettings`** برای بازگرداندن مقادیر فعلی تنظیم‌شده برای هر یک از تنظیمات یک {{domxref("MediaStreamTrack")}} استفاده می‌شود. این مقادیر تا حد امکان به هر محدودیتی که قبلاً با استفاده از یک شیء {{domxref("MediaTrackConstraints")}} توصیف و با استفاده از {{domxref("MediaStreamTrack.applyConstraints", "applyConstraints()")}} تنظیم شده‌اند، پایبند خواهند بود و برای هر ویژگی که محدودیت‌های آن تغییر نکرده‌اند یا محدودیت‌های سفارشی آن‌ها قابل تطبیق نبوده‌اند، به محدودیت‌های پیش‌فرض پایبند خواهند بود.
 
-To learn more about how constraints and settings work, see [Capabilities, constraints, and settings](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints).
+برای آشنایی بیشتر با نحوه کار محدودیت‌ها و تنظیمات، به [قابلیت‌ها، محدودیت‌ها و تنظیمات](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints) مراجعه کنید.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-Some or all of the following will be included in the object, either because it's not supported by the browser or because it's not available due to context. For example, because {{Glossary("RTP")}} doesn't provide some of these values during negotiation of a WebRTC connection, a track associated with a {{domxref("RTCPeerConnection")}} will not include certain values, such as {{domxref("MediaTrackSettings.facingMode", "facingMode")}} or {{domxref("MediaTrackSettings.groupId", "groupId")}}.
+برخی یا همه موارد زیر در این شیء گنجانده خواهند شد، یا به این دلیل که مرورگر از آن‌ها پشتیبانی نمی‌کند یا به دلیل اینکه در زمینه مورد نظر در دسترس نیستند. برای مثال، چون {{Glossary("RTP")}} برخی از این مقادیر را در طول مذاکره یک اتصال WebRTC فراهم نمی‌کند، یک ترک مرتبط با یک {{domxref("RTCPeerConnection")}} شامل مقادیر خاصی مانند {{domxref("MediaTrackSettings.facingMode", "facingMode")}} یا {{domxref("MediaTrackSettings.groupId", "groupId")}} نخواهد بود.
 
-### Instance properties of all media tracks
+### ویژگی‌های نمونه برای همه ترک‌های رسانه‌ای
 
 - {{domxref("MediaTrackSettings.deviceId", "deviceId")}}
-  - : A string indicating the current value of the {{domxref("MediaTrackConstraints.deviceId", "deviceId")}} property. The device ID is an origin-unique string identifying the source of the track; this is usually a [GUID](https://en.wikipedia.org/wiki/Universally_unique_identifier). This value is specific to the source of the track's data and is not usable for setting constraints; it can, however, be used for initially selecting media when calling {{domxref("MediaDevices.getUserMedia()")}}.
+  - : یک رشته که مقدار فعلی ویژگی {{domxref("MediaTrackConstraints.deviceId", "deviceId")}} را نشان می‌دهد. شناسه دستگاه یک رشته یکتا وابسته به origin است که منبع ترک را مشخص می‌کند؛ این مقدار معمولاً یک [GUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) است. این مقدار به منبع داده ترک اختصاص دارد و برای تنظیم محدودیت‌ها قابل استفاده نیست؛ با این حال، می‌توان هنگام فراخوانی {{domxref("MediaDevices.getUserMedia()")}} از آن برای انتخاب اولیه رسانه استفاده کرد.
 - {{domxref("MediaTrackSettings.groupId", "groupId")}}
-  - : A string indicating the current value of the {{domxref("MediaTrackConstraints.groupId", "groupId")}} property. The group ID is a browsing session-unique string identifying the source group of the track. Two devices (as identified by the {{domxref("MediaTrackSettings.deviceId", "deviceId")}}) are considered part of the same group if they are from the same physical device. For instance, the audio input and output devices for the speaker and microphone built into a phone would share the same group ID, since they're part of the same physical device. The microphone on a headset would have a different ID, though. This value is specific to the source of the track's data and is not usable for setting constraints; it can, however, be used for initially selecting media when calling {{domxref("MediaDevices.getUserMedia()")}}.
+  - : یک رشته که مقدار فعلی ویژگی {{domxref("MediaTrackConstraints.groupId", "groupId")}} را نشان می‌دهد. شناسه گروه یک رشته یکتای مخصوص نشست مرورگر (browsing session) است که گروه منبع ترک را مشخص می‌کند. دو دستگاه (که با {{domxref("MediaTrackSettings.deviceId", "deviceId")}} شناسایی می‌شوند) اگر از یک دستگاه فیزیکی باشند، بخشی از یک گروه در نظر گرفته می‌شوند. برای مثال، دستگاه‌های ورودی و خروجی صوتی برای بلندگو و میکروفون تعبیه‌شده در یک تلفن، شناسه گروه یکسانی دارند، زیرا بخشی از یک دستگاه فیزیکی واحد هستند. با این حال، میکروفون یک هدست شناسه متفاوتی خواهد داشت. این مقدار به منبع داده ترک اختصاص دارد و برای تنظیم محدودیت‌ها قابل استفاده نیست؛ با این حال، می‌توان هنگام فراخوانی {{domxref("MediaDevices.getUserMedia()")}} از آن برای انتخاب اولیه رسانه استفاده کرد.
 
-### Instance properties of audio tracks
+### ویژگی‌های نمونه ترک‌های صوتی
 
 - {{domxref("MediaTrackSettings.autoGainControl", "autoGainControl")}}
-  - : A Boolean which indicates the current value of the {{domxref("MediaTrackConstraints.autoGainControl", "autoGainControl")}} property, which is `true` if automatic gain control is enabled and is `false` otherwise.
+  - : یک مقدار بولین که مقدار فعلی ویژگی {{domxref("MediaTrackConstraints.autoGainControl", "autoGainControl")}} را نشان می‌دهد؛ اگر کنترل خودکار بهره (automatic gain control) فعال باشد `true` است و در غیر این صورت `false`.
 - {{domxref("MediaTrackSettings.channelCount", "channelCount")}}
-  - : A long integer value indicating the current value of the {{domxref("MediaTrackConstraints.channelCount", "channelCount")}} property, specifying the number of audio channels present on the track (therefore indicating how many audio samples exist in each audio frame). This is 1 for mono, 2 for stereo, and so forth.
+  - : یک مقدار صحیح بلند (long integer) که مقدار فعلی ویژگی {{domxref("MediaTrackConstraints.channelCount", "channelCount")}} را نشان می‌دهد و تعداد کانال‌های صوتی موجود در ترک را مشخص می‌کند (بنابراین نشان می‌دهد در هر فریم صوتی چند نمونه صوتی وجود دارد). این مقدار برای مونو ۱، برای استریو ۲ و به همین ترتیب است.
 - {{domxref("MediaTrackSettings.echoCancellation", "echoCancellation")}}
-  - : A Boolean indicating the current value of the {{domxref("MediaTrackConstraints.echoCancellation", "echoCancellation")}} property, specifying `true` if echo cancellation is enabled, otherwise `false`.
+  - : یک مقدار بولین که مقدار فعلی ویژگی {{domxref("MediaTrackConstraints.echoCancellation", "echoCancellation")}} را نشان می‌دهد؛ اگر حذف پژواک (echo cancellation) فعال باشد `true` و در غیر این صورت `false` را مشخص می‌کند.
 - {{domxref("MediaTrackSettings.latency", "latency")}}
-  - : A double-precision floating point value indicating the current value of the {{domxref("MediaTrackConstraints.latency", "latency")}} property, specifying the audio latency, in seconds. Latency is the amount of time which elapses between the start of processing the audio and the data being available to the next stop in the audio utilization process. This value is a target value; actual latency may vary to some extent for various reasons.
+  - : یک مقدار ممیز شناور با دقت دوبرابر (double-precision floating point) که مقدار فعلی ویژگی {{domxref("MediaTrackConstraints.latency", "latency")}} را نشان می‌دهد و تأخیر صوتی را بر حسب ثانیه مشخص می‌کند. تأخیر (latency) مدت زمانی است که بین شروع پردازش صدا و در دسترس قرار گرفتن داده‌ها برای مرحله بعدی در فرایند استفاده از صدا سپری می‌شود. این مقدار یک مقدار هدف است؛ تأخیر واقعی ممکن است بنا به دلایل مختلف تا حدی متفاوت باشد.
 - {{domxref("MediaTrackSettings.noiseSuppression", "noiseSuppression")}}
-  - : A Boolean indicating the current value of the {{domxref("MediaTrackConstraints.noiseSuppression", "noiseSuppression")}} property: `true` if noise suppression is enabled, and is `false` otherwise.
+  - : یک مقدار بولین که مقدار فعلی ویژگی {{domxref("MediaTrackConstraints.noiseSuppression", "noiseSuppression")}} را نشان می‌دهد: اگر حذف نویز (noise suppression) فعال باشد `true` و در غیر این صورت `false` است.
 - {{domxref("MediaTrackSettings.restrictOwnAudio", "restrictOwnAudio")}}
-  - : A Boolean indicating the current value of the {{domxref("MediaTrackConstraints.restrictOwnAudio", "restrictOwnAudio")}} property: `true` if the browser will attempt to filter out system audio originating from the capturing tab during screen capture, and `false` otherwise.
+  - : یک مقدار بولین که مقدار فعلی ویژگی {{domxref("MediaTrackConstraints.restrictOwnAudio", "restrictOwnAudio")}} را نشان می‌دهد: اگر مرورگر تلاش کند صدای سیستمی را که از تب در حال ضبط در طول ضبط صفحه منشأ می‌گیرد فیلتر کند، `true` و در غیر این صورت `false` است.
 - {{domxref("MediaTrackSettings.sampleRate", "sampleRate")}}
-  - : A long integer value indicating the current value of the {{domxref("MediaTrackConstraints.sampleRate", "sampleRate")}} property, specifying the sample rate in samples per second of the audio data. Standard CD-quality audio, for example, has a sample rate of 41,000 samples per second.
+  - : یک مقدار صحیح بلند که مقدار فعلی ویژگی {{domxref("MediaTrackConstraints.sampleRate", "sampleRate")}} را نشان می‌دهد و نرخ نمونه‌برداری داده‌های صوتی را بر حسب نمونه بر ثانیه مشخص می‌کند. برای مثال، صدای استاندارد با کیفیت CD نرخ نمونه‌برداری ۴۱٬۰۰۰ نمونه بر ثانیه دارد.
 - {{domxref("MediaTrackSettings.sampleSize", "sampleSize")}}
-  - : A long integer value indicating the current value of the {{domxref("MediaTrackConstraints.sampleSize", "sampleSize")}} property, specifying the linear size, in bits, of each audio sample. CD-quality audio, for example, is 16-bit, so this value would be 16 in that case.
+  - : یک مقدار صحیح بلند که مقدار فعلی ویژگی {{domxref("MediaTrackConstraints.sampleSize", "sampleSize")}} را نشان می‌دهد و اندازه خطی هر نمونه صوتی را بر حسب بیت مشخص می‌کند. برای مثال، صدای با کیفیت CD شانزده‌بیتی است، بنابراین در آن حالت این مقدار ۱۶ خواهد بود.
 - {{domxref("MediaTrackSettings.suppressLocalAudioPlayback", "suppressLocalAudioPlayback")}}
-  - : Controls whether the audio playing in a tab will continue to be played out of a user's local speakers when the tab is captured.
+  - : کنترل می‌کند که آیا صدای در حال پخش در یک تب، هنگام ضبط آن تب، همچنان از بلندگوهای محلی کاربر پخش خواهد شد یا خیر.
 - {{domxref("MediaTrackSettings.volume", "volume")}} {{Deprecated_Inline}} {{Non-standard_Inline}}
-  - : A double-precision floating point value indicating the current value of the {{domxref("MediaTrackConstraints.volume", "volume")}} property, specifying the volume level of the track. This value will be between 0.0 (silent) to 1.0 (maximum supported volume).
+  - : یک مقدار ممیز شناور با دقت دوبرابر که مقدار فعلی ویژگی {{domxref("MediaTrackConstraints.volume", "volume")}} را نشان می‌دهد و سطح بلندی صدای ترک را مشخص می‌کند. این مقدار بین 0.0 (سکوت) تا 1.0 (حداکثر بلندی صدای پشتیبانی‌شده) خواهد بود.
 
-### Instance properties of video tracks
+### ویژگی‌های نمونه ترک‌های ویدئویی
 
 - {{domxref("MediaTrackSettings.aspectRatio", "aspectRatio")}}
-  - : A double-precision floating point value indicating the current value of the {{domxref("MediaTrackConstraints.aspectRatio", "aspectRatio")}} property, specified precisely to 10 decimal places. This is the width of the image in pixels divided by its height in pixels. Common values include 1.3333333333 (for the classic television 4:3 "standard" {{glossary("aspect ratio")}}, also used on tablets such as Apple's iPad), 1.7777777778 (for the 16:9 high-definition widescreen aspect ratio), and 1.6 (for the 16:10 aspect ratio common among widescreen computers and tablets).
+  - : یک مقدار ممیز شناور با دقت دوبرابر که مقدار فعلی ویژگی {{domxref("MediaTrackConstraints.aspectRatio", "aspectRatio")}} را نشان می‌دهد و دقیقاً تا ۱۰ رقم اعشار مشخص شده است. این مقدار عرض تصویر بر حسب پیکسل تقسیم بر ارتفاع آن بر حسب پیکسل است. مقادیر رایج عبارت‌اند از: 1.3333333333 (برای نسبت تصویر «استاندارد» تلویزیون کلاسیک 4:3، که در رایانه‌های لوحی مانند iPad اپل نیز استفاده می‌شود)، 1.7777777778 (برای نسبت تصویر عریض با کیفیت بالا 16:9) و 1.6 (برای نسبت تصویر 16:10 که در میان رایانه‌ها و رایانه‌های لوحی عریض رایج است).
 - {{domxref("MediaTrackSettings.facingMode", "facingMode")}}
-  - : A string indicating the current value of the {{domxref("MediaTrackConstraints.facingMode", "facingMode")}} property, specifying the direction the camera is facing. The value will be one of:
+  - : یک رشته که مقدار فعلی ویژگی {{domxref("MediaTrackConstraints.facingMode", "facingMode")}} را نشان می‌دهد و جهتی که دوربین به آن رو است را مشخص می‌کند. مقدار یکی از موارد زیر خواهد بود:
     - `"user"`
-      - : A camera facing the user (commonly known as a "selfie cam"), used for self-portraiture and video calling.
+      - : دوربینی که به سمت کاربر است (معمولاً به عنوان «دوربین سلفی» شناخته می‌شود)، که برای عکس سلفی و تماس تصویری استفاده می‌شود.
     - `"environment"`
-      - : A camera facing away from the user (when the user is looking at the screen). This is typically the highest quality camera on the device, used for general photography.
+      - : دوربینی که رو به محیط و دور از کاربر است (زمانی که کاربر به صفحه نمایش نگاه می‌کند). این معمولاً باکیفیت‌ترین دوربین دستگاه است و برای عکاسی عمومی استفاده می‌شود.
     - `"left"`
-      - : A camera facing toward the environment to the user's left.
+      - : دوربینی که به سمت محیط سمت چپ کاربر است.
     - `"right"`
-      - : A camera facing toward the environment to the user's right.
-
+      - : دوربینی که به سمت محیط سمت راست کاربر است.
 - {{domxref("MediaTrackSettings.frameRate", "frameRate")}}
-  - : A double-precision floating point value indicating the current value of the {{domxref("MediaTrackConstraints.frameRate", "frameRate")}} property, specifying how many frames of video per second the track includes. If the value can't be determined for any reason, the value will match the vertical sync rate of the device the user agent is running on.
+  - : یک مقدار ممیز شناور با دقت دوبرابر که مقدار فعلی ویژگی {{domxref("MediaTrackConstraints.frameRate", "frameRate")}} را نشان می‌دهد و مشخص می‌کند که ترک چند فریم ویدئو در هر ثانیه دارد. اگر به هر دلیلی نتوان این مقدار را تعیین کرد، مقدار با نرخ همگام‌سازی عمودی دستگاهی که عامل کاربر (user agent) روی آن در حال اجرا است مطابقت خواهد داشت.
 - {{domxref("MediaTrackSettings.height", "height")}}
-  - : A long integer value indicating the current value of the {{domxref("MediaTrackConstraints.height", "height")}} property, specifying the height of the track's video data in pixels.
+  - : یک مقدار صحیح بلند که مقدار فعلی ویژگی {{domxref("MediaTrackConstraints.height", "height")}} را نشان می‌دهد و ارتفاع داده ویدئویی ترک را بر حسب پیکسل مشخص می‌کند.
 - {{domxref("MediaTrackSettings.width", "width")}}
-  - : A long integer value indicating the current value of the {{domxref("MediaTrackSettings.width", "width")}} property, specifying the width of the track's video data in pixels.
+  - : یک مقدار صحیح بلند که مقدار فعلی ویژگی {{domxref("MediaTrackSettings.width", "width")}} را نشان می‌دهد و عرض داده ویدئویی ترک را بر حسب پیکسل مشخص می‌کند.
 - {{domxref("MediaTrackSettings.resizeMode", "resizeMode")}}
-  - : A string indicating the current value of the {{domxref("MediaTrackConstraints.resizeMode", "resizeMode")}} property, specifying the mode used by the user agent to derive the resolution of the track. The value will be one of:
+  - : یک رشته که مقدار فعلی ویژگی {{domxref("MediaTrackConstraints.resizeMode", "resizeMode")}} را نشان می‌دهد و حالتی را مشخص می‌کند که عامل کاربر برای به دست آوردن وضوح ترک استفاده می‌کند. مقدار یکی از موارد زیر خواهد بود:
     - `"none"`
-      - : The track has the resolution offered by the camera, its driver or the OS.
+      - : ترک وضوحی را دارد که دوربین، درایور آن یا سیستم‌عامل ارائه می‌دهد.
     - `"crop-and-scale"`
-      - : The track's resolution might be the result of the user agent using cropping or downscaling from a higher camera resolution.
+      - : وضوح ترک ممکن است نتیجه استفاده عامل کاربر از برش (cropping) یا کاهش مقیاس از وضوح بالاتر دوربین باشد.
 
-### Instance properties of shared screen tracks
+### ویژگی‌های نمونه ترک‌های صفحه اشتراک‌گذاری‌شده
 
-Tracks containing video shared from a user's screen (regardless of whether the screen data comes from the entire screen or a portion of a screen, like a window or tab) are generally treated like video tracks, with the exception that they also support the following added settings:
+ترک‌هایی که شامل ویدئوی اشتراک‌گذاری‌شده از صفحه کاربر هستند (صرف‌نظر از اینکه داده صفحه از کل صفحه یا بخشی از صفحه، مانند یک پنجره یا تب، می‌آید) عموماً مانند ترک‌های ویدئویی در نظر گرفته می‌شوند، با این استثنا که از تنظیمات اضافه زیر نیز پشتیبانی می‌کنند:
 
 - {{domxref("MediaTrackSettings.cursor", "cursor")}}
-  - : A string which indicates whether or not the mouse cursor is being included in the generated stream and under what conditions. Possible values are:
+  - : یک رشته که نشان می‌دهد آیا نشانگر ماوس در جریان تولیدشده گنجانده شده است یا خیر و تحت چه شرایطی. مقادیر ممکن عبارت‌اند از:
     - `always`
-      - : The mouse is always visible in the video content of the {domxref("MediaStream"), unless the mouse has moved outside the area of the content.
+      - : ماوس همیشه در محتوای ویدئویی {domxref("MediaStream")، قابل مشاهده است، مگر اینکه ماوس به بیرون از ناحیه محتوا حرکت کرده باشد.
     - `motion`
-      - : The mouse cursor is always included in the video if it's moving, and for a short time after it stops moving.
+      - : نشانگر ماوس همیشه در ویدئو گنجانده می‌شود اگر در حال حرکت باشد، و برای مدت کوتاهی پس از توقف حرکت نیز گنجانده می‌شود.
     - `never`
-      - : The mouse cursor is never included in the shared video.
-
+      - : نشانگر ماوس هرگز در ویدئوی اشتراک‌گذاری‌شده گنجانده نمی‌شود.
 - {{domxref("MediaTrackSettings.displaySurface", "displaySurface")}}
-  - : A string which specifies the type of source the track contains; one of:
+  - : یک رشته که نوع منبع موجود در ترک را مشخص می‌کند؛ یکی از موارد زیر:
     - `browser`
-      - : The stream contains the contents of a single browser tab selected by the user.
+      - : جریان شامل محتویات یک تب مرورگر است که توسط کاربر انتخاب شده است.
     - `monitor`
-      - : The stream's video track contains the entire contents of one or more of the user's screens.
+      - : ترک ویدئویی جریان شامل کل محتویات یک یا چند صفحه از صفحه‌های کاربر است.
     - `window`
-      - : The stream contains a single window selected by the user for sharing.
-
+      - : جریان شامل یک پنجره واحد است که توسط کاربر برای اشتراک‌گذاری انتخاب شده است.
 - {{domxref("MediaTrackSettings.logicalSurface", "logicalSurface")}}
-  - : A Boolean value which, if `true`, indicates that the video contained in the stream's video track contains a background rendering context, rather than a user-visible one. This is `false` if the video being captured is coming from a foreground (user-visible) source.
-
+  - : یک مقدار بولین که اگر `true` باشد، نشان می‌دهد ویدئوی موجود در ترک ویدئویی جریان شامل یک زمینه رندر پس‌زمینه (background rendering context) است، نه یک زمینه قابل مشاهده برای کاربر. اگر ویدئوی در حال ضبط از یک منبع پیش‌زمینه (قابل مشاهده برای کاربر) می‌آید، این مقدار `false` است.
 - {{domxref("MediaTrackSettings.screenPixelRatio", "screenPixelRatio")}}
-  - : A number representing the ratio of the physical size of a pixel on the captured display surface (displayed at its physical resolution) to the logical size of a CSS pixel on the capturing screen (displayed at its logical resolution). It cannot be used as a constraint or capability.
+  - : عددی که نسبت اندازه فیزیکی یک پیکسل در سطح نمایش ضبط‌شده (که با وضوح فیزیکی آن نمایش داده می‌شود) به اندازه منطقی یک پیکسل CSS در صفحه در حال ضبط (که با وضوح منطقی آن نمایش داده می‌شود) را نشان می‌دهد. نمی‌توان از آن به عنوان محدودیت یا قابلیت استفاده کرد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("MediaDevices.getUserMedia()")}}
 - {{domxref("MediaDevices.getDisplayMedia()")}}
