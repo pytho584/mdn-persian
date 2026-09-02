@@ -1,11 +1,5 @@
 ---
 title: "IDBRequest: readyState property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/readyState"
-status: "needs-translation"
----
-
----
-title: "IDBRequest: readyState property"
 short-title: readyState
 slug: Web/API/IDBRequest/readyState
 page-type: web-api-instance-property
@@ -14,32 +8,22 @@ browser-compat: api.IDBRequest.readyState
 
 {{ APIRef("IndexedDB") }} {{AvailableInWorkers}}
 
-The **`readyState`** read-only property of the
-{{domxref("IDBRequest")}} interface returns the state of the request.
+خاصیت فقط خواندنی **`readyState`** از رابط {{domxref("IDBRequest")}} وضعیت درخواست را برمی‌گرداند.
 
-Every request starts in the `pending` state. The state changes to
-`done` when the request completes successfully or when an error
-occurs.
+هر درخواست در حالت `pending` شروع می‌شود. هنگامی که درخواست با موفقیت کامل شود یا خطایی رخ دهد، وضعیت به `done` تغییر می‌کند.
 
-## Value
+## مقدار
 
-One of the following strings:
+یکی از رشته‌های زیر:
 
 - `pending`
-  - : Returned if the request is still ongoing.
+  - : اگر درخواست هنوز در حال انجام باشد برگردانده می‌شود.
 - `done`
-  - : Returned if the request has already completed.
+  - : اگر درخواست قبلاً تکمیل شده باشد برگردانده می‌شود.
 
-## Examples
+## مثال‌ها
 
-The following example requests a given record title, `onsuccess` gets the
-associated record from the {{domxref("IDBObjectStore")}} (made available
-as `objectStoreTitleRequest.result`), updates
-one property of the record, and then puts the updated record back into the object
-store in another request. The `readyState` of the 2nd request is logged to
-the developer console. For a full working example, see our
-[To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) app
-([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+مثال زیر یک رکورد با عنوان مشخص را درخواست می‌کند، `onsuccess` رکورد مرتبط را از {{domxref("IDBObjectStore")}} (که به صورت `objectStoreTitleRequest.result` در دسترس است) دریافت می‌کند، یک ویژگی از رکورد را به‌روزرسانی می‌کند و سپس رکورد به‌روزرسانی شده را در یک درخواست دیگر به object store بازمی‌گرداند. `readyState` درخواست دوم در کنسول توسعه‌دهنده ثبت می‌شود. برای یک مثال کامل کاربردی، برنامه [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ما را ببینید ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
 
 ```js
 const title = "Walk dog";
@@ -76,20 +60,20 @@ objectStoreTitleRequest.onsuccess = () => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم یک محدوده از کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و ایجاد تغییرات در داده‌های خود: {{domxref("IDBObjectStore")}}
+- استفاده از کرسرها: {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
