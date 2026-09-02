@@ -1,11 +1,5 @@
 ---
 title: "IDBFactory: cmp() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBFactory/cmp"
-status: "needs-translation"
----
-
----
-title: "IDBFactory: cmp() method"
 short-title: cmp()
 slug: Web/API/IDBFactory/cmp
 page-type: web-api-instance-method
@@ -14,17 +8,10 @@ browser-compat: api.IDBFactory.cmp
 
 {{ APIRef("IndexedDB") }} {{AvailableInWorkers}}
 
-The **`cmp()`** method of the {{domxref("IDBFactory")}}
-interface compares two values as keys to determine equality and ordering for IndexedDB
-operations, such as storing and iterating.
+متد **`cmp()`** از رابط {{domxref("IDBFactory")}} دو مقدار را به‌عنوان کلید مقایسه می‌کند تا برابری و ترتیب را برای عملیات IndexedDB، مانند ذخیره‌سازی و پیمایش، تعیین کند.
 
 > [!NOTE]
-> Do not use this method for comparing arbitrary JavaScript
-> values, because many JavaScript values are either not valid IndexedDB keys (booleans
-> and objects, for example) or are treated as equivalent IndexedDB keys (for example,
-> since IndexedDB ignores arrays with non-numeric properties and treats them as empty
-> arrays, so any non-numeric arrays are treated as equivalent). This throws an exception
-> if either of the values is not a valid key.
+> از این متد برای مقایسه مقادیر دلخواه جاوااسکریپت استفاده نکنید؛ زیرا بسیاری از مقادیر جاوااسکریپت یا کلیدهای معتبر IndexedDB نیستند (مانند بولین‌ها و اشیا) یا به‌عنوان کلیدهای هم‌ارز IndexedDB در نظر گرفته می‌شوند. برای مثال، IndexedDB ویژگی‌های غیرعددی آرایه‌ها را نادیده می‌گیرد و آن‌ها را به‌عنوان آرایه‌های خالی در نظر می‌گیرد؛ بنابراین هر آرایه‌ای که ویژگی غیرعددی داشته باشد، هم‌ارز با دیگر آرایه‌های غیرعددی تلقی می‌شود. اگر هر یک از مقادیر کلید معتبر نباشد، این متد یک استثنا صادر می‌کند.
 
 ## Syntax
 
@@ -32,30 +19,29 @@ operations, such as storing and iterating.
 cmp(first, second)
 ```
 
-### Parameters
+### پارامترها
 
 - `first`
-  - : The first key to compare.
+  - : اولین کلیدی که باید مقایسه شود.
 - `second`
-  - : The second key to compare.
+  - : دومین کلیدی که باید مقایسه شود.
 
-### Return value
+### مقدار بازگشتی
 
-An integer that indicates the result of the comparison; the table below lists the
-possible values and their meanings:
+یک عدد صحیح که نتیجه مقایسه را نشان می‌دهد؛ جدول زیر مقادیر ممکن و معنی آن‌ها را فهرست می‌کند:
 
-| Returned value | Description                         |
+| مقدار بازگشتی | توضیح                              |
 | -------------- | ----------------------------------- |
-| -1             | 1st key is less than the 2nd key    |
-| 0              | 1st key is equal to the 2nd key     |
-| 1              | 1st key is greater than the 2nd key |
+| -1             | کلید اول کوچک‌تر از کلید دوم است    |
+| 0              | کلید اول برابر با کلید دوم است      |
+| 1              | کلید اول بزرگ‌تر از کلید دوم است    |
 
-### Exceptions
+### استثناها
 
 - `DataError` {{domxref("DOMException")}}
-  - : Thrown if one of the supplied keys was not a valid key.
+  - : اگر یکی از کلیدهای ارائه‌شده کلید معتبری نباشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
 ```js
 const a = 1;
@@ -64,20 +50,20 @@ const result = window.indexedDB.cmp(a, b);
 console.log(`Comparison results: ${result}`);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم بازه‌ای از کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و اعمال تغییرات روی داده‌ها: {{domxref("IDBObjectStore")}}
+- استفاده از کرسرها: {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
