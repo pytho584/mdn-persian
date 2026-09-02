@@ -1,11 +1,5 @@
 ---
 title: "MediaStreamTrackGenerator: MediaStreamTrackGenerator() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrackGenerator/MediaStreamTrackGenerator"
-status: "needs-translation"
----
-
----
-title: "MediaStreamTrackGenerator: MediaStreamTrackGenerator() constructor"
 short-title: MediaStreamTrackGenerator()
 slug: Web/API/MediaStreamTrackGenerator/MediaStreamTrackGenerator
 page-type: web-api-constructor
@@ -17,44 +11,44 @@ browser-compat: api.MediaStreamTrackGenerator.MediaStreamTrackGenerator
 
 {{APIRef("Insertable Streams for MediaStreamTrack API")}}{{SeeCompatTable}}{{Non-standard_Header}}
 
-The **`MediaStreamTrackGenerator()`** constructor creates a new {{domxref("MediaStreamTrackGenerator")}} object which consumes a stream of media frames and exposes a {{domxref("MediaStreamTrack")}}.
+سازندهٔ **`MediaStreamTrackGenerator()`** یک شیء {{domxref("MediaStreamTrackGenerator")}} جدید می‌سازد که جریانی از فریم‌های رسانه را مصرف می‌کند و یک {{domxref("MediaStreamTrack")}} در اختیار می‌گذارد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 new MediaStreamTrackGenerator(options)
 ```
 
-### Parameters
+### پارامترها
 
 - `options` {{Experimental_Inline}} {{Non-standard_Inline}}
-  - : An object containing the property `kind`, which is one of the following strings:
+  - : شیءای شامل ویژگی `kind` که یکی از رشته‌های زیر است:
     - `"audio"`
-      - : Specifies that the stream accepts {{domxref("AudioTrack")}} objects.
+      - : مشخص می‌کند که جریان، شیءهای {{domxref("AudioTrack")}} را می‌پذیرد.
     - `"video"`
-      - : Specifies that the stream accepts {{domxref("VideoTrack")}} objects.
+      - : مشخص می‌کند که جریان، شیءهای {{domxref("VideoTrack")}} را می‌پذیرد.
 
-### Exceptions
+### استثناها (Exceptions)
 
 - {{jsxref("TypeError")}}
-  - : Thrown if `init.kind` is not `"video"` or `"audio"`.
+  - : اگر `init.kind` برابر با `"video"` یا `"audio"` نباشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-In the following example a new video `MediaStreamTrackGenerator` is created.
+در مثال زیر، یک `MediaStreamTrackGenerator` ویدیویی جدید ساخته می‌شود.
 
 ```js
 const trackGenerator = new MediaStreamTrackGenerator({ kind: "video" });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Insertable streams for MediaStreamTrack](https://developer.chrome.com/docs/capabilities/web-apis/mediastreamtrack-insertable-media-processing)
+- [جریان‌های قابل درج برای MediaStreamTrack](https://developer.chrome.com/docs/capabilities/web-apis/mediastreamtrack-insertable-media-processing)
