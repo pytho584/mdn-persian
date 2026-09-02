@@ -1,7 +1,5 @@
 ---
 title: "MediaEncryptedEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaEncryptedEvent"
-status: "needs-translation"
 ---
 
 ---
@@ -13,32 +11,32 @@ browser-compat: api.MediaEncryptedEvent
 
 {{APIRef("Encrypted Media Extensions")}}
 
-The **`MediaEncryptedEvent`** interface of the [Encrypted Media Extensions API](/en-US/docs/Web/API/Encrypted_Media_Extensions_API) contains the information associated with an {{domxref("HTMLMediaElement/encrypted_event", "encrypted")}} event sent to a {{domxref("HTMLMediaElement")}} when some initialization data is encountered in the media.
+رابط **`MediaEncryptedEvent`** از [API اکستنشن‌های رسانه‌های رمزنگاری‌شده](/en-US/docs/Web/API/Encrypted_Media_Extensions_API) اطلاعات مرتبط با رویداد {{domxref("HTMLMediaElement/encrypted_event", "encrypted")}} را که به یک {{domxref("HTMLMediaElement")}} ارسال می‌شود، زمانی که داده‌های اولیه‌ای در رسانه یافت می‌شود، در بر می‌گیرد.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("MediaEncryptedEvent.MediaEncryptedEvent", "MediaEncryptedEvent()")}}
-  - : Creates a new instance of a `MediaEncryptedEvent` object.
+  - : یک نمونه جدید از شیء `MediaEncryptedEvent` می‌سازد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface also inherits properties from its parent, {{domxref("Event")}}._
+_این رابط همچنین ویژگی‌هایی را از والد خود، {{domxref("Event")}}، به ارث می‌برد._
 
 - {{domxref("MediaEncryptedEvent.initDataType")}} {{ReadOnlyInline}}
-  - : Returns a case-sensitive string with the _type_ of the format of the initialization data found.
+  - : یک رشته حساس به حروف بزرگ و کوچک (case-sensitive) شامل _نوع_ قالب داده‌های اولیه یافت‌شده را برمی‌گرداند.
 - {{domxref("MediaEncryptedEvent.initData")}} {{ReadOnlyInline}}
-  - : Returns an {{jsxref("ArrayBuffer")}} containing the initialization data found. If there is no initialization data associated with the format, it returns `null`.
+  - : یک {{jsxref("ArrayBuffer")}} حاوی داده‌های اولیه یافت‌شده را برمی‌گرداند. اگر هیچ داده اولیه‌ای مرتبط با قالب وجود نداشته باشد، `null` برمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
-_This interface doesn't provide any specific methods, but inherits methods from its parent, {{domxref("Event")}}._
+_این رابط هیچ روش خاصی ارائه نمی‌دهد، اما روش‌ها را از والد خود، {{domxref("Event")}}، به ارث می‌برد._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
