@@ -1,7 +1,6 @@
+```
 ---
 title: "MediaTrackSupportedConstraints: logicalSurface property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSupportedConstraints/logicalSurface"
-status: "needs-translation"
 ---
 
 ---
@@ -14,23 +13,17 @@ browser-compat: api.MediaStreamTrack.applyConstraints.logicalSurface_constraint
 
 {{APIRef("Media Capture and Streams")}}
 
-The {{domxref("MediaTrackSupportedConstraints")}} dictionary's **`logicalSurface`** property indicates whether or not the {{domxref("MediaTrackConstraints.logicalSurface", "logicalSurface")}} constraint is supported by the user agent and the device on which the content is being used.
+ویژگی **`logicalSurface`** از {{domxref("MediaTrackSupportedConstraints")}} نشان می‌دهد که آیا محدودیت {{domxref("MediaTrackConstraints.logicalSurface", "logicalSurface")}} توسط عامل کاربر (user agent) و دستگاهی که محتوا روی آن استفاده می‌شود پشتیبانی می‌شود یا نه.
 
-The supported constraints list is obtained by calling {{domxref("MediaDevices.getSupportedConstraints","navigator.mediaDevices.getSupportedConstraints()")}}.
+فهرست محدودیت‌های پشتیبانی‌شده با فراخوانی {{domxref("MediaDevices.getSupportedConstraints","navigator.mediaDevices.getSupportedConstraints()")}} به دست می‌آید.
 
 ## Value
 
-A boolean value which is `true` if the {{domxref("MediaTrackConstraints.logicalSurface", "logicalSurface")}} constraint is supported by the device and user agent.
+یک مقدار بولی است که اگر محدودیت {{domxref("MediaTrackConstraints.logicalSurface", "logicalSurface")}} توسط دستگاه و عامل کاربر پشتیبانی شود، `true` خواهد بود.
 
 ## Example
 
-This method sets up the constraints object specifying the options for the call to
-{{domxref("MediaDevices.getDisplayMedia", "getDisplayMedia()")}}. It adds the
-`logicalSurface` constraint (requesting that only logical display
-surfaces—those which may not be entirely visible onscreen—be included among the options
-available to the user) only if it is known to be supported by the browser. Capturing is
-then started by calling `getDisplayMedia()` and attaching the returned stream
-to the video element referenced by the variable `videoElem`.
+این متد، شیء محدودیت‌ها را می‌سازد که گزینه‌های فراخوانی {{domxref("MediaDevices.getDisplayMedia", "getDisplayMedia()")}} را مشخص می‌کند. اگر معلوم باشد که مرورگر از آن پشتیبانی می‌کند، محدودیت `logicalSurface` را اضافه می‌کند (با این درخواست که فقط سطوح نمایش منطقی — آن‌هایی که ممکن است کاملاً روی صفحه نمایش قابل مشاهده نباشند — در میان گزینه‌های موجود برای کاربر گنجانده شوند). سپس ضبط با فراخوانی `getDisplayMedia()` آغاز می‌شود و جریان برگشتی به عنصر ویدیویی که متغیر `videoElem` به آن اشاره دارد متصل می‌شود.
 
 ```js
 async function capture() {
@@ -70,3 +63,4 @@ async function capture() {
 - {{domxref("MediaStreamTrack.getConstraints()")}}
 - {{domxref("MediaStreamTrack.applyConstraints()")}}
 - {{domxref("MediaStreamTrack.getSettings()")}}
+```
