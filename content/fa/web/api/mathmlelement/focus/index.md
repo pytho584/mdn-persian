@@ -1,11 +1,5 @@
 ---
 title: "MathMLElement: focus() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MathMLElement/focus"
-status: "needs-translation"
----
-
----
-title: "MathMLElement: focus() method"
 short-title: focus()
 slug: Web/API/MathMLElement/focus
 page-type: web-api-instance-method
@@ -14,9 +8,9 @@ browser-compat: api.MathMLElement.focus
 
 {{APIRef("MathML")}}
 
-The **`focus()`** method of the {{domxref("MathMLElement")}} interface sets focus on the specified MathML element, if it can be focused. The focused element is the element that will receive keyboard and similar events by default.
+متد **`focus()`** در رابط {{domxref("MathMLElement")}}، در صورت امکان‌پذیر بودن، تمرکز را روی عنصر MathML مشخص‌شده قرار می‌دهد. عنصر متمرکز، عنصری است که به‌طور پیش‌فرض رویدادهای صفحه‌کلید و مشابه را دریافت می‌کند.
 
-By default the browser will scroll the element into view after focusing it, and it may also provide visible indication of the focused element (typically by displaying a "focus ring" around the element). Parameter options are provided to disable the default scrolling and force visible indication on elements. If you call `focus()` from a `mousedown` event handler, you must call `event.preventDefault()` to keep the focus from leaving the `MathMLElement`.
+به‌طور پیش‌فرض، مرورگر پس از تمرکز، عنصر را به دید کاربر می‌آورد (اسکرول می‌کند) و ممکن است نشانهٔ بصری نیز برای عنصر متمرکز فراهم کند (معمولاً با نمایش یک «حلقهٔ تمرکز» در اطراف عنصر). گزینه‌های پارامتر برای غیرفعال کردن اسکرول پیش‌فرض و اجبار نمایش نشانهٔ بصری روی عناصر ارائه شده‌اند. اگر `focus()` را از یک کنترل‌کنندهٔ رویداد `mousedown` فراخوانی کنید، باید `event.preventDefault()` را نیز فراخوانی کنید تا تمرکز از `MathMLElement` خارج نشود.
 
 ## Syntax
 
@@ -28,20 +22,19 @@ focus(options)
 ### Parameters
 
 - `options` {{optional_inline}}
-  - : An object for controlling aspects of the focusing process.
-    This object may contain the following properties:
+  - : یک شیء برای کنترل جنبه‌های فرایند تمرکز. این شیء ممکن است ویژگی‌های زیر را داشته باشد:
     - `preventScroll` {{optional_inline}}
-      - : A boolean value indicating whether or not the browser should scroll the document to bring the newly-focused element into view. A value of `false` for `preventScroll` (the default) means that the browser will scroll the element into view after focusing it. If `preventScroll` is set to `true`, no scrolling will occur.
+      - : یک مقدار بولین که نشان می‌دهد آیا مرورگر باید سند را اسکرول کند تا عنصر تازه متمرکز شده به دید کاربر بیاید یا خیر. مقدار `false` برای `preventScroll` (مقدار پیش‌فرض) به این معنی است که مرورگر پس از تمرکز، عنصر را به دید کاربر می‌آورد. اگر `preventScroll` روی `true` تنظیم شود، هیچ اسکرولی رخ نخواهد داد.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
 ## Examples
 
-### Focusing a MathML element
+### تمرکز روی یک عنصر MathML
 
-This example uses a button to set the focus on a MathML circle element.
+این مثال از یک دکمه برای تنظیم تمرکز روی یک عنصر MathML استفاده می‌کند.
 
 #### HTML
 
@@ -67,7 +60,7 @@ document.getElementById("focusButton").addEventListener("click", () => {
 });
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("focus",100,100)}}
 
