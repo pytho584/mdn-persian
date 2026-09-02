@@ -1,11 +1,5 @@
 ---
 title: "MediaKeyMessageEvent: message property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaKeyMessageEvent/message"
-status: "needs-translation"
----
-
----
-title: "MediaKeyMessageEvent: message property"
 short-title: message
 slug: Web/API/MediaKeyMessageEvent/message
 page-type: web-api-instance-property
@@ -14,18 +8,16 @@ browser-compat: api.MediaKeyMessageEvent.message
 
 {{APIRef("Encrypted Media Extensions")}}{{SecureContext_Header}}
 
-The **`MediaKeyMessageEvent.message`** read-only property
-returns an {{jsxref("ArrayBuffer")}} with a message from the content decryption module.
-Messages vary by key system.
+خاصیت فقط خواندنی **`MediaKeyMessageEvent.message`** یک {{jsxref("ArrayBuffer")}} حاوی پیامی از ماژول رمزگشایی محتوا برمی‌گرداند. پیام‌ها بسته به سیستم کلید متفاوت هستند.
 
-## Value
+## مقدار
 
-An {{jsxref("ArrayBuffer")}}.
+یک {{jsxref("ArrayBuffer")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
