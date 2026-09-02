@@ -1,11 +1,5 @@
 ---
 title: "MediaRecorderErrorEvent: MediaRecorderErrorEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorderErrorEvent/MediaRecorderErrorEvent"
-status: "needs-translation"
----
-
----
-title: "MediaRecorderErrorEvent: MediaRecorderErrorEvent() constructor"
 short-title: MediaRecorderErrorEvent()
 slug: Web/API/MediaRecorderErrorEvent/MediaRecorderErrorEvent
 page-type: web-api-constructor
@@ -17,48 +11,37 @@ browser-compat: api.MediaRecorderErrorEvent.MediaRecorderErrorEvent
 
 {{APIRef("MediaStream Recording")}}{{Deprecated_Header}}{{Non-standard_Header}}
 
-The
-**`MediaRecorderErrorEvent()`** constructor creates a new {{domxref("MediaRecorderErrorEvent")}} object
-that represents an error that occurred during the recording of media
-by the [MediaStream Recording API](/en-US/docs/Web/API/MediaStream_Recording_API).
+سازنده‌ی **`MediaRecorderErrorEvent()`** یک شیء {{domxref("MediaRecorderErrorEvent")}} جدید ایجاد می‌کند که نشان‌دهنده‌ی خطایی است که در حین ضبط رسانه توسط [API ضبط جریان رسانه](/en-US/docs/Web/API/MediaStream_Recording_API) رخ داده است.
 
 > [!NOTE]
-> In general, you won't create these yourself; they are delivered to your
-> implementation of {{domxref("MediaRecorder.error_event", "onerror")}} when errors occur while
-> recording media.
+> به طور کلی، شما خودتان این رویدادها را ایجاد نمی‌کنید؛ آن‌ها زمانی که در حین ضبط رسانه خطایی رخ می‌دهد، به پیاده‌سازی شما از {{domxref("MediaRecorder.error_event", "onerror")}} تحویل داده می‌شوند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 new MediaRecorderErrorEvent(type, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string with the name of the event.
-    It is case-sensitive and browsers always set it to `error`.
+  - : یک رشته شامل نام رویداد. این مقدار به حروف بزرگ و کوچک حساس است و مرورگرها همیشه آن را `error` قرار می‌دهند.
 - `options`
-  - : An object that, _in addition of the properties defined in {{domxref("Event/Event", "Event()")}}_, can have the following properties:
+  - : یک شیء که، _علاوه بر ویژگی‌های تعریف‌شده در {{domxref("Event/Event", "Event()")}}_، می‌تواند ویژگی‌های زیر را داشته باشد:
     - `error`
-      - : A {{domxref("DOMException")}} that describes the error that occurred. This
-        object's {{domxref("DOMException.name", "name")}} property should indicate the
-        name of the error that occurred. The other fields may or may not be present.
+      - : یک {{domxref("DOMException")}} که خطای رخ‌داده را توصیف می‌کند. ویژگی {{domxref("DOMException.name", "name")}} این شیء باید نام خطای رخ‌داده را نشان دهد. فیلدهای دیگر ممکن است وجود داشته باشند یا نداشته باشند.
 
 > [!NOTE]
-> Some {{Glossary("user agent", "user agents")}} add to the `error` object
-> other properties that provide information such as stack dumps, the name of the
-> JavaScript file and the line number where the error occurred, and other debugging
-> aids, but you should not rely on this information in a production environment.
+> برخی از {{Glossary("user agent", "عامل‌های کاربری")}} ویژگی‌های دیگری به شیء `error` اضافه می‌کنند که اطلاعاتی مانند dump پشته، نام فایل جاوااسکریپت و شماره خطی که خطا در آن رخ داده و سایر ابزارهای اشکال‌زدایی را فراهم می‌کند، اما شما نباید در محیط تولید به این اطلاعات اعتماد کنید.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("MediaRecorderErrorEvent")}} object.
+یک شیء جدید {{domxref("MediaRecorderErrorEvent")}}.
 
-## Specifications
+## مشخصات
 
-This feature is no longer part of any specification, and longer on track to become standard.
+این ویژگی دیگر بخشی از هیچ مشخصاتی نیست و در مسیر تبدیل شدن به یک استاندارد نیست.
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
