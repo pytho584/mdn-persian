@@ -1,7 +1,5 @@
 ---
 title: "MediaDevices: getUserMedia() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia"
-status: "needs-translation"
 ---
 
 ---
@@ -14,158 +12,130 @@ browser-compat: api.MediaDevices.getUserMedia
 
 {{securecontext_header}}{{APIRef("Media Capture and Streams")}}
 
-The **`getUserMedia()`** method of the {{domxref("MediaDevices")}} interface prompts the user for permission to use a media input which produces a {{domxref("MediaStream")}} with tracks containing the requested types of media.
+متد **`getUserMedia()`** از رابط {{domxref("MediaDevices")}} از کاربر درخواست مجوز برای استفاده از یک ورودی رسانه می‌کند که یک {{domxref("MediaStream")}} با trackهایی حاوی انواع رسانه درخواست‌شده تولید می‌کند.
 
-That stream can include, for example, a video track (produced by either a hardware or virtual video source such as a camera, video recording device, screen sharing service, and so forth), an audio track (similarly, produced by a physical or virtual audio source like a microphone, A/D converter, or the like), and possibly other track types.
+این جریان می‌تواند برای مثال شامل یک track ویدیویی باشد (که توسط یک منبع ویدیویی سخت‌افزاری یا مجازی مانند دوربین، دستگاه ضبط ویدیو، سرویس اشتراک‌گذاری صفحه و غیره تولید می‌شود)، یک track صوتی (به‌طور مشابه، تولیدشده توسط یک منبع صوتی فیزیکی یا مجازی مانند میکروفون، مبدل آنالوگ به دیجیتال یا موارد مشابه) و احتمالاً انواع دیگری از track.
 
-It returns a {{jsxref("Promise")}} that resolves to a {{domxref("MediaStream")}} object.
-If the user denies permission, or matching media is not available, then the promise is rejected with `NotAllowedError` or `NotFoundError` {{domxref("DOMException")}} respectively.
+این متد یک {{jsxref("Promise")}} برمی‌گرداند که به یک شیء {{domxref("MediaStream")}} resolve می‌شود. اگر کاربر اجازه را رد کند یا رسانه منطبقی در دسترس نباشد، promise به ترتیب با خطای `NotAllowedError` یا `NotFoundError` از نوع {{domxref("DOMException")}} رد می‌شود.
 
 > [!NOTE]
-> It's possible for the returned promise to _neither_ resolve nor reject, as the user is not required to make a choice at all and may ignore the request.
+> ممکن است promise برگشتی نه resolve شود و نه reject؛ زیرا کاربر ملزم به تصمیم‌گیری نیست و می‌تواند درخواست را نادیده بگیرد.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 getUserMedia(constraints)
 ```
 
-### Parameters
+### پارامترها
 
 - `constraints`
-  - : An object specifying the types of media to request, along with any requirements for each type.
+  - : شیئی که انواع رسانه مورد درخواست را به همراه هرگونه الزام برای هر نوع مشخص می‌کند.
 
-    The `constraints` parameter is an object with two members: `video` and `audio`, describing the media types requested.
-    Either or both must be specified.
-    If the browser cannot find all media tracks with the specified types that meet the constraints given, then the returned promise is rejected with `NotFoundError` {{domxref("DOMException")}}.
+    پارامتر `constraints` شی‌ای است با دو عضو: `video` و `audio` که انواع رسانه درخواست‌شده را توصیف می‌کنند. باید یکی یا هر دوی آنها مشخص شوند. اگر مرورگر نتواند همه trackهای رسانه را با انواع مشخص‌شده که محدودیت‌های داده‌شده را برآورده می‌کنند پیدا کند، promise برگشتی با خطای `NotFoundError` از نوع {{domxref("DOMException")}} رد می‌شود.
 
-    For both `video` and `audio`, its value is either a boolean or an object.
-    The default value is `false`.
-    - If `true` is specified for a media type, the resulting stream is _required_ to have that type of track in it.
-      If one cannot be included for any reason, the returned promise will reject.
-    - If `false` is specified for a media type, the resulting stream _must not_ have that type of track, or the returned promise will reject.
-      Because both `video` and `audio` default to `false`, if the `constraints` object contains neither property or if it's not present at all, the returned promise will always reject.
-    - If an object is specified for a media type, the object is read as a {{domxref("MediaTrackConstraints")}} dictionary.
+    برای هر دو مورد `video` و `audio`، مقدار آن یا یک boolean است یا یک شیء. مقدار پیش‌فرض `false` است.
+    - اگر برای یک نوع رسانه مقدار `true` مشخص شود، جریان حاصل _باید_ دارای track از آن نوع باشد. اگر به هر دلیلی نتوان آن را شامل کرد، promise برگشتی رد خواهد شد.
+    - اگر برای یک نوع رسانه مقدار `false` مشخص شود، جریان حاصل _نباید_ دارای track از آن نوع باشد، وگرنه promise برگشتی رد خواهد شد. چون هر دو `video` و `audio` به‌طور پیش‌فرض `false` هستند، اگر شیء `constraints` هیچ‌کدام از این دو خاصیت را نداشته باشد یا اصلاً وجود نداشته باشد، promise برگشتی همیشه رد می‌شود.
+    - اگر برای یک نوع رسانه یک شیء مشخص شود، آن شیء به‌عنوان یک دیکشنری {{domxref("MediaTrackConstraints")}} خوانده می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} whose fulfillment handler receives a {{domxref("MediaStream")}} object when the requested media has successfully been obtained.
+یک {{jsxref("Promise")}} که در آن، handler تکمیل (fulfillment handler) وقتی رسانه درخواست‌شده با موفقیت به دست آمد، یک شیء {{domxref("MediaStream")}} دریافت می‌کند.
 
-### Exceptions
+### استثناها
 
 - `AbortError` {{domxref("DOMException")}}
-  - : Although the user and operating system both granted access to the hardware device, and no hardware issues occurred that would cause a `NotReadableError` {{domxref("DOMException")}}, throw if some problem occurred which prevented the device from being used.
+  - : اگرچه کاربر و سیستم‌عامل هر دو به دستگاه سخت‌افزاری دسترسی اعطا کرده‌اند و هیچ مشکل سخت‌افزاری رخ نداده است که باعث ایجاد `NotReadableError` {{domxref("DOMException")}} شود، با این حال اگر مشکل دیگری رخ دهد که مانع استفاده از دستگاه شود، این خطا پرتاب می‌شود.
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if current document is not fully active.
+  - : اگر سند جاری کاملاً فعال (fully active) نباشد پرتاب می‌شود.
 
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if one or more of the requested source devices cannot be used at this time.
-    This will happen if the browsing context is insecure (that is, the page was loaded using HTTP rather than HTTPS).
-    It also happens if the user has specified that the current browsing instance is not permitted access to the device, the user has denied access for the current session, or the user has denied all access to user media devices globally.
-    On browsers that support managing media permissions with [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy), this error is returned if Permissions Policy is not configured to allow access to the input source(s).
+  - : اگر یک یا چند دستگاه از دستگاه‌های منبع درخواست‌شده در این زمان قابل استفاده نباشند پرتاب می‌شود. این اتفاق زمانی می‌افتد که بافت مرور (browsing context) ناامن باشد (یعنی صفحه با HTTP به‌جای HTTPS بارگذاری شده باشد). همچنین زمانی رخ می‌دهد که کاربر مشخص کرده باشد نمونه مرور فعلی مجاز به دسترسی به دستگاه نیست، کاربر دسترسی را برای نشست (session) جاری رد کرده باشد، یا کاربر همه دسترسی‌ها به دستگاه‌های رسانه کاربر را به‌طور کلی رد کرده باشد. در مرورگرهایی که مدیریت مجوزهای رسانه را با [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) پشتیبانی می‌کنند، اگر Permissions Policy به‌گونه‌ای پیکربندی نشده باشد که دسترسی به منبع(های) ورودی را مجاز کند، این خطا برگردانده می‌شود.
 
-    > [!NOTE]
-    > Older versions of the specification used `SecurityError` for this instead; `SecurityError` has taken on a new meaning.
+  > [!NOTE]
+  > نسخه‌های قدیمی‌تر مشخصات به‌جای این مورد از `SecurityError` استفاده می‌کردند؛ `SecurityError` اکنون معنای جدیدی به خود گرفته است.
 
 - `NotFoundError` {{domxref("DOMException")}}
-  - : Thrown if no media tracks of the type specified were found that satisfy the given constraints.
+  - : اگر هیچ track رسانه‌ای از نوع مشخص‌شده که محدودیت‌های داده‌شده را برآورده کند پیدا نشود پرتاب می‌شود.
 - `NotReadableError` {{domxref("DOMException")}}
-  - : Thrown if, although the user granted permission to use the matching devices, a hardware error occurred at the operating system, browser, or Web page level which prevented access to the device.
+  - : اگر با وجود اینکه کاربر اجازه استفاده از دستگاه‌های منطبق را صادر کرده است، خطای سخت‌افزاری در سطح سیستم‌عامل، مرورگر یا صفحه وب رخ دهد که از دسترسی به دستگاه جلوگیری کند، پرتاب می‌شود.
 - `OverconstrainedError` {{domxref("DOMException")}}
-  - : Thrown if the specified constraints resulted in no candidate devices which met the criteria requested.
-    The error is an object of type `OverconstrainedError`, and has a `constraint` property whose string value is the name of a constraint which was impossible to meet, and a `message` property containing a human-readable string explaining the problem.
+  - : اگر محدودیت‌های مشخص‌شده به نبود هیچ دستگاه نامزدی که معیارهای درخواستی را برآورده کند منجر شوند، پرتاب می‌شود. این خطا یک شیء از نوع `OverconstrainedError` است و دارای خاصیت `constraint` است که مقدار رشته‌ای آن نام محدودیتی است که برآورده‌کردنش غیرممکن بوده، و خاصیت `message` که شامل یک رشته قابل‌خواندن برای انسان و توضیح‌دهنده مشکل است.
 
-    > [!NOTE]
-    > Because this error can occur even when the user has not yet granted permission to use the underlying device, it can potentially be used as a [fingerprinting](/en-US/docs/Glossary/Fingerprinting) surface.
+  > [!NOTE]
+  > از آنجا که این خطا حتی زمانی که کاربر هنوز اجازه استفاده از دستگاه زیرین را نداده است نیز ممکن است رخ دهد، به‌طور بالقوه می‌تواند به‌عنوان سطحی برای [fingerprinting (اثر انگشت دیجیتال)](/en-US/docs/Glossary/Fingerprinting) استفاده شود.
 
 - `SecurityError` {{domxref("DOMException")}}
-  - : Thrown if user media support is disabled on the {{domxref("Document")}} on which `getUserMedia()` was called.
-    The mechanism by which user media support is enabled and disabled is left up to the individual user agent.
+  - : اگر پشتیبانی از رسانه کاربر (user media) در {{domxref("Document")}}ای که `getUserMedia()` روی آن فراخوانی شده است غیرفعال باشد پرتاب می‌شود. سازوکار فعال‌سازی و غیرفعال‌سازی پشتیبانی از رسانه کاربر به خود عامل کاربر (user agent) واگذار شده است.
 - {{jsxref("TypeError")}}
-  - : Thrown if the list of constraints specified is empty, or has all constraints set to `false`.
-    This can also happen if you try to call `getUserMedia()` in an insecure context, since {{domxref("navigator.mediaDevices")}} is `undefined` in an insecure context.
+  - : اگر فهرست محدودیت‌های مشخص‌شده خالی باشد یا همه محدودیت‌ها روی `false` تنظیم شده باشند پرتاب می‌شود. این خطا همچنین زمانی رخ می‌دهد که بخواهید `getUserMedia()` را در یک بافت ناامن فراخوانی کنید، زیرا {{domxref("navigator.mediaDevices")}} در بافت ناامن `undefined` است.
 
-## Privacy and security
+## حریم خصوصی و امنیت
 
-As an API that may involve significant privacy concerns, `getUserMedia()`'s specification lays out a wide array of privacy and security requirements that browsers are obligated to meet.
+به‌عنوان یک API که ممکن است نگرانی‌های قابل‌توجهی برای حریم خصوصی در بر داشته باشد، مشخصات `getUserMedia()` مجموعه‌ای گسترده از الزامات حریم خصوصی و امنیتی را تعیین کرده است که مرورگرها موظف به رعایت آنها هستند.
 
-`getUserMedia()` is a powerful feature that can only be used in [secure contexts](/en-US/docs/Web/Security/Defenses/Secure_Contexts); in insecure contexts, `navigator.mediaDevices` is `undefined`, preventing access to `getUserMedia()`.
-A secure context is, in short, a page loaded using HTTPS or the `file:///` URL scheme, or a page loaded from `localhost`.
+`getUserMedia()` قابلیتی قدرتمند است که فقط در [بافت‌های امن (secure contexts)](/en-US/docs/Web/Security/Defenses/Secure_Contexts) قابل استفاده است؛ در بافت‌های ناامن، `navigator.mediaDevices` مقدار `undefined` دارد و از دسترسی به `getUserMedia()` جلوگیری می‌کند. به‌طور خلاصه، بافت امن صفحه‌ای است که با استفاده از HTTPS یا طرح URL `file:///` بارگذاری شده باشد، یا صفحه‌ای که از `localhost` بارگذاری شده باشد.
 
-In addition, user permission is always required to access the user's audio and video inputs.
-Only a window's top-level document context for a valid origin can even request permission to use `getUserMedia()`, unless the top-level context expressly grants permission for a given {{HTMLElement("iframe")}} to do so using [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy).
-Otherwise, the user will never even be asked for permission to use the input devices.
+علاوه بر این، برای دسترسی به ورودی‌های صوتی و ویدیویی کاربر، اجازه کاربر همیشه لازم است. تنها بافت سند سطح‌بالای یک پنجره برای یک origin معتبر می‌تواند حتی درخواست اجازه استفاده از `getUserMedia()` را بدهد، مگر اینکه بافت سطح‌بالا به‌طور صریح با استفاده از [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) این اجازه را برای یک {{HTMLElement("iframe")}} معین صادر کند. در غیر این صورت، حتی از کاربر برای اجازه استفاده از دستگاه‌های ورودی پرسیده نخواهد شد.
 
-For additional details on these requirements and rules, how they are reflected in the context in which your code is running, and about how browsers manage user privacy and security issues, read on.
+برای جزئیات بیشتر درباره این الزامات و قوانین، اینکه چگونه در بافتی که کد شما در آن اجرا می‌شود بازتاب می‌یابند، و اینکه مرورگرها چگونه مسائل حریم خصوصی و امنیت کاربر را مدیریت می‌کنند، به خواندن ادامه دهید.
 
-### User privacy
+### حریم خصوصی کاربر
 
-As an API that may involve significant privacy concerns, `getUserMedia()` is held by the specification to very specific requirements for user notification and permission management.
-First, `getUserMedia()` must always get user permission before opening any media gathering input such as a webcam or microphone.
-Browsers may offer a once-per-domain permission feature, but they must ask at least the first time, and the user must specifically grant ongoing permission if they choose to do so.
+به‌عنوان یک API که ممکن است نگرانی‌های قابل‌توجهی برای حریم خصوصی ایجاد کند، مشخصات، `getUserMedia()` را به الزامات بسیار خاصی برای اطلاع‌رسانی به کاربر و مدیریت مجوز ملزم کرده است. اول اینکه، `getUserMedia()` باید همیشه پیش از باز کردن هر ورودی جمع‌آوری رسانه مانند وب‌کم یا میکروفون، اجازه کاربر را کسب کند. مرورگرها ممکن است قابلیت مجوز یکبار به ازای هر دامنه را ارائه دهند، اما باید حداقل بار اول بپرسند و اگر کاربر انتخاب کرد، باید به‌طور صریح مجوز ادامه‌دار را اعطا کند.
 
-Of equal importance are the rules around notification.
-Browsers are required to display an indicator that shows that a camera or microphone is in use, above and beyond any hardware indicator that may exist.
-They must also show an indicator that permission has been granted to use a device for input, even if the device is not actively recording at the moment.
+قوانین مربوط به اطلاع‌رسانی به همان اندازه اهمیت دارند. مرورگرها موظف‌اند نشانگری را نمایش دهند که نشان می‌دهد دوربین یا میکروفون در حال استفاده است، فراتر از هر نشانگر سخت‌افزاری که ممکن است وجود داشته باشد. آنها همچنین باید نشانگری نمایش دهند که مجوز استفاده از یک دستگاه برای ورودی صادر شده است، حتی اگر دستگاه در آن لحظه به‌طور فعال در حال ضبط نباشد.
 
-For example in Firefox, the URL bar displays a pulsing red icon to indicate that recording is underway.
-The icon is gray if the permission is in place but recording is not currently underway.
-The device's physical light is used to indicate whether or not recording is currently active.
-If you've muted your camera (so-called "facemuting"), your camera's activity light goes out to indicate that the camera is not actively recording you, without discarding the permission to resume using the camera once muting is over.
+برای مثال در فایرفاکس، نوار آدرس یک آیکون قرمز چشمک‌زن را برای نشان دادن اینکه ضبط در جریان است نمایش می‌دهد. اگر مجوز صادر شده اما ضبط در حال انجام نباشد، آیکون خاکستری است. چراغ فیزیکی دستگاه برای نشان دادن فعال بودن یا نبودن ضبط در لحظه استفاده می‌شود. اگر دوربین خود را بی‌صدا کرده‌اید (به‌اصطلاح «facemuting»)، چراغ فعالیت دوربین شما خاموش می‌شود تا نشان دهد دوربین به‌طور فعال در حال ضبط شما نیست، بدون اینکه مجوز از سرگیری استفاده از دوربین پس از پایان بی‌صدایی لغو شود.
 
-### Security
+### امنیت
 
-There are a number of ways security management and controls in a {{Glossary("user agent")}} can cause `getUserMedia()` to return a security-related error.
+راه‌های متعددی وجود دارد که مدیریت و کنترل‌های امنیتی در یک {{Glossary("user agent")}} می‌توانند باعث شوند `getUserMedia()` خطایی مرتبط با امنیت برگرداند.
 
-#### Permissions Policy
+#### سیاست مجوزها (Permissions Policy)
 
-The two [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) directives that apply to `getUserMedia()` are `camera` and `microphone`.
+دو دستورالعمل [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) که بر `getUserMedia()` اعمال می‌شوند، `camera` و `microphone` هستند.
 
-For example, this HTTP header will enable use of a camera by the document and any embedded {{HTMLElement("iframe")}} elements that are loaded from the same origin:
+برای مثال، این هدر HTTP استفاده از دوربین را برای سند و هر عنصر {{HTMLElement("iframe")}} تعبیه‌شده‌ای که از همان origin بارگذاری شده باشد فعال می‌کند:
 
 ```http
 Permissions-Policy: camera=(self)
 ```
 
-This will request access to the microphone for the current origin and the specific origin `https://developer.mozilla.org`:
+این مورد برای origin فعلی و origin خاص `https://developer.mozilla.org` درخواست دسترسی به میکروفون خواهد کرد:
 
 ```http
 Permissions-Policy: microphone=(self "https://developer.mozilla.org")
 ```
 
-If you're using `getUserMedia()` within an `<iframe>`, you can request permission just for that frame, which is clearly more secure than requesting a more general permission.
-Here, indicate we need the ability to use both camera and microphone:
+اگر از `getUserMedia()` درون یک `<iframe>` استفاده می‌کنید، می‌توانید فقط برای همان فریم درخواست اجازه کنید، که به‌وضوح امن‌تر از درخواست مجوز عمومی‌تر است. در اینجا نشان می‌دهیم که به توانایی استفاده از هر دو دوربین و میکروفون نیاز داریم:
 
 ```html
 <iframe src="https://mycode.example.net/etc" allow="camera; microphone">
 </iframe>
 ```
 
-#### Encryption based security
+#### امنیت مبتنی بر رمزنگاری
 
-The `getUserMedia()` method is only available in [secure contexts](/en-US/docs/Web/Security/Defenses/Secure_Contexts).
-A secure context is one the browser is reasonably confident contains a document which was loaded securely, using HTTPS/TLS, and has limited exposure to insecure contexts.
-If a document isn't loaded in a secure context, the {{domxref("navigator.mediaDevices")}} property is `undefined`, making access to `getUserMedia()` impossible.
+متد `getUserMedia()` فقط در [بافت‌های امن](/en-US/docs/Web/Security/Defenses/Secure_Contexts) در دسترس است. بافت امن، بافتی است که مرورگر با اطمینان معقولی باور دارد شامل سندی است که به‌صورت امن و با استفاده از HTTPS/TLS بارگذاری شده و مواجهه محدودی با بافت‌های ناامن دارد. اگر سندی در بافت امن بارگذاری نشده باشد، خاصیت {{domxref("navigator.mediaDevices")}} مقدار `undefined` دارد و دسترسی به `getUserMedia()` غیرممکن می‌شود.
 
-Attempting to access `getUserMedia()` in this situation will result in a {{jsxref("TypeError")}}.
+تلاش برای دسترسی به `getUserMedia()` در این وضعیت به یک {{jsxref("TypeError")}} منجر خواهد شد.
 
-#### Document source security
+#### امنیت منبع سند
 
-Because of the obvious security concern associated with `getUserMedia()` if used unexpectedly or without security being carefully managed, it can only be used in secure contexts.
-There are a number of insecure ways to load a document that might, in turn, attempt to call `getUserMedia()`.
-The following are examples of situations in which `getUserMedia()` is not permitted to be called:
+به دلیل نگرانی امنیتی آشکاری که در صورت استفاده غیرمنتظره یا بدون مدیریت دقیق امنیت با `getUserMedia()` همراه است، این متد فقط در بافت‌های امن قابل استفاده است. راه‌های ناامن متعددی برای بارگذاری سندی وجود دارد که ممکن است به نوبه خود بخواهد `getUserMedia()` را فراخوانی کند. موارد زیر نمونه‌هایی از موقعیت‌هایی هستند که در آنها فراخوانی `getUserMedia()` مجاز نیست:
 
-- A document loaded into a sandboxed {{HTMLElement("iframe")}} element cannot call `getUserMedia()` unless the `<iframe>` has its [`sandbox`](/en-US/docs/Web/HTML/Reference/Elements/iframe#sandbox) attribute set to `allow-same-origin`.
-- A document loaded using a `data://` or `blob://` URL which has no origin (such as when one of these URLs is typed by the user into the address bar) cannot call `getUserMedia()`.
-  These kinds of URLs loaded from JavaScript code inherit the script's permissions.
-- Any other situation in which there is no origin, such as when the [`srcdoc`](/en-US/docs/Web/HTML/Reference/Elements/iframe#srcdoc) attribute is used to specify the contents of a frame.
+- سندی که در یک عنصر {{HTMLElement("iframe")}} sandbox شده بارگذاری می‌شود نمی‌تواند `getUserMedia()` را فراخوانی کند، مگر اینکه ویژگی [`sandbox`](/en-US/docs/Web/HTML/Reference/Elements/iframe#sandbox) آن `<iframe>` روی `allow-same-origin` تنظیم شده باشد.
+- سندی که با یک URL از نوع `data://` یا `blob://` که origin ندارد بارگذاری می‌شود (مانند زمانی که کاربر یکی از این URLها را در نوار آدرس تایپ می‌کند) نمی‌تواند `getUserMedia()` را فراخوانی کند. این نوع URLها وقتی از کد جاوااسکریپت بارگذاری می‌شوند، مجوزهای اسکریپت را به ارث می‌برند.
+- هر وضعیت دیگری که در آن origin وجود نداشته باشد، مانند زمانی که از ویژگی [`srcdoc`](/en-US/docs/Web/HTML/Reference/Elements/iframe#srcdoc) برای تعیین محتویات یک فریم استفاده می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Using getUserMedia()
+### استفاده از getUserMedia()
 
-Generally, you will access the {{domxref("MediaDevices")}} singleton object using {{domxref("navigator.mediaDevices")}}, like this:
+به‌طور کلی، با استفاده از {{domxref("navigator.mediaDevices")}} به شیء singleton {{domxref("MediaDevices")}} دسترسی خواهید یافت، مانند این:
 
 ```js
 async function getMedia(constraints) {
@@ -180,7 +150,7 @@ async function getMedia(constraints) {
 }
 ```
 
-Similarly, using the raw promises directly, the code looks like this:
+به‌طور مشابه، با استفاده مستقیم از promiseهای خام، کد به این شکل است:
 
 ```js
 navigator.mediaDevices
@@ -194,201 +164,4 @@ navigator.mediaDevices
 ```
 
 > [!NOTE]
-> If the current document isn't loaded securely, `navigator.mediaDevices` will be `undefined`, and you cannot use `getUserMedia()`.
-> See [Security](#security) for more information on this and other security issues related to using `getUserMedia()`.
-
-Below are some examples of the `constraints` parameter.
-
-The following requests both audio and video without any specific requirements:
-
-```js
-getUserMedia({
-  audio: true,
-  video: true,
-});
-```
-
-While information about a user's cameras and microphones are inaccessible for privacy reasons, an application can request the camera and microphone capabilities it needs and wants, using additional constraints.
-The following expresses a preference for 1280x720 camera resolution:
-
-```js
-getUserMedia({
-  audio: true,
-  video: { width: 1280, height: 720 },
-});
-```
-
-The browser will try to honor the constraints, and will return a matching track if supported by the underlying hardware.
-If not supported, the browser may attempt to crop and downscale a higher resolution stream from the underlying hardware in order to match the constraint (and might also reduce the frame rate if that was constrained).
-This behavior can be forced by setting the [`resizeMode`](/en-US/docs/Web/API/MediaTrackConstraints#resizemode) constraint to `crop-and-scale` (or disabled by setting it to `none`):
-
-```js
-getUserMedia({
-  audio: true,
-  video: { width: 1280, height: 720, resizeMode: "crop-and-scale" },
-});
-```
-
-The browser may return another resolution if an exact match is not available and the source is not to be scaled.
-
-To _require_ a capability and fail if it is not available, use the keywords `min`, `max`, or `exact` (a.k.a. `min === max`).
-The following demands a minimum resolution of 1280x720:
-
-```js
-getUserMedia({
-  audio: true,
-  video: {
-    width: { min: 1280 },
-    height: { min: 720 },
-  },
-});
-```
-
-If no camera exists with this resolution or higher, then the returned promise will be rejected with `OverconstrainedError`, and the user will not be prompted.
-
-The reason for the difference in behavior is that the keywords `min`, `max`, and `exact` are inherently mandatory — whereas plain values and a keyword called `ideal` are not.
-Here's a full example:
-
-```js
-getUserMedia({
-  audio: true,
-  video: {
-    width: { min: 1024, ideal: 1280, max: 1920 },
-    height: { min: 576, ideal: 720, max: 1080 },
-  },
-});
-```
-
-An `ideal` value, when used, has gravity — which means that the browser will try to find the setting (and camera, if you have more than one), with the smallest [fitness distance](https://w3c.github.io/mediacapture-main/#dfn-fitness-distance) from the ideal values given.
-
-Plain values are inherently ideal, which means that the first of our resolution examples above could have been written like this:
-
-```js
-getUserMedia({
-  audio: true,
-  video: {
-    width: { ideal: 1280 },
-    height: { ideal: 720 },
-  },
-});
-```
-
-Not all constraints are numbers.
-For example, on mobile devices, the following will prefer the front camera (if one is available) over the rear one:
-
-```js
-getUserMedia({
-  audio: true,
-  video: { facingMode: "user" },
-});
-```
-
-To _require_ the rear camera, use:
-
-```js
-getUserMedia({
-  audio: true,
-  video: {
-    facingMode: { exact: "environment" },
-  },
-});
-```
-
-Another non-number constraint is the `deviceId` constraint.
-If you have a `deviceId` from {{domxref("mediaDevices.enumerateDevices()")}}, you can use it to request a specific device:
-
-```js
-getUserMedia({
-  video: {
-    deviceId: myPreferredCameraDeviceId,
-  },
-});
-```
-
-The above will return the camera you requested, or a different camera if that specific camera is no longer available.
-Browsers' internally-available information, such as user preference, may also override your request.
-For example, when the user was asked for camera permissions, the camera they selected may take priority over the one you requested.
-Again, to _require_ the specific camera, you would use:
-
-```js
-getUserMedia({
-  video: {
-    deviceId: {
-      exact: myExactCameraOrBustDeviceId,
-    },
-  },
-});
-```
-
-### Width and height
-
-This example gives a preference for camera resolution, and assigns the resulting {{domxref("MediaStream")}} object to a video element.
-
-```js
-// Prefer camera resolution nearest to 1280x720.
-const constraints = {
-  audio: true,
-  video: { width: 1280, height: 720 },
-};
-
-navigator.mediaDevices
-  .getUserMedia(constraints)
-  .then((mediaStream) => {
-    const video = document.querySelector("video");
-    video.srcObject = mediaStream;
-    video.onloadedmetadata = () => {
-      video.play();
-    };
-  })
-  .catch((err) => {
-    // always check for errors at the end.
-    console.error(`${err.name}: ${err.message}`);
-  });
-```
-
-### Frame rate
-
-Lower frame-rates may be desirable in some cases, like WebRTC transmissions with bandwidth restrictions.
-
-```js
-const constraints = {
-  video: { frameRate: { ideal: 10, max: 15 } },
-};
-```
-
-### Front and back camera
-
-On mobile phones.
-
-```js
-let front = false;
-document.getElementById("flip-button").onclick = () => {
-  front = !front;
-};
-
-const constraints = {
-  video: { facingMode: front ? "user" : "environment" },
-};
-```
-
-> [!NOTE]
-> In certain cases, it may be necessary to release the current camera facing mode before you can switch to a different one.
-> To ensure the camera switch, it is advisable to free up the media resources by invoking the "stop()" method on the track before requesting a different facing mode.
-
-## Specifications
-
-{{Specifications}}
-
-## Browser compatibility
-
-{{Compat}}
-
-## See also
-
-- The older {{domxref("Navigator.getUserMedia()")}} legacy API
-- {{domxref("MediaDevices.enumerateDevices()")}}: Listing available media devices
-- {{domxref("WebRTC API", "", "", "nocode")}}
-- {{domxref("Media Capture and Streams API", "", "", "nocode")}}
-- {{domxref("Screen Capture API", "", "", "nocode")}}: Capturing screen contents as a {{domxref("MediaStream")}}
-- {{domxref("MediaDevices.getDisplayMedia()")}}: Getting a stream containing screen contents
-- {{domxref("Media Capture and Streams API/Taking Still Photos", "Taking webcam photos", "", "nocode")}}: A tutorial on using `getUserMedia()` to take still photos rather than video
+> اگر سند جاری به‌صورت امن بارگذاری نشده باشد، `navigator.mediaDevices` مقدار `undefined` خواهد داشت و نمی‌توانید از `getUserMedia()` استفاده کنید. برای اطلاعات بیشتر درباره این موضوع و
