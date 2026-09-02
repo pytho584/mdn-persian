@@ -1,11 +1,5 @@
 ---
 title: "IdentityProvider: close() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IdentityProvider/close_static"
-status: "needs-translation"
----
-
----
-title: "IdentityProvider: close() static method"
 short-title: close()
 slug: Web/API/IdentityProvider/close_static
 page-type: web-api-static-method
@@ -16,42 +10,42 @@ browser-compat: api.IdentityProvider.close_static
 
 {{securecontext_header}}{{APIRef("FedCM API")}}{{SeeCompatTable}}
 
-The **`close()`** static method of the {{domxref("IdentityProvider")}} interface provides a manual signal to the browser that an {{glossary("Identity provider", "IdP")}} sign-in flow is finished.
+متد ایستای **`close()`** از واسط {{domxref("IdentityProvider")}} یک سیگنال دستی به مرورگر می‌دهد که جریان ورود به سیستم {{glossary("Identity provider", "IdP")}} به پایان رسیده است.
 
-`close()` needs to be called from the same origin as the specified IdP's sign-in dialog, as defined in the [IdP config](/en-US/docs/Web/API/FedCM_API/IDP_integration#provide_a_config_file_and_endpoints).
+`close()` باید از همان مبدأ (origin) دیالوگ ورود IdP مشخص‌شده فراخوانی شود، همان‌طور که در [پیکربندی IdP](/en-US/docs/Web/API/FedCM_API/IDP_integration#provide_a_config_file_and_endpoints) تعریف شده است.
 
-`close()` is used to close the IdP sign-in dialog when sign-in is completely finished and the IdP has finished collecting data from the user. A primary use case for `close()` is closing the IdP sign-in dialog in cases where [the browser and the IdP login status become out of sync](/en-US/docs/Web/API/FedCM_API/IDP_integration#what_if_the_browser_and_the_idp_login_status_become_out_of_sync), and the browser initiates a dynamic sign-in flow to correct the issue.
+از `close()` برای بستن دیالوگ ورود IdP زمانی استفاده می‌شود که ورود کاملاً به پایان رسیده و IdP جمع‌آوری داده‌ها از کاربر را تمام کرده است. یک مورد استفاده اصلی برای `close()` بستن دیالوگ ورود IdP در مواردی است که [وضعیت ورود مرورگر و IdP از هماهنگی خارج می‌شود](/en-US/docs/Web/API/FedCM_API/IDP_integration#what_if_the_browser_and_the_idp_login_status_become_out_of_sync) و مرورگر یک جریان ورود پویا (dynamic sign-in) را برای رفع مشکل آغاز می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 IdentityProvider.close()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
 `undefined`.
 
-## Examples
+## مثال‌ها
 
-### Basic `IdentityProvider.close()` usage
+### استفادهٔ پایه از `IdentityProvider.close()`
 
 ```js
 IdentityProvider.close();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Federated Credential Management API](https://developer.chrome.com/docs/identity/fedcm/overview) on developer.chrome.com (2023)
+- [Federated Credential Management API](https://developer.chrome.com/docs/identity/fedcm/overview) در developer.chrome.com (2023)
