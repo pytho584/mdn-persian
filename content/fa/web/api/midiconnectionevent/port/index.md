@@ -1,11 +1,5 @@
 ---
 title: "MIDIConnectionEvent: port property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MIDIConnectionEvent/port"
-status: "needs-translation"
----
-
----
-title: "MIDIConnectionEvent: port property"
 short-title: port
 slug: Web/API/MIDIConnectionEvent/port
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.MIDIConnectionEvent.port
 
 {{securecontext_header}}{{APIRef("Web MIDI API")}}
 
-The **`port`** read-only property of the {{domxref("MIDIConnectionEvent")}} interface returns the port that has been disconnected or connected.
+ویژگی فقط‌خواندنی **`port`** از رابط {{domxref("MIDIConnectionEvent")}}، پورتی را که قطع یا وصل شده است بازمی‌گرداند.
 
-## Value
+## مقدار
 
-A {{domxref("MIDIPort")}} object.
+یک شیء {{domxref("MIDIPort")}}.
 
-## Examples
+## مثال‌ها
 
-The {{domxref("Navigator.requestMIDIAccess()")}} method returns a promise that resolves with a {{domxref("MIDIAccess")}} object. When a port changes state, a `MIDIConnectionEvent` is passed to the {{domxref("MIDIAccess.statechange_event","statechange")}} event. Information about the port can then be printed to the console.
+متد {{domxref("Navigator.requestMIDIAccess()")}} یک وعده (Promise) برمی‌گرداند که با یک شیء {{domxref("MIDIAccess")}} حل می‌شود. وقتی وضعیت یک پورت تغییر کند، یک رویداد `MIDIConnectionEvent` به رویداد {{domxref("MIDIAccess.statechange_event","statechange")}} ارسال می‌شود. سپس اطلاعات مربوط به پورت را می‌توان در کنسول چاپ کرد.
 
 ```js
 navigator.requestMIDIAccess().then((access) => {
@@ -32,10 +26,10 @@ navigator.requestMIDIAccess().then((access) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
