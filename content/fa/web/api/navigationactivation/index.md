@@ -1,10 +1,4 @@
 ---
-title: "NavigationActivation"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigationActivation"
-status: "needs-translation"
----
-
----
 title: NavigationActivation
 slug: Web/API/NavigationActivation
 page-type: web-api-interface
@@ -13,23 +7,23 @@ browser-compat: api.NavigationActivation
 
 {{APIRef("Navigation API")}}
 
-The **`NavigationActivation`** interface of the [Navigation API](/en-US/docs/Web/API/Navigation_API) represents a recent cross-document navigation. It contains the navigation type and outgoing and inbound document history entries.
+رابط **`NavigationActivation`** در [Navigation API](/en-US/docs/Web/API/Navigation_API)، نمایانگر یک پیمایش اخیر بین اسناد (cross-document) است. این رابط شامل نوع پیمایش و ورودی‌های تاریخچهٔ سند مبدأ و سند مقصد است.
 
-This object is accessed via the {{domxref("PageSwapEvent.activation")}} and {{domxref("Navigation.activation")}} properties. Note that, in each case, the `NavigationActivation` represents a different navigation:
+به این شیء از طریق خصوصیت‌های {{domxref("PageSwapEvent.activation")}} و {{domxref("Navigation.activation")}} دسترسی پیدا می‌کنید. توجه داشته باشید که در هر مورد، `NavigationActivation` یک پیمایش متفاوت را نشان می‌دهد:
 
-- `Navigation.activation` represents information about the navigation to the current page.
-- `PageSwapEvent.activation` represents information about the navigation to the next page.
+- `Navigation.activation` اطلاعات مربوط به پیمایش به صفحهٔ فعلی را نشان می‌دهد.
+- `PageSwapEvent.activation` اطلاعات مربوط به پیمایش به صفحهٔ بعدی را نشان می‌دهد.
 
-## Instance properties
+## خصوصیات نمونه
 
 - {{domxref("NavigationActivation.entry", "entry")}} {{ReadOnlyInline}}
-  - : Contains a {{domxref("NavigationHistoryEntry")}} object representing the history entry for the inbound ("to") document in the navigation. This is equivalent to the {{domxref("Navigation.currentEntry")}} property at the moment the inbound document was activated.
+  - : شامل یک شیء {{domxref("NavigationHistoryEntry")}} است که ورودی تاریخچهٔ سند ورودی («به») را در این پیمایش نشان می‌دهد. این مقدار معادل خصوصیت {{domxref("Navigation.currentEntry")}} در لحظه‌ای است که سند ورودی فعال شده است.
 - {{domxref("NavigationActivation.from", "from")}} {{ReadOnlyInline}}
-  - : Contains a {{domxref("NavigationHistoryEntry")}} object representing the history entry for the outgoing ("from") document in the navigation.
+  - : شامل یک شیء {{domxref("NavigationHistoryEntry")}} است که ورودی تاریخچهٔ سند خروجی («از») را در این پیمایش نشان می‌دهد.
 - {{domxref("NavigationActivation.navigationType", "navigationType")}} {{ReadOnlyInline}}
-  - : Contains a string indicating the type of navigation.
+  - : شامل رشته‌ای است که نوع پیمایش را مشخص می‌کند.
 
-## Examples
+## مثال‌ها
 
 ```js
 window.addEventListener("pagereveal", async (e) => {
@@ -83,17 +77,17 @@ window.addEventListener("pagereveal", async (e) => {
 ```
 
 > [!NOTE]
-> See [List of Chrome DevRel team members](https://view-transitions.chrome.dev/profiles/mpa/) for the live demo this code is taken from.
+> برای مشاهدهٔ دموی زنده‌ای که این کد از آن گرفته شده است، [فهرست اعضای تیم Chrome DevRel](https://view-transitions.chrome.dev/profiles/mpa/) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Navigation API](/en-US/docs/Web/API/Navigation_API)
 - [View Transition API](/en-US/docs/Web/API/View_Transition_API)
