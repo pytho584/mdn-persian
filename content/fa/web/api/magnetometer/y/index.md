@@ -1,7 +1,5 @@
 ---
 title: "Magnetometer: y property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Magnetometer/y"
-status: "needs-translation"
 ---
 
 ---
@@ -16,18 +14,15 @@ browser-compat: api.Magnetometer.y
 
 {{securecontext_header}}{{APIRef("Sensor API")}}{{SeeCompatTable}}
 
-The **`y`** read-only property of the
-{{domxref("Magnetometer")}} interface returns a number specifying
-the magnetic field around the device's y-axis.
+ویژگی فقط‌خواندنی **`y`** در رابط {{domxref("Magnetometer")}} عددی را برمی‌گرداند که میدان مغناطیسی اطراف محور y دستگاه را مشخص می‌کند.
 
-## Value
+## مقدار
 
-A {{jsxref('Number')}}.
+یک مقدار از نوع {{jsxref('Number')}}.
 
-## Examples
+## مثال‌ها
 
-The magnetometer is typically read in the {{domxref('Sensor.reading_event', 'reading')}} event
-callback. In the example below this occurs sixty times a second.
+مغناطیس‌سنج معمولاً در تابع callback مربوط به رویداد {{domxref('Sensor.reading_event', 'reading')}} خوانده می‌شود. در مثال زیر، این کار شصت بار در ثانیه انجام می‌شود.
 
 ```js
 let magSensor = new Magnetometer({ frequency: 60 });
@@ -40,10 +35,10 @@ magSensor.addEventListener("reading", (e) => {
 magSensor.start();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
