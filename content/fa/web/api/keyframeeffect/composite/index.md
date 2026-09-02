@@ -1,9 +1,4 @@
----
-title: "KeyframeEffect: composite property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/KeyframeEffect/composite"
-status: "needs-translation"
----
-
+```markdown
 ---
 title: "KeyframeEffect: composite property"
 short-title: composite
@@ -14,29 +9,30 @@ browser-compat: api.KeyframeEffect.composite
 
 {{ APIRef("Web Animations") }}
 
-The **`composite`** property of a {{domxref("KeyframeEffect")}} resolves how an element's animation impacts its underlying property values.
+خاصیت **`composite`** در {{domxref("KeyframeEffect")}} مشخص می‌کند که انیمیشن یک عنصر چگونه بر مقادیر ویژگی‌های زیربنایی آن اثر می‌گذارد.
 
-## Value
+## مقدار
 
-To understand these values, take the example of a `keyframeEffect` value of `blur(2)` working on an underlying property value of `blur(3)`.
+برای درک این مقادیر، مثال یک `keyframeEffect` با مقدار `blur(2)` را در نظر بگیرید که روی مقدار ویژگی زیربنایی `blur(3)` اعمال می‌شود.
 
 - `replace`
-  - : The `keyframeEffect` **overrides** the underlying value it is combined with: `blur(2)` replaces `blur(3)`.
+  - : `keyframeEffect` مقدار زیربنایی را که با آن ترکیب می‌شود **بازنویسی** می‌کند: `blur(2)` جایگزین `blur(3)` می‌شود.
 - `add`
-  - : The `keyframeEffect` is **added** to the underlying value with which it is combined (aka _additive_): `blur(2) blur(3)`.
+  - : `keyframeEffect` به مقدار زیربنایی که با آن ترکیب می‌شود **اضافه** می‌شود (یا به عبارت دیگر _افزایشی_): `blur(2) blur(3)`.
 - `accumulate`
-  - : The keyframeEffect is **accumulated** on to the underlying value: `blur(5)`.
+  - : `keyframeEffect` روی مقدار زیربنایی **انباشته** می‌شود: `blur(5)`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)
-- Property of {{domxref("KeyframeEffect")}} objects
+- ویژگی مربوط به اشیاء {{domxref("KeyframeEffect")}}
 - {{Glossary("Composite operation")}}
+```
