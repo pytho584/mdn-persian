@@ -1,11 +1,5 @@
 ---
 title: "IDBDatabase: versionchange event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase/versionchange_event"
-status: "needs-translation"
----
-
----
-title: "IDBDatabase: versionchange event"
 short-title: versionchange
 slug: Web/API/IDBDatabase/versionchange_event
 page-type: web-api-event
@@ -14,12 +8,11 @@ browser-compat: api.IDBDatabase.versionchange_event
 
 {{APIRef("IndexedDB")}}
 
-The `versionchange` event is fired when a database structure change ([`upgradeneeded`](/en-US/docs/Web/API/IDBOpenDBRequest/upgradeneeded_event) event send on an [`IDBOpenDBRequest`](/en-US/docs/Web/API/IDBOpenDBRequest) or [`IDBFactory.deleteDatabase`](/en-US/docs/Web/API/IDBFactory/deleteDatabase)) was requested elsewhere (most probably in
-another window/tab on the same computer).
+رویداد `versionchange` زمانی رخ می‌دهد که یک تغییر در ساختار پایگاه داده (رویداد [`upgradeneeded`](/en-US/docs/Web/API/IDBOpenDBRequest/upgradeneeded_event) که روی یک [`IDBOpenDBRequest`](/en-US/docs/Web/API/IDBOpenDBRequest) ارسال می‌شود، یا [`IDBFactory.deleteDatabase`](/en-US/docs/Web/API/IDBFactory/deleteDatabase)) در جای دیگری (بیشتر احتمالاً در یک پنجره/تب دیگر روی همان رایانه) درخواست شده باشد.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("versionchange", (event) => { })
@@ -27,13 +20,13 @@ addEventListener("versionchange", (event) => { })
 onversionchange = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## مثال‌ها
 
-This example opens a database and, on success, adds a listener to `versionchange`:
+این مثال یک پایگاه داده را باز می‌کند و در صورت موفقیت، یک شنونده به `versionchange` اضافه می‌کند:
 
 ```js
 // Open the database
@@ -62,7 +55,7 @@ dBOpenRequest.addEventListener("success", (event) => {
 });
 ```
 
-The same example, using the `onversionchange` event handler property:
+همان مثال، با استفاده از ویژگی کنترل‌کننده رویداد `onversionchange`:
 
 ```js
 // Open the database
@@ -91,14 +84,14 @@ dBOpenRequest.onsuccess = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
