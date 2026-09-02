@@ -1,11 +1,5 @@
 ---
 title: "HTMLTableRowElement: insertCell() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableRowElement/insertCell"
-status: "needs-translation"
----
-
----
-title: "HTMLTableRowElement: insertCell() method"
 short-title: insertCell()
 slug: Web/API/HTMLTableRowElement/insertCell
 page-type: web-api-instance-method
@@ -14,46 +8,39 @@ browser-compat: api.HTMLTableRowElement.insertCell
 
 {{APIRef("HTML DOM")}}
 
-The **`insertCell()`** method of the {{domxref("HTMLTableRowElement")}} interface inserts a new
-cell ({{HtmlElement("td")}}) into a table row ({{HtmlElement("tr")}}) and returns a
-reference to the cell.
+متد **`insertCell()`** از رابط {{domxref("HTMLTableRowElement")}} یک سلول جدید ({{HtmlElement("td")}}) را در یک ردیف جدول ({{HtmlElement("tr")}}) درج می‌کند و ارجاعی به آن سلول بازمی‌گرداند.
 
 > [!NOTE]
-> `insertCell()` inserts the cell directly into the
-> row. The cell does not need to be appended separately
-> with {{domxref("Node.appendChild()")}} as would be the case if
-> {{domxref("Document.createElement()")}} had been used to create the new
-> `<td>` element.
+> `insertCell()` سلول را مستقیماً در ردیف درج می‌کند.
+> نیازی نیست سلول به‌طور جداگانه با {{domxref("Node.appendChild()")}} اضافه شود،
+> همان‌طور که اگر از {{domxref("Document.createElement()")}} برای ایجاد عنصر `<td>` جدید استفاده می‌کردید این کار لازم بود.
 >
-> You can not use `insertCell()` to create a new `<th>`
-> element though.
+> با این حال، نمی‌توانید از `insertCell()` برای ایجاد یک عنصر `<th>` جدید استفاده کنید.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 insertCell()
 insertCell(index)
 ```
 
-### Parameters
+### پارامترها
 
 - `index` {{optional_inline}}
-  - : The cell index of the new cell. If `index` is `-1` or equal to the number of cells, the cell is appended as the last cell in the row. If `index` is omitted it defaults to `-1`.
+  - : ایندکس سلول جدید. اگر `index` برابر با `-1` یا برابر با تعداد سلول‌ها باشد، سلول به‌عنوان آخرین سلول ردیف追加 می‌شود. اگر `index` حذف شود، مقدار پیش‌فرض آن `-1` است.
 
-### Return value
+### مقدار بازگشتی
 
-An {{domxref("HTMLTableCellElement")}} that references the new
-cell.
+یک {{domxref("HTMLTableCellElement")}} که به سلول جدید ارجاع می‌دهد.
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `IndexSizeError` {{domxref("DOMException")}}
-  - : Thrown if `index` is greater than the number of cells.
+  - : اگر `index` بزرگ‌تر از تعداد سلول‌ها باشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-This example uses `HTMLTableRowElement.insertCell()` to append a new cell to a
-row.
+این مثال از `HTMLTableRowElement.insertCell()` برای افزودن یک سلول جدید به یک ردیف استفاده می‌کند.
 
 ### HTML
 
@@ -97,7 +84,7 @@ button {
 }
 ```
 
-### JavaScript
+### جاوااسکریپت
 
 ```js
 // Obtain relevant interface elements
@@ -131,19 +118,19 @@ removeButton.addEventListener("click", () => {
 });
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples", "100%", 175)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLTableElement.insertRow()")}}
-- The HTML element representing cells: {{domxref("HTMLTableCellElement")}}
+- عنصر HTML نمایانگر سلول‌ها: {{domxref("HTMLTableCellElement")}}
