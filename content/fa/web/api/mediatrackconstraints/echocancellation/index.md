@@ -1,11 +1,5 @@
 ---
 title: "MediaTrackConstraints: echoCancellation property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/echoCancellation"
-status: "needs-translation"
----
-
----
-title: "MediaTrackConstraints: echoCancellation property"
 short-title: echoCancellation
 slug: Web/API/MediaTrackConstraints/echoCancellation
 page-type: web-api-instance-property
@@ -14,53 +8,47 @@ browser-compat: api.MediaStreamTrack.applyConstraints.echoCancellation_constrain
 
 {{APIRef("Media Capture and Streams")}}
 
-The {{domxref("MediaTrackConstraints")}} dictionary's
-**`echoCancellation`** property is a
-[`ConstrainBooleanOrDOMString`](/en-US/docs/Web/API/MediaTrackConstraints#constrainbooleanordomstring) describing the requested or mandatory constraints placed
-upon the value of the {{domxref("MediaTrackSettings.echoCancellation", "echoCancellation")}} constrainable property.
+ویژگی **`echoCancellation`** در دیکشنری {{domxref("MediaTrackConstraints")}} یک [`ConstrainBooleanOrDOMString`](/en-US/docs/Web/API/MediaTrackConstraints#constrainbooleanordomstring) است که محدودیت‌های درخواستی یا الزامیِ اعمال‌شده بر مقدار ویژگیِ محدودیت‌پذیر {{domxref("MediaTrackSettings.echoCancellation", "echoCancellation")}} را توصیف می‌کند.
 
-If needed, you can determine whether or not this constraint is supported by checking
-the value of {{domxref("MediaTrackSupportedConstraints.echoCancellation")}} as returned
-by a call to {{domxref("MediaDevices.getSupportedConstraints()")}}. However, typically
-this is unnecessary since browsers will ignore any constraints they're unfamiliar with.
+در صورت نیاز، می‌توانید با بررسی مقدار {{domxref("MediaTrackSupportedConstraints.echoCancellation")}} که از فراخوانی {{domxref("MediaDevices.getSupportedConstraints()")}} به دست می‌آید، تعیین کنید که آیا این محدودیت پشتیبانی می‌شود یا نه. اما معمولاً چنین بررسی‌ای ضروری نیست؛ مرورگرها هر محدودیتی را که با آن آشنا نیستند نادیده می‌گیرند.
 
-## Value
+## مقدار
 
-A boolean, a string, or a [`ConstrainBooleanOrDOMString`](/en-US/docs/Web/API/MediaTrackConstraints#constrainbooleanordomstring) object.
+مقدار می‌تواند یک مقدار بولی، یک رشته، یا یک شیء [`ConstrainBooleanOrDOMString`](/en-US/docs/Web/API/MediaTrackConstraints#constrainbooleanordomstring) باشد.
 
-If the browser supports specific echo cancellation types, the value can be set as one of the following:
+اگر مرورگر از انواع مشخصی از حذف پژواک پشتیبانی کند، مقدار می‌تواند یکی از موارد زیر باشد:
 
 - `"all"` {{experimental_inline}}
-  - : All user system-generated audio captured by the user's microphone is removed. This is useful for example in situations where you want to avoid capturing privacy-sensitive audio such as screen reader output and system notifications.
+  - : تمام صداهای تولیدشده توسط سیستم کاربر که توسط میکروفون کاربر ضبط می‌شوند، حذف می‌شوند. این حالت برای مثال در شرایطی مفید است که می‌خواهید از ضبط صداهای حساس به حریم خصوصی، مانند خروجیِ صفحه‌خوان یا اعلان‌های سیستم‌عامل، جلوگیری کنید.
 - `"remote-only"` {{experimental_inline}}
-  - : Only user system-generated audio captured by the user's microphone from remote sources (as represented by {{domxref("MediaStreamTrack")}}s sourced from an {{domxref("RTCPeerConnection")}}) is removed. This is useful when you want to remove echo from communication with remote peers but still share local audio, such as in the case of a music lesson where the teacher wants to hear their student(s) playing along to an audio track but still communicate clearly with them.
+  - : فقط آن دسته از صداهای تولیدشده توسط سیستم کاربر که از منابع راه دور می‌آیند و توسط میکروفون کاربر ضبط می‌شوند (و به‌صورت {{domxref("MediaStreamTrack")}}هایی که از یک {{domxref("RTCPeerConnection")}} دریافت می‌شوند بازنمایی می‌شوند) حذف می‌شوند. این حالت زمانی مفید است که بخواهید پژواک ارتباط با همتایان راه دور را حذف کنید اما همچنان صدای محلی را به اشتراک بگذارید؛ مانند کلاس موسیقی که در آن معلم می‌خواهد صدای هنرجویان را در حالی که همراه با یک قطعه صوتی می‌نوازند بشنود و در عین حال به‌وضوح با آنان ارتباط برقرار کند.
 - `true`
-  - : The browser decides what audio will be removed from the signals recorded by the microphone. It must attempt to cancel at least as much as `remote-only` and should attempt to cancel as much as `all`.
+  - : مرورگر تعیین می‌کند چه صداهایی از سیگنال‌های ضبط‌شده توسط میکروفون حذف شوند. باید حداقل به‌اندازه‌ی حالت `remote-only` تلاش خود را برای حذف پژواک انجام دهد و بهتر است به‌اندازه‌ی حالت `all` تلاش کند.
 - `false`
-  - : No audio is removed; no echo cancellation will take place.
+  - : هیچ صدایی حذف نمی‌شود؛ هیچ حذف پژواکی انجام نخواهد شد.
 
-If the browser doesn't support specific echo cancellation types, the value can be `true` or `false`.
+اگر مرورگر از انواع مشخصی از حذف پژواک پشتیبانی نکند، مقدار می‌تواند `true` یا `false` باشد.
 
-If set as one of the above values, the user agent will attempt to obtain media with echo cancellation enabled or disabled as specified, if possible, but will not fail if this can't be done.
+اگر مقدار به‌صورت یکی از مقادیر بالا تعیین شود، عامل کاربر (user agent) در صورت امکان تلاش می‌کند رسانه را با حذف پژواکِ فعال یا غیرفعال، طبق مقدار تعیین‌شده، به دست آورد؛ اما اگر چنین کاری ممکن نباشد، درخواست با شکست مواجه نمی‌شود.
 
-If the value is given as an object with an `exact` field, that field's value indicates a required setting for the echo cancellation feature; if it can't be met, then the request will result in an error.
+اگر مقدار به‌صورت یک شیء با فیلد `exact` داده شود، مقدارِ آن فیلد یک تنظیمِ الزامی برای ویژگی حذف پژواک را نشان می‌دهد؛ اگر نتوان آن را برآورده کرد، درخواست منجر به خطا خواهد شد.
 
-## Examples
+## مثال‌ها
 
-See the [Constraint exerciser](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#example_constraint_exerciser) example.
+برای مثال، [آزمایشگرِ محدودیت](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#example_constraint_exerciser) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
-- [Capabilities, constraints, and settings](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints)
+- [قابلیت‌ها، محدودیت‌ها و تنظیمات](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints)
 - {{domxref("MediaTrackConstraints")}}
 - {{domxref("MediaDevices.getSupportedConstraints()")}}
 - {{domxref("MediaTrackSupportedConstraints")}}
