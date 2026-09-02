@@ -1,9 +1,4 @@
----
-title: "MediaTrackSettings: autoGainControl property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/autoGainControl"
-status: "needs-translation"
----
-
+```
 ---
 title: "MediaTrackSettings: autoGainControl property"
 short-title: autoGainControl
@@ -14,45 +9,32 @@ browser-compat: api.MediaStreamTrack.applyConstraints.autoGainControl_constraint
 
 {{APIRef("Media Capture and Streams")}}
 
-The {{domxref("MediaTrackSettings")}} dictionary's
-**`autoGainControl`** property is a Boolean value whose value
-indicates whether or not automatic gain control (AGC) is enabled on an audio track. This
-lets you determine what value was selected to comply with your specified constraints for
-this property's value as described in the
-{{domxref("MediaTrackConstraints.autoGainControl")}} property you provided when calling
-either {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}} or
-{{domxref("MediaStreamTrack.applyConstraints()")}}.
+دیکشنری {{domxref("MediaTrackSettings")}} دارای ویژگی **`autoGainControl`** است که یک مقدار بولی است و نشان می‌دهد که آیا کنترل خودکار بهره (AGC) روی یک تراک صوتی فعال شده است یا خیر. این ویژگی به شما امکان می‌دهد مشخص کنید کدام مقدار برای رعایت محدودیت‌های مشخص‌شده‌تان برای این ویژگی انتخاب شده است، همانطور که در ویژگی {{domxref("MediaTrackConstraints.autoGainControl")}} که هنگام فراخوانی {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}} یا {{domxref("MediaStreamTrack.applyConstraints()")}} ارائه کرده‌اید، توضیح داده شده است.
 
-Automatic gain control is a feature in which a sound source automatically manages
-changes in the volume of its source media to maintain a steady overall volume level.
-This feature is typically used on microphones, although it can be provided by other
-input sources as well.
+کنترل خودکار بهره قابلیتی است که در آن یک منبع صوتی به‌طور خودکار تغییرات حجم رسانه مبدأ خود را مدیریت می‌کند تا سطح کلی حجم ثابتی حفظ شود. این قابلیت معمولاً روی میکروفون‌ها استفاده می‌شود، اما می‌تواند توسط سایر منابع ورودی نیز ارائه شود.
 
-If needed, you can determine whether or not this constraint is supported by checking
-the value of {{domxref("MediaTrackSupportedConstraints.autoGainControl")}} as returned
-by a call to {{domxref("MediaDevices.getSupportedConstraints()")}}. However, typically
-this is unnecessary since browsers will ignore any constraints they're unfamiliar with.
+در صورت نیاز، می‌توانید با بررسی مقدار {{domxref("MediaTrackSupportedConstraints.autoGainControl")}} که توسط یک فراخوانی به {{domxref("MediaDevices.getSupportedConstraints()")}} بازگردانده می‌شود، تعیین کنید که آیا این محدودیت پشتیبانی می‌شود یا خیر. با این حال، معمولاً این کار ضروری نیست، زیرا مرورگرها هر محدودیتی را که با آن‌ها آشنا نیستند نادیده می‌گیرند.
 
-## Value
+## مقدار
 
-A Boolean value which is `true` if the track has automatic gain control
-enabled or `false` if AGC is disabled.
+یک مقدار بولی که اگر تراک دارای کنترل خودکار بهره فعال باشد `true` است و اگر AGC غیرفعال باشد `false` است.
 
-## Examples
+## مثال‌ها
 
-See the [Constraint exerciser](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#example_constraint_exerciser) example.
+مثال [Constraint exerciser](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#example_constraint_exerciser) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
 - [Capabilities, constraints, and settings](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints)
 - {{domxref("MediaTrackConstraints.autoGainControl")}}
 - {{domxref("MediaTrackSupportedConstraints")}}
+```
