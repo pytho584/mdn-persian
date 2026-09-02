@@ -1,11 +1,9 @@
 ---
-title: "MouseEvent: movementY property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/movementY"
-status: "needs-translation"
+title: "خاصیت MouseEvent: movementY"
 ---
 
 ---
-title: "MouseEvent: movementY property"
+title: "خاصیت MouseEvent: movementY"
 short-title: movementY
 slug: Web/API/MouseEvent/movementY
 page-type: web-api-instance-property
@@ -14,26 +12,26 @@ browser-compat: api.MouseEvent.movementY
 
 {{APIRef("Pointer Lock API")}}
 
-The **`movementY`** read-only property of the {{domxref("MouseEvent")}} interface provides the difference in the Y coordinate of the mouse (or pointer) between the given move event and the previous move event of the same type.
+خاصیت فقط‌خواندنی **`movementY`** در رابط {{domxref("MouseEvent")}}، تفاوت مختصات Y اشاره‌گر (یا ماوس) را بین رویداد حرکتِ داده‌شده و رویداد حرکتِ قبلی از همان نوع، ارائه می‌دهد.
 
-In other words, the value of the property is computed like this: `currentEvent.movementY = currentEvent.screenY - previousEvent.screenY`.
-The value is zero for all events other than {{domxref("Element/mousemove_event", "mousemove")}}, {{domxref("Element/pointermove_event", "pointermove")}}, and {{domxref("Element/pointerrawupdate_event", "pointerrawupdate")}}.
+به بیان دیگر، مقدار این خاصیت به این صورت محاسبه می‌شود: `currentEvent.movementY = currentEvent.screenY - previousEvent.screenY`.
+مقدار این خاصیت برای همه رویدادها به‌جز {{domxref("Element/mousemove_event", "mousemove")}}، {{domxref("Element/pointermove_event", "pointermove")}} و {{domxref("Element/pointerrawupdate_event", "pointerrawupdate")}} برابر با صفر است.
 
 > [!WARNING]
-> Browsers [use different units for `movementY` and `screenY`](https://github.com/w3c/pointerlock/issues/42) than what the specification defines.
-> Depending on the browser and operating system, the `movementY` units may be a physical pixel, a logical pixel, or a CSS pixel.
-> You may want to avoid the movement properties, and instead calculate the delta between the current client values ({{domxref("MouseEvent.screenX", "screenX")}}, {{domxref("MouseEvent.screenY", "screenY")}}) and the previous client values.
+> مرورگرها [از واحدهای متفاوتی برای `movementY` و `screenY` استفاده می‌کنند](https://github.com/w3c/pointerlock/issues/42) که با تعریف مشخصات (specification) تفاوت دارد.
+> بسته به مرورگر و سیستم عامل، واحدهای `movementY` ممکن است پیکسل فیزیکی، پیکسل منطقی یا پیکسل CSS باشند.
+> بهتر است از خاصیت‌های movement استفاده نکنید و به جای آن، تفاضل بین مقادیر جاری ({{domxref("MouseEvent.screenX", "screenX")}}، {{domxref("MouseEvent.screenY", "screenY")}}) و مقادیر قبلی را محاسبه کنید.
 
-## Value
+## مقدار
 
-A number.
-Always zero on any {{domxref("MouseEvent")}} other than `mousemove`, and any {{domxref("PointerEvent")}} other than `pointermove` or `pointerrawupdate`.
+یک عدد.
+برای هر {{domxref("MouseEvent")}} غیر از `mousemove` و هر {{domxref("PointerEvent")}} غیر از `pointermove` یا `pointerrawupdate`، مقدار همیشه صفر است.
 
-## Examples
+## مثال‌ها
 
-### Log mouse movement for `mousemove` events
+### ثبت حرکت ماوس برای رویدادهای `mousemove`
 
-This example logs the amount of mouse movement using {{domxref("MouseEvent.movementX", "movementX")}} and `movementY`.
+این مثال میزان حرکت ماوس را با استفاده از {{domxref("MouseEvent.movementX", "movementX")}} و `movementY` ثبت می‌کند.
 
 #### HTML
 
@@ -41,7 +39,7 @@ This example logs the amount of mouse movement using {{domxref("MouseEvent.movem
 <p id="log">Move your mouse around inside this element.</p>
 ```
 
-#### JavaScript
+#### جاوااسکریپت
 
 ```js
 const log = document.getElementById("log");
@@ -53,20 +51,20 @@ function logMovement(event) {
 document.addEventListener("mousemove", logMovement);
 ```
 
-#### Result
+#### نتیجه
 
-{{EmbedLiveSample("Log mouse movement for `mousemove` events")}}
+{{EmbedLiveSample("ثبت حرکت ماوس برای رویدادهای `mousemove`")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("MouseEvent.movementX")}}
 - {{domxref("MouseEvent")}}
-- [Pointer Lock](/en-US/docs/Web/API/Pointer_Lock_API)
+- [قفل اشاره‌گر (Pointer Lock)](/en-US/docs/Web/API/Pointer_Lock_API)
