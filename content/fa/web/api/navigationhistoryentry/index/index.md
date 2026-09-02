@@ -1,9 +1,4 @@
----
-title: "NavigationHistoryEntry: index property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigationHistoryEntry/index"
-status: "needs-translation"
----
-
+```yaml
 ---
 title: "NavigationHistoryEntry: index property"
 short-title: index
@@ -14,28 +9,29 @@ browser-compat: api.NavigationHistoryEntry.index
 
 {{APIRef("Navigation API")}}
 
-The **`index`** read-only property of the {{domxref("NavigationHistoryEntry")}} interface returns the index of the history entry in the history entries list (that is, the list returned by {{domxref("Navigation.entries()")}}), or `-1` if the entry does not appear in the list or if current document is not fully active.
+ویژگی فقط-خواندنی **`index`** از رابط {{domxref("NavigationHistoryEntry")}}، اندیس (شاخص) ورودی تاریخچه را در لیست ورودی‌های تاریخچه (یعنی لیستی که توسط {{domxref("Navigation.entries()")}} بازگردانده می‌شود) برمی‌گرداند، یا اگر ورودی در لیست وجود نداشته باشد یا سند جاری به طور کامل فعال نباشد، مقدار `-1` را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A number representing the `index` of the entry in the history entries list, or `-1` if this item does not appear in the list.
+عددی که نشان‌دهنده `index` ورودی در لیست ورودی‌های تاریخچه است، یا `-1` اگر این آیتم در لیست وجود نداشته باشد.
 
-## Examples
+## مثال‌ها
 
 ```js
 const current = navigation.currentEntry;
 console.log(current.index);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
-- [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
+- [مسیریابی مدرن سمت کلاینت: API Navigation](https://developer.chrome.com/docs/web-platform/navigation-api/)
+- [توضیح API Navigation](https://github.com/WICG/navigation-api/blob/main/README.md)
+```
