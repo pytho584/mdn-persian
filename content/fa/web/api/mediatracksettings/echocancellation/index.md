@@ -1,9 +1,4 @@
----
-title: "MediaTrackSettings: echoCancellation property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/echoCancellation"
-status: "needs-translation"
----
-
+```
 ---
 title: "MediaTrackSettings: echoCancellation property"
 short-title: echoCancellation
@@ -14,50 +9,34 @@ browser-compat: api.MediaStreamTrack.applyConstraints.echoCancellation_constrain
 
 {{APIRef("Media Capture and Streams")}}
 
-The {{domxref("MediaTrackSettings")}} dictionary's
-**`echoCancellation`** property is a Boolean value whose value
-indicates whether or not echo cancellation is enabled on an audio track. This lets you
-determine what value was selected to comply with your specified constraints for this
-property's value as described in the
-{{domxref("MediaTrackConstraints.echoCancellation")}} property you provided when calling
-either {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}} or
-{{domxref("MediaStreamTrack.applyConstraints()")}}.
+ویژگی **`echoCancellation`** از {{domxref("MediaTrackSettings")}} یک مقدار بولی است که نشان می‌دهد آیا قابلیت حذف پژواک (echo cancellation) روی یک مسیر صوتی فعال است یا نه. این به شما امکان می‌دهد تعیین کنید برای رعایت محدودیت‌هایی که برای مقدار این ویژگی تعیین کرده بودید، چه مقداری انتخاب شده است؛ همان‌طور که در ویژگی {{domxref("MediaTrackConstraints.echoCancellation")}} توصیف شده است، همان محدودیتی که هنگام فراخوانی {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}} یا {{domxref("MediaStreamTrack.applyConstraints()")}} ارائه کرده‌اید.
 
-Echo cancellation is a feature which attempts to prevent echo effects on a two-way
-audio connection by attempting to reduce or eliminate crosstalk between the user's
-output device and their input device. For example, it might apply a filter that negates
-the sound being produced on the speakers from being included in the input track
-generated from the microphone.
+حذف پژواک قابلیتی است که با کاهش یا حذف تداخل (crosstalk) بین دستگاه خروجی و دستگاه ورودی کاربر، تلاش می‌کند از ایجاد افکت پژواک در اتصال صوتی دوطرفه جلوگیری کند. برای مثال، ممکن است فیلتری اعمال کند که صدای تولیدشده توسط بلندگوها را از مسیر ورودیِ حاصل از میکروفون حذف کند.
 
-If needed, you can determine whether or not this constraint is supported by checking
-the value of {{domxref("MediaTrackSupportedConstraints.echoCancellation")}} as returned
-by a call to {{domxref("MediaDevices.getSupportedConstraints()")}}. However, typically
-this is unnecessary since browsers will ignore any constraints they're unfamiliar with.
+در صورت نیاز، می‌توانید با بررسی مقدار {{domxref("MediaTrackSupportedConstraints.echoCancellation")}} که در نتیجهٔ فراخوانی {{domxref("MediaDevices.getSupportedConstraints()")}} بازگردانده می‌شود، تعیین کنید که آیا این محدودیت پشتیبانی می‌شود یا نه. با این حال، معمولاً این کار ضروری نیست؛ زیرا مرورگرها هر محدودیتی را که با آن آشنا نیستند نادیده می‌گیرند.
 
-Because {{Glossary("RTP")}} doesn't include this information, tracks associated with a
-[WebRTC](/en-US/docs/Web/API/WebRTC_API) {{domxref("RTCPeerConnection")}}
-will never include this property.
+ازآنجاکه {{Glossary("RTP")}} این اطلاعات را در بر ندارد، مسیرهای مرتبط با یک {{domxref("RTCPeerConnection")}} در [WebRTC](/en-US/docs/Web/API/WebRTC_API) هرگز شامل این ویژگی نخواهند بود.
 
-## Value
+## مقدار
 
-A Boolean value which is `true` if the track has echo cancellation
-functionality enabled or `false` if echo cancellation is disabled.
+یک مقدار بولی که اگر قابلیت حذف پژواک در مسیر فعال شده باشد، `true` و اگر حذف پژواک غیرفعال باشد، `false` است.
 
-## Examples
+## مثال‌ها
 
-See the [Constraint exerciser](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#example_constraint_exerciser) example.
+مثال [تمرین‌دهندهٔ محدودیت‌ها](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#example_constraint_exerciser) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
-- [Capabilities, constraints, and settings](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints)
+- [قابلیت‌ها، محدودیت‌ها و تنظیمات](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints)
 - {{domxref("MediaTrackConstraints.echoCancellation")}}
 - {{domxref("MediaTrackSettings")}}
+```
