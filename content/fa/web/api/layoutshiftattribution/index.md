@@ -1,9 +1,4 @@
----
-title: "LayoutShiftAttribution"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/LayoutShiftAttribution"
-status: "needs-translation"
----
-
+```markdown
 ---
 title: LayoutShiftAttribution
 slug: Web/API/LayoutShiftAttribution
@@ -15,27 +10,27 @@ browser-compat: api.LayoutShiftAttribution
 
 {{APIRef("Performance API")}}{{SeeCompatTable}}
 
-The `LayoutShiftAttribution` interface provides debugging information about elements which have shifted.
+رابطه `LayoutShiftAttribution` اطلاعات اشکال‌زدایی درباره عناصری که جابه‌جا شده‌اند را فراهم می‌کند.
 
-Instances of `LayoutShiftAttribution` are returned in an array by calling {{domxref("LayoutShift.sources")}}.
+با فراخوانی {{domxref("LayoutShift.sources")}}، نمونه‌هایی از `LayoutShiftAttribution` در یک آرایه بازگردانده می‌شوند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("LayoutShiftAttribution.node")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns the element that has shifted (null if it has been removed).
+  - : عنصری که جابه‌جا شده است را برمی‌گرداند (در صورت حذف شدن، `null`).
 - {{domxref("LayoutShiftAttribution.previousRect")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a {{domxref("DOMRectReadOnly")}} object representing the position of the element before the shift.
+  - : یک شیء {{domxref("DOMRectReadOnly")}} برمی‌گرداند که موقعیت عنصر را قبل از جابه‌جایی نشان می‌دهد.
 - {{domxref("LayoutShiftAttribution.currentRect")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a {{domxref("DOMRectReadOnly")}} object representing the position of the element after the shift.
+  - : یک شیء {{domxref("DOMRectReadOnly")}} برمی‌گرداند که موقعیت عنصر را بعد از جابه‌جایی نشان می‌دهد.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("LayoutShiftAttribution.toJSON()")}} {{Experimental_Inline}}
-  - : Returns a JSON representation of the `LayoutShiftAttribution` object.
+  - : یک نمایش JSON از شیء `LayoutShiftAttribution` را برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-The following example observes layout shifts and identifies the most impactful element. The `sources` array is sorted by impact area, in descending order — so the first element (`sources[0]`) represents the element that contributed most to the layout shift. For more detail on that, see [Debug Web Vitals in the field](https://web.dev/articles/debug-performance-in-the-field).
+مثال زیر تغییرات چیدمان (layout shifts) را مشاهده می‌کند و تأثیرگذارترین عنصر را شناسایی می‌کند. آرایه `sources` بر اساس ناحیه تأثیر، به ترتیب نزولی مرتب می‌شود — بنابراین اولین عنصر (`sources[0]`) عنصری را نشان می‌دهد که بیشترین سهم را در جابه‌جایی چیدمان داشته است. برای جزئیات بیشتر، به [اشکال‌زدایی Web Vitals در میدان عمل](https://web.dev/articles/debug-performance-in-the-field) مراجعه کنید.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -53,15 +48,16 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "layout-shift", buffered: true });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Debug layout shifts](https://web.dev/articles/debug-layout-shifts)
-- [Debug Web Vitals in the field](https://web.dev/articles/debug-performance-in-the-field)
+- [اشکال‌زدایی جابه‌جایی‌های چیدمان](https://web.dev/articles/debug-layout-shifts)
+- [اشکال‌زدایی Web Vitals در میدان عمل](https://web.dev/articles/debug-performance-in-the-field)
+```
