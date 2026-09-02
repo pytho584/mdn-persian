@@ -1,11 +1,5 @@
 ---
 title: "MediaError: message property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaError/message"
-status: "needs-translation"
----
-
----
-title: "MediaError: message property"
 short-title: message
 slug: Web/API/MediaError/message
 page-type: web-api-instance-property
@@ -14,28 +8,27 @@ browser-compat: api.MediaError.message
 
 {{APIRef("HTML DOM")}}
 
-The read-only property **`MediaError.message`** returns a human-readable string offering specific diagnostic details related to the error described by the `MediaError` object, or an empty string (`""`) if no diagnostic information can be determined or provided.
+خاصیت فقط-خواندنی **`MediaError.message`** یک رشته‌ی قابل‌خواندن برای انسان برمی‌گرداند که جزئیات تشخیصی خاص مربوط به خطای توصیف‌شده توسط شیء `MediaError` را ارائه می‌دهد، یا اگر هیچ اطلاعات تشخیصی قابل تعیین یا ارائه نباشد، یک رشته‌ی خالی (`""`) برمی‌گرداند.
 
-## Value
+## مقدار
 
-A string providing a detailed, specific explanation of what went wrong and possibly how it might be fixed. This is _not_ a generic description of the {{domxref("MediaError.code")}} property's value, but instead goes deeper into the specifics of this particular error and its circumstances.
-If no specific details are available, this string is empty.
+رشته‌ای که توضیحی دقیق و خاص از آنچه اشتباه رخ داده و احتمالاً چگونگی رفع آن ارائه می‌دهد. این یک توضیح عمومی از مقدار خاصیت {{domxref("MediaError.code")}} نیست، بلکه به عمق جزئیات این خطای خاص و شرایط آن می‌پردازد.
+اگر جزئیات خاصی در دسترس نباشد، این رشته خالی است.
 
-## Examples
+## مثال‌ها
 
-### Logging MediaError messages
+### ثبت پیام‌های MediaError
 
-This example creates an {{HTMLElement("audio")}} element, establishes an error handler for it, then lets the user click buttons to choose whether to assign a valid audio file or a missing file to the element's [`src`](/en-US/docs/Web/HTML/Reference/Elements/audio#src) attribute.
-The error handler outputs log lines to a box onscreen describing the error, including the `code`, the `message`, and a hint that may be more useful for visitors than the diagnostic `message`:
+این مثال یک عنصر {{HTMLElement("audio")}} ایجاد می‌کند، یک کنترل‌کننده خطا برای آن تنظیم می‌کند، سپس به کاربر اجازه می‌دهد با کلیک روی دکمه‌ها انتخاب کند که یک فایل صوتی معتبر یا یک فایل گمشده را به ویژگی [`src`](/en-US/docs/Web/HTML/Reference/Elements/audio#src) عنصر اختصاص دهد. کنترل‌کننده خطا، خطوط گزارش را در یک جعبه روی صفحه نمایش می‌دهد که خطا را توصیف می‌کند، شامل `code`، `message` و یک نکته که ممکن است برای بازدیدکنندگان مفیدتر از `message` تشخیصی باشد:
 
 ```html
 <audio controls id="audio"></audio>
 <div>
-  <button id="valid-button">Valid file</button>
-  <button id="invalid-button">Missing file</button>
-  <button id="svg-button">Wrong format</button>
+  <button id="valid-button">فایل معتبر</button>
+  <button id="invalid-button">فایل گمشده</button>
+  <button id="svg-button">فرمت اشتباه</button>
 </div>
-<pre id="log">Logs:</pre>
+<pre id="log">گزارش‌ها:</pre>
 ```
 
 ```css hidden
@@ -45,13 +38,9 @@ pre {
 }
 ```
 
-The example creates an {{HTMLElement("audio")}} element and lets the user assign either a valid music file to it, or a link to a file which doesn't exist.
-This lets us see the behavior of the {{domxref("HTMLMediaElement/error_event", "error")}} event handler, which is received by an event handler we add to the `<audio>` element itself.
+این مثال یک عنصر {{HTMLElement("audio")}} ایجاد می‌کند و به کاربر اجازه می‌دهد یا یک فایل موسیقی معتبر به آن اختصاص دهد، یا یک پیوند به فایلی که وجود ندارد. این به ما امکان می‌دهد رفتار کنترل‌کننده رویداد {{domxref("HTMLMediaElement/error_event", "error")}} را ببینیم که توسط یک کنترل‌کننده رویداد که به خود عنصر `<audio>` اضافه می‌کنیم دریافت می‌شود.
 
-First, it gets the {{domxref("MediaError")}} object describing the error from the {{domxref("HTMLMediaElement.error", "error")}} property on the {{domxref("HTMLAudioElement")}} representing the audio player.
-The error's numeric {{domxref("MediaError.code", "code")}} is checked against `MediaError` constants, which are initially undefined.
-If the `err.code` is equal to any constant, it creates a generic hint with `MediaError.message` added to the log line to provide more detailed diagnostic information for developers.
-The resulting text is added to the `<pre>` element:
+ابتدا، شیء {{domxref("MediaError")}} توصیف‌کننده خطا را از خاصیت {{domxref("HTMLMediaElement.error", "error")}} روی {{domxref("HTMLAudioElement")}} که نمایانگر پخش‌کننده صدا است، دریافت می‌کند. سپس `code` عددی خطا با ثابت‌های `MediaError` که در ابتدا تعریف نشده‌اند، مقایسه می‌شود. اگر `err.code` برابر با هر ثابتی باشد، یک نکته عمومی با افزودن `MediaError.message` به خط گزارش برای ارائه اطلاعات تشخیصی دقیق‌تر برای توسعه‌دهندگان ایجاد می‌کند. متن حاصل به عنصر `<pre>` اضافه می‌شود:
 
 ```js
 const audioElement = document.getElementById("audio");
@@ -84,42 +73,41 @@ audioElement.onerror = () => {
 
   switch (err.code) {
     case MediaError.MEDIA_ERR_ABORTED:
-      userHint = "Canceled audio playback.";
+      userHint = "پخش صدا لغو شد.";
       break;
     case MediaError.MEDIA_ERR_NETWORK:
-      userHint = "A network error occurred while fetching the audio.";
+      userHint = "یک خطای شبکه هنگام دریافت صدا رخ داد.";
       break;
     case MediaError.MEDIA_ERR_DECODE:
-      userHint = "An error occurred while decoding the audio.";
+      userHint = "یک خطا هنگام رمزگشایی صدا رخ داد.";
       break;
     case MediaError.MEDIA_ERR_SRC_NOT_SUPPORTED:
-      userHint = "Audio is missing or is an unsupported format.";
+      userHint = "صدا گمشده است یا فرمت پشتیبانی‌نشده‌ای دارد.";
       break;
     default:
-      userHint += "An unknown error occurred.";
+      userHint += "یک خطای ناشناخته رخ داد.";
       break;
   }
 
-  const message = err.message || "no message available";
+  const message = err.message || "هیچ پیامی در دسترس نیست";
 
-  logMessage(`Error code ${err.code} (${err.message}), ${userHint}`);
+  logMessage(`کد خطا ${err.code} (${err.message})، ${userHint}`);
 };
 ```
 
-Click the "Valid file" button to start playback as expected, the "Missing file" button to try to load a missing resource, and the "Wrong format" button to try to set an SVG file as the source for the audio element.
-Comparing the log output for the two error cases illustrates the difference between a `MediaError`'s `code` and `message`:
+روی دکمه "فایل معتبر" کلیک کنید تا پخش طبق انتظار شروع شود، دکمه "فایل گمشده" برای تلاش برای بارگذاری یک منبع گمشده، و دکمه "فرمت اشتباه" برای تلاش برای تنظیم یک فایل SVG به عنوان منبع عنصر صوتی. مقایسه خروجی گزارش برای دو حالت خطا تفاوت بین `code` و `message` یک `MediaError` را نشان می‌دهد:
 
 {{embedlivesample("logging_mediaerror_messages", , "300")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("MediaError")}}: Interface used to define the `MediaError.message` property
-- {{HTMLElement("audio")}}, {{HTMLElement("video")}}
+- {{domxref("MediaError")}}: واسطی که برای تعریف خاصیت `MediaError.message` استفاده می‌شود
+- {{HTMLElement("audio")}}، {{HTMLElement("video")}}
