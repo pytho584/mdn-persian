@@ -1,11 +1,5 @@
 ---
 title: "MediaStreamTrack: ended event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/ended_event"
-status: "needs-translation"
----
-
----
-title: "MediaStreamTrack: ended event"
 short-title: ended
 slug: Web/API/MediaStreamTrack/ended_event
 page-type: web-api-event
@@ -14,13 +8,13 @@ browser-compat: api.MediaStreamTrack.ended_event
 
 {{APIRef("Media Capture and Streams")}}
 
-The **`ended`** event of the {{domxref("MediaStreamTrack")}} interface is fired when playback or streaming has stopped because the end of the media was reached or because no further data is available.
+رویداد **`ended`** از رابط {{domxref("MediaStreamTrack")}} زمانی فعال می‌شود که پخش یا استریم به دلیل رسیدن به پایان رسانه یا در دسترس نبودن داده بیشتر متوقف شود.
 
-This event is not cancelable and does not bubble.
+این رویداد قابل لغو (cancelable) نیست و انتشار (bubble) نمی‌شود.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای استفاده، نام رویداد را در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} به کار ببرید، یا یک ویژگی مدیریت‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("ended", (event) => { })
@@ -28,25 +22,25 @@ addEventListener("ended", (event) => { })
 onended = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Usage notes
+## نکات استفاده
 
-`ended` events fire when the media stream track's source permanently stops sending data on the stream. There are various ways this can happen, including:
+رویدادهای `ended` زمانی فعال می‌شوند که منبع ردگیری (track) جریان رسانه به طور دائمی ارسال داده روی جریان را متوقف کند. راه‌های مختلفی برای این اتفاق وجود دارد، از جمله:
 
-- There is no more data left to send.
-- The user revoked the permissions needed for the data to be sent.
-- The hardware generating the source data has been removed or ejected.
-- A remote peer has permanently stopped sending data.
-- The only case where the track ends but the `ended` event is not fired is when calling {{domxref("MediaStreamTrack.stop")}}.
+- داده دیگری برای ارسال باقی نمانده باشد.
+- کاربر مجوزهای لازم برای ارسال داده را لغو کرده باشد.
+- سخت‌افزاری که داده منبع را تولید می‌کند حذف یا خارج شده باشد.
+- یک همتای راه دور (remote peer) به طور دائمی ارسال داده را متوقف کرده باشد.
+- تنها حالتی که ردگیری به پایان می‌رسد اما رویداد `ended` فعال نمی‌شود، زمانی است که {{domxref("MediaStreamTrack.stop")}} فراخوانی شود.
 
-Pausing media _does not_ generate an `ended` event.
+مکث رسانه رویداد `ended` را ایجاد _نمی‌کند_.
 
-## Examples
+## مثال‌ها
 
-This example sets up an event handler for the `ended` event, which changes an on-screen icon to indicate that the track is no longer active.
+این مثال یک مدیریت‌کننده رویداد برای رویداد `ended` تنظیم می‌کند که با تغییر یک نماد روی صفحه، نشان می‌دهد که ردگیری دیگر فعال نیست.
 
 ```js
 track.addEventListener("ended", () => {
@@ -55,7 +49,7 @@ track.addEventListener("ended", () => {
 });
 ```
 
-You can also set up the event handler using the `onended` property:
+همچنین می‌توانید مدیریت‌کننده رویداد را با استفاده از ویژگی `onended` تنظیم کنید:
 
 ```js
 track.onended = () => {
@@ -65,20 +59,20 @@ track.onended = () => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The HTMLMediaElement {{domxref("HTMLMediaElement.playing_event", 'playing')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.waiting_event", 'waiting')}} event
-- The HTMLMediaElement {{domxref("HTMLMediaElement.seeking_event", 'seeking')}} event
+- رویداد {{domxref("HTMLMediaElement.playing_event", 'playing')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.waiting_event", 'waiting')}} در HTMLMediaElement
+- رویداد {{domxref("HTMLMediaElement.seeking_event", 'seeking')}} در HTMLMediaElement
 - {{HTMLElement("audio")}}
 - {{HTMLElement("video")}}
-- The HTMLMediaElement {{domxref("HTMLMediaElement.ended_event", 'ended')}} event
-- The AudioScheduledSourceNode {{domxref("AudioScheduledSourceNode.ended_event", 'ended')}} event
+- رویداد {{domxref("HTMLMediaElement.ended_event", 'ended')}} در HTMLMediaElement
+- رویداد {{domxref("AudioScheduledSourceNode.ended_event", 'ended')}} در AudioScheduledSourceNode
