@@ -1,10 +1,4 @@
 ---
-title: "KeyframeEffect"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/KeyframeEffect"
-status: "needs-translation"
----
-
----
 title: KeyframeEffect
 slug: Web/API/KeyframeEffect
 page-type: web-api-interface
@@ -13,47 +7,47 @@ browser-compat: api.KeyframeEffect
 
 {{ APIRef("Web Animations") }}
 
-The **`KeyframeEffect`** interface of the [Web Animations API](/en-US/docs/Web/API/Web_Animations_API) lets us create sets of animatable properties and values, called **keyframes.** These can then be played using the {{domxref("Animation.Animation", "Animation()")}} constructor.
+رابط **`KeyframeEffect`** در [Web Animations API](/en-US/docs/Web/API/Web_Animations_API) به ما امکان می‌دهد مجموعه‌ای از ویژگی‌ها و مقادیر قابل انیمیشن، که **keyframe** نامیده می‌شوند، ایجاد کنیم. سپس می‌توان این keyframeها را با استفاده از سازنده {{domxref("Animation.Animation", "Animation()")}} پخش کرد.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("KeyframeEffect.KeyframeEffect", "KeyframeEffect()")}}
-  - : Returns a new `KeyframeEffect` object instance, and also allows you to clone an existing keyframe effect object instance.
+  - : یک نمونه جدید از شیء `KeyframeEffect` بازمی‌گرداند؛ همچنین به شما امکان می‌دهد یک نمونه از شیء keyframe effect موجود را شبیه‌سازی کنید.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("KeyframeEffect.target")}}
-  - : Gets and sets the element, or originating element of the pseudo-element, being animated by this object. This may be `null` for animations that do not target a specific element or pseudo-element.
+  - : عنصر یا عنصر مبدأ شبه‌عنصری که توسط این شیء متحرک می‌شود را دریافت و تنظیم می‌کند. برای انیمیشن‌هایی که عنصر یا شبه‌عنصر خاصی را هدف قرار نمی‌دهند، این مقدار می‌تواند `null` باشد.
 - {{domxref("KeyframeEffect.pseudoElement")}}
-  - : Gets and sets the selector of the pseudo-element being animated by this object. This may be `null` for animations that do not target a pseudo-element.
+  - : انتخابگر شبه‌عنصری که توسط این شیء متحرک می‌شود را دریافت و تنظیم می‌کند. برای انیمیشن‌هایی که شبه‌عنصری را هدف قرار نمی‌دهند، این مقدار می‌تواند `null` باشد.
 - {{domxref("KeyframeEffect.iterationComposite")}}
-  - : Gets and sets the iteration composite operation for resolving the property value changes of this keyframe effect.
+  - : عملیات ترکیب تکرار (iteration composite) برای حل تغییرات مقادیر ویژگی‌های این keyframe effect را دریافت و تنظیم می‌کند.
 - {{domxref("KeyframeEffect.composite")}}
-  - : Gets and sets the composite operation property for resolving the property value changes between this and other keyframe effects.
+  - : ویژگی عملیات ترکیب برای حل تغییرات مقادیر ویژگی‌های بین این keyframe effect و سایر keyframe effectها را دریافت و تنظیم می‌کند.
 
-## Instance methods
+## روش‌های نمونه
 
-_This interface inherits some of its methods from its parent, {{domxref("AnimationEffect")}}._
+_این رابط برخی از روش‌های خود را از والد خود، {{domxref("AnimationEffect")}}، به ارث می‌برد._
 
 - {{domxref("AnimationEffect.getComputedTiming()")}}
-  - : Returns the calculated, current timing values for this keyframe effect.
+  - : مقادیر زمان‌بندی محاسبه‌شده و جاری برای این keyframe effect را بازمی‌گرداند.
 - {{domxref("KeyframeEffect.getKeyframes()")}}
-  - : Returns the computed keyframes that make up this effect along with their computed keyframe offsets.
+  - : keyframeهای محاسبه‌شده که این اثر را تشکیل می‌دهند، به همراه offsetهای keyframe محاسبه‌شده آن‌ها را بازمی‌گرداند.
 - {{domxref("AnimationEffect.getTiming()")}}
-  - : Returns the object associated with the animation containing all the animation's timing values.
+  - : شیء مرتبط با انیمیشن که شامل تمام مقادیر زمان‌بندی انیمیشن است را بازمی‌گرداند.
 - {{domxref("KeyframeEffect.setKeyframes()")}}
-  - : Replaces the set of keyframes that make up this effect.
+  - : مجموعه keyframeهایی که این اثر را تشکیل می‌دهند جایگزین می‌کند.
 - {{domxref("AnimationEffect.updateTiming()")}}
-  - : Updates the specified timing properties.
+  - : ویژگی‌های زمان‌بندی مشخص‌شده را به‌روزرسانی می‌کند.
 
-## Examples
+## مثال‌ها
 
-In the following example, the KeyframeEffect constructor is used to create a set of keyframes that dictate how the rofl emoji should roll on the floor:
+در مثال زیر، از سازنده `KeyframeEffect` برای ایجاد مجموعه‌ای از keyframeها استفاده شده است که نحوه غلتیدن شکلک خنده‌دار روی زمین را مشخص می‌کند:
 
 ```js
-const emoji = document.querySelector("div"); // element to animate
+const emoji = document.querySelector("div"); // عنصری که قرار است متحرک شود
 
 const rollingKeyframes = new KeyframeEffect(
   emoji,
@@ -62,7 +56,7 @@ const rollingKeyframes = new KeyframeEffect(
     { transform: "translateX(200px) rotate(1.3turn)" }, // keyframe
   ],
   {
-    // keyframe options
+    // گزینه‌های keyframe
     duration: 2000,
     direction: "alternate",
     easing: "ease-in-out",
@@ -72,7 +66,7 @@ const rollingKeyframes = new KeyframeEffect(
 
 const rollingAnimation = new Animation(rollingKeyframes, document.timeline);
 
-// play rofl animation
+// پخش انیمیشن غلتیدن
 rollingAnimation.play();
 ```
 
@@ -96,15 +90,15 @@ div {
 
 {{ EmbedLiveSample("Examples", "100%", "120") }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)
 - {{domxref("Animation")}}
