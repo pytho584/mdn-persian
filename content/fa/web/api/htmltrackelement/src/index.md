@@ -1,11 +1,5 @@
 ---
 title: "HTMLTrackElement: src property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTrackElement/src"
-status: "needs-translation"
----
-
----
-title: "HTMLTrackElement: src property"
 short-title: src
 slug: Web/API/HTMLTrackElement/src
 page-type: web-api-instance-property
@@ -14,15 +8,13 @@ browser-compat: api.HTMLTrackElement.src
 
 {{APIRef("HTML DOM")}}
 
-The **`src`** property of the {{domxref("HTMLTrackElement")}} interface reflects the value of
-the {{HTMLElement("track")}} element's [`src`](/en-US/docs/Web/HTML/Reference/Elements/track#src) attribute, which
-indicates the URL of the text track's data.
+ویژگی **`src`** از رابط {{domxref("HTMLTrackElement")}} مقدار ویژگی [`src`](/en-US/docs/Web/HTML/Reference/Elements/track#src) عنصر {{HTMLElement("track")}} را منعکس می‌کند. این ویژگی نشانی اینترنتی (URL) داده‌های مسیر متنی (text track) را مشخص می‌کند.
 
-## Value
+## مقدار
 
-A string containing the URL of the text track data.
+یک رشته (string) شامل نشانی اینترنتی داده‌های مسیر متنی.
 
-## Example
+## مثال
 
 ```js
 const trackElement = document.getElementById("exampleTrack");
@@ -30,15 +22,15 @@ console.log(`Track's URL: ${trackElement.src}`);
 trackElement.src = "newTrack.vtt";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLTrackElement")}}
 - {{HTMLElement("track")}}
