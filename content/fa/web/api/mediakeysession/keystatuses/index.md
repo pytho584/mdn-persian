@@ -1,7 +1,5 @@
 ---
 title: "MediaKeySession: keyStatuses property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaKeySession/keyStatuses"
-status: "needs-translation"
 ---
 
 ---
@@ -14,16 +12,16 @@ browser-compat: api.MediaKeySession.keyStatuses
 
 {{APIRef("Encrypted Media Extensions")}}{{SecureContext_Header}}
 
-The **`keyStatuses`** read-only property of the {{domxref('MediaKeySession')}} interface returns a reference to a read-only {{domxref('MediaKeyStatusMap')}} of the current session's keys and their statuses.
+ویژگی فقط‌خواندنی **`keyStatuses`** در رابط {{domxref('MediaKeySession')}} ارجاعی به یک {{domxref('MediaKeyStatusMap')}} فقط‌خواندنی از کلیدهای جلسهٔ فعلی و وضعیت‌های آن‌ها را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A {{domxref('MediaKeyStatusMap')}}.
+یک {{domxref('MediaKeyStatusMap')}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
