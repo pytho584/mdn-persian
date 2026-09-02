@@ -1,11 +1,5 @@
 ---
 title: "MouseEvent: layerX property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/layerX"
-status: "needs-translation"
----
-
----
-title: "MouseEvent: layerX property"
 short-title: layerX
 slug: Web/API/MouseEvent/layerX
 page-type: web-api-instance-property
@@ -16,18 +10,15 @@ browser-compat: api.MouseEvent.layerX
 
 {{APIRef("Pointer Events")}}{{Non-standard_Header}}
 
-The **`MouseEvent.layerX`** read-only property returns the
-horizontal coordinate of the event relative to the current layer.
+**ویژگی فقطخواندنیِ `MouseEvent.layerX`** مختصات افقی رویداد را نسبت به «لایهٔ فعلی» برمی‌گرداند.
 
-This property takes scrolling of the page into account and returns a value relative to
-the whole of the document unless the event occurs inside a positioned element, where the
-returned value is relative to the top left of the positioned element.
+این ویژگی پیمایش صفحه را در نظر گرفته و مقداری را نسبت به کل سند برمی‌گرداند، مگر اینکه رویداد درون یک عنصر موقعیت‌دار رخ دهد؛ در این صورت، مقدار بازگشتی نسبت به گوشهٔ بالا-چپِ همان عنصر موقعیت‌دار است.
 
-## Value
+## مقدار
 
-An integer value in pixels for the x-coordinate of the mouse pointer, when the mouse event fired.
+یک مقدار صحیح بر حسب پیکسل که مختصات x اشاره‌گر ماوس را هنگام رخ دادن رویداد ماوس نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
 ```html
 <p>To display the mouse coordinates please click anywhere on the page.</p>
@@ -106,10 +97,10 @@ function showCoords(evt) {
 window.addEventListener("mousedown", showCoords);
 ```
 
-## Specifications
+## مشخصات
 
-_This property is not part of any specification._
+_این ویژگی بخشی از هیچ استانداردی نیست._
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
