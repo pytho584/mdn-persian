@@ -1,10 +1,4 @@
----
-title: "MathMLElement: nonce property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MathMLElement/nonce"
-status: "needs-translation"
----
-
----
+--- 
 title: "MathMLElement: nonce property"
 short-title: nonce
 slug: Web/API/MathMLElement/nonce
@@ -14,33 +8,33 @@ browser-compat: api.MathMLElement.nonce
 
 {{APIRef("MathML")}}
 
-The **`nonce`** property of the {{DOMxRef("MathMLElement")}} interface returns the {{Glossary("Nonce", "nonce")}} that is used by [Content Security Policy](/en-US/docs/Web/HTTP/Guides/CSP) to determine whether a given fetch will be allowed to proceed.
+ویژگی **`nonce`** از رابط {{DOMxRef("MathMLElement")}}، مقدار {{Glossary("Nonce", "nonce")}} (یک عدد یکبارمصرف) را بازمی‌گرداند که توسط [خط مشی امنیت محتوا (CSP)](/en-US/docs/Web/HTTP/Guides/CSP) برای تعیین اینکه آیا یک درخواست خاص مجاز به ادامه است یا خیر، استفاده می‌شود.
 
-## Value
+## مقدار
 
-A String; the cryptographic nonce, or an empty string if no nonce is set.
+یک رشته (String)؛ nonce رمزنگاری‌شده، یا یک رشته خالی اگر nonce تنظیم نشده باشد.
 
-## Examples
+## مثال‌ها
 
-### Retrieving a nonce value
+### دریافت مقدار nonce
 
 ```js
 const math = document.querySelector("math");
 console.log(math.nonce);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("HTMLElement.nonce")}} a similar property for HTML elements.
-- {{domxref("SVGElement.nonce")}} a similar property for SVG elements.
-- [`nonce` global attribute](/en-US/docs/Web/HTML/Reference/Global_attributes/nonce)
-- [Content Security Policy](/en-US/docs/Web/HTTP/Guides/CSP)
+- {{domxref("HTMLElement.nonce")}} — ویژگی مشابه برای عناصر HTML.
+- {{domxref("SVGElement.nonce")}} — ویژگی مشابه برای عناصر SVG.
+- [ویژگی سراسری `nonce`](/en-US/docs/Web/HTML/Reference/Global_attributes/nonce)
+- [خط مشی امنیت محتوا (CSP)](/en-US/docs/Web/HTTP/Guides/CSP)
 - CSP: {{CSP("script-src")}}
