@@ -1,11 +1,5 @@
 ---
 title: "MediaKeySession: remove() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaKeySession/remove"
-status: "needs-translation"
----
-
----
-title: "MediaKeySession: remove() method"
 short-title: remove()
 slug: Web/API/MediaKeySession/remove
 page-type: web-api-instance-method
@@ -14,26 +8,26 @@ browser-compat: api.MediaKeySession.remove
 
 {{APIRef("Encrypted Media Extensions")}}{{SecureContext_Header}}
 
-The `remove()` method of the {{domxref('MediaKeySession')}} interface returns a {{jsxref('Promise')}} after removing any session data associated with the current object.
+متد `remove()` از رابط {{domxref('MediaKeySession')}} یک {{jsxref('Promise')}} برمی‌گرداند که پس از حذف هرگونه دادهٔ نشستِ مرتبط با شیء کنونی، resolve می‌شود.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 remove()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref('Promise')}} that resolves to {{jsxref("undefined")}}.
+یک {{jsxref('Promise')}} که به {{jsxref('undefined')}} resolve می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
