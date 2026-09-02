@@ -1,11 +1,5 @@
 ---
 title: "MutationEvent: newValue property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MutationEvent/newValue"
-status: "needs-translation"
----
-
----
-title: "MutationEvent: newValue property"
 short-title: newValue
 slug: Web/API/MutationEvent/newValue
 page-type: web-api-instance-property
@@ -17,13 +11,13 @@ browser-compat: api.MutationEvent.newValue
 
 {{APIRef("UI Events")}}{{Deprecated_Header}}{{non-standard_header}}
 
-The **`newValue`** read-only property of the {{domxref("MutationEvent")}} interface returns a string. In `DOMAttrModified` events, it represents the new value of the {{domxref("Attr")}} node. In `DOMCharacterDataModified` events, it contains the new value of the {{domxref("CharacterData")}} node. In all other cases, returns the empty string (`""`).
+ویژگی فقط‌خواندنی **`newValue`** در رابط {{domxref("MutationEvent")}} یک رشته برمی‌گرداند. در رویدادهای `DOMAttrModified`، این ویژگی مقدار جدید گرهٔ {{domxref("Attr")}} را نشان می‌دهد. در رویدادهای `DOMCharacterDataModified`، شامل مقدار جدید گرهٔ {{domxref("CharacterData")}} است. در همهٔ موارد دیگر، رشتهٔ خالی (`""`) را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```js
 element.addEventListener("DOMAttrModified", (event) => {
@@ -31,10 +25,10 @@ element.addEventListener("DOMAttrModified", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
