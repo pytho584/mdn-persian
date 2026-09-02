@@ -1,11 +1,5 @@
 ---
 title: "MediaList: toString() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaList/toString"
-status: "needs-translation"
----
-
----
-title: "MediaList: toString() method"
 short-title: toString()
 slug: Web/API/MediaList/toString
 page-type: web-api-instance-method
@@ -14,23 +8,23 @@ browser-compat: api.MediaList.toString
 
 {{APIRef("CSSOM")}}
 
-The **`toString()`** {{Glossary("stringifier")}} method of the {{domxref("MediaList")}} interface returns a string representing the object's values. The value is a comma-separated list of media values in the same format as the {{domxref("MediaList.mediaText")}} property.
+متد **`toString()`** (رشته‌ساز) از رابط {{domxref("MediaList")}} یک رشته (string) شامل مقادیر شیء را برمی‌گرداند. این مقدار یک لیست جدا شده با کاما از مقادیر رسانه است که در قالب مشابه ویژگی {{domxref("MediaList.mediaText")}} می‌باشد.
 
-## Syntax
+## نحو
 
 ```js-nolint
 toString()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-A string.
+یک رشته (string).
 
-## Examples
+## مثال‌ها
 
 ```js
 const firstStyleSheet = document.styleSheets[0]; // the document's first stylesheet
@@ -49,15 +43,15 @@ console.log(mediaList.toString());
 // "screen and (140px <= width <= 380px), screen and (orientation: landscape)"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("MediaList.mediaText")}}
 - {{domxref("MediaList.appendMedium()")}}
