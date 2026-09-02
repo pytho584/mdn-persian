@@ -1,11 +1,5 @@
 ---
 title: "NavigationDestination: index property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigationDestination/index"
-status: "needs-translation"
----
-
----
-title: "NavigationDestination: index property"
 short-title: index
 slug: Web/API/NavigationDestination/index
 page-type: web-api-instance-property
@@ -14,14 +8,13 @@ browser-compat: api.NavigationDestination.index
 
 {{APIRef("Navigation API")}}
 
-The **`index`** read-only property of the
-{{domxref("NavigationDestination")}} interface returns the {{domxref("NavigationHistoryEntry.index", "index")}} value of the destination {{domxref("NavigationHistoryEntry")}} if the {{domxref("NavigateEvent.navigationType")}} is `traverse`, or `-1` otherwise.
+ویژگی فقط‌خواندنی **`index`** از رابط {{domxref("NavigationDestination")}} مقدار {{domxref("NavigationHistoryEntry.index", "index")}} مربوط به {{domxref("NavigationHistoryEntry")}} مقصد را برمی‌گرداند اگر {{domxref("NavigateEvent.navigationType")}} برابر با `traverse` باشد، در غیر این صورت `1-` را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A number representing the `index` of the destination {{domxref("NavigationHistoryEntry")}}, or -1.
+عددی که نشان‌دهنده `index` مربوط به {{domxref("NavigationHistoryEntry")}} مقصد است، یا `1-`.
 
-## Examples
+## مثال‌ها
 
 ```js
 navigation.addEventListener("navigate", (event) => {
@@ -29,15 +22,15 @@ navigation.addEventListener("navigate", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
-- [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
+- [مسیریابی مدرن سمت کلاینت: API Navigation](https://developer.chrome.com/docs/web-platform/navigation-api/)
+- [توضیح API Navigation](https://github.com/WICG/navigation-api/blob/main/README.md)
