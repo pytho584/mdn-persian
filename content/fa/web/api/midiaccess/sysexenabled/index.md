@@ -1,11 +1,5 @@
 ---
 title: "MIDIAccess: sysexEnabled property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MIDIAccess/sysexEnabled"
-status: "needs-translation"
----
-
----
-title: "MIDIAccess: sysexEnabled property"
 short-title: sysexEnabled
 slug: Web/API/MIDIAccess/sysexEnabled
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.MIDIAccess.sysexEnabled
 
 {{securecontext_header}}{{APIRef("Web MIDI API")}}
 
-The **`sysexEnabled`** read-only property of the {{domxref("MIDIAccess")}} interface indicates whether system exclusive support is enabled on the current MIDIAccess instance.
+خاصیتِ فقط‌خواندنی **`sysexEnabled`** در رابط {{domxref("MIDIAccess")}} مشخص می‌کند که آیا پشتیبانی از System Exclusive (اختصاصی سیستم) در نمونهٔ فعلی `MIDIAccess` فعال است یا خیر.
 
-## Value
+## مقدار
 
-A boolean value.
+یک مقدار بولی (boolean).
 
-## Examples
+## مثال‌ها
 
-The {{domxref("Navigator.requestMIDIAccess()")}} method returns a promise that resolves with a {{domxref("MIDIAccess")}} object. Printing the value of `sysexEnabled` to the console returns a boolean value, which is `true` if system exclusive support is enabled.
+متد {{domxref("Navigator.requestMIDIAccess()")}} یک Promise برمی‌گرداند که با یک شیء {{domxref("MIDIAccess")}} حل می‌شود. چاپ مقدار `sysexEnabled` در کنسول، یک مقدار بولی برمی‌گرداند که اگر پشتیبانی System Exclusive فعال باشد، `true` خواهد بود.
 
 ```js
 navigator.requestMIDIAccess().then((access) => {
@@ -30,10 +24,10 @@ navigator.requestMIDIAccess().then((access) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
