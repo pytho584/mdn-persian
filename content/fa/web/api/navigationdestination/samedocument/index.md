@@ -1,11 +1,5 @@
 ---
 title: "NavigationDestination: sameDocument property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigationDestination/sameDocument"
-status: "needs-translation"
----
-
----
-title: "NavigationDestination: sameDocument property"
 short-title: sameDocument
 slug: Web/API/NavigationDestination/sameDocument
 page-type: web-api-instance-property
@@ -14,16 +8,15 @@ browser-compat: api.NavigationDestination.sameDocument
 
 {{APIRef("Navigation API")}}
 
-The **`sameDocument`** read-only property of the
-{{domxref("NavigationDestination")}} interface returns `true` if the navigation is to the same `document` as the current {{domxref("Document")}} value, or `false` otherwise.
+ویژگی فقط‌خواندنی **`sameDocument`** از رابط {{domxref("NavigationDestination")}} مقدار `true` را برمی‌گرداند اگر پیمایش به همان `document` جاری با مقدار {{domxref("Document")}} باشد، و در غیر این صورت `false` برمی‌گرداند.
 
-This is useful for checking whether the navigation will be same-document or cross-document.
+این ویژگی برای بررسی اینکه آیا پیمایش در همان سند (same-document) انجام می‌شود یا بین سندها (cross-document) مفید است.
 
-## Value
+## مقدار
 
-A boolean.
+یک مقدار بولی.
 
-## Examples
+## مثال‌ها
 
 ```js
 navigation.addEventListener("navigate", (event) => {
@@ -31,15 +24,15 @@ navigation.addEventListener("navigate", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
-- [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
+- [مسیریابی مدرن سمت کلاینت: API پیمایش](https://developer.chrome.com/docs/web-platform/navigation-api/)
+- [توضیح API پیمایش](https://github.com/WICG/navigation-api/blob/main/README.md)
