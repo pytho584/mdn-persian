@@ -1,11 +1,5 @@
 ---
 title: "MediaSource: MediaSource() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/MediaSource"
-status: "needs-translation"
----
-
----
-title: "MediaSource: MediaSource() constructor"
 short-title: MediaSource()
 slug: Web/API/MediaSource/MediaSource
 page-type: web-api-constructor
@@ -14,23 +8,21 @@ browser-compat: api.MediaSource.MediaSource
 
 {{APIRef("Media Source Extensions")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`MediaSource()`** constructor of the
-{{domxref("MediaSource")}} interface constructs and returns a new
-`MediaSource` object with no associated source buffers.
+سازندهٔ **`MediaSource()`** از رابط {{domxref("MediaSource")}} یک شیء `MediaSource` جدید ساخته و بازمی‌گرداند که هیچ بافر منبع (source buffer) مرتبطی ندارد.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 new MediaSource()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-## Examples
+## مثال‌ها
 
-The following snippet is taken from an example written by Nick Desaulniers ([view the full demo live](https://nickdesaulniers.github.io/netfix/demo/bufferAll.html), or [download the source](https://github.com/nickdesaulniers/netfix/blob/gh-pages/demo/bufferAll.html) for further investigation).
+قطعه کد زیر از نمونه‌ای نوشته‌شده توسط Nick Desaulniers گرفته شده است ([مشاهدهٔ دموی کامل به‌صورت زنده](https://nickdesaulniers.github.io/netfix/demo/bufferAll.html) یا [دانلود کد منبع](https://github.com/nickdesaulniers/netfix/blob/gh-pages/demo/bufferAll.html) برای بررسی بیشتر).
 
 ```js
 const video = document.querySelector("video");
@@ -52,15 +44,15 @@ if ("MediaSource" in window && MediaSource.isTypeSupported(mimeCodec)) {
 // …
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("SourceBuffer")}}
 - {{domxref("SourceBufferList")}}
