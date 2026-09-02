@@ -1,11 +1,5 @@
 ---
 title: "MediaTrackSettings: width property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/width"
-status: "needs-translation"
----
-
----
-title: "MediaTrackSettings: width property"
 short-title: width
 slug: Web/API/MediaTrackSettings/width
 page-type: web-api-instance-property
@@ -14,38 +8,29 @@ browser-compat: api.MediaStreamTrack.applyConstraints.width_constraint
 
 {{APIRef("Media Capture and Streams")}}
 
-The {{domxref("MediaTrackSettings")}} dictionary's **`width`**
-property is an integer indicating the number of pixels wide
-{{domxref("MediaStreamTrack")}} is currently configured to be. This lets you determine
-what value was selected to comply with your specified constraints for this property's
-value as described in the {{domxref("MediaTrackConstraints.width")}} property you
-provided when calling either {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}}
-or {{domxref("MediaStreamTrack.applyConstraints()")}}.
+ویژگی **`width`** در فرهنگ {{domxref("MediaTrackSettings")}} یک عدد صحیح است که نشان‌دهندهٔ تعداد پیکسل‌های عرضی است که {{domxref("MediaStreamTrack")}} در حال حاضر روی آن تنظیم شده است. این ویژگی به شما امکان می‌دهد تعیین کنید چه مقداری برای مطابقت با محدودیت‌های مشخص‌شده‌تان برای این ویژگی انتخاب شده است، همان‌طور که در ویژگی {{domxref("MediaTrackConstraints.width")}} که هنگام فراخوانی {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}} یا {{domxref("MediaStreamTrack.applyConstraints()")}} ارائه کرده‌اید، توضیح داده شده است.
 
-If needed, you can determine whether or not this constraint is supported by checking
-the value of {{domxref("MediaTrackSupportedConstraints.width")}} as returned by a call
-to {{domxref("MediaDevices.getSupportedConstraints()")}}. However, typically this is
-unnecessary since browsers will ignore any constraints they're unfamiliar with.
+در صورت نیاز، می‌توانید با بررسی مقدار {{domxref("MediaTrackSupportedConstraints.width")}} که توسط فراخوانی {{domxref("MediaDevices.getSupportedConstraints()")}} بازگردانده می‌شود، تعیین کنید که آیا این محدودیت پشتیبانی می‌شود یا خیر. با این حال، معمولاً این کار ضروری نیست زیرا مرورگرها هر محدودیتی را که با آن آشنا نباشند نادیده می‌گیرند.
 
-## Value
+## مقدار
 
-An integer value indicating the width, in pixels, of the video track as currently configured.
+یک مقدار عدد صحیح که عرض (بر حسب پیکسل) ردیف ویدیو را در حالت پیکربندی فعلی نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
-See the [Constraint exerciser](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#example_constraint_exerciser) example.
+مثال [تمرین محدودیت‌ها](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#example_constraint_exerciser) را مشاهده کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
-- [Capabilities, constraints, and settings](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints)
+- [قابلیت‌ها، محدودیت‌ها و تنظیمات](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints)
 - {{domxref("MediaTrackConstraints.width")}}
 - {{domxref("MediaTrackSettings")}}
