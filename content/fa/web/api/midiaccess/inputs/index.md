@@ -1,11 +1,5 @@
 ---
 title: "MIDIAccess: inputs property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MIDIAccess/inputs"
-status: "needs-translation"
----
-
----
-title: "MIDIAccess: inputs property"
 short-title: inputs
 slug: Web/API/MIDIAccess/inputs
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.MIDIAccess.inputs
 
 {{securecontext_header}}{{APIRef("Web MIDI API")}}
 
-The **`inputs`** read-only property of the {{domxref("MIDIAccess")}} interface provides access to any available MIDI input ports.
+ویژگی فقط‌خواندنی **`inputs`** در رابط {{domxref("MIDIAccess")}} دسترسی به هر درگاه ورودی MIDI موجود را فراهم می‌کند.
 
-## Value
+## مقدار
 
-A {{domxref("MIDIInputMap")}} instance.
+یک نمونه از {{domxref("MIDIInputMap")}}.
 
-## Examples
+## مثال‌ها
 
-The {{domxref("Navigator.requestMIDIAccess()")}} method returns a promise that resolves with a {{domxref("MIDIAccess")}} object. Printing the value of `inputs` to the console returns a {{domxref("MIDIInputMap")}}.
+متد {{domxref("Navigator.requestMIDIAccess()")}} یک promise برمی‌گرداند که با یک شیء {{domxref("MIDIAccess")}} resolve می‌شود. چاپ مقدار `inputs` در کنسول، یک {{domxref("MIDIInputMap")}} را برمی‌گرداند.
 
 ```js
 navigator.requestMIDIAccess().then((access) => {
@@ -30,10 +24,10 @@ navigator.requestMIDIAccess().then((access) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
