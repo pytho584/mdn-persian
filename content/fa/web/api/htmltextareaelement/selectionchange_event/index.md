@@ -1,11 +1,5 @@
 ---
 title: "HTMLTextAreaElement: selectionchange event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTextAreaElement/selectionchange_event"
-status: "needs-translation"
----
-
----
-title: "HTMLTextAreaElement: selectionchange event"
 short-title: selectionchange
 slug: Web/API/HTMLTextAreaElement/selectionchange_event
 page-type: web-api-event
@@ -14,18 +8,17 @@ browser-compat: api.HTMLTextAreaElement.selectionchange_event
 
 {{APIRef("Selection API")}}
 
-The **`selectionchange`** event of the [Selection API](/en-US/docs/Web/API/Selection) is fired when the text selection within a {{HTMLElement("textarea")}} element is changed.
-This includes both changes in the selected range of characters, or if the caret moves.
+رویداد **`selectionchange`** از [Selection API](/en-US/docs/Web/API/Selection) زمانی فعال می‌شود که انتخاب متن درون یک عنصر {{HTMLElement("textarea")}} تغییر کند. این شامل تغییرات در محدوده انتخاب شده یا حرکت مکان‌نما (caret) می‌شود.
 
-This event is not cancelable.
+این رویداد قابل لغو (cancelable) نیست.
 
-The event is usually processed by adding an event listener on the {{HTMLElement("textarea")}}, and in the handler function read by the {{domxref("HTMLTextAreaElement")}} `selectionStart`, `selectionEnd` and `selectionDirection` properties.
+معمولاً این رویداد با افزودن یک شنونده رویداد (event listener) به عنصر {{HTMLElement("textarea")}} و در تابع کنترل‌کننده با خواندن خصوصیات `selectionStart`، `selectionEnd` و `selectionDirection` از {{domxref("HTMLTextAreaElement")}} پردازش می‌شود.
 
-It is also possible to add a listener on the global `onselectionchange` event handler, and within the handler function use {{domxref("Document.getSelection()")}} to get the {{domxref("Selection", "Selection")}}. However this is not very useful for getting changes to _text_ selections.
+همچنین می‌توان یک شنونده روی کنترل‌کننده رویداد سراسری `onselectionchange` اضافه کرد و درون تابع کنترل‌کننده از {{domxref("Document.getSelection()")}} برای دریافت {{domxref("Selection", "Selection")}} استفاده کرد. با این حال، این روش برای دریافت تغییرات در انتخاب‌های _متن_ چندان مفید نیست.
 
-## Syntax
+## Syntax (نحو)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("selectionchange", (event) => { })
@@ -33,13 +26,13 @@ addEventListener("selectionchange", (event) => { })
 onselectionchange = (event) => { }
 ```
 
-## Event type
+## Event type (نوع رویداد)
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## Examples (نمونه‌ها)
 
-The example below shows how to get the text selected in a {{HTMLElement("textarea")}} element.
+مثال زیر نحوه دریافت متن انتخاب شده در یک عنصر {{HTMLElement("textarea")}} را نشان می‌دهد.
 
 ### HTML
 
@@ -67,14 +60,14 @@ myInput.addEventListener("selectionchange", () => {
 });
 ```
 
-### Result
+### Result (نتیجه)
 
 {{EmbedLiveSample("Examples")}}
 
-## Specifications
+## Specifications (مشخصات)
 
 {{Specifications}}
 
-## Browser compatibility
+## Browser compatibility (سازگاری با مرورگرها)
 
 {{Compat}}
