@@ -1,35 +1,26 @@
 ---
-title: "MIDIConnectionEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MIDIConnectionEvent"
-status: "needs-translation"
----
-
----
 title: MIDIConnectionEvent
-slug: Web/API/MIDIConnectionEvent
-page-type: web-api-interface
-browser-compat: api.MIDIConnectionEvent
 ---
 
 {{securecontext_header}}{{APIRef("Web MIDI API")}}
 
-The **`MIDIConnectionEvent`** interface of the [Web MIDI API](/en-US/docs/Web/API/Web_MIDI_API) is the event passed to the {{domxref("MIDIAccess.statechange_event","statechange")}} event of the {{domxref("MIDIAccess")}} interface and the {{domxref("MIDIPort.statechange_event","statechange")}} event of the {{domxref("MIDIPort")}} interface. This occurs any time a new port becomes available, or when a previously available port becomes unavailable. For example, this event is fired whenever a MIDI device is either plugged in to or unplugged from a computer.
+رابط **`MIDIConnectionEvent`** در [Web MIDI API](/en-US/docs/Web/API/Web_MIDI_API) رویدادی است که به رویداد {{domxref("MIDIAccess.statechange_event","statechange")}} در رابط {{domxref("MIDIAccess")}} و رویداد {{domxref("MIDIPort.statechange_event","statechange")}} در رابط {{domxref("MIDIPort")}} ارسال می‌شود. این رویداد هر بار که یک پورت جدید در دسترس قرار می‌گیرد یا پورتی که قبلاً در دسترس بوده از دسترس خارج می‌شود، رخ می‌دهد. به عنوان مثال، این رویداد هر بار که یک دستگاه MIDI به رایانه متصل یا از آن جدا می‌شود، فعال می‌گردد.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("MIDIConnectionEvent.MIDIConnectionEvent", "MIDIConnectionEvent()")}}
-  - : Creates a new `MIDIConnectionEvent` object.
+  - : یک شیء جدید `MIDIConnectionEvent` می‌سازد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("MIDIConnectionEvent.port")}} {{ReadOnlyInline}}
-  - : Returns a reference to a {{domxref("MIDIPort")}} instance for a port that has been connected or disconnected.
+  - : ارجاعی به یک نمونه {{domxref("MIDIPort")}} برای پورتی که متصل یا قطع شده است را برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-The {{domxref("Navigator.requestMIDIAccess()")}} method returns a promise that resolves with a {{domxref("MIDIAccess")}} object. When a port changes state, a `MIDIConnectionEvent` is passed to {{domxref("MIDIAccess.statechange_event", "statechange")}} event. Information about the port can then be printed to the console.
+متد {{domxref("Navigator.requestMIDIAccess()")}} یک وعده (Promise) برمی‌گرداند که با یک شیء {{domxref("MIDIAccess")}} حل می‌شود. وقتی وضعیت یک پورت تغییر می‌کند، یک `MIDIConnectionEvent` به رویداد {{domxref("MIDIAccess.statechange_event", "statechange")}} ارسال می‌شود. سپس می‌توان اطلاعات مربوط به پورت را در کنسول چاپ کرد.
 
 ```js
 navigator.requestMIDIAccess().then((access) => {
@@ -39,10 +30,10 @@ navigator.requestMIDIAccess().then((access) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
