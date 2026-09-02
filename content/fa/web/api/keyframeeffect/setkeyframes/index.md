@@ -1,9 +1,4 @@
----
-title: "KeyframeEffect: setKeyframes() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/KeyframeEffect/setKeyframes"
-status: "needs-translation"
----
-
+```yaml
 ---
 title: "KeyframeEffect: setKeyframes() method"
 short-title: setKeyframes()
@@ -14,81 +9,80 @@ browser-compat: api.KeyframeEffect.setKeyframes
 
 {{ APIRef("Web Animations") }}
 
-The **`setKeyframes()`** method of the {{domxref("KeyframeEffect")}} interface replaces the keyframes that make up the affected `KeyframeEffect` with a new set of keyframes.
+متد **`setKeyframes()`** از رابط {{domxref("KeyframeEffect")}}، فریم‌های کلیدی (keyframes) تشکیل‌دهنده‌ی `KeyframeEffect` مورد نظر را با یک مجموعه فریم کلیدی جدید جایگزین می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 setKeyframes(keyframes)
 ```
 
-### Parameters
+### پارامترها
 
 - `keyframes`
-  - : A keyframe object or `null`. If set to `null`, the keyframes are replaced with a sequence of empty keyframes.
+  - : یک شیء فریم کلیدی یا `null`. اگر `null` تنظیم شود، فریم‌های کلیدی با دنباله‌ای از فریم‌های کلیدی خالی جایگزین می‌شوند.
+    اطلاعات بیشتر درباره [قالب](/en-US/docs/Web/API/Web_Animations_API/Keyframe_Formats#syntax) یک شیء فریم کلیدی.
 
-    More information about a keyframe object's [format](/en-US/docs/Web/API/Web_Animations_API/Keyframe_Formats#syntax).
+### مقدار بازگشتی
 
-### Return value
+هیچ ({{jsxref("undefined")}}).
 
-None ({{jsxref("undefined")}}).
-
-### Exceptions
+### استثناها (Exceptions)
 
 <table class="no-markdown">
   <thead>
     <tr>
-      <th scope="col">Exception</th>
-      <th scope="col">Explanation</th>
+      <th scope="col">استثنا</th>
+      <th scope="col">توضیح</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td><code>TypeError</code></td>
       <td>
-        One or more of the frames were not of the correct type of object, the
-        keyframes were not
+        یک یا چند فریم از نوع صحیح شیء نبودند، فریم‌های کلیدی
         <a href="https://w3c.github.io/web-animations/#loosely-sorted-by-offset"
-          >loosely sorted by offset</a
-        >, or a keyframe existed with an offset of less than 0 or more than 1.
+          >بر اساس offset به صورت تقریبی مرتب نشده بودند</a
+        >، یا فریم کلیدی با offset کمتر از 0 یا بیشتر از 1 وجود داشت.
       </td>
     </tr>
   </tbody>
 </table>
 
 > [!NOTE]
-> If the keyframes cannot be processed or are malformed, the `KeyframeEffect`'s keyframes are not modified.
+> اگر فریم‌های کلیدی قابل پردازش نباشند یا بد فرمت (malformed) باشند، فریم‌های کلیدی `KeyframeEffect` تغییر نمی‌کنند.
 
-## Examples
+## مثال‌ها
 
 ```js
-// passing an array of keyframe objects
+// عبور دادن یک آرایه از اشیاء فریم کلیدی
 existingKeyframeEffect.setKeyframes([
   { color: "blue" },
   { color: "green", left: "10px" },
 ]);
 
-// passing an object with arrays for values
+// عبور دادن یک شیء با آرایه‌هایی برای مقادیر
 existingKeyframeEffect.setKeyframes({
   color: ["blue", "green"],
   left: ["0", "10px"],
 });
 
-// passing a single-member object
+// عبور دادن یک شیء تک عضوی
 existingKeyframeEffect.setKeyframes({
   color: "blue",
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [KeyframeEffect Interface](/en-US/docs/Web/API/KeyframeEffect)
+- [رابط KeyframeEffect](/en-US/docs/Web/API/KeyframeEffect)
 - [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)
+```
