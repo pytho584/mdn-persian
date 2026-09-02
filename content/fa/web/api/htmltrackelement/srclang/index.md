@@ -1,11 +1,5 @@
 ---
 title: "HTMLTrackElement: srclang property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTrackElement/srclang"
-status: "needs-translation"
----
-
----
-title: "HTMLTrackElement: srclang property"
 short-title: srclang
 slug: Web/API/HTMLTrackElement/srclang
 page-type: web-api-instance-property
@@ -14,16 +8,15 @@ browser-compat: api.HTMLTrackElement.srclang
 
 {{APIRef("HTML DOM")}}
 
-The **`srclang`** property of the {{domxref("HTMLTrackElement")}} interface reflects the value of
-the {{HTMLElement("track")}} element's [`srclang`](/en-US/docs/Web/HTML/Reference/Elements/track#srclang) attribute or the empty string if not defined.
+ویژگی **`srclang`** در رابط {{domxref("HTMLTrackElement")}} مقدارِ ویژگی [`srclang`](/en-US/docs/Web/HTML/Reference/Elements/track#srclang) عنصر {{HTMLElement("track")}} را منعکس می‌کند؛ اگر این ویژگی تعریف نشده باشد، رشتهٔ خالی برمی‌گرداند.
 
-The `srclang` attribute is a {{glossary("BCP 47 language tag")}} indicating the language of the text track's data.
+ویژگی `srclang` یک {{glossary("BCP 47 language tag")}} است و زبان داده‌های text track را مشخص می‌کند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Example
+## مثال
 
 ```js
 const trackElement = document.getElementById("exampleTrack");
@@ -31,15 +24,15 @@ console.log(`Track's language: ${trackElement.srclang}`);
 trackElement.srclang = "en-US";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLTrackElement")}}
 - {{HTMLElement("track")}}
