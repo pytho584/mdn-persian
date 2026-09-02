@@ -1,7 +1,5 @@
 ---
 title: "HTMLTextAreaElement: rows property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTextAreaElement/rows"
-status: "needs-translation"
 ---
 
 ---
@@ -14,13 +12,13 @@ browser-compat: api.HTMLTextAreaElement.rows
 
 {{ APIRef("HTML DOM") }}
 
-The **`rows`** property of the {{DOMxRef("HTMLTextAreaElement")}} interface is a positive integer representing the visible text lines of the text control. It reflects the `<textarea>` element's [`rows`](/en-US/docs/Web/HTML/Reference/Elements/textarea#rows) attribute.
+ویژگی **`rows`** در رابط {{DOMxRef("HTMLTextAreaElement")}} یک عدد صحیح مثبت است که تعداد خطوط متنی قابل مشاهدهٔ کنترل متنی را نشان می‌دهد. این ویژگی منعکس‌کنندهٔ صفت [`rows`](/en-US/docs/Web/HTML/Reference/Elements/textarea#rows) عنصر `<textarea>` است.
 
-## Value
+## مقدار
 
-A positive integer. Defaults to `2`.
+یک عدد صحیح مثبت. پیش‌فرض `2` است.
 
-## Examples
+## مثال‌ها
 
 ```js
 const textareaElement = document.getElementById("comment");
@@ -28,17 +26,17 @@ const textLines = textArea.rows;
 textArea.rows = textLines + 2;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTMLElement("textarea")}}
 - {{DOMXref("HTMLTextAreaElement.cols")}}
 - {{DOMXref("HTMLTextAreaElement.wrap")}}
-- CSS {{cssxref("resize")}} property
+- ویژگی CSS {{cssxref("resize")}}
