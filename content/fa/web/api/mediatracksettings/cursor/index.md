@@ -1,11 +1,5 @@
 ---
 title: "MediaTrackSettings: cursor property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/cursor"
-status: "needs-translation"
----
-
----
-title: "MediaTrackSettings: cursor property"
 short-title: cursor
 slug: Web/API/MediaTrackSettings/cursor
 page-type: web-api-instance-property
@@ -14,32 +8,32 @@ browser-compat: api.MediaStreamTrack.applyConstraints.cursor_constraint
 
 {{APIRef("Media Capture and Streams")}}
 
-The {{domxref("MediaTrackSettings")}} dictionary's **`cursor`** property indicates whether or not the cursor should be captured as part of the video track included in the {{domxref("MediaStream")}} returned by {{domxref("MediaDevices.getDisplayMedia", "getDisplayMedia()")}}.
+ویژگی **`cursor`** در دیکشنری {{domxref("MediaTrackSettings")}} مشخص می‌کند که آیا مکان‌نما باید به‌عنوان بخشی از ترک ویدیویی که در {{domxref("MediaStream")}} بازگردانده‌شده توسط {{domxref("MediaDevices.getDisplayMedia", "getDisplayMedia()")}} قرار می‌گیرد، ضبط شود یا خیر.
 
-## Value
+## مقدار
 
-The value of `cursor` comes from the `CursorCaptureConstraint` enumerated string type, and may have one of the following values:
+مقدار `cursor` از نوع رشته شمارشی `CursorCaptureConstraint` گرفته می‌شود و می‌تواند یکی از مقادیر زیر باشد:
 
 - `always`
-  - : The mouse should always be visible in the video content of the {{domxref("MediaStream")}}, unless the mouse has moved outside the area of the content.
+  - : مکان‌نمای ماوس همیشه باید در محتوای ویدیویی {{domxref("MediaStream")}} قابل مشاهده باشد، مگر اینکه ماوس به بیرون از ناحیه محتوا حرکت کرده باشد.
 - `motion`
-  - : The mouse cursor should always be included in the video if it's moving, and for a short time after it stops moving.
+  - : اگر مکان‌نمای ماوس در حال حرکت باشد، همیشه در ویدیو گنجانده می‌شود، و برای مدت کوتاهی پس از توقف حرکت نیز همچنان در ویدیو باقی می‌ماند.
 - `never`
-  - : The mouse cursor is never included in the shared video.
+  - : مکان‌نمای ماوس هرگز در ویدیوی به اشتراک گذاشته‌شده گنجانده نمی‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Screen Capture API](/en-US/docs/Web/API/Screen_Capture_API)
-- [Using the screen capture API](/en-US/docs/Web/API/Screen_Capture_API/Using_Screen_Capture)
-- [Capabilities, constraints, and settings](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints)
+- [رابط برنامه‌نویسی Screen Capture](/en-US/docs/Web/API/Screen_Capture_API)
+- [استفاده از رابط برنامه‌نویسی Screen Capture](/en-US/docs/Web/API/Screen_Capture_API/Using_Screen_Capture)
+- [قابلیت‌ها، محدودیت‌ها و تنظیمات](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints)
 - {{domxref("MediaDevices.getDisplayMedia()")}}
 - {{domxref("MediaStreamTrack.getConstraints()")}}
 - {{domxref("MediaStreamTrack.applyConstraints()")}}
