@@ -1,11 +1,5 @@
 ---
 title: "IntersectionObserverEntry: IntersectionObserverEntry() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry/IntersectionObserverEntry"
-status: "needs-translation"
----
-
----
-title: "IntersectionObserverEntry: IntersectionObserverEntry() constructor"
 short-title: IntersectionObserverEntry()
 slug: Web/API/IntersectionObserverEntry/IntersectionObserverEntry
 page-type: web-api-constructor
@@ -16,10 +10,9 @@ browser-compat: api.IntersectionObserverEntry.IntersectionObserverEntry
 
 {{APIRef("Intersection Observer API")}}{{SeeCompatTable}}
 
-The **`IntersectionObserverEntry()`** constructor creates and returns a new {{domxref("IntersectionObserverEntry")}} object.
+سازنده **`IntersectionObserverEntry()`** یک شیء جدید از نوع {{domxref("IntersectionObserverEntry")}} ایجاد و بازمی‌گرداند.
 
-> [!NOTE]
-> In typical usage, you don't need to call this constructor yourself. `IntersectionObserverEntry` objects are created automatically by the browser and delivered to the {{domxref("IntersectionObserver")}} callback when an intersection is observed, or returned by {{domxref("IntersectionObserver.takeRecords()")}}.
+> [!NOTE] در استفاده معمول، نیازی به فراخوانی دستی این سازنده ندارید. اشیاء `IntersectionObserverEntry` به‌طور خودکار توسط مرورگر ایجاد شده و در زمان مشاهده یک تقاطع به callback {{domxref("IntersectionObserver")}} تحویل داده می‌شوند، یا توسط {{domxref("IntersectionObserver.takeRecords()")}} بازگردانده می‌شوند.
 
 ## Syntax
 
@@ -27,36 +20,36 @@ The **`IntersectionObserverEntry()`** constructor creates and returns a new {{do
 new IntersectionObserverEntry(intersectionObserverEntryInit)
 ```
 
-### Parameters
+### پارامترها
 
 - `intersectionObserverEntryInit`
-  - : An object with the following properties, all of which are required:
+  - : یک شیء با ویژگی‌های زیر که همگی الزامی هستند:
     - `boundingClientRect`
-      - : An object specifying the location and dimensions of the target element's bounding rectangle, with `x`, `y`, `width`, and `height` properties. This corresponds to the rectangle returned by {{domxref("Element.getBoundingClientRect()")}}.
+      - : یک شیء که مکان و ابعاد مستطیل محدودکننده عنصر هدف را مشخص می‌کند، با ویژگی‌های `x`، `y`، `width` و `height`. این معادل مستطیلی است که توسط {{domxref("Element.getBoundingClientRect()")}} بازگردانده می‌شود.
     - `intersectionRatio`
-      - : A number representing the ratio of the `intersectionRect` area to the `boundingClientRect` area. If the `boundingClientRect` area is zero, this is 1 if `isIntersecting` is `true`, and 0 if not.
+      - : یک عدد که نسبت مساحت `intersectionRect` به مساحت `boundingClientRect` را نشان می‌دهد. اگر مساحت `boundingClientRect` صفر باشد، این مقدار در صورت `true` بودن `isIntersecting` برابر 1 و در غیر این صورت 0 است.
     - `intersectionRect`
-      - : An object specifying the location and dimensions of the target's visible area within the root's intersection rectangle, with `x`, `y`, `width`, and `height` properties.
+      - : یک شیء که مکان و ابعاد ناحیه قابل مشاهده هدف درون مستطیل تقاطع ریشه را مشخص می‌کند، با ویژگی‌های `x`، `y`، `width` و `height`.
     - `isIntersecting`
-      - : A boolean value which is `true` if the target element intersects with the intersection observer's root, or `false` otherwise.
+      - : یک مقدار بولی که اگر عنصر هدف با ریشه observer تقاطع داشته باشد `true` است، در غیر این صورت `false`.
     - `isVisible`
-      - : A boolean value which is `true` if the target element has been determined to be fully visible and unoccluded, with no visual effects that would alter its display on screen. A value of `false` means either that the target has compromised visibility, or that this determination could not be made.
+      - : یک مقدار بولی که اگر عنصر هدف کاملاً قابل مشاهده و بدون پوشش (unoccluded) تشخیص داده شده باشد و هیچ افکت بصری که نمایش آن را روی صفحه تغییر دهد نداشته باشد، `true` است. مقدار `false` به این معنی است که یا دید هدف کاهش یافته است یا این تشخیص امکان‌پذیر نبوده است.
     - `rootBounds`
-      - : An object specifying the location and dimensions of the root's intersection rectangle, with `x`, `y`, `width`, and `height` properties, or `null`.
+      - : یک شیء که مکان و ابعاد مستطیل تقاطع ریشه را مشخص می‌کند، با ویژگی‌های `x`، `y`، `width` و `height`، یا `null`.
     - `target`
-      - : The {{domxref("Element")}} whose intersection with the root changed.
+      - : عنصر {{domxref("Element")}} که تقاطع آن با ریشه تغییر کرده است.
     - `time`
-      - : A {{domxref("DOMHighResTimeStamp")}} indicating the time at which the intersection was recorded, relative to the `IntersectionObserver`'s [time origin](/en-US/docs/Web/API/Performance/timeOrigin).
+      - : یک {{domxref("DOMHighResTimeStamp")}} که زمان ثبت تقاطع را نشان می‌دهد، نسبت به [مبدأ زمانی](/en-US/docs/Web/API/Performance/timeOrigin) `IntersectionObserver`.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("IntersectionObserverEntry")}} object whose properties are initialized to the values specified in `intersectionObserverEntryInit`.
+یک شیء جدید از نوع {{domxref("IntersectionObserverEntry")}} که ویژگی‌های آن با مقادیر مشخص شده در `intersectionObserverEntryInit` مقداردهی اولیه می‌شوند.
 
-## Examples
+## مثال‌ها
 
-### Creating an IntersectionObserverEntry
+### ایجاد یک IntersectionObserverEntry
 
-This example creates a basic `IntersectionObserverEntry` describing a fully visible element. While you can construct an entry manually like this, in practice these objects are created by the browser and passed to your {{domxref("IntersectionObserver")}} callback automatically.
+این مثال یک `IntersectionObserverEntry` پایه ایجاد می‌کند که یک عنصر کاملاً قابل مشاهده را توصیف می‌کند. اگرچه می‌توانید به صورت دستی یک ورودی مانند این بسازید، در عمل این اشیاء توسط مرورگر ایجاد شده و به طور خودکار به callback {{domxref("IntersectionObserver")}} شما ارسال می‌شوند.
 
 ```js
 const entry = new IntersectionObserverEntry({
@@ -79,7 +72,7 @@ const entry = new IntersectionObserverEntry({
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("IntersectionObserverEntry")}}
 - {{domxref("IntersectionObserver")}}
