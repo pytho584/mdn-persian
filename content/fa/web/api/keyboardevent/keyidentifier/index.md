@@ -1,7 +1,5 @@
 ---
 title: "KeyboardEvent: keyIdentifier property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyIdentifier"
-status: "needs-translation"
 ---
 
 ---
@@ -17,12 +15,12 @@ browser-compat: api.KeyboardEvent.keyIdentifier
 
 {{APIRef("UI Events")}}{{non-standard_header}}{{deprecated_header}}
 
-The deprecated **`KeyboardEvent.keyIdentifier`** read-only property returns a "key identifier" string that can be used to determine what key was pressed. Its non-deprecated replacement is {{domxref("KeyboardEvent.key")}}.
+ویژگی فقط‌خواندنی منسوخ‌شده **`KeyboardEvent.keyIdentifier`** رشته‌ای به نام «شناسه کلید» (key identifier) برمی‌گرداند که می‌توان از آن برای تعیین اینکه کدام کلید فشرده شده است استفاده کرد. جایگزین غیرمنسوخ آن {{domxref("KeyboardEvent.key")}} است.
 
-## Specifications
+## مشخصات
 
-_Not part of any current specification._ This property was part of [an old draft of the DOM Level 3 Events Specification](https://www.w3.org/TR/2009/WD-DOM-Level-3-Events-20090908/#events-Events-KeyboardEvent-keyIdentifier), but it was removed in later drafts in favor of {{domxref("KeyboardEvent.key")}}.
+_بخشی از هیچ مشخصات فعلی نیست._ این ویژگی بخشی از [پیش‌نویس قدیمی مشخصات رویدادهای DOM سطح ۳](https://www.w3.org/TR/2009/WD-DOM-Level-3-Events-20090908/#events-Events-KeyboardEvent-keyIdentifier) بود، اما در پیش‌نویس‌های بعدی به نفع {{domxref("KeyboardEvent.key")}} حذف شد.
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
