@@ -1,7 +1,5 @@
 ---
 title: "MediaStream"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaStream"
-status: "needs-translation"
 ---
 
 ---
@@ -13,65 +11,65 @@ browser-compat: api.MediaStream
 
 {{APIRef("Media Capture and Streams")}}
 
-The **`MediaStream`** interface of the {{domxref("Media Capture and Streams API", "", "", "nocode")}} represents a stream of media content. A stream consists of several **tracks**, such as video or audio tracks. Each track is specified as an instance of {{domxref("MediaStreamTrack")}}.
+رابط **`MediaStream`** از {{domxref("Media Capture and Streams API", "", "", "nocode")}} نمایانگر یک جریان محتوای رسانه‌ای است. یک جریان از چندین **ترک** (track) مانند ترک ویدیو یا ترک صوتی تشکیل شده است. هر ترک به‌صورت یک نمونه از {{domxref("MediaStreamTrack")}} مشخص می‌شود.
 
-You can obtain a `MediaStream` object either by using the constructor or by calling functions such as {{domxref("MediaDevices.getUserMedia()")}}, {{domxref("MediaDevices.getDisplayMedia()")}}, or {{domxref("HTMLCanvasElement.captureStream()")}} and {{domxref("HTMLMediaElement.captureStream()")}}.
+شما می‌توانید یک شیء `MediaStream` را یا با استفاده از سازنده (constructor) و یا با فراخوانی توابعی مانند {{domxref("MediaDevices.getUserMedia()")}}، {{domxref("MediaDevices.getDisplayMedia()")}}، یا {{domxref("HTMLCanvasElement.captureStream()")}} و {{domxref("HTMLMediaElement.captureStream()")}} به دست آورید.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("MediaStream.MediaStream", "MediaStream()")}}
-  - : Creates and returns a new `MediaStream` object. You can create an empty stream, a stream which is based upon an existing stream, or a stream that contains a specified list of tracks (specified as an array of {{domxref("MediaStreamTrack")}} objects).
+  - : یک شیء `MediaStream` جدید می‌سازد و آن را برمی‌گرداند. می‌توانید یک جریان خالی، یک جریان مبتنی بر یک جریان موجود، یا جریانی که شامل فهرست مشخصی از ترک‌ها است (به‌صورت آرایه‌ای از اشیاء {{domxref("MediaStreamTrack")}} مشخص شده‌اند) ایجاد کنید.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface inherits properties from its parent, {{domxref("EventTarget")}}._
+_این رابط ویژگی‌هایی را از والد خود، {{domxref("EventTarget")}} به ارث می‌برد._
 
 - {{domxref("MediaStream.active")}} {{ReadOnlyInline}}
-  - : A Boolean value that returns `true` if the `MediaStream` is active, or `false` otherwise.
+  - : یک مقدار بولی که اگر `MediaStream` فعال باشد `true` و در غیر این صورت `false` برمی‌گرداند.
 - {{domxref("MediaStream.id")}} {{ReadOnlyInline}}
-  - : A string containing a 36-character universally unique identifier ({{Glossary("UUID")}}) for the object.
+  - : یک رشته شامل شناسه یکتای عمومی ۳۶ کاراکتری ({{Glossary("UUID")}}) برای آن شیء.
 
-## Instance methods
+## روش‌های نمونه
 
-_This interface inherits methods from its parent, {{domxref("EventTarget")}}._
+_این رابط روش‌هایی را از والد خود، {{domxref("EventTarget")}} به ارث می‌برد._
 
 - {{domxref("MediaStream.addTrack()")}}
-  - : Stores a copy of the {{domxref("MediaStreamTrack")}} given as argument. If the track has already been added to the `MediaStream` object, nothing happens.
+  - : یک کپی از {{domxref("MediaStreamTrack")}} ارسال‌شده به‌عنوان آرگومان را ذخیره می‌کند. اگر ترک قبلاً به شیء `MediaStream` اضافه شده باشد، هیچ اتفاقی رخ نمی‌دهد.
 - {{domxref("MediaStream.clone()")}}
-  - : Returns a clone of the `MediaStream` object. The clone will, however, have a unique value for {{domxref("MediaStream.id", "id")}}.
+  - : یک نسخهٔ کلون از شیء `MediaStream` برمی‌گرداند. با این حال، کلون مقدار یکتایی برای {{domxref("MediaStream.id", "id")}} خواهد داشت.
 - {{domxref("MediaStream.getAudioTracks()")}}
-  - : Returns a list of the {{domxref("MediaStreamTrack")}} objects stored in the `MediaStream` object that have their `kind` attribute set to `audio`. The order is not defined, and may not only vary from one browser to another, but also from one call to another.
+  - : فهرستی از اشیاء {{domxref("MediaStreamTrack")}} ذخیره‌شده در شیء `MediaStream` را برمی‌گرداند که ویژگی `kind` آن‌ها روی `audio` تنظیم شده است. ترتیب این فهرست تعریف نشده است و نه‌تنها ممکن است از مرورگری به مرورگر دیگر، بلکه از یک فراخوانی به فراخوانی دیگر نیز متفاوت باشد.
 - {{domxref("MediaStream.getTrackById()")}}
-  - : Returns the track whose ID corresponds to the one given in parameters, `trackId`. If no parameter is given, or if no track with that ID does exist, it returns `null`. If several tracks have the same ID, it returns the first one.
+  - : ترکی را برمی‌گرداند که شناسه آن با شناسه داده‌شده در پارامتر یعنی `trackId` مطابقت دارد. اگر پارامتری داده نشود، یا ترکی با آن شناسه وجود نداشته باشد، `null` برمی‌گرداند. اگر چندین ترک دارای شناسه یکسان باشند، اولین ترک را برمی‌گرداند.
 - {{domxref("MediaStream.getTracks()")}}
-  - : Returns a list of all {{domxref("MediaStreamTrack")}} objects stored in the `MediaStream` object, regardless of the value of the `kind` attribute. The order is not defined, and may not only vary from one browser to another, but also from one call to another.
+  - : فهرستی از تمام اشیاء {{domxref("MediaStreamTrack")}} ذخیره‌شده در شیء `MediaStream` را برمی‌گرداند، صرف‌نظر از مقدار ویژگی `kind`. ترتیب تعریف نشده است و ممکن است نه‌تنها بین مرورگرها، بلکه از یک فراخوانی به فراخوانی دیگر متفاوت باشد.
 - {{domxref("MediaStream.getVideoTracks()")}}
-  - : Returns a list of the {{domxref("MediaStreamTrack")}} objects stored in the `MediaStream` object that have their `kind` attribute set to `"video"`. The order is not defined, and may not only vary from one browser to another, but also from one call to another.
+  - : فهرستی از اشیاء {{domxref("MediaStreamTrack")}} ذخیره‌شده در شیء `MediaStream` را برمی‌گرداند که ویژگی `kind` آن‌ها روی `"video"` تنظیم شده است. ترتیب تعریف نشده است و ممکن است نه‌تنها بین مرورگرها، بلکه از یک فراخوانی به فراخوانی دیگر متفاوت باشد.
 - {{domxref("MediaStream.removeTrack()")}}
-  - : Removes the {{domxref("MediaStreamTrack")}} given as argument. If the track is not part of the `MediaStream` object, nothing happens.
+  - : {{domxref("MediaStreamTrack")}} داده‌شده به‌عنوان آرگومان را حذف می‌کند. اگر ترک بخشی از شیء `MediaStream` نباشد، هیچ اتفاقی رخ نمی‌دهد.
 
-## Events
+## رویدادها
 
 - {{domxref("MediaStream/addtrack_event", "addtrack")}}
-  - : Fired when a new {{domxref("MediaStreamTrack")}} object is added.
+  - : هنگامی که یک شیء جدید از {{domxref("MediaStreamTrack")}} اضافه می‌شود، این رویداد صادر می‌شود.
 - {{domxref("MediaStream/removetrack_event", "removetrack")}}
-  - : Fired when a {{domxref("MediaStreamTrack")}} object has been removed.
+  - : هنگامی که یک شیء {{domxref("MediaStreamTrack")}} حذف شود، این رویداد صادر می‌شود.
 - {{domxref("MediaStream/active_event", "active")}} {{Non-standard_Inline}}
-  - : Fired when the MediaStream is activated.
+  - : زمانی که MediaStream فعال می‌شود، این رویداد صادر می‌شود.
 - {{domxref("MediaStream/inactive_event", "inactive")}} {{Non-standard_Inline}}
-  - : Fired when the MediaStream is inactivated.
+  - : زمانی که MediaStream غیرفعال می‌شود، این رویداد صادر می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Using the MediaStream Recording API](/en-US/docs/Web/API/MediaStream_Recording_API/Using_the_MediaStream_Recording_API)
 - [WebRTC API](/en-US/docs/Web/API/WebRTC_API)
