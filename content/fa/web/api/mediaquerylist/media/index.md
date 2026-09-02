@@ -1,7 +1,5 @@
 ---
 title: "MediaQueryList: media property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/media"
-status: "needs-translation"
 ---
 
 ---
@@ -14,19 +12,15 @@ browser-compat: api.MediaQueryList.media
 
 {{APIRef("CSSOM view API")}}
 
-The **`media`** read-only property of the
-{{DOMxRef("MediaQueryList")}} interface is a string representing a
-serialized media query.
+ویژگی فقط‌خواندنی **`media`** در رابط {{DOMxRef("MediaQueryList")}} یک رشته (string) است که یک پرس‌وجوی رسانه‌ای (media query) سریال‌سازی‌شده را نمایش می‌دهد.
 
-## Value
+## مقدار
 
-A string representing a serialized media query.
+رشته‌ای که یک پرس‌وجوی رسانه‌ای سریال‌سازی‌شده را نمایش می‌دهد.
 
-## Examples
+## نمونه‌ها
 
-This example runs the media query `(width <= 600px)` and displays the
-value of the resulting `MediaQueryList`'s `media` property in a
-{{HTMLElement("span")}}.
+این مثال، پرس‌وجوی رسانه‌ای `(width <= 600px)` را اجرا می‌کند و مقدار ویژگی `media` در `MediaQueryList` حاصل را داخل یک {{HTMLElement("span")}} نمایش می‌دهد.
 
 ### JavaScript
 
@@ -36,9 +30,7 @@ let mql = window.matchMedia("(width <= 600px)");
 document.querySelector(".mq-value").innerText = mql.media;
 ```
 
-The JavaScript code passes the media query to match into {{DOMxRef("Window.matchMedia", "matchMedia()")}} to compile it, then sets the `<span>`'s
-{{DOMxRef("HTMLElement.innerText", "innerText")}} to the value of the result's
-`media` property.
+کد جاوااسکریپت، پرس‌وجوی رسانه‌ای موردنظر را به {{DOMxRef("Window.matchMedia", "matchMedia()")}} می‌دهد تا آن را کامپایل کند و سپس {{DOMxRef("HTMLElement.innerText", "innerText")}} عنصر `<span>` را برابر با مقدار ویژگی `media` در نتیجه، قرار می‌دهد.
 
 ### HTML
 
@@ -46,7 +38,7 @@ The JavaScript code passes the media query to match into {{DOMxRef("Window.match
 <span class="mq-value"></span>
 ```
 
-A `<span>` to receive the output.
+یک `<span>` برای دریافت خروجی.
 
 ```css hidden
 .mq-value {
@@ -60,22 +52,22 @@ A `<span>` to receive the output.
 }
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples", "100%", "60")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Media queries](/en-US/docs/Web/CSS/Guides/Media_queries/Using)
-- [Using media queries from code](/en-US/docs/Web/CSS/Guides/Media_queries/Testing)
+- [پرس‌وجوهای رسانه‌ای (Media queries)](/en-US/docs/Web/CSS/Guides/Media_queries/Using)
+- [استفاده از پرس‌وجوهای رسانه‌ای در کد](/en-US/docs/Web/CSS/Guides/Media_queries/Testing)
 - {{DOMxRef("window.matchMedia()")}}
 - {{DOMxRef("MediaQueryList")}}
 - {{DOMxRef("MediaQueryListEvent")}}
