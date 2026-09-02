@@ -1,11 +1,5 @@
 ---
 title: "ImageData: height property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ImageData/height"
-status: "needs-translation"
----
-
----
-title: "ImageData: height property"
 short-title: height
 slug: Web/API/ImageData/height
 page-type: web-api-instance-property
@@ -14,32 +8,30 @@ browser-compat: api.ImageData.height
 
 {{APIRef("Canvas API")}}{{AvailableInWorkers}}
 
-The readonly **`ImageData.height`** property returns the number
-of rows in the {{domxref("ImageData")}} object.
+ویژگی فقط خواندنی **`ImageData.height`** تعداد ردیف‌های موجود در شیء {{domxref("ImageData")}} را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A number.
+یک عدد.
 
-## Examples
+## مثال‌ها
 
-This example creates an `ImageData` object that is 200 pixels wide and 100
-pixels tall. Thus, the `height` property is `100`.
+این مثال یک شیء `ImageData` به عرض ۲۰۰ پیکسل و ارتفاع ۱۰۰ پیکسل ایجاد می‌کند. بنابراین، ویژگی `height` برابر با `100` است.
 
 ```js
 let imageData = new ImageData(200, 100);
 console.log(imageData.height); // 100
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("ImageData.width")}}
 - {{domxref("ImageData")}}
