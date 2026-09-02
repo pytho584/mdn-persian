@@ -1,11 +1,5 @@
 ---
 title: "InputEvent: data property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/InputEvent/data"
-status: "needs-translation"
----
-
----
-title: "InputEvent: data property"
 short-title: data
 slug: Web/API/InputEvent/data
 page-type: web-api-instance-property
@@ -14,22 +8,15 @@ browser-compat: api.InputEvent.data
 
 {{APIRef("UI Events")}}
 
-The **`data`** read-only property of the
-{{domxref("InputEvent")}} interface returns a string with inserted
-characters. This may be an empty string if the change doesn't insert text, such as when
-characters are deleted.
+ویژگی فقط‌خواندنی **`data`** از رابط {{domxref("InputEvent")}}، رشته‌ای شامل نویسه‌های درج‌شده را برمی‌گرداند. اگر تغییری متنی را درج نکند — مانند زمانی که نویسه‌ها حذف می‌شوند — این مقدار ممکن است یک رشتهٔ خالی باشد.
 
 ## Value
 
-A string or `null`. The spec has an [overview](https://w3c.github.io/input-events/#overview) of its value in various cases.
+یک رشته یا `null`. مشخصات، یک [overview](https://w3c.github.io/input-events/#overview) از مقدار این ویژگی را در حالت‌های مختلف ارائه می‌دهد.
 
 ## Examples
 
-In the following example, an event listener receives the [input](/en-US/docs/Web/API/Element/input_event) event. Any textual change
-to the {{htmlelement("input")}} element is retrieved by `InputEvent.data` and
-inserted into a paragraph using the
-[`Node.textContent`](/en-US/docs/Web/API/Node/textContent)
-property.
+در مثال زیر، یک شنوندهٔ رویداد (event listener)، رویداد [input](/en-US/docs/Web/API/Element/input_event) را دریافت می‌کند. هر تغییر متنی که در عنصر {{htmlelement("input")}} رخ دهد، توسط `InputEvent.data` دریافت می‌شود و با استفاده از ویژگی [`Node.textContent`](/en-US/docs/Web/API/Node/textContent) در یک پاراگراف درج می‌شود.
 
 ```html
 <p>Some text to copy and paste.</p>
