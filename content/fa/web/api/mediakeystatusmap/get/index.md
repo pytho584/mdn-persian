@@ -1,69 +1,52 @@
 ---
 title: "MediaKeyStatusMap: get() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaKeyStatusMap/get"
-status: "needs-translation"
----
-
----
-title: "MediaKeyStatusMap: get() method"
-short-title: get()
-slug: Web/API/MediaKeyStatusMap/get
-page-type: web-api-instance-method
-browser-compat: api.MediaKeyStatusMap.get
 ---
 
 {{APIRef("Encrypted Media Extensions")}}{{SecureContext_Header}}
 
-The **`get()`** method of the {{domxref("MediaKeyStatusMap")}} interface returns the status value associated with the given key, or `undefined` if there is none.
+**`get()`** 方法属于 {{domxref("MediaKeyStatusMap")}} 接口，返回与给定键关联的状态值；如果不存在，则返回 `undefined`。
 
-The status value indicates whether or not the specific key can be used for decryption.
+该状态值指示特定密钥是否可用于解密。
 
-## Syntax
+## 语法
 
 ```js-nolint
 get(key)
 ```
 
-### Parameters
+### 参数
 
 - `key`
-  - : The key whose value you want returned.
+  - : 需要返回其值的键。
 
-### Return value
+### 返回值
 
-A string specifying the status value associated with the given key, or `undefined`.
+一个字符串，指定与给定键关联的状态值；如果不存在，则为 `undefined`。
 
-The following status values are allowed:
+允许以下状态值：
 
 - `usable`
-  - : The key is currently usable for decryption.
+  - : 该密钥当前可用于解密。
 - `expired`
-  - : The key is no longer usable for decryption because its expiration time has passed.
+  - : 由于已超过到期时间，该密钥不再可用于解密。
 - `released`
-  - : The key has been released and is no longer available to the CDM.
-    However information about the key is available, such as a record of license destruction.
+  - : 该密钥已被释放，CDM 不再可以使用它。但关于该密钥的信息仍然可用，例如许可证销毁的记录。
 - `output-restricted`
-  - : There are output restrictions associated with the key based on the specified policy.
-    Media data decrypted with this key may be blocked from presentation.
-    The status indicates that the connection between the source and output (for example, your computer and an external display), is not trusted.
-    This might indicate that there are HDCP version mismatches between the source, intermediate devices, and output, or that intermediate connecting devices such as HDMI cables or video splitters are damaged or non-compliant.
-    An application might opt to use a higher HDCP version, content that does not require such a high version.
-    You should also check that intermediate devices and cables support HDCP, are connected firmly, and are not damaged.
+  - : 基于指定的策略，该密钥存在输出限制。使用此密钥解密后的媒体数据可能会被阻止呈现。该状态表示源与输出（例如计算机与外接显示器）之间的连接不受信任。这可能表示源、中间设备和输出之间存在 HDCP 版本不匹配，或者 HDMI 线缆、视频分配器等中间连接设备损坏或不合规。应用程序可能会选择使用更高版本的 HDCP，或使用不需要如此高版本的内容。你还应检查中间设备和线缆是否支持 HDCP、是否牢固连接以及是否损坏。
 - `output-downscaled`
-  - : There are output restrictions associated with the key based on the specified policy, however these restrictions might be relaxed if the content is played at a lower quality.
-    If this value is returned an application might play the content at a lower resolution, or it could choose to use a higher HDCP version, or use other content that does not require such a high HDCP version.
+  - : 基于指定的策略，该密钥存在输出限制，但如果以较低质量播放内容，这些限制可能会放宽。如果返回此值，应用程序可以以较低分辨率播放内容，也可以选择使用更高版本的 HDCP，或使用不需要如此高 HDCP 版本的其他内容。
 - `usable-in-future`
-  - : The key will become usable for decryption in future, once its start time is reached.
+  - : 一旦到达开始时间，该密钥将在未来可用于解密。
 - `status-pending`
-  - : The status of the key is not yet known and is being determined.
+  - : 该密钥的状态尚不确定，正在确定中。
 - `internal-error`
-  - : The key is not currently usable for decryption because of an error in the CDM.
-    The application can't do anything to handle this case.
+  - : 由于 CDM 中的错误，该密钥当前无法用于解密。应用程序无法处理此情况。
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
