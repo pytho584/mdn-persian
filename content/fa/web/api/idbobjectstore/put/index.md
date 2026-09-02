@@ -1,11 +1,5 @@
 ---
 title: "IDBObjectStore: put() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/put"
-status: "needs-translation"
----
-
----
-title: "IDBObjectStore: put() method"
 short-title: put()
 slug: Web/API/IDBObjectStore/put
 page-type: web-api-instance-method
@@ -14,17 +8,14 @@ browser-compat: api.IDBObjectStore.put
 
 {{ APIRef("IndexedDB") }} {{AvailableInWorkers}}
 
-The **`put()`** method of the {{domxref("IDBObjectStore")}} interface updates a given record in a database, or inserts a new record if the given item does not already exist.
+متد **`put()`** از رابط {{domxref("IDBObjectStore")}} یک رکورد مشخص را در پایگاه داده به‌روزرسانی می‌کند، یا اگر مورد داده شده وجود نداشته باشد، یک رکورد جدید درج می‌کند.
 
-It returns an {{domxref("IDBRequest")}} object, and, in a separate thread, creates a [structured clone](https://html.spec.whatwg.org/multipage/common-dom-interfaces.html#structured-clone) of the value and stores the cloned value in the object store. This is for adding new records, or updating existing records in an object store when the transaction's mode is `readwrite`. If the record is successfully stored, then a success event is fired on the returned request object with the `result` set to the key for the stored record, and the `transaction` set to the transaction in which this object store is opened.
+این متد یک شیء {{domxref("IDBRequest")}} برمی‌گرداند و در یک ریسه جداگانه، یک [clone ساختاریافته](https://html.spec.whatwg.org/multipage/common-dom-interfaces.html#structured-clone) از مقدار ایجاد کرده و آن را در object store ذخیره می‌کند. این کار برای افزودن رکوردهای جدید یا به‌روزرسانی رکوردهای موجود در یک object store زمانی که حالت تراکنش `readwrite` است، انجام می‌شود. اگر رکورد با موفقیت ذخیره شود، یک رویداد `success` بر روی شیء درخواست بازگشتی شلیک می‌شود که در آن `result` برابر با کلید رکورد ذخیره شده و `transaction` برابر با تراکنشی است که این object store در آن باز شده است.
 
-The put method is an _update or insert_ method.
-See the {{domxref("IDBObjectStore.add")}} method for an _insert only_ method.
+متد `put` یک متد _به‌روزرسانی یا درج_ است.
+برای یک متد _فقط درج_ به {{domxref("IDBObjectStore.add")}} مراجعه کنید.
 
-Bear in mind that if you have an {{domxref("IDBCursor","IDBCursor")}} to the record you
-want to update, updating it with {{domxref("IDBCursor.update()")}} is preferable to
-using `IDBObjectStore.put()`. Doing so makes it clear that an existing
-record will be updated, instead of a new record being inserted.
+به خاطر داشته باشید اگر یک {{domxref("IDBCursor","IDBCursor")}} به رکوردی که می‌خواهید به‌روزرسانی کنید دارید، به‌روزرسانی آن با {{domxref("IDBCursor.update()")}} ارجحیت دارد نسبت به استفاده از `IDBObjectStore.put()`. این کار明確 می‌کند که یک رکورد موجود به‌روزرسانی می‌شود، نه اینکه یک رکورد جدید درج شود.
 
 ## Syntax
 
@@ -36,46 +27,38 @@ put(item, key)
 ### Parameters
 
 - `item`
-  - : The item you wish to update (or insert).
+  - : موردی که می‌خواهید به‌روزرسانی (یا درج) کنید.
 - `key` {{optional_inline}}
-  - : The primary key of the record you want to update (e.g., from
-    {{domxref("IDBCursor.primaryKey")}}).
+  - : کلید اصلی رکوردی که می‌خواهید به‌روزرسانی کنید (مثلاً از {{domxref("IDBCursor.primaryKey")}}).
 
 ### Return value
 
-An {{domxref("IDBRequest")}} object on which subsequent events related to this operation are fired.
+یک شیء {{domxref("IDBRequest")}} که رویدادهای بعدی مربوط به این عملیات روی آن شلیک می‌شوند.
 
-If the operation is successful, the value of the request's {{domxref("IDBRequest.result", "result")}} property is the key for the new or updated record.
+اگر عملیات موفقیت‌آمیز باشد، مقدار خاصیت {{domxref("IDBRequest.result", "result")}} درخواست، کلید رکورد جدید یا به‌روزرسانی‌شده است.
 
 ### Exceptions
 
-This method may raise a {{domxref("DOMException")}} of one of the following types:
+این متد ممکن است یک {{domxref("DOMException")}} از یکی از انواع زیر را ایجاد کند:
 
 - `ReadOnlyError` {{domxref("DOMException")}}
-  - : Thrown if the transaction associated with this operation is in read-only <a href="/en-US/docs/Web/API/IDBTransaction#mode_constants">mode</a>.
+  - : اگر تراکنش مرتبط با این عملیات در حالت فقط-خواندنی (<a href="/en-US/docs/Web/API/IDBTransaction#mode_constants">mode</a>) باشد، ایجاد می‌شود.
 - `TransactionInactiveError` {{domxref("DOMException")}}
-  - : Thrown if this {{domxref("IDBObjectStore")}}'s transaction is inactive.
+  - : اگر تراکنش این {{domxref("IDBObjectStore")}} غیرفعال باشد، ایجاد می‌شود.
 - `DataError` {{domxref("DOMException")}}
-  - : Thrown if any of the following conditions apply:
-    - The object store uses [in-line keys](/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology#in-line_key) or has a [key generator](/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology#key_generator), and a `key` parameter was provided.
-    - The object store uses out-of-line keys and has no key generator, and no `key` parameter was provided.
-    - The object store uses in-line keys but no `key` generator, and the object store's [key path](/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology#key_path) does not yield a valid key.
-    - The `key` parameter was provided but does not contain a valid key.
+  - : اگر هر یک از شرایط زیر برقرار باشد، ایجاد می‌شود:
+    - object store از [کلیدهای درون خطی](/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology#in-line_key) یا [تولیدکننده کلید](/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology#key_generator) استفاده می‌کند و یک پارامتر `key` ارائه شده است.
+    - object store از کلیدهای برون خطی استفاده می‌کند و تولیدکننده کلید ندارد و هیچ پارامتر `key` ارائه نشده است.
+    - object store از کلیدهای درون خطی استفاده می‌کند اما تولیدکننده کلید ندارد و [مسیر کلید](/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology#key_path) object store یک کلید معتبر تولید نمی‌کند.
+    - پارامتر `key` ارائه شده است اما حاوی یک کلید معتبر نیست.
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the {{domxref("IDBObjectStore")}} has been deleted or removed.
+  - : اگر {{domxref("IDBObjectStore")}} حذف یا پاک شده باشد، ایجاد می‌شود.
 - `DataCloneError` {{domxref("DOMException")}}
-  - : Thrown if the data being stored could not be cloned by the internal structured cloning algorithm.
+  - : اگر داده‌های ذخیره‌شده نتوانند توسط الگوریتم clone ساختاریافته داخلی clone شوند، ایجاد می‌شود.
 
 ## Examples
 
-The following example requests a given record title; when that request is successful
-the `onsuccess` function gets the associated record from the
-{{domxref("IDBObjectStore")}} (made available
-as `objectStoreTitleRequest.result`), updates
-one property of the record, and then puts the updated record back into the object
-store in another request with `put()`. For a full working example, see
-our [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) app
-([view example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+مثال زیر یک عنوان مشخص را درخواست می‌کند؛ وقتی آن درخواست موفقیت‌آمیز باشد، تابع `onsuccess` رکورد مرتبط را از {{domxref("IDBObjectStore")}} (که به عنوان `objectStoreTitleRequest.result` در دسترس است) می‌گیرد، یک ویژگی از رکورد را به‌روزرسانی می‌کند و سپس رکورد به‌روزرسانی‌شده را با استفاده از `put()` در یک درخواست دیگر به object store بازمی‌گرداند. برای یک مثال کامل کارآمد، به برنامه [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ما مراجعه کنید ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
 
 ```js
 const title = "Walk dog";
@@ -120,10 +103,10 @@ objectStoreTitleRequest.onsuccess = () => {
 
 ## See also
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم محدوده‌ای از کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و ایجاد تغییرات در داده‌های خود: {{domxref("IDBObjectStore")}}
+- استفاده از نشانگرها: {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
