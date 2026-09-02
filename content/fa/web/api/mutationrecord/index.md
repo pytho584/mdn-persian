@@ -1,10 +1,4 @@
 ---
-title: "MutationRecord"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MutationRecord"
-status: "needs-translation"
----
-
----
 title: MutationRecord
 slug: Web/API/MutationRecord
 page-type: web-api-interface
@@ -13,39 +7,39 @@ browser-compat: api.MutationRecord
 
 {{APIRef("DOM")}}
 
-The **`MutationRecord`** is a read-only interface that represents an individual DOM mutation observed by a {{domxref("MutationObserver")}}. It is the object inside the array passed to the callback of a {{domxref("MutationObserver")}}.
+رابط **`MutationRecord`** یک رابط فقط‌خواندنی است که یک تغییر منفرد در DOM را نشان می‌دهد که توسط {{domxref("MutationObserver")}} مشاهده شده است. این شیء همان عنصرِ داخل آرایه‌ای است که به تابع بازخوان (callback) یک {{domxref("MutationObserver")}} ارسال می‌شود.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("MutationRecord.addedNodes")}} {{ReadOnlyInline}}
-  - : The nodes added by a mutation. Will be an empty {{domxref("NodeList")}} if no nodes were added.
+  - : گره‌هایی که بر اثر یک تغییر اضافه شده‌اند. اگر هیچ گره‌ای اضافه نشده باشد، یک {{domxref("NodeList")}} خالی خواهد بود.
 - {{domxref("MutationRecord.attributeName")}} {{ReadOnlyInline}}
-  - : The name of the changed attribute as a string, or `null`.
+  - : نام ویژگی تغییرکرده به‌صورت رشته، یا `null`.
 - {{domxref("MutationRecord.attributeNamespace")}} {{ReadOnlyInline}}
-  - : The namespace of the changed attribute as a string, or `null`.
+  - : فضای نام ویژگی تغییرکرده به‌صورت رشته، یا `null`.
 - {{domxref("MutationRecord.nextSibling")}} {{ReadOnlyInline}}
-  - : The next sibling of the added or removed nodes, or `null`.
+  - : همشأن بعدی گره‌های اضافه‌شده یا حذف‌شده، یا `null`.
 - {{domxref("MutationRecord.oldValue")}} {{ReadOnlyInline}}
-  - : The value depends on the {{domxref("MutationRecord.type")}}:
-    - For `attributes`, it is the value of the changed attribute before the change.
-    - For `characterData`, it is the data of the changed node before the change.
-    - For `childList`, it is `null`.
+  - : مقدار آن به {{domxref("MutationRecord.type")}} بستگی دارد:
+    - برای `attributes`، مقدار ویژگی تغییرکرده پیش از تغییر است.
+    - برای `characterData`، داده‌های گره تغییرکرده پیش از تغییر است.
+    - برای `childList`، مقدار `null` است.
 - {{domxref("MutationRecord.previousSibling")}} {{ReadOnlyInline}}
-  - : The previous sibling of the added or removed nodes, or `null`.
+  - : همشأن قبلی گره‌های اضافه‌شده یا حذف‌شده، یا `null`.
 - {{domxref("MutationRecord.removedNodes")}} {{ReadOnlyInline}}
-  - : The nodes removed by a mutation. Will be an empty {{domxref("NodeList")}} if no nodes were removed.
+  - : گره‌هایی که بر اثر یک تغییر حذف شده‌اند. اگر هیچ گره‌ای حذف نشده باشد، یک {{domxref("NodeList")}} خالی خواهد بود.
 - {{domxref("MutationRecord.target")}} {{ReadOnlyInline}}
-  - : The node the mutation affected, depending on the `MutationRecord.type`.
-    - For `attributes`, it is the element whose attribute changed.
-    - For `characterData`, it is the `CharacterData` node.
-    - For `childList`, it is the node whose children changed.
+  - : گره‌ای که تغییر روی آن اثر گذاشته است، بسته به `MutationRecord.type`:
+    - برای `attributes`، عنصری است که ویژگی آن تغییر کرده است.
+    - برای `characterData`، گره `CharacterData` است.
+    - برای `childList`، گره‌ای است که فرزندان آن تغییر کرده‌اند.
 - {{domxref("MutationRecord.type")}} {{ReadOnlyInline}}
-  - : A string representing the type of mutation: `attributes` if the mutation was an attribute mutation, `characterData` if it was a mutation to a `CharacterData` node, and `childList` if it was a mutation to the tree of nodes.
+  - : رشته‌ای که نوع تغییر را نشان می‌دهد: اگر تغییر از نوع تغییر ویژگی باشد `attributes`، اگر تغییری روی یک گره `CharacterData` باشد `characterData`، و اگر تغییری روی درخت گره‌ها باشد `childList` است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
