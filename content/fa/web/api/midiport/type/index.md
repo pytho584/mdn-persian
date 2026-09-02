@@ -1,11 +1,5 @@
 ---
 title: "MIDIPort: type property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MIDIPort/type"
-status: "needs-translation"
----
-
----
-title: "MIDIPort: type property"
 short-title: type
 slug: Web/API/MIDIPort/type
 page-type: web-api-instance-property
@@ -14,20 +8,20 @@ browser-compat: api.MIDIPort.type
 
 {{securecontext_header}}{{APIRef("Web MIDI API")}}
 
-The **`type`** read-only property of the {{domxref("MIDIPort")}} interface returns the type of the port, indicating whether this is an input or output MIDI port.
+ویژگی فقط‌خواندنی **`type`** در رابط {{domxref("MIDIPort")}} نوع پورت را برمی‌گرداند و مشخص می‌کند که این پورت، یک پورت ورودی یا خروجی MIDI است.
 
-## Value
+## مقدار
 
-A string containing the type of the port, one of:
+رشته‌ای که نوع پورت را مشخص می‌کند، یکی از موارد زیر:
 
 - `"input"`
-  - : The `MIDIPort` is an input port.
+  - : «MIDIPort» یک پورت ورودی است.
 - `"output"`
-  - : The `MIDIPort` is an output port.
+  - : «MIDIPort» یک پورت خروجی است.
 
-## Examples
+## مثال‌ها
 
-The following example loops through all input ports and prints the `type` of each to the console.
+مثال زیر روی همه پورت‌های ورودی حلقه می‌زند و `type` هر یک را در کنسول چاپ می‌کند.
 
 ```js
 for (const entry of midiAccess.inputs) {
@@ -36,10 +30,10 @@ for (const entry of midiAccess.inputs) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
