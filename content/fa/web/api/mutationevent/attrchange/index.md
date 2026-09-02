@@ -1,11 +1,5 @@
 ---
 title: "MutationEvent: attrChange property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MutationEvent/attrChange"
-status: "needs-translation"
----
-
----
-title: "MutationEvent: attrChange property"
 short-title: attrChange
 slug: Web/API/MutationEvent/attrChange
 page-type: web-api-instance-property
@@ -17,13 +11,13 @@ browser-compat: api.MutationEvent.attrChange
 
 {{APIRef("UI Events")}}{{Deprecated_Header}}{{non-standard_header}}
 
-The **`attrChange`** read-only property of the {{domxref("MutationEvent")}} interface returns a number indicating what kind of change triggered the `DOMAttrModified` event. The three possible values are `MODIFICATION` (`1`), `ADDITION` (`2`) or `REMOVAL` (`3`). It has no meaning for other events and is then set to `0`.
+خاصیت فقط‌خواندنی **`attrChange`** از رابط {{domxref("MutationEvent")}} عددی را برمی‌گرداند که نشان می‌دهد چه نوع تغییری رویداد `DOMAttrModified` را راه‌اندازی کرده است. سه مقدار ممکن عبارتند از `MODIFICATION` (`1`)، `ADDITION` (`2`) یا `REMOVAL` (`3`). این خاصیت برای رویدادهای دیگر معنایی ندارد و در آن صورت مقدار `0` می‌گیرد.
 
-## Value
+## مقدار
 
-An integer: `0`, `1` (`MODIFICATION`), `2` (`ADDITION`), or `3` (`REMOVAL`).
+یک عدد صحیح: `0`، `1` (`MODIFICATION`)، `2` (`ADDITION`) یا `3` (`REMOVAL`).
 
-## Examples
+## مثال‌ها
 
 ```js
 element.addEventListener("DOMAttrModified", (event) => {
@@ -31,10 +25,10 @@ element.addEventListener("DOMAttrModified", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
