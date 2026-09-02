@@ -1,7 +1,5 @@
 ---
 title: "NavigationDestination: getState() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigationDestination/getState"
-status: "needs-translation"
 ---
 
 ---
@@ -14,30 +12,27 @@ browser-compat: api.NavigationDestination.getState
 
 {{APIRef("Navigation API")}}
 
-The **`getState()`** method of the
-{{domxref("NavigationDestination")}} interface returns a clone of the developer-supplied state associated with the destination {{domxref("NavigationHistoryEntry")}}, or navigation operation (e.g., {{domxref("Navigation.navigate()", "navigate()")}}) as appropriate.
+**`getState()`** 方法属于 {{domxref("NavigationDestination")}} 接口，它返回与目标 {{domxref("NavigationHistoryEntry")}} 或导航操作（例如 {{domxref("Navigation.navigate()", "navigate()")}}）相关联的开发人员提供状态的克隆。
 
-## Syntax
+## 语法
 
 ```js-nolint
 getState()
 ```
 
-### Parameters
+### 参数
 
-None.
+无。
 
-### Return value
+### 返回值
 
-A value representing the state. This can be any type.
+表示状态的值。可以是任何类型。如果没有定义状态，则返回 `undefined`。
 
-If no state is defined, it returns `undefined`.
+### 异常
 
-### Exceptions
+无。
 
-None.
-
-## Examples
+## 示例
 
 ```js
 navigation.addEventListener("navigate", (event) => {
@@ -45,16 +40,16 @@ navigation.addEventListener("navigate", (event) => {
 });
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 另请参阅
 
 - [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
 - [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
-- Methods that allow state to be updated — {{domxref("Navigation.navigate()")}}, {{domxref("Navigation.reload()")}}, and {{domxref("Navigation.updateCurrentEntry()")}}
+- 允许更新状态的方法 — {{domxref("Navigation.navigate()")}}、{{domxref("Navigation.reload()")}} 和 {{domxref("Navigation.updateCurrentEntry()")}}
