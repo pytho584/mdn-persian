@@ -1,10 +1,4 @@
 ---
-title: "IDBObjectStore"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore"
-status: "needs-translation"
----
-
----
 title: IDBObjectStore
 slug: Web/API/IDBObjectStore
 page-type: web-api-interface
@@ -13,57 +7,57 @@ browser-compat: api.IDBObjectStore
 
 {{APIRef("IndexedDB")}} {{AvailableInWorkers}}
 
-The **`IDBObjectStore`** interface of the [IndexedDB API](/en-US/docs/Web/API/IndexedDB_API) represents an object store in a database. Records within an object store are sorted according to their keys. This sorting enables fast insertion, look-up, and ordered retrieval.
+رابطِ **`IDBObjectStore`** در [IndexedDB API](/en-US/docs/Web/API/IndexedDB_API) نمایانگر یک مخزن آبجکت (object store) در پایگاه‌داده است. رکوردهای درون یک مخزن آبجکت بر اساس کلیدهایشان مرتب می‌شوند. این مرتب‌سازی، درج سریع، جست‌وجو، و بازیابیِ مرتب‌شده را ممکن می‌سازد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("IDBObjectStore.indexNames")}} {{ReadOnlyInline}}
-  - : A list of the names of [indexes](/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology#index) on objects in this object store.
+  - : فهرستی از نام «ایندکس»های مربوط به اشیای موجود در این مخزن آبجکت.
 - {{domxref("IDBObjectStore.keyPath")}} {{ReadOnlyInline}}
-  - : The [key path](/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology#key_path) of this object store. If this attribute is `null`, the application must provide a key for each modification operation.
+  - : [مسیر کلید](/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology#key_path) این مخزن آبجکت. اگر این ویژگی `null` باشد، برنامه باید برای هر عملیات تغییر، یک کلید فراهم کند.
 - {{domxref("IDBObjectStore.name")}}
-  - : The name of this object store.
+  - : نام این مخزن آبجکت.
 - {{domxref("IDBObjectStore.transaction")}} {{ReadOnlyInline}}
-  - : The {{domxref("IDBTransaction")}} object to which this object store belongs.
+  - : شیء {{domxref("IDBTransaction")}} ای که این مخزن آبجکت به آن تعلق دارد.
 - {{domxref("IDBObjectStore.autoIncrement")}} {{ReadOnlyInline}}
-  - : The value of the auto increment flag for this object store.
+  - : مقدار پرچم خودافزایش (auto increment) برای این مخزن آبجکت.
 
-## Instance methods
+## متدهای نمونه
 
 - {{domxref("IDBObjectStore.add()")}}
-  - : Returns an {{domxref("IDBRequest")}} object and, in a separate thread, creates a [structured clone](https://html.spec.whatwg.org/multipage/common-dom-interfaces.html#structured-clone) of the `value`, and stores the cloned value in the object store. This is for adding new records to an object store.
+  - : یک شیء {{domxref("IDBRequest")}} برمی‌گرداند و در یک نخ جداگانه، یک [کپی ساختاریافته (structured clone)](https://html.spec.whatwg.org/multipage/common-dom-interfaces.html#structured-clone) از `value` می‌سازد و مقدار کپی‌شده را در مخزن آبجکت ذخیره می‌کند. از این متد برای افزودن رکوردهای جدید به یک مخزن آبجکت استفاده می‌شود.
 - {{domxref("IDBObjectStore.clear()")}}
-  - : Creates and immediately returns an {{domxref("IDBRequest")}} object, and clears this object store in a separate thread. This is for deleting all current records out of an object store.
+  - : یک شیء {{domxref("IDBRequest")}} می‌سازد و بلافاصله آن را برمی‌گرداند و در یک نخ جداگانه، این مخزن آبجکت را پاک می‌کند. از این متد برای حذف همهٔ رکوردهای فعلی از یک مخزن آبجکت استفاده می‌شود.
 - {{domxref("IDBObjectStore.count()")}}
-  - : Returns an {{domxref("IDBRequest")}} object and, in a separate thread, returns the total number of records that match the provided key or {{domxref("IDBKeyRange")}}. If no arguments are provided, it returns the total number of records in the store.
+  - : یک شیء {{domxref("IDBRequest")}} برمی‌گرداند و در یک نخ جداگانه، تعداد کل رکوردهایی را برمی‌گرداند که با کلید داده‌شده یا {{domxref("IDBKeyRange")}} مطابقت دارند. اگر آرگومانی ارسال نشود، تعداد کل رکوردهای مخزن را برمی‌گرداند.
 - {{domxref("IDBObjectStore.createIndex()")}}
-  - : Creates a new index during a version upgrade, returning a new {{domxref("IDBIndex")}} object in the connected database.
+  - : ایندکس جدیدی را در هنگام ارتقای نسخه می‌سازد و یک شیء {{domxref("IDBIndex")}} جدید را در پایگاه‌دادهٔ متصل برمی‌گرداند.
 - {{domxref("IDBObjectStore.delete()")}}
-  - : returns an {{domxref("IDBRequest")}} object and, in a separate thread, deletes the store object selected by the specified key. This is for deleting individual records out of an object store.
+  - : یک شیء {{domxref("IDBRequest")}} برمی‌گرداند و در یک نخ جداگانه، رکورد انتخاب‌شده با کلید مشخص‌شده را از مخزن آبجکت حذف می‌کند. از این متد برای حذف رکوردهای تکی از یک مخزن آبجکت استفاده می‌شود.
 - {{domxref("IDBObjectStore.deleteIndex()")}}
-  - : Destroys the specified index in the connected database, used during a version upgrade.
+  - : ایندکس مشخص‌شده را در پایگاه‌دادهٔ متصل از بین می‌برد؛ در هنگام ارتقای نسخه استفاده می‌شود.
 - {{domxref("IDBObjectStore.get()")}}
-  - : Returns an {{domxref("IDBRequest")}} object and, in a separate thread, returns the store object store selected by the specified key. This is for retrieving specific records from an object store.
+  - : یک شیء {{domxref("IDBRequest")}} برمی‌گرداند و در یک نخ جداگانه، رکورد انتخاب‌شده با کلید مشخص‌شده را برمی‌گرداند. از این متد برای بازیابی رکوردهای خاص از یک مخزن آبجکت استفاده می‌شود.
 - {{domxref("IDBObjectStore.getKey()")}}
-  - : Returns an {{domxref("IDBRequest")}} object and, in a separate thread, retrieves and returns the record key for the object in the object stored matching the specified parameter.
+  - : یک شیء {{domxref("IDBRequest")}} برمی‌گرداند و در یک نخ جداگانه، کلیدِ رکوردِ شیءِ موجود در مخزن آبجکت را که با پارامتر مشخص‌شده مطابقت دارد، بازیابی و برمی‌گرداند.
 - {{domxref("IDBObjectStore.getAll()")}}
-  - : Returns an {{domxref("IDBRequest")}} object and, in a separate thread, retrieves all objects in the object store matching the specified parameter or all objects in the store if no parameters are given.
+  - : یک شیء {{domxref("IDBRequest")}} برمی‌گرداند و در یک نخ جداگانه، همهٔ اشیای موجود در مخزن آبجکت را که با پارامتر مشخص‌شده مطابقت دارند بازیابی می‌کند؛ اگر پارامتری داده نشود، همهٔ اشیای مخزن را برمی‌گرداند.
 - {{domxref("IDBObjectStore.getAllKeys()")}}
-  - : Returns an {{domxref("IDBRequest")}} object and, in a separate thread, retrieves record keys for all objects in the object store matching the specified parameter or all objects in the store if no parameters are given.
+  - : یک شیء {{domxref("IDBRequest")}} برمی‌گرداند و در یک نخ جداگانه، کلیدِ رکوردِ همهٔ اشیای موجود در مخزن آبجکت را که با پارامتر مشخص‌شده مطابقت دارند بازیابی می‌کند؛ اگر پارامتری داده نشود، کلیدِ رکوردِ همهٔ اشیای مخزن را برمی‌گرداند.
 - {{domxref("IDBObjectStore.getAllRecords()")}}
-  - : Returns an {{domxref("IDBRequest")}} object and, in a separate thread, finds all matching records in the object store (including primary keys and values) that correspond to the given key or are in range, if `key` is an {{domxref("IDBKeyRange")}}.
+  - : یک شیء {{domxref("IDBRequest")}} برمی‌گرداند و در یک نخ جداگانه، همهٔ رکوردهای منطبق در مخزن آبجکت (شامل کلیدهای اصلی و مقادیر) را می‌یابد که با کلید داده‌شده مطابقت دارند یا، اگر `key` یک {{domxref("IDBKeyRange")}} باشد، در محدودهٔ آن قرار می‌گیرند.
 - {{domxref("IDBObjectStore.index()")}}
-  - : Opens an index from this object store after which it can, for example, be used to return a sequence of records sorted by that index using a cursor.
+  - : یک ایندکس را از این مخزن آبجکت باز می‌کند؛ پس از آن می‌توان برای مثال با استفاده از یک کرسر، دنباله‌ای از رکوردها را که بر اساس آن ایندکس مرتب شده‌اند بازگرداند.
 - {{domxref("IDBObjectStore.openCursor()")}}
-  - : Returns an {{domxref("IDBRequest")}} object and, in a separate thread, returns a new {{domxref("IDBCursorWithValue")}} object. Used for iterating through an object store by primary key with a cursor.
+  - : یک شیء {{domxref("IDBRequest")}} برمی‌گرداند و در یک نخ جداگانه، یک شیء جدید {{domxref("IDBCursorWithValue")}} برمی‌گرداند. برای پیمایش یک مخزن آبجکت بر اساس کلید اصلی با کرسر استفاده می‌شود.
 - {{domxref("IDBObjectStore.openKeyCursor()")}}
-  - : Returns an {{domxref("IDBRequest")}} object and, in a separate thread, returns a new {{domxref("IDBCursor")}}. Used for iterating through an object store with a key.
+  - : یک شیء {{domxref("IDBRequest")}} برمی‌گرداند و در یک نخ جداگانه، یک {{domxref("IDBCursor")}} جدید برمی‌گرداند. برای پیمایش یک مخزن آبجکت با کلید استفاده می‌شود.
 - {{domxref("IDBObjectStore.put()")}}
-  - : Returns an {{domxref("IDBRequest")}} object and, in a separate thread, creates a [structured clone](https://html.spec.whatwg.org/multipage/common-dom-interfaces.html#structured-clone) of the `value`, and stores the cloned value in the object store. This is for updating existing records in an object store when the transaction's mode is `readwrite`.
+  - : یک شیء {{domxref("IDBRequest")}} برمی‌گرداند و در یک نخ جداگانه، یک [کپی ساختاریافته (structured clone)](https://html.spec.whatwg.org/multipage/common-dom-interfaces.html#structured-clone) از `value` می‌سازد و مقدار کپی‌شده را در مخزن آبجکت ذخیره می‌کند. از این متد برای به‌روزرسانی رکوردهای موجود در یک مخزن آبجکت زمانی استفاده می‌شود که حالت تراکنش `readwrite` باشد.
 
-## Example
+## مثال
 
-This example shows a variety of different uses of object stores, from updating the data structure with {{domxref("IDBObjectStore.createIndex")}} inside an `onupgradeneeded` function, to adding a new item to our object store with {{domxref("IDBObjectStore.add")}}. For a full working example, see our [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) app ([view example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+این مثال کاربردهای گوناگون مخزن‌های آبجکت را نشان می‌دهد؛ از به‌روزرسانی ساختار داده با {{domxref("IDBObjectStore.createIndex")}} درون تابع `onupgradeneeded` تا افزودن یک آیتم جدید به مخزن آبجکت با {{domxref("IDBObjectStore.add")}}. برای مشاهدهٔ مثال کامل و قابل اجرا، به برنامهٔ [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) مراجعه کنید ([مشاهدهٔ مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
 
 ```js
 // Let us open our database
@@ -147,19 +141,19 @@ objectStoreRequest.onsuccess = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم محدوده‌ای از کلیدها: {{domxref("IDBKeyRange")}}
+- استفاده از کرسرها: {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهدهٔ مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
