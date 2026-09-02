@@ -1,10 +1,4 @@
 ---
-title: "HTMLVideoElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLVideoElement"
-status: "needs-translation"
----
-
----
 title: HTMLVideoElement
 slug: Web/API/HTMLVideoElement
 page-type: web-api-interface
@@ -13,79 +7,79 @@ browser-compat: api.HTMLVideoElement
 
 {{APIRef("HTML DOM")}}
 
-Implemented by the {{HTMLElement("video")}} element, the **`HTMLVideoElement`** interface provides special properties and methods for manipulating video objects. It also inherits properties and methods of {{domxref("HTMLMediaElement")}} and {{domxref("HTMLElement")}}.
+رابط **`HTMLVideoElement`** توسط عنصر {{HTMLElement("video")}} پیاده‌سازی می‌شود و ویژگی‌ها و روش‌های خاصی برای کار با اشیاء ویدئویی فراهم می‌کند. این رابط همچنین ویژگی‌ها و روش‌های {{domxref("HTMLMediaElement")}} و {{domxref("HTMLElement")}} را به ارث می‌برد.
 
-The list of [supported media formats](/en-US/docs/Web/Media/Guides/Formats) varies from one browser to the other. You should either provide your video in a single format that all the relevant browsers supports, or provide multiple video sources in enough different formats that all the browsers you need to support are covered.
+فهرست [فرمت‌های رسانه‌ای پشتیبانی‌شده](/en-US/docs/Web/Media/Guides/Formats) از مرورگری به مرورگر دیگر متفاوت است. شما باید ویدئوی خود را یا در قالبی واحد که همه مرورگرهای مرتبط از آن پشتیبانی می‌کنند ارائه دهید، یا چندین منبع ویدئویی با فرمت‌های مختلف به اندازه کافی فراهم کنید تا همه مرورگرهایی که باید پشتیبانی کنید پوشش داده شوند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent interface, {{domxref("HTMLMediaElement")}}, and {{domxref("HTMLElement")}}._
+_ویژگی‌ها را از رابط والد خود، {{domxref("HTMLMediaElement")}} و {{domxref("HTMLElement")}} به ارث می‌برد._
 
 - {{DOMxRef("HTMLVideoElement.disablePictureInPicture")}}
-  - : Indicates if the user agent should suggest the picture-in-picture to users, or not.
+  - : نشان می‌دهد که آیا عامل کاربر باید حالت تصویر در تصویر را به کاربران پیشنهاد دهد یا خیر.
 - {{domxref("HTMLVideoElement.height")}}
-  - : A string that reflects the [`height`](/en-US/docs/Web/HTML/Reference/Elements/video#height) HTML attribute, which specifies the height of the display area, in CSS pixels.
+  - : یک رشته که ویژگی HTML [`height`](/en-US/docs/Web/HTML/Reference/Elements/video#height) را منعکس می‌کند و ارتفاع ناحیه نمایش را بر حسب پیکسل‌های CSS مشخص می‌کند.
 - {{domxref("HTMLVideoElement.poster")}}
-  - : A string that reflects the [`poster`](/en-US/docs/Web/HTML/Reference/Elements/video#poster) HTML attribute, which specifies an image to show while no video data is available.
+  - : یک رشته که ویژگی HTML [`poster`](/en-US/docs/Web/HTML/Reference/Elements/video#poster) را منعکس می‌کند و تصویری را مشخص می‌کند که تا زمانی که داده ویدئویی در دسترس نباشد نمایش داده شود.
 - {{domxref("HTMLVideoElement.videoHeight")}} {{ReadOnlyInline}}
-  - : Returns an unsigned integer value indicating the intrinsic height of the resource in CSS pixels, or 0 if no media is available yet.
+  - : یک مقدار عدد صحیح بدون علامت (unsigned integer) برمی‌گرداند که ارتفاع ذاتی منبع را بر حسب پیکسل‌های CSS نشان می‌دهد، یا اگر هنوز رسانه‌ای در دسترس نباشد ۰ را برمی‌گرداند.
 - {{domxref("HTMLVideoElement.videoWidth")}} {{ReadOnlyInline}}
-  - : Returns an unsigned integer value indicating the intrinsic width of the resource in CSS pixels, or 0 if no media is available yet.
+  - : یک مقدار عدد صحیح بدون علامت (unsigned integer) برمی‌گرداند که عرض ذاتی منبع را بر حسب پیکسل‌های CSS نشان می‌دهد، یا اگر هنوز رسانه‌ای در دسترس نباشد ۰ را برمی‌گرداند.
 - {{domxref("HTMLVideoElement.width")}}
-  - : A string that reflects the [`width`](/en-US/docs/Web/HTML/Reference/Elements/video#width) HTML attribute, which specifies the width of the display area, in CSS pixels.
+  - : یک رشته که ویژگی HTML [`width`](/en-US/docs/Web/HTML/Reference/Elements/video#width) را منعکس می‌کند و عرض ناحیه نمایش را بر حسب پیکسل‌های CSS مشخص می‌کند.
 
-### Firefox-specific properties
+### ویژگی‌های مختص فایرفاکس
 
 - {{domxref("HTMLVideoElement.mozParsedFrames")}} {{Non-standard_Inline}} {{ReadOnlyInline}} {{deprecated_inline}}
-  - : Returns an `unsigned long` with the count of video frames that have been parsed from the media resource.
+  - : یک `unsigned long` با تعداد فریم‌های ویدئویی که از منبع رسانه تجزیه شده‌اند برمی‌گرداند.
 - {{domxref("HTMLVideoElement.mozDecodedFrames")}} {{Non-standard_Inline}} {{ReadOnlyInline}} {{deprecated_inline}}
-  - : Returns an `unsigned long` with the count of parsed video frames that have been decoded into images.
+  - : یک `unsigned long` با تعداد فریم‌های ویدئویی تجزیه‌شده که به تصویر رمزگشایی شده‌اند برمی‌گرداند.
 - {{domxref("HTMLVideoElement.mozPresentedFrames")}} {{Non-standard_Inline}} {{ReadOnlyInline}} {{deprecated_inline}}
-  - : Returns an `unsigned long` with the count of decoded frames that have been presented to the rendering pipeline for painting.
+  - : یک `unsigned long` با تعداد فریم‌های رمزگشایی‌شده که به خط لوله رندر برای نقاشی ارائه شده‌اند برمی‌گرداند.
 - {{domxref("HTMLVideoElement.mozPaintedFrames")}} {{Non-standard_Inline}} {{ReadOnlyInline}} {{deprecated_inline}}
-  - : Returns an `unsigned long` with the count of presented frames which were painted on the screen.
+  - : یک `unsigned long` با تعداد فریم‌های ارائه‌شده که روی صفحه نقاشی شده‌اند برمی‌گرداند.
 - {{domxref("HTMLVideoElement.mozFrameDelay")}} {{Non-standard_Inline}} {{ReadOnlyInline}} {{deprecated_inline}}
-  - : Returns a `double` with the time which the last painted video frame was late by, in seconds.
+  - : یک `double` با مدت زمانی (بر حسب ثانیه) که آخرین فریم ویدئوی نقاشی‌شده با تأخیر بوده است برمی‌گرداند.
 - {{domxref("HTMLVideoElement.mozHasAudio")}} {{Non-standard_Inline}} {{ReadOnlyInline}} {{deprecated_inline}}
-  - : Returns a boolean indicating if there is some audio associated with the video.
+  - : یک مقدار بولی (boolean) برمی‌گرداند که نشان می‌دهد آیا صدایی با ویدئو مرتبط است یا خیر.
 
-## Instance methods
+## روش‌های نمونه
 
-_Inherits methods from its parent interface, {{domxref("HTMLMediaElement")}}, and {{domxref("HTMLElement")}}._
+_روش‌ها را از رابط والد خود، {{domxref("HTMLMediaElement")}} و {{domxref("HTMLElement")}} به ارث می‌برد._
 
 - {{DOMxRef("HTMLVideoElement.cancelVideoFrameCallback()")}}
-  - : Cancels a previously-registered video frame callback (see {{DOMxRef("HTMLVideoElement.requestVideoFrameCallback", "requestVideoFrameCallback()")}}).
+  - : یک فراخوان فریم ویدئویی که قبلاً ثبت شده است را لغو می‌کند (به {{DOMxRef("HTMLVideoElement.requestVideoFrameCallback", "requestVideoFrameCallback()")}} مراجعه کنید).
 - {{domxref("HTMLVideoElement.getVideoPlaybackQuality()")}}
-  - : Returns a {{domxref("VideoPlaybackQuality")}} object that contains the current playback metrics. This information includes things like the number of dropped or corrupted frames, as well as the total number of frames.
+  - : یک شی {{domxref("VideoPlaybackQuality")}} برمی‌گرداند که معیارهای پخش جاری را شامل می‌شود. این اطلاعات شامل مواردی مانند تعداد فریم‌های افتاده یا خراب و همچنین تعداد کل فریم‌ها است.
 - {{DOMxRef("HTMLVideoElement.requestPictureInPicture()")}}
-  - : Requests that the user agent enters the video into picture-in-picture mode.
+  - : درخواست می‌کند که عامل کاربر ویدئو را وارد حالت تصویر در تصویر کند.
 - {{DOMxRef("HTMLVideoElement.requestVideoFrameCallback()")}}
-  - : Registers a callback function that runs when a new video frame is sent to the compositor. This enables developers to perform efficient operations on each video frame.
+  - : یک تابع فراخوان ثبت می‌کند که وقتی یک فریم ویدئویی جدید به ترکیب‌کننده (compositor) ارسال می‌شود اجرا می‌شود. این به توسعه‌دهندگان امکان می‌دهد تا عملیات کارآمدی را روی هر فریم ویدئو انجام دهند.
 
-## Events
+## رویدادها
 
-_Inherits events from its parent interface, {{domxref("HTMLMediaElement")}}, and {{domxref("HTMLElement")}}._
+_رویدادها را از رابط والد خود، {{domxref("HTMLMediaElement")}} و {{domxref("HTMLElement")}} به ارث می‌برد._
 
-Listen to these events using {{domxref("EventTarget.addEventListener", "addEventListener()")}} or by assigning an event listener to the `oneventname` property of this interface.
+با استفاده از {{domxref("EventTarget.addEventListener", "addEventListener()")}} یا با انتساب یک شنونده رویداد به ویژگی `oneventname` این رابط به این رویدادها گوش دهید.
 
 - {{DOMxRef("HTMLVideoElement.enterpictureinpicture_event", "enterpictureinpicture")}}
-  - : Fired when the `HTMLVideoElement` enters picture-in-picture mode successfully.
+  - : زمانی فعال می‌شود که `HTMLVideoElement` با موفقیت وارد حالت تصویر در تصویر شود.
 - {{DOMxRef("HTMLVideoElement.leavepictureinpicture_event", "leavepictureinpicture")}}
-  - : Fired when the `HTMLVideoElement` leaves picture-in-picture mode successfully.
+  - : زمانی فعال می‌شود که `HTMLVideoElement` با موفقیت از حالت تصویر در تصویر خارج شود.
 - {{DOMxRef("HTMLVideoElement.resize_event", "resize")}}
-  - : Fires when one or both of the {{domxref("HTMLVideoElement.videoWidth", "videoWidth")}} and {{domxref("HTMLVideoElement.videoHeight", "videoHeight")}} properties have just been updated.
+  - : زمانی فعال می‌شود که یک یا هر دو ویژگی {{domxref("HTMLVideoElement.videoWidth", "videoWidth")}} و {{domxref("HTMLVideoElement.videoHeight", "videoHeight")}} به‌روزرسانی شده‌اند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- HTML element implementing this interface: {{HTMLElement("video")}}.
-- [Supported media formats](/en-US/docs/Web/Media/Guides/Formats)
+- عنصر HTML پیاده‌ساز این رابط: {{HTMLElement("video")}}.
+- [فرمت‌های رسانه‌ای پشتیبانی‌شده](/en-US/docs/Web/Media/Guides/Formats)
