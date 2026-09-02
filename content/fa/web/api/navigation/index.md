@@ -1,10 +1,4 @@
 ---
-title: "Navigation"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigation"
-status: "needs-translation"
----
-
----
 title: Navigation
 slug: Web/API/Navigation
 page-type: web-api-interface
@@ -13,71 +7,64 @@ browser-compat: api.Navigation
 
 {{APIRef("Navigation API")}}
 
-The **`Navigation`** interface of the {{domxref("Navigation API", "Navigation API", "", "nocode")}} allows control over all navigation actions for the current `window` in one central place, including initiating navigations programmatically, examining navigation history entries, and managing navigations as they happen.
+رابطه‌ی **`Navigation`** در {{domxref("Navigation API", "Navigation API", "", "nocode")}} امکان کنترل تمام کنش‌های ناوبری برای `window` فعلی را در یک مکان متمرکز فراهم می‌کند؛ از جمله شروع ناوبری‌ها به صورت برنامه‌نویسی‌شده، بررسی ورودی‌های تاریخچه‌ی ناوبری و مدیریت ناوبری‌ها هنگام وقوع آن‌ها.
 
-It is accessed via the {{domxref("Window.navigation")}} property.
+این رابط از طریق ویژگی {{domxref("Window.navigation")}} در دسترس است.
 
-The Navigation API only exposes history entries created in the current browsing context that have the same origin as the current page (e.g., not navigations inside embedded {{htmlelement("iframe")}}s, or cross-origin navigations), providing an accurate list of all previous history entries just for your app. This makes traversing the history a much less fragile proposition than with the older {{domxref("History API", "History API", "", "nocode")}}.
+Navigation API تنها ورودی‌های تاریخچه‌ای را در معرض قرار می‌دهد که در بستر مرور (browsing context) فعلی ایجاد شده‌اند و همان مبدأ (origin) صفحه‌ی فعلی را دارند (مثلاً نه ناوبری‌های داخل {{htmlelement("iframe")}}های توکار و نه ناوبری‌های بین‌مبدأ)؛ بنابراین فهرست دقیقی از تمام ورودی‌های قبلی تاریخچه را فقط برای برنامه‌ی شما فراهم می‌کند. این امر پیمایش در تاریخچه را در مقایسه با {{domxref("History API", "History API", "", "nocode")}} قدیمی به مراتب کم‌شکننده‌تر می‌کند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{DOMxRef("EventTarget")}}._
+_ویژگی‌های والد خود، {{DOMxRef("EventTarget")}} را به ارث می‌برد._
 
 - {{domxref("Navigation.activation", "activation")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref("NavigationActivation")}} object containing information about the most recent cross-document navigation, which "activated" this Document.
+  - : یک شیء {{domxref("NavigationActivation")}} برمی‌گرداند که حاوی اطلاعاتی درباره‌ی آخرین ناوبری بین‌اسنادی (cross-document) است که این Document را «فعال» کرده است.
 - {{domxref("Navigation.canGoBack", "canGoBack")}} {{ReadOnlyInline}}
-  - : Returns `true` if it is possible to navigate backwards in the navigation history
-    (i.e., the {{domxref("Navigation.currentEntry", "currentEntry")}} is not the first one in the history entry list),
-    and `false` if it is not.
+  - : اگر امکان حرکت به عقب در تاریخچه‌ی ناوبری وجود داشته باشد (یعنی {{domxref("Navigation.currentEntry", "currentEntry")}} اولین ورودی فهرست تاریخچه نباشد) `true` برمی‌گرداند و در غیر این صورت `false`.
 - {{domxref("Navigation.canGoForward", "canGoForward")}} {{ReadOnlyInline}}
-  - : Returns `true` if it is possible to navigate forwards in the navigation history
-    (i.e., the {{domxref("Navigation.currentEntry", "currentEntry")}} is not the last one in the history entry list),
-    and `false` if it is not.
+  - : اگر امکان حرکت به جلو در تاریخچه‌ی ناوبری وجود داشته باشد (یعنی {{domxref("Navigation.currentEntry", "currentEntry")}} آخرین ورودی فهرست تاریخچه نباشد) `true` برمی‌گرداند و در غیر این صورت `false`.
 - {{domxref("Navigation.currentEntry", "currentEntry")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref("NavigationHistoryEntry")}} object representing the location the user is currently
-    navigated to right now.
+  - : یک شیء {{domxref("NavigationHistoryEntry")}} برمی‌گرداند که مکان فعلی کاربر را نشان می‌دهد؛ یعنی جایی که کاربر در حال حاضر به آن ناوبری شده است.
 - {{domxref("Navigation.transition", "transition")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref("NavigationTransition")}} object representing the status of an in-progress navigation,
-    which can be used to track it. Returns `null` if no navigation is currently in progress.
+  - : یک شیء {{domxref("NavigationTransition")}} برمی‌گرداند که وضعیت یک ناوبری در حال انجام را نشان می‌دهد و می‌توان از آن برای پیگیری ناوبری استفاده کرد. اگر در حال حاضر ناوبری در جریان نباشد `null` برمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
-_Inherits methods from its parent, {{DOMxRef("EventTarget")}}._
+_روش‌های والد خود، {{DOMxRef("EventTarget")}} را به ارث می‌برد._
 
 - {{domxref("Navigation.back", "back()")}}
-  - : Navigates backwards by one entry in the navigation history.
+  - : با یک ورودی در تاریخچه‌ی ناوبری به عقب می‌رود.
 - {{domxref("Navigation.entries", "entries()")}}
-  - : Returns an array of {{domxref("NavigationHistoryEntry")}} objects representing all existing history entries.
+  - : آرایه‌ای از اشیاء {{domxref("NavigationHistoryEntry")}} برمی‌گرداند که تمام ورودی‌های موجود تاریخچه را نشان می‌دهد.
 - {{domxref("Navigation.forward", "forward()")}}
-  - : Navigates forwards by one entry in the navigation history.
+  - : با یک ورودی در تاریخچه‌ی ناوبری به جلو می‌رود.
 - {{domxref("Navigation.navigate", "navigate()")}}
-  - : Navigates to a specific URL, updating any provided state in the history entries list.
+  - : به یک URL مشخص ناوبری می‌کند و هر state ارائه‌شده را در فهرست ورودی‌های تاریخچه به‌روزرسانی می‌کند.
 - {{domxref("Navigation.reload", "reload()")}}
-  - : Reloads the current URL, updating any provided state in the history entries list.
+  - : URL فعلی را بارگذاری مجدد می‌کند و هر state ارائه‌شده را در فهرست ورودی‌های تاریخچه به‌روزرسانی می‌کند.
 - {{domxref("Navigation.traverseTo", "traverseTo()")}}
-  - : Navigates to a specific {{domxref("NavigationHistoryEntry")}} identified by {{domxref("NavigationHistoryEntry.key", "key")}}.
+  - : به یک {{domxref("NavigationHistoryEntry")}} مشخص که با {{domxref("NavigationHistoryEntry.key", "key")}} شناسایی شده است ناوبری می‌کند.
 - {{domxref("Navigation.updateCurrentEntry", "updateCurrentEntry()")}}
-  - : Updates the state of the {{domxref("Navigation.currentEntry","currentEntry")}}; used
-    in cases where the state change will be independent from a navigation or reload.
+  - : state ویژگی {{domxref("Navigation.currentEntry","currentEntry")}} را به‌روزرسانی می‌کند؛ در مواردی استفاده می‌شود که تغییر state مستقل از ناوبری یا بارگذاری مجدد باشد.
 
-## Events
+## رویدادها
 
-_Inherits events from its parent, {{DOMxRef("EventTarget")}}._
+_رویدادهای والد خود، {{DOMxRef("EventTarget")}} را به ارث می‌برد._
 
 - {{domxref("Navigation/currententrychange_event", "currententrychange")}}
-  - : Fired when the {{domxref("Navigation.currentEntry")}} has changed.
+  - : زمانی که {{domxref("Navigation.currentEntry")}} تغییر کرده باشد، پرتاب می‌شود.
 - {{domxref("Navigation/navigate_event", "navigate")}}
-  - : Fired when [any type of navigation](https://github.com/WICG/navigation-api#appendix-types-of-navigations) is initiated, allowing you to intercept as required.
+  - : زمانی که [هر نوع ناوبری](https://github.com/WICG/navigation-api#appendix-types-of-navigations) آغاز شود، پرتاب می‌شود و به شما امکان می‌دهد در صورت نیاز آن را رهگیری (intercept) کنید.
 - {{domxref("Navigation/navigateerror_event", "navigateerror")}}
-  - : Fired when a navigation fails.
+  - : زمانی که یک ناوبری با شکست مواجه شود، پرتاب می‌شود.
 - {{domxref("Navigation/navigatesuccess_event", "navigatesuccess")}}
-  - : Fired when a successful navigation has finished.
+  - : زمانی که یک ناوبری موفق به پایان برسد، پرتاب می‌شود.
 
-## Examples
+## نمونه‌ها
 
-### Moving forwards and backwards in the history
+### حرکت به جلو و عقب در تاریخچه
 
 ```js
 async function backHandler() {
@@ -101,7 +88,7 @@ async function forwardHandler() {
 }
 ```
 
-### Traversing to a specific history entry
+### پیمایش به یک ورودی مشخص در تاریخچه
 
 ```js
 // On JS startup, get the key of the first loaded page
@@ -113,34 +100,34 @@ backToHomeButton.onclick = () => navigation.traverseTo(key);
 await navigation.navigate("/another_url").finished;
 ```
 
-### Navigating and updating state
+### ناوبری و به‌روزرسانی state
 
 ```js
 navigation.navigate(url, { state: newState });
 ```
 
-Or
+یا
 
 ```js
 navigation.reload({ state: newState });
 ```
 
-Or if the state is independent from a navigation or reload:
+یا اگر state مستقل از ناوبری یا بارگذاری مجدد باشد:
 
 ```js
 navigation.updateCurrentEntry({ state: newState });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
-- [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
-- [Navigation API live demo](https://mdn.github.io/dom-examples/navigation-api/) ([view demo source](https://github.com/mdn/dom-examples/tree/main/navigation-api))
+- [مسیریابی مدرن سمت کلاینت: Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
+- [توضیح‌دهنده‌ی Navigation API](https://github.com/WICG/navigation-api/blob/main/README.md)
+- [دموی زنده‌ی Navigation API](https://mdn.github.io/dom-examples/navigation-api/) ([مشاهده‌ی سورس دمو](https://github.com/mdn/dom-examples/tree/main/navigation-api))
