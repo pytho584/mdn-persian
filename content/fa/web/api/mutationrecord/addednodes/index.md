@@ -1,11 +1,5 @@
 ---
 title: "MutationRecord: addedNodes property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MutationRecord/addedNodes"
-status: "needs-translation"
----
-
----
-title: "MutationRecord: addedNodes property"
 short-title: addedNodes
 slug: Web/API/MutationRecord/addedNodes
 page-type: web-api-instance-property
@@ -14,19 +8,19 @@ browser-compat: api.MutationRecord.addedNodes
 
 {{APIRef("DOM")}}
 
-The {{domxref("MutationRecord")}} read-only property **`addedNodes`** is a {{domxref("NodeList")}} of nodes added to a target node by a mutation observed with a {{domxref("MutationObserver")}}.
+خاصیت فقط-خواندنی **`addedNodes`** از {{domxref("MutationRecord")}}، یک {{domxref("NodeList")}} از گره‌هایی است که در اثر یک جهش (mutation) مشاهده‌شده با {{domxref("MutationObserver")}} به یک گره هدف اضافه شده‌اند.
 
-## Value
+## مقدار
 
-A {{domxref("NodeList")}} containing the nodes added to the target of the mutation observed by the {{domxref("MutationObserver")}}.
+یک {{domxref("NodeList")}} شامل گره‌هایی که به هدف جهش مشاهده‌شده توسط {{domxref("MutationObserver")}} اضافه شده‌اند.
 
-## Examples
+## مثال‌ها
 
-### Update when adding a node
+### به‌روزرسانی هنگام افزودن یک گره
 
-In the following example, there are two buttons: one to add new nodes to a target node, and one to remove them. A {{domxref("MutationObserver")}} is used to observe the target node for changes; when a change is detected, the observer calls a function, `logNewNodes()`.
+در مثال زیر، دو دکمه وجود دارد: یکی برای افزودن گره‌های جدید به یک گره هدف، و دیگری برای حذف آن‌ها. یک {{domxref("MutationObserver")}} برای مشاهده تغییرات گره هدف استفاده می‌شود؛ هنگامی که تغییری تشخیص داده شود، observer تابع `logNewNodes()` را فراخوانی می‌کند.
 
-The `logNewNodes()` function checks that the MutationRecord's `type` is `childList`, which means that the target node's children have changed. If the type is `childList` the function updates the total number of new nodes that have been added. However, note that clicking the "Remove a node" button will not increment the total number of new nodes, because in this case `record.addedNodes` will have a length of `0`.
+تابع `logNewNodes()` بررسی می‌کند که `type` رکورد MutationRecord برابر با `childList` باشد، به این معنی که فرزندان گره هدف تغییر کرده‌اند. اگر نوع برابر با `childList` باشد، تابع تعداد کل گره‌های جدید اضافه شده را به‌روزرسانی می‌کند. با این حال، توجه داشته باشید که کلیک روی دکمه «حذف یک گره» تعداد کل گره‌های جدید را افزایش نمی‌دهد، زیرا در این حالت `record.addedNodes` طولی برابر با `0` خواهد داشت.
 
 #### HTML
 
@@ -86,14 +80,14 @@ const observer = new MutationObserver(logNewNodes);
 observer.observe(target, { childList: true });
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Update when adding a node")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
