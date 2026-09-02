@@ -1,11 +1,5 @@
 ---
 title: "MediaTrackSettings: frameRate property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/frameRate"
-status: "needs-translation"
----
-
----
-title: "MediaTrackSettings: frameRate property"
 short-title: frameRate
 slug: Web/API/MediaTrackSettings/frameRate
 page-type: web-api-instance-property
@@ -14,40 +8,29 @@ browser-compat: api.MediaStreamTrack.applyConstraints.frameRate_constraint
 
 {{APIRef("Media Capture and Streams")}}
 
-The {{domxref("MediaTrackSettings")}} dictionary's
-**`frameRate`** property is a double-precision floating-point
-number indicating the frame rate, in frames per second, of the
-{{domxref("MediaStreamTrack")}} as currently configured. This lets you determine what
-value was selected to comply with your specified constraints for this property's value
-as described in the {{domxref("MediaTrackConstraints.frameRate")}} property you provided
-when calling either {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}} or
-{{domxref("MediaStreamTrack.applyConstraints()")}}.
+ویژگی **`frameRate`** در دیکشنری {{domxref("MediaTrackSettings")}} یک عدد ممیز شناور با دقت مضاعف است که نرخ فریم {{domxref("MediaStreamTrack")}} را مطابق پیکربندی فعلی، بر حسب فریم در ثانیه، نشان می‌دهد. این ویژگی به شما امکان می‌دهد تعیین کنید که برای مطابقت با محدودیت‌هایی که هنگام فراخوانی {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}} یا {{domxref("MediaStreamTrack.applyConstraints()")}} از طریق ویژگی {{domxref("MediaTrackConstraints.frameRate")}} تعیین کرده بودید، چه مقداری برای این ویژگی انتخاب شده است.
 
-If needed, you can determine whether or not this constraint is supported by checking
-the value of {{domxref("MediaTrackSupportedConstraints.frameRate")}} as returned by a
-call to {{domxref("MediaDevices.getSupportedConstraints()")}}. However, typically this
-is unnecessary since browsers will ignore any constraints they're unfamiliar with.
+در صورت نیاز، می‌توانید با بررسی مقدار {{domxref("MediaTrackSupportedConstraints.frameRate")}} که با فراخوانی {{domxref("MediaDevices.getSupportedConstraints()")}} بازگردانده می‌شود، متوجه شوید که آیا این محدودیت پشتیبانی می‌شود یا خیر. با این حال، معمولاً این کار ضروری نیست، زیرا مرورگرها هر محدودیتی را که نمی‌شناسند نادیده می‌گیرند.
 
-## Value
+## مقدار
 
-A double-precision floating-point number indicating the current configuration of the
-track's frame rate, in frames per second.
+یک عدد ممیز شناور با دقت مضاعف است که پیکربندی فعلی نرخ فریمِ ترک (track) را بر حسب فریم در ثانیه نشان می‌دهد.
 
-## Examples
+## نمونه‌ها
 
-See the [Constraint exerciser](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#example_constraint_exerciser) example.
+نمونهٔ [تمرینگر محدودیت](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#example_constraint_exerciser) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
-- [Capabilities, constraints, and settings](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints)
+- [قابلیت‌ها، محدودیت‌ها و تنظیمات](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints)
 - {{domxref("MediaTrackConstraints.frameRate")}}
 - {{domxref("MediaTrackSettings")}}
