@@ -1,7 +1,5 @@
 ---
 title: "MediaStreamTrackAudioSourceNode"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrackAudioSourceNode"
-status: "needs-translation"
 ---
 
 ---
@@ -13,64 +11,64 @@ browser-compat: api.MediaStreamTrackAudioSourceNode
 
 {{APIRef("Web Audio API")}}
 
-The **`MediaStreamTrackAudioSourceNode`** interface is a type of {{domxref("AudioNode")}} which represents a source of audio data taken from a specific {{domxref("MediaStreamTrack")}} obtained through the [WebRTC](/en-US/docs/Web/API/WebRTC_API) or [Media Capture and Streams](/en-US/docs/Web/API/Media_Capture_and_Streams_API) APIs.
+رابط **`MediaStreamTrackAudioSourceNode`** نوعی {{domxref("AudioNode")}} است که منبع داده‌های صوتی گرفته‌شده از یک {{domxref("MediaStreamTrack")}} مشخص را نشان می‌دهد؛ این ترک از طریق APIهای [WebRTC](/en-US/docs/Web/API/WebRTC_API) یا [Media Capture and Streams](/en-US/docs/Web/API/Media_Capture_and_Streams_API) به دست آمده است.
 
-The audio itself might be input from a microphone or other audio sampling device, or might be received through a {{domxref("RTCPeerConnection")}}, among other possible options.
+خود صدا، در میان سایر گزینه‌های ممکن، می‌تواند از یک میکروفون یا دستگاه نمونه‌برداری صوتی دیگر وارد شود، یا از طریق {{domxref("RTCPeerConnection")}} دریافت شود.
 
-A `MediaStreamTrackAudioSourceNode` has no inputs and exactly one output, and is created using the {{domxref("AudioContext.createMediaStreamTrackSource()")}} method. This interface is similar to {{domxref("MediaStreamAudioSourceNode")}}, except it lets you specifically state the track to use, rather than assuming the first audio track on a stream.
+یک `MediaStreamTrackAudioSourceNode` هیچ ورودی و دقیقاً یک خروجی دارد و با استفاده از متد {{domxref("AudioContext.createMediaStreamTrackSource()")}} ایجاد می‌شود. این رابط مشابه {{domxref("MediaStreamAudioSourceNode")}} است، با این تفاوت که به شما امکان می‌دهد دقیقاً ترک موردنظر را مشخص کنید، به‌جای اینکه اولین ترک صوتی جریان را به‌طور پیش‌فرض در نظر بگیرد.
 
 {{InheritanceDiagram}}
 
 <table class="properties">
   <tbody>
     <tr>
-      <th scope="row">Number of inputs</th>
+      <th scope="row">تعداد ورودی‌ها</th>
       <td><code>0</code></td>
     </tr>
     <tr>
-      <th scope="row">Number of outputs</th>
+      <th scope="row">تعداد خروجی‌ها</th>
       <td><code>1</code></td>
     </tr>
     <tr>
-      <th scope="row">Channel count</th>
+      <th scope="row">تعداد کانال‌ها</th>
       <td>
-        defined by the first audio {{domxref("MediaStreamTrack")}}
-        passed to the
-        {{domxref("AudioContext.createMediaStreamTrackSource()")}}
-        method that created it.
+        توسط اولین {{domxref("MediaStreamTrack")}} صوتی
+        ارسال‌شده به
+        متد {{domxref("AudioContext.createMediaStreamTrackSource()")}}
+        که آن را ایجاد کرده است، تعریف می‌شود.
       </td>
     </tr>
   </tbody>
 </table>
 
-## Constructor
+## سازنده
 
 - {{domxref("MediaStreamTrackAudioSourceNode.MediaStreamTrackAudioSourceNode", "MediaStreamTrackAudioSourceNode()")}}
-  - : Creates a new `MediaStreamTrackAudioSourceNode` object instance with the specified options.
+  - : یک نمونه شیء `MediaStreamTrackAudioSourceNode` جدید با گزینه‌های مشخص‌شده ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_The `MediaStreamTrackAudioSourceNode` interface has no properties of its own; however, it inherits the properties of its parent, {{domxref("AudioNode")}}._
+_رابط `MediaStreamTrackAudioSourceNode` ویژگی خاص خود را ندارد؛ با این حال، ویژگی‌های والد خود، {{domxref("AudioNode")}}، را به ارث می‌برد._
 
-## Instance methods
+## متدهای نمونه
 
-_Inherits methods from its parent, {{domxref("AudioNode")}}_.
+_متدهای والد خود، {{domxref("AudioNode")}}، را به ارث می‌برد._
 
-## Example
+## مثال
 
-See [`AudioContext.createMediaStreamSource()`](/en-US/docs/Web/API/AudioContext/createMediaStreamSource#examples) for example code that uses this object.
+برای نمونه‌کدی که از این شیء استفاده می‌کند، [`AudioContext.createMediaStreamSource()`](/en-US/docs/Web/API/AudioContext/createMediaStreamSource#examples) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
 - [WebRTC API](/en-US/docs/Web/API/WebRTC_API)
 - [Media Capture and Streams API (Media Streams)](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
 - {{domxref("MediaStreamAudioSourceNode")}}
