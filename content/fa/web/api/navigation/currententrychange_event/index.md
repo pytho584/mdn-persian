@@ -1,11 +1,5 @@
 ---
 title: "Navigation: currententrychange event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigation/currententrychange_event"
-status: "needs-translation"
----
-
----
-title: "Navigation: currententrychange event"
 short-title: currententrychange
 slug: Web/API/Navigation/currententrychange_event
 page-type: web-api-event
@@ -14,21 +8,19 @@ browser-compat: api.Navigation.currententrychange_event
 
 {{APIRef("Navigation API")}}
 
-The **`currententrychange`** event of the {{domxref("Navigation")}} interface is fired when the {{domxref("Navigation.currentEntry")}} has changed.
+رویداد **`currententrychange`** از رابط {{domxref("Navigation")}} زمانی فعال می‌شود که {{domxref("Navigation.currentEntry")}} تغییر کرده باشد.
 
-This event will fire for:
+این رویداد در موارد زیر فعال خواهد شد:
 
-- Same-document navigations (e.g., {{domxref("Navigation.back", "back()")}} or {{domxref("Navigation.traverseTo", "traverseTo()")}}).
+- پیمایش‌های درون‌سندی (مانند `back()` یا `traverseTo()`).
+- جایگزینی‌ها (یعنی فراخوانی `navigate()` با `history` تنظیم شده به `replace`).
+- سایر فراخوانی‌هایی که وضعیت ورودی را تغییر می‌دهند (مانند `updateCurrentEntry()` یا `History.replaceState()` از API تاریخچه).
 
-- Replacements (i.e., a {{domxref("Navigation.navigate", "navigate()")}} call with `history` set to `replace`).
+این رویداد پس از قطعی شدن پیمایش (committed) فعال می‌شود، به این معنا که URL قابل مشاهده تغییر کرده و به‌روزرسانی {{domxref("NavigationHistoryEntry")}} انجام شده است. این رویداد برای مهاجرت از استفاده از ویژگی‌های API قدیمی مانند رویدادهای `hashchange` یا `popstate` مفید است.
 
-- Other calls that change the entry's state (e.g., {{domxref("Navigation.updateCurrentEntry", "updateCurrentEntry()")}}, or the {{domxref("History API", "History API", "", "nocode")}}'s {{domxref("History.replaceState()")}}).
+## نحو
 
-This event fires after the navigation is committed, meaning that the visible URL has changed and the {{domxref("NavigationHistoryEntry")}} update has occurred. It is useful for migrating from usage of older API features like the {{domxref("Window/hashchange_event", "hashchange")}} or {{domxref("Window/popstate_event", "popstate")}} events.
-
-## Syntax
-
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("currententrychange", (event) => { })
@@ -36,15 +28,15 @@ addEventListener("currententrychange", (event) => { })
 oncurrententrychange = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("NavigationCurrentEntryChangeEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("NavigationCurrentEntryChangeEvent")}}. به ارث‌برده از {{domxref("Event")}}.
 
 {{InheritanceDiagram("NavigationCurrentEntryChangeEvent")}}
 
-## Examples
+## مثال‌ها
 
-Navigation data reporting:
+گزارش‌دهی داده‌های پیمایش:
 
 ```js
 navigation.addEventListener("currententrychange", () => {
@@ -53,7 +45,7 @@ navigation.addEventListener("currententrychange", () => {
 });
 ```
 
-Setting up a per-entry event:
+تنظیم یک رویداد به ازای هر ورودی:
 
 ```js
 navigation.addEventListener("currententrychange", () => {
@@ -61,15 +53,15 @@ navigation.addEventListener("currententrychange", () => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
-- [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
+- [مسیریابی مدرن سمت کلاینت: API Navigation](https://developer.chrome.com/docs/web-platform/navigation-api/)
+- [توضیح API Navigation](https://github.com/WICG/navigation-api/blob/main/README.md)
