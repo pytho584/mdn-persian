@@ -1,9 +1,4 @@
----
-title: "MediaCapabilities: encodingInfo() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaCapabilities/encodingInfo"
-status: "needs-translation"
----
-
+```
 ---
 title: "MediaCapabilities: encodingInfo() method"
 short-title: encodingInfo()
@@ -14,79 +9,75 @@ browser-compat: api.MediaCapabilities.encodingInfo
 
 {{APIRef("Media Capabilities API")}}{{AvailableInWorkers}}
 
-The **`encodingInfo()`** method of the {{domxref("MediaCapabilities")}} interface returns a promise that fulfills with the tested media configuration's capabilities for encoding media.
-This contains the three boolean properties `supported`, `smooth`, and `powerefficient`, which describe how compatible the device is with the type of media.
+متد **`encodingInfo()`** در رابط {{domxref("MediaCapabilities")}} یک {{jsxref('Promise')}} برمی‌گرداند که با قابلیت‌های پیکربندی رسانهٔ آزمایش‌شده برای رمزگذاری رسانه تکمیل می‌شود. این Promise شامل سه ویژگی بولین `supported`، `smooth` و `powerefficient` است که میزان سازگاری دستگاه با آن نوع رسانه را توصیف می‌کنند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 encodingInfo(configuration)
 ```
 
-### Parameters
+### پارامترها
 
 - `configuration`
-  - : An object with a property `type` and _either_ a `video` or `audio` property containing a configuration of the appropriate type: <!-- MediaEncodingConfiguration in the spec -->
+  - : یک شیء با ویژگی `type` و _یا_ یک ویژگی `video` یا ویژگی `audio` که شامل پیکربندی از نوع مناسب است: <!-- MediaEncodingConfiguration in the spec -->
     - `type`
-      - : The type of media being tested. This takes one of two values:
+      - : نوع رسانه‌ای است که آزمایش می‌شود. این ویژگی یکی از مقادیر زیر را می‌پذیرد:
         - `record`
-          - : Represents a configuration for recording of media, e.g., using {{domxref("MediaRecorder")}}.
+          - : نمایانگر پیکربندی برای ضبط رسانه است، برای مثال با استفاده از {{domxref("MediaRecorder")}}.
         - `webrtc`
-          - : Represents a configuration meant to be transmitted over electronic means (e.g., using {{domxref("RTCPeerConnection")}}).
+          - : نمایانگر پیکربندی‌ای است که برای انتقال از طریق ابزارهای الکترونیکی در نظر گرفته شده است (مثلاً با {{domxref("RTCPeerConnection")}}).
         - `transmission` {{non-standard_inline}}
-          - : A synonym of `webrtc`.
+          - : مترادفی برای `webrtc`.
 
     - `video`
-      - : Configuration object for a video media source.
-        This has the following properties: <!-- VideoConfiguration in the spec -->
+      - : شیء پیکربندی برای منبع رسانهٔ ویدیویی. این ویژگی‌های زیر را دارد: <!-- VideoConfiguration in the spec -->
         - `contentType`
-          - : String containing a valid video MIME type, and (optionally) a [`codecs` parameter](/en-US/docs/Web/Media/Guides/Formats/codecs_parameter).
+          - : رشته‌ای شامل یک نوع MIME ویدیویی معتبر و (به‌صورت اختیاری) یک [پارامتر `codecs`](/en-US/docs/Web/Media/Guides/Formats/codecs_parameter).
         - `width`
-          - : The width of the video.
+          - : عرض ویدیو.
         - `height`
-          - : The height of the video.
+          - : ارتفاع ویدیو.
         - `bitrate`
-          - : The number of bits used to encode one second of the video file.
+          - : تعداد بیت‌هایی که برای رمزگذاری یک ثانیه از فایل ویدیو استفاده می‌شود.
         - `framerate`
-          - : The number of frames making up one second of video playback.
+          - : تعداد فریم‌هایی که یک ثانیه از پخش ویدیو را تشکیل می‌دهند.
 
     - `audio`
-      - : Configuration object for an audio media source.
-        This has the following properties: <!-- AudioConfiguration in the spec -->
+      - : شیء پیکربندی برای منبع رسانهٔ صوتی. این ویژگی‌های زیر را دارد: <!-- AudioConfiguration in the spec -->
         - `contentType`
-          - : String containing a valid audio MIME type, and (optionally) a [`codecs` parameter](/en-US/docs/Web/Media/Guides/Formats/codecs_parameter).
+          - : رشته‌ای شامل یک نوع MIME صوتی معتبر و (به‌صورت اختیاری) یک [پارامتر `codecs`](/en-US/docs/Web/Media/Guides/Formats/codecs_parameter).
         - `channels`
-          - : The number of channels used by the audio track.
+          - : تعداد کانال‌های استفاده‌شده توسط تراک صوتی.
         - `bitrate`
-          - : The number of bits used to encode one second of the audio file.
+          - : تعداد بیت‌هایی که برای رمزگذاری یک ثانیه از فایل صوتی استفاده می‌شود.
         - `samplerate`
-          - : The number of audio samples making up one second of the audio file.
+          - : تعداد نمونه‌های صوتی تشکیل‌دهندهٔ یک ثانیه از فایل صوتی.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref('Promise')}} fulfilling with an object containing three Boolean attributes:
+یک {{jsxref('Promise')}} که با شیءای شامل سه ویژگی بولین تکمیل می‌شود:
 
 - `supported`
-  - : `true` if the media content can be encoded at all. Otherwise, it is `false`.
+  - : اگر محتوای رسانه اصلاً قابل رمزگذاری باشد، `true` خواهد بود. در غیر این صورت، `false` است.
 - `smooth`
-  - : `true` if playback of the media will be smooth (of high quality). Otherwise it is `false`.
+  - : اگر پخش رسانه روان (با کیفیت بالا) باشد، `true` خواهد بود. در غیر این صورت، `false` است.
 - `powerEfficient`
-  - : `true` if playback of the media will be power efficient. Otherwise, it is `false`.
+  - : اگر پخش رسانه از نظر مصرف انرژی کارآمد باشد، `true` خواهد بود. در غیر این صورت، `false` است.
 
-Browsers will report a supported media configuration as `smooth` and `powerEfficient` until stats on this device have been recorded.
-All supported audio codecs are reported to be power efficient.
+مرورگرها تا زمانی که آمار مربوط به این دستگاه ثبت نشده باشد، یک پیکربندی رسانهٔ پشتیبانی‌شده را به‌عنوان `smooth` و `powerEfficient` گزارش می‌کنند. همهٔ کدک‌های صوتی پشتیبانی‌شده نیز به‌عنوان کارآمد از نظر مصرف انرژی گزارش می‌شوند.
 
-### Exceptions
+### استثناها
 
 - {{jsxref("TypeError")}}
-  - : Thrown if the `configuration` passed to the `encodingInfo()` method is invalid, which may be for any of the following reasons:
-    - the type is not video or audio,
-    - the `contentType` is not a valid codec MIME type,
-    - there is some other error in the media configuration passed to the method, including omitting any of the `configuration` elements.
+  - : اگر `configuration` ارسال‌شده به متد `encodingInfo()` نامعتبر باشد پرتاب می‌شود. این خطا ممکن است به هر یک از دلایل زیر رخ دهد:
+    - نوع، ویدیو یا صدا نباشد،
+    - `contentType` یک نوع MIME کدک معتبر نباشد،
+    - خطای دیگری در پیکربندی رسانهٔ ارسال‌شده به متد وجود داشته باشد، از جمله حذف هر یک از عناصر `configuration`.
 
-## Examples
+## مثال‌ها
 
-### Setting a media configuration
+### تنظیم یک پیکربندی رسانه
 
 ```js
 // Create media configuration to be tested
@@ -111,14 +102,15 @@ navigator.mediaCapabilities.encodingInfo(mediaConfig).then((result) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("MediaCapabilities.decodingInfo()")}}
+```
