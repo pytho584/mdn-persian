@@ -1,10 +1,4 @@
 ---
-title: "MediaKeySystemAccess"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaKeySystemAccess"
-status: "needs-translation"
----
-
----
 title: MediaKeySystemAccess
 slug: Web/API/MediaKeySystemAccess
 page-type: web-api-interface
@@ -13,24 +7,24 @@ browser-compat: api.MediaKeySystemAccess
 
 {{APIRef("Encrypted Media Extensions")}}{{SecureContext_Header}}
 
-The **`MediaKeySystemAccess`** interface of the [Encrypted Media Extensions API](/en-US/docs/Web/API/Encrypted_Media_Extensions_API) provides access to a Key System for decryption and/or a content protection provider. You can request an instance of this object using the {{domxref("Navigator.requestMediaKeySystemAccess","Navigator.requestMediaKeySystemAccess()")}} method.
+رابط **`MediaKeySystemAccess`** از [API افزونه‌های رسانه‌ای رمزگذاری‌شده](/en-US/docs/Web/API/Encrypted_Media_Extensions_API) دسترسی به یک سیستم کلید برای رمزگشایی و/یا یک ارائه‌دهنده حفاظت از محتوا را فراهم می‌کند. شما می‌توانید با استفاده از متد {{domxref("Navigator.requestMediaKeySystemAccess","Navigator.requestMediaKeySystemAccess()")}} یک نمونه از این شیء را درخواست کنید.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("MediaKeySystemAccess.keySystem")}} {{ReadOnlyInline}}
-  - : Returns a string identifying the key system being used.
+  - : یک رشته که سیستم کلید در حال استفاده را شناسایی می‌کند بازمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("MediaKeySystemAccess.createMediaKeys()")}}
-  - : Returns a {{jsxref('Promise')}} that resolves to a new {{domxref("MediaKeys")}} object.
+  - : یک {{jsxref('Promise')}} بازمی‌گرداند که به یک شیء جدید {{domxref("MediaKeys")}} حل می‌شود.
 - {{domxref("MediaKeySystemAccess.getConfiguration()")}}
-  - : Returns an object with the supported combination of configuration options.
+  - : یک شیء با ترکیب پشتیبانی‌شده از گزینه‌های پیکربندی بازمی‌گرداند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
