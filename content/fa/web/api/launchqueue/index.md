@@ -1,10 +1,4 @@
 ---
-title: "LaunchQueue"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/LaunchQueue"
-status: "needs-translation"
----
-
----
 title: LaunchQueue
 slug: Web/API/LaunchQueue
 page-type: web-api-interface
@@ -15,16 +9,16 @@ browser-compat: api.LaunchQueue
 
 {{APIRef("Launch Handler API")}}{{SeeCompatTable}}
 
-The **`LaunchQueue`** interface of the {{domxref("Launch Handler API", "Launch Handler API", "", "nocode")}} is available via the {{domxref("Window.launchQueue")}} property. When a [progressive web app](/en-US/docs/Web/Progressive_web_apps) (PWA) is launched with a [`launch_handler`](/en-US/docs/Web/Progressive_web_apps/Manifest/Reference/launch_handler) `client_mode` value of `focus-existing`, `navigate-new`, or `navigate-existing`, `LaunchQueue` provides access to functionality that allows custom launch navigation handling to be implemented in the PWA. This functionality is controlled by the properties of the {{domxref("LaunchParams")}} object passed into the {{domxref("LaunchQueue.setConsumer", "setConsumer()")}} callback function.
+رابط **`LaunchQueue`** از {{domxref("Launch Handler API", "Launch Handler API", "", "nocode")}} از طریق ویژگی {{domxref("Window.launchQueue")}} در دسترس است. هنگامی که یک [برنامه وب پیش‌رونده](/en-US/docs/Web/Progressive_web_apps) (PWA) با مقدار `client_mode` برابر با `focus-existing`، `navigate-new` یا `navigate-existing` در [`launch_handler`](/en-US/docs/Web/Progressive_web_apps/Manifest/Reference/launch_handler) راه‌اندازی می‌شود، `LaunchQueue` دسترسی به قابلیتی را فراهم می‌کند که امکان پیاده‌سازی مدیریت راه‌اندازی سفارشی برای ناوبری در PWA را می‌دهد. این قابلیت توسط ویژگی‌های شی {{domxref("LaunchParams")}} که به تابع callback {{domxref("LaunchQueue.setConsumer", "setConsumer()")}} ارسال می‌شود، کنترل می‌گردد.
 
 {{InheritanceDiagram}}
 
-## Instance Methods
+## روش‌های نمونه
 
 - {{domxref("LaunchQueue.setConsumer", "setConsumer()")}} {{Experimental_Inline}}
-  - : Contains a callback function that handles custom launch navigation for a PWA.
+  - شامل یک تابع callback است که ناوبری راه‌اندازی سفارشی را برای یک PWA مدیریت می‌کند.
 
-## Examples
+## مثال‌ها
 
 ```js
 if ("launchQueue" in window) {
@@ -44,16 +38,16 @@ if ("launchQueue" in window) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Launch Handler API: Control how your app is launched](https://developer.chrome.com/docs/web-platform/launch-handler/)
+- [Launch Handler API: نحوه راه‌اندازی برنامه خود را کنترل کنید](https://developer.chrome.com/docs/web-platform/launch-handler/)
 - {{domxref("Window.launchQueue")}}
-- [Musicr 2.0](https://mdn.github.io/dom-examples/launch-handler/) demo app
+- برنامه نمایشی [Musicr 2.0](https://mdn.github.io/dom-examples/launch-handler/)
