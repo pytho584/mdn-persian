@@ -1,11 +1,5 @@
 ---
 title: "MediaSource: duration property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/duration"
-status: "needs-translation"
----
-
----
-title: "MediaSource: duration property"
 short-title: duration
 slug: Web/API/MediaSource/duration
 page-type: web-api-instance-property
@@ -14,30 +8,24 @@ browser-compat: api.MediaSource.duration
 
 {{APIRef("Media Source Extensions")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`duration`** property of the {{domxref("MediaSource")}}
-interface gets and sets the duration of the current media being presented.
+ویژگی **`duration`** در interface {{domxref("MediaSource")}} مدت‌زمان رسانه‌ای را که در حال حاضر نمایش داده می‌شود، می‌خواند و تنظیم می‌کند.
 
-## Value
+## مقدار
 
-A double. A value in seconds is expected.
+یک عدد اعشاری (double). مقدار بر حسب ثانیه انتظار می‌رود.
 
-### Exceptions
+### استثناها
 
-The following exceptions may be thrown when setting a new value for this property.
+هنگام تنظیم مقدار جدید برای این ویژگی، ممکن است استثناهای زیر پرتاب شوند.
 
 - `InvalidAccessError` {{domxref("DOMException")}}
-  - : Thrown if an attempt was made to set a duration value that was negative or `NaN`.
+  - : اگر تلاش شود مقدار duration منفی یا `NaN` تنظیم شود، پرتاب می‌شود.
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if {{domxref("MediaSource.readyState")}} is not equal to
-    `open`, or one or more of the
-    {{domxref("SourceBuffer")}} objects in
-    {{domxref("MediaSource.sourceBuffers")}} are being updated
-    (i.e., their {{domxref("SourceBuffer.updating")}} property is
-    `true`.)
+  - : اگر {{domxref("MediaSource.readyState")}} برابر با `open` نباشد، یا یک یا چند شیء {{domxref("SourceBuffer")}} در {{domxref("MediaSource.sourceBuffers")}} در حال به‌روزرسانی باشند (یعنی ویژگی {{domxref("SourceBuffer.updating")}} آن‌ها `true` باشد)، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-The following snippet is based on an example written by Nick Desaulniers ([view the full demo live](https://nickdesaulniers.github.io/netfix/demo/bufferAll.html), or [download the source](https://github.com/nickdesaulniers/netfix/blob/gh-pages/demo/bufferAll.html) for further investigation). The function `getMediaSource()`, which is not defined here, returns a `MediaSource`.
+قطعه کد زیر بر اساس مثالی نوشته‌شده توسط Nick Desaulniers است ([مشاهده دموی کامل به‌صورت زنده](https://nickdesaulniers.github.io/netfix/demo/bufferAll.html)، یا [دانلود سورس](https://github.com/nickdesaulniers/netfix/blob/gh-pages/demo/bufferAll.html) برای بررسی بیشتر). تابع `getMediaSource()` که در اینجا تعریف نشده است، یک `MediaSource` برمی‌گرداند.
 
 ```js
 const mediaSource = getMediaSource();
@@ -59,15 +47,15 @@ function sourceOpen() {
 // …
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("SourceBuffer")}}
 - {{domxref("SourceBufferList")}}
