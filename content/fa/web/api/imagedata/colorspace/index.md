@@ -1,11 +1,5 @@
 ---
 title: "ImageData: colorSpace property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ImageData/colorSpace"
-status: "needs-translation"
----
-
----
-title: "ImageData: colorSpace property"
 short-title: colorSpace
 slug: Web/API/ImageData/colorSpace
 page-type: web-api-instance-property
@@ -14,23 +8,22 @@ browser-compat: api.ImageData.colorSpace
 
 {{APIRef("Canvas API")}}{{AvailableInWorkers}}
 
-The read-only **`ImageData.colorSpace`** property is a string indicating the color space of the image data.
+ویژگی فقط خواندنی **`ImageData.colorSpace`** یک رشته است که فضای رنگی داده‌های تصویر را نشان می‌دهد.
 
-The color space can be set during `ImageData` initialization using either the [`ImageData()`](/en-US/docs/Web/API/ImageData/ImageData) constructor or the [`createImageData()`](/en-US/docs/Web/API/CanvasRenderingContext2D/createImageData) method.
+فضای رنگی را می‌توان در زمان مقداردهی اولیه `ImageData` با استفاده از سازنده [`ImageData()`](/en-US/docs/Web/API/ImageData/ImageData) یا متد [`createImageData()`](/en-US/docs/Web/API/CanvasRenderingContext2D/createImageData) تنظیم کرد.
 
-## Value
+## مقدار
 
-This property can have the following values:
+این ویژگی می‌تواند مقادیر زیر را داشته باشد:
 
-- `"srgb"` representing the [sRGB color space](https://en.wikipedia.org/wiki/SRGB).
-- `"display-p3"` representing the [display-p3 color space](https://en.wikipedia.org/wiki/DCI-P3).
+- `"srgb"` که نشان‌دهنده [فضای رنگی sRGB](https://en.wikipedia.org/wiki/SRGB) است.
+- `"display-p3"` که نشان‌دهنده [فضای رنگی display-p3](https://en.wikipedia.org/wiki/DCI-P3) است.
 
-## Examples
+## مثال‌ها
 
-### Getting the color space of canvas image data
+### دریافت فضای رنگی داده‌های تصویر بوم
 
-The [`getImageData()`](/en-US/docs/Web/API/CanvasRenderingContext2D/getImageData) method allows you to explicitly request a color space. If it doesn't match the color space the canvas was initialized with, a conversion will be performed.
-Use the `colorSpace` property to know which color space your `ImageData` object is in.
+متد [`getImageData()`](/en-US/docs/Web/API/CanvasRenderingContext2D/getImageData) به شما امکان می‌دهد به صراحت یک فضای رنگی را درخواست کنید. اگر با فضای رنگی که بوم با آن مقداردهی اولیه شده مطابقت نداشته باشد، یک تبدیل انجام می‌شود. از ویژگی `colorSpace` استفاده کنید تا بدانید شیء `ImageData` شما در کدام فضای رنگی قرار دارد.
 
 ```js
 const context = canvas.getContext("2d", { colorSpace: "display-p3" });
@@ -44,19 +37,19 @@ const srgbImageData = context.getImageData(0, 0, 1, 1, { colorSpace: "srgb" });
 console.log(srgbImageData.colorSpace); // "srgb"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [`CanvasRenderingContext2D.createImageData()`](/en-US/docs/Web/API/CanvasRenderingContext2D/createImageData)
 - [`CanvasRenderingContext2D.getImageData()`](/en-US/docs/Web/API/CanvasRenderingContext2D/getImageData)
 - [`colorSpace` setting in `canvas.getContext()`](/en-US/docs/Web/API/HTMLCanvasElement/getContext#colorspace)
-- Setting WebGL color spaces:
+- تنظیم فضای رنگی WebGL:
   - [`WebGLRenderingContext.drawingBufferColorSpace`](/en-US/docs/Web/API/WebGLRenderingContext/drawingBufferColorSpace)
   - [`WebGLRenderingContext.unpackColorSpace`](/en-US/docs/Web/API/WebGLRenderingContext/unpackColorSpace)
