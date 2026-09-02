@@ -1,11 +1,5 @@
 ---
 title: "NavigateEvent: hashChange property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigateEvent/hashChange"
-status: "needs-translation"
----
-
----
-title: "NavigateEvent: hashChange property"
 short-title: hashChange
 slug: Web/API/NavigateEvent/hashChange
 page-type: web-api-instance-property
@@ -14,14 +8,13 @@ browser-compat: api.NavigateEvent.hashChange
 
 {{APIRef("Navigation API")}}
 
-The **`hashChange`** read-only property of the
-{{domxref("NavigateEvent")}} interface returns `true` if the navigation is a fragment navigation (i.e., to a fragment identifier in the same document), or `false` otherwise.
+خاصیت فقط‑خواندنی **`hashChange`** از رابط {{domxref("NavigateEvent")}} مقدار `true` را برمی‌گرداند اگر ناوبری یک ناوبری قطعه‌ای (fragment navigation) باشد (یعنی به یک شناسه‌ی قطعه در همان سند)، و در غیر این صورت `false` را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A boolean value—`true` if the navigation is a fragment navigation, `false` if not.
+یک مقدار بولی — `true` اگر ناوبری از نوع ناوبری قطعه‌ای باشد، `false` در غیر این صورت.
 
-## Examples
+## مثال‌ها
 
 ```js
 navigation.addEventListener("navigate", (event) => {
@@ -48,15 +41,15 @@ navigation.addEventListener("navigate", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
-- [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
+- [مسیریابی مدرن سمت کاربر: API Navigation](https://developer.chrome.com/docs/web-platform/navigation-api/)
+- [توضیح API Navigation](https://github.com/WICG/navigation-api/blob/main/README.md)
