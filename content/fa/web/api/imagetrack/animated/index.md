@@ -1,11 +1,5 @@
 ---
 title: "ImageTrack: animated property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ImageTrack/animated"
-status: "needs-translation"
----
-
----
-title: "ImageTrack: animated property"
 short-title: animated
 slug: Web/API/ImageTrack/animated
 page-type: web-api-instance-property
@@ -14,25 +8,26 @@ browser-compat: api.ImageTrack.animated
 
 {{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`animated`** property of the {{domxref("ImageTrack")}} interface returns `true` if the track is animated and therefore has multiple frames.
+ویژگی **`animated`** از رابط {{domxref("ImageTrack")}} اگر track متحرک باشد و بنابراین فریم‌های متعددی داشته باشد، مقدار `true` را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A {{jsxref("Boolean")}}, if `true` this is an animated track.
+یک {{jsxref("Boolean")}}؛ اگر `true` باشد، این یک track متحرک است.
 
-## Examples
+## مثال‌ها
 
-The following example prints the value of `animated` to the console.
+مثال زیر مقدار `animated` را در کنسول چاپ می‌کند.
 
 ```js
 let track = imageDecoder.tracks.selectedTrack;
 console.log(track.animated);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
+```
