@@ -1,11 +1,5 @@
 ---
 title: "MediaTrackConstraints: facingMode property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/facingMode"
-status: "needs-translation"
----
-
----
-title: "MediaTrackConstraints: facingMode property"
 short-title: facingMode
 slug: Web/API/MediaTrackConstraints/facingMode
 page-type: web-api-instance-property
@@ -14,27 +8,17 @@ browser-compat: api.MediaStreamTrack.applyConstraints.facingMode_constraint
 
 {{APIRef("Media Capture and Streams")}}
 
-The {{domxref("MediaTrackConstraints")}} dictionary's
-**`facingMode`** property is a [`ConstrainDOMString`](/en-US/docs/Web/API/MediaTrackConstraints#constraindomstring)
-describing the requested or mandatory constraints placed upon the value of the
-{{domxref("MediaTrackSettings.facingMode", "facingMode")}} constrainable property.
+ویژگی **`facingMode`** در شیء (دیکشنری) {{domxref("MediaTrackConstraints")}} یک [`ConstrainDOMString`](/en-US/docs/Web/API/MediaTrackConstraints#constraindomstring) است که محدودیت‌های درخواستی یا اجباری اعمال‌شده بر روی مقدار ویژگی قابل‌قید {{domxref("MediaTrackSettings.facingMode", "facingMode")}} را توصیف می‌کند.
 
-If needed, you can determine whether or not this constraint is supported by checking
-the value of {{domxref("MediaTrackSupportedConstraints.facingMode")}} as returned by a
-call to {{domxref("MediaDevices.getSupportedConstraints()")}}. However, typically this
-is unnecessary since browsers will ignore any constraints they're unfamiliar with.
+در صورت نیاز، می‌توانید با بررسی مقدار {{domxref("MediaTrackSupportedConstraints.facingMode")}} که توسط فراخوانی {{domxref("MediaDevices.getSupportedConstraints()")}} بازگردانده می‌شود، تعیین کنید که آیا این محدودیت پشتیبانی می‌شود یا خیر. با این حال، معمولاً این کار ضروری نیست، زیرا مرورگرها هر محدودیتی را که با آن آشنا نباشند نادیده می‌گیرند.
 
-Because {{Glossary("RTP")}} doesn't include this information, tracks associated with a
-[WebRTC](/en-US/docs/Web/API/WebRTC_API) {{domxref("RTCPeerConnection")}}
-will never include this property.
+از آنجا که {{Glossary("RTP")}} این اطلاعات را شامل نمی‌شود، مسیرهای (tracks) مرتبط با یک {{domxref("RTCPeerConnection")}} متعلق به [WebRTC](/en-US/docs/Web/API/WebRTC_API) هرگز این ویژگی را شامل نخواهند شد.
 
-## Value
+## مقدار
 
-An object based on [`ConstrainDOMString`](/en-US/docs/Web/API/MediaTrackConstraints#constraindomstring) specifying one or more acceptable,
-ideal, and/or exact (mandatory) facing modes are acceptable for a video track.
+یک شیء مبتنی بر [`ConstrainDOMString`](/en-US/docs/Web/API/MediaTrackConstraints#constraindomstring) که یک یا چند حالت روبه‌رو (facing mode) قابل‌قبول، ایده‌آل و/یا دقیق (اجباری) را برای یک مسیر ویدیویی مشخص می‌کند.
 
-An `exact` value in this case indicates that the specified facing mode is
-specifically required; for example:
+یک مقدار `exact` در این مورد نشان می‌دهد که حالت روبه‌روی مشخص‌شده الزاماً مورد نیاز است؛ برای مثال:
 
 ```js
 const constraints = {
@@ -42,39 +26,32 @@ const constraints = {
 };
 ```
 
-This indicates that only a user-facing camera is acceptable; if there is no user-facing
-camera, or the user declines permission to use that camera, the media request will fail.
+این بدان معناست که تنها یک دوربین روبه‌روی کاربر قابل‌قبول است؛ اگر دوربین روبه‌روی کاربری وجود نداشته باشد یا کاربر اجازه استفاده از آن دوربین را ندهد، درخواست رسانه ناموفق خواهد بود.
 
-The following strings are permitted values for the facing mode. These may represent
-separate cameras, or they may represent directions in which an adjustable camera can be
-pointed.
+مقدارهای مجاز زیر برای حالت روبه‌رو تعریف شده‌اند. این‌ها ممکن است نشان‌دهنده دوربین‌های جداگانه باشند، یا ممکن است جهت‌هایی باشند که یک دوربین قابل تنظیم می‌تواند به سمت آن‌ها نشانه رود.
 
 - `"user"`
-  - : The video source is facing toward the user; this includes, for example, the
-    front-facing camera on a smartphone.
+  - : منبع ویدیو به سمت کاربر است؛ این شامل، برای مثال، دوربین جلوی یک گوشی هوشمند می‌شود.
 - `"environment"`
-  - : The video source is facing away from the user, thereby viewing their environment.
-    This is the back camera on a smartphone.
+  - : منبع ویدیو رو به دور از کاربر است و بنابراین محیط اطراف او را نشان می‌دهد. این دوربین پشت گوشی هوشمند است.
 - `"left"`
-  - : The video source is facing toward the user but to their left, such as a camera aimed
-    toward the user but over their left shoulder.
+  - : منبع ویدیو به سمت کاربر است اما به سمت چپ او؛ مانند دوربینی که به سمت کاربر نشانه رفته اما از روی شانه چپ او.
 - `"right"`
-  - : The video source is facing toward the user but to their right, such as a camera
-    aimed toward the user but over their right shoulder.
+  - : منبع ویدیو به سمت کاربر است اما به سمت راست او؛ مانند دوربینی که به سمت کاربر نشانه رفته اما از روی شانه راست او.
 
-## Examples
+## مثال‌ها
 
-See the [Constraint exerciser](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#example_constraint_exerciser) example.
+مثال [Constraint exerciser](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#example_constraint_exerciser) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
 - [Capabilities, constraints, and settings](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints)
