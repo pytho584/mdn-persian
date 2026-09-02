@@ -1,7 +1,5 @@
 ---
 title: "ImageTrackList"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ImageTrackList"
-status: "needs-translation"
 ---
 
 ---
@@ -13,23 +11,23 @@ browser-compat: api.ImageTrackList
 
 {{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`ImageTrackList`** interface of the {{domxref('WebCodecs API','','','true')}} represents a list of image tracks.
+رابطهٔ **`ImageTrackList`** متعلق به {{domxref('WebCodecs API','','','true')}}، فهرستی از trackهای تصویر را نمایش می‌دهد.
 
-## Instance properties
+## ویژگی‌های وهله
 
 - {{domxref("ImageTrackList.ready")}} {{ReadOnlyInline}}
-  - : Returns a {{jsxref("Promise")}} that resolves once the `ImageTrackList` has been populated with {{domxref("ImageTrack","tracks")}}.
+  - : یک {{jsxref("Promise")}} بازمی‌گرداند که پس از پر شدن `ImageTrackList` با {{domxref("ImageTrack","tracks")}}، resolve می‌شود.
 - {{domxref("ImageTrackList.length")}} {{ReadOnlyInline}}
-  - : Returns an integer indicating the length of the `ImageTrackList`.
+  - : یک عدد صحیح بازمی‌گرداند که طول `ImageTrackList` را نشان می‌دهد.
 - {{domxref("ImageTrackList.selectedIndex")}} {{ReadOnlyInline}}
-  - : Returns an integer indicating the index of the `selectedTrack`.
+  - : یک عدد صحیح بازمی‌گرداند که ایندکسِ `selectedTrack` را نشان می‌دهد.
 - {{domxref("ImageTrackList.selectedTrack")}} {{ReadOnlyInline}}
-  - : Returns the selected {{domxref("ImageTrack")}}.
+  - : {{domxref("ImageTrack")}} انتخاب‌شده را بازمی‌گرداند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
