@@ -1,7 +1,6 @@
 ---
 title: "MediaStreamTrack: readyState property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/readyState"
-status: "needs-translation"
 ---
 
 ---
@@ -14,28 +13,25 @@ browser-compat: api.MediaStreamTrack.readyState
 
 {{APIRef("Media Capture and Streams")}}
 
-The **`readyState`** read-only property of the {{domxref("MediaStreamTrack")}} interface returns an enumerated value giving the status of the track.
+ویژگی فقط‌خواندنی **`readyState`** در رابط {{domxref("MediaStreamTrack")}} یک مقدار شمارشی برمی‌گرداند که وضعیت فعلی مسیر (track) را نشان می‌دهد.
 
-## Value
+## مقدار
 
-It takes one of the following values:
+یکی از مقادیر زیر را می‌گیرد:
 
-- `"live"` which indicates that an input is connected and does its
-  best-effort in providing real-time data. In that case, the output of data can be
-  switched on or off using the {{domxref("MediaStreamTrack.enabled")}} property.
-- `"ended"` which indicates that the input is not giving any more data and
-  will never provide new data.
+- `"live"` که نشان می‌دهد یک ورودی متصل است و بهترین تلاش خود را برای ارائه‌ی داده‌های بلادرنگ انجام می‌دهد. در این حالت، خروجی داده را می‌توان با استفاده از ویژگی {{domxref("MediaStreamTrack.enabled")}} روشن یا خاموش کرد.
+- `"ended"` که نشان می‌دهد ورودی دیگر داده‌ای ارائه نمی‌دهد و هرگز داده‌ی جدیدی ارائه نخواهد داد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
+- [API ضبط رسانه و جریان‌ها](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
 - [WebRTC](/en-US/docs/Web/API/WebRTC_API)
-- The {{domxref("MediaStreamTrack.ended_event", "ended")}} event
+- رویداد {{domxref("MediaStreamTrack.ended_event", "ended")}}
