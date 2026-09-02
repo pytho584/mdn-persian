@@ -1,11 +1,5 @@
 ---
 title: "ManagedSourceBuffer: bufferedchange event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ManagedSourceBuffer/bufferedchange_event"
-status: "needs-translation"
----
-
----
-title: "ManagedSourceBuffer: bufferedchange event"
 short-title: bufferedchange
 slug: Web/API/ManagedSourceBuffer/bufferedchange_event
 page-type: web-api-event
@@ -16,13 +10,13 @@ browser-compat: api.ManagedSourceBuffer.bufferedchange_event
 
 {{APIRef("Media Source Extensions")}}{{AvailableInWorkers("window_and_dedicated")}}{{SeeCompatTable}}
 
-The **`bufferedchange`** event of the {{domxref("ManagedSourceBuffer")}} interface is fired when the `ManagedSourceBuffer`'s buffered range changes. This can occur following a call to {{domxref("SourceBuffer.appendBuffer", "appendBuffer()")}}, {{domxref("SourceBuffer.remove", "remove()")}}, {{domxref("MediaSource.endOfStream", "endOfStream()")}}, or as a consequence of the user agent running the memory cleanup algorithm.
+رویداد **`bufferedchange`** از رابط {{domxref("ManagedSourceBuffer")}} زمانی فعال میشود که محدودهٔ بافرشدهٔ `ManagedSourceBuffer` تغییر کند. این اتفاق میتواند پس از فراخوانی {{domxref("SourceBuffer.appendBuffer", "appendBuffer()")}}، {{domxref("SourceBuffer.remove", "remove()")}} یا {{domxref("MediaSource.endOfStream", "endOfStream()")}} رخ دهد، یا در نتیجهٔ اجرای الگوریتم پاکسازی حافظه توسط عامل کاربر (user agent) ایجاد شود.
 
-This event is important for applications using a {{domxref("ManagedMediaSource")}}, because the user agent can evict buffered content at any time. By listening for this event, applications can detect when buffered data has been removed and respond by fetching replacement segments to avoid playback stalls.
+این رویداد برای برنامههایی که از {{domxref("ManagedMediaSource")}} استفاده میکنند اهمیت دارد، زیرا عامل کاربر میتواند در هر زمان محتوای بافرشده را حذف کند. با گوش دادن به این رویداد، برنامهها میتوانند متوجه شوند که دادهٔ بافرشده حذف شده است و با واکشی بخشهای جایگزین، از توقف پخش جلوگیری کنند.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای استفاده از نام رویداد در روشهایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} یا تنظیم ویژگی مدیریتکنندهٔ رویداد، میتوانید به شکل زیر عمل کنید:
 
 ```js-nolint
 addEventListener("bufferedchange", (event) => {});
@@ -30,17 +24,17 @@ addEventListener("bufferedchange", (event) => {});
 onbufferedchange = (event) => {};
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("BufferedChangeEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("BufferedChangeEvent")}} که از {{domxref("Event")}} ارث میبرد.
 
 {{InheritanceDiagram("BufferedChangeEvent")}}
 
-## Examples
+## مثالها
 
-### Tracking buffered range changes
+### ردیابی تغییرات محدودهٔ بافرشده
 
-This example sets up a {{domxref("ManagedMediaSource")}}, adds a source buffer, fetches a fragmented MP4 file, and listens for the `bufferedchange` event to log any changes to the buffered ranges.
+در این مثال، یک {{domxref("ManagedMediaSource")}} راهاندازی میشود، یک بافر منبع اضافه میگردد، یک فایل MP4 تکهتکهشده واکشی میشود، و با گوش دادن به رویداد `bufferedchange` هر تغییر در محدودههای بافرشده ثبت میشود.
 
 ```js
 const videoUrl =
@@ -79,15 +73,15 @@ if (ManagedMediaSource.isTypeSupported(mediaType)) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("BufferedChangeEvent")}}
 - {{domxref("ManagedMediaSource")}}
