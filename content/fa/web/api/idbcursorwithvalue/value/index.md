@@ -1,7 +1,5 @@
 ---
 title: "IDBCursorWithValue: value property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBCursorWithValue/value"
-status: "needs-translation"
 ---
 
 ---
@@ -14,25 +12,18 @@ browser-compat: api.IDBCursorWithValue.value
 
 {{ APIRef("IndexedDB") }} {{AvailableInWorkers}}
 
-The **`value`** read-only property of the
-{{domxref("IDBCursorWithValue")}} interface returns the value of the current cursor,
-whatever that is.
+ویژگی فقط‌خواندنی **`value`** از رابط {{domxref("IDBCursorWithValue")}} مقدار مکان‌نمای فعلی را برمی‌گرداند، هر مقداری که باشد.
 
-## Value
+## مقدار
 
-The value of the current cursor.
+مقدار مکان‌نمای فعلی.
 
-## Examples
+## مثال‌ها
 
-In this example we create a transaction, retrieve an object store, then use a cursor to
-iterate through all the records in the object store. Within each iteration we log the
-value of the cursor with `cursor.value`.
+در این مثال، یک تراکنش می‌سازیم، یک object store دریافت می‌کنیم و سپس از یک مکان‌نما برای پیمایش همه رکوردهای موجود در object store استفاده می‌کنیم. در هر تکرار، مقدار مکان‌نما را با `cursor.value` در لاگ می‌نویسیم.
 
-The cursor does not require us to select the data based
-on a key; we can just grab all of it. Also note that in each iteration of the loop,
-you can grab data from the current record under the cursor object using `cursor.value.foo`.
-For a complete working example, see our [IDBCursor example](https://github.com/mdn/dom-examples/tree/main/indexeddb-examples/idbcursor)
-([view example live](https://mdn.github.io/dom-examples/indexeddb-examples/idbcursor/).)
+مکان‌نما نیازی ندارد که داده‌ها را بر اساس یک کلید انتخاب کنیم؛ می‌توانیم همه آن‌ها را برداریم. همچنین توجه کنید که در هر تکرار حلقه، می‌توانید داده‌های رکورد فعلی را از طریق شیء مکان‌نما با استفاده از `cursor.value.foo` دریافت کنید.
+برای مشاهده یک مثال کامل و قابل اجرا، به [نمونه IDBCursor](https://github.com/mdn/dom-examples/tree/main/indexeddb-examples/idbcursor) مراجعه کنید ([مشاهده مثال آنلاین](https://mdn.github.io/dom-examples/indexeddb-examples/idbcursor/).)
 
 ```js
 function displayData() {
@@ -55,20 +46,20 @@ function displayData() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم بازه‌ای از کلیدها: {{domxref("IDBKeyRange")}}
+- دریافت و ایجاد تغییرات در داده‌هایتان: {{domxref("IDBObjectStore")}}
+- استفاده از مکان‌نماها: {{domxref("IDBCursor")}}
+- نمونه مرجع: [اعلان‌های کارها](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهده مثال آنلاین](https://mdn.github.io/dom-examples/to-do-notifications/)).
