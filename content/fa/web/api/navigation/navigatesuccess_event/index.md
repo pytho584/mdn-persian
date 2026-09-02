@@ -1,11 +1,5 @@
 ---
 title: "Navigation: navigatesuccess event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigation/navigatesuccess_event"
-status: "needs-translation"
----
-
----
-title: "Navigation: navigatesuccess event"
 short-title: navigatesuccess
 slug: Web/API/Navigation/navigatesuccess_event
 page-type: web-api-event
@@ -14,13 +8,13 @@ browser-compat: api.Navigation.navigatesuccess_event
 
 {{APIRef("Navigation API")}}
 
-The **`navigatesuccess`** event of the {{domxref("Navigation")}} interface is fired when a successful navigation has finished.
+رویداد **`navigatesuccess`** از رابط {{domxref("Navigation")}} زمانی که یک پیمایش موفقیت‌آمیز به پایان رسیده است، فعال می‌شود.
 
-In the case of an intercepted navigation, this would occur after any promises returned by your {{domxref("NavigateEvent.intercept", "intercept()")}} handler are fulfilled. The {{domxref("NavigationTransition.finished")}} promise will also fulfill at the same time.
+در مورد یک پیمایش رهگیری‌شده، این رویداد پس از تحقق هر قولی که توسط کنترل‌کننده {{domxref("NavigateEvent.intercept", "intercept()")}} شما بازگردانده شده است، رخ می‌دهد. قول {{domxref("NavigationTransition.finished")}} نیز همزمان تحقق می‌یابد.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("navigatesuccess", (event) => { })
@@ -28,13 +22,13 @@ addEventListener("navigatesuccess", (event) => { })
 onnavigatesuccess = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## مثال‌ها
 
-You might deal with a successful navigation by hiding a previously displayed progress indicator, like this:
+می‌توانید با مخفی کردن یک نشانگر پیشرفت که قبلاً نمایش داده شده بود، با یک پیمایش موفقیت‌آمیز برخورد کنید، مانند این:
 
 ```js
 navigation.addEventListener("navigatesuccess", (event) => {
@@ -42,7 +36,7 @@ navigation.addEventListener("navigatesuccess", (event) => {
 });
 ```
 
-Or you might show an error message on failure:
+یا ممکن است در صورت شکست، یک پیام خطا نمایش دهید:
 
 ```js
 navigation.addEventListener("navigateerror", (event) => {
@@ -51,15 +45,15 @@ navigation.addEventListener("navigateerror", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
 - [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
