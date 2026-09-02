@@ -1,11 +1,5 @@
 ---
 title: "ImageBitmap: close() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ImageBitmap/close"
-status: "needs-translation"
----
-
----
-title: "ImageBitmap: close() method"
 short-title: close()
 slug: Web/API/ImageBitmap/close
 page-type: web-api-instance-method
@@ -14,24 +8,23 @@ browser-compat: api.ImageBitmap.close
 
 {{APIRef("Canvas API")}}{{AvailableInWorkers}}
 
-The **`ImageBitmap.close()`**
-method disposes of all graphical resources associated with an `ImageBitmap`.
+متد **`ImageBitmap.close()`** همهٔ منابع گرافیکی مرتبط با یک `ImageBitmap` را آزاد می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 close()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
 ```js
 const offscreen = new OffscreenCanvas(256, 256);
@@ -46,14 +39,14 @@ bitmap.close();
 // ImageBitmap { width: 0, height: 0 } — disposed
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface defining this method, {{domxref("ImageBitmap")}}.
+- رابط تعریف‌کنندهٔ این متد: {{domxref("ImageBitmap")}}
