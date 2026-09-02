@@ -1,11 +1,5 @@
 ---
 title: "Magnetometer: z property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Magnetometer/z"
-status: "needs-translation"
----
-
----
-title: "Magnetometer: z property"
 short-title: z
 slug: Web/API/Magnetometer/z
 page-type: web-api-instance-property
@@ -16,18 +10,15 @@ browser-compat: api.Magnetometer.z
 
 {{securecontext_header}}{{APIRef("Sensor API")}}{{SeeCompatTable}}
 
-The **`z`** read-only property of the
-{{domxref("Magnetometer")}} interface returns a number specifying
-the magnetic field around the device's z-axis.
+خاصیت فقط‌خواندنی **`z`** در رابط {{domxref("Magnetometer")}} عددی را برمی‌گرداند که میدان مغناطیسی اطراف محور z دستگاه را مشخص می‌کند.
 
-## Value
+## مقدار
 
-A {{jsxref('Number')}}.
+یک {{jsxref('Number')}}.
 
-## Examples
+## مثال‌ها
 
-The magnetometer is typically read in the {{domxref('Sensor.reading_event', 'reading')}} event
-callback. In the example below this occurs sixty times a second.
+مغناطیس‌سنج معمولاً در رویداد {{domxref('Sensor.reading_event', 'reading')}} خوانده می‌شود. در مثال زیر این کار شصت بار در ثانیه انجام می‌شود.
 
 ```js
 let magSensor = new Magnetometer({ frequency: 60 });
@@ -40,10 +31,10 @@ magSensor.addEventListener("reading", (e) => {
 magSensor.start();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
