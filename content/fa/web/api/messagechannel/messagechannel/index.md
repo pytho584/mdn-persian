@@ -1,11 +1,5 @@
 ---
 title: "MessageChannel: MessageChannel() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MessageChannel/MessageChannel"
-status: "needs-translation"
----
-
----
-title: "MessageChannel: MessageChannel() constructor"
 short-title: MessageChannel()
 slug: Web/API/MessageChannel/MessageChannel
 page-type: web-api-constructor
@@ -14,33 +8,25 @@ browser-compat: api.MessageChannel.MessageChannel
 
 {{APIRef("Channel Messaging API")}} {{AvailableInWorkers}}
 
-The **`MessageChannel()`** constructor of the {{domxref("MessageChannel")}}
-interface returns a new {{domxref("MessageChannel")}} object with two new
-{{domxref("MessagePort")}} objects.
+سازندهٔ **`MessageChannel()`** متعلق به رابط {{domxref("MessageChannel")}}، یک شیء جدید {{domxref("MessageChannel")}} بازمی‌گرداند که شامل دو شیء جدید {{domxref("MessagePort")}} است.
 
-## Syntax
+## نحو
 
 ```js-nolint
 new MessageChannel()
 ```
 
-### Parameters
+### پارامترها
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("MessageChannel")}} object.
+یک شیء جدید {{domxref("MessageChannel")}}.
 
-## Examples
+## مثال‌ها
 
-In the following code block, you can see a new channel being created using the
-`MessageChannel()` constructor.
-When the {{HTMLElement("iframe")}} has loaded,
-we pass {{domxref("MessageChannel.port2", "port2")}} to the `<iframe>` using {{domxref("MessagePort.postMessage")}} along with a message.
-The `handleMessage` handler then responds to a message being sent back from the
-`<iframe>` (using {{domxref("MessagePort.message_event", "onmessage")}}), putting it into a paragraph.
-The {{domxref("MessageChannel.port1", "port1")}} is listened to, to check when the message arrives.
+در بلوک کد زیر می‌بینید که یک کانال جدید با استفاده از سازندهٔ `MessageChannel()` ساخته می‌شود. پس از بارگذاری {{HTMLElement("iframe")}}، {{domxref("MessageChannel.port2", "port2")}} به‌همراه یک پیام از طریق {{domxref("MessagePort.postMessage")}} به `<iframe>` فرستاده می‌شود. سپس کنترل‌کنندهٔ `handleMessage` با استفاده از {{domxref("MessagePort.message_event", "onmessage")}} به پیامی که از `<iframe>` بازگردانده شده واکنش نشان می‌دهد و آن را در یک پاراگراف قرار می‌دهد. همچنین به {{domxref("MessageChannel.port1", "port1")}} گوش داده می‌شود تا مشخص شود پیام چه زمانی می‌رسد.
 
 ```js
 const channel = new MessageChannel();
@@ -61,18 +47,16 @@ function handleMessage(e) {
 }
 ```
 
-For a full working example,
-see our [channel messaging basic demo](https://github.com/mdn/dom-examples/tree/main/channel-messaging-basic)
-on GitHub ([run it live too](https://mdn.github.io/dom-examples/channel-messaging-basic/)).
+برای یک مثال کامل و عملی، [دموی پایهٔ پیام‌رسانی کانال](https://github.com/mdn/dom-examples/tree/main/channel-messaging-basic) را در GitHub ببینید ([اجرای زندهٔ آن](https://mdn.github.io/dom-examples/channel-messaging-basic/)).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Using channel messaging](/en-US/docs/Web/API/Channel_Messaging_API/Using_channel_messaging)
+- [استفاده از پیام‌رسانی کانال](/en-US/docs/Web/API/Channel_Messaging_API/Using_channel_messaging)
