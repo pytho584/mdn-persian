@@ -1,7 +1,6 @@
 ---
 title: "MutationRecord: type property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/MutationRecord/type"
-status: "needs-translation"
 ---
 
 ---
@@ -14,25 +13,25 @@ browser-compat: api.MutationRecord.type
 
 {{APIRef("DOM")}}
 
-The {{domxref("MutationRecord")}} read-only property **`type`** is the type of the {{domxref("MutationRecord")}} observed by a {{domxref("MutationObserver")}}.
+ویژگی فقط‌خواندنی **`type`** از {{domxref("MutationRecord")}}، نوع رکورد جهش (MutationRecord) مشاهده‌شده توسط یک {{domxref("MutationObserver")}} است.
 
-## Value
+## مقدار
 
-The property is set to the type of the mutation as a string. The value can be one of the following:
+این ویژگی به صورت رشته‌ای، نوع جهش را مشخص می‌کند. مقدار می‌تواند یکی از موارد زیر باشد:
 
-- `attributes` if the mutation was an attribute mutation.
+- `attributes` اگر جهش از نوع تغییر ویژگی (attribute) بوده باشد.
 
-- `characterData` if it was a mutation to a {{domxref("CharacterData")}} node.
+- `characterData` اگر جهش روی یک گره {{domxref("CharacterData")}} رخ داده باشد.
 
-- `childList` if the mutation was a mutation to the tree of nodes.
+- `childList` اگر جهش روی درخت گره‌ها (تغییر در لیست فرزندان) بوده باشد.
 
-## Examples
+## مثال‌ها
 
-### Log the type of a mutation
+### ثبت نوع یک جهش
 
-The following example gives you two buttons to manipulate the DOM. The first button adds a new node to the example, and the second button changes the `color` attribute of all the added nodes. A {{domxref("MutationObserver")}} is created to observe it all, and the observer is set to log the `type` of the mutation record to `#log`.
+مثال زیر دو دکمه برای دستکاری DOM در اختیار شما قرار می‌دهد. دکمه اول یک گره جدید به مثال اضافه می‌کند و دکمه دوم ویژگی `color` همه گره‌های اضافه‌شده را تغییر می‌دهد. یک {{domxref("MutationObserver")}} برای مشاهده همه این تغییرات ساخته می‌شود و مشاهده‌گر طوری تنظیم شده که نوع رکورد جهش را در `#log` ثبت کند.
 
-You'll notice the when you add a node, the `type` is `childList`, and when you change the `color` attribute, the `type` is `attributes`.
+خواهید دید که وقتی یک گره اضافه می‌کنید، `type` برابر با `childList` است و وقتی ویژگی `color` را تغییر می‌دهید، `type` برابر با `attributes` است.
 
 #### HTML
 
@@ -98,14 +97,14 @@ const observer = new MutationObserver(logMutationType);
 observer.observe(target, { childList: true, attributes: true, subtree: true });
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Log the type of a mutation", "", 200)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
