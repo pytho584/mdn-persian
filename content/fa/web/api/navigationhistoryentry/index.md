@@ -1,10 +1,4 @@
 ---
-title: "NavigationHistoryEntry"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigationHistoryEntry"
-status: "needs-translation"
----
-
----
 title: NavigationHistoryEntry
 slug: Web/API/NavigationHistoryEntry
 page-type: web-api-interface
@@ -13,42 +7,42 @@ browser-compat: api.NavigationHistoryEntry
 
 {{APIRef("Navigation API")}}
 
-The **`NavigationHistoryEntry`** interface of the {{domxref("Navigation API", "Navigation API", "", "nocode")}} represents a single navigation history entry.
+رابط **`NavigationHistoryEntry`** از {{domxref("Navigation API", "Navigation API", "", "nocode")}} نشان‌دهندهٔ یک ورودی از تاریخچهٔ پیمایش است.
 
-These objects are commonly accessed via the {{domxref("Navigation.currentEntry")}} property and {{domxref("Navigation.entries()")}} method.
+این اشیاء معمولاً از طریق ویژگی {{domxref("Navigation.currentEntry")}} و متد {{domxref("Navigation.entries()")}} قابل دسترسی هستند.
 
-The Navigation API only exposes history entries created in the current browsing context that have the same origin as the current page (e.g., not navigations inside embedded {{htmlelement("iframe")}}s, or cross-origin navigations), providing an accurate list of all previous history entries just for your app. This makes traversing the history a much less fragile proposition than with the older {{domxref("History API", "History API", "", "nocode")}}.
+Navigation API تنها ورودی‌های تاریخچه‌ای را در معرض دید قرار می‌دهد که در زمینهٔ مرور فعلی ایجاد شده‌اند و مبدأ (origin) یکسانی با صفحهٔ فعلی دارند (به عنوان مثال، نه پیمایش‌های داخل {{htmlelement("iframe")}}های تعبیه‌شده، و نه پیمایش‌های بین‌مبدأ). این کار یک فهرست دقیق از تمام ورودی‌های قبلی تاریخچه را فقط برای برنامهٔ شما فراهم می‌کند. این باعث می‌شود که پیمایش در تاریخچه نسبت به {{domxref("History API", "History API", "", "nocode")}} قدیمی بسیار کمتر شکننده باشد.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه (Instance properties)
 
-_Inherits properties from its parent, {{DOMxRef("EventTarget")}}._
+ویژگی‌هایی را از والد خود، {{DOMxRef("EventTarget")}}، به ارث می‌برد.
 
 - {{domxref("NavigationHistoryEntry.id", "id")}} {{ReadOnlyInline}}
-  - : Returns the `id` of the history entry. This is a unique, UA-generated value that always represents a specific history entry, useful to correlate it with an external resource such as a storage cache.
+  - : مقدار `id` ورودی تاریخچه را بازمی‌گرداند. این یک مقدار یکتا و تولیدشده توسط عامل کاربر (UA) است که همیشه نمایندهٔ یک ورودی خاص از تاریخچه می‌باشد و برای مرتبط‌سازی آن با یک منبع خارجی مانند حافظهٔ نهان ذخیره‌سازی مفید است.
 - {{domxref("NavigationHistoryEntry.index", "index")}} {{ReadOnlyInline}}
-  - : Returns the index of the history entry in the history entries list (that is, the list returned by {{domxref("Navigation.entries()")}}), or `-1` if the entry does not appear in the list.
+  - : شاخص (index) ورودی تاریخچه را در فهرست ورودی‌های تاریخچه (یعنی فهرست بازگردانده‌شده توسط {{domxref("Navigation.entries()")}}) بازمی‌گرداند، یا اگر ورودی در فهرست وجود نداشته باشد، `1-` را برمی‌گرداند.
 - {{domxref("NavigationHistoryEntry.key", "key")}} {{ReadOnlyInline}}
-  - : Returns the `key` of the history entry. This is a unique, UA-generated value that represents the history entry's slot in the entries list rather than the entry itself. It is used to navigate that particular slot via {{domxref("Navigation.traverseTo()")}}. The `key` will be reused by other entries that replace the entry in the list (that is, if the {{domxref("NavigateEvent.navigationType")}} is `replace`).
+  - : مقدار `key` ورودی تاریخچه را بازمی‌گرداند. این یک مقدار یکتا و تولیدشده توسط عامل کاربر است که نشان‌دهندهٔ جایگاه (slot) ورودی تاریخچه در فهرست ورودی‌ها است، نه خود ورودی. از آن برای پیمایش به آن جایگاه خاص از طریق {{domxref("Navigation.traverseTo()")}} استفاده می‌شود. `key` توسط ورودی‌های دیگری که جایگزین آن ورودی در فهرست می‌شوند، دوباره استفاده خواهد شد (یعنی اگر {{domxref("NavigateEvent.navigationType")}} برابر با `replace` باشد).
 - {{domxref("NavigationHistoryEntry.sameDocument", "sameDocument")}} {{ReadOnlyInline}}
-  - : Returns `true` if this history entry is for the same `document` as the current {{domxref("Document")}} value, or `false` otherwise.
+  - : اگر این ورودی تاریخچه برای همان `document` (سند) فعلی باشد، `true` و در غیر این صورت `false` بازمی‌گرداند.
 - {{domxref("NavigationHistoryEntry.url", "url")}} {{ReadOnlyInline}}
-  - : Returns the absolute URL of this history entry. If the entry corresponds to a different document than the current one (like `sameDocument` property is `false`), and that document was fetched with a {{httpheader("Referrer-Policy")}} header set to `no-referrer` or `origin`, the property returns `null`.
+  - : نشانی اینترنتی مطلق این ورودی تاریخچه را بازمی‌گرداند. اگر ورودی مربوط به سندی متفاوت از سند فعلی باشد (مانند اینکه ویژگی `sameDocument` برابر `false` باشد) و آن سند با هدر {{httpheader("Referrer-Policy")}} تنظیم‌شده به `no-referrer` یا `origin` دریافت شده باشد، این ویژگی `null` را برمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه (Instance methods)
 
-_Inherits methods from its parent, {{DOMxRef("EventTarget")}}._
+متدهایی را از والد خود، {{DOMxRef("EventTarget")}}، به ارث می‌برد.
 
 - {{domxref("NavigationHistoryEntry.getState", "getState()")}}
-  - : Returns a clone of the available state associated with this history entry.
+  - : یک کپی (clone) از حالت (state) موجود مرتبط با این ورودی تاریخچه را بازمی‌گرداند.
 
-## Events
+## رویدادها (Events)
 
 - {{domxref("NavigationHistoryEntry/dispose_event", "dispose")}}
-  - : Fires when the entry is no longer part of the history entry list.
+  - : هنگامی که ورودی دیگر بخشی از فهرست ورودی‌های تاریخچه نیست، فعال می‌شود.
 
-## Examples
+## مثال‌ها
 
 ```js
 function initHomeBtn() {
@@ -71,15 +65,15 @@ navigation.addEventListener("navigate", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات (Specifications)
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر (Browser compatibility)
 
 {{Compat}}
 
-## See also
+## همچنین ببینید (See also)
 
 - [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
 - [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
