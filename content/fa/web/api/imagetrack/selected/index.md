@@ -1,7 +1,5 @@
 ---
 title: "ImageTrack: selected property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ImageTrack/selected"
-status: "needs-translation"
 ---
 
 ---
@@ -14,25 +12,25 @@ browser-compat: api.ImageTrack.selected
 
 {{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`selected`** property of the {{domxref("ImageTrack")}} interface returns `true` if the track is selected for decoding.
+ویژگی **`selected`** از رابط {{domxref("ImageTrack")}}، در صورتی که track برای رمزگشایی انتخاب شده باشد، مقدار `true` را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A {{jsxref("Boolean")}}, if `true` the track is selected for decoding.
+یک {{jsxref("Boolean")}}؛ اگر `true` باشد، track برای رمزگشایی انتخاب شده است.
 
-## Examples
+## مثال‌ها
 
-The following example prints the value of `selected` to the console.
+مثال زیر مقدار `selected` را در کنسول چاپ می‌کند.
 
 ```js
 let track = imageDecoder.tracks.selectedTrack;
 console.log(track.selected); // this is the selected track so should return true.
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
