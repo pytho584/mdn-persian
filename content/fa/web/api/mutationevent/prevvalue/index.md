@@ -1,11 +1,5 @@
 ---
 title: "MutationEvent: prevValue property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MutationEvent/prevValue"
-status: "needs-translation"
----
-
----
-title: "MutationEvent: prevValue property"
 short-title: prevValue
 slug: Web/API/MutationEvent/prevValue
 page-type: web-api-instance-property
@@ -17,13 +11,13 @@ browser-compat: api.MutationEvent.prevValue
 
 {{APIRef("UI Events")}}{{Deprecated_Header}}{{non-standard_header}}
 
-The **`prevValue`** read-only property of the {{domxref("MutationEvent")}} interface returns a string. In `DOMAttrModified` events, it represents the previous value of the {{domxref("Attr")}} node. In `DOMCharacterDataModified` events, it contains the previous value of the {{domxref("CharacterData")}} node. In all other cases, returns the empty string (`""`).
+ویژگی فقط‌خواندنی **`prevValue`** از رابط {{domxref("MutationEvent")}} یک رشته برمی‌گرداند. در رویدادهای `DOMAttrModified`، این ویژگی مقدار پیشین گرهٔ {{domxref("Attr")}} را نشان می‌دهد. در رویدادهای `DOMCharacterDataModified`، شامل مقدار پیشین گرهٔ {{domxref("CharacterData")}} است. در همهٔ موارد دیگر، رشتهٔ خالی (`""`) را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```js
 element.addEventListener("DOMAttrModified", (event) => {
@@ -31,10 +25,10 @@ element.addEventListener("DOMAttrModified", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
