@@ -1,11 +1,5 @@
 ---
 title: "MediaTrackConstraints: width property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/width"
-status: "needs-translation"
----
-
----
-title: "MediaTrackConstraints: width property"
 short-title: width
 slug: Web/API/MediaTrackConstraints/width
 page-type: web-api-instance-property
@@ -14,41 +8,30 @@ browser-compat: api.MediaStreamTrack.applyConstraints.width_constraint
 
 {{APIRef("Media Capture and Streams")}}
 
-The {{domxref("MediaTrackConstraints")}} dictionary's
-**`width`** property is a [`ConstrainULong`](/en-US/docs/Web/API/MediaTrackConstraints#constrainulong)
-describing the requested or mandatory constraints placed upon the value of the
-{{domxref("MediaTrackSettings.width", "width")}} constrainable property.
+خصوصیت **`width`** در فرهنگ لغت {{domxref("MediaTrackConstraints")}} یک [`ConstrainULong`](/en-US/docs/Web/API/MediaTrackConstraints#constrainulong) است که محدودیت‌های درخواستی یا اجباری اعمال‌شده بر مقدار ویژگی قابل‌محدودیت {{domxref("MediaTrackSettings.width", "width")}} را توصیف می‌کند.
 
-If needed, you can determine whether or not this constraint is supported by checking
-the value of {{domxref("MediaTrackSupportedConstraints.width")}} as returned by a call
-to {{domxref("MediaDevices.getSupportedConstraints()")}}. However, typically this is
-unnecessary since browsers will ignore any constraints they're unfamiliar with.
+در صورت نیاز، می‌توانید با بررسی مقدار {{domxref("MediaTrackSupportedConstraints.width")}} که از فراخوانی {{domxref("MediaDevices.getSupportedConstraints()")}} به دست می‌آید، تشخیص دهید که آیا این محدودیت پشتیبانی می‌شود یا خیر. با این حال، معمولاً این کار ضروری نیست، زیرا مرورگرها هر محدودیتی را که با آن آشنا نباشند نادیده می‌گیرند.
 
-## Value
+## مقدار
 
-If this value is a number, the user agent will attempt to obtain media whose width is
-as close as possible to this number given the capabilities of the hardware and the other
-constraints specified. Otherwise, the value of this [`ConstrainULong`](/en-US/docs/Web/API/MediaTrackConstraints#constrainulong) will
-guide the user agent in its efforts to provide an exact match to the required width (if
-`exact` is specified or both `min` and `max` are
-provided and have the same value) or to a best-possible value.
+اگر این مقدار یک عدد باشد، عامل کاربر تلاش می‌کند رسانه‌ای با عرضی تا حد امکان نزدیک به این عدد، با توجه به قابلیت‌های سخت‌افزار و سایر محدودیت‌های مشخص‌شده، به دست آورد. در غیر این صورت، مقدار این [`ConstrainULong`](/en-US/docs/Web/API/MediaTrackConstraints#constrainulong) عامل کاربر را در تلاش برای ارائه تطابق دقیق با عرض موردنیاز (اگر `exact` مشخص شده باشد یا هر دو `min` و `max` ارائه شده و مقدار یکسانی داشته باشند) یا رسیدن به بهترین مقدار ممکن راهنمایی می‌کند.
 
-## Examples
+## مثال‌ها
 
-See the [Constraint exerciser](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#example_constraint_exerciser) example.
+مثال [Constraint exerciser](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#example_constraint_exerciser) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
-- [Capabilities, constraints, and settings](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints)
+- [API ضبط و جریان رسانه](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
+- [قابلیت‌ها، محدودیت‌ها و تنظیمات](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints)
 - {{domxref("MediaTrackConstraints")}}
 - {{domxref("MediaDevices.getSupportedConstraints()")}}
 - {{domxref("MediaTrackSupportedConstraints")}}
