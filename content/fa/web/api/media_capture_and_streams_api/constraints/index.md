@@ -1,10 +1,4 @@
 ---
-title: "Capabilities, constraints, and settings"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints"
-status: "needs-translation"
----
-
----
 title: Capabilities, constraints, and settings
 slug: Web/API/Media_Capture_and_Streams_API/Constraints
 page-type: guide
@@ -13,26 +7,26 @@ browser-compat: api.MediaDevices.getSupportedConstraints
 
 {{DefaultAPISidebar("Media Capture and Streams")}}
 
-This article discusses the twin concepts of **constraints** and **capabilities**, as well as media settings, and includes an example we call the [Constraint Exerciser](#example_constraint_exerciser). The Constraint Exerciser lets you experiment with the results of different constraint sets being applied to the audio and video tracks coming from the computer's A/V input devices (such as its webcam and microphone).
+این مقاله به بررسی مفاهیم دوقلوی **محدودیت‌ها** (constraints) و **قابلیت‌ها** (capabilities) به همراه تنظیمات رسانه می‌پردازد و شامل یک نمونه به نام [Constraint Exerciser](#example_constraint_exerciser) (تمرین‌گر محدودیت‌ها) است. تمرین‌گر محدودیت‌ها به شما امکان می‌دهد نتایج اعمال مجموعه‌های مختلف محدودیت بر روی track‌های صوتی و تصویری که از دستگاه‌های ورودی A/V رایانه (مانند وب‌کم و میکروفون) می‌آیند، آزمایش کنید.
 
-Historically, writing scripts for the Web that work intimately with Web APIs has had a well-known challenge: often, your code needs to know whether or not an API exists and if so, what its limitations are on the {{Glossary("user agent")}} it's running on. Figuring this out has often been difficult, and has usually involved looking at some combination of which {{Glossary("user agent")}} (or browser) you're running on, which version it is, looking to see if certain objects exist, trying to see whether various things work or not and determining what errors occur, and so forth. The result has been a lot of very fragile code, or a reliance on libraries which figure this stuff out for you, then implement {{Glossary("polyfill", "polyfills")}} to patch the holes in the implementation on your behalf.
+از نظر تاریخی، نوشتن اسکریپت‌هایی برای وب که با Web API‌ها کار نزدیکی دارند، چالش شناخته‌شده‌ای داشته است: اغلب کد شما باید بداند که آیا یک API وجود دارد یا خیر و اگر وجود دارد، محدودیت‌های آن در {{Glossary("user agent")}} (عامل کاربر) که روی آن اجرا می‌شود چیست. فهمیدن این موضوع اغلب دشوار بوده و معمولاً شامل نگاه کردن به ترکیبی از اینکه روی کدام {{Glossary("user agent")}} (یا مرورگر) اجرا می‌شوید، چه نسخه‌ای است، بررسی وجود اشیاء خاص، تلاش برای دیدن اینکه آیا چیزهای مختلف کار می‌کنند یا نه و تعیین خطاهای رخ داده، و غیره بوده است. نتیجه کدهای بسیار شکننده یا اتکا به کتابخانه‌هایی است که این مسائل را برای شما حل می‌کنند و سپس {{Glossary("polyfill", "polyfill‌ها")}} را برای پر کردن شکاف‌های پیاده‌سازی از طرف شما پیاده‌سازی می‌کنند.
 
-Capabilities and constraints let the browser and website or app exchange information about what **constrainable properties** the browser's implementation supports and what values it supports for each.
+قابلیت‌ها و محدودیت‌ها به مرورگر و وب‌سایت یا برنامه اجازه می‌دهند تا اطلاعاتی را در مورد اینکه چه **ویژگی‌های قابل محدودیت** (constrainable properties) توسط پیاده‌سازی مرورگر پشتیبانی می‌شود و چه مقادیری برای هر یک پشتیبانی می‌کند، مبادله کنند.
 
-## Overview
+## مرور کلی
 
-The process works like this (using {{domxref("MediaStreamTrack")}} as an example):
+فرآیند به این صورت کار می‌کند (با استفاده از {{domxref("MediaStreamTrack")}} به عنوان مثال):
 
-1. If needed, call {{domxref("MediaDevices.getSupportedConstraints()")}} to get the list of **supported constraints**, which tells you what constrainable properties the browser knows about. This isn't always necessary, since any that aren't known will be ignored when you specify them—but if you have any that you can't get by without, you can start by checking to be sure they're on the list.
-2. Once the script knows whether the property or properties it wishes to use are supported, it can then check the **capabilities** of the API and its implementation by examining the object returned by the track's `getCapabilities()` method; this object lists each supported constraint and the values or range of values which are supported.
-3. Finally, the track's `applyConstraints()` method is called to configure the API as desired by specifying the values or ranges of values it wishes to use for any of the constrainable properties about which it has a preference.
-4. The track's `getConstraints()` method returns the set of constraints passed into the most recent call to `applyConstraints()`. This may not represent the actual current state of the track, due to properties whose requested values had to be adjusted and because platform default values aren't represented. For a complete representation of the track's current configuration, use `getSettings()`.
+1. در صورت نیاز، {{domxref("MediaDevices.getSupportedConstraints()")}} را فراخوانی کنید تا لیست **محدودیت‌های پشتیبانی‌شده** را دریافت کنید، که به شما می‌گوید مرورگر چه ویژگی‌های قابل محدودیتی را می‌شناسد. این همیشه ضروری نیست، زیرا هر ویژگی که ناشناخته باشد هنگام مشخص کردن نادیده گرفته می‌شود - اما اگر ویژگی‌ای دارید که بدون آن نمی‌توانید کار کنید، می‌توانید با بررسی اینکه در لیست وجود دارد شروع کنید.
+2. پس از اینکه اسکریپت فهمید آیا ویژگی یا ویژگی‌هایی که می‌خواهد استفاده کند پشتیبانی می‌شوند یا نه، می‌تواند **قابلیت‌های** API و پیاده‌سازی آن را با بررسی شیء برگشتی از متد `getCapabilities()` track بررسی کند. این شیء هر محدودیت پشتیبانی‌شده و مقادیر یا محدوده مقادیری که پشتیبانی می‌شوند را لیست می‌کند.
+3. در نهایت، متد `applyConstraints()` track برای پیکربندی API به دلخواه با مشخص کردن مقادیر یا محدوده مقادیری که می‌خواهید برای هر یک از ویژگی‌های قابل محدودیتی که ترجیح دارید استفاده شود، فراخوانی می‌شود.
+4. متد `getConstraints()` track مجموعه محدودیت‌هایی را که در آخرین فراخوانی به `applyConstraints()` ارسال شده است، برمی‌گرداند. این ممکن است وضعیت فعلی واقعی track را نشان ندهد، به دلیل ویژگی‌هایی که مقادیر درخواستی آنها باید تنظیم می‌شد و به این دلیل که مقادیر پیش‌فرض پلتفرم نشان داده نمی‌شوند. برای نمایش کامل پیکربندی فعلی track، از `getSettings()` استفاده کنید.
 
-In the Media Capture and Streams API, both {{domxref("MediaStream")}} and {{domxref("MediaStreamTrack")}} have constrainable properties.
+در Media Capture and Streams API، هر دو {{domxref("MediaStream")}} و {{domxref("MediaStreamTrack")}} دارای ویژگی‌های قابل محدودیت هستند.
 
-## Determining if a constraint is supported
+## تعیین اینکه آیا یک محدودیت پشتیبانی می‌شود
 
-If you need to know whether or not a given constraint is supported by the user agent, you can find out by calling {{domxref("MediaDevices.getSupportedConstraints", "navigator.mediaDevices.getSupportedConstraints()")}} to get a list of the constrainable properties which the browser knows, like this:
+اگر نیاز دارید بدانید که آیا یک محدودیت خاص توسط user agent پشتیبانی می‌شود یا نه، می‌توانید با فراخوانی {{domxref("MediaDevices.getSupportedConstraints", "navigator.mediaDevices.getSupportedConstraints()")}} لیستی از ویژگی‌های قابل محدودیتی که مرورگر می‌شناسد دریافت کنید، به این شکل:
 
 ```js
 const supported = navigator.mediaDevices.getSupportedConstraints();
@@ -40,17 +34,17 @@ const supported = navigator.mediaDevices.getSupportedConstraints();
 document.getElementById("frameRateSlider").disabled = !supported["frameRate"];
 ```
 
-In this example, the supported constraints are fetched, and a control that lets the user configure the frame rate is disabled if the `frameRate` constraint isn't supported.
+در این مثال، محدودیت‌های پشتیبانی‌شده واکشی می‌شوند و یک کنترل که به کاربر اجازه می‌دهد نرخ فریم را پیکربندی کند، در صورتی که محدودیت `frameRate` پشتیبانی نشود، غیرفعال می‌شود.
 
-## How constraints are defined
+## نحوه تعریف محدودیت‌ها
 
-A single constraint is an object whose name matches the constrainable property whose desired value or range of values is being specified. This object contains zero or more individual constraints, as well as an optional sub-object named `advanced`, which contains another set of zero or more constraints which the user agent must satisfy if at all possible. The user agent attempts to satisfy constraints in the order specified in the constraint set.
+یک محدودیت منفرد شیئی است که نام آن با نام ویژگی قابل محدودیتی که مقدار یا محدوده مقادیر مورد نظر برای آن مشخص می‌شود مطابقت دارد. این شیء شامل صفر یا چند محدودیت منفرد و همچنین یک زیر-شیء اختیاری به نام `advanced` است که شامل مجموعه دیگری از صفر یا چند محدودیت است که user agent باید در صورت امکان آنها را برآورده کند. user agent سعی می‌کند محدودیت‌ها را به ترتیب مشخص شده در مجموعه محدودیت برآورده کند.
 
-The most important thing to understand is that most constraints aren't requirements; instead, they're requests. There are exceptions, and we'll get to those shortly.
+مهمترین نکته‌ای که باید درک کنید این است که بیشتر محدودیت‌ها الزام نیستند؛ بلکه درخواست هستند. استثناهایی وجود دارد که به زودی به آنها می‌پردازیم.
 
-### Requesting a specific value for a setting
+### درخواست یک مقدار مشخص برای یک تنظیم
 
-Most, each constraint may be a specific value indicating a desired value for the setting. For example:
+بیشتر محدودیت‌ها می‌توانند یک مقدار خاص باشند که نشان‌دهنده مقدار مورد نظر برای آن تنظیم است. برای مثال:
 
 ```js
 const constraints = {
@@ -62,15 +56,15 @@ const constraints = {
 myTrack.applyConstraints(constraints);
 ```
 
-In this case, the constraints indicate that any values are fine for nearly all properties, but that a standard high definition (HD) video size is desired, with the standard 16:9 {{glossary("aspect ratio")}}. There's no guarantee that the resulting track will match any of these, but the user agent should do its best to match as many as possible.
+در این حالت، محدودیت‌ها نشان می‌دهند که برای تقریباً همه ویژگی‌ها هر مقداری قابل قبول است، اما اندازه ویدیوی با کیفیت بالا (HD) استاندارد با {{glossary("aspect ratio")}} (نسبت تصویر) استاندارد 16:9 مورد نظر است. هیچ تضمینی وجود ندارد که track حاصل با هیچ‌یک از اینها مطابقت داشته باشد، اما user agent باید تمام تلاش خود را برای تطبیق هرچه بیشتر انجام دهد.
 
-The prioritization of the properties is simple: if two properties' requested values are mutually exclusive, then the one listed first in the constraint set will be used. As an example, if the browser running the code above couldn't provide a 1920x1080 track but could do 1920x900, then that's what would be provided.
+اولویت‌بندی ویژگی‌ها ساده است: اگر مقادیر درخواستی دو ویژگی متقابلاً منحصر به فرد باشند، ویژگی‌ای که ابتدا در مجموعه محدودیت ذکر شده است استفاده می‌شود. به عنوان مثال، اگر مرورگری که کد بالا را اجرا می‌کند نتواند یک track 1920x1080 ارائه دهد اما بتواند 1920x900 ارائه دهد، آنگاه آن ارائه خواهد شد.
 
-Simple constraints like these, specifying a single value, are always treated as non-required. The user agent will try to provide what you request but will not guarantee that what you get will match. However, if you use simple values for properties when calling {{domxref("MediaStreamTrack.applyConstraints()")}}, the request will always succeed, because these values will be considered a request, not a requirement.
+محدودیت‌های ساده مانند اینها که یک مقدار واحد را مشخص می‌کنند، همیشه به عنوان غیرالزامی در نظر گرفته می‌شوند. user agent سعی می‌کند آنچه را که درخواست می‌کنید ارائه دهد اما تضمین نمی‌کند که آنچه دریافت می‌کنید مطابقت داشته باشد. با این حال، اگر از مقادیر ساده برای ویژگی‌ها هنگام فراخوانی {{domxref("MediaStreamTrack.applyConstraints()")}} استفاده کنید، درخواست همیشه موفق خواهد بود، زیرا این مقادیر به عنوان یک درخواست در نظر گرفته می‌شوند، نه یک الزام.
 
-### Specifying a range of values
+### مشخص کردن یک محدوده از مقادیر
 
-Sometimes, any value within a range is acceptable for a property's value. You can specify ranges with either or both minimum and maximum values, and you can even specify an ideal value within the range, if you choose. If you provide an ideal value, the browser will try to get as close as possible to matching that value, given the other constraints specified.
+گاهی اوقات، هر مقداری در یک محدوده برای مقدار یک ویژگی قابل قبول است. می‌توانید محدوده‌ها را با مقادیر حداقل و/یا حداکثر مشخص کنید، و حتی می‌توانید یک مقدار ایده‌آل در محدوده تعیین کنید، اگر بخواهید. اگر یک مقدار ایده‌آل ارائه دهید، مرورگر سعی می‌کند تا حد امکان به آن مقدار نزدیک شود، با توجه به سایر محدودیت‌های مشخص شده.
 
 ```js
 const supports = navigator.mediaDevices.getSupportedConstraints();
@@ -81,7 +75,7 @@ if (
   !supports["frameRate"] ||
   !supports["facingMode"]
 ) {
-  // We're missing needed properties, so handle that error.
+  // ویژگی‌های مورد نیاز وجود ندارند، بنابراین خطا را مدیریت کنید.
 } else {
   const constraints = {
     width: { min: 640, ideal: 1920, max: 1920 },
@@ -94,28 +88,28 @@ if (
   myTrack
     .applyConstraints(constraints)
     .then(() => {
-      /* do stuff if constraints applied successfully */
+      /* اگر محدودیت‌ها با موفقیت اعمال شوند، کارهای لازم را انجام دهید */
     })
     .catch((reason) => {
-      /* failed to apply constraints; reason is why */
+      /* اعمال محدودیت‌ها ناموفق بود؛ دلیل آن reason است */
     });
 }
 ```
 
-Here, after ensuring that the constrainable properties for which matches must be found are supported (`width`, `height`, `frameRate`, and `facingMode`), we set up constraints which request a width no smaller than 640 and no larger than 1920 (but preferably 1920), a height no smaller than 400 (but ideally 1080), an aspect ratio of 16:9 (1.777777778), and a frame rate no greater than 30 frames per second. In addition, the only acceptable input device is a camera facing the user (a "selfie cam"). If the `width`, `height`, `frameRate`, or `facingMode` constraints can't be met, the promise returned by `applyConstraints()` will be rejected.
+در اینجا، پس از اطمینان از اینکه ویژگی‌های قابل محدودیتی که باید مطابقت پیدا کنند پشتیبانی می‌شوند (`width`، `height`، `frameRate` و `facingMode`)، محدودیت‌هایی را تنظیم می‌کنیم که عرضی نه کمتر از 640 و نه بیشتر از 1920 (اما ترجیحاً 1920)، ارتفاعی نه کمتر از 400 (اما ایده‌آل 1080)، نسبت تصویر 16:9 (1.777777778) و نرخ فریمی حداکثر 30 فریم در ثانیه را درخواست می‌کنند. علاوه بر این، تنها دستگاه ورودی قابل قبول دوربینی است که رو به کاربر است (یک "selfie cam"). اگر محدودیت‌های `width`، `height`، `frameRate` یا `facingMode` قابل برآورده شدن نباشند، promise برگشتی از `applyConstraints()` رد خواهد شد.
 
 > [!NOTE]
-> Constraints which are specified using any or all of `max`, `min`, or `exact` are always treated as mandatory. If any constraint which uses one or more of those can't be met when calling `applyConstraints()`, the promise will be rejected.
+> محدودیت‌هایی که با استفاده از هر یک یا همه `max`، `min` یا `exact` مشخص می‌شوند، همیشه به عنوان اجباری در نظر گرفته می‌شوند. اگر هر محدودیتی که از یک یا چند مورد از اینها استفاده می‌کند هنگام فراخوانی `applyConstraints()` قابل برآورده شدن نباشد، promise رد خواهد شد.
 
-### Advanced constraints
+### محدودیت‌های پیشرفته
 
-So-called advanced constraints are created by adding an `advanced` property to the constraint set; this property's value is an array of additional constraint sets which are considered optional. There are few if any use cases for this feature, and there is some interest in removing it from the specification, so it will not be discussed here. If you wish to learn more, see [section 11 of the Media Capture and Streams specification](https://w3c.github.io/mediacapture-main/#constrainable-interface), past example 2.
+به اصطلاح محدودیت‌های پیشرفته با افزودن یک ویژگی `advanced` به مجموعه محدودیت ایجاد می‌شوند؛ مقدار این ویژگی آرایه‌ای از مجموعه‌های محدودیت اضافی است که اختیاری در نظر گرفته می‌شوند. موارد استفاده کمی برای این ویژگی وجود دارد یا اصلاً وجود ندارد و برخی علاقه به حذف آن از مشخصات نشان داده‌اند، بنابراین در اینجا بحث نخواهد شد. اگر مایل به یادگیری بیشتر هستید، به [بخش 11 از مشخصات Media Capture and Streams](https://w3c.github.io/mediacapture-main/#constrainable-interface)، مثال 2 گذشته مراجعه کنید.
 
-## Checking capabilities
+## بررسی قابلیت‌ها
 
-You can call {{domxref("MediaStreamTrack.getCapabilities()")}} to get a list of all of the supported capabilities and the values or ranges of values which each one accepts on the current platform and user agent. This function returns an object which lists each constrainable property supported by the browser and a value or range of values which are supported for each one of those properties.
+می‌توانید {{domxref("MediaStreamTrack.getCapabilities()")}} را فراخوانی کنید تا لیستی از تمام قابلیت‌های پشتیبانی‌شده و مقادیر یا محدوده مقادیری که هر کدام در پلتفرم و user agent فعلی می‌پذیرند دریافت کنید. این تابع یک شیء برمی‌گرداند که هر ویژگی قابل محدودیت پشتیبانی‌شده توسط مرورگر و یک مقدار یا محدوده مقادیری که برای هر یک از آن ویژگی‌ها پشتیبانی می‌شود را لیست می‌کند.
 
-For example, the following snippet will result in the user being asked for permission to access their local camera and microphone. Once permission is granted, `MediaTrackCapabilities` objects will be logged to the console that detail the capabilities of each {{domxref("MediaStreamTrack")}}:
+به عنوان مثال، قطعه کد زیر منجر به درخواست اجازه از کاربر برای دسترسی به دوربین و میکروفون محلی می‌شود. پس از اعطای مجوز، اشیاء `MediaTrackCapabilities` در کنسول ثبت می‌شوند که جزئیات قابلیت‌های هر {{domxref("MediaStreamTrack")}} را نشان می‌دهد:
 
 ```js
 navigator.mediaDevices
@@ -126,7 +120,7 @@ navigator.mediaDevices
   });
 ```
 
-An example capabilities object looks like this:
+یک مثال از شیء قابلیت‌ها به این شکل است:
 
 ```json
 {
@@ -142,11 +136,11 @@ An example capabilities object looks like this:
 }
 ```
 
-The exact contents of the object will depend on the browser and media hardware.
+محتوای دقیق شیء به مرورگر و سخت‌افزار رسانه بستگی دارد.
 
-## Applying constraints
+## اعمال محدودیت‌ها
 
-The first and most common way to use constraints is to specify them when you call {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}}:
+اولین و رایج‌ترین راه برای استفاده از محدودیت‌ها، مشخص کردن آنها هنگام فراخوانی {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}} است:
 
 ```js
 navigator.mediaDevices
@@ -167,12 +161,12 @@ navigator.mediaDevices
   .catch(handleError);
 ```
 
-In this example, constraints are applied at `getUserMedia()` time, asking for an ideal set of options with fallbacks for the video.
+در این مثال، محدودیت‌ها در زمان `getUserMedia()` اعمال می‌شوند و مجموعه‌ای ایده‌آل از گزینه‌ها با گزینه‌های جایگزین برای ویدیو درخواست می‌شود.
 
 > [!NOTE]
-> You can specify one or more media input device IDs to establish restrictions on which input sources are allowed. To collect a list of the available devices, you can call {{domxref("MediaDevices.enumerateDevices", "navigator.mediaDevices.enumerateDevices()")}}, then for each device which meets the desired criteria, add its `deviceId` to the `MediaConstraints` object that eventually gets passed into `getUserMedia()`.
+> می‌توانید یک یا چند شناسه دستگاه ورودی رسانه را مشخص کنید تا محدودیت‌هایی در مورد اینکه کدام منابع ورودی مجاز هستند ایجاد کنید. برای جمع‌آوری لیست دستگاه‌های موجود، می‌توانید {{domxref("MediaDevices.enumerateDevices", "navigator.mediaDevices.enumerateDevices()")}} را فراخوانی کنید، سپس برای هر دستگاهی که معیارهای مورد نظر را برآورده می‌کند، `deviceId` آن را به شیء `MediaConstraints` که در نهایت به `getUserMedia()` ارسال می‌شود اضافه کنید.
 
-You can also change the constraints of an existing {{domxref("MediaStreamTrack")}} on the fly, by calling the track's {{domxref("MediaStreamTrack.applyConstraints", "applyConstraints()")}} method, passing into it an object representing the constraints you wish to apply to the track:
+همچنین می‌توانید محدودیت‌های یک {{domxref("MediaStreamTrack")}} موجود را در حال اجرا تغییر دهید، با فراخوانی متد {{domxref("MediaStreamTrack.applyConstraints", "applyConstraints()")}} track و ارسال یک شیء به آن که نشان‌دهنده محدودیت‌هایی است که می‌خواهید به track اعمال کنید:
 
 ```js
 videoTrack.applyConstraints({
@@ -181,15 +175,15 @@ videoTrack.applyConstraints({
 });
 ```
 
-In this snippet, the video track referenced by `videoTrack` is updated so that its resolution as closely as possible matches 1920x1080 pixels (1080p high definition).
+در این قطعه، track ویدیویی که توسط `videoTrack` ارجاع داده شده است به‌روزرسانی می‌شود تا وضوح آن تا حد امکان نزدیک به 1920x1080 پیکسل (1080p با کیفیت بالا) باشد.
 
-## Retrieving current constraints and settings
+## بازیابی محدودیت‌ها و تنظیمات فعلی
 
-It's important to remember the difference between **constraints** and **settings**. Constraints are a way to specify what values you need, want, and are willing to accept for the various constrainable properties (as described in the documentation for {{domxref("MediaTrackConstraints")}}), while settings are the actual values of each constrainable property at the current time.
+مهم است که تفاوت بین **محدودیت‌ها** (constraints) و **تنظیمات** (settings) را به خاطر بسپارید. محدودیت‌ها راهی برای مشخص کردن مقادیری هستند که نیاز دارید، می‌خواهید و مایل به پذیرش آنها برای ویژگی‌های قابل محدودیت مختلف هستید (همانطور که در مستندات {{domxref("MediaTrackConstraints")}} توضیح داده شده است)، در حالی که تنظیمات مقادیر واقعی هر ویژگی قابل محدودیت در زمان حال هستند.
 
-### Getting the constraints in effect
+### دریافت محدودیت‌های در حال اجرا
 
-If at any time you need to fetch the set of constraints that are currently applied to the media, you can get that information by calling {{domxref("MediaStreamTrack.getConstraints()")}}, as shown in the example below.
+اگر در هر زمانی نیاز به واکشی مجموعه محدودیت‌هایی دارید که در حال حاضر به رسانه اعمال شده‌اند، می‌توانید آن اطلاعات را با فراخوانی {{domxref("MediaStreamTrack.getConstraints()")}} دریافت کنید، همانطور که در مثال زیر نشان داده شده است.
 
 ```js
 function switchCameras(track, camera) {
@@ -199,11 +193,11 @@ function switchCameras(track, camera) {
 }
 ```
 
-This function accepts a {{domxref("MediaStreamTrack")}} and a string indicating the camera facing mode to use, fetches the current constraints, sets the value of the {{domxref("MediaTrackConstraints.facingMode")}} to the specified value, then applies the updated constraint set.
+این تابع یک {{domxref("MediaStreamTrack")}} و یک رشته که نشان‌دهنده حالت دوربین مورد استفاده است می‌پذیرد، محدودیت‌های فعلی را واکشی می‌کند، مقدار {{domxref("MediaTrackConstraints.facingMode")}} را به مقدار مشخص شده تنظیم می‌کند و سپس مجموعه محدودیت به‌روزرسانی شده را اعمال می‌کند.
 
-### Getting the current settings for a track
+### دریافت تنظیمات فعلی یک track
 
-Unless you only use exact constraints (which is pretty restrictive, so be sure you mean it!), there's no guarantee exactly what you're going to actually get after the constraints are applied. The values of the constrainable properties as they actually are in the resulting media are referred to as the settings. If you need to know the true format and other properties of the media, you can obtain those settings by calling {{domxref("MediaStreamTrack.getSettings()")}}. This returns an object based on the dictionary {{domxref("MediaTrackSettings")}}. For example:
+مگر اینکه فقط از محدودیت‌های دقیق استفاده کنید (که بسیار محدودکننده است، پس مطمئن باشید منظورتان همین است)، هیچ تضمینی وجود ندارد که دقیقاً چه چیزی پس از اعمال محدودیت‌ها دریافت خواهید کرد. مقادیر ویژگی‌های قابل محدودیت همانطور که در رسانه حاصل هستند، تنظیمات نامیده می‌شوند. اگر نیاز به دانستن قالب واقعی و سایر ویژگی‌های رسانه دارید، می‌توانید آن تنظیمات را با فراخوانی {{domxref("MediaStreamTrack.getSettings()")}} بدست آورید. این تابع یک شیء بر اساس دیکشنری {{domxref("MediaTrackSettings")}} برمی‌گرداند. برای مثال:
 
 ```js
 function whichCamera(track) {
@@ -211,13 +205,13 @@ function whichCamera(track) {
 }
 ```
 
-This function uses `getSettings()` to obtain the track's currently in-use values for the constrainable properties and returns the value of {{domxref("MediaTrackSettings.facingMode", "facingMode")}}.
+این تابع از `getSettings()` برای به دست آوردن مقادیر فعلی مورد استفاده track برای ویژگی‌های قابل محدودیت استفاده می‌کند و مقدار {{domxref("MediaTrackSettings.facingMode", "facingMode")}} را برمی‌گرداند.
 
-## Example: Constraint exerciser
+## مثال: تمرین‌گر محدودیت‌ها (Constraint exerciser)
 
-In this example, we create an exerciser which lets you experiment with media constraints by editing the source code describing the constraint sets for audio and video tracks. You can then apply those changes and see the result, including both what the stream looks like and what the actual media settings are set to after applying the new constraints.
+در این مثال، یک تمرین‌گر ایجاد می‌کنیم که به شما امکان می‌دهد با محدودیت‌های رسانه با ویرایش کد منبع توصیف‌کننده مجموعه محدودیت‌ها برای track‌های صوتی و تصویری آزمایش کنید. سپس می‌توانید آن تغییرات را اعمال کنید و نتیجه را ببینید، از جمله اینکه جریان چه شکلی است و تنظیمات واقعی رسانه پس از اعمال محدودیت‌های جدید چه مقادیری دارند.
 
-The HTML and CSS for this example are pretty simple, and aren't shown here. You can look at the complete code by clicking "Play" to view it in the playground.
+HTML و CSS برای این مثال بسیار ساده هستند و در اینجا نشان داده نمی‌شوند. می‌توانید با کلیک روی "Play" برای مشاهده آن در محیط اجرا، کد کامل را ببینید.
 
 ```html hidden
 <p>
@@ -324,9 +318,9 @@ h3 {
 }
 ```
 
-### Defaults and variables
+### پیش‌فرض‌ها و متغیرها
 
-First we have the default constraint sets, as strings. These strings are presented in editable {{HTMLElement("textarea")}}s, but this is the initial configuration of the stream.
+ابتدا مجموعه محدودیت‌های پیش‌فرض را به صورت رشته داریم. این رشته‌ها در {{HTMLElement("textarea")}}های قابل ویرایش نمایش داده می‌شوند، اما این پیکربندی اولیه جریان است.
 
 ```js
 const videoDefaultConstraintString =
@@ -335,9 +329,9 @@ const audioDefaultConstraintString =
   '{\n  "sampleSize": 16,\n  "channelCount": 2,\n  "echoCancellation": false\n}';
 ```
 
-These defaults ask for a pretty common camera configuration, but don't insist on any property being of special importance. The browser should do its best to match these settings but will settle for anything it considers a close match.
+این پیش‌فرض‌ها یک پیکربندی نسبتاً رایج دوربین را درخواست می‌کنند، اما بر اهمیت خاص هیچ ویژگی‌ای تأکید نمی‌کنند. مرورگر باید تمام تلاش خود را برای تطبیق این تنظیمات انجام دهد، اما به هر چیزی که آن را یک تطابق نزدیک بداند رضایت می‌دهد.
 
-Then we initialize the variables which will hold the {{domxref("MediaTrackConstraints")}} objects for the video and audio tracks, as well as the variables which will hold references to the video and audio tracks themselves, to `null`.
+سپس متغیرهایی را که اشیاء {{domxref("MediaTrackConstraints")}} را برای track‌های ویدیو و صدا نگه می‌دارند، و همچنین متغیرهایی که ارجاعات به خود track‌های ویدیو و صدا را نگه می‌دارند، به `null` مقداردهی می‌کنیم.
 
 ```js
 let videoConstraints = null;
@@ -347,7 +341,7 @@ let audioTrack = null;
 let videoTrack = null;
 ```
 
-And we get references to all of the elements we'll need to access.
+و ارجاعات به تمام عناصری که باید به آنها دسترسی داشته باشیم را دریافت می‌کنیم.
 
 ```js
 const videoElement = document.getElementById("video");
@@ -359,33 +353,33 @@ const videoSettingsText = document.getElementById("videoSettingsText");
 const audioSettingsText = document.getElementById("audioSettingsText");
 ```
 
-These elements are:
+این عناصر عبارتند از:
 
 - `videoElement`
-  - : The {{HTMLElement("video")}} element that will show the stream.
+  - : عنصر {{HTMLElement("video")}} که جریان را نمایش می‌دهد.
 - `logElement`
-  - : A {{HTMLElement("div")}} into which any error messages or other log-type output will be written.
+  - : یک {{HTMLElement("div")}} که هر پیام خطا یا خروجی از نوع لاگ در آن نوشته می‌شود.
 - `supportedConstraintList`
-  - : A {{HTMLElement("ul")}} (unordered list) into which we programmatically add the names of each of the constrainable properties supported by the user's browser.
+  - : یک {{HTMLElement("ul")}} (لیست نامرتب) که به صورت برنامه‌نویسی نام هر یک از ویژگی‌های قابل محدودیت پشتیبانی‌شده توسط مرورگر کاربر را به آن اضافه می‌کنیم.
 - `videoConstraintEditor`
-  - : A {{HTMLElement("textarea")}} element that lets the user edit the code for the video track's constraint set.
+  - : یک عنصر {{HTMLElement("textarea")}} که به کاربر اجازه می‌دهد کد مجموعه محدودیت track ویدیو را ویرایش کند.
 - `audioConstraintEditor`
-  - : A {{HTMLElement("textarea")}} element that lets the user edit the code for the audio track's constraint set.
+  - : یک عنصر {{HTMLElement("textarea")}} که به کاربر اجازه می‌دهد کد مجموعه محدودیت track صدا را ویرایش کند.
 - `videoSettingsText`
-  - : A {{HTMLElement("textarea")}} (which is always disabled) that displays the current settings for the video track's constrainable properties.
+  - : یک {{HTMLElement("textarea")}} (که همیشه غیرفعال است) که تنظیمات فعلی ویژگی‌های قابل محدودیت track ویدیو را نمایش می‌دهد.
 - `audioSettingsText`
-  - : A {{HTMLElement("textarea")}} (which is always disabled) that displays the current settings for the audio track's constrainable properties.
+  - : یک {{HTMLElement("textarea")}} (که همیشه غیرفعال است) که تنظیمات فعلی ویژگی‌های قابل محدودیت track صدا را نمایش می‌دهد.
 
-Finally, we set the current contents of the two constraint set editor elements to the defaults.
+در نهایت، محتوای فعلی دو عنصر ویرایشگر مجموعه محدودیت را به مقادیر پیش‌فرض تنظیم می‌کنیم.
 
 ```js
 videoConstraintEditor.value = videoDefaultConstraintString;
 audioConstraintEditor.value = audioDefaultConstraintString;
 ```
 
-### Updating the settings display
+### به‌روزرسانی نمایش تنظیمات
 
-To the right of each of the constraint set editors is a second text box which we use to display the current configuration of the track's configurable properties. This display is updated by the function `getCurrentSettings()`, which gets the current settings for the audio and video tracks and inserts the corresponding code into the tracks' settings display boxes by setting their [`value`](/en-US/docs/Web/API/HTMLTextAreaElement/value).
+در سمت راست هر یک از ویرایشگرهای مجموعه محدودیت، یک جعبه متن دوم وجود دارد که از آن برای نمایش پیکربندی فعلی ویژگی‌های قابل پیکربندی track استفاده می‌کنیم. این نمایش توسط تابع `getCurrentSettings()` به‌روزرسانی می‌شود که تنظیمات فعلی را برای track‌های صدا و ویدیو دریافت می‌کند و کد مربوطه را در جعبه‌های نمایش تنظیمات track‌ها با تنظیم [`value`](/en-US/docs/Web/API/HTMLTextAreaElement/value) آنها وارد می‌کند.
 
 ```js
 function getCurrentSettings() {
@@ -399,11 +393,11 @@ function getCurrentSettings() {
 }
 ```
 
-This gets called after the stream first starts up, as well as any time we've applied updated constraints, as you'll see below.
+این تابع پس از شروع اولیه جریان و همچنین هر زمان که محدودیت‌های به‌روزرسانی شده را اعمال می‌کنیم، فراخوانی می‌شود، همانطور که در ادامه خواهید دید.
 
-### Building the track constraint set objects
+### ساخت اشیاء مجموعه محدودیت track
 
-The `buildConstraints()` function builds the {{domxref("MediaTrackConstraints")}} objects for the audio and video tracks using the code in the two tracks' constraint set edit boxes.
+تابع `buildConstraints()` اشیاء {{domxref("MediaTrackConstraints")}} را برای track‌های صدا و ویدیو با استفاده از کد موجود در جعبه‌های ویرایش مجموعه محدودیت دو track می‌سازد.
 
 ```js
 function buildConstraints() {
@@ -416,11 +410,11 @@ function buildConstraints() {
 }
 ```
 
-This uses {{jsxref("JSON.parse()")}} to parse the code in each editor into an object. If either call to JSON.parse() throws an exception, `handleError()` is called to output the error message to the log.
+این تابع از {{jsxref("JSON.parse()")}} برای تجزیه کد هر ویرایشگر به یک شیء استفاده می‌کند. اگر هر فراخوانی به JSON.parse() یک استثنا پرتاب کند، `handleError()` برای خروجی پیام خطا به لاگ فراخوانی می‌شود.
 
-### Configuring and starting the stream
+### پیکربندی و شروع جریان
 
-The `startVideo()` method handles setting up and starting the video stream.
+متد `startVideo()` راه‌اندازی و شروع جریان ویدیو را مدیریت می‌کند.
 
 ```js
 function startVideo() {
@@ -458,16 +452,16 @@ function startVideo() {
 }
 ```
 
-There are several steps here:
+چندین مرحله در اینجا وجود دارد:
 
-1. It calls `buildConstraints()` to create the {{domxref("MediaTrackConstraints")}} objects for the two tracks from the code in the edit boxes.
-2. It calls {{domxref("MediaDevices.getUserMedia", "navigator.mediaDevices.getUserMedia()")}}, passing in the constraints objects for the video and audio tracks. This returns a {{domxref("MediaStream")}} with the audio and video from a source matching the inputs (typically a webcam, although if you provide the right constraints you can get media from other sources).
-3. When the stream is obtained, it's attached to the {{HTMLElement("video")}} element so that it's visible on screen, and we grab the audio track and video track into the variables `audioTrack` and `videoTrack`.
-4. Then we set up a promise which resolves when the {{domxref("HTMLMediaElement/loadedmetadata_event", "loadedmetadata")}} event occurs on the video element.
-5. When that happens, we know the video has started playing, so we call our `getCurrentSettings()` function (described above) to display the actual settings that the browser decided upon after considering our constraints and the capabilities of the hardware.
-6. If an error occurs, we log it using the `handleError()` method that we'll look at farther down in this article.
+1. `buildConstraints()` را فراخوانی می‌کند تا اشیاء {{domxref("MediaTrackConstraints")}} را برای دو track از کد موجود در جعبه‌های ویرایش ایجاد کند.
+2. {{domxref("MediaDevices.getUserMedia", "navigator.mediaDevices.getUserMedia()")}} را فراخوانی می‌کند و اشیاء محدودیت را برای track‌های ویدیو و صدا ارسال می‌کند. این یک {{domxref("MediaStream")}} با صدا و ویدیو از یک منبع مطابق با ورودی‌ها (معمولاً یک وب‌کم، اگرچه اگر محدودیت‌های مناسب را ارائه دهید می‌توانید رسانه را از منابع دیگر دریافت کنید) برمی‌گرداند.
+3. هنگامی که جریان به دست آمد، به عنصر {{HTMLElement("video")}} متصل می‌شود تا روی صفحه قابل مشاهده باشد، و track صدا و track ویدیو را به ترتیب در متغیرهای `audioTrack` و `videoTrack` ذخیره می‌کنیم.
+4. سپس یک promise تنظیم می‌کنیم که با وقوع رویداد {{domxref("HTMLMediaElement/loadedmetadata_event", "loadedmetadata")}} در عنصر ویدیو حل می‌شود.
+5. هنگامی که این اتفاق می‌افتد، می‌دانیم که ویدیو شروع به پخش کرده است، بنابراین تابع `getCurrentSettings()` خود را (که در بالا توضیح داده شد) فراخوانی می‌کنیم تا تنظیمات واقعی را که مرورگر پس از در نظر گرفتن محدودیت‌های ما و قابلیت‌های سخت‌افزار تصمیم گرفته است، نمایش دهد.
+6. اگر خطایی رخ دهد، آن را با استفاده از متد `handleError()` که در ادامه این مقاله بررسی خواهیم کرد، ثبت می‌کنیم.
 
-We also need to set up an event listener to watch for the "Start Video" button to be clicked:
+همچنین باید یک شنونده رویداد برای تماشای کلیک دکمه "Start Video" تنظیم کنیم:
 
 ```js
 document.getElementById("startButton").addEventListener("click", () => {
@@ -475,14 +469,14 @@ document.getElementById("startButton").addEventListener("click", () => {
 });
 ```
 
-### Applying constraint set updates
+### اعمال به‌روزرسانی‌های مجموعه محدودیت
 
-Next, we set up an event listener for the "Apply Constraints" button. If it's clicked and there's not already media in use, we call `startVideo()`, and let that function handle starting the stream with the specified settings in place. Otherwise, we follow these steps to apply the updated constraints to the already-active stream:
+در مرحله بعد، یک شنونده رویداد برای دکمه "Apply Constraints" تنظیم می‌کنیم. اگر روی آن کلیک شود و از قبل رسانه‌ای در حال استفاده نباشد، `startVideo()` را فراخوانی می‌کنیم و اجازه می‌دهیم آن تابع شروع جریان را با تنظیمات مشخص شده مدیریت کند. در غیر این صورت، مراحل زیر را برای اعمال محدودیت‌های به‌روزرسانی شده به جریان از قبل فعال دنبال می‌کنیم:
 
-1. `buildConstraints()` is called to construct updated {{domxref("MediaTrackConstraints")}} objects for the audio track (`audioConstraints`) and the video track (`videoConstraints`).
-2. {{domxref("MediaStreamTrack.applyConstraints()")}} is called on the video track (if there is one) to apply the new `videoConstraints`. If this succeeds, the contents of the video track's current settings box are updated based on the result of calling its {{domxref("MediaStreamTrack.getSettings", "getSettings()")}} method.
-3. Once that's done, `applyConstraints()` is called on the audio track (if there is one) to apply the new audio constraints. If this succeeds, the contents of the audio track's current settings box are updated based on the result of calling its {{domxref("MediaStreamTrack.getSettings", "getSettings()")}} method.
-4. If an error occurs applying either set of constraints, `handleError()` is used to output a message into the log.
+1. `buildConstraints()` برای ساخت اشیاء {{domxref("MediaTrackConstraints")}} به‌روزرسانی شده برای track صدا (`audioConstraints`) و track ویدیو (`videoConstraints`) فراخوانی می‌شود.
+2. {{domxref("MediaStreamTrack.applyConstraints()")}} روی track ویدیو (اگر وجود داشته باشد) برای اعمال `videoConstraints` جدید فراخوانی می‌شود. اگر این موفقیت‌آمیز باشد، محتویات جعبه تنظیمات فعلی track ویدیو بر اساس نتیجه فراخوانی متد {{domxref("MediaStreamTrack.getSettings", "getSettings()")}} آن به‌روزرسانی می‌شود.
+3. پس از انجام این کار، `applyConstraints()` روی track صدا (اگر وجود داشته باشد) برای اعمال محدودیت‌های صوتی جدید فراخوانی می‌شود. اگر این موفقیت‌آمیز باشد، محتویات جعبه تنظیمات فعلی track صدا بر اساس نتیجه فراخوانی متد {{domxref("MediaStreamTrack.getSettings", "getSettings()")}} آن به‌روزرسانی می‌شود.
+4. اگر در اعمال هر یک از مجموعه محدودیت‌ها خطایی رخ دهد، از `handleError()` برای خروجی یک پیام در لاگ استفاده می‌شود.
 
 ```js
 document.getElementById("applyButton").addEventListener("click", () => {
@@ -514,9 +508,9 @@ document.getElementById("applyButton").addEventListener("click", () => {
 });
 ```
 
-### Handling the stop button
+### مدیریت دکمه توقف
 
-Then we set up the handler for the stop button.
+سپس کنترل‌کننده دکمه توقف را تنظیم می‌کنیم.
 
 ```js
 document.getElementById("stopButton").addEventListener("click", () => {
@@ -533,11 +527,11 @@ document.getElementById("stopButton").addEventListener("click", () => {
 });
 ```
 
-This stops the active tracks, sets the `videoTrack` and `audioTrack` variables to `null` so we know they're gone, and removes the stream from the {{HTMLElement("video")}} element by setting {{domxref("HTMLMediaElement.srcObject")}} to `null`.
+این کار track‌های فعال را متوقف می‌کند، متغیرهای `videoTrack` و `audioTrack` را به `null` تنظیم می‌کند تا بدانیم وجود ندارند، و جریان را با تنظیم {{domxref("HTMLMediaElement.srcObject")}} به `null` از عنصر {{HTMLElement("video")}} حذف می‌کند.
 
-### Simple tab support in the editor
+### پشتیبانی ساده از تب در ویرایشگر
 
-This code adds simple support for tabs to the {{HTMLElement("textarea")}} elements by making the tab key insert two space characters when either constraint edit box is focused.
+این کد پشتیبانی ساده‌ای از تب‌ها را به عناصر {{HTMLElement("textarea")}} اضافه می‌کند با این کار که کلید Tab دو کاراکتر فاصله را زمانی که هر یک از جعبه‌های ویرایش محدودیت متمرکز هستند، درج می‌کند.
 
 ```js
 function keyDownHandler(event) {
@@ -559,12 +553,12 @@ videoConstraintEditor.addEventListener("keydown", keyDownHandler);
 audioConstraintEditor.addEventListener("keydown", keyDownHandler);
 ```
 
-### Show constrainable properties the browser supports
+### نمایش ویژگی‌های قابل محدودیت پشتیبانی‌شده توسط مرورگر
 
-The last significant piece of the puzzle: code that displays, for the user's reference, a list of the constrainable properties which their browser supports. Each property is a link to its documentation on MDN for the user's convenience. See the [`MediaDevices.getSupportedConstraints()` examples](/en-US/docs/Web/API/MediaDevices/getSupportedConstraints#examples) for details on how this code works.
+آخرین قطعه مهم از پازل: کدی که برای مرجع کاربر، لیستی از ویژگی‌های قابل محدودیتی که مرورگرشان پشتیبانی می‌کند را نمایش می‌دهد. هر ویژگی یک پیوند به مستندات آن در MDN برای راحتی کاربر است. برای جزئیات نحوه کار این کد، به [نمونه‌های `MediaDevices.getSupportedConstraints()`](/en-US/docs/Web/API/MediaDevices/getSupportedConstraints#examples) مراجعه کنید.
 
 > [!NOTE]
-> Of course, there may be non-standard properties in this list, in which case you probably will find that the documentation link doesn't help much.
+> البته ممکن است ویژگی‌های غیراستانداردی در این لیست وجود داشته باشد، که در این صورت احتمالاً متوجه خواهید شد که پیوند مستندات کمک چندانی نمی‌کند.
 
 ```js
 const supportedConstraints = navigator.mediaDevices.getSupportedConstraints();
@@ -578,9 +572,9 @@ for (const constraint in supportedConstraints) {
 }
 ```
 
-### Error handling
+### مدیریت خطا
 
-We also have some simple error handling code; `handleError()` is called to handle promises which fail, and the `log()` function appends the error message to a special logging {{HTMLElement("div")}} box under the video.
+همچنین کد ساده‌ای برای مدیریت خطا داریم؛ `handleError()` برای مدیریت promise‌های ناموفق فراخوانی می‌شود و تابع `log()` پیام خطا را به یک جعبه ثبت ویژه {{HTMLElement("div")}} در زیر ویدیو اضافه می‌کند.
 
 ```js
 function log(msg) {
@@ -589,26 +583,26 @@ function log(msg) {
 
 function handleError(reason) {
   log(
-    `Error <code>${reason.name}</code> in constraint <code>${reason.constraint}</code>: ${reason.message}`,
+    `خطا <code>${reason.name}</code> در محدودیت <code>${reason.constraint}</code>: ${reason.message}`,
   );
 }
 ```
 
-### Result
+### نتیجه
 
-Here you can see the complete example in action.
+در اینجا می‌توانید مثال کامل را در عمل مشاهده کنید.
 
 {{EmbedLiveSample("Example_Constraint_exerciser", 650, 1200, , , , "camera;microphone")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
 - {{domxref("MediaTrackConstraints")}}
