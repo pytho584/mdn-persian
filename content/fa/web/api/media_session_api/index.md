@@ -1,7 +1,5 @@
 ---
 title: "Media Session API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Media_Session_API"
-status: "needs-translation"
 ---
 
 ---
@@ -13,45 +11,45 @@ browser-compat: api.MediaSession
 
 {{DefaultAPISidebar("Media Session API")}}
 
-The **Media Session API** provides a way to customize media notifications. It does this by providing metadata for display by the user agent for the media your web app is playing.
+**Media Session API** راهی برای سفارشی‌سازی اعلان‌های رسانه‌ای فراهم می‌کند. این کار را با ارائهٔ فراداده (metadata) به عامل کاربر (user agent) انجام می‌دهد تا رسانه‌ای را که برنامهٔ وب شما در حال پخش آن است نمایش دهد.
 
-It also provides action handlers that the browser can use to access platform media keys such as hardware keys found on keyboards, headsets, remote controls, and software keys found in notification areas and on lock screens of mobile devices. So you can seamlessly control web-provided media via your device, even when not looking at the web page.
+همچنین هندلرهای اکشن (action handlers) را در اختیار مرورگر قرار می‌دهد تا بتواند از کلیدهای رسانه‌ای پلتفرم استفاده کند؛ کلیدهای سخت‌افزاری روی صفحه‌کلیدها، هدفون‌ها و کنترل‌های از راه دور، و کلیدهای نرم‌افزاری در ناحیهٔ اعلان‌ها و صفحهٔ قفل دستگاه‌های همراه. بنابراین حتی وقتی به صفحهٔ وب نگاه نمی‌کنید، می‌توانید رسانهٔ ارائه‌شده توسط وب را بدون وقفه و به‌طور یکپارچه از طریق دستگاه خود کنترل کنید.
 
-The aim is to allow users to know what's playing and to control it, without needing to open the specific page that launched it. To be able to support the Media Session API, a browser first needs a mechanism by which to access and be controlled by the OS-level media controls (such as Firefox's [MediaControl](https://bugzil.la/1648100)).
+هدف این است که کاربران بدون نیاز به باز کردن صفحهٔ خاصی که رسانه را اجرا کرده، بدانند چه چیزی در حال پخش است و بتوانند آن را کنترل کنند. برای پشتیبانی از Media Session API، مرورگر ابتدا به سازوکاری نیاز دارد که از طریق آن به کنترل‌های رسانه در سطح سیستم‌عامل دسترسی پیدا کند و توسط آن‌ها کنترل شود (مانند MediaControl در فایرفاکس).
 
-## Media Session concepts and usage
+## مفاهیم و کاربرد Media Session
 
-The {{domxref("MediaMetadata")}} interface lets a website provide rich metadata to the platform UI for media that is playing. This metadata includes the title, artist (creator) name, album (collection), artwork, and chapter information. The platform can show this metadata in media centers, notifications, device lock screens, and so on. For example, different devices might present the Media Session API data like so:
+رابط {{domxref("MediaMetadata")}} به وب‌سایت‌ها امکان می‌دهد فرادادهٔ کاملی را در اختیار رابط کاربری پلتفرم قرار دهند تا برای رسانه‌ای که در حال پخش است نمایش داده شود. این فراداده شامل عنوان، نام هنرمند (پدیدآور)، نام آلبوم (مجموعه)، آثار هنری (جلد) و اطلاعات فصل‌ها است. پلتفرم‌ها می‌توانند این فراداده را در مراکز رسانه، اعلان‌ها، صفحه‌های قفل دستگاه و موارد مشابه نمایش دهند. برای مثال، دستگاه‌های مختلف ممکن است داده‌های Media Session API را به این شکل نمایش دهند:
 
-![Media Session data for the Sintel trailer title and artwork presented on a desktop browser, mobile phone, and smartwatch](media-session-ui.jpg)
+![تصویری که داده‌های Media Session را برای عنوان و آثار هنری تریلر Sintel در یک مرورگر رومیزی، گوشی موبایل و ساعت هوشمند نشان می‌دهد](media-session-ui.jpg)
 
 > [!CALLOUT]
-> Original image source: [Customize media notifications and playback controls with the Media Session API](https://web.dev/articles/media-session) on web.dev (2024)
+> منبع اصلی تصویر: [Customize media notifications and playback controls with the Media Session API](https://web.dev/articles/media-session) در web.dev (۲۰۲۴)
 
-The {{domxref("MediaSession")}} interface lets users control the playback of media through user-agent-defined interface elements. Interaction with these elements triggers action handlers on the web page playing the media. Since multiple pages may be simultaneously using this API, the user agent is responsible for calling the correct page's action handlers. The user agent provides default behaviors when no page-defined behavior is available.
+رابط {{domxref("MediaSession")}} به کاربران امکان می‌دهد پخش رسانه را از طریق عناصر رابط کاربری تعریف‌شده توسط عامل کاربر کنترل کنند. تعامل با این عناصر، هندلرهای اکشن را در صفحه‌ای که رسانه را پخش می‌کند فعال می‌کند. از آنجا که چندین صفحه ممکن است به‌طور هم‌زمان از این API استفاده کنند، عامل کاربر مسئول فراخوانی هندلرهای اکشن صفحهٔ درست است. اگر رفتاری از سوی صفحه تعریف نشده باشد، عامل کاربر رفتارهای پیش‌فرض را ارائه می‌کند.
 
-## Accessing the Media Session API
+## دسترسی به Media Session API
 
-The primary interface for the Media Session API is the {{domxref("MediaSession")}} interface. Rather than creating your own `MediaSession` instance, you access the API using the {{domxref("navigator.mediaSession")}} property. For example, to set the current state of the media session to `playing`:
+رابط اصلی Media Session API، رابط {{domxref("MediaSession")}} است. به‌جای ساخت نمونهٔ `MediaSession` اختصاصی خودتان، از طریق ویژگی {{domxref("navigator.mediaSession")}} به API دسترسی پیدا می‌کنید. برای مثال، برای تنظیم وضعیت کنونی جلسهٔ رسانه روی حالت `playing`:
 
 ```js
 navigator.mediaSession.playbackState = "playing";
 ```
 
-## Interfaces
+## رابط‌ها
 
 - {{domxref("ChapterInformation")}}
-  - : Represents the metadata for an individual chapter of a media resource (i.e., a video or audio file).
+  - : فرادادهٔ مربوط به یک فصل جداگانه از یک منبع رسانه‌ای (یعنی یک فایل ویدیویی یا صوتی) را نشان می‌دهد.
 - {{domxref("MediaMetadata")}}
-  - : Allows a web page to provide rich media metadata for display in a platform UI.
+  - : به صفحهٔ وب اجازه می‌دهد فرادادهٔ رسانه‌ای کاملی را برای نمایش در رابط کاربری پلتفرم فراهم کند.
 - {{domxref("MediaSession")}}
-  - : Allows a web page to provide custom behaviors for standard media playback interactions.
+  - : به صفحهٔ وب اجازه می‌دهد رفتارهای سفارشی برای تعاملات استاندارد پخش رسانه ارائه کند.
 
-## Examples
+## مثال‌ها
 
-### Setting up action handlers for a music player
+### راه‌اندازی هندلرهای اکشن برای یک پخش‌کنندهٔ موسیقی
 
-The following example shows feature detection for the Media Session API. It then instantiates a metadata object for the session, and adds action handlers for the user control actions:
+مثال زیر تشخیص قابلیت (feature detection) را برای Media Session API نشان می‌دهد. سپس یک شیء فراداده برای جلسه می‌سازد و هندلرهای اکشن را برای کنش‌های کنترلی کاربر اضافه می‌کند:
 
 ```js
 if ("mediaSession" in navigator) {
@@ -132,7 +130,7 @@ if ("mediaSession" in navigator) {
 }
 ```
 
-Some user agents disable autoplay for media elements on mobile devices and require a user gesture to start media. The following example adds a `pointerup` event to an on-page play button, which is then used to kick off the media session code:
+برخی عامل‌های کاربر در دستگاه‌های همراه، پخش خودکار عناصر رسانه‌ای را غیرفعال می‌کنند و برای شروع پخش به یک ژست کاربر نیاز دارند. مثال زیر یک رویداد `pointerup` را به دکمهٔ پخش داخل صفحه اضافه می‌کند که سپس برای شروع کد مربوط به جلسهٔ رسانه استفاده می‌شود:
 
 ```js
 playButton.addEventListener("pointerup", (event) => {
@@ -150,9 +148,9 @@ playButton.addEventListener("pointerup", (event) => {
 });
 ```
 
-### Using action handlers to control a slide presentation
+### استفاده از هندلرهای اکشن برای کنترل یک ارائهٔ اسلایدی
 
-The `"previousslide"` and `"nextslide"` action handlers can be used to handle moving forward and backward through a slide presentation, for example when the user puts their presentation into a {{domxref("Picture-in-Picture API", "Picture-in-Picture", "", "nocode")}} window, and presses the browser-supplied controls for navigating through slides.
+از هندلرهای اکشن `"previousslide"` و `"nextslide"` می‌توان برای حرکت به جلو و عقب در یک ارائهٔ اسلایدی استفاده کرد؛ برای مثال، وقتی کاربر ارائه‌اش را در پنجرهٔ {{domxref("Picture-in-Picture API", "Picture-in-Picture", "", "nocode")}} قرار می‌دهد و کنترل‌های مربوط به پیمایش بین اسلایدها را که مرورگر ارائه کرده است فشار می‌دهد.
 
 ```js
 try {
@@ -176,16 +174,16 @@ try {
 }
 ```
 
-See [Presenting Slides / Media Session Sample](https://googlechrome.github.io/samples/media-session/slides.html) for a working example.
+برای مشاهدهٔ یک مثال عملی، نمونهٔ [Presenting Slides / Media Session Sample](https://googlechrome.github.io/samples/media-session/slides.html) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Customize media notifications and playback controls with the Media Session API](https://web.dev/articles/media-session) on web.dev (2024)
+- [Customize media notifications and playback controls with the Media Session API](https://web.dev/articles/media-session) در web.dev (۲۰۲۴)
