@@ -1,11 +1,5 @@
 ---
 title: "HTMLTemplateElement: shadowRootSerializable property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTemplateElement/shadowRootSerializable"
-status: "needs-translation"
----
-
----
-title: "HTMLTemplateElement: shadowRootSerializable property"
 short-title: shadowRootSerializable
 slug: Web/API/HTMLTemplateElement/shadowRootSerializable
 page-type: web-api-instance-property
@@ -14,26 +8,26 @@ browser-compat: api.HTMLTemplateElement.shadowRootSerializable
 
 {{APIRef("Web Components")}}
 
-The **`shadowRootSerializable`** property reflects the value of the [`shadowrootserializable`](/en-US/docs/Web/HTML/Reference/Elements/template#shadowrootserializable) attribute of the associated [`<template>`](/en-US/docs/Web/HTML/Reference/Elements/template) element.
+خاصیت **`shadowRootSerializable`** مقدار ویژگی [`shadowrootserializable`](/en-US/docs/Web/HTML/Reference/Elements/template#shadowrootserializable) عنصر `<template>` مرتبط را منعکس می‌کند.
 
 > [!NOTE]
-> This property is not useful for developers, and is only documented for completeness.
-> If a `<template>` element is used to declaratively create a [`ShadowRoot`](/en-US/docs/Web/API/ShadowRoot), then this object and property do not exist.
-> Otherwise, if an `HTMLTemplateElement` is created, the value of this property is irrelevant because the object is not a shadow root and cannot subsequently be changed to a shadow root.
+> این خاصیت برای توسعه‌دهندگان مفید نیست و صرفاً به‌خاطر کامل بودن مستندات ذکر شده است.
+> اگر یک عنصر `<template>` برای ایجاد اعلانی یک [`ShadowRoot`](/en-US/docs/Web/API/ShadowRoot) استفاده شود، این شیء و خاصیت وجود ندارند.
+> در غیر این صورت، اگر یک `HTMLTemplateElement` ایجاد شود، مقدار این خاصیت بی‌ربط است زیرا شیء یک ریشه سایه نیست و نمی‌تواند بعداً به یک ریشه سایه تغییر یابد.
 
-## Value
+## مقدار
 
-Reflects the value of the [`shadowrootserializable`](/en-US/docs/Web/HTML/Reference/Elements/template#shadowrootserializable) attribute of the associated [`<template>`](/en-US/docs/Web/HTML/Reference/Elements/template) element.
+مقدار ویژگی [`shadowrootserializable`](/en-US/docs/Web/HTML/Reference/Elements/template#shadowrootserializable) عنصر `<template>` مرتبط را منعکس می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [`shadowrootserializable`](/en-US/docs/Web/HTML/Reference/Elements/template#shadowrootserializable) attribute of the `<template>` element
+- ویژگی [`shadowrootserializable`](/en-US/docs/Web/HTML/Reference/Elements/template#shadowrootserializable) عنصر `<template>`
 - [`ShadowRoot.serializable`](/en-US/docs/Web/API/ShadowRoot/serializable)
