@@ -1,9 +1,4 @@
----
-title: "ManagedMediaSource: streaming property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ManagedMediaSource/streaming"
-status: "needs-translation"
----
-
+```
 ---
 title: "ManagedMediaSource: streaming property"
 short-title: streaming
@@ -16,19 +11,19 @@ browser-compat: api.ManagedMediaSource.streaming
 
 {{APIRef("Media Source Extensions")}}{{AvailableInWorkers("window_and_dedicated")}}{{SeeCompatTable}}
 
-The **`streaming`** read-only property of the {{domxref("ManagedMediaSource")}} interface is a boolean indicating whether the application should actively fetch and append media data.
+ویژگی فقط‌خواندنی **`streaming`** در رابط {{domxref("ManagedMediaSource")}} یک مقدار بولی است که نشان می‌دهد آیا برنامه باید به‌طور فعال داده‌های رسانه‌ای را دریافت و اضافه کند.
 
-The value of this property is updated by the user agent's monitoring algorithm. When it changes, the corresponding {{domxref("ManagedMediaSource.startstreaming_event", "startstreaming")}} or {{domxref("ManagedMediaSource.endstreaming_event", "endstreaming")}} event is fired.
+مقدار این ویژگی توسط الگوریتم پایش عامل کاربر (user agent) به‌روزرسانی می‌شود. وقتی این مقدار تغییر کند، رویداد متناظر {{domxref("ManagedMediaSource.startstreaming_event", "startstreaming")}} یا {{domxref("ManagedMediaSource.endstreaming_event", "endstreaming")}} پرتاب می‌شود.
 
-## Value
+## مقدار
 
-A boolean, initially `false`. When `true`, the user agent needs more data to ensure uninterrupted playback. When `false`, the user agent has enough data buffered and the application can stop fetching new segments.
+یک مقدار بولی که در ابتدا `false` است. وقتی `true` باشد، عامل کاربر برای تضمین پخش بدون وقفه به داده‌های بیشتری نیاز دارد. وقتی `false` باشد، عامل کاربر داده‌های کافی در بافر دارد و برنامه می‌تواند از دریافت سگمنت‌های جدید خودداری کند.
 
-## Examples
+## مثال‌ها
 
-### Checking the streaming state
+### بررسی وضعیت streaming
 
-This example creates a {{domxref("ManagedMediaSource")}}, attaches it to a {{htmlelement("video")}} element, and logs the value of `streaming` whenever it changes between `true` and `false`.
+این مثال یک {{domxref("ManagedMediaSource")}} می‌سازد، آن را به یک عنصر {{htmlelement("video")}} متصل می‌کند و هر بار که مقدار `streaming` بین `true` و `false` تغییر کند، آن را در لاگ ثبت می‌کند.
 
 ```js
 const mediaType = 'video/mp4; codecs="avc1.64001F, mp4a.40.2"';
@@ -58,17 +53,18 @@ if (ManagedMediaSource.isTypeSupported(mediaType)) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("ManagedMediaSource.startstreaming_event", "startstreaming")}} event
-- {{domxref("ManagedMediaSource.endstreaming_event", "endstreaming")}} event
+- رویداد {{domxref("ManagedMediaSource.startstreaming_event", "startstreaming")}}
+- رویداد {{domxref("ManagedMediaSource.endstreaming_event", "endstreaming")}}
 - {{domxref("ManagedMediaSource")}}
 - {{domxref("MediaSource")}}
+```
