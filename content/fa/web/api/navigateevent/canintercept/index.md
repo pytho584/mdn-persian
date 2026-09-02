@@ -1,11 +1,5 @@
 ---
 title: "NavigateEvent: canIntercept property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigateEvent/canIntercept"
-status: "needs-translation"
----
-
----
-title: "NavigateEvent: canIntercept property"
 short-title: canIntercept
 slug: Web/API/NavigateEvent/canIntercept
 page-type: web-api-instance-property
@@ -14,23 +8,22 @@ browser-compat: api.NavigateEvent.canIntercept
 
 {{APIRef("Navigation API")}}
 
-The **`canIntercept`** read-only property of the
-{{domxref("NavigateEvent")}} interface returns `true` if the navigation can be intercepted and have its URL rewritten, or `false` otherwise
+خاصیت فقطخواندنی **`canIntercept`** از رابط {{domxref("NavigateEvent")}}، اگر ناوبری قابل رهگیری باشد و بتوان URL آن را بازنویسی کرد، مقدار `true` و در غیر این صورت مقدار `false` را برمی‌گرداند.
 
-There are several rules around when a navigation can be intercepted. For example:
+در مورد اینکه چه زمانی می‌توان یک ناوبری را رهگیری کرد، چند قاعده وجود دارد. برای مثال:
 
-- You can't intercept cross-origin navigations.
-- You can intercept `http` or `https` URLs if only the `path`, `query`, and `fragment` portions of the new URL differ from the current URL.
-- You can intercept `file` URLs if only the `query` and `fragment` portions of the new URL differ.
-- For other URL types you can intercept the navigation if only the `fragment` portion differs.
+- نمی‌توانید ناوبری‌های cross-origin را رهگیری کنید.
+- می‌توانید URLهای `http` یا `https` را رهگیری کنید اگر تنها بخش‌های `path`، `query` و `fragment` در URL جدید با URL فعلی تفاوت داشته باشند.
+- می‌توانید URLهای `file` را رهگیری کنید اگر تنها بخش‌های `query` و `fragment` نشانی جدید نسبت به نشانی فعلی متفاوت باشند.
+- برای سایر انواع URL، اگر فقط بخش `fragment` متفاوت باشد، می‌توانید ناوبری را رهگیری کنید.
 
-See the spec for more explanation on [when a Document can have its URL rewritten](https://html.spec.whatwg.org/multipage/nav-history-apis.html#can-have-its-url-rewritten), including a table of examples.
+برای توضیحات بیشتر دربارهٔ [زمانی که می‌توان URL یک Document را بازنویسی کرد](https://html.spec.whatwg.org/multipage/nav-history-apis.html#can-have-its-url-rewritten)، از جمله جدول نمونه‌ها، به مشخصات مراجعه کنید.
 
-## Value
+## مقدار
 
-A boolean value—`true` if the navigation can be intercepted, `false` if not.
+یک مقدار بولی — اگر ناوبری قابل رهگیری باشد `true` است، در غیر این صورت `false` است.
 
-## Examples
+## مثال‌ها
 
 ```js
 navigation.addEventListener("navigate", (event) => {
@@ -57,15 +50,15 @@ navigation.addEventListener("navigate", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
 - [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
