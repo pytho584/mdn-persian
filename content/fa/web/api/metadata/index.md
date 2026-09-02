@@ -1,10 +1,4 @@
 ---
-title: "Metadata"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Metadata"
-status: "needs-translation"
----
-
----
 title: Metadata
 slug: Web/API/Metadata
 page-type: web-api-interface
@@ -16,28 +10,28 @@ browser-compat: api.Metadata
 
 {{APIRef("File and Directory Entries API")}}{{Non-standard_Header}}{{SeeCompatTable}}
 
-The **`Metadata`** interface contains information about a file system entry. This metadata includes the file's size and modification date and time.
+رابطِ **`Metadata`** حاوی اطلاعاتی دربارهٔ یک ورودیِ سیستم فایل است. این فراداده شامل اندازهٔ فایل و تاریخ و زمان آخرین تغییر آن می‌شود.
 
 > [!NOTE]
-> This interface isn't available through the global scope; instead, you obtain a `Metadata` object describing a {{domxref("FileSystemEntry")}} using the method {{domxref("FileSystemEntry.getMetadata()")}}.
+> این رابط در حوزهٔ سراسری در دسترس نیست؛ در عوض، برای دریافت یک شیء `Metadata` که یک {{domxref("FileSystemEntry")}} را توصیف می‌کند، از متد {{domxref("FileSystemEntry.getMetadata()")}} استفاده می‌کنید.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("Metadata.modificationTime", "modificationTime")}} {{ReadOnlyInline}} {{Experimental_Inline}} {{Non-standard_Inline}}
-  - : A {{jsxref("Date")}} object indicating the date and time the entry was modified.
+  - : یک شیء {{jsxref("Date")}} که تاریخ و زمان تغییر یافتن ورودی را نشان می‌دهد.
 - {{domxref("Metadata.size", "size")}} {{ReadOnlyInline}} {{Experimental_Inline}} {{Non-standard_Inline}}
-  - : A 64-bit unsigned integer indicating the size of the entry in bytes.
+  - : یک عدد صحیح بدون علامت ۶۴-بیتی که اندازهٔ ورودی را بر حسب بایت نشان می‌دهد.
 
-## Specifications
+## مشخصات
 
-This feature has been removed from all specification and is not in the process of being standardized.
+این ویژگی از همهٔ مشخصات حذف شده است و در فرایند استانداردسازی قرار ندارد.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [File and Directory Entries API](/en-US/docs/Web/API/File_and_Directory_Entries_API)
 - {{domxref("FileSystemEntry")}}
-- {{domxref("FileSystemFileEntry")}} and {{domxref("FileSystemDirectoryEntry")}}
+- {{domxref("FileSystemFileEntry")}} و {{domxref("FileSystemDirectoryEntry")}}
