@@ -1,11 +1,5 @@
 ---
 title: "MediaTrackSettings: restrictOwnAudio property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/restrictOwnAudio"
-status: "needs-translation"
----
-
----
-title: "MediaTrackSettings: restrictOwnAudio property"
 short-title: restrictOwnAudio
 slug: Web/API/MediaTrackSettings/restrictOwnAudio
 page-type: web-api-instance-property
@@ -16,24 +10,24 @@ browser-compat: api.MediaStreamTrack.applyConstraints.restrictOwnAudio_constrain
 
 {{APIRef("Media Capture and Streams")}}{{SeeCompatTable}}
 
-The {{domxref("MediaTrackSettings")}} dictionary's **`restrictOwnAudio`** property controls whether system audio originating from the capturing tab is filtered out of screen capture, allowing for cleaner screen recordings in some cases.
+دیکشنری {{domxref("MediaTrackSettings")}}، ویژگی **`restrictOwnAudio`** کنترل می‌کند که آیا صدای سیستم که از تبِ در حال ضبط (capturing tab) می‌آید، از ضبط صفحه فیلتر شود یا نه. این امکان در برخی موارد ضبط‌های تمیزتری از صفحه فراهم می‌کند.
 
-For example, if the capturing web page itself is playing embedded audio or video, that audio would be included in the capture. Since this could lead to an undesirable echo or interfere with the intended audio sources from other tabs or applications, removing it from the capture is desirable.
+برای مثال، اگر خودِ صفحه‌ی وبِ در حال ضبط، صوتی مانند صدای یک ویدیو یا فایل صوتیِ تعبیه‌شده را پخش کند، آن صدا در ضبط گنجانده می‌شود. از آنجا که این موضوع می‌تواند به پژواک (echo) نامطلوب منجر شود یا با منابع صوتی موردنظر از تب‌ها یا برنامه‌های دیگر تداخل کند، حذف آن از ضبط مطلوب است.
 
-## Value
+## مقدار
 
-A boolean value, where `true` enables the capturing tab's system audio restriction and `false` disables it.
+یک مقدار بولی (boolean) که در آن `true` محدودیت صدای سیستمِ تبِ در حال ضبط را فعال می‌کند و `false` آن را غیرفعال می‌کند.
 
-If the value is `true`, the user agent will attempt to remove any audio originating from the captured audio produced by the tab that called {{domxref("MediaDevices.getDisplayMedia()")}} to initiate screen capture. If removal of audio via processing fails, the user agent may exclude all audio originating from the capturing tab.
+اگر مقدار `true` باشد، عامل کاربر (user agent) تلاش می‌کند هر صدایی را که از صدای ضبط‌شده‌ی تولیدشده توسط تبی که برای شروع ضبط صفحه، {{domxref("MediaDevices.getDisplayMedia()")}} را فراخوانی کرده است، حذف کند. اگر حذف صدا از طریق پردازش ناموفق باشد، عامل کاربر ممکن است تمام صداهای منتسب به تبِ در حال ضبط را از ضبط خارج کند.
 
 > [!NOTE]
-> If the captured display surface doesn't include system audio, this setting will have no effect.
+> اگر سطح نمایشِ ضبط‌شده شامل صدای سیستم نباشد، این تنظیم هیچ تأثیری نخواهد داشت.
 
-## Examples
+## مثال‌ها
 
-The following function sets up a constraints object that specifies the options for a call to {{domxref("MediaDevices.getDisplayMedia", "getDisplayMedia()")}}.
-It adds the `restrictOwnAudio` constraint (requesting that system audio originating from the capturing tab be filtered out of the screen capture) only if it is known to be supported by the browser.
-Capture then starts by calling `getDisplayMedia()` and attaching the returned stream to the {{htmlelement("video")}} element referenced by the variable `videoElem`.
+تابع زیر یک شیء محدودیت‌ها (constraints) می‌سازد که گزینه‌های فراخوانی {{domxref("MediaDevices.getDisplayMedia", "getDisplayMedia()")}} را مشخص می‌کند.
+این تابع محدودیت `restrictOwnAudio` را (با درخواست حذف صدای سیستمِ منتسب به تبِ در حال ضبط از ضبط صفحه) فقط در صورتی اضافه می‌کند که مشخص باشد مرورگر از آن پشتیبانی می‌کند.
+سپس ضبط با فراخوانی `getDisplayMedia()` شروع می‌شود و جریان برگشتی به عنصر {{htmlelement("video")}} اشاره‌شده توسط متغیر `videoElem` متصل می‌شود.
 
 ```js
 async function capture() {
@@ -55,15 +49,15 @@ async function capture() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Screen Capture API](/en-US/docs/Web/API/Screen_Capture_API)
 - [Using the screen capture API](/en-US/docs/Web/API/Screen_Capture_API/Using_Screen_Capture)
