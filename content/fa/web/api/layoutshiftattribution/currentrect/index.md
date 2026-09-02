@@ -1,11 +1,5 @@
 ---
 title: "LayoutShiftAttribution: currentRect property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/LayoutShiftAttribution/currentRect"
-status: "needs-translation"
----
-
----
-title: "LayoutShiftAttribution: currentRect property"
 short-title: currentRect
 slug: Web/API/LayoutShiftAttribution/currentRect
 page-type: web-api-instance-property
@@ -16,15 +10,15 @@ browser-compat: api.LayoutShiftAttribution.currentRect
 
 {{APIRef("Performance API")}}{{SeeCompatTable}}
 
-The **`currentRect`** read-only property of the {{domxref("LayoutShiftAttribution")}} interface returns a {{domxref("DOMRectReadOnly")}} object representing the position of the element after the shift.
+ویژگی فقط‌خواندنی **`currentRect`** از رابط {{domxref("LayoutShiftAttribution")}}، یک شیء {{domxref("DOMRectReadOnly")}} را برمی‌گرداند که موقعیت عنصر را پس از جابه‌جایی نشان می‌دهد.
 
-## Value
+## مقدار
 
-A {{domxref("DOMRectReadOnly")}} object.
+یک شیء {{domxref("DOMRectReadOnly")}}.
 
-## Examples
+## مثال‌ها
 
-The following example prints the `currentRect` of the first item in {{domxref("LayoutShift.sources")}} to the console.
+مثال زیر، `currentRect` اولین مورد در {{domxref("LayoutShift.sources")}} را در کنسول چاپ می‌کند.
 
 ```js
 new PerformanceObserver((list) => {
@@ -36,10 +30,10 @@ new PerformanceObserver((list) => {
 }).observe({ type: "layout-shift", buffered: true });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
