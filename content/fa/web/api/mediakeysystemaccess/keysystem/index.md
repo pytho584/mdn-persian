@@ -1,11 +1,5 @@
 ---
 title: "MediaKeySystemAccess: keySystem property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaKeySystemAccess/keySystem"
-status: "needs-translation"
----
-
----
-title: "MediaKeySystemAccess: keySystem property"
 short-title: keySystem
 slug: Web/API/MediaKeySystemAccess/keySystem
 page-type: web-api-instance-property
@@ -14,18 +8,18 @@ browser-compat: api.MediaKeySystemAccess.keySystem
 
 {{APIRef("Encrypted Media Extensions")}}{{SecureContext_Header}}
 
-The **`keySystem`** read-only property of the {{domxref("MediaKeySystemAccess")}} interface returns a string identifying the key system being used.
+ویژگی فقط‌خواندنی **`keySystem`** در رابط {{domxref("MediaKeySystemAccess")}} رشته‌ای را برمی‌گرداند که سیستم کلید مورد استفاده را شناسایی می‌کند.
 
-This is the value that was passed to {{domxref("Navigator.requestMediaKeySystemAccess()")}} when system access is requested.
+این مقدار همان مقداری است که هنگام درخواست دسترسی به سیستم، به {{domxref("Navigator.requestMediaKeySystemAccess()")}} ارسال شده است.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
