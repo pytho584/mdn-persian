@@ -1,11 +1,5 @@
 ---
 title: "HTMLTemplateElement: content property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTemplateElement/content"
-status: "needs-translation"
----
-
----
-title: "HTMLTemplateElement: content property"
 short-title: content
 slug: Web/API/HTMLTemplateElement/content
 page-type: web-api-instance-property
@@ -14,17 +8,17 @@ browser-compat: api.HTMLTemplateElement.content
 
 {{APIRef("Web Components")}}
 
-The **`content`** property of the {{domxref("HTMLTemplateElement")}} interface returns the `<template>` element's template contents as a {{domxref("DocumentFragment")}}. This content's {{domxref("Node/ownerDocument", "ownerDocument")}} is a separate {{domxref("Document")}} from the one that contains the `<template>` element itself — unless the containing document is itself constructed for the purpose of holding template content.
+ویژگی **`content`** در رابط {{domxref("HTMLTemplateElement")}}، محتوای الگوی عنصر `<template>` را به‌صورت یک {{domxref("DocumentFragment")}} (بخش‌ی مستند) برمی‌گرداند. ویژگی {{domxref("Node/ownerDocument", "ownerDocument")}} این محتوا، یک {{domxref("Document")}} جداگانه است، نه همان سندی که عنصر `<template>` در آن قرار دارد — مگر اینکه خود سندِ حاوی، به‌طور خاص برای نگه‌داشتن محتوای الگو ساخته شده باشد.
 
-The {{domxref("Node.cloneNode()")}} and {{domxref("Document.importNode()")}} methods both create a copy of a node. The difference is that `importNode()` clones the node in the context of the calling document, whereas `cloneNode()` uses the document of the node being cloned. The document context determines the {{domxref("CustomElementRegistry")}} for constructing any custom elements. For this reason, use `document.importNode()` to clone the `content` fragment so that custom element descendants are constructed using the definitions in the current document, rather than the separate document that owns the template content. See the {{domxref("Node.cloneNode()")}} page's examples for more details.
+هر دو روش {{domxref("Node.cloneNode()")}} و {{domxref("Document.importNode()")}} یک کپی از یک گره ایجاد می‌کنند. تفاوت در این است که `importNode()` گره را در بافت سندِ فراخواننده شبیه‌سازی می‌کند، در حالی که `cloneNode()` از سندِ متعلق به همان گره استفاده می‌کند. بافتِ سند تعیین می‌کند که {{domxref("CustomElementRegistry")}} برای ساخت هر عنصر سفارشی، کدام باشد. به همین دلیل، برای شبیه‌سازیِ بخشِ `content` از `document.importNode()` استفاده کنید تا عناصر سفارشیِ فرزند، با تعاریفِ موجود در سندِ فعلی ساخته شوند، نه با آن سندِ جداگانه‌ای که مالکِ محتوای الگوست. برای جزئیات بیشتر، مثال‌های صفحه {{domxref("Node.cloneNode()")}} را ببینید.
 
-## Value
+## مقدار
 
-A {{domxref("DocumentFragment")}}.
+یک {{domxref("DocumentFragment")}}.
 
-## Examples
+## مثال‌ها
 
-### Using importNode() with template content
+### استفاده از importNode() با محتوای الگو
 
 ```js
 const templateElement = document.querySelector("#foo");
@@ -32,9 +26,9 @@ const documentFragment = document.importNode(templateElement.content, true);
 // Now you can insert the documentFragment into the DOM
 ```
 
-### The ownerDocument of template content
+### ownerDocument محتوای الگو
 
-For `<template>` elements created in the context of a normal HTML document, the `ownerDocument` of the `content` is a separate, freshly created document:
+برای عناصر `<template>` که در بافت یک سند HTML معمولی ساخته شده‌اند، `ownerDocument` مربوط به `content` یک سند جداگانه و تازه‌ساخته است:
 
 ```js
 const template = document.createElement("template");
@@ -42,7 +36,7 @@ console.log(template.content.ownerDocument === document); // false
 console.log(template.content.ownerDocument.URL); // "about:blank"
 ```
 
-If the `<template>` element is created in the context of a document that itself was created for the purpose of holding template content, then the `ownerDocument` of the `content` is the same as that of the containing document:
+اگر عنصر `<template>` در بافت سندی ساخته شود که خودش برای نگه‌داشتن محتوای الگو ایجاد شده است، آنگاه `ownerDocument` مربوط به `content` همان سندِ حاوی خواهد بود:
 
 ```js
 const template1 = document.createElement("template");
@@ -51,14 +45,14 @@ const template2 = docForTemplate.createElement("template");
 console.log(template2.content.ownerDocument === docForTemplate); // true
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLTemplateElement")}}
