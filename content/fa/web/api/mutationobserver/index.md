@@ -1,7 +1,5 @@
 ---
 title: "MutationObserver"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver"
-status: "needs-translation"
 ---
 
 ---
@@ -13,25 +11,27 @@ browser-compat: api.MutationObserver
 
 {{APIRef("DOM WHATWG")}}
 
-The **`MutationObserver`** interface provides the ability to watch for changes being made to the [DOM](/en-US/docs/Web/API/Document_Object_Model) tree. It is designed as a replacement for the older [Mutation Events](/en-US/docs/Web/API/MutationEvent) feature, which was part of the DOM3 Events specification.
+رابط **`MutationObserver`** امکان نظارت بر تغییراتی را فراهم می‌کند که در درخت [DOM](/en-US/docs/Web/API/Document_Object_Model) انجام می‌شوند. این رابط به‌عنوان جایگزینی برای ویژگی قدیمی [Mutation Events](/en-US/docs/Web/API/MutationEvent) طراحی شده است که بخشی از مشخصات DOM3 Events بود.
 
-## Constructor
+## سازنده
 
 - {{domxref("MutationObserver.MutationObserver", "MutationObserver()")}}
-  - : Creates and returns a new `MutationObserver` which will invoke a specified callback function when DOM changes occur.
+  - : یک شیء `MutationObserver` جدید ایجاد و بازمی‌گرداند که هنگام وقوع تغییرات در DOM، یک تابع callback مشخص را فراخوانی می‌کند.
 
-## Instance methods
+## متدهای نمونه
 
 - {{domxref("MutationObserver.disconnect()", "disconnect()")}}
-  - : Stops the `MutationObserver` instance from receiving further notifications until and unless {{domxref("MutationObserver.observe", "observe()")}} is called again.
+  - : دریافت اعلان‌های بیشتر توسط نمونهٔ `MutationObserver` را متوقف می‌کند، مگر اینکه دوباره {{domxref("MutationObserver.observe", "observe()")}} فراخوانی شود.
+
 - {{domxref("MutationObserver.observe()", "observe()")}}
-  - : Configures the `MutationObserver` to begin receiving notifications through its callback function when DOM changes matching the given options occur.
+  - : `MutationObserver` را طوری پیکربندی می‌کند که از طریق تابع callback خود، وقتی تغییرات DOM مطابق با گزینه‌های داده‌شده رخ دهد، شروع به دریافت اعلان‌ها کند.
+
 - {{domxref("MutationObserver.takeRecords()", "takeRecords()")}}
-  - : Removes all pending notifications from the `MutationObserver`'s notification queue and returns them in a new {{jsxref("Array")}} of {{domxref("MutationRecord")}} objects.
+  - : همهٔ اعلان‌های در انتظار را از صف اعلان‌های `MutationObserver` حذف می‌کند و آن‌ها را در یک {{jsxref("Array")}} جدید از اشیاء {{domxref("MutationRecord")}} بازمی‌گرداند.
 
-## Example
+## مثال
 
-The following example was adapted from [this blog post](https://hacks.mozilla.org/2012/05/dom-mutationobserver-reacting-to-dom-changes-without-killing-browser-performance/).
+مثال زیر از [این پست وبلاگ](https://hacks.mozilla.org/2012/05/dom-mutationobserver-reacting-to-dom-changes-without-killing-browser-performance/) اقتباس شده است.
 
 ```js
 // Select the node that will be observed for mutations
@@ -61,19 +61,19 @@ observer.observe(targetNode, config);
 observer.disconnect();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref('PerformanceObserver')}}
 - {{domxref('ResizeObserver')}}
 - {{domxref('IntersectionObserver')}}
-- [A brief overview](https://developer.chrome.com/blog/detect-dom-changes-with-mutation-observers/)
-- [A more in-depth discussion](https://hacks.mozilla.org/2012/05/dom-mutationobserver-reacting-to-dom-changes-without-killing-browser-performance/)
-- [A screencast by Chromium developer Rafael Weinstein](https://www.youtube.com/watch?v=eRZ4pO0gVWw)
+- [یک مرور کوتاه](https://developer.chrome.com/blog/detect-dom-changes-with-mutation-observers/)
+- [یک بحث عمیق‌تر](https://hacks.mozilla.org/2012/05/dom-mutationobserver-reacting-to-dom-changes-without-killing-browser-performance/)
+- [یک اسکرین‌کست از رافائل واینستین، توسعه‌دهنده کرومیوم](https://www.youtube.com/watch?v=eRZ4pO0gVWw)
