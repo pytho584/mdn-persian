@@ -1,41 +1,33 @@
 ---
-title: "IdentityCredentialError"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IdentityCredentialError"
-status: "needs-translation"
----
-
----
 title: IdentityCredentialError
 slug: Web/API/IdentityCredentialError
 page-type: web-api-interface
-status:
-  - experimental
 browser-compat: api.IdentityCredentialError
 ---
 
 {{APIRef("FedCM API")}}{{SecureContext_Header}}{{SeeCompatTable}}
 
-The **`IdentityCredentialError`** interface of the {{domxref("FedCM API", "FedCM API", "", "nocode")}} describes an authentication error indicating that the user agent did not receive an identity assertion after the user has requested to use a federated account. This can happen if the client is unauthorized or if the server is temporarily unavailable, for example.
+رابط **`IdentityCredentialError`** از {{domxref("FedCM API", "FedCM API", "", "nocode")}} یک خطای احراز هویت را توصیف می‌کند که نشان می‌دهد عامل کاربر پس از درخواست کاربر برای استفاده از یک حساب فدرال، یک تأیید هویت دریافت نکرده است. این می‌تواند مثلاً به دلیل غیرمجاز بودن مشتری یا در دسترس نبودن موقت سرور رخ دهد.
 
-Browsers can use this error type to show the error message in the user interface.
+مرورگرها می‌توانند از این نوع خطا برای نمایش پیام خطا در رابط کاربری استفاده کنند.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("IdentityCredentialError.IdentityCredentialError", "IdentityCredentialError()")}} {{experimental_inline}}
-  - : Creates a new `IdentityCredentialError` object instance.
+  - : یک نمونه جدید از شیء `IdentityCredentialError` ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_In addition to the properties below, `IdentityCredentialError` inherits properties from its parent, {{DOMxRef("DOMException")}}_.
+_علاوه بر ویژگی‌های زیر، `IdentityCredentialError` ویژگی‌ها را از والد خود، {{DOMxRef("DOMException")}}، به ارث می‌برد._
 
 - {{domxref("IdentityCredentialError.error", "error")}} {{Experimental_Inline}} {{ReadOnlyInline}}
-  - : A string. This can be either one of the values listed in the [OAuth 2.0 specified error list](https://datatracker.ietf.org/doc/html/rfc6749#section-4.1.2.1) or an arbitrary string.
+  - : یک رشته. این می‌تواند یکی از مقادیر ذکر شده در [فهرست خطاهای مشخص شده OAuth 2.0](https://datatracker.ietf.org/doc/html/rfc6749#section-4.1.2.1) یا یک رشته دلخواه باشد.
 - {{domxref("IdentityCredentialError.url", "url")}} {{Experimental_Inline}} {{ReadOnlyInline}}
-  - : A URL pointing to human-readable information about the error to display to users, such as how to fix the error or contact customer service.
+  - : یک URL که به اطلاعات قابل خواندن توسط انسان درباره خطا اشاره می‌کند تا به کاربران نمایش داده شود، مانند نحوه رفع خطا یا تماس با خدمات مشتری.
 
-## Examples
+## مثال‌ها
 
 ```js
 try {
@@ -55,15 +47,15 @@ try {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("CredentialsContainer.get()")}}
-- [ID assertion error responses](/en-US/docs/Web/API/FedCM_API/IDP_integration#id_assertion_error_responses)
+- [پاسخ‌های خطای تأیید هویت](/en-US/docs/Web/API/FedCM_API/IDP_integration#id_assertion_error_responses)
