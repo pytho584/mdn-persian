@@ -1,11 +1,5 @@
 ---
 title: "KeyframeEffect: getKeyframes() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/KeyframeEffect/getKeyframes"
-status: "needs-translation"
----
-
----
-title: "KeyframeEffect: getKeyframes() method"
 short-title: getKeyframes()
 slug: Web/API/KeyframeEffect/getKeyframes
 page-type: web-api-instance-method
@@ -14,36 +8,36 @@ browser-compat: api.KeyframeEffect.getKeyframes
 
 {{ APIRef("Web Animations") }}
 
-The **`getKeyframes()`** method of a {{domxref("KeyframeEffect")}} returns an Array of the computed keyframes that make up this animation along with their computed offsets.
+متد **`getKeyframes()`** از یک {{domxref("KeyframeEffect")}} آرایه‌ای از keyframe‌های محاسبه‌شده‌ای که این انیمیشن را تشکیل می‌دهند به همراه offset‌های محاسبه‌شده آنها برمی‌گرداند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 getKeyframes()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-Returns a sequence of objects with the following format:
+دنباله‌ای از اشیاء با قالب زیر را برمی‌گرداند:
 
-- property value pairs
-  - : As many property value pairs as are contained in each keyframe of the animation.
+- جفت‌های مقدار-ویژگی
+  - : هر تعداد جفت مقدار-ویژگی که در هر keyframe از انیمیشن وجود دارد.
 - `offset`
-  - : The offset of the keyframe specified as a number between `0.0` and `1.0` inclusive or `null`. This is equivalent to specifying start and end states in percentages in CSS stylesheets using `@keyframes`. This will be `null` if the keyframe is automatically spaced.
+  - : offset keyframe که به صورت عددی بین `0.0` و `1.0` (شامل خودشان) یا `null` مشخص شده است. این معادل تعیین حالت‌های شروع و پایان به درصد در stylesheetهای CSS با استفاده از `@keyframes` است. اگر keyframe به طور خودکار فاصله‌گذاری شده باشد، این مقدار `null` خواهد بود.
 - `computedOffset`
-  - : The computed offset for this keyframe, calculated when the list of computed keyframes was produced. Unlike **`offset`,** above, the **`computedOffset`** is never `null`.
+  - : offset محاسبه‌شده برای این keyframe که هنگام تولید لیست keyframe‌های محاسبه‌شده تعیین می‌شود. برخلاف **`offset`** در بالا، **`computedOffset`** هرگز `null` نیست.
 - `easing`
-  - : The [easing function](/en-US/docs/Web/CSS/Reference/Values/easing-function) used from this keyframe until the next keyframe in the series.
+  - : [تابع آهنگین](/en-US/docs/Web/CSS/Reference/Values/easing-function) که از این keyframe تا keyframe بعدی در سری استفاده می‌شود.
 - `composite`
-  - : The {{domxref("KeyframeEffect.composite")}} operation used to combine the values specified in this keyframe with the underlying value. This will be absent if the composite operation specified on the effect is being used.
+  - : عملیات {{domxref("KeyframeEffect.composite")}} که برای ترکیب مقادیر مشخص شده در این keyframe با مقدار زیرین استفاده می‌شود. اگر از عملیات composite مشخص شده روی افکت استفاده شود، این ویژگی وجود نخواهد داشت.
 
-## Examples
+## مثال‌ها
 
-In the following example, we can inspect the rolling animation to see its keyframes using the `getKeyframes()` method:
+در مثال زیر، می‌توانیم انیمیشن چرخشی را برای دیدن keyframe‌های آن با استفاده از متد `getKeyframes()` بررسی کنیم:
 
 ```js
 const emoji = document.querySelector("div"); // element to animate
@@ -90,15 +84,15 @@ div {
 
 {{ EmbedLiveSample("Examples", "100%", "120") }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)
-- Method of {{domxref("KeyframeEffect")}} objects.
+- متدی از اشیاء {{domxref("KeyframeEffect")}}.
