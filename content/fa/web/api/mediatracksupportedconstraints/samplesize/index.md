@@ -1,11 +1,5 @@
 ---
 title: "MediaTrackSupportedConstraints: sampleSize property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSupportedConstraints/sampleSize"
-status: "needs-translation"
----
-
----
-title: "MediaTrackSupportedConstraints: sampleSize property"
 short-title: sampleSize
 slug: Web/API/MediaTrackSupportedConstraints/sampleSize
 page-type: web-api-instance-property
@@ -14,25 +8,15 @@ browser-compat: api.MediaStreamTrack.applyConstraints.sampleSize_constraint
 
 {{APIRef("Media Capture and Streams")}}
 
-The {{domxref("MediaTrackSupportedConstraints")}} dictionary's
-**`sampleSize`** property is a read-only Boolean value which is
-present (and set to `true`) in the object returned by
-{{domxref("MediaDevices.getSupportedConstraints()")}} if and only if the
-{{Glossary("user agent")}} supports the `sampleSize` constraint. If the
-constraint isn't supported, it's not included in the list, so this value will never be
-`false`.
+در واژه‌نامهٔ {{domxref("MediaTrackSupportedConstraints")}}، ویژگی **`sampleSize`** یک مقدار بولی فقط‌خواندنی است که در شیء برگشت‌داده‌شده توسط {{domxref("MediaDevices.getSupportedConstraints()")}} وجود دارد (و روی `true` تنظیم شده) اگر و فقط اگر {{Glossary("user agent")}} از محدودیت `sampleSize` پشتیبانی کند. اگر این محدودیت پشتیبانی نشود، در فهرست گنجانده نمی‌شود؛ بنابراین مقدار آن هرگز `false` نخواهد بود.
 
-You can access the supported constraints dictionary by calling
-`navigator.mediaDevices.getSupportedConstraints()`.
+می‌توانید واژه‌نامهٔ محدودیت‌های پشتیبانی‌شده را با فراخوانی `navigator.mediaDevices.getSupportedConstraints()` دریافت کنید.
 
-## Value
+## مقدار
 
-This property is present in the dictionary (and its value is always `true`)
-if the user agent supports the `sampleSize` constraint. If the property isn't
-present, this property is missing from the supported constraints dictionary, and you'll
-get {{jsxref("undefined")}} if you try to look at its value.
+اگر {{Glossary("user agent")}} از محدودیت `sampleSize` پشتیبانی کند، این ویژگی در واژه‌نامه وجود دارد (و مقدار آن همیشه `true` است). اگر این ویژگی وجود نداشته باشد، یعنی در واژه‌نامهٔ محدودیت‌های پشتیبانی‌شده غایب است و اگر تلاش کنید مقدار آن را بخوانید، {{jsxref("undefined")}} دریافت می‌کنید.
 
-## Examples
+## نمونه‌ها
 
 ```html hidden
 <div id="result"></div>
@@ -52,19 +36,19 @@ const supported = navigator.mediaDevices.getSupportedConstraints().sampleSize;
 result.textContent = supported ? "Supported!" : "Not supported!";
 ```
 
-### Result
+### نتیجه
 
 {{ EmbedLiveSample('Examples', 600, 80) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
 - {{domxref("MediaDevices.getSupportedConstraints()")}}
