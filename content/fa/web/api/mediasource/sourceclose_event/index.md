@@ -1,11 +1,5 @@
 ---
 title: "MediaSource: sourceclose event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/sourceclose_event"
-status: "needs-translation"
----
-
----
-title: "MediaSource: sourceclose event"
 short-title: sourceclose
 slug: Web/API/MediaSource/sourceclose_event
 page-type: web-api-event
@@ -14,11 +8,11 @@ browser-compat: api.MediaSource.sourceclose_event
 
 {{APIRef("Media Source Extensions")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`sourceclose`** event is fired when a {{domxref("MediaSource")}} object's {{domxref("MediaSource.readyState", "readyState")}} changes to `"closed"`. This indicates that the `MediaSource` has been detached from the media element.
+رویداد **`sourceclose`** زمانی شلیک می‌شود که {{domxref("MediaSource.readyState", "readyState")}} یک شیء {{domxref("MediaSource")}} به `"closed"` تغییر کند. این نشان می‌دهد که `MediaSource` از عنصر رسانه جدا شده است.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("sourceclose", (event) => { })
@@ -26,15 +20,15 @@ addEventListener("sourceclose", (event) => { })
 onsourceclose = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## مثال‌ها
 
-### Handling the sourceclose event
+### مدیریت رویداد sourceclose
 
-This example demonstrates detaching a media element from a `MediaSource` and handling the `sourceclose` event for proper resource management. The code sets up a {{domxref("MediaSource")}}, attaches it to a video element, and listens for the `sourceclose` event. When the event fires, it performs cleanup tasks (`revokeObjectURL`).
+این مثال جدا کردن یک عنصر رسانه از یک `MediaSource` و مدیریت رویداد `sourceclose` برای مدیریت صحیح منابع را نشان می‌دهد. کد یک {{domxref("MediaSource")}} تنظیم می‌کند، آن را به یک عنصر ویدیو متصل می‌کند و به رویداد `sourceclose` گوش می‌دهد. هنگامی که رویداد شلیک می‌شود، کارهای پاک‌سازی (`revokeObjectURL`) را انجام می‌دهد.
 
 ```js
 const video = document.getElementById("myVideo");
@@ -69,10 +63,10 @@ document
   .addEventListener("click", detachMediaSource);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
