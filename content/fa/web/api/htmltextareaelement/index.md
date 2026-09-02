@@ -1,7 +1,5 @@
 ---
 title: "HTMLTextAreaElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTextAreaElement"
-status: "needs-translation"
 ---
 
 ---
@@ -13,96 +11,96 @@ browser-compat: api.HTMLTextAreaElement
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLTextAreaElement`** interface provides properties and methods for manipulating the layout and presentation of {{HTMLElement("textarea")}} elements.
+رابطهٔ **`HTMLTextAreaElement`** ویژگی‌ها و روش‌هایی را برای دستکاری چیدمان و نمایش عناصر {{HTMLElement("textarea")}} فراهم می‌کند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Also inherits properties from its parent interface, {{DOMxRef("HTMLElement")}}._
+_همچنین ویژگی‌ها را از رابط والد خود، {{DOMxRef("HTMLElement")}} به ارث می‌برد._
 
 - {{domxref("HTMLTextAreaElement.autocomplete", "autocomplete")}}
-  - : A string that represents the element's [`autocomplete`](/en-US/docs/Web/HTML/Reference/Elements/textarea#autocomplete) attribute.
+  - : رشته‌ای که ویژگی [`autocomplete`](/en-US/docs/Web/HTML/Reference/Elements/textarea#autocomplete) عنصر را نشان می‌دهد.
 - {{domxref("HTMLTextAreaElement.cols", "cols")}}
-  - : A number that represents the element's [`cols`](/en-US/docs/Web/HTML/Reference/Elements/textarea#cols) attribute, indicating the visible width of the text area.
+  - : عددی که ویژگی [`cols`](/en-US/docs/Web/HTML/Reference/Elements/textarea#cols) عنصر را نشان می‌دهد و عرض قابل مشاهدهٔ ناحیهٔ متن را مشخص می‌کند.
 - {{domxref("HTMLTextAreaElement.defaultValue", "defaultValue")}}
-  - : A string that represents the control's default value, which behaves like the {{domxref("Node.textContent")}} property.
+  - : رشته‌ای که مقدار پیش‌فرض کنترل را نشان می‌دهد و مانند ویژگی {{domxref("Node.textContent")}} رفتار می‌کند.
 - {{domxref("HTMLTextAreaElement.dirName", "dirName")}}
-  - : A string that represents the directionality of the element.
+  - : رشته‌ای که جهت‌دار بودن متن عنصر را نشان می‌دهد.
 - {{domxref("HTMLTextAreaElement.disabled", "disabled")}}
-  - : A boolean that represents the element's [`disabled`](/en-US/docs/Web/HTML/Reference/Elements/textarea#disabled) attribute, indicating that the control is not available for interaction.
+  - : یک بولین که ویژگی [`disabled`](/en-US/docs/Web/HTML/Reference/Elements/textarea#disabled) عنصر را نشان می‌دهد و مشخص می‌کند که کنترل برای تعامل در دسترس نیست.
 - {{domxref("HTMLTextAreaElement.form", "form")}} {{ReadOnlyInline}}
-  - : Returns a reference to the parent form element. If this element is not contained in a form element, it can be the [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) attribute of any {{HTMLElement("form")}} element in the same document or the value `null`.
+  - : ارجاعی به عنصر فرم والد را برمی‌گرداند. اگر این عنصر در یک فرم قرار نداشته باشد، می‌تواند ویژگی [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) هر عنصر {{HTMLElement("form")}} در همان سند یا مقدار `null` باشد.
 - {{domxref("HTMLTextAreaElement.labels", "labels")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref("NodeList")}} of the {{HTMLElement("label")}} elements associated with this element.
+  - : یک {{domxref("NodeList")}} از عناصر {{HTMLElement("label")}} مرتبط با این عنصر را برمی‌گرداند.
 - {{domxref("HTMLTextAreaElement.maxLength", "maxLength")}}
-  - : A number that represents the element's [`maxlength`](/en-US/docs/Web/HTML/Reference/Elements/textarea#maxlength) attribute, indicating the maximum number of characters the user can enter. This constraint is evaluated only when the value changes.
+  - : عددی که ویژگی [`maxlength`](/en-US/docs/Web/HTML/Reference/Elements/textarea#maxlength) عنصر را نشان می‌دهد و حداکثر تعداد کاراکترهایی را که کاربر می‌تواند وارد کند مشخص می‌کند. این محدودیت فقط زمانی ارزیابی می‌شود که مقدار تغییر کند.
 - {{domxref("HTMLTextAreaElement.minLength", "minLength")}}
-  - : A number that represents the element's [`minlength`](/en-US/docs/Web/HTML/Reference/Elements/textarea#minlength) attribute, indicating the minimum number of characters the user can enter. This constraint is evaluated only when the value changes.
+  - : عددی که ویژگی [`minlength`](/en-US/docs/Web/HTML/Reference/Elements/textarea#minlength) عنصر را نشان می‌دهد و حداقل تعداد کاراکترهایی را که کاربر می‌تواند وارد کند مشخص می‌کند. این محدودیت فقط زمانی ارزیابی می‌شود که مقدار تغییر کند.
 - {{domxref("HTMLTextAreaElement.name", "name")}}
-  - : A string that represents the element's [`name`](/en-US/docs/Web/HTML/Reference/Elements/textarea#name) attribute, containing the name of the control.
+  - : رشته‌ای که ویژگی [`name`](/en-US/docs/Web/HTML/Reference/Elements/textarea#name) عنصر را نشان می‌دهد و شامل نام کنترل است.
 - {{domxref("HTMLTextAreaElement.placeholder", "placeholder")}}
-  - : A string that represents the element's [`placeholder`](/en-US/docs/Web/HTML/Reference/Elements/textarea#placeholder) attribute, containing a hint to the user about what to enter in the control.
+  - : رشته‌ای که ویژگی [`placeholder`](/en-US/docs/Web/HTML/Reference/Elements/textarea#placeholder) عنصر را نشان می‌دهد و شامل راهنمایی به کاربر دربارهٔ آنچه باید در کنترل وارد کند است.
 - {{domxref("HTMLTextAreaElement.readOnly", "readOnly")}}
-  - : A boolean that represents the element's [`readonly`](/en-US/docs/Web/HTML/Reference/Elements/textarea#readonly) attribute, indicating that the user cannot modify the value of the control.
+  - : یک بولین که ویژگی [`readonly`](/en-US/docs/Web/HTML/Reference/Elements/textarea#readonly) عنصر را نشان می‌دهد و مشخص می‌کند که کاربر نمی‌تواند مقدار کنترل را تغییر دهد.
 - {{domxref("HTMLTextAreaElement.required", "required")}}
-  - : A boolean that represents the element's [`required`](/en-US/docs/Web/HTML/Reference/Elements/textarea#required) attribute, indicating that the user must specify a value before submitting the form.
+  - : یک بولین که ویژگی [`required`](/en-US/docs/Web/HTML/Reference/Elements/textarea#required) عنصر را نشان می‌دهد و مشخص می‌کند که کاربر باید قبل از ارسال فرم، مقداری را مشخص کند.
 - {{domxref("HTMLTextAreaElement.rows", "rows")}}
-  - : A number that represents the element's [`rows`](/en-US/docs/Web/HTML/Reference/Elements/textarea#rows) attribute, indicating the number of visible text lines for the control.
+  - : عددی که ویژگی [`rows`](/en-US/docs/Web/HTML/Reference/Elements/textarea#rows) عنصر را نشان می‌دهد و تعداد خطوط متنی قابل مشاهده برای کنترل را مشخص می‌کند.
 - {{domxref("HTMLTextAreaElement.selectionDirection", "selectionDirection")}}
-  - : A string that represents the direction in which selection occurred. This is `forward` if selection was performed in the start-to-end direction of the current locale, or `backward` for the opposite direction. This can also be `none` if the direction is unknown.
+  - : رشته‌ای که جهتی را که انتخاب در آن رخ داده است نشان می‌دهد. اگر انتخاب در جهت شروع به پایان در زبان/منطقهٔ فعلی انجام شده باشد، `forward` است و در جهت مخالف `backward` است. اگر جهت ناشناخته باشد، می‌تواند `none` نیز باشد.
 - {{domxref("HTMLTextAreaElement.selectionEnd", "selectionEnd")}}
-  - : A number that represents the index of the end of selected text. If no text is selected, it contains the index of the character that follows the input cursor. On being set, the control behaves as if `setSelectionRange()` had been called with this as the second argument, and `selectionStart` as the first argument.
+  - : عددی که اندیس پایان متن انتخاب‌شده را نشان می‌دهد. اگر متنی انتخاب نشده باشد، شامل اندیس کاراکتری است که بعد از مکان‌نمای ورودی قرار دارد. هنگام تنظیم، کنترل طوری رفتار می‌کند که گویی `setSelectionRange()` با این مقدار به‌عنوان آرگومان دوم و `selectionStart` به‌عنوان آرگومان اول فراخوانی شده است.
 - {{domxref("HTMLTextAreaElement.selectionStart", "selectionStart")}}
-  - : A number that represents the index of the beginning of selected text. If no text is selected, it contains the index of the character that follows the input cursor. On being set, the control behaves as if `setSelectionRange()` had been called with this as the first argument and `selectionEnd` as the second argument.
+  - : عددی که اندیس شروع متن انتخاب‌شده را نشان می‌دهد. اگر متنی انتخاب نشده باشد، شامل اندیس کاراکتری است که بعد از مکان‌نمای ورودی قرار دارد. هنگام تنظیم، کنترل طوری رفتار می‌کند که گویی `setSelectionRange()` با این مقدار به‌عنوان آرگومان اول و `selectionEnd` به‌عنوان آرگومان دوم فراخوانی شده است.
 - {{domxref("HTMLTextAreaElement.textLength", "textLength")}} {{ReadOnlyInline}}
-  - : Returns the code point length of the control's `value`. Same as reading `value.length`.
+  - : طول کدپوینت `value` کنترل را برمی‌گرداند. همانند خواندن `value.length`.
 - {{domxref("HTMLTextAreaElement.type", "type")}} {{ReadOnlyInline}}
-  - : Returns the string `textarea`.
+  - : رشتهٔ `textarea` را برمی‌گرداند.
 - {{domxref("HTMLTextAreaElement.validationMessage", "validationMessage")}} {{ReadOnlyInline}}
-  - : Returns a localized message that describes the validation constraints that the control does not satisfy (if any). This is the empty string if the control is not a candidate for constraint validation (`willValidate` is `false`), or it satisfies its constraints.
+  - : یک پیام محلی‌سازی‌شده را برمی‌گرداند که محدودیت‌های اعتبارسنجیِ برآورده‌نشدهٔ کنترل را توصیف می‌کند (در صورت وجود). اگر کنترل کاندیدای اعتبارسنجی محدودیت نباشد (`willValidate` مقدار `false` داشته باشد) یا محدودیت‌های خود را برآورده کند، این رشته خالی است.
 - {{domxref("HTMLTextAreaElement.validity", "validity")}} {{ReadOnlyInline}}
-  - : Returns the validity state that this element is in.
+  - : وضعیت اعتبارسنجی‌ای را که این عنصر در آن قرار دارد برمی‌گرداند.
 - {{domxref("HTMLTextAreaElement.value", "value")}}
-  - : A string that represents the raw value contained in the control.
+  - : رشته‌ای که مقدار خام موجود در کنترل را نشان می‌دهد.
 - {{domxref("HTMLTextAreaElement.willValidate", "willValidate")}} {{ReadOnlyInline}}
-  - : Returns whether the element is a candidate for constraint validation. `false` if any conditions bar it from constraint validation, including its `readOnly` or `disabled` property is `true`.
+  - : برمی‌گرداند که آیا عنصر کاندیدای اعتبارسنجی محدودیت است یا خیر. اگر هر شرایطی آن را از اعتبارسنجی محدودیت منع کند، `false` است؛ از جمله اگر ویژگی `readOnly` یا `disabled` آن `true` باشد.
 - {{domxref("HTMLTextAreaElement.wrap", "wrap")}}
-  - : A string that represents the element's [`wrap`](/en-US/docs/Web/HTML/Reference/Elements/textarea#wrap) attribute, indicating how the control wraps text.
+  - : رشته‌ای که ویژگی [`wrap`](/en-US/docs/Web/HTML/Reference/Elements/textarea#wrap) عنصر را نشان می‌دهد و نحوهٔ شکستن متن توسط کنترل را مشخص می‌کند.
 
-## Instance methods
+## روش‌های نمونه
 
-_Also inherits methods from its parent interface, {{DOMxRef("HTMLElement")}}._
+_همچنین روش‌ها را از رابط والد خود، {{DOMxRef("HTMLElement")}} به ارث می‌برد._
 
 - {{domxref("HTMLTextAreaElement.checkValidity", "checkValidity()")}}
-  - : Returns `false` if the element is a candidate for constraint validation, and it does not satisfy its constraints. In this case, it also fires a cancelable `invalid` event at the control. It returns `true` if the control is not a candidate for constraint validation, or if it satisfies its constraints.
+  - : اگر عنصر کاندیدای اعتبارسنجی محدودیت باشد و محدودیت‌های خود را برآورده نکند، `false` برمی‌گرداند. در این حالت، یک رویداد قابل‌لغو `invalid` نیز در کنترل ایجاد می‌کند. اگر کنترل کاندیدای اعتبارسنجی محدودیت نباشد یا محدودیت‌های خود را برآورده کند، `true` برمی‌گرداند.
 - {{domxref("HTMLTextAreaElement.reportValidity", "reportValidity()")}}
-  - : This method reports the problems with the constraints on the element, if any, to the user. If there are problems, it fires a cancelable `invalid` event at the element, and returns `false`; if there are no problems, it returns `true`.
+  - : این روش مشکلات مربوط به محدودیت‌های عنصر (در صورت وجود) را به کاربر گزارش می‌دهد. اگر مشکلی وجود داشته باشد، رویداد قابل‌لغو `invalid` را در عنصر ایجاد کرده و `false` برمی‌گرداند؛ اگر مشکلی نباشد، `true` برمی‌گرداند.
 - {{domxref("HTMLTextAreaElement.select", "select()")}}
-  - : Selects the contents of the control.
+  - : محتویات کنترل را انتخاب می‌کند.
 - {{domxref("HTMLTextAreaElement.setCustomValidity", "setCustomValidity()")}}
-  - : Sets a custom validity message for the element. If this message is not the empty string, then the element is suffering from a custom validity error, and does not validate.
+  - : یک پیام اعتبارسنجی سفارشی برای عنصر تنظیم می‌کند. اگر این پیام رشتهٔ خالی نباشد، عنصر دارای خطای اعتبارسنجی سفارشی است و اعتبارسنجی نمی‌شود.
 - {{domxref("HTMLTextAreaElement.setRangeText", "setRangeText()")}}
-  - : Replaces a range of text in the element with new text.
+  - : بازه‌ای از متن در عنصر را با متن جدید جایگزین می‌کند.
 - {{domxref("HTMLTextAreaElement.setSelectionRange", "setSelectionRange()")}}
-  - : Selects a range of text in the element (but does not focus it).
+  - : بازه‌ای از متن در عنصر را انتخاب می‌کند (اما آن را فوکوس نمی‌کند).
 
-## Events
+## رویدادها
 
-_Also inherits events from its parent interface, {{DOMxRef("HTMLElement")}}._
+_همچنین رویدادها را از رابط والد خود، {{DOMxRef("HTMLElement")}} به ارث می‌برد._
 
-Listen to these events using {{domxref("EventTarget/addEventListener", "addEventListener()")}} or by assigning an event listener to the `oneventname` property of this interface:
+برای گوش دادن به این رویدادها از {{domxref("EventTarget/addEventListener", "addEventListener()")}} استفاده کنید یا یک شنوندهٔ رویداد را به ویژگی `oneventname` این رابط اختصاص دهید:
 
-- {{domxref("HTMLTextAreaElement/select_event", "select")}} event
-  - : Fires when some text has been selected.
-- {{domxref("HTMLTextAreaElement/selectionchange_event", "selectionchange")}} event
-  - : Fires when the text selection in a {{HTMLElement("textarea")}} element has been changed.
+- رویداد {{domxref("HTMLTextAreaElement/select_event", "select")}}
+  - : وقتی برخی از متن‌ها انتخاب شده‌اند، ایجاد می‌شود.
+- رویداد {{domxref("HTMLTextAreaElement/selectionchange_event", "selectionchange")}}
+  - : وقتی انتخاب متن در یک عنصر {{HTMLElement("textarea")}} تغییر کرده باشد، ایجاد می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Autogrowing textarea example
+### مثال textarea با رشد خودکار
 
-Make a textarea autogrow while typing:
+یک textarea را در حین تایپ به‌صورت خودکار بزرگ کنید:
 
 #### JavaScript
 
@@ -142,9 +140,9 @@ textarea.no-scrollbars {
 
 {{EmbedLiveSample('Autogrowing_textarea_example', 600, 300)}}
 
-### Insert HTML tags example
+### مثال درج تگ‌های HTML
 
-Insert some HTML tags in a textarea:
+برخی تگ‌های HTML را در یک textarea درج کنید:
 
 ```js live-sample___insert-html
 function insert(startTag, endTag) {
@@ -186,7 +184,7 @@ link.addEventListener("click", (e) => insertURL());
 code.addEventListener("click", (e) => insert("<code>", "</code>"));
 ```
 
-Decorate the span to behave like a link:
+عنصر span را طوری تزئین کنید که مانند یک پیوند رفتار کند:
 
 ```css live-sample___insert-html
 .intLink {
@@ -216,10 +214,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut facilisis, arcu vita
 
 {{EmbedLiveSample('insert-html', , '300', , , , , 'allow-modals')}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
