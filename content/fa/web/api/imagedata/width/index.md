@@ -1,11 +1,5 @@
 ---
 title: "ImageData: width property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ImageData/width"
-status: "needs-translation"
----
-
----
-title: "ImageData: width property"
 short-title: width
 slug: Web/API/ImageData/width
 page-type: web-api-instance-property
@@ -14,32 +8,30 @@ browser-compat: api.ImageData.width
 
 {{APIRef("Canvas API")}}{{AvailableInWorkers}}
 
-The readonly **`ImageData.width`** property returns the number
-of pixels per row in the {{domxref("ImageData")}} object.
+ویژگی فقط‌خواندنی **`ImageData.width`** تعداد پیکسل‌های هر ردیف را در شیء {{domxref("ImageData")}} برمی‌گرداند.
 
-## Value
+## مقدار
 
-A number.
+یک عدد.
 
-## Examples
+## مثال
 
-This example creates an `ImageData` object that is 200 pixels wide and 100
-pixels tall. Thus, the `width` property is `200`.
+این مثال یک شیء `ImageData` به عرض ۲۰۰ پیکسل و ارتفاع ۱۰۰ پیکسل ایجاد می‌کند. بنابراین، ویژگی `width` برابر با ۲۰۰ است.
 
 ```js
 let imageData = new ImageData(200, 100);
 console.log(imageData.width); // 200
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("ImageData.height")}}
 - {{domxref("ImageData")}}
