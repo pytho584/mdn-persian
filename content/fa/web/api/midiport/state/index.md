@@ -1,7 +1,5 @@
 ---
 title: "MIDIPort: state property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MIDIPort/state"
-status: "needs-translation"
 ---
 
 ---
@@ -14,20 +12,20 @@ browser-compat: api.MIDIPort.state
 
 {{securecontext_header}}{{APIRef("Web MIDI API")}}
 
-The **`state`** read-only property of the {{domxref("MIDIPort")}} interface returns the state of the port.
+ویژگی فقط‌خواندنی **`state`** از رابط {{domxref("MIDIPort")}}، وضعیت پورت را بازمی‌گرداند.
 
 ## Value
 
-A string containing the state of the port, one of:
+یک رشته (string) شامل وضعیت پورت، که یکی از این مقادیر است:
 
 - `"disconnected"`
-  - : The device that this `MIDIPort` represents is disconnected from the system.
+  - : دستگاهی که این `MIDIPort` معرف آن است، از سیستم قطع شده است.
 - `"connected"`
-  - : The device that this `MIDIPort` represents is currently connected.
+  - : دستگاهی که این `MIDIPort` معرف آن است، در حال حاضر متصل است.
 
 ## Examples
 
-The following example loops through all input ports and prints the state of each to the console.
+مثال زیر همه‌ی پورت‌های ورودی را پیمایش می‌کند و وضعیت هر یک را در کنسول چاپ می‌کند.
 
 ```js
 for (const entry of midiAccess.inputs) {
