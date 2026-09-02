@@ -1,11 +1,5 @@
 ---
 title: "NamedNodeMap: setNamedItemNS() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NamedNodeMap/setNamedItemNS"
-status: "needs-translation"
----
-
----
-title: "NamedNodeMap: setNamedItemNS() method"
 short-title: setNamedItemNS()
 slug: Web/API/NamedNodeMap/setNamedItemNS
 page-type: web-api-instance-method
@@ -14,14 +8,10 @@ browser-compat: api.NamedNodeMap.setNamedItemNS
 
 {{APIRef("DOM")}}
 
-The **`setNamedItemNS()`** method of the {{domxref("NamedNodeMap")}} interface
-puts the {{domxref("Attr")}} identified by its name in the map.
-If there was already an {{domxref("Attr")}} with the same name in the map,
-it is _replaced_.
+متد **`setNamedItemNS()`** از رابط {{domxref("NamedNodeMap")}}، ویژگی {{domxref("Attr")}} مشخص‌شده با نام خود را در نقشه قرار می‌دهد. اگر قبلاً یک {{domxref("Attr")}} با همان نام در نقشه وجود داشته باشد، _جایگزین_ می‌شود.
 
 > [!NOTE]
-> This method is an alias of `setNamedItem()` you can use them
-> interchangeably.
+> این متد نام مستعار (alias) `setNamedItem()` است و می‌توانید از آن‌ها به جای هم استفاده کنید.
 
 ## Syntax
 
@@ -32,16 +22,16 @@ setNamedItemNS(attr)
 ### Parameters
 
 - `attr`
-  - : The attribute to insert in the map.
+  - : ویژگی‌ای که باید در نقشه درج شود.
 
 ### Return value
 
-Returns the old attribute if replaced, or `null` if the attribute is new.
+در صورت جایگزینی، ویژگی قدیمی را برمی‌گرداند و اگر ویژگی جدید باشد، `null` را برمی‌گرداند.
 
 ### Exceptions
 
 - `InUseAttributeError` {{domxref("DOMException")}}
-  - : Thrown if the attribute is still part of another map.
+  - : در صورتی که ویژگی همچنان بخشی از نقشه دیگری باشد، پرتاب می‌شود.
 
 ## Example
 
