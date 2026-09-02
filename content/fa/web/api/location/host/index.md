@@ -1,11 +1,5 @@
 ---
 title: "Location: host property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Location/host"
-status: "needs-translation"
----
-
----
-title: "Location: host property"
 short-title: host
 slug: Web/API/Location/host
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.Location.host
 
 {{ApiRef("Location")}}
 
-The **`host`** property of the {{domxref("Location")}} interface is a string containing the host, which is the {{domxref("Location.hostname", "hostname")}}, and then, if the {{glossary("port")}} of the URL is nonempty, a `":"`, followed by the {{domxref("Location.port", "port")}} of the URL. If the URL does not have a `hostname`, this property contains an empty string, `""`.
+خاصیت **`host`** در رابط {{domxref("Location")}} یک رشته است که شامل host می‌باشد، که همان {{domxref("Location.hostname", "hostname")}} است، و سپس، اگر {{glossary("port")}} URL غیرخالی باشد، یک `":"` و به دنبال آن {{domxref("Location.port", "port")}} URL قرار می‌گیرد. اگر URL دارای `hostname` نباشد، این خاصیت شامل یک رشته خالی `""` است.
 
-See {{domxref("URL.host")}} for more information.
+برای اطلاعات بیشتر به {{domxref("URL.host")}} مراجعه کنید.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```js
 const anchor = document.createElement("a");
@@ -38,10 +32,10 @@ anchor.href = "https://developer.mozilla.org:4097/en-US/Location.host";
 console.log(anchor.host === "developer.mozilla.org:4097");
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
