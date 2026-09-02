@@ -1,11 +1,5 @@
 ---
 title: "LargestContentfulPaint: toJSON() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/LargestContentfulPaint/toJSON"
-status: "needs-translation"
----
-
----
-title: "LargestContentfulPaint: toJSON() method"
 short-title: toJSON()
 slug: Web/API/LargestContentfulPaint/toJSON
 page-type: web-api-instance-method
@@ -14,29 +8,29 @@ browser-compat: api.LargestContentfulPaint.toJSON
 
 {{APIRef("Performance API")}}
 
-The **`toJSON()`** method of the {{domxref("LargestContentfulPaint")}} interface is a {{Glossary("Serialization","serializer")}}; it returns a JSON representation of the {{domxref("LargestContentfulPaint")}} object.
+متد **`toJSON()`** در رابط {{domxref("LargestContentfulPaint")}} یک {{Glossary("Serialization","سریال‌ساز")}} است؛ این متد یک نمایش JSON از شیء {{domxref("LargestContentfulPaint")}} برمی‌گرداند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 toJSON()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("JSON")}} object that is the serialization of the {{domxref("LargestContentfulPaint")}} object.
+یک شیء {{jsxref("JSON")}} که حاصل سریال‌سازی شیء {{domxref("LargestContentfulPaint")}} است.
 
-The JSON doesn't contain the {{domxref("LargestContentfulPaint.element", "element")}} property because it is of type {{domxref("Element")}}, which doesn't provide a `toJSON()` operation.
+این JSON شامل ویژگی {{domxref("LargestContentfulPaint.element", "element")}} نیست، زیرا آن ویژگی از نوع {{domxref("Element")}} است که عملیات `toJSON()` را ارائه نمی‌دهد.
 
-## Examples
+## مثال‌ها
 
-### Using the toJSON method
+### استفاده از متد toJSON
 
-In this example, calling `entry.toJSON()` returns a JSON representation of the `LargestContentfulPaint` object.
+در این مثال، فراخوانی `entry.toJSON()` یک نمایش JSON از شیء `LargestContentfulPaint` برمی‌گرداند.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -48,7 +42,7 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "largest-contentful-paint", buffered: true });
 ```
 
-This would log a JSON object like so:
+این کار شیء JSON زیر را در کنسول ثبت می‌کند:
 
 ```json
 {
@@ -64,16 +58,16 @@ This would log a JSON object like so:
 }
 ```
 
-To get a JSON string, you can use [`JSON.stringify(entry)`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) directly; it will call `toJSON()` automatically.
+برای دریافت یک رشته JSON، می‌توانید مستقیماً از [`JSON.stringify(entry)`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) استفاده کنید؛ این متد به‌طور خودکار `toJSON()` را فراخوانی می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{jsxref("JSON")}}
