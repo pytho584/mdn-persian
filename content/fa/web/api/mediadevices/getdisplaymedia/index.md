@@ -1,11 +1,5 @@
 ---
 title: "MediaDevices: getDisplayMedia() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getDisplayMedia"
-status: "needs-translation"
----
-
----
-title: "MediaDevices: getDisplayMedia() method"
 short-title: getDisplayMedia()
 slug: Web/API/MediaDevices/getDisplayMedia
 page-type: web-api-instance-method
@@ -14,122 +8,123 @@ browser-compat: api.MediaDevices.getDisplayMedia
 
 {{APIRef("Screen Capture API")}}{{SecureContext_Header}}
 
-The **`getDisplayMedia()`** method of the {{domxref("MediaDevices")}} interface prompts the user to select and grant permission to capture the contents of a display or portion thereof (such as a window) as a {{domxref("MediaStream")}}.
+متد **`getDisplayMedia()`** از رابط {{domxref("MediaDevices")}} از کاربر می‌خواهد که محتوای یک نمایشگر یا بخشی از آن (مانند یک پنجره) را به‌عنوان یک {{domxref("MediaStream")}} انتخاب کرده و اجازهٔ ضبط آن را صادر کند.
 
-The resulting stream can then be recorded using the [MediaStream Recording API](/en-US/docs/Web/API/MediaStream_Recording_API) or transmitted as part of a [WebRTC](/en-US/docs/Web/API/WebRTC_API) session.
+استریم حاصل را می‌توان با [MediaStream Recording API](/en-US/docs/Web/API/MediaStream_Recording_API) ضبط کرد یا به‌عنوان بخشی از یک نشست [WebRTC](/en-US/docs/Web/API/WebRTC_API) ارسال نمود.
 
-See [Using the Screen Capture API](/en-US/docs/Web/API/Screen_Capture_API/Using_Screen_Capture) for more details and an example.
+برای جزئیات بیشتر و یک مثال، [استفاده از Screen Capture API](/en-US/docs/Web/API/Screen_Capture_API/Using_Screen_Capture) را ببینید.
 
-## Syntax
+## نحو
 
 ```js-nolint
 getDisplayMedia()
 getDisplayMedia(options)
 ```
 
-### Parameters
+### پارامترها
 
 - `options` {{optional_inline}}
-  - : An object specifying requirements for the returned {{domxref("MediaStream")}}.
-    The options for `getDisplayMedia()` work in the same as the [constraints](/en-US/docs/Web/API/MediaDevices/getUserMedia#parameters) for the {{domxref("MediaDevices.getUserMedia()")}} method, although in that case only `audio` and `video` can be specified.
-    The list of possible option properties for `getDisplayMedia()` is as follows:
+  - : شیئی که الزامات مربوط به {{domxref("MediaStream")}} بازگردانده‌شده را مشخص می‌کند.
+    گزینه‌های `getDisplayMedia()` همانند [constraintهای](/en-US/docs/Web/API/MediaDevices/getUserMedia#parameters) مربوط به متد {{domxref("MediaDevices.getUserMedia()")}} کار می‌کنند، هرچند در این مورد فقط `audio` و `video` قابل مشخص‌کردن هستند.
+    فهرست خصوصیت‌های ممکن برای `getDisplayMedia()` به شرح زیر است:
+
     - `video` {{optional_inline}}
-      - : A boolean or a {{domxref("MediaTrackConstraints")}} instance; the default value is `true`.
-        If this option is omitted or set to `true`, the returned {{domxref("MediaStream")}} will contain a video track.
-        Since `getDisplayMedia()` requires a video track, if this option is set to `false` the promise will reject with a `TypeError`.
+      - : یک مقدار بولی یا یک نمونه از {{domxref("MediaTrackConstraints")}}؛ مقدار پیش‌فرض `true` است.
+        اگر این گزینه حذف شود یا روی `true` تنظیم شود، {{domxref("MediaStream")}} بازگردانده‌شده شامل یک track ویدیویی خواهد بود.
+        از آنجا که `getDisplayMedia()` به یک track ویدیویی نیاز دارد، اگر این گزینه روی `false` تنظیم شود، promise با خطای `TypeError` رد خواهد شد.
     - `audio` {{optional_inline}}
-      - : A boolean or a {{domxref("MediaTrackConstraints")}} instance; the default value is `false`.
-        A value of `true` indicates that the returned {{domxref("MediaStream")}} will contain an audio track, if audio is supported and available for the display surface chosen by the user.
+      - : یک مقدار بولی یا یک نمونه از {{domxref("MediaTrackConstraints")}}؛ مقدار پیش‌فرض `false` است.
+        مقدار `true` نشان می‌دهد که {{domxref("MediaStream")}} بازگردانده‌شده شامل یک track صوتی خواهد بود، به‌شرط آنکه صدا برای سطح نمایش انتخاب‌شده توسط کاربر پشتیبانی و در دسترس باشد.
     - `controller` {{Experimental_Inline}} {{optional_inline}}
-      - : A {{domxref("CaptureController")}} object instance containing methods that can be used to further manipulate the capture session if included.
+      - : یک نمونه شیء {{domxref("CaptureController")}} شامل متدهایی که در صورت گنجاندن، می‌توان از آن‌ها برای دستکاری بیشتر نشست ضبط استفاده کرد.
     - `monitorTypeSurfaces` {{Experimental_Inline}} {{optional_inline}}
-      - : An enumerated value specifying whether the browser should offer entire screens in the screen capture options presented to the user alongside tab and window options.
-        This option is intended to protect companies from leakage of private information through employee error when using video conferencing apps.
-        Possible values are:
-        - `include`: Hints that the browser should include screen options.
-        - `exclude`: Hints that screen options should be excluded.
+      - : یک مقدار شمارشی (enumerated) که مشخص می‌کند آیا مرورگر باید کل صفحه‌ها را در گزینه‌های ضبط صفحه که همراه با گزینه‌های تب و پنجره به کاربر ارائه می‌شود قرار دهد یا نه.
+        این گزینه برای محافظت از شرکت‌ها در برابر نشت اطلاعات خصوصی ناشی از خطای کارکنان هنگام استفاده از برنامه‌های کنفرانس ویدیویی در نظر گرفته شده است.
+        مقادیر ممکن عبارتند از:
+        - `include`: نشان می‌دهد که مرورگر باید گزینه‌های صفحه را شامل شود.
+        - `exclude`: نشان می‌دهد که گزینه‌های صفحه باید حذف شوند.
 
         > [!NOTE]
-        > You cannot set `monitorTypeSurfaces: "exclude"` at the same time as [`displaySurface: "monitor"`](/en-US/docs/Web/API/MediaTrackConstraints/displaySurface) as the two settings are contradictory.
-        > Trying to do so will result in the `getDisplayMedia()` call failing with a `TypeError`.
+        > نمی‌توانید `monitorTypeSurfaces: "exclude"` را هم‌زمان با [`displaySurface: "monitor"`](/en-US/docs/Web/API/MediaTrackConstraints/displaySurface) تنظیم کنید، زیرا این دو تنظیم با یکدیگر تناقض دارند.
+        > تلاش برای این کار باعث می‌شود فراخوانی `getDisplayMedia()` با خطای `TypeError` شکست بخورد.
 
     - `preferCurrentTab` {{non-standard_inline}} {{Experimental_Inline}} {{optional_inline}}
-      - : A boolean; a value of `true` instructs the browser to offer the current tab as the most prominent capture source, that is, as a separate "This Tab" option in the "Choose what to share" options presented to the user.
-        This is useful as many app types generally just want to share the current tab.
-        For example, a slide deck app might want to let the user stream the current tab containing the presentation to a virtual conference.
+      - : یک مقدار بولی؛ مقدار `true` به مرورگر دستور می‌دهد که تب فعلی را به‌عنوان برجسته‌ترین منبع ضبط ارائه دهد، یعنی به‌صورت یک گزینهٔ جداگانه با عنوان «This Tab» در گزینه‌های «Choose what to share» که به کاربر نمایش داده می‌شود.
+        این کار مفید است، زیرا بسیاری از انواع برنامه‌ها معمولاً فقط می‌خواهند تب فعلی را به اشتراک بگذارند.
+        برای مثال، یک برنامهٔ ارائهٔ اسلاید ممکن است بخواهد به کاربر اجازه دهد تب فعلی را که شامل ارائه است در یک کنفرانس مجازی پخش کند.
     - `selfBrowserSurface` {{Experimental_Inline}} {{optional_inline}}
-      - : An enumerated value specifying whether the browser should allow the user to select the current tab for capture.
-        This helps to avoid the "infinite hall of mirrors" effect experienced when a video conferencing app inadvertently shares its own display.
-        Possible values are:
-        - `include`: Hints that the browser should include the current tab in the choices offered for capture.
-        - `exclude`: Hints that the current tab should be excluded from the choices.
+      - : یک مقدار شمارشی که مشخص می‌کند آیا مرورگر باید به کاربر اجازه دهد تب فعلی را برای ضبط انتخاب کند.
+        این کار به جلوگیری از اثر «تالار بی‌پایان آینه‌ها» (infinite hall of mirrors) کمک می‌کند که وقتی یک برنامهٔ کنفرانس ویدیویی به‌طور ناخواسته نمایشگر خودش را به اشتراک می‌گذارد رخ می‌دهد.
+        مقادیر ممکن عبارتند از:
+        - `include`: نشان می‌دهد که مرورگر باید تب فعلی را در گزینه‌های ارائه‌شده برای ضبط شامل شود.
+        - `exclude`: نشان می‌دهد که تب فعلی باید از گزینه‌ها حذف شود.
     - `surfaceSwitching` {{Experimental_Inline}} {{optional_inline}}
-      - : An enumerated value specifying whether the browser should display a control to allow the user to dynamically switch the shared tab during screen-sharing.
-        This is more convenient than having to go through the whole sharing process again each time a user wants to switch the shared tab.
-        Possible values are:
-        - `include`: Hints that the browser should include the control.
-        - `exclude`: Hints that the control should not be shown.
+      - : یک مقدار شمارشی که مشخص می‌کند آیا مرورگر باید کنترلی نمایش دهد که به کاربر امکان می‌دهد در طول اشتراک‌گذاری صفحه، تب مشترک را به‌صورت پویا تغییر دهد.
+        این کار راحت‌تر از آن است که هر بار کاربر بخواهد تب مشترک را تغییر دهد، کل فرایند اشتراک‌گذاری دوباره طی شود.
+        مقادیر ممکن عبارتند از:
+        - `include`: نشان می‌دهد که مرورگر باید کنترل را شامل شود.
+        - `exclude`: نشان می‌دهد که کنترل نباید نمایش داده شود.
     - `systemAudio` {{Experimental_Inline}} {{optional_inline}}
-      - : An enumerated value specifying whether the browser should include the system audio among the possible audio sources offered to the user.
-        Possible values are:
-        - `include`: Hints that the browser should include the system audio in the list of choices.
-        - `exclude`: Hints that system audio should be excluded from the choices shown.
+      - : یک مقدار شمارشی که مشخص می‌کند آیا مرورگر باید صدای سیستم را در میان منابع صوتی ممکن ارائه‌شده به کاربر قرار دهد.
+        مقادیر ممکن عبارتند از:
+        - `include`: نشان می‌دهد که مرورگر باید صدای سیستم را در فهرست گزینه‌ها قرار دهد.
+        - `exclude`: نشان می‌دهد که صدای سیستم باید از گزینه‌های نمایش‌داده‌شده حذف شود.
     - `windowAudio` {{Experimental_Inline}} {{optional_inline}}
-      - : An enumerated value that hints to the browser what audio sharing option the user should be presented with alongside window sharing options. Possible values are:
-        - `exclude`: Hints that audio should not be shareable when a window sharing option is chosen.
-        - `window`: Hints that when a window sharing option is chosen, only audio originating from that window should be shared.
-        - `system`: Hints that when a window sharing option is chosen, all system audio should be shared.
+      - : یک مقدار شمارشی که به مرورگر نشان می‌دهد کاربر هنگام ارائهٔ گزینه‌های اشتراک‌گذاری پنجره، چه گزینهٔ اشتراک‌گذاری صدا دریافت کند. مقادیر ممکن عبارتند از:
+        - `exclude`: نشان می‌دهد که هنگام انتخاب گزینهٔ اشتراک‌گذاری پنجره، صدا نباید قابل اشتراک‌گذاری باشد.
+        - `window`: نشان می‌دهد که هنگام انتخاب گزینهٔ اشتراک‌گذاری پنجره، فقط صدای منتشرشده از آن پنجره به اشتراک گذاشته شود.
+        - `system`: نشان می‌دهد که هنگام انتخاب گزینهٔ اشتراک‌گذاری پنجره، تمام صدای سیستم به اشتراک گذاشته شود.
 
 > [!NOTE]
-> For most of these options, a default value is not mandated by the spec. For standalone options, where a default is not mentioned, see the [Browser compatibility](#browser_compatibility) section for browser-specific defaults.
+> برای بیشتر این گزینه‌ها، مقدار پیش‌فرض توسط مشخصات (spec) الزامی نشده است. برای گزینه‌های مستقل که مقدار پیش‌فرض ذکر نشده، بخش [سازگاری مرورگر](#browser_compatibility) را برای مقادیر پیش‌فرض خاص مرورگرها ببینید.
 
 > [!NOTE]
-> See the article [Capabilities, constraints, and settings](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints) for a lot more detail on how these options work.
+> برای جزئیات بسیار بیشتر دربارهٔ نحوهٔ کار این گزینه‌ها، مقالهٔ [قابلیت‌ها، محدودیت‌ها و تنظیمات](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints) را ببینید.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves to a {{domxref("MediaStream")}} containing a video track whose contents come from a user-selected screen area, as well as an optional audio track.
+یک {{jsxref("Promise")}} که به یک {{domxref("MediaStream")}} شامل یک track ویدیویی که محتوای آن از ناحیهٔ انتخاب‌شده توسط کاربر از صفحه می‌آید، و همچنین یک track صوتی اختیاری، resolve می‌شود.
 
 > [!NOTE]
-> Browser support for audio tracks varies, both in terms of whether or not they're supported at all by the media recorder and in terms of the audio sources supported.
-> Check the [compatibility table](#browser_compatibility) for details for each browser.
+> پشتیبانی مرورگر از trackهای صوتی متفاوت است؛ هم از نظر اینکه آیا اصلاً توسط ضبط‌کنندهٔ رسانه پشتیبانی می‌شوند و هم از نظر منابع صوتی پشتیبانی‌شده.
+> برای جزئیات مربوط به هر مرورگر، [جدول سازگاری](#browser_compatibility) را بررسی کنید.
 
-### Exceptions
+### استثناها
 
 - `AbortError` {{domxref("DOMException")}}
-  - : Thrown if an error or failure does not match any of the other exceptions listed here.
+  - : اگر خطا یا شکستی رخ دهد که با هیچ‌یک از سایر استثناهای فهرست‌شده در اینجا مطابقت نداشته باشد، پرتاب می‌شود.
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the call to `getDisplayMedia()` was not made from code running due to a {{glossary("transient activation")}}, such as an event handler.
-    Or if the browser context is not fully active or does not focused.
-    Or if the `controller` options has been already used in creating another {{domxref("MediaStream")}}.
+  - : اگر فراخوانی `getDisplayMedia()` از کدی انجام نشده باشد که در اثر یک {{glossary("transient activation")}} اجرا می‌شود، مانند یک event handler.
+    یا اگر زمینهٔ مرورگر کاملاً فعال نباشد یا فوکوس نداشته باشد.
+    یا اگر گزینهٔ `controller` قبلاً در ایجاد یک {{domxref("MediaStream")}} دیگر استفاده شده باشد.
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if the permission to access a screen area was denied by the user, or the current browsing instance is not permitted access to screen sharing (for example by a [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy)).
+  - : اگر اجازهٔ دسترسی به ناحیهٔ صفحه توسط کاربر رد شده باشد، یا نمونهٔ مرورگری کنونی اجازهٔ دسترسی به اشتراک‌گذاری صفحه را نداشته باشد (مثلاً توسط [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy)).
 - `NotFoundError` {{domxref("DOMException")}}
-  - : Thrown if no sources of screen video are available for capture.
+  - : اگر هیچ منبعی از ویدیوی صفحه برای ضبط در دسترس نباشد، پرتاب می‌شود.
 - `NotReadableError` {{domxref("DOMException")}}
-  - : Thrown if the user selected a screen, window, tab, or another source of screen data, but a hardware or operating system level error or lockout occurred, preventing the sharing of the selected source.
+  - : اگر کاربر یک صفحه، پنجره، تب یا منبع دیگری از داده‌های صفحه را انتخاب کرده باشد، اما خطا یا قفلی در سطح سخت‌افزار یا سیستم‌عامل رخ دهد که از اشتراک‌گذاری منبع انتخابی جلوگیری کند، پرتاب می‌شود.
 - `OverconstrainedError` {{domxref("DOMException")}}
-  - : Thrown if, after creating the stream, applying any specified constraints fails because no compatible stream could be generated.
+  - : اگر پس از ایجاد استریم، اعمال هر یک از constraintهای مشخص‌شده به این دلیل که هیچ استریم سازگاری نمی‌توانست تولید شود، شکست بخورد، پرتاب می‌شود.
 - {{jsxref("TypeError")}}
-  - : Thrown if the specified `options` include values that are not permitted when calling `getDisplayMedia()`, for example a `video` property set to false, or if any specified {{domxref("MediaTrackConstraints")}} are not permitted.
-    `min` and `exact` values are not permitted in constraints used in `getDisplayMedia()` calls.
+  - : اگر `options` مشخص‌شده شامل مقادیری باشد که در هنگام فراخوانی `getDisplayMedia()` مجاز نیستند، مثلاً خصوصیت `video` روی `false` تنظیم شده باشد، یا اگر هر یک از {{domxref("MediaTrackConstraints")}} مشخص‌شده مجاز نباشند، پرتاب می‌شود.
+    مقادیر `min` و `exact` در constraintهای مورد استفاده در فراخوانی‌های `getDisplayMedia()` مجاز نیستند.
 
-## Security
+## امنیت
 
-Because `getDisplayMedia()` could be used in nefarious ways, it can be a source of significant privacy and security concerns.
-For that reason, the specification details measures browsers are required to take in order to fully support `getDisplayMedia()`.
+از آنجا که `getDisplayMedia()` می‌تواند به روش‌های سوءاستفاده‌آمیز استفاده شود، ممکن است منبع نگرانی‌های قابل‌توجهی در زمینهٔ حریم خصوصی و امنیت باشد.
+به همین دلیل، مشخصات (specification) اقداماتی را که مرورگرها برای پشتیبانی کامل از `getDisplayMedia()` ملزم به انجام آن‌ها هستند، به‌تفصیل شرح می‌دهد.
 
-- The specified options can't be used to limit the choices available to the user.
-  Instead, they must be applied after the user chooses a source, in order to generate output that matches the options.
-- The go-ahead permission to use `getDisplayMedia()` cannot be persisted for reuse.
-  The user must be prompted for permission every time.
-- [Transient user activation](/en-US/docs/Web/Security/Defenses/User_activation) is required.
-  The user has to interact with the page or a UI element in order for this feature to work.
-- Browsers are encouraged to provide a warning to users about sharing displays or windows that contain browsers, and to keep a close eye on what other content might be getting captured and shown to other users.
+- گزینه‌های مشخص‌شده نمی‌توانند برای محدودکردن انتخاب‌های موجود برای کاربر استفاده شوند.
+  در عوض، باید پس از انتخاب منبع توسط کاربر اعمال شوند تا خروجی منطبق بر گزینه‌ها تولید شود.
+- اجازهٔ آغاز به کار برای استفاده از `getDisplayMedia()` نمی‌تواند برای استفادهٔ مجدد ذخیره شود.
+  کاربر باید هر بار برای دریافت اجازه، درخواست را ببیند.
+- [فعال‌سازی گذرای کاربر](/en-US/docs/Web/Security/Defenses/User_activation) (transient user activation) الزامی است.
+  کاربر باید با صفحه یا یک عنصر رابط کاربری تعامل کند تا این قابلیت کار کند.
+- مرورگرها ترغیب می‌شوند که دربارهٔ اشتراک‌گذاری نمایشگرها یا پنجره‌هایی که شامل مرورگر هستند به کاربران هشدار دهند و به‌دقت مراقب محتوای دیگری باشند که ممکن است ضبط شود و به سایر کاربران نمایش داده شود.
 
-## Examples
+## مثال‌ها
 
-In the example below a `startCapture()` method is created, which initiates screen capture given a set of options specified by the `displayMediaOptions` parameter.
+در مثال زیر، متدی به نام `startCapture()` ایجاد می‌شود که با دریافت مجموعه‌ای از گزینه‌های مشخص‌شده توسط پارامتر `displayMediaOptions`، ضبط صفحه را آغاز می‌کند.
 
 ```js
 const displayMediaOptions = {
@@ -159,25 +154,24 @@ async function startCapture(displayMediaOptions) {
 }
 ```
 
-This uses {{jsxref("Operators/await", "await")}} to asynchronously wait for `getDisplayMedia()` to resolve with a {{domxref("MediaStream")}} which contains the display contents as requested by the specified options.
-The stream is then returned to the caller for use, perhaps for adding to a WebRTC call using {{domxref("RTCPeerConnection.addTrack()")}} to add the video track from the stream.
+این مثال از {{jsxref("Operators/await", "await")}} استفاده می‌کند تا به‌صورت ناهمزمان منتظر بماند تا `getDisplayMedia()` با یک {{domxref("MediaStream")}} که شامل محتویات نمایشگر مطابق گزینه‌های مشخص‌شده است، resolve شود.
+سپس استریم به فراخواننده (caller) بازگردانده می‌شود تا مورد استفاده قرار گیرد؛ شاید برای افزودن به یک تماس WebRTC با استفاده از {{domxref("RTCPeerConnection.addTrack()")}} به منظور افزودن track ویدیویی از استریم.
 
 > [!NOTE]
-> The [Screen sharing controls](https://chrome.dev/screen-sharing-controls/) demo provides a complete implementation that allows you to create a screen capture with your choice of `getDisplayMedia()` constraints and options.
+> دموی [Screen sharing controls](https://chrome.dev/screen-sharing-controls/) پیاده‌سازی کاملی را ارائه می‌دهد که به شما امکان می‌دهد با انتخاب constraintها و گزینه‌های دلخواه `getDisplayMedia()`، ضبط صفحه ایجاد کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Screen Capture API](/en-US/docs/Web/API/Screen_Capture_API)
 - [Using the Screen Capture API](/en-US/docs/Web/API/Screen_Capture_API/Using_Screen_Capture)
 - [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
 - [WebRTC API](/en-US/docs/Web/API/WebRTC_API)
-- {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}}: Capturing media from a
-  camera and/or microphone
+- {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}}: ضبط رسانه از دوربین و/یا میکروفون
