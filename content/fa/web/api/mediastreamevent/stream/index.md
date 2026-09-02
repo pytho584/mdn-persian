@@ -1,11 +1,5 @@
 ---
 title: "MediaStreamEvent: stream property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamEvent/stream"
-status: "needs-translation"
----
-
----
-title: "MediaStreamEvent: stream property"
 short-title: stream
 slug: Web/API/MediaStreamEvent/stream
 page-type: web-api-instance-property
@@ -17,10 +11,9 @@ browser-compat: api.MediaStreamEvent.stream
 
 {{APIRef("WebRTC")}}{{deprecated_header}}{{Non-standard_header}}
 
-The read-only property **`MediaStreamEvent.stream`** returns
-the {{domxref("MediaStream")}} associated with the event.
+ویژگی فقط‌خواندنی **`MediaStreamEvent.stream`**، شیء {{domxref("MediaStream")}} مرتبط با رویداد را بازمی‌گرداند.
 
-## Example
+## مثال
 
 ```js
 pc.onaddstream = (ev) => {
@@ -28,11 +21,11 @@ pc.onaddstream = (ev) => {
 };
 ```
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("RTCPeerConnection.addstream_event", "addstream")}}, {{domxref("RTCPeerConnection.removestream_event", "removestream")}}
 - {{domxref("RTCPeerConnection")}}
