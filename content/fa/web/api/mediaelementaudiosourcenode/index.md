@@ -1,10 +1,4 @@
 ---
-title: "MediaElementAudioSourceNode"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaElementAudioSourceNode"
-status: "needs-translation"
----
-
----
 title: MediaElementAudioSourceNode
 slug: Web/API/MediaElementAudioSourceNode
 page-type: web-api-interface
@@ -13,59 +7,59 @@ browser-compat: api.MediaElementAudioSourceNode
 
 {{APIRef("Web Audio API")}}
 
-The `MediaElementAudioSourceNode` interface represents an audio source consisting of an HTML {{ htmlelement("audio") }} or {{ htmlelement("video") }} element. It is an {{domxref("AudioNode")}} that acts as an audio source.
+رابط `MediaElementAudioSourceNode` یک منبع صوتی متشکل از یک عنصر HTML {{ htmlelement("audio") }} یا {{ htmlelement("video") }} را نشان می‌دهد. این یک {{domxref("AudioNode")}} است که به‌عنوان منبع صوتی عمل می‌کند.
 
-A `MediaElementAudioSourceNode` has no inputs and exactly one output, and is created using the {{domxref("AudioContext.createMediaElementSource()")}} method. The number of channels in the output equals the number of channels of the audio referenced by the {{domxref("HTMLMediaElement")}} used in the creation of the node, or is 1 if the {{domxref("HTMLMediaElement")}} has no audio.
+یک `MediaElementAudioSourceNode` هیچ ورودی و دقیقاً یک خروجی دارد و با استفاده از متد {{domxref("AudioContext.createMediaElementSource()")}} ساخته می‌شود. تعداد کانال‌های خروجی برابر با تعداد کانال‌های صدای ارجاع‌داده‌شده توسط {{domxref("HTMLMediaElement")}} مورد استفاده در ساخت گره است، یا اگر {{domxref("HTMLMediaElement")}} صدایی نداشته باشد، برابر با ۱ است.
 
 {{InheritanceDiagram}}
 
 <table class="properties">
   <tbody>
     <tr>
-      <th scope="row">Number of inputs</th>
+      <th scope="row">تعداد ورودی‌ها</th>
       <td><code>0</code></td>
     </tr>
     <tr>
-      <th scope="row">Number of outputs</th>
+      <th scope="row">تعداد خروجی‌ها</th>
       <td><code>1</code></td>
     </tr>
     <tr>
-      <th scope="row">Channel count</th>
+      <th scope="row">تعداد کانال‌ها</th>
       <td>
-        2 (but note that {{domxref("AudioNode.channelCount")}} is only used for up-mixing and down-mixing {{domxref("AudioNode")}} inputs, and <code>MediaElementAudioSourceNode</code> doesn't have any input)
+        ۲ (اما توجه کنید که {{domxref("AudioNode.channelCount")}} فقط برای بالا‌آمیختن و پایین‌آمیختن ورودی‌های {{domxref("AudioNode")}} استفاده می‌شود و <code>MediaElementAudioSourceNode</code> هیچ ورودی‌ای ندارد)
       </td>
     </tr>
   </tbody>
 </table>
 
-## Constructor
+## سازنده
 
 - {{domxref("MediaElementAudioSourceNode.MediaElementAudioSourceNode", "MediaElementAudioSourceNode()")}}
-  - : Creates a new `MediaElementAudioSourceNode` object instance.
+  - : یک نمونه جدید از شیء `MediaElementAudioSourceNode` ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("AudioNode")}}_.
+_ویژگی‌های والد خود، {{domxref("AudioNode")}} را به ارث می‌برد._
 
 - {{domxref("MediaElementAudioSourceNode.mediaElement", "mediaElement")}} {{ReadOnlyInline}}
-  - : The {{domxref("HTMLMediaElement")}} used when constructing this `MediaStreamAudioSourceNode`.
+  - : {{domxref("HTMLMediaElement")}} مورد استفاده هنگام ساخت این `MediaStreamAudioSourceNode`.
 
-## Instance methods
+## روش‌های نمونه
 
-_Inherits methods from its parent, {{domxref("AudioNode")}}_.
+_روش‌های والد خود، {{domxref("AudioNode")}} را به ارث می‌برد._
 
-## Example
+## مثال
 
-See [`AudioContext.createMediaElementSource()`](/en-US/docs/Web/API/AudioContext/createMediaElementSource#examples) for example code.
+برای کد مثال، [`AudioContext.createMediaElementSource()`](/en-US/docs/Web/API/AudioContext/createMediaElementSource#examples) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
