@@ -1,11 +1,5 @@
 ---
 title: "MediaStreamTrack: muted property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/muted"
-status: "needs-translation"
----
-
----
-title: "MediaStreamTrack: muted property"
 short-title: muted
 slug: Web/API/MediaStreamTrack/muted
 page-type: web-api-instance-property
@@ -14,30 +8,21 @@ browser-compat: api.MediaStreamTrack.muted
 
 {{APIRef("Media Capture and Streams")}}
 
-The **`muted`** read-only property of the
-{{domxref("MediaStreamTrack")}} interface returns a boolean value
-indicating whether or not the track is currently unable to provide media output.
+ویژگی فقط‌خواندنی **`muted`** در رابط {{domxref("MediaStreamTrack")}} یک مقدار بولین برمی‌گرداند که نشان می‌دهد آیا این Track در حال حاضر قادر به ارائه خروجی رسانه نیست یا خیر.
 
 > [!NOTE]
-> To implement a way for users to mute and unmute a track, use the
-> {{domxref("MediaStreamTrack.enabled", "enabled")}} property. When a track is disabled
-> by setting `enabled` to `false`, it generates only empty frames
-> (audio frames in which every sample is 0, or video frames in which every pixel is
-> black).
+> برای پیاده‌سازی روشی که کاربران بتوانند یک Track را بی‌صدا یا با صدا کنند، از ویژگی {{domxref("MediaStreamTrack.enabled", "enabled")}} استفاده کنید. وقتی یک Track با قرار دادن `enabled` روی `false` غیرفعال می‌شود، فقط فریم‌های خالی تولید می‌کند (فریم‌های صوتی که هر نمونه آن ۰ است، یا فریم‌های ویدیویی که هر پیکسل آن سیاه است).
 
-## Value
+## مقدار
 
-A boolean which is `true` if the track is currently muted, or
-`false` if the track is currently unmuted.
+یک مقدار بولین که اگر Track در حال حاضر بی‌صدا باشد `true` است، و اگر Track در حال حاضر با صدا باشد `false` است.
 
 > [!NOTE]
-> When possible, avoid polling `muted` to monitor the track's muting status.
-> Instead, add event listeners for the {{domxref("MediaStreamTrack.mute_event", "mute")}} and {{domxref("MediaStreamTrack.unmute_event", "unmute")}} events.
+> در صورت امکان، از بررسی مکرر `muted` برای نظارت بر وضعیت بی‌صدا بودن Track خودداری کنید. در عوض، شنونده‌های رویداد را برای رویدادهای {{domxref("MediaStreamTrack.mute_event", "mute")}} و {{domxref("MediaStreamTrack.unmute_event", "unmute")}} اضافه کنید.
 
-## Examples
+## مثال‌ها
 
-This example counts the number of tracks in an array of {{domxref("MediaStreamTrack")}}
-objects which are currently muted.
+این مثال تعداد Trackهایی را در یک آرایه از اشیاء {{domxref("MediaStreamTrack")}} که در حال حاضر بی‌صدا هستند، شمارش می‌کند.
 
 ```js
 let mutedCount = 0;
@@ -49,10 +34,10 @@ trackList.forEach((track) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
