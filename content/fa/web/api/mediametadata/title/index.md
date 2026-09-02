@@ -1,11 +1,5 @@
 ---
 title: "MediaMetadata: title property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaMetadata/title"
-status: "needs-translation"
----
-
----
-title: "MediaMetadata: title property"
 short-title: title
 slug: Web/API/MediaMetadata/title
 page-type: web-api-instance-property
@@ -14,18 +8,15 @@ browser-compat: api.MediaMetadata.title
 
 {{APIRef("Media Session API")}}
 
-The **`title`** property of the
-{{domxref("MediaMetadata")}} interface returns or sets the title of the media to be
-played.
+ویژگی **`title`** در رابط {{domxref("MediaMetadata")}} عنوان رسانه‌ای را که قرار است پخش شود بازمی‌گرداند یا آن را تنظیم می‌کند.
 
-## Value
+## مقدار
 
-A {{jsxref("String")}} containing the title of the media.
+یک {{jsxref("String")}} شامل عنوان رسانه.
 
-## Examples
+## مثال‌ها
 
-The following example checks for browser compatibility and sets the current metadata
-for the media session.
+مثال زیر سازگاری مرورگر را بررسی می‌کند و فرادادهٔ جاری نشست رسانه را تنظیم می‌کند:
 
 ```js
 if ("mediaSession" in navigator) {
@@ -69,10 +60,10 @@ if ("mediaSession" in navigator) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
