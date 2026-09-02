@@ -1,11 +1,5 @@
 ---
 title: "IDBCursor: delete() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBCursor/delete"
-status: "needs-translation"
----
-
----
-title: "IDBCursor: delete() method"
 short-title: delete()
 slug: Web/API/IDBCursor/delete
 page-type: web-api-instance-method
@@ -14,55 +8,40 @@ browser-compat: api.IDBCursor.delete
 
 {{APIRef("IndexedDB")}} {{AvailableInWorkers}}
 
-The **`delete()`** method of the {{domxref("IDBCursor")}}
-interface returns an {{domxref("IDBRequest")}} object, and, in a separate thread,
-deletes the record at the cursor's position, without changing the cursor's position.
-Once the record is deleted, the cursor's value is set to null.
+متد **`delete()`** از رابط {{domxref("IDBCursor")}} یک شیء {{domxref("IDBRequest")}} برمی‌گرداند و در یک رشته جداگانه، رکورد را در موقعیت مکان‌نما حذف می‌کند، بدون اینکه موقعیت مکان‌نما تغییر کند. پس از حذف رکورد، مقدار مکان‌نما (cursor) روی `null` تنظیم می‌شود.
 
-Be aware that you can't call `delete()` (or
-{{domxref("IDBCursor.update()")}}) on cursors obtained from
-{{domxref("IDBIndex.openKeyCursor()")}}. For such needs, you have to use
-{{domxref("IDBIndex.openCursor()")}} instead.
+توجه داشته باشید که نمی‌توانید `delete()` (یا {{domxref("IDBCursor.update()")}}) را روی مکان‌نماهایی که از {{domxref("IDBIndex.openKeyCursor()")}} به دست آمده‌اند فراخوانی کنید. برای چنین نیازهایی، باید به جای آن از {{domxref("IDBIndex.openCursor()")}} استفاده کنید.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 delete()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-An {{domxref("IDBRequest")}} object on which subsequent events related to this
-operation are fired.
+یک شیء {{domxref("IDBRequest")}} که رویدادهای بعدی مرتبط با این عملیات روی آن فعال می‌شوند. اگر عملیات موفقیت‌آمیز باشد، مقدار ویژگی {{domxref("IDBRequest.result", "result")}} درخواست `undefined` است.
 
-If the operation is successful, the value of the request's {{domxref("IDBRequest.result", "result")}} property is `undefined`.
+### استثناها (Exceptions)
 
-### Exceptions
-
-This method may raise a {{domxref("DOMException")}} of one of the following types:
+این متد ممکن است یک {{domxref("DOMException")}} از یکی از انواع زیر را ایجاد کند:
 
 - `TransactionInactiveError` {{domxref("DOMException")}}
-  - : Thrown if this IDBCursor's transaction is inactive.
+  - : اگر تراکنش این IDBCursor غیرفعال باشد.
 - `ReadOnlyError` {{domxref("DOMException")}}
-  - : Thrown if the transaction mode is read-only.
+  - : اگر حالت تراکنش فقط خواندنی باشد.
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the cursor was created using {{domxref("IDBindex.openKeyCursor")}}, is currently being iterated, or has iterated past its end.
+  - : اگر مکان‌نما با استفاده از {{domxref("IDBindex.openKeyCursor")}} ایجاد شده باشد، در حال حاضر در حال تکرار است، یا از انتهای خود عبور کرده باشد.
 
-## Examples
+## مثال‌ها
 
-In this simple fragment we create a transaction, retrieve an object store, then use a
-cursor to iterate through all the records in the object store. If the
-`albumTitle` of the current cursor is "Grace under pressure", we delete that
-entire record using `const request = cursor.delete();`.
+در این قطعه ساده، یک تراکنش ایجاد می‌کنیم، یک فروشگاه شیء (object store) را بازیابی می‌کنیم، و سپس از یک مکان‌نما برای تکرار روی تمام رکوردهای فروشگاه شیء استفاده می‌کنیم. اگر `albumTitle` مکان‌نمای فعلی برابر با "Grace under pressure" باشد، آن رکورد کامل را با استفاده از `const request = cursor.delete();` حذف می‌کنیم.
 
-The cursor does not require us to select the data based on a key; we can just grab all
-of it. Also note that in each iteration of the loop, you can grab data from the current
-record under the cursor object using `cursor.value.foo`. For a complete
-working example, see our [IDBCursor example](https://github.com/mdn/dom-examples/tree/main/indexeddb-examples/idbcursor) ([View the example live](https://mdn.github.io/dom-examples/indexeddb-examples/idbcursor/)).
+مکان‌نما نیازی ندارد که داده‌ها را بر اساس یک کلید انتخاب کنیم؛ می‌توانیم همه آن‌ها را دریافت کنیم. همچنین توجه داشته باشید که در هر تکرار حلقه، می‌توانید داده‌هایی را از رکورد فعلی زیر شیء مکان‌نما با استفاده از `cursor.value.foo` دریافت کنید. برای یک مثال کامل کار، به [مثال IDBCursor](https://github.com/mdn/dom-examples/tree/main/indexeddb-examples/idbcursor) ما مراجعه کنید ([مشاهده مثال به صورت زنده](https://mdn.github.io/dom-examples/indexeddb-examples/idbcursor/)).
 
 ```js
 function deleteResult() {
@@ -93,20 +72,20 @@ function deleteResult() {
 }
 ```
 
-## Specifications
+## مشخصات (Specifications)
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر (Browser compatibility)
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم محدوده کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و ایجاد تغییرات در داده‌های خود: {{domxref("IDBObjectStore")}}
+- استفاده از مکان‌نماها: {{domxref("IDBCursor")}}
+- مثال مرجع: [اعلان‌های کارهای انجام‌دادنی (To-do Notifications)](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهده مثال به صورت زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
