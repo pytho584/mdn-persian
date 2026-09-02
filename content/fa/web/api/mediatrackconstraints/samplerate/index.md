@@ -1,11 +1,5 @@
 ---
 title: "MediaTrackConstraints: sampleRate property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/sampleRate"
-status: "needs-translation"
----
-
----
-title: "MediaTrackConstraints: sampleRate property"
 short-title: sampleRate
 slug: Web/API/MediaTrackConstraints/sampleRate
 page-type: web-api-instance-property
@@ -14,39 +8,27 @@ browser-compat: api.MediaStreamTrack.applyConstraints.sampleRate_constraint
 
 {{APIRef("Media Capture and Streams")}}
 
-The {{domxref("MediaTrackConstraints")}} dictionary's
-**`sampleRate`** property is a [`ConstrainULong`](/en-US/docs/Web/API/MediaTrackConstraints#constrainulong)
-describing the requested or mandatory constraints placed upon the value of the
-{{domxref("MediaTrackSettings.sampleRate", "sampleRate")}} constrainable property.
+ویژگی **`sampleRate`** در فرهنگ لغت {{domxref("MediaTrackConstraints")}} یک [`ConstrainULong`](/en-US/docs/Web/API/MediaTrackConstraints#constrainulong) است که محدودیت‌های درخواستی یا اجباری را بر روی مقدار ویژگی قابل‌محدودیت {{domxref("MediaTrackSettings.sampleRate", "sampleRate")}} توصیف می‌کند.
 
-If needed, you can determine whether or not this constraint is supported by checking
-the value of {{domxref("MediaTrackSupportedConstraints.sampleRate")}} as returned by a
-call to {{domxref("MediaDevices.getSupportedConstraints()")}}. However, typically this
-is unnecessary since browsers will ignore any constraints they're unfamiliar with.
+در صورت نیاز، می‌توانید با بررسی مقدار {{domxref("MediaTrackSupportedConstraints.sampleRate")}} که توسط فراخوانی {{domxref("MediaDevices.getSupportedConstraints()")}} بازگردانده می‌شود، تعیین کنید که آیا این محدودیت پشتیبانی می‌شود یا خیر. با این حال، معمولاً این کار ضروری نیست، زیرا مرورگرها هر محدودیتی را که با آن آشنا نباشند نادیده می‌گیرند.
 
-## Value
+## مقدار
 
-If this value is a number, the user agent will attempt to obtain media whose sample
-rate is as close as possible to this number given the capabilities of the hardware and
-the other constraints specified. Otherwise, the value of this
-[`ConstrainULong`](/en-US/docs/Web/API/MediaTrackConstraints#constrainulong) will guide the user agent in its efforts to provide an
-exact match to the required sample rate (if `exact` is specified or both
-`min` and `max` are provided and have the same value) or to a
-best-possible value.
+اگر این مقدار یک عدد باشد، عامل کاربر (user agent) تلاش می‌کند رسانه‌ای را به دست آورد که نرخ نمونه‌برداری آن تا حد امکان به این عدد نزدیک باشد، با توجه به قابلیت‌های سخت‌افزار و سایر محدودیت‌های مشخص‌شده. در غیر این صورت، مقدار این [`ConstrainULong`](/en-US/docs/Web/API/MediaTrackConstraints#constrainulong) عامل کاربر را در تلاش برای ارائه تطابق دقیق با نرخ نمونه‌برداری موردنیاز (اگر `exact` مشخص شده باشد یا هر دو `min` و `max` ارائه شده و مقدار یکسانی داشته باشند) یا مقدار بهترین ممکن راهنمایی می‌کند.
 
-## Examples
+## مثال‌ها
 
-See the [Constraint exerciser](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#example_constraint_exerciser) example.
+مثال [Constraint exerciser](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#example_constraint_exerciser) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
 - [Capabilities, constraints, and settings](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints)
