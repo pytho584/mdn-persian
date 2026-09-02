@@ -1,7 +1,5 @@
 ---
 title: "IdleDetector: userState property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IdleDetector/userState"
-status: "needs-translation"
 ---
 
 ---
@@ -16,15 +14,15 @@ browser-compat: api.IdleDetector.userState
 
 {{securecontext_header}}{{APIRef("Idle Detection API")}}{{SeeCompatTable}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`userState`** read-only property of the {{domxref("IdleDetector")}} interface returns a string indicating whether the user has interacted with the device since the call to `start()`.
+ویژگی فقط‌خواندنی **`userState`** در رابط {{domxref("IdleDetector")}} رشته‌ای را برمی‌گرداند که نشان می‌دهد آیا کاربر از زمان فراخوانی `start()` با دستگاه تعامل داشته است یا نه.
 
-## Value
+## مقدار
 
-Either `"active"` or `"idle"` if {{domxref("IdleDetector.start()")}} has been called, or `null` otherwise.
+اگر {{domxref("IdleDetector.start()")}} فراخوانی شده باشد، مقدار یا `"active"` است یا `"idle"`، و در غیر این صورت `null` است.
 
-## Examples
+## مثال‌ها
 
-In the following example, the `change` callback prints the status of `userState` and `screenState` to the console.
+در مثال زیر، تابع callback رویداد `change`، وضعیت `userState` و `screenState` را در کنسول چاپ می‌کند.
 
 ```js
 idleDetector.addEventListener("change", () => {
@@ -34,10 +32,10 @@ idleDetector.addEventListener("change", () => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
