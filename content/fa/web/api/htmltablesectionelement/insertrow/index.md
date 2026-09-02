@@ -1,11 +1,5 @@
 ---
 title: "HTMLTableSectionElement: insertRow() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableSectionElement/insertRow"
-status: "needs-translation"
----
-
----
-title: "HTMLTableSectionElement: insertRow() method"
 short-title: insertRow()
 slug: Web/API/HTMLTableSectionElement/insertRow
 page-type: web-api-instance-method
@@ -14,15 +8,10 @@ browser-compat: api.HTMLTableSectionElement.insertRow
 
 {{APIRef("HTML DOM")}}
 
-The **`insertRow()`** method of the {{domxref("HTMLTableSectionElement")}} interface inserts a new row
-({{HtmlElement("tr")}}) in the given table sectioning element ({{HTMLElement("thead")}}, {{HTMLElement("tfoot")}}, or
-{{HTMLElement("tbody")}}), then returns a reference to this new row.
+متد **`insertRow()`** از رابط {{domxref("HTMLTableSectionElement")}} یک ردیف جدید ({{HtmlElement("tr")}}) را در عنصر بخش‌بندی جدولِ داده‌شده ({{HTMLElement("thead")}}، {{HTMLElement("tfoot")}} یا {{HTMLElement("tbody")}}) درج می‌کند و سپس یک ارجاع به این ردیف جدید بازمی‌گرداند.
 
 > [!NOTE]
-> `insertRow()` inserts the row directly into the
-> section. The row does not need to be appended separately as would be the case if
-> {{domxref("Document.createElement()")}} had been used to create the new
-> `<tr>` element.
+> `insertRow()` ردیف را مستقیماً در بخش درج می‌کند. برخلاف حالتی که برای ایجاد عنصر `<tr>` جدید از {{domxref("Document.createElement()")}} استفاده می‌شود، ردیف نیازی به افزوده‌شدنِ جداگانه ندارد.
 
 ## Syntax
 
@@ -34,22 +23,20 @@ insertRow(index)
 ### Parameters
 
 - `index` {{optional_inline}}
-  - : The row index of the new row. If `index` is `-1` or equal to
-    the number of rows, the row is appended as the last row.
-    If `index` is omitted it defaults to `-1`.
+  - : شاخص ردیف جدید. اگر `index` برابر با `-1` یا برابر با تعداد ردیف‌ها باشد، ردیف به‌عنوان آخرین ردیف اضافه می‌شود. اگر `index` حذف شود، مقدار پیش‌فرض آن `-1` است.
 
 ### Return value
 
-An {{domxref("HTMLTableRowElement")}} that references the new row.
+یک {{domxref("HTMLTableRowElement")}} که به ردیف جدید ارجاع می‌دهد.
 
 ### Exceptions
 
 - `IndexSizeError` {{domxref("DOMException")}}
-  - : Thrown if `index` is greater than the number of rows, or smaller than `-1`.
+  - : اگر `index` بزرگ‌تر از تعداد ردیف‌ها یا کوچک‌تر از `-1` باشد، این استثنا پرتاب می‌شود.
 
 ## Examples
 
-In this example, two buttons allow you to add and remove rows from the table body section; it also updates an {{HTMLElement("output")}} element with the number of rows currently in the table.
+در این مثال، دو دکمه به شما امکان می‌دهند ردیف‌هایی را به بخش بدنهٔ جدول اضافه یا از آن حذف کنید؛ همچنین یک عنصر {{HTMLElement("output")}} را با تعداد ردیف‌های موجود در جدول به‌روزرسانی می‌کند.
 
 ### HTML
 
