@@ -1,7 +1,5 @@
 ---
 title: "IDBDatabase: close() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase/close"
-status: "needs-translation"
 ---
 
 ---
@@ -14,29 +12,25 @@ browser-compat: api.IDBDatabase.close
 
 {{ APIRef("IndexedDB") }} {{AvailableInWorkers}}
 
-The **`close()`** method of the {{domxref("IDBDatabase")}}
-interface returns immediately and closes the connection in a separate thread.
+متد **`close()`** در رابط {{domxref("IDBDatabase")}} بلافاصله باز می‌گردد و اتصال را در یک رشتهٔ اجرایی جداگانه می‌بندد.
 
-The connection is not actually closed until all transactions created using this
-connection are complete. No new transactions can be created for this connection once
-this method is called. Methods that create transactions throw an exception if a closing
-operation is pending.
+اتصال در عمل بسته نخواهد شد، مگر پس از کامل شدن همهٔ تراکنش‌های ایجادشده با این اتصال. پس از فراخوانی این متد، دیگر نمی‌توان تراکنش جدیدی برای این اتصال ایجاد کرد. اگر عملیات بستن هنوز به پایان نرسیده باشد، متدهایی که تراکنش ایجاد می‌کنند، یک استثنا پرتاب می‌کنند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 close()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
 ```js
 // Let us open our database
@@ -60,20 +54,20 @@ DBOpenRequest.onsuccess = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم بازه‌ای از کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و اعمال تغییرات در داده‌ها: {{domxref("IDBObjectStore")}}
+- استفاده از نشانگرها: {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهدهٔ مثال به‌صورت زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
