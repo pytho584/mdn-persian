@@ -1,11 +1,5 @@
 ---
 title: "MessageChannel: port2 property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MessageChannel/port2"
-status: "needs-translation"
----
-
----
-title: "MessageChannel: port2 property"
 short-title: port2
 slug: Web/API/MessageChannel/port2
 page-type: web-api-instance-property
@@ -14,25 +8,15 @@ browser-compat: api.MessageChannel.port2
 
 {{APIRef("Channel Messaging API")}} {{AvailableInWorkers}}
 
-The **`port2`** read-only property of the
-{{domxref("MessageChannel")}} interface returns the second port of the message channel —
-the port attached to the context at the other end of the channel, which the message is
-initially sent to.
+ویژگی فقط‌خواندنی **`port2`** در رابط {{domxref("MessageChannel")}}، دومین پورت کانال پیام را برمی‌گرداند — پورتی که به زمینه (context) در آن سوی کانال متصل است و پیام ابتدا به آن ارسال می‌شود.
 
-## Value
+## مقدار
 
-A {{domxref("MessagePort")}} object representing the second port of the channel, the
-port attached to the context at the other end of the channel.
+یک شیء {{domxref("MessagePort")}} که نشان‌دهنده دومین پورت کانال است؛ پورتی که به زمینه در آن سوی کانال متصل شده است.
 
-## Examples
+## مثال‌ها
 
-In the following code block, you can see a new channel being created using the
-{{domxref("MessageChannel.MessageChannel", "MessageChannel()")}} constructor. When the
-IFrame has loaded, we pass `port2` to the IFrame using
-{{domxref("Window.postMessage()")}} along with a message. The
-`handleMessage` handler then responds to a message being sent back from the
-IFrame (using {{domxref("MessagePort.message_event", "onmessage")}}), putting it into a paragraph.
-{{domxref("MessageChannel.port1", "port1")}} is listened to, to check when the message arrives.
+در بلوک کد زیر، می‌بینید که یک کانال جدید با استفاده از سازنده {{domxref("MessageChannel.MessageChannel", "MessageChannel()")}} ساخته می‌شود. وقتی IFrame بارگذاری شد، `port2` را همراه با یک پیام، از طریق {{domxref("Window.postMessage()")}} به IFrame ارسال می‌کنیم. سپس هندلر `handleMessage` به پیامی که از IFrame برگشت داده شده پاسخ می‌دهد (با استفاده از {{domxref("MessagePort.message_event", "onmessage")}}) و آن را در یک پاراگراف قرار می‌دهد. به {{domxref("MessageChannel.port1", "port1")}} گوش داده می‌شود تا بررسی شود پیام چه زمانی می‌رسد.
 
 ```js
 const channel = new MessageChannel();
@@ -53,16 +37,16 @@ function handleMessage(e) {
 }
 ```
 
-For a full working example, see our [channel messaging basic demo](https://github.com/mdn/dom-examples/tree/main/channel-messaging-basic) on GitHub ([run it live too](https://mdn.github.io/dom-examples/channel-messaging-basic/)).
+برای یک مثال کامل و قابل اجرا، به [دموی پایه messaging کانال](https://github.com/mdn/dom-examples/tree/main/channel-messaging-basic) در GitHub مراجعه کنید ([اجرای زنده آن](https://mdn.github.io/dom-examples/channel-messaging-basic/)).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using channel messaging](/en-US/docs/Web/API/Channel_Messaging_API/Using_channel_messaging)
+- [استفاده از messaging کانال](/en-US/docs/Web/API/Channel_Messaging_API/Using_channel_messaging)
