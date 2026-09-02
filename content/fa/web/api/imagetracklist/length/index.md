@@ -1,7 +1,5 @@
 ---
 title: "ImageTrackList: length property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ImageTrackList/length"
-status: "needs-translation"
 ---
 
 ---
@@ -14,25 +12,25 @@ browser-compat: api.ImageTrackList.length
 
 {{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`length`** property of the {{domxref("ImageTrackList")}} interface returns the length of the `ImageTrackList`.
+ویژگی **`length`** در رابط {{domxref("ImageTrackList")}} طولِ `ImageTrackList` را برمی‌گرداند.
 
-## Value
+## مقدار
 
-An integer.
+یک عدد صحیح.
 
-## Examples
+## مثال‌ها
 
-The following example prints the value of `length` to the console.
+مثال زیر مقدار `length` را در کنسول چاپ می‌کند.
 
 ```js
 let tracks = imageDecoder.tracks;
 console.log(tracks.length);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
