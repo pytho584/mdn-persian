@@ -1,11 +1,5 @@
 ---
 title: "HTMLTemplateElement: shadowRootDelegatesFocus property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTemplateElement/shadowRootDelegatesFocus"
-status: "needs-translation"
----
-
----
-title: "HTMLTemplateElement: shadowRootDelegatesFocus property"
 short-title: shadowRootDelegatesFocus
 slug: Web/API/HTMLTemplateElement/shadowRootDelegatesFocus
 page-type: web-api-instance-property
@@ -14,26 +8,26 @@ browser-compat: api.HTMLTemplateElement.shadowRootDelegatesFocus
 
 {{APIRef("Web Components")}}
 
-The **`shadowRootDelegatesFocus`** property of the {{domxref("HTMLTemplateElement")}} interface reflects the value of the [`shadowrootdelegatesfocus`](/en-US/docs/Web/HTML/Reference/Elements/template#shadowrootdelegatesfocus) attribute of the associated [`<template>`](/en-US/docs/Web/HTML/Reference/Elements/template) element.
+ویژگی **`shadowRootDelegatesFocus`** از رابط {{domxref("HTMLTemplateElement")}} مقدار ویژگی [`shadowrootdelegatesfocus`](/en-US/docs/Web/HTML/Reference/Elements/template#shadowrootdelegatesfocus) عنصر [`<template>`](/en-US/docs/Web/HTML/Reference/Elements/template) مرتبط را بازتاب می‌دهد.
 
 > [!NOTE]
-> This property is not useful for developers, and is only documented for completeness.
-> If a `<template>` element is used to declaratively create a [`ShadowRoot`](/en-US/docs/Web/API/ShadowRoot), then this object and property do not exist.
-> Otherwise, if an `HTMLTemplateElement` is created, the value of this property is irrelevant because the object is not a shadow root and cannot subsequently be changed to a shadow root.
+> این ویژگی برای توسعه‌دهندگان کاربردی ندارد و صرفاً برای تکمیل مستندات ذکر شده است.
+> اگر از عنصر `<template>` برای ایجاد اعلامی یک [`ShadowRoot`](/en-US/docs/Web/API/ShadowRoot) استفاده شود، این شیء و این ویژگی وجود ندارند.
+> در غیر این صورت، اگر یک `HTMLTemplateElement` ایجاد شود، مقدار این ویژگی بی‌ربط است، زیرا این شیء یک ریشه سایه (shadow root) نیست و بعداً نیز نمی‌تواند به یک ریشه سایه تبدیل شود.
 
-## Value
+## مقدار
 
-Reflects the value of the [`shadowrootdelegatesfocus`](/en-US/docs/Web/HTML/Reference/Elements/template#shadowrootdelegatesfocus) attribute of the associated [`<template>`](/en-US/docs/Web/HTML/Reference/Elements/template) element.
+بازتاب‌دهنده مقدار ویژگی [`shadowrootdelegatesfocus`](/en-US/docs/Web/HTML/Reference/Elements/template#shadowrootdelegatesfocus) عنصر [`<template>`](/en-US/docs/Web/HTML/Reference/Elements/template) مرتبط است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [`shadowrootdelegatesfocus`](/en-US/docs/Web/HTML/Reference/Elements/template#shadowrootdelegatesfocus) attribute of the `<template>` element
+- ویژگی [`shadowrootdelegatesfocus`](/en-US/docs/Web/HTML/Reference/Elements/template#shadowrootdelegatesfocus) عنصر `<template>`
 - [`ShadowRoot.delegatesFocus`](/en-US/docs/Web/API/ShadowRoot/delegatesFocus)
