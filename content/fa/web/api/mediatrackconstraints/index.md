@@ -1,10 +1,4 @@
 ---
-title: "MediaTrackConstraints"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints"
-status: "needs-translation"
----
-
----
 title: MediaTrackConstraints
 slug: Web/API/MediaTrackConstraints
 page-type: web-api-interface
@@ -15,218 +9,150 @@ spec-urls:
 
 {{APIRef("Media Capture and Streams")}}
 
-The **`MediaTrackConstraints`** dictionary is used to describe a set of media capabilities and the value or values each can take on.
+دیکشنری **`MediaTrackConstraints`** برای توصیف مجموعه‌ای از قابلیت‌های رسانه و مقدار یا مقادیری که هر یک می‌توانند داشته باشند، استفاده می‌شود.
 
-A constraints dictionary is passed into the {{domxref("MediaStreamTrack.applyConstraints", "applyConstraints()")}} method of the {{domxref("MediaStreamTrack")}} interface to allow a script to establish a set of exact (required) values or ranges and/or preferred values or ranges of values for the track.
+یک دیکشنری محدودیت‌ها به متد {{domxref("MediaStreamTrack.applyConstraints", "applyConstraints()")}} از رابط {{domxref("MediaStreamTrack")}} ارسال می‌شود تا به اسکریپت اجازه دهد مجموعه‌ای از مقادیر یا بازه‌های دقیق (الزامی) و/یا مقادیر یا بازه‌های ترجیحی را برای ترک (track) تعیین کند.
 
-The most recently-requested set of custom constraints can be retrieved by calling {{domxref("MediaStreamTrack.getConstraints", "getConstraints()")}}.
+آخرین مجموعه محدودیت‌های سفارشی درخواست‌شده را می‌توان با فراخوانی {{domxref("MediaStreamTrack.getConstraints", "getConstraints()")}} دریافت کرد.
 
-Objects of this type may also be passed to:
+اشیاء از این نوع همچنین می‌توانند به موارد زیر ارسال شوند:
 
-- The {{domxref("MediaDevices.getUserMedia()")}} method, to specify constraints on a media stream requested from hardware such as a camera or microphone.
+- متد {{domxref("MediaDevices.getUserMedia()")}} برای مشخص کردن محدودیت‌ها روی جریان رسانه‌ای که از سخت‌افزاری مانند دوربین یا میکروفون درخواست می‌شود.
+- متد {{domxref("MediaDevices.getDisplayMedia()")}} برای مشخص کردن محدودیت‌ها روی جریان رسانه‌ای که از ضبط صفحه یا پنجره درخواست می‌شود.
 
-- The {{domxref("MediaDevices.getDisplayMedia()")}} method, to specify constraints on a media stream requested from a screen or window capture.
+## محدودیت‌ها
 
-## Constraints
+انواع زیر برای مشخص کردن یک محدودیت برای یک ویژگی استفاده می‌شوند. آن‌ها به شما اجازه می‌دهند یک یا چند مقدار `exact` تعیین کنید که یکی از آن‌ها باید مقدار پارامتر باشد، یا مجموعه‌ای از مقادیر `ideal` که در صورت امکان باید استفاده شوند. همچنین می‌توانید یک مقدار واحد (یا آرایه‌ای از مقادیر) مشخص کنید که عامل کاربر (user agent) پس از اعمال همه محدودیت‌های سخت‌گیرانه‌تر، بهترین تلاش خود را برای مطابقت با آن انجام دهد.
 
-The following types are used to specify a constraint for a property.
-They allow you to specify one or more `exact` values from which one must be the parameter's value, or a set of `ideal` values which should be used if possible.
-You can also specify a single value (or an array of values) which the user agent will do its best to match once all more stringent constraints have been applied.
-
-To learn more about how constraints work, see [Capabilities, constraints, and settings](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints).
+برای آشنایی بیشتر با نحوه کار محدودیت‌ها، به [قابلیت‌ها، محدودیت‌ها و تنظیمات](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints) مراجعه کنید.
 
 > [!NOTE]
-> `min` and `exact` values are not permitted in constraints used in {{domxref("MediaDevices.getDisplayMedia()")}} calls — they produce a `TypeError` — but they are allowed in constraints used in {{domxref("MediaStreamTrack.applyConstraints()")}} calls.
+> مقادیر `min` و `exact` در محدودیت‌های استفاده‌شده در فراخوانی‌های {{domxref("MediaDevices.getDisplayMedia()")}} مجاز نیستند — آن‌ها یک `TypeError` تولید می‌کنند — اما در محدودیت‌های استفاده‌شده در فراخوانی‌های {{domxref("MediaStreamTrack.applyConstraints()")}} مجاز هستند.
 
 ### ConstrainBoolean
 
-The `ConstrainBoolean` constraint type is used to specify a constraint for a property whose value is a Boolean value.
-Its value may either be set to a Boolean (`true` or `false`) or an object containing the following properties:
+نوع محدودیت `ConstrainBoolean` برای مشخص کردن محدودیت برای ویژگی‌ای استفاده می‌شود که مقدار آن یک مقدار بولی (Boolean) است. مقدار آن می‌تواند یک بولی (`true` یا `false`) یا یک شیء شامل ویژگی‌های زیر باشد:
 
 - `exact`
-  - : A Boolean which must be the value of the property.
-    If the property can't be set to this value, matching will fail.
+  - : یک بولی که باید مقدار آن ویژگی باشد. اگر ویژگی نتواند به این مقدار تنظیم شود، تطبیق ناموفق خواهد بود.
 - `ideal`
-  - : A Boolean specifying an ideal value for the property.
-    If possible, this value will be used, but if it's not possible, the user agent will use the closest possible match.
+  - : یک بولی که مقدار ایده‌آل برای ویژگی را مشخص می‌کند. در صورت امکان این مقدار استفاده می‌شود، اما اگر ممکن نباشد، عامل کاربر نزدیک‌ترین تطبیق ممکن را استفاده خواهد کرد.
 
 ### ConstrainBooleanOrDOMString
 
-The `ConstrainBooleanOrDOMString` constraint type is used to specify a constraint for a property whose value is a Boolean or string value. It can take values as specified in the [`ConstrainBoolean`](#constrainboolean) and [`ConstrainDOMString`](#constraindomstring) sections.
+نوع محدودیت `ConstrainBooleanOrDOMString` برای مشخص کردن محدودیت برای ویژگی‌ای استفاده می‌شود که مقدار آن یک مقدار بولی یا رشته‌ای است. این نوع می‌تواند مقادیری را که در بخش‌های [`ConstrainBoolean`](#constrainboolean) و [`ConstrainDOMString`](#constraindomstring) مشخص شده‌اند بپذیرد.
 
 ### ConstrainDouble
 
-The `ConstrainDouble` constraint type is used to specify a constraint for a property whose value is a double-precision floating-point number.
-Its value may either be set to a number or an object containing the following properties:
+نوع محدودیت `ConstrainDouble` برای مشخص کردن محدودیت برای ویژگی‌ای استفاده می‌شود که مقدار آن یک عدد اعشاری با دقت دوگانه (double-precision floating-point) است. مقدار آن می‌تواند یک عدد یا یک شیء شامل ویژگی‌های زیر باشد:
 
 - `max`
-  - : A decimal number specifying the largest permissible value of the property it describes.
-    If the value cannot remain equal to or less than this value, matching will fail.
+  - : یک عدد اعشاری که بزرگ‌ترین مقدار مجاز ویژگی توصیف‌شده را مشخص می‌کند. اگر مقدار نتواند برابر یا کمتر از این مقدار بماند، تطبیق ناموفق خواهد بود.
 - `min`
-  - : A decimal number specifying the smallest permissible value of the property it describes.
-    If the value cannot remain equal to or greater than this value, matching will fail.
+  - : یک عدد اعشاری که کوچک‌ترین مقدار مجاز ویژگی توصیف‌شده را مشخص می‌کند. اگر مقدار نتواند برابر یا بیشتر از این مقدار بماند، تطبیق ناموفق خواهد بود.
 - `exact`
-  - : A decimal number specifying a specific, required, value the property must have to be considered acceptable.
+  - : یک عدد اعشاری که مقدار مشخص و الزامی را تعیین می‌کند که ویژگی برای قابل قبول بودن باید داشته باشد.
 - `ideal`
-  - : A decimal number specifying an ideal value for the property.
-    If possible, this value will be used, but if it's not possible, the user agent will use the closest possible match.
+  - : یک عدد اعشاری که مقدار ایده‌آل برای ویژگی را مشخص می‌کند. در صورت امکان این مقدار استفاده می‌شود، اما اگر ممکن نباشد، عامل کاربر نزدیک‌ترین تطبیق ممکن را استفاده خواهد کرد.
 
 ### ConstrainDOMString
 
-The `ConstrainDOMString` constraint type is used to specify a constraint for a property whose value is a string.
-Its value may either be set to a string, an array of strings, or an object containing the following properties:
+نوع محدودیت `ConstrainDOMString` برای مشخص کردن محدودیت برای ویژگی‌ای استفاده می‌شود که مقدار آن یک رشته است. مقدار آن می‌تواند یک رشته، آرایه‌ای از رشته‌ها، یا یک شیء شامل ویژگی‌های زیر باشد:
 
 - `exact`
-  - : A string or an array of strings, one of which must be the value of the property.
-    If the property can't be set to one of the listed values, matching will fail.
+  - : یک رشته یا آرایه‌ای از رشته‌ها که یکی از آن‌ها باید مقدار ویژگی باشد. اگر ویژگی نتواند به یکی از مقادیر فهرست‌شده تنظیم شود، تطبیق ناموفق خواهد بود.
 - `ideal`
-  - : A string or an array of strings, specifying ideal values for the property.
-    If possible, one of the listed values will be used, but if it's not possible, the user agent will use the closest possible match.
+  - : یک رشته یا آرایه‌ای از رشته‌ها که مقادیر ایده‌آل را برای ویژگی مشخص می‌کند. در صورت امکان یکی از مقادیر فهرست‌شده استفاده خواهد شد، اما اگر ممکن نباشد، عامل کاربر نزدیک‌ترین تطبیق ممکن را استفاده خواهد کرد.
 
 ### ConstrainULong
 
-The `ConstrainULong` constraint type is used to specify a constraint for a property whose value is an integer.
-Its value may either be set to a number or an object containing the following properties:
+نوع محدودیت `ConstrainULong` برای مشخص کردن محدودیت برای ویژگی‌ای استفاده می‌شود که مقدار آن یک عدد صحیح است. مقدار آن می‌تواند یک عدد یا یک شیء شامل ویژگی‌های زیر باشد:
 
 - `max`
-  - : An integer specifying the largest permissible value of the property it describes.
-    If the value cannot remain equal to or less than this value, matching will fail.
+  - : یک عدد صحیح که بزرگ‌ترین مقدار مجاز ویژگی توصیف‌شده را مشخص می‌کند. اگر مقدار نتواند برابر یا کمتر از این مقدار بماند، تطبیق ناموفق خواهد بود.
 - `min`
-  - : An integer specifying the smallest permissible value of the property it describes.
-    If the value cannot remain equal to or greater than this value, matching will fail.
+  - : یک عدد صحیح که کوچک‌ترین مقدار مجاز ویژگی توصیف‌شده را مشخص می‌کند. اگر مقدار نتواند برابر یا بیشتر از این مقدار بماند، تطبیق ناموفق خواهد بود.
 - `exact`
-  - : An integer specifying a specific, required, value the property must have to be considered acceptable.
+  - : یک عدد صحیح که مقدار مشخص و الزامی را تعیین می‌کند که ویژگی برای قابل قبول بودن باید داشته باشد.
 - `ideal`
-  - : An integer specifying an ideal value for the property.
-    If possible, this value will be used, but if it's not possible, the user agent will use the closest possible match.
+  - : یک عدد صحیح که مقدار ایده‌آل برای ویژگی را مشخص می‌کند. در صورت امکان این مقدار استفاده می‌شود، اما اگر ممکن نباشد، عامل کاربر نزدیک‌ترین تطبیق ممکن را استفاده خواهد کرد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-Some combination—but not necessarily all—of the following properties will exist on the object.
-This may be because a given browser doesn't support the property, or because it doesn't apply
-For example, because {{Glossary("RTP")}} doesn't provide some of these values during negotiation of a WebRTC connection, a track associated with a {{domxref("RTCPeerConnection")}} will not include certain values, such as {{domxref("MediaTrackConstraints.facingMode", "facingMode")}} or {{domxref("MediaTrackConstraints.groupId", "groupId")}}.
+ترکیبی از ویژگی‌های زیر — نه لزوماً همه آن‌ها — روی شیء وجود خواهد داشت. این ممکن است به این دلیل باشد که مرورگر مورد نظر از آن ویژگی پشتیبانی نمی‌کند، یا به این دلیل که آن ویژگی قابل اعمال نیست. برای مثال، از آنجا که {{Glossary("RTP")}} برخی از این مقادیر را در طول مذاکره (negotiation) یک اتصال WebRTC فراهم نمی‌کند، یک ترک مرتبط با {{domxref("RTCPeerConnection")}} شامل برخی مقادیر مانند {{domxref("MediaTrackConstraints.facingMode", "facingMode")}} یا {{domxref("MediaTrackConstraints.groupId", "groupId")}} نخواهد بود.
 
-### Instance properties of all media tracks
+### ویژگی‌های نمونه مشترک همه ترک‌های رسانه‌ای
 
 - {{domxref("MediaTrackConstraints.deviceId", "deviceId")}}
-  - : A [`ConstrainDOMString`](#constraindomstring) object specifying a device ID or an array of device IDs which are acceptable and/or required.
+  - : یک شیء [`ConstrainDOMString`](#constraindomstring) که یک شناسه دستگاه یا آرایه‌ای از شناسه‌های دستگاه قابل قبول و/یا الزامی را مشخص می‌کند.
 - {{domxref("MediaTrackConstraints.groupId", "groupId")}}
-  - : A [`ConstrainDOMString`](#constraindomstring) object specifying a group ID or an array of group IDs which are acceptable and/or required.
+  - : یک شیء [`ConstrainDOMString`](#constraindomstring) که یک شناسه گروه یا آرایه‌ای از شناسه‌های گروه قابل قبول و/یا الزامی را مشخص می‌کند.
 
-### Instance properties of audio tracks
+### ویژگی‌های نمونه ترک‌های صوتی
 
 - {{domxref("MediaTrackConstraints.autoGainControl", "autoGainControl")}}
-  - : A [`ConstrainBoolean`](#constrainboolean) object which specifies whether automatic gain control is preferred and/or required.
+  - : یک شیء [`ConstrainBoolean`](#constrainboolean) که مشخص می‌کند آیا کنترل بهره خودکار (automatic gain control) ترجیح داده می‌شود و/یا الزامی است.
 - {{domxref("MediaTrackConstraints.channelCount", "channelCount")}}
-  - : A [`ConstrainULong`](#constrainulong) specifying the channel count or range of channel counts which are acceptable and/or required.
+  - : یک [`ConstrainULong`](#constrainulong) که تعداد کانال یا بازه تعداد کانال‌های قابل قبول و/یا الزامی را مشخص می‌کند.
 - {{domxref("MediaTrackConstraints.echoCancellation", "echoCancellation")}}
-  - : A [`ConstrainBooleanOrDOMString`](#constrainbooleanordomstring) object specifying whether or not echo cancellation is preferred and/or required, and if supported, what type.
+  - : یک شیء [`ConstrainBooleanOrDOMString`](#constrainbooleanordomstring) که مشخص می‌کند آیا حذف پژواک (echo cancellation) ترجیح داده می‌شود و/یا الزامی است یا خیر، و در صورت پشتیبانی، چه نوعی.
 - {{domxref("MediaTrackConstraints.latency", "latency")}}
-  - : A [`ConstrainDouble`](#constraindouble) specifying the latency or range of latencies which are acceptable and/or required.
+  - : یک [`ConstrainDouble`](#constraindouble) که تأخیر (latency) یا بازه تأخیرهای قابل قبول و/یا الزامی را مشخص می‌کند.
 - {{domxref("MediaTrackConstraints.noiseSuppression", "noiseSuppression")}}
-  - : A [`ConstrainBoolean`](#constrainboolean) which specifies whether noise suppression is preferred and/or required.
+  - : یک [`ConstrainBoolean`](#constrainboolean) که مشخص می‌کند آیا حذف نویز (noise suppression) ترجیح داده می‌شود و/یا الزامی است.
 - {{domxref("MediaTrackConstraints.sampleRate", "sampleRate")}}
-  - : A [`ConstrainULong`](#constrainulong) specifying the sample rate or range of sample rates which are acceptable and/or required.
+  - : یک [`ConstrainULong`](#constrainulong) که نرخ نمونه‌برداری یا بازه نرخ‌های نمونه‌برداری قابل قبول و/یا الزامی را مشخص می‌کند.
 - {{domxref("MediaTrackConstraints.sampleSize", "sampleSize")}}
-  - : A [`ConstrainULong`](#constrainulong) specifying the sample size or range of sample sizes which are acceptable and/or required.
+  - : یک [`ConstrainULong`](#constrainulong) که اندازه نمونه یا بازه اندازه‌های نمونه قابل قبول و/یا الزامی را مشخص می‌کند.
 - {{domxref("MediaTrackConstraints.volume", "volume")}} {{Deprecated_Inline}} {{Non-standard_Inline}}
-  - : A [`ConstrainDouble`](#constraindouble) specifying the volume or range of volumes which are acceptable and/or required.
+  - : یک [`ConstrainDouble`](#constraindouble) که حجم صدا (volume) یا بازه حجم‌های قابل قبول و/یا الزامی را مشخص می‌کند.
 
-### Instance properties of image tracks
+### ویژگی‌های نمونه ترک‌های تصویر
 
 - `whiteBalanceMode`
-  - : A {{jsxref("String")}} specifying one of `"none"`, `"manual"`, `"single-shot"`, or `"continuous"`.
+  - : یک {{jsxref("String")}} که یکی از مقادیر `"none"`، `"manual"`، `"single-shot"` یا `"continuous"` را مشخص می‌کند.
 - `exposureMode`
-  - : A {{jsxref("String")}} specifying one of `"none"`, `"manual"`, `"single-shot"`, or `"continuous"`.
+  - : یک {{jsxref("String")}} که یکی از مقادیر `"none"`، `"manual"`، `"single-shot"` یا `"continuous"` را مشخص می‌کند.
 - `focusMode`
-  - : A {{jsxref("String")}} specifying one of `"none"`, `"manual"`, `"single-shot"`, or `"continuous"`.
+  - : یک {{jsxref("String")}} که یکی از مقادیر `"none"`، `"manual"`، `"single-shot"` یا `"continuous"` را مشخص می‌کند.
 - `pointsOfInterest`
-  - : The pixel coordinates on the sensor of one or more points of interest.
-    This is either an object in the form { x:_value_, y:_value_ } or an array of such objects, where _value_ is a double-precision integer.
+  - : مختصات پیکسلی روی سنسور برای یک یا چند نقطه مورد نظر. این مقدار یا یک شیء به شکل { x:_value_, y:_value_ } است یا آرایه‌ای از چنین اشیائی، که در آن _value_ یک عدد صحیح با دقت دوگانه است.
 - `exposureCompensation`
-  - : A [`ConstrainDouble`](#constraindouble) (a double-precision integer) specifying f-stop adjustment by up to ±3.
+  - : یک [`ConstrainDouble`](#constraindouble) (یک عدد صحیح با دقت دوگانه) که تنظیم گام دیافراگم (f-stop) را تا ±3 مشخص می‌کند.
 - `colorTemperature`
-  - : A [`ConstrainDouble`](#constraindouble) (a double-precision integer) specifying a desired color temperature in degrees kelvin.
+  - : یک [`ConstrainDouble`](#constraindouble) (یک عدد صحیح با دقت دوگانه) که دمای رنگ مورد نظر را بر حسب درجه کلوین مشخص می‌کند.
 - `iso`
-  - : A [`ConstrainDouble`](#constraindouble) (a double-precision integer) specifying a desired iso setting.
+  - : یک [`ConstrainDouble`](#constraindouble) (یک عدد صحیح با دقت دوگانه) که تنظیمات ایزو (iso) مورد نظر را مشخص می‌کند.
 - `brightness`
-  - : A [`ConstrainDouble`](#constraindouble) (a double-precision integer) specifying a desired brightness setting.
+  - : یک [`ConstrainDouble`](#constraindouble) (یک عدد صحیح با دقت دوگانه) که تنظیمات روشنایی مورد نظر را مشخص می‌کند.
 - `contrast`
-  - : A [`ConstrainDouble`](#constraindouble) (a double-precision integer) specifying the degree of difference between light and dark.
+  - : یک [`ConstrainDouble`](#constraindouble) (یک عدد صحیح با دقت دوگانه) که میزان تفاوت بین روشن و تاریک را مشخص می‌کند.
 - `saturation`
-  - : A [`ConstrainDouble`](#constraindouble) (a double-precision integer) specifying the degree of color intensity.
+  - : یک [`ConstrainDouble`](#constraindouble) (یک عدد صحیح با دقت دوگانه) که میزان اشباع رنگ را مشخص می‌کند.
 - `sharpness`
-  - : A [`ConstrainDouble`](#constraindouble) (a double-precision integer) specifying the intensity of edges.
+  - : یک [`ConstrainDouble`](#constraindouble) (یک عدد صحیح با دقت دوگانه) که شدت لبه‌ها را مشخص می‌کند.
 - `focusDistance`
-  - : A [`ConstrainDouble`](#constraindouble) (a double-precision integer) specifying distance to a focused object.
+  - : یک [`ConstrainDouble`](#constraindouble) (یک عدد صحیح با دقت دوگانه) که فاصله تا جسم فوکوس‌شده را مشخص می‌کند.
 - `zoom`
-  - : A [`ConstrainDouble`](#constraindouble) (a double-precision integer) specifying the desired focal length.
+  - : یک [`ConstrainDouble`](#constraindouble) (یک عدد صحیح با دقت دوگانه) که فاصله کانونی مورد نظر را مشخص می‌کند.
 - `torch`
-  - : A boolean value defining whether the fill light is continuously connected, meaning it stays on as long as the track is active.
+  - : یک مقدار بولی که تعیین می‌کند آیا نور پرکننده (fill light) به‌طور پیوسته روشن است، به این معنی که تا زمانی که ترک فعال است روشن می‌ماند.
 
-### Instance properties of video tracks
+### ویژگی‌های نمونه ترک‌های ویدئویی
 
 - {{domxref("MediaTrackConstraints.aspectRatio", "aspectRatio")}}
-  - : A [`ConstrainDouble`](#constraindouble) specifying the video {{glossary("aspect ratio")}} or range of aspect ratios which are acceptable and/or required.
+  - : یک [`ConstrainDouble`](#constraindouble) که نسبت تصویر ({{glossary("aspect ratio")}}) ویدئو یا بازه نسبت‌های تصویر قابل قبول و/یا الزامی را مشخص می‌کند.
 - {{domxref("MediaTrackConstraints.facingMode", "facingMode")}}
-  - : A [`ConstrainDOMString`](#constraindomstring) object specifying a facing or an array of facings which are acceptable and/or required.
+  - : یک شیء [`ConstrainDOMString`](#constraindomstring) که یک جهت (facing) یا آرایه‌ای از جهت‌ها را که قابل قبول و/یا الزامی هستند مشخص می‌کند.
 - {{domxref("MediaTrackConstraints.frameRate", "frameRate")}}
-  - : A [`ConstrainDouble`](#constraindouble) specifying the frame rate or range of frame rates which are acceptable and/or required.
+  - : یک [`ConstrainDouble`](#constraindouble) که نرخ فریم یا بازه نرخ‌های فریم قابل قبول و/یا الزامی را مشخص می‌کند.
 - {{domxref("MediaTrackConstraints.height", "height")}}
-  - : A [`ConstrainULong`](#constrainulong) specifying the video height or range of heights which are acceptable and/or required.
+  - : یک [`ConstrainULong`](#constrainulong) که ارتفاع ویدئو یا بازه ارتفاع‌های قابل قبول و/یا الزامی را مشخص می‌کند.
 - {{domxref("MediaTrackConstraints.width", "width")}}
-  - : A [`ConstrainULong`](#constrainulong) specifying the video width or range of widths which are acceptable and/or required.
+  - : یک [`ConstrainULong`](#constrainulong) که عرض ویدئو یا بازه عرض‌های قابل قبول و/یا الزامی را مشخص می‌کند.
 - `resizeMode`
-  - : A [`ConstrainDOMString`](#constraindomstring) object specifying a mode or an array of modes the UA can use to derive the resolution and frame rate of a video track.
-    Allowed values are:
+  - : یک شیء [`ConstrainDOMString`](#constraindomstring) که یک حالت یا آرایه‌ای از حالت‌ها را مشخص می‌کند که عامل کاربر (UA) می‌تواند برای استخراج وضوح و نرخ فریم یک ترک ویدئویی از آن‌ها استفاده کند. مقادیر مجاز عبارت‌اند از:
     - `crop-and-scale`
-      - : The user agent can use cropping and downscaling of resolution or frame rate on the raw output from the hardware/OS, in order to satisfy other constraints.
-        This constraint allows developers to get a downscaled video even if the particular format indicated by their constraints is not natively supported by the hardware.
+      - : عامل کاربر می‌تواند از برش (cropping) و کاهش مقیاس وضوح یا نرخ فریم بر روی خروجی خام سخت‌افزار/سیستم‌عامل استفاده کند تا سایر محدودیت‌ها برآورده شوند. این محدودیت به توسعه‌دهندگان اجازه می‌دهد حتی اگر قالب خاص مشخص‌شده توسط محدودیت‌هایشان به‌صورت بومی توسط سخت‌افزار پشتیبانی نمی‌شود، ویدئوی کم‌وضوح (downscaled) دریافت کنند.
     - `none`
-      - : The user agent uses the resolution provided by the underlying hardware, such as a camera or its driver, or the OS.
-
-    If `resizeMode` is unspecified the browser will choose a resolution based on a [fitness distance](https://w3c.github.io/mediacapture-main/#dfn-fitness-distance) that considers the specified constraints and _both_ of the allowed values.
-
-### Instance properties of shared screen tracks
-
-These constraints apply to the `video` property of the object passed into {{domxref("MediaDevices.getDisplayMedia", "getDisplayMedia()")}} to obtain a stream for screen sharing.
-
-- {{domxref("MediaTrackConstraints.displaySurface", "displaySurface")}}
-  - : A [`ConstrainDOMString`](#constraindomstring) which specifies the types of display surface that may be selected by the user.
-    This may be a single one of the following strings, or a list of them to allow multiple source surfaces:
-    - `browser`
-      - : The stream contains the contents of a single browser tab selected by the user.
-    - `monitor`
-      - : The stream's video track contains the entire contents of one or more of the user's screens.
-    - `window`
-      - : The stream contains a single window selected by the user for sharing.
-
-- {{domxref("MediaTrackConstraints.logicalSurface", "logicalSurface")}}
-  - : A [`ConstrainBoolean`](#constrainboolean) value which may contain a single Boolean value or a set of them, indicating whether or not to allow the user to choose source surfaces which do not directly correspond to display areas.
-    These may include backing buffers for windows to allow capture of window contents that are hidden by other windows in front of them, or buffers containing larger documents that need to be scrolled through to see the entire contents in their windows.
-
-- {{domxref("MediaTrackConstraints.suppressLocalAudioPlayback", "suppressLocalAudioPlayback")}} {{Experimental_Inline}}
-  - : A [`ConstrainBoolean`](#constrainboolean) value describing the requested or mandatory constraints placed upon the value of the {{domxref("MediaTrackSettings.suppressLocalAudioPlayback","suppressLocalAudioPlayback")}} constrainable property.
-    This property controls whether the audio playing in a tab will continue to be played out of a user's local speakers when the tab is captured.
-
-- {{domxref("MediaTrackConstraints.restrictOwnAudio", "restrictOwnAudio")}} {{Experimental_Inline}}
-  - : A [`ConstrainBoolean`](#constrainboolean) value that specifies the requested or mandatory constraints placed on the value of the {{domxref("MediaTrackSettings.restrictOwnAudio","restrictOwnAudio")}} constrainable property.
-    This property controls whether the system audio originating from the capturing tab is filtered out of the screen capture.
-
-## Specifications
-
-{{Specifications}}
-
-## See also
-
-- [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
-- [Capabilities, constraints, and settings](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints)
-- [Screen Capture API](/en-US/docs/Web/API/Screen_Capture_API)
-- [Using the Screen Capture API](/en-US/docs/Web/API/Screen_Capture_API/Using_Screen_Capture)
-- {{domxref("MediaStreamTrack.getConstraints()")}}
-- {{domxref("MediaStreamTrack.applyConstraints()")}}
-- {{domxref("MediaDevices.getUserMedia()")}}
-- {{domxref("MediaDevices.getDisplayMedia()")}}
-- {{domxref("MediaDevices.getSupportedConstraints()")}}
-- {{domxref("MediaTrackSupportedConstraints")}}
-- {{domxref("MediaStreamTrack.getSettings()")}}
+      - : عامل کاربر از وضوح
