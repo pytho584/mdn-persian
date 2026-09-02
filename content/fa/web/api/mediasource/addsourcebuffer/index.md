@@ -1,11 +1,5 @@
 ---
 title: "MediaSource: addSourceBuffer() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/addSourceBuffer"
-status: "needs-translation"
----
-
----
-title: "MediaSource: addSourceBuffer() method"
 short-title: addSourceBuffer()
 slug: Web/API/MediaSource/addSourceBuffer
 page-type: web-api-instance-method
@@ -14,47 +8,37 @@ browser-compat: api.MediaSource.addSourceBuffer
 
 {{APIRef("Media Source Extensions")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`addSourceBuffer()`** method of the
-{{domxref("MediaSource")}} interface creates a new {{domxref("SourceBuffer")}} of the
-given {{Glossary("MIME type")}} and adds it to the `MediaSource`'s
-{{domxref("MediaSource.sourceBuffers", "sourceBuffers")}} list. The new
-`SourceBuffer` is also returned.
+متد **`addSourceBuffer()`** از رابط {{domxref("MediaSource")}} یک {{domxref("SourceBuffer")}} جدید با {{Glossary("MIME type")}} مشخص‌شده می‌سازد و آن را به فهرست {{domxref("MediaSource.sourceBuffers", "sourceBuffers")}} متعلق به `MediaSource` اضافه می‌کند. سپس `SourceBuffer` جدید نیز بازگردانده می‌شود.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 addSourceBuffer(mimeType)
 ```
 
-### Parameters
+### پارامترها
 
 - `mimeType`
-  - : A string specifying the MIME type of the
-    {{domxref("SourceBuffer")}} to create and add to the {{domxref("MediaSource")}}.
+  - : یک رشته (string) که نوع MIME مربوط به {{domxref("SourceBuffer")}} موردنظر برای ایجاد و افزودن به {{domxref("MediaSource")}} را مشخص می‌کند.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("SourceBuffer")}} object representing the new source buffer that has been
-created and added to the media source.
+یک شیء {{domxref("SourceBuffer")}} که نشان‌دهندهٔ بافر منبع (source buffer) جدید ایجادشده و افزوده‌شده به منبع رسانه‌ای است.
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `InvalidAccessError` {{domxref("DOMException")}}
-  - : Thrown if the value specified for `mimeType` is an empty string rather than a valid
-    MIME type.
+  - : زمانی پرتاب می‌شود که مقدار ارائه‌شده برای `mimeType` یک رشتهٔ خالی باشد، نه یک نوع MIME معتبر.
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the {{domxref("MediaSource")}} is not in the `"open"`
-    {{domxref("MediaSource.readyState", "readyState")}}.
+  - : زمانی پرتاب می‌شود که {{domxref("MediaSource")}} در وضعیت `"open"` متعلق به {{domxref("MediaSource.readyState", "readyState")}} نباشد.
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Thrown if the specified `mimeType` isn't supported by the {{Glossary("user agent")}}, or is not compatible with the MIME types of other {{domxref("SourceBuffer")}} objects that are already included in the media source's {{domxref("MediaSource.sourceBuffers", "sourceBuffers")}} list.
+  - : زمانی پرتاب می‌شود که `mimeType` مشخص‌شده توسط {{Glossary("user agent")}} پشتیبانی نشود، یا با انواع MIME سایر اشیاء {{domxref("SourceBuffer")}} که از قبل در فهرست {{domxref("MediaSource.sourceBuffers", "sourceBuffers")}} منبع رسانه‌ای قرار دارند ناسازگار باشد.
 - {{domxref("QuotaExceededError")}}
-  - : Thrown if the user agent can't handle any more `SourceBuffer` objects, or creating
-    a new `SourceBuffer` using the given `mimeType` would result in
-    an [unsupported configuration of `SourceBuffer`s](https://w3c.github.io/media-source/#sourcebuffer-configuration).
+  - : زمانی پرتاب می‌شود که user agent قادر به مدیریت اشیاء `SourceBuffer` بیشتری نباشد، یا ایجاد یک `SourceBuffer` جدید با استفاده از `mimeType` داده‌شده منجر به [پیکربندی پشتیبانی‌نشده از `SourceBuffer`ها](https://w3c.github.io/media-source/#sourcebuffer-configuration) شود.
 
-## Examples
+## مثال‌ها
 
-The following snippet is from an example written by Nick Desaulniers ([view the full demo live](https://nickdesaulniers.github.io/netfix/demo/bufferAll.html), or [download the source](https://github.com/nickdesaulniers/netfix/blob/gh-pages/demo/bufferAll.html) for further investigation). The function `getMediaSource()`, which is not defined here, returns a `MediaSource`.
+قطعه کد زیر از یک مثال نوشته‌شده توسط Nick Desaulniers گرفته شده است ([مشاهدهٔ نسخهٔ کامل آزمایشی به‌صورت زنده](https://nickdesaulniers.github.io/netfix/demo/bufferAll.html)، یا [دانلود کد منبع](https://github.com/nickdesaulniers/netfix/blob/gh-pages/demo/bufferAll.html) برای بررسی بیشتر). تابع `getMediaSource()` که در اینجا تعریف نشده است، یک `MediaSource` برمی‌گرداند.
 
 ```js
 const assetURL = "frag_bunny.mp4";
@@ -85,15 +69,15 @@ function sourceOpen() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("SourceBuffer")}}
 - {{domxref("SourceBufferList")}}
