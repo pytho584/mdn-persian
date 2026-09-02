@@ -1,56 +1,46 @@
 ---
 title: "ImageDecoder: ImageDecoder() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ImageDecoder/ImageDecoder"
-status: "needs-translation"
----
-
----
-title: "ImageDecoder: ImageDecoder() constructor"
-short-title: ImageDecoder()
-slug: Web/API/ImageDecoder/ImageDecoder
-page-type: web-api-constructor
-browser-compat: api.ImageDecoder.ImageDecoder
 ---
 
 {{securecontext_header}}{{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`ImageDecoder()`** constructor creates a new {{domxref("ImageDecoder")}} object which unpacks and decodes image data.
+سازنده `ImageDecoder()` یک شیء جدید از نوع {{domxref("ImageDecoder")}} ایجاد می‌کند که داده‌های تصویر را باز کرده و رمزگشایی می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 new ImageDecoder(init)
 ```
 
-### Parameters
+### پارامترها
 
 - `init`
-  - : An object containing the following members:
+  - : یک شیء حاوی اعضای زیر:
     - `type`
-      - : A string containing the [MIME type](/en-US/docs/Web/HTTP/Guides/MIME_types) of the image file to be decoded.
+      - : یک رشته حاوی [نوع MIME](/en-US/docs/Web/HTTP/Guides/MIME_types) فایل تصویری که قرار است رمزگشایی شود.
     - `data`
-      - : An {{jsxref("ArrayBuffer")}}, a {{jsxref("TypedArray")}}, a {{jsxref("DataView")}}, or a {{domxref("ReadableStream")}} of bytes representing an encoded image type as described by `type`.
+      - : یک {{jsxref("ArrayBuffer")}}، یک {{jsxref("TypedArray")}}، یک {{jsxref("DataView")}}، یا یک {{domxref("ReadableStream")}} از بایت‌ها که یک نوع تصویر رمزگذاری شده را مطابق با `type` نشان می‌دهد.
     - `premultiplyAlpha` {{optional_inline}}
-      - : Specifies whether the decoded image's color channels should be premultiplied by the alpha channel. If not provided set as `"default"`:
+      - : مشخص می‌کند که آیا کانال‌های رنگی تصویر رمزگشایی شده باید توسط کانال آلفا پیش‌ضرب شوند. اگر ارائه نشود، به عنوان `"default"` تنظیم می‌شود:
         - `"none"`
         - `"premultiply"`
         - `"default"`
     - `colorSpaceConversion` {{optional_inline}}
-      - : Specifies whether the image should be decoded using color space conversion. If not provided set as `"default"`. The value `"default"` indicates that implementation-specific behavior is used:
+      - : مشخص می‌کند که آیا تصویر باید با استفاده از تبدیل فضای رنگی رمزگشایی شود. اگر ارائه نشود، به عنوان `"default"` تنظیم می‌شود. مقدار `"default"` نشان می‌دهد که رفتار خاص پیاده‌سازی استفاده می‌شود:
         - `"none"`
         - `"default"`
     - `desiredWidth` {{optional_inline}}
-      - : An integer indicating the desired width for the decoded output. Has no effect unless the image codec supports variable resolution decoding.
+      - : یک عدد صحیح که عرض مورد نظر برای خروجی رمزگشایی شده را نشان می‌دهد. تأثیری ندارد مگر اینکه کدک تصویر از رمزگشایی با وضوح متغیر پشتیبانی کند.
     - `desiredHeight` {{optional_inline}}
-      - : An integer indicating the desired height for the decoded output. Has no effect unless the image codec supports variable resolution decoding.
+      - : یک عدد صحیح که ارتفاع مورد نظر برای خروجی رمزگشایی شده را نشان می‌دهد. تأثیری ندارد مگر اینکه کدک تصویر از رمزگشایی با وضوح متغیر پشتیبانی کند.
     - `preferAnimation` {{optional_inline}}
-      - : A {{jsxref("Boolean")}} indicating whether the initial track selection should prefer an animated track.
+      - : یک {{jsxref("Boolean")}} که نشان می‌دهد آیا انتخاب اولیه مسیر باید یک مسیر متحرک را ترجیح دهد.
     - `transfer`
-      - : An array of {{jsxref("ArrayBuffer")}}s that `ImageDecoder` will detach and take ownership of. If the array contains the {{jsxref("ArrayBuffer")}} backing `data`, `ImageDecoder` will use that buffer directly instead of copying from it.
+      - : آرایه‌ای از {{jsxref("ArrayBuffer")}}ها که `ImageDecoder` آن‌ها را جدا کرده و مالکیت آن‌ها را به دست می‌گیرد. اگر آرایه شامل {{jsxref("ArrayBuffer")}} پشتیبان `data` باشد، `ImageDecoder` به جای کپی کردن از آن، مستقیماً از آن بافر استفاده می‌کند.
 
-## Examples
+## مثال‌ها
 
-The following example creates a new `ImageDecoder` with the required options.
+مثال زیر یک `ImageDecoder` جدید با گزینه‌های مورد نیاز ایجاد می‌کند.
 
 ```js
 let init = {
@@ -61,10 +51,10 @@ let init = {
 let imageDecoder = new ImageDecoder(init);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
