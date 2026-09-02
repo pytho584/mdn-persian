@@ -1,11 +1,5 @@
 ---
 title: "MediaSession: setMicrophoneActive() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaSession/setMicrophoneActive"
-status: "needs-translation"
----
-
----
-title: "MediaSession: setMicrophoneActive() method"
 short-title: setMicrophoneActive()
 slug: Web/API/MediaSession/setMicrophoneActive
 page-type: web-api-instance-method
@@ -14,32 +8,30 @@ browser-compat: api.MediaSession.setMicrophoneActive
 
 {{APIRef("Media Session API")}}
 
-The **`setMicrophoneActive()`** method of the {{domxref("MediaSession")}} interface is used to indicate to the user agent whether the user's microphone is considered to be currently muted.
+متد **`setMicrophoneActive()`** از رابط {{domxref("MediaSession")}} برای اطلاع‌رسانی به عامل کاربر (user agent) استفاده می‌شود که آیا میکروفون کاربر در حال حاضر بی‌صدا (muted) در نظر گرفته می‌شود یا خیر.
 
-Call this method on the `navigator` object's
-{{domxref("navigator.mediaSession", "mediaSession")}} object.
+این متد را روی شیء {{domxref("navigator.mediaSession", "mediaSession")}} متعلق به شیء `navigator` فراخوانی کنید.
 
-Note that the status of the microphone is not tracked in the {{domxref("MediaSession")}} itself, but must be tracked separately.
+توجه داشته باشید که وضعیت میکروفون در خود {{domxref("MediaSession")}} ردیابی نمی‌شود و باید به‌طور جداگانه نگهداری شود.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 setMicrophoneActive(active)
 ```
 
-### Parameters
+### پارامترها
 
 - `active`
-  - : A boolean indicating whether the microphone is considered muted or not.
+  - : یک مقدار بولی (boolean) که نشان می‌دهد آیا میکروفون بی‌صدا در نظر گرفته می‌شود یا نه.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-Below is an example of updating the microphone mute state of the current
-{{domxref('MediaSession')}}, as well as listening to requests to change the mute status with {{domxref("MediaSession.setActionHandler", "setActionHandler()")}}.
+در زیر نمونه‌ای از به‌روزرسانی وضعیت بی‌صدا بودن میکروفون برای {{domxref('MediaSession')}} فعلی و همچنین گوش دادن به درخواست‌های تغییر وضعیت بی‌صدا با استفاده از {{domxref("MediaSession.setActionHandler", "setActionHandler()")}} آورده شده است.
 
 ```js
 let microphoneActive = false;
@@ -52,10 +44,10 @@ navigator.mediaSession.setActionHandler("togglemicrophone", () => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
