@@ -1,10 +1,4 @@
 ---
-title: "Keyboard"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Keyboard"
-status: "needs-translation"
----
-
----
 title: Keyboard
 slug: Web/API/Keyboard
 page-type: web-api-interface
@@ -15,32 +9,32 @@ browser-compat: api.Keyboard
 
 {{SeeCompatTable}}{{APIRef("Keyboard API")}}{{securecontext_header}}
 
-The **`Keyboard`** interface of the {{domxref("Keyboard API", "", "", "nocode")}} provides functions that retrieve keyboard layout maps and toggle capturing of key presses from the physical keyboard.
+رابط **`Keyboard`** در {{domxref("Keyboard API", "", "", "nocode")}} توابعی را فراهم می‌کند که نقشه‌های چیدمان صفحه‌کلید را بازیابی می‌کنند و ضبط فشردن کلیدها از صفحه‌کلید فیزیکی را روشن یا خاموش می‌کنند.
 
-A list of valid code values is found in the [UI Events KeyboardEvent code Values](https://w3c.github.io/uievents-code/) spec.
+فهرستی از مقادیر کد معتبر در مشخصات [UI Events KeyboardEvent code Values](https://w3c.github.io/uievents-code/) آمده است.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Also inherits properties from its parent interface, {{DOMxRef("EventTarget")}}._
+_همچنین ویژگی‌های رابط والد خود، یعنی {{DOMxRef("EventTarget")}} را به ارث می‌برد._
 
-## Instance methods
+## متدهای نمونه
 
-_Also inherits methods from its parent interface, {{DOMxRef("EventTarget")}}._
+_همچنین متدهای رابط والد خود، یعنی {{DOMxRef("EventTarget")}} را به ارث می‌برد._
 
 - {{domxref('Keyboard.getLayoutMap()')}} {{experimental_inline}}
-  - : Returns a {{jsxref('Promise')}} that resolves with an instance of {{domxref('KeyboardLayoutMap')}} which is a map-like object with functions for retrieving the strings associated with specific physical keys.
+  - : یک {{jsxref('Promise')}} برمی‌گرداند که با یک نمونه از {{domxref('KeyboardLayoutMap')}} حل می‌شود؛ این نمونه یک شیء شبیه به نقشه است و توابعی برای بازیابی رشته‌های مرتبط با کلیدهای فیزیکی خاص دارد.
 - {{domxref('Keyboard.lock()')}} {{experimental_inline}}
-  - : Returns a {{jsxref('Promise')}} that resolves after enabling the capture of key presses for any or all of the keys on the physical keyboard.
+  - : یک {{jsxref('Promise')}} برمی‌گرداند که پس از فعال‌سازی ضبط فشردن کلیدها برای هر یک یا همه کلیدهای صفحه‌کلید فیزیکی حل می‌شود.
 - {{domxref('Keyboard.unlock()')}} {{experimental_inline}}
-  - : Unlocks all keys captured by the `lock()` method and returns synchronously.
+  - : همه کلیدهایی را که توسط متد `lock()` ضبط شده‌اند آزاد می‌کند و به صورت همزمان برمی‌گردد.
 
-## Example
+## مثال
 
-### Keyboard mapping
+### نگاشت صفحه‌کلید
 
-The following example demonstrates how to get the location- or layout-specific string associated with the key that corresponds to the 'W' key on an English QWERTY keyboard.
+مثال زیر نشان می‌دهد که چگونه می‌توان رشته مخصوص مکان یا چیدمان مرتبط با کلیدی را که با کلید «W» در صفحه‌کلید انگلیسی QWERTY متناظر است، به دست آورد.
 
 ```js
 if (navigator.keyboard) {
@@ -54,20 +48,20 @@ if (navigator.keyboard) {
 }
 ```
 
-### Keyboard locking
+### قفل کردن صفحه‌کلید
 
-The following example captures the <kbd>W</kbd>, <kbd>A</kbd>, <kbd>S</kbd>, and <kbd>D</kbd> keys, call `lock()` with a list that contains the key code attribute value for each of these keys:
+مثال زیر کلیدهای <kbd>W</kbd>، <kbd>A</kbd>، <kbd>S</kbd> و <kbd>D</kbd> را ضبط می‌کند؛ برای این کار `lock()` را با فهرستی شامل مقدار ویژگی کد کلید برای هر یک از این کلیدها فراخوانی کنید:
 
 ```js
 navigator.keyboard.lock(["KeyW", "KeyA", "KeyS", "KeyD"]);
 ```
 
-This captures these keys regardless of which modifiers are used with the key press. Assuming a standard United States QWERTY layout, registering `KeyW` ensures that <kbd>W</kbd>, <kbd>Shift+W</kbd>, <kbd>Control+W</kbd>, <kbd>Control+Shift+W</kbd>, and all other key modifier combinations with <kbd>W</kbd> are sent to the app. The same applies to for `KeyA`, `KeyS`, and `KeyD`.
+این کار این کلیدها را بدون توجه به اینکه کدام اصلاح‌کننده‌ها با فشردن کلید استفاده شوند، ضبط می‌کند. با فرض چیدمان استاندارد آمریکایی QWERTY، ثبت `KeyW` تضمین می‌کند که <kbd>W</kbd>، <kbd>Shift+W</kbd>، <kbd>Control+W</kbd>، <kbd>Control+Shift+W</kbd> و همه ترکیب‌های دیگر اصلاح‌کننده‌ها با <kbd>W</kbd> به برنامه ارسال شوند. همین امر در مورد `KeyA`، `KeyS` و `KeyD` نیز صدق می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
