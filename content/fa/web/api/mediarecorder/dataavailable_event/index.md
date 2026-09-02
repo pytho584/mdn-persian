@@ -1,11 +1,5 @@
 ---
 title: "MediaRecorder: dataavailable event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/dataavailable_event"
-status: "needs-translation"
----
-
----
-title: "MediaRecorder: dataavailable event"
 short-title: dataavailable
 slug: Web/API/MediaRecorder/dataavailable_event
 page-type: web-api-event
@@ -14,41 +8,23 @@ browser-compat: api.MediaRecorder.dataavailable_event
 
 {{APIRef("MediaStream Recording")}}
 
-The **`dataavailable`** event of the {{domxref("MediaRecorder")}} interface is fired when the MediaRecorder delivers media
-data to your application for its use. The data is provided in a {{domxref("Blob")}}
-object that contains the data. This occurs in four situations:
+رویداد **`dataavailable`** از رابط {{domxref("MediaRecorder")}} زمانی رخ می‌دهد که MediaRecorder داده‌های رسانه‌ای را برای استفادهٔ برنامهٔ شما تحویل می‌دهد. این داده‌ها در قالب یک شیء {{domxref("Blob")}} که حاوی داده‌ها است ارائه می‌شوند. این اتفاق در چهار حالت رخ می‌دهد:
 
-- When the media stream ends, any media data not already delivered to your
-  `ondataavailable` handler is passed in a single {{domxref("Blob")}}.
-- When {{domxref("MediaRecorder.stop()")}} is called, all media data which has been
-  captured since recording began or the last time a `dataavailable` event
-  occurred is delivered in a {{domxref("Blob")}}; after this, capturing ends.
-- When {{domxref("MediaRecorder.requestData()")}} is called, all media data which has
-  been captured since recording began or the last time a `dataavailable`
-  event occurred is delivered; then a new `Blob` is created and media capture
-  continues into that blob.
-- If a `timeslice` property was passed into the
-  {{domxref("MediaRecorder.start()")}} method that started media capture, a
-  `dataavailable` event is fired every `timeslice` milliseconds.
-  That means that normally, each blob will have a specific time duration (except the last blob,
-  which might be shorter, since it would be whatever is left over since the last event).
-  So if the method call looked like this — `recorder.start(1000);` — the
-  `dataavailable` event would fire after each second of media capture, and
-  our event handler would be called every second with a blob of media data that's one
-  second long. You can use `timeslice` alongside
-  {{domxref("MediaRecorder.stop()")}} and {{domxref("MediaRecorder.requestData()")}} to
-  produce multiple same-length blobs plus other shorter blobs as well.
+- وقتی جریان رسانه‌ای به پایان می‌رسد، هر دادهٔ رسانه‌ای که هنوز به مدیریت‌کنندهٔ `ondataavailable` شما تحویل داده نشده است، در قالب یک {{domxref("Blob")}} واحد ارسال می‌شود.
+- وقتی {{domxref("MediaRecorder.stop()")}} فراخوانده می‌شود، تمام داده‌های رسانه‌ای که از شروع ضبط یا از آخرین بار وقوع رویداد `dataavailable` جمع‌آوری شده‌اند، در یک {{domxref("Blob")}} تحویل داده می‌شوند؛ پس از آن، ضبط پایان می‌یابد.
+- وقتی {{domxref("MediaRecorder.requestData()")}} فراخوانده می‌شود، تمام داده‌های رسانه‌ای که از شروع ضبط یا از آخرین بار وقوع رویداد `dataavailable` جمع‌آوری شده‌اند تحویل داده می‌شوند؛ سپس یک `Blob` جدید ساخته می‌شود و ضبط رسانه در آن ادامه می‌یابد.
+- اگر یک ویژگی `timeslice` به متد {{domxref("MediaRecorder.start()")}} که ضبط رسانه را آغاز کرده است ارسال شده باشد، هر `timeslice` میلی‌ثانیه یک بار رویداد `dataavailable` رخ می‌دهد. این بدان معناست که معمولاً هر blob مدت‌زمان مشخصی خواهد داشت (به‌جز آخرین blob که ممکن است کوتاه‌تر باشد، زیرا محتوای باقی‌مانده از آخرین رویداد را شامل می‌شود). بنابراین اگر فراخوانی متد به این شکل باشد — `recorder.start(1000);` — رویداد `dataavailable` پس از هر ثانیه ضبط رسانه رخ می‌دهد و مدیریت‌کنندهٔ رویداد ما هر ثانیه با یک blob از دادهٔ رسانه‌ای به طول یک ثانیه فراخوانی می‌شود. می‌توانید `timeslice` را همراه با {{domxref("MediaRecorder.stop()")}} و {{domxref("MediaRecorder.requestData()")}} استفاده کنید تا چند blob هم‌طول و همچنین blobهای کوتاه‌تر دیگری تولید کنید.
 
 > [!NOTE]
-> Like other time values in web APIs, `timeslice` is not exact and the real intervals may be delayed due to other pending tasks, browser features (pausing the camera and microphone in Safari), browser-specific behaviors (locking the screen while recording on Chrome on Android pauses the `dataavailable` event), or other browser bugs. Such scenarios can also lead to significantly larger chunks.
+> مانند سایر مقادیر زمانی در web APIها، `timeslice` دقیق نیست و فواصل واقعی ممکن است به دلیل وظایف در انتظار دیگر، ویژگی‌های مرورگر (مکث دوربین و میکروفون در Safari)، رفتارهای خاص مرورگر (قفل شدن صفحه در حین ضبط در Chrome روی Android که رویداد `dataavailable` را متوقف می‌کند) یا سایر اشکالات مرورگر به تأخیر بیفتند. چنین سناریوهایی می‌توانند به تکه‌های به‌طور قابل توجهی بزرگ‌تر نیز منجر شوند.
 >
-> Therefore, don't rely on `timeslice` and the number of chunks received to calculate the time elapsed, because errors may accumulate. Instead, keep a separate timer using {{domxref("Event.timeStamp")}} or similar, that records the total time elapsed since starting.
+> بنابراین، برای محاسبهٔ زمان سپری‌شده به `timeslice` و تعداد تکه‌های دریافت‌شده تکیه نکنید، زیرا خطاها ممکن است انباشته شوند. در عوض، یک تایمر جداگانه با استفاده از {{domxref("Event.timeStamp")}} یا موارد مشابه نگه دارید که کل زمان سپری‌شده از شروع را ثبت کند.
 
-The {{domxref("Blob")}} containing the media data is available in the `dataavailable` event's `data` property.
+{{domxref("Blob")}} حاوی دادهٔ رسانه‌ای در ویژگی `data` رویداد `dataavailable` در دسترس است.
 
 ## Syntax
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی مدیریت‌کنندهٔ رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("dataavailable", (event) => { })
@@ -56,13 +32,13 @@ addEventListener("dataavailable", (event) => { })
 ondataavailable = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("BlobEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("BlobEvent")}}. از {{domxref("Event")}} ارث‌بری می‌کند.
 
 {{InheritanceDiagram("BlobEvent")}}
 
-## Example
+## مثال
 
 ```js
 const chunks = [];
@@ -83,19 +59,18 @@ mediaRecorder.ondataavailable = (e) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the MediaStream Recording API](/en-US/docs/Web/API/MediaStream_Recording_API)
-- [Web Dictaphone](https://mdn.github.io/dom-examples/media/web-dictaphone/): MediaRecorder +
-  getUserMedia + Web Audio API visualization demo, by [Chris Mills](https://github.com/chrisdavidmills) ([source on GitHub](https://github.com/mdn/dom-examples/tree/main/media/web-dictaphone).)
-- [simpl.info MediaStream Recording demo](https://simpl.info/mediarecorder/), by [Sam Dutton](https://github.com/samdutton).
+- [استفاده از API ضبط جریان رسانه‌ای](/en-US/docs/Web/API/MediaStream_Recording_API)
+- [Web Dictaphone](https://mdn.github.io/dom-examples/media/web-dictaphone/): دموی تجسم MediaRecorder + getUserMedia + Web Audio API، توسط [Chris Mills](https://github.com/chrisdavidmills) ([منبع در GitHub](https://github.com/mdn/dom-examples/tree/main/media/web-dictaphone).)
+- [دموی ضبط جریان رسانه‌ای simpl.info](https://simpl.info/mediarecorder/)، توسط [Sam Dutton](https://github.com/samdutton).
 - {{domxref("Navigator.getUserMedia()")}}
-- [Dealing with huge MediaRecorder chunks](https://blog.addpipe.com/dealing-with-huge-mediarecorder-slices/) on addpipe.com (2024)
+- [برخورد با تکه‌های بزرگ MediaRecorder](https://blog.addpipe.com/dealing-with-huge-mediarecorder-slices/) در addpipe.com (2024)
