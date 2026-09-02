@@ -1,11 +1,5 @@
 ---
 title: "IDBObjectStore: indexNames property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/indexNames"
-status: "needs-translation"
----
-
----
-title: "IDBObjectStore: indexNames property"
 short-title: indexNames
 slug: Web/API/IDBObjectStore/indexNames
 page-type: web-api-instance-property
@@ -14,21 +8,15 @@ browser-compat: api.IDBObjectStore.indexNames
 
 {{ APIRef("IndexedDB") }} {{AvailableInWorkers}}
 
-The **`indexNames`** read-only property of the
-{{domxref("IDBObjectStore")}} interface returns a list of the names of [indexes](/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology#index) on objects
-in this object store.
+ویژگی فقط‌خواندنی **`indexNames`** در رابط {{domxref("IDBObjectStore")}} فهرستی از نام [indexes](/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology#index) روی اشیاء موجود در این object store را برمی‌گرداند.
 
 ## Value
 
-A {{domxref("DOMStringList")}}.
+یک {{domxref("DOMStringList")}}.
 
 ## Examples
 
-In the following code snippet, we open a read/write transaction on our database and add
-some data to an object store using `add()`. After the object store has been
-created, we log `objectStore.indexNames` to the console. For a full working example, see
-our [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) app
-([view example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+در قطعه کد زیر، یک تراکنش خواندن/نوشتن روی پایگاه داده باز می‌کنیم و با استفاده از `add()` داده‌هایی را به یک object store اضافه می‌کنیم. پس از اینکه object store ایجاد شد، مقدار `objectStore.indexNames` را در کنسول ثبت می‌کنیم. برای مشاهده مثال کامل، برنامه [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) را ببینید ([view example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
 
 ```js
 // Let us open our database
@@ -100,9 +88,9 @@ function addData() {
 ## See also
 
 - [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم محدوده‌ای از کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و ایجاد تغییرات در داده‌ها: {{domxref("IDBObjectStore")}}
+- استفاده از cursorها: {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/))
