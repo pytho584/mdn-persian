@@ -1,11 +1,5 @@
 ---
 title: "MediaStreamAudioSourceNode: MediaStreamAudioSourceNode() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamAudioSourceNode/MediaStreamAudioSourceNode"
-status: "needs-translation"
----
-
----
-title: "MediaStreamAudioSourceNode: MediaStreamAudioSourceNode() constructor"
 short-title: MediaStreamAudioSourceNode()
 slug: Web/API/MediaStreamAudioSourceNode/MediaStreamAudioSourceNode
 page-type: web-api-constructor
@@ -14,15 +8,10 @@ browser-compat: api.MediaStreamAudioSourceNode.MediaStreamAudioSourceNode
 
 {{APIRef("Web Audio API")}}
 
-The [Web Audio API](/en-US/docs/Web/API/Web_Audio_API)'s **`MediaStreamAudioSourceNode()`** constructor
-creates and returns a new {{domxref("MediaStreamAudioSourceNode")}} object which uses
-the first audio track of a given {{domxref("MediaStream")}} as its source.
+سازنده **`MediaStreamAudioSourceNode()`** در [Web Audio API](/en-US/docs/Web/API/Web_Audio_API) یک شیء {{domxref("MediaStreamAudioSourceNode")}} جدید ایجاد و برمی‌گرداند که از اولین آهنگ صوتی یک {{domxref("MediaStream")}} داده شده به عنوان منبع خود استفاده می‌کند.
 
 > [!NOTE]
-> Another way to create a
-> `MediaStreamAudioSourceNode` is to call
-> the {{domxref("AudioContext.createMediaStreamSource()")}} method, specifying the stream
-> from which you want to obtain audio.
+> راه دیگر برای ایجاد یک `MediaStreamAudioSourceNode` فراخوانی متد {{domxref("AudioContext.createMediaStreamSource()")}} با مشخص کردن استریمی است که می‌خواهید صدا را از آن دریافت کنید.
 
 ## Syntax
 
@@ -33,39 +22,35 @@ new MediaStreamAudioSourceNode(context, options)
 ### Parameters
 
 - `context`
-  - : An {{domxref("AudioContext")}} representing the audio context you want the node to
-    be associated with.
+  - : یک {{domxref("AudioContext")}} که زمینه صوتی مورد نظر برای مرتبط‌سازی گره را نشان می‌دهد.
 - `options`
-  - : An object defining the properties you want the `MediaStreamAudioSourceNode` to have:
+  - : یک شیء که ویژگی‌های مورد نظر برای `MediaStreamAudioSourceNode` را تعریف می‌کند:
     - `mediaStream`
-      - : A required property which specifies the {{domxref("MediaStream")}} from which to obtain audio for the node.
+      - : یک ویژگی اجباری که {{domxref("MediaStream")}} را مشخص می‌کند که صدا برای گره از آن گرفته می‌شود.
 
 ### Return value
 
-A new {{domxref("MediaStreamAudioSourceNode")}} object representing the audio node
-whose media is obtained from the specified source stream.
+یک شیء {{domxref("MediaStreamAudioSourceNode")}} جدید که گره صوتی را نشان می‌دهد و رسانه آن از استریم منبع مشخص شده گرفته می‌شود.
 
 ### Exceptions
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the specified {{domxref("MediaStream")}} does not contain any audio tracks.
+  - : اگر {{domxref("MediaStream")}} مشخص شده حاوی هیچ آهنگ صوتی نباشد، پرتاب می‌شود.
 
 ## Examples
 
-This example uses {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}} to obtain
-access to the user's camera, then creates a new
-{{domxref("MediaStreamAudioSourceNode")}} from its {{domxref("MediaStream")}}.
+این مثال از {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}} برای دسترسی به دوربین کاربر استفاده می‌کند، سپس یک {{domxref("MediaStreamAudioSourceNode")}} جدید از {{domxref("MediaStream")}} آن ایجاد می‌کند.
 
 ```js
-// define variables
+// تعریف متغیرها
 const audioCtx = new AudioContext();
 
-// getUserMedia block - grab stream
-// put it into a MediaStreamAudioSourceNode
+// بلوک getUserMedia - دریافت استریم
+// قرار دادن آن در یک MediaStreamAudioSourceNode
 if (navigator.mediaDevices.getUserMedia) {
   navigator.mediaDevices
     .getUserMedia(
-      // constraints: audio and video for this app
+      // محدودیت‌ها: صدا و ویدیو برای این برنامه
       {
         audio: true,
         video: false,
@@ -80,10 +65,10 @@ if (navigator.mediaDevices.getUserMedia) {
       source.connect(audioCtx.destination);
     })
     .catch((err) => {
-      console.error(`The following gUM error occurred: ${err}`);
+      console.error(`خطای gUM زیر رخ داد: ${err}`);
     });
 } else {
-  console.log("new getUserMedia not supported on your browser!");
+  console.log("getUserMedia جدید در مرورگر شما پشتیبانی نمی‌شود!");
 }
 ```
 
