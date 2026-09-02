@@ -1,11 +1,5 @@
 ---
 title: "IDBDatabase: transaction() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase/transaction"
-status: "needs-translation"
----
-
----
-title: "IDBDatabase: transaction() method"
 short-title: transaction()
 slug: Web/API/IDBDatabase/transaction
 page-type: web-api-instance-method
@@ -14,9 +8,9 @@ browser-compat: api.IDBDatabase.transaction
 
 {{ APIRef("IndexedDB") }} {{AvailableInWorkers}}
 
-The **`transaction`** method of the {{domxref("IDBDatabase")}} interface immediately returns a transaction object ({{domxref("IDBTransaction")}}) containing the {{domxref("IDBTransaction.objectStore")}} method, which you can use to access your object store.
+متد **`transaction`** در رابط {{domxref("IDBDatabase")}} بلافاصله یک شیء تراکنش ({{domxref("IDBTransaction")}}) برمی‌گرداند که حاوی متد {{domxref("IDBTransaction.objectStore")}} است و می‌توانید از آن برای دسترسی به object store خود استفاده کنید.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 transaction(storeNames)
@@ -24,71 +18,66 @@ transaction(storeNames, mode)
 transaction(storeNames, mode, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `storeNames`
-  - : The names of object stores that are in the scope of the new transaction, declared as an array of strings. Specify only the object stores that you need to access.
-    If you need to access only one object store, you can specify its name as a string.
-    Therefore the following lines are equivalent:
+  - نام object storeهایی که در محدوده تراکنش جدید قرار دارند، به‌صورت یک آرایه از رشته‌ها اعلام می‌شوند. فقط object storeهایی را مشخص کنید که به آن‌ها نیاز دارید.
+    اگر فقط به یک object store نیاز دارید، می‌توانید نام آن را به‌صورت یک رشته مشخص کنید.
+    بنابراین خطوط زیر معادل هستند:
 
     ```js
     db.transaction(["my-store-name"]);
     db.transaction("my-store-name");
     ```
 
-    If you need to access all object stores in the database, you can use the property {{domxref("IDBDatabase.objectStoreNames")}}:
+    اگر نیاز به دسترسی به همه object storeهای پایگاه داده دارید، می‌توانید از ویژگی {{domxref("IDBDatabase.objectStoreNames")}} استفاده کنید:
 
     ```js
     const transaction = db.transaction(db.objectStoreNames);
     ```
 
-    Passing an empty array will throw an exception.
+    عبور دادن یک آرایه خالی باعث ایجاد استثنا خواهد شد.
 
 - `mode` {{optional_inline}}
-  - : The types of access that can be performed in the transaction.
-    Transactions are opened in one of three modes:
+  - انواع دسترسی که می‌توان در تراکنش انجام داد.
+    تراکنش‌ها در یکی از سه حالت باز می‌شوند:
     - `readonly`
-      - : Open a transaction for reading from an object store. This is the default mode.
+      - یک تراکنش برای خواندن از یک object store باز می‌کند. این حالت پیش‌فرض است.
     - `readwrite`
-      - : Open a transaction for both reading and writing from an object store.
-        This should only be used if need to write into the database.
+      - یک تراکنش برای خواندن و نوشتن در یک object store باز می‌کند. این حالت فقط در صورتی باید استفاده شود که نیاز به نوشتن در پایگاه داده دارید.
     - `readwriteflush` {{non-standard_inline}} {{experimental_inline}}
-      - : Force a transaction to flush to disk before delivering the `complete` event.
-        This might be used for storing critical data that cannot be recomputed later.
+      - تراکنش را مجبور می‌کند قبل از تحویل رویداد `complete` روی دیسک flush شود. این حالت ممکن است برای ذخیره داده‌های حیاتی که نمی‌توان بعداً آن‌ها را دوباره محاسبه کرد استفاده شود.
 
 - `options` {{optional_inline}}
-  - : Object defining additional options, including:
+  - شیئی که گزینه‌های اضافی را تعریف می‌کند، از جمله:
     - `durability`
-      - : One of the three string-literal values below:
+      - یکی از سه مقدار رشته‌ای (string literal) زیر:
         - `"strict"`
-          - : The user agent may consider that the transaction has successfully committed only after verifying that all outstanding changes have been successfully written to a persistent storage medium.
-            This is recommended where the risk of data loss outweighs the impact of its use on performance and power (compared to `relaxed`).
+          - عامل کاربر ممکن است تنها پس از تأیید اینکه همه تغییرات باقی‌مانده با موفقیت در یک رسانه ذخیره‌سازی پایدار نوشته شده‌اند، تراکنش را با موفقیت commit شده در نظر بگیرد. این حالت در جایی توصیه می‌شود که خطر از دست رفتن داده‌ها بیشتر از تأثیر استفاده از آن بر عملکرد و مصرف انرژی (در مقایسه با `relaxed`) باشد.
         - `"relaxed"`
-          - : The user agent may consider that the transaction has successfully committed as soon as all outstanding changes have been written to the operating system, without subsequent verification.
-            This offers better performance than `strict`, and is recommended for ephemeral data such as caches or quickly changing records.
+          - عامل کاربر ممکن است به محض اینکه همه تغییرات باقی‌مانده در سیستم‌عامل نوشته شدند، بدون تأیید بعدی، تراکنش را با موفقیت commit شده در نظر بگیرد. این حالت عملکرد بهتری نسبت به `strict` ارائه می‌دهد و برای داده‌های موقتی مانند کش‌ها یا رکوردهایی که به‌سرعت تغییر می‌کنند توصیه می‌شود.
         - `"default"`
-          - : The user agent should use its default durability behavior for the storage bucket.
-            This is the default for transactions if not otherwise specified.
+          - عامل کاربر باید رفتار پیش‌فرض خود را برای ماندگاری (durability) در سطل ذخیره‌سازی (storage bucket) استفاده کند. این حالت برای تراکنش‌ها اگر طور دیگری مشخص نشده باشد، پیش‌فرض است.
 
-### Return value
+### مقدار بازگشتی
 
-An {{domxref("IDBTransaction")}} object.
+یک شیء {{domxref("IDBTransaction")}}.
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the {{domxref("IDBDatabase.close", "close()")}} method has previously been called on this {{domxref("IDBDatabase")}} instance.
+  - اگر متد {{domxref("IDBDatabase.close", "close()")}} قبلاً روی این نمونه از {{domxref("IDBDatabase")}} فراخوانی شده باشد، پرتاب می‌شود.
 - `NotFoundError` {{domxref("DOMException")}}
-  - : Thrown if an object store specified in the 'storeNames' parameter has been deleted or removed.
+  - اگر یک object store که در پارامتر 'storeNames' مشخص شده است حذف یا برداشته شده باشد، پرتاب می‌شود.
 - {{jsxref("TypeError")}}
-  - : Thrown if the value for the `mode` parameter is invalid.
+  - اگر مقدار پارامتر `mode` نامعتبر باشد، پرتاب می‌شود.
 - `InvalidAccessError` {{domxref("DOMException")}}
-  - : Thrown if the function was called with an empty list of store names.
+  - اگر تابع با فهرست خالی از نام‌های store فراخوانی شود، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-In this example we open a database connection, then use transaction() to open a transaction on the database.
-For a complete example, see our [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) app ([view example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+در این مثال یک اتصال پایگاه داده باز می‌کنیم و سپس از transaction() برای باز کردن یک تراکنش روی پایگاه داده استفاده می‌کنیم.
+برای مثال کامل، برنامه [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) را ببینید ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
 
 ```js
 let db;
@@ -129,20 +118,20 @@ const objectStore = transaction.objectStore("toDoList");
 // etc.
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم محدوده‌ای از کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و ایجاد تغییرات در داده‌های خود: {{domxref("IDBObjectStore")}}
+- استفاده از نشانگرها (cursors): {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
