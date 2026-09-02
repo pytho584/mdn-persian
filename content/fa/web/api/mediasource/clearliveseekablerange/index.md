@@ -1,11 +1,5 @@
 ---
 title: "MediaSource: clearLiveSeekableRange() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/clearLiveSeekableRange"
-status: "needs-translation"
----
-
----
-title: "MediaSource: clearLiveSeekableRange() method"
 short-title: clearLiveSeekableRange()
 slug: Web/API/MediaSource/clearLiveSeekableRange
 page-type: web-api-instance-method
@@ -14,28 +8,26 @@ browser-compat: api.MediaSource.clearLiveSeekableRange
 
 {{APIRef("Media Source Extensions")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`clearLiveSeekableRange()`** method of the
-{{domxref("MediaSource")}} interface clears a seekable range previously set with a call
-to {{domxref("MediaSource.setLiveSeekableRange()","setLiveSeekableRange()")}}.
+**`clearLiveSeekableRange()`** متدی از رابط {{domxref("MediaSource")}} است که محدودهٔ قابل جستجوی زنده‌ای را که قبلاً با فراخوانی {{domxref("MediaSource.setLiveSeekableRange()","setLiveSeekableRange()")}} تنظیم شده بود، پاک می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 clearLiveSeekableRange()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
