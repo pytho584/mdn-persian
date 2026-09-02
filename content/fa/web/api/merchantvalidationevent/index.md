@@ -1,10 +1,4 @@
 ---
-title: "MerchantValidationEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MerchantValidationEvent"
-status: "needs-translation"
----
-
----
 title: MerchantValidationEvent
 slug: Web/API/MerchantValidationEvent
 page-type: web-api-interface
@@ -16,27 +10,27 @@ browser-compat: api.MerchantValidationEvent
 
 {{APIRef("Payment Request API")}}{{Deprecated_Header}}{{SecureContext_Header}}{{non-standard_header}}
 
-The **`MerchantValidationEvent`** interface of the [Payment Request API](/en-US/docs/Web/API/Payment_Request_API) enables a merchant to verify themselves as allowed to use a particular payment handler.
+رابطهٔ **`MerchantValidationEvent`** در [Payment Request API](/en-US/docs/Web/API/Payment_Request_API) به فروشنده امکان می‌دهد تا تأیید کند که مجاز به استفاده از یک پرداخت‌یار خاص (payment handler) است.
 
-Learn more about [merchant validation](/en-US/docs/Web/API/Payment_Request_API/Concepts#merchant_validation).
+دربارهٔ [تأیید فروشنده (merchant validation)](/en-US/docs/Web/API/Payment_Request_API/Concepts#merchant_validation) بیشتر بیاموزید.
 
-## Constructor
+## سازنده (Constructor)
 
 - {{domxref("MerchantValidationEvent.MerchantValidationEvent()","MerchantValidationEvent()")}} {{Deprecated_Inline}} {{non-standard_inline}}
-  - : Creates a new `MerchantValidationEvent` object describing a {{domxref("PaymentRequest.merchantvalidation_event", "merchantvalidation")}} event that will be sent to the payment handler to request that it validate the merchant.
+  - : یک شیء جدید `MerchantValidationEvent` می‌سازد که رویداد {{domxref("PaymentRequest.merchantvalidation_event", "merchantvalidation")}} را توصیف می‌کند؛ این رویداد به پرداخت‌یار ارسال می‌شود تا از آن بخواهد فروشنده را تأیید کند.
 
-## Instance properties
+## ویژگی‌های نمونه (Instance properties)
 
 - {{domxref("MerchantValidationEvent.methodName")}} {{Deprecated_Inline}} {{non-standard_inline}}
-  - : A string providing a unique payment method identifier for the payment handler that's requiring validation. This may be either one of the standard payment method identifier strings or a URL that both identifies and handles requests for the payment handler, such as `https://apple.com/apple-pay`.
+  - : یک رشته که شناسهٔ یکتای روش پرداخت را برای پرداخت‌یاری که نیاز به تأیید دارد فراهم می‌کند. این مقدار می‌تواند یکی از رشته‌های شناسهٔ استاندارد روش پرداخت باشد یا یک URL که هم پرداخت‌یار را شناسایی می‌کند و هم درخواست‌های مربوط به آن را مدیریت می‌کند، مانند `https://apple.com/apple-pay`.
 - {{domxref("MerchantValidationEvent.validationURL")}} {{Deprecated_Inline}} {{non-standard_inline}}
-  - : A string specifying a URL from which the site or app can fetch payment handler specific validation information. Once this data is retrieved, the data (or a promise resolving to the validation data) should be passed into {{domxref("MerchantValidationEvent.complete", "complete()")}} to validate that the payment request is coming from an authorized merchant.
+  - : یک رشته که URL ای را مشخص می‌کند که سایت یا برنامه می‌تواند اطلاعات تأیید مخصوص پرداخت‌یار را از آن دریافت کند. پس از دریافت این داده‌ها، داده (یا یک promise که به دادهٔ تأیید حل می‌شود) باید به {{domxref("MerchantValidationEvent.complete", "complete()")}} ارسال شود تا تأیید شود که درخواست پرداخت از یک فروشندهٔ مجاز صادر شده است.
 
-## Instance methods
+## روش‌های نمونه (Instance methods)
 
 - {{domxref("MerchantValidationEvent.complete()")}} {{Deprecated_Inline}} {{non-standard_inline}}
-  - : Pass the data retrieved from the URL specified by {{domxref("MerchantValidationEvent.validationURL", "validationURL")}} into `complete()` to complete the validation process for the {{domxref("PaymentRequest")}}.
+  - : داده‌های دریافت‌شده از URL مشخص‌شده توسط {{domxref("MerchantValidationEvent.validationURL", "validationURL")}} را به `complete()` ارسال کنید تا فرایند تأیید برای {{domxref("PaymentRequest")}} تکمیل شود.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
