@@ -1,11 +1,5 @@
 ---
 title: "MediaSession: setPositionState() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaSession/setPositionState"
-status: "needs-translation"
----
-
----
-title: "MediaSession: setPositionState() method"
 short-title: setPositionState()
 slug: Web/API/MediaSession/setPositionState
 page-type: web-api-instance-method
@@ -14,53 +8,43 @@ browser-compat: api.MediaSession.setPositionState
 
 {{APIRef("Media Session API")}}
 
-The **`setPositionState()`** method of the
-{{domxref("MediaSession")}} interface is used to update the current
-document's media playback position and speed for presentation by user's device in any
-kind of interface that provides details about ongoing media. This can be
-particularly useful if your code implements a player for type of media not directly
-supported by the browser.
+متد **`setPositionState()`** از رابط {{domxref("MediaSession")}} برای به‌روزرسانی موقعیت و سرعت پخش رسانه‌ی در حال پخشِ سند جاری استفاده می‌شود، تا دستگاه کاربر بتواند آن را در هر نوع رابطی که جزئیات مربوط به رسانه‌ی در حال پخش را نمایش می‌دهد، ارائه کند. این قابلیت به‌ویژه زمانی مفید است که کد شما پخش‌کننده‌ای را برای نوعی رسانه پیاده‌سازی می‌کند که مستقیماً توسط مرورگر پشتیبانی نمی‌شود.
 
-Call this method on the `navigator` object's
-{{domxref("navigator.mediaSession", "mediaSession")}} object.
+این متد را روی شیء `mediaSession` از شیء `navigator` صدا بزنید: {{domxref("navigator.mediaSession", "mediaSession")}}.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 setPositionState()
 setPositionState(stateDict)
 ```
 
-### Parameters
+### پارامترها
 
 - `stateDict` {{optional_inline}}
-  - : An object providing updated information about the playback position and speed
-    of the document's ongoing media. If the object is empty, the existing playback
-    state information is cleared. This object can contain the following
-    parameters:
+  - : یک شیء که اطلاعات به‌روزشده درباره‌ی موقعیت و سرعت پخش رسانه‌ی در حال پخش سند را فراهم می‌کند. اگر این شیء خالی باشد، اطلاعات وضعیت پخش موجود پاک می‌شود. این شیء می‌تواند پارامترهای زیر را داشته باشد:
     - `duration` {{optional_inline}}
-      - : A floating-point value giving the total duration of the current media in seconds. This should always be a positive number, with positive infinity ({{jsxref("Infinity")}}) indicating media without a defined end, such as a live stream.
+      - : یک مقدار اعشاری که کل مدت زمان رسانه‌ی فعلی را بر حسب ثانیه نشان می‌دهد. این مقدار باید همیشه عددی مثبت باشد؛ بی‌نهایت مثبت ({{jsxref("Infinity")}}) نشان‌دهنده‌ی رسانه‌ای است که پایان مشخصی ندارد، مانند یک پخش زنده.
     - `playbackRate` {{optional_inline}}
-      - : A floating-point value indicating the rate at which the media is being played, as a ratio relative to its normal playback speed. Thus, a value of 1 is playing at normal speed, 2 is playing at double speed, and so forth. Negative values indicate that the media is playing in reverse; -1 indicates playback at the normal speed but backward, -2 is double speed in reverse, and so on.
+      - : یک مقدار اعشاری که نرخ پخش رسانه را به صورت نسبت به سرعت عادی پخش نشان می‌دهد. بنابراین مقدار ۱ یعنی پخش با سرعت عادی، ۲ یعنی پخش با سرعت دو برابر، و به همین ترتیب. مقادیر منفی نشان‌دهنده‌ی پخش معکوس هستند؛ ۱- یعنی پخش معکوس با سرعت عادی، ۲- یعنی پخش معکوس با سرعت دو برابر، و الی آخر.
     - `position` {{optional_inline}}
-      - : A floating-point value indicating the last reported playback position of the media in seconds. This must always be a positive value.
+      - : یک مقدار اعشاری که آخرین موقعیت پخش گزارش‌شده‌ی رسانه را بر حسب ثانیه نشان می‌دهد. این مقدار باید همیشه مثبت باشد.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها (Exceptions)
 
 - {{jsxref("TypeError")}}
-  - : This error can occur in an array of circumstances:
-    - The specified object's `duration` is missing, negative, or `null`.
-    - Its `position` is either negative or greater than `duration`.
-    - Its `playbackRate` is zero.
+  - : این خطا می‌تواند در شرایط زیر رخ دهد:
+    - `duration` شیء مشخص‌شده وجود نداشته باشد، منفی باشد یا `null` باشد.
+    - `position` آن منفی باشد یا از `duration` بزرگ‌تر باشد.
+    - `playbackRate` آن صفر باشد.
 
-## Examples
+## مثال‌ها
 
-Below is a function which updates the position state of the current
-{{domxref('MediaSession')}} track.
+در زیر تابعی داریم که وضعیت موقعیتِ track جاریِ {{domxref('MediaSession')}} را به‌روزرسانی می‌کند.
 
 ```js
 function updatePositionState() {
@@ -72,23 +56,23 @@ function updatePositionState() {
 }
 ```
 
-We can use this function when updating {{domxref('MediaMetadata')}} and within callbacks for actions, such as below.
+می‌توانیم از این تابع هنگام به‌روزرسانی {{domxref('MediaMetadata')}} و در فراخوانی‌های (callback) اکشن‌ها استفاده کنیم، مانند مثال زیر.
 
 ```js
 navigator.mediaSession.setActionHandler("seekbackward", (details) => {
-  // our time to skip
+  // مدت زمانی که باید بپریم
   const skipTime = details.seekOffset || 10;
 
-  // set our position
+  // تنظیم موقعیت جدید
   audioEl.currentTime = Math.max(audioEl.currentTime - skipTime, 0);
   updatePositionState();
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
