@@ -1,11 +1,5 @@
 ---
 title: "MediaMetadata: artwork property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaMetadata/artwork"
-status: "needs-translation"
----
-
----
-title: "MediaMetadata: artwork property"
 short-title: artwork
 slug: Web/API/MediaMetadata/artwork
 page-type: web-api-instance-property
@@ -14,26 +8,22 @@ browser-compat: api.MediaMetadata.artwork
 
 {{APIRef("Media Session API")}}
 
-The **`artwork`** property of the
-{{domxref("MediaMetadata")}} interface returns or sets an array of
-objects representing images associated with playing
-media.
+ویژگی **`artwork`** در رابط {{domxref("MediaMetadata")}}، آرایه‌ای از اشیا را برمی‌گرداند یا تنظیم می‌کند که تصاویر مرتبط با رسانهٔ در حال پخش را نشان می‌دهند.
 
-## Value
+## مقدار
 
-An {{jsxref("Array")}} of objects, each containing the following fields:
+یک {{jsxref("Array")}} از اشیا، که هر کدام شامل فیلدهای زیر است:
 
 - `src`
-  - : The URL from which the user agent fetches the image's data.
+  - : نشانی اینترنتی (URL) که عامل کاربر (user agent) داده‌های تصویر را از آن دریافت می‌کند.
 - `sizes` {{optional_inline}}
-  - : Specifies the resource in multiple sizes so the user agent doesn't have to scale a single image. It defaults to the empty string (`""`).
+  - : منبع را در چند اندازه مشخص می‌کند تا عامل کاربر مجبور نباشد یک تصویر را تغییر اندازه دهد. مقدار پیش‌فرض آن رشتهٔ خالی (`""`) است.
 - `type` {{optional_inline}}
-  - : The {{Glossary("MIME type")}} hint for the user agent that allows it to ignore images of types that it doesn't support. However, the user agent may still use MIME type sniffing after downloading the image to determine its type. It defaults to the empty string (`""`).
+  - : راهنمای {{Glossary("MIME type")}} برای عامل کاربر است و به آن اجازه می‌دهد تصاویری از نوع‌هایی را که پشتیبانی نمی‌کند نادیده بگیرد. با این حال، عامل کاربر ممکن است پس از بارگیری تصویر، همچنان برای تعیین نوع آن از تشخیص نوع MIME (MIME type sniffing) استفاده کند. مقدار پیش‌فرض آن رشتهٔ خالی (`""`) است.
 
-## Examples
+## مثال‌ها
 
-The following example checks for browser compatibility and sets the current metadata
-for the media session.
+مثال زیر سازگاری مرورگر را بررسی می‌کند و فرادادهٔ فعلی نشست رسانه‌ای (media session) را تنظیم می‌کند.
 
 ```js
 if ("mediaSession" in navigator) {
@@ -77,10 +67,10 @@ if ("mediaSession" in navigator) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
