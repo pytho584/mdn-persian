@@ -1,11 +1,5 @@
 ---
 title: "KeyboardEvent: shiftKey property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/shiftKey"
-status: "needs-translation"
----
-
----
-title: "KeyboardEvent: shiftKey property"
 short-title: shiftKey
 slug: Web/API/KeyboardEvent/shiftKey
 page-type: web-api-instance-property
@@ -14,17 +8,15 @@ browser-compat: api.KeyboardEvent.shiftKey
 
 {{APIRef("UI Events")}}
 
-The **`KeyboardEvent.shiftKey`** read-only property is a
-boolean value that indicates if the <kbd>shift</kbd> key was pressed
-(`true`) or not (`false`) when the event occurred.
+ویژگی فقط‌خواندنی **`KeyboardEvent.shiftKey`** یک مقدار بولی است که نشان می‌دهد آیا کلید <kbd>shift</kbd> هنگام رخ‌دادن رویداد فشرده شده است (`true`) یا نه (`false`).
 
-The pressing of the shift key may change the {{domxref("KeyboardEvent/key", "key")}} of the event too. For example, pressing <kbd>B</kbd> generates `key: "b"`, while simultaneously pressing <kbd>Shift</kbd> generates `key: "B"`.
+فشردن کلید shift ممکن است مقدار {{domxref("KeyboardEvent/key", "key")}} رویداد را نیز تغییر دهد. برای مثال، فشردن <kbd>B</kbd> مقدار `key: "b"` را تولید می‌کند، در حالی که فشردن هم‌زمان <kbd>Shift</kbd> مقدار `key: "B"` را تولید می‌کند.
 
-## Value
+## مقدار
 
-A boolean value.
+یک مقدار بولی.
 
-## Examples
+## مثال‌ها
 
 ```html
 <p>
@@ -48,14 +40,14 @@ document.addEventListener("keydown", showChar);
 
 {{EmbedLiveSample("examples", "", "400")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{ domxref("KeyboardEvent") }}
