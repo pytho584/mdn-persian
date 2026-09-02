@@ -1,11 +1,5 @@
 ---
 title: "Keyboard: unlock() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Keyboard/unlock"
-status: "needs-translation"
----
-
----
-title: "Keyboard: unlock() method"
 short-title: unlock()
 slug: Web/API/Keyboard/unlock
 page-type: web-api-instance-method
@@ -16,28 +10,27 @@ browser-compat: api.Keyboard.unlock
 
 {{APIRef("Keyboard API")}}{{SeeCompatTable}}{{securecontext_header}}
 
-The **`unlock()`** method of the
-{{domxref("Keyboard")}} interface unlocks all keys captured by the
-{{domxref('Keyboard.lock()')}} method and returns synchronously.
+متد **`unlock()`** از رابط {{domxref("Keyboard")}} تمام کلیدهایی که توسط متد {{domxref('Keyboard.lock()')}} گرفته شده‌اند را آزاد می‌کند و به صورت همزمان (synchronous) بازمی‌گردد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 unlock()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچکدام ({{jsxref("undefined")}}).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
+```
