@@ -1,11 +1,5 @@
 ---
 title: "MediaMetadata: MediaMetadata() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaMetadata/MediaMetadata"
-status: "needs-translation"
----
-
----
-title: "MediaMetadata: MediaMetadata() constructor"
 short-title: MediaMetadata()
 slug: Web/API/MediaMetadata/MediaMetadata
 page-type: web-api-constructor
@@ -14,8 +8,7 @@ browser-compat: api.MediaMetadata.MediaMetadata
 
 {{APIRef("Media Session API")}}
 
-The **`MediaMetadata()`** constructor creates a new
-{{domxref("MediaMetadata")}} object.
+سازندهٔ **`MediaMetadata()`** یک شیء جدید از نوع {{domxref("MediaMetadata")}} می‌سازد.
 
 ## Syntax
 
@@ -24,37 +17,36 @@ new MediaMetadata()
 new MediaMetadata(metadata)
 ```
 
-### Parameters
+### پارامترها
 
 - `metadata` {{optional_inline}}
-  - : The metadata parameters are as follows:
+  - : پارامترهای فراداده به صورت زیر هستند:
     - `album` {{optional_inline}}
-      - : The name of the album, or collection, containing the media to be played. It defaults to the empty string (`""`).
+      - : نام آلبوم یا مجموعه‌ای که رسانهٔ در حال پخش به آن تعلق دارد. مقدار پیش‌فرض آن رشتهٔ خالی (`""`) است.
     - `artist` {{optional_inline}}
-      - : The name of the artist, group, or creator, of the media to be played. It defaults to the empty string (`""`).
+      - : نام هنرمند، گروه یا پدیدآورندهٔ رسانهٔ در حال پخش. مقدار پیش‌فرض آن رشتهٔ خالی (`""`) است.
     - `artwork` {{optional_inline}}
-      - : An {{jsxref("Array")}} of objects that represent images associated with the playing media that defaults to be an empty array. The object structure is:
+      - : یک {{jsxref("Array")}} از اشیایی که تصاویر مرتبط با رسانهٔ در حال پخش را نشان می‌دهند؛ مقدار پیش‌فرض آن یک آرایهٔ خالی است. ساختار شیء به صورت زیر است:
         - `src`
-          - : The URL from which the user agent fetches the image's data.
+          - : نشانی اینترنتی (URL) که عامل کاربر (user agent) داده‌های تصویر را از آن دریافت می‌کند.
         - `sizes` {{optional_inline}}
-          - : Specifies the resource in multiple sizes so the user agent doesn't have to scale a single image. It defaults to the empty string (`""`).
+          - : منبع را در چند اندازه مشخص می‌کند تا عامل کاربر مجبور نباشد یک تصویر را مقیاس‌دهی کند. مقدار پیش‌فرض آن رشتهٔ خالی (`""`) است.
         - `type` {{optional_inline}}
-          - : The {{Glossary("MIME type")}} hint for the user agent that allows it to ignore images of types that it doesn't support. However, the user agent may still use MIME type sniffing after downloading the image to determine its type. It defaults to the empty string (`""`).
+          - : راهنمای {{Glossary("MIME type")}} برای عامل کاربر است که به آن امکان می‌دهد تصاویری از انواع ناپشتیبانی‌شده را نادیده بگیرد. با این حال، عامل کاربر ممکن است پس از دانلود تصویر، همچنان از تشخیص نوع MIME برای تعیین نوع آن استفاده کند. مقدار پیش‌فرض آن رشتهٔ خالی (`""`) است.
     - `chapterInfo` {{optional_inline}}
-      - : An array of {{domxref("ChapterInformation")}} object instances representing the chapter information metadata associated with the media. The object structure is:
+      - : آرایه‌ای از نمونه‌های شیء {{domxref("ChapterInformation")}} که فرادادهٔ اطلاعات فصل مرتبط با رسانه را نشان می‌دهد. ساختار شیء به صورت زیر است:
         - `artwork` {{optional_inline}}
-          - : An {{jsxref("Array")}} of `artwork` objects (see above) representing images associated with the chapter. If omitted, `artwork` defaults to an empty array.
+          - : یک {{jsxref("Array")}} از اشیاء `artwork` (به بالا مراجعه کنید) که تصاویر مرتبط با فصل را نشان می‌دهد. اگر حذف شود، `artwork` به یک آرایهٔ خالی پیش‌فرض می‌شود.
         - `startTime` {{optional_inline}}
-          - : A number representing the chapter's start time in seconds. If omitted, `startTime` defaults to `0`.
+          - : عددی که زمان شروع فصل را بر حسب ثانیه نشان می‌دهد. اگر حذف شود، `startTime` به `0` پیش‌فرض می‌شود.
         - `title` {{optional_inline}}
-          - : A string representing the title of the chapter. If omitted, `title` defaults to the empty string (`""`).
+          - : رشته‌ای که عنوان فصل را نشان می‌دهد. اگر حذف شود، `title` به رشتهٔ خالی (`""`) پیش‌فرض می‌شود.
     - `title` {{optional_inline}}
-      - : The title of the media to be played. It defaults to the empty string (`""`).
+      - : عنوان رسانه‌ای که قرار است پخش شود. مقدار پیش‌فرض آن رشتهٔ خالی (`""`) است.
 
-## Example
+## مثال
 
-The following example creates a new {{domxref("MediaMetadata")}} object using the
-correct format of metadata.
+مثال زیر یک شیء جدید {{domxref("MediaMetadata")}} را با استفاده از قالب صحیح فراداده می‌سازد.
 
 ```js
 if ("mediaSession" in navigator) {
@@ -98,10 +90,10 @@ if ("mediaSession" in navigator) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
