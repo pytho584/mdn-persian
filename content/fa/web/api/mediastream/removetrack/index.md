@@ -1,11 +1,5 @@
 ---
 title: "MediaStream: removeTrack() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaStream/removeTrack"
-status: "needs-translation"
----
-
----
-title: "MediaStream: removeTrack() method"
 short-title: removeTrack()
 slug: Web/API/MediaStream/removeTrack
 page-type: web-api-instance-method
@@ -14,8 +8,7 @@ browser-compat: api.MediaStream.removeTrack
 
 {{APIRef("Media Capture and Streams")}}
 
-The **`removeTrack()`** method of the {{domxref("MediaStream")}} interface removes a
-{{domxref("MediaStreamTrack")}} from a stream.
+متد **`removeTrack()`** از رابط {{domxref("MediaStream")}} یک {{domxref("MediaStreamTrack")}} را از یک استریم حذف می‌کند.
 
 ## Syntax
 
@@ -26,18 +19,15 @@ removeTrack(track)
 ### Parameters
 
 - `track`
-  - : A {{domxref("MediaStreamTrack")}} that will be removed from the stream.
+  - : یک {{domxref("MediaStreamTrack")}} که از استریم حذف خواهد شد.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
 ## Examples
 
-The following example demonstrates how to remove the audio and video tracks from a {{domxref("MediaStream")}}.
-`fetchStreamFunction` is an event handler for `fetchStreamButton`. When the button is clicked, audio
-and video are captured from the system's devices. `removeTracksFunction` is the event handler for `removeTracksButton`.
-When this button is clicked, the audio and video tracks are removed from the {{domxref("MediaStream")}}.
+مثال زیر نحوه حذف ترک‌های صوتی و تصویری از یک {{domxref("MediaStream")}} را نشان می‌دهد. `fetchStreamFunction` یک کنترل‌کننده رویداد برای `fetchStreamButton` است. هنگامی که دکمه کلیک شود، صدا و تصویر از دستگاه‌های سیستم ضبط می‌شوند. `removeTracksFunction` کنترل‌کننده رویداد برای `removeTracksButton` است. هنگامی که این دکمه کلیک شود، ترک‌های صوتی و تصویری از {{domxref("MediaStream")}} حذف می‌شوند.
 
 ```js
 let initialStream = null;
