@@ -1,11 +1,5 @@
 ---
 title: "IntersectionObserverEntry: intersectionRatio property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry/intersectionRatio"
-status: "needs-translation"
----
-
----
-title: "IntersectionObserverEntry: intersectionRatio property"
 short-title: intersectionRatio
 slug: Web/API/IntersectionObserverEntry/intersectionRatio
 page-type: web-api-instance-property
@@ -14,18 +8,18 @@ browser-compat: api.IntersectionObserverEntry.intersectionRatio
 
 {{APIRef("Intersection Observer API")}}
 
-The **`intersectionRatio`** read-only property of the {{domxref("IntersectionObserverEntry")}} interface tells you how much of the target element is currently visible within the root's intersection ratio, as a value between 0.0 and 1.0.
+خاصیت فقط‌خواندنی **`intersectionRatio`** در رابط {{domxref("IntersectionObserverEntry")}} به شما می‌گوید چه کسری از عنصر هدف در حال حاضر در محدودهٔ تقاطع ریشه قابل مشاهده است؛ این مقدار بین 0.0 و 1.0 است.
 
-## Value
+## مقدار
 
-A number between 0.0 and 1.0 which indicates how much of the target element is actually visible within the root's intersection rectangle.
-More precisely, this value is the ratio of the area of the intersection rectangle ({{domxref("IntersectionObserverEntry.intersectionRect", "intersectionRect")}}) to the area of the target's bounds rectangle ({{domxref("IntersectionObserverEntry.boundingClientRect", "boundingClientRect")}}).
+عددی بین 0.0 و 1.0 که نشان می‌دهد چه کسری از عنصر هدف واقعاً در مستطیل تقاطع ریشه قابل مشاهده است.
+به‌طور دقیق‌تر، این مقدار نسبت مساحت مستطیل تقاطع ({{domxref("IntersectionObserverEntry.intersectionRect", "intersectionRect")}}) به مساحت مستطیل مرزی عنصر هدف ({{domxref("IntersectionObserverEntry.boundingClientRect", "boundingClientRect")}}) است.
 
-If the area of the target's bounds rectangle is zero, the returned value is 1 if {{domxref("IntersectionObserverEntry.isIntersecting", "isIntersecting")}} is `true` or 0 if not.
+اگر مساحت مستطیل مرزی عنصر هدف صفر باشد، مقدار بازگشتی زمانی 1 است که {{domxref("IntersectionObserverEntry.isIntersecting", "isIntersecting")}} برابر `true` باشد؛ در غیر این صورت مقدار بازگشتی 0 است.
 
-## Examples
+## مثال‌ها
 
-In this simple example, an intersection callback sets each target element's {{cssxref("opacity")}} to the intersection ratio of that element with the root.
+در این مثال ساده، یک callback تقاطع، ویژگی {{cssxref("opacity")}} هر عنصر هدف را به نسبت تقاطع آن عنصر با ریشه تنظیم می‌کند.
 
 ```js
 function intersectionCallback(entries) {
@@ -35,12 +29,12 @@ function intersectionCallback(entries) {
 }
 ```
 
-To see a more concrete example, take a look at [Handling intersection changes](/en-US/docs/Web/API/Intersection_Observer_API/Timing_element_visibility#handling_intersection_changes).
+برای مشاهدهٔ یک مثال کاربردی‌تر، به [مدیریت تغییرات تقاطع](/en-US/docs/Web/API/Intersection_Observer_API/Timing_element_visibility#handling_intersection_changes) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
