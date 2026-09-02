@@ -1,11 +1,5 @@
 ---
 title: "HTMLTextAreaElement: selectionStart property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTextAreaElement/selectionStart"
-status: "needs-translation"
----
-
----
-title: "HTMLTextAreaElement: selectionStart property"
 short-title: selectionStart
 slug: Web/API/HTMLTextAreaElement/selectionStart
 page-type: web-api-instance-property
@@ -14,36 +8,36 @@ browser-compat: api.HTMLTextAreaElement.selectionStart
 
 {{APIRef("HTML DOM")}}
 
-The **`selectionStart`** property of the {{domxref("HTMLTextAreaElement")}} interface specifies the start position of the current text selection in a {{HTMLElement("textarea")}} element. It is a number representing the beginning index of the selected text. It can be used to both retrieve and set the start of the index of the beginning of a `<textarea>`s selected text.
+ویژگی **`selectionStart`** در رابط {{domxref("HTMLTextAreaElement")}} موقعیت شروع انتخاب متنی فعلی را در یک عنصر {{HTMLElement("textarea")}} مشخص می‌کند. این ویژگی یک عدد است که ایندکس آغازین متن انتخاب‌شده را نشان می‌دهد. می‌توان از آن هم برای دریافت و هم برای تنظیم ایندکس شروع متن انتخاب‌شده در یک `<textarea>` استفاده کرد.
 
-When nothing is selected, the value of both the `selectionStart` and {{domxref("HTMLTextAreaElement.selectionEnd", "selectionEnd")}} is the position of the cursor (caret) inside the `<textarea>` element.
+وقتی هیچ متنی انتخاب نشده باشد، مقدار هر دو ویژگی `selectionStart` و {{domxref("HTMLTextAreaElement.selectionEnd", "selectionEnd")}} برابر با موقعیت مکان‌نما (caret) در داخل عنصر `<textarea>` است.
 
-Setting `selectionStart` to a value greater than the current value of {{domxref("HTMLTextAreaElement.selectionEnd", "selectionEnd")}} updates both the `selectionStart` and `selectionEnd` properties to that value. If that value is equal to or greater than the {{domxref("HTMLTextAreaElement.textLength", "textLength")}}, both properties are both set to the `textLength` property value.
+تنظیم `selectionStart` به مقداری بزرگ‌تر از مقدار فعلی {{domxref("HTMLTextAreaElement.selectionEnd", "selectionEnd")}}، هر دو ویژگی `selectionStart` و `selectionEnd` را به آن مقدار به‌روزرسانی می‌کند. اگر آن مقدار برابر یا بزرگ‌تر از {{domxref("HTMLTextAreaElement.textLength", "textLength")}} باشد، هر دو ویژگی به مقدار `textLength` تنظیم می‌شوند.
 
-The property value can be retrieved and set without the `<textarea>` having focus, but the element does need to have focus for the {{cssxref("::selection")}} pseudo-element to match the selected text.
+مقدار این ویژگی را می‌توان بدون اینکه `<textarea>` فوکوس داشته باشد دریافت و تنظیم کرد، اما عنصر برای اینکه شبه‌عنصر {{cssxref("::selection")}} با متن انتخاب‌شده مطابقت پیدا کند، نیاز به فوکوس دارد.
 
-Setting the `selectionStart` to a new value fires the {{domxref("HTMLTextAreaElement.selectionchange_event", "selectionchange")}} and {{domxref("HTMLTextAreaElement.select_event", "select")}} events.
+تنظیم `selectionStart` به یک مقدار جدید، رویدادهای {{domxref("HTMLTextAreaElement.selectionchange_event", "selectionchange")}} و {{domxref("HTMLTextAreaElement.select_event", "select")}} را فعال می‌کند.
 
-## Value
+## مقدار
 
-A non-negative number.
+یک عدد غیرمنفی.
 
-## Examples
+## مثال‌ها
 
 ```js
 const textarea = document.getElementById("text-box");
 const start = textarea.selectionStart;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTMLElement("textarea")}}
 - {{domxref("HTMLTextAreaElement")}}
@@ -55,4 +49,4 @@ const start = textarea.selectionStart;
 - {{domxref("HTMLTextAreaElement.setRangeText()")}}
 - {{domxref("HTMLInputElement.selectionStart")}}
 - {{domxref("Selection")}}
-- {{cssxref("::selection")}} pseudo-element
+- شبه‌عنصر {{cssxref("::selection")}}
