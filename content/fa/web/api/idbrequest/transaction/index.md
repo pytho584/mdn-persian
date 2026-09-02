@@ -1,11 +1,5 @@
 ---
 title: "IDBRequest: transaction property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/transaction"
-status: "needs-translation"
----
-
----
-title: "IDBRequest: transaction property"
 short-title: transaction
 slug: Web/API/IDBRequest/transaction
 page-type: web-api-instance-property
@@ -14,35 +8,17 @@ browser-compat: api.IDBRequest.transaction
 
 {{ APIRef("IndexedDB") }} {{AvailableInWorkers}}
 
-The **`transaction`** read-only property of the IDBRequest
-interface returns the transaction for the request, that is, the transaction the
-request is being made inside.
+ویژگی فقط‌خواندنی **`transaction`** در رابط `IDBRequest`، تراکنشِ مربوط به درخواست را برمی‌گرداند؛ یعنی تراکنشی که درخواست در داخلِ آن انجام می‌شود.
 
-This property can be `null` for requests not made within transactions,
-such as for requests returned from {{domxref("IDBFactory.open")}} — in this case
-you're just connecting to a database, so there is no transaction to return. If a
-version upgrade is needed when opening a database then during the
-{{domxref("IDBOpenDBRequest.upgradeneeded_event", "upgradeneeded")}} event handler the
-**`transaction`** property will be an
-{{domxref("IDBTransaction")}} with {{domxref("IDBTransaction.mode", "mode")}} equal
-to `"versionchange"`, and can be used to access existing object stores and
-indexes, or abort the upgrade. Following the upgrade, the
-**`transaction`** property will again be `null`.
+این ویژگی می‌تواند برای درخواست‌هایی که درونِ تراکنش‌ها انجام نشده‌اند، `null` باشد؛ مانند درخواست‌هایی که از {{domxref("IDBFactory.open")}} بازگردانده می‌شوند. در این حالت فقط در حال اتصال به یک پایگاه‌داده هستید، بنابراین تراکنشی برای بازگرداندن وجود ندارد. اگر هنگام باز کردن یک پایگاه‌داده به ارتقای نسخه نیاز باشد، در طولِ مدیریت‌کنندهٔ رویدادِ {{domxref("IDBOpenDBRequest.upgradeneeded_event", "upgradeneeded")}}، ویژگی **`transaction`** یک {{domxref("IDBTransaction")}} با {{domxref("IDBTransaction.mode", "mode")}} برابر با `"versionchange"` خواهد بود و می‌توان از آن برای دسترسی به object storeها و ایندکس‌های موجود یا لغوِ ارتقا استفاده کرد. پس از ارتقا، ویژگی **`transaction`** دوباره `null` خواهد بود.
 
-## Value
+## مقدار
 
-An {{domxref("IDBTransaction")}}.
+یک {{domxref("IDBTransaction")}}.
 
-## Examples
+## مثال‌ها
 
-The following example requests a given record title, `onsuccess` gets the
-associated record from the {{domxref("IDBObjectStore")}} (made available
-as `objectStoreTitleRequest.result`), updates
-one property of the record, and then puts the updated record back into the object
-store in another request. The source of the requests is logged to the developer
-console — both originate from the same transaction. For a full working example, see
-our [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) app
-([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+مثال زیر عنوانِ یک رکورد مشخص را درخواست می‌کند؛ در `onsuccess` رکورد مرتبط از {{domxref("IDBObjectStore")}} گرفته می‌شود (به‌صورت `objectStoreTitleRequest.result` در دسترس است)، یکی از ویژگی‌های رکورد به‌روزرسانی می‌شود و سپس رکورد به‌روزرسانی‌شده در درخواستی دیگر به object store بازگردانده می‌شود. منشأ درخواست‌ها در کنسول توسعه‌دهنده ثبت می‌شود — هر دو از یک تراکنش سرچشمه می‌گیرند. برای یک مثال کامل و قابل اجرا، برنامهٔ [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) را ببینید ([مشاهدهٔ مثال به‌صورت زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
 
 ```js
 const title = "Walk dog";
@@ -79,8 +55,7 @@ objectStoreTitleRequest.onsuccess = () => {
 };
 ```
 
-This example shows how a the **`transaction`** property can be
-used during a version upgrade to access existing object stores:
+این مثال نشان می‌دهد که چگونه می‌توان از ویژگی **`transaction`** در طولِ ارتقای نسخه برای دسترسی به object storeهای موجود استفاده کرد:
 
 ```js
 const openRequest = indexedDB.open("db", 2);
@@ -105,20 +80,20 @@ openRequest.onsuccess = () => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم بازه‌ای از کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی داده‌ها و ایجاد تغییر در آن‌ها: {{domxref("IDBObjectStore")}}
+- استفاده از نشانگرها (cursors): {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهدهٔ مثال به‌صورت زنده](https://mdn.github.io/dom-examples/to-do-notifications/))
