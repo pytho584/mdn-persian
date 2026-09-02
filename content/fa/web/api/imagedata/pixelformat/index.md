@@ -1,9 +1,4 @@
----
-title: "ImageData: pixelFormat property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ImageData/pixelFormat"
-status: "needs-translation"
----
-
+```yaml
 ---
 title: "ImageData: pixelFormat property"
 short-title: pixelFormat
@@ -16,22 +11,22 @@ browser-compat: api.ImageData.pixelFormat
 
 {{APIRef("Canvas API")}}{{AvailableInWorkers}}{{SeeCompatTable}}
 
-The read-only **`ImageData.pixelFormat`** property is a string indicating the pixel format of the image data.
+ویژگی فقط خواندنی **`ImageData.pixelFormat`** رشتهای است که فرمت پیکسل داده‌های تصویر را مشخص می‌کند.
 
-The pixel format can be set during `ImageData` initialization using either the [`ImageData()`](/en-US/docs/Web/API/ImageData/ImageData) constructor or the [`createImageData()`](/en-US/docs/Web/API/CanvasRenderingContext2D/createImageData) method.
+فرمت پیکسل را می‌توان در هنگام مقداردهی اولیه `ImageData` با استفاده از سازنده [`ImageData()`](/en-US/docs/Web/API/ImageData/ImageData) یا متد [`createImageData()`](/en-US/docs/Web/API/CanvasRenderingContext2D/createImageData) تنظیم کرد.
 
-## Value
+## مقدار
 
-This property can have the following values:
+این ویژگی می‌تواند مقادیر زیر را داشته باشد:
 
-- `"rgba-unorm8"` representing RGBA with 8 bit per component unsigned normalized format, using a {{jsxref("Uint8ClampedArray")}}.
-- `"rgba-float16"` representing RGBA with 16 bits per component, using a {{jsxref("Float16Array")}}. Floating-point pixel values allow representing colors in arbitrarily wide gamuts and high dynamic range (HDR).
+- `"rgba-unorm8"` نمایانگر RGBA با ۸ بیت به ازای هر مؤلفه با قالب نرمال‌شده بدون علامت، با استفاده از {{jsxref("Uint8ClampedArray")}}.
+- `"rgba-float16"` نمایانگر RGBA با ۱۶ بیت به ازای هر مؤلفه، با استفاده از {{jsxref("Float16Array")}}. مقادیر پیکسل ممیز شناور امکان نمایش رنگ‌ها در طیف‌های رنگی دلخواه وسیع و دامنه دینامیکی بالا (HDR) را فراهم می‌کنند.
 
-## Examples
+## مثال‌ها
 
-### Floating-point pixel data for wide gamuts and high dynamic range (HDR)
+### داده‌های پیکسل ممیز شناور برای طیف‌های رنگی وسیع و دامنه دینامیکی بالا (HDR)
 
-Floating-point pixel values allow representing colors in arbitrarily wide gamuts and high dynamic range (HDR). You can set the `pixelFormat` setting to `"rgba-float16"` to use RGBA values with 16 bits per component. This requires the `dataArray` to be a {{jsxref("Float16Array")}}.
+مقادیر پیکسل ممیز شناور امکان نمایش رنگ‌ها در طیف‌های رنگی دلخواه وسیع و دامنه دینامیکی بالا (HDR) را فراهم می‌کنند. می‌توانید تنظیم `pixelFormat` را روی `"rgba-float16"` قرار دهید تا از مقادیر RGBA با ۱۶ بیت به ازای هر مؤلفه استفاده کنید. این کار نیاز دارد که `dataArray` یک {{jsxref("Float16Array")}} باشد.
 
 ```js
 let floatArray = new Float16Array(4 * 200 * 200);
@@ -41,17 +36,18 @@ let imageData = new ImageData(floatArray, 200, 200, {
 console.log(imageData.pixelFormat); // "rgba-float16"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("ImageData")}}
 - {{jsxref("Float16Array")}}
 - {{domxref("CanvasRenderingContext2D.createImageData()")}}
 - {{domxref("CanvasRenderingContext2D.putImageData()")}}
+```
