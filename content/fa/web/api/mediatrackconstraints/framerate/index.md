@@ -1,11 +1,5 @@
 ---
 title: "MediaTrackConstraints: frameRate property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/frameRate"
-status: "needs-translation"
----
-
----
-title: "MediaTrackConstraints: frameRate property"
 short-title: frameRate
 slug: Web/API/MediaTrackConstraints/frameRate
 page-type: web-api-instance-property
@@ -14,44 +8,32 @@ browser-compat: api.MediaStreamTrack.applyConstraints.frameRate_constraint
 
 {{APIRef("Media Capture and Streams")}}
 
-The {{domxref("MediaTrackConstraints")}} dictionary's
-**`frameRate`** property is a [`ConstrainDouble`](/en-US/docs/Web/API/MediaTrackConstraints#constraindouble)
-describing the requested or mandatory constraints placed upon the value of the
-{{domxref("MediaTrackSettings.frameRate", "frameRate")}} constrainable property.
+ویژگی **`frameRate`** در فرهنگ لغت {{domxref("MediaTrackConstraints")}} یک [`ConstrainDouble`](/en-US/docs/Web/API/MediaTrackConstraints#constraindouble) است که محدودیت‌های درخواستی یا اجباری اعمال‌شده بر مقدار ویژگی قابل‌محدودیت {{domxref("MediaTrackSettings.frameRate", "frameRate")}} را توصیف می‌کند.
 
-If needed, you can determine whether or not this constraint is supported by checking
-the value of {{domxref("MediaTrackSupportedConstraints.frameRate")}} as returned by a
-call to {{domxref("MediaDevices.getSupportedConstraints()")}}. However, typically this
-is unnecessary since browsers will ignore any constraints they're unfamiliar with.
+در صورت نیاز، می‌توانید با بررسی مقدار {{domxref("MediaTrackSupportedConstraints.frameRate")}} که توسط فراخوانی {{domxref("MediaDevices.getSupportedConstraints()")}} بازگردانده می‌شود، تشخیص دهید که آیا این محدودیت پشتیبانی می‌شود یا خیر. با این حال، معمولاً این کار ضروری نیست، زیرا مرورگرها هر محدودیتی را که با آن آشنایی ندارند نادیده می‌گیرند.
 
-## Value
+## مقدار
 
-A [`ConstrainDouble`](/en-US/docs/Web/API/MediaTrackConstraints#constraindouble) describing the acceptable or required value(s) for a
-video track's frame rate, in frames per second.
+یک [`ConstrainDouble`](/en-US/docs/Web/API/MediaTrackConstraints#constraindouble) که مقدار(های) قابل‌قبول یا الزامی برای نرخ فریم یک ویدیو را بر حسب فریم در ثانیه توصیف می‌کند.
 
-If this value is a number, the user agent will attempt to obtain media whose frame rate
-is as close as possible to this number given the capabilities of the hardware and the
-other constraints specified. Otherwise, the value of this [`ConstrainDouble`](/en-US/docs/Web/API/MediaTrackConstraints#constraindouble)
-will guide the user agent in its efforts to provide an exact match to the required frame
-rate (if `exact` is specified or both `min` and `max`
-are provided and have the same value) or to a best-possible value.
+اگر این مقدار یک عدد باشد، عامل کاربر (user agent) تلاش خواهد کرد رسانه‌ای به دست آورد که نرخ فریم آن تا حد امکان به این عدد نزدیک باشد، با توجه به قابلیت‌های سخت‌افزار و سایر محدودیت‌های مشخص‌شده. در غیر این صورت، مقدار این [`ConstrainDouble`](/en-US/docs/Web/API/MediaTrackConstraints#constraindouble) عامل کاربر را در تلاش برای ارائه تطابق دقیق با نرخ فریم موردنیاز (اگر `exact` مشخص شده باشد یا هر دو `min` و `max` ارائه شده و مقدار یکسانی داشته باشند) یا در ارائه بهترین مقدار ممکن راهنمایی خواهد کرد.
 
-## Examples
+## مثال‌ها
 
-See the [Constraint exerciser](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#example_constraint_exerciser) example.
+مثال [Constraint exerciser](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#example_constraint_exerciser) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
-- [Capabilities, constraints, and settings](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints)
+- [API ضبط و جریان رسانه](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
+- [قابلیت‌ها، محدودیت‌ها و تنظیمات](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints)
 - {{domxref("MediaTrackConstraints")}}
 - {{domxref("MediaDevices.getSupportedConstraints()")}}
 - {{domxref("MediaTrackSupportedConstraints")}}
