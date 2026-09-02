@@ -1,11 +1,5 @@
 ---
 title: "LargestContentfulPaint: url property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/LargestContentfulPaint/url"
-status: "needs-translation"
----
-
----
-title: "LargestContentfulPaint: url property"
 short-title: url
 slug: Web/API/LargestContentfulPaint/url
 page-type: web-api-instance-property
@@ -14,17 +8,17 @@ browser-compat: api.LargestContentfulPaint.url
 
 {{APIRef("Performance API")}}
 
-The **`url`** read-only property of the {{domxref("LargestContentfulPaint")}} interface returns the request URL of the element, if the element is an image.
+خاصیت فقط‌خواندنی **`url`** در رابط {{domxref("LargestContentfulPaint")}}، URL درخواست عنصر را در صورتی که عنصر یک تصویر باشد، برمی‌گرداند.
 
-## Value
+## مقدار
 
-A string containing a URL.
+یک رشته (string) شامل URL.
 
-## Examples
+## مثال‌ها
 
-### Logging the url of the largest contentful paint
+### ثبت url بزرگ‌ترین paint محتوایی
 
-This example uses a {{domxref("PerformanceObserver")}} notifying of new `largest-contentful-paint` performance entries as they are recorded in the browser's performance timeline. The `buffered` option is used to access entries from before the observer creation.
+این مثال از {{domxref("PerformanceObserver")}} استفاده می‌کند تا ورودی‌های عملکرد جدید `largest-contentful-paint` را هنگام ثبت در زمان‌بندی عملکرد مرورگر اطلاع‌رسانی کند. گزینه `buffered` برای دسترسی به ورودی‌های قبل از ایجاد observer استفاده شده است.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -35,10 +29,10 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "largest-contentful-paint", buffered: true });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
