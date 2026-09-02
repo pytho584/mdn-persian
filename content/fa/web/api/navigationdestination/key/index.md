@@ -1,7 +1,5 @@
 ---
 title: "NavigationDestination: key property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigationDestination/key"
-status: "needs-translation"
 ---
 
 ---
@@ -14,16 +12,15 @@ browser-compat: api.NavigationDestination.key
 
 {{APIRef("Navigation API")}}
 
-The **`key`** read-only property of the
-{{domxref("NavigationDestination")}} interface returns the {{domxref("NavigationHistoryEntry.key", "key")}} value of the destination {{domxref("NavigationHistoryEntry")}} if the {{domxref("NavigateEvent.navigationType")}} is `traverse`, or an empty string otherwise.
+ویژگی فقط‌خواندنی **`key`** از رابط {{domxref("NavigationDestination")}}، در صورتی که {{domxref("NavigateEvent.navigationType")}} برابر با `traverse` باشد، مقدار {{domxref("NavigationHistoryEntry.key", "key")}} مربوط به {{domxref("NavigationHistoryEntry")}} مقصد را برمی‌گرداند؛ در غیر این صورت یک رشتهٔ خالی برمی‌گرداند.
 
-The `key` is a unique, UA-generated value that represents the history entry's slot in the history entries list, used to navigate to this place in the history via {{domxref("Navigation.traverseTo()")}}. It will be reused by other entries that replace the entry in the list (i.e., if the {{domxref("NavigateEvent.navigationType")}} is `replace`).
+مقدار `key` یک مقدار یکتاست که توسط عامل کاربر (user agent) تولید می‌شود و جایگاهِ آن ورودیِ تاریخچه را در فهرست ورودی‌های تاریخچه نشان می‌دهد؛ این مقدار برای پیمایش به همان نقطهٔ تاریخچه از طریق {{domxref("Navigation.traverseTo()")}} استفاده می‌شود. اگر ورودی دیگری جایگزین این ورودی در فهرست شود (یعنی اگر {{domxref("NavigateEvent.navigationType")}} برابر با `replace` باشد)، این مقدار دوباره استفاده خواهد شد.
 
-## Value
+## مقدار
 
-A string representing the `key` of the destination {{domxref("NavigationHistoryEntry")}}, or an empty string.
+رشته‌ای که مقدار `key` مقصد {{domxref("NavigationHistoryEntry")}} را نشان می‌دهد، یا یک رشتهٔ خالی.
 
-## Examples
+## مثال‌ها
 
 ```js
 navigation.addEventListener("navigate", (event) => {
@@ -31,15 +28,15 @@ navigation.addEventListener("navigate", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
 - [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
