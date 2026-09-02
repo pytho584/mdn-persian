@@ -1,11 +1,5 @@
 ---
 title: "NavigationHistoryEntry: sameDocument property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigationHistoryEntry/sameDocument"
-status: "needs-translation"
----
-
----
-title: "NavigationHistoryEntry: sameDocument property"
 short-title: sameDocument
 slug: Web/API/NavigationHistoryEntry/sameDocument
 page-type: web-api-instance-property
@@ -14,13 +8,13 @@ browser-compat: api.NavigationHistoryEntry.sameDocument
 
 {{APIRef("Navigation API")}}
 
-The **`sameDocument`** read-only property of the {{domxref("NavigationHistoryEntry")}} interface returns `true` if this history entry is for the same `document` as the current {{domxref("Document")}} value and current document is fully active, or `false` otherwise.
+خاصیتِ فقط‌خواندنی **`sameDocument`** در رابط {{domxref("NavigationHistoryEntry")}} مقدار `true` را برمی‌گرداند اگر این ورودی تاریخچه مربوط به همان `document` (سند) با مقدار فعلی {{domxref("Document")}} باشد و سند فعلی کاملاً فعال (fully active) باشد؛ در غیر این صورت `false` برمی‌گرداند.
 
-## Value
+## مقدار
 
-A boolean.
+یک مقدار بولین (boolean).
 
-## Examples
+## مثال‌ها
 
 ```js
 const current = navigation.currentEntry;
@@ -28,15 +22,15 @@ console.log(current.sameDocument);
 // Will always return true
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
 - [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
