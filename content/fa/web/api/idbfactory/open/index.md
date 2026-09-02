@@ -1,7 +1,6 @@
 ---
 title: "IDBFactory: open() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBFactory/open"
-status: "needs-translation"
 ---
 
 ---
@@ -14,89 +13,82 @@ browser-compat: api.IDBFactory.open
 
 {{APIRef("IndexedDB")}} {{AvailableInWorkers}}
 
-The **`open()`** method of the {{domxref("IDBFactory")}} interface requests opening a [connection to a database](/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology#database_connection).
+متد **`open()`** از واسط {{domxref("IDBFactory")}} درخواست باز کردن یک [اتصال به پایگاه داده](/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology#database_connection) را می‌دهد.
 
-The method returns an {{domxref("IDBOpenDBRequest")}} object immediately, and performs the open operation asynchronously.
-If the operation is successful, a `success` event is fired on the request object that is returned from this method, with its `result` attribute set to the new {{domxref("IDBDatabase")}} object for the connection.
+این متد بلافاصله یک شیء {{domxref("IDBOpenDBRequest")}} برمی‌گرداند و عملیات باز کردن را به صورت ناهمگام (async) انجام می‌دهد. اگر عملیات موفقیت‌آمیز باشد، یک رویداد `success` روی شیء درخواست که از این متد برگردانده شده است، شلیک می‌شود و ویژگی `result` آن به شیء جدید {{domdesc("IDBDatabase")}} برای اتصال تنظیم می‌گردد.
 
-May trigger `upgradeneeded`, `blocked` or `versionchange` events.
+ممکن است رویدادهای `upgradeneeded`، `blocked` یا `versionchange` را نیز راه‌اندازی کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 open(name)
 open(name, version)
 ```
 
-### Parameters
+### پارامترها
 
 - `name`
-  - : The name of the database.
+  - : نام پایگاه داده.
 - `version` {{optional_inline}}
-  - : Optional. The version to open the database with. If the version is not provided and the database exists, then a connection to the database will be opened without changing its version.
-    If the version is not provided and the database does not exist, then it will be created with version `1`.
+  - : اختیاری. نسخه‌ای که پایگاه داده با آن باز شود. اگر نسخه ارائه نشود و پایگاه داده وجود داشته باشد، یک اتصال به پایگاه داده بدون تغییر نسخه آن باز می‌شود. اگر نسخه ارائه نشود و پایگاه داده وجود نداشته باشد، با نسخه `1` ایجاد می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-An {{domxref("IDBOpenDBRequest")}} object on which subsequent events related to this request are fired.
+یک شیء {{domxref("IDBOpenDBRequest")}} که رویدادهای مرتبط با این درخواست روی آن شلیک می‌شوند. اگر عملیات موفقیت‌آمیز باشد، مقدار ویژگی {{domxref("IDBRequest.result", "result")}} درخواست، یک شیء {{domxref("IDBDatabase")}} است که نشان‌دهنده اتصال به پایگاه داده می‌باشد.
 
-If the operation is successful, the value of the request's {{domxref("IDBRequest.result", "result")}} property is an {{domxref("IDBDatabase")}} object representing the connection to the database.
-
-### Exceptions
+### استثناها (Exceptions)
 
 - {{jsxref("TypeError")}}
-  - : Thrown if the value of `version` is not a number greater than zero.
+  - : اگر مقدار `version` عددی بزرگتر از صفر نباشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-Example of calling `open` with the current specification's `version` parameter:
+مثالی از فراخوانی `open` با پارامتر `version` مطابق مشخصات فعلی:
 
 ```js
 const request = window.indexedDB.open("toDoList", 4);
 ```
 
-In the following code snippet, we make a request to open a database, and include handlers for the success and error cases.
-For a full working example, see our [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) app ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+در قطعه کد زیر، ما یک درخواست برای باز کردن پایگاه داده ارائه می‌دهیم و کنترل‌کننده‌هایی برای موارد موفقیت و خطا قرار می‌دهیم. برای یک مثال کامل کار، به برنامه [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ما مراجعه کنید ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
 
 ```js
 const note = document.querySelector("ul");
 
-// Let us open version 4 of our database
+// بیایید نسخه 4 پایگاه داده خود را باز کنیم
 const DBOpenRequest = window.indexedDB.open("toDoList", 4);
 
-// these two event handlers act on the database being opened
-// successfully, or not
+// این دو کنترل‌کننده رویداد روی باز شدن موفق یا ناموفق پایگاه داده عمل می‌کنند
 DBOpenRequest.onerror = (event) => {
   note.appendChild(document.createElement("li")).textContent =
-    "Error loading database.";
+    "خطا در بارگذاری پایگاه داده.";
 };
 
 DBOpenRequest.onsuccess = (event) => {
   note.appendChild(document.createElement("li")).textContent =
-    "Database initialized.";
+    "پایگاه داده مقداردهی اولیه شد.";
 
-  // store the result of opening the database in the db
-  // variable. This is used a lot later on, for opening
-  // transactions and suchlike.
+  // نتیجه باز کردن پایگاه داده را در متغیر db ذخیره کنید.
+  // بعداً برای باز کردن تراکنش‌ها و موارد مشابه بسیار استفاده می‌شود.
   db = DBOpenRequest.result;
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- [Browser storage quotas and eviction criteria](/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria).
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- [محدودیت‌های ذخیره‌سازی مرورگر و معیارهای حذف](/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria).
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم یک محدوده از کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و ایجاد تغییرات در داده‌های خود: {{domxref("IDBObjectStore")}}
+- استفاده از نشانگرها: {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
