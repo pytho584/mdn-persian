@@ -1,7 +1,5 @@
 ---
 title: "ImageTrackList: ready property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ImageTrackList/ready"
-status: "needs-translation"
 ---
 
 ---
@@ -14,15 +12,15 @@ browser-compat: api.ImageTrackList.ready
 
 {{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`ready`** property of the {{domxref("ImageTrackList")}} interface returns a {{jsxref("Promise")}} that resolves when the `ImageTrackList` is populated with {{domxref("ImageTrack","tracks")}}.
+ویژگی **`ready`** در رابط {{domxref("ImageTrackList")}} یک {{jsxref("Promise")}} برمی‌گرداند که وقتی `ImageTrackList` با {{domxref("ImageTrack","tracks")}} پر می‌شود، حل می‌شود.
 
 ## Value
 
-A {{jsxref("Promise")}} that resolves with {{jsxref("undefined")}}.
+یک {{jsxref("Promise")}} که با {{jsxref("undefined")}} حل می‌شود.
 
 ## Examples
 
-The following example prints the value of `ready` to the console, this will be `undefined` once the promise resolves.
+مثال زیر مقدار `ready` را در کنسول چاپ می‌کند؛ این مقدار پس از اینکه promise حل شود، `undefined` خواهد بود.
 
 ```js
 let tracks = imageDecoder.tracks;
