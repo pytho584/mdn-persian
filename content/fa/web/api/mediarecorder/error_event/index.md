@@ -1,11 +1,5 @@
 ---
 title: "MediaRecorder: error event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/error_event"
-status: "needs-translation"
----
-
----
-title: "MediaRecorder: error event"
 short-title: error
 slug: Web/API/MediaRecorder/error_event
 page-type: web-api-event
@@ -14,13 +8,13 @@ browser-compat: api.MediaRecorder.error_event
 
 {{APIRef("MediaStream Recording")}}
 
-The **`error`** event of the {{domxref("MediaRecorder")}} interface is fired when an error occurs: for example because recording wasn't allowed or was attempted using an unsupported codec.
+رویداد **`error`** از رابط {{domxref("MediaRecorder")}} زمانی رخ می‌دهد که خطایی اتفاق بیفتد؛ برای مثال، چون ضبط مجاز نبوده یا با استفاده از کدک پشتیبانی‌نشده تلاش شده است.
 
-This event is not cancelable and does not bubble.
+این رویداد لغوپذیر نیست و به عناصر بالادستی منتشر نمی‌شود.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("error", (event) => { })
@@ -28,34 +22,28 @@ addEventListener("error", (event) => { })
 onerror = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("MediaRecorderErrorEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("MediaRecorderErrorEvent")}}. از {{domxref("Event")}} به ارث می‌رسد.
 
 {{InheritanceDiagram("MediaRecorderErrorEvent")}}
 
-## Description
+## توضیحات
 
-### Trigger
+### محرک
 
-A function to be called whenever an error occurs during the recorder's lifetime. In
-addition to other general errors that might occur, the following errors are specifically
-possible when using the MediaStream Recording API; to determine which occurred, check
-the value of {{domxref("DOMException.name", "MediaRecorderErrorEvent.error.name")}}.
+تابعی که باید هر زمان در طول عمر ضبط‌کننده خطایی رخ دهد فراخوانی شود. علاوه بر سایر خطاهای عمومی که ممکن است رخ دهند، خطاهای زیر به‌طور خاص هنگام استفاده از MediaStream Recording API ممکن است رخ دهند؛ برای تعیین اینکه کدام یک رخ داده است، مقدار {{domxref("DOMException.name", "MediaRecorderErrorEvent.error.name")}} را بررسی کنید.
 
 - `SecurityError`
-  - : The {{domxref("MediaStream")}} is configured to disallow recording. This may be the
-    case, for example, with sources obtained using {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}} when the user denies permission to use an input device.
+  - : {{domxref("MediaStream")}} به‌گونه‌ای پیکربندی شده است که ضبط را غیرمجاز بداند. این ممکن است برای مثال با منابعی که با استفاده از {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}} به دست آمده‌اند، زمانی که کاربر اجازه استفاده از یک دستگاه ورودی را رد می‌کند، رخ دهد.
 - `InvalidModificationError`
-  - : The number of tracks on the stream being recorded has changed. You can't add or
-    remove tracks while recording media.
+  - : تعداد trackهای موجود در جریان در حال ضبط تغییر کرده است. در حین ضبط رسانه نمی‌توانید track اضافه یا حذف کنید.
 - `UnknownError`
-  - : A non-security related error occurred that cannot otherwise be categorized.
-    Recording stops, the `MediaRecorder`'s {{domxref("MediaRecorder.state", "state")}} becomes `inactive`, one last {{domxref("MediaRecorder.dataavailable_event", "dataavailable")}} event is sent to the `MediaRecorder` with the remaining received data, and finally a {{domxref("MediaRecorder/stop_event", "stop")}} event is sent.
+  - : خطایی غیرمرتبط با امنیت رخ داده است که نمی‌توان آن را در دسته دیگری قرار داد. ضبط متوقف می‌شود، {{domxref("MediaRecorder.state", "state")}} مربوط به `MediaRecorder` به حالت `inactive` تغییر می‌یابد، یک رویداد {{domxref("MediaRecorder.dataavailable_event", "dataavailable")}} به همراه داده‌های دریافتی باقی‌مانده به `MediaRecorder` ارسال می‌شود، و در نهایت یک رویداد {{domxref("MediaRecorder/stop_event", "stop")}} ارسال می‌گردد.
 
-## Examples
+## مثال‌ها
 
-Using {{domxref("EventTarget.addEventListener", "addEventListener()")}} to listen for `error` events:
+برای گوش دادن به رویدادهای `error` از {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید:
 
 ```js
 async function record() {
@@ -70,7 +58,7 @@ async function record() {
 record();
 ```
 
-The same, but using the `onerror` event handler property:
+همین کار، اما با استفاده از ویژگی کنترل‌کننده رویداد `onerror`:
 
 ```js
 async function record() {
@@ -85,14 +73,14 @@ async function record() {
 record();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the MediaStream Recording API](/en-US/docs/Web/API/MediaStream_Recording_API/Using_the_MediaStream_Recording_API)
+- [استفاده از API ضبط MediaStream](/en-US/docs/Web/API/MediaStream_Recording_API/Using_the_MediaStream_Recording_API)
