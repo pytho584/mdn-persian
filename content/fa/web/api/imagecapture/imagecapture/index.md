@@ -1,11 +1,5 @@
 ---
 title: "ImageCapture: ImageCapture() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ImageCapture/ImageCapture"
-status: "needs-translation"
----
-
----
-title: "ImageCapture: ImageCapture() constructor"
 short-title: ImageCapture()
 slug: Web/API/ImageCapture/ImageCapture
 page-type: web-api-constructor
@@ -14,37 +8,31 @@ browser-compat: api.ImageCapture.ImageCapture
 
 {{APIRef("Image Capture API")}}
 
-The **`ImageCapture()`** constructor
-creates a new {{domxref("ImageCapture")}} object.
+سازنده **`ImageCapture()`** یک شیء جدید از نوع {{domxref("ImageCapture")}} ایجاد می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 new ImageCapture(videoTrack)
 ```
 
-### Parameters
+### پارامترها
 
 - `videoTrack`
-  - : A {{domxref("MediaStreamTrack")}} from which the still images will be taken. This
-    can be any source, such as an incoming stream of a video conference, a playing movie,
-    or the stream from a webcam.
+  - : یک {{domxref("MediaStreamTrack")}} که تصاویر ثابت از آن گرفته می‌شود. این می‌تواند هر منبعی باشد، مانند یک جریان ورودی از یک کنفرانس ویدیویی، یک فیلم در حال پخش، یا جریان یک وبکم.
 
-### Return value
+### مقدار بازگشتی
 
-A new `ImageCapture` object which can be used to capture still frames from
-the specified video track.
+یک شیء جدید `ImageCapture` که می‌توان از آن برای گرفتن فریم‌های ثابت از ردیف ویدیویی مشخص شده استفاده کرد.
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Thrown if the `videoTrack` parameter's `kind` property is not `video`.
+  - : اگر خاصیت `kind` پارامتر `videoTrack` برابر با `video` نباشد، این خطا پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-The following example shows how to use a call to
-{{domxref("MediaDevices.getUserMedia()")}} to retrieve the
-{{domxref("MediaStreamTrack")}} needed by the `ImageCapture()` constructor.
+مثال زیر نحوه استفاده از فراخوانی {{domxref("MediaDevices.getUserMedia()")}} را برای دریافت {{domxref("MediaStreamTrack")}} مورد نیاز سازنده `ImageCapture()` نشان می‌دهد.
 
 ```js
 navigator.mediaDevices
@@ -57,10 +45,10 @@ navigator.mediaDevices
   .catch((error) => console.error(error));
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
