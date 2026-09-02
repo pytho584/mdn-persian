@@ -1,7 +1,5 @@
 ---
 title: "HTMLVideoElement: videoWidth property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLVideoElement/videoWidth"
-status: "needs-translation"
 ---
 
 ---
@@ -14,20 +12,18 @@ browser-compat: api.HTMLVideoElement.videoWidth
 
 {{APIRef("HTML DOM")}}
 
-The {{domxref("HTMLVideoElement")}} interface's read-only **`videoWidth`** property indicates the [intrinsic width](/en-US/docs/Web/API/HTMLVideoElement/videoHeight#about_intrinsic_width_and_height) of the video, expressed in CSS pixels.
-In simple terms, this is the width of the media in its natural size.
+ویژگی فقط‌خواندنی **`videoWidth`** در رابط {{domxref("HTMLVideoElement")}}، [عرض ذاتی](/en-US/docs/Web/API/HTMLVideoElement/videoHeight#about_intrinsic_width_and_height) ویدیو را بر حسب پیکسل‌های CSS نشان می‌دهد. به زبان ساده، این عرض رسانه در اندازه طبیعی آن است.
 
-See [`HTMLVideoElement.videoHeight` > About intrinsic width and height](/en-US/docs/Web/API/HTMLVideoElement/videoHeight#about_intrinsic_width_and_height) for more details.
+برای جزئیات بیشتر، [بخش «درباره عرض و ارتفاع ذاتی» در مستندات `HTMLVideoElement.videoHeight`](/en-US/docs/Web/API/HTMLVideoElement/videoHeight#about_intrinsic_width_and_height) را ببینید.
 
-## Value
+## مقدار
 
-An integer value specifying the intrinsic width of the video in CSS pixels.
-If the element's {{domxref("HTMLMediaElement.readyState", "readyState")}} is `HTMLMediaElement.HAVE_NOTHING`, then the value of this property is 0, because neither video nor poster frame size information is yet available.
+یک مقدار صحیح که عرض ذاتی ویدیو را بر حسب پیکسل‌های CSS مشخص می‌کند. اگر {{domxref("HTMLMediaElement.readyState", "readyState")}} عنصر برابر با `HTMLMediaElement.HAVE_NOTHING` باشد، مقدار این ویژگی ۰ است، زیرا هنوز اطلاعاتی درباره ابعاد فریم ویدیو یا پوستر در دسترس نیست.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
