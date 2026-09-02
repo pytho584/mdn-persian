@@ -1,9 +1,4 @@
----
-title: "MediaList: mediaText property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaList/mediaText"
-status: "needs-translation"
----
-
+```
 ---
 title: "MediaList: mediaText property"
 short-title: mediaText
@@ -14,28 +9,19 @@ browser-compat: api.MediaList.mediaText
 
 {{APIRef("CSSOM")}}
 
-The **`mediaText`** property of the {{domxref("MediaList")}}
-interface is a {{Glossary("stringifier")}} that returns a string representing the
-`MediaList` as text, and also allows you to set a new `MediaList`.
+ویژگی **`mediaText`** در رابط {{domxref("MediaList")}} یک {{Glossary("stringifier")}} است که یک رشته شامل نمایش متنی `MediaList` را برمی‌گرداند و همچنین به شما امکان می‌دهد یک `MediaList` جدید تنظیم کنید.
 
-## Value
+## مقدار
 
-A string representing the media queries of a stylesheet. Each one is
-separated by a comma, for example
-`screen and (width >= 480px), print`.
+رشته‌ای که رسانه‌های (media queries) یک شیوه‌نامه را نشان می‌دهد. هر کدام با کاما از هم جدا می‌شوند، برای مثال `screen and (width >= 480px), print`.
 
-If you wish to set new media queries on the document, the string value must have the
-different queries separated by commas, e.g., `screen, print`. Note that the
-`MediaList` is a live list; updating the list via
-`mediaText` will immediately update the behavior of the
-document.
+اگر می‌خواهید رسانه‌های جدیدی روی سند تنظیم کنید، مقدار رشته باید شامل رسانه‌های متفاوت با جداسازی کاما باشد، مثلاً `screen, print`. توجه داشته باشید که `MediaList` یک فهرست زنده است؛ به‌روزرسانی فهرست از طریق `mediaText` بلافاصله رفتار سند را به‌روزرسانی می‌کند.
 
-When set to the `null` value, that `null` value is converted to the empty string (`""`), so `ml.mediaText = null` is equivalent to `ml.mediaText = ""`.
+وقتی مقدار `null` تنظیم شود، آن مقدار `null` به رشته خالی (`""`) تبدیل می‌شود، بنابراین `ml.mediaText = null` معادل `ml.mediaText = ""` است.
 
-## Examples
+## مثال‌ها
 
-The following would log to the console a textual representation of the
-`MediaList` of the first stylesheet applied to the current document.
+در مثال زیر، نمایش متنی `MediaList` اولین شیوه‌نامه اعمال‌شده روی سند فعلی در کنسول ثبت می‌شود.
 
 ```js
 const stylesheets = document.styleSheets;
@@ -43,10 +29,11 @@ let stylesheet = stylesheets[0];
 console.log(stylesheet.media.mediaText);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
+```
