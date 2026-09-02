@@ -1,11 +1,5 @@
 ---
 title: "HTMLTableSectionElement: deleteRow() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableSectionElement/deleteRow"
-status: "needs-translation"
----
-
----
-title: "HTMLTableSectionElement: deleteRow() method"
 short-title: deleteRow()
 slug: Web/API/HTMLTableSectionElement/deleteRow
 page-type: web-api-instance-method
@@ -14,34 +8,31 @@ browser-compat: api.HTMLTableSectionElement.deleteRow
 
 {{APIRef("HTML DOM")}}
 
-The **`deleteRow()`** method of the {{domxref("HTMLTableSectionElement")}} interface removes a
-specific row ({{HtmlElement("tr")}}) from a given {{HtmlElement("section")}}.
+متد **`deleteRow()`** از رابط {{domxref("HTMLTableSectionElement")}} یک ردیف مشخص ({{HtmlElement("tr")}}) را از یک {{HtmlElement("section")}} داده شده حذف می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 deleteRow(index)
 ```
 
-### Parameters
+### پارامترها
 
 - `index`
-  - : `index` is an integer representing the row that should be deleted.
-    However, the special index `-1` can be used to remove the very last row of
-    the section.
+  - : `index` یک عدد صحیح است که نشان‌دهنده ردیفی است که باید حذف شود. با این حال، از ایندکس ویژه `1-` می‌توان برای حذف آخرین ردیف بخش استفاده کرد.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `IndexSizeError` {{domxref("DOMException")}}
-  - : Thrown if `index` is greater than or equal to the number of available rows or is a negative value other than `-1`.
+  - : اگر `index` بزرگتر یا مساوی تعداد ردیف‌های موجود باشد یا یک مقدار منفی به غیر از `1-` باشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-In this example, two buttons allow you to add and remove rows from the table body section; it also updates an {{HTMLElement("output")}} element with the number of rows currently in the table.
+در این مثال، دو دکمه به شما امکان می‌دهند ردیف‌هایی را از بخش بدنه جدول اضافه و حذف کنید. همچنین یک عنصر {{HTMLElement("output")}} با تعداد ردیف‌های فعلی جدول به‌روزرسانی می‌شود.
 
 ### HTML
 
@@ -49,9 +40,9 @@ In this example, two buttons allow you to add and remove rows from the table bod
 <table>
   <thead>
     <tr>
-      <th>Col 1</th>
-      <th>Col 2</th>
-      <th>Col 3</th>
+      <th>ستون ۱</th>
+      <th>ستون ۲</th>
+      <th>ستون ۳</th>
     </tr>
   </thead>
   <tbody>
@@ -62,9 +53,9 @@ In this example, two buttons allow you to add and remove rows from the table bod
     </tr>
   </tbody>
 </table>
-<button id="add">Add a row</button>
-<button id="remove">Remove last row</button>
-<div>This table's body has <output>1</output> row(s).</div>
+<button id="add">اضافه کردن ردیف</button>
+<button id="remove">حذف آخرین ردیف</button>
+<div>بدنه این جدول دارای <output>1</output> ردیف است.</div>
 ```
 
 ```css hidden
@@ -85,9 +76,9 @@ button {
 ### JavaScript
 
 ```js
-// Obtain relevant interface elements
+// دریافت عناصر رابط مرتبط
 const bodySection = document.querySelectorAll("tbody")[0];
-const rows = bodySection.rows; // The collection is live, therefore always up-to-date
+const rows = bodySection.rows; // مجموعه زنده است، بنابراین همیشه به‌روز است
 const rowNumberDisplay = document.querySelectorAll("output")[0];
 
 const addButton = document.getElementById("add");
@@ -98,39 +89,39 @@ function updateRowNumber() {
 }
 
 addButton.addEventListener("click", () => {
-  // Add a new row at the end of the body
+  // اضافه کردن یک ردیف جدید در انتهای بدنه
   const newRow = bodySection.insertRow();
 
-  // Add cells inside the new row
+  // اضافه کردن سلول‌ها درون ردیف جدید
   ["A", "B", "C"].forEach(
     (elt) => (newRow.insertCell().textContent = `${elt}${rows.length}`),
   );
 
-  // Update the row counter
+  // به‌روزرسانی شمارنده ردیف
   updateRowNumber();
 });
 
 removeButton.addEventListener("click", () => {
-  // Delete the row from the body
+  // حذف ردیف از بدنه
   bodySection.deleteRow(-1);
 
-  // Update the row counter
+  // به‌روزرسانی شمارنده ردیف
   updateRowNumber();
 });
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples", "100%", 175)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLTableElement.deleteRow()")}}
