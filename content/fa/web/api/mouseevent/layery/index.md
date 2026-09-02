@@ -1,11 +1,5 @@
 ---
 title: "MouseEvent: layerY property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/layerY"
-status: "needs-translation"
----
-
----
-title: "MouseEvent: layerY property"
 short-title: layerY
 slug: Web/API/MouseEvent/layerY
 page-type: web-api-instance-property
@@ -16,48 +10,38 @@ browser-compat: api.MouseEvent.layerY
 
 {{APIRef("Pointer Events")}}{{Non-standard_Header}}
 
-The **`MouseEvent.layerY`** read-only property returns the
-vertical coordinate of the event relative to the current layer.
+خاصیت فقط-خواندنی **`MouseEvent.layerY`** مختصات عمودی رویداد را نسبت به لایه‌ی فعلی برمی‌گرداند.
 
-This property takes scrolling of the page into account, and returns a value relative to
-the whole of the document, unless the event occurs inside a positioned element, where
-the returned value is relative to the top left of the positioned element.
+این خاصیت اسکرول صفحه را در نظر می‌گیرد و مقداری را برمی‌گرداند که نسبت به کل سند است، مگر اینکه رویداد داخل یک عنصر دارای موقعیت (positioned) رخ دهد که در آن صورت مقدار برگشتی نسبت به گوشه‌ی بالا-چپ آن عنصر دارای موقعیت خواهد بود.
 
-## Value
+## مقدار
 
-An integer value in pixels for the y-coordinate of the mouse pointer, when the mouse event fired.
+یک مقدار صحیح بر حسب پیکسل برای مختصات y اشاره‌گر موس، در زمانی که رویداد موس رخ داده است.
 
-## Examples
+## نمونه‌ها
 
 ```html
-<p>To display the mouse coordinates please click anywhere on the page.</p>
+<p>برای نمایش مختصات موس، لطفاً روی هر نقطه‌ای از صفحه کلیک کنید.</p>
 
 <div id="d1">
   <span>
-    This is an un-positioned div so clicking it will return layerX/layerY values
-    almost the same as pageX/PageY values.
+    این یک div بدون موقعیت است، بنابراین کلیک روی آن مقادیر layerX/layerY را تقریباً مشابه pageX/PageY برمی‌گرداند.
   </span>
 </div>
 
 <div id="d2">
   <span>
-    This is a positioned div so clicking it will return layerX/layerY values
-    that are relative to the top-left corner of this positioned element. Note
-    the pageX\pageY properties still return the absolute position in the
-    document, including page scrolling.
+    این یک div دارای موقعیت است، بنابراین کلیک روی آن مقادیر layerX/layerY را نسبت به گوشه‌ی بالا-چپ همین عنصر دارای موقعیت برمی‌گرداند. توجه کنید که ویژگی‌های pageX/pageY همچنان موقعیت مطلق در سند را برمی‌گردانند، از جمله اسکرول صفحه.
   </span>
 
   <span>
-    Make the page scroll more! This is a positioned div so clicking it will
-    return layerX/layerY values that are relative to the top-left corner of this
-    positioned element. Note the pageX\pageY properties still return the
-    absolute position in the document, including page scrolling.
+    صفحه را بیشتر اسکرول کنید! این یک div دارای موقعیت است، بنابراین کلیک روی آن مقادیر layerX/layerY را نسبت به گوشه‌ی بالا-چپ همین عنصر دارای موقعیت برمی‌گرداند. توجه کنید که ویژگی‌های pageX/pageY همچنان موقعیت مطلق در سند را برمی‌گردانند، از جمله اسکرول صفحه.
   </span>
 </div>
 
 <div id="d3">
   <form name="form_coords" id="form1">
-    Parent Element id: <input type="text" name="parentId" size="7" /><br />
+    شناسه‌ی عنصر والد: <input type="text" name="parentId" size="7" /><br />
     pageX: <input type="text" name="pageXCoords" size="7" /> pageY:
     <input type="text" name="pageYCoords" size="7" /><br />
     layerX: <input type="text" name="layerXCoords" size="7" /> layerY:
@@ -106,10 +90,10 @@ function showCoords(evt) {
 window.addEventListener("mousedown", showCoords);
 ```
 
-## Specifications
+## مشخصات
 
-_This property is not part of any specification._
+_این خاصیت بخشی از هیچ مشخصه‌ای نیست._
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
