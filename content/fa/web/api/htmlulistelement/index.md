@@ -1,10 +1,4 @@
 ---
-title: "HTMLUListElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLUListElement"
-status: "needs-translation"
----
-
----
 title: HTMLUListElement
 slug: Web/API/HTMLUListElement
 page-type: web-api-interface
@@ -13,31 +7,31 @@ browser-compat: api.HTMLUListElement
 
 {{ APIRef("HTML DOM") }}
 
-The **`HTMLUListElement`** interface provides special properties (beyond those defined on the regular {{domxref("HTMLElement")}} interface it also has available to it by inheritance) for manipulating unordered list ({{HTMLElement("ul")}}) elements.
+رابط **`HTMLUListElement`** ویژگی‌های خاصی (فراتر از آنچه در رابط معمولی {{domxref("HTMLElement")}} تعریف شده است که به صورت ارث‌بری نیز در دسترس دارد) برای دستکاری عناصر فهرست بدون ترتیب ({{HTMLElement("ul")}}) فراهم می‌کند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("HTMLElement")}}._
+_ویژگی‌ها را از والد خود، {{domxref("HTMLElement")}} به ارث می‌برد._
 
 - {{domxref("HTMLUListElement.type")}} {{deprecated_inline}}
-  - : A string value reflecting the [`type`](/en-US/docs/Web/HTML/Reference/Elements/ul#type) and defining the kind of marker to be used to display. The values are browser dependent and have never been standardized.
+  - : یک مقدار رشته‌ای که منعکس‌کننده ویژگی [`type`](/en-US/docs/Web/HTML/Reference/Elements/ul#type) است و نوع نشانگر مورد استفاده برای نمایش را تعریف می‌کند. مقادیر وابسته به مرورگر هستند و هرگز استاندارد نشده‌اند.
 - {{domxref("HTMLUListElement.compact")}} {{deprecated_inline}}
-  - : A boolean value indicating that spacing between list items should be reduced. This property reflects the [`compact`](/en-US/docs/Web/HTML/Reference/Elements/ul#compact) attribute only, it doesn't consider the {{cssxref("line-height")}} CSS property used for that behavior in modern pages.
+  - : یک مقدار بولی که نشان می‌دهد فاصله بین آیتم‌های فهرست باید کاهش یابد. این ویژگی فقط منعکس‌کننده ویژگی [`compact`](/en-US/docs/Web/HTML/Reference/Elements/ul#compact) است و ویژگی CSS {{cssxref("line-height")}} را که برای این رفتار در صفحات مدرن استفاده می‌شود در نظر نمی‌گیرد.
 
-## Instance methods
+## روش‌های نمونه
 
-_No specific method; inherits methods from its parent, {{domxref("HTMLElement")}}._
+_هیچ روش خاصی ندارد؛ روش‌ها را از والد خود، {{domxref("HTMLElement")}} به ارث می‌برد._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The HTML element implementing this interface: {{ HTMLElement("ul") }}.
+- عنصر HTML که این رابط را پیاده‌سازی می‌کند: {{ HTMLElement("ul") }}.
