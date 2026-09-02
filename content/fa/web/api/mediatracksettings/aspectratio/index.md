@@ -1,11 +1,5 @@
 ---
 title: "MediaTrackSettings: aspectRatio property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/aspectRatio"
-status: "needs-translation"
----
-
----
-title: "MediaTrackSettings: aspectRatio property"
 short-title: aspectRatio
 slug: Web/API/MediaTrackSettings/aspectRatio
 page-type: web-api-instance-property
@@ -14,36 +8,30 @@ browser-compat: api.MediaStreamTrack.applyConstraints.aspectRatio_constraint
 
 {{APIRef("Media Capture and Streams")}}
 
-The {{domxref("MediaTrackSettings")}} dictionary's **`aspectRatio`** property is a double-precision floating-point number indicating the {{glossary("aspect ratio")}} of the {{domxref("MediaStreamTrack")}} as currently configured.
-This lets you determine what value was selected to comply with your specified constraints for this property's value as described in the {{domxref("MediaTrackConstraints.aspectRatio")}} property you provided when calling either {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}} or {{domxref("MediaStreamTrack.applyConstraints()")}}.
+ویژگی **`aspectRatio`** از فرهنگ {{domxref("MediaTrackSettings")}} یک عدد اعشاری با دقت دوبرابر است که {{glossary("aspect ratio", "نسبت تصویر")}} فعلی {{domxref("MediaStreamTrack")}} را نشان می‌دهد.
+این ویژگی به شما امکان می‌دهد تا مشخص کنید چه مقداری برای مطابقت با محدودیت‌های تعیین‌شده‌تان برای این ویژگی انتخاب شده است، همانطور که در ویژگی {{domxref("MediaTrackConstraints.aspectRatio")}} هنگام فراخوانی {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}} یا {{domxref("MediaStreamTrack.applyConstraints()")}} ارائه کرده‌اید.
 
-If needed, you can determine whether or not this constraint is supported by checking
-the value of {{domxref("MediaTrackSupportedConstraints.aspectRatio")}} as returned by a
-call to {{domxref("MediaDevices.getSupportedConstraints()")}}. However, typically this
-is unnecessary since browsers will ignore any constraints they're unfamiliar with.
+در صورت نیاز، می‌توانید با بررسی مقدار {{domxref("MediaTrackSupportedConstraints.aspectRatio")}} که توسط فراخوانی {{domxref("MediaDevices.getSupportedConstraints()")}} بازگردانده می‌شود، از پشتیبانی یا عدم پشتیبانی از این محدودیت مطلع شوید. با این حال، معمولاً این کار ضروری نیست زیرا مرورگرها هر محدودیتی را که ناآشنا باشند نادیده می‌گیرند.
 
-## Value
+## مقدار
 
-A double-precision floating-point number indicating the current configuration of the
-track's aspect ratio. The aspect ratio is computed by taking the track's width, dividing
-by its height, and rounding the result to ten decimal places. For example, the standard
-16:9 high-definition aspect ratio can be computed as 1920/1080, or 1.7777777778.
+یک عدد اعشاری با دقت دوبرابر که پیکربندی فعلی نسبت تصویر ردگیری (track) را نشان می‌دهد. نسبت تصویر با گرفتن عرض ردگیری، تقسیم بر ارتفاع آن و گرد کردن نتیجه به ده رقم اعشار محاسبه می‌شود. به عنوان مثال، نسبت تصویر استاندارد 16:9 با وضوح بالا را می‌توان به صورت 1920/1080 یا 1.7777777778 محاسبه کرد.
 
-## Examples
+## مثال‌ها
 
-See the [Constraint exerciser](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#example_constraint_exerciser) example.
+به مثال [تمرین‌کننده محدودیت (Constraint exerciser)](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#example_constraint_exerciser) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
-- [Capabilities, constraints, and settings](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints)
+- [API ضبط و جریان‌های رسانه‌ای](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
+- [قابلیت‌ها، محدودیت‌ها و تنظیمات](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints)
 - {{domxref("MediaTrackConstraints.aspectRatio")}}
 - {{domxref("MediaTrackSettings")}}
