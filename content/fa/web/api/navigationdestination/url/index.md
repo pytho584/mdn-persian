@@ -1,11 +1,5 @@
 ---
 title: "NavigationDestination: url property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigationDestination/url"
-status: "needs-translation"
----
-
----
-title: "NavigationDestination: url property"
 short-title: url
 slug: Web/API/NavigationDestination/url
 page-type: web-api-instance-property
@@ -14,16 +8,15 @@ browser-compat: api.NavigationDestination.url
 
 {{APIRef("Navigation API")}}
 
-The **`url`** read-only property of the
-{{domxref("NavigationDestination")}} interface returns the URL being navigated to.
+ویژگی فقط‌خواندنی **`url`** از رابط {{domxref("NavigationDestination")}}، نشانی اینترنتی (URL) مقصد ناوبری را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
-### Handling a navigation using `intercept()`
+### مدیریت یک ناوبری با استفاده از `intercept()`
 
 ```js
 navigation.addEventListener("navigate", (event) => {
@@ -51,15 +44,15 @@ navigation.addEventListener("navigate", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
 - [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
