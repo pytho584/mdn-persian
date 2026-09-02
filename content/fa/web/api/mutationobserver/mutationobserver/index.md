@@ -1,11 +1,5 @@
 ---
 title: "MutationObserver: MutationObserver() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver/MutationObserver"
-status: "needs-translation"
----
-
----
-title: "MutationObserver: MutationObserver() constructor"
 short-title: MutationObserver()
 slug: Web/API/MutationObserver/MutationObserver
 page-type: web-api-constructor
@@ -14,49 +8,40 @@ browser-compat: api.MutationObserver.MutationObserver
 
 {{APIRef("DOM WHATWG")}}
 
-The DOM **`MutationObserver()`**
-constructor — part of the {{domxref("MutationObserver")}} interface — creates and
-returns a new observer which invokes a specified callback when DOM events
-occur.
+سازندهٔ **`MutationObserver()`** — که بخشی از رابط {{domxref("MutationObserver")}} است — یک ناظر (observer) جدید ساخته و بازمی‌گرداند که هنگام رخ دادن رویدادهای DOM، تابع callback مشخصی را فراخوانی می‌کند.
 
-DOM observation does not begin immediately; the
-{{domxref("MutationObserver.observe", "observe()")}} method must be called first to
-establish which portion of the DOM to watch and what kinds of changes to watch for.
+مشاهدهٔ DOM بلافاصله آغاز نمی‌شود؛ ابتدا باید متد {{domxref("MutationObserver.observe", "observe()")}} فراخوانی شود تا مشخص کند کدام بخش از DOM و چه نوع تغییراتی باید زیر نظر گرفته شوند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 new MutationObserver(callback)
 ```
 
-### Parameters
+### پارامترها
 
 - `callback`
-  - : A function which will be called on each DOM change that qualifies given the
-    observed node or subtree and options.
+  - : تابعی که برای هر تغییر DOM که با توجه به گره یا زیردرختِ مشاهده‌شده و گزینه‌ها واجد شرایط باشد، فراخوانی می‌شود.
 
-    The `callback` function takes as input two parameters:
-    1. An array of {{domxref("MutationRecord")}} objects, describing each change that
-       occurred.
-    2. The {{domxref("MutationObserver")}} which invoked the
-       `callback`. This is most often used to disconnect the observer using {{domxref("MutationObserver.disconnect()")}}.
+    تابع `callback` دو پارامتر ورودی می‌گیرد:
+    1. آرایه‌ای از اشیاء {{domxref("MutationRecord")}} که هر تغییری را که رخ داده توصیف می‌کند.
+    2. شیء {{domxref("MutationObserver")}}ای که `callback` را فراخوانی کرده است. این پارامتر بیشتر برای قطع کردن ناظر با استفاده از {{domxref("MutationObserver.disconnect()")}} به کار می‌رود.
 
-    See the [examples](#examples) below for more details.
+    برای جزئیات بیشتر، به [مثال‌های زیر](#examples) مراجعه کنید.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("MutationObserver")}} object, configured to call the specified
-`callback` when DOM mutations occur.
+یک شیء جدید {{domxref("MutationObserver")}} که طوری پیکربندی شده است تا هنگام رخ دادن تغییرات در DOM، تابع `callback` مشخص‌شده را فراخوانی کند.
 
-## Examples
+## مثال‌ها
 
-### Observing child elements
+### مشاهدهٔ عناصر فرزند
 
-This example has buttons to add an {{htmlelement("li")}} element to a list, and to remove the first `<li>` element from the list.
+در این مثال، دکمه‌هایی برای افزودن یک عنصر {{htmlelement("li")}} به فهرست و حذف اولین عنصر `<li>` از فهرست وجود دارد.
 
-We use a `MutationObserver` to be notified about changes to the list. In the callback, we log additions and removals, and as soon as the list is empty, we disconnect the observer.
+ما از یک `MutationObserver` استفاده می‌کنیم تا از تغییرات فهرست باخبر شویم. در تابع callback، موارد افزوده‌شده و حذف‌شده را ثبت (log) می‌کنیم و به محض اینکه فهرست خالی شد، ناظر را قطع می‌کنیم.
 
-The "Reset example" button resets the example to its original state.
+دکمهٔ «Reset example» مثال را به حالت اولیه بازمی‌گرداند.
 
 #### HTML
 
@@ -139,18 +124,18 @@ const observer = new MutationObserver(logChanges);
 observer.observe(container, observerOptions);
 ```
 
-#### Result
+#### نتیجه
 
-Try clicking "Add child" to add list items, and "Remove child" to remove them. The observer callback logs additions and removals. As soon as the list is empty, the observer logs a "Disconnected" message and disconnects the observer.
+برای افزودن آیتم به فهرست روی «Add child» کلیک کنید و برای حذف آن‌ها روی «Remove child» کلیک کنید. تابع callbackِ observer، افزودن‌ها و حذف‌ها را ثبت می‌کند. به محض خالی شدن فهرست، observer پیام «Disconnected» را ثبت کرده و خود را قطع می‌کند.
 
-The "Reset example" button reloads the example so you can try it again.
+دکمهٔ «Reset example» مثال را دوباره بارگذاری می‌کند تا بتوانید آن را از نو امتحان کنید.
 
 {{EmbedLiveSample("Observing child elements", 0, 400)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
