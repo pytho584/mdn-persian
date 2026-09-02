@@ -1,7 +1,5 @@
 ---
 title: "ImageBitmapRenderingContext: canvas property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ImageBitmapRenderingContext/canvas"
-status: "needs-translation"
 ---
 
 ---
@@ -14,23 +12,21 @@ browser-compat: api.ImageBitmapRenderingContext.canvas
 
 {{APIRef("Canvas API")}}{{AvailableInWorkers}}
 
-The **`ImageBitmapRenderingContext.canvas`** property, part of the
-[Canvas API](/en-US/docs/Web/API/Canvas_API), is a read-only reference to the
-{{domxref("HTMLCanvasElement")}} or {{domxref("OffscreenCanvas")}} object that is associated with the given context.
+ویژگی **`ImageBitmapRenderingContext.canvas`** که بخشی از [Canvas API](/en-US/docs/Web/API/Canvas_API) است، یک ارجاع فقط‌خواندنی به شیء {{domxref("HTMLCanvasElement")}} یا {{domxref("OffscreenCanvas")}} است که با context مورد نظر مرتبط است.
 
-## Value
+## مقدار
 
-A {{domxref("HTMLCanvasElement")}} or {{domxref("OffscreenCanvas")}} object.
+یک شیء {{domxref("HTMLCanvasElement")}} یا {{domxref("OffscreenCanvas")}}.
 
-## Examples
+## مثال‌ها
 
-Given this {{HTMLElement("canvas")}} element:
+این عنصر {{HTMLElement("canvas")}} را در نظر بگیرید:
 
 ```html
 <canvas id="canvas"></canvas>
 ```
 
-You can get a reference to the canvas element within the `ImageBitmapRenderingContext` by using the `canvas` property:
+با استفاده از ویژگی `canvas`، می‌توانید ارجاعی به عنصر canvas را از طریق `ImageBitmapRenderingContext` به‌دست آورید:
 
 ```js
 const canvas = document.getElementById("canvas");
@@ -38,15 +34,15 @@ const ctx = canvas.getContext("bitmaprenderer");
 console.log(ctx.canvas === canvas); // true
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("ImageBitmapRenderingContext")}} interface
+- رابط {{domxref("ImageBitmapRenderingContext")}}
 - [Canvas API](/en-US/docs/Web/API/Canvas_API)
