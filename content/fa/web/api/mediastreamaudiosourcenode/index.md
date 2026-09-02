@@ -1,10 +1,4 @@
 ---
-title: "MediaStreamAudioSourceNode"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamAudioSourceNode"
-status: "needs-translation"
----
-
----
 title: MediaStreamAudioSourceNode
 slug: Web/API/MediaStreamAudioSourceNode
 page-type: web-api-interface
@@ -13,80 +7,80 @@ browser-compat: api.MediaStreamAudioSourceNode
 
 {{APIRef("Web Audio API")}}
 
-The **`MediaStreamAudioSourceNode`** interface is a type of {{domxref("AudioNode")}} which operates as an audio source whose media is received from a {{domxref("MediaStream")}} obtained using the WebRTC or Media Capture and Streams APIs.
+رابط **`MediaStreamAudioSourceNode`** نوعی {{domxref("AudioNode")}} است که به عنوان یک منبع صوتی عمل می‌کند و رسانهٔ آن از یک {{domxref("MediaStream")}} دریافت می‌شود که با استفاده از APIهای WebRTC یا Media Capture and Streams به دست آمده است.
 
-This media could be from a microphone (through {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}}) or from a remote peer on a WebRTC call (using the {{domxref("RTCPeerConnection")}}'s audio tracks).
+این رسانه می‌تواند از یک میکروفون (از طریق {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}}) یا از یک همتا (peer) راه دور در یک تماس WebRTC (با استفاده از ردهای صوتی {{domxref("RTCPeerConnection")}}) باشد.
 
-A `MediaStreamAudioSourceNode` has no inputs and exactly one output, and is created using the {{domxref("AudioContext.createMediaStreamSource()")}} method.
+یک `MediaStreamAudioSourceNode` هیچ ورودی ندارد و دقیقاً یک خروجی دارد و با استفاده از متد {{domxref("AudioContext.createMediaStreamSource()")}} ساخته می‌شود.
 
-The `MediaStreamAudioSourceNode` takes the audio from the _first_ {{domxref("MediaStreamTrack")}} whose {{domxref("MediaStreamTrack.kind", "kind")}} attribute's value is `audio`. See [Track ordering](#track_ordering) for more information about the order of tracks.
+`MediaStreamAudioSourceNode` صدا را از _اولین_ {{domxref("MediaStreamTrack")}} می‌گیرد که مقدار ویژگی {{domxref("MediaStreamTrack.kind", "kind")}} آن `audio` باشد. برای اطلاعات بیشتر درباره ترتیب ردها، به [ترتیب ردها](#track_ordering) مراجعه کنید.
 
-The number of channels output by the node matches the number of tracks found in the selected audio track.
+تعداد کانال‌های خروجی این گره با تعداد ردهای موجود در رد صوتی انتخاب‌شده مطابقت دارد.
 
 {{InheritanceDiagram}}
 
 <table class="properties">
   <tbody>
     <tr>
-      <th scope="row">Number of inputs</th>
+      <th scope="row">تعداد ورودی‌ها</th>
       <td><code>0</code></td>
     </tr>
     <tr>
-      <th scope="row">Number of outputs</th>
+      <th scope="row">تعداد خروجی‌ها</th>
       <td><code>1</code></td>
     </tr>
     <tr>
-      <th scope="row">Channel count</th>
+      <th scope="row">تعداد کانال‌ها</th>
       <td>
-        2 (but note that {{domxref("AudioNode.channelCount")}} is only used for up-mixing and down-mixing {{domxref("AudioNode")}} inputs, and <code>MediaStreamAudioSourceNode</code> doesn't have any input)
+        ۲ (اما توجه داشته باشید که {{domxref("AudioNode.channelCount")}} فقط برای up-mixing و down-mixing ورودی‌های {{domxref("AudioNode")}} استفاده می‌شود و <code>MediaStreamAudioSourceNode</code> هیچ ورودی‌ای ندارد)
       </td>
     </tr>
   </tbody>
 </table>
 
-## Constructor
+## سازنده
 
 - {{domxref("MediaStreamAudioSourceNode.MediaStreamAudioSourceNode", "MediaStreamAudioSourceNode()")}}
-  - : Creates a new `MediaStreamAudioSourceNode` object instance with the specified options.
+  - : یک شیء نمونه جدید از `MediaStreamAudioSourceNode` با گزینه‌های مشخص‌شده ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_In addition to the following properties, `MediaStreamAudioSourceNode` inherits the properties of its parent, {{domxref("AudioNode")}}._
+_علاوه بر ویژگی‌های زیر، `MediaStreamAudioSourceNode` ویژگی‌های والد خود، {{domxref("AudioNode")}} را نیز به ارث می‌برد._
 
 - {{domxref("MediaStreamAudioSourceNode.mediaStream", "mediaStream")}} {{ReadOnlyInline}}
-  - : The {{domxref("MediaStream")}} used when constructing this `MediaStreamAudioSourceNode`.
+  - : {{domxref("MediaStream")}} که هنگام ساخت این `MediaStreamAudioSourceNode` استفاده شده است.
 
-## Instance methods
+## روش‌های نمونه
 
-_Inherits methods from its parent, {{domxref("AudioNode")}}_.
+_روش‌ها را از والد خود، {{domxref("AudioNode")}} به ارث می‌برد._
 
-## Usage notes
+## نکات استفاده
 
-### Track ordering
+### ترتیب ردها
 
-For the purposes of the `MediaStreamTrackAudioSourceNode` interface, the order of the audio tracks on the stream is determined by taking the tracks whose {{domxref("MediaStreamTrack.kind", "kind")}} is `audio`, then sorting the tracks by their {{domxref("MediaStreamTrack.id", "id")}} property's values, in Unicode code point order (essentially, in alphabetical or lexicographical order, for IDs which are simple alphanumeric strings).
+برای اهداف رابط `MediaStreamTrackAudioSourceNode`، ترتیب ردهای صوتی در استریم به این صورت تعیین می‌شود که ابتدا ردهایی که {{domxref("MediaStreamTrack.kind", "kind")}} آن‌ها `audio` است گرفته می‌شوند و سپس ردها بر اساس مقادیر ویژگی {{domxref("MediaStreamTrack.id", "id")}} آن‌ها، به ترتیب نقاط کد یونیکد مرتب می‌شوند (در اصل، برای شناسه‌هایی که رشته‌های عددی-الفبایی ساده هستند، به ترتیب حروف الفبا یا ترتیب واژه‌نامه‌ای).
 
-The **first** track, then, is the track whose `id` comes first when the tracks' IDs are all sorted by Unicode code point.
+بنابراین، **اولین** رد، ردی است که `id` آن هنگام مرتب‌سازی همه شناسه‌های ردها بر اساس نقطه کد یونیکد، در ابتدا قرار می‌گیرد.
 
-However, it's important to note that the rule establishing this ordering was added long after this interface was first introduced into the [Web Audio API](/en-US/docs/Web/API/Web_Audio_API). As such, you can't easily rely on the order matching between any two browsers or browser versions.
+با این حال، توجه به این نکته مهم است که قانون تعیین‌کننده این ترتیب، مدت‌ها پس از معرفی این رابط در [Web Audio API](/en-US/docs/Web/API/Web_Audio_API) اضافه شده است. بنابراین، نمی‌توانید به راحتی به مطابقت ترتیب بین دو مرورگر یا دو نسخه از یک مرورگر اعتماد کنید.
 
-The {{domxref("MediaStreamTrackAudioSourceNode")}} interface is similar to `MediaStreamAudioSourceNode`, but avoids this problem by letting you specify which track you want to use.
+رابط {{domxref("MediaStreamTrackAudioSourceNode")}} مشابه `MediaStreamAudioSourceNode` است، اما با این تفاوت که به شما امکان می‌دهد مشخص کنید کدام رد را می‌خواهید استفاده کنید و از این طریق از این مشکل جلوگیری می‌کند.
 
-## Example
+## مثال
 
-See [`AudioContext.createMediaStreamSource()`](/en-US/docs/Web/API/AudioContext/createMediaStreamSource#examples) for example code that uses this object.
+برای کد نمونه‌ای که از این شیء استفاده می‌کند، به [`AudioContext.createMediaStreamSource()`](/en-US/docs/Web/API/AudioContext/createMediaStreamSource#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
 - [WebRTC API](/en-US/docs/Web/API/WebRTC_API)
 - [Media Capture and Streams API (Media Streams)](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
 - {{domxref("MediaStreamTrackAudioSourceNode")}}
