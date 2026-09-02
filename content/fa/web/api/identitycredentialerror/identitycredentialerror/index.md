@@ -1,7 +1,5 @@
 ---
 title: "IdentityCredentialError: IdentityCredentialError() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IdentityCredentialError/IdentityCredentialError"
-status: "needs-translation"
 ---
 
 ---
@@ -16,9 +14,9 @@ browser-compat: api.IdentityCredentialError.IdentityCredentialError
 
 {{APIRef("Fetch API")}}{{AvailableInWorkers}}{{SeeCompatTable}}
 
-The **`IdentityCredentialError()`** constructor creates a new {{domxref("IdentityCredentialError")}} object.
+سازندهی **`IdentityCredentialError()`** یک شیء جدید {{domxref("IdentityCredentialError")}} ایجاد میکند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 new IdentityCredentialError()
@@ -26,18 +24,18 @@ new IdentityCredentialError(message)
 new IdentityCredentialError(message, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `message`
-  - : A description of the error. If not present, the empty string `''` is used.
+  - : شرحی از خطا. اگر موجود نباشد، رشتهی خالی `''` استفاده میشود.
 - `options` {{optional_inline}}
-  - : An object that can have the following properties:
+  - : یک شیء که میتواند ویژگیهای زیر را داشته باشد:
     - `error` {{optional_inline}}
-      - : A string. This can be either one of the values listed in the [OAuth 2.0 specified error list](https://datatracker.ietf.org/doc/html/rfc6749#section-4.1.2.1) or an arbitrary string.
+      - : یک رشته. این میتواند یکی از مقادیر موجود در [فهرست خطاهای مشخصشدهی OAuth 2.0](https://datatracker.ietf.org/doc/html/rfc6749#section-4.1.2.1) یا یک رشتهی دلخواه باشد.
     - `url` {{optional_inline}}
-      - : A URL pointing to human-readable information about the error to display to users, such as how to fix the error or contact customer service.
+      - : یک URL که به اطلاعات قابلخواندن برای انسان دربارهی خطا اشاره میکند تا به کاربران نمایش داده شود، مانند نحوهی رفع خطا یا تماس با پشتیبانی مشتری.
 
-## Examples
+## مثالها
 
 ```js
 try {
@@ -57,15 +55,15 @@ try {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("CredentialsContainer.get()")}}
-- [ID assertion error responses](/en-US/docs/Web/API/FedCM_API/IDP_integration#id_assertion_error_responses)
+- [پاسخهای خطای تأیید هویت](/en-US/docs/Web/API/FedCM_API/IDP_integration#id_assertion_error_responses)
