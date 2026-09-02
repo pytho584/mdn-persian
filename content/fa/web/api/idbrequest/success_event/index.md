@@ -1,11 +1,5 @@
 ---
 title: "IDBRequest: success event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/success_event"
-status: "needs-translation"
----
-
----
-title: "IDBRequest: success event"
 short-title: success
 slug: Web/API/IDBRequest/success_event
 page-type: web-api-event
@@ -14,13 +8,13 @@ browser-compat: api.IDBRequest.success_event
 
 {{ APIRef("IndexedDB") }}
 
-The `success` event is fired when an `IDBRequest` succeeds. In the `success` event handler, you can access the result of the request, as well as place more requests to the same transaction.
+رویداد `success` زمانی صادر می‌شود که یک `IDBRequest` با موفقیت انجام شود. در کنترل‌گر رویداد `success` می‌توانید به نتیجهٔ درخواست دسترسی داشته باشید و همچنین درخواست‌های بیشتری را به همان تراکنش اضافه کنید.
 
-This event is not cancelable and does not bubble.
+این رویداد قابل لغو نیست و به‌صورت حبابی (bubbling) به عناصر والد منتشر نمی‌شود.
 
-## Syntax
+## سینتکس
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در متدهایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌گر رویداد (event handler property) را تنظیم کنید.
 
 ```js-nolint
 addEventListener("success", (event) => { })
@@ -28,13 +22,13 @@ addEventListener("success", (event) => { })
 onsuccess = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## مثال‌ها
 
-This example tries to open a database and listens for the `success` event using `addEventListener()`:
+این مثال تلاش می‌کند یک پایگاه‌داده را باز کند و با استفاده از `addEventListener()` به رویداد `success` گوش دهد:
 
 ```js
 // Open the database
@@ -65,7 +59,7 @@ openRequest.addEventListener("success", (event) => {
 });
 ```
 
-The same example, but using the `onsuccess` event handler property:
+همین مثال، اما با استفاده از ویژگی کنترل‌گر رویداد `onsuccess`:
 
 ```js
 // Open the database
@@ -96,14 +90,14 @@ openRequest.onsuccess = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
