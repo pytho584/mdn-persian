@@ -1,11 +1,5 @@
 ---
 title: "MediaQueryList: matches property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/matches"
-status: "needs-translation"
----
-
----
-title: "MediaQueryList: matches property"
 short-title: matches
 slug: Web/API/MediaQueryList/matches
 page-type: web-api-instance-property
@@ -14,25 +8,17 @@ browser-compat: api.MediaQueryList.matches
 
 {{APIRef("CSSOM view API")}}
 
-The **`matches`** read-only property of the
-{{DOMxRef("MediaQueryList")}} interface is a boolean value that returns
-`true` if the {{DOMxRef("document")}} currently matches the media query list,
-or `false` if not.
+خاصیت فقط‌خواندنی **`matches`** در رابط {{DOMxRef("MediaQueryList")}} یک مقدار بولی است که اگر {{DOMxRef("document")}} در حال حاضر با فهرست رسانه‌ای (media query list) مطابقت داشته باشد `true` و در غیر این صورت `false` برمی‌گرداند.
 
-You can be notified when the value of `matches` changes by watching for the
-{{domxref("MediaQueryList.change_event", "change")}} event to be fired at the
-`MediaQueryList`.
+با گوش دادن به رویداد {{domxref("MediaQueryList.change_event", "change")}} که روی `MediaQueryList` رخ می‌دهد، می‌توانید از تغییر مقدار `matches` مطلع شوید.
 
-## Value
+## مقدار
 
-A boolean value that is `true` if the {{DOMxRef("document")}}
-currently matches the media query list; otherwise, it's `false`.
+یک مقدار بولی که اگر {{DOMxRef("document")}} در حال حاضر با فهرست رسانه‌ای مطابقت داشته باشد `true` است؛ در غیر این صورت `false`.
 
-## Examples
+## مثال‌ها
 
-This example detects viewport orientation changes by creating a media query using the
-{{cssxref("@media/orientation")}} media
-feature:
+این مثال با ایجاد یک فهرست رسانه‌ای با استفاده از ویژگی رسانه‌ای {{cssxref("@media/orientation")}} تغییر جهت نمای دید (viewport) را تشخیص می‌دهد:
 
 ```js
 const mql = window.matchMedia("(orientation:landscape)");
@@ -45,15 +31,15 @@ mql.addEventListener("change", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Media queries](/en-US/docs/Web/CSS/Guides/Media_queries/Using)
 - [Using media queries from code](/en-US/docs/Web/CSS/Guides/Media_queries/Testing)
