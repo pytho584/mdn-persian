@@ -1,11 +1,5 @@
 ---
 title: "Magnetometer: x property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Magnetometer/x"
-status: "needs-translation"
----
-
----
-title: "Magnetometer: x property"
 short-title: x
 slug: Web/API/Magnetometer/x
 page-type: web-api-instance-property
@@ -16,18 +10,15 @@ browser-compat: api.Magnetometer.x
 
 {{securecontext_header}}{{APIRef("Sensor API")}}{{SeeCompatTable}}
 
-The **`x`** read-only property of the
-{{domxref("Magnetometer")}} interface returns a number specifying
-the magnetic field around the device's x-axis.
+ویژگی فقط‌خواندنی **`x`** از رابط {{domxref("Magnetometer")}} عددی را برمی‌گرداند که میدان مغناطیسی اطراف محور x دستگاه را مشخص می‌کند.
 
-## Value
+## مقدار
 
-A {{jsxref('Number')}}.
+یک {{jsxref('Number')}}.
 
-## Examples
+## مثال‌ها
 
-The magnetometer is typically read in the {{domxref('Sensor.reading_event', 'reading')}} event
-callback. In the example below this occurs sixty times a second.
+مغناطیس‌سنج معمولاً در callback رویداد {{domxref('Sensor.reading_event', 'reading')}} خوانده می‌شود. در مثال زیر این کار شصت بار در ثانیه انجام می‌شود.
 
 ```js
 let magSensor = new Magnetometer({ frequency: 60 });
@@ -40,10 +31,10 @@ magSensor.addEventListener("reading", (e) => {
 magSensor.start();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
