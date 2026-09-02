@@ -1,11 +1,5 @@
 ---
 title: "NavigateEvent: navigationType property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigateEvent/navigationType"
-status: "needs-translation"
----
-
----
-title: "NavigateEvent: navigationType property"
 short-title: navigationType
 slug: Web/API/NavigateEvent/navigationType
 page-type: web-api-instance-property
@@ -14,29 +8,28 @@ browser-compat: api.NavigateEvent.navigationType
 
 {{APIRef("Navigation API")}}
 
-The **`navigationType`** read-only property of the
-{{domxref("NavigateEvent")}} interface returns the type of the navigation — `push`, `reload`, `replace`, or `traverse`.
+**`navigationType`** 只读属性，属于 {{domxref("NavigateEvent")}} 接口，返回导航的类型 — `push`、`reload`、`replace` 或 `traverse`。
 
-## Value
+## 值
 
-An enumerated value representing the type of navigation.
+一个枚举值，表示导航的类型。
 
-The possible values are:
+可能的值如下：
 
 - `push`
-  - : A new location is navigated to, causing a new entry to be pushed onto the history list.
+  - : 导航到一个新位置，导致一个新条目被推入历史列表。
 - `reload`
-  - : The {{domxref("Navigation.currentEntry")}} is reloaded.
+  - : 重新加载 {{domxref("Navigation.currentEntry")}}。
 - `replace`
-  - : The {{domxref("Navigation.currentEntry")}} is replaced with a new history entry. This new entry will reuse the same {{domxref("NavigationHistoryEntry.key", "key")}}, but be assigned a different {{domxref("NavigationHistoryEntry.id", "id")}}.
+  - : {{domxref("Navigation.currentEntry")}} 被替换为新历史条目。这个新条目将复用相同的 {{domxref("NavigationHistoryEntry.key", "key")}}，但会被分配一个不同的 {{domxref("NavigationHistoryEntry.id", "id")}}。
 - `traverse`
-  - : The browser navigates from one existing history entry to another existing history entry.
+  - : 浏览器从一个现有历史条目导航到另一个现有历史条目。
 
-## Examples
+## 示例
 
-### Async transitions with special back/forward handling
+### 带特殊后退/前进处理的异步过渡
 
-Sometimes it's desirable to handle back/forward navigations specially, e.g., reusing cached views by transitioning them onto the screen. This can be done by branching as follows:
+有时需要特殊处理后退/前进导航，例如通过将缓存的视图过渡到屏幕上来复用它们。可以通过如下分支逻辑实现：
 
 ```js
 navigation.addEventListener("navigate", (event) => {
@@ -74,15 +67,15 @@ navigation.addEventListener("navigate", (event) => {
 });
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
 - [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
 - [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
