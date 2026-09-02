@@ -1,11 +1,5 @@
 ---
 title: "ImageBitmap: height property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ImageBitmap/height"
-status: "needs-translation"
----
-
----
-title: "ImageBitmap: height property"
 short-title: height
 slug: Web/API/ImageBitmap/height
 page-type: web-api-instance-property
@@ -14,16 +8,16 @@ browser-compat: api.ImageBitmap.height
 
 {{APIRef("Canvas API")}}{{AvailableInWorkers}}
 
-The **`ImageBitmap.height`** read-only property returns the {{domxref("ImageBitmap")}} object's height in CSS pixels.
+خاصیت فقط خواندنی **`ImageBitmap.height`** ارتفاع شیء {{domxref("ImageBitmap")}} را بر حسب پیکسل‌های CSS برمی‌گرداند.
 
-## Value
+## مقدار
 
-A number represents the {{domxref("ImageBitmap")}} object's height in CSS pixels.
+یک عدد که ارتفاع شیء {{domxref("ImageBitmap")}} را بر حسب پیکسل‌های CSS نشان می‌دهد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
