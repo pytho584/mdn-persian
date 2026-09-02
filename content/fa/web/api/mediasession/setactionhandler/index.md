@@ -1,11 +1,5 @@
 ---
 title: "MediaSession: setActionHandler() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaSession/setActionHandler"
-status: "needs-translation"
----
-
----
-title: "MediaSession: setActionHandler() method"
 short-title: setActionHandler()
 slug: Web/API/MediaSession/setActionHandler
 page-type: web-api-instance-method
@@ -14,97 +8,95 @@ browser-compat: api.MediaSession.setActionHandler
 
 {{APIRef("Media Session API")}}
 
-The **`setActionHandler()`** method of the {{domxref("MediaSession")}} interface sets a handler for a media session action.
-These actions let a web app receive notifications when the user engages a device's built-in physical or onscreen media controls, such as play, stop, or seek buttons.
+متد **`setActionHandler()`** در رابط {{domxref("MediaSession")}} یک کنترل‌کننده (handler) برای یک اقدام رسانه‌ای تنظیم می‌کند. این اقدامات به برنامه‌های وب امکان می‌دهند وقتی کاربر از کنترل‌های رسانه‌ای فیزیکی یا روی‌صفحه‌ای داخلی دستگاه مانند دکمه‌های پخش، توقف یا جستجو استفاده می‌کند، اعلان دریافت کنند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 setActionHandler(type, callback)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string representing an action type to listen for. It will be one
-    of the following:
+  - : یک رشته که نوع اقدامی را که باید به آن گوش داد را نشان می‌دهد. یکی از مقادیر زیر خواهد بود:
     - `enterpictureinpicture`
-      - : Open the media in a [Picture-in-picture](/en-US/docs/Web/API/Picture-in-Picture_API) or [Document Picture-in-picture](/en-US/docs/Web/API/Document_Picture-in-Picture_API) window.
+      - : باز کردن رسانه در پنجره [حالت تصویر-در-تصویر](/en-US/docs/Web/API/Picture-in-Picture_API) یا [تصویر-در-تصویر سند](/en-US/docs/Web/API/Document_Picture-in-Picture_API).
     - `hangup`
-      - : End a call.
+      - : پایان دادن به یک تماس.
     - `nextslide`
-      - : Move to the next slide, when presenting a slide deck.
+      - : رفتن به اسلاید بعدی، هنگام ارائه یک مجموعه اسلاید.
     - `nexttrack`
-      - : Advance playback to the next track.
+      - : پیش بردن پخش به قطعه بعدی.
     - `pause`
-      - : Pause playback of the media.
+      - : توقف موقت پخش رسانه.
     - `play`
-      - : Begin (or resume) playback of the media.
+      - : شروع (یا ادامه) پخش رسانه.
     - `previousslide`
-      - : Move to the previous slide, when presenting a slide deck.
+      - : رفتن به اسلاید قبلی، هنگام ارائه یک مجموعه اسلاید.
     - `previoustrack`
-      - : Move back to the previous track.
+      - : بازگشت به قطعه قبلی.
     - `seekbackward`
-      - : Seek backward through the media from the current position.
-        The `seekOffset` property passed to the callback specifies the amount of time to seek backward.
+      - : جستجوی عقب در رسانه از موقعیت فعلی.
+        ویژگی `seekOffset` که به تابع بازخوانی (callback) ارسال می‌شود، مقدار زمانی را که باید به عقب جستجو شود مشخص می‌کند.
     - `seekforward`
-      - : Seek forward from the current position through the media.
-        The `seekOffset` property passed to the callback specifies the amount of time to seek forward.
+      - : جستجوی جلو از موقعیت فعلی در رسانه.
+        ویژگی `seekOffset` که به تابع بازخوانی ارسال می‌شود، مقدار زمانی را که باید به جلو جستجو شود مشخص می‌کند.
     - `seekto`
-      - : Move the playback position to the specified time within the media.
-        The time to move to is specified in the `seekTime` property passed to the callback.
-        If you intend to perform multiple `seekto` operations in rapid succession, you can also specify the `fastSeek` property passed to the callback with a value of `true`.
-        This lets the browser know it can take steps to optimize repeated operations, and is likely to result in improved performance.
+      - : انتقال موقعیت پخش به زمان مشخص‌شده در رسانه.
+        زمانی که باید به آن منتقل شود در ویژگی `seekTime` که به تابع بازخوانی ارسال می‌شود مشخص می‌گردد.
+        اگر قصد دارید چندین عملیات `seekto` را پشت سر هم و سریع انجام دهید، می‌توانید ویژگی `fastSeek` را نیز با مقدار `true` به تابع بازخوانی ارسال کنید.
+        این کار به مرورگر اجازه می‌دهد بداند که می‌تواند برای بهینه‌سازی عملیات تکراری گام بردارد و به احتمال زیاد به بهبود عملکرد منجر می‌شود.
     - `skipad`
-      - : Skip past the currently playing advertisement or commercial.
-        This action may or may not be available, depending on the platform and {{Glossary("user agent")}}, or may be disabled due to subscription level or other circumstances.
+      - : رد کردن تبلیغ یا آگهی بازرگانی که در حال پخش است.
+        این اقدام ممکن است بسته به پلتفرم و {{Glossary("user agent", "عامل کاربر")}} در دسترس باشد یا نباشد، یا ممکن است به دلیل سطح اشتراک یا شرایط دیگر غیرفعال شده باشد.
     - `stop`
-      - : Halt playback entirely.
+      - : توقف کامل پخش.
     - `togglecamera`
-      - : Turn the user's active camera on or off.
+      - : روشن یا خاموش کردن دوربین فعال کاربر.
     - `togglemicrophone`
-      - : Mute or unmute the user's microphone.
+      - : قطع یا وصل کردن میکروفون کاربر.
     - `togglescreenshare`
-      - : Turn the user's active screenshare on or off.
+      - : روشن یا خاموش کردن اشتراک‌گذاری صفحه فعال کاربر.
 - `callback`
-  - : A function to call when the specified action type is invoked. The callback should not return a value. The callback receives a dictionary containing the following properties:
+  - : تابعی که هنگام فراخوانی نوع اقدام مشخص‌شده اجرا می‌شود. تابع بازخوانی نباید مقداری برگرداند. تابع بازخوانی یک شیء شامل ویژگی‌های زیر دریافت می‌کند:
     - `action`
-      - : A string representing the action type. This property allows a single callback to handle multiple action types.
+      - : یک رشته که نوع اقدام را نشان می‌دهد. این ویژگی به یک تابع بازخوانی واحد اجازه می‌دهد چند نوع اقدام را مدیریت کند.
     - `enterPictureInPictureReason` {{optional_inline}}
-      - : This property will be available if the action is [`enterpictureinpicture`](#enterpictureinpicture).
-        It is an enumerated value that indicates the reason why the browser triggered this action. Possible values are:
+      - : این ویژگی در صورتی در دسترس خواهد بود که اقدام [`enterpictureinpicture`](#enterpictureinpicture) باشد.
+        این یک مقدار شمارشی است که دلیلی را نشان می‌دهد که مرورگر این اقدام را فعال کرده است. مقادیر ممکن عبارتند از:
         - `contentoccluded`
-          - : The page displaying the media has become occluded, for example, due to tab switching or minimization.
+          - : صفحه‌ای که رسانه را نمایش می‌دهد پوشیده شده است، مثلاً به دلیل تغییر برگه یا کوچک‌سازی پنجره.
         - `useraction`
-          - : The user has taken an explicit action to trigger picture-in-picture mode, such as selecting a "picture-in-picture" option from a context menu or the browser chrome.
+          - : کاربر اقدام صریحی برای فعال کردن حالت تصویر-در-تصویر انجام داده است، مانند انتخاب گزینه «تصویر-در-تصویر» از منوی زمینه یا رابط مرورگر.
         - `other`
-          - : The reason for entering picture-in-picture mode is something not covered by the other values.
+          - : دلیل ورود به حالت تصویر-در-تصویر چیزی است که توسط مقادیر دیگر پوشش داده نمی‌شود.
     - `fastSeek` {{optional_inline}}
-      - : A [`seekto`](#seekto) action may _optionally_ include this property, which is a Boolean value indicating whether or not to perform a "fast" seek.
-        A "fast" seek is a seek being performed in a rapid sequence, such as when fast-forwarding or reversing through the media, rapidly skipping through it.
-        This property can be used to indicate that you should use the shortest possible method to seek the media.
-        `fastSeek` is not included on the final action in the seek sequence in this situation.
+      - : یک اقدام [`seekto`](#seekto) می‌تواند _به‌صورت اختیاری_ این ویژگی را شامل شود، که یک مقدار بولی است نشان می‌دهد آیا جستجوی «سریع» انجام شود یا نه.
+        جستجوی «سریع» به جستجویی گفته می‌شود که در یک توالی سریع انجام می‌شود، مانند زمانی که در حال جلو یا عقب بردن سریع رسانه هستید و به سرعت از آن عبور می‌کنید.
+        این ویژگی می‌تواند برای نشان دادن اینکه باید از کوتاه‌ترین روش ممکن برای جستجو در رسانه استفاده کنید به کار رود.
+        در این شرایط، `fastSeek` در آخرین اقدام از توالی جستجو قرار نمی‌گیرد.
     - `seekOffset` {{optional_inline}}
-      - : If the `action` is either [`seekforward`](#seekforward) or [`seekbackward`](#seekbackward) and this property is present, it is a floating point value which indicates the number of seconds to move the play position forward or backward.
-        If this property isn't present, those actions should choose a reasonable default distance to skip forward or backward (such as 7 or 10 seconds).
+      - : اگر `action` یکی از مقادیر [`seekforward`](#seekforward) یا [`seekbackward`](#seekbackward) باشد و این ویژگی موجود باشد، یک مقدار اعشاری است که تعداد ثانیه‌هایی را نشان می‌دهد که موقعیت پخش به جلو یا عقب منتقل شود.
+        اگر این ویژگی موجود نباشد، آن اقدامات باید یک فاصله پیش‌فرض منطقی برای پرش به جلو یا عقب انتخاب کنند (مثلاً ۷ یا ۱۰ ثانیه).
     - `seekTime` {{optional_inline}}
-      - : If the `action` is [`seekto`](#seekto), this property must be present and must be a floating-point value indicating the absolute time within the media to move the playback position to, where 0 indicates the beginning of the media. This property is not present for other action types.
+      - : اگر `action` مقدار [`seekto`](#seekto) باشد، این ویژگی باید موجود باشد و باید یک مقدار اعشاری باشد که زمان مطلق در رسانه را نشان می‌دهد که موقعیت پخش باید به آن منتقل شود، که در آن ۰ نشان‌دهنده ابتدای رسانه است. این ویژگی برای سایر انواع اقدام وجود ندارد.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-## Description
+## توضیحات
 
-To remove a previously-established action handler, call `setActionHandler()` again, specifying `null` as the `callback`.
+برای حذف یک کنترل‌کننده اقدام که قبلاً تنظیم شده است، دوباره `setActionHandler()` را با مقدار `null` به عنوان `callback` فراخوانی کنید.
 
-The action handler receives as input a single parameter: an object which provides both the action type (so the same function can handle multiple action types), as well as data needed in order to perform the action.
+تابع کنترل‌کننده اقدام یک پارامتر ورودی دریافت می‌کند: یک شیء که هم نوع اقدام را ارائه می‌دهد (تا تابع مشابه بتواند چند نوع اقدام را مدیریت کند) و هم داده‌های لازم برای انجام اقدام را فراهم می‌کند.
 
-## Examples
+## مثال‌ها
 
-### Setting up action handlers for a music player
+### تنظیم کنترل‌کننده‌های اقدام برای یک پخش‌کننده موسیقی
 
-This example creates a new media session and assigns action handlers (which don't do anything) to it.
+این مثال یک نشست رسانه‌ای جدید ایجاد می‌کند و کنترل‌کننده‌های اقدام (که کار خاصی انجام نمی‌دهند) را به آن اختصاص می‌دهد.
 
 ```js
 if ("mediaSession" in navigator) {
@@ -185,7 +177,7 @@ if ("mediaSession" in navigator) {
 }
 ```
 
-The following example sets up two functions for playing and pausing, then uses them as callbacks with the relevant action handlers.
+مثال زیر دو تابع برای پخش و توقف موقت تنظیم می‌کند و سپس از آن‌ها به عنوان تابع بازخوانی با کنترل‌کننده‌های اقدام مربوطه استفاده می‌کند.
 
 ```js
 const actionHandlers = [
@@ -223,7 +215,7 @@ for (const [action, handler] of actionHandlers) {
 }
 ```
 
-This example uses appropriate action handlers to allow seeking in either direction through the playing media.
+این مثال از کنترل‌کننده‌های اقدام مناسب برای امکان جستجو در هر دو جهت در رسانه در حال پخش استفاده می‌کند.
 
 ```js
 navigator.mediaSession.setActionHandler("seekbackward", (evt) => {
@@ -239,15 +231,15 @@ navigator.mediaSession.setActionHandler("seekforward", (evt) => {
 });
 ```
 
-To remove a media action handler, assign it to null.
+برای حذف یک کنترل‌کننده اقدام رسانه‌ای، آن را برابر با `null` قرار دهید.
 
 ```js
 navigator.mediaSession.setActionHandler("nexttrack", null);
 ```
 
-### Supporting multiple actions in one handler function
+### پشتیبانی از چند اقدام در یک تابع کنترل‌کننده
 
-You can also, if you prefer, use a single function to handle multiple action types, by checking the value of the `action` property:
+در صورت تمایل می‌توانید از یک تابع واحد برای مدیریت چند نوع اقدام استفاده کنید، با بررسی مقدار ویژگی `action`:
 
 ```js
 let skipTime = 7;
@@ -270,11 +262,11 @@ function handleSeek(details) {
 }
 ```
 
-Here, the `handleSeek()` function handles both `seekbackward` and `seekforward` actions.
+در اینجا، تابع `handleSeek()` هر دو اقدام `seekbackward` و `seekforward` را مدیریت می‌کند.
 
-### Using action handlers to control a slide presentation
+### استفاده از کنترل‌کننده‌های اقدام برای کنترل ارائه اسلاید
 
-The `"previousslide"` and `"nextslide"` action handlers can be used to handle moving forward and backward through a slide presentation, for example when the user puts their presentation into a {{domxref("Picture-in-Picture API", "Picture-in-Picture", "", "nocode")}} window, and presses the browser-supplied controls for navigating through slides.
+کنترل‌کننده‌های اقدام `"previousslide"` و `"nextslide"` می‌توانند برای مدیریت حرکت به جلو و عقب در یک ارائه اسلاید استفاده شوند، مثلاً وقتی کاربر ارائه خود را در یک پنجره {{domxref("Picture-in-Picture API", "تصویر-در-تصویر", "", "nocode")}} قرار می‌دهد و کنترل‌های ارائه‌شده توسط مرورگر را برای پیمایش بین اسلایدها فشار می‌دهد.
 
 ```js
 try {
@@ -298,12 +290,12 @@ try {
 }
 ```
 
-See [Presenting Slides / Media Session Sample](https://googlechrome.github.io/samples/media-session/slides.html) for a working example.
+برای یک مثال عملی، به [ارائه اسلاید / نمونه نشست رسانه‌ای](https://googlechrome.github.io/samples/media-session/slides.html) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
