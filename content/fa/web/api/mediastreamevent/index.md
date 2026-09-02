@@ -1,10 +1,4 @@
 ---
-title: "MediaStreamEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamEvent"
-status: "needs-translation"
----
-
----
 title: MediaStreamEvent
 slug: Web/API/MediaStreamEvent
 page-type: web-api-interface
@@ -16,25 +10,25 @@ browser-compat: api.MediaStreamEvent
 
 {{APIRef("WebRTC")}}{{Deprecated_Header}}{{Non-standard_Header}}
 
-The **`MediaStreamEvent`** interface represents events that occurs in relation to a {{domxref("MediaStream")}}. Two events of this type can be thrown: {{domxref("RTCPeerConnection.addstream_event", "addstream")}} and {{domxref("RTCPeerConnection.removestream_event", "removestream")}}.
+رابطِ **`MediaStreamEvent`** نشان‌دهنده رویدادهایی است که در رابطه با یک {{domxref("MediaStream")}} رخ می‌دهند. دو رویداد از این نوع می‌توانند ایجاد شوند: {{domxref("RTCPeerConnection.addstream_event", "addstream")}} و {{domxref("RTCPeerConnection.removestream_event", "removestream")}}.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_A `MediaStreamEvent` being an {{domxref("Event")}}, this event also implements these properties_.
+یک `MediaStreamEvent` از آن‌جا که یک {{domxref("Event")}} است، این ویژگی‌ها را نیز پیاده‌سازی می‌کند.
 
 - {{domxref("MediaStreamEvent.stream")}} {{ReadOnlyInline}} {{Deprecated_Inline}} {{Non-standard_Inline}}
-  - : Contains the {{domxref("MediaStream")}} containing the stream associated with the event.
+  - : شامل {{domxref("MediaStream")}} مرتبط با این رویداد است.
 
-## Constructors
+## سازنده‌ها
 
 - {{domxref("MediaStreamEvent.MediaStreamEvent()", "MediaStreamEvent()")}} {{Deprecated_Inline}} {{Non-standard_Inline}}
-  - : Returns a new `MediaStreamEvent`. It takes two parameters, the first being a string representing the type of the event; the second a dictionary containing the {{domxref("MediaStream")}} it refers to.
+  - : یک نمونه `MediaStreamEvent` جدید بازمی‌گرداند. این سازنده دو پارامتر می‌پذیرد: اولی رشته‌ای است که نوع رویداد را مشخص می‌کند و دومی یک dictionary شامل {{domxref("MediaStream")}}ی است که به آن اشاره دارد.
 
-## Instance methods
+## روش‌های نمونه
 
-A `MediaStreamEvent` being an {{domxref("Event")}}, this event also implements these properties. There is no specific `MediaStreamEvent` method.
+یک `MediaStreamEvent` از آن‌جا که یک {{domxref("Event")}} است، این ویژگی‌ها را نیز پیاده‌سازی می‌کند. هیچ روش اختصاصی برای `MediaStreamEvent` وجود ندارد.
 
-## Examples
+## مثال‌ها
 
 ```js
 pc.onaddstream = (ev) => {
@@ -42,11 +36,11 @@ pc.onaddstream = (ev) => {
 };
 ```
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - [WebRTC](/en-US/docs/Web/API/WebRTC_API)
-- Its usual target: {{domxref("RTCPeerConnection")}}.
+- هدف معمول آن: {{domxref("RTCPeerConnection")}}.
