@@ -1,11 +1,5 @@
 ---
 title: "MediaKeyStatusMap: entries() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaKeyStatusMap/entries"
-status: "needs-translation"
----
-
----
-title: "MediaKeyStatusMap: entries() method"
 short-title: entries()
 slug: Web/API/MediaKeyStatusMap/entries
 page-type: web-api-instance-method
@@ -14,31 +8,28 @@ browser-compat: api.MediaKeyStatusMap.entries
 
 {{APIRef("Encrypted Media Extensions")}}
 
-The **`entries()`** method
-of the {{domxref("MediaKeyStatusMap")}} interface returns a new Iterator object,
-containing an array of \[key, value] pairs for each element in the status map, in
-insertion order.
+متد **`entries()`** از رابط {{domxref("MediaKeyStatusMap")}} یک شیء `Iterator` جدید برمی‌گرداند که شامل آرایه‌ای از جفت‌های `[key, value]` برای هر عنصر در نقشه وضعیت، به ترتیب درج، است.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 entries()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A new Iterator object. Each element in the Iterator is an array containing a key and a value.
+یک شیء `Iterator` جدید. هر عنصر در `Iterator` یک آرایه شامل یک کلید و یک مقدار است.
 
-### Exceptions
+### استثناها
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
