@@ -1,11 +1,5 @@
 ---
 title: "KeyboardLayoutMap: entries() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/KeyboardLayoutMap/entries"
-status: "needs-translation"
----
-
----
-title: "KeyboardLayoutMap: entries() method"
 short-title: entries()
 slug: Web/API/KeyboardLayoutMap/entries
 page-type: web-api-instance-method
@@ -17,9 +11,9 @@ spec-urls: https://tc39.es/ecma262/multipage/keyed-collections.html#sec-map.prot
 
 {{SeeCompatTable}}{{APIRef("Keyboard API")}}
 
-The **`entries()`** method of the {{domxref("KeyboardLayoutMap")}} interface returns a new [Iterator](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator) object that contains the key/value pairs, in the same order as that provided by a {{jsxref("Statements/for...in", "for...in")}} loop (the difference being that a `for-in` loop enumerates properties in the prototype chain as well).
+متد **`entries()`** در رابط {{domxref("KeyboardLayoutMap")}} یک شیء [Iterator](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator) جدید برمی‌گرداند که شامل جفت‌های کلید/مقدار است، به همان ترتیبی که توسط یک حلقه {{jsxref("Statements/for...in", "for...in")}} ارائه می‌شود (تفاوت در این است که حلقه `for-in` ویژگی‌های زنجیره prototype را نیز شمارش می‌کند).
 
-The method is otherwise the same as {{jsxref("Map.prototype.entries()")}}.
+این متد در غیر این صورت همانند {{jsxref("Map.prototype.entries()")}} است.
 
 ## Syntax
 
@@ -29,15 +23,15 @@ entries()
 
 ### Parameters
 
-None.
+بدون پارامتر.
 
 ### Return value
 
-A new [Iterator](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator) object.
+یک شیء [Iterator](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator) جدید.
 
 ## Examples
 
-The following example iterates every location- or layout-specific string and its associated keyboard code on an English QWERTY keyboard.
+مثال زیر هر رشته مربوط به مکان یا چیدمان (location- or layout-specific) و کد صفحه‌کلید مرتبط با آن را روی یک صفحه‌کلید انگلیسی QWERTY پیمایش می‌کند.
 
 ```js
 navigator.keyboard.getLayoutMap().then((keyboardLayoutMap) => {
