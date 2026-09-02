@@ -1,11 +1,5 @@
 ---
 title: "IdleDetector"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IdleDetector"
-status: "needs-translation"
----
-
----
-title: IdleDetector
 slug: Web/API/IdleDetector
 page-type: web-api-interface
 status:
@@ -15,50 +9,42 @@ browser-compat: api.IdleDetector
 
 {{securecontext_header}}{{APIRef("Idle Detection API")}}{{SeeCompatTable}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`IdleDetector`** interface of the {{domxref('idle_detection_api','Idle Detection API','','true')}} provides methods and events for detecting user activity on a device or screen.
+رابط **`IdleDetector`** از {{domxref('idle_detection_api','Idle Detection API','','true')}} روش‌ها و رویدادهایی برای تشخیص فعالیت کاربر روی دستگاه یا صفحه ارائه می‌دهد.
 
-This interface requires a secure context.
+این رابط به یک متن امن (secure context) نیاز دارد.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("IdleDetector.IdleDetector", "IdleDetector()")}} {{Experimental_Inline}}
-  - : Creates a new `IdleDetector` object.
+  - : یک شیء جدید `IdleDetector` می‌سازد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("IdleDetector.userState")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a string indicating whether the users has interacted with either the screen or the device within the threshold provided to `start()`, one of `"active"` or `"idle"`. This attribute returns `null` before `start()` is called.
+  - : یک رشته برمی‌گرداند که نشان می‌دهد آیا کاربر در بازه زمانی تعیین‌شده برای `start()` با صفحه یا دستگاه تعامل داشته است یا خیر؛ یکی از `"active"` یا `"idle"`. این ویژگی قبل از فراخوانی `start()` مقدار `null` برمی‌گرداند.
 - {{domxref("IdleDetector.screenState")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a string indicating whether the screen is locked, one of `"locked"` or `"unlocked"`. This attribute returns `null` before `start()` is called.
+  - : یک رشته برمی‌گرداند که نشان می‌دهد صفحه قفل است یا خیر؛ یکی از `"locked"` یا `"unlocked"`. این ویژگی قبل از فراخوانی `start()` مقدار `null` برمی‌گرداند.
 
-## Events
+## رویدادها
 
 - {{domxref("IdleDetector.change_event", "change")}} {{Experimental_Inline}}
-  - : Called when the value of `userState` or `screenState` has changed.
+  - : زمانی که مقدار `userState` یا `screenState` تغییر کند، فراخوانی می‌شود.
 
-## Static methods
+## روش‌های ایستا
 
 - {{domxref("IdleDetector/requestPermission_static", "IdleDetector.requestPermission()")}} {{Experimental_Inline}}
-  - : Returns a {{jsxref('Promise')}} that resolves when the user has chosen
-    whether to grant the origin access to their idle state. Resolves with
-    `"granted"` on acceptance and `"denied"` on refusal.
+  - : یک {{jsxref('Promise')}} برمی‌گرداند که وقتی کاربر تصمیم خود را برای اعطای دسترسی به مبدأ (origin) برای وضعیت بیکاری‌اش اعلام کرد، حل می‌شود. در صورت پذیرش با `"granted"` و در صورت رد با `"denied"` حل می‌شود.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("IdleDetector.start()")}} {{Experimental_Inline}}
-  - : Returns a `Promise` that resolves when the detector starts listening for
-    changes in the user's idle state. `userState` and `screenState` are given
-    initial values. This method takes an optional `options` object with the `threshold` in
-    milliseconds where inactivity should be reported and `signal` for an
-    `AbortSignal` to abort the idle detector.
+  - : یک `Promise` برمی‌گرداند که وقتی تشخیص‌دهنده شروع به شنیدن تغییرات وضعیت بیکاری کاربر کند، حل می‌شود. `userState` و `screenState` مقادیر اولیه می‌گیرند. این روش یک شیء اختیاری `options` با `threshold` (آستانه) بر حسب میلی‌ثانیه که در آن بیکاری گزارش شود، و `signal` برای یک `AbortSignal` برای لغو تشخیص‌دهنده بیکاری می‌پذیرد.
 
-## Examples
+## مثال‌ها
 
-The following example shows creating a detector and logging changes to the
-user's idle state. A button is used to get the necessary user activation before
-requesting permission.
+مثال زیر یک تشخیص‌دهنده ایجاد کرده و تغییرات وضعیت بیکاری کاربر را ثبت می‌کند. از یک دکمه برای دریافت فعال‌سازی کاربر لازم قبل از درخواست مجوز استفاده شده است.
 
 ```js
 const controller = new AbortController();
@@ -96,10 +82,10 @@ stopButton.addEventListener("click", () => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
