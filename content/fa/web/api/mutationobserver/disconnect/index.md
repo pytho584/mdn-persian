@@ -1,11 +1,5 @@
 ---
 title: "MutationObserver: disconnect() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver/disconnect"
-status: "needs-translation"
----
-
----
-title: "MutationObserver: disconnect() method"
 short-title: disconnect()
 slug: Web/API/MutationObserver/disconnect
 page-type: web-api-instance-method
@@ -14,44 +8,34 @@ browser-compat: api.MutationObserver.disconnect
 
 {{APIRef("DOM WHATWG")}}
 
-The {{domxref("MutationObserver")}} method
-**`disconnect()`** tells the observer to stop watching for
-mutations.
+متد **`disconnect()`** از {{domxref("MutationObserver")}} به مشاهده‌گر (observer) می‌گوید که تماشای تغییرات (mutations) را متوقف کند.
 
-The observer can be reused by calling its
-{{domxref("MutationObserver.observe", "observe()")}} method again.
+مشاهده‌گر را می‌توان با فراخوانی دوبارهٔ متد {{domxref("MutationObserver.observe", "observe()")}} دوباره به کار گرفت.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 disconnect()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
 `undefined`.
 
 > [!NOTE]
-> All notifications of mutations that have already been
-> _detected_, but _not yet reported_ to the observer, are discarded.
-> To hold on to and handle the detected but unreported mutations, use
-> the {{domxref("MutationObserver.takeRecords()", "takeRecords()")}} method.
+> تمام اعلان‌های مربوط به تغییراتی که قبلاً _تشخیص داده شده‌اند_ اما هنوز _به مشاهده‌گر گزارش نشده‌اند_، کنار گذاشته می‌شوند. برای نگه‌داشتن و رسیدگی به تغییراتِ تشخیص‌داده‌شده ولی گزارش‌نشده، از متد {{domxref("MutationObserver.takeRecords()", "takeRecords()")}} استفاده کنید.
 
-## Usage notes
+## نکات استفاده
 
-If the element being observed is removed from the DOM, and then subsequently released
-by the browser's garbage collection mechanism, the `MutationObserver` will stop observing
-the removed element. However, the `MutationObserver` itself can continue to exist to observe
-other existing elements.
+اگر عنصرِ در حال مشاهده از DOM حذف و سپس توسط سازوکار جمع‌آوری زباله (garbage collection) مرورگر آزاد شود، `MutationObserver` مشاهدهٔ عنصر حذف‌شده را متوقف خواهد کرد. با این حال، خودِ `MutationObserver` همچنان می‌تواند باقی بماند تا عناصر موجود دیگر را مشاهده کند.
 
-## Examples
+## مثال‌ها
 
-This example creates an observer, then disconnects from it, leaving it available for
-possible reuse.
+این مثال یک مشاهده‌گر می‌سازد؛ سپس متد `disconnect()` را روی آن فراخوانی می‌کند و آن را برای استفادهٔ احتمالی مجدد در دسترس نگه می‌دارد.
 
 ```js
 const targetNode = document.querySelector("#someElement");
@@ -68,10 +52,10 @@ observer.observe(targetNode, observerOptions);
 observer.disconnect();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
