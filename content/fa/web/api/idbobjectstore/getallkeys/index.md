@@ -1,11 +1,5 @@
 ---
 title: "IDBObjectStore: getAllKeys() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/getAllKeys"
-status: "needs-translation"
----
-
----
-title: "IDBObjectStore: getAllKeys() method"
 short-title: getAllKeys()
 slug: Web/API/IDBObjectStore/getAllKeys
 page-type: web-api-instance-method
@@ -14,24 +8,18 @@ browser-compat: api.IDBObjectStore.getAllKeys
 
 {{ APIRef("IndexedDB") }}
 
-The `getAllKeys()` method of the {{domxref("IDBObjectStore")}}
-interface returns an {{domxref("IDBRequest")}} object retrieves record keys for all
-objects in the object store matching the specified parameter or all objects in the
-store if no parameters are given.
+متد `getAllKeys()` از رابط {{domxref("IDBObjectStore")}} یک شیء {{domxref("IDBRequest")}} برمی‌گرداند که کلیدهای رکوردها را برای همه اشیاء موجود در object store (مخزن اشیاء) که با پارامتر مشخص‌شده مطابقت دارند، یا اگر پارامتری داده نشود، برای همه اشیاء موجود در store بازیابی می‌کند.
 
-If a value is successfully found, then a structured clone of it is created and set as
-the result of the request object.
+اگر مقداری با موفقیت یافت شود، یک structured clone از آن ایجاد شده و به عنوان نتیجه شیء درخواست تنظیم می‌شود.
 
-This method produces the same result for:
+این متد برای موارد زیر نتیجه یکسانی تولید می‌کند:
 
-- a record that doesn't exist in the database
-- a record that has an undefined value
+- رکوردی که در پایگاه داده وجود ندارد
+- رکوردی که مقدار آن undefined است
 
-To tell these situations apart, you need to call the
-{{domxref("IDBObjectStore.openCursor","openCursor()")}} method with the same key. That
-method provides a cursor if the record exists, and no cursor if it does not.
+برای تشخیص این دو حالت از یکدیگر، باید متد {{domxref("IDBObjectStore.openCursor","openCursor()")}} را با همان کلید فراخوانی کنید. این متد اگر رکورد وجود داشته باشد یک cursor ارائه می‌دهد و اگر وجود نداشته باشد هیچ cursorای ارائه نمی‌دهد.
 
-## Syntax
+## نحو
 
 ```js-nolint
 getAllKeys()
@@ -40,70 +28,67 @@ getAllKeys(query, count)
 getAllKeys(options)
 ```
 
-### Parameters
+### پارامترها
 
-The `getAllKeys()` method can take separate parameters or a single options object containing the parameters as properties.
+متد `getAllKeys()` می‌تواند پارامترهای جداگانه دریافت کند یا یک شیء options واحد که پارامترها را به عنوان ویژگی‌های خود دارد.
 
-The parameters can include:
-
-- `query` {{optional_inline}}
-  - : A value that is or resolves to an {{domxref("IDBKeyRange")}}. If this value is not specified, this will
-    default to a key range that selects all the records in this object store.
-- `count` {{optional_inline}}
-  - : Specifies the number of values to return if more than one is found. If it is lower
-    than `0` or greater than `2^32 - 1` a
-    {{jsxref("TypeError")}} exception will be thrown.
-
-If an object parameter is specified, its properties can include:
+پارامترها می‌توانند شامل موارد زیر باشند:
 
 - `query` {{optional_inline}}
-  - : See the earlier [`query`](#query) definition.
+  - : مقداری که یک {{domxref("IDBKeyRange")}} باشد یا به آن تبدیل شود. اگر این مقدار مشخص نشود، به‌طور پیش‌فرض یک محدوده کلید (key range) خواهد بود که همه رکوردهای این object store را انتخاب می‌کند.
 - `count` {{optional_inline}}
-  - : See the earlier [`count`](#count) definition.
+  - : تعداد مقادیری را که در صورت یافتن بیش از یک مقدار باید برگردانده شوند، مشخص می‌کند. اگر کمتر از `0` یا بیشتر از `2^32 - 1` باشد، یک استثنای {{jsxref("TypeError")}} پرتاب خواهد شد.
+
+اگر یک پارامتر شیء مشخص شده باشد، ویژگی‌های آن می‌توانند شامل موارد زیر باشند:
+
+- `query` {{optional_inline}}
+  - : تعریف [`query`](#query) را در بخش‌های پیشین ببینید.
+- `count` {{optional_inline}}
+  - : تعریف [`count`](#count) را در بخش‌های پیشین ببینید.
 - `direction` {{optional_inline}}
-  - : An enumerated value specifying the direction in which the objects are traversed. Possible values are:
+  - : یک مقدار شمارشی (enumerated) که جهتی را مشخص می‌کند که اشیاء در آن پیمایش می‌شوند. مقادیر ممکن عبارتند از:
     - `next`
-      - : The objects are traversed from the beginning, in increasing key order. This is the default value.
+      - : اشیاء از ابتدا، به ترتیب کلید صعودی پیمایش می‌شوند. این مقدار پیش‌فرض است.
     - `nextunique`
-      - : The objects are traversed from the beginning, in increasing key order. This will yield the same keys as `next`, because duplicate keys are not allowed in `IDBObjectStore`s.
+      - : اشیاء از ابتدا، به ترتیب کلید صعودی پیمایش می‌شوند. این کار همان کلیدهای `next` را تولید می‌کند، زیرا کلیدهای تکراری در `IDBObjectStore`ها مجاز نیستند.
     - `prev`
-      - : The objects are traversed from the end, in decreasing key order.
+      - : اشیاء از انتها، به ترتیب کلید نزولی پیمایش می‌شوند.
     - `prevunique`
-      - : The objects are traversed from the end, in decreasing key order. This will yield the same keys as `prev`, because duplicate keys are not allowed in `IDBObjectStore`s.
+      - : اشیاء از انتها، به ترتیب کلید نزولی پیمایش می‌شوند. این کار همان کلیدهای `prev` را تولید می‌کند، زیرا کلیدهای تکراری در `IDBObjectStore`ها مجاز نیستند.
 
-### Return value
+### مقدار بازگشتی
 
-An {{domxref("IDBRequest")}} object on which subsequent events related to this operation are fired.
+یک شیء {{domxref("IDBRequest")}} که رویدادهای بعدی مرتبط با این عملیات روی آن فراخوانی می‌شوند.
 
-If the operation is successful, the value of the request's {{domxref("IDBRequest.result", "result")}} property is an {{jsxref("Array")}} of the keys for all records matching the given query, up to the value of `count`, if `count` was supplied.
+اگر عملیات موفق باشد، مقدار ویژگی {{domxref("IDBRequest.result", "result")}} درخواست یک {{jsxref("Array")}} از کلیدهای همه رکوردهای منطبق با query داده‌شده است، تا حداکثر مقدار `count`، در صورتی که `count` ارائه شده باشد.
 
-### Exceptions
+### استثناها
 
-This method may raise a {{domxref("DOMException")}} of one of the following types:
+این متد ممکن است یک {{domxref("DOMException")}} از یکی از انواع زیر ایجاد کند:
 
 - `TransactionInactiveError` {{domxref("DOMException")}}
-  - : Thrown if this {{domxref("IDBObjectStore")}}'s transaction is inactive.
+  - : اگر تراکنش این {{domxref("IDBObjectStore")}} غیرفعال باشد، پرتاب می‌شود.
 - `DataError` {{domxref("DOMException")}}
-  - : Thrown if the key or key range provided contains an invalid key or is null.
+  - : اگر کلید یا محدوده کلید ارائه‌شده حاوی یک کلید نامعتبر باشد یا null باشد، پرتاب می‌شود.
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the {{domxref("IDBObjectStore")}} has been deleted or removed.
+  - : اگر {{domxref("IDBObjectStore")}} حذف شده یا برداشته شده باشد، پرتاب می‌شود.
 - {{jsxref("TypeError")}} {{domxref("DOMException")}}
-  - : Thrown if the [`count`](#count) parameter is not between `0` and `2^32 - 1`, inclusive.
+  - : اگر پارامتر [`count`](#count) بین `0` و `2^32 - 1` (به‌صورت شامل) نباشد، پرتاب می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم محدوده کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و ایجاد تغییرات در داده‌های خود: {{domxref("IDBObjectStore")}}
+- استفاده از cursorها: {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
