@@ -1,11 +1,5 @@
 ---
 title: "MediaTrackSupportedConstraints: displaySurface property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSupportedConstraints/displaySurface"
-status: "needs-translation"
----
-
----
-title: "MediaTrackSupportedConstraints: displaySurface property"
 short-title: displaySurface
 slug: Web/API/MediaTrackSupportedConstraints/displaySurface
 page-type: web-api-instance-property
@@ -14,22 +8,17 @@ browser-compat: api.MediaStreamTrack.applyConstraints.displaySurface_constraint
 
 {{APIRef("Media Capture and Streams")}}
 
-The {{domxref("MediaTrackSupportedConstraints")}} dictionary's **`displaySurface`** property indicates whether or not the {{domxref("MediaTrackConstraints.displaySurface", "displaySurface")}} constraint is supported by the user agent and the device on which the content is being used.
+ویژگی **`displaySurface`** در فرهنگ لغت {{domxref("MediaTrackSupportedConstraints")}} نشان می‌دهد که آیا محدودیت {{domxref("MediaTrackConstraints.displaySurface", "displaySurface")}} توسط عامل کاربر (user agent) و دستگاهی که محتوا روی آن استفاده می‌شود پشتیبانی می‌شود یا خیر.
 
-The supported constraints list is obtained by calling {{domxref("MediaDevices.getSupportedConstraints","navigator.mediaDevices.getSupportedConstraints()")}}.
+فهرست محدودیت‌های پشتیبانی‌شده با فراخوانی {{domxref("MediaDevices.getSupportedConstraints","navigator.mediaDevices.getSupportedConstraints()")}} به دست می‌آید.
 
-## Value
+## مقدار
 
-A Boolean value which is `true` if the {{domxref("MediaTrackConstraints.displaySurface", "displaySurface")}} constraint is supported by the device and user agent.
+یک مقدار بولی که اگر محدودیت {{domxref("MediaTrackConstraints.displaySurface", "displaySurface")}} توسط دستگاه و عامل کاربر پشتیبانی شود، `true` است.
 
-## Examples
+## مثال‌ها
 
-This method sets up the constraints object specifying the options for the call to
-{{domxref("MediaDevices.getDisplayMedia", "getDisplayMedia()")}}. It adds the
-`displaySurface` constraint (requesting that only fullscreen sharing be
-allowed) only if it is known to be supported by the browser. Capturing is then started
-by calling `getDisplayMedia()` and attaching the returned stream to the video
-element referenced by the variable `videoElem`.
+این متد، شیء محدودیت‌ها را با مشخص کردن گزینه‌های فراخوانی {{domxref("MediaDevices.getDisplayMedia", "getDisplayMedia()")}} تنظیم می‌کند. محدودیت `displaySurface` (با درخواست اجازه‌دهی فقط به اشتراک‌گذاری تمام‌صفحه) فقط در صورتی اضافه می‌شود که مشخص باشد مرورگر از آن پشتیبانی می‌کند. سپس ضبط با فراخوانی `getDisplayMedia()` و اتصال جریان برگشتی به عنصر ویدیویی که توسط متغیر `videoElem` ارجاع داده شده است، آغاز می‌شود.
 
 ```js
 async function capture() {
@@ -52,15 +41,15 @@ async function capture() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - [Screen Capture API](/en-US/docs/Web/API/Screen_Capture_API)
 - [Using the screen capture API](/en-US/docs/Web/API/Screen_Capture_API/Using_Screen_Capture)
