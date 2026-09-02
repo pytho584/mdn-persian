@@ -1,10 +1,4 @@
 ---
-title: "LaunchParams"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/LaunchParams"
-status: "needs-translation"
----
-
----
 title: LaunchParams
 slug: Web/API/LaunchParams
 page-type: web-api-interface
@@ -15,20 +9,20 @@ browser-compat: api.LaunchParams
 
 {{APIRef("Launch Handler API")}}{{SeeCompatTable}}
 
-The **`LaunchParams`** interface of the {{domxref("Launch Handler API", "Launch Handler API", "", "nocode")}} is used when implementing custom launch navigation handling in a PWA. When {{domxref("LaunchQueue.setConsumer", "window.launchQueue.setConsumer()")}} is invoked to set up the launch navigation handling functionality, the callback function inside `setConsumer()` is passed a `LaunchParams` object instance.
+اینترفیس **`LaunchParams`** از {{domxref("Launch Handler API", "Launch Handler API", "", "nocode")}} هنگام پیاده‌سازی مدیریت ناوبری سفارشیِ راه‌اندازی در یک PWA استفاده می‌شود. وقتی متد {{domxref("LaunchQueue.setConsumer", "window.launchQueue.setConsumer()")}} برای تنظیم عملکرد مدیریت ناوبری راه‌اندازی فراخوانی می‌شود، یک نمونهٔ `LaunchParams` به تابع بازخوانی (callback) درون `setConsumer()` ارسال می‌شود.
 
-Such custom navigation handling is initiated via {{domxref("Window.launchQueue")}} when a PWA has been launched with a [`launch_handler`](/en-US/docs/Web/Progressive_web_apps/Manifest/Reference/launch_handler) `client_mode` value of `focus-existing`, `navigate-new`, or `navigate-existing`.
+چنین مدیریت ناوبری سفارشی از طریق {{domxref("Window.launchQueue")}} آغاز می‌شود، زمانی که یک PWA با [`launch_handler`](/en-US/docs/Web/Progressive_web_apps/Manifest/Reference/launch_handler) دارای مقدار `client_mode` برابر با `focus-existing`، `navigate-new` یا `navigate-existing` راه‌اندازی شده باشد.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## خصوصیات نمونه
 
 - {{domxref("LaunchParams.files")}} {{ReadOnlyInline}}{{Experimental_Inline}}
-  - : Returns a read-only array of {{domxref("FileSystemHandle")}} objects representing any files passed along with the launch navigation via the [`POST`](/en-US/docs/Web/HTTP/Reference/Methods/POST) method.
+  - : یک آرایهٔ فقط‌خواندنی از شیءهای {{domxref("FileSystemHandle")}} برمی‌گرداند که نمایانگر هر فایلی است که همراه با ناوبری راه‌اندازی و از طریق متد [`POST`](/en-US/docs/Web/HTTP/Reference/Methods/POST) ارسال شده است.
 - {{domxref("LaunchParams.targetURL")}} {{ReadOnlyInline}}{{Experimental_Inline}}
-  - : Returns the target URL of the launch.
+  - : URL مقصدِ راه‌اندازی را برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
 ```js
 if ("launchQueue" in window) {
@@ -48,16 +42,16 @@ if ("launchQueue" in window) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Launch Handler API: Control how your app is launched](https://developer.chrome.com/docs/web-platform/launch-handler/)
 - {{domxref("Window.launchQueue")}}
-- [Musicr 2.0](https://mdn.github.io/dom-examples/launch-handler/) demo app
+- [Musicr 2.0](https://mdn.github.io/dom-examples/launch-handler/) برنامهٔ نمایشی
