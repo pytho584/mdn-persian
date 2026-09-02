@@ -1,10 +1,4 @@
 ---
-title: "MouseEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent"
-status: "needs-translation"
----
-
----
 title: MouseEvent
 slug: Web/API/MouseEvent
 page-type: web-api-interface
@@ -13,93 +7,89 @@ browser-compat: api.MouseEvent
 
 {{APIRef("Pointer Events")}}
 
-The **`MouseEvent`** interface represents events that occur due to the user interacting with a pointing device (such as a mouse).
-Common events using this interface include {{domxref("Element/click_event", "click")}}, {{domxref("Element/dblclick_event", "dblclick")}}, {{domxref("Element/mouseup_event", "mouseup")}}, {{domxref("Element/mousedown_event", "mousedown")}}.
+رابط **`MouseEvent`** رویدادهایی را نشان می‌دهد که در اثر تعامل کاربر با یک دستگاه اشاره‌گر (مانند ماوس) رخ می‌دهند. رویدادهای رایجی که از این رابط استفاده می‌کنند شامل {{domxref("Element/click_event", "click")}}، {{domxref("Element/dblclick_event", "dblclick")}}، {{domxref("Element/mouseup_event", "mouseup")}} و {{domxref("Element/mousedown_event", "mousedown")}} هستند.
 
-`MouseEvent` derives from {{domxref("UIEvent")}}, which in turn derives from {{domxref("Event")}}.
-Though the {{domxref("MouseEvent.initMouseEvent()")}} method is kept for backward compatibility, creating of a `MouseEvent` object should be done using the {{domxref("MouseEvent.MouseEvent", "MouseEvent()")}} constructor.
+`MouseEvent` از {{domxref("UIEvent")}} مشتق می‌شود که خود از {{domxref("Event")}} مشتق شده است. اگرچه روش {{domxref("MouseEvent.initMouseEvent()")}} برای سازگاری با نسخه‌های قبلی حفظ شده است، اما ایجاد یک شیء `MouseEvent` باید با استفاده از سازنده {{domxref("MouseEvent.MouseEvent", "MouseEvent()")}} انجام شود.
 
-Several more specific events are based on `MouseEvent`, including {{domxref("WheelEvent")}}, {{domxref("DragEvent")}}, and {{domxref("PointerEvent")}}.
+چندین رویداد خاص‌تر دیگر بر اساس `MouseEvent` هستند، از جمله {{domxref("WheelEvent")}}، {{domxref("DragEvent")}} و {{domxref("PointerEvent")}}.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("MouseEvent.MouseEvent", "MouseEvent()")}}
-  - : Creates a `MouseEvent` object.
+  - : یک شیء `MouseEvent` ایجاد می‌کند.
 
-## Static properties
+## ویژگی‌های ایستا
 
 - {{domxref("MouseEvent.WEBKIT_FORCE_AT_MOUSE_DOWN_static", "MouseEvent.WEBKIT_FORCE_AT_MOUSE_DOWN")}} {{non-standard_inline}} {{ReadOnlyInline}}
-  - : Minimum force necessary for a normal click.
+  - : حداقل نیروی لازم برای یک کلیک معمولی.
 - {{domxref("MouseEvent.WEBKIT_FORCE_AT_FORCE_MOUSE_DOWN_static", "MouseEvent.WEBKIT_FORCE_AT_FORCE_MOUSE_DOWN")}} {{non-standard_inline}} {{ReadOnlyInline}}
-  - : Minimum force necessary for a force click.
+  - : حداقل نیروی لازم برای یک کلیک فشاری.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface also inherits properties of its parents, {{domxref("UIEvent")}} and {{domxref("Event")}}._
+_این رابط همچنین ویژگی‌های والدین خود، {{domxref("UIEvent")}} و {{domxref("Event")}} را به ارث می‌برد._
 
 - {{domxref("MouseEvent.altKey")}} {{ReadOnlyInline}}
-  - : Returns `true` if the <kbd>alt</kbd> key was down when the mouse event was fired.
+  - : اگر کلید <kbd>alt</kbd> هنگام شلیک رویداد ماوس پایین بود، `true` برمی‌گرداند.
 - {{domxref("MouseEvent.button")}} {{ReadOnlyInline}}
-  - : The button number that was pressed or released (if applicable) when the mouse event was fired.
+  - : شماره دکمه‌ای که هنگام شلیک رویداد ماوس فشرده یا رها شده است (در صورت وجود).
 - {{domxref("MouseEvent.buttons")}} {{ReadOnlyInline}}
-  - : The buttons being pressed (if any) when the mouse event was fired.
+  - : دکمه‌هایی که هنگام شلیک رویداد ماوس فشرده شده‌اند (در صورت وجود).
 - {{domxref("MouseEvent.clientX")}} {{ReadOnlyInline}}
-  - : The X coordinate of the mouse pointer in [viewport coordinates](/en-US/docs/Web/API/CSSOM_view_API/Coordinate_systems#viewport).
+  - : مختصات X اشاره‌گر ماوس در [مختصات viewport](/en-US/docs/Web/API/CSSOM_view_API/Coordinate_systems#viewport).
 - {{domxref("MouseEvent.clientY")}} {{ReadOnlyInline}}
-  - : The Y coordinate of the mouse pointer in [viewport coordinates](/en-US/docs/Web/API/CSSOM_view_API/Coordinate_systems#viewport).
+  - : مختصات Y اشاره‌گر ماوس در [مختصات viewport](/en-US/docs/Web/API/CSSOM_view_API/Coordinate_systems#viewport).
 - {{domxref("MouseEvent.ctrlKey")}} {{ReadOnlyInline}}
-  - : Returns `true` if the <kbd>control</kbd> key was down when the mouse event was fired.
+  - : اگر کلید <kbd>control</kbd> هنگام شلیک رویداد ماوس پایین بود، `true` برمی‌گرداند.
 - {{domxref("MouseEvent.layerX")}} {{Non-standard_inline}} {{ReadOnlyInline}}
-  - : Returns the horizontal coordinate of the event relative to the current layer.
+  - : مختصات افقی رویداد را نسبت به لایه جاری برمی‌گرداند.
 - {{domxref("MouseEvent.layerY")}} {{Non-standard_inline}} {{ReadOnlyInline}}
-  - : Returns the vertical coordinate of the event relative to the current layer.
+  - : مختصات عمودی رویداد را نسبت به لایه جاری برمی‌گرداند.
 - {{domxref("MouseEvent.metaKey")}} {{ReadOnlyInline}}
-  - : Returns `true` if the <kbd>meta</kbd> key was down when the mouse event was fired.
+  - : اگر کلید <kbd>meta</kbd> هنگام شلیک رویداد ماوس پایین بود، `true` برمی‌گرداند.
 - {{domxref("MouseEvent.movementX")}} {{ReadOnlyInline}}
-  - : The X coordinate of the mouse pointer relative to the position of the last move event of the same type (a {{domxref("Element/mousemove_event", "mousemove")}}, {{domxref("Element/pointermove_event", "pointermove")}}, or {{domxref("Element/pointerrawupdate_event", "pointerrawupdate")}}).
+  - : مختصات X اشاره‌گر ماوس نسبت به موقعیت آخرین رویداد حرکت از همان نوع (یک {{domxref("Element/mousemove_event", "mousemove")}}، {{domxref("Element/pointermove_event", "pointermove")}} یا {{domxref("Element/pointerrawupdate_event", "pointerrawupdate")}}).
 - {{domxref("MouseEvent.movementY")}} {{ReadOnlyInline}}
-  - : The Y coordinate of the mouse pointer relative to the position of the last move event of the same type (a {{domxref("Element/mousemove_event", "mousemove")}}, {{domxref("Element/pointermove_event", "pointermove")}}, or {{domxref("Element/pointerrawupdate_event", "pointerrawupdate")}}).
+  - : مختصات Y اشاره‌گر ماوس نسبت به موقعیت آخرین رویداد حرکت از همان نوع (یک {{domxref("Element/mousemove_event", "mousemove")}}، {{domxref("Element/pointermove_event", "pointermove")}} یا {{domxref("Element/pointerrawupdate_event", "pointerrawupdate")}}).
 - {{domxref("MouseEvent.offsetX")}} {{ReadOnlyInline}}
-  - : The X coordinate of the mouse pointer relative to the position of the padding edge of the target node.
+  - : مختصات X اشاره‌گر ماوس نسبت به موقعیت لبه padding گره هدف.
 - {{domxref("MouseEvent.offsetY")}} {{ReadOnlyInline}}
-  - : The Y coordinate of the mouse pointer relative to the position of the padding edge of the target node.
+  - : مختصات Y اشاره‌گر ماوس نسبت به موقعیت لبه padding گره هدف.
 - {{domxref("MouseEvent.pageX")}} {{ReadOnlyInline}}
-  - : The X coordinate of the mouse pointer relative to the whole document.
+  - : مختصات X اشاره‌گر ماوس نسبت به کل سند.
 - {{domxref("MouseEvent.pageY")}} {{ReadOnlyInline}}
-  - : The Y coordinate of the mouse pointer relative to the whole document.
+  - : مختصات Y اشاره‌گر ماوس نسبت به کل سند.
 - {{domxref("MouseEvent.relatedTarget")}} {{ReadOnlyInline}}
-  - : The secondary target for the event, if there is one.
+  - : هدف ثانویه برای رویداد، در صورت وجود.
 - {{domxref("MouseEvent.screenX")}} {{ReadOnlyInline}}
-  - : The X coordinate of the mouse pointer in [screen coordinates](/en-US/docs/Web/API/CSSOM_view_API/Coordinate_systems#screen).
+  - : مختصات X اشاره‌گر ماوس در [مختصات screen](/en-US/docs/Web/API/CSSOM_view_API/Coordinate_systems#screen).
 - {{domxref("MouseEvent.screenY")}} {{ReadOnlyInline}}
-  - : The Y coordinate of the mouse pointer in [screen coordinates](/en-US/docs/Web/API/CSSOM_view_API/Coordinate_systems#screen).
+  - : مختصات Y اشاره‌گر ماوس در [مختصات screen](/en-US/docs/Web/API/CSSOM_view_API/Coordinate_systems#screen).
 - {{domxref("MouseEvent.shiftKey")}} {{ReadOnlyInline}}
-  - : Returns `true` if the <kbd>shift</kbd> key was down when the mouse event was fired.
+  - : اگر کلید <kbd>shift</kbd> هنگام شلیک رویداد ماوس پایین بود، `true` برمی‌گرداند.
 - {{domxref("MouseEvent.mozInputSource")}} {{non-standard_inline()}} {{ReadOnlyInline}}
-  - : The type of device that generated the event (one of the `MOZ_SOURCE_*` constants).
-    This lets you, for example, determine whether a mouse event was generated by an actual mouse or by a touch event (which might affect the degree of accuracy with which you interpret the coordinates associated with the event).
+  - : نوع دستگاهی که رویداد را تولید کرده است (یکی از ثابت‌های `MOZ_SOURCE_*`). این به شما امکان می‌دهد، برای مثال، تعیین کنید که آیا یک رویداد ماوس توسط یک ماوس واقعی یا توسط یک رویداد لمسی تولید شده است (که ممکن است بر دقت تفسیر مختصات مرتبط با رویداد تأثیر بگذارد).
 - {{domxref("MouseEvent.webkitForce")}} {{non-standard_inline()}} {{ReadOnlyInline}}
-  - : The amount of pressure applied when clicking.
+  - : میزان فشار اعمال شده هنگام کلیک.
 - {{domxref("MouseEvent.x")}} {{ReadOnlyInline}}
-  - : Alias for {{domxref("MouseEvent.clientX")}}.
+  - : نام مستعار برای {{domxref("MouseEvent.clientX")}}.
 - {{domxref("MouseEvent.y")}} {{ReadOnlyInline}}
-  - : Alias for {{domxref("MouseEvent.clientY")}}.
+  - : نام مستعار برای {{domxref("MouseEvent.clientY")}}.
 
-## Instance methods
+## روش‌های نمونه
 
-_This interface also inherits methods of its parents, {{domxref("UIEvent")}} and {{domxref("Event")}}._
+_این رابط همچنین روش‌های والدین خود، {{domxref("UIEvent")}} و {{domxref("Event")}} را به ارث می‌برد._
 
 - {{domxref("MouseEvent.getModifierState()")}}
-  - : Returns the current state of the specified modifier key. See {{domxref("KeyboardEvent.getModifierState", "KeyboardEvent.getModifierState()")}} for details.
+  - : وضعیت جاری کلید اصلاح‌کننده مشخص‌شده را برمی‌گرداند. برای جزئیات به {{domxref("KeyboardEvent.getModifierState", "KeyboardEvent.getModifierState()")}} مراجعه کنید.
 - {{domxref("MouseEvent.initMouseEvent()")}} {{deprecated_inline}}
-  - : Initializes the value of a `MouseEvent` created. If the event has already been dispatched, this method does nothing.
+  - : مقدار یک `MouseEvent` ایجاد شده را مقداردهی اولیه می‌کند. اگر رویداد قبلاً ارسال شده باشد، این روش هیچ کاری انجام نمی‌دهد.
 
-## Example
+## مثال
 
-This example demonstrates simulating a click (programmatically generating a click event) on a checkbox using DOM methods.
-Event state (canceled or not) is then determined with the return value of method {{domxref("EventTarget.dispatchEvent", "EventTarget.dispatchEvent()")}}.
+این مثال شبیه‌سازی یک کلیک (تولید برنامه‌ای یک رویداد کلیک) روی یک کادر علامت‌گذاری با استفاده از روش‌های DOM را نشان می‌دهد. وضعیت رویداد (لغو شده یا خیر) سپس با مقدار بازگشتی روش {{domxref("EventTarget.dispatchEvent", "EventTarget.dispatchEvent()")}} تعیین می‌شود.
 
 ### HTML
 
@@ -132,19 +122,19 @@ function simulateClick() {
 document.getElementById("button").addEventListener("click", simulateClick);
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample('Example')}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- Its direct parent, {{domxref("UIEvent")}}
-- {{domxref("PointerEvent")}}: For advanced pointer events, including multi-touch
+- والد مستقیم آن، {{domxref("UIEvent")}}
+- {{domxref("PointerEvent")}}: برای رویدادهای اشاره‌گر پیشرفته، از جمله لمسی چندگانه
