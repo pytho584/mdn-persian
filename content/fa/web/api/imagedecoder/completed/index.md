@@ -1,11 +1,5 @@
 ---
 title: "ImageDecoder: completed property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ImageDecoder/completed"
-status: "needs-translation"
----
-
----
-title: "ImageDecoder: completed property"
 short-title: completed
 slug: Web/API/ImageDecoder/completed
 page-type: web-api-instance-property
@@ -14,25 +8,25 @@ browser-compat: api.ImageDecoder.completed
 
 {{securecontext_header}}{{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`completed`** read-only property of the {{domxref("ImageDecoder")}} interface returns a promise that resolves once encoded data has finished buffering.
+خاصیت **`completed`** (فقط خواندنی) از رابط {{domxref("ImageDecoder")}} یک قول (Promise) برمی‌گرداند که پس از پایان بافر کردن داده‌های رمزگذاری‌شده، حل می‌شود.
 
-## Value
+## مقدار
 
-A {{jsxref("Promise")}} that resolves with {{jsxref("undefined")}} once {{domxref("ImageDecoder.complete")}} is `true`.
+یک {{jsxref("Promise")}} که با {{jsxref("undefined")}} حل می‌شود وقتی {{domxref("ImageDecoder.complete")}} برابر `true` باشد.
 
-## Examples
+## مثال‌ها
 
-In the following example the value of `completed` will be `undefined` once the promise resolves.
+در مثال زیر، مقدار `completed` پس از حل شدن promise، `undefined` خواهد بود.
 
 ```js
 let completed = await imageDecoder.completed;
 console.log(completed);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
