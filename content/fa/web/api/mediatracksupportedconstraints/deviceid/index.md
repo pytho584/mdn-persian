@@ -1,11 +1,5 @@
 ---
 title: "MediaTrackSupportedConstraints: deviceId property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSupportedConstraints/deviceId"
-status: "needs-translation"
----
-
----
-title: "MediaTrackSupportedConstraints: deviceId property"
 short-title: deviceId
 slug: Web/API/MediaTrackSupportedConstraints/deviceId
 page-type: web-api-instance-property
@@ -14,25 +8,15 @@ browser-compat: api.MediaStreamTrack.applyConstraints.deviceId_constraint
 
 {{APIRef("Media Capture and Streams")}}
 
-The {{domxref("MediaTrackSupportedConstraints")}} dictionary's
-**`deviceId`** property is a read-only Boolean value which is
-present (and set to `true`) in the object returned by
-{{domxref("MediaDevices.getSupportedConstraints()")}} if and only if the
-{{Glossary("user agent")}} supports the `deviceId` constraint. If the
-constraint isn't supported, it's not included in the list, so this value will never be
-`false`.
+ویژگی **`deviceId`** در دیکشنری {{domxref("MediaTrackSupportedConstraints")}} یک مقدار بولی فقط خواندنی است که در شیء بازگردانده‌شده توسط {{domxref("MediaDevices.getSupportedConstraints()")}} وجود دارد (و مقدار آن `true` تنظیم شده است) اگر و فقط اگر {{Glossary("user agent", "عامل کاربر")}} از محدودیت `deviceId` پشتیبانی کند. اگر این محدودیت پشتیبانی نشود، در لیست گنجانده نمی‌شود، بنابراین این ویژگی هرگز مقدار `false` نخواهد داشت.
 
-You can access the supported constraints dictionary by calling
-`navigator.mediaDevices.getSupportedConstraints()`.
+می‌توانید با فراخوانی `navigator.mediaDevices.getSupportedConstraints()` به دیکشنری محدودیت‌های پشتیبانی‌شده دسترسی پیدا کنید.
 
-## Value
+## مقدار
 
-This property is present in the dictionary (and its value is always `true`)
-if the user agent supports the `deviceId` constraint. If the property isn't
-present, this property is missing from the supported constraints dictionary, and you'll
-get {{jsxref("undefined")}} if you try to look at its value.
+این ویژگی در دیکشنری وجود دارد (و مقدار آن همیشه `true` است) اگر عامل کاربر از محدودیت `deviceId` پشتیبانی کند. اگر ویژگی وجود نداشته باشد، این ویژگی در دیکشنری محدودیت‌های پشتیبانی‌شده غایب است و اگر سعی کنید به مقدار آن نگاه کنید، {{jsxref("undefined")}} دریافت خواهید کرد.
 
-## Examples
+## مثال‌ها
 
 ```html hidden
 <div id="result"></div>
@@ -52,19 +36,19 @@ const supported = navigator.mediaDevices.getSupportedConstraints().deviceId;
 result.textContent = supported ? "Supported!" : "Not supported!";
 ```
 
-### Result
+### نتیجه
 
 {{ EmbedLiveSample('Examples', 600, 80) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
 - {{domxref("MediaDevices.getSupportedConstraints()")}}
