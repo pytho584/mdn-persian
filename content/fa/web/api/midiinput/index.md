@@ -1,10 +1,4 @@
 ---
-title: "MIDIInput"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MIDIInput"
-status: "needs-translation"
----
-
----
 title: MIDIInput
 slug: Web/API/MIDIInput
 page-type: web-api-interface
@@ -13,40 +7,40 @@ browser-compat: api.MIDIInput
 
 {{APIRef("Web MIDI API")}}{{securecontext_header}}
 
-The **`MIDIInput`** interface of the [Web MIDI API](/en-US/docs/Web/API/Web_MIDI_API) receives messages from a MIDI input port.
+رابط **`MIDIInput`** در [Web MIDI API](/en-US/docs/Web/API/Web_MIDI_API) پیام‌ها را از یک درگاه ورودی MIDI دریافت می‌کند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface doesn't implement any specific properties, but inherits properties from {{domxref("MIDIPort")}}._
+_این رابط هیچ ویژگی خاصی را پیاده‌سازی نمی‌کند، اما ویژگی‌هایی را از {{domxref("MIDIPort")}} به ارث می‌برد._
 
-## Instance methods
+## روش‌های نمونه
 
-_This interface doesn't implement any specific methods, but inherits methods from {{domxref("MIDIPort")}}._
+_این رابط هیچ روش خاصی را پیاده‌سازی نمی‌کند، اما روش‌هایی را از {{domxref("MIDIPort")}} به ارث می‌برد._
 
-### Events
+### رویدادها
 
 - {{domxref("MIDIInput.midimessage_event", "midimessage")}}
-  - : Fired when the current port receives a MIDI message.
+  - : زمانی که درگاه فعلی یک پیام MIDI دریافت می‌کند، رخ می‌دهد.
 
-## Examples
+## مثال‌ها
 
-In the following example the name of each `MIDIInput` is printed to the console. Then, `midimessage` events are listened for on all input ports. When a message is received the {{domxref("MIDIMessageEvent.data")}} property is printed to the console.
+در مثال زیر، نام هر `MIDIInput` در کنسول چاپ می‌شود. سپس، رویدادهای `midimessage` در همه درگاه‌های ورودی شنیده می‌شوند. هنگامی که پیامی دریافت می‌شود، ویژگی {{domxref("MIDIMessageEvent.data")}} در کنسول چاپ می‌شود.
 
 ```js
 inputs.forEach((input) => {
-  console.log(input.name); /* inherited property from MIDIPort */
+  console.log(input.name); /* ویژگی به‌ارث‌برده از MIDIPort */
   input.onmidimessage = (message) => {
     console.log(message.data);
   };
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
