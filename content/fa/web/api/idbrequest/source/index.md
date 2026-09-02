@@ -1,11 +1,5 @@
 ---
 title: "IDBRequest: source property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/source"
-status: "needs-translation"
----
-
----
-title: "IDBRequest: source property"
 short-title: source
 slug: Web/API/IDBRequest/source
 page-type: web-api-instance-property
@@ -14,24 +8,15 @@ browser-compat: api.IDBRequest.source
 
 {{ APIRef("IndexedDB") }} {{AvailableInWorkers}}
 
-The **`source`** read-only property of the
-{{domxref("IDBRequest")}} interface returns the source of the request, such as an
-Index or an object store. If no source exists (such as when calling
-{{domxref("IDBFactory.open")}}), it returns null.
+ویژگی فقط‌خواندنی **`source`** در رابط {{domxref("IDBRequest")}} منبع درخواست را برمی‌گرداند، مانند یک Index یا object store. اگر منبعی وجود نداشته باشد (مثلاً هنگام فراخوانی {{domxref("IDBFactory.open")}})، مقدار `null` برمی‌گردد.
 
-## Value
+## مقدار
 
-An object representing the source of the request, such as an {{domxref("IDBIndex")}},
-{{domxref("IDBObjectStore")}} or {{domxref("IDBCursor")}}.
+یک شیء که منبع درخواست را نشان می‌دهد، مانند یک {{domxref("IDBIndex")}}، {{domxref("IDBObjectStore")}} یا {{domxref("IDBCursor")}}.
 
-## Examples
+## مثال‌ها
 
-The following example requests a given record title, `onsuccess` gets the
-associated record from the {{domxref("IDBObjectStore")}} (made available
-as `objectStoreTitleRequest.result`), updates
-one property of the record, and then puts the updated record back into the object
-store in another request. The source of the 2nd request is logged to the developer
-console. For a full working example, see our [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) app ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+مثال زیر یک عنوان رکورد مشخص را درخواست می‌کند؛ در `onsuccess` رکورد مرتبط از {{domxref("IDBObjectStore")}} گرفته می‌شود (با نام `objectStoreTitleRequest.result` در دسترس است)، یک ویژگی از رکورد به‌روزرسانی می‌شود و سپس رکورد به‌روزرسانی‌شده در یک درخواست دیگر دوباره در object store قرار می‌گیرد. منبع دومین درخواست در کنسول توسعه‌دهنده ثبت (log) می‌شود. برای یک مثال کامل و قابل اجرا، برنامهٔ [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) را ببینید ([مشاهدهٔ مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
 
 ```js
 const title = "Walk dog";
@@ -65,20 +50,20 @@ objectStoreTitleRequest.onsuccess = () => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم بازه‌ای از کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و اعمال تغییرات در داده‌ها: {{domxref("IDBObjectStore")}}
+- استفاده از نشانگرها (cursors): {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهدهٔ مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
