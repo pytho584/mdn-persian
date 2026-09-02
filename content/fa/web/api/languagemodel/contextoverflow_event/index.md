@@ -1,11 +1,5 @@
 ---
 title: "LanguageModel: contextoverflow event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/LanguageModel/contextoverflow_event"
-status: "needs-translation"
----
-
----
-title: "LanguageModel: contextoverflow event"
 short-title: contextoverflow
 slug: Web/API/LanguageModel/contextoverflow_event
 page-type: web-api-event
@@ -14,11 +8,11 @@ browser-compat: api.LanguageModel.contextoverflow_event
 
 {{APIRef("Prompt API")}}{{SecureContext_Header}}
 
-The **`contextoverflow`** event fires on a {{domxref("LanguageModel")}} instance when a call to {{domxref("LanguageModel.prompt()", "prompt()")}}, {{domxref("LanguageModel.promptStreaming()", "promptStreaming()")}}, or {{domxref("LanguageModel.append()", "append()")}} causes the session's {{domxref("LanguageModel.contextUsage", "contextUsage")}} to exceed the {{domxref("LanguageModel.contextWindow", "contextWindow")}}.
+رویداد **`contextoverflow`** روی یک نمونه از {{domxref("LanguageModel")}} رخ می‌دهد؛ زمانی که یک فراخوانی به {{domxref("LanguageModel.prompt()", "prompt()")}}، {{domxref("LanguageModel.promptStreaming()", "promptStreaming()")}} یا {{domxref("LanguageModel.append()", "append()")}} سبب شود {{domxref("LanguageModel.contextUsage", "contextUsage")}} جلسه از {{domxref("LanguageModel.contextWindow", "contextWindow")}} فراتر رود.
 
-## Syntax
+## سینتکس
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+نام رویداد را می‌توانید در متدهایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد (event handler property) تنظیم کنید.
 
 ```js-nolint
 addEventListener("contextoverflow", (event) => {})
@@ -26,15 +20,15 @@ addEventListener("contextoverflow", (event) => {})
 oncontextoverflow = (event) => {}
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## نمونه‌ها
 
-### Reacting to a context overflow
+### واکنش به سرریز context
 
-The code below shows two methods of creating an event listener for the `contextoverflow` event.
+کد زیر دو روش ایجاد یک شنونده رویداد (event listener) برای رویداد `contextoverflow` را نشان می‌دهد.
 
 ```js
 const session = await LanguageModel.create();
@@ -44,7 +38,7 @@ session.addEventListener("contextoverflow", () => {
 });
 ```
 
-Alternatively:
+روش دیگر:
 
 ```js
 const session = await LanguageModel.create();
@@ -57,9 +51,9 @@ session.oncontextoverflow = () => {
 };
 ```
 
-### Resetting the session on overflow
+### بازنشانی جلسه هنگام سرریز
 
-The following example creates a new session when the `contextoverflow` event is triggered.
+مثال زیر هنگام رخ دادن رویداد `contextoverflow` یک جلسه جدید ایجاد می‌کند.
 
 ```js
 let session = await LanguageModel.create({
@@ -82,15 +76,15 @@ async function chat(userMessage) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("LanguageModel.contextUsage")}}
 - {{domxref("LanguageModel.contextWindow")}}
