@@ -1,11 +1,5 @@
 ---
 title: "MediaStreamTrack: contentHint property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/contentHint"
-status: "needs-translation"
----
-
----
-title: "MediaStreamTrack: contentHint property"
 short-title: contentHint
 slug: Web/API/MediaStreamTrack/contentHint
 page-type: web-api-instance-property
@@ -14,32 +8,32 @@ browser-compat: api.MediaStreamTrack.contentHint
 
 {{APIRef("Media Capture and Streams")}}
 
-The **`contentHint`** property of the {{domxref("MediaStreamTrack")}} interface is a string that hints at the type of content the track contains. Allowable values depend on the value of the {{domxref("MediaStreamTrack.kind")}} property.
+ویژگی **`contentHint`** در رابط {{domxref("MediaStreamTrack")}} یک رشته است که نوع محتوای موجود در track را مشخص می‌کند. مقادیر مجاز به مقدار ویژگی {{domxref("MediaStreamTrack.kind")}} بستگی دارند.
 
-## Value
+## مقدار
 
-A string with one of the following values:
+یک رشته با یکی از مقادیر زیر:
 
 - `""`
-  - : No `contentHint` has been set.
+  - : هیچ `contentHint` تنظیم نشده است.
 - `"speech"`
-  - : The track should be treated as if it contains speech data. When setting this value, the value of {{domxref("MediaStreamTrack.kind")}} must be `"audio"`.
+  - : این track باید به‌گونه‌ای پردازش شود که گویی حاوی داده‌های گفتاری است. هنگام تنظیم این مقدار، مقدار {{domxref("MediaStreamTrack.kind")}} باید `"audio"` باشد.
 - `"speech-recognition"`
-  - : The track should be treated as if it contains data for the purpose of speech recognition by a machine. When setting this value, the value of {{domxref("MediaStreamTrack.kind")}} must be `"audio"`.
+  - : این track باید به‌گونه‌ای پردازش شود که گویی حاوی داده‌هایی برای تشخیص گفتار توسط ماشین است. هنگام تنظیم این مقدار، مقدار {{domxref("MediaStreamTrack.kind")}} باید `"audio"` باشد.
 - `"music"`
-  - : The track should be treated as if it contains music. When setting this value, the value of {{domxref("MediaStreamTrack.kind")}} must be `"audio"`.
+  - : این track باید به‌گونه‌ای پردازش شود که گویی حاوی موسیقی است. هنگام تنظیم این مقدار، مقدار {{domxref("MediaStreamTrack.kind")}} باید `"audio"` باشد.
 - `"motion"`
-  - : The track should be treated as if it contains video where motion is important. For example, webcam video, movies or video games. When setting this value, the value of {{domxref("MediaStreamTrack.kind")}} must be `"video"`.
+  - : این track باید به‌گونه‌ای پردازش شود که گویی ویدئویی است که حرکت در آن اهمیت دارد. برای مثال، ویدئوی وب‌کم، فیلم‌ها یا بازی‌های ویدئویی. هنگام تنظیم این مقدار، مقدار {{domxref("MediaStreamTrack.kind")}} باید `"video"` باشد.
 - `"detail"`
-  - : The track should be treated as if video details are extra important. For example, presentations or web pages with text content, painting or line art. When setting this value, the value of {{domxref("MediaStreamTrack.kind")}} must be `"video"`.
+  - : این track باید به‌گونه‌ای پردازش شود که گویی جزئیات ویدئو اهمیت فوق‌العاده‌ای دارند. برای مثال، ارائه‌ها یا صفحات وب با محتوای متنی، نقاشی یا طراحی خطی. هنگام تنظیم این مقدار، مقدار {{domxref("MediaStreamTrack.kind")}} باید `"video"` باشد.
 - `"text"`
-  - : The track should be treated as if video details are extra important, and that significant sharp edges and areas of consistent color can occur frequently. For example, presentations or web pages with text content. When setting this value, the value of {{domxref("MediaStreamTrack.kind")}} must be `"video"`.
+  - : این track باید به‌گونه‌ای پردازش شود که گویی جزئیات ویدئو اهمیت فوق‌العاده‌ای دارند و لبه‌های تیز و نواحی با رنگ یکنواخت ممکن است به‌طور مکرر رخ دهند. برای مثال، ارائه‌ها یا صفحات وب با محتوای متنی. هنگام تنظیم این مقدار، مقدار {{domxref("MediaStreamTrack.kind")}} باید `"video"` باشد.
 
-## Examples
+## مثال‌ها
 
-### A function that sets the contentHint
+### تابعی که contentHint را تنظیم می‌کند
 
-This function takes a stream and a `contentHint` value, and applies the hint to each track. [See the full example here](https://webrtc.github.io/samples/src/content/capture/video-contenthint/), showing how different `contentHint` values change how the tracks display.
+این تابع یک stream و یک مقدار `contentHint` دریافت می‌کند و hint را روی هر track اعمال می‌کند. [مثال کامل را اینجا ببینید](https://webrtc.github.io/samples/src/content/capture/video-contenthint/) که نشان می‌دهد مقادیر مختلف `contentHint` چگونه نحوه نمایش trackها را تغییر می‌دهند.
 
 ```js
 function setVideoTrackContentHints(stream, hint) {
@@ -57,10 +51,10 @@ function setVideoTrackContentHints(stream, hint) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
