@@ -1,11 +1,5 @@
 ---
 title: "HTMLTrackElement: default property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTrackElement/default"
-status: "needs-translation"
----
-
----
-title: "HTMLTrackElement: default property"
 short-title: default
 slug: Web/API/HTMLTrackElement/default
 page-type: web-api-instance-property
@@ -14,13 +8,13 @@ browser-compat: api.HTMLTrackElement.default
 
 {{ApiRef("HTML DOM")}}
 
-The **`default`** property of the {{domxref("HTMLTrackElement")}} interface represents whether the track will be enabled if the user's preferences do not indicate that another track would be more appropriate. It reflects the {{htmlelement("track")}} element's boolean [`default`](/en-US/docs/Web/HTML/Reference/Elements/track#default) attribute, returning `true` if present and `false` otherwise.
+ویژگی **`default`** در رابط {{domxref("HTMLTrackElement")}} مشخص می‌کند که آیا track در صورتی فعال می‌شود که تنظیمات کاربر نشان ندهد track دیگری مناسب‌تر است. این ویژگی، صفت بولین [`default`](/en-US/docs/Web/HTML/Reference/Elements/track#default) عنصر {{htmlelement("track")}} را منعکس می‌کند؛ اگر این صفت وجود داشته باشد مقدار `true` و در غیر این صورت مقدار `false` برمی‌گرداند.
 
-## Value
+## مقدار
 
-A Boolean.
+یک مقدار بولین.
 
-## Example
+## مثال
 
 ```js
 const trackElement = document.getElementById("exampleTrack");
@@ -28,15 +22,15 @@ console.log(trackElement.default);
 trackElement.default = true;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLTrackElement.kind")}}
 - {{domxref("HTMLTrackElement.label")}}
