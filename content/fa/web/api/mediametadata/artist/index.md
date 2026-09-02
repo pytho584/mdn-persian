@@ -1,11 +1,5 @@
 ---
 title: "MediaMetadata: artist property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaMetadata/artist"
-status: "needs-translation"
----
-
----
-title: "MediaMetadata: artist property"
 short-title: artist
 slug: Web/API/MediaMetadata/artist
 page-type: web-api-instance-property
@@ -14,18 +8,15 @@ browser-compat: api.MediaMetadata.artist
 
 {{APIRef("Media Session API")}}
 
-The **`artist`** property of the
-{{domxref("MediaMetadata")}} interface returns or sets the name of the artist, group,
-creator, etc., of the media to be played.
+ویژگی **`artist`** در رابط {{domxref("MediaMetadata")}} نام هنرمند، گروه، پدیدآورنده و مانند آن را برای رسانه‌ای که قرار است پخش شود برمی‌گرداند یا تنظیم می‌کند.
 
-## Value
+## مقدار
 
-A {{jsxref("String")}} containing the name of the artist.
+یک {{jsxref("String")}} شامل نام هنرمند.
 
-## Examples
+## مثال‌ها
 
-The following example checks for browser compatibility and sets the current metadata
-for the media session.
+مثال زیر سازگاری مرورگر را بررسی می‌کند و ابردادهٔ فعلی نشست رسانه‌ای را تنظیم می‌کند.
 
 ```js
 if ("mediaSession" in navigator) {
@@ -69,10 +60,10 @@ if ("mediaSession" in navigator) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
