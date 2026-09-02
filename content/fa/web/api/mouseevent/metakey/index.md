@@ -1,11 +1,5 @@
 ---
 title: "MouseEvent: metaKey property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/metaKey"
-status: "needs-translation"
----
-
----
-title: "MouseEvent: metaKey property"
 short-title: metaKey
 slug: Web/API/MouseEvent/metaKey
 page-type: web-api-instance-property
@@ -14,27 +8,26 @@ browser-compat: api.MouseEvent.metaKey
 
 {{APIRef("Pointer Events")}}
 
-The **`MouseEvent.metaKey`** read-only property is a boolean value that indicates whether the <kbd>meta</kbd> key was pressed or not when a given mouse event occurs.
+ویژگی فقط-خواندنی **`MouseEvent.metaKey`** یک مقدار بولی است که نشان می‌دهد آیا کلید <kbd>meta</kbd> هنگام وقوع یک رویداد ماوس فشرده شده بود یا نه.
 
-Be aware that many operating systems bind special functionality to the <kbd>meta</kbd> key, so this property may be `false` even when the key is actually pressed.
-On Windows, for example, this key may open the Start menu.
+توجه داشته باشید که بسیاری از سیستم‌عامل‌ها عملکردهای خاصی را به کلید <kbd>meta</kbd> اختصاص می‌دهند، بنابراین این ویژگی ممکن است حتی زمانی که کلید واقعاً فشرده شده است `false` باشد. برای مثال، در ویندوز این کلید ممکن است منوی استارت را باز کند.
 
 > [!NOTE]
-> On Macintosh keyboards, this key is the <kbd>command</kbd> key (<kbd>⌘</kbd>).
-> On Windows keyboards, this key is the Windows key (<kbd>⊞</kbd>).
+> در صفحه‌کلیدهای مکینتاش، این کلید همان کلید <kbd>command</kbd> (<kbd>⌘</kbd>) است.
+> در صفحه‌کلیدهای ویندوز، این کلید کلید ویندوز (<kbd>⊞</kbd>) است.
 
-## Value
+## مقدار
 
-A boolean value, where `true` indicates that the key is pressed, and `false` indicates that the key is _not_ pressed.
+یک مقدار بولی که `true` نشان‌دهنده فشرده شدن کلید و `false` نشان‌دهنده _فشرده نشدن_ کلید است.
 
-## Examples
+## مثال‌ها
 
-This example logs the `metaKey` property when you trigger a {{domxref("Element/click_event", "click")}} event.
+این مثال هنگام فعال‌سازی یک رویداد {{domxref("Element/click_event", "click")}}، ویژگی `metaKey` را ثبت می‌کند.
 
 ### HTML
 
 ```html
-<p>Click anywhere to test the <code>metaKey</code> property.</p>
+<p>برای آزمایش ویژگی <code>metaKey</code>، هر جایی کلیک کنید.</p>
 <p id="log"></p>
 ```
 
@@ -45,22 +38,22 @@ let log = document.querySelector("#log");
 document.addEventListener("click", logKey);
 
 function logKey(e) {
-  log.textContent = `The meta key is pressed: ${e.metaKey}`;
+  log.textContent = `کلید meta فشرده شده است: ${e.metaKey}`;
 }
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{ domxref("MouseEvent") }}
