@@ -1,11 +1,5 @@
 ---
 title: "NamedNodeMap: removeNamedItem() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NamedNodeMap/removeNamedItem"
-status: "needs-translation"
----
-
----
-title: "NamedNodeMap: removeNamedItem() method"
 short-title: removeNamedItem()
 slug: Web/API/NamedNodeMap/removeNamedItem
 page-type: web-api-instance-method
@@ -14,30 +8,29 @@ browser-compat: api.NamedNodeMap.removeNamedItem
 
 {{APIRef("DOM")}}
 
-The **`removeNamedItem()`** method of the {{domxref("NamedNodeMap")}} interface
-removes the {{domxref("Attr")}} corresponding to the given name from the map.
+متد **`removeNamedItem()`** در رابط {{domxref("NamedNodeMap")}}، گره {{domxref("Attr")}} متناظر با نام داده‌شده را از نقشه حذف می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 removeNamedItem(attrName)
 ```
 
-### Parameters
+### پارامترها
 
 - `attrName`
-  - : The name of the attribute to remove from the map.
+  - : نام ویژگی که باید از نقشه حذف شود.
 
-### Return value
+### مقدار بازگشتی
 
-The removed {{domxref("Attr")}}.
+شیء {{domxref("Attr")}} حذف‌شده.
 
-### Exceptions
+### استثناها
 
 - `NotFoundError` {{domxref("DOMException")}}
-  - : Thrown if there is no attribute with the given name.
+  - : اگر ویژگی‌ای با نام داده‌شده وجود نداشته باشد پرتاب می‌شود.
 
-## Example
+## مثال
 
 ```html
 <pre test="testValue"></pre>
@@ -61,10 +54,10 @@ pre.textContent = result;
 
 {{EmbedLiveSample("Example", "100%", 120)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
