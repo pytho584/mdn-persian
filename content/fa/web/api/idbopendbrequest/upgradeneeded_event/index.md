@@ -1,11 +1,5 @@
 ---
 title: "IDBOpenDBRequest: upgradeneeded event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBOpenDBRequest/upgradeneeded_event"
-status: "needs-translation"
----
-
----
-title: "IDBOpenDBRequest: upgradeneeded event"
 short-title: upgradeneeded
 slug: Web/API/IDBOpenDBRequest/upgradeneeded_event
 page-type: web-api-event
@@ -14,13 +8,13 @@ browser-compat: api.IDBOpenDBRequest.upgradeneeded_event
 
 {{APIRef("IndexedDB")}}
 
-The `upgradeneeded` event is fired when an attempt was made to open a database with a version number higher than its current version.
+رویداد `upgradeneeded` زمانی فعال می‌شود که تلاش برای باز کردن یک پایگاه داده با شماره نسخه‌ای بالاتر از نسخه فعلی آن صورت گیرد.
 
-This event is not cancelable and does not bubble.
+این رویداد قابل لغو نیست و انتشار نمی‌یابد.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("upgradeneeded", (event) => { })
@@ -28,15 +22,15 @@ addEventListener("upgradeneeded", (event) => { })
 onupgradeneeded = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-An {{domxref("IDBVersionChangeEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("IDBVersionChangeEvent")}} که از {{domxref("Event")}} ارث‌بری می‌کند.
 
 {{InheritanceDiagram("IDBVersionChangeEvent")}}
 
-## Examples
+## مثال‌ها
 
-This example opens a database and handles the `upgradeneeded` event by making any necessary updates to the object store.
+این مثال یک پایگاه داده را باز می‌کند و رویداد `upgradeneeded` را با انجام هرگونه به‌روزرسانی لازم در فروشگاه شیء مدیریت می‌کند.
 
 ```js
 // Open the database
@@ -60,7 +54,7 @@ dBOpenRequest.addEventListener("upgradeneeded", (event) => {
 });
 ```
 
-This is the same example, but uses the onupgradeneeded event handler property.
+این همان مثال است، اما از ویژگی کنترل‌کننده رویداد `onupgradeneeded` استفاده می‌کند.
 
 ```js
 // Open the database
@@ -84,14 +78,14 @@ dBOpenRequest.onupgradeneeded = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
