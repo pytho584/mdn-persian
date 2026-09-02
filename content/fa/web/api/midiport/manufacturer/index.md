@@ -1,11 +1,5 @@
 ---
 title: "MIDIPort: manufacturer property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MIDIPort/manufacturer"
-status: "needs-translation"
----
-
----
-title: "MIDIPort: manufacturer property"
 short-title: manufacturer
 slug: Web/API/MIDIPort/manufacturer
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.MIDIPort.manufacturer
 
 {{securecontext_header}}{{APIRef("Web MIDI API")}}
 
-The **`manufacturer`** read-only property of the {{domxref("MIDIPort")}} interface returns the manufacturer of the port.
+ویژگی فقط‌خواندنی `manufacturer` از رابط {{domxref("MIDIPort")}}، نام سازندهٔ پورت را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A string containing the manufacturer of the port.
+یک رشته که نام سازندهٔ پورت را در خود دارد.
 
-## Examples
+## مثال‌ها
 
-The following example loops through all input ports and prints the manufacturer of each to the console.
+مثال زیر روی همهٔ پورت‌های ورودی حلقه می‌زند و نام سازندهٔ هرکدام را در کنسول چاپ می‌کند.
 
 ```js
 for (const entry of midiAccess.inputs) {
@@ -31,10 +25,10 @@ for (const entry of midiAccess.inputs) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
