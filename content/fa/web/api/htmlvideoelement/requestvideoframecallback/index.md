@@ -1,11 +1,5 @@
 ---
 title: "HTMLVideoElement: requestVideoFrameCallback() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLVideoElement/requestVideoFrameCallback"
-status: "needs-translation"
----
-
----
-title: "HTMLVideoElement: requestVideoFrameCallback() method"
 short-title: requestVideoFrameCallback()
 slug: Web/API/HTMLVideoElement/requestVideoFrameCallback
 page-type: web-api-instance-method
@@ -14,76 +8,75 @@ browser-compat: api.HTMLVideoElement.requestVideoFrameCallback
 
 {{APIRef("HTML DOM")}}
 
-The **`requestVideoFrameCallback()`** method of the {{domxref("HTMLVideoElement")}} interface registers a callback function that runs when a new video frame is sent to the compositor. This enables developers to perform efficient operations on each video frame.
+متد **`requestVideoFrameCallback()`** در واسط {{domxref("HTMLVideoElement")}} یک تابع بازخوانی (callback) ثبت می‌کند که وقتی یک فریم ویدیویی جدید به ترکیب‌کننده (compositor) ارسال می‌شود، اجرا می‌شود. این کار به توسعه‌دهندگان امکان می‌دهد عملیات کارآمدی را روی هر فریم ویدیو انجام دهند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 requestVideoFrameCallback(callback)
 ```
 
-### Parameters
+### پارامترها
 
 - `callback`
-  - : The callback function that runs when a new video frame is sent to the compositor. This contains two parameters:
+  - : تابع بازخوانی که وقتی یک فریم ویدیویی جدید به ترکیب‌کننده ارسال می‌شود اجرا می‌شود. این تابع شامل دو پارامتر است:
     - `now`
-      - : A {{domxref("DOMHighResTimeStamp")}} representing the time when the callback was called.
+      - : یک {{domxref("DOMHighResTimeStamp")}} که زمان فراخوانی callback را نشان می‌دهد.
     - `metadata`
-      - : An object containing the following properties:
+      - : یک شیء حاوی ویژگی‌های زیر:
         - `expectedDisplayTime`
-          - : A {{domxref("DOMHighResTimeStamp")}} representing the time when the browser expects the frame to be visible.
+          - : یک {{domxref("DOMHighResTimeStamp")}} که زمانی را نشان می‌دهد که مرورگر انتظار دارد فریم قابل مشاهده باشد.
         - `height`
-          - : A number, in media pixels, representing the height of the video frame (the visible decoded pixels, without aspect ratio adjustments).
+          - : یک عدد، بر حسب پیکسل رسانه‌ای، که ارتفاع فریم ویدیو را نشان می‌دهد (پیکسل‌های قابل مشاهدهٔ رمزگشایی‌شده، بدون تنظیمات نسبت تصویر).
         - `mediaTime`
-          - : A number, in seconds, representing the media presentation timestamp of the presented frame. This is equal to the frame's timestamp on the {{domxref("HTMLMediaElement.currentTime")}} timeline.
+          - : یک عدد، بر حسب ثانیه، که برچسب زمانی ارائهٔ رسانه‌ای (media presentation timestamp) فریم ارائه‌شده را نشان می‌دهد. این مقدار با برچسب زمانی فریم در خط زمانی {{domxref("HTMLMediaElement.currentTime")}} برابر است.
         - `presentationTime`
-          - : A {{domxref("DOMHighResTimeStamp")}} representing the time when the browser submitted the frame for composition.
+          - : یک {{domxref("DOMHighResTimeStamp")}} که زمانی را نشان می‌دهد که مرورگر فریم را برای ترکیب (composition) ارسال کرد.
         - `presentedFrames`
-          - : A number representing the number of frames submitted for composition so far alongside the current callback.
-            This can be used to detect whether frames were missed between callback instances.
+          - : یک عدد که تعداد فریم‌های ارسال‌شده برای ترکیب تا کنون در کنار callback فعلی را نشان می‌دهد. می‌توان از آن برای تشخیص اینکه آیا بین نمونه‌های callback فریم‌هایی از دست رفته‌اند استفاده کرد.
         - `processingDuration`
-          - : A number, in seconds, representing the duration between the submission of the encoded packet with the same presentation timestamp as this frame to the decoder (i.e., the `mediaTime`) and the decoded frame being ready for presentation.
+          - : یک عدد، بر حسب ثانیه، که مدت زمان بین ارسال بستهٔ رمزگذاری‌شده با همان برچسب زمانی ارائهٔ این فریم به رمزگشا (یعنی `mediaTime`) و آماده شدن فریم رمزگشایی‌شده برای ارائه را نشان می‌دهد.
         - `width`
-          - : A number, in media pixels, representing the width of the video frame (the visible decoded pixels, without aspect ratio adjustments).
+          - : یک عدد، بر حسب پیکسل رسانه‌ای، که عرض فریم ویدیو را نشان می‌دهد (پیکسل‌های قابل مشاهدهٔ رمزگشایی‌شده، بدون تنظیمات نسبت تصویر).
 
-        Additional metadata properties may be available within `requestVideoFrameCallback()` callbacks used in {{domxref("WebRTC_API", "WebRTC", "", "nocode")}} applications:
+        ویژگی‌های فرادادهٔ اضافی ممکن است در callback های `requestVideoFrameCallback()` که در برنامه‌های {{domxref("WebRTC_API", "WebRTC", "", "nocode")}} استفاده می‌شوند در دسترس باشند:
         - `captureTime`
-          - : A {{domxref("DOMHighResTimeStamp")}} representing the time when the frame was captured. This applies to video frames coming from a local or remote source. For a remote source, the capture time is estimated using clock synchronization and RTCP sender reports to convert RTP timestamps to capture time.
+          - : یک {{domxref("DOMHighResTimeStamp")}} که زمان ضبط فریم را نشان می‌دهد. این مورد برای فریم‌های ویدیویی که از منبع محلی یا راه دور می‌آیند صدق می‌کند. برای منبع راه دور، زمان ضبط با استفاده از همگام‌سازی ساعت و گزارش‌های فرستندهٔ RTCP برای تبدیل برچسب‌های زمانی RTP به زمان ضبط تخمین زده می‌شود.
         - `receiveTime`
-          - : A {{domxref("DOMHighResTimeStamp")}} representing the time when the encoded frame was received by the platform. This applies to video frames coming from a remote source. Specifically, this corresponds to the time when the last packet belonging to this frame was received over the network.
+          - : یک {{domxref("DOMHighResTimeStamp")}} که زمانی را نشان می‌دهد که فریم رمزگذاری‌شده توسط پلتفرم دریافت شد. این مورد برای فریم‌های ویدیویی که از منبع راه دور می‌آیند صدق می‌کند. به‌طور مشخص، این مقدار مطابق با زمانی است که آخرین بستهٔ متعلق به این فریم از طریق شبکه دریافت شد.
         - `rtpTimestamp`
-          - : A number representing the RTP timestamp associated with this video frame.
+          - : یک عدد که برچسب زمانی RTP مرتبط با این فریم ویدیو را نشان می‌دهد.
 
 > [!NOTE]
-> `width` and `height` may differ from {{domxref("HTMLVideoElement.videoWidth")}} and {{domxref("HTMLVideoElement.videoHeight")}} in certain cases (for example, an anamorphic video may have rectangular pixels).
+> ممکن است `width` و `height` در موارد خاصی با {{domxref("HTMLVideoElement.videoWidth")}} و {{domxref("HTMLVideoElement.videoHeight")}} تفاوت داشته باشند (مثلاً یک ویدیوی آنامورفیک ممکن است پیکسل‌های مستطیلی داشته باشد).
 
-### Return value
+### مقدار بازگشتی
 
-A number representing a unique callback ID.
+یک عدد که شناسهٔ یکتای callback را نشان می‌دهد.
 
-This can be passed to {{DOMxRef("HTMLVideoElement.cancelVideoFrameCallback()")}} to cancel the callback registration.
+این عدد می‌تواند به {{DOMxRef("HTMLVideoElement.cancelVideoFrameCallback()")}} ارسال شود تا ثبت callback لغو شود.
 
-## Description
+## توضیحات
 
-Typical use cases for `requestVideoFrameCallback()` include video processing and painting to a canvas, video analysis, and synchronization with external audio sources. Per-frame processing used to be done in a less efficient or accurate fashion by running operations on the current video display whenever the {{domxref("HTMLMediaElement.timeupdate_event", "timeupdate")}} event fired. This technique did not provide access to the actual video frames.
+موارد استفادهٔ معمول برای `requestVideoFrameCallback()` شامل پردازش ویدیو و نقاشی روی canvas، تحلیل ویدیو و همگام‌سازی با منابع صوتی خارجی است. پردازش هر فریم قبلاً به شیوه‌ای کم‌دقت‌تر یا کم‌بازده‌تر با اجرای عملیات روی نمایش ویدیوی فعلی در هر بار رخداد {{domxref("HTMLMediaElement.timeupdate_event", "timeupdate")}} انجام می‌شد. این روش به فریم‌های واقعی ویدیو دسترسی نداشت.
 
-`requestVideoFrameCallback()` is used in the same way as {{domxref("Window.requestAnimationFrame()")}}. You use it to run a callback function that performs some operation when the next video frame is sent to the compositor. The callback finishes by calling `requestVideoFrameCallback()` again to run the callback when the next video frame is composited, and so on. However, `requestVideoFrameCallback()` is tailored for video operations in several ways:
+از `requestVideoFrameCallback()` به همان شیوهٔ {{domxref("Window.requestAnimationFrame()")}} استفاده می‌شود. از آن برای اجرای یک تابع callback استفاده می‌کنید که وقتی فریم ویدیویی بعدی به ترکیب‌کننده ارسال می‌شود، عملیاتی را انجام می‌دهد. callback با فراخوانی دوبارهٔ `requestVideoFrameCallback()` به پایان می‌رسد تا callback را هنگام ترکیب شدن فریم ویدیویی بعدی اجرا کند و به همین ترتیب ادامه می‌یابد. با این حال، `requestVideoFrameCallback()` از چند نظر برای عملیات ویدیویی طراحی شده است:
 
-- `requestVideoFrameCallback()` provides reliable access to each individual video frame.
-- `requestAnimationFrame()` tries to match the display refresh rate, which is typically 60Hz. `requestVideoFrameCallback()`, on the other hand, tries to match the video frame rate. More specifically, the callback will run at the lower of the video frame rate and the browser paint refresh rate. For example, a video with a frame rate of 25fps playing in a browser that paints at 60Hz would fire callbacks at a rate of 25Hz. A video with a frame rate of 120fps running in the same 60Hz browser would fire callbacks at 60Hz.
-- `requestVideoFrameCallback()` makes useful video metadata available in the callback function.
+- `requestVideoFrameCallback()` دسترسی مطمئنی به هر فریم ویدیویی به‌صورت جداگانه فراهم می‌کند.
+- `requestAnimationFrame()` تلاش می‌کند با نرخ تازه‌سازی نمایشگر که معمولاً ۶۰ هرتز است مطابقت داشته باشد. از سوی دیگر، `requestVideoFrameCallback()` تلاش می‌کند با نرخ فریم ویدیو مطابقت داشته باشد. به‌طور دقیق‌تر، callback با کمترین مقدار از نرخ فریم ویدیو و نرخ تازه‌سازی نقاشی مرورگر اجرا می‌شود. برای مثال، ویدیویی با نرخ فریم ۲۵ فریم‌برثانیه در مرورگری که با ۶۰ هرتز نقاشی می‌کند، callback ها را با نرخ ۲۵ هرتز اجرا می‌کند. ویدیویی با نرخ فریم ۱۲۰ فریم‌برثانیه در همان مرورگر ۶۰ هرتزی، callback ها را با نرخ ۶۰ هرتز اجرا می‌کند.
+- `requestVideoFrameCallback()` فراداده‌های مفید ویدیو را در تابع callback در دسترس قرار می‌دهد.
 
-One thing to bear in mind is that `requestVideoFrameCallback()` does not offer any strict guarantees that the output from your callback will remain in sync with the video frame rate. It may end up being fired one vertical synchronization (v-sync) later than when the new video frame was presented. (V-sync is a graphics technology that synchronizes the frame rate of a video with the refresh rate of a monitor.)
+یک نکته که باید در نظر داشته باشید این است که `requestVideoFrameCallback()` هیچ تضمین دقیقی ارائه نمی‌دهد که خروجی callback شما با نرخ فریم ویدیو همگام باقی بماند. ممکن است در نهایت یک چرخهٔ همگام‌سازی عمودی (v-sync) دیرتر از زمانی که فریم ویدیویی جدید ارائه شده است اجرا شود. (V-sync یک فناوری گرافیکی است که نرخ فریم یک ویدیو را با نرخ تازه‌سازی مانیتور همگام می‌کند.)
 
-The API runs on the main thread, while video compositing likely happens on a separate compositing thread. You've got to factor in the time taken for these operations to complete, as well as the time it takes for the video itself and the result of your `requestVideoFrameCallback()` operation to display on the screen.
+این API روی نخ اصلی (main thread) اجرا می‌شود، در حالی که ترکیب ویدیو احتمالاً روی یک نخ ترکیب جداگانه انجام می‌شود. باید زمان لازم برای تکمیل این عملیات و همچنین زمانی را که طول می‌کشد تا خود ویدیو و نتیجهٔ عملیات `requestVideoFrameCallback()` شما روی صفحه نمایش داده شود، در نظر بگیرید.
 
-You can compare the `now` callback parameter and the `expectedDisplayTime` metadata property to determine whether your callback is a v-sync late. If `expectedDisplayTime` is within about five to ten microseconds of `now`, the frame is already rendered. If the `expectedDisplayTime` is approximately sixteen milliseconds in the future (assuming your browser/screen is refreshing at 60Hz), then the callback is a v-sync out.
+می‌توانید پارامتر `now` و ویژگی فرادادهٔ `expectedDisplayTime` را مقایسه کنید تا تعیین کنید آیا callback شما به اندازهٔ یک v-sync عقب است یا خیر. اگر `expectedDisplayTime` حدود پنج تا ده میکروثانیه با `now` فاصله داشته باشد، فریم قبلاً رندر شده است. اگر `expectedDisplayTime` تقریباً شانزده میلی‌ثانیه در آینده باشد (با فرض اینکه مرورگر/صفحه‌نمایش شما با ۶۰ هرتز تازه‌سازی می‌کند)، آنگاه callback یک v-sync فاصله دارد.
 
-## Examples
+## مثال‌ها
 
-### Drawing video frames on a canvas
+### رسم فریم‌های ویدیو روی canvas
 
-This example shows how to use `requestVideoFrameCallback()` to draw the frames of a video onto a {{htmlelement("canvas")}} element at exactly the same frame rate as the video. It also logs the frame metadata to the screen for debugging purposes.
+این مثال نشان می‌دهد که چگونه از `requestVideoFrameCallback()` برای رسم فریم‌های یک ویدیو روی عنصر {{htmlelement("canvas")}} دقیقاً با همان نرخ فریم ویدیو استفاده کنید. همچنین فراداده‌های فریم را برای اهداف اشکال‌زدایی روی صفحه ثبت می‌کند.
 
 ```js
 const button = document.querySelector("button");
@@ -151,16 +144,16 @@ canvas {
 
 {{embedlivesample("drawing_video_frames_on_a_canvas", , "540")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{HTMLElement("video")}} element
+- عنصر {{HTMLElement("video")}}
 - {{DOMxRef("HTMLVideoElement.cancelVideoFrameCallback()")}}
-- [Perform efficient per-video-frame operations on video with `requestVideoFrameCallback()`](https://web.dev/articles/requestvideoframecallback-rvfc) on developer.chrome.com (2023)
+- [انجام عملیات کارآمد روی هر فریم ویدیو با `requestVideoFrameCallback()`](https://web.dev/articles/requestvideoframecallback-rvfc) در developer.chrome.com (۲۰۲۳)
