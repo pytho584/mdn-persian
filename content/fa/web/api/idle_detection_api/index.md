@@ -1,10 +1,4 @@
 ---
-title: "Idle Detection API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Idle_Detection_API"
-status: "needs-translation"
----
-
----
 title: Idle Detection API
 slug: Web/API/Idle_Detection_API
 page-type: web-api-overview
@@ -15,22 +9,20 @@ browser-compat: api.IdleDetector
 
 {{securecontext_header}}{{DefaultAPISidebar("Idle Detection API")}}{{SeeCompatTable}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The Idle Detection API provides a means to detect the user's idle status, active, idle, and locked, specifically, and to be notified of changes to idle status without polling from a script.
+Idle Detection API امکانی را برای تشخیص وضعیت بیکار بودن کاربر فراهم می‌کند؛ به‌طور خاص وضعیت‌های «فعال» (active)، «بیکار» (idle) و «قفل‌شده» (locked) را شناسایی کرده و بدون نیاز به نظرسنجی (polling) از طریق اسکریپت، تغییرات وضعیت بیکاری را به اطلاع می‌رساند.
 
-## Concepts and Usage
+## مفاهیم و کاربرد
 
-Native applications and browser extensions use idle detection base user experiences on when a user is interacting with a device. For example, chat applications can show other users of an application whether someone is available. Other applications might choose to show notifications only when a user is interacting with the app. A web application could use this API for similar use cases. Additionally, a progressive web app could use idle detection to trigger a service worker update when the app isn't being used.
+برنامه‌های بومی (Native) و افزونه‌های مرورگر، تشخیص بیکاری را مبنای تجربه‌های کاربری خود قرار می‌دهند تا مشخص کنند کاربر چه زمانی با دستگاه در تعامل است. به‌عنوان مثال، برنامه‌های گفتگو می‌توانند به سایر کاربران نشان دهند که آیا فردی در دسترس است یا خیر. برخی برنامه‌ها نیز ممکن است فقط زمانی اعلان‌ها را نشان دهند که کاربر با برنامه در تعامل است. یک برنامه وب می‌تواند برای موارد استفاده مشابه از این API بهره ببرد. علاوه بر این، یک برنامه وب پیشرونده (PWA) می‌تواند از تشخیص بیکاری برای فعال‌کردن به‌روزرسانی سرویس‌کارگر (Service Worker) زمانی که برنامه استفاده نمی‌شود، استفاده کند.
 
-## Interfaces
+## رابط‌ها
 
 - {{domxref("IdleDetector")}} {{Experimental_Inline}}
-  - : Provides methods and events for detecting user activity on a device or screen.
+  - : روش‌ها و رویدادهایی را برای تشخیص فعالیت کاربر روی دستگاه یا صفحه‌نمایش فراهم می‌کند.
 
-## Examples
+## نمونه‌ها
 
-The following example shows creating a detector and logging changes to the
-user's idle state. A button is used to get the necessary user activation before
-requesting permission.
+نمونه زیر نحوه ایجاد یک شناساگر (detector) و ثبت تغییرات وضعیت بیکاری کاربر را نشان می‌دهد. برای دریافت فعال‌سازی کاربر (user activation) لازم پیش از درخواست مجوز، از یک دکمه استفاده شده است.
 
 ```js
 const controller = new AbortController();
@@ -68,10 +60,10 @@ stopButton.addEventListener("click", () => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
