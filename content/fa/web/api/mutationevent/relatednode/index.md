@@ -1,11 +1,5 @@
 ---
 title: "MutationEvent: relatedNode property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MutationEvent/relatedNode"
-status: "needs-translation"
----
-
----
-title: "MutationEvent: relatedNode property"
 short-title: relatedNode
 slug: Web/API/MutationEvent/relatedNode
 page-type: web-api-instance-property
@@ -17,13 +11,13 @@ browser-compat: api.MutationEvent.relatedNode
 
 {{APIRef("UI Events")}}{{Deprecated_Header}}{{non-standard_header}}
 
-The **`relatedNode`** read-only property of the {{domxref("MutationEvent")}} interface returns a string indicating the node related to the event, like the changed node inside the subtree for `DOMSubtreeModified`.
+ویژگی فقط‌خواندنی **`relatedNode`** از رابط {{domxref("MutationEvent")}} رشته‌ای را برمی‌گرداند که گره مرتبط با رویداد را نشان می‌دهد، مانند گره تغییر یافته در زیردرخت برای رویداد `DOMSubtreeModified`.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```js
 element.addEventListener("DOMSubtreeModified", (event) => {
@@ -31,10 +25,10 @@ element.addEventListener("DOMSubtreeModified", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
