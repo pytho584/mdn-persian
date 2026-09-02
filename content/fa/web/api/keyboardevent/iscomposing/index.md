@@ -1,11 +1,5 @@
 ---
 title: "KeyboardEvent: isComposing property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/isComposing"
-status: "needs-translation"
----
-
----
-title: "KeyboardEvent: isComposing property"
 short-title: isComposing
 slug: Web/API/KeyboardEvent/isComposing
 page-type: web-api-instance-property
@@ -14,31 +8,28 @@ browser-compat: api.KeyboardEvent.isComposing
 
 {{APIRef("UI Events")}}
 
-The **`KeyboardEvent.isComposing`** read-only property returns
-a boolean value indicating if the event is fired within a composition
-session, i.e., after {{domxref("Element/compositionstart_event", "compositionstart")}}
-and before {{domxref("Element/compositionend_event", "compositionend")}}.
+ویژگی فقطخواندنی **`KeyboardEvent.isComposing`** یک مقدار بولین برمی‌گرداند که نشان می‌دهد آیا رویداد در یک نشستِ ترکیب (composition session) رخ داده است؛ یعنی پس از {{domxref("Element/compositionstart_event", "compositionstart")}} و پیش از {{domxref("Element/compositionend_event", "compositionend")}}.
 
-## Value
+## مقدار
 
-A boolean.
+یک مقدار بولین.
 
-## Examples
+## مثال‌ها
 
 ```js
 const kbdEvent = new KeyboardEvent("syntheticKey", false);
 console.log(kbdEvent.isComposing); // return false
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("Element/compositionstart_event", "compositionstart")}} and {{domxref("Element/compositionend_event", "compositionend")}}
+- {{domxref("Element/compositionstart_event", "compositionstart")}} و {{domxref("Element/compositionend_event", "compositionend")}}
 - {{domxref("KeyboardEvent")}}
