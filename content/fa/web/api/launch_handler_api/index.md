@@ -1,10 +1,4 @@
 ---
-title: "Launch Handler API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Launch_Handler_API"
-status: "needs-translation"
----
-
----
 title: Launch Handler API
 slug: Web/API/Launch_Handler_API
 page-type: web-api-overview
