@@ -1,11 +1,5 @@
 ---
 title: "ImageBitmapRenderingContext: transferFromImageBitmap() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ImageBitmapRenderingContext/transferFromImageBitmap"
-status: "needs-translation"
----
-
----
-title: "ImageBitmapRenderingContext: transferFromImageBitmap() method"
 short-title: transferFromImageBitmap()
 slug: Web/API/ImageBitmapRenderingContext/transferFromImageBitmap
 page-type: web-api-instance-method
@@ -14,30 +8,26 @@ browser-compat: api.ImageBitmapRenderingContext.transferFromImageBitmap
 
 {{APIRef("Canvas API")}}{{AvailableInWorkers}}
 
-The **`ImageBitmapRenderingContext.transferFromImageBitmap()`**
-method displays the given {{domxref("ImageBitmap")}} in the canvas associated with this
-rendering context. The ownership of the `ImageBitmap` is transferred to the
-canvas as well.
+متد **`ImageBitmapRenderingContext.transferFromImageBitmap()`**، {{domxref("ImageBitmap")}} داده‌شده را در بوم (canvas) مرتبط با این زمینهٔ رندرگیری نمایش می‌دهد. مالکیتِ آن `ImageBitmap` نیز به بوم منتقل می‌شود.
 
-This method was previously named `transferImageBitmap()`, but was renamed in
-a spec change. The old name is being kept as an alias to avoid code breakage.
+این متد پیش از این `transferImageBitmap()` نام داشت، اما در یک تغییر در مشخصات (spec) تغییر نام داد. برای جلوگیری از شکستن کدهای موجود، نام قدیمی همچنان به‌عنوان یک نام مستعار (alias) حفظ شده است.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 transferFromImageBitmap(bitmap)
 ```
 
-### Parameters
+### پارامترها
 
 - `bitmap`
-  - : An {{domxref("ImageBitmap")}} object to transfer, or `null`. If the value is `null`, the canvas is reset to blank.
+  - : یک شیء {{domxref("ImageBitmap")}} برای انتقال، یا `null`. اگر مقدار `null` باشد، بوم به حالت خالی بازنشانی می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
 ### HTML
 
@@ -63,16 +53,16 @@ const bitmap = offscreen.transferToImageBitmap();
 htmlCanvas.transferFromImageBitmap(bitmap);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface defining this method, {{domxref("ImageBitmapRenderingContext")}}
+- رابط تعریف‌کنندهٔ این متد: {{domxref("ImageBitmapRenderingContext")}}
 - {{domxref("OffscreenCanvas")}}
 - {{domxref("OffscreenCanvas.transferToImageBitmap()")}}
