@@ -1,11 +1,5 @@
 ---
 title: "ImageDecoder: decode() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ImageDecoder/decode"
-status: "needs-translation"
----
-
----
-title: "ImageDecoder: decode() method"
 short-title: decode()
 slug: Web/API/ImageDecoder/decode
 page-type: web-api-instance-method
@@ -14,59 +8,59 @@ browser-compat: api.ImageDecoder.decode
 
 {{securecontext_header}}{{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`decode()`** method of the {{domxref("ImageDecoder")}} interface enqueues a control message to decode the frame of an image.
+متد **`decode()`** از رابط {{domxref("ImageDecoder")}} یک پیام کنترلی را برای رمزگشایی فریم یک تصویر در صف قرار می‌دهد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 decode()
 decode(options)
 ```
 
-### Parameters
+### پارامترها
 
 - `options` {{optional_inline}}
-  - : An object containing the following members:
+  - : یک شیء حاوی اعضای زیر:
     - `frameIndex` {{optional_inline}}
-      - : An integer representing the index of the frame to decode. Defaults to `0` (the first frame).
+      - : یک عدد صحیح که نشان‌دهنده‌ی ایندکس فریم برای رمزگشایی است. مقدار پیش‌فرض `0` (اولین فریم) است.
     - `completeFramesOnly` {{optional_inline}}
-      - : A {{jsxref("Boolean")}} defaulting to `true`.
-        When `true`, the `Promise` returned by the method resolves only when the image is fully decoded.
-        When `false`, the method will return a new `Promise` that may resolve with a partially decoded image.
-        The method can be called repeatedly until `result.complete` is true, with each step providing an image with the next available level of detail.
+      - : یک {{jsxref("Boolean")}} که مقدار پیش‌فرض آن `true` است.
+        اگر `true` باشد، {{jsxref("Promise")}} برگشتی از متد تنها زمانی resolve می‌شود که تصویر به طور کامل رمزگشایی شود.
+        اگر `false` باشد، متد یک Promise جدید برمی‌گرداند که ممکن است با یک تصویر رمزگشایی‌شده‌ی جزئی resolve شود.
+        این متد می‌تواند تا زمانی که `result.complete` برابر `true` شود، به صورت مکرر فراخوانی شود و هر مرحله تصویری با سطح جزئیات بعدی موجود ارائه دهد.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with an object containing the following members:
+یک {{jsxref("Promise")}} که با یک شیء حاوی اعضای زیر resolve می‌شود:
 
 - `image`
-  - : A {{domxref("VideoFrame")}} containing the decoded image.
+  - : یک {{domxref("VideoFrame")}} حاوی تصویر رمزگشایی‌شده.
 - `complete`
-  - : A {{jsxref("Boolean")}}, if `true` indicates that `image` contains the final full-detail output.
+  - : یک {{jsxref("Boolean")}} که اگر `true` باشد نشان می‌دهد `image` شامل خروجی نهایی با جزئیات کامل است.
 
-### Exceptions
+### استثناها (Exceptions)
 
-If an error occurs, the promise will resolve with following exception:
+در صورت بروز خطا، promise با استثنای زیر resolve می‌شود:
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Returned if any of the following conditions apply:
-    - `close` is true, meaning {{domxref("ImageDecoder.close()","close()")}} has already been called.
-    - The requested frame does not exist.
+  - : در صورت برقراری هر یک از شرایط زیر بازگردانده می‌شود:
+    - `close` برابر `true` باشد، یعنی متد {{domxref("ImageDecoder.close()","close()")}} قبلاً فراخوانی شده است.
+    - فریم درخواستی وجود نداشته باشد.
 
-## Examples
+## مثال‌ها
 
-### Synchronous decoding of a completed image frame
+### رمزگشایی همزمان یک فریم کامل تصویر
 
-The following example decodes the second frame (at index `1`) and prints the resulting {{domxref("VideoFrame")}} to the console.
+مثال زیر فریم دوم (در ایندکس `1`) را رمزگشایی کرده و {{domxref("VideoFrame")}} حاصل را در کنسول چاپ می‌کند.
 
 ```js
 let result = await imageDecoder.decode({ frameIndex: 1 });
 console.log(result.image);
 ```
 
-### Partial decoding of a progressive image frame
+### رمزگشایی جزئی یک فریم تصویر progressive
 
-The following example decodes the first frame repeatedly until its complete:
+مثال زیر فریم اول را مکرراً رمزگشایی می‌کند تا زمانی که کامل شود:
 
 ```js
 let complete = false;
@@ -82,10 +76,10 @@ while (!complete) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
