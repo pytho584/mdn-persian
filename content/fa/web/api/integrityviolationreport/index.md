@@ -1,7 +1,5 @@
 ---
 title: "IntegrityViolationReport"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IntegrityViolationReport"
-status: "needs-translation"
 ---
 
 ---
@@ -14,45 +12,37 @@ spec-urls: https://w3c.github.io/webappsec-subresource-integrity/#report-violati
 
 {{APIRef("Reporting API")}}
 
-The `IntegrityViolationReport` dictionary of the [Reporting API](/en-US/docs/Web/API/Reporting_API) represents a report that is generated when a document violates its [Integrity Policy](/en-US/docs/Web/HTTP/Reference/Headers/Integrity-Policy).
+دیکشنری `IntegrityViolationReport` از [API Reporting](/en-US/docs/Web/API/Reporting_API) گزارشی را نشان می‌دهد که وقتی یک سند [خط‌مشی یکپارچگی](/en-US/docs/Web/HTTP/Reference/Headers/Integrity-Policy) خود را نقض می‌کند تولید می‌شود.
 
-Reports of this type can be observed from within a page using a {{domxref("ReportingObserver")}}, and a serialized version can be sent to a [reporting server endpoint](/en-US/docs/Web/API/Reporting_API#reporting_server_endpoints).
+گزارش‌های این نوع را می‌توان از داخل یک صفحه با استفاده از {{domxref("ReportingObserver")}} مشاهده کرد و نسخهٔ سریال‌سازی‌شدهٔ آن را می‌توان به یک [نقطه پایانی سرور گزارش‌گیری](/en-US/docs/Web/API/Reporting_API#reporting_server_endpoints) ارسال کرد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - `body`
-  - : The body of the report.
-    This is an object with the following properties:
+  - : بدنهٔ گزارش. این یک شیء با ویژگی‌های زیر است:
     - `blockedURL`
-      - : A string representing the URL of the resource blocked by an enforced integrity policy (or just reported for a [`reportOnly`](#reportonly) policy).
+      - : رشته‌ای که URL منبع مسدودشده توسط یک خط‌مشی یکپارچگی اعمال‌شده (یا فقط برای یک خط‌مشی [`reportOnly`](#reportonly) گزارش‌شده) را نشان می‌دهد.
     - `documentURL`
-      - : A string representing the URL of the document that is attempting to load the resource.
+      - : رشته‌ای که URL سندی را نشان می‌دهد که در تلاش برای بارگذاری منبع است.
     - `destination`
-      - : A string indicating the [`Request.destination`](/en-US/docs/Web/API/Request/destination#script) of the resource that was blocked.
-        This can currently only be `"script"`.
+      - : رشته‌ای که [`Request.destination`](/en-US/docs/Web/API/Request/destination#script) منبع مسدودشده را نشان می‌دهد. در حال حاضر فقط می‌تواند `"script"` باشد.
     - `reportOnly`
-      - : A boolean: `false` if the policy was enforced, and `true` if the violation was only reported.
-        The values indicate that the policy was set with {{httpheader("Integrity-Policy")}} and {{httpheader("Integrity-Policy-Report-Only")}}, respectively.
+      - : یک مقدار بولی: اگر خط‌مشی اعمال شده باشد `false` و اگر تخلف فقط گزارش شده باشد `true`. این مقادیر نشان می‌دهند که خط‌مشی به ترتیب با {{httpheader("Integrity-Policy")}} و {{httpheader("Integrity-Policy-Report-Only")}} تنظیم شده است.
 
 - `type`
-  - : The string `"integrity-violation"` indicating that this is an integrity violation report.
+  - : رشتهٔ `"integrity-violation"` که نشان می‌دهد این یک گزارش تخلف یکپارچگی است.
 - `url`
-  - : A string representing the URL of the document that generated the report.
+  - : رشته‌ای که URL سند تولیدکنندهٔ گزارش را نشان می‌دهد.
 
-## Description
+## توضیحات
 
-Integrity Policy violations are reported when a document attempts to load a resource that does not meet the [Subresource Integrity](/en-US/docs/Web/Security/Defenses/Subresource_Integrity) guarantees of a policy set using either the {{httpheader("Integrity-Policy")}} or {{httpheader("Integrity-Policy-Report-Only")}} HTTP headers.
+تخلف‌های خط‌مشی یکپارچگی زمانی گزارش می‌شوند که یک سند تلاش کند منبعی را بارگذاری کند که تضمین‌های Subresource Integrity خط‌مشی تنظیم‌شده با استفاده از هدرهای HTTP {{httpheader("Integrity-Policy")}} یا {{httpheader("Integrity-Policy-Report-Only")}} را برآورده نمی‌کند.
 
-Specifically, a report is sent when a document attempts to load a {{htmlelement("script")}} resource (or other [request destination](/en-US/docs/Web/API/Request/destination) listed in the policy) that does not have valid integrity metadata, or to make a request in [no-cors](/en-US/docs/Web/API/Request/mode#no-cors) mode.
+به‌طور خاص، یک گزارش زمانی ارسال می‌شود که یک سند تلاش کند منبع {{htmlelement("script")}} (یا دیگر [مقصدهای درخواست](/en-US/docs/Web/API/Request/destination) فهرست‌شده در خط‌مشی) را بارگذاری کند که فرادادهٔ یکپارچگی معتبری ندارد، یا درخواستی را در حالت [no-cors](/en-US/docs/Web/API/Request/mode#no-cors) ارسال کند.
 
-You can monitor for integrity violation reports within the page that sets the policy using the [Reporting API](/en-US/docs/Web/API/Reporting_API).
-To do this you create a {{domxref("ReportingObserver")}} object to listen for reports, passing a callback method and an (optional) `options` property specifying the types of reports that you want to report on.
-The callback method is then called with reports of the requested types, passing a report object.
-For integrity violations, the object will be an `IntegrityViolationReport` instance (which has the [`type`](#type) property set to `"integrity-violation"`).
+می‌توانید گزارش‌های تخلف یکپارچگی را در داخل صفحه‌ای که خط‌مشی را تنظیم می‌کند، با استفاده از [Reporting API](/en-US/docs/Web/API/Reporting_API) پایش کنید. برای این کار یک شیء {{domxref("ReportingObserver")}} می‌سازید تا به گزارش‌ها گوش دهد و یک متد callback و یک ویژگی (اختیاری) `options` به آن می‌دهید که انواع گزارش‌هایی را که می‌خواهید دریافت کنید مشخص می‌کند. سپس متد callback با گزارش‌های انواع درخواستی فراخوانی می‌شود و یک شیء گزارش به آن ارسال می‌شود. برای تخلف‌های یکپارچگی، شیء یک نمونهٔ `IntegrityViolationReport` خواهد بود (که ویژگی [`type`](#type) آن روی `"integrity-violation"` تنظیم شده است).
 
-The structure of a typical report is shown below.
-Note that we can see the URL of both the page that had its policy violated (`url`), the document that attempted to load the resource (`body.documentURL`), and the resource that was blocked from loading (`body.blockedURL`).
-We can also see that the report was due to loading a script, and that it was triggered by a violation that was enforced (and not just reported).
+ساختار یک گزارش معمولی در زیر نشان داده شده است. توجه کنید که می‌توانیم URL صفحه‌ای را که خط‌مشی آن نقض شده است (`url`)، سندی را که تلاش کرده منبع را بارگذاری کند (`body.documentURL`)، و منبعی را که از بارگذاری مسدود شده است (`body.blockedURL`) ببینیم. همچنین می‌توانیم ببینیم که گزارش به دلیل بارگذاری یک اسکریپت بوده است و توسط یک تخلف اعمال‌شده (و نه فقط گزارش‌شده) ایجاد شده است.
 
 ```json
 {
@@ -67,11 +57,9 @@ We can also see that the report was due to loading a script, and that it was tri
 }
 ```
 
-Violation reports may also sent as a JSON object in a {{httpmethod("POST")}} request to one or more configured [reporting server endpoints](/en-US/docs/Web/API/Reporting_API#reporting_server_endpoints).
-Reporting server endpoint names are specified in the [`endpoints` list](/en-US/docs/Web/HTTP/Reference/Headers/Integrity-Policy#endpoints) when setting {{httpheader("Integrity-Policy")}} or {{httpheader("Integrity-Policy-Report-Only")}}.
-Valid endpoint names and their mapping to a particular URL are defined using the {{httpheader("Reporting-Endpoints")}} header.
+گزارش‌های تخلف همچنین ممکن است به‌صورت یک شیء JSON در یک درخواست {{httpmethod("POST")}} به یک یا چند [نقطه پایانی سرور گزارش‌گیری](/en-US/docs/Web/API/Reporting_API#reporting_server_endpoints) پیکربندی‌شده ارسال شوند. نام نقاط پایانی سرور گزارش‌گیری هنگام تنظیم {{httpheader("Integrity-Policy")}} یا {{httpheader("Integrity-Policy-Report-Only")}} در [فهرست `endpoints`](/en-US/docs/Web/HTTP/Reference/Headers/Integrity-Policy#endpoints) مشخص می‌شوند. نام‌های معتبر نقاط پایانی و نگاشت آن‌ها به یک URL خاص با استفاده از هدر {{httpheader("Reporting-Endpoints")}} تعریف می‌شوند.
 
-The structure of the server report is almost exactly the same as `IntegrityViolationReport`, except that it additionally includes `age` and `user_agent` fields.
+ساختار گزارش سرور تقریباً دقیقاً همانند `IntegrityViolationReport` است، با این تفاوت که به‌طور اضافی شامل فیلدهای `age` و `user_agent` می‌شود.
 
 ```json
 {
@@ -88,23 +76,19 @@ The structure of the server report is almost exactly the same as `IntegrityViola
 }
 ```
 
-## Examples
+## مثال‌ها
 
-### Using the `ReportingObserver` interface
+### استفاده از رابط `ReportingObserver`
 
-This example shows how you can obtain Integrity Policy violation reports using a {{domxref("ReportingObserver")}}.
+این مثال نشان می‌دهد که چگونه می‌توانید گزارش‌های تخلف خط‌مشی یکپارچگی را با استفاده از {{domxref("ReportingObserver")}} دریافت کنید.
 
-First we set a page's integrity policy using the {{httpheader("Integrity-Policy")}}.
-The policy below reports and blocks resource loading of any {{htmlelement("script")}} element or {{domxref("HTMLScriptElement")}} object that does not specify an `integrity` attribute, or when a script resource is requested in [no-cors](/en-US/docs/Web/API/Request/mode#no-cors) mode.
-Note that for this example we're only interested in reporting the violations using the API, so we're omitting the reporting endpoints:
+ابتدا خط‌مشی یکپارچگی یک صفحه را با استفاده از هدر {{httpheader("Integrity-Policy")}} تنظیم می‌کنیم. خط‌مشی زیر بارگذاری هر عنصر {{htmlelement("script")}} یا شیء {{domxref("HTMLScriptElement")}} را که ویژگی `integrity` را مشخص نکرده باشد، یا زمانی که یک منبع اسکریپت در حالت [no-cors](/en-US/docs/Web/API/Request/mode#no-cors) درخواست شود، گزارش و مسدود می‌کند. توجه کنید که در این مثال فقط به گزارش تخلف‌ها از طریق API علاقه‌مندیم، بنابراین نقاط پایانی گزارش‌گیری را حذف کرده‌ایم:
 
 ```http
 Integrity-Policy: blocked-destinations=(script)
 ```
 
-Next, we'll assume that our page includes the following element to load a script.
-Because we want to trigger a violation, it omits the `integrity` attribute used to check the script matches our expected version.
-We could also omit the `cross-origin` attribute so the request is sent in `no-cors` mode.
+بعد، فرض می‌کنیم صفحهٔ ما عنصر زیر را برای بارگذاری یک اسکریپت شامل است. چون می‌خواهیم تخلفی ایجاد کنیم، ویژگی `integrity` را که برای بررسی مطابقت اسکریپت با نسخهٔ مورد انتظار استفاده می‌شود حذف کرده‌ایم. همچنین می‌توانیم ویژگی `cross-origin` را حذف کنیم تا درخواست در حالت `no-cors` ارسال شود.
 
 ```html
 <script
@@ -113,7 +97,7 @@ We could also omit the `cross-origin` attribute so the request is sent in `no-co
 ```
 
 > [!NOTE]
-> A script that complies with the policy might look like this:
+> یک اسکریپت که با خط‌مشی مطابقت دارد ممکن است به این شکل باشد:
 >
 > ```html
 > <script
@@ -122,8 +106,7 @@ We could also omit the `cross-origin` attribute so the request is sent in `no-co
 >   crossorigin="anonymous"></script>
 > ```
 
-To observe violations within the page, we construct a new {{domxref("ReportingObserver")}} object to listen for reports with the type `"integrity-violation"`, passing a callback that will receive and log the reports.
-This code needs to be loaded before the script that causes the violation, in the same page:
+برای مشاهدهٔ تخلف‌ها در داخل صفحه، یک شیء جدید {{domxref("ReportingObserver")}} می‌سازیم تا به گزارش‌هایی از نوع `"integrity-violation"` گوش دهد و یک callback به آن می‌دهیم که گزارش‌ها را دریافت و ثبت کند. این کد باید قبل از اسکریپتی که باعث تخلف می‌شود، در همان صفحه بارگذاری شود:
 
 ```js
 const observer = new ReportingObserver(
@@ -142,7 +125,7 @@ const observer = new ReportingObserver(
 observer.observe();
 ```
 
-Above, we log each violation report object and a JSON-string version of the object, which might look similar to the object below.
+در بالا، هر شیء گزارش تخلف و نسخهٔ JSON-رشته‌ای آن شیء را ثبت می‌کنیم که ممکن است مشابه شیء زیر باشد.
 
 ```json
 {
@@ -157,21 +140,20 @@ Above, we log each violation report object and a JSON-string version of the obje
 }
 ```
 
-### Sending a report to a reporting endpoint
+### ارسال گزارش به یک نقطه پایانی گزارش‌گیری
 
-Configuring a web page to send an Integrity Policy violation report to a [reporting server endpoint](/en-US/docs/Web/API/Reporting_API#reporting_server_endpoints) is very similar to the previous example.
+پیکربندی یک صفحهٔ وب برای ارسال گزارش تخلف خط‌مشی یکپارچگی به یک [نقطه پایانی سرور گزارش‌گیری](/en-US/docs/Web/API/Reporting_API#reporting_server_endpoints) بسیار شبیه به مثال قبلی است.
 
-The main difference is that we need to specify one or more reporting endpoints where we want the reports to be sent, using the {{httpheader("Reporting-Endpoints")}} response header, and then reference these in the `endpoints` field when setting the policy.
+تفاوت اصلی این است که باید یک یا چند نقطه پایانی گزارش‌گیری را که می‌خواهیم گزارش‌ها به آن‌جا ارسال شوند، با استفاده از هدر پاسخ {{httpheader("Reporting-Endpoints")}} مشخص کنیم و سپس هنگام تنظیم خط‌مشی به این‌ها در فیلد `endpoints` ارجاع دهیم.
 
-You can see this below, where we first define two endpoints — `integrity-endpoint` and `backup-integrity-endpoint` — and then reference them in our policy:
+این را در زیر می‌بینید؛ ابتدا دو نقطه پایانی گزارش‌گیری — `integrity-endpoint` و `backup-integrity-endpoint` — تعریف می‌کنیم و سپس در خط‌مشی خود به آن‌ها ارجاع می‌دهیم:
 
 ```http
 Reporting-Endpoints: integrity-endpoint=https://example.com/integrity, backup-integrity-endpoint=https://report-provider.example/integrity
 Integrity-Policy: blocked-destinations=(script), endpoints=(integrity-endpoint, backup-integrity-endpoint)
 ```
 
-We can trigger a violation by loading an external script from the page that does not meet the subresource integrity guidelines.
-Just to differ from the previous example, here we send the request in `no-cors` mode:
+می‌توانیم با بارگذاری یک اسکریپت خارجی از صفحه‌ای که دستورالعمل‌های یکپارچگی زیرمنابع را برآورده نمی‌کند، تخلفی ایجاد کنیم. فقط برای تفاوت با مثال قبلی، در اینجا درخواست را در حالت `no-cors` ارسال می‌کنیم:
 
 ```html
 <script
@@ -179,10 +161,9 @@ Just to differ from the previous example, here we send the request in `no-cors` 
   integrity="sha384-oqVuAfXRKap7fdgcCY5uykM6+R9GqQ8K/uxy9rx7HNQlGYl1kPzQho1wx4JwY8wC"></script>
 ```
 
-The violation report will then be sent to the indicated endpoint as a JSON file.
-As you can see from the example below, the `type` is `"integrity-violation"` and the `body` property is a serialization of this `IntegrityViolationReport` object:
+گزارش تخلف سپس به‌صورت یک فایل JSON به نقطه پایانی مشخص‌شده ارسال می‌شود. همان‌طور که در مثال زیر می‌بینید، `type` برابر با `"integrity-violation"` است و ویژگی `body` یک سریال‌سازی از این شیء `IntegrityViolationReport` است:
 
-The report in this case would look the same as our JSON report in the previous example.
+گزارش در این مورد همانند گزارش JSON مثال قبلی خواهد بود.
 
 ```json
 {
@@ -197,19 +178,19 @@ The report in this case would look the same as our JSON report in the previous e
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("ReportingObserver")}}
 - {{HTTPHeader("Integrity-Policy")}}
 - {{HTTPHeader("Integrity-Policy-Report-Only")}}
 - {{HTTPHeader("Reporting-Endpoints")}}
-- [Integrity Policy](/en-US/docs/Web/Security/Defenses/Subresource_Integrity#integrity_policy) in [Subresource Integrity](/en-US/docs/Web/Security/Defenses/Subresource_Integrity#integrity_policy)
+- [خط‌مشی یکپارچگی](/en-US/docs/Web/Security/Defenses/Subresource_Integrity#integrity_policy) در [یکپارچگی زیرمنابع](/en-US/docs/Web/Security/Defenses/Subresource_Integrity#integrity_policy)
 - [Reporting API](/en-US/docs/Web/API/Reporting_API)
