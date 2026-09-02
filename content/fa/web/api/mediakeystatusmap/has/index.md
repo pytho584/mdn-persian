@@ -1,11 +1,5 @@
 ---
 title: "MediaKeyStatusMap: has() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaKeyStatusMap/has"
-status: "needs-translation"
----
-
----
-title: "MediaKeyStatusMap: has() method"
 short-title: has()
 slug: Web/API/MediaKeyStatusMap/has
 page-type: web-api-instance-method
@@ -14,29 +8,27 @@ browser-compat: api.MediaKeyStatusMap.has
 
 {{APIRef("Encrypted Media Extensions")}}{{SecureContext_Header}}
 
-The **`has()`** method of the
-{{domxref("MediaKeyStatusMap")}} interface returns a {{jsxref('Boolean')}}, asserting
-whether a value has been associated with the given key.
+**`has()`** 方法属于 {{domxref("MediaKeyStatusMap")}} 接口，返回一个 {{jsxref('Boolean')}}，用于判断给定的键是否已关联了某个值。
 
-## Syntax
+## 语法
 
 ```js-nolint
 has(key)
 ```
 
-### Parameters
+### 参数
 
 - `key`
-  - : The key whose value you want returned
+  - : 需要查询是否有关联值的键。
 
-### Return value
+### 返回值
 
-A {{jsxref('Boolean')}}.
+一个 {{jsxref('Boolean')}}。
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
