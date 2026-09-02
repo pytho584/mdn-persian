@@ -1,7 +1,5 @@
 ---
 title: "NavigateEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigateEvent"
-status: "needs-translation"
 ---
 
 ---
@@ -13,59 +11,59 @@ browser-compat: api.NavigateEvent
 
 {{APIRef("Navigation API")}}
 
-The **`NavigateEvent`** interface of the {{domxref("Navigation API", "Navigation API", "", "nocode")}} is the event object for the {{domxref("Navigation/navigate_event", "navigate")}} event, which fires when [any type of navigation](https://github.com/WICG/navigation-api#appendix-types-of-navigations) is initiated (this includes usage of {{domxref("History API", "History API", "", "nocode")}} features like {{domxref("History.go()")}}). `NavigateEvent` provides access to information about that navigation, and allows developers to intercept and control the navigation handling.
+رابط **`NavigateEvent`** از {{domxref("Navigation API", "API ناوبری", "", "nocode")}}، شیء رویداد برای رویداد {{domxref("Navigation/navigate_event", "navigate")}} است که زمانی که [هر نوع ناوبری](https://github.com/WICG/navigation-api#appendix-types-of-navigations) آغاز می‌شود (شامل استفاده از ویژگی‌های {{domxref("History API", "API تاریخچه", "", "nocode")}} مانند {{domxref("History.go()")}})، به وقوع می‌پیوندد. `NavigateEvent` دسترسی به اطلاعات مربوط به آن ناوبری را فراهم می‌کند و به توسعه‌دهندگان اجازه می‌دهد تا مدیریت ناوبری را رهگیری و کنترل کنند.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("NavigateEvent.NavigateEvent", "NavigateEvent()")}}
-  - : Creates a new `NavigateEvent` object instance.
+  - : یک نمونه جدید از شیء `NavigateEvent` ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{DOMxRef("Event")}}._
+_ویژگی‌ها را از والد خود، {{DOMxRef("Event")}} به ارث می‌برد._
 
 - {{domxref("NavigateEvent.canIntercept", "canIntercept")}} {{ReadOnlyInline}}
-  - : Returns `true` if the navigation can be intercepted, or `false` otherwise (e.g., you can't intercept a cross-origin navigation).
+  - : اگر ناوبری قابل رهگیری باشد `true` و در غیر این صورت `false` برمی‌گرداند (مثلاً نمی‌توانید یک ناوبری میان‌مبدأ(Cross-Origin) را رهگیری کنید).
 - {{domxref("NavigateEvent.destination", "destination")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref("NavigationDestination")}} object representing the destination being navigated to.
+  - : یک شیء {{domxref("NavigationDestination")}} برمی‌گرداند که مقصد ناوبری را نشان می‌دهد.
 - {{domxref("NavigateEvent.downloadRequest", "downloadRequest")}} {{ReadOnlyInline}}
-  - : Returns the filename of the file requested for download, in the case of a download navigation (e.g., an {{htmlelement("a")}} or {{htmlelement("area")}} element with a `download` attribute), or `null` otherwise.
+  - : نام فایل درخواست‌شده برای دانلود را در صورت ناوبری دانلودی (مثلاً یک عنصر {{htmlelement("a")}} یا {{htmlelement("area")}} با ویژگی `download`)، یا در غیر این صورت `null` برمی‌گرداند.
 - {{domxref("NavigateEvent.formData", "formData")}} {{ReadOnlyInline}}
-  - : Returns the {{domxref("FormData")}} object representing the submitted data in the case of a `POST` form submission, or `null` otherwise.
+  - : شیء {{domxref("FormData")}} نمایانگر داده‌های ارسال‌شده در صورت ارسال فرم با روش `POST`، یا در غیر این صورت `null` برمی‌گرداند.
 - {{domxref("NavigateEvent.hashChange", "hashChange")}} {{ReadOnlyInline}}
-  - : Returns `true` if the navigation is a fragment navigation (i.e., to a fragment identifier in the same document), or `false` otherwise.
+  - : اگر ناوبری یک ناوبری قطعه (fragment) باشد (یعنی به یک شناسه قطعه در همان سند)، `true` و در غیر این صورت `false` برمی‌گرداند.
 - {{domxref("NavigateEvent.hasUAVisualTransition", "hasUAVisualTransition")}} {{ReadOnlyInline}}
-  - : Returns `true` if the user agent performed a visual transition for this navigation before dispatching this event, or `false` otherwise.
+  - : اگر عامل کاربر (user agent) یک انتقال بصری برای این ناوبری قبل از ارسال این رویداد انجام داده باشد، `true` و در غیر این صورت `false` برمی‌گرداند.
 - {{domxref("NavigateEvent.info", "info")}} {{ReadOnlyInline}}
-  - : Returns the `info` data value passed by the initiating navigation operation (e.g., {{domxref("Navigation.back()")}}, or {{domxref("Navigation.navigate()")}}), or `undefined` if no `info` data was passed.
+  - : مقدار داده `info` را که توسط عملیات ناوبری آغازگر (مثلاً {{domxref("Navigation.back()")}} یا {{domxref("Navigation.navigate()")}}) ارسال شده است، یا اگر داده `info` ارسال نشده باشد `undefined` برمی‌گرداند.
 - {{domxref("NavigateEvent.navigationType", "navigationType")}} {{ReadOnlyInline}}
-  - : Returns the type of the navigation — `push`, `reload`, `replace`, or `traverse`.
+  - : نوع ناوبری را برمی‌گرداند — `push`، `reload`، `replace`، یا `traverse`.
 - {{domxref("NavigateEvent.signal", "signal")}} {{ReadOnlyInline}}
-  - : Returns an {{domxref("AbortSignal")}}, which will become aborted if the navigation is cancelled (e.g., by the user pressing the browser's "Stop" button, or another navigation starting and thus cancelling the ongoing one).
+  - : یک {{domxref("AbortSignal")}} برمی‌گرداند که اگر ناوبری لغو شود (مثلاً با فشار دادن دکمه "توقف" مرورگر توسط کاربر، یا شروع ناوبری دیگر و لغو ناوبری جاری)، قطع (abort) می‌شود.
 - {{domxref("NavigateEvent.sourceElement", "sourceElement")}} {{ReadOnlyInline}}
-  - : When the navigation was initiated by an element (for example clicking a link), returns an {{domxref("Element")}} object representing the initiating element.
+  - : زمانی که ناوبری توسط یک عنصر آغاز شده باشد (مثلاً کلیک روی یک پیوند)، یک شیء {{domxref("Element")}} نمایانگر عنصر آغازگر را برمی‌گرداند.
 - {{domxref("NavigateEvent.userInitiated", "userInitiated")}} {{ReadOnlyInline}}
-  - : Returns `true` if the navigation was initiated by the user (e.g., by clicking a link, submitting a form, or pressing the browser's "Back"/"Forward" buttons), or `false` otherwise.
+  - : اگر ناوبری توسط کاربر آغاز شده باشد (مثلاً با کلیک روی یک پیوند، ارسال فرم، یا فشار دادن دکمه‌های "بازگشت"/"رفتن به جلو" مرورگر)، `true` و در غیر این صورت `false` برمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
-_Inherits methods from its parent, {{DOMxRef("Event")}}._
+_روش‌ها را از والد خود، {{DOMxRef("Event")}} به ارث می‌برد._
 
 - {{domxref("NavigateEvent.intercept", "intercept()")}}
-  - : Intercepts this navigation, turning it into a same-document navigation to the {{domxref("NavigationDestination.url", "destination")}} URL. It can accept handler functions that define what the navigation handling behavior should be, plus `focusReset` and `scroll` options to enable or disable the browser's default focus and scrolling behavior as desired.
+  - : این ناوبری را رهگیری می‌کند و آن را به یک ناوبری درون‌سندی به آدرس {{domxref("NavigationDestination.url", "مقصد")}} URL تبدیل می‌کند. می‌تواند توابع مدیریت‌کننده (handler) را بپذیرد که رفتار مدیریت ناوبری را تعریف می‌کنند، به علاوه گزینه‌های `focusReset` و `scroll` برای فعال یا غیرفعال کردن رفتار پیش‌فرض مرورگر در مورد فوکوس و اسکرول.
 - {{domxref("NavigateEvent.scroll", "scroll()")}}
-  - : Can be called to manually trigger the browser-driven scrolling behavior that occurs in response to the navigation, if you want it to happen before the navigation handling has completed.
+  - : می‌تواند برای راه‌اندازی دستی رفتار اسکرول مبتنی بر مرورگر که در پاسخ به ناوبری رخ می‌دهد، فراخوانی شود، اگر می‌خواهید قبل از تکمیل مدیریت ناوبری انجام شود.
 
-## Examples
+## مثال‌ها
 
-### Handling a navigation using `intercept()`
+### مدیریت ناوبری با استفاده از `intercept()`
 
 ```js
 navigation.addEventListener("navigate", (event) => {
-  // Exit early if this navigation shouldn't be intercepted,
-  // e.g. if the navigation is cross-origin, or a download request
+  // اگر این ناوبری نباید رهگیری شود، زود خارج شو
+  // مثلاً اگر ناوبری cross-origin یا یک درخواست دانلود است
   if (shouldNotIntercept(event)) return;
 
   const url = new URL(event.destination.url);
@@ -73,11 +71,11 @@ navigation.addEventListener("navigate", (event) => {
   if (url.pathname.startsWith("/articles/")) {
     event.intercept({
       async handler() {
-        // The URL has already changed, so show a placeholder while
-        // fetching the new content, such as a spinner or loading page
+        // URL قبلاً تغییر کرده است، بنابراین یک مکان‌نما نشان بده
+        // در حین واکشی محتوای جدید، مانند یک اسپینر یا صفحه بارگذاری
         renderArticlePagePlaceholder();
 
-        // Fetch the new content and display when ready
+        // محتوای جدید را واکشی کن و وقتی آماده شد نمایش بده
         const articleContent = await getArticleContent(url.pathname);
         renderArticlePage(articleContent);
       },
@@ -87,11 +85,11 @@ navigation.addEventListener("navigate", (event) => {
 ```
 
 > [!NOTE]
-> Before the Navigation API was available, to do something similar you'd have to listen for all click events on links, run `e.preventDefault()`, perform the appropriate {{domxref("History.pushState()")}} call, then set up the page view based on the new URL. And this wouldn't handle all navigations — only user-initiated link clicks.
+> قبل از در دسترس بودن API ناوبری، برای انجام کاری مشابه باید به تمام رویدادهای کلیک روی پیوندها گوش می‌دادید، `e.preventDefault()` را اجرا می‌کردید، فراخوانی مناسب {{domxref("History.pushState()")}} را انجام می‌دادید، و سپس نمای صفحه را بر اساس URL جدید تنظیم می‌کردید. و این کار همه ناوبری‌ها را مدیریت نمی‌کرد – فقط کلیک‌های پیوند آغاز شده توسط کاربر.
 
-### Handling scrolling using `scroll()`
+### مدیریت اسکرول با استفاده از `scroll()`
 
-In this example of intercepting a navigation, the `handler()` function starts by fetching and rendering some article content, but then fetches and renders some secondary content afterwards. It makes sense to scroll the page to the main article content as soon as it is available so the user can interact with it, rather than waiting until the secondary content is also rendered. To achieve this, we have added a {{domxref("NavigateEvent.scroll", "scroll()")}} call between the two.
+در این مثال از رهگیری یک ناوبری، تابع `handler()` با واکشی و نمایش محتوای مقاله شروع می‌شود، اما سپس محتوای ثانویه را بعداً واکشی و نمایش می‌دهد. منطقی است که صفحه را به محض در دسترس بودن محتوای اصلی مقاله اسکرول کنیم تا کاربر بتواند با آن تعامل داشته باشد، به جای اینکه منتظر بمانیم تا محتوای ثانویه نیز نمایش داده شود. برای رسیدن به این هدف، یک فراخوانی {{domxref("NavigateEvent.scroll", "scroll()")}} بین دو بخش اضافه کرده‌ایم.
 
 ```js
 navigation.addEventListener("navigate", (event) => {
@@ -114,16 +112,16 @@ navigation.addEventListener("navigate", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
-- [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
-- [Navigation API live demo](https://mdn.github.io/dom-examples/navigation-api/) ([view demo source](https://github.com/mdn/dom-examples/tree/main/navigation-api))
+- [مسیریابی مدرن سمت کاربر: API ناوبری](https://developer.chrome.com/docs/web-platform/navigation-api/)
+- [توضیح API ناوبری](https://github.com/WICG/navigation-api/blob/main/README.md)
+- [دموی زنده API ناوبری](https://mdn.github.io/dom-examples/navigation-api/) ([مشاهده منبع دمو](https://github.com/mdn/dom-examples/tree/main/navigation-api))
