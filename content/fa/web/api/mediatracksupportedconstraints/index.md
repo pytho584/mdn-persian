@@ -1,10 +1,4 @@
 ---
-title: "MediaTrackSupportedConstraints"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSupportedConstraints"
-status: "needs-translation"
----
-
----
 title: MediaTrackSupportedConstraints
 slug: Web/API/MediaTrackSupportedConstraints
 page-type: web-api-interface
@@ -13,74 +7,74 @@ spec-urls: https://w3c.github.io/mediacapture-main/#media-track-supported-constr
 
 {{APIRef("Media Capture and Streams")}}
 
-The **`MediaTrackSupportedConstraints`** dictionary establishes the list of constrainable properties recognized by the {{Glossary("user agent")}} or browser in its implementation of the {{domxref("MediaStreamTrack")}} object. An object conforming to `MediaTrackSupportedConstraints` is returned by {{domxref("MediaDevices.getSupportedConstraints()")}}.
+واژه‌نامه (dictionary) **`MediaTrackSupportedConstraints`** فهرست ویژگی‌های قابل محدودیت (constrainable properties) را که توسط {{Glossary("user agent")}} (نماینده کاربر) یا مرورگر در پیاده‌سازی شیء {{domxref("MediaStreamTrack")}} شناسایی می‌شوند، تعیین می‌کند. یک شیء منطبق بر `MediaTrackSupportedConstraints` توسط {{domxref("MediaDevices.getSupportedConstraints()")}} بازگردانده می‌شود.
 
-Because of the way interface definitions in WebIDL work, if a constraint is requested but not supported, no error will occur. Instead, the specified constraints will be applied, with any unrecognized constraints stripped from the request. That can lead to confusing and hard to debug errors, so be sure to use `getSupportedConstraints()` to retrieve this information before attempting to establish constraints if you need to know the difference between silently ignoring a constraint and a constraint being accepted.
+به دلیل نحوه کار تعریف رابط‌ها (interface definitions) در WebIDL، اگر محدودیتی (constraint) درخواست شود اما پشتیبانی نشود، خطایی رخ نخواهد داد. در عوض، محدودیت‌های مشخص شده اعمال می‌شوند و هر محدودیت ناشناخته‌ای از درخواست حذف می‌گردد. این موضوع می‌تواند منجر به خطاهای گیج‌کننده و دشوار برای رفع اشکال شود. بنابراین، قبل از تلاش برای تنظیم محدودیت‌ها، حتماً از `getSupportedConstraints()` برای دریافت این اطلاعات استفاده کنید، اگر نیاز دارید تفاوت بین نادیده گرفتن بی‌صدا یک محدودیت و پذیرفته شدن یک محدودیت را بدانید.
 
-An actual constraint set is described using an object based on the {{domxref("MediaTrackConstraints")}} dictionary.
+یک مجموعه محدودیت (constraint set) واقعی با استفاده از یک شیء مبتنی بر واژه‌نامه {{domxref("MediaTrackConstraints")}} توصیف می‌شود.
 
-To learn more about how constraints work, see [Capabilities, constraints, and settings](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints).
+برای یادگیری بیشتر در مورد نحوه کار محدودیت‌ها، به [قابلیت‌ها، محدودیت‌ها و تنظیمات](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints) مراجعه کنید.
 
-## Instance properties
+## ویژگی‌های نمونه (Instance properties)
 
-Some combination—but not necessarily all—of the following properties will exist on the object.
+ترکیبی از ویژگی‌های زیر (اما نه لزوماً همه) روی شیء وجود خواهند داشت.
 
 - {{domxref("MediaTrackSupportedConstraints.aspectRatio", "aspectRatio")}}
-  - : A Boolean that is `true` if the [`aspectRatio`](/en-US/docs/Web/API/MediaTrackConstraints/aspectRatio) constraint is supported in the current environment.
+  - : یک مقدار بولین که در صورت پشتیبانی از محدودیت [`aspectRatio`](/en-US/docs/Web/API/MediaTrackConstraints/aspectRatio) در محیط فعلی، `true` است.
 - {{domxref("MediaTrackSupportedConstraints.autoGainControl", "autoGainControl")}}
-  - : A Boolean that is `true` if the [`autoGainControl`](/en-US/docs/Web/API/MediaTrackConstraints/autoGainControl) constraint is supported in the current environment.
+  - : یک مقدار بولین که در صورت پشتیبانی از محدودیت [`autoGainControl`](/en-US/docs/Web/API/MediaTrackConstraints/autoGainControl) در محیط فعلی، `true` است.
 - {{domxref("MediaTrackSupportedConstraints.channelCount", "channelCount")}}
-  - : A Boolean that is `true` if the [`channelCount`](/en-US/docs/Web/API/MediaTrackConstraints/channelCount) constraint is supported in the current environment.
+  - : یک مقدار بولین که در صورت پشتیبانی از محدودیت [`channelCount`](/en-US/docs/Web/API/MediaTrackConstraints/channelCount) در محیط فعلی، `true` است.
 - {{domxref("MediaTrackSupportedConstraints.deviceId", "deviceId")}}
-  - : A Boolean that is `true` if the [`deviceId`](/en-US/docs/Web/API/MediaTrackConstraints/deviceId) constraint is supported in the current environment.
+  - : یک مقدار بولین که در صورت پشتیبانی از محدودیت [`deviceId`](/en-US/docs/Web/API/MediaTrackConstraints/deviceId) در محیط فعلی، `true` است.
 - {{domxref("MediaTrackSupportedConstraints.echoCancellation", "echoCancellation")}}
-  - : A Boolean that is `true` if the [`echoCancellation`](/en-US/docs/Web/API/MediaTrackConstraints/echoCancellation) constraint is supported in the current environment.
+  - : یک مقدار بولین که در صورت پشتیبانی از محدودیت [`echoCancellation`](/en-US/docs/Web/API/MediaTrackConstraints/echoCancellation) در محیط فعلی، `true` است.
 - {{domxref("MediaTrackSupportedConstraints.facingMode", "facingMode")}}
-  - : A Boolean that is `true` if the [`facingMode`](/en-US/docs/Web/API/MediaTrackConstraints/facingMode) constraint is supported in the current environment.
+  - : یک مقدار بولین که در صورت پشتیبانی از محدودیت [`facingMode`](/en-US/docs/Web/API/MediaTrackConstraints/facingMode) در محیط فعلی، `true` است.
 - {{domxref("MediaTrackSupportedConstraints.frameRate", "frameRate")}}
-  - : A Boolean that is `true` if the [`frameRate`](/en-US/docs/Web/API/MediaTrackConstraints/frameRate) constraint is supported in the current environment.
+  - : یک مقدار بولین که در صورت پشتیبانی از محدودیت [`frameRate`](/en-US/docs/Web/API/MediaTrackConstraints/frameRate) در محیط فعلی، `true` است.
 - {{domxref("MediaTrackSupportedConstraints.groupId", "groupId")}}
-  - : A Boolean that is `true` if the [`groupId`](/en-US/docs/Web/API/MediaTrackConstraints/groupId) constraint is supported in the current environment.
+  - : یک مقدار بولین که در صورت پشتیبانی از محدودیت [`groupId`](/en-US/docs/Web/API/MediaTrackConstraints/groupId) در محیط فعلی، `true` است.
 - {{domxref("MediaTrackSupportedConstraints.height", "height")}}
-  - : A Boolean that is `true` if the [`height`](/en-US/docs/Web/API/MediaTrackConstraints/height) constraint is supported in the current environment.
+  - : یک مقدار بولین که در صورت پشتیبانی از محدودیت [`height`](/en-US/docs/Web/API/MediaTrackConstraints/height) در محیط فعلی، `true` است.
 - {{domxref("MediaTrackSupportedConstraints.latency", "latency")}}
-  - : A Boolean that is `true` if the [`latency`](/en-US/docs/Web/API/MediaTrackConstraints/latency) constraint is supported in the current environment.
+  - : یک مقدار بولین که در صورت پشتیبانی از محدودیت [`latency`](/en-US/docs/Web/API/MediaTrackConstraints/latency) در محیط فعلی، `true` است.
 - {{domxref("MediaTrackSupportedConstraints.noiseSuppression", "noiseSuppression")}}
-  - : A Boolean that is `true` if the [`noiseSuppression`](/en-US/docs/Web/API/MediaTrackConstraints/noiseSuppression) constraint is supported in the current environment.
+  - : یک مقدار بولین که در صورت پشتیبانی از محدودیت [`noiseSuppression`](/en-US/docs/Web/API/MediaTrackConstraints/noiseSuppression) در محیط فعلی، `true` است.
 - {{domxref("MediaTrackSupportedConstraints.restrictOwnAudio", "restrictOwnAudio")}}
-  - : A Boolean that is `true` if the {{domxref("MediaTrackConstraints.restrictOwnAudio", "restrictOwnAudio")}} constraint is supported in the current environment.
+  - : یک مقدار بولین که در صورت پشتیبانی از محدودیت {{domxref("MediaTrackConstraints.restrictOwnAudio", "restrictOwnAudio")}} در محیط فعلی، `true` است.
 - {{domxref("MediaTrackSupportedConstraints.resizeMode", "resizeMode")}}
-  - : A Boolean that is `true` if the [`resizeMode`](/en-US/docs/Web/API/MediaTrackConstraints/resizeMode) constraint is supported in the current environment.
+  - : یک مقدار بولین که در صورت پشتیبانی از محدودیت [`resizeMode`](/en-US/docs/Web/API/MediaTrackConstraints/resizeMode) در محیط فعلی، `true` است.
 - {{domxref("MediaTrackSupportedConstraints.sampleRate", "sampleRate")}}
-  - : A Boolean that is `true` if the [`sampleRate`](/en-US/docs/Web/API/MediaTrackConstraints/sampleRate) constraint is supported in the current environment.
+  - : یک مقدار بولین که در صورت پشتیبانی از محدودیت [`sampleRate`](/en-US/docs/Web/API/MediaTrackConstraints/sampleRate) در محیط فعلی، `true` است.
 - {{domxref("MediaTrackSupportedConstraints.sampleSize", "sampleSize")}}
-  - : A Boolean that is `true` if the [`sampleSize`](/en-US/docs/Web/API/MediaTrackConstraints/sampleSize) constraint is supported in the current environment.
+  - : یک مقدار بولین که در صورت پشتیبانی از محدودیت [`sampleSize`](/en-US/docs/Web/API/MediaTrackConstraints/sampleSize) در محیط فعلی، `true` است.
 - {{domxref("MediaTrackSupportedConstraints.suppressLocalAudioPlayback", "suppressLocalAudioPlayback")}}
-  - : A Boolean that is `true` if the [`suppressLocalAudioPlayback`](/en-US/docs/Web/API/MediaTrackConstraints/suppressLocalAudioPlayback) constraint is supported in the current environment.
+  - : یک مقدار بولین که در صورت پشتیبانی از محدودیت [`suppressLocalAudioPlayback`](/en-US/docs/Web/API/MediaTrackConstraints/suppressLocalAudioPlayback) در محیط فعلی، `true` است.
 - {{domxref("MediaTrackSupportedConstraints.volume", "volume")}} {{Deprecated_Inline}} {{Non-standard_Inline}}
-  - : A Boolean that is `true` if the [`volume`](/en-US/docs/Web/API/MediaTrackConstraints/volume) constraint is supported in the current environment.
+  - : یک مقدار بولین که در صورت پشتیبانی از محدودیت [`volume`](/en-US/docs/Web/API/MediaTrackConstraints/volume) در محیط فعلی، `true` است.
 - {{domxref("MediaTrackSupportedConstraints.width", "width")}}
-  - : A Boolean that is `true` if the [`width`](/en-US/docs/Web/API/MediaTrackConstraints/width) constraint is supported in the current environment.
+  - : یک مقدار بولین که در صورت پشتیبانی از محدودیت [`width`](/en-US/docs/Web/API/MediaTrackConstraints/width) در محیط فعلی، `true` است.
 
-### Instance properties specific to shared screen tracks
+### ویژگی‌های نمونه مخصوص ره‌گیری‌های صفحه اشتراکی (shared screen tracks)
 
-For tracks containing video sources from the user's screen, the following additional properties may be included, in addition to those available for video tracks:
+برای ره‌گیری‌هایی (tracks) که شامل منابع ویدئویی از صفحه کاربر هستند، ویژگی‌های اضافی زیر ممکن است گنجانده شوند، علاوه بر ویژگی‌های موجود برای ره‌گیری‌های ویدئویی:
 
 - {{domxref("MediaTrackSupportedConstraints.displaySurface", "displaySurface")}}
-  - : A Boolean that is `true` if the {{domxref("MediaTrackConstraints.displaySurface", "displaySurface")}} constraint is supported in the current environment.
+  - : یک مقدار بولین که در صورت پشتیبانی از محدودیت {{domxref("MediaTrackConstraints.displaySurface", "displaySurface")}} در محیط فعلی، `true` است.
 - {{domxref("MediaTrackSupportedConstraints.logicalSurface", "logicalSurface")}}
-  - : A Boolean that is `true` if the {{domxref("MediaTrackConstraints.logicalSurface", "logicalSurface")}} constraint is supported in the current environment.
+  - : یک مقدار بولین که در صورت پشتیبانی از محدودیت {{domxref("MediaTrackConstraints.logicalSurface", "logicalSurface")}} در محیط فعلی، `true` است.
 
-## Specifications
+## مشخصات (Specifications)
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
 - [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
-- [Capabilities, constraints, and settings](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints)
+- [قابلیت‌ها، محدودیت‌ها و تنظیمات](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints)
 - [Screen Capture API](/en-US/docs/Web/API/Screen_Capture_API)
-- [Using the Screen Capture API](/en-US/docs/Web/API/Screen_Capture_API/Using_Screen_Capture)
+- [استفاده از Screen Capture API](/en-US/docs/Web/API/Screen_Capture_API/Using_Screen_Capture)
 - {{domxref("MediaTrackConstraints")}}
 - {{domxref("MediaDevices.getUserMedia()")}}
 - {{domxref("MediaStreamTrack.getConstraints()")}}
