@@ -1,11 +1,5 @@
 ---
 title: "MediaList: item() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaList/item"
-status: "needs-translation"
----
-
----
-title: "MediaList: item() method"
 short-title: item()
 slug: Web/API/MediaList/item
 page-type: web-api-instance-method
@@ -14,7 +8,7 @@ browser-compat: api.MediaList.item
 
 {{ APIRef("CSSOM") }}
 
-The **`item()`** method of the {{domxref("MediaList")}} interface returns the media query at the specified `index`, or `null` if the specified `index` doesn't exist.
+متد **`item()`** از رابط {{domxref("MediaList")}}، رسانه‌ی (media query) موجود در اندیس مشخص‌شده را برمی‌گرداند، یا اگر اندیس موردنظر وجود نداشته باشد، `null` برمی‌گرداند.
 
 ## Syntax
 
@@ -24,21 +18,20 @@ item(index)
 ```
 
 > [!NOTE]
-> The bracket (`[]`) syntax can be used instead of the `item()` syntax.
+> می‌توان به‌جای سینتکس `item()` از سینتکس براکت (`[]`) نیز استفاده کرد.
 
 ### Parameters
 
 - `index`
-  - : An integer.
+  - : یک عدد صحیح.
 
 ### Return value
 
-If the bracket (`[]`) syntax is used and there is no entry for the given index, `undefined` is returned.
+اگر از سینتکس براکت (`[]`) استفاده شود و ورودی‌ای برای اندیس داده‌شده وجود نداشته باشد، `undefined` برگردانده می‌شود.
 
 ## Examples
 
-The following would log to the console each media query stored in the
-`MediaList` associated with the first stylesheet applied to the current document.
+در مثال زیر، هر رسانه‌ی (media query) ذخیره‌شده در `MediaList` مرتبط با اولین stylesheet اعمال‌شده به سند فعلی، در کنسول ثبت (log) می‌شود.
 
 ```js
 const stylesheet = document.styleSheets[0];
