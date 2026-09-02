@@ -1,11 +1,5 @@
 ---
 title: "IDBObjectStore: delete() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/delete"
-status: "needs-translation"
----
-
----
-title: "IDBObjectStore: delete() method"
 short-title: delete()
 slug: Web/API/IDBObjectStore/delete
 page-type: web-api-instance-method
@@ -14,67 +8,47 @@ browser-compat: api.IDBObjectStore.delete
 
 {{APIRef("IndexedDB")}} {{AvailableInWorkers}}
 
-The **`delete()`** method of the
-{{domxref("IDBObjectStore")}} interface returns an {{domxref("IDBRequest")}} object,
-and, in a separate thread, deletes the specified record or records.
+متد **`delete()`** از رابط {{domxref("IDBObjectStore")}} یک شیء {{domxref("IDBRequest")}} برمی‌گرداند و در یک رشته جداگانه، رکورد یا رکوردهای مشخص شده را حذف می‌کند.
 
-Either a key or an {{domxref("IDBKeyRange")}} can be passed, allowing one or multiple
-records to be deleted from a store. To delete all records in a store, use
-{{domxref("IDBObjectStore.clear")}}.
+می‌توان یک کلید یا یک {{domxref("IDBKeyRange")}} ارسال کرد که امکان حذف یک یا چند رکورد از یک فروشگاه را فراهم می‌کند. برای حذف تمام رکوردهای یک فروشگاه، از {{domxref("IDBObjectStore.clear")}} استفاده کنید.
 
-Bear in mind that if you are using an {{domxref("IDBCursor", "IDBCursor")}}, you can use
-the {{domxref("IDBCursor.delete()")}} method to more efficiently delete the current
-record — without having to explicitly look up the record's key.
+به خاطر داشته باشید که اگر از یک {{domxref("IDBCursor", "IDBCursor")}} استفاده می‌کنید، می‌توانید از متد {{domxref("IDBCursor.delete()")}} برای حذف کارآمدتر رکورد جاری استفاده کنید — بدون نیاز به جستجوی صریح کلید رکورد.
 
-## Syntax
+## نحو
 
 ```js-nolint
 delete(key)
 ```
 
-### Parameters
+### پارامترها
 
 - `key`
-  - : The key of the record to be deleted, or an {{domxref("IDBKeyRange")}} to delete all
-    records with keys in range.
+  - : کلید رکوردی که باید حذف شود، یا یک {{domxref("IDBKeyRange")}} برای حذف تمام رکوردهایی که کلیدهایشان در محدوده قرار دارند.
 
-### Return value
+### مقدار بازگشتی
 
-An {{domxref("IDBRequest")}} object on which subsequent events related to this operation are fired.
+یک شیء {{domxref("IDBRequest")}} که رویدادهای بعدی مربوط به این عملیات روی آن فعال می‌شوند. اگر عملیات موفقیت‌آمیز باشد، مقدار ویژگی {{domxref("IDBRequest.result", "result")}} درخواست `undefined` است.
 
-If the operation is successful, the value of the request's {{domxref("IDBRequest.result", "result")}} property is `undefined`.
+### استثناها
 
-### Exceptions
-
-This method may raise a {{domxref("DOMException")}} of the following types:
+این متد ممکن است یک {{domxref("DOMException")}} از انواع زیر را پرتاب کند:
 
 - `TransactionInactiveError` {{domxref("DOMException")}}
-  - : Thrown if this object store's transaction is inactive.
+  - : در صورتی که تراکنش این فروشگاه شیء غیرفعال باشد، پرتاب می‌شود.
 - `ReadOnlyError` {{domxref("DOMException")}}
-  - : Thrown if the object store's transaction mode is read-only.
+  - : در صورتی که حالت تراکنش فروشگاه شیء فقط خواندنی باشد، پرتاب می‌شود.
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the object store has been deleted.
+  - : در صورتی که فروشگاه شیء حذف شده باشد، پرتاب می‌شود.
 - `DataError` {{domxref("DOMException")}}
-  - : Thrown if `key` is not a [valid key](/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology#key) or a [key range](/en-US/docs/Web/API/IDBKeyRange).
+  - : در صورتی که `key` یک [کلید معتبر](/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology#key) یا یک [محدوده کلید](/en-US/docs/Web/API/IDBKeyRange) نباشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-The following code snippet shows the `deleteItem()` function,
-which is part of the To-do Notifications example app. This app stores to-do
-list items using IndexedDB. You can
-[see the app's complete code on GitHub](https://github.com/mdn/dom-examples/tree/main/to-do-notifications), and
-[try out the app live](https://mdn.github.io/dom-examples/to-do-notifications/).
+قطعه کد زیر تابع `deleteItem()` را نشان می‌دهد که بخشی از برنامه نمونه اعلان‌های کارهای روزانه است. این برنامه آیتم‌های لیست کارهای روزانه را با استفاده از IndexedDB ذخیره می‌کند. می‌توانید [کد کامل برنامه را در GitHub](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ببینید و [برنامه را به صورت زنده امتحان کنید](https://mdn.github.io/dom-examples/to-do-notifications/).
 
-The `deleteItem()` function is called when the user clicks the
-button to delete a to-do list item. The item key is set in the button's
-`'data-task'` data attribute, so the function
-knows which item to delete. The function opens a database transaction in
-which to delete the item, supplying its key. When the transaction completes,
-the function updates the app UI to report that the item was deleted.
+تابع `deleteItem()` زمانی فراخوانی می‌شود که کاربر روی دکمه حذف یک آیتم لیست کارها کلیک می‌کند. کلید آیتم در ویژگی داده `'data-task'` دکمه تنظیم شده است، بنابراین تابع می‌داند کدام آیتم را حذف کند. تابع یک تراکنش پایگاه داده باز می‌کند که در آن آیتم را با ارائه کلیدش حذف می‌کند. وقتی تراکنش کامل می‌شود، تابع رابط کاربری برنامه را به‌روزرسانی می‌کند تا گزارش دهد که آیتم حذف شده است.
 
-Note that in this function `db` is a global variable
-referring to an {{domxref("IDBDatabase")}} object that is initialized when
-the app loads.
+توجه داشته باشید که در این تابع `db` یک متغیر سراسری است که به یک شیء {{domxref("IDBDatabase")}} اشاره می‌کند که هنگام بارگذاری برنامه مقداردهی اولیه می‌شود.
 
 ```js
 function deleteItem(event) {
@@ -95,20 +69,20 @@ function deleteItem(event) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم یک محدوده کلید: {{domxref("IDBKeyRange")}}
+- بازیابی و ایجاد تغییرات در داده‌های خود: {{domxref("IDBObjectStore")}}
+- استفاده از نشانگرها: {{domxref("IDBCursor")}}
+- مثال مرجع: [اعلان‌های کارهای روزانه](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/))
