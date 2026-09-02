@@ -1,10 +1,4 @@
 ---
-title: "IntersectionObserverEntry"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry"
-status: "needs-translation"
----
-
----
 title: IntersectionObserverEntry
 slug: Web/API/IntersectionObserverEntry
 page-type: web-api-interface
@@ -13,40 +7,40 @@ browser-compat: api.IntersectionObserverEntry
 
 {{APIRef("Intersection Observer API")}}
 
-The **`IntersectionObserverEntry`** interface of the [Intersection Observer API](/en-US/docs/Web/API/Intersection_Observer_API) describes the intersection between the target element and its root container at a specific moment of transition.
+رابط **`IntersectionObserverEntry`** در [Intersection Observer API](/en-US/docs/Web/API/Intersection_Observer_API)، تقاطع بین عنصر هدف و ظرف ریشه (root container) آن را در یک لحظهٔ مشخص از تغییر توصیف می‌کند.
 
-Instances of `IntersectionObserverEntry` are delivered to an {{domxref("IntersectionObserver")}} callback in its `entries` parameter; otherwise, these objects can only be obtained by calling {{domxref("IntersectionObserver.takeRecords()")}}.
+نمونه‌هایی از `IntersectionObserverEntry` در پارامتر `entries` به تابع بازگشت (callback) یک {{domxref("IntersectionObserver")}} تحویل داده می‌شوند؛ در غیر این صورت، این اشیاء فقط با فراخوانی {{domxref("IntersectionObserver.takeRecords()")}} قابل دریافت هستند.
 
-## Constructor
+## سازنده
 
 - {{domxref("IntersectionObserverEntry.IntersectionObserverEntry", "IntersectionObserverEntry()")}} {{experimental_inline}}
-  - : Creates a new `IntersectionObserverEntry` object.
+  - : یک شیء `IntersectionObserverEntry` جدید می‌سازد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("IntersectionObserverEntry.boundingClientRect")}} {{ReadOnlyInline}}
-  - : Returns the bounds rectangle of the target element as a {{domxref("DOMRectReadOnly")}}. The bounds are computed as described in the documentation for {{domxref("Element.getBoundingClientRect()")}}.
+  - : مستطیل محدودهٔ عنصر هدف را به صورت یک {{domxref("DOMRectReadOnly")}} برمی‌گرداند. محدوده‌ها طبق آنچه در مستندات {{domxref("Element.getBoundingClientRect()")}} توضیح داده شده محاسبه می‌شوند.
 - {{domxref("IntersectionObserverEntry.intersectionRatio")}} {{ReadOnlyInline}}
-  - : Returns the ratio of the `intersectionRect` to the `boundingClientRect`.
+  - : نسبت `intersectionRect` به `boundingClientRect` را برمی‌گرداند.
 - {{domxref("IntersectionObserverEntry.intersectionRect")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref("DOMRectReadOnly")}} representing the target's visible area.
+  - : یک {{domxref("DOMRectReadOnly")}} برمی‌گرداند که نمایانگر ناحیهٔ قابل مشاهدهٔ هدف است.
 - {{domxref("IntersectionObserverEntry.isIntersecting")}} {{ReadOnlyInline}}
-  - : A Boolean value which is `true` if the target element intersects with the intersection observer's root. If this is `true`, then, the `IntersectionObserverEntry` describes a transition into a state of intersection; if it's `false`, then you know the transition is from intersecting to not-intersecting.
+  - : یک مقدار بولی است که اگر عنصر هدف با ریشهٔ مشاهده‌گر تقاطع (intersection observer) تقاطع داشته باشد، `true` است. اگر این مقدار `true` باشد، `IntersectionObserverEntry` گذار به حالت تقاطع را توصیف می‌کند؛ اگر `false` باشد، یعنی گذار از حالت تقاطع به عدم تقاطع است.
 - {{domxref("IntersectionObserverEntry.rootBounds")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref("DOMRectReadOnly")}} for the intersection observer's root.
+  - : یک {{domxref("DOMRectReadOnly")}} برای ریشهٔ مشاهده‌گر تقاطع برمی‌گرداند.
 - {{domxref("IntersectionObserverEntry.target")}} {{ReadOnlyInline}}
-  - : The {{domxref("Element")}} whose intersection with the root changed.
+  - : عنصر {{domxref("Element")}} که تقاطع آن با ریشه تغییر کرده است.
 - {{domxref("IntersectionObserverEntry.time")}} {{ReadOnlyInline}}
-  - : A {{domxref("DOMHighResTimeStamp")}} indicating the time at which the intersection was recorded, relative to the `IntersectionObserver`'s [time origin](/en-US/docs/Web/API/Performance/timeOrigin).
+  - : یک {{domxref("DOMHighResTimeStamp")}} که زمان ثبت تقاطع را نشان می‌دهد، نسبت به [time origin](/en-US/docs/Web/API/Performance/timeOrigin) مربوط به `IntersectionObserver`.
 
-## Instance methods
+## متدهای نمونه
 
-_This interface has no methods._
+این رابط هیچ متدی ندارد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
