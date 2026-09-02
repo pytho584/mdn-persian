@@ -1,11 +1,5 @@
 ---
 title: "LayoutShiftAttribution: previousRect property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/LayoutShiftAttribution/previousRect"
-status: "needs-translation"
----
-
----
-title: "LayoutShiftAttribution: previousRect property"
 short-title: previousRect
 slug: Web/API/LayoutShiftAttribution/previousRect
 page-type: web-api-instance-property
@@ -16,15 +10,15 @@ browser-compat: api.LayoutShiftAttribution.previousRect
 
 {{APIRef("Performance API")}}{{SeeCompatTable}}
 
-The **`previousRect`** read-only property of the {{domxref("LayoutShiftAttribution")}} interface returns a {{domxref("DOMRectReadOnly")}} object representing the position of the element before the shift.
+خاصیت فقط‌خواندنی **`previousRect`** در رابط {{domxref("LayoutShiftAttribution")}} یک شیء {{domxref("DOMRectReadOnly")}} برمی‌گرداند که موقعیت عنصر را پیش از جابه‌جایی نشان می‌دهد.
 
-## Value
+## مقدار
 
-A {{domxref("DOMRectReadOnly")}} object.
+یک شیء {{domxref("DOMRectReadOnly")}}.
 
-## Examples
+## مثال‌ها
 
-The following example prints the `previousRect` of the first item in {{domxref("LayoutShift.sources")}} to the console.
+مثال زیر مقدار `previousRect` اولین مورد در {{domxref("LayoutShift.sources")}} را در کنسول چاپ می‌کند.
 
 ```js
 new PerformanceObserver((list) => {
@@ -36,10 +30,10 @@ new PerformanceObserver((list) => {
 }).observe({ type: "layout-shift", buffered: true });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
