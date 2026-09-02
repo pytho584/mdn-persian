@@ -1,11 +1,5 @@
 ---
 title: "ImageData: data property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ImageData/data"
-status: "needs-translation"
----
-
----
-title: "ImageData: data property"
 short-title: data
 slug: Web/API/ImageData/data
 page-type: web-api-instance-property
@@ -14,24 +8,20 @@ browser-compat: api.ImageData.data
 
 {{APIRef("Canvas API")}}{{AvailableInWorkers}}
 
-The readonly **`ImageData.data`** property returns a
-{{jsxref("Uint8ClampedArray")}} or {{jsxref("Float16Array")}} that contains the {{domxref("ImageData")}} object's
-pixel data. Data is stored as a one-dimensional array in the RGBA order.
+ویژگی فقط‌خواندنی **`ImageData.data`** یک {{jsxref("Uint8ClampedArray")}} یا {{jsxref("Float16Array")}} برمی‌گرداند که شامل داده‌های پیکسلی شیء {{domxref("ImageData")}} است. داده‌ها به‌صورت یک آرایهٔ یک‌بعدی به ترتیب RGBA ذخیره می‌شوند.
 
 ## Value
 
-The type depends on the {{domxref("ImageData.pixelFormat")}} used:
+نوع این مقدار به {{domxref("ImageData.pixelFormat")}} استفاده‌شده بستگی دارد:
 
-- A {{jsxref("Uint8ClampedArray")}} if the `pixelFormat` is `"rgba-unorm8"`.
-- A {{jsxref("Float16Array")}} if the `pixelFormat` is `"rgba-float16"`.
+- اگر `pixelFormat` برابر با `"rgba-unorm8"` باشد، یک {{jsxref("Uint8ClampedArray")}} است.
+- اگر `pixelFormat` برابر با `"rgba-float16"` باشد، یک {{jsxref("Float16Array")}} است.
 
 ## Examples
 
 ### Getting an ImageData object's pixel data
 
-This example creates an `ImageData` object that is 100 pixels wide and 100
-pixels tall, making 10,000 pixels in all. The `data` array stores four values
-for each pixel, making 4 x 10,000, or 40,000 values in all.
+این مثال یک شیء `ImageData` به عرض ۱۰۰ پیکسل و ارتفاع ۱۰۰ پیکسل می‌سازد که در مجموع ۱۰٬۰۰۰ پیکسل می‌شود. آرایهٔ `data` برای هر پیکسل چهار مقدار ذخیره می‌کند؛ بنابراین در مجموع ۴ × ۱۰٬۰۰۰ یا ۴۰٬۰۰۰ مقدار خواهد داشت.
 
 ```js
 let imageData = new ImageData(100, 100);
@@ -39,7 +29,7 @@ console.log(imageData.data); // Uint8ClampedArray[40000]
 console.log(imageData.data.length); // 40000
 ```
 
-If the `ImageData` object is set up for floating-point pixels — for example, for high dynamic range (HDR) images —`data` will be a {{jsxref("Float16Array")}} instead.
+اگر شیء `ImageData` برای پیکسل‌های ممیز شناور تنظیم شده باشد — برای مثال، برای تصاویر با محدودهٔ دینامیکی بالا (HDR) — `data` به‌جای آن یک {{jsxref("Float16Array")}} خواهد بود.
 
 ```js
 let floatArray = new Float16Array(4 * 200 * 200);
@@ -51,8 +41,7 @@ console.log(imageData.data); // Float16Array
 
 ### Filling a blank ImageData object
 
-This example creates and fills a new `ImageData` object with colorful
-pixels.
+این مثال یک شیء جدید `ImageData` می‌سازد و آن را با پیکسل‌های رنگارنگ پر می‌کند.
 
 #### HTML
 
@@ -62,9 +51,7 @@ pixels.
 
 #### JavaScript
 
-Since each pixel consists of four values within the `data` array, the
-`for` loop iterates by multiples of four. The values associated with each
-pixel are R (red), G (green), B (blue), and A (alpha), in that order.
+از آنجا که هر پیکسل از چهار مقدار درون آرایهٔ `data` تشکیل شده است، حلقهٔ `for` مضارب چهار را پیمایش می‌کند. مقادیر مرتبط با هر پیکسل به ترتیب R (قرمز)، G (سبز)، B (آبی) و A (آلفا) هستند.
 
 ```js
 const canvas = document.getElementById("canvas");
@@ -95,9 +82,7 @@ ctx.putImageData(imageData, 20, 20);
 
 ### More examples
 
-For more examples using `ImageData.data`, see [Pixel manipulation with canvas](/en-US/docs/Web/API/Canvas_API/Tutorial/Pixel_manipulation_with_canvas),
-{{domxref("CanvasRenderingContext2D.createImageData()")}}, and
-{{domxref("CanvasRenderingContext2D.putImageData()")}}.
+برای مثال‌های بیشتر با استفاده از `ImageData.data`، به [Pixel manipulation with canvas](/en-US/docs/Web/API/Canvas_API/Tutorial/Pixel_manipulation_with_canvas)، {{domxref("CanvasRenderingContext2D.createImageData()")}} و {{domxref("CanvasRenderingContext2D.putImageData()")}} مراجعه کنید.
 
 ## Specifications
 
