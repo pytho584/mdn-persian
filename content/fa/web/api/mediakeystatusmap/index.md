@@ -1,11 +1,5 @@
 ---
 title: "MediaKeyStatusMap"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaKeyStatusMap"
-status: "needs-translation"
----
-
----
-title: MediaKeyStatusMap
 slug: Web/API/MediaKeyStatusMap
 page-type: web-api-interface
 browser-compat: api.MediaKeyStatusMap
@@ -13,34 +7,34 @@ browser-compat: api.MediaKeyStatusMap
 
 {{APIRef("Encrypted Media Extensions")}}{{SecureContext_Header}}
 
-The **`MediaKeyStatusMap`** interface of the [Encrypted Media Extensions API](/en-US/docs/Web/API/Encrypted_Media_Extensions_API) is a read-only map of media key statuses by key IDs.
+رابط **`MediaKeyStatusMap`** از [API افزونه‌های رسانه رمزگذاری‌شده](/en-US/docs/Web/API/Encrypted_Media_Extensions_API) یک نقشه فقط‌خواندنی از وضعیت‌های کلید رسانه بر اساس شناسه‌های کلید است.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("MediaKeyStatusMap.size")}} {{ReadOnlyInline}}
-  - : Returns the number of key/value pairs in the status map.
+  - : تعداد جفت‌های کلید/مقدار در نقشه وضعیت را برمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("MediaKeyStatusMap.entries()")}} {{ReadOnlyInline}}
-  - : Returns a new `Iterator` object containing an array of `[key, value]` for each element in the status map, in insertion order.
+  - : یک شیء `Iterator` جدید برمی‌گرداند که شامل آرایه‌ای از `[key, value]` برای هر عنصر در نقشه وضعیت، به ترتیب درج است.
 - {{domxref("MediaKeyStatusMap.forEach()")}} {{ReadOnlyInline}}
-  - : Calls `callback` once for each key-value pair in the status map, in insertion order. If `argument` is present it will be passed to the callback.
+  - : یک بار برای هر جفت کلید-مقدار در نقشه وضعیت، به ترتیب درج، `callback` را فراخوانی می‌کند. اگر `argument` وجود داشته باشد، به تابع callback ارسال می‌شود.
 - {{domxref("MediaKeyStatusMap.get()")}} {{ReadOnlyInline}}
-  - : Returns the value associated with the given key, or `undefined` if there is none.
+  - : مقدار مرتبط با کلید داده شده را برمی‌گرداند، یا اگر وجود نداشته باشد `undefined` را برمی‌گرداند.
 - {{domxref("MediaKeyStatusMap.has()")}} {{ReadOnlyInline}}
-  - : Returns a boolean asserting whether a value has been associated with the given key.
+  - : یک مقدار بولی برمی‌گرداند که نشان می‌دهد آیا مقداری با کلید داده شده مرتبط شده است یا خیر.
 - {{domxref("MediaKeyStatusMap.keys()")}} {{ReadOnlyInline}}
-  - : Returns a new `Iterator` object containing keys for each element in the status map, in insertion order.
+  - : یک شیء `Iterator` جدید برمی‌گرداند که شامل کلیدهای هر عنصر در نقشه وضعیت، به ترتیب درج است.
 - {{domxref("MediaKeyStatusMap.values()")}} {{ReadOnlyInline}}
-  - : Returns a new `Iterator` object containing values for each element in the status map, in insertion order.
+  - : یک شیء `Iterator` جدید برمی‌گرداند که شامل مقادیر هر عنصر در نقشه وضعیت، به ترتیب درج است.
 - `MediaKeyStatusMap[Symbol.iterator]()` {{ReadOnlyInline}}
-  - : Returns a new `Iterator` object containing an array of `[key, value]` for each element in the status map, in insertion order.
+  - : یک شیء `Iterator` جدید برمی‌گرداند که شامل آرایه‌ای از `[key, value]` برای هر عنصر در نقشه وضعیت، به ترتیب درج است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
