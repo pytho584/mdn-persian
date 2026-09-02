@@ -1,7 +1,5 @@
 ---
 title: "IDBCursor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBCursor"
-status: "needs-translation"
 ---
 
 ---
@@ -14,58 +12,58 @@ browser-compat: api.IDBCursor
 {{APIRef("IndexedDB")}} {{AvailableInWorkers}}
 
 > [!NOTE]
-> Not to be confused with {{domxref("IDBCursorWithValue")}} which is just an **`IDBCursor`** interface with an additional **`value`** property.
+> نباید با {{domxref("IDBCursorWithValue")}} اشتباه گرفته شود؛ این رابط، همان رابط **`IDBCursor`** با یک ویژگی **`value`** اضافی است.
 
-The **`IDBCursor`** interface of the [IndexedDB API](/en-US/docs/Web/API/IndexedDB_API) represents a [cursor](/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology#cursor) for traversing or iterating over multiple records in a database.
+رابط **`IDBCursor`** در [IndexedDB API](/en-US/docs/Web/API/IndexedDB_API) یک [نشانگر (cursor)](/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology#cursor) را برای پیمایش یا تکرار روی چندین رکورد در یک پایگاه‌داده نشان می‌دهد.
 
-The cursor has a source that indicates which index or object store it is iterating over. It has a position within the range, and moves in a direction that is increasing or decreasing in the order of record keys. The cursor enables an application to asynchronously process all the records in the cursor's range.
+نشانگر دارای یک «منبع» (source) است که مشخص می‌کند در حال تکرار روی کدام ایندکس یا object store است. همچنین در محدوده‌ی (range) خود یک موقعیت دارد و در جهتی حرکت می‌کند که به ترتیب کلیدهای رکورد، صعودی یا نزولی است. این نشانگر به برنامه اجازه می‌دهد تا همه‌ی رکوردهای موجود در محدوده‌ی نشانگر را به‌صورت ناهمگام (asynchronous) پردازش کند.
 
-You can have an unlimited number of cursors at the same time. You always get the same `IDBCursor` object representing a given cursor. Operations are performed on the underlying index or object store.
+شما می‌توانید به‌طور همزمان تعداد نامحدودی نشانگر داشته باشید. برای هر نشانگر، همیشه همان شیء `IDBCursor` یکسان را دریافت می‌کنید. عملیات روی ایندکس یا object store زیرین انجام می‌شود.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 > [!NOTE]
-> {{domxref("IDBCursorWithValue")}} is an **`IDBCursor`** interface with an additional **`value`** property.
+> {{domxref("IDBCursorWithValue")}} یک رابط **`IDBCursor`** با یک ویژگی **`value`** اضافی است.
 
 - {{domxref("IDBCursor.source")}} {{ReadOnlyInline}}
-  - : Returns the {{domxref("IDBObjectStore")}} or {{domxref("IDBIndex")}} that the cursor is iterating. This function never returns null or throws an exception, even if the cursor is currently being iterated, has iterated past its end, or its transaction is not active.
+  - : مقدار {{domxref("IDBObjectStore")}} یا {{domxref("IDBIndex")}} را که نشانگر در حال تکرار روی آن است برمی‌گرداند. این تابع هرگز `null` برنمی‌گرداند و استثنا پرتاب نمی‌کند، حتی اگر نشانگر در حال تکرار باشد، از انتهای محدوده‌اش گذشته باشد، یا تراکنش آن فعال نباشد.
 - {{domxref("IDBCursor.direction")}} {{ReadOnlyInline}}
-  - : Returns the direction of traversal of the cursor.
+  - : جهت پیمایش نشانگر را برمی‌گرداند.
 - {{domxref("IDBCursor.key")}} {{ReadOnlyInline}}
-  - : Returns the key for the record at the cursor's position. If the cursor is outside its range, this is set to `undefined`. The cursor's key can be any data type.
+  - : کلید رکورد را در موقعیت فعلی نشانگر برمی‌گرداند. اگر نشانگر خارج از محدوده‌ی خود باشد، این مقدار `undefined` تنظیم می‌شود. کلید نشانگر می‌تواند هر نوع داده‌ای باشد.
 - {{domxref("IDBCursor.primaryKey")}} {{ReadOnlyInline}}
-  - : Returns the cursor's current effective primary key. If the cursor is currently being iterated or has iterated outside its range, this is set to `undefined`. The cursor's primary key can be any data type.
+  - : کلید اصلی مؤثر فعلی نشانگر را برمی‌گرداند. اگر نشانگر در حال تکرار باشد یا از محدوده‌ی خود خارج شده باشد، این مقدار `undefined` تنظیم می‌شود. کلید اصلی نشانگر می‌تواند هر نوع داده‌ای باشد.
 - {{domxref("IDBCursor.request")}} {{ReadOnlyInline}}
-  - : Returns the {{domxref("IDBRequest")}} that was used to obtain the cursor.
+  - : {{domxref("IDBRequest")}} مورد استفاده برای به‌دست آوردن نشانگر را برمی‌گرداند.
 
-## Instance methods
+## متدهای نمونه
 
 - {{domxref("IDBCursor.advance()")}}
-  - : Sets the number of times a cursor should move its position forward.
+  - : تعداد دفعاتی را که نشانگر باید موقعیت خود را به جلو حرکت دهد، تنظیم می‌کند.
 - {{domxref("IDBCursor.continue()")}}
-  - : Advances the cursor to the next position along its direction, to the item whose key matches the optional `key` parameter.
+  - : نشانگر را در جهت خود به موقعیت بعدی، یعنی آیتمی که کلیدش با پارامتر اختیاری `key` مطابقت دارد، پیش می‌برد.
 - {{domxref("IDBCursor.continuePrimaryKey()")}}
-  - : Sets the cursor to the given index key and primary key given as arguments.
+  - : نشانگر را روی کلید ایندکس و کلید اصلی داده‌شده‌ به‌عنوان آرگومان تنظیم می‌کند.
 - {{domxref("IDBCursor.delete()")}}
-  - : Returns an {{domxref("IDBRequest")}} object, and, in a separate thread, deletes the record at the cursor's position, without changing the cursor's position. This can be used to delete specific records.
+  - : یک شیء {{domxref("IDBRequest")}} برمی‌گرداند و در یک نخ جداگانه، رکورد را در موقعیت فعلی نشانگر حذف می‌کند، بدون اینکه موقعیت نشانگر تغییر کند. این روش می‌تواند برای حذف رکوردهای خاص استفاده شود.
 - {{domxref("IDBCursor.update()")}}
-  - : Returns an {{domxref("IDBRequest")}} object, and, in a separate thread, updates the value at the current position of the cursor in the object store. This can be used to update specific records.
+  - : یک شیء {{domxref("IDBRequest")}} برمی‌گرداند و در یک نخ جداگانه، مقدار را در موقعیت فعلی نشانگر در object store به‌روزرسانی می‌کند. این روش می‌تواند برای به‌روزرسانی رکوردهای خاص استفاده شود.
 
-## Constants
+## ثابت‌ها
 
 {{Deprecated_Header}}
 
 > [!WARNING]
-> These constants are no longer available — they were removed in Gecko 25. You should use the string constants directly instead. ([Firefox bug 891944](https://bugzil.la/891944))
+> این ثابت‌ها دیگر در دسترس نیستند — در Gecko 25 حذف شده‌اند. به‌جای آن‌ها باید مستقیماً از ثابت‌های رشته‌ای استفاده کنید. ([باگ ۸۹۱۹۴۴ فایرفاکس](https://bugzil.la/891944))
 
-- `NEXT`: `"next"` : The cursor shows all records, including duplicates. It starts at the lower bound of the key range and moves upwards (monotonically increasing in the order of keys).
-- `NEXTUNIQUE` : `"nextunique"` : The cursor shows all records, excluding duplicates. If multiple records exist with the same key, only the first one iterated is retrieved. It starts at the lower bound of the key range and moves upwards.
-- `PREV`: `"prev"` : The cursor shows all records, including duplicates. It starts at the upper bound of the key range and moves downwards (monotonically decreasing in the order of keys).
-- `PREVUNIQUE`: `"prevunique"` : The cursor shows all records, excluding duplicates. If multiple records exist with the same key, only the first one iterated is retrieved. It starts at the upper bound of the key range and moves downwards.
+- `NEXT`: `"next"` : نشانگر همه‌ی رکوردها را نشان می‌دهد، از جمله رکوردهای تکراری. از کران پایینی محدوده‌ی کلید شروع می‌شود و به سمت بالا حرکت می‌کند (به‌صورت یکنواخت صعودی در ترتیب کلیدها).
+- `NEXTUNIQUE` : `"nextunique"` : نشانگر همه‌ی رکوردها را به‌جز موارد تکراری نشان می‌دهد. اگر چند رکورد با کلید یکسان وجود داشته باشد، فقط اولین رکوردی که پیمایش می‌شود بازیابی می‌شود. از کران پایینی محدوده‌ی کلید شروع می‌شود و به سمت بالا حرکت می‌کند.
+- `PREV`: `"prev"` : نشانگر همه‌ی رکوردها را نشان می‌دهد، از جمله رکوردهای تکراری. از کران بالایی محدوده‌ی کلید شروع می‌شود و به سمت پایین حرکت می‌کند (به‌صورت یکنواخت نزولی در ترتیب کلیدها).
+- `PREVUNIQUE`: `"prevunique"` : نشانگر همه‌ی رکوردها را به‌جز موارد تکراری نشان می‌دهد. اگر چند رکورد با کلید یکسان وجود داشته باشد، فقط اولین رکوردی که پیمایش می‌شود بازیابی می‌شود. از کران بالایی محدوده‌ی کلید شروع می‌شود و به سمت پایین حرکت می‌کند.
 
-## Examples
+## مثال‌ها
 
-In this simple fragment we create a transaction, retrieve an object store, then use a cursor to iterate through all the records in the object store. The cursor does not require us to select the data based on a key; we can just grab all of it. Also note that in each iteration of the loop, you can grab data from the current record under the cursor object using `cursor.value.foo`. For a complete working example, see our [IDBCursor example](https://github.com/mdn/dom-examples/tree/main/indexeddb-examples/idbcursor) ([view example live](https://mdn.github.io/dom-examples/indexeddb-examples/idbcursor/).)
+در این قطعه‌ی ساده، یک تراکنش می‌سازیم، یک object store را بازیابی می‌کنیم و سپس با یک نشانگر، همه‌ی رکوردهای موجود در آن object store را پیمایش می‌کنیم. نشانگر الزام نمی‌کند که داده‌ها را بر اساس کلید انتخاب کنیم؛ می‌توانیم همه‌ی آن‌ها را برداریم. همچنین توجه کنید که در هر تکرار حلقه، می‌توانید داده‌های رکورد جاری را با استفاده از `cursor.value.foo` از روی شیء نشانگر بگیرید. برای یک مثال کامل و قابل اجرا، [مثال IDBCursor](https://github.com/mdn/dom-examples/tree/main/indexeddb-examples/idbcursor) را ببینید ([مشاهده‌ی مثال زنده](https://mdn.github.io/dom-examples/indexeddb-examples/idbcursor/).)
 
 ```js
 function displayData() {
@@ -87,19 +85,19 @@ function displayData() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([view example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم محدوده‌ای از کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی داده‌ها و ایجاد تغییرات در آن‌ها: {{domxref("IDBObjectStore")}}
+- مثال مرجع: [اعلان‌های کارهای روزانه](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهده‌ی مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
