@@ -1,11 +1,5 @@
 ---
 title: "LargestContentfulPaint: element property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/LargestContentfulPaint/element"
-status: "needs-translation"
----
-
----
-title: "LargestContentfulPaint: element property"
 short-title: element
 slug: Web/API/LargestContentfulPaint/element
 page-type: web-api-instance-property
@@ -14,17 +8,17 @@ browser-compat: api.LargestContentfulPaint.element
 
 {{APIRef("Performance API")}}
 
-The **`element`** read-only property of the {{domxref("LargestContentfulPaint")}} interface returns an object representing the {{domxref("Element")}} that is the largest contentful paint.
+ویژگی فقط‌خواندنی **`element`** در رابط {{domxref("LargestContentfulPaint")}}، یک شیء را برمی‌گرداند که نمایانگر {{domxref("Element")}} مربوط به بزرگ‌ترین نقاشی محتوایی (largest contentful paint) است.
 
-## Value
+## مقدار
 
-An {{domxref("Element")}}.
+یک {{domxref("Element")}}.
 
-## Examples
+## مثال‌ها
 
-### Logging the largest contentful paint element
+### ثبت عنصر بزرگ‌ترین نقاشی محتوایی
 
-This example uses a {{domxref("PerformanceObserver")}} notifying of new `largest-contentful-paint` performance entries as they are recorded in the browser's performance timeline. The `buffered` option is used to access entries from before the observer creation.
+در این مثال از یک {{domxref("PerformanceObserver")}} استفاده می‌شود که ورودی‌های عملکردی جدید `largest-contentful-paint` را هنگام ثبت در خط زمانی عملکرد مرورگر اطلاع‌رسانی می‌کند. گزینه `buffered` برای دسترسی به ورودی‌های قبل از ایجاد observer استفاده شده است.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -35,10 +29,10 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "largest-contentful-paint", buffered: true });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
