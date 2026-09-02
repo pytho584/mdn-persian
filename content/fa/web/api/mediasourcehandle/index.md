@@ -1,10 +1,4 @@
 ---
-title: "MediaSourceHandle"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaSourceHandle"
-status: "needs-translation"
----
-
----
 title: MediaSourceHandle
 slug: Web/API/MediaSourceHandle
 page-type: web-api-interface
@@ -13,25 +7,25 @@ browser-compat: api.MediaSourceHandle
 
 {{APIRef("Media Source Extensions")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`MediaSourceHandle`** interface of the {{domxref("Media Source Extensions API", "Media Source Extensions API", "", "nocode")}} is a proxy for a {{domxref("MediaSource")}} that can be transferred from a dedicated worker back to the main thread and attached to a media element via its {{domxref("HTMLMediaElement.srcObject")}} property. `MediaSource` objects are not transferable because they are event targets, hence the need for `MediaSourceHandle`s.
+**`MediaSourceHandle`** 接口（属于 {{domxref("Media Source Extensions API", "Media Source Extensions API", "", "nocode")}}）是 {{domxref("MediaSource")}} 的一个代理，可从专用工作线程（dedicated worker）传输回主线程，并通过其 {{domxref("HTMLMediaElement.srcObject")}} 属性附加到媒体元素。`MediaSource` 对象因是事件目标（event target）而不可转移，因此需要 `MediaSourceHandle`。
 
-It can be accessed via the {{domxref("MediaSource.handle")}} property.
+可通过 {{domxref("MediaSource.handle")}} 属性访问它。
 
-Each `MediaSource` object created inside a dedicated worker has its own distinct `MediaSourceHandle`. The `MediaSource.handle` getter will always return the `MediaSourceHandle` instance specific to the associated dedicated worker `MediaSource` instance. If the handle has already been transferred to the main thread using {{domxref("DedicatedWorkerGlobalScope.postMessage()", "postMessage()")}}, the handle instance in the worker is technically detached and can't be transferred again.
+在专用工作线程中创建的每个 `MediaSource` 对象都有其独特的 `MediaSourceHandle`。`MediaSource.handle` 获取器（getter）总是返回与关联的专用工作线程 `MediaSource` 实例对应的特定 `MediaSourceHandle` 实例。如果该 handle 已使用 {{domxref("DedicatedWorkerGlobalScope.postMessage()", "postMessage()")}} 传输到主线程，则工作线程中的 handle 实例在技术上已分离，不能再传输。
 
-`MediaSourceHandle` is a [transferable object](/en-US/docs/Web/API/Web_Workers_API/Transferable_objects).
+`MediaSourceHandle` 是一个[可转移对象](/en-US/docs/Web/API/Web_Workers_API/Transferable_objects)。
 
-## Instance properties
+## 实例属性
 
-None.
+无。
 
-## Instance methods
+## 实例方法
 
-None.
+无。
 
-## Examples
+## 示例
 
-The {{domxref("MediaSource.handle", "handle")}} property can be accessed inside a dedicated worker and the resulting `MediaSourceHandle` object is then transferred over to the thread that created the worker (in this case the main thread) via a {{domxref("DedicatedWorkerGlobalScope.postMessage()", "postMessage()")}} call:
+可以在专用工作线程内部访问 {{domxref("MediaSource.handle", "handle")}} 属性，然后通过 {{domxref("DedicatedWorkerGlobalScope.postMessage()", "postMessage()")}} 调用将生成的 `MediaSourceHandle` 对象传输到创建该工作线程的线程（此处为主线程）：
 
 ```js
 // Inside dedicated worker
@@ -48,7 +42,7 @@ mediaSource.addEventListener("sourceopen", () => {
 });
 ```
 
-Over in the main thread, we receive the handle via a {{domxref("Worker.message_event", "message")}} event handler, attach it to a {{htmlelement("video")}} via its {{domxref("HTMLMediaElement.srcObject")}} property, and {{domxref("HTMLMediaElement.play()", "play")}} the video:
+在主线程中，我们通过 {{domxref("Worker.message_event", "message")}} 事件处理器接收 handle，通过其 {{domxref("HTMLMediaElement.srcObject")}} 属性将其附加到 {{htmlelement("video")}}，然后 {{domxref("HTMLMediaElement.play()", "play")}} 视频：
 
 ```js
 worker.addEventListener("message", (msg) => {
@@ -59,17 +53,17 @@ worker.addEventListener("message", (msg) => {
 ```
 
 > [!NOTE]
-> `MediaSourceHandle`s cannot be successfully transferred into or via a shared worker or service worker.
+> `MediaSourceHandle` 无法成功传输到共享工作线程或 service worker 中，或通过它们传输。
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
 - [MSE-in-Workers Demo by Matt Wolenetz](https://wolenetz.github.io/mse-in-workers-demo/mse-in-workers-demo.html)
 - {{domxref("Media Source Extensions API", "Media Source Extensions API", "", "nocode")}}
