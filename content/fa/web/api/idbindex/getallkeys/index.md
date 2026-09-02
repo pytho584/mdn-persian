@@ -1,7 +1,5 @@
 ---
 title: "IDBIndex: getAllKeys() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/getAllKeys"
-status: "needs-translation"
 ---
 
 ---
@@ -14,11 +12,9 @@ browser-compat: api.IDBIndex.getAllKeys
 
 {{ APIRef("IndexedDB") }}
 
-The **`getAllKeys()`** method of the {{domxref("IDBIndex")}}
-interface asynchronously retrieves the primary keys of all objects inside the index,
-setting them as the `result` of the request object.
+متد **`getAllKeys()`** از رابط {{domxref("IDBIndex")}} به‌صورت ناهمزمان کلیدهای اصلی همهٔ اشیاء داخل ایندکس را بازیابی می‌کند و آن‌ها را به‌عنوان `result` شیء درخواست قرار می‌دهد.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 getAllKeys()
@@ -27,55 +23,52 @@ getAllKeys(query, count)
 getAllKeys(options)
 ```
 
-### Parameters
+### پارامترها
 
-The `getAllKeys()` method can take separate parameters or a single options object containing the parameters as properties.
+متد `getAllKeys()` می‌تواند پارامترهای جداگانه یا یک شیء options واحد حاوی این پارامترها را به‌صورت ویژگی دریافت کند.
 
-The parameters can include:
-
-- `query` {{optional_inline}}
-  - : A key or an {{domxref("IDBKeyRange")}} identifying the keys to retrieve. If this value is `null` or not specified, the browser will use an unbound key range.
-- `count` {{optional_inline}}
-  - : The number records to return. If this value exceeds the number of records in the
-    query, the browser will only retrieve the first item. If it is lower than
-    `0` or greater than `2^32 - 1` a {{jsxref("TypeError")}}
-    exception will be thrown.
-
-If an object parameter is specified, its properties can include:
+پارامترها می‌توانند شامل موارد زیر باشند:
 
 - `query` {{optional_inline}}
-  - : See the earlier [`query`](#query) definition.
+  - : یک کلید یا یک {{domxref("IDBKeyRange")}} که کلیدهای مورد نظر برای بازیابی را مشخص می‌کند. اگر این مقدار `null` باشد یا مشخص نشده باشد، مرورگر از یک محدوده کلید نامحدود استفاده خواهد کرد.
 - `count` {{optional_inline}}
-  - : See the earlier [`count`](#count) definition.
+  - : تعداد رکوردهایی که باید برگردانده شوند. اگر این مقدار از تعداد رکوردهای موجود در query بیشتر باشد، مرورگر فقط اولین مورد را بازیابی می‌کند. اگر کمتر از `0` یا بیشتر از `2^32 - 1` باشد، یک استثنای {{jsxref("TypeError")}} پرتاب خواهد شد.
+
+اگر یک پارامتر شیء مشخص شده باشد، ویژگی‌های آن می‌توانند شامل موارد زیر باشند:
+
+- `query` {{optional_inline}}
+  - : تعریف [`query`](#query) قبلی را ببینید.
+- `count` {{optional_inline}}
+  - : تعریف [`count`](#count) قبلی را ببینید.
 - `direction` {{optional_inline}}
-  - : An enumerated value specifying the direction in which the objects are traversed. Possible values are:
+  - : یک مقدار شمارشی که جهت پیمایش اشیاء را مشخص می‌کند. مقادیر ممکن عبارتند از:
     - `next`
-      - : The objects are traversed from the beginning, in increasing key order. This is the default value.
+      - : اشیاء از ابتدا و به ترتیب صعودی کلید پیمایش می‌شوند. این مقدار پیش‌فرض است.
     - `nextunique`
-      - : The objects are traversed from the beginning, in increasing key order. Keys duplicated across multiple objects are only yielded once.
+      - : اشیاء از ابتدا و به ترتیب صعودی کلید پیمایش می‌شوند. کلیدهایی که در چندین شیء تکرار شده‌اند فقط یک‌بار بازگردانده می‌شوند.
     - `prev`
-      - : The objects are traversed from the end, in decreasing key order.
+      - : اشیاء از انتها و به ترتیب نزولی کلید پیمایش می‌شوند.
     - `prevunique`
-      - : The objects are traversed from the end, in decreasing key order. Keys duplicated across multiple objects are only yielded once.
+      - : اشیاء از انتها و به ترتیب نزولی کلید پیمایش می‌شوند. کلیدهایی که در چندین شیء تکرار شده‌اند فقط یک‌بار بازگردانده می‌شوند.
 
-### Return value
+### مقدار بازگشتی
 
-An {{domxref("IDBRequest")}} object on which subsequent events related to this operation are fired.
+یک شیء {{domxref("IDBRequest")}} که رویدادهای بعدی مربوط به این عملیات روی آن ارسال می‌شوند.
 
-If the operation is successful, the value of the request's {{domxref("IDBRequest.result", "result")}} property is an {{jsxref("Array")}} of the keys for all records matching the given query, up to the value of `count`, if `count` was supplied.
+اگر عملیات موفقیت‌آمیز باشد، مقدار ویژگی {{domxref("IDBRequest.result", "result")}} درخواست، یک {{jsxref("Array")}} از کلیدهای همهٔ رکوردهای منطبق با query داده‌شده است، تا سقف مقدار `count`، اگر `count` ارائه شده باشد.
 
-### Exceptions
+### استثناها
 
-This method may raise a {{domxref("DOMException")}} of the following types:
+این متد ممکن است یک {{domxref("DOMException")}} از انواع زیر ایجاد کند:
 
 - `TransactionInactiveError` {{domxref("DOMException")}}
-  - : Thrown if this {{domxref("IDBIndex")}}'s transaction is inactive.
+  - : اگر تراکنش این {{domxref("IDBIndex")}} غیرفعال باشد پرتاب می‌شود.
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the {{domxref("IDBIndex")}} has been deleted or removed.
+  - : اگر {{domxref("IDBIndex")}} حذف یا پاک شده باشد پرتاب می‌شود.
 - {{jsxref("TypeError")}} {{domxref("DOMException")}}
-  - : Thrown if the [`count`](#count) parameter is not between `0` and `2^32 - 1`, inclusive.
+  - : اگر پارامتر [`count`](#count) بین `0` و `2^32 - 1` (شامل هر دو) نباشد پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
 ```js
 const myIndex = objectStore.index("index");
@@ -85,20 +78,20 @@ getAllKeysRequest.onsuccess = () => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم محدوده کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و ایجاد تغییرات در داده‌ها: {{domxref("IDBObjectStore")}}
+- استفاده از کرسرها: {{domxref("IDBCursor")}}
+- مثال مرجع: [اعلان‌های کارها](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهده مثال به‌صورت زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
