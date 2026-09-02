@@ -1,11 +1,5 @@
 ---
 title: "MediaSource: readyState property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/readyState"
-status: "needs-translation"
----
-
----
-title: "MediaSource: readyState property"
 short-title: readyState
 slug: Web/API/MediaSource/readyState
 page-type: web-api-instance-property
@@ -14,23 +8,19 @@ browser-compat: api.MediaSource.readyState
 
 {{APIRef("Media Source Extensions")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`readyState`** read-only property of the
-{{domxref("MediaSource")}} interface returns an enum representing the state of the
-current `MediaSource`. The three possible values are:
+خاصیت فقط خواندنی **`readyState`** در رابط {{domxref("MediaSource")}} یک enum (شمارشی) را برمی‌گرداند که وضعیت `MediaSource` جاری را نشان می‌دهد. سه مقدار ممکن عبارتند از:
 
-- `closed`: The source is not currently attached to a media element.
-- `open`: The source is attached to a media element and ready to receive
-  {{domxref("SourceBuffer")}} objects.
-- `ended`: The source is attached to a media element but the stream has
-  been ended via a call to {{domxref("MediaSource.endOfStream()")}}.
+- `closed`: منبع در حال حاضر به یک عنصر رسانه‌ای متصل نیست.
+- `open`: منبع به یک عنصر رسانه‌ای متصل است و آماده دریافت اشیاء {{domxref("SourceBuffer")}} می‌باشد.
+- `ended`: منبع به یک عنصر رسانه‌ای متصل است اما جریان با فراخوانی {{domxref("MediaSource.endOfStream()")}} پایان یافته است.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
-The following snippet is from an example written by Nick Desaulniers ([view the full demo live](https://nickdesaulniers.github.io/netfix/demo/bufferAll.html), or [download the source](https://github.com/nickdesaulniers/netfix/blob/gh-pages/demo/bufferAll.html) for further investigation). The function `getMediaSource()`, which is not defined here, returns a `MediaSource`.
+قطعه کد زیر از یک مثال نوشته شده توسط Nick Desaulniers گرفته شده است ([مشاهده دموی کامل زنده](https://nickdesaulniers.github.io/netfix/demo/bufferAll.html)، یا [دانلود سورس](https://github.com/nickdesaulniers/netfix/blob/gh-pages/demo/bufferAll.html) برای بررسی بیشتر). تابع `getMediaSource()` که در اینجا تعریف نشده است، یک `MediaSource` برمی‌گرداند.
 
 ```js
 let mediaSource;
@@ -58,15 +48,15 @@ function sourceOpen() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("SourceBuffer")}}
 - {{domxref("SourceBufferList")}}
