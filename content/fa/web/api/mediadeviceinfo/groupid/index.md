@@ -1,11 +1,5 @@
 ---
 title: "MediaDeviceInfo: groupId property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaDeviceInfo/groupId"
-status: "needs-translation"
----
-
----
-title: "MediaDeviceInfo: groupId property"
 short-title: groupId
 slug: Web/API/MediaDeviceInfo/groupId
 page-type: web-api-instance-property
@@ -14,25 +8,17 @@ browser-compat: api.MediaDeviceInfo.groupId
 
 {{APIRef("Media Capture and Streams")}}{{securecontext_header}}
 
-The **`groupId`** read-only property of
-the {{domxref("MediaDeviceInfo")}} interface returns a string that
-is a group identifier.
+ویژگی فقطخواندنی **`groupId`** در رابط {{domxref("MediaDeviceInfo")}} یک رشته برمی‌گرداند که شناسهٔ گروه است.
 
-Two devices have the same group identifier if they
-belong to the same physical device; for example, a monitor with both a built-in camera
-and microphone.
+اگر دو دستگاه به یک دستگاه فیزیکی واحد تعلق داشته باشند، شناسهٔ گروه یکسانی دارند؛ برای مثال، یک مانیتور که هم دوربین داخلی دارد و هم میکروفون داخلی.
 
-## Value
+## مقدار
 
-A string which uniquely identifies the group of related devices to
-which this device belongs.
+رشته‌ای که گروه دستگاه‌های مرتبطی را که این دستگاه به آن تعلق دارد، به‌صورت یکتا شناسایی می‌کند.
 
-## Examples
+## مثال‌ها
 
-In this example, we assemble a list of the devices which are part of the same group as
-a given device. This might be used to produce a user interface that gathers associated
-devices together for presentation purposes, or to make it easy for the user to choose to
-use the built-in camera and microphone on the same display at the same time.
+در این مثال، فهرستی از دستگاه‌هایی می‌سازیم که در همان گروهِ یک دستگاه مشخص قرار دارند. این کار ممکن است برای تولید رابط کاربری استفاده شود که دستگاه‌های مرتبط را برای نمایش در کنار هم جمع می‌کند، یا به کاربر امکان می‌دهد به‌سادگی دوربین و میکروفون داخلیِ همان نمایشگر را هم‌زمان انتخاب کند.
 
 ```js
 const getDeviceGroup = (mainDevInfo) => {
@@ -50,26 +36,15 @@ const getDeviceGroup = (mainDevInfo) => {
 };
 ```
 
-The `getDeviceGroup()` function takes as input the
-`MediaDeviceInfo` object describing the device for which a group list is to
-be built. The function starts by initializing the result array, `devList`, to
-be an empty array.
+تابع `getDeviceGroup()` یک شیء `MediaDeviceInfo` را به‌عنوان ورودی می‌گیرد که دستگاهی را توصیف می‌کند که باید فهرست گروهش ساخته شود. این تابع ابتدا آرایهٔ نتیجه، `devList`، را با یک آرایهٔ خالی مقداردهی می‌کند.
 
-Then {{domxref("MediaDevices.enumerateDevices", "navigator.mediaDevices.enumerateDevices()")}} is called to get the list of all media
-devices. Once the promise resolves, we walk the list using {{jsxref("Array.forEach", "forEach()")}}.
-For each device, if its `groupId` matches the main device's `groupId`, we push the
-{{domxref("MediaDeviceInfo")}} object onto the list.
+سپس برای دریافت فهرست همهٔ دستگاه‌های رسانه‌ای، متد {{domxref("MediaDevices.enumerateDevices", "navigator.mediaDevices.enumerateDevices()")}} فراخوانی می‌شود. وقتی پرامیسی که این متد برمی‌گرداند برآورده شد (resolve)، فهرست را با استفاده از {{jsxref("Array.forEach", "forEach()")}} پیمایش می‌کنیم. برای هر دستگاه، اگر `groupId` آن با `groupId` دستگاه اصلی یکی باشد، شیء {{domxref("MediaDeviceInfo")}} را به فهرست اضافه می‌کنیم.
 
-Finally, the list, which now contains a `MediaDeviceInfo` object for each
-device in the same group, is returned to the caller.
+در پایان، فهرست که اکنون برای هر دستگاهِ همان گروه یک شیء `MediaDeviceInfo` دارد، به فراخواننده بازگردانده می‌شود.
 
-This could be altered easily to either leave out the passed-in device from the returned
-list, or to place it at the top of the list, by comparing the two objects'
-{{domxref("MediaDeviceInfo.deviceId", "deviceId")}} values, only pushing the device onto
-the result list if it doesn't match.
+به‌سادگی می‌توان این تابع را تغییر داد تا دستگاهِ داده‌شده را از فهرست برگشتی حذف کند یا آن را در بالای فهرست قرار دهد؛ این کار با مقایسهٔ مقادیر {{domxref("MediaDeviceInfo.deviceId", "deviceId")}} دو شیء انجام می‌شود و فقط وقتی دستگاه به فهرست نتیجه اضافه می‌شود که این مقدار یکسان نباشد.
 
-This version of the example puts the passed-in device at the top of the result list,
-then adds any other members of the group that are found:
+این نسخه از مثال، دستگاهِ داده‌شده را در بالای فهرست نتیجه قرار می‌دهد و سپس هر عضو دیگری از گروه را که پیدا شود به آن اضافه می‌کند:
 
 ```js
 const getDeviceGroup = (mainDevInfo) => {
@@ -90,10 +65,10 @@ const getDeviceGroup = (mainDevInfo) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
