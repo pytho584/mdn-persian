@@ -1,11 +1,5 @@
 ---
 title: "IdentityCredentialError: error property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IdentityCredentialError/error"
-status: "needs-translation"
----
-
----
-title: "IdentityCredentialError: error property"
 short-title: error
 slug: Web/API/IdentityCredentialError/error
 page-type: web-api-instance-property
@@ -16,13 +10,13 @@ browser-compat: api.IdentityCredentialError.error
 
 {{APIRef("FedCM API")}}{{AvailableInWorkers}}{{SeeCompatTable}}
 
-The **`error`** read-only property of the {{domxref("IdentityCredentialError")}} interface is either one of the values listed in the [OAuth 2.0 specified error list](https://datatracker.ietf.org/doc/html/rfc6749#section-4.1.2.1) or an arbitrary string giving more information about the error.
+ویژگی فقط‌خواندنی **`error`** در رابط {{domxref("IdentityCredentialError")}} یا یکی از مقادیر فهرست‌شده در [فهرست خطاهای مشخص‌شده در OAuth 2.0](https://datatracker.ietf.org/doc/html/rfc6749#section-4.1.2.1) است یا یک رشتهٔ دلخواه که اطلاعات بیشتری دربارهٔ خطا می‌دهد.
 
-## Value
+## مقدار
 
-One of the values listed in the [OAuth 2.0 specified error list](https://datatracker.ietf.org/doc/html/rfc6749#section-4.1.2.1) or an arbitrary string.
+یکی از مقادیر فهرست‌شده در [فهرست خطاهای مشخص‌شده در OAuth 2.0](https://datatracker.ietf.org/doc/html/rfc6749#section-4.1.2.1) یا یک رشتهٔ دلخواه.
 
-## Examples
+## مثال‌ها
 
 ```js
 try {
@@ -42,15 +36,15 @@ try {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("CredentialsContainer.get()")}}
-- [ID assertion error responses](/en-US/docs/Web/API/FedCM_API/IDP_integration#id_assertion_error_responses)
+- [پاسخ‌های خطای تأیید هویت](/en-US/docs/Web/API/FedCM_API/IDP_integration#id_assertion_error_responses)
