@@ -1,11 +1,5 @@
 ---
 title: "MediaRecorder"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder"
-status: "needs-translation"
----
-
----
-title: MediaRecorder
 slug: Web/API/MediaRecorder
 page-type: web-api-interface
 browser-compat: api.MediaRecorder
@@ -13,66 +7,66 @@ browser-compat: api.MediaRecorder
 
 {{APIRef("MediaStream Recording")}}
 
-The **`MediaRecorder`** interface of the [MediaStream Recording API](/en-US/docs/Web/API/MediaStream_Recording_API) provides functionality to easily record media. It is created using the {{domxref("MediaRecorder.MediaRecorder", "MediaRecorder()")}} constructor.
+رابط **`MediaRecorder`** از [API ضبط جریان رسانه‌ای](/en-US/docs/Web/API/MediaStream_Recording_API) قابلیت ضبط آسان رسانه را فراهم می‌کند. این رابط با استفاده از سازنده {{domxref("MediaRecorder.MediaRecorder", "MediaRecorder()")}} ایجاد می‌شود.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("MediaRecorder.MediaRecorder", "MediaRecorder()")}}
-  - : Creates a new `MediaRecorder` object, given a {{domxref("MediaStream")}} to record. Options are available to do things like set the container's MIME type (such as `"video/webm"` or `"video/mp4"`) and the bit rates of the audio and video tracks or a single overall bit rate.
+  - : یک شیء `MediaRecorder` جدید ایجاد می‌کند که یک {{domxref("MediaStream")}} برای ضبط به آن داده می‌شود. گزینه‌هایی برای تنظیم نوع MIME ظرف (مانند `"video/webm"` یا `"video/mp4"`) و نرخ بیت آهنگ‌های صوتی و تصویری یا یک نرخ بیت کلی واحد در دسترس است.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("MediaRecorder.mimeType")}} {{ReadOnlyInline}}
-  - : Returns the MIME type that was selected as the recording container for the `MediaRecorder` object when it was created.
+  - : نوع MIME انتخاب‌شده به عنوان ظرف ضبط برای شیء `MediaRecorder` در زمان ایجاد آن را برمی‌گرداند.
 - {{domxref("MediaRecorder.state")}} {{ReadOnlyInline}}
-  - : Returns the current state of the `MediaRecorder` object (`inactive`, `recording`, or `paused`.)
+  - : وضعیت فعلی شیء `MediaRecorder` را برمی‌گرداند (`inactive`، `recording` یا `paused`).
 - {{domxref("MediaRecorder.stream")}} {{ReadOnlyInline}}
-  - : Returns the stream that was passed into the constructor when the `MediaRecorder` was created.
+  - : جریانی را که در زمان ایجاد `MediaRecorder` به سازنده داده شده است برمی‌گرداند.
 - {{domxref("MediaRecorder.videoBitsPerSecond")}} {{ReadOnlyInline}}
-  - : Returns the video encoding bit rate in use. This may differ from the bit rate specified in the constructor (if it was provided).
+  - : نرخ بیت رمزگذاری ویدیوی در حال استفاده را برمی‌گرداند. این مقدار ممکن است با نرخ بیت مشخص‌شده در سازنده (اگر ارائه شده باشد) متفاوت باشد.
 - {{domxref("MediaRecorder.audioBitsPerSecond")}} {{ReadOnlyInline}}
-  - : Returns the audio encoding bit rate in use. This may differ from the bit rate specified in the constructor (if it was provided).
+  - : نرخ بیت رمزگذاری صوتی در حال استفاده را برمی‌گرداند. این مقدار ممکن است با نرخ بیت مشخص‌شده در سازنده (اگر ارائه شده باشد) متفاوت باشد.
 - {{domxref("MediaRecorder.audioBitrateMode")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns the bitrate mode used to encode audio tracks.
+  - : حالت نرخ بیت استفاده‌شده برای رمزگذاری آهنگ‌های صوتی را برمی‌گرداند.
 
-## Static methods
+## روش‌های ایستا
 
 - {{domxref("MediaRecorder.isTypeSupported_static", "MediaRecorder.isTypeSupported()")}}
-  - : A static method which returns a `true` or `false` value indicating if the given MIME media type is supported by the current user agent.
+  - : یک روش ایستا که مقدار `true` یا `false` را برمی‌گرداند و نشان می‌دهد آیا نوع رسانه MIME داده‌شده توسط عامل کاربر فعلی پشتیبانی می‌شود یا خیر.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("MediaRecorder.pause()")}}
-  - : Pauses the recording of media.
+  - : ضبط رسانه را متوقف می‌کند.
 - {{domxref("MediaRecorder.requestData()")}}
-  - : Requests a {{domxref("Blob")}} containing the saved data received thus far (or since the last time `requestData()` was called. After calling this method, recording continues, but in a new `Blob`.
+  - : یک {{domxref("Blob")}} حاوی داده‌های ذخیره‌شده تا این لحظه (یا از آخرین باری که `requestData()` فراخوانی شده است) درخواست می‌کند. پس از فراخوانی این روش، ضبط ادامه می‌یابد اما در یک `Blob` جدید.
 - {{domxref("MediaRecorder.resume()")}}
-  - : Resumes recording of media after having been paused.
+  - : ضبط رسانه را پس از توقف مجدد از سر می‌گیرد.
 - {{domxref("MediaRecorder.start()")}}
-  - : Begins recording media; this method can optionally be passed a `timeslice` argument with a value in milliseconds. If this is specified, the media will be captured in separate chunks of that duration, rather than the default behavior of recording the media in a single large chunk.
+  - : شروع به ضبط رسانه می‌کند؛ این روش می‌تواند به صورت اختیاری یک آرگومان `timeslice` با مقدار میلی‌ثانیه دریافت کند. اگر مشخص شود، رسانه به جای رفتار پیش‌فرض (ضبط در یک تکه بزرگ) در تکه‌های جداگانه با آن مدت زمان ضبط خواهد شد.
 - {{domxref("MediaRecorder.stop()")}}
-  - : Stops recording, at which point a {{domxref("MediaRecorder.dataavailable_event", "dataavailable")}} event containing the final `Blob` of saved data is fired. No more recording occurs.
+  - : ضبط را متوقف می‌کند، در این زمان یک رویداد {{domxref("MediaRecorder.dataavailable_event", "dataavailable")}} حاوی `Blob` نهایی داده‌های ذخیره‌شده فعال می‌شود. دیگر ضبطی انجام نمی‌شود.
 
-## Events
+## رویدادها
 
-Listen to these events using `addEventListener()` or by assigning an event listener to the `oneventname` property of this interface.
+برای گوش دادن به این رویدادها از `addEventListener()` یا با اختصاص یک شنونده رویداد به ویژگی `oneventname` این رابط استفاده کنید.
 
 - {{domxref("MediaRecorder/dataavailable_event", "dataavailable")}}
-  - : Fires periodically each time `timeslice` milliseconds of media have been recorded (or when the entire media has been recorded, if `timeslice` wasn't specified). The event, of type {{domxref("BlobEvent")}}, contains the recorded media in its {{domxref("BlobEvent.data", "data")}} property.
+  - : به صورت دوره‌ای هر بار که `timeslice` میلی‌ثانیه از رسانه ضبط شده است (یا زمانی که کل رسانه ضبط شده است، اگر `timeslice` مشخص نشده باشد) فعال می‌شود. این رویداد از نوع {{domxref("BlobEvent")}} است و رسانه ضبط‌شده را در ویژگی {{domxref("BlobEvent.data", "data")}} خود دارد.
 - {{domxref("MediaRecorder/error_event", "error")}}
-  - : Fired when there are fatal errors that stop recording. The received event is based on the {{domxref("MediaRecorderErrorEvent")}} interface, whose {{domxref("MediaRecorderErrorEvent.error", "error")}} property contains a {{domxref("DOMException")}} that describes the actual error that occurred.
+  - : زمانی که خطاهای مهلکی رخ می‌دهد که ضبط را متوقف می‌کنند، فعال می‌شود. رویداد دریافت‌شده بر اساس رابط {{domxref("MediaRecorderErrorEvent")}} است که ویژگی {{domxref("MediaRecorderErrorEvent.error", "error")}} آن حاوی یک {{domxref("DOMException")}} است که خطای واقعی رخ‌داده را توصیف می‌کند.
 - {{domxref("MediaRecorder/pause_event", "pause")}}
-  - : Fired when media recording is paused.
+  - : زمانی که ضبط رسانه متوقف می‌شود، فعال می‌شود.
 - {{domxref("MediaRecorder/resume_event", "resume")}}
-  - : Fired when media recording resumes after being paused.
+  - : زمانی که ضبط رسانه پس از توقف دوباره از سر گرفته می‌شود، فعال می‌شود.
 - {{domxref("MediaRecorder/start_event", "start")}}
-  - : Fired when media recording starts.
+  - : زمانی که ضبط رسانه شروع می‌شود، فعال می‌شود.
 - {{domxref("MediaRecorder/stop_event", "stop")}}
-  - : Fired when media recording ends, either when the {{domxref("MediaStream")}} ends, or after the {{domxref("MediaRecorder.stop()")}} method is called.
+  - : زمانی که ضبط رسانه به پایان می‌رسد، چه به دلیل پایان {{domxref("MediaStream")}} یا پس از فراخوانی روش {{domxref("MediaRecorder.stop()")}}، فعال می‌شود.
 
-## Example
+## مثال
 
 ```js
 if (navigator.mediaDevices) {
@@ -147,21 +141,21 @@ if (navigator.mediaDevices) {
 ```
 
 > [!NOTE]
-> This code sample is inspired by the Web Dictaphone demo. Some lines have been omitted for brevity; [refer to the source](https://github.com/mdn/dom-examples/tree/main/media/web-dictaphone) for the complete code.
+> این نمونه کد برگرفته از دموی Web Dictaphone است. برخی خطوط برای اختصار حذف شده‌اند؛ برای کد کامل [به منبع مراجعه کنید](https://github.com/mdn/dom-examples/tree/main/media/web-dictaphone).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the MediaStream Recording API](/en-US/docs/Web/API/MediaStream_Recording_API/Using_the_MediaStream_Recording_API)
-- [Web Dictaphone](https://mdn.github.io/dom-examples/media/web-dictaphone/): MediaRecorder + getUserMedia + Web Audio API visualization demo, by [Chris Mills](https://github.com/chrisdavidmills) ([source on GitHub](https://github.com/mdn/dom-examples/tree/main/media/web-dictaphone).)
-- [Recording a media element](/en-US/docs/Web/API/MediaStream_Recording_API/Recording_a_media_element)
-- [simpl.info MediaStream Recording demo](https://simpl.info/mediarecorder/), by [Sam Dutton](https://github.com/samdutton).
+- [استفاده از API ضبط جریان رسانه‌ای](/en-US/docs/Web/API/MediaStream_Recording_API/Using_the_MediaStream_Recording_API)
+- [Web Dictaphone](https://mdn.github.io/dom-examples/media/web-dictaphone/): دموی تجسم MediaRecorder + getUserMedia + Web Audio API، توسط [Chris Mills](https://github.com/chrisdavidmills) ([منبع در GitHub](https://github.com/mdn/dom-examples/tree/main/media/web-dictaphone)).
+- [ضبط یک عنصر رسانه](/en-US/docs/Web/API/MediaStream_Recording_API/Recording_a_media_element)
+- [دموی ضبط جریان رسانه‌ای simpl.info](https://simpl.info/mediarecorder/)، توسط [Sam Dutton](https://github.com/samdutton).
 - {{domxref("MediaDevices.getUserMedia()")}}
-- [OpenLang](https://github.com/chrisjohndigital/OpenLang): HTML video language lab web application using MediaDevices and the MediaStream Recording API for video recording ([source on GitHub](https://github.com/chrisjohndigital/OpenLang))
+- [OpenLang](https://github.com/chrisjohndigital/OpenLang): برنامه وب آزمایشگاه ویدیوی زبان با استفاده از MediaDevices و API ضبط جریان رسانه‌ای برای ضبط ویدیو ([منبع در GitHub](https://github.com/chrisjohndigital/OpenLang))
