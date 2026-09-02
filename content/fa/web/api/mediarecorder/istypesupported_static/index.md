@@ -1,11 +1,5 @@
 ---
 title: "MediaRecorder: isTypeSupported() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/isTypeSupported_static"
-status: "needs-translation"
----
-
----
-title: "MediaRecorder: isTypeSupported() static method"
 short-title: isTypeSupported()
 slug: Web/API/MediaRecorder/isTypeSupported_static
 page-type: web-api-static-method
@@ -14,7 +8,7 @@ browser-compat: api.MediaRecorder.isTypeSupported_static
 
 {{APIRef("MediaStream Recording")}}
 
-The **`isTypeSupported()`** static method of the {{domxref("MediaRecorder")}} interface returns a {{jsxref("Boolean")}} which is `true` if the MIME media type specified is one the user agent should be able to successfully record.
+متد ایستای **`isTypeSupported()`** از رابط {{domxref("MediaRecorder")}} یک {{jsxref("Boolean")}} برمی‌گرداند که اگر نوع رسانه MIME مشخص‌شده از نوعی باشد که عامل کاربر (user agent) باید بتواند آن را با موفقیت ضبط کند، مقدار آن `true` است.
 
 ## Syntax
 
@@ -25,13 +19,11 @@ MediaRecorder.isTypeSupported(mimeType)
 ### Parameters
 
 - `mimeType`
-  - : The MIME media type to check.
+  - : نوع رسانه MIME که باید بررسی شود.
 
 ### Return value
 
-A {{jsxref("Boolean")}}, `true` if the {{domxref("MediaRecorder")}} implementation is capable of recording {{domxref("Blob")}} objects for the specified MIME type.
-Recording may still fail if there are insufficient resources to support the recording and encoding process.
-If the value is `false`, the user agent is incapable of recording the specified format.
+یک {{jsxref("Boolean")}}؛ اگر پیاده‌سازی {{domxref("MediaRecorder")}} قادر به ضبط اشیاء {{domxref("Blob")}} برای نوع MIME مشخص‌شده باشد، مقدار `true` است. ضبط ممکن است همچنان در صورت نبود منابع کافی برای پشتیبانی از فرایند ضبط و رمزگذاری، با شکست مواجه شود. اگر مقدار `false` باشد، عامل کاربر قادر به ضبط قالب مشخص‌شده نیست.
 
 ## Examples
 
