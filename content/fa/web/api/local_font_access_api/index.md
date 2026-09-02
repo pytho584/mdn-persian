@@ -1,10 +1,4 @@
 ---
-title: "Local Font Access API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Local_Font_Access_API"
-status: "needs-translation"
----
-
----
 title: Local Font Access API
 slug: Web/API/Local_Font_Access_API
 page-type: web-api-overview
@@ -16,41 +10,41 @@ spec-urls: https://wicg.github.io/local-font-access/
 
 {{SeeCompatTable}}{{DefaultAPISidebar("Local Font Access API")}}
 
-The **Local Font Access API** provides a mechanism to access the user's locally installed font data — this includes higher-level details such as names, styles, and families, as well as the raw bytes of the underlying font files.
+**API دسترسی به فونت‌های محلی (Local Font Access API)** مکانیزمی برای دسترسی به داده‌های فونت‌های نصب‌شده روی سیستم کاربر فراهم می‌کند — این داده‌ها شامل جزئیات سطح بالا مانند نام‌ها، سبک‌ها و خانواده‌ها، و همچنین بایت‌های خام فایل‌های فونت زیرین است.
 
-## Concepts and usage
+## مفاهیم و کاربرد
 
-[Web fonts](/en-US/docs/Learn_web_development/Core/Text_styling/Web_fonts) were revolutionary in enabling typography on the web by allowing web designers to provide custom fonts to use on a web document. Specified via the {{cssxref("@font-face")}} at-rule, a web font can be loaded from a URL provided in the `url()` function.
+[فونت‌های وب (Web fonts)](/en-US/docs/Learn_web_development/Core/Text_styling/Web_fonts) در امکان‌پذیر کردن تایپوگرافی در وب انقلابی ایجاد کردند، زیرا به طراحان وب اجازه می‌دهند تا فونت‌های سفارشی را برای استفاده در یک سند وب ارائه دهند. یک فونت وب با استفاده از قانون at-rule {{cssxref("@font-face")}} مشخص می‌شود و می‌تواند از یک URL که در تابع `url()` ارائه شده است بارگیری شود.
 
-`@font-face` has several other useful features available. In particular, you can also specify the font's full or Postscript name inside the `local()` function to tell the browser to use a local copy if the user has the font installed on their computer. This is not without its problems — `local()` has become notorious as a [fingerprinting vector](https://developer.chrome.com/docs/capabilities/web-apis/local-fonts#local_fonts_as_fingerprint_vector).
+`@font-face` دارای چندین ویژگی مفید دیگر است. به طور خاص، می‌توانید نام کامل یا نام پست‌اسکریپت (Postscript) فونت را در داخل تابع `local()` مشخص کنید تا به مرورگر بگویید اگر کاربر آن فونت را روی رایانه خود نصب کرده است، از یک نسخه محلی استفاده کند. این کار بدون مشکل نیست — `local()` به عنوان یک [بردار اثر انگشت (fingerprinting vector)](https://developer.chrome.com/docs/capabilities/web-apis/local-fonts#local_fonts_as_fingerprint_vector) بدنام شده است.
 
-In addition, high-end design tools have historically been difficult to deliver on the web, due to challenges in accurate font enumeration and accessing low-level font data (for example, to apply filters and transformations). Current apps often rely on workarounds such as asking users to upload their fonts to a server where they are processed to get raw byte data, or installing a separate local program to provide additional capabilities.
+علاوه بر این، ابزارهای طراحی سطح بالا (high-end design tools) به طور تاریخی به دلیل چالش‌های موجود در شمارش دقیق فونت‌ها و دسترسی به داده‌های سطح پایین فونت (به عنوان مثال برای اعمال فیلترها و تبدیل‌ها) به سختی در وب ارائه می‌شدند. برنامه‌های فعلی اغلب به راه‌حل‌های جایگزین مانند درخواست از کاربران برای آپلود فونت‌های خود در سروری که در آنجا پردازش می‌شوند تا داده‌های بایت خام را دریافت کنند، یا نصب یک برنامه محلی جداگانه برای ارائه قابلیت‌های اضافی، متکی هستند.
 
-The Local Font Access API has been created to address these problems.
+API دسترسی به فونت‌های محلی برای حل این مشکلات ایجاد شده است.
 
-The {{domxref("Window.queryLocalFonts()")}} method provides access to an array of locally-installed fonts, each represented by a {{domxref("FontData")}} object instance. {{domxref("FontData")}} has several properties providing access to names, styles, and families, and it also has a {{domxref("FontData.blob", "blob()")}} method providing access to a {{domxref("Blob")}} containing the raw bytes of the underlying font file.
+متود {{domxref("Window.queryLocalFonts()")}} دسترسی به آرایه‌ای از فونت‌های نصب‌شده محلی را فراهم می‌کند که هر کدام توسط یک نمونه از شی {{domxref("FontData")}} نمایش داده می‌شوند. {{domxref("FontData")}} دارای چندین ویژگی است که به نام‌ها، سبک‌ها و خانواده‌ها دسترسی می‌دهد، و همچنین یک متود {{domxref("FontData.blob", "blob()")}} دارد که دسترسی به یک {{domxref("Blob")}} حاوی بایت‌های خام فایل فونت زیرین را فراهم می‌کند.
 
-In terms of privacy and security:
+از نظر حریم خصوصی و امنیت:
 
-- The Local Font Access API is designed to only provide access to the data required to solve the above problems. There is also no requirement for browsers to provide the full list of available local fonts, nor to provide the data in the same order as it appears on disk.
-- When {{domxref("Window.queryLocalFonts()")}} is invoked, the user is asked for permission to access their local fonts. The status of this permission can be queried via the [Permissions API](/en-US/docs/Web/API/Permissions_API) (the `local-fonts` permission).
-- You can control access to this feature using a {{httpheader("Permissions-Policy/local-fonts", "local-fonts")}} [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy).
+- API دسترسی به فونت‌های محلی به گونه‌ای طراحی شده است که تنها به داده‌های مورد نیاز برای حل مشکلات فوق دسترسی دهد. همچنین هیچ الزامی برای مرورگرها وجود ندارد که فهرست کامل فونت‌های محلی موجود را ارائه دهند، یا داده‌ها را به همان ترتیبی که روی دیسک ظاهر می‌شوند، ارائه کنند.
+- هنگامی که {{domxref("Window.queryLocalFonts()")}} فراخوانی می‌شود، از کاربر برای دسترسی به فونت‌های محلی خود اجازه خواسته می‌شود. وضعیت این مجوز را می‌توان از طریق [API مجوزها (Permissions API)](/en-US/docs/Web/API/Permissions_API) (مجوز `local-fonts`) پرس‌وجو کرد.
+- می‌توانید دسترسی به این ویژگی را با استفاده از یک {{httpheader("Permissions-Policy/local-fonts", "local-fonts")}} [سیاست مجوزها (Permissions Policy)](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) کنترل کنید.
 
-## Interfaces
+## رابط‌ها
 
 - {{domxref("FontData")}}
-  - : Represents a single local font face.
+  - : یک وجه فونت محلی واحد را نمایش می‌دهد.
 
-## Extensions to other interfaces
+## افزونه‌هایی به سایر رابط‌ها
 
 - {{domxref("Window.queryLocalFonts()")}}
-  - : Returns a {{jsxref("Promise")}} that fulfills with an array of {{domxref("FontData")}} objects representing the font faces available locally.
+  - : یک {{jsxref("Promise")}} را برمی‌گرداند که با آرایه‌ای از اشیاء {{domxref("FontData")}}، که نمایانگر وجه‌های فونت موجود به صورت محلی هستند، تکمیل می‌شود.
 
-## Examples
+## مثال‌ها
 
-For a working live demo, see our [Local Font Access API demo](https://mdn.github.io/dom-examples/local-font-access/).
+برای یک نمایش زنده و عملی، [دموی API دسترسی به فونت‌های محلی](https://mdn.github.io/dom-examples/local-font-access/) ما را ببینید.
 
-### Feature detection
+### تشخیص ویژگی
 
 ```js
 if ("queryLocalFonts" in window) {
@@ -58,9 +52,9 @@ if ("queryLocalFonts" in window) {
 }
 ```
 
-### Font enumeration
+### شمارش فونت‌ها
 
-The following snippet will query for all available fonts, and log metadata. This could be used, for example, to populate a font-picker control.
+قطعه کد زیر تمام فونت‌های موجود را پرس‌وجو می‌کند و فراداده (metadata) را ثبت می‌کند. این می‌تواند برای مثال برای پر کردن یک کنترل انتخاب فونت (font-picker) استفاده شود.
 
 ```js
 async function logFontData() {
@@ -78,9 +72,9 @@ async function logFontData() {
 }
 ```
 
-### Accessing low-level data
+### دسترسی به داده‌های سطح پایین
 
-The {{domxref("FontData.blob", "blob()")}} method provides access to low-level [SFNT](https://en.wikipedia.org/wiki/SFNT) data — this is a font file format that can contain other font formats, such as PostScript, TrueType, OpenType, or Web Open Font Format (WOFF).
+متود {{domxref("FontData.blob", "blob()")}} دسترسی به داده‌های سطح پایین [SFNT](https://en.wikipedia.org/wiki/SFNT) را فراهم می‌کند — این یک فرمت فایل فونت است که می‌تواند شامل سایر فرمت‌های فونت مانند PostScript، TrueType، OpenType یا فرمت فونت باز وب (WOFF) باشد.
 
 ```js
 async function computeOutlineFormat() {
@@ -116,16 +110,16 @@ async function computeOutlineFormat() {
 }
 ```
 
-## Specifications
+## مشخصات‌نامه‌ها
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Use advanced typography with local fonts](https://developer.chrome.com/docs/capabilities/web-apis/local-fonts)
+- [استفاده از تایپوگرافی پیشرفته با فونت‌های محلی](https://developer.chrome.com/docs/capabilities/web-apis/local-fonts)
 - {{cssxref("@font-face")}}
-- The {{httpheader("Permissions-Policy/local-fonts", "local-fonts")}} [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) directive
+- دستورالعمل {{httpheader("Permissions-Policy/local-fonts", "local-fonts")}} [سیاست مجوزها (Permissions Policy)](/en-US/docs/Web/HTTP/Guides/Permissions_Policy)
