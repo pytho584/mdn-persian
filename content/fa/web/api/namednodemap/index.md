@@ -1,10 +1,4 @@
 ---
-title: "NamedNodeMap"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NamedNodeMap"
-status: "needs-translation"
----
-
----
 title: NamedNodeMap
 slug: Web/API/NamedNodeMap
 page-type: web-api-interface
@@ -13,47 +7,47 @@ browser-compat: api.NamedNodeMap
 
 {{APIRef("DOM")}}
 
-The **`NamedNodeMap`** interface represents a collection of {{domxref("Attr")}} objects. Objects inside a `NamedNodeMap` are not in any particular order, unlike {{domxref("NodeList")}}, although they may be accessed by an index as in an array.
+رابط **`NamedNodeMap`** مجموعه‌ای از اشیاء {{domxref("Attr")}} را نمایش می‌دهد. اشیاء درون یک `NamedNodeMap` بر خلاف {{domxref("NodeList")}} ترتیب خاصی ندارند، اگرچه می‌توان با استفاده از یک ایندکس (مانند آرایه) به آن‌ها دسترسی داشت.
 
-A `NamedNodeMap` object is _live_ and will thus be auto-updated if changes are made to its contents internally or elsewhere.
+یک شیء `NamedNodeMap` _زنده_ است و بنابراین اگر تغییراتی در محتوای آن به صورت داخلی یا خارجی ایجاد شود، به طور خودکار به‌روزرسانی می‌شود.
 
 > [!NOTE]
-> Although called `NamedNodeMap`, this interface doesn't deal with {{domxref("Node")}} objects but with {{domxref("Attr")}} objects, which are a specialized class of {{domxref("Node")}} objects.
+> اگرچه این رابط `NamedNodeMap` نامیده می‌شود، اما با اشیاء {{domxref("Node")}} سروکار ندارد، بلکه با اشیاء {{domxref("Attr")}} کار می‌کند که یک کلاس تخصصی از اشیاء {{domxref("Node")}} هستند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface doesn't inherit any property._
+_این رابط هیچ ویژگیای را به ارث نمی‌برد._
 
 - {{domxref("NamedNodeMap.length")}} {{ReadOnlyInline}}
-  - : Returns the amount of objects in the map.
+  - : تعداد اشیاء موجود در نقشه را بازمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
-_This interface doesn't inherit any method._
+_این رابط هیچ روشی را به ارث نمی‌برد._
 
 - {{domxref("NamedNodeMap.getNamedItem()")}}
-  - : Returns an {{domxref("Attr")}}, corresponding to the given name.
+  - : یک {{domxref("Attr")}} متناظر با نام داده شده را بازمی‌گرداند.
 - {{domxref("NamedNodeMap.setNamedItem()")}}
-  - : Replaces, or adds, the {{domxref("Attr")}} identified in the map by the given name.
+  - : {{domxref("Attr")}} شناسایی‌شده در نقشه توسط نام داده شده را جایگزین می‌کند یا اضافه می‌نماید.
 - {{domxref("NamedNodeMap.removeNamedItem()")}}
-  - : Removes the {{domxref("Attr")}} identified by the given map.
+  - : {{domxref("Attr")}} شناسایی‌شده توسط نقشه داده شده را حذف می‌کند.
 - {{domxref("NamedNodeMap.item()")}}
-  - : Returns the {{domxref("Attr")}} at the given index, or `null` if the index is higher or equal to the number of nodes.
+  - : {{domxref("Attr")}} را در ایندکس داده شده بازمی‌گرداند، یا اگر ایندکس بزرگتر یا مساوی تعداد گره‌ها باشد `null` را برمی‌گرداند.
 - {{domxref("NamedNodeMap.getNamedItemNS()")}}
-  - : Returns an {{domxref("Attr")}} identified by a namespace and related local name.
+  - : یک {{domxref("Attr")}} شناسایی‌شده توسط یک فضای نام و نام محلی مرتبط را بازمی‌گرداند.
 - {{domxref("NamedNodeMap.setNamedItemNS()")}}
-  - : Replaces, or adds, the {{domxref("Attr")}} identified in the map by the given namespace and related local name.
+  - : {{domxref("Attr")}} شناسایی‌شده در نقشه توسط فضای نام و نام محلی مرتبط داده شده را جایگزین می‌کند یا اضافه می‌نماید.
 - {{domxref("NamedNodeMap.removeNamedItemNS()")}}
-  - : Removes the {{domxref("Attr")}} identified by the given namespace and related local name.
+  - : {{domxref("Attr")}} شناسایی‌شده توسط فضای نام و نام محلی مرتبط داده شده را حذف می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Element.attributes")}}
