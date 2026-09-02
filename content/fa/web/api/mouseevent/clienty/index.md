@@ -1,12 +1,5 @@
 ---
 title: "MouseEvent: clientY property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/clientY"
-status: "needs-translation"
----
-
----
-title: "MouseEvent: clientY property"
-short-title: clientY
 slug: Web/API/MouseEvent/clientY
 page-type: web-api-instance-property
 browser-compat: api.MouseEvent.clientY
@@ -14,17 +7,17 @@ browser-compat: api.MouseEvent.clientY
 
 {{APIRef("Pointer Events")}}
 
-The **`clientY`** read-only property of the {{domxref("MouseEvent")}} interface provides the vertical coordinate within the application's {{glossary("viewport")}} at which the event occurred (as opposed to the coordinate within the page).
+خاصیت فقط‑خواندنی **`clientY`** در رابط {{domxref("MouseEvent")}} مختصات عمودی رویداد را درون {{glossary("viewport")}} (نمای دید) برنامه ارائه می‌دهد (در مقابل مختصات درون صفحه).
 
-For example, clicking on the top edge of the viewport will always result in a mouse event with a `clientY` value of `0`, regardless of whether the page is scrolled vertically.
+برای مثال، کلیک روی لبه بالایی نمای دید همیشه به رویداد ماوسی با مقدار `clientY` برابر `0` منجر می‌شود، صرف‌نظر از اینکه صفحه به صورت عمودی اسکرول شده باشد یا نه.
 
-## Value
+## مقدار
 
-A `double` floating point value in pixels.
+یک مقدار اعشاری از نوع `double` بر حسب پیکسل.
 
-## Examples
+## مثال‌ها
 
-This example displays your mouse's coordinates whenever you trigger the {{domxref("Element/mousemove_event", "mousemove")}} event.
+این مثال مختصات ماوس شما را هر بار که رویداد {{domxref("Element/mousemove_event", "mousemove")}} را فعال می‌کنید نمایش می‌دهد.
 
 ### HTML
 
@@ -46,21 +39,21 @@ function logKey(e) {
 }
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{ domxref("MouseEvent") }}
 - {{domxref("MouseEvent.clientX","clientX")}}
 - {{domxref("MouseEvent.screenX","screenX")}} / {{domxref("MouseEvent.screenY","screenY")}}
-- [Coordinate systems](/en-US/docs/Web/API/CSSOM_view_API/Coordinate_systems)
+- [سیستم‌های مختصات](/en-US/docs/Web/API/CSSOM_view_API/Coordinate_systems)
