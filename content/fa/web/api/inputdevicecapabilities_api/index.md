@@ -1,7 +1,5 @@
 ---
 title: "InputDeviceCapabilities API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/InputDeviceCapabilities_API"
-status: "needs-translation"
 ---
 
 ---
@@ -15,13 +13,13 @@ browser-compat: api.InputDeviceCapabilities
 
 {{DefaultAPISidebar("Input Device Capabilities API")}}{{SeeCompatTable}}
 
-The InputDeviceCapabilities API provides details about the underlying sources of input events. The API attempts to describe how the device behaves rather than what it is. For example, the first version of the API indicates whether a device fires touch events rather than whether it is a touch screen.
+API InputDeviceCapabilities جزئیات مربوط به منابع زیربنایی رویدادهای ورودی را فراهم می‌کند. این API سعی می‌کند رفتار دستگاه را توصیف کند، نه اینکه چیستی آن را مشخص کند. برای مثال، نسخه اول این API نشان می‌دهد که آیا یک دستگاه رویدادهای لمسی را تولید می‌کند یا خیر، نه اینکه آیا یک صفحه لمسی است.
 
-## Input device capabilities concepts and usage
+## مفاهیم و کاربرد قابلیت‌های دستگاه ورودی
 
-Because DOM events abstract device input, they provide no way to learn what device or type of device fired an event. This can lead to instances where the same action triggers multiple event handlers. To deal with this, developers make assumptions and use heuristics to normalize behavior on web pages.
+از آنجایی که رویدادهای DOM ورودی دستگاه را انتزاع می‌کنند، هیچ راهی برای فهمیدن اینکه کدام دستگاه یا نوع دستگاهی یک رویداد را ایجاد کرده است، فراهم نمی‌کنند. این می‌تواند منجر به مواردی شود که یک عمل واحد چندین کنترل‌کننده رویداد را فعال کند. برای مقابله با این مسئله، توسعه‌دهندگان فرضیاتی می‌کنند و از روش‌های اکتشافی (heuristics) برای نرمال‌سازی رفتار در صفحات وب استفاده می‌کنند.
 
-The InputDeviceCapabilities API addresses this problem by abstracting the capabilities of input devices. For example, let's say we have a web page that implements both a `touchstart` and a `mousedown` event. We can assume that if the touchstart event is triggered that the user's device has a touch interface. What about when the mousedown event is triggered? It would be useful to know if a `touchstart` event were also triggered so that we don't take the same action twice. We can do this by checking the sourceCapabilities property of the {{domxref("UIEvent")}}.
+API InputDeviceCapabilities این مشکل را با انتزاع قابلیت‌های دستگاه‌های ورودی حل می‌کند. به عنوان مثال، فرض کنید یک صفحه وب داریم که هم رویداد `touchstart` و هم رویداد `mousedown` را پیاده‌سازی می‌کند. می‌توانیم فرض کنیم که اگر رویداد touchstart فعال شود، دستگاه کاربر دارای رابط لمسی است. اما وقتی رویداد mousedown فعال می‌شود چطور؟ مفید خواهد بود که بدانیم آیا رویداد `touchstart` نیز فعال شده است تا از انجام دوباره همان عمل جلوگیری کنیم. این کار را می‌توانیم با بررسی ویژگی `sourceCapabilities` از {{domxref("UIEvent")}} انجام دهیم.
 
 ```js
 myButton.addEventListener("mousedown", (e) => {
@@ -30,20 +28,20 @@ myButton.addEventListener("mousedown", (e) => {
 });
 ```
 
-## Interfaces
+## اینترفیس‌ها
 
 - {{domxref("InputDeviceCapabilities")}} {{Experimental_Inline}}
-  - : Provides logical information about an input device.
+  - : اطلاعات منطقی درباره یک دستگاه ورودی فراهم می‌کند.
 
-## Extensions to other interfaces
+## افزونه‌ها به سایر اینترفیس‌ها
 
 - {{domxref("UIEvent.sourceCapabilities")}} {{Experimental_Inline}} {{ReadOnlyInline}}
-  - : Returns an instance of the `InputDeviceCapabilities` interface, which provides information about the physical device responsible for generating a touch event.
+  - : یک نمونه از اینترفیس `InputDeviceCapabilities` را برمی‌گرداند که اطلاعاتی درباره دستگاه فیزیکی مسئول تولید یک رویداد لمسی فراهم می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
