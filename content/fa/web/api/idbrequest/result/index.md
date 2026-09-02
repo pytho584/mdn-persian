@@ -1,11 +1,5 @@
 ---
 title: "IDBRequest: result property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/result"
-status: "needs-translation"
----
-
----
-title: "IDBRequest: result property"
 short-title: result
 slug: Web/API/IDBRequest/result
 page-type: web-api-instance-property
@@ -14,26 +8,24 @@ browser-compat: api.IDBRequest.result
 
 {{ APIRef("IndexedDB") }} {{AvailableInWorkers}}
 
-The **`result`** read-only property of the {{domxref("IDBRequest")}} interface returns the result of the request.
+ویژگی فقط‌خواندنی **`result`** در رابط {{domxref("IDBRequest")}} نتیجهٔ درخواست را بازمی‌گرداند.
 
-The value depends on the request that was made.
-For example, the {{domxref("IDBObjectStore.getAllRecords()")}} and {{domxref("IDBIndex.getAllRecords()")}} methods populate this property with an array of {{domxref("IDBRecord")}} instances on successful completion of the request.
+مقدار آن به درخواستی که انجام شده بستگی دارد. برای مثال، متدهای {{domxref("IDBObjectStore.getAllRecords()")}} و {{domxref("IDBIndex.getAllRecords()")}} پس از تکمیل موفقیت‌آمیز درخواست، این ویژگی را با آرایه‌ای از نمونه‌های {{domxref("IDBRecord")}} پر می‌کنند.
 
-## Value
+## مقدار
 
 any.
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown when attempting to access the property if the request is not completed, and therefore, the result is not available.
+  - : زمانی پرتاب می‌شود که بخواهید به این ویژگی دسترسی پیدا کنید، در حالی که درخواست تکمیل نشده است و بنابراین نتیجه در دسترس نیست.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفادهٔ پایه
 
-The following example requests a given record title. On success, the associated record is retrieved from the {{domxref("IDBObjectStore")}} (made available as `objectStoreTitleRequest.result`), one property of the record is updated, and then the updated record is put back into the object store.
-For a full working example, see our [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) app ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+مثال زیر عنوان یک رکورد مشخص را درخواست می‌کند. در صورت موفقیت، رکورد مرتبط از {{domxref("IDBObjectStore")}} بازیابی می‌شود (از طریق `objectStoreTitleRequest.result` در دسترس قرار می‌گیرد)، یکی از ویژگی‌های رکورد به‌روزرسانی می‌شود و سپس رکورد به‌روزرسانی‌شده دوباره در object store قرار می‌گیرد. برای مشاهدهٔ یک مثال کامل و قابل اجرا، برنامهٔ [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) را ببینید ([مشاهدهٔ مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
 
 ```js
 const title = "Walk dog";
@@ -65,20 +57,20 @@ objectStoreTitleRequest.addEventListener("success", () => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم محدوده‌ای از کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و ایجاد تغییر در داده‌ها: {{domxref("IDBObjectStore")}}
+- استفاده از نشانگرها (cursors): {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهدهٔ مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
