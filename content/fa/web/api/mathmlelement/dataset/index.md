@@ -1,11 +1,5 @@
 ---
 title: "MathMLElement: dataset property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MathMLElement/dataset"
-status: "needs-translation"
----
-
----
-title: "MathMLElement: dataset property"
 short-title: dataset
 slug: Web/API/MathMLElement/dataset
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.MathMLElement.dataset
 
 {{APIRef("MathML")}}
 
-The **`dataset`** read-only property of the {{DOMxRef("MathMLElement")}} interface provides read/write access to [custom data attributes](/en-US/docs/Web/MathML/Reference/Global_attributes/data-*) (`data-*`) on elements. It exposes a map of strings ({{domxref("DOMStringMap")}}) with an entry for each `data-*` attribute.
+ویژگی فقط خواندنی **`dataset`** از رابط {{DOMxRef("MathMLElement")}} دسترسی خواندن/نوشتن به [ویژگی‌های داده سفارشی](/en-US/docs/Web/MathML/Reference/Global_attributes/data-*) (`data-*`) روی عناصر را فراهم می‌کند. این ویژگی یک نگاشت از رشته‌ها ({{domxref("DOMStringMap")}}) را با یک ورودی برای هر ویژگی `data-*` نمایش می‌دهد.
 
-The `dataset` property itself can be read, but not directly written. Instead, all writes must be to the individual properties within the `dataset`, which in turn represent the data attributes.
+خود ویژگی `dataset` قابل خواندن است، اما نمی‌توان مستقیماً در آن نوشت. در عوض، تمام نوشتن‌ها باید روی ویژگی‌های منفرد درون `dataset` انجام شود که به نوبه خود نشان‌دهنده ویژگی‌های داده هستند.
 
-## Value
+## مقدار
 
-A {{domxref("DOMStringMap")}}.
+یک {{domxref("DOMStringMap")}}.
 
-## Examples
+## مثال‌ها
 
 ```html
 <div>
@@ -46,20 +40,20 @@ console.log(el.dataset.value); // "-1"
 console.log(el.dataset.equation); // "euler"
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("dataset",100,100)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLElement.dataset")}}
 - [`data-*`](/en-US/docs/Web/MathML/Reference/Global_attributes/data-*)
-- [Using data attributes](/en-US/docs/Web/HTML/How_to/Use_data_attributes)
+- [استفاده از ویژگی‌های داده](/en-US/docs/Web/HTML/How_to/Use_data_attributes)
