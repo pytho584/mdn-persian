@@ -1,11 +1,5 @@
 ---
 title: "ImageTrack: repetitionCount property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ImageTrack/repetitionCount"
-status: "needs-translation"
----
-
----
-title: "ImageTrack: repetitionCount property"
 short-title: repetitionCount
 slug: Web/API/ImageTrack/repetitionCount
 page-type: web-api-instance-property
@@ -14,25 +8,25 @@ browser-compat: api.ImageTrack.repetitionCount
 
 {{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`repetitionCount`** property of the {{domxref("ImageTrack")}} interface returns the number of repetitions of this track.
+ویژگی **`repetitionCount`** در رابط {{domxref("ImageTrack")}} تعداد تکرارهای این ترک را برمی‌گرداند.
 
-## Value
+## مقدار
 
-An integer.
+یک عدد صحیح.
 
-## Examples
+## مثال‌ها
 
-The following example prints the value of `repetitionCount` to the console.
+مثال زیر مقدار `repetitionCount` را در کنسول چاپ می‌کند.
 
 ```js
 let track = imageDecoder.tracks.selectedTrack;
 console.log(track.repetitionCount);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
