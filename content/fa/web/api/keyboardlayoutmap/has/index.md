@@ -1,30 +1,14 @@
 ---
 title: "KeyboardLayoutMap: has() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/KeyboardLayoutMap/has"
-status: "needs-translation"
----
-
----
-title: "KeyboardLayoutMap: has() method"
-short-title: has()
-slug: Web/API/KeyboardLayoutMap/has
-page-type: web-api-instance-method
-status:
-  - experimental
-browser-compat: api.KeyboardLayoutMap.has
-spec-urls: https://tc39.es/ecma262/multipage/keyed-collections.html#sec-map.prototype.has
 ---
 
 {{APIRef("Keyboard API")}}{{SeeCompatTable}}
 
-The **`has()`** method of the
-{{domxref('KeyboardLayoutMap')}} interface returns a boolean indicating whether the
-object has an element with the specified key.
+متد **`has()`** از رابط {{domxref('KeyboardLayoutMap')}} یک مقدار بولین (boolean) برمی‌گرداند که نشان می‌دهد آیا شیء دارای عنصری با کلید مشخص شده است یا خیر.
 
-A list of valid keys is found in
-the [UI Events KeyboardEvent code Values](https://w3c.github.io/uievents-code/) specification.
+فهرست کلیدهای معتبر در مشخصات [UI Events KeyboardEvent code Values](https://w3c.github.io/uievents-code/) موجود است.
 
-The method is otherwise the same as {{jsxref("Map.prototype.has()")}}.
+این متد در غیر این صورت همانند {{jsxref("Map.prototype.has()")}} است.
 
 ## Syntax
 
@@ -35,15 +19,15 @@ has(key)
 ### Parameters
 
 - `key`
-  - : The key of an element to search for in the map.
+  - : کلید عنصری که باید در نقشه جستجو شود.
 
 ### Return value
 
-A {{jsxref('Boolean')}} indicating whether the specified key was found.
+یک {{jsxref('Boolean')}} که نشان می‌دهد آیا کلید مشخص شده پیدا شده است یا خیر.
 
 ## Examples
 
-The following example checks whether the location- or layout-specific string associated with the keyboard code that corresponds to the 'W' key on an English QWERTY keyboard exists.
+مثال زیر بررسی می‌کند که آیا رشته مخصوص مکان یا چیدمان مرتبط با کد صفحه‌کلید که با کلید 'W' روی یک صفحه‌کلید انگلیسی QWERTY مطابقت دارد، وجود دارد یا خیر.
 
 ```js
 navigator.keyboard.getLayoutMap().then((keyboardLayoutMap) => {
