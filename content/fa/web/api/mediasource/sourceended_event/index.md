@@ -1,11 +1,5 @@
 ---
 title: "MediaSource: sourceended event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/sourceended_event"
-status: "needs-translation"
----
-
----
-title: "MediaSource: sourceended event"
 short-title: sourceended
 slug: Web/API/MediaSource/sourceended_event
 page-type: web-api-event
@@ -14,11 +8,11 @@ browser-compat: api.MediaSource.sourceended_event
 
 {{APIRef("Media Source Extensions")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`sourceended`** event is fired when a {{domxref("MediaSource")}} object's {{domxref("MediaSource.readyState", "readyState")}} changes to `"ended"`. This indicates that the application has finished sending data to the `MediaSource`. When an application has finished appending all media data to the {{domxref("SourceBuffer")}} objects associated with a `MediaSource`, it calls the {{domxref("MediaSource.endOfStream()")}} method on the `MediaSource`. This causes the {{domxref("MediaSource.readyState", "readyState")}} to transition to `"ended"` and triggers the `sourceended` event.
+رویداد **`sourceended`** زمانی پرتاب می‌شود که {{domxref("MediaSource.readyState", "readyState")}} یک شیء {{domxref("MediaSource")}} به `"ended"` تغییر کند. این نشان می‌دهد که برنامه ارسال داده به `MediaSource` را به پایان رسانده است. وقتی یک برنامه، افزودن تمام داده‌های رسانه‌ای به شیءهای {{domxref("SourceBuffer")}} مرتبط با یک `MediaSource` را تمام کند، متد {{domxref("MediaSource.endOfStream()")}} را روی آن `MediaSource` فراخوانی می‌کند. این کار باعث می‌شود {{domxref("MediaSource.readyState", "readyState")}} به `"ended"` تغییر کند و رویداد `sourceended` فعال شود.
 
 ## Syntax
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای استفاده، نام رویداد را در متدهایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} به کار ببرید، یا یک ویژگی handler رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("sourceended", (event) => {})
@@ -28,13 +22,13 @@ onsourceended = (event) => {}
 
 ## Event type
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
 ## Examples
 
-### Handling the sourceopen event
+### مدیریت رویداد sourceopen
 
-This example demonstrates setting up a video element for playback and handling the `sourceended` event for proper resource management. The code sets up a {{domxref("MediaSource")}}, initiates playback by fetching and buffering video data, and then uses the `sourceended` event to perform cleanup tasks like removing event listeners and notifying the user when playback is complete.
+این مثال، راه‌اندازی یک عنصر ویدیو برای پخش و مدیریت رویداد `sourceended` را برای مدیریت صحیح منابع نشان می‌دهد. کد یک {{domxref("MediaSource")}} تنظیم می‌کند، با واکشی و بافر کردن داده ویدیو پخش را آغاز می‌کند و سپس از رویداد `sourceended` برای انجام کارهای پاک‌سازی مانند حذف event listenerها و اطلاع‌رسانی به کاربر هنگام پایان پخش استفاده می‌کند.
 
 ```js
 const video = document.getElementById("myVideo");
