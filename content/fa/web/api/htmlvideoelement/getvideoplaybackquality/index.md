@@ -1,7 +1,5 @@
 ---
 title: "HTMLVideoElement: getVideoPlaybackQuality() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLVideoElement/getVideoPlaybackQuality"
-status: "needs-translation"
 ---
 
 ---
@@ -14,33 +12,27 @@ browser-compat: api.HTMLVideoElement.getVideoPlaybackQuality
 
 {{ APIRef("HTML DOM") }}
 
-The **{{domxref("HTMLVideoElement")}}** method
-**`getVideoPlaybackQuality()`** creates and returns a
-{{domxref("VideoPlaybackQuality")}} object containing metrics including how many
-frames have been lost.
+متد **{{domxref("HTMLVideoElement")}}** با نام **`getVideoPlaybackQuality()`** یک شیء {{domxref("VideoPlaybackQuality")}} می‌سازد و برمی‌گرداند که شامل معیارهایی از جمله تعداد فریم‌های از دست رفته است.
 
-The data returned can be used to evaluate the quality of the video stream.
+از داده‌های بازگشتی می‌توان برای ارزیابی کیفیت جریان ویدیو استفاده کرد.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 getVideoPlaybackQuality()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("VideoPlaybackQuality")}} object providing information about the video
-element's current playback quality.
+یک شیء {{domxref("VideoPlaybackQuality")}} که اطلاعاتی درباره کیفیت پخش فعلی عنصر ویدیو فراهم می‌کند.
 
-## Examples
+## مثال‌ها
 
-This example updates an element to indicate the total number of video frames that have
-elapsed so far in the playback process. This value includes any dropped or corrupted
-frames, so it's not the same as "total number of frames played."
+این مثال یک عنصر را به‌روزرسانی می‌کند تا تعداد کل فریم‌های ویدیویی را که تاکنون در فرایند پخش سپری شده‌اند نشان دهد. این مقدار شامل فریم‌های افتاده یا خراب نیز می‌شود، بنابراین با «تعداد کل فریم‌های پخش‌شده» یکسان نیست.
 
 ```js
 const videoElem = document.getElementById("my_vid");
@@ -50,15 +42,15 @@ const quality = videoElem.getVideoPlaybackQuality();
 counterElem.innerText = quality.totalVideoFrames;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{HTMLElement("video")}} element
-- The {{domxref("VideoPlaybackQuality")}} interface.
+- عنصر {{HTMLElement("video")}}
+- رابط {{domxref("VideoPlaybackQuality")}}
