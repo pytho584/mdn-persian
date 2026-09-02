@@ -1,11 +1,5 @@
 ---
 title: "InputDeviceInfo: getCapabilities() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/InputDeviceInfo/getCapabilities"
-status: "needs-translation"
----
-
----
-title: "InputDeviceInfo: getCapabilities() method"
 short-title: getCapabilities()
 slug: Web/API/InputDeviceInfo/getCapabilities
 page-type: web-api-instance-method
@@ -14,7 +8,7 @@ browser-compat: api.InputDeviceInfo.getCapabilities
 
 {{APIRef("Media Capture and Streams")}}{{securecontext_header}}
 
-The **`getCapabilities()`** method of the {{domxref("InputDeviceInfo")}} interface returns a `MediaTrackCapabilities` object describing the primary audio or video track of the device's {{domxref("MediaStream")}}.
+متد **`getCapabilities()`** در واسط {{domxref("InputDeviceInfo")}} یک شیء `MediaTrackCapabilities` برمی‌گرداند که ترک اصلی صوتی یا تصویری {{domxref("MediaStream")}} دستگاه را توصیف می‌کند.
 
 ## Syntax
 
@@ -24,22 +18,22 @@ getCapabilities()
 
 ### Parameters
 
-None.
+بدون پارامتر.
 
 ### Return value
 
-A `MediaTrackCapabilities` object which specifies the value or range of values which are supported for each of the user agent's supported constrainable properties. It is required to return identical information as returned by calling `getCapabilities()` on the first {{domxref("MediaStreamTrack")}} of the same `kind` as this device (video or audio) in the `MediaStream` returned by `getUserMedia({ deviceId: deviceInfo.deviceId })`.
+یک شیء `MediaTrackCapabilities` که مقدار یا محدوده مقادیر پشتیبانی‌شده برای هر یک از خصوصیت‌های قابل‌محدودسازی (constrainable properties) عامل کاربر را مشخص می‌کند. این شیء موظف است دقیقاً همان اطلاعاتی را برگرداند که با فراخوانی `getCapabilities()` روی نخستین {{domxref("MediaStreamTrack")}} از همان `kind` (نوع صوتی یا تصویری) این دستگاه، در `MediaStream` بازگشته از `getUserMedia({ deviceId: deviceInfo.deviceId })` به دست می‌آید.
 
-See {{domxref("MediaStreamTrack.getCapabilities()")}} for a list of commonly supported properties and their types.
+برای فهرست خصوصیت‌های رایج پشتیبانی‌شده و انواع آن‌ها، به {{domxref("MediaStreamTrack.getCapabilities()")}} مراجعه کنید.
 
 > [!NOTE]
-> If the user has not granted permission to access the input device an empty object will be returned.
+> اگر کاربر به دستگاه ورودی دسترسی (مجوز) نداده باشد، یک شیء خالی برگردانده می‌شود.
 
 ## Examples
 
-In the following example we ask for permission to access audio and video devices with {{domxref("mediaDevices.getUserMedia()")}}, as to use `getCapabilities()` we need permission to access the devices.
+در مثال زیر، با استفاده از {{domxref("mediaDevices.getUserMedia()")}} اجازه دسترسی به دستگاه‌های صوتی و تصویری را درخواست می‌کنیم؛ زیرا برای استفاده از `getCapabilities()` به اجازه دسترسی به دستگاه‌ها نیاز داریم.
 
-If `device` is an `InputDeviceInfo` object, then `getCapabilities()` will return an object with members representing its capabilities. A video stream will not include auto properties such as `noiseSuppression`, for example.
+اگر `device` یک شیء `InputDeviceInfo` باشد، آنگاه `getCapabilities()` یک شیء با اعضایی برمی‌گرداند که قابلیت‌های آن دستگاه را نشان می‌دهند. برای نمونه، یک جریان ویدیویی شامل خصوصیت‌های خودکار مانند `noiseSuppression` نخواهد بود.
 
 ```js
 // Get permission to access audio or video devices
@@ -71,4 +65,4 @@ navigator.mediaDevices
 
 ## See also
 
-- {{domxref("MediaStreamTrack.getCapabilities()")}}, which also return a `MediaTrackCapabilities` object.
+- {{domxref("MediaStreamTrack.getCapabilities()")}}، که آن نیز یک شیء `MediaTrackCapabilities` برمی‌گرداند.
