@@ -1,11 +1,5 @@
 ---
 title: "MediaQueryList: removeListener() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/removeListener"
-status: "needs-translation"
----
-
----
-title: "MediaQueryList: removeListener() method"
 short-title: removeListener()
 slug: Web/API/MediaQueryList/removeListener
 page-type: web-api-instance-method
@@ -16,32 +10,26 @@ browser-compat: api.MediaQueryList.removeListener
 
 {{APIRef("CSSOM view API")}}{{Deprecated_Header}}
 
-The **`removeListener()`** method of the
-{{DOMxRef("MediaQueryList")}} interface removes a listener from the
-`MediaQueryListener`.
+متد **`removeListener()`** در رابط {{DOMxRef("MediaQueryList")}} یک شنونده را از `MediaQueryListener` حذف می‌کند.
 
-In older browsers `MediaQueryList` did not yet inherit from {{DOMxRef("EventTarget")}},
-so this method was provided as an alias of {{DOMxRef("EventTarget.removeEventListener()")}}.
-Use `removeEventListener()` instead of `removeListener()` if it is
-available in the browsers you need to support.
+در مرورگرهای قدیمی‌تر، `MediaQueryList` هنوز از {{DOMxRef("EventTarget")}} ارث نمی‌برد؛ بنابراین این متد به‌عنوان یک نام مستعار برای {{DOMxRef("EventTarget.removeEventListener()")}} ارائه شده بود. اگر در مرورگرهایی که باید پشتیبانی کنید، `removeEventListener()` در دسترس است، به‌جای `removeListener()` از آن استفاده کنید.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 removeListener(func)
 ```
 
-### Parameters
+### پارامترها
 
 - `func`
-  - : A function or function reference representing the callback function you want to
-    remove.
+  - : تابع یا ارجاعی به تابع که تابع بازخواستی (callback) مورد نظر شما برای حذف را نشان می‌دهد.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ مقداری ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
 ```js
 const paragraph = document.querySelector("p");
@@ -65,18 +53,18 @@ mediaQueryList.addListener(screenTest);
 mediaQueryList.removeListener(screenTest);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Media queries](/en-US/docs/Web/CSS/Guides/Media_queries/Using)
-- [Using media queries from code](/en-US/docs/Web/CSS/Guides/Media_queries/Testing)
+- [استفاده از Media queries در کد](/en-US/docs/Web/CSS/Guides/Media_queries/Testing)
 - {{DOMxRef("window.matchMedia()")}}
 - {{DOMxRef("MediaQueryList")}}
 - {{DOMxRef("MediaQueryListEvent")}}
