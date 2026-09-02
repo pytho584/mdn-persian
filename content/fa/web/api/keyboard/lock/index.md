@@ -1,11 +1,5 @@
 ---
 title: "Keyboard: lock() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Keyboard/lock"
-status: "needs-translation"
----
-
----
-title: "Keyboard: lock() method"
 short-title: lock()
 slug: Web/API/Keyboard/lock
 page-type: web-api-instance-method
@@ -16,72 +10,61 @@ browser-compat: api.Keyboard.lock
 
 {{APIRef("Keyboard API")}}{{SeeCompatTable}}{{securecontext_header}}
 
-The **`lock()`** method of the
-{{domxref("Keyboard")}} interface returns a {{jsxref('Promise')}} that resolves after enabling the
-capture of key presses for any or all of the keys on the physical keyboard. This method
-can only capture keys that are granted access by the underlying operating
-system.
+متد **`lock()`** در رابط {{domxref("Keyboard")}} یک {{jsxref('Promise')}} برمی‌گرداند که پس از فعال‌سازی ضبط (capture) فشار کلیدها برای همه یا برخی از کلیدهای صفحه‌کلید فیزیکی حل می‌شود. این متد فقط می‌تواند کلیدهایی را ضبط کند که توسط سیستم‌عامل زیرین دسترسی آن‌ها مجاز شده باشد.
 
-If `lock()` is called multiple times then only the key codes specified in the most recent call will be locked.
-Any keys locked by a previous call to `lock()` are unlocked.
+اگر `lock()` چند بار فراخوانی شود، فقط کدهای کلیدی که در آخرین فراخوانی مشخص شده‌اند قفل خواهند شد. هر کلیدی که توسط فراخوانی قبلی `lock()` قفل شده باشد، از قفل خارج می‌شود.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 lock()
 lock(keyCodes)
 ```
 
-### Parameters
+### پارامترها
 
 - `keyCodes` {{optional_inline}}
-  - : An {{jsxref('Array')}} of one or more key codes to lock. If no keycodes are provided
-    all keys will be locked. A list of valid code values is found in the [UI Events KeyboardEvent code Values](https://w3c.github.io/uievents-code/#key-alphanumeric-writing-system) spec.
+  - : یک {{jsxref('Array')}} شامل یک یا چند کد کلید برای قفل کردن. اگر هیچ کد کلیدی ارائه نشود، همه کلیدها قفل خواهند شد. فهرستی از مقادیر کد معتبر در مشخصات [UI Events KeyboardEvent code Values](https://w3c.github.io/uievents-code/#key-alphanumeric-writing-system) موجود است.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref('Promise')}} that resolves with {{jsxref('undefined')}} when the lock was successful.
+یک {{jsxref('Promise')}} که هنگام موفقیت قفل کردن، با {{jsxref('undefined')}} حل می‌شود.
 
-### Exceptions
+### استثناها
 
 - `AbortError` {{domxref("DOMException")}}
-  - : Thrown if a new call to `lock()` is made before the current one has finished.
+  - : اگر فراخوانی جدیدی از `lock()` قبل از اتمام فراخوانی فعلی انجام شود، پرتاب می‌شود.
 - `InvalidAccessError` {{domxref("DOMException")}}
-  - : Thrown if any key in `keyCodes` is not a valid [key code attribute value](https://w3c.github.io/uievents-code/#key-code-attribute-value).
+  - : اگر هر کلیدی در `keyCodes` یک [مقدار ویژگی کد کلید](https://w3c.github.io/uievents-code/#key-code-attribute-value) معتبر نباشد، پرتاب می‌شود.
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if `lock()` is not called in an active top-level browsing context.
+  - : اگر `lock()` در یک زمینه مرور سطح‌بالای فعال (active top-level browsing context) فراخوانی نشود، پرتاب می‌شود.
 
-## Security
+## امنیت
 
-[Transient user activation](/en-US/docs/Web/Security/Defenses/User_activation) is required. The user has to interact with the page or a UI element in order for this feature to work.
+[فعال‌سازی کاربر موقت (Transient user activation)](/en-US/docs/Web/Security/Defenses/User_activation) الزامی است. کاربر باید با صفحه یا یک عنصر رابط کاربری تعامل کند تا این ویژگی کار کند.
 
-## Examples
+## مثال‌ها
 
-### Capturing all keys
+### ضبط همه کلیدها
 
-The following example captures all key presses.
+مثال زیر همه فشارهای کلید را ضبط می‌کند.
 
 ```js
 navigator.keyboard.lock();
 ```
 
-### Capturing specific keys
+### ضبط کلیدهای خاص
 
-The following example captures the <kbd>W</kbd>, <kbd>A</kbd>, <kbd>S</kbd>, and <kbd>D</kbd> keys. It captures these keys
-regardless of which modifiers are used with the key press. Assuming a standard US QWERTY
-layout, registering `"KeyW"` ensures that <kbd>W</kbd>, <kbd>Shift</kbd>+<kbd>W</kbd>, <kbd>Control</kbd>+<kbd>W</kbd>,
-<kbd>Control</kbd>+<kbd>Shift</kbd>+<kbd>W</kbd>, and all other key modifier combinations with <kbd>W</kbd> are sent to the app.
-The same applies to for `"KeyA"`, `"KeyS"` and
-`"KeyD"`.
+مثال زیر کلیدهای <kbd>W</kbd>، <kbd>A</kbd>، <kbd>S</kbd> و <kbd>D</kbd> را ضبط می‌کند. این کلیدها صرف‌نظر از اینکه از کدام اصلاح‌کننده‌ها (modifiers) همراه با فشار کلید استفاده شود، ضبط می‌شوند. با فرض چیدمان استاندارد آمریکایی QWERTY، ثبت `"KeyW"` تضمین می‌کند که <kbd>W</kbd>، <kbd>Shift</kbd>+<kbd>W</kbd>، <kbd>Control</kbd>+<kbd>W</kbd>، <kbd>Control</kbd>+<kbd>Shift</kbd>+<kbd>W</kbd> و همه ترکیب‌های دیگر اصلاح‌کننده‌ها با <kbd>W</kbd> به برنامه ارسال شوند. همین امر برای `"KeyA"`، `"KeyS"` و `"KeyD"` نیز صدق می‌کند.
 
 ```js
 navigator.keyboard.lock(["KeyW", "KeyA", "KeyS", "KeyD"]);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
