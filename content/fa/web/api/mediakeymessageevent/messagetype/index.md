@@ -1,11 +1,5 @@
 ---
 title: "MediaKeyMessageEvent: messageType property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaKeyMessageEvent/messageType"
-status: "needs-translation"
----
-
----
-title: "MediaKeyMessageEvent: messageType property"
 short-title: messageType
 slug: Web/API/MediaKeyMessageEvent/messageType
 page-type: web-api-instance-property
@@ -14,24 +8,21 @@ browser-compat: api.MediaKeyMessageEvent.messageType
 
 {{APIRef("Encrypted Media Extensions")}}{{SecureContext_Header}}
 
-The **`MediaKeyMessageEvent.messageType`** read-only property indicates the
-type of message. It may be one of `license-request`,
-`license-renewal`, `license-release`, or
-`individualization-request`.
+ویژگی فقط‌خواندنی **`MediaKeyMessageEvent.messageType`** نوع پیام را مشخص می‌کند. این مقدار می‌تواند یکی از موارد `license-request`، `license-renewal`، `license-release` یا `individualization-request` باشد.
 
-## Value
+## مقدار
 
-One of the following:
+یکی از موارد زیر:
 
 - `license-request`
 - `license-renewal`
 - `license-release`
 - `individualization-request`
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
