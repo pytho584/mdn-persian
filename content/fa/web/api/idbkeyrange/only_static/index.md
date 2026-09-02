@@ -1,11 +1,5 @@
 ---
 title: "IDBKeyRange: only() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBKeyRange/only_static"
-status: "needs-translation"
----
-
----
-title: "IDBKeyRange: only() static method"
 short-title: only()
 slug: Web/API/IDBKeyRange/only_static
 page-type: web-api-static-method
@@ -14,42 +8,34 @@ browser-compat: api.IDBKeyRange.only_static
 
 {{ APIRef("IndexedDB") }} {{AvailableInWorkers}}
 
-The **`only()`** static method of the {{domxref("IDBKeyRange")}}
-interface creates a new key range containing a single value.
+متد ایستای **`only()`** از رابط {{domxref("IDBKeyRange")}} یک محدوده کلید جدید (key range) ایجاد می‌کند که فقط یک مقدار را شامل می‌شود.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 IDBKeyRange.only(value)
 ```
 
-### Parameters
+### پارامترها
 
 - `value`
-  - : The value for the new key range.
+  - : مقدار محدوده کلید جدید.
 
-### Return value
+### مقدار بازگشتی
 
-{{domxref("IDBKeyRange")}}: The newly created key range.
+{{domxref("IDBKeyRange")}}: محدوده کلید جدید ایجاد شده.
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `DataError` {{domxref("DOMException")}}
-  - : Thrown if the `value` parameter was not a valid key.
+  - : اگر پارامتر `value` یک کلید معتبر نباشد، این استثنا پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-The following example illustrates how you'd use an only key range. Here we declare
-a `keyRangeValue = IDBKeyRange.only("A");` — a range that only includes the
-value "A". We open a transaction (using {{domxref("IDBTransaction")}}) and an object
-store, and open a Cursor with {{domxref("IDBObjectStore.openCursor")}},
-declaring `keyRangeValue` as its optional key range value. This means that
-the cursor will only retrieve the record with the key value "A".
+مثال زیر نحوه استفاده از یک محدوده کلید تک‌مقداری (only key range) را نشان می‌دهد. در اینجا یک `keyRangeValue = IDBKeyRange.only("A");` اعلام می‌کنیم — محدوده‌ای که فقط مقدار "A" را شامل می‌شود. یک تراکنش (transaction) با استفاده از {{domxref("IDBTransaction")}} و یک فروشگاه شیء (object store) باز می‌کنیم و یک کرسر (cursor) با {{domxref("IDBObjectStore.openCursor")}} باز می‌کنیم و `keyRangeValue` را به عنوان مقدار محدوده کلید اختیاری آن اعلام می‌کنیم. این بدان معناست که کرسر فقط رکوردی با مقدار کلید "A" را بازیابی می‌کند.
 
 > [!NOTE]
-> For a more complete example allowing you to experiment with
-> key range, have a look at our [IDBKeyRange](https://github.com/mdn/dom-examples/tree/main/indexeddb-examples/idbkeyrange)
-> repo ([view the example live too](https://mdn.github.io/dom-examples/indexeddb-examples/idbkeyrange/).)
+> برای یک مثال کامل‌تر که به شما امکان آزمایش با محدوده کلید را می‌دهد، به مخزن [IDBKeyRange](https://github.com/mdn/dom-examples/tree/main/indexeddb-examples/idbkeyrange) ما مراجعه کنید (همچنین [مثال را به صورت زنده مشاهده کنید](https://mdn.github.io/dom-examples/indexeddb-examples/idbkeyrange/)).
 
 ```js
 function displayData() {
@@ -73,20 +59,20 @@ function displayData() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم محدوده‌ای از کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و ایجاد تغییرات در داده‌های خود: {{domxref("IDBObjectStore")}}
+- استفاده از کرسرها: {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مثال را به صورت زنده مشاهده کنید](https://mdn.github.io/dom-examples/to-do-notifications/)).
