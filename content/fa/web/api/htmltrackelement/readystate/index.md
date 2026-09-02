@@ -1,7 +1,5 @@
 ---
 title: "HTMLTrackElement: readyState property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTrackElement/readyState"
-status: "needs-translation"
 ---
 
 ---
@@ -14,33 +12,33 @@ browser-compat: api.HTMLTrackElement.readyState
 
 {{APIRef("HTML DOM")}}
 
-The **`readyState`** read-only property of the {{domxref("HTMLTrackElement")}} interface returns a number representing the {{HTMLElement("track")}} element's text track readiness state:
+ویژگی فقط‌خواندنیِ **`readyState`** از رابط {{domxref("HTMLTrackElement")}} عددی را برمی‌گرداند که وضعیت آمادگیِ text track (ردیاب متنی) عنصر {{HTMLElement("track")}} را نشان می‌دهد:
 
-0. NONE: The text track not loaded state.
-1. LOADING: The text track loading state.
-2. LOADED: The text track loaded state.
-3. ERROR: The text track failed to load state.
+0. NONE: حالت بارگذاری‌نشدهٔ text track.
+1. LOADING: حالت در حال بارگذاریِ text track.
+2. LOADED: حالت بارگذاری‌شدهٔ text track.
+3. ERROR: حالت خطا در بارگذاری text track.
 
-## Value
+## مقدار
 
-A number; `0`, `1`, `2`, or `3`.
+یک عدد؛ `0`، `1`، `2` یا `3`.
 
-## Example
+## مثال
 
 ```js
 const trackElement = document.getElementById("exampleTrack");
 console.log(trackElement.readyState); // 0, 1, 2, or 3
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("HTMLTrackElement")}}
 - {{domxref("HTMLMediaElement.readyState")}}
