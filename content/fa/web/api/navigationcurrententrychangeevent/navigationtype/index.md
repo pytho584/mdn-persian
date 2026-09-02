@@ -1,11 +1,5 @@
 ---
 title: "NavigationCurrentEntryChangeEvent: navigationType property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigationCurrentEntryChangeEvent/navigationType"
-status: "needs-translation"
----
-
----
-title: "NavigationCurrentEntryChangeEvent: navigationType property"
 short-title: navigationType
 slug: Web/API/NavigationCurrentEntryChangeEvent/navigationType
 page-type: web-api-instance-property
@@ -14,20 +8,20 @@ browser-compat: api.NavigationCurrentEntryChangeEvent.navigationType
 
 {{APIRef("Navigation API")}}
 
-The **`navigationType`** read-only property of the {{domxref("NavigationCurrentEntryChangeEvent")}} interface returns the type of the navigation that resulted in the change. The property may be `null` if the change occurs due to {{domxref("Navigation.updateCurrentEntry()")}}.
+ویژگی فقط‌خواندنی **`navigationType`** از رابط {{domxref("NavigationCurrentEntryChangeEvent")}} نوع پیمایشی را برمی‌گرداند که منجر به این تغییر شده است. اگر این تغییر در نتیجه‌ی {{domxref("Navigation.updateCurrentEntry()")}} رخ داده باشد، مقدار این ویژگی ممکن است `null` باشد.
 
-## Value
+## مقدار
 
-An enumerated value representing the type of navigation.
+یک مقدار شمارشی (enumerated) که نوع پیمایش را نشان می‌دهد.
 
-The possible values are:
+مقادیر ممکن عبارت‌اند از:
 
-- `push`: A new location is navigated to, causing a new entry to be pushed onto the history list.
-- `reload`: The {{domxref("Navigation.currentEntry")}} is reloaded.
-- `replace`: The {{domxref("Navigation.currentEntry")}} is replaced with a new history entry. This new entry will reuse the same {{domxref("NavigationHistoryEntry.key", "key")}}, but be assigned a different {{domxref("NavigationHistoryEntry.id", "id")}}.
-- `traverse`: The browser navigates from one existing history entry to another existing history entry.
+- `push`: به مکان جدیدی پیمایش می‌شود که در نتیجه یک مدخل جدید به فهرست تاریخچه اضافه می‌شود.
+- `reload`: {{domxref("Navigation.currentEntry")}} دوباره بارگذاری می‌شود.
+- `replace`: {{domxref("Navigation.currentEntry")}} با یک مدخل تاریخچه جدید جایگزین می‌شود. این مدخل جدید همان {{domxref("NavigationHistoryEntry.key", "key")}} را دوباره به کار می‌برد، اما یک {{domxref("NavigationHistoryEntry.id", "id")}} متفاوت به آن اختصاص می‌یابد.
+- `traverse`: مرورگر از یک مدخل تاریخچه موجود به مدخل تاریخچه موجود دیگری پیمایش می‌کند.
 
-## Examples
+## نمونه‌ها
 
 ```js
 navigation.addEventListener("currententrychange", (event) => {
@@ -35,15 +29,15 @@ navigation.addEventListener("currententrychange", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
 - [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
