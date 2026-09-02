@@ -1,11 +1,5 @@
 ---
 title: "HTMLVideoElement: resize event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLVideoElement/resize_event"
-status: "needs-translation"
----
-
----
-title: "HTMLVideoElement: resize event"
 short-title: resize
 slug: Web/API/HTMLVideoElement/resize_event
 page-type: web-api-event
@@ -14,13 +8,13 @@ browser-compat: api.HTMLVideoElement.resize_event
 
 {{APIRef("HTML DOM")}}
 
-The **`resize`** event of the {{domxref("HTMLVideoElement")}} interface fires when one or both of the {{domxref("HTMLVideoElement.videoWidth", "videoWidth")}} and {{domxref("HTMLVideoElement.videoHeight", "videoHeight")}} properties have just been updated.
+رخداد **`resize`** از رابط {{domxref("HTMLVideoElement")}} زمانی فعال می‌شود که یک یا هر دو ویژگی {{domxref("HTMLVideoElement.videoWidth", "videoWidth")}} و {{domxref("HTMLVideoElement.videoHeight", "videoHeight")}} به‌تازگی به‌روزرسانی شده باشند.
 
-This event is not cancelable but may bubble.
+این رخداد غیرقابل لغو است اما ممکن است حباب بزند.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رخداد در متدهایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی مدیریت‌کننده رخداد (event handler property) تنظیم کنید.
 
 ```js-nolint
 addEventListener("resize", (event) => { })
@@ -28,11 +22,11 @@ addEventListener("resize", (event) => { })
 onresize = (event) => { }
 ```
 
-## Event type
+## نوع رخداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## مثال‌ها
 
 ```html
 <video id="media" src="https://example.com/video.mp4"></video>
@@ -45,15 +39,15 @@ el.addEventListener("resize", () => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLVideoElement.videoHeight")}}
 - {{domxref("HTMLVideoElement.videoWidth")}}
