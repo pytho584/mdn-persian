@@ -1,10 +1,4 @@
 ---
-title: "IDBIndex"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex"
-status: "needs-translation"
----
-
----
 title: IDBIndex
 slug: Web/API/IDBIndex
 page-type: web-api-interface
@@ -13,57 +7,57 @@ browser-compat: api.IDBIndex
 
 {{APIRef("IndexedDB")}} {{AvailableInWorkers}}
 
-`IDBIndex` interface of the [IndexedDB API](/en-US/docs/Web/API/IndexedDB_API) provides asynchronous access to an [index](/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology#index) in a database. An index is a kind of object store for looking up records in another object store, called the referenced object store. You use this interface to retrieve data.
+اینترفیس `IDBIndex` از [IndexedDB API](/en-US/docs/Web/API/IndexedDB_API) دسترسی ناهمگام به یک [ایندکس](/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology#index) در پایگاه‌داده فراهم می‌کند. ایندکس نوعی object store برای جست‌وجوی رکوردها در یک object store دیگر است که به آن «object store مرجع» گفته می‌شود. برای بازیابی داده‌ها از این اینترفیس استفاده می‌کنید.
 
-You can retrieve records in an object store through the primary key or by using an index. An index lets you look up records in an object store using properties of the values in the object stores records other than the primary key
+می‌توانید رکوردها را در یک object store یا از طریق کلید اصلی (primary key) بازیابی کنید یا با استفاده از یک ایندکس. ایندکس به شما امکان می‌دهد رکوردها را در یک object store بر اساس ویژگی‌هایی از مقادیرِ رکوردهای همان object store جست‌وجو کنید که به‌جز کلید اصلی هستند.
 
-The index is a persistent key-value storage where the value part of its records is the key part of a record in the referenced object store. The records in an index are automatically populated whenever records in the referenced object store are inserted, updated, or deleted. Each record in an index can point to only one record in its referenced object store, but several indexes can reference the same object store. When the object store changes, all indexes that refers to the object store are automatically updated.
+ایندکس یک ذخیره‌گاه پایدار کلید-مقدار است که بخش مقدارِ رکوردهای آن، بخش کلیدِ یک رکورد در object store مرجع است. رکوردهای یک ایندکس هر زمان که رکوردهایی در object store مرجع درج، به‌روزرسانی یا حذف شوند، به‌طور خودکار پر می‌شوند. هر رکورد در یک ایندکس فقط می‌تواند به یک رکورد در object store مرجع اشاره کند؛ اما چندین ایندکس می‌توانند به یک object store اشاره کنند. هرگاه object store تغییر کند، همهٔ ایندکس‌هایی که به آن ارجاع می‌دهند به‌طور خودکار به‌روزرسانی می‌شوند.
 
-You can grab a set of keys within a range. To learn more, see {{domxref("IDBKeyRange")}}.
+می‌توانید مجموعه‌ای از کلیدها را در یک بازه دریافت کنید. برای اطلاعات بیشتر، {{domxref("IDBKeyRange")}} را ببینید.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("IDBIndex.isAutoLocale")}} {{ReadOnlyInline}} {{ non-standard_inline }} {{deprecated_inline}}
-  - : Returns a boolean value indicating whether the index had a `locale` value of `auto` specified upon its creation (see the [`options`](/en-US/docs/Web/API/IDBObjectStore/createIndex#options) parameter to [`IDBObjectStore.createIndex()`](/en-US/docs/Web/API/IDBObjectStore/createIndex).)
+  - : یک مقدار بولین برمی‌گرداند که نشان می‌دهد هنگام ایجاد ایندکس، مقدار `locale` برای آن برابر با `auto` تعیین شده است یا خیر (پارامتر [`options`](/en-US/docs/Web/API/IDBObjectStore/createIndex#options) را در [`IDBObjectStore.createIndex()`](/en-US/docs/Web/API/IDBObjectStore/createIndex) ببینید).
 - {{domxref("IDBIndex.locale")}} {{ReadOnlyInline}} {{ non-standard_inline }} {{deprecated_inline}}
-  - : Returns the locale of the index (for example `en-US`, or `pl`) if it had a `locale` value specified upon its creation (see the [`options`](/en-US/docs/Web/API/IDBObjectStore/createIndex#options) parameter to [`IDBObjectStore.createIndex()`](/en-US/docs/Web/API/IDBObjectStore/createIndex).)
+  - : locale ایندکس را برمی‌گرداند (برای مثال `en-US` یا `pl`)، اگر هنگام ایجاد ایندکس، مقدار `locale` برای آن تعیین شده باشد.
 - {{domxref("IDBIndex.name")}}
-  - : The name of this index.
+  - : نام این ایندکس.
 - {{domxref("IDBIndex.objectStore")}} {{ReadOnlyInline}}
-  - : The name of the object store referenced by this index.
+  - : نام object store‌ای که این ایندکس به آن ارجاع می‌دهد.
 - {{domxref("IDBIndex.keyPath")}} {{ReadOnlyInline}}
-  - : The [key path](/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology#key_path) of this index. If null, this index is not auto-populated.
+  - : مسیر کلید (key path) این ایندکس. اگر `null` باشد، این ایندکس به‌طور خودکار پر نمی‌شود.
 - {{domxref("IDBIndex.multiEntry")}} {{ReadOnlyInline}}
-  - : Affects how the index behaves when the result of evaluating the index's key path yields an array. If `true`, there is one record in the index for each item in an array of keys. If `false`, then there is one record for each key that is an array.
+  - : بر رفتار ایندکس اثر می‌گذارد وقتی نتیجهٔ ارزیابی مسیر کلید ایندکس یک آرایه باشد. اگر `true` باشد، برای هر آیتم در آرایهٔ کلیدها یک رکورد در ایندکس وجود دارد. اگر `false` باشد، برای هر کلیدِ آرایه‌ای یک رکورد وجود دارد.
 - {{domxref("IDBIndex.unique")}} {{ReadOnlyInline}}
-  - : If `true`, this index does not allow duplicate values for a key.
+  - : اگر `true` باشد، این ایندکس اجازه نمی‌دهد برای یک کلید، مقادیر تکراری وجود داشته باشد.
 
-## Instance methods
+## متدهای نمونه
 
-Inherits from: [EventTarget](/en-US/docs/Web/API/EventTarget)
+ارث‌بری از [EventTarget](/en-US/docs/Web/API/EventTarget)
 
 - {{domxref("IDBIndex.count()")}}
-  - : Returns an {{domxref("IDBRequest")}} object and, in a separate thread, returns the number of records within a key range.
+  - : یک شیء {{domxref("IDBRequest")}} برمی‌گرداند و در یک ریسمان جداگانه، تعداد رکوردهای درون یک بازهٔ کلید را برمی‌گرداند.
 - {{domxref("IDBIndex.get()")}}
-  - : Returns an {{domxref("IDBRequest")}} object and, in a separate thread, finds either the value in the referenced object store that corresponds to the given key or the first corresponding value, if `key` is an {{domxref("IDBKeyRange")}}.
+  - : یک شیء {{domxref("IDBRequest")}} برمی‌گرداند و در یک ریسمان جداگانه، یا مقدارِ متناظر با کلید داده‌شده را در object store مرجع پیدا می‌کند، یا اگر `key` یک {{domxref("IDBKeyRange")}} باشد، نخستین مقدارِ متناظر را پیدا می‌کند.
 - {{domxref("IDBIndex.getKey()")}}
-  - : Returns an {{domxref("IDBRequest")}} object and, in a separate thread, finds either the given key or the primary key, if `key` is an {{domxref("IDBKeyRange")}}.
+  - : یک شیء {{domxref("IDBRequest")}} برمی‌گرداند و در یک ریسمان جداگانه، یا کلید داده‌شده یا کلید اصلی را پیدا می‌کند، اگر `key` یک {{domxref("IDBKeyRange")}} باشد.
 - {{domxref("IDBIndex.getAll()")}}
-  - : Returns an {{domxref("IDBRequest")}} object and, in a separate thread, finds all matching values in the referenced object store that correspond to the given key or are in range, if `key` is an {{domxref("IDBKeyRange")}}.
+  - : یک شیء {{domxref("IDBRequest")}} برمی‌گرداند و در یک ریسمان جداگانه، همهٔ مقادیر منطبق در object store مرجع را پیدا می‌کند که با کلید داده‌شده متناظرند یا اگر `key` یک {{domxref("IDBKeyRange")}} باشد، در بازه قرار دارند.
 - {{domxref("IDBIndex.getAllKeys()")}}
-  - : Returns an {{domxref("IDBRequest")}} object and, in a separate thread, finds all matching keys in the referenced object store that correspond to the given key or are in range, if `key` is an {{domxref("IDBKeyRange")}}.
+  - : یک شیء {{domxref("IDBRequest")}} برمی‌گرداند و در یک ریسمان جداگانه، همهٔ کلیدهای منطبق در object store مرجع را پیدا می‌کند که با کلید داده‌شده متناظرند یا اگر `key` یک {{domxref("IDBKeyRange")}} باشد، در بازه قرار دارند.
 - {{domxref("IDBIndex.getAllRecords()")}}
-  - : Returns an {{domxref("IDBRequest")}} object and, in a separate thread, finds all matching records in the referenced object store (including index keys, primary keys, and values) that correspond to the given key or are in range, if `key` is an {{domxref("IDBKeyRange")}}.
+  - : یک شیء {{domxref("IDBRequest")}} برمی‌گرداند و در یک ریسمان جداگانه، همهٔ رکوردهای منطبق در object store مرجع (شامل کلیدهای ایندکس، کلیدهای اصلی و مقادیر) را پیدا می‌کند که با کلید داده‌شده متناظرند یا اگر `key` یک {{domxref("IDBKeyRange")}} باشد، در بازه قرار دارند.
 - {{domxref("IDBIndex.openCursor()")}}
-  - : Returns an {{domxref("IDBRequest")}} object and, in a separate thread, creates a [cursor](/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology#cursor) over the specified key range.
+  - : یک شیء {{domxref("IDBRequest")}} برمی‌گرداند و در یک ریسمان جداگانه، یک [cursor](/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology#cursor) بر روی بازهٔ کلید مشخص‌شده ایجاد می‌کند.
 - {{domxref("IDBIndex.openKeyCursor()")}}
-  - : Returns an {{domxref("IDBRequest")}} object and, in a separate thread, creates a cursor over the specified key range, as arranged by this index.
+  - : یک شیء {{domxref("IDBRequest")}} برمی‌گرداند و در یک ریسمان جداگانه، یک cursor بر روی بازهٔ کلید مشخص‌شده، به ترتیبی که توسط این ایندکس مرتب شده است، ایجاد می‌کند.
 
-## Example
+## مثال
 
-In the following example we open a transaction and an object store, then get the index `lName` from a simple contacts database. We then open a basic cursor on the index using {{domxref("IDBIndex.openCursor")}} — this works the same as opening a cursor directly on an `ObjectStore` using {{domxref("IDBObjectStore.openCursor")}} except that the returned records are sorted based on the index, not the primary key.
+در مثال زیر یک تراکنش و یک object store را باز می‌کنیم و سپس ایندکس `lName` را از یک پایگاه‌دادهٔ سادهٔ مخاطبین دریافت می‌کنیم. سپس با استفاده از {{domxref("IDBIndex.openCursor")}} یک cursor ساده روی ایندکس باز می‌کنیم — این کار دقیقاً مانند باز کردن cursor مستقیم روی یک `ObjectStore` با استفاده از {{domxref("IDBObjectStore.openCursor")}} عمل می‌کند، با این تفاوت که رکوردهای بازگشتی بر اساس ایندکس مرتب می‌شوند، نه کلید اصلی.
 
-Finally, we iterate through each record, and insert the data into an HTML table. For a complete working example, see our [IndexedDB-examples demo repo](https://github.com/mdn/dom-examples/tree/main/indexeddb-examples/idbindex) ([View the example live](https://mdn.github.io/dom-examples/indexeddb-examples/idbindex/).)
+در پایان، روی هر رکورد پیمایش می‌کنیم و داده‌ها را در یک جدول HTML وارد می‌کنیم. برای مشاهدهٔ مثال کامل و قابل اجرا، [مخزن دموی IndexedDB-examples](https://github.com/mdn/dom-examples/tree/main/indexeddb-examples/idbindex) را ببینید. ([مشاهدهٔ مثال زنده](https://mdn.github.io/dom-examples/indexeddb-examples/idbindex/))
 
 ```js
 function displayDataByIndex() {
@@ -100,20 +94,20 @@ function displayDataByIndex() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم بازه‌ای از کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و اعمال تغییرات روی داده‌ها: {{domxref("IDBObjectStore")}}
+- استفاده از cursorها: {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهدهٔ مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
