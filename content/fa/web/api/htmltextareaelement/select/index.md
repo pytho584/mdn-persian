@@ -1,7 +1,5 @@
 ---
 title: "HTMLTextAreaElement: select() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTextAreaElement/select"
-status: "needs-translation"
 ---
 
 ---
@@ -14,40 +12,40 @@ browser-compat: api.HTMLTextAreaElement.select
 
 {{APIRef("HTML DOM")}}
 
-The **`select()`** method of the {{domxref("HTMLTextAreaElement")}} interface selects the entire contents of the {{htmlelement("textarea")}} element. In addition, the {{domxref("HTMLTextAreaElement.select_event", "select")}} event is fired. The `select()` method does not take any parameters and does not return a value.
+متد **`select()`** از رابط {{domxref("HTMLTextAreaElement")}} کل محتوای عنصر {{htmlelement("textarea")}} را انتخاب می‌کند. علاوه بر این، رویداد {{domxref("HTMLTextAreaElement.select_event", "select")}} صادر می‌شود. متد `select()` هیچ پارامتری نمی‌پذیرد و مقداری بازنمی‌گرداند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 select()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
 ```js
 const textarea = document.getElementById("text-box");
 textarea.select();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTMLElement("textarea")}}
-- {{domxref("HTMLTextAreaElement/select_event", "select")}} event
+- رویداد {{domxref("HTMLTextAreaElement/select_event", "select")}}
 - {{domxref("EventTarget.addEventListener", "addEventListener()")}}
-- CSS {{cssxref("::selection")}} pseudo-element
+- شبه‌عنصر CSS {{cssxref("::selection")}}
