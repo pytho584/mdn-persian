@@ -1,9 +1,4 @@
----
-title: "MediaTrackSupportedConstraints: groupId property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSupportedConstraints/groupId"
-status: "needs-translation"
----
-
+```
 ---
 title: "MediaTrackSupportedConstraints: groupId property"
 short-title: groupId
@@ -14,23 +9,13 @@ browser-compat: api.MediaStreamTrack.applyConstraints.groupId_constraint
 
 {{APIRef("Media Capture and Streams")}}
 
-The {{domxref("MediaTrackSupportedConstraints")}} dictionary's
-**`groupId`** property is a read-only Boolean value which is
-present (and set to `true`) in the object returned by
-{{domxref("MediaDevices.getSupportedConstraints()")}} if and only if the
-{{Glossary("user agent")}} supports the `groupId` constraint. If the
-constraint isn't supported, it's not included in the list, so this value will never be
-`false`.
+ویژگی **`groupId`** در دیکشنری {{domxref("MediaTrackSupportedConstraints")}} یک مقدار بولی فقط‌خواندنی است. این ویژگی در شیء بازگردانده‌شده توسط {{domxref("MediaDevices.getSupportedConstraints()")}} وجود دارد (و روی `true` تنظیم می‌شود) اگر و تنها اگر {{Glossary("user agent")}} (عامل کاربر) از محدودیت `groupId` پشتیبانی کند. اگر این محدودیت پشتیبانی نشود، در فهرست گنجانده نمی‌شود؛ بنابراین مقدار این ویژگی هرگز `false` نخواهد بود.
 
-You can access the supported constraints dictionary by calling
-`navigator.mediaDevices.getSupportedConstraints()`.
+برای دسترسی به دیکشنری محدودیت‌های پشتیبانی‌شده، کافی است `navigator.mediaDevices.getSupportedConstraints()` را فراخوانی کنید.
 
-## Value
+## مقدار
 
-This property is present in the dictionary (and its value is always `true`)
-if the user agent supports the `groupId` constraint. If the property isn't
-present, this property is missing from the supported constraints dictionary, and you'll
-get {{jsxref("undefined")}} if you try to look at its value.
+اگر عامل کاربر از محدودیت `groupId` پشتیبانی کند، این ویژگی در دیکشنری وجود دارد (و مقدار آن همیشه `true` است). در غیر این صورت، این ویژگی در دیکشنری محدودیت‌های پشتیبانی‌شده وجود نخواهد داشت و اگر تلاش کنید مقدار آن را بررسی کنید، {{jsxref("undefined")}} دریافت خواهید کرد.
 
 ## Examples
 
@@ -70,3 +55,4 @@ result.textContent = supported ? "Supported!" : "Not supported!";
 - {{domxref("MediaDevices.getSupportedConstraints()")}}
 - {{domxref("MediaTrackSupportedConstraints")}}
 - {{domxref("MediaStreamTrack")}}
+```
