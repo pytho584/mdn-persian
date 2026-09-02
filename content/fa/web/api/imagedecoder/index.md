@@ -1,10 +1,4 @@
 ---
-title: "ImageDecoder"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ImageDecoder"
-status: "needs-translation"
----
-
----
 title: ImageDecoder
 slug: Web/API/ImageDecoder
 page-type: web-api-interface
@@ -13,47 +7,47 @@ browser-compat: api.ImageDecoder
 
 {{securecontext_header}}{{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`ImageDecoder`** interface of the {{domxref('WebCodecs API','','','true')}} provides a way to unpack and decode encoded image data.
+رابط **`ImageDecoder`** از {{domxref('WebCodecs API','','','true')}} روشی برای باز کردن بسته‌بندی و رمزگشایی داده‌های تصویری رمزگذاری‌شده فراهم می‌کند.
 
-## Constructor
+## سازنده
 
 - {{domxref("ImageDecoder.ImageDecoder", "ImageDecoder()")}}
-  - : Creates a new `ImageDecoder` object.
+  - : یک شیء جدید `ImageDecoder` ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("ImageDecoder.complete")}} {{ReadOnlyInline}}
-  - : Returns a boolean value indicating whether encoded data is completely buffered.
+  - : یک مقدار بولی برمی‌گرداند که نشان می‌دهد آیا داده‌های رمزگذاری‌شده به طور کامل بافر شده‌اند یا خیر.
 - {{domxref("ImageDecoder.completed")}} {{ReadOnlyInline}}
-  - : Returns a {{jsxref("Promise")}} that resolves once `complete` is true.
+  - : یک {{jsxref("Promise")}} برمی‌گرداند که به محض `true` شدن `complete` حل می‌شود.
 - {{domxref("ImageDecoder.tracks")}} {{ReadOnlyInline}}
-  - : Returns an {{domxref("ImageTrackList")}} object listing the available tracks and providing a method for selecting a track to decode.
+  - : یک شیء {{domxref("ImageTrackList")}} برمی‌گرداند که شامل لیست مسیرهای موجود و روشی برای انتخاب یک مسیر جهت رمزگشایی است.
 - {{domxref("ImageDecoder.type")}} {{ReadOnlyInline}}
-  - : Returns a string reflecting the [MIME type](/en-US/docs/Web/HTTP/Guides/MIME_types) configured during construction.
+  - : یک رشته برمی‌گرداند که نشان‌دهنده [نوع MIME](/en-US/docs/Web/HTTP/Guides/MIME_types) تنظیم‌شده در زمان ساخت است.
 
-## Static methods
+## روش‌های ایستا
 
 - {{domxref("ImageDecoder.isTypeSupported_static", "ImageDecoder.isTypeSupported()")}}
-  - : Indicates if the provided [MIME type](/en-US/docs/Web/HTTP/Guides/MIME_types) is supported for unpacking and decoding.
+  - : نشان می‌دهد که آیا [نوع MIME](/en-US/docs/Web/HTTP/Guides/MIME_types) داده‌شده برای باز کردن بسته‌بندی و رمزگشایی پشتیبانی می‌شود یا خیر.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("ImageDecoder.close()")}}
-  - : Ends all pending work and releases system resources.
+  - : تمام کارهای در انتظار را پایان می‌دهد و منابع سیستم را آزاد می‌کند.
 - {{domxref("ImageDecoder.decode()")}}
-  - : Enqueues a control message to decode the frame of an image.
+  - : یک پیام کنترل برای رمزگشایی فریم یک تصویر در صف قرار می‌دهد.
 - {{domxref("ImageDecoder.reset()")}}
-  - : Aborts all pending `decode()` operations.
+  - : تمام عملیات‌های در انتظار `decode()` را لغو می‌کند.
 
-## Examples
+## مثال‌ها
 
-Given a {{HTMLElement("canvas")}} element:
+با توجه به یک عنصر {{HTMLElement("canvas")}}:
 
 ```html
 <canvas></canvas>
 ```
 
-the following code decodes and renders an animated image to that canvas:
+کد زیر یک تصویر متحرک را رمزگشایی کرده و روی آن بوم (canvas) نمایش می‌دهد:
 
 ```js
 let imageDecoder = null;
@@ -105,10 +99,10 @@ function decodeImage(imageByteStream) {
 fetch("fancy.gif").then((response) => decodeImage(response.body));
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
