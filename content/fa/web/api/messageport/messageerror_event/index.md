@@ -1,11 +1,5 @@
 ---
 title: "MessagePort: messageerror event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MessagePort/messageerror_event"
-status: "needs-translation"
----
-
----
-title: "MessagePort: messageerror event"
 short-title: messageerror
 slug: Web/API/MessagePort/messageerror_event
 page-type: web-api-event
@@ -14,13 +8,13 @@ browser-compat: api.MessagePort.messageerror_event
 
 {{APIRef("Channel Messaging API")}} {{AvailableInWorkers}}
 
-The **`messageerror`** event is fired on a {{domxref('MessagePort')}} object when it receives a message that can't be deserialized.
+رویداد **`messageerror`** روی یک شیء {{domxref('MessagePort')}} زمانی رخ می‌دهد که آن شیء پیامی دریافت کند که نمی‌توان آن را deserialize کرد.
 
-This event is not cancellable and does not bubble.
+این رویداد قابل لغو نیست و bubble هم نمی‌شود.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای کار با این رویداد می‌توانید نام آن را در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی رویدادگردان تنظیم کنید.
 
 ```js-nolint
 addEventListener("messageerror", (event) => { })
@@ -28,17 +22,17 @@ addEventListener("messageerror", (event) => { })
 onmessageerror = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("MessageEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("MessageEvent")}}. این رویداد از {{domxref("Event")}} به ارث می‌رسد.
 
 {{InheritanceDiagram("MessageEvent")}}
 
-## Examples
+## مثال‌ها
 
-### Attempting to share memory
+### تلاش برای به اشتراک گذاشتن حافظه
 
-A common cause of `messageerror` events is attempting to send a {{jsxref("SharedArrayBuffer")}} object, or a buffer view backed by one, across [agent clusters](/en-US/docs/Web/JavaScript/Reference/Execution_model#agent_clusters_and_memory_sharing). For example, a window is not in the same agent cluster as a shared worker it created, so suppose the page runs the following code:
+یکی از دلایل رایج رویدادهای `messageerror`، تلاش برای ارسال یک شیء {{jsxref("SharedArrayBuffer")}} یا یک نمای بافر (buffer view) که پشتیبان آن چنین بافری است، در میان [خوشه‌های عامل (agent clusters)](/en-US/docs/Web/JavaScript/Reference/Execution_model#agent_clusters_and_memory_sharing) است. برای مثال، یک پنجره در همان خوشهٔ عاملی که کارگر اشتراکیِ ایجادشده توسط خودش در آن قرار دارد نیست؛ بنابراین فرض کنید صفحه کد زیر را اجرا می‌کند:
 
 ```js
 const worker = new SharedWorker("worker.js");
@@ -48,7 +42,7 @@ worker.port.addEventListener("message", (event) => {
 });
 ```
 
-And `worker.js` contains the following code:
+و `worker.js` شامل کد زیر است:
 
 ```js
 self.addEventListener("connect", (event) => {
@@ -62,20 +56,20 @@ self.addEventListener("connect", (event) => {
 });
 ```
 
-Then the shared worker will receive a `messageerror` event when it tries to deserialize the message sent from the window.
+در این صورت، کارگر اشتراکی وقتی بخواهد پیام ارسال‌شده از پنجره را deserialize کند، رویداد `messageerror` دریافت می‌کند.
 
 > [!NOTE]
-> You can use browser devtools to debug your SharedWorker, by entering a URL in your browser address bar to access the devtools workers inspector; for example, in Chrome, the URL `chrome://inspect/#workers`, and in Firefox, the URL `about:debugging#workers`.
+> می‌توانید برای اشکال‌زدایی SharedWorker خود از ابزارهای توسعه‌دهنده مرورگر (browser devtools) استفاده کنید؛ با وارد کردن یک URL در نوار آدرس مرورگر، به بازرس کارگرها (workers inspector) در DevTools دسترسی پیدا می‌کنید. برای مثال، در Chrome آدرس `chrome://inspect/#workers` و در Firefox آدرس `about:debugging#workers`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- Related events: [`message`](/en-US/docs/Web/API/MessagePort/message_event).
-- [Using channel messaging](/en-US/docs/Web/API/Channel_Messaging_API/Using_channel_messaging)
+- رویدادهای مرتبط: [`message`](/en-US/docs/Web/API/MessagePort/message_event).
+- [استفاده از پیام‌رسانی کانال](/en-US/docs/Web/API/Channel_Messaging_API/Using_channel_messaging)
