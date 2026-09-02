@@ -1,7 +1,5 @@
 ---
 title: "IDBDatabase: deleteObjectStore() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase/deleteObjectStore"
-status: "needs-translation"
 ---
 
 ---
@@ -14,40 +12,35 @@ browser-compat: api.IDBDatabase.deleteObjectStore
 
 {{ APIRef("IndexedDB") }} {{AvailableInWorkers}}
 
-The **`deleteObjectStore()`** method of the
-{{domxref("IDBDatabase")}} interface destroys the object store with the given name in
-the connected database, along with any indexes that reference it.
+متد **`deleteObjectStore()`** از رابط {{domxref("IDBDatabase")}}، فروشگاه شیء (object store) با نام داده‌شده را در پایگاه‌داده متصل، همراه با هر نمایه (index) که به آن ارجاع می‌دهد، از بین می‌برد.
 
-As with {{ domxref("IDBDatabase.createObjectStore") }}, this method can be called
-_only_ within a [`versionchange`](/en-US/docs/Web/API/IDBDatabase/versionchange_event)
-transaction.
+همانند {{ domxref("IDBDatabase.createObjectStore") }}، این متد را **فقط** در داخل یک تراکنش [`versionchange`](/en-US/docs/Web/API/IDBDatabase/versionchange_event) می‌توان فراخوانی کرد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 deleteObjectStore(name)
 ```
 
-### Parameters
+### پارامترها
 
 - `name`
-  - : The name of the object store you want to delete. Names are
-    case sensitive.
+  - : نام فروشگاه شیئی که می‌خواهید حذف کنید. نام‌ها به بزرگی/کوچکی حروف حساس هستند.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the method was not called from a `versionchange` transaction callback.
+  - : اگر متد از یک callback تراکنش `versionchange` فراخوانی نشده باشد، پرتاب می‌شود.
 - `TransactionInactiveError` {{domxref("DOMException")}}
-  - : Thrown if a request is made on a source database that doesn't exist (E.g. has been deleted or removed.)
+  - : اگر درخواستی روی یک پایگاه‌داده مبدأ که وجود ندارد (مثلاً حذف یا پاک شده است) انجام شود، پرتاب می‌شود.
 - `NotFoundError` {{domxref("DOMException")}}
-  - : Thrown when trying to delete an object store that does not exist.
+  - : هنگام تلاش برای حذف یک فروشگاه شیء که وجود ندارد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
 ```js
 const dbName = "sampleDB";
@@ -69,20 +62,20 @@ request.onupgradeneeded = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم یک محدوده از کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و ایجاد تغییرات در داده‌های خود: {{domxref("IDBObjectStore")}}
+- استفاده از نشانگرها (cursors): {{domxref("IDBCursor")}}
+- مثال مرجع: [اعلان‌های کارهای روزانه](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
