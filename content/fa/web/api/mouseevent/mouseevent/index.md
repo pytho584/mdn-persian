@@ -1,11 +1,5 @@
 ---
 title: "MouseEvent: MouseEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/MouseEvent"
-status: "needs-translation"
----
-
----
-title: "MouseEvent: MouseEvent() constructor"
 short-title: MouseEvent()
 slug: Web/API/MouseEvent/MouseEvent
 page-type: web-api-constructor
@@ -14,80 +8,71 @@ browser-compat: api.MouseEvent.MouseEvent
 
 {{APIRef("Pointer Events")}}
 
-The **`MouseEvent()`** constructor creates a new {{domxref("MouseEvent")}} object.
+سازندهٔ **`MouseEvent()`** یک شیء جدید از نوع {{domxref("MouseEvent")}} می‌سازد.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 new MouseEvent(type)
 new MouseEvent(type, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string with the name of the event.
-    It is case-sensitive and browsers set it to `click`, `dblclick`, `mousedown`, `mouseenter`, `mouseleave`, `mousemove`, `mouseout`, `mouseover`, or `mouseup`.
+  - : رشته‌ای شامل نام رویداد. این مقدار به بزرگی و کوچکی حروف حساس است و مرورگرها آن را روی `click`، `dblclick`، `mousedown`، `mouseenter`، `mouseleave`، `mousemove`، `mouseout`، `mouseover` یا `mouseup` تنظیم می‌کنند.
 - `options` {{optional_inline}}
-  - : An object that, _in addition of the properties defined in {{domxref("UIEvent/UIEvent", "UIEvent()")}}_, can have the following properties:
+  - : شیئی که _علاوه بر ویژگی‌های تعریف‌شده در {{domxref("UIEvent/UIEvent", "UIEvent()")}}_، می‌تواند ویژگی‌های زیر را داشته باشد:
     - `screenX` {{optional_inline}}
-      - : A number, defaulting to `0`, that is the horizontal position of the mouse event on the user's screen;
-        setting this value doesn't move the mouse pointer.
+      - : عددی با پیش‌فرض `0` که موقعیت افقی رویداد ماوس را روی صفحه‌نمایش کاربر مشخص می‌کند؛ تنظیم این مقدار، نشانگر ماوس را حرکت نمی‌دهد.
     - `screenY` {{optional_inline}}
-      - : A number, defaulting to `0`, that is the vertical position of the mouse event on the user's screen;
-        setting this value doesn't move the mouse pointer.
+      - : عددی با پیش‌فرض `0` که موقعیت عمودی رویداد ماوس را روی صفحه‌نمایش کاربر مشخص می‌کند؛ تنظیم این مقدار، نشانگر ماوس را حرکت نمی‌دهد.
     - `clientX` {{optional_inline}}
-      - : A number, defaulting to `0`, that is the horizontal position of the mouse event on the client window of user's screen;
-        setting this value doesn't move the mouse pointer.
+      - : عددی با پیش‌فرض `0` که موقعیت افقی رویداد ماوس را روی پنجرهٔ کلاینت (client window) صفحه‌نمایش کاربر مشخص می‌کند؛ تنظیم این مقدار، نشانگر ماوس را حرکت نمی‌دهد.
     - `clientY` {{optional_inline}}
-      - : A number, defaulting to `0`, that is the vertical position of the mouse event on the client window of the user's screen;
-        setting this value doesn't move the mouse pointer.
+      - : عددی با پیش‌فرض `0` که موقعیت عمودی رویداد ماوس را روی پنجرهٔ کلاینت (client window) صفحه‌نمایش کاربر مشخص می‌کند؛ تنظیم این مقدار، نشانگر ماوس را حرکت نمی‌دهد.
     - `ctrlKey` {{optional_inline}}
-      - : A boolean value indicating if the <kbd>ctrl</kbd> key was simultaneously pressed. It defaults to `false`.
+      - : مقدار بولی که مشخص می‌کند آیا کلید <kbd>ctrl</kbd> هم‌زمان فشرده شده است. پیش‌فرض آن `false` است.
     - `shiftKey` {{optional_inline}}
-      - : A boolean value indicating if the <kbd>shift</kbd> key was simultaneously pressed. It defaults to `false`.
+      - : مقدار بولی که مشخص می‌کند آیا کلید <kbd>shift</kbd> هم‌زمان فشرده شده است. پیش‌فرض آن `false` است.
     - `altKey` {{optional_inline}}
-      - : A boolean value indicating if the <kbd>alt</kbd> key was simultaneously pressed. It defaults to `false`.
+      - : مقدار بولی که مشخص می‌کند آیا کلید <kbd>alt</kbd> هم‌زمان فشرده شده است. پیش‌فرض آن `false` است.
     - `metaKey` {{optional_inline}}
-      - : A boolean value indicating if the <kbd>meta</kbd> key was simultaneously pressed. It defaults to `false`.
+      - : مقدار بولی که مشخص می‌کند آیا کلید <kbd>meta</kbd> هم‌زمان فشرده شده است. پیش‌فرض آن `false` است.
     - `button` {{optional_inline}}
-      - : A number, defaulting to `0`, that describes which button is pressed during events related to the press or release of a button:
+      - : عددی با پیش‌فرض `0` که مشخص می‌کند هنگام رویدادهای مربوط به فشردن یا رها کردن دکمه، کدام دکمه فشرده شده است:
 
-        | Value | Meaning                                                         |
-        | ----- | --------------------------------------------------------------- |
-        | `0`   | Main button pressed (usually the left button) or un-initialized |
-        | `1`   | Auxiliary button pressed (usually the middle button)            |
-        | `2`   | Secondary button pressed (usually the right button)             |
+        | مقدار | معنی                                                          |
+        | ----- | ------------------------------------------------------------- |
+        | `0`   | دکمهٔ اصلی فشرده شده (معمولاً دکمهٔ چپ) یا مقداردهی‌نشده       |
+        | `1`   | دکمهٔ کمکی فشرده شده (معمولاً دکمهٔ وسط)                       |
+        | `2`   | دکمهٔ ثانویه فشرده شده (معمولاً دکمهٔ راست)                    |
 
     - `buttons` {{optional_inline}}
-      - : A number, defaulting to `0`, that describes which buttons are pressed when the event is launched:
+      - : عددی با پیش‌فرض `0` که مشخص می‌کند هنگام صدور رویداد کدام دکمه‌ها فشرده شده‌اند:
 
-        | Bit-field value | Meaning                                              |
-        | --------------- | ---------------------------------------------------- |
-        | `0`             | No button pressed                                    |
-        | `1`             | Main button pressed (usually the left button)        |
-        | `2`             | Secondary button pressed (usually the right button)  |
-        | `4`             | Auxiliary button pressed (usually the middle button) |
+        | مقدار بیت‌فیلد | معنی                                                |
+        | -------------- | --------------------------------------------------- |
+        | `0`            | هیچ دکمه‌ای فشرده نشده است                          |
+        | `1`            | دکمهٔ اصلی فشرده شده (معمولاً دکمهٔ چپ)              |
+        | `2`            | دکمهٔ ثانویه فشرده شده (معمولاً دکمهٔ راست)          |
+        | `4`            | دکمهٔ کمکی فشرده شده (معمولاً دکمهٔ وسط)             |
 
     - `relatedTarget` {{optional_inline}}
-      - : An {{domxref("EventTarget")}}, defaulting to `null` that is the element just left
-        (in case of a {{domxref("Element/mouseenter_event", "mouseenter")}} or {{domxref("Element/mouseover_event", "mouseover")}})
-        or is entering (in case of a {{domxref("Element/mouseout_event", "mouseout")}} or {{domxref("Element/mouseleave_event", "mouseleave")}}).
+      - : یک {{domxref("EventTarget")}} با پیش‌فرض `null` که عنصری است که به‌تازگی از آن خارج شده‌ایم (در صورت رخداد {{domxref("Element/mouseenter_event", "mouseenter")}} یا {{domxref("Element/mouseover_event", "mouseover")}}) یا عنصری است که در حال ورود به آن هستیم (در صورت رخداد {{domxref("Element/mouseout_event", "mouseout")}} یا {{domxref("Element/mouseleave_event", "mouseleave")}}).
     - `region` {{non-standard_inline}} {{optional_inline}}
-      - : A string, defaulting to `null`, that is the ID of the hit region affected by the event.
-        The absence of any affected hit region is represented with the `null` value.
+      - : رشته‌ای با پیش‌فرض `null` که شناسهٔ ناحیهٔ برخورد (hit region) متأثر از رویداد است. نبود هر ناحیهٔ برخورد متأثری با مقدار `null` نمایش داده می‌شود.
 
-    In some implementations, passing anything other than a number for the screen and
-    client fields will throw a {{jsxref("TypeError")}}.
+    در برخی پیاده‌سازی‌ها، پاس دادن هر چیزی به‌جز عدد برای فیلدهای screen و client باعث پرتاب شدن {{jsxref("TypeError")}} می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- {{domxref("MouseEvent")}}, the interface of the objects it constructs.
+- {{domxref("MouseEvent")}}، رابط اشیایی که این سازنده می‌سازد.
