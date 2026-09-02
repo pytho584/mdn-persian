@@ -1,11 +1,5 @@
 ---
 title: "IDBTransaction: abort event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction/abort_event"
-status: "needs-translation"
----
-
----
-title: "IDBTransaction: abort event"
 short-title: abort
 slug: Web/API/IDBTransaction/abort_event
 page-type: web-api-event
@@ -14,21 +8,21 @@ browser-compat: api.IDBTransaction.abort_event
 
 {{APIRef("IndexedDB")}}
 
-The `abort` event is fired when an `IndexedDB` transaction is aborted.
+رویداد `abort` زمانی رخ می‌دهد که یک تراکنش `IndexedDB` لغو شود.
 
-This can happen for any of the following reasons:
+این رویداد می‌تواند به دلایل زیر رخ دهد:
 
-- Bad requests, (E.g., trying to add the same key twice, or put the same index key when the key has a uniqueness constraint).
-- An explicit {{DOMxRef("IDBTransaction.abort", "abort()")}} call.
-- An uncaught exception in the request's success/error handler.
-- An I/O error (an actual failure to write to disk, for example disk detached, or other OS/hardware failure).
-- Quota exceeded.
+- درخواست‌های نامعتبر (مثلاً تلاش برای افزودن کلید تکراری، یا قرار دادن کلید ایندکس یکسان در حالی که کلید دارای محدودیت یکتایی است).
+- فراخوانی صریح {{DOMxRef("IDBTransaction.abort", "abort()")}}.
+- یک استثنای مدیریت‌نشده در هندلر موفقیت/خطای درخواست.
+- خطای ورودی/خروجی (مثلاً شکست واقعی در نوشتن روی دیسک، مانند جدا شدن دیسک یا سایر خرابی‌های سیستم‌عامل/سخت‌افزار).
+- تجاوز از سهمیه ذخیره‌سازی.
 
-This non-cancelable event [bubbles](/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling) to the associated {{domxref("IDBDatabase")}} object.
+این رویداد غیرقابل‌لغو، به شیء {{domxref("IDBDatabase")}} مرتبط [حباب می‌شود](/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling).
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای استفاده، نام رویداد را در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} به کار ببرید، یا یک ویژگی مدیریت رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("abort", (event) => { })
@@ -36,19 +30,19 @@ addEventListener("abort", (event) => { })
 onabort = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Bubbling
+## حباب‌زنی
 
-This event bubbles to {{domxref("IDBDatabase")}}. The `event.target` property refers to the {{domxref('IDBTransaction')}} object that bubbles up.
+این رویداد به `IDBDatabase` حباب می‌شود. ویژگی `event.target` به شیء {{domxref('IDBTransaction')}} اشاره می‌کند که به سمت بالا حباب می‌شود.
 
-For more information, see [Event bubbling](/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling).
+برای اطلاعات بیشتر، [حباب‌زنی رویداد](/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling) را ببینید.
 
-## Examples
+## مثال‌ها
 
-This example opens a database (creating the database if it does not exist), then opens a transaction, adds a listener to the `abort` event, then aborts the transaction to trigger the event.
+این مثال یک پایگاه داده را باز می‌کند (اگر وجود نداشته باشد آن را می‌سازد)، سپس یک تراکنش باز می‌کند، یک شنونده روی رویداد `abort` اضافه می‌کند و سپس تراکنش را لغو می‌کند تا رویداد رخ دهد.
 
 ```js
 // Open the database
@@ -90,7 +84,7 @@ DBOpenRequest.onsuccess = (event) => {
 };
 ```
 
-The same example, but assigning the event handler to the `onabort` property:
+مثال مشابه، اما با انتساب مدیریت رویداد به ویژگی `onabort`:
 
 ```js
 // Open the database
@@ -132,14 +126,14 @@ DBOpenRequest.onsuccess = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
