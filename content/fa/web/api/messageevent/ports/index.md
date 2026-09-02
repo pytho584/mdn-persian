@@ -1,11 +1,5 @@
 ---
 title: "MessageEvent: ports property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MessageEvent/ports"
-status: "needs-translation"
----
-
----
-title: "MessageEvent: ports property"
 short-title: ports
 slug: Web/API/MessageEvent/ports
 page-type: web-api-instance-property
@@ -14,15 +8,13 @@ browser-compat: api.MessageEvent.ports
 
 {{APIRef("HTML DOM")}}{{AvailableInWorkers}}
 
-The **`ports`** read-only property of the
-{{domxref("MessageEvent")}} interface is an array of {{domxref("MessagePort")}} objects
-containing all {{domxref("MessagePort")}} objects sent with the message, in order.
+ویژگی فقط‌خواندنی **`ports`** در رابط {{domxref("MessageEvent")}} آرایه‌ای از اشیاء {{domxref("MessagePort")}} است که همهٔ اشیاء {{domxref("MessagePort")}} ارسال‌شده به‌همراه پیام را به‌ترتیب دربرمی‌گیرد.
 
-## Value
+## مقدار
 
-An array of {{domxref("MessagePort")}} objects.
+آرایه‌ای از اشیاء {{domxref("MessagePort")}}.
 
-## Examples
+## مثال‌ها
 
 ```js
 onconnect = (e) => {
@@ -37,15 +29,14 @@ onconnect = (e) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("ExtendableMessageEvent")}} — similar to this interface but used in
-  interfaces that needs to give more flexibility to authors.
+- {{domxref("ExtendableMessageEvent")}} — مشابه همین رابط است؛ با این تفاوت که در رابط‌هایی استفاده می‌شود که نیاز است انعطاف‌پذیری بیشتری را در اختیار نویسندگان قرار دهند.
