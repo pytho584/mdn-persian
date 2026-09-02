@@ -1,7 +1,5 @@
 ---
 title: "IntersectionObserver: unobserve() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/unobserve"
-status: "needs-translation"
 ---
 
 ---
@@ -14,28 +12,26 @@ browser-compat: api.IntersectionObserver.unobserve
 
 {{APIRef("Intersection Observer API")}}
 
-The **`unobserve()`** method of the {{domxref("IntersectionObserver")}} interface instructs the `IntersectionObserver` to stop observing the specified target element.
+متد **`unobserve()`** در رابط {{domxref("IntersectionObserver")}} به `IntersectionObserver` دستور می‌دهد تا مشاهدهٔ عنصر هدف مشخص‌شده را متوقف کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 unobserve(target)
 ```
 
-### Parameters
+### پارامترها
 
 - `target`
-  - : The {{domxref("Element")}} to cease observing.
-    If the specified element isn't being observed, this method does nothing and no exception is thrown.
+  - : عنصری از نوع {{domxref("Element")}} که باید از مشاهده خارج شود. اگر عنصر مشخص‌شده در حال مشاهده نباشد، این متد هیچ کاری انجام نمی‌دهد و هیچ استثنایی پرتاب نمی‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-This snippet shows an observer being created, an element being observed, and then being
-unobserved.
+این قطعه‌کد نشان می‌دهد که یک observer ساخته می‌شود، یک عنصر تحت مشاهده قرار می‌گیرد و سپس مشاهدهٔ آن متوقف می‌شود.
 
 ```js
 const observer = new IntersectionObserver(callback);
@@ -46,15 +42,15 @@ observer.observe(document.getElementById("elementToObserve"));
 observer.unobserve(document.getElementById("elementToObserve"));
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Intersection Observer API](/en-US/docs/Web/API/Intersection_Observer_API)
 - {{domxref("IntersectionObserver.observe()")}}
