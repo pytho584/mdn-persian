@@ -1,7 +1,5 @@
 ---
 title: "LargestContentfulPaint: loadTime property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/LargestContentfulPaint/loadTime"
-status: "needs-translation"
 ---
 
 ---
@@ -14,17 +12,17 @@ browser-compat: api.LargestContentfulPaint.loadTime
 
 {{APIRef("Performance API")}}
 
-The **`loadTime`** read-only property of the {{domxref("LargestContentfulPaint")}} interface returns the time that the element was loaded.
+ویژگی فقط‌خواندنی **`loadTime`** در رابط {{domxref("LargestContentfulPaint")}}، زمان بارگذاری عنصر را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A {{domxref("DOMHighResTimeStamp","timestamp")}} representing the time in milliseconds that the element was loaded.
+یک {{domxref("DOMHighResTimeStamp","timestamp")}} (برچسب زمانی) که زمان بارگذاری عنصر را بر حسب میلی‌ثانیه نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
-### Logging the loadTime of the largest contentful paint
+### ثبت loadTime بزرگ‌ترین رنگ‌آمیزی محتوا
 
-This example uses a {{domxref("PerformanceObserver")}} notifying of new `largest-contentful-paint` performance entries as they are recorded in the browser's performance timeline. The `buffered` option is used to access entries from before the observer creation.
+این مثال از یک {{domxref("PerformanceObserver")}} استفاده می‌کند که هنگام ثبت ورودی‌های جدید `largest-contentful-paint` در جدول زمانی عملکرد مرورگر، اعلان دریافت می‌کند. گزینه `buffered` برای دسترسی به ورودی‌هایی که پیش از ایجاد observer ثبت شده‌اند استفاده می‌شود.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -35,10 +33,10 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "largest-contentful-paint", buffered: true });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
