@@ -1,11 +1,5 @@
 ---
 title: "InputEvent: getTargetRanges() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/InputEvent/getTargetRanges"
-status: "needs-translation"
----
-
----
-title: "InputEvent: getTargetRanges() method"
 short-title: getTargetRanges()
 slug: Web/API/InputEvent/getTargetRanges
 page-type: web-api-instance-method
@@ -14,43 +8,43 @@ browser-compat: api.InputEvent.getTargetRanges
 
 {{APIRef("UI Events")}}
 
-The **`getTargetRanges()`** method of the {{domxref("InputEvent")}} interface returns an array of {{domxref("StaticRange")}} objects that will be affected by a change to the DOM if the input event is not canceled.
+متد **`getTargetRanges()`** از رابط {{domxref("InputEvent")}} یک آرایه از اشیاء {{domxref("StaticRange")}} برمی‌گرداند که در صورت عدم لغو رویداد ورودی، تحت تأثیر تغییر در DOM قرار خواهند گرفت.
 
-This allows web apps to override text edit behavior before the browser modifies the DOM tree, and provides more control over input events to improve performance.
+این امکان را به برنامه‌های وب می‌دهد تا قبل از اینکه مرورگر درخت DOM را تغییر دهد، رفتار ویرایش متن را نادیده بگیرند و کنترل بیشتری روی رویدادهای ورودی برای بهبود عملکرد فراهم می‌کند.
 
-Depending on the value of `inputType` and the current editing host, the expected return value of this method varies:
+بسته به مقدار `inputType` و میزبان ویرایش فعلی، مقدار بازگشتی مورد انتظار این متد متفاوت است:
 
 <table>
   <thead>
     <tr>
       <th>inputType</th>
-      <th>Editing host</th>
-      <th>Response of <code>getTargetRanges()</code></th>
+      <th>میزبان ویرایش</th>
+      <th>پاسخ <code>getTargetRanges()</code></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><code>"historyUndo"</code> or <code>"historyRedo"</code></td>
-      <td>Any</td>
-      <td>empty Array</td>
+      <td><code>"historyUndo"</code> یا <code>"historyRedo"</code></td>
+      <td>هر</td>
+      <td>آرایه خالی</td>
     </tr>
     <tr>
-      <td>All remaining</td>
+      <td>سایر موارد</td>
       <td><code>contenteditable</code></td>
       <td>
-        an Array of
+        یک آرایه از اشیاء
         {{domxref("StaticRange")}}
-        objects associated with event
+        مرتبط با رویداد
       </td>
     </tr>
     <tr>
-      <td>All remaining</td>
+      <td>سایر موارد</td>
       <td>
         <a href="/en-US/docs/Web/HTML/Reference/Elements/input"><code>input</code></a>
-        or <a href="/en-US/docs/Web/HTML/Reference/Elements/textarea"><code>textarea</code></a>
+        یا <a href="/en-US/docs/Web/HTML/Reference/Elements/textarea"><code>textarea</code></a>
       </td>
       <td>
-        an empty Array
+        یک آرایه خالی
       </td>
     </tr>
   </tbody>
@@ -62,20 +56,19 @@ Depending on the value of `inputType` and the current editing host, the expected
 getTargetRanges()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-An array of {{domxref("StaticRange")}} objects.
+یک آرایه از اشیاء {{domxref("StaticRange")}}.
 
-## Examples
+## مثال‌ها
 
-### Feature Detection
+### تشخیص ویژگی
 
-The following function returns true if `beforeinput`, and thus
-`getTargetRanges`, is supported.
+تابع زیر `true` را برمی‌گرداند اگر `beforeinput` و در نتیجه `getTargetRanges` پشتیبانی شود.
 
 ```js
 function isBeforeInputEventAvailable() {
@@ -86,11 +79,11 @@ function isBeforeInputEventAvailable() {
 }
 ```
 
-### Basic usage
+### استفاده پایه
 
-The following example selects a `contenteditable` element and utilizes the
+مثال زیر یک عنصر `contenteditable` را انتخاب کرده و از رویداد
 [`beforeinput`](/en-US/docs/Web/API/Element/beforeinput_event)
-event to log the result of `getTargetRanges()`.
+برای ثبت نتیجه `getTargetRanges()` استفاده می‌کند.
 
 ```js
 const editableElem = document.querySelector('[contenteditable="true"]');
@@ -105,6 +98,6 @@ editableElem.addEventListener("beforeinput", (e) => {
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
