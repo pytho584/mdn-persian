@@ -1,9 +1,4 @@
----
-title: "MessageEvent: MessageEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MessageEvent/MessageEvent"
-status: "needs-translation"
----
-
+```markdown
 ---
 title: "MessageEvent: MessageEvent() constructor"
 short-title: MessageEvent()
@@ -14,44 +9,43 @@ browser-compat: api.MessageEvent.MessageEvent
 
 {{APIRef("HTML DOM")}}{{AvailableInWorkers}}
 
-The **`MessageEvent()`** constructor creates a new {{domxref("MessageEvent")}} object.
+سازندهٔ **`MessageEvent()`** یک شیء جدید از نوع {{domxref("MessageEvent")}} می‌سازد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 new MessageEvent(type)
 new MessageEvent(type, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string with the name of the event.
-    It is case-sensitive and browsers always set it to `message`.
+  - : یک رشته که نام رویداد را مشخص می‌کند.
+    این مقدار به حروف بزرگ و کوچک حساس است و مرورگرها همیشه آن را روی `message` قرار می‌دهند.
 - `options` {{optional_inline}}
-  - : An object that, _in addition of the properties defined in {{domxref("Event/Event", "Event()")}}_, can have the following properties:
+  - : یک شیء که _علاوه بر ویژگی‌های تعریف‌شده در {{domxref("Event/Event", "Event()")}}_، می‌تواند ویژگی‌های زیر را داشته باشد:
     - `data` {{optional_inline}}
-      - : The data you want contained in the MessageEvent.
-        This can be of any data type, and will default to `null` if not specified.
+      - : داده‌ای که می‌خواهید در `MessageEvent` قرار گیرد.
+        این می‌تواند از هر نوع داده‌ای باشد و اگر مشخص نشود، پیش‌فرض آن `null` خواهد بود.
     - `origin` {{optional_inline}}
-      - : A string representing the origin of the message emitter.
-        This defaults to an empty string (`''`) if not specified.
+      - : رشته‌ای که مبدأ فرستندهٔ پیام را نشان می‌دهد.
+        اگر مشخص نشود، پیش‌فرض آن یک رشتهٔ خالی (`''`) است.
     - `lastEventId` {{optional_inline}}
-      - : A string representing a unique ID for the event.
-        This defaults to an empty string ("") if not specified.
+      - : رشته‌ای که یک شناسهٔ یکتا برای رویداد را نشان می‌دهد.
+        اگر مشخص نشود، پیش‌فرض آن یک رشتهٔ خالی (`""`) است.
     - `source` {{optional_inline}}
-      - : A `MessageEventSource` (which can be a {{domxref("Window")}}, a {{domxref("MessagePort")}},
-        or a {{domxref("ServiceWorker")}} object) representing the message emitter.
-        This defaults to `null` if not set.
+      - : یک `MessageEventSource` (که می‌تواند یک شیء {{domxref("Window")}}، {{domxref("MessagePort")}} یا {{domxref("ServiceWorker")}} باشد) که فرستندهٔ پیام را نشان می‌دهد.
+        اگر تنظیم نشود، پیش‌فرض آن `null` است.
     - `ports` {{optional_inline}}
-      - : An array of {{domxref("MessagePort")}} objects containing all {{domxref("MessagePort")}} objects sent with the message, in order.
-        This defaults to an empty array (`[]`) if not specified.
+      - : آرایه‌ای از اشیاء {{domxref("MessagePort")}} که شامل تمام اشیاء {{domxref("MessagePort")}} ارسال‌شده با پیام، به ترتیب، می‌شود.
+        اگر مشخص نشود، پیش‌فرض آن یک آرایهٔ خالی (`[]`) است.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("MessageEvent")}} object.
+یک شیء جدید از نوع {{domxref("MessageEvent")}}.
 
-## Examples
+## مثال‌ها
 
 ```js
 const myMessage = new MessageEvent("message", {
@@ -59,14 +53,15 @@ const myMessage = new MessageEvent("message", {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("ExtendableMessageEvent")}} — similar to this interface but used in interfaces that needs to give more flexibility to authors.
+- {{domxref("ExtendableMessageEvent")}} — مشابه این رابط است اما در رابط‌هایی استفاده می‌شود که نیاز به انعطاف‌پذیری بیشتری برای نویسندگان دارند.
+```
