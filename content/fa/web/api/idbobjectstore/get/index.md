@@ -1,7 +1,5 @@
 ---
 title: "IDBObjectStore: get() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/get"
-status: "needs-translation"
 ---
 
 ---
@@ -14,55 +12,43 @@ browser-compat: api.IDBObjectStore.get
 
 {{ APIRef("IndexedDB") }} {{AvailableInWorkers}}
 
-The **`get()`** method of the {{domxref("IDBObjectStore")}}
-interface returns an {{domxref("IDBRequest")}} object, and, in a separate thread,
-returns the object selected by the specified key. This is for retrieving
-specific records from an object store.
+متد **`get()`** از رابط {{domxref("IDBObjectStore")}} یک شیء {{domxref("IDBRequest")}} برمی‌گرداند و در یک ترد جداگانه، شیء انتخاب‌شده با کلید مشخص‌شده را بازمی‌گرداند. از این متد برای بازیابی رکوردهای خاص از یک object store (ذخیره‌گاه شیء) استفاده می‌شود.
 
-If a value is successfully found, then a structured clone of it is created and set as
-the [`result`](/en-US/docs/Web/API/IDBRequest/result) of the
-request object.
+اگر مقداری با موفقیت یافت شود، یک شبیه‌سازی ساختاریافته از آن ایجاد شده و به‌عنوان [`result`](/en-US/docs/Web/API/IDBRequest/result) شیء درخواست تنظیم می‌شود.
 
 > [!NOTE]
-> This method produces the same result for: a) a record that doesn't exist in the database and b) a record that has an undefined value.
-> To tell these situations apart, call the `openCursor()` method with the same key. That method provides a cursor if the record exists, and no cursor if it does not.
+> این متد برای دو حالت نتیجه‌ی یکسانی تولید می‌کند: الف) رکوردی که در پایگاه‌داده وجود ندارد، و ب) رکوردی که مقدار آن تعریف‌نشده (undefined) است.
+> برای تشخیص این دو حالت از یکدیگر، متد `openCursor()` را با همان کلید فراخوانی کنید. آن متد اگر رکورد وجود داشته باشد یک cursor برمی‌گرداند و اگر وجود نداشته باشد، هیچ cursory برنمی‌گرداند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 get(key)
 ```
 
-### Parameters
+### پارامترها
 
 - `key`
-  - : The key or key range that identifies the record to be retrieved.
+  - : کلید یا محدوده کلیدی که رکورد مورد نظر برای بازیابی را مشخص می‌کند.
 
-### Return value
+### مقدار بازگشتی
 
-An {{domxref("IDBRequest")}} object on which subsequent events related to this operation are fired.
+یک شیء {{domxref("IDBRequest")}} که رویدادهای بعدی مرتبط با این عملیات روی آن ارسال می‌شوند. اگر عملیات موفق باشد، مقدار ویژگی {{domxref("IDBRequest.result", "result")}} درخواست، مقدار اولین رکوردی است که با کلید یا محدوده کلید داده‌شده مطابقت دارد.
 
-If the operation is successful, the value of the request's {{domxref("IDBRequest.result", "result")}} property is the value of the first record matching the given key or key range.
+### استثناها
 
-### Exceptions
-
-This method may raise a {{domxref("DOMException")}} of one of the following types:
+این متد ممکن است یک {{domxref("DOMException")}} از یکی از انواع زیر ایجاد کند:
 
 - `TransactionInactiveError` {{domxref("DOMException")}}
-  - : Thrown if this {{domxref("IDBObjectStore")}}'s transaction is inactive.
+  - : اگر تراکنش این {{domxref("IDBObjectStore")}} غیرفعال باشد، صادر می‌شود.
 - `DataError` {{domxref("DOMException")}}
-  - : Thrown if key or key range provided contains an invalid key.
+  - : اگر کلید یا محدوده کلید ارائه‌شده حاوی کلید نامعتبر باشد، صادر می‌شود.
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the {{domxref("IDBObjectStore")}} has been deleted or removed.
+  - : اگر {{domxref("IDBObjectStore")}} حذف شده یا از بین رفته باشد، صادر می‌شود.
 
-## Examples
+## مثال‌ها
 
-In the following code snippet, we open a read/write transaction on our database and get
-one specific record from object store using `get()` — a sample record with
-the key "Walk dog". Once this data object is retrieved, you could then update it using
-normal JavaScript, then put it back into the database using a
-{{domxref("IDBObjectStore.put", "put()")}} operation. For a full working example, see our [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) app
-([view example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+در قطعه کد زیر، یک تراکنش خواندن/نوشتن روی پایگاه‌داده باز می‌کنیم و با استفاده از `get()` یک رکورد خاص از object store دریافت می‌کنیم — یک رکورد نمونه با کلید «Walk dog». پس از بازیابی این شیء داده، می‌توانید آن را با جاوااسکریپت معمولی به‌روزرسانی کنید و سپس با استفاده از یک عملیات {{domxref("IDBObjectStore.put", "put()")}} دوباره در پایگاه‌داده قرار دهید. برای یک مثال کامل و قابل اجرا، برنامه [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) را ببینید ([view example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
 
 ```js
 // Let us open our database
@@ -111,20 +97,20 @@ function getData() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم محدوده کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و ایجاد تغییرات در داده‌ها: {{domxref("IDBObjectStore")}}
+- استفاده از cursor ها: {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
