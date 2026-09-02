@@ -1,7 +1,5 @@
 ---
 title: "MediaTrackSupportedConstraints: suppressLocalAudioPlayback property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSupportedConstraints/suppressLocalAudioPlayback"
-status: "needs-translation"
 ---
 
 ---
@@ -16,17 +14,17 @@ browser-compat: api.MediaStreamTrack.applyConstraints.suppressLocalAudioPlayback
 
 {{APIRef("Media Capture and Streams")}}{{SeeCompatTable}}
 
-The {{domxref("MediaTrackSupportedConstraints")}} dictionary's **`suppressLocalAudioPlayback`** property indicates whether or not the {{domxref("MediaTrackConstraints.suppressLocalAudioPlayback", "suppressLocalAudioPlayback")}} constraint is supported by the user agent and the device on which the content is being used.
+ویژگی **`suppressLocalAudioPlayback`** از دیکشنری {{domxref("MediaTrackSupportedConstraints")}} مشخص می‌کند که آیا محدودیت {{domxref("MediaTrackConstraints.suppressLocalAudioPlayback", "suppressLocalAudioPlayback")}} توسط عامل کاربر و دستگاهی که محتوا روی آن استفاده می‌شود پشتیبانی می‌شود یا خیر.
 
-The supported constraints list is obtained by calling {{domxref("MediaDevices.getSupportedConstraints","navigator.mediaDevices.getSupportedConstraints()")}}.
+لیست محدودیت‌های پشتیبانی‌شده با فراخوانی {{domxref("MediaDevices.getSupportedConstraints","navigator.mediaDevices.getSupportedConstraints()")}} به دست می‌آید.
 
-## Value
+## مقدار
 
-A boolean value which is `true` if the {{domxref("MediaTrackConstraints.suppressLocalAudioPlayback", "suppressLocalAudioPlayback")}} constraint is supported by the device and user agent.
+یک مقدار بولی که `true` است اگر محدودیت {{domxref("MediaTrackConstraints.suppressLocalAudioPlayback", "suppressLocalAudioPlayback")}} توسط دستگاه و عامل کاربر پشتیبانی شود.
 
-## Examples
+## مثال‌ها
 
-The function below sets up the options object for the call to {{domxref("MediaDevices.getDisplayMedia", "getDisplayMedia()")}}. It adds the `suppressLocalAudioPlayback` constraint (requesting that captured audio is not played out of the user's local speakers) only if it is known to be supported by the browser. Capturing is then started by calling `getDisplayMedia()` and attaching the returned stream to the video element referenced by the variable `videoElem`.
+تابع زیر یک شیء گزینه‌ها را برای فراخوانی {{domxref("MediaDevices.getDisplayMedia", "getDisplayMedia()")}} تنظیم می‌کند. این تابع محدودیت `suppressLocalAudioPlayback` را (که درخواست می‌کند صدای ضبط‌شده از بلندگوهای محلی کاربر پخش نشود) تنها در صورتی اضافه می‌کند که مشخص باشد توسط مرورگر پشتیبانی می‌شود. سپس ضبط با فراخوانی `getDisplayMedia()` و متصل کردن جریان برگشتی به عنصر ویدیویی که توسط متغیر `videoElem` ارجاع داده شده است، شروع می‌شود.
 
 ```js
 async function capture() {
@@ -48,15 +46,15 @@ async function capture() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Screen Capture API](/en-US/docs/Web/API/Screen_Capture_API)
 - [Using the screen capture API](/en-US/docs/Web/API/Screen_Capture_API/Using_Screen_Capture)
