@@ -1,11 +1,5 @@
 ---
 title: "MediaRecorder: state property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/state"
-status: "needs-translation"
----
-
----
-title: "MediaRecorder: state property"
 short-title: state
 slug: Web/API/MediaRecorder/state
 page-type: web-api-instance-property
@@ -14,20 +8,20 @@ browser-compat: api.MediaRecorder.state
 
 {{APIRef("MediaStream Recording")}}
 
-The **`state`** read-only property of the {{domxref("MediaRecorder")}} interface returns the current state of the current `MediaRecorder` object.
+ویژگی فقط‌خواندنی **`state`** از رابط {{domxref("MediaRecorder")}} وضعیت فعلی شیء `MediaRecorder` جاری را بازمی‌گرداند.
 
-## Value
+## مقدار
 
-A string containing one of the following values:
+یک رشته شامل یکی از مقادیر زیر:
 
 - `inactive`
-  - : Recording is not occurring — it has either not been started yet, or it has been started and then stopped.
+  - : ضبط در حال انجام نیست — یا هنوز شروع نشده است، یا شروع شده و سپس متوقف شده است.
 - `recording`
-  - : Recording has been started and the {{glossary("user agent")}} is capturing data.
+  - : ضبط شروع شده و {{glossary("user agent")}} در حال ضبط داده است.
 - `paused`
-  - : Recording has been started, then paused, but not yet stopped or resumed.
+  - : ضبط شروع شده، سپس مکث شده، اما هنوز متوقف یا از سر گرفته نشده است.
 
-## Examples
+## مثال‌ها
 
 ```js
 record.onclick = () => {
@@ -38,18 +32,17 @@ record.onclick = () => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Using the MediaStream Recording API](/en-US/docs/Web/API/MediaStream_Recording_API/Using_the_MediaStream_Recording_API)
-- [Web Dictaphone](https://mdn.github.io/dom-examples/media/web-dictaphone/): MediaRecorder +
-  getUserMedia + Web Audio API visualization demo, by [Chris Mills](https://github.com/chrisdavidmills) ([source on GitHub](https://github.com/mdn/dom-examples/tree/main/media/web-dictaphone).)
-- [simpl.info MediaStream Recording demo](https://simpl.info/mediarecorder/), by [Sam Dutton](https://github.com/samdutton).
+- [استفاده از API ضبط MediaStream](/en-US/docs/Web/API/MediaStream_Recording_API/Using_the_MediaStream_Recording_API)
+- [Web Dictaphone](https://mdn.github.io/dom-examples/media/web-dictaphone/): یک نمایش بصری از MediaRecorder + getUserMedia + Web Audio API، توسط کریس میلز ([کد منبع در GitHub](https://github.com/mdn/dom-examples/tree/main/media/web-dictaphone).)
+- [دموی ضبط MediaStream از simpl.info](https://simpl.info/mediarecorder/)، توسط سام داتن.
 - {{domxref("Navigator.getUserMedia()")}}
