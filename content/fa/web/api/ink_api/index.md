@@ -1,10 +1,4 @@
 ---
-title: "Ink API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Ink_API"
-status: "needs-translation"
----
-
----
 title: Ink API
 slug: Web/API/Ink_API
 page-type: web-api-overview
@@ -15,45 +9,45 @@ browser-compat: api.Ink
 
 {{DefaultAPISidebar("Ink API")}}{{SeeCompatTable}}
 
-The Ink API allows browsers to directly make use of available OS-level compositors when drawing pen strokes in an inking app feature, thereby reducing latency and increasing performance.
+API Ink به مرورگرها امکان می‌دهد هنگام رسم ضربه‌های قلم در یکی از قابلیت‌های نقاشی برنامه، مستقیماً از کامپوزیتورهای موجود در سطح سیستم‌عامل استفاده کنند؛ این کار تأخیر را کاهش داده و کارایی را افزایش می‌دهد.
 
-## Concepts and usage
+## مفاهیم و کاربرد
 
-Inking on the web refers to app features that involve using [pointer events](/en-US/docs/Web/API/Pointer_events) to draw a smooth pen stroke — for example, a drawing app or document signing feature.
+نقاشی با جوهر روی وب به ویژگی‌هایی در برنامه‌ها اشاره دارد که از رویدادهای اشاره‌گر برای کشیدن ضربه‌های قلم نرم استفاده می‌کنند؛ برای مثال، یک برنامه طراحی یا قابلیت امضای سند.
 
-Pointers events are usually sent first to the browser process, which then forwards these events to the JavaScript event loop to execute the associated handler functions and render the result in the app. The time delay between the start and finish of this process can be significant, resulting in latency between the user initiating drawing (for example, with a stylus or mouse), and the stroke showing up on the screen.
+رویدادهای اشاره‌گر معمولاً ابتدا به فرایند مرورگر ارسال می‌شوند و سپس مرورگر این رویدادها را به حلقه رویداد جاوااسکریپت ارسال می‌کند تا توابع کنترل‌کننده مرتبط اجرا شده و نتیجه در برنامه رندر شود. تأخیر زمانی بین شروع و پایان این فرایند می‌تواند قابل توجه باشد و در نتیجه بین شروع کشیدن توسط کاربر (مثلاً با قلم دیجیتال یا ماوس) و ظاهر شدن ضربه قلم روی صفحه، تأخیر ایجاد شود.
 
-The Ink API significantly reduces this latency by allowing browsers to bypass the JavaScript event loop entirely. Where possible, browsers will pass such rendering instructions directly to OS-level compositors. If the underlying operating system does not have a specialized OS-level compositor to use for this purpose, browsers will use their own optimized rendering code. This is not as powerful as a compositor, but it still confers some improvements.
+API Ink این تأخیر را به‌طور قابل توجهی کاهش می‌دهد و به مرورگرها اجازه می‌دهد حلقه رویداد جاوااسکریپت را کاملاً دور بزنند. در صورت امکان، مرورگرها چنین دستورالعمل‌های رندر را مستقیماً به کامپوزیتورهای سطح سیستم‌عامل ارسال می‌کنند. اگر سیستم‌عامل زیرین، کامپوزیتور تخصصی در سطح سیستم‌عامل برای این منظور نداشته باشد، مرورگرها از کد رندر بهینه‌سازی‌شده خودشان استفاده می‌کنند. این کد به اندازه یک کامپوزیتور قدرتمند نیست، اما همچنان بهبودهایی را به همراه دارد.
 
 > [!NOTE]
-> Compositors are part of the rendering machinery that draws the UI to the screen in a browser or operating system. See [Inside look at modern web browser (part 3)](https://developer.chrome.com/blog/inside-browser-part3/) for some interesting insights into how a compositor functions inside a web browser.
+> کامپوزیتورها بخشی از سازوکار رندر هستند که رابط کاربری را در مرورگر یا سیستم‌عامل روی صفحه ترسیم می‌کنند. برای آشنایی با نحوه عملکرد کامپوزیتور در داخل یک مرورگر وب، مقاله [نگاهی به درون مرورگر مدرن (بخش ۳)](https://developer.chrome.com/blog/inside-browser-part3/) را ببینید.
 
-The entry point is the {{domxref("Navigator.ink")}} property, which returns an {{domxref("Ink")}} object for the current document. The {{domxref("Ink.requestPresenter","Ink.requestPresenter()")}} method returns a {{jsxref("Promise")}} that fulfills with a {{domxref("DelegatedInkTrailPresenter")}} object instance. This instructs the OS-level compositor to render ink strokes between pointer event dispatches in the next available frame in each case.
+نقطه ورود، ویژگی {{domxref("Navigator.ink")}} است که یک شیء {{domxref("Ink")}} را برای سند جاری برمی‌گرداند. متد {{domxref("Ink.requestPresenter","Ink.requestPresenter()")}} یک {{jsxref("Promise")}} برمی‌گرداند که با یک نمونه از شیء {{domxref("DelegatedInkTrailPresenter")}} تکمیل می‌شود. این شیء به کامپوزیتور سطح سیستم‌عامل دستور می‌دهد تا ضربه‌های قلم را بین ارسال رویدادهای اشاره‌گر در اولین فریم موجود بعدی رندر کند.
 
-## Interfaces
+## رابط‌ها
 
 - {{domxref("Ink")}} {{Experimental_Inline}}
-  - : Provides access to {{domxref("DelegatedInkTrailPresenter")}} objects for the application to use to render the strokes.
+  - : دسترسی به اشیاء {{domxref("DelegatedInkTrailPresenter")}} را برای برنامه فراهم می‌کند تا از آن‌ها برای رندر کردن ضربه‌ها استفاده کند.
 - {{domxref("DelegatedInkTrailPresenter")}} {{Experimental_Inline}}
-  - : Instructs the OS-level compositor to render ink strokes between pointer event dispatches.
+  - : به کامپوزیتور سطح سیستم‌عامل دستور می‌دهد تا ضربه‌های قلم را بین ارسال رویدادهای اشاره‌گر رندر کند.
 
-### Extensions to other interfaces
+### افزونه‌های رابط‌های دیگر
 
 - {{domxref("Navigator.ink")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns an {{domxref("Ink")}} object for the current document.
+  - : یک شیء {{domxref("Ink")}} را برای سند جاری برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-### Drawing an ink trail
+### رسم یک رد قلم
 
-In this example, we draw a trail onto a 2D canvas. Near the start of the code, we call {{domxref("Ink.requestPresenter()")}}, passing it the canvas as the presentation area for it to take care of and storing the promise it returns in the `presenter` variable.
+در این مثال، یک رد قلم را روی بوم (Canvas) دوبعدی رسم می‌کنیم. در نزدیکی ابتدای کد، {{domxref("Ink.requestPresenter()")}} را فراخوانی می‌کنیم و بوم را به عنوان ناحیه نمایش به آن می‌دهیم تا مدیریت آن را بر عهده بگیرد؛ پرامیس بازگشتی را در متغیر `presenter` ذخیره می‌کنیم.
 
-Later on, in the `pointermove` event listener, the new position of the trailhead is drawn onto the canvas each time the event fires. In addition, the {{domxref("DelegatedInkTrailPresenter")}} object returned when the `presenter` promise fulfills has its {{domxref("DelegatedInkTrailPresenter.updateInkTrailStartPoint", "updateInkTrailStartPoint()")}} method invoked; this is passed:
+بعداً، در شنونده رویداد `pointermove`، هر بار که رویداد رخ می‌دهد، موقعیت جدید نقطه شروع رد روی بوم رسم می‌شود. علاوه بر این، متد {{domxref("DelegatedInkTrailPresenter.updateInkTrailStartPoint", "updateInkTrailStartPoint()")}} روی شیء {{domxref("DelegatedInkTrailPresenter")}}ای که پس از تکمیل پرامیس `presenter` به دست می‌آید، فراخوانی می‌شود. به این متد موارد زیر ارسال می‌گردد:
 
-- The last trusted pointer event representing the rendering point for the current frame.
-- A `style` object containing color and diameter settings.
+- آخرین رویداد اشاره‌گر معتبر (trusted) که نقطه رندر را برای فریم جاری نشان می‌دهد.
+- یک شیء `style` شامل تنظیمات رنگ و قطر.
 
-The result is that a delegated ink trail is drawn ahead of the default browser rendering on the app's behalf, in the specified style, until the next time it receives a `pointermove` event.
+نتیجه این می‌شود که یک رد جوهر تفویض‌شده، به نمایندگی از برنامه و با سبک مشخص‌شده، جلوتر از رندر پیش‌فرض مرورگر رسم می‌شود و تا دریافت رویداد `pointermove` بعدی ادامه می‌یابد.
 
 #### HTML
 
@@ -113,14 +107,14 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Drawing an ink trail")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
