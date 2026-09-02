@@ -1,11 +1,5 @@
 ---
 title: "IDBKeyRange: bound() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBKeyRange/bound_static"
-status: "needs-translation"
----
-
----
-title: "IDBKeyRange: bound() static method"
 short-title: bound()
 slug: Web/API/IDBKeyRange/bound_static
 page-type: web-api-static-method
@@ -14,12 +8,9 @@ browser-compat: api.IDBKeyRange.bound_static
 
 {{ APIRef("IndexedDB") }} {{AvailableInWorkers}}
 
-The **`bound()`** static method of the {{domxref("IDBKeyRange")}}
-interface creates a new key range with the specified upper and lower bounds. The
-bounds can be open (that is, the bounds exclude the endpoint values) or closed (that
-is, the bounds include the endpoint values). By default, the bounds are closed.
+متد ایستای **`bound()`** در رابط {{domxref("IDBKeyRange")}} یک محدوده کلید جدید با کران‌های بالا و پایین مشخص شده ایجاد می‌کند. کران‌ها می‌توانند باز (یعنی کران‌ها مقادیر نقطه پایانی را حذف کنند) یا بسته (یعنی کران‌ها مقادیر نقطه پایانی را شامل شوند) باشند. به طور پیش‌فرض، کران‌ها بسته هستند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 IDBKeyRange.bound(lower, upper)
@@ -27,46 +18,35 @@ IDBKeyRange.bound(lower, upper, lowerOpen)
 IDBKeyRange.bound(lower, upper, lowerOpen, upperOpen)
 ```
 
-### Parameters
+### پارامترها
 
 - `lower`
-  - : specifies the lower bound of the new key range.
+  - : کران پایینی محدوده کلید جدید را مشخص می‌کند.
 - `upper`
-  - : specifies the upper bound of the new key range.
+  - : کران بالایی محدوده کلید جدید را مشخص می‌کند.
 - `lowerOpen` {{optional_inline}}
-  - : indicates whether the lower bound excludes the endpoint value. The default is
-    false.
+  - : نشان می‌دهد آیا کران پایینی مقدار نقطه پایانی را حذف می‌کند. پیش‌فرض false است.
 - `upperOpen` {{optional_inline}}
-  - : Indicates whether the upper bound excludes the endpoint value. The default is
-    false.
+  - : نشان می‌دهد آیا کران بالایی مقدار نقطه پایانی را حذف می‌کند. پیش‌فرض false است.
 
-### Return value
+### مقدار بازگشتی
 
-{{domxref("IDBKeyRange")}}: The newly created key range.
+{{domxref("IDBKeyRange")}}: محدوده کلید جدید ایجاد شده.
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `DataError` {{domxref("DOMException")}}
-  - : Thrown when one of the following conditions is met:
-    - The lower or upper parameters were not passed a valid key.
-    - The lower key is greater than the upper key.
-    - The lower key and upper key match and either of the bounds are open.
+  - : زمانی پرتاب می‌شود که یکی از شرایط زیر برقرار باشد:
+    - پارامترهای پایینی یا بالایی یک کلید معتبر دریافت نکرده باشند.
+    - کلید پایینی بزرگتر از کلید بالایی باشد.
+    - کلید پایینی و کلید بالایی برابر باشند و یکی از کران‌ها باز باشد.
 
-## Examples
+## مثال‌ها
 
-The following example illustrates how you'd use a bound key range. Here we declare
-a `keyRangeValue = IDBKeyRange.bound("A", "F");` — a range between values of
-"A" and "F". We open a transaction (using {{domxref("IDBTransaction")}}) and an object
-store, and open a Cursor with {{domxref("IDBObjectStore.openCursor")}},
-declaring `keyRangeValue` as its optional key range value. This means that
-the cursor will only retrieve records with keys inside that range. This range includes
-the values "A" and "F", as we haven't declared that they should be open bounds. If we
-used `IDBKeyRange.bound("A", "F", true, true);`, then the range would not
-include `"A"` and `"F"`, only the values between them.
+مثال زیر نحوه استفاده از یک محدوده کلید کران‌دار را نشان می‌دهد. در اینجا ما یک `keyRangeValue = IDBKeyRange.bound("A", "F");` اعلام می‌کنیم — یک محدوده بین مقادیر "A" و "F". یک تراکنش (با استفاده از {{domxref("IDBTransaction")}}) و یک Object Store باز می‌کنیم، و یک Cursor با {{domxref("IDBObjectStore.openCursor")}} باز می‌کنیم و `keyRangeValue` را به عنوان مقدار محدوده کلید اختیاری آن اعلام می‌کنیم. این بدان معناست که Cursor فقط رکوردهایی با کلیدهای داخل آن محدوده را دریافت می‌کند. این محدوده شامل مقادیر "A" و "F" نیز می‌شود، زیرا ما اعلام نکرده‌ایم که کران‌ها باز باشند. اگر از `IDBKeyRange.bound("A", "F", true, true);` استفاده می‌کردیم، آنگاه محدوده شامل `"A"` و `"F"` نمی‌شد، فقط مقادیر بین آنها را شامل می‌شد.
 
 > [!NOTE]
-> For a more complete example allowing you to experiment with
-> key range, have a look at the idbkeyrange directory in the [indexeddb-examples](https://github.com/mdn/dom-examples/tree/main/indexeddb-examples/idbkeyrange) repo. (View the example [live](https://mdn.github.io/dom-examples/indexeddb-examples/idbkeyrange/) too.
+> برای یک مثال کامل‌تر که به شما امکان آزمایش با محدوده کلید را می‌دهد، به دایرکتوری idbkeyrange در مخزن [indexeddb-examples](https://github.com/mdn/dom-examples/tree/main/indexeddb-examples/idbkeyrange) مراجعه کنید. (همچنین مثال را به صورت [زنده](https://mdn.github.io/dom-examples/indexeddb-examples/idbkeyrange/) مشاهده کنید.)
 
 ```js
 function displayData() {
@@ -90,20 +70,20 @@ function displayData() {
 }
 ```
 
-## Specifications
+## مشخصات (Specifications)
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر (Browser compatibility)
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم یک محدوده از کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و ایجاد تغییرات در داده‌های خود: {{domxref("IDBObjectStore")}}
+- استفاده از Cursorها: {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
