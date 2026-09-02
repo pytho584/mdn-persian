@@ -1,11 +1,5 @@
 ---
 title: "MIDIPort: statechange event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MIDIPort/statechange_event"
-status: "needs-translation"
----
-
----
-title: "MIDIPort: statechange event"
 short-title: statechange
 slug: Web/API/MIDIPort/statechange_event
 page-type: web-api-event
@@ -14,11 +8,11 @@ browser-compat: api.MIDIPort.statechange_event
 
 {{securecontext_header}}{{APIRef("Web MIDI API")}}
 
-The **`statechange`** event of the {{domxref("MIDIPort")}} interface is fired when a port changes from open to closed, or closed to open.
+رویداد **`statechange`** از رابط {{domxref("MIDIPort")}} وقتی فعال می‌شود که یک پورت از حالت باز به بسته، یا از بسته به باز تغییر وضعیت دهد.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای استفاده، نام رویداد را در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} به کار ببرید، یا یک ویژگی هندلر رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("statechange", (event) => { })
@@ -26,15 +20,15 @@ addEventListener("statechange", (event) => { })
 onstatechange = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("MIDIConnectionEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("MIDIConnectionEvent")}}. از {{domxref("Event")}} ارث می‌برد.
 
 {{InheritanceDiagram("MIDIConnectionEvent")}}
 
-## Example
+## مثال
 
-In the following example the current {{domxref("MIDIPort.state")}} is logged each time it changes.
+در مثال زیر، وضعیت فعلی {{domxref("MIDIPort.state")}} هر بار که تغییر می‌کند در کنسول ثبت می‌شود.
 
 ```js
 port.onstatechange = (event) => {
@@ -42,10 +36,10 @@ port.onstatechange = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
