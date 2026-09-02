@@ -1,11 +1,5 @@
 ---
 title: "MessagePort: close() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MessagePort/close"
-status: "needs-translation"
----
-
----
-title: "MessagePort: close() method"
 short-title: close()
 slug: Web/API/MessagePort/close
 page-type: web-api-instance-method
@@ -14,9 +8,7 @@ browser-compat: api.MessagePort.close
 
 {{APIRef("Channel Messaging API")}} {{AvailableInWorkers}}
 
-The **`close()`** method of the {{domxref("MessagePort")}}
-interface disconnects the port, so it is no longer active. This stops the flow of
-messages to that port.
+متد **`close()`** از رابط {{domxref("MessagePort")}} پورت را قطع می‌کند، به طوری که دیگر فعال نیست. این کار جریان پیام‌ها به آن پورت را متوقف می‌کند.
 
 ## Syntax
 
@@ -24,19 +16,17 @@ messages to that port.
 close()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-In the following code block, you can see a `handleMessage` handler function,
-run when a message is sent back to this document using
-{{domxref("EventTarget.addEventListener")}}.
+در بلوک کد زیر، می‌توانید یک تابع مدیریت‌کننده به نام `handleMessage` را ببینید که هنگام ارسال پیام به این سند با استفاده از {{domxref("EventTarget.addEventListener")}} اجرا می‌شود.
 
 ```js
 channel.port1.addEventListener("message", handleMessage);
@@ -48,20 +38,20 @@ function handleMessage(e) {
 channel.port1.start();
 ```
 
-You could stop messages being sent at any time using
+می‌توانید در هر زمانی ارسال پیام را با استفاده از این کد متوقف کنید:
 
 ```js
 channel.port1.close();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using channel messaging](/en-US/docs/Web/API/Channel_Messaging_API/Using_channel_messaging)
+- [استفاده از پیام‌رسانی کانال](/en-US/docs/Web/API/Channel_Messaging_API/Using_channel_messaging)
