@@ -1,7 +1,5 @@
 ---
 title: "MediaTrackConstraints: autoGainControl property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/autoGainControl"
-status: "needs-translation"
 ---
 
 ---
@@ -14,39 +12,29 @@ browser-compat: api.MediaStreamTrack.applyConstraints.autoGainControl_constraint
 
 {{APIRef("Media Capture and Streams")}}
 
-The {{domxref("MediaTrackConstraints")}} dictionary's **`autoGainControl`** property is a [`ConstrainBoolean`](/en-US/docs/Web/API/MediaTrackConstraints#constrainboolean) describing the requested or mandatory constraints placed
-upon the value of the {{domxref("MediaTrackSettings.autoGainControl", "autoGainControl")}} constrainable property.
+ویژگی **`autoGainControl`** در دیکشنری {{domxref("MediaTrackConstraints")}} یک [`ConstrainBoolean`](/en-US/docs/Web/API/MediaTrackConstraints#constrainboolean) است که محدودیت‌های درخواستی یا اجباری اعمال‌شده بر مقدار ویژگی قابل‌محدودسازیِ {{domxref("MediaTrackSettings.autoGainControl", "autoGainControl")}} را توصیف می‌کند.
 
-If needed, you can determine whether or not this constraint is supported by checking
-the value of {{domxref("MediaTrackSupportedConstraints.autoGainControl")}} as returned
-by a call to {{domxref("MediaDevices.getSupportedConstraints()")}}. However, typically
-this is unnecessary since browsers will ignore any constraints they're unfamiliar with.
+در صورت نیاز، می‌توانید با بررسی مقدار {{domxref("MediaTrackSupportedConstraints.autoGainControl")}} که توسط یک فراخوانی به {{domxref("MediaDevices.getSupportedConstraints()")}} بازگردانده می‌شود، مشخص کنید که آیا این محدودیت پشتیبانی می‌شود یا خیر. با این حال، معمولاً این کار ضروری نیست؛ زیرا مرورگرها هر محدودیتی را که نمی‌شناسند نادیده می‌گیرند.
 
-Automatic gain control is typically a feature provided by microphones, although it can
-be provided by other input sources as well.
+کنترل خودکار بهره (Automatic Gain Control) معمولاً قابلیتی است که میکروفون‌ها ارائه می‌دهند، اگرچه ممکن است منابع ورودی دیگری نیز آن را فراهم کنند.
 
-## Value
+## مقدار
 
-If this value is a simple `true` or `false`, the user agent will
-attempt to obtain media with automatic gain control enabled or disabled as specified, if
-possible, but will not fail if this can't be done. If, instead, the value is given as an
-object with an `exact` field, that field's Boolean value indicates a required
-setting for the automatic gain control feature; if it can't be met, then the request
-will result in an error.
+اگر این مقدار یک `true` یا `false` ساده باشد، عامل کاربر (user agent) تلاش می‌کند تا رسانه را با کنترل خودکار بهره فعال یا غیرفعال، همان‌طور که مشخص شده، به دست آورد؛ اما اگر چنین کاری ممکن نباشد، درخواست شکست نمی‌خورد. اگر به‌جای آن مقدار به‌صورت یک شیء با فیلد `exact` داده شود، مقدار بولیِ آن فیلد، تنظیمِ اجباریِ قابلیت کنترل خودکار بهره را مشخص می‌کند؛ اگر این تنظیم قابل برآورده‌شدن نباشد، درخواست منجر به خطا می‌شود.
 
-## Examples
+## مثال‌ها
 
-See the [Constraint exerciser](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#example_constraint_exerciser) example.
+نمونهٔ [Constraint exerciser](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#example_constraint_exerciser) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
 - [Capabilities, constraints, and settings](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints)
