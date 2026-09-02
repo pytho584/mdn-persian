@@ -1,11 +1,5 @@
 ---
 title: "KeyboardEvent: KeyboardEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/KeyboardEvent"
-status: "needs-translation"
----
-
----
-title: "KeyboardEvent: KeyboardEvent() constructor"
 short-title: KeyboardEvent()
 slug: Web/API/KeyboardEvent/KeyboardEvent
 page-type: web-api-constructor
@@ -14,60 +8,59 @@ browser-compat: api.KeyboardEvent.KeyboardEvent
 
 {{APIRef("UI Events")}}
 
-The **`KeyboardEvent()`** constructor creates a new
-{{domxref("KeyboardEvent")}} object.
+سازنده **`KeyboardEvent()`** یک شیء جدید از نوع {{domxref("KeyboardEvent")}} می‌سازد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 new KeyboardEvent(type)
 new KeyboardEvent(type, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string with the name of the event.
-    It is case-sensitive and browsers set it to `keydown`, `keyup`, or `keypress`.
+  - : یک رشته (string) با نام رویداد.
+    این نام به حروف بزرگ و کوچک حساس است و مرورگرها آن را روی `keydown`، `keyup` یا `keypress` تنظیم می‌کنند.
 - `options` {{optional_inline}}
-  - : An object that, _in addition of the properties defined in {{domxref("UIEvent/UIEvent", "UIEvent()")}}_, can have the following properties:
+  - : یک شیء که _علاوه بر ویژگی‌های تعریف‌شده در {{domxref("UIEvent/UIEvent", "UIEvent()")}}_، می‌تواند ویژگی‌های زیر را داشته باشد:
     - `key` {{optional_inline}}
-      - : A string, defaulting to `""`, that sets the value of {{domxref("KeyboardEvent.key")}}.
+      - : یک رشته، پیش‌فرض `""`، که مقدار {{domxref("KeyboardEvent.key")}} را تنظیم می‌کند.
     - `code` {{optional_inline}}
-      - : A string, defaulting to `""`, that sets the value of {{domxref("KeyboardEvent.code")}}.
+      - : یک رشته، پیش‌فرض `""`، که مقدار {{domxref("KeyboardEvent.code")}} را تنظیم می‌کند.
     - `location` {{optional_inline}}
-      - : A number, defaulting to `0`, that sets the value of {{domxref("KeyboardEvent.location")}}.
+      - : یک عدد، پیش‌فرض `0`، که مقدار {{domxref("KeyboardEvent.location")}} را تنظیم می‌کند.
     - `repeat` {{optional_inline}}
-      - : A boolean value, defaulting to `false`, that sets the value of {{domxref("KeyboardEvent.repeat")}}.
+      - : یک مقدار بولی (boolean)، پیش‌فرض `false`، که مقدار {{domxref("KeyboardEvent.repeat")}} را تنظیم می‌کند.
     - `isComposing` {{optional_inline}}
-      - : A boolean value, defaulting to `false`, that sets the value of {{domxref("KeyboardEvent.isComposing")}}.
+      - : یک مقدار بولی، پیش‌فرض `false`، که مقدار {{domxref("KeyboardEvent.isComposing")}} را تنظیم می‌کند.
     - `charCode` {{optional_inline}} {{deprecated_inline}}
-      - : A number, defaulting to `0`, that sets the value of the deprecated {{domxref("KeyboardEvent.charCode")}}.
+      - : یک عدد، پیش‌فرض `0`، که مقدار ویژگی منسوخ‌شده {{domxref("KeyboardEvent.charCode")}} را تنظیم می‌کند.
     - `keyCode` {{optional_inline}} {{deprecated_inline}}
-      - : A number, defaulting to `0`, that sets the value of the deprecated {{domxref("KeyboardEvent.keyCode")}}.
+      - : یک عدد، پیش‌فرض `0`، که مقدار ویژگی منسوخ‌شده {{domxref("KeyboardEvent.keyCode")}} را تنظیم می‌کند.
     - `which` {{optional_inline}} {{deprecated_inline}}
-      - : A number, defaulting to `0`, that sets the value of the deprecated {{domxref("UIEvent.which")}}.
+      - : یک عدد، پیش‌فرض `0`، که مقدار ویژگی منسوخ‌شده {{domxref("UIEvent.which")}} را تنظیم می‌کند.
     - `ctrlKey` {{optional_inline}}
-      - : A boolean value, defaulting to `false`, that sets the value of {{domxref("KeyboardEvent.ctrlKey")}}.
+      - : یک مقدار بولی، پیش‌فرض `false`، که مقدار {{domxref("KeyboardEvent.ctrlKey")}} را تنظیم می‌کند.
     - `shiftKey` {{optional_inline}}
-      - : A boolean value, defaulting to `false`, that sets the value of {{domxref("KeyboardEvent.shiftKey")}}.
+      - : یک مقدار بولی، پیش‌فرض `false`، که مقدار {{domxref("KeyboardEvent.shiftKey")}} را تنظیم می‌کند.
     - `altKey` {{optional_inline}}
-      - : A boolean value, defaulting to `false`, that sets the value of {{domxref("KeyboardEvent.altKey")}}.
+      - : یک مقدار بولی، پیش‌فرض `false`، که مقدار {{domxref("KeyboardEvent.altKey")}} را تنظیم می‌کند.
     - `metaKey` {{optional_inline}}
-      - : A boolean value, defaulting to `false`, that sets the value of {{domxref("KeyboardEvent.metaKey")}}.
+      - : یک مقدار بولی، پیش‌فرض `false`، که مقدار {{domxref("KeyboardEvent.metaKey")}} را تنظیم می‌کند.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("KeyboardEvent")}} object.
+یک شیء جدید از نوع {{domxref("KeyboardEvent")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("KeyboardEvent")}}, the interface of the objects it constructs.
+- {{domxref("KeyboardEvent")}}، رابط (interface) اشیایی که این سازنده می‌سازد.
