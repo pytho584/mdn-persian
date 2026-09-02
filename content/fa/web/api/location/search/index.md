@@ -1,11 +1,5 @@
 ---
 title: "Location: search property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Location/search"
-status: "needs-translation"
----
-
----
-title: "Location: search property"
 short-title: search
 slug: Web/API/Location/search
 page-type: web-api-instance-property
@@ -14,23 +8,19 @@ browser-compat: api.Location.search
 
 {{ApiRef("Location")}}
 
-The **`search`** property of the {{domxref("Location")}} interface is a search string, also called a _query string_, that is a string containing a `"?"` followed by the parameters of the location's URL. If the URL does not have a search query, this property contains an empty string, `""`.
+ویژگی **`search`** در رابط {{domxref("Location")}} یک رشتهٔ جست‌وجو است که «رشتهٔ کوئری» (query string) نیز نامیده می‌شود. این ویژگی رشته‌ای است شامل `"?"` و به‌دنبال آن پارامترهای URLِ همان مکان. اگر URL دارای کوئری جست‌وجو نباشد، مقدار این ویژگی یک رشتهٔ خالی (`""`) خواهد بود.
 
-This property can be set to change the query string of the URL. When setting, a single `"?"` prefix is added to the provided value, if not already present. Setting it to `""` removes the query string.
+این ویژگی قابل تنظیم است تا رشتهٔ کوئریِ URL تغییر کند. هنگام تنظیم، یک پیشوند `"?"` به مقدار داده‌شده اضافه می‌شود، مگر اینکه از قبل وجود داشته باشد. تنظیم آن روی `""` رشتهٔ کوئری را حذف می‌کند.
 
-The query is {{Glossary("Percent-encoding", "percent-encoded")}} when setting but not percent-decoded when reading.
+زمانی که این ویژگی تنظیم می‌شود، کوئری به‌صورت {{Glossary("Percent-encoding", "percent-encoded")}} درمی‌آید؛ اما هنگام خواندن، درصد-کدگشایی نمی‌شود.
 
-Modern browsers provide
-[`URLSearchParams`](/en-US/docs/Web/API/URLSearchParams/get#examples)
-and
-[`URL.searchParams`](/en-US/docs/Web/API/URL/searchParams#examples)
-to make it easy to parse out the parameters from the querystring.
+مرورگرهای مدرن، [`URLSearchParams`](/en-US/docs/Web/API/URLSearchParams/get#examples) و [`URL.searchParams`](/en-US/docs/Web/API/URL/searchParams#examples) را فراهم می‌کنند تا تجزیه‌کردن پارامترها از رشتهٔ کوئری آسان شود.
 
-See {{domxref("URL.search")}} for more information.
+برای اطلاعات بیشتر، {{domxref("URL.search")}} را ببینید.
 
 ## Value
 
-A string.
+یک رشته.
 
 ## Examples
 
