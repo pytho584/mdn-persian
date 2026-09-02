@@ -1,11 +1,5 @@
 ---
 title: "Navigation: navigate event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigation/navigate_event"
-status: "needs-translation"
----
-
----
-title: "Navigation: navigate event"
 short-title: navigate
 slug: Web/API/Navigation/navigate_event
 page-type: web-api-event
@@ -14,11 +8,11 @@ browser-compat: api.Navigation.navigate_event
 
 {{APIRef("Navigation API")}}
 
-The **`navigate`** event of the {{domxref("Navigation")}} interface is fired when [any type of navigation](https://github.com/WICG/navigation-api#appendix-types-of-navigations) is initiated, allowing you to intercept as required.
+رویداد **`navigate`** از رابط {{domxref("Navigation")}} زمانی فعال می‌شود که [هر نوع ناوبری](https://github.com/WICG/navigation-api#appendix-types-of-navigations) آغاز شود و به شما امکان می‌دهد در صورت نیاز آن را رهگیری کنید.
 
 ## Syntax
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("navigate", (event) => { })
@@ -28,7 +22,7 @@ onnavigate = (event) => { }
 
 ## Event type
 
-A {{domxref("NavigateEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("NavigateEvent")}}. از {{domxref("Event")}} ارث‌بری می‌کند.
 
 {{InheritanceDiagram("NavigateEvent")}}
 
@@ -63,11 +57,11 @@ navigation.addEventListener("navigate", (event) => {
 ```
 
 > [!NOTE]
-> Before the Navigation API was available, to do something similar you'd have to listen for all click events on links, run `event.preventDefault()`, perform the appropriate {{domxref("History.pushState()")}} call, then set up the page view based on the new URL. And this wouldn't handle all navigations — only user-initiated link clicks.
+> قبل از وجود Navigation API، برای انجام کاری مشابه باید به تمام رویدادهای کلیک روی لینک‌ها گوش می‌دادید، `event.preventDefault()` را اجرا می‌کردید، فراخوانی مناسب {{domxref("History.pushState()")}} را انجام می‌دادید، و سپس نمای صفحه را بر اساس URL جدید تنظیم می‌کردید. و این کار همه ناوبری‌ها را مدیریت نمی‌کرد — فقط کلیک‌های لینک که توسط کاربر آغاز شده‌اند.
 
 ### Handling scrolling using `scroll()`
 
-In this example of intercepting a navigation, the `handler()` function starts by fetching and rendering some article content, but then fetches and renders some secondary content afterwards. It makes sense to scroll the page to the main article content as soon as it is available so the user can interact with it, rather than waiting until the secondary content is also rendered. To achieve this, we have added a {{domxref("NavigateEvent.scroll", "scroll()")}} call between the two.
+در این مثال از رهگیری یک ناوبری، تابع `handler()` با واکشی و رندر کردن محتوای مقاله شروع می‌کند، اما سپس محتوای ثانویه‌ای را واکشی و رندر می‌کند. منطقی است که به محض در دسترس بودن محتوای اصلی مقاله، صفحه را به آن اسکرول کنید تا کاربر بتواند با آن تعامل داشته باشد، به جای اینکه منتظر بمانید تا محتوای ثانویه نیز رندر شود. برای رسیدن به این هدف، یک فراخوانی {{domxref("NavigateEvent.scroll", "scroll()")}} بین این دو اضافه کرده‌ایم.
 
 ```js
 navigation.addEventListener("navigate", (event) => {
