@@ -1,11 +1,5 @@
 ---
 title: "Navigation: back() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigation/back"
-status: "needs-translation"
----
-
----
-title: "Navigation: back() method"
 short-title: back()
 slug: Web/API/Navigation/back
 page-type: web-api-instance-method
@@ -14,39 +8,38 @@ browser-compat: api.Navigation.back
 
 {{APIRef("Navigation API")}}
 
-The **`back()`** method of the
-{{domxref("Navigation")}} interface navigates backwards by one entry in the navigation history.
+متد **`back()`** از رابط {{domxref("Navigation")}} یک ورودی به عقب در تاریخچهٔ ناوبری حرکت می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 back(options)
 ```
 
-### Parameters
+### پارامترها
 
 - `options` {{optional_inline}}
-  - : An options object containing the following properties:
+  - : یک شیء گزینه‌ها که شامل ویژگی‌های زیر است:
     - `info` {{optional_inline}}
-      - : Developer-defined information to be passed along to the {{domxref("Navigation/navigate_event", "navigate")}} event, made available in {{domxref("NavigateEvent.info")}}. This can be any data type. You might, for example, wish to display newly-navigated content with a different animation depending on how it was navigated to (swipe left, swipe right, or go home). A string indicating which animation to use could be passed in as `info`.
+      - : اطلاعاتی تعریف‌شده توسط توسعه‌دهنده که به رویداد {{domxref("Navigation/navigate_event", "navigate")}} منتقل می‌شود و در {{domxref("NavigateEvent.info")}} در دسترس قرار می‌گیرد. این می‌تواند هر نوع داده‌ای باشد. برای مثال، ممکن است بخواهید محتوای تازه‌ناوبری‌شده را با انیمیشنی متفاوت بسته به نحوهٔ ناوبری به آن (کشیدن به چپ، کشیدن به راست، یا رفتن به صفحهٔ اصلی) نمایش دهید. یک رشته که نشان‌دهندهٔ انیمیشن مورد استفاده است می‌تواند به عنوان `info` ارسال شود.
 
-### Return value
+### مقدار بازگشتی
 
-An object with the following properties:
+یک شیء با ویژگی‌های زیر:
 
 - `committed`
-  - : A {{jsxref("Promise")}} which will fulfill when the visible URL has changed and a new {{domxref("NavigationHistoryEntry")}} has been created.
+  - : یک {{jsxref("Promise")}} که زمانی که URL قابل مشاهده تغییر کرده و یک {{domxref("NavigationHistoryEntry")}} جدید ایجاد شده است، برآورده می‌شود.
 - `finished`
-  - : A {{jsxref("Promise")}} which will fulfill when all promises returned by the `intercept()` handler are fulfilled. This is equivalent to the {{domxref("NavigationTransition.finished")}} promise fulfilling, when the {{domxref("Navigation/navigatesuccess_event", "navigatesuccess")}} event fires.
+  - : یک {{jsxref("Promise")}} که زمانی که تمام قول‌های بازگردانده شده توسط کنترل‌کنندهٔ `intercept()` برآورده شوند، برآورده می‌شود. این معادل با برآورده شدن قول {{domxref("NavigationTransition.finished")}} زمانی است که رویداد {{domxref("Navigation/navigatesuccess_event", "navigatesuccess")}} رخ می‌دهد.
 
-Either one of these promises rejects if the navigation has failed for some reason.
+اگر ناوبری به هر دلیلی ناموفق باشد، هر یک از این قول‌ها رد می‌شوند.
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the {{domxref("Navigation.currentEntry")}}'s {{domxref("NavigationHistoryEntry.index")}} value is -1 or 0, i.e., either the current {{domxref("Document")}} is not yet active, or the current history entry is the first one in the history, meaning that backwards navigation is not possible, or if the current {{domxref("Document")}} is unloading.
+  - : اگر مقدار {{domxref("Navigation.currentEntry")}}'s {{domxref("NavigationHistoryEntry.index")}} برابر -1 یا 0 باشد، یعنی یا {{domxref("Document")}} فعلی هنوز فعال نیست، یا ورودی تاریخچهٔ فعلی اولین ورودی در تاریخچه است، به این معنا که ناوبری به عقب ممکن نیست، یا اگر {{domxref("Document")}} فعلی در حال بارگیری‌زدایی (unloading) است، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
 ```js
 async function backHandler() {
@@ -70,15 +63,15 @@ async function forwardHandler() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
-- [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
+- [مسیریابی مدرن سمت کلاینت: API Navigation](https://developer.chrome.com/docs/web-platform/navigation-api/)
+- [توضیح API Navigation](https://github.com/WICG/navigation-api/blob/main/README.md)
