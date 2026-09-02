@@ -1,11 +1,5 @@
 ---
 title: "LockManager: request() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/LockManager/request"
-status: "needs-translation"
----
-
----
-title: "LockManager: request() method"
 short-title: request()
 slug: Web/API/LockManager/request
 page-type: web-api-instance-method
@@ -14,21 +8,15 @@ browser-compat: api.LockManager.request
 
 {{APIRef("Web Locks API")}}{{securecontext_header}} {{AvailableInWorkers}}
 
-The **`request()`** method of the {{domxref("LockManager")}} interface requests a {{domxref('Lock')}} object with parameters specifying its name and characteristics.
-The requested `Lock` is passed to a callback, while the function itself returns a {{jsxref('Promise')}} that resolves (or rejects) with the result of the callback after the lock is released, or rejects if the request is aborted.
+متد **`request()`** از رابط {{domxref("LockManager")}} یک شی {{domxref('Lock')}} را با پارامترهایی که نام و ویژگی‌های آن را مشخص می‌کنند درخواست می‌کند. `Lock` درخواست‌شده به یک callback ارسال می‌شود، در حالی که خود تابع یک {{jsxref('Promise')}} برمی‌گرداند که پس از آزاد شدن قفل، با نتیجه callback حل (resolve) می‌شود (یا reject می‌شود)، یا اگر درخواست لغو شود، reject می‌شود.
 
-The `mode` property of the `options` parameter may be either `"exclusive"` or `"shared"`.
+ویژگی `mode` پارامتر `options` می‌تواند `"exclusive"` یا `"shared"` باشد.
 
-Request an `"exclusive"` lock when it should only be held by one code instance at a time.
-This applies to code in both tabs and workers. Use this to represent mutually exclusive access to a resource.
-When an `"exclusive"` lock for a given name is held, no other lock with the same name can be held.
+هنگامی‌که قفل باید تنها توسط یک نمونه از کد در یک زمان نگه داشته شود، یک قفل `"exclusive"` درخواست کنید. این برای کد در تب‌ها و workers اعمال می‌شود. از این برای نمایش دسترسی متقابل انحصاری (mutually exclusive) به یک منبع استفاده کنید. وقتی یک قفل `"exclusive"` برای یک نام مشخص نگه داشته شده است، هیچ قفل دیگری با همان نام نمی‌تواند نگه داشته شود.
 
-Request a `"shared"` lock when multiple instances of the code can share access to a resource.
-When a `"shared"` lock for a given name is held, other `"shared"` locks for the same name can be granted, but no `"exclusive"` locks with that name can be held or granted.
+هنگامی‌که چندین نمونه از کد می‌توانند دسترسی به یک منبع را به اشتراک بگذارند، یک قفل `"shared"` درخواست کنید. وقتی یک قفل `"shared"` برای یک نام مشخص نگه داشته شده است، قفل‌های `"shared"` دیگری با همان نام می‌توانند اعطا شوند، اما هیچ قفل `"exclusive"` با آن نام نمی‌تواند نگه داشته یا اعطا شود.
 
-This shared/exclusive lock pattern is common in database transaction architecture, for example to allow multiple simultaneous readers (each requests a `"shared"` lock) but only one writer (a single `"exclusive"` lock).
-This is known as the readers-writer pattern.
-In the [IndexedDB API](/en-US/docs/Web/API/IndexedDB_API), this is exposed as `"readonly"` and `"readwrite"` transactions which have the same semantics.
+این الگوی قفل shared/exclusive در معماری تراکنش‌های پایگاه داده رایج است، به عنوان مثال برای اجازه دادن به چندین خواننده هم‌زمان (هر کدام یک قفل `"shared"` درخواست می‌کنند) اما تنها یک نویسنده (یک قفل `"exclusive"`). این به عنوان الگوی readers-writer شناخته می‌شود. در [API IndexedDB](/en-US/docs/Web/API/IndexedDB_API)، این به صورت تراکنش‌های `"readonly"` و `"readwrite"` با همان معناشناسی ارائه شده است.
 
 ## Syntax
 
@@ -40,60 +28,49 @@ request(name, options, callback)
 ### Parameters
 
 - `name`
-  - : An identifier for the lock you want to request.
+  - : یک شناسه برای قفلی که می‌خواهید درخواست کنید.
 
 - `options` {{optional_inline}}
-  - : An object describing characteristics of the lock you want to create.
-    Valid values are:
+  - : یک شی که ویژگی‌های قفلی که می‌خواهید ایجاد کنید را توصیف می‌کند. مقادیر معتبر عبارتند از:
     - `mode` {{optional_inline}}
-      - : Either `"exclusive"` or `"shared"`.
-        The default value is `"exclusive"`.
+      - : یا `"exclusive"` یا `"shared"`. مقدار پیش‌فرض `"exclusive"` است.
 
     - `ifAvailable` {{optional_inline}}
-      - : If `true`, the lock request will only be granted if it is not already held.
-        If it cannot be granted, the callback will be invoked with `null` instead of a `Lock` instance.
-        The default value is `false`.
+      - : اگر `true` باشد، درخواست قفل تنها در صورتی اعطا می‌شود که از قبل نگه داشته نشده باشد. اگر قابل اعطا نباشد، callback با `null` به جای یک نمونه `Lock` فراخوانی می‌شود. مقدار پیش‌فرض `false` است.
 
     - `steal` {{optional_inline}}
-      - : If `true`, then any held locks with the same name will be released, and the request will be granted, preempting any queued requests for it.
-        The default value is `false`.
+      - : اگر `true` باشد، هر قفل نگه‌داشته شده با همان نام آزاد می‌شود و درخواست اعطا می‌شود و از هر درخواست صف‌بندی شده برای آن پیشی می‌گیرد. مقدار پیش‌فرض `false` است.
 
-        > [!WARNING]
-        > Use with care!
-        > Code that was previously running inside the lock continues to run, and may clash with the code that now holds the lock.
+        > [!WARNING] با احتیاط استفاده کنید! کدی که قبلاً درون قفل در حال اجرا بود به کار خود ادامه می‌دهد و ممکن است با کدی که اکنون قفل را در اختیار دارد تداخل کند.
 
     - `signal` {{optional_inline}}
-      - : An {{domxref("AbortSignal")}} (the {{domxref("AbortController.signal", "signal")}} property of an {{domxref("AbortController")}});
-        if specified and the {{domxref("AbortController")}} is aborted, the lock request is dropped if it was not already granted.
+      - : یک {{domxref("AbortSignal")}} (ویژگی {{domxref("AbortController.signal", "signal")}} یک {{domxref("AbortController")}}); اگر مشخص شده باشد و {{domxref("AbortController")}} لغو (abort) شود، درخواست قفل در صورت عدم اعطا شدن، رها می‌شود.
 
 - `callback`
-  - : Method called when the lock is granted.
-    The lock is automatically released when the callback returns (or an exception is thrown).
-    Usually the callback is an async function, which causes the lock to be released only when the async function has completely finished.
+  - : متدی که هنگام اعطای قفل فراخوانی می‌شود. قفل به طور خودکار زمانی که callback باز می‌گردد (یا یک استثنا پرتاب می‌شود) آزاد می‌شود. معمولاً callback یک تابع ناهمگام (async) است که باعث می‌شود قفل تنها زمانی آزاد شود که تابع ناهمگام کاملاً به پایان رسیده باشد.
 
 ### Return value
 
-A {{jsxref('Promise')}} that resolves (or rejects) with the result of the callback after the lock is released, or rejects if the request is aborted.
+یک {{jsxref('Promise')}} که پس از آزاد شدن قفل با نتیجه callback حل می‌شود (یا reject می‌شود)، یا اگر درخواست لغو شود، reject می‌شود.
 
 ### Exceptions
 
-This method may return a promise rejected with a {{domxref("DOMException")}} of one of the following types:
+این متد ممکن است یک Promise رد شده با یک {{domxref("DOMException")}} از یکی از انواع زیر بازگرداند:
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the environments document is not fully active.
+  - : اگر سند محیط به طور کامل فعال نباشد پرتاب می‌شود.
 - `SecurityError` {{domxref("DOMException")}}
-  - : Thrown if a lock manager cannot be obtained for the current environment.
+  - : اگر نتوان یک مدیر قفل برای محیط فعلی به دست آورد پرتاب می‌شود.
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Thrown if `name` starts with a hyphen (`-`), both options `steal` and `ifAvailable` are `true`, or if option `signal` exists and _either_ option `steal` or `ifAvailable` is `true`.
+  - : اگر `name` با خط تیره (`-`) شروع شود، هر دو گزینه `steal` و `ifAvailable` `true` باشند، یا اگر گزینه `signal` وجود داشته باشد و _یا_ گزینه `steal` یا `ifAvailable` `true` باشد، پرتاب می‌شود.
 - `AbortError` {{domxref("DOMException")}}
-  - : Thrown if the option `signal` exists and is aborted.
+  - : اگر گزینه `signal` وجود داشته باشد و لغو شود پرتاب می‌شود.
 
 ## Examples
 
 ### General Example
 
-The following example shows the basic use of the `request()` method with an asynchronous function as the callback.
-Once the callback is invoked, no other running code on this origin can hold `my_resource` until the callback returns.
+مثال زیر استفاده پایه از متد `request()` را با یک تابع ناهمگام به عنوان callback نشان می‌دهد. پس از فراخوانی callback، هیچ کد در حال اجرای دیگری در این origin نمی‌تواند `my_resource` را تا زمانی که callback بازگردد، نگه دارد.
 
 ```js
 await navigator.locks.request("my_resource", async (lock) => {
@@ -103,10 +80,7 @@ await navigator.locks.request("my_resource", async (lock) => {
 
 ### `mode` example
 
-The following example shows how to use the `mode` option for readers and writers.
-
-Notice that both functions use a lock called `my_resource`.
-The `doRead()` requests a lock in `'shared'` mode meaning that multiple calls may occur simultaneously across different event handlers, tabs, or workers.
+مثال زیر نحوه استفاده از گزینه `mode` را برای خوانندگان و نویسندگان نشان می‌دهد. توجه کنید که هر دو تابع از یک قفل به نام `my_resource` استفاده می‌کنند. `doRead()` یک قفل در حالت `'shared'` درخواست می‌کند به این معنی که چندین فراخوانی ممکن است به طور هم‌زمان در میان event handlerهای مختلف، تب‌ها یا workers رخ دهد.
 
 ```js
 async function doRead() {
@@ -120,8 +94,7 @@ async function doRead() {
 }
 ```
 
-The `doWrite()` function use the same lock but in `'exclusive'` mode which will delay invocation of the `request()` call in `doRead()` until the write operation has completed.
-This applies across event handlers, tabs, or workers.
+تابع `doWrite()` از همان قفل اما در حالت `'exclusive'` استفاده می‌کند که فراخوانی `request()` در `doRead()` را تا زمانی که عملیات نوشتن کامل شود به تأخیر می‌اندازد. این در میان event handlerها، تب‌ها یا workers اعمال می‌شود.
 
 ```js
 async function doWrite() {
@@ -137,9 +110,7 @@ async function doWrite() {
 
 ### `ifAvailable` example
 
-To grab a lock only if it isn't already being held, use the `ifAvailable` option.
-In this function `await` means the method will not return until the callback is complete.
-Since the lock is only granted if it was available, this call avoids needing to wait on the lock being released elsewhere.
+برای گرفتن یک قفل تنها در صورتی که از قبل نگه داشته نشده باشد، از گزینه `ifAvailable` استفاده کنید. در این تابع `await` به این معنی است که متد تا زمانی که callback کامل نشود بازنمی‌گردد. از آنجایی که قفل تنها در صورت موجود بودن اعطا می‌شود، این فراخوانی از نیاز به انتظار برای آزاد شدن قفل در جای دیگر جلوگیری می‌کند.
 
 ```js
 await navigator.locks.request(
@@ -159,7 +130,7 @@ await navigator.locks.request(
 
 ### `signal` example
 
-To only wait for a lock for a short period of time, use the `signal` option.
+برای انتظار برای یک قفل فقط برای مدت کوتاه، از گزینه `signal` استفاده کنید.
 
 ```js
 const controller = new AbortController();
