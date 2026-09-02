@@ -1,11 +1,5 @@
 ---
 title: "MediaElementAudioSourceNode: MediaElementAudioSourceNode() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaElementAudioSourceNode/MediaElementAudioSourceNode"
-status: "needs-translation"
----
-
----
-title: "MediaElementAudioSourceNode: MediaElementAudioSourceNode() constructor"
 short-title: MediaElementAudioSourceNode()
 slug: Web/API/MediaElementAudioSourceNode/MediaElementAudioSourceNode
 page-type: web-api-constructor
@@ -14,7 +8,7 @@ browser-compat: api.MediaElementAudioSourceNode.MediaElementAudioSourceNode
 
 {{APIRef("Web Audio API")}}
 
-The **`MediaElementAudioSourceNode()`** constructor creates a new {{domxref("MediaElementAudioSourceNode")}} object instance.
+سازنده‌ی **`MediaElementAudioSourceNode()`** یک نمونه‌ی جدید از شیء {{domxref("MediaElementAudioSourceNode")}} می‌سازد.
 
 ## Syntax
 
@@ -22,34 +16,26 @@ The **`MediaElementAudioSourceNode()`** constructor creates a new {{domxref("Med
 new MediaElementAudioSourceNode(context, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `context`
-  - : An {{domxref("AudioContext")}} representing the audio context you want the node to be associated with.
+  - : یک {{domxref("AudioContext")}} که نشان‌دهنده‌ی بافت صوتی مورد نظر برای اتصال گره به آن است.
 - `options`
-  - : An object defining the properties you want the `MediaElementAudioSourceNode` to have:
+  - : یک شیء که ویژگی‌های مورد نظر برای `MediaElementAudioSourceNode` را تعریف می‌کند:
     - `mediaElement`
-      - : An {{domxref("HTMLMediaElement")}} that will be used as the source for the audio.
+      - : یک {{domxref("HTMLMediaElement")}} که به عنوان منبع صدا استفاده خواهد شد.
     - `channelCount`
-      - : An integer used to determine how many channels are used when [up-mixing and down-mixing](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) connections to any inputs to the node. (See
-        {{domxref("AudioNode.channelCount")}} for more information.) Its usage and precise
-        definition depend on the value of `channelCountMode`.
+      - : یک عدد صحیح که تعیین می‌کند هنگام [افزایش و کاهش کانال](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) اتصالات به هر ورودی گره، چند کانال استفاده شود. (برای اطلاعات بیشتر به {{domxref("AudioNode.channelCount")}} مراجعه کنید.) کاربرد و تعریف دقیق آن به مقدار `channelCountMode` بستگی دارد.
     - `channelCountMode`
-      - : A string describing the way channels must be matched between
-        the node's inputs and outputs. (See {{domxref("AudioNode.channelCountMode")}} for more
-        information including default values.)
+      - : رشته‌ای که نحوه‌ی تطبیق کانال‌ها بین ورودی‌ها و خروجی‌های گره را توصیف می‌کند. (برای اطلاعات بیشتر از جمله مقادیر پیش‌فرض به {{domxref("AudioNode.channelCountMode")}} مراجعه کنید.)
     - `channelInterpretation`
-      - : A string describing the meaning of the channels. This
-        interpretation will define how audio [up-mixing and down-mixing](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) will happen.
-        The possible values are `"speakers"` or `"discrete"`. (See
-        {{domxref("AudioNode.channelInterpretation")}} for more information including default
-        values.)
+      - : رشته‌ای که معنای کانال‌ها را توصیف می‌کند. این تفسیر مشخص می‌کند که [افزایش و کاهش کانال](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) صدا چگونه انجام شود. مقادیر احتمالی `"speakers"` یا `"discrete"` هستند. (برای اطلاعات بیشتر از جمله مقادیر پیش‌فرض به {{domxref("AudioNode.channelInterpretation")}} مراجعه کنید.)
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("MediaElementAudioSourceNode")}} object instance.
+یک نمونه‌ی جدید از {{domxref("MediaElementAudioSourceNode")}}.
 
-## Examples
+## نمونه‌ها
 
 ```js
 const ac = new AudioContext();
@@ -60,10 +46,10 @@ const myAudioSource = new MediaElementAudioSourceNode(ac, {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
