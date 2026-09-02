@@ -1,10 +1,4 @@
 ---
-title: "HTMLTitleElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTitleElement"
-status: "needs-translation"
----
-
----
 title: HTMLTitleElement
 slug: Web/API/HTMLTitleElement
 page-type: web-api-interface
@@ -13,37 +7,37 @@ browser-compat: api.HTMLTitleElement
 
 {{ APIRef("HTML DOM") }}
 
-The **`HTMLTitleElement`** interface is implemented by a document's {{ HTMLElement( "title" )}}. This element inherits all of the properties and methods of the {{domxref("HTMLElement")}} interface.
+رابط **`HTMLTitleElement`** توسط عنصر {{ HTMLElement( "title" )}} یک سند پیاده‌سازی می‌شود. این عنصر تمام ویژگی‌ها و روش‌های رابط {{domxref("HTMLElement")}} را به ارث می‌برد.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("HTMLElement")}}._
+_ویژگی‌های والد خود، {{domxref("HTMLElement")}} را به ارث می‌برد._
 
 - {{domxref("HTMLTitleElement.text")}}
-  - : A string representing the text of the document's title.
+  - : یک رشته که متن عنوان سند را نشان می‌دهد.
 
-## Instance methods
+## روش‌های نمونه
 
-_No specific method; inherits methods from its parent, {{domxref("HTMLElement")}}._
+_روش خاصی ندارد؛ روش‌های والد خود، {{domxref("HTMLElement")}} را به ارث می‌برد._
 
-## Example
+## مثال
 
-Do not confuse: `document.title` with `document.querySelector('title')`
+اشتباه نگیرید: `document.title` با `document.querySelector('title')`
 
-The former is just a setter/getter method to set or get the inner text value of the document title, while the latter is the `HTMLTitleElement` object. So you cannot write: `document.title.text = "Hello world!";`
+اولی صرفاً یک متد setter/getter برای تنظیم یا دریافت مقدار متن داخلی عنوان سند است، در حالی که دومی شیء `HTMLTitleElement` است. بنابراین نمی‌توانید بنویسید: `document.title.text = "Hello world!";`
 
-Instead, you can simply write: `document.title = "Hello world!";` which is an equivalent to `document.querySelector('title').text = "Hello world!";`
+در عوض، می‌توانید به سادگی بنویسید: `document.title = "Hello world!";` که معادل `document.querySelector('title').text = "Hello world!";` است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The HTML element implementing this interface: {{ HTMLElement("title") }}.
+- عنصر HTML که این رابط را پیاده‌سازی می‌کند: {{ HTMLElement("title") }}.
