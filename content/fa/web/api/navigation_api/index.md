@@ -1,10 +1,4 @@
 ---
-title: "Navigation API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigation_API"
-status: "needs-translation"
----
-
----
 title: Navigation API
 slug: Web/API/Navigation_API
 page-type: web-api-overview
@@ -18,112 +12,112 @@ spec-urls: https://html.spec.whatwg.org/multipage/nav-history-apis.html#navigati
 
 {{DefaultAPISidebar("Navigation API")}}
 
-The **Navigation API** provides the ability to initiate, intercept, and manage browser navigation actions. It can also examine an application's history entries. This is a successor to previous web platform features such as the {{domxref("History API", "", "", "nocode")}} and {{domxref("window.location")}}, which solves their shortcomings and is specifically aimed at the needs of {{glossary("SPA", "single-page applications (SPAs)")}}.
+**Navigation API** توانایی شروع، رهگیری و مدیریت کنش‌های ناوبری مرورگر را فراهم می‌کند و همچنین می‌تواند ورودی‌های تاریخچه یک برنامه را بررسی کند. این API جانشینی برای قابلیت‌های پیشین پلتفرم وب مانند {{domxref("History API", "", "", "nocode")}} و {{domxref("window.location")}} است که کاستی‌های آن‌ها را برطرف می‌کند و به‌طور خاص برای نیازهای {{glossary("SPA", "single-page applications (SPAs)")}} طراحی شده است.
 
-## Concepts and usage
+## مفاهیم و کاربرد
 
-In SPAs, the page template tends to stay the same during usage, and the content is dynamically rewritten as the user visits different pages or features. As a result, only one distinct page is loaded in the browser, which breaks the expected user experience of navigating back and forth between different locations in the viewing history. This problem can be solved to a degree via the {{domxref("History API", "", "", "nocode")}}, but it is not designed for the needs of SPAs. The Navigation API aims to bridge that gap.
+در برنامه‌های تک‌صفحه‌ای، قالب صفحه معمولاً در طول استفاده ثابت می‌ماند و محتوا با مراجعه کاربر به صفحات یا ویژگی‌های مختلف به‌صورت پویا بازنویسی می‌شود. در نتیجه، تنها یک صفحه مشخص در مرورگر بارگذاری می‌شود و این موضوع تجربه کاربری موردانتظارِ رفتن به جلو و عقب بین مکان‌های مختلف در تاریخچه مشاهده را مختل می‌کند. این مشکل تا حدی از طریق {{domxref("History API", "", "", "nocode")}} قابل‌حل است، اما آن API برای نیازهای SPA طراحی نشده است. Navigation API قصد دارد این شکاف را پر کند.
 
-The API is accessed via the {{domxref("Window.navigation")}} property, which returns a reference to a global {{domxref("Navigation")}} object. Each `window` object has its own corresponding `navigation` instance.
+این API از طریق ویژگی {{domxref("Window.navigation")}} در دسترس قرار می‌گیرد که ارجاعی به یک شیء سراسری {{domxref("Navigation")}} برمی‌گرداند. هر شیء `window` نمونه `navigation` متناظر خودش را دارد.
 
-### Handling navigations
+### مدیریت ناوبری‌ها
 
-The `navigation` interface has several associated events, the most notable being the {{domxref("Navigation/navigate_event", "navigate")}} event. This is fired when [any type of navigation](https://github.com/WICG/navigation-api#appendix-types-of-navigations) is initiated, meaning that you can control all page navigations from one central place, ideal for routing functionality in SPA frameworks. (This is not the case with the {{domxref("History API", "", "", "nocode")}}, where it is sometimes hard to detect and respond to all navigations.) The `navigate` event handler is passed a {{domxref("NavigateEvent")}} object, which contains detailed information including details around the navigation's destination, type, whether it contains `POST` form data or a download request, and more.
+رابط `navigation` چند رویداد مرتبط دارد که مهم‌ترین آن‌ها رویداد {{domxref("Navigation/navigate_event", "navigate")}} است. این رویداد زمانی فعال می‌شود که [هر نوع ناوبری](https://github.com/WICG/navigation-api#appendix-types-of-navigations) آغاز گردد؛ یعنی می‌توانید همه ناوبری‌های صفحه را از یک نقطه مرکزی کنترل کنید؛ ایدئال برای قابلیت مسیریابی در چارچوب‌های SPA. (در مورد {{domxref("History API", "", "", "nocode")}} چنین نیست؛ جایی که گاهی تشخیص و پاسخ به همه ناوبری‌ها دشوار است.) به مدیریت‌کننده رویداد `navigate` یک شیء {{domxref("NavigateEvent")}} ارسال می‌شود که حاوی اطلاعات دقیقی است؛ از جمله جزئیات مربوط به مقصد ناوبری، نوع آن، اینکه آیا داده‌های فرم `POST` یا درخواست دانلود دارد و موارد دیگر.
 
-The `NavigateEvent` object also provides two methods:
+شیء `NavigateEvent` همچنین دو متد فراهم می‌کند:
 
-- {{domxref("NavigateEvent.intercept", "intercept()")}} allows you to specify custom behavior for navigations, and can take the following as arguments:
-  - Callback handler functions allowing you to specify what happens both _when_ the navigation is committed and _just before_ the navigation is committed. For example, you could load relevant new content into the UI based on the path of the URL navigated to, or redirect the browser to a sign-in page if the URL points to a restricted page and the user is not signed in.
-  - Properties that allow you to enable or disable the browser's default focus and scrolling behavior after the navigation occurs.
-- {{domxref("NavigateEvent.scroll", "scroll()")}} allows you to manually initiate the browser's scroll behavior (e.g., to a fragment identifier in the URL), if it makes sense for your code, rather than waiting for the browser to handle it automatically.
+- {{domxref("NavigateEvent.intercept", "intercept()")}} به شما امکان می‌دهد رفتار سفارشی برای ناوبری‌ها تعیین کنید و می‌تواند آرگومان‌های زیر را بگیرد:
+  - توابع مدیریت‌کننده بازگشتی که به شما امکان می‌دهند مشخص کنید هم _زمانی که_ ناوبری ثبت (commit) می‌شود و هم _درست قبل از_ ثبت شدن آن چه اتفاقی بیفتد. برای مثال، می‌توانید محتوای جدید مرتبط را بر اساس مسیر URL مقصد در رابط کاربری بارگذاری کنید، یا اگر URL به صفحه‌ای محدودشده اشاره کند و کاربر وارد نشده باشد، مرورگر را به صفحه ورود هدایت کنید.
+  - ویژگی‌هایی که به شما امکان می‌دهند رفتار پیش‌فرض مرورگر در مورد تمرکز و پیمایش را پس از انجام ناوبری فعال یا غیرفعال کنید.
+- {{domxref("NavigateEvent.scroll", "scroll()")}} به شما امکان می‌دهد رفتار پیمایش مرورگر را به‌صورت دستی آغاز کنید (مثلاً پیمایش به یک شناسه قطعه در URL)، اگر برای کدتان منطقی است، به‌جای اینکه منتظر بمانید مرورگر آن را خودکار انجام دهد.
 
-Once a navigation is initiated, and your `intercept()` handler is called, a {{domxref("NavigationTransition")}} object instance is created (accessible via {{domxref("Navigation.transition")}}), which can be used to track the process of the ongoing navigation.
-
-> [!NOTE]
-> In this context "transition" refers to the transition between one history entry and another. It isn't related to CSS transitions.
+هنگامی که ناوبری آغاز می‌شود و مدیریت‌کننده `intercept()` شما فراخوانده می‌شود، یک نمونه از شیء {{domxref("NavigationTransition")}} ساخته می‌شود (از طریق {{domxref("Navigation.transition")}} قابل دسترسی است) که می‌توان از آن برای پیگیری روند ناوبری در حال انجام استفاده کرد.
 
 > [!NOTE]
-> You can also call {{domxref("Event.preventDefault", "preventDefault()")}} to stop the navigation entirely for most [navigation types](/en-US/docs/Web/API/NavigateEvent/navigationType#value); cancellation of traverse navigations is not yet implemented.
-
-When the promises returned by the `intercept()` handler functions fulfill, the `Navigation` object's {{domxref("Navigation/navigatesuccess_event", "navigatesuccess")}} event fires, allowing you to run cleanup code after a successful navigation has completed. If they reject, meaning the navigation has failed, {{domxref("Navigation/navigateerror_event", "navigateerror")}} fires instead, allowing you to gracefully handle failure case. There is also a `finished` property on the return value of navigation methods (such as {{domxref("Navigation.navigate()")}}), which fulfills or rejects at the same time as the aforementioned events are fired, providing another path for handling the success and failure cases.
+> در این زمینه، «transition» به تغییر بین دو ورودی تاریخچه اشاره دارد و ربطی به transitionهای CSS ندارد.
 
 > [!NOTE]
-> Before the Navigation API was available, to do something similar you'd have to listen for all click events on links, run `e.preventDefault()`, perform the appropriate {{domxref("History.pushState()")}} call, then set up the page view based on the new URL. And this wouldn't handle all navigations — only user-initiated link clicks.
+> همچنین می‌توانید برای توقف کامل ناوبری در بیشتر [انواع ناوبری](/en-US/docs/Web/API/NavigateEvent/navigationType#value) متد {{domxref("Event.preventDefault", "preventDefault()")}} را فراخوانی کنید؛ لغو ناوبری‌های عبوری (traverse) هنوز پیاده‌سازی نشده است.
 
-### Programmatically updating and traversing the navigation history
-
-As the user navigates through your application, each new location navigated to results in the creation of a navigation history entry. Each history entry is represented by a distinct {{domxref("NavigationHistoryEntry")}} object instance. These contain several properties such as the entry's key, URL, and state information. You can get the entry that the user is currently on right now using {{domxref("Navigation.currentEntry")}}, and an array of all existing history entries using {{domxref("Navigation.entries()")}}. Each `NavigationHistoryEntry` object has a {{domxref("NavigationHistoryEntry/dispose_event", "dispose")}} event, which fires when the entry is no longer part of the browser history. For example, if the user navigates back three times, then navigates forward to somewhere else, those three history entries will be disposed of.
+هنگامی که وعده‌های (promise) بازگشتی از توابع مدیریت‌کننده `intercept()` با موفقیت انجام شوند (fulfill)، رویداد {{domxref("Navigation/navigatesuccess_event", "navigatesuccess")}} شیء `Navigation` فعال می‌شود و به شما اجازه می‌دهد پس از تکمیل موفقیت‌آمیز ناوبری، کدهای پاک‌سازی را اجرا کنید. اگر این وعده‌ها رد شوند (reject) — به این معنی که ناوبری ناموفق بوده — در عوض رویداد {{domxref("Navigation/navigateerror_event", "navigateerror")}} فعال می‌شود تا بتوانید به‌شکلی مناسب حالت شکست را مدیریت کنید. همچنین یک ویژگی `finished` در مقدار بازگشتی متدهای ناوبری (مانند {{domxref("Navigation.navigate()")}}) وجود دارد که همزمان با فعال‌شدن رویدادهای یادشده با موفقیت انجام یا رد می‌شود و مسیر دیگری برای مدیریت حالت‌های موفقیت و شکست فراهم می‌کند.
 
 > [!NOTE]
-> The Navigation API only exposes history entries created in the current browsing context that have the same origin as the current page (e.g., not navigations inside embedded {{htmlelement("iframe")}}s, or cross-origin navigations), providing an accurate list of all previous history entries just for your app. This makes traversing the history a much less fragile proposition than with the older {{domxref("History API", "", "", "nocode")}}.
+> پیش از در دسترس بودن Navigation API، برای انجام کاری مشابه باید به همه رویدادهای کلیک روی پیوندها گوش می‌دادید، `e.preventDefault()` را اجرا می‌کردید، فراخوانی مناسب {{domxref("History.pushState()")}} را انجام می‌دادید و سپس نمای صفحه را بر اساس URL جدید می‌ساختید. و این روش نیز همه ناوبری‌ها را پوشش نمی‌داد — فقط کلیک‌های آغازشده توسط کاربر روی پیوندها را مدیریت می‌کرد.
 
-The `Navigation` object contains all the methods you'll need to update and traverse through the navigation history:
+### به‌روزرسانی و پیمایش برنامه‌ای در تاریخچه ناوبری
+
+همان‌طور که کاربر در برنامه شما ناوبری می‌کند، هر مکان جدیدی که به آن ناوبری شود منجر به ایجاد یک ورودی در تاریخچه ناوبری می‌شود. هر ورودی تاریخچه با یک نمونه شیء مجزای {{domxref("NavigationHistoryEntry")}} نمایش داده می‌شود. این نمونه‌ها چند ویژگی دارند؛ مانند کلید (key) ورودی، URL و اطلاعات state. می‌توانید ورودی‌ای که کاربر در حال حاضر روی آن است را با {{domxref("Navigation.currentEntry")}} و آرایه‌ای از همه ورودی‌های تاریخچه موجود را با {{domxref("Navigation.entries()")}} به دست آورید. هر شیء `NavigationHistoryEntry` یک رویداد {{domxref("NavigationHistoryEntry/dispose_event", "dispose")}} دارد که وقتی ورودی دیگر بخشی از تاریخچه مرورگر نباشد فعال می‌شود. مثلاً اگر کاربر سه بار به عقب برود و سپس به سمت جای دیگری به جلو برود، آن سه ورودی تاریخچه حذف (dispose) خواهند شد.
+
+> [!NOTE]
+> Navigation API فقط ورودی‌های تاریخچه‌ای را در معرض دید قرار می‌دهد که در بستر مرور فعلی (current browsing context) ایجاد شده‌اند و همریشه (same-origin) با صفحه فعلی هستند (مثلاً نه ناوبری‌های داخل {{htmlelement("iframe")}}های توکار و نه ناوبری‌های cross-origin). بنابراین فهرست دقیقی از همه ورودی‌های قبلی تاریخچه فقط برای برنامه شما فراهم می‌کند. این موضوع، پیمایش در تاریخچه را در مقایسه با {{domxref("History API", "", "", "nocode")}} قدیمی بسیار کم‌خطاتر می‌کند.
+
+شیء `Navigation` شامل همه متدهایی است که برای به‌روزرسانی و پیمایش در تاریخچه ناوبری نیاز دارید:
 
 - {{domxref("Navigation.navigate", "navigate()")}}
-  - : Navigates to a new URL, creating a new navigation history entry.
+  - : به یک URL جدید ناوبری می‌کند و یک ورودی تاریخچه ناوبری جدید می‌سازد.
 - {{domxref("Navigation.reload", "reload()")}}
-  - : Reloads the current navigation history entry.
+  - : ورودی تاریخچه ناوبری فعلی را دوباره بارگذاری می‌کند.
 - {{domxref("Navigation.back", "back()")}}
-  - : Navigates to the previous navigation history entry, if that is possible.
+  - : در صورت امکان، به ورودی تاریخچه ناوبری قبلی می‌رود.
 - {{domxref("Navigation.forward", "forward()")}}
-  - : Navigates to the next navigation history entry, if that is possible.
+  - : در صورت امکان، به ورودی تاریخچه ناوبری بعدی می‌رود.
 - {{domxref("Navigation.traverseTo", "traverseTo()")}}
-  - : Navigates to a specific navigation history entry identified by its key value, which is obtained via the relevant entry's {{domxref("NavigationHistoryEntry.key")}} property.
+  - : به یک ورودی مشخص از تاریخچه ناوبری که با مقدار کلیدش شناسایی می‌شود، ناوبری می‌کند. این مقدار از طریق ویژگی {{domxref("NavigationHistoryEntry.key")}} ورودی مربوطه به دست می‌آید.
 
-Each one of the above methods returns an object containing two promises — `{ committed, finished }`. This allows the invoking function to wait on taking further action until:
+هر یک از متدهای بالا یک شیء شامل دو promise برمی‌گرداند — `{ committed, finished }`. این امکان را به تابع فراخوان فراهم می‌کند که برای انجام اقدام بعدی صبر کند تا:
 
-- `committed` fulfills, meaning that the visible URL has changed and a new {{domxref("NavigationHistoryEntry")}} has been created.
-- `finished` fulfills, meaning that all promises returned by your `intercept()` handler are fulfilled. This is equivalent to the {{domxref("NavigationTransition.finished")}} promise fulfilling, when the {{domxref("Navigation/navigatesuccess_event", "navigatesuccess")}} event fires, as mentioned earlier.
-- either one of the above promises rejects, meaning that the navigation has failed for some reason.
+- `committed` با موفقیت انجام شود؛ یعنی URL قابل مشاهده تغییر کرده و یک {{domxref("NavigationHistoryEntry")}} جدید ساخته شده است.
+- `finished` با موفقیت انجام شود؛ یعنی همه promiseهای بازگشتی از مدیریت‌کننده `intercept()` شما fulfilled شده‌اند. این معادل fulfilled شدن وعده {{domxref("NavigationTransition.finished")}} است، هنگام‌یکه رویداد {{domxref("Navigation/navigatesuccess_event", "navigatesuccess")}} فعال می‌شود، همان‌طور که پیش‌تر اشاره شد.
+- هر یک از دو promise بالا رد (reject) شود؛ یعنی ناوبری به دلایلی ناموفق بوده است.
 
 ### State
 
-The Navigation API allows you to store state on each history entry. This is developer-defined information — it can be whatever you like. For example, you might want to store a `visitCount` property that records the number of times a view has been visited, or an object containing multiple properties related to UI state, so that state can be restored when a user returns to that view.
+Navigation API به شما امکان می‌دهد state را روی هر ورودی تاریخچه ذخیره کنید. این اطلاعات توسط توسعه‌دهنده تعریف می‌شود و می‌تواند هر چیزی باشد که می‌خواهید. برای مثال، ممکن است بخواهید یک ویژگی `visitCount` ذخیره کنید که تعداد دفعات مشاهده شدن یک نما را ثبت کند، یا یک شیء حاوی چند ویژگی مرتبط با state رابط کاربری ذخیره کنید تا وقتی کاربر به آن نما بازگشت، state بازیابی شود.
 
-To get a {{domxref("NavigationHistoryEntry")}}'s state, you call its {{domxref("NavigationHistoryEntry.getState", "getState()")}} method. It is initially `undefined`, but when state information is set on the entry, it will return the previously-set state information.
+برای دریافت state یک {{domxref("NavigationHistoryEntry")}}، متد {{domxref("NavigationHistoryEntry.getState", "getState()")}} آن را فراخوانی می‌کنید. این مقدار در ابتدا `undefined` است، اما وقتی اطلاعات state روی ورودی تنظیم شود، اطلاعات stateای که قبلاً تنظیم شده بود را برمی‌گرداند.
 
-Setting state is a bit more nuanced. You can't retrieve the state value and then update it directly — the copy stored on the entry will not change. Instead, you update it while performing a {{domxref("Navigation.navigate", "navigate()")}} or {{domxref("Navigation.reload", "reload()")}} — each one of these optionally takes an options object parameter, which includes a `state` property containing the new state to set on the history entry. When these navigations commit, the state change will be automatically applied.
+تنظیم state کمی ظریف‌تر است. نمی‌توانید مقدار state را بازیابی کنید و سپس آن را به‌طور مستقیم به‌روزرسانی کنید — کپی‌ای که روی ورودی ذخیره شده تغییر نخواهد کرد. در عوض، آن را هنگام انجام {{domxref("Navigation.navigate", "navigate()")}} یا {{domxref("Navigation.reload", "reload()")}} به‌روزرسانی می‌کنید؛ هر یک از این‌ها به‌صورت اختیاری یک پارامتر شیء options می‌پذیرند که شامل ویژگی `state` حاوی state جدید موردنظر برای تنظیم روی ورودی تاریخچه است. وقتی این ناوبری‌ها ثبت (commit) شوند، تغییر state به‌طور خودکار اعمال می‌شود.
 
-In some cases however, a state change will be independent from a navigation or reload — for example when a page contains an expandable/collapsible {{htmlelement("details")}} element. In this case, you might want to store the expanded/collapsed state in your history entry, so you can restore it when the user returns to the page or restarts their browser. Cases like this are handled using {{domxref("Navigation.updateCurrentEntry()")}}. The {{domxref("Navigation/currententrychange_event", "currententrychange")}} will fire when the current entry change is complete.
+با این حال، در برخی موارد تغییر state از ناوبری یا بارگذاری مجدد مستقل است؛ مثلاً وقتی صفحه حاوی یک عنصر {{htmlelement("details")}} بازشو/جمع‌شونده باشد. در این حالت، ممکن است بخواهید state باز یا بسته بودن را در ورودی تاریخچه ذخیره کنید تا وقتی کاربر به صفحه بازگشت یا مرورگر را دوباره راه‌اندازی کرد، آن را بازیابی کنید. چنین مواردی با {{domxref("Navigation.updateCurrentEntry()")}} مدیریت می‌شوند. رویداد {{domxref("Navigation/currententrychange_event", "currententrychange")}} وقتی تغییر ورودی فعلی کامل شود فعال خواهد شد.
 
-### Limitations
+### محدودیت‌ها
 
-There are a few perceived limitations with the Navigation API:
+چند محدودیت درک‌شده برای Navigation API وجود دارد:
 
-1. The current specification doesn't trigger a {{domxref("Navigation.navigate_event", "navigate")}} event on a page's first load. This might be fine for sites that use Server Side Rendering (SSR)—your server could return the correct initial state, which is the fastest way to get content to your users. But sites that leverage client-side code to create their pages may need an additional function to initialize the page.
-2. The Navigation API operates only within a single frame—the top-level page, or a single specific {{htmlelement("iframe")}}. This has some interesting implications that are [further documented in the spec](https://github.com/WICG/navigation-api#warning-backforward-are-not-always-opposites), but in practice, will reduce developer confusion. The previous {{domxref("History API", "", "", "nocode")}} has several confusing edge cases, like support for frames, which the Navigation API handles up-front.
-3. You can't currently use the Navigation API to programmatically modify or rearrange the history list. It might be useful to have a temporary state, for example navigating the user to a temporary modal that asks them for some information, then going back to the previous URL. In this case, you'd want to delete the temporary modal navigation entry so the user cannot mess up the application flow by hitting the forward button and opening it again.
+1. مشخصات فعلی در اولین بارگذاری صفحه رویداد {{domxref("Navigation.navigate_event", "navigate")}} را فعال نمی‌کند. این ممکن است برای سایت‌هایی که از رندر سمت سرور (SSR) استفاده می‌کنند مشکلی نباشد — سرور شما می‌تواند state اولیه صحیح را برگرداند که سریع‌ترین راه رساندن محتوا به کاربران است. اما سایت‌هایی که برای ساخت صفحاتشان از کد سمت کلاینت استفاده می‌کنند، ممکن است به یک تابع اضافی برای مقداردهی اولیه صفحه نیاز داشته باشند.
+2. Navigation API فقط در یک فریم واحد عمل می‌کند — صفحه سطح بالا یا یک {{htmlelement("iframe")}} خاص. این موضوع پیامدهای جالبی دارد که [در مشخصات بیشتر مستند شده است](https://github.com/WICG/navigation-api#warning-backforward-are-not-always-opposites)، اما در عمل سردرگمی توسعه‌دهندگان را کاهش می‌دهد. {{domxref("History API", "", "", "nocode")}} قبلی چندین مورد مرزی گیج‌کننده دارد، مانند پشتیبانی از فریم‌ها، که Navigation API از همان ابتدا آن‌ها را مدیریت می‌کند.
+3. در حال حاضر نمی‌توانید از Navigation API برای تغییر یا بازچینی برنامه‌ای فهرست تاریخچه استفاده کنید. ممکن است داشتن یک state موقت مفید باشد؛ مثلاً انتقال کاربر به یک پنجره/مودال (modal) موقت که از او اطلاعاتی می‌خواهد و سپس بازگشت به URL قبلی. در این حالت، می‌خواهید ورودی تاریخچه مربوط به آن پنجره/مودال موقت را حذف کنید تا کاربر نتواند با زدن دکمه جلو، جریان برنامه را به هم بریزد و دوباره آن را باز کند.
 
-## Interfaces
+## رابط‌ها
 
 - {{domxref("NavigateEvent")}} {{Experimental_Inline}}
-  - : Event object for the {{domxref("Navigation/navigate_event", "navigate")}} event, which fires when [any type of navigation](https://github.com/WICG/navigation-api#appendix-types-of-navigations) is initiated. It provides access to information about that navigation, and most notably the {{domxref("NavigateEvent.intercept", "intercept()")}}, which allows you to control what happens when the navigation is initiated.
+  - : شیء رویداد مربوط به رویداد {{domxref("Navigation/navigate_event", "navigate")}} است که وقتی [هر نوع ناوبری](https://github.com/WICG/navigation-api#appendix-types-of-navigations) آغاز شود فعال می‌شود. دسترسی به اطلاعات آن ناوبری و مهم‌تر از همه متد {{domxref("NavigateEvent.intercept", "intercept()")}} را فراهم می‌کند که به شما امکان می‌دهد آنچه هنگام آغاز ناوبری رخ می‌دهد را کنترل کنید.
 - {{domxref("Navigation")}} {{Experimental_Inline}}
-  - : Allows control over all navigation actions for the current `window` in one central place, including initiating navigations programmatically, examining navigation history entries, and managing navigations as they happen.
+  - : کنترل همه کنش‌های ناوبری برای `window` فعلی را در یک نقطه مرکزی فراهم می‌کند؛ از جمله آغاز برنامه‌ای ناوبری‌ها، بررسی ورودی‌های تاریخچه ناوبری و مدیریت ناوبری‌ها در حین وقوع.
 - {{domxref("NavigationActivation")}} {{Experimental_Inline}}
-  - : Represents a recent cross-document navigation. It contains the navigation type and current and destination document history entries.
+  - : نمایانگر یک ناوبری بین‌سندی (cross-document) اخیر است. شامل نوع ناوبری و ورودی‌های تاریخچه اسناد مبدأ و مقصد است.
 - {{domxref("NavigationCurrentEntryChangeEvent")}} {{Experimental_Inline}}
-  - : Event object for the {{domxref("Navigation/currententrychange_event", "currententrychange")}} event, which fires when the {{domxref("Navigation.currentEntry")}} has changed. It provides access to the navigation type, and the previous history entry that was navigated from.
+  - : شیء رویداد برای رویداد {{domxref("Navigation/currententrychange_event", "currententrychange")}} است که وقتی {{domxref("Navigation.currentEntry")}} تغییر کند فعال می‌شود. دسترسی به نوع ناوبری و ورودی تاریخچه قبلی که از آن ناوبری انجام شده را فراهم می‌کند.
 - {{domxref("NavigationDestination")}} {{Experimental_Inline}}
-  - : Represents the destination being navigated to in the current navigation.
+  - : نمایانگر مقصدی است که در ناوبری فعلی به آن ناوبری می‌شود.
 - {{domxref("NavigationHistoryEntry")}} {{Experimental_Inline}}
-  - : Represents a single navigation history entry.
+  - : نمایانگر یک ورودی تاریخچه ناوبری است.
 - {{domxref("NavigationPrecommitController")}} {{Experimental_Inline}}
-  - : Defines redirect behavior for a navigation precommit handler, when passed into the [`precommitHandler`](/en-US/docs/Web/API/NavigateEvent/intercept#precommithandler) callback of a {{domxref("NavigateEvent.intercept()")}} method call.
+  - : رفتار بازهدایت (redirect) را برای یک مدیریت‌کننده پیش از ثبت (precommit) ناوبری تعریف می‌کند، وقتی در فراخوانی [`precommitHandler`](/en-US/docs/Web/API/NavigateEvent/intercept#precommithandler) متد {{domxref("NavigateEvent.intercept()")}} وارد می‌شود.
 - {{domxref("NavigationTransition")}} {{Experimental_Inline}}
-  - : Represents an ongoing navigation.
+  - : نمایانگر یک ناوبری در حال انجام است.
 
-## Extensions to other interfaces
+## افزونه‌های سایر رابط‌ها
 
 - {{domxref("Window.navigation")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns the current `window`'s associated {{domxref("Navigation")}} object. This is the entry point for the Navigation API.
+  - : شیء {{domxref("Navigation")}} مرتبط با `window` فعلی را برمی‌گرداند. این نقطه ورود به Navigation API است.
 
-## Examples
+## مثال‌ها
 
 > [!NOTE]
-> Check out the [Navigation API live demo](https://mdn.github.io/dom-examples/navigation-api/) ([view demo source](https://github.com/mdn/dom-examples/tree/main/navigation-api)).
+> [دموی زنده Navigation API](https://mdn.github.io/dom-examples/navigation-api/) را ببینید ([مشاهده سورس دمو](https://github.com/mdn/dom-examples/tree/main/navigation-api)).
 
-### Handling a navigation using `intercept()`
+### مدیریت یک ناوبری با استفاده از `intercept()`
 
 ```js
 navigation.addEventListener("navigate", (event) => {
@@ -156,9 +150,9 @@ navigation.addEventListener("navigate", (event) => {
 });
 ```
 
-### Handling scrolling using `scroll()`
+### مدیریت پیمایش با استفاده از `scroll()`
 
-In this example of intercepting a navigation, the `handler()` function starts by fetching and rendering some article content, but then fetches and renders some secondary content afterwards. It makes sense to scroll the page to the main article content as soon as it is available so the user can interact with it, rather than waiting until the secondary content is also rendered. To achieve this, we have added a {{domxref("NavigateEvent.scroll", "scroll()")}} call between the two.
+در این مثال از رهگیری یک ناوبری، تابع `handler()` ابتدا محتوای مقاله را دریافت و رندر می‌کند، اما سپس محتوای ثانویه‌ای را هم دریافت و رندر می‌کند. منطقی است که به محض در دسترس بودن محتوای اصلی مقاله، صفحه را به آن اسکرول کنید تا کاربر بتواند با آن تعامل کند، به‌جای اینکه منتظر رندر شدن محتوای ثانویه نیز بمانید. برای این کار، یک فراخوانی {{domxref("NavigateEvent.scroll", "scroll()")}} بین این دو اضافه کرده‌ایم.
 
 ```js
 navigation.addEventListener("navigate", (event) => {
@@ -189,7 +183,7 @@ navigation.addEventListener("navigate", (event) => {
 });
 ```
 
-### Traversing to a specific history entry
+### پیمایش به یک ورودی تاریخچه خاص
 
 ```js
 // On JS startup, get the key of the first loaded page
@@ -201,33 +195,33 @@ backToHomeButton.onclick = () => navigation.traverseTo(key);
 await navigation.navigate("/another_url").finished;
 ```
 
-### Updating state
+### به‌روزرسانی state
 
 ```js
 navigation.navigate(url, { state: newState });
 ```
 
-Or
+یا
 
 ```js
 navigation.reload({ state: newState });
 ```
 
-Or if the state is independent from a navigation or reload:
+یا اگر state مستقل از ناوبری یا بارگذاری مجدد باشد:
 
 ```js
 navigation.updateCurrentEntry({ state: newState });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
 - [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
