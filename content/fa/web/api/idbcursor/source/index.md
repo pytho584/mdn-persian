@@ -1,11 +1,5 @@
 ---
 title: "IDBCursor: source property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBCursor/source"
-status: "needs-translation"
----
-
----
-title: "IDBCursor: source property"
 short-title: source
 slug: Web/API/IDBCursor/source
 page-type: web-api-instance-property
@@ -14,27 +8,17 @@ browser-compat: api.IDBCursor.source
 
 {{APIRef("IndexedDB")}} {{AvailableInWorkers}}
 
-The **`source`** read-only property of the
-{{domxref("IDBCursor")}} interface returns the {{domxref("IDBObjectStore")}} or
-{{domxref("IDBIndex")}} that the cursor is iterating over. This function never returns
-null or throws an exception, even if the cursor is currently being iterated, has
-iterated past its end, or its transaction is not active.
+ویژگی فقط‌خواندنی **`source`** در رابط {{domxref("IDBCursor")}}، شیء {{domxref("IDBObjectStore")}} یا {{domxref("IDBIndex")}}‌ای را برمی‌گرداند که مکان‌نما روی آن در حال پیمایش است. این ویژگی هرگز `null` برنمی‌گرداند و استثنا پرتاب نمی‌کند؛ حتی اگر مکان‌نما در حال حاضر در حال پیمایش باشد، از انتها عبور کرده باشد، یا تراکنش آن فعال نباشد.
 
-## Value
+## مقدار
 
-The {{domxref("IDBObjectStore")}} or {{domxref("IDBIndex")}} that the cursor is
-iterating over.
+شیء {{domxref("IDBObjectStore")}} یا {{domxref("IDBIndex")}} که مکان‌نما در حال پیمایش روی آن است.
 
-## Examples
+## مثال‌ها
 
-In this simple fragment we create a transaction, retrieve an object store, then use a
-cursor to iterate through all the records in the object store. Within each iteration we
-log the source of the cursor, which will log our {{domxref("IDBObjectStore")}} object to
-the console.
+در این بخش ساده، یک تراکنش می‌سازیم، یک object store دریافت می‌کنیم و سپس با استفاده از یک مکان‌نما، تمام رکوردهای موجود در object store را پیمایش می‌کنیم. در هر تکرار، منبع مکان‌نما را ثبت (log) می‌کنیم که شیء {{domxref("IDBObjectStore")}} ما را در کنسول ثبت می‌کند.
 
-The cursor does not require us to select the data based
-on a key; we can just grab all of it. Also note that in each iteration of the loop,
-you can grab data from the current record under the cursor object using `cursor.value.foo`. For a complete working example, see our [IDBCursor example](https://github.com/mdn/dom-examples/tree/main/indexeddb-examples/idbcursor) ([View the example live](https://mdn.github.io/dom-examples/indexeddb-examples/idbcursor/)).
+مکان‌نما الزامی ندارد که داده‌ها را بر اساس یک کلید انتخاب کنیم؛ می‌توانیم به‌سادگی همه آن‌ها را دریافت کنیم. همچنین توجه داشته باشید که در هر تکرار حلقه، می‌توانید داده‌های رکورد جاری را از طریق شیء مکان‌نما و با استفاده از `cursor.value.foo` دریافت کنید. برای یک مثال کامل و قابل اجرا، به [نمونه IDBCursor](https://github.com/mdn/dom-examples/tree/main/indexeddb-examples/idbcursor) مراجعه کنید ([مشاهده مثال به‌صورت زنده](https://mdn.github.io/dom-examples/indexeddb-examples/idbcursor/)).
 
 ```js
 function displayData() {
@@ -57,20 +41,20 @@ function displayData() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم محدوده کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و ایجاد تغییرات در داده‌هایتان: {{domxref("IDBObjectStore")}}
+- استفاده از مکان‌نماها: {{domxref("IDBCursor")}}
+- نمونه مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهده مثال به‌صورت زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
