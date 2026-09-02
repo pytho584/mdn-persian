@@ -1,11 +1,5 @@
 ---
 title: "ImageCapture: getPhotoCapabilities() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ImageCapture/getPhotoCapabilities"
-status: "needs-translation"
----
-
----
-title: "ImageCapture: getPhotoCapabilities() method"
 short-title: getPhotoCapabilities()
 slug: Web/API/ImageCapture/getPhotoCapabilities
 page-type: web-api-instance-method
@@ -14,47 +8,41 @@ browser-compat: api.ImageCapture.getPhotoCapabilities
 
 {{APIRef("Image Capture API")}}
 
-The **`getPhotoCapabilities()`**
-method of the {{domxref("ImageCapture")}} interface returns a {{jsxref("Promise")}}
-that resolves with an object containing the ranges of
-available configuration options.
+متد **`getPhotoCapabilities()`** از رابط {{domxref("ImageCapture")}} یک {{jsxref("Promise")}} را برمی‌گرداند که با یک شیء حاوی محدوده‌های گزینه‌های پیکربندی موجود، حل می‌شود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 getPhotoCapabilities()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with an object containing the following properties:
+یک {{jsxref("Promise")}} که با یک شیء حاوی ویژگی‌های زیر حل می‌شود:
 
 - `redEyeReduction`
-  - : Returns one of `"never"`, `"always"`, or `"controllable"`. The `"controllable"` value means the device's red-eye reduction is controllable by the user.
+  - : یکی از مقادیر `"never"`، `"always"` یا `"controllable"` را برمی‌گرداند. مقدار `"controllable"` به این معنی است که کاهش قرمزی چشم دستگاه توسط کاربر قابل کنترل است.
 - `imageHeight`
-  - : Returns an object indicating the image height range supported by the user agent.
+  - : یک شیء را برمی‌گرداند که محدوده ارتفاع تصویر پشتیبانی شده توسط عامل کاربر را نشان می‌دهد.
 - `imageWidth`
-  - : Returns an object indicating the image width range supported by the user agent.
+  - : یک شیء را برمی‌گرداند که محدوده عرض تصویر پشتیبانی شده توسط عامل کاربر را نشان می‌دهد.
 - `fillLightMode`
-  - : Returns an array of available fill light options. Options include `auto`, `off`, or `flash`.
+  - : یک آرایه از گزینه‌های نور پرکننده موجود را برمی‌گرداند. گزینه‌ها شامل `auto`، `off`، یا `flash` هستند.
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if `readyState` property of the `MediaStreamTrack` passing in the constructor is not `live`.
+  - : اگر ویژگی `readyState` از `MediaStreamTrack` ارسال شده در سازنده `live` نباشد، پرتاب می‌شود.
 - `OperationError` {{domxref("DOMException")}}
-  - : Thrown if the operation can't complete for any reason.
+  - : اگر عملیات به هر دلیلی نتواند کامل شود، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-The following example, extracted from [Chrome's Image Capture / Photo Resolution Sample](https://googlechrome.github.io/samples/image-capture/photo-resolution.html), uses the results from
-`getPhotoCapabilities()` to modify the size of an input range. This example
-also shows how the {{domxref("ImageCapture")}} object is created using a
-{{domxref("MediaStreamTrack")}} retrieved from a device's {{domxref("MediaStream")}}.
+مثال زیر، برگرفته از [نمونه Image Capture / Photo Resolution کروم](https://googlechrome.github.io/samples/image-capture/photo-resolution.html)، از نتایج `getPhotoCapabilities()` برای تغییر اندازه یک محدوده ورودی استفاده می‌کند. این مثال همچنین نشان می‌دهد که چگونه شیء {{domxref("ImageCapture")}} با استفاده از یک {{domxref("MediaStreamTrack")}} که از {{domxref("MediaStream")}} یک دستگاه گرفته شده، ایجاد می‌شود.
 
 ```js
 const input = document.querySelector('input[type="range"]');
@@ -83,13 +71,13 @@ navigator.mediaDevices
   .then((photoSettings) => {
     input.value = photoSettings.imageWidth;
   })
-  .catch((error) => console.error("Argh!", error.name || error));
+  .catch((error) => console.error("آرغ!", error.name || error));
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
