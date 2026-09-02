@@ -1,11 +1,5 @@
 ---
 title: "ImageDecoder: complete property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ImageDecoder/complete"
-status: "needs-translation"
----
-
----
-title: "ImageDecoder: complete property"
 short-title: complete
 slug: Web/API/ImageDecoder/complete
 page-type: web-api-instance-property
@@ -14,24 +8,24 @@ browser-compat: api.ImageDecoder.complete
 
 {{securecontext_header}}{{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`complete`** read-only property of the {{domxref("ImageDecoder")}} interface returns true if encoded data has completed buffering.
+ویژگی فقط‌خواندنیِ **`complete`** در رابط {{domxref("ImageDecoder")}}، اگر بافرکردن داده‌های کدگذاری‌شده به پایان رسیده باشد، مقدار `true` را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A {{jsxref("Boolean")}}, `true` if buffering is complete.
+یک {{jsxref("Boolean")}}؛ اگر بافرکردن کامل شده باشد، مقدار آن `true` است.
 
-## Examples
+## مثال‌ها
 
-The following example prints the value of `complete` to the console.
+مثال زیر مقدار `complete` را در کنسول چاپ می‌کند.
 
 ```js
 console.log(imageDecoder.complete);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
