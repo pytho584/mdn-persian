@@ -1,7 +1,6 @@
 ---
 title: "MessagePort: start() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/MessagePort/start"
-status: "needs-translation"
 ---
 
 ---
@@ -14,10 +13,7 @@ browser-compat: api.MessagePort.start
 
 {{APIRef("Channel Messaging API")}} {{AvailableInWorkers}}
 
-The **`start()`** method of the {{domxref("MessagePort")}}
-interface starts the sending of messages queued on the port. This method is only needed
-when using {{domxref("EventTarget.addEventListener")}}; it is implied when using
-{{domxref("MessagePort.message_event", "onmessage")}}.
+متد **`start()`** در رابط {{domxref("MessagePort")}} ارسال پیام‌های در صف‌مانده روی پورت را آغاز می‌کند. این متد فقط هنگام استفاده از {{domxref("EventTarget.addEventListener")}} لازم است؛ هنگام استفاده از {{domxref("MessagePort.message_event", "onmessage")}} این کار به‌صورت ضمنی انجام می‌شود.
 
 ## Syntax
 
@@ -27,16 +23,15 @@ start()
 
 ### Parameters
 
-None.
+هیچ.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
 ## Examples
 
-In the following code block, you can see a `handleMessage` handler function,
-run when a message is sent back to this document using `onmessage`:
+در بلوک کد زیر، یک تابع کنترل‌کننده به نام `handleMessage` را می‌بینید که هنگام ارسال پیام به این سند با استفاده از `onmessage` اجرا می‌شود:
 
 ```js
 channel.port1.onmessage = handleMessage;
@@ -45,9 +40,7 @@ function handleMessage(e) {
 }
 ```
 
-Another option would be to do this using {{domxref("EventTarget.addEventListener")}},
-however, when this method is used, you need to explicitly call `start()` to
-begin the flow of messages to this document:
+گزینه دیگر استفاده از {{domxref("EventTarget.addEventListener")}} است؛ اما وقتی از این روش استفاده می‌کنید، باید به‌صورت صریح `start()` را فراخوانی کنید تا جریان پیام‌ها به این سند آغاز شود:
 
 ```js
 channel.port1.addEventListener("message", handleMessage);
@@ -69,4 +62,4 @@ channel.port1.start();
 
 ## See also
 
-- [Using channel messaging](/en-US/docs/Web/API/Channel_Messaging_API/Using_channel_messaging)
+- [استفاده از پیام‌رسانی کانال](/en-US/docs/Web/API/Channel_Messaging_API/Using_channel_messaging)
