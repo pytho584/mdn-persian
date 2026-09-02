@@ -1,11 +1,5 @@
 ---
 title: "IntersectionObserver: delay property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/delay"
-status: "needs-translation"
----
-
----
-title: "IntersectionObserver: delay property"
 short-title: delay
 slug: Web/API/IntersectionObserver/delay
 page-type: web-api-instance-property
@@ -16,26 +10,24 @@ browser-compat: api.IntersectionObserver.delay
 
 {{APIRef("Intersection Observer API")}}{{SeeCompatTable}}
 
-The **`delay`** read-only property of the {{domxref("IntersectionObserver")}} interface indicates the minimum delay between notifications from this observer.
+ویژگی فقط-خواندنی **`delay`** در رابط {{domxref("IntersectionObserver")}} حداقل تأخیر بین اعلان‌های این ناظر را مشخص می‌کند.
 
-The delay is used to limit the rate at which notifications should be provided when [tracking visibility](/en-US/docs/Web/API/IntersectionObserver/trackVisibility), as this is a computationally intensive operation.
-The recommendation when tracking visibility is that you set the delay to the largest tolerable value.
+تأخیر برای محدود کردن نرخ ارائه اعلان‌ها هنگام [ردیابی قابلیت مشاهده](/en-US/docs/Web/API/IntersectionObserver/trackVisibility) استفاده می‌شود، زیرا این یک عملیات از نظر محاسباتی سنگین است. توصیه این است که هنگام ردیابی قابلیت مشاهده، تأخیر را روی بزرگترین مقدار قابل تحمل تنظیم کنید.
 
-## Value
+## مقدار
 
-A positive number in milliseconds.
+یک عدد مثبت بر حسب میلی‌ثانیه.
 
-The value is set using the [`option.delay`](/en-US/docs/Web/API/IntersectionObserver/IntersectionObserver#delay) argument to the `IntersectionObserver()` constructor.
-The value is clamped to 100 or greater if {{domxref("IntersectionObserver/trackVisibility","trackVisibility")}} is `true`, but otherwise defaults to 0.
+مقدار با استفاده از آرگومان [`option.delay`](/en-US/docs/Web/API/IntersectionObserver/IntersectionObserver#delay) در سازنده `IntersectionObserver()` تنظیم می‌شود. اگر {{domxref("IntersectionObserver/trackVisibility","trackVisibility")}} برابر `true` باشد، مقدار به ۱۰۰ یا بیشتر محدود می‌شود، در غیر این صورت پیش‌فرض آن ۰ است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Timing element visibility with the Intersection Observer API](/en-US/docs/Web/API/Intersection_Observer_API/Timing_element_visibility)
+- [زمان‌بندی قابلیت مشاهده عناصر با Intersection Observer API](/en-US/docs/Web/API/Intersection_Observer_API/Timing_element_visibility)
