@@ -1,11 +1,5 @@
 ---
 title: "HTMLTextAreaElement: setSelectionRange() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTextAreaElement/setSelectionRange"
-status: "needs-translation"
----
-
----
-title: "HTMLTextAreaElement: setSelectionRange() method"
 short-title: setSelectionRange()
 slug: Web/API/HTMLTextAreaElement/setSelectionRange
 page-type: web-api-instance-method
@@ -14,14 +8,14 @@ browser-compat: api.HTMLTextAreaElement.setSelectionRange
 
 {{APIRef("HTML DOM")}}
 
-The **`setSelectionRange()`** method of the {{domxref("HTMLTextAreaElement")}} interface sets the start and end positions of the current text selection, and optionally the direction, in a {{HTMLElement("textarea")}} element. This updates the selection state immediately, though the visual highlight only appears when the element is focused. The direction indicates the in which selection should be considered to have occurred; for example, that the selection was set by the user clicking and dragging from the end of the selected text toward the beginning. In addition, the {{domxref("HTMLTextAreaElement.select_event", "select")}} and {{domxref("HTMLTextAreaElement.selectionchange_event", "selectionchange")}} events are fired.
+متد **`setSelectionRange()`** در interface مربوط به {{domxref("HTMLTextAreaElement")}}، موقعیت شروع و پایان انتخابِ متن فعلی و بهصورت اختیاری جهت انتخاب را در یک عنصر {{HTMLElement("textarea")}} تنظیم میکند. این کار وضعیت انتخاب را بلافاصله بهروزرسانی میکند، هرچند هایلایتِ بصری فقط زمانی نمایش داده میشود که عنصر دارای focus باشد. جهت نشان میدهد که انتخاب به چه صورت انجام شده است؛ برای مثال، اینکه کاربر با کلیک و کشیدن از انتهای متنِ انتخابشده به سمت ابتدای آن، انتخاب را انجام داده است. علاوه بر این، رویدادهای {{domxref("HTMLTextAreaElement.select_event", "select")}} و {{domxref("HTMLTextAreaElement.selectionchange_event", "selectionchange")}} نیز فعال میشوند.
 
-This method updates the {{domxref("HTMLTextAreaElement.selectionStart")}}, {{domxref("HTMLTextAreaElement.selectionEnd")}}, and {{domxref("HTMLTextAreaElement.selectionDirection")}} properties immediately, regardless of focus state. The visual selection highlight requires the element to be focused.
+این متد ویژگی‌های {{domxref("HTMLTextAreaElement.selectionStart")}}، {{domxref("HTMLTextAreaElement.selectionEnd")}} و {{domxref("HTMLTextAreaElement.selectionDirection")}} را بلافاصله و بدون توجه به وضعیت focus به‌روزرسانی میکند. برای نمایش هایلایت بصری انتخاب، عنصر باید دارای focus باشد.
 
 > [!NOTE]
-> While `setSelectionRange()` updates the selection properties immediately, the visual selection highlight only appears when the `<textarea>` is focused. Focusing the element will also fire a `selectionchange` event.
+> هرچند `setSelectionRange()` ویژگی‌های انتخاب را بلافاصله به‌روزرسانی میکند، هایلایت بصری انتخاب تنها زمانی ظاهر می‌شود که `<textarea>` دارای focus باشد. همچنین focus کردن عنصر باعث فعال شدن رویداد `selectionchange` نیز می‌شود.
 
-To select **all** of the text of an `<textarea>` element, use the {{domxref("HTMLTextAreaElement.select()")}} method.
+برای انتخاب **تمام** متن یک عنصر `<textarea>`، از متد {{domxref("HTMLTextAreaElement.select()")}} استفاده کنید.
 
 ## Syntax
 
@@ -30,33 +24,33 @@ setSelectionRange(selectionStart, selectionEnd)
 setSelectionRange(selectionStart, selectionEnd, selectionDirection)
 ```
 
-### Parameters
+### پارامترها
 
 - `selectionStart`
-  - : The index of the first selected character. An index greater than the length of the element's value is treated as pointing to the end of the value. See the {{domxref("HTMLTextAreaElement.selectionStart", "selectionStart")}} property for more information.
+  - : ایندکس اولین کاراکتر انتخاب‌شده. ایندکسی بزرگ‌تر از طول مقدار عنصر، به‌عنوان اشاره‌گر به انتهای مقدار در نظر گرفته می‌شود. برای اطلاعات بیشتر به ویژگی {{domxref("HTMLTextAreaElement.selectionStart", "selectionStart")}} مراجعه کنید.
 - `selectionEnd`
-  - : The index of the character _after_ the last selected character. An index greater than the length of the element's value is treated as pointing to the end of the value. If `selectionEnd` is less than `selectionStart`, then both are treated as the value of `selectionEnd`. See the {{domxref("HTMLTextAreaElement.selectionEnd", "selectionEnd")}} property for more information.
+  - : ایندکس کاراکتری که _بعد از_ آخرین کاراکتر انتخاب‌شده قرار دارد. ایندکسی بزرگ‌تر از طول مقدار عنصر، به‌عنوان اشاره‌گر به انتهای مقدار در نظر گرفته می‌شود. اگر `selectionEnd` کوچک‌تر از `selectionStart` باشد، هر دو به‌عنوان مقدار `selectionEnd` در نظر گرفته می‌شوند. برای اطلاعات بیشتر به ویژگی {{domxref("HTMLTextAreaElement.selectionEnd", "selectionEnd")}} مراجعه کنید.
 - `selectionDirection` {{optional_inline}}
-  - : The keyword `"forward"`, `"backward"`, or the default `"none"` — indicating the direction in which the selection is considered to have been performed. See the {{domxref("HTMLTextAreaElement.selectionDirection", "selectionDirection")}} property for more information.
+  - : کلیدواژه `"forward"`، `"backward"` یا مقدار پیش‌فرض `"none"` — که جهتی را نشان می‌دهد که انتخاب بر اساس آن انجام شده است. برای اطلاعات بیشتر به ویژگی {{domxref("HTMLTextAreaElement.selectionDirection", "selectionDirection")}} مراجعه کنید.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
 ```js
 const textarea = document.getElementById("text-box");
 const chars = textarea.textLength;
-// if the value is more than 10 characters long
+// اگر مقدار طولانی‌تر از ۱۰ کاراکتر باشد
 if (chars > 10) {
-  // Element must be focused to select a range of text within it
+  // عنصر باید focus شود تا بتوان محدوده‌ای از متن را در آن انتخاب کرد
   textarea.focus();
-  // select the text between the fifth character from the start and
-  // the fifth character from the end
+  // متنی را انتخاب کن که از پنج‌مین کاراکتر ابتدا شروع می‌شود
+  // و تا پنج‌مین کاراکتر انتها ادامه دارد
   textarea.setSelectionRange(5, chars - 5);
 } else {
-  // otherwise select all the text
+  // در غیر این صورت همه متن را انتخاب کن
   textarea.select();
 }
 ```
