@@ -1,7 +1,5 @@
 ---
 title: "NamedNodeMap: getNamedItemNS() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NamedNodeMap/getNamedItemNS"
-status: "needs-translation"
 ---
 
 ---
@@ -14,28 +12,28 @@ browser-compat: api.NamedNodeMap.getNamedItemNS
 
 {{APIRef("DOM")}}
 
-The **`getNamedItemNS()`** method of the {{domxref("NamedNodeMap")}} interface returns the {{domxref("Attr")}} corresponding to the given local name in the given namespace, or `null` if there is no corresponding attribute.
+متد **`getNamedItemNS()`** در رابط {{domxref("NamedNodeMap")}}، {{domxref("Attr")}} متناظر با نام محلی (local name) داده‌شده در فضای نام (namespace) داده‌شده را بازمی‌گرداند؛ یا اگر ویژگی متناظری وجود نداشته باشد، `null` را برمی‌گرداند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 getNamedItemNS(namespace, localName)
 ```
 
-### Parameters
+### پارامترها
 
 - `namespace`
-  - : A string with the namespace URI of the desired attribute.
+  - : رشته‌ای حاوی URI فضای نامِ ویژگی موردنظر.
     > [!WARNING]
-    > `namespace` is the URI of the namespace, not the prefix.
+    > `namespace` همان URI فضای نام است، نه پیشوند (prefix) آن.
 - `localName`
-  - : A string with the localName of the desired attribute.
+  - : رشته‌ای حاوی localName ویژگی موردنظر.
 
-### Return value
+### مقدار بازگشتی
 
-An {{domxref("Attr")}} corresponding to the namespace and local name given in parameters, or `null` if none has been found.
+یک {{domxref("Attr")}} متناظر با فضای نام و نام محلی داده‌شده در پارامترها؛ یا اگر هیچ موردی یافت نشود، `null`.
 
-## Example
+## مثال
 
 ```html hidden
 <pre></pre>
@@ -60,10 +58,10 @@ pre.textContent = `The 'ob:one' attribute contains: ${value}.`;
 
 {{EmbedLiveSample("Example", "100%", 80)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
