@@ -1,11 +1,5 @@
 ---
 title: "HTMLTextAreaElement: validity property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTextAreaElement/validity"
-status: "needs-translation"
----
-
----
-title: "HTMLTextAreaElement: validity property"
 short-title: validity
 slug: Web/API/HTMLTextAreaElement/validity
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.HTMLTextAreaElement.validity
 
 {{APIRef("HTML DOM")}}
 
-The **`validity`** read-only property of the {{domxref("HTMLTextAreaElement")}} interface returns a {{domxref("ValidityState")}} object that represents the validity states this element is in.
+ویژگی فقط‌خواندنی **`validity`** در رابط {{domxref("HTMLTextAreaElement")}} یک شیء {{domxref("ValidityState")}} برمی‌گرداند که وضعیت‌های اعتبارسنجی این عنصر را نشان می‌دهد.
 
-## Value
+## مقدار
 
-A {{domxref("ValidityState")}} object.
+یک شیء {{domxref("ValidityState")}}.
 
-## Examples
+## مثال‌ها
 
-The following example gets the validity state of a text area element and processes it if it is not valid:
+مثال زیر وضعیت اعتبارسنجی یک عنصر ناحیه متنی را دریافت می‌کند و اگر معتبر نبود آن را پردازش می‌کند:
 
 ```js
 const textArea = document.getElementById("myTextArea");
@@ -32,18 +26,18 @@ if (!validityState.valid) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLTextAreaElement.checkValidity()")}}
 - {{HTMLElement("textarea")}}
 - {{HTMLElement("form")}}
-- [Learn: Client-side form validation](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
-- [Guide: Constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation)
+- [یادگیری: اعتبارسنجی فرم در سمت کلاینت](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
+- [راهنما: اعتبارسنجی محدودیت‌ها](/en-US/docs/Web/HTML/Guides/Constraint_validation)
