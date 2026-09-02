@@ -1,11 +1,5 @@
 ---
 title: "MediaStreamTrackEvent: track property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrackEvent/track"
-status: "needs-translation"
----
-
----
-title: "MediaStreamTrackEvent: track property"
 short-title: track
 slug: Web/API/MediaStreamTrackEvent/track
 page-type: web-api-instance-property
@@ -14,13 +8,13 @@ browser-compat: api.MediaStreamTrackEvent.track
 
 {{APIRef("Media Capture and Streams")}}
 
-The **`track`** read-only property of the {{domxref("MediaStreamTrackEvent")}} interface returns the {{domxref("MediaStreamTrack")}} associated with this event.
+ویژگی فقط‑خواندنی **`track`** از رابط {{domxref("MediaStreamTrackEvent")}}، شیء {{domxref("MediaStreamTrack")}} مرتبط با این رویداد را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A {{domxref("MediaStreamTrack")}} object.
+یک شیء {{domxref("MediaStreamTrack")}}.
 
-## Examples
+## مثال‌ها
 
 ```js
 const stream = new MediaStream();
@@ -30,15 +24,15 @@ stream.addEventListener("removetrack", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("MediaStream/addtrack_event", "addtrack")}} and {{domxref("MediaStream/removetrack_event", "removetrack")}} events
+- رویدادهای {{domxref("MediaStream/addtrack_event", "addtrack")}} و {{domxref("MediaStream/removetrack_event", "removetrack")}}
 - {{domxref("MediaStreamTrack")}}
