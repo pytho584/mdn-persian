@@ -1,7 +1,5 @@
 ---
 title: "MediaTrackConstraints: aspectRatio property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/aspectRatio"
-status: "needs-translation"
 ---
 
 ---
@@ -14,42 +12,29 @@ browser-compat: api.MediaStreamTrack.applyConstraints.aspectRatio_constraint
 
 {{APIRef("Media Capture and Streams")}}
 
-The {{domxref("MediaTrackConstraints")}} dictionary's **`aspectRatio`** property is a [`ConstrainDouble`](/en-US/docs/Web/API/MediaTrackConstraints#constraindouble) describing the requested or mandatory constraints placed upon the value of the
-{{domxref("MediaTrackSettings.aspectRatio", "aspectRatio")}} constrainable property.
+ویژگی **`aspectRatio`** در دیکشنری {{domxref("MediaTrackConstraints")}} یک [`ConstrainDouble`](/en-US/docs/Web/API/MediaTrackConstraints#constraindouble) است که محدودیت‌های درخواستی یا اجباری اعمال‌شده بر مقدار ویژگی محدودیت‌پذیر {{domxref("MediaTrackSettings.aspectRatio", "aspectRatio")}} را توصیف می‌کند.
 
-If needed, you can determine whether or not this constraint is supported by checking
-the value of {{domxref("MediaTrackSupportedConstraints.aspectRatio")}} as returned by a
-call to {{domxref("MediaDevices.getSupportedConstraints()")}}. However, typically this
-is unnecessary since browsers will ignore any constraints they're unfamiliar with.
+در صورت نیاز، می‌توانید با بررسی مقدار {{domxref("MediaTrackSupportedConstraints.aspectRatio")}} که توسط فراخوانی {{domxref("MediaDevices.getSupportedConstraints()")}} برگردانده می‌شود، تعیین کنید که آیا این محدودیت پشتیبانی می‌شود یا خیر. با این حال، معمولاً این کار ضروری نیست، زیرا مرورگرها هر محدودیتی را که با آن آشنایی ندارند نادیده می‌گیرند.
 
-## Value
+## مقدار
 
-A [`ConstrainDouble`](/en-US/docs/Web/API/MediaTrackConstraints#constraindouble) describing the acceptable or required value(s) for a
-video track's {{glossary("aspect ratio")}}. The value is the width divided by the height and is rounded
-to ten decimal places. For example, the standard high-definition video aspect ratio of
-16:9 can be computed as 1920/1080, or 1.7777777778.
+یک [`ConstrainDouble`](/en-US/docs/Web/API/MediaTrackConstraints#constraindouble) که مقدار(های) قابل قبول یا الزامی را برای {{glossary("aspect ratio")}} یک تراک ویدیو توصیف می‌کند. این مقدار، حاصل تقسیم عرض بر ارتفاع است و تا ده رقم اعشار گرد می‌شود. برای مثال، نسبت تصویر استاندارد ویدیوی با کیفیت بالا (HD) یعنی 16:9 را می‌توان به صورت 1920/1080 یا 1.7777777778 محاسبه کرد.
 
-If this value is a number, the user agent will attempt to obtain media whose aspect
-ratio is as close as possible to this number given the capabilities of the hardware and
-the other constraints specified. Otherwise, the value of this
-[`ConstrainDouble`](/en-US/docs/Web/API/MediaTrackConstraints#constraindouble) will guide the user agent in its efforts to provide an
-exact match to the required aspect ratio (if `exact` is specified or both
-`min` and `max` are provided and have the same value) or to a
-best-possible value.
+اگر این مقدار یک عدد باشد، عامل کاربر (user agent) تلاش می‌کند رسانه‌ای به دست آورد که نسبت تصویر آن، با توجه به قابلیت‌های سخت‌افزار و سایر محدودیت‌های مشخص‌شده، تا حد امکان به این عدد نزدیک باشد. در غیر این صورت، مقدار این [`ConstrainDouble`](/en-US/docs/Web/API/MediaTrackConstraints#constraindouble) عامل کاربر را در تلاش برای ارائه تطبیق دقیق با نسبت تصویر موردنیاز (در صورت مشخص شدن `exact` یا ارائه شدن هر دو `min` و `max` با مقدار یکسان) یا رسیدن به بهترین مقدار ممکن راهنمایی می‌کند.
 
-## Examples
+## مثال‌ها
 
-See the [Constraint exerciser](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#example_constraint_exerciser) example.
+مثال [Constraint exerciser](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#example_constraint_exerciser) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
 - [Capabilities, constraints, and settings](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints)
