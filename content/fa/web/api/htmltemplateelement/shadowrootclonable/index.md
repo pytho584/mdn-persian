@@ -1,7 +1,5 @@
 ---
 title: "HTMLTemplateElement: shadowRootClonable property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTemplateElement/shadowRootClonable"
-status: "needs-translation"
 ---
 
 ---
@@ -14,26 +12,26 @@ browser-compat: api.HTMLTemplateElement.shadowRootClonable
 
 {{APIRef("Web Components")}}
 
-The **`shadowRootClonable`** property reflects the value of the [`shadowrootclonable`](/en-US/docs/Web/HTML/Reference/Elements/template#shadowrootclonable) attribute of the associated [`<template>`](/en-US/docs/Web/HTML/Reference/Elements/template) element.
+ویژگی **`shadowRootClonable`** مقدار صفت [`shadowrootclonable`](/en-US/docs/Web/HTML/Reference/Elements/template#shadowrootclonable) عنصر [`<template>`](/en-US/docs/Web/HTML/Reference/Elements/template) مرتبط را منعکس می‌کند.
 
 > [!NOTE]
-> This property is not useful for developers, and is only documented for completeness.
-> If a `<template>` element is used to declaratively create a [`ShadowRoot`](/en-US/docs/Web/API/ShadowRoot), then this object and property do not exist.
-> Otherwise, if an `HTMLTemplateElement` is created, the value of this property is irrelevant because the object is not a shadow root and cannot subsequently be changed to a shadow root.
+> این ویژگی برای توسعه‌دهندگان کاربردی ندارد و صرفاً برای تکمیل مستندات ذکر شده است.
+> اگر از یک عنصر `<template>` به‌صورت اعلامی برای ایجاد یک [`ShadowRoot`](/en-US/docs/Web/API/ShadowRoot) استفاده شود، این شیء و این ویژگی وجود نخواهند داشت.
+> در غیر این صورت، اگر یک `HTMLTemplateElement` ایجاد شود، مقدار این ویژگی بی‌اهمیت است؛ زیرا آن شیء یک shadow root نیست و نمی‌توان آن را به shadow root تبدیل کرد.
 
-## Value
+## مقدار
 
-Reflects the value of the [`shadowrootclonable`](/en-US/docs/Web/HTML/Reference/Elements/template#shadowrootclonable) attribute of the associated [`<template>`](/en-US/docs/Web/HTML/Reference/Elements/template) element.
+منعکس‌کنندهٔ مقدار صفت [`shadowrootclonable`](/en-US/docs/Web/HTML/Reference/Elements/template#shadowrootclonable) عنصر [`<template>`](/en-US/docs/Web/HTML/Reference/Elements/template) مرتبط است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [`shadowrootclonable`](/en-US/docs/Web/HTML/Reference/Elements/template#shadowrootclonable) attribute of the `<template>` element
+- صفت [`shadowrootclonable`](/en-US/docs/Web/HTML/Reference/Elements/template#shadowrootclonable) عنصر `<template>`
 - [`ShadowRoot.clonable`](/en-US/docs/Web/API/ShadowRoot/clonable)
