@@ -1,11 +1,5 @@
 ---
 title: "ManagedMediaSource: startstreaming event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ManagedMediaSource/startstreaming_event"
-status: "needs-translation"
----
-
----
-title: "ManagedMediaSource: startstreaming event"
 short-title: startstreaming
 slug: Web/API/ManagedMediaSource/startstreaming_event
 page-type: web-api-event
@@ -16,11 +10,11 @@ browser-compat: api.ManagedMediaSource.startstreaming_event
 
 {{APIRef("Media Source Extensions")}}{{AvailableInWorkers("window_and_dedicated")}}{{SeeCompatTable}}
 
-The **`startstreaming`** event of the {{domxref("ManagedMediaSource")}} interface is fired when the {{domxref("ManagedMediaSource.streaming", "streaming")}} property changes from `false` to `true`. This indicates that the user agent needs more data to ensure uninterrupted playback, and the application should begin fetching and appending media segments.
+رویداد **`startstreaming`** از واسط {{domxref("ManagedMediaSource")}} زمانی رخ می‌دهد که ویژگی {{domxref("ManagedMediaSource.streaming", "streaming")}} از `false` به `true` تغییر کند. این نشان می‌دهد که عامل کاربر (user agent) برای تضمین پخش بدون وقفه به داده‌های بیشتری نیاز دارد و برنامه باید واکشی و الحاق (append) قطعه‌های رسانه‌ای را آغاز کند.
 
 ## Syntax
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی مدیریت‌کننده رویداد (event handler property) تنظیم کنید.
 
 ```js-nolint
 addEventListener("startstreaming", (event) => {});
@@ -30,13 +24,13 @@ onstartstreaming = (event) => {};
 
 ## Event type
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
 ## Examples
 
-### Fetching data in response to startstreaming
+### واکشی داده‌ها در پاسخ به startstreaming
 
-This example creates a {{domxref("ManagedMediaSource")}}, attaches it to a {{htmlelement("video")}} element, and uses the `startstreaming` event to begin fetching and appending media data.
+در این مثال، یک {{domxref("ManagedMediaSource")}} ساخته می‌شود، به یک عنصر {{htmlelement("video")}} متصل می‌شود و از رویداد `startstreaming` برای شروع واکشی و الحاق داده‌های رسانه‌ای استفاده می‌شود.
 
 ```js
 const videoUrl =
@@ -75,7 +69,7 @@ if (ManagedMediaSource.isTypeSupported(mediaType)) {
 
 ## See also
 
-- {{domxref("ManagedMediaSource.endstreaming_event", "endstreaming")}} event
+- رویداد {{domxref("ManagedMediaSource.endstreaming_event", "endstreaming")}}
 - {{domxref("ManagedMediaSource.streaming")}}
 - {{domxref("ManagedMediaSource")}}
 - {{domxref("MediaSource")}}
