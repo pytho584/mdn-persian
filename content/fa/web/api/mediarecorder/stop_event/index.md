@@ -1,11 +1,5 @@
 ---
 title: "MediaRecorder: stop event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/stop_event"
-status: "needs-translation"
----
-
----
-title: "MediaRecorder: stop event"
 short-title: stop
 slug: Web/API/MediaRecorder/stop_event
 page-type: web-api-event
@@ -14,15 +8,11 @@ browser-compat: api.MediaRecorder.stop_event
 
 {{APIRef("MediaStream Recording")}}
 
-The **`stop`** event of the {{domxref("MediaRecorder")}} interface is fired when
-{{domxref("MediaRecorder.stop()")}} is called, or when the media stream being
-captured ends. In each case, the `stop` event is preceded by a
-`dataavailable` event, making the {{domxref("Blob")}} captured up to that
-point available for you to use in your application.
+رویداد **`stop`** در رابط {{domxref("MediaRecorder")}} زمانی رخ می‌دهد که {{domxref("MediaRecorder.stop()")}} فراخوانی شود، یا زمانی که جریان رسانه‌ای در حال ضبط پایان یابد. در هر دو حالت، پیش از رویداد `stop`، یک رویداد `dataavailable` رخ می‌دهد که {{domxref("Blob")}} ضبط‌شده تا آن لحظه را برای استفاده در برنامه شما در دسترس قرار می‌دهد.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم نمایید.
 
 ```js-nolint
 addEventListener("stop", (event) => { })
@@ -30,11 +20,11 @@ addEventListener("stop", (event) => { })
 onstop = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Example
+## مثال
 
 ```js
 mediaRecorder.onstop = (e) => {
@@ -53,18 +43,17 @@ mediaRecorder.ondataavailable = (e) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Using the MediaStream Recording API](/en-US/docs/Web/API/MediaStream_Recording_API/Using_the_MediaStream_Recording_API)
-- [Web Dictaphone](https://mdn.github.io/dom-examples/media/web-dictaphone/): MediaRecorder +
-  getUserMedia + Web Audio API visualization demo, by [Chris Mills](https://github.com/chrisdavidmills) ([source on GitHub](https://github.com/mdn/dom-examples/tree/main/media/web-dictaphone).)
-- [simpl.info MediaStream Recording demo](https://simpl.info/mediarecorder/), by [Sam Dutton](https://github.com/samdutton).
+- [استفاده از API ضبط MediaStream](/en-US/docs/Web/API/MediaStream_Recording_API/Using_the_MediaStream_Recording_API)
+- [Web Dictaphone](https://mdn.github.io/dom-examples/media/web-dictaphone/): دموی تصویری MediaRecorder + getUserMedia + Web Audio API، توسط [Chris Mills](https://github.com/chrisdavidmills) ([منبع در GitHub](https://github.com/mdn/dom-examples/tree/main/media/web-dictaphone))
+- [دموی ضبط MediaStream از simpl.info](https://simpl.info/mediarecorder/)، توسط [Sam Dutton](https://github.com/samdutton)
 - {{domxref("Navigator.getUserMedia")}}
