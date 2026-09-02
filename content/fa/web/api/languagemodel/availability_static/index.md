@@ -1,7 +1,5 @@
 ---
 title: "LanguageModel: availability() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/LanguageModel/availability_static"
-status: "needs-translation"
 ---
 
 ---
@@ -14,9 +12,9 @@ browser-compat: api.LanguageModel.availability_static
 
 {{APIRef("Prompt API")}}{{SecureContext_Header}}
 
-The **`availability()`** static method of the {{domxref("LanguageModel")}} interface returns a status identifier indicating whether the browser's language model supports a given set of configuration options, without creating a session or triggering a download.
+متد ایستای **`availability()`** در رابط {{domxref("LanguageModel")}} یک شناسه وضعیت برمی‌گرداند که نشان می‌دهد آیا مدل زبانی مرورگر مجموعه‌ای معین از گزینه‌های پیکربندی را پشتیبانی می‌کند یا نه، بدون اینکه نشستی ایجاد کند یا دانلودی را آغاز کند.
 
-Use `availability()` before calling {{domxref("LanguageModel.create_static", "LanguageModel.create()")}} to determine whether the desired configuration is supported. This avoids initiating a session only to have it fail, and lets you provide a meaningful fallback to users when the configuration is not supported.
+برای تعیین اینکه آیا پیکربندی موردنظر پشتیبانی می‌شود یا نه، قبل از فراخوانی {{domxref("LanguageModel.create_static", "LanguageModel.create()")}} از `availability()` استفاده کنید. این کار از ایجاد نشستی که فقط برای شکست خوردن ایجاد شده است جلوگیری می‌کند و به شما امکان می‌دهد وقتی پیکربندی پشتیبانی نمی‌شود، یک راهکار جایگزین معنادار به کاربران ارائه دهید.
 
 ## Syntax
 
@@ -28,84 +26,88 @@ LanguageModel.availability(options)
 ### Parameters
 
 - `options` {{optional_inline}}
-  - : An object that represents the base set of options used when checking language model support.
-    Properties include:
+  - : شیئی که مجموعه پایه گزینه‌های مورد استفاده هنگام بررسی پشتیبانی مدل زبانی را نشان می‌دهد.
+    ویژگی‌ها عبارت‌اند از:
+
     - `expectedInputs` {{optional_inline}}
-      - : An array of objects representing the required input modalities and languages.
-        Each object can include the following properties:
+      - : آرایه‌ای از اشیاء که نشان‌دهنده انواع ورودی و زبان‌های مورد نیاز است.
+        هر شیء می‌تواند ویژگی‌های زیر را شامل شود:
+
         - `type`
-          - : An enumerated value indicating the content type. Must be one of:
+          - : یک مقدار شمارشی که نوع محتوا را نشان می‌دهد. باید یکی از موارد زیر باشد:
             - `text`
-              - : Plain text content.
+              - : محتوای متن ساده.
             - `image`
-              - : Image content.
+              - : محتوای تصویر.
             - `audio`
-              - : Audio content.
+              - : محتوای صوتی.
             - `tool-call`
-              - : A tool invocation issued by the model.
+              - : فراخوانی ابزار که توسط مدل صادر شده است.
             - `tool-response`
-              - : The result of a tool invocation.
+              - : نتیجه یک فراخوانی ابزار.
         - `languages` {{optional_inline}}
-          - : An array of strings containing [BCP 47](https://www.rfc-editor.org/rfc/rfc5646) language tags (for example, `en`, `fr`, `ja`) representing languages that the session is expected to handle. The user agent uses this list to determine whether the model supports the specified languages.
+          - : آرایه‌ای از رشته‌ها حاوی برچسب‌های زبان [BCP 47](https://www.rfc-editor.org/rfc/rfc5646) (برای مثال، `en`، `fr`، `ja`) که زبان‌هایی را نشان می‌دهد که انتظار می‌رود نشست آن‌ها را مدیریت کند. عامل کاربر از این فهرست برای تعیین اینکه آیا مدل از زبان‌های مشخص‌شده پشتیبانی می‌کند یا نه استفاده می‌کند.
     - `expectedOutputs`
-      - : An array of objects representing the required output modalities and languages.
-        Each object can include the following properties:
+      - : آرایه‌ای از اشیاء که نشان‌دهنده انواع خروجی و زبان‌های مورد نیاز است.
+        هر شیء می‌تواند ویژگی‌های زیر را شامل شود:
+
         - `type`
-          - : An enumerated value indicating the content type. Must be one of:
+          - : یک مقدار شمارشی که نوع محتوا را نشان می‌دهد. باید یکی از موارد زیر باشد:
             - `text`
-              - : Textual content.
+              - : محتوای متنی.
             - `image`
-              - : Image content.
+              - : محتوای تصویر.
             - `audio`
-              - : Audio content.
+              - : محتوای صوتی.
             - `tool-call`
-              - : A tool invocation issued by the model.
+              - : فراخوانی ابزار که توسط مدل صادر شده است.
             - `tool-response`
-              - : The result of a tool invocation.
+              - : نتیجه یک فراخوانی ابزار.
         - `languages` {{optional_inline}}
-          - : An array of strings containing [BCP 47](https://www.rfc-editor.org/rfc/rfc5646) language tags (for example, `en`, `fr`, `ja`) that the session is expected to output.
+          - : آرایه‌ای از رشته‌ها حاوی برچسب‌های زبان [BCP 47](https://www.rfc-editor.org/rfc/rfc5646) (برای مثال، `en`، `fr`، `ja`) که انتظار می‌رود نشست آن‌ها را خروجی دهد.
     - `tools`
-      - : An array of objects representing tools available to the AI.
-        Each object can include the following properties:
+      - : آرایه‌ای از اشیاء که ابزارهای در دسترس هوش مصنوعی را نشان می‌دهد.
+        هر شیء می‌تواند ویژگی‌های زیر را شامل شود:
+
         - `name`
-          - : A string giving the tool a unique name the model uses to refer to it when issuing a tool call.
+          - : رشته‌ای که به ابزار یک نام یکتا می‌دهد؛ مدل هنگام صدور فراخوانی ابزار از این نام برای ارجاع به ابزار استفاده می‌کند.
         - `description`
-          - : A string describing what the tool does.
-            The model uses this description to decide when and whether to invoke the tool.
+          - : رشته‌ای که توصیف می‌کند ابزار چه کاری انجام می‌دهد.
+            مدل از این توصیف برای تصمیم‌گیری در مورد زمان و اینکه آیا ابزار را فراخوانی کند استفاده می‌کند.
         - `inputSchema`
-          - : An object containing a [JSON Schema](https://json-schema.org/) that describes the tool's input parameters.
-            The model uses this schema to construct the arguments it passes to the tool's `execute` function.
+          - : شیئی حاوی یک [JSON Schema](https://json-schema.org/) که پارامترهای ورودی ابزار را توصیف می‌کند.
+            مدل از این schema برای ساخت آرگومان‌هایی که به تابع `execute` ابزار منتقل می‌کند استفاده می‌کند.
         - `execute`
-          - : A callback function that the user agent invokes when the model calls this tool.
-            It can receive any arguments provided by the model as appropriate and returns a {{jsxref("Promise")}} that resolves with a {{jsxref("String")}} representing the tool's result.
+          - : یک تابع بازفراخوانی (callback) که عامل کاربر هنگام فراخوانی این ابزار توسط مدل، آن را فراخوانی می‌کند.
+            این تابع می‌تواند هر آرگومان مناسبی را که مدل ارائه کرده است دریافت کند و یک {{jsxref("Promise")}} برمی‌گرداند که با یک {{jsxref("String")}} نشان‌دهنده نتیجه ابزار، حل می‌شود.
 
 ### Return value
 
-A {{jsxref("Promise")}} that resolves with one of the values listed below.
+یک {{jsxref("Promise")}} که با یکی از مقادیر زیر حل می‌شود.
 
 - `available`
-  - : The model is ready to use with the given options.
+  - : مدل با گزینه‌های داده‌شده آماده استفاده است.
 - `downloadable`
-  - : The model can support the given options but needs to download additional data to do so. The download has not yet started.
+  - : مدل می‌تواند گزینه‌های داده‌شده را پشتیبانی کند، اما برای این کار باید داده‌های اضافی دانلود کند. دانلود هنوز آغاز نشده است.
 - `downloading`
-  - : The model can support the given options with an additional data download. The download is currently in progress.
+  - : مدل می‌تواند گزینه‌های داده‌شده را با یک دانلود داده اضافی پشتیبانی کند. دانلود در حال حاضر در جریان است.
 - `unavailable`
-  - : The model cannot support the given options, or the user agent cannot determine availability, for example, due to a [transient activation](/en-US/docs/Glossary/Transient_activation) error. In that case, the caller should retry or fall back to an alternative implementation.
+  - : مدل نمی‌تواند گزینه‌های داده‌شده را پشتیبانی کند، یا عامل کاربر نمی‌تواند در دسترس بودن را تعیین کند، برای مثال به دلیل خطای [فعال‌سازی گذرا](/en-US/docs/Glossary/Transient_activation). در این صورت، فراخواننده باید دوباره تلاش کند یا به یک پیاده‌سازی جایگزین برگردد.
 
 ### Exceptions
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the calling document is not fully active.
+  - : اگر سند فراخواننده کاملاً فعال نباشد پرتاب می‌شود.
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if usage of the method is blocked by a {{httpheader("Permissions-Policy/language-model", "language-model")}} {{httpheader("Permissions-Policy")}}.
+  - : اگر استفاده از این متد توسط یک {{httpheader("Permissions-Policy/language-model", "language-model")}} {{httpheader("Permissions-Policy")}} مسدود شده باشد پرتاب می‌شود.
 
 ## Examples
 
-See also [Using the Prompt API > Checking configuration support](/en-US/docs/Web/API/Prompt_API/Using#checking_configuration_support) and the [Complete example](/en-US/docs/Web/API/Prompt_API/Using#complete_example) on the same page.
+همچنین ببینید [استفاده از Prompt API > بررسی پشتیبانی پیکربندی](/en-US/docs/Web/API/Prompt_API/Using#checking_configuration_support) و [نمونه کامل](/en-US/docs/Web/API/Prompt_API/Using#complete_example) در همین صفحه.
 
 ### Requesting input support
 
-This example shows how to determine whether text and image inputs are supported by the model.
+این مثال نشان می‌دهد چگونه می‌توان تعیین کرد که آیا ورودی‌های متن و تصویر توسط مدل پشتیبانی می‌شوند.
 
 ```js
 const status = await LanguageModel.availability({
@@ -115,7 +117,7 @@ const status = await LanguageModel.availability({
 
 ### Checking availability for a specific language
 
-This example tests whether the model supports English before asking it to translate Japanese text to English.
+این مثال بررسی می‌کند که آیا مدل انگلیسی را پشتیبانی می‌کند، قبل از اینکه از آن بخواهیم متن ژاپنی را به انگلیسی ترجمه کند.
 
 ```js
 const status = await LanguageModel.availability({
@@ -146,9 +148,9 @@ if (status === "available") {
 
 ### Checking availability for multimodal input
 
-[Multimodal input](/en-US/docs/Web/API/Prompt_API/Multimodal) describes sessions that can use more than one type of input, such as text and images.
-Since the availability of input types varies by language model, your code should check the availability of desired modes before creating a session.
-An example is shown here.
+[ورودی چندوجهی](/en-US/docs/Web/API/Prompt_API/Multimodal) نشست‌هایی را توصیف می‌کند که می‌توانند از بیش از یک نوع ورودی مانند متن و تصویر استفاده کنند.
+از آنجا که در دسترس بودن انواع ورودی بسته به مدل زبانی متفاوت است، کد شما باید قبل از ایجاد نشست، در دسترس بودن حالت‌های موردنظر را بررسی کند.
+یک نمونه در اینجا نشان داده شده است.
 
 ```js
 const availability = await LanguageModel.availability({
