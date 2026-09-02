@@ -1,11 +1,5 @@
 ---
 title: "IDBIndex: getKey() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/getKey"
-status: "needs-translation"
----
-
----
-title: "IDBIndex: getKey() method"
 short-title: getKey()
 slug: Web/API/IDBIndex/getKey
 page-type: web-api-instance-method
@@ -14,60 +8,46 @@ browser-compat: api.IDBIndex.getKey
 
 {{ APIRef("IndexedDB") }} {{AvailableInWorkers}}
 
-The **`getKey()`** method of the {{domxref("IDBIndex")}}
-interface returns an {{domxref("IDBRequest")}} object, and, in a separate thread,
-finds either the primary key that corresponds to the given key in this index or the
-first corresponding primary key, if `key` is set to an
-{{domxref("IDBKeyRange")}}.
+متد **`getKey()`** از رابط {{domxref("IDBIndex")}} یک شیء {{domxref("IDBRequest")}} برمی‌گرداند و در یک رشته‌ی جداگانه، یا کلید اصلیِ متناظر با کلید داده‌شده در این ایندکس را می‌یابد، یا اگر `key` به یک {{domxref("IDBKeyRange")}} تنظیم شده باشد، نخستین کلید اصلیِ متناظر را پیدا می‌کند.
 
-If a primary key is found, it is set as the `result` of the request object.
-Note that this doesn't return the whole record as {{domxref("IDBIndex.get")}} does.
+اگر کلید اصلی پیدا شود، به‌عنوان `result` شیء درخواست تنظیم می‌شود. توجه داشته باشید که این متد برخلاف {{domxref("IDBIndex.get")}} کل رکورد را برنمی‌گرداند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 getKey()
 getKey(key)
 ```
 
-### Parameters
+### پارامترها
 
 - `key` {{optional_inline}}
-  - : A key or {{domxref("IDBKeyRange")}} that identifies a record to be retrieved. If
-    this value is null or missing, the browser will use an unbound key range.
+  - : یک کلید یا {{domxref("IDBKeyRange")}} که رکورد موردنظر برای بازیابی را مشخص می‌کند. اگر این مقدار `null` باشد یا وجود نداشته باشد، مرورگر از یک محدوده‌ی کلید نامحدود استفاده خواهد کرد.
 
-### Return value
+### مقدار بازگشتی
 
-An {{domxref("IDBRequest")}} object on which subsequent events related to this operation are fired.
+یک شیء {{domxref("IDBRequest")}} که رویدادهای بعدی مرتبط با این عملیات روی آن رخ می‌دهند.
 
-If the operation is successful, the value of the request's {{domxref("IDBRequest.result", "result")}} property is the key for the first record matching the given key or key range.
+اگر عملیات با موفقیت انجام شود، مقدار ویژگی {{domxref("IDBRequest.result", "result")}} درخواست، کلید نخستین رکوردی است که با کلید یا محدوده‌ی کلید داده‌شده مطابقت دارد.
 
-### Exceptions
+### استثناها
 
-This method may raise a {{domxref("DOMException")}} of one of the following types:
+این متد ممکن است یک {{domxref("DOMException")}} از یکی از انواع زیر پرتاب کند:
 
 - `TransactionInactiveError` {{domxref("DOMException")}}
-  - : Thrown if this {{domxref("IDBIndex")}}'s transaction is inactive.
+  - : زمانی پرتاب می‌شود که تراکنش این {{domxref("IDBIndex")}} غیرفعال باشد.
 - `DataError` {{domxref("DOMException")}}
-  - : Thrown if the key or key range provided contains an invalid key.
+  - : زمانی پرتاب می‌شود که کلید یا محدوده‌ی کلید ارائه‌شده حاوی یک کلید نامعتبر باشد.
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the {{domxref("IDBIndex")}} has been deleted or removed.
+  - : زمانی پرتاب می‌شود که {{domxref("IDBIndex")}} حذف یا پاک شده باشد.
 
-## Examples
+## مثال‌ها
 
-In the following example we open a transaction and an object store, then get the
-index `lName` from a simple contacts database. We then open a basic cursor on
-the index using {{domxref("IDBIndex.openCursor")}} — this works the same as opening a
-cursor directly on an `ObjectStore` using
-{{domxref("IDBObjectStore.openCursor")}} except that the returned records are sorted
-based on the index, not the primary key.
+در مثال زیر، یک تراکنش و یک مخزن شیء (object store) باز می‌کنیم و سپس ایندکس `lName` را از یک پایگاه‌داده‌ی ساده‌ی مخاطبین می‌گیریم. سپس با استفاده از {{domxref("IDBIndex.openCursor")}} یک نشانگر (cursor) پایه روی ایندکس باز می‌کنیم — این کار دقیقاً مانند باز کردن مستقیم نشانگر روی یک `ObjectStore` با استفاده از {{domxref("IDBObjectStore.openCursor")}} عمل می‌کند، با این تفاوت که رکوردهای بازگشتی بر اساس ایندکس مرتب می‌شوند، نه بر اساس کلید اصلی.
 
-`myIndex.getKey('Bungle')` is then used to retrieve the primary key of the
-record with an `lName` of `Bungle`, and the result of that request
-is logged to the console when its success callback returns.
+سپس از `myIndex.getKey('Bungle')` برای بازیابی کلید اصلی رکوردی استفاده می‌شود که `lName` آن `Bungle` است، و نتیجه‌ی آن درخواست، هنگام بازگشت فراخوانِ موفقیت (success callback)، در کنسول ثبت می‌شود.
 
-Finally, we iterate through each record, and insert the data into an HTML table. For a
-complete working example, see our [IndexedDB-examples demo repo](https://github.com/mdn/dom-examples/tree/main/indexeddb-examples/idbindex) ([View the example live](https://mdn.github.io/dom-examples/indexeddb-examples/idbindex/)).
+در پایان، روی هر رکورد پیمایش می‌کنیم و داده‌ها را در یک جدول HTML وارد می‌کنیم. برای یک مثال کامل و قابل اجرا، به [مخزن دموی IndexedDB-examples](https://github.com/mdn/dom-examples/tree/main/indexeddb-examples/idbindex) مراجعه کنید ([مشاهده‌ی مثال زنده](https://mdn.github.io/dom-examples/indexeddb-examples/idbindex/)).
 
 ```js
 function displayDataByIndex() {
@@ -109,20 +89,20 @@ function displayDataByIndex() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم محدوده‌ای از کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و اعمال تغییرات در داده‌هایتان: {{domxref("IDBObjectStore")}}
+- استفاده از نشانگرها: {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهده‌ی مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
