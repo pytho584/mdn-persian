@@ -1,11 +1,5 @@
 ---
 title: "IdleDetector: IdleDetector() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IdleDetector/IdleDetector"
-status: "needs-translation"
----
-
----
-title: "IdleDetector: IdleDetector() constructor"
 short-title: IdleDetector()
 slug: Web/API/IdleDetector/IdleDetector
 page-type: web-api-constructor
@@ -16,9 +10,7 @@ browser-compat: api.IdleDetector.IdleDetector
 
 {{securecontext_header}}{{APIRef("Idle Detection API")}}{{SeeCompatTable}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`IdleDetector()`** constructor creates a new {{domxref("IdleDetector")}}
-object which provides events indicating when the user is no longer interacting
-with their device or the screen has locked.
+سازندهٔ **`IdleDetector()`** یک شیء جدید {{domxref("IdleDetector")}} می‌سازد که رویدادهایی را ارائه می‌دهد که نشان می‌دهند کاربر دیگر با دستگاه خود در تعامل نیست یا صفحه قفل شده است.
 
 ## Syntax
 
@@ -26,9 +18,9 @@ with their device or the screen has locked.
 new IdleDetector()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
 ## Specifications
 
