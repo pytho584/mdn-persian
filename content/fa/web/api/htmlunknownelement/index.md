@@ -1,11 +1,5 @@
 ---
 title: "HTMLUnknownElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLUnknownElement"
-status: "needs-translation"
----
-
----
-title: HTMLUnknownElement
 slug: Web/API/HTMLUnknownElement
 page-type: web-api-interface
 browser-compat: api.HTMLUnknownElement
@@ -13,22 +7,22 @@ browser-compat: api.HTMLUnknownElement
 
 {{APIRef("HTML DOM")}}
 
-The **`HTMLUnknownElement`** interface represents an invalid HTML element and derives from the {{DOMxRef("HTMLElement")}} interface, but without implementing any additional properties or methods.
+رابط **`HTMLUnknownElement`** یک عنصر HTML نامعتبر را نشان می‌دهد و از رابط {{DOMxRef("HTMLElement")}} مشتق می‌شود، اما هیچ ویژگی یا متد اضافی را پیاده‌سازی نمی‌کند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_No specific property; inherits properties from its parent, {{DOMxRef("HTMLElement")}}._
+_خیر ویژگی خاصی ندارد؛ ویژگی‌ها را از والد خود، {{DOMxRef("HTMLElement")}} به ارث می‌برد._
 
-## Instance methods
+## روش‌های نمونه
 
-_No specific method; inherits methods from its parent, {{DOMxRef("HTMLElement")}}._
+_خیر متد خاصی ندارد؛ متدها را از والد خود، {{DOMxRef("HTMLElement")}} به ارث می‌برد._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
