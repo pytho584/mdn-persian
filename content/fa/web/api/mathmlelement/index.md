@@ -1,10 +1,4 @@
 ---
-title: "MathMLElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MathMLElement"
-status: "needs-translation"
----
-
----
 title: MathMLElement
 slug: Web/API/MathMLElement
 page-type: web-api-interface
@@ -13,37 +7,37 @@ browser-compat: api.MathMLElement
 
 {{APIRef("MathML")}}
 
-The **`MathMLElement`** interface represents any [MathML](/en-US/docs/Web/MathML) element.
+رابط **`MathMLElement`** نمایانگر هر عنصر [MathML](/en-US/docs/Web/MathML) است.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Also inherits properties from its parent, {{DOMxRef("Element")}}_.
+_این رابط همچنین ویژگی‌ها را از والد خود، {{DOMxRef("Element")}}، به ارث می‌برد._
 
 - {{DOMxRef("MathMLElement.attributeStyleMap")}} {{ReadOnlyInline}}
-  - : A {{DOMxRef("StylePropertyMap")}} representing the declarations of the element's `style` attribute.
+  - : یک {{DOMxRef("StylePropertyMap")}} که اعلان‌های ویژگی `style` عنصر را نمایش می‌دهد.
 - {{DOMxRef("MathMLElement.autofocus")}}
-  - : Whether the control should be focused when the page loads, or when a {{htmlelement("dialog")}} or [popover](/en-US/docs/Web/HTML/Reference/Global_attributes/popover) become shown.
+  - : مشخص می‌کند که آیا کنترل باید هنگام بارگذاری صفحه، یا وقتی یک {{htmlelement("dialog")}} یا [popover](/en-US/docs/Web/HTML/Reference/Global_attributes/popover) نمایش داده می‌شود، فوکوس شود یا خیر.
 - {{DOMxRef("MathMLElement.dataset")}} {{ReadOnlyInline}}
-  - : A {{DOMxRef("DOMStringMap")}} object which provides a list of key/value pairs of named data attributes which correspond to [custom data attributes](/en-US/docs/Web/HTML/How_to/Use_data_attributes) attached to the element. These correspond to MathML's [`data-*`](/en-US/docs/Web/MathML/Reference/Global_attributes/data-*) global attributes.
+  - : یک شیء {{DOMxRef("DOMStringMap")}} که فهرستی از جفت‌های کلید/مقدار را برای ویژگی‌های داده نامدار فراهم می‌کند. این ویژگی‌ها با [ویژگی‌های داده سفارشی](/en-US/docs/Web/HTML/How_to/Use_data_attributes) متصل به عنصر متناظرند و با ویژگی‌های سراسری [`data-*`](/en-US/docs/Web/MathML/Reference/Global_attributes/data-*) در MathML مطابقت دارند.
 - {{DOMxRef("MathMLElement.nonce")}}
-  - : Returns the cryptographic number used once that is used by Content Security Policy to determine whether a given fetch will be allowed to proceed.
+  - : عدد رمزنگاری یکبارمصرف (nonce) را برمی‌گرداند که Content Security Policy برای تعیین اینکه آیا به یک واکشی مشخص اجازه ادامه داده می‌شود یا خیر، از آن استفاده می‌کند.
 - {{DOMxRef("MathMLElement.style")}}
-  - : A {{DOMxRef("CSSStyleDeclaration")}} representing the declarations of the element's `style` attribute.
+  - : یک {{DOMxRef("CSSStyleDeclaration")}} که اعلان‌های ویژگی `style` عنصر را نمایش می‌دهد.
 - {{DOMxRef("MathMLElement.tabIndex")}}
-  - : The position of the element in the tabbing order.
+  - : موقعیت عنصر در ترتیب پیمایش با Tab.
 
-## Instance methods
+## متدهای نمونه
 
-_This interface also inherits methods from its parent, {{DOMxRef("Element")}}_.
+_این رابط همچنین متدها را از والد خود، {{DOMxRef("Element")}}، به ارث می‌برد._
 
 - {{DOMxRef("MathMLElement.blur()")}}
-  - : Removes keyboard focus from the currently focused element.
+  - : فوکوس صفحه‌کلید را از عنصر دارای فوکوس فعلی حذف می‌کند.
 - {{DOMxRef("MathMLElement.focus()")}}
-  - : Makes the element the current keyboard focus.
+  - : عنصر را به فوکوس کنونی صفحه‌کلید تبدیل می‌کند.
 
-## Examples
+## مثال‌ها
 
 ### MathML
 
@@ -61,15 +55,15 @@ _This interface also inherits methods from its parent, {{DOMxRef("Element")}}_.
 document.querySelector("msqrt").constructor.name; // MathMLElement
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{DOMxRef("Element")}}
 - {{DOMxRef("HTMLElement")}}
