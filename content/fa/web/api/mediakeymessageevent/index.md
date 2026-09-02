@@ -1,11 +1,6 @@
+```yaml
 ---
 title: "MediaKeyMessageEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaKeyMessageEvent"
-status: "needs-translation"
----
-
----
-title: MediaKeyMessageEvent
 slug: Web/API/MediaKeyMessageEvent
 page-type: web-api-interface
 browser-compat: api.MediaKeyMessageEvent
@@ -13,38 +8,39 @@ browser-compat: api.MediaKeyMessageEvent
 
 {{APIRef("Encrypted Media Extensions")}}{{SecureContext_Header}}
 
-The **`MediaKeyMessageEvent`** interface of the [Encrypted Media Extensions API](/en-US/docs/Web/API/Encrypted_Media_Extensions_API) contains the content and related data when the content decryption module generates a message for the session.
+رابط **`MediaKeyMessageEvent`** از [API افزونه‌های رسانه رمزگذاری‌شده](/en-US/docs/Web/API/Encrypted_Media_Extensions_API) حاوی محتوا و داده‌های مرتبط است، زمانی که ماژول رمزگشایی محتوا یک پیام برای نشست (session) تولید می‌کند.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده (Constructor)
 
 - {{domxref("MediaKeyMessageEvent.MediaKeyMessageEvent","MediaKeyMessageEvent()")}}
-  - : Creates a new instance of `MediaKeyMessageEvent`.
+  - : یک نمونه جدید از `MediaKeyMessageEvent` ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه (Instance properties)
 
-Inherits properties from its parent, {{domxref("Event")}}.
+ویژگی‌های والد خود، {{domxref("Event")}} را به ارث می‌برد.
 
 - {{domxref("MediaKeyMessageEvent.message")}} {{ReadOnlyInline}}
-  - : Returns an {{jsxref("ArrayBuffer")}} with a message from the content decryption module. Messages vary by key system.
+  - : یک {{jsxref("ArrayBuffer")}} شامل پیامی از ماژول رمزگشایی محتوا برمی‌گرداند. پیام‌ها با توجه به سیستم کلید (key system) متفاوت هستند.
 - {{domxref("MediaKeyMessageEvent.messageType")}} {{ReadOnlyInline}}
-  - : Indicates the type of message. May be one of `license-request`, `license-renewal`, `license-release`, or `individualization-request`.
+  - : نوع پیام را مشخص می‌کند. می‌تواند یکی از این مقادیر باشد: `license-request`، `license-renewal`، `license-release`، یا `individualization-request`.
 
-## Instance methods
+## روش‌های نمونه (Instance methods)
 
-Inherits methods from its parent, {{domxref("Event")}}.
+روش‌های والد خود، {{domxref("Event")}} را به ارث می‌برد.
 
-## Examples
+## مثال‌ها
 
 ```js
 // TBD
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
+```
