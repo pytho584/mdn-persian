@@ -1,11 +1,5 @@
 ---
 title: "MediaTrackSettings: height property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/height"
-status: "needs-translation"
----
-
----
-title: "MediaTrackSettings: height property"
 short-title: height
 slug: Web/API/MediaTrackSettings/height
 page-type: web-api-instance-property
@@ -14,37 +8,27 @@ browser-compat: api.MediaStreamTrack.applyConstraints.height_constraint
 
 {{APIRef("Media Capture and Streams")}}
 
-The {{domxref("MediaTrackSettings")}} dictionary's **`height`**
-property is an integer indicating the number of pixels tall
-{{domxref("MediaStreamTrack")}} is currently configured to be. This lets you determine
-what value was selected to comply with your specified constraints for this property's
-value as described in the {{domxref("MediaTrackConstraints.height")}} property you
-provided when calling either {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}}
-or {{domxref("MediaStreamTrack.applyConstraints()")}}.
+خاصیت **`height`** در فرهنگ لغت {{domxref("MediaTrackSettings")}} یک عدد صحیح است که نشان می‌دهد {{domxref("MediaStreamTrack")}} در حال حاضر برای چه تعداد پیکسل ارتفاع پیکربندی شده است. این امکان را به شما می‌دهد تا تعیین کنید چه مقداری برای برآوردن محدودیت‌های مشخص‌شدهٔ شما برای این خاصیت انتخاب شده است؛ همان‌طور که در خاصیت {{domxref("MediaTrackConstraints.height")}} که هنگام فراخوانی {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}} یا {{domxref("MediaStreamTrack.applyConstraints()")}} ارائه کرده‌اید، توضیح داده شده است.
 
-If needed, you can determine whether or not this constraint is supported by checking
-the value of {{domxref("MediaTrackSupportedConstraints.height")}} as returned by a call
-to {{domxref("MediaDevices.getSupportedConstraints()")}}. However, typically this is
-unnecessary since browsers will ignore any constraints they're unfamiliar with.
+در صورت نیاز، می‌توانید با بررسی مقدار {{domxref("MediaTrackSupportedConstraints.height")}} که از فراخوانی {{domxref("MediaDevices.getSupportedConstraints()")}} بازگردانده می‌شود، تعیین کنید که آیا این محدودیت پشتیبانی می‌شود یا خیر. با این حال، معمولاً این کار ضروری نیست، زیرا مرورگرها هر محدودیتی را که با آن آشنایی نداشته باشند نادیده می‌گیرند.
 
-## Value
+## مقدار
 
-An integer value indicating the height, in pixels, of the video track as currently
-configured.
+یک عدد صحیح که ارتفاع ویدیو را بر حسب پیکسل، مطابق پیکربندی فعلی نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
-See the [Constraint exerciser](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#example_constraint_exerciser) example.
+به مثال [Constraint exerciser](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#example_constraint_exerciser) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
 - [Capabilities, constraints, and settings](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints)
