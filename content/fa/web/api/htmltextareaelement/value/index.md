@@ -1,11 +1,5 @@
 ---
 title: "HTMLTextAreaElement: value property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTextAreaElement/value"
-status: "needs-translation"
----
-
----
-title: "HTMLTextAreaElement: value property"
 short-title: value
 slug: Web/API/HTMLTextAreaElement/value
 page-type: web-api-instance-property
@@ -14,11 +8,11 @@ browser-compat: api.HTMLTextAreaElement.value
 
 {{ APIRef("HTML DOM") }}
 
-The **`value`** property of the {{DOMxRef("HTMLTextAreaElement")}} interface represents the value of the {{htmlelement("textarea")}} element as a string, which is an empty string if the widget contains no content. It returns or sets the raw value contained in the control.
+ویژگی **`value`** از رابط {{DOMxRef("HTMLTextAreaElement")}} نمایانگر مقدار عنصر {{htmlelement("textarea")}} به صورت یک رشته است. اگر ویجت حاوی هیچ محتوایی نباشد، این مقدار یک رشته خالی خواهد بود. این ویژگی مقدار خام موجود در کنترل را بازمی‌گرداند یا تنظیم می‌کند.
 
 ## Value
 
-A string containing the contents of the {{htmlelement("textarea")}} element.
+یک رشته شامل محتویات عنصر {{htmlelement("textarea")}}.
 
 ## Examples
 
