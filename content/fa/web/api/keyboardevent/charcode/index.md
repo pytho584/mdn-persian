@@ -1,11 +1,5 @@
 ---
 title: "KeyboardEvent: charCode property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/charCode"
-status: "needs-translation"
----
-
----
-title: "KeyboardEvent: charCode property"
 short-title: charCode
 slug: Web/API/KeyboardEvent/charCode
 page-type: web-api-instance-property
@@ -16,20 +10,16 @@ browser-compat: api.KeyboardEvent.charCode
 
 {{APIRef("UI Events")}}{{Deprecated_Header}}
 
-The **`charCode`** read-only property of the
-{{domxref("KeyboardEvent")}} interface returns the Unicode value of a character key
-pressed during a {{domxref("Element/keypress_event", "keypress")}} event.
+ویژگی فقط‌خواندنی **`charCode`** از رابط {{domxref("KeyboardEvent")}} مقدار یونیکد کلید کاراکتری را که در هنگام رویداد {{domxref("Element/keypress_event", "keypress")}} فشرده شده است، برمی‌گرداند.
 
 > [!WARNING]
-> Do not use this property, as it is deprecated. Instead, get the
-> Unicode value of the character using the {{domxref("KeyboardEvent.key", "key")}}
-> property.
+> از این ویژگی استفاده نکنید، زیرا منسوخ شده است. در عوض، مقدار یونیکد کاراکتر را با استفاده از ویژگی {{domxref("KeyboardEvent.key", "key")}} به دست آورید.
 
-## Value
+## مقدار
 
-A number that represents the Unicode value of the character key that was pressed.
+عددی که مقدار یونیکد کلید کاراکتری را که فشرده شده است نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
 ### HTML
 
@@ -52,32 +42,22 @@ input.addEventListener("keypress", (e) => {
 });
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples")}}
 
-## Notes
+## نکات
 
-- In a {{domxref("Element/keypress_event", "keypress")}} event, the Unicode value of the key pressed is stored in
-  either the {{ domxref("KeyboardEvent.keyCode", "keyCode") }} or `charCode`
-  property, but never both. If the key pressed generates a character (e.g., 'a'),
-  `charCode` is set to the code of that character; `charCode`
-  respects the letter case (in other words, `charCode` takes into account
-  whether the <kbd>shift</kbd> key is held down). Otherwise, the code of the pressed key
-  is stored in `keyCode`.
-- `charCode` is never set in the {{domxref("Element/keydown_event", "keydown")}} and
-  {{domxref("Element/keyup_event", "keyup")}} events. In these cases, `keyCode` is set instead.
-- To get the code of the key regardless of whether it was stored in
-  `keyCode` or `charCode`, query the {{domxref("UIEvent/which", "which")}} property.
-- Characters entered through an {{glossary("Input method editor")}} do not register through `keyCode` or
-  `charCode`.
-- For a list of the `charCode` values associated with particular keys, run
-  [Displaying event object properties](/en-US/docs/Web/API/Document_Object_Model#displaying_event_object_properties) and view the resulting HTML table.
+- در رویداد {{domxref("Element/keypress_event", "keypress")}}، مقدار یونیکد کلید فشرده‌شده در یکی از ویژگی‌های {{ domxref("KeyboardEvent.keyCode", "keyCode") }} یا `charCode` ذخیره می‌شود، اما هرگز در هر دو. اگر کلید فشرده‌شده یک کاراکتر تولید کند (مثلاً 'a')، `charCode` روی کد آن کاراکتر تنظیم می‌شود؛ `charCode` به حروف بزرگ و کوچک حساس است (به عبارت دیگر، `charCode` در نظر می‌گیرد که آیا کلید <kbd>shift</kbd> نگه داشته شده است یا خیر). در غیر این صورت، کد کلید فشرده‌شده در `keyCode` ذخیره می‌شود.
+- `charCode` هرگز در رویدادهای {{domxref("Element/keydown_event", "keydown")}} و {{domxref("Element/keyup_event", "keyup")}} تنظیم نمی‌شود. در این موارد، به جای آن `keyCode` تنظیم می‌شود.
+- برای دریافت کد کلید، صرف‌نظر از اینکه در `keyCode` یا `charCode` ذخیره شده باشد، ویژگی {{domxref("UIEvent/which", "which")}} را بپرسید.
+- کاراکترهایی که از طریق یک {{glossary("Input method editor")}} وارد می‌شوند، از طریق `keyCode` یا `charCode` ثبت نمی‌شوند.
+- برای فهرستی از مقادیر `charCode` مرتبط با کلیدهای خاص، [Displaying event object properties](/en-US/docs/Web/API/Document_Object_Model#displaying_event_object_properties) را اجرا و جدول HTML حاصل را مشاهده کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
