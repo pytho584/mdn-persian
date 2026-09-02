@@ -1,11 +1,5 @@
 ---
 title: "IdleDeadline: timeRemaining() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IdleDeadline/timeRemaining"
-status: "needs-translation"
----
-
----
-title: "IdleDeadline: timeRemaining() method"
 short-title: timeRemaining()
 slug: Web/API/IdleDeadline/timeRemaining
 page-type: web-api-instance-method
@@ -14,54 +8,42 @@ browser-compat: api.IdleDeadline.timeRemaining
 
 {{APIRef("Background Tasks")}}
 
-The **`timeRemaining()`** method
-of the {{domxref("IdleDeadline")}} interface returns the estimated number of
-milliseconds the user agent will remain idle for. The callback can call this method at
-any time to determine how much time it can continue to work before it must return. For
-example, if the callback finishes a task and has another one to begin, it can call
-`timeRemaining()` to see if there's enough time to complete the next task. If
-there isn't, the callback can just return immediately, or look for other work to do with
-the remaining time.
+متد **`timeRemaining()`** از رابط {{domxref("IdleDeadline")}} تعداد تخمینی میلی‌ثانیه‌هایی را برمی‌گرداند که عامل کاربر (user agent) همچنان بیکار (idle) خواهد ماند. این فراخوان (callback) می‌تواند در هر زمان این متد را فراخوانی کند تا مشخص شود چقدر زمان برای ادامه کار قبل از بازگشت دارد. برای مثال، اگر فراخوان یک کار را به پایان برساند و کار دیگری برای شروع داشته باشد، می‌تواند `timeRemaining()` را فراخوانی کند تا ببیند آیا زمان کافی برای تکمیل کار بعدی وجود دارد یا خیر. اگر زمان کافی نباشد، فراخوان می‌تواند بلافاصله بازگردد یا به دنبال کار دیگری برای انجام با زمان باقی‌مانده بگردد.
 
-By the time `timeRemaining()` reaches `0`, it is suggested that the callback
-should return control to the user agent's event loop.
+زمانی که `timeRemaining()` به `0` می‌رسد، توصیه می‌شود فراخوان کنترل را به حلقه رویداد (event loop) عامل کاربر بازگرداند.
 
 > [!NOTE]
-> The value returned by `timeRemaining()` is an estimate of how much time the user agent believes is available before the next latency-critical task needs to run. This estimate is not fixed and can suddenly drop to 0 if higher-priority work arrives. For example, the browser's estimate can change in the middle of an idle callback if the user clicks. Developers should not assume the value always decreases linearly like a countdown timer.
+> مقدار بازگردانده‌شده توسط `timeRemaining()` یک تخمین از مدت زمانی است که عامل کاربر باور دارد قبل از اجرای وظیفه حساس به تأخیر بعدی (latency-critical task) در دسترس است. این تخمین ثابت نیست و اگر کار با اولویت بالاتری وارد شود، می‌تواند به‌طور ناگهانی به ۰ کاهش یابد. برای مثال، تخمین مرورگر ممکن است در وسط یک فراخوان بیکار (idle callback) در صورت کلیک کاربر تغییر کند. توسعه‌دهندگان نباید فرض کنند که این مقدار همیشه مانند یک تایمر شمارش معکوس به‌صورت خطی کاهش می‌یابد.
 
-## Syntax
+## نحو
 
 ```js-nolint
 timeRemaining()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("DOMHighResTimeStamp")}} value (which is a floating-point number)
-representing the number of milliseconds the user agent estimates are left in the current
-idle period. The value is ideally accurate to within about 5 microseconds.
+یک مقدار {{domxref("DOMHighResTimeStamp")}} (که یک عدد اعشاری است) که تعداد میلی‌ثانیه‌هایی را نشان می‌دهد که عامل کاربر تخمین می‌زند در دوره بیکاری فعلی باقی مانده است. این مقدار در حالت ایده‌آل دقتی در حدود ۵ میکروثانیه دارد.
 
-If the {{domxref("IdleDeadline")}} object's {{domxref("IdleDeadline.didTimeout", "didTimeout")}}
-property is true, this method returns zero.
+اگر ویژگی {{domxref("IdleDeadline.didTimeout", "didTimeout")}} آبجکت {{domxref("IdleDeadline")}} برابر با `true` باشد، این متد صفر برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-See our [complete example](/en-US/docs/Web/API/Background_Tasks_API#example)
-in the article [Cooperative Scheduling of Background Tasks API](/en-US/docs/Web/API/Background_Tasks_API).
+[نمونه کامل](/en-US/docs/Web/API/Background_Tasks_API#example) را در مقاله [Cooperative Scheduling of Background Tasks API](/en-US/docs/Web/API/Background_Tasks_API) ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Collaborative Scheduling of Background Tasks](/en-US/docs/Web/API/Background_Tasks_API)
 - {{domxref("IdleDeadline")}}
