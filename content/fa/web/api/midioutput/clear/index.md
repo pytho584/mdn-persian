@@ -1,11 +1,5 @@
 ---
 title: "MIDIOutput: clear() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MIDIOutput/clear"
-status: "needs-translation"
----
-
----
-title: "MIDIOutput: clear() method"
 short-title: clear()
 slug: Web/API/MIDIOutput/clear
 page-type: web-api-instance-method
@@ -14,26 +8,26 @@ browser-compat: api.MIDIOutput.clear
 
 {{securecontext_header}}{{APIRef("Web MIDI API")}}
 
-The **`clear()`** method of the {{domxref("MIDIOutput")}} interface clears the queue of messages being sent to the output device.
+**`clear()`** 方法属于 {{domxref("MIDIOutput")}} 接口，用于清除正在发送到输出设备的消息队列。
 
-## Syntax
+## 语法
 
 ```js-nolint
 clear()
 ```
 
-### Parameters
+### 参数
 
-None.
+无。
 
-### Return value
+### 返回值
 
-None ({{jsxref("undefined")}}).
+无（{{jsxref("undefined")}}）。
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
