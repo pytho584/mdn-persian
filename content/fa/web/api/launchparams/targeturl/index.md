@@ -1,11 +1,5 @@
 ---
 title: "LaunchParams: targetURL property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/LaunchParams/targetURL"
-status: "needs-translation"
----
-
----
-title: "LaunchParams: targetURL property"
 short-title: targetURL
 slug: Web/API/LaunchParams/targetURL
 page-type: web-api-instance-property
@@ -16,13 +10,13 @@ browser-compat: api.LaunchParams.targetURL
 
 {{APIRef("Launch Handler API")}}{{SeeCompatTable}}
 
-The **`targetURL`** read-only property of the {{domxref("LaunchParams")}} interface returns the target URL of the associated web app launch.
+ویژگی فقط‌خواندنی **`targetURL`** از رابط {{domxref("LaunchParams")}}، نشانی اینترنتی (URL) هدف راه‌اندازیِ برنامهٔ وب مرتبط را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```js
 if ("launchQueue" in window) {
@@ -42,15 +36,15 @@ if ("launchQueue" in window) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Launch Handler API: Control how your app is launched](https://developer.chrome.com/docs/web-platform/launch-handler/)
 - {{domxref("Window.launchQueue")}}
