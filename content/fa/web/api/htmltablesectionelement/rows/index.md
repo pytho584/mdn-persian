@@ -1,7 +1,6 @@
 ---
 title: "HTMLTableSectionElement: rows property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableSectionElement/rows"
-status: "needs-translation"
 ---
 
 ---
@@ -14,15 +13,15 @@ browser-compat: api.HTMLTableSectionElement.rows
 
 {{APIRef("HTML DOM")}}
 
-The **`rows`** read-only property of the {{domxref("HTMLTableSectionElement")}} interface returns a live {{domxref("HTMLCollection")}} containing the rows in the section. The `HTMLCollection` is live and is automatically updated when rows are added or removed.
+خاصیتِ فقط‌خواندنی **`rows`** در رابط {{domxref("HTMLTableSectionElement")}} یک {{domxref("HTMLCollection")}} زنده برمی‌گرداند که شامل ردیف‌های آن بخش است. `HTMLCollection` زنده است و با اضافه یا حذف شدن ردیف‌ها به‌طور خودکار به‌روزرسانی می‌شود.
 
-## Value
+## مقدار
 
-A live {{domxref("HTMLCollection")}} of {{domxref("HTMLTableRowElement")}} objects.
+یک {{domxref("HTMLCollection")}} زنده از اشیاء {{domxref("HTMLTableRowElement")}}.
 
-## Examples
+## مثال‌ها
 
-In this example, two buttons allow you to add and remove rows from the table body section; it also updates an {{HTMLElement("output")}} element with the number of rows currently in the table.
+در این مثال، دو دکمه به شما امکان می‌دهند ردیف‌هایی را به بخش بدنه جدول اضافه یا از آن حذف کنید؛ همچنین یک عنصر {{HTMLElement("output")}} با تعداد ردیف‌های فعلی جدول به‌روزرسانی می‌شود.
 
 ### HTML
 
@@ -100,18 +99,18 @@ removeButton.addEventListener("click", () => {
 });
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples", "100%", 175)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{cssxref("text-align")}}
