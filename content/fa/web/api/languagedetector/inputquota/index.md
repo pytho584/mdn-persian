@@ -1,11 +1,5 @@
 ---
 title: "LanguageDetector: inputQuota property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/LanguageDetector/inputQuota"
-status: "needs-translation"
----
-
----
-title: "LanguageDetector: inputQuota property"
 short-title: inputQuota
 slug: Web/API/LanguageDetector/inputQuota
 page-type: web-api-instance-property
@@ -16,23 +10,23 @@ browser-compat: api.LanguageDetector.inputQuota
 
 {{APIRef("Translator and Language Detector APIs")}}{{SeeCompatTable}}{{securecontext_header}}
 
-The **`inputQuota`** read-only property of the {{domxref("LanguageDetector")}} interface returns the input quota available to the browser for detecting languages.
+خاصیتِ فقط‌خواندنی **`inputQuota`** در رابط {{domxref("LanguageDetector")}} سهمیهٔ ورودیِ در دسترس مرورگر برای تشخیص زبان را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A number specifying the available input quota.
+عددی که سهمیهٔ ورودی موجود را مشخص می‌کند.
 
-This number is implementation-dependent. For example, it might be {{jsxref("Infinity")}} if there are no limits beyond the user's memory and the maximum length of JavaScript strings, or it might be a number of tokens in the case of AI models that use a token/credits scheme.
+این عدد به پیاده‌سازی وابسته است. برای مثال، اگر محدودیتی فراتر از حافظهٔ کاربر و حداکثر طول رشته‌های جاوااسکریپت وجود نداشته باشد، ممکن است {{jsxref("Infinity")}} باشد، یا در مورد مدل‌های هوش مصنوعی که از طرح توکن/اعتبار استفاده می‌کنند، ممکن است تعداد توکن‌ها باشد.
 
-The only guarantee is that `inputQuota` - {{domxref("LanguageDetector.measureInputUsage", "measureInputUsage()")}} will be non-negative if there is sufficient quota to detect the text's language.
+تنها تضمین این است که اگر سهمیهٔ کافی برای تشخیص زبان متن وجود داشته باشد، `inputQuota` - {{domxref("LanguageDetector.measureInputUsage", "measureInputUsage()")}} غیرمنفی خواهد بود.
 
-## Examples
+## مثال‌ها
 
-### Checking if you have enough quota
+### بررسی اینکه آیا سهمیهٔ کافی دارید
 
-In the below snippet, we create a new `LanguageDetector` instance using {{domxref("LanguageDetector.create_static", "create()")}}, then return the total input quota via `inputQuota` and the input quota usage for detecting a particular text string's language via {{domxref("LanguageDetector.measureInputUsage", "measureInputUsage()")}}.
+در قطعه‌کد زیر، یک نمونهٔ جدید `LanguageDetector` با استفاده از {{domxref("LanguageDetector.create_static", "create()")}} می‌سازیم، سپس سهمیهٔ کل ورودی را از طریق `inputQuota` و میزان مصرف سهمیهٔ ورودی برای تشخیص زبان یک رشتهٔ متنی خاص را از طریق {{domxref("LanguageDetector.measureInputUsage", "measureInputUsage()")}} برمی‌گردانیم.
 
-We then test to see if the individual input usage for that string is greater than the total available quota. If so, we throw an appropriate error; it not, we commence detecting the string's language using {{domxref("LanguageDetector.detect", "detect()")}}.
+سپس بررسی می‌کنیم که آیا مصرف ورودیِ آن رشته از کل سهمیهٔ موجود بیشتر است یا نه. اگر بیشتر بود، خطای مناسبی پرتاب می‌کنیم؛ در غیر این صورت، تشخیص زبان رشته را با استفاده از {{domxref("LanguageDetector.detect", "detect()")}} آغاز می‌کنیم.
 
 ```js
 const detector = await LanguageDetector.create({
@@ -51,14 +45,14 @@ if (inputUsage > totalInputQuota) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Translator and Language Detector APIs](/en-US/docs/Web/API/Translator_and_Language_Detector_APIs/Using)
+- [استفاده از APIهای Translator و Language Detector](/en-US/docs/Web/API/Translator_and_Language_Detector_APIs/Using)
