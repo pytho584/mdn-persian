@@ -1,7 +1,5 @@
 ---
 title: "InterventionReport"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/InterventionReport"
-status: "needs-translation"
 ---
 
 ---
@@ -15,51 +13,43 @@ browser-compat: api.ReportingObserver.ReportingObserver.options_parameter.types_
 
 {{APIRef("Reporting API")}}{{SeeCompatTable}}
 
-The `InterventionReport` dictionary of the [Reporting API](/en-US/docs/Web/API/Reporting_API) represents an intervention report.
+دیکشنری `InterventionReport` از [Reporting API](/en-US/docs/Web/API/Reporting_API) یک گزارش مداخله را نشان می‌دهد.
 
-An intervention report may be generated when usage of a feature in a web document has been blocked by the browser for reasons such as security, performance, or user annoyance.
-Reports of this type can be observed from within a page using a {{domxref("ReportingObserver")}}, and a serialized version can be sent to a [reporting server endpoint](/en-US/docs/Web/API/Reporting_API#reporting_server_endpoints).
+یک گزارش مداخله ممکن است زمانی تولید شود که استفاده از یک قابلیت در یک سند وب توسط مرورگر به دلایلی مانند امنیت، کارایی یا آزار کاربر مسدود شده باشد. این نوع گزارش‌ها را می‌توان از داخل یک صفحه با استفاده از {{domxref("ReportingObserver")}} مشاهده کرد و یک نسخه سریال‌سازی‌شده را می‌توان به [نقطه پایان سرور گزارش‌گیری](/en-US/docs/Web/API/Reporting_API#reporting_server_endpoints) ارسال کرد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - `body`
-  - : The body of the report.
-    This is an object with the following properties:
+  - : بدنه گزارش.
+    این یک شیء با ویژگی‌های زیر است:
     - `columnNumber` {{experimental_inline}}
-      - : A string representing the character position in the source file line in which the intervention occurred, if known, or `null` otherwise.
+      - : یک رشته که موقعیت کاراکتر را در خط فایل منبع که مداخله در آن رخ داده است نشان می‌دهد، در صورت مشخص بودن، یا در غیر این صورت `null`.
 
     - `id` {{experimental_inline}}
-      - : A string representing the intervention that generated the report.
-        This can be used to group reports.
+      - : یک رشته که نشان‌دهنده مداخله‌ای است که گزارش را تولید کرده است. این مقدار می‌تواند برای گروه‌بندی گزارش‌ها استفاده شود.
 
     - `lineNumber` {{experimental_inline}}
-      - : A string representing the line in the source file where the intervention occurred, if known, or `null` otherwise.
+      - : یک رشته که خط فایل منبع را که مداخله در آن رخ داده است نشان می‌دهد، در صورت مشخص بودن، یا در غیر این صورت `null`.
 
     - `message` {{experimental_inline}}
-      - : A string containing a human-readable description of the intervention, including information such how the intervention could be avoided.
-        This typically matches the message a browser will display in its DevTools console when an intervention is imposed, if one is available.
+      - : یک رشته حاوی توصیف قابل‌خواندن برای انسان از مداخله، از جمله اطلاعاتی مانند اینکه چگونه می‌توان از مداخله اجتناب کرد. این مقدار معمولاً با پیامی که مرورگر در کنسول DevTools خود هنگام اعمال مداخله نمایش می‌دهد، در صورت وجود، مطابقت دارد.
 
     - `sourceFile` {{experimental_inline}}
-      - : A string containing the path to the source file which first used the indicated API (and which caused the intervention), if known, or `null` otherwise.
+      - : یک رشته حاوی مسیر فایل منبع که ابتدا از API مشخص‌شده استفاده کرده (و باعث مداخله شده است)، در صورت مشخص بودن، یا در غیر این صورت `null`.
 
 - `type`
-  - : The string `"intervention"` indicating that this is an intervention report.
+  - : رشته `"intervention"` که نشان می‌دهد این یک گزارش مداخله است.
 
 - `url`
-  - : A string representing the URL of the document that generated the report.
+  - : یک رشته که URL سندی که گزارش را تولید کرده است نشان می‌دهد.
 
-## Description
+## توضیحات
 
-An intervention report may be generated when usage of a feature in a web document has been blocked by the browser for reasons such as security, performance, or user annoyance.
-For example, an advertisement can trigger a [Heavy Ad Intervention](https://developer.chrome.com/docs/web-platform/heavy-ads-intervention) (developer.chrome.com) if it slows page responsiveness or otherwise affects the user experience.
+یک گزارش مداخله ممکن است زمانی تولید شود که استفاده از یک قابلیت در یک سند وب توسط مرورگر به دلایلی مانند امنیت، کارایی یا آزار کاربر مسدود شده باشد. برای مثال، یک تبلیغ می‌تواند [Heavy Ad Intervention](https://developer.chrome.com/docs/web-platform/heavy-ads-intervention) را (developer.chrome.com) فعال کند اگر سرعت پاسخ‌دهی صفحه را کاهش دهد یا به نحوی دیگر تجربه کاربری را تحت تأثیر قرار دهد.
 
-You can monitor for intervention reports within the page in which they are triggered using the [Reporting API](/en-US/docs/Web/API/Reporting_API).
-To do this you create a {{domxref("ReportingObserver")}} object to listen for reports, passing a callback method and an (optional) options property specifying the types of reports that you want to report on.
-The callback method is then called with reports of the requested types, passing a report object.
-For intervention reports, the object will be an `InterventionReport` instance (which has the [`type`](#type) property set to `"intervention"`).
+می‌توانید گزارش‌های مداخله را در همان صفحه‌ای که فعال شده‌اند با استفاده از [Reporting API](/en-US/docs/Web/API/Reporting_API) پایش کنید. برای این کار یک شیء {{domxref("ReportingObserver")}} می‌سازید تا به گزارش‌ها گوش دهد و یک متد callback و یک ویژگی (اختیاری) options که انواع گزارش‌هایی را که می‌خواهید دریافت کنید مشخص می‌کند، به آن منتقل می‌کنید. سپس متد callback با گزارش‌های نوع‌های درخواست‌شده فراخوانی می‌شود و یک شیء گزارش به آن داده می‌شود. برای گزارش‌های مداخله، این شیء یک نمونه `InterventionReport` خواهد بود (که ویژگی [`type`](#type) آن روی `"intervention"` تنظیم شده است).
 
-A typical intervention report is shown below (copied from the specification).
-Note that `url` represents the original page that was loaded, while `body.sourceFile`, `body.lineNumber` and `body.columnNumber` indicate the specific location of the API call that triggered the intervention.
+یک گزارش مداخله معمولی در زیر نشان داده شده است (کپی شده از مشخصات). توجه کنید که `url` صفحه اصلی بارگذاری‌شده را نشان می‌دهد، در حالی که `body.sourceFile`، `body.lineNumber` و `body.columnNumber` مکان دقیق فراخوانی API را که باعث مداخله شده است مشخص می‌کنند.
 
 ```json
 {
@@ -75,10 +65,9 @@ Note that `url` represents the original page that was loaded, while `body.source
 }
 ```
 
-Intervention reports are also sent as a JSON object in a {{httpmethod("POST")}} request to the [reporting server endpoint](/en-US/docs/Web/API/Reporting_API#reporting_server_endpoints) named `"default"`, if it is defined.
-The reporting server endpoint and its mapping to a particular URL are set using the {{httpheader("Reporting-Endpoints")}} header.
+گزارش‌های مداخله همچنین به صورت یک شیء JSON در یک درخواست {{httpmethod("POST")}} به [نقطه پایان سرور گزارش‌گیری](/en-US/docs/Web/API/Reporting_API#reporting_server_endpoints) به نام `"default"` ارسال می‌شوند، در صورتی که تعریف شده باشد. نقطه پایان سرور گزارش‌گیری و نگاشت آن به یک URL خاص با استفاده از هدر {{httpheader("Reporting-Endpoints")}} تنظیم می‌شود.
 
-The structure of the server report is almost exactly the same as `InterventionReport`, except that it additionally includes `age` and `user_agent` fields.
+ساختار گزارش سرور تقریباً دقیقاً مشابه `InterventionReport` است، با این تفاوت که به‌علاوه شامل فیلدهای `age` و `user_agent` است.
 
 ```json
 {
@@ -96,12 +85,11 @@ The structure of the server report is almost exactly the same as `InterventionRe
 }
 ```
 
-## Examples
+## مثال‌ها
 
-### Using the `ReportingObserver` interface
+### استفاده از رابط `ReportingObserver`
 
-To observe intervention reports within the page, we construct a new {{domxref("ReportingObserver")}} object to listen for reports with the type `"intervention"`, passing a callback that will receive and log the reports.
-This code needs to be loaded before the script that causes the violation:
+برای مشاهده گزارش‌های مداخله در داخل صفحه، یک شیء جدید {{domxref("ReportingObserver")}} می‌سازیم تا به گزارش‌هایی با نوع `"intervention"` گوش دهد و یک callback به آن منتقل می‌کنیم که گزارش‌ها را دریافت و ثبت (log) می‌کند. این کد باید قبل از اسکریپتی که باعث تخلف می‌شود بارگذاری شود:
 
 ```js
 const options = {
@@ -120,8 +108,7 @@ const observer = new ReportingObserver((reports, observer) => {
 observer.observe();
 ```
 
-The stringified version of the report might look similar to the object below.
-Note that the `type` is `"intervention"`.
+نسخه رشته‌شده (stringified) گزارش ممکن است مشابه شیء زیر باشد. توجه کنید که `type` برابر با `"intervention"` است.
 
 ```json
 {
@@ -137,13 +124,11 @@ Note that the `type` is `"intervention"`.
 }
 ```
 
-### Sending a report to a reporting endpoint
+### ارسال گزارش به یک نقطه پایان گزارش‌گیری
 
-Configuring a web page to send an intervention report requires that you set a [reporting server endpoint](/en-US/docs/Web/API/Reporting_API#reporting_server_endpoints) named "default" using the {{httpheader("Reporting-Endpoints")}} header.
-Below we set the `default` endpoint to `https://example.com/intervention`:
+پیکربندی یک صفحه وب برای ارسال گزارش مداخله مستلزم این است که یک [نقطه پایان سرور گزارش‌گیری](/en-US/docs/Web/API/Reporting_API#reporting_server_endpoints) به نام "default" با استفاده از هدر {{httpheader("Reporting-Endpoints")}} تنظیم کنید. در زیر، نقطه پایان `default` را روی `https://example.com/intervention` تنظیم می‌کنیم:
 
-The report will then be sent as a JSON object in a {{httpmethod("POST")}} request to the endpoint whenever an intervention occurs.
-It has the same structure as `InterventionReport`, except for the addition of `age` and `user_agent` properties.
+گزارش سپس به صورت یک شیء JSON در یک درخواست {{httpmethod("POST")}} به نقطه پایان ارسال می‌شود هر زمان که مداخله‌ای رخ دهد. ساختار آن همان ساختار `InterventionReport` است، به‌جز افزوده شدن ویژگی‌های `age` و `user_agent`.
 
 ```json
 [
@@ -163,15 +148,15 @@ It has the same structure as `InterventionReport`, except for the addition of `a
 ]
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("ReportingObserver")}}
 - {{HTTPHeader("Reporting-Endpoints")}}
