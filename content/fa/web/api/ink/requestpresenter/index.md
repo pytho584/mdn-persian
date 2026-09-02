@@ -1,7 +1,5 @@
 ---
 title: "Ink: requestPresenter() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Ink/requestPresenter"
-status: "needs-translation"
 ---
 
 ---
@@ -16,31 +14,31 @@ browser-compat: api.Ink.requestPresenter
 
 {{APIRef("Ink API")}}{{SeeCompatTable}}
 
-The **`requestPresenter()`** method of the {{domxref("Ink")}} interface returns a {{jsxref("Promise")}} that fulfills with a {{domxref("DelegatedInkTrailPresenter")}} object to handle rendering strokes.
+متد **`requestPresenter()`** از رابط {{domxref("Ink")}} یک {{jsxref("Promise")}} برمی‌گرداند که با یک شیء {{domxref("DelegatedInkTrailPresenter")}} تکمیل می‌شود. این شیء برای مدیریت رندر ضربه‌های قلم به کار می‌رود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 requestPresenter(param)
 ```
 
-### Parameters
+### پارامترها
 
 - `param` {{optional_inline}}
-  - : An object that contains the following property:
+  - : یک شیء که ویژگی زیر را دارد:
     - `presentationArea` {{optional_inline}}
-      - : An {{domxref("Element")}} inside which rendering of ink strokes is confined (the element's border box, to be precise). If `param` is not included, or `presentationArea` is set to `null`, ink rendering is confined to the containing viewport by default.
+      - : یک {{domxref("Element")}} که رندر ضربه‌های قلم به داخل آن محدود می‌شود (به‌طور دقیق‌تر، جعبهٔ مرزی (border box) عنصر). اگر `param` ارسال نشود یا مقدار `presentationArea` برابر با `null` باشد، رندر جوهر به‌صورت پیش‌فرض به viewport دربرگیرنده محدود می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves to a {{domxref("DelegatedInkTrailPresenter")}} object instance.
+یک {{jsxref("Promise")}} که با یک نمونه از شیء {{domxref("DelegatedInkTrailPresenter")}} resolve می‌شود.
 
-### Exceptions
+### استثناها
 
 - `Error` {{domxref("DOMException")}}
-  - : An error is thrown and the operation is aborted if `presentationArea` is not a valid {{domxref("Element")}}, or is not in the same document as the associated {{domxref("Ink")}} object.
+  - : اگر `presentationArea` یک {{domxref("Element")}} معتبر نباشد یا در همان سند (document) شیء {{domxref("Ink")}} مرتبط نباشد، یک خطا پرتاب شده و عملیات لغو می‌شود.
 
-## Example
+## مثال
 
 ```js
 async function inkInit() {
@@ -51,10 +49,10 @@ async function inkInit() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
