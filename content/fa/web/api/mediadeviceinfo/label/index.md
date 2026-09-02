@@ -1,11 +1,5 @@
 ---
 title: "MediaDeviceInfo: label property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaDeviceInfo/label"
-status: "needs-translation"
----
-
----
-title: "MediaDeviceInfo: label property"
 short-title: label
 slug: Web/API/MediaDeviceInfo/label
 page-type: web-api-instance-property
@@ -14,25 +8,18 @@ browser-compat: api.MediaDeviceInfo.label
 
 {{APIRef("Media Capture and Streams")}}{{securecontext_header}}
 
-The **`label`** read-only
-property of the {{domxref("MediaDeviceInfo")}} interface returns a
-string describing this device (for example
-"External USB Webcam").
+خاصیت فقط خواندنی **`label`** از رابط {{domxref("MediaDeviceInfo")}} یک رشته را برمی‌گرداند که این دستگاه را توصیف می‌کند (مثلاً «وبکم USB خارجی»).
 
-Only available during active `MediaStream`
-use, or when persistent permissions have been granted.
+این ویژگی فقط در زمان استفاده فعال از `MediaStream` یا زمانی که مجوزهای دائمی اعطا شده باشند، در دسترس است.
 
-## Value
+## مقدار
 
-A string which describes the media device. For security reasons, the
-`label` is always an empty string (`""`) if the user has not
-obtained permission to use at least one media device, either by starting a stream from
-the microphone or camera, or by persistent permissions being granted.
+یک رشته که دستگاه رسانه را توصیف می‌کند. به دلایل امنیتی، اگر کاربر مجوز استفاده از حداقل یک دستگاه رسانه را به دست نیاورده باشد، چه با شروع یک جریان از میکروفون یا دوربین، چه با اعطای مجوزهای دائمی، `label` همیشه یک رشته خالی (`""`) است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
