@@ -1,11 +1,5 @@
 ---
 title: "MediaTrackConstraints: suppressLocalAudioPlayback property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/suppressLocalAudioPlayback"
-status: "needs-translation"
----
-
----
-title: "MediaTrackConstraints: suppressLocalAudioPlayback property"
 short-title: suppressLocalAudioPlayback
 slug: Web/API/MediaTrackConstraints/suppressLocalAudioPlayback
 page-type: web-api-instance-property
@@ -16,26 +10,19 @@ browser-compat: api.MediaStreamTrack.applyConstraints.suppressLocalAudioPlayback
 
 {{APIRef("Media Capture and Streams")}}{{SeeCompatTable}}
 
-The {{domxref("MediaTrackConstraints")}} dictionary's **`suppressLocalAudioPlayback`** property is a [`ConstrainBoolean`](/en-US/docs/Web/API/MediaTrackConstraints#constrainboolean) describing the requested or mandatory constraints placed upon the value of the {{domxref("MediaTrackSettings.suppressLocalAudioPlayback","suppressLocalAudioPlayback")}} constrainable property. This property controls whether the audio playing in a tab will continue to be played out of a user's local speakers when the tab is captured.
+ویژگی **`suppressLocalAudioPlayback`** در دیکشنریِ {{domxref("MediaTrackConstraints")}} یک [`ConstrainBoolean`](/en-US/docs/Web/API/MediaTrackConstraints#constrainboolean) است که محدودیت‌های درخواستی یا اجباریِ اعمال‌شده بر مقدارِ ویژگیِ محدودیت‌پذیری به نام {{domxref("MediaTrackSettings.suppressLocalAudioPlayback","suppressLocalAudioPlayback")}} را توصیف می‌کند. این ویژگی کنترل می‌کند که وقتی یک زبانه ضبط می‌شود، آیا صدای در حال پخش در آن زبانه همچنان از بلندگوهای محلی کاربر پخش خواهد شد یا نه.
 
-If needed, you can determine whether or not this constraint is supported by checking
-the value of {{domxref("MediaTrackSupportedConstraints.suppressLocalAudioPlayback")}} as returned
-by a call to {{domxref("MediaDevices.getSupportedConstraints()")}}. However, typically
-this is unnecessary since browsers will ignore any constraints they're unfamiliar with.
+در صورت نیاز، می‌توانید با بررسی مقدار {{domxref("MediaTrackSupportedConstraints.suppressLocalAudioPlayback")}} که توسط فراخوانی {{domxref("MediaDevices.getSupportedConstraints()")}} بازگردانده می‌شود، تعیین کنید که آیا این محدودیت پشتیبانی می‌شود یا خیر. با این حال، معمولاً این کار ضروری نیست، زیرا مرورگرها هر محدودیتی را که نشناسند نادیده می‌گیرند.
 
-## Value
+## مقدار
 
-A [`ConstrainBoolean`](/en-US/docs/Web/API/MediaTrackConstraints#constrainboolean) value.
+یک مقدار [`ConstrainBoolean`](/en-US/docs/Web/API/MediaTrackConstraints#constrainboolean).
 
-If this value is a simple `true` or `false`, the user agent will
-attempt to obtain media with local audio playback enabled or disabled as specified, if
-possible, but will not fail if this can't be done.
+اگر این مقدار یک `true` یا `false` ساده باشد، عامل کاربر (user agent) در صورت امکان تلاش می‌کند رسانه را با فعال یا غیرفعال بودن پخش صوتی محلی، مطابق آنچه مشخص شده، به دست آورد؛ اما اگر این امکان وجود نداشته باشد، درخواست با شکست مواجه نخواهد شد.
 
-If the value is given as `ideal`, that field's boolean value indicates an ideal
-setting for the local audio playback suppression feature; if it can't be met, then the request will
-result in an error.
+اگر مقدار به‌صورت `ideal` داده شده باشد، مقدار بولیِ آن فیلد نشان‌دهندهٔ یک تنظیم ایدئال برای قابلیت سرکوب پخش صوتی محلی است؛ اگر این تنظیم برآورده نشود، درخواست به خطا منجر می‌شود.
 
-## Examples
+## مثال‌ها
 
 ```js
 let isLocalAudioSuppressed = displayStream
@@ -43,17 +30,17 @@ let isLocalAudioSuppressed = displayStream
   .getSettings().suppressLocalAudioPlayback;
 ```
 
-The [Constraint exerciser](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#example_constraint_exerciser) example shows how to use media track constraints.
+نمونهٔ [Constraint exerciser](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#example_constraint_exerciser) نحوه استفاده از محدودیت‌های مسیر رسانه را نشان می‌دهد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
 - [Capabilities, constraints, and settings](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints)
