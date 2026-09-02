@@ -1,45 +1,35 @@
 ---
 title: "NavigationCurrentEntryChangeEvent: NavigationCurrentEntryChangeEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigationCurrentEntryChangeEvent/NavigationCurrentEntryChangeEvent"
-status: "needs-translation"
----
-
----
-title: "NavigationCurrentEntryChangeEvent: NavigationCurrentEntryChangeEvent() constructor"
-short-title: NavigationCurrentEntryChangeEvent()
-slug: Web/API/NavigationCurrentEntryChangeEvent/NavigationCurrentEntryChangeEvent
-page-type: web-api-constructor
-browser-compat: api.NavigationCurrentEntryChangeEvent.NavigationCurrentEntryChangeEvent
 ---
 
 {{APIRef("Navigation API")}}
 
-The **`NavigationCurrentEntryChangeEvent()`** constructor creates a new {{domxref("NavigationCurrentEntryChangeEvent")}} object.
+سازندهٔ **`NavigationCurrentEntryChangeEvent()`** یک شیء جدید از نوع {{domxref("NavigationCurrentEntryChangeEvent")}} می‌سازد.
 
-## Syntax
+## نحو
 
 ```js-nolint
 new NavigationCurrentEntryChangeEvent(type, init)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string representing the type of event.
+  - : رشته‌ای است که نوع رویداد را نشان می‌دهد.
 - `init`
-  - : An object that, _in addition to the properties defined in {{domxref("Event/Event", "Event()")}}_, has the following properties:
+  - : شیئی که _علاوه بر ویژگی‌های تعریف‌شده در {{domxref("Event/Event", "Event()")}}_، ویژگی‌های زیر را دارد:
     - `from`
-      - : A {{domxref("NavigationHistoryEntry")}} object representing the location being navigated to.
+      - : یک شیء {{domxref("NavigationHistoryEntry")}} که موقعیتی را نشان می‌دهد که به آن پیمایش شده است.
     - `navigationType` {{optional_inline}}
-      - : The type of the navigation that resulted in the change. Possible values are `push`, `reload`, `replace`, and `traverse`. Defaults to `null`.
+      - : نوع پیمایشی که منجر به این تغییر شده است. مقادیر ممکن عبارت‌اند از `push`، `reload`، `replace` و `traverse`. پیش‌فرض آن `null` است.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("NavigationCurrentEntryChangeEvent")}} object.
+یک شیء جدید {{domxref("NavigationCurrentEntryChangeEvent")}}.
 
-## Examples
+## مثال‌ها
 
-A developer would not use this constructor manually. A new `NavigationCurrentEntryChangeEvent` object is constructed when a handler is invoked as a result of the {{domxref("Navigation.currententrychange_event", "currententrychange")}} event firing.
+توسعه‌دهندگان معمولاً این سازنده را به‌صورت دستی استفاده نمی‌کنند. یک شیء `NavigationCurrentEntryChangeEvent` زمانی ساخته می‌شود که در نتیجهٔ به‌وقوع‌پیوستن رویداد {{domxref("Navigation.currententrychange_event", "currententrychange")}}، یک کنترل‌کننده فراخوانی شود.
 
 ```js
 navigation.addEventListener("currententrychange", (event) => {
@@ -47,15 +37,15 @@ navigation.addEventListener("currententrychange", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
 - [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
