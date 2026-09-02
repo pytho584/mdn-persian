@@ -1,11 +1,5 @@
 ---
 title: "MediaStream: clone() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaStream/clone"
-status: "needs-translation"
----
-
----
-title: "MediaStream: clone() method"
 short-title: clone()
 slug: Web/API/MediaStream/clone
 page-type: web-api-instance-method
@@ -14,11 +8,7 @@ browser-compat: api.MediaStream.clone
 
 {{APIRef("Media Capture and Streams")}}
 
-The **`clone()`** method of the {{domxref("MediaStream")}}
-interface creates a duplicate of the `MediaStream`. This new
-`MediaStream` object has a new unique {{domxref("MediaStream.id", "id")}} and
-contains clones of every {{domxref("MediaStreamTrack")}} contained by the
-`MediaStream` on which `clone()` was called.
+متد **`clone()`** در رابط {{domxref("MediaStream")}} یک کپی از `MediaStream` ایجاد می‌کند. این شیء `MediaStream` جدید یک {{domxref("MediaStream.id", "id")}} یکتا و جدید دارد و شامل کپی‌هایی از هر {{domxref("MediaStreamTrack")}} است که در `MediaStream` اصلی (همان‌که روی آن `clone()` فراخوانی شده) وجود دارد.
 
 ## Syntax
 
@@ -28,13 +18,11 @@ clone()
 
 ### Parameters
 
-None.
+هیچ.
 
 ### Return value
 
-A new {{domxref("MediaStream")}} instance which has a new unique ID and contains clones
-of every {{domxref("MediaStreamTrack")}} contained by the `MediaStream` on
-which `clone()` was called.
+یک نمونه جدید از {{domxref("MediaStream")}} که دارای شناسه یکتای جدید است و شامل کپی‌هایی از هر {{domxref("MediaStreamTrack")}} موجود در `MediaStream` اصلی (همان‌که روی آن `clone()` فراخوانی شده) می‌باشد.
 
 ## Specifications
 
