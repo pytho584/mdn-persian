@@ -1,11 +1,5 @@
 ---
 title: "NamedNodeMap: item() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NamedNodeMap/item"
-status: "needs-translation"
----
-
----
-title: "NamedNodeMap: item() method"
 short-title: item()
 slug: Web/API/NamedNodeMap/item
 page-type: web-api-instance-method
@@ -14,12 +8,11 @@ browser-compat: api.NamedNodeMap.item
 
 {{APIRef("DOM")}}
 
-The **`item()`** method of the {{domxref("NamedNodeMap")}} interface
-returns the item in the map matching the index.
+متد **`item()`** در رابط {{domxref("NamedNodeMap")}}، آیتم موجود در نقشه را بر اساس اندیس (شاخص) بازمی‌گرداند.
 
 > [!NOTE]
-> This method is also called when you use the operator `[]` syntax.
-> So, `myMap[i]` is equivalent to `myMap.item(i)` where `i` is a number.
+> این متد همچنین زمانی که از عملگر `[]` استفاده می‌کنید فراخوانی می‌شود.
+> بنابراین، `myMap[i]` معادل `myMap.item(i)` است که در آن `i` یک عدد است.
 
 ## Syntax
 
@@ -31,12 +24,11 @@ item(index)
 ### Parameters
 
 - `index`
-  - : A number representing the index of the item you want to return.
+  - : عددی که اندیس آیتم مورد نظر برای بازگرداندن را نشان می‌دهد.
 
 ### Return value
 
-An {{domxref("Attr")}} or `null` if the number is greater than or equal to the `length` of
-the map.
+یک {{domxref("Attr")}} یا اگر عدد بزرگ‌تر یا مساوی `length` نقشه باشد، `null` برگردانده می‌شود.
 
 ## Example
 
@@ -63,3 +55,4 @@ pre.textContent = `The attribute map contains:
 ## Browser compatibility
 
 {{Compat}}
+```
