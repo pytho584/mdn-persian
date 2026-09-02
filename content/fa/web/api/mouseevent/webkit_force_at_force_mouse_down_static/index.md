@@ -1,7 +1,5 @@
 ---
 title: "MouseEvent: WEBKIT_FORCE_AT_FORCE_MOUSE_DOWN static property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/WEBKIT_FORCE_AT_FORCE_MOUSE_DOWN_static"
-status: "needs-translation"
 ---
 
 ---
@@ -15,15 +13,15 @@ status:
 
 {{APIRef("Force Touch Events")}}{{Non-standard_header}}
 
-**`MouseEvent.WEBKIT_FORCE_AT_FORCE_MOUSE_DOWN`** is a proprietary, WebKit-specific, static numeric property whose value is the minimum force necessary for a force click.
+**`MouseEvent.WEBKIT_FORCE_AT_FORCE_MOUSE_DOWN`** یک ویژگی عددی ایستا (static) و اختصاصیِ مخصوص WebKit است که مقدار آن، کمترین نیروی لازم برای یک کلیک فشاری (force click) را مشخص می‌کند.
 
-Because `WEBKIT_FORCE_AT_FORCE_MOUSE_DOWN` is a static property of `MouseEvent`, you always use it as `MouseEvent.WEBKIT_FORCE_AT_FORCE_MOUSE_DOWN`, rather than as a property of a `MouseEvent` instance.
+از آنجا که `WEBKIT_FORCE_AT_FORCE_MOUSE_DOWN` یک ویژگی ایستا از `MouseEvent` است، همیشه باید آن را به‌صورت `MouseEvent.WEBKIT_FORCE_AT_FORCE_MOUSE_DOWN` استفاده کنید، نه به‌عنوان ویژگیِ یک نمونه (instance) از `MouseEvent`.
 
-## Specifications
+## مشخصات
 
-_Not part of any specification._ Apple has [a description at the Mac Developer Library](https://developer.apple.com/library/archive/documentation/AppleApplications/Conceptual/SafariJSProgTopics/RespondingtoForceTouchEventsfromJavaScript.html).
+_بخشی از هیچ مشخصات (specification) استانداردی نیست._ اپل [توضیحاتی را در Mac Developer Library](https://developer.apple.com/library/archive/documentation/AppleApplications/Conceptual/SafariJSProgTopics/RespondingtoForceTouchEventsfromJavaScript.html) ارائه کرده است.
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("MouseEvent.WEBKIT_FORCE_AT_MOUSE_DOWN_static", "MouseEvent.WEBKIT_FORCE_AT_MOUSE_DOWN")}}
 - {{domxref("MouseEvent.webkitForce")}}
