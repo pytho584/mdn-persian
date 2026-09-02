@@ -1,11 +1,5 @@
 ---
 title: "MediaStream: addTrack() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaStream/addTrack"
-status: "needs-translation"
----
-
----
-title: "MediaStream: addTrack() method"
 short-title: addTrack()
 slug: Web/API/MediaStream/addTrack
 page-type: web-api-instance-method
@@ -14,36 +8,34 @@ browser-compat: api.MediaStream.addTrack
 
 {{APIRef("Media Capture and Streams")}}
 
-The **`addTrack()`** method of the {{domxref("MediaStream")}} interface adds a new track to the
-stream. The track is specified as a parameter of type {{domxref("MediaStreamTrack")}}.
+متد **`addTrack()`** از رابط {{domxref("MediaStream")}} یک رد (track) جدید به جریان (stream) اضافه می‌کند. این رد به عنوان یک پارامتر از نوع {{domxref("MediaStreamTrack")}} مشخص می‌شود.
 
 > [!NOTE]
-> If the specified track is already in the stream's track set, this method has no
-> effect.
+> اگر رد مشخص‌شده از قبل در مجموعه ردهای جریان وجود داشته باشد، این متد هیچ تأثیری ندارد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 addTrack(track)
 ```
 
-### Parameters
+### پارامترها
 
 - `track`
-  - : A {{domxref("MediaStreamTrack")}} to add to the stream.
+  - : یک {{domxref("MediaStreamTrack")}} که باید به جریان اضافه شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ مقداری ({{jsxref("undefined")}}).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("MediaStream")}}, the interface it belongs to.
+- {{domxref("MediaStream")}}، رابطی که این متد به آن تعلق دارد.
