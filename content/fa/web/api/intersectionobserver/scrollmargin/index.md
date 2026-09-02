@@ -1,11 +1,5 @@
 ---
 title: "IntersectionObserver: scrollMargin property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/scrollMargin"
-status: "needs-translation"
----
-
----
-title: "IntersectionObserver: scrollMargin property"
 short-title: scrollMargin
 slug: Web/API/IntersectionObserver/scrollMargin
 page-type: web-api-instance-property
@@ -14,47 +8,47 @@ browser-compat: api.IntersectionObserver.scrollMargin
 
 {{APIRef("Intersection Observer API")}}
 
-The **`scrollMargin`** read-only property of the {{domxref("IntersectionObserver")}} interface adds a margin to all nested {{glossary("scroll container","scroll containers")}} within the root element, including the root element if it is a scroll container.
+ویژگی فقط‑خواندنی **`scrollMargin`** در رابط {{domxref("IntersectionObserver")}} یک حاشیه به تمام {{glossary("scroll container","ظرف‌های پیمایش")}} تو در توی داخل عنصر ریشه اضافه می‌کند، از جمله خود عنصر ریشه در صورتی که یک ظرف پیمایش باشد.
 
-This grows or shrinks the clipping rectangle of the scrollable containers before calculating intersections.
-This lets you, for example, adjust the bounds of the scroll container so that the target element is considered visible even if its pixels are not yet displayed in the container's viewport, or to treat the target as partially hidden if an edge is too close to the edge of the container's bounding box.
+این کار باعث بزرگ یا کوچک شدن مستطیل برش ظرف‌های پیمایش‌شونده قبل از محاسبه تقاطع‌ها می‌شود.
+برای مثال، به شما امکان می‌دهد مرزهای ظرف پیمایش را طوری تنظیم کنید که عنصر هدف حتی اگر پیکسل‌های آن هنوز در viewport ظرف نمایش داده نشده‌اند، قابل مشاهده در نظر گرفته شود، یا اگر لبه‌ای خیلی به لبه جعبه محدودکننده ظرف نزدیک باشد، هدف را تا حدی پنهان تلقی کنید.
 
-Note that if the root element is also a scrollable container, then the `scrollMargin` and {{domxref("IntersectionObserver/rootMargin","rootMargin")}} are combined to determine the effective bounding rectangle used for calculating intersections with the target.
+توجه داشته باشید که اگر عنصر ریشه نیز یک ظرف پیمایش‌شونده باشد، آنگاه `scrollMargin` و {{domxref("IntersectionObserver/rootMargin","rootMargin")}} با هم ترکیب می‌شوند تا مستطیل محدودکننده مؤثر برای محاسبه تقاطع‌ها با هدف تعیین شود.
 
-For more information see [The intersection root and scroll margin](/en-US/docs/Web/API/Intersection_Observer_API#the_intersection_root_and_scroll_margin) in the API overview.
+برای اطلاعات بیشتر به [ریشه تقاطع و حاشیه پیمایش](/en-US/docs/Web/API/Intersection_Observer_API#the_intersection_root_and_scroll_margin) در نمای کلی API مراجعه کنید.
 
-## Value
+## مقدار
 
-A string, formatted similarly to the CSS {{cssxref("margin")}} property's value.
+یک رشته، مشابه مقدار ویژگی CSS {{cssxref("margin")}}.
 
-The specified margin defines offsets for one or more sides of a scroll container clipping rectangle.
-If `scrollMargin` isn't specified when the object was instantiated, it defaults to the string `"0px 0px 0px 0px"`.
+حاشیه مشخص‌شده، افست‌هایی برای یک یا چند طرف مستطیل برش یک ظرف پیمایش تعریف می‌کند.
+اگر `scrollMargin` هنگام نمونه‌سازی شیء مشخص نشده باشد، به طور پیش‌فرض به رشته `"0px 0px 0px 0px"` تنظیم می‌شود.
 
-## Example
+## مثال
 
-### Carousel with scroll margin
+### چرخ‌فلک (carousel) با حاشیه پیمایش
 
-This example defines a scrollable box (the root element), which contains an image carousel that is initially out of view.
-An observer on the root element observes the image element targets within the carousel.
-When an image element starts to intersect with the root element, the image is loaded, the intersection is logged, and the observer is removed.
+این مثال یک جعبه پیمایش‌شونده (عنصر ریشه) تعریف می‌کند که شامل یک چرخ‌فلک تصویر است که ابتدا خارج از دید قرار دارد.
+یک observer روی عنصر ریشه، اهداف عنصر تصویر را درون چرخ‌فلک مشاهده می‌کند.
+هنگامی که یک عنصر تصویر شروع به تقاطع با عنصر ریشه می‌کند، تصویر بارگذاری می‌شود، تقاطع ثبت می‌شود، و observer حذف می‌شود.
 
-The example allows you to modify the `scrollMargin` in order to see how this changes when targets within the carousel scrollable container start to intersect.
+این مثال به شما امکان می‌دهد `scrollMargin` را تغییر دهید تا ببینید این تغییر چه زمانی باعث می‌شود اهداف درون ظرف پیمایش چرخ‌فلک شروع به تقاطع کنند.
 
 #### HTML
 
 ```html hidden
-<button id="reset" type="button">Reset</button>
+<button id="reset" type="button">بازنشانی</button>
 ```
 
-The code below defines the `root-container` {{htmlelement("div")}} element, which we will use as the root element of the intersection observer.
-This in turn contains a {{htmlelement("p")}} element that is used to push the other elements out of view "by default", a `carousel` `<div>` , and a `margin-indicator` (used to indicate the size of the margin applied to scrollable elements within the root element).
+کد زیر عنصر `root-container` (یک {{htmlelement("div")}}) را تعریف می‌کند که از آن به عنوان عنصر ریشه observer تقاطع استفاده می‌کنیم.
+این عنصر به نوبه خود شامل یک {{htmlelement("p")}} است که برای "به طور پیش‌فرض" خارج از دید قرار دادن سایر عناصر به کار می‌رود، یک `carousel` `<div>` و یک `margin-indicator` (برای نشان دادن اندازه حاشیه اعمال‌شده به عناصر پیمایش‌شونده درون عنصر ریشه).
 
-The {{htmlelement("img")}} elements within the carousel have a `data-src` attribute that contains a file name.
-In our observer code, we will use this attribute to set the `img.src` when each image starts to intersect with the root element, which will load the image.
+عناصر {{htmlelement("img")}} درون چرخ‌فلک دارای یک ویژگی `data-src` هستند که شامل یک نام فایل است.
+در کد observer خود، از این ویژگی برای تنظیم `img.src` زمانی که هر تصویر شروع به تقاطع با عنصر ریشه می‌کند، استفاده می‌کنیم که منجر به بارگذاری تصویر می‌شود.
 
 ```html
 <div id="root-container">
-  <p>content before (scroll down to carousel)</p>
+  <p>محتوا قبل (به پایین بروید تا چرخ‌فلک را ببینید)</p>
 
   <div class="flex-container">
     <div class="carousel">
@@ -89,14 +83,14 @@ In our observer code, we will use this attribute to set the `img.src` when each 
     </div>
     <div id="margin-indicator"></div>
   </div>
-  <p>content after</p>
+  <p>محتوا بعد</p>
 </div>
 ```
 
 ```html
 <div class="controls">
   <label>
-    Set the right margin of the scroll root:
+    حاشیه سمت راست ریشه پیمایش را تنظیم کنید:
     <input id="margin" type="number" value="0" step="5" />px
   </label>
 </div>
@@ -182,15 +176,15 @@ function log(text) {
 }
 ```
 
-The first part of the code defines the function `createImageObserver()` that we use to create `IntersectionObserver` objects and assign to the `imageObserver` variable.
-We use a function because observer options can't be changed after construction, and we want to be able to demonstrate the effects of different `scrollMargin` values.
+بخش اول کد تابع `createImageObserver()` را تعریف می‌کند که برای ایجاد اشیاء `IntersectionObserver` و اختصاص آن به متغیر `imageObserver` استفاده می‌کنیم.
+از تابع استفاده می‌کنیم زیرا گزینه‌های observer پس از ساخته شدن قابل تغییر نیستند و می‌خواهیم تأثیر مقادیر مختلف `scrollMargin` را نشان دهیم.
 
-The `IntersectionObserver` is created with no `rootMargin`, a near-zero `threshold`, and a `scrollMargin` that takes its value from the `margin` input, and that will be applied to all sides of the scroll container.
+`IntersectionObserver` با `rootMargin` صفر، `threshold` نزدیک به صفر، و یک `scrollMargin` که مقدار خود را از ورودی `margin` می‌گیرد و به تمام طرف‌های ظرف پیمایش اعمال می‌شود، ایجاد می‌شود.
 
-The callback is called for all observed targets.
-For intersecting targets it sets the `img.src` to the name of the image to be loaded (from the `img.dataset.src`), logs the intersection, and then stops observing the image.
+تابع callback برای همه اهداف مشاهده‌شده فراخوانی می‌شود.
+برای اهداف تقاطع‌یافته، `img.src` را به نام تصویری که باید بارگذاری شود (از `img.dataset.src`) تنظیم می‌کند، تقاطع را ثبت می‌کند، و سپس مشاهده تصویر را متوقف می‌کند.
 
-The code at the end of the function calls {{domxref("IntersectionObserver.observe()")}} on each image to start the observer.
+کد انتهای تابع {{domxref("IntersectionObserver.observe()")}} را روی هر تصویر فراخوانی می‌کند تا observer شروع به کار کند.
 
 ```js
 const rootContainer = document.getElementById("root-container");
@@ -206,19 +200,19 @@ function createImageObserver() {
 
   let observerOptions = {
     root: rootContainer,
-    rootMargin: "0px", // No extra margin
-    scrollMargin: `${margin.valueAsNumber}px`, // No extra margin / Can be set
-    threshold: 0.01, // Trigger when 1% of the image is visible
+    rootMargin: "0px", // حاشیه اضافی ندارد
+    scrollMargin: `${margin.valueAsNumber}px`, // حاشیه اضافی ندارد / قابل تنظیم است
+    threshold: 0.01, // وقتی 1% از تصویر قابل مشاهده است فعال شود
   };
 
   imageObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         const img = entry.target;
-        log(`intersect: ${img.dataset.src}`); // Only on first intersection
-        img.src = `https://mdn.github.io/shared-assets/images/examples/${img.dataset.src}`; // Load image by setting src
-        img.classList.remove("lazy-carousel-img"); // Remove the class
-        observer.unobserve(img); // Stop observing once loaded
+        log(`intersect: ${img.dataset.src}`); // فقط در اولین تقاطع
+        img.src = `https://mdn.github.io/shared-assets/images/examples/${img.dataset.src}`; // بارگذاری تصویر با تنظیم src
+        img.classList.remove("lazy-carousel-img"); // حذف کلاس
+        observer.unobserve(img); // پس از بارگذاری، مشاهده را متوقف کن
       }
     });
   }, observerOptions);
@@ -234,13 +228,13 @@ function createImageObserver() {
   }
 
   lazyImages.forEach((image) => {
-    imageObserver.observe(image); // Start observing each image
+    imageObserver.observe(image); // شروع مشاهده هر تصویر
   });
 }
 ```
 
-The following code creates the observer using `createImageObserver()` on start and whenever the `margin` input value is changed.
-If the `IntersectionObserver` interface isn't supported, it loads all the images immediately.
+کد زیر observer را با استفاده از `createImageObserver()` در شروع و هر بار که مقدار ورودی `margin` تغییر می‌کند، ایجاد می‌کند.
+اگر رابط `IntersectionObserver` پشتیبانی نشود، همه تصاویر را بلافاصله بارگذاری می‌کند.
 
 ```js
 if ("IntersectionObserver" in window) {
@@ -261,22 +255,21 @@ if ("IntersectionObserver" in window) {
 }
 ```
 
-#### Results
+#### نتایج
 
-Scroll down to display the carousel.
-The visible images should immediately load.
-If you scroll the carousel right, you should observe that the images are loaded as soon as the element becomes visible.
+به پایین بروید تا چرخ‌فلک نمایش داده شود. تصاویر قابل مشاهده باید بلافاصله بارگذاری شوند.
+اگر چرخ‌فلک را به راست بکشید، باید مشاهده کنید که تصاویر به محض قابل مشاهده شدن عنصر بارگذاری می‌شوند.
 
-You can use the provided control to change the scroll margin percentage (after resetting the example)
-If you set a positive value like 20px the clip rectangle of the scroll container will be increased by 20px, and you should observe that images are detected and loaded before they come into view.
-Similarly, a negative value will mean that the intersection is detected once images are already in view.
+می‌توانید از کنترل ارائه‌شده برای تغییر درصد حاشیه پیمایش (پس از بازنشانی مثال) استفاده کنید.
+اگر یک مقدار مثبت مانند ۲۰px تنظیم کنید، مستطیل برش ظرف پیمایش به اندازه ۲۰px افزایش می‌یابد و باید مشاهده کنید که تصاویر قبل از اینکه در viewport ظاهر شوند، تشخیص داده شده و بارگذاری می‌شوند.
+به طور مشابه، یک مقدار منفی به این معنی است که تقاطع زمانی تشخیص داده می‌شود که تصاویر از قبل در viewport هستند.
 
 {{EmbedLiveSample("Carousel with scroll margin","100%","500px")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
