@@ -1,11 +1,5 @@
 ---
 title: "MediaSource: isTypeSupported() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/isTypeSupported_static"
-status: "needs-translation"
----
-
----
-title: "MediaSource: isTypeSupported() static method"
 short-title: isTypeSupported()
 slug: Web/API/MediaSource/isTypeSupported_static
 page-type: web-api-static-method
@@ -14,10 +8,10 @@ browser-compat: api.MediaSource.isTypeSupported_static
 
 {{APIRef("Media Source Extensions")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`MediaSource.isTypeSupported()`** static method returns a boolean value which is `true` if the given MIME type and (optional) codec are _likely_ to be supported by the current {{Glossary("user agent")}}.
+متد ایستای **`MediaSource.isTypeSupported()`** یک مقدار بولین برمی‌گرداند که اگر نوع MIME داده‌شده و (به‌صورت اختیاری) codec مربوطه _به احتمال زیاد_ توسط {{Glossary("user agent")}} فعلی پشتیبانی می‌شود، برابر با `true` است.
 
-That is, if it can successfully create {{domxref("SourceBuffer")}} objects for that media type.
-If the returned value is `false`, then the user agent is certain that it _cannot_ access media of the specified format.
+به بیان دیگر، اگر بتواند برای آن نوع رسانه، آبجکت‌های {{domxref("SourceBuffer")}} را با موفقیت ایجاد کند.
+اگر مقدار برگشتی `false` باشد، به این معنی است که user agent مطمئن است که _نمی‌تواند_ به رسانه‌ای با قالب مشخص‌شده دسترسی داشته باشد.
 
 ## Syntax
 
@@ -28,21 +22,21 @@ MediaSource.isTypeSupported(type)
 ### Parameters
 
 - `type`
-  - : A string specifying the MIME type of the media and (optionally) a [`codecs` parameter](/en-US/docs/Web/Media/Guides/Formats/codecs_parameter) containing a comma-separated list of the supported codecs.
+  - : رشته‌ای که نوع MIME رسانه و (به‌صورت اختیاری) یک [`codecs` parameter](/en-US/docs/Web/Media/Guides/Formats/codecs_parameter) شامل فهرستی از codecهای پشتیبانی‌شده را که با کاما از هم جدا شده‌اند، مشخص می‌کند.
 
 ### Return value
 
-A value of `false` if the media of the given type will _not_ play.
+اگر رسانه با نوع داده‌شده _پخش نخواهد شد_، مقدار `false` برمی‌گردد.
 
-A value of `true` is returned if the browser can _probably_ play media of the specified type.
-This is _not_ a guarantee, and your code must be prepared for the possibility that the media will not play correctly if at all.
+اگر مرورگر بتواند _احتمالاً_ رسانه‌ای با نوع مشخص‌شده را پخش کند، مقدار `true` برگردانده می‌شود.
+این یک _تضمین_ نیست و کد شما باید برای این احتمال آماده باشد که رسانه به‌درستی پخش نشود یا اصلاً پخش نشود.
 
-All web APIs that work with media files use a "no/maybe/probably" approach (or, in this case, "no or probably") when determining if a media type can be used.
-This is because media files are complex, intricate constructs with far too many subtle variations to be absolutely certain of anything until you actually use the contents of the media.
+همه APIهای وب که با فایل‌های رسانه‌ای کار می‌کنند، هنگام تعیین اینکه آیا می‌توان از یک نوع رسانه استفاده کرد، از رویکرد «نه/شاید/احتمالاً» (یا در این مورد، «نه یا احتمالاً») استفاده می‌کنند.
+دلیل این امر آن است که فایل‌های رسانه‌ای ساختارهای پیچیده و ظریفی هستند و تنوعات بسیار ریز و متعددی دارند تا زمانی که واقعاً از محتوای رسانه استفاده نکنید، نتوان در مورد هیچ‌چیز کاملاً مطمئن بود.
 
 ## Examples
 
-The following snippet is from an example written by Nick Desaulniers ([view the full demo live](https://nickdesaulniers.github.io/netfix/demo/bufferAll.html), or [download the source](https://github.com/nickdesaulniers/netfix/blob/gh-pages/demo/bufferAll.html) for further investigation). The function `getMediaSource()`, which is not defined here, returns a `MediaSource`.
+قطعه کد زیر از مثالی نوشته‌شده توسط Nick Desaulniers گرفته شده است ([مشاهده دموی کامل](https://nickdesaulniers.github.io/netfix/demo/bufferAll.html) یا [دانلود سورس](https://github.com/nickdesaulniers/netfix/blob/gh-pages/demo/bufferAll.html) برای بررسی بیشتر). تابع `getMediaSource()` که در اینجا تعریف نشده است، یک `MediaSource` برمی‌گرداند.
 
 ```js
 const assetURL = "frag_bunny.mp4";
