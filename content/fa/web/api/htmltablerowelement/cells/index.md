@@ -1,11 +1,5 @@
 ---
 title: "HTMLTableRowElement: cells property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableRowElement/cells"
-status: "needs-translation"
----
-
----
-title: "HTMLTableRowElement: cells property"
 short-title: cells
 slug: Web/API/HTMLTableRowElement/cells
 page-type: web-api-instance-property
@@ -14,16 +8,15 @@ browser-compat: api.HTMLTableRowElement.cells
 
 {{ APIRef("HTML DOM") }}
 
-The **`cells`** read-only property of the {{domxref("HTMLTableRowElement")}} interface
-returns a live {{domxref("HTMLCollection")}} containing the cells in the row. The `HTMLCollection` is live and is automatically updated when cells are added or removed.
+ویژگی فقطخواندنی **`cells`** از رابط {{domxref("HTMLTableRowElement")}} یک {{domxref("HTMLCollection")}} زنده شامل سلول‌های موجود در ردیف را برمی‌گرداند. این `HTMLCollection` زنده است و به‌طور خودکار هنگام افزودن یا حذف سلول‌ها به‌روزرسانی می‌شود.
 
 ## Value
 
-A live {{domxref("HTMLCollection")}} of {{domxref("HTMLTableCellElement")}} objects.
+یک {{domxref("HTMLCollection")}} زنده از اشیاء {{domxref("HTMLTableCellElement")}}.
 
 ## Examples
 
-This example uses `HTMLTableRowElement.cells` to display the number of cell in a row.
+این مثال از `HTMLTableRowElement.cells` برای نمایش تعداد سلول‌های یک ردیف استفاده می‌کند.
 
 ### HTML
 
