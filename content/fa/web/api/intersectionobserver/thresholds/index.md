@@ -1,7 +1,5 @@
 ---
 title: "IntersectionObserver: thresholds property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/thresholds"
-status: "needs-translation"
 ---
 
 ---
@@ -14,28 +12,28 @@ browser-compat: api.IntersectionObserver.thresholds
 
 {{APIRef("Intersection Observer API")}}
 
-The **`thresholds`** read-only property of the {{domxref("IntersectionObserver")}} interface returns the list of intersection thresholds that was specified when the observer was instantiated with {{domxref("IntersectionObserver.IntersectionObserver", "IntersectionObserver()")}}.
+ویژگی فقط‌خواندنی **`thresholds`** در رابط {{domxref("IntersectionObserver")}} فهرست آستانه‌های تقاطعی را برمی‌گرداند که هنگام نمونه‌سازی observer با {{domxref("IntersectionObserver.IntersectionObserver", "IntersectionObserver()")}} مشخص شده بودند.
 
-If only one threshold ratio was provided when instantiating the object, this will be an array containing that single value.
+اگر هنگام نمونه‌سازی شیء فقط یک نسبت آستانه (threshold ratio) ارائه شده باشد، این ویژگی آرایه‌ای خواهد بود که تنها همان مقدار را در خود دارد.
 
-See the [Intersection Observer](/en-US/docs/Web/API/Intersection_Observer_API#thresholds) page to learn how thresholds work.
+برای آشنایی با نحوه عملکرد آستانه‌ها، صفحه [Intersection Observer](/en-US/docs/Web/API/Intersection_Observer_API#thresholds) را ببینید.
 
-## Value
+## مقدار
 
-An array of intersection thresholds, originally specified using the `threshold` property when instantiating the observer.
-If only one observer was specified, without being in an array, this value is a one-entry array containing that threshold.
-Regardless of the order your original `threshold` array was in, this one is always sorted in numerically increasing order.
+آرایه‌ای از آستانه‌های تقاطع که در ابتدا با استفاده از ویژگی `threshold` هنگام نمونه‌سازی observer مشخص شده بودند.
+اگر فقط یک آستانه (به‌صورت عدد تکی و نه درون آرایه) مشخص شده باشد، این مقدار آرایه تک‌عنصری شامل همان آستانه است.
+صرف‌نظر از ترتیبی که آرایه `threshold` اصلی شما داشته است، این آرایه همیشه به ترتیب عددی صعودی مرتب شده است.
 
-If no `threshold` option was included when `IntersectionObserver()` was used to instantiate the observer, the value of `thresholds` is `[0]`.
+اگر هنگام استفاده از `IntersectionObserver()` برای نمونه‌سازی observer، هیچ گزینه `threshold` در نظر گرفته نشده باشد، مقدار `thresholds` برابر با `[0]` است.
 
 > [!NOTE]
-> Although the `options` object you can specify in the {{domxref("IntersectionObserver/IntersectionObserver","IntersectionObserver()")}} constructor has a field named `threshold`, this property is called `thresholds`.
-> If you accidentally use `thresholds` as the name of the field in your `options`, the `thresholds` array will wind up being `[0.0]`, which is likely not what you expect.
+> اگرچه شیء `options` که می‌توانید در سازنده {{domxref("IntersectionObserver/IntersectionObserver","IntersectionObserver()")}} مشخص کنید، فیلدی به نام `threshold` دارد، این ویژگی `thresholds` نامیده می‌شود.
+> اگر به‌طور تصادفی از `thresholds` به‌عنوان نام فیلد در `options` خود استفاده کنید، آرایه `thresholds` در نهایت `[0.0]` خواهد بود، که احتمالاً انتظار آن را ندارید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
