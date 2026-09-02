@@ -1,7 +1,5 @@
 ---
 title: "KeyboardEvent: getModifierState() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/getModifierState"
-status: "needs-translation"
 ---
 
 ---
@@ -14,30 +12,26 @@ browser-compat: api.KeyboardEvent.getModifierState
 
 {{APIRef("UI Events")}}
 
-The **`KeyboardEvent.getModifierState()`** method returns the
-current state of the specified modifier key: `true` if the modifier is active
-(that is the modifier key is pressed or locked), otherwise, `false`.
+متد **`KeyboardEvent.getModifierState()`** وضعیت فعلی کلید اصلاح‌کنندهٔ مشخص‌شده را برمی‌گرداند: اگر کلید اصلاح‌کننده فعال باشد (یعنی کلید اصلاح‌کننده فشار داده شده یا قفل باشد) مقدار `true` و در غیر این صورت مقدار `false` برگردانده می‌شود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 getModifierState(key)
 ```
 
-### Parameters
+### پارامترها
 
 - `key`
-  - : A modifier key value. The value must be one of the {{domxref("KeyboardEvent.key")}}
-    values which represent modifier keys, or the string `"Accel"`
-    {{deprecated_inline}}. This is case-sensitive.
+  - : یک مقدار کلید اصلاح‌کننده. این مقدار باید یکی از مقادیر {{domxref("KeyboardEvent.key")}} باشد که کلیدهای اصلاح‌کننده را نمایش می‌دهند، یا رشته `"Accel"` {{deprecated_inline}}. این مقدار به بزرگی/کوچکی حروف حساس است.
 
-### Return value
+### مقدار بازگشتی
 
-A boolean.
+یک مقدار بولین.
 
-## Modifier keys on Firefox
+## کلیدهای اصلاح‌کننده در فایرفاکس
 
-When `getModifierState()` returns true on Firefox?
+چه زمانی `getModifierState()` در فایرفاکس مقدار `true` برمی‌گرداند؟
 
 <table class="standard-table">
   <thead>
@@ -47,170 +41,152 @@ When `getModifierState()` returns true on Firefox?
       <th scope="col">Linux (GTK)</th>
       <th scope="col">Mac</th>
       <th scope="col">Android 2.3</th>
-      <th scope="col">Android 3.0 or later</th>
+      <th scope="col">Android 3.0 یا بالاتر</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th scope="row"><code>"Alt"</code></th>
-      <td>Either <kbd>Alt</kbd> key or <kbd>AltGr</kbd> key pressed</td>
-      <td><kbd>Alt</kbd> key pressed</td>
-      <td><kbd>⌥ Option</kbd> key pressed</td>
-      <td colspan="2"><kbd>Alt</kbd> key or <kbd>option</kbd> key pressed</td>
+      <td>فشردن کلید <kbd>Alt</kbd> یا کلید <kbd>AltGr</kbd></td>
+      <td>فشردن کلید <kbd>Alt</kbd></td>
+      <td>فشردن کلید <kbd>⌥ Option</kbd></td>
+      <td colspan="2">فشردن کلید <kbd>Alt</kbd> یا کلید <kbd>option</kbd></td>
     </tr>
     <tr>
       <th scope="row"><code>"AltGraph"</code></th>
       <td>
         <p>
-          Both <kbd>Alt</kbd> and <kbd>Ctrl</kbd> keys are pressed, or
-          <kbd>AltGr</kbd> key is pressed
+          هر دو کلید <kbd>Alt</kbd> و <kbd>Ctrl</kbd> فشار داده شده باشند، یا کلید <kbd>AltGr</kbd> فشار داده شده باشد
         </p>
       </td>
       <td>
-        <kbd>Level 3 Shift</kbd> key (or <kbd>Level 5 Shift</kbd> key) pressed
+        فشردن کلید <kbd>Level 3 Shift</kbd> (یا کلید <kbd>Level 5 Shift</kbd>)
       </td>
-      <td><kbd>⌥ Option</kbd> key pressed</td>
-      <td>❌ <em>Not supported</em></td>
-      <td>❌ <em>Not supported</em></td>
+      <td>فشردن کلید <kbd>⌥ Option</kbd></td>
+      <td>❌ <em>پشتیبانی نمی‌شود</em></td>
+      <td>❌ <em>پشتیبانی نمی‌شود</em></td>
     </tr>
     <tr>
       <th scope="row"><code>"CapsLock"</code></th>
-      <td colspan="3">During LED for <kbd>⇪ Caps Lock</kbd> turned on</td>
-      <td>❌ <em>Not supported</em></td>
-      <td>While <kbd>CapsLock</kbd> is locked</td>
+      <td colspan="3">در حالی که چراغ LED کلید <kbd>⇪ Caps Lock</kbd> روشن است</td>
+      <td>❌ <em>پشتیبانی نمی‌شود</em></td>
+      <td>در حالی که <kbd>CapsLock</kbd> قفل است</td>
     </tr>
     <tr>
       <th scope="row"><code>"Control"</code></th>
-      <td>Either <kbd>Ctrl</kbd> key or <kbd>AltGr</kbd> key pressed</td>
-      <td><kbd>Ctrl</kbd> key pressed</td>
-      <td><kbd>control</kbd> key pressed</td>
-      <td><kbd>menu</kbd> key pressed.</td>
+      <td>فشردن کلید <kbd>Ctrl</kbd> یا کلید <kbd>AltGr</kbd></td>
+      <td>فشردن کلید <kbd>Ctrl</kbd></td>
+      <td>فشردن کلید <kbd>control</kbd></td>
+      <td>فشردن کلید <kbd>menu</kbd>.</td>
       <td>
-        <kbd>Ctrl</kbd> key, <kbd>control</kbd> key or <kbd>menu</kbd> key
-        pressed.
+        فشردن کلید <kbd>Ctrl</kbd>، کلید <kbd>control</kbd> یا کلید <kbd>menu</kbd>.
       </td>
     </tr>
     <tr>
       <th scope="row"><code>"Fn"</code></th>
-      <td>❌ <em>Not supported</em></td>
-      <td>❌ <em>Not supported</em></td>
-      <td>❌ <em>Not supported</em></td>
-      <td>❌ <em>Not supported</em></td>
+      <td>❌ <em>پشتیبانی نمی‌شود</em></td>
+      <td>❌ <em>پشتیبانی نمی‌شود</em></td>
+      <td>❌ <em>پشتیبانی نمی‌شود</em></td>
+      <td>❌ <em>پشتیبانی نمی‌شود</em></td>
       <td>
-        <kbd>Function</kbd> key is pressed, but we're not sure what key makes
-        the modifier state active. <kbd>Fn</kbd> key on Mac keyboard doesn't
-        cause this active.
+        کلید <kbd>Function</kbd> فشار داده شده است، اما مطمئن نیستیم کدام کلید وضعیت اصلاح‌کننده را فعال می‌کند. کلید <kbd>Fn</kbd> در صفحه‌کلید Mac باعث فعال شدن این حالت نمی‌شود.
       </td>
     </tr>
     <tr>
       <th scope="row"><code>"FnLock"</code></th>
-      <td>❌ <em>Not supported</em></td>
-      <td>❌ <em>Not supported</em></td>
-      <td>❌ <em>Not supported</em></td>
-      <td>❌ <em>Not supported</em></td>
-      <td>❌ <em>Not supported</em></td>
+      <td>❌ <em>پشتیبانی نمی‌شود</em></td>
+      <td>❌ <em>پشتیبانی نمی‌شود</em></td>
+      <td>❌ <em>پشتیبانی نمی‌شود</em></td>
+      <td>❌ <em>پشتیبانی نمی‌شود</em></td>
+      <td>❌ <em>پشتیبانی نمی‌شود</em></td>
     </tr>
     <tr>
       <th scope="row"><code>"Hyper"</code></th>
-      <td>❌ <em>Not supported</em></td>
-      <td>❌ <em>Not supported</em></td>
-      <td>❌ <em>Not supported</em></td>
-      <td>❌ <em>Not supported</em></td>
-      <td>❌ <em>Not supported</em></td>
+      <td>❌ <em>پشتیبانی نمی‌شود</em></td>
+      <td>❌ <em>پشتیبانی نمی‌شود</em></td>
+      <td>❌ <em>پشتیبانی نمی‌شود</em></td>
+      <td>❌ <em>پشتیبانی نمی‌شود</em></td>
+      <td>❌ <em>پشتیبانی نمی‌شود</em></td>
     </tr>
     <tr>
       <th scope="row"><code>"Meta"</code></th>
-      <td><kbd>⊞ Windows Logo</kbd> key pressed (from Firefox 118)</td>
-      <td><kbd>Meta</kbd> key pressed</td>
-      <td><kbd>⌘ Command</kbd> key pressed</td>
-      <td>❌ <em>Not supported</em></td>
-      <td><kbd>⊞ Windows Logo</kbd> key or <kbd>command</kbd> key pressed</td>
+      <td>فشردن کلید <kbd>⊞ Windows Logo</kbd> (از فایرفاکس 118)</td>
+      <td>فشردن کلید <kbd>Meta</kbd></td>
+      <td>فشردن کلید <kbd>⌘ Command</kbd></td>
+      <td>❌ <em>پشتیبانی نمی‌شود</em></td>
+      <td>فشردن کلید <kbd>⊞ Windows Logo</kbd> یا کلید <kbd>command</kbd></td>
     </tr>
     <tr>
       <th scope="row"><code>"NumLock"</code></th>
-      <td colspan="2">During LED for <kbd>Num Lock</kbd> turned on</td>
-      <td>A key on numpad pressed</td>
-      <td>❌ <em>Not supported</em></td>
-      <td>While <kbd>NumLock</kbd> is locked</td>
+      <td colspan="2">در حالی که چراغ LED کلید <kbd>Num Lock</kbd> روشن است</td>
+      <td>فشردن یک کلید در صفحه‌کلید عددی (numpad)</td>
+      <td>❌ <em>پشتیبانی نمی‌شود</em></td>
+      <td>در حالی که <kbd>NumLock</kbd> قفل است</td>
     </tr>
     <tr>
       <th scope="row"><code>"OS"</code></th>
-      <td><kbd>⊞ Windows Logo</kbd> key pressed (before Firefox 118)</td>
+      <td>فشردن کلید <kbd>⊞ Windows Logo</kbd> (قبل از فایرفاکس 118)</td>
       <td>
-        <kbd>Super</kbd> key or <kbd>Hyper</kbd> key pressed (typically, mapped
-        to <kbd>⊞ Windows Logo</kbd> key)
+        فشردن کلید <kbd>Super</kbd> یا کلید <kbd>Hyper</kbd> (معمولاً به کلید <kbd>⊞ Windows Logo</kbd> نگاشت می‌شود)
       </td>
-      <td>❌ <em>Not supported</em></td>
-      <td>❌ <em>Not supported</em></td>
-      <td>❌ <em>Not supported</em></td>
+      <td>❌ <em>پشتیبانی نمی‌شود</em></td>
+      <td>❌ <em>پشتیبانی نمی‌شود</em></td>
+      <td>❌ <em>پشتیبانی نمی‌شود</em></td>
     </tr>
     <tr>
       <th scope="row"><code>"ScrollLock"</code></th>
-      <td>During LED for <kbd>Scroll Lock</kbd> turned on</td>
+      <td>در حالی که چراغ LED کلید <kbd>Scroll Lock</kbd> روشن است</td>
       <td>
-        During LED for <kbd>Scroll Lock</kbd> turned on, but typically this
-        isn't supported by platform
+        در حالی که چراغ LED کلید <kbd>Scroll Lock</kbd> روشن است، اما معمولاً این مورد توسط سیستم‌عامل پشتیبانی نمی‌شود
       </td>
-      <td>❌ <em>Not supported</em></td>
-      <td>❌ <em>Not supported</em></td>
-      <td>While <kbd>ScrollLock</kbd> is locked</td>
+      <td>❌ <em>پشتیبانی نمی‌شود</em></td>
+      <td>❌ <em>پشتیبانی نمی‌شود</em></td>
+      <td>در حالی که <kbd>ScrollLock</kbd> قفل است</td>
     </tr>
     <tr>
       <th scope="row"><code>"Shift"</code></th>
-      <td colspan="5"><kbd>⇧ Shift</kbd> key pressed</td>
+      <td colspan="5">فشردن کلید <kbd>⇧ Shift</kbd></td>
     </tr>
     <tr>
       <th scope="row"><code>"Super"</code></th>
-      <td>❌ <em>Not supported</em></td>
-      <td>❌ <em>Not supported</em></td>
-      <td>❌ <em>Not supported</em></td>
-      <td>❌ <em>Not supported</em></td>
-      <td>❌ <em>Not supported</em></td>
+      <td>❌ <em>پشتیبانی نمی‌شود</em></td>
+      <td>❌ <em>پشتیبانی نمی‌شود</em></td>
+      <td>❌ <em>پشتیبانی نمی‌شود</em></td>
+      <td>❌ <em>پشتیبانی نمی‌شود</em></td>
+      <td>❌ <em>پشتیبانی نمی‌شود</em></td>
     </tr>
     <tr>
       <th scope="row"><code>"Symbol"</code></th>
-      <td>❌ <em>Not supported</em></td>
-      <td>❌ <em>Not supported</em></td>
-      <td>❌ <em>Not supported</em></td>
-      <td>❌ <em>Not supported</em></td>
-      <td>❌ <em>Not supported</em></td>
+      <td>❌ <em>پشتیبانی نمی‌شود</em></td>
+      <td>❌ <em>پشتیبانی نمی‌شود</em></td>
+      <td>❌ <em>پشتیبانی نمی‌شود</em></td>
+      <td>❌ <em>پشتیبانی نمی‌شود</em></td>
+      <td>❌ <em>پشتیبانی نمی‌شود</em></td>
     </tr>
     <tr>
       <th scope="row"><code>"SymbolLock"</code></th>
-      <td>❌ <em>Not supported</em></td>
-      <td>❌ <em>Not supported</em></td>
-      <td>❌ <em>Not supported</em></td>
-      <td>❌ <em>Not supported</em></td>
-      <td>❌ <em>Not supported</em></td>
+      <td>❌ <em>پشتیبانی نمی‌شود</em></td>
+      <td>❌ <em>پشتیبانی نمی‌شود</em></td>
+      <td>❌ <em>پشتیبانی نمی‌شود</em></td>
+      <td>❌ <em>پشتیبانی نمی‌شود</em></td>
+      <td>❌ <em>پشتیبانی نمی‌شود</em></td>
     </tr>
   </tbody>
 </table>
 
-- On the other platforms, "Alt", "Control" and "Shift" may be supported.
-- All modifiers (except `"FnLock"`, `"Hyper"`, `"Super"` and `"Symbol"` which are defined after Firefox implements this) are always supported for untrusted events on Firefox.
-  This doesn't depend on the platform.
+- در سایر پلتفرم‌ها، «Alt»، «Control» و «Shift» ممکن است پشتیبانی شوند.
+- همه اصلاح‌کننده‌ها (به‌جز `"FnLock"`، `"Hyper"`، `"Super"` و `"Symbol"` که بعد از پیاده‌سازی این قابلیت در فایرفاکس تعریف شده‌اند) همیشه برای رویدادهای غیرقابل اعتماد (untrusted) در فایرفاکس پشتیبانی می‌شوند. این موضوع به پلتفرم بستگی ندارد.
 
-## `"Accel"` virtual modifier
+## اصلاح‌کننده مجازی `"Accel"`
 
 > [!NOTE]
-> The `"Accel"` virtual modifier has
-> been effectively **deprecated** in current drafts of the DOM3 Events
-> specification.
+> اصلاح‌کننده مجازی `"Accel"` عملاً در پیش‌نویس‌های فعلی مشخصات DOM3 Events **منسوخ (deprecated)** شده است.
 
-`getModifierState()` also accepts a deprecated virtual modifier named
-`"Accel"`. `event.getModifierState("Accel")` returns
-`true` when at least one of {{domxref("KeyboardEvent.ctrlKey")}} or
-{{domxref("KeyboardEvent.metaKey")}} is `true`.
+متد `getModifierState()` همچنین یک اصلاح‌کننده مجازی منسوخ به نام `"Accel"` را می‌پذیرد. `event.getModifierState("Accel")` زمانی مقدار `true` برمی‌گرداند که حداقل یکی از {{domxref("KeyboardEvent.ctrlKey")}} یا {{domxref("KeyboardEvent.metaKey")}} برابر `true` باشد.
 
-In old implementations and outdated specifications, it returned `true` when
-a modifier which is the typical modifier key for the shortcut key is pressed. For
-example, on Windows, pressing <kbd>Ctrl</kbd> key may make it return `true`.
-However, on Mac, pressing <kbd>⌘ Command</kbd> key may make it return `true`.
-Note that which modifier key makes it return true depends on platforms, browsers, and
-user settings. For example, Firefox users can customize this with a pref,
-`"ui.key.accelKey"`.
+در پیاده‌سازی‌های قدیمی و مشخصات منسوخ، این متد زمانی `true` برمی‌گرداند که کلید اصلاح‌کنندهٔ معمول برای کلید میانبر فشار داده شده باشد. برای مثال، در Windows فشردن کلید <kbd>Ctrl</kbd> ممکن است باعث برگرداندن `true` شود. با این حال، در Mac فشردن کلید <kbd>⌘ Command</kbd> ممکن است باعث برگرداندن `true` شود. توجه داشته باشید که اینکه کدام کلید اصلاح‌کننده باعث بازگرداندن `true` می‌شود به پلتفرم، مرورگر و تنظیمات کاربر بستگی دارد. برای مثال، کاربران فایرفاکس می‌توانند این رفتار را با یک ترجیح (pref) به نام `"ui.key.accelKey"` سفارشی‌سازی کنند.
 
-## Examples
+## مثال‌ها
 
 ```js
 function handleKeyboardEvent(event) {
@@ -288,20 +264,17 @@ function handleKeyboardEvent(event) {
 ```
 
 > [!NOTE]
-> Although this example uses `.getModifierState()` with `"Alt"`,
-> `"Control"`, `"Meta"` and `"Shift"`, using
-> `event.altKey`, `event.ctrlKey`, `event.metaKey` and
-> `event.shiftKey` may be more preferable.
+> اگرچه این مثال از `.getModifierState()` با `"Alt"`، `"Control"`، `"Meta"` و `"Shift"` استفاده می‌کند، استفاده از `event.altKey`، `event.ctrlKey`، `event.metaKey` و `event.shiftKey` ممکن است ترجیح داده شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("KeyboardEvent")}} this method belongs to.
+- {{domxref("KeyboardEvent")}} که این متد به آن تعلق دارد.
 - {{domxref("MouseEvent.getModifierState")}}
