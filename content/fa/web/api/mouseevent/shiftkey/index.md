@@ -1,7 +1,5 @@
 ---
 title: "MouseEvent: shiftKey property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/shiftKey"
-status: "needs-translation"
 ---
 
 ---
@@ -14,15 +12,15 @@ browser-compat: api.MouseEvent.shiftKey
 
 {{APIRef("Pointer Events")}}
 
-The **`MouseEvent.shiftKey`** read-only property is a boolean value that indicates whether the <kbd>shift</kbd> key was pressed or not when a given mouse event occurs.
+ویژگی فقط‌خواندنی **`MouseEvent.shiftKey`** یک مقدار بولی است که نشان می‌دهد آیا کلید <kbd>shift</kbd> هنگام رخداد یک رویداد ماوس فشرده شده بود یا خیر.
 
-## Value
+## مقدار
 
-A boolean value, where `true` indicates that the key is pressed, and `false` indicates that the key is _not_ pressed.
+یک مقدار بولی، که در آن `true` نشان‌دهندهٔ فشرده‌شدن کلید و `false` نشان‌دهندهٔ _فشرده‌نشدن_ کلید است.
 
-## Examples
+## مثال‌ها
 
-This example logs the `shiftKey` property when you trigger a {{domxref("Element/click_event", "click")}} event.
+این مثال ویژگی `shiftKey` را هنگام فعال‌سازی رویداد {{domxref("Element/click_event", "click")}} ثبت می‌کند.
 
 ### HTML
 
@@ -42,18 +40,18 @@ function logKey(e) {
 }
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{ domxref("MouseEvent") }}
