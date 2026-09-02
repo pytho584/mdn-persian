@@ -1,7 +1,5 @@
 ---
 title: "HTMLTextAreaElement: checkValidity() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTextAreaElement/checkValidity"
-status: "needs-translation"
 ---
 
 ---
@@ -14,47 +12,47 @@ browser-compat: api.HTMLTextAreaElement.checkValidity
 
 {{APIRef("HTML DOM")}}
 
-The **`checkValidity()`** method of the {{domxref("HTMLTextAreaElement")}} interface returns a boolean value which indicates if the element meets any [constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation) rules applied to it. If false, the method also fires an {{domxref("HTMLElement/invalid_event", "invalid")}} event on the element. Because there's no default browser behavior for `checkValidity()`, canceling this `invalid` event has no effect.
+متد **`checkValidity()`** از رابط {{domxref("HTMLTextAreaElement")}} یک مقدار بولی برمی‌گرداند که نشان می‌دهد آیا عنصر با هر یک از قوانین [اعتبارسنجی محدودیت‌ها](/en-US/docs/Web/HTML/Guides/Constraint_validation) اعمال‌شده روی آن مطابقت دارد یا نه. اگر نتیجه `false` باشد، این متد همچنین یک رویداد {{domxref("HTMLElement/invalid_event", "invalid")}} روی عنصر برمی‌انگیزد. از آنجا که رفتار پیش‌فرض مرورگر برای `checkValidity()` وجود ندارد، لغو کردن این رویداد `invalid` هیچ تأثیری ندارد.
 
 > [!NOTE]
-> An HTML {{htmlelement("textarea")}} element with a non-null {{domxref("HTMLTextAreaElement.validationMessage", "validationMessage")}} is considered invalid, will match the CSS {{cssxref(":invalid")}} pseudo-class, and will cause `checkValidity()` to return false. Use the {{domxref("HTMLTextAreaElement.setCustomValidity()")}} method to set the {{domxref("HTMLTextAreaElement.validationMessage")}} to the empty string to set the {{domxref("HTMLTextAreaElement.validity", "validity")}} state to be valid.
+> یک عنصر HTML {{htmlelement("textarea")}} که {{domxref("HTMLTextAreaElement.validationMessage", "validationMessage")}} آن غیر null باشد، نامعتبر در نظر گرفته می‌شود، با شبه‌کلاس CSS {{cssxref(":invalid")}} مطابقت می‌کند، و باعث می‌شود `checkValidity()` مقدار `false` برگرداند. از متد {{domxref("HTMLTextAreaElement.setCustomValidity()")}} استفاده کنید تا {{domxref("HTMLTextAreaElement.validationMessage")}} را روی رشتهٔ خالی تنظیم کنید و وضعیت {{domxref("HTMLTextAreaElement.validity", "validity")}} را معتبر کنید.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 checkValidity()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-Returns `true` if the element's value has no validity problems; otherwise, returns `false`.
+اگر مقدار عنصر هیچ مشکل اعتباری نداشته باشد، `true` برمی‌گرداند؛ در غیر این صورت، `false` برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-In the following example, calling `checkValidity()` returns either `true` or `false`.
+در مثال زیر، فراخوانی `checkValidity()` مقدار `true` یا `false` را برمی‌گرداند.
 
 ```js
 const element = document.getElementById("myTextArea");
 console.log(element.checkValidity());
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLTextAreaElement.reportValidity()")}}
 - {{HTMLElement("textarea")}}
 - {{HTMLElement("form")}}
-- [Learn: Client-side form validation](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
-- [Guide: Constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation)
-- CSS {{cssxref(":valid")}} and {{cssxref(":invalid")}} pseudo-classes
+- [یادگیری: اعتبارسنجی فرم در سمت کلاینت](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
+- [راهنما: اعتبارسنجی محدودیت‌ها](/en-US/docs/Web/HTML/Guides/Constraint_validation)
+- شبه‌کلاس‌های CSS {{cssxref(":valid")}} و {{cssxref(":invalid")}}
