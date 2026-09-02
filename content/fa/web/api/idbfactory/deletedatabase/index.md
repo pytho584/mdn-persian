@@ -1,11 +1,5 @@
 ---
 title: "IDBFactory: deleteDatabase() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBFactory/deleteDatabase"
-status: "needs-translation"
----
-
----
-title: "IDBFactory: deleteDatabase() method"
 short-title: deleteDatabase()
 slug: Web/API/IDBFactory/deleteDatabase
 page-type: web-api-instance-method
@@ -14,51 +8,35 @@ browser-compat: api.IDBFactory.deleteDatabase
 
 {{APIRef("IndexedDB")}} {{AvailableInWorkers}}
 
-The **`deleteDatabase()`** method of the
-{{DOMxRef("IDBFactory")}} interface requests the deletion of a database. The method
-returns an {{DOMxRef("IDBOpenDBRequest")}} object immediately, and performs the deletion
-operation asynchronously.
+متد **`deleteDatabase()`** از رابط {{DOMxRef("IDBFactory")}} درخواست حذف یک پایگاه داده را می‌دهد. این متد بلافاصله یک شیء {{DOMxRef("IDBOpenDBRequest")}} برمی‌گرداند و عملیات حذف را به‌صورت ناهمزمان انجام می‌دهد.
 
-If the database is successfully deleted, then a `success` event is fired on
-the request object returned from this method, with its `result` set to
-`undefined`. If an error occurs while the database is being deleted, then an
-`error` event is fired on the request object that is returned from this
-method.
+اگر پایگاه داده با موفقیت حذف شود، رویداد `success` روی شیء درخواست بازگشتی از این متد فعال می‌شود و `result` آن برابر `undefined` قرار می‌گیرد. اگر در حین حذف پایگاه داده خطایی رخ دهد، رویداد `error` روی شیء درخواست بازگشتی فعال می‌شود.
 
-When `deleteDatabase()` is called, any other open connections to this
-particular database will get a [versionchange](/en-US/docs/Web/API/IDBDatabase/versionchange_event) event.
+هنگامی که `deleteDatabase()` فراخوانی می‌شود، هر اتصال باز دیگری به این پایگاه داده خاص یک رویداد [versionchange](/en-US/docs/Web/API/IDBDatabase/versionchange_event) دریافت می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
-// For the current standard:
+// برای استاندارد فعلی:
 deleteDatabase(name)
 
-// For the experimental version with `options` (see below):
+// برای نسخه آزمایشی با `options` (به زیر مراجعه کنید):
 deleteDatabase(name)
 deleteDatabase(name, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `name`
-  - : The name of the database you want to delete. Note that attempting to delete a
-    database that doesn't exist does not throw an exception, in contrast to
-    {{DOMxRef("IDBDatabase.deleteObjectStore()")}}, which does throw an exception if the
-    named object store does not exist.
+  - : نام پایگاه داده‌ای که می‌خواهید حذف کنید. توجه داشته باشید که تلاش برای حذف یک پایگاه داده که وجود ندارد، برخلاف {{DOMxRef("IDBDatabase.deleteObjectStore()")}} که در صورت عدم وجود ذخیره‌گاه شیء نام‌برده شده استثنا پرتاب می‌کند، در اینجا استثنا پرتاب نمی‌کند.
 - `options` {{optional_inline}} {{Non-standard_Inline}}
-  - : In Gecko, since [version 26](/en-US/docs/Mozilla/Firefox/Releases/26), you can include
-    a non-standard optional storage parameter that specifies whether you want to delete a
-    `permanent` (the default value) IndexedDB, or an indexedDB in
-    `temporary` storage (aka shared pool.)
+  - : در Gecko، از [نسخه 26](/en-US/docs/Mozilla/Firefox/Releases/26) به بعد، می‌توانید یک پارامتر ذخیره‌سازی غیراستاندارد اختیاری اضافه کنید که مشخص می‌کند آیا می‌خواهید یک IndexedDB `permanent` (مقدار پیش‌فرض) را حذف کنید یا یک indexedDB در ذخیره‌سازی `temporary` (معروف به حافظه اشتراکی).
 
-### Return value
+### مقدار بازگشتی
 
-An {{DOMxRef("IDBOpenDBRequest")}} on which subsequent events related to this request are fired.
+یک {{DOMxRef("IDBOpenDBRequest")} که رویدادهای بعدی مربوط به این درخواست روی آن فعال می‌شوند. اگر عملیات موفقیت‌آمیز باشد، مقدار ویژگی {{domxref("IDBRequest.result", "result")}} درخواست `null` خواهد بود.
 
-If the operation is successful, the value of the request's {{domxref("IDBRequest.result", "result")}} property is `null`.
-
-## Examples
+## مثال‌ها
 
 ```js
 const DBDeleteRequest = window.indexedDB.deleteDatabase("toDoList");
@@ -74,20 +52,20 @@ DBDeleteRequest.onsuccess = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{DOMxRef("IDBDatabase")}}
-- Using transactions: {{DOMxRef("IDBTransaction")}}
-- Setting a range of keys: {{DOMxRef("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{DOMxRef("IDBObjectStore")}}
-- Using cursors: {{DOMxRef("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{DOMxRef("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{DOMxRef("IDBTransaction")}}
+- تنظیم محدوده کلیدها: {{DOMxRef("IDBKeyRange")}}
+- بازیابی و ایجاد تغییرات در داده‌های خود: {{DOMxRef("IDBObjectStore")}}
+- استفاده از نشانگرها: {{DOMxRef("IDBCursor")}}
+- مثال مرجع: [اعلان‌های کارهای روزانه](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
