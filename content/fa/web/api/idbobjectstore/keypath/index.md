@@ -1,9 +1,4 @@
----
-title: "IDBObjectStore: keyPath property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/keyPath"
-status: "needs-translation"
----
-
+```
 ---
 title: "IDBObjectStore: keyPath property"
 short-title: keyPath
@@ -14,23 +9,17 @@ browser-compat: api.IDBObjectStore.keyPath
 
 {{ APIRef("IndexedDB") }} {{AvailableInWorkers}}
 
-The **`keyPath`** read-only property of the
-{{domxref("IDBObjectStore")}} interface returns the [key path](/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology#key_path) of this object store.
+ویژگی فقط‌خواندنی **`keyPath`** از رابط {{domxref("IDBObjectStore")}}، [مسیر کلید](/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology#key_path) این مخزن شیء را برمی‌گرداند.
 
-If this property is null, the application must provide a key for each modification
-operation.
+اگر مقدار این ویژگی `null` باشد، برنامه باید برای هر عملیات تغییر، یک کلید فراهم کند.
 
-## Value
+## مقدار
 
-Any value type.
+این ویژگی می‌تواند مقداری از هر نوعی داشته باشد.
 
-## Examples
+## مثال‌ها
 
-In the following code snippet, we open a read/write transaction on our database and add
-some data to an object store using `add()`. After the object store has been
-created, we log `objectStore.keyPath` to
-the console. For a full working example, see our [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) app
-([view example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+در قطعه‌کد زیر، یک تراکنش خواندن/نوشتن روی پایگاه‌داده باز می‌کنیم و داده‌هایی را با استفاده از `add()` به یک مخزن شیء اضافه می‌کنیم. پس از ساخته‌شدن مخزن شیء، مقدار `objectStore.keyPath` را در کنسول چاپ می‌کنیم. برای مشاهدهٔ یک مثال کامل و قابل اجرا، برنامهٔ [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) را ببینید ([مشاهدهٔ مثال به‌صورت زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
 
 ```js
 // Let us open our database
@@ -91,20 +80,21 @@ function addData() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم بازه‌ای از کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی داده‌ها و ایجاد تغییر در آن‌ها: {{domxref("IDBObjectStore")}}
+- استفاده از نشانگرها: {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهدهٔ مثال به‌صورت زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
+```
