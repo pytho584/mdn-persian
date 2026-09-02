@@ -1,11 +1,5 @@
 ---
 title: "Location: replace() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Location/replace"
-status: "needs-translation"
----
-
----
-title: "Location: replace() method"
 short-title: replace()
 slug: Web/API/Location/replace
 page-type: web-api-instance-method
@@ -14,36 +8,31 @@ browser-compat: api.Location.replace
 
 {{ APIRef("HTML DOM") }}
 
-The **`replace()`** method of the {{DOMXref("Location")}}
-interface replaces the current resource with the one at the provided URL. The difference
-from the {{domxref("Location.assign","assign()")}} method is that after using
-`replace()` the current page will not be saved in session {{domxref("History")}},
-meaning the user won't be able to use the _back_ button to navigate to it.
-Not to be confused with the {{jsxref("String")}} method {{jsxref("String.prototype.replace()")}}.
+متد **`replace()`** از رابط {{DOMXref("Location")}}، منبع فعلی را با منبع موجود در URL داده‌شده جایگزین می‌کند. تفاوت آن با متد {{domxref("Location.assign","assign()")}} در این است که پس از استفاده از `replace()`، صفحهٔ فعلی در تاریخچهٔ جلسه ({{domxref("History")}}) ذخیره نمی‌شود؛ بنابراین کاربر نمی‌تواند با دکمهٔ _بازگشت_ به آن بازگردد. این متد نباید با متد {{jsxref("String")}} یعنی {{jsxref("String.prototype.replace()")}} اشتباه گرفته شود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 replace(url)
 ```
 
-### Parameters
+### پارامترها
 
 - `url`
-  - : A string or any other object with a {{Glossary("stringifier")}}, such as a {{domxref("URL")}} object, containing the URL of the page to navigate to.
+  - : یک رشته یا هر شیء دیگری که دارای {{Glossary("stringifier")}} باشد، مانند یک شیء {{domxref("URL")}}، که URL صفحهٔ موردنظر برای پیمایش را شامل می‌شود.
 
-### Exceptions
+### استثناها
 
 - `SecurityError` {{domxref("DOMException")}}
-  - : Browsers throttle navigations and may throw this error, generate a warning, or ignore the call if it's called too frequently.
+  - : مرورگرها پیمایش‌ها را محدود می‌کنند و اگر این متد بیش از حد مکرر فراخوانی شود، ممکن است این خطا را صادر کنند، هشدار تولید کنند، یا فراخوانی را نادیده بگیرند.
 - `SyntaxError` {{domxref("DOMException")}}
-  - : Thrown if the provided `url` parameter is not a valid URL.
+  - : اگر پارامتر `url` ارائه‌شده یک URL معتبر نباشد، این خطا صادر می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
 ```js
 // Navigate to the Location.reload article by replacing this page
@@ -52,16 +41,15 @@ window.location.replace(
 );
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- The {{domxref("Location")}} interface it belongs to.
-- Similar methods: {{domxref("Location.assign()")}} and
-  {{domxref("Location.reload()")}}.
+- رابط {{domxref("Location")}} که این متد به آن تعلق دارد.
+- متدهای مشابه: {{domxref("Location.assign()")}} و {{domxref("Location.reload()")}}.
