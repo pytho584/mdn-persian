@@ -1,11 +1,5 @@
 ---
 title: "HTMLVideoElement: width property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLVideoElement/width"
-status: "needs-translation"
----
-
----
-title: "HTMLVideoElement: width property"
 short-title: width
 slug: Web/API/HTMLVideoElement/width
 page-type: web-api-instance-property
@@ -14,13 +8,13 @@ browser-compat: api.HTMLVideoElement.width
 
 {{APIRef("HTML DOM")}}
 
-The **`width`** property of the {{domxref("HTMLVideoElement")}} interface returns an integer that reflects the `width` attribute of the {{HTMLElement("video")}} element, specifying the displayed width of the resource in CSS pixels.
+ویژگی **`width`** در رابط {{domxref("HTMLVideoElement")}} یک عدد صحیح برمی‌گرداند که مشخصهٔ `width` عنصر {{HTMLElement("video")}} را بازتاب می‌دهد و عرض نمایشی منبع را بر حسب پیکسل CSS مشخص می‌کند.
 
-## Value
+## مقدار
 
-A positive integer or 0.
+یک عدد صحیح مثبت یا 0.
 
-## Examples
+## مثال‌ها
 
 ```html
 <video id="media" width="800" height="600"></video>
@@ -31,15 +25,15 @@ const el = document.getElementById("media");
 console.log(el.width); // Output: 800
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("HTMLCanvasElement.width")}}
 - {{domxref("HTMLEmbedElement.width")}}
