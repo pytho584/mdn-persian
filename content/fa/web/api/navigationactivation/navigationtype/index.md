@@ -1,11 +1,5 @@
 ---
 title: "NavigationActivation: navigationType property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigationActivation/navigationType"
-status: "needs-translation"
----
-
----
-title: "NavigationActivation: navigationType property"
 short-title: navigationType
 slug: Web/API/NavigationActivation/navigationType
 page-type: web-api-instance-property
@@ -14,18 +8,18 @@ browser-compat: api.NavigationActivation.navigationType
 
 {{APIRef("Navigation API")}}
 
-The **`navigationType`** read-only property of the {{domxref("NavigationActivation")}} interface contains a string indicating the type of navigation.
+ویژگی فقط‌خواندنی **`navigationType`** از رابط {{domxref("NavigationActivation")}} رشته‌ای را نشان می‌دهد که نوع ناوبری را مشخص می‌کند.
 
-## Value
+## مقدار
 
-A string representing the type of navigation the {{domxref("NavigationActivation")}} relates to. Possible values are:
+رشته‌ای که نوع ناوبری مربوط به {{domxref("NavigationActivation")}} را نشان می‌دهد. مقادیر ممکن عبارت‌اند از:
 
-- `push`: A new location was navigated to, causing a new entry to be pushed onto the history list.
-- `reload`: The {{domxref("NavigationActivation.entry")}} was reloaded.
-- `replace`: The {{domxref("NavigationActivation.entry")}} was replaced with a new history entry. This new entry will reuse the same {{domxref("NavigationHistoryEntry.key", "key")}}, but be assigned a different {{domxref("NavigationHistoryEntry.id", "id")}}.
-- `traverse`: The browser navigated from one existing history entry to another existing history entry.
+- `push`: به مکان جدیدی ناوبری شده است که باعث می‌شود یک ورودی جدید به فهرست تاریخچه اضافه شود.
+- `reload`: {{domxref("NavigationActivation.entry")}} بارگذاری مجدد شده است.
+- `replace`: {{domxref("NavigationActivation.entry")}} با یک ورودی تاریخچه جدید جایگزین شده است. این ورودی جدید همان {{domxref("NavigationHistoryEntry.key", "key")}} را دوباره استفاده می‌کند، اما یک {{domxref("NavigationHistoryEntry.id", "id")}} متفاوت به آن اختصاص داده می‌شود.
+- `traverse`: مرورگر از یک ورودی تاریخچه موجود به ورودی تاریخچه موجود دیگری ناوبری کرده است.
 
-## Examples
+## مثال‌ها
 
 ```js
 window.addEventListener("pageswap", (event) => {
@@ -39,15 +33,15 @@ window.addEventListener("pageswap", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Navigation API](/en-US/docs/Web/API/Navigation_API)
 - [View Transition API](/en-US/docs/Web/API/View_Transition_API)
