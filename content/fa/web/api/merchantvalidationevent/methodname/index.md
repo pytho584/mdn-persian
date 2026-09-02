@@ -1,9 +1,4 @@
----
-title: "MerchantValidationEvent: methodName property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MerchantValidationEvent/methodName"
-status: "needs-translation"
----
-
+```
 ---
 title: "MerchantValidationEvent: methodName property"
 short-title: methodName
@@ -17,23 +12,19 @@ browser-compat: api.MerchantValidationEvent.methodName
 
 {{APIRef("Payment Request API")}}{{Deprecated_Header}}{{SecureContext_Header}}{{non-standard_header}}
 
-The {{domxref("MerchantValidationEvent")}} property
-**`methodName`** is a read-only value which returns a string
-indicating the payment method identifier which represents the payment handler that
-requires merchant validation.
+ویژگی **`methodName`** از رابط {{domxref("MerchantValidationEvent")}} مقداری فقط‌خواندنی است. مقدار این ویژگی رشته‌ای است که شناسهٔ روش پرداخت را مشخص کرده و پردازشگر پرداخت (payment handler) را معرفی می‌کند که به اعتبارسنجی فروشنده نیاز دارد.
 
-## Value
+## مقدار
 
-A read-only string which uniquely identifies the payment handler
-which is requesting merchant validation. See
-[Merchant validation](/en-US/docs/Web/API/Payment_Request_API/Concepts#merchant_validation) for more information on the process.
+رشته‌ای فقط‌خواندنی است که به‌صورت یکتا، پردازشگر پرداختیِ متقاضی اعتبارسنجی فروشنده را مشخص می‌کند. برای اطلاعات بیشتر دربارهٔ این فرایند، [اعتبارسنجی فروشنده](/en-US/docs/Web/API/Payment_Request_API/Concepts#merchant_validation) را ببینید.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - [Payment Request API](/en-US/docs/Web/API/Payment_Request_API)
-- [Using the Payment Request API](/en-US/docs/Web/API/Payment_Request_API/Using_the_Payment_Request_API)
-- [Payment processing concepts](/en-US/docs/Web/API/Payment_Request_API/Concepts)
+- [استفاده از Payment Request API](/en-US/docs/Web/API/Payment_Request_API/Using_the_Payment_Request_API)
+- [مفاهیم پردازش پرداخت](/en-US/docs/Web/API/Payment_Request_API/Concepts)
+```
