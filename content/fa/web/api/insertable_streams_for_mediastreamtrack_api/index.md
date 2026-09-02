@@ -1,7 +1,5 @@
 ---
 title: "Insertable Streams for MediaStreamTrack API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Insertable_Streams_for_MediaStreamTrack_API"
-status: "needs-translation"
 ---
 
 ---
@@ -16,26 +14,26 @@ spec-urls: https://w3c.github.io/mediacapture-transform/
 
 {{DefaultAPISidebar("Insertable Streams for MediaStreamTrack API")}}{{SeeCompatTable}}{{AvailableInWorkers("dedicated")}}
 
-The **Insertable Streams for MediaStreamTrack API** provides a way to process the video frames of a {{domxref("MediaStreamTrack")}} as they are consumed.
+**API جریان‌های قابل درج برای MediaStreamTrack** روشی برای پردازش فریم‌های ویدیوی یک {{domxref("MediaStreamTrack")}} در حین مصرف شدن فراهم می‌کند.
 
-## Concepts and Usage
+## مفاهیم و کاربرد
 
-When processing real-time video, you sometimes want to insert visual elements or otherwise process the stream of video frames. For example, an application might include two tracks that need to be combined, such as a weather map and video of a presenter explaining the map. Or, you may want to do processing on a track to blur backgrounds, or introduce other elements (such as adding funny hats to people, and so on). The APIs described here provide direct access to the video stream, allowing you to manipulate it in real time.
+هنگام پردازش ویدیوی بلادرنگ، گاهی می‌خواهید عناصر بصری را وارد کنید یا به‌گونه‌ای دیگر جریان فریم‌های ویدیو را پردازش نمایید. برای مثال، یک برنامه ممکن است شامل دو track باشد که باید با هم ترکیب شوند، مانند نقشه آب‌وهوا و ویدیوی مجری‌ای که نقشه را توضیح می‌دهد. یا ممکن است بخواهید روی یک track پردازشی انجام دهید تا پس‌زمینه را محو کنید یا عناصر دیگری (مثلاً کلاه‌های بامزه روی افراد) اضافه کنید. APIهای شرح‌داده‌شده در اینجا دسترسی مستقیم به جریان ویدیو فراهم می‌کنند و به شما امکان می‌دهند آن را در زمان واقعی دستکاری کنید.
 
-To ensure optimal performance, the APIs are only available in [dedicated workers](/en-US/docs/Web/API/DedicatedWorkerGlobalScope) (unless otherwise stated).
+برای اطمینان از عملکرد بهینه، این APIها فقط در [کارگران اختصاصی](/en-US/docs/Web/API/DedicatedWorkerGlobalScope) در دسترس هستند (مگر اینکه خلاف آن ذکر شده باشد).
 
-## Interfaces
+## رابط‌ها
 
 - {{domxref("MediaStreamTrackProcessor")}} {{Experimental_Inline}}
-  - : Consumes a {{domxref("MediaStreamTrack")}} object's source and produces a stream of video frames.
+  - : منبع یک شیء {{domxref("MediaStreamTrack")}} را مصرف کرده و جریانی از فریم‌های ویدیو تولید می‌کند.
 - {{domxref("VideoTrackGenerator")}} {{Experimental_Inline}}
-  - : Creates a {{domxref("WritableStream")}} that acts as a {{domxref("MediaStreamTrack")}} video source.
+  - : یک {{domxref("WritableStream")}} ایجاد می‌کند که به عنوان یک منبع ویدیوی {{domxref("MediaStreamTrack")}} عمل می‌کند.
 - {{domxref("MediaStreamTrackGenerator")}} {{Experimental_Inline}} {{Non-standard_Inline}}
-  - : Creates a {{domxref("WritableStream")}} that acts as a {{domxref("MediaStreamTrack")}} source for either video or audio. Only available on the {{Glossary("main thread")}}.
+  - : یک {{domxref("WritableStream")}} ایجاد می‌کند که به عنوان یک منبع {{domxref("MediaStreamTrack")}} برای ویدیو یا صدا عمل می‌کند. فقط در {{Glossary("main thread")}} در دسترس است.
 
-## Examples
+## مثال‌ها
 
-The following example is from the article [Unbundling MediaStreamTrackProcessor and VideoTrackGenerator](https://blog.mozilla.org/webrtc/unbundling-mediastreamtrackprocessor-and-videotrackgenerator/). It [transfers](/en-US/docs/Web/API/Web_Workers_API/Transferable_objects) a camera {{domxref("MediaStreamTrack")}} to a worker for processing. The worker creates a pipeline that applies a sepia tone filter to the video frames and mirrors them. The pipeline culminates in a {{domxref("VideoTrackGenerator")}} whose {{domxref("MediaStreamTrack")}} is transferred back and played. The media now flows in real time through the transform off the {{Glossary("main thread")}}.
+مثال زیر از مقاله [Unbundling MediaStreamTrackProcessor and VideoTrackGenerator](https://blog.mozilla.org/webrtc/unbundling-mediastreamtrackprocessor-and-videotrackgenerator/) گرفته شده است. این مثال یک {{domxref("MediaStreamTrack")}} دوربین را برای پردازش به یک worker [انتقال](/en-US/docs/Web/API/Web_Workers_API/Transferable_objects) می‌دهد. worker یک خط لوله ایجاد می‌کند که یک فیلتن sepia tone روی فریم‌های ویدیو اعمال کرده و آن‌ها را آینه می‌کند. خط لوله به یک {{domxref("VideoTrackGenerator")}} ختم می‌شود که {{domxref("MediaStreamTrack")}} آن به عقب منتقل شده و پخش می‌شود. رسانه اکنون در زمان واقعی و خارج از {{Glossary("main thread")}} از طریق تبدیل جریان می‌یابد.
 
 ```js
 const stream = await navigator.mediaDevices.getUserMedia({ video: true });
@@ -59,10 +57,10 @@ onmessage = async ({ data: { track } }) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
