@@ -1,7 +1,5 @@
 ---
 title: "IdleDetector: screenState property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IdleDetector/screenState"
-status: "needs-translation"
 ---
 
 ---
@@ -16,17 +14,15 @@ browser-compat: api.IdleDetector.screenState
 
 {{securecontext_header}}{{APIRef("Idle Detection API")}}{{SeeCompatTable}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`screenState`** read-only property of the {{domxref("IdleDetector")}} interface
-returns a string indicating whether the screen is locked, one of `"locked"` or
-`"unlocked"`.
+ویژگی فقط‌خواندنی **`screenState`** از رابط {{domxref("IdleDetector")}} رشته‌ای برمی‌گرداند که نشان می‌دهد آیا صفحه قفل است، یکی از مقادیر `"locked"` یا `"unlocked"`.
 
-## Value
+## مقدار
 
-Either `"locked"` or `"unlocked"` if {{domxref("IdleDetector.start()")}} has been called, or `null` otherwise.
+اگر {{domxref("IdleDetector.start()")}} فراخوانی شده باشد، یکی از مقادیر `"locked"` یا `"unlocked"` است، در غیر این صورت `null`.
 
-## Examples
+## مثال‌ها
 
-In the following example, the `change` callback prints the status of `userState` and `screenState` to the console.
+در مثال زیر، تابعی که به رویداد `change` متصل شده، وضعیت `userState` و `screenState` را در کنسول چاپ می‌کند.
 
 ```js
 idleDetector.addEventListener("change", () => {
@@ -36,10 +32,10 @@ idleDetector.addEventListener("change", () => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
