@@ -1,10 +1,4 @@
 ---
-title: "InterestEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/InterestEvent"
-status: "needs-translation"
----
-
----
 title: InterestEvent
 slug: Web/API/InterestEvent
 page-type: web-api-interface
@@ -16,37 +10,37 @@ browser-compat: api.InterestEvent
 
 {{APIRef("Popover API")}}{{SeeCompatTable}}{{non-standard_header}}
 
-The **`InterestEvent`** interface represents an event that fires when interest is shown or lost on an [interest invoker](/en-US/docs/Web/API/Popover_API/Using_interest_invokers).
+رابطِ **`InterestEvent`** رویدادی را بازنمایی می‌کند که وقتی به یک [interest invoker](/en-US/docs/Web/API/Popover_API/Using_interest_invokers) علاقه نشان داده می‌شود یا از بین می‌رود، رخ می‌دهد.
 
-This is the event object for the {{domxref("HTMLElement.interest_event", "interest")}} and {{domxref("HTMLElement.loseinterest_event", "loseinterest")}} events, which fire on the target element when interest is shown or lost, respectively.
+این، شیء رویداد برای رویدادهای {{domxref("HTMLElement.interest_event", "interest")}} و {{domxref("HTMLElement.loseinterest_event", "loseinterest")}} است که به‌ترتیب زمانی روی عنصر هدف رخ می‌دهند که علاقه نشان داده می‌شود یا از بین می‌رود.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{DOMxRef("InterestEvent.InterestEvent", "InterestEvent()")}} {{experimental_inline}} {{non-standard_inline}}
-  - : Creates an `InterestEvent` object.
+  - یک شیء `InterestEvent` می‌سازد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface inherits properties from its parent, {{DOMxRef("Event")}}._
+_این رابط ویژگی‌ها را از والد خود، {{DOMxRef("Event")}}، به ارث می‌برد._
 
 - {{DOMxRef("InterestEvent.source")}} {{ReadOnlyInline}} {{experimental_inline}} {{non-standard_inline}}
-  - : An {{domxref("Element")}} object instance that represents the interest invoker element on which interest was shown or lost to fire the event.
+  - نمونه‌ای از {{domxref("Element")}} که نشان‌دهندهٔ عنصر interest invoker است؛ عنصری که با نشان دادن علاقه به آن یا از بین رفتن علاقه نسبت به آن، رویداد رخ داده است.
 
-## Examples
+## مثال‌ها
 
-See the [Using interest invokers](/en-US/docs/Web/API/Popover_API/Using_interest_invokers) guide and the {{domxref("HTMLElement.interest_event", "interest")}} event reference page for examples.
+برای مثال‌ها، راهنمای [استفاده از فراخواننده‌های علاقه (interest invokers)](/en-US/docs/Web/API/Popover_API/Using_interest_invokers) و صفحهٔ مرجع رویداد {{domxref("HTMLElement.interest_event", "interest")}} را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Popover API](/en-US/docs/Web/API/Popover_API)
-- [Using interest invokers](/en-US/docs/Web/API/Popover_API/Using_interest_invokers)
+- [استفاده از فراخواننده‌های علاقه (interest invokers)](/en-US/docs/Web/API/Popover_API/Using_interest_invokers)
