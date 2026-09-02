@@ -1,11 +1,5 @@
 ---
 title: "MediaStream: getTrackById() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaStream/getTrackById"
-status: "needs-translation"
----
-
----
-title: "MediaStream: getTrackById() method"
 short-title: getTrackById()
 slug: Web/API/MediaStream/getTrackById
 page-type: web-api-instance-method
@@ -14,9 +8,7 @@ browser-compat: api.MediaStream.getTrackById
 
 {{APIRef("Media Capture and Streams")}}
 
-The **`getTrackById()`** method of the {{domxref("MediaStream")}} interface
-returns a {{domxref("MediaStreamTrack")}} object representing the track with the specified ID
-string. If there is no track with the specified ID, this method returns `null`.
+متد **`getTrackById()`** در رابط {{domxref("MediaStream")}}، یک شیء {{domxref("MediaStreamTrack")}} را برمی‌گرداند که نمایانگر ردی با شناسه (ID) مشخص‌شده است. اگر ردی با این شناسه وجود نداشته باشد، این متد مقدار `null` را برمی‌گرداند.
 
 ## Syntax
 
@@ -27,19 +19,17 @@ getTrackById(id)
 ### Parameters
 
 - `id`
-  - : A string which identifies the track to be returned.
+  - : یک رشته که ردی را که باید بازگردانده شود مشخص می‌کند.
 
 ### Return value
 
-If a track is found for which {{domxref("MediaStreamTrack.id")}} matches the specified
-`id` string, that {{domxref("MediaStreamTrack")}} object is returned.
-Otherwise, the returned value is `null`.
+اگر ردی یافت شود که {{domxref("MediaStreamTrack.id")}} آن با رشته `id` specified مطابقت داشته باشد، آن شیء {{domxref("MediaStreamTrack")}} بازگردانده می‌شود. در غیر این صورت، مقدار بازگشتی `null` است.
 
 ## Examples
 
-This example activates a commentary track on a video by ducking the audio level of the main audio track to 50%, then enabling the commentary track.
+این مثال یک ردی تفسیر (commentary) را روی یک ویدیو فعال می‌کند، بدین صورت که سطح صدای ردی اصلی صوتی را به ۵۰٪ کاهش می‌دهد و سپس ردی تفسیر را فعال می‌کند.
 
-The example assumes that the IDs of the two tracks are known (for example, from a previous call to {{domxref("MediaStreamTrack.id")}}). In a real application, you might store these IDs when you first obtain the stream, because they are randomly generated in the browser.
+مثال فرض می‌کند که شناسه‌های هر دو ردی مشخص هستند (مثلاً از یک فراخوانی قبلی به {{domxref("MediaStreamTrack.id")}}). در یک برنامه واقعی، ممکن است این شناسه‌ها را هنگام دریافت اولیه جریان (stream) ذخیره کنید، زیرا آن‌ها به‌صورت تصادفی در مرورگر تولید می‌شوند.
 
 ```js
 const primaryAudioTrack = stream.getTrackById(
