@@ -1,10 +1,4 @@
 ---
-title: "IndexedDB key characteristics and basic terminology"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology"
-status: "needs-translation"
----
-
----
 title: IndexedDB key characteristics and basic terminology
 slug: Web/API/IndexedDB_API/Basic_Terminology
 page-type: guide
@@ -12,179 +6,177 @@ page-type: guide
 
 {{DefaultAPISidebar("IndexedDB")}}
 
-This article describes the key characteristics of IndexedDB, and introduces some essential terminology relevant to understanding the IndexedDB API.
+این مقاله ویژگی‌های کلیدی IndexedDB را توصیف می‌کند و برخی اصطلاحات ضروری مرتبط با درک IndexedDB API را معرفی می‌کند.
 
-You'll also find the following articles useful:
+همچنین مقاله‌های زیر برای شما مفید خواهند بود:
 
-- For a detailed tutorial on how to use the API, see [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB).
-- For the reference documentation on the IndexedDB API, refer back to the main [IndexedDB API](/en-US/docs/Web/API/IndexedDB_API) article and its subpages, which document the types of objects used by IndexedDB.
-- For more information on how the browser handles storing your data in the background, read [Browser storage quotas and eviction criteria](/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria).
+- برای آموزش گام‌به‌گام استفاده از این API، به [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB) مراجعه کنید.
+- برای مستندات مرجع IndexedDB API، به مقاله اصلی [IndexedDB API](/en-US/docs/Web/API/IndexedDB_API) و زیرصفحه‌های آن مراجعه کنید که انواع اشیاء مورد استفاده در IndexedDB را مستند کرده‌اند.
+- برای اطلاعات بیشتر در مورد نحوه ذخیره‌سازی داده‌ها در پس‌زمینه توسط مرورگر، [سهمیه فضای ذخیره‌سازی مرورگر و معیارهای حذف داده‌ها](/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria) را بخوانید.
 
-## Key characteristics
+## ویژگی‌های کلیدی
 
-IndexedDB is a way for you to persistently store data inside a user's browser. Because it lets you create web applications with rich query abilities regardless of network availability, these applications can work both online and offline. IndexedDB is useful for applications that store a large amount of data (for example, a catalog of DVDs in a lending library) and applications that don't need persistent internet connectivity to work (for example, mail clients, to-do lists, and notepads).
+IndexedDB روشی است که به شما امکان می‌دهد داده‌ها را به‌صورت ماندگار در مرورگر کاربر ذخیره کنید. از آنجا که به کمک آن می‌توانید برنامه‌های وب با قابلیت‌های غنی جست‌وجو بسازید که بدون توجه به دسترسی به شبکه کار می‌کنند، این برنامه‌ها می‌توانند هم به‌صورت آنلاین و هم آفلاین عمل کنند. IndexedDB برای برنامه‌هایی که حجم زیادی داده ذخیره می‌کنند (مثلاً فهرست دی‌وی‌دی‌های یک کتابخانه امانی) و برنامه‌هایی که برای کار کردن به اتصال دائمی اینترنت نیاز ندارند (مثلاً کلاینت‌های ایمیل، فهرست کارها و یادداشت‌برها) کاربردی است.
 
-IndexedDB lets you store and retrieve objects that are indexed with a "key." All changes that you make to the database happen within transactions. Like most web storage solutions, IndexedDB follows a [same-origin policy](https://www.w3.org/Security/wiki/Same_Origin_Policy). So while you can access stored data within a domain, you cannot access data across different domains.
+IndexedDB به شما امکان می‌دهد اشیائی را که با یک «کلید» فهرست (index) شده‌اند ذخیره و بازیابی کنید. تمام تغییراتی که در پایگاه داده اعمال می‌کنید، در قالب تراکنش‌ها انجام می‌شوند. مانند بسیاری از راه‌حل‌های ذخیره‌سازی وب، IndexedDB از [خط‌مشی همان مبدأ](https://www.w3.org/Security/wiki/Same_Origin_Policy) پیروی می‌کند. بنابراین، در حالی که می‌توانید به داده‌های ذخیره‌شده در یک دامنه دسترسی داشته باشید، نمی‌توانید به داده‌های دامنه‌های مختلف دسترسی پیدا کنید.
 
-If you have assumptions from working with other types of databases, you might get thrown off when working with IndexedDB. So the following key characteristics of IndexedDB are important to keep in mind:
+اگر از کار با سایر انواع پایگاه داده پیش‌فرض‌هایی در ذهن دارید، ممکن است هنگام کار با IndexedDB گیج شوید. بنابراین توجه به ویژگی‌های کلیدی زیر اهمیت دارد:
 
-- **IndexedDB databases store key-value pairs.** The values can be complex structured objects, and keys can be properties of those objects. You can create indexes that use any property of the objects for quick searching, as well as sorted enumeration. Keys can be binary objects.
-- **IndexedDB is built on a transactional database model**. Everything you do in IndexedDB always happens in the context of a [transaction](#transaction). The IndexedDB API provides lots of objects that represent indexes, tables, cursors, and so on, but each of these is tied to a particular transaction. Thus, you cannot execute commands or open cursors outside of a transaction. Transactions have a well-defined lifetime, so attempting to use a transaction after it has completed throws exceptions. Also, transactions auto-commit if no new requests are made when the transaction is active.
+- **پایگاه‌های داده IndexedDB جفت‌های کلید-مقدار ذخیره می‌کنند.** مقادیر می‌توانند اشیاء ساختاریافته پیچیده باشند و کلیدها می‌توانند ویژگی‌هایی از همان اشیاء باشند. می‌توانید ایندکس‌هایی بسازید که از هر ویژگی از اشیاء برای جست‌وجوی سریع و همچنین شمارش مرتب‌شده استفاده کنند. کلیدها می‌توانند اشیاء باینری باشند.
+- **IndexedDB بر مدل پایگاه داده تراکنشی ساخته شده است.** هر کاری که در IndexedDB انجام می‌دهید همیشه در بستر یک [تراکنش](#transaction) صورت می‌گیرد. IndexedDB API اشیاء زیادی را برای نمایش ایندکس‌ها، جدول‌ها، نشانگرها و غیره فراهم می‌کند، اما هر یک از این‌ها به یک تراکنش مشخص وابسته است. بنابراین، نمی‌توانید خارج از یک تراکنش دستوری اجرا کنید یا نشانگری باز کنید. تراکنش‌ها طول عمر مشخصی دارند؛ بنابراین تلاش برای استفاده از یک تراکنش پس از پایان آن استثنا (exception) ایجاد می‌کند. همچنین اگر در حالی که تراکنش فعال است درخواست جدیدی صادر نشود، تراکنش به‌صورت خودکار commit می‌شود.
 
-  This transaction model is really useful when you consider what might happen if a user opened two instances of your web app in two different tabs simultaneously. Without transactional operations, the two instances could interfere with each other's modifications. If you are not familiar with transactions in a database, read the [Wikipedia article on transactions](https://en.wikipedia.org/wiki/Database_transaction). Also see [transaction](#transaction) under the Definitions section.
+  این مدل تراکنشی زمانی بسیار مفید است که در نظر بگیرید اگر کاربر دو نمونه از برنامه وب شما را هم‌زمان در دو تب مختلف باز کند چه اتفاقی می‌افتد. بدون عملیات تراکنشی، آن دو نمونه می‌توانند در تغییرات یکدیگر اختلال ایجاد کنند. اگر با مفهوم تراکنش در پایگاه داده آشنایی ندارید، [مقاله ویکی‌پدیا درباره تراکنش](https://en.wikipedia.org/wiki/Database_transaction) را بخوانید. همچنین به [تراکنش](#transaction) در بخش تعاریف مراجعه کنید.
+- **ایندکس‌ددی‌بی API عمدتاً ناهمگام (asynchronous) است.** این API داده‌ها را با برگرداندن مقدار در اختیار شما قرار نمی‌دهد؛ بلکه باید یک تابع بازخوانی (callback) ارسال کنید. شما «ذخیره» کردن یک مقدار در پایگاه داده یا «بازیابی» یک مقدار از پایگاه داده را به‌صورت همگام انجام نمی‌دهید؛ در عوض، «درخواست» می‌دهید که یک عملیات پایگاه داده انجام شود. وقتی عملیات تمام می‌شود، یک رویداد DOM به شما اطلاع می‌دهد و نوع رویدادی که دریافت می‌کنید مشخص می‌کند عملیات موفق بوده یا ناموفق.
+- **IndexedDB از درخواست‌های زیادی استفاده می‌کند.** درخواست‌ها اشیایی هستند که رویدادهای موفقیت یا شکست DOM را دریافت می‌کنند. آن‌ها ویژگی‌های `onsuccess` و `onerror` دارند و می‌توان روی آن‌ها `addEventListener()` و `removeEventListener()` را فراخوانی کرد. همچنین ویژگی‌های `readyState`، `result` و `errorCode` را دارند که وضعیت درخواست را نشان می‌دهند. ویژگی `result` به‌ویژه جالب است، زیرا بسته به نحوه ایجاد درخواست می‌تواند چیزهای بسیار متفاوتی باشد (مثلاً یک نمونه `IDBCursor` یا کلید مقداری که به‌تازگی در پایگاه داده درج کرده‌اید).
+- **IndexedDB برای اطلاع‌رسانی از در دسترس بودن نتایج، از رویدادهای DOM استفاده می‌کند.** رویدادهای DOM همیشه یک ویژگی `type` دارند (در IndexedDB معمولاً روی `"success"` یا `"error"` تنظیم می‌شود). رویدادهای DOM همچنین ویژگی `target` دارند که مشخص می‌کند رویداد به کجا می‌رود. در بیشتر موارد، `target` یک رویداد، همان شیء `IDBRequest` است که در نتیجه انجام یک عملیات پایگاه داده ایجاد شده است. رویدادهای موفقیت به بالا حباب نمی‌کنند (bubble) و قابل لغو نیستند. از سوی دیگر، رویدادهای خطا حباب می‌کنند و قابل لغو هستند. این موضوع بسیار مهم است، زیرا رویدادهای خطا تراکنش‌هایی را که در آن‌ها در حال اجرا هستند خاتمه می‌دهند، مگر اینکه لغو شوند.
+- **IndexedDB شیءگراست.** IndexedDB یک پایگاه داده رابطه‌ای با جدول‌هایی از ردیف‌ها و ستون‌ها نیست. این تفاوت مهم و بنیادی بر نحوه طراحی و ساخت برنامه‌های شما تأثیر می‌گذارد.
 
-- **The IndexedDB API is mostly asynchronous.** The API doesn't give you data by returning values; instead, you have to pass a callback function. You don't "store" a value into the database, or "retrieve" a value out of the database through synchronous means. Instead, you "request" that a database operation happens. You get notified by a DOM event when the operation finishes, and the type of event you get lets you know if the operation succeeded or failed.
-- **IndexedDB uses a lot of requests.** Requests are objects that receive the success or failure DOM events that were mentioned previously. They have `onsuccess` and `onerror` properties, and you can call `addEventListener()` and `removeEventListener()` on them. They also have `readyState`, `result`, and `errorCode` properties that tell you the status of the request. The `result` property is particularly magical, as it can be many different things, depending on how the request was generated (for example, an `IDBCursor` instance, or the key for a value that you just inserted into the database).
-- **IndexedDB uses DOM events to notify you when results are available.** DOM events always have a `type` property (in IndexedDB, it is most commonly set to `"success"` or `"error"`). DOM events also have a `target` property that indicates where the event is headed. In most cases, the `target` of an event is the `IDBRequest` object that was generated as a result of doing some database operation. Success events don't bubble up and they can't be canceled. Error events, on the other hand, do bubble, and can be cancelled. This is quite important, as error events abort whatever transactions they're running in, unless they are cancelled.
-- **IndexedDB is object-oriented.** IndexedDB is not a relational database with tables representing collections of rows and columns. This important and fundamental difference affects the way you design and build your applications.
+  در یک ذخیره‌گاه داده رابطه‌ای سنتی، جدولی داشتید که مجموعه‌ای از ردیف‌های داده و ستون‌هایی با انواع نام‌گذاری‌شده را ذخیره می‌کرد. IndexedDB در عوض از شما می‌خواهد برای هر نوع داده یک مخزن شیء (object store) بسازید و اشیاء جاوااسکریپت را در آن ذخیره کنید. هر مخزن شیء می‌تواند مجموعه‌ای از ایندکس‌ها داشته باشد که جست‌وجو و پیمایش کارآمد را ممکن می‌سازد. اگر با سیستم‌های مدیریت پایگاه داده شیءگرا آشنایی ندارید، [مقاله ویکی‌پدیا درباره پایگاه داده شیءگرا](https://en.wikipedia.org/wiki/Object_database) را بخوانید.
+- **IndexedDB از SQL استفاده نمی‌کند.** در عوض، از پرس‌وجو روی یک ایندکس استفاده می‌کند که یک نشانگر (cursor) تولید می‌کند و با آن در مجموعه نتایج پیمایش می‌کنید. اگر با سیستم‌های NoSQL آشنایی ندارید، [مقاله ویکی‌پدیا درباره NoSQL](https://en.wikipedia.org/wiki/NoSQL) را بخوانید.
+- **IndexedDB از خط‌مشی همان مبدأ پیروی می‌کند.** مبدأ (origin) شامل دامنه، پروتکل لایه کاربرد و پورت URL سندی است که اسکریپت در آن اجرا می‌شود. هر مبدأ مجموعه پایگاه داده‌های مربوط به خود را دارد. هر پایگاه داده نیز نامی دارد که آن را در یک مبدأ مشخص می‌کند.
 
-  In a traditional relational data store, you would have a table that stores a collection of rows of data and columns of named types of data. IndexedDB, on the other hand, requires you to create an object store for a type of data and persist JavaScript objects to that store. Each object store can have a collection of indexes that makes it efficient to query and iterate across. If you are not familiar with object-oriented database management systems, read the [Wikipedia article on object database](https://en.wikipedia.org/wiki/Object_database).
-
-- **IndexedDB does not use Structured Query Language (SQL).** It uses queries on an index that produces a cursor, which you use to iterate across the result set. If you are not familiar with NoSQL systems, read the [Wikipedia article on NoSQL](https://en.wikipedia.org/wiki/NoSQL).
-- **IndexedDB adheres to a same-origin policy**. An origin is the domain, application layer protocol, and port of a URL of the document where the script is being executed. Each origin has its own associated set of databases. Every database has a name that identifies it within an origin.
-
-  The security boundary imposed on IndexedDB prevents applications from accessing data with a different origin. For example, while an app or a page in `http://www.example.com/app/` can retrieve data from `http://www.example.com/dir/`, because they have the same origin, it cannot retrieve data from `http://www.example.com:8080/dir/` (different port) or `https://www.example.com/dir/` (different protocol), because they have different origins.
+  مرز امنیتی اعمال‌شده بر IndexedDB مانع از دسترسی برنامه‌ها به داده‌های با مبدأ متفاوت می‌شود. برای مثال، اگر برنامه یا صفحه‌ای در `http://www.example.com/app/` بتواند داده‌ها را از `http://www.example.com/dir/` بازیابی کند (زیرا مبدأ یکسانی دارند)، نمی‌تواند داده‌ها را از `http://www.example.com:8080/dir/` (پورت متفاوت) یا `https://www.example.com/dir/` (پروتکل متفاوت) بازیابی کند، زیرا این‌ها مبدأهای متفاوتی دارند.
 
   > [!NOTE]
-  > Third party window content (e.g., {{htmlelement("iframe")}} content) can access the IndexedDB store for the origin it is embedded into, unless the browser is set to [never accept third party cookies](https://support.mozilla.org/en-US/kb/third-party-cookies-firefox-tracking-protection) (see [Firefox bug 1147821](https://bugzil.la/1147821).)
+  > محتوای پنجره‌های طرف سوم (مثلاً محتوای {{htmlelement("iframe")}}) می‌تواند به مخزن IndexedDB مبدأی که در آن تعبیه شده است دسترسی داشته باشد، مگر اینکه مرورگر به‌گونه‌ای تنظیم شده باشد که [کوکی‌های طرف سوم را هرگز نپذیرد](https://support.mozilla.org/en-US/kb/third-party-cookies-firefox-tracking-protection) (نگاه کنید به [باگ فایرفاکس 1147821](https://bugzil.la/1147821)).
 
-### Limitations
+### محدودیت‌ها
 
-IndexedDB is designed to cover most cases that need client-side storage. However, it is not designed for a few cases like the following:
+IndexedDB برای پوشش دادن بیشتر مواردی طراحی شده است که به ذخیره‌سازی سمت کلاینت نیاز دارند. با این حال، برای چند مورد خاص مانند موارد زیر طراحی نشده است:
 
-- Internationalized sorting. Not all languages sort strings in the same way, so internationalized sorting is not supported. While the database can't store data in a specific internationalized order, you can sort the data that you've read out of the database yourself.
-- Synchronizing. The API is not designed to take care of synchronizing with a server-side database. You have to write code that synchronizes a client-side indexedDB database with a server-side database.
-- Full text searching. The API does not have an equivalent of the `LIKE` operator in SQL.
+- **مرتب‌سازی بین‌المللی‌شده.** همه زبان‌ها رشته‌ها را به یک شکل مرتب نمی‌کنند؛ بنابراین مرتب‌سازی بین‌المللی‌شده پشتیبانی نمی‌شود. اگرچه پایگاه داده نمی‌تواند داده‌ها را در یک ترتیب بین‌المللی خاص ذخیره کند، می‌توانید داده‌هایی را که از پایگاه داده خوانده‌اید خودتان مرتب کنید.
+- **همگام‌سازی.** این API برای همگام‌سازی با پایگاه داده سمت سرور طراحی نشده است. باید کدی بنویسید که پایگاه داده IndexedDB سمت کلاینت را با پایگاه داده سمت سرور همگام کند.
+- **جست‌وجوی تمام‌متن.** این API معادلی برای عملگر `LIKE` در SQL ندارد.
 
-In addition, be aware that browsers can wipe out the database, such as in the following conditions:
+علاوه بر این، توجه داشته باشید که مرورگرها ممکن است پایگاه داده را پاک کنند، مثلاً در شرایط زیر:
 
-- The user requests a wipe out. Many browsers have settings that let users wipe all data stored for a given website, including cookies, bookmarks, stored passwords, and IndexedDB data.
-- The browser is in private browsing mode. Some browsers, have "private browsing" (Firefox) or "incognito" (Chrome) modes. At the end of the session, the browser wipes out the database.
-- The disk or quota limit has been reached.
-- The data is corrupt.
-- An incompatible change is made to the feature.
+- کاربر درخواست پاک شدن داده‌ها را بدهد. بسیاری از مرورگرها تنظیماتی دارند که به کاربران امکان می‌دهد تمام داده‌های ذخیره‌شده برای یک وب‌سایت مشخص، از جمله کوکی‌ها، نشانک‌ها، گذرواژه‌های ذخیره‌شده و داده‌های IndexedDB را پاک کنند.
+- مرورگر در حالت مرور خصوصی باشد. برخی مرورگرها حالت‌های «مرور خصوصی» (Firefox) یا «ناشناس» (Chrome) دارند. در پایان نشست، مرورگر پایگاه داده را پاک می‌کند.
+- سقف دیسک یا سهمیه (quota) پر شده باشد.
+- داده‌ها خراب شده باشند.
+- تغییر ناسازگاری در این قابلیت ایجاد شده باشد.
 
-The exact circumstances and browser capabilities change over time, but the general philosophy of the browser vendors is to make the best effort to keep the data when possible.
+شرایط دقیق و قابلیت‌های مرورگرها در طول زمان تغییر می‌کند، اما فلسفه کلی تولیدکنندگان مرورگر این است که در حد امکان تلاش کنند داده‌ها را حفظ کنند.
 
-## Core terminology
+## اصطلاحات اصلی
 
-This section defines and explains core terminology relevant to understanding the IndexedDB API.
+این بخش اصطلاحات اصلی مرتبط با درک IndexedDB API را تعریف و توضیح می‌دهد.
 
-### Database
+### پایگاه داده
 
 #### database
 
-A repository of information, typically comprising one or more [_object stores_](#object_store). Each database must have the following:
+مخزن اطلاعات که معمولاً از یک یا چند [_مخزن شیء_](#object_store) تشکیل شده است. هر پایگاه داده باید موارد زیر را داشته باشد:
 
-- Name. This identifies the database within a specific origin and stays constant throughout its lifetime. The name can be any string value (including an empty string).
-- Current [_version_](#version). When a database is first created, its version is the integer 1 if not specified otherwise. Each database can have only one version at any given time.
+- **نام.** نام، پایگاه داده را در یک مبدأ مشخص شناسایی می‌کند و در طول عمر آن ثابت می‌ماند. نام می‌تواند هر مقدار رشته‌ای باشد (از جمله رشته خالی).
+- **_نسخه فعلی_.** وقتی پایگاه داده برای نخستین بار ایجاد می‌شود، اگر طور دیگری مشخص نشده باشد، نسخه آن عدد صحیح 1 است. هر پایگاه داده در هر مقطع زمانی فقط یک نسخه می‌تواند داشته باشد.
 
 #### database connection
 
-An operation created by opening a _[database](#database)_. A given database can have multiple connections at the same time.
+عملیاتی که با باز کردن یک [_پایگاه داده_](#database) ایجاد می‌شود. یک پایگاه داده مشخص می‌تواند هم‌زمان چندین اتصال داشته باشد.
 
 #### durable
 
-In Firefox, IndexedDB used to be **durable**, meaning that in a readwrite transaction a {{domxref("IDBTransaction.complete_event", "complete")}} event was fired only when all data was guaranteed to have been flushed to disk.
+در Firefox، IndexedDB قبلاً **durable** (ماندگار) بود؛ به این معنی که در یک تراکنش readwrite، رویداد {{domxref("IDBTransaction.complete_event", "complete")}} تنها زمانی فعال می‌شد که تضمین شده بود همه داده‌ها روی دیسک نوشته شده‌اند.
 
-As of Firefox 40, IndexedDB transactions have relaxed durability guarantees to increase performance (see [Firefox bug 1112702](https://bugzil.la/1112702)), which is the same behavior as other IndexedDB-supporting browsers. In this case the {{domxref("IDBTransaction.complete_event", "complete")}} event is fired after the OS has been told to write the data but potentially before that data has actually been flushed to disk. The event may thus be delivered quicker than before, however, there exists a small chance that the entire transaction will be lost if the OS crashes or there is a loss of system power before the data is flushed to disk. Since such catastrophic events are rare, most consumers should not need to concern themselves further.
+از Firefox 40 به بعد، تراکنش‌های IndexedDB تضمین‌های ماندگاری را کاهش داده‌اند تا کارایی افزایش یابد (به [باگ فایرفاکس 1112702](https://bugzil.la/1112702) مراجعه کنید) و این رفتاری مشابه سایر مرورگرهای پشتیبانی‌کننده IndexedDB است. در این حالت، رویداد {{domxref("IDBTransaction.complete_event", "complete")}} پس از آنکه به سیستم‌عامل اعلام شد داده‌ها را بنویسد فعال می‌شود، اما احتمالاً پیش از آنکه داده‌ها واقعاً روی دیسک نوشته شوند. بنابراین ممکن است رویداد سریع‌تر از قبل تحویل داده شود؛ با این حال، احتمال اندکی وجود دارد که اگر سیستم‌عامل از کار بیفتد یا برق سیستم پیش از نوشتن داده‌ها روی دیسک قطع شود، کل تراکنش از بین برود. از آنجا که چنین رویدادهای فاجعه‌باری نادرند، بیشتر استفاده‌کنندگان نیازی به نگرانی بیشتر ندارند.
 
 > [!NOTE]
-> In Firefox, if you wish to ensure durability for some reason (e.g., you're storing critical data that cannot be recomputed later) you can force a transaction to flush to disk before delivering the `complete` event by creating a transaction using the experimental (non-standard) `readwriteflush` mode (see {{domxref("IDBDatabase.transaction")}}.) This is currently experimental, and can only be used if the `dom.indexedDB.experimental` pref is set to `true` in `about:config`.
+> در Firefox، اگر بنا به هر دلیلی می‌خواهید ماندگاری تضمین شود (مثلاً داده‌های حیاتی‌ای ذخیره می‌کنید که بعداً نمی‌توان آن‌ها را دوباره تولید کرد)، می‌توانید با ایجاد یک تراکنش با حالت آزمایشی (غیراستاندارد) `readwriteflush`، تراکنش را پیش از تحویل رویداد `complete` مجبور کنید داده‌ها را روی دیسک بنویسد (نگاه کنید به {{domxref("IDBDatabase.transaction")}}). این قابلیت در حال حاضر آزمایشی است و تنها در صورتی قابل استفاده است که تنظیم `dom.indexedDB.experimental` در `about:config` روی `true` تنظیم شده باشد.
 
 #### index
 
-An index is a specialized object store for looking up records in another object store, called the _referenced object store_. The index is a persistent key-value storage where the value part of its records is the key part of a record in the referenced object store. The records in an index are automatically populated whenever records in the referenced object store are inserted, updated, or deleted. Each record in an index can point to only one record in its referenced object store, but several indexes can reference the same object store. When the object store changes, all indexes that refer to the object store are automatically updated.
+ایندکس، یک مخزن شیء تخصصی برای یافتن رکوردها در مخزن شیء دیگری است که به آن _مخزن شیء ارجاع‌شده_ گفته می‌شود. ایندکس یک ذخیره‌گاه کلید-مقدار ماندگار است که بخش مقدار رکوردهای آن، بخش کلید یک رکورد در مخزن شیء ارجاع‌شده است. رکوردهای یک ایندکس هر زمان که رکوردهایی در مخزن شیء ارجاع‌شده درج، به‌روزرسانی یا حذف شوند، به‌صورت خودکار پر می‌شوند. هر رکورد در یک ایندکس فقط می‌تواند به یک رکورد در مخزن شیء ارجاع‌شده اشاره کند، اما چندین ایندکس می‌توانند به یک مخزن شیء ارجاع دهند. وقتی مخزن شیء تغییر می‌کند، همه ایندکس‌هایی که به آن ارجاع می‌دهند به‌صورت خودکار به‌روزرسانی می‌شوند.
 
-Alternatively, you can also look up records in an object store using the [key](#key).
+به‌علاوه، می‌توانید رکوردها را در یک مخزن شیء با استفاده از [کلید](#key) نیز جست‌وجو کنید.
 
-To learn more on using indexes, see [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB#using_an_index). For the reference documentation on index, see [IDBKeyRange](/en-US/docs/Web/API/IDBKeyRange).
+برای یادگیری بیشتر در مورد استفاده از ایندکس‌ها، به [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB#using_an_index) مراجعه کنید. برای مستندات مرجع درباره ایندکس، [IDBKeyRange](/en-US/docs/Web/API/IDBKeyRange) را ببینید.
 
 #### object store
 
-The mechanism by which data is stored in the database. The object store persistently holds records, which are key-value pairs. Records within an object store are sorted according to the _[keys](#key)_ in an ascending order.
+مکانیسمی است که داده‌ها در پایگاه داده به کمک آن ذخیره می‌شوند. مخزن شیء به‌صورت ماندگار رکوردها را نگه می‌دارد؛ رکوردها جفت‌های کلید-مقدار هستند. رکوردهای درون یک مخزن شیء بر اساس [_کلیدها_](#key) به ترتیب صعودی مرتب می‌شوند.
 
-Every object store must have a name that is unique within its database. The object store can optionally have a _[key generator](#key_generator)_ and a _[key path](#key_path)_. If the object store has a key path, it is using _[in-line keys](#in-line_key)_; otherwise, it is using _[out-of-line keys](#out-of-line_key)_.
+هر مخزن شیء باید نامی داشته باشد که در پایگاه داده خود یکتا باشد. مخزن شیء می‌تواند به‌صورت اختیاری یک [_تولیدکننده کلید_](#key_generator) و یک [_مسیر کلید_](#key_path) داشته باشد. اگر مخزن شیء مسیر کلید داشته باشد، از [_کلیدهای درون‌خطی_](#in-line_key) استفاده می‌کند؛ در غیر این صورت، از [_کلیدهای برون‌خطی_](#out-of-line_key) استفاده می‌کند.
 
-For the reference documentation on object store, see {{domxref("IDBObjectStore")}}.
+برای مستندات مرجع درباره مخزن شیء، {{domxref("IDBObjectStore")}} را ببینید.
 
 #### request
 
-The operation by which reading and writing on a database is done. Every request represents one read or write operation.
+عملیاتی است که خواندن و نوشتن روی پایگاه داده از طریق آن انجام می‌شود. هر درخواست نمایانگر یک عملیات خواندن یا نوشتن است.
 
 #### transaction
 
-An atomic set of data-access and data-modification operations on a particular database. It is how you interact with the data in a database. In fact, any reading or changing of data in the database must happen in a transaction.
+مجموعه‌ای اتمی از عملیات دسترسی به داده و تغییر داده روی یک پایگاه داده مشخص است. تراکنش روش تعامل شما با داده‌ها در پایگاه داده است. در واقع، هر خواندن یا تغییری در داده‌های پایگاه داده باید درون یک تراکنش انجام شود.
 
-A database connection can have several active transactions associated with it at a time, so long as the writing transactions do not have overlapping [_scopes_](#scope). The scope of transactions, which is defined at creation, determines which object stores the transaction can interact with and remains constant for the lifetime of the transaction. So, for example, if a database connection already has a writing transaction with a scope that just covers the `flyingMonkey` object store, you can start a second transaction with a scope of the `unicornCentaur` and `unicornPegasus` object stores. As for reading transactions, you can have several of them — even overlapping ones.
+یک اتصال پایگاه داده می‌تواند هم‌زمان چندین تراکنش فعال مرتبط با خود داشته باشد، تا زمانی که تراکنش‌های نوشتاری [_حوزه‌های (scope)_](#scope) هم‌پوشان نداشته باشند. حوزه تراکنش‌ها که هنگام ایجاد تعریف می‌شود، مشخص می‌کند تراکنش با کدام مخزن‌های شیء می‌تواند تعامل داشته باشد و در طول عمر تراکنش ثابت می‌ماند. بنابراین، برای مثال، اگر یک اتصال پایگاه داده از قبل تراکنش نوشتاری با حوزه‌ای داشته باشد که فقط مخزن شیء `flyingMonkey` را پوشش می‌دهد، می‌توانید تراکنش دومی با حوزه مخزن‌های شیء `unicornCentaur` و `unicornPegasus` شروع کنید. در مورد تراکنش‌های خواندنی، می‌توانید چندین تراکنش داشته باشید — حتی تراکنش‌هایی با حوزه‌های هم‌پوشان.
 
-Transactions are expected to be short-lived, so the browser can terminate a transaction that takes too long, in order to free up storage resources that the long-running transaction has locked. You can abort the transaction, which rolls back the changes made to the database in the transaction. And you don't even have to wait for the transaction to start or be active to abort it.
+انتظار می‌رود تراکنش‌ها کوتاه‌عمر باشند؛ بنابراین مرورگر می‌تواند تراکنشی را که بیش از حد طول بکشد خاتمه دهد تا منابع ذخیره‌سازیِ قفل‌شده توسط آن تراکنش طولانی آزاد شوند. می‌توانید تراکنش را لغو (abort) کنید که در این صورت تغییرات ایجادشده در پایگاه داده در آن تراکنش بازگردانی (roll back) می‌شود. حتی لازم نیست منتظر بمانید تا تراکنش شروع شود یا فعال شود تا بتوانید آن را لغو کنید.
 
-The three modes of transactions are: `readwrite`, `readonly`, and `versionchange`. The only way to create and delete object stores and indexes is by using a [`versionchange`](/en-US/docs/Web/API/IDBDatabase/versionchange_event) transaction. To learn more about transaction types, see the reference article for [IndexedDB](/en-US/docs/Web/API/IndexedDB_API).
+سه حالت تراکنش عبارتند از: `readwrite`، `readonly` و `versionchange`. تنها راه ایجاد و حذف مخزن‌های شیء و ایندکس‌ها، استفاده از یک تراکنش [`versionchange`](/en-US/docs/Web/API/IDBDatabase/versionchange_event) است. برای آشنایی بیشتر با انواع تراکنش، به مقاله مرجع [IndexedDB](/en-US/docs/Web/API/IndexedDB_API) مراجعه کنید.
 
-Because everything happens within a transaction, it is a very important concept in IndexedDB. To learn more about transactions, especially on how they relate to versioning, see {{domxref("IDBTransaction")}}, which also has reference documentation.
+چون همه‌چیز درون یک تراکنش اتفاق می‌افتد، تراکنش مفهوم بسیار مهمی در IndexedDB است. برای یادگیری بیشتر درباره تراکنش‌ها، به‌ویژه ارتباط آن‌ها با نسخه‌بندی، به {{domxref("IDBTransaction")}} مراجعه کنید که مستندات مرجع را نیز دارد.
 
 #### version
 
-When a database is first created, its version is the integer 1. Each database has one version at a time; a database can't exist in multiple versions at once. The only way to change the version is by opening it with a greater version than the current one.
+وقتی پایگاه داده برای نخستین بار ایجاد می‌شود، نسخه آن عدد صحیح 1 است. هر پایگاه داده در هر زمان یک نسخه دارد؛ یک پایگاه داده نمی‌تواند هم‌زمان در چند نسخه وجود داشته باشد. تنها راه تغییر نسخه این است که پایگاه داده را با نسخه‌ای بزرگ‌تر از نسخه فعلی باز کنید.
 
-### Key and value
+### کلید و مقدار
 
 #### in-line key
 
-A key that is stored as part of the stored value. It is found using a _key path_. An in-line key can be generated using a generator. After the key has been generated, it can then be stored in the value using the key path or it can also be used as a key.
+کلیدی که به‌عنوان بخشی از مقدار ذخیره‌شده نگهداری می‌شود. این کلید با استفاده از یک _مسیر کلید (key path)_ پیدا می‌شود. کلید درون‌خطی را می‌توان با استفاده از یک تولیدکننده تولید کرد. پس از تولید کلید، می‌توان آن را با استفاده از مسیر کلید درون مقدار ذخیره کرد یا به‌عنوان کلید استفاده کرد.
 
 #### key
 
-A data value by which stored values are organized and retrieved in the object store. The object store can derive the key from one of three sources: a _[key generator](#key_generator)_, a _[key path](#key_path)_, or an explicitly specified value. The key must be of a data type that has a number that is greater than the one before it. Each record in an object store must have a key that is unique within the same store, so you cannot have multiple records with the same key in a given object store.
+مقدار داده‌ای است که مقادیر ذخیره‌شده بر اساس آن در مخزن شیء سازماندهی و بازیابی می‌شوند. مخزن شیء می‌تواند کلید را از یکی از سه منبع به دست آورد: یک [_تولیدکننده کلید_](#key_generator)، یک [_مسیر کلید_](#key_path)، یا مقداری که به‌صراحت مشخص شده است. کلید باید از نوع داده‌ای با ترتیب مقایسه‌پذیر باشد، به‌طوری‌که کلید هر رکورد نسبت به رکورد قبلی بزرگ‌تر باشد. هر رکورد در یک مخزن شیء باید کلیدی یکتا در همان مخزن داشته باشد؛ بنابراین نمی‌توانید در یک مخزن شیء مشخص چند رکورد با کلید یکسان داشته باشید.
 
-A key can be one of the following types: [string](/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), [date](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date), float, binary data (represented by an [`ArrayBuffer`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) or a [`TypedArray`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) view such as a [`Uint8Array`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)), and [array](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array). The length of an array key can range from `0` (an empty array) to infinity, and you can include an array within an array.
+یک کلید می‌تواند یکی از انواع زیر باشد: [string](/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)، [date](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)، عدد اعشاری (float)، داده باینری (که با یک [`ArrayBuffer`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) یا نمای [`TypedArray`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray) مانند [`Uint8Array`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) نمایش داده می‌شود) و [array](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array). طول کلید آرایه‌ای می‌تواند از `0` (آرایه خالی) تا بی‌نهایت باشد و می‌توانید یک آرایه را درون آرایه‌ای دیگر قرار دهید.
 
-Alternatively, you can also look up records in an object store using the _[index](#index)._
+به‌علاوه، می‌توانید رکوردها را در یک مخزن شیء با استفاده از [_ایندکس_](#index) نیز جست‌وجو کنید.
 
 #### key generator
 
-A mechanism for producing new keys in an ordered sequence. If an object store does not have a key generator, then the application must provide keys for records being stored. Generators are not shared between stores. This is more a browser implementation detail, because in web development, you don't really create or access key generators.
+مکانیزمی برای تولید کلیدهای جدید در یک توالی مرتب. اگر یک مخزن شیء تولیدکننده کلید نداشته باشد، برنامه باید برای رکوردهایی که ذخیره می‌شوند کلید فراهم کند. تولیدکننده‌ها بین مخزن‌ها به اشتراک گذاشته نمی‌شوند. این موضوع بیشتر به جزئیات پیاده‌سازی مرورگر مربوط است، زیرا در توسعه وب واقعاً تولیدکننده‌های کلید را ایجاد یا به آن‌ها دسترسی پیدا نمی‌کنید.
 
 #### key path
 
-Defines where the browser should extract the key from in the object store or index. A valid key path can include one of the following: an empty string, a JavaScript identifier, or multiple JavaScript identifiers separated by periods or an array containing any of those. It cannot include spaces.
+مشخص می‌کند که مرورگر باید کلید را از کجای مخزن شیء یا ایندکس استخراج کند. یک مسیر کلید معتبر می‌تواند یکی از موارد زیر باشد: رشته خالی، یک شناسه جاوااسکریپت، یا چند شناسه جاوااسکریپت که با نقطه از هم جدا شده‌اند، یا آرایه‌ای شامل هر یک از این موارد. مسیر کلید نمی‌تواند فاصله داشته باشد.
 
 #### out-of-line key
 
-A key that is stored separately from the value being stored.
+کلیدی که به‌صورت جدا از مقدار در حال ذخیره نگهداری می‌شود.
 
 #### value
 
-Each record has a value, which could include anything that can be expressed in JavaScript, including [boolean](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean), [number](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number), [string](/en-US/docs/Web/JavaScript/Reference/Global_Objects/String), [date](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date), [object](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object), [array](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array), [regexp](/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp), [undefined](/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined), and null.
+هر رکورد یک مقدار دارد که می‌تواند شامل هر چیزی باشد که در جاوااسکریپت قابل بیان است، از جمله [boolean](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)، [number](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)، [string](/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)، [date](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)، [object](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)، [array](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)، [regexp](/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp)، [undefined](/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined) و null.
 
-When an object or array is stored, the properties and values in that object or array can also be anything that is a valid value.
+وقتی یک شیء یا آرایه ذخیره می‌شود، ویژگی‌ها و مقادیر درون آن شیء یا آرایه نیز می‌توانند هر چیزی باشند که مقدار معتبر محسوب می‌شود.
 
-[Blobs](/en-US/docs/Web/API/Blob) and files can be stored, cf. [specification](https://w3c.github.io/IndexedDB/).
+[Blob](/en-US/docs/Web/API/Blob)ها و فایل‌ها نیز قابل ذخیره‌سازی هستند؛ رجوع کنید به [مشخصات فنی](https://w3c.github.io/IndexedDB/).
 
-### Range and scope
+### بازه و حوزه
 
 #### cursor
 
-A mechanism for iterating over multiple records with a _key range_. The cursor has a source that indicates which index or object store it is iterating. It has a position within the range, and moves in a direction that is increasing or decreasing in the order of record keys. For the reference documentation on cursors, see {{domxref("IDBCursor")}}.
+مکانیزمی برای پیمایش روی چندین رکورد با یک _بازه کلید_. نشانگر دارای منبعی است که مشخص می‌کند روی کدام ایندکس یا مخزن شیء پیمایش می‌کند. نشانگر دارای موقعیتی درون بازه است و در جهت افزایشی یا کاهشیِ ترتیب کلیدهای رکوردها حرکت می‌کند. برای مستندات مرجع درباره نشانگرها، {{domxref("IDBCursor")}} را ببینید.
 
 #### key range
 
-A continuous interval over some data type used for keys. Records can be retrieved from object stores and indexes using keys or a range of keys. You can limit or filter the range using lower and upper bounds. For example, you can iterate over all values of a key between x and y.
+بازه‌ای پیوسته روی نوع داده‌ای است که برای کلیدها استفاده می‌شود. رکوردها را می‌توان از مخزن‌های شیء و ایندکس‌ها با استفاده از کلیدها یا بازه‌ای از کلیدها بازیابی کرد. می‌توانید بازه را با کران پایین و بالا محدود یا فیلتر کنید. برای مثال، می‌توانید همه مقادیر یک کلید را بین x و y پیمایش کنید.
 
-For the reference documentation on key range, see {{domxref("IDBKeyRange")}}.
+برای مستندات مرجع درباره بازه کلید، {{domxref("IDBKeyRange")}} را ببینید.
 
 #### scope
 
-The set of object stores and indexes to which a transaction applies. The scopes of read-only transactions can overlap and execute at the same time. On the other hand, the scopes of writing transactions cannot overlap. You can still start several transactions with the same scope at the same time, but they just queue up and execute one after another.
+مجموعه مخزن‌های شیء و ایندکس‌هایی است که یک تراکنش روی آن‌ها اعمال می‌شود. حوزه‌های تراکنش‌های فقط‌خواندنی می‌توانند هم‌پوشانی داشته باشند و هم‌زمان اجرا شوند. از سوی دیگر، حوزه‌های تراکنش‌های نوشتاری نمی‌توانند هم‌پوشانی داشته باشند. همچنان می‌توانید چندین تراکنش با حوزه یکسان را هم‌زمان شروع کنید، اما آن‌ها در صف قرار می‌گیرند و یکی پس از دیگری اجرا می‌شوند.
 
-## Next steps
+## گام‌های بعدی
 
-With an understanding of IndexedDB's key characteristics and core terminology under our belts, we can get to more concrete stuff. For a tutorial on how to use the API, see [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB).
+حال که با ویژگی‌های کلیدی و اصطلاحات اصلی IndexedDB آشنا شدیم، می‌توانیم به سراغ مباحث عینی‌تر برویم. برای آموزش نحوه استفاده از این API، [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB) را ببینید.
 
-## See also
+## جستارهای وابسته
 
-- [Indexed Database API Specification](https://w3c.github.io/IndexedDB/)
-- [IndexedDB API Reference](/en-US/docs/Web/API/IndexedDB_API)
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- [مشخصات فنی Indexed Database API](https://w3c.github.io/IndexedDB/)
+- [مرجع IndexedDB API](/en-US/docs/Web/API/IndexedDB_API)
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
 - [IndexedDB — The Store in Your Browser](<https://learn.microsoft.com/en-us/previous-versions/msdn10/gg679063(v=msdn.10)>)
