@@ -1,11 +1,5 @@
 ---
 title: "MutationRecord: attributeName property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MutationRecord/attributeName"
-status: "needs-translation"
----
-
----
-title: "MutationRecord: attributeName property"
 short-title: attributeName
 slug: Web/API/MutationRecord/attributeName
 page-type: web-api-instance-property
@@ -14,19 +8,19 @@ browser-compat: api.MutationRecord.attributeName
 
 {{APIRef("DOM")}}
 
-The {{domxref("MutationRecord")}} read-only property **`attributeName`** contains the name of a changed attribute belonging to a node that is observed by a {{domxref("MutationObserver")}}.
+ویژگی فقط‌خواندنی **`attributeName`** از رابط {{domxref("MutationRecord")}} شامل نام ویژگی (attribute) تغییر یافته‌ای است که به گره‌ای متعلق است که توسط یک {{domxref("MutationObserver")}} مشاهده می‌شود.
 
-## Value
+## مقدار
 
-If the record's [`type`](/en-US/docs/Web/API/MutationRecord/type) is `attributes`, this is a string representing the name of the mutated attribute of the mutation target.
+اگر [`type`](/en-US/docs/Web/API/MutationRecord/type) رکورد برابر با `attributes` باشد، این یک رشته است که نام ویژگی جهش‌یافته هدف جهش را نشان می‌دهد.
 
-If the record's [`type`](/en-US/docs/Web/API/MutationRecord/type) is not `attributes`, this is `null`.
+اگر [`type`](/en-US/docs/Web/API/MutationRecord/type) رکورد برابر با `attributes` نباشد، مقدار آن `null` است.
 
-## Examples
+## مثال‌ها
 
-### Get last updated attribute name
+### دریافت نام آخرین ویژگی به‌روزرسانی‌شده
 
-In the following example, there are four buttons: two change the `style` attribute of the `h1` element, and two change the `class` attribute of the `h1` element. The script uses a {{domxref("MutationObserver")}} to detect the changes and will update the text below to the name of the last attribute that was changed.
+در مثال زیر چهار دکمه وجود دارد: دو دکمه ویژگی `style` عنصر `h1` را تغییر می‌دهند و دو دکمه ویژگی `class` عنصر `h1` را تغییر می‌دهند. اسکریپت از یک {{domxref("MutationObserver")}} برای شناسایی تغییرات استفاده می‌کند و متن زیر را به نام آخرین ویژگی تغییر یافته به‌روزرسانی می‌کند.
 
 #### HTML
 
@@ -93,14 +87,14 @@ const observer = new MutationObserver(logLastAttr);
 observer.observe(hiMom, { attributes: true });
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Get last updated attribute name", "", 200)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
