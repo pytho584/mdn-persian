@@ -1,11 +1,5 @@
 ---
 title: "IDBOpenDBRequest: blocked event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBOpenDBRequest/blocked_event"
-status: "needs-translation"
----
-
----
-title: "IDBOpenDBRequest: blocked event"
 short-title: blocked
 slug: Web/API/IDBOpenDBRequest/blocked_event
 page-type: web-api-event
@@ -14,13 +8,13 @@ browser-compat: api.IDBOpenDBRequest.blocked_event
 
 {{APIRef("IndexedDB")}}
 
-The `blocked` handler is executed when an open connection to a database is blocking a `versionchange` transaction on the same database.
+هندلر «blocked» زمانی اجرا می‌شود که یک اتصال باز به یک پایگاه داده، تراکنش «versionchange» را روی همان پایگاه داده مسدود کند.
 
-This event is not cancelable and does not bubble.
+این رویداد قابل لغو نیست و انتشار نمی‌یابد.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم نمایید.
 
 ```js-nolint
 addEventListener("blocked", (event) => { })
@@ -28,15 +22,15 @@ addEventListener("blocked", (event) => { })
 onblocked = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-An {{domxref("IDBVersionChangeEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("IDBVersionChangeEvent")}}. از {{domxref("Event")}} به ارث می‌برد.
 
 {{InheritanceDiagram("IDBVersionChangeEvent")}}
 
-## Examples
+## مثال‌ها
 
-Using `addEventListener()`:
+استفاده از `addEventListener()`:
 
 ```js
 // Open the database
@@ -73,7 +67,7 @@ DBOpenRequest.onsuccess = (event) => {
 };
 ```
 
-Using the `onblocked` property:
+استفاده از ویژگی `onblocked`:
 
 ```js
 // Open the database
@@ -110,14 +104,14 @@ DBOpenRequest.onsuccess = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
