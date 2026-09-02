@@ -1,11 +1,5 @@
 ---
 title: "IDBCursor: primaryKey property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBCursor/primaryKey"
-status: "needs-translation"
----
-
----
-title: "IDBCursor: primaryKey property"
 short-title: primaryKey
 slug: Web/API/IDBCursor/primaryKey
 page-type: web-api-instance-property
@@ -14,29 +8,22 @@ browser-compat: api.IDBCursor.primaryKey
 
 {{APIRef("IDBCursor")}} {{AvailableInWorkers}}
 
-The **`primaryKey`** read-only property of the
-{{domxref("IDBCursor")}} interface returns the cursor's current effective key. If the
-cursor is currently being iterated or has iterated outside its range, this is set to
-undefined. The cursor's primary key can be any data type.
+ویژگی فقط‌خواندنیِ **`primaryKey`** در رابط {{domxref("IDBCursor")}}، کلید مؤثرِ فعلیِ نشانگر (cursor) را برمی‌گرداند. اگر نشانگر در حال پیمایش باشد یا بیرون از محدودهٔ خود پیمایش کرده باشد، مقدار این ویژگی `undefined` خواهد بود. کلید اصلیِ نشانگر می‌تواند از هر نوع داده‌ای باشد.
 
-## Value
+## مقدار
 
-A value of any data type.
+مقداری از هر نوع داده.
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the cursor is advancing or has finished.
+  - : این خطا زمانی پرتاب می‌شود که نشانگر در حال پیشروی باشد یا پیمایش را به پایان رسانده باشد.
 
-## Examples
+## مثال‌ها
 
-In this simple fragment we create a transaction, retrieve an object store, then use a
-cursor to iterate through all the records in the object store. Within each iteration we
-log the primary key of the cursor to the console.
+در این قطعهٔ ساده، یک تراکنش می‌سازیم، یک مخزن اشیاء (object store) را بازیابی می‌کنیم و سپس با استفاده از یک نشانگر (cursor) همهٔ رکوردهای آن مخزن را پیمایش می‌کنیم. در هر بار پیمایش، کلید اصلیِ نشانگر را در کنسول ثبت می‌کنیم.
 
-The cursor does not require us to select the data based
-on a key; we can just grab all of it. Also note that in each iteration of the loop,
-you can grab data from the current record under the cursor object using `cursor.value.foo`. For a complete working example, see our [IDBCursor example](https://github.com/mdn/dom-examples/tree/main/indexeddb-examples/idbcursor) ([View the example live](https://mdn.github.io/dom-examples/indexeddb-examples/idbcursor/)).
+با این نشانگر نیازی نیست داده‌ها را بر پایهٔ کلید انتخاب کنیم؛ می‌توانیم همهٔ داده‌ها را یک‌جا بگیریم. همچنین توجه کنید که در هر تکرار حلقه می‌توانید داده‌های رکورد جاری را با استفاده از `cursor.value.foo` از روی شیء نشانگر بگیرید. برای یک مثال کامل و قابل اجرا، به [نمونهٔ IDBCursor](https://github.com/mdn/dom-examples/tree/main/indexeddb-examples/idbcursor) مراجعه کنید ([مشاهدهٔ نسخهٔ زندهٔ مثال](https://mdn.github.io/dom-examples/indexeddb-examples/idbcursor/)).
 
 ```js
 function displayData() {
@@ -59,20 +46,20 @@ function displayData() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم بازه‌ای از کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و ایجاد تغییرات در داده‌ها: {{domxref("IDBObjectStore")}}
+- استفاده از نشانگرها: {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهدهٔ نسخهٔ زندهٔ مثال](https://mdn.github.io/dom-examples/to-do-notifications/)).
