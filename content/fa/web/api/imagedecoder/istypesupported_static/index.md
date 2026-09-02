@@ -1,7 +1,6 @@
+```
 ---
 title: "ImageDecoder: isTypeSupported() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ImageDecoder/isTypeSupported_static"
-status: "needs-translation"
 ---
 
 ---
@@ -14,26 +13,26 @@ browser-compat: api.ImageDecoder.isTypeSupported_static
 
 {{securecontext_header}}{{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`ImageDecoder.isTypeSupported()`** static method checks if a given [MIME type](/en-US/docs/Web/HTTP/Guides/MIME_types) can be decoded by the user agent.
+متد ایستای **`ImageDecoder.isTypeSupported()`** بررسی می‌کند که آیا یک [نوع MIME](/en-US/docs/Web/HTTP/Guides/MIME_types) مشخص می‌تواند توسط عامل کاربر رمزگشایی شود یا خیر.
 
-## Syntax
+## نحو
 
 ```js-nolint
 ImageDecoder.isTypeSupported(type)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string containing the [MIME type](/en-US/docs/Web/HTTP/Guides/MIME_types) to check for decoding support.
+  - : رشته‌ای شامل [نوع MIME](/en-US/docs/Web/HTTP/Guides/MIME_types) است که باید بررسی شود آیا برای رمزگشایی پشتیبانی می‌شود یا خیر.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with a boolean value indicating whether images with a format of `type` can be decoded by the API.
+یک {{jsxref("Promise")}} که با یک مقدار بولی (boolean) حل می‌شود و نشان می‌دهد که آیا تصاویر با فرمت `type` می‌توانند توسط API رمزگشایی شوند یا نه.
 
-## Examples
+## مثال‌ها
 
-The following example checks if GIF and PCX images are supported for decoding and prints the result to the console.
+مثال زیر بررسی می‌کند که آیا تصاویر GIF و PCX برای رمزگشایی پشتیبانی می‌شوند و نتیجه را در کنسول چاپ می‌کند.
 
 ```js
 let isGifSupported = await ImageDecoder.isTypeSupported("image/gif");
@@ -43,10 +42,11 @@ let isPcxSupported = await ImageDecoder.isTypeSupported("image/pcx");
 console.log(`PCX supported: ${isPcxSupported}`); // Probably false
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
+```
