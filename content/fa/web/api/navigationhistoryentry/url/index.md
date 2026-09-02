@@ -1,11 +1,5 @@
 ---
 title: "NavigationHistoryEntry: url property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigationHistoryEntry/url"
-status: "needs-translation"
----
-
----
-title: "NavigationHistoryEntry: url property"
 short-title: url
 slug: Web/API/NavigationHistoryEntry/url
 page-type: web-api-instance-property
@@ -14,28 +8,28 @@ browser-compat: api.NavigationHistoryEntry.url
 
 {{APIRef("Navigation API")}}
 
-The **`url`** read-only property of the {{domxref("NavigationHistoryEntry")}} interface returns the absolute URL of this history entry. If the entry corresponds to a different Document than the current one (like `sameDocument` property is `false`), and that Document was fetched with a {{httpheader("Referrer-Policy")}} header set to `no-referrer` or `origin`, the property returns `null`. If current document is not fully active, it returns an empty string.
+ویژگی فقطخواندنی **`url`** از رابط {{domxref("NavigationHistoryEntry")}}، نشانی مطلق (absolute URL) این مدخلِ تاریخچه را برمی‌گرداند. اگر این مدخل با سندی غیر از سندِ جاری متناظر باشد (یعنی ویژگی `sameDocument` آن `false` باشد) و آن سند با هدرِ {{httpheader("Referrer-Policy")}} دارای مقدار `no-referrer` یا `origin` واکشی شده باشد، این ویژگی مقدار `null` را برمی‌گرداند. اگر سندِ جاری کاملاً فعال (fully active) نباشد، این ویژگی یک رشتهٔ خالی برمی‌گرداند.
 
-## Value
+## مقدار
 
-A string representing the URL or `null`.
+یک رشته که نمایانگر URL است یا `null`.
 
-## Examples
+## مثال‌ها
 
 ```js
 const current = navigation.currentEntry;
 console.log(current.url);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
 - [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
