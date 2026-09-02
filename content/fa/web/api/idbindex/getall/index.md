@@ -1,11 +1,5 @@
 ---
 title: "IDBIndex: getAll() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/getAll"
-status: "needs-translation"
----
-
----
-title: "IDBIndex: getAll() method"
 short-title: getAll()
 slug: Web/API/IDBIndex/getAll
 page-type: web-api-instance-method
@@ -14,18 +8,11 @@ browser-compat: api.IDBIndex.getAll
 
 {{ APIRef("IndexedDB") }}
 
-The **`getAll()`** method of the {{domxref("IDBIndex")}}
-interface retrieves all objects that are inside the index.
+متد **`getAll()`** از رابط {{domxref("IDBIndex")}} همهٔ اشیاء داخل ایندکس را بازیابی می‌کند.
 
-There is a performance cost associated with looking at the `value` property
-of a cursor, because the object is created lazily. To use a feature
-like `getAll()`, the browser has to create all the objects at once. If you
-are just interested in looking at each of the keys, for instance, it is more efficient
-to use a [cursor](/en-US/docs/Web/API/IDBCursor). If you are trying to get an
-array of all the objects in an object store, though, you should
-use `getAll()`.
+بررسی خاصیت `value` یک cursor هزینهٔ عملکردی به همراه دارد، زیرا شیء به‌صورت تنبل (lazy) ساخته می‌شود. برای استفاده از قابلیتی مانند `getAll()`، مرورگر باید همهٔ اشیاء را یک‌جا بسازد. اگر فقط به بررسی کلیدها علاقه‌مندید، برای نمونه، استفاده از یک [cursor](/en-US/docs/Web/API/IDBCursor) کارآمدتر است. اما اگر می‌خواهید آرایه‌ای از همهٔ اشیاء موجود در یک object store به‌دست آورید، باید از `getAll()` استفاده کنید.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 getAll()
@@ -35,55 +22,52 @@ getAll(options)
 
 ```
 
-### Parameters
+### پارامترها
 
-The `getAll()` method can take separate parameters or a single options object containing the parameters as properties.
+متد `getAll()` می‌تواند پارامترهای جداگانه یا یک شیء options واحد که این پارامترها را به‌صورت خاصیت در خود دارد دریافت کند.
 
-The parameters can include:
-
-- `query` {{optional_inline}}
-  - : A key or an {{domxref("IDBKeyRange")}} identifying the records to retrieve. If this value is `null` or not specified, the browser will use an unbound key range.
-- `count` {{optional_inline}}
-  - : The number of records to return. If this value exceeds the number of records in the
-    query, the browser will only retrieve the queried records. If it is lower than
-    `0` or greater than `2^32 - 1` a {{jsxref("TypeError")}}
-    exception will be thrown.
-
-If an object parameter is specified, its properties can include:
+پارامترها می‌توانند شامل این موارد باشند:
 
 - `query` {{optional_inline}}
-  - : See the earlier [`query`](#query) definition.
+  - : یک کلید یا یک {{domxref("IDBKeyRange")}} که رکوردهای مورد نظر برای بازیابی را مشخص می‌کند. اگر این مقدار `null` باشد یا مشخص نشده باشد، مرورگر از یک بازهٔ کلید نامحدود استفاده خواهد کرد.
 - `count` {{optional_inline}}
-  - : See the earlier [`count`](#count) definition.
+  - : تعداد رکوردهایی است که باید بازگردانده شوند. اگر این مقدار از تعداد رکوردهای موجود در query بیشتر باشد، مرورگر فقط رکوردهای منطبق با query را بازیابی می‌کند. اگر کمتر از `0` یا بیشتر از `2^32 - 1` باشد، یک استثنای {{jsxref("TypeError")}} پرتاب خواهد شد.
+
+اگر یک پارامتر شیء مشخص شده باشد، خاصیت‌های آن می‌توانند شامل موارد زیر باشند:
+
+- `query` {{optional_inline}}
+  - : تعریف [`query`](#query) را در بخش بالا ببینید.
+- `count` {{optional_inline}}
+  - : تعریف [`count`](#count) را در بخش بالا ببینید.
 - `direction` {{optional_inline}}
-  - : An enumerated value specifying the direction in which the objects are traversed. Possible values are:
+  - : یک مقدار شمارشی (enumerated) که جهت پیمایش اشیاء را مشخص می‌کند. مقادیر ممکن عبارت‌اند از:
     - `next`
-      - : The objects are traversed from the beginning, in increasing key order. This is the default value.
+      - : اشیاء از ابتدا، به ترتیب صعودی کلیدها پیمایش می‌شوند. این مقدار پیش‌فرض است.
     - `nextunique`
-      - : The objects are traversed from the beginning, in increasing key order. For every key with duplicate objects, only the object closest to the start is yielded.
+      - : اشیاء از ابتدا، به ترتیب صعودی کلیدها پیمایش می‌شوند. برای هر کلیدی که اشیاء تکراری دارد، فقط شیء نزدیک‌ترین به ابتدا بازگردانده می‌شود.
     - `prev`
-      - : The objects are traversed from the end, in decreasing key order.
+      - : اشیاء از انتها، به ترتیب نزولی کلیدها پیمایش می‌شوند.
     - `prevunique`
-      - : The objects are traversed from the end, in decreasing key order. For every key with duplicate objects, only the object closest to the start is yielded.
+      - : اشیاء از انتها، به ترتیب نزولی کلیدها پیمایش می‌شوند. برای هر کلیدی که اشیاء تکراری دارد، فقط شیء نزدیک‌ترین به ابتدا بازگردانده می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-An {{domxref("IDBRequest")}} object on which subsequent events related to this operation are fired.
+یک شیء {{domxref("IDBRequest")}} که رویدادهای بعدی مرتبط با این عملیات روی آن صادر می‌شوند.
 
-If the operation is successful, the value of the request's {{domxref("IDBRequest.result", "result")}} property is an {{jsxref("Array")}} of the values of all records matching the given query, up to the value of `count`, if `count` was supplied.
+اگر عملیات موفقیت‌آمیز باشد، مقدار خاصیت {{domxref("IDBRequest.result", "result")}} درخواست، یک {{jsxref("Array")}} از مقادیر همهٔ رکوردهای منطبق با query داده‌شده است، تا حداکثر مقدار `count`، اگر `count` ارائه شده باشد.
 
-### Exceptions
+### استثناها
 
-This method may raise a {{domxref("DOMException")}} of the following types:
+این متد ممکن است یک {{domxref("DOMException")}} از انواع زیر را پرتاب کند:
 
 - `TransactionInactiveError` {{domxref("DOMException")}}
-  - : Thrown if this {{domxref("IDBIndex")}}'s transaction is inactive.
+  - : اگر تراکنشِ این {{domxref("IDBIndex")}} غیرفعال باشد پرتاب می‌شود.
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the {{domxref("IDBIndex")}} has been deleted or removed.
+  - : اگر {{domxref("IDBIndex")}} حذف شده یا از بین رفته باشد پرتاب می‌شود.
 - {{jsxref("TypeError")}} {{domxref("DOMException")}}
-  - : Thrown if the [`count`](#count) parameter is not between `0` and `2^32 - 1`, inclusive.
+  - : اگر پارامتر [`count`](#count) بین `0` و `2^32 - 1` (شامل هر دو) نباشد پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
 ```js
 const myIndex = objectStore.index("index");
@@ -93,20 +77,20 @@ getAllRequest.onsuccess = () => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم بازه‌ای از کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی داده‌ها و ایجاد تغییر در آن‌ها: {{domxref("IDBObjectStore")}}
+- استفاده از cursorها: {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهدهٔ مثال به‌صورت زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
