@@ -1,7 +1,5 @@
 ---
 title: "IDBTransaction: objectStore() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction/objectStore"
-status: "needs-translation"
 ---
 
 ---
@@ -14,42 +12,35 @@ browser-compat: api.IDBTransaction.objectStore
 
 {{ APIRef("IndexedDB") }} {{AvailableInWorkers}}
 
-The **`objectStore()`** method of the
-{{domxref("IDBTransaction")}} interface returns an object store that has already been
-added to the scope of this transaction.
+متد **`objectStore()`** از رابط {{domxref("IDBTransaction")}} یک فروشگاه شیء (object store) را برمی‌گرداند که قبلاً به محدودهٔ این تراکنش اضافه شده است.
 
-Every call to this method on the same transaction object, with the same name, returns
-the same {{domxref("IDBObjectStore")}} instance. If this method is called on a different
-transaction object, a different {{domxref("IDBObjectStore")}} instance is returned.
+هر بار که این متد بر روی همان شیء تراکنش و با همان نام فراخوانی شود، همان نمونهٔ {{domxref("IDBObjectStore")}} را برمی‌گرداند. اگر این متد بر روی یک شیء تراکنش متفاوت فراخوانی شود، نمونهٔ متفاوتی از {{domxref("IDBObjectStore")}} برگردانده می‌شود.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 objectStore(name)
 ```
 
-### Parameters
+### پارامترها
 
 - `name`
-  - : The name of the requested object store.
+  - : نام فروشگاه شیء درخواستی.
 
-### Return value
+### مقدار بازگشتی
 
-An {{domxref("IDBObjectStore")}} object for accessing an object store.
+یک شیء {{domxref("IDBObjectStore")}} برای دسترسی به فروشگاه شیء.
 
-### Exceptions
+### استثناها
 
 - `NotFoundError` {{domxref("DOMException")}}
-  - : Thrown if the requested object store is not in this transaction's scope.
+  - : اگر فروشگاه شیء درخواستی در محدودهٔ این تراکنش نباشد، پرتاب می‌شود.
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the request was made on a source object that has been deleted or removed, or if the transaction has finished.
+  - : اگر درخواست بر روی یک شیء منبع که حذف یا پاک شده است انجام شود، یا اگر تراکنش به پایان رسیده باشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-In the following code snippet, we open a read/write transaction on our database and add
-some data to an object store. Note also the functions attached to transaction event
-handlers to report on the outcome of the transaction opening in the event of success or
-failure. For a full working example, see our [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) app ([View example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+در قطعه‌کد زیر، یک تراکنش خواندن/نوشتن روی پایگاه‌دادهٔ خود باز می‌کنیم و داده‌هایی را به یک فروشگاه شیء اضافه می‌کنیم. همچنین به توابع متصل‌شده به رویدادگردان‌های تراکنش توجه کنید که نتیجهٔ باز شدن تراکنش را در صورت موفقیت یا شکست گزارش می‌دهند. برای مشاهدهٔ یک مثال کامل و قابل اجرا، به برنامهٔ [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) مراجعه کنید ([مشاهدهٔ مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
 
 ```js
 const note = document.getElementById("notifications");
@@ -115,20 +106,20 @@ function addData() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم محدوده‌ای از کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و ایجاد تغییرات در داده‌ها: {{domxref("IDBObjectStore")}}
+- استفاده از نشانگرها (cursors): {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهدهٔ مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
