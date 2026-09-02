@@ -1,7 +1,5 @@
 ---
 title: "LanguageDetector: destroy() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/LanguageDetector/destroy"
-status: "needs-translation"
 ---
 
 ---
@@ -16,27 +14,27 @@ browser-compat: api.LanguageDetector.destroy
 
 {{APIRef("Translator and Language Detector APIs")}}{{SeeCompatTable}}{{securecontext_header}}
 
-The **`destroy()`** method of the {{domxref("LanguageDetector")}} interface releases the resources assigned to the `LanguageDetector` instance it is called on and stops any further activity on it. This means that any ongoing and subsequent method calls made on the `LanguageDetector` will reject with an `AbortError`.
+متد **`destroy()`** از رابط {{domxref("LanguageDetector")}} منابع تخصیص‌داده‌شده به نمونه‌ی `LanguageDetector` را که روی آن فراخوانی می‌شود آزاد می‌کند و هر فعالیت بیشتر روی آن را متوقف می‌نماید. این یعنی هر فراخوانی متد در حال انجام یا بعدی روی `LanguageDetector` با یک `AbortError` رد می‌شود.
 
-It makes sense to destroy `LanguageDetector` objects if they are no longer being used, as they tie up significant resources in their handling.
+زمانی که دیگر از اشیاء `LanguageDetector` استفاده نمی‌شود، منطقی است که آن‌ها را نابود کنید، زیرا منابع قابل توجهی را در پردازش خود درگیر می‌کنند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 destroy()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثالها
 
-### Basic `destroy()` usage
+### کاربرد پایه‌ی `destroy()`
 
 ```js
 const detector = await LanguageDetector.create({
@@ -48,14 +46,14 @@ const detector = await LanguageDetector.create({
 detector.destroy();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Translator and Language Detector APIs](/en-US/docs/Web/API/Translator_and_Language_Detector_APIs/Using)
+- [استفاده از APIهای Translator و Language Detector](/en-US/docs/Web/API/Translator_and_Language_Detector_APIs/Using)
