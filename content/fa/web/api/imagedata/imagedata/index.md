@@ -1,11 +1,5 @@
 ---
 title: "ImageData: ImageData() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ImageData/ImageData"
-status: "needs-translation"
----
-
----
-title: "ImageData: ImageData() constructor"
 short-title: ImageData()
 slug: Web/API/ImageData/ImageData
 page-type: web-api-constructor
@@ -14,14 +8,11 @@ browser-compat: api.ImageData.ImageData
 
 {{APIRef("Canvas API")}}{{AvailableInWorkers}}
 
-The **`ImageData()`** constructor returns a newly instantiated
-{{domxref('ImageData')}} object built from the typed array given and having the
-specified width and height.
+سازندهٔ **`ImageData()`** یک شیء جدید از نوع {{domxref('ImageData')}} برمی‌گرداند که از آرایهٔ تایپ‌شدهٔ داده‌شده ساخته شده و دارای عرض و ارتفاع مشخصی است.
 
-This constructor is the preferred way of creating such an object in a
-{{domxref('Worker')}}.
+این سازنده، روش ترجیحی برای ایجاد چنین شیئی در یک {{domxref('Worker')}} است.
 
-## Syntax
+## نحو
 
 ```js-nolint
 new ImageData(width, height)
@@ -32,59 +23,57 @@ new ImageData(dataArray, width, height)
 new ImageData(dataArray, width, height, settings)
 ```
 
-### Parameters
+### پارامترها
 
 - `width`
-  - : An unsigned long representing the width of the image.
+  - : یک عدد صحیح بدون علامت (unsigned long) که عرض تصویر را نشان می‌دهد.
 - `height`
-  - : An unsigned long representing the height of the image. This value is optional if an
-    array is given: the height will be inferred from the array's size and the given width.
+  - : یک عدد صحیح بدون علامت که ارتفاع تصویر را نشان می‌دهد. اگر آرایه‌ای داده شود، این مقدار اختیاری است: ارتفاع از اندازهٔ آرایه و عرض داده‌شده استنتاج می‌شود.
 - `settings` {{optional_inline}}
-  - : An object with the following properties:
+  - : یک شیء با ویژگی‌های زیر:
     - `colorSpace`
-      - : Specifies the color space of the image data. Can be set to `"srgb"` for the [sRGB color space](https://en.wikipedia.org/wiki/SRGB) or `"display-p3"` for the [display-p3 color space](https://en.wikipedia.org/wiki/DCI-P3).
+      - : فضای رنگی داده‌های تصویر را مشخص می‌کند. می‌توان آن را برای [فضای رنگی sRGB](https://en.wikipedia.org/wiki/SRGB) روی `"srgb"` یا برای [فضای رنگی display-p3](https://en.wikipedia.org/wiki/DCI-P3) روی `"display-p3"` تنظیم کرد.
     - `pixelFormat`
-      - : Specifies the pixel format. Possible values:
-        - `"rgba-unorm8"`, for RGBA with 8 bit per component unsigned normalized format, using a {{jsxref("Uint8ClampedArray")}}. This is the default.
-        - `"rgba-float16"`, for RGBA with 16 bits per component, using a {{jsxref("Float16Array")}}. Floating-point pixel values allow representing colors in arbitrarily wide gamuts and high dynamic range (HDR).
+      - : فرمت پیکسل را مشخص می‌کند. مقادیر ممکن:
+        - `"rgba-unorm8"`، برای RGBA با فرمت نرمال‌نشدهٔ بدون علامت ۸ بیتی برای هر مؤلفه، با استفاده از {{jsxref("Uint8ClampedArray")}}. این مقدار پیش‌فرض است.
+        - `"rgba-float16"`، برای RGBA با ۱۶ بیت برای هر مؤلفه، با استفاده از {{jsxref("Float16Array")}}. مقادیر پیکسل ممیز شناور (float) امکان نمایش رنگ‌ها در طیف رنگی (gamut) دلخواه و گسترده و محدودهٔ دینامیکی بالا (HDR) را فراهم می‌کنند.
 
 - `dataArray`
-  - : A {{jsxref("Uint8ClampedArray")}} or {{jsxref("Float16Array")}} containing the underlying pixel representation of the image. If no such array is given, an image with a transparent black rectangle of the specified `width` and `height` will be created. The type of the `dataArray` must match `settings.pixelFormat`.
+  - : یک {{jsxref("Uint8ClampedArray")}} یا {{jsxref("Float16Array")}} که شامل نمایش اصلی پیکسل‌های تصویر است. اگر چنین آرایه‌ای داده نشود، تصویری با یک مستطیل سیاه شفاف با `width` و `height` مشخص‌شده ساخته خواهد شد. نوع `dataArray` باید با `settings.pixelFormat` مطابقت داشته باشد.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref('ImageData')}} object.
+یک شیء جدید {{domxref('ImageData')}}.
 
-### Exceptions
+### استثناها
 
 - `IndexSizeError` {{domxref("DOMException")}}
-  - : Thrown if `dataArray` is specified, but its length is not `(bytesPerPixel * width * height)`, or a multiple of `(bytesPerPixel * width)` if `height` is not specified. `bytesPerPixel` is `4` when `pixelFormat` is `"rgba-unorm8"` and `8` otherwise.
+  - : زمانی پرتاب می‌شود که `dataArray` مشخص شده باشد، اما طول آن برابر با `(bytesPerPixel * width * height)` نباشد، یا اگر `height` مشخص نشده باشد، مضربی از `(bytesPerPixel * width)` نباشد. `bytesPerPixel` وقتی `pixelFormat` برابر `"rgba-unorm8"` است، `4` و در غیر این صورت `8` است.
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if `dataArray` is of type {{jsxref("Uint8ClampedArray")}} and `pixelFormat` is not set to `"rgba-unorm8"`, or if `dataArray` is of type {{jsxref("Float16Array")}} and `pixelFormat` is not set to `"rgba-float16"`.
+  - : زمانی پرتاب می‌شود که `dataArray` از نوع {{jsxref("Uint8ClampedArray")}} باشد و `pixelFormat` روی `"rgba-unorm8"` تنظیم نشده باشد، یا `dataArray` از نوع {{jsxref("Float16Array")}} باشد و `pixelFormat` روی `"rgba-float16"` تنظیم نشده باشد.
 
-## Examples
+## مثال‌ها
 
-### Creating a blank ImageData object
+### ایجاد یک شیء ImageData خالی
 
-This example creates an `ImageData` object that is 200 pixels wide and 100
-pixels tall, containing a total of 20,000 pixels.
+این مثال یک شیء `ImageData` ایجاد می‌کند که ۲۰۰ پیکسل عرض و ۱۰۰ پیکسل ارتفاع دارد و در مجموع شامل ۲۰٬۰۰۰ پیکسل است.
 
 ```js
 let imageData = new ImageData(200, 100);
 // ImageData { width: 200, height: 100, data: Uint8ClampedArray[80000] }
 ```
 
-### ImageData using the display-p3 color space
+### ImageData با استفاده از فضای رنگی display-p3
 
-This example creates an `ImageData` object with the [display-p3 color space](https://en.wikipedia.org/wiki/DCI-P3).
+این مثال یک شیء `ImageData` با [فضای رنگی display-p3](https://en.wikipedia.org/wiki/DCI-P3) ایجاد می‌کند.
 
 ```js
 let imageData = new ImageData(200, 100, { colorSpace: "display-p3" });
 ```
 
-### Floating-point pixel data for wide gamuts and high dynamic range (HDR)
+### داده‌های پیکسل ممیز شناور برای طیف‌های رنگی گسترده و محدوده دینامیکی بالا (HDR)
 
-Floating-point pixel values allow representing colors in arbitrarily wide gamuts and high dynamic range (HDR). You can set the `pixelFormat` setting to `"rgba-float16"` to use RGBA values with 16 bits per component. This requires the `dataArray` to be a {{jsxref("Float16Array")}}.
+مقادیر پیکسل ممیز شناور امکان نمایش رنگ‌ها در طیف‌های رنگی دلخواه و گسترده و محدوده دینامیکی بالا (HDR) را فراهم می‌کنند. می‌توانید گزینهٔ `pixelFormat` را روی `"rgba-float16"` تنظیم کنید تا از مقادیر RGBA با ۱۶ بیت برای هر مؤلفه استفاده کنید. این کار مستلزم آن است که `dataArray` یک {{jsxref("Float16Array")}} باشد.
 
 ```js
 let floatArray = new Float16Array(4 * 200 * 200);
@@ -94,10 +83,9 @@ let imageData = new ImageData(floatArray, 200, 200, {
 console.log(imageData.pixelFormat); // "rgba-float16"
 ```
 
-### Initializing ImageData with an array
+### مقداردهی ImageData با یک آرایه
 
-This example instantiates an `ImageData` object with pixel colors defined by
-an array.
+این مثال یک شیء `ImageData` را با رنگ‌های پیکسلی که توسط یک آرایه تعریف شده‌اند، نمونه‌سازی می‌کند.
 
 #### HTML
 
@@ -107,10 +95,7 @@ an array.
 
 #### JavaScript
 
-The array (`arr`) has a length of `40000`: it consists of 10,000
-pixels, each of which is defined by 4 values. The `ImageData` constructor
-specifies a `width` of `200` for the new object, so its
-`height` defaults to 10,000 divided by 200, which is `50`.
+آرایه (`arr`) طولی برابر با `40000` دارد: از ۱۰٬۰۰۰ پیکسل تشکیل شده است که هر کدام با ۴ مقدار تعریف می‌شوند. سازندهٔ `ImageData` عرض `200` را برای شیء جدید مشخص می‌کند، بنابراین `height` به‌طور پیش‌فرض برابر با ۱۰٬۰۰۰ تقسیم بر ۲۰۰، یعنی `50` خواهد بود.
 
 ```js
 const canvas = document.getElementById("canvas");
@@ -132,19 +117,18 @@ let imageData = new ImageData(arr, 200);
 ctx.putImageData(imageData, 20, 20);
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample('Initializing_ImageData_with_an_array', 700, 180)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("CanvasRenderingContext2D.createImageData()")}}, the creator method that
-  can be used outside workers.
+- {{domxref("CanvasRenderingContext2D.createImageData()")}}، متد سازنده‌ای که می‌توان در خارج از workerها از آن استفاده کرد.
