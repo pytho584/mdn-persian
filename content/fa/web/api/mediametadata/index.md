@@ -1,10 +1,4 @@
 ---
-title: "MediaMetadata"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaMetadata"
-status: "needs-translation"
----
-
----
 title: MediaMetadata
 slug: Web/API/MediaMetadata
 page-type: web-api-interface
@@ -13,29 +7,29 @@ browser-compat: api.MediaMetadata
 
 {{APIRef("Media Session API")}}
 
-The **`MediaMetadata`** interface of the {{domxref("Media Session API", "", "", "nocode")}} allows a web page to provide rich media metadata for display in a platform UI.
+اینترفیس **`MediaMetadata`** متعلق به {{domxref("Media Session API", "", "", "nocode")}} به یک صفحهٔ وب اجازه میدهد فراداده‌های رسانه‌ای غنی را برای نمایش در رابط کاربری پلتفرم فراهم کند.
 
-## Constructor
+## سازنده
 
 - {{domxref("MediaMetadata.MediaMetadata", "MediaMetadata()")}}
-  - : Creates a new `MediaMetaData` object.
+  - : یک شیء جدید `MediaMetaData` می‌سازد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("MediaMetadata.album")}}
-  - : Returns or sets the name of the album or collection containing the media to be played.
+  - : نام آلبوم یا مجموعه‌ای که رسانهٔ در حال پخش در آن قرار دارد را برمی‌گرداند یا تنظیم می‌کند.
 - {{domxref("MediaMetadata.artist")}}
-  - : Returns or sets the name of the artist, group, creator, etc. of the media to be played.
+  - : نام هنرمند، گروه، خالق و موارد مشابه برای رسانهٔ در حال پخش را برمی‌گرداند یا تنظیم می‌کند.
 - {{domxref("MediaMetadata.artwork")}}
-  - : Returns or sets an array of images associated with playing media.
+  - : آرایه‌ای از تصاویر مرتبط با رسانهٔ در حال پخش را برمی‌گرداند یا تنظیم می‌کند.
 - {{domxref("MediaMetadata.chapterInfo")}} {{ReadOnlyInline}} {{experimental_inline}}
-  - : Returns an array of chapter information metadata associated with playing media, represented by {{domxref("ChapterInformation")}} object instances.
+  - : آرایه‌ای از اطلاعات فراداده‌ایِ فصل‌های مرتبط با رسانهٔ در حال پخش را برمی‌گرداند که با نمونه‌های شیء {{domxref("ChapterInformation")}} نمایش داده می‌شوند.
 - {{domxref("MediaMetadata.title")}}
-  - : Returns or sets the title of the media to be played.
+  - : عنوان رسانهٔ در حال پخش را برمی‌گرداند یا تنظیم می‌کند.
 
-## Examples
+## مثال‌ها
 
-The following example checks for browser compatibility and sets the current metadata for the media session.
+مثال زیر سازگاری مرورگر را بررسی می‌کند و فراداده‌های فعلی نشست رسانه را تنظیم می‌کند.
 
 ```js
 if ("mediaSession" in navigator) {
@@ -79,10 +73,10 @@ if ("mediaSession" in navigator) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
