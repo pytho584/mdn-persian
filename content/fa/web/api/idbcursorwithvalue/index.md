@@ -1,10 +1,4 @@
 ---
-title: "IDBCursorWithValue"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBCursorWithValue"
-status: "needs-translation"
----
-
----
 title: IDBCursorWithValue
 slug: Web/API/IDBCursorWithValue
 page-type: web-api-interface
@@ -13,28 +7,28 @@ browser-compat: api.IDBCursorWithValue
 
 {{APIRef("IndexedDB")}} {{AvailableInWorkers}}
 
-The **`IDBCursorWithValue`** interface of the [IndexedDB API](/en-US/docs/Web/API/IndexedDB_API) represents a [cursor](/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology#cursor) for traversing or iterating over multiple records in a database. It is the same as the {{domxref("IDBCursor")}}, except that it includes the `value` property.
+رابط **`IDBCursorWithValue`** در [IndexedDB API](/en-US/docs/Web/API/IndexedDB_API) یک [نشانگر (cursor)](/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology#cursor) برای پیمایش یا تکرار روی چندین رکورد در پایگاه‌داده است. این رابط همان {{domxref("IDBCursor")}} است، با این تفاوت که ویژگی `value` را نیز شامل می‌شود.
 
-The cursor has a source that indicates which index or object store it is iterating over. It has a position within the range, and moves in a direction that is increasing or decreasing in the order of record keys. The cursor enables an application to asynchronously process all the records in the cursor's range.
+نشانگر دارای یک منبع است که مشخص می‌کند روی کدام ایندکس یا object store (ذخیره‌گاه شیء) در حال تکرار است. نشانگر موقعیتی در محدوده (range) دارد و در جهتی حرکت می‌کند که به ترتیب کلیدهای رکورد، صعودی یا نزولی است. نشانگر به برنامه اجازه می‌دهد تا همه رکوردهای درون محدودهٔ نشانگر را به‌صورت ناهمگام (asynchronous) پردازش کند.
 
-You can have an unlimited number of cursors at the same time. You always get the same `IDBCursorWithValue` object representing a given cursor. Operations are performed on the underlying index or object store.
+می‌توانید به‌طور هم‌زمان تعداد نامحدودی نشانگر داشته باشید. برای یک نشانگر مشخص، همیشه همان شیء `IDBCursorWithValue` را دریافت می‌کنید. عملیات روی ایندکس یا object store زیرین انجام می‌شود.
 
 {{InheritanceDiagram}}
 
-## Instance methods
+## متدهای نمونه
 
-Inherits methods from its parent interface, {{domxref("IDBCursor")}}.
+متدها را از رابط والد خود، {{domxref("IDBCursor")}} به ارث می‌برد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-Inherits properties from its parent interface, {{domxref("IDBCursor")}}.
+ویژگی‌ها را از رابط والد خود، {{domxref("IDBCursor")}} به ارث می‌برد.
 
 - {{domxref("IDBCursorWithValue.value")}} {{ReadOnlyInline}}
-  - : Returns the value of the current cursor.
+  - : مقدار نشانگر فعلی را بازمی‌گرداند.
 
-## Example
+## مثال
 
-In this example we create a transaction, retrieve an object store, then use a cursor to iterate through all the records in the object store. The cursor does not require us to select the data based on a key; we can just grab all of it. Also note that in each iteration of the loop, you can grab data from the current record under the cursor object using `cursor.value.foo`. For a complete working example, see our [IDBCursor example](https://github.com/mdn/dom-examples/tree/main/indexeddb-examples/idbcursor) ([view example live](https://mdn.github.io/dom-examples/indexeddb-examples/idbcursor/).)
+در این مثال، یک تراکنش می‌سازیم، یک object store را بازیابی می‌کنیم و سپس با استفاده از یک نشانگر، همه رکوردهای موجود در آن object store را پیمایش می‌کنیم. نشانگر نیازی ندارد که داده‌ها را بر اساس کلید انتخاب کنیم؛ می‌توانیم همه آن‌ها را دریافت کنیم. همچنین توجه داشته باشید که در هر تکرار حلقه، می‌توانید داده‌های رکورد جاری را با استفاده از `cursor.value.foo` از شیء نشانگر دریافت کنید. برای یک مثال کامل و قابل اجرا، [مثال IDBCursor](https://github.com/mdn/dom-examples/tree/main/indexeddb-examples/idbcursor) را ببینید ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/indexeddb-examples/idbcursor/).)
 
 ```js
 function displayData() {
@@ -56,20 +50,20 @@ function displayData() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم محدوده‌ای از کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و ایجاد تغییرات در داده‌ها: {{domxref("IDBObjectStore")}}
+- استفاده از نشانگرها: {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
