@@ -1,11 +1,5 @@
 ---
 title: "LanguageModel: prompt() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/LanguageModel/prompt"
-status: "needs-translation"
----
-
----
-title: "LanguageModel: prompt() method"
 short-title: prompt()
 slug: Web/API/LanguageModel/prompt
 page-type: web-api-instance-method
@@ -14,101 +8,100 @@ browser-compat: api.LanguageModel.prompt
 
 {{APIRef("Prompt API")}}{{SecureContext_Header}}
 
-The **`prompt()`** method of the {{domxref("LanguageModel")}} interface sends input to the language model and returns a {{jsxref("Promise")}} that resolves with the model's complete response as a string.
+متد **‎`prompt()`** از رابط {{domxref("LanguageModel")}} ورودی را به مدل زبانی می‌فرستد و یک {{jsxref("Promise")}} برمی‌گرداند که با پاسخ کامل مدل به‌صورت رشته (string) resolve می‌شود.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 prompt(input)
 prompt(input, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `input`
-  - : The content to prompt the model with. This is either:
-    - A string — Shorthand for a single textual message.
-    - An array of objects, each representing a single message in a conversation with a language model.
-      Objects may have the following properties:
+  - : محتوایی که باید با آن از مدل خواسته شود (prompt). این مقدار یکی از این دو است:
+    - یک رشته — شکل کوتاه یک پیام متنی واحد.
+    - یک آرایه از اشیا، که هر شیء یک پیام واحد در یک گفتگو با مدل زبانی را نشان می‌دهد. اشیا می‌توانند ویژگی‌های زیر را داشته باشند:
       - `role`
-        - : A string indicating the point of view the message is phrased from. Must be one of:
+        - : رشته‌ای که دیدگاهِ بیان‌شده در پیام را نشان می‌دهد. باید یکی از این مقادیر باشد:
           - `system`
-            - : A system-level instruction that guides the model's overall behavior. This must be the first instruction passed to the model.
+            - : یک دستورالعمل در سطح سیستم که رفتار کلی مدل را هدایت می‌کند. این باید نخستین دستورالعمل ارسال‌شده به مدل باشد.
           - `user`
-            - : A message from the user, which the API should respond to.
+            - : پیامی از طرف کاربر که API باید به آن پاسخ دهد.
           - `assistant`
-            - : An input that provides context for the AI assistant, such as its persona or the format of its responses. Such messages mainly serve to provide context/history, and further shape how the model responds.
+            - : ورودی که زمینه (context) را برای دستیار هوش مصنوعی فراهم می‌کند، مانند شخصیت دستیار یا قالب پاسخ‌های آن. چنین پیام‌هایی عمدتاً برای فراهم‌کردن زمینه/تاریخچه و شکل‌دهی بیشتر به نحوهٔ پاسخ‌گویی مدل به کار می‌روند.
       - `content`
-        - : A string representing a textual prompt, or an array of objects. Each object includes the following properties:
+        - : رشته‌ای که یک prompt متنی را نشان می‌دهد، یا آرایه‌ای از اشیا. هر شیء ویژگی‌های زیر را دارد:
           - `type`
-            - : An enumerated value representing the type of content. This can be one of:
+            - : یک مقدار شمارشی (enumerated) که نوع محتوا را نشان می‌دهد. می‌تواند یکی از این مقادیر باشد:
               - `audio`
-                - : Audio content.
+                - : محتوای صوتی.
               - `image`
-                - : Image content.
+                - : محتوای تصویری.
               - `text`
-                - : Textual content.
+                - : محتوای متنی.
               - `tool-call`
-                - : A tool invocation issued by the model.
+                - : فراخوانی ابزار (tool) که توسط مدل صادر شده است.
               - `tool-response`
-                - : The result of a tool invocation.
+                - : نتیجهٔ اجرای یک فراخوانی ابزار.
           - `value`
-            - : The content of the message. If the `type` is `text`, this is always a string. If the `type` is `audio` or `image`, the `value` can be one of several different object types; see [What data types are accepted?](/en-US/docs/Web/API/Prompt_API/Multimodal#what_data_types_are_accepted).
+            - : محتوای پیام. اگر `type` برابر `text` باشد، این مقدار همیشه یک رشته است. اگر `type` برابر `audio` یا `image` باشد، `value` می‌تواند یکی از چند نوع شیء مختلف باشد؛ برای جزئیات بیشتر به [چه نوع داده‌هایی پذیرفته می‌شوند؟](/en-US/docs/Web/API/Prompt_API/Multimodal#what_data_types_are_accepted) مراجعه کنید.
       - `prefix` {{optional_inline}}
-        - : A boolean, defaulting to `false`. When `true`, the message is treated as a prefix for the model's next generated response rather than a complete turn.
+        - : یک مقدار بولی که پیش‌فرض آن `false` است. وقتی `true` باشد، پیام به‌جای یک نوبت کامل، به‌عنوان پیشوند (prefix) برای پاسخ بعدی تولیدشده توسط مدل در نظر گرفته می‌شود.
 - `options` {{optional_inline}}
-  - : Options for creating a prompt. Properties include:
+  - : گزینه‌های ساخت یک prompt. ویژگی‌های آن عبارت‌اند از:
     - `responseConstraint`
-      - : An object following the structure defined by [JSON Schema](https://json-schema.org/) defining the precise format the model's output should be delivered in. When provided and `omitResponseConstraintInput` is `false`, any implementation-defined constraint-description message is included in the measurement.
+      - : شیئی که ساختار آن طبق [JSON Schema](https://json-schema.org/) تعریف شده است و قالب دقیقی را مشخص می‌کند که خروجی مدل باید در آن تحویل داده شود. وقتی این گزینه ارائه شود و `omitResponseConstraintInput` برابر `false` باشد، هر پیام توصیف‌کنندهٔ محدودیتِ تعریف‌شده توسط پیاده‌سازی در اندازه‌گیری (measurement) لحاظ می‌شود.
     - `omitResponseConstraintInput`
-      - : A boolean; when `true`, the automatic constraint-description message is excluded from the measurement.
+      - : یک مقدار بولی؛ وقتی `true` باشد، پیام خودکار توصیف‌کنندهٔ محدودیت از اندازه‌گیری حذف می‌شود.
     - `signal`
-      - : An {{domxref("AbortSignal")}} to cancel the operation.
+      - : یک {{domxref("AbortSignal")}} برای لغو عملیات.
 
-### Return value
+### مقدار برگشتی
 
-A {{jsxref("Promise")}} that resolves with a {{jsxref("String")}} containing the model's complete response.
+یک {{jsxref("Promise")}} که با یک {{jsxref("String")}} شامل پاسخ کامل مدل resolve می‌شود.
 
-### Exceptions
+### استثناها
 
 - `AbortError` {{domxref("DOMException")}}
-  - : Thrown if the operation was cancelled via the `signal` option.
+  - : اگر عملیات از طریق گزینهٔ `signal` لغو شده باشد پرتاب می‌شود.
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if usage of the method is blocked by a {{httpheader("Permissions-Policy/language-model", "language-model")}} {{httpheader("Permissions-Policy")}}.
+  - : اگر استفاده از این متد توسط یک {{httpheader("Permissions-Policy/language-model", "language-model")}} {{httpheader("Permissions-Policy")}} مسدود شده باشد پرتاب می‌شود.
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Thrown if:
-    - A message's `role` is `assistant` and its `type` is anything other than `text`.
-    - A message's `type` is `text` and its `value` is not a string.
-    - The input or output text is in a language the user agent doesn't support for prompting.
-    - A message's `type` is `image` or `audio` but the type was not listed in `expectedInputs`, or the `value` is not an [accepted data type](/en-US/docs/Web/API/Prompt_API/Multimodal#what_data_types_are_accepted).
+  - : در موارد زیر پرتاب می‌شود:
+    - نقش (`role`) یک پیام `assistant` باشد و `type` آن چیزی غیر از `text` باشد.
+    - `type` یک پیام `text` باشد و `value` آن رشته نباشد.
+    - متن ورودی یا خروجی به زبانی باشد که عامل کاربر (user agent) برای ارائهٔ prompt پشتیبانی نمی‌کند.
+    - `type` یک پیام `image` یا `audio` باشد اما این نوع در `expectedInputs` فهرست نشده باشد، یا `value` یک [نوع دادهٔ پذیرفته‌شده](/en-US/docs/Web/API/Prompt_API/Multimodal#what_data_types_are_accepted) نباشد.
 - `OperationError` {{domxref("DOMException")}}
-  - : Thrown if the prompt fails for any other reason not listed in the other exception types.
+  - : اگر prompt به هر دلیل دیگری که در سایر انواع استثنا ذکر نشده شکست بخورد، پرتاب می‌شود.
 - `QuotaExceededError` {{domxref("DOMException")}}
-  - : Thrown if the prompt would cause the session's context usage to exceed the model's {{domxref("LanguageModel.contextWindow")}}.
+  - : اگر prompt باعث شود استفاده از زمینهٔ نشست (context) از {{domxref("LanguageModel.contextWindow")}} مدل فراتر رود، پرتاب می‌شود.
 - `SyntaxError` {{domxref("DOMException")}}
-  - : Thrown if:
-    - No messages are included in the messages array.
-    - A message's `prefix` property is set to `true` and:
-      - The message's `role` is not `assistant`.
-      - The message is not the last item in the messages array.
+  - : در موارد زیر پرتاب می‌شود:
+    - هیچ پیامی در آرایهٔ messages گنجانده نشده باشد.
+    - ویژگی `prefix` یک پیام برابر `true` باشد و:
+      - نقش (`role`) آن پیام `assistant` نباشد.
+      - آن پیام آخرین آیتم در آرایهٔ messages نباشد.
 - `TypeError`
-  - : Thrown if:
-    - `omitResponseConstraintInput` is `true` but `responseConstraint` is not provided.
-    - A message's `role` is `system` but it was not the first message passed to the context.
+  - : در موارد زیر پرتاب می‌شود:
+    - `omitResponseConstraintInput` برابر `true` باشد اما `responseConstraint` ارائه نشده باشد.
+    - نقش (`role`) یک پیام `system` باشد اما نخستین پیام ارسال‌شده به زمینه نباشد.
 
-## Description
+## توضیحات
 
-The `prompt()` method is the primary mechanism for interacting with a language model session. It adds the provided input to the context window and generates a response. The entire response is buffered and returned as a single string when generation completes.
+متد `prompt()` سازوکار اصلی تعامل با یک نشست مدل زبانی است. این متد ورودی ارائه‌شده را به پنجرهٔ زمینه (context window) اضافه می‌کند و پاسخی تولید می‌کند. کل پاسخ هنگام تکمیل تولید، بافر شده و به‌صورت یک رشتهٔ واحد بازگردانده می‌شود.
 
-For long responses or streaming use cases, use {{domxref("LanguageModel.promptStreaming()")}} instead to receive the response incrementally. To add content to the context window without generating a response, use {{domxref("LanguageModel.append()")}}.
+برای پاسخ‌های طولانی یا موارد استفادهٔ جریانی (streaming)، به‌جای آن از {{domxref("LanguageModel.promptStreaming()")}} استفاده کنید تا پاسخ به‌صورت تدریجی دریافت شود. برای افزودن محتوا به پنجرهٔ زمینه بدون تولید پاسخ، از {{domxref("LanguageModel.append()")}} استفاده کنید.
 
-Each call to `prompt()` adds to the session's context. To branch from a given state without affecting the original session, call {{domxref("LanguageModel.clone()")}}.
+هر بار فراخوانی `prompt()` به زمینهٔ نشست اضافه می‌کند. برای اینکه از یک وضعیت مشخص بدون تأثیرگذاری بر نشست اصلی شاخهٔ جدیدی بسازید، {{domxref("LanguageModel.clone()")}} را فراخوانی کنید.
 
-## Examples
+## مثال‌ها
 
-### Basic text prompt
+### مثال پایهٔ متنی
 
-This example shows basic `prompt()` usage with a single user text input.
+این مثال کاربرد پایه‌ای `prompt()` را با یک ورودی متنی واحد از کاربر نشان می‌دهد.
 
 ```js
 const session = await LanguageModel.create();
@@ -118,9 +111,9 @@ const response = await session.prompt(
 console.log(response);
 ```
 
-See also [Using the Prompt API > Prompting the model](/en-US/docs/Web/API/Prompt_API/Using#prompting_the_model).
+همچنین ببینید: [استفاده از Prompt API > ارائهٔ prompt به مدل](/en-US/docs/Web/API/Prompt_API/Using#prompting_the_model).
 
-### Multi-turn conversation
+### گفتگو با چند نوبت
 
 ```js
 const session = await LanguageModel.create();
@@ -132,9 +125,9 @@ const reply2 = await session.prompt("What's my name?");
 console.log(reply2); // "Your name is Alex."
 ```
 
-### Constrained JSON output
+### خروجی JSON مقید
 
-The following example shows how do pass JSON to the `responseConstraint` option to specify that you want an array returned by the call to `prompt()`.
+مثال زیر نشان می‌دهد که چگونه JSON را به گزینهٔ `responseConstraint` بدهید تا مشخص کنید می‌خواهید فراخوانی `prompt()` یک آرایه برگرداند.
 
 ```js
 const session = await LanguageModel.create();
@@ -155,11 +148,11 @@ const { planets } = JSON.parse(raw);
 console.log(planets); // ["Mercury", "Venus", "Earth"]
 ```
 
-See also [Adding context with initial and ongoing prompt inputs > Adding response constraints](/en-US/docs/Web/API/Prompt_API/Adding_context#adding_response_constraints).
+همچنین ببینید: [افزودن زمینه با ورودی‌های prompt اولیه و مداوم > افزودن محدودیت‌های پاسخ](/en-US/docs/Web/API/Prompt_API/Adding_context#adding_response_constraints).
 
-### Cancelling a prompt
+### لغو یک prompt
 
-The following example shows how to enable a user to cancel a prompt with a button. It does this by creating an {{domxref("AbortController")}}. Its `abort()` is callable from a button's `click` handler. For this to work, a reference to the controller's `signal` property must be passed to `prompt()`.
+مثال زیر نشان می‌دهد چگونه به کاربر اجازه دهید با یک دکمه، prompt را لغو کند. این کار با ایجاد یک {{domxref("AbortController")}} انجام می‌شود. متد `abort()` آن از طریق پردازندهٔ رویداد `click` یک دکمه قابل فراخوانی است. برای اینکه این کار درست عمل کند، ارجاعی از ویژگی `signal` کنترلر باید به `prompt()` ارسال شود.
 
 ```js
 const controller = new AbortController();
@@ -186,20 +179,20 @@ try {
 }
 ```
 
-See also [Using the Prompt API > Cancelling operations and destroying instances](/en-US/docs/Web/API/Prompt_API/Using#cancelling_operations_and_destroying_instances).
+همچنین ببینید: [استفاده از Prompt API > لغو عملیات‌ها و نابود کردن نمونه‌ها](/en-US/docs/Web/API/Prompt_API/Using#cancelling_operations_and_destroying_instances).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("LanguageModel.promptStreaming()")}}
 - {{domxref("LanguageModel.append()")}}
 - [Prompt API](/en-US/docs/Web/API/Prompt_API)
-- [Using the Prompt API](/en-US/docs/Web/API/Prompt_API/Using)
-- [Adding context with initial and ongoing prompt inputs](/en-US/docs/Web/API/Prompt_API/Adding_context)
+- [استفاده از Prompt API](/en-US/docs/Web/API/Prompt_API/Using)
+- [افزودن زمینه با ورودی‌های prompt اولیه و مداوم](/en-US/docs/Web/API/Prompt_API/Adding_context)
