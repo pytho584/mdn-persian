@@ -1,11 +1,5 @@
 ---
 title: "MediaRecorder: requestData() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/requestData"
-status: "needs-translation"
----
-
----
-title: "MediaRecorder: requestData() method"
 short-title: requestData()
 slug: Web/API/MediaRecorder/requestData
 page-type: web-api-instance-method
@@ -14,21 +8,13 @@ browser-compat: api.MediaRecorder.requestData
 
 {{APIRef("MediaStream Recording")}}
 
-The **`requestData()`**
-method of the {{domxref("MediaRecorder")}} interface is used to raise a {{domxref("MediaRecorder.dataavailable_event", "dataavailable")}} event containing a
-{{domxref("Blob")}} object of the captured media as it was when the method was
-called. This can then be grabbed and manipulated as you wish.
+متد **`requestData()`** از رابط {{domxref("MediaRecorder")}} برای برانگیختن یک رویداد {{domxref("MediaRecorder.dataavailable_event", "dataavailable")}} حاوی یک شیء {{domxref("Blob")}} از رسانه‌ی ضبط‌شده به همان صورتی که در زمان فراخوانی متد بوده است، استفاده می‌شود. سپس می‌توانید آن را به دلخواه خود دریافت و دستکاری کنید.
 
-When the `requestData()` method is invoked, the browser queues a task that
-runs the following steps:
+هنگامی که متد `requestData()` فراخوانی می‌شود، مرورگر یک وظیفه (task) را در صف قرار می‌دهد که مراحل زیر را اجرا می‌کند:
 
-1. If {{domxref("MediaRecorder.state")}} is "inactive", raise a DOM
-   `InvalidState` error and terminate these steps. If
-   {{domxref("MediaRecorder.state")}} is not "inactive", continue to the next step.
-2. Raise a {{domxref("MediaRecorder.dataavailable_event", "dataavailable")}} event containing a {{domxref("Blob")}} of the
-   currently captured data (the Blob is available under the event's `data`
-   attribute.)
-3. Create a new Blob and place subsequently captured data into it.
+1. اگر {{domxref("MediaRecorder.state")}} برابر با "inactive" باشد، یک خطای `InvalidState` از نوع DOM ایجاد کرده و این مراحل را پایان دهید. اگر {{domxref("MediaRecorder.state")}} "inactive" نباشد، به مرحله‌ی بعد بروید.
+2. یک رویداد {{domxref("MediaRecorder.dataavailable_event", "dataavailable")}} حاوی یک {{domxref("Blob")}} از داده‌های ضبط‌شده‌ی فعلی ایجاد کنید (این Blob در ویژگی `data` رویداد در دسترس است).
+3. یک Blob جدید ایجاد کرده و داده‌های بعدی ضبط‌شده را در آن قرار دهید.
 
 ## Syntax
 
@@ -38,17 +24,16 @@ requestData()
 
 ### Parameters
 
-None.
+هیچکدام.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچکدام ({{jsxref("undefined")}}).
 
 ### Exceptions
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the `MediaRecorder` is currently `"inactive"`; you cannot capture
-    the recording if the `MediaRecorder` is not active.
+  - : در صورتی که `MediaRecorder` در وضعیت `"inactive"` باشد، پرتاب می‌شود؛ اگر `MediaRecorder` فعال نباشد، نمی‌توانید ضبط را دریافت کنید.
 
 ## Examples
 
@@ -71,8 +56,7 @@ captureMedia.onclick = () => {
 
 ## See also
 
-- [Using the MediaStream Recording API](/en-US/docs/Web/API/MediaStream_Recording_API/Using_the_MediaStream_Recording_API)
-- [Web Dictaphone](https://mdn.github.io/dom-examples/media/web-dictaphone/): MediaRecorder +
-  getUserMedia + Web Audio API visualization demo, by [Chris Mills](https://github.com/chrisdavidmills) ([source on GitHub](https://github.com/mdn/dom-examples/tree/main/media/web-dictaphone).)
-- [simpl.info MediaStream Recording demo](https://simpl.info/mediarecorder/), by [Sam Dutton](https://github.com/samdutton).
+- [استفاده از API ضبط MediaStream](/en-US/docs/Web/API/MediaStream_Recording_API/Using_the_MediaStream_Recording_API)
+- [Web Dictaphone](https://mdn.github.io/dom-examples/media/web-dictaphone/): نمایشی از MediaRecorder + getUserMedia + Web Audio API، توسط [Chris Mills](https://github.com/chrisdavidmills) ([متن در GitHub](https://github.com/mdn/dom-examples/tree/main/media/web-dictaphone))
+- [نسخه‌ی نمایشی ضبط MediaStream از simpl.info](https://simpl.info/mediarecorder/)، توسط [Sam Dutton](https://github.com/samdutton)
 - {{domxref("Navigator.getUserMedia()")}}
