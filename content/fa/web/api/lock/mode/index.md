@@ -1,11 +1,5 @@
 ---
 title: "Lock: mode property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Lock/mode"
-status: "needs-translation"
----
-
----
-title: "Lock: mode property"
 short-title: mode
 slug: Web/API/Lock/mode
 page-type: web-api-instance-property
@@ -14,30 +8,29 @@ browser-compat: api.Lock.mode
 
 {{APIRef("Web Locks API")}}{{securecontext_header}} {{AvailableInWorkers}}
 
-The **`mode`** read-only property of the {{domxref("Lock")}} interface returns the access mode passed to {{domxref('LockManager.request()')}} when the lock was requested.
-The mode is either `"exclusive"` (the default) or `"shared"`.
+ویژگی فقط‌خواندنی **`mode`** در رابط {{domxref("Lock")}}، حالت دسترسی‌ای را برمی‌گرداند که هنگام درخواست قفل، به {{domxref('LockManager.request()')}} ارسال شده است. این حالت یا `"exclusive"` است (پیش‌فرض) یا `"shared"`.
 
-## Value
+## مقدار
 
-One of `"exclusive"` or `"shared"`.
+یکی از مقادیر `"exclusive"` یا `"shared"`.
 
-## Examples
+## مثال‌ها
 
-The following examples show how the mode property is passed in the call to {{domxref('LockManager.request()')}}.
-{{domxref('LockManager')}} is the object returned by {{domxref('navigator.locks')}}.
+نمونه‌های زیر نشان می‌دهند که ویژگی mode چگونه در فراخوانی {{domxref('LockManager.request()')}} ارسال می‌شود.
+{{domxref('LockManager')}} شیءای است که توسط {{domxref('navigator.locks')}} بازگردانده می‌شود.
 
 ```js
-// Should show "exclusive" (the default)
+// باید "exclusive" نمایش دهد (پیش‌فرض)
 navigator.locks.request("my_resource", showLockProperties);
 
-// Should show "exclusive"
+// باید "exclusive" نمایش دهد
 navigator.locks.request(
   "my_resource",
   { mode: "exclusive" },
   showLockProperties,
 );
 
-// Should show "shared"
+// باید "shared" نمایش دهد
 navigator.locks.request("my_resource", { mode: "shared" }, showLockProperties);
 
 function showLockProperties(lock) {
@@ -46,10 +39,10 @@ function showLockProperties(lock) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
