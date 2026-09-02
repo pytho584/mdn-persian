@@ -1,11 +1,5 @@
 ---
 title: "LaunchParams: files property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/LaunchParams/files"
-status: "needs-translation"
----
-
----
-title: "LaunchParams: files property"
 short-title: files
 slug: Web/API/LaunchParams/files
 page-type: web-api-instance-property
@@ -16,13 +10,13 @@ browser-compat: api.LaunchParams.files
 
 {{APIRef("Launch Handler API")}}{{SeeCompatTable}}
 
-The **`files`** read-only property of the {{domxref("LaunchParams")}} interface returns an array of {{domxref("FileSystemHandle")}} objects representing any files passed along with the launch navigation via the [`POST`](/en-US/docs/Web/HTTP/Reference/Methods/POST) method.
+خصوصیت فقط‌خواندنی **`files`** در رابط {{domxref("LaunchParams")}} یک آرایه از اشیاء {{domxref("FileSystemHandle")}} برمی‌گرداند که هر فایلی را که همراه با ناوبری راه‌اندازی از طریق متد [`POST`](/en-US/docs/Web/HTTP/Reference/Methods/POST) ارسال شده، نشان می‌دهد.
 
-## Value
+## مقدار
 
-A read-only array of {{domxref("FileSystemHandle")}} objects.
+یک آرایه فقط‌خواندنی از اشیاء {{domxref("FileSystemHandle")}}.
 
-## Examples
+## مثال‌ها
 
 ```js
 if ("launchQueue" in window) {
@@ -37,15 +31,15 @@ if ("launchQueue" in window) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Launch Handler API: Control how your app is launched](https://developer.chrome.com/docs/web-platform/launch-handler/)
+- [Launch Handler API: نحوه کنترل نحوه راه‌اندازی برنامه شما](https://developer.chrome.com/docs/web-platform/launch-handler/)
 - {{domxref("Window.launchQueue")}}
