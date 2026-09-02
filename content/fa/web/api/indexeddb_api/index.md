@@ -1,7 +1,5 @@
 ---
 title: "IndexedDB API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API"
-status: "needs-translation"
 ---
 
 ---
@@ -13,73 +11,73 @@ spec-urls: https://w3c.github.io/IndexedDB/
 
 {{DefaultAPISidebar("IndexedDB")}} {{AvailableInWorkers}}
 
-IndexedDB is a low-level API for client-side storage of significant amounts of structured data, including files/blobs. This API uses indexes to enable high-performance searches of this data. While [Web Storage](/en-US/docs/Web/API/Web_Storage_API) is useful for storing smaller amounts of data, it is less useful for storing larger amounts of structured data. IndexedDB provides a solution. This is the main landing page for MDN's IndexedDB coverage — here we provide links to the full API reference and usage guides, browser support details, and some explanation of key concepts.
+ایندکس‌دبی (IndexedDB) یک API سطح پایین برای ذخیره‌سازی سمت کلاینت حجم قابل توجهی از داده‌های ساختیافته، از جمله فایل‌ها و بلاب‌ها (blob) است. این API از ایندکس‌ها برای جستجوی پربازده در این داده‌ها استفاده می‌کند. در حالی که [Web Storage](/en-US/docs/Web/API/Web_Storage_API) برای ذخیره‌سازی مقادیر کمتری از داده مفید است، برای ذخیره‌سازی حجم بیشتری از داده‌های ساختیافته چندان کارآمد نیست. IndexedDB راه‌حلی برای این نیاز ارائه می‌دهد. این صفحه، صفحهٔ اصلی پوشش IndexedDB در MDN است — در اینجا پیوندهایی به مرجع کامل API، راهنماهای استفاده، جزئیات پشتیبانی مرورگرها و توضیحاتی دربارهٔ مفاهیم کلیدی ارائه می‌کنیم.
 
-## Key concepts and usage
+## مفاهیم و کاربردهای کلیدی
 
-IndexedDB is a transactional database system, like an SQL-based Relational Database Management System (RDBMS). However, unlike SQL-based RDBMSes, which use fixed-column tables, IndexedDB is a JavaScript-based object-oriented database. IndexedDB lets you store and retrieve objects that are indexed with a **key**; any objects supported by the [structured clone algorithm](/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm) can be stored. You need to specify the database schema, open a connection to your database, and then retrieve and update data within a series of **transactions**.
+IndexedDB یک سیستم پایگاه‌دادهٔ تراکنشی است، مشابه سیستم مدیریت پایگاه‌دادهٔ رابطه‌ای (RDBMS) مبتنی بر SQL. با این حال، برخلاف RDBMS های مبتنی بر SQL که از جدول‌هایی با ستون‌های ثابت استفاده می‌کنند، IndexedDB یک پایگاه‌دادهٔ شیءگرا مبتنی بر JavaScript است. IndexedDB به شما امکان می‌دهد اشیایی را که با یک **کلید (key)** ایندکس شده‌اند ذخیره و بازیابی کنید؛ هر شیئی که توسط [structured clone algorithm](/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm) پشتیبانی می‌شود، قابل ذخیره‌سازی است. باید طرح‌وارهٔ پایگاه‌داده را مشخص کنید، اتصالی به پایگاه‌دادهٔ خود باز کنید و سپس داده‌ها را در مجموعه‌ای از **تراکنش‌ها (transactions)** بازیابی و به‌روزرسانی کنید.
 
-- Read more about [IndexedDB key characteristics and basic terminology](/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology).
-- Learn to use IndexedDB asynchronously from first principles with our [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB) guide.
-- See a complete step-by-step example in the [checking when a deadline is due](/en-US/docs/Web/API/IndexedDB_API/Checking_when_a_deadline_is_due) guide.
+- دربارهٔ [IndexedDB key characteristics and basic terminology](/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology) بیشتر بخوانید.
+- با راهنمای [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB) ما، استفادهٔ ناهمگام از IndexedDB را از اصول اولیه بیاموزید.
+- یک مثال کامل و گام‌به‌گام را در راهنمای [checking when a deadline is due](/en-US/docs/Web/API/IndexedDB_API/Checking_when_a_deadline_is_due) ببینید.
 
 > [!NOTE]
-> Like most web storage solutions, IndexedDB follows a [same-origin policy](https://www.w3.org/Security/wiki/Same_Origin_Policy). So while you can access stored data within a domain, you cannot access data across different domains.
+> مانند بسیاری از راه‌حل‌های ذخیره‌سازی وب، IndexedDB از [same-origin policy](https://www.w3.org/Security/wiki/Same_Origin_Policy) (خط‌مشی همان مبدأ) پیروی می‌کند. بنابراین در حالی که می‌توانید به داده‌های ذخیره‌شده در یک دامنه دسترسی داشته باشید، نمی‌توانید به داده‌ها در دامنه‌های مختلف دسترسی پیدا کنید.
 
-### Synchronous and asynchronous
+### همگام و ناهمگام
 
-Operations performed using IndexedDB are done asynchronously, so as not to block applications.
+عملیات انجام‌شده با IndexedDB به‌صورت ناهمگام (asynchronous) اجرا می‌شوند تا برنامه‌ها مسدود نشوند.
 
-### Storage limits and eviction criteria
+### محدودیت‌های ذخیره‌سازی و معیارهای حذف (eviction)
 
-There are a number of web technologies that store data of one kind or another on the client side (i.e., on your local disk). IndexedDB is most commonly talked about. The process by which the browser works out how much space to allocate to web data storage and what to delete when that limit is reached is not simple, and differs between browsers. [Browser storage quotas and eviction criteria](/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria) attempts to explain how this works, at least in the case of Firefox.
+فناوری‌های وب متعددی وجود دارند که داده‌هایی از یک نوع یا نوع دیگر را در سمت کلاینت (یعنی روی دیسک محلی شما) ذخیره می‌کنند. IndexedDB رایج‌ترین موضوع بحث است. فرایندی که مرورگر به‌واسطهٔ آن تعیین می‌کند چه مقدار فضا به ذخیره‌سازی داده‌های وب اختصاص دهد و وقتی آن حد پر شد چه چیزی را حذف کند، ساده نیست و در مرورگرهای مختلف متفاوت است. مقالهٔ [Browser storage quotas and eviction criteria](/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria) تلاش می‌کند توضیح دهد این فرایند چگونه کار می‌کند، حداقل در مورد Firefox.
 
-## Interfaces
+## رابط‌ها (Interfaces)
 
-To get access to a database, call [`open()`](/en-US/docs/Web/API/IDBFactory/open) on the [`indexedDB`](/en-US/docs/Web/API/Window/indexedDB) property of a [window](/en-US/docs/Web/API/Window) object. This method returns an {{domxref("IDBRequest")}} object; asynchronous operations communicate to the calling application by firing events on {{domxref("IDBRequest")}} objects.
+برای دسترسی به یک پایگاه‌داده، متد [`open()`](/en-US/docs/Web/API/IDBFactory/open) را بر روی ویژگی [`indexedDB`](/en-US/docs/Web/API/Window/indexedDB) یک شیء [window](/en-US/docs/Web/API/Window) فراخوانی کنید. این متد یک شیء {{domxref("IDBRequest")}} برمی‌گرداند؛ عملیات ناهمگام با ایجاد رویدادهایی روی اشیاء {{domxref("IDBRequest")}} با برنامهٔ فراخواننده ارتباط برقرار می‌کنند.
 
-### Connecting to a database
+### اتصال به یک پایگاه‌داده
 
 - {{domxref("IDBFactory")}}
-  - : Provides access to a database. An object of this type is the value of the global {{domxref("Window.indexedDB")}} and {{domxref("WorkerGlobalScope.indexedDB")}} properties. It is therefore the entry point for the API.
+  - : دسترسی به یک پایگاه‌داده را فراهم می‌کند. یک شیء از این نوع، مقدار ویژگی‌های سراسری {{domxref("Window.indexedDB")}} و {{domxref("WorkerGlobalScope.indexedDB")}} است. بنابراین نقطهٔ ورود به API محسوب می‌شود.
 - {{domxref("IDBOpenDBRequest")}}
-  - : Represents a request to open a database.
+  - : بیانگر یک درخواست برای باز کردن یک پایگاه‌داده است.
 - {{domxref("IDBDatabase")}}
-  - : Represents a connection to a database. It's the only way to get a transaction on the database.
+  - : بیانگر یک اتصال به پایگاه‌داده است. این تنها راه دریافت یک تراکنش روی پایگاه‌داده است.
 
-### Retrieving and modifying data
+### بازیابی و اصلاح داده‌ها
 
 - {{domxref("IDBTransaction")}}
-  - : Represents a transaction. You create a transaction on a database, specify the scope (such as which object stores you want to access), and determine the kind of access (read only or readwrite) that you want.
+  - : بیانگر یک تراکنش است. شما روی یک پایگاه‌داده تراکنش ایجاد می‌کنید، محدودهٔ آن (مثلاً اینکه به کدام ذخیره‌گاه‌های شیء می‌خواهید دسترسی داشته باشید) را مشخص می‌کنید، و نوع دسترسی موردنظر (فقط خواندنی یا خواندنی-نوشتنی) را تعیین می‌کنید.
 - {{domxref("IDBRequest")}}
-  - : Generic interface that handles database requests and provides access to results.
+  - : رابطی عمومی که درخواست‌های پایگاه‌داده را مدیریت می‌کند و دسترسی به نتایج را فراهم می‌کند.
 - {{domxref("IDBObjectStore")}}
-  - : Represents an object store that allows access to a set of data in an IndexedDB database, looked up via primary key.
+  - : بیانگر یک ذخیره‌گاه شیء (object store) است که امکان دسترسی به مجموعه‌ای از داده‌ها در یک پایگاه‌داده IndexedDB را فراهم می‌کند و با استفاده از کلید اصلی جستجو می‌شود.
 - {{domxref("IDBIndex")}}
-  - : Also allows access to a subset of data in an IndexedDB database, but uses an index to retrieve the record(s) rather than the primary key. This is sometimes faster than using {{domxref("IDBObjectStore")}}.
+  - : همچنین امکان دسترسی به زیرمجموعه‌ای از داده‌ها در یک پایگاه‌داده IndexedDB را فراهم می‌کند، اما برای بازیابی رکورد(ها) به‌جای کلید اصلی از ایندکس استفاده می‌کند. این کار گاهی سریع‌تر از استفاده از {{domxref("IDBObjectStore")}} است.
 - {{domxref("IDBCursor")}}
-  - : Iterates over object stores and indexes.
+  - : روی ذخیره‌گاه‌های شیء و ایندکس‌ها پیمایش می‌کند.
 - {{domxref("IDBCursorWithValue")}}
-  - : Iterates over object stores and indexes and returns the cursor's current value.
+  - : روی ذخیره‌گاه‌های شیء و ایندکس‌ها پیمایش می‌کند و مقدار فعلی نشانگر (cursor) را برمی‌گرداند.
 - {{domxref("IDBKeyRange")}}
-  - : Defines a key range that can be used to retrieve data from a database in a certain range.
+  - : یک بازهٔ کلید (key range) تعریف می‌کند که می‌توان از آن برای بازیابی داده‌ها از یک پایگاه‌داده در بازه‌ای مشخص استفاده کرد.
 
-### Custom event interfaces
+### رابط‌های رویداد سفارشی
 
-This specification fires events with the following custom interface:
+این مشخصات رویدادهایی را با رابط سفارشی زیر ایجاد می‌کند:
 
 - {{domxref("IDBVersionChangeEvent")}}
-  - : The `IDBVersionChangeEvent` interface indicates that the version of the database has changed, as the result of an {{domxref("IDBOpenDBRequest.upgradeneeded_event", "IDBOpenDBRequest.onupgradeneeded")}} event handler function.
+  - : رابط `IDBVersionChangeEvent` نشان می‌دهد که نسخهٔ پایگاه‌داده در نتیجهٔ اجرای تابع مدیریت رویداد {{domxref("IDBOpenDBRequest.upgradeneeded_event", "IDBOpenDBRequest.onupgradeneeded")}} تغییر کرده است.
 
-## Examples
+## مثال‌ها
 
-- [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([view example live](https://mdn.github.io/dom-examples/to-do-notifications/)): The reference application for the examples in the reference docs.
+- [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([view example live](https://mdn.github.io/dom-examples/to-do-notifications/)): برنامهٔ مرجع برای مثال‌های موجود در مستندات مرجع.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## جستارهای وابسته
 
 - [Web Storage API](/en-US/docs/Web/API/Web_Storage_API)
 - [Window: localStorage property](/en-US/docs/Web/API/Window/localStorage)
