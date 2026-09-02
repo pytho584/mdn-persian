@@ -1,7 +1,5 @@
 ---
 title: "MutationEvent: attrName property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MutationEvent/attrName"
-status: "needs-translation"
 ---
 
 ---
@@ -17,13 +15,13 @@ browser-compat: api.MutationEvent.attrName
 
 {{APIRef("UI Events")}}{{Deprecated_Header}}{{non-standard_header}}
 
-The **`attrName`** read-only property of the {{domxref("MutationEvent")}} interface returns a string with the name of the node affected by the `DOMAttrModified` event. It has no meaning for other events and is then set to the empty string (`""`).
+ویژگی فقط‌خواندنی **`attrName`** در رابط {{domxref("MutationEvent")}} رشته‌ای را برمی‌گرداند که نام گرهٔ متأثر از رویداد `DOMAttrModified` را در بر دارد. این ویژگی برای سایر رویدادها معنایی ندارد و در آن صورت، مقدار آن به رشتهٔ خالی (`""`) تنظیم می‌شود.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```js
 element.addEventListener("DOMAttrModified", (event) => {
@@ -31,10 +29,10 @@ element.addEventListener("DOMAttrModified", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
