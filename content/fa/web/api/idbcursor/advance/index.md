@@ -1,11 +1,5 @@
 ---
 title: "IDBCursor: advance() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBCursor/advance"
-status: "needs-translation"
----
-
----
-title: "IDBCursor: advance() method"
 short-title: advance()
 slug: Web/API/IDBCursor/advance
 page-type: web-api-instance-method
@@ -14,9 +8,7 @@ browser-compat: api.IDBCursor.advance
 
 {{APIRef("IndexedDB")}} {{AvailableInWorkers}}
 
-The **`advance()`** method of the {{domxref("IDBCursor")}}
-interface sets the number of times a cursor should move
-its position forward.
+متد **`advance()`** از رابط {{domxref("IDBCursor")}} مشخص می‌کند که مکان‌نما چند بار باید به جلو حرکت کند.
 
 ## Syntax
 
@@ -27,34 +19,28 @@ advance(count)
 ### Parameters
 
 - `count`
-  - : The number of times to move the cursor forward.
+  - : تعداد دفعاتی که مکان‌نما باید به جلو حرکت کند.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
 ### Exceptions
 
-This method may raise a {{domxref("DOMException")}} of one of the following types:
+این متد ممکن است یک {{domxref("DOMException")}} از انواع زیر صادر کند:
 
 - `TransactionInactiveError` {{domxref("DOMException")}}
-  - : Thrown if this `IDBCursor`'s transaction is inactive.
+  - : اگر تراکنش این `IDBCursor` غیرفعال باشد، صادر می‌شود.
 - {{jsxref("TypeError")}}
-  - : Thrown if the value passed into the `count` parameter was zero or a negative number.
+  - : اگر مقدار ارسال‌شده به پارامتر `count` صفر یا عددی منفی باشد، صادر می‌شود.
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the cursor is currently being iterated or has iterated past its end.
+  - : اگر مکان‌نما در حال حاضر در حال پیمایش باشد یا از انتهای خود عبور کرده باشد، صادر می‌شود.
 
 ## Examples
 
-In this simple fragment we create a transaction, retrieve an object store, then use a
-cursor to iterate through the records in the object store. Here we use
-`cursor.advance(2)` to jump 2 places forward each time, meaning that only
-every other result will be displayed. `advance()` works in a similar way to
-{{domxref("IDBCursor.continue")}}, except that it allows you to jump multiple records at
-a time, not just always go onto the next record.
+در این قطعهٔ ساده، یک تراکنش ایجاد می‌کنیم، یک object store (مخزن اشیاء) دریافت می‌کنیم و سپس با استفاده از یک مکان‌نما، رکوردهای موجود در آن را پیمایش می‌کنیم. در اینجا از `cursor.advance(2)` استفاده می‌کنیم تا هر بار ۲ مرحله به جلو بپرد؛ یعنی فقط یکی در میان نتایج نمایش داده می‌شود. `advance()` به شکلی مشابه {{domxref("IDBCursor.continue")}} کار می‌کند، با این تفاوت که به شما اجازه می‌دهد چند رکورد را به‌یک‌باره رد کنید، نه اینکه فقط همیشه به رکورد بعدی بروید.
 
-Note that in each iteration of the loop, you can grab
-data from the current record under the cursor object using `cursor.value.foo`. For a complete working example, see our [IDBCursor example](https://github.com/mdn/dom-examples/tree/main/indexeddb-examples/idbcursor) ([View the example live](https://mdn.github.io/dom-examples/indexeddb-examples/idbcursor/)).
+توجه داشته باشید که در هر تکرار حلقه می‌توانید داده‌های رکورد جاری را با استفاده از `cursor.value.foo` از شیء مکان‌نما دریافت کنید. برای یک مثال کامل و قابل اجرا، به [مثال IDBCursor](https://github.com/mdn/dom-examples/tree/main/indexeddb-examples/idbcursor) مراجعه کنید ([مشاهدهٔ مثال زنده](https://mdn.github.io/dom-examples/indexeddb-examples/idbcursor/)).
 
 ```js
 function advanceResult() {
@@ -84,12 +70,12 @@ function advanceResult() {
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم محدودهٔ کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و تغییر داده‌های خود: {{domxref("IDBObjectStore")}}
+- استفاده از مکان‌نماها: {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهدهٔ مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
