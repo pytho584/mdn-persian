@@ -1,11 +1,5 @@
 ---
 title: "ManagedMediaSource: endstreaming event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ManagedMediaSource/endstreaming_event"
-status: "needs-translation"
----
-
----
-title: "ManagedMediaSource: endstreaming event"
 short-title: endstreaming
 slug: Web/API/ManagedMediaSource/endstreaming_event
 page-type: web-api-event
@@ -16,11 +10,11 @@ browser-compat: api.ManagedMediaSource.endstreaming_event
 
 {{APIRef("Media Source Extensions")}}{{AvailableInWorkers("window_and_dedicated")}}{{SeeCompatTable}}
 
-The **`endstreaming`** event of the {{domxref("ManagedMediaSource")}} interface is fired when the {{domxref("ManagedMediaSource.streaming", "streaming")}} property changes from `true` to `false`. This indicates that the user agent has enough data buffered to ensure uninterrupted playback, and the application can stop fetching new media segments.
+رویداد **`endstreaming`** از رابط {{domxref("ManagedMediaSource")}} زمانی شلیک می‌شود که ویژگی {{domxref("ManagedMediaSource.streaming", "streaming")}} از `true` به `false` تغییر کند. این نشان می‌دهد که عامل کاربر (user agent) دادهٔ کافی را بافر کرده تا پخش بدون وقفه تضمین شود و برنامه می‌تواند دریافت سگمنت‌های رسانه‌ای جدید را متوقف کند.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+نام رویداد را در متدهایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} به کار ببرید یا یک ویژگی مدیریت‌کنندهٔ رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("endstreaming", (event) => {});
@@ -28,15 +22,15 @@ addEventListener("endstreaming", (event) => {});
 onendstreaming = (event) => {};
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## مثال‌ها
 
-### Pausing fetches in response to endstreaming
+### توقف واکشی‌ها در واکنش به endstreaming
 
-This example creates a {{domxref("ManagedMediaSource")}}, attaches it to a {{htmlelement("video")}} element, and uses the `startstreaming` and `endstreaming` events to control when media segments are fetched.
+در این مثال یک {{domxref("ManagedMediaSource")}} ساخته می‌شود، به یک عنصر {{htmlelement("video")}} وصل می‌شود و از رویدادهای `startstreaming` و `endstreaming` برای کنترل زمان واکشی سگمنت‌های رسانه‌ای استفاده می‌شود.
 
 ```js
 const videoUrl =
@@ -75,17 +69,17 @@ if (ManagedMediaSource.isTypeSupported(mediaType)) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("ManagedMediaSource.startstreaming_event", "startstreaming")}} event
+- رویداد {{domxref("ManagedMediaSource.startstreaming_event", "startstreaming")}}
 - {{domxref("ManagedMediaSource.streaming")}}
 - {{domxref("ManagedMediaSource")}}
 - {{domxref("MediaSource")}}
