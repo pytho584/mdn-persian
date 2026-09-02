@@ -1,9 +1,6 @@
 ---
 title: "MessagePort: message event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MessagePort/message_event"
-status: "needs-translation"
 ---
-
 ---
 title: "MessagePort: message event"
 short-title: message
@@ -14,13 +11,13 @@ browser-compat: api.MessagePort.message_event
 
 {{APIRef("Channel Messaging API")}} {{AvailableInWorkers}}
 
-The **`message`** event is fired on a {{domxref('MessagePort')}} object when a message arrives on that channel.
+رویداد **`message`** بر روی یک شیء {{domxref('MessagePort')}} زمانی که یک پیام روی آن کانال می‌رسد، فعال می‌شود.
 
-This event is not cancellable and does not bubble.
+این رویداد قابل لغو نیست و منتشر نمی‌شود.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("message", (event) => { })
@@ -28,15 +25,15 @@ addEventListener("message", (event) => { })
 onmessage = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("MessageEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("MessageEvent")}}. از {{domxref("Event")}} ارث‌بری می‌کند.
 
 {{InheritanceDiagram("MessageEvent")}}
 
-## Examples
+## مثال‌ها
 
-Suppose a script creates a [`MessageChannel`](/en-US/docs/Web/API/MessageChannel) and sends one of the ports to a different browsing context, such as another [`<iframe>`](/en-US/docs/Web/HTML/Reference/Elements/iframe), using code like this:
+فرض کنید یک اسکریپت یک [`MessageChannel`](/en-US/docs/Web/API/MessageChannel) ایجاد می‌کند و یکی از پورت‌ها را به یک زمینه مرورگر متفاوت، مانند یک [`<iframe>`](/en-US/docs/Web/HTML/Reference/Elements/iframe) دیگر، با استفاده از کدی مانند زیر می‌فرستد:
 
 ```js
 const channel = new MessageChannel();
@@ -54,7 +51,7 @@ channelMessageButton.addEventListener("click", () => {
 targetFrame.postMessage("init", targetOrigin, [channel.port2]);
 ```
 
-The target can receive the port and start listening for messages and message errors on it using code like this:
+هدف می‌تواند پورت را دریافت کرده و با استفاده از کدی مانند زیر شروع به گوش دادن به پیام‌ها و خطاهای پیام روی آن کند:
 
 ```js
 window.addEventListener("message", (event) => {
@@ -72,7 +69,7 @@ window.addEventListener("message", (event) => {
 });
 ```
 
-Note that the listener must call [`MessagePort.start()`](/en-US/docs/Web/API/MessagePort/start) before any messages will be delivered to this port. This is only needed when using the [`addEventListener()`](/en-US/docs/Web/API/EventTarget/addEventListener) method: if the receiver uses `onmessage` instead, `start()` is called implicitly:
+توجه داشته باشید که شنونده باید قبل از تحویل هر پیام به این پورت، [`MessagePort.start()`](/en-US/docs/Web/API/MessagePort/start) را فراخوانی کند. این فقط زمانی لازم است که از روش [`addEventListener()`](/en-US/docs/Web/API/EventTarget/addEventListener) استفاده می‌شود: اگر گیرنده به جای آن از `onmessage` استفاده کند، `start()` به طور ضمنی فراخوانی می‌شود:
 
 ```js
 window.addEventListener("message", (event) => {
@@ -88,15 +85,15 @@ window.addEventListener("message", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- Related events: [`messageerror`](/en-US/docs/Web/API/MessagePort/messageerror_event).
-- [Using channel messaging](/en-US/docs/Web/API/Channel_Messaging_API/Using_channel_messaging)
+- رویدادهای مرتبط: [`messageerror`](/en-US/docs/Web/API/MessagePort/messageerror_event).
+- [استفاده از پیام‌رسانی کانال (Using channel messaging)](/en-US/docs/Web/API/Channel_Messaging_API/Using_channel_messaging)
