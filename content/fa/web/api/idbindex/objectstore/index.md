@@ -1,11 +1,5 @@
 ---
 title: "IDBIndex: objectStore property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/objectStore"
-status: "needs-translation"
----
-
----
-title: "IDBIndex: objectStore property"
 short-title: objectStore
 slug: Web/API/IDBIndex/objectStore
 page-type: web-api-instance-property
@@ -14,31 +8,23 @@ browser-compat: api.IDBIndex.objectStore
 
 {{ APIRef("IndexedDB") }} {{AvailableInWorkers}}
 
-The **`objectStore`** property of the {{domxref("IDBIndex")}}
-interface returns the object store referenced by the current index.
+ویژگی **`objectStore`** از رابط {{domxref("IDBIndex")}}، فروشگاه شیء (object store) ارجاع‌داده‌شده توسط ایندکس فعلی را بازمی‌گرداند.
 
-## Value
+## مقدار
 
-An {{ domxref("IDBObjectStore") }}.
+یک {{domxref("IDBObjectStore")}}.
 
-## Examples
+## مثال‌ها
 
-In the following example we open a transaction and an object store, then get the
-index `lName` from a simple contacts database. We then open a basic cursor on
-the index using {{domxref("IDBIndex.openCursor")}}. This works the same as opening a
-cursor directly on an `ObjectStore` using
-{{domxref("IDBObjectStore.openCursor")}} except that the returned records are sorted
-based on the index, not the primary key.
+در مثال زیر، یک تراکنش و یک فروشگاه شیء باز می‌کنیم، سپس ایندکس `lName` را از یک پایگاه داده ساده مخاطبین دریافت می‌کنیم. سپس با استفاده از {{domxref("IDBIndex.openCursor")}} یک مکان‌نما (cursor) پایه روی ایندکس باز می‌کنیم. این کار همانند باز کردن مستقیم یک مکان‌نما روی یک `ObjectStore` با استفاده از {{domxref("IDBObjectStore.openCursor")}} عمل می‌کند، با این تفاوت که رکوردهای بازگشتی بر اساس ایندکس مرتب می‌شوند، نه بر اساس کلید اصلی.
 
-The current object store is logged to the console: it should be returned something like
-this:
+فروشگاه شیء جاری در کنسول ثبت می‌شود: باید چیزی شبیه به این بازگردانده شود:
 
 ```plain
 IDBObjectStore { name: "contactsList", keyPath: "id", indexNames: DOMStringList[7], transaction: IDBTransaction, autoIncrement: false }
 ```
 
-Finally, we iterate through each record, and insert the data into an HTML table. For a
-complete working example, see our [IndexedDB-examples demo repo](https://github.com/mdn/dom-examples/tree/main/indexeddb-examples/idbindex) ([View the example live](https://mdn.github.io/dom-examples/indexeddb-examples/idbindex/)).
+در نهایت، در هر رکورد پیمایش می‌کنیم و داده‌ها را در یک جدول HTML درج می‌کنیم. برای یک مثال کامل و عملی، به [مخزن دموی IndexedDB-examples](https://github.com/mdn/dom-examples/tree/main/indexeddb-examples/idbindex) مراجعه کنید ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/indexeddb-examples/idbindex/)).
 
 ```js
 function displayDataByIndex() {
@@ -77,20 +63,20 @@ function displayDataByIndex() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم یک بازه از کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و ایجاد تغییرات در داده‌های خود: {{domxref("IDBObjectStore")}}
+- استفاده از مکان‌نماها: {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
