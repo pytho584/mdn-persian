@@ -1,11 +1,5 @@
 ---
 title: "MathMLElement: blur() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MathMLElement/blur"
-status: "needs-translation"
----
-
----
-title: "MathMLElement: blur() method"
 short-title: blur()
 slug: Web/API/MathMLElement/blur
 page-type: web-api-instance-method
@@ -14,25 +8,25 @@ browser-compat: api.MathMLElement.blur
 
 {{APIRef("MathML")}}
 
-The **`blur()`** method of the {{domxref("MathMLElement")}} interface removes keyboard focus from the current MathML element.
+متد **`blur()`** از رابط {{domxref("MathMLElement")}}، فوکوس صفحه‌کلید را از عنصر MathML جاری حذف می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 blur()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-### Remove focus from a MathML element
+### حذف فوکوس از یک عنصر MathML
 
 #### HTML
 
@@ -44,8 +38,8 @@ None ({{jsxref("undefined")}}).
       <mn>2</mn>
     </msup>
   </math>
-  <button id="focusButton">Focus the Math</button>
-  <button id="blurButton">Blur the Math</button>
+  <button id="focusButton">فوکوس روی Math</button>
+  <button id="blurButton">حذف فوکوس از Math</button>
 </div>
 ```
 
@@ -56,30 +50,30 @@ const mathElement = document.getElementById("myMath");
 const focusButton = document.getElementById("focusButton");
 const blurButton = document.getElementById("blurButton");
 
-// Focus the MathMLElement when the "Focus" button is clicked
+// فوکوس روی MathMLElement هنگام کلیک روی دکمه "Focus"
 focusButton.addEventListener("click", () => {
   mathElement.focus();
 });
 
-// Blur the MathMLElement when the "Blur" button is clicked
+// حذف فوکوس از MathMLElement هنگام کلیک روی دکمه "Blur"
 blurButton.addEventListener("click", () => {
   mathElement.blur();
 });
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("blur",100,100)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("MathMLElement.focus()")}}
 - {{domxref("HTMLElement.blur()")}}
