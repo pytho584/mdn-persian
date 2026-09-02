@@ -1,11 +1,5 @@
 ---
 title: "MediaTrackConstraints: volume property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/volume"
-status: "needs-translation"
----
-
----
-title: "MediaTrackConstraints: volume property"
 short-title: volume
 slug: Web/API/MediaTrackConstraints/volume
 page-type: web-api-instance-property
@@ -17,44 +11,30 @@ browser-compat: api.MediaStreamTrack.applyConstraints.volume_constraint
 
 {{APIRef("Media Capture and Streams")}}{{Deprecated_Header}}{{Non-standard_Header}}
 
-The {{domxref("MediaTrackConstraints")}} dictionary's
-**`volume`** property is a [`ConstrainDouble`](/en-US/docs/Web/API/MediaTrackConstraints#constraindouble)
-describing the requested or mandatory constraints placed upon the value of the
-{{domxref("MediaTrackSettings.volume", "volume")}} constrainable property.
+ویژگی **`volume`** در دیکشنری {{domxref("MediaTrackConstraints")}} یک [`ConstrainDouble`](/en-US/docs/Web/API/MediaTrackConstraints#constraindouble) است که محدودیت‌های درخواستی یا اجباری اعمال‌شده بر مقدار ویژگی محدودپذیر {{domxref("MediaTrackSettings.volume", "volume")}} را توصیف می‌کند.
 
-If needed, you can determine whether or not this constraint is supported by checking
-the value of {{domxref("MediaTrackSupportedConstraints.volume")}} as returned by a call
-to {{domxref("MediaDevices.getSupportedConstraints()")}}. However, typically this is
-unnecessary since browsers will ignore any constraints they're unfamiliar with.
+در صورت نیاز، می‌توانید با بررسی مقدار {{domxref("MediaTrackSupportedConstraints.volume")}} که توسط فراخوانی {{domxref("MediaDevices.getSupportedConstraints()")}} بازگردانده می‌شود، تشخیص دهید که آیا این محدودیت پشتیبانی می‌شود یا خیر. با این حال، معمولاً این کار ضروری نیست؛ زیرا مرورگرها هر محدودیتی را که با آن آشنا نباشند نادیده می‌گیرند.
 
-## Value
+## مقدار
 
-A [`ConstrainDouble`](/en-US/docs/Web/API/MediaTrackConstraints#constraindouble) describing the acceptable or required value(s) for an
-audio track's volume, on a linear scale where 0.0 means silence and 1.0 is the highest
-supported volume.
+یک [`ConstrainDouble`](/en-US/docs/Web/API/MediaTrackConstraints#constraindouble) که مقدار(های) قابل‌قبول یا الزامی برای بلندی صدای یک تراک صوتی را توصیف می‌کند؛ بر روی یک مقیاس خطی که در آن 0.0 به معنای سکوت و 1.0 بالاترین بلندی صدای پشتیبانی‌شده است.
 
-If this value is a number, the user agent will attempt to obtain media whose volume is
-as close as possible to this number given the capabilities of the hardware and the other
-constraints specified. Otherwise, the value of this [`ConstrainDouble`](/en-US/docs/Web/API/MediaTrackConstraints#constraindouble) will
-guide the user agent in its efforts to provide an exact match to the required volume (if
-`exact` is specified or both `min` and `max` are
-provided and have the same value) or to a best-possible value.
+اگر این مقدار یک عدد باشد، عامل کاربر تلاش می‌کند رسانه‌ای را به‌دست آورد که بلندی صدای آن، با توجه به قابلیت‌های سخت‌افزار و سایر محدودیت‌های مشخص‌شده، تا حد امکان به این عدد نزدیک باشد. در غیر این صورت، مقدار این [`ConstrainDouble`](/en-US/docs/Web/API/MediaTrackConstraints#constraindouble) عامل کاربر را در تلاش برای ایجاد تطابق دقیق با بلندی صدای موردنیاز (اگر `exact` مشخص شده باشد یا هر دو `min` و `max` ارائه شده و مقدار یکسانی داشته باشند) یا برای رسیدن به بهترین مقدار ممکن هدایت می‌کند.
 
-Any constraint set which only permits values outside the range 0.0 to 1.0 cannot be
-satisfied and will result in failure.
+هر مجموعه محدودیتی که فقط مقادیر خارج از بازه 0.0 تا 1.0 را مجاز بداند، قابل برآورده شدن نیست و به شکست منجر می‌شود.
 
-## Examples
+## مثال‌ها
 
-See the [Constraint exerciser](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#example_constraint_exerciser) example.
+مثال [Constraint exerciser](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#example_constraint_exerciser) را ببینید.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
-- [Capabilities, constraints, and settings](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints)
+- [قابلیت‌ها، محدودیت‌ها و تنظیمات](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints)
 - {{domxref("MediaTrackConstraints")}}
 - {{domxref("MediaDevices.getSupportedConstraints()")}}
 - {{domxref("MediaTrackSupportedConstraints")}}
