@@ -1,7 +1,5 @@
 ---
 title: "IdentityCredential: isAutoSelected property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IdentityCredential/isAutoSelected"
-status: "needs-translation"
 ---
 
 ---
@@ -16,19 +14,19 @@ browser-compat: api.IdentityCredential.isAutoSelected
 
 {{securecontext_header}}{{APIRef("FedCM API")}}{{SeeCompatTable}}
 
-The **`isAutoSelected`** read-only property of the {{domxref("IdentityCredential")}} interface indicates whether the federated sign-in flow was carried out using [auto-reauthentication](/en-US/docs/Web/API/FedCM_API/RP_sign-in#auto-reauthentication) (i.e., without user mediation) or not.
+ویژگی فقط‌خواندنی **`isAutoSelected`** در رابط {{domxref("IdentityCredential")}} نشان می‌دهد که آیا جریان ورود فدرال با استفاده از [احراز هویت مجدد خودکار](/en-US/docs/Web/API/FedCM_API/RP_sign-in#auto-reauthentication) (یعنی بدون دخالت کاربر) انجام شده است یا خیر.
 
-Automatic reauthentication can occur when a {{domxref("CredentialsContainer.get", "navigator.credentials.get()")}} call is issued with a [`mediation`](/en-US/docs/Web/API/CredentialsContainer/get#mediation) option value of `"optional"` or `"silent"`. It is useful for a {{glossary("Relying party", "relying party")}} (RP) to know whether auto reauthentication occurred for analytics/performance evaluation and for UX purposes — automatic sign-in may warrant a different UI flow to non-automatic sign-in.
+احراز هویت مجدد خودکار می‌تواند زمانی رخ دهد که فراخوانی {{domxref("CredentialsContainer.get", "navigator.credentials.get()")}} با مقدار `"optional"` یا `"silent"` برای گزینه [`mediation`](/en-US/docs/Web/API/CredentialsContainer/get#mediation) صادر شود. برای یک {{glossary("Relying party", "relying party")}} (RP) مفید است که بداند آیا احراز هویت مجدد خودکار رخ داده است؛ هم برای ارزیابی تحلیل‌ها و عملکرد و هم برای اهداف تجربه کاربری (UX). ورود خودکار ممکن است به جریان رابط کاربری متفاوتی نسبت به ورود غیرخودکار نیاز داشته باشد.
 
-## Value
+## مقدار
 
-A boolean value. `true` indicates that automatic reauthentication was used; `false` indicates that it was not.
+یک مقدار بولی. `true` نشان می‌دهد که احراز هویت مجدد خودکار استفاده شده است؛ `false` نشان می‌دهد که استفاده نشده است.
 
-## Examples
+## مثال‌ها
 
-### Basic federated sign-in and `isAutoSelected` access
+### ورود فدرال پایه و دسترسی به `isAutoSelected`
 
-RPs can call `navigator.credentials.get()` with the `identity` option to make a request for users to sign in to the RP via an {{glossary("Identity provider", "IdP")}}, using identity federation. Auto-reauthentication behavior is controlled by the [`mediation`](/en-US/docs/Web/API/CredentialsContainer/get#mediation) option in the `get()` call:
+طرف‌های متکی (RP) می‌توانند با فراخوانی `navigator.credentials.get()` و ارسال گزینه `identity`، درخواست ورود کاربران به RP را از طریق یک {{glossary("Identity provider", "IdP")}} و با استفاده از فدراسیون هویت انجام دهند. رفتار احراز هویت مجدد خودکار با گزینه [`mediation`](/en-US/docs/Web/API/CredentialsContainer/get#mediation) در فراخوانی `get()` کنترل می‌شود:
 
 ```js
 async function signIn() {
@@ -49,18 +47,18 @@ async function signIn() {
 }
 ```
 
-A successful {{domxref("CredentialsContainer.get", "navigator.credentials.get()")}} call that includes an `identity` option fulfills with an `IdentityCredential` instance, which can be used to access the `isAutoSelected` property: this will equal `true` if auto-reauthentication occurred.
+یک فراخوانی موفق {{domxref("CredentialsContainer.get", "navigator.credentials.get()")}} که شامل گزینه `identity` باشد، با یک نمونه `IdentityCredential` تکمیل (resolve) می‌شود. می‌توان از این نمونه برای دسترسی به ویژگی `isAutoSelected` استفاده کرد: اگر احراز هویت مجدد خودکار رخ داده باشد، این ویژگی برابر `true` خواهد بود.
 
-Check out [Federated Credential Management API (FedCM)](/en-US/docs/Web/API/FedCM_API) for more details on how this works. This call will start off the sign-in flow described in [FedCM sign-in flow](/en-US/docs/Web/API/FedCM_API/RP_sign-in#fedcm_sign-in_flow).
+برای جزئیات بیشتر درباره نحوه کار این سازوکار، [Federated Credential Management API (FedCM)](/en-US/docs/Web/API/FedCM_API) را ببینید. این فراخوانی، جریان ورود به سامانه را که در [جریان ورود FedCM](/en-US/docs/Web/API/FedCM_API/RP_sign-in#fedcm_sign-in_flow) شرح داده شده است، آغاز می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Federated Credential Management API](https://developer.chrome.com/docs/identity/fedcm/overview)
