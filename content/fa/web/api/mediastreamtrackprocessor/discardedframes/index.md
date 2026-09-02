@@ -1,11 +1,5 @@
 ---
 title: "MediaStreamTrackProcessor: discardedFrames property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrackProcessor/discardedFrames"
-status: "needs-translation"
----
-
----
-title: "MediaStreamTrackProcessor: discardedFrames property"
 short-title: discardedFrames
 slug: Web/API/MediaStreamTrackProcessor/discardedFrames
 page-type: web-api-instance-property
@@ -16,15 +10,15 @@ browser-compat: api.MediaStreamTrackProcessor.discardedFrames
 
 {{APIRef("Insertable Streams for MediaStreamTrack API")}}{{SeeCompatTable}}
 
-The **`discardedFrames`** property of the {{domxref("MediaStreamTrackProcessor")}} interface returns a number indicating how many frames have been dropped by the processor.
+ویژگی **`discardedFrames`** در رابط {{domxref("MediaStreamTrackProcessor")}} عددی را برمیگرداند که نشان میدهد چند فریم توسط پردازنده حذف شده است.
 
-## Value
+## مقدار
 
-A number.
+یک عدد.
 
-## Examples
+## مثالها
 
-### Basic usage
+### استفاده پایه
 
 ```js
 async function init() {
@@ -57,14 +51,14 @@ async function init() {
 document.querySelector("button").addEventListener("click", init);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("MediaStreamTrackProcessor.totalFrames")}}
