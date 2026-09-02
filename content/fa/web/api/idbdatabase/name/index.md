@@ -1,11 +1,5 @@
 ---
 title: "IDBDatabase: name property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase/name"
-status: "needs-translation"
----
-
----
-title: "IDBDatabase: name property"
 short-title: name
 slug: Web/API/IDBDatabase/name
 page-type: web-api-instance-property
@@ -14,21 +8,15 @@ browser-compat: api.IDBDatabase.name
 
 {{ APIRef("IndexedDB") }} {{AvailableInWorkers}}
 
-The **`name`** read-only property of the
-`IDBDatabase` interface is a string that contains the
-name of the connected database.
+ویژگی فقط‌خواندنیِ **`name`** از رابط `IDBDatabase` رشته‌ای است که نام پایگاه‌داده‌ی متصل را نگه می‌دارد.
 
-## Value
+## مقدار
 
-A string containing the name of the connected database.
+رشته‌ای شامل نام پایگاه‌داده‌ی متصل.
 
-## Examples
+## مثال‌ها
 
-This example shows a database connection being opened, the resulting
-{{domxref("IDBDatabase")}} object being stored in a db variable, and the name property
-then being logged. For a full example, see our
-[To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications)
-app ([view example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+این مثال نشان می‌دهد که چگونه یک اتصال به پایگاه‌داده باز می‌شود، آبجکت {{domxref("IDBDatabase")}} حاصل در متغیر `db` ذخیره می‌گردد و سپس ویژگی `name` در کنسول ثبت می‌شود. برای مثال کامل، برنامه‌ی [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) را ببینید ([مشاهده‌ی نسخه‌ی زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
 
 ```js
 // Let us open our database
@@ -53,20 +41,20 @@ DBOpenRequest.onsuccess = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم محدوده‌ای از کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و ایجاد تغییرات در داده‌ها: {{domxref("IDBObjectStore")}}
+- استفاده از نشانگرها: {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهده‌ی مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
