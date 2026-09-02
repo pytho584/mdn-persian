@@ -1,11 +1,5 @@
 ---
 title: "MutationRecord: target property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MutationRecord/target"
-status: "needs-translation"
----
-
----
-title: "MutationRecord: target property"
 short-title: target
 slug: Web/API/MutationRecord/target
 page-type: web-api-instance-property
@@ -14,23 +8,23 @@ browser-compat: api.MutationRecord.target
 
 {{APIRef("DOM")}}
 
-The {{domxref("MutationRecord")}} read-only property **`target`** is the target (i.e., the mutated/changed node) of a mutation observed with a {{domxref("MutationObserver")}}.
+ویژگی فقطخواندنی **`target`** در {{domxref("MutationRecord")}}، هدف (یعنی گرهٔ تغییرکرده/تغییریافته) در تغییری است که با یک {{domxref("MutationObserver")}} مشاهده شده است.
 
-## Value
+## مقدار
 
-The {{domxref("Node")}} that the mutation affected.
+این مقدار، همان {{domxref("Node")}}ای است که تغییر روی آن رخ داده است.
 
-- If the record's {{domxref("MutationRecord.type", "type")}} is `attributes`, this is the {{domxref("Element")}} whose attributes changed.
-- If the record's {{domxref("MutationRecord.type", "type")}} is `characterData`, this is the {{domxref("CharacterData")}} node.
-- If the record's {{domxref("MutationRecord.type", "type")}} is `childList`, this is the {{domxref("Node")}} whose children changed.
+- اگر {{domxref("MutationRecord.type", "type")}} رکورد برابر `attributes` باشد، این مقدار همان {{domxref("Element")}}ای است که ویژگی‌هایش (attributes) تغییر کرده است.
+- اگر {{domxref("MutationRecord.type", "type")}} رکورد برابر `characterData` باشد، این مقدار گرهٔ {{domxref("CharacterData")}} است.
+- اگر {{domxref("MutationRecord.type", "type")}} رکورد برابر `childList` باشد، این مقدار همان {{domxref("Node")}}ای است که فرزندانش تغییر کرده‌اند.
 
-## Examples
+## مثال‌ها
 
 ### Logging the target of a mutation
 
-In the following example, there are two divs: a red div (`#red-div`) and a blue div (`#blue-div`), inside a container div `#container`. A {{domxref("MutationObserver")}} is created to observe the container. The observer is observing changes to the childlist, and also has `subtree: true` so it will observe changes to the children of the container's children.
+در مثال زیر دو div داریم: یک div قرمز (`#red-div`) و یک div آبی (`#blue-div`) که داخل یک div کانتینر با شناسهٔ `#container` قرار گرفته‌اند. یک {{domxref("MutationObserver")}} ساخته می‌شود تا روی کانتینر نظارت کند. این observer تغییرات childList را زیر نظر دارد و همچنین دارای `subtree: true` است؛ بنابراین تغییرات فرزندانِ فرزندانِ کانتینر را نیز مشاهده می‌کند.
 
-The observer callback logs the `target` of the mutation record. When we add nodes to the `#red-div` or the `#blue-div`, the `target` will be the `#red-div` or the `#blue-div`, respectively.
+تابع callback این observer، مقدار `target` را در رکورد تغییر ثبت می‌کند. وقتی به `#red-div` یا `#blue-div` گره اضافه کنیم، `target` به‌ترتیب برابر با `#red-div` یا `#blue-div` خواهد بود.
 
 #### HTML
 
@@ -108,14 +102,14 @@ const observer = new MutationObserver(logMutationTarget);
 observer.observe(container, { childList: true, subtree: true });
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Logging the target of a mutation", "", 200)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
