@@ -1,11 +1,5 @@
 ---
 title: "IdentityCredentialError: url property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IdentityCredentialError/url"
-status: "needs-translation"
----
-
----
-title: "IdentityCredentialError: url property"
 short-title: url
 slug: Web/API/IdentityCredentialError/url
 page-type: web-api-instance-property
@@ -16,13 +10,13 @@ browser-compat: api.IdentityCredentialError.url
 
 {{APIRef("FedCM API")}}{{AvailableInWorkers}}{{SeeCompatTable}}
 
-The **`url`** read-only property of the {{domxref("IdentityCredentialError")}} interface is the URL pointing to human-readable information about the error to display to users, such as how to fix the error or contact customer service.
+خاصیت فقط-خواندنی **`url`** از رابط {{domxref("IdentityCredentialError")}}، نشانی اینترنتی (URL) است که به اطلاعات قابل‌فهم برای انسان درباره خطا اشاره می‌کند تا به کاربران نمایش داده شود، مانند نحوه رفع خطا یا تماس با پشتیبانی مشتریان.
 
-## Value
+## مقدار
 
-A string indicating the URL for more information about the error.
+یک رشته (string) که نشانی اینترنتی برای اطلاعات بیشتر درباره خطا را نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
 ```js
 try {
@@ -42,15 +36,15 @@ try {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("CredentialsContainer.get()")}}
-- [ID assertion error responses](/en-US/docs/Web/API/FedCM_API/IDP_integration#id_assertion_error_responses)
+- [پاسخ‌های خطای تأیید هویت (ID assertion error responses)](/en-US/docs/Web/API/FedCM_API/IDP_integration#id_assertion_error_responses)
