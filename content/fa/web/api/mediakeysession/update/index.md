@@ -1,11 +1,5 @@
 ---
 title: "MediaKeySession: update() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaKeySession/update"
-status: "needs-translation"
----
-
----
-title: "MediaKeySession: update() method"
 short-title: update()
 slug: Web/API/MediaKeySession/update
 page-type: web-api-instance-method
@@ -14,27 +8,27 @@ browser-compat: api.MediaKeySession.update
 
 {{APIRef("Encrypted Media Extensions")}}{{SecureContext_Header}}
 
-The `update()` method of the {{domxref('MediaKeySession')}} interface loads messages and licenses to the CDM, and then returns a {{jsxref('Promise')}}.
+متد `update()` در رابط {{domxref('MediaKeySession')}} پیام‌ها و مجوزها را به CDM بارگذاری می‌کند و سپس یک {{jsxref('Promise')}} برمی‌گرداند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 update(response)
 ```
 
-### Parameters
+### پارامترها
 
 - `response`
-  - : An instance that is either an {{jsxref("ArrayBuffer")}}, a {{jsxref("TypedArray")}}, or a {{jsxref("DataView")}}.
+  - : نمونه‌ای که یا یک {{jsxref("ArrayBuffer")}}، یک {{jsxref("TypedArray")}}، یا یک {{jsxref("DataView")}} است.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref('Promise')}} that resolves to `undefined`.
+یک {{jsxref('Promise')}} که به `undefined` برطرف می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
