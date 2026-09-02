@@ -1,11 +1,5 @@
 ---
 title: "Using the Media Capabilities API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Media_Capabilities_API/Using_the_Media_Capabilities_API"
-status: "needs-translation"
----
-
----
-title: Using the Media Capabilities API
 slug: Web/API/Media_Capabilities_API/Using_the_Media_Capabilities_API
 page-type: guide
 browser-compat: api.MediaCapabilities
@@ -13,36 +7,36 @@ browser-compat: api.MediaCapabilities
 
 {{DefaultAPISidebar("Media Capabilities API")}}
 
-The [Media Capabilities API](/en-US/docs/Web/API/Media_Capabilities_API) enables you to query the browser to determine its ability to encode or decode media given a specified set of encoding parameters. These parameters may include the codecs, resolutions, bit rates, frame rates, and other such details.
+[API قابلیت‌های رسانه](/en-US/docs/Web/API/Media_Capabilities_API) به شما امکان می‌دهد از مرورگر بپرسید که آیا می‌تواند رسانه را با مجموعه‌ای مشخص از پارامترهای کدگذاری رمزگشایی یا رمزگذاری کند. این پارامترها می‌توانند شامل کدک‌ها، وضوح تصویر، نرخ بیت، نرخ فریم و جزئیات مشابه باشند.
 
-With the Media Capabilities API, you can determine not just whether the browser can support a given format, but whether or not it can do so efficiently and smoothly. In short, this API replaces—and improves upon—the {{domxref("MediaSource")}} method {{domxref("MediaSource/isTypeSupported_static", "isTypeSupported()")}} or the {{domxref("HTMLMediaElement")}} method {{domxref("HTMLMediaElement.canPlayType","canPlayType()")}}.
+با API قابلیت‌های رسانه، نه تنها می‌توانید تعیین کنید که آیا مرورگر از یک قالب خاص پشتیبانی می‌کند، بلکه می‌توانید بفهمید که آیا این کار را به‌طور کارآمد و روان انجام می‌دهد. به طور خلاصه، این API جایگزین و بهبود یافته‌ای برای متد {{domxref("MediaSource.isTypeSupported_static", "isTypeSupported()")}} در {{domxref("MediaSource")}} یا متد {{domxref("HTMLMediaElement.canPlayType","canPlayType()")}} در {{domxref("HTMLMediaElement")}} است.
 
-## The MediaCapabilities interface
+## رابط MediaCapabilities
 
-The {{domxref("MediaCapabilities")}} is available using the {{domxref("Navigator.mediaCapabilities", "mediaCapabilities")}} property which is provided by both the `navigator` object and the {{domxref("WorkerNavigator")}} object; in other words, the Media Capabilities API is available both on the main thread and from workers.
+رابط {{domxref("MediaCapabilities")}} از طریق ویژگی {{domxref("Navigator.mediaCapabilities", "mediaCapabilities")}} در دسترس است که هم در شیء `navigator` و هم در شیء {{domxref("WorkerNavigator")}} تعریف شده است؛ به عبارت دیگر، API قابلیت‌های رسانه هم در نخ اصلی و هم در workerها در دسترس است.
 
-If the object exists, Media Capabilities API is available. You can, therefore, test for the presence of the API like so:
+اگر این شیء وجود داشته باشد، API قابلیت‌های رسانه در دسترس است. بنابراین می‌توانید وجود API را به این صورت بررسی کنید:
 
 ```js
 if ("mediaCapabilities" in navigator) {
-  // mediaCapabilities is available
+  // mediaCapabilities در دسترس است
 } else {
-  // mediaCapabilities IS NOT available
+  // mediaCapabilities در دسترس نیست
 }
 ```
 
-Taking video as an example, to obtain information about video decoding abilities, you create a video decoding configuration which you pass as a parameter to {{domxref("MediaCapabilities.decodingInfo()")}} method. This returns a promise that fulfills with information about the media capabilities as to whether the video can be decoded, and whether decoding will be smooth and power efficient. You can also test audio decoding as well as video and audio encoding.
+برای مثال، برای به‌دست آوردن اطلاعات درباره قابلیت‌های رمزگشایی ویدئو، یک پیکربندی رمزگشایی ویدئو ایجاد می‌کنید و آن را به عنوان پارامتر به متد {{domxref("MediaCapabilities.decodingInfo()")}} می‌دهید. این متد یک promise برمی‌گرداند که با اطلاعاتی درباره قابلیت‌های رسانه، از جمله اینکه آیا ویدئو قابل رمزگشایی است و آیا رمزگشایی روان و کم‌مصرف خواهد بود، تکمیل می‌شود. همچنین می‌توانید رمزگشایی صدا و رمزگذاری ویدئو و صدا را آزمایش کنید.
 
-### Creating a video decoding configuration
+### ایجاد یک پیکربندی رمزگشایی ویدئو
 
-The {{domxref("MediaCapabilities.decodingInfo()")}} method takes as a parameter a media decoding configuration.
+متد {{domxref("MediaCapabilities.decodingInfo()")}} یک پیکربندی رمزگشایی رسانه را به عنوان پارامتر می‌گیرد.
 
-In our example, we are testing the decoding capabilities of a video configuration. The configuration requires the type of media being tested — e.g., a plain `file` or {{domxref("MediaSource")}} — and a video configuration object that includes values for the `contentType`, `width`, `height`, `bitrate`, and `framerate`:
+در مثال ما، قابلیت‌های رمزگشایی یک پیکربندی ویدئو را آزمایش می‌کنیم. این پیکربندی به نوع رسانه‌ای که آزمایش می‌شود (مثلاً یک `file` ساده یا {{domxref("MediaSource")}}) و یک شیء پیکربندی ویدئو نیاز دارد که شامل مقادیر `contentType`، `width`، `height`، `bitrate` و `framerate` باشد:
 
-- The `contentType` must be a string specifying a [valid video MIME type](/en-US/docs/Web/Media/Guides/Formats/Video_codecs).
-- The `width` and `height` are the horizontal and vertical dimensions of the video; these are also used to determine the {{glossary("aspect ratio")}}.
-- The `bitrate` is the number of bits used to encode one second of video.
-- The `framerate` is the number of frames which are played per second of time when playing the video.
+- `contentType` باید یک رشته باشد که یک [نوع MIME ویدئوی معتبر](/en-US/docs/Web/Media/Guides/Formats/Video_codecs) را مشخص کند.
+- `width` و `height` ابعاد افقی و عمودی ویدئو هستند؛ همچنین برای تعیین {{glossary("aspect ratio")}} (نسبت تصویر) استفاده می‌شوند.
+- `bitrate` تعداد بیت‌هایی است که برای رمزگذاری یک ثانیه از ویدئو استفاده می‌شود.
+- `framerate` تعداد فریم‌هایی است که در هر ثانیه هنگام پخش ویدئو نمایش داده می‌شود.
 
 ```js
 const videoConfiguration = {
@@ -57,7 +51,7 @@ const videoConfiguration = {
 };
 ```
 
-Had we been querying the decodability of an audio file, we would create an audio configuration including the number of channels and sample rate, leaving out the properties that apply only to video—namely, the dimensions and the frame rate:
+اگر قابلیت رمزگشایی یک فایل صوتی را بررسی می‌کردیم، یک پیکربندی صوتی شامل تعداد کانال‌ها و نرخ نمونه‌برداری ایجاد می‌کردیم و ویژگی‌هایی که فقط به ویدئو مربوط می‌شوند (یعنی ابعاد و نرخ فریم) را حذف می‌کردیم:
 
 ```js
 const audioConfiguration = {
@@ -71,23 +65,21 @@ const audioConfiguration = {
 };
 ```
 
-Had we been testing encoding capabilities, we would have created a slightly different configuration.
-In this case the type of media being tested is either `record` (for recording media, i.e., a {{domxref("MediaRecorder")}} object) or `transmission` (for media transmitted over electronic means like [`RTCPeerConnection`](/en-US/docs/Web/API/RTCPeerConnection)) — plus either an audio or video configuration as described above.
+اگر قابلیت‌های رمزگذاری را آزمایش می‌کردیم، یک پیکربندی کمی متفاوت ایجاد می‌کردیم. در این حالت، نوع رسانه‌ای که آزمایش می‌شود یا `record` (برای ضبط رسانه، یعنی شیء {{domxref("MediaRecorder")}}) است یا `transmission` (برای رسانه‌ای که از طریق وسایل الکترونیکی مانند [`RTCPeerConnection`](/en-US/docs/Web/API/RTCPeerConnection) منتقل می‌شود) — به علاوه یک پیکربندی صوتی یا ویدئویی همانطور که در بالا توضیح داده شد.
 
-### Querying the browser about decoding abilities
+### پرس‌وجو از مرورگر درباره قابلیت‌های رمزگشایی
 
-Now that we've created a video decoding configuration we can pass it as a parameter of the {{domxref("MediaCapabilities.decodingInfo", "decodingInfo()")}} method to determine if a video matching this configuration would be decodable and if the playback would be smooth and power efficient.
+حالا که یک پیکربندی رمزگشایی ویدئو ایجاد کرده‌ایم، می‌توانیم آن را به عنوان پارامتر متد {{domxref("MediaCapabilities.decodingInfo", "decodingInfo()")}} ارسال کنیم تا مشخص شود آیا ویدئویی با این پیکربندی قابل رمزگشایی است و آیا پخش آن روان و کم‌مصرف خواهد بود.
 
 ```js
 let promise = navigator.mediaCapabilities.decodingInfo(videoConfiguration);
 ```
 
-The `decodingInfo()` and {{domxref("MediaCapabilities.encodingInfo", "encodingInfo()")}} methods both return promises.
-Once the promise states are fulfilled, you can access the `supported`, `smooth`, and `powerEfficient` properties from the returned object.
+متدهای `decodingInfo()` و {{domxref("MediaCapabilities.encodingInfo", "encodingInfo()")}} هر دو promise برمی‌گردانند. پس از تکمیل شدن state promise، می‌توانید به ویژگی‌های `supported`، `smooth` و `powerEfficient` از شیء برگشتی دسترسی پیدا کنید.
 
-### Handling the response
+### مدیریت پاسخ
 
-Instead of the assigning the promise to a variable, we can output the values returned by the promise to the console:
+به جای نسبت دادن promise به یک متغیر، می‌توانیم مقادیر برگشتی promise را در کنسول چاپ کنیم:
 
 ```js
 navigator.mediaCapabilities.decodingInfo(videoConfiguration).then((result) => {
@@ -99,14 +91,14 @@ navigator.mediaCapabilities.decodingInfo(videoConfiguration).then((result) => {
 });
 ```
 
-## Handling errors
+## مدیریت خطاها
 
-In our video decoding example, a {{jsxref("TypeError")}} would be raised if the media configuration passed to the {{domxref("MediaCapabilities.decodingInfo", "decodingInfo()")}} method was invalid. There are a few reasons why an error might occur, including:
+در مثال رمزگشایی ویدئوی ما، اگر پیکربندی رسانه‌ای که به متد {{domxref("MediaCapabilities.decodingInfo", "decodingInfo()")}} ارسال شده نامعتبر باشد، یک {{jsxref("TypeError")}} پرتاب می‌شود. دلایل مختلفی برای بروز خطا وجود دارد، از جمله:
 
-- The specified `type` isn't one of the two permitted values: `file` or `media-source`
-- The `contentType` given is
+- `type` مشخص‌شده یکی از دو مقدار مجاز (`file` یا `media-source`) نباشد.
+- `contentType` داده‌شده یک نوع MIME کدک معتبر نباشد.
 
-The error can be due to the `type` not being one of the two possible values, the `contentType` not being a valid codec MIME type, or invalid or omitted definitions being omitted from the video configuration object.
+خطا می‌تواند به دلیل `type` نبودن یکی از دو مقدار ممکن، `contentType` نبودن یک نوع MIME کدک معتبر، یا تعریف‌های نامعتبر یا حذف‌شده در شیء پیکربندی ویدئو رخ دهد.
 
 ```js
 navigator.mediaCapabilities
@@ -115,7 +107,7 @@ navigator.mediaCapabilities
   .catch((error) => console.error(`It failed: ${error}`));
 ```
 
-## Media Capabilities live example
+## مثال زنده قابلیت‌های رسانه
 
 ### CSS
 
@@ -242,14 +234,14 @@ let mc = {
 document.getElementById("try-it").addEventListener("click", mc.tryIt);
 ```
 
-### Live Result
+### نتیجه زنده
 
 {{EmbedLiveSample('Media_Capabilities_live_example', '100%', '400')}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("navigator.mediaCapabilities")}}
