@@ -1,10 +1,4 @@
 ---
-title: "KeyboardLayoutMap"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/KeyboardLayoutMap"
-status: "needs-translation"
----
-
----
 title: KeyboardLayoutMap
 slug: Web/API/KeyboardLayoutMap
 page-type: web-api-interface
@@ -15,37 +9,37 @@ browser-compat: api.KeyboardLayoutMap
 
 {{SeeCompatTable}}{{APIRef("Keyboard API")}}
 
-The **`KeyboardLayoutMap`** interface of the {{domxref("Keyboard API", "", "", "nocode")}} is a read-only object with functions for retrieving the string associated with specific physical keys.
+رابط **`KeyboardLayoutMap`** از {{domxref("Keyboard API", "", "", "nocode")}} یک شیء فقط‌خواندنی است که توابعی برای بازیابی رشته مرتبط با کلیدهای فیزیکی مشخص ارائه می‌دهد.
 
-A `KeyboardLayoutMap` instance is a read-only [`Map`-like object](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map#map-like_browser_apis), in which each key is a string identifying the unique physical key on the keyboard (a "key code"), and the corresponding value is the associated key attribute value (which may be affected by the keyboard layout, and so on).
+یک نمونه `KeyboardLayoutMap` یک [شیء شبیه `Map`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map#map-like_browser_apis) فقط‌خواندنی است که در آن هر کلید یک رشته است که کلید فیزیکی یکتا روی صفحه‌کلید را مشخص می‌کند ("کد کلید")، و مقدار متناظر آن، مقدار ویژگی کلید مرتبط است (که ممکن است تحت تأثیر چیدمان صفحه‌کلید و غیره قرار گیرد).
 
-A list of valid keys is found in the [UI Events KeyboardEvent code Values](https://w3c.github.io/uievents-code/) specification.
+لیست کلیدهای معتبر در مشخصات [UI Events KeyboardEvent code Values](https://w3c.github.io/uievents-code/) موجود است.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref('KeyboardLayoutMap.size')}} {{ReadOnlyInline}} {{experimental_inline}}
-  - : Returns the number of elements in the `KeyboardLayoutMap` object.
+  - : تعداد عناصر موجود در شیء `KeyboardLayoutMap` را برمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
 - `KeyboardLayoutMap[Symbol.iterator]()` {{experimental_inline}}
-  - : Returns a new [Iterator](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator) object that contains the key/value pairs.
+  - : یک شیء [Iterator](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator) جدید برمی‌گرداند که شامل جفت‌های کلید/مقدار است.
 - {{domxref('KeyboardLayoutMap.entries()')}} {{experimental_inline}}
-  - : Returns a new [Iterator](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator) object that contains the key/value pairs.
+  - : یک شیء [Iterator](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator) جدید برمی‌گرداند که شامل جفت‌های کلید/مقدار است.
 - {{domxref('KeyboardLayoutMap.forEach()')}} {{experimental_inline}}
-  - : Executes a provided function once for each element of `KeyboardLayoutMap`.
+  - : یک تابع ارائه‌شده را یک بار برای هر عنصر از `KeyboardLayoutMap` اجرا می‌کند.
 - {{domxref('KeyboardLayoutMap.get()')}} {{experimental_inline}}
-  - : Returns the element with the given key from the `KeyboardLayoutMap` object.
+  - : عنصر با کلید داده‌شده را از شیء `KeyboardLayoutMap` برمی‌گرداند.
 - {{domxref('KeyboardLayoutMap.has()')}} {{experimental_inline}}
-  - : Returns a boolean indicating whether the `KeyboardLayoutMap` object has an element with the specified key.
+  - : یک مقدار بولی برمی‌گرداند که نشان می‌دهد آیا شیء `KeyboardLayoutMap` دارای عنصری با کلید مشخص‌شده است یا خیر.
 - {{domxref('KeyboardLayoutMap.keys()')}} {{experimental_inline}}
-  - : Returns a new [Iterator](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator) object that contains the keys for each index in the `KeyboardLayoutMap` object.
+  - : یک شیء [Iterator](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator) جدید برمی‌گرداند که شامل کلیدهای هر شاخص در شیء `KeyboardLayoutMap` است.
 - {{domxref('KeyboardLayoutMap.values()')}} {{experimental_inline}}
-  - : Returns a new [Iterator](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator) object that contains the values for each index in the `KeyboardLayoutMap` object.
+  - : یک شیء [Iterator](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator) جدید برمی‌گرداند که شامل مقادیر هر شاخص در شیء `KeyboardLayoutMap` است.
 
-## Examples
+## مثال‌ها
 
-The following example demonstrates how to get the location- or layout-specific string associated with the keyboard code that corresponds to the 'W' key on an English QWERTY keyboard.
+مثال زیر نحوه به‌دست‌آوردن رشته مخصوص مکان یا چیدمان مرتبط با کد صفحه‌کلید مربوط به کلید 'W' در یک صفحه‌کلید انگلیسی QWERTY را نشان می‌دهد.
 
 ```js
 navigator.keyboard.getLayoutMap().then((keyboardLayoutMap) => {
@@ -54,10 +48,10 @@ navigator.keyboard.getLayoutMap().then((keyboardLayoutMap) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
