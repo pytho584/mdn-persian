@@ -1,11 +1,5 @@
 ---
 title: "HTMLTextAreaElement: placeholder property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTextAreaElement/placeholder"
-status: "needs-translation"
----
-
----
-title: "HTMLTextAreaElement: placeholder property"
 short-title: placeholder
 slug: Web/API/HTMLTextAreaElement/placeholder
 page-type: web-api-instance-property
@@ -14,28 +8,28 @@ browser-compat: api.HTMLTextAreaElement.placeholder
 
 {{ APIRef("HTML DOM") }}
 
-The **`placeholder`** property of the {{DOMxRef("HTMLTextAreaElement")}} interface represents a hint to the user of what can be entered in the control. It reflects the {{htmlelement("textarea")}} element's [`placeholder`](/en-US/docs/Web/HTML/Reference/Elements/textarea#placeholder) attribute.
+ویژگی **`placeholder`** در رابط {{DOMxRef("HTMLTextAreaElement")}} یک راهنمای کوتاه به کاربر دربارهٔ محتوایی است که میتوان در کنترل وارد کرد. این ویژگی منعکسکنندهٔ صفت [`placeholder`](/en-US/docs/Web/HTML/Reference/Elements/textarea#placeholder) عنصر {{htmlelement("textarea")}} است.
 
-## Value
+## مقدار
 
-A string.
+یک رشته (string).
 
-## Examples
+## مثال
 
 ```js
 const textareaElement = document.getElementById("comment");
 console.log(textArea.placeholder);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{HTMLElement("textarea")}}
 - {{DOMXref("HTMLTextAreaElement.value")}}
