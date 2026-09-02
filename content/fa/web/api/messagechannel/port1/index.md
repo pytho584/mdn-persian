@@ -1,11 +1,5 @@
 ---
 title: "MessageChannel: port1 property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MessageChannel/port1"
-status: "needs-translation"
----
-
----
-title: "MessageChannel: port1 property"
 short-title: port1
 slug: Web/API/MessageChannel/port1
 page-type: web-api-instance-property
@@ -14,25 +8,15 @@ browser-compat: api.MessageChannel.port1
 
 {{APIRef("Channel Messaging API")}} {{AvailableInWorkers}}
 
-The **`port1`** read-only property of the
-{{domxref("MessageChannel")}} interface returns the first port of the message channel —
-the port attached to the context that originated the channel.
+ویژگی فقط-خواندنی **`port1`** از رابط {{domxref("MessageChannel")}}، اولین پورت کانال پیام را برمی‌گرداند — پورتی که به زمینه‌ای که کانال را ایجاد کرده متصل است.
 
 ## Value
 
-A {{domxref("MessagePort")}} object, the first port of the channel, that is the port
-attached to the context that originated the channel.
+یک شیء {{domxref("MessagePort")}}، اولین پورت کانال، که پورت متصل به زمینهٔ ایجادکنندهٔ کانال است.
 
 ## Examples
 
-In the following code block, you can see a new channel being created using the
-{{domxref("MessageChannel.MessageChannel", "MessageChannel()")}} constructor. When the
-{{HTMLElement("iframe")}} has loaded, we pass {{domxref("MessageChannel.port2", "port2")}} to the
-{{HTMLElement("iframe")}} using {{domxref("MessagePort.postMessage")}} along with a
-message. The `handleMessage` handler then responds to a message being sent
-back from the `<iframe>` (using {{domxref("MessagePort.message_event", "onmessage")}}),
-putting it into a paragraph. The `handleMessage` method is associated to the
-`port1` to listen when the message arrives.
+در بلوک کد زیر، می‌توانید ببینید که یک کانال جدید با استفاده از سازندهٔ {{domxref("MessageChannel.MessageChannel", "MessageChannel()")}} ایجاد می‌شود. پس از بارگذاری {{HTMLElement("iframe")}}، ما {{domxref("MessageChannel.port2", "port2")}} را به همراه یک پیام به {{HTMLElement("iframe")}} با استفاده از {{domxref("MessagePort.postMessage")}} ارسال می‌کنیم. سپس کنترل‌کنندهٔ `handleMessage` به پیامی که از `<iframe>` برگردانده می‌شود پاسخ می‌دهد (با استفاده از {{domxref("MessagePort.message_event", "onmessage")}}) و آن را در یک پاراگراف قرار می‌دهد. متد `handleMessage` به `port1` متصل می‌شود تا هنگام رسیدن پیام گوش دهد.
 
 ```js
 const channel = new MessageChannel();
@@ -63,4 +47,4 @@ function handleMessage(e) {
 
 ## See also
 
-- [Using channel messaging](/en-US/docs/Web/API/Channel_Messaging_API/Using_channel_messaging)
+- [استفاده از پیام‌رسانی کانال](/en-US/docs/Web/API/Channel_Messaging_API/Using_channel_messaging)
