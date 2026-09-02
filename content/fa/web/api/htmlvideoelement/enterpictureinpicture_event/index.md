@@ -1,7 +1,6 @@
+```
 ---
 title: "HTMLVideoElement: enterpictureinpicture event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLVideoElement/enterpictureinpicture_event"
-status: "needs-translation"
 ---
 
 ---
@@ -14,13 +13,13 @@ browser-compat: api.HTMLVideoElement.enterpictureinpicture_event
 
 {{APIRef("Picture-in-Picture API")}}
 
-The `enterpictureinpicture` event is fired when the {{DOMxRef("HTMLVideoElement")}} enters picture-in-picture mode successfully.
+رویداد `enterpictureinpicture` زمانی فعال می‌شود که {{DOMxRef("HTMLVideoElement")}} با موفقیت وارد حالت تصویر-در-تصویر شود.
 
-This event is not cancelable and does not bubble.
+این رویداد قابل لغو (cancelable) نیست و bubble نمی‌شود.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("enterpictureinpicture", (event) => { })
@@ -28,17 +27,17 @@ addEventListener("enterpictureinpicture", (event) => { })
 onenterpictureinpicture = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("PictureInPictureEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("PictureInPictureEvent")}}. از {{domxref("Event")}} به ارث می‌برد.
 
 {{InheritanceDiagram("PictureInPictureEvent")}}
 
-## Examples
+## مثال‌ها
 
-These examples add an event listener for the HTMLVideoElement's `enterpictureinpicture` event, then post a message when that event handler has reacted to the event firing.
+این مثال‌ها یک شنونده رویداد برای رویداد `enterpictureinpicture` عنصر HTMLVideoElement اضافه می‌کنند و سپس هنگامی که آن کنترل‌کننده رویداد به فعال شدن رویداد واکنش نشان داد، یک پیام ارسال می‌کنند.
 
-Using `addEventListener()`:
+با استفاده از `addEventListener()`:
 
 ```js
 const video = document.querySelector("#video");
@@ -55,7 +54,7 @@ button.onclick = () => {
 };
 ```
 
-Using the `onenterpictureinpicture` event handler property:
+با استفاده از ویژگی کنترل‌کننده رویداد `onenterpictureinpicture`:
 
 ```js
 const video = document.querySelector("#video");
@@ -72,15 +71,16 @@ button.onclick = () => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLVideoElement")}}
 - [Picture-in-Picture API](/en-US/docs/Web/API/Picture-in-Picture_API)
+```
