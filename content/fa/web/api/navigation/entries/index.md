@@ -1,11 +1,5 @@
 ---
 title: "Navigation: entries() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigation/entries"
-status: "needs-translation"
----
-
----
-title: "Navigation: entries() method"
 short-title: entries()
 slug: Web/API/Navigation/entries
 page-type: web-api-instance-method
@@ -14,38 +8,37 @@ browser-compat: api.Navigation.entries
 
 {{APIRef("Navigation API")}}
 
-The **`entries()`** method of the
-{{domxref("Navigation")}} interface returns an array of {{domxref("NavigationHistoryEntry")}} objects representing all existing history entries.
+متد **`entries()`** از رابط {{domxref("Navigation")}} آرایه‌ای از آبجکت‌های {{domxref("NavigationHistoryEntry")}} برمی‌گرداند که نمایانگر تمام ورودی‌های موجود در تاریخچه هستند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 entries()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-An array of {{domxref("NavigationHistoryEntry")}} objects.
+آرایه‌ای از آبجکت‌های {{domxref("NavigationHistoryEntry")}}.
 
-### Exceptions
+### استثناها
 
-None.
+هیچ.
 
-## Examples
+## مثال‌ها
 
-### Return the number of entries in the history
+### برگرداندن تعداد ورودی‌های تاریخچه
 
 ```js
 let numOfEntries = navigation.entries().length - 1;
 ```
 
-### A smart back button
+### یک دکمه بازگشت هوشمند
 
-A page-supplied "back" button can take you back, even after reload, by inspecting the previous history entries:
+یک دکمه «بازگشت» که در صفحه قرار داده شده باشد، می‌تواند با بررسی ورودی‌های قبلی تاریخچه، شما را حتی پس از بارگذاری مجدد صفحه به عقب بازگرداند:
 
 ```js
 backButtonEl.addEventListener("click", () => {
@@ -62,15 +55,15 @@ backButtonEl.addEventListener("click", () => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
 - [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
