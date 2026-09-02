@@ -1,11 +1,5 @@
 ---
 title: "NavigateEvent: destination property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigateEvent/destination"
-status: "needs-translation"
----
-
----
-title: "NavigateEvent: destination property"
 short-title: destination
 slug: Web/API/NavigateEvent/destination
 page-type: web-api-instance-property
@@ -14,14 +8,13 @@ browser-compat: api.NavigateEvent.destination
 
 {{APIRef("Navigation API")}}
 
-The **`destination`** read-only property of the
-{{domxref("NavigateEvent")}} interface returns a {{domxref("NavigationDestination")}} object representing the destination being navigated to.
+ویژگی فقط‌خواندنی **`destination`** در رابط {{domxref("NavigateEvent")}} یک شیء {{domxref("NavigationDestination")}} برمی‌گرداند که مقصد مورد نظر برای ناوبری را نشان می‌دهد.
 
-## Value
+## مقدار
 
-A {{domxref("NavigationDestination")}} object.
+یک شیء {{domxref("NavigationDestination")}}.
 
-## Examples
+## مثال‌ها
 
 ```js
 navigation.addEventListener("navigate", (event) => {
@@ -49,15 +42,15 @@ navigation.addEventListener("navigate", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
-- [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
+- [مسیریابی مدرن سمت کلاینت: رابط برنامه‌نویسی Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
+- [توضیح Navigation API](https://github.com/WICG/navigation-api/blob/main/README.md)
