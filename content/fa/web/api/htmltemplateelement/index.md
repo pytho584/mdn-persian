@@ -1,10 +1,4 @@
 ---
-title: "HTMLTemplateElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTemplateElement"
-status: "needs-translation"
----
-
----
 title: HTMLTemplateElement
 slug: Web/API/HTMLTemplateElement
 page-type: web-api-interface
@@ -13,42 +7,42 @@ browser-compat: api.HTMLTemplateElement
 
 {{APIRef("Web Components")}}
 
-The **`HTMLTemplateElement`** interface enables access to the contents of an HTML {{HTMLElement("template")}} element.
+رابط **`HTMLTemplateElement`** امکان دسترسی به محتویات یک عنصر HTML {{HTMLElement("template")}} را فراهم می‌کند.
 
 > [!NOTE]
-> An HTML parser can create either an `HTMLTemplateElement` or a {{domxref("ShadowRoot")}} when it parses a {{HTMLElement("template")}} element, depending on the `<template>` attributes.
-> If an `HTMLTemplateElement` is created the "shadow" attributes are reflected from the template.
-> However these are not useful, because an `HTMLTemplateElement` is not a shadow root and cannot subsequently be changed to a shadow root.
+> یک تجزیه‌کنندهٔ HTML هنگام تجزیهٔ یک عنصر {{HTMLElement("template")}} بسته به ویژگی‌های `<template>` می‌تواند یا یک `HTMLTemplateElement` یا یک {{domxref("ShadowRoot")}} بسازد.
+> اگر یک `HTMLTemplateElement` ساخته شود، ویژگی‌های «shadow» از روی الگو بازتاب می‌شوند.
+> با این حال، این ویژگی‌ها کاربردی ندارند، زیرا یک `HTMLTemplateElement` یک ریشهٔ سایه (shadow root) نیست و بعداً نمی‌توان آن را به ریشهٔ سایه تبدیل کرد.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface inherits the properties of {{domxref("HTMLElement")}}._
+_این رابط، ویژگی‌های {{domxref("HTMLElement")}} را به ارث می‌برد._
 
 - {{domxref("HTMLTemplateElement.content", "content")}} {{ReadOnlyInline}}
-  - : A read-only {{domxref("DocumentFragment")}} which contains the DOM subtree representing the {{HTMLElement("template")}} element's template contents.
+  - : یک {{domxref("DocumentFragment")}} فقط‌خواندنی که شامل زیردرخت DOM نمایانگر محتویات الگوی عنصر {{HTMLElement("template")}} است.
 - {{domxref("HTMLTemplateElement.shadowRootMode", "shadowRootMode")}}
-  - : A string that reflects the value of the [`shadowrootmode`](/en-US/docs/Web/HTML/Reference/Elements/template#shadowrootmode) attribute of the associated `<template>` element.
+  - : رشته‌ای که مقدار ویژگی [`shadowrootmode`](/en-US/docs/Web/HTML/Reference/Elements/template#shadowrootmode) در عنصر `<template>` مرتبط را بازتاب می‌دهد.
 - {{domxref("HTMLTemplateElement.shadowRootDelegatesFocus", "shadowRootDelegatesFocus")}}
-  - : A boolean that reflects the value of the [`shadowrootdelegatesfocus`](/en-US/docs/Web/HTML/Reference/Elements/template#shadowrootdelegatesfocus) attribute of the associated `<template>` element.
+  - : یک بولی که مقدار ویژگی [`shadowrootdelegatesfocus`](/en-US/docs/Web/HTML/Reference/Elements/template#shadowrootdelegatesfocus) در عنصر `<template>` مرتبط را بازتاب می‌دهد.
 - {{domxref("HTMLTemplateElement.shadowRootClonable", "shadowRootClonable")}}
-  - : A boolean that reflects the value of the [`shadowrootclonable`](/en-US/docs/Web/HTML/Reference/Elements/template#shadowrootclonable) attribute of the associated `<template>` element.
+  - : یک بولی که مقدار ویژگی [`shadowrootclonable`](/en-US/docs/Web/HTML/Reference/Elements/template#shadowrootclonable) در عنصر `<template>` مرتبط را بازتاب می‌دهد.
 - {{domxref("HTMLTemplateElement.shadowRootCustomElementRegistry", "shadowRootCustomElementRegistry")}}
-  - : A string that reflects the value of the [`shadowrootcustomelementregistry`](/en-US/docs/Web/HTML/Reference/Elements/template#shadowrootcustomelementregistry) attribute of the associated `<template>` element, indicating that the declarative shadow root will use a scoped {{domxref("CustomElementRegistry")}}.
+  - : رشته‌ای که مقدار ویژگی [`shadowrootcustomelementregistry`](/en-US/docs/Web/HTML/Reference/Elements/template#shadowrootcustomelementregistry) در عنصر `<template>` مرتبط را بازتاب می‌دهد و نشان می‌دهد که ریشهٔ سایهٔ اعلانی (declarative shadow root) از یک {{domxref("CustomElementRegistry")}} محدودشده (scoped) استفاده خواهد کرد.
 - {{domxref("HTMLTemplateElement.shadowRootSerializable", "shadowRootSerializable")}}
-  - : A boolean that reflects the value of the [`shadowrootserializable`](/en-US/docs/Web/HTML/Reference/Elements/template#shadowrootserializable) attribute of the associated `<template>` element.
+  - : یک بولی که مقدار ویژگی [`shadowrootserializable`](/en-US/docs/Web/HTML/Reference/Elements/template#shadowrootserializable) در عنصر `<template>` مرتبط را بازتاب می‌دهد.
 - {{domxref("HTMLTemplateElement.shadowRootSlotAssignment", "shadowRootSlotAssignment")}}
-  - : A string that reflects the value of the [`shadowrootslotassignment`](/en-US/docs/Web/HTML/Reference/Elements/template#shadowrootslotassignment) attribute of the associated `<template>` element.
+  - : رشته‌ای که مقدار ویژگی [`shadowrootslotassignment`](/en-US/docs/Web/HTML/Reference/Elements/template#shadowrootslotassignment) در عنصر `<template>` مرتبط را بازتاب می‌دهد.
 
-## Instance methods
+## متدهای نمونه
 
-_This interface inherits the methods of {{domxref("HTMLElement")}}._
+_این رابط، متدهای {{domxref("HTMLElement")}} را به ارث می‌برد._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
