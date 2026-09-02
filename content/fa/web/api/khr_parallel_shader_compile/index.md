@@ -1,11 +1,5 @@
 ---
 title: "KHR_parallel_shader_compile extension"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/KHR_parallel_shader_compile"
-status: "needs-translation"
----
-
----
-title: KHR_parallel_shader_compile extension
 short-title: KHR_parallel_shader_compile
 slug: Web/API/KHR_parallel_shader_compile
 page-type: webgl-extension
@@ -14,24 +8,24 @@ browser-compat: api.KHR_parallel_shader_compile
 
 {{APIRef("WebGL")}}
 
-The **`KHR_parallel_shader_compile`** extension is part of the [WebGL API](/en-US/docs/Web/API/WebGL_API) and enables a non-blocking poll operation, so that compile/link status availability (`COMPLETION_STATUS_KHR`) can be queried without potentially incurring stalls. In other words you can check the status of your shaders compiling without blocking the runtime.
+افزونه **`KHR_parallel_shader_compile`** بخشی از [WebGL API](/en-US/docs/Web/API/WebGL_API) است و عملیات نظرسنجی (poll) غیرمسدودکننده را امکان‌پذیر می‌سازد، به طوری که می‌توان وضعیت در دسترس بودن کامپایل/لینک (`COMPLETION_STATUS_KHR`) را بدون ایجاد توقف (stall) پرس‌وجو کرد. به عبارت دیگر، می‌توانید وضعیت کامپایل شدن شیدرهای خود را بدون مسدود کردن زمان اجرا بررسی کنید.
 
-WebGL extensions are available using the {{domxref("WebGLRenderingContext.getExtension()")}} method. For more information, see also [Using Extensions](/en-US/docs/Web/API/WebGL_API/Using_Extensions) in the [WebGL tutorial](/en-US/docs/Web/API/WebGL_API/Tutorial).
+افزونه‌های WebGL با استفاده از متد {{domxref("WebGLRenderingContext.getExtension()")}} در دسترس هستند. برای اطلاعات بیشتر، به بخش [Using Extensions](/en-US/docs/Web/API/WebGL_API/Using_Extensions) در [WebGL tutorial](/en-US/docs/Web/API/WebGL_API/Tutorial) مراجعه کنید.
 
-## Constants
+## ثابت‌ها
 
 - `ext.COMPLETION_STATUS_KHR`
-  - : A GLenum.
+  - : یک GLenum.
 
-## Examples
+## مثال‌ها
 
-Enable the extension:
+فعال‌سازی افزونه:
 
 ```js
 const ext = gl.getExtension("KHR_parallel_shader_compile");
 ```
 
-In general, best practice with or without the extension is:
+به طور کلی، بهترین روش با یا بدون افزونه به صورت زیر است:
 
 ```js
 // Assuming lists of `shaders` and `programs`:
@@ -39,7 +33,7 @@ for (const x of shaders) gl.compileShader(x); // Never check compile status unle
 for (const x of programs) gl.linkProgram(x);
 ```
 
-With the extension, apps would be able to poll whether programs have linked without janking, but these are likely to take the same total wall time to link:
+با این افزونه، برنامه‌ها می‌توانند بدون ایجاد لرزش (jank) بررسی کنند که آیا برنامه‌ها لینک شده‌اند یا خیر، اما احتمالاً همان زمان کل دیوار (wall time) برای لینک شدن نیاز دارند:
 
 ```js
 // Generator yielding a progress ratio [0.0, 1.0].
@@ -62,14 +56,14 @@ function* linkingProgress(programs) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("WebGLRenderingContext.getExtension()")}}
