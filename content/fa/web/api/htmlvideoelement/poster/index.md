@@ -1,11 +1,5 @@
 ---
 title: "HTMLVideoElement: poster property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLVideoElement/poster"
-status: "needs-translation"
----
-
----
-title: "HTMLVideoElement: poster property"
 short-title: poster
 slug: Web/API/HTMLVideoElement/poster
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.HTMLVideoElement.poster
 
 {{APIRef("HTML DOM")}}
 
-The **`poster`** property of the {{domxref("HTMLVideoElement")}} interface is a string that reflects the URL for an image to be shown while no video data is available. If the property does not represent a valid URL, no poster frame will be shown.
+ویژگی **`poster`** در رابط {{domxref("HTMLVideoElement")}} رشته‌ای است که نشانی اینترنتی (URL) تصویری را بازتاب می‌دهد که هنگام نبودِ داده ویدیویی نمایش داده می‌شود. اگر این ویژگی نشانی اینترنتی معتبری را نشان ندهد، هیچ فریم پوستری (poster frame) نمایش داده نخواهد شد.
 
-It reflects the `poster` attribute of the {{HTMLElement("video")}} element.
+این ویژگی، مشخصه (attribute) `poster` عنصر {{HTMLElement("video")}} را بازتاب می‌دهد.
 
-## Value
+## مقدار
 
-A string.
+یک رشته (string).
 
-## Examples
+## مثال‌ها
 
 ```html
 <video
@@ -36,10 +30,10 @@ const el = document.getElementById("media");
 console.log(el.poster); // Output: "https://example.com/poster.jpg"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
