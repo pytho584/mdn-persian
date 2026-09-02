@@ -1,11 +1,5 @@
 ---
 title: "Navigation: transition property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigation/transition"
-status: "needs-translation"
----
-
----
-title: "Navigation: transition property"
 short-title: transition
 slug: Web/API/Navigation/transition
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.Navigation.transition
 
 {{APIRef("Navigation API")}}
 
-The **`transition`** read-only property of the {{domxref("Navigation")}} interface returns a {{domxref("NavigationTransition")}} object representing the status of an in-progress navigation, which can be used to track it.
+خاصیت فقط‌خواندنی **`transition`** در رابط {{domxref("Navigation")}} یک شیء {{domxref("NavigationTransition")}} برمی‌گرداند که وضعیت یک ناوبری در حال انجام را نشان می‌دهد و می‌توان از آن برای پیگیری آن استفاده کرد.
 
-`Navigation.transition` is only populated while the [`intercept()`](/en-US/docs/Web/API/NavigateEvent/intercept) handler is unresolved (i.e., during a [navigation interception](/en-US/docs/Web/API/Navigation/navigate_event#handling_a_navigation_using_intercept)), and is otherwise `null`.
+`Navigation.transition` فقط زمانی مقداردهی می‌شود که کنترل‌کننده [`intercept()`](/en-US/docs/Web/API/NavigateEvent/intercept) هنوز برطرف نشده باشد (یعنی در طول [رهگیری ناوبری](/en-US/docs/Web/API/Navigation/navigate_event#handling_a_navigation_using_intercept))، و در غیر این صورت `null` است.
 
-## Value
+## مقدار
 
-A {{domxref("NavigationTransition")}} object, or `null` if no navigation is currently in progress.
+یک شیء {{domxref("NavigationTransition")}}، یا `null` اگر در حال حاضر ناوبری در جریان نباشد.
 
-## Examples
+## مثال‌ها
 
 ```js
 async function handleTransition() {
@@ -34,15 +28,15 @@ async function handleTransition() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
-- [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
+- [روتینگ مدرن سمت کلاینت: Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
+- [توضیح Navigation API](https://github.com/WICG/navigation-api/blob/main/README.md)
