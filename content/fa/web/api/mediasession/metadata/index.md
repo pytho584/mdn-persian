@@ -1,11 +1,5 @@
 ---
 title: "MediaSession: metadata property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaSession/metadata"
-status: "needs-translation"
----
-
----
-title: "MediaSession: metadata property"
 short-title: metadata
 slug: Web/API/MediaSession/metadata
 page-type: web-api-instance-property
@@ -14,21 +8,15 @@ browser-compat: api.MediaSession.metadata
 
 {{APIRef("Media Session API")}}
 
-The **`metadata`** property of the {{domxref("MediaSession")}}
-interface contains a {{domxref("MediaMetadata")}} object providing descriptive
-information about the currently playing media, or `null` if the metadata has
-not been set. This metadata is provided by the browser to the device for presentation in
-any standard media control user interface the device might offer.
+ویژگی **`metadata`** در رابط {{domxref("MediaSession")}} شامل یک شیء {{domxref("MediaMetadata")}} است که اطلاعات توصیفی دربارهٔ رسانهٔ در حال پخش را فراهم می‌کند، یا اگر فراداده تنظیم نشده باشد، مقدار `null` دارد. این فراداده توسط مرورگر به دستگاه ارسال می‌شود تا در هر رابط کاربری استاندارد کنترل رسانه که دستگاه ارائه می‌دهد نمایش داده شود.
 
-## Value
+## مقدار
 
-An instance of {{domxref("MediaMetadata")}} containing information about the media
-currently being played.
+یک نمونه از {{domxref("MediaMetadata")}} که حاوی اطلاعات مربوط به رسانهٔ در حال پخش است.
 
-## Example
+## مثال
 
-The following example checks for compatibility and creates a new media session with the
-relevant metadata:
+مثال زیر بررسی سازگاری می‌کند و یک نشست رسانه‌ای جدید با فرادادهٔ مرتبط ایجاد می‌نماید:
 
 ```js
 if ("mediaSession" in navigator) {
@@ -72,10 +60,10 @@ if ("mediaSession" in navigator) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
