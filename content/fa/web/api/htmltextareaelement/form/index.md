@@ -1,11 +1,5 @@
 ---
 title: "HTMLTextAreaElement: form property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTextAreaElement/form"
-status: "needs-translation"
----
-
----
-title: "HTMLTextAreaElement: form property"
 short-title: form
 slug: Web/API/HTMLTextAreaElement/form
 page-type: web-api-instance-property
@@ -14,24 +8,24 @@ browser-compat: api.HTMLTextAreaElement.form
 
 {{APIRef("HTML DOM")}}
 
-The **`form`** read-only property of the {{domxref("HTMLTextAreaElement")}} interface returns an {{domxref("HTMLFormElement")}} object that owns this {{htmlelement("textarea")}}, or `null` if this textarea is not owned by any form.
+خاصیت فقط خواندنی **`form`** از رابط {{domxref("HTMLTextAreaElement")}} یک شی {{domxref("HTMLFormElement")}} را برمی‌گرداند که مالک این {{htmlelement("textarea")}} است، یا اگر این textarea به هیچ فرمی تعلق نداشته باشد، `null` را برمی‌گرداند.
 
-## Value
+## مقدار
 
-An {{domxref("HTMLFormElement")}} or `null`.
+یک {{domxref("HTMLFormElement")}} یا `null`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("HTMLTextAreaElement")}}
 - {{domxref("HTMLFormElement")}}
 - {{HTMLElement("textarea")}}
-- HTML [`form`](/en-US/docs/Web/HTML/Reference/Attributes/form) attribute
-- [HTML forms guide](/en-US/docs/Learn_web_development/Extensions/Forms)
+- ویژگی HTML [`form`](/en-US/docs/Web/HTML/Reference/Attributes/form)
+- [راهنمای فرم‌های HTML](/en-US/docs/Learn_web_development/Extensions/Forms)
