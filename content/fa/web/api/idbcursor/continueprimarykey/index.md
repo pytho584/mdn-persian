@@ -1,11 +1,5 @@
 ---
 title: "IDBCursor: continuePrimaryKey() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBCursor/continuePrimaryKey"
-status: "needs-translation"
----
-
----
-title: "IDBCursor: continuePrimaryKey() method"
 short-title: continuePrimaryKey()
 slug: Web/API/IDBCursor/continuePrimaryKey
 page-type: web-api-instance-method
@@ -14,59 +8,50 @@ browser-compat: api.IDBCursor.continuePrimaryKey
 
 {{APIRef("IndexedDB")}} {{AvailableInWorkers}}
 
-The **`continuePrimaryKey()`** method of the
-{{domxref("IDBCursor")}} interface advances the cursor to the item whose key
-matches the key parameter as well as whose primary key matches the primary key
-parameter.
+روش **`continuePrimaryKey()`** از رابط {{domxref("IDBCursor")}} نشانگر را به آیتمی می‌برد که کلید آن با پارامتر کلید و همچنین کلید اصلی آن با پارامتر کلید اصلی مطابقت دارد.
 
-A typical use case, is to resume the iteration where a previous cursor has been closed,
-without having to compare the keys one by one.
+یک مورد استفاده معمول، از سرگیری تکرار از جایی است که نشانگر قبلی بسته شده است، بدون نیاز به مقایسه کلیدها یکی یکی.
 
-Calling this method more than once before new cursor data has been loaded - for
-example, calling `continuePrimaryKey()` twice from the same onsuccess handler
-\- results in an `InvalidStateError` being thrown on the second call because
-the cursor's got value flag has been unset.
+فراخوانی این روش بیش از یک بار قبل از بارگذاری داده‌های جدید نشانگر - به عنوان مثال، فراخوانی `continuePrimaryKey()` دو بار از یک مدیریت‌کننده onsuccess - منجر به پرتاب شدن `InvalidStateError` در فراخوانی دوم می‌شود، زیرا پرچم got value نشانگر بازنشانی شده است.
 
-This method is only valid for cursors coming from an index. Using it for cursors coming
-from an object store will throw an error.
+این روش فقط برای نشانگرهایی معتبر است که از یک ایندکس می‌آیند. استفاده از آن برای نشانگرهایی که از یک ذخیره‌گاه شیء می‌آیند، خطا ایجاد می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 continuePrimaryKey(key, primaryKey)
 ```
 
-### Parameters
+### پارامترها
 
 - `key`
-  - : The key to position the cursor at.
+  - : کلیدی که نشانگر در آن قرار می‌گیرد.
 - `primaryKey`
-  - : The primary key to position the cursor at.
+  - : کلید اصلی که نشانگر در آن قرار می‌گیرد.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
-This method may raise a {{domxref("DOMException")}} of one of the following types:
+این روش ممکن است یک {{domxref("DOMException")}} از یکی از انواع زیر را پرتاب کند:
 
 - `TransactionInactiveError` {{domxref("DOMException")}}
-  - : Thrown if this `IDBCursor`'s transaction is inactive.
+  - : اگر تراکنش این `IDBCursor` غیرفعال باشد، پرتاب می‌شود.
 - `DataError` {{domxref("DOMException")}}
-  - : Thrown if the key parameter has any of the following conditions:
-    - The key is not a valid key.
-    - The key is less than or equal to this cursor's position and the cursor's direction is `next` or `nextunique`.
-    - The key is greater than or equal to this cursor's position and this cursor's direction is `prev` or `prevunique`.
+  - : اگر پارامتر کلید هر یک از شرایط زیر را داشته باشد، پرتاب می‌شود:
+    - کلید معتبر نیست.
+    - کلید کمتر یا برابر با موقعیت این نشانگر است و جهت نشانگر `next` یا `nextunique` است.
+    - کلید بزرگتر یا برابر با موقعیت این نشانگر است و جهت نشانگر `prev` یا `prevunique` است.
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the cursor is currently being iterated or has iterated past its end.
+  - : اگر نشانگر در حال حاضر در حال تکرار است یا از انتهای خود گذشته است، پرتاب می‌شود.
 - `InvalidAccessError` {{domxref("DOMException")}}
-  - : Thrown if the cursor's direction is not `prev` or `next`.
+  - : اگر جهت نشانگر `prev` یا `next` نباشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-here's how you can resume an iteration of all articles tagged with
-`"javascript"` since your last visit:
+در اینجا نحوه از سرگیری تکرار همه مقالات برچسب‌گذاری شده با `"javascript"` از زمان آخرین بازدید شما آورده شده است:
 
 ```js
 let request = articleStore.index("tag").openCursor();
@@ -92,20 +77,20 @@ request.onsuccess = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم محدوده کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و ایجاد تغییرات در داده‌های خود: {{domxref("IDBObjectStore")}}
+- استفاده از نشانگرها: {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
