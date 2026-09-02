@@ -1,11 +1,5 @@
 ---
 title: "Navigation: navigate() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigation/navigate"
-status: "needs-translation"
----
-
----
-title: "Navigation: navigate() method"
 short-title: navigate()
 slug: Web/API/Navigation/navigate
 page-type: web-api-instance-method
@@ -14,8 +8,7 @@ browser-compat: api.Navigation.navigate
 
 {{APIRef("Navigation API")}}
 
-The **`navigate()`** method of the
-{{domxref("Navigation")}} interface navigates to a specific URL, updating any provided state in the history entries list.
+متد **`navigate()`** از رابط {{domxref("Navigation")}} به یک URL مشخص حرکت می‌کند و هر state ارائه‌شده را در لیست ورودی‌های تاریخچه به‌روز می‌کند.
 
 ## Syntax
 
@@ -24,49 +17,49 @@ navigate(url)
 navigate(url, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `url`
-  - : The destination URL to navigate to. Note that when calling `navigate()` on another window's `navigation` object, the URL will be resolved relative to the target window's URL, not the calling window's URL. This matches the behavior of the [History API](/en-US/docs/Web/API/History_API), but not the behavior of the [Location API](/en-US/docs/Web/API/Location). Note also that `javascript:` URLs are not allowed for security reasons.
+  - : URL مقصد برای ناوبری. توجه داشته باشید که هنگام فراخوانی `navigate()` بر روی شیء `navigation` یک پنجره دیگر، URL نسبت به URL پنجره هدف حل می‌شود، نه URL پنجره فراخواننده. این رفتار با [History API](/en-US/docs/Web/API/History_API) مطابقت دارد، اما با رفتار [Location API](/en-US/docs/Web/API/Location) مطابقت ندارد. همچنین توجه کنید که URLهای `javascript:` به دلایل امنیتی مجاز نیستند.
 - `options` {{optional_inline}}
-  - : An options object containing the following properties:
+  - : یک شیء گزینه‌ها که شامل ویژگی‌های زیر است:
     - `state` {{optional_inline}}
-      - : Developer-defined information to be stored in the associated {{domxref("NavigationHistoryEntry")}} once the navigation is complete, retrievable via {{domxref("NavigationHistoryEntry.getState", "getState()")}}. This can be any data type. You might, for example, wish to store a page visit count for analytics purposes, or store UI state details so the view can be shown exactly as the user last left it. Any data stored in `state` must be [structured-cloneable](/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm).
+      - : اطلاعات تعریف‌شده توسط توسعه‌دهنده که در {{domxref("NavigationHistoryEntry")}} مرتبط ذخیره می‌شود پس از اتمام ناوبری، و از طریق {{domxref("NavigationHistoryEntry.getState", "getState()")}} قابل بازیابی است. این می‌تواند هر نوع داده‌ای باشد. برای مثال، ممکن است بخواهید تعداد بازدید صفحه را برای اهداف تحلیلی ذخیره کنید، یا جزئیات وضعیت رابط کاربری را ذخیره کنید تا نمای صفحه دقیقاً همانطور که کاربر آخرین بار رها کرده بود نمایش داده شود. هر داده ذخیره‌شده در `state` باید [ساختار-قابل-کلونینگ](/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm) باشد.
     - `info` {{optional_inline}}
-      - : Developer-defined information to be passed along to the {{domxref("Navigation/navigate_event", "navigate")}} event, made available in {{domxref("NavigateEvent.info")}}. This can be any data type. You might, for example, wish to display newly-navigated content with a different animation depending on how it was navigated to (swipe left, swipe right, or go home). A string indicating which animation to use could be passed in as `info`.
+      - : اطلاعات تعریف‌شده توسط توسعه‌دهنده که به رویداد {{domxref("Navigation/navigate_event", "navigate")}} ارسال می‌شود و در {{domxref("NavigateEvent.info")}} در دسترس قرار می‌گیرد. این می‌تواند هر نوع داده‌ای باشد. برای مثال، ممکن است بخواهید محتوای تازه‌ناوبری‌شده را با یک انیمیشن متفاوت بسته به نحوه ناوبری به آن (کشیدن به چپ، کشیدن به راست، یا رفتن به خانه) نمایش دهید. یک رشته که نشان‌دهنده انیمیشن مورد استفاده است می‌تواند به عنوان `info` ارسال شود.
     - `history` {{optional_inline}}
-      - : An enumerated value that sets the history behavior of this navigation. The available values are:
-        - `auto`: The default value; will usually perform a `push` navigation but will perform a `replace` navigation under special circumstances (see the `NotSupportedError` description below).
-        - `push`: Will push a new {{domxref("NavigationHistoryEntry")}} onto the entries list, or fail under special circumstances (see the `NotSupportedError` description below).
-        - `replace`: Will replace the current {{domxref("NavigationHistoryEntry")}}.
+      - : یک مقدار شمارشی که رفتار تاریخچه این ناوبری را تنظیم می‌کند. مقادیر موجود عبارتند از:
+        - `auto`: مقدار پیش‌فرض؛ معمولاً یک ناوبری `push` انجام می‌دهد اما در شرایط خاص یک ناوبری `replace` انجام می‌دهد (به توضیحات `NotSupportedError` در زیر مراجعه کنید).
+        - `push`: یک {{domxref("NavigationHistoryEntry")}} جدید به لیست ورودی‌ها اضافه می‌کند، یا در شرایط خاص شکست می‌خورد (به توضیحات `NotSupportedError` در زیر مراجعه کنید).
+        - `replace`: ورودی فعلی {{domxref("NavigationHistoryEntry")}} را جایگزین می‌کند.
 
-### Return value
+### مقدار بازگشتی
 
-An object with the following properties:
+یک شیء با ویژگی‌های زیر:
 
 - `committed`
-  - : A {{jsxref("Promise")}} which will fulfill when the visible URL has changed and a new {{domxref("NavigationHistoryEntry")}} has been created.
+  - : یک {{jsxref("Promise")}} که زمانی به انجام می‌رسد که URL قابل مشاهده تغییر کرده و یک {{domxref("NavigationHistoryEntry")}} جدید ایجاد شده باشد.
 - `finished`
-  - : A {{jsxref("Promise")}} which will fulfill when all promises returned by the `intercept()` handler are fulfilled. This is equivalent to the {{domxref("NavigationTransition.finished")}} promise fulfilling, when the {{domxref("Navigation/navigatesuccess_event", "navigatesuccess")}} event fires.
+  - : یک {{jsxref("Promise")}} که زمانی به انجام می‌رسد که تمام قول‌های بازگشتی توسط handler `intercept()` به انجام برسند. این معادل با به‌انجام‌رسیدن قول {{domxref("NavigationTransition.finished")}} است، زمانی که رویداد {{domxref("Navigation/navigatesuccess_event", "navigatesuccess")}} رخ می‌دهد.
 
-Either one of these promises rejects if the navigation has failed for some reason.
+هر یک از این قول‌ها در صورت ناموفق بودن ناوبری به دلایلی رد می‌شوند.
 
-### Exceptions
+### استثناها
 
 - `DataCloneError` {{domxref("DOMException")}}
-  - : Thrown if the `state` parameter contains values that are not structured-cloneable.
+  - : اگر پارامتر `state` حاوی مقادیری باشد که ساختار-قابل-کلونینگ نیستند، پرتاب می‌شود.
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the document is not currently active.
+  - : اگر سند در حال حاضر فعال نباشد، پرتاب می‌شود.
 - `SyntaxError` {{domxref("DOMException")}}
-  - : Thrown if the `url` parameter is not a valid URL.
+  - : اگر پارامتر `url` یک URL معتبر نباشد، پرتاب می‌شود.
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Thrown if:
-    - The `history` option is set to `push`, and the browser is currently showing the initial `about:blank` document.
-    - The `url`'s scheme is `javascript`.
+  - : در موارد زیر پرتاب می‌شود:
+    - گزینه `history` روی `push` تنظیم شده باشد و مرورگر در حال نمایش سند اولیه `about:blank` باشد.
+    - طرح `url` برابر با `javascript` باشد.
 
-## Examples
+## مثال‌ها
 
-### Set up home button
+### تنظیم دکمه خانه
 
 ```js
 function initHomeBtn() {
@@ -89,9 +82,9 @@ navigation.addEventListener("navigate", (event) => {
 });
 ```
 
-### A smart back button
+### یک دکمه بازگشت هوشمند
 
-A page-supplied "back" button can take you back, even after reload, by inspecting the previous history entries:
+یک دکمه "بازگشت" که توسط صفحه ارائه می‌شود می‌تواند شما را به عقب برگرداند، حتی پس از بارگذاری مجدد، با بررسی ورودی‌های تاریخچه قبلی:
 
 ```js
 backButtonEl.addEventListener("click", () => {
@@ -108,7 +101,7 @@ backButtonEl.addEventListener("click", () => {
 });
 ```
 
-### Using info and state
+### استفاده از info و state
 
 ```js
 async function navigateHandler() {
@@ -122,15 +115,15 @@ async function navigateHandler() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
-- [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
+- [مسیریابی مدرن سمت کلاینت: Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
+- [توضیح Navigation API](https://github.com/WICG/navigation-api/blob/main/README.md)
