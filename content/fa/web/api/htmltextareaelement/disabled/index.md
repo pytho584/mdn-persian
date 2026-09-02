@@ -1,11 +1,5 @@
 ---
 title: "HTMLTextAreaElement: disabled property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTextAreaElement/disabled"
-status: "needs-translation"
----
-
----
-title: "HTMLTextAreaElement: disabled property"
 short-title: disabled
 slug: Web/API/HTMLTextAreaElement/disabled
 page-type: web-api-instance-property
@@ -14,13 +8,13 @@ browser-compat: api.HTMLTextAreaElement.disabled
 
 {{ APIRef("HTML DOM") }}
 
-The **`disabled`** property of the {{DOMxRef("HTMLTextAreaElement")}} interface indicates whether this multi-line text control is disabled and cannot be interacted with. It reflects the {{htmlelement("textarea")}} element's [`disabled`](/en-US/docs/Web/HTML/Reference/Elements/textarea#autocomplete) attribute. When `false`, this `textarea` may still be disabled if its containing element, such as a {{htmlelement("fieldset")}}, is disabled.
+ویژگی **`disabled`** در رابط {{DOMxRef("HTMLTextAreaElement")}} مشخص می‌کند که آیا این کنترل متن چندخطی غیرفعال است و نمی‌توان با آن تعامل داشت. این ویژگی منعکس‌کنندهٔ ویژگی [`disabled`](/en-US/docs/Web/HTML/Reference/Elements/textarea#autocomplete) عنصر {{htmlelement("textarea")}} است. وقتی مقدار آن `false` باشد، این `textarea` همچنان ممکن است غیرفعال باشد، اگر عنصر والد آن، مانند یک {{htmlelement("fieldset")}}، غیرفعال باشد.
 
-## Value
+## مقدار
 
-A boolean.
+یک مقدار بولی.
 
-## Examples
+## مثال‌ها
 
 ```js
 const textareaElement = document.getElementById("comment");
@@ -29,15 +23,15 @@ if (commentsDisabled) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{HTMLElement("textarea")}}
 - {{DOMXref("HTMLTextAreaElement.readOnly")}}
