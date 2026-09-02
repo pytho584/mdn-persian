@@ -1,11 +1,5 @@
 ---
 title: "IDBObjectStore: add() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/add"
-status: "needs-translation"
----
-
----
-title: "IDBObjectStore: add() method"
 short-title: add()
 slug: Web/API/IDBObjectStore/add
 page-type: web-api-instance-method
@@ -14,19 +8,11 @@ browser-compat: api.IDBObjectStore.add
 
 {{ APIRef("IndexedDB") }} {{AvailableInWorkers}}
 
-The **`add()`** method of the {{domxref("IDBObjectStore")}} interface returns an {{domxref("IDBRequest")}} object, and, in a separate thread, creates a [structured clone](https://html.spec.whatwg.org/multipage/common-dom-interfaces.html#structured-clone) of the value, and stores the cloned value in the object store. This is for adding new records to an object store.
+متد **`add()`** از رابط {{domxref("IDBObjectStore")}} یک شیء {{domxref("IDBRequest")}} را برمی‌گرداند و در یک رشته مجزا، یک [clone ساخت‌یافته](https://html.spec.whatwg.org/multipage/common-dom-interfaces.html#structured-clone) از مقدار ایجاد کرده و آن را در object store ذخیره می‌کند. این متد برای افزودن رکوردهای جدید به یک object store استفاده می‌شود.
 
-To determine if the add operation has completed successfully, listen for the
-transaction's `complete` event in addition to the
-`IDBObjectStore.add` request's `success` event, because the
-transaction may still fail after the success event fires. In other words, the success
-event is only triggered when the transaction has been successfully queued.
+برای تعیین اینکه عملیات add با موفقیت تکمیل شده است، علاوه بر رویداد `success` درخواست `IDBObjectStore.add`، به رویداد `complete` تراکنش نیز گوش دهید، زیرا ممکن است تراکنش پس از فعال شدن رویداد success همچنان شکست بخورد. به عبارت دیگر، رویداد success تنها زمانی فعال می‌شود که تراکنش با موفقیت در صف قرار گرفته باشد.
 
-The add method is an _insert only_ method. If a
-record already exists in the object store with the `key` parameter as its
-key, then an error `ConstraintError` event is fired on the returned request
-object. For updating existing records, you should use the
-{{domxref("IDBObjectStore.put")}} method instead.
+متد add یک متد _فقط درج_ است. اگر یک رکورد از قبل در object store با پارامتر `key` به عنوان کلید آن وجود داشته باشد، یک رویداد خطای `ConstraintError` روی شیء درخواست برگشتی فعال می‌شود. برای به‌روزرسانی رکوردهای موجود، باید از متد {{domxref("IDBObjectStore.put")}} استفاده کنید.
 
 ## Syntax
 
@@ -38,46 +24,38 @@ add(value, key)
 ### Parameters
 
 - `value`
-  - : The value to be stored.
+  - : مقداری که باید ذخیره شود.
 - `key` {{optional_inline}}
-  - : The key to use to identify the record. If unspecified, it results to null.
+  - : کلیدی که برای شناسایی رکورد استفاده می‌شود. اگر مشخص نشود، به null تبدیل می‌شود.
 
 ### Return value
 
-An {{domxref("IDBRequest")}} object on which subsequent events related to this operation are fired.
-
-If the operation is successful, the value of the request's {{domxref("IDBRequest.result", "result")}} property is the key for the new record.
+یک شیء {{domxref("IDBRequest")}} که رویدادهای بعدی مرتبط با این عملیات روی آن فعال می‌شوند. اگر عملیات موفقیت‌آمیز باشد، مقدار ویژگی {{domxref("IDBRequest.result", "result")}} درخواست، کلید رکورد جدید خواهد بود.
 
 ### Exceptions
 
-This method may raise a {{domxref("DOMException")}} of
-one of the following types:
+این متد ممکن است یک {{domxref("DOMException")}} از یکی از انواع زیر را پرتاب کند:
 
 - `ReadOnlyError` {{domxref("DOMException")}}
-  - : Thrown if the transaction associated with this operation is in read-only <a href="/en-US/docs/Web/API/IDBTransaction#mode_constants">mode</a>.
+  - : اگر تراکنش مرتبط با این عملیات در حالت فقط خواندنی (<a href="/en-US/docs/Web/API/IDBTransaction#mode_constants">mode</a>) باشد، پرتاب می‌شود.
 - `TransactionInactiveError` {{domxref("DOMException")}}
-  - : Thrown if this {{domxref("IDBObjectStore")}}'s transaction is inactive.
+  - : اگر تراکنش این {{domxref("IDBObjectStore")}} غیرفعال باشد، پرتاب می‌شود.
 - `DataError` {{domxref("DOMException")}}
-  - : Thrown if any of the following conditions apply:
-    - The object store uses in-line keys or has a key generator, and a key parameter was provided.
-    - The object store uses out-of-line keys and has no key generator, and no key parameter was provided.
-    - The object store uses in-line keys but no key generator, and the object store's key path does not yield a valid key.
-    - The key parameter was provided but does not contain a valid key.
+  - : اگر هر یک از شرایط زیر اعمال شود، پرتاب می‌شود:
+    - object store از کلیدهای درون‌خطی (in-line keys) استفاده می‌کند یا مولد کلید دارد، و یک پارامتر key ارائه شده است.
+    - object store از کلیدهای خارج از خط (out-of-line keys) استفاده می‌کند و مولد کلید ندارد، و هیچ پارامتر key ارائه نشده است.
+    - object store از کلیدهای درون‌خطی استفاده می‌کند اما مولد کلید ندارد، و مسیر کلید object store یک کلید معتبر تولید نمی‌کند.
+    - پارامتر key ارائه شده است اما حاوی یک کلید معتبر نیست.
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the {{domxref("IDBObjectStore")}} has been deleted or removed.
+  - : اگر {{domxref("IDBObjectStore")}} حذف یا پاک شده باشد، پرتاب می‌شود.
 - `DataCloneError` {{domxref("DOMException")}}
-  - : Thrown if the data being stored could not be cloned by the internal structured cloning algorithm.
+  - : اگر داده‌ای که ذخیره می‌شود نتواند توسط الگوریتم clone ساخت‌یافته داخلی clone شود، پرتاب می‌شود.
 - `ConstraintError` {{domxref("DOMException")}}
-  - : Thrown if an insert operation failed because the primary key constraint was
-    violated (due to an already existing record with the same primary key
-    value).
+  - : اگر عملیات درج به دلیل نقض محدودیت کلید اصلی (به دلیل وجود یک رکورد از قبل با همان مقدار کلید اصلی) شکست بخورد، پرتاب می‌شود.
 
 ## Examples
 
-In the following code snippet, we open a read/write transaction on our database and add
-some data to an object store using `add()`. Note also the functions attached
-to transaction event handlers to report on the outcome of the transaction opening in the
-event of success or failure. For a full working example, see our [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) app ([view example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+در قطعه کد زیر، یک تراکنش خواندن/نوشتن روی پایگاه داده خود باز می‌کنیم و با استفاده از `add()` داده‌هایی را به یک object store اضافه می‌کنیم. همچنین به توابع متصل به event handlerهای تراکنش توجه کنید که نتیجه باز شدن تراکنش را در صورت موفقیت یا شکست گزارش می‌دهند. برای یک مثال کامل و قابل اجرا، برنامه [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) را ببینید ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
 
 ```js
 // Let us open our database
@@ -147,10 +125,10 @@ function addData() {
 
 ## See also
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم یک بازه از کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و ایجاد تغییرات در داده‌های خود: {{domxref("IDBObjectStore")}}
+- استفاده از نشانگرها: {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
