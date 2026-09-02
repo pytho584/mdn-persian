@@ -1,11 +1,5 @@
 ---
 title: "IDBObjectStore: deleteIndex() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/deleteIndex"
-status: "needs-translation"
----
-
----
-title: "IDBObjectStore: deleteIndex() method"
 short-title: deleteIndex()
 slug: Web/API/IDBObjectStore/deleteIndex
 page-type: web-api-instance-method
@@ -14,13 +8,9 @@ browser-compat: api.IDBObjectStore.deleteIndex
 
 {{ APIRef("IndexedDB") }} {{AvailableInWorkers}}
 
-The **`deleteIndex()`** method of the
-{{domxref("IDBObjectStore")}} interface destroys the index with the specified name in
-the connected database, used during a version upgrade.
+متد **`deleteIndex()`** از رابط {{domxref("IDBObjectStore")}} ایندکس با نام مشخص‌شده را در پایگاه‌داده متصل حذف می‌کند و در هنگام ارتقای نسخه استفاده می‌شود.
 
-Note that this method must be called only from a `VersionChange` transaction
-mode callback. Note that this method synchronously modifies the
-{{domxref("IDBObjectStore.indexNames")}} property.
+توجه داشته باشید که این متد فقط باید از یک callback در حالت تراکنش `VersionChange` فراخوانی شود. همچنین این متد به‌صورت هم‌زمان ویژگی {{domxref("IDBObjectStore.indexNames")}} را تغییر می‌دهد.
 
 ## Syntax
 
@@ -31,30 +21,24 @@ deleteIndex(indexName)
 ### Parameters
 
 - `indexName`
-  - : The name of the existing index to remove.
+  - : نام ایندکس موجود که باید حذف شود.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
 ### Exceptions
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the method was not called from a `versionchange` transaction mode callback.
+  - : اگر متد از یک callback در حالت تراکنش `versionchange` فراخوانی نشده باشد، پرتاب می‌شود.
 - `TransactionInactiveError` {{domxref("DOMException")}}
-  - : Thrown if the transaction this {{domxref("IDBObjectStore")}} belongs to is not active (e.g., has been deleted or removed.)
+  - : اگر تراکنشی که این {{domxref("IDBObjectStore")}} به آن تعلق دارد فعال نباشد (مثلاً حذف شده یا از بین رفته باشد)، پرتاب می‌شود.
 - `NotFoundError` {{domxref("DOMException")}}
-  - : Thrown if there is no index with the given name (case-sensitive) in the database.
+  - : اگر ایندکسی با نام داده‌شده (با حساسیت به حروف بزرگ و کوچک) در پایگاه‌داده وجود نداشته باشد، پرتاب می‌شود.
 
 ## Examples
 
-In the following example you can see
-the {{domxref("IDBOpenDBRequest.upgradeneeded_event", "onupgradeneeded")}} handler being used to update the
-database structure if a database with a higher version number is loaded.
-{{domxref("IDBObjectStore.createIndex")}} is used to create new indexes on the object
-store, after which we delete the unneeded old indexes with `deleteIndex()`.
-For a full working example, see our
-[To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) app ([view example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+در مثال زیر، می‌توانید استفاده از handler رویداد {{domxref("IDBOpenDBRequest.upgradeneeded_event", "onupgradeneeded")}} را برای به‌روزرسانی ساختار پایگاه‌داده در صورت بارگذاری نسخه‌ای با شماره بالاتر ببینید. از {{domxref("IDBObjectStore.createIndex")}} برای ایجاد ایندکس‌های جدید روی object store استفاده می‌شود و پس از آن، ایندکس‌های قدیمی غیرضروری را با `deleteIndex()` حذف می‌کنیم. برای یک مثال کامل و قابل اجرا، برنامه [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) را ببینید ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
 
 ```js
 let db;
@@ -120,10 +104,10 @@ DBOpenRequest.onupgradeneeded = (event) => {
 
 ## See also
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم محدوده‌ای از کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و ایجاد تغییرات در داده‌ها: {{domxref("IDBObjectStore")}}
+- استفاده از نشانگرها (cursors): {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
