@@ -1,10 +1,4 @@
 ---
-title: "MediaStream Image Capture API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaStream_Image_Capture_API"
-status: "needs-translation"
----
-
----
 title: MediaStream Image Capture API
 slug: Web/API/MediaStream_Image_Capture_API
 page-type: web-api-overview
@@ -13,13 +7,13 @@ browser-compat: api.ImageCapture
 
 {{DefaultAPISidebar("Image Capture API")}}
 
-The **MediaStream Image Capture API** is an API for capturing images or videos from a photographic device. In addition to capturing data, it also allows you to retrieve information about device capabilities such as image size, red-eye reduction and whether or not there is a flash and what they are currently set to. Conversely, the API allows the capabilities to be configured within the constraints what the device allows.
+**MediaStream Image Capture API** یک API برای گرفتن تصویر یا ویدیو از یک دستگاه عکاسی است. این API علاوه بر گرفتن داده، به شما امکان می‌دهد اطلاعاتی درباره قابلیت‌های دستگاه مانند اندازه تصویر، کاهش قرمزی چشم، وجود فلاش و مقادیر فعلی این تنظیمات را نیز بازیابی کنید. برعکس، این API امکان پیکربندی این قابلیت‌ها را در محدوده‌ای که دستگاه اجازه می‌دهد فراهم می‌کند.
 
-## MediaStream image capture concepts and usage
+## مفاهیم و کاربرد تصویربرداری MediaStream
 
-The process of retrieving an image or video stream happens as described below. The example code is adapted from [Chrome's Image Capture examples](https://googlechrome.github.io/samples/image-capture/).
+فرآیند دریافت جریان تصویر یا ویدیو به شرح زیر انجام می‌شود. کد مثال از [نمونه‌های Image Capture کروم](https://googlechrome.github.io/samples/image-capture/) اقتباس شده است.
 
-First, get a reference to a device by calling {{domxref("MediaDevices.getUserMedia()")}}. The example below says give me whatever video device is available, though the `getUserMedia()` method allows more specific capabilities to be requested. This method returns a {{jsxref("Promise")}} that resolves with a {{domxref("MediaStream")}} object.
+ابتدا با فراخوانی {{domxref("MediaDevices.getUserMedia()")}} به یک مرجع از دستگاه دسترسی پیدا کنید. مثال زیر می‌گوید هر دستگاه ویدیویی که در دسترس است را به من بده؛ اگرچه متد `getUserMedia()` امکان درخواست قابلیت‌های دقیق‌تری را نیز می‌دهد. این متد یک {{jsxref("Promise")}} برمی‌گرداند که با یک شیء {{domxref("MediaStream")}} حل می‌شود.
 
 ```js
 navigator.mediaDevices.getUserMedia({ video: true }).then((mediaStream) => {
@@ -27,13 +21,13 @@ navigator.mediaDevices.getUserMedia({ video: true }).then((mediaStream) => {
 });
 ```
 
-Next, isolate the visual part of the media stream. Do this by calling {{domxref("MediaStream.getVideoTracks()")}}. This returns an array of {{domxref("MediaStreamTrack")}} objects. The code below assumes that the first item in the `MediaStreamTrack` array is the one to use. You can use the properties of the `MediaStreamTrack` objects to select the one you need.
+در مرحله بعد، بخش تصویری جریان رسانه را جدا کنید. این کار را با فراخوانی {{domxref("MediaStream.getVideoTracks()")}} انجام دهید. این متد آرایه‌ای از اشیاء {{domxref("MediaStreamTrack")}} برمی‌گرداند. کد زیر فرض می‌کند که اولین آیتم در آرایه `MediaStreamTrack` همان موردی است که باید استفاده شود. می‌توانید از ویژگی‌های اشیاء `MediaStreamTrack` برای انتخاب مورد نیاز خود استفاده کنید.
 
 ```js
 const track = mediaStream.getVideoTracks()[0];
 ```
 
-At this point, you might want to configure the device capabilities before capturing an image. You can do this by calling {{domxref("MediaStreamTrack.applyConstraints","applyConstraints()")}} on the track object before doing anything else.
+در این مرحله، احتمالاً می‌خواهید قبل از گرفتن تصویر، قابلیت‌های دستگاه را پیکربندی کنید. می‌توانید این کار را با فراخوانی {{domxref("MediaStreamTrack.applyConstraints","applyConstraints()")}} روی شیء track و قبل از هر کار دیگری انجام دهید.
 
 ```js
 let zoom = document.querySelector("#zoom");
@@ -45,26 +39,26 @@ if (!capabilities.zoom) {
 track.applyConstraints({ advanced: [{ zoom: zoom.value }] });
 ```
 
-Finally, pass the `MediaStreamTrack` object to the {{domxref("ImageCapture.ImageCapture()", "ImageCapture()")}} constructor. Though a `MediaStream` holds several types of tracks and provides multiple methods for retrieving them, the ImageCapture constructor will throw a {{domxref("DOMException")}} of type `NotSupportedError` if {{domxref("MediaStreamTrack.kind")}} is not `"video"`.
+در نهایت، شیء `MediaStreamTrack` را به سازنده {{domxref("ImageCapture.ImageCapture()", "ImageCapture()")}} منتقل کنید. اگرچه یک `MediaStream` چند نوع track را نگه می‌دارد و روش‌های متعددی برای بازیابی آن‌ها ارائه می‌دهد، سازنده ImageCapture اگر {{domxref("MediaStreamTrack.kind")}} برابر با `"video"` نباشد، یک {{domxref("DOMException")}} از نوع `NotSupportedError` پرتاب می‌کند.
 
 ```js
 let imageCapture = new ImageCapture(track);
 ```
 
-## Interfaces
+## رابط‌ها
 
 - {{domxref("ImageCapture")}}
-  - : An interface for capturing images from a photographic device referenced through a valid {{domxref("MediaStreamTrack")}}.
+  - : یک رابط برای گرفتن تصاویر از یک دستگاه عکاسی که از طریق یک {{domxref("MediaStreamTrack")}} معتبر ارجاع داده می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("MediaStream")}}
 - {{domxref("MediaStreamTrack")}}
