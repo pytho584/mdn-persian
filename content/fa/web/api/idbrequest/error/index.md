@@ -1,11 +1,5 @@
 ---
 title: "IDBRequest: error property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/error"
-status: "needs-translation"
----
-
----
-title: "IDBRequest: error property"
 short-title: error
 slug: Web/API/IDBRequest/error
 page-type: web-api-instance-property
@@ -14,58 +8,49 @@ browser-compat: api.IDBRequest.error
 
 {{ APIRef("IndexedDB") }} {{AvailableInWorkers}}
 
-The **`error`** read-only property of the
-{{domxref("IDBRequest")}} interface returns the error in the event of an unsuccessful
-request.
+خاصیت فقط‑خواندنی **`error`** از رابط {{domxref("IDBRequest")}}، خطای رخ‌داده در صورت عدم موفقیت درخواست را بازمی‌گرداند.
 
-## Value
+## مقدار
 
-A {{domxref("DOMException")}} or `null` if there is no error. The exception object will have one of the following names, depending on what caused the error.
+یک {{domxref("DOMException")}} یا `null` در صورت عدم وجود خطا. شیء استثنا بسته به علت خطا، یکی از نام‌های زیر را خواهد داشت.
 
-These errors are asynchronous, meaning that they can't be handled via [`try...catch`](/en-US/docs/Web/JavaScript/Reference/Statements/try...catch). However, if an `IDBRequest` has an {{domxref("IDBRequest.error_event", "error")}} event handler assigned, you can still inspect such errors by querying the request's `error` property via the event object, for example [`event.target.error.name`](/en-US/docs/Web/API/DOMException/name) or [`event.target.error.message`](/en-US/docs/Web/API/DOMException/message).
+این خطاها ناهمزمان هستند، به این معنی که نمی‌توان با [`try...catch`](/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) آن‌ها را مدیریت کرد. با این حال، اگر یک `IDBRequest` یک کنترل‌کننده رویداد {{domxref("IDBRequest.error_event", "error")}} داشته باشد، می‌توانید با پرس‌وجوی خاصیت `error` درخواست از طریق شیء رویداد، این خطاها را بررسی کنید، برای مثال [`event.target.error.name`](/en-US/docs/Web/API/DOMException/name) یا [`event.target.error.message`](/en-US/docs/Web/API/DOMException/message).
 
 - `AbortError`
-  - : If you abort the transaction, then all requests still in progress receive this error.
+  - : اگر تراکنش را لغو کنید، تمام درخواست‌های در حال اجرا این خطا را دریافت می‌کنند.
 - `ConstraintError`
-  - : Received if you insert data that doesn't conform to a constraint when populating stores.
-    For example, you will get this error if you try to add a new key that already exists in the store.
+  - : اگر داده‌ای را وارد کنید که با یک محدودیت در هنگام پر کردن ذخیره‌گاه‌ها مطابقت ندارد، این خطا دریافت می‌شود. برای مثال، اگر سعی کنید کلید جدیدی اضافه کنید که از قبل در ذخیره‌گاه وجود دارد، این خطا را خواهید گرفت.
 - `NotReadableError`
-  - : Received for unrecoverable read failure errors. Specifically, this error signals that the record is present in the database, but the value could not be retrieved. See [Transient and unrecoverable read errors](#transient_and_unrecoverable_read_errors) below for more details.
+  - : برای خطاهای خواندن غیرقابل بازیابی دریافت می‌شود. به طور خاص، این خطا نشان می‌دهد که رکورد در پایگاه داده وجود دارد، اما مقدار قابل بازیابی نیست. برای جزئیات بیشتر به [خطاهای خواندن موقت و غیرقابل بازیابی](#transient_and_unrecoverable_read_errors) در زیر مراجعه کنید.
 - {{domxref("QuotaExceededError")}}
-  - : Received if the application runs out of disk quota. In some cases, browsers prompt the user for more space, and the error is received if they decline the request. In other cases, the browser uses heuristics to determine whether more space can be assigned.
+  - : اگر برنامه از سهمیه دیسک خود استفاده کند، این خطا دریافت می‌شود. در برخی موارد، مرورگرها از کاربر فضای بیشتری درخواست می‌کنند و اگر درخواست رد شود، خطا دریافت می‌شود. در موارد دیگر، مرورگر از اکتشافی برای تعیین اینکه آیا می‌توان فضای بیشتری اختصاص داد استفاده می‌کند.
 - `UnknownError`
-  - : Received for transient read failure errors, including general disk IO errors. See [Transient and unrecoverable read errors](#transient_and_unrecoverable_read_errors) below for more details.
+  - : برای خطاهای خواندن موقت، از جمله خطاهای عمومی ورودی/خروجی دیسک دریافت می‌شود. برای جزئیات بیشتر به [خطاهای خواندن موقت و غیرقابل بازیابی](#transient_and_unrecoverable_read_errors) در زیر مراجعه کنید.
 - `VersionError`
-  - : Received if you try to open a database with a version lower than the one it already has.
+  - : اگر سعی کنید پایگاه داده‌ای را با نسخه‌ای پایین‌تر از نسخه فعلی باز کنید، این خطا دریافت می‌شود.
 
-### Transient and unrecoverable read errors
+### خطاهای خواندن موقت و غیرقابل بازیابی
 
-Read errors occur when an IndexedDB stores values and then subsequently fails to read those values even though the associated records are still in the database.
+خطاهای خواندن زمانی رخ می‌دهند که IndexedDB مقادیری را ذخیره می‌کند و سپس در خواندن آن مقادیر ناموفق است، حتی اگر رکوردهای مرتبط همچنان در پایگاه داده باشند.
 
-Read errors can be one of two types — **transient** or **unrecoverable**:
+خطاهای خواندن می‌توانند از دو نوع باشند — **موقت (transient)** یا **غیرقابل بازیابی (unrecoverable)** :
 
-Transient read errors are signalled by an `UnknownError` type, and are usually caused by low memory. This shouldn't be a problem for small databases. To avoid low memory situations in large databases, try to split up database access to only load the records you need at any one time, for example using specific [key ranges](/en-US/docs/Web/API/IDBKeyRange) relating to a user's search query or a pagination mechanism. If a low memory error is hit, the user may be asked to close other applications to free up space at the OS-level.
+خطاهای خواندن موقت توسط نوع `UnknownError` نشان داده می‌شوند و معمولاً ناشی از کمبود حافظه هستند. این نباید برای پایگاه‌های داده کوچک مشکلی ایجاد کند. برای جلوگیری از موقعیت‌های کمبود حافظه در پایگاه‌های داده بزرگ، سعی کنید دسترسی به پایگاه داده را به گونه‌ای تقسیم کنید که فقط رکوردهای مورد نیاز خود را در هر زمان بارگذاری کنید، به عنوان مثال با استفاده از [محدوده‌های کلید](/en-US/docs/Web/API/IDBKeyRange) خاص مربوط به جستجوی کاربر یا یک مکانیسم صفحه‌بندی. اگر با خطای کمبود حافظه مواجه شدید، ممکن است از کاربر خواسته شود برنامه‌های دیگر را ببندد تا فضای حافظه در سطح سیستم‌عامل آزاد شود.
 
-Unrecoverable read errors are signalled by a `NotReadableError` type, and are caused by source files being deleted.
+خطاهای خواندن غیرقابل بازیابی توسط نوع `NotReadableError` نشان داده می‌شوند و ناشی از حذف فایل‌های منبع هستند.
 
-For example, some browsers store large values (for example, audio file blobs for an offline podcast app) as separate files that are accessed via a reference stored in the database. It has been observed that these separate files can end up being deleted because they show up as opaque files to users when they are using disk space recovery programs, resulting in unrecoverable read errors when the IndexedDB is next accessed.
+برای مثال، برخی مرورگرها مقادیر بزرگ (مانند blobs فایل صوتی برای یک برنامه پادکست آفلاین) را به عنوان فایل‌های جداگانه ذخیره می‌کنند که از طریق یک مرجع ذخیره شده در پایگاه داده قابل دسترسی هستند. مشاهده شده است که این فایل‌های جداگانه ممکن است حذف شوند زیرا هنگام استفاده از برنامه‌های بازیابی فضای دیسک، به عنوان فایل‌های مبهم برای کاربران ظاهر می‌شوند و در نتیجه وقتی IndexedDB دفعه بعد دسترسی پیدا می‌کند، خطاهای خواندن غیرقابل بازیابی رخ می‌دهد.
 
-Possible corrective actions for unrecoverable read errors might include notifying the user, deleting the entry from the database, then attempting to re-fetch the data from the server.
+اقدامات اصلاحی ممکن برای خطاهای خواندن غیرقابل بازیابی می‌تواند شامل اطلاع‌رسانی به کاربر، حذف ورودی از پایگاه داده و سپس تلاش برای دریافت مجدد داده از سرور باشد.
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown when attempting to access the property if the request
-    is not completed, and therefore the error is not available.
+  - : زمانی پرتاب می‌شود که سعی شود به خاصیت دسترسی پیدا شود در حالی که درخواست کامل نشده است و بنابراین خطا در دسترس نیست.
 
-## Examples
+## مثال‌ها
 
-The following example requests a given record title, `onsuccess` gets the
-associated record from the {{domxref("IDBObjectStore")}} (made available as
-`objectStoreTitleRequest.result`), updates one property of the record, and then puts the
-updated record back into the object store. Also included at the bottom is an
-`onerror` function that reports what the error was if the request fails.
-For a full working example, see our [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) app ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+مثال زیر یک عنوان رکورد مشخص را درخواست می‌کند، `onsuccess` رکورد مرتبط را از {{domxref("IDBObjectStore")}} (که به صورت `objectStoreTitleRequest.result` در دسترس است) دریافت می‌کند، یک خاصیت از رکورد را به‌روزرسانی می‌کند، و سپس رکورد به‌روزرسانی شده را دوباره در object store قرار می‌دهد. همچنین در پایین یک تابع `onerror` وجود دارد که اگر درخواست ناموفق باشد، خطا را گزارش می‌کند. برای یک مثال کامل کار، برنامه [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ما را ببینید ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
 
 ```js
 const title = "Walk dog";
@@ -105,20 +90,20 @@ objectStoreTitleRequest.onerror = () => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم محدوده‌ای از کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و ایجاد تغییرات در داده‌های خود: {{domxref("IDBObjectStore")}}
+- استفاده از نشانگرها: {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
