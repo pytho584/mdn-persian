@@ -1,11 +1,5 @@
 ---
 title: "MediaStream: addtrack event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaStream/addtrack_event"
-status: "needs-translation"
----
-
----
-title: "MediaStream: addtrack event"
 short-title: addtrack
 slug: Web/API/MediaStream/addtrack_event
 page-type: web-api-event
@@ -14,13 +8,13 @@ browser-compat: api.MediaStream.addtrack_event
 
 {{APIRef("Media Capture and Streams")}}
 
-The **`addtrack`** event is fired when a new [`MediaStreamTrack`](/en-US/docs/Web/API/MediaStreamTrack) object has been added to a [`MediaStream`](/en-US/docs/Web/API/MediaStream).
+رویداد **`addtrack`** زمانی فعال می‌شود که یک شیء [`MediaStreamTrack`](/en-US/docs/Web/API/MediaStreamTrack) جدید به یک [`MediaStream`](/en-US/docs/Web/API/MediaStream) اضافه شده باشد.
 
-This event is not cancelable and does not bubble.
+این رویداد قابل لغو نیست و در درخت DOM منتشر نمی‌شود (bubble نمی‌کند).
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در متدهایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی handler رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("addtrack", (event) => { })
@@ -28,46 +22,46 @@ addEventListener("addtrack", (event) => { })
 onaddtrack = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("MediaStreamTrackEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("MediaStreamTrackEvent")}} که از {{domxref("Event")}} ارث‌بری می‌کند.
 
 {{InheritanceDiagram("MediaStreamTrackEvent")}}
 
-## Examples
+## مثال‌ها
 
-Using `addEventListener()`:
+استفاده از `addEventListener()`:
 
 ```js
 const stream = new MediaStream();
 
 stream.addEventListener("addtrack", (event) => {
-  console.log(`New ${event.track.kind} track added`);
+  console.log(`یک track جدید از نوع ${event.track.kind} اضافه شد`);
 });
 ```
 
-Using the `onaddtrack` event handler property:
+استفاده از ویژگی handler رویداد `onaddtrack`:
 
 ```js
 const stream = new MediaStream();
 
 stream.onaddtrack = (event) => {
-  console.log(`New ${event.track.kind} track added`);
+  console.log(`یک track جدید از نوع ${event.track.kind} اضافه شد`);
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- Related events: [`removetrack`](/en-US/docs/Web/API/MediaStream/removetrack_event)
-- This event on [`AudioTrackList`](/en-US/docs/Web/API/AudioTrackList) targets: [`addtrack`](/en-US/docs/Web/API/AudioTrackList/addtrack_event)
-- This event on [`VideoTrackList`](/en-US/docs/Web/API/VideoTrackList) targets: [`addtrack`](/en-US/docs/Web/API/VideoTrackList/addtrack_event)
-- [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
+- رویداد مرتبط: [`removetrack`](/en-US/docs/Web/API/MediaStream/removetrack_event)
+- این رویداد در اهداف [`AudioTrackList`](/en-US/docs/Web/API/AudioTrackList): [`addtrack`](/en-US/docs/Web/API/AudioTrackList/addtrack_event)
+- این رویداد در اهداف [`VideoTrackList`](/en-US/docs/Web/API/VideoTrackList): [`addtrack`](/en-US/docs/Web/API/VideoTrackList/addtrack_event)
+- [API Media Capture and Streams](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
 - [WebRTC](/en-US/docs/Web/API/WebRTC_API)
