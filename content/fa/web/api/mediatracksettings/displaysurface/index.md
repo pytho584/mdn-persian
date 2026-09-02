@@ -1,11 +1,5 @@
 ---
 title: "MediaTrackSettings: displaySurface property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/displaySurface"
-status: "needs-translation"
----
-
----
-title: "MediaTrackSettings: displaySurface property"
 short-title: displaySurface
 slug: Web/API/MediaTrackSettings/displaySurface
 page-type: web-api-instance-property
@@ -14,39 +8,34 @@ browser-compat: api.MediaStreamTrack.applyConstraints.displaySurface_constraint
 
 {{APIRef("Media Capture and Streams")}}
 
-The {{domxref("MediaTrackSettings")}} dictionary's
-**`displaySurface`** property indicates the type of display
-surface being captured.
+ویژگی **`displaySurface`** در فرهنگ لغت {{domxref("MediaTrackSettings")}} نوع سطح نمایش را که در حال ضبط است مشخص می‌کند.
 
-## Value
+## مقدار
 
-The value of `displaySurface` is a string that comes from the `DisplayCaptureSurfaceType` enumerated type, and is one of the following:
+مقدار `displaySurface` یک رشته است که از نوع شمارشی `DisplayCaptureSurfaceType` گرفته می‌شود و می‌تواند یکی از موارد زیر باشد:
 
 - `browser`
-  - : The stream's video track presents the entire contents of a single browser tab which the user selected during the {{domxref("MediaDevices.getDisplayMedia","getDisplayMedia()")}} call.
+  - : مسیر ویدیویی جریان، محتوای کامل یک تب مرورگر را نشان می‌دهد که کاربر در طول فراخوانی {{domxref("MediaDevices.getDisplayMedia","getDisplayMedia()")}} آن را انتخاب کرده است.
 - `monitor`
-  - : The video track in the stream presents the complete contents of one or more of the
-    user's screens. Any empty space (if the displays are of different dimensions) is
-    filled with a backdrop chosen by the user agent.
+  - : مسیر ویدیویی موجود در جریان، محتوای کامل یک یا چند صفحه از کاربر را نشان می‌دهد. هر فضای خالی (اگر نمایشگرها ابعاد متفاوتی داشته باشند) با پس‌زمینه‌ای که عامل کاربر (user agent) انتخاب می‌کند پر می‌شود.
 - `window`
-  - : The stream's video track presents the contents of a single window selected by the user.
-    The window may be from any application, not necessarily just from within the user agent.
+  - : مسیر ویدیویی جریان، محتوای یک پنجره واحد را که کاربر انتخاب کرده است نشان می‌دهد. این پنجره می‌تواند از هر برنامه‌ای باشد، نه لزوماً فقط از داخل عامل کاربر.
 
-Not all user agents support all of these surface types.
+توجه داشته باشید که همه عامل‌های کاربر از همه این انواع سطح پشتیبانی نمی‌کنند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Screen Capture API](/en-US/docs/Web/API/Screen_Capture_API)
-- [Using the screen capture API](/en-US/docs/Web/API/Screen_Capture_API/Using_Screen_Capture)
-- [Capabilities, constraints, and settings](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints)
+- [API ضبط صفحه](/en-US/docs/Web/API/Screen_Capture_API)
+- [استفاده از API ضبط صفحه](/en-US/docs/Web/API/Screen_Capture_API/Using_Screen_Capture)
+- [قابلیت‌ها، محدودیت‌ها و تنظیمات](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints)
 - {{domxref("MediaDevices.getDisplayMedia()")}}
 - {{domxref("MediaStreamTrack.getConstraints()")}}
 - {{domxref("MediaStreamTrack.applyConstraints()")}}
