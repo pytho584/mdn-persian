@@ -1,7 +1,5 @@
 ---
 title: "MediaRecorderErrorEvent: error property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorderErrorEvent/error"
-status: "needs-translation"
 ---
 
 ---
@@ -17,52 +15,30 @@ browser-compat: api.MediaRecorderErrorEvent.error
 
 {{APIRef("MediaStream Recording")}}{{Deprecated_Header}}{{Non-standard_Header}}
 
-The **`error`** read-only property of the
-{{domxref("MediaRecorderErrorEvent")}} interface is a
-{{domxref("DOMException")}} object providing details about the exception that was thrown
-by a {{domxref("MediaRecorder")}} instance.
+خاصیت فقطخواندنی **`error`** در رابط {{domxref("MediaRecorderErrorEvent")}} یک شیء {{domxref("DOMException")}} است که جزئیات مربوط به استثنای ایجادشده توسط یک نمونه از {{domxref("MediaRecorder")}} را ارائه می‌دهد.
 
-When a `MediaRecorderErrorEvent` occurs, you can determine to some extent
-what went wrong by examining the `error` property within the
-`MediaRecorderErrorEvent` received by the `MediaRecorder`'s
-{{domxref("MediaRecorder/error_event", "error")}} event handler, {{domxref("MediaRecorder/error_event", "onerror")}}.
+هنگامی که یک `MediaRecorderErrorEvent` رخ می‌دهد، می‌توانید با بررسی خاصیت `error` درون همان `MediaRecorderErrorEvent` که توسط مدیر رویداد {{domxref("MediaRecorder/error_event", "error")}} متعلق به `MediaRecorder` (یعنی {{domxref("MediaRecorder/error_event", "onerror")}}) دریافت شده، تا حدی تشخیص دهید چه اشتباهی رخ داده است.
 
-## Value
+## مقدار
 
-A {{domxref("DOMException")}} describing the error represented by the event. The
-error's {{domxref("DOMException.name", "name")}} property's value may be any exception
-that makes sense during the handling of media recording, including these specifically
-identified by the specification. The descriptions here are generic ones; you'll find
-more specific ones to various scenarios in which they may occur in the corresponding
-method references.
+یک {{domxref("DOMException")}} که خطای نمایش‌داده‌شده توسط رویداد را توصیف می‌کند. مقدار خاصیت {{domxref("DOMException.name", "name")}} این خطا می‌تواند هر استثنایی باشد که در حین مدیریت ضبط رسانه معنادار باشد، از جمله موارد زیر که به‌طور مشخص در مشخصات شناسایی شده‌اند. توضیحات این‌جا عمومی هستند؛ توضیحات اختصاصی‌تر مربوط به سناریوهای مختلفی که این خطاها ممکن است در آن‌ها رخ دهند را می‌توانید در مستندات متدهای مربوطه بیابید.
 
 - `InvalidStateError`
-  - : An operation was attempted in a context in which it isn't allowed, or a request has
-    been made on an object that's deleted or removed.
+  - : عملیاتی در زمینه‌ای تلاش شده که در آن مجاز نیست، یا درخواستی روی شیءای انجام شده که حذف یا پاک شده است.
 - `NotSupportedError`
-  - : A `MediaRecorder` couldn't be created because the specified options
-    weren't valid. The `message` attribute should provide additional
-    information, if it exists.
+  - : یک `MediaRecorder` نتوانسته ساخته شود، زیرا گزینه‌های مشخص‌شده معتبر نبوده‌اند. ویژگی `message` در صورت وجود باید اطلاعات بیشتری ارائه دهد.
 - `SecurityError`
-  - : The {{domxref("MediaStream")}} is configured to disallow recording. This may be the
-    case, for example, with sources obtained using {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}} when the user denies permission to use an input device.
+  - : {{domxref("MediaStream")}} به‌گونه‌ای پیکربندی شده که اجازه‌ی ضبط نمی‌دهد. این حالت ممکن است برای مثال درباره منبع‌هایی رخ دهد که با استفاده از {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}} به دست آمده‌اند، زمانی که کاربر اجازه‌ی استفاده از یک دستگاه ورودی را رد کند.
 - `InvalidModificationError`
-  - : The number of tracks on the stream being recorded has changed. You can't add or
-    remove tracks while recording media.
+  - : تعداد ترک‌های جریان در حال ضبط تغییر کرده است. در حین ضبط رسانه نمی‌توانید ترک اضافه یا حذف کنید.
 - `UnknownError`
-  - : A non-security related error occurred that cannot otherwise be categorized.
-    Recording stops, the `MediaRecorder`'s {{domxref("MediaRecorder.state", "state")}} becomes `inactive`,
-    one last {{domxref("MediaRecorder.dataavailable_event", "dataavailable")}} event is
-    sent to the `MediaRecorder` with the remaining received data, and finally a
-    {{domxref("MediaRecorder/stop_event", "stop")}} event is sent.
+  - : خطایی غیرمرتبط با امنیت رخ داده که امکان دسته‌بندی دیگری ندارد. ضبط متوقف می‌شود، {{domxref("MediaRecorder.state", "state")}} متعلق به `MediaRecorder` به `inactive` تغییر می‌کند، یک رویداد نهایی {{domxref("MediaRecorder.dataavailable_event", "dataavailable")}} همراه با داده‌های دریافتی باقی‌مانده به `MediaRecorder` ارسال می‌شود و در نهایت یک رویداد {{domxref("MediaRecorder/stop_event", "stop")}} ارسال می‌گردد.
 
-## Examples
+## مثال‌ها
 
-### Basic error-handling example
+### مثال پایه‌ی مدیریت خطا
 
-This function creates and returns a `MediaRecorder` for a given
-{{domxref("MediaStream")}}, configured to buffer data into an array and to watch for
-errors.
+این تابع برای یک {{domxref("MediaStream")}} مشخص، یک `MediaRecorder` می‌سازد و آن را برمی‌گرداند؛ به‌گونه‌ای پیکربندی شده که داده‌ها را در یک آرایه بافر کند و خطاها را زیر نظر بگیرد.
 
 ```js
 function recordStream(stream) {
@@ -88,15 +64,15 @@ function recordStream(stream) {
 }
 ```
 
-## Specifications
+## مشخصات
 
-This feature is no longer part of any specification, and longer on track to become standard.
+این ویژگی دیگر بخشی از هیچ مشخصاتی نیست و دیگر در مسیر استاندارد شدن قرار ندارد.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [MediaStream Recording API](/en-US/docs/Web/API/MediaStream_Recording_API)
 - [Using the MediaStream Recording API](/en-US/docs/Web/API/MediaStream_Recording_API/Using_the_MediaStream_Recording_API)
