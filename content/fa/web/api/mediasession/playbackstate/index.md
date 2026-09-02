@@ -1,7 +1,6 @@
 ---
 title: "MediaSession: playbackState property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaSession/playbackState"
-status: "needs-translation"
 ---
 
 ---
@@ -14,28 +13,22 @@ browser-compat: api.MediaSession.playbackState
 
 {{APIRef("Media Session API")}}
 
-The **`playbackState`** property of the
-{{domxref("MediaSession")}} interface indicates whether the current media session is
-playing or paused.
+ویژگی **`playbackState`** از رابط {{domxref("MediaSession")}} نشان می‌دهد که آیا جلسه رسانه‌ای فعلی در حال پخش است یا متوقف شده است.
 
-## Value
+## مقدار
 
-A string indicating the current playback state of the media session.
-The value may be one of the following:
+یک رشته (string) که وضعیت پخش فعلی جلسه رسانه‌ای را نشان می‌دهد. مقدار می‌تواند یکی از موارد زیر باشد:
 
 - `none`
-  - : The browsing context doesn't currently know the current playback state, or the
-    playback state is not available at this time.
+  - : زمینه مرورگر (browsing context) در حال حاضر وضعیت پخش را نمی‌داند، یا وضعیت پخش در این لحظه در دسترس نیست.
 - `paused`
-  - : The browser's media session is currently paused. Playback may be resumed.
+  - : جلسه رسانه‌ای مرورگر در حال حاضر متوقف است. پخش ممکن است از سر گرفته شود.
 - `playing`
-  - : The browser's media session is currently playing media, which can be paused.
+  - : جلسه رسانه‌ای مرورگر در حال حاضر در حال پخش رسانه است که می‌تواند متوقف شود.
 
-## Example
+## مثال
 
-The following example sets up two functions for playing and pausing, then uses them as
-callbacks with the relevant action handlers. Each function harnesses the
-`playbackState` property to indicate whether the audio is playing or paused.
+مثال زیر دو تابع برای پخش و توقف تنظیم می‌کند و سپس از آن‌ها به عنوان تابع بازخورد (callback) همراه با کنترل‌کننده‌های اکشن مربوطه استفاده می‌کند. هر تابع از ویژگی `playbackState` برای نشان دادن اینکه آیا صدا در حال پخش است یا متوقف شده استفاده می‌کند.
 
 ```js
 const actionHandlers = [
@@ -73,10 +66,10 @@ for (const [action, handler] of actionHandlers) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
