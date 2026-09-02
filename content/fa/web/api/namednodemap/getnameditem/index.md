@@ -1,11 +1,5 @@
 ---
 title: "NamedNodeMap: getNamedItem() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NamedNodeMap/getNamedItem"
-status: "needs-translation"
----
-
----
-title: "NamedNodeMap: getNamedItem() method"
 short-title: getNamedItem()
 slug: Web/API/NamedNodeMap/getNamedItem
 page-type: web-api-instance-method
@@ -14,29 +8,29 @@ browser-compat: api.NamedNodeMap.getNamedItem
 
 {{APIRef("DOM")}}
 
-The **`getNamedItem()`** method of the {{domxref("NamedNodeMap")}} interface returns the {{domxref("Attr")}} corresponding to the given name, or `null` if there is no corresponding attribute.
+متد **`getNamedItem()`** از رابط {{domxref("NamedNodeMap")}}، شیء {{domxref("Attr")}} متناظر با نام داده شده را برمی‌گرداند، یا اگر ویژگی متناظری وجود نداشته باشد، `null` را برمی‌گرداند.
 
 > [!NOTE]
-> This method is also called when you use the operator `[]` syntax.
-> So, `myMap[str]` is equivalent to `myMap.getNamedItem(str)` where `str` is a string.
+> این متد همچنین زمانی که از عملگر `[]` استفاده می‌کنید فراخوانی می‌شود.
+> بنابراین، `myMap[str]` معادل `myMap.getNamedItem(str)` است که در آن `str` یک رشته است.
 
-## Syntax
+## نحو
 
 ```js-nolint
 getNamedItem(name)
 [name]
 ```
 
-### Parameters
+### پارامترها
 
 - `name`
-  - : A string with the name of the desired attribute.
+  - : یک رشته شامل نام ویژگی مورد نظر.
 
-### Return value
+### مقدار بازگشتی
 
-An {{domxref("Attr")}} corresponding to the `name` given in parameter, or `null` if none has been found.
+یک {{domxref("Attr")}} متناظر با `name` داده شده در پارامتر، یا `null` اگر هیچ‌کدام پیدا نشود.
 
-## Example
+## مثال
 
 ```html
 <pre test="test"></pre>
@@ -52,10 +46,10 @@ And 'foo' has ${attrMap["foo"] ? "been" : "not been"} found.`;
 
 {{EmbedLiveSample("Example", "100%", 80)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
