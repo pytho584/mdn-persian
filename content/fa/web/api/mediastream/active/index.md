@@ -1,11 +1,5 @@
 ---
 title: "MediaStream: active property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaStream/active"
-status: "needs-translation"
----
-
----
-title: "MediaStream: active property"
 short-title: active
 slug: Web/API/MediaStream/active
 page-type: web-api-instance-property
@@ -14,25 +8,15 @@ browser-compat: api.MediaStream.active
 
 {{APIRef("Media Capture and Streams")}}
 
-The **`active`** read-only property of the
-{{domxref("MediaStream")}} interface returns a Boolean value which is
-`true` if the stream is currently active; otherwise, it returns
-`false`. A stream is considered **active** if at least one of
-its {{domxref("MediaStreamTrack")}}s does not have its property {{domxref("MediaStreamTrack.readyState")}}
-set to `ended`. Once every track has ended, the stream's `active` property becomes
-`false`.
+ویژگی فقط‌خواندنی **`active`** در رابط {{domxref("MediaStream")}} یک مقدار بولین (Boolean) برمی‌گرداند که اگر جریان (stream) در حال حاضر فعال باشد، `true` و در غیر این صورت `false` است. یک جریان زمانی **فعال** در نظر گرفته می‌شود که حداقل یکی از {{domxref("MediaStreamTrack")}}های آن دارای ویژگی {{domxref("MediaStreamTrack.readyState")}} با مقدار `ended` نباشد. به محض اینکه همهٔ trackها به پایان برسند، ویژگی `active` جریان به `false` تبدیل می‌شود.
 
-## Value
+## مقدار
 
-A Boolean value which is `true` if the stream is currently active;
-otherwise, the value is `false`.
+یک مقدار بولین که اگر جریان در حال حاضر فعال باشد `true` و در غیر این صورت `false` است.
 
-## Examples
+## مثال‌ها
 
-In this example, a new stream whose source is the user's local camera and microphone is
-requested using {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}}. When that
-stream becomes available (that is, when the returned {{jsxref("Promise")}} is fulfilled,
-a button on the page is updated based on whether or not the stream is currently active.
+در این مثال، یک جریان جدید که منبع آن دوربین و میکروفون محلی کاربر است، با استفاده از {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}} درخواست می‌شود. وقتی آن جریان در دسترس قرار می‌گیرد (یعنی وقتی {{jsxref("Promise")}} برگشتی fulfilled می‌شود)، یک دکمه در صفحه بر اساس فعال بودن یا نبودن جریان به‌روزرسانی می‌شود.
 
 ```js
 const promise = navigator.mediaDevices.getUserMedia({
