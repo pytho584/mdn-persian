@@ -1,11 +1,5 @@
 ---
 title: "KeyframeEffect: iterationComposite property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/KeyframeEffect/iterationComposite"
-status: "needs-translation"
----
-
----
-title: "KeyframeEffect: iterationComposite property"
 short-title: iterationComposite
 slug: Web/API/KeyframeEffect/iterationComposite
 page-type: web-api-instance-property
@@ -14,26 +8,26 @@ browser-compat: api.KeyframeEffect.iterationComposite
 
 {{ APIRef("Web Animations") }}
 
-The **`iterationComposite`** property of a {{domxref("KeyframeEffect")}} resolves how the animation's property value changes accumulate or override each other upon each of the animation's iterations.
+ویژگی **`iterationComposite`** در یک {{domxref("KeyframeEffect")}} مشخص می‌کند که تغییرات مقدار ویژگی انیمیشن، در هر تکرار (iteration) چگونه روی یکدیگر انباشته می‌شوند یا یکدیگر را بازنویسی می‌کنند.
 
-## Value
+## مقدار
 
-One of the following:
+یکی از موارد زیر:
 
 - `replace`
-  - : The `keyframeEffect` value produced is independent of the current iteration.
+  - : مقدار تولیدشدهٔ `keyframeEffect` مستقل از تکرار فعلی است.
 - `accumulate`
-  - : Subsequent iterations of the `keyframeEffect` build on the final value of the previous iteration.
+  - : تکرارهای بعدیِ `keyframeEffect` بر اساس مقدار نهایی تکرار قبلی ساخته می‌شوند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Animations API](/en-US/docs/Web/API/Web_Animations_API)
-- Property of both {{domxref("KeyframeEffect")}} objects.
+- ویژگی اشیاء {{domxref("KeyframeEffect")}}
