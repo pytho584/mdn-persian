@@ -1,7 +1,5 @@
 ---
 title: "MimeType"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MimeType"
-status: "needs-translation"
 ---
 
 ---
@@ -15,23 +13,23 @@ browser-compat: api.MimeType
 
 {{APIRef("HTML DOM")}}{{Deprecated_Header}}
 
-The **`MimeType`** interface provides contains information about a MIME type associated with a particular plugin. {{domxref("Navigator.mimeTypes")}} returns an array of this object.
+**`MimeType`** 接口提供與特定外掛程式關聯的 MIME 類型相關資訊。{{domxref("Navigator.mimeTypes")}} 會回傳此物件的陣列。
 
-## Instance properties
+## 執行個體屬性
 
 - {{domxref("MimeType.type")}} {{Deprecated_Inline}}
-  - : Returns the MIME type of the associated plugin.
+  - : 回傳關聯外掛程式的 MIME 類型。
 - {{domxref("MimeType.description")}} {{Deprecated_Inline}}
-  - : Returns a description of the associated plugin or an empty string if there is none.
+  - : 回傳關聯外掛程式的描述；如果沒有描述，則回傳空字串。
 - {{domxref("MimeType.suffixes")}} {{Deprecated_Inline}}
-  - : A string containing valid file extensions for the data displayed by the plugin, or an empty string if an extension is not valid for the particular module. For example, a browser's content decryption module may appear in the plugin list but support more file extensions than can be anticipated. It might therefore return an empty string.
+  - : 一個字串，包含外掛程式所顯示資料的有效副檔名；如果某個副檔名對特定模組無效，則回傳空字串。例如，瀏覽器的內容解密模組可能會出現在外掛程式清單中，但支援的副檔名可能比預期的更多，因此它可能回傳空字串。
 - {{domxref("MimeType.enabledPlugin")}} {{Deprecated_Inline}}
-  - : Returns an instance of {{domxref("Plugin")}} containing information about the plugin itself.
+  - : 回傳一個 {{domxref("Plugin")}} 實例，其中包含外掛程式本身的資訊。
 
-## Specifications
+## 規範
 
 {{Specifications}}
 
-## Browser compatibility
+## 瀏覽器相容性
 
 {{Compat}}
