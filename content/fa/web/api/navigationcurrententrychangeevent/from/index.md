@@ -1,11 +1,5 @@
 ---
 title: "NavigationCurrentEntryChangeEvent: from property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigationCurrentEntryChangeEvent/from"
-status: "needs-translation"
----
-
----
-title: "NavigationCurrentEntryChangeEvent: from property"
 short-title: from
 slug: Web/API/NavigationCurrentEntryChangeEvent/from
 page-type: web-api-instance-property
@@ -14,13 +8,13 @@ browser-compat: api.NavigationCurrentEntryChangeEvent.from
 
 {{APIRef("Navigation API")}}
 
-The **`from`** read-only property of the {{domxref("NavigationCurrentEntryChangeEvent")}} interface returns the {{domxref("NavigationHistoryEntry")}} that was navigated from.
+خاصیت فقط خواندنی **`from`** از رابط {{domxref("NavigationCurrentEntryChangeEvent")}}، شیء {{domxref("NavigationHistoryEntry")}}ای را برمی‌گرداند که از آن ناوبری صورت گرفته است.
 
-## Value
+## مقدار
 
-A {{domxref("NavigationHistoryEntry")}} object.
+یک شیء {{domxref("NavigationHistoryEntry")}}.
 
-## Examples
+## مثال‌ها
 
 ```js
 navigation.addEventListener("currententrychange", (event) => {
@@ -28,15 +22,15 @@ navigation.addEventListener("currententrychange", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
 - [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
