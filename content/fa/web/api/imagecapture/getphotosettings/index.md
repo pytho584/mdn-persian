@@ -1,7 +1,5 @@
 ---
 title: "ImageCapture: getPhotoSettings() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ImageCapture/getPhotoSettings"
-status: "needs-translation"
 ---
 
 ---
@@ -14,47 +12,41 @@ browser-compat: api.ImageCapture.getPhotoSettings
 
 {{APIRef("Image Capture API")}}
 
-The **`getPhotoSettings()`** method of
-the {{domxref("ImageCapture")}} interface returns a {{jsxref("Promise")}} that
-resolves with an object containing the current photo
-configuration settings.
+متد **`getPhotoSettings()`** در رابط {{domxref("ImageCapture")}} یک {{jsxref("Promise")}} برمی‌گرداند که با شیءای شامل تنظیمات فعلی پیکربندی عکس، resolve می‌شود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 getPhotoSettings()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with an object containing the following properties:
+یک {{jsxref("Promise")}} که با شیءای شامل ویژگی‌های زیر resolve می‌شود:
 
 - `fillLightMode`
-  - : The flash setting of the capture device, one of `"auto"`, `"off"`, or `"flash"`.
+  - : تنظیم فلاش دستگاه ضبط؛ یکی از `"auto"`، `"off"` یا `"flash"`.
 - `imageHeight`
-  - : The desired image height as an integer. The browser selects the closest width value to this setting if it only supports discrete heights.
+  - : مقدار ارتفاع تصویر مورد نظر به‌صورت یک عدد صحیح. اگر مرورگر فقط از ارتفاع‌های گسسته پشتیبانی کند، نزدیک‌ترین مقدار عرض را به این تنظیم انتخاب می‌کند.
 - `imageWidth`
-  - : The desired image width as an integer. The browser selects the closest width value to this setting if it only supports discrete widths.
+  - : مقدار عرض تصویر مورد نظر به‌صورت یک عدد صحیح. اگر مرورگر فقط از عرض‌های گسسته پشتیبانی کند، نزدیک‌ترین مقدار عرض را به این تنظیم انتخاب می‌کند.
 - `redEyeReduction`
-  - : A boolean indicating whether the red-eye reduction should be used if it is available.
+  - : یک مقدار بولی که نشان می‌دهد آیا در صورت موجود بودن، کاهش قرمزی چشم (Red-Eye Reduction) باید استفاده شود یا خیر.
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if `readyState` property of the `MediaStreamTrack` passing in the constructor is not `live`.
+  - : زمانی پرتاب می‌شود که ویژگی `readyState` از `MediaStreamTrack` ارسال‌شده در سازنده (constructor)، `live` نباشد.
 - `OperationError` {{domxref("DOMException")}}
-  - : Thrown if the operation can't complete for any reason.
+  - : اگر عملیات به هر دلیلی نتواند تکمیل شود، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-The following example, extracted from [Chrome's Image Capture / Photo Resolution Sample](https://googlechrome.github.io/samples/image-capture/photo-resolution.html), uses the results from
-`getPhotoSettings()` to modify the size of an input range. This example also
-shows how the {{domxref("ImageCapture")}} object is created using a
-{{domxref("MediaStreamTrack")}} retrieved from a device's {{domxref("MediaStream")}}.
+مثال زیر، که از [Chrome's Image Capture / Photo Resolution Sample](https://googlechrome.github.io/samples/image-capture/photo-resolution.html) استخراج شده، از نتایج `getPhotoSettings()` برای تغییر اندازه یک محدوده ورودی (input range) استفاده می‌کند. این مثال همچنین نشان می‌دهد که چگونه شیء {{domxref("ImageCapture")}} با استفاده از یک {{domxref("MediaStreamTrack")}} که از {{domxref("MediaStream")}} یک دستگاه به دست آمده، ساخته می‌شود.
 
 ```js
 const input = document.querySelector('input[type="range"]');
@@ -86,10 +78,10 @@ navigator.mediaDevices
   .catch((error) => console.error("Argh!", error.name || error));
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
