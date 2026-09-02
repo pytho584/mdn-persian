@@ -1,11 +1,5 @@
 ---
 title: "IntersectionObserverEntry: boundingClientRect property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry/boundingClientRect"
-status: "needs-translation"
----
-
----
-title: "IntersectionObserverEntry: boundingClientRect property"
 short-title: boundingClientRect
 slug: Web/API/IntersectionObserverEntry/boundingClientRect
 page-type: web-api-instance-property
@@ -14,19 +8,18 @@ browser-compat: api.IntersectionObserverEntry.boundingClientRect
 
 {{APIRef("Intersection Observer API")}}
 
-The **`boundingClientRect`** read-only property of the {{domxref("IntersectionObserverEntry")}} interface returns a {{domxref("DOMRectReadOnly")}} which in essence describes a rectangle describing the smallest rectangle that contains the entire target element.
+ویژگی فقط‌خواندنی **`boundingClientRect`** در رابط {{domxref("IntersectionObserverEntry")}} یک {{domxref("DOMRectReadOnly")}} برمی‌گرداند که در اصل کوچک‌ترین مستطیلی را توصیف می‌کند که کل عنصر هدف را در بر می‌گیرد.
 
-## Value
+## مقدار
 
-A {{domxref("DOMRectReadOnly")}} which describes the smallest rectangle that contains every part of the target element whose intersection change is being described.
-This value is obtained using the same algorithm as {{domxref("Element.getBoundingClientRect()")}}, so refer to that article for details on precisely what is done to obtain this rectangle and what is and is not included within its bounds.
+یک {{domxref("DOMRectReadOnly")}} که کوچک‌ترین مستطیلِ دربرگیرندهٔ تمام بخش‌های عنصر هدف را توصیف می‌کند؛ یعنی عنصری که تغییر تقاطع آن در حال توصیف است. این مقدار با استفاده از همان الگوریتم {{domxref("Element.getBoundingClientRect()")}} به دست می‌آید؛ بنابراین برای اطلاع از جزئیات دقیق چگونگی محاسبهٔ این مستطیل و اینکه چه چیزهایی در مرزهای آن قرار می‌گیرند یا نمی‌گیرند، به آن مقاله مراجعه کنید.
 
-In the general case, however, it's safe to think of this as the bounds rectangle of the target element.
+با این حال، در حالت کلی می‌توانید با خیال راحت آن را به‌عنوان مستطیل مرزیِ عنصر هدف در نظر بگیرید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
