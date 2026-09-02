@@ -1,10 +1,4 @@
 ---
-title: "MutationEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MutationEvent"
-status: "needs-translation"
----
-
----
 title: MutationEvent
 slug: Web/API/MutationEvent
 page-type: web-api-interface
@@ -16,56 +10,56 @@ browser-compat: api.MutationEvent
 
 {{APIRef("UI Events")}}{{Deprecated_Header}}{{non-standard_header}}
 
-The **`MutationEvent`** interface provides event properties that are specific to modifications to the Document Object Model (DOM) hierarchy and nodes.
+رابطهٔ **`MutationEvent`** ویژگیهای رویدادی را فراهم میکند که مخصوص تغییرات در سلسلهمراتب و گرههای مدل شیء سند (DOM) هستند.
 
 > [!NOTE]
-> Using _mutation events_ is problematic:
+> استفاده از _رویدادهای تغییر (mutation events)_ مشکلآفرین است:
 >
-> - Their design is [flawed](https://lists.w3.org/Archives/Public/public-webapps/2011JulSep/0779.html).
-> - Adding DOM mutation listeners to a document [profoundly degrades the performance](https://groups.google.com/g/mozilla.dev.platform/c/L0Lx11u5Bvs?pli=1) of further DOM modifications to that document (making them 1.5 - 7 times slower!). Moreover, removing the listeners does not reverse the damage.
-> - They have poor cross-browser compatibility: Safari doesn't support `DOMAttrModified` (see [WebKit bug 8191](https://webkit.org/b/8191)) and Firefox doesn't support _mutation name events_ (like `DOMElementNameChanged` and `DOMAttributeNameChanged`).
+> - طراحی آنها [ناقص](https://lists.w3.org/Archives/Public/public-webapps/2011JulSep/0779.html) است.
+> - افزودن شنوندههای تغییر DOM به یک سند، [بهشدت کارایی](https://groups.google.com/g/mozilla.dev.platform/c/L0Lx11u5Bvs?pli=1) تغییرات بعدی DOM در آن سند را کاهش میدهد (۱٫۵ تا ۷ برابر کندتر!). علاوه بر این، حذف شنوندهها نیز آسیب را جبران نمیکند.
+> - سازگاری ضعیفی با مرورگرهای مختلف دارند: سافاری از `DOMAttrModified` پشتیبانی نمیکند (به [باگ 8191 وبکیت](https://webkit.org/b/8191) مراجعه کنید) و فایرفاکس از _رویدادهای نام تغییر (mutation name events)_ مانند `DOMElementNameChanged` و `DOMAttributeNameChanged` پشتیبانی نمیکند.
 >
-> They have been deprecated in favor of [mutation observers](/en-US/docs/Web/API/MutationObserver). **Consider using these instead.**
+> این رویدادها به نفع [mutation observers](/en-US/docs/Web/API/MutationObserver) منسوخ شدهاند. **بهجای آنها از این موارد استفاده کنید.**
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگیهای نمونه
 
-_This interface also inherits properties from its parent {{domxref("UIEvent")}}, and indirectly from {{domxref("Event")}}._
+_این رابط همچنین ویژگیهای والد خود {{domxref("UIEvent")}} و بهطور غیرمستقیم {{domxref("Event")}} را به ارث میبرد._
 
 - {{domxref("MutationEvent.attrChange")}} {{ReadOnlyInline}} {{Deprecated_Inline}} {{non-standard_inline}}
-  - : Indicates what kind of change triggered the `DOMAttrModified` event. It can be `MODIFICATION` (`1`), `ADDITION` (`2`) or `REMOVAL` (`3`). It has no meaning for other events and is then set to `0`.
+  - : مشخص میکند چه نوع تغییری باعث رویداد `DOMAttrModified` شده است. میتواند `MODIFICATION` (`1`)، `ADDITION` (`2`) یا `REMOVAL` (`3`) باشد. برای سایر رویدادها معنایی ندارد و برابر `0` قرار میگیرد.
 - {{domxref("MutationEvent.attrName")}} {{ReadOnlyInline}} {{Deprecated_Inline}} {{non-standard_inline}}
-  - : Indicates the name of the node affected by the `DOMAttrModified` event. It has no meaning for other events and is then set to the empty string (`""`).
+  - : نام گرهٔ متأثر از رویداد `DOMAttrModified` را مشخص میکند. برای سایر رویدادها معنایی ندارد و برابر رشتهٔ خالی (`""`) قرار میگیرد.
 - {{domxref("MutationEvent.newValue")}} {{ReadOnlyInline}} {{Deprecated_Inline}} {{non-standard_inline}}
-  - : In `DOMAttrModified` events, contains the new value of the modified {{domxref("Attr")}} node. In `DOMCharacterDataModified` events, contains the new value of the modified {{domxref("CharacterData")}} node. In all other cases, returns the empty string (`""`).
+  - : در رویدادهای `DOMAttrModified`، مقدار جدید گرهٔ {{domxref("Attr")}} تغییریافته را شامل میشود. در رویدادهای `DOMCharacterDataModified`، مقدار جدید گرهٔ {{domxref("CharacterData")}} تغییریافته را شامل میشود. در سایر موارد، رشتهٔ خالی (`""`) را برمیگرداند.
 - {{domxref("MutationEvent.prevValue")}} {{ReadOnlyInline}} {{Deprecated_Inline}} {{non-standard_inline}}
-  - : In `DOMAttrModified` events, contains the previous value of the modified {{domxref("Attr")}} node. In `DOMCharacterDataModified` events, contains previous new value of the modified {{domxref("CharacterData")}} node. In all other cases, returns the empty string (`""`).
+  - : در رویدادهای `DOMAttrModified`، مقدار قبلی گرهٔ {{domxref("Attr")}} تغییریافته را شامل میشود. در رویدادهای `DOMCharacterDataModified`، مقدار قبلی گرهٔ {{domxref("CharacterData")}} تغییریافته را شامل میشود. در سایر موارد، رشتهٔ خالی (`""`) را برمیگرداند.
 - {{domxref("MutationEvent.relatedNode")}} {{ReadOnlyInline}} {{Deprecated_Inline}} {{non-standard_inline}}
-  - : Indicates the node related to the event, like the changed node inside the subtree for `DOMSubtreeModified`.
+  - : گرهٔ مرتبط با رویداد را مشخص میکند، مانند گرهٔ تغییریافته در زیردرخت برای `DOMSubtreeModified`.
 
-## Instance methods
+## روشهای نمونه
 
 - {{domxref("MutationEvent.initMutationEvent()")}} {{Deprecated_Inline}} {{non-standard_inline}}
-  - : Constructor method that returns a new `MutationEvent` configured with the parameters given.
+  - : روش سازندهای که یک `MutationEvent` جدید پیکربندیشده با پارامترهای دادهشده برمیگرداند.
 
-## Mutation events list
+## فهرست رویدادهای تغییر
 
-The following is a list of all mutation events:
+در ادامه فهرست همهٔ رویدادهای تغییر آمده است:
 
-- `DOMAttrModified` (Not supported by Safari)
-- `DOMAttributeNameChanged` (Not supported by Firefox)
+- `DOMAttrModified` (توسط سافاری پشتیبانی نمیشود)
+- `DOMAttributeNameChanged` (توسط فایرفاکس پشتیبانی نمیشود)
 - `DOMCharacterDataModified`
-- `DOMElementNameChanged` (Not supported by Firefox)
+- `DOMElementNameChanged` (توسط فایرفاکس پشتیبانی نمیشود)
 - `DOMNodeInserted`
 - `DOMNodeInsertedIntoDocument`
 - `DOMNodeRemoved`
 - `DOMNodeRemovedFromDocument`
 - `DOMSubtreeModified`
 
-## Examples
+## مثالها
 
-You can register a listener for mutation events using {{DOMxRef("EventTarget.addEventListener()")}} as follows:
+میتوانید یک شنونده برای رویدادهای تغییر با استفاده از {{DOMxRef("EventTarget.addEventListener()")}} به صورت زیر ثبت کنید:
 
 ```js
 element.addEventListener("DOMNodeInserted", (event) => {
@@ -73,14 +67,14 @@ element.addEventListener("DOMNodeInserted", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{DOMxRef("MutationObserver")}}
