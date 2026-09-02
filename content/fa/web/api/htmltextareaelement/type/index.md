@@ -1,11 +1,5 @@
 ---
 title: "HTMLTextAreaElement: type property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTextAreaElement/type"
-status: "needs-translation"
----
-
----
-title: "HTMLTextAreaElement: type property"
 short-title: type
 slug: Web/API/HTMLTextAreaElement/type
 page-type: web-api-instance-property
@@ -14,28 +8,28 @@ browser-compat: api.HTMLTextAreaElement.type
 
 {{ApiRef("HTML DOM")}}
 
-The **`type`** read-only property of the {{domxref("HTMLTextAreaElement")}} interface returns the string `"textarea"`.
+ویژگی فقطخواندنی **`type`** از رابط {{domxref("HTMLTextAreaElement")}} رشته `"textarea"` را برمی‌گرداند.
 
-## Value
+## مقدار
 
-The string `"textarea"`.
+رشته `"textarea"`.
 
-## Example
+## مثال
 
 ```js
 const textArea = document.querySelector("textarea");
 console.log(textArea.type); // "textarea"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLTextAreaElement")}}
 - {{HTMLElement("textarea")}}
