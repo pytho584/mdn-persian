@@ -1,7 +1,5 @@
 ---
 title: "MediaQueryList"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList"
-status: "needs-translation"
 ---
 
 ---
@@ -13,42 +11,42 @@ browser-compat: api.MediaQueryList
 
 {{APIRef("CSSOM view API")}}
 
-A **`MediaQueryList`** object stores information on a [media query](/en-US/docs/Web/CSS/Guides/Media_queries) applied to a document, with support for both immediate and event-driven matching against the state of the document.
+یک شیء **`MediaQueryList`** اطلاعات مربوط به یک [media query](/en-US/docs/Web/CSS/Guides/Media_queries) (پرسوجوی رسانهای) اعمال‌شده روی سند را ذخیره می‌کند. این شیء امکان تطبیق با وضعیت سند را هم به‌صورت فوری و هم به‌صورت رویدادمحور فراهم می‌کند.
 
-You can create a `MediaQueryList` by calling {{DOMxRef("Window.matchMedia", "matchMedia()")}} on the {{DOMxRef("window")}} object. The resulting object handles sending notifications to listeners when the media query state changes (i.e., when the media query test starts or stops evaluating to `true`).
+می‌توانید با فراخواندن {{DOMxRef("Window.matchMedia", "matchMedia()")}} روی شیء {{DOMxRef("window")}} یک `MediaQueryList` بسازید. شیء حاصل، هنگام تغییر وضعیت media query (یعنی زمانی که نتیجهٔ آزمون media query به `true` تبدیل می‌شود یا از `true` خارج می‌شود) اعلان‌هایی به شنوندگان (listeners) ارسال می‌کند.
 
-This is very useful for adaptive design, since this makes it possible to observe a document to detect when its media queries change, instead of polling the values periodically, and allows you to programmatically make changes to a document based on media query status.
+این قابلیت برای طراحی تطبیقی (adaptive design) بسیار مفید است؛ زیرا به‌جای بررسی دوره‌ای مقادیر، می‌توان سند را زیر نظر گرفت تا تغییر وضعیت media queryها را تشخیص داد و بر اساس وضعیت media query، تغییرات سند را به‌صورت برنامه‌نویسی‌شده اعمال کرد.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_The `MediaQueryList` interface inherits properties from its parent interface, {{DOMxRef("EventTarget")}}._
+_رابطِ `MediaQueryList` ویژگی‌های خود را از رابطِ والد، یعنی {{DOMxRef("EventTarget")}}، به ارث می‌برد._
 
 - {{DOMxRef("MediaQueryList.matches", "matches")}} {{ReadOnlyInline}}
-  - : A boolean value that returns `true` if the {{DOMxRef("document")}} currently matches the media query list, or `false` if not.
+  - : یک مقدار بولی (boolean) که اگر {{DOMxRef("document")}} در حال حاضر با فهرست media query مطابقت داشته باشد، `true` و در غیر این صورت `false` برمی‌گرداند.
 - {{DOMxRef("MediaQueryList.media", "media")}} {{ReadOnlyInline}}
-  - : A string representing a serialized media query.
+  - : یک رشته (string) که یک media query سریال‌سازی‌شده را نمایش می‌دهد.
 
-## Instance methods
+## متدهای نمونه
 
-_The `MediaQueryList` interface inherits methods from its parent interface, {{DOMxRef("EventTarget")}}._
+_رابطِ `MediaQueryList` متدهای خود را از رابطِ والد، یعنی {{DOMxRef("EventTarget")}}، به ارث می‌برد._
 
 - {{DOMxRef("MediaQueryList.addListener", "addListener()")}} {{deprecated_inline}}
-  - : Adds to the `MediaQueryList` a callback which is invoked whenever the media query status—whether or not the document matches the media queries in the list—changes. This method exists primarily for backward compatibility; if possible, you should instead use {{domxref("EventTarget.addEventListener", "addEventListener()")}} to watch for the {{domxref("MediaQueryList.change_event", "change")}} event.
+  - : یک تابع callback به `MediaQueryList` اضافه می‌کند که هر زمان وضعیت media query تغییر کند — یعنی هر زمان سند با media queryهای موجود در فهرست مطابقت پیدا کند یا از مطابقت خارج شود — فراخوانی می‌شود. این متد عمدتاً برای سازگاری با نسخه‌های قدیمی‌تر وجود دارد؛ در صورت امکان بهتر است به‌جای آن از {{domxref("EventTarget.addEventListener", "addEventListener()")}} برای شنیدن رویداد {{domxref("MediaQueryList.change_event", "change")}} استفاده کنید.
 - {{DOMxRef("MediaQueryList.removeListener", "removeListener()")}} {{deprecated_inline}}
-  - : Removes the specified listener callback from the callbacks to be invoked when the `MediaQueryList` changes media query status, which happens any time the document switches between matching and not matching the media queries listed in the `MediaQueryList`. This method has been kept for backward compatibility; if possible, you should generally use {{domxref("EventTarget.removeEventListener", "removeEventListener()")}} to remove change notification callbacks (which should have previously been added using `addEventListener()`).
+  - : تابع callback شنوندهٔ مشخص‌شده را از مجموعهٔ callbackهایی که هنگام تغییر وضعیت media query در `MediaQueryList` فراخوانی می‌شوند، حذف می‌کند؛ این تغییر هر بار که سند بین مطابقت و عدم مطابقت با media queryهای فهرست‌شده در `MediaQueryList` جابه‌جا شود رخ می‌دهد. این متد برای سازگاری با نسخه‌های قدیمی‌تر حفظ شده است؛ در صورت امکان بهتر است برای حذف callbackهای اعلان تغییر از {{domxref("EventTarget.removeEventListener", "removeEventListener()")}} استفاده کنید (که قبلاً باید با `addEventListener()` اضافه شده باشند).
 
-## Events
+## رویدادها
 
-_The following events are delivered to `MediaQueryList` objects:_
+_رویدادهای زیر به اشیاء `MediaQueryList` ارسال می‌شوند:_
 
 - {{DOMxRef("MediaQueryList.change_event", "change")}}
-  - : Sent to the `MediaQueryList` when the result of running the media query against the document changes. For example, if the media query is `(width >= 400px)`, the `change` event is fired any time the width of the document's {{Glossary("viewport")}} changes such that its width moves across the 400px boundary in either direction.
+  - : هنگامی که نتیجهٔ اجرای media query روی سند تغییر کند، به `MediaQueryList` ارسال می‌شود. برای مثال، اگر media query برابر با `(width >= 400px)` باشد، هر بار که عرض {{Glossary("viewport")}} سند طوری تغییر کند که از مرز 400px در هر یک از دو جهت عبور کند، رویداد `change` رخ می‌دهد.
 
-## Examples
+## مثال‌ها
 
-This example creates a `MediaQueryList` and then sets up a listener to detect when the media query status changes, running a custom function when it does to change the appearance of the page.
+این مثال یک `MediaQueryList` می‌سازد و سپس یک شنونده تنظیم می‌کند تا تغییر وضعیت media query را تشخیص دهد و هنگام این تغییر، تابعی سفارشی برای تغییر ظاهر صفحه اجرا کند.
 
 ```js
 const para = document.querySelector("p");
@@ -70,22 +68,22 @@ mql.addEventListener("change", screenTest);
 ```
 
 > [!NOTE]
-> You can find this example on GitHub (see the [source code](https://github.com/mdn/dom-examples/blob/main/mediaquerylist/index.html), and also see it [running live](https://mdn.github.io/dom-examples/mediaquerylist/index.html)).
+> می‌توانید این مثال را در GitHub پیدا کنید (هم [کد منبع](https://github.com/mdn/dom-examples/blob/main/mediaquerylist/index.html) را ببینید و هم [نسخهٔ در حال اجرا](https://mdn.github.io/dom-examples/mediaquerylist/index.html) را مشاهده کنید).
 
-You can find other examples on the individual property and method pages.
+همچنین می‌توانید مثال‌های دیگری را در صفحهٔ هر یک از ویژگی‌ها و متدها پیدا کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - [Media queries](/en-US/docs/Web/CSS/Guides/Media_queries/Using)
 - [Using media queries from code](/en-US/docs/Web/CSS/Guides/Media_queries/Testing)
 - {{DOMxRef("window.matchMedia()")}}
 - {{DOMxRef("MediaQueryListEvent")}}
-- The article {{DOMxRef("Window.devicePixelRatio")}} also has a useful example
+- مقالهٔ {{DOMxRef("Window.devicePixelRatio")}} نیز یک مثال کاربردی دارد.
