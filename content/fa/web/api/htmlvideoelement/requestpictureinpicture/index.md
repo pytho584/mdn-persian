@@ -1,7 +1,5 @@
 ---
 title: "HTMLVideoElement: requestPictureInPicture() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLVideoElement/requestPictureInPicture"
-status: "needs-translation"
 ---
 
 ---
@@ -14,48 +12,42 @@ browser-compat: api.HTMLVideoElement.requestPictureInPicture
 
 {{APIRef("Picture-in-Picture API")}}
 
-The **{{domxref("HTMLVideoElement")}}** method
-**`requestPictureInPicture()`** issues an asynchronous request
-to display the video in picture-in-picture mode.
+متد **`requestPictureInPicture()`** در **{{domxref("HTMLVideoElement")}}** یک درخواست ناهمزمان برای نمایش ویدیو در حالت تصویر-در-تصویر (Picture-in-Picture) ارسال می‌کند.
 
-It's not guaranteed that the video will be put into picture-in-picture. If permission
-to enter that mode is granted, the returned {{jsxref("Promise")}} will resolve and the
-video will receive an {{domxref("HTMLVideoElement.enterpictureinpicture_event", "enterpictureinpicture")}} event to let it know that it's now in picture-in-picture.
+تضمینی وجود ندارد که ویدیو وارد حالت تصویر-در-تصویر شود. اگر اجازه ورود به این حالت داده شود، {{jsxref("Promise")}} بازگشتی resolve می‌شود و ویدیو یک رویداد {{domxref("HTMLVideoElement.enterpictureinpicture_event", "enterpictureinpicture")}} دریافت می‌کند تا بداند که اکنون در حالت تصویر-در-تصویر قرار دارد.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 requestPictureInPicture()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ پارامتری ندارد.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that will resolve to a {{domxref("PictureInPictureWindow")}}
-object that can be used to listen when a user will resize that floating window.
+یک {{jsxref("Promise")}} که به یک شیء {{domxref("PictureInPictureWindow")}} resolve می‌شود و می‌توان از آن برای گوش دادن به رویداد تغییر اندازه (resize) پنجره شناور توسط کاربر استفاده کرد.
 
-### Exceptions
+### استثناها
 
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Thrown if the feature is not supported (for example, disabled by a user preference or by a platform limitation).
+  - : اگر این قابلیت پشتیبانی نشود (مثلاً توسط ترجیحات کاربر یا محدودیت پلتفرم غیرفعال شده باشد) پرتاب می‌شود.
 - `SecurityError` {{domxref("DOMException")}}
-  - : Thrown if the feature is blocked by a [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy).
+  - : اگر این قابلیت توسط [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) مسدود شده باشد پرتاب می‌شود.
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the video element's `readState` is `HAVE_NOTHING`, or if the video element has no video track, or if the video element's `disablePictureInPicture` attribute is `true`.
+  - : اگر `readState` عنصر ویدیو برابر `HAVE_NOTHING` باشد، یا عنصر ویدیو هیچ track ویدیویی نداشته باشد، یا ویژگی `disablePictureInPicture` عنصر ویدیو برابر `true` باشد پرتاب می‌شود.
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if `document.pictureInPictureElement` is `null` and the document does not have {{Glossary("transient activation")}}.
+  - : اگر `document.pictureInPictureElement` برابر `null` باشد و سند دارای {{Glossary("transient activation")}} (فعال‌سازی گذرا) نباشد پرتاب می‌شود.
 
-## Security
+## امنیت
 
-[Transient user activation](/en-US/docs/Web/Security/Defenses/User_activation) is required. The user has to interact with the page or a UI element for this feature to work.
+[Transient user activation](/en-US/docs/Web/Security/Defenses/User_activation) الزامی است. کاربر باید با صفحه یا یک عنصر رابط کاربری تعامل کند تا این قابلیت کار کند.
 
-## Examples
+## مثال‌ها
 
-This example requests that the video enters Picture-in-Picture mode, and sets an event
-listener to handle the floating window resizing.
+این مثال درخواست ورود ویدیو به حالت Picture-in-Picture را ارسال می‌کند و یک شنونده رویداد (event listener) برای مدیریت تغییر اندازه پنجره شناور تنظیم می‌کند.
 
 ```js
 function enterPictureInPicture() {
@@ -67,17 +59,17 @@ function enterPictureInPicture() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{HTMLElement("video")}} element
+- عنصر {{HTMLElement("video")}}
 - {{DOMxRef("HTMLVideoElement.disablePictureInPicture")}}
 - {{DOMxRef("Document.pictureInPictureEnabled")}}
 - {{DOMxRef("Document.exitPictureInPicture()")}}
