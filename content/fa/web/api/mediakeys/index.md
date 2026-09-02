@@ -1,7 +1,5 @@
 ---
 title: "MediaKeys"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaKeys"
-status: "needs-translation"
 ---
 
 ---
@@ -13,27 +11,27 @@ browser-compat: api.MediaKeys
 
 {{APIRef("Encrypted Media Extensions")}}{{SecureContext_Header}}
 
-The **`MediaKeys`** interface of [Encrypted Media Extensions API](/en-US/docs/Web/API/Encrypted_Media_Extensions_API) represents a set of keys that an associated {{domxref("HTMLMediaElement")}} can use for decryption of media data during playback.
+رابطهٔ **`MediaKeys`** در [API افزونههای رسانهٔ رمزنگاری‌شده](/en-US/docs/Web/API/Encrypted_Media_Extensions_API) مجموعه‌ای از کلیدها را نشان می‌دهد که یک {{domxref("HTMLMediaElement")}} مرتبط می‌تواند برای رمزگشایی داده‌های رسانه‌ای در حین پخش از آن استفاده کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-None.
+هیچ‌کدام.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("MediaKeys.createSession()")}}
-  - : Returns a new {{domxref("MediaKeySession")}} object, which represents a context for message exchange with a content decryption module (CDM).
+  - : یک شیء جدید {{domxref("MediaKeySession")}} برمی‌گرداند که زمینه‌ای برای تبادل پیام با ماژول رمزگشایی محتوا (CDM) را نشان می‌دهد.
 - {{domxref("MediaKeys.getStatusForPolicy()")}}
-  - : Returns a {{jsxref("Promise")}} that resolves to a status string indicating whether the CDM would allow the presentation of encrypted media data using the keys, based on specified policy requirements.
+  - : یک {{jsxref("Promise")}} برمی‌گرداند که به یک رشتهٔ وضعیت resolve می‌شود و نشان می‌دهد که آیا CDM بر اساس الزامات خط‌مشی مشخص‌شده، نمایش داده‌های رسانه‌ای رمزنگاری‌شده با استفاده از کلیدها را مجاز می‌داند یا خیر.
 - {{domxref("MediaKeys.setServerCertificate()")}}
-  - : Returns a {{jsxref("Promise")}} to a server certificate to be used to encrypt messages to the license server.
+  - : یک {{jsxref("Promise")}} به گواهی سرور برمی‌گرداند که برای رمزنگاری پیام‌ها به سرور مجوز استفاده می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Check if keys are usable with HDCP restriction
+### بررسی قابل‌استفاده بودن کلیدها با محدودیت HDCP
 
-This example shows how `getStatusForPolicy()` can be used to check if keys can decrypt a particular video format in a setup that has a minimum HDCP version of `2.2`.
-For more information, see the [MediaKeys: getStatusForPolicy() method](/en-US/docs/Web/API/MediaKeys/getStatusForPolicy) documentation.
+این مثال نشان می‌دهد که چگونه می‌توان از `getStatusForPolicy()` برای بررسی اینکه آیا کلیدها می‌توانند یک فرمت ویدیویی خاص را در محیطی که حداقل نسخهٔ HDCP آن `2.2` است رمزگشایی کنند، استفاده کرد.
+برای اطلاعات بیشتر، مستندات [روش MediaKeys: getStatusForPolicy()](/en-US/docs/Web/API/MediaKeys/getStatusForPolicy) را ببینید.
 
 #### HTML
 
@@ -87,14 +85,14 @@ async function getMediaStatus(config) {
     });
     log(mediaStatus);
 
-    // Get the content or fallback to an alternative if the
-    // keys are not usable
+    // دریافت محتوا یا بازگشت به گزینهٔ جایگزین اگر
+    // کلیدها قابل استفاده نیستند
     if (mediaStatus === "usable") {
       console.log("HDCP 2.2 can be enforced.");
-      // Fetch the high resolution protected content
+      // دریافت محتوای محافظت‌شده با کیفیت بالا
     } else {
       log("HDCP 2.2 cannot be enforced");
-      // Fallback other content, get license, etc.
+      // بازگشت به محتوای دیگر، دریافت مجوز و غیره
     }
   } catch (error) {
     log(error);
@@ -102,14 +100,14 @@ async function getMediaStatus(config) {
 }
 ```
 
-#### Results
+#### نتایج
 
 {{EmbedLiveSample("Check if keys are usable with HDCP restriction")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
