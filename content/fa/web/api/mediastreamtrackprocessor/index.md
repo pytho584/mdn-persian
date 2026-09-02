@@ -1,10 +1,4 @@
 ---
-title: "MediaStreamTrackProcessor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrackProcessor"
-status: "needs-translation"
----
-
----
 title: MediaStreamTrackProcessor
 slug: Web/API/MediaStreamTrackProcessor
 page-type: web-api-interface
@@ -14,29 +8,29 @@ browser-compat: api.MediaStreamTrackProcessor
 {{APIRef("Insertable Streams for MediaStreamTrack API")}}{{AvailableInWorkers("dedicated")}}
 
 > [!WARNING]
-> Browsers differ on which global context they expose this interface in (e.g., only window in some browsers and only dedicated worker in others), making them incompatible. Keep this in mind when comparing support.
+> مرورگرها از نظر اینکه این رابط را در کدام بافت سراسری (global context) در دسترس قرار می‌دهند، با هم تفاوت دارند (برای مثال، در برخی مرورگرها فقط در `window` و در برخی دیگر فقط در worker اختصاصی). همین موضوع آن‌ها را ناسازگار می‌کند. هنگام مقایسهٔ پشتیبانی مرورگرها، این نکته را در نظر داشته باشید.
 
-The **`MediaStreamTrackProcessor`** interface of the [Insertable Streams for MediaStreamTrack API](/en-US/docs/Web/API/Insertable_Streams_for_MediaStreamTrack_API) consumes a video {{domxref("MediaStreamTrack")}} object's source and generates a stream of {{domxref("VideoFrame")}} objects.
+رابط **`MediaStreamTrackProcessor`** از [Insertable Streams for MediaStreamTrack API](/en-US/docs/Web/API/Insertable_Streams_for_MediaStreamTrack_API) منبع یک شیء {{domxref("MediaStreamTrack")}} ویدیویی را مصرف می‌کند و جریانی از اشیاء {{domxref("VideoFrame")}} تولید می‌کند.
 
-## Constructor
+## سازنده
 
 - {{domxref("MediaStreamTrackProcessor.MediaStreamTrackProcessor", "MediaStreamTrackProcessor()")}}
-  - : Creates a new `MediaStreamTrackProcessor` object.
+  - : یک شیء جدید `MediaStreamTrackProcessor` می‌سازد.
 - {{domxref("MediaStreamTrackProcessor.MediaStreamTrackProcessor", "window.MediaStreamTrackProcessor()")}} {{Experimental_Inline}} {{Non-standard_Inline}}
-  - : Creates a new `MediaStreamTrackProcessor` object on the {{Glossary("main thread")}} that can process both video and audio.
+  - : یک شیء جدید `MediaStreamTrackProcessor` روی {{Glossary("main thread")}} می‌سازد که می‌تواند هم ویدیو و هم صدا را پردازش کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("MediaStreamTrackProcessor.discardedFrames")}} {{experimental_inline}}
-  - : A number indicating how many frames have been dropped by the processor.
+  - : عددی که نشان می‌دهد پردازنده چند فریم را کنار گذاشته است.
 - {{domxref("MediaStreamTrackProcessor.readable")}}
-  - : Returns a {{domxref("ReadableStream")}}.
+  - : یک {{domxref("ReadableStream")}} برمی‌گرداند.
 - {{domxref("MediaStreamTrackProcessor.totalFrames")}} {{experimental_inline}}
-  - : A number indicating how many frames have been received by the processor in total.
+  - : عددی که نشان می‌دهد پردازنده در مجموع چند فریم دریافت کرده است.
 
-## Examples
+## مثال‌ها
 
-The following example is from the article [Unbundling MediaStreamTrackProcessor and VideoTrackGenerator](https://blog.mozilla.org/webrtc/unbundling-mediastreamtrackprocessor-and-videotrackgenerator/). It [transfers](/en-US/docs/Web/API/Web_Workers_API/Transferable_objects) a camera {{domxref("MediaStreamTrack")}} to a worker for processing. The worker creates a pipeline that applies a sepia tone filter to the video frames and mirrors them. The pipeline culminates in a {{domxref("VideoTrackGenerator")}} whose {{domxref("MediaStreamTrack")}} is transferred back and played. The media now flows in real time through the transform off the {{Glossary("main thread")}}.
+مثال زیر از مقالهٔ [Unbundling MediaStreamTrackProcessor and VideoTrackGenerator](https://blog.mozilla.org/webrtc/unbundling-mediastreamtrackprocessor-and-videotrackgenerator/) برداشته شده است. این مثال یک {{domxref("MediaStreamTrack")}} دوربین را برای پردازش به یک worker [انتقال می‌دهد](/en-US/docs/Web/API/Web_Workers_API/Transferable_objects). worker خط لوله‌ای می‌سازد که یک فیلتر سپیا (sepia) روی فریم‌های ویدیو اعمال می‌کند و آن‌ها را آینه‌ای می‌کند. در پایان خط لوله، یک {{domxref("VideoTrackGenerator")}} قرار دارد که {{domxref("MediaStreamTrack")}} آن دوباره به عقب منتقل و پخش می‌شود. بدین ترتیب رسانه در زمان واقعی و خارج از {{Glossary("main thread")}} از این تبدیل عبور می‌کند.
 
 ```js
 const stream = await navigator.mediaDevices.getUserMedia({ video: true });
@@ -62,17 +56,17 @@ onmessage = async ({ data: { track } }) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("VideoTrackGenerator")}}
-- [Insertable streams for MediaStreamTrack](https://developer.chrome.com/docs/capabilities/web-apis/mediastreamtrack-insertable-media-processing) on developer.chrome.com
+- [Insertable streams for MediaStreamTrack](https://developer.chrome.com/docs/capabilities/web-apis/mediastreamtrack-insertable-media-processing) در developer.chrome.com
   > [!NOTE]
-  > This article was written before the API was restricted to workers and video. Beware its use of the non-standard version of `MediaStreamTrackProcessor` which blocks on the {{Glossary("main thread")}}.
+  > این مقاله پیش از آن‌که این API به workerها و ویدیو محدود شود نوشته شده است. توجه داشته باشید که در آن از نسخهٔ غیراستاندارد `MediaStreamTrackProcessor` استفاده شده است که روی {{Glossary("main thread")}} مسدودکننده است.
