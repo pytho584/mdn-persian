@@ -1,11 +1,5 @@
 ---
 title: "MIDIPort: name property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MIDIPort/name"
-status: "needs-translation"
----
-
----
-title: "MIDIPort: name property"
 short-title: name
 slug: Web/API/MIDIPort/name
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.MIDIPort.name
 
 {{securecontext_header}}{{APIRef("Web MIDI API")}}
 
-The **`name`** read-only property of the {{domxref("MIDIPort")}} interface returns the system name of the port.
+ویژگی فقط‌خواندنی **`name`** در رابط {{domxref("MIDIPort")}} نام سیستمی درگاه را بازمی‌گرداند.
 
-## Value
+## مقدار
 
-A string containing the system name of the port.
+رشته‌ای که نام سیستمی درگاه را شامل می‌شود.
 
-## Examples
+## مثال‌ها
 
-The following example loops through all input ports and prints the name of each to the console.
+مثال زیر در همهٔ درگاه‌های ورودی گردش می‌کند و نام هر یک را در کنسول چاپ می‌کند.
 
 ```js
 for (const entry of midiAccess.inputs) {
@@ -31,10 +25,10 @@ for (const entry of midiAccess.inputs) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
