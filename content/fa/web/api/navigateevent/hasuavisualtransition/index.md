@@ -1,11 +1,5 @@
 ---
 title: "NavigateEvent: hasUAVisualTransition property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigateEvent/hasUAVisualTransition"
-status: "needs-translation"
----
-
----
-title: "NavigateEvent: hasUAVisualTransition property"
 short-title: hasUAVisualTransition
 slug: Web/API/NavigateEvent/hasUAVisualTransition
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.NavigateEvent.hasUAVisualTransition
 
 {{APIRef("Navigation API")}}
 
-The **`hasUAVisualTransition`** read-only property of the {{domxref("NavigateEvent")}} interface returns `true` if the user agent performed a visual transition for this navigation before dispatching this event, or `false` otherwise.
+ویژگی فقط‌خواندنی **`hasUAVisualTransition`** در رابط {{domxref("NavigateEvent")}} مقدار `true` را برمی‌گرداند اگر عامل کاربر پیش از ارسال این رویداد، یک انتقال بصری برای این ناوبری انجام داده باشد؛ در غیر این صورت `false` برمی‌گردد.
 
-User agents may provide a built-in visual transition when executing site navigations. If the site author also adds a visual transition, user agent and author transitions may conflict and confuse a visitor. The property lets you detect whether a UA transition was provided so that you can skip author transitions for a better user experience.
+عامل‌های کاربر ممکن است هنگام انجام ناوبری‌های سایت یک انتقال بصری داخلی فراهم کنند. اگر توسعه‌دهندهٔ سایت نیز یک انتقال بصری اضافه کند، انتقال‌های عامل کاربر و توسعه‌دهنده ممکن است با هم تداخل کنند و بازدیدکننده را سردرگم کنند. این ویژگی به شما امکان می‌دهد تشخیص دهید که آیا انتقالی از طرف عامل کاربر ارائه شده است یا نه، تا بتوانید برای تجربهٔ کاربری بهتر، انتقال‌های توسعه‌دهنده را کنار بگذارید.
 
-## Value
+## مقدار
 
-A boolean value.
+یک مقدار بولی.
 
-## Examples
+## مثال‌ها
 
 ```js
 navigation.addEventListener("navigate", (event) => {
@@ -61,15 +55,15 @@ navigation.addEventListener("navigate", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
 - [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
