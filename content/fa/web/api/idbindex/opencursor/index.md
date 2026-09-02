@@ -1,30 +1,16 @@
 ---
 title: "IDBIndex: openCursor() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/openCursor"
-status: "needs-translation"
----
-
----
-title: "IDBIndex: openCursor() method"
-short-title: openCursor()
-slug: Web/API/IDBIndex/openCursor
-page-type: web-api-instance-method
-browser-compat: api.IDBIndex.openCursor
 ---
 
 {{ APIRef("IndexedDB") }} {{AvailableInWorkers}}
 
-The **`openCursor()`** method of the {{domxref("IDBIndex")}}
-interface returns an {{domxref("IDBRequest")}} object, and, in a separate thread,
-creates a [cursor](/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology#cursor) over the specified key
-range.
+متد **`openCursor()`** از رابط {{domxref("IDBIndex")}} یک شی {{domxref("IDBRequest")}} برمی‌گرداند و در یک نخ جداگانه، یک مکان‌نما (cursor) روی محدوده کلید مشخص‌شده ایجاد می‌کند.
 
-The method sets the position of the cursor to the appropriate record, based on the
-specified direction.
+این متد موقعیت مکان‌نما را بر اساس جهت مشخص‌شده، به رکورد مناسب تنظیم می‌کند.
 
-If the key range is not specified or is null, then the range includes all the records.
+اگر محدوده کلید مشخص نشده یا `null` باشد، محدوده شامل تمام رکوردها خواهد بود.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 openCursor()
@@ -32,48 +18,40 @@ openCursor(range)
 openCursor(range, direction)
 ```
 
-### Parameters
+### پارامترها
 
 - `range` {{optional_inline}}
-  - : A key or {{domxref("IDBKeyRange")}} to use as the cursor's range. If nothing is
-    passed, this will default to a key range that selects all the records in this object
-    store.
+  - : یک کلید یا {{domxref("IDBKeyRange")}} برای استفاده به عنوان محدوده مکان‌نما. اگر چیزی ارسال نشود، به طور پیش‌فرض به یک محدوده کلید که تمام رکوردهای این ذخیره‌گاه شیء را انتخاب می‌کند، تنظیم می‌شود.
 - `direction` {{optional_inline}}
-  - : The cursor's [direction](/en-US/docs/Web/API/IDBCursor#constants). See [IDBCursor Constants](/en-US/docs/Web/API/IDBCursor#constants) for possible
-    values.
+  - : جهت مکان‌نما. برای مقادیر ممکن به [ثابت‌های IDBCursor](/en-US/docs/Web/API/IDBCursor#constants) مراجعه کنید.
 
-### Return value
+### مقدار بازگشتی
 
-An {{domxref("IDBRequest")}} object on which subsequent events related to this operation are fired.
+یک شی {{domxref("IDBRequest")}} که رویدادهای مربوط به این عملیات روی آن رخ می‌دهد.
 
-If the operation is successful, the value of the request's {{domxref("IDBRequest.result", "result")}} property is:
+اگر عملیات موفق باشد، مقدار ویژگی {{domxref("IDBRequest.result", "result")}} درخواست به صورت زیر است:
 
-- an {{domxref("IDBCursorWithValue")}} object pointing at the first record matching the given query
-- `null` if no matching records were found.
+- یک شی {{domxref("IDBCursorWithValue")}} که به اولین رکورد مطابق با پرس‌وجوی داده شده اشاره می‌کند
+- اگر هیچ رکورد منطبقی یافت نشود، `null`
 
-### Exceptions
+### استثناها
 
-This method may raise a {{domxref("DOMException")}} of one of the following types:
+این متد ممکن است یک {{domxref("DOMException")}} از یکی از انواع زیر ایجاد کند:
 
 - `TransactionInactiveError` {{domxref("DOMException")}}
-  - : Thrown if this {{domxref("IDBIndex")}}'s transaction is inactive.
+  - : اگر تراکنش این {{domxref("IDBIndex")}} غیرفعال باشد.
 - {{jsxref("TypeError")}}
-  - : Thrown if the value for the direction parameter is invalid.
+  - : اگر مقدار پارامتر `direction` نامعتبر باشد.
 - `DataError` {{domxref("DOMException")}}
-  - : Thrown if the key or key range provided contains an invalid key.
+  - : اگر کلید یا محدوده کلید ارائه‌شده حاوی یک کلید نامعتبر باشد.
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the {{domxref("IDBIndex")}} has been deleted or removed.
+  - : اگر {{domxref("IDBIndex")}} حذف یا پاک شده باشد.
 
-## Examples
+## مثال‌ها
 
-In the following example we open a transaction and an object store, then get the
-index `lName` from a simple contacts database. We then open a basic cursor on
-the index using `openCursor()` — this works the same as opening a cursor
-directly on an `ObjectStore` using {{domxref("IDBObjectStore.openCursor")}}
-except that the returned records are sorted based on the index, not the primary key.
+در مثال زیر، ما یک تراکنش و یک ذخیره‌گاه شیء باز می‌کنیم، سپس ایندکس `lName` را از یک پایگاه داده ساده مخاطبین دریافت می‌کنیم. سپس یک مکان‌نمای پایه روی ایندکس با استفاده از `openCursor()` باز می‌کنیم — این کار مشابه باز کردن مستقیم یک مکان‌نما روی یک `ObjectStore` با استفاده از {{domxref("IDBObjectStore.openCursor")}} است، با این تفاوت که رکوردهای برگشتی بر اساس ایندکس مرتب شده‌اند، نه کلید اصلی.
 
-Finally, we iterate through each record, and insert the data into an HTML table. For a
-complete working example, see our [IndexedDB-examples demo repo](https://github.com/mdn/dom-examples/tree/main/indexeddb-examples/idbindex) ([View the example live](https://mdn.github.io/dom-examples/indexeddb-examples/idbindex/)).
+در نهایت، از میان هر رکورد تکرار می‌کنیم و داده‌ها را در یک جدول HTML وارد می‌کنیم. برای یک مثال کامل و در حال اجرا، به [مخزن دموی IndexedDB-examples](https://github.com/mdn/dom-examples/tree/main/indexeddb-examples/idbindex) ما مراجعه کنید ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/indexeddb-examples/idbindex/)).
 
 ```js
 function displayDataByIndex() {
@@ -111,20 +89,20 @@ function displayDataByIndex() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم محدوده کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و ایجاد تغییرات در داده‌ها: {{domxref("IDBObjectStore")}}
+- استفاده از مکان‌نماها: {{domxref("IDBCursor")}}
+- مثال مرجع: [اعلان‌های کارهای روزانه (To-do Notifications)](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/))
