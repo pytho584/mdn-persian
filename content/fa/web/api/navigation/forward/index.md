@@ -1,11 +1,5 @@
 ---
 title: "Navigation: forward() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigation/forward"
-status: "needs-translation"
----
-
----
-title: "Navigation: forward() method"
 short-title: forward()
 slug: Web/API/Navigation/forward
 page-type: web-api-instance-method
@@ -14,8 +8,7 @@ browser-compat: api.Navigation.forward
 
 {{APIRef("Navigation API")}}
 
-The **`forward()`** method of the
-{{domxref("Navigation")}} interface navigates forwards by one entry in the navigation history.
+متد **`forward()`** از رابط {{domxref("Navigation")}} یک ورودی به جلو در تاریخچهٔ مرور (navigation history) حرکت می‌کند.
 
 ## Syntax
 
@@ -23,62 +16,60 @@ The **`forward()`** method of the
 forward(options)
 ```
 
-### Parameters
+### پارامترها
 
 - `options` {{optional_inline}}
-  - : An options object containing the following properties:
+  - : یک شیء حاوی ویژگی‌های زیر:
     - `info` {{optional_inline}}
-      - : Developer-defined information to be passed along to the {{domxref("Navigation/navigate_event", "navigate")}} event, made available in {{domxref("NavigateEvent.info")}}. This can be any data type. You might, for example, wish to display newly-navigated content with a different animation depending on how it was navigated to (swipe left, swipe right, or go home). A string indicating which animation to use could be passed in as `info`.
+      - : اطلاعاتی که توسعه‌دهنده تعریف می‌کند و به رویداد {{domxref("Navigation/navigate_event", "navigate")}} ارسال می‌شود و در {{domxref("NavigateEvent.info")}} در دسترس قرار می‌گیرد. این می‌تواند هر نوع داده‌ای باشد. به‌عنوان مثال، ممکن است بخواهید محتوای تازه‌بارگذاری‌شده را با انیمیشنی متفاوت نمایش دهید، بسته به اینکه چگونه به آن ناوبری شده است (حرکت به چپ، حرکت به راست، یا بازگشت به خانه). یک رشته که نوع انیمیشن را مشخص می‌کند می‌تواند به عنوان `info` ارسال شود.
 
-### Return value
+### مقدار بازگشتی
 
-An object with the following properties:
+یک شیء با ویژگی‌های زیر:
 
 - `committed`
-  - : A {{jsxref("Promise")}} which will fulfill when the visible URL has changed and a new {{domxref("NavigationHistoryEntry")}} has been created.
+  - : یک {{jsxref("Promise")}} که زمانی که URL قابل مشاهده تغییر کرده و یک {{domxref("NavigationHistoryEntry")}} جدید ایجاد شده است، انجام می‌شود.
 - `finished`
-  - : A {{jsxref("Promise")}} which will fulfill when all promises returned by the {{domxref("NavigateEvent.intercept()")}} handler are fulfilled. This is equivalent to the {{domxref("NavigationTransition.finished")}} promise fulfilling, when the {{domxref("Navigation/navigatesuccess_event", "navigatesuccess")}} event fires.
+  - : یک {{jsxref("Promise")}} که زمانی که تمام promise‌های بازگردانده‌شده توسط handler رویداد {{domxref("NavigateEvent.intercept()")}} انجام شوند، انجام می‌شود. این معادل با fulfillment promise {{domxref("NavigationTransition.finished")}} است، زمانی که رویداد {{domxref("Navigation/navigatesuccess_event", "navigatesuccess")}} رخ می‌دهد.
 
-Either one of these promises rejects if the navigation has failed for some reason.
+هر یک از این promise‌ها در صورت شکست ناوبری به دلایلی رد می‌شوند.
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the {{domxref("Navigation.currentEntry")}}'s {{domxref("NavigationHistoryEntry.index")}} value is -1 or {{domxref("Navigation.entries", "navigation.entries().length - 1")}}, i.e., either the current {{domxref("Document")}} is not yet active, or the current history entry is the last one in the history, meaning that forwards navigation is not possible, or if the current {{domxref("Document")}} is unloading.
+  - : زمانی پرتاب می‌شود که مقدار {{domxref("Navigation.currentEntry")}} از {{domxref("NavigationHistoryEntry.index")}} برابر ۱- یا {{domxref("Navigation.entries", "navigation.entries().length - 1")}} باشد، یعنی {{domxref("Document")}} فعلی هنوز فعال نیست، یا ورودی فعلی تاریخچه آخرین ورودی در تاریخچه است، بنابراین ناوبری به جلو امکان‌پذیر نیست، یا {{domxref("Document")}} فعلی در حال تخلیه (unloading) است.
 
-## Examples
+## مثال‌ها
 
 ```js
 async function backHandler() {
   if (navigation.canGoBack) {
     await navigation.back().finished;
-    // Handle any required clean-up after
-    // navigation has finished
+    // پس از پایان ناوبری، هرگونه پاک‌سازی لازم را انجام دهید
   } else {
-    displayBanner("You are on the first page");
+    displayBanner("شما در صفحهٔ اول هستید");
   }
 }
 
 async function forwardHandler() {
   if (navigation.canGoForward) {
     await navigation.forward().finished;
-    // Handle any required clean-up after
-    // navigation has finished
+    // پس از پایان ناوبری، هرگونه پاک‌سازی لازم را انجام دهید
   } else {
-    displayBanner("You are on the last page");
+    displayBanner("شما در آخرین صفحه هستید");
   }
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
-- [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
+- [مسیریابی مدرن سمت کاربر: API Navigation](https://developer.chrome.com/docs/web-platform/navigation-api/)
+- [توضیح API Navigation](https://github.com/WICG/navigation-api/blob/main/README.md)
