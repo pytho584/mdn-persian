@@ -1,11 +1,5 @@
 ---
 title: "MediaSource: canConstructInDedicatedWorker static property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/canConstructInDedicatedWorker_static"
-status: "needs-translation"
----
-
----
-title: "MediaSource: canConstructInDedicatedWorker static property"
 short-title: canConstructInDedicatedWorker
 slug: Web/API/MediaSource/canConstructInDedicatedWorker_static
 page-type: web-api-static-property
@@ -14,15 +8,15 @@ browser-compat: api.MediaSource.canConstructInDedicatedWorker_static
 
 {{APIRef("Media Source Extensions")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`canConstructInDedicatedWorker`** static property of the {{domxref("MediaSource")}} interface returns `true` if `MediaSource` worker support is implemented, providing a low-latency feature detection mechanism.
+ویژگی ایستای **`canConstructInDedicatedWorker`** در رابط {{domxref("MediaSource")}} اگر پشتیبانی از `MediaSource` در worker پیاده‌سازی شده باشد، مقدار `true` را برمی‌گرداند و بدین ترتیب مکانیزمی برای شناسایی ویژگی با تأخیر کم فراهم می‌کند.
 
-If this were not available, the alternative would be a much higher latency approach such as attempting the creation of a `MediaSource` object from a dedicated worker and transferring the result back to the main thread.
+اگر این امکان در دسترس نبود، جایگزین آن رویکردی با تأخیر بسیار بیشتر بود؛ مانند تلاش برای ایجاد یک شیء `MediaSource` از یک dedicated worker و انتقال نتیجه به نخ اصلی.
 
-## Value
+## مقدار
 
-A boolean. Returns `true` if `MediaSource` worker support is implemented, or `false` otherwise.
+یک مقدار بولی. اگر پشتیبانی از `MediaSource` در worker پیاده‌سازی شده باشد، `true` و در غیر این صورت `false` برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
 ```js
 if (MediaSource.canConstructInDedicatedWorker) {
@@ -30,15 +24,15 @@ if (MediaSource.canConstructInDedicatedWorker) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - [MSE-in-Workers Demo by Matt Wolenetz](https://wolenetz.github.io/mse-in-workers-demo/mse-in-workers-demo.html)
 - {{domxref("Media Source Extensions API", "Media Source Extensions API", "", "nocode")}}
