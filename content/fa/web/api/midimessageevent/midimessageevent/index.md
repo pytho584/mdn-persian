@@ -1,7 +1,5 @@
 ---
 title: "MIDIMessageEvent: MIDIMessageEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MIDIMessageEvent/MIDIMessageEvent"
-status: "needs-translation"
 ---
 
 ---
@@ -14,33 +12,33 @@ browser-compat: api.MIDIMessageEvent.MIDIMessageEvent
 
 {{securecontext_header}}{{APIRef("Web MIDI API")}}
 
-The **`MIDIMessageEvent()`** constructor creates a new {{domxref("MIDIMessageEvent")}} object. Typically this constructor is not used as events are created when a {{domxref("MIDIInput")}} finishes receiving one or more MIDI messages.
+سازندهٔ **`MIDIMessageEvent()`** یک شیء جدید از نوع {{domxref("MIDIMessageEvent")}} می‌سازد. معمولاً از این سازنده استفاده نمی‌شود، زیرا رویدادها زمانی ساخته می‌شوند که یک {{domxref("MIDIInput")}} دریافتِ یک یا چند پیام MIDI را به پایان می‌رساند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 new MIDIMessageEvent(type)
 new MIDIMessageEvent(type, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string with the name of the event.
-    It is case-sensitive and browsers always set it to `MIDIMessageEvent`.
+  - : رشته‌ای که نام رویداد را مشخص می‌کند.
+    این مقدار به بزرگی و کوچکی حروف حساس است و مرورگرها همیشه آن را برابر با `MIDIMessageEvent` قرار می‌دهند.
 - `options` {{optional_inline}}
-  - : An object that, _in addition of the properties defined in {{domxref("Event/Event", "Event()")}}_, can have the following properties:
+  - : یک شیء، _علاوه بر ویژگی‌های تعریف‌شده در {{domxref("Event/Event", "Event()")}}_، می‌تواند ویژگی زیر را داشته باشد:
     - `data`
-      - : A {{jsxref("Uint8Array")}} instance containing the data bytes of the MIDI message.
+      - : یک نمونه از {{jsxref("Uint8Array")}} که بایت‌های دادهٔ پیام MIDI را در بر دارد.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("MIDIMessageEvent")}} object.
+یک شیء جدید از نوع {{domxref("MIDIMessageEvent")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
