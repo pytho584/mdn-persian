@@ -1,10 +1,4 @@
 ---
-title: "Ink"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Ink"
-status: "needs-translation"
----
-
----
 title: Ink
 slug: Web/API/Ink
 page-type: web-api-interface
@@ -15,16 +9,16 @@ browser-compat: api.Ink
 
 {{APIRef("Ink API")}}{{SeeCompatTable}}
 
-The **`Ink`** interface of the [Ink API](/en-US/docs/Web/API/Ink_API) provides access to {{domxref("DelegatedInkTrailPresenter")}} objects for the application to use to render ink strokes.
+اینترفیس **`Ink`** در [Ink API](/en-US/docs/Web/API/Ink_API) دسترسی به اشیاء {{domxref("DelegatedInkTrailPresenter")}} را فراهم می‌کند تا برنامه بتواند از آن‌ها برای ترسیم ضربه‌های جوهر استفاده کند.
 
 {{InheritanceDiagram}}
 
-## Instance methods
+## متدهای نمونه
 
 - {{domxref("Ink.requestPresenter", "requestPresenter()")}} {{Experimental_Inline}}
-  - : Returns a {{jsxref("Promise")}} that fulfills with a {{domxref("DelegatedInkTrailPresenter")}} object to handle rendering strokes.
+  - یک {{jsxref("Promise")}} برمی‌گرداند که با یک شیء {{domxref("DelegatedInkTrailPresenter")}} برای مدیریت ترسیم ضربه‌ها تحقق می‌یابد.
 
-## Example
+## مثال
 
 ```js
 async function inkInit() {
@@ -35,10 +29,10 @@ async function inkInit() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
