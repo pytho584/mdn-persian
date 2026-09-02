@@ -1,11 +1,5 @@
 ---
 title: "KeyboardLayoutMap: size property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/KeyboardLayoutMap/size"
-status: "needs-translation"
----
-
----
-title: "KeyboardLayoutMap: size property"
 short-title: size
 slug: Web/API/KeyboardLayoutMap/size
 page-type: web-api-instance-property
@@ -17,19 +11,17 @@ spec-urls: https://tc39.es/ecma262/multipage/keyed-collections.html#sec-get-map.
 
 {{SeeCompatTable}}{{APIRef("Keyboard API")}}
 
-The **`size`** read-only property of
-the {{domxref("KeyboardLayoutMap")}} interface returns the number of elements in the
-map.
+ویژگی فقط‌خواندنی **`size`** از رابط {{domxref("KeyboardLayoutMap")}} تعداد عناصر موجود در این نگاشت را برمی‌گرداند.
 
-The property is otherwise the same as {{jsxref("Map.prototype.size")}}.
+این ویژگی در سایر جنبه‌ها دقیقاً مشابه {{jsxref("Map.prototype.size")}} است.
 
-## Value
+## مقدار
 
-A number.
+یک عدد.
 
-## Examples
+## مثال‌ها
 
-The following example get the count of the location- or layout-specific string and its associated keyboard code on an English QWERTY keyboard.
+مثال زیر تعداد رشته‌های مختص مکان یا چیدمان و کد صفحه‌کلید مرتبط با آن‌ها را روی یک صفحه‌کلید انگلیسی QWERTY به دست می‌آورد.
 
 ```js
 navigator.keyboard.getLayoutMap().then((keyboardLayoutMap) => {
@@ -37,14 +29,14 @@ navigator.keyboard.getLayoutMap().then((keyboardLayoutMap) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{jsxref("Map.prototype.size")}}
