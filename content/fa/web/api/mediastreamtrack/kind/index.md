@@ -1,11 +1,5 @@
 ---
 title: "MediaStreamTrack: kind property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/kind"
-status: "needs-translation"
----
-
----
-title: "MediaStreamTrack: kind property"
 short-title: kind
 slug: Web/API/MediaStreamTrack/kind
 page-type: web-api-instance-property
@@ -14,24 +8,23 @@ browser-compat: api.MediaStreamTrack.kind
 
 {{APIRef("Media Capture and Streams")}}
 
-The **`kind`** read-only property of the {{domxref("MediaStreamTrack")}} interface returns a string set to `"audio"` if the track is an audio track and to `"video"` if it is a video track.
-It doesn't change if the track is disassociated from its source.
+ویژگی فقط‌خواندنی **`kind`** از رابط {{domxref("MediaStreamTrack")}} یک رشته برمی‌گرداند که اگر ردیف صوتی باشد `"audio"` و اگر ردیف تصویری باشد `"video"` تنظیم می‌شود. این مقدار حتی اگر ردیف از منبع خود جدا شود تغییر نمی‌کند.
 
-## Value
+## مقدار
 
-The possible values are a string with one of the following values:
+مقادیر ممکن یک رشته با یکی از مقادیر زیر است:
 
-- `"audio"`: the track is an audio track.
-- `"video"`: the track is a video track.
+- `"audio"`: ردیف یک ردیف صوتی است.
+- `"video"`: ردیف یک ردیف تصویری است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [WebRTC](/en-US/docs/Web/API/WebRTC_API)
