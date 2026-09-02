@@ -1,7 +1,5 @@
 ---
 title: "KeyboardLayoutMap: forEach() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/KeyboardLayoutMap/forEach"
-status: "needs-translation"
 ---
 
 ---
@@ -17,41 +15,38 @@ spec-urls: https://tc39.es/ecma262/multipage/keyed-collections.html#sec-map.prot
 
 {{APIRef("Keyboard API")}}{{SeeCompatTable}}
 
-The **`forEach()`** method of the
-{{domxref('KeyboardLayoutMap')}} interface executes a provided function once for
-each element of the map.
+متد **`forEach()`** از رابط {{domxref('KeyboardLayoutMap')}} یک تابع ارائه‌شده را یک بار برای هر عنصر از نقشه اجرا می‌کند.
 
-The method is otherwise the same as {{jsxref("Map.prototype.forEach()")}}.
+این متد در سایر موارد مشابه {{jsxref("Map.prototype.forEach()")}} است.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 forEach(callbackFn)
 forEach(callbackFn, thisArg)
 ```
 
-### Parameters
+### پارامترها
 
 - `callbackFn`
-  - : The function to execute for each element, taking three arguments:
+  - : تابعی که برای هر عنصر اجرا می‌شود و سه آرگومان می‌گیرد:
     - `currentValue`
-      - : The value of the current element being processed.
+      - : مقدار عنصر جاری در حال پردازش.
     - `index` {{optional_inline}}
-      - : The index of the current element being processed.
+      - : شاخص عنصر جاری در حال پردازش.
     - `array` {{optional_inline}}
-      - : The KeyboardLayoutMap that `forEach()` is being called on.
+      - : `KeyboardLayoutMap`ای که `forEach()` روی آن فراخوانی شده است.
 
 - `thisArg` {{Optional_inline}}
-  - : Value to use as **`this`** (i.e., the reference
-    `Object`) when executing `callback`.
+  - : مقداری که در هنگام اجرای `callback` به عنوان **`this`** (یعنی ارجاع `Object`) استفاده شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-The following example iterates every location- or layout-specific string and its associated keyboard code on an English QWERTY keyboard.
+مثال زیر هر رشته مختص مکان یا طرح (layout) و کد صفحه کلید مرتبط با آن را روی یک صفحه کلید انگلیسی QWERTY پیمایش می‌کند.
 
 ```js
 navigator.keyboard.getLayoutMap().then((keyboardLayoutMap) => {
@@ -61,14 +56,14 @@ navigator.keyboard.getLayoutMap().then((keyboardLayoutMap) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{jsxref("Map.prototype.forEach()")}}
