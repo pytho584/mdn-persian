@@ -1,11 +1,5 @@
 ---
 title: "IDBTransaction: complete event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction/complete_event"
-status: "needs-translation"
----
-
----
-title: "IDBTransaction: complete event"
 short-title: complete
 slug: Web/API/IDBTransaction/complete_event
 page-type: web-api-event
@@ -14,11 +8,11 @@ browser-compat: api.IDBTransaction.complete_event
 
 {{APIRef("IndexedDB")}}
 
-The **`complete`** event of the [IndexedDB API](/en-US/docs/Web/API/IndexedDB_API) is fired when the transaction has successfully committed, which is either after you explicit call {{domxref("IDBTransaction.commit()")}} or when all requests have been successfully completed, and after handling their results, no new requests have been placed. See {{domxref("IDBTransaction")}} for more information.
+رویداد **`complete`** در [IndexedDB API](/en-US/docs/Web/API/IndexedDB_API) زمانی شلیک می‌شود که تراکنش با موفقیت قطعی (commit) شده باشد؛ این وضعیت یا پس از فراخوانی صریح {{domxref("IDBTransaction.commit()")}} رخ می‌دهد، یا وقتی همهٔ درخواست‌ها با موفقیت تکمیل شده باشند و پس از پردازش نتایج آن‌ها، درخواست جدیدی اضافه نشده باشد. برای اطلاعات بیشتر به {{domxref("IDBTransaction")}} مراجعه کنید.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کنندهٔ رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("complete", (event) => { })
@@ -26,13 +20,13 @@ addEventListener("complete", (event) => { })
 oncomplete = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## مثال‌ها
 
-Using {{DOMxRef("EventTarget.addEventListener", "addEventListener()")}}:
+با استفاده از {{DOMxRef("EventTarget.addEventListener", "addEventListener()")}}:
 
 ```js
 // Open the database
@@ -94,14 +88,14 @@ DBOpenRequest.onsuccess = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
