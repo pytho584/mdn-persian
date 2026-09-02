@@ -1,11 +1,5 @@
 ---
 title: "NavigateEvent: formData property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigateEvent/formData"
-status: "needs-translation"
----
-
----
-title: "NavigateEvent: formData property"
 short-title: formData
 slug: Web/API/NavigateEvent/formData
 page-type: web-api-instance-property
@@ -14,14 +8,13 @@ browser-compat: api.NavigateEvent.formData
 
 {{APIRef("Navigation API")}}
 
-The **`formData`** read-only property of the
-{{domxref("NavigateEvent")}} interface returns the {{domxref("FormData")}} object representing the submitted data in the case of a [`POST`](/en-US/docs/Web/HTTP/Reference/Methods/POST) form submission, or `null` otherwise.
+**`formData`** 是 {{domxref("NavigateEvent")}} 接口的一个只读属性，在 [`POST`](/en-US/docs/Web/HTTP/Reference/Methods/POST) 表单提交的情况下，返回一个表示所提交数据的 {{domxref("FormData")}} 对象；否则返回 `null`。
 
-## Value
+## 值
 
-A {{domxref("FormData")}} object, or `null`.
+一个 {{domxref("FormData")}} 对象，或 `null`。
 
-## Examples
+## 示例
 
 ```js
 navigation.addEventListener("navigate", (event) => {
@@ -48,15 +41,15 @@ navigation.addEventListener("navigate", (event) => {
 });
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
 - [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
 - [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
