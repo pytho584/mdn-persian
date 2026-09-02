@@ -1,11 +1,5 @@
 ---
 title: "MouseEvent: getModifierState() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/getModifierState"
-status: "needs-translation"
----
-
----
-title: "MouseEvent: getModifierState() method"
 short-title: getModifierState()
 slug: Web/API/MouseEvent/getModifierState
 page-type: web-api-instance-method
@@ -14,36 +8,36 @@ browser-compat: api.MouseEvent.getModifierState
 
 {{APIRef("Pointer Events")}}
 
-The **`MouseEvent.getModifierState()`** method returns the current state of the specified modifier key: `true` if the modifier is active (i.e., the modifier key is pressed or locked), otherwise, `false`.
+متد **`MouseEvent.getModifierState()`** وضعیت فعلی کلید اصلاح‌کننده (modifier key) مشخص‌شده را برمی‌گرداند: اگر آن کلید اصلاح‌کننده فعال باشد (یعنی کلید فشرده شده یا قفل باشد)، مقدار `true` و در غیر این صورت مقدار `false` بازگردانده می‌شود.
 
-See {{domxref("KeyboardEvent.getModifierState","KeyboardEvent.getModifierState()")}} for details.
+برای جزئیات بیشتر، {{domxref("KeyboardEvent.getModifierState","KeyboardEvent.getModifierState()")}} را ببینید.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 getModifierState(key)
 ```
 
-### Parameters
+### پارامترها
 
 - `key`
-  - : A modifier key value.
-    The value must be one of the {{domxref("KeyboardEvent.key")}} values which represent modifier keys or `"Accel"` {{deprecated_inline}}.
-    This is case-sensitive.
+  - : یک مقدار کلید اصلاح‌کننده.
+    این مقدار باید یکی از مقادیر {{domxref("KeyboardEvent.key")}} باشد که کلیدهای اصلاح‌کننده را نشان می‌دهد، یا `"Accel"` {{deprecated_inline}}.
+    این پارامتر به حروف بزرگ و کوچک حساس است.
 
-### Return value
+### مقدار بازگشتی
 
-A boolean value.
+یک مقدار بولی.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("MouseEvent")}} this method belongs to.
+- {{domxref("MouseEvent")}} که این متد به آن تعلق دارد.
 - {{domxref("KeyboardEvent.getModifierState")}}
