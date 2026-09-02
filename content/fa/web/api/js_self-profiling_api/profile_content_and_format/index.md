@@ -1,7 +1,5 @@
 ---
 title: "Profile anatomy and format"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/JS_Self-Profiling_API/Profile_content_and_format"
-status: "needs-translation"
 ---
 
 ---
@@ -12,25 +10,25 @@ page-type: guide
 
 {{DefaultAPISidebar("JS Self-Profiling API")}}
 
-In this page we'll describe how to interpret a profile captured using the Self-Profiling API.
+در این صفحه، نحوهٔ تفسیر یک پروفایل گرفته‌شده با استفاده از Self-Profiling API را شرح می‌دهیم.
 
-The format of the object returned by {{domxref("Profiler.stop()")}} is designed to be space-efficient: for example, the format aims to avoid duplicating URL values for functions which are defined in the same script. This means that some interpretation is needed to understand how a sample in the profile object maps to a location in the program, and this guide page aims to explain how to perform this interpretation.
+قالب شیء بازگردانده‌شده توسط {{domxref("Profiler.stop()")}} به‌گونه‌ای طراحی شده است که از نظر فضا کارآمد باشد: برای مثال، این قالب می‌کوشد از تکرار مقادیر URL برای تابع‌هایی که در یک اسکریپت تعریف شده‌اند اجتناب کند. این بدان معناست که برای درک اینکه یک نمونه در شیء پروفایل به چه مکانی در برنامه نگاشت می‌شود، به تفسیر نیاز است و این صفحهٔ راهنما قصد دارد نحوهٔ انجام این تفسیر را توضیح دهد.
 
-In the first section, we'll describe the [abstract structure of a profile](#anatomy_of_a_profile). In the next section we'll describe [the format of the profile object](#profile_format) returned by {{domxref("Profiler.stop()")}}. Finally we'll [walk through an example](#example) to show what a profile for a given program looks like and how it can be interpreted.
+در بخش نخست، [abstract structure of a profile](#anatomy_of_a_profile) را توصیف می‌کنیم. در بخش بعد، [the format of the profile object](#profile_format) بازگردانده‌شده توسط {{domxref("Profiler.stop()")}} را شرح می‌دهیم. در پایان، [walk through an example](#example) را مرور می‌کنیم تا نشان دهیم پروفایل یک برنامهٔ معین چگونه است و چگونه می‌توان آن را تفسیر کرد.
 
 ## Anatomy of a profile
 
-In this section we'll describe the abstract structure of a profile. Note that this isn't the same as the format of the object returned by returned by {{domxref("Profiler.stop()")}}: we'll describe that format in the next section of this guide.
+در این بخش، ساختار انتزاعی یک پروفایل را توصیف می‌کنیم. توجه داشته باشید که این ساختار با قالب شیء بازگردانده‌شده توسط {{domxref("Profiler.stop()")}} یکسان نیست: آن قالب را در بخش بعدی این راهنما شرح خواهیم داد.
 
-A profile consists of an array of samples. Each sample consists of a timestamp and a call stack. Each call stack consists of an array of stack frames, and each stack frame contains information about the location of its corresponding function in the program:
+یک پروفایل شامل آرایه‌ای از نمونه‌ها است. هر نمونه شامل یک برچسب زمانی (timestamp) و یک پشتهٔ فراخوانی (call stack) است. هر پشتهٔ فراخوانی از آرایه‌ای از فریم‌های پشته (stack frames) تشکیل شده است و هر فریم پشته، اطلاعاتی دربارهٔ مکان تابع متناظرش در برنامه در بر دارد:
 
 ![Diagram of a profile](profile.svg)
 
-The timestamp is a {{domxref("DOMHighResTimeStamp")}} which measures milliseconds since the _time origin_: for a window context, this is the time the window was created (if the window is new) or the time the browser started navigating to this document.
+برچسب زمانی یک {{domxref("DOMHighResTimeStamp")}} است که میلی‌ثانیه‌ها را از _time origin_ (مبدأ زمان) اندازه‌گیری می‌کند: برای بافتار پنجره (window context)، این مقدار زمانی است که پنجره ساخته شده است (اگر پنجره جدید باشد) یا زمانی که مرورگر پیمایش به این سند را آغاز کرده است.
 
-The call stack is a representation of the JavaScript call stack, which enables you to understand the execution path to the program's location at the point that the sample was taken.
+پشتهٔ فراخوانی، نمایشی از پشتهٔ فراخوانی JavaScript است که به شما امکان می‌دهد مسیر اجرا تا نقطهٔ مکانی برنامه را در لحظهٔ برداشته‌شدن نمونه درک کنید.
 
-The call stack consists of an array of stack frames. A stack frame essentially represents a nested function call, so if function `a()` calls function `b()`, which calls function `c()`, and a sample is taken while the browser is executing `c()`, then the call stack will consist of frames `[a, b, c]`:
+پشتهٔ فراخوانی شامل آرایه‌ای از فریم‌های پشته است. یک فریم پشته اساساً یک فراخوانی تابع تودرتو را نشان می‌دهد؛ بنابراین اگر تابع `a()` تابع `b()` را فراخوانی کند و تابع `b()` تابع `c()` را فراخوانی کند و نمونه‌ای در حالی گرفته شود که مرورگر در حال اجرای `c()` است، آنگاه پشتهٔ فراخوانی شامل فریم‌های `[a, b, c]` خواهد بود:
 
 ```js
 function c() {
@@ -46,50 +44,50 @@ function a() {
 }
 ```
 
-Each stack frame contains information about the location of its corresponding function in the program:
+هر فریم پشته، اطلاعاتی دربارهٔ مکان تابع متناظرش در برنامه در بر دارد:
 
-- The URL of the script
-- The name of the function
-- The line number of the function definition in the script
-- The column number of the function definition in the line
+- URL اسکریپت
+- نام تابع
+- شمارهٔ خط تعریف تابع در اسکریپت
+- شمارهٔ ستون تعریف تابع در آن خط
 
 ## Profile format
 
-Although the section above describes the _logical_ structure of a profile, the format of the object returned by {{domxref("Profiler.stop()")}} is different. The reason is that the format is designed to be space-efficient: for example, the format aims to avoid duplicating URL values for functions which are defined in the same script.
+اگرچه بخش بالا ساختار _منطقی_ یک پروفایل را توصیف می‌کند، قالب شیء بازگردانده‌شده توسط {{domxref("Profiler.stop()")}} متفاوت است. دلیل این است که این قالب برای کارآمدی از نظر فضا طراحی شده است: برای مثال، قالب می‌کوشد از تکرار مقادیر URL برای تابع‌هایی که در یک اسکریپت تعریف شده‌اند اجتناب کند.
 
-The profile object contains four properties, all arrays:
+شیء پروفایل شامل چهار ویژگی است که همگی آرایه هستند:
 
 - `frames`
-  - : An array of objects, each containing information about a stack frame:
-    - `column`: the column number of the function definition.
-    - `line`: the line number of the function definition.
-    - `name`: the name of the function.
-    - `resourceId`: the index of an item in `resources`, representing the URL of the script in which the function is defined.
+  - : آرایه‌ای از اشیا که هر یک اطلاعاتی دربارهٔ یک فریم پشته در بر دارند:
+    - `column`: شمارهٔ ستون تعریف تابع.
+    - `line`: شمارهٔ خط تعریف تابع.
+    - `name`: نام تابع.
+    - `resourceId`: ایندکس یک آیتم در `resources` که نشانی URL اسکریپتی را نشان می‌دهد که تابع در آن تعریف شده است.
 
-    Only `name` is always present: if the function is not defined in a script (for example, if it is a function that's built into the browser) then the other three properties are omitted.
+    فقط `name` همیشه وجود دارد: اگر تابع در یک اسکریپت تعریف نشده باشد (مثلاً اگر تابعی باشد که در مرورگر تعبیه شده است)، سه ویژگی دیگر حذف می‌شوند.
 
 - `resources`
-  - : An array of strings, each representing the URL of a script.
+  - : آرایه‌ای از رشته‌ها که هر یک نشانی URL یک اسکریپت را نشان می‌دهد.
 - `samples`
-  - : An array of object, each containing two properties:
-    - `timestamp`: the time at which the sample was taken.
-    - `stackId`: the index of an element in the `stacks` array.
+  - : آرایه‌ای از اشیا که هر یک دو ویژگی دارد:
+    - `timestamp`: زمانی که نمونه در آن برداشته شده است.
+    - `stackId`: ایندکس یک عنصر در آرایهٔ `stacks`.
 - `stacks`
-  - : An array of objects, each containing two properties:
-    - `frameId`: the index of an element in `frames` which represents the most-nested frame in the stack.
-    - `parentId`: the index of another entry in `stacks`, which represents the call stack up to but not including the frame represented by `frameId`. This is not present if the frame represented by `frameId` was at the top level of the stack.
+  - : آرایه‌ای از اشیا که هر یک دو ویژگی دارد:
+    - `frameId`: ایندکس یک عنصر در `frames` که درونی‌ترین فریم در پشته را نشان می‌دهد.
+    - `parentId`: ایندکس یک ورودی دیگر در `stacks` که پشتهٔ فراخوانی را تا قبل از فریمِ متناظر با `frameId` (و بدون آن) نشان می‌دهد. اگر فریمِ متناظر با `frameId` در سطح بالای پشته بود، این ویژگی وجود ندارد.
 
 ## Example
 
-In the following example we have a web page that contains a button: when the user presses the button, the page generates some prime numbers.
+در مثال زیر، یک صفحهٔ وب داریم که شامل یک دکمه است: وقتی کاربر دکمه را فشار دهد، صفحه تعدادی عدد اول تولید می‌کند.
 
-The HTML contains only the button:
+HTML فقط شامل دکمه است:
 
 ```html
 <button id="generate">generate!</button>
 ```
 
-The JavaScript is split across two files. The "main.js" script contains the click handler for the button. This starts a profile, then calls the code to generate the primes, then logs the resulting profile:
+JavaScript بین دو فایل تقسیم شده است. اسکریپت «main.js» شامل کنترل‌کنندهٔ کلیک برای دکمه است. این کنترل‌کننده یک پروفایل را آغاز می‌کند، سپس کد تولید اعداد اول را فراخوانی می‌کند و در پایان پروفایل حاصل را در کنسول ثبت می‌کند:
 
 ```js
 // main.js
@@ -109,7 +107,7 @@ async function handleClick() {
 document.querySelector("#generate").addEventListener("click", handleClick);
 ```
 
-The "generate.js" script generates the primes, organized into two functions, `genPrimes()` and `isPrime()`:
+اسکریپت «generate.js» اعداد اول را تولید می‌کند و در دو تابع به نام‌های `genPrimes()` و `isPrime()` سازماندهی شده است:
 
 ```js
 // generate.js
@@ -138,7 +136,7 @@ export function genPrimes() {
 }
 ```
 
-If we run this code, a profile such as the one below will be logged to the developer tools console:
+اگر این کد را اجرا کنیم، پروفایلی مانند نمونهٔ زیر در کنسول ابزارهای توسعه‌دهنده ثبت می‌شود:
 
 ```json
 {
@@ -173,18 +171,18 @@ If we run this code, a profile such as the one below will be logged to the devel
 }
 ```
 
-This profile captured 10 samples, listed in the `samples` property.
+این پروفایل ۱۰ نمونه را ضبط کرده است که در ویژگی `samples` فهرست شده‌اند.
 
-The `stackId` property of each sample enables us to understand where the program was at the point the sample was taken, and in this case we've taken samples in three different places:
+ویژگی `stackId` هر نمونه به ما امکان می‌دهد بفهمیم برنامه در لحظهٔ برداشته‌شدن نمونه در چه مکانی بوده است؛ و در این مورد، نمونه‌ها در سه مکان مختلف برداشته شده‌اند:
 
-- `stackId: 1`: one sample
-- `stackId: 3`: seven samples
-- `stackId: 2`: two samples
+- `stackId: 1`: یک نمونه
+- `stackId: 3`: هفت نمونه
+- `stackId: 2`: دو نمونه
 
-To find the complete call stack for a sample, we retrieve the stack given the `stackId`, then use the `frameId` value in the stack to find the most-nested function, then recursively fetch parent stacks using `parentId`, until we reach the top level, which doesn't have a `parentId` value.
+برای یافتن پشتهٔ فراخوانی کامل یک نمونه، پشته را با استفاده از `stackId` بازیابی می‌کنیم، سپس از مقدار `frameId` در پشته برای یافتن درونی‌ترین تابع استفاده می‌کنیم و پس از آن، با استفاده از `parentId`، پشته‌های والد را به‌صورت بازگشتی واکشی می‌کنیم تا به سطح بالایی برسیم که مقدار `parentId` ندارد.
 
-For example, the diagram below shows how we could derive the complete call stack for the seven samples whose `stackId` is 3:
+برای مثال، نمودار زیر نشان می‌دهد که چگونه می‌توانیم پشتهٔ فراخوانی کامل را برای هفت نمونه‌ای که `stackId` آن‌ها ۳ است به دست آوریم:
 
 ![Deriving a call stack from a sample](profile-format.svg)
 
-Note also that the first item in `frames`, which has a `name` value of `Profiler`, represents a sample taken in the {{domxref("Profiler.Profiler", "Profiler()")}} constructor: since this is a function provided by the browser, the frame doesn't include script information.
+همچنین توجه داشته باشید که اولین آیتم در `frames`، که مقدار `name` آن `Profiler` است، نمونه‌ای را نشان می‌دهد که در سازندهٔ {{domxref("Profiler.Profiler", "Profiler()")}} گرفته شده است: از آنجا که این یک تابع ارائه‌شده توسط مرورگر است، فریم شامل اطلاعات اسکریپت نیست.
