@@ -1,7 +1,5 @@
 ---
 title: "IdleDetector: start() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IdleDetector/start"
-status: "needs-translation"
 ---
 
 ---
@@ -16,41 +14,36 @@ browser-compat: api.IdleDetector.start
 
 {{securecontext_header}}{{APIRef("Idle Detection API")}}{{SeeCompatTable}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`start()`** method of the {{domxref("IdleDetector")}} interface returns a
-{{jsxref("Promise")}} that resolves when the detector starts listening for changes in the
-user's idle state. This
-method takes an optional `options` object with the `threshold` in milliseconds
-where inactivity should be reported and `signal` for an `AbortSignal` to abort
-the idle detector.
+متد **`start()`** در رابط {{domxref("IdleDetector")}} یک {{jsxref("Promise")}} برمی‌گرداند که وقتی تشخیص‌دهنده شروع به گوش دادن به تغییرات وضعیت بیکاری کاربر می‌کند، حل می‌شود. این متد یک شیء اختیاری `options` می‌پذیرد که شامل `threshold` بر حسب میلی‌ثانیه برای گزارش بیکاری و `signal` برای یک `AbortSignal` به منظور لغو تشخیص بیکاری است.
 
-## Syntax
+## نحو
 
 ```js-nolint
 start()
 start(options)
 ```
 
-### Parameters
+### پارامترها
 
 - `options` {{optional_inline}}
-  - : An object with the following properties:
+  - : یک شیء با ویژگی‌های زیر:
     - `threshold`
-      - : The minimum number of idle milliseconds before reporting should begin.
+      - : حداقل تعداد میلی‌ثانیه‌های بیکاری پیش از شروع گزارش‌دهی.
     - `signal`
-      - : A reference to an {{domxref('AbortSignal')}} instance allowing you to abort idle detection.
+      - : ارجاعی به یک نمونه {{domxref('AbortSignal')}} که به شما امکان لغو تشخیص بیکاری را می‌دهد.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}}.
+یک {{jsxref("Promise")}}.
 
-### Exceptions
+### استثناها
 
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Use of this feature was blocked by a [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy).
+  - : استفاده از این ویژگی توسط [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) مسدود شده است.
 
-## Examples
+## مثال‌ها
 
-The following example shows how to start idle detection using the `options` argument. It retrieves an instance of `AbortSignal` from an instance of {{domxref("AbortController")}}.
+مثال زیر نحوه شروع تشخیص بیکاری را با استفاده از آرگومان `options` نشان می‌دهد. این مثال یک نمونه `AbortSignal` را از یک نمونه {{domxref("AbortController")}} می‌گیرد.
 
 ```js
 const controller = new AbortController();
@@ -63,10 +56,10 @@ await idleDetector.start({
 console.log("IdleDetector is active.");
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
