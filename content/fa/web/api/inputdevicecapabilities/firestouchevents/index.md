@@ -1,7 +1,5 @@
 ---
 title: "InputDeviceCapabilities: firesTouchEvents property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/InputDeviceCapabilities/firesTouchEvents"
-status: "needs-translation"
 ---
 
 ---
@@ -16,18 +14,15 @@ browser-compat: api.InputDeviceCapabilities.firesTouchEvents
 
 {{APIRef("Input Device Capabilities API")}}{{SeeCompatTable}}
 
-The **`firesTouchEvents`** read-only property of the {{domxref("InputDeviceCapabilities")}} interface returns a boolean value that indicates whether the device dispatches touch events.
+ویژگی فقط‌خواندنی **`firesTouchEvents`** از رابط {{domxref("InputDeviceCapabilities")}} یک مقدار بولی برمی‌گرداند که نشان می‌دهد آیا دستگاه رویدادهای لمسی را ارسال می‌کند یا نه.
 
-You can use this property to detect mouse events that represent an action that may
-already have been handled by touch event handlers. This doesn't necessarily mean the
-device is a touch screen. For example, stylus and mouse devices typically generate
-touch events on mobile browsers.
+می‌توانید از این ویژگی برای تشخیص رویدادهای ماوس استفاده کنید که نشان‌دهندهٔ عملی هستند که احتمالاً از قبل توسط مدیریت‌کننده‌های رویداد لمسی رسیدگی شده‌اند. این لزوماً به این معنا نیست که دستگاه یک صفحهٔ لمسی است. برای مثال، دستگاه‌های قلمی (stylus) و ماوس معمولاً در مرورگرهای موبایل رویدادهای لمسی تولید می‌کنند.
 
-## Value
+## مقدار
 
-A {{jsxref('Boolean')}}
+یک {{jsxref('Boolean')}}
 
-## Example
+## مثال
 
 ```js
 myButton.addEventListener("mousedown", (e) => {
@@ -35,10 +30,10 @@ myButton.addEventListener("mousedown", (e) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
