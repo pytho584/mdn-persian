@@ -1,7 +1,5 @@
 ---
 title: "IDBKeyRange: lowerBound() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBKeyRange/lowerBound_static"
-status: "needs-translation"
 ---
 
 ---
@@ -14,50 +12,37 @@ browser-compat: api.IDBKeyRange.lowerBound_static
 
 {{ APIRef("IndexedDB") }} {{AvailableInWorkers}}
 
-The **`lowerBound()`** static method of the
-{{domxref("IDBKeyRange")}} interface creates a new key range with only a lower bound.
-By default, it includes the lower endpoint value and is closed.
+متد ایستای **`lowerBound()`** از رابط {{domxref("IDBKeyRange")}} یک بازه کلید جدید با فقط کران پایین می‌سازد. به‌طور پیش‌فرض، مقدار نقطه پایانی پایین را شامل می‌شود و بازه بسته است.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 IDBKeyRange.lowerBound(lower)
 IDBKeyRange.lowerBound(lower, open)
 ```
 
-### Parameters
+### پارامترها
 
 - `lower`
-  - : Specifies the lower bound of the new key range.
+  - : کران پایین بازه کلید جدید را مشخص می‌کند.
 - `open` {{optional_inline}}
-  - : Indicates whether the lower bound excludes the endpoint value. The default is
-    false.
+  - : نشان می‌دهد که آیا کران پایین مقدار نقطه پایانی را مستثنی می‌کند یا خیر. مقدار پیش‌فرض false است.
 
-### Return value
+### مقدار بازگشتی
 
-{{domxref("IDBKeyRange")}}: The newly created key range.
+{{domxref("IDBKeyRange")}}: بازه کلید تازه ایجاد شده.
 
-### Exceptions
+### استثناها
 
 - `DataError` {{domxref("DOMException")}}
-  - : Thrown if the key associated with the `lower` parameter is not a valid key.
+  - : اگر کلید مرتبط با پارامتر `lower` یک کلید معتبر نباشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-The following example illustrates how you'd use a lower bound key range. Here we
-declare `keyRangeValue = IDBKeyRange.lowerBound("F", false);` — a range that
-includes the value "F" and everything after it. We open a transaction (using
-{{domxref("IDBTransaction")}}) and an object store, and open a Cursor with
-{{domxref("IDBObjectStore.openCursor")}}, declaring `keyRangeValue` as its
-optional key range value. This means that the cursor will only retrieve the record with
-the key value "F" and all that come after it. If we used
-`IDBKeyRange.lowerBound("F", true);`, then the range would not include "F";
-only the values after it.
+مثال زیر نحوه استفاده از بازه کلید با کران پایین را نشان می‌دهد. در اینجا `keyRangeValue = IDBKeyRange.lowerBound("F", false);` را تعریف می‌کنیم — بازه‌ای که مقدار "F" و همه چیز بعد از آن را شامل می‌شود. یک تراکنش (با استفاده از {{domxref("IDBTransaction")}}) و یک object store باز می‌کنیم و یک Cursor با {{domxref("IDBObjectStore.openCursor")}} باز می‌کنیم و `keyRangeValue` را به عنوان مقدار بازه کلید اختیاری آن تعیین می‌کنیم. این بدان معناست که cursor فقط رکوردهایی با مقدار کلید "F" و تمام مقادیر بعد از آن را بازیابی می‌کند. اگر از `IDBKeyRange.lowerBound("F", true);` استفاده کنیم، آنگاه بازه "F" را شامل نمی‌شود؛ فقط مقادیر بعد از آن.
 
 > [!NOTE]
-> For a more complete example allowing you to experiment with
-> key range, have a look at our [IDBKeyRange-example](https://github.com/mdn/dom-examples/tree/main/indexeddb-examples/idbkeyrange) repo
-> ([view the example live too](https://mdn.github.io/dom-examples/indexeddb-examples/idbkeyrange/).)
+> برای یک مثال کامل‌تر که به شما امکان آزمایش با بازه کلید را می‌دهد، به مخزن [IDBKeyRange-example](https://github.com/mdn/dom-examples/tree/main/indexeddb-examples/idbkeyrange) ما نگاه کنید ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/indexeddb-examples/idbkeyrange/)).
 
 ```js
 function displayData() {
@@ -81,20 +66,20 @@ function displayData() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم بازه‌ای از کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و ایجاد تغییرات در داده‌های خود: {{domxref("IDBObjectStore")}}
+- استفاده از cursorها: {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
