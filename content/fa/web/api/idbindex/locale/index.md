@@ -1,11 +1,5 @@
 ---
 title: "IDBIndex: locale property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/locale"
-status: "needs-translation"
----
-
----
-title: "IDBIndex: locale property"
 short-title: locale
 slug: Web/API/IDBIndex/locale
 page-type: web-api-instance-property
@@ -17,17 +11,17 @@ browser-compat: api.IDBIndex.locale
 
 {{APIRef("IndexedDB")}}{{deprecated_header}}{{non-standard_header}}
 
-The **`locale`** read-only property of the {{domxref("IDBIndex")}} interface returns the locale of the index (for example `en-US`, or `pl`) if it had a `locale` value specified upon its creation (see the [`options`](/en-US/docs/Web/API/IDBObjectStore/createIndex#options) parameter to [`IDBObjectStore.createIndex()`](/en-US/docs/Web/API/IDBObjectStore/createIndex).) Note that this property always returns the current locale being used in this index, in other words, it never returns `"auto"`.
+ویژگی **`locale`** (فقط‌خواندنی) در رابط {{domxref("IDBIndex")}}، locale ایندکس را برمی‌گرداند (برای مثال `en-US` یا `pl`) اگر هنگام ایجاد ایندکس مقدار `locale` برای آن تعیین شده باشد (به پارامتر [`options`](/en-US/docs/Web/API/IDBObjectStore/createIndex#options) در [`IDBObjectStore.createIndex()`](/en-US/docs/Web/API/IDBObjectStore/createIndex) مراجعه کنید). توجه کنید که این ویژگی همیشه locale جاریِ استفاده‌شده در این ایندکس را برمی‌گرداند؛ به عبارت دیگر، هرگز `"auto"` را برنمی‌گرداند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
-In the following example we open a transaction and an object store, then get the index `lName` from a simple contacts database. We then open a basic cursor on the index using {{domxref("IDBIndex.openCursor")}} — this works the same as opening a cursor directly on an `ObjectStore` using {{domxref("IDBObjectStore.openCursor")}} except that the returned records are sorted based on the index, not the primary key.
+در مثال زیر، یک تراکنش و یک object store باز می‌کنیم و سپس ایندکس `lName` را از یک پایگاه‌داده‌ی ساده‌ی مخاطبان می‌گیریم. سپس با استفاده از {{domxref("IDBIndex.openCursor")}} یک cursor پایه روی ایندکس باز می‌کنیم — این کار دقیقاً مانند باز کردن cursor به‌طور مستقیم روی یک `ObjectStore` با استفاده از {{domxref("IDBObjectStore.openCursor")}} عمل می‌کند، با این تفاوت که رکوردهای برگشتی بر اساس ایندکس مرتب می‌شوند، نه بر اساس کلید اصلی.
 
-The `locale` value is logged to the console.
+مقدار `locale` در کنسول ثبت می‌شود.
 
 ```js
 function displayDataByIndex() {
@@ -66,20 +60,20 @@ function displayDataByIndex() {
 }
 ```
 
-## Specifications
+## مشخصات
 
-Not currently part of any specification.
+در حال حاضر بخشی از هیچ مشخصاتی نیست.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم محدوده‌ای از کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و ایجاد تغییرات در داده‌های خود: {{domxref("IDBObjectStore")}}
+- استفاده از cursorها: {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهده‌ی مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
