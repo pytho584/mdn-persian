@@ -1,11 +1,5 @@
 ---
 title: "LayoutShift: lastInputTime property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/LayoutShift/lastInputTime"
-status: "needs-translation"
----
-
----
-title: "LayoutShift: lastInputTime property"
 short-title: lastInputTime
 slug: Web/API/LayoutShift/lastInputTime
 page-type: web-api-instance-property
@@ -16,25 +10,25 @@ browser-compat: api.LayoutShift.lastInputTime
 
 {{SeeCompatTable}}{{APIRef("Performance API")}}
 
-The **`lastInputTime`** read-only property of the {{domxref("LayoutShift")}} interface returns the time of the most recent excluding input or `0` if no excluding input has occurred.
+خاصیت فقط‌خواندنی **`lastInputTime`** در رابط {{domxref("LayoutShift")}} زمان آخرین ورودیِ استثنا شده را برمی‌گرداند، یا اگر هیچ ورودیِ استثنا شده‌ای رخ نداده باشد، مقدار `0` را برمی‌گرداند.
 
-Layout shifts are only bad if the user wasn't expecting them. Layout shift metrics like {{glossary("CLS")}} exclude shifts that occurred soon after certain user interactions. These interactions are called _excluding inputs_. Excluding inputs are:
+تغییرات چیدمان (layout shifts) تنها زمانی بد هستند که کاربر انتظار آن‌ها را نداشته باشد. معیارهای تغییر چیدمان مانند {{glossary("CLS")}} تغییراتی را که بلافاصله پس از تعاملات خاص کاربر رخ می‌دهند مستثنی می‌کنند. این تعاملات «ورودی‌های استثنا شده» (excluding inputs) نامیده می‌شوند. ورودی‌های استثنا شده عبارتند از:
 
-- Any events which signal a user's active interaction with the document: ([`mousedown`](/en-US/docs/Web/API/Element/mousedown_event), [`keydown`](/en-US/docs/Web/API/Element/keydown_event), and [`pointerdown`](/en-US/docs/Web/API/Element/pointerdown_event))
-- Any events which directly changes the size of the viewport.
-- [`change`](/en-US/docs/Web/API/HTMLElement/change_event) events.
+- هر رویدادی که نشان‌دهنده تعامل فعال کاربر با سند باشد: ([`mousedown`](/en-US/docs/Web/API/Element/mousedown_event)، [`keydown`](/en-US/docs/Web/API/Element/keydown_event) و [`pointerdown`](/en-US/docs/Web/API/Element/pointerdown_event))
+- هر رویدادی که مستقیماً اندازه viewport را تغییر دهد.
+- رویدادهای [`change`](/en-US/docs/Web/API/HTMLElement/change_event).
 
-The [`mousemove`](/en-US/docs/Web/API/Element/mousemove_event) and [`pointermove`](/en-US/docs/Web/API/Element/pointermove_event) events are **not** excluding inputs.
+رویدادهای [`mousemove`](/en-US/docs/Web/API/Element/mousemove_event) و [`pointermove`](/en-US/docs/Web/API/Element/pointermove_event) **ورودی‌های استثنا شده محسوب نمی‌شوند**.
 
-## Value
+## مقدار
 
-A {{domxref("DOMHighResTimeStamp")}} indicating the most recent excluding input time or `0` if no excluding input has occurred.
+یک {{domxref("DOMHighResTimeStamp")}} که نشان‌دهنده زمان آخرین ورودی استثنا شده است، یا اگر هیچ ورودی استثنا شده‌ای رخ نداده باشد، مقدار `0`.
 
-## Examples
+## مثال‌ها
 
-### Logging last input times
+### ثبت زمان‌های آخرین ورودی
 
-Log excluding input times if excluding input has occurred.
+زمان‌های ورودی استثنا شده را در صورت وقوع ثبت کنید.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -48,14 +42,14 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "layout-shift", buffered: true });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("LayoutShift.hadRecentInput")}}
