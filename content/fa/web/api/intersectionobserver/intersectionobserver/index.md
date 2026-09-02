@@ -1,11 +1,5 @@
 ---
 title: "IntersectionObserver: IntersectionObserver() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/IntersectionObserver"
-status: "needs-translation"
----
-
----
-title: "IntersectionObserver: IntersectionObserver() constructor"
 short-title: IntersectionObserver()
 slug: Web/API/IntersectionObserver/IntersectionObserver
 page-type: web-api-constructor
@@ -14,98 +8,75 @@ browser-compat: api.IntersectionObserver.IntersectionObserver
 
 {{APIRef("Intersection Observer API")}}
 
-The **`IntersectionObserver()`** constructor creates and returns a new {{domxref("IntersectionObserver")}} object.
+سازندهٔ **`IntersectionObserver()`** یک شیء جدید {{domxref("IntersectionObserver")}} می‌سازد و آن را برمی‌گرداند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 new IntersectionObserver(callback)
 new IntersectionObserver(callback, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `callback`
-  - : A function which is called when the percentage of the target element that is visible crosses a threshold.
-    The callback receives as input two parameters:
+  - : تابعی که وقتی درصد نمایان بودن عنصر هدف از یک آستانه عبور می‌کند، فراخوانی می‌شود. این تابع دو پارامتر ورودی دریافت می‌کند:
     - `entries`
-      - : An array of {{domxref("IntersectionObserverEntry")}} objects, each representing one threshold which was crossed, either becoming more or less visible than the percentage specified by that threshold.
-        You should not assume the number of entries, because multiple threshold-crossing events may be reported in a single callback invocation.
-        The entries are dispatched using a queue, so they should be ordered by the time they were generated, but you should preferably use {{domxref("IntersectionObserverEntry.time")}} to correctly order them.
+      - : آرایه‌ای از اشیاء {{domxref("IntersectionObserverEntry")}} که هر کدام نمایانگر یک آستانهٔ عبورکرده‌شده است؛ یعنی آستانه‌ای که در آن عنصر نسبت به درصد مشخص‌شده توسط آن آستانه، بیشتر یا کمتر نمایان شده است. نباید تعداد ورودی‌ها را از پیش مفروض بگیرید، زیرا ممکن است چند رویداد عبور از آستانه در یک بار فراخوانی تابع گزارش شوند. ورودی‌ها با استفاده از یک صف ارسال می‌شوند، بنابراین باید بر اساس زمان تولیدشان مرتب شده باشند، اما ترجیحاً برای مرتب‌سازی صحیح آن‌ها از {{domxref("IntersectionObserverEntry.time")}} استفاده کنید.
     - `observer`
-      - : The {{domxref("IntersectionObserver")}} for which the callback is being invoked.
+      - : {{domxref("IntersectionObserver")}}ای که تابع برای آن فراخوانی می‌شود.
 
 - `options` {{optional_inline}}
-  - : An optional object which customizes the observer.
+  - : یک شیء اختیاری که مشاهده‌گر را سفارشی می‌کند.
 
-    You can provide any combination (or none) of the following options:
+    می‌توانید هر ترکیبی از گزینه‌های زیر را ارائه دهید (یا هیچ‌کدام):
     - `delay`
-      - : A number specifying the minimum permitted delay between notifications from the observer, in milliseconds.
+      - : عددی که حداقل تأخیر مجاز بین اعلان‌های مشاهده‌گر را بر حسب میلی‌ثانیه مشخص می‌کند.
 
-        The delay is used to limit the rate at which notifications will be provided when tracking visibility, as this is a computationally intensive operation.
-        The recommendation when tracking visibility is that you set the delay to the largest tolerable value.
+        از این تأخیر برای محدود کردن نرخ ارائهٔ اعلان‌ها هنگام ردیابی قابلمشاهده بودن استفاده می‌شود، زیرا این عملیاتی از نظر محاسباتی سنگین است. توصیه می‌شود هنگام ردیابی قابلمشاهده بودن، تأخیر را روی بزرگ‌ترین مقدار قابل تحمل تنظیم کنید.
 
-        When [`trackVisibility`](#trackvisibility) is `true` the minimum value is 100.
-        The browser will set the value to 100 if any smaller value is used, or if the value is not specified.
-        The default value is 0.
+        وقتی [`trackVisibility`](#trackvisibility) برابر با `true` باشد، حداقل مقدار ۱۰۰ است. اگر مقدار کوچک‌تری استفاده شود یا مقداری مشخص نشود، مرورگر مقدار را روی ۱۰۰ تنظیم خواهد کرد. مقدار پیش‌فرض ۰ است.
 
     - `root`
-      - : An {{domxref("Element")}} or {{domxref("Document")}} object which is an ancestor of the intended target, whose bounding rectangle will be considered the viewport.
-        Any part of the target not visible in the visible area of the `root` is not considered visible.
-        If not specified, the observer uses the document's
-        viewport as the root, with no margin, and a 0% threshold (meaning that even a one-pixel change is enough to trigger a callback).
+      - : یک شیء {{domxref("Element")}} یا {{domxref("Document")}} که نیای عنصر هدف موردنظر است و مستطیل دور آن به عنوان نمایک در نظر گرفته می‌شود. هر بخشی از هدف که در ناحیهٔ قابل مشاهدهٔ `root` دیده نشود، قابل مشاهده در نظر گرفته نمی‌شود. اگر مشخص نشود، مشاهده‌گر از نمایک سند به عنوان ریشه، بدون حاشیه و با آستانهٔ ۰٪ استفاده می‌کند (به این معنی که حتی تغییر یک پیکسل برای فعال کردن فراخوانی کافی است).
     - `rootMargin`
-      - : A string which specifies a set of offsets to add to the root's {{Glossary('bounding_box')}} when calculating intersections, effectively shrinking
-        or growing the root for calculation purposes. Each offset value can be only expressed in pixels (`px`) or percentages (`%`).
-        The syntax is approximately the same as that for the CSS {{cssxref("margin")}} property;
-        see [The intersection root and root margin](/en-US/docs/Web/API/Intersection_Observer_API#the_intersection_root_and_root_margin) for more information on how the margin works and the syntax.
-        The default is "0px 0px 0px 0px".
+      - : رشته‌ای که مجموعه‌ای از افست‌ها را برای افزودن به {{Glossary('bounding_box')}} ریشه هنگام محاسبهٔ تقاطع‌ها مشخص می‌کند و عملاً ریشه را برای اهداف محاسباتی کوچک‌تر یا بزرگ‌تر می‌کند. هر مقدار افست فقط می‌تواند بر حسب پیکسل (`px`) یا درصد (`%`) بیان شود. نحو آن تقریباً همانند نحو ویژگی {{cssxref("margin")}} در CSS است؛ برای اطلاعات بیشتر دربارهٔ نحوهٔ کار حاشیه و نحو آن، به [ریشه و حاشیهٔ تقاطع](/en-US/docs/Web/API/Intersection_Observer_API#the_intersection_root_and_root_margin) مراجعه کنید. مقدار پیش‌فرض "0px 0px 0px 0px" است.
     - `scrollMargin`
-      - : A string that specifies the offsets to add to every {{glossary("scroll container")}} on path to the target when calculating intersections, effectively shrinking or growing the clip rectangles used to calculate intersections.
-        This allows, for example, better observation of targets inside nested scroll containers that are currently clipped away by the scroll containers.
-        The syntax is the same as `rootMargin`.
-        The default is "0px 0px 0px 0px".
+      - : رشته‌ای که افست‌هایی را برای افزودن به هر {{glossary("scroll container")}} در مسیر رسیدن به هدف هنگام محاسبهٔ تقاطع‌ها مشخص می‌کند و عملاً مستطیل‌های برشی مورد استفاده برای محاسبهٔ تقاطع‌ها را کوچک‌تر یا بزرگ‌تر می‌کند. این امکان می‌دهد، برای مثال، اهدافی که درون ظروف اسکرول تودرتو قرار دارند و در حال حاضر توسط ظروف اسکرول بریده شده‌اند، بهتر مشاهده شوند. نحو آن همانند `rootMargin` است. مقدار پیش‌فرض "0px 0px 0px 0px" است.
     - `threshold`
-      - : Either a single number or an array of numbers between 0.0 and 1.0, specifying a ratio of intersection area to total bounding box area for the observed target.
-        A value of 0.0 means that even a single visible pixel counts as the target being visible.
-        1.0 means that the entire target element is visible.
-        See [Thresholds](/en-US/docs/Web/API/Intersection_Observer_API#thresholds) for a more in-depth description of how thresholds are used.
-        The default is a threshold of "0".
+      - : یک عدد یا آرایه‌ای از اعداد بین 0.0 و 1.0 که نسبت مساحت تقاطع به کل مساحت جعبهٔ مرزی هدف موردنظر را مشخص می‌کند. مقدار 0.0 به این معنی است که حتی یک پیکسل قابل مشاهده نیز به عنوان قابل مشاهده بودن هدف محسوب می‌شود. مقدار 1.0 به این معنی است که کل عنصر هدف قابل مشاهده است. برای توضیح عمیق‌تر در مورد نحوهٔ استفاده از آستانه‌ها، به [آستانه‌ها](/en-US/docs/Web/API/Intersection_Observer_API#thresholds) مراجعه کنید. مقدار پیش‌فرض، آستانهٔ «0» است.
     - `trackVisibility`
-      - : A boolean indicating whether the observer should track visibility.
+      - : یک مقدار بولی که مشخص می‌کند آیا مشاهده‌گر باید قابلمشاهده بودن را ردیابی کند یا خیر.
 
-        When `true`, the browser will check that the target does not have compromised visibility when calculating intersections;
-        for example, that it hasn't been covered by other elements or potentially been distorted or hidden by a filter, reduced opacity, or some transform.
+        وقتی `true` باشد، مرورگر هنگام محاسبهٔ تقاطع‌ها بررسی می‌کند که قابلمشاهده بودن هدف به خطر نیفتاده باشد؛ برای مثال، توسط عناصر دیگر پوشانده نشده باشد یا احتمالاً توسط یک فیلتر، شفافیت کاهش‌یافته یا یک تبدیل (transform) تغییر شکل داده یا پنهان نشده باشد.
 
-        Tracking visibility is an expensive operation, and should only be done when necessary.
-        A [`delay`](#delay) should also be set when this value is `true`.
-        The default is `false`.
+        ردیابی قابلمشاهده بودن عملیاتی پرهزینه است و فقط باید در صورت لزوم انجام شود. وقتی این مقدار `true` است، باید [`delay`](#delay) نیز تنظیم شود. مقدار پیش‌فرض `false` است.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("IntersectionObserver")}} which can be used to watch for the visibility of a target element within the specified `root` crossing through any of the specified visibility `threshold`s.
+یک {{domxref("IntersectionObserver")}} جدید که می‌توان از آن برای نظارت بر عبور قابلمشاهده بودن یک عنصر هدف درون `root` مشخص‌شده از هر یک از `threshold`های مشخص‌شده استفاده کرد.
 
-Call its {{domxref("IntersectionObserver.observe", "observe()")}} method to begin watching for the visibility changes on a given target.
+برای شروع نظارت بر تغییرات قابلمشاهده بودن یک هدف معین، متد {{domxref("IntersectionObserver.observe", "observe()")}} آن را فراخوانی کنید.
 
-### Exceptions
+### استثناها
 
 - `SyntaxError` {{domxref("DOMException")}}
-  - : The specified `rootMargin` or `scrollMargin` is invalid.
+  - : `rootMargin` یا `scrollMargin` مشخص‌شده نامعتبر است.
 - {{jsxref("RangeError")}}
-  - : One or more of the values in `threshold` is outside the range 0.0 to 1.0.
+  - : یک یا چند مقدار در `threshold` خارج از بازهٔ 0.0 تا 1.0 است.
 
-## Examples
+## مثال‌ها
 
-This example creates a new intersection observer which calls the function `myObserverCallback` every time the visible area of the element being observed changes by at least 10%.
+این مثال یک مشاهده‌گر تقاطع جدید می‌سازد که هر بار ناحیهٔ قابل مشاهدهٔ عنصر موردنظر حداقل ۱۰٪ تغییر کند، تابع `myObserverCallback` را فراخوانی می‌کند.
 
 ```js
 let observer = new IntersectionObserver(myObserverCallback, { threshold: 0.1 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
