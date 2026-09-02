@@ -1,11 +1,5 @@
 ---
 title: "NamedNodeMap: length property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NamedNodeMap/length"
-status: "needs-translation"
----
-
----
-title: "NamedNodeMap: length property"
 short-title: length
 slug: Web/API/NamedNodeMap/length
 page-type: web-api-instance-property
@@ -14,14 +8,13 @@ browser-compat: api.NamedNodeMap.length
 
 {{APIRef("DOM")}}
 
-The read-only **`length`** property of the {{domxref("NamedNodeMap")}} interface
-is the number of objects stored in the map.
+خاصیتِ **`length`** فقط‌خواندنی در رابط {{domxref("NamedNodeMap")}}، تعداد اشیاء ذخیره‌شده در نقشه است.
 
-## Value
+## مقدار
 
-A number containing the number of objects in the map
+عددی که تعداد اشیاء موجود در نقشه را نشان می‌دهد.
 
-## Example
+## مثال
 
 ```html
 <pre class="foo" id="bar" contenteditable></pre>
@@ -35,10 +28,10 @@ pre.textContent = `The 'test' attribute contains ${attrMap.length} attributes.\n
 
 {{EmbedLiveSample("Example", "100%", 20)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
