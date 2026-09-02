@@ -1,11 +1,5 @@
 ---
 title: "IntersectionObserver: observe() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/observe"
-status: "needs-translation"
----
-
----
-title: "IntersectionObserver: observe() method"
 short-title: observe()
 slug: Web/API/IntersectionObserver/observe
 page-type: web-api-instance-method
@@ -14,18 +8,18 @@ browser-compat: api.IntersectionObserver.observe
 
 {{APIRef("Intersection Observer API")}}
 
-The **`observe()`** method of the {{domxref("IntersectionObserver")}} interface adds an element to the set of target elements being watched by the `IntersectionObserver`.
-One observer has one set of thresholds and one root, but can watch multiple target elements for visibility changes in keeping with those.
+متد **`observe()`** از رابط {{domxref("IntersectionObserver")}} یک عنصر را به مجموعهٔ عناصر هدفی اضافه می‌کند که توسط `IntersectionObserver` تحت نظارت قرار دارند.
+هر observer دارای یک مجموعه آستانه (threshold) و یک ریشه (root) است، اما می‌تواند چندین عنصر هدف را برای تغییرات دید مطابق با آن‌ها نظارت کند.
 
-To stop observing the element, call {{domxref("IntersectionObserver.unobserve()")}}.
+برای توقف مشاهدهٔ عنصر، متد {{domxref("IntersectionObserver.unobserve()")}} را فراخوانی کنید.
 
-When the visibility of the specified element crosses over one of the observer's visibility thresholds (as listed in {{domxref("IntersectionObserver.thresholds")}}), the observer's callback is executed with an array of {{domxref("IntersectionObserverEntry")}} objects representing the intersection changes which occurred.
-Note that this design allows multiple elements' intersection changes to be processed by a single call to the callback.
+هنگامی که دید عنصر مشخص‌شده از یکی از آستانه‌های دید observer عبور کند (همان‌طور که در {{domxref("IntersectionObserver.thresholds")}} فهرست شده است)، تابع callback مربوط به observer با آرایه‌ای از اشیاء {{domxref("IntersectionObserverEntry")}} اجرا می‌شود که تغییرات تقاطع رخ‌داده را نشان می‌دهند.
+توجه داشته باشید که این طراحی امکان می‌دهد تغییرات تقاطع چندین عنصر در یک فراخوانی واحد از تابع callback پردازش شوند.
 
 > [!NOTE]
-> The observer [callback](/en-US/docs/Web/API/IntersectionObserver/IntersectionObserver#callback) will always fire the first render cycle after `observe()` is called, even if the observed element has not yet moved with respect to the viewport.
-> This means that, for example, an element that is outside the viewport when `observe()` is called on it will result in the callback being immediately called with at least one [entry](/en-US/docs/Web/API/IntersectionObserverEntry) with [`intersecting`](/en-US/docs/Web/API/IntersectionObserverEntry/isIntersecting) set to `false`.
-> An element inside the viewport will result in the callback being immediately called with at least one entry with `intersecting` set to `true`.
+> تابع [callback](/en-US/docs/Web/API/IntersectionObserver/IntersectionObserver#callback) مربوط به observer همیشه در اولین چرخهٔ رندر پس از فراخوانی `observe()` اجرا می‌شود، حتی اگر عنصر مشاهده‌شده هنوز نسبت به viewport جابه‌جا نشده باشد.
+> این بدان معناست که، برای مثال، اگر عنصری هنگام فراخوانی `observe()` روی آن خارج از viewport باشد، تابع callback بلافاصله با حداقل یک [ورودی](/en-US/docs/Web/API/IntersectionObserverEntry) که [`intersecting`](/en-US/docs/Web/API/IntersectionObserverEntry/isIntersecting) آن روی `false` تنظیم شده است فراخوانی می‌شود.
+> عنصری که داخل viewport باشد باعث می‌شود تابع callback بلافاصله با حداقل یک ورودی که `intersecting` آن روی `true` تنظیم شده است فراخوانی شود.
 
 ## Syntax
 
@@ -36,13 +30,13 @@ observe(targetElement)
 ### Parameters
 
 - `targetElement`
-  - : An {{domxref("element")}} whose visibility within the root is to be monitored.
-    This element must be a descendant of the root element (or contained within the current document, if the root is the document's viewport).
-    If this element is already being observed, this method does nothing.
+  - : یک {{domxref("element")}} که دید آن در داخل ریشه باید نظارت شود.
+    این عنصر باید از نوادگان عنصر ریشه باشد (یا در داخل سند جاری قرار داشته باشد، اگر ریشه، viewport سند باشد).
+    اگر این عنصر از قبل در حال مشاهده باشد، این متد هیچ کاری انجام نمی‌دهد.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
 ## Examples
 
