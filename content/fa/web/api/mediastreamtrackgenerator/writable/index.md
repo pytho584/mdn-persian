@@ -1,11 +1,5 @@
 ---
 title: "MediaStreamTrackGenerator: writable property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrackGenerator/writable"
-status: "needs-translation"
----
-
----
-title: "MediaStreamTrackGenerator: writable property"
 short-title: writable
 slug: Web/API/MediaStreamTrackGenerator/writable
 page-type: web-api-instance-property
@@ -17,15 +11,15 @@ browser-compat: api.MediaStreamTrackGenerator.writable
 
 {{APIRef("Insertable Streams for MediaStreamTrack API")}}{{SeeCompatTable}}{{Non-standard_Header}}
 
-The **`writable`** property of the {{domxref("MediaStreamTrackGenerator")}} interface returns a {{domxref("WritableStream")}}. This allows the writing of media frames to the `MediaStreamTrackGenerator`. The frames will be audio or video. The type is dictated by the kind of `MediaStreamTrackGenerator` that was created.
+ویژگی **`writable`** در رابط {{domxref("MediaStreamTrackGenerator")}} یک {{domxref("WritableStream")}} برمی‌گرداند. این امکان را فراهم می‌کند که فریم‌های رسانه‌ای به `MediaStreamTrackGenerator` نوشته شوند. این فریم‌ها می‌توانند صوتی یا تصویری باشند. نوع آن‌ها بر اساس نوع `MediaStreamTrackGenerator` که ایجاد شده تعیین می‌شود.
 
-## Value
+## مقدار
 
-A {{domxref("WritableStream")}}.
+یک {{domxref("WritableStream")}}.
 
-## Examples
+## مثال‌ها
 
-In the following example video frames are transformed then written to the {{domxref("WritableStream")}} accessed with `MediaStreamTrackGenerator.writable`.
+در مثال زیر، فریم‌های ویدیو تبدیل شده و سپس به {{domxref("WritableStream")}} که از طریق `MediaStreamTrackGenerator.writable` در دسترس است نوشته می‌شوند.
 
 ```js
 const trackProcessor = new MediaStreamTrackProcessor({ track: videoTrack });
@@ -38,10 +32,10 @@ trackProcessor.readable
   .pipeTo(trackGenerator.writable);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
