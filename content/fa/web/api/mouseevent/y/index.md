@@ -1,9 +1,4 @@
----
-title: "MouseEvent: y property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/y"
-status: "needs-translation"
----
-
+```markdown
 ---
 title: "MouseEvent: y property"
 short-title: y
@@ -14,12 +9,13 @@ browser-compat: api.MouseEvent.y
 
 {{APIRef("UI Events")}}
 
-The **`MouseEvent.y`** property is an alias for the {{domxref("MouseEvent.clientY")}} property.
+**`MouseEvent.y`** ویژگیِ، نام مستعار (alias) برای ویژگیِ {{domxref("MouseEvent.clientY")}} است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
+```
