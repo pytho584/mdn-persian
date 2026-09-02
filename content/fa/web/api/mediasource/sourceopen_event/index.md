@@ -1,11 +1,5 @@
 ---
 title: "MediaSource: sourceopen event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/sourceopen_event"
-status: "needs-translation"
----
-
----
-title: "MediaSource: sourceopen event"
 short-title: sourceopen
 slug: Web/API/MediaSource/sourceopen_event
 page-type: web-api-event
@@ -14,12 +8,11 @@ browser-compat: api.MediaSource.sourceopen_event
 
 {{APIRef("Media Source Extensions")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`sourceopen`** event is fired when a {{domxref("MediaSource")}} object's {{domxref("MediaSource.readyState", "readyState")}} changes to `"open"`.
-This indicates that the `MediaSource` is ready to receive data from {{domxref("SourceBuffer")}} objects. This can occur either when the `MediaSource` object is first attached to a media element or when the {{domxref("MediaSource.readyState", "readyState")}} changes from `"ended"` back to `"open"`.
+رویداد **`sourceopen`** زمانی رخ می‌دهد که {{domxref("MediaSource.readyState", "readyState")}} یک شیء {{domxref("MediaSource")}} به `"open"` تغییر کند. این نشان می‌دهد که `MediaSource` آماده دریافت داده از اشیاء {{domxref("SourceBuffer")}} است. این رویداد می‌تواند یا زمانی رخ دهد که شیء `MediaSource` برای اولین بار به یک عنصر رسانه‌ای متصل می‌شود، یا زمانی که {{domxref("MediaSource.readyState", "readyState")}} از `"ended"` به `"open"` بازمی‌گردد.
 
 ## Syntax
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js
 addEventListener("sourceopen", (event) => {});
@@ -27,15 +20,15 @@ addEventListener("sourceopen", (event) => {});
 onsourceopen = (event) => {};
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## مثال‌ها
 
-### Handling the sourceopen event
+### مدیریت رویداد sourceopen
 
-This example sets up a {{domxref("MediaSource")}}, connects it to a video element, and listens for the `sourceopen` event. When the event fires, it adds a {{domxref("SourceBuffer")}} to handle the video data, fetches the data, appends it to the buffer, and finally revokes the object URL when the source ends.
+این مثال یک {{domxref("MediaSource")}} راه‌اندازی می‌کند، آن را به یک عنصر ویدیو متصل می‌کند و به رویداد `sourceopen` گوش می‌دهد. وقتی رویداد فعال می‌شود، یک {{domxref("SourceBuffer")}} برای مدیریت داده ویدیو اضافه می‌کند، داده را دریافت می‌کند، آن را به بافر اضافه می‌کند و در نهایت وقتی منبع (source) به پایان می‌رسد، URL شیء را لغو می‌کند.
 
 ```js
 const video = document.getElementById("myVideo");
@@ -61,10 +54,10 @@ mediaSource.addEventListener("sourceended", () => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
