@@ -1,7 +1,5 @@
 ---
 title: "IDBDatabase: close event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase/close_event"
-status: "needs-translation"
 ---
 
 ---
@@ -14,13 +12,11 @@ browser-compat: api.IDBDatabase.close_event
 
 {{ APIRef("IndexedDB") }}
 
-The `close` event is fired on `IDBDatabase` when the database connection is unexpectedly closed. This could happen, for example, if the underlying storage is removed or if the user clears the database in the browser's history preferences.
+رویداد `close` روی `IDBDatabase` وقتی که اتصال پایگاه داده به طور غیرمنتظره بسته شود، فعال می‌گردد. این ممکن است مثلاً زمانی رخ دهد که ذخیره‌سازی زیرین حذف شود یا کاربر پایگاه داده را در تنظیمات تاریخچه مرورگر پاک کند. توجه داشته باشید که اگر اتصال پایگاه داده به طور عادی با استفاده از [`IDBDatabase.close()`](/en-US/docs/Web/API/IDBDatabase/close) بسته شود، این رویداد فعال نمی‌شود.
 
-Note that it is not fired if the database connection is closed normally using [`IDBDatabase.close()`](/en-US/docs/Web/API/IDBDatabase/close).
+## نحو
 
-## Syntax
-
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم نمایید.
 
 ```js-nolint
 addEventListener("close", (event) => { })
@@ -28,13 +24,13 @@ addEventListener("close", (event) => { })
 onclose = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## نمونه‌ها
 
-This example opens a database and listens for the `close` event:
+این مثال یک پایگاه داده را باز می‌کند و به رویداد `close` گوش می‌دهد:
 
 ```js
 // Open the database
@@ -64,7 +60,7 @@ dBOpenRequest.onsuccess = (event) => {
 };
 ```
 
-The same example, using the `onclose` property instead of `addEventListener()`:
+همان مثال، با استفاده از ویژگی `onclose` به جای `addEventListener()`:
 
 ```js
 // Open the database
@@ -94,14 +90,14 @@ dBOpenRequest.onsuccess = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
