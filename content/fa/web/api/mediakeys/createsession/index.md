@@ -1,11 +1,5 @@
 ---
 title: "MediaKeys: createSession() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaKeys/createSession"
-status: "needs-translation"
----
-
----
-title: "MediaKeys: createSession() method"
 short-title: createSession()
 slug: Web/API/MediaKeys/createSession
 page-type: web-api-instance-method
@@ -14,28 +8,28 @@ browser-compat: api.MediaKeys.createSession
 
 {{APIRef("Encrypted Media Extensions")}}{{SecureContext_Header}}
 
-The `createSession()` method of the {{domxref("MediaKeys")}} interface returns a new {{domxref("MediaKeySession")}} object, which represents a context for message exchange with a content decryption module (CDM).
+متد `createSession()` از رابط {{domxref("MediaKeys")}} یک شیء جدید {{domxref("MediaKeySession")}} برمی‌گرداند که نمایانگر زمینه‌ای برای تبادل پیام با ماژول رمزگشایی محتوا (CDM) است.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 createSession()
 createSession(mediaKeySessionType)
 ```
 
-### Parameters
+### پارامترها
 
 - `mediaKeySessionType` {{optional_inline}}
-  - : A string. Either "temporary" or "persistent-license". The default value is "temporary".
+  - : یک رشته؛ مقدار آن «temporary» یا «persistent-license» است. مقدار پیش‌فرض «temporary» است.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("MediaKeySession")}} object.
+یک شیء جدید {{domxref("MediaKeySession")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
