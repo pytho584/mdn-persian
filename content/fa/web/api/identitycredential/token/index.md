@@ -1,7 +1,5 @@
 ---
 title: "IdentityCredential: token property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IdentityCredential/token"
-status: "needs-translation"
 ---
 
 ---
@@ -16,21 +14,21 @@ browser-compat: api.IdentityCredential.token
 
 {{APIRef("FedCM API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`token`** read-only property of the {{domxref("IdentityCredential")}} interface returns the token used to validate the associated sign-in.
+خاصیت فقط‌خواندنی **`token`** در رابط {{domxref("IdentityCredential")}} توکنی را بازمی‌گرداند که برای تأیید ورود مرتبط استفاده می‌شود.
 
-The FedCM API does not define the structure of the `token` object or what the RP should do with it: this depends entirely on the federated identity protocol that the IdP implements.
+API FedCM ساختار شیء `token` یا اینکه RP (طرف متکی) باید با آن چه کند را تعریف نمی‌کند: این کاملاً به پروتکل هویت فدرال‌شده‌ای بستگی دارد که IdP (فراهم‌کننده هویت) پیاده‌سازی می‌کند.
 
-When an RP chooses to work with a particular IdP, they will provide instructions for how to interpret and use the returned `token` value.
+هنگامی که یک RP (طرف متکی) تصمیم به کار با یک IdP (فراهم‌کننده هویت) خاص می‌گیرد، آن IdP دستورالعمل‌هایی را برای نحوه تفسیر و استفاده از مقدار `token` بازگشتی ارائه می‌دهد.
 
-## Value
+## مقدار
 
-Any type.
+هر نوعی.
 
-## Examples
+## مثال‌ها
 
-### Basic federated sign-in and `token` access
+### ورود فدرال ساده و دسترسی به `token`
 
-Relying parties (RPs) can call `navigator.credentials.get()` with the `identity` option to make a request for users to sign in to the RP via an identity provider (IdP), using identity federation. A typical request would look like this:
+طرف‌های متکی (RPها) می‌توانند متد `navigator.credentials.get()` را با گزینه `identity` فراخوانی کنند تا از کاربران بخواهند از طریق یک فراهم‌کننده هویت (IdP) با استفاده از هویت فدرال وارد سیستم شوند. یک درخواست معمولی به این شکل است:
 
 ```js
 async function signIn() {
@@ -50,18 +48,18 @@ async function signIn() {
 }
 ```
 
-A successful {{domxref("CredentialsContainer.get", "navigator.credentials.get()")}} call that includes an `identity` option fulfills with an `IdentityCredential` instance, which can be used to access the `token` used to validate the sign-in.
+یک فراخوانی موفق {{domxref("CredentialsContainer.get", "navigator.credentials.get()")}} که شامل گزینه `identity` باشد، با یک نمونه `IdentityCredential` تکمیل می‌شود که می‌توان از آن برای دسترسی به `token` استفاده‌شده برای تأیید ورود بهره برد.
 
-Check out [Federated Credential Management API (FedCM)](/en-US/docs/Web/API/FedCM_API) for more details on how this works. This call will start off the sign-in flow described in [FedCM sign-in flow](/en-US/docs/Web/API/FedCM_API/RP_sign-in#fedcm_sign-in_flow).
+برای جزئیات بیشتر در مورد نحوه کار این موضوع، به [Federated Credential Management API (FedCM)](/en-US/docs/Web/API/FedCM_API) مراجعه کنید. این فراخوانی جریان ورود شرح‌داده‌شده در [FedCM sign-in flow](/en-US/docs/Web/API/FedCM_API/RP_sign-in#fedcm_sign-in_flow) را آغاز می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Federated Credential Management API](https://developer.chrome.com/docs/identity/fedcm/overview)
