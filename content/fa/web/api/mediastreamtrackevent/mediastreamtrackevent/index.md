@@ -1,11 +1,5 @@
 ---
 title: "MediaStreamTrackEvent: MediaStreamTrackEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrackEvent/MediaStreamTrackEvent"
-status: "needs-translation"
----
-
----
-title: "MediaStreamTrackEvent: MediaStreamTrackEvent() constructor"
 short-title: MediaStreamTrackEvent()
 slug: Web/API/MediaStreamTrackEvent/MediaStreamTrackEvent
 page-type: web-api-constructor
@@ -14,40 +8,38 @@ browser-compat: api.MediaStreamTrackEvent.MediaStreamTrackEvent
 
 {{APIRef("Media Capture and Streams")}}
 
-The **`MediaStreamTrackEvent()`** constructor returns a new {{domxref("MediaStreamTrackEvent")}} object,
-which represents an event signaling that a {{domxref("MediaStreamTrack")}} has been added to or removed from a {{domxref("MediaStream")}}.
+سازندهی **`MediaStreamTrackEvent()`** یک شیء جدید {{domxref("MediaStreamTrackEvent")}} برمی‌گرداند که نمایانگر رویدادی است که در آن یک {{domxref("MediaStreamTrack")}} به یک {{domxref("MediaStream")}} اضافه یا از آن حذف شده است.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 new MediaStreamTrackEvent(type, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string with the name of the event.
-    It is case-sensitive and browsers set it to `addtrack` or `removetrack`.
+  - : رشته‌ای که نام رویداد را مشخص می‌کند. این مقدار به بزرگی و کوچکی حروف حساس است و مرورگرها آن را روی `addtrack` یا `removetrack` تنظیم می‌کنند.
 - `options`
-  - : An object that, _in addition of the properties defined in {{domxref("Event/Event", "Event()")}}_, can have the following properties:
+  - : یک شیء که، _علاوه بر ویژگی‌های تعریف‌شده در {{domxref("Event/Event", "Event()")}}_، می‌تواند ویژگی‌های زیر را داشته باشد:
     - `track`
-      - : A {{domxref("MediaStreamTrack")}} object representing the track which was added to or removed from the stream.
+      - : یک شیء {{domxref("MediaStreamTrack")}} که نمایانگر ترک اضافه‌شده به جریان یا حذف‌شده از جریان است.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("MediaStreamTrackEvent")}} object, initialized based on the provided options.
+یک شیء جدید {{domxref("MediaStreamTrackEvent")}} که بر اساس گزینه‌های ارائه‌شده ساخته شده است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("MediaStream/addtrack_event", "addtrack")}} and {{domxref("MediaStream/removetrack_event", "removetrack")}} events
+- رویدادهای {{domxref("MediaStream/addtrack_event", "addtrack")}} و {{domxref("MediaStream/removetrack_event", "removetrack")}}
 - {{domxref("MediaStreamTrack")}}
 - {{domxref("MediaStream")}}
 - [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
