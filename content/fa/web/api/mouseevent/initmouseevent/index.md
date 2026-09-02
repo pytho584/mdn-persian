@@ -1,7 +1,6 @@
 ---
 title: "MouseEvent: initMouseEvent() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/initMouseEvent"
-status: "needs-translation"
 ---
 
 ---
@@ -16,20 +15,18 @@ browser-compat: api.MouseEvent.initMouseEvent
 
 {{APIRef("Pointer Events")}}{{deprecated_header}}
 
-The **`MouseEvent.initMouseEvent()`** method initializes the
-value of a mouse event once it's been created (normally using the {{domxref("Document.createEvent()")}} method).
+متد **`MouseEvent.initMouseEvent()`** مقدار یک رویداد ماوس را پس از ایجاد آن (معمولاً با متد {{domxref("Document.createEvent()")}}) مقداردهی می‌کند.
 
 > [!WARNING]
-> Do not use this method anymore as it is deprecated.
+> دیگر از این متد استفاده نکنید زیرا منسوخ شده است.
 >
-> Instead use specific event constructors, like {{domxref("MouseEvent.MouseEvent", "MouseEvent()")}}.
-> The section on [Creating and dispatching events](/en-US/docs/Web/API/Document_Object_Model/Events#creating_and_dispatching_events) gives more information about the way to use these.
+> در عوض، از سازنده‌های رویداد خاص مانند {{domxref("MouseEvent.MouseEvent", "MouseEvent()")}} استفاده کنید.
+> بخش [ایجاد و ارسال رویدادها](/en-US/docs/Web/API/Document_Object_Model/Events#creating_and_dispatching_events) اطلاعات بیشتری درباره نحوه استفاده از این‌ها ارائه می‌دهد.
 
-Events initialized in this way must have been created with the {{domxref("Document.createEvent()") }} method.
-This method must be called to set the event
-before it is dispatched, using {{ domxref("EventTarget.dispatchEvent()") }}.
+رویدادهایی که به این روش مقداردهی می‌شوند باید با متد {{domxref("Document.createEvent()")}} ایجاد شده باشند.
+این متد باید قبل از ارسال رویداد، با استفاده از {{ domxref("EventTarget.dispatchEvent()") }} فراخوانی شود تا رویداد تنظیم گردد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 initMouseEvent(type, canBubble, cancelable, view,
@@ -38,63 +35,63 @@ initMouseEvent(type, canBubble, cancelable, view,
                      button, relatedTarget)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : the string to set the event's {{domxref("Event.type", "type")}} to. Possible types
-    for mouse events include: `click`, `mousedown`,
-    `mouseup`, `mouseover`, `mousemove`,
+  - : رشته‌ای که {{domxref("Event.type", "type")}} رویداد را تنظیم می‌کند. انواع ممکن
+    برای رویدادهای ماوس عبارت‌اند از: `click`، `mousedown`،
+    `mouseup`، `mouseover`، `mousemove`،
     `mouseout`.
 - `canBubble`
-  - : whether or not the event can bubble. Sets the value of {{domxref("Event.bubbles")}}.
+  - : مشخص می‌کند که آیا رویداد می‌تواند حباب بزند یا خیر. مقدار {{domxref("Event.bubbles")}} را تنظیم می‌کند.
 - `cancelable`
-  - : whether or not the event's default action can be prevented. Sets the value of
-    {{domxref("Event.cancelable")}}.
+  - : مشخص می‌کند که آیا می‌توان از اقدام پیش‌فرض رویداد جلوگیری کرد یا خیر. مقدار
+    {{domxref("Event.cancelable")}} را تنظیم می‌کند.
 - `view`
-  - : the event's AbstractView. You should pass the {{domxref("window")}} object here.
-    Sets the value of {{domxref("UIEvent.view")}}.
+  - : AbstractView رویداد. باید شیء {{domxref("window")}} را اینجا ارسال کنید.
+    مقدار {{domxref("UIEvent.view")}} را تنظیم می‌کند.
 - `detail`
-  - : the event's mouse click count. Sets the value of {{domxref("UIEvent.detail")}}.
+  - : تعداد کلیک‌های ماوس رویداد. مقدار {{domxref("UIEvent.detail")}} را تنظیم می‌کند.
 - `screenX`
-  - : the event's screen x coordinate. Sets the value of
-    {{domxref("MouseEvent.screenX")}}.
+  - : مختصات x صفحه رویداد. مقدار
+    {{domxref("MouseEvent.screenX")}} را تنظیم می‌کند.
 - `screenY`
-  - : the event's screen y coordinate. Sets the value of
-    {{domxref("MouseEvent.screenY")}}.
+  - : مختصات y صفحه رویداد. مقدار
+    {{domxref("MouseEvent.screenY")}} را تنظیم می‌کند.
 - `clientX`
-  - : the event's client x coordinate. Sets the value of
-    {{domxref("MouseEvent.clientX")}}.
+  - : مختصات x سمت کلاینت رویداد. مقدار
+    {{domxref("MouseEvent.clientX")}} را تنظیم می‌کند.
 - `clientY`
-  - : the event's client y coordinate. Sets the value of
-    {{domxref("MouseEvent.clientY")}}.
+  - : مختصات y سمت کلاینت رویداد. مقدار
+    {{domxref("MouseEvent.clientY")}} را تنظیم می‌کند.
 - `ctrlKey`
-  - : whether or not <kbd>control</kbd> key was pressed during the Event. Sets the value
-    of {{domxref("MouseEvent.ctrlKey")}}.
+  - : مشخص می‌کند که آیا کلید <kbd>کنترل</kbd> در طول رویداد فشار داده شده بود یا خیر. مقدار
+    {{domxref("MouseEvent.ctrlKey")}} را تنظیم می‌کند.
 
 - `altKey`
-  - : whether or not <kbd>alt</kbd> key was pressed during the Event. Sets the value of
-    {{domxref("MouseEvent.altKey")}}.
+  - : مشخص می‌کند که آیا کلید <kbd>alt</kbd> در طول رویداد فشار داده شده بود یا خیر. مقدار
+    {{domxref("MouseEvent.altKey")}} را تنظیم می‌کند.
 
 - `shiftKey`
-  - : whether or not <kbd>shift</kbd> key was pressed during the Event. Sets the value
-    of {{domxref("MouseEvent.shiftKey")}}.
+  - : مشخص می‌کند که آیا کلید <kbd>shift</kbd> در طول رویداد فشار داده شده بود یا خیر. مقدار
+    {{domxref("MouseEvent.shiftKey")}} را تنظیم می‌کند.
 
 - `metaKey`
-  - : whether or not <kbd>meta</kbd> key was pressed during the Event. Sets the value of
-    {{domxref("MouseEvent.metaKey")}}.
+  - : مشخص می‌کند که آیا کلید <kbd>meta</kbd> در طول رویداد فشار داده شده بود یا خیر. مقدار
+    {{domxref("MouseEvent.metaKey")}} را تنظیم می‌کند.
 
 - `button`
-  - : the event's mouse {{domxref("MouseEvent.button", "button")}}.
+  - : {{domxref("MouseEvent.button", "دکمه")}} ماوس رویداد.
 - `relatedTarget`
-  - : the event's [related EventTarget](/en-US/docs/Web/API/MouseEvent/relatedTarget). Only used
-    with some event types (e.g., `mouseover` and `mouseout`). In
-    other cases, pass `null`.
+  - : [EventTarget مرتبط](/en-US/docs/Web/API/MouseEvent/relatedTarget) رویداد. فقط با
+    برخی از انواع رویداد استفاده می‌شود (مثلاً `mouseover` و `mouseout`). در
+    سایر موارد، `null` را ارسال کنید.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
 ```js
 const event = document.createEvent("MouseEvents");
@@ -118,17 +115,17 @@ event.initMouseEvent(
 document.body.dispatchEvent(event);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("MouseEvent.MouseEvent()","MouseEvent()")}} constructor, the modern
-  standard way of creating a {{domxref("MouseEvent")}}
-- {{domxref("Event.initEvent()")}} is a simpler method serving a similar purpose. It
-  is also obsolete and shouldn't be used any more.
+- سازنده {{domxref("MouseEvent.MouseEvent()","MouseEvent()")}}، روش مدرن و استاندارد
+  برای ایجاد یک {{domxref("MouseEvent")}}
+- {{domxref("Event.initEvent()")}} متد ساده‌تری است که هدف مشابهی دارد. این متد
+  نیز منسوخ شده است و نباید دیگر استفاده شود.
