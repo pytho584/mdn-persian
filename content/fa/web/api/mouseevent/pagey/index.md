@@ -1,11 +1,5 @@
 ---
 title: "MouseEvent: pageY property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/pageY"
-status: "needs-translation"
----
-
----
-title: "MouseEvent: pageY property"
 short-title: pageY
 slug: Web/API/MouseEvent/pageY
 page-type: web-api-instance-property
@@ -14,24 +8,23 @@ browser-compat: api.MouseEvent.pageY
 
 {{APIRef("Pointer Events")}}
 
-The **`pageY`** read-only property of the {{domxref("MouseEvent")}} interface returns the Y (vertical) coordinate (in pixels) at which the mouse was clicked, relative to the top edge of the entire document.
-This includes any portion of the document not currently visible.
+ویژگی فقط‌خواندنی **`pageY`** در رابط {{domxref("MouseEvent")}}، مختصات Y (عمودی) را بر حسب پیکسل در موقعیت کلیک ماوس، نسبت به لبهٔ بالایی کل سند بازمی‌گرداند. این مقدار شامل هر بخشی از سند می‌شود که در حال حاضر قابل مشاهده نیست.
 
-See {{domxref("MouseEvent.pageX")}} for more information.
+برای اطلاعات بیشتر، {{domxref("MouseEvent.pageX")}} را ببینید.
 
-## Value
+## مقدار
 
-A `double` floating point value in pixels.
+یک مقدار ممیز شناور از نوع `double` بر حسب پیکسل.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("MouseEvent.pageX")}}
-- [Coordinate systems](/en-US/docs/Web/API/CSSOM_view_API/Coordinate_systems)
+- [سیستم‌های مختصات](/en-US/docs/Web/API/CSSOM_view_API/Coordinate_systems)
