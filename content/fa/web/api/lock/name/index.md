@@ -1,11 +1,5 @@
 ---
 title: "Lock: name property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Lock/name"
-status: "needs-translation"
----
-
----
-title: "Lock: name property"
 short-title: name
 slug: Web/API/Lock/name
 page-type: web-api-instance-property
@@ -14,25 +8,17 @@ browser-compat: api.Lock.name
 
 {{APIRef("Web Locks API")}}{{securecontext_header}} {{AvailableInWorkers}}
 
-The **`name`** read-only property of
-the {{domxref("Lock")}} interface returns the _name_ passed to
-{{domxref('LockManager.request')}} selected when the lock was requested.
+خاصیت فقطخواندنی **`name`** در رابط {{domxref("Lock")}}، همان _نام_ را برمیگرداند که هنگام درخواست قفل به {{domxref('LockManager.request')}} ارسال شده و برای انتخاب قفل استفاده میشود.
 
-The name of a lock is passed by script when the lock is requested. The name is selected
-by the developer to represent an abstract resource for which use is being coordinated
-across multiple tabs, workers, or other code within the origin. For example, if only one
-tab of a web application should be synchronizing network resources with an offline
-database, it could use a lock name such as `"net_db_sync"`.
+نام یک قفل هنگام درخواست قفل توسط اسکریپت ارسال میشود. این نام توسط توسعه‌دهنده انتخاب می‌شود تا یک منبع انتزاعی را نشان دهد که استفاده از آن بین چندین تب، worker یا کدهای دیگر در همان origin هماهنگ می‌شود. برای مثال، اگر فقط یک تب از یک برنامه وب باید منابع شبکه را با یک پایگاه‌داده آفلاین همگام‌سازی کند، می‌تواند از نام قفلی مانند `"net_db_sync"` استفاده کند.
 
 ## Value
 
-A string.
+یک رشته.
 
 ## Examples
 
-The following examples show how the name property passed in the call
-to {{domxref('LockManager.request()')}}. {{domxref('LockManager')}} is the object returned
-by {{domxref('navigator.locks')}}.
+مثال‌های زیر نشان می‌دهند که خاصیت name چگونه در فراخوانی {{domxref('LockManager.request()')}} منتقل می‌شود. {{domxref('LockManager')}} شیئی است که توسط {{domxref('navigator.locks')}} بازگردانده می‌شود.
 
 ```js
 navigator.locks.request("net_db_sync", showLockProperties);
