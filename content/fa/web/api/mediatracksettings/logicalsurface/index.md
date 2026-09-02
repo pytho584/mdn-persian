@@ -1,11 +1,5 @@
 ---
 title: "MediaTrackSettings: logicalSurface property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/logicalSurface"
-status: "needs-translation"
----
-
----
-title: "MediaTrackSettings: logicalSurface property"
 short-title: logicalSurface
 slug: Web/API/MediaTrackSettings/logicalSurface
 page-type: web-api-instance-property
@@ -14,45 +8,31 @@ browser-compat: api.MediaStreamTrack.applyConstraints.logicalSurface_constraint
 
 {{APIRef("Media Capture and Streams")}}
 
-The {{domxref("MediaTrackSettings")}} dictionary's
-**`logicalSurface`** property indicates whether or not the
-display area being captured is a logical surface. Logical surfaces are those which are
-not necessarily entirely onscreen, or may even be off-screen, such as windows' backing
-buffers (where only part of the buffer is visible without scrolling the containing
-window) and offscreen rendering contexts.
+ویژگی **`logicalSurface`** در فرهنگ لغت {{domxref("MediaTrackSettings")}} مشخص می‌کند که آیا ناحیه نمایشی که در حال ضبط است یک سطح منطقی (logical surface) است یا خیر. سطوح منطقی سطوحی هستند که لزوماً به طور کامل روی صفحه نمایش دیده نمی‌شوند، یا حتی ممکن است کاملاً خارج از صفحه باشند؛ مانند بافرهای پشتیبان پنجره‌ها (جایی که تنها بخشی از بافر بدون اسکرول کردن پنجره‌ی محتوا قابل مشاهده است) و زمینه‌های رندر خارج از صفحه (offscreen rendering contexts).
 
-## Value
+## مقدار
 
-A Boolean value which is `true` if the video track in the stream of captured
-video is taken from a logical display surface.
+یک مقدار بولین که اگر ویدیوی موجود در جریان ویدیوی ضبط‌شده از یک سطح نمایش منطقی گرفته شده باشد، `true` است.
 
-The most common scenario in which a display surface may be a logical one is if the
-selected surface contains the entire content area of a window which is too large to
-display onscreen at once. Since the window that contains the surface has to be scrolled
-to show the rest of the contents, the surface is a logical one.
+رایج‌ترین سناریویی که در آن یک سطح نمایش ممکن است منطقی باشد، زمانی است که سطح انتخاب‌شده شامل کل ناحیه محتوای یک پنجره باشد که برای نمایش یکجا روی صفحه بیش از حد بزرگ است. از آنجا که پنجره‌ای که سطح را در خود دارد باید اسکرول شود تا بقیه محتوا نمایش داده شود، آن سطح یک سطح منطقی است.
 
-A visible display surface (that is, a surface for which `logicalSurface`
-returns `false`) is the portion of a logical display surface which is
-currently visible onscreen.
+یک سطح نمایش قابل مشاهده (یعنی سطحی که برای آن `logicalSurface` مقدار `false` برمی‌گرداند) بخشی از یک سطح نمایش منطقی است که در حال حاضر روی صفحه نمایش دیده می‌شود.
 
-For example, a user agent _may_ choose to allow the user to choose whether to
-share the entire document (a `browser` with `logicalSurface` value
-of `true`), or just the currently visible portion of the document (where the
-`logicalSurface` of the `browser` surface is `false`).
+به عنوان مثال، یک عامل کاربر (user agent) _ممکن است_ به کاربر اجازه دهد انتخاب کند که آیا کل سند (یک `browser` با مقدار `logicalSurface` برابر با `true`) را به اشتراک بگذارد یا فقط بخش قابل مشاهده فعلی سند را (که در آن `logicalSurface` سطح `browser` برابر با `false` است).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Screen Capture API](/en-US/docs/Web/API/Screen_Capture_API)
-- [Using the screen capture API](/en-US/docs/Web/API/Screen_Capture_API/Using_Screen_Capture)
-- [Capabilities, constraints, and settings](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints)
+- [استفاده از API ضبط صفحه](/en-US/docs/Web/API/Screen_Capture_API/Using_Screen_Capture)
+- [قابلیت‌ها، محدودیت‌ها و تنظیمات](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints)
 - {{domxref("MediaDevices.getDisplayMedia()")}}
 - {{domxref("MediaStreamTrack.getConstraints()")}}
 - {{domxref("MediaStreamTrack.applyConstraints()")}}
