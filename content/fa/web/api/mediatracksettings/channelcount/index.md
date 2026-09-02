@@ -1,11 +1,5 @@
 ---
 title: "MediaTrackSettings: channelCount property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/channelCount"
-status: "needs-translation"
----
-
----
-title: "MediaTrackSettings: channelCount property"
 short-title: channelCount
 slug: Web/API/MediaTrackSettings/channelCount
 page-type: web-api-instance-property
@@ -14,40 +8,29 @@ browser-compat: api.MediaStreamTrack.applyConstraints.channelCount_constraint
 
 {{APIRef("Media Capture and Streams")}}
 
-The {{domxref("MediaTrackSettings")}} dictionary's
-**`channelCount`** property is an integer indicating how many
-audio channels the {{domxref("MediaStreamTrack")}} is currently configured to have. This
-lets you determine what value was selected to comply with your specified constraints for
-this property's value as described in the
-{{domxref("MediaTrackConstraints.channelCount")}} property you provided when calling
-either {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}} or
-{{domxref("MediaStreamTrack.applyConstraints()")}}.
+ویژگی **`channelCount`** در {{domxref("MediaTrackSettings")}} یک عدد صحیح است که نشان می‌دهد {{domxref("MediaStreamTrack")}} در حال حاضر برای چند کانال صوتی پیکربندی شده است. به کمک این ویژگی می‌توانید ببینید برای برآوردن محدودیت‌های اعلام‌شده برای مقدار این ویژگی، چه مقداری انتخاب شده است. این محدودیت‌ها همان‌هایی هستند که هنگام فراخوانی {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}} یا {{domxref("MediaStreamTrack.applyConstraints()")}} از طریق ویژگی {{domxref("MediaTrackConstraints.channelCount")}} مشخص کرده بودید.
 
-If needed, you can determine whether or not this constraint is supported by checking
-the value of {{domxref("MediaTrackSupportedConstraints.channelCount")}} as returned by a
-call to {{domxref("MediaDevices.getSupportedConstraints()")}}. However, typically this
-is unnecessary since browsers will ignore any constraints they're unfamiliar with.
+در صورت نیاز، می‌توانید با بررسی مقدار {{domxref("MediaTrackSupportedConstraints.channelCount")}} که در نتیجهٔ فراخوانی {{domxref("MediaDevices.getSupportedConstraints()")}} بازگردانده می‌شود، تعیین کنید که آیا این محدودیت پشتیبانی می‌شود یا نه. با این حال، معمولاً این کار ضروری نیست؛ زیرا مرورگرها محدودیت‌هایی را که برایشان ناآشنا هستند نادیده می‌گیرند.
 
-## Value
+## مقدار
 
-An integer value indicating the number of audio channels on the track. A value of 1
-indicates monaural sound, 2 means stereo, and so forth.
+مقدار این ویژگی یک عدد صحیح است که تعداد کانال‌های صوتی موجود در MediaStreamTrack را مشخص می‌کند. مقدار ۱ نشان‌دهندهٔ صدای تک‌کاناله (mono)، مقدار ۲ نشان‌دهندهٔ صدای استریو و به همین ترتیب است.
 
-## Examples
+## مثال‌ها
 
-See the [Constraint exerciser](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#example_constraint_exerciser) example.
+برای مشاهدهٔ یک مثال کاربردی، نمونهٔ [Constraint exerciser](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#example_constraint_exerciser) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
-- [Capabilities, constraints, and settings](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints)
+- [قابلیت‌ها، محدودیت‌ها و تنظیمات](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints)
 - {{domxref("MediaTrackConstraints.channelCount")}}
 - {{domxref("MediaTrackSettings")}}
