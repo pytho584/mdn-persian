@@ -1,11 +1,5 @@
 ---
 title: "MediaStreamTrackProcessor: totalFrames property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrackProcessor/totalFrames"
-status: "needs-translation"
----
-
----
-title: "MediaStreamTrackProcessor: totalFrames property"
 short-title: totalFrames
 slug: Web/API/MediaStreamTrackProcessor/totalFrames
 page-type: web-api-instance-property
@@ -16,15 +10,15 @@ browser-compat: api.MediaStreamTrackProcessor.totalFrames
 
 {{APIRef("Insertable Streams for MediaStreamTrack API")}}{{SeeCompatTable}}
 
-The **`totalFrames`** property of the {{domxref("MediaStreamTrackProcessor")}} interface returns a number indicating how many frames have been received by the processor in total.
+ویژگی **`totalFrames`** در رابط {{domxref("MediaStreamTrackProcessor")}} عددی را برمی‌گرداند که نشان می‌دهد در مجموع چه تعداد فریم توسط پردازنده دریافت شده است.
 
-## Value
+## مقدار
 
-A number.
+یک عدد.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
 ```js
 async function init() {
@@ -57,14 +51,14 @@ async function init() {
 document.querySelector("button").addEventListener("click", init);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("MediaStreamTrackProcessor.discardedFrames")}}
