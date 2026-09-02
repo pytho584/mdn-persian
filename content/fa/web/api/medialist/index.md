@@ -1,10 +1,4 @@
 ---
-title: "MediaList"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaList"
-status: "needs-translation"
----
-
----
 title: MediaList
 slug: Web/API/MediaList
 page-type: web-api-interface
@@ -13,32 +7,32 @@ browser-compat: api.MediaList
 
 {{APIRef("CSSOM")}}
 
-The **`MediaList`** interface represents the media queries of a stylesheet, e.g., those set using a {{htmlelement("link")}} element's `media` attribute.
+رابطِ **`MediaList`** فهرست پرس‌وجوهای رسانه‌ای (media queries) یک شیوه‌نامه (stylesheet) را نمایش می‌دهد؛ برای نمونه، پرس‌وجوهایی که از طریق ویژگیِ `media` عنصر {{htmlelement("link")}} تنظیم شده‌اند.
 
 > [!NOTE]
-> `MediaList` is a live list; updating the list using properties or methods listed below will immediately update the behavior of the document.
+> `MediaList` فهرستی زنده است؛ به‌روزرسانیِ آن با استفاده از ویژگی‌ها یا متدهای فهرست‌شده در ادامه، بلافاصله رفتار سند را به‌روز می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("MediaList.mediaText")}}
-  - : A {{Glossary("stringifier")}} that returns a string representing the `MediaList` as text, and also allows you to set a new `MediaList`.
+  - : یک {{Glossary("stringifier")}} که یک رشتهٔ متنیِ نمایش‌دهندهٔ `MediaList` را بازمی‌گرداند و همچنین به شما اجازه می‌دهد یک `MediaList` جدید تنظیم کنید.
 - {{domxref("MediaList.length")}} {{ReadOnlyInline}}
-  - : Returns the number of media queries in the `MediaList`.
+  - : تعداد پرس‌وجوهای رسانه‌ای درون `MediaList` را بازمی‌گرداند.
 
-## Instance methods
+## متدهای نمونه
 
 - {{domxref("MediaList.appendMedium()")}}
-  - : Adds a media query to the `MediaList`.
+  - : یک پرس‌وجوی رسانه‌ای به `MediaList` اضافه می‌کند.
 - {{domxref("MediaList.deleteMedium()")}}
-  - : Removes a media query from the `MediaList`.
+  - : یک پرس‌وجوی رسانه‌ای را از `MediaList` حذف می‌کند.
 - {{domxref("MediaList.item()")}}
-  - : A getter that returns a string representing a media query as text, given the media query's index value inside the `MediaList`. This method can also be called using the bracket (`[]`) syntax.
+  - : یک getter که با دریافت مقدار اندیسِ یک پرس‌وجوی رسانه‌ای درون `MediaList`، رشته‌ای متنی از آن پرس‌وجو را بازمی‌گرداند. این متد همچنین با استفاده از نحوِ براکت (`[]`) نیز قابل فراخوانی است.
 - {{domxref("MediaList.toString()")}}
-  - : Returns a string representation of this media list in the same format as the object's {{domxref("MediaList.mediaText")}} property.
+  - : بازنمود رشت‌ای از این فهرست رسانه را در همان قالبی که ویژگیِ {{domxref("MediaList.mediaText")}} شیء ارائه می‌دهد، بازمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-The following would log to the console a textual representation of the `MediaList` of the first stylesheet applied to the current document.
+مثال زیر، بازنمود متنیِ `MediaList` نخستین شیوه‌نامهٔ اعمال‌شده روی سند فعلی را در کنسول ثبت می‌کند:
 
 ```js
 const stylesheets = document.styleSheets;
@@ -46,10 +40,10 @@ let stylesheet = stylesheets[0];
 console.log(stylesheet.media.mediaText);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
