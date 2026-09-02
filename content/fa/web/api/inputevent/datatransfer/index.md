@@ -1,11 +1,5 @@
 ---
 title: "InputEvent: dataTransfer property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/InputEvent/dataTransfer"
-status: "needs-translation"
----
-
----
-title: "InputEvent: dataTransfer property"
 short-title: dataTransfer
 slug: Web/API/InputEvent/dataTransfer
 page-type: web-api-instance-property
@@ -14,24 +8,17 @@ browser-compat: api.InputEvent.dataTransfer
 
 {{APIRef("UI Events")}}
 
-The **`dataTransfer`** read-only property of the
-{{domxref("InputEvent")}} interface returns a {{domxref("DataTransfer")}} object
-containing information about richtext or plaintext data being added to or removed from
-editable content.
+ویژگی فقط‌خواندنی **`dataTransfer`** از رابط {{domxref("InputEvent")}} یک شیء {{domxref("DataTransfer")}} برمی‌گرداند که حاوی اطلاعاتی درباره متن غنی (rich text) یا متن ساده‌ای است که به محتوای قابل ویرایش اضافه یا از آن حذف می‌شود.
 
-## Value
+## مقدار
 
-A {{domxref("DataTransfer")}} object or `null`. The spec has an [overview](https://w3c.github.io/input-events/#overview) of its value in various cases.
+یک شیء {{domxref("DataTransfer")}} یا `null`. مشخصات (spec) یک [بررسی کلی](https://w3c.github.io/input-events/#overview) از مقدار آن در موارد مختلف دارد.
 
-## Examples
+## مثال‌ها
 
-In the following simple example we've set up an event listener on the [input](/en-US/docs/Web/API/Element/input_event) event so that when any
-content is pasted into the contenteditable {{htmlelement("p")}} element, its HTML source
-is retrieved via the
-[`InputEvent.dataTransfer.getData()`](/en-US/docs/Web/API/DataTransfer/getData)
-method and reported in the paragraph below the input.
+در مثال ساده زیر، ما یک شنونده رویداد روی رویداد [input](/en-US/docs/Web/API/Element/input_event) تنظیم کرده‌ایم تا زمانی که هر محتوایی در عنصر {{htmlelement("p")}} با ویژگی `contenteditable` جای‌گذاری (paste) شود، کد HTML آن از طریق متد [`InputEvent.dataTransfer.getData()`](/en-US/docs/Web/API/DataTransfer/getData) دریافت شود و در پاراگراف زیر ورودی گزارش شود.
 
-Try copying and pasting some of the content provided to see the effects.
+برای دیدن اثرات، سعی کنید برخی از محتوای ارائه شده را کپی و جای‌گذاری کنید.
 
 ```html
 <p><span style="font-weight: bold; color: blue">Whoa, bold blue text!</span></p>
@@ -61,10 +48,10 @@ editable.addEventListener("input", (e) => {
 
 {{EmbedLiveSample('Examples', '100%', 250)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
