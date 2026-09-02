@@ -1,11 +1,5 @@
 ---
 title: "MediaKeyStatusMap: keys() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaKeyStatusMap/keys"
-status: "needs-translation"
----
-
----
-title: "MediaKeyStatusMap: keys() method"
 short-title: keys()
 slug: Web/API/MediaKeyStatusMap/keys
 page-type: web-api-instance-method
@@ -14,9 +8,7 @@ browser-compat: api.MediaKeyStatusMap.keys
 
 {{APIRef("Encrypted Media Extensions")}}
 
-The **`keys()`** method of the
-{{domxref("MediaKeyStatusMap")}} interface returns a new Iterator object, containing
-keys for each element in the status map, in insertion order.
+متد **`keys()`** از رابط {{domxref("MediaKeyStatusMap")}} یک شیء Iterator جدید برمی‌گرداند که شامل کلیدهای هر عنصر در نقشه وضعیت، به ترتیب درج است.
 
 ## Syntax
 
@@ -24,18 +16,19 @@ keys for each element in the status map, in insertion order.
 keys()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-A new iterator.
+یک iterator جدید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
+```
