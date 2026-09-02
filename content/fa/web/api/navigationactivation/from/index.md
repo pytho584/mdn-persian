@@ -1,11 +1,5 @@
 ---
 title: "NavigationActivation: from property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigationActivation/from"
-status: "needs-translation"
----
-
----
-title: "NavigationActivation: from property"
 short-title: from
 slug: Web/API/NavigationActivation/from
 page-type: web-api-instance-property
@@ -14,28 +8,28 @@ browser-compat: api.NavigationActivation.from
 
 {{APIRef("Navigation API")}}
 
-The **`from`** read-only property of the {{domxref("NavigationActivation")}} interface contains a {{domxref("NavigationHistoryEntry")}} object representing the history entry for the outgoing ("from") document in the navigation.
+ویژگی فقط‌خواندنی **`from`** از رابط {{domxref("NavigationActivation")}} شامل یک شیء {{domxref("NavigationHistoryEntry")}} است که ورودی تاریخچه را برای سندِ در حال خروج («from») در ناوبری نمایش می‌دهد.
 
-## Value
+## مقدار
 
-A {{domxref("NavigationHistoryEntry")}} object, or `null` if the outgoing document is:
+یک شیء {{domxref("NavigationHistoryEntry")}}، یا `null` اگر سند خروجی:
 
-- Not same origin as the inbound document.
-- The initial `about:blank` document.
+- هم‌مبدأ با سند ورودی نباشد.
+- سند اولیهٔ `about:blank` باشد.
 
-## Examples
+## مثال‌ها
 
-See the main {{domxref("NavigationActivation")}} page.
+به صفحهٔ اصلی {{domxref("NavigationActivation")}} مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - [Navigation API](/en-US/docs/Web/API/Navigation_API)
 - [View Transition API](/en-US/docs/Web/API/View_Transition_API)
