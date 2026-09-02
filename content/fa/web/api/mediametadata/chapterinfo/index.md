@@ -1,7 +1,5 @@
 ---
 title: "MediaMetadata: chapterInfo property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaMetadata/chapterInfo"
-status: "needs-translation"
 ---
 
 ---
@@ -16,26 +14,26 @@ browser-compat: api.MediaMetadata.chapterInfo
 
 {{APIRef("Media Session API")}}{{SeeCompatTable}}
 
-The **`chapterInfo`** read-only property of the {{domxref("MediaMetadata")}} interface returns an array of chapter information metadata associated with playing media, represented by {{domxref("ChapterInformation")}} object instances.
+ویژگی فقط‌خواندنی **`chapterInfo`** در رابط {{domxref("MediaMetadata")}}، آرایه‌ای از فراداده‌های اطلاعات فصل مرتبط با رسانهٔ در حال پخش را برمی‌گرداند که توسط نمونه‌های شیء {{domxref("ChapterInformation")}} نمایش داده می‌شوند.
 
-The `chapterInfo` for a given media resource is set when it is first created, via the `chapterInfo` property of the {{domxref("MediaMetadata.MediaMetadata", "MediaMetadata()")}} constructor's initialization object.
+مقدار `chapterInfo` برای یک منبع رسانه‌ای مشخص، هنگام اولین ایجاد آن، از طریق ویژگی `chapterInfo` در شیء مقداردهی اولیهٔ سازندهٔ {{domxref("MediaMetadata.MediaMetadata", "MediaMetadata()")}} تنظیم می‌شود.
 
-## Value
+## مقدار
 
-An array of {{domxref("ChapterInformation")}} object instances.
+آرایه‌ای از نمونه‌های شیء {{domxref("ChapterInformation")}}.
 
-## Examples
+## مثال‌ها
 
-See the {{domxref("ChapterInformation")}} reference page for an example.
+برای مشاهدهٔ یک مثال، به صفحهٔ مرجع {{domxref("ChapterInformation")}} مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("ChapterInformation")}}
