@@ -1,11 +1,5 @@
 ---
 title: "MediaStreamTrack: stop() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/stop"
-status: "needs-translation"
----
-
----
-title: "MediaStreamTrack: stop() method"
 short-title: stop()
 slug: Web/API/MediaStreamTrack/stop
 page-type: web-api-instance-method
@@ -14,42 +8,33 @@ browser-compat: api.MediaStreamTrack.stop
 
 {{APIRef("Media Capture and Streams")}}
 
-The **`stop()`** method of the {{domxref("MediaStreamTrack")}} interface stops the track.
+متد **`stop()`** در رابط {{domxref("MediaStreamTrack")}}، track مربوطه را متوقف می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 stop()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Description
+## توضیحات
 
-Calling `stop()` tells the {{glossary("user agent")}} that the track's
-source—whatever that source may be, including files, network streams, or a local camera
-or microphone—is no longer needed by the {{domxref("MediaStreamTrack")}}. Since multiple
-tracks may use the same source (for example, if two tabs are using the device's
-microphone), the source itself isn't necessarily immediately stopped. It is instead
-disassociated from the track and the track object is stopped. Once no media tracks are
-using the source, the source may actually be completely stopped.
+فراخوانی `stop()` به {{glossary("user agent")}} اعلام می‌کند که دیگر منبعِ این track — هر منبعی که باشد، از جمله فایل‌ها، جریان‌های شبکه یا دوربین/میکروفون محلی — توسط این {{domxref("MediaStreamTrack")}} مورد نیاز نیست. ازآنجاکه ممکن است چند track از منبع یکسانی استفاده کنند (مثلاً وقتی دو تب از میکروفون دستگاه استفاده می‌کنند)، منبع لزوماً بلافاصله متوقف نمی‌شود. در عوض، منبع از track جدا می‌شود و شیء track متوقف می‌گردد. تنها زمانی که هیچ track رسانه‌ای از آن منبع استفاده نکند، منبع می‌تواند واقعاً به‌طور کامل متوقف شود.
 
-Immediately after calling `stop()`, the
-{{domxref("MediaStreamTrack.readyState", "readyState")}} property is set to
-`ended`. Note that the [`ended`](/en-US/docs/Web/API/MediaStreamTrack/ended_event) event will not be fired in this situation.
+بلافاصله پس از فراخوانی `stop()`، خاصیت {{domxref("MediaStreamTrack.readyState", "readyState")}} روی `ended` تنظیم می‌شود. توجه داشته باشید که رویداد [`ended`](/en-US/docs/Web/API/MediaStreamTrack/ended_event) در این وضعیت صادر نخواهد شد.
 
-## Examples
+## مثال‌ها
 
-### Stopping a video stream
+### توقف یک جریان ویدیویی
 
-In this example, we see a function which stops a streamed video by calling
-`stop()` on every track on a given {{HTMLElement("video")}}.
+در این مثال، تابعی را می‌بینیم که با فراخوانی `stop()` روی هر track متعلق به یک {{HTMLElement("video")}} مشخص، پخش ویدیوی جریانیافته را متوقف می‌کند.
 
 ```js
 function stopStreamedVideo(videoElem) {
@@ -64,26 +49,20 @@ function stopStreamedVideo(videoElem) {
 }
 ```
 
-This works by obtaining the video element's stream from its
-{{domxref("HTMLMediaElement.srcObject", "srcObject")}} property. Then the stream's track
-list is obtained by calling its {{domxref("MediaStream.getTracks", "getTracks()")}}
-method. From there, all that remains to do is to iterate over the track list using
-{{jsxref("Array.forEach", "forEach()")}} and calling each track's `stop()`
-method.
+این کار با دریافت جریانِ عنصر ویدیو از خاصیت {{domxref("HTMLMediaElement.srcObject", "srcObject")}} آن انجام می‌شود. سپس فهرست trackهای جریان با فراخوانی متد {{domxref("MediaStream.getTracks", "getTracks()")}} به دست می‌آید. پس از آن، تنها کاری که باقی می‌ماند این است که با استفاده از {{jsxref("Array.forEach", "forEach()")}} روی فهرست trackها پیمایش کنیم و متد `stop()` هر track را فراخوانی کنیم.
 
-Finally, `srcObject` is set to `null` to sever the link to the
-{{domxref("MediaStream")}} object so it can be released.
+در پایان، `srcObject` برابر با `null` قرار می‌گیرد تا پیوند با شیء {{domxref("MediaStream")}} قطع شود و بتوان آن را آزاد کرد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("MediaStreamTrack")}}, the interface it belongs to.
+- {{domxref("MediaStreamTrack")}} — رابطی که این متد به آن تعلق دارد.
 - {{domxref("MediaStreamTrack.readyState")}}
 - {{domxref("MediaStreamTrack/ended_event", "ended")}}
