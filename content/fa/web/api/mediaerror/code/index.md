@@ -1,7 +1,5 @@
 ---
 title: "MediaError: code property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaError/code"
-status: "needs-translation"
 ---
 
 ---
@@ -14,23 +12,20 @@ browser-compat: api.MediaError.code
 
 {{APIRef("HTML DOM")}}
 
-The read-only property **`MediaError.code`** returns a numeric
-value which represents the kind of error that occurred on a media element. To get a text
-string with specific diagnostic information, see {{domxref("MediaError.message")}}.
+ویژگی فقط‌خواندنی **`MediaError.code`** یک مقدار عددی برمی‌گرداند که نوع خطای رخ‌داده در یک عنصر رسانه‌ای را نشان می‌دهد. برای دریافت یک رشته متنی حاوی اطلاعات تشخیصی خاص، {{domxref("MediaError.message")}} را ببینید.
 
-## Value
+## مقدار
 
-A numeric value indicating the general type of error which occurred. The possible
-values are described below, in [Media error code constants](#media_error_code_constants).
+یک مقدار عددی که نوع کلی خطای رخ‌داده را نشان می‌دهد. مقادیر احتمالی در بخش [ثابت‌های کد خطای رسانه](#media_error_code_constants) در زیر توضیح داده شده‌اند.
 
-### Media error code constants
+### ثابت‌های کد خطای رسانه
 
 <table class="no-markdown">
   <thead>
     <tr>
-      <th scope="col">Name</th>
-      <th scope="col">Value</th>
-      <th scope="col">Description</th>
+      <th scope="col">نام</th>
+      <th scope="col">مقدار</th>
+      <th scope="col">توضیحات</th>
     </tr>
   </thead>
   <tbody>
@@ -38,43 +33,36 @@ values are described below, in [Media error code constants](#media_error_code_co
       <td><code>MEDIA_ERR_ABORTED</code></td>
       <td><code>1</code></td>
       <td>
-        The fetching of the associated resource was aborted by the user's
-        request.
+        دریافت منبع مرتبط به درخواست کاربر لغو شده است.
       </td>
     </tr>
     <tr>
       <td><code>MEDIA_ERR_NETWORK</code></td>
       <td><code>2</code></td>
       <td>
-        Some kind of network error occurred which prevented the media from being
-        successfully fetched, despite having previously been available.
+        نوعی خطای شبکه رخ داده است که با وجود در دسترس بودن قبلی، از دریافت موفق رسانه جلوگیری کرده است.
       </td>
     </tr>
     <tr>
       <td><code>MEDIA_ERR_DECODE</code></td>
       <td><code>3</code></td>
       <td>
-        Despite having previously been determined to be usable, an error
-        occurred while trying to decode the media resource, resulting in an
-        error.
+        با وجود اینکه قبلاً قابل استفاده تشخیص داده شده بود، هنگام تلاش برای رمزگشایی منبع رسانه خطایی رخ داد و در نتیجه خطا ایجاد شد.
       </td>
     </tr>
     <tr>
       <td><code>MEDIA_ERR_SRC_NOT_SUPPORTED</code></td>
       <td><code>4</code></td>
       <td>
-        The associated resource or media provider object (such as a
-        {{domxref("MediaStream")}}) has been found to be unsuitable.
+        منبع مرتبط یا شیء ارائه‌دهنده رسانه (مانند {{domxref("MediaStream")}}) نامناسب تشخیص داده شده است.
       </td>
     </tr>
   </tbody>
 </table>
 
-## Examples
+## مثال‌ها
 
-This example creates a {{HTMLElement("video")}} element, establishes an error handler
-for it, and then sets the element's [`src`](/en-US/docs/Web/HTML/Reference/Elements/video#src) attribute to the
-video resource to present in the element. The error handler outputs a message
+این مثال یک عنصر {{HTMLElement("video")}} ایجاد می‌کند، یک مدیریت خطا برای آن تنظیم می‌کند و سپس ویژگی [`src`](/en-US/docs/Web/HTML/Reference/Elements/video#src) عنصر را روی منبع ویدیویی که باید در عنصر نمایش داده شود قرار می‌دهد. مدیریت خطا یک پیام خروجی می‌دهد:
 
 ```js
 const obj = document.createElement("video");
@@ -84,14 +72,14 @@ obj.onerror = () => {
 obj.src = "https://example.com/blahblah.mp4";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("MediaError")}}: Interface used to define the `MediaError.code` property
+- {{domxref("MediaError")}}: رابطی که برای تعریف ویژگی `MediaError.code` استفاده می‌شود.
