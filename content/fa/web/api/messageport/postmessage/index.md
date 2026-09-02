@@ -1,11 +1,5 @@
 ---
 title: "MessagePort: postMessage() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MessagePort/postMessage"
-status: "needs-translation"
----
-
----
-title: "MessagePort: postMessage() method"
 short-title: postMessage()
 slug: Web/API/MessagePort/postMessage
 page-type: web-api-instance-method
@@ -14,11 +8,9 @@ browser-compat: api.MessagePort.postMessage
 
 {{APIRef("Channel Messaging API")}} {{AvailableInWorkers}}
 
-The **`postMessage()`** method of the
-{{domxref("MessagePort")}} interface sends a message from the port, and optionally,
-transfers ownership of objects to other browsing contexts.
+**`postMessage()`** 接口的 {{domxref("MessagePort")}} 方法会从端口发送一条消息，并可选择将对象的所有权转移到其他浏览上下文。
 
-## Syntax
+## 语法
 
 ```js-nolint
 postMessage(message)
@@ -26,35 +18,29 @@ postMessage(message, transfer)
 postMessage(message, options)
 ```
 
-### Parameters
+### 参数
 
 - `message`
-  - : The message you want to send through the channel. This can be of any basic data type. Multiple data items can be sent as an array.
+  - : 您想通过通道发送的消息。它可以是任何基本数据类型。多个数据项可以作为数组发送。
 
     > [!NOTE]
-    > Execution contexts that can message each other may not be in the same [agent cluster](/en-US/docs/Web/JavaScript/Reference/Execution_model#agent_clusters_and_memory_sharing), and therefore cannot share memory. {{jsxref("SharedArrayBuffer")}} objects, or buffer views backed by one, cannot be posted across agent clusters. Trying to do so will generate a {{domxref("BroadcastChannel/messageerror_event", "messageerror")}} event containing a `DataCloneError` {{domxref("DOMException")}} on the receiving end.
+    > 能够相互发送消息的执行上下文不一定位于同一个[代理集群](/en-US/docs/Web/JavaScript/Reference/Execution_model#agent_clusters_and_memory_sharing)中，因此它们无法共享内存。{{jsxref("SharedArrayBuffer")}} 对象或由其支持的缓冲区视图不能跨代理集群发送。如果尝试这样做，接收端将生成一个包含 `DataCloneError` {{domxref("DOMException")}} 的 {{domxref("BroadcastChannel/messageerror_event", "messageerror")}} 事件。
 
 - `transfer` {{optional_inline}}
-  - : An optional [array](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) of [transferable objects](/en-US/docs/Web/API/Web_Workers_API/Transferable_objects) to transfer ownership of. The ownership of these objects is given to the destination side and they are no longer usable on the sending side. These transferable objects are not automatically sent; they must either be contained in the message or be accessible to the recipient via other means, such as {{domxref("MessagePort")}} via {{domxref("MessageEvent.ports")}}.
+  - : 一个可选的[可转移对象](/en-US/docs/Web/API/Web_Workers_API/Transferable_objects)[数组](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)，用于转移所有权。这些对象的所有权将移交给目标端，并且在发送端不再可用。这些可转移对象不会自动发送；它们必须包含在消息中，或者通过其他方式（例如通过 {{domxref("MessageEvent.ports")}} 的 {{domxref("MessagePort")}}）可供接收方访问。
+
 - `options` {{optional_inline}}
-  - : An optional object containing the following properties:
+  - : 一个可选对象，包含以下属性：
     - `transfer` {{optional_inline}}
-      - : Has the same meaning as the `transfer` parameter.
+      - : 含义与 `transfer` 参数相同。
 
-### Return value
+### 返回值
 
-None ({{jsxref("undefined")}}).
+无（{{jsxref("undefined")}}）。
 
-## Examples
+## 示例
 
-In the following code block, you can see a new channel being created using the
-{{domxref("MessageChannel.MessageChannel", "MessageChannel()")}} constructor. When the
-IFrame has loaded, we pass {{domxref("MessageChannel.port2")}} to the IFrame using
-{{domxref("window.postMessage")}} along with a message. The iframe receives the message,
-and sends a message back on the `MessageChannel` using `postMessage()`.
-The `handleMessage` handler then responds to a message being sent back from the iframe using
-`onmessage`, putting it into a paragraph —
-{{domxref("MessageChannel.port1")}} is listened to, to check when the message arrives.
+在以下代码块中，您可以看到使用 {{domxref("MessageChannel.MessageChannel", "MessageChannel()")}} 构造函数创建了一个新通道。当 IFrame 加载完成后，我们使用 {{domxref("window.postMessage")}} 将 {{domxref("MessageChannel.port2")}} 连同一条消息传递给 IFrame。iframe 接收消息，并通过 `postMessage()` 在 `MessageChannel` 上发回消息。然后，`handleMessage` 处理程序通过 `onmessage` 响应从 iframe 发回的消息，并将其放入一个段落中 — 监听 {{domxref("MessageChannel.port1")}} 以检查消息何时到达。
 
 ```js
 const channel = new MessageChannel();
@@ -82,16 +68,16 @@ window.addEventListener("message", (event) => {
 });
 ```
 
-For a full working example, see our [channel messaging basic demo](https://github.com/mdn/dom-examples/tree/main/channel-messaging-basic) on GitHub ([run it live too](https://mdn.github.io/dom-examples/channel-messaging-basic/)).
+有关完整的工作示例，请参阅 GitHub 上的[通道消息基础演示](https://github.com/mdn/dom-examples/tree/main/channel-messaging-basic)（[也可在线运行](https://mdn.github.io/dom-examples/channel-messaging-basic/)）。
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
-- [Using channel messaging](/en-US/docs/Web/API/Channel_Messaging_API/Using_channel_messaging)
+- [使用通道消息](/en-US/docs/Web/API/Channel_Messaging_API/Using_channel_messaging)
