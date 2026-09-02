@@ -1,7 +1,5 @@
 ---
 title: "ImageTrackList: selectedTrack property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ImageTrackList/selectedTrack"
-status: "needs-translation"
 ---
 
 ---
@@ -14,25 +12,25 @@ browser-compat: api.ImageTrackList.selectedTrack
 
 {{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`selectedTrack`** property of the {{domxref("ImageTrackList")}} interface returns an {{domxref("ImageTrack")}} object representing the currently selected track.
+ویژگی **`selectedTrack`** از رابط {{domxref("ImageTrackList")}} یک شیء {{domxref("ImageTrack")}} برمی‌گرداند که نشان‌دهندهٔ track انتخاب‌شدهٔ فعلی است.
 
-## Value
+## مقدار
 
-An {{domxref("ImageTrack")}} object.
+یک شیء {{domxref("ImageTrack")}}.
 
-## Examples
+## مثال‌ها
 
-The following example returns the `selectedTrack` then prints it to the console.
+مثال زیر `selectedTrack` را برمی‌گرداند و آن را در کنسول چاپ می‌کند.
 
 ```js
 let track = imageDecoder.tracks.selectedTrack;
 console.log(track);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
