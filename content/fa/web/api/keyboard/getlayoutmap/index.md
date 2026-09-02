@@ -1,7 +1,5 @@
 ---
 title: "Keyboard: getLayoutMap() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Keyboard/getLayoutMap"
-status: "needs-translation"
 ---
 
 ---
@@ -16,10 +14,7 @@ browser-compat: api.Keyboard.getLayoutMap
 
 {{APIRef("Keyboard API")}}{{SeeCompatTable}}{{securecontext_header}}
 
-The **`getLayoutMap()`** method of the
-{{domxref("Keyboard")}} interface returns a {{jsxref('Promise')}} that resolves with
-an instance of {{domxref('KeyboardLayoutMap')}} which is a map-like object with
-functions for retrieving the strings associated with specific physical keys.
+متد **`getLayoutMap()`** از رابط {{domxref("Keyboard")}} یک {{jsxref('Promise')}} برمی‌گرداند که با یک نمونه از {{domxref('KeyboardLayoutMap')}} حل می‌شود. این یک شیء شبیه به نقشه (map) است که توابعی برای بازیابی رشته‌های مرتبط با کلیدهای فیزیکی خاص دارد.
 
 ## Syntax
 
@@ -29,22 +24,20 @@ getLayoutMap()
 
 ### Parameters
 
-None.
+هیچکدام.
 
 ### Return value
 
-A {{jsxref('Promise')}} that resolves with an instance of
-{{domxref('KeyboardLayoutMap')}}.
+یک {{jsxref('Promise')}} که با یک نمونه از {{domxref('KeyboardLayoutMap')}} حل می‌شود.
 
 ### Exceptions
 
 - `SecurityError` {{domxref("DOMException")}}
-  - : Thrown if the call is blocked by a [permission policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy).
+  - : در صورتی که فراخوانی توسط یک [خط‌مشی مجوز](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) مسدود شود، پرتاب می‌شود.
 
 ## Examples
 
-The following example demonstrates how to get the location- or layout-specific string
-associated with the key that corresponds to the 'W' key on an English QWERTY keyboard.
+مثال زیر نحوه دریافت رشته مرتبط با مکان یا طرح (layout) کلید متناظر با کلید 'W' در یک صفحه‌کلید انگلیسی QWERTY را نشان می‌دهد.
 
 ```js
 const keyboard = navigator.keyboard;
