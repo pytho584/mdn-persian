@@ -1,11 +1,5 @@
 ---
 title: "IntersectionObserver: disconnect() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/disconnect"
-status: "needs-translation"
----
-
----
-title: "IntersectionObserver: disconnect() method"
 short-title: disconnect()
 slug: Web/API/IntersectionObserver/disconnect
 page-type: web-api-instance-method
@@ -14,7 +8,7 @@ browser-compat: api.IntersectionObserver.disconnect
 
 {{APIRef("Intersection Observer API")}}
 
-The **`disconnect()`** method of the {{domxref("IntersectionObserver")}} interface stops the observer watching all of its target elements for visibility changes.
+متد **`disconnect()`** از رابط {{domxref("IntersectionObserver")}} نظارت بر تمام عناصر هدفِ observer را برای تغییرات مشاهده‌پذیری متوقف می‌کند.
 
 ## Syntax
 
@@ -24,11 +18,11 @@ disconnect()
 
 ### Parameters
 
-None.
+هیچ.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
 ## Specifications
 
