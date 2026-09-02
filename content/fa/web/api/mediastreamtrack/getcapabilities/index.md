@@ -1,11 +1,5 @@
 ---
 title: "MediaStreamTrack: getCapabilities() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/getCapabilities"
-status: "needs-translation"
----
-
----
-title: "MediaStreamTrack: getCapabilities() method"
 short-title: getCapabilities()
 slug: Web/API/MediaStreamTrack/getCapabilities
 page-type: web-api-instance-method
@@ -14,74 +8,71 @@ browser-compat: api.MediaStreamTrack.getCapabilities
 
 {{APIRef("Media Capture and Streams")}}
 
-The **`getCapabilities()`** method of
-the {{domxref("MediaStreamTrack")}} interface returns an object detailing the accepted values or value range for each constrainable property of the associated `MediaStreamTrack`, based upon the platform and {{Glossary("user agent")}}.
+متد **`getCapabilities()`** در رابط {{domxref("MediaStreamTrack")}} یک شیء برمی‌گرداند که مقادیر یا محدوده‌های مجاز را برای هر ویژگی قابل‌قید (constrainable) از `MediaStreamTrack` مرتبط، بر اساس پلتفرم و {{Glossary("user agent")}} مشخص می‌کند.
 
-Once you know what the browser's capabilities are, your script can use
-{{domxref("MediaStreamTrack.applyConstraints", "applyConstraints()")}} to ask for the
-track to be configured to match ideal or acceptable settings. See [Capabilities, constraints, and settings](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints) for details of how to work with constrainable properties.
+هنگامی که قابلیت‌های مرورگر را بدانید، اسکریپت شما می‌تواند از {{domxref("MediaStreamTrack.applyConstraints", "applyConstraints()")}} برای درخواست پیکربندی آهنگ (track) مطابق با تنظیمات ایده‌آل یا قابل‌قبول استفاده کند. برای جزئیات کار با ویژگی‌های قابل‌قید، به [قابلیت‌ها، محدودیت‌ها و تنظیمات](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints) مراجعه کنید.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 getCapabilities()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-A `MediaTrackCapabilities` object which specifies the accepted value or range of values supported for each of the user agent's constrainable properties. Note that not every property appears on every track, the available members depend on whether the track is audio or video. This can contain the following members:
+یک شیء `MediaTrackCapabilities` که مقدار یا محدوده مقادیر پشتیبانی‌شده را برای هر ویژگی قابل‌قید کاربر-عامل مشخص می‌کند. توجه داشته باشید که همه ویژگی‌ها در هر آهنگی وجود ندارند؛ اعضای موجود به صوتی یا تصویری بودن آهنگ بستگی دارند. این شیء می‌تواند شامل اعضای زیر باشد:
 
-For both audio and video tracks:
+برای هر دو آهنگ صوتی و تصویری:
 
 - `deviceId`
-  - : A string that identifies the capture device.
+  - : رشته‌ای که دستگاه ضبط را شناسایی می‌کند.
 - `groupId`
-  - : A string that groups related devices.
+  - : رشته‌ای که دستگاه‌های مرتبط را گروه‌بندی می‌کند.
 
 > [!NOTE]
-> For historical reasons, these two properties are strings instead of an array of strings like all other capabilities.
+> به دلایل تاریخی، این دو ویژگی به صورت رشته هستند، نه آرایه‌ای از رشته‌ها مانند سایر قابلیت‌ها.
 
-For audio tracks only:
+فقط برای آهنگ‌های صوتی:
 
 - `autoGainControl`
-  - : An array of booleans. If the source cannot do auto gain control, a single `false` is reported. If auto gain control cannot be turned off, a single `true` is reported. If the script can control the feature, the source reports both `true` and `false`.
+  - : آرایه‌ای از مقادیر بولی. اگر منبع نتواند کنترل خودکار بهره (auto gain control) را انجام دهد، فقط `false` گزارش می‌شود. اگر کنترل خودکار بهره قابل خاموش‌شدن نباشد، فقط `true` گزارش می‌شود. اگر اسکریپت بتواند این ویژگی را کنترل کند، منبع هر دو مقدار `true` و `false` را گزارش می‌دهد.
 - `channelCount`
-  - : A range object, containing a `min` and a `max` property (both containing a non-negative integer), describing the supported number of channels.
+  - : یک شیء محدوده، شامل ویژگی‌های `min` و `max` (هر دو شامل یک عدد صحیح غیرمنفی)، که تعداد کانال‌های پشتیبانی‌شده را توصیف می‌کند.
 - `echoCancellation`
-  - : An array of booleans or strings indicating if echo cancellation is supported. If the source cannot do echo cancellation, a single `false` is reported. If the source can do echo cancellation, then the array starts with `true`. If the script can control the feature, then the array starts with `true, false`. Additionally, if the source allows controlling which audio sources will be cancelled, the array also includes the values `"all"` and/or `"remote-only"`.
+  - : آرایه‌ای از مقادیر بولی یا رشته‌ها که نشان می‌دهد حذف پژواک (echo cancellation) پشتیبانی می‌شود یا خیر. اگر منبع نتواند حذف پژواک را انجام دهد، فقط `false` گزارش می‌شود. اگر منبع بتواند حذف پژواک را انجام دهد، آرایه با `true` شروع می‌شود. اگر اسکریپت بتواند این ویژگی را کنترل کند، آرایه با `true, false` شروع می‌شود. علاوه بر این، اگر منبع اجازه دهد که مشخص شود کدام منابع صوتی حذف شوند، آرایه همچنین شامل مقادیر `"all"` و/یا `"remote-only"` خواهد بود.
 - `latency`
-  - : A range object, containing a `min` and a `max` property (both containing a number), describing the expected amount of latency in seconds from when the sound starts to when data becomes available.
+  - : یک شیء محدوده، شامل ویژگی‌های `min` و `max` (هر دو شامل یک عدد)، که میزان تأخیر مورد انتظار را بر حسب ثانیه از زمانی که صدا شروع می‌شود تا زمانی که داده در دسترس قرار می‌گیرد، توصیف می‌کند.
 - `noiseSuppression`
-  - : An array of booleans indicating whether noise suppression is available. If the source cannot do noise suppression, a single `false` is reported. If noise suppression cannot be turned off, a single `true` is reported. If the script can control the feature, the source reports both `true` and `false`.
+  - : آرایه‌ای از مقادیر بولی که نشان می‌دهد حذف نویز (noise suppression) در دسترس است یا خیر. اگر منبع نتواند حذف نویز را انجام دهد، فقط `false` گزارش می‌شود. اگر حذف نویز قابل خاموش‌شدن نباشد، فقط `true` گزارش می‌شود. اگر اسکریپت بتواند این ویژگی را کنترل کند، منبع هر دو مقدار `true` و `false` را گزارش می‌دهد.
 - `sampleRate`
-  - : A range object, containing a `min` and a `max` property (both containing a non-negative integer), describing the supported audio sample rate range.
+  - : یک شیء محدوده، شامل ویژگی‌های `min` و `max` (هر دو شامل یک عدد صحیح غیرمنفی)، که محدوده نرخ نمونه‌برداری صوتی پشتیبانی‌شده را توصیف می‌کند.
 - `sampleSize`
-  - : A range object, containing a `min` and a `max` property (both containing a non-negative integer), describing the supported linear sample size range in bits.
+  - : یک شیء محدوده، شامل ویژگی‌های `min` و `max` (هر دو شامل یک عدد صحیح غیرمنفی)، که محدوده اندازه نمونه خطی پشتیبانی‌شده را بر حسب بیت توصیف می‌کند.
 
-For video tracks only:
+فقط برای آهنگ‌های تصویری:
 
 - `aspectRatio`
-  - : A range object, containing a `min` and a `max` property (both containing a number), describing the supported video aspect ratio range (width divided by height).
+  - : یک شیء محدوده، شامل ویژگی‌های `min` و `max` (هر دو شامل یک عدد)، که محدوده نسبت تصویر ویدیوی پشتیبانی‌شده (عرض تقسیم بر ارتفاع) را توصیف می‌کند.
 - `facingMode`
-  - : An array of strings indicating the camera orientation. See {{domxref("MediaTrackConstraints.facingMode")}} for supported values. On some devices, more than one facing mode may be reported; for example, in a high-end telepresence solution with several cameras facing the user, a camera to the left of the user can report both `"left"` and `"user"`.
+  - : آرایه‌ای از رشته‌ها که جهت دوربین را نشان می‌دهد. برای مقادیر پشتیبانی‌شده به {{domxref("MediaTrackConstraints.facingMode")}} مراجعه کنید. در برخی دستگاه‌ها، ممکن است بیش از یک حالت جهت‌گیری گزارش شود؛ به عنوان مثال، در یک راه‌حل تله‌حضور (telepresence) پیشرفته با چند دوربین رو به کاربر، دوربینی که در سمت چپ کاربر قرار دارد می‌تواند هر دو حالت `"left"` و `"user"` را گزارش دهد.
 - `frameRate`
-  - : A range object, containing a `min` and a `max` property (both containing a number), describing the supported frames per second range.
+  - : یک شیء محدوده، شامل ویژگی‌های `min` و `max` (هر دو شامل یک عدد)، که محدوده فریم‌برثانیه پشتیبانی‌شده را توصیف می‌کند.
 - `height`
-  - : A range object, containing a `min` and a `max` property (both containing a non-negative integer), describing the supported height range in pixels.
+  - : یک شیء محدوده، شامل ویژگی‌های `min` و `max` (هر دو شامل یک عدد صحیح غیرمنفی)، که محدوده ارتفاع پشتیبانی‌شده را بر حسب پیکسل توصیف می‌کند.
 - `width`
-  - : A range object, containing a `min` and a `max` property (both containing a non-negative integer), describing the supported width range in pixels.
+  - : یک شیء محدوده، شامل ویژگی‌های `min` و `max` (هر دو شامل یک عدد صحیح غیرمنفی)، که محدوده عرض پشتیبانی‌شده را بر حسب پیکسل توصیف می‌کند.
 - `resizeMode`
-  - : An array of strings that indicates how the user agent may derive the desired resolution from the camera resolution.See {{domxref("MediaTrackConstraints.resizeMode")}} for supported values. The value `"none"` is always included.
+  - : آرایه‌ای از رشته‌ها که نشان می‌دهد عامل کاربر چگونه می‌تواند وضوح مورد نظر را از وضوح دوربین استخراج کند. برای مقادیر پشتیبانی‌شده به {{domxref("MediaTrackConstraints.resizeMode")}} مراجعه کنید. مقدار `"none"` همیشه گنجانده می‌شود.
 
-For more information about what each property means, see {{domxref("MediaTrackConstraints")}}.
+برای اطلاعات بیشتر درباره معنای هر ویژگی، به {{domxref("MediaTrackConstraints")}} مراجعه کنید.
 
-## Examples
+## مثال‌ها
 
-The following snippet will result in the user being asked for permission to access their local camera and microphone. Once permission is granted, `MediaTrackCapabilities` objects will be logged to the console that detail the capabilities of each {{domxref("MediaStreamTrack")}}:
+قطعه کد زیر منجر به درخواست اجازه از کاربر برای دسترسی به دوربین و میکروفون محلی او می‌شود. پس از اعطای مجوز، اشیاء `MediaTrackCapabilities` در کنسول ثبت می‌شوند که قابلیت‌های هر {{domxref("MediaStreamTrack")}} را مشخص می‌کنند:
 
 ```js
 navigator.mediaDevices
@@ -92,7 +83,7 @@ navigator.mediaDevices
   });
 ```
 
-An example capabilities object looks like this:
+یک مثال از شیء قابلیت‌ها به شکل زیر است:
 
 ```json
 {
@@ -108,16 +99,16 @@ An example capabilities object looks like this:
 }
 ```
 
-The exact contents of the object will depend on the browser and media hardware.
+محتوای دقیق شیء به مرورگر و سخت‌افزار رسانه بستگی دارد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("InputDeviceInfo.getCapabilities()")}}, which also return a `MediaTrackCapabilities` object.
+- {{domxref("InputDeviceInfo.getCapabilities()")}}، که آن نیز یک شیء `MediaTrackCapabilities` برمی‌گرداند.
