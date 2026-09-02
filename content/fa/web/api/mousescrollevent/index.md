@@ -1,7 +1,5 @@
 ---
 title: "MouseScrollEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MouseScrollEvent"
-status: "needs-translation"
 ---
 
 ---
@@ -16,14 +14,14 @@ browser-compat: api.MouseScrollEvent
 
 {{APIRef("UI Events")}}{{ Non-standard_Header }}{{Deprecated_Header}}
 
-The **`MouseScrollEvent`** interface represents events that occur due to the user moving a mouse wheel or similar input device.
+اینترفیس **`MouseScrollEvent`** رویدادهایی را نشان می‌دهد که در اثر حرکت چرخ ماوس یا وسیله ورودی مشابه توسط کاربر رخ می‌دهند.
 
 > [!WARNING]
-> Do not use this interface for wheel events.
+> از این اینترفیس برای رویدادهای چرخ (wheel) استفاده نکنید.
 >
-> Like `MouseWheelEvent`, this interface is non-standard and deprecated. It was used in Gecko-based browsers only. Instead use the standard _{{domxref("WheelEvent")}}._
+> مانند `MouseWheelEvent`، این اینترفیس غیراستاندارد و منسوخ است. فقط در مرورگرهای مبتنی بر Gecko استفاده می‌شد. در عوض از استاندارد _{{domxref("WheelEvent")}}_ استفاده کنید.
 
-## Method overview
+## نمای کلی متدها
 
 ```webidl
 void initMouseScrollEvent(
@@ -45,32 +43,32 @@ void initMouseScrollEvent(
   in long axis);
 ```
 
-## Attributes
+## ویژگی‌ها
 
-| Attribute                 | Type   | Description                 |
-| ------------------------- | ------ | --------------------------- |
-| `axis` {{ReadOnlyInline}} | `long` | Indicates scroll direction. |
+| ویژگی                       | نوع    | توضیحات                          |
+| --------------------------- | ------ | --------------------------------- |
+| `axis` {{ReadOnlyInline}}   | `long` | جهت اسکرول را نشان می‌دهد.        |
 
-## Constants
+## ثابت‌ها
 
-### Delta modes
+### حالت‌های دلتا
 
-| Constant          | Value  | Description                                        |
-| ----------------- | ------ | -------------------------------------------------- |
-| `HORIZONTAL_AXIS` | `0x01` | The event is caused by horizontal wheel operation. |
-| `VERTICAL_AXIS`   | `0x02` | The event is caused by vertical wheel operation.   |
+| ثابت               | مقدار   | توضیحات                                    |
+| ------------------ | ------- | ------------------------------------------- |
+| `HORIZONTAL_AXIS`  | `0x01`  | رویداد در اثر چرخش افقی چرخ ایجاد شده است.  |
+| `VERTICAL_AXIS`    | `0x02`  | رویداد در اثر چرخش عمودی چرخ ایجاد شده است. |
 
-## Instance methods
+## روش‌های نمونه
 
 - `initMouseScrollEvent()`
-  - : See `nsIDOMMouseScrollEvent::initMouseScrollEvent()`.
+  - : به `nsIDOMMouseScrollEvent::initMouseScrollEvent()` مراجعه کنید.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - `DOMMouseScroll`
 - `MozMousePixelScroll`
-- Standardized mouse wheel event object: {{ domxref("WheelEvent") }}
+- شیء استاندارد رویداد چرخ ماوس: {{ domxref("WheelEvent") }}
