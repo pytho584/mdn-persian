@@ -1,11 +1,5 @@
 ---
 title: "ImageCapture: grabFrame() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ImageCapture/grabFrame"
-status: "needs-translation"
----
-
----
-title: "ImageCapture: grabFrame() method"
 short-title: grabFrame()
 slug: Web/API/ImageCapture/grabFrame
 page-type: web-api-instance-method
@@ -14,38 +8,32 @@ browser-compat: api.ImageCapture.grabFrame
 
 {{APIRef("Image Capture API")}}
 
-The **`grabFrame()`** method of the
-{{domxref("ImageCapture")}} interface takes a snapshot of the live video in a
-{{domxref("MediaStreamTrack")}} and returns a {{jsxref("Promise")}} that resolves with
-an {{domxref("ImageBitmap")}} containing the snapshot.
+**`grabFrame()`** متدی از رابط {{domxref("ImageCapture")}} است که یک عکس فوری از ویدیوی زنده در یک {{domxref("MediaStreamTrack")}} می‌گیرد و یک {{jsxref("Promise")}} برمی‌گرداند که با یک {{domxref("ImageBitmap")}} حاوی آن عکس فوری resolve می‌شود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 grabFrame()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves to an {{domxref("ImageBitmap")}} object.
+یک {{jsxref("Promise")}} که با یک شیء {{domxref("ImageBitmap")}} resolve می‌شود.
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if `readyState` property of the `MediaStreamTrack` passing in the constructor is not `live`.
+  - : اگر ویژگی `readyState` شیء `MediaStreamTrack` ارسال‌شده به سازنده، برابر `live` نباشد، این خطا پرتاب می‌شود.
 - `UnknownError` {{domxref("DOMException")}}
-  - : Thrown if the operation can't complete for any reason.
+  - : اگر عملیات به هر دلیلی نتواند کامل شود، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-This example is extracted from this [Simple Image Capture demo](https://simpl.info/imagecapture/). It shows how to use the {{jsxref("Promise")}} returned by
-`grabFrame()` to copy the returned frame to a {{htmlelement("canvas")}}
-element. For simplicity it does not show how to instantiate the
-{{domxref("ImageCapture")}} object.
+این مثال از این [دموی Simple Image Capture](https://simpl.info/imagecapture/) برگرفته شده است. نشان می‌دهد که چگونه از {{jsxref("Promise")}} برگشتی `grabFrame()` برای کپی کردن فریم برگشتی در یک عنصر {{htmlelement("canvas")}} استفاده کنید. برای سادگی، نحوه نمونه‌سازی شیء {{domxref("ImageCapture")}} در آن نشان داده نشده است.
 
 ```js
 let grabFrameButton = document.querySelector("button#grabFrame");
@@ -69,10 +57,10 @@ function grabFrame() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
