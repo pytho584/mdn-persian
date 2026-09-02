@@ -1,11 +1,5 @@
 ---
 title: "MediaRecorder: MediaRecorder() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/MediaRecorder"
-status: "needs-translation"
----
-
----
-title: "MediaRecorder: MediaRecorder() constructor"
 short-title: MediaRecorder()
 slug: Web/API/MediaRecorder/MediaRecorder
 page-type: web-api-constructor
@@ -14,63 +8,52 @@ browser-compat: api.MediaRecorder.MediaRecorder
 
 {{APIRef("MediaStream Recording")}}
 
-The **`MediaRecorder()`** constructor creates a new {{domxref("MediaRecorder")}} object that will record a specified {{domxref("MediaStream")}}.
+سازنده **`MediaRecorder()`** یک شیء جدید از نوع {{domxref("MediaRecorder")}} می‌سازد که یک {{domxref("MediaStream")}} مشخص را ضبط می‌کند.
 
-The object can optionally be configured to record using a specific media container (file type), and, further, can specify the exact codec and codec configuration(s) to use by specifying [the `codecs` parameter](/en-US/docs/Web/Media/Guides/Formats/codecs_parameter).
+این شیء به صورت اختیاری می‌تواند برای ضبط با استفاده از یک ظرف رسانه‌ای (نوع فایل) خاص پیکربندی شود، و همچنین می‌تواند کدک و تنظیمات کدک دقیق را با مشخص کردن [پارامتر `codecs`](/en-US/docs/Web/Media/Guides/Formats/codecs_parameter) تعیین کند.
 
-## Syntax
+## ساختار
 
 ```js-nolint
 new MediaRecorder(stream)
 new MediaRecorder(stream, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `stream`
-  - : The {{domxref("MediaStream")}} that will be recorded.
-    This source media can come from a stream created using {{domxref("MediaDevices.getUserMedia", "navigator.mediaDevices.getUserMedia()")}} or from an {{HTMLElement("audio")}}, {{HTMLElement("video")}} or {{HTMLElement("canvas")}} element.
+  - : {{domxref("MediaStream")}}ای که قرار است ضبط شود. این منبع رسانه می‌تواند از یک جریان ایجاد شده با استفاده از {{domxref("MediaDevices.getUserMedia", "navigator.mediaDevices.getUserMedia()")}} یا از یک عنصر {{HTMLElement("audio")}}، {{HTMLElement("video")}} یا {{HTMLElement("canvas")}} به دست آید.
 - `options` {{optional_inline}}
-  - : A dictionary object that can contain the following properties:
+  - : یک شیء دیکشنری که می‌تواند شامل ویژگی‌های زیر باشد:
     - `mimeType` {{optional_inline}}
-      - : A MIME type specifying the format for the resulting media; you may specify the container format (the browser will select its preferred codecs for audio and/or video), or you may [use the `codecs` parameter](/en-US/docs/Web/Media/Guides/Formats/codecs_parameter) and/or the `profiles` parameter to provide detailed information about which codecs to use and how to configure them.
-        Applications can check in advance if a `mimeType` is supported by the {{Glossary("user agent")}} by calling {{domxref("MediaRecorder.isTypeSupported_static", "MediaRecorder.isTypeSupported()")}}.
-        Defaults to an empty string.
+      - : یک نوع MIME که فرمت رسانه حاصل را مشخص می‌کند؛ می‌توانید فرمت ظرف را تعیین کنید (مرورگر کدک‌های ترجیحی خود را برای صدا و/یا ویدیو انتخاب می‌کند)، یا می‌توانید [از پارامتر `codecs`](/en-US/docs/Web/Media/Guides/Formats/codecs_parameter) و/یا پارامتر `profiles` برای ارائه اطلاعات دقیق درباره اینکه از کدام کدک‌ها استفاده شود و چگونه آن‌ها را پیکربندی کنید، استفاده کنید. برنامه‌ها می‌توانند از قبل با فراخوانی {{domxref("MediaRecorder.isTypeSupported_static", "MediaRecorder.isTypeSupported()")}} بررسی کنند که آیا یک `mimeType` توسط {{Glossary("user agent")}} پشتیبانی می‌شود یا خیر. پیش‌فرض یک رشته خالی است.
     - `audioBitsPerSecond` {{optional_inline}}
-      - : The chosen bitrate for the audio component of the media.
+      - : نرخ بیت انتخابی برای مؤلفه صوتی رسانه.
     - `videoBitsPerSecond` {{optional_inline}}
-      - : The chosen bitrate for the video component of the media.
+      - : نرخ بیت انتخابی برای مؤلفه ویدیویی رسانه.
     - `bitsPerSecond` {{optional_inline}}
-      - : The chosen bitrate for the audio and video components of the media.
-        This can be specified instead of the above two properties.
-        If this is specified along with one or the other of the above properties, this will be used for the one that isn't specified.
+      - : نرخ بیت انتخابی برای مؤلفه‌های صوتی و ویدیویی رسانه. این می‌تواند به جای دو ویژگی فوق مشخص شود. اگر این همراه با یکی از دو ویژگی فوق مشخص شود، این ویژگی برای آن‌که مشخص نشده استفاده خواهد شد.
     - `audioBitrateMode` {{optional_inline}}
-      - : The bitrate mode that should be used to encode the audio.
-        Can be `constant`, which indicates that the recorder should encode at a constant bitrate, or `variable`, which indicates that the recorder should encode using a variable bitrate, thus allowing more space to be used for complex signals and less space for less-complex signals.
-        Defaults to `variable`.
+      - : حالت نرخ بیتی که باید برای رمزگذاری صدا استفاده شود. می‌تواند `constant` باشد که نشان می‌دهد ضبط‌کننده باید با نرخ بیت ثابت رمزگذاری کند، یا `variable` که نشان می‌دهد ضبط‌کننده باید با نرخ بیت متغیر رمزگذاری کند، بنابراین فضای بیشتری برای سیگنال‌های پیچیده و فضای کمتری برای سیگنال‌های کم‌پیچیده اختصاص می‌دهد. پیش‌فرض `variable` است.
     - `videoKeyFrameIntervalDuration` {{optional_inline}}
-      - : The nominal interval in time between key frames in the encoded video stream.
-        The {{glossary("user agent")}} controls key-frame generation based on this option and the `videoKeyFrameIntervalCount` option.
+      - : فاصله زمانی اسمی بین فریم‌های کلیدی در جریان ویدیوی رمزگذاری‌شده. {{glossary("user agent")}} تولید فریم کلیدی را بر اساس این گزینه و گزینه `videoKeyFrameIntervalCount` کنترل می‌کند.
     - `videoKeyFrameIntervalCount` {{optional_inline}}
-      - : The interval in number of frames between key frames in the encoded video stream.
-        The {{glossary("user agent")}} controls key-frame generation considering this option as well as `videoKeyFrameIntervalDuration` option.
+      - : فاصله بر حسب تعداد فریم‌ها بین فریم‌های کلیدی در جریان ویدیوی رمزگذاری‌شده. {{glossary("user agent")}} تولید فریم کلیدی را با در نظر گرفتن این گزینه و همچنین گزینه `videoKeyFrameIntervalDuration` کنترل می‌کند.
 
     > [!NOTE]
-    > If bits per second values are not specified for video and/or audio, the default adopted for video is 2.5Mbps or 10 Mbps, depending on the browser.
-    > The audio default is adaptive, depending upon the sample rate and the number of channels.
+    > اگر مقادیر بیت در ثانیه برای ویدیو و/یا صدا مشخص نشود، پیش‌فرض برای ویدیو بسته به مرورگر ۲.۵ مگابیت در ثانیه یا ۱۰ مگابیت در ثانیه است. پیش‌فرض صدا تطبیقی است و به نرخ نمونه‌برداری و تعداد کانال‌ها بستگی دارد.
 
     > [!NOTE]
-    > Video resolution, frame rate and similar settings are specified as constraints when calling {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}}, not here in the MediaStream Recording API.
+    > وضوح ویدیو، نرخ فریم و تنظیمات مشابه به عنوان محدودیت‌ها هنگام فراخوانی {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}} مشخص می‌شوند، نه در اینجا در API ضبط MediaStream.
 
-### Exceptions
+### استثناها
 
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Thrown if the specified MIME type is not supported by the user agent.
+  - : اگر نوع MIME مشخص شده توسط عامل کاربر پشتیبانی نشود، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-This example shows how to create a media recorder for a specified stream, whose audio bit rate is set to 128 Kbit/sec and whose video bit rate is set to 2.5 Mbit/sec.
-The recorded media data will be stored in an MP4 wrapper (so if you gather the chunks of media data and save them to disk, they will be in an MP4 file).
+این مثال نحوه ایجاد یک ضبط‌کننده رسانه برای یک جریان مشخص را نشان می‌دهد که نرخ بیت صوتی آن روی ۱۲۸ کیلوبیت در ثانیه و نرخ بیت ویدیویی آن روی ۲.۵ مگابیت در ثانیه تنظیم شده است. داده‌های رسانه ضبط‌شده در یک ظرف MP4 ذخیره می‌شوند (بنابراین اگر تکه‌های داده رسانه را جمع‌آوری کرده و در دیسک ذخیره کنید، در یک فایل MP4 خواهند بود).
 
 ```js
 if (navigator.mediaDevices.getUserMedia) {
@@ -91,15 +74,15 @@ if (navigator.mediaDevices.getUserMedia) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Using the MediaStream Recording API](/en-US/docs/Web/API/MediaStream_Recording_API/Using_the_MediaStream_Recording_API)
 - [Web Dictaphone](https://mdn.github.io/dom-examples/media/web-dictaphone/): MediaRecorder +
