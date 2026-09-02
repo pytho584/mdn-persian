@@ -1,11 +1,5 @@
 ---
 title: "HTMLTableRowElement: deleteCell() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableRowElement/deleteCell"
-status: "needs-translation"
----
-
----
-title: "HTMLTableRowElement: deleteCell() method"
 short-title: deleteCell()
 slug: Web/API/HTMLTableRowElement/deleteCell
 page-type: web-api-instance-method
@@ -14,33 +8,31 @@ browser-compat: api.HTMLTableRowElement.deleteCell
 
 {{APIRef("HTML DOM")}}
 
-The **`deleteCell()`** method of the {{domxref("HTMLTableRowElement")}} interface removes a
-specific row cell from a given {{htmlelement("tr")}}.
+متد **`deleteCell()`** در رابط {{domxref("HTMLTableRowElement")}} یک سلول مشخص از ردیف را از یک عنصر {{htmlelement("tr")}} حذف می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 deleteCell(index)
 ```
 
-### Parameters
+### پارامترها
 
 - `index`
-  - : The cell index of the cell to remove. If `index` is `-1` or equal to the number of cells, the last cell of the row is removed.
+  - : اندیس سلولی که باید حذف شود. اگر `index` برابر با `-1` یا برابر با تعداد سلول‌ها باشد، آخرین سلول ردیف حذف می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `IndexSizeError` {{domxref("DOMException")}}
-  - : Thrown if `index` is greater than the number of cells or if it is smaller than `-1`.
+  - : اگر `index` بزرگ‌تر از تعداد سلول‌ها یا کوچک‌تر از `-1` باشد پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-This example uses {{domxref("HTMLTableRowElement.insertCell()")}} to append a new cell to a
-row.
+این مثال از {{domxref("HTMLTableRowElement.insertCell()")}} برای افزودن یک سلول جدید به یک ردیف استفاده می‌کند.
 
 ### HTML
 
@@ -118,19 +110,19 @@ removeButton.addEventListener("click", () => {
 });
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples", "100%", 175)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLTableElement.insertRow()")}}
-- The HTML element representing cells: {{domxref("HTMLTableCellElement")}}
+- عنصر HTML نمایانگر سلول‌ها: {{domxref("HTMLTableCellElement")}}
