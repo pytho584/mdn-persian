@@ -1,11 +1,5 @@
 ---
 title: "IdleDeadline: didTimeout property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IdleDeadline/didTimeout"
-status: "needs-translation"
----
-
----
-title: "IdleDeadline: didTimeout property"
 short-title: didTimeout
 slug: Web/API/IdleDeadline/didTimeout
 page-type: web-api-instance-property
@@ -14,43 +8,29 @@ browser-compat: api.IdleDeadline.didTimeout
 
 {{APIRef("Background Tasks")}}
 
-The read-only **`didTimeout`** property on the
-**{{domxref("IdleDeadline")}}** interface is a Boolean value which
-indicates whether or not the idle callback is being invoked because the timeout interval
-specified when {{domxref("Window.requestIdleCallback()")}} was called has expired.
+ویژگی فقط‌خواندنی **`didTimeout`** در رابط **{{domxref("IdleDeadline")}}** یک مقدار بولی است که مشخص می‌کند آیا فراخوان بیکاری به این دلیل فراخوانی شده است که بازه زمانی تعیین‌شده هنگام فراخوانی {{domxref("Window.requestIdleCallback()")}} منقضی شده است یا نه.
 
-If `didTimeout` is `true`, the `IdleDeadline` object's
-{{domxref("IdleDeadline.timeRemaining", "timeRemaining()")}} method will return
-approximately 0.
+اگر `didTimeout` برابر با `true` باشد، متد {{domxref("IdleDeadline.timeRemaining", "timeRemaining()")}} شیء `IdleDeadline` تقریباً ۰ را بازمی‌گرداند.
 
-Idle callbacks support the concept of a timeout in order to ensure that whatever task
-they're meant to perform actually happens, even if the user agent never has enough idle
-time available. Your callback will typically check the value of `didTimeout`
-if it needs to perform an action even if the browser is too busy to grant you the time;
-you should react by performing the needed task or, ideally, a minimal amount of work
-that can be done to keep things moving along, then schedule a new callback to try again
-to get the rest of the work done.
+فراخوان‌های بیکاری از مفهوم مهلت زمانی پشتیبانی می‌کنند تا اطمینان حاصل شود که هر وظیفه‌ای که قرار است انجام دهند واقعاً انجام می‌شود، حتی اگر عامل کاربر هرگز زمان بیکاری کافی نداشته باشد. فراخوان شما معمولاً مقدار `didTimeout` را بررسی می‌کند اگر لازم باشد حتی وقتی مرورگر بیش از حد مشغول است و نمی‌تواند زمان در اختیارتان بگذارد، عملی را انجام دهد؛ در این حالت باید با انجام وظیفه موردنیاز یا در حالت ایده‌آل، حداقل کاری که بتواند کارها را در جریان نگه دارد، واکنش نشان دهید و سپس فراخوان جدیدی زمان‌بندی کنید تا دوباره برای انجام باقی‌مانده کار تلاش کنید.
 
-## Value
+## مقدار
 
-A Boolean which is `true` if the callback is running due to the callback's
-timeout period elapsing or `false` if the callback is running because the
-user agent is idle and is offering time to the callback.
+یک مقدار بولی است که اگر فراخوان به دلیل سپری شدن مهلت زمانی آن در حال اجرا باشد، مقدار `true` دارد و اگر فراخوان به این دلیل اجرا می‌شود که عامل کاربر بیکار است و زمان را در اختیار فراخوان می‌گذارد، مقدار `false` دارد.
 
-## Examples
+## مثال‌ها
 
-See our [complete example](/en-US/docs/Web/API/Background_Tasks_API#example)
-in the article [Cooperative Scheduling of Background Tasks API](/en-US/docs/Web/API/Background_Tasks_API).
+[مثال کامل](/en-US/docs/Web/API/Background_Tasks_API#example) ما را در مقاله [Cooperative Scheduling of Background Tasks API](/en-US/docs/Web/API/Background_Tasks_API) ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Collaborative Scheduling of Background Tasks](/en-US/docs/Web/API/Background_Tasks_API)
 - {{domxref("IdleDeadline")}}
