@@ -1,11 +1,5 @@
 ---
 title: "MediaRecorder: audioBitsPerSecond property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/audioBitsPerSecond"
-status: "needs-translation"
----
-
----
-title: "MediaRecorder: audioBitsPerSecond property"
 short-title: audioBitsPerSecond
 slug: Web/API/MediaRecorder/audioBitsPerSecond
 page-type: web-api-instance-property
@@ -14,21 +8,18 @@ browser-compat: api.MediaRecorder.audioBitsPerSecond
 
 {{APIRef("MediaStream Recording")}}
 
-The **`audioBitsPerSecond`** read-only
-property of the {{domxref("MediaRecorder")}} interface returns the audio encoding bit
-rate in use.
+ویژگی فقط‌خواندنیِ **`audioBitsPerSecond`** در رابط {{domxref("MediaRecorder")}}، نرخ بیتِ به‌کاررفته برای رمزگذاری صدا را برمی‌گرداند.
 
-This may differ from the bit rate specified in the constructor (if
-it was provided).
+اگر نرخ بیتی در سازنده (constructor) تعیین شده باشد، این مقدار ممکن است با آن نرخ متفاوت باشد.
 
-## Value
+## مقدار
 
-A {{jsxref("Number")}} (unsigned long).
+یک {{jsxref("Number")}} (unsigned long).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
