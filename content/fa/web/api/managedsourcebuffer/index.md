@@ -1,11 +1,5 @@
 ---
 title: "ManagedSourceBuffer"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ManagedSourceBuffer"
-status: "needs-translation"
----
-
----
-title: ManagedSourceBuffer
 slug: Web/API/ManagedSourceBuffer
 page-type: web-api-interface
 status:
@@ -15,32 +9,32 @@ browser-compat: api.ManagedSourceBuffer
 
 {{APIRef("Media Source Extensions")}}{{AvailableInWorkers("window_and_dedicated")}}{{SeeCompatTable}}
 
-The **`ManagedSourceBuffer`** interface of the {{domxref("Media Source Extensions API", "Media Source Extensions API", "", "nocode")}} is a {{domxref("SourceBuffer")}} that is created by a {{domxref("ManagedMediaSource")}} when {{domxref("MediaSource.addSourceBuffer", "addSourceBuffer()")}} is called. It inherits all the properties and methods of `SourceBuffer`, and additionally fires a {{domxref("ManagedSourceBuffer.bufferedchange_event", "bufferedchange")}} event whenever the buffered ranges change — including when the user agent evicts content as part of its memory cleanup algorithm.
+رابطهٔ **`ManagedSourceBuffer`** در {{domxref("Media Source Extensions API", "Media Source Extensions API", "", "nocode")}} یک {{domxref("SourceBuffer")}} است که توسط یک {{domxref("ManagedMediaSource")}} هنگام فراخوانی {{domxref("MediaSource.addSourceBuffer", "addSourceBuffer()")}} ساخته می‌شود. این رابط همهٔ ویژگی‌ها و روش‌های `SourceBuffer` را به ارث می‌برد و علاوه بر آن، هر زمان که محدوده‌های بافر تغییر کنند — از جمله هنگامی که عامل کاربر (user agent) به‌عنوان بخشی از الگوریتم پاک‌سازی حافظهٔ خود محتوا را بیرون می‌ریزد — یک رویداد {{domxref("ManagedSourceBuffer.bufferedchange_event", "bufferedchange")]] را فعال می‌کند.
 
-Applications should listen for the `bufferedchange` event to track changes to buffered data, since a `ManagedMediaSource` may evict content at any time for reasons such as memory or hardware limitations.
+برنامه‌ها باید برای پیگیری تغییرات دادهٔ بافر شده به رویداد `bufferedchange` گوش دهند، زیرا یک `ManagedMediaSource` ممکن است در هر زمان به دلایلی مانند محدودیت‌های حافظه یا سخت‌افزار، محتوا را بیرون بریزد.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent interface, {{domxref("SourceBuffer")}}._
+_ویژگی‌ها را از رابط والد خود، {{domxref("SourceBuffer")}}، به ارث می‌برد._
 
-## Instance methods
+## روش‌های نمونه
 
-_Inherits methods from its parent interface, {{domxref("SourceBuffer")}}._
+_روش‌ها را از رابط والد خود، {{domxref("SourceBuffer")}}، به ارث می‌برد._
 
-## Events
+## رویدادها
 
-_Also inherits events from its parent interface, {{domxref("SourceBuffer")}}._
+_همچنین رویدادها را از رابط والد خود، {{domxref("SourceBuffer")}}، به ارث می‌برد._
 
 - {{domxref("ManagedSourceBuffer.bufferedchange_event", "bufferedchange")}} {{experimental_inline}}
-  - : Fired when the `ManagedSourceBuffer`'s buffered range changes, following a call to {{domxref("SourceBuffer.appendBuffer", "appendBuffer()")}}, {{domxref("SourceBuffer.remove", "remove()")}}, {{domxref("MediaSource.endOfStream", "endOfStream()")}}, or as a consequence of the user agent running the memory cleanup algorithm.
+  - : هنگامی که محدودهٔ بافرِ `ManagedSourceBuffer` تغییر می‌کند، پس از فراخوانی {{domxref("SourceBuffer.appendBuffer", "appendBuffer()")}}، {{domxref("SourceBuffer.remove", "remove()")}}، {{domxref("MediaSource.endOfStream", "endOfStream()")}}، یا در نتیجهٔ اجرای الگوریتم پاک‌سازی حافظه توسط عامل کاربر، فعال می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Listening for buffered range changes
+### گوش دادن به تغییرات محدودهٔ بافر
 
-This example sets up a {{domxref("ManagedMediaSource")}}, adds a `ManagedSourceBuffer`, fetches a fragmented MP4 file, and listens for the `bufferedchange` event to log any changes to the buffered ranges.
+این مثال یک {{domxref("ManagedMediaSource")}} تنظیم می‌کند، یک `ManagedSourceBuffer` اضافه می‌کند، یک فایل MP4 خردشده (fragmented) را واکشی می‌کند و برای ثبت هر تغییری در محدوده‌های بافر، به رویداد `bufferedchange` گوش می‌دهد.
 
 ```js
 const videoUrl =
@@ -74,15 +68,15 @@ if (ManagedMediaSource.isTypeSupported(mediaType)) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("ManagedMediaSource")}}
 - {{domxref("BufferedChangeEvent")}}
