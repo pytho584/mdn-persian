@@ -1,11 +1,5 @@
 ---
 title: "InputDeviceCapabilities: InputDeviceCapabilities() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/InputDeviceCapabilities/InputDeviceCapabilities"
-status: "needs-translation"
----
-
----
-title: "InputDeviceCapabilities: InputDeviceCapabilities() constructor"
 short-title: InputDeviceCapabilities()
 slug: Web/API/InputDeviceCapabilities/InputDeviceCapabilities
 page-type: web-api-constructor
@@ -16,33 +10,29 @@ browser-compat: api.InputDeviceCapabilities.InputDeviceCapabilities
 
 {{APIRef("Input Device Capabilities API")}}{{SeeCompatTable}}
 
-The `InputDeviceCapabilities()` constructor creates a new
-{{domxref("InputDeviceCapabilities")}} object provides information about the physical
-device responsible for generating a touch event.
+سازندهٔ `InputDeviceCapabilities()` یک شیء جدید از {{domxref("InputDeviceCapabilities")}} می‌سازد که اطلاعاتی دربارهٔ دستگاه فیزیکی مسئول تولید یک رویداد لمسی فراهم می‌کند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 new InputDeviceCapabilities()
 new InputDeviceCapabilities(InputDeviceCapabilitiesInit)
 ```
 
-### Parameters
+### پارامترها
 
 - `InputDeviceCapabilitiesInit` {{optional_inline}}
-  - : A dictionary object containing a set of device capabilities. It contains the
-    following property.
-    - `fireTouchEvents`: A boolean value that indicates
-      whether the device dispatches touch events.
+  - : یک شیء دیکشنری شامل مجموعه‌ای از قابلیت‌های دستگاه. این شیء دارای ویژگی زیر است.
+    - `fireTouchEvents`: یک مقدار بولی (Boolean) که نشان می‌دهد آیا دستگاه رویدادهای لمسی را ارسال می‌کند یا نه.
 
-### Return value
+### مقدار بازگشتی
 
-An instance of the {{domxref("InputDeviceCapabilities")}} interface.
+یک نمونه از رابط (interface) {{domxref("InputDeviceCapabilities")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
