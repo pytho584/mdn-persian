@@ -1,11 +1,5 @@
 ---
 title: "MediaKeyStatusMap: forEach() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaKeyStatusMap/forEach"
-status: "needs-translation"
----
-
----
-title: "MediaKeyStatusMap: forEach() method"
 short-title: forEach()
 slug: Web/API/MediaKeyStatusMap/forEach
 page-type: web-api-instance-method
@@ -14,40 +8,37 @@ browser-compat: api.MediaKeyStatusMap.forEach
 
 {{APIRef("Encrypted Media Extensions")}}
 
-The **`forEach()`** method of the
-{{domxref("MediaKeyStatusMap")}} interface calls callback once for each key-value pair
-in the status map, in insertion order. If an argument is present it will be passed to
-the callback.
+متد **`forEach()`** از رابط {{domxref("MediaKeyStatusMap")}} برای هر جفت کلید-مقدار در نقشه وضعیت، به ترتیب درج، یک بار تابع callback را فراخوانی می‌کند. اگر آرگومانی ارائه شود، به تابع callback منتقل خواهد شد.
 
-## Syntax
+## نحو
 
 ```js-nolint
 forEach(callbackFn)
 forEach(callbackFn, thisArg)
 ```
 
-### Parameters
+### پارامترها
 
 - `callbackFn`
-  - : Function to execute for each element, taking three arguments:
+  - : تابعی که برای هر عنصر اجرا می‌شود و سه آرگومان می‌گیرد:
     - `currentValue`
-      - : The current element being processed in the array.
+      - : عنصر جاری که در آرایه پردازش می‌شود.
     - `index` {{optional_inline}}
-      - : The index of the current element being processed in the array.
+      - : شاخص عنصر جاری که در آرایه پردازش می‌شود.
     - `array` {{optional_inline}}
-      - : Which array `forEach()` is being applied to.
+      - : آرایه‌ای که `forEach()` روی آن اعمال می‌شود.
 
 - `thisArg` {{optional_inline}}
-  - : Value used as `this` when executing `callback`.
+  - : مقداری که در هنگام اجرای `callback` به عنوان `this` استفاده می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
