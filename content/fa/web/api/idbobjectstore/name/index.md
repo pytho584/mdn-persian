@@ -1,11 +1,5 @@
 ---
 title: "IDBObjectStore: name property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/name"
-status: "needs-translation"
----
-
----
-title: "IDBObjectStore: name property"
 short-title: name
 slug: Web/API/IDBObjectStore/name
 page-type: web-api-instance-property
@@ -14,36 +8,26 @@ browser-compat: api.IDBObjectStore.name
 
 {{ APIRef("IndexedDB") }} {{AvailableInWorkers}}
 
-The **`name`** property of the {{domxref("IDBObjectStore")}}
-interface indicates the name of this object store.
+خاصیت **`name`** از رابط {{domxref("IDBObjectStore")}} نشان‌دهنده نام این object store است.
 
-## Value
+## مقدار
 
-A string containing the object
-store's name.
+یک رشته که شامل نام object store است.
 
-### Exceptions
+### استثناها
 
-There are a several exceptions that can occur when you attempt to change an object
-store's name.
+چندین استثنا ممکن است هنگام تلاش برای تغییر نام object store رخ دهد.
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if either the object store has been deleted or the current transaction is not an
-    upgrade transaction; you can only rename indexes during upgrade transactions; that is,
-    when the mode is `versionchange`.
+  - : اگر object store حذف شده باشد یا تراکنش جاری یک تراکنش ارتقاء (upgrade) نباشد، پرتاب می‌شود. شما فقط می‌توانید در حین تراکنش‌های ارتقاء (یعنی وقتی حالت `versionchange` است) نام ایندکس‌ها را تغییر دهید.
 - `TransactionInactiveError` {{domxref("DOMException")}}
-  - : Thrown if the current transaction is not active.
+  - : اگر تراکنش جاری فعال نباشد، پرتاب می‌شود.
 - `ConstraintError` {{domxref("DOMException")}}
-  - : Thrown if an object store is already using the specified `name`.
+  - : اگر یک object store از قبل از `name` مشخص شده استفاده کند، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-In the following code snippet, we open a read/write transaction on our database and add
-some data to an object store using `add()`. After the object store has been
-created, we log `objectStore.name` to
-the console. For a full working example, see
-our [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) app
-([view example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+در قطعه کد زیر، ما یک تراکنش خواندن/نوشتن روی پایگاه داده باز می‌کنیم و با استفاده از `add()` داده‌هایی را به یک object store اضافه می‌کنیم. پس از ایجاد object store، مقدار `objectStore.name` را در کنسول ثبت می‌کنیم. برای یک مثال کامل کار، برنامه [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ما را ببینید ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
 
 ```js
 // Let us open our database
@@ -104,20 +88,20 @@ function addData() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم یک محدوده از کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و ایجاد تغییرات در داده‌های خود: {{domxref("IDBObjectStore")}}
+- استفاده از نشانگرها: {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
