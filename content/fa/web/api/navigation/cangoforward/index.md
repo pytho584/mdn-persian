@@ -1,11 +1,5 @@
 ---
 title: "Navigation: canGoForward property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigation/canGoForward"
-status: "needs-translation"
----
-
----
-title: "Navigation: canGoForward property"
 short-title: canGoForward
 slug: Web/API/Navigation/canGoForward
 page-type: web-api-instance-property
@@ -14,16 +8,13 @@ browser-compat: api.Navigation.canGoForward
 
 {{APIRef("Navigation API")}}
 
-The **`canGoForward`** read-only property of the
-{{domxref("Navigation")}} interface returns `true` if it is possible to navigate forwards in the navigation history
-(i.e., the {{domxref("Navigation.currentEntry", "currentEntry")}} is not the last one in the history entry list),
-and `false` if it is not.
+ویژگی فقط‌خواندنی **`canGoForward`** در رابط {{domxref("Navigation")}} مقدار `true` را بازمی‌گرداند اگر امکان پیمایش به جلو در تاریخچهٔ پیمایش وجود داشته باشد (یعنی {{domxref("Navigation.currentEntry", "currentEntry")}} آخرین ورودی در فهرست ورودی‌های تاریخچه نباشد)، و در غیر این صورت `false` بازمی‌گرداند.
 
-## Value
+## مقدار
 
-A boolean value: `true` if it is possible to navigate forwards in the navigation history, `false` otherwise.
+یک مقدار بولین: اگر امکان پیمایش به جلو در تاریخچهٔ پیمایش وجود داشته باشد، `true` است؛ در غیر این صورت `false`.
 
-## Examples
+## مثال‌ها
 
 ```js
 async function backHandler() {
@@ -47,15 +38,15 @@ async function forwardHandler() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
 - [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
