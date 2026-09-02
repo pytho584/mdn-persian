@@ -1,11 +1,5 @@
 ---
 title: "MediaQueryList: change event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/change_event"
-status: "needs-translation"
----
-
----
-title: "MediaQueryList: change event"
 short-title: change
 slug: Web/API/MediaQueryList/change_event
 page-type: web-api-event
@@ -14,11 +8,11 @@ browser-compat: api.MediaQueryList.change_event
 
 {{APIRef("CSSOM view API")}}
 
-The **`change`** event of the {{DOMxRef("MediaQueryList")}} interface fires when the status of media query support changes.
+رویداد **`change`** از رابط {{DOMxRef("MediaQueryList")}} زمانی رخ می‌دهد که وضعیت پشتیبانی از رسانه (media query) تغییر کند.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+می‌توانید از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی رویداد (event handler property) تنظیم کنید.
 
 ```js-nolint
 addEventListener("change", (event) => { })
@@ -26,37 +20,37 @@ addEventListener("change", (event) => { })
 onchange = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("MediaQueryListEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("MediaQueryListEvent")}}. این رویداد از {{domxref("Event")}} ارث‌بری می‌کند.
 
 {{InheritanceDiagram("MediaQueryListEvent")}}
 
-## Example
+## مثال
 
 ```js
 const mql = window.matchMedia("(width <= 600px)");
 
 mql.onchange = (e) => {
   if (e.matches) {
-    /* the viewport is 600 pixels wide or less */
+    /* viewport حداکثر ۶۰۰ پیکسل عرض دارد */
     console.log("This is a narrow screen — less than 600px wide.");
   } else {
-    /* the viewport is more than 600 pixels wide */
+    /* viewport بیشتر از ۶۰۰ پیکسل عرض دارد */
     console.log("This is a wide screen — more than 600px wide.");
   }
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Media queries](/en-US/docs/Web/CSS/Guides/Media_queries/Using)
 - [Using media queries from code](/en-US/docs/Web/CSS/Guides/Media_queries/Testing)
