@@ -1,11 +1,5 @@
 ---
 title: "HTMLTextAreaElement: maxLength property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTextAreaElement/maxLength"
-status: "needs-translation"
----
-
----
-title: "HTMLTextAreaElement: maxLength property"
 short-title: maxLength
 slug: Web/API/HTMLTextAreaElement/maxLength
 page-type: web-api-instance-property
@@ -14,18 +8,18 @@ browser-compat: api.HTMLTextAreaElement.maxLength
 
 {{ApiRef("HTML DOM")}}
 
-The **`maxLength`** property of the {{domxref("HTMLTextAreaElement")}} interface indicates the maximum number of characters (in {{glossary("UTF-16", "UTF-16 code units")}}) allowed to be entered for the value of the {{HTMLElement("textarea")}} element, and the maximum number of characters allowed for the value to be valid. It reflects the element's [`maxlength`](/en-US/docs/Web/HTML/Reference/Elements/textarea#maxlength) attribute. `-1` means there is no limit on the length of the value.
+ویژگی **`maxLength`** از رابط {{domxref("HTMLTextAreaElement")}} حداکثر تعداد کاراکترهایی (بر حسب {{glossary("UTF-16", "واحد کد UTF-16")}}) را مشخص می‌کند که می‌توان برای مقدار عنصر {{HTMLElement("textarea")}} وارد کرد؛ همچنین حداکثر تعداد کاراکترهایی را تعیین می‌کند که برای معتبر بودن مقدار لازم است. این ویژگی، ویژگی [`maxlength`](/en-US/docs/Web/HTML/Reference/Elements/textarea#maxlength) عنصر را منعکس می‌کند. مقدار `-1` به این معناست که هیچ محدودیتی برای طول مقدار وجود ندارد.
 
 > [!NOTE]
-> Browsers generally prevent users from entering more characters than the `maxlength` attribute allows. Should the length be longer, the element is considered invalid and the {{domxref("ValidityState")}} object's {{domxref("ValidityState.tooLong", "tooLong")}} property will be `true`.
+> مرورگرها معمولاً از وارد کردن کاراکترهای بیشتر از آنچه ویژگی `maxlength` اجازه می‌دهد جلوگیری می‌کنند. اگر طول مقدار از این حد بیشتر باشد، عنصر نامعتبر در نظر گرفته می‌شود و ویژگی {{domxref("ValidityState.tooLong", "tooLong")}} از شیء {{domxref("ValidityState")}} برابر با `true` خواهد بود.
 
 ## Value
 
-A number representing the element's `maxlength` if present, or `-1`.
+عددی که اگر ویژگی `maxlength` روی عنصر تنظیم شده باشد، آن را نشان می‌دهد؛ در غیر این صورت برابر با `-1` است.
 
 ## Example
 
-Given the following HTML:
+با توجه به HTML زیر:
 
 ```html
 <p>
@@ -34,7 +28,7 @@ Given the following HTML:
 </p>
 ```
 
-You can use the `maxLength` property to retrieve or set the `<textarea>`'s `maxlength` attribute value:
+می‌توانید از ویژگی `maxLength` برای دریافت یا تنظیم مقدار ویژگی `maxlength` عنصر `<textarea>` استفاده کنید:
 
 ```js
 const textareaElement = document.querySelector("#comment");
