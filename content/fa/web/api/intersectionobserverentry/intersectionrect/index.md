@@ -1,7 +1,5 @@
 ---
 title: "IntersectionObserverEntry: intersectionRect property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry/intersectionRect"
-status: "needs-translation"
 ---
 
 ---
@@ -14,17 +12,17 @@ browser-compat: api.IntersectionObserverEntry.intersectionRect
 
 {{APIRef("Intersection Observer API")}}
 
-The **`intersectionRect`** read-only property of the {{domxref("IntersectionObserverEntry")}} interface is a {{domxref("DOMRectReadOnly")}} object which describes the smallest rectangle that contains the entire portion of the target element which is currently visible within the intersection root.
+ویژگی فقط‌خواندنی **`intersectionRect`** در رابط {{domxref("IntersectionObserverEntry")}} یک شیء {{domxref("DOMRectReadOnly")}} است که کوچک‌ترین مستطیلی را توصیف می‌کند که تمام بخشِ در حال حاضر قابل‌مشاهده از عنصر هدف را درون ریشهٔ تقاطع در بر می‌گیرد.
 
-## Value
+## مقدار
 
-A {{domxref("DOMRectReadOnly")}} which describes the part of the target element that's currently visible within the root's intersection rectangle.
+یک {{domxref("DOMRectReadOnly")}} که بخشِ در حال حاضر قابل‌مشاهده از عنصر هدف را درون مستطیل تقاطعِ ریشه توصیف می‌کند.
 
-This rectangle is computed by taking the intersection of {{domxref("IntersectionObserverEntry", "boundingClientRect")}} with each of the {{domxref("IntersectionObserverEntry.target", "target")}}'s ancestors' clip rectangles, with the exception of the intersection {{domxref("IntersectionObserver.root", "root")}} itself.
+این مستطیل با محاسبهٔ اشتراک {{domxref("IntersectionObserverEntry", "boundingClientRect")}} با مستطیل‌های برشیِ (clip rectangles) تک‌تک اجدادِ {{domxref("IntersectionObserverEntry.target", "target")}} به‌دست می‌آید، به‌جز خودِ ریشهٔ تقاطع ({{domxref("IntersectionObserver.root", "root")}}).
 
-## Examples
+## مثال‌ها
 
-In this simple example, an intersection callback stores the intersection rectangle for later use by the code that draws the target elements' contents, so that only the visible area is redrawn.
+در این مثال ساده، یک callback تقاطع، مستطیل تقاطع را برای استفادهٔ بعدی توسط کدی که محتوای عناصر هدف را ترسیم می‌کند ذخیره می‌کند، به‌طوری که فقط ناحیهٔ قابل‌مشاهده دوباره ترسیم شود.
 
 ```js
 function intersectionCallback(entries) {
@@ -37,10 +35,10 @@ function intersectionCallback(entries) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
