@@ -1,11 +1,5 @@
 ---
 title: "InterestEvent: source property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/InterestEvent/source"
-status: "needs-translation"
----
-
----
-title: "InterestEvent: source property"
 short-title: source
 slug: Web/API/InterestEvent/source
 page-type: web-api-instance-property
@@ -17,25 +11,25 @@ browser-compat: api.InterestEvent.source
 
 {{APIRef("Popover API")}}{{SeeCompatTable}}{{non-standard_header}}
 
-The **`source`** read-only property of the {{domxref("InterestEvent")}} interface is an {{domxref("Element")}} object instance that represents the interest invoker element on which interest was shown or lost to fire the event.
+ویژگی فقطخواندنی **`source`** در رابط {{domxref("InterestEvent")}} یک نمونه از شیء {{domxref("Element")}} است که عنصر فراخوانندهٔ علاقه (interest invoker) را نشان می‌دهد؛ یعنی عنصری که برای فعال شدن رویداد، علاقه روی آن نشان داده شده یا از دست رفته است.
 
-## Value
+## مقدار
 
-An {{domxref("Element")}} object instance.
+یک نمونه از شیء {{domxref("Element")}}.
 
-## Examples
+## مثال‌ها
 
-See the [Using interest invokers](/en-US/docs/Web/API/Popover_API/Using_interest_invokers) guide and the {{domxref("HTMLElement.interest_event", "interest")}} event reference page for examples.
+برای مثال‌ها، راهنمای [استفاده از فراخواننده‌های علاقه (interest invokers)](/en-US/docs/Web/API/Popover_API/Using_interest_invokers) و صفحهٔ مرجع رویداد {{domxref("HTMLElement.interest_event", "interest")}} را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Popover API](/en-US/docs/Web/API/Popover_API)
-- [Using interest invokers](/en-US/docs/Web/API/Popover_API/Using_interest_invokers)
+- [استفاده از فراخواننده‌های علاقه (interest invokers)](/en-US/docs/Web/API/Popover_API/Using_interest_invokers)
