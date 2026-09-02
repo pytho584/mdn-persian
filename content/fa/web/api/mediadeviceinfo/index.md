@@ -1,10 +1,4 @@
 ---
-title: "MediaDeviceInfo"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaDeviceInfo"
-status: "needs-translation"
----
-
----
 title: MediaDeviceInfo
 slug: Web/API/MediaDeviceInfo
 page-type: web-api-interface
@@ -13,32 +7,32 @@ browser-compat: api.MediaDeviceInfo
 
 {{APIRef("Media Capture and Streams")}}{{securecontext_header}}
 
-The **`MediaDeviceInfo`** interface of the {{domxref("Media Capture and Streams API", "", "", "nocode")}} contains information that describes a single media input or output device.
+رابطهٔ **`MediaDeviceInfo`** در {{domxref("Media Capture and Streams API", "", "", "nocode")}} اطلاعاتی را توصیف می‌کند که یک دستگاه ورودی یا خروجی رسانه‌ای را مشخص می‌کند.
 
-The list of devices obtained by calling {{domxref("MediaDevices.enumerateDevices", "navigator.mediaDevices.enumerateDevices()")}} is an array of `MediaDeviceInfo` objects, one per media device.
+فهرست دستگاه‌هایی که با فراخوانی {{domxref("MediaDevices.enumerateDevices", "navigator.mediaDevices.enumerateDevices()")}} به دست می‌آید، آرایه‌ای از اشیاء `MediaDeviceInfo` است؛ برای هر دستگاه رسانه‌ای یک شیء.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("MediaDeviceInfo.deviceId")}} {{ReadOnlyInline}}
-  - : Returns a string that is an identifier for the represented device that is persisted across sessions. It is un-guessable by other applications and unique to the origin of the calling application. It is reset when the user clears cookies (for Private Browsing, a different identifier is used that is not persisted across sessions).
+  - : رشته‌ای برمی‌گرداند که شناسه‌ای برای دستگاه نمایش‌داده‌شده است و در طول نشست‌ها (sessions) پایدار می‌ماند. این مقدار برای سایر برنامه‌ها قابل حدس‌زدن نیست و برای مبدأ (origin) برنامهٔ فراخوان یکتا است. وقتی کاربر کوکی‌ها را پاک می‌کند، این مقدار بازنشانی می‌شود (در حالت مرور خصوصی، از شناسهٔ متفاوتی استفاده می‌شود که در طول نشست‌ها پایدار نیست).
 - {{domxref("MediaDeviceInfo.groupId")}} {{ReadOnlyInline}}
-  - : Returns a string that is a group identifier. Two devices have the same group identifier if they belong to the same physical device — for example a monitor with both a built-in camera and a microphone.
+  - : رشته‌ای برمی‌گرداند که شناسهٔ گروه است. دو دستگاه اگر متعلق به یک دستگاه فیزیکی باشند، شناسهٔ گروه یکسانی دارند — برای مثال یک مانیتور که هم دوربین داخلی دارد و هم میکروفون داخلی.
 - {{domxref("MediaDeviceInfo.kind")}} {{ReadOnlyInline}}
-  - : Returns an enumerated value that is either `"videoinput"`, `"audioinput"` or `"audiooutput"`.
+  - : مقدار شمارشی برمی‌گرداند که یا `"videoinput"` است، یا `"audioinput"` یا `"audiooutput"`.
 - {{domxref("MediaDeviceInfo.label")}} {{ReadOnlyInline}}
-  - : Returns a string describing this device (for example "External USB Webcam").
+  - : رشته‌ای برمی‌گرداند که این دستگاه را توصیف می‌کند (مثلاً «وب‌کم USB خارجی»).
 
 > [!NOTE]
-> For security reasons, the `label` field is always blank unless an active media stream exists _or_ the user has granted persistent permission for media device access. The set of device labels could otherwise be used as part of a [fingerprinting](/en-US/docs/Glossary/Fingerprinting) mechanism to identify a user.
+> به دلایل امنیتی، فیلد `label` همیشه خالی است مگر اینکه یک جریان رسانه‌ای فعال وجود داشته باشد _یا_ کاربر مجوز دائمی برای دسترسی به دستگاه رسانه‌ای داده باشد. در غیر این صورت، مجموعهٔ برچسب‌های دستگاه می‌تواند به‌عنوان بخشی از مکانیزم [اثرانگشت‌گیری](/en-US/docs/Glossary/Fingerprinting) برای شناسایی کاربر استفاده شود.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("MediaDeviceInfo.toJSON()")}}
-  - : Returns a JSON representation of the `MediaDeviceInfo` object.
+  - : یک نمایش JSON از شیء `MediaDeviceInfo` برمی‌گرداند.
 
-## Example
+## مثال
 
-Here's an example that uses {{domxref("MediaDevices.enumerateDevices", "enumerateDevices()")}} to get a list of devices.
+در اینجا مثالی داریم که از {{domxref("MediaDevices.enumerateDevices", "enumerateDevices()")}} برای به‌دست‌آوردن فهرست دستگاه‌ها استفاده می‌کند.
 
 ```js
 if (!navigator.mediaDevices || !navigator.mediaDevices.enumerateDevices) {
@@ -58,7 +52,7 @@ if (!navigator.mediaDevices || !navigator.mediaDevices.enumerateDevices) {
 }
 ```
 
-This might produce:
+خروجی این کد می‌تواند به شکل زیر باشد:
 
 ```bash
 videoinput: id = csO9c0YpAf274OuCPUA53CNE0YHlIr2yXCi+SqfBZZ8=
@@ -66,7 +60,7 @@ audioinput: id = RKxXByjnabbADGQNNZqLVLdmXlS0YkETYCIbg+XxnvM=
 audioinput: id = r2/xw1xUPIyZunfV1lGrKOma5wTOvCkWfZ368XCndm0=
 ```
 
-or if one or more media streams are active, or if persistent permissions have been granted:
+یا اگر یک یا چند جریان رسانه‌ای فعال باشد، یا اگر مجوزهای دائمی اعطا شده باشد:
 
 ```bash
 videoinput: FaceTime HD Camera (Built-in) id=csO9c0YpAf274OuCPUA53CNE0YHlIr2yXCi+SqfBZZ8=
@@ -74,15 +68,15 @@ audioinput: default (Built-in Microphone) id=RKxXByjnabbADGQNNZqLVLdmXlS0YkETYCI
 audioinput: Built-in Microphone id=r2/xw1xUPIyZunfV1lGrKOma5wTOvCkWfZ368XCndm0=
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [WebRTC API](/en-US/docs/Web/API/WebRTC_API)
 - {{domxref("MediaDevices.enumerateDevices", "navigator.mediaDevices.enumerateDevices()")}}
