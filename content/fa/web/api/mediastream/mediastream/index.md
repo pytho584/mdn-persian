@@ -1,11 +1,5 @@
 ---
 title: "MediaStream: MediaStream() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaStream/MediaStream"
-status: "needs-translation"
----
-
----
-title: "MediaStream: MediaStream() constructor"
 short-title: MediaStream()
 slug: Web/API/MediaStream/MediaStream
 page-type: web-api-constructor
@@ -14,12 +8,11 @@ browser-compat: api.MediaStream.MediaStream
 
 {{APIRef("Media Capture and Streams")}}
 
-The **`MediaStream()`** constructor returns a newly-created {{domxref("MediaStream")}}, which serves as a collection of media tracks, each represented by a {{domxref("MediaStreamTrack")}} object.
+سازندهٔ **`MediaStream()`** یک شیء {{domxref("MediaStream")}} تازه‌ساخته برمی‌گرداند که به‌عنوان مجموعه‌ای از trackهای رسانه‌ای عمل می‌کند؛ هر track با یک شیء {{domxref("MediaStreamTrack")}} نمایش داده می‌شود.
 
-If any parameters are given, the specified tracks are added to the new stream.
-Otherwise, the stream has no tracks.
+اگر پارامتری داده شود، trackهای مشخص‌شده به جریان جدید اضافه می‌شوند. در غیر این صورت، جریان هیچ trackی ندارد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 new MediaStream()
@@ -27,29 +20,25 @@ new MediaStream(stream)
 new MediaStream(tracks)
 ```
 
-### Parameters
+### پارامترها
 
 - `stream` {{optional_inline}}
-  - : A different {{domxref("MediaStream")}} object whose tracks are added to the
-    newly-created stream automatically. The tracks are not removed from the original
-    stream, so they're shared by the two streams.
+  - : یک شیء متفاوت {{domxref("MediaStream")}} که trackهای آن به‌طور خودکار به جریان تازه‌ساخته اضافه می‌شوند. این trackها از جریان اصلی حذف نمی‌شوند، بنابراین هر دو جریان آن‌ها را به اشتراک می‌گذارند.
 - `tracks` {{optional_inline}}
-  - : An {{jsxref("Array")}} of {{domxref("MediaStreamTrack")}} objects, one for each
-    track to add to the stream.
+  - : یک {{jsxref("Array")}} از اشیاء {{domxref("MediaStreamTrack")}}، یکی برای هر track که باید به جریان اضافه شود.
 
-### Return value
+### مقدار بازگشتی
 
-A newly-created {{domxref("MediaStream")}} object, either empty, or containing the
-tracks provided, if any.
+یک شیء {{domxref("MediaStream")}} تازه‌ساخته که یا خالی است یا شامل trackهای ارائه‌شده، در صورت وجود، می‌باشد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("MediaStream")}}
