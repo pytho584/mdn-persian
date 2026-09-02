@@ -1,7 +1,5 @@
 ---
 title: "MutationObserver: observe() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver/observe"
-status: "needs-translation"
 ---
 
 ---
@@ -14,73 +12,58 @@ browser-compat: api.MutationObserver.observe
 
 {{APIRef("DOM WHATWG")}}
 
-The {{domxref("MutationObserver")}} method **`observe()`** configures the `MutationObserver`
-callback to begin receiving notifications of changes to the DOM that match the given options.
+متد **`observe()`** در {{domxref("MutationObserver")}}، تابع فراخوان (callback) مربوط به `MutationObserver` را به‌گونه‌ای پیکربندی می‌کند که شروع به دریافت اعلان‌هایی دربارهٔ تغییرات DOM که با گزینه‌های داده‌شده مطابقت دارند، بکند.
 
-Depending on the configuration, the observer may watch a single {{domxref("Node")}} in the DOM tree, or that node and some or all of its descendant nodes. The same node can be observed by multiple observers, and the same `MutationObserver` can watch for changes to different parts of the DOM tree and/or different types of changes by calling `observe()` multiple times on the same
-`MutationObserver`.
+بسته به پیکربندی، مشاهده‌گر (observer) ممکن است یک {{domxref("Node")}} تنها در درخت DOM را نظارت کند، یا آن گره و برخی یا تمام گره‌های فرزند آن را. یک گرهٔ یکسان می‌تواند توسط چندین مشاهده‌گر نظارت شود و همچنین یک `MutationObserver` یکسان می‌تواند با فراخواندن چندبارهٔ `observe()` روی همان `MutationObserver`، تغییرات بخش‌های مختلف درخت DOM و/یا انواع مختلف تغییرات را دنبال کند.
 
-To stop the `MutationObserver` (so that none of its callbacks will be triggered any longer), call {{domxref("MutationObserver.disconnect()")}}.
+برای متوقف کردن `MutationObserver` (به‌طوری که دیگر هیچ‌کدام از فراخوان‌های آن اجرا نشوند)، از {{domxref("MutationObserver.disconnect()")}} استفاده کنید.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 observe(target, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `target`
-  - : A DOM {{domxref("Node")}} (which may be an {{domxref("Element")}}) within the DOM
-    tree to watch for changes, or to be the root of a subtree of nodes to be watched.
+  - : یک {{domxref("Node")}} در درخت DOM (که ممکن است یک {{domxref("Element")}} باشد) که برای نظارت بر تغییرات در نظر گرفته می‌شود، یا ریشهٔ زیردرختی از گره‌ها که باید نظارت شوند.
 - `options`
-  - : An object providing options that describe which DOM mutations should be reported to `mutationObserver`'s `callback`.
-    At a minimum, one of `childList`, `attributes`, and/or `characterData` must be `true` when you call `observe()`.
-    Otherwise, a `TypeError` exception will be thrown.
+  - : یک شیء شامل گزینه‌هایی که مشخص می‌کند کدام تغییرات DOM باید به `callback` مربوط به `mutationObserver` گزارش شوند. در هنگام فراخواندن `observe()`، حداقل یکی از گزینه‌های `childList`، `attributes` و/یا `characterData` باید برابر `true` باشد؛ در غیر این صورت استثنای `TypeError` پرتاب می‌شود.
 
-    Options are as follows:
+    گزینه‌ها به شرح زیر هستند:
     - `subtree` {{optional_inline}}
-      - : Set to `true` to extend monitoring to the entire subtree of nodes rooted at `target`.
-        All of the other properties are then extended to all of the nodes in the subtree instead of applying solely to the `target` node. The default value is `false`. Note that if a descendant of `target` is removed, changes in that descendant subtree will continue to be observed, until the notification about the removal itself has been delivered.
+      - : به `true` تنظیم کنید تا نظارت به کل زیردرخت گره‌هایی که ریشهٔ آن‌ها `target` است گسترش یابد. در این حالت، همهٔ ویژگی‌های دیگر به جای اعمال فقط روی گرهٔ `target`، به تمام گره‌های موجود در زیردرخت اعمال می‌شوند. مقدار پیش‌فرض `false` است. توجه داشته باشید که اگر یکی از فرزندان `target` حذف شود، تغییرات در زیردرخت آن فرزند همچنان تا زمانی که اعلان مربوط به خودِ حذف تحویل داده شود، نظارت می‌شود.
     - `childList` {{optional_inline}}
-      - : Set to `true` to monitor the target node (and, if `subtree` is `true`, its descendants) for the addition of new child nodes or removal of existing child nodes.
-        The default value is `false`.
+      - : به `true` تنظیم کنید تا گرهٔ هدف (و در صورت `true` بودن `subtree`، فرزندان آن) برای افزوده‌شدن گره‌های فرزند جدید یا حذف گره‌های فرزند موجود نظارت شود. مقدار پیش‌فرض `false` است.
     - `attributes` {{optional_inline}}
-      - : Set to `true` to watch for changes to the value of attributes on the node or nodes being monitored. The default value is `true` if either of `attributeFilter` or `attributeOldValue` is specified, otherwise the default value is `false`.
+      - : به `true` تنظیم کنید تا تغییرات در مقادیر ویژگی‌های (attributes) گره یا گره‌های تحت نظارت دنبال شود. اگر یکی از گزینه‌های `attributeFilter` یا `attributeOldValue` مشخص شده باشد، مقدار پیش‌فرض `true` است؛ در غیر این صورت مقدار پیش‌فرض `false` است.
     - `attributeFilter` {{optional_inline}}
-      - : An array of specific attribute names to be monitored.
-        If this property isn't included, changes to all attributes cause mutation notifications.
+      - : آرایه‌ای از نام ویژگی‌های خاصی که باید نظارت شوند. اگر این ویژگی وارد نشود، تغییرات در همهٔ ویژگی‌ها منجر به اعلان‌های تغییر (mutation notifications) می‌شود.
     - `attributeOldValue` {{optional_inline}}
-      - : Set to `true` to record the previous value of any attribute that changes when monitoring the node or nodes for attribute changes;
-        See [Monitoring attribute values](#monitoring_attribute_values) for an example of watching for attribute changes and recording values.
-        The default value is `false`.
+      - : به `true` تنظیم کنید تا مقدار قبلی هر ویژگی که تغییر می‌کند ثبت شود. برای مثالی از نظارت بر تغییرات ویژگی‌ها و ثبت مقادیر، به بخش [نظارت بر مقادیر ویژگی‌ها](#monitoring_attribute_values) مراجعه کنید. مقدار پیش‌فرض `false` است.
     - `characterData` {{optional_inline}}
-      - : Set to `true` to monitor the specified target node (and, if `subtree` is `true`, its descendants) for changes to the character data contained within the node or nodes.
-        The default value is `true` if `characterDataOldValue` is specified, otherwise the default value is `false`.
+      - : به `true` تنظیم کنید تا گرهٔ هدف مشخص‌شده (و در صورت `true` بودن `subtree`، فرزندان آن) برای تغییرات در داده‌های کاراکتری (character data) موجود در گره یا گره‌ها نظارت شود. اگر `characterDataOldValue` مشخص شده باشد، مقدار پیش‌فرض `true` است؛ در غیر این صورت مقدار پیش‌فرض `false` است.
     - `characterDataOldValue` {{optional_inline}}
-      - : Set to `true` to record the previous value of a node's text whenever the text changes on nodes being monitored.
-        The default value is `false`.
+      - : به `true` تنظیم کنید تا در هر بار تغییر متن گره‌های تحت نظارت، مقدار قبلی متن آن گره ثبت شود. مقدار پیش‌فرض `false` است.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - {{jsxref('TypeError')}}
-  - : Thrown in any of the following circumstances:
-    - The `options` are configured such that nothing will actually be monitored.
-      (For example, if `childList`, `attributes`, and `characterData` are all `false`.)
-    - The value of `options.attributes` is `false` (indicating that attribute changes are not to be monitored), but `attributeOldValue` is `true` and/or
-      `attributeFilter` is present.
-    - The `characterDataOldValue` option is `true` but `characterData` is `false` (indicating that character changes are not to be monitored).
+  - : در هر یک از شرایط زیر پرتاب می‌شود:
+    - گزینه‌ها طوری پیکربندی شده باشند که در عمل چیزی نظارت نشود. (مثلاً اگر `childList`، `attributes` و `characterData` همگی `false` باشند.)
+    - مقدار `options.attributes` برابر `false` باشد (یعنی تغییرات ویژگی‌ها قرار نیست نظارت شوند)، اما `attributeOldValue` برابر `true` باشد و/یا `attributeFilter` وجود داشته باشد.
+    - گزینهٔ `characterDataOldValue` برابر `true` باشد اما `characterData` برابر `false` باشد (یعنی تغییرات کاراکتری قرار نیست نظارت شوند).
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفادهٔ پایه
 
-In this example, we demonstrate how to call the method **`observe()`** on an instance of {{domxref("MutationObserver")}}, once it has been set up, passing it a target element
-and an `options` object.
+در این مثال نشان می‌دهیم که چگونه متد **`observe()`** را روی یک نمونه از {{domxref("MutationObserver")}} پس از آماده‌سازی آن فراخوانی کنیم؛ به این صورت که یک عنصر هدف و یک شیء `options` به آن می‌دهیم.
 
 ```js
 // create a new instance of `MutationObserver` named `observer`,
@@ -96,12 +79,11 @@ observer.observe(document.querySelector("#element-to-observe"), {
 });
 ```
 
-### Removed descendants when using `subtree`
+### فرزندان حذف‌شده هنگام استفاده از `subtree`
 
-If you watch a node using the `subtree` option, you will continue to receive notifications of changes to the descendants of the node, even after a part of the subtree is removed. However, once the notification about the removal is delivered, further changes to the detached subtree will no longer trigger the observer.
+اگر گرهی را با استفاده از گزینهٔ `subtree` نظارت کنید، حتی پس از حذف بخشی از زیردرخت نیز همچنان اعلان‌هایی دربارهٔ تغییرات فرزندان آن گره دریافت خواهید کرد. با این حال، پس از تحویل اعلان مربوط به حذف، تغییرات بعدی در زیردرخت جدا شده دیگر مشاهده‌گر را فعال نخواهند کرد.
 
-This prevents you from missing changes that occur after the connection is severed and before you have a chance to specifically begin monitoring the moved node or subtree for changes. Theoretically, this means that if you keep track of the {{domxref("MutationRecord")}} objects describing the changes that occur, you should be able to "undo" the changes,
-rewinding the DOM back to its initial state.
+این کار مانع از دست‌دادن تغییراتی می‌شود که پس از قطع ارتباط و پیش از آن‌که فرصت نظارت اختصاصی بر گره یا زیردرخت جابه‌جاشده را پیدا کنید، رخ می‌دهند. از نظر تئوری، این یعنی اگر اشیاء {{domxref("MutationRecord")}} را که تغییرات رخ‌داده را توصیف می‌کنند پیگیری کنید، می‌توانید تغییرات را «واگردانی» کنید و DOM را به حالت اولیه‌اش بازگردانید.
 
 ```html
 <div id="target">
@@ -142,13 +124,9 @@ child.setAttribute("data-foo", "");
 // There is no "attributes child data-bar" notification.
 ```
 
-### Using `attributeFilter`
+### استفاده از `attributeFilter`
 
-In this example, a Mutation Observer is set up to watch for changes to the
-`status` and `username` attributes in any elements contained
-within a subtree that displays the names of users in a chat room. This lets the code,
-for example, reflect changes to users' nicknames, or to mark them as away from keyboard
-(AFK) or offline.
+در این مثال، یک Mutation Observer برای نظارت بر تغییرات ویژگی‌های `status` و `username` در تمام عناصر موجود در زیردرختی که نام کاربران یک اتاق گفتگو را نمایش می‌دهد، تنظیم شده است. این کار به کد اجازه می‌دهد تا برای مثال، تغییرات نام‌های کاربری را منعکس کند یا کاربران را به‌عنوان دور از صفحه‌کلید (AFK) یا آفلاین علامت‌گذاری کند.
 
 ```js
 function callback(mutationList) {
@@ -178,9 +156,9 @@ observer.observe(userListElement, {
 });
 ```
 
-### Monitoring attribute values
+### نظارت بر مقادیر ویژگی‌ها
 
-In this example we observe an element for attribute value changes, and add a button which toggles the element's [`dir`](/en-US/docs/Web/HTML/Reference/Global_attributes/dir) attribute between `"ltr"` and `"rtl"`. Inside the observer's callback, we log the old value of the attribute.
+در این مثال، یک عنصر را برای تغییرات مقادیر ویژگی‌ها نظارت می‌کنیم و یک دکمه اضافه می‌کنیم که ویژگی [`dir`](/en-US/docs/Web/HTML/Reference/Global_attributes/dir) عنصر را بین `"ltr"` و `"rtl"` تغییر می‌دهد. در داخل تابع فراخوانِ مشاهده‌گر، مقدار قبلی ویژگی را ثبت (log) می‌کنیم.
 
 #### HTML
 
@@ -235,14 +213,14 @@ const observer = new MutationObserver(callback);
 observer.observe(observerTarget, config);
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Monitoring attribute values")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
