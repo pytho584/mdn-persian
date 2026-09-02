@@ -1,11 +1,5 @@
 ---
 title: "MediaTrackSupportedConstraints: volume property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSupportedConstraints/volume"
-status: "needs-translation"
----
-
----
-title: "MediaTrackSupportedConstraints: volume property"
 short-title: volume
 slug: Web/API/MediaTrackSupportedConstraints/volume
 page-type: web-api-instance-property
@@ -17,25 +11,15 @@ browser-compat: api.MediaStreamTrack.applyConstraints.volume_constraint
 
 {{APIRef("Media Capture and Streams")}}{{Deprecated_Header}}{{Non-standard_Header}}
 
-The {{domxref("MediaTrackSupportedConstraints")}} dictionary's
-**`volume`** property is a read-only Boolean value which is
-present (and set to `true`) in the object returned by
-{{domxref("MediaDevices.getSupportedConstraints()")}} if and only if the
-{{Glossary("user agent")}} supports the `volume` constraint. If the
-constraint isn't supported, it's not included in the list, so this value will never be
-`false`.
+خصوصیت **`volume`** در فرهنگ لغت {{domxref("MediaTrackSupportedConstraints")}} یک مقدار بولی فقط‌خواندنی است که در شیء برگردانده‌شده توسط {{domxref("MediaDevices.getSupportedConstraints()")}} وجود دارد (و روی `true` تنظیم شده است) اگر و فقط اگر {{Glossary("user agent")}} از محدودیت `volume` پشتیبانی کند. اگر این محدودیت پشتیبانی نشود، در فهرست گنجانده نمی‌شود، بنابراین این مقدار هرگز `false` نخواهد بود.
 
-You can access the supported constraints dictionary by calling
-`navigator.mediaDevices.getSupportedConstraints()`.
+می‌توانید با فراخوانی `navigator.mediaDevices.getSupportedConstraints()` به فرهنگ لغت محدودیت‌های پشتیبانی‌شده دسترسی پیدا کنید.
 
-## Value
+## مقدار
 
-This property is present in the dictionary (and its value is always `true`)
-if the user agent supports the `volume` constraint. If the property isn't
-present, this property is missing from the supported constraints dictionary, and you'll
-get {{jsxref("undefined")}} if you try to look at its value.
+این خصوصیت در فرهنگ لغت وجود دارد (و مقدار آن همیشه `true` است) اگر user agent از محدودیت `volume` پشتیبانی کند. اگر خصوصیت وجود نداشته باشد، این خصوصیت در فرهنگ لغت محدودیت‌های پشتیبانی‌شده غایب است و اگر بخواهید مقدار آن را بررسی کنید، {{jsxref("undefined")}} دریافت خواهید کرد.
 
-## Examples
+## نمونه‌ها
 
 ```html hidden
 <div id="result"></div>
@@ -55,15 +39,15 @@ const supported = navigator.mediaDevices.getSupportedConstraints().volume;
 result.textContent = supported ? "Supported!" : "Not supported!";
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample('Examples', 600, 80)}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
 - {{domxref("MediaDevices.getSupportedConstraints()")}}
