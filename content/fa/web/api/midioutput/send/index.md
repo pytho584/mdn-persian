@@ -1,11 +1,5 @@
 ---
 title: "MIDIOutput: send() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MIDIOutput/send"
-status: "needs-translation"
----
-
----
-title: "MIDIOutput: send() method"
 short-title: send()
 slug: Web/API/MIDIOutput/send
 page-type: web-api-instance-method
@@ -14,38 +8,38 @@ browser-compat: api.MIDIOutput.send
 
 {{securecontext_header}}{{APIRef("Web MIDI API")}}
 
-The **`send()`** method of the {{domxref("MIDIOutput")}} interface queues messages for the corresponding MIDI port. The message can be sent immediately, or with an optional timestamp to delay sending.
+متد **`send()`** از رابط {{domxref("MIDIOutput")}} پیام‌ها را برای پورت MIDI مربوطه در صف قرار می‌دهد. پیام می‌تواند بلافاصله ارسال شود، یا با یک برچسب زمانی (timestamp) اختیاری، ارسال آن به تعویق بیفتد.
 
-## Syntax
+## نحو
 
 ```js-nolint
 send(data)
 send(data, timestamp)
 ```
 
-### Parameters
+### پارامترها
 
 - `data`
-  - : A sequence of one or more [valid MIDI messages](https://midi.org/about-midi-part-3midi-messages). Each entry represents a single byte of data.
+  - : یک دنباله از یک یا چند [پیام معتبر MIDI](https://midi.org/about-midi-part-3midi-messages). هر ورودی نمایانگر یک بایت واحد از داده است.
 - `timestamp` {{optional_inline}}
-  - : A {{domxref("DOMHighResTimestamp")}} with the time in milliseconds when the message should be sent (relative to {{domxref("Performance.timeOrigin")}}).
+  - : یک {{domxref("DOMHighResTimestamp")}} شامل زمان بر حسب میلی‌ثانیه که پیام باید در آن زمان ارسال شود (نسبت به {{domxref("Performance.timeOrigin")}}).
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - {{jsxref("TypeError")}}
-  - : Thrown if `data` is not a valid sequence, or does not contain a valid MIDI message.
+  - : اگر `data` یک دنبالهٔ معتبر نباشد یا شامل یک پیام MIDI معتبر نباشد، پرتاب می‌شود.
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if `data` is a system exclusive message, and the {{domxref("MIDIAccess")}} did not enable exclusive access.
+  - : اگر `data` یک پیام System Exclusive باشد و {{domxref("MIDIAccess")}} دسترسی انحصاری (exclusive access) را فعال نکرده باشد، پرتاب می‌شود.
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the port is disconnected.
+  - : اگر پورت قطع شده باشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-In the following example a middle C note is sent immediately, followed by a note off message one second later.
+در مثال زیر، یک نت C میانی (middle C) بلافاصله ارسال می‌شود و سپس یک پیام خاموشی نت (note off) یک ثانیه بعد ارسال می‌شود.
 
 ```js
 function sendMiddleC(midiAccess, portID) {
@@ -56,10 +50,10 @@ function sendMiddleC(midiAccess, portID) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
