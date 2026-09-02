@@ -1,10 +1,4 @@
 ---
-title: "IDBRecord"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBRecord"
-status: "needs-translation"
----
-
----
 title: IDBRecord
 slug: Web/API/IDBRecord
 page-type: web-api-interface
@@ -13,39 +7,30 @@ browser-compat: api.IDBRecord
 
 {{APIRef("IndexedDB")}} {{AvailableInWorkers}}
 
-The **`IDBRecord`** interface of the [IndexedDB API](/en-US/docs/Web/API/IndexedDB_API) represents a snapshot of a single record in an {{domxref("IDBObjectStore")}} or {{domxref("IDBIndex")}}.
+رابط **`IDBRecord`** در [IndexedDB API](/en-US/docs/Web/API/IndexedDB_API) نمایانگر snapshot یک رکورد تکی در یک {{domxref("IDBObjectStore")}} یا {{domxref("IDBIndex")}} است.
 
-A request for records using {{domxref("IDBObjectStore.getAllRecords()")}} or {{domxref("IDBIndex.getAllRecords()")}} returns an {{domxref("IDBRequest")}} instance.
-On success, the returned object's {{domxref("IDBRequest.result", "result")}} property is populated with an array of `IDBRecord` instances.
+درخواست دریافت رکوردها با استفاده از {{domxref("IDBObjectStore.getAllRecords()")}} یا {{domxref("IDBIndex.getAllRecords()")}} یک نمونه (instance) از {{domxref("IDBRequest")}} برمی‌گرداند. در صورت موفقیت، ویژگی {{domxref("IDBRequest.result", "result")}} شیء بازگشتی با آرایه‌ای از نمونه‌های `IDBRecord` پر می‌شود.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - `key` {{ReadOnlyInline}}
-  - : A value representing the record's secondary key.
-    For an object store record, this will be the same as `primaryKey`.
-    For an index record, it will be the record's key within the index.
+  - مقداری که کلید ثانویه رکورد را نشان می‌دهد. برای رکوردهای object store این مقدار با `primaryKey` یکسان است؛ برای رکوردهای index نیز این مقدار، کلید همان رکورد در داخل index است.
 - `primaryKey` {{ReadOnlyInline}}
-  - : A value representing the record's primary key.
-    This key is used to represent the record in the {{domxref("IDBObjectStore")}}.
+  - مقداری که کلید اصلی رکورد را نشان می‌دهد. از این کلید برای نمایش رکورد در {{domxref("IDBObjectStore")}} استفاده می‌شود.
 - `value` {{ReadOnlyInline}}
-  - : A value representing the record's value.
+  - مقداری که مقدار رکورد را نشان می‌دهد.
 
-## Instance methods
+## متدهای نمونه
 
-_None._
+_هیچ‌کدام._
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
-This example queries an {{domxref("IDBObjectStore")}} for up to 100 records whose keys come after `"myKey"`, with results sorted in reverse order.
+این مثال یک {{domxref("IDBObjectStore")}} را برای حداکثر ۱۰۰ رکورد که کلیدهایشان بعد از `"myKey"` قرار می‌گیرند جستجو می‌کند و نتایج را به ترتیب معکوس برمی‌گرداند.
 
-The code first creates a transaction on an {{domxref("IDBDatabase")}} named `db` (omitting the code to open the database), and then uses it to get an `IDBObjectStore` containing a contacts list.
-It then calls `getAllRecords()` on the object store, returning an {{domxref("IDBRequest")}} instance.
-Event listeners are added to this request for the `success` and `error` events.
-On success, the result `event.target.result` is logged (this is also available as `request.result`).
-This result contains an array of `IDBRecord` instances.
-Note that because this is a query on an `IDBObjectStore`, the `key` and `primaryKey` in each record have the same value.
+کد ابتدا یک تراکنش روی {{domxref("IDBDatabase")}} به نام `db` ایجاد می‌کند (کد باز کردن پایگاه داده حذف شده است) و سپس از آن برای دریافت `IDBObjectStore` شامل فهرست مخاطبین استفاده می‌کند. سپس متد `getAllRecords()` را روی object store فراخوانی کرده و یک نمونه از {{domxref("IDBRequest")}} دریافت می‌کند. شنونده‌های رویداد برای رویدادهای `success` و `error` به این درخواست اضافه می‌شوند. در صورت موفقیت، نتیجه یعنی `event.target.result` در کنسول ثبت می‌شود (این مقدار همچنین از طریق `request.result` در دسترس است). این نتیجه شامل آرایه‌ای از نمونه‌های `IDBRecord` است. توجه کنید که چون این پرس‌وجو روی یک `IDBObjectStore` انجام شده است، مقدار `key` و `primaryKey` در هر رکورد یکسان است.
 
 ```js
 // Create a transaction on the database and use it to get the contained store
@@ -70,17 +55,17 @@ request.addEventListener("error", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("IDBObjectStore.getAllRecords()")}}
 - {{domxref("IDBIndex.getAllRecords()")}}
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهده مثال به‌صورت زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
