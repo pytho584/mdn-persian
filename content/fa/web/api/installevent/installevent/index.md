@@ -1,11 +1,5 @@
 ---
-title: "InstallEvent: InstallEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/InstallEvent/InstallEvent"
-status: "needs-translation"
----
-
----
-title: "InstallEvent: InstallEvent() constructor"
+title: "InstallEvent: سازنده InstallEvent()"
 short-title: InstallEvent()
 slug: Web/API/InstallEvent/InstallEvent
 page-type: web-api-constructor
@@ -14,35 +8,34 @@ browser-compat: api.InstallEvent.InstallEvent
 
 {{APIRef("Service Workers API")}}
 
-The **`InstallEvent()`** constructor creates a new {{domxref("InstallEvent")}} object.
+سازنده **`InstallEvent()`** یک شیء جدید از نوع {{domxref("InstallEvent")}} ایجاد می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 new InstallEvent(type, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string with the name of the event.
-    It is case-sensitive and browsers always set it to `install`.
+  - : یک رشته شامل نام رویداد. این رشته به حروف بزرگ و کوچک حساس است و مرورگرها همیشه آن را به `install` تنظیم می‌کنند.
 - `options` {{optional_inline}}
-  - : An object that, _in addition of the properties defined in {{domxref("Event/Event", "Event()")}}_, can contain any custom settings that you want to apply to the event object. Currently no possible options are mandatory, but this has been defined for forward compatibility.
+  - : یک شیء که _علاوه بر ویژگی‌های تعریف شده در {{domxref("Event/Event", "Event()")}}_، می‌تواند شامل هر تنظیمات سفارشی دیگری باشد که می‌خواهید به شیء رویداد اعمال کنید. در حال حاضر هیچ گزینه اجباری وجود ندارد، اما این برای سازگاری با آینده تعریف شده است.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("InstallEvent")}} object.
+یک شیء جدید از نوع {{domxref("InstallEvent")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{jsxref("Promise")}}
-- [Fetch API](/en-US/docs/Web/API/Fetch_API)
+- [API Fetch](/en-US/docs/Web/API/Fetch_API)
