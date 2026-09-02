@@ -1,10 +1,4 @@
 ---
-title: "InputDeviceInfo"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/InputDeviceInfo"
-status: "needs-translation"
----
-
----
 title: InputDeviceInfo
 slug: Web/API/InputDeviceInfo
 page-type: web-api-interface
@@ -13,26 +7,26 @@ browser-compat: api.InputDeviceInfo
 
 {{APIRef("Media Capture and Streams")}}{{securecontext_header}}
 
-The **`InputDeviceInfo`** interface of the {{domxref("Media Capture and Streams API", "", "", "nocode")}} gives access to the capabilities of the input device that it represents.
+رابط **`InputDeviceInfo`** از {{domxref("Media Capture and Streams API", "", "", "nocode")}} امکان دسترسی به قابلیت‌های دستگاه ورودی‌ای را فراهم می‌کند که این رابط نمایانگر آن است.
 
-`InputDeviceInfo` objects are returned by {{domxref("MediaDevices.enumerateDevices()")}} if the returned device is an audio or video input device.
+اشیاء `InputDeviceInfo` توسط {{domxref("MediaDevices.enumerateDevices()")}} بازگردانده می‌شوند، اگر دستگاه بازگشتی یک دستگاه ورودی صوتی یا تصویری باشد.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Also inherits properties from its parent interface, {{DOMxRef("MediaDeviceInfo")}}._
+_همچنین ویژگی‌های رابط والد خود، {{DOMxRef("MediaDeviceInfo")}} را به ارث می‌برد._
 
-## Instance methods
+## روش‌های نمونه
 
-_Also inherits methods from its parent interface, {{DOMxRef("MediaDeviceInfo")}}._
+_همچنین روش‌های رابط والد خود، {{DOMxRef("MediaDeviceInfo")}} را به ارث می‌برد._
 
 - {{domxref("InputDeviceInfo.getCapabilities()")}}
-  - : Returns a `MediaTrackCapabilities` object describing the primary audio or video track of a device's `MediaStream`.
+  - : یک شیء `MediaTrackCapabilities` برمی‌گرداند که جریان (track) اصلی صوتی یا تصویری `MediaStream` دستگاه را توصیف می‌کند.
 
-## Examples
+## مثال‌ها
 
-The following example gets all media devices with {{domxref("MediaDevices.enumerateDevices()")}}. If any of the devices are input devices then `console.log(device)` will print an `InputDeviceInfo` object to the console.
+مثال زیر همه دستگاه‌های رسانه‌ای را با {{domxref("MediaDevices.enumerateDevices()")}} دریافت می‌کند. اگر هر یک از دستگاه‌ها دستگاه ورودی باشند، `console.log(device)` یک شیء `InputDeviceInfo` را در کنسول چاپ می‌کند.
 
 ```js
 navigator.mediaDevices.enumerateDevices().then((devices) => {
@@ -42,10 +36,10 @@ navigator.mediaDevices.enumerateDevices().then((devices) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
