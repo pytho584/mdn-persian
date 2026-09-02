@@ -1,7 +1,6 @@
+```
 ---
 title: "MediaDeviceInfo: deviceId property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaDeviceInfo/deviceId"
-status: "needs-translation"
 ---
 
 ---
@@ -14,23 +13,19 @@ browser-compat: api.MediaDeviceInfo.deviceId
 
 {{APIRef("Media Capture and Streams")}}{{securecontext_header}}
 
-The **`deviceId`** read-only property
-of the {{domxref("MediaDeviceInfo")}} interface returns a string
-that is an identifier for the represented device and is persisted across
-sessions.
+ویژگی فقط خواندنی **`deviceId`** از رابط {{domxref("MediaDeviceInfo")}} یک رشته برمی‌گرداند که شناسه‌ای برای دستگاه نمایش‌داده‌شده است و در طول نشست‌ها (sessions) پایدار می‌ماند.
 
-It is un-guessable by other applications, and unique to the origin of
-the calling application. It is reset when the user clears cookies. For private browsing,
-a different identifier is used that is not persisted across sessions.
+این شناسه توسط سایر برنامه‌ها قابل حدس زدن نیست و برای منشأ (origin) برنامه‌ی فراخوان‌کننده منحصربه‌فرد است. هنگامی که کاربر کوکی‌ها را پاک می‌کند، این شناسه بازنشانی می‌شود. برای مرور خصوصی (private browsing)، یک شناسه متفاوت استفاده می‌شود که در طول نشست‌ها پایدار نمی‌ماند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
+```
