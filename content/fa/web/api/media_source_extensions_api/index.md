@@ -1,10 +1,4 @@
 ---
-title: "Media Source API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Media_Source_Extensions_API"
-status: "needs-translation"
----
-
----
 title: Media Source API
 slug: Web/API/Media_Source_Extensions_API
 page-type: web-api-overview
@@ -15,78 +9,78 @@ spec-urls:
 
 {{DefaultAPISidebar("Media Source Extensions")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **Media Source API**, formally known as **Media Source Extensions** (**MSE**), provides functionality enabling plugin-free web-based streaming media. Using MSE, media streams can be created via JavaScript, and played using {{htmlelement("audio")}} and {{htmlelement("video")}} elements.
+رابط برنامه‌نویسی **Media Source** که به طور رسمی با نام **Media Source Extensions** (**MSE**) شناخته می‌شود، قابلیت‌هایی را برای پخش رسانه‌های جریانی مبتنی بر وب بدون نیاز به افزونه فراهم می‌کند. با استفاده از MSE، می‌توان جریان‌های رسانه‌ای را از طریق JavaScript ایجاد کرد و با استفاده از عناصر {{htmlelement("audio")}} و {{htmlelement("video")}} پخش نمود.
 
-## Concepts and usage
+## مفاهیم و کاربرد
 
-Playing video and audio has been available in web applications without plugins for a few years now, but the basic features offered have really only been useful for playing single whole tracks. We can't, for example, combine/split arraybuffers. Streaming media has up until recently been the domain of Flash, with technologies like Flash Media Server serving video streams using the RTMP protocol.
+پخش ویدئو و صدا در برنامه‌های وب بدون نیاز به افزونه چند سالی است که امکان‌پذیر شده است، اما ویژگی‌های پایه‌ای ارائه‌شده تنها برای پخش تک‌تک آهنگ‌های کامل مفید بوده‌اند. به عنوان مثال، نمی‌توانیم arraybufferها را ترکیب یا تقسیم کنیم. تا همین اواخر، رسانه‌های جریانی حوزه انحصاری Flash بودند، با فناوری‌هایی مانند Flash Media Server که جریان‌های ویدئویی را با استفاده از پروتکل RTMP ارائه می‌کردند.
 
-### The MSE standard
+### استاندارد MSE
 
-With Media Source Extensions (MSE), this is changing. MSE allows us to replace the usual single progressive `src` URI fed to media elements with a reference to a `MediaSource` object, which is a container for information like the ready state of the media for being played, and references to multiple `SourceBuffer` objects that represent the different chunks of media that make up the entire stream. MSE gives us finer-grained control over how much and how often content is fetched, and some control over memory usage details, such as when buffers are evicted. It lays the groundwork for adaptive bitrate streaming clients (such as those using DASH or HLS) to be built on its extensible API.
+با Media Source Extensions (MSE)، این وضعیت در حال تغییر است. MSE به ما امکان می‌دهد تا URI تدریجی منفرد معمولی که به عناصر رسانه‌ای داده می‌شود را با یک ارجاع به شیء `MediaSource` جایگزین کنیم. این شیء یک ظرف برای اطلاعاتی مانند وضعیت آمادگی رسانه برای پخش، و ارجاعات به چندین شیء `SourceBuffer` است که تکه‌های مختلف رسانه تشکیل‌دهنده کل جریان را نمایش می‌دهند. MSE کنترل دقیق‌تری بر میزان و دفعات دریافت محتوا و همچنین کنترل جزئی بر جزئیات مصرف حافظه، مانند زمان تخلیه بافرها، به ما می‌دهد. این API پایه‌ای برای ساخت مشتری‌های پخش تطبیقی با نرخ بیت (مانند آنهایی که از DASH یا HLS استفاده می‌کنند) بر روی API توسعه‌پذیر خود فراهم می‌کند.
 
-Creating assets that work with MSE in modern browsers is a laborious process, taking significant time, computing power, and energy. The usage of external utilities to massage the content into a suitable format is required. While browser support for the various media containers with MSE is spotty, usage of the H.264 video codec, AAC audio codec, and MP4 container format is a common baseline. MSE also provides an API for runtime detection of container and codec support.
+ایجاد دارایی‌هایی که با MSE در مرورگرهای مدرن کار کنند فرآیندی دشوار است و زمان، توان محاسباتی و انرژی قابل توجهی می‌طلبد. استفاده از ابزارهای خارجی برای تبدیل محتوا به قالبی مناسب ضروری است. در حالی که پشتیبانی مرورگرها از ظروف رسانه‌ای مختلف با MSE ناقص است، استفاده از کدک ویدئویی H.264، کدک صوتی AAC و قالب ظرف MP4 یک مبنا رایج است. MSE همچنین یک API برای تشخیص زمان اجرای پشتیبانی از ظروف و کدک‌ها فراهم می‌کند.
 
-If you do not require explicit control of video quality over time, the rate at which content is fetched, or the rate at which memory is evicted, then the {{htmlelement("video")}} and {{htmlelement("source")}} tags may well be a simple and adequate solution.
+اگر نیاز به کنترل صریح کیفیت ویدئو در طول زمان، نرخ دریافت محتوا یا نرخ تخلیه حافظه ندارید، برچسب‌های {{htmlelement("video")}} و {{htmlelement("source")}} ممکن است راه حلی ساده و کافی باشند.
 
 ### DASH
 
-Dynamic Adaptive Streaming over HTTP (DASH) is a protocol for specifying how adaptive content should be fetched. It is effectively a layer built on top of MSE for building adaptive bitrate streaming clients. While there are other protocols available (such as HTTP Live Streaming (HLS)), DASH has the most platform support.
+پخش تطبیقی پویا از طریق HTTP (DASH) یک پروتکل برای مشخص کردن نحوه دریافت محتوای تطبیقی است. این پروتکل در واقع لایه‌ای است که بر روی MSE برای ساخت مشتری‌های پخش تطبیقی با نرخ بیت ساخته شده است. در حالی که پروتکل‌های دیگری مانند HTTP Live Streaming (HLS) نیز وجود دارند، DASH بیشترین پشتیبانی پلتفرمی را دارد.
 
-DASH moves lots of logic out of the network protocol and into the client side application logic, using the simpler HTTP protocol to fetch files. Indeed, one can support DASH with a simple static file server, which is also great for CDNs. This is in direct contrast with previous streaming solutions that required expensive licenses for proprietary non-standard client/server protocol implementations.
+DASH منطق زیادی را از پروتکل شبکه به منطق برنامه سمت کلاینت منتقل می‌کند و از پروتکل ساده‌تر HTTP برای دریافت فایل‌ها استفاده می‌کند. در واقع، می‌توان DASH را با یک سرور فایل ایستا ساده پشتیبانی کرد که برای CDNها نیز عالی است. این در تضاد مستقیم با راه‌حل‌های قبلی پخش جریانی است که نیاز به مجوزهای گران‌قیمت برای پیاده‌سازی‌های اختصاصی و غیراستاندارد پروتکل سرویس‌گیرنده/سرور داشتند.
 
-The two most common use cases for DASH involve watching content "on demand" or "live." On demand allows a developer to take their time transcoding the assets into multiple resolutions of various quality.
+دو مورد استفاده رایج برای DASH شامل تماشای محتوای «درخواستی» (on demand) یا «زنده» (live) است. حالت درخواستی به توسعه‌دهنده اجازه می‌دهد تا دارایی‌ها را به چندین وضوح با کیفیت‌های مختلف تبدیل کند.
 
-Live profile content can introduce latency due to its transcoding and broadcasting, so DASH is not suitable for real time communication like [WebRTC](/en-US/docs/Web/API/WebRTC_API) is. It can however support significantly more client connections than WebRTC.
+محتوای پروفایل زنده به دلیل تبدیل و پخش ممکن است تأخیر ایجاد کند، بنابراین DASH برای ارتباطات بلادرنگ مانند [WebRTC](/en-US/docs/Web/API/WebRTC_API) مناسب نیست. با این حال، می‌تواند تعداد قابل توجهی بیشتری از اتصالات کلاینت را نسبت به WebRTC پشتیبانی کند.
 
-There are numerous available free and open source tools for transcoding content and preparing it for use with DASH, DASH file servers, and DASH client libraries written in JavaScript. The [DASH Adaptive Streaming for HTML video](/en-US/docs/Web/API/Media_Source_Extensions_API/DASH_Adaptive_Streaming) article provides an example of how to use DASH with MSE.
+ابزارهای رایگان و متن‌باز متعددی برای تبدیل محتوا و آماده‌سازی آن برای استفاده با DASH، سرورهای فایل DASH و کتابخانه‌های کلاینت DASH نوشته‌شده با JavaScript وجود دارد. مقاله [پخش تطبیقی DASH برای ویدئوی HTML](/en-US/docs/Web/API/Media_Source_Extensions_API/DASH_Adaptive_Streaming) نمونه‌ای از نحوه استفاده از DASH با MSE را ارائه می‌دهد.
 
-### Availability in workers
+### در دسترس بودن در workerها
 
-Starting with Chrome 108, MSE features are available in dedicated {{domxref("Web Workers API", "web workers", "", "nocode")}}, which allows for improved performance when manipulating {{domxref("MediaSource")}}s and {{domxref("SourceBuffer")}}s. To play back the media, the {{domxref("MediaSource.handle")}} property is used to get a reference to a {{domxref("MediaSourceHandle")}} object, a proxy for the `MediaSource` that can be transferred back to the main thread and attached to a media element via its {{domxref("HTMLMediaElement.srcObject")}} property.
+از Chrome 108 به بعد، ویژگی‌های MSE در workerهای اختصاصی (dedicated workers) {{domxref("Web Workers API", "web workers", "", "nocode")}} در دسترس هستند که امکان بهبود عملکرد هنگام دستکاری {{domxref("MediaSource")}} و {{domxref("SourceBuffer")}} را فراهم می‌کنند. برای پخش رسانه، از ویژگی {{domxref("MediaSource.handle")}} برای دریافت ارجاع به یک شیء {{domxref("MediaSourceHandle")}} استفاده می‌شود. این شیء یک نماینده برای `MediaSource` است که می‌تواند به رشته اصلی بازگردانده شده و از طریق ویژگی {{domxref("HTMLMediaElement.srcObject")}} به یک عنصر رسانه متصل شود.
 
-See [MSE-in-Workers Demo by Matt Wolenetz](https://wolenetz.github.io/mse-in-workers-demo/mse-in-workers-demo.html) for a live example.
+برای یک مثال زنده، به [نمایش MSE در Workerها توسط Matt Wolenetz](https://wolenetz.github.io/mse-in-workers-demo/mse-in-workers-demo.html) مراجعه کنید.
 
-## Interfaces
+## رابط‌ها
 
 - {{domxref("MediaSource")}}
-  - : Represents a media source to be played via an {{domxref("HTMLMediaElement")}} object.
+  - : یک منبع رسانه را نشان می‌دهد که قرار است از طریق یک شیء {{domxref("HTMLMediaElement")}} پخش شود.
 - {{domxref("MediaSourceHandle")}}
-  - : A proxy for a {{domxref("MediaSource")}} that can be transferred from a dedicated worker back to the main thread and attached to a media element via its {{domxref("HTMLMediaElement.srcObject")}} property.
+  - : یک نماینده برای {{domxref("MediaSource")}} که می‌تواند از یک worker اختصاصی به رشته اصلی منتقل شده و از طریق ویژگی {{domxref("HTMLMediaElement.srcObject")}} به یک عنصر رسانه متصل شود.
 - {{domxref("SourceBuffer")}}
-  - : Represents a chunk of media to be passed into an {{domxref("HTMLMediaElement")}} via a `MediaSource` object.
+  - : یک تکه از رسانه را نشان می‌دهد که قرار است از طریق یک شیء `MediaSource` به {{domxref("HTMLMediaElement")}} ارسال شود.
 - {{domxref("SourceBufferList")}}
-  - : A simple container list for multiple `SourceBuffer` objects.
+  - : یک لیست ظرف ساده برای چندین شیء `SourceBuffer`.
 - {{domxref("ManagedMediaSource")}}
-  - : A {{domxref("MediaSource")}} that actively manages its memory content. Unlike a regular `MediaSource`, a `ManagedMediaSource` can evict content from its source buffers at any time for reasons such as memory or hardware limitations.
+  - : یک {{domxref("MediaSource")}} که به طور فعال محتوای حافظه خود را مدیریت می‌کند. بر خلاف یک `MediaSource` معمولی، یک `ManagedMediaSource` می‌تواند در هر زمان به دلایلی مانند محدودیت‌های حافظه یا سخت‌افزار، محتوا را از بافرهای منبع خود تخلیه کند.
 - {{domxref("ManagedSourceBuffer")}}
-  - : A {{domxref("SourceBuffer")}} created by a `ManagedMediaSource`. Fires {{domxref("ManagedSourceBuffer.bufferedchange_event", "bufferedchange")}} events to notify the application when buffered ranges are modified, including when the user agent evicts content.
+  - : یک {{domxref("SourceBuffer")}} ایجاد شده توسط یک `ManagedMediaSource`. رویدادهای {{domxref("ManagedSourceBuffer.bufferedchange_event", "bufferedchange")}} را برای اطلاع‌رسانی به برنامه در هنگام تغییر محدوده‌های بافر شده، از جمله زمانی که عامل کاربر محتوا را تخلیه می‌کند، پرتاب می‌کند.
 - {{domxref("BufferedChangeEvent")}}
-  - : The event object for the {{domxref("ManagedSourceBuffer.bufferedchange_event", "bufferedchange")}} event, which contains {{domxref("TimeRanges")}} representing the added and removed buffered ranges.
+  - : شیء رویداد برای رویداد {{domxref("ManagedSourceBuffer.bufferedchange_event", "bufferedchange")}} که شامل {{domxref("TimeRanges")}} نشان‌دهنده محدوده‌های بافر شده اضافه و حذف شده است.
 - {{domxref("VideoPlaybackQuality")}}
-  - : Contains information about the quality of video being played by a {{htmlelement("video")}} element, such as number of dropped or corrupted frames. Returned by the {{domxref("HTMLVideoElement.getVideoPlaybackQuality()")}} method.
+  - : شامل اطلاعاتی درباره کیفیت ویدئوی در حال پخش توسط یک عنصر {{htmlelement("video")}} است، مانند تعداد فریم‌های افتاده یا خراب. توسط متد {{domxref("HTMLVideoElement.getVideoPlaybackQuality()")}} بازگردانده می‌شود.
 
-### Extensions to other interfaces
+### افزونه‌هایی برای سایر رابط‌ها
 
 - {{domxref("HTMLMediaElement.buffered")}}
-  - : Returns a {{domxref("TimeRanges")}} object that indicates the ranges of the media source that the browser has buffered (if any) at the moment the `buffered` property is accessed.
+  - : یک شیء {{domxref("TimeRanges")}} را بازمی‌گرداند که محدوده‌های بافر شده منبع رسانه (در صورت وجود) را در لحظه دسترسی به ویژگی `buffered` نشان می‌دهد.
 - {{domxref("HTMLMediaElement.seekable")}}
-  - : Returns a {{domxref('TimeRanges')}} object that contains the time ranges that the user is able to seek to, if any.
+  - : یک شیء {{domxref('TimeRanges')}} را بازمی‌گرداند که شامل محدوده‌های زمانی است که کاربر می‌تواند به آنها جستجو کند، در صورت وجود.
 - {{domxref("HTMLMediaElement.srcObject")}}
-  - : A media provider object representing the media resource to play or that has played in the current `HTMLMediaElement`, or `null` if not assigned.
+  - : یک شیء ارائه‌دهنده رسانه که نشان‌دهنده منبع رسانه‌ای است که در `HTMLMediaElement` جاری پخش می‌شود یا پخش شده است، یا اگر تخصیص داده نشده باشد `null`.
 - {{domxref("HTMLVideoElement.getVideoPlaybackQuality()")}}
-  - : Returns a {{domxref("VideoPlaybackQuality")}} object for the currently played video.
-- {{domxref("AudioTrack.sourceBuffer")}}, {{domxref("VideoTrack.sourceBuffer")}}, {{domxref("TextTrack.sourceBuffer")}}
-  - : Returns the {{domxref("SourceBuffer")}} that created the track in question.
+  - : یک شیء {{domxref("VideoPlaybackQuality")}} را برای ویدئوی در حال پخش بازمی‌گرداند.
+- {{domxref("AudioTrack.sourceBuffer")}}، {{domxref("VideoTrack.sourceBuffer")}}، {{domxref("TextTrack.sourceBuffer")}}
+  - : {{domxref("SourceBuffer")}}ای که آهنگ مورد نظر را ایجاد کرده است را بازمی‌گرداند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
-- [Transcoding assets for Media Source Extensions](/en-US/docs/Web/API/Media_Source_Extensions_API/Transcoding_assets_for_MSE)
-- Using MSE to create a basic streaming service (TBD)
-- Using MPEG DASH to create a streaming application (TBD)
-- The {{htmlelement("audio")}} and {{htmlelement("video")}} elements.
-- {{domxref("HTMLMediaElement")}}, {{domxref("HTMLVideoElement")}}, {{domxref("HTMLAudioElement")}}.
+- [تبدیل دارایی‌ها برای Media Source Extensions](/en-US/docs/Web/API/Media_Source_Extensions_API/Transcoding_assets_for_MSE)
+- استفاده از MSE برای ایجاد یک سرویس پخش جریانی پایه (در دست تهیه)
+- استفاده از MPEG DASH برای ایجاد یک برنامه پخش جریانی (در دست تهیه)
+- عناصر {{htmlelement("audio")}} و {{htmlelement("video")}}.
+- {{domxref("HTMLMediaElement")}}، {{domxref("HTMLVideoElement")}}، {{domxref("HTMLAudioElement")}}.
