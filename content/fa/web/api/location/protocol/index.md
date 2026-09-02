@@ -1,9 +1,4 @@
----
-title: "Location: protocol property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Location/protocol"
-status: "needs-translation"
----
-
+```markdown
 ---
 title: "Location: protocol property"
 short-title: protocol
@@ -14,17 +9,17 @@ browser-compat: api.Location.protocol
 
 {{ApiRef("Location")}}
 
-The **`protocol`** property of the {{domxref("Location")}} interface is a string containing the protocol or scheme of the location's URL, including the final `":"`.
+ویژگی **`protocol`** از رابط {{domxref("Location")}} یک رشته است که شامل پروتکل یا طرح (scheme) نشانی وب (URL) موقعیت مکانی، به همراه کاراکتر `":"` در انتها می‌باشد.
 
-This property can be set to change the protocol of the URL. A `":"` is appended to the provided string if not provided. The provided scheme has to be compatible with the rest of the URL to be considered valid.
+این ویژگی را می‌توان برای تغییر پروتکل نشانی وب تنظیم کرد. اگر رشتهٔ ارائه‌شده دارای `":"` نباشد، این کاراکتر به انتهای آن اضافه می‌شود. طرح ارائه‌شده باید با بقیهٔ نشانی وب سازگار باشد تا معتبر در نظر گرفته شود.
 
-See {{domxref("URL.protocol")}} for more information.
+برای اطلاعات بیشتر به {{domxref("URL.protocol")}} مراجعه کنید.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```js
 // Let's an <a id="myAnchor" href="https://developer.mozilla.org/en-US/Location.protocol"> element be in the document
@@ -32,10 +27,11 @@ const anchor = document.getElementById("myAnchor");
 const result = anchor.protocol; // Returns:'https:'
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
+```
