@@ -1,7 +1,5 @@
 ---
 title: "HTMLTitleElement: text property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTitleElement/text"
-status: "needs-translation"
 ---
 
 ---
@@ -14,17 +12,17 @@ browser-compat: api.HTMLTitleElement.text
 
 {{APIRef("HTML DOM")}}
 
-The **`text`** property of the {{domxref("HTMLTitleElement")}} interface represents the child text content of the document's title as a string. It contains the {{HTMLelement("title")}} element's content as text; if HTML tags are included within the `<title>` element, they are included as part of the string value rather than being parsed as HTML.
+ویژگی **`text`** در رابط {{domxref("HTMLTitleElement")}}، محتوای متنیِ فرزندِ عنوانِ سند را به‌صورت یک رشته نشان می‌دهد. این ویژگی محتوای عنصر {{HTMLelement("title")}} را به‌صورت متن در بر می‌گیرد؛ اگر برچسب‌های HTML درون عنصر `<title>` قرار داشته باشند، به‌جای آنکه به‌صورت HTML تجزیه شوند، به‌عنوان بخشی از مقدارِ رشته لحاظ می‌شوند.
 
-Setting a value for the `text` property replaces the entire text contents of the `<title>`.
+تنظیم یک مقدار برای ویژگی `text`، کل محتوای متنی عنصر `<title>` را جایگزین می‌کند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
-Consider the example below:
+مثال زیر را در نظر بگیرید:
 
 ```html
 <!doctype html>
@@ -44,12 +42,12 @@ console.log(title.text); // "Hello world! <span class="highlight">Isn't this won
 title.text = "Update the title";
 ```
 
-As you can see, the `span` tag remained unparsed; the `<title>` element's contents were treated as plain text and returned exactly as they appear in the `title` element.
+همانطور که می‌بینید، برچسب `span` بدون تجزیه باقی ماند؛ محتویات عنصر `<title>` به‌عنوان متن ساده در نظر گرفته شدند و دقیقاً به همان شکلی که در عنصر `title` ظاهر شده‌اند، بازگردانده شدند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
