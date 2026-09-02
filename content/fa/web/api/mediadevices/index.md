@@ -1,47 +1,41 @@
 ---
 title: "MediaDevices"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices"
-status: "needs-translation"
----
-
----
-title: MediaDevices
 slug: Web/API/MediaDevices
 page-type: web-api-interface
 browser-compat: api.MediaDevices
 ---
 
-{{APIRef("Media Capture and Streams")}}{{SecureContext_Header}}
+{{APIRef("Media Capture and Streams API")}}{{SecureContext_Header}}
 
-The **`MediaDevices`** interface of the {{domxref("Media Capture and Streams API", "", "", "nocode")}} provides access to connected media input devices like cameras and microphones, as well as screen sharing. In essence, it lets you obtain access to any hardware source of media data.
+رابط **`MediaDevices`** موجود در {{domxref("Media Capture and Streams API", "", "", "nocode")}} دسترسی به دستگاه‌های ورودی رسانه‌ای متصل مانند دوربین‌ها و میکروفون‌ها و همچنین اشتراک‌گذاری صفحه را فراهم می‌کند. به طور خلاصه، این رابط به شما امکان دسترسی به هر منبع سخت‌افزاری داده‌های رسانه‌ای را می‌دهد.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent interface, {{domxref("EventTarget")}}._
+_ویژگی‌های رابط والد خود، {{domxref("EventTarget")}} را به ارث می‌برد._
 
-## Instance methods
+## روش‌های نمونه
 
-_Inherits methods from its parent interface, {{domxref("EventTarget")}}._
+_روش‌های رابط والد خود، {{domxref("EventTarget")}} را به ارث می‌برد._
 
 - {{domxref("MediaDevices.enumerateDevices", "enumerateDevices()")}}
-  - : Obtains an array of information about the media input and output devices available on the system.
+  - : آرایه‌ای از اطلاعات مربوط به دستگاه‌های ورودی و خروجی رسانه‌ای موجود در سیستم را به دست می‌آورد.
 - {{domxref("MediaDevices.getSupportedConstraints", "getSupportedConstraints()")}}
-  - : Returns an object conforming to {{domxref("MediaTrackSupportedConstraints")}} indicating which constrainable properties are supported on the {{domxref("MediaStreamTrack")}} interface. See [Media Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints) to learn more about constraints and how to use them.
+  - : یک شیء منطبق با {{domxref("MediaTrackSupportedConstraints")}} برمی‌گرداند که نشان می‌دهد کدام ویژگی‌های قابل محدودیت در رابط {{domxref("MediaStreamTrack")}} پشتیبانی می‌شوند. برای اطلاعات بیشتر درباره محدودیت‌ها و نحوه استفاده از آن‌ها به [Media Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints) مراجعه کنید.
 - {{domxref("MediaDevices.getDisplayMedia", "getDisplayMedia()")}}
-  - : Prompts the user to select a display or portion of a display (such as a window) to capture as a {{domxref("MediaStream")}} for sharing or recording purposes. Returns a promise that resolves to a `MediaStream`.
+  - : از کاربر می‌خواهد یک صفحه نمایش یا بخشی از آن (مانند یک پنجره) را برای ضبط به عنوان {{domxref("MediaStream")}} برای اشتراک‌گذاری یا ضبط انتخاب کند. یک promise برمی‌گرداند که به یک `MediaStream` تبدیل می‌شود.
 - {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}}
-  - : With the user's permission through a prompt, turns on a camera and/or a microphone on the system and provides a {{domxref("MediaStream")}} containing a video track and/or an audio track with the input.
+  - : با اجازه کاربر از طریق یک پنجره درخواست، دوربین و/یا میکروفون سیستم را روشن کرده و یک {{domxref("MediaStream")}} شامل یک track ویدیویی و/یا یک track صوتی با ورودی ارائه می‌دهد.
 - {{domxref("MediaDevices.selectAudioOutput", "selectAudioOutput()") }} {{Experimental_Inline}}
-  - : Prompts the user to select a specific audio output device.
+  - : از کاربر می‌خواهد یک دستگاه خروجی صوتی خاص را انتخاب کند.
 
-## Events
+## رویدادها
 
 - {{domxref("MediaDevices/devicechange_event", "devicechange")}}
-  - : Fired when a media input or output device is attached to or removed from the user's computer.
+  - : هنگامی که یک دستگاه ورودی یا خروجی رسانه‌ای به رایانه کاربر متصل یا از آن جدا می‌شود، فعال می‌گردد.
 
-## Example
+## مثال
 
 ```js
 // Put variables in global scope to make them available to the browser console.
@@ -77,19 +71,19 @@ navigator.mediaDevices
   });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API): The API this interface is part of.
-- [Screen Capture API](/en-US/docs/Web/API/Screen_Capture_API): The API defining the {{domxref("MediaDevices.getDisplayMedia", "getDisplayMedia()")}} method.
+- [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API): APIای که این رابط بخشی از آن است.
+- [Screen Capture API](/en-US/docs/Web/API/Screen_Capture_API): APIای که روش {{domxref("MediaDevices.getDisplayMedia", "getDisplayMedia()")}} را تعریف می‌کند.
 - [WebRTC API](/en-US/docs/Web/API/WebRTC_API)
-- {{domxref("Navigator.mediaDevices")}}: Returns a reference to a `MediaDevices` object that can be used to access devices.
-- [CameraCaptureJS:](https://github.com/chrisjohndigital/CameraCaptureJS) HTML video capture and playback using `MediaDevices` and the MediaStream Recording API
-- [OpenLang](https://github.com/chrisjohndigital/OpenLang): HTML video language lab web application using `MediaDevices` and the MediaStream Recording API for video recording
+- {{domxref("Navigator.mediaDevices")}}: یک ارجاع به یک شیء `MediaDevices` برمی‌گرداند که می‌توان از آن برای دسترسی به دستگاه‌ها استفاده کرد.
+- [CameraCaptureJS](https://github.com/chrisjohndigital/CameraCaptureJS): ضبط و پخش ویدیوی HTML با استفاده از `MediaDevices` و MediaStream Recording API
+- [OpenLang](https://github.com/chrisjohndigital/OpenLang): برنامه وب آزمایشگاه زبان ویدیویی HTML با استفاده از `MediaDevices` و MediaStream Recording API برای ضبط ویدیو
