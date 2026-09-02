@@ -1,7 +1,5 @@
 ---
 title: "KeyboardLayoutMap: values() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/KeyboardLayoutMap/values"
-status: "needs-translation"
 ---
 
 ---
@@ -17,27 +15,27 @@ spec-urls: https://tc39.es/ecma262/multipage/keyed-collections.html#sec-map.prot
 
 {{SeeCompatTable}}{{APIRef("Keyboard API")}}
 
-The **`values()`** method of the {{domxref("KeyboardLayoutMap")}} interface returns a new [Iterator](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator) object that contains the values for each index in the `KeyboardLayoutMap` object.
+متد **`values()`** از رابط {{domxref("KeyboardLayoutMap")}} یک شیء [Iterator](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator) جدید برمی‌گرداند که شامل مقادیر مربوط به هر اندیس در شیء `KeyboardLayoutMap` است.
 
-The method is otherwise the same as {{jsxref("Map.prototype.values()")}}.
+این متد از هر نظر مشابه {{jsxref("Map.prototype.values()")}} است.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 values()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A new [Iterator](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator) object.
+یک شیء [Iterator](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator) جدید.
 
-## Examples
+## مثال‌ها
 
-The following example iterates every location- or layout-specific string on an English QWERTY keyboard.
+مثال زیر همه‌ی رشته‌های مختص موقعیت یا چیدمان را روی یک صفحه‌کلید انگلیسی QWERTY پیمایش می‌کند.
 
 ```js
 navigator.keyboard.getLayoutMap().then((keyboardLayoutMap) => {
@@ -47,14 +45,14 @@ navigator.keyboard.getLayoutMap().then((keyboardLayoutMap) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{jsxref("Map.prototype.values()")}}
