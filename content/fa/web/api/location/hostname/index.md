@@ -1,11 +1,5 @@
 ---
 title: "Location: hostname property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Location/hostname"
-status: "needs-translation"
----
-
----
-title: "Location: hostname property"
 short-title: hostname
 slug: Web/API/Location/hostname
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.Location.hostname
 
 {{ApiRef("URL API")}}
 
-The **`hostname`** property of the {{domxref("Location")}} interface is a string containing either the {{glossary("domain name")}} or {{glossary("IP address")}} of the location URL. If the URL does not have a hostname, this property contains an empty string, `""`. IPv4 and IPv6 addresses are normalized, such as stripping leading zeros, and domain names are converted to [IDN](https://en.wikipedia.org/wiki/Internationalized_domain_name).
+ویژگی **`hostname`** در رابط {{domxref("Location")}} یک رشته است که شامل {{glossary("domain name", "نام دامنه")}} یا {{glossary("IP address", "نشانی IP")}} نشانی اینترنتی (URL) می‌باشد. اگر نشانی اینترنتی میزبان (hostname) نداشته باشد، این ویژگی حاوی رشته خالی `""` خواهد بود. نشانی‌های IPv4 و IPv6 نرمال‌سازی می‌شوند، به عنوان مثال صفرهای ابتدایی حذف می‌شوند، و نام دامنه‌ها به [IDN](https://en.wikipedia.org/wiki/Internationalized_domain_name) تبدیل می‌شوند.
 
-See {{domxref("URL.hostname")}} for more information.
+برای اطلاعات بیشتر به {{domxref("URL.hostname")}} مراجعه کنید.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```js
 console.log(window.location.hostname);
@@ -31,13 +25,13 @@ console.log(window.location.hostname);
 const anchor = document.createElement("a");
 anchor.href = "https://developer.mozilla.org:4097/";
 console.log(anchor.hostname === "developer.mozilla.org");
-// The port number is not included in hostname
+// شماره پورت در hostname لحاظ نمی‌شود
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
