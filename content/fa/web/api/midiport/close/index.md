@@ -1,11 +1,5 @@
 ---
 title: "MIDIPort: close() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MIDIPort/close"
-status: "needs-translation"
----
-
----
-title: "MIDIPort: close() method"
 short-title: close()
 slug: Web/API/MIDIPort/close
 page-type: web-api-instance-method
@@ -14,37 +8,37 @@ browser-compat: api.MIDIPort.close
 
 {{securecontext_header}}{{APIRef("Web MIDI API")}}
 
-The **`close()`** method of the {{domxref("MIDIPort")}} interface makes the access to the MIDI device connected to this `MIDIPort` unavailable.
+متد **`close()`** در رابط {{domxref("MIDIPort")}} دسترسی به دستگاه MIDI متصل به این `MIDIPort` را غیرفعال می‌کند.
 
-If the port is successfully closed a new {{domxref("MIDIConnectionEvent")}} is queued to the `MIDIPort` {{domxref("MIDIPort.statechange_event", "statechange")}} and `MIDIAccess` {{domxref("MIDIAccess.statechange_event", "statechange")}} events, and the {{domxref("MIDIPort.connection")}} property is changed to `"closed"`.
+اگر پورت با موفقیت بسته شود، یک {{domxref("MIDIConnectionEvent")}} جدید برای رویدادهای {{domxref("MIDIPort.statechange_event", "statechange")}} مربوط به `MIDIPort` و {{domxref("MIDIAccess.statechange_event", "statechange")}} مربوط به `MIDIAccess` در صف قرار می‌گیرد و ویژگی {{domxref("MIDIPort.connection")}} به `"closed"` تغییر می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 close()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-Returns a {{jsxref("Promise")}} which resolves once the port has been closed.
+یک {{jsxref("Promise")}} برمی‌گرداند که پس از بسته شدن پورت resolved می‌شود.
 
-## Examples
+## مثال‌ها
 
-The following example shows an output port being closed.
+مثال زیر بسته شدن یک پورت خروجی را نشان می‌دهد.
 
 ```js
 let output = midiAccess.outputs.get(portID);
 output.close(); // closes the port
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
