@@ -1,11 +1,5 @@
 ---
-title: "MediaStream: removetrack event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaStream/removetrack_event"
-status: "needs-translation"
----
-
----
-title: "MediaStream: removetrack event"
+title: "MediaStream: رویداد removetrack"
 short-title: removetrack
 slug: Web/API/MediaStream/removetrack_event
 page-type: web-api-event
@@ -14,13 +8,13 @@ browser-compat: api.MediaStream.removetrack_event
 
 {{APIRef("Media Capture and Streams")}}
 
-The **`removetrack`** event is fired when a new {{domxref("MediaStreamTrack")}} object has been removed from a {{domxref("MediaStream")}}.
+رویداد **`removetrack`** زمانی فعال می‌شود که یک شیء {{domxref("MediaStreamTrack")}} جدید از یک {{domxref("MediaStream")}} حذف شده باشد.
 
-This event is not cancelable and does not bubble.
+این رویداد قابل لغو نیست و به عناصر بالاتر منتقل نمی‌شود (bubble نمی‌کند).
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای استفاده از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}}، یا تنظیم یک ویژگی رویدادگردان (event handler property) می‌توانید به صورت زیر عمل کنید:
 
 ```js-nolint
 addEventListener("removetrack", (event) => { })
@@ -28,15 +22,15 @@ addEventListener("removetrack", (event) => { })
 onremovetrack = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("MediaStreamTrackEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("MediaStreamTrackEvent")}} که از {{domxref("Event")}} به ارث برده است.
 
 {{InheritanceDiagram("MediaStreamTrackEvent")}}
 
-## Examples
+## مثال‌ها
 
-Using `addEventListener()`:
+استفاده از `addEventListener()`:
 
 ```js
 const stream = new MediaStream();
@@ -46,7 +40,7 @@ stream.addEventListener("removetrack", (event) => {
 });
 ```
 
-Using the `onremovetrack` event handler property:
+استفاده از ویژگی رویدادگردان `onremovetrack`:
 
 ```js
 const stream = new MediaStream();
@@ -56,18 +50,18 @@ stream.onremovetrack = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- Related events: [`addtrack`](/en-US/docs/Web/API/MediaStream/addtrack_event)
-- This event on [`AudioTrackList`](/en-US/docs/Web/API/AudioTrackList) targets: [`removetrack`](/en-US/docs/Web/API/AudioTrackList/removetrack_event)
-- This event on [`VideoTrackList`](/en-US/docs/Web/API/VideoTrackList) targets: [`removetrack`](/en-US/docs/Web/API/VideoTrackList/removetrack_event)
-- [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
+- رویداد مرتبط: [`addtrack`](/en-US/docs/Web/API/MediaStream/addtrack_event)
+- این رویداد در اهداف [`AudioTrackList`](/en-US/docs/Web/API/AudioTrackList): [`removetrack`](/en-US/docs/Web/API/AudioTrackList/removetrack_event)
+- این رویداد در اهداف [`VideoTrackList`](/en-US/docs/Web/API/VideoTrackList): [`removetrack`](/en-US/docs/Web/API/VideoTrackList/removetrack_event)
+- [API Media Capture and Streams](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
 - [WebRTC](/en-US/docs/Web/API/WebRTC_API)
