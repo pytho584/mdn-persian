@@ -1,11 +1,5 @@
 ---
 title: "IDBCursor: continue() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBCursor/continue"
-status: "needs-translation"
----
-
----
-title: "IDBCursor: continue() method"
 short-title: continue()
 slug: Web/API/IDBCursor/continue
 page-type: web-api-instance-method
@@ -14,49 +8,41 @@ browser-compat: api.IDBCursor.continue
 
 {{APIRef("IndexedDB")}} {{AvailableInWorkers}}
 
-The **`continue()`** method of the {{domxref("IDBCursor")}}
-interface advances the cursor to the next position along its direction, to the item
-whose key matches the optional key parameter. If no key is specified, the cursor
-advances to the immediate next position, based on its direction.
+متد **`continue()`** از رابط {{domxref("IDBCursor")}} مکان‌نما را در امتداد جهت حرکت خود به موقعیت بعدی می‌برد؛ یعنی به آیتمی که کلیدش با پارامتر اختیاری `key` مطابقت دارد. اگر کلیدی مشخص نشود، مکان‌نما بر اساس جهت خود به موقعیت بلافاصله بعدی می‌رود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 continue()
 continue(key)
 ```
 
-### Parameters
+### پارامترها
 
 - `key` {{optional_inline}}
-  - : The key to position the cursor at.
+  - : کلیدی که مکان‌نما باید در آن قرار گیرد.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
-This method may raise a {{domxref("DOMException")}} of one of the following types:
+این متد ممکن است یک {{domxref("DOMException")}} از انواع زیر ایجاد کند:
 
 - `TransactionInactiveError` {{domxref("DOMException")}}
-  - : Thrown if this `IDBCursor`'s transaction is inactive.
+  - : اگر تراکنش این `IDBCursor` غیرفعال باشد پرتاب می‌شود.
 - `DataError` {{domxref("DOMException")}}
-  - : Thrown if the key parameter has any of the following conditions:
-    - The key is not a valid key.
-    - The key is less than or equal to this cursor's position, and the cursor's direction is `next` or `nextunique`.
-    - The key is greater than or equal to this cursor's position and this cursor's direction is `prev` or `prevunique`.
+  - : اگر پارامتر `key` هر یک از شرایط زیر را داشته باشد پرتاب می‌شود:
+    - کلید معتبر نباشد.
+    - کلید کمتر یا مساوی موقعیت فعلی مکان‌نما باشد و جهت مکان‌نما `next` یا `nextunique` باشد.
+    - کلید بزرگ‌تر یا مساوی موقعیت فعلی مکان‌نما باشد و جهت مکان‌نما `prev` یا `prevunique` باشد.
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the cursor is currently being iterated or has iterated past its end.
+  - : اگر مکان‌نما در حال پیمایش باشد یا از انتهای خود گذشته باشد پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-In this simple fragment we create a transaction, retrieve an object store, then use a
-cursor to iterate through all the records in the object store. The cursor does not
-require us to select the data based on a key; we can just grab all of it. Also note that
-in each iteration of the loop, you can grab data from the current record under the
-cursor object using `cursor.value.foo`. For a complete working example, see
-our [IDBCursor example](https://github.com/mdn/dom-examples/tree/main/indexeddb-examples/idbcursor) ([View the example live](https://mdn.github.io/dom-examples/indexeddb-examples/idbcursor/)).
+در این قطعه ساده، یک تراکنش می‌سازیم، یک object store (فضای ذخیره‌سازی اشیاء) بازیابی می‌کنیم و سپس با استفاده از یک مکان‌نما تمام رکوردهای موجود در object store را پیمایش می‌کنیم. مکان‌نما نیازی ندارد که داده‌ها را بر اساس کلید انتخاب کنیم؛ می‌توانیم همه آن‌ها را برداریم. همچنین توجه داشته باشید که در هر تکرار حلقه، می‌توانید داده‌های رکورد فعلی زیر شیء مکان‌نما را با استفاده از `cursor.value.foo` دریافت کنید. برای یک مثال کامل و قابل اجرا، به [نمونه IDBCursor](https://github.com/mdn/dom-examples/tree/main/indexeddb-examples/idbcursor) مراجعه کنید ([مشاهده مثال به‌صورت زنده](https://mdn.github.io/dom-examples/indexeddb-examples/idbcursor/)).
 
 ```js
 function displayData() {
@@ -78,20 +64,20 @@ function displayData() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم محدوده کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و ایجاد تغییرات در داده‌ها: {{domxref("IDBObjectStore")}}
+- استفاده از مکان‌نماها: {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهده مثال به‌صورت زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
