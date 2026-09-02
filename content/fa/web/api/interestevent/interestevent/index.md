@@ -1,11 +1,5 @@
 ---
 title: "InterestEvent: InterestEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/InterestEvent/InterestEvent"
-status: "needs-translation"
----
-
----
-title: "InterestEvent: InterestEvent() constructor"
 short-title: InterestEvent()
 slug: Web/API/InterestEvent/InterestEvent
 page-type: web-api-constructor
@@ -17,38 +11,38 @@ browser-compat: api.InterestEvent.InterestEvent
 
 {{APIRef("Popover API")}}{{SeeCompatTable}}{{non-standard_header}}
 
-The **`InterestEvent()`** constructor creates a new {{domxref("InterestEvent")}} object.
+سازندهٔ **`InterestEvent()`** یک شیء جدید از نوع {{domxref("InterestEvent")}} می‌سازد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 new InterestEvent(type, init)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string representing the type of event. For `InterestEvent`, this is always `interest` or `loseinterest`.
+  - : یک رشته (string) که نوع رویداد را مشخص می‌کند. برای `InterestEvent`، این مقدار همیشه `interest` یا `loseinterest` است.
 - `init` {{optional_inline}}
-  - : An object containing the following property:
+  - : یک شیء که شامل ویژگی زیر است:
     - `source` {{optional_inline}}
-      - : An {{domxref("Element")}} representing the interest invoker element on which interest was shown or lost.
+      - : یک {{domxref("Element")}} که نشان‌دهندهٔ عنصر فراخوان‌کنندهٔ علاقه (interest invoker element) است که علاقه روی آن نشان داده یا از دست رفته است.
 
-## Examples
+## مثال‌ها
 
-Normally, you would not use this constructor manually. A new `InterestEvent` object is constructed when a handler is invoked as a result of a relevant event firing.
+به طور معمول، شما از این سازنده به صورت دستی استفاده نمی‌کنید. یک شیء جدید `InterestEvent` زمانی ساخته می‌شود که یک handler در نتیجهٔ فعال شدن یک رویداد مرتبط فراخوانی شود.
 
-See the [Using interest invokers](/en-US/docs/Web/API/Popover_API/Using_interest_invokers) guide and the {{domxref("HTMLElement.interest_event", "interest")}} event reference page for examples.
+برای مثال‌ها، به راهنمای [استفاده از فراخوان‌کننده‌های علاقه (interest invokers)](/en-US/docs/Web/API/Popover_API/Using_interest_invokers) و صفحهٔ مرجع رویداد {{domxref("HTMLElement.interest_event", "interest")}} مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Popover API](/en-US/docs/Web/API/Popover_API)
-- [Using interest invokers](/en-US/docs/Web/API/Popover_API/Using_interest_invokers)
+- [API Popover](/en-US/docs/Web/API/Popover_API)
+- [استفاده از فراخوان‌کننده‌های علاقه (interest invokers)](/en-US/docs/Web/API/Popover_API/Using_interest_invokers)
