@@ -1,11 +1,5 @@
 ---
 title: "KeyboardEvent: ctrlKey property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/ctrlKey"
-status: "needs-translation"
----
-
----
-title: "KeyboardEvent: ctrlKey property"
 short-title: ctrlKey
 slug: Web/API/KeyboardEvent/ctrlKey
 page-type: web-api-instance-property
@@ -14,15 +8,13 @@ browser-compat: api.KeyboardEvent.ctrlKey
 
 {{APIRef("UI Events")}}
 
-The **`KeyboardEvent.ctrlKey`** read-only property returns a
-boolean value that indicates if the <kbd>control</kbd> key was pressed
-(`true`) or not (`false`) when the event occurred.
+ویژگی فقطخواندنی **`KeyboardEvent.ctrlKey`** یک مقدار بولی برمی‌گرداند که نشان می‌دهد آیا کلید <kbd>control</kbd> هنگام وقوع رویداد فشرده شده بود (`true`) یا نه (`false`).
 
-## Value
+## مقدار
 
-A boolean value.
+یک مقدار بولی.
 
-## Examples
+## مثال‌ها
 
 ```html
 <p>
@@ -46,14 +38,14 @@ document.addEventListener("keydown", showChar);
 
 {{EmbedLiveSample("examples", "", "400")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{ domxref("KeyboardEvent") }}
