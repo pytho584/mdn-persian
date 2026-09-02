@@ -1,11 +1,5 @@
 ---
 title: "LanguageDetector: availability() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/LanguageDetector/availability_static"
-status: "needs-translation"
----
-
----
-title: "LanguageDetector: availability() static method"
 short-title: availability()
 slug: Web/API/LanguageDetector/availability_static
 page-type: web-api-static-method
@@ -16,54 +10,54 @@ browser-compat: api.LanguageDetector.availability_static
 
 {{APIRef("Translator and Language Detector APIs")}}{{SeeCompatTable}}{{securecontext_header}}
 
-The **`availability()`** static method of the {{domxref("LanguageDetector")}} interface returns an enumerated value that indicates whether the browser AI model supports a given `LanguageDetector` configuration.
+متد ایستای **`availability()`** از رابط {{domxref("LanguageDetector")}} یک مقدار شمارشی برمی‌گرداند که نشان می‌دهد آیا مدل هوش مصنوعی مرورگر از پیکربندی مشخصی از `LanguageDetector` پشتیبانی می‌کند یا نه.
 
-## Syntax
+## نحو
 
 ```js-nolint
 LanguageDetector.availability(options)
 ```
 
-### Parameters
+### پارامترها
 
 - `options`
-  - : An object specifying configuration options for the `LanguageDetector`. Possible values include:
+  - : شیئی که گزینه‌های پیکربندی را برای `LanguageDetector` مشخص می‌کند. مقادیر ممکن شامل موارد زیر هستند:
     - `expectedInputLanguages`
-      - : An array of strings specifying the expected languages of the input text to have its language detected. These should be valid {{glossary("BCP 47 language tag", "BCP 47 language tags")}}. Defaults to `["en"]`
+      - : آرایه‌ای از رشته‌ها که زبان‌های مورد انتظار متن ورودی را برای تشخیص زبان مشخص می‌کند. این‌ها باید {{glossary("BCP 47 language tag", "BCP 47 language tags")}} معتبر باشند. پیش‌فرض `["en"]` است.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that fulfills with an enumerated value indicating whether support is available (or will be available) for a given `LanguageDetector` configuration, or `null` if support could not be determined.
+یک {{jsxref("Promise")}} که با یک مقدار شمارشی تکمیل می‌شود که نشان می‌دهد آیا پشتیبانی برای یک پیکربندی مشخص از `LanguageDetector` موجود است (یا در آینده موجود خواهد بود)، یا اگر نتوان پشتیبانی را تعیین کرد، با `null` تکمیل می‌شود.
 
-Possible values include:
+مقادیر ممکن عبارت‌اند از:
 
 - `available`
-  - : The browser supports the given configuration and it can be used immediately.
+  - : مرورگر از پیکربندی داده‌شده پشتیبانی می‌کند و می‌توان بلافاصله از آن استفاده کرد.
 - `downloadable`
-  - : The browser supports the given configuration, but it first needs to download an AI model, or some fine-tuning data for the model.
+  - : مرورگر از پیکربندی داده‌شده پشتیبانی می‌کند، اما ابتدا باید یک مدل هوش مصنوعی، یا برخی داده‌های تنظیم دقیق (fine-tuning) برای مدل دانلود کند.
 - `downloading`
-  - : The browser supports the given configuration, but it has to finish an ongoing download before it can proceed.
+  - : مرورگر از پیکربندی داده‌شده پشتیبانی می‌کند، اما باید دانلود در حال انجام را قبل از ادامه به پایان برساند.
 - `unavailable`
-  - : The browser does not support the given configuration, or the Language Detector API is blocked by a {{httpheader('Permissions-Policy/language-detector','language-detector')}} {{httpheader("Permissions-Policy")}}.
+  - : مرورگر از پیکربندی داده‌شده پشتیبانی نمی‌کند، یا API تشخیص زبان توسط {{httpheader('Permissions-Policy/language-detector','language-detector')}} {{httpheader("Permissions-Policy")}} مسدود شده است.
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the page's {{domxref("Document")}} is not yet active.
+  - : اگر {{domxref("Document")}} صفحه هنوز فعال نباشد، پرتاب می‌شود.
 - `OperationError` {{domxref("DOMException")}}
-  - : Thrown if initialization of the AI model failed for any reason.
+  - : اگر مقداردهی اولیه مدل هوش مصنوعی به هر دلیلی شکست بخورد، پرتاب می‌شود.
 - `UnknownError` {{domxref("DOMException")}}
-  - : Thrown if the `availability()` call failed for any other reason, or a reason the user agent did not wish to disclose.
+  - : اگر فراخوانی `availability()` به هر دلیل دیگری، یا دلیلی که عامل کاربر (user agent) مایل به افشای آن نبود، ناموفق باشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Basic `availability()` usage
+### استفاده پایه از `availability()`
 
-In the following snippet, we start by checking the availability of the model for detecting a couple of languages using the `availability()` method:
+در قطعه کد زیر، ابتدا با استفاده از متد `availability()` در دسترس بودن مدل را برای تشخیص چند زبان بررسی می‌کنیم:
 
-- If it returns `unavailable`, we print an appropriate error message to the console.
-- If it returns `available`, we create a language detector using the {{domxref("LanguageDetector.create_static", "create()")}} method, passing it the `expectedInputLanguages`. The required AI model is available, so we can use it immediately.
-- If it returns a different value (that is, `downloadable` or `downloading`), we run the same `create()` method call, but this time we include a `monitor` that logs the percentage of the model downloaded each time the {{domxref("CreateMonitor/downloadprogress_event", "downloadprogress")}} event fires.
+- اگر مقدار `unavailable` برگردد، یک پیام خطای مناسب در کنسول چاپ می‌کنیم.
+- اگر مقدار `available` برگردد، با استفاده از متد {{domxref("LanguageDetector.create_static", "create()")}} یک تشخیص‌دهنده زبان می‌سازیم و `expectedInputLanguages` را به آن پاس می‌دهیم. مدل هوش مصنوعی مورد نیاز در دسترس است، بنابراین می‌توانیم بلافاصله از آن استفاده کنیم.
+- اگر مقدار دیگری برگردد (یعنی `downloadable` یا `downloading`)، همان فراخوانی متد `create()` را اجرا می‌کنیم، اما این بار یک `monitor` نیز اضافه می‌کنیم که درصد دانلود مدل را هر بار که رویداد {{domxref("CreateMonitor/downloadprogress_event", "downloadprogress")}} رخ می‌دهد، ثبت می‌کند.
 
 ```js
 async function getDetector(languages) {
@@ -91,7 +85,7 @@ async function getDetector(languages) {
 const detector = await getDetector(["en-US", "zh"]);
 ```
 
-### Detecting language support
+### تشخیص پشتیبانی از زبان
 
 ```js
 async function langSupport(language) {
@@ -106,14 +100,14 @@ await langSupport("pt");
 await langSupport("zh");
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Translator and Language Detector APIs](/en-US/docs/Web/API/Translator_and_Language_Detector_APIs/Using)
+- [استفاده از APIهای مترجم و تشخیص زبان](/en-US/docs/Web/API/Translator_and_Language_Detector_APIs/Using)
