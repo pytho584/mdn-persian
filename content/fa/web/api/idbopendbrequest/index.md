@@ -1,7 +1,5 @@
 ---
 title: "IDBOpenDBRequest"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBOpenDBRequest"
-status: "needs-translation"
 ---
 
 ---
@@ -13,34 +11,34 @@ browser-compat: api.IDBOpenDBRequest
 
 {{APIRef("IndexedDB")}} {{AvailableInWorkers}}
 
-The **`IDBOpenDBRequest`** interface of the IndexedDB API provides access to the results of requests to open or delete databases (performed using {{domxref("IDBFactory.open")}} and {{domxref("IDBFactory.deleteDatabase")}}), using specific event handler attributes.
+رابط **`IDBOpenDBRequest`** در API IndexedDB، دسترسی به نتایج درخواست‌های باز کردن یا حذف پایگاه داده را از طریق ویژگی‌های مخصوص رویدادگردان فراهم می‌کند (این درخواست‌ها با استفاده از {{domxref("IDBFactory.open")}} و {{domxref("IDBFactory.deleteDatabase")}} انجام می‌شوند).
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Also inherits properties from its parents {{domxref("IDBRequest")}} and {{domxref("EventTarget")}}_.
+_همچنین ویژگی‌های والدهای خود، {{domxref("IDBRequest")}} و {{domxref("EventTarget")}} را به ارث می‌برد._
 
-## Instance methods
+## متدهای نمونه
 
-_No methods, but inherits methods from its parents {{domxref("IDBRequest")}} and {{domxref("EventTarget")}}._
+_متدی ندارد، اما متدهای والدهای خود، {{domxref("IDBRequest")}} و {{domxref("EventTarget")}} را به ارث می‌برد._
 
-## Events
+## رویدادها
 
-_Events defined on parent interfaces, {{DOMxRef("IDBRequest")}} and {{DOMxRef("EventTarget")}}, can also be dispatched on `IDBOpenDBRequest` objects._
+_رویدادهایی که در رابط‌های والد، {{DOMxRef("IDBRequest")}} و {{DOMxRef("EventTarget")}} تعریف شده‌اند، می‌توانند روی اشیاء `IDBOpenDBRequest` نیز ارسال شوند._
 
-Listen to these generic and specific events using `addEventListener()` or by assigning an event listener to the `oneventname` property of this interface.
+برای گوش دادن به این رویدادهای عمومی و اختصاصی، از `addEventListener()` استفاده کنید یا یک شنوندهٔ رویداد را به ویژگی `oneventname` این رابط اختصاص دهید.
 
-Events specific to this interface are:
+رویدادهای مختص این رابط عبارت‌اند از:
 
 - [`blocked`](/en-US/docs/Web/API/IDBOpenDBRequest/blocked_event)
-  - : Fired when an open connection to a database is blocking a `versionchange` transaction on the same database. Also available via the [`onblocked`](/en-US/docs/Web/API/IDBOpenDBRequest/blocked_event) property.
+  - : زمانی رخ می‌دهد که یک اتصال باز به یک پایگاه داده، تراکنش `versionchange` روی همان پایگاه داده را مسدود کرده باشد. همچنین از طریق ویژگی [`onblocked`](/en-US/docs/Web/API/IDBOpenDBRequest/blocked_event) در دسترس است.
 - [`upgradeneeded`](/en-US/docs/Web/API/IDBOpenDBRequest/upgradeneeded_event)
-  - : Fired when an attempt was made to open a database with a version number higher than its current version. Also available via the [`onupgradeneeded`](/en-US/docs/Web/API/IDBOpenDBRequest/upgradeneeded_event) property.
+  - : زمانی رخ می‌دهد که تلاشی برای باز کردن یک پایگاه داده با شماره نسخه‌ای بالاتر از نسخه فعلی آن انجام شود. همچنین از طریق ویژگی [`onupgradeneeded`](/en-US/docs/Web/API/IDBOpenDBRequest/upgradeneeded_event) در دسترس است.
 
-## Example
+## مثال
 
-In the following example you can see the onupgradeneeded handler being used to update the database structure if a database with a higher version number is loaded. For a full working example, see our [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) app ([view example live](https://mdn.github.io/dom-examples/to-do-notifications/).)
+در مثال زیر، می‌بینید که از گردانندهٔ رویداد onupgradeneeded برای به‌روزرسانی ساختار پایگاه داده استفاده می‌شود، در صورتی که پایگاه داده‌ای با شماره نسخه بالاتر بارگذاری شود. برای مشاهده یک مثال کامل و قابل اجرا، به برنامه [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) مراجعه کنید ([مشاهده مثال به‌صورت زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
 
 ```js
 let db;
@@ -96,20 +94,20 @@ DBOpenRequest.onupgradeneeded = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم بازه‌ای از کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و ایجاد تغییرات در داده‌ها: {{domxref("IDBObjectStore")}}
+- استفاده از نشانگرها: {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهده نسخه زنده مثال](https://mdn.github.io/dom-examples/to-do-notifications/)).
