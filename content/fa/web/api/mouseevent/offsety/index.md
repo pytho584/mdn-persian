@@ -1,7 +1,5 @@
 ---
 title: "MouseEvent: offsetY property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/offsetY"
-status: "needs-translation"
 ---
 
 ---
@@ -14,23 +12,23 @@ browser-compat: api.MouseEvent.offsetY
 
 {{APIRef("Pointer Events")}}
 
-The **`offsetY`** read-only property of the {{domxref("MouseEvent")}} interface provides the offset in the Y coordinate of the mouse pointer between that event and the padding edge of the target node.
+خصوصیت فقط‌خواندنی **`offsetY`** از رابط {{domxref("MouseEvent")}}، میزان انحراف مختصات Y اشاره‌گر ماوس را در آن رویداد، نسبت به لبهٔ padding گره هدف، ارائه می‌دهد.
 
-## Value
+## مقدار
 
-A `double` floating point value in pixels.
+یک مقدار ممیز شناور (floating point) از نوع `double` بر حسب پیکسل.
 
-Early versions of the spec defined this as an integer.
+نسخه‌های اولیهٔ مشخصات (spec)، این مقدار را به‌صورت عدد صحیح (integer) تعریف کرده بودند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{ domxref("MouseEvent") }}
-- [Coordinate systems](/en-US/docs/Web/API/CSSOM_view_API/Coordinate_systems)
+- [سیستم‌های مختصات](/en-US/docs/Web/API/CSSOM_view_API/Coordinate_systems)
