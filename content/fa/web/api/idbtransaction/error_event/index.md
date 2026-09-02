@@ -1,11 +1,5 @@
 ---
 title: "IDBTransaction: error event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction/error_event"
-status: "needs-translation"
----
-
----
-title: "IDBTransaction: error event"
 short-title: error
 slug: Web/API/IDBTransaction/error_event
 page-type: web-api-event
@@ -14,14 +8,14 @@ browser-compat: api.IDBTransaction.error_event
 
 {{ APIRef("IndexedDB") }}
 
-The `error` event is fired on `IDBTransaction` when a request returns an error and the event bubbles up to the transaction object.
+رویداد `error` روی `IDBTransaction` زمانی شلیک می‌شود که یک درخواست خطا بازگرداند و رویداد به سمت شیء تراکنش حباب کند.
 
 > [!NOTE]
-> To handle all the ways a transaction can fail, consider listening for the {{domxref("IDBTransaction.abort_event", "abort")}} event instead.
+> برای مدیریت تمام راه‌هایی که یک تراکنش ممکن است شکست بخورد، بهتر است به جای آن به رویداد {{domxref("IDBTransaction.abort_event", "abort")}} گوش دهید.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("error", (event) => { })
@@ -29,19 +23,19 @@ addEventListener("error", (event) => { })
 onerror = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Bubbling
+## حباب
 
-This event bubbles to {{domxref("IDBDatabase")}}. The `event.target` property refers to the {{domxref('IDBTransaction')}} object that bubbles up.
+این رویداد به سمت {{domxref("IDBDatabase")}} حباب می‌کند. ویژگی `event.target` به شیء {{domxref('IDBTransaction')}} که در حال حباب است اشاره می‌کند.
 
-For more information, see [Event bubbling](/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling).
+برای اطلاعات بیشتر، [حباب رویداد](/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling) را ببینید.
 
-## Examples
+## مثال‌ها
 
-This example opens a database and tries to add a record, listening for the `error` event for the `add()` operation (this will occur if, for example, a record with the given `taskTitle` already exists):
+این مثال یک پایگاه داده باز می‌کند و سعی می‌کند یک رکورد اضافه کند، و به رویداد `error` برای عملیات `add()` گوش می‌دهد (این اتفاق می‌افتد اگر مثلاً یک رکورد با `taskTitle` داده شده از قبل وجود داشته باشد):
 
 ```js
 // Open the database
@@ -87,7 +81,7 @@ dBOpenRequest.onsuccess = (event) => {
 };
 ```
 
-The same example, using the `onerror` property instead of `addEventListener()`:
+همان مثال، با استفاده از ویژگی `onerror` به جای `addEventListener()`:
 
 ```js
 // Open the database
@@ -133,14 +127,14 @@ dBOpenRequest.onsuccess = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
