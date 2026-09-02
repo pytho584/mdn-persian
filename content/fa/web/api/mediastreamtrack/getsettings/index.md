@@ -1,11 +1,5 @@
 ---
 title: "MediaStreamTrack: getSettings() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/getSettings"
-status: "needs-translation"
----
-
----
-title: "MediaStreamTrack: getSettings() method"
 short-title: getSettings()
 slug: Web/API/MediaStreamTrack/getSettings
 page-type: web-api-instance-method
@@ -14,39 +8,31 @@ browser-compat: api.MediaStreamTrack.getSettings
 
 {{APIRef("Media Capture and Streams")}}
 
-The **`getSettings()`** method of the
-{{domxref("MediaStreamTrack")}} interface returns a {{domxref("MediaTrackSettings")}}
-object containing the current values of each of the constrainable properties for the
-current `MediaStreamTrack`.
+متد **`getSettings()`** در رابط {{domxref("MediaStreamTrack")}} یک شیء {{domxref("MediaTrackSettings")}} برمی‌گرداند که شامل مقادیر فعلی هر یک از ویژگی‌های قابل‌قید (constrainable) برای `MediaStreamTrack` جاری است.
 
-See [Capabilities, constraints, and settings](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints) for details on how to work with constrainable properties.
+برای جزئیات کار با ویژگی‌های قابل‌قید، به [قابلیت‌ها، قیدها و تنظیمات](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints) مراجعه کنید.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 getSettings()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("MediaTrackSettings")}} object describing the current configuration of the
-track's constrainable properties.
+یک شیء {{domxref("MediaTrackSettings")}} که پیکربندی فعلی ویژگی‌های قابل‌قیدِ مسیر (track) را توصیف می‌کند.
 
 > [!NOTE]
-> The returned object identifies the current values of every
-> constrainable property, including those which are platform defaults rather than having
-> been expressly set by the site's code. To instead fetch the most-recently established
-> constraints for the track's properties, as specified by the site's code, use
-> {{domxref("MediaStreamTrack.getConstraints", "getConstraints()")}}.
+> شیء بازگشتی مقادیر فعلی تمام ویژگی‌های قابل‌قید را مشخص می‌کند، از جمله آنهایی که مقادیر پیش‌فرض پلتفرم هستند و نه آنهایی که صریحاً توسط کد وب‌سایت تنظیم شده‌اند. برای دریافت آخرین قیدهای تعیین‌شده برای ویژگی‌های مسیر، به شکلی که توسط کد وب‌سایت مشخص شده است، از {{domxref("MediaStreamTrack.getConstraints", "getConstraints()")}} استفاده کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
