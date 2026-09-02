@@ -1,11 +1,5 @@
 ---
 title: "HTMLTrackElement: track property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTrackElement/track"
-status: "needs-translation"
----
-
----
-title: "HTMLTrackElement: track property"
 short-title: track
 slug: Web/API/HTMLTrackElement/track
 page-type: web-api-instance-property
@@ -14,28 +8,28 @@ browser-compat: api.HTMLTrackElement.track
 
 {{APIRef("HTML DOM")}}
 
-The **`track`** read-only property of the {{domxref("HTMLTrackElement")}} interface returns a {{DOMxRef("TextTrack")}} object corresponding to the text track of the {{HTMLElement("track")}} element.
+خاصیت فقط‑خواندنی **`track`** در رابط {{domxref("HTMLTrackElement")}} یک شیء {{DOMxRef("TextTrack")}} بازمی‌گرداند که متناظر با ره‌گیری متن (text track) عنصر {{HTMLElement("track")}} است.
 
-## Value
+## مقدار
 
-A {{DOMxRef("TextTrack")}} object.
+یک شیء {{DOMxRef("TextTrack")}}.
 
-## Example
+## مثال
 
 ```js
 const trackElement = document.getElementById("exampleTrack");
 console.dir(trackElement.track);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLTrackElement")}}
 - {{domxref("textTrack")}}
