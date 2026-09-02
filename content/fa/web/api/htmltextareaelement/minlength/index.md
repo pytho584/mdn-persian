@@ -1,11 +1,5 @@
 ---
 title: "HTMLTextAreaElement: minLength property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTextAreaElement/minLength"
-status: "needs-translation"
----
-
----
-title: "HTMLTextAreaElement: minLength property"
 short-title: minLength
 slug: Web/API/HTMLTextAreaElement/minLength
 page-type: web-api-instance-property
@@ -14,18 +8,17 @@ browser-compat: api.HTMLTextAreaElement.minLength
 
 {{ApiRef("HTML DOM")}}
 
-The **`minLength`** property of the {{domxref("HTMLTextAreaElement")}} interface indicates the minimum number of characters (in {{glossary("UTF-16", "UTF-16 code units")}}) required for the value of the {{HTMLElement("textarea")}} element to be valid. It reflects the element's [`minlength`](/en-US/docs/Web/HTML/Reference/Elements/textarea#minlength) attribute. `-1` means there is no minimum length requirement.
+ویژگی **`minLength`** از رابط {{domxref("HTMLTextAreaElement")}} حداقل تعداد کاراکترها (در {{glossary("UTF-16", "واحدهای کد UTF-16")}}) مورد نیاز برای معتبر بودن مقدار عنصر {{HTMLElement("textarea")}} را نشان می‌دهد. این ویژگی منعکس‌کنندهٔ ویژگی [`minlength`](/en-US/docs/Web/HTML/Reference/Elements/textarea#minlength) عنصر است. مقدار `1-` به معنای عدم وجود حداقل طول است.
 
-> [!NOTE]
-> If the textarea has a value, and that value has fewer characters than the `minlength` attribute requires, the element is considered invalid and the {{domxref("ValidityState")}} object's {{domxref("ValidityState.tooShort", "tooShort")}} property will be `true`.
+> **توجه:** اگر textarea مقداری داشته باشد و آن مقدار کاراکترهای کمتری از آنچه ویژگی `minlength` نیاز دارد داشته باشد، عنصر نامعتبر در نظر گرفته می‌شود و ویژگی {{domxref("ValidityState.tooShort", "tooShort")}} از شیء {{domxref("ValidityState")}} برابر با `true` خواهد بود.
 
-## Value
+## مقدار
 
-A number representing the element's `minlength` if present or `-1`.
+عددی که نشان‌دهندهٔ `minlength` عنصر در صورت وجود است، یا `1-`.
 
-## Example
+## مثال
 
-Given the following HTML:
+با توجه به HTML زیر:
 
 ```html
 <p>
@@ -34,7 +27,7 @@ Given the following HTML:
 </p>
 ```
 
-You can use the `minLength` property to retrieve or set the `<textarea>`'s `minlength` attribute value:
+می‌توانید از ویژگی `minLength` برای دریافت یا تنظیم مقدار ویژگی `minlength` عنصر `<textarea>` استفاده کنید:
 
 ```js
 const textareaElement = document.querySelector("#comment");
@@ -42,15 +35,15 @@ console.log(`Element's minLength: ${textareaElement.minLength}`); // "Element's 
 textareaElement.minLength = 5; // updates the element's minlength attribute value
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLTextAreaElement.value")}}
 - {{domxref("HTMLTextAreaElement.maxLength")}}
