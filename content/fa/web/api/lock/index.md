@@ -1,33 +1,23 @@
 ---
 title: "Lock"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Lock"
-status: "needs-translation"
----
-
----
-title: Lock
 slug: Web/API/Lock
 page-type: web-api-interface
 browser-compat: api.Lock
 ---
-
 {{APIRef("Web Locks API")}}{{securecontext_header}} {{AvailableInWorkers}}
 
-The **`Lock`** interface of the [Web Locks API](/en-US/docs/Web/API/Web_Locks_API) provides the name and mode of a lock.
-This may be a newly requested lock that is received in the callback to {{domxref('LockManager.request','LockManager.request()')}}, or a record of an active or queued lock returned by {{domxref('LockManager.query()')}}.
+رابط **`Lock`** از [Web Locks API](/en-US/docs/Web/API/Web_Locks_API) نام و حالت یک قفل را ارائه می‌دهد. این می‌تواند یک قفل تازه‌درخواست‌شده باشد که در callback به {{domxref('LockManager.request','LockManager.request()')}} دریافت می‌شود، یا یک رکورد از یک قفل فعال یا در صف که توسط {{domxref('LockManager.query()')}} بازگردانده می‌شود.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref('Lock.mode')}} {{ReadOnlyInline}}
-  - : Returns the access mode passed to {{domxref('LockManager.request()')}} when the lock was requested.
-    The mode is either `"exclusive"` (the default) or `"shared"`.
+  - : حالت دسترسی که در هنگام درخواست قفل به {{domxref('LockManager.request()')}} ارسال شده را برمی‌گرداند. حالت یا `"exclusive"` (پیش‌فرض) است یا `"shared"`.
 - {{domxref('Lock.name')}} {{ReadOnlyInline}}
-  - : Returns the name passed to {{domxref('LockManager.request()')}} when the lock was requested.
+  - : نامی که در هنگام درخواست قفل به {{domxref('LockManager.request()')}} ارسال شده را برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-The following examples show how the mode and name properties are passed in the call to {{domxref('LockManager.request()')}}.
-{{domxref('LockManager')}} is the object returned by {{domxref('navigator.locks')}}.
+مثال‌های زیر نشان می‌دهند که چگونه ویژگی‌های `mode` و `name` در فراخوانی {{domxref('LockManager.request()')}} ارسال می‌شوند. {{domxref('LockManager')}} شیئی است که توسط {{domxref('navigator.locks')}} بازگردانده می‌شود.
 
 ```js
 navigator.locks.request("net_db_sync", showLockProperties);
@@ -39,10 +29,10 @@ function showLockProperties(lock) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
