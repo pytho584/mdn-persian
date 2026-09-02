@@ -1,11 +1,5 @@
 ---
 title: "MIDIPort: version property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MIDIPort/version"
-status: "needs-translation"
----
-
----
-title: "MIDIPort: version property"
 short-title: version
 slug: Web/API/MIDIPort/version
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.MIDIPort.version
 
 {{securecontext_header}}{{APIRef("Web MIDI API")}}
 
-The **`version`** read-only property of the {{domxref("MIDIPort")}} interface returns the version of the port.
+ویژگی فقطخواندنی **`version`** در رابط {{domxref("MIDIPort")}} نسخهٔ پورت را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A string containing the version of the port.
+یک رشته که نسخهٔ پورت را در بر دارد.
 
-## Examples
+## مثال‌ها
 
-The following example loops through all input ports and prints the version of each to the console.
+مثال زیر روی همهٔ پورت‌های ورودی حلقه می‌زند و نسخهٔ هر یک را در کنسول چاپ می‌کند.
 
 ```js
 for (const entry of midiAccess.inputs) {
@@ -31,10 +25,10 @@ for (const entry of midiAccess.inputs) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
