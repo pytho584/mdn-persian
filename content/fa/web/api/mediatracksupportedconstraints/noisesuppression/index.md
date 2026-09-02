@@ -1,7 +1,5 @@
 ---
 title: "MediaTrackSupportedConstraints: noiseSuppression property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSupportedConstraints/noiseSuppression"
-status: "needs-translation"
 ---
 
 ---
@@ -14,34 +12,19 @@ browser-compat: api.MediaStreamTrack.applyConstraints.noiseSuppression_constrain
 
 {{APIRef("Media Capture and Streams")}}
 
-The {{domxref("MediaTrackSupportedConstraints")}} dictionary's
-**`noiseSuppression`** property is a read-only Boolean value
-which is present (and set to `true`) in the object returned by
-{{domxref("MediaDevices.getSupportedConstraints()")}} if and only if the
-{{Glossary("user agent")}} supports the **`noiseSuppression`**
-constraint. If the constraint isn't supported, it's not included in the list, so this
-value will never be `false`.
+ویژگی **`noiseSuppression`** در دیکشنری {{domxref("MediaTrackSupportedConstraints")}} یک مقدار بولی فقط‌خواندنی است. این ویژگی در شیء بازگردانده‌شده توسط {{domxref("MediaDevices.getSupportedConstraints()")}} حضور دارد (و روی `true` تنظیم می‌شود) اگر و تنها اگر {{Glossary("user agent")}} از محدودیت **`noiseSuppression`** پشتیبانی کند. اگر این محدودیت پشتیبانی نشود، در فهرست گنجانده نمی‌شود؛ بنابراین این مقدار هرگز `false` نخواهد بود.
 
-You can access the supported constraints dictionary by calling
-`navigator.mediaDevices.getSupportedConstraints()`.
+برای دسترسی به دیکشنری محدودیت‌های پشتیبانی‌شده، می‌توانید `navigator.mediaDevices.getSupportedConstraints()` را فراخوانی کنید.
 
-The `noiseSuppression` constraint indicates whether or not the browser
-offers the ability to automatically control the gain (volume) on media tracks; this
-obviously is contingent on whether or not the individual device supports automatic gain
-control as well.
+محدودیت `noiseSuppression` نشان می‌دهد که آیا مرورگر قابلیت کنترل خودکار بهره (حجم صدا) روی تراک‌های رسانه‌ای را ارائه می‌دهد یا نه؛ بدیهی است که این امر به پشتیبانی دستگاه خاص از کنترل خودکار بهره نیز بستگی دارد.
 
-## Value
+## مقدار
 
-This property is present in the dictionary (and its value is always `true`)
-if the user agent supports the `noiseSuppression` constraint (and therefore
-supports noise suppression on audio tracks). If the property isn't present, this
-property is missing from the supported constraints dictionary, and you'll get
-{{jsxref("undefined")}} if you try to look at its value.
+اگر عامل کاربر از محدودیت `noiseSuppression` پشتیبانی کند (و در نتیجه از کاهش نویز روی تراک‌های صوتی پشتیبانی کند)، این ویژگی در دیکشنری حضور دارد (و مقدار آن همیشه `true` است). اگر این ویژگی وجود نداشته باشد، در دیکشنری محدودیت‌های پشتیبانی‌شده غایب است و اگر تلاش کنید به مقدار آن دسترسی پیدا کنید، {{jsxref("undefined")}} دریافت خواهید کرد.
 
-## Examples
+## مثال‌ها
 
-This example displays whether or not your browser supports the
-`noiseSuppression` constraint.
+این مثال نمایش می‌دهد که آیا مرورگر شما از محدودیت `noiseSuppression` پشتیبانی می‌کند یا نه.
 
 ```html hidden
 <div id="result"></div>
@@ -62,19 +45,19 @@ const supported =
 result.textContent = supported ? "Supported!" : "Not supported!";
 ```
 
-### Result
+### نتیجه
 
 {{ EmbedLiveSample('Examples', 600, 80) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
 - {{domxref("MediaDevices.getSupportedConstraints()")}}
