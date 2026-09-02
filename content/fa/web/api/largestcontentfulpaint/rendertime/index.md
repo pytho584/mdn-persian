@@ -1,7 +1,5 @@
 ---
 title: "LargestContentfulPaint: renderTime property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/LargestContentfulPaint/renderTime"
-status: "needs-translation"
 ---
 
 ---
@@ -14,38 +12,38 @@ browser-compat: api.LargestContentfulPaint.renderTime
 
 {{APIRef("Performance API")}}
 
-The **`renderTime`** read-only property of the {{domxref("LargestContentfulPaint")}} interface represents the time that the element was rendered to the screen.
+خاصیت فقط-خواندنی **`renderTime`** از رابط {{domxref("LargestContentfulPaint")}} نشان‌دهنده زمانی است که عنصر روی صفحه نمایش داده شد.
 
-## Value
+## مقدار
 
-The `renderTime` property can have the following values:
+خاصیت `renderTime` می‌تواند مقادیر زیر را داشته باشد:
 
-- A {{domxref("DOMHighResTimeStamp","timestamp")}} representing the time in milliseconds that the element was rendered to the screen.
-- `0` or a coarsened {{domxref("DOMHighResTimeStamp","timestamp")}} if the resource is a cross-origin request and no {{HTTPHeader("Timing-Allow-Origin")}} HTTP response header is used.
+- یک {{domxref("DOMHighResTimeStamp","timestamp")}} (برچسب زمانی) که زمان نمایش عنصر روی صفحه را بر حسب میلی‌ثانیه نشان می‌دهد.
+- `0` یا یک {{domxref("DOMHighResTimeStamp","timestamp")}} نادقیق (coarsened) اگر منبع یک درخواست متقاطع (cross-origin) باشد و از هدر پاسخ HTTP {{HTTPHeader("Timing-Allow-Origin")}} استفاده نشده باشد.
 
-### Cross-origin image render time
+### زمان نمایش تصویر متقاطع (cross-origin)
 
-For security reasons, the value of the `renderTime` property was originally `0` if the resource is a cross-origin request.
+به دلایل امنیتی، مقدار خاصیت `renderTime` در صورتی که منبع یک درخواست متقاطع باشد، در ابتدا `0` بود.
 
-Browsers [may now expose a slightly coarsened render time](https://github.com/w3c/paint-timing/issues/104) in these situations. Check for [browser support](#browser_compatibility).
+مرورگرها [اکنون ممکن است در این موارد یک زمان نمایش اندکی نادقیق را ارائه دهند](https://github.com/w3c/paint-timing/issues/104). برای [پشتیبانی مرورگر](#browser_compatibility) بررسی کنید.
 
-To expose more accurate cross-origin render-time information, the {{HTTPHeader("Timing-Allow-Origin")}} HTTP response header needs to be set.
+برای نمایش اطلاعات دقیق‌تر زمان نمایش متقاطع، باید هدر پاسخ HTTP {{HTTPHeader("Timing-Allow-Origin")}} تنظیم شود.
 
-For example, to allow `https://developer.mozilla.org` to see an accurate `renderTime`, the cross-origin resource should send:
+برای مثال، برای اجازه دادن به `https://developer.mozilla.org` برای دیدن یک `renderTime` دقیق، منبع متقاطع باید ارسال کند:
 
 ```http
 Timing-Allow-Origin: https://developer.mozilla.org
 ```
 
-### Use `startTime` over `renderTime`
+### استفاده از `startTime` به جای `renderTime`
 
-Regardless of the accuracy of the `renderTime`, developers should use {{domxref("PerformanceEntry.startTime", "startTime")}} over `renderTime` as the LCP time. This returns the value of the entry's `renderTime` if it is not `0`, and otherwise the value of this entry's {{domxref("LargestContentfulPaint.loadTime", "loadTime")}} so removes the need to check for 0 values for non-supporting browsers.
+صرف‌نظر از دقت `renderTime`، توسعه‌دهندگان باید از {{domxref("PerformanceEntry.startTime", "startTime")}} به جای `renderTime` به عنوان زمان LCP استفاده کنند. این مقدار `renderTime` ورودی را برمی‌گرداند اگر `0` نباشد، و در غیر این صورت مقدار {{domxref("LargestContentfulPaint.loadTime", "loadTime")}} این ورودی را برمی‌گرداند، بنابراین نیاز به بررسی مقدار 0 برای مرورگرهای غیرپشتیبان را برطرف می‌کند.
 
-## Examples
+## مثال‌ها
 
-### Logging the renderTime of the largest contentful paint
+### ثبت زمان renderTime بزرگترین محتوای نقاشی شده
 
-This example uses a {{domxref("PerformanceObserver")}} notifying of new `largest-contentful-paint` performance entries as they are recorded in the browser's performance timeline. The `buffered` option is used to access entries from before the observer creation.
+این مثال از یک {{domxref("PerformanceObserver")}} استفاده می‌کند که ورودی‌های عملکرد `largest-contentful-paint` جدید را هنگام ثبت در جدول زمانی عملکرد مرورگر اطلاع می‌دهد. گزینه `buffered` برای دسترسی به ورودی‌های قبل از ایجاد observer استفاده می‌شود.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -56,10 +54,10 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "largest-contentful-paint", buffered: true });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## پشتیبانی مرورگر
 
 {{Compat}}
