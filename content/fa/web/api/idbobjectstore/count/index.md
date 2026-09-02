@@ -1,7 +1,5 @@
 ---
 title: "IDBObjectStore: count() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/count"
-status: "needs-translation"
 ---
 
 ---
@@ -14,47 +12,38 @@ browser-compat: api.IDBObjectStore.count
 
 {{ APIRef("IndexedDB") }} {{AvailableInWorkers}}
 
-The **`count()`** method of the {{domxref("IDBObjectStore")}}
-interface returns an {{domxref("IDBRequest")}} object, and, in a separate thread,
-returns the total number of records that match the provided key or
-{{domxref("IDBKeyRange")}}. If no arguments are provided, it returns the total number
-of records in the store.
+متد **`count()`** در رابط {{domxref("IDBObjectStore")}} یک شیء {{domxref("IDBRequest")}} بازمی‌گرداند و در یک نخ جداگانه، تعداد کل رکوردهایی را برمی‌گرداند که با کلید یا {{domxref("IDBKeyRange")}} ارائه‌شده مطابقت دارند. اگر هیچ آرگومانی ارسال نشود، تعداد کل رکوردهای فروشگاه را برمی‌گرداند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 count()
 count(query)
 ```
 
-### Parameters
+### پارامترها
 
 - `query` {{optional_inline}}
-  - : A key or {{domxref("IDBKeyRange")}} object that specifies a range of records you
-    want to count.
+  - : یک کلید یا شیء {{domxref("IDBKeyRange")}} که محدوده‌ای از رکوردهایی را که می‌خواهید بشمارید مشخص می‌کند.
 
-### Return value
+### مقدار بازگشتی
 
-An {{domxref("IDBRequest")}} object on which subsequent events related to this operation are fired.
+یک شیء {{domxref("IDBRequest")}} که رویدادهای بعدی مربوط به این عملیات روی آن صادر می‌شوند. اگر عملیات با موفقیت انجام شود، مقدار ویژگی {{domxref("IDBRequest.result", "result")}} درخواست، تعداد رکوردهایی است که با کوئری داده‌شده مطابقت دارند.
 
-If the operation is successful, the value of the request's {{domxref("IDBRequest.result", "result")}} property is the number of records that match the given query.
+### استثناها
 
-### Exceptions
-
-This method may raise a {{domxref("DOMException")}} of one of the following types:
+این متد ممکن است یک {{domxref("DOMException")}} از یکی از انواع زیر را صادر کند:
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if this {{domxref("IDBObjectStore")}} has been deleted.
+  - : هنگامی صادر می‌شود که این {{domxref("IDBObjectStore")}} حذف شده باشد.
 - `TransactionInactiveError` {{domxref("DOMException")}}
-  - : Thrown if this {{domxref("IDBObjectStore")}}'s transaction is inactive.
+  - : هنگامی صادر می‌شود که تراکنش این {{domxref("IDBObjectStore")}} غیرفعال باشد.
 - `DataError` {{domxref("DOMException")}}
-  - : Thrown if the specified key or key range is invalid.
+  - : هنگامی صادر می‌شود که کلید یا محدوده کلید مشخص‌شده نامعتبر باشد.
 
-## Examples
+## مثال‌ها
 
-In this simple fragment we create a transaction, retrieve an object store, then count
-the number of records in the store using `count()` — when the success handler
-fires, we log the count value (an integer) to the console.
+در این قطعه ساده، یک تراکنش ایجاد می‌کنیم، یک فروشگاه شیء دریافت می‌کنیم و سپس با استفاده از `count()` تعداد رکوردهای فروشگاه را می‌شماریم — وقتی کنترل‌کننده موفقیت فعال می‌شود، مقدار شمارش (یک عدد صحیح) را در کنسول ثبت می‌کنیم.
 
 ```js
 const transaction = db.transaction(["fThings"], "readonly");
@@ -66,20 +55,20 @@ countRequest.onsuccess = () => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم محدوده کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و ایجاد تغییرات در داده‌های خود: {{domxref("IDBObjectStore")}}
+- استفاده از نشانگرها: {{domxref("IDBCursor")}}
+- مثال مرجع: [اعلان‌های کارها](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
