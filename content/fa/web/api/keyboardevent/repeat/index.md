@@ -1,11 +1,5 @@
 ---
 title: "KeyboardEvent: repeat property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/repeat"
-status: "needs-translation"
----
-
----
-title: "KeyboardEvent: repeat property"
 short-title: repeat
 slug: Web/API/KeyboardEvent/repeat
 page-type: web-api-instance-property
@@ -14,19 +8,16 @@ browser-compat: api.KeyboardEvent.repeat
 
 {{APIRef("UI Events")}}
 
-The **`repeat`** read-only property of the
-{{domxref("KeyboardEvent")}} interface returns a boolean value that is
-`true` if the given key is being held down such that it is automatically
-repeating.
+ویژگی فقط‌خواندنی **`repeat`** از رابط {{domxref("KeyboardEvent")}} یک مقدار بولی برمی‌گرداند که اگر کلید موردنظر به‌گونه‌ای نگه داشته شود که به‌طور خودکار تکرار شود، `true` است.
 
-## Value
+## مقدار
 
-A boolean value.
+یک مقدار بولی.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
