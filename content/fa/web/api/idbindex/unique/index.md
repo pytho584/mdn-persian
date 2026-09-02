@@ -1,11 +1,5 @@
 ---
 title: "IDBIndex: unique property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/unique"
-status: "needs-translation"
----
-
----
-title: "IDBIndex: unique property"
 short-title: unique
 slug: Web/API/IDBIndex/unique
 page-type: web-api-instance-property
@@ -14,37 +8,26 @@ browser-compat: api.IDBIndex.unique
 
 {{ APIRef("IndexedDB") }} {{AvailableInWorkers}}
 
-The **`unique`** read-only property returns a boolean that
-states whether the index allows duplicate keys.
+ویژگی فقطخواندنی **`unique`** یک مقدار بولی (boolean) برمی‌گرداند که مشخص می‌کند آیا ایندکس امکان کلیدهای تکراری را می‌دهد یا خیر.
 
-This is decided when the index is created, using the
-{{domxref("IDBObjectStore.createIndex")}} method. This method takes an optional
-parameter, `unique`, which if set to `true` means that the index
-will not be able to accept duplicate entries.
+این موضوع هنگام ایجاد ایندکس و با استفاده از متد {{domxref("IDBObjectStore.createIndex")}} تعیین می‌شود. این متد یک پارامتر اختیاری به نام `unique` دریافت می‌کند که اگر روی `true` تنظیم شود، به این معنی است که ایندکس نمی‌تواند ورودی‌های تکراری را بپذیرد.
 
-## Value
+## مقدار
 
-A boolean value:
+یک مقدار بولی:
 
-| Value   | Effect                                                       |
-| ------- | ------------------------------------------------------------ |
-| `true`  | The current index does not allow duplicate values for a key. |
-| `false` | The current index allows duplicate key values.               |
+| مقدار   | تأثیر                                                    |
+| ------- | -------------------------------------------------------- |
+| `true`  | ایندکس فعلی مقادیر تکراری را برای یک کلید مجاز نمی‌داند. |
+| `false` | ایندکس فعلی مقادیر کلید تکراری را مجاز می‌داند.          |
 
-## Examples
+## مثال‌ها
 
-In the following example we open a transaction and an object store, then get the
-index `lName` from a simple contacts database. We then open a basic cursor on
-the index using {{domxref("IDBIndex.openCursor")}} — this works the same as opening a
-cursor directly on an `ObjectStore` using
-{{domxref("IDBObjectStore.openCursor")}} except that the returned records are sorted
-based on the index, not the primary key.
+در مثال زیر، یک تراکنش و یک object store باز می‌کنیم، سپس ایندکس `lName` را از یک پایگاه داده ساده مخاطبین دریافت می‌کنیم. سپس یک کرسر پایه روی ایندکس با استفاده از {{domxref("IDBIndex.openCursor")}} باز می‌کنیم — این کار مشابه باز کردن مستقیم یک کرسر روی `ObjectStore` با استفاده از {{domxref("IDBObjectStore.openCursor")}} است، با این تفاوت که رکوردهای برگشتی بر اساس ایندکس مرتب شده‌اند، نه بر اساس کلید اصلی.
 
-The unique status of the index is logged to the console: it should be returned
-as `false`.
+وضعیت یکتایی (unique) ایندکس در کنسول ثبت می‌شود: باید به صورت `false` برگردانده شود.
 
-Finally, we iterate through each record, and insert the data into an HTML table. For a
-complete working example, see our [IndexedDB-examples demo repo](https://github.com/mdn/dom-examples/tree/main/indexeddb-examples/idbindex) ([View the example live](https://mdn.github.io/dom-examples/indexeddb-examples/idbindex/)).
+در نهایت، از میان هر رکورد عبور می‌کنیم و داده‌ها را در یک جدول HTML وارد می‌کنیم. برای یک مثال کامل و قابل اجرا، به مخزن دموی [IndexedDB-examples](https://github.com/mdn/dom-examples/tree/main/indexeddb-examples/idbindex) مراجعه کنید ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/indexeddb-examples/idbindex/)).
 
 ```js
 function displayDataByIndex() {
@@ -83,20 +66,20 @@ function displayDataByIndex() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم یک بازه از کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و ایجاد تغییرات در داده‌های خود: {{domxref("IDBObjectStore")}}
+- استفاده از کرسرها: {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
