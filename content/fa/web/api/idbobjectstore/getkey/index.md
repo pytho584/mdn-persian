@@ -1,11 +1,5 @@
 ---
 title: "IDBObjectStore: getKey() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/getKey"
-status: "needs-translation"
----
-
----
-title: "IDBObjectStore: getKey() method"
 short-title: getKey()
 slug: Web/API/IDBObjectStore/getKey
 page-type: web-api-instance-method
@@ -14,13 +8,9 @@ browser-compat: api.IDBObjectStore.getKey
 
 {{ APIRef("IndexedDB") }} {{AvailableInWorkers}}
 
-The **`getKey()`** method of the
-{{domxref("IDBObjectStore")}} interface returns an {{domxref("IDBRequest")}} object,
-and, in a separate thread, returns the key selected by the specified query. This is
-for retrieving specific records from an object store.
+متد **`getKey()`** از رابط {{domxref("IDBObjectStore")}} یک شیء {{domxref("IDBRequest")}} را برمی‌گرداند و در یک نخ جداگانه، کلید انتخاب‌شده توسط کوئری مشخص‌شده را بازمی‌گرداند. این متد برای بازیابی رکوردهای خاص از یک object store استفاده می‌شود.
 
-If a key is successfully found, then a structured clone of it is created and set as the
-result of the request object.
+اگر یک کلید با موفقیت پیدا شود، یک کپی ساختاریافته از آن ایجاد شده و به عنوان نتیجهٔ شیء درخواست تنظیم می‌شود.
 
 ## Syntax
 
@@ -31,24 +21,22 @@ getKey(key)
 ### Parameters
 
 - `key`
-  - : The key or key range that identifies the record to be retrieved.
+  - : کلید یا بازهٔ کلیدی که رکورد مورد نظر برای بازیابی را مشخص می‌کند.
 
 ### Return value
 
-An {{domxref("IDBRequest")}} object on which subsequent events related to this operation are fired.
-
-If the operation is successful, the value of the request's {{domxref("IDBRequest.result", "result")}} property is the key for the first record matching the given key or key range.
+یک شیء {{domxref("IDBRequest")}} که رویدادهای بعدی مرتبط با این عملیات روی آن fire می‌شوند. اگر عملیات موفق باشد، مقدار ویژگی {{domxref("IDBRequest.result", "result")}} درخواست، کلید اولین رکوردی است که با کلید یا بازهٔ کلیدی داده‌شده مطابقت دارد.
 
 ### Exceptions
 
-This method may raise a {{domxref("DOMException")}} of one of the following types:
+این متد ممکن است یک {{domxref("DOMException")}} از یکی از انواع زیر را پرتاب کند:
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the {{domxref("IDBObjectStore")}} has been deleted or removed.
+  - : اگر {{domxref("IDBObjectStore")}} حذف یا پاک شده باشد، پرتاب می‌شود.
 - `TransactionInactiveError` {{domxref("DOMException")}}
-  - : Thrown if this {{domxref("IDBObjectStore")}}'s transaction is inactive.
+  - : اگر تراکنش این {{domxref("IDBObjectStore")}} غیرفعال باشد، پرتاب می‌شود.
 - `DataError` {{domxref("DOMException")}}
-  - : Thrown if the key or key range provided contains an invalid key.
+  - : اگر کلید یا بازهٔ کلیدی ارائه‌شده شامل یک کلید نامعتبر باشد، پرتاب می‌شود.
 
 ## Example
 
@@ -79,10 +67,10 @@ openRequest.onsuccess = (event) => {
 
 ## See also
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم یک بازه از کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و اعمال تغییرات در داده‌ها: {{domxref("IDBObjectStore")}}
+- استفاده از نشانگرها: {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهدهٔ مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
