@@ -1,11 +1,5 @@
 ---
 title: "MediaRecorder: videoBitsPerSecond property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/videoBitsPerSecond"
-status: "needs-translation"
----
-
----
-title: "MediaRecorder: videoBitsPerSecond property"
 short-title: videoBitsPerSecond
 slug: Web/API/MediaRecorder/videoBitsPerSecond
 page-type: web-api-instance-property
@@ -14,21 +8,18 @@ browser-compat: api.MediaRecorder.videoBitsPerSecond
 
 {{APIRef("MediaStream Recording")}}
 
-The **`videoBitsPerSecond`** read-only
-property of the {{domxref("MediaRecorder")}} interface returns the video encoding
-bit rate in use.
+ویژگی فقط-خواندنی **`videoBitsPerSecond`** از رابط {{domxref("MediaRecorder")}} نرخ بیت (bit rate) رمزگذاری ویدیوی در حال استفاده را بازمی‌گرداند.
 
-This may differ from the bit rate specified in the
-constructor, if it was provided.
+این مقدار ممکن است با نرخ بیتی که در سازنده (constructor) مشخص شده است، در صورت ارائه، متفاوت باشد.
 
-## Value
+## مقدار
 
-A {{jsxref("Number")}} (unsigned long).
+یک {{jsxref("Number")}} (عدد صحیح بدون علامت).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
