@@ -1,11 +1,5 @@
 ---
 title: "IDBTransaction: error property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction/error"
-status: "needs-translation"
----
-
----
-title: "IDBTransaction: error property"
 short-title: error
 slug: Web/API/IDBTransaction/error
 page-type: web-api-instance-property
@@ -14,51 +8,43 @@ browser-compat: api.IDBTransaction.error
 
 {{ APIRef("IndexedDB") }} {{AvailableInWorkers}}
 
-The **`IDBTransaction.error`** property of the {{domxref("IDBTransaction")}} interface
-returns the type of error when there is an unsuccessful transaction.
+خاصیت **`IDBTransaction.error`** از رابط {{domxref("IDBTransaction")}}، نوع خطا را در هنگام ناقص ماندن تراکنش بازمی‌گرداند.
 
-## Value
+## مقدار
 
-A {{domxref("DOMException")}} containing the relevant error, or `null` if there are none.
+یک {{domxref("DOMException")}} حاوی خطای مربوطه، یا `null` در صورت عدم وجود خطا.
 
-It can be a reference to the same error as the request object that raised it, or a transaction
-failure (for example `QuotaExceededError`).
+این می‌تواند ارجاعی به همان خطای شیء درخواستی باشد که آن را ایجاد کرده، یا یک شکست تراکنش (مثلاً `QuotaExceededError`).
 
-This property is `null` if the transaction is not finished, or is finished and
-was successfully committed.
+این خاصیت زمانی `null` است که تراکنش هنوز به پایان نرسیده، یا به پایان رسیده و با موفقیت commit شده است.
 
-## Examples
+## مثال‌ها
 
-In the following code snippet, we open a read/write transaction on our database and add
-some data to an object store. Note also the functions attached to transaction event
-handlers to report on the outcome of the transaction opening in the event of success or
-failure. Note the `transaction.onerror = (event) => { };` block, making
-use of `transaction.error` to help in reporting what went wrong when the
-transaction was unsuccessful. For a full working example, see our [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) app ([View example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+در قطعه کد زیر، یک تراکنش خواندن/نوشتن روی پایگاه داده خود باز می‌کنیم و داده‌هایی را به یک object store اضافه می‌کنیم. همچنین به توابع متصل به رویدادهای تراکنش توجه کنید که نتیجه باز شدن تراکنش را در صورت موفقیت یا شکست گزارش می‌دهند. به بلوک `transaction.onerror = (event) => { };` توجه کنید که از `transaction.error` برای کمک به گزارش مشکل در هنگام ناموفق بودن تراکنش استفاده می‌کند. برای یک مثال کامل کارکردی، برنامه [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ما را ببینید ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
 
 ```js
 const note = document.getElementById("notifications");
 
-// an instance of a db object for us to store the IDB data in
+// یک نمونه از شیء db برای ذخیره داده‌های IDB
 let db;
 
-// Let us open our database
+// بیایید پایگاه داده خود را باز کنیم
 const DBOpenRequest = window.indexedDB.open("toDoList", 4);
 
 DBOpenRequest.onsuccess = (event) => {
   note.appendChild(document.createElement("li")).textContent =
-    "Database initialized.";
+    "پایگاه داده مقداردهی اولیه شد.";
 
-  // store the result of opening the database in the db variable.
-  // This is used a lot below
+  // نتیجه باز کردن پایگاه داده را در متغیر db ذخیره کنید.
+  // این در ادامه زیاد استفاده می‌شود
   db = DBOpenRequest.result;
 
-  // Run the addData() function to add the data to the database
+  // تابع addData() را برای افزودن داده به پایگاه داده اجرا کنید
   addData();
 };
 
 function addData() {
-  // Create a new object ready for being inserted into the IDB
+  // یک شیء جدید برای درج در IDB ایجاد کنید
   const newItem = [
     {
       taskTitle: "Walk dog",
@@ -71,49 +57,48 @@ function addData() {
     },
   ];
 
-  // open a read/write db transaction, ready for adding the data
+  // یک تراکنش خواندن/نوشتن db باز کنید، آماده برای افزودن داده
   const transaction = db.transaction(["toDoList"], "readwrite");
 
-  // report on the success of opening the transaction
+  // موفقیت باز شدن تراکنش را گزارش دهید
   transaction.oncomplete = (event) => {
     note.appendChild(document.createElement("li")).textContent =
-      "Transaction completed: database modification finished.";
+      "تراکنش کامل شد: تغییرات پایگاه داده به پایان رسید.";
   };
 
   transaction.onerror = (event) => {
     note.appendChild(document.createElement("li")).textContent =
-      `Transaction not opened due to error: ${transaction.error}`;
+      `تراکنش به دلیل خطا باز نشد: ${transaction.error}`;
   };
 
-  // create an object store on the transaction
+  // یک object store روی تراکنش ایجاد کنید
   const objectStore = transaction.objectStore("toDoList");
 
-  // add our newItem object to the object store
+  // شیء newItem خود را به object store اضافه کنید
   const objectStoreRequest = objectStore.add(newItem[0]);
 
   objectStoreRequest.onsuccess = (event) => {
-    // report the success of the request (this does not mean the item
-    // has been stored successfully in the DB - for that you need transaction.onsuccess)
+    // موفقیت درخواست را گزارش دهید (این به معنای ذخیره موفقیت‌آمیز آیتم در DB نیست - برای آن نیاز به transaction.onsuccess دارید)
     note.appendChild(document.createElement("li")).textContent =
-      "Request successful.";
+      "درخواست موفقیت‌آمیز بود.";
   };
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم محدوده کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و ایجاد تغییرات در داده‌ها: {{domxref("IDBObjectStore")}}
+- استفاده از نشانگرها: {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
