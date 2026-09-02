@@ -1,11 +1,5 @@
 ---
 title: "LanguageDetector: detect() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/LanguageDetector/detect"
-status: "needs-translation"
----
-
----
-title: "LanguageDetector: detect() method"
 short-title: detect()
 slug: Web/API/LanguageDetector/detect
 page-type: web-api-instance-method
@@ -16,49 +10,49 @@ browser-compat: api.LanguageDetector.detect
 
 {{APIRef("Translator and Language Detector APIs")}}{{SeeCompatTable}}{{securecontext_header}}
 
-The **`detect()`** method of the {{domxref("LanguageDetector")}} interface detects the closest matching language or languages that a given text string is most likely to be written in.
+متد **`detect()`** در رابط {{domxref("LanguageDetector")}} زبان یا زبان‌هایی را که یک رشته‌ی متنی به احتمال زیاد در آن‌ها نوشته شده است، با نزدیک‌ترین تطابق شناسایی می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 detect(input)
 detect(input, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `input`
-  - : A string representing the text to have its language detected.
+  - : رشته‌ای که متنی را که باید زبانش شناسایی شود، نشان می‌دهد.
 - `options` {{optional_inline}}
-  - : An object specifying configuration options for the `detect()` operation. Possible values include:
+  - : شیئی که گزینه‌های پیکربندی عملیات `detect()` را مشخص می‌کند. مقادیر احتمالی عبارت‌اند از:
     - `signal`
-      - : An {{domxref("AbortSignal")}} object instance, which allows the `detect()` operation to be aborted via the associated {{domxref("AbortController")}}.
+      - : یک نمونه از شیء {{domxref("AbortSignal")}} که اجازه می‌دهد عملیات `detect()` از طریق {{domxref("AbortController")}} مرتبط لغو شود.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that fulfills with an array of objects representing the detected languages. Each object contains the following properties:
+یک {{jsxref("Promise")}} که با آرایه‌ای از اشیاء نشان‌دهنده‌ی زبان‌های شناسایی‌شده تکمیل می‌شود. هر شیء شامل ویژگی‌های زیر است:
 
 - `detectedLanguage`
-  - : A {{glossary("BCP 47 language tag")}} representing the detected language.
+  - : یک {{glossary("BCP 47 language tag")}} که زبان شناسایی‌شده را نشان می‌دهد.
 - `confidence`
-  - : A number between `0` and `1` representing the AI model's confidence that the detected language is correct.
+  - : عددی بین `0` و `1` که میزان اطمینان مدل هوش مصنوعی را نسبت به درست‌بودن زبان شناسایی‌شده نشان می‌دهد.
 
-The sum of all the returned `confidence` values should theoretically be 1, however, it may be lower because very low confidence values are excluded from the results.
+مجموع همه‌ی مقادیر `confidence` بازگشتی به لحاظ نظری باید `1` باشد؛ اما ممکن است کمتر باشد، زیرا مقادیر اطمینان بسیار پایین از نتایج حذف می‌شوند.
 
-The last array element returned will always have a `detectedLanguage` value of `und` — this is an abbreviation of "undetermined", and represents the probability that the text is not written in a language the model knows.
+آخرین عنصر آرایه‌ی بازگشتی همیشه مقدار `detectedLanguage` آن برابر با `und` خواهد بود — این مخفف «undetermined» (نامشخص) است و بیانگر احتمال این است که متن به زبانی نوشته شده باشد که مدل آن را نمی‌شناسد.
 
-### Exceptions
+### استثناها
 
 - `AbortError` {{domxref("DOMException")}}
-  - : Thrown if the `LanguageDetector` was previously destroyed (had {{domxref("LanguageDetector.destroy()")}} called on it, or was aborted via its abort [`signal`](/en-US/docs/Web/API/LanguageDetector/create_static#signal) after creation).
+  - : اگر `LanguageDetector` قبلاً از بین رفته باشد (یعنی {{domxref("LanguageDetector.destroy()")}} روی آن فراخوانی شده باشد) یا پس از ایجاد، از طریق [`signal`](/en-US/docs/Web/API/LanguageDetector/create_static#signal) لغو شده باشد، پرتاب می‌شود.
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the current {{domxref("Document")}} is not active.
+  - : اگر {{domxref("Document")}} جاری فعال نباشد، پرتاب می‌شود.
 - {{domxref("QuotaExceededError")}}
-  - : Thrown if the language detection operation exceeds the available {{domxref("LanguageDetector.inputQuota", "inputQuota")}}.
+  - : اگر عملیات شناسایی زبان از {{domxref("LanguageDetector.inputQuota", "inputQuota")}} موجود فراتر رود، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Basic `detect()` usage
+### استفاده‌ی پایه از `detect()`
 
 ```js
 const detector = await LanguageDetector.create({
@@ -79,14 +73,14 @@ results.forEach((result) => {
 // und: 0.0003214875760022551
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Translator and Language Detector APIs](/en-US/docs/Web/API/Translator_and_Language_Detector_APIs/Using)
+- [استفاده از APIهای Translator و Language Detector](/en-US/docs/Web/API/Translator_and_Language_Detector_APIs/Using)
