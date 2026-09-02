@@ -1,10 +1,4 @@
 ---
-title: "Location"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Location"
-status: "needs-translation"
----
-
----
 title: Location
 slug: Web/API/Location
 page-type: web-api-interface
@@ -13,11 +7,11 @@ browser-compat: api.Location
 
 {{APIRef("HTML DOM")}}
 
-The **`Location`** interface represents the location (URL) of the object it is linked to. Changes done on it are reflected on the object it relates to. Both the {{domxref("Document")}} and {{domxref("Window")}} interface have such a linked `Location`, accessible via {{domxref("Document.location")}} and {{domxref("Window.location")}} respectively.
+رابط **`Location`** نشانی (URL) شیءِ متصل به خود را نشان می‌دهد. هر تغییری که روی آن اعمال شود، در شیءِ مرتبط با آن بازتاب می‌یابد. هر دو رابط {{domxref("Document")}} و {{domxref("Window")}} دارای چنین `Location` متصلی هستند که به‌ترتیب از طریق {{domxref("Document.location")}} و {{domxref("Window.location")}} در دسترس است.
 
-## Location anatomy
+## ساختار Location
 
-Hover over the URL segments below to highlight their meaning:
+نشانگر ماوس را روی بخش‌های مختلف URL زیر ببرید تا معنای هر یک نمایان شود:
 
 ```html hidden
 <span id="href" title="href"
@@ -113,41 +107,41 @@ document.body.addEventListener("click", (event) => {
 
 {{EmbedLiveSample('Location anatomy', '85ch', '180px')}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("Location.ancestorOrigins")}} {{ReadOnlyInline}}
-  - : A static {{domxref("DOMStringList")}} containing, in reverse order, the origins of all ancestor browsing contexts of the document associated with the given `Location` object.
+  - : یک {{domxref("DOMStringList")}} ایستا که به ترتیب معکوس، مبدأهای همهٔ بافت‌های مرورِ بالادستِ سندِ مرتبط با شیء `Location` مفروض را در بر می‌گیرد.
 - {{domxref("Location.href")}}
-  - : A {{Glossary("stringifier")}} that returns a string containing the entire URL. If changed, the associated document navigates to the new page. It can be set from a different origin than the associated document.
+  - : یک {{Glossary("stringifier")}} که رشته‌ای شامل کل URL را برمی‌گرداند. اگر مقدار آن تغییر کند، سندِ مرتبط به صفحهٔ جدید هدایت می‌شود. می‌توان آن را از مبدأی متفاوت با مبدأِ سندِ مرتبط نیز تنظیم کرد.
 - {{domxref("Location.protocol")}}
-  - : A string containing the protocol scheme of the URL, including the final `':'`.
+  - : رشته‌ای شامل پروتکل (scheme) URL، از جمله `':'` انتهایی.
 - {{domxref("Location.host")}}
-  - : A string containing the host, that is the _hostname_, a `':'`, and the _port_ of the URL.
+  - : رشته‌ای که host را در بر می‌گیرد؛ یعنی _hostname_ (نام میزبان)، یک `':'` و _port_ (پورت) مربوط به URL.
 - {{domxref("Location.hostname")}}
-  - : A string containing the domain of the URL.
+  - : رشته‌ای شامل دامنهٔ URL.
 - {{domxref("Location.port")}}
-  - : A string containing the port number of the URL.
+  - : رشته‌ای شامل شمارهٔ پورت URL.
 - {{domxref("Location.pathname")}}
-  - : A string containing an initial `'/'` followed by the path of the URL, not including the query string or fragment.
+  - : رشته‌ای شامل یک `'/'` آغازین و سپس مسیر URL، بدونِ در نظر گرفتن query string یا fragment.
 - {{domxref("Location.search")}}
-  - : A string containing a `'?'` followed by the parameters or "query string" of the URL. Modern browsers provide [`URLSearchParams`](/en-US/docs/Web/API/URLSearchParams/get) and [`URL.searchParams`](/en-US/docs/Web/API/URL/searchParams) to make it easy to parse out the parameters from the query string.
+  - : رشته‌ای شامل یک `'?'` و سپس پارامترها یا «query string» (رشتهٔ جست‌وجو) URL. مرورگرهای مدرن [`URLSearchParams`](/en-US/docs/Web/API/URLSearchParams/get) و [`URL.searchParams`](/en-US/docs/Web/API/URL/searchParams) را فراهم می‌کنند تا تجزیهٔ پارامترهای query string آسان باشد.
 - {{domxref("Location.hash")}}
-  - : A string containing a `'#'` followed by the fragment identifier of the URL.
+  - : رشته‌ای شامل یک `'#'` و سپس شناسهٔ fragment در URL.
 - {{domxref("Location.origin")}} {{ReadOnlyInline}}
-  - : Returns a string containing the canonical form of the origin of the specific location.
+  - : رشته‌ای شامل شکل متعارفِ مبدأِ آن موقعیت خاص را برمی‌گرداند.
 
-## Instance methods
+## متدهای نمونه
 
 - {{domxref("Location.assign()")}}
-  - : Loads the resource at the URL provided in parameter.
+  - : منبع موجود در URL داده‌شده به‌عنوان پارامتر را بارگذاری می‌کند.
 - {{domxref("Location.reload()")}}
-  - : Reloads the current URL, like the Refresh button.
+  - : URL کنونی را مجدداً بارگذاری می‌کند؛ درست مانند دکمهٔ Refresh.
 - {{domxref("Location.replace()")}}
-  - : Replaces the current resource with the one at the provided URL (redirects to the provided URL). The difference from the `assign()` method and setting the `href` property is that after using `replace()` the current page will not be saved in session {{domxref("History")}}, meaning the user won't be able to use the _back_ button to navigate to it.
+  - : منبع فعلی را با منبع موجود در URL داده‌شده جایگزین می‌کند (به آن URL هدایت می‌شود). تفاوت آن با متد `assign()` و تنظیم ویژگی `href` این است که پس از استفاده از `replace()`، صفحهٔ کنونی در تاریخچهٔ نشست ({{domxref("History")}}) ذخیره نمی‌شود؛ بنابراین کاربر نمی‌تواند با دکمهٔ _بازگشت_ به آن بازگردد.
 - {{domxref("Location.toString()")}}
-  - : Returns a string containing the whole URL. It is a synonym for {{domxref("Location.href")}}, though it can't be used to modify the value.
+  - : رشته‌ای شامل کل URL را برمی‌گرداند. این متد مترادفی برای {{domxref("Location.href")}} است، اما نمی‌توان از آن برای تغییر مقدار استفاده کرد.
 
-## Examples
+## مثال‌ها
 
 ```js
 // location: https://developer.mozilla.org:8080/en-US/search?q=URL#search-results-close-container
@@ -165,15 +159,15 @@ console.log(loc.origin); // https://developer.mozilla.org:8080
 location.assign("http://another.site"); // load another page
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- Two `Location` properties: {{domxref("Window.location")}} and {{domxref("Document.location")}}.
-- URL manipulation interfaces: {{domxref("URL")}} and {{domxref("URLSearchParams")}}.
+- دو ویژگی از `Location`: {{domxref("Window.location")}} و {{domxref("Document.location")}}.
+- رابط‌های کار با URL: {{domxref("URL")}} و {{domxref("URLSearchParams")}}.
