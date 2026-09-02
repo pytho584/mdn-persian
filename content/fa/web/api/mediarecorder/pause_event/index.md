@@ -1,7 +1,5 @@
 ---
 title: "MediaRecorder: pause event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/pause_event"
-status: "needs-translation"
 ---
 
 ---
@@ -14,12 +12,11 @@ browser-compat: api.MediaRecorder.pause_event
 
 {{APIRef("MediaStream Recording")}}
 
-The **`pause`** event of the {{domxref("MediaRecorder")}} interface is fired when
-{{domxref("MediaRecorder.pause()")}} is called.
+رویداد **`pause`** از رابط {{domxref("MediaRecorder")}} زمانی فعال می‌شود که {{domxref("MediaRecorder.pause()")}} فراخوانی شود.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("pause", (event) => { })
@@ -27,11 +24,11 @@ addEventListener("pause", (event) => { })
 onpause = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Example
+## مثال
 
 ```js
 pause.onclick = () => {
@@ -55,18 +52,17 @@ mediaRecorder.onresume = () => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the MediaStream Recording API](/en-US/docs/Web/API/MediaStream_Recording_API/Using_the_MediaStream_Recording_API)
-- [Web Dictaphone](https://mdn.github.io/dom-examples/media/web-dictaphone/): MediaRecorder +
-  getUserMedia + Web Audio API visualization demo, by [Chris Mills](https://github.com/chrisdavidmills) ([source on GitHub](https://github.com/mdn/dom-examples/tree/main/media/web-dictaphone).)
-- [simpl.info MediaStream Recording demo](https://simpl.info/mediarecorder/), by [Sam Dutton](https://github.com/samdutton).
+- [استفاده از API ضبط رسانه MediaStream](/en-US/docs/Web/API/MediaStream_Recording_API/Using_the_MediaStream_Recording_API)
+- [Web Dictaphone](https://mdn.github.io/dom-examples/media/web-dictaphone/): نمایش نمونه MediaRecorder + getUserMedia + Web Audio API، توسط [Chris Mills](https://github.com/chrisdavidmills) ([منبع در GitHub](https://github.com/mdn/dom-examples/tree/main/media/web-dictaphone).)
+- [نمایش ضبط MediaStream در simpl.info](https://simpl.info/mediarecorder/) توسط [Sam Dutton](https://github.com/samdutton).
 - {{domxref("Navigator.getUserMedia")}}
