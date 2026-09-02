@@ -1,7 +1,5 @@
 ---
 title: "HTMLTextAreaElement: textLength property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTextAreaElement/textLength"
-status: "needs-translation"
 ---
 
 ---
@@ -14,28 +12,28 @@ browser-compat: api.HTMLTextAreaElement.textLength
 
 {{ APIRef("HTML DOM") }}
 
-The **`textLength`** read-only property of the {{DOMxRef("HTMLTextAreaElement")}} interface is a non-negative integer representing the number of characters, in {{glossary("UTF-16", "UTF-16 code units")}}, of the {{htmlelement("textarea")}} element's value. It is a shortcut of accessing {{jsxref("String/length", "length")}} on its {{domxref("HTMLTextAreaElement/value", "value")}} property.
+ویژگی فقطخواندنی **`textLength`** در رابط {{DOMxRef("HTMLTextAreaElement")}} یک عدد صحیح نامنفی است که تعداد نویسه‌های مقدار عنصر {{htmlelement("textarea")}} را بر حسب {{glossary("UTF-16", "UTF-16 code units")}} نشان می‌دهد. این ویژگی میانبری برای دسترسی به {{jsxref("String/length", "length")}} روی ویژگی {{domxref("HTMLTextAreaElement/value", "value")}} آن است.
 
-## Value
+## مقدار
 
-A non-negative integer.
+یک عدد صحیح نامنفی.
 
-## Examples
+## مثال‌ها
 
 ```js
 const textareaElement = document.getElementById("comment");
 console.log(textArea.textLength);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTMLElement("textarea")}}
 - {{DOMXref("HTMLTextAreaElement.rows")}}
