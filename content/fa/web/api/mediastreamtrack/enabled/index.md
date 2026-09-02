@@ -1,11 +1,5 @@
 ---
 title: "MediaStreamTrack: enabled property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/enabled"
-status: "needs-translation"
----
-
----
-title: "MediaStreamTrack: enabled property"
 short-title: enabled
 slug: Web/API/MediaStreamTrack/enabled
 page-type: web-api-instance-property
@@ -14,52 +8,47 @@ browser-compat: api.MediaStreamTrack.enabled
 
 {{APIRef("Media Capture and Streams")}}
 
-The **`enabled`** property of the
-{{domxref("MediaStreamTrack")}} interface is a Boolean value which is
-`true` if the track is allowed to render the source stream or
-`false` if it is not. This can be used to intentionally mute a
-track.
+خاصیت **`enabled`** در رابط {{domxref("MediaStreamTrack")}} یک مقدار بولین است که اگر
+`true` باشد یعنی مسیر (track) مجاز است جریان منبع را رندر کند و اگر
+`false` باشد یعنی مجاز نیست. می‌توان از این خاصیت برای قطع عمدی صدای یک مسیر استفاده کرد.
 
-When enabled, a track's data is output from the source to the
-destination; otherwise, empty frames are output.
+وقتی یک مسیر فعال است، داده‌های آن از منبع به مقصد خروجی داده می‌شود؛
+در غیر این صورت، فریم‌های خالی خروجی داده می‌شوند.
 
-In the case of audio, a disabled track generates frames of silence (that is, frames in
-which every sample's value is 0). For video tracks, every frame is filled entirely with
-black pixels.
+در مورد صدا، یک مسیر غیرفعال فریم‌های سکوت تولید می‌کند (یعنی فریم‌هایی که در آنها
+مقدار هر نمونه ۰ است). برای مسیرهای ویدیو، هر فریم کاملاً با پیکسل‌های سیاه پر می‌شود.
 
-The value of `enabled`, in essence, represents what a typical user would
-consider the muting state for a track, whereas the {{domxref("MediaStreamTrack.muted", "muted")}}
-property indicates a state in which the track is temporarily unable to output
-data, such as a scenario in which frames have been lost in transit.
+مقدار `enabled`، در اصل، نشان‌دهنده چیزی است که یک کاربر معمولی آن را حالت قطع صدا برای یک مسیر در نظر می‌گیرد، در حالی که خاصیت {{domxref("MediaStreamTrack.muted", "muted")}}
+وضعیتی را نشان می‌دهد که در آن مسیر به طور موقت قادر به خروجی داده نیست،
+مانند سناریویی که فریم‌ها در حین انتقال از دست رفته‌اند.
 
 > [!NOTE]
-> If the track has been disconnected, the value of this property
-> can be changed, but has no effect.
+> اگر مسیر قطع شده باشد، مقدار این خاصیت
+> قابل تغییر است، اما تأثیری نخواهد داشت.
 
-## Value
+## مقدار
 
-When `true`, `enabled` indicates that the track is permitted to
-render its actual media to the output. When `enabled` is set to
-`false`, the track only generates empty frames.
+وقتی `true` باشد، `enabled` نشان می‌دهد که مسیر مجاز است
+رسانه واقعی خود را به خروجی رندر کند. وقتی `enabled` روی
+`false` تنظیم شود، مسیر فقط فریم‌های خالی تولید می‌کند.
 
-Empty audio frames have every sample's value set to 0. Empty video frames have every
-pixel set to black.
+فریم‌های صوتی خالی مقدار هر نمونه را ۰ دارند. فریم‌های ویدیویی خالی هر پیکسل را سیاه دارند.
 
 > [!NOTE]
-> When implementing a mute/unmute feature, you should use the
-> `enabled` property.
+> هنگام پیاده‌سازی ویژگی قطع/وصل صدا، باید از
+> خاصیت `enabled` استفاده کنید.
 
-## Usage notes
+## نکات استفاده
 
-If the {{domxref("MediaStreamTrack")}} represents the video input from a camera,
-disabling the track by setting `enabled` to `false` also updates
-device activity indicators to show that the camera is not currently recording or
-streaming. For example, the green "in use" light next to the camera in iMac and MacBook
-computers turns off while the track is muted in this way.
+اگر {{domxref("MediaStreamTrack")}} نشان‌دهنده ورودی ویدیو از یک دوربین باشد،
+غیرفعال کردن مسیر با تنظیم `enabled` به `false` همچنین
+نشان‌دهنده‌های فعالیت دستگاه را به‌روز می‌کند تا نشان دهد دوربین در حال ضبط یا استریم نیست.
+برای مثال، چراغ سبز «در حال استفاده» در کنار دوربین در رایانه‌های iMac و MacBook
+در حالی که مسیر به این روش قطع است، خاموش می‌شود.
 
-## Example
+## مثال
 
-This example demonstrates a {{domxref("Element/click_event", "click")}} event handler for a pause button.
+این مثال یک کنترل‌کننده رویداد {{domxref("Element/click_event", "click")}} را برای یک دکمه توقف (pause) نشان می‌دهد.
 
 ```js
 pauseButton.onclick = (evt) => {
@@ -70,22 +59,21 @@ pauseButton.onclick = (evt) => {
 };
 ```
 
-This creates a variable, `newState`, which is the opposite of the current
-value of `enabled`, then uses that to select either the Emoji character for
-the "play" icon or the character for the "pause" icon as the new
-{{domxref("Element.innerHTML", "innerHTML")}} of the pause button's element.
+این یک متغیر به نام `newState` ایجاد می‌کند که معکوس مقدار فعلی
+`enabled` است، سپس از آن برای انتخاب یا کاراکتر ایموجی «play» یا کاراکتر ایموجی «pause» به عنوان
+{{domxref("Element.innerHTML", "innerHTML")}} جدید عنصر دکمه توقف استفاده می‌کند.
 
-Finally, the new value of `enabled` is saved, making the change take effect.
+در نهایت، مقدار جدید `enabled` ذخیره می‌شود تا تغییر اعمال شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
 - {{domxref("MediaStream")}}
