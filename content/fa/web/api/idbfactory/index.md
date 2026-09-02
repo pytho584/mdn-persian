@@ -1,10 +1,4 @@
 ---
-title: "IDBFactory"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBFactory"
-status: "needs-translation"
----
-
----
 title: IDBFactory
 slug: Web/API/IDBFactory
 page-type: web-api-interface
@@ -13,54 +7,54 @@ browser-compat: api.IDBFactory
 
 {{APIRef("IndexedDB")}} {{AvailableInWorkers}}
 
-The **`IDBFactory`** interface of the [IndexedDB API](/en-US/docs/Web/API/IndexedDB_API) lets applications asynchronously access the indexed databases. The object that implements the interface is `window.indexedDB`. You open — that is, create and access — and delete a database with this object, and not directly with `IDBFactory`.
+رابط **`IDBFactory`** از [API IndexedDB](/en-US/docs/Web/API/IndexedDB_API) به برنامه‌ها امکان می‌دهد تا به صورت ناهمگام به پایگاه‌های داده‌ی فهرست‌بندی شده دسترسی داشته باشند. شیئی که این رابط را پیاده‌سازی می‌کند `window.indexedDB` است. شما با استفاده از این شیء، یک پایگاه داده را باز می‌کنید (یعنی ایجاد و به آن دسترسی پیدا می‌کنید) و حذف می‌کنید، نه مستقیماً با `IDBFactory`.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("IDBFactory.open()")}}
-  - : Requests opening a [connection to a database](/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology#database_connection).
+  - : درخواست باز کردن یک [اتصال به پایگاه داده](/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology#database_connection) را می‌دهد.
 - {{domxref("IDBFactory.deleteDatabase()")}}
-  - : Requests the deletion of a database.
+  - : درخواست حذف یک پایگاه داده را می‌دهد.
 - {{domxref("IDBFactory.cmp()")}}
-  - : Compares two keys and returns a result indicating which one is greater in value.
+  - : دو کلید را با هم مقایسه می‌کند و نتیجه‌ای را برمی‌گرداند که نشان می‌دهد کدام یک از نظر مقدار بزرگ‌تر است.
 - {{domxref("IDBFactory.databases()")}}
-  - : Returns a promise that fulfills with an array of all available databases, including their names and versions.
+  - : یک promise برمی‌گرداند که با آرایه‌ای از تمام پایگاه‌های داده‌ی موجود، شامل نام‌ها و نسخه‌های آن‌ها، fulfilled می‌شود.
 
-## Example
+## مثال
 
-In the following code snippet, we make a request to open a database, and include handlers for the success and error cases. For a full working example, see our [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) app ([view example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+در قطعه کد زیر، ما یک درخواست برای باز کردن یک پایگاه داده ارسال می‌کنیم و handlerهایی برای موارد موفقیت و خطا در نظر می‌گیریم. برای یک مثال کامل و عملی، به برنامه‌ی [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ما مراجعه کنید ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
 
 ```js
-// Let us open version 4 of our database
+// بیایید نسخه ۴ پایگاه داده خود را باز کنیم
 const DBOpenRequest = window.indexedDB.open("toDoList", 4);
 
-// these two event handlers act on the database being opened successfully, or not
+// این دو event handler روی باز شدن موفق یا ناموفق پایگاه داده عمل می‌کنند
 DBOpenRequest.onerror = (event) => {
-  console.error("Error loading database.");
+  console.error("خطا در بارگذاری پایگاه داده.");
 };
 
 DBOpenRequest.onsuccess = (event) => {
-  console.info("Database initialized.");
+  console.info("پایگاه داده مقداردهی اولیه شد.");
 
-  // store the result of opening the database in the db variable. This is used a lot later on, for opening transactions and suchlike.
+  // نتیجه باز کردن پایگاه داده را در متغیر db ذخیره کنید. این متغیر بعداً برای باز کردن تراکنش‌ها و موارد مشابه بسیار استفاده می‌شود.
   db = DBOpenRequest.result;
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم محدوده‌ای از کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و ایجاد تغییرات در داده‌های خود: {{domxref("IDBObjectStore")}}
+- استفاده از مکان‌نماها: {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
