@@ -1,11 +1,5 @@
 ---
 title: "KeyboardEvent: metaKey property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/metaKey"
-status: "needs-translation"
----
-
----
-title: "KeyboardEvent: metaKey property"
 short-title: metaKey
 slug: Web/API/KeyboardEvent/metaKey
 page-type: web-api-instance-property
@@ -14,22 +8,17 @@ browser-compat: api.KeyboardEvent.metaKey
 
 {{APIRef("UI Events")}}
 
-The **`KeyboardEvent.metaKey`** read-only property returning a
-boolean value that indicates if the <kbd>Meta</kbd> key was pressed
-(`true`) or not (`false`) when the event occurred. Some operating
-systems may intercept the key so it is never detected.
+ویژگی فقط‌خواندنی **`KeyboardEvent.metaKey`** یک مقدار بولی برمی‌گرداند که نشان می‌دهد آیا کلید <kbd>Meta</kbd> هنگام رخداد رویداد فشرده شده بود (`true`) یا نه (`false`). برخی سیستم‌عامل‌ها ممکن است این کلید را رهگیری کنند، به‌گونه‌ای که هرگز شناسایی نشود.
 
 > [!NOTE]
-> On Macintosh keyboards, this is the <kbd>⌘ Command</kbd> key.
+> در صفحه‌کلیدهای مکینتاش، این کلید <kbd>⌘ Command</kbd> است.
 
 > [!NOTE]
-> Before Firefox 118, the <kbd>⊞ Windows</kbd> key was handled
-> as an "OS" key rather than the "Meta" key. `KeyboardEvent.metaKey` was
-> `false` when the <kbd>⊞ Windows</kbd> key was pressed.
+> قبل از Firefox 118، کلید <kbd>⊞ Windows</kbd> به‌جای کلید «Meta» به‌عنوان کلید «OS» مدیریت می‌شد. هنگام فشردن کلید <kbd>⊞ Windows</kbd>، مقدار `KeyboardEvent.metaKey` برابر `false` بود.
 
 ## Value
 
-A boolean value.
+یک مقدار بولی.
 
 ## Examples
 
