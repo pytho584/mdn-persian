@@ -1,11 +1,5 @@
 ---
 title: "NamedNodeMap: removeNamedItemNS() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NamedNodeMap/removeNamedItemNS"
-status: "needs-translation"
----
-
----
-title: "NamedNodeMap: removeNamedItemNS() method"
 short-title: removeNamedItemNS()
 slug: Web/API/NamedNodeMap/removeNamedItemNS
 page-type: web-api-instance-method
@@ -14,8 +8,7 @@ browser-compat: api.NamedNodeMap.removeNamedItemNS
 
 {{APIRef("DOM")}}
 
-The **`removeNamedItemNS()`** method of the {{domxref("NamedNodeMap")}} interface
-removes the {{domxref("Attr")}} corresponding to the given namespace and local name from the map.
+متد **`removeNamedItemNS()`** از رابط {{domxref("NamedNodeMap")}}، ویژگی {{domxref("Attr")}} متناظر با فضای نام و نام محلی داده شده را از نقشه حذف می‌کند.
 
 ## Syntax
 
@@ -23,26 +16,26 @@ removes the {{domxref("Attr")}} corresponding to the given namespace and local n
 removeNamedItemNS(namespace, localName)
 ```
 
-### Parameters
+### پارامترها
 
 - `namespace`
-  - : The namespace of the attribute to remove from the map
+  - : فضای نام ویژگی‌ای که باید از نقشه حذف شود.
     > [!WARNING]
-    > `namespace` is the URI of the namespace, not the prefix.
+    > `namespace` URI فضای نام است، نه پیشوند.
 
 - `localName`
-  - : The local name of the attribute to remove from the map.
+  - : نام محلی ویژگی‌ای که باید از نقشه حذف شود.
 
-### Return value
+### مقدار بازگشتی
 
-The removed {{domxref("Attr")}}.
+ویژگی {{domxref("Attr")}} حذف شده.
 
-### Exceptions
+### استثناها
 
 - `NotFoundError` {{domxref("DOMException")}}
-  - : Thrown if there is no attribute with the given namespace and local name.
+  - : در صورت عدم وجود ویژگی با فضای نام و نام محلی داده شده پرتاب می‌شود.
 
-## Example
+## مثال
 
 ```html hidden
 <pre></pre>
@@ -72,10 +65,10 @@ pre.textContent = result;
 
 {{EmbedLiveSample("Example", "100%", 120)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
