@@ -1,10 +1,4 @@
 ---
-title: "MediaCapabilities"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaCapabilities"
-status: "needs-translation"
----
-
----
 title: MediaCapabilities
 slug: Web/API/MediaCapabilities
 page-type: web-api-interface
@@ -13,27 +7,27 @@ browser-compat: api.MediaCapabilities
 
 {{APIRef("Media Capabilities API")}}{{AvailableInWorkers}}
 
-The **`MediaCapabilities`** interface of the [Media Capabilities API](/en-US/docs/Web/API/Media_Capabilities_API) provides information about the decoding abilities of the device, system and browser. The API can be used to query the browser about the decoding abilities of the device based on codecs, profile, resolution, and bitrates. The information can be used to serve optimal media streams to the user and determine if playback should be smooth and power efficient.
+رابط **`MediaCapabilities`** از [Media Capabilities API](/en-US/docs/Web/API/Media_Capabilities_API) اطلاعاتی درباره توانایی‌های رمزگشایی دستگاه، سیستم و مرورگر فراهم می‌کند. این API می‌تواند برای پرس‌وجو از مرورگر درباره توانایی‌های رمزگشایی دستگاه بر اساس کدک‌ها، پروفایل، رزولوشن و نرخ بیت استفاده شود. این اطلاعات می‌توانند برای ارائه جریان‌های رسانه‌ای بهینه به کاربر و تعیین اینکه آیا پخش باید روان و کم‌مصرف باشد، استفاده شوند.
 
-The information is accessed through the **`mediaCapabilities`** property of the {{domxref("Navigator")}} and {{domxref("WorkerNavigator")}} interface.
+این اطلاعات از طریق ویژگی **`mediaCapabilities`** رابط‌های {{domxref("Navigator")}} و {{domxref("WorkerNavigator")}} قابل دسترسی است.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("MediaCapabilities.encodingInfo()")}}
-  - : When passed a valid media configuration, it returns a promise with information as to whether the media type is supported, and whether encoding such media would be smooth and power efficient.
+  - : با دریافت یک پیکربندی رسانه‌ای معتبر، یک Promise بازمی‌گرداند که شامل اطلاعاتی درباره پشتیبانی از نوع رسانه و اینکه آیا رمزگذاری چنین رسانه‌ای روان و کم‌مصرف خواهد بود.
 - {{domxref("MediaCapabilities.decodingInfo()")}}
-  - : When passed a valid media configuration, it returns a promise with information as to whether the media type is supported, and whether decoding such media would be smooth and power efficient.
+  - : با دریافت یک پیکربندی رسانه‌ای معتبر، یک Promise بازمی‌گرداند که شامل اطلاعاتی درباره پشتیبانی از نوع رسانه و اینکه آیا رمزگشایی چنین رسانه‌ای روان و کم‌مصرف خواهد بود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [HTMLMediaElement](/en-US/docs/Web/API/HTMLMediaElement)'s method [canPlayType()](/en-US/docs/Web/API/HTMLMediaElement/canPlayType)
-- [MediaSource](/en-US/docs/Web/API/MediaSource)'s method [isTypeSupported()](/en-US/docs/Web/API/MediaSource/isTypeSupported_static)
-- {{domxref("Navigator")}} interface
+- روش [canPlayType()](/en-US/docs/Web/API/HTMLMediaElement/canPlayType) از [HTMLMediaElement](/en-US/docs/Web/API/HTMLMediaElement)
+- روش [isTypeSupported()](/en-US/docs/Web/API/MediaSource/isTypeSupported_static) از [MediaSource](/en-US/docs/Web/API/MediaSource)
+- رابط {{domxref("Navigator")}}
