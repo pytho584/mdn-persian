@@ -1,7 +1,5 @@
 ---
 title: "MessageChannel"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MessageChannel"
-status: "needs-translation"
 ---
 
 ---
@@ -13,27 +11,27 @@ browser-compat: api.MessageChannel
 
 {{APIRef("Channel Messaging API")}} {{AvailableInWorkers}}
 
-The **`MessageChannel`** interface of the [Channel Messaging API](/en-US/docs/Web/API/Channel_Messaging_API) allows us to create a new message channel and send data through it via its two {{domxref("MessagePort")}} properties.
+رابط **`MessageChannel`** از [API پیام‌رسانی کانال](/en-US/docs/Web/API/Channel_Messaging_API) به ما امکان می‌دهد یک کانال پیام جدید ایجاد کرده و از طریق دو ویژگی {{domxref("MessagePort")}} آن داده ارسال کنیم.
 
 ## Constructor
 
 - {{domxref("MessageChannel.MessageChannel", "MessageChannel()")}}
-  - : Returns a new `MessageChannel` object with two new {{domxref("MessagePort")}} objects.
+  - : یک شیء `MessageChannel` جدید با دو شیء {{domxref("MessagePort")}} جدید برمی‌گرداند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("MessageChannel.port1")}} {{ReadOnlyInline}}
-  - : Returns port1 of the channel.
+  - : port1 کانال را برمی‌گرداند.
 - {{domxref("MessageChannel.port2")}} {{ReadOnlyInline}}
-  - : Returns port2 of the channel.
+  - : port2 کانال را برمی‌گرداند.
 
-## Example
+## مثال
 
-In the following example, you can see a new channel being created using the {{domxref("MessageChannel.MessageChannel", "MessageChannel()")}} constructor.
+در مثال زیر، می‌توانید یک کانال جدید را با استفاده از سازنده {{domxref("MessageChannel.MessageChannel", "MessageChannel()")}} ایجاد کنید.
 
-When the IFrame has loaded, we register an {{domxref("MessagePort/message_event","onmessage")}} handler for {{domxref("MessageChannel.port1")}} and transfer {{domxref("MessageChannel.port2")}} to the IFrame using the {{domxref("window.postMessage")}} method along with a message.
+هنگامی که IFrame بارگذاری شد، یک handler {{domxref("MessagePort/message_event","onmessage")}} برای {{domxref("MessageChannel.port1")}} ثبت می‌کنیم و {{domxref("MessageChannel.port2")}} را با استفاده از متد {{domxref("window.postMessage")}} به همراه یک پیام به IFrame منتقل می‌کنیم.
 
-When a message is received back from the IFrame, the `onMessage` function outputs the message to a paragraph.
+هنگامی که یک پیام از IFrame بازگردانده می‌شود، تابع `onMessage` پیام را در یک پاراگراف نمایش می‌دهد.
 
 ```js
 const channel = new MessageChannel();
@@ -59,16 +57,16 @@ function onMessage(e) {
 }
 ```
 
-For a full working example, see our [channel messaging basic demo](https://github.com/mdn/dom-examples/tree/main/channel-messaging-basic) on GitHub ([run it live too](https://mdn.github.io/dom-examples/channel-messaging-basic/)).
+برای یک مثال کامل عملی، به [نمونه اصلی پیام‌رسانی کانال](https://github.com/mdn/dom-examples/tree/main/channel-messaging-basic) در GitHub مراجعه کنید ([همچنین به صورت زنده اجرا کنید](https://mdn.github.io/dom-examples/channel-messaging-basic/)).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using channel messaging](/en-US/docs/Web/API/Channel_Messaging_API/Using_channel_messaging)
+- [استفاده از پیام‌رسانی کانال](/en-US/docs/Web/API/Channel_Messaging_API/Using_channel_messaging)
