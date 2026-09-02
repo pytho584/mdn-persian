@@ -1,11 +1,5 @@
 ---
 title: "MediaStreamTrackAudioSourceNode: MediaStreamTrackAudioSourceNode() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrackAudioSourceNode/MediaStreamTrackAudioSourceNode"
-status: "needs-translation"
----
-
----
-title: "MediaStreamTrackAudioSourceNode: MediaStreamTrackAudioSourceNode() constructor"
 short-title: MediaStreamTrackAudioSourceNode()
 slug: Web/API/MediaStreamTrackAudioSourceNode/MediaStreamTrackAudioSourceNode
 page-type: web-api-constructor
@@ -14,39 +8,39 @@ browser-compat: api.MediaStreamTrackAudioSourceNode.MediaStreamTrackAudioSourceN
 
 {{APIRef("Web Audio API")}}
 
-The [Web Audio API](/en-US/docs/Web/API/Web_Audio_API)'s **`MediaStreamTrackAudioSourceNode()`** constructor creates and returns a new {{domxref("MediaStreamTrackAudioSourceNode")}} object whose audio is taken from the {{domxref("MediaStreamTrack")}} specified in the given options object.
+سازندهٔ **`MediaStreamTrackAudioSourceNode()`** در [Web Audio API](/en-US/docs/Web/API/Web_Audio_API)، یک شیء جدید {{domxref("MediaStreamTrackAudioSourceNode")}} می‌سازد و برمی‌گرداند که صدای آن از {{domxref("MediaStreamTrack")}} تعیین‌شده در شیء گزینه‌ها گرفته می‌شود.
 
-Another way to create a `MediaStreamTrackAudioSourceNode` is to call the {{domxref("AudioContext.createMediaStreamTrackSource()")}} method, specifying the {{domxref("MediaStreamTrack")}} from which you want to obtain audio.
+روش دیگر برای ایجاد یک `MediaStreamTrackAudioSourceNode`، فراخوانی متد {{domxref("AudioContext.createMediaStreamTrackSource()")}} و تعیین {{domxref("MediaStreamTrack")}} موردنظر برای دریافت صدا است.
 
-## Syntax
+## نحو
 
 ```js-nolint
 new MediaStreamTrackAudioSourceNode(context, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `context`
-  - : An {{domxref("AudioContext")}} representing the audio context you want the node to be associated with.
+  - : یک {{domxref("AudioContext")}} که نشان‌دهندهٔ زمینهٔ صوتی‌ای است که می‌خواهید گره به آن مرتبط شود.
 - `options`
-  - : An object defining the properties you want the `MediaStreamTrackAudioSourceNode` to have:
+  - : یک شیء که ویژگی‌های موردنظر برای `MediaStreamTrackAudioSourceNode` را تعریف می‌کند:
     - `mediaStreamTrack`
-      - : The {{domxref("MediaStreamTrack")}} from which to take audio data for this node's output.
+      - : همان {{domxref("MediaStreamTrack")}}ای است که دادهٔ صوتی خروجی این گره از آن گرفته می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("MediaStreamTrackAudioSourceNode")}} object representing the audio node whose media is obtained from the specified media track.
+یک شیء جدید {{domxref("MediaStreamTrackAudioSourceNode")}} که نمایانگر گرهٔ صوتی است و رسانهٔ آن از تراک رسانه‌ای مشخص‌شده به دست می‌آید.
 
-### Exceptions
+### استثناها
 
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Thrown if the specified `context` is not an {{domxref("AudioContext")}}.
+  - : اگر `context` مشخص‌شده یک {{domxref("AudioContext")}} نباشد، صادر می‌شود.
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the specified {{domxref("MediaStreamTrack")}} isn't an audio track (that is, its {{domxref("MediaStreamTrack.kind", "kind")}} property isn't `audio`.
+  - : اگر {{domxref("MediaStreamTrack")}} مشخص‌شده یک تراک صوتی نباشد (یعنی خاصیت {{domxref("MediaStreamTrack.kind", "kind")}} آن برابر `audio` نباشد)، صادر می‌شود.
 
-## Example
+## مثال
 
-This example uses {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}} to obtain access to the user's camera, then creates a new {{domxref("MediaStreamAudioSourceNode")}} from the first audio track provided by the device.
+این مثال با استفاده از {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}} به دوربین کاربر دسترسی پیدا می‌کند و سپس یک {{domxref("MediaStreamAudioSourceNode")}} جدید از اولین تراک صوتی ارائه‌شده توسط دستگاه می‌سازد.
 
 ```js
 const audioCtx = new AudioContext();
@@ -73,10 +67,10 @@ if (navigator.mediaDevices.getUserMedia) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
