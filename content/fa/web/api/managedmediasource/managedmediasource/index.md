@@ -1,11 +1,5 @@
 ---
 title: "ManagedMediaSource: ManagedMediaSource() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ManagedMediaSource/ManagedMediaSource"
-status: "needs-translation"
----
-
----
-title: "ManagedMediaSource: ManagedMediaSource() constructor"
 short-title: ManagedMediaSource()
 slug: Web/API/ManagedMediaSource/ManagedMediaSource
 page-type: web-api-constructor
@@ -16,27 +10,27 @@ browser-compat: api.ManagedMediaSource.ManagedMediaSource
 
 {{APIRef("Media Source Extensions")}}{{AvailableInWorkers("window_and_dedicated")}}{{SeeCompatTable}}
 
-The **`ManagedMediaSource()`** constructor of the {{domxref("ManagedMediaSource")}} interface constructs and returns a new `ManagedMediaSource` object instance with no associated source buffers.
+سازندهٔ **`ManagedMediaSource()`** از رابط {{domxref("ManagedMediaSource")}} یک نمونهٔ جدید از شیء `ManagedMediaSource` را می‌سازد و برمی‌گرداند که هیچ بافر منبعی به آن مرتبط نیست.
 
-## Syntax
+## نحو
 
 ```js-nolint
 new ManagedMediaSource()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("ManagedMediaSource")}} object instance.
+یک نمونهٔ جدید از شیء {{domxref("ManagedMediaSource")}}.
 
-## Examples
+## مثال‌ها
 
-### Creating a ManagedMediaSource and attaching it to a video element
+### ایجاد یک ManagedMediaSource و متصل کردن آن به یک عنصر ویدئو
 
-The following example creates a new `ManagedMediaSource`, attaches it to a {{htmlelement("video")}} element, and uses the {{domxref("ManagedMediaSource.startstreaming_event", "startstreaming")}} event to begin fetching media data.
+مثال زیر یک `ManagedMediaSource` جدید می‌سازد، آن را به یک عنصر {{htmlelement("video")}} متصل می‌کند، و از رویداد {{domxref("ManagedMediaSource.startstreaming_event", "startstreaming")}} برای شروع واکشی داده‌های رسانه استفاده می‌کند.
 
 ```js
 const videoUrl =
@@ -65,15 +59,15 @@ if (ManagedMediaSource.isTypeSupported(mediaType)) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("ManagedMediaSource")}}
 - {{domxref("ManagedSourceBuffer")}}
