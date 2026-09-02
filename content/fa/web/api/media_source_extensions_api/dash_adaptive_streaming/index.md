@@ -1,30 +1,24 @@
 ---
-title: "DASH Adaptive Streaming for HTML video"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Media_Source_Extensions_API/DASH_Adaptive_Streaming"
-status: "needs-translation"
----
-
----
-title: DASH Adaptive Streaming for HTML video
+title: "پخش تطبیقی DASH برای ویدیوی HTML"
 slug: Web/API/Media_Source_Extensions_API/DASH_Adaptive_Streaming
 page-type: guide
 ---
 
 {{DefaultAPISidebar("Media Source Extensions")}}
 
-Dynamic Adaptive Streaming over HTTP (DASH) is an adaptive streaming protocol. This means that it allows for a video stream to switch between bit rates on the basis of network performance, in order to keep a video playing.
+پخش تطبیقی پویا از طریق HTTP (DASH) یک پروتکل پخش تطبیقی است. این بدان معناست که به جریان ویدیو اجازه می‌دهد تا بر اساس عملکرد شبکه، بین نرخ‌های بیت مختلف جابجا شود تا ویدیو به پخش خود ادامه دهد.
 
-First you'll need to convert your WebM video to a DASH manifest with the accompanying video files in various bit rates. To start with you'll only need the FFmpeg program from [ffmpeg.org](https://www.ffmpeg.org/), with libvpx and libvorbis support for WebM video and audio, at least version 2.5 (probably; this was tested with 3.2.5).
+ابتدا باید فایل ویدیوی WebM خود را به یک مانیفست DASH به همراه فایل‌های ویدیویی متناظر با نرخ‌های بیت مختلف تبدیل کنید. برای شروع، فقط به برنامه FFmpeg از [ffmpeg.org](https://www.ffmpeg.org/) نیاز دارید که دارای پشتیبانی از libvpx و libvorbis برای ویدیو و صدای WebM باشد، حداقل نسخه 2.5 (احتمالاً؛ این مورد با نسخه 3.2.5 آزمایش شده است).
 
-First, use your existing WebM file to create one audio file and multiple video files. In the example below, the file **_in.video_** can be any container with at least one audio and one video stream that can be decoded by FFmpeg.
+ابتدا از فایل WebM موجود خود برای ایجاد یک فایل صوتی و چندین فایل ویدیویی استفاده کنید. در مثال زیر، فایل **_in.video_** می‌تواند هر ظرفی باشد که حداقل یک جریان صوتی و یک جریان ویدیویی داشته باشد که توسط FFmpeg قابل رمزگشایی باشد.
 
-Create the audio using:
+فایل صوتی را با استفاده از دستور زیر ایجاد کنید:
 
 ```bash
 ffmpeg -i in.video -vn -acodec libvorbis -ab 128k -dash 1 my_audio.webm
 ```
 
-Create each video variant.
+هر نوع ویدیویی را ایجاد کنید.
 
 ```bash
 ffmpeg -i in.video -c:v libvpx-vp9 -keyint_min 150 -g 150 -tile-columns 4 -frame-parallel 1 -f webm -dash 1 \
@@ -51,7 +45,7 @@ ffmpeg -i in.video -c:v libvpx-vp9 -keyint_min 150 -g 150 -tile-columns 4 -frame
 -an -vf scale=1280:720 -b:v 1500k -dash 1 video_1280x720_1500k.webm
 ```
 
-Or do it in all in one command.
+یا می‌توانید همه را در یک دستور انجام دهید.
 
 ```bash
 ffmpeg -i in.video -c:v libvpx-vp9 -keyint_min 150 \
@@ -63,7 +57,7 @@ ffmpeg -i in.video -c:v libvpx-vp9 -keyint_min 150 \
 -an -vf scale=1280:720 -b:v 1500k -dash 1 video_1280x720_1500k.webm
 ```
 
-Then, create the manifest file.
+سپس، فایل مانیفست را ایجاد کنید.
 
 ```bash
 ffmpeg \
@@ -79,14 +73,14 @@ ffmpeg \
   my_video_manifest.mpd
 ```
 
-The `-map` arguments correspond to the input files in the sequence they are given; you should have one for each file. The `-adaptation_sets` argument assigns them into adaptation sets; for example, this creates one set (0) that contains the streams 0, 1, 2 and 3 (the videos), and another set (1) that contains only stream 4, the audio stream.
+آرگومان‌های `-map` با فایل‌های ورودی به ترتیبی که داده شده‌اند مطابقت دارند؛ باید برای هر فایل یک مورد داشته باشید. آرگومان `-adaptation_sets` آن‌ها را به مجموعه‌های تطبیقی (adaptation sets) اختصاص می‌دهد؛ به عنوان مثال، این دستور یک مجموعه (0) ایجاد می‌کند که شامل جریان‌های 0، 1، 2 و 3 (ویدیوها) است، و مجموعه دیگری (1) که فقط شامل جریان 4، یعنی جریان صوتی است.
 
-Put the manifest and the associated video files on your web server or CDN. DASH works via HTTP, so as long as your HTTP server supports byte range requests, and it's set up to serve `.mpd` files with `Content-Type: application/dash+xml`, then you're all set.
+فایل مانیفست و فایل‌های ویدیویی مرتبط را روی سرور وب یا CDN خود قرار دهید. DASH از طریق HTTP کار می‌کند، بنابراین تا زمانی که سرور HTTP شما از درخواست‌های بایت رنج (byte range requests) پشتیبانی می‌کند و برای ارائه فایل‌های `.mpd` با `Content-Type: application/dash+xml` تنظیم شده است، همه چیز آماده است.
 
-Then, in order to correctly connect this `.mpd` file to your `<video>` element, you need a JavaScript library like dash.js, because no browser has native support for DASH. Read [dash.js quickstart](https://dashif.org/dash.js/pages/quickstart/) for how to set up your page to use it.
+سپس، برای اتصال صحیح این فایل `.mpd` به عنصر `<video>` خود، به یک کتابخانه جاوااسکریپتی مانند dash.js نیاز دارید، زیرا هیچ مرورگری به صورت بومی از DASH پشتیبانی نمی‌کند. برای آشنایی با نحوه تنظیم صفحه خود برای استفاده از آن، [راهنمای شروع سریع dash.js](https://dashif.org/dash.js/pages/quickstart/) را مطالعه کنید.
 
-## See also
+## همچنین ببینید
 
-- [WebM DASH Specification at The WebM Project](https://wiki.webmproject.org/adaptive-streaming/webm-dash-specification)
-- [DASH Industry Forum](https://dashif.org/)
-- [WebM project description of how to create DASH files with FFMPEG](https://wiki.webmproject.org/adaptive-streaming/instructions-to-playback-adaptive-webm-using-dash)
+- [مشخصات WebM DASH در پروژه WebM](https://wiki.webmproject.org/adaptive-streaming/webm-dash-specification)
+- [انجمن صنعت DASH](https://dashif.org/)
+- [توضیحات پروژه WebM در مورد نحوه ایجاد فایل‌های DASH با FFMPEG](https://wiki.webmproject.org/adaptive-streaming/instructions-to-playback-adaptive-webm-using-dash)
