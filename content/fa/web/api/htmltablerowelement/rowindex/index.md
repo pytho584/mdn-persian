@@ -1,11 +1,5 @@
 ---
 title: "HTMLTableRowElement: rowIndex property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableRowElement/rowIndex"
-status: "needs-translation"
----
-
----
-title: "HTMLTableRowElement: rowIndex property"
 short-title: rowIndex
 slug: Web/API/HTMLTableRowElement/rowIndex
 page-type: web-api-instance-property
@@ -14,22 +8,17 @@ browser-compat: api.HTMLTableRowElement.rowIndex
 
 {{ APIRef("HTML DOM") }}
 
-The **`rowIndex`** read-only property of the {{domxref("HTMLTableRowElement")}} interface
-represents the position of a row within the whole {{HtmlElement("table")}}.
+خاصیت فقط‌خواندنی **`rowIndex`** از رابط {{domxref("HTMLTableRowElement")}} موقعیت یک سطر را در کل {{HtmlElement("table")}} نشان می‌دهد.
 
-Even when the {{HtmlElement("thead")}}, {{HtmlElement("tbody")}}, and
-{{HtmlElement("tfoot")}} elements are out of order in the HTML, browsers render the
-table in the right order. Therefore the rows count from `<thead>` to
-`<tbody>`, from `<tbody>` to
-`<tfoot>`.
+حتی وقتی عناصر {{HtmlElement("thead")}}، {{HtmlElement("tbody")}} و {{HtmlElement("tfoot")}} در HTML به‌هم‌ریخته باشند، مرورگرها جدول را به ترتیب درست رندر می‌کنند. بنابراین شمارش سطرها از `<thead>` به `<tbody>` و از `<tbody>` به `<tfoot>` انجام می‌شود.
 
-## Value
+## مقدار
 
-The index of the row, or `-1` if the row is not part of a table.
+شاخص سطر، یا `۱-` اگر سطر بخشی از جدول نباشد.
 
-## Examples
+## مثال‌ها
 
-This example uses JavaScript to label all the row numbers in a table.
+این مثال با استفاده از جاوااسکریپت شماره‌ی همه‌ی سطرهای یک جدول را برچسب‌گذاری می‌کند.
 
 ### HTML
 
@@ -76,18 +65,18 @@ rows.forEach((row) => {
 });
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLTableRowElement.sectionRowIndex")}}
