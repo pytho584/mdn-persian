@@ -1,11 +1,5 @@
 ---
 title: "HTMLTextAreaElement: dirName property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTextAreaElement/dirName"
-status: "needs-translation"
----
-
----
-title: "HTMLTextAreaElement: dirName property"
 short-title: dirName
 slug: Web/API/HTMLTextAreaElement/dirName
 page-type: web-api-instance-property
@@ -14,29 +8,29 @@ browser-compat: api.HTMLTextAreaElement.dirName
 
 {{APIRef("HTML DOM")}}
 
-The **`dirName`** property of the {{domxref("HTMLTextAreaElement")}} interface is the directionality of the element. It reflects the value of the {{htmlelement("textarea")}} element's [`dirName`](/en-US/docs/Web/HTML/Reference/Attributes/dirname) attribute. This property can be retrieved or set.
+ویژگی **`dirName`** از رابط {{domxref("HTMLTextAreaElement")}}، جهت‌دار بودن (directionality) عنصر را مشخص می‌کند. این ویژگی منعکس‌کنندهٔ مقدار صفت [`dirName`](/en-US/docs/Web/HTML/Reference/Attributes/dirname) عنصر {{htmlelement("textarea")}} است. می‌توان این ویژگی را خواند یا تنظیم کرد.
 
-The `dirname` attribute controls how the element's directionality is submitted. When included, the form control will submit with two name/value pairs: the first being the [`name`](/en-US/docs/Web/API/HTMLTextAreaElement/name) and [`value`](/en-US/docs/Web/API/HTMLTextAreaElement/value) of the `<textarea>`, and the second being the value of the [`dirname`](/en-US/docs/Web/HTML/Reference/Elements/textarea#dirname) attribute as the name, with a value of `ltr` or `rtl` as set by the browser.
+صفت `dirname` نحوهٔ ارسال جهت‌دار بودن عنصر را کنترل می‌کند. هنگامی که این صفت وجود داشته باشد، کنترل فرم با دو جفت نام/مقدار ارسال می‌شود: جفت اول [`name`](/en-US/docs/Web/API/HTMLTextAreaElement/name) و [`value`](/en-US/docs/Web/API/HTMLTextAreaElement/value) عنصر `<textarea>` است، و جفت دوم نام صفت [`dirname`](/en-US/docs/Web/HTML/Reference/Elements/textarea#dirname) به عنوان نام و مقداری برابر با `ltr` یا `rtl` (که توسط مرورگر تعیین می‌شود) خواهد بود.
 
-## Value
+## مقدار
 
-A string. The direction of the element.
+یک رشته. جهت عنصر.
 
-## Examples
+## مثال‌ها
 
 ```js
 textareaElement.dirName = "rtl";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLInputElement.dirName")}}
 - [`dir` attribute](/en-US/docs/Web/HTML/Reference/Global_attributes/dir)
