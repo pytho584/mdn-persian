@@ -1,11 +1,5 @@
 ---
 title: "MediaDeviceInfo: toJSON() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaDeviceInfo/toJSON"
-status: "needs-translation"
----
-
----
-title: "MediaDeviceInfo: toJSON() method"
 short-title: toJSON()
 slug: Web/API/MediaDeviceInfo/toJSON
 page-type: web-api-instance-method
@@ -14,23 +8,23 @@ browser-compat: api.MediaDeviceInfo.toJSON
 
 {{APIRef("Media Capture and Streams")}}{{securecontext_header}}
 
-The **`toJSON()`** method of the {{domxref("MediaDeviceInfo")}} interface is a {{Glossary("Serialization","serializer")}}; it returns a JSON representation of the {{domxref("MediaDeviceInfo")}} object.
+متد **`toJSON()`** در رابط {{domxref("MediaDeviceInfo")}} یک {{Glossary("Serialization","سریال‌ساز")}} است؛ این متد یک نمایش JSON از شیء {{domxref("MediaDeviceInfo")}} برمی‌گرداند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 toJSON()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("JSON")}} object that is the serialization of the {{domxref("MediaDeviceInfo")}} object.
+یک شیء {{jsxref("JSON")}} که سریال‌سازی شیء {{domxref("MediaDeviceInfo")}} است.
 
-### Examples
+### مثال‌ها
 
 ```js
 if (!navigator.mediaDevices || !navigator.mediaDevices.enumerateDevices) {
@@ -50,7 +44,7 @@ if (!navigator.mediaDevices || !navigator.mediaDevices.enumerateDevices) {
 }
 ```
 
-This might produce:
+این ممکن است خروجی زیر را تولید کند:
 
 ```bash
 Object { deviceId: "HJtTemQTM64Bivxv3ZEyKjCi1VR8042lPNpmXKObKJE=", kind: "videoinput", label: "", groupId: "Okm2l1YZTrwy8awTxE8QSLNFoVMdIXx++wLh68tbmv0=" }
@@ -58,14 +52,14 @@ Object { deviceId: "EqDubLxPlPeW+5w/ereWTF/3EaAMVHh9QBBHkZHiP0k=", kind: "audioi
 Object { deviceId: "CanWttL2RnHOiS7FzzYXMIvLqVFE5S06Lfy8H//nhEw=", kind: "audioinput", label: "", groupId: "nOdLNeXGIw9oL9f2wH69SssQpRVs7cmt9jqZrUWgQwI=" }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{jsxref("JSON")}}
