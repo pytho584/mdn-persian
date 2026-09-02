@@ -1,7 +1,5 @@
 ---
 title: "MediaSession: setScreenshareActive() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaSession/setScreenshareActive"
-status: "needs-translation"
 ---
 
 ---
@@ -16,31 +14,30 @@ browser-compat: api.MediaSession.setScreenshareActive
 
 {{APIRef("Media Session API")}}{{SeeCompatTable}}
 
-The **`setScreenshareActive()`** method of the {{domxref("MediaSession")}} interface is used to indicate to the user agent whether the user's screenshare is considered to be active.
+متد **`setScreenshareActive()`** از رابط {{domxref("MediaSession")}} برای نشان دادن این‌که آیا اشتراک‌گذاری صفحه کاربر فعال در نظر گرفته می‌شود یا نه، به عامل کاربر استفاده می‌شود.
 
-Call this method on the `navigator` object's {{domxref("navigator.mediaSession", "mediaSession")}} object.
+این متد را بر روی شیء {{domxref("navigator.mediaSession", "mediaSession")}} از شیء `navigator` فراخوانی کنید.
 
-Note that the status of the screenshare is not tracked in the {{domxref("MediaSession")}} itself, but must be tracked separately.
+توجه داشته باشید که وضعیت اشتراک‌گذاری صفحه در خود {{domxref("MediaSession")}} پیگیری نمی‌شود و باید به‌طور جداگانه پیگیری شود.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 setScreenshareActive(active)
 ```
 
-### Parameters
+### پارامترها
 
 - `active`
-  - : A boolean indicating whether the screenshare is considered active or not.
+  - : یک مقدار بولین که نشان می‌دهد آیا اشتراک‌گذاری صفحه فعال در نظر گرفته می‌شود یا نه.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-Below is an example of updating the screenshare active state of the current
-{{domxref('MediaSession')}}, as well as listening to requests to change the screenshare status with {{domxref("MediaSession.setActionHandler", "setActionHandler()")}}.
+در ادامه نمونه‌ای از به‌روزرسانی وضعیت فعال بودن اشتراک‌گذاری صفحه در {{domxref('MediaSession')}} جاری و همچنین گوش دادن به درخواست‌های تغییر وضعیت اشتراک‌گذاری صفحه با استفاده از {{domxref("MediaSession.setActionHandler", "setActionHandler()")}} ارائه شده است.
 
 ```js
 let screenshareActive = false;
@@ -53,10 +50,10 @@ navigator.mediaSession.setActionHandler("togglescreenshare", () => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
