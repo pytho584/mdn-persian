@@ -1,7 +1,6 @@
+```
 ---
 title: "IDBKeyRange: includes() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBKeyRange/includes"
-status: "needs-translation"
 ---
 
 ---
@@ -14,31 +13,29 @@ browser-compat: api.IDBKeyRange.includes
 
 {{ APIRef("IndexedDB") }} {{AvailableInWorkers}}
 
-The `includes()` method of the {{domxref("IDBKeyRange")}}
-interface returns a boolean indicating whether a specified key is inside the key
-range.
+متد `includes()` از رابط {{domxref("IDBKeyRange")}} یک مقدار بولین برمی‌گرداند که نشان می‌دهد آیا کلید مشخص‌شده درون بازه کلید قرار دارد یا نه.
 
-## Syntax
+## نحو
 
 ```js-nolint
 includes(key)
 ```
 
-### Parameters
+### پارامترها
 
 - `key`
-  - : The key you want to check for in your key range. This can be any type.
+  - : کلیدی که می‌خواهید وجود آن را در بازه کلید بررسی کنید. این مقدار می‌تواند از هر نوعی باشد.
 
-### Return value
+### مقدار بازگشتی
 
-A boolean value.
+یک مقدار بولین.
 
-### Exceptions
+### استثناها
 
 - `DataError` {{domxref("DOMException")}}
-  - : Thrown if the supplied key was not a valid key.
+  - : اگر کلید ارائه‌شده یک کلید معتبر نباشد، این خطا پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
 ```js
 const keyRangeValue = IDBKeyRange.bound("A", "K", false, false);
@@ -50,20 +47,21 @@ keyRangeValue.includes("W");
 // Returns false
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم بازه‌ای از کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و اعمال تغییرات در داده‌ها: {{domxref("IDBObjectStore")}}
+- استفاده از نشانگرها (cursors): {{domxref("IDBCursor")}}
+- مثال مرجع: [اعلان‌های کارها](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
+```
