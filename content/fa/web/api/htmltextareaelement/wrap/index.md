@@ -1,7 +1,5 @@
 ---
 title: "HTMLTextAreaElement: wrap property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTextAreaElement/wrap"
-status: "needs-translation"
 ---
 
 ---
@@ -14,13 +12,13 @@ browser-compat: api.HTMLTextAreaElement.wrap
 
 {{ APIRef("HTML DOM") }}
 
-The **`wrap`** property of the {{DOMxRef("HTMLTextAreaElement")}} interface indicates how the control should wrap the value for form submission. It reflects the `<textarea>` element's [`wrap`](/en-US/docs/Web/HTML/Reference/Elements/textarea#wrap) attribute. Note that the `"hard"` value only has an effect when the {{domxref("HTMLTextAreaElement.cols", "cols")}} attribute is also set.
+ویژگی **`wrap`** در رابط {{DOMxRef("HTMLTextAreaElement")}} نشاندهندهٔ نحوهٔ خط‌شکنی مقدار برای ارسال فرم است. این ویژگی، صفت [`wrap`](/en-US/docs/Web/HTML/Reference/Elements/textarea#wrap) عنصر `<textarea>` را منعکس می‌کند. توجه داشته باشید که مقدار `"hard"` فقط زمانی تأثیر می‌گذارد که صفت {{domxref("HTMLTextAreaElement.cols", "cols")}} نیز تنظیم شده باشد.
 
-## Value
+## مقدار
 
-See [`wrap`](/en-US/docs/Web/HTML/Reference/Elements/textarea#wrap) for the possible values. Defaults to `"soft"`.
+برای مقادیر ممکن به [`wrap`](/en-US/docs/Web/HTML/Reference/Elements/textarea#wrap) مراجعه کنید. مقدار پیش‌فرض `"soft"` است.
 
-## Examples
+## مثال‌ها
 
 ```js
 const textareaElement = document.getElementById("comment");
@@ -28,15 +26,15 @@ const oldWrap = textArea.wrap;
 textArea.wrap = "hard"; // Add line breaks (CR+LF) during form submission
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{HTMLElement("textarea")}}
 - {{DOMXref("HTMLTextAreaElement.cols")}}
