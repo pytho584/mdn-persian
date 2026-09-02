@@ -1,7 +1,5 @@
 ---
 title: "ImageBitmapRenderingContext"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ImageBitmapRenderingContext"
-status: "needs-translation"
 ---
 
 ---
@@ -13,28 +11,28 @@ browser-compat: api.ImageBitmapRenderingContext
 
 {{APIRef("Canvas API")}}{{AvailableInWorkers}}
 
-The **`ImageBitmapRenderingContext`** interface is a canvas rendering context that provides the functionality to replace the canvas's contents with the given {{domxref("ImageBitmap")}}. Its context id (the first argument to {{domxref("HTMLCanvasElement.getContext()")}} or {{domxref("OffscreenCanvas.getContext()")}}) is `"bitmaprenderer"`.
+رابط **`ImageBitmapRenderingContext`** یک زمینه رندر برای بوم (canvas) است که قابلیت جایگزینی محتویات بوم را با {{domxref("ImageBitmap")}} داده‌شده فراهم می‌کند. شناسه زمینه آن (اولین آرگومان {{domxref("HTMLCanvasElement.getContext()")}} یا {{domxref("OffscreenCanvas.getContext()")}}) برابر با `"bitmaprenderer"` است.
 
-This interface is available in both the window and the [worker](/en-US/docs/Web/API/Web_Workers_API) context.
+این رابط در هر دو زمینه پنجره (window) و [worker](/en-US/docs/Web/API/Web_Workers_API) در دسترس است.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("ImageBitmapRenderingContext.canvas")}} {{ReadOnlyInline}}
-  - : A read-only reference to the {{domxref("HTMLCanvasElement")}} or {{domxref("OffscreenCanvas")}} object that is associated with the given context.
+  - : یک ارجاع فقط‌خواندنی به شیء {{domxref("HTMLCanvasElement")}} یا {{domxref("OffscreenCanvas")}} که با زمینه داده‌شده مرتبط است.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("ImageBitmapRenderingContext.transferFromImageBitmap()")}}
-  - : Displays the given `ImageBitmap` in the canvas associated with this rendering context. Ownership of the `ImageBitmap` is transferred to the canvas. This was previously named `transferImageBitmap()`, but was renamed in a spec change. The old name is being kept as an alias to avoid code breakage.
+  - : `ImageBitmap` داده‌شده را در بوم مرتبط با این زمینه رندر نمایش می‌دهد. مالکیت `ImageBitmap` به بوم منتقل می‌شود. این متد قبلاً `transferImageBitmap()` نامیده می‌شد، اما در یک تغییر در مشخصات (spec) تغییر نام داد. نام قدیمی به‌عنوان یک نام مستعار برای جلوگیری از شکستن کد حفظ شده است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("OffscreenCanvas")}}
