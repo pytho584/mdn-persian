@@ -1,11 +1,5 @@
 ---
 title: "MessageEvent: data property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MessageEvent/data"
-status: "needs-translation"
----
-
----
-title: "MessageEvent: data property"
 short-title: data
 slug: Web/API/MessageEvent/data
 page-type: web-api-instance-property
@@ -14,14 +8,13 @@ browser-compat: api.MessageEvent.data
 
 {{APIRef("HTML DOM")}}{{AvailableInWorkers}}
 
-The **`data`** read-only property of the
-{{domxref("MessageEvent")}} interface represents the data sent by the message emitter.
+ویژگی فقط‌خواندنی **`data`** در رابط {{domxref("MessageEvent")}} داده‌ای را نشان می‌دهد که فرستندهٔ پیام ارسال کرده است.
 
-## Value
+## مقدار
 
-The data sent by the message emitter; this can be any data type, depending on what originated this event.
+داده ارسال‌شده توسط فرستندهٔ پیام؛ این داده می‌تواند از هر نوع data ای باشد، بسته به چیزی که این رویداد را به وجود آورده است.
 
-## Examples
+## مثال‌ها
 
 ```js
 myWorker.onmessage = (e) => {
@@ -30,15 +23,14 @@ myWorker.onmessage = (e) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("ExtendableMessageEvent")}} — similar to this interface but used in
-  interfaces that needs to give more flexibility to authors.
+- {{domxref("ExtendableMessageEvent")}} — مشابه همین رابط است، اما در رابط‌هایی استفاده می‌شود که نیاز به انعطاف‌پذیری بیشتری برای توسعه‌دهندگان دارند.
