@@ -1,10 +1,4 @@
 ---
-title: "MediaSource"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaSource"
-status: "needs-translation"
----
-
----
 title: MediaSource
 slug: Web/API/MediaSource
 page-type: web-api-interface
@@ -13,67 +7,77 @@ browser-compat: api.MediaSource
 
 {{APIRef("Media Source Extensions")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`MediaSource`** interface of the {{domxref("Media Source Extensions API", "Media Source Extensions API", "", "nocode")}} represents a source of media data for an {{domxref("HTMLMediaElement")}} object. A `MediaSource` object can be attached to a {{domxref("HTMLMediaElement")}} to be played in the user agent.
+رابط **`MediaSource`** متعلق به {{domxref("Media Source Extensions API", "Media Source Extensions API", "", "nocode")}}، یک منبع داده‌های رسانه‌ای برای یک شیء {{domxref("HTMLMediaElement")}} را نشان می‌دهد. یک شیء `MediaSource` را می‌توان به یک {{domxref("HTMLMediaElement")}} متصل کرد تا در عامل کاربر پخش شود.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("MediaSource.MediaSource", "MediaSource()")}}
-  - : Constructs and returns a new `MediaSource` object with no associated source buffers.
+  - : یک شیء `MediaSource` جدید بدون هیچ بافر منبع مرتبطی می‌سازد و آن را برمی‌گرداند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("MediaSource.activeSourceBuffers")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref("SourceBufferList")}} object containing a subset of the {{domxref("SourceBuffer")}} objects contained within {{domxref("MediaSource.sourceBuffers")}} — the list of objects providing the selected video track, enabled audio tracks, and shown/hidden text tracks.
-- {{domxref("MediaSource.duration")}}
-  - : Gets and sets the duration of the current media being presented.
-- {{domxref("MediaSource.handle")}} {{ReadOnlyInline}}
-  - : Inside a dedicated worker, returns a {{domxref("MediaSourceHandle")}} object, a proxy for the `MediaSource` that can be transferred from the worker back to the main thread and attached to a media element via its {{domxref("HTMLMediaElement.srcObject")}} property.
-- {{domxref("MediaSource.readyState")}} {{ReadOnlyInline}}
-  - : Returns an enum representing the state of the current `MediaSource`, whether it is not currently attached to a media element (`closed`), attached and ready to receive {{domxref("SourceBuffer")}} objects (`open`), or attached but the stream has been ended via {{domxref("MediaSource.endOfStream()")}} (`ended`.)
-- {{domxref("MediaSource.sourceBuffers")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref("SourceBufferList")}} object containing the list of {{domxref("SourceBuffer")}} objects associated with this `MediaSource`.
+  - : یک شیء {{domxref("SourceBufferList")}} برمی‌گرداند که شامل زیرمجموعه‌ای از اشیاء {{domxref("SourceBuffer")}} موجود در {{domxref("MediaSource.sourceBuffers", "sourceBuffers")}} است؛ فهرستی از اشیایی که تراک ویدیویی انتخاب‌شده، تراک‌های صوتی فعال و تراک‌های متنی نمایش‌داده‌شده/پنهان را فراهم می‌کنند.
 
-## Static properties
+- {{domxref("MediaSource.duration")}}
+  - : مدت‌زمان رسانهٔ در حال ارائه را دریافت و تنظیم می‌کند.
+
+- {{domxref("MediaSource.handle")}} {{ReadOnlyInline}}
+  - : در داخل یک dedicated worker یک شیء {{domxref("MediaSourceHandle")}} برمی‌گرداند. این شیء نماینده‌ای (proxy) برای `MediaSource` است که می‌توان آن را از worker به نخ اصلی انتقال داد و از طریق ویژگی {{domxref("HTMLMediaElement.srcObject")}} به یک عنصر رسانه‌ای متصل کرد.
+
+- {{domxref("MediaSource.readyState")}} {{ReadOnlyInline}}
+  - : یک مقدار enum برمی‌گرداند که وضعیت `MediaSource` فعلی را نشان می‌دهد: اینکه آیا در حال حاضر به یک عنصر رسانه‌ای متصل نیست (`closed`)، متصل است و آماده دریافت اشیاء {{domxref("SourceBuffer")}} است (`open`)، یا متصل است اما جریان از طریق {{domxref("MediaSource.endOfStream()")}} پایان یافته است (`ended`).
+
+- {{domxref("MediaSource.sourceBuffers")}} {{ReadOnlyInline}}
+  - : یک شیء {{domxref("SourceBufferList")}} برمی‌گرداند که شامل فهرست اشیاء {{domxref("SourceBuffer")}} مرتبط با این `MediaSource` است.
+
+## ویژگی‌های ایستا
 
 - {{domxref("MediaSource.canConstructInDedicatedWorker_static", "MediaSource.canConstructInDedicatedWorker")}} {{ReadOnlyInline}}
-  - : A boolean; returns `true` if `MediaSource` worker support is implemented, providing a low-latency feature detection mechanism.
+  - : یک مقدار بولین؛ اگر پشتیبانی از `MediaSource` در worker پیاده‌سازی شده باشد، `true` برمی‌گرداند و سازوکاری با تأخیر کم برای تشخیص قابلیت (feature detection) فراهم می‌کند.
 
-## Instance methods
+## متدهای نمونه
 
-_Inherits methods from its parent interface, {{domxref("EventTarget")}}._
+_متدهای رابط والد خود، {{domxref("EventTarget")}} را به ارث می‌برد._
 
 - {{domxref("MediaSource.addSourceBuffer()")}}
-  - : Creates a new {{domxref("SourceBuffer")}} of the given MIME type and adds it to the {{domxref("MediaSource.sourceBuffers")}} list.
-- {{domxref("MediaSource.clearLiveSeekableRange()")}}
-  - : Clears a seekable range previously set with a call to `setLiveSeekableRange()`.
-- {{domxref("MediaSource.endOfStream()")}}
-  - : Signals the end of the stream.
-- {{domxref("MediaSource.removeSourceBuffer()")}}
-  - : Removes the given {{domxref("SourceBuffer")}} from the {{domxref("MediaSource.sourceBuffers")}} list.
-- {{domxref("MediaSource.setLiveSeekableRange()")}}
-  - : Sets the range that the user can seek to in the media element.
+  - : یک {{domxref("SourceBuffer")}} جدید با نوع MIME داده‌شده ایجاد می‌کند و آن را به فهرست {{domxref("MediaSource.sourceBuffers", "sourceBuffers")}} اضافه می‌کند.
 
-## Static methods
+- {{domxref("MediaSource.clearLiveSeekableRange()")}}
+  - : یک بازهٔ قابل‌پرش (seekable range) را که قبلاً با فراخوانی setLiveSeekableRange() تنظیم شده بود، پاک می‌کند.
+
+- {{domxref("MediaSource.endOfStream()")}}
+  - : پایان جریان را اعلام می‌کند.
+
+- {{domxref("MediaSource.removeSourceBuffer()")}}
+  - : {{domxref("SourceBuffer")}} داده‌شده را از فهرست {{domxref("MediaSource.sourceBuffers", "sourceBuffers")}} حذف می‌کند.
+
+- {{domxref("MediaSource.setLiveSeekableRange()")}}
+  - : بازه‌ای را تنظیم می‌کند که کاربر می‌تواند در عنصر رسانه‌ای به آن پرش کند.
+
+## متدهای ایستا
 
 - {{domxref("MediaSource.isTypeSupported_static", "MediaSource.isTypeSupported()")}}
-  - : Returns a boolean value indicating whether the current user agent supports the given MIME type — this is, if it can successfully create {{domxref("SourceBuffer")}} objects for that MIME type.
+  - : یک مقدار بولین برمی‌گرداند که نشان می‌دهد آیا عامل کاربر فعلی از نوع MIME داده‌شده پشتیبانی می‌کند یا خیر — به عبارت دیگر، آیا می‌تواند اشیاء {{domxref("SourceBuffer")}} را برای آن نوع MIME با موفقیت ایجاد کند.
 
-## Events
+## رویدادها
 
 - {{domxref("MediaSource.sourceclose_event", "sourceclose")}}
-  - : Fired when the `MediaSource` instance is not attached to a media element anymore.
+  - : زمانی رخ می‌دهد که نمونهٔ `MediaSource` دیگر به یک عنصر رسانه‌ای متصل نیست.
+
 - {{domxref("MediaSource.sourceended_event", "sourceended")}}
-  - : Fired when the `MediaSource` instance is still attached to a media element, but {{domxref("MediaSource.endOfStream", "endOfStream()")}} has been called.
+  - : زمانی رخ می‌دهد که نمونهٔ `MediaSource` همچنان به یک عنصر رسانه‌ای متصل است، اما متد {{domxref("MediaSource.endOfStream()")}} فراخوانی شده است.
+
 - {{domxref("MediaSource.sourceopen_event", "sourceopen")}}
-  - : Fired when a media element has opened the `MediaSource` instance and it is ready for data to be appended to the {{domxref("SourceBuffer")}} objects in {{domxref("MediaSource.sourceBuffers", "sourceBuffers")}}.
+  - : زمانی رخ می‌دهد که یک عنصر رسانه‌ای نمونهٔ `MediaSource` را باز کرده است و آماده است داده‌ها به اشیاء {{domxref("SourceBuffer")}} در {{domxref("MediaSource.sourceBuffers", "sourceBuffers")}} اضافه شوند.
 
-## Examples
+## مثال‌ها
 
-### Complete basic example
+### مثال پایهٔ کامل
 
-The following basic example loads a video using {{domxref("XMLHttpRequest")}} and plays it as soon as it can. This example can be [viewed live here](https://nickdesaulniers.github.io/netfix/demo/bufferAll.html) (you can also [download the source](https://github.com/nickdesaulniers/netfix/blob/gh-pages/demo/bufferAll.html) for further investigation).
+مثال پایهٔ زیر با استفاده از {{domxref("XMLHttpRequest")}} یک ویدیو را بارگذاری می‌کند و به محض امکان آن را پخش می‌کند. این مثال را می‌توانید [به‌صورت زنده اینجا](https://nickdesaulniers.github.io/netfix/demo/bufferAll.html) ببینید (همچنین می‌توانید [سورس آن را](https://github.com/nickdesaulniers/netfix/blob/gh-pages/demo/bufferAll.html) برای بررسی بیشتر دانلود کنید).
 
 ```js
 const video = document.querySelector("video");
@@ -118,9 +122,9 @@ function fetchAB(url, cb) {
 }
 ```
 
-### Constructing a `MediaSource` in a dedicated worker and passing it to the main thread
+### ساخت یک `MediaSource` در dedicated worker و ارسال آن به نخ اصلی
 
-The {{domxref("MediaSource.handle", "handle")}} property can be accessed inside a dedicated worker, and the resulting {{domxref("MediaSourceHandle")}} object is then transferred over to the thread that created the worker (in this case, the main thread) via a {{domxref("DedicatedWorkerGlobalScope.postMessage()", "postMessage()")}} call:
+ویژگی {{domxref("MediaSource.handle", "handle")}} را می‌توان در داخل یک dedicated worker مقداردهی کرد و شیء {{domxref("MediaSourceHandle")}} حاصل را با استفاده از یک فراخوانی {{domxref("DedicatedWorkerGlobalScope.postMessage()", "postMessage()")}} به نخی که worker را ایجاد کرده است (در این مورد، نخ اصلی) انتقال داد:
 
 ```js
 // Inside dedicated worker
@@ -137,7 +141,7 @@ mediaSource.addEventListener("sourceopen", () => {
 });
 ```
 
-Over in the main thread, we receive the handle via a {{domxref("Worker.message_event", "message")}} event handler, attach it to a {{htmlelement("video")}} via its {{domxref("HTMLMediaElement.srcObject")}} property, and {{domxref("HTMLMediaElement.play()", "play")}} the video:
+در سمت نخ اصلی، handle را از طریق یک هندلر رویداد {{domxref("Worker.message_event", "message")}} دریافت می‌کنیم، آن را از طریق ویژگی {{domxref("HTMLMediaElement.srcObject")}} به یک {{htmlelement("video")}} متصل می‌کنیم و ویدیو را با {{domxref("HTMLMediaElement.play()", "play")}} پخش می‌کنیم:
 
 ```js
 worker.addEventListener("message", (msg) => {
@@ -148,17 +152,17 @@ worker.addEventListener("message", (msg) => {
 ```
 
 > [!NOTE]
-> {{domxref("MediaSourceHandle")}}s cannot be successfully transferred into or via a shared worker or service worker.
+> اشیاء {{domxref("MediaSourceHandle")}} را نمی‌توان با موفقیت به داخل یک shared worker یا service worker منتقل کرد و نیز نمی‌توان آنها را از طریق این نوع workerها منتقل نمود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("SourceBuffer")}}
 - {{domxref("SourceBufferList")}}
