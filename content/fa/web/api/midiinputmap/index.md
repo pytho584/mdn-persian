@@ -1,10 +1,4 @@
 ---
-title: "MIDIInputMap"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MIDIInputMap"
-status: "needs-translation"
----
-
----
 title: MIDIInputMap
 slug: Web/API/MIDIInputMap
 page-type: web-api-interface
@@ -13,14 +7,14 @@ browser-compat: api.MIDIInputMap
 
 {{APIRef("Web MIDI API")}}{{SecureContext_Header}}
 
-The **`MIDIInputMap`** read-only interface of the [Web MIDI API](/en-US/docs/Web/API/Web_MIDI_API) provides the set of MIDI input ports that are currently available.
+رابط فقطخواندنیِ **`MIDIInputMap`** در [Web MIDI API](/en-US/docs/Web/API/Web_MIDI_API)، مجموعه‌ای از درگاه‌های ورودی MIDI را که در حال حاضر در دسترس هستند، فراهم می‌کند.
 
-A `MIDIInputMap` instance is a read-only [`Map`-like object](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map#map-like_browser_apis), in which each key is the ID string for MIDI input, and the associated value is the corresponding {{domxref("MIDIInput")}} object.
+یک نمونهٔ `MIDIInputMap` یک [شیءِ شبیه به `Map`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map#map-like_browser_apis) است که فقط‌خواندنی است؛ در این شیء، هر کلید، رشتهٔ شناسه (ID) یک ورودی MIDI است و مقدارِ مرتبط با آن، شیءِ {{domxref("MIDIInput")}} متناظر است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
