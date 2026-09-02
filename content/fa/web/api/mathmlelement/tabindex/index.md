@@ -1,11 +1,5 @@
 ---
 title: "MathMLElement: tabIndex property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MathMLElement/tabIndex"
-status: "needs-translation"
----
-
----
-title: "MathMLElement: tabIndex property"
 short-title: tabIndex
 slug: Web/API/MathMLElement/tabIndex
 page-type: web-api-instance-property
@@ -14,22 +8,22 @@ browser-compat: api.MathMLElement.tabIndex
 
 {{APIRef("MathML")}}
 
-The **`tabIndex`** property of the {{DOMxRef("MathMLElement")}} interface represents the tab order of the current MathML element.
+ویژگی **`tabIndex`** در رابط {{DOMxRef("MathMLElement")}} ترتیب پیمایش با کلید Tab را برای عنصر MathML فعلی مشخص می‌کند.
 
-Tab order is as follows:
+ترتیب پیمایش با Tab به صورت زیر است:
 
-1. Elements with a positive `tabIndex`. Elements that have identical `tabIndex` values should be navigated in the order they appear. Navigation proceeds from the lowest `tabIndex` to the highest `tabIndex`.
-2. Elements that do not support the `tabIndex` attribute or support it and assign `tabIndex` to `0`, in the order they appear.
+1. عناصر دارای `tabIndex` مثبت. عناصری که مقادیر `tabIndex` یکسانی دارند باید به ترتیب ظاهرشدن پیمایش شوند. پیمایش از کمترین `tabIndex` به بیشترین آن انجام می‌شود.
+2. عناصری که از ویژگی `tabIndex` پشتیبانی نمی‌کنند، یا از آن پشتیبانی کرده و `tabIndex` را برابر `0` قرار می‌دهند، به ترتیب ظاهرشدن پیمایش می‌شوند.
 
-Elements that are disabled do not participate in the tabbing order. Values don't need to be sequential, nor must they begin with any particular value. They may even be negative, though each browser trims very large values.
+عناصر غیرفعال در ترتیب پیمایش با Tab شرکت نمی‌کنند. مقادیر نیازی به ترتیب پیوسته ندارند و نباید با مقدار خاصی شروع شوند. حتی می‌توانند منفی باشند، البته هر مرورگر مقادیر بسیار بزرگ را کوتاه می‌کند.
 
-## Value
+## مقدار
 
-An integer.
+یک عدد صحیح.
 
-## Examples
+## نمونه‌ها
 
-### Using the tabIndex property
+### استفاده از ویژگی tabIndex
 
 ```html
 <math id="math1" tabindex="2">
@@ -60,20 +54,20 @@ math1.tabIndex = -1;
 math1.focus(); // Works, even though it is not in the tabbing order
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("tabindex",100,100)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLElement.tabIndex")}}
-- [Accessibility of keyboard-navigable JavaScript widgets](/en-US/docs/Web/Accessibility/Guides/Keyboard-navigable_JavaScript_widgets)
+- [دسترس‌پذیری ویجت‌های جاوااسکریپت قابل پیمایش با صفحه‌کلید](/en-US/docs/Web/Accessibility/Guides/Keyboard-navigable_JavaScript_widgets)
 - [`tabindex`](/en-US/docs/Web/MathML/Reference/Global_attributes/tabindex)
