@@ -1,11 +1,5 @@
 ---
 title: "MediaTrackSupportedConstraints: facingMode property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSupportedConstraints/facingMode"
-status: "needs-translation"
----
-
----
-title: "MediaTrackSupportedConstraints: facingMode property"
 short-title: facingMode
 slug: Web/API/MediaTrackSupportedConstraints/facingMode
 page-type: web-api-instance-property
@@ -14,25 +8,15 @@ browser-compat: api.MediaStreamTrack.applyConstraints.facingMode_constraint
 
 {{APIRef("Media Capture and Streams")}}
 
-The {{domxref("MediaTrackSupportedConstraints")}} dictionary's
-**`facingMode`** property is a read-only Boolean value which is
-present (and set to `true`) in the object returned by
-{{domxref("MediaDevices.getSupportedConstraints()")}} if and only if the
-{{Glossary("user agent")}} supports the `facingMode` constraint. If the
-constraint isn't supported, it's not included in the list, so this value will never be
-`false`.
+ویژگی **`facingMode`** در فرهنگ لغت {{domxref("MediaTrackSupportedConstraints")}} یک مقدار بولی فقط خواندنی است که در شیء بازگشتی از {{domxref("MediaDevices.getSupportedConstraints()")}} حضور دارد (و برابر `true` تنظیم شده) اگر و تنها اگر {{Glossary("user agent")}} از محدودیت `facingMode` پشتیبانی کند. اگر این محدودیت پشتیبانی نشود، در لیست قرار نمی‌گیرد، بنابراین این مقدار هرگز `false` نخواهد بود.
 
-You can access the supported constraints dictionary by calling
-`navigator.mediaDevices.getSupportedConstraints()`.
+می‌توانید فرهنگ لغت محدودیت‌های پشتیبانی‌شده را با فراخوانی `navigator.mediaDevices.getSupportedConstraints()` دریافت کنید.
 
-## Value
+## مقدار
 
-This property is present in the dictionary (and its value is always `true`)
-if the user agent supports the `facingMode` constraint. If the property isn't
-present, this property is missing from the supported constraints dictionary, and you'll
-get {{jsxref("undefined")}} if you try to look at its value.
+این ویژگی در فرهنگ لغت حضور دارد (و مقدار آن همیشه `true` است) اگر عامل کاربر از محدودیت `facingMode` پشتیبانی کند. اگر ویژگی وجود نداشته باشد، این ویژگی در فرهنگ لغت محدودیت‌های پشتیبانی‌شده غایب است و اگر بخواهید مقدار آن را بررسی کنید، {{jsxref("undefined")}} دریافت خواهید کرد.
 
-## Examples
+## مثال‌ها
 
 ```html hidden
 <div id="result"></div>
@@ -52,21 +36,21 @@ const supported = navigator.mediaDevices.getSupportedConstraints().facingMode;
 result.textContent = supported ? "Supported!" : "Not supported!";
 ```
 
-### Result
+### نتیجه
 
 {{ EmbedLiveSample('Examples', 600, 80) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
+- [API ضبط و جریان‌های رسانه](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
 - {{domxref("MediaDevices.getSupportedConstraints()")}}
 - {{domxref("MediaTrackSupportedConstraints")}}
 - {{domxref("MediaStreamTrack")}}
