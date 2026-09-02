@@ -1,9 +1,6 @@
 ---
 title: "IdentityCredential: disconnect() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IdentityCredential/disconnect_static"
-status: "needs-translation"
 ---
-
 ---
 title: "IdentityCredential: disconnect() static method"
 short-title: disconnect()
@@ -16,9 +13,9 @@ browser-compat: api.IdentityCredential.disconnect_static
 
 {{APIRef("FedCM API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`disconnect()`** static method of the {{domxref("IdentityCredential")}} interface disconnects a specified federated sign-in account from the {{glossary("Identity provider", "IdP")}} used to obtain the credential.
+متد استاتیک **`disconnect()`** از رابط {{domxref("IdentityCredential")}} یک حساب ورود فدرال مشخصشده را از {{glossary("Identity provider", "IdP")}} که برای دریافت اعتبارنامه استفاده شده بود، قطع میکند.
 
-Afterwards, using that account for federated login requires starting the federated sign-in process again.
+پس از این کار، استفاده از آن حساب برای ورود فدرال نیازمند شروع دوباره فرایند ورود فدرال است.
 
 ## Syntax
 
@@ -29,39 +26,39 @@ IdentityCredential.disconnect(options)
 ### Parameters
 
 - `options`
-  - : An options object, which can contain the following properties:
+  - : یک شیء گزینه‌ها که می‌تواند شامل ویژگی‌های زیر باشد:
     - `accountHint`
-      - : A string specifying an account hint that the IdP uses to identify the account to disconnect. The hint can be an arbitrary string as long as the [disconnect endpoint](/en-US/docs/Web/API/FedCM_API/IDP_integration#the_disconnect_endpoint) can identify the account — for example an email address or user ID. This will not necessarily match the account ID provided by the [accounts list endpoint](/en-US/docs/Web/API/FedCM_API/IDP_integration#the_accounts_list_endpoint).
+      - : یک رشته که نشانه‌ای از حساب را مشخص می‌کند و IdP از آن برای شناسایی حسابی که باید قطع شود استفاده می‌کند. این نشانه می‌تواند هر رشته دلخواهی باشد تا زمانی که [نقطه پایانی قطع اتصال](/en-US/docs/Web/API/FedCM_API/IDP_integration#the_disconnect_endpoint) بتواند حساب را شناسایی کند — برای مثال یک آدرس ایمیل یا شناسه کاربر. این لزوماً با شناسه حسابی که توسط [نقطه پایانی لیست حساب‌ها](/en-US/docs/Web/API/FedCM_API/IDP_integration#the_accounts_list_endpoint) ارائه شده است مطابقت ندارد.
     - `clientId`
-      - : A string specifying the {{glossary("Relying party", "RP")}}'s client identifier, as specified in the `providers` [`clientId`](/en-US/docs/Web/API/IdentityCredentialRequestOptions#clientid) property during sign-in.
+      - : یک رشته که شناسه مشتری {{glossary("Relying party", "RP")}} را مشخص می‌کند، همانطور که در ویژگی `providers` [`clientId`](/en-US/docs/Web/API/IdentityCredentialRequestOptions#clientid) در هنگام ورود تعیین شده است.
     - `configURL`
-      - : A string specifying the config file URL of the IdP, as specified in the `providers` [`configURL`](/en-US/docs/Web/API/IdentityCredentialRequestOptions#configurl) property during sign-in.
+      - : یک رشته که URL فایل پیکربندی IdP را مشخص می‌کند، همانطور که در ویژگی `providers` [`configURL`](/en-US/docs/Web/API/IdentityCredentialRequestOptions#configurl) در هنگام ورود تعیین شده است.
 
 ### Return value
 
-A {{jsxref("Promise")}} that fulfills with {{jsxref("undefined")}}.
+یک {{jsxref("Promise")}} که با {{jsxref("undefined")}} fulfilled می‌شود.
 
 ### Exceptions
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if:
-    - The IdP's `configURL` is invalid or missing the `disconnect_endpoint`.
-    - The document's origin does not match the `configURL`.
+  - : در موارد زیر پرتاب می‌شود:
+    - `configURL` IdP نامعتبر است یا فاقد `disconnect_endpoint` است.
+    - مبدأ سند با `configURL` مطابقت ندارد.
 - `NetworkError` {{domxref("DOMException")}}
-  - : Thrown if:
-    - The browser is unable to connect to the IdP.
-    - The request is disallowed by a [`connect-src`](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/connect-src) {{httpheader("Content-Security-Policy")}}.
-    - Another `disconnect()` call was previously made that has not yet resolved.
-    - The FedCM API has been disabled globally.
-    - The IdP's `configURL` is neither secure nor [potentially trustworthy](/en-US/docs/Web/Security/Defenses/Secure_Contexts#potentially_trustworthy_origins).
+  - : در موارد زیر پرتاب می‌شود:
+    - مرورگر قادر به اتصال به IdP نیست.
+    - درخواست توسط [`connect-src`](/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/connect-src) {{httpheader("Content-Security-Policy")}} ممنوع شده است.
+    - قبلاً فراخوانی `disconnect()` دیگری انجام شده که هنوز حل نشده است.
+    - API FedCM در سطح جهانی غیرفعال شده است.
+    - `configURL` IdP نه امن است و نه [به طور بالقوه قابل اعتماد](/en-US/docs/Web/Security/Defenses/Secure_Contexts#potentially_trustworthy_origins).
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if the embedding `<iframe>` does not have an {{httpheader("Permissions-Policy/identity-credentials-get", "identity-credentials-get")}} [Permissions-Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) set to allow the use of `disconnect()` or if the FedCM API is disabled globally by a policy set on the top-level document.
+  - : در موارد زیر پرتاب می‌شود: اگر `<iframe>` جاسازیشده دارای {{httpheader("Permissions-Policy/identity-credentials-get", "identity-credentials-get")}} [Permissions-Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) تنظیم شده برای اجازه استفاده از `disconnect()` نباشد، یا اگر API FedCM توسط یک خط‌مشی تعیین‌شده در سند سطح بالا به صورت جهانی غیرفعال شده باشد.
 
 ## Examples
 
-### Basic `disconnect()` usage
+### استفاده پایه از `disconnect()`
 
-The RP may disconnect a specified federated sign-in account from the associated IdP by invoking `disconnect()`. This function can be called from a top-level RP frame.
+RP می‌تواند یک حساب ورود فدرال مشخصشده را از IdP مرتبط با فراخوانی `disconnect()` قطع کند. این تابع می‌تواند از یک فریم RP سطح بالا فراخوانی شود.
 
 ```js
 IdentityCredential.disconnect({
@@ -71,7 +68,7 @@ IdentityCredential.disconnect({
 });
 ```
 
-For a `disconnect()` call to work, the IdP must include a [`disconnect_endpoint`](/en-US/docs/Web/API/FedCM_API/IDP_integration#disconnect_endpoint) in its config file. See [The disconnect endpoint](/en-US/docs/Web/API/FedCM_API/IDP_integration#the_disconnect_endpoint) for more details of the underlying HTTP communication.
+برای اینکه فراخوانی `disconnect()` کار کند، IdP باید یک [`disconnect_endpoint`](/en-US/docs/Web/API/FedCM_API/IDP_integration#disconnect_endpoint) در فایل پیکربندی خود داشته باشد. برای جزئیات بیشتر در مورد ارتباط HTTP زیربنایی، به [نقطه پایانی قطع اتصال](/en-US/docs/Web/API/FedCM_API/IDP_integration#the_disconnect_endpoint) مراجعه کنید.
 
 ## Specifications
 
@@ -83,4 +80,4 @@ For a `disconnect()` call to work, the IdP must include a [`disconnect_endpoint`
 
 ## See also
 
-- [Federated Credential Management API](https://developer.chrome.com/docs/identity/fedcm/overview) on developer.chrome.com (2023)
+- [Federated Credential Management API](https://developer.chrome.com/docs/identity/fedcm/overview) در developer.chrome.com (2023)
