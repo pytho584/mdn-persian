@@ -1,11 +1,5 @@
 ---
 title: "MediaSource: setLiveSeekableRange() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/setLiveSeekableRange"
-status: "needs-translation"
----
-
----
-title: "MediaSource: setLiveSeekableRange() method"
 short-title: setLiveSeekableRange()
 slug: Web/API/MediaSource/setLiveSeekableRange
 page-type: web-api-instance-method
@@ -14,45 +8,35 @@ browser-compat: api.MediaSource.setLiveSeekableRange
 
 {{APIRef("Media Source Extensions")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`setLiveSeekableRange()`** method of the
-{{domxref("MediaSource")}} interface sets the range that the user can seek to in the
-media element.
+متد **`setLiveSeekableRange()`** از رابط {{domxref("MediaSource")}} محدوده‌ای را تنظیم می‌کند که کاربر می‌تواند در عنصر رسانه در آن جستجو کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 setLiveSeekableRange(start, end)
 ```
 
-### Parameters
+### پارامترها
 
 - `start`
-  - : The start of the seekable range to set in seconds measured from the beginning of the
-    source. If the duration of the media source is positive infinity, then the
-    {{domxref("TimeRanges")}} object returned by the
-    {{domxref("HTMLMediaElement.seekable")}} property will have a start timestamp no
-    greater than this value.
+  - : شروع محدوده قابل جستجو برای تنظیم بر حسب ثانیه که از ابتدای منبع اندازه‌گیری می‌شود. اگر مدت منبع رسانه بینهایت مثبت باشد، شیء {{domxref("TimeRanges")}} بازگشتی توسط ویژگی {{domxref("HTMLMediaElement.seekable")}} دارای یک زمان‌نمای شروع کمتر یا مساوی با این مقدار خواهد بود.
 - `end`
-  - : The end of the seekable range to set in seconds measured from the beginning of the
-    source. If the duration of the media source is positive infinity, then the
-    {{domxref("TimeRanges")}} object returned by the
-    {{domxref("HTMLMediaElement.seekable")}} property will have an end timestamp no
-    less than this value.
+  - : پایان محدوده قابل جستجو برای تنظیم بر حسب ثانیه که از ابتدای منبع اندازه‌گیری می‌شود. اگر مدت منبع رسانه بینهایت مثبت باشد، شیء {{domxref("TimeRanges")}} بازگشتی توسط ویژگی {{domxref("HTMLMediaElement.seekable")}} دارای یک زمان‌نمای پایان نه کمتر از این مقدار خواهد بود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
 ```js
 // TBD
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
