@@ -1,11 +1,5 @@
 ---
 title: "MediaDevices: enumerateDevices() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/enumerateDevices"
-status: "needs-translation"
----
-
----
-title: "MediaDevices: enumerateDevices() method"
 short-title: enumerateDevices()
 slug: Web/API/MediaDevices/enumerateDevices
 page-type: web-api-instance-method
@@ -14,44 +8,40 @@ browser-compat: api.MediaDevices.enumerateDevices
 
 {{APIRef("Media Capture and Streams")}}{{SecureContext_Header}}
 
-The **`enumerateDevices()`** method of the {{domxref("MediaDevices")}} interface requests a list of the currently available media input and output devices, such as microphones, cameras, headsets, and so forth.
-The returned {{jsxref("Promise")}} is resolved with an array of {{domxref("MediaDeviceInfo")}} objects describing the devices.
+متد **`enumerateDevices()`** از رابط {{domxref("MediaDevices")}} فهرستی از دستگاه‌های ورودی و خروجی رسانه‌ایِ در دسترس، مانند میکروفون‌ها، دوربین‌ها، هدست‌ها و غیره را درخواست می‌کند. {{jsxref("Promise")}} برگشتی با آرایه‌ای از اشیاء {{domxref("MediaDeviceInfo")}} که دستگاه‌ها را توصیف می‌کنند، حل می‌شود.
 
-The returned list will omit any devices that are blocked by the document [Permission Policy](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy): [`microphone`](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy/microphone), [`camera`](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy/camera), [`speaker-selection`](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy/speaker-selection) (for output devices), and so on.
-Access to particular non-default devices is also gated by the [Permissions API](/en-US/docs/Web/API/Permissions_API), and the list will omit devices for which the user has not granted explicit permission.
+فهرست برگشتی هر دستگاهی را که توسط [سیاست مجوز (Permission Policy)](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy) سند مسدود شده است، حذف می‌کند: [`microphone`](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy/microphone)، [`camera`](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy/camera)، [`speaker-selection`](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy/speaker-selection) (برای دستگاه‌های خروجی)، و غیره. دسترسی به دستگاه‌های غیرپیش‌فرض خاص نیز توسط [API مجوزها (Permissions API)](/en-US/docs/Web/API/Permissions_API) کنترل می‌شود و فهرست، دستگاه‌هایی را که کاربر مجوز صریح به آن‌ها نداده است حذف می‌کند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 enumerateDevices()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that is fulfilled with an array of {{domxref("MediaDeviceInfo")}} objects.
-Each object in the array describes one of the available media input and output devices.
-The order is significant — the default capture devices will be listed first.
+یک {{jsxref("Promise")}} که با آرایه‌ای از اشیاء {{domxref("MediaDeviceInfo")}} محقق می‌شود. هر شیء در آرایه یکی از دستگاه‌های ورودی و خروجی رسانه‌ای موجود را توصیف می‌کند. ترتیب اهمیت دارد — دستگاه‌های ضبط پیش‌فرض ابتدا فهرست می‌شوند.
 
-Other than default devices, only devices for which permission has been granted are "available".
+به جز دستگاه‌های پیش‌فرض، تنها دستگاه‌هایی که برایشان مجوز صادر شده است «در دسترس» هستند.
 
-If the media device is an input device, an {{domxref("InputDeviceInfo")}} object will be returned instead.
+اگر دستگاه رسانه‌ای یک دستگاه ورودی باشد، به جای آن یک شیء {{domxref("InputDeviceInfo")}} برگردانده می‌شود.
 
-If enumeration fails, the promise is rejected.
+اگر شمارش (enumeration) با شکست مواجه شود، promise رد می‌شود.
 
-## Security requirements
+## الزامات امنیتی
 
-Access to the API is subject to the following constraints:
+دسترسی به API منوط به محدودیت‌های زیر است:
 
-- The method must be called in a [secure context](/en-US/docs/Web/Security/Defenses/Secure_Contexts).
-- The document must be fully active and its visibility must be "visible".
+- متد باید در یک [زمینه امن](/en-US/docs/Web/Security/Defenses/Secure_Contexts) فراخوانی شود.
+- سند باید کاملاً فعال باشد و وضعیت نمایان بودن آن «نمایان» (visible) باشد.
 
-## Examples
+## نمونه‌ها
 
-Here's an example of using `enumerateDevices()`. It outputs a list of the [device IDs](/en-US/docs/Web/API/MediaDeviceInfo/deviceId), with their labels if available.
+در اینجا نمونه‌ای از استفاده از `enumerateDevices()` آورده شده است. این نمونه فهرستی از [شناسه‌های دستگاه](/en-US/docs/Web/API/MediaDeviceInfo/deviceId) را همراه با برچسب‌های آن‌ها (در صورت وجود) چاپ می‌کند.
 
 ```js
 if (!navigator.mediaDevices?.enumerateDevices) {
@@ -71,7 +61,7 @@ if (!navigator.mediaDevices?.enumerateDevices) {
 }
 ```
 
-This might produce:
+این ممکن است خروجی زیر را تولید کند:
 
 ```plain
 videoinput: id = csO9c0YpAf274OuCPUA53CNE0YHlIr2yXCi+SqfBZZ8=
@@ -79,8 +69,7 @@ audioinput: id = RKxXByjnabbADGQNNZqLVLdmXlS0YkETYCIbg+XxnvM=
 audioinput: id = r2/xw1xUPIyZunfV1lGrKOma5wTOvCkWfZ368XCndm0=
 ```
 
-or if one or more {{domxref("MediaStream")}}s are active or persistent permissions are
-granted:
+یا اگر یک یا چند {{domxref("MediaStream")}} فعال باشند یا مجوزهای ماندگار صادر شده باشند:
 
 ```plain
 videoinput: FaceTime HD Camera (Built-in) id=csO9c0YpAf274OuCPUA53CNE0YHlIr2yXCi+SqfBZZ8=
@@ -88,18 +77,17 @@ audioinput: default (Built-in Microphone) id=RKxXByjnabbADGQNNZqLVLdmXlS0YkETYCI
 audioinput: Built-in Microphone id=r2/xw1xUPIyZunfV1lGrKOma5wTOvCkWfZ368XCndm0=
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("MediaDevices.getUserMedia")}}
-- [WebRTC](/en-US/docs/Web/API/WebRTC_API) - the introductory page to the API
-- [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API) - the API for the media stream objects
-- [Taking webcam photos](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Taking_still_photos) - a
-  tutorial on using `getUserMedia()` for taking photos rather than video.
+- [WebRTC](/en-US/docs/Web/API/WebRTC_API) — صفحه معرفی API
+- [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API) — API برای اشیاء جریان رسانه‌ای
+- [گرفتن عکس با وب‌کم](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Taking_still_photos) — یک آموزش درباره استفاده از `getUserMedia()` برای گرفتن عکس به جای ویدیو.
