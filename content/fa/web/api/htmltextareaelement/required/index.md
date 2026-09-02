@@ -1,11 +1,5 @@
 ---
 title: "HTMLTextAreaElement: required property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTextAreaElement/required"
-status: "needs-translation"
----
-
----
-title: "HTMLTextAreaElement: required property"
 short-title: required
 slug: Web/API/HTMLTextAreaElement/required
 page-type: web-api-instance-property
@@ -14,29 +8,29 @@ browser-compat: api.HTMLTextAreaElement.required
 
 {{ APIRef("HTML DOM") }}
 
-The **`required`** property of the {{DOMxRef("HTMLTextAreaElement")}} interface specifies that the user must fill in a value before submitting a form. It reflects the {{htmlelement("textarea")}} element's [`required`](/en-US/docs/Web/HTML/Reference/Elements/textarea#required) attribute.
+خاصیت **`required`** در رابط {{DOMxRef("HTMLTextAreaElement")}} مشخص می‌کند که کاربر باید قبل از ارسال فرم، مقداری را وارد کند. این ویژگی، صفت [`required`](/en-US/docs/Web/HTML/Reference/Elements/textarea#required) عنصر {{htmlelement("textarea")}} را منعکس می‌کند.
 
-## Value
+## مقدار
 
-A boolean.
+یک مقدار بولین.
 
-## Examples
+## مثال‌ها
 
 ```js
 const textareaElement = document.getElementById("comment");
 console.log(textArea.required);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{HTMLElement("textarea")}}
 - {{DOMXref("HTMLTextAreaElement.validity")}}
-- {{cssxref(":required")}} pseudo-class
+- شبه‌کلاس {{cssxref(":required")}}
