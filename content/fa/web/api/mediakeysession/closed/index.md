@@ -1,11 +1,5 @@
 ---
 title: "MediaKeySession: closed property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaKeySession/closed"
-status: "needs-translation"
----
-
----
-title: "MediaKeySession: closed property"
 short-title: closed
 slug: Web/API/MediaKeySession/closed
 page-type: web-api-instance-property
@@ -14,18 +8,18 @@ browser-compat: api.MediaKeySession.closed
 
 {{APIRef("Encrypted Media Extensions")}}{{SecureContext_Header}}
 
-The **`closed`** read-only property of the {{domxref('MediaKeySession')}} interface returns a {{jsxref('Promise')}} signaling when a {{domxref('MediaKeySession')}} closes.
-This promise can only be fulfilled and is never rejected.
-Closing a session means that licenses and keys associated with it are no longer valid for decrypting media data.
+ویژگی فقط‌خواندنی **`closed`** از رابط {{domxref('MediaKeySession')}} یک {{jsxref('Promise')}} برمی‌گرداند که هنگام بسته‌شدن یک {{domxref('MediaKeySession')}} علامت می‌دهد.
+این وعده (Promise) فقط می‌تواند با موفقیت انجام شود و هرگز رد نمی‌شود.
+بستن یک نشست به این معنی است که مجوزها و کلیدهای مرتبط با آن دیگر برای رمزگشایی داده‌های رسانه‌ای معتبر نیستند.
 
-## Value
+## مقدار
 
-A {{jsxref("Promise")}}.
+یک {{jsxref("Promise")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
