@@ -1,11 +1,5 @@
 ---
 title: "MediaStream: getTracks() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaStream/getTracks"
-status: "needs-translation"
----
-
----
-title: "MediaStream: getTracks() method"
 short-title: getTracks()
 slug: Web/API/MediaStream/getTracks
 page-type: web-api-instance-method
@@ -14,27 +8,23 @@ browser-compat: api.MediaStream.getTracks
 
 {{APIRef("Media Capture and Streams")}}
 
-The **`getTracks()`** method of the
-{{domxref("MediaStream")}} interface returns a sequence that represents all the
-{{domxref("MediaStreamTrack")}} objects in this
-stream's [track set](https://w3c.github.io/mediacapture-main/#dfn-track-set),
-regardless of {{domxref("MediaStreamTrack.kind")}}.
+متد **`getTracks()`** از رابط {{domxref("MediaStream")}} یک دنباله (sequence) برمی‌گرداند که تمام اشیاء {{domxref("MediaStreamTrack")}} موجود در [مجموعه‌ی track](https://w3c.github.io/mediacapture-main/#dfn-track-set) این جریان را نشان می‌دهد، بدون در نظر گرفتن {{domxref("MediaStreamTrack.kind")}}.
 
-## Syntax
+## نحو
 
 ```js-nolint
 getTracks()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-An array of {{domxref("MediaStreamTrack")}} objects.
+یک آرایه از اشیاء {{domxref("MediaStreamTrack")}}.
 
-## Examples
+## نمونه‌ها
 
 ```js
 navigator.mediaDevices
@@ -49,10 +39,10 @@ navigator.mediaDevices
   });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
