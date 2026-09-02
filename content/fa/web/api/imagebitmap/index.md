@@ -1,10 +1,4 @@
 ---
-title: "ImageBitmap"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ImageBitmap"
-status: "needs-translation"
----
-
----
 title: ImageBitmap
 slug: Web/API/ImageBitmap
 page-type: web-api-interface
@@ -13,31 +7,31 @@ browser-compat: api.ImageBitmap
 
 {{APIRef("Canvas API")}}{{AvailableInWorkers}}
 
-The **`ImageBitmap`** interface represents a bitmap image which can be drawn to a {{HTMLElement("canvas")}} without undue latency. It can be created from a variety of source objects using the {{domxref("Window.createImageBitmap()")}} or {{domxref("WorkerGlobalScope.createImageBitmap()")}} factory method. `ImageBitmap` provides an asynchronous and resource efficient pathway to prepare textures for rendering in WebGL.
+رابط **`ImageBitmap`** نمایانگر یک تصویر بیت‌نگاشت است که می‌توان آن را بدون تأخیر غیرضروری روی یک {{HTMLElement("canvas")}} ترسیم کرد. این تصویر را می‌توان با استفاده از متد کارخانه‌ای {{domxref("Window.createImageBitmap()")}} یا {{domxref("WorkerGlobalScope.createImageBitmap()")}} از منابع گوناگونی ایجاد کرد. `ImageBitmap` مسیری ناهمگام و کارآمد از نظر مصرف منابع برای آماده‌سازی بافت‌ها جهت رندرگیری در WebGL فراهم می‌کند.
 
-`ImageBitmap` is a [transferable object](/en-US/docs/Web/API/Web_Workers_API/Transferable_objects).
+`ImageBitmap` یک [شیء قابل انتقال](/en-US/docs/Web/API/Web_Workers_API/Transferable_objects) است.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("ImageBitmap.height")}} {{ReadOnlyInline}}
-  - : An `unsigned long` representing the height, in CSS pixels, of the `ImageBitmap`.
+  - : یک `unsigned long` که ارتفاع `ImageBitmap` را بر حسب پیکسل CSS نشان می‌دهد.
 - {{domxref("ImageBitmap.width")}} {{ReadOnlyInline}}
-  - : An `unsigned long` representing the width, in CSS pixels, of the `ImageBitmap`.
+  - : یک `unsigned long` که عرض `ImageBitmap` را بر حسب پیکسل CSS نشان می‌دهد.
 
-## Instance methods
+## متدهای نمونه
 
 - {{domxref("ImageBitmap.close()")}}
-  - : Disposes of all graphical resources associated with an `ImageBitmap`.
+  - : تمام منابع گرافیکی مرتبط با یک `ImageBitmap` را آزاد می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Window.createImageBitmap")}}
 - {{domxref("WorkerGlobalScope.createImageBitmap")}}
