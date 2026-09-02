@@ -1,10 +1,4 @@
 ---
-title: "MimeTypeArray"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MimeTypeArray"
-status: "needs-translation"
----
-
----
 title: MimeTypeArray
 slug: Web/API/MimeTypeArray
 page-type: web-api-interface
@@ -15,25 +9,25 @@ browser-compat: api.MimeTypeArray
 
 {{APIRef("HTML DOM")}}{{Deprecated_Header}}
 
-The **`MimeTypeArray`** interface returns an array of {{domxref('MimeType')}} instances, each of which contains information about a supported browser plugins. This object is returned by the deprecated {{domxref("Navigator.mimeTypes")}} property.
+رابط **`MimeTypeArray`** آرایه‌ای از نمونه‌های {{domxref('MimeType')}} را برمی‌گرداند که هر یک حاوی اطلاعاتی درباره یک افزونه مرورگر پشتیبانی‌شده است. این شیء توسط ویژگی منسوخ‌شده {{domxref("Navigator.mimeTypes")}} برگردانده می‌شود.
 
-This interface was an [attempt to create an unmodifiable list](https://stackoverflow.com/questions/74630989/why-use-domstringlist-rather-than-an-array/74641156#74641156) and only continues to be supported to not break code that's already using it. Modern APIs represent list structures using types based on JavaScript [arrays](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array), thus making many array methods available, and at the same time imposing additional semantics on their usage (such as making their items read-only).
+این رابط یک [تلاش برای ایجاد یک لیست غیرقابل تغییر](https://stackoverflow.com/questions/74630989/why-use-domstringlist-rather-than-an-array/74641156#74641156) بود و تنها برای جلوگیری از شکستن کدهایی که قبلاً از آن استفاده می‌کنند پشتیبانی می‌شود. APIهای مدرن ساختارهای لیستی را با استفاده از انواع مبتنی بر [آرایه‌های](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) جاوااسکریپت نمایش می‌دهند، بنابراین بسیاری از متدهای آرایه در دسترس هستند و در عین حال معناشناسی اضافی را بر استفاده از آنها تحمیل می‌کنند (مانند فقط خواندنی کردن آیتم‌هایشان).
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("MimeTypeArray.length")}} {{Deprecated_Inline}}
-  - : The number of items in the array.
+  - : تعداد آیتم‌های موجود در آرایه.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("MimeTypeArray.item()")}} {{Deprecated_Inline}}
-  - : Returns the `MimeType` object with the specified index.
+  - : شیء `MimeType` را با ایندکس مشخص‌شده برمی‌گرداند.
 - {{domxref("MimeTypeArray.namedItem()")}} {{Deprecated_Inline}}
-  - : Returns the `MimeType` object with the specified name.
+  - : شیء `MimeType` را با نام مشخص‌شده برمی‌گرداند.
 
-## Example
+## مثال
 
-The following example tests whether a plugin is available for the 'application/pdf' mime type and if so, logs its description.
+مثال زیر بررسی می‌کند که آیا یک افزونه برای نوع mime 'application/pdf' در دسترس است یا خیر و اگر چنین باشد، توضیحات آن را در کنسول ثبت می‌کند.
 
 ```js
 const mimeTypes = navigator.mimeTypes;
@@ -44,10 +38,10 @@ if (pdf) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
