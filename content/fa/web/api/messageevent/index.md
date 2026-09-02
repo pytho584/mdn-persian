@@ -1,11 +1,5 @@
 ---
 title: "MessageEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MessageEvent"
-status: "needs-translation"
----
-
----
-title: MessageEvent
 slug: Web/API/MessageEvent
 page-type: web-api-interface
 browser-compat: api.MessageEvent
@@ -13,66 +7,66 @@ browser-compat: api.MessageEvent
 
 {{APIRef("HTML DOM")}}{{AvailableInWorkers}}
 
-The **`MessageEvent`** interface represents a message received by a target object.
+رابط **`MessageEvent`** نشان‌دهنده یک پیام دریافتی توسط یک شیء هدف است.
 
-This is used to represent messages in:
+این رابط برای نمایش پیام‌ها در موارد زیر استفاده می‌شود:
 
-- [Server-sent events](/en-US/docs/Web/API/Server-sent_events) (see the {{domxref("EventSource.message_event", "message")}} event of {{domxref("EventSource")}}).
-- [Web sockets](/en-US/docs/Web/API/WebSockets_API) (see the {{domxref("WebSocket.message_event", "message")}} event of {{domxref("WebSocket")}}).
-- Cross-document messaging (see {{domxref("Window.postMessage()")}} and the {{domxref("Window.message_event", "message")}} event of {{domxref("Window")}}).
-- [Channel messaging](/en-US/docs/Web/API/Channel_Messaging_API) (see {{domxref("MessagePort.postMessage()")}} and the {{domxref("MessagePort.message_event", "message")}} event of {{domxref("MessagePort")}}).
-- Cross-worker/document messaging (see the above two entries, but also {{domxref("Worker.postMessage()")}}, the {{domxref("Worker.message_event", "message")}} event of {{domxref("Worker")}}, the {{domxref("ServiceWorkerGlobalScope.message_event", "message")}} event of {{domxref("ServiceWorkerGlobalScope")}}, etc.)
-- [Broadcast channels](/en-US/docs/Web/API/Broadcast_Channel_API) (see {{domxref("BroadcastChannel.postMessage()")}} and the {{domxref("BroadcastChannel.message_event", "message")}} event of {{domxref("BroadcastChannel")}}).
-- WebRTC data channels (see the {{domxref("RTCDataChannel.message_event", "message")}} event of {{domxref("RTCDataChannel")}}).
+- [رویدادهای ارسال‌شده توسط سرور](/en-US/docs/Web/API/Server-sent_events) (به رویداد {{domxref("EventSource.message_event", "message")}} از {{domxref("EventSource")}} مراجعه کنید).
+- [وب سوکت‌ها](/en-US/docs/Web/API/WebSockets_API) (به رویداد {{domxref("WebSocket.message_event", "message")}} از {{domxref("WebSocket")}} مراجعه کنید).
+- [پیام‌رسانی بین سندها](/en-US/docs/Web/API/Window/postMessage) (به {{domxref("Window.postMessage()")}} و رویداد {{domxref("Window.message_event", "message")}} از {{domxref("Window")}} مراجعه کنید).
+- [پیام‌رسانی کانال](/en-US/docs/Web/API/Channel_Messaging_API) (به {{domxref("MessagePort.postMessage()")}} و رویداد {{domxref("MessagePort.message_event", "message")}} از {{domxref("MessagePort")}} مراجعه کنید).
+- [پیام‌رسانی بین کارگرها/سندها](/en-US/docs/Web/API/Worker/postMessage) (به دو مورد بالا و همچنین {{domxref("Worker.postMessage()")}}، رویداد {{domxref("Worker.message_event", "message")}} از {{domxref("Worker")}}، رویداد {{domxref("ServiceWorkerGlobalScope.message_event", "message")}} از {{domxref("ServiceWorkerGlobalScope")}} و غیره مراجعه کنید).
+- [کانال‌های پخش](/en-US/docs/Web/API/Broadcast_Channel_API) (به {{domxref("BroadcastChannel.postMessage()")}} و رویداد {{domxref("BroadcastChannel.message_event", "message")}} از {{domxref("BroadcastChannel")}} مراجعه کنید).
+- [کانال‌های داده WebRTC](/en-US/docs/Web/API/WebRTC_API) (به رویداد {{domxref("RTCDataChannel.message_event", "message")}} از {{domxref("RTCDataChannel")}} مراجعه کنید).
 
-The action triggered by this event is defined in a function set as the event handler for the relevant `message` event.
+عملی که توسط این رویداد راه‌اندازی می‌شود، در یک تابع تعریف می‌شود که به عنوان مدیریت‌کننده رویداد برای رویداد `message` مربوطه تنظیم شده است.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("MessageEvent.MessageEvent", "MessageEvent()")}}
-  - : Creates a new `MessageEvent`.
+  - : یک `MessageEvent` جدید ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface also inherits properties from its parent, {{domxref("Event")}}._
+_این رابط همچنین ویژگی‌هایی را از والد خود، {{domxref("Event")}}، به ارث می‌برد._
 
 - {{domxref("MessageEvent.data")}} {{ReadOnlyInline}}
-  - : The data sent by the message emitter.
+  - : داده‌ای که توسط فرستنده پیام ارسال شده است.
 - {{domxref("MessageEvent.origin")}} {{ReadOnlyInline}}
-  - : A string representing the origin of the message emitter.
+  - : یک رشته که نمایانگر مبدأ (origin) فرستنده پیام است.
 - {{domxref("MessageEvent.lastEventId")}} {{ReadOnlyInline}}
-  - : A string representing a unique ID for the event.
+  - : یک رشته که نمایانگر یک شناسه یکتا برای رویداد است.
 - {{domxref("MessageEvent.source")}} {{ReadOnlyInline}}
-  - : A `MessageEventSource` (which can be a {{glossary("WindowProxy")}}, {{domxref("MessagePort")}}, or {{domxref("ServiceWorker")}} object) representing the message emitter.
+  - : یک `MessageEventSource` (که می‌تواند یک شیء {{glossary("WindowProxy")}}، {{domxref("MessagePort")}} یا {{domxref("ServiceWorker")}} باشد) که نمایانگر فرستنده پیام است.
 - {{domxref("MessageEvent.ports")}} {{ReadOnlyInline}}
-  - : An array of {{domxref("MessagePort")}} objects containing all {{domxref("MessagePort")}} objects sent with the message, in order.
+  - : آرایه‌ای از اشیاء {{domxref("MessagePort")}} که شامل تمام اشیاء {{domxref("MessagePort")}} ارسال‌شده با پیام، به ترتیب است.
 
-## Instance methods
+## روش‌های نمونه
 
-_This interface also inherits methods from its parent, {{domxref("Event")}}._
+_این رابط همچنین روش‌هایی را از والد خود، {{domxref("Event")}}، به ارث می‌برد._
 
 - {{domxref("MessageEvent.initMessageEvent","initMessageEvent()")}} {{deprecated_inline}}
-  - : Initializes a message event. **Do not use this anymore** — **use the {{domxref("MessageEvent.MessageEvent", "MessageEvent()")}} constructor instead.**
+  - : یک رویداد پیام را مقداردهی اولیه می‌کند. **دیگر از این استفاده نکنید** — **به جای آن از سازنده {{domxref("MessageEvent.MessageEvent", "MessageEvent()")}} استفاده کنید.**
 
-## Examples
+## مثال‌ها
 
-In our [Basic shared worker example](https://github.com/mdn/dom-examples/tree/main/web-workers/simple-shared-worker) ([run shared worker](https://mdn.github.io/dom-examples/web-workers/simple-shared-worker/)), we have two HTML pages, each of which uses some JavaScript to perform a calculation. The different scripts are using the same worker file to perform the calculation — they can both access it, even if their pages are running inside different windows.
+در [مثال کارگر اشتراکی پایه](https://github.com/mdn/dom-examples/tree/main/web-workers/simple-shared-worker) ما ([اجرای کارگر اشتراکی](https://mdn.github.io/dom-examples/web-workers/simple-shared-worker/))، دو صفحه HTML داریم که هر کدام از مقداری جاوااسکریپت برای انجام یک محاسبه استفاده می‌کنند. اسکریپت‌های مختلف از یک فایل کارگر یکسان برای انجام محاسبه استفاده می‌کنند — هر دو می‌توانند به آن دسترسی داشته باشند، حتی اگر صفحاتشان در پنجره‌های مختلف اجرا شوند.
 
-The following code snippet shows creation of a {{domxref("SharedWorker")}} object using the {{domxref("SharedWorker.SharedWorker", "SharedWorker()")}} constructor. Both scripts contain this:
+قطعه کد زیر ایجاد یک شیء {{domxref("SharedWorker")}} را با استفاده از سازنده {{domxref("SharedWorker.SharedWorker", "SharedWorker()")}} نشان می‌دهد. هر دو اسکریپت شامل این کد هستند:
 
 ```js
 const myWorker = new SharedWorker("worker.js");
 ```
 
-Both scripts then access the worker through a {{domxref("MessagePort")}} object created using the {{domxref("SharedWorker.port")}} property. If the onmessage event is attached using addEventListener, the port is manually started using its `start()` method:
+سپس هر دو اسکریپت از طریق یک شیء {{domxref("MessagePort")}} که با استفاده از ویژگی {{domxref("SharedWorker.port")}} ایجاد شده است، به کارگر دسترسی پیدا می‌کنند. اگر رویداد onmessage با استفاده از addEventListener متصل شود، پورت به صورت دستی با استفاده از متد `start()` آن شروع می‌شود:
 
 ```js
 myWorker.port.start();
 ```
 
-When the port is started, both scripts post messages to the worker and handle messages sent from it using `port.postMessage()` and `port.onmessage`, respectively:
+هنگامی که پورت شروع می‌شود، هر دو اسکریپت به ترتیب با استفاده از `port.postMessage()` و `port.onmessage` پیام‌ها را به کارگر ارسال می‌کنند و پیام‌های ارسال‌شده از آن را مدیریت می‌کنند:
 
 ```js
 [first, second].forEach((input) => {
@@ -88,7 +82,7 @@ myWorker.port.onmessage = (e) => {
 };
 ```
 
-Inside the worker we use the {{domxref("SharedWorkerGlobalScope.connect_event", "onconnect")}} handler to connect to the same port discussed above. The ports associated with that worker are accessible in the {{domxref("SharedWorkerGlobalScope/connect_event", "connect")}} event's `ports` property — we then use {{domxref("MessagePort")}} `start()` method to start the port, and the `onmessage` handler to deal with messages sent from the main threads.
+در داخل کارگر، از مدیریت‌کننده {{domxref("SharedWorkerGlobalScope.connect_event", "onconnect")}} برای اتصال به همان پورت مورد بحث استفاده می‌کنیم. پورت‌های مرتبط با آن کارگر در ویژگی `ports` رویداد {{domxref("SharedWorkerGlobalScope/connect_event", "connect")}} قابل دسترسی هستند — سپس از متد `start()` {{domxref("MessagePort")}} برای شروع پورت و از مدیریت‌کننده `onmessage` برای رسیدگی به پیام‌های ارسال‌شده از رشته‌های اصلی استفاده می‌کنیم.
 
 ```js
 onconnect = (e) => {
@@ -103,14 +97,14 @@ onconnect = (e) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("ExtendableMessageEvent")}} — similar to this interface but used in interfaces that needs to give more flexibility to authors.
+- {{domxref("ExtendableMessageEvent")}} — مشابه این رابط است اما در رابط‌هایی استفاده می‌شود که نیاز به انعطاف‌پذیری بیشتری برای نویسندگان دارند.
