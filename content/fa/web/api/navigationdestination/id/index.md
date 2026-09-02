@@ -1,11 +1,5 @@
 ---
 title: "NavigationDestination: id property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigationDestination/id"
-status: "needs-translation"
----
-
----
-title: "NavigationDestination: id property"
 short-title: id
 slug: Web/API/NavigationDestination/id
 page-type: web-api-instance-property
@@ -14,16 +8,15 @@ browser-compat: api.NavigationDestination.id
 
 {{APIRef("Navigation API")}}
 
-The **`id`** read-only property of the
-{{domxref("NavigationDestination")}} interface returns the {{domxref("NavigationHistoryEntry.id", "id")}} value of the destination {{domxref("NavigationHistoryEntry")}} if the {{domxref("NavigateEvent.navigationType")}} is `traverse`, or an empty string otherwise.
+خاصیت فقط خواندنی **`id`** در رابط {{domxref("NavigationDestination")}}، مقدار {{domxref("NavigationHistoryEntry.id", "id")}} ورودی تاریخچه مقصد {{domxref("NavigationHistoryEntry")}} را در صورتی که {{domxref("NavigateEvent.navigationType")}} برابر با `traverse` باشد، برمی‌گرداند، در غیر این صورت یک رشته خالی.
 
-The `id` is a unique, UA-generated value that always represents the history entry, useful to correlate a history entry with an external resource such as a storage cache.
+`id` یک مقدار یکتا است که توسط عامل کاربر (UA) تولید می‌شود و همواره نمایانگر ورودی تاریخچه است. این مقدار برای مرتبط کردن یک ورودی تاریخچه با یک منبع خارجی مانند حافظه نهان ذخیره‌سازی مفید است.
 
-## Value
+## مقدار
 
-A string representing the `id` of the destination {{domxref("NavigationHistoryEntry")}}, or an empty string.
+یک رشته که نشان‌دهنده `id` ورودی تاریخچه مقصد {{domxref("NavigationHistoryEntry")}} است، یا یک رشته خالی.
 
-## Examples
+## مثال‌ها
 
 ```js
 navigation.addEventListener("navigate", (event) => {
@@ -31,15 +24,15 @@ navigation.addEventListener("navigate", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
 - [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
