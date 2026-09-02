@@ -1,11 +1,5 @@
 ---
 title: "MediaKeySession: generateRequest() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaKeySession/generateRequest"
-status: "needs-translation"
----
-
----
-title: "MediaKeySession: generateRequest() method"
 short-title: generateRequest()
 slug: Web/API/MediaKeySession/generateRequest
 page-type: web-api-instance-method
@@ -14,46 +8,46 @@ browser-compat: api.MediaKeySession.generateRequest
 
 {{APIRef("Encrypted Media Extensions")}}{{SecureContext_Header}}
 
-The `generateRequest()` method of the {{domxref('MediaKeySession')}} interface returns a {{jsxref('Promise')}} after generating a license request based on initialization data.
+متد `generateRequest()` از رابط {{domxref('MediaKeySession')}} یک {{jsxref('Promise')}} را پس از تولید درخواست مجوز بر اساس داده‌های مقداردهی اولیه برمی‌گرداند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 generateRequest(initDataType, initData)
 ```
 
-### Parameters
+### پارامترها
 
 - `initDataType`
-  - : A string that specifies the format of the `initData` parameter. This must be one of the following values:
-    - `"cenc"`: The `initData` parameter uses the [`"cenc"`](https://w3c.github.io/encrypted-media/format-registry/initdata/cenc.html) format.
-    - `"keyids"`: The `initData` parameter uses the [`"keyids"`](https://w3c.github.io/encrypted-media/format-registry/initdata/keyids.html) format.
-    - `"webm"`: The `initData` parameter uses the [`"webm"`](https://w3c.github.io/encrypted-media/format-registry/initdata/webm.html) format.
+  - : رشته‌ای که قالب پارامتر `initData` را مشخص می‌کند. این مقدار باید یکی از موارد زیر باشد:
+    - `"cenc"`: پارامتر `initData` از قالب [`"cenc"`](https://w3c.github.io/encrypted-media/format-registry/initdata/cenc.html) استفاده می‌کند.
+    - `"keyids"`: پارامتر `initData` از قالب [`"keyids"`](https://w3c.github.io/encrypted-media/format-registry/initdata/keyids.html) استفاده می‌کند.
+    - `"webm"`: پارامتر `initData` از قالب [`"webm"`](https://w3c.github.io/encrypted-media/format-registry/initdata/webm.html) استفاده می‌کند.
 - `initData`
-  - : Initialization data for the request, in the format specified by `initDataType`. It is an instance of any of the following types:
+  - : داده‌های مقداردهی اولیه برای درخواست، در قالبی که توسط `initDataType` مشخص شده است. این مقدار نمونه‌ای از هر یک از انواع زیر است:
     - {{jsxref("ArrayBuffer")}}
     - {{jsxref("DataView")}}
     - {{jsxref("TypedArray")}}
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref('Promise')}}.
+یک {{jsxref('Promise')}}.
 
-### Exceptions
+### استثناها (Exceptions)
 
 - {{jsxref("TypeError")}}
-  - : Raised if `initDataType` is an empty string, if `initData` is an empty array, or if the provided `initData` is not valid according to the specified `initDataType`.
+  - : اگر `initDataType` یک رشتهٔ خالی باشد، یا `initData` یک آرایهٔ خالی باشد، یا `initData` ارائه‌شده طبق `initDataType` مشخص‌شده معتبر نباشد، پرتاب می‌شود.
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Raised if the Key System implementation associated with the `MediaKeySession` object does not support the provided `initDataType`, if the sanitized initialization data is empty, or if the sanitized initialization data is not supported by the content decryption module (CDM).
+  - : اگر پیاده‌سازی سیستم کلید (Key System) مرتبط با شیء `MediaKeySession` از `initDataType` ارائه‌شده پشتیبانی نکند، یا داده‌های مقداردهی اولیهٔ پاک‌سازی‌شده خالی باشند، یا داده‌های مقداردهی اولیهٔ پاک‌سازی‌شده توسط ماژول رمزگشایی محتوا (CDM) پشتیبانی نشوند، پرتاب می‌شود.
 - {{domxref("QuotaExceededError")}}
-  - : Raised if the operation fails due to a lack of resources on the user agent or CDM.
+  - : اگر عملیات به دلیل کمبود منابع در عامل کاربر (user agent) یا CDM با شکست مواجه شود، پرتاب می‌شود.
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Raised if the `MediaKeySession` object is in a `closing` or `closed` state, or if it has already been initialized.
+  - : اگر شیء `MediaKeySession` در وضعیت `closing` یا `closed` باشد، یا اگر قبلاً مقداردهی اولیه شده باشد، پرتاب می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
