@@ -1,11 +1,5 @@
 ---
-title: "LanguageModel: promptStreaming() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/LanguageModel/promptStreaming"
-status: "needs-translation"
----
-
----
-title: "LanguageModel: promptStreaming() method"
+title: "LanguageModel: متد promptStreaming()"
 short-title: promptStreaming()
 slug: Web/API/LanguageModel/promptStreaming
 page-type: web-api-instance-method
@@ -14,122 +8,122 @@ browser-compat: api.LanguageModel.promptStreaming
 
 {{APIRef("Prompt API")}}{{SecureContext_Header}}
 
-The **`promptStreaming()`** method of the {{domxref("LanguageModel")}} interface sends input to the language model and returns a {{domxref("ReadableStream")}} that delivers the model's response incrementally as it is generated.
+متد **`promptStreaming()`** از رابط {{domxref("LanguageModel")}} ورودی را به مدل زبانی ارسال می‌کند و یک {{domxref("ReadableStream")}} برمی‌گرداند که پاسخ مدل را به صورت تدریجی و در حین تولید تحویل می‌دهد.
 
-This is useful for displaying responses to users incrementally for outputs that take a long time to complete, or for any scenario where perceived latency should be minimized. Consume the stream using `for await...of` or by attaching a reader via {{domxref("ReadableStream.getReader()")}}.
+این روش برای نمایش تدریجی پاسخ‌ها به کاربران در خروجی‌هایی که زمان زیادی طول می‌کشند، یا برای هر سناریویی که باید تأخیر درک شده کاهش یابد، مفید است. استریم را با استفاده از `for await...of` یا با متصل کردن یک خواننده از طریق {{domxref("ReadableStream.getReader()")}} مصرف کنید.
 
-## Syntax
+## نحو
 
 ```js-nolint
 promptStreaming(input)
 promptStreaming(input, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `input`
-  - : The content to prompt the model with. This is either:
-    - A string — Shorthand for a single textual message.
-    - An array of objects, each representing a single message in a conversation with a language model.
-      Objects may have the following properties:
+  - : محتوایی که برای درخواست به مدل ارسال می‌شود. این مقدار یکی از موارد زیر است:
+    - یک رشته (string) — صورت خلاصه‌ای از یک پیام متنی واحد.
+    - یک آرایه از اشیاء، که هر کدام نمایانگر یک پیام واحد در یک مکالمه با مدل زبانی هستند.
+      اشیاء می‌توانند ویژگی‌های زیر را داشته باشند:
       - `role`
-        - : A string indicating the point of view the message is phrased from. Must be one of:
+        - : رشته‌ای که نشان‌دهنده دیدگاه پیام است. باید یکی از موارد زیر باشد:
           - `system`
-            - : A system-level instruction that guides the model's overall behavior. This must be the first instruction passed to the model.
+            - : یک دستورالعمل در سطح سیستم که رفتار کلی مدل را هدایت می‌کند. این باید اولین دستورالعمل ارسال‌شده به مدل باشد.
           - `user`
-            - : A message from the user, which the API should respond to.
+            - : پیامی از سوی کاربر که API باید به آن پاسخ دهد.
           - `assistant`
-            - : An input that provides context for the AI assistant, such as its persona or the format of its responses. Such messages mainly serve to provide context/history, and further shape how the model responds.
+            - : ورودی که زمینه‌ای را برای دستیار هوش مصنوعی فراهم می‌کند، مانند شخصیت یا قالب پاسخ‌های آن. چنین پیام‌هایی عمدتاً برای ارائه زمینه/تاریخچه و شکل‌دهی بیشتر به نحوه پاسخ مدل خدمت می‌کنند.
       - `content`
-        - : A string representing a textual prompt, or an array of objects. Each object includes the following properties:
+        - : یک رشته که نمایانگر یک درخواست متنی است، یا یک آرایه از اشیاء. هر شیء شامل ویژگی‌های زیر است:
           - `type`
-            - : An enumerated value representing the type of content. This can be one of:
+            - : یک مقدار شمارشی که نوع محتوا را نشان می‌دهد. می‌تواند یکی از موارد زیر باشد:
               - `audio`
-                - : Audio content.
+                - : محتوای صوتی.
               - `image`
-                - : Image content.
+                - : محتوای تصویری.
               - `text`
-                - : Textual content.
+                - : محتوای متنی.
               - `tool-call`
-                - : A tool invocation issued by the model.
+                - : فراخوانی ابزار توسط مدل.
               - `tool-response`
-                - : The result of a tool invocation.
+                - : نتیجه یک فراخوانی ابزار.
           - `value`
-            - : The content of the message. If the `type` is `text`, this is always a string. If the `type` is `audio` or `image`, the `value` can be one of several different object types; see [What data types are accepted?](/en-US/docs/Web/API/Prompt_API/Multimodal#what_data_types_are_accepted).
+            - : محتوای پیام. اگر `type` برابر `text` باشد، این مقدار همیشه یک رشته است. اگر `type` برابر `audio` یا `image` باشد، `value` می‌تواند یکی از انواع مختلف شیء باشد؛ به [چه انواع داده‌ای پذیرفته می‌شوند؟](/en-US/docs/Web/API/Prompt_API/Multimodal#what_data_types_are_accepted) مراجعه کنید.
       - `prefix` {{optional_inline}}
-        - : A boolean, defaulting to `false`. When `true`, the message is treated as a prefix for the model's next generated response rather than a complete turn.
+        - : یک مقدار بولی، پیش‌فرض `false`. وقتی `true` باشد، پیام به عنوان پیشوندی برای پاسخ بعدی مدل در نظر گرفته می‌شود، نه یک نوبت کامل.
 - `options` {{optional_inline}}
-  - : Options for creating a prompt. Properties include:
+  - : گزینه‌هایی برای ایجاد یک درخواست. ویژگی‌ها عبارتند از:
     - `responseConstraint`
-      - : An object following the structure defined by [JSON Schema](https://json-schema.org/) defining the precise format the model's output should be delivered in. When provided and `omitResponseConstraintInput` is `false`, any implementation-defined constraint-description message is included in the measurement.
+      - : یک شیء که از ساختار تعریف‌شده توسط [JSON Schema](https://json-schema.org/) پیروی می‌کند و قالب دقیق خروجی مدل را مشخص می‌کند. وقتی ارائه شود و `omitResponseConstraintInput` برابر `false` باشد، هر پیام توصیف محدودیت تعریف‌شده توسط پیاده‌سازی در اندازه‌گیری گنجانده می‌شود.
     - `omitResponseConstraintInput`
-      - : A boolean; when `true`, the automatic constraint-description message is excluded from the measurement.
+      - : یک مقدار بولی؛ وقتی `true` باشد، پیام خودکار توصیف محدودیت از اندازه‌گیری حذف می‌شود.
     - `signal`
-      - : An {{domxref("AbortSignal")}} to cancel the operation.
+      - : یک {{domxref("AbortSignal")}} برای لغو عملیات.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("ReadableStream")}} of {{jsxref("String")}} chunks. Each chunk represents a piece of the model's response as it is generated. The stream closes when generation completes.
+یک {{domxref("ReadableStream")}} از بخش‌های {{jsxref("String")}}. هر بخش نمایانگر بخشی از پاسخ مدل در حین تولید است. استریم با اتمام تولید بسته می‌شود.
 
-### Exceptions
+### استثناها
 
-Errors are surfaced as stream errors rather than as rejected promises. Consumers should handle errors using a stream's standard error-handling mechanisms.
+خطاها به عنوان خطاهای استریم (stream errors) ظاهر می‌شوند، نه به عنوان وعده‌های رد شده. مصرف‌کنندگان باید با استفاده از مکانیزم‌های استاندارد مدیریت خطای استریم، خطاها را مدیریت کنند.
 
 - `AbortError` {{domxref("DOMException")}}
-  - : Thrown if the operation was cancelled via the `signal` option.
+  - : اگر عملیات از طریق گزینه `signal` لغو شود، پرتاب می‌شود.
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if usage of the method is blocked by a {{httpheader("Permissions-Policy/language-model", "language-model")}} {{httpheader("Permissions-Policy")}}.
+  - : اگر استفاده از این متد توسط یک {{httpheader("Permissions-Policy/language-model", "language-model")}} {{httpheader("Permissions-Policy")}} مسدود شده باشد، پرتاب می‌شود.
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Thrown if:
-    - A message's `role` is `assistant` and its `type` is anything other than `text`.
-    - A message's `type` is `text` and its `value` is not a string.
-    - The input or output text is in a language the user agent doesn't support for prompting.
-    - A message's `type` is `image` or `audio` but the type was not listed in `expectedInputs`, or the `value` is not an [accepted data type](/en-US/docs/Web/API/Prompt_API/Multimodal#what_data_types_are_accepted).
+  - : در موارد زیر پرتاب می‌شود:
+    - `role` یک پیام `assistant` باشد و `type` آن چیزی غیر از `text` باشد.
+    - `type` یک پیام `text` باشد و `value` آن یک رشته نباشد.
+    - متن ورودی یا خروجی به زبانی باشد که عامل کاربر (user agent) برای درخواست از مدل پشتیبانی نمی‌کند.
+    - `type` یک پیام `image` یا `audio` باشد اما این نوع در `expectedInputs` لیست نشده باشد، یا `value` یک [نوع داده پذیرفته‌شده](/en-US/docs/Web/API/Prompt_API/Multimodal#what_data_types_are_accepted) نباشد.
 - `OperationError` {{domxref("DOMException")}}
-  - : Thrown if the prompt fails for any other reason not listed in the other exception types.
+  - : اگر درخواست به هر دلیل دیگری غیر از موارد ذکر شده در سایر انواع استثنا شکست بخورد، پرتاب می‌شود.
 - `QuotaExceededError` {{domxref("DOMException")}}
-  - : Thrown if the prompt would cause the session's context usage to exceed the model's {{domxref("LanguageModel.contextWindow")}}.
+  - : اگر درخواست باعث شود استفاده از زمینه جلسه از {{domxref("LanguageModel.contextWindow")}} مدل فراتر رود، پرتاب می‌شود.
 - `SyntaxError` {{domxref("DOMException")}}
-  - : Thrown if:
-    - No messages are included in the messages array.
-    - A message's `prefix` property is set to `true` and:
-      - The message's `role` is not `assistant`.
-      - The message is not the last item in the messages array.
+  - : در موارد زیر پرتاب می‌شود:
+    - هیچ پیامی در آرایه پیام‌ها گنجانده نشده باشد.
+    - ویژگی `prefix` یک پیام روی `true` تنظیم شده باشد و:
+      - `role` آن پیام `assistant` نباشد.
+      - آن پیام آخرین آیتم در آرایه پیام‌ها نباشد.
 - `TypeError`
-  - : Thrown if:
-    - `omitResponseConstraintInput` is `true` but `responseConstraint` is not provided.
-    - A message's `role` is `system` but it was not the first message passed to the context.
+  - : در موارد زیر پرتاب می‌شود:
+    - `omitResponseConstraintInput` برابر `true` باشد اما `responseConstraint` ارائه نشده باشد.
+    - `role` یک پیام `system` باشد اما اولین پیام ارسال‌شده به زمینه نباشد.
 
-## Description
+## توضیحات
 
-The `promptStreaming()` method adds the provided input to the context window and generates a response. The entire response is receives incrementally as a {{domxref("ReadableStream")}}.
+متد `promptStreaming()` ورودی ارائه‌شده را به پنجره زمینه (context window) اضافه کرده و یک پاسخ تولید می‌کند. کل پاسخ به صورت تدریجی به عنوان یک {{domxref("ReadableStream")}} دریافت می‌شود.
 
-To receive the response as one complete string, use {{domxref("LanguageModel.prompt()")}} instead. To add content to the context window without generating a response, use {{domxref("LanguageModel.append()")}}.
+برای دریافت پاسخ به صورت یک رشته کامل، از {{domxref("LanguageModel.prompt()")}} استفاده کنید. برای افزودن محتوا به پنجره زمینه بدون تولید پاسخ، از {{domxref("LanguageModel.append()")}} استفاده کنید.
 
-Each call to `promptStreaming()` adds to the session's context. To branch from a given state without affecting the original session, call {{domxref("LanguageModel.clone()")}}.
+هر بار فراخوانی `promptStreaming()` به زمینه جلسه اضافه می‌کند. برای انشعاب از یک حالت خاص بدون تأثیر بر جلسه اصلی، {{domxref("LanguageModel.clone()")}} را فراخوانی کنید.
 
-## Examples
+## مثال‌ها
 
-### Streaming a response to the page
+### استریم پاسخ به صفحه
 
-This example writes out chunks from a `promptStreaming()` call's {{domxref("ReadableStream")}} as they arrive.
+این مثال بخش‌های حاصل از فراخوانی `promptStreaming()` را هنگام رسیدن به صورت تکه‌تکه در صفحه می‌نویسد.
 
 ```js
 const session = await LanguageModel.create();
 const output = document.querySelector("#output");
 
-const stream = session.promptStreaming("Write a short poem about the ocean.");
+const stream = session.promptStreaming("یک شعر کوتاه درباره اقیانوس بنویس.");
 
 for await (const chunk of stream) {
   output.textContent += chunk;
 }
 ```
 
-See also [Using the Prompt API > Complete streaming example](/en-US/docs/Web/API/Prompt_API/Using#complete_streaming_example).
+همچنین به [استفاده از Prompt API > مثال کامل استریم](/en-US/docs/Web/API/Prompt_API/Using#complete_streaming_example) مراجعه کنید.
 
-### Streaming with an abort signal
+### استریم با سیگنال لغو
 
-This example shows how to use an {{domxref("AbortController")}} with `promptStreaming()`.
+این مثال نحوه استفاده از {{domxref("AbortController")}} را با `promptStreaming()` نشان می‌دهد.
 
 ```js
 const controller = new AbortController();
@@ -137,7 +131,7 @@ document
   .querySelector("#stop")
   .addEventListener("click", () => controller.abort());
 
-const stream = session.promptStreaming("Tell me a long story.", {
+const stream = session.promptStreaming("یک داستان بلند برایم بگو.", {
   signal: controller.signal,
 });
 
@@ -147,18 +141,18 @@ try {
   }
 } catch (err) {
   if (err.name === "AbortError") {
-    console.log("Streaming was stopped by the user.");
+    console.log("استریم توسط کاربر متوقف شد.");
   }
 }
 ```
 
-### Collecting streamed chunks into a single string
+### جمع‌آوری بخش‌های استریم شده در یک رشته واحد
 
-In this example, chunks from a {{domxref("ReadableStream")}} are collected before the whole stream is written out.
+در این مثال، بخش‌های یک {{domxref("ReadableStream")}} قبل از نوشتن کل استریم جمع‌آوری می‌شوند.
 
 ```js
 const session = await LanguageModel.create();
-const stream = session.promptStreaming("Explain quantum entanglement.");
+const stream = session.promptStreaming("درهم‌تنیدگی کوانتومی را توضیح بده.");
 const chunks = [];
 
 for await (const chunk of stream) {
@@ -169,18 +163,18 @@ const fullResponse = chunks.join("");
 console.log(fullResponse);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("LanguageModel.prompt()")}}
 - {{domxref("ReadableStream")}}
 - [Prompt API](/en-US/docs/Web/API/Prompt_API)
-- [Using the Prompt API](/en-US/docs/Web/API/Prompt_API/Using)
-- [Adding context with initial and ongoing prompt inputs](/en-US/docs/Web/API/Prompt_API/Adding_context)
+- [استفاده از Prompt API](/en-US/docs/Web/API/Prompt_API/Using)
+- [افزودن زمینه با ورودی‌های اولیه و مداوم درخواست](/en-US/docs/Web/API/Prompt_API/Adding_context)
