@@ -1,11 +1,5 @@
 ---
 title: "MediaTrackConstraints: restrictOwnAudio property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/restrictOwnAudio"
-status: "needs-translation"
----
-
----
-title: "MediaTrackConstraints: restrictOwnAudio property"
 short-title: restrictOwnAudio
 slug: Web/API/MediaTrackConstraints/restrictOwnAudio
 page-type: web-api-instance-property
@@ -16,29 +10,26 @@ browser-compat: api.MediaStreamTrack.applyConstraints.restrictOwnAudio_constrain
 
 {{APIRef("Media Capture and Streams")}}{{SeeCompatTable}}
 
-The {{domxref("MediaTrackConstraints")}} dictionary's **`restrictOwnAudio`** property is a [`ConstrainBoolean`](/en-US/docs/Web/API/MediaTrackConstraints#constrainboolean) that specifies the requested or mandatory constraints placed on the value of the {{domxref("MediaTrackSettings.restrictOwnAudio","restrictOwnAudio")}} constrainable property.
+خصوصیت **`restrictOwnAudio`** در دیکشنری {{domxref("MediaTrackConstraints")}} یک [`ConstrainBoolean`](/en-US/docs/Web/API/MediaTrackConstraints#constrainboolean) است که محدودیت‌های درخواستی یا اجباری اعمال‌شده بر مقدار خصوصیت قابل‌قید {{domxref("MediaTrackSettings.restrictOwnAudio","restrictOwnAudio")}} را مشخص می‌کند.
 
-This property controls whether system audio originating from the capturing tab is filtered out of screen capture, allowing for cleaner screen recordings in some cases. For example, if the capturing web page itself is playing embedded audio or video, that audio would be included in the capture. Since this could lead to an undesirable echo or interfere with the intended audio sources from other tabs or applications, removing it from the capture is desirable.
+این خصوصیت کنترل می‌کند که آیا صدای سیستم منشأگرفته از تب در حال ضبط، از ضبط صفحه فیلتر شود یا خیر، که در برخی موارد امکان ضبط تمیزتر صفحه را فراهم می‌کند. برای مثال، اگر خود صفحه وب در حال ضبط، صوت یا ویدیوی تعبیه‌شده‌ای پخش کند، آن صدا در ضبط گنجانده می‌شود. از آنجا که این امر می‌تواند به اکوی نامطلوب منجر شود یا با منابع صوتی موردنظر از تب‌ها یا برنامه‌های دیگر تداخل ایجاد کند، حذف آن از ضبط مطلوب است.
 
-If needed, you can determine whether or not this constraint is supported by checking
-the value of {{domxref("MediaTrackSupportedConstraints.restrictOwnAudio")}}, as returned
-by {{domxref("MediaDevices.getSupportedConstraints()")}}. However,
-this is rarely necessary since browsers typically ignore any constraints they don't recognize.
+در صورت نیاز، می‌توانید با بررسی مقدار {{domxref("MediaTrackSupportedConstraints.restrictOwnAudio")}} که توسط {{domxref("MediaDevices.getSupportedConstraints()")}} بازگردانده می‌شود، تعیین کنید که آیا این محدودیت پشتیبانی می‌شود یا خیر. با این حال، این کار به ندرت ضروری است، زیرا مرورگرها معمولاً هر محدودیتی را که نمی‌شناسند نادیده می‌گیرند.
 
-## Value
+## مقدار
 
-A [`ConstrainBoolean`](/en-US/docs/Web/API/MediaTrackConstraints#constrainboolean) value.
+یک مقدار [`ConstrainBoolean`](/en-US/docs/Web/API/MediaTrackConstraints#constrainboolean).
 
-If the value is `true`, the user agent will attempt to remove any audio originating from the tab that called {{domxref("MediaDevices.getDisplayMedia()")}} to initiate screen capture. If removal of audio via processing fails, the user agent may exclude all audio originating from the capturing tab.
+اگر مقدار `true` باشد، عامل کاربر تلاش می‌کند هر صدای منشأگرفته از تب‌ای که {{domxref("MediaDevices.getDisplayMedia()")}} را برای شروع ضبط صفحه فراخوانی کرده است حذف کند. اگر حذف صدا از طریق پردازش شکست بخورد، عامل کاربر ممکن است تمام صدای منشأگرفته از تب در حال ضبط را حذف کند.
 
 > [!NOTE]
-> If the captured display surface doesn't include system audio, this setting will have no effect.
+> اگر سطح نمایش ضبط‌شده شامل صدای سیستم نباشد، این تنظیم تأثیری نخواهد داشت.
 
-If the value is given as `exact`, that field's boolean value indicates an exact requirement for the `restrictOwnAudio` feature; if the user agent can't meet this requirement, the request will result in an error.
+اگر مقدار به صورت `exact` داده شود، مقدار بولی آن فیلد یک الزام دقیق برای ویژگی `restrictOwnAudio` را نشان می‌دهد؛ اگر عامل کاربر نتواند این الزام را برآورده کند، درخواست منجر به خطا می‌شود.
 
-If the value is `false`, the user agent will not attempt to restrict any system audio originating from the capturing tab.
+اگر مقدار `false` باشد، عامل کاربر تلاشی برای محدود کردن صدای سیستم منشأگرفته از تب در حال ضبط نخواهد کرد.
 
-## Examples
+## مثال‌ها
 
 ```js
 let isCapturingTabSystemAudioRestricted = displayStream
@@ -46,17 +37,17 @@ let isCapturingTabSystemAudioRestricted = displayStream
   .getSettings().restrictOwnAudio;
 ```
 
-The [Constraint exerciser](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#example_constraint_exerciser) example shows how to use media track constraints.
+مثال [Constraint exerciser](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#example_constraint_exerciser) نحوه استفاده از محدودیت‌های مسیر رسانه را نشان می‌دهد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
 - [Capabilities, constraints, and settings](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints)
