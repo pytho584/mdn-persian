@@ -1,11 +1,5 @@
 ---
 title: "HTMLTrackElement: cuechange event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTrackElement/cuechange_event"
-status: "needs-translation"
----
-
----
-title: "HTMLTrackElement: cuechange event"
 short-title: cuechange
 slug: Web/API/HTMLTrackElement/cuechange_event
 page-type: web-api-event
@@ -14,11 +8,11 @@ browser-compat: api.HTMLTrackElement.cuechange_event
 
 {{APIRef("WebVTT")}}
 
-The **`cuechange`** event fires when a {{domxref("TextTrack")}} has changed the currently displaying cues. The event is fired on both the `TextTrack` and the {{domxref("HTMLTrackElement")}} in which it's being presented, if any.
+رویداد **`cuechange`** زمانی رخ می‌دهد که یک {{domxref("TextTrack")}} کیوهای (cues) در حال نمایش خود را تغییر دهد. این رویداد هم روی `TextTrack` و هم روی {{domxref("HTMLTrackElement")}} (در صورت وجود) که در آن ارائه می‌شود، فراخوانی می‌شود.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای استفاده از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} یا تنظیم یک ویژگی کنترل‌کننده رویداد، از این نحو استفاده کنید:
 
 ```js-nolint
 addEventListener("cuechange", (event) => { })
@@ -26,15 +20,15 @@ addEventListener("cuechange", (event) => { })
 oncuechange = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{DOMxRef("Event")}} with no added properties.
+یک {{DOMxRef("Event")}} عمومی بدون هیچ ویژگی اضافه‌شده.
 
-## Examples
+## مثال‌ها
 
-The underlying {{domxref("TextTrack")}}, indicated by the {{domxref("HTMLTrackElement.track", "track")}} property, receives a `cuechange` event every time the currently-presented cue is changed. This happens even if the track isn't associated with a media element.
+{{domxref("TextTrack")}} زیرین، که با ویژگی {{domxref("HTMLTrackElement.track", "track")}} مشخص می‌شود، هر بار که کیوی (cue) در حال ارائه تغییر کند، یک رویداد `cuechange` دریافت می‌کند. این اتفاق حتی اگر track با یک عنصر رسانه‌ای مرتبط نباشد نیز رخ می‌دهد.
 
-If the track _is_ associated with a media element, using the {{HTMLElement("track")}} element as a child of the {{HTMLElement("audio")}} or {{HTMLElement("video")}} element, the `cuechange` event is also sent to the {{domxref("HTMLTrackElement")}}.
+اگر track _با یک عنصر رسانه‌ای مرتبط باشد_، با استفاده از عنصر {{HTMLElement("track")}} به عنوان فرزند عنصر {{HTMLElement("audio")}} یا {{HTMLElement("video")}}، رویداد `cuechange` همچنین به {{domxref("HTMLTrackElement")}} ارسال می‌شود.
 
 ```js
 let textTrackElem = document.getElementById("text-track");
@@ -44,7 +38,7 @@ textTrackElem.addEventListener("cuechange", (event) => {
 });
 ```
 
-Alternatively, you can use the `oncuechange` event handler:
+همچنین می‌توانید از کنترل‌کننده رویداد `oncuechange` استفاده کنید:
 
 ```js
 let textTrackElem = document.getElementById("text-track");
@@ -54,15 +48,15 @@ textTrackElem.oncuechange = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{glossary("WebVTT")}}
-- The same event on {{domxref("TextTrack")}}: {{domxref("TextTrack.cuechange_event", "cuechange")}}
+- همین رویداد روی {{domxref("TextTrack")}}: {{domxref("TextTrack.cuechange_event", "cuechange")}}
