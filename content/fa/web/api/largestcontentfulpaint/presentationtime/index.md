@@ -1,9 +1,4 @@
----
-title: "LargestContentfulPaint: presentationTime property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/LargestContentfulPaint/presentationTime"
-status: "needs-translation"
----
-
+```
 ---
 title: "LargestContentfulPaint: presentationTime property"
 short-title: presentationTime
@@ -14,26 +9,27 @@ browser-compat: api.LargestContentfulPaint.presentationTime
 
 {{APIRef("Performance API")}}
 
-The **`presentationTime`** read-only property of the {{domxref("LargestContentfulPaint")}} interface returns the {{domxref("DOMHighResTimeStamp","timestamp")}} when the painted pixels were actually drawn on the screen.
+خاصیت فقط-خواندنی **`presentationTime`** از رابط {{domxref("LargestContentfulPaint")}}، {{domxref("DOMHighResTimeStamp","timestamp")}} (زمان‌سنج) را برمی‌گرداند که نشان‌دهندهٔ زمانی است که پیکسل‌های نقاشی‌شده واقعاً روی صفحه نمایش داده شده‌اند.
 
-The `presentationTime` is optional — some browsers may choose always to return `0` or not to expose the value at all. The value is also implementation-dependent — it may differ across browsers that choose to expose it.
+`presentationTime` اختیاری است — برخی مرورگرها ممکن است همیشه `0` برگردانند یا اصلاً این مقدار را ارائه ندهند. مقدار آن همچنین به پیاده‌سازی وابسته است — ممکن است در مرورگرهای مختلفی که آن را ارائه می‌دهند متفاوت باشد.
 
-## Value
+## مقدار
 
-A {{domxref("DOMHighResTimeStamp")}} or {{jsxref("null")}} if the value is not exposed.
+یک {{domxref("DOMHighResTimeStamp")}} یا {{jsxref("null")}} اگر مقدار ارائه نشده باشد.
 
-## Examples
+## مثال‌ها
 
-See [Observing separate paint and presentation timings](/en-US/docs/Web/API/LargestContentfulPaint#observing_separate_paint_and_presentation_timings).
+به [مشاهدهٔ زمان‌بندی‌های جداگانهٔ paint و presentation](/en-US/docs/Web/API/LargestContentfulPaint#observing_separate_paint_and_presentation_timings) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("LargestContentfulPaint.paintTime")}}
+```
