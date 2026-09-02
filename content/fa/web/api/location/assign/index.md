@@ -1,11 +1,5 @@
 ---
 title: "Location: assign() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Location/assign"
-status: "needs-translation"
----
-
----
-title: "Location: assign() method"
 short-title: assign()
 slug: Web/API/Location/assign
 page-type: web-api-instance-method
@@ -14,58 +8,54 @@ browser-compat: api.Location.assign
 
 {{ APIRef("HTML DOM") }}
 
-The **`assign()`** method of the {{DOMXref("Location")}}
-interface causes the window to load
-and display the document at the URL specified. After the navigation occurs, the user can
-navigate back to the page that called `Location.assign()` by pressing the "back" button.
+متد **`assign()`** از رابط {{DOMXref("Location")}} باعث می‌شود که پنجره، سند موجود در URL مشخص‌شده را بارگذاری و نمایش دهد. پس از این جهتیابی، کاربر می‌تواند با فشار دادن دکمه «بازگشت» به صفحه‌ای که `Location.assign()` را فراخوانی کرده بود، بازگردد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 assign(url)
 ```
 
-### Parameters
+### پارامترها
 
 - `url`
-  - : A string or any other object with a {{Glossary("stringifier")}}, such as a {{domxref("URL")}} object, containing the URL of the page to navigate to; for example, an absolute URL such as `https://developer.mozilla.org/en-US/docs/Web/API/Location/reload`, or a relative URL — such as `/Web` (just a path, for navigating to another document at the same origin) or `#specifications` (just a fragment string, for navigating to some part of the same page), and so on.
+  - : یک رشته یا هر شیء دیگری که دارای {{Glossary("stringifier")}} باشد، مانند یک شیء {{domxref("URL")}}، حاوی URL صفحه مقصد برای جهتیابی. برای مثال، یک URL مطلق مانند `https://developer.mozilla.org/en-US/docs/Web/API/Location/reload`، یا یک URL نسبی — مانند `/Web` (فقط یک مسیر، برای جهتیابی به سند دیگری در همان مبدأ) یا `#specifications` (فقط یک رشته‌ی بخش، برای جهتیابی به بخشی از همان صفحه)، و غیره.
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `SecurityError` {{domxref("DOMException")}}
-  - : Thrown if the {{Glossary("origin")}} of the script calling the method is not the {{Glossary("Same-origin policy", "same origin")}} of the page originally described by the {{domxref("Location")}} object, mostly when the script is hosted on a different domain. Browsers also throttle navigations and may throw this error, generate a warning, or ignore the call if it's called too frequently.
+  - : زمانی پرتاب می‌شود که {{Glossary("origin", "مبدأ")}} اسکریپت فراخواننده متد با {{Glossary("Same-origin policy", "خط‌مشی همان‌مبدأ")}} صفحه‌ای که در ابتدا توسط شیء {{domxref("Location")}} توصیف شده است، یکسان نباشد؛ معمولاً زمانی که اسکریپت روی دامنه‌ای متفاوت میزبانی می‌شود. مرورگرها همچنین جهتیابی‌ها را محدود می‌کنند و ممکن است این خطا را پرتاب کنند، یک هشدار تولید کنند، یا اگر فراخوانی بیش از حد مکرر باشد، آن را نادیده بگیرند.
 - `SyntaxError` {{domxref("DOMException")}}
-  - : Thrown if the provided `url` parameter is not a valid URL.
+  - : زمانی پرتاب می‌شود که پارامتر `url` ارائه‌شده یک URL معتبر نباشد.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
 ```js
-// Navigate to the Location.reload article
+// جهتیابی به مقاله Location.reload
 window.location.assign(
   "https://developer.mozilla.org/en-US/docs/Web/API/Location/reload",
 );
 
-// Then navigate to its Specifications section
+// سپس جهتیابی به بخش Specifications آن
 window.location.assign("#specifications");
 
-// Eventually navigate to https://developer.mozilla.org/en-US/docs/Web
+// در نهایت جهتیابی به https://developer.mozilla.org/en-US/docs/Web
 window.location.assign("/Web");
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("Location")}} interface it belongs to.
-- Similar methods: {{domxref("Location.replace()")}} and
-  {{domxref("Location.reload()")}}.
+- رابط {{domxref("Location")}} که این متد به آن تعلق دارد.
+- متدهای مشابه: {{domxref("Location.replace()")}} و {{domxref("Location.reload()")}}.
