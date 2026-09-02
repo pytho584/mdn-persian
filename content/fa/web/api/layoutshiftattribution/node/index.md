@@ -1,7 +1,5 @@
 ---
 title: "LayoutShiftAttribution: node property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/LayoutShiftAttribution/node"
-status: "needs-translation"
 ---
 
 ---
@@ -16,15 +14,15 @@ browser-compat: api.LayoutShiftAttribution.node
 
 {{APIRef("Performance API")}}{{SeeCompatTable}}
 
-The **`node`** read-only property of the {{domxref("LayoutShiftAttribution")}} interface returns a {{domxref("Node")}} representing the object that has shifted.
+خاصیت فقط خواندنی **`node`** از رابط {{domxref("LayoutShiftAttribution")}} یک {{domxref("Node")}} را برمی‌گرداند که نشان‌دهنده شیء جابجا شده است.
 
-## Value
+## مقدار
 
-A {{domxref("Node")}}.
+یک {{domxref("Node")}}.
 
-## Examples
+## مثال‌ها
 
-The following example prints the `node` of the first item in {{domxref("LayoutShift.sources")}} to the console.
+مثال زیر `node` اولین آیتم در {{domxref("LayoutShift.sources")}} را در کنسول چاپ می‌کند.
 
 ```js
 new PerformanceObserver((list) => {
@@ -36,10 +34,10 @@ new PerformanceObserver((list) => {
 }).observe({ type: "layout-shift", buffered: true });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
