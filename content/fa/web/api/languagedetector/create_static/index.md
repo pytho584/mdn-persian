@@ -1,11 +1,5 @@
 ---
 title: "LanguageDetector: create() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/LanguageDetector/create_static"
-status: "needs-translation"
----
-
----
-title: "LanguageDetector: create() static method"
 short-title: create()
 slug: Web/API/LanguageDetector/create_static
 page-type: web-api-static-method
@@ -16,57 +10,57 @@ browser-compat: api.LanguageDetector.create_static
 
 {{APIRef("Translator and Language Detector APIs")}}{{SeeCompatTable}}{{securecontext_header}}
 
-The **`create()`** static method of the {{domxref("LanguageDetector")}} interface creates a new `LanguageDetector` instance to detect languages.
+متد ایستای **`create()`** از رابط {{domxref("LanguageDetector")}}، یک نمونه جدید `LanguageDetector` برای تشخیص زبان ایجاد می‌کند.
 
 > [!NOTE]
-> The `create()` method requires [transient activation](/en-US/docs/Glossary/Transient_activation), that is, it must be invoked in response to a user action such as a mouse click or button press.
+> متد `create()` به [اعتبارگذاری گذرا](/en-US/docs/Glossary/Transient_activation) نیاز دارد؛ یعنی باید در پاسخ به کنش کاربر مانند کلیک ماوس یا فشردن دکمه فراخوانی شود.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 LanguageDetector.create(options)
 ```
 
-### Parameters
+### پارامترها
 
 - `options`
-  - : An object specifying configuration options for the `LanguageDetector`. Possible values include:
+  - : یک شیء که گزینه‌های پیکربندی برای `LanguageDetector` را مشخص می‌کند. مقادیر ممکن عبارت‌اند از:
     - `expectedInputLanguages`
-      - : An array of strings specifying the expected languages of the input text, which helps improve the accuracy of the language detection. These should be valid {{glossary("BCP 47 language tag", "BCP 47 language tags")}}. Defaults to `["en"]`.
+      - : آرایه‌ای از رشته‌ها که زبان‌های مورد انتظار متن ورودی را مشخص می‌کند و به بهبود دقت تشخیص زبان کمک می‌کند. این‌ها باید {{glossary("BCP 47 language tag", "BCP 47 language tags")}} معتبر باشند. مقدار پیش‌فرض `["en"]` است.
     - `monitor` {{optional_inline}}
-      - : A callback function with a {{domxref("CreateMonitor")}} argument that enables monitoring download progress of the AI model.
+      - : یک تابع بازخوان (callback) با آرگومان {{domxref("CreateMonitor")}} که نظارت بر پیشرفت دانلود مدل هوش مصنوعی را امکان‌پذیر می‌کند.
     - `signal` {{optional_inline}}
-      - : An {{domxref("AbortSignal")}} object instance, which allows a `create()` operation to be aborted via the associated {{domxref("AbortController")}}. The exact effect is dependent on when {{domxref("AbortController.abort()")}} is called:
-        - If `abort()` is called before the `create()` promise resolves, the `create()` operation is cancelled.
-        - If `abort()` is called after the `create()` promise fulfills, it has the same effect as calling {{domxref("LanguageDetector.destroy()")}}: The resources assigned to the resulting `LanguageDetector` instance are released, and any ongoing and subsequent `LanguageDetector` method calls will reject with an `AbortError`.
+      - : یک نمونه از شیء {{domxref("AbortSignal")}} که امکان لغو عملیات `create()` را از طریق {{domxref("AbortController")}} مرتبط فراهم می‌کند. اثر دقیق آن به زمان فراخوانی {{domxref("AbortController.abort()")}} بستگی دارد:
+        - اگر `abort()` پیش از resolve شدن پرامیس `create()` فراخوانی شود، عملیات `create()` لغو می‌شود.
+        - اگر `abort()` پس از fulfilled شدن پرامیس `create()` فراخوانی شود، همان اثر فراخوانی {{domxref("LanguageDetector.destroy()")}} را دارد: منابع اختصاص‌یافته به نمونه `LanguageDetector` حاصل آزاد می‌شوند و تمام فراخوانی‌های متدهای `LanguageDetector`، چه در حال انجام و چه بعدی، با `AbortError` رد می‌شوند.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that fulfills with a `LanguageDetector` object instance.
+یک {{jsxref("Promise")}} که با یک نمونه شیء `LanguageDetector` برآورده می‌شود.
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the page's {{domxref("Document")}} is not yet active.
+  - : اگر {{domxref("Document")}} صفحه هنوز فعال نباشد، پرتاب می‌شود.
 - `NetworkError` {{domxref("DOMException")}}
-  - : Thrown if:
-    - The network was not available to download the AI model.
-    - The user has cancelled the AI model download.
+  - : اگر:
+    - شبکه برای دانلود مدل هوش مصنوعی در دسترس نبود.
+    - کاربر دانلود مدل هوش مصنوعی را لغو کرده باشد.
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if:
-    - Usage of the method is blocked by a {{httpheader('Permissions-Policy/language-detector','language-detector')}} {{httpheader("Permissions-Policy")}}.
-    - The user has blocked the AI model download in some way.
-    - The `create()` method wasn't called via {{glossary("transient activation")}}.
+  - : اگر:
+    - استفاده از متد توسط {{httpheader('Permissions-Policy/language-detector','language-detector')}} در {{httpheader("Permissions-Policy")}} مسدود شده باشد.
+    - کاربر به نحوی دانلود مدل هوش مصنوعی را مسدود کرده باشد.
+    - متد `create()` از طریق {{glossary("transient activation")}} فراخوانی نشده باشد.
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Thrown if:
-    - The language tags specified in `expectedInputLanguages` are invalid, or not supported.
-    - An AI model to support the specified `expectedInputLanguages` is not available.
+  - : اگر:
+    - برچسب‌های زبانی که در `expectedInputLanguages` مشخص شده‌اند نامعتبر یا پشتیبانی‌نشده باشند.
+    - مدل هوش مصنوعی برای پشتیبانی از `expectedInputLanguages` مشخص‌شده در دسترس نباشد.
 - `OperationError` {{domxref("DOMException")}}
-  - : General-purpose exception thrown if `LanguageDetector` creation failed for any other reason.
+  - : استثنای عمومی که اگر ایجاد `LanguageDetector` به هر دلیل دیگری با شکست مواجه شود، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Basic `LanguageDetector` creation
+### ایجاد پایه `LanguageDetector`
 
 ```js
 const detector = await LanguageDetector.create({
@@ -74,14 +68,14 @@ const detector = await LanguageDetector.create({
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Using the Translator and Language Detector APIs](/en-US/docs/Web/API/Translator_and_Language_Detector_APIs/Using)
+- [استفاده از APIهای Translator و Language Detector](/en-US/docs/Web/API/Translator_and_Language_Detector_APIs/Using)
