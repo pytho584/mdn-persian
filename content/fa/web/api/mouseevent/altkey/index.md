@@ -1,11 +1,5 @@
 ---
 title: "MouseEvent: altKey property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/altKey"
-status: "needs-translation"
----
-
----
-title: "MouseEvent: altKey property"
 short-title: altKey
 slug: Web/API/MouseEvent/altKey
 page-type: web-api-instance-property
@@ -14,21 +8,20 @@ browser-compat: api.MouseEvent.altKey
 
 {{APIRef("UI Events")}}
 
-The **`MouseEvent.altKey`** read-only property is a boolean value that indicates whether the <kbd>alt</kbd> key was pressed or not when a given mouse event occurs.
+ویژگی فقط‌خواندنی **`MouseEvent.altKey`** یک مقدار بولی است که نشان می‌دهد آیا کلید <kbd>alt</kbd> هنگام وقوع یک رویداد ماوس معین فشرده شده است یا نه.
 
-Be aware that the browser can't always detect the <kbd>alt</kbd> key on some operating systems.
-On some Linux variants, for example, a left mouse click combined with the <kbd>alt</kbd> key is used to move or resize windows.
+توجه داشته باشید که مرورگر همیشه نمی‌تواند کلید <kbd>alt</kbd> را در برخی سیستم‌عامل‌ها تشخیص دهد. به‌عنوان مثال، در برخی از توزیع‌های لینوکس، کلیک چپ ماوس همراه با کلید <kbd>alt</kbd> برای جابه‌جایی یا تغییر اندازه پنجره‌ها استفاده می‌شود.
 
 > [!NOTE]
-> On Macintosh keyboards, this key is also known as the <kbd>option</kbd> key.
+> در صفحه‌کلیدهای مکینتاش، این کلید با نام کلید <kbd>option</kbd> نیز شناخته می‌شود.
 
-## Value
+## مقدار
 
-A boolean value, where `true` indicates that the key is pressed, and `false` indicates that the key is _not_ pressed.
+یک مقدار بولی، که در آن `true` نشان می‌دهد که کلید فشرده شده است و `false` نشان می‌دهد که کلید _فشرده نشده_ است.
 
-## Examples
+## مثال‌ها
 
-This example logs the `altKey` property when you trigger a {{domxref("Element/click_event", "click")}} event.
+این مثال هنگام فعال‌کردن رویداد {{domxref("Element/click_event", "click")}} ویژگی `altKey` را ثبت می‌کند.
 
 ### HTML
 
@@ -48,18 +41,18 @@ function logKey(e) {
 }
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{ domxref("MouseEvent") }}
