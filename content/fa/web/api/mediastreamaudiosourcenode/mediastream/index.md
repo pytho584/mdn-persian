@@ -1,11 +1,5 @@
 ---
 title: "MediaStreamAudioSourceNode: mediaStream property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamAudioSourceNode/mediaStream"
-status: "needs-translation"
----
-
----
-title: "MediaStreamAudioSourceNode: mediaStream property"
 short-title: mediaStream
 slug: Web/API/MediaStreamAudioSourceNode/mediaStream
 page-type: web-api-instance-property
@@ -14,27 +8,17 @@ browser-compat: api.MediaStreamAudioSourceNode.mediaStream
 
 {{APIRef("Web Audio API")}}
 
-The {{domxref("MediaStreamAudioSourceNode")}} interface's
-read-only **`mediaStream`** property indicates the
-{{domxref("MediaStream")}} that contains the audio track from which the node is
-receiving audio.
+ویژگی فقط‌خواندنی **`mediaStream`** از رابط {{domxref("MediaStreamAudioSourceNode")}}، {{domxref("MediaStream")}}ی را نشان می‌دهد که شامل ترک صوتی مورد استفاده این گره برای دریافت صدا است.
 
-This stream was specified when the node was first created,
-either using the {{domxref("MediaStreamAudioSourceNode.MediaStreamAudioSourceNode", "MediaStreamAudioSourceNode()")}}
-constructor or the {{domxref("AudioContext.createMediaStreamSource()")}} method.
+این جریان هنگام ایجاد گره مشخص شده است؛ یا با استفاده از سازندهٔ {{domxref("MediaStreamAudioSourceNode.MediaStreamAudioSourceNode", "MediaStreamAudioSourceNode()")}} یا با متد {{domxref("AudioContext.createMediaStreamSource()")}}.
 
-## Value
+## مقدار
 
-A {{domxref("MediaStream")}} representing the stream which contains the
-{{domxref("MediaStreamTrack")}} serving as the source of audio for the node.
+یک {{domxref("MediaStream")}} که نشان‌دهندهٔ جریانی است که شامل {{domxref("MediaStreamTrack")}} به‌عنوان منبع صوتی گره است.
 
-The {{Glossary("user agent")}} uses the first audio track it finds on the specified
-stream as the audio source for this node. However, there is no way to be certain which
-track that will be on multi-track streams. If the specific track matters to you, or you
-need to have access to the track itself, you should use a
-{{domxref("MediaStreamTrackAudioSourceNode")}} instead.
+{{Glossary("user agent")}} (عامل کاربر) از اولین ترک صوتی که در جریان مشخص‌شده پیدا می‌کند به‌عنوان منبع صوتی این گره استفاده می‌کند. با این حال، هیچ راهی برای اطمینان از اینکه در جریان‌های چند‌ترکه کدام ترک استفاده خواهد شد وجود ندارد. اگر ترک خاصی برایتان مهم است یا به دسترسی به خود ترک نیاز دارید، بهتر است به‌جای آن از {{domxref("MediaStreamTrackAudioSourceNode")}} استفاده کنید.
 
-## Examples
+## مثال‌ها
 
 ```js
 const audioCtx = new window.AudioContext();
@@ -46,10 +30,10 @@ let source = new MediaStreamAudioSourceNode(audioCtx, options);
 console.log(source.mediaStream);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
