@@ -1,7 +1,5 @@
 ---
 title: "ImageDecoder: tracks property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ImageDecoder/tracks"
-status: "needs-translation"
 ---
 
 ---
@@ -14,24 +12,24 @@ browser-compat: api.ImageDecoder.tracks
 
 {{securecontext_header}}{{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`tracks`** read-only property of the {{domxref("ImageDecoder")}} interface returns a list of the tracks in the encoded image data.
+ویژگی فقط‌خواندنی **`tracks`** در رابط {{domxref("ImageDecoder")}} فهرستی از trackهای موجود در داده‌های تصویر رمزگذاری‌شده را برمی‌گرداند.
 
-## Value
+## مقدار
 
-An {{domxref("ImageTrackList")}}.
+یک شیء {{domxref("ImageTrackList")}}.
 
-## Examples
+## مثال‌ها
 
-The following example prints the value of `tracks` to the console. This will be an {{domxref("ImageTrackList")}} object.
+مثال زیر مقدار `tracks` را در کنسول چاپ می‌کند. این مقدار یک شیء {{domxref("ImageTrackList")}} خواهد بود.
 
 ```js
 console.log(imageDecoder.tracks);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
