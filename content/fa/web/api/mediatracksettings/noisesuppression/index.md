@@ -1,11 +1,5 @@
 ---
 title: "MediaTrackSettings: noiseSuppression property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/noiseSuppression"
-status: "needs-translation"
----
-
----
-title: "MediaTrackSettings: noiseSuppression property"
 short-title: noiseSuppression
 slug: Web/API/MediaTrackSettings/noiseSuppression
 page-type: web-api-instance-property
@@ -14,43 +8,29 @@ browser-compat: api.MediaStreamTrack.applyConstraints.noiseSuppression_constrain
 
 {{APIRef("Media Capture and Streams")}}
 
-The {{domxref("MediaTrackSettings")}} dictionary's
-**`noiseSuppression`** property is a Boolean value whose value
-indicates whether or not noise suppression technology is enabled on an audio track. This
-lets you determine what value was selected to comply with your specified constraints for
-this property's value as described in the
-{{domxref("MediaTrackConstraints.noiseSuppression")}} property you provided when calling
-either {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}} or
-{{domxref("MediaStreamTrack.applyConstraints()")}}.
+ویژگی **`noiseSuppression`** در دیکشنری {{domxref("MediaTrackSettings")}} یک مقدار بولی است که فعال یا غیرفعال بودن فناوری حذف نویز را روی یک ترک صوتی نشان می‌دهد. این ویژگی به شما امکان می‌دهد مقداری را که برای منطبق شدن با محدودیت‌های تعیین‌شده برای این ویژگی انتخاب شده است مشاهده کنید؛ همان محدودیت‌هایی که در ویژگی {{domxref("MediaTrackConstraints.noiseSuppression")}} هنگام فراخوانی {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}} یا {{domxref("MediaStreamTrack.applyConstraints()")}} مشخص کرده بودید.
 
-Noise suppression automatically filters the audio to remove background noise, hum
-caused by equipment, and the like from the sound before delivering it to your code. This
-feature is typically used on microphones, although it is technically possible it could
-be provided by other input sources as well.
+حذف نویز به‌طور خودکار صدا را فیلتر می‌کند و نویز پس‌زمینه، وزوز (hum) ناشی از تجهیزات و موارد مشابه را پیش از رساندن صدا به کد شما از آن حذف می‌کند. این ویژگی معمولاً روی میکروفون‌ها استفاده می‌شود، اگرچه از نظر فنی ممکن است منابع ورودی دیگری نیز آن را ارائه کنند.
 
-If needed, you can determine whether or not this constraint is supported by checking
-the value of {{domxref("MediaTrackSupportedConstraints.noiseSuppression")}} as returned
-by a call to {{domxref("MediaDevices.getSupportedConstraints()")}}. However, typically
-this is unnecessary since browsers will ignore any constraints they're unfamiliar with.
+در صورت نیاز، می‌توانید با بررسی مقدار {{domxref("MediaTrackSupportedConstraints.noiseSuppression")}} که در نتیجه فراخوانی {{domxref("MediaDevices.getSupportedConstraints()")}} بازگردانده می‌شود، از پشتیبانی شدن این محدودیت مطلع شوید. البته معمولاً انجام این کار ضروری نیست؛ چرا که مرورگرها هر محدودیتی را که نشناسند نادیده می‌گیرند.
 
-## Value
+## مقدار
 
-A Boolean value which is `true` if the input track has noise suppression
-enabled or `false` if AGC is disabled.
+یک مقدار بولی است؛ اگر حذف نویز روی ترک ورودی فعال باشد مقدار آن `true` و اگر حذف نویز غیرفعال باشد مقدار آن `false` است.
 
-## Examples
+## مثال‌ها
 
-See the [Constraint exerciser](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#example_constraint_exerciser) example.
+برای مشاهده مثال، [Constraint exerciser](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#example_constraint_exerciser) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
 - [Capabilities, constraints, and settings](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints)
