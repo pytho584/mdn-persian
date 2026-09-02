@@ -1,7 +1,5 @@
 ---
 title: "IDBKeyRange: lowerOpen property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBKeyRange/lowerOpen"
-status: "needs-translation"
 ---
 
 ---
@@ -14,36 +12,25 @@ browser-compat: api.IDBKeyRange.lowerOpen
 
 {{ APIRef("IndexedDB") }} {{AvailableInWorkers}}
 
-The **`lowerOpen`** read-only property of the
-{{domxref("IDBKeyRange")}} interface returns a boolean indicating whether the
-lower-bound value is included in the key range.
+ویژگی فقط‌خواندنی **`lowerOpen`** از رابط {{domxref("IDBKeyRange")}} یک مقدار بولی برمی‌گرداند که نشان می‌دهد آیا مقدار کران پایین در محدوده کلید گنجانده شده است یا خیر.
 
-## Value
+## مقدار
 
-A boolean value:
+یک مقدار بولی:
 
-| Value   | Indication                                              |
+| مقدار   | توضیح                                              |
 | ------- | ------------------------------------------------------- |
-| `true`  | The lower-bound value is not included in the key range. |
-| `false` | The lower-bound value is included in the key range.     |
+| `true`  | مقدار کران پایین در محدوده کلید گنجانده نشده است. |
+| `false` | مقدار کران پایین در محدوده کلید گنجانده شده است.     |
 
-## Examples
+## مثال‌ها
 
-The following example illustrates how you'd use a key range. Here we
-declare `keyRangeValue = IDBKeyRange.upperBound("F", "W", true, true);` — a
-range that includes everything between "F" and "W" but not including them — since both
-the upper and lower bounds have been declared as open (`true`). We open a
-transaction (using {{domxref("IDBTransaction")}}) and an object store, and open a Cursor
-with {{domxref("IDBObjectStore.openCursor")}}, declaring `keyRangeValue` as
-its optional key range value.
+مثال زیر نحوه استفاده از یک محدوده کلید را نشان می‌دهد. در اینجا `keyRangeValue = IDBKeyRange.upperBound("F", "W", true, true);` را تعریف می‌کنیم؛ محدوده‌ای که همه‌چیز بین «F» و «W» را شامل می‌شود، اما خود آن‌ها را شامل نمی‌شود؛ زیرا هر دو کران بالا و پایین به صورت باز (`true`) تعریف شده‌اند. ما یک تراکنش (با استفاده از {{domxref("IDBTransaction")}}) و یک object store باز می‌کنیم و یک Cursor را با {{domxref("IDBObjectStore.openCursor")}} باز می‌کنیم و `keyRangeValue` را به عنوان مقدار اختیاری محدوده کلید آن تعیین می‌کنیم.
 
-After declaring the key range, we log its `lowerOpen` property value to the
-console, which should appear as "true": the lower bound is open, so won't be included in
-the range.
+پس از تعریف محدوده کلید، مقدار ویژگی `lowerOpen` آن را در کنسول ثبت می‌کنیم؛ انتظار می‌رود مقدار «true» ظاهر شود: کران پایین باز است، بنابراین در محدوده گنجانده نخواهد شد.
 
 > [!NOTE]
-> For a more complete example allowing you to experiment with
-> key range, have a look at our [IDBKeyRange-example](https://github.com/mdn/dom-examples/tree/main/indexeddb-examples/idbkeyrange) repo ([view the example live too](https://mdn.github.io/dom-examples/indexeddb-examples/idbkeyrange/).)
+> برای یک مثال کامل‌تر که به شما امکان آزمایش با محدوده کلید را می‌دهد، به مخزن [IDBKeyRange-example](https://github.com/mdn/dom-examples/tree/main/indexeddb-examples/idbkeyrange) ما نگاهی بیندازید ([همچنین مثال زنده را ببینید](https://mdn.github.io/dom-examples/indexeddb-examples/idbkeyrange/).)
 
 ```js
 function displayData() {
@@ -66,20 +53,20 @@ function displayData() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم محدوده کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و ایجاد تغییرات در داده‌ها: {{domxref("IDBObjectStore")}}
+- استفاده از Cursorها: {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
