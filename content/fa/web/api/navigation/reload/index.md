@@ -1,11 +1,5 @@
 ---
 title: "Navigation: reload() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigation/reload"
-status: "needs-translation"
----
-
----
-title: "Navigation: reload() method"
 short-title: reload()
 slug: Web/API/Navigation/reload
 page-type: web-api-instance-method
@@ -14,9 +8,9 @@ browser-compat: api.Navigation.reload
 
 {{APIRef("Navigation API")}}
 
-The **`reload()`** method of the {{domxref("Navigation")}} interface reloads the current URL, updating any provided state in the history entries list.
+متد **`reload()`** در رابط {{domxref("Navigation")}}، URL فعلی را بارگذاری مجدد می‌کند و هر state ارائه‌شده را در فهرست entries تاریخچه به‌روزرسانی می‌کند.
 
-Note that `reload()` does not trigger the [`popstate` event](/en-US/docs/Web/API/Window/popstate_event), as this is only fired for soft navigations that cause a "traversal" of the history entries.
+توجه داشته باشید که `reload()` رویداد [`popstate`](/en-US/docs/Web/API/Window/popstate_event) را فعال نمی‌کند؛ زیرا این رویداد فقط برای ناوبری‌های نرمی (soft navigations) فعال می‌شود که باعث «عبور» (traversal) از entries تاریخچه می‌شوند.
 
 ## Syntax
 
@@ -28,35 +22,35 @@ reload(options)
 ### Parameters
 
 - `options` {{optional_inline}}
-  - : An options object containing the following properties:
+  - : یک شیء گزینه‌ها که شامل ویژگی‌های زیر است:
     - `state` {{optional_inline}}
-      - : Developer-defined information to be stored in the associated {{domxref("NavigationHistoryEntry")}} once the navigation is complete, retrievable via {{domxref("NavigationHistoryEntry.getState", "getState()")}}.
-        This can be any data type. You might, for example, wish to store a page visit count for analytics purposes, or store UI state details so the view can be shown exactly as the user last left it.
-        Any data stored in `state` must be [structured-cloneable](/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm).
+      - : اطلاعات تعریف‌شده توسط توسعه‌دهنده که پس از تکمیل ناوبری در {{domxref("NavigationHistoryEntry")}} مرتبط ذخیره می‌شود و از طریق {{domxref("NavigationHistoryEntry.getState", "getState()")}} قابل بازیابی است.
+        این می‌تواند هر نوع داده‌ای باشد. به عنوان مثال، ممکن است بخواهید تعداد بازدیدهای صفحه را برای اهداف تحلیل (analytics) ذخیره کنید، یا جزئیات وضعیت UI را ذخیره کنید تا نمایش دقیقاً همان گونه باشد که کاربر آخرین بار آن را ترک کرده است.
+        هر داده ذخیره‌شده در `state` باید [ساختار-کلون‌پذیر (structured-cloneable)](/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm) باشد.
     - `info` {{optional_inline}}
-      - : Developer-defined information to be passed along to the {{domxref("Navigation/navigate_event", "navigate")}} event, made available in {{domxref("NavigateEvent.info")}}.
-        This can be any data type. You might, for example, wish to display newly-navigated content with a different animation depending on how it was navigated to (swipe left, swipe right, or go home).
-        A string indicating which animation to use may be passed in as `info`.
+      - : اطلاعات تعریف‌شده توسط توسعه‌دهنده که به رویداد {{domxref("Navigation/navigate_event", "navigate")}} منتقل می‌شود و در {{domxref("NavigateEvent.info")}} در دسترس قرار می‌گیرد.
+        این می‌تواند هر نوع داده‌ای باشد. به عنوان مثال، ممکن است بخواهید محتوای تازه‌ناوبری‌شده را با انیمیشن متفاوتی بسته به نحوه ناوبری به آن (کشیدن به چپ، کشیدن به راست، یا بازگشت به خانه) نمایش دهید.
+        یک رشته که نشان می‌دهد کدام انیمیشن استفاده شود می‌تواند به عنوان `info` ارسال شود.
 
 ### Return value
 
-An object with the following properties:
+یک شیء با ویژگی‌های زیر:
 
 - `committed`
-  - : A {{jsxref("Promise")}} which will fulfill when the visible URL has changed and a new {{domxref("NavigationHistoryEntry")}} has been created.
+  - : یک {{jsxref("Promise")}} که وقتی URL قابل مشاهده تغییر کند و یک {{domxref("NavigationHistoryEntry")}} جدید ایجاد شود، fulfilled می‌شود.
 - `finished`
-  - : A {{jsxref("Promise")}} which will fulfill when all promises returned by the `intercept()` handler are fulfilled. This is equivalent to the {{domxref("NavigationTransition.finished")}} promise fulfilling, when the {{domxref("Navigation/navigatesuccess_event", "navigatesuccess")}} event fires.
+  - : یک {{jsxref("Promise")}} که وقتی تمام promiseهای بازگردانده‌شده توسط هندلر `intercept()` fulfilled شوند، fulfilled می‌شود. این معادل fulfilled شدن promise {{domxref("NavigationTransition.finished")}}، زمانی که رویداد {{domxref("Navigation/navigatesuccess_event", "navigatesuccess")}} رخ می‌دهد، است.
 
-Either one of these promises rejects if the navigation has failed for some reason.
+هر یک از این promiseها در صورت شکست ناوبری به دلیلی، reject می‌شوند.
 
 ### Exceptions
 
 - `DataCloneError` {{domxref("DOMException")}}
-  - : Thrown if the `state` parameter had values included in it that are not structured-cloneable.
+  - : اگر پارامتر `state` شامل مقادیری باشد که ساختار-کلون‌پذیر نیستند، پرتاب می‌شود.
 
 ## Examples
 
-### Using info and state
+### استفاده از info و state
 
 ```js
 async function handleReload() {
@@ -70,7 +64,7 @@ async function handleReload() {
 }
 ```
 
-Reload page and add a new state item:
+بارگذاری مجدد صفحه و افزودن یک آیتم state جدید:
 
 ```js
 async function handleReload() {
