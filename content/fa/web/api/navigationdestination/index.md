@@ -1,7 +1,6 @@
+```markdown
 ---
 title: "NavigationDestination"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigationDestination"
-status: "needs-translation"
 ---
 
 ---
@@ -13,29 +12,33 @@ browser-compat: api.NavigationDestination
 
 {{APIRef("Navigation API")}}
 
-The **`NavigationDestination`** interface of the {{domxref("Navigation API", "Navigation API", "", "nocode")}} represents the destination being navigated to in the current navigation.
+رابط **`NavigationDestination`** از {{domxref("Navigation API", "Navigation API", "", "nocode")}} مقصدی را که در پیمایش فعلی به آن پیمایش می‌شود، نمایش می‌دهد.
 
-It is accessed via the {{domxref("NavigateEvent.destination")}} property.
+این رابط از طریق ویژگی {{domxref("NavigateEvent.destination")}} قابل دسترسی است.
 
 {{InheritanceDiagram}}
 
 ## Instance properties
 
 - {{domxref("NavigationDestination.id", "id")}} {{ReadOnlyInline}}
-  - : Returns the {{domxref("NavigationHistoryEntry.id", "id")}} value of the destination {{domxref("NavigationHistoryEntry")}} if the {{domxref("NavigateEvent.navigationType")}} is `traverse`, or an empty string otherwise.
+  - : اگر {{domxref("NavigateEvent.navigationType")}} برابر با `traverse` باشد، مقدار {{domxref("NavigationHistoryEntry.id", "id")}} مقصد {{domxref("NavigationHistoryEntry")}} را بازمی‌گرداند، در غیر این صورت یک رشتهٔ خالی.
+
 - {{domxref("NavigationDestination.index", "index")}} {{ReadOnlyInline}}
-  - : Returns the {{domxref("NavigationHistoryEntry.index", "index")}} value of the destination {{domxref("NavigationHistoryEntry")}} if the {{domxref("NavigateEvent.navigationType")}} is `traverse`, or `-1` otherwise.
+  - : اگر {{domxref("NavigateEvent.navigationType")}} برابر با `traverse` باشد، مقدار {{domxref("NavigationHistoryEntry.index", "index")}} مقصد {{domxref("NavigationHistoryEntry")}} را بازمی‌گرداند، در غیر این صورت `-1`.
+
 - {{domxref("NavigationDestination.key", "key")}} {{ReadOnlyInline}}
-  - : Returns the {{domxref("NavigationHistoryEntry.key", "key")}} value of the destination {{domxref("NavigationHistoryEntry")}} if the {{domxref("NavigateEvent.navigationType")}} is `traverse`, or an empty string otherwise.
+  - : اگر {{domxref("NavigateEvent.navigationType")}} برابر با `traverse` باشد، مقدار {{domxref("NavigationHistoryEntry.key", "key")}} مقصد {{domxref("NavigationHistoryEntry")}} را بازمی‌گرداند، در غیر این صورت یک رشتهٔ خالی.
+
 - {{domxref("NavigationDestination.sameDocument", "sameDocument")}} {{ReadOnlyInline}}
-  - : Returns `true` if the navigation is to the same `document` as the current {{domxref("Document")}} value, or `false` otherwise.
+  - : اگر ناوبری به همان `document` (سند) فعلی {{domxref("Document")}} باشد، `true` و در غیر این صورت `false` بازمی‌گرداند.
+
 - {{domxref("NavigationDestination.url", "url")}} {{ReadOnlyInline}}
-  - : Returns the URL being navigated to.
+  - : نشانی اینترنتی (URL) که به آن ناوبری می‌شود را بازمی‌گرداند.
 
 ## Instance methods
 
 - {{domxref("NavigationDestination.getState", "getState()")}}
-  - : Returns a clone of the available state associated with the destination {{domxref("NavigationHistoryEntry")}}, or navigation operation (e.g., {{domxref("Navigation.navigate()", "navigate()")}}) as appropriate.
+  - : یک کپی از وضعیت موجود مرتبط با مقصد {{domxref("NavigationHistoryEntry")}} یا عملیات ناوبری (مثلاً {{domxref("Navigation.navigate()", "navigate()")}}) را به‌طور مناسب بازمی‌گرداند.
 
 ## Examples
 
@@ -80,3 +83,4 @@ navigation.addEventListener("navigate", (event) => {
 - [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
 - [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
 - [Navigation API live demo](https://mdn.github.io/dom-examples/navigation-api/) ([view demo source](https://github.com/mdn/dom-examples/tree/main/navigation-api))
+```
