@@ -1,7 +1,5 @@
 ---
 title: "HTMLTextAreaElement: autocomplete property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTextAreaElement/autocomplete"
-status: "needs-translation"
 ---
 
 ---
@@ -14,30 +12,30 @@ browser-compat: api.HTMLTextAreaElement.autocomplete
 
 {{ APIRef("HTML DOM") }}
 
-The **`autocomplete`** property of the {{DOMxRef("HTMLTextAreaElement")}} interface indicates whether the value of the control can be automatically completed by the browser. It reflects the `<textarea>` element's [`autocomplete`](/en-US/docs/Web/HTML/Reference/Elements/textarea#autocomplete) attribute.
+ویژگی **`autocomplete`** در رابط {{DOMxRef("HTMLTextAreaElement")}} مشخص می‌کند که آیا مقدار کنترل می‌تواند به‌طور خودکار توسط مرورگر تکمیل شود یا نه. این ویژگی بازتابی از صفت [`autocomplete`](/en-US/docs/Web/HTML/Reference/Elements/textarea#autocomplete) عنصر `<textarea>` است.
 
-## Value
+## مقدار
 
-A string representing the value of the `autocomplete` attribute (`"on"`, `"off"`, or a [`<token-list>`](/en-US/docs/Web/HTML/Reference/Attributes/autocomplete#token_list_tokens)) or the empty string (`""`) if unspecified.
+یک رشته که مقدار صفت `autocomplete` را نشان می‌دهد (`"on"`، `"off"`، یا یک [`<token-list>`](/en-US/docs/Web/HTML/Reference/Attributes/autocomplete#token_list_tokens))، یا اگر مقداردهی نشده باشد، رشتهٔ خالی (`""`).
 
-## Examples
+## مثال‌ها
 
 ```js
 const textareaElement = document.getElementById("comment");
 console.log(textArea.autocomplete);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{HTMLElement("textarea")}}
-- HTML [`autocomplete`](/en-US/docs/Web/HTML/Reference/Attributes/autocomplete) attribute
-- ARIA [`aria-autocomplete`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-autocomplete) attribute
-- [Turning off autocompletion](/en-US/docs/Web/Security/Practical_implementation_guides/Turning_off_form_autocompletion)
+- صفت HTML [`autocomplete`](/en-US/docs/Web/HTML/Reference/Attributes/autocomplete)
+- صفت ARIA [`aria-autocomplete`](/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-autocomplete)
+- [غیرفعال کردن تکمیل خودکار](/en-US/docs/Web/Security/Practical_implementation_guides/Turning_off_form_autocompletion)
