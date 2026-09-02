@@ -1,7 +1,5 @@
 ---
 title: "IDBDatabase: createObjectStore() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase/createObjectStore"
-status: "needs-translation"
 ---
 
 ---
@@ -14,67 +12,50 @@ browser-compat: api.IDBDatabase.createObjectStore
 
 {{ APIRef("IndexedDB") }} {{AvailableInWorkers}}
 
-The **`createObjectStore()`** method of the
-{{domxref("IDBDatabase")}} interface creates and returns a new {{domxref("IDBObjectStore")}}.
+متد **`createObjectStore()`** از رابط {{domxref("IDBDatabase")}} یک {{domxref("IDBObjectStore")}} جدید ایجاد کرده و آن را بازمی‌گرداند.
 
-The method takes the name of the store as well as a parameter object that lets you
-define important optional properties. You can use the property to uniquely identify
-individual objects in the store. As the property is an identifier, it should be unique
-to every object, and every object should have that property.
+این متد نام فروشگاه و همچنین یک شیء پارامتر دریافت می‌کند که به شما امکان می‌دهد ویژگی‌های اختیاری مهمی را تعریف کنید. می‌توانید از آن ویژگی برای شناسایی یکتای اشیاء منفرد در فروشگاه استفاده کنید. از آنجا که این ویژگی یک شناسه است، باید برای هر شیء یکتا باشد و هر شیء باید آن ویژگی را داشته باشد.
 
-This method can be called _only_ within a [`versionchange`](/en-US/docs/Web/API/IDBDatabase/versionchange_event)
-transaction.
+این متد _فقط_ در یک تراکنش [`versionchange`](/en-US/docs/Web/API/IDBDatabase/versionchange_event) قابل فراخوانی است.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 createObjectStore(name)
 createObjectStore(name, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `name`
-  - : The name of the new object store to be created. Note that it is possible to create
-    an object store with an empty name.
+  - : نام object store جدیدی که قرار است ایجاد شود. توجه داشته باشید که ایجاد object store با نام خالی نیز امکان‌پذیر است.
 - `options` {{optional_inline}}
-  - : An options object whose attributes are optional parameters to the method. It
-    includes the following properties:
+  - : یک شیء گزینه‌ها که ویژگی‌های آن پارامترهای اختیاری متد هستند. شامل ویژگی‌های زیر است:
     - `keyPath` {{optional_inline}}
-      - : The [key path](/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology#key_path)
-        to be used by the new object store. If empty or not specified, the
-        object store is created without a key path and uses
-        [out-of-line keys](/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology#out-of-line_key).
-        You can also pass in an array as a `keyPath`.
+      - : [مسیر کلید](/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology#key_path) مورد استفاده برای object store جدید. اگر خالی یا مشخص نشده باشد، object store بدون مسیر کلید ایجاد می‌شود و از [کلیدهای خارج از خط](/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology#out-of-line_key) استفاده می‌کند. همچنین می‌توانید یک آرایه را به عنوان `keyPath` ارسال کنید.
     - `autoIncrement` {{optional_inline}}
-      - : If `true`, the object store has a [key generator](/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology#key_generator).
-        Defaults to <code>false</code>.
+      - : اگر `true` باشد، object store دارای یک [مولد کلید](/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology#key_generator) خواهد بود. پیش‌فرض آن `false` است.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("IDBObjectStore")}}.
+یک {{domxref("IDBObjectStore")}} جدید.
 
-### Exceptions
+### استثناها
 
-This method may raise a {{domxref("DOMException")}} with a `name` of
-one of the following types:
+این متد ممکن است یک {{domxref("DOMException")}} با `name` از یکی از انواع زیر ایجاد کند:
 
 - `ConstraintError` {{domxref("DOMException")}}
-  - : Thrown if an object store with the given name (based on a case-sensitive comparison)
-    already exists in the connected database.
+  - : اگر object store ای با نام داده‌شده (بر اساس مقایسه حساس به بزرگی/کوچکی حروف) از قبل در پایگاه‌داده متصل وجود داشته باشد، پرتاب می‌شود.
 - `InvalidAccessError` {{domxref("DOMException")}}
-  - : Thrown if `autoIncrement` is set to true and `keyPath` is
-    either an empty string or an array.
+  - : اگر `autoIncrement` برابر `true` باشد و `keyPath` یک رشته خالی یا یک آرایه باشد، پرتاب می‌شود.
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the method was not called from a
-    `versionchange` transaction callback.
+  - : اگر متد از یک callback تراکنش `versionchange` فراخوانی نشده باشد، پرتاب می‌شود.
 - `SyntaxError`
-  - : Thrown if the `keyPath` option contains an invalid key path.
+  - : اگر گزینه `keyPath` حاوی یک مسیر کلید نامعتبر باشد، پرتاب می‌شود.
 - `TransactionInactiveError` {{domxref("DOMException")}}
-  - : Thrown if a request is made on a source database that does not exist
-    (for example, when the database has been deleted or removed), or if the associated upgrade transaction has completed or is processing a request.
+  - : اگر درخواستی روی یک پایگاه‌داده مبدأ که وجود ندارد (مثلاً وقتی پایگاه‌داده حذف شده باشد) انجام شود، یا اگر تراکنش ارتقای مرتبط تکمیل شده باشد یا در حال پردازش یک درخواست باشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
 ```js
 // Let us open our database
@@ -114,20 +95,20 @@ request.onupgradeneeded = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم محدوده‌ای از کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و ایجاد تغییرات در داده‌های خود: {{domxref("IDBObjectStore")}}
+- استفاده از نشانگرها: {{domxref("IDBCursor")}}
+- مثال مرجع: [اعلان‌های کارهای روزانه](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهده مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
