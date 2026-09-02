@@ -1,11 +1,5 @@
 ---
 title: "IDBRequest: error event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBRequest/error_event"
-status: "needs-translation"
----
-
----
-title: "IDBRequest: error event"
 short-title: error
 slug: Web/API/IDBRequest/error_event
 page-type: web-api-event
@@ -14,11 +8,11 @@ browser-compat: api.IDBRequest.error_event
 
 {{APIRef("IndexedDB")}}
 
-The `error` handler is executed when an error caused a request to fail. In the `error` event handler, you can access the error of the request, as well as place more requests to the same transaction.
+هندلر `error` هنگامی اجرا می‌شود که یک خطا باعث شکست یک درخواست شود. در هندلر رویداد `error`، می‌توانید به خطای درخواست دسترسی داشته باشید و همچنین درخواست‌های بیشتری به همان تراکنش اضافه کنید.
 
 ## Syntax
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در متدهایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی هندلر رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("error", (event) => { })
@@ -26,13 +20,13 @@ addEventListener("error", (event) => { })
 onerror = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## مثال‌ها
 
-This example opens a database and tries to add a record, listening for the `error` event for the `add()` operation (this will occur if, for example, a record with the given `taskTitle` already exists):
+این مثال یک پایگاه داده را باز می‌کند و سعی به افزودن یک رکورد می‌کند، و به رویداد `error` برای عملیات `add()` گوش می‌دهد (این رویداد رخ می‌دهد اگر مثلاً یک رکورد با `taskTitle` داده شده از قبل وجود داشته باشد):
 
 ```js
 // Open the database
@@ -80,7 +74,7 @@ DBOpenRequest.addEventListener("success", (event) => {
 });
 ```
 
-The same example, using the `onerror` property instead of `addEventListener()`:
+همان مثال، با استفاده از ویژگی `onerror` به جای `addEventListener()`:
 
 ```js
 // Open the database
@@ -128,14 +122,14 @@ DBOpenRequest.onsuccess = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
