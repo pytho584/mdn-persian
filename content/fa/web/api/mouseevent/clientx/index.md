@@ -1,7 +1,6 @@
+```
 ---
 title: "MouseEvent: clientX property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/clientX"
-status: "needs-translation"
 ---
 
 ---
@@ -14,17 +13,17 @@ browser-compat: api.MouseEvent.clientX
 
 {{APIRef("Pointer Events")}}
 
-The **`clientX`** read-only property of the {{domxref("MouseEvent")}} interface provides the horizontal coordinate within the application's {{glossary("viewport")}} at which the event occurred (as opposed to the coordinate within the page).
+خاصیت فقط‌خواندنی **`clientX`** از رابط {{domxref("MouseEvent")}} مختصات افقی رویداد را درون {{glossary("viewport")}} برنامه (و نه مختصات درون صفحه) فراهم می‌کند.
 
-For example, clicking on the left edge of the viewport will always result in a mouse event with a `clientX` value of `0`, regardless of whether the page is scrolled horizontally.
+برای مثال، کلیک کردن روی لبه‌ی چپ viewport همیشه منجر به یک رویداد ماوس با مقدار `clientX` برابر `0` می‌شود، صرف‌نظر از اینکه صفحه به صورت افقی اسکرول شده باشد یا نه.
 
-## Value
+## مقدار
 
-A `double` floating point value in pixels.
+یک عدد اعشاری از نوع `double` بر حسب پیکسل.
 
-## Examples
+## مثال‌ها
 
-This example displays your mouse's coordinates whenever you trigger the {{domxref("Element/mousemove_event", "mousemove")}} event.
+این مثال مختصات ماوس شما را هر بار که رویداد {{domxref("Element/mousemove_event", "mousemove")}} را فعال می‌کنید، نمایش می‌دهد.
 
 ### HTML
 
@@ -46,21 +45,22 @@ function logKey(e) {
 }
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{ domxref("MouseEvent") }}
 - {{domxref("MouseEvent.clientY","clientY")}}
 - {{domxref("MouseEvent.screenX","screenX")}} / {{domxref("MouseEvent.screenY","screenY")}}
-- [Coordinate systems](/en-US/docs/Web/API/CSSOM_view_API/Coordinate_systems)
+- [سیستم‌های مختصات](/en-US/docs/Web/API/CSSOM_view_API/Coordinate_systems)
+```
