@@ -1,7 +1,5 @@
 ---
 title: "JS Self-Profiling API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/JS_Self-Profiling_API"
-status: "needs-translation"
 ---
 
 ---
@@ -16,15 +14,15 @@ spec-urls: https://wicg.github.io/js-self-profiling/
 
 {{DefaultAPISidebar("JS Self-Profiling API")}}{{SeeCompatTable}}
 
-The JS Self-Profiling API enables a website to run a sampling profiler, to understand where it is spending JavaScript execution time.
+API JS Self-Profiling به وب‌سایت‌ها امکان می‌دهد تا یک پروفایل‌ساز نمونه‌بردار (sampling profiler) اجرا کنند و بفهمند زمان اجرای JavaScript در کجا صرف می‌شود.
 
-## Concepts and usage
+## مفاهیم و کاربرد
 
-To start a profile, a website creates a {{domxref("Profiler")}} instance. As soon as the instance is created, it starts sampling the JavaScript execution context.
+برای شروع یک پروفایل، وب‌سایت یک نمونه از {{domxref("Profiler")}} می‌سازد. به محض ایجاد نمونه، نمونه‌برداری از زمینه اجرای JavaScript آغاز می‌شود.
 
-To stop collecting samples and retrieve the profile, the website calls {{domxref("Profiler.stop()")}}. This returns a {{jsxref("Promise")}} which resolves to an object containing the profile data.
+برای توقف جمع‌آوری نمونه‌ها و دریافت پروفایل، وب‌سایت متد {{domxref("Profiler.stop()")}} را فراخوانی می‌کند. این متد یک {{jsxref("Promise")}} برمی‌گرداند که به یک شی حاوی داده‌های پروفایل تبدیل می‌شود.
 
-For example, the following function creates a profiler, then calls a function `genPrimes()`, then stops the profiler and retrieves the profile data:
+برای مثال، تابع زیر یک پروفایل‌ساز می‌سازد، سپس تابع `genPrimes()` را فراخوانی می‌کند، سپس پروفایل‌ساز را متوقف کرده و داده‌های پروفایل را دریافت می‌کند:
 
 ```js
 async function profileGeneratePrimes() {
@@ -37,34 +35,34 @@ async function profileGeneratePrimes() {
 }
 ```
 
-The profiler is a _sampling profiler_: this means that it periodically records (or _samples_) the current state of the JavaScript {{glossary("call stack")}}. The profile consists of the collection of these samples. This enables you to understand where, statistically, the program is spending most of its time.
+پروفایل‌ساز یک _پروفایل‌ساز نمونه‌بردار (sampling profiler)_ است: یعنی به‌طور دوره‌ای وضعیت فعلی {{glossary("call stack", "پشته‌ی فراخوانی")}} JavaScript را ثبت (یا _نمونه‌برداری_) می‌کند. پروفایل شامل مجموعه‌ای از این نمونه‌هاست. این به شما امکان می‌دهد بفهمید برنامه به‌طور آماری بیشترین زمان خود را کجا صرف می‌کند.
 
-To understand exactly what a profile contains and how it is formatted, see [Profile anatomy and format](/en-US/docs/Web/API/JS_Self-Profiling_API/Profile_content_and_format).
+برای درک دقیق محتوای یک پروفایل و قالب‌بندی آن، به [ساختار و قالب پروفایل](/en-US/docs/Web/API/JS_Self-Profiling_API/Profile_content_and_format) مراجعه کنید.
 
-### Profiling best practices
+### بهترین روش‌های پروفایل‌گیری
 
-Collecting and processing profile data incurs a performance overhead of its own, and developers should be careful to manage this. Practices to minimize performance overhead include:
+جمع‌آوری و پردازش داده‌های پروفایل خود هزینه‌ای بر عملکرد سیستم تحمیل می‌کند و توسعه‌دهندگان باید مراقب مدیریت آن باشند. روش‌های کاهش این هزینه عبارتند از:
 
-- Use the [`maxBufferSize`](/en-US/docs/Web/API/Profiler/Profiler#maxbuffersize) and [`sampleInterval`](/en-US/docs/Web/API/Profiler/Profiler#sampleinterval) options to control how many samples to take and how often to sample.
-- Sample for short periods in a sampled manner: for example, trace for 5 seconds out of every 60 seconds.
-- Process the samples in a web worker to avoid impacting performance on the main thread.
-- Aggregate samples on the client before sending them to a telemetry endpoint.
+- استفاده از گزینه‌های [`maxBufferSize`](/en-US/docs/Web/API/Profiler/Profiler#maxbuffersize) و [`sampleInterval`](/en-US/docs/Web/API/Profiler/Profiler#sampleinterval) برای کنترل تعداد نمونه‌ها و فاصله‌ی نمونه‌برداری.
+- نمونه‌برداری برای مدت‌های کوتاه به‌صورت نمونه‌ای: مثلاً به‌مدت ۵ ثانیه از هر ۶۰ ثانیه ردیابی کنید.
+- پردازش نمونه‌ها در یک web worker برای جلوگیری از تأثیر بر عملکرد نخ اصلی.
+- تجمیع نمونه‌ها در سمت کاربر قبل از ارسال به یک نقطه‌ی پایانی (endpoint) تله‌متری.
 
-If the JavaScript in your site is {{glossary("Minification", "minified")}}, you will need to transform the profile data based on a {{glossary("Source map", "source map")}}, either on the client or on the server, before the data will be usable.
+اگر JavaScript وب‌سایت شما {{glossary("Minification", "فشرده (minified)")}} شده باشد، باید داده‌های پروفایل را بر اساس {{glossary("Source map", "نقشه‌ی منبع (source map)")}} تبدیل کنید، چه در سمت کاربر و چه در سمت سرور، تا داده‌ها قابل استفاده شوند.
 
-## Interfaces
+## رابط‌ها
 
 - {{domxref("Profiler")}} {{Experimental_Inline}}
-  - : The `Profiler` interface is used to create profiles.
+  - رابط `Profiler` برای ایجاد پروفایل‌ها استفاده می‌شود.
 
-## Security requirements
+## الزامات امنیتی
 
-To use this API, the document must be served with a [document policy](https://wicg.github.io/document-policy/) that includes the `"js-profiling"` configuration point.
+برای استفاده از این API، سند باید با یک [خط‌مشی سند (document policy)](https://wicg.github.io/document-policy/) که شامل نقطه‌ی پیکربندی `"js-profiling"` است، ارائه شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
