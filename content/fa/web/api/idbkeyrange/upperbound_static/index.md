@@ -1,11 +1,5 @@
 ---
 title: "IDBKeyRange: upperBound() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBKeyRange/upperBound_static"
-status: "needs-translation"
----
-
----
-title: "IDBKeyRange: upperBound() static method"
 short-title: upperBound()
 slug: Web/API/IDBKeyRange/upperBound_static
 page-type: web-api-static-method
@@ -14,49 +8,39 @@ browser-compat: api.IDBKeyRange.upperBound_static
 
 {{ APIRef("IndexedDB") }} {{AvailableInWorkers}}
 
-The **`upperBound()`** static method of the
-{{domxref("IDBKeyRange")}} interface creates a new upper-bound key range. By default,
-it includes the upper endpoint value and is closed.
+روش ایستای **`upperBound()`** از رابط {{domxref("IDBKeyRange")}} یک محدوده کلید بالای کران جدید ایجاد می‌کند. به طور پیش‌فرض، این محدوده شامل مقدار نقطه پایانی بالایی است و بسته (closed) است.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 IDBKeyRange.upperBound(upper)
 IDBKeyRange.upperBound(upper, open)
 ```
 
-### Parameters
+### پارامترها
 
 - `upper`
-  - : Specifies the upper bound of the new key range.
+  - : کران بالایی محدوده کلید جدید را مشخص می‌کند.
 - `open` {{optional_inline}}
-  - : Indicates whether the upper bound excludes the endpoint value. The default is false.
+  - : نشان می‌دهد که آیا کران بالایی مقدار نقطه پایانی را حذف می‌کند یا خیر. مقدار پیش‌فرض `false` است.
 
-### Return value
+### مقدار بازگشتی
 
-{{domxref("IDBKeyRange")}}: The newly created key range.
+{{domxref("IDBKeyRange")}}: محدوده کلید تازه ایجاد شده.
 
-### Exceptions
+### استثناها
 
 - `DataError` {{domxref("DOMException")}}
-  - : Thrown if the key associated with the `upper` parameter is not a valid key.
+  - : اگر کلید مرتبط با پارامتر `upper` یک کلید معتبر نباشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-The following example illustrates how you'd use an upper bound key range. Here we
-declare `keyRangeValue = IDBKeyRange.upperBound("F");` — a range that
-includes the value "F" and everything before it. We open a transaction (using
-{{domxref("IDBTransaction")}}) and an object store, and open a Cursor with
-{{domxref("IDBObjectStore.openCursor")}}, declaring `keyRangeValue` as its
-optional key range value.
+مثال زیر نحوه استفاده از یک محدوده کلید بالای کران را نشان می‌دهد. در اینجا ما `keyRangeValue = IDBKeyRange.upperBound("F");` را اعلام می‌کنیم — محدوده‌ای که شامل مقدار "F" و همه چیز قبل از آن است. یک تراکنش (با استفاده از {{domxref("IDBTransaction")}}) و یک object store باز می‌کنیم، و یک Cursor با {{domxref("IDBObjectStore.openCursor")}} باز می‌کنیم که `keyRangeValue` را به عنوان مقدار محدوده کلید اختیاری آن اعلام می‌کند.
 
-If we used `IDBKeyRange.upperBound("F", true);`, then the range excludes
-"F"; and instead only includes the values before it.
+اگر از `IDBKeyRange.upperBound("F", true);` استفاده کنیم، آنگاه محدوده "F" را حذف می‌کند و در عوض فقط مقادیر قبل از آن را شامل می‌شود.
 
 > [!NOTE]
-> For a more complete example allowing you to experiment with
-> key range, have a look at our [IDBKeyRange-example](https://github.com/mdn/dom-examples/tree/main/indexeddb-examples/idbkeyrange) repo
-> ([view the example live too](https://mdn.github.io/dom-examples/indexeddb-examples/idbkeyrange/).)
+> برای یک مثال کامل‌تر که به شما امکان آزمایش با محدوده کلید را می‌دهد، به مخزن [IDBKeyRange-example](https://github.com/mdn/dom-examples/tree/main/indexeddb-examples/idbkeyrange) ما نگاهی بیندازید ([همچنین مثال را به صورت زنده مشاهده کنید](https://mdn.github.io/dom-examples/indexeddb-examples/idbkeyrange/).)
 
 ```js
 function displayData() {
@@ -80,20 +64,20 @@ function displayData() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم یک محدوده از کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و ایجاد تغییرات در داده‌های خود: {{domxref("IDBObjectStore")}}
+- استفاده از نشانگرها (cursors): {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مثال را به صورت زنده مشاهده کنید](https://mdn.github.io/dom-examples/to-do-notifications/)).
