@@ -1,11 +1,5 @@
 ---
 title: "HTMLTextAreaElement: selectionEnd property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTextAreaElement/selectionEnd"
-status: "needs-translation"
----
-
----
-title: "HTMLTextAreaElement: selectionEnd property"
 short-title: selectionEnd
 slug: Web/API/HTMLTextAreaElement/selectionEnd
 page-type: web-api-instance-property
@@ -14,46 +8,46 @@ browser-compat: api.HTMLTextAreaElement.selectionEnd
 
 {{APIRef("HTML DOM")}}
 
-The **`selectionEnd`** property of the {{domxref("HTMLTextAreaElement")}} interface specifies the end position of the current text selection in a {{HTMLElement("textarea")}} element. It is a number representing the last index of the selected text. It can be used to both retrieve and set the index of the end of a `<textarea>`s selected text.
+ویژگی **`selectionEnd`** در رابط {{domxref("HTMLTextAreaElement")}} موقعیت پایانِ انتخاب متنیِ فعلی را در یک عنصر {{HTMLElement("textarea")}} مشخص می‌کند. این یک عدد است که آخرین ایندکس متن انتخاب‌شده را نشان می‌دهد. می‌توان از آن هم برای دریافت و هم برای تنظیم ایندکس پایانِ متن انتخاب‌شده‌ی یک `<textarea>` استفاده کرد.
 
-When nothing is selected, the value of both the {{domxref("HTMLTextAreaElement.selectionStart", "selectionStart")}} and `selectionEnd` is the position of the cursor (caret) inside the `<textarea>` element.
+وقتی چیزی انتخاب نشده باشد، مقدار هر دو ویژگی {{domxref("HTMLTextAreaElement.selectionStart", "selectionStart")}} و `selectionEnd` برابر با موقعیت مکان‌نما (caret) در داخل عنصر `<textarea>` است.
 
-Setting `selectionEnd` to a value less than the current value of {{domxref("HTMLTextAreaElement.selectionStart", "selectionStart")}} updates both the `selectionEnd` and `selectionStart` properties to that value. If both value are less than 0, both properties are set to the {{domxref("HTMLTextAreaElement.textLength", "textLength")}} property value.
+تنظیم `selectionEnd` به مقداری کمتر از مقدار فعلی {{domxref("HTMLTextAreaElement.selectionStart", "selectionStart")}}، هر دو ویژگی `selectionEnd` و `selectionStart` را به آن مقدار به‌روزرسانی می‌کند. اگر هر دو مقدار کمتر از 0 باشند، هر دو ویژگی به مقدار ویژگی {{domxref("HTMLTextAreaElement.textLength", "textLength")}} تنظیم می‌شوند.
 
-The property value can be retrieved and set without the `<textarea>` having focus, but the element does need to have focus for the {{cssxref("::selection")}} pseudo-element to match the selected text.
+مقدار این ویژگی را می‌توان بدون آنکه `<textarea>` فوکوس داشته باشد دریافت و تنظیم کرد، اما عنصر برای اینکه شبه‌عنصر {{cssxref("::selection")}} با متن انتخاب‌شده مطابقت کند، باید فوکوس داشته باشد.
 
-Setting the `selectionEnd` to a new value fires the {{domxref("HTMLTextAreaElement.selectionchange_event", "selectionchange")}} and {{domxref("HTMLTextAreaElement.select_event", "select")}} events.
+تنظیم `selectionEnd` به یک مقدار جدید، رویدادهای {{domxref("HTMLTextAreaElement.selectionchange_event", "selectionchange")}} و {{domxref("HTMLTextAreaElement.select_event", "select")}} را فعال می‌کند.
 
-## Value
+## مقدار
 
-A non-negative number.
+یک عدد غیرمنفی.
 
-## Examples
+## مثال‌ها
 
 ```js
 const textarea = document.getElementById("text-box");
 const end = textarea.selectionEnd;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTMLElement("textarea")}}
 - {{domxref("HTMLTextAreaElement")}}
 - {{domxref("HTMLTextAreaElement.selectionStart")}}
 - {{domxref("HTMLTextAreaElement.selectionDirection")}}
 - {{domxref("HTMLTextAreaElement.textLength")}}
-- {{domxref("HTMLTextAreaElement.selectionChange_event", "selectionChange")}} event
+- رویداد {{domxref("HTMLTextAreaElement.selectionChange_event", "selectionChange")}}
 - {{domxref("HTMLTextAreaElement.select()")}}
 - {{domxref("HTMLTextAreaElement.setSelectionRange()")}}
 - {{domxref("HTMLTextAreaElement.setRangeText()")}}
 - {{domxref("HTMLInputElement.selectionEnd")}}
 - {{domxref("Selection")}}
-- {{cssxref("::selection")}} pseudo-element
+- شبه‌عنصر {{cssxref("::selection")}}
