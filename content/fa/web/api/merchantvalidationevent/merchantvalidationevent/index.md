@@ -1,11 +1,5 @@
 ---
 title: "MerchantValidationEvent: MerchantValidationEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MerchantValidationEvent/MerchantValidationEvent"
-status: "needs-translation"
----
-
----
-title: "MerchantValidationEvent: MerchantValidationEvent() constructor"
 short-title: MerchantValidationEvent()
 slug: Web/API/MerchantValidationEvent/MerchantValidationEvent
 page-type: web-api-constructor
@@ -17,7 +11,7 @@ browser-compat: api.MerchantValidationEvent.MerchantValidationEvent
 
 {{APIRef("Payment Request API")}}{{deprecated_header}}{{securecontext_header}}{{non-standard_header}}
 
-The **`MerchantValidationEvent()`** constructor creates a new {{domxref("MerchantValidationEvent")}} object. You should not have to create these events yourself; instead, just handle the {{domxref("PaymentRequest.merchantvalidation_event", "merchantvalidation")}} event.
+سازندهٔ **`MerchantValidationEvent()`** یک شیء جدید {{domxref("MerchantValidationEvent")}} می‌سازد. معمولاً نیازی به ساخت این رویدادها به‌صورت دستی ندارید؛ در عوض، فقط رویداد {{domxref("PaymentRequest.merchantvalidation_event", "merchantvalidation")}} را مدیریت کنید.
 
 ## Syntax
 
@@ -29,30 +23,28 @@ new MerchantValidationEvent(type, options)
 ### Parameters
 
 - `type`
-  - : A string with the name of the event.
-    It is case-sensitive and browsers always set it to `merchantvalidation`.
+  - : رشته‌ای شامل نام رویداد. این مقدار به بزرگی و کوچکی حروف حساس است و مرورگرها همیشه آن را روی `merchantvalidation` قرار می‌دهند.
 - `options` {{optional_inline}}
-  - : An object that, _in addition of the properties defined in {{domxref("Event/Event", "Event()")}}_, can have the following properties:
+  - : شیءای که _علاوه بر ویژگی‌های تعریف‌شده در {{domxref("Event/Event", "Event()")}}_، می‌تواند ویژگی‌های زیر را داشته باشد:
     - `methodName` {{optional_inline}}
-      - : A string containing the payment method identifier for the payment handler being used. This is an empty string by default.
+      - : رشته‌ای شامل شناسهٔ روش پرداخت برای پردازندهٔ پرداختی که در حال استفاده است. به‌طور پیش‌فرض رشته‌ای خالی است.
     - `validationURL` {{optional_inline}}
-      - : The URL from which to retrieve payment handler specific verification information used to validate the merchant. This is an empty string by default.
+      - : نشانی اینترنتی (URL) که اطلاعات تأیید ویژهٔ پردازندهٔ پرداخت برای اعتبارسنجی فروشنده از آن دریافت می‌شود. به‌طور پیش‌فرض رشته‌ای خالی است.
 
 ### Return value
 
-A new {{domxref("MerchantValidationEvent")}} object providing the information
-that needs to be delivered to the client-side code to present to the {{Glossary("user agent")}} by calling {{domxref("MerchantValidationEvent.complete", "complete()")}}.
+یک شیء جدید {{domxref("MerchantValidationEvent")}} که اطلاعات لازم را برای تحویل به کد سمت کلاینت فراهم می‌کند تا با فراخوانی {{domxref("MerchantValidationEvent.complete", "complete()")}} به {{Glossary("user agent")}} ارائه شود.
 
 ### Exceptions
 
 - {{jsxref("TypeError")}}
-  - : Thrown if the string specified as `validationURL` could not be parsed as a URL.
+  - : اگر رشتهٔ مشخص‌شده به‌عنوان `validationURL` نتواند به‌عنوان یک URL تجزیه شود، پرتاب می‌شود.
 - {{jsxref("RangeError")}}
-  - : Thrown if the specified `methodName` does not correspond to a known and supported merchant or is not a well-formed standard payment method identifier.
+  - : اگر `methodName` مشخص‌شده با هیچ فروشندهٔ شناخته‌شده و پشتیبانی‌شده‌ای مطابقت نداشته باشد یا یک شناسهٔ استاندارد و خوش‌فرم روش پرداخت نباشد، پرتاب می‌شود.
 
 ## Specifications
 
-_This feature is deprecated and is not part of any specification._
+_این ویژگی منسوخ شده است و بخشی از هیچ مشخصاتی نیست._
 
 ## Browser compatibility
 
@@ -61,5 +53,5 @@ _This feature is deprecated and is not part of any specification._
 ## See also
 
 - [Payment Request API](/en-US/docs/Web/API/Payment_Request_API)
-- [Using the Payment Request API](/en-US/docs/Web/API/Payment_Request_API/Using_the_Payment_Request_API)
-- [Payment processing concepts](/en-US/docs/Web/API/Payment_Request_API/Concepts)
+- [استفاده از Payment Request API](/en-US/docs/Web/API/Payment_Request_API/Using_the_Payment_Request_API)
+- [مفاهیم پردازش پرداخت](/en-US/docs/Web/API/Payment_Request_API/Concepts)
