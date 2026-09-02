@@ -1,10 +1,4 @@
 ---
-title: "LockManager"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/LockManager"
-status: "needs-translation"
----
-
----
 title: LockManager
 slug: Web/API/LockManager
 page-type: web-api-interface
@@ -13,19 +7,19 @@ browser-compat: api.LockManager
 
 {{APIRef("Web Locks API")}}{{securecontext_header}} {{AvailableInWorkers}}
 
-The **`LockManager`** interface of the [Web Locks API](/en-US/docs/Web/API/Web_Locks_API) provides methods for requesting a new {{domxref('Lock')}} object and querying for an existing `Lock` object. To get an instance of `LockManager`, call {{domxref('navigator.locks')}}.
+رابط‌های **`LockManager`** در [Web Locks API](/en-US/docs/Web/API/Web_Locks_API) روش‌هایی برای درخواست یک شیء {{domxref('Lock')}} جدید و پرس‌وجو درباره یک شیء `Lock` موجود فراهم می‌کند. برای دریافت یک نمونه از `LockManager`، با {{domxref('navigator.locks')}} تماس بگیرید.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref('LockManager.request()')}}
-  - : Requests a {{domxref('Lock')}} object with parameters specifying its name and characteristics.
+  - : یک شیء {{domxref('Lock')}} را با پارامترهایی که نام و ویژگی‌های آن را مشخص می‌کند درخواست می‌کند.
 - {{domxref('LockManager.query()')}}
-  - : Returns a {{jsxref('Promise')}} that resolves with an object that contains information about held and pending locks.
+  - : یک {{jsxref('Promise')}} برمی‌گرداند که با یک شیء حاوی اطلاعاتی درباره قفل‌های نگه‌داشته‌شده و در انتظار resolve می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
