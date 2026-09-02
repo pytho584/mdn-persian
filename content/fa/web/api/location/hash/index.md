@@ -1,11 +1,5 @@
 ---
 title: "Location: hash property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Location/hash"
-status: "needs-translation"
----
-
----
-title: "Location: hash property"
 short-title: hash
 slug: Web/API/Location/hash
 page-type: web-api-instance-property
@@ -14,27 +8,27 @@ browser-compat: api.Location.hash
 
 {{ APIRef("Location") }}
 
-The **`hash`** property of the {{domxref("Location")}} interface is a string containing a `"#"` followed by the fragment identifier of the location URL. If the URL does not have a fragment identifier, this property contains an empty string, `""`.
+ویژگی **`hash`** از واسط {{domxref("Location")}} یک رشته حاوی `"#"` به همراه شناسه قطعه (fragment identifier) از URL مکان است. اگر URL شناسه قطعه نداشته باشد، این ویژگی شامل یک رشته خالی (`""`) خواهد بود.
 
-See {{domxref("URL.hash")}} for more information.
+برای اطلاعات بیشتر به {{domxref("URL.hash")}} مراجعه کنید.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
-Assuming the user has navigated to `https://example.org#examples`, the following code will log `#examples`:
+فرض کنید کاربر به آدرس `https://example.org#examples` رفته است، کد زیر مقدار `#examples` را در خروجی ثبت می‌کند:
 
 ```js
 const result = location.hash;
 console.log(result);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
