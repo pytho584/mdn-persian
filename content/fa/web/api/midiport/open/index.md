@@ -1,11 +1,5 @@
 ---
 title: "MIDIPort: open() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MIDIPort/open"
-status: "needs-translation"
----
-
----
-title: "MIDIPort: open() method"
 short-title: open()
 slug: Web/API/MIDIPort/open
 page-type: web-api-instance-method
@@ -14,44 +8,44 @@ browser-compat: api.MIDIPort.open
 
 {{securecontext_header}}{{APIRef("Web MIDI API")}}
 
-The **`open()`** method of the {{domxref("MIDIPort")}} interface makes the MIDI device connected to this `MIDIPort` explicitly available.
+متد **`open()`** از رابط {{domxref("MIDIPort")}}، دسترسی صریح به دستگاه MIDI متصل به این `MIDIPort` را فراهم می‌کند.
 
-If the port is successfully opened a new {{domxref("MIDIConnectionEvent")}} is queued to the `MIDIPort` {{domxref("MIDIPort.statechange_event", "statechange")}} and `MIDIAccess` {{domxref("MIDIAccess.statechange_event", "statechange")}} events, and the {{domxref("MIDIPort.connection")}} property is changed to `"open"`.
+اگر پورت با موفقیت باز شود، یک {{domxref("MIDIConnectionEvent")}} جدید در صف رویدادهای `MIDIPort` از نوع {{domxref("MIDIPort.statechange_event", "statechange")}} و `MIDIAccess` از نوع {{domxref("MIDIAccess.statechange_event", "statechange")}} قرار می‌گیرد و ویژگی {{domxref("MIDIPort.connection")}} به `"open"` تغییر می‌کند.
 
-If the port is already open when this method is called, then the promise will resolve successfully.
+اگر هنگام فراخوانی این متد، پورت از قبل باز باشد، Promise بازگردانده‌شده با موفقیت resolve خواهد شد.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 open()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} which resolves once access to the port has been successfully obtained.
+یک {{jsxref("Promise")}} که پس از دریافت موفقیت‌آمیز دسترسی به پورت resolve می‌شود.
 
-### Exceptions
+### استثناها
 
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : The promise is rejected with this error if the port is unavailable and cannot be opened.
+  - : اگر پورت در دسترس نباشد و نتوان آن را باز کرد، Promise بازگردانده‌شده با این خطا رد می‌شود.
 
-## Examples
+## مثال‌ها
 
-The following example shows an output port being opened.
+مثال زیر باز شدن یک پورت خروجی را نشان می‌دهد.
 
 ```js
 const output = midiAccess.outputs.get(portID);
 output.open(); // opens the port
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
