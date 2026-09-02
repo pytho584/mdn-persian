@@ -1,7 +1,5 @@
 ---
 title: "LayoutShift: toJSON() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/LayoutShift/toJSON"
-status: "needs-translation"
 ---
 
 ---
@@ -16,27 +14,27 @@ browser-compat: api.LayoutShift.toJSON
 
 {{APIRef("Performance API")}}{{SeeCompatTable}}
 
-The **`toJSON()`** method of the {{domxref("LayoutShift")}} interface is a {{Glossary("Serialization","serializer")}}; it returns a JSON representation of the {{domxref("LayoutShift")}} object.
+متد **`toJSON()`** از رابط {{domxref("LayoutShift")}} یک {{Glossary("Serialization","serializer")}} است؛ این متد یک نمایش JSON از شیء {{domxref("LayoutShift")}} بازمی‌گرداند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 toJSON()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("JSON")}} object that is the serialization of the {{domxref("LayoutShift")}} object.
+یک شیء {{jsxref("JSON")}} که سریال‌سازی شیء {{domxref("LayoutShift")}} است.
 
-## Examples
+## نمونه‌ها
 
-### Using the toJSON method
+### استفاده از متد toJSON
 
-In this example, calling `entry.toJSON()` returns a JSON representation of the `LayoutShift` object.
+در این مثال، فراخوانی `entry.toJSON()` یک نمایش JSON از شیء `LayoutShift` بازمی‌گرداند.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -48,7 +46,7 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "layout-shift", buffered: true });
 ```
 
-This would log a JSON object like so:
+این کار یک شیء JSON به صورت زیر را ثبت می‌کند:
 
 ```json
 {
@@ -86,16 +84,16 @@ This would log a JSON object like so:
 }
 ```
 
-To get a JSON string, you can use [`JSON.stringify(entry)`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) directly; it will call `toJSON()` automatically.
+برای دریافت یک رشته JSON، می‌توانید مستقیماً از [`JSON.stringify(entry)`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) استفاده کنید؛ این متد به طور خودکار `toJSON()` را فراخوانی می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{jsxref("JSON")}}
