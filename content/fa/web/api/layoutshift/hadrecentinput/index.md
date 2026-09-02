@@ -1,11 +1,5 @@
 ---
 title: "LayoutShift: hadRecentInput property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/LayoutShift/hadRecentInput"
-status: "needs-translation"
----
-
----
-title: "LayoutShift: hadRecentInput property"
 short-title: hadRecentInput
 slug: Web/API/LayoutShift/hadRecentInput
 page-type: web-api-instance-property
@@ -16,19 +10,19 @@ browser-compat: api.LayoutShift.hadRecentInput
 
 {{SeeCompatTable}}{{APIRef("Performance API")}}
 
-The **`hadRecentInput`** read-only property of the {{domxref("LayoutShift")}} interface returns `true` if {{domxref("LayoutShift.lastInputTime", "lastInputTime")}} is less than 500 milliseconds in the past.
+ویژگی فقط‌خواندنی **`hadRecentInput`** از رابط {{domxref("LayoutShift")}} مقدار `true` را برمی‌گرداند اگر {{domxref("LayoutShift.lastInputTime", "lastInputTime")}} در ۵۰۰ میلی‌ثانیهٔ گذشته رخ داده باشد.
 
-Layout shifts are only a problem if the user is not expecting them, so layout shifts that are the result of user interactions (such as a user expanding a UI element) are often not considered in layout shift metrics. The `hadRecentInput` property allows you to exclude these shifts.
+تغییرات چیدمان (layout shifts) تنها زمانی مشکل‌ساز هستند که کاربر انتظار آن‌ها را نداشته باشد؛ بنابراین تغییرات چیدمان ناشی از تعامل‌های کاربر (مانند زمانی که کاربر یک عنصر واسط کاربر را باز می‌کند) معمولاً در معیارهای تغییر چیدمان لحاظ نمی‌شوند. خاصیت `hadRecentInput` به شما امکان می‌دهد این تغییرات را از محاسبه خارج کنید.
 
-## Value
+## مقدار
 
-A boolean returning `true` if {{domxref("LayoutShift.lastInputTime", "lastInputTime")}} is less than 500 milliseconds in the past; `false` otherwise.
+یک مقدار بولی که اگر {{domxref("LayoutShift.lastInputTime", "lastInputTime")}} در ۵۰۰ میلی‌ثانیهٔ گذشته رخ داده باشد، `true` را برمی‌گرداند؛ در غیر این صورت `false`.
 
-## Examples
+## مثال‌ها
 
-### Ignoring recent user input for layout shift scores
+### نادیده گرفتن ورودی اخیر کاربر برای امتیازهای تغییر چیدمان
 
-The following example shows how the `hadRecentInput` property is used to only count layout shifts without recent user input.
+مثال زیر نشان می‌دهد که چگونه از خاصیت `hadRecentInput` برای شمارش فقط تغییرات چیدمان بدون ورودی اخیر کاربر استفاده می‌شود.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -50,14 +44,14 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "layout-shift", buffered: true });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("LayoutShift.lastInputTime")}}
