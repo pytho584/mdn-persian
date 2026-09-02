@@ -1,12 +1,5 @@
 ---
 title: "MediaTrackSupportedConstraints: autoGainControl property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSupportedConstraints/autoGainControl"
-status: "needs-translation"
----
-
----
-title: "MediaTrackSupportedConstraints: autoGainControl property"
-short-title: autoGainControl
 slug: Web/API/MediaTrackSupportedConstraints/autoGainControl
 page-type: web-api-instance-property
 browser-compat: api.MediaStreamTrack.applyConstraints.autoGainControl_constraint
@@ -14,21 +7,19 @@ browser-compat: api.MediaStreamTrack.applyConstraints.autoGainControl_constraint
 
 {{APIRef("Media Capture and Streams")}}
 
-The {{domxref("MediaTrackSupportedConstraints")}} dictionary's **`autoGainControl`** property is a read-only Boolean value which is present (and set to `true`) in the object returned by {{domxref("MediaDevices.getSupportedConstraints()")}} if and only if the {{Glossary("user agent")}} supports the **`autoGainControl`** constraint.
-If the constraint isn't supported, it's not included in the list, so this value will never be `false`.
+دیکشنری {{domxref("MediaTrackSupportedConstraints")}} شامل ویژگی **`autoGainControl`** است، یک مقدار بولی فقط‌خواندنی که اگر و فقط اگر {{Glossary("user agent")}} از محدودیت **`autoGainControl`** پشتیبانی کند، در شیء برگشتی از {{domxref("MediaDevices.getSupportedConstraints()")}} وجود دارد (و مقدار آن `true` است). اگر این محدودیت پشتیبانی نشود، در فهرست قرار نمی‌گیرد، بنابراین این مقدار هرگز `false` نخواهد بود.
 
-You can access the supported constraints dictionary by calling `navigator.mediaDevices.getSupportedConstraints()`.
+می‌توانید دیکشنری محدودیت‌های پشتیبانی‌شده را با فراخوانی `navigator.mediaDevices.getSupportedConstraints()` مشاهده کنید.
 
-The `autoGainControl` constraint indicates whether or not the browser offers the ability to automatically control the gain (volume) on media tracks; this obviously is contingent on whether or not the individual device supports automatic gain control as well; it's typically a feature provided by microphones.
+محدودیت `autoGainControl` نشان می‌دهد که آیا مرورگر قابلیت کنترل خودکار بهره (حجم صدا) را روی رسانه‌ها ارائه می‌دهد یا نه؛ بدیهی است که این امر به پشتیبانی دستگاه خاص از کنترل خودکار بهره نیز بستگی دارد؛ این قابلیت معمولاً توسط میکروفون‌ها ارائه می‌شود.
 
-## Value
+## مقدار
 
-This property is present in the dictionary (and its value is always `true`) if the user agent supports the `autoGainControl` constraint.
-If the property isn't present, this property is missing from the supported constraints dictionary, and you'll get {{jsxref("undefined")}} if you try to look at its value.
+این ویژگی در دیکشنری وجود دارد (و مقدار آن همیشه `true` است) اگر user agent از محدودیت `autoGainControl` پشتیبانی کند. اگر ویژگی وجود نداشته باشد، این ویژگی در دیکشنری محدودیت‌های پشتیبانی‌شده غایب است و اگر بخواهید مقدار آن را بررسی کنید، {{jsxref("undefined")}} دریافت می‌کنید.
 
-## Examples
+## مثال‌ها
 
-This example displays whether or not your browser supports the `autoGainControl` constraint.
+این مثال نشان می‌دهد که آیا مرورگر شما از محدودیت `autoGainControl` پشتیبانی می‌کند یا خیر.
 
 ```html hidden
 <div id="result"></div>
@@ -49,21 +40,21 @@ const supported =
 result.textContent = supported ? "Supported!" : "Not supported!";
 ```
 
-### Result
+### نتیجه
 
 {{ EmbedLiveSample('Examples', 600, 80) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
+- [API ضبط و جریان رسانه](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
 - {{domxref("MediaDevices.getSupportedConstraints()")}}
 - {{domxref("MediaTrackSupportedConstraints")}}
 - {{domxref("MediaStreamTrack")}}
