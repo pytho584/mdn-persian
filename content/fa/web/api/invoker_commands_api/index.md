@@ -1,10 +1,4 @@
 ---
-title: "Invoker Commands API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Invoker_Commands_API"
-status: "needs-translation"
----
-
----
 title: Invoker Commands API
 slug: Web/API/Invoker_Commands_API
 page-type: web-api-overview
@@ -16,43 +10,41 @@ browser-compat:
 
 {{DefaultAPISidebar("Invoker Commands API")}}
 
-The **Invoker Commands API** provides a way to declaratively assign behaviors to buttons, allowing control of interactive elements when the button is enacted (clicked or invoked via a keypress, such as the spacebar or return key).
+**Invoker Commands API** راهی برای اختصاص اعلانی رفتارها به دکمه‌ها فراهم می‌کند و امکان کنترل عناصر تعاملی را هنگام فعال شدن دکمه (با کلیک کردن یا از طریق فشردن کلیدی مانند نوار فاصله یا کلید بازگشت) می‌دهد.
 
-## Concepts and usage
+یک الگوی رایج در وب این است که عناصر {{HTMLElement("button")}} جنبه‌های مختلف صفحه را کنترل کنند، مانند باز و بسته کردن {{domxref("Popover API", "popovers", "", "nocode")}} یا عناصر {{HTMLElement("dialog")}}، قالب‌بندی متن و موارد بیشتر.
 
-A common pattern on the web is to have {{HTMLElement("button")}} elements control various aspects of the page, such as opening and closing {{domxref("Popover API", "popovers", "", "nocode")}} or {{HTMLElement("dialog")}} elements, formatting text, and more.
+در گذشته، ایجاد این نوع کنترل‌ها مستلزم افزودن شنونده‌های رویداد جاوااسکریپت به دکمه بود که سپس می‌توانستند APIهای عنصر تحت کنترل را فراخوانی کنند. ویژگی‌های {{domxref("HTMLButtonElement.commandForElement", "commandForElement")}} و {{domxref("HTMLButtonElement.command", "command")}} راهی برای انجام این کار به صورت اعلانی برای مجموعه‌ای محدود از اقدامات فراهم می‌کنند. این موضوع می‌تواند برای فرمان‌های داخلی مفید باشد، زیرا کاربر برای تعاملی شدن این دکمه‌ها نیازی به انتظار برای دانلود و اجرای جاوااسکریپت ندارد.
 
-Historically creating these kinds of controls has required JavaScript event listeners added to the button which can then call the APIs on the element they control. The {{domxref("HTMLButtonElement.commandForElement", "commandForElement")}} and {{domxref("HTMLButtonElement.command", "command")}} properties provide a way to do this declaratively for a limited set of actions. This can be advantageous for built-in commands as the user does not have to wait for JavaScript to download and execute to make these buttons interactive.
-
-## HTML attributes
+## ویژگی‌های HTML
 
 - [`commandfor`](/en-US/docs/Web/HTML/Reference/Elements/button#commandfor)
-  - : Turns a {{htmlelement("button")}} element into a command invoker, controlling the given interactive element; takes the ID of the element to control as its value.
+  - : یک عنصر {{htmlelement("button")}} را به فراخواننده فرمان (command invoker) تبدیل می‌کند و عنصر تعاملی مشخص‌شده را کنترل می‌کند؛ شناسه عنصر مورد کنترل را به عنوان مقدار خود می‌گیرد.
 - [`command`](/en-US/docs/Web/HTML/Reference/Elements/button#command)
-  - : Specifies the action to be performed on an element being controlled by a control `<button>`, specified via the `commandfor` attribute.
+  - : اقدامی را که باید روی عنصری که توسط یک `<button>` کنترلی کنترل می‌شود انجام گیرد، مشخص می‌کند؛ این اقدام از طریق ویژگی `commandfor` تعیین می‌شود.
 
-## Interfaces
+## رابط‌ها
 
 - {{domxref("CommandEvent")}}
-  - : Represents an event notifying the user that a command has been issued. It is the event object for the {{domxref("HTMLElement/command_event", "command")}} event. The event fires on element referenced by {{domxref("HTMLButtonElement.commandForElement", "commandForElement")}}.
+  - : نشان‌دهنده رویدادی است که به کاربر اطلاع می‌دهد فرمانی صادر شده است. این شیء رویداد برای رویداد {{domxref("HTMLElement/command_event", "command")}} است. رویداد روی عنصری که توسط {{domxref("HTMLButtonElement.commandForElement", "commandForElement")}} ارجاع شده است، رخ می‌دهد.
 
-## Extensions to other interfaces
+## افزونه‌های رابط‌های دیگر
 
-### Instance properties
+### ویژگی‌های نمونه
 
 - {{domxref("HTMLButtonElement.commandForElement")}}
-  - : Gets and sets the element being controlled by the button. The JavaScript equivalent of the [`commandfor`](/en-US/docs/Web/HTML/Reference/Elements/button#commandfor) HTML attribute.
+  - : عنصر کنترل‌شده توسط دکمه را دریافت و تنظیم می‌کند. معادل جاوااسکریپتی ویژگی HTML [`commandfor`](/en-US/docs/Web/HTML/Reference/Elements/button#commandfor) است.
 - {{domxref("HTMLButtonElement.command")}}
-  - : Gets and sets the action to be performed on the element being controlled by the button. Reflects the value of the [`command`](/en-US/docs/Web/HTML/Reference/Elements/button#command) HTML attribute.
+  - : اقدامی را که باید روی عنصر کنترل‌شده توسط دکمه انجام شود دریافت و تنظیم می‌کند. منعکس‌کننده مقدار ویژگی HTML [`command`](/en-US/docs/Web/HTML/Reference/Elements/button#command) است.
 
-### Events
+### رویدادها
 
-- {{domxref("HTMLElement.command_event", "command")}} event
-  - : Fired on the element referenced by the button.
+- رویداد {{domxref("HTMLElement.command_event", "command")}}
+  - : روی عنصری که توسط دکمه ارجاع شده است، رخ می‌دهد.
 
-## Examples
+## مثال‌ها
 
-### Creating declarative popovers
+### ایجاد پاپاورهای اعلانی
 
 ```html
 <button commandfor="mypopover" command="toggle-popover">
@@ -64,7 +56,7 @@ Historically creating these kinds of controls has required JavaScript event list
 </div>
 ```
 
-### Creating declarative dialogs
+### ایجاد دیالوگ‌های اعلانی
 
 ```html
 <button commandfor="mydialog" command="show-modal">Show modal dialog</button>
@@ -74,7 +66,7 @@ Historically creating these kinds of controls has required JavaScript event list
 </dialog>
 ```
 
-### Creating custom commands
+### ایجاد فرمان‌های سفارشی
 
 ```html
 <button commandfor="my-img" command="--rotate-left">Rotate left</button>
@@ -94,16 +86,16 @@ myImg.addEventListener("command", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- {{domxref("HTMLButtonElement.command", "command")}} property
-- {{domxref("HTMLButtonElement.commandForElement", "commandForElement")}} property
-- {{domxref("CommandEvent", "CommandEvent")}} interface
+- ویژگی {{domxref("HTMLButtonElement.command", "command")}}
+- ویژگی {{domxref("HTMLButtonElement.commandForElement", "commandForElement")}}
+- رابط {{domxref("CommandEvent", "CommandEvent")}}
