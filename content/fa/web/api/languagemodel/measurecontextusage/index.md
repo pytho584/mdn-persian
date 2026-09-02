@@ -1,11 +1,5 @@
 ---
 title: "LanguageModel: measureContextUsage() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/LanguageModel/measureContextUsage"
-status: "needs-translation"
----
-
----
-title: "LanguageModel: measureContextUsage() method"
 short-title: measureContextUsage()
 slug: Web/API/LanguageModel/measureContextUsage
 page-type: web-api-instance-method
@@ -14,11 +8,11 @@ browser-compat: api.LanguageModel.measureContextUsage
 
 {{APIRef("Prompt API")}}{{SecureContext_Header}}
 
-The **`measureContextUsage()`** method of the {{domxref("LanguageModel")}} interface estimates how many context window tokens the given input would consume without sending it to the model or modifying the session's state.
+متود **`measureContextUsage()`** از رابط {{domxref("LanguageModel")}} تخمین می‌زند که ورودی داده شده چند توکن از پنجره زمینه (context window) را مصرف می‌کند، بدون اینکه آن را به مدل ارسال کند یا وضعیت نشست (session) را تغییر دهد.
 
-This allows you to check how much of the context window a given input requires before deciding whether to send it. The result can be compared against {{domxref("LanguageModel.contextWindow")}} and {{domxref("LanguageModel.contextUsage")}} to determine whether the input can fit into the context window limit.
+این امکان را به شما می‌دهد که قبل از تصمیم‌گیری برای ارسال یک ورودی، بررسی کنید که چه مقدار از پنجره زمینه را نیاز دارد. نتیجه را می‌توان با {{domxref("LanguageModel.contextWindow")}} و {{domxref("LanguageModel.contextUsage")}} مقایسه کرد تا مشخص شود که آیا ورودی در محدوده پنجره زمینه جای می‌گیرد یا خیر.
 
-This is particularly useful for long-context applications such as document summarization, where you may need to split or truncate content to stay within the context window limit.
+این ویژگی به‌ویژه برای برنامه‌های با زمینه طولانی مانند خلاصه‌سازی اسناد مفید است، جایی که ممکن است نیاز به تقسیم یا کوتاه کردن محتوا برای ماندن در محدوده پنجره زمینه داشته باشید.
 
 ## Syntax
 
@@ -27,83 +21,82 @@ measureContextUsage(input)
 measureContextUsage(input, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `input`
-  - : The content to append to the context window. This is either:
-    - A string — Shorthand for a single textual message.
-    - An array of objects, each representing a single message in a conversation with a language model.
-      Objects may have the following properties:
+  - : محتوایی که به پنجره زمینه اضافه می‌شود. این می‌تواند یکی از موارد زیر باشد:
+    - یک رشته — شکل مختصر یک پیام متنی واحد.
+    - یک آرایه از اشیاء، که هر کدام یک پیام واحد در یک مکالمه با یک مدل زبانی را نشان می‌دهد. اشیاء ممکن است دارای ویژگی‌های زیر باشند:
       - `role`
-        - : A string indicating the point of view the message is phrased from. Must be one of:
+        - : رشته‌ای که نشان‌دهنده دیدگاهی است که پیام از آن بیان می‌شود. باید یکی از موارد زیر باشد:
           - `system`
-            - : A system-level instruction that guides the model's overall behavior. This must be the first instruction passed to the model.
+            - : یک دستورالعمل در سطح سیستم که رفتار کلی مدل را هدایت می‌کند. این باید اولین دستورالعملی باشد که به مدل ارسال می‌شود.
           - `user`
-            - : A message from the user, which the API should respond to.
+            - : پیامی از طرف کاربر که API باید به آن پاسخ دهد.
           - `assistant`
-            - : An input that provides context for the AI assistant, such as its persona or the format of its responses. Such messages mainly serve to provide context/history, and further shape how the model responds.
+            - : ورودی‌ای که زمینه‌ای را برای دستیار هوش مصنوعی فراهم می‌کند، مانند شخصیت آن یا قالب پاسخ‌هایش. چنین پیام‌هایی عمدتاً برای ارائه زمینه/تاریخچه خدمت می‌کنند و نحوه پاسخ مدل را بیشتر شکل می‌دهند.
       - `content`
-        - : A string representing a textual prompt, or an array of objects. Each object includes the following properties:
+        - : یک رشته که یک prompt متنی را نشان می‌دهد، یا یک آرایه از اشیاء. هر شیء شامل ویژگی‌های زیر است:
           - `type`
-            - : An enumerated value representing the type of content. This can be one of:
+            - : یک مقدار شمارشی که نوع محتوا را نشان می‌دهد. می‌تواند یکی از موارد زیر باشد:
               - `audio`
-                - : Audio content.
+                - : محتوای صوتی.
               - `image`
-                - : Image content.
+                - : محتوای تصویری.
               - `text`
-                - : Textual content.
+                - : محتوای متنی.
               - `tool-call`
-                - : A tool invocation issued by the model.
+                - : فراخوانی یک ابزار توسط مدل.
               - `tool-response`
-                - : The result of a tool invocation.
+                - : نتیجه یک فراخوانی ابزار.
           - `value`
-            - : The content of the message. If the `type` is `text`, this is always a string. If the `type` is `audio` or `image`, the `value` can be one of several different object types; see [What data types are accepted?](/en-US/docs/Web/API/Prompt_API/Multimodal#what_data_types_are_accepted).
+            - : محتوای پیام. اگر `type` برابر `text` باشد، این همیشه یک رشته است. اگر `type` برابر `audio` یا `image` باشد، `value` می‌تواند یکی از چندین نوع شیء مختلف باشد؛ برای اطلاعات بیشتر به [چه نوع داده‌هایی پذیرفته می‌شوند؟](/en-US/docs/Web/API/Prompt_API/Multimodal#what_data_types_are_accepted) مراجعه کنید.
       - `prefix` {{optional_inline}}
-        - : A boolean, defaulting to `false`. When `true`, the message is treated as a prefix for the model's next generated response rather than a complete turn.
+        - : یک مقدار بولی که پیش‌فرض آن `false` است. وقتی `true` باشد، پیام به عنوان پیشوندی برای پاسخ تولید شده بعدی مدل در نظر گرفته می‌شود، نه یک نوبت کامل.
 - `options` {{optional_inline}}
-  - : Options for measuring context usage. Properties include:
+  - : گزینه‌هایی برای اندازه‌گیری استفاده از زمینه. ویژگی‌ها عبارتند از:
     - `responseConstraint`
-      - : An object following the structure defined by [JSON Schema](https://json-schema.org/) defining the precise format the model's output should be delivered in. When provided and `omitResponseConstraintInput` is `false`, any implementation-defined constraint-description message is included in the measurement.
+      - : یک شیء با ساختار تعریف شده توسط [JSON Schema](https://json-schema.org/) که قالب دقیق خروجی مدل را مشخص می‌کند. وقتی ارائه شود و `omitResponseConstraintInput` برابر `false` باشد، هر پیام توصیف محدودیت تعریف شده توسط پیاده‌سازی در اندازه‌گیری گنجانده می‌شود.
     - `omitResponseConstraintInput`
-      - : A boolean; when `true`, the automatic constraint-description message is excluded from the measurement.
+      - : یک مقدار بولی؛ وقتی `true` باشد، پیام خودکار توصیف محدودیت از اندازه‌گیری حذف می‌شود.
     - `signal`
-      - : An {{domxref("AbortSignal")}} to cancel the operation.
+      - : یک {{domxref("AbortSignal")}} برای لغو عملیات.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with a {{jsxref("Number")}} representing the number of context window tokens the input would consume.
+یک {{jsxref("Promise")}} که با یک {{jsxref("Number")}} (عدد) حل می‌شود و نشان‌دهنده تعداد توکن‌های پنجره زمینه‌ای است که ورودی مصرف می‌کند.
 
-### Exceptions
+### استثناها
 
 - `AbortError` {{domxref("DOMException")}}
-  - : Thrown if the operation was cancelled via the `signal` option.
+  - : در صورت لغو عملیات از طریق گزینه `signal` پرتاب می‌شود.
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if usage of the method is blocked by a {{httpheader("Permissions-Policy/language-model", "language-model")}} {{httpheader("Permissions-Policy")}}.
+  - : در صورت مسدود شدن استفاده از متود توسط یک {{httpheader("Permissions-Policy/language-model", "language-model")}} {{httpheader("Permissions-Policy")}} پرتاب می‌شود.
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Thrown if:
-    - A message's `role` is `assistant` and its `type` is anything other than `text`.
-    - A message's `type` is `text` and its `value` is not a string.
-    - The input or output text is in a language the user agent doesn't support for prompting.
-    - A message's `type` is `image` or `audio` but the type was not listed in `expectedInputs`, or the `value` is not an [accepted data type](/en-US/docs/Web/API/Prompt_API/Multimodal#what_data_types_are_accepted).
+  - : در موارد زیر پرتاب می‌شود:
+    - `role` یک پیام `assistant` باشد و `type` آن چیزی غیر از `text` باشد.
+    - `type` یک پیام `text` باشد و `value` آن یک رشته نباشد.
+    - متن ورودی یا خروجی به زبانی باشد که عامل کاربر (user agent) از آن برای prompting پشتیبانی نمی‌کند.
+    - `type` یک پیام `image` یا `audio` باشد اما نوع در `expectedInputs` فهرست نشده باشد، یا `value` یک [نوع داده پذیرفته شده](/en-US/docs/Web/API/Prompt_API/Multimodal#what_data_types_are_accepted) نباشد.
 - `SyntaxError` {{domxref("DOMException")}}
-  - : Thrown if:
-    - No messages are included in the messages array.
-    - A message's `prefix` property is set to `true` and:
-      - The message's `role` is not `assistant`.
-      - The message is not the last item in the messages array.
+  - : در موارد زیر پرتاب می‌شود:
+    - هیچ پیامی در آرایه پیام‌ها گنجانده نشده باشد.
+    - ویژگی `prefix` یک پیام روی `true` تنظیم شده باشد و:
+      - `role` پیام `assistant` نباشد.
+      - پیام آخرین مورد در آرایه پیام‌ها نباشد.
 - `TypeError`
-  - : Thrown if:
-    - `omitResponseConstraintInput` is `true` but `responseConstraint` is not provided.
-    - A message's `role` is `system` but it was not the first message passed to the context.
+  - : در موارد زیر پرتاب می‌شود:
+    - `omitResponseConstraintInput` `true` باشد اما `responseConstraint` ارائه نشده باشد.
+    - `role` یک پیام `system` باشد اما اولین پیام ارسال شده به زمینه نباشد.
 
-## Examples
+## مثال‌ها
 
-### Warning when the context is nearly full
+### هشدار زمانی که زمینه تقریباً پر است
 
-The following example uses a function to verify that context is available before calling {{domxref("LanguageModel.prompt()")}}. It first calculates the remaining context and passes that value to `measureContextUsage()`. If `needed` is less than or equal to `remaining`, it returns `true` and the session continues.
+مثال زیر از یک تابع برای تأیید در دسترس بودن زمینه قبل از فراخوانی {{domxref("LanguageModel.prompt()")}} استفاده می‌کند. ابتدا زمینه باقی‌مانده را محاسبه کرده و آن مقدار را به `measureContextUsage()` ارسال می‌کند. اگر `needed` کمتر یا برابر با `remaining` باشد، `true` برمی‌گرداند و نشست ادامه می‌یابد.
 
 ```js
-const promptText = "Let me ask you an interesting question...";
+const promptText = "بگذارید یک سوال جالب از شما بپرسم...";
 
 async function contextAvailable(promptText) {
   const remaining = session.contextWindow - session.contextUsage;
@@ -118,22 +111,22 @@ if (await contextAvailable(promptText)) {
   const response = await session.prompt(promptText);
   console.log(response);
 } else {
-  console.warn("Prompt skipped: Not enough context window remaining.");
+  console.warn("پرش از prompt: فضای کافی در پنجره زمینه باقی نمانده است.");
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("LanguageModel.contextUsage")}}
 - {{domxref("LanguageModel.contextWindow")}}
 - {{domxref("LanguageModel.append()")}}
 - [Prompt API](/en-US/docs/Web/API/Prompt_API)
-- [Using the Prompt API](/en-US/docs/Web/API/Prompt_API/Using)
+- [استفاده از Prompt API](/en-US/docs/Web/API/Prompt_API/Using)
