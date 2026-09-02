@@ -1,11 +1,5 @@
 ---
 title: "MediaTrackSettings: latency property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/latency"
-status: "needs-translation"
----
-
----
-title: "MediaTrackSettings: latency property"
 short-title: latency
 slug: Web/API/MediaTrackSettings/latency
 page-type: web-api-instance-property
@@ -14,47 +8,33 @@ browser-compat: api.MediaStreamTrack.applyConstraints.latency_constraint
 
 {{APIRef("Media Capture and Streams")}}
 
-The {{domxref("MediaTrackSettings")}} dictionary's
-**`latency`** property is a double-precision floating-point
-number indicating the estimated latency (specified in seconds) of the
-{{domxref("MediaStreamTrack")}} as currently configured. This lets you determine what
-value was selected to comply with your specified constraints for this property's value
-as described in the {{domxref("MediaTrackConstraints.latency")}} property you provided
-when calling either {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}} or
-{{domxref("MediaStreamTrack.applyConstraints()")}}.
+ویژگی **`latency`** در فرهنگ لغت {{domxref("MediaTrackSettings")}} یک عدد اعشاری با دقت دوبرابر است که تأخیر تخمینی (به ثانیه) مربوط به {{domxref("MediaStreamTrack")}} را در پیکربندی فعلی نشان می‌دهد. این ویژگی به شما امکان می‌دهد تعیین کنید که برای مطابقت با محدودیت‌های مشخص‌شده شما برای این ویژگی، چه مقداری انتخاب شده است؛ همان‌طور که در ویژگی {{domxref("MediaTrackConstraints.latency")}} که هنگام فراخوانی {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}} یا {{domxref("MediaStreamTrack.applyConstraints()")}} ارائه کرده‌اید، توضیح داده شده است.
 
-This is, of course, an approximation, since latency can vary for many reasons including
-CPU, transmission, and storage overhead.
+البته این مقدار یک تقریب است، زیرا تأخیر می‌تواند به دلایل مختلفی از جمله هزینه‌های پردازشی CPU، انتقال و ذخیره‌سازی تغییر کند.
 
-If needed, you can determine whether or not this constraint is supported by checking
-the value of {{domxref("MediaTrackSupportedConstraints.latency")}} as returned by a call
-to {{domxref("MediaDevices.getSupportedConstraints()")}}. However, typically this is
-unnecessary since browsers will ignore any constraints they're unfamiliar with.
+در صورت نیاز، می‌توانید با بررسی مقدار {{domxref("MediaTrackSupportedConstraints.latency")}} که از فراخوانی {{domxref("MediaDevices.getSupportedConstraints()")}} به دست می‌آید، تعیین کنید که آیا این محدودیت پشتیبانی می‌شود یا خیر. با این حال، معمولاً این کار ضروری نیست، زیرا مرورگرها هر محدودیتی را که با آن آشنایی ندارند نادیده می‌گیرند.
 
-Because {{Glossary("RTP")}} doesn't include this information, tracks associated with a
-[WebRTC](/en-US/docs/Web/API/WebRTC_API) {{domxref("RTCPeerConnection")}}
-will never include this property.
+از آنجایی که {{Glossary("RTP")}} این اطلاعات را شامل نمی‌شود، مسیرهای مرتبط با یک {{domxref("RTCPeerConnection")}} در [WebRTC](/en-US/docs/Web/API/WebRTC_API) هرگز این ویژگی را شامل نخواهند شد.
 
-## Value
+## مقدار
 
-A double-precision floating-point number indicating the estimated latency, in seconds,
-of the audio track as currently configured.
+یک عدد اعشاری با دقت دوبرابر که تأخیر تخمینی (به ثانیه) مسیر صوتی را در پیکربندی فعلی نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
-See the [Constraint exerciser](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#example_constraint_exerciser) example.
+به مثال [Constraint exerciser](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#example_constraint_exerciser) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
-- [Capabilities, constraints, and settings](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints)
+- [API دریافت رسانه و جریان‌ها](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
+- [قابلیت‌ها، محدودیت‌ها و تنظیمات](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints)
 - {{domxref("MediaTrackConstraints.latency")}}
 - {{domxref("MediaTrackSettings")}}
