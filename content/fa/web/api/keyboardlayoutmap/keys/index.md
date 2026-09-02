@@ -1,11 +1,5 @@
 ---
 title: "KeyboardLayoutMap: keys() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/KeyboardLayoutMap/keys"
-status: "needs-translation"
----
-
----
-title: "KeyboardLayoutMap: keys() method"
 short-title: keys()
 slug: Web/API/KeyboardLayoutMap/keys
 page-type: web-api-instance-method
@@ -17,27 +11,27 @@ spec-urls: https://tc39.es/ecma262/multipage/keyed-collections.html#sec-map.prot
 
 {{SeeCompatTable}}{{APIRef("Keyboard API")}}
 
-The **`keys()`** method of the {{domxref("KeyboardLayoutMap")}} interface returns a new [Iterator](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator) object that contains the keys for each index in the `KeyboardLayoutMap` object.
+متد **`keys()`** از رابط {{domxref("KeyboardLayoutMap")}} یک شیء [Iterator](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator) جدید برمی‌گرداند که کلیدهای هر اندیس در شیء `KeyboardLayoutMap` را شامل می‌شود.
 
-The method is otherwise the same as {{jsxref("Map.prototype.keys()")}}.
+این متد در غیر این صورت مشابه {{jsxref("Map.prototype.keys()")}} است.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 keys()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-A new [Iterator](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator) object.
+یک شیء [Iterator](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator) جدید.
 
-## Examples
+## مثال‌ها
 
-The following example iterates every keyboard code on an English QWERTY keyboard.
+مثال زیر تمام کدهای صفحه‌کلید روی یک صفحه‌کلید انگلیسی QWERTY را پیمایش می‌کند.
 
 ```js
 navigator.keyboard.getLayoutMap().then((keyboardLayoutMap) => {
@@ -47,14 +41,14 @@ navigator.keyboard.getLayoutMap().then((keyboardLayoutMap) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{jsxref("Map.prototype.keys()")}}
