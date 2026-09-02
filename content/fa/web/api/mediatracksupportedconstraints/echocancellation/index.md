@@ -1,11 +1,5 @@
 ---
 title: "MediaTrackSupportedConstraints: echoCancellation property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSupportedConstraints/echoCancellation"
-status: "needs-translation"
----
-
----
-title: "MediaTrackSupportedConstraints: echoCancellation property"
 short-title: echoCancellation
 slug: Web/API/MediaTrackSupportedConstraints/echoCancellation
 page-type: web-api-instance-property
@@ -14,25 +8,15 @@ browser-compat: api.MediaStreamTrack.applyConstraints.echoCancellation_constrain
 
 {{APIRef("Media Capture and Streams")}}
 
-The {{domxref("MediaTrackSupportedConstraints")}} dictionary's
-**`echoCancellation`** property is a read-only Boolean value
-which is present (and set to `true`) in the object returned by
-{{domxref("MediaDevices.getSupportedConstraints()")}} if and only if the
-{{Glossary("user agent")}} supports the `echoCancellation` constraint. If the
-constraint isn't supported, it's not included in the list, so this value will never be
-`false`.
+ویژگی **`echoCancellation`** در فرهنگ لغت {{domxref("MediaTrackSupportedConstraints")}} یک مقدار بولی فقط‌خواندنی است که در شیء بازگشتی از {{domxref("MediaDevices.getSupportedConstraints()")}} وجود دارد (و مقدار آن `true` است) اگر و فقط اگر {{Glossary("user agent")}} (عامل کاربر) از محدودیت `echoCancellation` پشتیبانی کند. اگر این محدودیت پشتیبانی نشود، در لیست وجود ندارد، بنابراین این مقدار هرگز `false` نخواهد بود.
 
-You can access the supported constraints dictionary by calling
-`navigator.mediaDevices.getSupportedConstraints()`.
+می‌توانید فرهنگ لغت محدودیت‌های پشتیبانی‌شده را با فراخوانی `navigator.mediaDevices.getSupportedConstraints()` دریافت کنید.
 
-## Value
+## مقدار
 
-This property is present in the dictionary (and its value is always `true`)
-if the user agent supports the `echoCancellation` constraint. If the property
-isn't present, this property is missing from the supported constraints dictionary, and
-you'll get {{jsxref("undefined")}} if you try to look at its value.
+این ویژگی در فرهنگ لغت وجود دارد (و مقدار آن همیشه `true` است) اگر عامل کاربر از محدودیت `echoCancellation` پشتیبانی کند. اگر ویژگی وجود نداشته باشد، این ویژگی در فرهنگ لغت محدودیت‌های پشتیبانی‌شده غایب است و اگر تلاش کنید به مقدار آن دسترسی پیدا کنید، {{jsxref("undefined")}} دریافت خواهید کرد.
 
-## Examples
+## مثال‌ها
 
 ```html hidden
 <div id="result"></div>
@@ -50,22 +34,22 @@ you'll get {{jsxref("undefined")}} if you try to look at its value.
 const result = document.getElementById("result");
 const supported =
   navigator.mediaDevices.getSupportedConstraints().echoCancellation;
-result.textContent = supported ? "Supported!" : "Not supported!";
+result.textContent = supported ? "پشتیبانی می‌شود!" : "پشتیبانی نمی‌شود!";
 ```
 
-### Result
+### نتیجه
 
 {{ EmbedLiveSample('Examples', 600, 80) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
 - {{domxref("MediaDevices.getSupportedConstraints()")}}
