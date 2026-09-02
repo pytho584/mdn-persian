@@ -1,7 +1,6 @@
 ---
 title: "NamedNodeMap: setNamedItem() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NamedNodeMap/setNamedItem"
-status: "needs-translation"
+
 ---
 
 ---
@@ -14,32 +13,32 @@ browser-compat: api.NamedNodeMap.setNamedItem
 
 {{APIRef("DOM")}}
 
-The **`setNamedItem()`** method of the {{domxref("NamedNodeMap")}} interface
-puts the {{domxref("Attr")}} identified by its name in the map.
-If there is already an {{domxref("Attr")}} with the same name in the map,
-it is _replaced_.
+متد **`setNamedItem()`** از رابط {{domxref("NamedNodeMap")}}،
+ویژگی {{domxref("Attr")}} مشخص‌شده با نام آن را در نقشه قرار می‌دهد.
+اگر قبلاً یک {{domxref("Attr")}} با همان نام در نقشه وجود داشته باشد،
+_جایگزین_ می‌شود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 setNamedItem(attr)
 ```
 
-### Parameters
+### پارامترها
 
 - `attr`
-  - : the attribute to insert in the map.
+  - : ویژگی‌ای که باید در نقشه درج شود.
 
-### Return value
+### مقدار بازگشتی
 
-Returns the old attribute if replaced, or `null` if the attribute is new.
+در صورت جایگزینی، ویژگی قدیمی را برمی‌گرداند، و اگر ویژگی جدید باشد، `null` را برمی‌گرداند.
 
-### Exceptions
+### استثناها
 
 - `InUseAttributeError` {{domxref("DOMException")}}
-  - : Thrown if the attribute is still part of another map.
+  - : اگر ویژگی هنوز بخشی از نقشه دیگری باشد، پرتاب می‌شود.
 
-## Example
+## مثال
 
 ```html
 <span class="foo" id="bar"></span>
@@ -50,19 +49,19 @@ Returns the old attribute if replaced, or `null` if the attribute is new.
 const span = document.querySelector("span");
 const pre = document.querySelector("pre");
 
-let result = `The \`<pre>\` element initially contains ${pre.attributes.length} attributes.\n\n`;
+let result = `عنصر \`<pre>\` در ابتدا دارای ${pre.attributes.length} ویژگی است.\n\n`;
 
-result += "We remove `class` from `<span>` and add it to `<pre>`.\n";
+result += "ما `class` را از `<span>` حذف کرده و به `<pre>` اضافه می‌کنیم.\n";
 const classAttribute = span.attributes.removeNamedItem("class");
 pre.attributes.setNamedItem(classAttribute);
-result += `The \`<pre>\` element now contains ${pre.attributes.length} attributes.\n\n`;
+result += `اکنون عنصر \`<pre>\` دارای ${pre.attributes.length} ویژگی است.\n\n`;
 
-result += "We get `id` from `<span>` and try to add it to `<pre>`.\n";
+result += "ما `id` را از `<span>` می‌گیریم و سعی می‌کنیم آن را به `<pre>` اضافه کنیم.\n";
 const id = span.attributes.getNamedItem("id");
 try {
   pre.attributes.setNamedItem(id);
 } catch (error) {
-  result += `An exception has been raised: ${error.name}: ${error.message}.\n`;
+  result += `یک استثنا رخ داده است: ${error.name}: ${error.message}.\n`;
 }
 
 pre.textContent = result;
@@ -70,10 +69,10 @@ pre.textContent = result;
 
 {{EmbedLiveSample("Example", "100%", 160)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
