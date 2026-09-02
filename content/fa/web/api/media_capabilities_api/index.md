@@ -1,11 +1,5 @@
 ---
 title: "Media Capabilities API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Media_Capabilities_API"
-status: "needs-translation"
----
-
----
-title: Media Capabilities API
 slug: Web/API/Media_Capabilities_API
 page-type: web-api-overview
 browser-compat: api.MediaCapabilities
@@ -13,35 +7,35 @@ browser-compat: api.MediaCapabilities
 
 {{DefaultAPISidebar("Media Capabilities API")}}{{AvailableInWorkers}}
 
-The **Media Capabilities API** allows developers to determine decoding and encoding abilities of the device, exposing information such as whether media is supported and whether playback should be smooth and power efficient.
+**Media Capabilities API** به توسعه‌دهندگان امکان می‌دهد تا قابلیت‌های رمزگشایی و رمزگذاری دستگاه را تعیین کنند و اطلاعاتی از جمله پشتیبانی از رسانه، روان بودن پخش و بهینه بودن مصرف انرژی را در اختیار آن‌ها قرار دهد.
 
-## Concepts
+## مفاهیم
 
-There are a myriad of video and audio codecs. Different browsers support different media types and new media types are always being developed. With the Media Capabilities API, developers can ensure each user is getting the best bitrate and storage savings for their browser, device, and OS capabilities.
+انواع بی‌شماری از کدک‌های ویدئویی و صوتی وجود دارند. مرورگرهای مختلف از انواع مختلف رسانه پشتیبانی می‌کنند و انواع جدید رسانه نیز همواره در حال توسعه هستند. با استفاده از Media Capabilities API، توسعه‌دهندگان می‌توانند اطمینان حاصل کنند که هر کاربر بهترین نرخ بیت (bitrate) و صرفه‌جویی در فضای ذخیره‌سازی را متناسب با قابلیت‌های مرورگر، دستگاه و سیستم عامل خود دریافت می‌کند.
 
-Whether a device uses hardware or software decoding impacts how smooth and power efficient the video decoding is and how efficient the playback will be. The Media Capabilities API enables developers to determine which codecs are supported and how performant a media file will be both in terms of smoothness and power efficiency.
+اینکه یک دستگاه از رمزگشایی سخت‌افزاری یا نرم‌افزاری استفاده کند، تأثیر مستقیمی بر روانی و بهینه بودن مصرف انرژی در رمزگشایی ویدئو و کارایی پخش دارد. Media Capabilities API به توسعه‌دهندگان امکان می‌دهد تعیین کنند کدام کدک‌ها پشتیبانی می‌شوند و یک فایل رسانه از نظر روانی و بازده انرژی چقدر عملکرد خوبی خواهد داشت.
 
-The Media Capabilities API provide more powerful features than other APIs such as {{DOMxref("MediaRecorder.isTypeSupported_static", "MediaRecorder.isTypeSupported()")}} or {{DOMxRef("HTMLMediaElement.canPlayType()")}}, which only address general browser support, not performance.
+Media Capabilities API قابلیت‌های قدرتمندتری نسبت به APIهای دیگر مانند {{DOMxref("MediaRecorder.isTypeSupported_static", "MediaRecorder.isTypeSupported()")}} یا {{DOMxRef("HTMLMediaElement.canPlayType()")}} ارائه می‌دهد، زیرا آن‌ها تنها به پشتیبانی کلی مرورگر می‌پردازند و نه عملکرد.
 
-To test support, smoothness, and power efficiency for encoding and decoding video or audio content, you use the {{DOMxRef("MediaCapabilities")}} interface's {{DOMxRef("MediaCapabilities.encodingInfo()","encodingInfo()")}} and {{DOMxRef("MediaCapabilities.decodingInfo()","decodingInfo()")}} methods.
+برای آزمایش پشتیبانی، روانی و بازده انرژی در رمزگذاری و رمزگشایی محتوای ویدئویی یا صوتی، از متدهای {{DOMxRef("MediaCapabilities.encodingInfo()","encodingInfo()")}} و {{DOMxRef("MediaCapabilities.decodingInfo()","decodingInfo()")}} موجود در رابط {{DOMxRef("MediaCapabilities")}} استفاده می‌کنید.
 
-## Interfaces
+## رابط‌ها (Interfaces)
 
 - {{DOMxRef("MediaCapabilities")}}
-  - : Provides information about the decoding abilities of the device, system and browser based on codecs, profile, resolution, and bitrates. The information can be used to serve optimal media streams to the user and determine if playback should be smooth and power efficient.
+  - : اطلاعاتی در مورد قابلیت‌های رمزگشایی دستگاه، سیستم و مرورگر بر اساس کدک، پروفایل، وضوح و نرخ بیت ارائه می‌دهد. از این اطلاعات می‌توان برای ارائه جریان‌های رسانه‌ای بهینه به کاربر و تعیین اینکه آیا پخش باید روان و از نظر مصرف انرژی بهینه باشد، استفاده کرد.
 
-### Extensions to other interfaces
+### افزونه‌هایی به سایر رابط‌ها
 
 - {{domxref("Navigator.mediaCapabilities")}} {{readonlyinline}}
-  - : A {{domxref("MediaCapabilities")}} object that can expose information about the decoding and encoding capabilities for a given media format and output capabilities.
+  - : یک شیء {{domxref("MediaCapabilities")}} که می‌تواند اطلاعاتی در مورد قابلیت‌های رمزگشایی و رمزگذاری برای یک قالب رسانه و قابلیت‌های خروجی مشخص ارائه دهد.
 - {{DOMxRef("WorkerNavigator.mediaCapabilities")}} {{readonlyinline}}
-  - : A {{domxref("MediaCapabilities")}} object that can expose information about the decoding and encoding capabilities for a given media format and output capabilities.
+  - : یک شیء {{domxref("MediaCapabilities")}} که می‌تواند اطلاعاتی در مورد قابلیت‌های رمزگشایی و رمزگذاری برای یک قالب رسانه و قابلیت‌های خروجی مشخص ارائه دهد.
 
-## Examples
+## مثال‌ها
 
-### Detect audio file support and expected performance
+### تشخیص پشتیبانی از فایل صوتی و عملکرد مورد انتظار
 
-This example defines an audio configuration then checks to see if the user agent supports decoding that media configuration, and whether it will perform well in terms of smoothness and power efficiency.
+این مثال یک پیکربندی صوتی تعریف می‌کند و سپس بررسی می‌کند که آیا عامل کاربر (user agent) از رمزگشایی آن پیکربندی رسانه پشتیبانی می‌کند و آیا از نظر روانی و بازده انرژی عملکرد خوبی خواهد داشت یا خیر.
 
 ```js
 if ("mediaCapabilities" in navigator) {
@@ -70,16 +64,16 @@ if ("mediaCapabilities" in navigator) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [HTMLMediaElement](/en-US/docs/Web/API/HTMLMediaElement)'s method [canPlayType()](/en-US/docs/Web/API/HTMLMediaElement/canPlayType)
-- [MediaSource](/en-US/docs/Web/API/MediaSource)'s method [isTypeSupported()](/en-US/docs/Web/API/MediaSource/isTypeSupported_static)
-- [Using the Media Capabilities API](/en-US/docs/Web/API/Media_Capabilities_API/Using_the_Media_Capabilities_API)
+- متد [canPlayType()](/en-US/docs/Web/API/HTMLMediaElement/canPlayType) در [HTMLMediaElement](/en-US/docs/Web/API/HTMLMediaElement)
+- متد [isTypeSupported()](/en-US/docs/Web/API/MediaSource/isTypeSupported_static) در [MediaSource](/en-US/docs/Web/API/MediaSource)
+- [استفاده از Media Capabilities API](/en-US/docs/Web/API/Media_Capabilities_API/Using_the_Media_Capabilities_API)
