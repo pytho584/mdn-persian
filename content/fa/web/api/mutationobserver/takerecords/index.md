@@ -1,11 +1,5 @@
 ---
 title: "MutationObserver: takeRecords() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver/takeRecords"
-status: "needs-translation"
----
-
----
-title: "MutationObserver: takeRecords() method"
 short-title: takeRecords()
 slug: Web/API/MutationObserver/takeRecords
 page-type: web-api-instance-method
@@ -14,41 +8,30 @@ browser-compat: api.MutationObserver.takeRecords
 
 {{APIRef("DOM WHATWG")}}
 
-The {{domxref("MutationObserver")}} method
-**`takeRecords()`** returns a list of all matching DOM changes
-that have been detected but not yet processed by the observer's callback function,
-leaving the mutation queue empty.
+متد {{domxref("MutationObserver")}} به نام **`takeRecords()`** فهرستی از تمام تغییرات DOM منطبق را برمی‌گرداند که شناسایی شده‌اند اما هنوز توسط تابع callback مشاهده‌گر پردازش نشده‌اند و صف تغییرات را خالی می‌کند.
 
-The most common use case for this is to
-immediately fetch all pending mutation records immediately prior to disconnecting the
-observer, so that any pending mutations can be processed when shutting down the
-observer.
+رایج‌ترین کاربرد این متد این است که درست پیش از قطع کردن مشاهده‌گر، همه‌ی رکوردهای تغییرِ در انتظار بلافاصله دریافت شوند تا هنگام توقف مشاهده‌گر، بتوان هر تغییری را که هنوز در صف است پردازش کرد.
 
-## Syntax
+## دستور زبان
 
 ```js-nolint
 takeRecords()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-An array of {{domxref("MutationRecord")}} objects, each describing one change applied to
-the observed portion of the document's DOM tree.
+آرایه‌ای از اشیاء {{domxref("MutationRecord")}} که هر یک یک تغییرِ اعمال‌شده بر بخش مشاهده‌شده‌ی درخت DOM سند را توصیف می‌کند.
 
 > [!NOTE]
-> The queue of mutations which have occurred, but not been
-> delivered to the observer's callback is left empty after calling
-> `takeRecords()`.
+> صف تغییراتی که رخ داده‌اند اما هنوز به تابع callback مشاهده‌گر تحویل داده نشده‌اند، پس از فراخوانی `takeRecords()` خالی می‌ماند.
 
-## Examples
+## مثال‌ها
 
-In this example, we demonstrate how to handle any undelivered
-{{domxref("MutationRecord")}}s by calling `takeRecords()` just before
-disconnecting the observer.
+در این مثال، نشان می‌دهیم که چگونه هر {{domxref("MutationRecord")}} تحویل‌نشده‌ای را می‌توان با فراخوانی `takeRecords()` درست پیش از قطع کردن مشاهده‌گر پردازش کرد.
 
 ```js
 const targetNode = document.querySelector("#someElement");
@@ -73,15 +56,12 @@ if (mutations.length > 0) {
 }
 ```
 
-The code fetches any unprocessed mutation records, then invokes the
-callback with the records so that they can be processed. This is done immediately prior
-to calling {{domxref("MutationObserver.disconnect", "disconnect()")}} to stop observing
-the DOM.
+این کد هر رکورد تغییر پردازش‌نشده‌ای را دریافت می‌کند و سپس تابع callback را با آن رکوردها فراخوانی می‌کند تا بتوانند پردازش شوند. این کار بلافاصله پیش از فراخوانی {{domxref("MutationObserver.disconnect", "disconnect()")}} برای توقف مشاهده‌ی DOM انجام می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
