@@ -1,11 +1,5 @@
 ---
 title: "LargestContentfulPaint: size property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/LargestContentfulPaint/size"
-status: "needs-translation"
----
-
----
-title: "LargestContentfulPaint: size property"
 short-title: size
 slug: Web/API/LargestContentfulPaint/size
 page-type: web-api-instance-property
@@ -14,33 +8,33 @@ browser-compat: api.LargestContentfulPaint.size
 
 {{APIRef("Performance API")}}
 
-The **`size`** read-only property of the {{domxref("LargestContentfulPaint")}} interface returns the intrinsic size of the element that is the largest contentful paint.
+ویژگی فقط‑خواندنی **`size`** از رابط {{domxref("LargestContentfulPaint")}} اندازهٔ ذاتی عنصری را برمی‌گرداند که بزرگ‌ترین نقاشی محتوایی (Largest Contentful Paint) است.
 
-The `size` of the element is the `width` times `height` of the {{domxref("DOMRectReadOnly","rectangle")}} that this element creates on the screen.
+اندازهٔ عنصر برابر است با `width` ضربدر `height` {{domxref("DOMRectReadOnly","مستطیل")}}ی که این عنصر روی صفحه ایجاد می‌کند.
 
-## Value
+## مقدار
 
-An integer representing the width times height of the element.
+یک عدد صحیح که نشان‌دهندهٔ عرض ضربدر ارتفاع عنصر است.
 
-## Examples
+## مثال‌ها
 
-### Logging the size of the largest contentful paint element
+### ثبت اندازهٔ بزرگ‌ترین عنصر نقاشی محتوایی
 
-This example uses a {{domxref("PerformanceObserver")}} notifying of new `largest-contentful-paint` performance entries as they are recorded in the browser's performance timeline. The `buffered` option is used to access entries from before the observer creation.
+این مثال از {{domxref("PerformanceObserver")}} استفاده می‌کند تا ورودی‌های جدید عملکرد `largest-contentful-paint` را هنگام ثبت در جدول زمانی عملکرد مرورگر اطلاع‌رسانی کند. گزینهٔ `buffered` برای دسترسی به ورودی‌های قبل از ایجاد observer استفاده شده است.
 
 ```js
 const observer = new PerformanceObserver((list) => {
   const entries = list.getEntries();
-  const lastEntry = entries[entries.length - 1]; // Use the latest LCP candidate
+  const lastEntry = entries[entries.length - 1]; // از آخرین نامزد LCP استفاده کنید
   console.log(lastEntry.size);
 });
 observer.observe({ type: "largest-contentful-paint", buffered: true });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
