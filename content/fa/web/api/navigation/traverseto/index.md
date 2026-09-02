@@ -1,12 +1,5 @@
 ---
 title: "Navigation: traverseTo() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigation/traverseTo"
-status: "needs-translation"
----
-
----
-title: "Navigation: traverseTo() method"
-short-title: traverseTo()
 slug: Web/API/Navigation/traverseTo
 page-type: web-api-instance-method
 browser-compat: api.Navigation.traverseTo
@@ -14,74 +7,74 @@ browser-compat: api.Navigation.traverseTo
 
 {{APIRef("Navigation API")}}
 
-The **`traverseTo()`** method of the {{domxref("Navigation")}} interface navigates to the {{domxref("NavigationHistoryEntry")}} identified by the given {{domxref("NavigationHistoryEntry.key", "key")}}.
+**`traverseTo()`** 方法属于 {{domxref("Navigation")}} 接口，用于导航到由给定 {{domxref("NavigationHistoryEntry.key", "key")}} 标识的 {{domxref("NavigationHistoryEntry")}}。
 
-## Syntax
+## 语法
 
 ```js-nolint
 traverseTo(key)
 traverseTo(key, options)
 ```
 
-### Parameters
+### 参数
 
 - `key`
-  - : The `key` of the {{domxref("NavigationHistoryEntry")}} to navigate to.
+  - : 要导航到的 {{domxref("NavigationHistoryEntry")}} 的 `key`。
 - `options` {{optional_inline}}
-  - : An options object containing the following properties:
+  - : 一个选项对象，包含以下属性：
     - `info` {{optional_inline}}
-      - : Developer-defined information to be passed along to the {{domxref("Navigation/navigate_event", "navigate")}} event, made available in {{domxref("NavigateEvent.info")}}. This can be any data type. You might, for example, wish to display newly-navigated content with a different animation depending on how it was navigated to (swipe left, swipe right, or go home). A string indicating which animation to use could be passed in as `info`.
+      - : 开发人员定义的信息，会传递给 {{domxref("Navigation/navigate_event", "navigate")}} 事件，并在 {{domxref("NavigateEvent.info")}} 中可用。该值可以是任意数据类型。例如，您可能希望根据导航方式（左滑、右滑或返回主页）以不同的动画显示新导航到的内容。可以在 `info` 中传入一个表示要使用哪种动画的字符串。
 
-### Return value
+### 返回值
 
-An object with the following properties:
+一个包含以下属性的对象：
 
 - `committed`
-  - : A {{jsxref("Promise")}} which will fulfill when the visible URL has changed and a new {{domxref("NavigationHistoryEntry")}} has been created.
+  - : 一个 {{jsxref("Promise")}}，当可见 URL 发生变化且已创建新的 {{domxref("NavigationHistoryEntry")}} 时兑现。
 - `finished`
-  - : A {{jsxref("Promise")}} which will fulfill when all promises returned by the `intercept()` handler are fulfilled. This is equivalent to the {{domxref("NavigationTransition.finished")}} promise fulfilling, when the {{domxref("Navigation/navigatesuccess_event", "navigatesuccess")}} event fires.
+  - : 一个 {{jsxref("Promise")}}，当 `intercept()` 处理程序返回的所有 Promise 都兑现时兑现。这等价于 {{domxref("NavigationTransition.finished")}} Promise 在 {{domxref("Navigation/navigatesuccess_event", "navigatesuccess")}} 事件触发时兑现。
 
-Either one of these promises rejects if the navigation has failed for some reason.
+如果导航因某种原因失败，这两个 Promise 中的任何一个都会拒绝。
 
-### Exceptions
+### 异常
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the {{domxref("Navigation.currentEntry")}}'s {{domxref("NavigationHistoryEntry.index")}} value is -1, meaning the current {{domxref("Document")}} is not yet active, or if the navigation history list does not contain a {{domxref("NavigationHistoryEntry")}} with the specified key, or if the current {{domxref("Document")}} is unloading.
+  - : 如果 {{domxref("Navigation.currentEntry")}} 的 {{domxref("NavigationHistoryEntry.index")}} 值为 -1（表示当前 {{domxref("Document")}} 尚未激活），或者导航历史列表中不包含具有指定 `key` 的 {{domxref("NavigationHistoryEntry")}}，或者当前 {{domxref("Document")}} 正在卸载，则抛出该异常。
 
-## Examples
+## 示例
 
-### Set up home button
+### 设置主页按钮
 
 ```js
 function initHomeBtn() {
-  // Get the key of the first loaded entry
-  // so the user can always go back to this view.
+  // 获取第一个加载条目的 key，
+  // 以便用户始终可以回到此视图。
   const { key } = navigation.currentEntry;
   backToHomeButton.onclick = () => {
     navigation.traverseTo(key);
   };
 }
-// Intercept navigate events, such as link clicks, and
-// replace them with single-page navigations
+// 拦截导航事件（例如链接点击），
+// 并将其替换为单页导航
 navigation.addEventListener("navigate", (event) => {
   event.intercept({
     async handler() {
-      // Navigate to a different view,
-      // but the "home" button will always work.
+      // 导航到不同视图，
+      // 但“主页”按钮始终有效。
     },
   });
 });
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
-- [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
-- [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
+- [现代客户端路由：Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
+- [Navigation API 解释器](https://github.com/WICG/navigation-api/blob/main/README.md)
