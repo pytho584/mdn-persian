@@ -1,7 +1,5 @@
 ---
 title: "KeyboardEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent"
-status: "needs-translation"
 ---
 
 ---
@@ -13,35 +11,35 @@ browser-compat: api.KeyboardEvent
 
 {{APIRef("UI Events")}}
 
-**`KeyboardEvent`** objects describe a user interaction with the keyboard; each event describes a single interaction between the user and a key (or combination of a key with modifier keys) on the keyboard. The event type ({{domxref("Element/keydown_event", "keydown")}}, {{domxref("Element/keypress_event", "keypress")}}, or {{domxref("Element/keyup_event", "keyup")}}) identifies what kind of keyboard activity occurred.
+اشیاء **`KeyboardEvent`** تعامل کاربر با صفحه‌کلید را توصیف می‌کنند؛ هر رویداد یک تعامل واحد بین کاربر و یک کلید (یا ترکیبی از یک کلید با کلیدهای اصلاح‌کننده) روی صفحه‌کلید را توصیف می‌کند. نوع رویداد ({{domxref("Element/keydown_event", "keydown")}}، {{domxref("Element/keypress_event", "keypress")}} یا {{domxref("Element/keyup_event", "keyup")}}) مشخص می‌کند که چه نوع فعالیت صفحه‌کلیدی رخ داده است.
 
 > [!NOTE]
-> `KeyboardEvent` events just indicate what interaction the user had with a key on the keyboard at a low level, providing no contextual meaning to that interaction. When you need to handle text input, use the {{domxref("Element/input_event", "input")}} event instead. Keyboard events may not be fired if the user is using an alternate means of entering text, such as a handwriting system on a tablet or graphics tablet.
+> رویدادهای `KeyboardEvent` فقط نشان می‌دهند که کاربر در سطح پایین با یک کلید روی صفحه‌کلید چه تعاملی داشته است و معنای زمینه‌ای برای آن تعامل ارائه نمی‌دهند. وقتی نیاز به مدیریت ورودی متن دارید، به‌جای آن از رویداد {{domxref("Element/input_event", "input")}} استفاده کنید. اگر کاربر از روش جایگزینی برای وارد کردن متن استفاده کند، مانند سیستم نوشتن دستی روی رایانه لوحی یا تبلت گرافیکی، ممکن است رویدادهای صفحه‌کلید فعال نشوند.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("KeyboardEvent.KeyboardEvent", "KeyboardEvent()")}}
-  - : Creates a new `KeyboardEvent` object.
+  - : یک شیء جدید `KeyboardEvent` می‌سازد.
 
-## Constants
+## ثابت‌ها
 
-The `KeyboardEvent` interface defines the following constants.
+رابط `KeyboardEvent` ثابت‌های زیر را تعریف می‌کند.
 
-### Keyboard locations
+### مکان‌های صفحه‌کلید
 
-The following constants identify which part of the keyboard the key event originates from. They are accessed as `KeyboardEvent.DOM_KEY_LOCATION_STANDARD` and so forth.
+ثابت‌های زیر مشخص می‌کنند که رویداد کلید از کدام بخش صفحه‌کلید منشأ گرفته است. آن‌ها به‌صورت `KeyboardEvent.DOM_KEY_LOCATION_STANDARD` و غیره در دسترس هستند.
 
 <table class="standard-table">
   <caption>
-    Keyboard location identifiers
+    شناسه‌های مکان صفحه‌کلید
   </caption>
   <thead>
     <tr>
-      <th scope="col">Constant</th>
-      <th scope="col">Value</th>
-      <th scope="col">Description</th>
+      <th scope="col">ثابت</th>
+      <th scope="col">مقدار</th>
+      <th scope="col">توضیحات</th>
     </tr>
   </thead>
   <tbody>
@@ -50,15 +48,10 @@ The following constants identify which part of the keyboard the key event origin
       <td>0x00</td>
       <td>
         <p>
-          The key described by the event is not identified as being located in a
-          particular area of the keyboard; it is not located on the numeric
-          keypad (unless it's the NumLock key), and for keys that are duplicated
-          on the left and right sides of the keyboard, the key is, for whatever
-          reason, not to be associated with that location.
+          کلیدی که توسط رویداد توصیف می‌شود، در ناحیه خاصی از صفحه‌کلید قرار ندارد؛ روی صفحه‌کلید عددی قرار ندارد (مگر اینکه کلید NumLock باشد)، و برای کلیدهایی که در سمت چپ و راست صفحه‌کلید تکرار شده‌اند، آن کلید به هر دلیلی با آن مکان مرتبط نیست.
         </p>
         <p>
-          Examples include alphanumeric keys on the standard PC 101 US keyboard,
-          the NumLock key, and the space bar.
+          نمونه‌ها شامل کلیدهای حروفی-عددی در صفحه‌کلید استاندارد PC 101 آمریکایی، کلید NumLock و نوار فاصله هستند.
         </p>
       </td>
     </tr>
@@ -67,12 +60,10 @@ The following constants identify which part of the keyboard the key event origin
       <td>0x01</td>
       <td>
         <p>
-          The key is one which may exist in multiple locations on the keyboard
-          and, in this instance, is on the left side of the keyboard.
+          این کلید یکی از کلیدهایی است که ممکن است در چندین مکان روی صفحه‌کلید وجود داشته باشد و در این مورد، در سمت چپ صفحه‌کلید قرار دارد.
         </p>
         <p>
-          Examples include the left Control key, the left Command key on a
-          Macintosh keyboard, or the left Shift key.
+          نمونه‌ها شامل کلید Control چپ، کلید Command چپ در صفحه‌کلید مکینتاش یا کلید Shift چپ هستند.
         </p>
       </td>
     </tr>
@@ -81,12 +72,10 @@ The following constants identify which part of the keyboard the key event origin
       <td>0x02</td>
       <td>
         <p>
-          The key is one which may exist in multiple positions on the keyboard
-          and, in this case, is located on the right side of the keyboard.
+          این کلید یکی از کلیدهایی است که ممکن است در چندین موقعیت روی صفحه‌کلید وجود داشته باشد و در این مورد، در سمت راست صفحه‌کلید قرار دارد.
         </p>
         <p>
-          Examples include the right Shift key and the right Alt key (Option on
-          a Mac keyboard).
+          نمونه‌ها شامل کلید Shift راست و کلید Alt راست (Option در صفحه‌کلید مک) هستند.
         </p>
       </td>
     </tr>
@@ -95,121 +84,116 @@ The following constants identify which part of the keyboard the key event origin
       <td>0x03</td>
       <td>
         <p>
-          The key is located on the numeric keypad, or is a virtual key
-          associated with the numeric keypad if there's more than one place the
-          key could originate from. The NumLock key does not fall into this
-          group and is always encoded with the location
-          <code>DOM_KEY_LOCATION_STANDARD</code>.
+          کلید روی صفحه‌کلید عددی قرار دارد، یا اگر بیش از یک مکان برای منشأ گرفتن کلید وجود داشته باشد، یک کلید مجازی مرتبط با صفحه‌کلید عددی است. کلید NumLock در این گروه قرار نمی‌گیرد و همیشه با مکان <code>DOM_KEY_LOCATION_STANDARD</code> کدگذاری می‌شود.
         </p>
         <p>
-          Examples include the digits on the numeric keypad, the keypad's Enter
-          key, and the decimal point on the keypad.
+          نمونه‌ها شامل ارقام روی صفحه‌کلید عددی، کلید Enter صفحه‌کلید عددی و نقطه اعشار روی آن هستند.
         </p>
       </td>
     </tr>
   </tbody>
 </table>
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface also inherits properties of its parents, {{domxref("UIEvent")}} and {{domxref("Event")}}._
+_این رابط همچنین ویژگی‌های والدین خود، {{domxref("UIEvent")}} و {{domxref("Event")}} را به ارث می‌برد._
 
 - {{domxref("KeyboardEvent.altKey")}} {{ReadOnlyInline}}
-  - : Returns a boolean value that is `true` if the <kbd>Alt</kbd> (<kbd>Option</kbd> or <kbd>⌥</kbd> on macOS) key was active when the key event was generated.
+  - : یک مقدار بولین برمی‌گرداند که اگر کلید <kbd>Alt</kbd> (<kbd>Option</kbd> یا <kbd>⌥</kbd> در macOS) هنگام تولید رویداد کلید فعال بود، `true` است.
 
 - {{domxref("KeyboardEvent.code")}} {{ReadOnlyInline}}
-  - : Returns a string with the code value of the physical key represented by the event.
+  - : یک رشته شامل مقدار کد کلید فیزیکی نمایش‌داده‌شده توسط رویداد را برمی‌گرداند.
 
     > [!WARNING]
-    > This ignores the user's keyboard layout, so that if the user presses the key at the "Y" position in a QWERTY keyboard layout (near the middle of the row above the home row), this will always return "KeyY", even if the user has a QWERTZ keyboard (which would mean the user expects a "Z" and all the other properties would indicate a "Z") or a Dvorak keyboard layout (where the user would expect an "F"). If you want to display the correct keystrokes to the user, you can use {{domxref("Keyboard.getLayoutMap()")}}.
+    > این ویژگی چیدمان صفحه‌کلید کاربر را نادیده می‌گیرد، بنابراین اگر کاربر کلید را در موقعیت «Y» در چیدمان صفحه‌کلید QWERTY فشار دهد (نزدیک وسط ردیف بالای ردیف اصلی)، همیشه «KeyY» برمی‌گرداند، حتی اگر کاربر صفحه‌کلید QWERTZ داشته باشد (که به این معنی است که کاربر انتظار «Z» را دارد و همه ویژگی‌های دیگر «Z» را نشان می‌دهند) یا چیدمان صفحه‌کلید Dvorak (که در آن کاربر انتظار «F» را دارد). اگر می‌خواهید ضربه‌های کلید صحیح را به کاربر نمایش دهید، می‌توانید از {{domxref("Keyboard.getLayoutMap()")}} استفاده کنید.
 
 - {{domxref("KeyboardEvent.ctrlKey")}} {{ReadOnlyInline}}
-  - : Returns a boolean value that is `true` if the <kbd>Ctrl</kbd> key was active when the key event was generated.
+  - : یک مقدار بولین برمی‌گرداند که اگر کلید <kbd>Ctrl</kbd> هنگام تولید رویداد کلید فعال بود، `true` است.
 
 - {{domxref("KeyboardEvent.isComposing")}} {{ReadOnlyInline}}
-  - : Returns a boolean value that is `true` if the event is fired between after `compositionstart` and before `compositionend`.
+  - : یک مقدار بولین برمی‌گرداند که اگر رویداد بین بعد از `compositionstart` و قبل از `compositionend` فعال شده باشد، `true` است.
 - {{domxref("KeyboardEvent.key")}} {{ReadOnlyInline}}
-  - : Returns a string representing the key value of the key represented by the event.
+  - : یک رشته نشان‌دهنده مقدار کلیدِ نمایش‌داده‌شده توسط رویداد را برمی‌گرداند.
 - {{domxref("KeyboardEvent.location")}} {{ReadOnlyInline}}
-  - : Returns a number representing the location of the key on the keyboard or other input device. A list of the constants identifying the locations is shown above in [Keyboard locations](#keyboard_locations).
+  - : یک عدد نشان‌دهنده مکان کلید روی صفحه‌کلید یا سایر دستگاه‌های ورودی را برمی‌گرداند. فهرست ثابت‌های شناسایی مکان‌ها در بالا در [مکان‌های صفحه‌کلید](#keyboard_locations) نشان داده شده است.
 - {{domxref("KeyboardEvent.metaKey")}} {{ReadOnlyInline}}
-  - : Returns a boolean value that is `true` if the <kbd>Meta</kbd> key (on Mac keyboards, the <kbd>⌘ Command</kbd> key; on Windows keyboards, the Windows key (<kbd>⊞</kbd>)) was active when the key event was generated.
+  - : یک مقدار بولین برمی‌گرداند که اگر کلید <kbd>Meta</kbd> (در صفحه‌کلیدهای مک، کلید <kbd>⌘ Command</kbd>؛ در صفحه‌کلیدهای ویندوز، کلید ویندوز (<kbd>⊞</kbd>)) هنگام تولید رویداد کلید فعال بود، `true` است.
 
 - {{domxref("KeyboardEvent.repeat")}} {{ReadOnlyInline}}
-  - : Returns a boolean value that is `true` if the key is being held down such that it is automatically repeating.
+  - : یک مقدار بولین برمی‌گرداند که اگر کلید به‌گونه‌ای نگه داشته شده باشد که به‌طور خودکار تکرار می‌شود، `true` است.
 - {{domxref("KeyboardEvent.shiftKey")}} {{ReadOnlyInline}}
-  - : Returns a boolean value that is `true` if the <kbd>Shift</kbd> key was active when the key event was generated.
+  - : یک مقدار بولین برمی‌گرداند که اگر کلید <kbd>Shift</kbd> هنگام تولید رویداد کلید فعال بود، `true` است.
 
-### Obsolete properties
+### ویژگی‌های منسوخ
 
 - {{domxref("KeyboardEvent.charCode")}} {{Deprecated_inline}} {{ReadOnlyInline}}
-  - : Returns a number representing the Unicode reference number of the key; this property is used only by the `keypress` event. For keys whose `char` property contains multiple characters, this is the Unicode value of the first character in that property. In Firefox 26 this returns codes for printable characters.
+  - : یک عدد نشان‌دهنده شماره مرجع یونیکدِ کلید را برمی‌گرداند؛ این ویژگی فقط توسط رویداد `keypress` استفاده می‌شود. برای کلیدهایی که ویژگی `char` آن‌ها شامل چند نویسه است، این مقدار یونیکدِ اولین نویسه در آن ویژگی است. در Firefox 26 این مقدار کدهای نویسه‌های قابل‌چاپ را برمی‌گرداند.
 
 - {{domxref("KeyboardEvent.keyCode")}} {{deprecated_inline}} {{ReadOnlyInline}}
-  - : Returns a number representing a system and implementation dependent numerical code identifying the unmodified value of the pressed key.
+  - : یک عدد نشان‌دهنده کد عددی وابسته به سیستم و پیاده‌سازی را برمی‌گرداند که مقدار اصلاح‌نشده کلید فشرده‌شده را شناسایی می‌کند.
 
 - {{domxref("KeyboardEvent.keyIdentifier")}} {{Non-standard_inline}} {{deprecated_inline}} {{ReadOnlyInline}}
-  - : This property is non-standard and has been deprecated in favor of {{domxref("KeyboardEvent.key")}}. It was part of an old version of DOM Level 3 Events.
+  - : این ویژگی غیراستاندارد است و به نفع {{domxref("KeyboardEvent.key")}} منسوخ شده است. این ویژگی بخشی از نسخه قدیمی DOM Level 3 Events بود.
 
-## Instance methods
+## روش‌های نمونه
 
-_This interface also inherits methods of its parents, {{domxref("UIEvent")}} and {{domxref("Event")}}._
+_این رابط همچنین روش‌های والدین خود، {{domxref("UIEvent")}} و {{domxref("Event")}} را به ارث می‌برد._
 
 - {{domxref("KeyboardEvent.getModifierState()")}}
-  - : Returns a boolean value indicating if a modifier key such as <kbd>Alt</kbd>, <kbd>Shift</kbd>, <kbd>Ctrl</kbd>, or <kbd>Meta</kbd>, was pressed when the event was created.
+  - : یک مقدار بولین برمی‌گرداند که نشان می‌دهد آیا هنگام ایجاد رویداد، یک کلید اصلاح‌کننده مانند <kbd>Alt</kbd>، <kbd>Shift</kbd>، <kbd>Ctrl</kbd> یا <kbd>Meta</kbd> فشرده شده بود یا خیر.
 
-### Obsolete methods
+### روش‌های منسوخ
 
 - {{domxref("KeyboardEvent.initKeyboardEvent()")}} {{deprecated_inline}}
-  - : Initializes a `KeyboardEvent` object. This is now deprecated. You should instead use the {{domxref("KeyboardEvent.KeyboardEvent", "KeyboardEvent()")}} constructor.
+  - : یک شیء `KeyboardEvent` را مقداردهی اولیه می‌کند. این روش اکنون منسوخ شده است. در عوض باید از سازنده {{domxref("KeyboardEvent.KeyboardEvent", "KeyboardEvent()")}} استفاده کنید.
 
-## Events
+## رویدادها
 
-The following events are based on the `KeyboardEvent` type. In the list below, each event links to the documentation for the `Element` handler for the event, which applies generally to all of the recipients, including {{domxref("Element")}}, {{domxref("Document")}}, and {{domxref("Window")}}.
+رویدادهای زیر بر اساس نوع `KeyboardEvent` هستند. در فهرست زیر، هر رویداد به مستندات مدیریت‌کننده `Element` برای آن رویداد پیوند می‌دهد که به‌طور کلی برای همه دریافت‌کننده‌ها، از جمله {{domxref("Element")}}، {{domxref("Document")}} و {{domxref("Window")}} کاربرد دارد.
 
 - {{domxref("Element.keydown_event", "keydown")}}
-  - : A key has been pressed.
+  - : یک کلید فشرده شده است.
 - {{domxref("Element.keyup_event", "keyup")}}
-  - : A key has been released.
+  - : یک کلید رها شده است.
 
-### Obsolete events
+### رویدادهای منسوخ
 
 - {{domxref("Element.keypress_event", "keypress")}} {{deprecated_inline}}
-  - : A key that normally produces a character value has been pressed. This event was highly device-dependent and is obsolete. You should not use it.
+  - : یک کلید که معمولاً یک مقدار نویسه تولید می‌کند، فشرده شده است. این رویداد به‌شدت به دستگاه وابسته بود و منسوخ شده است. نباید از آن استفاده کنید.
 
-## Usage notes
+## نکات استفاده
 
-There are three types of keyboard events: {{domxref("Element/keydown_event", "keydown")}}, {{domxref("Element/keypress_event", "keypress")}}, and {{domxref("Element/keyup_event", "keyup")}}. For most keys, Gecko dispatches a sequence of key events like this:
+سه نوع رویداد صفحه‌کلید وجود دارد: {{domxref("Element/keydown_event", "keydown")}}، {{domxref("Element/keypress_event", "keypress")}} و {{domxref("Element/keyup_event", "keyup")}}. برای بیشتر کلیدها، Gecko دنباله‌ای از رویدادهای کلید را به این ترتیب ارسال می‌کند:
 
-1. When the key is first pressed, the `keydown` event is sent.
-2. If the key is not a modifier key, the `keypress` event is sent.
-3. When the user releases the key, the `keyup` event is sent.
+1. وقتی کلید برای اولین بار فشرده می‌شود، رویداد `keydown` ارسال می‌شود.
+2. اگر کلید یک کلید اصلاح‌کننده نباشد، رویداد `keypress` ارسال می‌شود.
+3. وقتی کاربر کلید را رها می‌کند، رویداد `keyup` ارسال می‌شود.
 
-### Special cases
+### موارد خاص
 
-Some keys toggle the state of an indicator light; these include keys such as Caps Lock, Num Lock, and Scroll Lock. On Windows and Linux, these keys dispatch only the `keydown` and `keyup` events.
+برخی کلیدها وضعیت یک چراغ نشانگر را تغییر می‌دهند؛ این کلیدها شامل کلیدهایی مانند Caps Lock، Num Lock و Scroll Lock هستند. در ویندوز و لینوکس، این کلیدها فقط رویدادهای `keydown` و `keyup` را ارسال می‌کنند.
 
 > [!NOTE]
-> On Linux, Firefox 12 and earlier also dispatched the `keypress` event for these keys.
+> در لینوکس، Firefox 12 و نسخه‌های قبلی نیز رویداد `keypress` را برای این کلیدها ارسال می‌کردند.
 
-However, a limitation of the macOS event model causes Caps Lock to dispatch only the `keydown` event. Num Lock was supported on some older laptop models (2007 models and older), but since then, macOS hasn't supported Num Lock even on external keyboards. On older MacBooks with a Num Lock key, that key doesn't generate any key events. Gecko does support the Scroll Lock key if an external keyboard which has an F14 key is connected. In certain older versions of Firefox, this key generated a `keypress` event; this inconsistent behavior was [Firefox bug 602812](https://bugzil.la/602812).
+با این حال، یک محدودیت در مدل رویداد macOS باعث می‌شود Caps Lock فقط رویداد `keydown` را ارسال کند. Num Lock در برخی مدل‌های قدیمی‌تر لپ‌تاپ (مدل‌های ۲۰۰۷ و قدیمی‌تر) پشتیبانی می‌شد، اما از آن پس، macOS حتی روی صفحه‌کلیدهای خارجی نیز Num Lock را پشتیبانی نکرده است. در MacBookهای قدیمی‌تر که دارای کلید Num Lock هستند، آن کلید هیچ رویداد کلیدی تولید نمی‌کند. Gecko از کلید Scroll Lock پشتیبانی می‌کند اگر یک صفحه‌کلید خارجی دارای کلید F14 متصل باشد. در برخی نسخه‌های قدیمی‌تر Firefox، این کلید یک رویداد `keypress` تولید می‌کرد؛ این رفتار ناسازگار [باگ Firefox 602812](https://bugzil.la/602812) بود.
 
-### Auto-repeat handling
+### مدیریت تکرار خودکار
 
-When a key is pressed and held down, it begins to auto-repeat. This results in a sequence of events similar to the following being dispatched:
+وقتی یک کلید فشرده شده و نگه داشته می‌شود، شروع به تکرار خودکار می‌کند. این امر منجر به ارسال دنباله‌ای از رویدادها مشابه موارد زیر می‌شود:
 
 1. `keydown`
 2. `keypress`
 3. `keydown`
 4. `keypress`
-5. <\<repeating until the user releases the key>>
+5. <\<تکرار تا زمانی که کاربر کلید را رها کند>>
 6. `keyup`
 
-This is what the DOM Level 3 specification says should happen. There are some caveats, however, as described below.
+این همان چیزی است که مشخصات DOM Level 3 می‌گوید باید رخ دهد. با این حال، نکات احتیاطی وجود دارد که در زیر توضیح داده شده است.
 
-#### Auto-repeat on some GTK environments such as Ubuntu 9.4
+#### تکرار خودکار در برخی محیط‌های GTK مانند Ubuntu 9.4
 
-In some GTK-based environments, auto-repeat dispatches a native key-up event automatically during auto-repeat, and there's no way for Gecko to know the difference between a repeated series of key presses and an auto-repeat. On those platforms, then, an auto-repeat key will generate the following sequence of events:
+در برخی محیط‌های مبتنی بر GTK، تکرار خودکار به‌طور خودکار یک رویداد کلید-بالا (key-up) بومی را در طول تکرار خودکار ارسال می‌کند و Gecko هیچ راهی برای تشخیص تفاوت بین یک سری فشردن کلیدهای تکراری و یک تکرار خودکار ندارد. بنابراین، در آن پلتفرم‌ها، یک کلید با تکرار خودکار دنباله رویدادهای زیر را تولید می‌کند:
 
 1. `keydown`
 2. `keypress`
@@ -217,12 +201,12 @@ In some GTK-based environments, auto-repeat dispatches a native key-up event aut
 4. `keydown`
 5. `keypress`
 6. `keyup`
-7. <\<repeating until the user releases the key>>
+7. <\<تکرار تا زمانی که کاربر کلید را رها کند>>
 8. `keyup`
 
-In these environments, unfortunately, there's no way for web content to tell the difference between auto-repeating keys and keys that are just being pressed repeatedly.
+متأسفانه، در این محیط‌ها، محتوای وب هیچ راهی برای تشخیص تفاوت بین کلیدهای با تکرار خودکار و کلیدهایی که فقط به‌طور مکرر فشرده می‌شوند، ندارد.
 
-## Example
+## مثال
 
 ```js
 document.addEventListener("keydown", (event) => {
@@ -253,22 +237,8 @@ document.addEventListener("keyup", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-The `KeyboardEvent` interface specification went through numerous draft versions, first under DOM Events Level 2 where it was dropped as no consensus arose, then under DOM Events Level 3. This led to the implementation of non-standard initialization methods, the early DOM Events Level 2 version, `KeyboardEvent.initKeyEvent()` by Gecko browsers and the early DOM Events Level 3 version, {{domxref("KeyboardEvent.initKeyboardEvent()")}} by others. Both have been superseded by the modern usage of a constructor: {{domxref("KeyboardEvent.KeyboardEvent", "KeyboardEvent()")}}.
-
-## Browser compatibility
-
-{{Compat}}
-
-### Compatibility notes
-
-- As of Firefox 65, the `keypress` event is no longer fired for [non-printable keys](/en-US/docs/Web/API/KeyboardEvent/keyCode#non-printable_keys_function_keys) ([Firefox bug 968056](https://bugzil.la/968056)), except for the <kbd>Enter</kbd> key, and the <kbd>Shift</kbd> + <kbd>Enter</kbd> and <kbd>Ctrl</kbd> + <kbd>Enter</kbd> key combinations (these were kept for cross-browser compatibility purposes).
-
-## See also
-
-- {{domxref("KeyboardEvent.code")}}.
-- {{domxref("KeyboardEvent.key")}}.
-- {{domxref("KeyboardEvent.getModifierState()")}}
+مشخصات رابط `KeyboardEvent` از نسخه‌های پیش‌نویس متعددی عبور کرد، ابتدا در DOM Events Level 2 که به دلیل عدم حصول اجماع کن
