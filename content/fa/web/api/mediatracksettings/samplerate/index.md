@@ -1,11 +1,5 @@
 ---
 title: "MediaTrackSettings: sampleRate property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/sampleRate"
-status: "needs-translation"
----
-
----
-title: "MediaTrackSettings: sampleRate property"
 short-title: sampleRate
 slug: Web/API/MediaTrackSettings/sampleRate
 page-type: web-api-instance-property
@@ -14,45 +8,29 @@ browser-compat: api.MediaStreamTrack.applyConstraints.sampleRate_constraint
 
 {{APIRef("Media Capture and Streams")}}
 
-The {{domxref("MediaTrackSettings")}} dictionary's
-**`sampleRate`** property is an integer indicating how many
-audio samples per second the {{domxref("MediaStreamTrack")}} is currently configured
-for. This lets you determine what value was selected to comply with your specified
-constraints for this property's value as described in the
-{{domxref("MediaTrackConstraints.sampleRate")}} property you provided when calling
-either {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}} or
-{{domxref("MediaStreamTrack.applyConstraints()")}}.
+خاصیت **`sampleRate`** از فرهنگ {{domxref("MediaTrackSettings")}} یک عدد صحیح است که نشان می‌دهد {{domxref("MediaStreamTrack")}} در حال حاضر برای چند نمونه صوتی در هر ثانیه پیکربندی شده است. این به شما امکان می‌دهد تعیین کنید کدام مقدار برای مطابقت با محدودیت‌های مشخص‌شده شما برای این خاصیت انتخاب شده است، همانطور که در خاصیت {{domxref("MediaTrackConstraints.sampleRate")}} که هنگام فراخوانی {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}} یا {{domxref("MediaStreamTrack.applyConstraints()")}} ارائه کرده‌اید، توضیح داده شده است.
 
-If needed, you can determine whether or not this constraint is supported by checking
-the value of {{domxref("MediaTrackSupportedConstraints.sampleRate")}} as returned by a
-call to {{domxref("MediaDevices.getSupportedConstraints()")}}. However, typically this
-is unnecessary since browsers will ignore any constraints they're unfamiliar with.
+در صورت نیاز، می‌توانید با بررسی مقدار {{domxref("MediaTrackSupportedConstraints.sampleRate")}} که از فراخوانی {{domxref("MediaDevices.getSupportedConstraints()")}} بازگردانده می‌شود، تعیین کنید که آیا این محدودیت پشتیبانی می‌شود یا خیر. با این حال، معمولاً این کار ضروری نیست زیرا مرورگرها هر محدودیتی را که با آن آشنا نباشند نادیده می‌گیرند.
 
-## Value
+## مقدار
 
-An integer value indicating how many samples each second of audio data includes. Common
-values include 44,100 (standard CD audio), 48,000 (standard digital audio), 96,000
-(commonly used in audio mastering and post-production), and 192,000 (used for
-high-resolution audio in professional recording and mastering sessions). However, lower
-values are often used to reduce bandwidth requirements; 8,000 samples per second is
-adequate for comprehensible albeit imperfect human speech, and both 11,025 FPS and
-22,050 FPS are often used for low-bandwidth, reduced quality sound and music.
+یک عدد صحیح که نشان می‌دهد هر ثانیه از داده‌های صوتی شامل چند نمونه است. مقادیر رایج عبارتند از ۴۴٬۱۰۰ (صدای استاندارد CD)، ۴۸٬۰۰۰ (صدای دیجیتال استاندارد)، ۹۶٬۰۰۰ (که معمولاً در مسترینگ و پس از تولید صدا استفاده می‌شود)، و ۱۹۲٬۰۰۰ (که برای صدای با وضوح بالا در ضبط و مسترینگ حرفه‌ای استفاده می‌شود). با این حال، مقادیر پایین‌تر اغلب برای کاهش نیازهای پهنای باند استفاده می‌شوند؛ ۸٬۰۰۰ نمونه در ثانیه برای گفتار قابل فهم هرچند ناقص انسان کافی است، و هر دو ۱۱٬۰۲۵ و ۲۲٬۰۵۰ نمونه در ثانیه اغلب برای صدا و موسیقی با پهنای باند کم و کیفیت کاهش‌یافته استفاده می‌شوند.
 
-## Examples
+## مثال‌ها
 
-See the [Constraint exerciser](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#example_constraint_exerciser) example.
+به مثال [تمرین‌کننده محدودیت‌ها](/fa/docs/Web/API/Media_Capture_and_Streams_API/Constraints#example_constraint_exerciser) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
-- [Capabilities, constraints, and settings](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints)
+- [API ضبط و جریان‌های رسانه](/fa/docs/Web/API/Media_Capture_and_Streams_API)
+- [قابلیت‌ها، محدودیت‌ها و تنظیمات](/fa/docs/Web/API/Media_Capture_and_Streams_API/Constraints)
 - {{domxref("MediaTrackConstraints.sampleRate")}}
 - {{domxref("MediaTrackSettings")}}
