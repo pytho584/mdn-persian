@@ -1,11 +1,5 @@
 ---
 title: "IDBFactory: databases() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBFactory/databases"
-status: "needs-translation"
----
-
----
-title: "IDBFactory: databases() method"
 short-title: databases()
 slug: Web/API/IDBFactory/databases
 page-type: web-api-instance-method
@@ -14,47 +8,45 @@ browser-compat: api.IDBFactory.databases
 
 {{ APIRef("IndexedDB") }} {{AvailableInWorkers}}
 
-The **`databases`** method of the {{domxref("IDBFactory")}} interface returns a {{jsxref("Promise")}} that fulfills with an array of objects containing the name and version of all the available databases.
+متد **`databases`** از رابط {{domxref("IDBFactory")}} یک {{jsxref("Promise")}} برمی‌گرداند که با آرایه‌ای از اشیاء حاوی نام و نسخهٔ تمام پایگاه‌داده‌های موجود، تکمیل می‌شود.
 
-This is a snapshot of the databases, intended primarily to allow web applications to check what databases have been created — in order to, for example, clean up databases created by earlier versions of application code.
+این یک عکس فوری (snapshot) از پایگاه‌داده‌ها است که عمدتاً برای این در نظر گرفته شده تا برنامه‌های وب بتوانند بررسی کنند که چه پایگاه‌داده‌هایی ایجاد شده‌اند – مثلاً برای پاک‌سازی پایگاه‌داده‌هایی که توسط نسخه‌های قدیمی‌تر کد برنامه ایجاد شده‌اند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 databases()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that fulfills with an array of objects representing a snapshot of the available databases (or rejects with the error/exceptions below).
+یک {{jsxref("Promise")}} که با آرایه‌ای از اشیاء نشان‌دهندهٔ عکس فوری از پایگاه‌داده‌های موجود تکمیل می‌شود (یا با خطا/استثناهای زیر رد می‌شود).
 
-Each array object has the following properties:
+هر شیء آرایه دارای ویژگی‌های زیر است:
 
 - `name`
-  - : A database name.
+  - : نام پایگاه‌داده.
 - `version`
-  - : The database version.
+  - : نسخهٔ پایگاه‌داده.
 
-Note that the sequence on the returned objects is undefined.
+توجه داشته باشید که ترتیب اشیاء بازگشتی تعریف نشده است.
 
-### Exceptions
+### استثناها
 
 - `SecurityError` {{domxref("DOMException")}}
-  - : Thrown if the method is called from an [opaque origin](https://stackoverflow.com/questions/42239643/when-do-browsers-send-the-origin-header-when-do-browsers-set-the-origin-to-null/42242802#42242802) or the user has disabled storage.
-
+  - : اگر متد از یک [مبدأ opaque](https://stackoverflow.com/questions/42239643/when-do-browsers-send-the-origin-header-when-do-browsers-set-the-origin-to-null/42242802#42242802) فراخوانی شود یا کاربر فضای ذخیره‌سازی را غیرفعال کرده باشد، پرتاب می‌شود.
 - `UnknownError` {{domxref("DOMException")}}
-  - : Thrown if the set of available databases cannot be determined for any reason.
+  - : اگر به هر دلیلی نتوان مجموعهٔ پایگاه‌داده‌های موجود را تعیین کرد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Create and list databases
+### ایجاد و فهرست‌کردن پایگاه‌داده‌ها
 
-This example creates/opens a number of databases.
-On successful initialization of each database it lists all the available databases.
+این مثال تعدادی پایگاه‌داده ایجاد/باز می‌کند. پس از راه‌اندازی موفق هر پایگاه‌داده، تمام پایگاه‌داده‌های موجود را فهرست می‌کند.
 
 ```html hidden
 <pre id="log"></pre>
@@ -79,8 +71,7 @@ function log(text) {
 
 #### JavaScript
 
-First we define the function that is used to get and log the available databases.
-This awaits on the promise returned by `indexedDB.databases()` and then iterates the array and lists the values of each element:
+ابتدا تابعی را تعریف می‌کنیم که برای دریافت و ثبت پایگاه‌داده‌های موجود استفاده می‌شود. این تابع منتظر Promise بازگشتی از `indexedDB.databases()` می‌ماند و سپس آرایه را پیمایش کرده و مقادیر هر عنصر را فهرست می‌کند:
 
 ```js
 async function getDb() {
@@ -92,9 +83,7 @@ async function getDb() {
 }
 ```
 
-To demonstrate how the above function is used, below we create two databases.
-For each database, we log just before the database is opened.
-We also log on successful initialization (or error) and then also log the available databases.
+برای نشان دادن نحوهٔ استفاده از تابع بالا، در زیر دو پایگاه‌داده ایجاد می‌کنیم. برای هر پایگاه‌داده، درست قبل از باز شدن، یک پیام ثبت می‌کنیم. همچنین در زمان راه‌اندازی موفق (یا خطا) نیز ثبت می‌کنیم و سپس پایگاه‌داده‌های موجود را فهرست می‌کنیم.
 
 ```js
 // Create a database named toDoList with default version (1)
@@ -128,26 +117,26 @@ DBOpenRequest.addEventListener("success", (event) => {
 });
 ```
 
-#### Result
+#### نتیجه
 
-The result is shown below. Note that the time taken to get the databases and their order is undefined.
+نتیجه در زیر نشان داده شده است. توجه داشته باشید که زمان لازم برای دریافت پایگاه‌داده‌ها و ترتیب آن‌ها تعریف نشده است.
 
 {{EmbedLiveSample('Create and list databases', '100%', '280px')}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم محدوده‌ای از کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و ایجاد تغییرات در داده‌های خود: {{domxref("IDBObjectStore")}}
+- استفاده از نشانگرها: {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهدهٔ مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
