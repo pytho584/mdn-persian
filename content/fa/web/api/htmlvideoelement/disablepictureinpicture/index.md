@@ -1,7 +1,5 @@
 ---
 title: "HTMLVideoElement: disablePictureInPicture property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLVideoElement/disablePictureInPicture"
-status: "needs-translation"
 ---
 
 ---
@@ -14,18 +12,18 @@ browser-compat: api.HTMLVideoElement.disablePictureInPicture
 
 {{APIRef("Picture-in-Picture API")}}
 
-The {{domxref("HTMLVideoElement")}} **`disablePictureInPicture`** property reflects the HTML attribute indicating whether the picture-in-picture feature is disabled for the current element.
+ویژگی {{domxref("HTMLVideoElement")}} با نام **`disablePictureInPicture`**، بازتاب‌دهندهٔ صفت HTML است که نشان می‌دهد آیا قابلیت تصویر-در-تصویر (Picture-in-Picture) برای عنصر جاری غیرفعال شده است یا نه.
 
-This value only represents a request from the website to the user agent. User configuration may change the eventual behavior—for example, Firefox users can change the `media.videocontrols.picture-in-picture.respect-disablePictureInPicture` setting to ignore the request to disable PiP.
+این مقدار صرفاً نمایانگر یک درخواست از طرف وب‌سایت به عامل کاربر (user agent) است. ممکن است پیکربندی کاربر، رفتار نهایی را تغییر دهد؛ برای مثال، کاربران فایرفاکس می‌توانند تنظیم `media.videocontrols.picture-in-picture.respect-disablePictureInPicture` را تغییر دهند تا درخواست غیرفعال‌سازی حالت تصویر-در-تصویر (PiP) نادیده گرفته شود.
 
-## Value
+## مقدار
 
-A boolean value that is `true` if the picture-in-picture feature is disabled for this element. This means that the user agent should not suggest that feature to users, or request it automatically.
+یک مقدار بولی (boolean) که اگر قابلیت تصویر-در-تصویر برای این عنصر غیرفعال شده باشد، مقدار آن `true` است؛ یعنی عامل کاربر نباید این ویژگی را به کاربران پیشنهاد دهد یا به‌صورت خودکار آن را درخواست کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
