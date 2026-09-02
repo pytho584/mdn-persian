@@ -1,11 +1,5 @@
 ---
 title: "MediaSource: endOfStream() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/endOfStream"
-status: "needs-translation"
----
-
----
-title: "MediaSource: endOfStream() method"
 short-title: endOfStream()
 slug: Web/API/MediaSource/endOfStream
 page-type: web-api-instance-method
@@ -14,49 +8,36 @@ browser-compat: api.MediaSource.endOfStream
 
 {{APIRef("Media Source Extensions")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`endOfStream()`** method of the
-{{domxref("MediaSource")}} interface signals the end of the stream.
+متد **`endOfStream()`** از رابط {{domxref("MediaSource")}} پایان جریان را اعلام می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 endOfStream()
 endOfStream(endOfStreamError)
 ```
 
-### Parameters
+### پارامترها
 
 - `endOfStreamError` {{optional_inline}}
-  - : A string representing an error to throw when the end of the stream
-    is reached. The possible values are:
+  - : یک رشته که خطایی را برای پرتاب کردن هنگام رسیدن به پایان جریان مشخص می‌کند. مقادیر ممکن عبارتند از:
     - `network`
-      - : Terminates playback and signals that a network error has
-        occurred. This can be used create a custom error handler related to media streams.
-        For example, you might have a function that handles media chunk requests, separate
-        from other network requests. When you make a {{domxref("Window/fetch", "fetch()")}} request for a media
-        chunk and receive a network error, you might want
-        to call `endOfStream('network')`, display a descriptive message in the
-        UI, and maybe retry the network request immediately or wait until the network is
-        back up (via some kind of polling.)
+      - : پخش را خاتمه می‌دهد و اعلام می‌کند که یک خطای شبکه رخ داده است. این می‌تواند برای ایجاد یک کنترل‌کننده خطای سفارشی مرتبط با جریان‌های رسانه‌ای استفاده شود. به عنوان مثال، ممکن است تابعی داشته باشید که درخواست‌های تکه‌های رسانه را جدا از سایر درخواست‌های شبکه مدیریت می‌کند. هنگامی که یک درخواست {{domxref("Window/fetch", "fetch()")}} برای یک تکه رسانه انجام می‌دهید و با خطای شبکه مواجه می‌شوید، ممکن است بخواهید `endOfStream('network')` را فراخوانی کنید، یک پیام توصیفی در رابط کاربری نمایش دهید، و شاید بلافاصله درخواست شبکه را مجدداً امتحان کنید یا تا زمانی که شبکه دوباره وصل شود (از طریق نوعی نظرسنجی) صبر کنید.
     - `decode`
-      - : Terminates playback and signals that a decoding error has
-        occurred. This can be used to indicate that a parsing error has occurred while
-        fetching media data; maybe the data is corrupt, or is encoded using a codec that
-        the browser doesn't know how to decode.
+      - : پخش را خاتمه می‌دهد و اعلام می‌کند که یک خطای رمزگشایی رخ داده است. این می‌تواند برای نشان دادن این که در هنگام واکشی داده‌های رسانه یک خطای تجزیه رخ داده است استفاده شود؛ ممکن است داده‌ها خراب باشند، یا با استفاده از یک کدک که مرورگر نحوه رمزگشایی آن را نمی‌داند، رمزگذاری شده باشند.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if {{domxref("MediaSource.readyState")}} is not equal to `open`, or one or more of the {{domxref("SourceBuffer")}} objects in {{domxref("MediaSource.sourceBuffers")}} are being updated (i.e., their {{domxref("SourceBuffer.updating")}} property is
-    `true`.)
+  - : اگر {{domxref("MediaSource.readyState")}} برابر با `open` نباشد، یا یک یا چند شیء {{domxref("SourceBuffer")}} در {{domxref("MediaSource.sourceBuffers")}} در حال به‌روزرسانی باشند (یعنی خاصیت {{domxref("SourceBuffer.updating")}} آنها `true` باشد)، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-The following snippet is from an example written by Nick Desaulniers ([view the full demo live](https://nickdesaulniers.github.io/netfix/demo/bufferAll.html), or [download the source](https://github.com/nickdesaulniers/netfix/blob/gh-pages/demo/bufferAll.html) for further investigation). The function `getMediaSource()`, which is not defined here, returns a `MediaSource`.
+قطعه کد زیر از یک مثال نوشته شده توسط Nick Desaulniers گرفته شده است ([مشاهده دموی کامل به صورت زنده](https://nickdesaulniers.github.io/netfix/demo/bufferAll.html)، یا [دانلود سورس](https://github.com/nickdesaulniers/netfix/blob/gh-pages/demo/bufferAll.html) برای بررسی بیشتر). تابع `getMediaSource()` که در اینجا تعریف نشده است، یک `MediaSource` برمی‌گرداند.
 
 ```js
 const assetURL = "frag_bunny.mp4";
@@ -89,15 +70,15 @@ function sourceOpen() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("SourceBuffer")}}
 - {{domxref("SourceBufferList")}}
