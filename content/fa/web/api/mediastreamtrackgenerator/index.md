@@ -1,10 +1,4 @@
 ---
-title: "MediaStreamTrackGenerator"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrackGenerator"
-status: "needs-translation"
----
-
----
 title: MediaStreamTrackGenerator
 slug: Web/API/MediaStreamTrackGenerator
 page-type: web-api-interface
@@ -17,30 +11,30 @@ browser-compat: api.MediaStreamTrackGenerator
 {{APIRef("Insertable Streams for MediaStreamTrack API")}}{{SeeCompatTable}}{{Non-standard_Header}}
 
 > [!NOTE]
-> Consider using {{domxref("VideoTrackGenerator")}} instead.
+> به‌جای آن از {{domxref("VideoTrackGenerator")}} استفاده کنید.
 
-The **`MediaStreamTrackGenerator`** interface of the [Insertable Streams for MediaStreamTrack API](/en-US/docs/Web/API/Insertable_Streams_for_MediaStreamTrack_API) creates a {{domxref("WritableStream")}} that acts as a {{domxref("MediaStreamTrack")}} source.
-The object consumes a stream of media frames as input, which can be audio or video frames.
+رابط **`MediaStreamTrackGenerator`** در [API جریان‌های قابل درج برای MediaStreamTrack](/en-US/docs/Web/API/Insertable_Streams_for_MediaStreamTrack_API) یک {{domxref("WritableStream")}} ایجاد می‌کند که به‌عنوان منبع {{domxref("MediaStreamTrack")}} عمل می‌کند.
+این شیء یک جریان از فریم‌های رسانه‌ای را به‌عنوان ورودی مصرف می‌کند که می‌تواند فریم‌های صوتی یا تصویری باشد.
 
-## Constructor
+## سازنده
 
 - {{domxref("MediaStreamTrackGenerator.MediaStreamTrackGenerator", "MediaStreamTrackGenerator()")}} {{Experimental_Inline}} {{Non-standard_Inline}}
-  - : Creates a new `MediaStreamTrackGenerator` object which accepts either {{domxref("VideoFrame")}} or {{domxref("AudioData")}} objects.
+  - : یک شیء `MediaStreamTrackGenerator` جدید ایجاد می‌کند که اشیاء {{domxref("VideoFrame")}} یا {{domxref("AudioData")}} را می‌پذیرد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface also inherits properties from {{domxref("MediaStreamTrack")}}._
+_این رابط همچنین ویژگی‌های {{domxref("MediaStreamTrack")}} را به ارث می‌برد._
 
 - {{domxref("MediaStreamTrackGenerator.writable")}} {{Experimental_Inline}} {{Non-standard_Inline}}
-  - : A {{domxref("WritableStream")}}.
+  - : یک {{domxref("WritableStream")}}.
 
-## Instance methods
+## روش‌های نمونه
 
-_This interface doesn't implement any specific methods, but inherits methods from {{domxref("MediaStreamTrack")}}._
+_این رابط هیچ روش خاصی را پیاده‌سازی نمی‌کند، اما روش‌های {{domxref("MediaStreamTrack")}} را به ارث می‌برد._
 
-## Examples
+## مثال‌ها
 
-The following example is from the article [Insertable streams for MediaStreamTrack](https://developer.chrome.com/docs/capabilities/web-apis/mediastreamtrack-insertable-media-processing), and demonstrates a barcode scanner application, which process barcodes and highlights them before writing the transformed frames to the writable stream of {{domxref("MediaStreamTrackGenerator.writable")}}.
+مثال زیر از مقاله [جریان‌های قابل درج برای MediaStreamTrack](https://developer.chrome.com/docs/capabilities/web-apis/mediastreamtrack-insertable-media-processing) گرفته شده است و یک برنامه اسکنر بارکد را نشان می‌دهد که بارکدها را پردازش و برجسته می‌کند و سپس فریم‌های تبدیل‌شده را به جریان نوشتنی {{domxref("MediaStreamTrackGenerator.writable")}} می‌نویسد.
 
 ```js
 const stream = await getUserMedia({ video: true });
@@ -63,14 +57,14 @@ trackProcessor.readable
   .pipeTo(trackGenerator.writable);
 ```
 
-## See also
+## همچنین ببینید
 
 - {{domxref("VideoTrackGenerator")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
