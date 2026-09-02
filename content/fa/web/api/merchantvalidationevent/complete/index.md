@@ -1,11 +1,5 @@
 ---
 title: "MerchantValidationEvent: complete() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MerchantValidationEvent/complete"
-status: "needs-translation"
----
-
----
-title: "MerchantValidationEvent: complete() method"
 short-title: complete()
 slug: Web/API/MerchantValidationEvent/complete
 page-type: web-api-instance-method
@@ -17,9 +11,9 @@ browser-compat: api.MerchantValidationEvent.complete
 
 {{APIRef("Payment Request API")}}{{Deprecated_Header}}{{SecureContext_Header}}{{non-standard_header}}
 
-The {{domxref("MerchantValidationEvent")}} method **`complete()`** takes merchant-specific information previously received from the {{domxref("MerchantValidationEvent.validationURL", "validationURL")}} and uses it to validate the merchant.
+متد **`complete()`** از {{domxref("MerchantValidationEvent")}} اطلاعات مخصوص فروشنده را که قبلاً از {{domxref("MerchantValidationEvent.validationURL", "validationURL")}} دریافت شده است، می‌گیرد و از آن برای تأیید اعتبار فروشنده استفاده می‌کند.
 
-All you have to do is call `complete()` from your handler for the {{domxref("PaymentRequest.merchantvalidation_event", "merchantvalidation")}} event, passing in the data fetched from the `validationURL`.
+تنها کاری که باید انجام دهید این است که از کنترل‌کننده رویداد {{domxref("PaymentRequest.merchantvalidation_event", "merchantvalidation")}} خود، تابع `complete()` را با داده‌هایی که از `validationURL` دریافت کرده‌اید فراخوانی کنید.
 
 ## Syntax
 
@@ -30,23 +24,23 @@ complete(merchantSessionPromise)
 
 ### Parameters
 
-- `validationData` or `merchantSessionPromise`
-  - : An object containing the data needed to complete the merchant validation process, or a {{jsxref("Promise")}} which resolves to the validation data.
+- `validationData` یا `merchantSessionPromise`
+  - : یک شیء حاوی داده‌های لازم برای تکمیل فرآیند تأیید اعتبار فروشنده، یا یک {{jsxref("Promise")}} که به داده‌های تأیید اعتبار resolve می‌شود.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
 ### Exceptions
 
-This exception may be passed into the rejection handler for the promise:
+این استثنا ممکن است به کنترل‌کننده rejection پرامیس ارسال شود:
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Returned if the event did not come directly from the user agent, but was instead dispatched by other code. Another payment request is currently being processed, the current payment request is not currently being displayed to the user, or payment information is currently being updated.
+  - : اگر رویداد مستقیماً از عامل کاربر (user agent) نیامده باشد، بلکه توسط کد دیگری ارسال شده باشد، بازگردانده می‌شود. همچنین اگر در حال حاضر درخواست پرداخت دیگری در حال پردازش باشد، درخواست پرداخت فعلی به کاربر نمایش داده نشود، یا اطلاعات پرداخت در حال به‌روزرسانی باشد.
 
 ## Examples
 
-In this example, we see the client-side code needed to support merchant validation for a payment request called `payRequest`:
+در این مثال، کد سمت کلاینت مورد نیاز برای پشتیبانی از تأیید اعتبار فروشنده برای یک درخواست پرداخت به نام `payRequest` را مشاهده می‌کنیم:
 
 ```js
 payRequest.onmerchantvalidation = (event) => {
@@ -60,7 +54,7 @@ function getValidationData(url) {
 }
 ```
 
-This code sets up a handler for the {{domxref("PaymentRequest.merchantvalidation_event", "merchantvalidation")}} event. The event handler calls a function, `getValidationData()`, which retrieves the data from the validation URL, then passes that data (or a promise to deliver the data) into `complete()`.
+این کد یک کنترل‌کننده برای رویداد {{domxref("PaymentRequest.merchantvalidation_event", "merchantvalidation")}} تنظیم می‌کند. کنترل‌کننده رویداد تابعی به نام `getValidationData()` را فراخوانی می‌کند که داده‌ها را از URL تأیید اعتبار دریافت می‌کند و سپس آن داده‌ها (یا یک پرامیس برای تحویل داده‌ها) را به `complete()` منتقل می‌کند.
 
 ## Browser compatibility
 
