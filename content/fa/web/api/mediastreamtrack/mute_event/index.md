@@ -1,11 +1,5 @@
 ---
 title: "MediaStreamTrack: mute event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/mute_event"
-status: "needs-translation"
----
-
----
-title: "MediaStreamTrack: mute event"
 short-title: mute
 slug: Web/API/MediaStreamTrack/mute_event
 page-type: web-api-event
@@ -14,20 +8,20 @@ browser-compat: api.MediaStreamTrack.mute_event
 
 {{APIRef("Media Capture and Streams")}}
 
-The **`mute`** event is sent to a {{domxref("MediaStreamTrack")}} when the track's source is temporarily unable to provide media data.
+رویداد **`mute`** زمانی به یک {{domxref("MediaStreamTrack")}} ارسال می‌شود که منبع آن ردیاب به‌طور موقت قادر به ارائه داده‌های رسانه‌ای نباشد.
 
-When the track is once again able to produce media output, an {{domxref("MediaStreamTrack/unmute_event", "unmute")}} event is sent.
+زمانی که ردیاب دوباره بتواند خروجی رسانه‌ای تولید کند، رویداد {{domxref("MediaStreamTrack/unmute_event", "unmute")}} ارسال می‌شود.
 
-During the time between the `mute` event and the `unmute` event, the value of the track's {{domxref("MediaStreamTrack.muted", "muted")}} property is `true`.
+در فاصله بین رویداد `mute` و رویداد `unmute`، مقدار ویژگی {{domxref("MediaStreamTrack.muted", "muted")}} ردیاب برابر با `true` است.
 
 > [!NOTE]
-> The condition that most people think of as "muted" (that is, a user-toggled state of silencing a track) is actually managed using the {{domxref("MediaStreamTrack.enabled")}} property, for which there are no events.
+> وضعیتی که بیشتر افراد آن را «بی‌صدا بودن» می‌دانند (یعنی حالتی که کاربر با اختیار خود یک ردیاب را ساکت می‌کند) در واقع با استفاده از ویژگی {{domxref("MediaStreamTrack.enabled")}} مدیریت می‌شود که برای آن هیچ رویدادی وجود ندارد.
 
-This event is not cancelable and does not bubble.
+این رویداد قابل لغو (cancelable) نیست و bubble نمی‌شود.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی مدیریت‌کننده رویداد (event handler property) تنظیم کنید.
 
 ```js-nolint
 addEventListener("mute", (event) => { })
@@ -35,13 +29,13 @@ addEventListener("mute", (event) => { })
 onmute = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## مثال‌ها
 
-In this example, event handlers are established for the `mute` and {{domxref("MediaStreamTrack.unmute_event", "unmute")}} events in order to detect when the media is not flowing from the source for the {{domxref("MediaStreamTrack")}} referenced by `musicTrack`.
+در این مثال، مدیریت‌کننده‌های رویداد برای رویدادهای `mute` و {{domxref("MediaStreamTrack.unmute_event", "unmute")}} تنظیم شده‌اند تا زمانی که رسانه از منبع برای {{domxref("MediaStreamTrack")}} ارجاع‌داده‌شده توسط `musicTrack` جریان نداشته باشد، شناسایی شود.
 
 ```js
 musicTrack.addEventListener("mute", (event) => {
@@ -54,9 +48,9 @@ musicTrack.addEventListener("unmute", (event) => {
 });
 ```
 
-With these event handlers in place, when the track `musicTrack` enters its {{domxref("MediaStreamTrack.muted", "muted")}} state, the element with the ID `timeline-widget` gets its background color changed to `#aaaaaa`. When the track exits the muted state—detected by the arrival of an `unmute` event—the background color is restored to white.
+با وجود این مدیریت‌کننده‌های رویداد، وقتی ردیاب `musicTrack` وارد حالت {{domxref("MediaStreamTrack.muted", "muted")}} می‌شود، رنگ پس‌زمینه عنصر با شناسه `timeline-widget` به `#aaaaaa` تغییر می‌کند. وقتی ردیاب از حالت بی‌صدا خارج می‌شود — که با رسیدن رویداد `unmute` شناسایی می‌شود — رنگ پس‌زمینه به سفید بازنشانی می‌شود.
 
-You can also use the `onmute` event handler property to set up a handler for this event; similarly, the {{domxref("MediaStreamTrack.unmute_event", "onunmute")}} event handler is available for setting up a handler for the `unmute` event. The following example shows this:
+همچنین می‌توانید از ویژگی مدیریت‌کننده رویداد `onmute` برای تنظیم یک مدیریت‌کننده برای این رویداد استفاده کنید؛ به‌طور مشابه، ویژگی مدیریت‌کننده رویداد {{domxref("MediaStreamTrack.unmute_event", "onunmute")}} برای تنظیم مدیریت‌کننده رویداد `unmute` در دسترس است. مثال زیر این را نشان می‌دهد:
 
 ```js
 musicTrack.onmute = (event) => {
@@ -68,12 +62,12 @@ musicTrack.onunmute = (event) => {
 };
 ```
 
-### Mute tracks through receivers
+### بی‌صدا کردن ردیاب‌ها از طریق گیرنده‌ها (receivers)
 
-The following example shows how to mute tracks using receivers.
+مثال زیر نحوه بی‌صدا کردن ردیاب‌ها با استفاده از گیرنده‌ها را نشان می‌دهد.
 
 ```js
-// Peer 1 (Sender)
+// همتای ۱ (فرستنده)
 const transceivers = peer.getTransceivers();
 
 const audioTrack = transceivers[0];
@@ -82,27 +76,27 @@ audioTrack.direction = "recvonly";
 const videoTrack = transceivers[1];
 videoTrack.direction = "recvonly";
 
-// Peer 2 (Receiver)
+// همتای ۲ (گیرنده)
 audioTrack.addEventListener("mute", (event) => {
-  // Do something in UI
+  // کاری در رابط کاربری انجام دهید
 });
 
 videoTrack.addEventListener("mute", (event) => {
-  // Do something in UI
+  // کاری در رابط کاربری انجام دهید
 });
 ```
 
-`transceivers` is an array of {{domxref("RTCRtpTransceiver")}} where you can find the audio or video track sent and received. For more information, see the {{domxref("RTCRtpTransceiver.direction", "direction")}} article.
+`transceivers` آرایه‌ای از {{domxref("RTCRtpTransceiver")}} است که می‌توانید ردیاب صوتی یا تصویری ارسال‌شده و دریافت‌شده را در آن بیابید. برای اطلاعات بیشتر، مقاله {{domxref("RTCRtpTransceiver.direction", "direction")}} را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("MediaStreamTrack/unmute_event", "unmute")}} event
+- رویداد {{domxref("MediaStreamTrack/unmute_event", "unmute")}}
 - {{domxref("RTCRtpTransceiver.direction", "direction")}}
