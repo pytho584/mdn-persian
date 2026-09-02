@@ -1,9 +1,4 @@
----
-title: "IdentityCredentialRequestOptions"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IdentityCredentialRequestOptions"
-status: "needs-translation"
----
-
+```
 ---
 title: IdentityCredentialRequestOptions
 slug: Web/API/IdentityCredentialRequestOptions
@@ -14,70 +9,71 @@ spec-urls: https://w3c-fedid.github.io/FedCM/#dictdef-identitycredentialrequesto
 
 {{APIRef("FedCM API")}}{{SecureContext_Header}}
 
-The **`IdentityCredentialRequestOptions`** dictionary represents the object passed to {{domxref("CredentialsContainer.get()")}} as the value of the `identity` option.
+دیکشنری **`IdentityCredentialRequestOptions`** نشان‌دهنده شیءای است که به عنوان مقدار گزینه `identity` به {{domxref("CredentialsContainer.get()")}} ارسال می‌شود.
 
-When an `identity` option is provided in a `get()` call made on a {{glossary("Relying party", "relying party")}} (RP) website, the user is offered a list of {{glossary("identity provider", "federated identity providers")}} (IdPs) as sign-in options. Once the user signs in successfully using one of these options, the promise returned by the `get()` call returns an {{domxref("IdentityCredential")}} object.
+زمانی که یک گزینه `identity` در یک فراخوانی `get()` که در یک وب‌سایت {{glossary("Relying party", "relying party")}} (RP) انجام می‌شود ارائه شود، به کاربر فهرستی از {{glossary("identity provider", "federated identity providers")}} (IdP) به عنوان گزینه‌های ورود ارائه می‌شود. پس از آن که کاربر با موفقیت با استفاده از یکی از این گزینه‌ها وارد شد، پرامیس بازگشتی از فراخوانی `get()` یک شیء {{domxref("IdentityCredential")}} برمی‌گرداند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - `context` {{optional_inline}}
-  - : A string specifying the context in which the user is authenticating with FedCM. The browser uses this value to vary the text in its FedCM UI to better suit the context. Possible values are:
+  - : رشته‌ای که مشخص‌کننده بافتی است که کاربر در آن با FedCM احراز هویت می‌کند. مرورگر از این مقدار برای تغییر متن در واسط کاربری FedCM خود استفاده می‌کند تا با بافت بهتر تطابق داشته باشد. مقادیر ممکن عبارتند از:
     - `"continue"`
-      - : Suitable for situations where the user is choosing an identity to continue to the next page in the flow, which requires a sign-in. Browsers will provide a text string similar to:
+      - : مناسب برای موقعیت‌هایی که کاربر در حال انتخاب یک هویت برای ادامه به صفحه بعدی در جریان است که نیاز به ورود دارد. مرورگرها متنی مشابه زیر ارائه می‌دهند:
 
-        > _Continue to \<page-origin\> with \<IdP\>_
+        > _ادامه به \<page-origin\> با \<IdP\>_
 
     - `"signin"`
-      - : Suitable for general situations where the user is signing in with an IdP account they've already used on this origin. Browsers will provide a text string similar to:
+      - : مناسب برای موقعیت‌های عمومی که کاربر با یک حساب IdP که قبلاً در این مبدأ استفاده کرده است وارد می‌شود. مرورگرها متنی مشابه زیر ارائه می‌دهند:
 
-        > _Sign in to \<page-origin\> with \<IdP\>_
+        > _ورود به \<page-origin\> با \<IdP\>_
 
     - `"signup"`
-      - : An option for situations where the user is signing in to the origin with a new IdP account they've not used here before. Browsers will provide a text string similar to:
+      - : گزینه‌ای برای موقعیت‌هایی که کاربر با یک حساب IdP جدید که قبلاً در این مبدأ استفاده نکرده است وارد می‌شود. مرورگرها متنی مشابه زیر ارائه می‌دهند:
 
-        > _Sign up to \<page-origin\> with \<IdP\>_
+        > _ثبت‌نام در \<page-origin\> با \<IdP\>_
 
     - `"use"`
-      - : Suitable for situations where a different action, such as validating a payment, is being performed. Browsers will provide a text string similar to:
+      - : مناسب برای موقعیت‌هایی که یک اقدام متفاوت، مانند تأیید پرداخت، انجام می‌شود. مرورگرها متنی مشابه زیر ارائه می‌دهند:
 
-        > _Use \<page-origin\> with \<IdP\>_
+        > _استفاده از \<page-origin\> با \<IdP\>_
 
-    The default value is `"signin"`.
+    مقدار پیش‌فرض `"signin"` است.
 
 - `mode` {{optional_inline}}
-  - : A string specifying the UI mode to use for the sign-in flow. Possible values are:
+  - : رشته‌ای که مشخص‌کننده حالت واسط کاربری برای استفاده در جریان ورود است. مقادیر ممکن عبارتند از:
     - `active`
-      - : The sign-in flow must be initiated via a user action such as clicking a button. If `mode` is set to `active`, `providers` can only have a length of `1`, otherwise the `get()` promise will reject.
+      - : جریان ورود باید از طریق یک اقدام کاربر مانند کلیک کردن روی یک دکمه آغاز شود. اگر `mode` روی `active` تنظیم شود، `providers` فقط می‌تواند طول `1` داشته باشد، در غیر این صورت پرامیس `get()` رد می‌شود.
     - `passive`
-      - : The sign-in flow can be initiated without direct user interaction. This is the default value.
+      - : جریان ورود می‌تواند بدون تعامل مستقیم کاربر آغاز شود. این مقدار پیش‌فرض است.
 
-    See [Active versus passive mode](/en-US/docs/Web/API/FedCM_API/RP_sign-in#active_versus_passive_mode) for more details of the difference between the two modes.
+    برای جزئیات بیشتر در مورد تفاوت بین دو حالت، به [حالت فعال در مقابل حالت غیرفعال](/en-US/docs/Web/API/FedCM_API/RP_sign-in#active_versus_passive_mode) مراجعه کنید.
 
 - `providers`
-  - : An array of objects specifying details of the IdPs that the user should be presented with as options for signing in. These objects can contain the following properties:
+  - : آرایه‌ای از اشیاء که جزئیات IdPهایی را که کاربر باید به عنوان گزینه‌های ورود مشاهده کند مشخص می‌کند. این اشیاء می‌توانند شامل ویژگی‌های زیر باشند:
     - `configURL`
-      - : A string specifying the URL of the IdP's config file. See [Provide a config file](/en-US/docs/Web/API/FedCM_API/IDP_integration#provide_a_config_file_and_endpoints) for more information.
+      - : رشته‌ای که مشخص‌کننده URL فایل پیکربندی IdP است. برای اطلاعات بیشتر به [ارائه یک فایل پیکربندی](/en-US/docs/Web/API/FedCM_API/IDP_integration#provide_a_config_file_and_endpoints) مراجعه کنید.
     - `clientId`
-      - : A string specifying the RP client identifier. This information is issued by the IdP to the RP in a separate process that is specific to the IdP.
+      - : رشته‌ای که مشخص‌کننده شناسه مشتری RP است. این اطلاعات توسط IdP در یک فرآیند جداگانه که مختص IdP است به RP صادر می‌شود.
     - `domainHint` {{optional_inline}}
-      - : A string hinting at the domain of accounts that the RP is interested in. If provided, the user agent will only show accounts that match the domain hint value in their [`domain_hints`](/en-US/docs/Web/API/FedCM_API/IDP_integration#domain_hints) array. If `"any"` is specified, the RP will show any account that is associated with at least one domain hint.
+      - : رشته‌ای که به دامنه حساب‌هایی که RP به آن علاقه‌مند است اشاره می‌کند. اگر ارائه شود، عامل کاربر فقط حساب‌هایی را نشان می‌دهد که با مقدار راهنمای دامنه در آرایه [`domain_hints`](/en-US/docs/Web/API/FedCM_API/IDP_integration#domain_hints) خود مطابقت دارند. اگر `"any"` مشخص شود، RP هر حسابی را که حداقل با یک راهنمای دامنه مرتبط باشد نشان می‌دهد.
     - `fields` {{optional_inline}}
-      - : An array of strings specifying user information that the RP wishes to obtain from the IdP for use in the sign-in process. The exact strings will vary by IdP, but tend to be similar to `"name"`, `"email"`, or `"profile-picture-url"`.
+      - : آرایه‌ای از رشته‌ها که مشخص‌کننده اطلاعات کاربری است که RP مایل است از IdP برای استفاده در فرآیند ورود به دست آورد. رشته‌های دقیق بسته به IdP متفاوت است، اما معمولاً مشابه `"name"`، `"email"`، یا `"profile-picture-url"` هستند.
     - `loginHint` {{optional_inline}}
-      - : A string providing a hint about the account option(s) the browser should provide for the user to sign in with. This is useful in cases where the user has already signed in and the site asks them to reauthenticate. Otherwise, the reauthentication process can be confusing when a user has multiple accounts and can't remember which one they used to sign in previously. The value for the `loginHint` property can be taken from the user's previous sign-in, and is matched against the `login_hints` values provided by the IdP in the array of user information returned from the IdP's [accounts list endpoint](/en-US/docs/Web/API/FedCM_API/IDP_integration#the_accounts_list_endpoint).
+      - : رشته‌ای که راهنمایی در مورد گزینه(های) حسابی که مرورگر باید برای ورود کاربر ارائه دهد فراهم می‌کند. این در مواردی مفید است که کاربر قبلاً وارد شده است و سایت از او می‌خواهد دوباره احراز هویت کند. در غیر این صورت، فرآیند احراز هویت مجدد زمانی که کاربر چندین حساب دارد و نمی‌تواند به خاطر بیاورد که قبلاً با کدام یک وارد شده است می‌تواند گیج‌کننده باشد. مقدار ویژگی `loginHint` را می‌توان از ورود قبلی کاربر گرفت و با مقادیر `login_hints` ارائه شده توسط IdP در آرایه اطلاعات کاربر بازگشتی از [نقطه پایانی فهرست حساب‌های](/en-US/docs/Web/API/FedCM_API/IDP_integration#the_accounts_list_endpoint) IdP مطابقت داده می‌شود.
     - `nonce` {{optional_inline}}
-      - : A random string that can be included to ensure the response is issued specifically for this request and prevent {{glossary("replay attack", "replay attacks")}}.
+      - : رشته‌ای تصادفی که می‌تواند برای اطمینان از اینکه پاسخ به‌طور خاص برای این درخواست صادر شده است و جلوگیری از {{glossary("replay attack", "حملات بازپخش")}} (replay attacks) گنجانده شود.
 
         > [!NOTE]
-        > This property has been removed from the specification, because not all the protocols that use the FedCM API require a nonce. If the RP does need to include a nonce, it should be provided in the [`params`](#params) property.
+        > این ویژگی از مشخصات حذف شده است، زیرا همه پروتکل‌هایی که از API FedCM استفاده می‌کنند به nonce نیاز ندارند. اگر RP نیاز به گنجاندن nonce دارد، باید در ویژگی [`params`](#params) ارائه شود.
 
     - `params` {{optional_inline}}
-      - : Any additional parameters that the RP needs to pass to the IdP.
+      - : هر پارامتر اضافی که RP نیاز دارد به IdP ارسال کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
+```
