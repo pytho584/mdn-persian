@@ -1,11 +1,5 @@
 ---
 title: "NavigateEvent: info property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigateEvent/info"
-status: "needs-translation"
----
-
----
-title: "NavigateEvent: info property"
 short-title: info
 slug: Web/API/NavigateEvent/info
 page-type: web-api-instance-property
@@ -14,16 +8,15 @@ browser-compat: api.NavigateEvent.info
 
 {{APIRef("Navigation API")}}
 
-The **`info`** read-only property of the
-{{domxref("NavigateEvent")}} interface returns the `info` data value passed by the initiating navigation operation (e.g., {{domxref("Navigation.back()")}}, or {{domxref("Navigation.navigate()")}}), or `undefined` if no `info` data was passed.
+ویژگی فقط‌خواندنی **`info`** در رابط {{domxref("NavigateEvent")}} مقدار `info` را برمی‌گرداند که توسط عملیات ناوبری آغازکننده (مانند {{domxref("Navigation.back()")}} یا {{domxref("Navigation.navigate()")}}) ارسال شده است؛ یا اگر دادهٔ `info` ارسال نشده باشد، مقدار `undefined` برمی‌گردد.
 
-## Value
+## مقدار
 
-The `info` value passed by the initiating navigation operation, or `undefined` if none was passed.
+مقدار `info` ارسال‌شده توسط عملیات ناوبری آغازکننده، یا اگر هیچ مقداری ارسال نشده باشد، `undefined`.
 
-## Examples
+## مثال‌ها
 
-One example of how `info` might be used is to trigger different single-page navigation renderings depending on how a certain route was reached. For example, consider a photo gallery app, where you can reach the same photo URL and state via various routes. You might want to use a different animation to show the photo for each route.
+یکی از کاربردهای `info` می‌تواند ایجاد رندرهای متفاوت برای ناوبری تک‌صفحه‌ای بر اساس نحوهٔ رسیدن به یک مسیر خاص باشد. برای مثال، برنامه‌ای برای گالری عکس در نظر بگیرید که می‌توانید از مسیرهای گوناگون به همان URL و state عکس برسید. ممکن است بخواهید برای نمایش عکس، به‌ازای هر مسیر از انیمیشنی متفاوت استفاده کنید.
 
 ```js
 navigation.addEventListener("navigate", (event) => {
@@ -52,16 +45,16 @@ navigation.addEventListener("navigate", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
-- [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
-- Methods that allow info to be passed — {{domxref("Navigation.back()")}}, {{domxref("Navigation.forward()")}}, {{domxref("Navigation.navigate()")}}, {{domxref("Navigation.reload()")}}, and {{domxref("Navigation.traverseTo()")}}
+- [مسیریابی مدرن سمت کلاینت: Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
+- [توضیح Navigation API](https://github.com/WICG/navigation-api/blob/main/README.md)
+- متدهایی که امکان ارسال `info` را می‌دهند — {{domxref("Navigation.back()")}}, {{domxref("Navigation.forward()")}}, {{domxref("Navigation.navigate()")}}, {{domxref("Navigation.reload()")}} و {{domxref("Navigation.traverseTo()")}}
