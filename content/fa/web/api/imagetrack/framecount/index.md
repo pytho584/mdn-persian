@@ -1,9 +1,4 @@
----
-title: "ImageTrack: frameCount property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ImageTrack/frameCount"
-status: "needs-translation"
----
-
+```yaml
 ---
 title: "ImageTrack: frameCount property"
 short-title: frameCount
@@ -14,25 +9,26 @@ browser-compat: api.ImageTrack.frameCount
 
 {{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`frameCount`** property of the {{domxref("ImageTrack")}} interface returns the number of frames in the track.
+ویژگی **`frameCount`** از رابط {{domxref("ImageTrack")}} تعداد فریم‌های موجود در track را بازمی‌گرداند.
 
-## Value
+## مقدار
 
-An integer.
+یک عدد صحیح (integer).
 
-## Examples
+## مثال‌ها
 
-The following example prints the value of `frameCount` to the console.
+مثال زیر مقدار `frameCount` را در کنسول چاپ می‌کند.
 
 ```js
 let track = imageDecoder.tracks.selectedTrack;
 console.log(track.frameCount);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
+```
