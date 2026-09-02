@@ -1,11 +1,5 @@
 ---
 title: "InputEvent: InputEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/InputEvent/InputEvent"
-status: "needs-translation"
----
-
----
-title: "InputEvent: InputEvent() constructor"
 short-title: InputEvent()
 slug: Web/API/InputEvent/InputEvent
 page-type: web-api-constructor
@@ -14,7 +8,7 @@ browser-compat: api.InputEvent.InputEvent
 
 {{APIRef("UI Events")}}
 
-The **`InputEvent()`** constructor creates a new {{domxref("InputEvent")}} object.
+سازندهٔ **`InputEvent()`** یک شیء جدید {{domxref("InputEvent")}} می‌سازد.
 
 ## Syntax
 
@@ -23,36 +17,35 @@ new InputEvent(type)
 new InputEvent(type, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string with the name of the event.
-    It is case-sensitive and browsers set it to `beforeinput`, or `input`.
+  - : رشته‌ای شامل نام رویداد.
+    این رشته به بزرگی/کوچکی حروف حساس است و مرورگرها آن را روی `beforeinput` یا `input` قرار می‌دهند.
 - `options` {{optional_inline}}
-  - : An object that, _in addition of the properties defined in {{domxref("UIEvent/UIEvent", "UIEvent()")}}_, can have the following properties:
+  - : یک شیء که _علاوه بر ویژگی‌های تعریف‌شده در {{domxref("UIEvent/UIEvent", "UIEvent()")}}_، می‌تواند ویژگی‌های زیر را داشته باشد:
     - `inputType` {{optional_inline}}
-      - : A string specifying the type of change for editable content
-        such as, for example, inserting, deleting, or formatting text.
+      - : رشته‌ای که نوع تغییر در محتوای قابل ویرایش را مشخص می‌کند؛
+        مانند درج، حذف یا قالب‌بندی متن.
     - `data` {{optional_inline}}
-      - : A string containing characters to insert.
-        This may be an empty string if the change doesn't insert text
-        (such as when deleting characters, for example).
+      - : رشته‌ای شامل نویسه‌هایی که باید درج شوند.
+        اگر تغییر متنی را درج نکند (مثلاً هنگام حذف نویسه‌ها)، این رشته می‌تواند خالی باشد.
     - `isComposing` {{optional_inline}}
-      - : A boolean indicating that the event is part of a composition session,
-        meaning it is after a {{domxref("Element/compositionstart_event", "compositionstart")}} event but before a {{domxref("Element/compositionend_event", "compositionend")}} event. The default is `false`.
+      - : یک مقدار بولین که نشان می‌دهد رویداد بخشی از یک نشست ترکیب (composition) است؛
+        یعنی بعد از رویداد {{domxref("Element/compositionstart_event", "compositionstart")}} و قبل از رویداد {{domxref("Element/compositionend_event", "compositionend")}} رخ داده است. مقدار پیش‌فرض `false` است.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("InputEvent")}} object.
+یک شیء جدید {{domxref("InputEvent")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("InputEvent")}}, the interface of the objects it constructs.
+- {{domxref("InputEvent")}}، رابطِ اشیایی که این سازنده می‌سازد.
