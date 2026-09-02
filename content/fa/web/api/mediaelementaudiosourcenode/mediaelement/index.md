@@ -1,11 +1,5 @@
 ---
 title: "MediaElementAudioSourceNode: mediaElement property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaElementAudioSourceNode/mediaElement"
-status: "needs-translation"
----
-
----
-title: "MediaElementAudioSourceNode: mediaElement property"
 short-title: mediaElement
 slug: Web/API/MediaElementAudioSourceNode/mediaElement
 page-type: web-api-instance-property
@@ -14,21 +8,15 @@ browser-compat: api.MediaElementAudioSourceNode.mediaElement
 
 {{APIRef("Web Audio API")}}
 
-The {{domxref("MediaElementAudioSourceNode")}} interface's
-read-only **`mediaElement`** property indicates the
-{{domxref("HTMLMediaElement")}} that contains the audio track from which the node is
-receiving audio.
+ویژگی فقط‌خواندنی **`mediaElement`** در رابط {{domxref("MediaElementAudioSourceNode")}}، عنصر {{domxref("HTMLMediaElement")}} را مشخص می‌کند که حاوی ترک صوتی مبدأ است و این گره صدا را از آن دریافت می‌کند.
 
-This stream was specified when the node was first created,
-either using the {{domxref("MediaElementAudioSourceNode.MediaElementAudioSourceNode", "MediaElementAudioSourceNode()")}}
-constructor or the {{domxref("AudioContext.createMediaElementSource()")}} method.
+این جریان صوتی در زمان ساخت گره تعیین شده است؛ یا با استفاده از سازندهٔ {{domxref("MediaElementAudioSourceNode.MediaElementAudioSourceNode", "MediaElementAudioSourceNode()")}} و یا با استفاده از روش {{domxref("AudioContext.createMediaElementSource()")}}.
 
-## Value
+## مقدار
 
-An {{domxref("HTMLMediaElement")}} representing the element which contains the source
-of audio for the node.
+یک {{domxref("HTMLMediaElement")}} که عنصرِ حاوی منبع صوتی این گره را نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
 ```js
 const audioCtx = new window.AudioContext();
@@ -42,10 +30,10 @@ let source = new MediaElementAudioSourceNode(audioCtx, options);
 console.log(source.mediaElement);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
