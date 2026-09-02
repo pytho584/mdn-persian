@@ -1,11 +1,5 @@
 ---
 title: "MouseEvent: pageX property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/pageX"
-status: "needs-translation"
----
-
----
-title: "MouseEvent: pageX property"
 short-title: pageX
 slug: Web/API/MouseEvent/pageX
 page-type: web-api-instance-property
@@ -14,34 +8,27 @@ browser-compat: api.MouseEvent.pageX
 
 {{APIRef("Pointer Events")}}
 
-The **`pageX`** read-only property of the {{domxref("MouseEvent")}} interface returns the X (horizontal) coordinate (in pixels) at which the mouse was clicked, relative to the left edge of the entire document.
-This includes any portion of the document not currently visible.
+ویژگی فقط‌خواندنی **`pageX`** در رابط {{domxref("MouseEvent")}} مختصات X (افقی) را بر حسب پیکسل، در نقطه‌ای که ماوس کلیک شده است، نسبت به لبهٔ چپ کل سند برمی‌گرداند. این مقدار شامل هر بخشی از سند که در حال حاضر قابل مشاهده نیست نیز می‌شود.
 
-Being based on the edge of the document as it is, this property takes into account any horizontal scrolling of the page.
-For example, if the page is scrolled such that 200 pixels of the left side of the document are scrolled out of view, and the mouse is clicked 100 pixels inward from the left edge of the view, the value returned by `pageX` will be 300.
+از آنجا که این ویژگی بر پایهٔ لبهٔ سند محاسبه می‌شود، هرگونه اسکرول افقی صفحه را نیز در نظر می‌گیرد. برای مثال، اگر صفحه چنان اسکرول شده باشد که ۲۰۰ پیکسل از سمت چپ سند از دید خارج شده باشد و ماوس، ۱۰۰ پیکسل به سمت داخل از لبهٔ چپ نما کلیک شود، مقدار بازگشت‌داده‌شده توسط `pageX` برابر ۳۰۰ خواهد بود.
 
-Originally, this property was defined as a `long` integer. The [CSSOM View Module](/en-US/docs/Web/CSS/Guides/CSSOM_view) redefined it as a
-`double` float. See the [Browser compatibility](#browser_compatibility) section for
-details.
+در ابتدا، این ویژگی به صورت عدد صحیح `long` تعریف شده بود. [ماژول نمای CSSOM](/en-US/docs/Web/CSS/Guides/CSSOM_view) آن را به صورت ممیز شناور `double` بازتعریف کرد. برای جزئیات، بخش [سازگاری مرورگر](#browser_compatibility) را ببینید.
 
-See [Coordinate systems](/en-US/docs/Web/API/CSSOM_view_API/Coordinate_systems#page) for additional information about coordinates specified in this fashion.
+برای اطلاعات بیشتر دربارهٔ مختصاتی که به این روش مشخص می‌شوند، به [سیستم‌های مختصات](/en-US/docs/Web/API/CSSOM_view_API/Coordinate_systems#page) مراجعه کنید.
 
-## Value
+## مقدار
 
-A `double` floating-point number of pixels from the left edge of the _document_ at which the mouse was clicked, regardless of any scrolling or viewport positioning that may be in effect.
+یک عدد ممیز شناور `double` شامل تعداد پیکسل‌ها از لبهٔ چپ _سند_ که ماوس در آن کلیک شده است، صرف‌نظر از هرگونه اسکرول یا موقعیت‌دهی ویوپورت (viewport) که ممکن است اعمال شده باشد.
 
-This property was originally specified in the Touch Events specification as a long integer, but was redefined in the CSSOM View Module to be a double-precision
-floating-point number to allow for subpixel precision.
-Even though numeric types both are represented by `Number` in JavaScript, they may be handled differently internally in the browser's code, resulting in potential behavior differences.
+این ویژگی در اصل در مشخصات رویدادهای لمسی (Touch Events) به صورت عدد صحیح `long` تعریف شده بود، اما در ماژول نمای CSSOM به یک عدد ممیز شناور با دقت دوگانه بازتعریف شد تا دقت زیرپیکسلی امکان‌پذیر شود. اگرچه هر دو نوع عددی در جاوااسکریپت با `Number` نمایش داده می‌شوند، ممکن است در داخل کد مرورگر به شکل متفاوتی پردازش شوند که می‌تواند تفاوت‌هایی در رفتار ایجاد کند.
 
-See [Browser compatibility](#browser_compatibility) to learn which browsers have been updated to use the revised data type.
+برای آگاهی از مرورگرهایی که به استفاده از نوع دادهٔ بازبینی‌شده به‌روزرسانی شده‌اند، [سازگاری مرورگر](#browser_compatibility) را ببینید.
 
-## Examples
+## مثال‌ها
 
-### Showing the mouse position relative to page origin
+### نمایش موقعیت ماوس نسبت به مبدأ صفحه
 
-Let's take a look at an example that shows you the mouse's position relative to the page's origin.
-Since this example is presented in an {{HTMLElement("iframe")}}, that top-left corner is the top-left corner of the frame, not the browser window.
+بیایید مثالی را بررسی کنیم که موقعیت ماوس را نسبت به مبدأ صفحه نشان می‌دهد. از آنجا که این مثال در یک {{HTMLElement("iframe")}} ارائه شده است، آن گوشهٔ بالا-چپ، گوشهٔ بالای چپ قاب است، نه پنجرهٔ مرورگر.
 
 #### HTML
 
@@ -53,13 +40,7 @@ Since this example is presented in an {{HTMLElement("iframe")}}, that top-left c
 </div>
 ```
 
-The HTML is simple; the box we'll be watching for mouse events on is given the class `"box"`.
-It has two `<span>` elements, one with the ID `"x"` and one with the ID `"y"`.
-Those will be updated each time an event occurs to contain the latest mouse coordinates relative to the page.
-
 #### CSS
-
-The CSS used for this example is shown below.
 
 ```css
 .box {
@@ -94,32 +75,31 @@ box.addEventListener("mouseenter", updateDisplay);
 box.addEventListener("mouseleave", updateDisplay);
 ```
 
-The JavaScript code uses {{domxref("EventTarget.addEventListener", "addEventListener()")}} to register the function `updateDisplay()` as the event handler for the {{domxref("Element/mousemove_event", "mousemove")}}, {{domxref("Element/mouseenter_event", "mouseenter")}}, and {{domxref("Element/mouseleave_event", "mouseleave")}} events.
+کد جاوااسکریپت با استفاده از {{domxref("EventTarget.addEventListener", "addEventListener()")}} تابع `updateDisplay()` را به عنوان گردانندهٔ رویداد برای رویدادهای {{domxref("Element/mousemove_event", "mousemove")}}، {{domxref("Element/mouseenter_event", "mouseenter")}} و {{domxref("Element/mouseleave_event", "mouseleave")}} ثبت می‌کند.
 
-`updateDisplay()` replaces the contents of the {{HTMLElement("span")}} elements meant to contain the X and Y coordinates with the values of `pageX`
-and {{domxref("MouseEvent.pageY", "pageY")}}.
+`updateDisplay()` محتوای عناصر {{HTMLElement("span")}} را که برای نمایش مختصات X و Y در نظر گرفته شده‌اند، با مقادیر `pageX` و {{domxref("MouseEvent.pageY", "pageY")}} جایگزین می‌کند.
 
-#### Result
+#### نتیجه
 
-Try this out here:
+می‌توانید آن را اینجا امتحان کنید:
 
 {{EmbedLiveSample("Showing_the_mouse_position_relative_to_page_origin", 500, 300)}}
 
-### More examples
+### مثال‌های بیشتر
 
-You can also see an example that demonstrates [how to access the mouse position](/en-US/docs/Web/API/CSSOM_view_API/Coordinate_systems#example) information in every available coordinate system.
+همچنین می‌توانید مثالی را ببینید که [نحوه دسترسی به موقعیت ماوس](/en-US/docs/Web/API/CSSOM_view_API/Coordinate_systems#example) را در هر یک از سیستم‌های مختصات موجود نشان می‌دهد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-Prior to being added to the CSSOM View specification, `pageX` and `pageY` were available on the {{domxref("UIEvent")}} interface in a limited subset of browsers for a short time.
+پیش از افزوده‌شدن به مشخصات CSSOM View، `pageX` و `pageY` برای مدت کوتاهی در زیرمجموعه‌ای محدود از مرورگرها روی رابط {{domxref("UIEvent")}} در دسترس بودند.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("MouseEvent.pageY")}}
-- [Coordinate systems](/en-US/docs/Web/API/CSSOM_view_API/Coordinate_systems)
+- [سیستم‌های مختصات](/en-US/docs/Web/API/CSSOM_view_API/Coordinate_systems)
