@@ -1,11 +1,5 @@
 ---
 title: "IDBObjectStore: getAllRecords() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/getAllRecords"
-status: "needs-translation"
----
-
----
-title: "IDBObjectStore: getAllRecords() method"
 short-title: getAllRecords()
 slug: Web/API/IDBObjectStore/getAllRecords
 page-type: web-api-instance-method
@@ -14,76 +8,69 @@ browser-compat: api.IDBObjectStore.getAllRecords
 
 {{ APIRef("IndexedDB") }}
 
-The **`getAllRecords()`** method of the {{domxref("IDBObjectStore")}} interface retrieves all records (including primary keys and values) from the object store.
+متد **`getAllRecords()`** از رابط {{domxref("IDBObjectStore")}} همهٔ رکوردها (شامل کلیدهای اصلی و مقادیر) را از object store بازیابی می‌کند.
 
-`getAllRecords()` effectively combines the functionality of {{domxref("IDBObjectStore.getAllKeys", "getAllKeys()")}} and {{domxref("IDBObjectStore.getAll", "getAll()")}} by enumerating both primary keys and values at the same time.
-This combined operation enables certain data retrieval patterns to be significantly faster than alternatives such as iteration with cursors.
+`getAllRecords()` عملاً قابلیت‌های {{domxref("IDBObjectStore.getAllKeys", "getAllKeys()")}} و {{domxref("IDBObjectStore.getAll", "getAll()")}} را با شمارش همزمان کلیدهای اصلی و مقادیر ترکیب می‌کند. این عملیات ترکیبی باعث می‌شود برخی الگوهای بازیابی داده به‌طور قابل توجهی سریع‌تر از روش‌های جایگزین مانند پیمایش با cursorها باشند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 getAllRecords()
 getAllRecords(options)
 ```
 
-### Parameters
+### پارامترها
 
-An options object whose properties can include:
+یک شیء options که ویژگی‌های آن می‌تواند شامل موارد زیر باشد:
 
 - `query` {{optional_inline}}
-  - : A key or an {{domxref("IDBKeyRange")}} identifying the records to retrieve. If this value is `null` or not specified, the browser will use an unbound key range.
+  - : یک کلید یا یک {{domxref("IDBKeyRange")}} که رکوردهای مورد نظر برای بازیابی را مشخص می‌کند. اگر این مقدار `null` باشد یا مشخص نشود، مرورگر از یک بازهٔ کلید بدون کران استفاده خواهد کرد.
 - `count` {{optional_inline}}
-  - : The number of records to return. If this value exceeds the number of records in the query, the browser will retrieve only the queried records. If the value is less than `0` or greater than `2^32 - 1`, a {{jsxref("TypeError")}} exception will be thrown.
+  - : تعداد رکوردهایی که باید برگردانده شوند. اگر این مقدار از تعداد رکوردهای موجود در query بیشتر باشد، مرورگر فقط رکوردهای منطبق بر query را بازیابی می‌کند. اگر مقدار کمتر از `0` یا بیشتر از `2^32 - 1` باشد، یک استثنای {{jsxref("TypeError")}} پرتاب خواهد شد.
 - `direction` {{optional_inline}}
-  - : An enumerated value specifying the direction in which the records are traversed, which in turn defines the order in which they are returned. Possible values are:
+  - : یک مقدار شمارشی که جهت پیمایش رکوردها را مشخص می‌کند و به تبع آن ترتیب بازگشت آن‌ها را تعیین می‌کند. مقادیر ممکن عبارتند از:
     - `next`
-      - : The records are traversed from the beginning, in increasing key order. This is the default value.
+      - : رکوردها از ابتدا و به ترتیب صعودی کلید پیمایش می‌شوند. این مقدار پیش‌فرض است.
     - `nextunique`
-      - : The records are traversed from the beginning, in increasing key order. This will yield the same records as `next`, because duplicate keys are not allowed in `IDBObjectStore`s.
+      - : رکوردها از ابتدا و به ترتیب صعودی کلید پیمایش می‌شوند. از آنجا که کلیدهای تکراری در `IDBObjectStore`ها مجاز نیستند، این مقدار همان رکوردهای `next` را بازمی‌گرداند.
     - `prev`
-      - : The records are traversed from the end, in decreasing key order.
+      - : رکوردها از انتها و به ترتیب نزولی کلید پیمایش می‌شوند.
     - `prevunique`
-      - : The records are traversed from the end, in decreasing key order. This will yield the same records as `prev`, because duplicate keys are not allowed in `IDBObjectStore`s.
+      - : رکوردها از انتها و به ترتیب نزولی کلید پیمایش می‌شوند. از آنجا که کلیدهای تکراری در `IDBObjectStore`ها مجاز نیستند، این مقدار همان رکوردهای `prev` را بازمی‌گرداند.
 
-### Return value
+### مقدار بازگشتی
 
-An {{domxref("IDBRequest")}} object on which subsequent events related to this operation are fired.
+یک شیء {{domxref("IDBRequest")}} که رویدادهای بعدی مرتبط با این عملیات روی آن ارسال می‌شوند.
 
-If the operation is successful, the value of the request's {{domxref("IDBRequest.result", "result")}} property is an {{jsxref("Array", "array")}} of {{domxref("IDBRecord")}} instances representing all records that match the given query, up to the number specified by `count` (if provided).
+اگر عملیات موفق باشد، مقدار ویژگی {{domxref("IDBRequest.result", "result")}} درخواست یک {{jsxref("Array", "آرایه")}} از نمونه‌های {{domxref("IDBRecord")}} است که همهٔ رکوردهای منطبق با query را، حداکثر تا تعداد مشخص‌شده توسط `count` (در صورت ارائه)، نشان می‌دهد.
 
-Each {{domxref("IDBRecord")}} instance contains the following properties:
+هر نمونه {{domxref("IDBRecord")}} دارای ویژگی‌های زیر است:
 
 - `key`
-  - : A value representing the record's key.
-    This is identical to the `primaryKey` property.
+  - : مقداری نمایانگر کلید رکورد. این مقدار با ویژگی `primaryKey` یکسان است.
 - `primaryKey`
-  - : The record's primary key.
+  - : کلید اصلی رکورد.
 - `value`
-  - : A value representing the record's value.
+  - : مقداری نمایانگر مقدار رکورد.
 
-### Exceptions
+### استثناها
 
-This method may raise a {{domxref("DOMException")}} of the following types:
+این متد ممکن است یک {{domxref("DOMException")}} از انواع زیر صادر کند:
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the {{domxref("IDBObjectStore")}} has been deleted or removed.
+  - : در صورتی پرتاب می‌شود که {{domxref("IDBObjectStore")}} حذف یا برداشته شده باشد.
 - `TransactionInactiveError` {{domxref("DOMException")}}
-  - : Thrown if this {{domxref("IDBObjectStore")}}'s transaction is inactive.
+  - : در صورتی پرتاب می‌شود که تراکنش این {{domxref("IDBObjectStore")}} غیرفعال باشد.
 - {{jsxref("TypeError")}} {{domxref("DOMException")}}
-  - : Thrown if the [`count`](#count) parameter is not between `0` and `2^32 - 1`, inclusive.
+  - : در صورتی پرتاب می‌شود که پارامتر [`count`](#count) در بازهٔ بستهٔ `0` تا `2^32 - 1` نباشد.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفادهٔ پایه
 
-This example queries an {{domxref("IDBObjectStore")}} for up to 100 records whose keys come after `"myKey"`, with results sorted in reverse order.
+این مثال یک {{domxref("IDBObjectStore")}} را برای حداکثر ۱۰۰ رکورد که کلیدهایشان بعد از `"myKey"` قرار می‌گیرند، جستجو می‌کند و نتایج را به ترتیب معکوس مرتب می‌کند.
 
-The code first creates a transaction on an {{domxref("IDBDatabase")}} named `db` (omitting the code to open the database), and then uses it to get an `IDBObjectStore` containing a contacts list.
-It then calls `getAllRecords()` on the object store, returning an {{domxref("IDBRequest")}} instance.
-Event listeners are added to this request for the `success` and `error` events.
-On success, the result `event.target.result` is logged (this also available as `request.result`).
-This result contains an array of `IDBRecord` instances.
-Note that because this is a query on an `IDBObjectStore`, the `key` and `primaryKey` in each record have the same value.
+کد ابتدا یک تراکنش روی یک {{domxref("IDBDatabase")}} به نام `db` ایجاد می‌کند (کد باز کردن پایگاه داده حذف شده است) و سپس از آن برای دریافت یک `IDBObjectStore` حاوی فهرست مخاطبان استفاده می‌کند. سپس `getAllRecords()` را روی object store صدا می‌زند و یک نمونه {{domxref("IDBRequest")}} دریافت می‌کند. شنونده‌های رویداد برای رویدادهای `success` و `error` به این درخواست اضافه می‌شوند. در صورت موفقیت، نتیجهٔ `event.target.result` ثبت (log) می‌شود (این مقدار به‌عنوان `request.result` نیز در دسترس است). این نتیجه شامل آرایه‌ای از نمونه‌های `IDBRecord` است. توجه داشته باشید که چون این یک query روی یک `IDBObjectStore` است، `key` و `primaryKey` در هر رکورد مقدار یکسانی دارند.
 
 ```js
 // Create a transaction on the database and use it to get the contained store
@@ -108,21 +95,21 @@ request.addEventListener("error", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("IDBObjectStore.getAll()")}}, {{domxref("IDBObjectStore.getAllKeys()")}}
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- [Faster IndexedDB reads with getAllRecords() example](https://microsoftedge.github.io/Demos/idb-getallrecords/) from Microsoft, 2025
+- {{domxref("IDBObjectStore.getAll()")}}، {{domxref("IDBObjectStore.getAllKeys()")}}
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم بازه‌ای از کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و اعمال تغییرات در داده‌هایتان: {{domxref("IDBObjectStore")}}
+- استفاده از cursorها: {{domxref("IDBCursor")}}
+- [نمونهٔ خواندن سریع‌تر IndexedDB با getAllRecords()](https://microsoftedge.github.io/Demos/idb-getallrecords/) از مایکروسافت، ۲۰۲۵
