@@ -1,11 +1,5 @@
 ---
 title: "HTMLTextAreaElement: defaultValue property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTextAreaElement/defaultValue"
-status: "needs-translation"
----
-
----
-title: "HTMLTextAreaElement: defaultValue property"
 short-title: defaultValue
 slug: Web/API/HTMLTextAreaElement/defaultValue
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.HTMLTextAreaElement.defaultValue
 
 {{ APIRef("HTML DOM") }}
 
-The **`defaultValue`** property of the {{DOMxRef("HTMLTextAreaElement")}} interface represents the default text content of this text area. Getting and setting this value is equivalent to getting and setting {{domxref("Node.textContent", "textContent")}} on the {{htmlelement("textarea")}}.
+خاصیت **`defaultValue`** در رابط {{DOMxRef("HTMLTextAreaElement")}} محتوای متنی پیش‌فرض این ناحیه متنی را نشان می‌دهد. خواندن و نوشتن این مقدار معادل خواندن و نوشتن {{domxref("Node.textContent", "textContent")}} روی عنصر {{htmlelement("textarea")}} است.
 
-## Value
+## مقدار
 
-A string.
+یک رشته (string).
 
-## Examples
+## مثال‌ها
 
-In the example below, the `defaultValue` still returns the value originally written in the HTML. If a default value is set, either via HTML or the `defaultValue` property, user input will update the `value` but will not overwrite the `defaultValue`.
+در مثال زیر، `defaultValue` همچنان مقداری را برمی‌گرداند که در ابتدا در HTML نوشته شده بود. اگر یک مقدار پیش‌فرض، چه از طریق HTML و چه از طریق خاصیت `defaultValue`، تعیین شود، ورودی کاربر مقدار `value` را به‌روزرسانی می‌کند اما مقدار `defaultValue` را بازنویسی نمی‌کند.
 
 ```js
 const textareaElement = document.getElementById("comment");
@@ -30,15 +24,15 @@ console.log(textArea.defaultValue);
 textArea.defaultValue = "This is the default text now!";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTMLElement("textarea")}}
 - {{DOMXref("HTMLTextAreaElement.value")}}
