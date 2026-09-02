@@ -1,10 +1,4 @@
 ---
-title: "InstallEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/InstallEvent"
-status: "needs-translation"
----
-
----
 title: InstallEvent
 slug: Web/API/InstallEvent
 page-type: web-api-interface
@@ -13,36 +7,36 @@ browser-compat: api.InstallEvent
 
 {{APIRef("Service Workers API")}}
 
-The parameter passed into an {{DOMxRef("ServiceWorkerGlobalScope.install_event", "install")}} event handler function, the `InstallEvent` interface represents an install action that is dispatched on the {{domxref("ServiceWorkerGlobalScope")}} of a {{domxref("ServiceWorker")}}. As a child of {{domxref("ExtendableEvent")}}, it ensures that functional events such as {{domxref("FetchEvent")}} are not dispatched during installation.
+پارامتری که به تابع کنترل‌کننده رویداد {{DOMxRef("ServiceWorkerGlobalScope.install_event", "install")}} ارسال می‌شود. رابط `InstallEvent` نشان‌دهنده یک عمل نصب است که در {{domxref("ServiceWorkerGlobalScope")}} یک {{domxref("ServiceWorker")}} ارسال می‌شود. به عنوان فرزند {{domxref("ExtendableEvent")}}، تضمین می‌کند که رویدادهای عملکردی مانند {{domxref("FetchEvent")}} در طول نصب ارسال نشوند.
 
-This interface inherits from the {{domxref("ExtendableEvent")}} interface.
+این رابط از رابط {{domxref("ExtendableEvent")}} ارث‌بری می‌کند.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("InstallEvent.InstallEvent", "InstallEvent()")}}
-  - : Creates a new `InstallEvent` object.
+  - : یک شیء `InstallEvent` جدید ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("ExtendableEvent")}}_.
+_ویژگی‌ها را از والد خود، {{domxref("ExtendableEvent")}}، به ارث می‌برد._
 
-## Instance methods
+## روش‌های نمونه
 
-_Inherits methods from its parent, {{domxref("ExtendableEvent")}}_.
+_روش‌ها را از والد خود، {{domxref("ExtendableEvent")}}، به ارث می‌برد._
 
 - {{domxref("InstallEvent.addRoutes()", "addRoutes()")}}
-  - : Specifies one or more static routes, which define rules for fetching specified resources that will be used even before service worker startup.
+  - : یک یا چند مسیر ایستا مشخص می‌کند که قوانینی برای واکشی منابع مشخص شده تعریف می‌کنند که حتی قبل از راه‌اندازی service worker استفاده خواهند شد.
 
-## Examples
+## نمونه‌ها
 
-This code snippet is from the [service worker prefetch sample](https://github.com/GoogleChrome/samples/blob/gh-pages/service-worker/prefetch/service-worker.js) (see [prefetch running live](https://googlechrome.github.io/samples/service-worker/prefetch/).) The code calls {{domxref("ExtendableEvent.waitUntil", "ExtendableEvent.waitUntil()")}} in {{domxref("ServiceWorkerGlobalScope.install_event", "ServiceWorkerGlobalScope.oninstall")}} and delays treating the {{domxref("ServiceWorkerRegistration.installing")}} worker as installed until the passed promise resolves successfully. The promise resolves when all resources have been fetched and cached, or when any exception occurs.
+این قطعه کد از [نمونه پیش‌واکشی service worker](https://github.com/GoogleChrome/samples/blob/gh-pages/service-worker/prefetch/service-worker.js) گرفته شده است (به [اجرای زنده پیش‌واکشی](https://googlechrome.github.io/samples/service-worker/prefetch/) مراجعه کنید). کد {{domxref("ExtendableEvent.waitUntil", "ExtendableEvent.waitUntil()")}} را در {{domxref("ServiceWorkerGlobalScope.install_event", "ServiceWorkerGlobalScope.oninstall")}} فراخوانی می‌کند و تا زمانی که promise ارسالی با موفقیت حل شود، کارگر {{domxref("ServiceWorkerRegistration.installing")}} را به‌عنوان نصب‌شده در نظر نمی‌گیرد. این promise زمانی حل می‌شود که همه منابع واکشی و ذخیره شده‌اند، یا در صورت بروز هر استثنایی.
 
-The code snippet also shows a best practice for versioning caches used by the service worker. Although this example has only one cache, you can use this approach for multiple caches. The code maps a shorthand identifier for a cache to a specific, versioned cache name.
+قطعه کد همچنین یک روش خوب برای نسخه‌بندی کش‌های استفاده شده توسط service worker را نشان می‌دهد. اگرچه این مثال فقط یک کش دارد، می‌توانید از این رویکرد برای چندین کش استفاده کنید. کد یک شناسه کوتاه برای یک کش را به یک نام کش خاص و دارای نسخه نگاشت می‌کند.
 
 > [!NOTE]
-> Logging statements are visible in Google Chrome via the "Inspect" interface for the relevant service worker accessed via chrome://serviceworker-internals.
+> عبارت‌های لاگ در Google Chrome از طریق رابط "Inspect" برای service worker مربوطه که از طریق chrome://serviceworker-internals قابل دسترسی است، قابل مشاهده هستند.
 
 ```js
 const CACHE_VERSION = 1;
@@ -82,17 +76,17 @@ self.addEventListener("install", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [`install` event](/en-US/docs/Web/API/ServiceWorkerGlobalScope/install_event)
+- [رویداد `install`](/en-US/docs/Web/API/ServiceWorkerGlobalScope/install_event)
 - {{domxref("NotificationEvent")}}
 - {{jsxref("Promise")}}
 - [Fetch API](/en-US/docs/Web/API/Fetch_API)
