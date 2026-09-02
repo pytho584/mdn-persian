@@ -1,7 +1,5 @@
 ---
 title: "IIRFilterNode"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IIRFilterNode"
-status: "needs-translation"
 ---
 
 ---
@@ -13,80 +11,80 @@ browser-compat: api.IIRFilterNode
 
 {{APIRef("Web Audio API")}}
 
-The **`IIRFilterNode`** interface of the [Web Audio API](/en-US/docs/Web/API/Web_Audio_API) is an {{domxref("AudioNode")}} processor which implements a general **[infinite impulse response](https://en.wikipedia.org/wiki/Infinite_impulse_response)** (IIR) filter; this type of filter can be used to implement tone control devices and graphic equalizers as well. It lets the parameters of the filter response be specified, so that it can be tuned as needed.
+رابط **`IIRFilterNode`** در [Web Audio API](/en-US/docs/Web/API/Web_Audio_API) یک پردازندهٔ {{domxref("AudioNode")}} است که یک فیلتر [پاسخ ضربهٔ بینهایت](https://en.wikipedia.org/wiki/Infinite_impulse_response) (IIR) عمومی را پیاده‌سازی می‌کند؛ از این نوع فیلتر می‌توان برای پیاده‌سازی دستگاه‌های کنترل تُن و همچنین اکولایزرهای گرافیکی استفاده کرد. این رابط به شما اجازه می‌دهد پارامترهای پاسخ فیلتر را مشخص کنید تا در صورت نیاز تنظیم شود.
 
 {{InheritanceDiagram}}
 
 <table class="properties">
   <tbody>
     <tr>
-      <th scope="row">Number of inputs</th>
+      <th scope="row">تعداد ورودی‌ها</th>
       <td><code>1</code></td>
     </tr>
     <tr>
-      <th scope="row">Number of outputs</th>
+      <th scope="row">تعداد خروجی‌ها</th>
       <td><code>1</code></td>
     </tr>
     <tr>
-      <th scope="row">Channel count mode</th>
+      <th scope="row">حالت تعداد کانال</th>
       <td><code>"max"</code></td>
     </tr>
     <tr>
-      <th scope="row">Channel count</th>
-      <td>Same as on the input</td>
+      <th scope="row">تعداد کانال</th>
+      <td>همانند ورودی</td>
     </tr>
     <tr>
-      <th scope="row">Channel interpretation</th>
+      <th scope="row">تفسیر کانال</th>
       <td><code>"speakers"</code></td>
     </tr>
   </tbody>
 </table>
 
-Typically, it's best to use the {{domxref("BiquadFilterNode")}} interface to implement higher-order filters. There are several reasons why:
+به‌طور معمول، بهتر است برای پیاده‌سازی فیلترهای مرتبه‌بالاتر از رابط {{domxref("BiquadFilterNode")}} استفاده کنید. دلایل متعددی برای این کار وجود دارد:
 
-- Biquad filters are typically less sensitive to numeric quirks.
-- The filter parameters of biquad filters can be automated.
-- All even-ordered IIR filters can be created using {{domxref("BiquadFilterNode")}}.
+- فیلترهای Biquad معمولاً حساسیت کمتری نسبت به ناهنجاری‌های عددی دارند.
+- پارامترهای فیلترهای Biquad قابل خودکارسازی هستند.
+- همهٔ فیلترهای IIR با مرتبهٔ زوج را می‌توان با استفاده از {{domxref("BiquadFilterNode")}} ایجاد کرد.
 
-However, if you need to create an odd-ordered IIR filter, you'll need to use `IIRFilterNode`. You may also find this interface useful if you don't need automation, or for other reasons.
+با این حال، اگر نیاز به ایجاد یک فیلتر IIR با مرتبهٔ فرد دارید، باید از `IIRFilterNode` استفاده کنید. همچنین اگر به خودکارسازی نیاز ندارید یا به دلایل دیگر، ممکن است این رابط برای شما مفید باشد.
 
 > [!NOTE]
-> Once the node has been created, you can't change its coefficients.
+> پس از ایجاد گره، نمی‌توانید ضرایب آن را تغییر دهید.
 
-`IIRFilterNode`s have a tail-time reference; they continue to output non-silent audio with zero input. As an IIR filter, the non-zero input continues forever, but this can be limited after some finite time in practice, when the output has approached zero closely enough. The actual time that takes depends on the filter coefficients provided.
+گره‌های `IIRFilterNode` دارای مرجع زمان دنباله (tail-time) هستند؛ یعنی با ورودی صفر نیز به تولید خروجی صوتی غیرسکوت ادامه می‌دهند. از آنجا که این یک فیلتر IIR است، ورودی غیرصفر برای همیشه ادامه می‌یابد، اما در عمل پس از مدت زمان محدودی که خروجی به اندازهٔ کافی به صفر نزدیک شود، می‌توان آن را محدود کرد. زمان واقعی مورد نیاز به ضرایب فیلتر ارائه‌شده بستگی دارد.
 
-## Constructor
+## سازنده
 
 - {{domxref("IIRFilterNode.IIRFilterNode", "IIRFilterNode()")}}
-  - : Creates a new instance of an IIRFilterNode object.
+  - : یک نمونهٔ جدید از یک شیء IIRFilterNode ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface has no properties of its own; however, it inherits properties from its parent, {{domxref("AudioNode")}}_.
+_این رابط هیچ ویژگی خاص خود را ندارد؛ با این حال، ویژگی‌های والد خود، {{domxref("AudioNode")}}، را به ارث می‌برد._
 
-## Instance methods
+## روش‌های نمونه
 
-_Inherits methods from its parent, {{domxref("AudioNode")}}. It also has the following additional methods:_
+_روش‌هایی را از والد خود، {{domxref("AudioNode")}}، به ارث می‌برد. همچنین روش‌های اضافی زیر را دارد:_
 
 - {{domxref("IIRFilterNode.getFrequencyResponse", "getFrequencyResponse()")}}
-  - : Uses the filter's current parameter settings to calculate the response for frequencies specified in the provided array of frequencies.
+  - : با استفاده از تنظیمات فعلی پارامترهای فیلتر، پاسخ فرکانس‌هایی را که در آرایهٔ فرکانس‌های داده‌شده مشخص شده‌اند محاسبه می‌کند.
 
-## Examples
+## مثال‌ها
 
-You can find a [simple IIR filter demo live](https://mdn.github.io/webaudio-examples/iirfilter-node/). Also see the [source code on GitHub](https://github.com/mdn/webaudio-examples/tree/main/iirfilter-node). It includes some different coefficient values for different lowpass frequencies — you can change the value of the `filterNumber` constant to a value between 0 and 3 to check out the different available effects.
+می‌توانید یک [نمایش زندهٔ ساده از فیلتر IIR](https://mdn.github.io/webaudio-examples/iirfilter-node/) را پیدا کنید. همچنین [کد منبع در GitHub](https://github.com/mdn/webaudio-examples/tree/main/iirfilter-node) را ببینید. این کد شامل مقادیر ضرایب مختلفی برای فرکانس‌های پایین‌گذر متفاوت است — می‌توانید مقدار ثابت `filterNumber` را به عددی بین 0 و 3 تغییر دهید تا افکت‌های مختلف موجود را بررسی کنید.
 
-Also see our [Using IIR filters](/en-US/docs/Web/API/Web_Audio_API/Using_IIR_filters) guide for a full explanation.
+همچنین راهنمای [استفاده از فیلترهای IIR](/en-US/docs/Web/API/Web_Audio_API/Using_IIR_filters) را برای توضیح کامل ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
 - {{domxref("AudioNode")}}
 - {{domxref("BiquadFilterNode")}}
