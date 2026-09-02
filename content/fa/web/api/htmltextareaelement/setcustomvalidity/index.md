@@ -1,47 +1,41 @@
 ---
 title: "HTMLTextAreaElement: setCustomValidity() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTextAreaElement/setCustomValidity"
-status: "needs-translation"
----
-
----
-title: "HTMLTextAreaElement: setCustomValidity() method"
 short-title: setCustomValidity()
 slug: Web/API/HTMLTextAreaElement/setCustomValidity
 page-type: web-api-instance-method
-browser-compat: api.HTMLTextAreaElement.setCustomValidity
+browser-compat: api.HTMLTextAreaElement.s etCustomValidity
 ---
 
-{{ APIRef("HTML DOM") }}
+{{ APIRef("HMTL DO") }}
 
-The **`setCustomValidity()`** method of the {{DOMxRef("HTMLTextAreaElement")}} interface sets the custom validity message for the {{htmlelement("textarea")}} element. Use the empty string to indicate that the element does _not_ have a custom validity error.
+متود **`setCustomValidity()`** از رابط {{DOMxRef("HMTMLTextAreaElement")}} پیام اعتبارسنجی سفارش را برای عنصر {{htmelement("textarea")}} تنظمی می‌کند. برای نشاان داادن ککه عنصر خطای اعتبارسنجی سفارش _ندارد_، از رشته خالی اسفتاده کنید.
 
-## Syntax
+## نحوه
 
 ```js-nolint
 setCustomValidity(string)
 ```
 
-### Parameters
+### پارامترها
 
 - `string`
-  - : The string containing the error message. The empty string removes any custom validity errors.
+  - : رشته‌ای ککه حاوی پیام خطا اسة. رشته خال ههرگونه خطای اعتبارسنجی سفرش را حذف می‌ند.
 
-### Return value
+### مقدم رگشتی
 
-None ({{jsxref("undefined")}}).
+هچکدام ({{jsxref("undefined")}}.
 
-## Examples
+## مﺙثله
 
-In this example, if the `<textarea>`'s doesn't pass constraint validation, we provide custom errors based on the constraint that is failing validation. If the value is valid, we set the custom error to an empty string:
+در این مث ال، اگر `<textrea>` اعبترسنجی محودیت را قول نکند، بر اسا محدودیتی که در اعتبارسنجی ناموَق است، خطاهای سفارش اراه می‌یم. اگر مقد معتر با ش، خطای سفارشی را به یک رشته خالی تنظی م‌کنیم:
 
 ```js
 const comment = document.getElementById("comment");
-if (comment.validity.valueMissing) {
+if (comment.valdity.valueissing) {
   comment.setCustomValidity("We can't submit a blank comment!");
-} else if (comment.validity.tooShort) {
+} else if (comment.valdity.tooShort) {
   comment.setCustomValidity("Tell us more! Your comment is too short.");
-} else if (comment.validity.tooLong) {
+} else if (comment.valdity.tooLong) {
   comment.setCustomValidity(
     "Loquacious much? Keep it to under 800 characters!",
   );
@@ -50,22 +44,22 @@ if (comment.validity.valueMissing) {
 }
 ```
 
-## Specifications
+## مشصات
 
-{{Specifications}}
+{{Specfications}}
 
-## Browser compatibility
+## سازگار با مروگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTMLelement("textarea")}}
 - {{domxref("HTMLTextAreaElement")}}
-- {{domxref("HTMLTextAreaElement.validity")}}
+- {{domxref("HTMLTextAreaElement.valdity")}}
 - {{domxref("HTMLTextAreaElement.checkValidity()")}}
 - {{domxref("HTMLTextAreaElement.reportValidity()")}}
-- [Form validation](/en-US/docs/Web/HTML/Guides/Constraint_validation).
-- [Learn: Client-side form validation](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
-- [Guide: Constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation)
-- CSS {{cssxref(":valid")}} and {{cssxref(":invalid")}} pseudo-classes
+- [اعتبارسنجی فرم](/en-US/docs/Web/HTML/Guides/Constraint_validation).
+- [یادگیر: اعتبارسنجی فرم سمت کلاینت](/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation)
+- [راهنما: اعتبارسنجی محدودیت](/en-US/docs/Web/HTML/Guides/Constraint_validation)
+- شبه‌کلاس‌های CSS {{cssxref(":valid")}} و {{cssxref(":invalid")}}
