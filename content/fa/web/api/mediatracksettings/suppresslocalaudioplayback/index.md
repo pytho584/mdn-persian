@@ -1,11 +1,5 @@
 ---
 title: "MediaTrackSettings: suppressLocalAudioPlayback property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSettings/suppressLocalAudioPlayback"
-status: "needs-translation"
----
-
----
-title: "MediaTrackSettings: suppressLocalAudioPlayback property"
 short-title: suppressLocalAudioPlayback
 slug: Web/API/MediaTrackSettings/suppressLocalAudioPlayback
 page-type: web-api-instance-property
@@ -16,17 +10,17 @@ browser-compat: api.MediaStreamTrack.applyConstraints.suppressLocalAudioPlayback
 
 {{APIRef("Media Capture and Streams")}}{{SeeCompatTable}}
 
-The {{domxref("MediaTrackSettings")}} dictionary's **`suppressLocalAudioPlayback`** property controls whether the audio playing in a tab will continue to be played out of a user's local speakers when the tab is captured.
+ویژگی **`suppressLocalAudioPlayback`** در دیکشنری {{domxref("MediaTrackSettings")}} کنترل می‌کند که آیا صدای در حال پخش در یک تب، هنگام ضبط آن تب، همچنان از بلندگوهای محلی کاربر پخش شود یا نه.
 
-For example, in cases where you broadcast a video call to an external AV system in a conference room, you will want the audio to play out of the AV system, and not the local speakers. This way, the audio will be louder and clearer, and also in sync with the conference video.
+به‌عنوان مثال، در مواردی که تماس ویدیویی را به یک سیستم صوتی-تصویری خارجی در اتاق کنفرانس پخش می‌کنید، می‌خواهید صدا از سیستم صوتی-تصویری خارج شود، نه از بلندگوهای محلی. به این ترتیب، صدا بلندتر و واضح‌تر خواهد بود و همچنین با ویدیوی کنفرانس هماهنگ خواهد بود.
 
 ## Value
 
-The value of `suppressLocalAudioPlayback` is a boolean — `true` enables local audio playback suppression, and `false` disables it.
+مقدار `suppressLocalAudioPlayback` یک بولی است — `true` سرکوب پخش صوتی محلی را فعال می‌کند و `false` آن را غیرفعال می‌کند.
 
 ## Examples
 
-The below function sets up the constraints object specifying the options for the call to {{domxref("MediaDevices.getDisplayMedia", "getDisplayMedia()")}}. It adds the `suppressLocalAudioPlayback` constraint (requesting that captured audio is not played out of the user's local speakers) only if it is known to be supported by the browser. Capturing is then started by calling `getDisplayMedia()` and attaching the returned stream to the video element referenced by the variable `videoElem`.
+تابع زیر یک شیء محدودیت‌ها (constraints) را تنظیم می‌کند که گزینه‌های فراخوانی {{domxref("MediaDevices.getDisplayMedia", "getDisplayMedia()")}} را مشخص می‌کند. این تابع محدودیت `suppressLocalAudioPlayback` را (با درخواست اینکه صدای ضبط‌شده از بلندگوهای محلی کاربر پخش نشود) فقط در صورتی اضافه می‌کند که مشخص باشد توسط مرورگر پشتیبانی می‌شود. سپس ضبط با فراخوانی `getDisplayMedia()` شروع می‌شود و استریم بازگشتی به عنصر ویدیویی که توسط متغیر `videoElem` ارجاع داده شده است، متصل می‌شود.
 
 ```js
 async function capture() {
