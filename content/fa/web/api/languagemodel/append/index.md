@@ -1,11 +1,5 @@
 ---
 title: "LanguageModel: append() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/LanguageModel/append"
-status: "needs-translation"
----
-
----
-title: "LanguageModel: append() method"
 short-title: append()
 slug: Web/API/LanguageModel/append
 page-type: web-api-instance-method
@@ -14,92 +8,91 @@ browser-compat: api.LanguageModel.append
 
 {{APIRef("Prompt API")}}{{SecureContext_Header}}
 
-The **`append()`** method of the {{domxref("LanguageModel")}} interface adds content to the session's context window without generating a model response. It returns a {{jsxref("Promise")}} that resolves when the content has been successfully loaded into context. Use this method to preload a context before asking the model a question.
+متد **`append()`** در رابط {{domxref("LanguageModel")}} محتوایی را به پنجرهٔ زمینهٔ نشست اضافه می‌کند بدون اینکه پاسخی از مدل تولید کند. این متد یک {{jsxref("Promise")}} برمی‌گرداند که پس از بارگذاری موفقیت‌آمیز محتوا در زمینه، resolve می‌شود. از این متد برای پیش‌بارگذاری زمینه پیش از پرسیدن سؤال از مدل استفاده کنید.
 
-A context may be a document, conversation, history, or background information. You can call the `append()` method at any point during the session's lifetime.
+زمینه می‌تواند یک سند، گفت‌وگو، تاریخچه یا اطلاعات پس‌زمینه باشد. می‌توانید متد `append()` را در هر نقطه‌ای از طول عمر نشست فراخوانی کنید.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 append(input)
 append(input, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `input`
-  - : The content to append to the context window. This is either:
-    - A string — Shorthand for a single textual message.
-    - An array of objects, each representing a single message in a conversation with a language model.
-      Objects may have the following properties:
+  - : محتوایی که به پنجرهٔ زمینه اضافه می‌شود. این محتوا یکی از این دو حالت است:
+    - یک رشته — شکل کوتاه‌شده برای یک پیام متنی واحد.
+    - آرایه‌ای از اشیا که هر کدام نمایانگر یک پیام واحد در گفت‌وگو با یک مدل زبانی است.
+      اشیا می‌توانند ویژگی‌های زیر را داشته باشند:
       - `role`
-        - : A string indicating the point of view the message is phrased from. Must be one of:
+        - : رشته‌ای که دیدگاه بیان‌شده در پیام را مشخص می‌کند. باید یکی از موارد زیر باشد:
           - `system`
-            - : A system-level instruction that guides the model's overall behavior. This must be the first instruction passed to the model.
+            - : دستوری در سطح سیستم که رفتار کلی مدل را هدایت می‌کند. این دستور باید اولین دستوری باشد که به مدل ارسال می‌شود.
           - `user`
-            - : A message from the user, which the API should respond to.
+            - : پیامی از کاربر که API باید به آن پاسخ دهد.
           - `assistant`
-            - : An input that provides context for the AI assistant, such as its persona or the format of its responses. Such messages mainly serve to provide context/history, and further shape how the model responds.
+            - : ورودی‌ای که زمینه را برای دستیار هوش مصنوعی فراهم می‌کند؛ مانند شخصیت آن یا قالب پاسخ‌های آن. چنین پیام‌هایی عمدتاً برای فراهم‌کردن زمینه/تاریخچه به کار می‌روند و به شکل‌دهی بیشتر پاسخ مدل کمک می‌کنند.
       - `content`
-        - : A string representing a textual prompt, or an array of objects. Each object includes the following properties:
+        - : رشته‌ای که یک درخواست متنی (textual prompt) را نشان می‌دهد، یا آرایه‌ای از اشیا. هر شیء شامل ویژگی‌های زیر است:
           - `type`
-            - : An enumerated value representing the type of content. This can be one of:
+            - : یک مقدار شمارشی که نوع محتوا را مشخص می‌کند. این مقدار می‌تواند یکی از موارد زیر باشد:
               - `audio`
-                - : Audio content.
+                - : محتوای صوتی.
               - `image`
-                - : Image content.
+                - : محتوای تصویری.
               - `text`
-                - : Textual content.
+                - : محتوای متنی.
               - `tool-call`
-                - : A tool invocation issued by the model.
+                - : فراخوانی ابزاری که توسط مدل صادر شده است.
               - `tool-response`
-                - : The result of a tool invocation.
+                - : نتیجهٔ فراخوانی یک ابزار.
           - `value`
-            - : The content of the message. If the `type` is `text`, this is always a string. If the `type` is `audio` or `image`, the `value` can be one of several different object types; see [What data types are accepted?](/en-US/docs/Web/API/Prompt_API/Multimodal#what_data_types_are_accepted).
+            - : محتوای پیام. اگر `type` برابر با `text` باشد، این مقدار همیشه یک رشته است. اگر `type` برابر با `audio` یا `image` باشد، `value` می‌تواند یکی از چند نوع شیء مختلف باشد؛ برای جزئیات بیشتر به [چه نوع داده‌هایی پذیرفته می‌شوند؟](/en-US/docs/Web/API/Prompt_API/Multimodal#what_data_types_are_accepted) مراجعه کنید.
       - `prefix` {{optional_inline}}
-        - : A boolean, defaulting to `false`. When `true`, the message is treated as a prefix for the model's next generated response rather than a complete turn.
+        - : یک مقدار بولی که پیش‌فرض آن `false` است. وقتی `true` باشد، این پیام به‌جای یک نوبت کامل، به‌عنوان پیشوندی برای پاسخ تولیدشدهٔ بعدی مدل در نظر گرفته می‌شود.
 - `options` {{optional_inline}}
-  - : An object representing the options that can be passed. Properties include:
+  - : شیئی نمایانگر گزینه‌هایی که می‌توان ارسال کرد. ویژگی‌های آن عبارت‌اند از:
     - `signal`
-      - : An {{domxref("AbortSignal")}} to cancel the append operation.
+      - : یک {{domxref("AbortSignal")}} برای لغو عملیات افزودن.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with `undefined` when the content has been prefilled into the context window, or rejects with one of the following exception values on failure.
+یک {{jsxref("Promise")}} که وقتی محتوا از پیش در پنجرهٔ زمینه قرار گرفت، با `undefined` resolve می‌شود و در صورت شکست با یکی از مقادیر استثنایی زیر reject می‌شود.
 
-### Exceptions
+### استثناها
 
 - `AbortError` {{domxref("DOMException")}}
-  - : Thrown if the operation was cancelled via the `signal` option.
+  - : اگر عملیات از طریق گزینهٔ `signal` لغو شده باشد پرتاب می‌شود.
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if usage of the method is blocked by a {{httpheader("Permissions-Policy/language-model", "language-model")}} {{httpheader("Permissions-Policy")}}.
+  - : اگر استفاده از این متد توسط یک {{httpheader("Permissions-Policy/language-model", "language-model")}} در {{httpheader("Permissions-Policy")}} مسدود شده باشد پرتاب می‌شود.
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Thrown if:
-    - A message's `role` is `assistant` and its `type` is anything other than `text`.
-    - A message's `type` is `text` and its `value` is not a string.
-    - The input or output text is in a language the user agent doesn't support for prompting.
-    - A message's `type` is `image` or `audio` but the type was not listed in `expectedInputs`, or the `value` is not an [accepted data type](/en-US/docs/Web/API/Prompt_API/Multimodal#what_data_types_are_accepted).
+  - : در صورتی پرتاب می‌شود که:
+    - نقش (role) یک پیام `assistant` باشد و نوع (`type`) آن چیزی غیر از `text` باشد.
+    - نوع یک پیام `text` باشد و `value` آن یک رشته نباشد.
+    - متن ورودی یا خروجی به زبانی باشد که عامل کاربر (user agent) برای ارسال prompt از آن پشتیبانی نمی‌کند.
+    - نوع یک پیام `image` یا `audio` باشد، اما این نوع در `expectedInputs` فهرست نشده باشد، یا `value` یکی از [انواع دادهٔ پذیرفته‌شده](/en-US/docs/Web/API/Prompt_API/Multimodal#what_data_types_are_accepted) نباشد.
 - `OperationError` {{domxref("DOMException")}}
-  - : Thrown if prefilling fails for any other reason not listed in the other exception types.
+  - : اگر پیش‌پرکردن به هر دلیل دیگری غیر از موارد ذکرشده در سایر انواع استثنا شکست بخورد پرتاب می‌شود.
 - `QuotaExceededError` {{domxref("DOMException")}}
-  - : Thrown if appending `input` would cause the session's context usage to exceed the model's {{domxref("LanguageModel.contextWindow")}}.
+  - : اگر افزودن `input` باعث شود استفاده از زمینهٔ نشست از {{domxref("LanguageModel.contextWindow")}} مدل فراتر رود پرتاب می‌شود.
 - `SyntaxError` {{domxref("DOMException")}}
-  - : Thrown if:
-    - No messages are included in the messages array.
-    - A message's `prefix` property is set to `true` and:
-      - The message's `role` is not `assistant`.
-      - The message is not the last item in the messages array.
+  - : در صورتی پرتاب می‌شود که:
+    - هیچ پیامی در آرایهٔ پیام‌ها وجود نداشته باشد.
+    - ویژگی `prefix` یک پیام `true` باشد و:
+      - نقش (role) آن پیام `assistant` نباشد.
+      - آن پیام آخرین آیتم در آرایهٔ پیام‌ها نباشد.
 - `TypeError` {{domxref("DOMException")}}
-  - : Thrown if a message's `role` is `system` but it was not the first message passed to the context.
+  - : اگر نقش (role) یک پیام `system` باشد اما این پیام نخستین پیامی نباشد که به زمینه ارسال شده است.
 
-## Examples
+## مثال‌ها
 
-See also [Adding context with initial and ongoing prompt inputs > Appending extra messages to the context](/en-US/docs/Web/API/Prompt_API/Adding_context#appending_extra_messages_to_the_context).
+همچنین ببینید [افزودن زمینه با ورودی‌های پرامپت آغازین و پیوسته > افزودن پیام‌های بیشتر به زمینه](/en-US/docs/Web/API/Prompt_API/Adding_context#appending_extra_messages_to_the_context).
 
-### Append context before prompting
+### افزودن زمینه پیش از پرسیدن از مدل
 
-This example shows how to append to a context for the user role before calling `prompt()`.
-Note that we can just specify text input (`documentText`) in this case, because `user` is the default role.
+این مثال نشان می‌دهد که چگونه می‌توان پیش از فراخوانی `prompt()` زمینه‌ای برای نقش کاربر اضافه کرد. توجه کنید که در این حالت می‌توانیم فقط ورودی متنی (`documentText`) را مشخص کنیم، زیرا `user` نقش پیش‌فرض است.
 
 ```js
 const documentText = "This is my important essay...";
@@ -115,9 +108,9 @@ const summary = await session.prompt(
 console.log(summary);
 ```
 
-### Appending context with an abort signal
+### افزودن زمینه با سیگنال انصراف
 
-An abort signal lets you cancel an append operation. The example below passes an {{domxref("AbortSignal")}} to the `signal` member and calls its `abort()` method after 3 seconds.
+یک سیگنال انصراف به شما امکان می‌دهد عملیات افزودن را لغو کنید. مثال زیر یک {{domxref("AbortSignal")}} را به عضو `signal` ارسال می‌کند و پس از ۳ ثانیه متد `abort()` کنترل‌کننده را فراخوانی می‌کند.
 
 ```js
 const controller = new AbortController();
@@ -138,9 +131,9 @@ try {
 }
 ```
 
-### Checking context usage after appending
+### بررسی میزان استفاده از زمینه پس از افزودن
 
-The code below shows how to log the number of tokens used after appending a large amount of context.
+کد زیر نشان می‌دهد که چگونه می‌توان پس از افزودن حجم زیادی از زمینه، تعداد توکن‌های استفاده‌شده را در خروجی ثبت کرد.
 
 ```js
 const largeDocument = "This is my large body of text...";
@@ -152,15 +145,15 @@ console.log(
 );
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("LanguageModel.prompt()")}}
 - {{domxref("LanguageModel.measureContextUsage()")}}
