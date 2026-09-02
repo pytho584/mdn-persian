@@ -1,11 +1,5 @@
 ---
 title: "LaunchQueue: setConsumer() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/LaunchQueue/setConsumer"
-status: "needs-translation"
----
-
----
-title: "LaunchQueue: setConsumer() method"
 short-title: setConsumer()
 slug: Web/API/LaunchQueue/setConsumer
 page-type: web-api-instance-method
@@ -16,24 +10,24 @@ browser-compat: api.LaunchQueue.setConsumer
 
 {{APIRef("Launch Handler API")}}{{SeeCompatTable}}
 
-The **`setConsumer()`** method of the {{domxref("LaunchQueue")}} interface is used to declare the callback that will handle custom launch navigation handling in a [progressive web app](/en-US/docs/Web/Progressive_web_apps) (PWA). Such custom navigation is initiated via {{domxref("Window.launchQueue")}} when a PWA has been launched with a [`launch_handler`](/en-US/docs/Web/Progressive_web_apps/Manifest/Reference/launch_handler) `client_mode` value of `focus-existing`, `navigate-new`, or `navigate-existing`.
+متد **`setConsumer()`** از رابط {{domxref("LaunchQueue")}} برای تعیین تابع برگشت‌به‌صدایی (callback) استفاده می‌شود که مدیریت ناوبری راه‌اندازی سفارشی را در یک [برنامه وب پیشرو (PWA)](/en-US/docs/Web/Progressive_web_apps) بر عهده می‌گیرد. چنین ناوبری سفارشی از طریق {{domxref("Window.launchQueue")}} آغاز می‌شود، زمانی که یک PWA با مقدار `client_mode` برابر با `focus-existing`، `navigate-new` یا `navigate-existing` در [`launch_handler`](/en-US/docs/Web/Progressive_web_apps/Manifest/Reference/launch_handler) راه‌اندازی شده باشد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 setConsumer(callback)
 ```
 
-### Parameters
+### پارامترها
 
 - `callback`
-  - : A callback function that handles custom navigation for the PWA. The callback is passed a {{domxref("LaunchParams")}} object instance as a parameter.
+  - : یک تابع برگشت‌به‌صدا که ناوبری سفارشی را برای PWA مدیریت می‌کند. این تابع یک شیء از نوع {{domxref("LaunchParams")}} را به عنوان پارامتر دریافت می‌کند.
 
-### Return value
+### مقدار بازگشتی
 
 `undefined`.
 
-## Examples
+## مثال‌ها
 
 ```js
 if ("launchQueue" in window) {
@@ -53,15 +47,15 @@ if ("launchQueue" in window) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Launch Handler API: Control how your app is launched](https://developer.chrome.com/docs/web-platform/launch-handler/)
 - {{domxref("Window.launchQueue")}}
