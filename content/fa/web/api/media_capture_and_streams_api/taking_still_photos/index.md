@@ -1,10 +1,4 @@
 ---
-title: "Taking still photos with getUserMedia()"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Media_Capture_and_Streams_API/Taking_still_photos"
-status: "needs-translation"
----
-
----
 title: Taking still photos with getUserMedia()
 slug: Web/API/Media_Capture_and_Streams_API/Taking_still_photos
 page-type: guide
@@ -12,20 +6,17 @@ page-type: guide
 
 {{DefaultAPISidebar("Media Capture and Streams")}}
 
-This article shows how to use [`navigator.mediaDevices.getUserMedia()`](/en-US/docs/Web/API/MediaDevices/getUserMedia) to access the camera on a computer or mobile phone with `getUserMedia()` support and take a photo with it.
+این مقاله نحوه استفاده از [`navigator.mediaDevices.getUserMedia()`](/en-US/docs/Web/API/MediaDevices/getUserMedia) برای دسترسی به دوربین رایانه یا تلفن همراه با پشتیبانی از `getUserMedia()` و گرفتن عکس با آن را نشان می‌دهد.
 
-![getUserMedia-based image capture app — on the left we have a video stream taken from a webcam and a take photo button, on the right we have the still image output from taking the photo](web-rtc-demo.png)
+![برنامهٔ ضبط تصویر مبتنی بر getUserMedia – در سمت چپ یک جریان ویدیویی از دوربین وب و یک دکمهٔ عکس‌برداری دیده می‌شود، در سمت راست خروجی تصویر ثابت حاصل از عکس‌برداری قرار دارد](web-rtc-demo.png)
 
-You can also jump straight to the [Demo](#demo) if you like.
+اگر مایل هستید، می‌توانید مستقیماً به بخش [نمایش زنده](#demo) بروید.
 
-## The HTML markup
+## نشانه‌گذاری HTML
 
-Our HTML interface has two main operational sections: the stream and capture panel and the presentation panel.
-Each of these is presented side-by-side in its own {{HTMLElement("div")}} to facilitate styling and control.
-There's a {{HTMLElement("button")}} element (`permissions-button`) that we can use later in JavaScript to let the user allow or block camera permissions per device using `getUserMedia()`.
+رابط HTML ما دو بخش اصلی عملیاتی دارد: پنل جریان و ضبط و پنل نمایش. هر یک از این‌ها به صورت کنار هم در یک {{HTMLElement("div")}} مجزا قرار گرفته‌اند تا استایل‌دهی و کنترل آسان‌تر شود. یک عنصر {{HTMLElement("button")}} (`permissions-button`) وجود دارد که می‌توانیم بعداً در جاوااسکریپت از آن استفاده کنیم تا کاربر بتواند با استفاده از `getUserMedia()` مجوز دوربین را برای هر دستگاه مجاز یا مسدود کند.
 
-The box on the left contains two components: a {{HTMLElement("video")}} element, which will receive the stream from `navigator.mediaDevices.getUserMedia()`, and a {{HTMLElement("button")}} to start video capture.
-This is straightforward, and we'll see how it ties together when we get into the JavaScript code.
+جعبهٔ سمت چپ دو جزء دارد: یک عنصر {{HTMLElement("video")}} که جریان را از `navigator.mediaDevices.getUserMedia()` دریافت می‌کند و یک {{HTMLElement("button")}} برای شروع ضبط ویدیو. این ساده است و وقتی به کد جاوااسکریپت برسیم، نحوهٔ اتصال آن‌ها را خواهیم دید.
 
 ```css hidden live-sample___photo-capture live-sample___photo-capture-with-filters
 body {
@@ -108,10 +99,9 @@ code {
 </div>
 ```
 
-Next, we have a {{HTMLElement("canvas")}} element into which the captured frames are stored, potentially manipulated in some way, and then converted into an output image file.
-This canvas is kept hidden by styling the canvas with {{cssxref("display", "display: none")}}, to avoid cluttering up the screen — the user does not need to see this intermediate stage.
+در ادامه، یک عنصر {{HTMLElement("canvas")}} داریم که فریم‌های ضبط‌شده در آن ذخیره می‌شوند، احتمالاً به نحوی دستکاری می‌شوند و سپس به یک فایل تصویری خروجی تبدیل می‌شوند. این بوم با استایل‌دهی با {{cssxref("display", "display: none")}} پنهان نگه داشته می‌شود تا صفحه شلوغ نشود – کاربر نیازی به دیدن این مرحلهٔ میانی ندارد.
 
-We also have an {{HTMLElement("img")}} element into which we will draw the image — this is the final display shown to the user.
+همچنین یک عنصر {{HTMLElement("img")}} داریم که تصویر را در آن نمایش می‌دهیم – این نمایش نهایی است که به کاربر نشان داده می‌شود.
 
 ```html live-sample___photo-capture live-sample___photo-capture-with-filters
 <canvas id="canvas"></canvas>
@@ -120,13 +110,13 @@ We also have an {{HTMLElement("img")}} element into which we will draw the image
 </div>
 ```
 
-## The JavaScript code
+## کد جاوااسکریپت
 
-Now let's take a look at the JavaScript code. We'll break it up into a few bite-sized pieces to make it easier to explain.
+حالا بیایید نگاهی به کد جاوااسکریپت بیندازیم. آن را به چند بخش کوچک تقسیم می‌کنیم تا توضیح آن آسان‌تر شود.
 
-### Initialization
+### مقداردهی اولیه
 
-We start by setting up various variables we'll be using.
+با تعریف متغیرهای مختلفی که استفاده خواهیم کرد شروع می‌کنیم.
 
 ```js live-sample___photo-capture live-sample___photo-capture-with-filters
 const width = 320; // We will scale the photo width to this
@@ -141,29 +131,28 @@ const startButton = document.getElementById("start-button");
 const allowButton = document.getElementById("permissions-button");
 ```
 
-Those variables are:
+این متغیرها عبارتند از:
 
 - `width`
-  - : Whatever size the incoming video is, we're going to scale the resulting image to be 320 pixels wide.
+  - : صرف‌نظر از اندازهٔ ویدیوی ورودی، تصویر حاصل را به عرض ۳۲۰ پیکسل مقیاس می‌کنیم.
 - `height`
-  - : The output height of the image will be computed given the `width` and the {{glossary("aspect ratio")}} of the stream.
+  - : ارتفاع خروجی تصویر با توجه به `width` و {{glossary("aspect ratio", "نسبت تصویر")}} جریان محاسبه خواهد شد.
 - `streaming`
-  - : Indicates whether or not there is currently an active stream of video running.
+  - : نشان می‌دهد که آیا در حال حاضر یک جریان ویدیویی فعال در حال اجرا است یا خیر.
 - `video`
-  - : A reference to the {{HTMLElement("video")}} element.
+  - : ارجاعی به عنصر {{HTMLElement("video")}}.
 - `canvas`
-  - : A reference to the {{HTMLElement("canvas")}} element.
+  - : ارجاعی به عنصر {{HTMLElement("canvas")}}.
 - `photo`
-  - : A reference to the {{HTMLElement("img")}} element.
+  - : ارجاعی به عنصر {{HTMLElement("img")}}.
 - `startButton`
-  - : A reference to the {{HTMLElement("button")}} element that's used to trigger capture.
+  - : ارجاعی به عنصر {{HTMLElement("button")}} که برای شروع ضبط استفاده می‌شود.
 - `allowButton`
-  - : A reference to the {{HTMLElement("button")}} element that's used to control whether the page can access devices or not.
+  - : ارجاعی به عنصر {{HTMLElement("button")}} که برای کنترل دسترسی صفحه به دستگاه‌ها استفاده می‌شود.
 
-#### Get the media stream
+#### دریافت جریان رسانه
 
-The next task is to get the media stream: we define an event listener that calls {{domxref("MediaDevices.getUserMedia()")}} and requests a video stream (without audio) when the user clicks on the "Allow camera" button.
-It returns a promise which we attach success and failure callbacks to:
+وظیفهٔ بعدی دریافت جریان رسانه است: یک شنوندهٔ رویداد تعریف می‌کنیم که {{domxref("MediaDevices.getUserMedia()")}} را فراخوانی کرده و یک جریان ویدیویی (بدون صدا) را هنگامی که کاربر روی دکمهٔ «Allow camera» کلیک می‌کند درخواست می‌کند. این یک promise برمی‌گرداند که به آن توابع موفقیت و شکست را متصل می‌کنیم:
 
 ```js live-sample___photo-capture live-sample___photo-capture-with-filters
 allowButton.addEventListener("click", () => {
@@ -179,15 +168,13 @@ allowButton.addEventListener("click", () => {
 });
 ```
 
-The success callback receives a `stream` object as input, which is set as our {{HTMLElement("video")}} element's source.
-Once the stream is linked to the `<video>` element, we start it playing by calling [`HTMLMediaElement.play()`](/en-US/docs/Web/API/HTMLMediaElement/play_event).
+تابع موفقیت یک شیء `stream` را به عنوان ورودی دریافت می‌کند که به عنوان منبع عنصر {{HTMLElement("video")}} ما تنظیم می‌شود. پس از اتصال جریان به عنصر `<video>`، با فراخوانی [`HTMLMediaElement.play()`](/en-US/docs/Web/API/HTMLMediaElement/play_event) آن را شروع به پخش می‌کنیم.
 
-The error callback is called if opening the stream doesn't work.
-This will happen for example if there's no compatible camera connected, or the user denied access.
+تابع شکست در صورتی که باز کردن جریان موفقیت‌آمیز نباشد فراخوانی می‌شود. این اتفاق می‌افتد مثلاً اگر دوربین سازگاری متصل نباشد یا کاربر دسترسی را رد کرده باشد.
 
-#### Listen for the video to start playing
+#### گوش دادن به شروع پخش ویدیو
 
-After calling [`HTMLMediaElement.play()`](/en-US/docs/Web/API/HTMLMediaElement/play_event) on the {{HTMLElement("video")}}, there's a (hopefully brief) period of time that elapses before the stream of video begins to flow. To avoid blocking until that happens, we add an event listener to `video` for the {{domxref("HTMLMediaElement/canplay_event", "canplay")}} event, which is delivered when the video playback actually begins. At that point, all the properties in the `video` object have been configured based on the stream's format.
+پس از فراخوانی [`HTMLMediaElement.play()`](/en-US/docs/Web/API/HTMLMediaElement/play_event) روی {{HTMLElement("video")}}، یک دورهٔ زمانی (امیدواریم کوتاه) می‌گذرد تا جریان ویدیو شروع به جاری شدن کند. برای جلوگیری از توقف تا زمانی که این اتفاق بیفتد، یک شنوندهٔ رویداد به `video` برای رویداد {{domxref("HTMLMediaElement/canplay_event", "canplay")}} اضافه می‌کنیم که وقتی پخش ویدیو واقعاً شروع می‌شود، تحویل داده می‌شود. در آن نقطه، تمام ویژگی‌های موجود در شیء `video` بر اساس قالب جریان پیکربندی شده‌اند.
 
 ```js live-sample___photo-capture live-sample___photo-capture-with-filters
 video.addEventListener("canplay", (ev) => {
@@ -203,15 +190,15 @@ video.addEventListener("canplay", (ev) => {
 });
 ```
 
-This callback does nothing unless it's the first time it's been called; this is tested by looking at the value of our `streaming` variable, which is `false` the first time this method is run.
+این تابع فراخوانی کاری انجام نمی‌دهد مگر اینکه اولین بار باشد که فراخوانی می‌شود؛ این با بررسی مقدار متغیر `streaming` که در اولین اجرای این متد `false` است، آزمایش می‌شود.
 
-If this is indeed the first run, we set the video's height based on the size difference between the video's actual size, `video.videoWidth`, and the width at which we're going to render it, `width`.
+اگر این اولین اجرا باشد، ارتفاع ویدیو را بر اساس تفاوت اندازهٔ واقعی ویدیو، `video.videoWidth` و عرضی که در آن رندر می‌کنیم، `width`، تنظیم می‌کنیم.
 
-Finally, the `width` and `height` of both the video and the canvas are set to match each other by calling {{domxref("Element.setAttribute()")}} on each of the two properties on each element, and setting widths and heights as appropriate. Finally, we set the `streaming` variable to `true` to prevent us from inadvertently running this setup code again.
+در نهایت، `width` و `height` هر دو ویدیو و بوم با فراخوانی {{domxref("Element.setAttribute()")}} روی هر یک از این دو ویژگی روی هر عنصر تنظیم می‌شوند و عرض‌ها و ارتفاع‌ها به طور مناسب تنظیم می‌شوند. در نهایت، متغیر `streaming` را به `true` تنظیم می‌کنیم تا از اجرای مجدد این کد راه‌اندازی به طور سهوی جلوگیری کنیم.
 
-#### Handle clicks on the button
+#### مدیریت کلیک روی دکمه
 
-To capture a still photo each time the user clicks the `startButton`, we need to add an event listener to the button, to be called when the {{domxref("Element/click_event", "click")}} event is issued:
+برای گرفتن یک عکس ثابت هر بار که کاربر روی `startButton` کلیک می‌کند، باید یک شنوندهٔ رویداد به دکمه اضافه کنیم که وقتی رویداد {{domxref("Element/click_event", "click")}} صادر می‌شود، فراخوانی شود:
 
 ```js live-sample___photo-capture live-sample___photo-capture-with-filters
 startButton.addEventListener("click", (ev) => {
@@ -220,11 +207,11 @@ startButton.addEventListener("click", (ev) => {
 });
 ```
 
-This method is straightforward: it calls the `takePicture()` function, defined below in the section [Capturing a frame from the stream](#capturing_a_frame_from_the_stream), then calls {{domxref("Event.preventDefault()")}} on the received event to prevent the click from being handled more than once.
+این متد ساده است: تابع `takePicture()` را که در بخش [گرفتن یک فریم از جریان](#گرفتن_یک_فریم_از_جریان) در زیر تعریف شده است فراخوانی می‌کند، سپس {{domxref("Event.preventDefault()")}} را روی رویداد دریافتی فراخوانی می‌کند تا از چندباره مدیریت کلیک جلوگیری شود.
 
-### Clearing the photo box
+### پاک کردن جعبهٔ عکس
 
-Clearing the photo box involves creating an image, then converting it into a format usable by the {{HTMLElement("img")}} element that displays the most recently captured frame. That code looks like this:
+پاک کردن جعبهٔ عکس شامل ایجاد یک تصویر و سپس تبدیل آن به قالبی قابل استفاده توسط عنصر {{HTMLElement("img")}} است که آخرین فریم ضبط‌شده را نمایش می‌دهد. این کد به صورت زیر است:
 
 ```js live-sample___photo-capture live-sample___photo-capture-with-filters
 function clearPhoto() {
@@ -239,13 +226,13 @@ function clearPhoto() {
 clearPhoto();
 ```
 
-We start by getting a reference to the hidden {{HTMLElement("canvas")}} element that we use for offscreen rendering. Next we set the `fillStyle` to `#aaaaaa` (a fairly light grey), and fill the entire canvas with that color by calling {{domxref("CanvasRenderingContext2D.fillRect()","fillRect()")}}.
+با گرفتن یک ارجاع به عنصر {{HTMLElement("canvas")}} پنهان که برای رندر خارج از صفحه استفاده می‌کنیم شروع می‌کنیم. سپس `fillStyle` را به `#aaaaaa` (یک خاکستری نسبتاً روشن) تنظیم می‌کنیم و کل بوم را با آن رنگ با فراخوانی {{domxref("CanvasRenderingContext2D.fillRect()","fillRect()")}} پر می‌کنیم.
 
-Last in this function, we convert the canvas into a PNG image and call {{domxref("Element.setAttribute", "photo.setAttribute()")}} to make our captured still box display the image.
+در پایان این تابع، بوم را به یک تصویر PNG تبدیل می‌کنیم و با فراخوانی {{domxref("Element.setAttribute", "photo.setAttribute()")}} باعث می‌شویم جعبهٔ عکس ثابت ضبط‌شده تصویر را نمایش دهد.
 
-### Capturing a frame from the stream
+### گرفتن یک فریم از جریان
 
-There's one last function to define, and it's the point to the entire exercise: the `takePicture()` function, whose job it is to capture the currently displayed video frame, convert it into a PNG file, and display it in the captured frame box. The code looks like this:
+یک تابع نهایی برای تعریف باقی مانده است و این نقطهٔ اصلی کل تمرین است: تابع `takePicture()` که وظیفه آن گرفتن فریم ویدیوی در حال نمایش، تبدیل آن به یک فایل PNG و نمایش آن در جعبهٔ فریم ضبط‌شده است. کد به این صورت است:
 
 ```js live-sample___photo-capture
 function takePicture() {
@@ -263,27 +250,26 @@ function takePicture() {
 }
 ```
 
-As is the case any time we need to work with the contents of a canvas, we start by getting the [2D drawing context](/en-US/docs/Web/API/CanvasRenderingContext2D) for the hidden canvas.
+همان‌طور که در هر زمانی که نیاز به کار با محتویات یک بوم داریم، با گرفتن [زمینهٔ ترسیم دو بعدی](/en-US/docs/Web/API/CanvasRenderingContext2D) برای بوم پنهان شروع می‌کنیم.
 
-Then, if the width and height are both non-zero (meaning that there's at least potentially valid image data), we set the width and height of the canvas to match that of the captured frame, then call {{domxref("CanvasRenderingContext2D.drawImage()", "drawImage()")}} to draw the current frame of the video into the context, filling the entire canvas with the frame image.
+سپس، اگر عرض و ارتفاع هر دو غیر صفر باشند (به این معنی که حداقل احتمالاً داده‌های تصویر معتبری وجود دارد)، عرض و ارتفاع بوم را به گونه‌ای تنظیم می‌کنیم که با فریم ضبط‌شده مطابقت داشته باشد، سپس {{domxref("CanvasRenderingContext2D.drawImage()", "drawImage()")}} را فراخوانی می‌کنیم تا فریم جاری ویدیو را درون زمینه ترسیم کند و کل بوم را با تصویر فریم پر کند.
 
 > [!NOTE]
-> This takes advantage of the fact that the {{domxref("HTMLVideoElement")}} interface looks like an {{domxref("HTMLImageElement")}} to any API that accepts an `HTMLImageElement` as a parameter, with the video's current frame presented as the image's contents.
+> این از این واقعیت استفاده می‌کند که رابط {{domxref("HTMLVideoElement")}} برای هر API که یک `HTMLImageElement` را به عنوان پارامتر می‌پذیرد، مانند یک {{domxref("HTMLImageElement")}} به نظر می‌رسد، و فریم جاری ویدیو به عنوان محتوای تصویر ارائه می‌شود.
 
-Once the canvas contains the captured image, we convert it to PNG format by calling {{domxref("HTMLCanvasElement.toDataURL()")}} on it; finally, we call {{domxref("Element.setAttribute", "photo.setAttribute()")}} to make our captured still box display the image.
+هنگامی که بوم حاوی تصویر گرفته شده است، آن را با فراخوانی {{domxref("HTMLCanvasElement.toDataURL()")}} روی آن به فرمت PNG تبدیل می‌کنیم؛ در نهایت، با فراخوانی {{domxref("Element.setAttribute", "photo.setAttribute()")}} باعث می‌شویم جعبهٔ عکس ثابت ضبط‌شده تصویر را نمایش دهد.
 
-If there isn't a valid image available (that is, the `width` and `height` are both 0), we clear the contents of the captured frame box by calling `clearPhoto()`.
+اگر تصویر معتبری در دسترس نباشد (یعنی `width` و `height` هر دو ۰ هستند)، محتویات جعبهٔ فریم ضبط‌شده را با فراخوانی `clearPhoto()` پاک می‌کنیم.
 
-## Demo
+## نمایش زنده
 
-Click "Allow camera" to select an input device and allow the page to access the camera.
-Once video starts, you can click "Capture photo" to capture a still from the stream as an image drawn to the canvas on the right:
+روی «Allow camera» کلیک کنید تا یک دستگاه ورودی انتخاب کنید و به صفحه اجازه دسترسی به دوربین را بدهید. پس از شروع ویدیو، می‌توانید روی «Capture photo» کلیک کنید تا یک عکس ثابت از جریان به عنوان تصویری که روی بوم سمت راست کشیده شده است، بگیرید:
 
 {{EmbedLiveSample('photo-capture', '', '500', , , , 'camera', 'allow-popups')}}
 
-## Fun with filters
+## سرگرمی با فیلترها
 
-Since we're capturing images from the user's webcam by grabbing frames from a {{HTMLElement("video")}} element, we can apply fun CSS {{cssxref("filter")}} effects to the video with filters. These filters range from basic (making the image black and white) to complex (Gaussian blurs and hue rotation).
+از آنجایی که ما با گرفتن فریم‌ها از یک عنصر {{HTMLElement("video")}} از دوربین وب کاربر تصاویر را ضبط می‌کنیم، می‌توانیم افکت‌های جذاب CSS {{cssxref("filter")}} را با فیلترها روی ویدیو اعمال کنیم. این فیلترها از پایه (سیاه و سفید کردن تصویر) تا پیچیده (تارشدگی گاوسی و چرخش رنگ) متغیر هستند.
 
 ```css live-sample___photo-capture-with-filters
 #video {
@@ -291,7 +277,7 @@ Since we're capturing images from the user's webcam by grabbing frames from a {{
 }
 ```
 
-For the video filters to be applied to the photo, the `takePicture()` function needs the following changes.
+برای اعمال فیلترهای ویدیو روی عکس، تابع `takePicture()` نیاز به تغییرات زیر دارد.
 
 ```js live-sample___photo-capture-with-filters
 function takePicture() {
@@ -321,14 +307,14 @@ function takePicture() {
 
 {{EmbedLiveSample('photo-capture-with-filters', , '600', , , , 'camera', 'allow-popups')}}
 
-You can play with this effect using, for example, the Firefox developer tools' [style editor](https://firefox-source-docs.mozilla.org/devtools-user/style_editor/index.html); see [Edit CSS filters](https://firefox-source-docs.mozilla.org/devtools-user/page_inspector/how_to/edit_css_filters/index.html) for details on how to do so.
+می‌توانید با این افکت با استفاده از مثلاً [ویرایشگر استایل](https://firefox-source-docs.mozilla.org/devtools-user/style_editor/index.html) ابزارهای توسعه‌دهندهٔ فایرفاکس بازی کنید؛ برای جزئیات نحوه انجام این کار به [ویرایش فیلترهای CSS](https://firefox-source-docs.mozilla.org/devtools-user/page_inspector/how-to/edit_css_filters/index.html) مراجعه کنید.
 
-## Using specific devices
+## استفاده از دستگاه‌های خاص
 
-You can, if needed, restrict the set of permitted video sources to a specific device or set of devices. To do so, call {{domxref("MediaDevices.enumerateDevices")}}. When the promise is fulfilled with an array of {{domxref("MediaDeviceInfo")}} objects describing the available devices, find the ones that you want to allow and specify the corresponding {{domxref("MediaTrackConstraints.deviceId", "deviceId")}} or `deviceId`s in the {{domxref("MediaTrackConstraints")}} object passed into {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}}.
+در صورت نیاز، می‌توانید مجموعهٔ منابع ویدیویی مجاز را به یک دستگاه یا مجموعه‌ای از دستگاه‌ها محدود کنید. برای این کار، {{domxref("MediaDevices.enumerateDevices")}} را فراخوانی کنید. هنگامی که promise با آرایه‌ای از اشیاء {{domxref("MediaDeviceInfo")}} که دستگاه‌های موجود را توصیف می‌کنند، برآورده شد، دستگاه‌هایی را که می‌خواهید مجاز کنید پیدا کرده و {{domxref("MediaTrackConstraints.deviceId", "deviceId")}} یا `deviceId`های مربوطه را در شیء {{domxref("MediaTrackConstraints")}} که به {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}} ارسال می‌شود، مشخص کنید.
 
-## See also
+## همچنین ببینید
 
 - {{domxref("MediaDevices.getUserMedia")}}
 - {{domxref("CanvasRenderingContext2D.drawImage()")}}
-- [Using frames from a video](/en-US/docs/Web/API/Canvas_API/Tutorial/Using_images#using_frames_from_a_video) in the Canvas tutorial
+- [استفاده از فریم‌های یک ویدیو](/en-US/docs/Web/API/Canvas_API/Tutorial/Using_images#using_frames_from_a_video) در آموزش Canvas
