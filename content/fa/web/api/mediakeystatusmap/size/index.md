@@ -1,9 +1,4 @@
----
-title: "MediaKeyStatusMap: size property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaKeyStatusMap/size"
-status: "needs-translation"
----
-
+```markdown
 ---
 title: "MediaKeyStatusMap: size property"
 short-title: size
@@ -14,18 +9,17 @@ browser-compat: api.MediaKeyStatusMap.size
 
 {{APIRef("Encrypted Media Extensions")}}{{SecureContext_Header}}
 
-The **`size`** read-only property of
-the {{domxref("MediaKeyStatusMap")}} interface returns the number of key/value paIrs
-in the status map.
+ویژگی فقط-خواندنی **`size`** از رابط {{domxref("MediaKeyStatusMap")}} تعداد جفت‌های کلید/مقدار در نقشه وضعیت را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A long integer.
+یک عدد صحیح بلند (long integer).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
+```
