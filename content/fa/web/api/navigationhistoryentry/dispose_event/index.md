@@ -1,11 +1,5 @@
 ---
 title: "NavigationHistoryEntry: dispose event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigationHistoryEntry/dispose_event"
-status: "needs-translation"
----
-
----
-title: "NavigationHistoryEntry: dispose event"
 short-title: dispose
 slug: Web/API/NavigationHistoryEntry/dispose_event
 page-type: web-api-event
@@ -14,17 +8,17 @@ browser-compat: api.NavigationHistoryEntry.dispose_event
 
 {{APIRef("Navigation API")}}
 
-The **`dispose`** event of the {{domxref("NavigationHistoryEntry")}} interface is fired when the entry is no longer part of the history entry list.
+رویداد **`dispose`** از رابط {{domxref("NavigationHistoryEntry")}} زمانی فعال می‌شود که آن ورودی (entry) دیگر بخشی از فهرست ورودی‌های تاریخچه نباشد.
 
-Disposal occurs when:
+حذف (disposal) در موارد زیر رخ می‌دهد:
 
-- Forward history entries are cleared. See the example at [Notifications on entry disposal](https://github.com/wicg/navigation-api#notifications-on-entry-disposal) for more information.
-- The user clears their browser history using settings or provided UI controls.
-- The history limit is exceeded. This is not specified anywhere, but browsers tend to have a history limit of 50 pages.
+- ورودی‌های تاریخچه‌ی جلو (forward history entries) پاک می‌شوند. برای اطلاعات بیشتر مثال [Notifications on entry disposal](https://github.com/wicg/navigation-api#notifications-on-entry-disposal) را ببینید.
+- کاربر تاریخچه‌ی مرورگر خود را از طریق تنظیمات یا کنترل‌های رابط کاربری موجود پاک می‌کند.
+- محدودیت تاریخچه بیش از حد مجاز می‌شود. این محدودیت در جایی مشخص نشده است، اما مرورگرها معمولاً محدودیت ۵۰ صفحه برای تاریخچه دارند.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد (event handler property) تنظیم کنید.
 
 ```js-nolint
 addEventListener("dispose", (event) => { })
@@ -32,11 +26,11 @@ addEventListener("dispose", (event) => { })
 ondispose = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## مثال‌ها
 
 ```js
 navigation.addEventListener("currententrychange", () => {
@@ -44,15 +38,15 @@ navigation.addEventListener("currententrychange", () => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
-- [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
+- [مسیریابی مدرن سمت کلاینت: API Navigation](https://developer.chrome.com/docs/web-platform/navigation-api/)
+- [توضیح API Navigation](https://github.com/WICG/navigation-api/blob/main/README.md)
