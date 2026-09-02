@@ -1,11 +1,5 @@
 ---
 title: "HTMLTrackElement: kind property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTrackElement/kind"
-status: "needs-translation"
----
-
----
-title: "HTMLTrackElement: kind property"
 short-title: kind
 slug: Web/API/HTMLTrackElement/kind
 page-type: web-api-instance-property
@@ -14,23 +8,23 @@ browser-compat: api.HTMLTrackElement.kind
 
 {{ApiRef("HTML DOM")}}
 
-The **`kind`** property of the {{domxref("HTMLTrackElement")}} interface represents the type of track, or how the text track is meant to be used. It reflects the {{htmlelement("track")}} element's enumerated [`kind`](/en-US/docs/Web/HTML/Reference/Elements/track#kind) attribute.
+ویژگی **`kind`** از رابط {{domxref("HTMLTrackElement")}} نشان‌دهندهٔ نوع زیرنویس (track) یا نحوهٔ استفاده از آن است. این ویژگی منعکس‌کنندهٔ ویژگی [`kind`](/en-US/docs/Web/HTML/Reference/Elements/track#kind) (از نوع شمارشی) در عنصر {{htmlelement("track")}} می‌باشد.
 
-If no `kind` is set, `subtitles` is used. If the attribute is not set to one of the valid enumerated values, it is invalid and `metadata` is used. Other valid values include `captions`, `descriptions`, and `chapters`.
+اگر `kind` تنظیم نشده باشد، مقدار `subtitles` استفاده می‌شود. اگر ویژگی به یکی از مقادیر شمارشی معتبر تنظیم نشده باشد، نامعتبر تلقی شده و `metadata` به کار می‌رود. سایر مقادیر معتبر شامل `captions`، `descriptions` و `chapters` هستند.
 
-## Value
+## مقدار
 
-A string; lowercase `captions`, `descriptions`, `chapters`, `subtitles` or `metadata`.
+یک رشته؛ به صورت حروف کوچک: `captions`، `descriptions`، `chapters`، `subtitles` یا `metadata`.
 
-## Example
+## مثال
 
-Given the following:
+با در نظر گرفتن کد زیر:
 
 ```html
 <track src="track.vtt" id="exampleTrack" />
 ```
 
-We get the following results:
+نتایج زیر را به دست می‌آوریم:
 
 ```js
 const trackElement = document.getElementById("exampleTrack");
@@ -44,15 +38,15 @@ trackElement.kind = "CAPTIONS";
 console.log(trackElement.kind); // "captions"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLTrackElement.track")}}
 - {{domxref("HTMLTrackElement.label")}}
