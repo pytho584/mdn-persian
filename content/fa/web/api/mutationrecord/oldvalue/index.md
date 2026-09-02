@@ -1,44 +1,39 @@
 ---
 title: "MutationRecord: oldValue property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MutationRecord/oldValue"
-status: "needs-translation"
----
-
----
-title: "MutationRecord: oldValue property"
 short-title: oldValue
 slug: Web/API/MutationRecord/oldValue
 page-type: web-api-instance-property
 browser-compat: api.MutationRecord.oldValue
+
 ---
 
 {{APIRef("DOM")}}
 
-The {{domxref("MutationRecord")}} read-only property **`oldValue`** contains the character data or attribute value of an observed node before it was changed.
+ویژگی فقط‌خواندنی **`oldValue`** در {{domxref("MutationRecord")}} حاوی داده‌های کاراکتری یا مقدار صفتِ یک گرهٔ مشاهده‌شده، پیش از تغییر آن است.
 
-## Value
+## مقدار
 
-A string representing the old value of an attribute which has been changed, if:
+رشته‌ای که مقدار قدیمی صفتی را نشان می‌دهد که تغییر کرده است، در صورتی که:
 
-- the `attributeOldValue` parameter to {{domxref("MutationObserver.observe()")}} is `true`
-- the `attributes` parameter to {{domxref("MutationObserver.observe()")}} is `true` or omitted
-- the mutation {{domxref("MutationRecord.type", "type")}} is `attributes`.
+- پارامتر `attributeOldValue` در {{domxref("MutationObserver.observe()")}} برابر با `true` باشد
+- پارامتر `attributes` در {{domxref("MutationObserver.observe()")}} برابر با `true` باشد یا حذف شده باشد
+- {{domxref("MutationRecord.type", "type")}} تغییر برابر با `attributes` باشد.
 
-A string representing the old value of a {{domxref("CharacterData")}} node that has been changed, if:
+رشته‌ای که مقدار قدیمی یک گرهٔ {{domxref("CharacterData")}} را نشان می‌دهد که تغییر کرده است، در صورتی که:
 
-- the `characterDataOldValue` parameter to {{domxref("MutationObserver.observe()")}} is `true`
-- the `characterData` parameter to {{domxref("MutationObserver.observe()")}} is `true` or omitted
-- the mutation {{domxref("MutationRecord.type", "type")}} is `characterData`.
+- پارامتر `characterDataOldValue` در {{domxref("MutationObserver.observe()")}} برابر با `true` باشد
+- پارامتر `characterData` در {{domxref("MutationObserver.observe()")}} برابر با `true` باشد یا حذف شده باشد
+- {{domxref("MutationRecord.type", "type")}} تغییر برابر با `characterData` باشد.
 
-Otherwise this property is `null`.
+در غیر این صورت، این ویژگی `null` است.
 
-## Examples
+## مثال‌ها
 
-### Show old color value
+### نمایش مقدار رنگ قدیمی
 
-In the following example, there is a button that changes the color of an `h1` to a random new color. A {{domxref("MutationObserver")}} is used to observe the target node (`h1`) for changes to the attribute; when a change is detected, the observer calls a function, `logOldValue()`.
+در مثال زیر، دکمه‌ای وجود دارد که رنگ یک `h1` را به یک رنگ تصادفی تازه تغییر می‌دهد. یک {{domxref("MutationObserver")}} برای مشاهدهٔ تغییرات صفت در گرهٔ هدف (`h1`) به کار می‌رود؛ وقتی تغییری تشخیص داده شود، observer تابع `logOldValue()` را فراخوانی می‌کند.
 
-The `logOldValue()` function is passed the `mutationRecords` array, which contains the `MutationRecord` objects. The `oldValue` property of the `MutationRecord` object is then displayed, in the color of the old value.
+تابع `logOldValue()` آرایهٔ `mutationRecords` را دریافت می‌کند که حاوی اشیای {{domxref("MutationRecord")}} است. سپس ویژگی `oldValue` آن شیء، با رنگ مقدار قدیمی نمایش داده می‌شود.
 
 #### HTML
 
@@ -75,14 +70,14 @@ observer.observe(h1, {
 });
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Show old color value", "", 200)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
