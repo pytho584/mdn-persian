@@ -1,10 +1,4 @@
 ---
-title: "NavigationCurrentEntryChangeEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigationCurrentEntryChangeEvent"
-status: "needs-translation"
----
-
----
 title: NavigationCurrentEntryChangeEvent
 slug: Web/API/NavigationCurrentEntryChangeEvent
 page-type: web-api-interface
@@ -13,31 +7,31 @@ browser-compat: api.NavigationCurrentEntryChangeEvent
 
 {{APIRef("Navigation API")}}
 
-The **`NavigationCurrentEntryChangeEvent`** interface of the {{domxref("Navigation API", "Navigation API", "", "nocode")}} is the event object for the {{domxref("Navigation/currententrychange_event", "currententrychange")}} event, which fires when the {{domxref("Navigation.currentEntry")}} has changed.
+رابطِ **`NavigationCurrentEntryChangeEvent`** در {{domxref("Navigation API", "Navigation API", "", "nocode")}}، شیء رخداد (event object) برای رویداد {{domxref("Navigation/currententrychange_event", "currententrychange")}} است که زمانی رخ می‌دهد که {{domxref("Navigation.currentEntry")}} تغییر کرده باشد.
 
-This event will fire for same-document navigations (e.g., {{domxref("Navigation.back", "back()")}} or {{domxref("Navigation.traverseTo", "traverseTo()")}}), replacements (i.e., a {{domxref("Navigation.navigate", "navigate()")}} call with `history` set to `replace`), or other calls that change the entry's state (e.g., {{domxref("Navigation.updateCurrentEntry", "updateCurrentEntry()")}}, or the {{domxref("History API", "History API", "", "nocode")}}'s {{domxref("History.replaceState()")}}).
+این رویداد برای ناوبری‌های همان سند (مثلاً {{domxref("Navigation.back", "back()")}} یا {{domxref("Navigation.traverseTo", "traverseTo()")}})، جایگزینی‌ها (یعنی فراخوانی {{domxref("Navigation.navigate", "navigate()")}} با مقدار `history` برابر با `replace`)، یا سایر فراخوانی‌هایی که وضعیت (state) ورودی را تغییر می‌دهند (مانند {{domxref("Navigation.updateCurrentEntry", "updateCurrentEntry()")}} یا {{domxref("History.replaceState()")}} در {{domxref("History API", "History API", "", "nocode")}})، رخ می‌دهد.
 
-This event fires after the navigation is committed, meaning that the visible URL has changed and the {{domxref("NavigationHistoryEntry")}} update has occurred. It is useful for migrating from usage of older API features like the {{domxref("Window/hashchange_event", "hashchange")}} or {{domxref("Window/popstate_event", "popstate")}} events.
+این رویداد پس از قطعی‌شدن ناوبری رخ می‌دهد؛ یعنی URL قابل مشاهده تغییر کرده و به‌روزرسانی {{domxref("NavigationHistoryEntry")}} انجام شده است. این رویداد برای مهاجرت از استفاده از قابلیت‌های قدیمی‌تر API مانند رویدادهای {{domxref("Window/hashchange_event", "hashchange")}} یا {{domxref("Window/popstate_event", "popstate")}} مفید است.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("NavigationCurrentEntryChangeEvent.NavigationCurrentEntryChangeEvent", "NavigationCurrentEntryChangeEvent()")}}
-  - : Creates a new `NavigationCurrentEntryChangeEvent` object instance.
+  - : یک نمونه شیء جدید از `NavigationCurrentEntryChangeEvent` ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{DOMxRef("Event")}}._
+_ویژگی‌های زیر را از والد خود، {{DOMxRef("Event")}}، به ارث می‌برد._
 
 - {{domxref("NavigationCurrentEntryChangeEvent.from", "from")}} {{ReadOnlyInline}}
-  - : Returns the {{domxref("NavigationHistoryEntry")}} that was navigated from.
+  - : نمونه {{domxref("NavigationHistoryEntry")}}ای را برمی‌گرداند که از آن ناوبری انجام شده است.
 - {{domxref("NavigationCurrentEntryChangeEvent.navigationType", "navigationType")}} {{ReadOnlyInline}}
-  - : Returns the type of the navigation that resulted in the change.
+  - : نوع ناوبری که منجر به تغییر شده را برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-Navigation data reporting:
+گزارش داده‌های ناوبری:
 
 ```js
 navigation.addEventListener("currententrychange", () => {
@@ -46,7 +40,7 @@ navigation.addEventListener("currententrychange", () => {
 });
 ```
 
-Setting up a per-entry event:
+ایجاد یک رویداد به‌ازای هر ورودی:
 
 ```js
 navigation.addEventListener("currententrychange", () => {
@@ -54,16 +48,16 @@ navigation.addEventListener("currententrychange", () => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
-- [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
-- [Navigation API live demo](https://mdn.github.io/dom-examples/navigation-api/) ([view demo source](https://github.com/mdn/dom-examples/tree/main/navigation-api))
+- [مسیریابی مدرن سمت کلاینت: Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
+- [توضیح Navigation API](https://github.com/WICG/navigation-api/blob/main/README.md)
+- [دموی زنده‌ی Navigation API](https://mdn.github.io/dom-examples/navigation-api/) ([مشاهده سورس دمو](https://github.com/mdn/dom-examples/tree/main/navigation-api))
