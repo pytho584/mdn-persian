@@ -1,7 +1,5 @@
 ---
 title: "HTMLTrackElement: label property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTrackElement/label"
-status: "needs-translation"
 ---
 
 ---
@@ -14,13 +12,13 @@ browser-compat: api.HTMLTrackElement.label
 
 {{ApiRef("HTML DOM")}}
 
-The **`label`** property of the {{domxref("HTMLTrackElement")}} represents the user-readable title displayed when listing subtitle, caption, and audio descriptions for a track. It reflects the {{htmlelement("track")}} element's [`label`](/en-US/docs/Web/HTML/Reference/Elements/track#label) attribute.
+ویژگی **`label`** از {{domxref("HTMLTrackElement")}} عنوان قابل‌خواندن برای کاربر را نشان می‌دهد که هنگام فهرست‌کردن زیرنویس‌ها، شرح‌ها و توصیف‌های صوتی برای یک track نمایش داده می‌شود. این ویژگی بازتاب‌دهندهٔ ویژگی [`label`](/en-US/docs/Web/HTML/Reference/Elements/track#label) عنصر {{htmlelement("track")}} است.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Example
+## مثال
 
 ```js
 const trackElement = document.getElementById("exampleTrack");
@@ -28,15 +26,15 @@ console.log(`Track's label: ${trackElement.label}`);
 trackElement.label = "Updated label";
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLTrackElement.track")}}
 - {{domxref("HTMLTrackElement.kind")}}
