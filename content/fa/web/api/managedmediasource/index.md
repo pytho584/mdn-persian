@@ -1,10 +1,4 @@
 ---
-title: "ManagedMediaSource"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ManagedMediaSource"
-status: "needs-translation"
----
-
----
 title: ManagedMediaSource
 slug: Web/API/ManagedMediaSource
 page-type: web-api-interface
@@ -15,45 +9,45 @@ browser-compat: api.ManagedMediaSource
 
 {{APIRef("Media Source Extensions")}}{{AvailableInWorkers("window_and_dedicated")}}{{SeeCompatTable}}
 
-The **`ManagedMediaSource`** interface of the {{domxref("Media Source Extensions API", "Media Source Extensions API", "", "nocode")}} is a {{domxref("MediaSource")}} that actively manages its memory content. Unlike a regular `MediaSource`, the user agent can evict content from its {{domxref("ManagedSourceBuffer")}} objects at any time, for reasons such as memory or hardware limitations. This makes it suitable for power-efficient streaming scenarios where the user agent needs more control over buffered media data.
+رابط **`ManagedMediaSource`** از {{domxref("Media Source Extensions API", "Media Source Extensions API", "", "nocode")}} یک {{domxref("MediaSource")}} است که محتوای حافظه‌ی خود را به‌شکل فعال مدیریت می‌کند. برخلاف `MediaSource` معمولی، عامل کاربر می‌تواند در هر زمان، به دلایلی مانند محدودیت‌های حافظه یا سخت‌افزار، محتوا را از اشیاء {{domxref("ManagedSourceBuffer")}} خود حذف کند. این موضوع آن را برای سناریوهای پخش جریانی کم‌مصرف که در آن‌ها عامل کاربر به کنترل بیشتری روی داده‌های رسانه‌ای بافر شده نیاز دارد، مناسب می‌سازد.
 
-When {{domxref("MediaSource.addSourceBuffer", "addSourceBuffer()")}} is called on a `ManagedMediaSource`, it creates {{domxref("ManagedSourceBuffer")}} objects (instead of {{domxref("SourceBuffer")}} objects), which fire {{domxref("ManagedSourceBuffer.bufferedchange_event", "bufferedchange")}} events to notify the application when buffered ranges are modified by the user agent.
+وقتی {{domxref("MediaSource.addSourceBuffer", "addSourceBuffer()")}} روی یک `ManagedMediaSource` فراخوانی می‌شود، به‌جای اشیاء {{domxref("SourceBuffer")}} اشیاء {{domxref("ManagedSourceBuffer")}} ایجاد می‌کند. این اشیاء رویدادهای {{domxref("ManagedSourceBuffer.bufferedchange_event", "bufferedchange")}} را فعال می‌کنند تا زمانی که عامل کاربر محدوده‌های بافر شده را تغییر می‌دهد، برنامه از این تغییر مطلع شود.
 
 > [!NOTE]
-> On Safari, `ManagedMediaSource` only activates when remote playback is explicitly disabled on the media element (by setting {{domxref("HTMLMediaElement.disableRemotePlayback")}} to `true`), or when an AirPlay source alternative is provided (for example, an HLS {{htmlelement("source")}} element). Without either of these, the {{domxref("MediaSource.sourceopen_event", "sourceopen")}} event will not fire.
+> در Safari، `ManagedMediaSource` فقط زمانی فعال می‌شود که پخش از راه دور (remote playback) به‌طور صریح روی عنصر رسانه‌ای غیرفعال شده باشد (با تنظیم {{domxref("HTMLMediaElement.disableRemotePlayback")}} روی `true`)، یا زمانی که یک منبع جایگزین AirPlay ارائه شده باشد (برای مثال، یک عنصر {{htmlelement("source")}} از نوع HLS). بدون هریک از این موارد، رویداد {{domxref("MediaSource.sourceopen_event", "sourceopen")}} فعال نخواهد شد.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("ManagedMediaSource.ManagedMediaSource", "ManagedMediaSource()")}} {{experimental_inline}}
-  - : Creates and returns a new `ManagedMediaSource` object instance with no associated source buffers.
+  - : یک نمونه‌ی شیء جدید `ManagedMediaSource` بدون هیچ بافر منبع مرتبط ایجاد می‌کند و برمی‌گرداند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Also inherits properties from its parent interface, {{domxref("MediaSource")}}._
+_همچنین ویژگی‌های رابط والد خود، {{domxref("MediaSource")}}، را به ارث می‌گیرد._
 
 - {{domxref("ManagedMediaSource.streaming")}} {{ReadOnlyInline}} {{experimental_inline}}
-  - : A boolean indicating whether the `ManagedMediaSource` object is currently streaming. When `true`, the application should actively fetch and append media data. When `false`, the application can stop fetching new data.
+  - : یک مقدار بولین که نشان می‌دهد آیا شیء `ManagedMediaSource` در حال حاضر در حال پخش جریانی است یا نه. وقتی `true` باشد، برنامه باید به‌طور فعال داده‌های رسانه‌ای را دریافت کرده و به بافر اضافه کند. وقتی `false` باشد، برنامه می‌تواند دریافت داده‌های جدید را متوقف کند.
 
-## Instance methods
+## متدهای نمونه
 
-_Inherits methods from its parent interface, {{domxref("MediaSource")}}._
+_متدهای رابط والد خود، {{domxref("MediaSource")}}، را به ارث می‌گیرد._
 
-## Events
+## رویدادها
 
-_Also inherits events from its parent interface, {{domxref("MediaSource")}}._
+_همچنین رویدادهای رابط والد خود، {{domxref("MediaSource")}}، را به ارث می‌گیرد._
 
 - {{domxref("ManagedMediaSource.startstreaming_event", "startstreaming")}} {{experimental_inline}}
-  - : Fired when the `ManagedMediaSource`'s {{domxref("ManagedMediaSource.streaming", "streaming")}} property changes from `false` to `true`, meaning the media source has started streaming.
+  - : وقتی فعال می‌شود که ویژگی {{domxref("ManagedMediaSource.streaming", "streaming")}} متعلق به `ManagedMediaSource` از `false` به `true` تغییر کند؛ یعنی منبع رسانه‌ای پخش جریانی را آغاز کرده است.
 - {{domxref("ManagedMediaSource.endstreaming_event", "endstreaming")}} {{experimental_inline}}
-  - : Fired when the `ManagedMediaSource`'s {{domxref("ManagedMediaSource.streaming", "streaming")}} property changes from `true` to `false`, meaning the media source has stopped streaming.
+  - : وقتی فعال می‌شود که ویژگی {{domxref("ManagedMediaSource.streaming", "streaming")}} متعلق به `ManagedMediaSource` از `true` به `false` تغییر کند؛ یعنی منبع رسانه‌ای پخش جریانی را متوقف کرده است.
 
-## Examples
+## مثال‌ها
 
-### Setting up a managed media source
+### راه‌اندازی یک منبع رسانه‌ای مدیریت‌شده
 
-The following example sets up a `ManagedMediaSource`, connects it to a {{htmlelement("video")}} element, and listens for the {{domxref("ManagedMediaSource.startstreaming_event", "startstreaming")}} and {{domxref("ManagedMediaSource.endstreaming_event", "endstreaming")}} events to control when media data is fetched. {{domxref("ManagedSourceBuffer.bufferedchange_event", "bufferedchange")}} events are logged below the video.
+مثال زیر یک `ManagedMediaSource` راه‌اندازی می‌کند، آن را به یک عنصر {{htmlelement("video")}} متصل می‌کند و به رویدادهای {{domxref("ManagedMediaSource.startstreaming_event", "startstreaming")}} و {{domxref("ManagedMediaSource.endstreaming_event", "endstreaming")}} گوش می‌دهد تا زمان دریافت داده‌های رسانه‌ای را کنترل کند. رویدادهای {{domxref("ManagedSourceBuffer.bufferedchange_event", "bufferedchange")}} نیز در زیر ویدیو ثبت می‌شوند.
 
 ```js
 const videoUrl =
@@ -95,15 +89,15 @@ if (!window.ManagedMediaSource?.isTypeSupported(mediaType)) {
 
 {{EmbedGHLiveSample("dom-examples/media-source-extensions/managed-media-source/", '100%', 470)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("MediaSource")}}
 - {{domxref("ManagedSourceBuffer")}}
