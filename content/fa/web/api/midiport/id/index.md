@@ -1,11 +1,5 @@
 ---
 title: "MIDIPort: id property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MIDIPort/id"
-status: "needs-translation"
----
-
----
-title: "MIDIPort: id property"
 short-title: id
 slug: Web/API/MIDIPort/id
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.MIDIPort.id
 
 {{securecontext_header}}{{APIRef("Web MIDI API")}}
 
-The **`id`** read-only property of the {{domxref("MIDIPort")}} interface returns the unique ID of the port.
+ویژگی فقط‌خواندنی **`id`** در رابط {{domxref("MIDIPort")}} شناسه یکتای پورت را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A string containing an ID for the port.
+رشته‌ای (string) شامل شناسه پورت.
 
-## Examples
+## مثال‌ها
 
-The following example loops through all input ports and prints the id of each to the console.
+مثال زیر در تمام پورت‌های ورودی حلقه می‌زند و شناسه هر یک را در کنسول چاپ می‌کند.
 
 ```js
 for (const entry of midiAccess.inputs) {
@@ -31,10 +25,10 @@ for (const entry of midiAccess.inputs) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
