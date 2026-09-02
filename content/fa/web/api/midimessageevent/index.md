@@ -1,10 +1,4 @@
 ---
-title: "MIDIMessageEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MIDIMessageEvent"
-status: "needs-translation"
----
-
----
 title: MIDIMessageEvent
 slug: Web/API/MIDIMessageEvent
 page-type: web-api-interface
@@ -13,29 +7,29 @@ browser-compat: api.MIDIMessageEvent
 
 {{securecontext_header}}{{APIRef("Web MIDI API")}}
 
-The **`MIDIMessageEvent`** interface of the [Web MIDI API](/en-US/docs/Web/API/Web_MIDI_API) represents the event passed to the {{domxref("MIDIInput.midimessage_event","midimessage")}} event of the {{domxref("MIDIInput")}} interface. A `midimessage` event is fired every time a MIDI message is sent from a device represented by a {{domxref("MIDIInput")}}, for example when a MIDI keyboard key is pressed, a knob is tweaked, or a slider is moved.
+**`MIDIMessageEvent`** رابط интерфейс [Web MIDI API](/en-US/docs/Web/API/Web_MIDI_API) است که رویداد ارسال‌شده به رویداد {{domxref("MIDIInput.midimessage_event","midimessage")}} از رابط {{domxref("MIDIInput")}} را نشان می‌دهد. یک رویداد `midimessage` هر بار که یک پیام MIDI از دستگاهی که توسط {{domxref("MIDIInput")}} نمایش داده می‌شود ارسال می‌گردد، فعال می‌شود؛ به عنوان مثال وقتی کلیدی از صفحه‌کلید MIDI فشرده می‌شود، یک دستگیره چرخانده می‌شود، یا یک لغزاننده جابه‌جا می‌شود.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("MIDIMessageEvent.MIDIMessageEvent", "MIDIMessageEvent()")}}
-  - : Creates a new `MIDIMessageEvent` object instance.
+  - : یک نمونهٔ جدید از شیء `MIDIMessageEvent` ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface also inherits properties from {{domxref("Event")}}._
+_این رابط همچنین ویژگی‌های {{domxref("Event")}} را به ارث می‌برد._
 
 - {{domxref("MIDIMessageEvent.data")}}
-  - : A {{jsxref("Uint8Array")}} containing the data bytes of a single MIDI message. See the [MIDI specification](https://midi.org/summary-of-midi-1-0-messages) for more information on its form.
+  - : یک {{jsxref("Uint8Array")}} شامل بایت‌های داده یک پیام MIDI واحد. برای اطلاعات بیشتر درباره شکل آن، به [مشخصات MIDI](https://midi.org/summary-of-midi-1-0-messages) مراجعه کنید.
 
-## Instance methods
+## روش‌های نمونه
 
-_This interface doesn't implement any specific methods, but inherits methods from {{domxref("Event")}}._
+_این رابط هیچ روش خاصی را پیاده‌سازی نمی‌کند، اما روش‌های {{domxref("Event")}} را به ارث می‌برد._
 
-## Examples
+## مثال‌ها
 
-The following example prints all MIDI messages to the console.
+مثال زیر تمام پیام‌های MIDI را در کنسول چاپ می‌کند.
 
 ```js
 navigator.requestMIDIAccess().then((midiAccess) => {
@@ -47,10 +41,10 @@ navigator.requestMIDIAccess().then((midiAccess) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
