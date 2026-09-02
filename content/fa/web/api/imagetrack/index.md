@@ -1,7 +1,5 @@
 ---
 title: "ImageTrack"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ImageTrack"
-status: "needs-translation"
 ---
 
 ---
@@ -13,25 +11,25 @@ browser-compat: api.ImageTrack
 
 {{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`ImageTrack`** interface of the {{domxref('WebCodecs API','','','true')}} represents an individual image track.
+رابط **`ImageTrack`** از {{domxref('WebCodecs API','','','true')}} نمایانگر یک پیست (track) تصویر منفرد است.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("ImageTrack.animated")}} {{ReadOnlyInline}}
-  - : Returns a {{jsxref("Boolean")}} indicating whether the track is animated and therefore has multiple frames.
+  - : یک {{jsxref("Boolean")}} برمی‌گرداند که نشان می‌دهد آیا پیست متحرک است و بنابراین فریم‌های متعددی دارد.
 - {{domxref("ImageTrack.frameCount")}} {{ReadOnlyInline}}
-  - : Returns an integer indicating the number of frames in the track.
+  - : یک عدد صحیح برمی‌گرداند که تعداد فریم‌های موجود در پیست را نشان می‌دهد.
 - {{domxref("ImageTrack.repetitionCount")}} {{ReadOnlyInline}}
-  - : Returns an integer indicating the number of times that the animation repeats.
+  - : یک عدد صحیح برمی‌گرداند که تعداد دفعات تکرار انیمیشن را نشان می‌دهد.
 - {{domxref("ImageTrack.selected")}} {{ReadOnlyInline}}
-  - : Returns a {{jsxref("Boolean")}} indicating whether the track is selected for decoding.
+  - : یک {{jsxref("Boolean")}} برمی‌گرداند که نشان می‌دهد آیا پیست برای رمزگشایی انتخاب شده است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
