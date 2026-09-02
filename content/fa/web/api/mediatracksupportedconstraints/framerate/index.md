@@ -1,11 +1,5 @@
 ---
 title: "MediaTrackSupportedConstraints: frameRate property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSupportedConstraints/frameRate"
-status: "needs-translation"
----
-
----
-title: "MediaTrackSupportedConstraints: frameRate property"
 short-title: frameRate
 slug: Web/API/MediaTrackSupportedConstraints/frameRate
 page-type: web-api-instance-property
@@ -14,25 +8,22 @@ browser-compat: api.MediaStreamTrack.applyConstraints.frameRate_constraint
 
 {{APIRef("Media Capture and Streams")}}
 
-The {{domxref("MediaTrackSupportedConstraints")}} dictionary's **`frameRate`** property is a read-only Boolean value which is
-present (and set to `true`) in the object returned by {{domxref("MediaDevices.getSupportedConstraints()")}} if and only if the {{Glossary("user agent")}} supports the {{domxref("MediaTrackConstraints.frameRate","frameRate")}} constraint.
+ویژگی **`frameRate`** در دیکشنری {{domxref("MediaTrackSupportedConstraints")}} یک مقدار بولی فقط‌خواندنی است که در شیء بازگردانده‌شده توسط {{domxref("MediaDevices.getSupportedConstraints()")}} وجود دارد (و روی `true` تنظیم می‌شود) اگر و تنها اگر عامل کاربر ({{Glossary("user agent")}}) از محدودیت {{domxref("MediaTrackConstraints.frameRate","frameRate")}} پشتیبانی کند.
 
-If the constraint isn't supported, it's not included in the list, so this value will never be `false`.
+اگر این محدودیت پشتیبانی نشود، در فهرست قرار نمی‌گیرد، بنابراین این مقدار هرگز `false` نخواهد بود.
 
-The `frameRate` constraint can be used to establish acceptable upper and lower bounds on the video frame rate for a new video track, or to specify an exact frame rate that must be provided for the request to succeed.
-Checking the value of this property lets you determine if the user agent allows constraining the video track configuration by frame rate. See the [example](#examples) to see how this can be used.
+محدودیت `frameRate` می‌تواند برای تعیین کران‌های بالا و پایینِ قابل قبول برای نرخ فریم ویدیوی یک track ویدیویی جدید، یا برای مشخص کردن یک نرخ فریم دقیق که برای موفقیت درخواست باید ارائه شود، استفاده شود. بررسی مقدار این ویژگی به شما امکان می‌دهد تعیین کنید که آیا عامل کاربر اجازه محدود کردن پیکربندی track ویدیویی بر اساس نرخ فریم را می‌دهد یا خیر. برای مشاهده نحوه استفاده از آن، به [مثال](#examples) مراجعه کنید.
 
 ## Value
 
-This property is present in the dictionary if the user agent supports the `frameRate` constraint.
-If the property isn't present, the user agent doesn't allow specifying limits on the frame rate for video tracks.
+این ویژگی در دیکشنری وجود دارد اگر عامل کاربر از محدودیت `frameRate` پشتیبانی کند. اگر ویژگی وجود نداشته باشد، عامل کاربر اجازه تعیین محدودیت‌های نرخ فریم برای track‌های ویدیویی را نمی‌دهد.
 
 > [!NOTE]
-> If this property is present, its value is always `true`.
+> اگر این ویژگی وجود داشته باشد، مقدار آن همیشه `true` است.
 
 ## Examples
 
-This simple example looks to see if your browser supports constraining the frame rate when requesting video tracks.
+این مثال ساده بررسی می‌کند که آیا مرورگر شما هنگام درخواست track‌های ویدیویی از محدود کردن نرخ فریم پشتیبانی می‌کند یا خیر.
 
 ### JavaScript
 
@@ -60,12 +51,11 @@ result.textContent = supported ? "Supported!" : "Not supported!";
 
 ### Result
 
-The output, showing if your browser supports the `frameRate` constraint, is:
+خروجی، که نشان می‌دهد آیا مرورگر شما از محدودیت `frameRate` پشتیبانی می‌کند، به صورت زیر است:
 
 {{ EmbedLiveSample('Examples', 600, 80) }}
 
-While this example is trivial, you can replace the simple output of "Supported" vs.
-"Not supported" with code to provide alternative methods for presenting the audiovisual information you want to share with the user or otherwise work with.
+اگرچه این مثال ساده است، می‌توانید خروجی ساده «Supported» در برابر «Not supported» را با کدی جایگزین کنید که روش‌های جایگزینی برای ارائه اطلاعات سمعی‌وبصری که می‌خواهید با کاربر به اشتراک بگذارید یا به شکل دیگری با آن کار کنید، فراهم کند.
 
 ## Specifications
 
