@@ -1,9 +1,4 @@
----
-title: "Metadata: size property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Metadata/size"
-status: "needs-translation"
----
-
+```
 ---
 title: "Metadata: size property"
 short-title: size
@@ -17,18 +12,15 @@ browser-compat: api.Metadata.size
 
 {{APIRef("File and Directory Entries API")}}{{Non-standard_header}}{{SeeCompatTable}}
 
-The read-only **`size`** property of
-the {{domxref("Metadata")}} interface specifies the size, in bytes, of the referenced
-file or other file system object on disk.
+خاصیت فقط‌خواندنی **`size`** در رابط {{domxref("Metadata")}} اندازهٔ فایل یا شیء سیستم فایل ارجاع‌شده را به بایت مشخص می‌کند.
 
-## Value
+## مقدار
 
-A number indicating the size of the file in bytes.
+عددی که اندازهٔ فایل را به بایت نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
-This example checks the size of a log file and removes it if it's larger than a
-megabyte.
+این مثال اندازهٔ یک فایل گزارش را بررسی می‌کند و اگر بزرگ‌تر از یک مگابایت باشد آن را حذف می‌کند.
 
 ```js
 workingDirectory.getFile(
@@ -47,17 +39,18 @@ workingDirectory.getFile(
 );
 ```
 
-## Specifications
+## مشخصات
 
-This feature has been removed from all specification and is not in the process of being standardized.
+این ویژگی از همهٔ مشخصات حذف شده است و در روند استانداردسازی قرار ندارد.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [File and Directory Entries API](/en-US/docs/Web/API/File_and_Directory_Entries_API)
 - {{domxref("Metadata")}}
 - {{domxref("FileSystemEntry.getMetadata()")}}
 - {{domxref("FileSystemFileEntry")}}
+```
