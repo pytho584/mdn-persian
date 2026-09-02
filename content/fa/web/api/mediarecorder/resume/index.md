@@ -1,7 +1,5 @@
 ---
 title: "MediaRecorder: resume() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/resume"
-status: "needs-translation"
 ---
 
 ---
@@ -14,40 +12,37 @@ browser-compat: api.MediaRecorder.resume
 
 {{APIRef("MediaStream Recording")}}
 
-The **`resume()`** method of the {{domxref("MediaRecorder")}} interface is used to resume media recording when it has been previously paused.
+متد **`resume()`** از رابط {{domxref("MediaRecorder")}} برای از سرگیری ضبط رسانه زمانی که قبلاً مکث شده است استفاده می‌شود.
 
-If {{domxref("MediaRecorder.state")}} is already "recording", calling `resume()` has no effect.
+اگر {{domxref("MediaRecorder.state")}} از قبل «recording» باشد، فراخوانی `resume()` هیچ اثری ندارد.
 
-When the `resume()` method is invoked, the browser queues a task that runs
-the following steps:
+هنگامی که متد `resume()` فراخوانی می‌شود، مرورگر یک کار (task) را در صف قرار می‌دهد که مراحل زیر را اجرا می‌کند:
 
-1. If {{domxref("MediaRecorder.state")}} is "inactive", raise a DOM
-   `InvalidStateError` exception and terminate these steps. If
-   {{domxref("MediaRecorder.state")}} is not "inactive", continue to the next step.
-2. Set {{domxref("MediaRecorder.state")}} to "recording".
-3. Continue gathering data into the current {{domxref("Blob")}}.
-4. Raise a `resume` event.
+1. اگر {{domxref("MediaRecorder.state")}} برابر «inactive» باشد، یک استثنای DOM از نوع `InvalidStateError` صادر می‌کند و این مراحل خاتمه می‌یابد. اگر {{domxref("MediaRecorder.state")}} برابر «inactive» نباشد، به مرحله بعد ادامه دهید.
+2. {{domxref("MediaRecorder.state")}} را روی «recording» تنظیم کنید.
+3. به جمع‌آوری داده‌ها در {{domxref("Blob")}} فعلی ادامه دهید.
+4. یک رویداد `resume` صادر کنید.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 resume()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the `MediaRecorder` is currently `"inactive"`.
+  - : اگر `MediaRecorder` در حال حاضر «inactive» باشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
 ```js
 pause.onclick = () => {
@@ -61,18 +56,17 @@ pause.onclick = () => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the MediaStream Recording API](/en-US/docs/Web/API/MediaStream_Recording_API/Using_the_MediaStream_Recording_API)
-- [Web Dictaphone](https://mdn.github.io/dom-examples/media/web-dictaphone/): MediaRecorder +
-  getUserMedia + Web Audio API visualization demo, by [Chris Mills](https://github.com/chrisdavidmills) ([source on GitHub](https://github.com/mdn/dom-examples/tree/main/media/web-dictaphone).)
-- [simpl.info MediaStream Recording demo](https://simpl.info/mediarecorder/), by [Sam Dutton](https://github.com/samdutton).
+- [استفاده از MediaStream Recording API](/en-US/docs/Web/API/MediaStream_Recording_API/Using_the_MediaStream_Recording_API)
+- [وب دیکتافون](https://mdn.github.io/dom-examples/media/web-dictaphone/): دموی نمایشی MediaRecorder + getUserMedia + Web Audio API، توسط [Chris Mills](https://github.com/chrisdavidmills) ([سورس در GitHub](https://github.com/mdn/dom-examples/tree/main/media/web-dictaphone).)
+- [دموی MediaStream Recording در simpl.info](https://simpl.info/mediarecorder/)، توسط [Sam Dutton](https://github.com/samdutton).
 - {{domxref("Navigator.getUserMedia")}}
