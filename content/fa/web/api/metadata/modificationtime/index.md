@@ -1,11 +1,5 @@
 ---
 title: "Metadata: modificationTime property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Metadata/modificationTime"
-status: "needs-translation"
----
-
----
-title: "Metadata: modificationTime property"
 short-title: modificationTime
 slug: Web/API/Metadata/modificationTime
 page-type: web-api-instance-property
@@ -17,24 +11,15 @@ browser-compat: api.Metadata.modificationTime
 
 {{APIRef("File and Directory Entries API")}}{{Non-standard_header}}{{SeeCompatTable}}
 
-The read-only **`modificationTime`**
-property of the {{domxref("Metadata")}} interface is a {{jsxref("Date")}} object which
-specifies the date and time the file system entry (or the data referenced by the
-entry) was last modified. A file system entry is considered to have been
-modified if the metadata or the contents of the referenced file (or directory, or
-whatever other kind of file system entry might exist on the platform in use) has
-changed.
+خاصیت فقط خواندنی **`modificationTime`** از رابط {{domxref("Metadata")}} یک شیء {{jsxref("Date")}} است که تاریخ و زمان آخرین تغییر ورودی سیستم فایل (یا داده‌های ارجاع‌شده توسط آن ورودی) را مشخص می‌کند. یک ورودی سیستم فایل در صورتی تغییر یافته محسوب می‌شود که فراداده‌ها یا محتویات فایل (یا دایرکتوری، یا هر نوع دیگری از ورودی سیستم فایل که ممکن است روی پلتفرم مورد استفاده وجود داشته باشد) تغییر کرده باشد.
 
-## Value
+## مقدار
 
-A {{jsxref("Date")}} timestamp indicating when the file system entry was last changed.
+یک نشان زمانی {{jsxref("Date")}} که زمان آخرین تغییر ورودی سیستم فایل را نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
-This example tries to get a particular working file at `tmp/work-file.json`.
-Once that file has been found, its metadata is obtained and the file's modification
-timestamp year is compared to the current year. If it was last modified in a year at
-least five prior to the current year, the file is removed and a new one is created.
+این مثال سعی می‌کند یک فایل کاری خاص را در `tmp/work-file.json` دریافت کند. پس از پیدا شدن آن فایل، فراداده‌های آن به دست آمده و سال تغییرات فایل با سال جاری مقایسه می‌شود. اگر آخرین تغییر آن در سالی حداقل پنج سال قبل از سال جاری بوده باشد، فایل حذف شده و یک فایل جدید ایجاد می‌شود.
 
 ```js
 workingDirectory.getFile(
@@ -62,15 +47,15 @@ workingDirectory.getFile(
 );
 ```
 
-## Specifications
+## مشخصات
 
-This feature has been removed from all specification and is not in the process of being standardized.
+این ویژگی از تمام مشخصات حذف شده است و در فرآیند استانداردسازی قرار ندارد.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [File and Directory Entries API](/en-US/docs/Web/API/File_and_Directory_Entries_API)
 - {{domxref("Metadata")}}
