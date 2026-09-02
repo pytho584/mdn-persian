@@ -1,10 +1,4 @@
 ---
-title: "MediaRecorderErrorEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorderErrorEvent"
-status: "needs-translation"
----
-
----
 title: MediaRecorderErrorEvent
 slug: Web/API/MediaRecorderErrorEvent
 page-type: web-api-interface
@@ -16,30 +10,30 @@ browser-compat: api.MediaRecorderErrorEvent
 
 {{APIRef("MediaStream Recording")}}{{Deprecated_Header}}{{Non-standard_Header}}
 
-The **`MediaRecorderErrorEvent`** interface represents errors returned by the [MediaStream Recording API](/en-US/docs/Web/API/MediaStream_Recording_API). It is an {{domxref("Event")}} object that encapsulates a reference to a {{domxref("DOMException")}} describing the error that occurred.
+اینترفیس **`MediaRecorderErrorEvent`** خطاهای بازگشت‌داده‌شده توسط [MediaStream Recording API](/en-US/docs/Web/API/MediaStream_Recording_API) را نمایش می‌دهد. این یک شیء {{domxref("Event")}} است که یک ارجاع به {{domxref("DOMException")}} را در خود جای می‌دهد و خطای رخ‌داده را توصیف می‌کند.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده (Constructor)
 
 - {{domxref("MediaRecorderErrorEvent.MediaRecorderErrorEvent", "MediaStreamRecorderEvent()")}} {{Deprecated_Inline}} {{Non-standard_Inline}}
-  - : Creates and returns a new `MediaRecorderErrorEvent` event object with the given parameters.
+  - : یک شیء رویداد جدید از نوع `MediaRecorderErrorEvent` با پارامترهای داده‌شده ایجاد و بازمی‌گرداند.
 
-## Instance properties
+## ویژگی‌های نمونه (Instance properties)
 
-_Inherits properties from its parent interface, {{domxref("Event")}}_.
+_ویژگی‌ها را از اینترفیس والد خود، یعنی {{domxref("Event")}} به ارث می‌برد._
 
 - {{domxref("MediaRecorderErrorEvent.error", "error")}} {{ReadOnlyInline}} {{Deprecated_Inline}} {{Non-standard_Inline}}
-  - : A {{domxref("DOMException")}} containing information about the error that occurred.
+  - : یک {{domxref("DOMException")}} که شامل اطلاعاتی دربارهٔ خطای رخ‌داده است.
 
-## Instance methods
+## روش‌های نمونه (Instance methods)
 
-_Inherits methods from its parent interface, {{domxref("Event")}}_.
+_روش‌ها را از اینترفیس والد خود، یعنی {{domxref("Event")}} به ارث می‌برد._
 
-## Specifications
+## مشخصات (Specifications)
 
-This feature is no longer part of any specification.
+این ویژگی دیگر بخشی از هیچ مشخصاتی نیست.
 
-## Browser compatibility
+## سازگاری مرورگرها (Browser compatibility)
 
 {{Compat}}
