@@ -1,9 +1,4 @@
----
-title: "LargestContentfulPaint"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/LargestContentfulPaint"
-status: "needs-translation"
----
-
+```
 ---
 title: LargestContentfulPaint
 slug: Web/API/LargestContentfulPaint
@@ -13,79 +8,79 @@ browser-compat: api.LargestContentfulPaint
 
 {{APIRef("Performance API")}}
 
-The `LargestContentfulPaint` interface provides timing information about the largest image or text paint before user input on a web page.
+رابط `LargestContentfulPaint` اطلاعات زمان‌بندی مربوط به paint بزرگ‌ترین تصویر یا متن در یک صفحه وب را، پیش از هرگونه ورودی کاربر، فراهم می‌کند.
 
-## Description
+## توضیحات
 
-The key moment this API provides is the {{Glossary("Largest Contentful Paint")}} (LCP) metric. It provides the render time of the largest image or text block visible within the viewport, recorded from when the page first begins to load. The following elements are considered when determining the LCP:
+لحظهٔ کلیدی که این رابط فراهم می‌کند، معیار {{Glossary("Largest Contentful Paint")}} (LCP) است. این رابط، زمان رندر بزرگ‌ترین تصویر یا بلوک متنی را که در viewport قابل مشاهده است و از لحظهٔ شروع بارگذاری صفحه ثبت شده، ارائه می‌دهد. عناصر زیر هنگام تعیین LCP در نظر گرفته می‌شوند:
 
-- {{HTMLElement("img")}} elements.
-- [`<image>`](/en-US/docs/Web/SVG/Reference/Element/image) elements inside an SVG.
-- The poster images of {{HTMLElement("video")}} elements.
-- Elements with a {{cssxref("background-image")}}.
-- Groups of text nodes, such as {{HTMLElement("p")}}.
+- عنصرهای {{HTMLElement("img")}}.
+- عنصرهای [`<image>`](/en-US/docs/Web/SVG/Reference/Element/image) درون یک SVG.
+- تصویرهای پوسترِ (poster) عنصرهای {{HTMLElement("video")}}.
+- عنصرهایی که دارای {{cssxref("background-image")}} هستند.
+- گروه‌هایی از گره‌های متنی، مانند {{HTMLElement("p")}}.
 
-To measure render times of other elements, use the {{domxref("PerformanceElementTiming")}} API.
+برای اندازه‌گیری زمان رندرِ سایر عناصر، از رابط {{domxref("PerformanceElementTiming")}} استفاده کنید.
 
-Additional key paint moments are provided by the {{domxref("PerformancePaintTiming")}} API:
+سایر لحظه‌های کلیدیِ paint نیز توسط رابط {{domxref("PerformancePaintTiming")}} ارائه می‌شوند:
 
-- {{Glossary("First Paint")}} (FP): Time when anything is rendered. Note that the marking of the first paint is optional, not all user agents report it.
-- {{Glossary("First Contentful Paint")}} (FCP): Time when the first bit of DOM text or image content is rendered.
+- {{Glossary("First Paint")}} (FP): زمانی که هر چیزی رندر می‌شود. توجه داشته باشید که علامت‌گذاریِ اولین paint اختیاری است و همهٔ عامل‌های کاربر (user agent) آن را گزارش نمی‌دهند.
+- {{Glossary("First Contentful Paint")}} (FCP): زمانی که نخستین بخش از محتوای متنی یا تصویری DOM رندر می‌شود.
 
-`LargestContentfulPaint` inherits from {{domxref("PerformanceEntry")}}.
+`LargestContentfulPaint` از {{domxref("PerformanceEntry")}} ارث می‌برد.
 
 {{InheritanceDiagram}}
 
-To get an accurate measurement of render time for cross-origin resources, set the {{httpheader("Timing-Allow-Origin")}} header.
+برای به‌دست آوردن اندازه‌گیری دقیق زمان رندر منابع متقاطع-خاستگاه (cross-origin)، هدر {{httpheader("Timing-Allow-Origin")}} را تنظیم کنید.
 
-See [Cross-origin image render time](/en-US/docs/Web/API/LargestContentfulPaint/renderTime#cross-origin_image_render_time) and [Use startTime over renderTime](/en-US/docs/Web/API/LargestContentfulPaint/renderTime#use_starttime_over_rendertime) for more details.
+برای جزئیات بیشتر، به [زمان رندر تصویر متقاطع-خاستگاه](/en-US/docs/Web/API/LargestContentfulPaint/renderTime#cross-origin_image_render_time) و [استفاده از startTime به‌جای renderTime](/en-US/docs/Web/API/LargestContentfulPaint/renderTime#use_starttime_over_rendertime) مراجعه کنید.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-This interface directly defines the following properties:
+این رابط ویژگی‌های زیر را مستقیماً تعریف می‌کند:
 
 - {{domxref("LargestContentfulPaint.element")}} {{ReadOnlyInline}}
-  - : The element that is the current largest contentful paint.
+  - : عنصری که در حال حاضر بزرگ‌ترین contentful paint است.
 - {{domxref("LargestContentfulPaint.renderTime")}} {{ReadOnlyInline}}
-  - : The time the element was rendered to the screen. May be a coarsened value if the element is a cross-origin image loaded without the `Timing-Allow-Origin` header.
+  - : زمانی که عنصر روی صفحه رندر شد. اگر عنصر تصویری متقاطع-خاستگاه باشد که بدون هدر `Timing-Allow-Origin` بارگذاری شده باشد، این مقدار ممکن است با دقت کاهش‌یافته (coarsened) ارائه شود.
 - {{domxref("LargestContentfulPaint.loadTime")}} {{ReadOnlyInline}}
-  - : The time the element was loaded.
+  - : زمانی که عنصر بارگذاری شد.
 - {{domxref("LargestContentfulPaint.size")}} {{ReadOnlyInline}}
-  - : The intrinsic size of the element returned as the area (width \* height).
+  - : اندازهٔ ذاتی (intrinsic) عنصر که به‌صورت مساحت (عرض × ارتفاع) بازگردانده می‌شود.
 - {{domxref("LargestContentfulPaint.id")}} {{ReadOnlyInline}}
-  - : The id of the element. This property returns an empty string when there is no id.
+  - : شناسه (id) عنصر. اگر شناسه‌ای وجود نداشته باشد، این ویژگی یک رشتهٔ خالی بازمی‌گرداند.
 - {{domxref("LargestContentfulPaint.paintTime")}}
-  - : Returns the {{domxref("DOMHighResTimeStamp","timestamp")}} when the rendering phase ended and the paint phase started.
+  - : یک {{domxref("DOMHighResTimeStamp","timestamp")}} را بازمی‌گرداند که نشان‌دهندهٔ پایان فاز رندر و شروع فاز paint است.
 - {{domxref("LargestContentfulPaint.presentationTime")}}
-  - : Returns the {{domxref("DOMHighResTimeStamp","timestamp")}} when the painted pixels were actually drawn on the screen.
+  - : یک {{domxref("DOMHighResTimeStamp","timestamp")}} را بازمی‌گرداند که نشان‌دهندهٔ زمانی است که پیکسل‌های ترسیم‌شده (painted pixels) واقعاً روی صفحه رسم شدند.
 - {{domxref("LargestContentfulPaint.url")}} {{ReadOnlyInline}}
-  - : If the element is an image, the request url of the image.
+  - : اگر عنصر یک تصویر باشد، URL درخواستِ تصویر را بازمی‌گرداند.
 
-It also extends the following {{domxref("PerformanceEntry")}} properties, qualifying and constraining them as described:
+همچنین ویژگی‌های زیر را از {{domxref("PerformanceEntry")}} گسترش می‌دهد و آن‌ها را به‌شکل زیر مشخص و محدود می‌کند:
 
 - {{domxref("PerformanceEntry.entryType")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns `"largest-contentful-paint"`.
+  - : مقدار `"largest-contentful-paint"` را بازمی‌گرداند.
 - {{domxref("PerformanceEntry.name")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Always returns an empty string.
+  - : همیشه یک رشتهٔ خالی بازمی‌گرداند.
 - {{domxref("PerformanceEntry.startTime")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns the value of this entry's {{domxref("LargestContentfulPaint.renderTime", "renderTime")}}.
+  - : مقدار ویژگی {{domxref("LargestContentfulPaint.renderTime", "renderTime")}} این ورودی را بازمی‌گرداند.
 - {{domxref("PerformanceEntry.duration")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns `0`, as `duration` is not applicable to this interface.
+  - : مقدار `0` را بازمی‌گرداند، زیرا `duration` برای این رابط قابل استفاده نیست.
 
-## Instance methods
+## متدهای نمونه
 
-_This interface also inherits methods from {{domxref("PerformanceEntry")}}._
+_این رابط همچنین متدهایی را از {{domxref("PerformanceEntry")}} به ارث می‌برد._
 
 - {{domxref("LargestContentfulPaint.toJSON()")}}
-  - : Returns a JSON representation of the `LargestContentfulPaint` object.
+  - : یک نمایش JSON از شیء `LargestContentfulPaint` بازمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-### Observing the largest contentful paint
+### مشاهدهٔ بزرگ‌ترین contentful paint
 
-In the following example, a {{domxref("PerformanceObserver")}} is registered to get the largest contentful paint while the page is loading. The `buffered` flag is used to access data from before observer creation.
+در مثال زیر، یک {{domxref("PerformanceObserver")}} ثبت می‌شود تا بزرگ‌ترین contentful paint را هنگام بارگذاریِ صفحه به دست آورد. از پرچم `buffered` برای دسترسی به داده‌های پیش از ایجاد observer استفاده می‌شود.
 
-The LCP API analyzes all content it finds (including content that is removed from the DOM). When new largest content is found, it creates a new entry. It stops searching for larger content when scroll or input events occur, since these events likely introduce new content on the website. Thus the LCP is the last performance entry reported by the observer.
+API مربوط به LCP تمام محتوایی را که پیدا می‌کند تحلیل می‌کند (از جمله محتوایی که از DOM حذف شده است). وقتی محتوای بزرگ‌تر جدیدی پیدا شود، یک ورودی جدید می‌سازد. وقتی رویدادهای scroll یا input رخ دهند، جستجو برای محتوای بزرگ‌تر متوقف می‌شود، زیرا این رویدادها احتمالاً محتوای جدیدی را وارد وب‌سایت می‌کنند. بنابراین، LCP آخرین ورودی عملکردی است که observer گزارش می‌کند.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -97,11 +92,11 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "largest-contentful-paint", buffered: true });
 ```
 
-### Observing separate paint and presentation timings
+### مشاهدهٔ زمان‌های جداگانهٔ paint و presentation
 
-The `paintTime` and `presentationTime` properties enable you to retrieve specific timings for the paint phase starting and the painted pixels being drawn on the screen. The `paintTime` is broadly interoperable, whereas the `presentationTime` is implementation-dependent.
+ویژگی‌های `paintTime` و `presentationTime` به شما امکان می‌دهند زمان‌های مشخصِ شروعِ فاز paint و رسمِ پیکسل‌های ترسیم‌شده روی صفحه را بازیابی کنید. `paintTime` به‌طور گسترده‌ای بین مرورگرها interoperable است، در حالی که `presentationTime` وابسته به پیاده‌سازی است.
 
-This example builds on the earlier observer example, showing how to check for `paintTime` and `presentationTime` support and retrieve those values if they are available. In non-supporting browsers, the code retrieves the `renderTime` or `loadTime`, depending on what is supported.
+این مثال بر پایهٔ مثال قبلیِ observer ساخته شده است و نشان می‌دهد که چگونه پشتیبانی از `paintTime` و `presentationTime` بررسی شود و در صورت وجود، این مقادیر بازیابی شوند. در مرورگرهایی که از این ویژگی‌ها پشتیبانی نمی‌کنند، کد بسته به اینکه کدام یک پشتیبانی می‌شود، `renderTime` یا `loadTime` را بازیابی می‌کند.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -125,16 +120,17 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "largest-contentful-paint", buffered: true });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{Glossary("Largest Contentful Paint")}}
 - {{Glossary("First Contentful Paint")}}
 - {{Glossary("First Paint")}}
+```
