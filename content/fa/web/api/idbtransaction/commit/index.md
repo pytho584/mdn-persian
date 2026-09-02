@@ -1,11 +1,5 @@
 ---
 title: "IDBTransaction: commit() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction/commit"
-status: "needs-translation"
----
-
----
-title: "IDBTransaction: commit() method"
 short-title: commit()
 slug: Web/API/IDBTransaction/commit
 page-type: web-api-instance-method
@@ -14,32 +8,32 @@ browser-compat: api.IDBTransaction.commit
 
 {{ APIRef("IndexedDB") }} {{AvailableInWorkers}}
 
-The **`commit()`** method of the {{domxref("IDBTransaction")}} interface commits the transaction if it is called on an active transaction.
+متد **`commit()`** از رابط {{domxref("IDBTransaction")}}، اگر روی یک تراکنش فعال فراخوانی شود، تراکنش را commit می‌کند.
 
-Note that `commit()` doesn't normally _have_ to be called — a transaction will automatically commit when all outstanding requests have been satisfied and no new requests have been made. `commit()` can be used to start the commit process without waiting for events from outstanding requests to be dispatched.
+توجه داشته باشید که به‌طور معمول _لزومی_ به فراخوانی `commit()` نیست؛ وقتی همهٔ درخواست‌های در انتظار برآورده شده باشند و درخواست جدیدی نیز مطرح نشده باشد، تراکنش به‌طور خودکار commit می‌شود. از `commit()` می‌توان برای شروع فرایند commit بدون انتظار برای ارسال رویدادهای درخواست‌های در انتظار استفاده کرد.
 
-If it is called on a transaction that is not active, it throws an `InvalidStateError` {{domxref("DOMException")}}.
+اگر روی تراکنشی که فعال نیست فراخوانی شود، یک `InvalidStateError` {{domxref("DOMException")}} پرتاب می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 commit()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the transaction state is not active.
+  - : اگر وضعیت تراکنش فعال نباشد پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
 ```js
 const note = document.getElementById("notifications");
@@ -75,20 +69,20 @@ objectStoreRequest.onsuccess = (event) => {
 transaction.commit();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم محدودهٔ کلیدها: {{domxref("IDBKeyRange")}}
+- دریافت و ایجاد تغییرات در داده‌هایتان: {{domxref("IDBObjectStore")}}
+- استفاده از نشانگرها: {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهدهٔ مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
