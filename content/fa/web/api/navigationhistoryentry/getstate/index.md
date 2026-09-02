@@ -1,11 +1,5 @@
 ---
 title: "NavigationHistoryEntry: getState() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigationHistoryEntry/getState"
-status: "needs-translation"
----
-
----
-title: "NavigationHistoryEntry: getState() method"
 short-title: getState()
 slug: Web/API/NavigationHistoryEntry/getState
 page-type: web-api-instance-method
@@ -14,7 +8,7 @@ browser-compat: api.NavigationHistoryEntry.getState
 
 {{APIRef("Navigation API")}}
 
-The **`getState()`** method of the {{domxref("NavigationHistoryEntry")}} interface returns a clone of the developer-supplied state associated with this history entry.
+متد **`getState()`** در رابط {{domxref("NavigationHistoryEntry")}} یک نسخهٔ کلون‌شده از state (وضعیت) ارائه‌شده توسط توسعه‌دهنده را که به این ورودی تاریخچه مرتبط است، برمی‌گرداند.
 
 ## Syntax
 
@@ -22,45 +16,45 @@ The **`getState()`** method of the {{domxref("NavigationHistoryEntry")}} interfa
 getState()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A value representing the state. This can be any [structured-cloneable](/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm) data type.
+مقداری که نمایانگر state است. این مقدار می‌تواند هر نوع داده‌ای باشد که قابلیت [structured-cloneable](/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm) را داشته باشد.
 
-If no state is defined or if current document is not fully active, it returns `undefined`.
+اگر stateای تعریف نشده باشد یا سند فعلی کاملاً فعال (fully active) نباشد، `undefined` برگردانده می‌شود.
 
-### Exceptions
+### استثناها
 
-None.
+هیچ.
 
-## Examples
+## نمونه‌ها
 
 ```js
 async function handleReload() {
-  // Update existing state via reload()
+  // به‌روزرسانی state موجود از طریق reload()
   await navigation.reload({
     state: { ...navigation.currentEntry.getState(), newState: 3 },
   });
 
-  // Print current state to the console
+  // چاپ state فعلی در کنسول
   const current = navigation.currentEntry;
   console.log(current.getState());
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
 - [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
-- Methods that allow state to be updated — {{domxref("Navigation.navigate()")}}, {{domxref("Navigation.reload()")}}, and {{domxref("Navigation.updateCurrentEntry()")}}
+- متدهایی که امکان به‌روزرسانی state را فراهم می‌کنند — {{domxref("Navigation.navigate()")}}، {{domxref("Navigation.reload()")}} و {{domxref("Navigation.updateCurrentEntry()")}}
