@@ -1,11 +1,5 @@
 ---
 title: "MediaStreamEvent: MediaStreamEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamEvent/MediaStreamEvent"
-status: "needs-translation"
----
-
----
-title: "MediaStreamEvent: MediaStreamEvent() constructor"
 short-title: MediaStreamEvent()
 slug: Web/API/MediaStreamEvent/MediaStreamEvent
 page-type: web-api-constructor
@@ -17,42 +11,42 @@ browser-compat: api.MediaStreamEvent.MediaStreamEvent
 
 {{APIRef("WebRTC")}}{{Deprecated_Header}}{{Non-standard_Header}}
 
-The **`MediaStreamEvent()`** constructor creates a new {{domxref("MediaStreamEvent")}} object.
+سازندهٔ **`MediaStreamEvent()`** یک شیء جدید از نوع {{domxref("MediaStreamEvent")}} می‌سازد.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
  new MediaStreamEvent(type, options)
 ```
 
-### Values
+### مقادیر
 
 - `type`
-  - : A string with the name of the event, like `addstream` or `removestream`.
+  - : رشته‌ای است با نام رویداد، مانند `addstream` یا `removestream`.
 - `options`
-  - : An object that, in addition of the properties defined in {{domxref("Event/Event", "Event()")}}, can have the following properties:
+  - : یک شیء که علاوه بر ویژگی‌های تعریف‌شده در {{domxref("Event/Event", "Event()")}}، می‌تواند ویژگی زیر را داشته باشد:
     - `stream`
-      - : A {{domxref("MediaStream")}} representing the stream being concerned by the event.
+      - : یک {{domxref("MediaStream")}} که جریان موردنظر رویداد را نشان می‌دهد.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("MediaStreamEvent")}} object.
+یک شیء جدید از نوع {{domxref("MediaStreamEvent")}}.
 
-## Example
+## مثال
 
 ```js
 // s is a MediaStream
 const event = new MediaStreamEvent("addstream", { stream: s });
 ```
 
-## Specifications
+## مشخصات
 
-_This feature is no more part of any specification._
+_این ویژگی دیگر بخشی از هیچ مشخصاتی نیست._
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [WebRTC](/en-US/docs/Web/API/WebRTC_API)
