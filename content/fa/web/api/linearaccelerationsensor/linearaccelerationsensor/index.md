@@ -1,11 +1,5 @@
 ---
 title: "LinearAccelerationSensor: LinearAccelerationSensor() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/LinearAccelerationSensor/LinearAccelerationSensor"
-status: "needs-translation"
----
-
----
-title: "LinearAccelerationSensor: LinearAccelerationSensor() constructor"
 short-title: LinearAccelerationSensor()
 slug: Web/API/LinearAccelerationSensor/LinearAccelerationSensor
 page-type: web-api-constructor
@@ -14,45 +8,37 @@ browser-compat: api.LinearAccelerationSensor.LinearAccelerationSensor
 
 {{securecontext_header}}{{APIRef("Sensor API")}}
 
-The **`LinearAccelerationSensor()`**
-constructor creates a new {{domxref("LinearAccelerationSensor")}} object which
-provides on each reading the acceleration applied to the device along all three axes,
-but without the contribution of gravity.
+سازندهٔ **`LinearAccelerationSensor()`** یک شیء جدید {{domxref("LinearAccelerationSensor")}} می‌سازد که در هر بار خوانش، شتاب وارد بر دستگاه را در هر سه محور، بدون احتساب گرانش، فراهم می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 new LinearAccelerationSensor()
 new LinearAccelerationSensor(options)
 ```
 
-### Parameters
+### پارامترها
 
 - `options` {{optional_inline}}
-  - : Options are as follows:
+  - : گزینه‌ها به شرح زیر هستند:
     - `frequency` {{optional_inline}}
-      - : The desired number of times per second a sample should
-        be taken, meaning the number of times per second that the
-        {{domxref('sensor.reading_event', 'reading')}} event will be called. A whole number or decimal may be
-        used, the latter for frequencies less than a second. The actual reading frequency
-        depends on device hardware and consequently may be less than requested.
+      - : تعداد دفعات مطلوب در هر ثانیه برای نمونه‌برداری، یعنی تعداد دفعاتی در هر ثانیه که رویداد {{domxref('sensor.reading_event', 'reading')}} فراخوانی می‌شود. می‌توان از عدد صحیح یا اعشاری استفاده کرد؛ عدد اعشاری برای فرکانس‌های کمتر از یک ثانیه استفاده می‌شود. فرکانس واقعی خوانش به سخت‌افزار دستگاه بستگی دارد و در نتیجه ممکن است کمتر از مقدار درخواستی باشد.
     - `referenceFrame` {{optional_inline}}
-      - : Either `'device'` or
-        `'screen'`. The default is `'device'`.
+      - : یکی از مقادیر `'device'` یا `'screen'`. مقدار پیش‌فرض `'device'` است.
 
-### Exceptions
+### استثناها
 
 - `SecurityError` {{domxref("DOMException")}}
-  - : Use of this feature was blocked by a [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy).
+  - : استفاده از این ویژگی توسط [خط‌مشی مجوزها](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) مسدود شده است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref('sensor.reading_event', 'reading')}} event
+- رویداد {{domxref('sensor.reading_event', 'reading')}}
