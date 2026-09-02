@@ -1,7 +1,5 @@
 ---
 title: "ImageBitmap: width property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ImageBitmap/width"
-status: "needs-translation"
 ---
 
 ---
@@ -14,16 +12,16 @@ browser-compat: api.ImageBitmap.width
 
 {{APIRef("Canvas API")}}{{AvailableInWorkers}}
 
-The **`ImageBitmap.width`** read-only property returns the {{domxref("ImageBitmap")}} object's width in CSS pixels.
+خاصیت فقط‌خواندنی **`ImageBitmap.width`**، عرض شیء {{domxref("ImageBitmap")}} را بر حسب پیکسل CSS برمی‌گرداند.
 
-## Value
+## مقدار
 
-A number represents the {{domxref("ImageBitmap")}} object's width in CSS pixels.
+یک عدد که عرض شیء {{domxref("ImageBitmap")}} را بر حسب پیکسل CSS نشان می‌دهد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
