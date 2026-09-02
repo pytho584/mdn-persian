@@ -1,11 +1,5 @@
 ---
 title: "MediaStreamTrack: clone() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/clone"
-status: "needs-translation"
----
-
----
-title: "MediaStreamTrack: clone() method"
 short-title: clone()
 slug: Web/API/MediaStreamTrack/clone
 page-type: web-api-instance-method
@@ -14,31 +8,26 @@ browser-compat: api.MediaStreamTrack.clone
 
 {{APIRef("Media Capture and Streams")}}
 
-The **`clone()`** method of the {{domxref("MediaStreamTrack")}}
-interface creates a duplicate of the `MediaStreamTrack`. This new
-`MediaStreamTrack` object is identical except for its unique
-{{domxref("MediaStreamTrack.id", "id")}}.
+**`clone()`** メソッドは {{domxref("MediaStreamTrack")}} インターフェイスのメソッドで、この `MediaStreamTrack` の複製を作成します。この新しい `MediaStreamTrack` オブジェクトは、固有の {{domxref("MediaStreamTrack.id", "id")}} を除いて元のトラックと同一です。
 
-## Syntax
+## 構文
 
 ```js-nolint
 clone()
 ```
 
-### Parameters
+### 引数
 
-None.
+なし。
 
-### Return value
+### 戻り値
 
-A new {{domxref("MediaStreamTrack")}} instance which is identical to the one
-`clone()` was called, except for its new unique
-{{domxref("MediaStreamTrack.id", "id")}}.
+`clone()` が呼び出された元のトラックと同一の新しい {{domxref("MediaStreamTrack")}} インスタンスですが、新しい固有の {{domxref("MediaStreamTrack.id", "id")}} を持ちます。
 
-## Specifications
+## 仕様書
 
 {{Specifications}}
 
-## Browser compatibility
+## ブラウザー互換性
 
 {{Compat}}
