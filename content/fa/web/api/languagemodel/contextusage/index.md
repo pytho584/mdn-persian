@@ -1,11 +1,5 @@
 ---
 title: "LanguageModel: contextUsage property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/LanguageModel/contextUsage"
-status: "needs-translation"
----
-
----
-title: "LanguageModel: contextUsage property"
 short-title: contextUsage
 slug: Web/API/LanguageModel/contextUsage
 page-type: web-api-instance-property
@@ -14,23 +8,23 @@ browser-compat: api.LanguageModel.contextUsage
 
 {{APIRef("Prompt API")}}{{SecureContext_Header}}
 
-The **`contextUsage`** read-only property of the {{domxref("LanguageModel")}} interface returns the number of context window tokens currently consumed by the session that calls it, including initial prompts and all subsequent turns.
+ویژگی فقط‌خواندنی **`contextUsage`** از رابط {{domxref("LanguageModel")}}، تعداد توکن‌های پنجرهٔ زمینه (context window) را که در حال حاضر توسط نشستِ فراخواننده مصرف شده است برمی‌گرداند؛ این تعداد شامل درخواست‌های اولیه و تمام نوبت‌های بعدی نیز می‌شود.
 
-This value increases every time you call {{domxref("LanguageModel.prompt()", "prompt()")}}, {{domxref("LanguageModel.promptStreaming()", "promptStreaming()")}}, or {{domxref("LanguageModel.append()", "append()")}}.
+این مقدار هر بار که یکی از متدهای {{domxref("LanguageModel.prompt()", "prompt()")}}، {{domxref("LanguageModel.promptStreaming()", "promptStreaming()")}} یا {{domxref("LanguageModel.append()", "append()")}} را فراخوانی کنید، افزایش می‌یابد.
 
-Compare `contextUsage` with {{domxref("LanguageModel.contextWindow")}} to determine how many tokens remain. When `contextUsage` would exceed `contextWindow`, subsequent method calls throw a `QuotaExceededError` and the {{domxref("LanguageModel.contextoverflow_event", "contextoverflow")}} event fires.
+برای تعیین اینکه چند توکن باقی مانده است، `contextUsage` را با {{domxref("LanguageModel.contextWindow")}} مقایسه کنید. اگر `contextUsage` از `contextWindow` تجاوز کند، در فراخوانی‌های بعدی متدها یک خطای `QuotaExceededError` پرتاب می‌شود و رویداد {{domxref("LanguageModel.contextoverflow_event", "contextoverflow")}} رخ می‌دهد.
 
-To estimate how many tokens a new prompt would use before sending it, call {{domxref("LanguageModel.measureContextUsage()")}}.
+برای تخمین اینکه یک درخواست جدید پیش از ارسال، چه تعداد توکن مصرف خواهد کرد، متد {{domxref("LanguageModel.measureContextUsage()")}} را فراخوانی کنید.
 
-## Value
+## مقدار
 
-A number representing the current context window usage in tokens.
+عددی که مصرف فعلی پنجرهٔ زمینه را بر حسب توکن نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
-### Monitoring context usage during a conversation
+### نظارت بر مصرف زمینه در طول گفتگو
 
-This example writes context usage to the console after a session prompt completes.
+این مثال پس از تکمیل یک درخواست در نشست، میزان مصرف زمینه را در کنسول می‌نویسد.
 
 ```js
 const session = await LanguageModel.create();
@@ -42,9 +36,9 @@ console.log(
 );
 ```
 
-### Warning when the context is nearly full
+### هشدار زمانی که پنجرهٔ زمینه تقریباً پر است
 
-The following example uses a function to verify that context is available before calling {{domxref("LanguageModel.prompt()")}}. It first calculates the remaining context and passes that value to `measureContextUsage()`. If `needed` is less than or equal to `remaining`, it returns `true` and the session continues.
+مثال زیر از یک تابع استفاده می‌کند تا پیش از فراخوانی {{domxref("LanguageModel.prompt()", "prompt()")}} بررسی کند که فضای کافی در پنجرهٔ زمینه باقی مانده است. این تابع ابتدا فضای باقی‌مانده را محاسبه می‌کند و آن مقدار را به `measureContextUsage()` پاس می‌دهد. اگر `needed` کوچک‌تر یا مساوی `remaining` باشد، تابع `true` برمی‌گرداند و نشست ادامه می‌یابد.
 
 ```js
 const promptText = "Let me ask you an interesting question...";
@@ -66,18 +60,18 @@ if (await contextAvailable(promptText)) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("LanguageModel.contextWindow")}}
 - {{domxref("LanguageModel.measureContextUsage()")}}
-- {{domxref("LanguageModel.contextoverflow_event", "contextoverflow")}} event
+- رویداد {{domxref("LanguageModel.contextoverflow_event", "contextoverflow")}}
 - [Prompt API](/en-US/docs/Web/API/Prompt_API)
 - [Using the Prompt API](/en-US/docs/Web/API/Prompt_API/Using)
