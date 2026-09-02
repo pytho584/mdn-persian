@@ -1,10 +1,4 @@
 ---
-title: "HTMLTableSectionElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableSectionElement"
-status: "needs-translation"
----
-
----
 title: HTMLTableSectionElement
 slug: Web/API/HTMLTableSectionElement
 page-type: web-api-interface
@@ -13,42 +7,42 @@ browser-compat: api.HTMLTableSectionElement
 
 {{ APIRef("HTML DOM") }}
 
-The **`HTMLTableSectionElement`** interface provides special properties and methods (beyond the {{domxref("HTMLElement")}} interface it also has available to it by inheritance) for manipulating the layout and presentation of sections, that is headers, footers and bodies ({{HTMLElement("thead")}}, {{HTMLElement("tfoot")}}, and {{HTMLElement("tbody")}}, respectively) in an HTML table.
+رابط **`HTMLTableSectionElement`** ویژگی‌ها و متدهای خاصی (فراتر از رابط {{domxref("HTMLElement")}} که به‌صورت ارث‌بری در اختیار دارد) برای دستکاری چیدمان و نمایش بخش‌های یک جدول HTML، یعنی سرصفحه‌ها، پاورقی‌ها و بدنه (به‌ترتیب {{HTMLElement("thead")}}، {{HTMLElement("tfoot")}} و {{HTMLElement("tbody")}}) فراهم می‌کند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("HTMLElement")}}._
+_ویژگی‌های والد خود، {{domxref("HTMLElement")}}، را به ارث می‌برد._
 
 - {{domxref("HTMLTableSectionElement.align")}} {{deprecated_inline}}
-  - : A string containing an enumerated value reflecting the [`align`](/en-US/docs/Web/HTML/Reference/Elements/tr#align) attribute. It indicates the alignment of the element's contents with respect to the surrounding context. The possible values are `"left"`, `"right"`, and `"center"`.
+  - : یک رشته حاوی مقدار شمارشی که منعکس‌کننده ویژگی [`align`](/en-US/docs/Web/HTML/Reference/Elements/tr#align) است. تراز شدن محتویات عنصر را نسبت به زمینه پیرامون مشخص می‌کند. مقادیر ممکن عبارتند از `"left"`، `"right"` و `"center"`.
 - {{domxref("HTMLTableSectionElement.rows")}} {{ReadOnlyInline}}
-  - : Returns a live {{domxref("HTMLCollection")}} containing the rows in the section. The `HTMLCollection` is live and is automatically updated when rows are added or removed.
+  - : یک {{domxref("HTMLCollection")}} زنده حاوی ردیف‌های موجود در بخش را برمی‌گرداند. `HTMLCollection` زنده است و با افزودن یا حذف ردیف‌ها به‌طور خودکار به‌روز می‌شود.
 - {{domxref("HTMLTableSectionElement.ch")}} {{deprecated_inline}}
-  - : A string containing one single character. This character is the one to align all the cells of a column on. It reflects the [`char`](/en-US/docs/Web/HTML/Reference/Elements/tr#char) and defaults to the decimal points associated with the language, e.g., `'.'` for English, or `','` for French. This property was optional and was not very well supported.
+  - : یک رشته حاوی یک کاراکتر واحد. این کاراکتر همانی است که تمام سلول‌های یک ستون بر اساس آن تراز می‌شوند. ویژگی [`char`](/en-US/docs/Web/HTML/Reference/Elements/tr#char) را منعکس می‌کند و به‌طور پیش‌فرض برابر با نقطه اعشاری مرتبط با زبان است، مانند `'.'` برای انگلیسی یا `','` برای فرانسوی. این ویژگی اختیاری بود و پشتیبانی خوبی نداشت.
 - {{domxref("HTMLTableSectionElement.chOff")}} {{deprecated_inline}}
-  - : A string containing an integer indicating how many characters must be left at the right (for left-to-right scripts; or at the left for right-to-left scripts) of the character defined by `HTMLTableRowElement.ch`. This property was optional and was not very well supported.
+  - : یک رشته حاوی یک عدد صحیح که نشان می‌دهد چند کاراکتر باید در سمت راست (برای اسکریپت‌های چپ‌به‌راست؛ یا در سمت چپ برای اسکریپت‌های راست‌به‌چپ) کاراکتر تعریف‌شده توسط `HTMLTableRowElement.ch` باقی بماند. این ویژگی اختیاری بود و پشتیبانی خوبی نداشت.
 - {{domxref("HTMLTableSectionElement.vAlign")}} {{deprecated_inline}}
-  - : A string representing an enumerated value indicating how the content of the cell must be vertically aligned. It reflects the [`valign`](/en-US/docs/Web/HTML/Reference/Elements/tr#valign) attribute and can have one of the following values: `"top"`, `"middle"`, `"bottom"`, or `"baseline"`.
+  - : یک رشته نشان‌دهنده یک مقدار شمارشی که نحوه تراز عمودی محتوای سلول را مشخص می‌کند. ویژگی [`valign`](/en-US/docs/Web/HTML/Reference/Elements/tr#valign) را منعکس می‌کند و می‌تواند یکی از مقادیر زیر باشد: `"top"`، `"middle"`، `"bottom"` یا `"baseline"`.
 
-## Instance methods
+## متدهای نمونه
 
-_Inherits methods from its parent, {{domxref("HTMLElement")}}_.
+_متدهای والد خود، {{domxref("HTMLElement")}}، را به ارث می‌برد._
 
 - {{domxref("HTMLTableSectionElement.deleteRow()")}}
-  - : Removes the row, corresponding to the `index` given in parameter, in the section. If the `index` value is `-1` the last row is removed; if it smaller than `-1` or greater than the amount of rows in the collection, a {{DOMxRef("DOMException")}} with the value `IndexSizeError` is raised.
+  - : ردیف متناظر با `index` داده‌شده در پارامتر را از بخش حذف می‌کند. اگر مقدار `index` برابر `-1` باشد، آخرین ردیف حذف می‌شود؛ اگر کوچک‌تر از `-1` یا بزرگ‌تر از تعداد ردیف‌های مجموعه باشد، یک {{DOMxRef("DOMException")}} با مقدار `IndexSizeError` صادر می‌شود.
 - {{domxref("HTMLTableSectionElement.insertRow()")}}
-  - : Returns an {{DOMxRef("HTMLTableRowElement")}} representing a new row of the section. It inserts it in the rows collection immediately before the {{HTMLElement("tr")}} element at the given `index` position. If the `index` is `-1`, the new row is appended to the collection. If the `index` is smaller than `-1` or greater than the number of rows in the collection, a {{DOMxRef("DOMException")}} with the value `IndexSizeError` is raised.
+  - : یک {{DOMxRef("HTMLTableRowElement")}} نشان‌دهنده یک ردیف جدید از بخش برمی‌گرداند. آن را در مجموعه ردیف‌ها بلافاصله قبل از عنصر {{HTMLElement("tr")}} در موقعیت `index` داده‌شده درج می‌کند. اگر `index` برابر `-1` باشد، ردیف جدید به انتهای مجموعه اضافه می‌شود. اگر `index` کوچک‌تر از `-1` یا بزرگ‌تر از تعداد ردیف‌های مجموعه باشد، یک {{DOMxRef("DOMException")}} با مقدار `IndexSizeError` صادر می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The HTML elements implementing this interface: {{HTMLElement("tfoot")}}, {{HTMLElement("thead")}}, and {{HTMLElement("tbody")}}.
+- عناصر HTML که این رابط را پیاده‌سازی می‌کنند: {{HTMLElement("tfoot")}}، {{HTMLElement("thead")}} و {{HTMLElement("tbody")}}.
