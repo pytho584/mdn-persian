@@ -1,11 +1,5 @@
 ---
 title: "MediaQueryList: addListener() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/addListener"
-status: "needs-translation"
----
-
----
-title: "MediaQueryList: addListener() method"
 short-title: addListener()
 slug: Web/API/MediaQueryList/addListener
 page-type: web-api-instance-method
@@ -16,33 +10,26 @@ browser-compat: api.MediaQueryList.addListener
 
 {{APIRef("CSSOM view API")}}{{Deprecated_Header}}
 
-The deprecated **`addListener()`** method of the
-{{DOMxRef("MediaQueryList")}} interface adds a listener to the
-`MediaQueryListener` that will run a custom callback function in response to
-the media query status changing.
+متد منسوخ‌شده‌ی **`addListener()`** از رابط {{DOMxRef("MediaQueryList")}} یک شنونده (listener) به `MediaQueryListener` اضافه می‌کند که در پاسخ به تغییر وضعیت پرسش رسانه‌ای (media query)، یک تابع بازفراخوانی سفارشی را اجرا می‌کند.
 
-In older browsers `MediaQueryList` did not yet inherit from {{DOMxRef("EventTarget")}},
-so this method was provided as an alias of {{DOMxRef("EventTarget.addEventListener()")}}.
-Use `addEventListener()` instead of `addListener()` if it is
-available in the browsers you need to support.
+در مرورگرهای قدیمی‌تر، `MediaQueryList` هنوز از {{DOMxRef("EventTarget")}} ارث نمی‌برد؛ بنابراین این متد به‌عنوان یک نام مستعار برای {{DOMxRef("EventTarget.addEventListener()")}} ارائه شده بود. اگر `addEventListener()` در مرورگرهایی که باید پشتیبانی کنید موجود است، به‌جای `addListener()` از آن استفاده کنید.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 addListener(func)
 ```
 
-### Parameters
+### پارامترها
 
 - `func`
-  - : A function or function reference representing the callback function you want to run
-    when the media query status changes.
+  - : یک تابع یا ارجاع به تابع که نشان‌دهنده‌ی تابع بازفراخوانی است که می‌خواهید هنگام تغییر وضعیت پرسش رسانه‌ای اجرا شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ مقداری ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
 ```js
 const paragraph = document.querySelector("p");
@@ -63,18 +50,18 @@ function screenTest(e) {
 mediaQueryList.addListener(screenTest);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Media queries](/en-US/docs/Web/CSS/Guides/Media_queries/Using)
-- [Using media queries from code](/en-US/docs/Web/CSS/Guides/Media_queries/Testing)
+- [پرسش‌های رسانه‌ای (Media queries)](/en-US/docs/Web/CSS/Guides/Media_queries/Using)
+- [استفاده از پرسش‌های رسانه‌ای در کد](/en-US/docs/Web/CSS/Guides/Media_queries/Testing)
 - {{DOMxRef("window.matchMedia()")}}
 - {{DOMxRef("MediaQueryList")}}
 - {{DOMxRef("MediaQueryListEvent")}}
