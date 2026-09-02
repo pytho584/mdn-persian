@@ -1,7 +1,5 @@
 ---
 title: "ImageTrackList: selectedIndex property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ImageTrackList/selectedIndex"
-status: "needs-translation"
 ---
 
 ---
@@ -14,25 +12,25 @@ browser-compat: api.ImageTrackList.selectedIndex
 
 {{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`selectedIndex`** property of the {{domxref("ImageTrackList")}} interface returns the `index` of the selected track.
+ویژگی **`selectedIndex`** از رابط {{domxref("ImageTrackList")}}، مقدار `index` ترکِ انتخاب‌شده را برمی‌گرداند.
 
-## Value
+## مقدار
 
-An integer.
+یک عدد صحیح.
 
-## Examples
+## مثال‌ها
 
-The following example prints the value of `selectedIndex` to the console.
+مثال زیر مقدار `selectedIndex` را در کنسول چاپ می‌کند.
 
 ```js
 let tracks = imageDecoder.tracks;
 console.log(tracks.selectedIndex);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
