@@ -1,11 +1,5 @@
 ---
 title: "IDBTransaction: abort() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBTransaction/abort"
-status: "needs-translation"
----
-
----
-title: "IDBTransaction: abort() method"
 short-title: abort()
 slug: Web/API/IDBTransaction/abort
 page-type: web-api-instance-method
@@ -14,39 +8,32 @@ browser-compat: api.IDBTransaction.abort
 
 {{ APIRef("IndexedDB") }} {{AvailableInWorkers}}
 
-The **`abort()`** method of the {{domxref("IDBTransaction")}}
-interface rolls back all the changes to objects in the database associated with this
-transaction.
+متد **`abort()`** در رابط {{domxref("IDBTransaction")}} همهٔ تغییراتی را که روی اشیاء پایگاهداده مرتبط با این تراکنش انجام شده است، واگردانی (بازگردانی) میکند.
 
-All pending {{domxref("IDBRequest")}} objects created during this transaction have
-their {{domxref("IDBRequest.error")}} attribute set to an `AbortError` {{domxref("DOMException")}}.
+همهٔ اشیاء {{domxref("IDBRequest")}} در انتظار که در طول این تراکنش ایجاد شدهاند، ویژگی {{domxref("IDBRequest.error")}} آنها روی یک `AbortError` {{domxref("DOMException")}} تنظیم میشود.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 abort()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the transaction has already been committed or aborted.
+  - : اگر تراکنش قبلاً commit یا abort شده باشد، پرتاب میشود.
 
-## Examples
+## مثال‌ها
 
-In the following code snippet, we open a read/write transaction on our database and add
-some data to an object store. Note also the functions attached to transaction event
-handlers to report on the outcome of the transaction opening in the event of success or
-failure. At the end, we abort any activity done under the current transaction using
-`abort()`. For a full working example, see our [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) app ([View example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+در قطعه‌کد زیر، یک تراکنش خواندن/نوشتن روی پایگاه‌داده باز می‌کنیم و چند داده به object store اضافه می‌کنیم. همچنین به توابع متصل به رویداد‌های تراکنش توجه کنید که نتیجهٔ باز شدن تراکنش را در صورت موفقیت یا شکست گزارش می‌دهند. در پایان، هر فعالیتی را که در تراکنش جاری انجام شده است با استفاده از `abort()` لغو می‌کنیم. برای یک مثال کامل و قابل اجرا، برنامهٔ [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ما را ببینید ([مشاهدهٔ مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
 
 ```js
 const note = document.getElementById("notifications");
@@ -114,20 +101,20 @@ function addData() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم محدودهٔ کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و ایجاد تغییرات در داده‌ها: {{domxref("IDBObjectStore")}}
+- استفاده از نشانگرها (cursors): {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهدهٔ مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
