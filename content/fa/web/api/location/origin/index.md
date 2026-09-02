@@ -1,11 +1,5 @@
 ---
 title: "Location: origin property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Location/origin"
-status: "needs-translation"
----
-
----
-title: "Location: origin property"
 short-title: origin
 slug: Web/API/Location/origin
 page-type: web-api-instance-property
@@ -14,21 +8,21 @@ browser-compat: api.Location.origin
 
 {{APIRef("Location")}} {{AvailableInWorkers}}
 
-The **`origin`** read-only property of the {{domxref("Location")}} interface returns a string containing the Unicode serialization of the origin of the location's URL.
+ویژگی فقط‌خواندنی **`origin`** در رابط {{domxref("Location")}} رشته‌ای را بازمی‌گرداند که شامل سریال‌سازی یونیکد خاستگاه (origin) URLِ آن Location است.
 
-The exact structure varies depending on the type of URL:
+ساختار دقیق این مقدار بسته به نوع URL متفاوت است:
 
-- For URLs using the `ftp:`, `http:`, `https:`, `ws:`, and `wss:` schemes, the {{domxref("Location.protocol", "protocol")}} followed by `//`, followed by the {{domxref("Location.host", "host")}}. Same as `host`, the {{domxref("Location.port", "port")}} is only included if it's not the default for the protocol.
-- For URLs using `file:` scheme, the value is browser dependent.
-- For URLs using the `blob:` scheme, the origin of the URL following `blob:`, but only if that URL uses the `http:`, `https:`, or `file:` scheme. For example, `blob:https://mozilla.org` will have `https://mozilla.org`.
+- برای URLهایی که از طرح‌های `ftp:`، `http:`، `https:`، `ws:` و `wss:` استفاده می‌کنند، مقدار شامل {{domxref("Location.protocol", "protocol")}} و سپس `//` و پس از آن {{domxref("Location.host", "host")}} است. مانند `host`، {{domxref("Location.port", "port")}} فقط زمانی اضافه می‌شود که مقدار پیش‌فرضِ آن پروتکل نباشد.
+- برای URLهایی که از طرح `file:` استفاده می‌کنند، مقدار به مرورگر بستگی دارد.
+- برای URLهایی که از طرح `blob:` استفاده می‌کنند، خاستگاهِ URLِ پس از `blob:` بازگردانده می‌شود، اما فقط اگر آن URL از طرح‌های `http:`، `https:` یا `file:` استفاده کند. برای مثال، `blob:https://mozilla.org` دارای خاستگاه `https://mozilla.org` خواهد بود.
 
-For all other cases, the string `"null"` is returned.
+در تمام موارد دیگر، رشته `"null"` بازگردانده می‌شود.
 
-See {{domxref("URL.origin")}} for more information.
+برای اطلاعات بیشتر به {{domxref("URL.origin")}} مراجعه کنید.
 
 ## Value
 
-A string.
+یک رشته.
 
 ## Examples
 
@@ -47,4 +41,4 @@ console.log(window.location.origin); // On this page returns 'https://developer.
 ## See also
 
 - [`Window.origin`](/en-US/docs/Web/API/Window/origin)
-- {{Glossary("origin")}} glossary term
+- {{Glossary("origin")}} — اصطلاح واژه‌نامه
