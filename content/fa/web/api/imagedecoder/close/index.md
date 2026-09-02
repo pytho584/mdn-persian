@@ -1,11 +1,5 @@
 ---
 title: "ImageDecoder: close() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ImageDecoder/close"
-status: "needs-translation"
----
-
----
-title: "ImageDecoder: close() method"
 short-title: close()
 slug: Web/API/ImageDecoder/close
 page-type: web-api-instance-method
@@ -14,34 +8,34 @@ browser-compat: api.ImageDecoder.close
 
 {{securecontext_header}}{{APIRef("WebCodecs API")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`close()`** method of the {{domxref("ImageDecoder")}} interface ends all pending work and releases system resources.
+متد **`close()`** از اینترفیس {{domxref("ImageDecoder")}} همه‌ٔ کارهای معلق را پایان می‌دهد و منابع سیستم را آزاد می‌کند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 close()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-The following example closes the `ImageDecoder`.
+مثال زیر، `ImageDecoder` را می‌بندد.
 
 ```js
 imageDecoder.close();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
