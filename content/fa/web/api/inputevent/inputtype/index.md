@@ -1,11 +1,5 @@
 ---
 title: "InputEvent: inputType property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/InputEvent/inputType"
-status: "needs-translation"
----
-
----
-title: "InputEvent: inputType property"
 short-title: inputType
 slug: Web/API/InputEvent/inputType
 page-type: web-api-instance-property
@@ -14,21 +8,15 @@ browser-compat: api.InputEvent.inputType
 
 {{APIRef("UI Events")}}
 
-The **`inputType`** read-only property of the
-{{domxref("InputEvent")}} interface returns the type of change made to editable content.
-Possible changes include for example inserting, deleting, and formatting text.
+خاصیت فقط-خواندنی **`inputType`** از رابط {{domxref("InputEvent")}} نوع تغییری که در محتوای قابل ویرایش ایجاد شده است را برمی‌گرداند. تغییرات ممکن شامل درج، حذف و قالب‌بندی متن است.
 
-## Value
+## مقدار
 
-A string containing the type of input that was made. There are many
-possible values, such as `insertText`, `deleteContentBackward`,
-`insertFromPaste`, and `formatBold`. For a complete list of the
-available input types, see the [Attributes section of the Input Events Level 2 spec](https://w3c.github.io/input-events/#interface-InputEvent-Attributes).
+یک رشته حاوی نوع ورودی انجام شده. مقادیر احتمالی زیادی وجود دارد، مانند `insertText`، `deleteContentBackward`، `insertFromPaste` و `formatBold`. برای فهرست کامل انواع ورودی موجود، [بخش Attributes در مشخصات Input Events Level 2](https://w3c.github.io/input-events/#interface-InputEvent-Attributes) را ببینید.
 
-## Examples
+## مثال‌ها
 
-This example logs the `inputType` for [input events](/en-US/docs/Web/API/Element/input_event) on an editable
-{{htmlElement("div")}}.
+این مثال `inputType` را برای [رویدادهای input](/en-US/docs/Web/API/Element/input_event) روی یک {{htmlElement("div")}} قابل ویرایش ثبت می‌کند.
 
 ### HTML
 
@@ -71,19 +59,19 @@ function logInputType(event) {
 }
 ```
 
-### Result
+### نتیجه
 
-Try editing the text inside the `<div>` and see what happens.
+متن داخل `<div>` را ویرایش کنید و ببینید چه اتفاقی می‌افتد.
 
 {{EmbedLiveSample("Examples", '100%', 500)}}
 
 > [!NOTE]
-> See also [Masayuki Nakano's InputEvent test suite](https://d-toybox.com/studio/lib/input_event_viewer.html) for a more detailed example.
+> همچنین [مجموعه‌ی تست InputEvent از Masayuki Nakano](https://d-toybox.com/studio/lib/input_event_viewer.html) را برای یک مثال دقیق‌تر ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
