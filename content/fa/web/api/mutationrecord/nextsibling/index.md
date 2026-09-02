@@ -1,11 +1,5 @@
 ---
 title: "MutationRecord: nextSibling property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MutationRecord/nextSibling"
-status: "needs-translation"
----
-
----
-title: "MutationRecord: nextSibling property"
 short-title: nextSibling
 slug: Web/API/MutationRecord/nextSibling
 page-type: web-api-instance-property
@@ -14,19 +8,19 @@ browser-compat: api.MutationRecord.nextSibling
 
 {{APIRef("DOM")}}
 
-The {{domxref("MutationRecord")}} read-only property **`nextSibling`** is the next sibling of an added or removed child node of the [`target`](/en-US/docs/Web/API/MutationRecord/target) of a {{domxref("MutationObserver")}}.
+ویژگی فقط‌خواندنی **`nextSibling`** در {{domxref("MutationRecord")}}، هم‌شأن (sibling) بعدیِ گرهٔ فرزندی است که به [`target`](/en-US/docs/Web/API/MutationRecord/target) یک {{domxref("MutationObserver")}} افزوده شده یا از آن حذف شده است.
 
-## Value
+## مقدار
 
-If a node is added to or removed from the [`target`](/en-US/docs/Web/API/MutationRecord/target) of a {{domxref("MutationObserver")}}, the value is the {{domxref("Node")}} that is the next sibling of the added or removed node: that is, the node immediately following this one in the parent's {{domxref("Node.childNodes", "childNodes")}} list.
+اگر گره‌ای به [`target`](/en-US/docs/Web/API/MutationRecord/target) یک {{domxref("MutationObserver")}} افزوده یا از آن حذف شود، مقدار این ویژگی، آن {{domxref("Node")}}ای است که هم‌شأنِ بعدیِ گرهٔ افزوده‌شده یا حذف‌شده است؛ یعنی گره‌ای که بلافاصله پس از این گره در فهرست {{domxref("Node.childNodes", "childNodes")}} والد قرار دارد.
 
-The value is `null` if there are no added or removed nodes, or if the node is the last child of its parent.
+اگر هیچ گره‌ای افزوده یا حذف نشده باشد، یا اگر گره، آخرین فرزندِ والد خود باشد، مقدار این ویژگی `null` است.
 
-## Examples
+## مثال‌ها
 
-### Log the next sibling of a mutation
+### ثبت هم‌شأنِ بعدیِ یک تغییر
 
-This adds a node every time you click the button, but it adds the node at the _start of the target_, not the end. Then the observer logs the `textContent` of the `nextSibling` of the added node.
+این مثال هر بار که روی دکمه کلیک کنید یک گره اضافه می‌کند، اما گره را در _ابتدای target_ اضافه می‌کند، نه در انتهای آن. سپس observer، `textContent` متعلق به `nextSibling` گرهٔ افزوده‌شده را در لاگ ثبت می‌کند.
 
 #### HTML
 
@@ -76,14 +70,14 @@ const observer = new MutationObserver(logNextSibling);
 observer.observe(target, { childList: true });
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Log the next sibling of a mutation", "", 250)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
