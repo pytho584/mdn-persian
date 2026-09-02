@@ -1,11 +1,5 @@
 ---
 title: "MediaKeyStatusMap: values() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaKeyStatusMap/values"
-status: "needs-translation"
----
-
----
-title: "MediaKeyStatusMap: values() method"
 short-title: values()
 slug: Web/API/MediaKeyStatusMap/values
 page-type: web-api-instance-method
@@ -14,28 +8,26 @@ browser-compat: api.MediaKeyStatusMap.values
 
 {{APIRef("Encrypted Media Extensions")}}
 
-The **`values()`** method of the
-{{domxref("MediaKeyStatusMap")}} interface returns a new Iterator object, containing
-values for each element in the status map, in insertion order.
+{{domxref("MediaKeyStatusMap")}} 接口的 **`values()`** 方法返回一个新的迭代器对象，该对象按插入顺序包含状态映射中每个元素的值。
 
-## Syntax
+## 语法
 
 ```js-nolint
 values()
 ```
 
-### Parameters
+### 参数
 
-None.
+无。
 
-### Return value
+### 返回值
 
-A new iterator.
+一个新的迭代器。
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
