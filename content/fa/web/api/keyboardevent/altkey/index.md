@@ -1,11 +1,5 @@
 ---
 title: "KeyboardEvent: altKey property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/altKey"
-status: "needs-translation"
----
-
----
-title: "KeyboardEvent: altKey property"
 short-title: altKey
 slug: Web/API/KeyboardEvent/altKey
 page-type: web-api-instance-property
@@ -14,15 +8,13 @@ browser-compat: api.KeyboardEvent.altKey
 
 {{APIRef("UI Events")}}
 
-The **`KeyboardEvent.altKey`** read-only property is a
-boolean value that indicates if the <kbd>alt</kbd> key (<kbd>Option</kbd> or <kbd>⌥</kbd> on macOS) was pressed (`true`) or not (`false`) when
-the event occurred.
+ویژگی فقط‑خواندنی **`KeyboardEvent.altKey`** یک مقدار بولی (boolean) است که نشان می‌دهد آیا کلید <kbd>alt</kbd> (در macOS کلید <kbd>Option</kbd> یا <kbd>⌥</kbd>) در زمان وقوع رویداد فشرده شده بود (`true`) یا خیر (`false`).
 
-## Value
+## مقدار
 
-A boolean value.
+یک مقدار بولی.
 
-## Examples
+## مثال‌ها
 
 ```html
 <p>
@@ -46,14 +38,14 @@ document.addEventListener("keydown", showChar);
 
 {{EmbedLiveSample("examples", "", "400")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{ domxref("KeyboardEvent") }}
