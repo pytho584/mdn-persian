@@ -1,11 +1,5 @@
 ---
 title: "MediaTrackSupportedConstraints: latency property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSupportedConstraints/latency"
-status: "needs-translation"
----
-
----
-title: "MediaTrackSupportedConstraints: latency property"
 short-title: latency
 slug: Web/API/MediaTrackSupportedConstraints/latency
 page-type: web-api-instance-property
@@ -14,17 +8,15 @@ browser-compat: api.MediaStreamTrack.applyConstraints.latency_constraint
 
 {{APIRef("Media Capture and Streams")}}
 
-The {{domxref("MediaTrackSupportedConstraints")}} dictionary's **`latency`** property is a read-only Boolean value which is present (and set to `true`) in the object returned by {{domxref("MediaDevices.getSupportedConstraints()")}} if and only if the {{Glossary("user agent")}} supports the `latency` constraint.
-If the constraint isn't supported, it's not included in the list, so this value will never be `false`.
+ویژگی **`latency`** در دیکشنری (dictionary) {{domxref("MediaTrackSupportedConstraints")}} یک مقدار بولی فقطخواندنی است که در شیء بازگردانده‌شده توسط {{domxref("MediaDevices.getSupportedConstraints()")}} وجود دارد (و روی `true` تنظیم شده است) اگر و تنها اگر {{Glossary("user agent")}} از محدودیت `latency` پشتیبانی کند. اگر این محدودیت پشتیبانی نشود، در فهرست گنجانده نمی‌شود، بنابراین این مقدار هرگز `false` نخواهد بود.
 
-You can access the supported constraints dictionary by calling `navigator.mediaDevices.getSupportedConstraints()`.
+با فراخوانی `navigator.mediaDevices.getSupportedConstraints()` می‌توانید به دیکشنری محدودیت‌های پشتیبانی‌شده دسترسی پیدا کنید.
 
-## Value
+## مقدار
 
-This property is present in the dictionary (and its value is always `true`) if the user agent supports the `latency` constraint.
-If the property isn't present, this property is missing from the supported constraints dictionary, and you'll get {{jsxref("undefined")}} if you try to look at its value.
+اگر user agent از محدودیت `latency` پشتیبانی کند، این ویژگی در دیکشنری حاضر است (و مقدار آن همیشه `true` است). در غیر این صورت، این ویژگی در دیکشنری محدودیت‌های پشتیبانی‌شده وجود نخواهد داشت و اگر تلاش کنید مقدار آن را بررسی کنید، {{jsxref("undefined")}} دریافت خواهید کرد.
 
-## Examples
+## مثال‌ها
 
 ```html hidden
 <div id="result"></div>
@@ -44,19 +36,19 @@ const supported = navigator.mediaDevices.getSupportedConstraints().latency;
 result.textContent = supported ? "Supported!" : "Not supported!";
 ```
 
-### Result
+### نتیجه
 
 {{ EmbedLiveSample('Examples', 600, 80) }}
 
-## Specifications
+## توصیفات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
 - {{domxref("MediaDevices.getSupportedConstraints()")}}
