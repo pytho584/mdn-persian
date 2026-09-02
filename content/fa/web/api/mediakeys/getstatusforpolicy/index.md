@@ -1,9 +1,4 @@
----
-title: "MediaKeys: getStatusForPolicy() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaKeys/getStatusForPolicy"
-status: "needs-translation"
----
-
+```markdown
 ---
 title: "MediaKeys: getStatusForPolicy() method"
 short-title: getStatusForPolicy()
@@ -14,16 +9,16 @@ browser-compat: api.MediaKeys.getStatusForPolicy
 
 {{APIRef("Encrypted Media Extensions")}}{{SecureContext_Header}}
 
-The `getStatusForPolicy()` method of the {{domxref("MediaKeys")}} interface is used to check whether the Content Decryption Module (CDM) would allow the presentation of encrypted media data using the keys, based on the specified policy requirements.
+متد `getStatusForPolicy()` از رابط {{domxref("MediaKeys")}} برای بررسی اینکه آیا ماژول رمزگشایی محتوا (CDM) اجازه نمایش داده‌های رسانه‌ای رمزگذاری‌شده را با استفاده از کلیدها، بر اساس الزامات خط مشی مشخص‌شده، می‌دهد یا خیر، استفاده می‌شود.
 
-The method returns a {{jsxref("Promise")}} that resolves with a string that indicates the status of the key with respect to all the specified policy requirements.
-If the value resolves to `"usable"` then the content can be decrypted and presented at the ideal quality.
-Other values indicate reasons why the keys cannot be used for presenting the content; in some cases they hint at fallback options, such as playing the content at a lower quality.
+این متد یک {{jsxref("Promise")}} برمی‌گرداند که با یک رشته (string) که وضعیت کلید را نسبت به تمام الزامات خط مشی مشخص‌شده نشان می‌دهد، حل می‌شود.
+اگر مقدار به `"usable"` حل شود، محتوا قابل رمزگشایی و نمایش با کیفیت ایده‌آل است.
+مقادیر دیگر دلایلی را نشان می‌دهند که چرا نمی‌توان از کلیدها برای نمایش محتوا استفاده کرد؛ در برخی موارد به گزینه‌های جایگزین اشاره دارند، مانند پخش محتوا با کیفیت پایین‌تر.
 
-The policy restrictions currently only include a restriction on the minimum supported HDCP version.
+محدودیت‌های خط مشی در حال حاضر فقط شامل محدودیتی بر روی حداقل نسخه HDCP پشتیبانی‌شده است.
 
-Note that the method checks a "hypothetical key" against the restrictions.
-The application does not need to first create a real key and fetch a real license using {{domxref("MediaKeySession")}}, and the {{domxref("MediaKeys")}} doesn't even have to be attached to audio or video elements.
+توجه داشته باشید که این متد یک "کلید فرضی" را در برابر محدودیت‌ها بررسی می‌کند.
+برنامه نیازی ندارد ابتدا یک کلید واقعی ایجاد کند و یک مجوز واقعی را با استفاده از {{domxref("MediaKeySession")}} دریافت کند، و حتی {{domxref("MediaKeys")}} نیازی به اتصال به عناصر صوتی یا تصویری ندارد.
 
 ## Syntax
 
@@ -31,64 +26,55 @@ The application does not need to first create a real key and fetch a real licens
 getStatusForPolicy(policy)
 ```
 
-### Parameters
+### پارامترها
 
 - `policy` {{optional_inline}}
-  - : An object with the following optional properties:
+  - : یک شیء با ویژگی‌های اختیاری زیر:
     - `minHdcpVersion` {{optional_inline}}
-      - : A string indicating the semantic version of the minimum HDCP version to check for usability, such as `1.0`, `1.4`, `2.2`, `2.3`.
+      - : یک رشته که نسخه معنایی (semantic version) حداقل نسخه HDCP را برای بررسی قابلیت استفاده نشان می‌دهد، مانند `1.0`، `1.4`، `2.2`، `2.3`.
 
 > [!NOTE]
-> At least one policy restriction must be specified, so `minHdcpVersion` is only "technically" optional.
+> حداقل یک محدودیت خط مشی باید مشخص شود، بنابراین `minHdcpVersion` فقط "از نظر فنی" اختیاری است.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with a string indicating whether the key can be used for decryption given the specified policy.
+یک {{jsxref("Promise")}} که با یک رشته حل می‌شود و نشان می‌دهد آیا کلید با توجه به خط مشی مشخص‌شده قابل استفاده برای رمزگشایی است یا خیر.
 
-The string can have one of the following values:
+رشته می‌تواند یکی از مقادیر زیر را داشته باشد:
 
 - `usable`
-  - : The key is currently usable for decryption.
+  - : کلید در حال حاضر برای رمزگشایی قابل استفاده است.
 - `expired`
-  - : The key is no longer usable for decryption because its expiration time has passed.
+  - : کلید دیگر به دلیل گذشتن زمان انقضا برای رمزگشایی قابل استفاده نیست.
 - `released`
-  - : The key has been released and is no longer available to the CDM.
-    However information about the key is available, such as a record of license destruction.
+  - : کلید آزاد شده و دیگر در دسترس CDM نیست. با این حال اطلاعاتی در مورد کلید موجود است، مانند رکوردی از تخریب مجوز.
 - `output-restricted`
-  - : There are output restrictions associated with the key based on the specified policy.
-    Media data decrypted with this key may be blocked from presentation.
-    The status indicates that the connection between the source and output (for example, your computer and an external display), is not trusted.
-    This might indicate that there are HDCP version mismatches between the source, intermediate devices, and output, or that intermediate connecting devices such as HDMI cables or video splitters are damaged or non-compliant.
-    An application might opt to use a higher HDCP version, content that does not require such a high version.
-    You should also check that intermediate devices and cables support HDCP, are connected firmly, and are not damaged.
+  - : محدودیت‌های خروجی مرتبط با کلید بر اساس خط مشی مشخص‌شده وجود دارد. داده‌های رسانه‌ای رمزگشایی‌شده با این کلید ممکن است از نمایش مسدود شوند. وضعیت نشان می‌دهد که اتصال بین منبع و خروجی (مثلاً کامپیوتر شما و یک نمایشگر خارجی) مورد اعتماد نیست. این ممکن است نشان‌دهنده عدم تطابق نسخه HDCP بین منبع، دستگاه‌های میانی و خروجی باشد، یا اینکه دستگاه‌های اتصال میانی مانند کابل‌های HDMI یا تقسیم‌کننده‌های ویدیو آسیب دیده یا ناسازگار هستند. یک برنامه ممکن است انتخاب کند از نسخه HDCP بالاتری استفاده کند، یا محتوایی که به چنین نسخه بالایی نیاز ندارد. همچنین باید بررسی کنید که دستگاه‌ها و کابل‌های میانی از HDCP پشتیبانی می‌کنند، محکم متصل شده‌اند و آسیب ندیده‌اند.
 - `output-downscaled`
-  - : There are output restrictions associated with the key based on the specified policy, however these restrictions might be relaxed if the content is played at a lower quality.
-    If this value is returned an application might play the content at a lower resolution, or it could choose to use a higher HDCP version, or use other content that does not require such a high HDCP version.
+  - : محدودیت‌های خروجی مرتبط با کلید بر اساس خط مشی مشخص‌شده وجود دارد، اما این محدودیت‌ها ممکن است در صورت پخش محتوا با کیفیت پایین‌تر کاهش یابند. اگر این مقدار برگردانده شود، یک برنامه ممکن است محتوا را با وضوح پایین‌تر پخش کند، یا می‌تواند از نسخه HDCP بالاتری استفاده کند، یا از محتوای دیگری که به چنین نسخه HDCP بالایی نیاز ندارد استفاده کند.
 - `usable-in-future`
-  - : The key will become usable for decryption in future, once its start time is reached.
+  - : کلید در آینده، پس از رسیدن زمان شروع آن، برای رمزگشایی قابل استفاده خواهد شد.
 - `status-pending`
-  - : The status of the key is not yet known and is being determined.
+  - : وضعیت کلید هنوز مشخص نیست و در حال تعیین است.
 - `internal-error`
-  - : The key is not currently usable for decryption because of an error in the CDM.
-    The application can't do anything to handle this case.
+  - : کلید در حال حاضر به دلیل خطایی در CDM برای رمزگشایی قابل استفاده نیست. برنامه نمی‌تواند برای مدیریت این حالت کاری انجام دهد.
 
-### Exceptions
+### استثناها
 
 - `TypeError`
-  - : The `policy` has no defined properties (policy restrictions), or a property key is not valid.
+  - : `policy` هیچ ویژگی تعریف‌شده‌ای (محدودیت‌های خط مشی) ندارد، یا یک کلید ویژگی معتبر نیست.
 
 - `NotSupportedError`
-  - : The CDM cannot determine the status for any or all of the policy restrictions.
+  - : CDM نمی‌تواند وضعیت را برای برخی یا تمام محدودیت‌های خط مشی تعیین کند.
 
-## Examples
+## مثال‌ها
 
-### Check if keys are usable with HDCP restriction
+### بررسی قابلیت استفاده کلیدها با محدودیت HDCP
 
-This example checks if keys are usable for decrypting a particular video format when using a minimum HDCP version of `2.2`.
+این مثال بررسی می‌کند که آیا کلیدها برای رمزگشایی یک فرمت ویدیویی خاص در هنگام استفاده از حداقل نسخه HDCP `2.2` قابل استفاده هستند یا خیر.
 
 > [!NOTE]
-> A status of `output-restricted` when you're using an external display can be caused by hardware HDCP incompatibility issues.
-> If using a laptop, you may be able to "fix" this by disconnecting the external display.
+> وضعیت `output-restricted` زمانی که از نمایشگر خارجی استفاده می‌کنید می‌تواند ناشی از مشکلات ناسازگاری سخت‌افزاری HDCP باشد. اگر از لپ‌تاپ استفاده می‌کنید، ممکن است با قطع کردن نمایشگر خارجی بتوانید این مشکل را "رفع" کنید.
 
 #### HTML
 
@@ -142,14 +128,14 @@ async function getMediaStatus(config) {
     });
     log(mediaStatus);
 
-    // Get the content or fallback to an alternative if the
-    // keys are not usable
+    // دریافت محتوا یا بازگشت به یک گزینه جایگزین اگر
+    // کلیدها قابل استفاده نیستند
     if (mediaStatus === "usable") {
       console.log("HDCP 2.2 can be enforced.");
-      // Fetch the high resolution protected content
+      // دریافت محتوای محافظت‌شده با وضوح بالا
     } else {
       log("HDCP 2.2 cannot be enforced");
-      // Fallback other content, get license, etc.
+      // بازگشت به محتوای دیگر، دریافت مجوز و غیره
     }
   } catch (error) {
     log(error);
@@ -157,18 +143,19 @@ async function getMediaStatus(config) {
 }
 ```
 
-#### Results
+#### نتایج
 
 {{EmbedLiveSample("Check if keys are usable with HDCP restriction")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See Also
+## همچنین ببینید
 
 - {{domxref("MediaKeyStatusMap.get()")}}
+```
