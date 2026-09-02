@@ -1,11 +1,5 @@
 ---
 title: "MediaSource: removeSourceBuffer() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaSource/removeSourceBuffer"
-status: "needs-translation"
----
-
----
-title: "MediaSource: removeSourceBuffer() method"
 short-title: removeSourceBuffer()
 slug: Web/API/MediaSource/removeSourceBuffer
 page-type: web-api-instance-method
@@ -14,29 +8,29 @@ browser-compat: api.MediaSource.removeSourceBuffer
 
 {{APIRef("Media Source Extensions")}}{{AvailableInWorkers("window_and_dedicated")}}
 
-The **`removeSourceBuffer()`** method of the {{domxref("MediaSource")}} interface removes the given {{domxref("SourceBuffer")}} from the {{domxref("SourceBufferList")}} associated with this `MediaSource` object.
+متد **`removeSourceBuffer()`** در رابط {{domxref("MediaSource")}}، {{domxref("SourceBuffer")}} داده‌شده را از {{domxref("SourceBufferList")}} مرتبط با این شیء `MediaSource` حذف می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 removeSourceBuffer(sourceBuffer)
 ```
 
-### Parameters
+### پارامترها
 
 - `sourceBuffer`
-  - : The {{domxref("SourceBuffer")}} object to be removed.
+  - : شیء {{domxref("SourceBuffer")}} که باید حذف شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `NotFoundError` {{domxref("DOMException")}}
-  - : Thrown if the supplied sourceBuffer doesn't exist in {{domxref("MediaSource.sourceBuffers")}}.
+  - : اگر `sourceBuffer` ارائه‌شده در {{domxref("MediaSource.sourceBuffers")}} وجود نداشته باشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
 ```js
 for (let i = 0; i < 10; i++) {
@@ -46,15 +40,15 @@ for (let i = 0; i < 10; i++) {
 mediaSource.removeSourceBuffer(mediaSource.sourceBuffers[0]);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("SourceBuffer")}}
 - {{domxref("SourceBufferList")}}
