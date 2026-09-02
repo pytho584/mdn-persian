@@ -1,11 +1,5 @@
 ---
 title: "MIDIAccess: statechange event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MIDIAccess/statechange_event"
-status: "needs-translation"
----
-
----
-title: "MIDIAccess: statechange event"
 short-title: statechange
 slug: Web/API/MIDIAccess/statechange_event
 page-type: web-api-event
@@ -14,11 +8,11 @@ browser-compat: api.MIDIAccess.statechange_event
 
 {{securecontext_header}}{{APIRef("Web MIDI API")}}
 
-The **`statechange`** event of the {{domxref("MIDIAccess")}} interface is fired when a new MIDI port is added or when an existing port changes state.
+رویداد **`statechange`** از رابط {{domxref("MIDIAccess")}} زمانی که یک پورت MIDI جدید اضافه میشود یا یک پورت موجود تغییر وضعیت میدهد، فعال میشود.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای استفاده، نام رویداد را در روشهایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} به کار ببرید، یا یک ویژگی handler رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("statechange", (event) => { })
@@ -26,15 +20,15 @@ addEventListener("statechange", (event) => { })
 onstatechange = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("MIDIConnectionEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("MIDIConnectionEvent")}} که از {{domxref("Event")}} ارث میبرد.
 
 {{InheritanceDiagram("MIDIConnectionEvent")}}
 
-## Example
+## مثال
 
-The {{domxref("Navigator.requestMIDIAccess()")}} method returns a promise that resolves with a {{domxref("MIDIAccess")}} object. When a port changes state, information about that port is printed to the console.
+روش {{domxref("Navigator.requestMIDIAccess()")}} یک promise برمیگرداند که با یک شیء {{domxref("MIDIAccess")}} resolve میشود. وقتی یک پورت تغییر وضعیت میدهد، اطلاعات مربوط به آن پورت در کنسول چاپ میشود.
 
 ```js
 navigator.requestMIDIAccess().then((access) => {
@@ -44,10 +38,10 @@ navigator.requestMIDIAccess().then((access) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
