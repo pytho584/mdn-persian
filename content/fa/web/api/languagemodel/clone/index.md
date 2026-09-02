@@ -1,11 +1,5 @@
 ---
 title: "LanguageModel: clone() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/LanguageModel/clone"
-status: "needs-translation"
----
-
----
-title: "LanguageModel: clone() method"
 short-title: clone()
 slug: Web/API/LanguageModel/clone
 page-type: web-api-instance-method
@@ -14,47 +8,47 @@ browser-compat: api.LanguageModel.clone
 
 {{APIRef("Prompt API")}}{{SecureContext_Header}}
 
-The **`clone()`** method of the {{domxref("LanguageModel")}} interface creates a copy of the `LanguageModel` it is called on, including its full context window state. The cloned session can be used independently without affecting the original.
+{{domxref("LanguageModel")}} 接口的 **`clone()`** 方法会创建调用它的 `LanguageModel` 的一个副本，包括其完整的上下文窗口状态。克隆出的会话可以独立使用，而不会影响原会话。
 
-The original and the clone share the same context history up to the point of cloning, enabling you to explore multiple response paths or test variations without starting from scratch.
+原会话与克隆副本在克隆之前共享相同的上下文历史，使您无需从头开始就能探索多条响应路径或测试不同变体。
 
-For example, you might build a shared context using {{domxref("LanguageModel.append()", "append()")}} or early {{domxref("LanguageModel.prompt()", "prompt()")}} `prompt()` calls, clone the session, and then send different follow-up prompts to each clone in parallel.
+例如，您可以使用 {{domxref("LanguageModel.append()", "append()")}} 或早期的 {{domxref("LanguageModel.prompt()", "prompt()")}} `prompt()` 调用来构建共享上下文，克隆会话，然后并行地向每个克隆发送不同的后续提示。
 
-## Syntax
+## 语法
 
 ```js-nolint
 clone()
 clone(options)
 ```
 
-### Parameters
+### 参数
 
 - `options` {{optional_inline}}
-  - : An object representing the options that can be passed. If this argument is absent, the `options` from the original session, such as its abort signal, are used.
-    Properties include:
+  - : 一个表示可传入选项的对象。如果省略此参数，则使用原会话的 `options`，例如其中止信号。
+    属性包括：
     - `signal`
-      - : An {{domxref("AbortSignal")}} to cancel the clone operation.
+      - : 一个用于取消克隆操作的 {{domxref("AbortSignal")}}。
 
-### Return value
+### 返回值
 
-A {{jsxref("Promise")}} that resolves with a cloned {{domxref("LanguageModel")}} instance.
+一个 {{jsxref("Promise")}}，解析为克隆的 {{domxref("LanguageModel")}} 实例。
 
-### Exceptions
+### 异常
 
 - `AbortError` {{domxref("DOMException")}}
-  - : Thrown if the operation was cancelled via the `signal` option.
+  - : 如果操作通过 `signal` 选项被取消，则抛出。
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if usage of the method is blocked by a {{httpheader("Permissions-Policy/language-model", "language-model")}} {{httpheader("Permissions-Policy")}}.
+  - : 如果方法的使用被 {{httpheader("Permissions-Policy/language-model", "language-model")}} {{httpheader("Permissions-Policy")}} 阻止，则抛出。
 - `OperationError` {{domxref("DOMException")}}
-  - : Thrown if cloning fails for any other reason not listed in the other exception types.
+  - : 如果由于未列在其他异常类型中的任何其他原因导致克隆失败，则抛出。
 
-## Examples
+## 示例
 
-See also [Using the Prompt API > Cloning a session](/en-US/docs/Web/API/Prompt_API/Using#cloning_a_session).
+另请参阅 [使用 Prompt API > 克隆会话](/en-US/docs/Web/API/Prompt_API/Using#cloning_a_session)。
 
-### Exploring multiple response paths
+### 探索多条响应路径
 
-The following example shows how to explore different response paths. First, it creates a single session with the start of a story. Then it clones the original session twice before prompting for different endings. This approach preserves the original session in case more exploration is wanted.
+以下示例展示了如何探索不同的响应路径。首先，它创建一个含有故事开头的单个会话。然后，在提示不同的结局之前，将原始会话克隆两次。这种方法保留了原始会话，以防需要进一步探索。
 
 ```js
 const session = await LanguageModel.create({
@@ -78,9 +72,9 @@ console.log("Happy ending:", ending1);
 console.log("Mysterious ending:", ending2);
 ```
 
-### Cloning to retry after a context overflow
+### 在上下文溢出后克隆以重试
 
-This example uses a checkpoint and rollback pattern to save the state of a session before attempting to append a large amount of data. Cloning the session before calling `append()` allows the app to restore the state if the context window is exceeded.
+此示例使用检查点与回滚模式，在尝试追加大量数据之前保存会话状态。在调用 `append()` 之前克隆会话，使应用能够在超出上下文窗口时恢复状态。
 
 ```js
 const veryLargeDocument = "This is my very long story...";
@@ -97,9 +91,9 @@ try {
 }
 ```
 
-### Cloning a session with an abort signal
+### 使用中止信号克隆会话
 
-The following example creates a timeout to abort the clone operation if it takes more than three seconds.
+以下示例创建了一个超时，如果克隆操作耗时超过三秒，则中止该操作。
 
 ```js
 const controller = new AbortController();
@@ -117,15 +111,15 @@ try {
 }
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 另请参阅
 
 - {{domxref("LanguageModel.append()")}}
 - [Prompt API](/en-US/docs/Web/API/Prompt_API)
