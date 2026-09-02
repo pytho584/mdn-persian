@@ -1,11 +1,5 @@
 ---
 title: "IDBObjectStore: openCursor() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/openCursor"
-status: "needs-translation"
----
-
----
-title: "IDBObjectStore: openCursor() method"
 short-title: openCursor()
 slug: Web/API/IDBObjectStore/openCursor
 page-type: web-api-instance-method
@@ -14,10 +8,7 @@ browser-compat: api.IDBObjectStore.openCursor
 
 {{ APIRef("IndexedDB") }} {{AvailableInWorkers}}
 
-The **`openCursor()`** method of the
-{{domxref("IDBObjectStore")}} interface returns an {{domxref("IDBRequest")}} object,
-and, in a separate thread, returns a new {{domxref("IDBCursorWithValue")}} object.
-Used for iterating through an object store with a cursor.
+متد **`openCursor()`** از رابط {{domxref("IDBObjectStore")}} یک شیء {{domxref("IDBRequest")}} برمی‌گرداند و در یک رشتهٔ جداگانه، یک شیء جدید {{domxref("IDBCursorWithValue")}} بازمی‌گرداند. از این متد برای پیمایش رکوردهای یک object store با استفاده از cursor استفاده می‌شود.
 
 ## Syntax
 
@@ -27,51 +18,44 @@ openCursor(query)
 openCursor(query, direction)
 ```
 
-### Parameters
+### پارامترها
 
 - `query` {{optional_inline}}
-  - : A key or {{domxref("IDBKeyRange")}} to be queried. If a single valid key is passed,
-    this will default to a range containing only that key. If nothing is passed, this will
-    default to a key range that selects all the records in this object store.
+  - : یک کلید یا {{domxref("IDBKeyRange")}} برای جستجو. اگر یک کلید معتبرِ واحد ارسال شود، این پارامتر به‌طور پیش‌فرض به بازه‌ای تبدیل می‌شود که فقط همان کلید را شامل می‌شود. اگر چیزی ارسال نشود، به‌طور پیش‌فرض به بازه‌ای از کلیدها تبدیل می‌شود که همهٔ رکوردهای موجود در این object store را انتخاب می‌کند.
 - `direction` {{optional_inline}}
-  - : A string telling the cursor which direction to travel. The default is `next`. Valid values are:
+  - : رشته‌ای که به cursor می‌گوید در چه جهتی حرکت کند. مقدار پیش‌فرض `next` است. مقادیر معتبر عبارت‌اند از:
     - `next`
-      - : The cursor is opened at the start of the store; then, the cursor returns all records, even duplicates,
-        in the increasing order of keys.
+      - : cursor در ابتدای store باز می‌شود؛ سپس همهٔ رکوردها، حتی موارد تکراری، را به ترتیب صعودی کلیدها بازمی‌گرداند.
     - `nextunique`
-      - : The cursor is opened at the start of the store; then, the cursor returns all records, that are not duplicates,
-        in the increasing order of keys.
+      - : cursor در ابتدای store باز می‌شود؛ سپس همهٔ رکوردهایی را که تکراری نیستند، به ترتیب صعودی کلیدها بازمی‌گرداند.
     - `prev`
-      - : The cursor is opened at the end of the store; then, the cursor returns all records, even duplicates,
-        in the decreasing order of keys.
+      - : cursor در انتهای store باز می‌شود؛ سپس همهٔ رکوردها، حتی موارد تکراری، را به ترتیب نزولی کلیدها بازمی‌گرداند.
     - `prevunique`
-      - : The cursor is opened at the end of the store; then, the cursor returns all records, that are not duplicates,
-        in the decreasing order of keys.
+      - : cursor در انتهای store باز می‌شود؛ سپس همهٔ رکوردهایی را که تکراری نیستند، به ترتیب نزولی کلیدها بازمی‌گرداند.
 
-### Return value
+### مقدار بازگشتی
 
-An {{domxref("IDBRequest")}} object on which subsequent events related to this operation are fired.
+یک شیء {{domxref("IDBRequest")}} که رویدادهای بعدی مربوط به این عملیات روی آن رخ می‌دهند.
 
-If the operation is successful, the value of the request's {{domxref("IDBRequest.result", "result")}} property is:
+اگر عملیات موفق باشد، مقدار ویژگی {{domxref("IDBRequest.result", "result")}} درخواست به‌صورت زیر است:
 
-- an {{domxref("IDBCursorWithValue")}} object pointing at the first record matching the given query
-- `null` if no matching records were found.
+- یک شیء {{domxref("IDBCursorWithValue")}} که به اولین رکورد منطبق با پرس‌وجوی داده‌شده اشاره می‌کند.
+- اگر هیچ رکورد منطبقی یافت نشود، `null`.
 
-### Exceptions
+### استثناها
 
-This method may raise a {{domxref("DOMException")}} of one of the following types:
+این متد ممکن است یک {{domxref("DOMException")}} از انواع زیر ایجاد کند:
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if this {{domxref("IDBObjectStore")}} or {{domxref("IDBIndex")}} has been deleted.
+  - : اگر این {{domxref("IDBObjectStore")}} یا {{domxref("IDBIndex")}} حذف شده باشد، پرتاب می‌شود.
 - `TransactionInactiveError` {{domxref("DOMException")}}
-  - : Thrown if this {{domxref("IDBObjectStore")}}'s transaction is inactive.
+  - : اگر تراکنش این {{domxref("IDBObjectStore")}} غیرفعال باشد، پرتاب می‌شود.
 - `DataError` {{domxref("DOMException")}}
-  - : Thrown if the specified key or key range is invalid.
+  - : اگر کلید یا بازهٔ کلیدی مشخص‌شده نامعتبر باشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-In this simple fragment we create a transaction, retrieve an object store, then use a
-cursor to iterate through all the records in the object store:
+در این قطعهٔ ساده، یک تراکنش ایجاد می‌کنیم، یک object store را دریافت می‌کنیم و سپس با استفاده از cursor همهٔ رکوردهای موجود در object store را پیمایش می‌کنیم:
 
 ```js
 const transaction = db.transaction("name", "readonly");
@@ -89,20 +73,20 @@ request.onsuccess = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم بازه‌ای از کلیدها: {{domxref("IDBKeyRange")}}
+- دریافت و ایجاد تغییرات در داده‌ها: {{domxref("IDBObjectStore")}}
+- استفاده از cursorها: {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهدهٔ مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
