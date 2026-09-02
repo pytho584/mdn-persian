@@ -1,11 +1,5 @@
 ---
 title: "MerchantValidationEvent: validationURL property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MerchantValidationEvent/validationURL"
-status: "needs-translation"
----
-
----
-title: "MerchantValidationEvent: validationURL property"
 short-title: validationURL
 slug: Web/API/MerchantValidationEvent/validationURL
 page-type: web-api-instance-property
@@ -17,27 +11,22 @@ browser-compat: api.MerchantValidationEvent.validationURL
 
 {{APIRef("Payment Request API")}}{{Deprecated_Header}}{{SecureContext_Header}}{{non-standard_header}}
 
-The {{domxref("MerchantValidationEvent")}} property
-**`validationURL`** is a read-only string value providing the
-URL from which to fetch the payment handler-specific data needed to validate the
-merchant.
+ویژگی {{domxref("MerchantValidationEvent")}} با نام **`validationURL`** یک رشتهٔ فقط‌خواندنی است که نشانی اینترنتی (URL) موردنیاز برای دریافت داده‌های مخصوصِ پردازندهٔ پرداخت جهت تأیید فروشنده (merchant) را فراهم می‌کند.
 
-This data should be passed into the {{domxref("MerchantValidationEvent.complete", "complete()")}} method to let the user agent complete the transaction.
+این داده‌ها باید به متد {{domxref("MerchantValidationEvent.complete", "complete()")}} ارسال شوند تا عامل کاربر (user agent) بتواند تراکنش را کامل کند.
 
-## Value
+## مقدار
 
-A read-only string giving the URL from which to load payment handler
-specific data needed to complete the merchant verification process. Once this has been
-loaded, it should be passed into {{domxref("MerchantValidationEvent.complete", "complete()")}}, either directly or using a promise.
+یک رشتهٔ فقط‌خواندنی که URL لازم برای بارگذاری داده‌های مخصوصِ پردازندهٔ پرداخت را مشخص می‌کند؛ داده‌هایی که برای تکمیل فرایند تأیید فروشنده ضروری هستند. پس از بارگذاری، این داده‌ها باید — به‌طور مستقیم یا از طریق یک promise — به {{domxref("MerchantValidationEvent.complete", "complete()")}} ارسال شوند.
 
-See [Merchant validation](/en-US/docs/Web/API/Payment_Request_API/Concepts#merchant_validation) to learn more about the process.
+برای آشنایی بیشتر با این فرایند، به [تأیید فروشنده](/en-US/docs/Web/API/Payment_Request_API/Concepts#merchant_validation) مراجعه کنید.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Payment Request API](/en-US/docs/Web/API/Payment_Request_API)
-- [Using the Payment Request API](/en-US/docs/Web/API/Payment_Request_API/Using_the_Payment_Request_API)
-- [Payment processing concepts](/en-US/docs/Web/API/Payment_Request_API/Concepts)
+- [استفاده از Payment Request API](/en-US/docs/Web/API/Payment_Request_API/Using_the_Payment_Request_API)
+- [مفاهیم پردازش پرداخت](/en-US/docs/Web/API/Payment_Request_API/Concepts)
