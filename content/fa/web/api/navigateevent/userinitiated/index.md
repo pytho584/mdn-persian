@@ -1,11 +1,5 @@
 ---
 title: "NavigateEvent: userInitiated property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigateEvent/userInitiated"
-status: "needs-translation"
----
-
----
-title: "NavigateEvent: userInitiated property"
 short-title: userInitiated
 slug: Web/API/NavigateEvent/userInitiated
 page-type: web-api-instance-property
@@ -14,19 +8,18 @@ browser-compat: api.NavigateEvent.userInitiated
 
 {{APIRef("Navigation API")}}
 
-The **`userInitiated`** read-only property of the
-{{domxref("NavigateEvent")}} interface returns `true` if the navigation was initiated by the user (e.g., by clicking a link, submitting a form, or pressing the browser's "Back"/"Forward" buttons), or `false` otherwise.
+ویژگی فقط خواندنی **`userInitiated`** از رابط {{domxref("NavigateEvent")}} مقدار `true` را برمی‌گرداند اگر ناوبری توسط کاربر آغاز شده باشد (مثلاً با کلیک روی یک پیوند، ارسال یک فرم، یا فشار دادن دکمه‌های «بازگشت»/«رفتن به جلو» مرورگر)، و در غیر این صورت `false` را برمی‌گرداند.
 
 > [!NOTE]
-> The table found at [Appendix: types of navigations](https://github.com/WICG/navigation-api#appendix-types-of-navigations) shows which navigation types are user-initiated.
+> جدول موجود در [ضمیمه: انواع ناوبری‌ها](https://github.com/WICG/navigation-api#appendix-types-of-navigations) نشان می‌دهد که کدام نوع ناوبری‌ها توسط کاربر آغاز می‌شوند.
 
-## Value
+## مقدار
 
-A boolean value—`true` if the navigation is user-initiated, `false` if not.
+یک مقدار بولی — `true` اگر ناوبری توسط کاربر آغاز شده باشد، `false` در غیر این صورت.
 
-## Examples
+## مثال‌ها
 
-### Getting `userInitiated` for an event
+### دریافت `userInitiated` برای یک رویداد
 
 ```js
 navigation.addEventListener("navigate", (event) => {
@@ -34,15 +27,15 @@ navigation.addEventListener("navigate", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
-- [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
+- [مسیریابی مدرن سمت کلاینت: API ناوبری](https://developer.chrome.com/docs/web-platform/navigation-api/)
+- [توضیح API ناوبری](https://github.com/WICG/navigation-api/blob/main/README.md)
