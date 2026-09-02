@@ -1,11 +1,5 @@
 ---
 title: "MIDIAccess: outputs property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MIDIAccess/outputs"
-status: "needs-translation"
----
-
----
-title: "MIDIAccess: outputs property"
 short-title: outputs
 slug: Web/API/MIDIAccess/outputs
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.MIDIAccess.outputs
 
 {{securecontext_header}}{{APIRef("Web MIDI API")}}
 
-The **`outputs`** read-only property of the {{domxref("MIDIAccess")}} interface provides access to any available MIDI output ports.
+ویژگی فقط‌خواندنی **`outputs`** از رابط {{domxref("MIDIAccess")}} دسترسی به هر پورت خروجی MIDI موجود را فراهم می‌کند.
 
-## Value
+## مقدار
 
-A {{domxref("MIDIOutputMap")}} instance.
+یک نمونه از {{domxref("MIDIOutputMap")}}.
 
-## Examples
+## مثال‌ها
 
-The {{domxref("Navigator.requestMIDIAccess()")}} method returns a promise that resolves with a {{domxref("MIDIAccess")}} object. Printing the value of `outputs` to the console returns a {{domxref("MIDIOutputMap")}}.
+متد {{domxref("Navigator.requestMIDIAccess()")}} یک promise برمی‌گرداند که با یک شیء {{domxref("MIDIAccess")}} resolved می‌شود. چاپ مقدار `outputs` در کنسول یک {{domxref("MIDIOutputMap")}} برمی‌گرداند.
 
 ```js
 navigator.requestMIDIAccess().then((access) => {
@@ -30,10 +24,10 @@ navigator.requestMIDIAccess().then((access) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
