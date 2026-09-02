@@ -1,10 +1,4 @@
 ---
-title: "MediaStreamTrackEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrackEvent"
-status: "needs-translation"
----
-
----
 title: MediaStreamTrackEvent
 slug: Web/API/MediaStreamTrackEvent
 page-type: web-api-interface
@@ -13,38 +7,38 @@ browser-compat: api.MediaStreamTrackEvent
 
 {{APIRef("Media Capture and Streams")}}
 
-The **`MediaStreamTrackEvent`** interface of the {{domxref("Media Capture and Streams API", "", "", "nocode")}} represents events which indicate that a {{domxref("MediaStream")}} has had tracks added to or removed from the stream through calls to [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API) methods. These events are sent to the stream when these changes occur.
+رابط **`MediaStreamTrackEvent`** از {{domxref("Media Capture and Streams API", "", "", "nocode")}} رویدادهایی را بازنمایی می‌کند که نشان می‌دهند با فراخوانی متدهای [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)، ترک‌هایی به یک {{domxref("MediaStream")}} اضافه شده یا از آن حذف شده‌اند. این رویدادها هنگام رخ دادن چنین تغییرهایی به همان جریان ارسال می‌شوند.
 
 {{InheritanceDiagram}}
 
-The events based on this interface are {{domxref("MediaStream/addtrack_event", "addtrack")}} and {{domxref("MediaStream/removetrack_event", "removetrack")}}.
+رویدادهای مبتنی بر این رابط عبارت‌اند از {{domxref("MediaStream/addtrack_event", "addtrack")}} و {{domxref("MediaStream/removetrack_event", "removetrack")}}.
 
-## Constructor
+## سازنده
 
 - {{domxref("MediaStreamTrackEvent.MediaStreamTrackEvent", "MediaStreamTrackEvent()")}}
-  - : Constructs a new `MediaStreamTrackEvent` with the specified configuration.
+  - : یک `MediaStreamTrackEvent` جدید با پیکربندی مشخص‌شده می‌سازد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Also inherits properties from its parent interface, {{domxref("Event")}}._
+_همچنین ویژگی‌های رابط والد خود، یعنی {{domxref("Event")}} را به ارث می‌برد._
 
 - {{domxref("MediaStreamTrackEvent.track")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref("MediaStreamTrack")}} object representing the track associated with the event.
+  - : یک شیء {{domxref("MediaStreamTrack")}} برمی‌گرداند که ترک مرتبط با رویداد را نشان می‌دهد.
 
-## Instance methods
+## متدهای نمونه
 
-_Also inherits methods from its parent interface, {{domxref("Event")}}._
+_همچنین متدهای رابط والد خود، یعنی {{domxref("Event")}} را به ارث می‌برد._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("MediaStream")}}: {{domxref("MediaStream/addtrack_event", "addtrack")}} and {{domxref("MediaStream/removetrack_event", "removetrack")}} events
+- {{domxref("MediaStream")}}: رویدادهای {{domxref("MediaStream/addtrack_event", "addtrack")}} و {{domxref("MediaStream/removetrack_event", "removetrack")}}
 - {{domxref("MediaStreamTrack")}}
 - [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
