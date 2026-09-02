@@ -1,9 +1,4 @@
----
-title: "MediaTrackConstraints: deviceId property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/deviceId"
-status: "needs-translation"
----
-
+```
 ---
 title: "MediaTrackConstraints: deviceId property"
 short-title: deviceId
@@ -14,60 +9,41 @@ browser-compat: api.MediaStreamTrack.applyConstraints.deviceId_constraint
 
 {{APIRef("Media Capture and Streams")}}
 
-The {{domxref("MediaTrackConstraints")}} dictionary's
-**`deviceId`** property is a [`ConstrainDOMString`](/en-US/docs/Web/API/MediaTrackConstraints#constraindomstring)
-describing the requested or mandatory constraints placed upon the value of the
-{{domxref("MediaTrackSettings.deviceId", "deviceId")}} constrainable property.
+ویژگی **`deviceId`** از فرهنگ لغت {{domxref("MediaTrackConstraints")}} یک [`ConstrainDOMString`](/en-US/docs/Web/API/MediaTrackConstraints#constraindomstring) است که محدودیت‌های درخواستی یا اجباری اعمال‌شده بر روی مقدار ویژگی قابل‌محدودیت {{domxref("MediaTrackSettings.deviceId", "deviceId")}} را توصیف می‌کند.
 
-If needed, you can determine whether or not this constraint is supported by checking
-the value of {{domxref("MediaTrackSupportedConstraints.deviceId")}} as returned by a
-call to {{domxref("MediaDevices.getSupportedConstraints()")}}. However, typically this
-is unnecessary since browsers will ignore any constraints they're unfamiliar with.
+در صورت نیاز، می‌توانید با بررسی مقدار {{domxref("MediaTrackSupportedConstraints.deviceId")}} که توسط فراخوانی {{domxref("MediaDevices.getSupportedConstraints()")}} بازگردانده می‌شود، تعیین کنید که آیا این محدودیت پشتیبانی می‌شود یا خیر. با این حال، معمولاً این کار ضروری نیست زیرا مرورگرها هر محدودیتی را که با آن آشنا نباشند نادیده می‌گیرند.
 
-Because {{Glossary("RTP")}} doesn't include this information, tracks associated with a
-[WebRTC](/en-US/docs/Web/API/WebRTC_API) {{domxref("RTCPeerConnection")}}
-will never include this property.
+از آنجایی که {{Glossary("RTP")}} این اطلاعات را شامل نمی‌شود، ردگیری‌های (tracks) مرتبط با یک {{domxref("RTCPeerConnection")}} [WebRTC](/en-US/docs/Web/API/WebRTC_API) هرگز این ویژگی را شامل نخواهند شد.
 
-## Value
+## مقدار
 
-An object based on [`ConstrainDOMString`](/en-US/docs/Web/API/MediaTrackConstraints#constraindomstring) specifying one or more acceptable,
-ideal, and/or exact (mandatory) device IDs which are acceptable as the source of media
-content.
+یک شیء مبتنی بر [`ConstrainDOMString`](/en-US/docs/Web/API/MediaTrackConstraints#constraindomstring) که یک یا چند شناسه دستگاه قابل قبول، ایده‌آل و/یا دقیق (اجباری) را مشخص می‌کند که به عنوان منبع محتوای رسانه‌ای قابل قبول هستند.
 
-Device IDs are unique for a given origin, and are guaranteed to be the same across
-browsing sessions on the same origin. However, the value of the `deviceId` is
-determined by the source of the track's content, and there's no particular format
-mandated by the specification (although some kind of GUID is recommended). That means
-that a given track will only return one value for the `deviceId` when you
-call {{domxref("MediaStreamTrack.getCapabilities", "getCapabilities()")}}.
+شناسه‌های دستگاه برای یک مبدأ (origin) معین منحصربه‌فرد هستند و تضمین می‌شود که در جلسات مرور (browsing sessions) روی همان مبدأ یکسان باشند. با این حال، مقدار `deviceId` توسط منبع محتوای ردگیری (track) تعیین می‌شود و هیچ فرمت خاصی توسط مشخصات اجباری نشده است (اگرچه نوعی GUID توصیه می‌شود). این بدان معناست که یک ردگیری معین تنها یک مقدار برای `deviceId` هنگام فراخوانی {{domxref("MediaStreamTrack.getCapabilities", "getCapabilities()")}} بازمی‌گرداند.
 
-Because of this, there's no use for the device ID when calling
-{{domxref("MediaStreamTrack.applyConstraints()")}}, since there is only one possible
-value; however, you can record a `deviceId` and use it to ensure that you get
-the same source for multiple calls to {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}}.
+به همین دلیل، هنگام فراخوانی {{domxref("MediaStreamTrack.applyConstraints()")}} استفاده‌ای برای شناسه دستگاه وجود ندارد، زیرا تنها یک مقدار ممکن وجود دارد؛ با این حال، می‌توانید یک `deviceId` را ثبت کنید و از آن برای اطمینان از دریافت منبع یکسان در فراخوانی‌های متعدد به {{domxref("MediaDevices.getUserMedia", "getUserMedia()")}} استفاده کنید.
 
 > [!NOTE]
-> An exception to the rule that device IDs are the same across browsing sessions:
-> private browsing mode will use a different ID, and will change it each browsing
-> session.
+> استثنایی بر قاعده‌ای که می‌گوید شناسه‌های دستگاه در جلسات مرور یکسان هستند: حالت مرور خصوصی (private browsing) از یک شناسه متفاوت استفاده می‌کند و آن را در هر جلسه مرور تغییر می‌دهد.
 
-## Examples
+## مثال‌ها
 
-See the [Constraint exerciser](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#example_constraint_exerciser) example.
+برای مثال، [Constraint exerciser](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints#example_constraint_exerciser) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
-- [Capabilities, constraints, and settings](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints)
+- [قابلیت‌ها، محدودیت‌ها و تنظیمات](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints)
 - {{domxref("MediaTrackConstraints")}}
 - {{domxref("MediaDevices.getSupportedConstraints()")}}
 - {{domxref("MediaTrackSupportedConstraints")}}
 - {{domxref("MediaStreamTrack")}}
+```
