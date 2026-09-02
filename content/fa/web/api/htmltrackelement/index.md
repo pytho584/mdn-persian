@@ -1,10 +1,4 @@
 ---
-title: "HTMLTrackElement"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTrackElement"
-status: "needs-translation"
----
-
----
 title: HTMLTrackElement
 slug: Web/API/HTMLTrackElement
 page-type: web-api-interface
@@ -13,65 +7,65 @@ browser-compat: api.HTMLTrackElement
 
 {{ APIRef("HTML DOM") }}
 
-The **`HTMLTrackElement`** interface represents an {{Glossary("HTML")}} {{HTMLElement("track")}} element within the {{Glossary("DOM")}}. This element can be used as a child of either {{HTMLElement("audio")}} or {{HTMLElement("video")}} to specify a text track containing information such as closed captions or subtitles.
+رابط **`HTMLTrackElement`** یک عنصر {{Glossary("HTML")}} از نوع {{HTMLElement("track")}} را درون {{Glossary("DOM")}} نمایش می‌دهد. این عنصر می‌تواند به‌عنوان فرزند {{HTMLElement("audio")}} یا {{HTMLElement("video")}} استفاده شود تا یک مسیر متنی (text track) حاوی اطلاعاتی مانند زیرنویس بسته (closed captions) یا زیرنویس (subtitles) را مشخص کند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("HTMLElement")}}._
+_ویژگی‌ها را از والد خود، {{domxref("HTMLElement")}}، به ارث می‌برد._
 
 - {{domxref("HTMLTrackElement.kind")}}
-  - : A string that reflects the [`kind`](/en-US/docs/Web/HTML/Reference/Elements/track#kind) HTML attribute, indicating how the text track is meant to be used. Possible values are: `subtitles`, `captions`, `descriptions`, `chapters`, or `metadata`.
+  - : رشته‌ای که ویژگی HTML [`kind`](/en-US/docs/Web/HTML/Reference/Elements/track#kind) را منعکس می‌کند و نشان می‌دهد که مسیر متنی قرار است چگونه استفاده شود. مقادیر ممکن عبارت‌اند از: `subtitles`، `captions`، `descriptions`، `chapters` یا `metadata`.
 - {{domxref("HTMLTrackElement.src")}}
-  - : A string that reflects the [`src`](/en-US/docs/Web/HTML/Reference/Elements/track#src) HTML attribute, indicating the address of the text track data.
+  - : رشته‌ای که ویژگی HTML [`src`](/en-US/docs/Web/HTML/Reference/Elements/track#src) را منعکس می‌کند و آدرس داده‌های مسیر متنی را نشان می‌دهد.
 - {{domxref("HTMLTrackElement.srclang")}}
-  - : A string that reflects the [`srclang`](/en-US/docs/Web/HTML/Reference/Elements/track#srclang) HTML attribute, indicating the language of the text track data.
+  - : رشته‌ای که ویژگی HTML [`srclang`](/en-US/docs/Web/HTML/Reference/Elements/track#srclang) را منعکس می‌کند و زبان داده‌های مسیر متنی را نشان می‌دهد.
 - {{domxref("HTMLTrackElement.label")}}
-  - : A string that reflects the [`label`](/en-US/docs/Web/HTML/Reference/Elements/track#label) HTML attribute, indicating a user-readable title for the track.
+  - : رشته‌ای که ویژگی HTML [`label`](/en-US/docs/Web/HTML/Reference/Elements/track#label) را منعکس می‌کند و عنوان قابل‌خواندن برای کاربرِ مسیر را نشان می‌دهد.
 - {{domxref("HTMLTrackElement.default")}}
-  - : A boolean value reflecting the [`default`](/en-US/docs/Web/HTML/Reference/Elements/track#default) attribute, indicating that the track is to be enabled if the user's preferences do not indicate that another track would be more appropriate.
+  - : یک مقدار بولی که ویژگی [`default`](/en-US/docs/Web/HTML/Reference/Elements/track#default) را منعکس می‌کند و نشان می‌دهد که اگر ترجیحات کاربر نشان ندهد که مسیر دیگری مناسب‌تر است، این مسیر فعال شود.
 - {{domxref("HTMLTrackElement.readyState")}} {{ReadOnlyInline}}
-  - : Returns an `unsigned short` that show the readiness state of the track:
+  - : یک `unsigned short` برمی‌گرداند که وضعیت آمادگی مسیر را نشان می‌دهد:
 
-    | Constant  | Value | Description                                                                                                                                                                              |
-    | --------- | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | `NONE`    | 0     | Indicates that the text track's cues have not been obtained.                                                                                                                             |
-    | `LOADING` | 1     | Indicates that the text track is loading and there have been no fatal errors encountered so far. Further cues might still be added to the track by the parser.                           |
-    | `LOADED`  | 2     | Indicates that the text track has been loaded with no fatal errors.                                                                                                                      |
-    | `ERROR`   | 3     | Indicates that the text track was enabled, but when the user agent attempted to obtain it, this failed in some way. Some or all of the cues are likely missing and will not be obtained. |
+    | Constant  | Value | توضیحات                                                                                                                                                                                                                                 |
+    | --------- | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    | `NONE`    | 0     | نشان می‌دهد که نشانه‌های (cues) مسیر متنی دریافت نشده‌اند.                                                                                                                                                                               |
+    | `LOADING` | 1     | نشان می‌دهد که مسیر متنی در حال بارگذاری است و تاکنون هیچ خطای مهلکی رخ نداده است. ممکن است نشانه‌های بیشتری توسط تجزیه‌گر به مسیر اضافه شوند.                                                                                           |
+    | `LOADED`  | 2     | نشان می‌دهد که مسیر متنی بدون هیچ خطای مهلکی بارگذاری شده است.                                                                                                                                                                          |
+    | `ERROR`   | 3     | نشان می‌دهد که مسیر متنی فعال بوده، اما وقتی عامل کاربر (user agent) تلاش کرد آن را دریافت کند، این کار به نحوی شکست خورده است. احتمالاً برخی یا همه نشانه‌ها وجود ندارند و دریافت نخواهند شد.                                             |
 
 - {{domxref("HTMLTrackElement.track")}} {{ReadOnlyInline}}
-  - : Returns {{Domxref("TextTrack")}} is the track element's text track data.
+  - : داده‌های مسیر متنی عنصر track را به‌صورت {{Domxref("TextTrack")}} برمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
-_No specific method; inherits methods from its parent, {{domxref("HTMLElement")}}._
+_روش خاصی ندارد؛ روش‌ها را از والد خود، {{domxref("HTMLElement")}}، به ارث می‌برد._
 
-## Events
+## رویدادها
 
-_Inherits events from its parent, {{domxref("HTMLElement")}}._
+_رویدادها را از والد خود، {{domxref("HTMLElement")}}، به ارث می‌برد._
 
-Listen to these events using {{domxref("EventTarget/addEventListener", "addEventListener()")}} or by assigning an event listener to the `oneventname` property of this interface:
+برای گوش دادن به این رویدادها از {{domxref("EventTarget/addEventListener", "addEventListener()")}} استفاده کنید یا یک شنونده رویداد را به ویژگی `oneventname` این رابط نسبت دهید:
 
 - {{domxref("HTMLTrackElement.cuechange_event", "cuechange")}}
-  - : Sent when the underlying {{domxref("TextTrack")}} has changed the currently-presented cues. This event is always sent to the `TextTrack` but is _also_ sent to the `HTMLTrackElement` if one is associated with the track.
-    You may also use the `oncuechange` event handler to establish a handler for this event.
+  - : زمانی ارسال می‌شود که {{domxref("TextTrack")}} زیربنایی، نشانه‌های ارائه‌شده در حال حاضر را تغییر دهد. این رویداد همیشه به `TextTrack` ارسال می‌شود، اما اگر یک `HTMLTrackElement` با مسیر مرتبط باشد، _همچنین_ به آن نیز ارسال می‌شود.
+    همچنین می‌توانید از مدیریت‌کننده رویداد `oncuechange` برای ایجاد یک مدیریت‌کننده برای این رویداد استفاده کنید.
 
-## Usage notes
+## نکات استفاده
 
-### Loading of the track's text resource
+### بارگذاری منبع متنی مسیر
 
-The WebVTT or TTML data describing the actual cues for the text track isn't loaded if the track's {{domxref("TextTrack.mode", "mode")}} is initially in the `disabled` state. If you need to be able to perform any processing on the track after the `<track>` is set up, you should instead ensure that the track's `mode` is either `hidden` (if you don't want it to start out being presented to the user) or `showing` (to initially display the track). You can then change the mode as desired later.
+داده‌های WebVTT یا TTML که نشانه‌های واقعی مسیر متنی را توصیف می‌کنند، اگر {{domxref("TextTrack.mode", "mode")}} مسیر در ابتدا در وضعیت `disabled` باشد، بارگذاری نمی‌شوند. اگر نیاز دارید پس از راه‌اندازی `<track>` بتوانید پردازشی روی مسیر انجام دهید، باید اطمینان حاصل کنید که `mode` مسیر یا `hidden` است (اگر نمی‌خواهید در ابتدا به کاربر ارائه شود) یا `showing` (برای نمایش اولیه مسیر). سپس می‌توانید بعداً حالت را مطابق میل خود تغییر دهید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The HTML element implementing this interface: {{ HTMLElement("track") }}.
+- عنصر HTML پیاده‌ساز این رابط: {{ HTMLElement("track") }}.
