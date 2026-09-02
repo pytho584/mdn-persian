@@ -1,11 +1,5 @@
 ---
 title: "Location: reload() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Location/reload"
-status: "needs-translation"
----
-
----
-title: "Location: reload() method"
 short-title: reload()
 slug: Web/API/Location/reload
 page-type: web-api-instance-method
@@ -14,45 +8,45 @@ browser-compat: api.Location.reload
 
 {{ APIRef("HTML DOM") }}
 
-The **`reload()`** method of the {{DOMXref("Location")}} interface reloads the current URL, like the Refresh button.
+متد **`reload()`** از رابط {{DOMXref("Location")}} نشانی وب (URL) فعلی را بارگذاری مجدد می‌کند، مشابه دکمهٔ «تازه‌سازی» (Refresh).
 
-## Syntax
+## نحو
 
 ```js-nolint
 reload()
 ```
 
-### Parameters
+### پارامترها
 
 - `forceGet` {{non-standard_inline}}
-  - : Pass `true` to force a reload bypassing the cache. Defaults to `false`. Only supported in Firefox.
+  - : مقدار `true` را عبور دهید تا بارگذاری مجدد با دور زدن حافظهٔ نهان (cache) اجباری شود. مقدار پیش‌فرض `false` است. فقط در فایرفاکس پشتیبانی می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `SecurityError` {{domxref("DOMException")}}
-  - : Thrown if the {{Glossary("origin")}} of the script calling the method is not the {{Glossary("Same-origin policy", "same origin")}} of the page originally described by the {{domxref("Location")}} object, mostly when the script is hosted on a different domain.
+  - : در صورتی پرتاب می‌شود که {{Glossary("origin")}} اسکریپت فراخوانندهٔ متد با {{Glossary("Same-origin policy", "same origin")}} صفحه‌ای که در ابتدا توسط شیء {{domxref("Location")}} توصیف شده است یکسان نباشد؛ اغلب زمانی که اسکریپت روی دامنهٔ متفاوتی میزبانی می‌شود.
 
-## Examples
+## مثال‌ها
 
 ```js
 // reload the current page
 window.location.reload();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("Location")}} interface it belongs to.
-- Similar methods: {{domxref("Location.assign()")}} and
+- رابط {{domxref("Location")}} که این متد به آن تعلق دارد.
+- روش‌های مشابه: {{domxref("Location.assign()")}} و
   {{domxref("Location.replace()")}}.
