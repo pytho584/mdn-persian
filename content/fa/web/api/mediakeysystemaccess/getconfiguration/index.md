@@ -1,11 +1,5 @@
 ---
 title: "MediaKeySystemAccess: getConfiguration() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaKeySystemAccess/getConfiguration"
-status: "needs-translation"
----
-
----
-title: "MediaKeySystemAccess: getConfiguration() method"
 short-title: getConfiguration()
 slug: Web/API/MediaKeySystemAccess/getConfiguration
 page-type: web-api-instance-method
@@ -14,51 +8,51 @@ browser-compat: api.MediaKeySystemAccess.getConfiguration
 
 {{APIRef("Encrypted Media Extensions")}}{{SecureContext_Header}}
 
-The **`getConfiguration()`** method of the {{domxref("MediaKeySystemAccess")}} interface returns an object with the supported combination of the following configuration options:
+متد **`getConfiguration()`** از رابط {{domxref("MediaKeySystemAccess")}} یک شیء شامل ترکیب پشتیبانی‌شده از گزینه‌های پیکربندی زیر را برمی‌گرداند:
 
 - `label` {{ReadOnlyInline}}
-  - : A string identifying the configuration, preserved as-is from the configuration passed to {{domxref("Navigator.requestMediaKeySystemAccess()")}}.
-    Defaults to the empty string (`""`).
+  - : رشته‌ای که پیکربندی را شناسایی می‌کند و دقیقاً همانطور که در پیکربندی ارسال‌شده به {{domxref("Navigator.requestMediaKeySystemAccess()")}} بوده، حفظ می‌شود.
+    مقدار پیش‌فرض آن رشتهٔ خالی (`""`) است.
 - `initDataTypes` {{ReadOnlyInline}}
-  - : Returns a list of supported initialization data type names. An initialization data type is a string indicating the format of the initialization data.
+  - : فهرستی از نام انواع دادهٔ مقداردهی اولیهٔ پشتیبانی‌شده را برمی‌گرداند. نوع دادهٔ مقداردهی اولیه رشته‌ای است که قالب دادهٔ مقداردهی اولیه را مشخص می‌کند.
 - `audioCapabilities` {{ReadOnlyInline}}
-  - : Returns a list of supported audio type and capability pairs.
+  - : فهرستی از جفت‌های نوع صوتی و قابلیت پشتیبانی‌شده را برمی‌گرداند.
 - `videoCapabilities` {{ReadOnlyInline}}
-  - : Returns a list of supported video type and capability pairs.
+  - : فهرستی از جفت‌های نوع ویدیویی و قابلیت پشتیبانی‌شده را برمی‌گرداند.
 - `distinctiveIdentifier` {{ReadOnlyInline}}
-  - : Indicates whether a persistent distinctive identifier is required.
+  - : مشخص می‌کند که آیا شناسهٔ متمایز پایدار مورد نیاز است یا خیر.
 - `persistentState` {{ReadOnlyInline}}
-  - : Indicates whether the ability to persist state is required.
+  - : مشخص می‌کند که آیا قابلیت ماندگاری حالت مورد نیاز است یا خیر.
 - `sessionTypes` {{ReadOnlyInline}}
-  - : An array of strings indicating the session types that are supported by the configuration.
+  - : آرایه‌ای از رشته‌ها که نوع جلسه‌های پشتیبانی‌شده توسط پیکربندی را نشان می‌دهد.
 
-    Permitted values include:
+    مقادیر مجاز عبارت‌اند از:
     - `temporary`
-      - : A session for which the license, key(s) and record of or data related to the session are not persisted.
-        The application does not need to manage such storage.
-        Implementations must support this option, and it is the default.
+      - : جلسه‌ای که در آن مجوز، کلید(ها) و رکورد یا داده‌های مرتبط با جلسه ذخیره نمی‌شوند.
+        برنامه نیازی به مدیریت چنین فضای ذخیره‌سازی‌ای ندارد.
+        پیاده‌سازی‌ها باید از این گزینه پشتیبانی کنند و این گزینه پیش‌فرض است.
     - `persistent-license`
-      - : A session for which the license (and potentially other data related to the session) will be persisted.
-        A record of the license and associated keys persists even if the license is destroyed, providing an attestation that the license and key(s) it contains are no longer usable by the client.
+      - : جلسه‌ای که در آن مجوز (و احتمالاً داده‌های دیگر مرتبط با جلسه) ذخیره خواهد شد.
+        رکوردی از مجوز و کلیدهای مرتبط حتی اگر مجوز از بین برود نیز باقی می‌ماند و گواهی می‌دهد که مجوز و کلید(های) موجود در آن دیگر توسط کلاینت قابل استفاده نیستند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 getConfiguration()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-An object.
+یک شیء.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
