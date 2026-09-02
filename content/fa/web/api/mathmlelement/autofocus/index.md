@@ -1,11 +1,5 @@
 ---
 title: "MathMLElement: autofocus property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MathMLElement/autofocus"
-status: "needs-translation"
----
-
----
-title: "MathMLElement: autofocus property"
 short-title: autofocus
 slug: Web/API/MathMLElement/autofocus
 page-type: web-api-instance-property
@@ -14,21 +8,21 @@ browser-compat: api.MathMLElement.autofocus
 
 {{APIRef("MathML")}}
 
-The **`autofocus`** property of the {{domxref("MathMLElement")}} interface contains a boolean value reflecting the [`autofocus`](/en-US/docs/Web/HTML/Reference/Global_attributes/autofocus) HTML global attribute. It indicates whether the MathML element should be focused when the page loads or when the element becomes shown if the MathML element is inside a {{htmlelement("dialog")}} or a [popover](/en-US/docs/Web/HTML/Reference/Global_attributes/popover).
+ویژگی **`autofocus`** در رابط {{domxref("MathMLElement")}} حاوی یک مقدار بولی است که ویژگی سراسری HTML [`autofocus`](/en-US/docs/Web/HTML/Reference/Global_attributes/autofocus) را منعکس می‌کند. این ویژگی نشان می‌دهد که آیا عنصر MathML باید هنگام بارگذاری صفحه فوکوس شود یا اگر عنصر MathML داخل یک {{htmlelement("dialog")}} یا [popover](/en-US/docs/Web/HTML/Reference/Global_attributes/popover) باشد، هنگام نمایش یافتن عنصر فوکوس شود.
 
-## Value
+## مقدار
 
-A boolean value.
+یک مقدار بولی.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("MathMLElement.focus()")}}
 - {{domxref("HTMLElement.autofocus")}}
