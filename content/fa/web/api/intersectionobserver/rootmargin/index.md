@@ -1,7 +1,5 @@
 ---
 title: "IntersectionObserver: rootMargin property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/rootMargin"
-status: "needs-translation"
 ---
 
 ---
@@ -14,28 +12,28 @@ browser-compat: api.IntersectionObserver.rootMargin
 
 {{APIRef("Intersection Observer API")}}
 
-The **`rootMargin`** read-only property of the {{domxref("IntersectionObserver")}} interface is a string with syntax similar to that of the CSS {{cssxref("margin")}} property.
+خاصیت فقط‌خواندنی **`rootMargin`** در رابط {{domxref("IntersectionObserver")}} رشته‌ای با نحوی مشابه خاصیت CSS {{cssxref("margin")}} است.
 
-Each side of the rectangle represented by `rootMargin` is added to the corresponding side in the {{domxref("IntersectionObserver.root", "root")}} element's {{Glossary("bounding box")}} before the intersection test is performed.
-This lets you, for example, adjust the bounds outward so that the target element is considered 100% visible even if a certain number of pixels worth of width or height is clipped away, or treat the target as partially hidden if an edge is too close to the edge of the root's bounding box.
+هر ضلع از مستطیلی که `rootMargin` نمایش می‌دهد، پیش از انجام آزمون تقاطع، به ضلع متناظر آن در {{Glossary("bounding box")}} عنصر {{domxref("IntersectionObserver.root", "root")}} اضافه می‌شود.
 
-See [how intersections are calculated](/en-US/docs/Web/API/Intersection_Observer_API#how_intersection_is_calculated) for a more in-depth look at the root margin and how it works with the root's bounding box.
+این امکان را به شما می‌دهد که برای مثال، مرزها را به سمت بیرون تنظیم کنید تا عنصر هدف حتی اگر تعداد مشخصی پیکسل از عرض یا ارتفاع آن بریده شده باشد، ۱۰۰٪ قابل مشاهده در نظر گرفته شود؛ یا اگر لبه‌ای بیش از حد به لبهٔ جعبهٔ محدودکنندهٔ root نزدیک باشد، عنصر هدف را تا حدی پنهان در نظر بگیرید.
 
-## Value
+برای بررسی عمیق‌تر دربارهٔ `rootMargin` و نحوهٔ کار آن با جعبهٔ محدودکنندهٔ root، به [چگونگی محاسبهٔ تقاطع‌ها](/en-US/docs/Web/API/Intersection_Observer_API#how_intersection_is_calculated) مراجعه کنید.
 
-A string, formatted similarly to the CSS {{cssxref("margin")}} property's value, which contains offsets for one or more sides of the root's bounding box.
-These offsets are added to the corresponding values in the root's bounding box before the intersection between the resulting rectangle and the target element's bounds.
+## مقدار
 
-The string returned by this property may not match the one specified when the {{domxref("IntersectionObserver")}} was instantiated.
-For example, the result always contains four components, though the input may have fewer.
+رشته‌ای، با قالبی مشابه مقدار خاصیت CSS {{cssxref("margin")}}، که شامل آفست‌هایی برای یک یا چند ضلع از جعبهٔ محدودکنندهٔ root است.
 
-If `rootMargin` isn't specified when the object was instantiated, it defaults to the string `"0px 0px 0px 0px"`, meaning that the intersection will be computed between the root element's unmodified bounds rectangle and the target's bounds.
-[How intersections are calculated](/en-US/docs/Web/API/Intersection_Observer_API#how_intersection_is_calculated) describes how the `rootMargin` is used in more detail.
+این آفست‌ها پیش از محاسبهٔ تقاطع بین مستطیل حاصل و مرزهای عنصر هدف، به مقادیر متناظر در جعبهٔ محدودکنندهٔ root اضافه می‌شوند.
 
-## Specifications
+رشته‌ای که این خاصیت برمی‌گرداند ممکن است با رشته‌ای که هنگام نمونه‌سازی {{domxref("IntersectionObserver")}} مشخص شده بود یکسان نباشد. برای مثال، نتیجه همیشه چهار مؤلفه دارد، در حالی که ورودی ممکن است مؤلفه‌های کمتری داشته باشد.
+
+اگر هنگام نمونه‌سازی شیء، `rootMargin` مشخص نشده باشد، مقدار پیش‌فرض آن رشته `"0px 0px 0px 0px"` خواهد بود؛ به این معنی که تقاطع بین مستطیل مرزهای بدون تغییر عنصر ریشه و مرزهای عنصر هدف محاسبه می‌شود. [چگونگی محاسبهٔ تقاطع‌ها](/en-US/docs/Web/API/Intersection_Observer_API#how_intersection_is_calculated) نحوهٔ استفاده از `rootMargin` را با جزئیات بیشتری توصیف می‌کند.
+
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
