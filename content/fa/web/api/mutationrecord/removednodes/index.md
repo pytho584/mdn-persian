@@ -1,11 +1,5 @@
 ---
 title: "MutationRecord: removedNodes property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MutationRecord/removedNodes"
-status: "needs-translation"
----
-
----
-title: "MutationRecord: removedNodes property"
 short-title: removedNodes
 slug: Web/API/MutationRecord/removedNodes
 page-type: web-api-instance-property
@@ -14,19 +8,19 @@ browser-compat: api.MutationRecord.removedNodes
 
 {{APIRef("DOM")}}
 
-The {{domxref("MutationRecord")}} read-only property **`removedNodes`** is a {{domxref("NodeList")}} of nodes removed from a target node by a mutation observed with a {{domxref("MutationObserver")}}.
+ویژگی فقط‌خواندنی **`removedNodes`** از {{domxref("MutationRecord")}} یک {{domxref("NodeList")}} از گره‌هایی است که توسط یک جهش (mutation) مشاهده‌شده با {{domxref("MutationObserver")}} از یک گره هدف حذف شده‌اند.
 
-## Value
+## مقدار
 
-A {{domxref("NodeList")}} containing the nodes removed from the target of the mutation observed by the {{domxref("MutationObserver")}}.
+یک {{domxref("NodeList")}} شامل گره‌هایی که از هدف جهش مشاهده‌شده توسط {{domxref("MutationObserver")}} حذف شده‌اند.
 
-## Examples
+## مثال‌ها
 
-### Observing removed nodes
+### مشاهده گره‌های حذف‌شده
 
-In the following example, there are two buttons: one to add new nodes to a target node, and one to remove them. A {{domxref("MutationObserver")}} is used to observe the target node for changes; when a change is detected, the observer calls a function, `logRemovedNodes()`.
+در مثال زیر، دو دکمه وجود دارد: یکی برای افزودن گره‌های جدید به یک گره هدف و دیگری برای حذف آن‌ها. یک {{domxref("MutationObserver")}} برای مشاهده تغییرات گره هدف استفاده می‌شود؛ وقتی تغییری شناسایی شود، ناظر تابعی به نام `logRemovedNodes()` را فراخوانی می‌کند.
 
-The `logRemovedNodes()` function checks that the MutationRecord's `type` is `childList`, which means that the target node's children have changed. If the type is `childList` the function updates the total number of nodes that have been removed. However, note that clicking the "Add a node" button will not increment the total number of removed nodes, because in this case `record.removedNodes` will have a length of `0`.
+تابع `logRemovedNodes()` بررسی می‌کند که `type` رکورد جهش برابر با `childList` باشد، یعنی فرزندان گره هدف تغییر کرده‌اند. اگر type برابر با `childList` باشد، تابع تعداد کل گره‌های حذف‌شده را به‌روزرسانی می‌کند. توجه داشته باشید که کلیک روی دکمه «Add a node» تعداد کل گره‌های حذف‌شده را افزایش نمی‌دهد، زیرا در این حالت طول `record.removedNodes` برابر با `0` خواهد بود.
 
 #### HTML
 
@@ -86,14 +80,14 @@ const observer = new MutationObserver(logRemovedNodes);
 observer.observe(target, { childList: true });
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Observing removed nodes")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
