@@ -1,11 +1,5 @@
 ---
 title: "IdentityProvider: getUserInfo() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IdentityProvider/getUserInfo_static"
-status: "needs-translation"
----
-
----
-title: "IdentityProvider: getUserInfo() static method"
 short-title: getUserInfo()
 slug: Web/API/IdentityProvider/getUserInfo_static
 page-type: web-api-static-method
@@ -16,55 +10,55 @@ browser-compat: api.IdentityProvider.getUserInfo_static
 
 {{APIRef("FedCM API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`getUserInfo()`** static method of the {{domxref("IdentityProvider")}} interface returns information about a user that has signed in, which can be used to provide a personalized welcome message and sign-in button. This method has to be called from within an {{glossary("Identity provider", "IdP")}} origin {{htmlelement("iframe")}} so that {{glossary("Relying party", "relying party")}} (RP) scripts cannot access the data. This must occur after a user has been signed in to a RP site.
+متد ایستای **`getUserInfo()`** از رابط {{domxref("IdentityProvider")}} اطلاعات مربوط به کاربری را که وارد سامانه شده است بازمی‌گرداند؛ این اطلاعات می‌تواند برای ارائهٔ پیام خوش‌آمدگویی و دکمهٔ ورود شخصی‌سازی‌شده استفاده شود. این متد باید از درون یک {{htmlelement("iframe")}} متعلق به مبدأ (origin) {{glossary("Identity provider", "IdP")}} فراخوانی شود تا اسکریپت‌های {{glossary("Relying party", "relying party")}} (RP) نتوانند به داده‌ها دسترسی پیدا کنند. این کار باید پس از ورود کاربر به یک سایت RP انجام شود.
 
-This pattern is already common on sites that use identity federation for sign-in, but `getUserInfo()` provides a way to achieve it without relying on [third-party cookies](/en-US/docs/Web/Privacy/Guides/Third-party_cookies).
+این الگو در سایت‌هایی که برای ورود از فدراسیون هویت استفاده می‌کنند، از قبل رایج است؛ اما `getUserInfo()` راهی برای رسیدن به آن بدون اتکا به [کوکی‌های شخص ثالث](/en-US/docs/Web/Privacy/Guides/Third-party_cookies) فراهم می‌کند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 IdentityProvider.getUserInfo(config)
 ```
 
-### Parameters
+### پارامترها
 
 - `config`
-  - : A configuration object, which can contain the following properties:
+  - : یک شیء پیکربندی که می‌تواند ویژگی‌های زیر را شامل شود:
     - `configURL`
-      - : The URL of the [configuration file](/en-US/docs/Web/API/FedCM_API/IDP_integration#provide_a_config_file_and_endpoints) for the identity provider from which you want to get user information.
+      - : نشانی URL [فایل پیکربندی](/en-US/docs/Web/API/FedCM_API/IDP_integration#provide_a_config_file_and_endpoints) برای ارائه‌دهنده هویتی است که می‌خواهید اطلاعات کاربر را از آن دریافت کنید.
     - `clientId`
-      - : The RP's client identifier issued by the IdP.
+      - : شناسه کلاینت RP که توسط IdP صادر شده است.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that fulfills with an array of objects, each containing information representing a separate user account. Each object contains the following properties:
+یک {{jsxref("Promise")}} که با آرایه‌ای از اشیاء تکمیل می‌شود و هر شیء شامل اطلاعاتی است که یک حساب کاربری جداگانه را نشان می‌دهد. هر شیء شامل ویژگی‌های زیر است:
 
 - `email`
-  - : A string representing the user's email address.
+  - : رشته‌ای که نشانی ایمیل کاربر را نشان می‌دهد.
 - `name`
-  - : A string representing the user's full name.
+  - : رشته‌ای که نام کامل کاربر را نشان می‌دهد.
 - `givenName`
-  - : A string representing the user's given (nick or abbreviated) name.
+  - : رشته‌ای که نام کوچک (نام مستعار یا مخفف) کاربر را نشان می‌دهد.
 - `picture`
-  - : A string representing the URL of the user's profile picture.
+  - : رشته‌ای که نشانی URL تصویر پروفایل کاربر را نشان می‌دهد.
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the provided `configURL` is invalid or if the embedded document's origin does not match the `configURL`.
+  - : اگر `configURL` ارائه‌شده نامعتبر باشد یا مبدأ سند جاسازی‌شده با `configURL` مطابقت نداشته باشد، پرتاب می‌شود.
 - `NetworkError` {{domxref("DOMException")}}
-  - : Thrown if the browser is unable to connect to the IdP or if `getUserInfo()` is invoked from the top-level document.
+  - : اگر مرورگر نتواند به IdP متصل شود یا `getUserInfo()` از سند سطح بالا فراخوانی شود، پرتاب می‌شود.
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if the embedding `<iframe>` does not have an {{httpheader("Permissions-Policy/identity-credentials-get", "identity-credentials-get")}} [Permissions-Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) set to allow the use of `getUserInfo()` or if the FedCM API is disabled globally by a policy set on the top-level document.
+  - : اگر `<iframe>` جاسازی‌کننده دارای {{httpheader("Permissions-Policy/identity-credentials-get", "identity-credentials-get")}} [Permissions-Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) به‌گونه‌ای تنظیم نشده باشد که استفاده از `getUserInfo()` را مجاز کند، یا اگر FedCM API به‌طور سراسری توسط خط‌مشی‌ای که روی سند سطح بالا تنظیم شده غیرفعال شده باشد، پرتاب می‌شود.
 
-## Description
+## توضیحات
 
-When `getUserInfo()` is called, the browser will make a request to the specified IdP's [accounts list endpoint](/en-US/docs/Web/API/FedCM_API/IDP_integration#the_accounts_list_endpoint) for the user information only when both the following conditions below are true:
+هنگامی که `getUserInfo()` فراخوانی می‌شود، مرورگر تنها در صورتی که هر دو شرط زیر برقرار باشند، درخواستی به [endpoint فهرست حساب‌ها](/en-US/docs/Web/API/FedCM_API/IDP_integration#the_accounts_list_endpoint) IdP مشخص‌شده برای دریافت اطلاعات کاربر ارسال می‌کند:
 
-- The user has previously signed in to the RP with the IdP via FedCM on the same browser instance, and the data hasn't been cleared.
-- The user is signed in to the IdP on the same browser instance.
+- کاربر قبلاً از طریق FedCM در همان نمونه مرورگر با IdP به RP وارد شده باشد و داده‌ها پاک نشده باشند.
+- کاربر در همان نمونه مرورگر به IdP وارد شده باشد.
 
-`getUserInfo()` must be called from within an embedded `<iframe>`, and the embedded site's origin must match the `configURL` of the IdP. In addition, the embedding HTML must explicitly allow its use via the {{httpheader("Permissions-Policy/identity-credentials-get", "identity-credentials-get")}} [Permissions-Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy):
+`getUserInfo()` باید از درون یک `<iframe>` جاسازی‌شده فراخوانی شود و مبدأ سایت جاسازی‌شده باید با `configURL` مربوط به IdP مطابقت داشته باشد. علاوه بر این، HTML جاسازی‌کننده باید به‌طور صریح استفاده از آن را از طریق {{httpheader("Permissions-Policy/identity-credentials-get", "identity-credentials-get")}} [Permissions-Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) مجاز کند:
 
 ```html
 <iframe
@@ -72,11 +66,11 @@ When `getUserInfo()` is called, the browser will make a request to the specified
   allow="identity-credentials-get"></iframe>
 ```
 
-## Examples
+## مثال‌ها
 
-### Basic `IdentityProvider.getUserInfo()` usage
+### استفادهٔ پایه از `IdentityProvider.getUserInfo()`
 
-The following example shows how the `IdentityProvider.getUserInfo()` method can be used to return information on a previously-signed in user from a specific IdP.
+مثال زیر نشان می‌دهد که چگونه می‌توان از متد `IdentityProvider.getUserInfo()` برای بازگرداندن اطلاعات کاربری که قبلاً از یک IdP خاص وارد شده استفاده کرد.
 
 ```js
 // Iframe displaying a page from the https://idp.example origin
@@ -101,14 +95,14 @@ if (userInfo.length > 0) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Federated Credential Management API](https://developer.chrome.com/docs/identity/fedcm/overview) on developer.chrome.com (2023)
+- [Federated Credential Management API](https://developer.chrome.com/docs/identity/fedcm/overview) در developer.chrome.com (۲۰۲۳)
