@@ -1,11 +1,5 @@
 ---
 title: "MediaError"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaError"
-status: "needs-translation"
----
-
----
-title: MediaError
 slug: Web/API/MediaError
 page-type: web-api-interface
 browser-compat: api.MediaError
@@ -13,31 +7,31 @@ browser-compat: api.MediaError
 
 {{APIRef("HTML DOM")}}
 
-The **`MediaError`** interface represents an error which occurred while handling media in an HTML media element based on {{domxref("HTMLMediaElement")}}, such as {{HTMLElement("audio")}} or {{HTMLElement("video")}}.
+رابط (Interface) **`MediaError`** نشان‌دهنده‌ی خطایی است که هنگام پردازش رسانه در یک عنصر رسانه‌ای HTML مبتنی بر {{domxref("HTMLMediaElement")}} (مانند {{HTMLElement("audio")}} یا {{HTMLElement("video")}}) رخ داده است.
 
-A `MediaError` object describes the error in general terms using a numeric `code` categorizing the kind of error, and a `message`, which provides specific diagnostics about what went wrong.
+یک شیء `MediaError` خطا را به صورت کلی با استفاده از یک `code` عددی که نوع خطا را دسته‌بندی می‌کند و یک `message` که اطلاعات تشخیصی خاصی درباره‌ی مشکل پیش‌آمده ارائه می‌دهد، توصیف می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه (Instance properties)
 
-_This interface doesn't inherit any properties._
+_این رابط هیچ ویژگی‌ای را به ارث نمی‌برد._
 
 - {{domxref("MediaError.code")}}
-  - : A number which represents [the general type of error that occurred](/en-US/docs/Web/API/MediaError/code#media_error_code_constants).
+  - : عددی که [نوع کلی خطای رخ داده](/en-US/docs/Web/API/MediaError/code#media_error_code_constants) را نشان می‌دهد.
 - {{domxref("MediaError.message")}}
-  - : A human-readable string which provides _specific diagnostic information_ to help the reader understand the error condition which occurred; specifically, it isn't a summary of what the error code means, but actual diagnostic information to help in understanding what exactly went wrong. This text and its format is not defined by the specification and will vary from one {{Glossary("user agent")}} to another. If no diagnostics are available, or no explanation can be provided, this value is an empty string (`""`).
+  - : یک رشته‌ی قابل خواندن برای انسان که _اطلاعات تشخیصی خاصی_ را برای کمک به درک شرایط خطا به خواننده ارائه می‌دهد؛ به طور خاص، این رشته خلاصه‌ای از معنای کد خطا نیست، بلکه اطلاعات تشخیصی واقعی برای کمک به فهم دقیق مشکل است. متن و قالب این رشته توسط مشخصات تعریف نشده است و از یک {{Glossary("user agent")}} به دیگری متفاوت خواهد بود. اگر اطلاعات تشخیصی در دسترس نباشد یا توضیحی قابل ارائه نباشد، این مقدار یک رشته‌ی خالی (`""`) است.
 
-## Instance methods
+## روش‌های نمونه (Instance methods)
 
-_This interface doesn't implement or inherit any methods, and has none of its own._
+_این رابط هیچ روشی را پیاده‌سازی یا به ارث نمی‌برد و روش خاص خود را نیز ندارد._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("HTMLMediaElement.error")}}
