@@ -1,43 +1,35 @@
 ---
 title: "HTMLTextAreaElement: cols property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTextAreaElement/cols"
-status: "needs-translation"
----
-
----
-title: "HTMLTextAreaElement: cols property"
 short-title: cols
 slug: Web/API/HTMLTextAreaElement/cols
 page-type: web-api-instance-property
 browser-compat: api.HTMLTextAreaElement.cols
 ---
 
-{{ APIRef("HTML DOM") }}
+ویژگی **`cols`** در رابط {{DOMxRef("HTMLTextAreaElement")}} یک عدد صحیح مثبت است که عرض قابل مشاهدهٔ کنترل متن چندخطی را بر حسب میانگین عرض کاراکترها نشان می‌دهد. این ویژگی منعکس‌کنندهٔ ویژگی [`cols`](/en-US/docs/Web/HTML/Reference/Elements/textarea#cols) عنصر `<textarea>` است.
 
-The **`cols`** property of the {{DOMxRef("HTMLTextAreaElement")}} interface is a positive integer representing the visible width of the multi-line text control, in average character widths. It reflects the `<textarea>` element's [`cols`](/en-US/docs/Web/HTML/Reference/Elements/textarea#cols) attribute.
+## مقدار
 
-## Value
+یک عدد صحیح مثبت. پیش‌فرض `20` است.
 
-A positive integer. Defaults to `20`.
-
-## Examples
+## مثال‌ها
 
 ```js
 const textareaElement = document.getElementById("comment");
 textArea.cols = 80;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTMLElement("textarea")}}
 - {{DOMXref("HTMLTextAreaElement.rows")}}
 - {{DOMXref("HTMLTextAreaElement.wrap")}}
-- CSS {{cssxref("resize")}} property
+- ویژگی CSS {{cssxref("resize")}}
