@@ -1,11 +1,5 @@
 ---
 title: "IDBDatabase: version property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase/version"
-status: "needs-translation"
----
-
----
-title: "IDBDatabase: version property"
 short-title: version
 slug: Web/API/IDBDatabase/version
 page-type: web-api-instance-property
@@ -14,16 +8,13 @@ browser-compat: api.IDBDatabase.version
 
 {{ APIRef("IndexedDB") }} {{AvailableInWorkers}}
 
-The **`version`** property of the {{domxref("IDBDatabase")}}
-interface is a 64-bit integer
-that contains the version of the connected database.
-When a database is first created, this attribute is an empty string.
+ویژگی **`version`** از رابط {{domxref("IDBDatabase")}} یک عدد صحیح ۶۴-بیتی است که نسخهٔ پایگاه‌دادهٔ متصل را نگه می‌دارد. زمانی که یک پایگاه‌داده برای نخستین بار ساخته می‌شود، این ویژگی یک رشتهٔ خالی است.
 
-## Value
+## مقدار
 
-An integer containing the version of the connected database.
+یک عدد صحیح شامل نسخهٔ پایگاه‌دادهٔ متصل.
 
-## Examples
+## مثال‌ها
 
 ```js
 // Let us open our database
@@ -48,20 +39,20 @@ DBOpenRequest.onsuccess = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم بازهٔ کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و اعمال تغییر روی داده‌ها: {{domxref("IDBObjectStore")}}
+- استفاده از مکان‌نماها: {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهدهٔ مثال زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
