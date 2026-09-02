@@ -1,36 +1,25 @@
 ---
 title: "NavigateEvent: sourceElement property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigateEvent/sourceElement"
-status: "needs-translation"
----
-
----
-title: "NavigateEvent: sourceElement property"
-short-title: sourceElement
-slug: Web/API/NavigateEvent/sourceElement
-page-type: web-api-instance-property
-browser-compat: api.NavigateEvent.sourceElement
 ---
 
 {{APIRef("Navigation API")}}
 
-The **`sourceElement`** read-only property of the
-{{domxref("NavigateEvent")}} interface returns an {{domxref("Element")}} object representing the initiating element, in cases where the navigation was initiated by an element.
+ویژگی فقطخواندنی **`sourceElement`** در رابط {{domxref("NavigateEvent")}} یک شیء {{domxref("Element")}} برمی‌گرداند که عنصر آغازگر را نشان می‌دهد؛ در مواردی که ناوبری توسط یک عنصر شروع شده باشد.
 
-The initiating element can be:
+عنصر آغازگر می‌تواند یکی از موارد زیر باشد:
 
-- An HTML {{htmlelement("a")}} element (or SVG [`<a>`](/en-US/docs/Web/SVG/Reference/Element/a) element).
-- An {{htmlelement("area")}} element.
-- A submit button ([`<input type="submit">`](/en-US/docs/Web/HTML/Reference/Elements/input/submit) or [`<button type="submit">`](/en-US/docs/Web/HTML/Reference/Elements/button)).
-- A submitted {{htmlelement("form")}} element.
+- یک عنصر HTML {{htmlelement("a")}} (یا عنصر SVG [`<a>`](/en-US/docs/Web/SVG/Reference/Element/a)).
+- یک عنصر {{htmlelement("area")}}.
+- یک دکمه ارسال ([`<input type="submit">`](/en-US/docs/Web/HTML/Reference/Elements/input/submit) یا [`<button type="submit">`](/en-US/docs/Web/HTML/Reference/Elements/button)).
+- یک عنصر {{htmlelement("form")}} که ارسال شده باشد.
 
-## Value
+## مقدار
 
-An {{domxref("Element")}} object representing the element that initiated the navigation, or `null` if the navigation was not initiated by an element.
+یک شیء {{domxref("Element")}} که نشان‌دهنده عنصر شروع‌کننده ناوبری است، یا اگر ناوبری توسط عنصری آغاز نشده باشد، `null` برمی‌گرداند.
 
-## Examples
+## نمونه‌ها
 
-### Getting the `sourceElement` for an event
+### دریافت `sourceElement` برای یک رویداد
 
 ```js
 navigation.addEventListener("navigate", (event) => {
@@ -38,15 +27,15 @@ navigation.addEventListener("navigate", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
-- [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
+- [مسیریابی سمت کلاینت مدرن: Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
+- [توضیح‌نامه Navigation API](https://github.com/WICG/navigation-api/blob/main/README.md)
