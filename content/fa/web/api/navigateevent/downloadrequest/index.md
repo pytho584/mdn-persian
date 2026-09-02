@@ -1,11 +1,5 @@
 ---
 title: "NavigateEvent: downloadRequest property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigateEvent/downloadRequest"
-status: "needs-translation"
----
-
----
-title: "NavigateEvent: downloadRequest property"
 short-title: downloadRequest
 slug: Web/API/NavigateEvent/downloadRequest
 page-type: web-api-instance-property
@@ -14,14 +8,13 @@ browser-compat: api.NavigateEvent.downloadRequest
 
 {{APIRef("Navigation API")}}
 
-The **`downloadRequest`** read-only property of the
-{{domxref("NavigateEvent")}} interface returns the filename of the file requested for download, in the case of a download navigation (e.g., an {{htmlelement("a")}} or {{htmlelement("area")}} element with a `download` attribute), or `null` otherwise.
+ویژگی فقط‌خواندنی **`downloadRequest`** از رابط {{domxref("NavigateEvent")}} نام فایل درخواست‌شده برای دانلود را در صورت پیمایش دانلودی (مثلاً یک عنصر {{htmlelement("a")}} یا {{htmlelement("area")}} با ویژگی `download`) برمی‌گرداند، و در غیر این صورت `null` برمی‌گرداند.
 
-## Value
+## مقدار
 
-A string containing the filename of the file requested for download, or `null`.
+رشته‌ای شامل نام فایل درخواست‌شده برای دانلود، یا `null`.
 
-## Examples
+## مثال‌ها
 
 ```js
 navigation.addEventListener("navigate", (event) => {
@@ -48,15 +41,15 @@ navigation.addEventListener("navigate", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
 - [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
