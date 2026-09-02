@@ -1,11 +1,5 @@
 ---
 title: "MediaList: deleteMedium() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaList/deleteMedium"
-status: "needs-translation"
----
-
----
-title: "MediaList: deleteMedium() method"
 short-title: deleteMedium()
 slug: Web/API/MediaList/deleteMedium
 page-type: web-api-instance-method
@@ -14,42 +8,41 @@ browser-compat: api.MediaList.deleteMedium
 
 {{APIRef("CSSOM")}}
 
-The `deleteMedium()` method of the {{DOMxRef("MediaList")}} interface removes from this `MediaList` the given media query.
+متود `deleteMedium()` در رابط {{DOMxRef("MediaList")}}، پرس‌وجوی رسانه‌ای مشخص‌شده را از این `MediaList` حذف می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 deleteMedium(medium)
 ```
 
-### Parameters
+### پارامترها
 
 - `medium`
-  - : A string containing the media query to remove from the list.
+  - : رشته‌ای حاوی پرس‌وجوی رسانه‌ای که باید از فهرست حذف شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ([undefined](/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined)).
+هیچ (undefined).
 
-### Exceptions
+### استثناها
 
 - `NotFoundError` {{domxref("DOMException")}}
-  - : Thrown when the media query to remove is not in the list.
+  - : زمانی پرتاب می‌شود که پرس‌وجوی رسانه‌ای موردنظر برای حذف در فهرست وجود نداشته باشد.
 
-## Examples
+## نمونه‌ها
 
-The following removes the media query `print` from the
-`MediaList` associated with the first stylesheet applied to the current document.
+مثال زیر، پرس‌وجوی رسانه‌ای `print` را از `MediaList` مرتبط با اولین استایل‌شیت اعمال‌شده بر سند جاری حذف می‌کند.
 
 ```js
 const stylesheet = document.styleSheets[0];
 stylesheet.media.deleteMedium("print");
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
