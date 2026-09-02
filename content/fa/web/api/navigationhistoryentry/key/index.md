@@ -1,11 +1,5 @@
 ---
 title: "NavigationHistoryEntry: key property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigationHistoryEntry/key"
-status: "needs-translation"
----
-
----
-title: "NavigationHistoryEntry: key property"
 short-title: key
 slug: Web/API/NavigationHistoryEntry/key
 page-type: web-api-instance-property
@@ -14,55 +8,55 @@ browser-compat: api.NavigationHistoryEntry.key
 
 {{APIRef("Navigation API")}}
 
-The **`key`** read-only property of the {{domxref("NavigationHistoryEntry")}} interface returns the `key` of the history entry, or an empty string if current document is not fully active. This is a unique, UA-generated value that represents the history entry's slot in the entries list. It is used to navigate that particular slot via {{domxref("Navigation.traverseTo()")}}. The `key` will be reused by other entries that replace the entry in the list (that is, if the {{domxref("NavigateEvent.navigationType")}} is `replace`).
+ویژگی فقط خواندنی **`key`** از رابط {{domxref("NavigationHistoryEntry")}}، کلید (key) ورودی تاریخچه را برمی‌گرداند، یا یک رشته خالی اگر سند فعلی کاملاً فعال نباشد. این یک مقدار منحصربه‌فرد است که توسط عامل کاربر (UA) تولید شده و نشان‌دهنده جایگاه (slot) آن ورودی در لیست ورودی‌ها است. از این کلید برای پیمایش به آن جایگاه خاص از طریق {{domxref("Navigation.traverseTo()")}} استفاده می‌شود. `key` توسط سایر ورودی‌هایی که جایگزین آن ورودی در لیست می‌شوند (یعنی اگر {{domxref("NavigateEvent.navigationType")}} برابر `replace` باشد) مجدداً استفاده خواهد شد.
 
-This differs from the {{domxref("NavigationHistoryEntry.id", "id")}} of a history entry. The `id` is a unique, UA-generated value that always represents a specific history entry rather than its slot in the entries list. This is useful to correlate it with an external resource such as a storage cache.
+این ویژگی با {{domxref("NavigationHistoryEntry.id", "id")}} یک ورودی تاریخچه متفاوت است. `id` یک مقدار منحصربه‌فرد است که توسط عامل کاربر تولید شده و همیشه نمایانگر یک ورودی تاریخچه خاص است، نه جایگاه آن در لیست ورودی‌ها. این برای ارتباط دادن آن با یک منبع خارجی مانند حافظه نهان (storage cache) مفید است.
 
-## Value
+## مقدار
 
-A string representing the `key` of the {{domxref("NavigationHistoryEntry")}}.
+یک رشته که `key` آبجکت {{domxref("NavigationHistoryEntry")}} را نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
 ```js
 const current = navigation.currentEntry;
 console.log(current.key);
 ```
 
-### Set up a home button
+### راه‌اندازی یک دکمه خانه
 
 ```js
 function initHomeBtn() {
-  // Get the key of the first loaded entry
-  // so the user can always go back to this view.
+  // کلید اولین ورودی بارگذاری‌شده را می‌گیریم
+  // تا کاربر همیشه بتواند به این نما بازگردد.
   const { key } = navigation.currentEntry;
   backToHomeButton.onclick = () => {
     navigation.traverseTo(key);
   };
 }
-// Intercept navigate events, such as link clicks, and
-// replace them with single-page navigations
+// رویدادهای navigate (مانند کلیک روی پیوندها) را رهگیری کرده و
+// آنها را با پیمایش‌های تک‌صفحه‌ای جایگزین می‌کنیم
 navigation.addEventListener("navigate", (event) => {
   event.intercept({
     async handler() {
-      // Navigate to a different view,
-      // but the "home" button will always work.
+      // به یک نمای متفاوت پیمایش می‌کنیم،
+      // اما دکمه "خانه" همیشه کار خواهد کرد.
     },
   });
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
-- [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
+- [مسیریابی مدرن سمت کلاینت: Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
+- [توضیح Navigation API](https://github.com/WICG/navigation-api/blob/main/README.md)
