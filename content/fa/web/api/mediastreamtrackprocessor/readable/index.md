@@ -1,11 +1,5 @@
 ---
 title: "MediaStreamTrackProcessor: readable property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrackProcessor/readable"
-status: "needs-translation"
----
-
----
-title: "MediaStreamTrackProcessor: readable property"
 short-title: readable
 slug: Web/API/MediaStreamTrackProcessor/readable
 page-type: web-api-instance-property
@@ -14,20 +8,20 @@ browser-compat: api.MediaStreamTrackProcessor.readable
 
 {{APIRef("Insertable Streams for MediaStreamTrack API")}}
 
-The **`readable`** property of the {{domxref("MediaStreamTrackProcessor")}} interface returns a {{domxref("ReadableStream")}} of {{domxref("VideoFrame")}}s.
+ویژگی **`readable`** از رابط {{domxref("MediaStreamTrackProcessor")}} یک {{domxref("ReadableStream")}} از {{domxref("VideoFrame")}}‌ها برمی‌گرداند.
 
-## Value
+## مقدار
 
-A {{domxref("ReadableStream")}}.
+یک {{domxref("ReadableStream")}}.
 
-## Examples
+## مثال‌ها
 
-See the [Insertable Streams for MediaStreamTrack API](/en-US/docs/Web/API/Insertable_Streams_for_MediaStreamTrack_API#examples) for an example.
+برای مشاهده مثال، به [Insertable Streams for MediaStreamTrack API](/en-US/docs/Web/API/Insertable_Streams_for_MediaStreamTrack_API#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
