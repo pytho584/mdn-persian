@@ -1,7 +1,5 @@
 ---
 title: "IntersectionObserver: takeRecords() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/takeRecords"
-status: "needs-translation"
 ---
 
 ---
@@ -14,34 +12,34 @@ browser-compat: api.IntersectionObserver.takeRecords
 
 {{APIRef("Intersection Observer API")}}
 
-The **`takeRecords()`** method of the {{domxref("IntersectionObserver")}} interface returns an array of {{domxref("IntersectionObserverEntry")}} objects, one for each targeted element which has experienced an intersection change since the last time the intersections were checked, either explicitly through a call to this method or implicitly by an automatic call to the observer's callback.
+متد **`takeRecords()`** از رابط {{domxref("IntersectionObserver")}} آرایه‌ای از اشیاء {{domxref("IntersectionObserverEntry")}} برمی‌گرداند؛ یکی برای هر عنصر هدف که از آخرین باری که تقاطع‌ها بررسی شده‌اند، تغییر تقاطع داشته است؛ خواه این بررسی به‌صورت صریح با فراخوانی این متد انجام شده باشد، خواه به‌صورت ضمنی با فراخوانی خودکار callback ناظر.
 
 > [!NOTE]
-> If you use the callback to monitor these changes, you don't need to call this method.
-> Calling this method clears the pending intersection list, so the callback will not be run.
+> اگر از تابع callback برای نظارت بر این تغییرات استفاده می‌کنید، نیازی به فراخوانی این متد ندارید.
+> فراخوانی این متد فهرست تقاطع‌های در انتظار را پاک می‌کند، بنابراین تابع callback اجرا نخواهد شد.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 takeRecords()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-An array of {{domxref("IntersectionObserverEntry")}} objects, one for each target element whose intersection with the root has changed since the last time the intersections were checked.
+آرایه‌ای از اشیاء {{domxref("IntersectionObserverEntry")}}، یکی برای هر عنصر هدف که تقاطع آن با ریشه از آخرین بار بررسی تقاطع‌ها تغییر کرده است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Intersection Observer API](/en-US/docs/Web/API/Intersection_Observer_API)
