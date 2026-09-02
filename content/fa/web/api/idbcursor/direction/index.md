@@ -1,7 +1,5 @@
 ---
 title: "IDBCursor: direction property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IDBCursor/direction"
-status: "needs-translation"
 ---
 
 ---
@@ -14,43 +12,31 @@ browser-compat: api.IDBCursor.direction
 
 {{ APIRef("IndexedDB") }} {{AvailableInWorkers}}
 
-The **`direction`** read-only property of the
-{{domxref("IDBCursor")}} interface is a string that returns the
-direction of traversal of the cursor (set using
-{{domxref("IDBObjectStore.openCursor")}} for example). See the [Value](#value)
-section below for possible values.
+ویژگی فقط‌خواندنی **`direction`** در اینترفیس {{domxref("IDBCursor")}} یک رشته (string) است که جهت پیمایش نشانگر (cursor) را مشخص می‌کند. این جهت برای نمونه با استفاده از {{domxref("IDBObjectStore.openCursor")}} تعیین می‌شود. برای مشاهدهٔ مقادیر ممکن، بخش [مقدار](#مقدار) را ببینید.
 
-## Value
+## مقدار
 
-A string indicating the direction in which the cursor is traversing the data.
-Possible values are:
+رشته‌ای است که جهتی را نشان می‌دهد نشانگر در آن جهت داده‌ها را پیمایش می‌کند. مقادیر ممکن عبارت‌اند از:
 
 - `next`
-  - : The cursor is opened at the start of the source.
+  - : نشانگر در ابتدای منبع داده باز می‌شود و به سمت انتهای آن حرکت می‌کند.
 - `nextunique`
-  - : The cursor is opened at the start of the source.
-    For every key with duplicate values, only the record closest to the start is yielded.
+  - : نشانگر در ابتدای منبع داده باز می‌شود و به سمت انتهای آن حرکت می‌کند.
+    برای هر کلید دارای مقادیر تکراری، فقط رکوردی که به ابتدای منبع نزدیک‌تر است بازگردانده می‌شود.
 - `prev`
-  - : The cursor is opened at the end of the source.
+  - : نشانگر در انتهای منبع داده باز می‌شود و به سمت ابتدای آن حرکت می‌کند.
 - `prevunique`
-  - : The cursor is opened at the end of the source.
-    For every key with duplicate values, only the record closest to the start is yielded.
+  - : نشانگر در انتهای منبع داده باز می‌شود و به سمت ابتدای آن حرکت می‌کند.
+    برای هر کلید دارای مقادیر تکراری، فقط رکوردی که به ابتدای منبع نزدیک‌تر است بازگردانده می‌شود.
 
-## Examples
+## مثال‌ها
 
-In this simple fragment we create a transaction, retrieve an object store, then use a
-cursor to iterate through all the records in the object store. Within each iteration we
-log the direction of the cursor.
+در این قطعه کد ساده، یک تراکنش می‌سازیم، یک object store (مخزن اشیاء) دریافت می‌کنیم و سپس با استفاده از یک نشانگر، همهٔ رکوردهای داخل مخزن اشیاء را پیمایش می‌کنیم. در هر تکرار، جهت نشانگر را در کنسول ثبت (log) می‌کنیم.
 
 > [!NOTE]
-> We can't change the direction of travel of the cursor using
-> the `direction` property, as it is read-only. We specify the direction of
-> travel using the 2nd argument of {{domxref("IDBObjectStore.openCursor")}}.
+> نمی‌توانیم جهت حرکت نشانگر را با استفاده از ویژگی `direction` تغییر دهیم، چون این ویژگی فقط‌خواندنی است. جهت حرکت را با پارامتر دوم {{domxref("IDBObjectStore.openCursor")}} مشخص می‌کنیم.
 
-The cursor does not require us to select the data based on a key; we can just grab all
-of it. Also note that in each iteration of the loop, you can grab data from the current
-record under the cursor object using `cursor.value.foo`. For a complete
-working example, see our [IDBCursor example](https://github.com/mdn/dom-examples/tree/main/indexeddb-examples/idbcursor) ([View the example live](https://mdn.github.io/dom-examples/indexeddb-examples/idbcursor/)).
+نشانگر از ما نمی‌خواهد داده‌ها را بر اساس کلید انتخاب کنیم؛ می‌توانیم به‌سادگی همهٔ داده‌ها را بگیریم. همچنین توجه داشته باشید که در هر تکرار حلقه می‌توانید داده‌های رکورد جاری را با `cursor.value.foo` از روی شیء نشانگر بخوانید. برای یک مثال کامل و کاربردی، به [مثال IDBCursor](https://github.com/mdn/dom-examples/tree/main/indexeddb-examples/idbcursor) مراجعه کنید ([مشاهدهٔ مثال به‌صورت زنده](https://mdn.github.io/dom-examples/indexeddb-examples/idbcursor/)).
 
 ```js
 function backwards() {
@@ -74,20 +60,20 @@ function backwards() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
-- Starting transactions: {{domxref("IDBDatabase")}}
-- Using transactions: {{domxref("IDBTransaction")}}
-- Setting a range of keys: {{domxref("IDBKeyRange")}}
-- Retrieving and making changes to your data: {{domxref("IDBObjectStore")}}
-- Using cursors: {{domxref("IDBCursor")}}
-- Reference example: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([View the example live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+- [استفاده از IndexedDB](/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
+- شروع تراکنش‌ها: {{domxref("IDBDatabase")}}
+- استفاده از تراکنش‌ها: {{domxref("IDBTransaction")}}
+- تنظیم بازه‌ای از کلیدها: {{domxref("IDBKeyRange")}}
+- بازیابی و ایجاد تغییرات در داده‌ها: {{domxref("IDBObjectStore")}}
+- استفاده از نشانگرها: {{domxref("IDBCursor")}}
+- مثال مرجع: [To-do Notifications](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([مشاهدهٔ مثال به‌صورت زنده](https://mdn.github.io/dom-examples/to-do-notifications/)).
