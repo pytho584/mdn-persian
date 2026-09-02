@@ -1,11 +1,5 @@
 ---
 title: "MutationRecord: attributeNamespace property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MutationRecord/attributeNamespace"
-status: "needs-translation"
----
-
----
-title: "MutationRecord: attributeNamespace property"
 short-title: attributeNamespace
 slug: Web/API/MutationRecord/attributeNamespace
 page-type: web-api-instance-property
@@ -14,16 +8,16 @@ browser-compat: api.MutationRecord.attributeNamespace
 
 {{APIRef("DOM")}}
 
-The {{domxref("MutationRecord")}} read-only property **`attributeNamespace`** is the namespace of the mutated attribute in the {{domxref("MutationRecord")}} observed by a {{domxref("MutationObserver")}}.
+ویژگی فقط‌خواندنی **`attributeNamespace`** از {{domxref("MutationRecord")}}، فضای نام (namespace) صفت تغییریافته در {{domxref("MutationRecord")}} است که توسط یک {{domxref("MutationObserver")}} مشاهده شده است.
 
-## Value
+## مقدار
 
-If the record's [`type`](/en-US/docs/Web/API/MutationRecord/type) is `attributes`, the property is a string representing the namespace of the mutated attribute of the mutation target. The value is `null` otherwise.
+اگر [`type`](/en-US/docs/Web/API/MutationRecord/type) رکورد برابر با `attributes` باشد، این ویژگی رشته‌ای است که فضای نام صفت تغییریافتهٔ هدف جهش (mutation target) را نشان می‌دهد. در غیر این صورت مقدار آن `null` است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
