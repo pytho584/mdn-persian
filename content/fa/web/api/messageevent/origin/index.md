@@ -1,11 +1,5 @@
 ---
 title: "MessageEvent: origin property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MessageEvent/origin"
-status: "needs-translation"
----
-
----
-title: "MessageEvent: origin property"
 short-title: origin
 slug: Web/API/MessageEvent/origin
 page-type: web-api-instance-property
@@ -14,15 +8,13 @@ browser-compat: api.MessageEvent.origin
 
 {{APIRef("HTML DOM")}}{{AvailableInWorkers}}
 
-The **`origin`** read-only property of the
-{{domxref("MessageEvent")}} interface is a string representing the
-origin of the message emitter.
+ویژگی فقط‌خواندنی **`origin`** در رابط {{domxref("MessageEvent")}} یک رشته است که مبدأ فرستندهٔ پیام را نشان می‌دهد.
 
-## Value
+## مقدار
 
-A string representing the origin.
+رشته‌ای که مبدأ را نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
 ```js
 myWorker.onmessage = (e) => {
@@ -32,15 +24,14 @@ myWorker.onmessage = (e) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("ExtendableMessageEvent")}} — similar to this interface but used in
-  interfaces that needs to give more flexibility to authors.
+- {{domxref("ExtendableMessageEvent")}} — مشابه این رابط است، اما در رابط‌هایی استفاده می‌شود که نیاز به انعطاف بیشتری برای نویسندگان دارند.
