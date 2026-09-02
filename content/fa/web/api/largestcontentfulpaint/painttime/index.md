@@ -1,7 +1,5 @@
 ---
 title: "LargestContentfulPaint: paintTime property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/LargestContentfulPaint/paintTime"
-status: "needs-translation"
 ---
 
 ---
@@ -14,26 +12,26 @@ browser-compat: api.LargestContentfulPaint.paintTime
 
 {{APIRef("Performance API")}}
 
-The **`paintTime`** read-only property of the {{domxref("LargestContentfulPaint")}} interface returns the {{domxref("DOMHighResTimeStamp","timestamp")}} when the rendering phase ended and the paint phase started.
+خاصیت فقط‌خواندنی **`paintTime`** از رابط {{domxref("LargestContentfulPaint")}}، {{domxref("DOMHighResTimeStamp","زمان‌مهر (timestamp)")}} مربوط به زمانی که فاز رندر (rendering) به پایان رسید و فاز نقاشی (paint) آغاز شد را برمی‌گرداند.
 
-The `paintTime` is broadly interoperable: The value should be the same across different implementations.
+`paintTime` به طور گسترده‌ای قابل تعامل (interoperable) است: مقدار آن باید در پیاده‌سازی‌های مختلف یکسان باشد.
 
-## Value
+## مقدار
 
-A {{domxref("DOMHighResTimeStamp")}}.
+یک {{domxref("DOMHighResTimeStamp")}}.
 
-## Examples
+## مثال‌ها
 
-See [Observing separate paint and presentation timings](/en-US/docs/Web/API/LargestContentfulPaint#observing_separate_paint_and_presentation_timings).
+به [مشاهده زمان‌بندی‌های مجزای نقاشی و ارائه](/en-US/docs/Web/API/LargestContentfulPaint#observing_separate_paint_and_presentation_timings) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("LargestContentfulPaint.presentationTime")}}
