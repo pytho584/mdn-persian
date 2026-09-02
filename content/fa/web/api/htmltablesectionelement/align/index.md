@@ -1,11 +1,5 @@
 ---
 title: "HTMLTableSectionElement: align property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableSectionElement/align"
-status: "needs-translation"
----
-
----
-title: "HTMLTableSectionElement: align property"
 short-title: align
 slug: Web/API/HTMLTableSectionElement/align
 page-type: web-api-instance-property
@@ -16,35 +10,35 @@ browser-compat: api.HTMLTableSectionElement.align
 
 {{APIRef("HTML DOM")}}{{deprecated_header}}
 
-The **`align`** property of the {{domxref("HTMLTableSectionElement")}} interface is a string indicating how to horizontally align text in a {{htmlelement("thead")}}, {{htmlelement("tbody")}} or {{htmlelement("tfoot")}} table section. Individual rows and cells can override it.
+ویژگی **`align`** از رابط {{domxref("HTMLTableSectionElement")}} یک رشته است که نحوهٔ تراز افقی متن را در یک بخش جدول شامل {{htmlelement("thead")}}، {{htmlelement("tbody")}} یا {{htmlelement("tfoot")}} مشخص می‌کند. سطرها و سلول‌های جداگانه می‌توانند این مقدار را بازنویسی (override) کنند.
 
 > [!NOTE]
-> This property is deprecated, and CSS should be used to align text horizontally in a cell. Use the CSS {{cssxref("text-align")}} property, which takes precedence, to horizontally align text in section cells instead.
+> این ویژگی منسوخ شده است و باید از CSS برای تراز افقی متن در یک سلول استفاده کرد. به جای آن از ویژگی CSS {{cssxref("text-align")}} که اولویت دارد برای تراز افقی متن در سلول‌های بخش استفاده کنید.
 
-## Value
+## مقدار
 
-The possible values are:
+مقادیر ممکن عبارتند از:
 
 - `left`
-  - : Align the text to the left. Use `text-align: left` instead.
+  - : تراز چپ متن. به جای آن از `text-align: left` استفاده کنید.
 - `right`
-  - : Align the text to the right. Use `text-align: right` instead.
+  - : تراز راست متن. به جای آن از `text-align: right` استفاده کنید.
 - `center`
-  - : Center the text in the cell. Use `text-align: center` instead.
+  - : وسط‌چین کردن متن در سلول. به جای آن از `text-align: center` استفاده کنید.
 
-## Examples
+## مثال‌ها
 
-Use CSS `text-align` instead. An [example](/en-US/docs/Web/CSS/Reference/Properties/text-align#table_alignment) is available on the {{cssxref("text-align")}} page.
+به جای آن از CSS `text-align` استفاده کنید. یک [مثال](/en-US/docs/Web/CSS/Reference/Properties/text-align#table_alignment) در صفحهٔ {{cssxref("text-align")}} موجود است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{cssxref("text-align")}}
-- [Learn: Styling tables](/en-US/docs/Learn_web_development/Core/Styling_basics/Tables)
+- [آموزش: استایل‌دهی به جداول](/en-US/docs/Learn_web_development/Core/Styling_basics/Tables)
