@@ -1,11 +1,5 @@
 ---
 title: "MessageEvent: lastEventId property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MessageEvent/lastEventId"
-status: "needs-translation"
----
-
----
-title: "MessageEvent: lastEventId property"
 short-title: lastEventId
 slug: Web/API/MessageEvent/lastEventId
 page-type: web-api-instance-property
@@ -14,15 +8,13 @@ browser-compat: api.MessageEvent.lastEventId
 
 {{APIRef("HTML DOM")}}{{AvailableInWorkers}}
 
-The **`lastEventId`** read-only property of the
-{{domxref("MessageEvent")}} interface is a string representing a
-unique ID for the event.
+ویژگی فقط‌خواندنی **`lastEventId`** از رابط {{domxref("MessageEvent")}} یک رشته است که یک شناسه منحصربه‌فرد برای رویداد را نشان می‌دهد.
 
-## Value
+## مقدار
 
-A string representing the ID.
+یک رشته که شناسه را نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
 ```js
 myWorker.onmessage = (e) => {
@@ -32,15 +24,14 @@ myWorker.onmessage = (e) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("ExtendableMessageEvent")}} — similar to this interface but used in
-  interfaces that needs to give more flexibility to authors.
+- {{domxref("ExtendableMessageEvent")}} — مشابه این رابط اما در رابط‌هایی استفاده می‌شود که نیاز به انعطاف‌پذیری بیشتری برای نویسندگان دارند.
