@@ -1,11 +1,5 @@
 ---
 title: "MouseEvent: screenY property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/screenY"
-status: "needs-translation"
----
-
----
-title: "MouseEvent: screenY property"
 short-title: screenY
 slug: Web/API/MouseEvent/screenY
 page-type: web-api-instance-property
@@ -14,17 +8,17 @@ browser-compat: api.MouseEvent.screenY
 
 {{APIRef("Pointer Events")}}
 
-The **`screenY`** read-only property of the {{domxref("MouseEvent")}} interface provides the vertical coordinate (offset) of the mouse pointer in [screen coordinates](/en-US/docs/Web/API/CSSOM_view_API/Coordinate_systems#screen).
+ویژگی فقط‌خواندنی **`screenY`** در رابط {{domxref("MouseEvent")}} مختصات عمودی (offset) اشاره‌گر ماوس را در [screen coordinates](/en-US/docs/Web/API/CSSOM_view_API/Coordinate_systems#screen) فراهم می‌کند.
 
-## Value
+## مقدار
 
-A `double` floating point value in pixels.
+یک مقدار اعشاری از نوع `double` بر حسب پیکسل.
 
-Early versions of the spec defined this as an integer referring to the number of pixels.
+نسخه‌های اولیه مشخصات این ویژگی را به صورت یک عدد صحیح (integer) که به تعداد پیکسل‌ها اشاره می‌کرد تعریف کرده بودند.
 
-## Examples
+## مثال‌ها
 
-This example displays your mouse's coordinates whenever you trigger the {{domxref("Element/mousemove_event", "mousemove")}} event.
+این مثال مختصات ماوس شما را هر بار که رویداد {{domxref("Element/mousemove_event", "mousemove")}} را راه‌اندازی می‌کنید نمایش می‌دهد.
 
 ### HTML
 
@@ -46,19 +40,19 @@ function logKey(e) {
 }
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{ domxref("MouseEvent") }}
 - {{ domxref("MouseEvent.screenX","screenX") }}
