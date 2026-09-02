@@ -1,11 +1,5 @@
 ---
 title: "HTMLTextAreaElement: willValidate property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLTextAreaElement/willValidate"
-status: "needs-translation"
----
-
----
-title: "HTMLTextAreaElement: willValidate property"
 short-title: willValidate
 slug: Web/API/HTMLTextAreaElement/willValidate
 page-type: web-api-instance-property
@@ -14,11 +8,11 @@ browser-compat: api.HTMLTextAreaElement.willValidate
 
 {{APIRef("HTML DOM")}}
 
-The **`willValidate`** read-only property of the {{domxref("HTMLTextAreaElement")}} interface indicates whether the {{htmlelement("textarea")}} element is a candidate for [constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation). It is `false` if any conditions bar it from constraint validation, such as when its {{domxref("HTMLTextAreaElement.disabled", "disabled")}} or {{domxref("HTMLTextAreaElement.readOnly", "readOnly")}} property is `true`.
+خاصیت فقط-خواندنی **`willValidate`** از واسط {{domxref("HTMLTextAreaElement")}} مشخص می‌کند که آیا عنصر {{htmlelement("textarea")}} یک کاندید برای [constraint validation](/en-US/docs/Web/HTML/Guides/Constraint_validation) است یا خیر. این مقدار `false` است اگر هر شرایطی آن را از اعتبارسنجی محدودیتی منع کند، مانند زمانی که ویژگی {{domxref("HTMLTextAreaElement.disabled", "disabled")}} یا {{domxref("HTMLTextAreaElement.readOnly", "readOnly")}} آن `true` باشد.
 
 ## Value
 
-A boolean value.
+یک مقدار بولی.
 
 ## Specifications
 
