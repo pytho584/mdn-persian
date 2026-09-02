@@ -1,11 +1,5 @@
 ---
 title: "MediaKeySystemAccess: createMediaKeys() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaKeySystemAccess/createMediaKeys"
-status: "needs-translation"
----
-
----
-title: "MediaKeySystemAccess: createMediaKeys() method"
 short-title: createMediaKeys()
 slug: Web/API/MediaKeySystemAccess/createMediaKeys
 page-type: web-api-instance-method
@@ -14,8 +8,7 @@ browser-compat: api.MediaKeySystemAccess.createMediaKeys
 
 {{APIRef("Encrypted Media Extensions")}}{{SecureContext_Header}}
 
-The `MediaKeySystemAccess.createMediaKeys()` method returns a
-{{jsxref('Promise')}} that resolves to a new {{domxref('MediaKeys')}} object.
+متد `MediaKeySystemAccess.createMediaKeys()` یک {{jsxref('Promise')}} برمی‌گرداند که هنگام حل‌شدن (resolve) به یک شیء جدید {{domxref('MediaKeys')}} منتهی می‌شود.
 
 ## Syntax
 
@@ -23,18 +16,18 @@ The `MediaKeySystemAccess.createMediaKeys()` method returns a
 createMediaKeys()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref('Promise')}}.
+یک {{jsxref('Promise')}}.
 
-## Specifications
+### مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+### سازگاری مرورگر
 
 {{Compat}}
