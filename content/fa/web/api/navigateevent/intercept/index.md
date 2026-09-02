@@ -1,9 +1,6 @@
 ---
 title: "NavigateEvent: intercept() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigateEvent/intercept"
-status: "needs-translation"
 ---
-
 ---
 title: "NavigateEvent: intercept() method"
 short-title: intercept()
@@ -14,62 +11,61 @@ browser-compat: api.NavigateEvent.intercept
 
 {{APIRef("Navigation API")}}
 
-The **`intercept()`** method of the
-{{domxref("NavigateEvent")}} interface intercepts this navigation, turning it into a same-document navigation to the {{domxref("NavigationDestination.url", "destination")}} URL.
+متد **`intercept()`** در رابط {{domxref("NavigateEvent")}} این ناوبری را رهگیری کرده و آن را به یک ناوبری در همان سند (same-document) به سمت URL {{domxref("NavigationDestination.url", "destination")}} تبدیل می‌کند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 intercept()
 intercept(options)
 ```
 
-### Parameters
+### پارامترها
 
 - `options` {{optional_inline}}
-  - : An options object containing the following properties:
+  - : یک شیء گزینه‌ها شامل ویژگی‌های زیر:
     - `handler` {{optional_inline}}
-      - : A callback function that defines what the navigation handling behavior should be; it returns a promise. This function will run after the {{domxref("Navigation.currentEntry", "currentEntry")}} property has been updated.
+      - : یک تابع callback که تعریف می‌کند رفتار مدیریت ناوبری باید چه باشد؛ یک promise برمی‌گرداند. این تابع پس از به‌روزرسانی ویژگی {{domxref("Navigation.currentEntry", "currentEntry")}} اجرا می‌شود.
     - `precommitHandler` {{optional_inline}}
-      - : A callback function that defines any behavior that should occur just before the navigation has committed; it accepts a {{domxref("NavigationPrecommitController")}} object as an argument and returns a promise. This function will run before the {{domxref("Navigation.currentEntry", "currentEntry")}} property has been updated.
+      - : یک تابع callback که هر رفتاری را که باید درست قبل از قطعی‌شدن (committed) ناوبری رخ دهد تعریف می‌کند؛ یک شیء {{domxref("NavigationPrecommitController")}} را به عنوان آرگومان می‌پذیرد و یک promise برمی‌گرداند. این تابع قبل از به‌روزرسانی ویژگی {{domxref("Navigation.currentEntry", "currentEntry")}} اجرا می‌شود.
     - `focusReset` {{optional_inline}}
-      - : Defines the navigation's focus behavior. This may take one of the following values:
+      - : رفتار تمرکز (focus) ناوبری را تعریف می‌کند. این گزینه می‌تواند یکی از مقادیر زیر را بگیرد:
         - `after-transition`
-          - : Once the promise returned by your handler function resolves, the browser will focus the first element with the [`autofocus`](/en-US/docs/Web/HTML/Reference/Global_attributes/autofocus) attribute, or the {{htmlelement("body")}} element if no element has `autofocus` set. This is the default value.
+          - : پس از اینکه promise بازگشتی توسط تابع handler شما resolve شد، مرورگر اولین عنصر دارای ویژگی [`autofocus`](/en-US/docs/Web/HTML/Reference/Global_attributes/autofocus) را فوکوس می‌کند، یا اگر هیچ عنصری `autofocus` نداشته باشد، عنصر {{htmlelement("body")}} را فوکوس می‌کند. این مقدار پیش‌فرض است.
         - `manual`
-          - : Disable the default behavior.
+          - : رفتار پیش‌فرض را غیرفعال می‌کند.
     - `scroll` {{optional_inline}}
-      - : Defines the navigation's scrolling behavior. This may take one of the following values:
+      - : رفتار اسکرول ناوبری را تعریف می‌کند. این گزینه می‌تواند یکی از مقادیر زیر را بگیرد:
         - `after-transition`
-          - : Allow the browser to handle scrolling, for example by scrolling to the relevant fragment identifier if the URL contains a fragment, or restoring the scroll position to the same place as last time if the page is reloaded or a page in the history is revisited. This is the default value.
+          - : به مرورگر اجازه می‌دهد تا اسکرول را مدیریت کند؛ مثلاً اگر URL حاوی یک fragment باشد به شناسه‌ی قطعه مربوطه اسکرول کند، یا اگر صفحه دوباره بارگذاری شود یا صفحه‌ای از تاریخچه مجدداً بازدید شود، موقعیت اسکرول را به همان مکان قبلی بازگرداند. این مقدار پیش‌فرض است.
         - `manual`
-          - : Disable the default behavior.
+          - : رفتار پیش‌فرض را غیرفعال می‌کند.
 
-### Return value
+### مقدار بازگشتی
 
-None (`undefined`).
+هیچ (`undefined`).
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the current {{domxref("Document")}} is not yet active, or if the navigation has been cancelled.
+  - : اگر {{domxref("Document")}} فعلی هنوز فعال نیست، یا اگر ناوبری لغو شده باشد، پرتاب می‌شود.
 - `SecurityError` {{domxref("DOMException")}}
-  - : Thrown if:
-    - The event was dispatched by a {{domxref("EventTarget.dispatchEvent", "dispatchEvent()")}} call, rather than the user agent.
-    - The navigation cannot be intercepted ({{domxref("NavigateEvent.canIntercept")}} is `false`).
-    - A `precommitHandler()` callback is provided on a non-cancelable event ({{domxref("Event.cancelable")}} is `false`).
+  - : در صورتی پرتاب می‌شود که:
+    - رویداد توسط یک فراخوانی {{domxref("EventTarget.dispatchEvent", "dispatchEvent()")}} توزیع شده باشد، نه توسط عامل کاربر (user agent).
+    - ناوبری قابل رهگیری نباشد ({{domxref("NavigateEvent.canIntercept")}} برابر `false` است).
+    - یک callback `precommitHandler()` روی یک رویداد غیرقابل‌لغو ارائه شده باشد ({{domxref("Event.cancelable")}} برابر `false` است).
 
-## Description
+## توضیحات
 
-The `intercept()` method is used to implement same-document (SPA) navigation behavior when a navigation occurs; for example, when a link is clicked, a form is submitted, or a programmatic navigation is initiated (using {{domxref("History.pushState()")}}, {{domxref("Window.location")}}, etc.).
+متد `intercept()` برای پیاده‌سازی رفتار ناوبری در همان سند (SPA) هنگام وقوع یک ناوبری استفاده می‌شود؛ مثلاً وقتی یک پیوند کلیک می‌شود، یک فرم ارسال می‌شود، یا یک ناوبری برنامه‌ای (programmatic) آغاز می‌شود (با استفاده از {{domxref("History.pushState()")}}، {{domxref("Window.location")}} و غیره).
 
-It does this via a couple of different callbacks, `handler()` and `precommitHandler()`.
+این کار از طریق چند callback مختلف یعنی `handler()` و `precommitHandler()` انجام می‌شود.
 
-### Handling immediate navigations with `handler()`
+### مدیریت ناوبری‌های فوری با `handler()`
 
-The `handler()` callback is run in response to a committed navigation. It will run after the {{domxref("Navigation.currentEntry", "currentEntry")}} property has been updated, meaning that a new URL is shown in the browser UI and the history is updated with a new entry.
+callback `handler()` در پاسخ به یک ناوبری قطعی‌شده (committed) اجرا می‌شود. این callback پس از به‌روزرسانی ویژگی {{domxref("Navigation.currentEntry", "currentEntry")}} اجرا می‌شود؛ یعنی یک URL جدید در رابط کاربری مرورگر نمایش داده می‌شود و تاریخچه با یک ورودی جدید به‌روزرسانی می‌شود.
 
-A typical example looks like this, enabling specific content to be rendered and loaded in response to a certain navigation:
+یک مثال معمولی به این صورت است که امکان رندر و بارگذاری محتوای خاص را در پاسخ به یک ناوبری مشخص فراهم می‌کند:
 
 ```js
 navigation.addEventListener("navigate", (event) => {
@@ -89,13 +85,13 @@ navigation.addEventListener("navigate", (event) => {
 });
 ```
 
-`handler()` should be used to implement navigation behavior where the navigation is committed to: the user should be shown something new.
+`handler()` باید برای پیاده‌سازی رفتار ناوبری استفاده شود که ناوبری به آن متعهد شده است: باید چیزی جدید به کاربر نمایش داده شود.
 
-### Handling precommit actions with `precommitHandler()`
+### مدیریت اقدامات قبل از قطعی‌شدن با `precommitHandler()`
 
-However, you might also wish to modify or cancel in-flight navigation, or to perform work while the navigation is ongoing and before it is committed. This kind of scenario can be dealt with using the `precommitHandler()` callback, which runs before the {{domxref("Navigation.currentEntry", "currentEntry")}} property has been updated and the browser UI shows the new location.
+با این حال، ممکن است بخواهید ناوبری در حال انجام را تغییر دهید یا لغو کنید، یا در حالی که ناوبری در جریان است و قبل از قطعی‌شدن آن کاری انجام دهید. این نوع سناریو را می‌توان با callback `precommitHandler()` مدیریت کرد؛ این callback قبل از به‌روزرسانی ویژگی {{domxref("Navigation.currentEntry", "currentEntry")}} و نمایش مکان جدید در رابط کاربری مرورگر اجرا می‌شود.
 
-For example, if the user navigates to a restricted page and is not signed in, you may want to redirect the browser to a sign-in page. This might be handled like so:
+مثلاً اگر کاربر به صفحه‌ای محدود پیمایش کند و وارد سیستم نشده باشد، ممکن است بخواهید مرورگر را به صفحه ورود هدایت کنید. این کار می‌تواند به صورت زیر انجام شود:
 
 ```js
 navigation.addEventListener("navigate", (event) => {
@@ -114,24 +110,20 @@ navigation.addEventListener("navigate", (event) => {
 });
 ```
 
-This pattern is simpler than the alternative of canceling the original navigation and starting a new one to the redirect location, because it avoids exposing the intermediate state. For example, only one {{domxref("Navigation.navigatesuccess_event", "navigatesuccess")}} or {{domxref("Navigation.navigateerror_event", "navigateerror")}} event fires, and if the navigation was triggered by a call to {{domxref("Navigation.navigate()")}}, the promise only fulfills once the redirect destination is reached.
+این الگو ساده‌تر از جایگزین آن، یعنی لغو ناوبری اصلی و شروع یک ناوبری جدید به مکان هدایت‌شده است، زیرا از بروز حالت میانی جلوگیری می‌کند. به عنوان مثال، فقط یک رویداد {{domxref("Navigation.navigatesuccess_event", "navigatesuccess")}} یا {{domxref("Navigation.navigateerror_event", "navigateerror")}} فعال می‌شود، و اگر ناوبری توسط فراخوانی {{domxref("Navigation.navigate()")}} آغاز شده باشد، promise فقط پس از رسیدن به مقصد هدایت محقق می‌شود.
 
-The `precommitHandler()` callback takes a {{domxref("NavigationPrecommitController")}} object as an argument, which contains a {{domxref("NavigationPrecommitController.redirect", "redirect()")}} method. The `redirect()` method takes two parameters — a string representing the URL to redirect to, and an optional options object than can specify state and history behavior.
+callback `precommitHandler()` یک شیء {{domxref("NavigationPrecommitController")}} را به عنوان آرگومان می‌گیرد که شامل یک متد {{domxref("NavigationPrecommitController.redirect", "redirect()")}} است. متد `redirect()` دو پارامتر می‌گیرد: یک رشته که URL هدف هدایت است، و یک شیء گزینه‌های اختیاری که می‌تواند رفتار state و history را مشخص کند.
 
-`precommitHandler()` generally handles any modifications to the navigation behavior that are required before the destination URL is actually displayed in the browser, cancelling or redirecting it somewhere else as required.
+`precommitHandler()` عموماً هر اصلاحیه‌ای را که قبل از نمایش واقعی URL مقصد در مرورگر لازم است بر روی رفتار ناوبری انجام می‌دهد، ناوبری را لغو می‌کند یا طبق نیاز به جای دیگری هدایت می‌کند.
 
 > [!NOTE]
-> Because `precommitHandler()` can be used to cancel navigations, it will only work as expected when the event's {{domxref("Event.cancelable")}} property is `true`. Calling `intercept()` with a `precommitHandler()` on a non-cancelable event results in a `SecurityError` being thrown.
+> از آنجا که `precommitHandler()` می‌تواند برای لغو ناوبری استفاده شود، فقط زمانی به‌درستی کار می‌کند که ویژگی {{domxref("Event.cancelable")}} رویداد برابر `true` باشد. فراخوانی `intercept()` با یک `precommitHandler()` روی یک رویداد غیرقابل‌لغو باعث پرتاب `SecurityError` می‌شود.
 
-### Scheduling post-commit actions in `precommitHandler()`
+### زمان‌بندی اقدامات پس از قطعی‌شدن در `precommitHandler()`
 
-As we saw above, you can specify a `handler()` callback in the object passed to the `intercept()` method in order to preform actions after a navigation is committed.
-This approach works well if the actions required after commit do not depend on any actions run in the pre-commit phase.
-If they do, then you can use {{domxref("NavigationPrecommitController.addHandler()")}} in `precommitHandler()` to dynamically add a handler that will run after the navigation commits.
+همانطور که در بالا دیدیم، می‌توانید یک callback `handler()` در شیء ارسال‌شده به متد `intercept()` مشخص کنید تا پس از قطعی‌شدن ناوبری اقداماتی انجام شود. این رویکرد زمانی خوب کار می‌کند که اقدامات مورد نیاز پس از قطعی‌شدن به هیچ اقدامات اجراشده در مرحله قبل از قطعی‌شدن وابسته نباشند. اگر وابسته باشند، می‌توانید از {{domxref("NavigationPrecommitController.addHandler()")}} در `precommitHandler()` برای افزودن پویای یک handler استفاده کنید که پس از قطعی‌شدن ناوبری اجرا خواهد شد.
 
-For example, consider this code that extends the previous example for redirecting a logged-out user to a sign-in page.
-The code uses `addHandler()` to add a post-commit handler callback that shows a message explaining the redirect reason.
-Note that the handler only runs for the specific case of a redirect to the sign-in page.
+برای مثال، کدی را در نظر بگیرید که مثال قبلی هدایت کاربر خارج‌شده از سیستم به صفحه ورود را گسترش می‌دهد. این کد از `addHandler()` برای افزودن یک callback handler پس از قطعی‌شدن استفاده می‌کند که پیامی توضیح‌دهنده دلیل هدایت را نشان می‌دهد. توجه داشته باشید که handler فقط در مورد خاص هدایت به صفحه ورود اجرا می‌شود.
 
 ```js
 navigation.addEventListener("navigate", (event) => {
@@ -155,32 +147,31 @@ navigation.addEventListener("navigate", (event) => {
 });
 ```
 
-### Responding to navigation success or failure
+### پاسخ به موفقیت یا شکست ناوبری
 
-When the promises returned by the `intercept()` handler functions fulfill, the `Navigation` object's {{domxref("Navigation/navigatesuccess_event", "navigatesuccess")}} event fires, allowing you to run cleanup code after a successful navigation has completed. If those promises reject, meaning the navigation has failed, {{domxref("Navigation/navigateerror_event", "navigateerror")}} fires instead, allowing you to gracefully handle the failure case.
+هنگامی که promise های بازگشتی توسط توابع handler متد `intercept()` محقق می‌شوند، رویداد {{domxref("Navigation/navigatesuccess_event", "navigatesuccess")}} روی شیء `Navigation` فعال می‌شود و به شما امکان می‌دهد پس از اتمام موفقیت‌آمیز ناوبری کد تمیزکاری اجرا کنید. اگر آن promise ها رد شوند، به این معنی است که ناوبری ناموفق بوده است؛ در عوض رویداد {{domxref("Navigation/navigateerror_event", "navigateerror")}} فعال می‌شود و به شما امکان می‌دهد مورد شکست را به‌راحتی مدیریت کنید.
 
-There is also a `finished` property on the return value of navigation methods (such as {{domxref("Navigation.navigate()")}}), which fulfills or rejects at the same time as the aforementioned events are fired, providing another path for handling the success and failure cases.
+همچنین یک ویژگی `finished` روی مقدار بازگشتی متدهای ناوبری (مانند {{domxref("Navigation.navigate()")}}) وجود دارد که همزمان با فعال‌شدن رویدادهای مذکور محقق یا رد می‌شود و مسیر دیگری برای مدیریت موارد موفقیت و شکست فراهم می‌کند.
 
-### Interaction between `precommitHandler()` and `handler()`
+### تعامل بین `precommitHandler()` و `handler()`
 
-Both `precommitHandler()` and `handler()` callbacks can be included inside the same `intercept()` call. In such cases, the order of operations is as follows:
+هر دو callback یعنی `precommitHandler()` و `handler()` می‌توانند در یک فراخوانی `intercept()` گنجانده شوند. در چنین مواردی، ترتیب عملیات به صورت زیر است:
 
-1. First, the `precommitHandler()` handler runs.
-   - When the `precommitHandler()` promise fulfills, the navigation commits.
-   - If the `precommitHandler()` rejects, the `navigateerror` event fires, the `committed` and `finished` promises reject, and the navigation is cancelled.
+1. ابتدا، handler مربوط به `precommitHandler()` اجرا می‌شود.
+   - وقتی promise مربوط به `precommitHandler()` محقق شود، ناوبری قطعی می‌شود.
+   - اگر `precommitHandler()` رد شود، رویداد `navigateerror` فعال می‌شود، promise های `committed` و `finished` رد می‌شوند و ناوبری لغو می‌شود.
 
-2. When the navigation commits, a new {{domxref("NavigationHistoryEntry")}} is created for the navigation, and its `committed` promise fulfills.
+2. وقتی ناوبری قطعی می‌شود، یک {{domxref("NavigationHistoryEntry")}} جدید برای آن ناوبری ایجاد می‌شود و promise `committed` آن محقق می‌شود.
 
-3. Next, the `handler()` promise runs.
-   - When the `handler()` promise fulfills and the `navigatesuccess` event fires, the navigation `finished` promise fulfills as well, to indicate the navigation is finished.
-   - If `handler()` rejects, the `navigateerror` event fires, the `finished` promise rejects, and the navigation is canceled.
+3. سپس، promise مربوط به `handler()` اجرا می‌شود.
+   - وقتی promise مربوط به `handler()` محقق شود و رویداد `navigatesuccess` فعال شود، promise `finished` ناوبری نیز محقق می‌شود تا نشان دهد ناوبری به پایان رسیده است.
+   - اگر `handler()` رد شود، رویداد `navigateerror` فعال می‌شود، promise `finished` رد می‌شود و ناوبری لغو می‌شود.
 
-Note that the above process is upheld even across multiple `intercept()` calls on the same `NavigateEvent`, and for `handler()` callbacks added in the `precommitHandler()`.
-All `precommitHandler()` callbacks are called first, and when all of them resolve, the navigation commits, and all the `handler()` callbacks are called.
+توجه داشته باشید که فرآیند فوق حتی در چندین فراخوانی `intercept()` روی یک `NavigateEvent` و برای callback های `handler()` اضافه‌شده در `precommitHandler()` نیز حفظ می‌شود. ابتدا همه callback های `precommitHandler()` فراخوانی می‌شوند و وقتی همه آن‌ها resolve شوند، ناوبری قطعی می‌شود و همه callback های `handler()` فراخوانی می‌شوند.
 
-### Controlling focus behavior
+### کنترل رفتار تمرکز
 
-By default, after a navigation handled using `intercept()` has occurred, the document focus will reset to the first element in the DOM with an [`autofocus`](/en-US/docs/Web/HTML/Reference/Global_attributes/autofocus) attribute set, or otherwise to the {{htmlelement("body")}} element, if no `autofocus` attribute is set. If you want to override this behavior, to manually implement a more accessible focus position on navigation (for example, the new top-level heading), you can do so by setting the `focusReset` option to `manual`.
+به‌طور پیش‌فرض، پس از وقوع یک ناوبری که با `intercept()` مدیریت شده است، تمرکز سند (document focus) به اولین عنصر در DOM که دارای ویژگی [`autofocus`](/en-US/docs/Web/HTML/Reference/Global_attributes/autofocus) است بازنشانی می‌شود، یا اگر هیچ ویژگی `autofocus` تنظیم نشده باشد، به عنصر {{htmlelement("body")}} بازنشانی می‌شود. اگر می‌خواهید این رفتار را نادیده بگیرید و موقعیت تمرکز قابل‌دسترس‌تری را در ناوبری به صورت دستی پیاده‌سازی کنید (مثلاً عنوان جدید سطح بالا)، می‌توانید با تنظیم گزینه `focusReset` بر روی `manual` این کار را انجام دهید.
 
 ```js
 navigation.addEventListener("navigate", (event) => {
@@ -201,14 +192,14 @@ navigation.addEventListener("navigate", (event) => {
 });
 ```
 
-### Controlling scroll behavior
+### کنترل رفتار اسکرول
 
-After an `intercept()` navigation has completed, the following scrolling behavior occurs:
+پس از تکمیل ناوبری `intercept()`، رفتار اسکرول زیر رخ می‌دهد:
 
-- For `push` and `replace` navigations (see {{domxref("Navigation.navigate()")}}), the browser will attempt to scroll to the fragment given by `event.destination.url`. If there is no fragment available, it will reset the scroll position to the top of the page.
-- For {{domxref("Navigation.traverseTo", "traverse")}} and {{domxref("Navigation.reload", "reload")}} navigations, the behavior is similar to `push` and `replace` navigations, but the browser delays its scroll restoration logic until the `intercept()` promise fulfills. It will perform no scroll restoration if the promise rejects. If the user has scrolled during the transition then no scroll restoration will be performed.
+- برای ناوبری‌های `push` و `replace` (به {{domxref("Navigation.navigate()")}} مراجعه کنید)، مرورگر سعی می‌کند به fragment مشخص‌شده در `event.destination.url` اسکرول کند. اگر fragment موجود نباشد، موقعیت اسکرول را به بالای صفحه بازنشانی می‌کند.
+- برای ناوبری‌های {{domxref("Navigation.traverseTo", "traverse")}} و {{domxref("Navigation.reload", "reload")}}، رفتار مشابه ناوبری‌های `push` و `replace` است، اما مرورگر منطق بازیابی اسکرول خود را تا زمان محقق‌شدن promise `intercept()` به تأخیر می‌اندازد. اگر promise رد شود، هیچ بازیابی اسکرولی انجام نمی‌دهد. اگر کاربر در طول انتقال اسکرول کرده باشد، هیچ بازیابی اسکرولی انجام نخواهد شد.
 
-If you want to turn this behavior off, you can do so by setting the `scroll` option to `manual`.
+اگر می‌خواهید این رفتار را خاموش کنید، می‌توانید با تنظیم گزینه `scroll` بر روی `manual` این کار را انجام دهید.
 
 ```js
 navigation.addEventListener("navigate", (event) => {
@@ -229,75 +220,8 @@ navigation.addEventListener("navigate", (event) => {
 });
 ```
 
-If you want to manually trigger the default scrolling behavior described earlier (maybe you want to reset the scroll position to the top of the page early, before the full navigation has finished), you can do so by calling {{domxref("NavigateEvent.scroll()")}}.
+اگر می‌خواهید رفتار اسکرول پیش‌فرض شرح‌داده‌شده در بالا را به صورت دستی فعال کنید (شاید بخواهید قبل از اتمام کامل ناوبری، موقعیت اسکرول را به بالای صفحه بازنشانی کنید)، می‌توانید با فراخوانی {{domxref("NavigateEvent.scroll()")}} این کار را انجام دهید.
 
-## Examples
+## مثال‌ها
 
-### Handling a navigation using `intercept()`
-
-```js
-navigation.addEventListener("navigate", (event) => {
-  // Exit early if this navigation shouldn't be intercepted,
-  // e.g. if the navigation is cross-origin, or a download request
-  if (shouldNotIntercept(event)) return;
-
-  const url = new URL(event.destination.url);
-
-  if (url.pathname.startsWith("/articles/")) {
-    event.intercept({
-      async handler() {
-        // The URL has already changed, so show a placeholder while
-        // fetching the new content, such as a spinner or loading page
-        renderArticlePagePlaceholder();
-
-        // Fetch the new content and display when ready
-        const articleContent = await getArticleContent(url.pathname);
-        renderArticlePage(articleContent);
-      },
-    });
-  }
-});
-```
-
-### Using `focusReset` and `scroll`
-
-Form submission can be detected by querying for the {{domxref("NavigateEvent.formData")}} property. The following example turns any form submission into one which stays on the current page. In this case, you don't update the DOM, so you can cancel any default reset and scroll behavior using `focusReset` and `scroll`.
-
-```js
-navigation.addEventListener("navigate", (event) => {
-  if (event.formData && event.canIntercept) {
-    // User submitted a POST form to a same-domain URL
-    // (If canIntercept is false, the event is just informative:
-    // you can't intercept this request, although you could
-    // likely still call .preventDefault() to stop it completely).
-
-    event.intercept({
-      // Since we don't update the DOM in this navigation,
-      // don't allow focus or scrolling to reset:
-      focusReset: "manual",
-      scroll: "manual",
-      async handler() {
-        await fetch(event.destination.url, {
-          method: "POST",
-          body: event.formData,
-        });
-        // You could navigate again with {history: 'replace'} to
-        // change the URL here, which might indicate "done"
-      },
-    });
-  }
-});
-```
-
-## Specifications
-
-{{Specifications}}
-
-## Browser compatibility
-
-{{Compat}}
-
-## See also
-
-- [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
-- [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
+### مدیریت ناوبری با استفاده از `
