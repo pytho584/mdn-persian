@@ -1,9 +1,4 @@
----
-title: "IdentityCredential: configURL property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/IdentityCredential/configURL"
-status: "needs-translation"
----
-
+```yaml
 ---
 title: "IdentityCredential: configURL property"
 short-title: configURL
@@ -16,19 +11,19 @@ browser-compat: api.IdentityCredential.configURL
 
 {{APIRef("FedCM API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`configURL`** read-only property of the {{domxref("IdentityCredential")}} interface returns a string specifying the config file URL of the {{glossary("Identity provider", "identity provider")}} (IdP) used for sign-in.
+ویژگی فقط خواندنی **`configURL`** در رابط {{domxref("IdentityCredential")}} یک رشته را برمی‌گرداند که URL فایل پیکربندی ارائه‌دهنده هویت (IdP) مورد استفاده برای ورود به سیستم را مشخص می‌کند.
 
-See [Provide a config file](/en-US/docs/Web/API/FedCM_API/IDP_integration#provide_a_config_file_and_endpoints) for more information.
+برای اطلاعات بیشتر، [ارائه یک فایل پیکربندی و نقاط پایانی](/en-US/docs/Web/API/FedCM_API/IDP_integration#provide_a_config_file_and_endpoints) را ببینید.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
-### Basic federated sign-in and `configURL` access
+### ورود فدرال پایه و دسترسی به `configURL`
 
-{{glossary("Relying party", "Relying parties")}} (RPs) can call `navigator.credentials.get()` with the `identity` option to make a request for users to sign in to the RP via an identity provider (IdP), using identity federation. A request indicating a single provider would look like this:
+طرف‌های متکی (RP) می‌توانند با گزینه `identity` متد `navigator.credentials.get()` را فراخوانی کنند تا درخواستی برای ورود کاربران به RP از طریق یک ارائه‌دهنده هویت (IdP) با استفاده از فدراسیون هویت ارسال کنند. یک درخواست که یک ارائه‌دهنده را مشخص می‌کند به این شکل است:
 
 ```js
 async function signIn() {
@@ -48,18 +43,18 @@ async function signIn() {
 }
 ```
 
-A successful {{domxref("CredentialsContainer.get", "navigator.credentials.get()")}} call that includes an `identity` option fulfills with an `IdentityCredential` instance, which can be used to access the `configURL` of the IdP used for sign-in.
+یک فراخوانی موفق {{domxref("CredentialsContainer.get", "navigator.credentials.get()")}} که شامل گزینه `identity` است، با یک نمونه `IdentityCredential` تکمیل می‌شود که می‌توان از آن برای دسترسی به `configURL` ارائه‌دهنده هویت مورد استفاده برای ورود استفاده کرد.
 
-Check out [Federated Credential Management API (FedCM)](/en-US/docs/Web/API/FedCM_API) for more details on how this works. This call will start off the sign-in flow described in [FedCM sign-in flow](/en-US/docs/Web/API/FedCM_API/RP_sign-in#fedcm_sign-in_flow).
+برای جزئیات بیشتر در مورد نحوه کار این API، [API مدیریت اعتبارنامه فدرال (FedCM)](/en-US/docs/Web/API/FedCM_API) را بررسی کنید. این فراخوانی جریان ورود به سیستم را که در [جریان ورود FedCM](/en-US/docs/Web/API/FedCM_API/RP_sign-in#fedcm_sign-in_flow) توضیح داده شده است، آغاز می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Federated Credential Management API](https://developer.chrome.com/docs/identity/fedcm/overview)
+- [API مدیریت اعتبارنامه فدرال](https://developer.chrome.com/docs/identity/fedcm/overview)
