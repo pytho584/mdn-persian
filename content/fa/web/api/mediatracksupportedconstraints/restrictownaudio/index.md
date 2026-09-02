@@ -1,11 +1,5 @@
 ---
 title: "MediaTrackSupportedConstraints: restrictOwnAudio property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackSupportedConstraints/restrictOwnAudio"
-status: "needs-translation"
----
-
----
-title: "MediaTrackSupportedConstraints: restrictOwnAudio property"
 short-title: restrictOwnAudio
 slug: Web/API/MediaTrackSupportedConstraints/restrictOwnAudio
 page-type: web-api-instance-property
@@ -16,15 +10,15 @@ browser-compat: api.MediaStreamTrack.applyConstraints.restrictOwnAudio_constrain
 
 {{APIRef("Media Capture and Streams")}}{{SeeCompatTable}}
 
-The {{domxref("MediaTrackSupportedConstraints")}} dictionary's **`restrictOwnAudio`** property is a read-only boolean value which is present (and set to `true`) in the object returned by {{domxref("MediaDevices.getSupportedConstraints()")}} if and only if the {{Glossary("user agent")}} supports the `restrictOwnAudio` constraint. If the constraint isn't supported, it's not included in the list, so this value will never be `false`.
+ویژگی **`restrictOwnAudio`** در دیکشنری {{domxref("MediaTrackSupportedConstraints")}} یک مقدار بولین فقط‌خواندنی است که در شیء بازگردانده‌شده توسط {{domxref("MediaDevices.getSupportedConstraints()")}} وجود دارد (و مقدار آن `true` است) اگر و تنها اگر عامل کاربر ({{Glossary("user agent")}}) از محدودیت `restrictOwnAudio` پشتیبانی کند. اگر این محدودیت پشتیبانی نشود، در فهرست قرار نمی‌گیرد؛ بنابراین مقدار این ویژگی هرگز `false` نخواهد بود.
 
-You can access the supported constraints dictionary by calling {{domxref("MediaDevices.getSupportedConstraints()", "navigator.mediaDevices.getSupportedConstraints()")}}.
+می‌توانید با فراخوانی {{domxref("MediaDevices.getSupportedConstraints()", "navigator.mediaDevices.getSupportedConstraints()")}} به دیکشنری محدودیت‌های پشتیبانی‌شده دسترسی پیدا کنید.
 
-## Value
+## مقدار
 
-This property is present in the dictionary (and its value is always `true`) if the user agent supports the `restrictOwnAudio` constraint. If the property isn't present, this property is missing from the supported constraints dictionary, and you'll get {{jsxref("undefined")}} if you try to access its value.
+این ویژگی در دیکشنری وجود دارد (و مقدار آن همیشه `true` است) اگر عامل کاربر از محدودیت `restrictOwnAudio` پشتیبانی کند. اگر ویژگی موجود نباشد، این ویژگی در دیکشنری محدودیت‌های پشتیبانی‌شده وجود نخواهد داشت و اگر برای دسترسی به مقدار آن تلاش کنید، {{jsxref("undefined")}} دریافت خواهید کرد.
 
-## Examples
+## مثال‌ها
 
 ```html hidden
 <div id="result"></div>
@@ -45,19 +39,19 @@ const supported =
 result.textContent = supported ? "Supported!" : "Not supported!";
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample('Examples', 600, 80)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API)
 - {{domxref("MediaDevices.getSupportedConstraints()")}}
