@@ -1,11 +1,5 @@
 ---
 title: "MutationRecord: previousSibling property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MutationRecord/previousSibling"
-status: "needs-translation"
----
-
----
-title: "MutationRecord: previousSibling property"
 short-title: previousSibling
 slug: Web/API/MutationRecord/previousSibling
 page-type: web-api-instance-property
@@ -14,19 +8,19 @@ browser-compat: api.MutationRecord.previousSibling
 
 {{APIRef("DOM")}}
 
-The {{domxref("MutationRecord")}} read-only property **`previousSibling`** is the previous sibling of an added or removed child node of the [`target`](/en-US/docs/Web/API/MutationRecord/target) of a {{domxref("MutationObserver")}}.
+خاصیت فقط خواندنی **`previousSibling`** از {{domxref("MutationRecord")}}، خواهر/برادر قبلی یک گره فرزند که به [`target`](/en-US/docs/Web/API/MutationRecord/target) یک {{domxref("MutationObserver")}} اضافه یا از آن حذف شده است را نشان می‌دهد.
 
-## Value
+## مقدار
 
-If a node is added to or removed from the [`target`](/en-US/docs/Web/API/MutationRecord/target) of a {{domxref("MutationObserver")}}, the value is the {{domxref("Node")}} that is the previous sibling of the added or removed node: that is, the node immediately before this one in the parent's {{domxref("Node.childNodes", "childNodes")}} list.
+اگر گره‌ای به [`target`](/en-US/docs/Web/API/MutationRecord/target) یک {{domxref("MutationObserver")}} اضافه یا از آن حذف شود، مقدار این خاصیت، {{domxref("Node")}}ای است که خواهر/برادر قبلی گره اضافه‌شده یا حذف‌شده است: یعنی گره‌ای که بلافاصله قبل از این گره در لیست {{domxref("Node.childNodes", "childNodes")}} والد قرار دارد.
 
-The value is `null` if there are no added or removed nodes, or if the node is the first child of its parent.
+اگر هیچ گره اضافه یا حذف شده‌ای وجود نداشته باشد، یا اگر گره، اولین فرزند والد خود باشد، مقدار `null` است.
 
-## Examples
+## مثال‌ها
 
-### Log the previous sibling of a mutation
+### ثبت خواهر/برادر قبلی یک جهش
 
-This adds a node every time you click the button. Then the observer logs the `textContent` of the `previousSibling` of the added node.
+این مثال هر بار که روی دکمه کلیک می‌کنید، یک گره اضافه می‌کند. سپس observer، `textContent` مربوط به `previousSibling` گره اضافه‌شده را ثبت می‌کند.
 
 #### HTML
 
@@ -76,14 +70,14 @@ const observer = new MutationObserver(logPreviousSibling);
 observer.observe(target, { childList: true });
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Log the previous sibling of a mutation", "", 250)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
