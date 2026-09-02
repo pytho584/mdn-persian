@@ -1,11 +1,5 @@
 ---
 title: "MediaSession: setCameraActive() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MediaSession/setCameraActive"
-status: "needs-translation"
----
-
----
-title: "MediaSession: setCameraActive() method"
 short-title: setCameraActive()
 slug: Web/API/MediaSession/setCameraActive
 page-type: web-api-instance-method
@@ -14,12 +8,11 @@ browser-compat: api.MediaSession.setCameraActive
 
 {{APIRef("Media Session API")}}
 
-The **`setCameraActive()`** method of the {{domxref("MediaSession")}} interface is used to indicate to the user agent whether the user's camera is considered to be active.
+متد **`setCameraActive()`** از رابط {{domxref("MediaSession")}} برای اطلاع‌رسانی به عامل کاربر (user agent) استفاده می‌شود که آیا دوربین کاربر فعال در نظر گرفته می‌شود یا خیر.
 
-Call this method on the `navigator` object's
-{{domxref("navigator.mediaSession", "mediaSession")}} object.
+این متد را بر روی شیء {{domxref("navigator.mediaSession", "mediaSession")}} در شیء `navigator` فراخوانی کنید.
 
-Note that the status of the camera is not tracked in the {{domxref("MediaSession")}} itself, but must be tracked separately.
+توجه داشته باشید که وضعیت دوربین در خود {{domxref("MediaSession")}} پیگیری نمی‌شود و باید به‌طور جداگانه نگهداری شود.
 
 ## Syntax
 
@@ -30,16 +23,15 @@ setCameraActive(active)
 ### Parameters
 
 - `active`
-  - : A boolean indicating whether the camera is considered active or not.
+  - : یک مقدار بولی (boolean) که نشان می‌دهد آیا دوربین فعال در نظر گرفته می‌شود یا نه.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ مقدار ({{jsxref("undefined")}}).
 
 ## Examples
 
-Below is an example of updating the camera active state of the current
-{{domxref('MediaSession')}}, as well as listening to requests to change the camera status with {{domxref("MediaSession.setActionHandler", "setActionHandler()")}}.
+در زیر نمونه‌ای از به‌روزرسانی وضعیت فعال بودن دوربین برای {{domxref('MediaSession')}} فعلی و همچنین گوش دادن به درخواست‌های تغییر وضعیت دوربین با استفاده از {{domxref("MediaSession.setActionHandler", "setActionHandler()")}} آورده شده است.
 
 ```js
 let cameraActive = false;
