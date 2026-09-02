@@ -1,11 +1,5 @@
 ---
 title: "LanguageModel: create() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/LanguageModel/create_static"
-status: "needs-translation"
----
-
----
-title: "LanguageModel: create() static method"
 short-title: create()
 slug: Web/API/LanguageModel/create_static
 page-type: web-api-static-method
@@ -14,7 +8,7 @@ browser-compat: api.LanguageModel.create_static
 
 {{APIRef("Prompt API")}}{{SecureContext_Header}}
 
-The **`create()`** static method of the {{domxref("LanguageModel")}} interface constructs a new {{domxref("LanguageModel")}} instance, automatically downloading the corresponding model data if it is not already available.
+متد ایستای **`create()`** از رابط {{domxref("LanguageModel")}} یک نمونه جدید از {{domxref("LanguageModel")}} می‌سازد و در صورت عدم وجود، داده‌های مدل مربوطه را به‌طور خودکار دانلود می‌کند.
 
 ## Syntax
 
@@ -23,139 +17,139 @@ LanguageModel.create()
 LanguageModel.create(options)
 ```
 
-### Parameters
+### پارامترها
 
 - `options` {{optional_inline}}
-  - : An object representing the options for creating a {{domxref("LanguageModel")}} session. Properties include:
+  - : یک شیء که گزینه‌های ایجاد یک نشست {{domxref("LanguageModel")}} را مشخص می‌کند. ویژگی‌ها عبارتند از:
     - `expectedInputs`
-      - : An array of objects representing the required input modalities and languages.
-        Each object can include the following properties:
+      - : آرایه‌ای از اشیاء که نمایانگر حالت‌ها و زبان‌های ورودی مورد نیاز هستند.
+        هر شیء می‌تواند شامل ویژگی‌های زیر باشد:
         - `type`
-          - : An enumerated value indicating the content type. Must be one of:
+          - : یک مقدار شمارشی که نوع محتوا را نشان می‌دهد. باید یکی از موارد زیر باشد:
             - `text`
-              - : Plain text content.
+              - : محتوای متنی ساده.
             - `image`
-              - : Image content.
+              - : محتوای تصویری.
             - `audio`
-              - : Audio content.
+              - : محتوای صوتی.
             - `tool-call`
-              - : A tool invocation issued by the model.
+              - : فراخوانی یک ابزار توسط مدل.
             - `tool-response`
-              - : The result of a tool invocation.
+              - : نتیجه یک فراخوانی ابزار.
         - `languages` {{optional_inline}}
-          - : An array of strings containing [BCP 47](https://www.rfc-editor.org/rfc/rfc5646) language tags (for example, `en`, `fr`, `ja`) that the session is expected to handle for this content type. The user agent uses this list to determine whether the model supports the specified languages and to select appropriate model components or fine-tunings.
+          - : آرایه‌ای از رشته‌های حاوی برچسب‌های زبان [BCP 47](https://www.rfc-editor.org/rfc/rfc5646) (برای مثال، `en`، `fr`، `ja`) که انتظار می‌رود نشست برای این نوع محتوا از آن‌ها پشتیبانی کند. عامل کاربر (user agent) از این لیست برای تعیین اینکه آیا مدل از زبان‌های مشخص شده پشتیبانی می‌کند و برای انتخاب مؤلفه‌های مناسب مدل یا تنظیمات دقیق (fine-tunings) استفاده می‌کند.
     - `expectedOutputs`
-      - : An array of objects representing the required output modalities and languages.
-        Each object can include the following properties:
+      - : آرایه‌ای از اشیاء که نمایانگر حالت‌ها و زبان‌های خروجی مورد نیاز هستند.
+        هر شیء می‌تواند شامل ویژگی‌های زیر باشد:
         - `type`
-          - : An enumerated value indicating the content type. Must be one of:
+          - : یک مقدار شمارشی که نوع محتوا را نشان می‌دهد. باید یکی از موارد زیر باشد:
             - `text`
-              - : Plain text content.
+              - : محتوای متنی ساده.
             - `image`
-              - : Image content.
+              - : محتوای تصویری.
             - `audio`
-              - : Audio content.
+              - : محتوای صوتی.
             - `tool-call`
-              - : A tool invocation issued by the model.
+              - : فراخوانی یک ابزار توسط مدل.
             - `tool-response`
-              - : The result of a tool invocation.
+              - : نتیجه یک فراخوانی ابزار.
         - `languages` {{optional_inline}}
-          - : An array of strings containing [BCP 47](https://www.rfc-editor.org/rfc/rfc5646) language tags (for example, `en`, `fr`, `ja`) that the session is expected to handle for this content type. The user agent uses this list to determine whether the model supports the specified languages and to select appropriate model components or fine-tunings.
+          - : آرایه‌ای از رشته‌های حاوی برچسب‌های زبان [BCP 47](https://www.rfc-editor.org/rfc/rfc5646) (برای مثال، `en`، `fr`، `ja`) که انتظار می‌رود نشست برای این نوع محتوا از آن‌ها پشتیبانی کند. عامل کاربر از این لیست برای تعیین اینکه آیا مدل از زبان‌های مشخص شده پشتیبانی می‌کند و برای انتخاب مؤلفه‌های مناسب مدل یا تنظیمات دقیق استفاده می‌کند.
     - `initialPrompts`
-      - : An array of objects representing messages passed during the creation of a language model session. This allows the model to "remember" instructions or previous dialogue without resending them with every new query. Each object can include the following properties:
+      - : آرایه‌ای از اشیاء که نمایانگر پیام‌هایی هستند که در زمان ایجاد یک نشست مدل زبانی ارسال می‌شوند. این امکان را به مدل می‌دهد تا دستورالعمل‌ها یا گفتگوی قبلی را بدون نیاز به ارسال مجدد آن‌ها با هر پرسش جدید «به خاطر بسپارد». هر شیء می‌تواند شامل ویژگی‌های زیر باشد:
         - `role`
-          - : A string indicating the point of view the message is phrased from. Must be one of:
+          - : رشته‌ای که نشان می‌دهد پیام از چه دیدگاهی نوشته شده است. باید یکی از موارد زیر باشد:
             - `system`
-              - : A system-level instruction that guides the model's overall behavior. This must be the first instruction passed to the model.
+              - : یک دستورالعمل در سطح سیستم که رفتار کلی مدل را هدایت می‌کند. این باید اولین دستورالعمل ارسال شده به مدل باشد.
             - `user`
-              - : A message from the user, which the API should respond to.
+              - : پیامی از طرف کاربر که API باید به آن پاسخ دهد.
             - `assistant`
-              - : An input that provides context for the AI assistant, such as its persona or the format of its responses. Such messages mainly serve to provide context/history, and further shape how the model responds.
+              - : ورودی که زمینه‌ای را برای دستیار هوش مصنوعی فراهم می‌کند، مانند شخصیت یا قالب پاسخ‌های آن. چنین پیام‌هایی عمدتاً برای ارائه زمینه/تاریخچه و شکل‌دهی بیشتر به نحوه پاسخ‌دهی مدل استفاده می‌شوند.
         - `content`
-          - : A string representing a textual prompt, or an array of objects. Each object includes the following properties:
+          - : یک رشته که نمایانگر یک درخواست متنی است، یا یک آرایه از اشیاء. هر شیء شامل ویژگی‌های زیر است:
             - `type`
-              - : An enumerated value representing the type of content. This can be one of:
+              - : یک مقدار شمارشی که نوع محتوا را نشان می‌دهد. می‌تواند یکی از موارد زیر باشد:
                 - `audio`
-                  - : Audio content.
+                  - : محتوای صوتی.
                 - `image`
-                  - : Image content.
+                  - : محتوای تصویری.
                 - `text`
-                  - : Textual content.
+                  - : محتوای متنی.
                 - `tool-call`
-                  - : A tool invocation issued by the model.
+                  - : فراخوانی یک ابزار توسط مدل.
                 - `tool-response`
-                  - : The result of a tool invocation.
+                  - : نتیجه یک فراخوانی ابزار.
             - `value`
-              - : The content of the message. If the `type` is `text`, this is always a string. If the `type` is `audio` or `image`, the `value` can be one of several different object types; see [What data types are accepted?](/en-US/docs/Web/API/Prompt_API/Multimodal#what_data_types_are_accepted).
+              - : محتوای پیام. اگر `type` برابر `text` باشد، این مقدار همیشه یک رشته است. اگر `type` برابر `audio` یا `image` باشد، `value` می‌تواند یکی از چندین نوع شیء مختلف باشد؛ برای اطلاعات بیشتر به [چه انواع داده‌ای پذیرفته می‌شوند؟](/en-US/docs/Web/API/Prompt_API/Multimodal#what_data_types_are_accepted) مراجعه کنید.
         - `prefix` {{optional_inline}}
-          - : A boolean, defaulting to `false`. When `true`, the message is treated as a prefix for the model's next generated response rather than a complete turn.
+          - : یک مقدار بولی، به طور پیش‌فرض `false`. وقتی `true` باشد، پیام به عنوان پیشوندی برای پاسخ بعدی مدل در نظر گرفته می‌شود نه یک نوبت کامل.
     - `monitor`
-      - : A reference to a {{domxref("CreateMonitor")}} callback function to receive download progress events.
+      - : ارجاعی به یک تابع callback از نوع {{domxref("CreateMonitor")}} برای دریافت رویدادهای پیشرفت دانلود.
     - `signal`
-      - : An {{domxref("AbortSignal")}} to cancel session creation.
+      - : یک {{domxref("AbortSignal")}} برای لغو ایجاد نشست.
     - `tools`
-      - : An array of objects representing tools available to the AI.
-        Each object can include the following properties:
+      - : آرایه‌ای از اشیاء که نمایانگر ابزارهای در دسترس هوش مصنوعی هستند.
+        هر شیء می‌تواند شامل ویژگی‌های زیر باشد:
         - `name`
-          - : A string giving the tool a unique name the model uses to refer to it when issuing a tool call.
+          - : رشته‌ای که به ابزار یک نام یکتا می‌دهد که مدل هنگام فراخوانی ابزار از آن استفاده می‌کند.
         - `description`
-          - : A string describing what the tool does. The model uses this description to decide if and when to invoke the tool.
+          - : رشته‌ای که کار ابزار را توصیف می‌کند. مدل از این توضیحات برای تصمیم‌گیری در مورد اینکه آیا و چه زمانی ابزار را فراخوانی کند استفاده می‌کند.
         - `inputSchema`
-          - : A [JSON Schema](https://json-schema.org/) that describes the tool's input parameters. The model uses this schema to construct the arguments it passes to the tool's `execute` function.
+          - : یک [JSON Schema](https://json-schema.org/) که پارامترهای ورودی ابزار را توصیف می‌کند. مدل از این طرحواره برای ساخت آرگومان‌هایی که به تابع `execute` ابزار ارسال می‌کند استفاده می‌کند.
         - `execute`
-          - : A callback function that the user agent invokes when the model calls this tool. Its arguments are specific to the model being used. It must return a {{jsxref("Promise")}} that resolves with a {{jsxref("String")}} representing the tool's result.
+          - : یک تابع callback که عامل کاربر وقتی مدل این ابزار را فراخوانی می‌کند، آن را اجرا می‌کند. آرگومان‌های آن به مدل مورد استفاده بستگی دارد. باید یک {{jsxref("Promise")}} برگرداند که با یک {{jsxref("String")}} نمایانگر نتیجه ابزار حل شود.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with a new {{domxref("LanguageModel")}} instance.
+یک {{jsxref("Promise")}} که با یک نمونه جدید از {{domxref("LanguageModel")}} حل می‌شود.
 
-### Exceptions
+### استثناها
 
 - `AbortError` {{domxref("DOMException")}}
-  - : Thrown if the operation was aborted via the `signal` option.
+  - : اگر عملیات از طریق گزینه `signal` لغو شده باشد، پرتاب می‌شود.
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the calling document is not fully active.
+  - : اگر سند فراخواننده کاملاً فعال (fully active) نباشد، پرتاب می‌شود.
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if usage of the method is blocked by a {{httpheader("Permissions-Policy/language-model", "language-model")}} {{httpheader("Permissions-Policy")}}.
+  - : اگر استفاده از متد توسط یک {{httpheader("Permissions-Policy/language-model", "language-model")}} {{httpheader("Permissions-Policy")}} مسدود شده باشد، پرتاب می‌شود.
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Thrown if:
-    - A message's `role` is `assistant` and its `type` is anything other than `text`.
-    - A message's `type` is `text` and its `value` is not a string.
-    - The input or output text is in a language the user agent doesn't support for prompting.
-    - A message's `type` is `image` or `audio` but the type was not listed in `expectedInputs`, or the `value` is not an [accepted data type](/en-US/docs/Web/API/Prompt_API/Multimodal#what_data_types_are_accepted).
+  - : اگر یکی از موارد زیر رخ دهد، پرتاب می‌شود:
+    - `role` یک پیام `assistant` باشد و `type` آن چیزی غیر از `text` باشد.
+    - `type` یک پیام `text` باشد و `value` آن یک رشته نباشد.
+    - متن ورودی یا خروجی به زبانی باشد که عامل کاربر برای درخواست‌نویسی (prompting) از آن پشتیبانی نمی‌کند.
+    - `type` یک پیام `image` یا `audio` باشد اما این نوع در `expectedInputs` فهرست نشده باشد، یا `value` یک [نوع داده پذیرفته شده](/en-US/docs/Web/API/Prompt_API/Multimodal#what_data_types_are_accepted) نباشد.
 - `OperationError` {{domxref("DOMException")}}
-  - : Thrown if creation fails for any other reason not listed in the other exception types.
+  - : اگر ایجاد به هر دلیل دیگری غیر از موارد ذکر شده در سایر انواع استثنا شکست بخورد، پرتاب می‌شود.
 - `QuotaExceededError` {{domxref("DOMException")}}
-  - : Thrown if the content provided in `initialPrompts` exceeds the model's {{domxref("LanguageModel.contextWindow")}}.
+  - : اگر محتوای ارائه شده در `initialPrompts` از {{domxref("LanguageModel.contextWindow")}} مدل تجاوز کند، پرتاب می‌شود.
 - `SyntaxError` {{domxref("DOMException")}}
-  - : Thrown if:
-    - No messages are included in the messages array.
-    - A message's `prefix` property is set to `true` and:
-      - The message's `role` is not `assistant`.
-      - The message is not the last item in the messages array.
+  - : اگر یکی از موارد زیر رخ دهد، پرتاب می‌شود:
+    - هیچ پیامی در آرایه پیام‌ها وجود نداشته باشد.
+    - ویژگی `prefix` یک پیام روی `true` تنظیم شده باشد و:
+      - `role` پیام `assistant` نباشد.
+      - پیام آخرین آیتم در آرایه پیام‌ها نباشد.
 - `TypeError` {{domxref("DOMException")}}
-  - : Thrown if:
-    - A message's `role` is `system` but it was not the first message passed to the context.
+  - : اگر یکی از موارد زیر رخ دهد، پرتاب می‌شود:
+    - `role` یک پیام `system` باشد اما اولین پیام ارسال شده به زمینه نباشد.
 
-## Description
+## توضیحات
 
-The `create()` method constructs a new language model session, automatically downloading the model if it is not already available.
-You can monitor progress of a model download using the [`monitor`](#monitor) option.
+متد `create()` یک نشست جدید از مدل زبانی می‌سازد و در صورت عدم وجود، مدل را به‌طور خودکار دانلود می‌کند.
+شما می‌توانید پیشرفت دانلود یک مدل را با استفاده از گزینه [`monitor`](#monitor) پیگیری کنید.
 
-Before calling `create()`, use {{domxref("LanguageModel.availability_static", "LanguageModel.availability()")}} to check whether the desired configuration is supported.
+قبل از فراخوانی `create()`، از {{domxref("LanguageModel.availability_static", "LanguageModel.availability()")}} استفاده کنید تا بررسی کنید آیا پیکربندی مورد نظر پشتیبانی می‌شود.
 
-Once a session is created, use its instance methods — {{domxref("LanguageModel.prompt()")}}, {{domxref("LanguageModel.promptStreaming()")}}, {{domxref("LanguageModel.append()")}}, and others — to interact with the model.
+پس از ایجاد یک نشست، از متدهای نمونه آن — {{domxref("LanguageModel.prompt()")}}، {{domxref("LanguageModel.promptStreaming()")}}، {{domxref("LanguageModel.append()")}} و موارد دیگر — برای تعامل با مدل استفاده کنید.
 
-## Security
+## امنیت
 
-[Transient user activation](/en-US/docs/Web/Security/Defenses/User_activation) is required. The user has to interact with the page or a UI element for this feature to work.
+[فعال‌سازی موقت کاربر](/en-US/docs/Web/Security/Defenses/User_activation) (Transient user activation) الزامی است. کاربر باید با صفحه یا یک عنصر رابط کاربری تعامل کند تا این ویژگی کار کند.
 
-## Examples
+## مثال‌ها
 
-### Creating a basic session
+### ایجاد یک نشست پایه
 
-This example creates a default session and then prompts it for the result of summing `2` and `2`.
-Note that text is supported by default, so the downloaded model should be suitable for this case.
+این مثال یک نشست پیش‌فرض ایجاد می‌کند و سپس از آن نتیجه جمع `2` و `2` را می‌پرسد.
+توجه داشته باشید که متن به طور پیش‌فرض پشتیبانی می‌شود، بنابراین مدل دانلود شده باید برای این مورد مناسب باشد.
 
 ```js
 const session = await LanguageModel.create();
@@ -163,11 +157,11 @@ const answer = await session.prompt("What is 2 + 2?");
 console.log(answer);
 ```
 
-See also [Using the Prompt API > Creating a `LanguageModel` session](/en-US/docs/Web/API/Prompt_API/Using#creating_a_languagemodel_session).
+همچنین به [استفاده از Prompt API > ایجاد یک نشست `LanguageModel`](/en-US/docs/Web/API/Prompt_API/Using#creating_a_languagemodel_session) مراجعه کنید.
 
-### Creating a session with a system prompt
+### ایجاد یک نشست با یک درخواست سیستمی
 
-The following example provides the AI with instructions on the persona to adopt before generating an answer.
+مثال زیر به هوش مصنوعی دستورالعمل‌هایی در مورد شخصیتی که باید قبل از تولید پاسخ اتخاذ کند، ارائه می‌دهد.
 
 ```js
 const session = await LanguageModel.create({
@@ -183,12 +177,12 @@ const response = await session.prompt("What is photosynthesis?");
 console.log(response);
 ```
 
-See also [Adding context with initial and ongoing prompt inputs > Providing initial prompts during session creation](/en-US/docs/Web/API/Prompt_API/Adding_context#providing_initial_prompts_during_session_creation).
+همچنین به [افزودن زمینه با ورودی‌های اولیه و جاری > ارائه درخواست‌های اولیه هنگام ایجاد نشست](/en-US/docs/Web/API/Prompt_API/Adding_context#providing_initial_prompts_during_session_creation) مراجعه کنید.
 
-### Monitoring download progress
+### نظارت بر پیشرفت دانلود
 
-This code shows how you can monitor the download progress of a model.
-Note that if the model is unavailable or already available, the event will never fire.
+این کد نشان می‌دهد که چگونه می‌توانید پیشرفت دانلود یک مدل را نظارت کنید.
+توجه داشته باشید که اگر مدل در دسترس نباشد یا از قبل موجود باشد، این رویداد هرگز فعال نخواهد شد.
 
 ```js
 const session = await LanguageModel.create({
@@ -200,11 +194,11 @@ const session = await LanguageModel.create({
 });
 ```
 
-See also [Using the Prompt API > Monitoring download progress](/en-US/docs/Web/API/Prompt_API/Using#monitoring_download_progress).
+همچنین به [استفاده از Prompt API > نظارت بر پیشرفت دانلود](/en-US/docs/Web/API/Prompt_API/Using#monitoring_download_progress) مراجعه کنید.
 
-### Providing few-shot prompts
+### ارائه درخواست‌های چند-نمونه (few-shot)
 
-The following example shows how to use a [few-shot prompt](/en-US/docs/Web/API/Prompt_API/Adding_context#few-shot_prompts) to ask the API for a specific task (French translation) to be delivered in a specific format, before providing some examples to help it learn the correct output format.
+مثال زیر نشان می‌دهد که چگونه از یک [درخواست چند-نمونه](/en-US/docs/Web/API/Prompt_API/Adding_context#few-shot_prompts) برای درخواست یک کار خاص (ترجمه به فرانسوی) که باید در قالبی خاص تحویل داده شود، استفاده کنید، قبل از ارائه چند مثال برای کمک به یادگیری قالب خروجی صحیح.
 
 ```js
 const session = await LanguageModel.create({
@@ -237,11 +231,11 @@ const result = await session.prompt("Window");
 console.log(result); // "Window: Fenêtre"
 ```
 
-See also [Adding context with initial and ongoing prompt inputs > Few-shot prompts](/en-US/docs/Web/API/Prompt_API/Adding_context#few-shot_prompts).
+همچنین به [افزودن زمینه با ورودی‌های اولیه و جاری > درخواست‌های چند-نمونه](/en-US/docs/Web/API/Prompt_API/Adding_context#few-shot_prompts) مراجعه کنید.
 
-### Defining a tool with a callback
+### تعریف یک ابزار با یک تابع callback
 
-This example creates a session with a hypothetical "get weather" tool. When the model decides to call the tool, the user agent invokes `execute()` with the arguments the model provides.
+این مثال یک نشست با یک ابزار فرضی «دریافت آب و هوا» ایجاد می‌کند. وقتی مدل تصمیم می‌گیرد ابزار را فراخوانی کند، عامل کاربر `execute()` را با آرگومان‌های ارائه شده توسط مدل فراخوانی می‌کند.
 
 ```js
 async function getWeatherData(location) {
@@ -276,9 +270,9 @@ const response = await session.prompt("What's the weather like in Tokyo?");
 console.log(response);
 ```
 
-### Cancelling a session
+### لغو یک نشست
 
-The following example enables a user to cancel a prompt. It does this by first creating an {{domxref("AbortController")}} and assigning its `abort()` method to a cancel button's click handler. Next, it calls `create()` and passes `AbortController.signal` as the `signal` property.
+مثال زیر به کاربر امکان لغو یک درخواست را می‌دهد. این کار را ابتدا با ایجاد یک {{domxref("AbortController")}} و اختصاص متد `abort()` آن به یک کنترل‌کننده کلیک دکمه لغو انجام می‌دهد. سپس `create()` را فراخوانی کرده و `AbortController.signal` را به عنوان ویژگی `signal` ارسال می‌کند.
 
 ```js
 const controller = new AbortController();
@@ -297,19 +291,19 @@ const session = await LanguageModel.create({
 });
 ```
 
-See also [Using the Prompt API > Cancelling operations and destroying instances](/en-US/docs/Web/API/Prompt_API/Using#cancelling_operations_and_destroying_instances).
+همچنین به [استفاده از Prompt API > لغو عملیات و نابودسازی نمونه‌ها](/en-US/docs/Web/API/Prompt_API/Using#cancelling_operations_and_destroying_instances) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("LanguageModel.availability_static", "LanguageModel.availability()")}}
 - [Prompt API](/en-US/docs/Web/API/Prompt_API)
-- [Using the Prompt API](/en-US/docs/Web/API/Prompt_API/Using)
-- [Adding context with initial and ongoing prompt inputs](/en-US/docs/Web/API/Prompt_API/Adding_context)
+- [استفاده از Prompt API](/en-US/docs/Web/API/Prompt_API/Using)
+- [افزودن زمینه با ورودی‌های اولیه و جاری](/en-US/docs/Web/API/Prompt_API/Adding_context)
