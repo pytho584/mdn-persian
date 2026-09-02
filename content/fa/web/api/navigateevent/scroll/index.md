@@ -1,48 +1,37 @@
 ---
 title: "NavigateEvent: scroll() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigateEvent/scroll"
-status: "needs-translation"
----
-
----
-title: "NavigateEvent: scroll() method"
-short-title: scroll()
-slug: Web/API/NavigateEvent/scroll
-page-type: web-api-instance-method
-browser-compat: api.NavigateEvent.scroll
 ---
 
 {{APIRef("Navigation API")}}
 
-The **`scroll()`** method of the
-{{domxref("NavigateEvent")}} interface can be called to manually trigger the browser-driven scrolling behavior that occurs in response to the navigation, if you want it to happen before the navigation handling has completed.
+متد **`scroll()`** از رابط {{domxref("NavigateEvent")}} را میتوان برای راهاندازی دستی رفتار پیمایش مرورگر که در پاسخ به ناوبری رخ میدهد، فراخوانی کرد، اگر بخواهید این کار قبل از تکمیل پردازش ناوبری انجام شود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 scroll()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار برگشتی
 
-None (`undefined`).
+هیچ (`undefined`).
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the current {{domxref("Document")}} is not yet active, or if the navigation has been cancelled.
+  - : اگر {{domxref("Document")}} فعلی هنوز فعال نشده باشد، یا اگر ناوبری لغو شده باشد، پرتاب میشود.
 - `SecurityError` {{domxref("DOMException")}}
-  - : Thrown if the event was dispatched by a {{domxref("EventTarget.dispatchEvent", "dispatchEvent()")}} call, rather than the user agent.
+  - : اگر رویداد توسط یک فراخوانی {{domxref("EventTarget.dispatchEvent", "dispatchEvent()")}} ارسال شده باشد، نه توسط عامل کاربر، پرتاب میشود.
 
-## Examples
+## مثالها
 
-### Handling scrolling using `scroll()`
+### مدیریت پیمایش با استفاده از `scroll()`
 
-In this example of intercepting a navigation, the `handler()` function starts by fetching and rendering some article content, but then fetches and renders some secondary content afterwards. It makes sense to scroll the page to the main article content as soon as it is available so the user can interact with it, rather than waiting until the secondary content is also rendered. To achieve this, we have added a `scroll()` call between the two.
+در این مثال از رهگیری یک ناوبری، تابع `handler()` ابتدا محتوای یک مقاله را واکشی و رندر میکند، اما سپس محتوای ثانویه را بعد از آن واکشی و رندر میکند. منطقی است که به محض در دسترس بودن محتوای اصلی مقاله، صفحه به آن اسکرول شود تا کاربر بتواند با آن تعامل کند، به جای اینکه منتظر رندر شدن محتوای ثانویه نیز بمانیم. برای رسیدن به این هدف، یک فراخوانی `scroll()` بین این دو اضافه کردهایم.
 
 ```js
 navigation.addEventListener("navigate", (event) => {
@@ -67,15 +56,15 @@ navigation.addEventListener("navigate", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
 - [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
