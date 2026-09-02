@@ -1,11 +1,5 @@
 ---
 title: "MouseEvent: button property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/button"
-status: "needs-translation"
----
-
----
-title: "MouseEvent: button property"
 short-title: button
 slug: Web/API/MouseEvent/button
 page-type: web-api-instance-property
@@ -14,34 +8,28 @@ browser-compat: api.MouseEvent.button
 
 {{APIRef("Pointer Events")}}
 
-The **`MouseEvent.button`** read-only property indicates which button was pressed or released on the mouse to trigger the event.
+ویژگی فقط‌خواندنی **`MouseEvent.button`** نشان می‌دهد کدام دکمهٔ ماوس برای به‌وجود آمدن رویداد فشرده یا رها شده است.
 
-This property only guarantees to indicate which buttons are pressed or released during events caused by pressing or releasing one or multiple buttons.
-As such, it is not reliable for events such as {{domxref("Element/mouseenter_event", "mouseenter")}}, {{domxref("Element/mouseleave_event", "mouseleave")}}, {{domxref("Element/mouseover_event", "mouseover")}}, {{domxref("Element/mouseout_event", "mouseout")}}, or {{domxref("Element/mousemove_event", "mousemove")}}.
+این ویژگی فقط تضمین می‌کند که در رویدادهای ناشی از فشردن یا رها کردن یک یا چند دکمه، مشخص کند کدام دکمه‌ها فشرده یا رها شده‌اند. بنابراین، برای رویدادهایی مانند {{domxref("Element/mouseenter_event", "mouseenter")}}، {{domxref("Element/mouseleave_event", "mouseleave")}}، {{domxref("Element/mouseover_event", "mouseover")}}، {{domxref("Element/mouseout_event", "mouseout")}} یا {{domxref("Element/mousemove_event", "mousemove")}} قابل‌اعتماد نیست.
 
-Users may change the configuration of buttons on their pointing device so that if an event's button property is zero, it may not have been caused by the button that is physically left–most on the pointing device; however, it should behave as if the left button was clicked in the standard button layout.
+کاربران ممکن است پیکربندی دکمه‌های دستگاه اشاره‌گر خود را تغییر دهند؛ بنابراین اگر ویژگی button یک رویداد صفر باشد، ممکن است آن رویداد توسط دکمه‌ای که از نظر فیزیکی در سمت چپ دستگاه اشاره‌گر قرار دارد ایجاد نشده باشد. اما باید رفتاری داشته باشد که گویی در چیدمان استاندارد دکمه‌ها، دکمهٔ چپ کلیک شده است.
 
 > [!NOTE]
-> Do not confuse this property with the {{domxref("MouseEvent.buttons")}} property, which indicates which buttons are pressed for all mouse events types.
+> این ویژگی را با ویژگی {{domxref("MouseEvent.buttons")}} اشتباه نگیرید؛ ویژگی اخیر مشخص می‌کند در همهٔ انواع رویدادهای ماوس کدام دکمه‌ها فشرده شده‌اند.
 
-## Value
+## مقدار
 
-A number representing a given button:
+عددی که نمایانگر یک دکمهٔ مشخص است:
 
-- `0`: Main button, usually the left button or the un-initialized
-  state
-- `1`: Auxiliary button, usually the wheel button or the middle
-  button (if present)
-- `2`: Secondary button, usually the right button
-- `3`: Fourth button, typically the _Browser Back_ button
-- `4`: Fifth button, typically the _Browser Forward_ button
+- `0`: دکمهٔ اصلی، معمولاً دکمهٔ چپ یا حالت مقداردهی‌نشده
+- `1`: دکمهٔ کمکی، معمولاً دکمهٔ چرخ یا دکمهٔ وسط (در صورت وجود)
+- `2`: دکمهٔ ثانویه، معمولاً دکمهٔ راست
+- `3`: دکمهٔ چهارم، معمولاً دکمهٔ _بازگشت در مرورگر_
+- `4`: دکمهٔ پنجم، معمولاً دکمهٔ _رفتن به جلو در مرورگر_
 
-As noted above, buttons may be configured differently to the standard "left to right" layout.
-A mouse configured for left-handed use may have the button actions reversed.
-Some pointing devices only have one button and use keyboard or other input mechanisms to indicate main, secondary, auxiliary, etc.
-Others may have many buttons mapped to different functions and button values.
+همانطور که در بالا اشاره شد، ممکن است دکمه‌ها برخلاف چیدمان استاندارد «چپ به راست» پیکربندی شده باشند. ماوسی که برای استفاده با دست چپ تنظیم شده باشد ممکن است عملکرد دکمه‌ها را معکوس کرده باشد. برخی دستگاه‌های اشاره‌گر فقط یک دکمه دارند و برای نشان دادن دکمهٔ اصلی، ثانویه، کمکی و غیره از صفحه‌کلید یا سایر سازوکارهای ورودی استفاده می‌کنند. برخی دیگر ممکن است دکمه‌های زیادی داشته باشند که به عملکردها و مقادیر دکمه‌های مختلف نگاشته شده‌اند.
 
-## Examples
+## نمونه‌ها
 
 ### HTML
 
@@ -50,7 +38,7 @@ Others may have many buttons mapped to different functions and button values.
 <p id="log"></p>
 ```
 
-### JavaScript
+### جاوااسکریپت
 
 ```js
 const button = document.querySelector("#button");
@@ -75,18 +63,18 @@ button.addEventListener("contextmenu", (e) => {
 });
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Examples")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("MouseEvent")}}
