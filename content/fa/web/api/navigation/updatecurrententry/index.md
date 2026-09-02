@@ -1,11 +1,5 @@
 ---
 title: "Navigation: updateCurrentEntry() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigation/updateCurrentEntry"
-status: "needs-translation"
----
-
----
-title: "Navigation: updateCurrentEntry() method"
 short-title: updateCurrentEntry()
 slug: Web/API/Navigation/updateCurrentEntry
 page-type: web-api-instance-method
@@ -14,7 +8,7 @@ browser-compat: api.Navigation.updateCurrentEntry
 
 {{APIRef("Navigation API")}}
 
-The **`updateCurrentEntry()`** method of the {{domxref("Navigation")}} interface updates the `state` of the {{domxref("Navigation.currentEntry","currentEntry")}}; used in cases where the state change will be independent of a navigation or reload.
+متد **`updateCurrentEntry()`** از رابط {{domxref("Navigation")}}، `state` مربوط به {{domxref("Navigation.currentEntry","currentEntry")}} را به‌روزرسانی می‌کند؛ در مواردی استفاده می‌شود که تغییر وضعیت مستقل از یک پیمایش (navigation) یا بارگذاری مجدد صفحه باشد.
 
 ## Syntax
 
@@ -22,27 +16,27 @@ The **`updateCurrentEntry()`** method of the {{domxref("Navigation")}} interface
 updateCurrentEntry(options)
 ```
 
-### Parameters
+### پارامترها
 
 - `options`
-  - : An options object containing the following properties:
+  - : یک شیء گزینه‌ها شامل خصوصیات زیر:
     - `state`
-      - : Developer-defined information to be stored in the associated {{domxref("NavigationHistoryEntry")}} once the navigation is complete, retrievable via {{domxref("NavigationHistoryEntry.getState", "getState()")}}. This can be any data type. You might, for example, wish to store a page visit count for analytics purposes, or store UI state details so the view can be shown exactly as the user last left it. Any data stored in `state` must be [structured-cloneable](/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm).
+      - : اطلاعات تعریف‌شده توسط توسعه‌دهنده که پس از تکمیل پیمایش در {{domxref("NavigationHistoryEntry")}} مرتبط ذخیره می‌شود و از طریق {{domxref("NavigationHistoryEntry.getState", "getState()")}} قابل بازیابی است. این می‌تواند هر نوع داده‌ای باشد. برای مثال، ممکن است بخواهید تعداد بازدیدهای صفحه را برای اهداف تحلیلی ذخیره کنید، یا جزئیات وضعیت رابط کاربری را ذخیره کنید تا نمایش دقیقاً همان‌طور که کاربر آن را ترک کرده بود، بازسازی شود. هر داده‌ای که در `state` ذخیره می‌شود باید [قابل شبیه‌سازی ساختاریافته](/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm) باشد.
 
-### Return value
+### مقدار بازگشتی
 
-None (`undefined`).
+هیچ (`undefined`).
 
-### Exceptions
+### استثناها
 
 - `DataCloneError` {{domxref("DOMException")}}
-  - : Thrown if the `state` parameter had values included in it that are not structured-cloneable.
+  - : اگر پارامتر `state` شامل مقادیری باشد که قابل شبیه‌سازی ساختاریافته نیستند، پرتاب می‌شود.
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the {{domxref("Navigation.currentEntry")}} is `null`, i.e., there is no current history entry. This could occur for example if the current page is `about:blank`.
+  - : اگر {{domxref("Navigation.currentEntry")}} برابر با `null` باشد، یعنی هیچ ورودی تاریخچه جاری وجود نداشته باشد، پرتاب می‌شود. این حالت برای مثال زمانی رخ می‌دهد که صفحه فعلی `about:blank` باشد.
 
-## Examples
+## مثال‌ها
 
-You could use something like the following to update the open/closed state of a {{htmlelement("details")}} element so that the state can be restored when reloading the page or navigating back from somewhere else.
+می‌توانید از چیزی شبیه به کد زیر برای به‌روزرسانی وضعیت باز/بسته بودن یک عنصر {{htmlelement("details")}} استفاده کنید تا وضعیت هنگام بارگذاری مجدد صفحه یا بازگشت از جای دیگر بازیابی شود.
 
 ```js
 detailsElem.addEventListener("toggle", () => {
@@ -50,15 +44,15 @@ detailsElem.addEventListener("toggle", () => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
-- [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
+- [مسیریابی مدرن سمت کلاینت: Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
+- [توضیح‌دهنده Navigation API](https://github.com/WICG/navigation-api/blob/main/README.md)
