@@ -1,10 +1,4 @@
 ---
-title: "ProcessingInstruction"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ProcessingInstruction"
-status: "needs-translation"
----
-
----
 title: ProcessingInstruction
 slug: Web/API/ProcessingInstruction
 page-type: web-api-interface
@@ -13,49 +7,49 @@ browser-compat: api.ProcessingInstruction
 
 {{APIRef("DOM")}}
 
-The **`ProcessingInstruction`** interface represents a [processing instruction](https://www.w3.org/TR/xml/#sec-pi); that is, a {{domxref("Node")}} which embeds an instruction targeting a specific application but that can be ignored by any other applications which don't recognize the instruction.
+رابط **`ProcessingInstruction`** یک [دستور پردازش](https://www.w3.org/TR/xml/#sec-pi) را نمایش می‌دهد؛ یعنی یک {{domxref("Node")}} که دستوری را برای یک برنامهٔ خاص در خود جای می‌دهد، اما هر برنامهٔ دیگری که آن دستور را نمی‌شناسد می‌تواند آن را نادیده بگیرد.
 
 > [!WARNING]
-> `ProcessingInstruction` nodes are only supported in XML documents, not in HTML documents. In these, a process instruction will be considered as a comment and be represented as a {{domxref("Comment")}} object in the tree.
+> گره‌های `ProcessingInstruction` فقط در اسناد XML پشتیبانی می‌شوند، نه در اسناد HTML. در اسناد HTML، یک دستور پردازش به‌عنوان یک دیدگاه در نظر گرفته می‌شود و به‌صورت یک شیء {{domxref("Comment")}} در درخت نمایش داده می‌شود.
 
-A processing instruction may be different than the [XML declaration](/en-US/docs/Web/XML/Guides/XML_introduction#xml_declaration).
+یک دستور پردازش ممکن است با [اعلامیهٔ XML](/en-US/docs/Web/XML/Guides/XML_introduction#xml_declaration) تفاوت داشته باشد.
 
 > [!NOTE]
-> User-defined processing instructions cannot begin with `"xml"`, as `xml`-prefixed processing-instruction target names are reserved by the XML specification for particular, standard uses (see, for example, `<?xml-stylesheet ?>`.
+> دستورهای پردازش تعریف‌شده توسط کاربر نمی‌توانند با `"xml"` شروع شوند، زیرا نام‌های هدفِ دستور پردازش که با پیشوند `xml` شروع می‌شوند، طبق مشخصات XML برای کاربردهای استاندارد خاصی رزرو شده‌اند (برای نمونه، `<?xml-stylesheet ?>` را ببینید).
 
-For example:
+برای مثال:
 
 ```html
 <?xml version="1.0"?>
 ```
 
-is a processing instruction whose `target` is `xml`.
+یک دستور پردازش است که `target` آن `xml` است.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface also inherits properties from its parent interfaces, {{domxref("CharacterData")}}, {{domxref("Node")}}, and {{domxref("EventTarget")}}._
+_این رابط همچنین ویژگی‌های رابط‌های والد خود، یعنی {{domxref("CharacterData")}}، {{domxref("Node")}} و {{domxref("EventTarget")}} را به ارث می‌برد._
 
 - {{domxref("ProcessingInstruction.sheet")}} {{ReadOnlyInline}}
-  - : Returns the associated {{domxref("StyleSheet")}} object, if any; or `null` if none.
+  - : در صورت وجود، شیء {{domxref("StyleSheet")}} مرتبط را برمی‌گرداند؛ در غیر این صورت `null` را برمی‌گرداند.
 
 - {{domxref("ProcessingInstruction.target")}} {{ReadOnlyInline}}
-  - : A name identifying the application to which the instruction is targeted.
+  - : نامی که برنامه‌ای را که دستور برای آن در نظر گرفته شده است شناسایی می‌کند.
 
-## Instance methods
+## متدهای نمونه
 
-_This interface doesn't have any specific method, but inherits methods from its parent interfaces, {{domxref("CharacterData")}}, {{domxref("Node")}}, and {{domxref("EventTarget")}}._
+_این رابط متد خاصی ندارد، اما متدهای رابط‌های والد خود، یعنی {{domxref("CharacterData")}}، {{domxref("Node")}} و {{domxref("EventTarget")}} را به ارث می‌برد._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - [document.createProcessingInstruction()](/en-US/docs/Web/API/Document/createProcessingInstruction)
-- The [DOM API](/en-US/docs/Web/API/Document_Object_Model)
+- [API DOM](/en-US/docs/Web/API/Document_Object_Model)
