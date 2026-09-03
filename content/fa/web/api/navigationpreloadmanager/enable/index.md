@@ -1,11 +1,5 @@
 ---
 title: "NavigationPreloadManager: enable() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigationPreloadManager/enable"
-status: "needs-translation"
----
-
----
-title: "NavigationPreloadManager: enable() method"
 short-title: enable()
 slug: Web/API/NavigationPreloadManager/enable
 page-type: web-api-instance-method
@@ -14,33 +8,33 @@ browser-compat: api.NavigationPreloadManager.enable
 
 {{APIRef("Service Workers API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`enable()`** method of the {{domxref("NavigationPreloadManager")}} interface is used to enable preloading of resources managed by the service worker.
-It returns a promise that resolves with `undefined`.
+متد **`enable()`** در رابط {{domxref("NavigationPreloadManager")}} برای فعال‌سازی بارگذاری پیش‌دستی (preload) منابعی که توسط سرویس‌ورکر مدیریت می‌شوند استفاده می‌شود.
+این متد یک وعده (Promise) برمی‌گرداند که با `undefined` حل می‌شود.
 
-The method should be called in the service worker's `activate` event handler, which ensures it is called before any `fetch` event handler can fire.
+این متد باید در هندلر رویداد `activate` سرویس‌ورکر فراخوانی شود تا اطمینان حاصل شود که قبل از هر هندلر رویداد `fetch` اجرا می‌شود.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 enable()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with {{jsxref('undefined')}}.
+یک {{jsxref("Promise")}} که با {{jsxref('undefined')}} حل می‌شود.
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : There is no active worker associated with the registration to which this {{domxref("NavigationPreloadManager")}} belongs.
+  - : هیچ کارگر فعالی با ثبت‌نام (registration) که این {{domxref("NavigationPreloadManager")}} به آن تعلق دارد مرتبط نیست.
 
-## Examples
+## مثال‌ها
 
-The code below shows how to enable preloading, after first using {{domxref("ServiceWorkerRegistration.navigationPreload")}} to test that it is supported.
+کد زیر نحوه فعال‌سازی بارگذاری پیش‌دستی را نشان می‌دهد، ابتدا با استفاده از {{domxref("ServiceWorkerRegistration.navigationPreload")}} بررسی می‌کند که آیا این قابلیت پشتیبانی می‌شود یا خیر.
 
 ```js
 addEventListener("activate", (event) => {
@@ -55,14 +49,14 @@ addEventListener("activate", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("NavigationPreloadManager.disable()")}}
