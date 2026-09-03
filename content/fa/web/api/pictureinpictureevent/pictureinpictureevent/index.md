@@ -1,11 +1,5 @@
 ---
 title: "PictureInPictureEvent: PictureInPictureEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PictureInPictureEvent/PictureInPictureEvent"
-status: "needs-translation"
----
-
----
-title: "PictureInPictureEvent: PictureInPictureEvent() constructor"
 short-title: PictureInPictureEvent()
 slug: Web/API/PictureInPictureEvent/PictureInPictureEvent
 page-type: web-api-constructor
@@ -14,35 +8,35 @@ browser-compat: api.PictureInPictureEvent.PictureInPictureEvent
 
 {{APIRef("Picture-in-Picture API")}}
 
-The **`PictureInPictureEvent()`** constructor returns a new {{domxref("PictureInPictureEvent")}} object.
+سازندهٔ **`PictureInPictureEvent()`** یک شیء جدید از نوع {{domxref("PictureInPictureEvent")}} برمی‌گرداند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 new PictureInPictureEvent(type, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string representing the name of the event. It is case-sensitive and browsers set it to `enterpictureinpicture`, `leavepictureinpicture`, or `resize`.
+  - : رشته‌ای است که نام رویداد را نشان می‌دهد. این مقدار به بزرگی/کوچکی حروف حساس است و مرورگرها آن را روی `enterpictureinpicture`، `leavepictureinpicture` یا `resize` تنظیم می‌کنند.
 - `options`
-  - : An object that, _in addition of the properties defined in {{domxref("Event/Event", "Event()")}}_, can have the following properties:
+  - : شیءای که، _علاوه بر ویژگی‌های تعریف‌شده در {{domxref("Event/Event", "Event()")}}_، می‌تواند ویژگی‌های زیر را داشته باشد:
     - `pictureInPictureWindow`
-      - : A {{domxref("PictureInPictureWindow")}}.
+      - : یک {{domxref("PictureInPictureWindow")}}.
 
-### Return value
+### مقدار برگشتی
 
-A new {{domxref("PictureInPictureEvent")}} object.
+یک شیء جدید از نوع {{domxref("PictureInPictureEvent")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("PictureInPictureEvent")}} interface it belongs to.
+- رابط {{domxref("PictureInPictureEvent")}} که این سازنده به آن تعلق دارد.
