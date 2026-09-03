@@ -1,11 +1,5 @@
 ---
 title: "PushEvent: PushEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PushEvent/PushEvent"
-status: "needs-translation"
----
-
----
-title: "PushEvent: PushEvent() constructor"
 short-title: PushEvent()
 slug: Web/API/PushEvent/PushEvent
 page-type: web-api-constructor
@@ -14,34 +8,31 @@ browser-compat: api.PushEvent.PushEvent
 
 {{APIRef("Push API")}}{{SecureContext_Header}}{{AvailableInWorkers("service")}}
 
-The **`PushEvent()`** constructor creates a new
-{{domxref("PushEvent")}} object. Note that this constructor is exposed only to a
-service worker context.
+سازندهٔ **`PushEvent()`** یک شیء جدید {{domxref("PushEvent")}} می‌سازد. توجه داشته باشید که این سازنده فقط در زمینهٔ سرویس‌ورکر (Service Worker) در دسترس است.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 new PushEvent(type)
 new PushEvent(type, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string with the name of the event.
-    It is case-sensitive and browsers set it to `push` or `pushsubscriptionchange`.
+  - : رشته‌ای (string) است که نام رویداد را مشخص می‌کند.
+    این مقدار به بزرگی و کوچکی حروف حساس است (case-sensitive) و مرورگرها آن را روی `push` یا `pushsubscriptionchange` تنظیم می‌کنند.
 - `options` {{optional_inline}}
-  - : An object that, _in addition of the properties defined in {{domxref("ExtendableEvent/ExtendableEvent", "ExtendableEvent()")}}_, can have the following properties:
+  - : یک شیء است که _علاوه بر ویژگی‌های تعریف‌شده در {{domxref("ExtendableEvent/ExtendableEvent", "ExtendableEvent()")}}_، می‌تواند ویژگی‌های زیر را داشته باشد:
     - `data`
-      - : The data you want the `PushEvent` to contain, if any.
-        When the constructor is invoked, the {{domxref("PushEvent.data")}} property of the resulting object will be set
-        to a new {{domxref("PushMessageData")}} object containing these bytes.
+      - : داده‌ای است که می‌خواهید `PushEvent` شامل آن باشد (در صورت وجود).
+        هنگام فراخواندن سازنده، ویژگی {{domxref("PushEvent.data")}} شیء حاصل، روی یک شیء جدید {{domxref("PushMessageData")}} حاوی این بایت‌ها تنظیم می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("PushEvent")}} object.
+یک شیء جدید {{domxref("PushEvent")}}.
 
-## Examples
+## مثال‌ها
 
 ```js
 const dataInit = {
@@ -53,15 +44,15 @@ const myPushEvent = new PushEvent("push", dataInit);
 myPushEvent.data.text(); // should return 'Some sample text'
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Push API](/en-US/docs/Web/API/Push_API)
 - [Service Worker API](/en-US/docs/Web/API/Service_Worker_API)
