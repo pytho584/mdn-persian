@@ -1,10 +1,4 @@
 ---
-title: "OscillatorNode"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/OscillatorNode"
-status: "needs-translation"
----
-
----
 title: OscillatorNode
 slug: Web/API/OscillatorNode
 page-type: web-api-interface
@@ -13,71 +7,71 @@ browser-compat: api.OscillatorNode
 
 {{APIRef("Web Audio API")}}
 
-The **`OscillatorNode`** interface represents a periodic waveform, such as a sine wave. It is an {{domxref("AudioScheduledSourceNode")}} audio-processing module that causes a specified frequency of a given wave to be created—in effect, a constant tone.
+رابطِ **`OscillatorNode`** یک شکل موج تناوبی مانند موج سینوسی را نمایش می‌دهد. این یک ماژول پردازش صوتی از نوع {{domxref("AudioScheduledSourceNode")}} است که باعث تولید فرکانس مشخصی از یک موج مفروض می‌شود — در واقع، یک تُنِ ثابت.
 
 {{InheritanceDiagram}}
 
 <table class="properties">
   <tbody>
     <tr>
-      <th scope="row">Number of inputs</th>
+      <th scope="row">تعداد ورودی‌ها</th>
       <td><code>0</code></td>
     </tr>
     <tr>
-      <th scope="row">Number of outputs</th>
+      <th scope="row">تعداد خروجی‌ها</th>
       <td><code>1</code></td>
     </tr>
     <tr>
-      <th scope="row">Channel count mode</th>
+      <th scope="row">حالت تعداد کانال‌ها</th>
       <td><code>max</code></td>
     </tr>
     <tr>
-      <th scope="row">Channel count</th>
-      <td><code>2</code> (not used in the default count mode)</td>
+      <th scope="row">تعداد کانال‌ها</th>
+      <td><code>2</code> (در حالت شمارش پیش‌فرض استفاده نمی‌شود)</td>
     </tr>
     <tr>
-      <th scope="row">Channel interpretation</th>
+      <th scope="row">تفسیر کانال‌ها</th>
       <td><code>speakers</code></td>
     </tr>
   </tbody>
 </table>
 
-## Constructor
+## سازنده
 
 - {{domxref("OscillatorNode.OscillatorNode", "OscillatorNode()")}}
-  - : Creates a new instance of an `OscillatorNode` object, optionally providing an object specifying default values for the node's [properties](#instance_properties). As an alternative, you can use the {{domxref("BaseAudioContext.createOscillator()")}} factory method; see [Creating an AudioNode](/en-US/docs/Web/API/AudioNode#creating_an_audionode).
+  - : یک نمونهٔ جدید از شیء `OscillatorNode` می‌سازد و به‌صورت اختیاری شیئی را می‌پذیرد که مقادیر پیش‌فرض [ویژگی‌های گره](#instance_properties) را مشخص می‌کند. به‌عنوان جایگزین، می‌توانید از متد کارخانه‌ای {{domxref("BaseAudioContext.createOscillator()")}} استفاده کنید؛ به [ایجاد یک AudioNode](/en-US/docs/Web/API/AudioNode#creating_an_audionode) مراجعه کنید.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Also inherits properties from its parent, {{domxref("AudioScheduledSourceNode")}}._
+_همچنین ویژگی‌های والد خود، {{domxref("AudioScheduledSourceNode")}} را به ارث می‌برد._
 
 - {{domxref("OscillatorNode.frequency")}}
-  - : An [a-rate](/en-US/docs/Web/API/AudioParam#a-rate) {{domxref("AudioParam")}} representing the frequency of oscillation in hertz (though the `AudioParam` returned is read-only, the value it represents is not). The default value is 440 Hz (a standard middle-A note).
+  - : یک {{domxref("AudioParam")}} از نوع [a-rate](/en-US/docs/Web/API/AudioParam#a-rate) که فرکانس نوسان را بر حسب هرتز نشان می‌دهد (اگرچه `AudioParam` بازگشتی فقط‌خواندنی است، مقداری که نشان می‌دهد قابل تغییر است). مقدار پیش‌فرض ۴۴۰ هرتز است (نت استاندارد A میانی).
 - {{domxref("OscillatorNode.detune")}}
-  - : An [a-rate](/en-US/docs/Web/API/AudioParam#a-rate) {{domxref("AudioParam")}} representing detuning of oscillation in cents (though the `AudioParam` returned is read-only, the value it represents is not). The default value is 0.
+  - : یک {{domxref("AudioParam")}} از نوع [a-rate](/en-US/docs/Web/API/AudioParam#a-rate) که میزان انحراف کوک (detune) نوسان را بر حسب سنت نشان می‌دهد (اگرچه `AudioParam` بازگشتی فقط‌خواندنی است، مقداری که نشان می‌دهد قابل تغییر است). مقدار پیش‌فرض ۰ است.
 - {{domxref("OscillatorNode.type")}}
-  - : A string which specifies the shape of waveform to play; this can be one of a number of standard values, or `custom` to use a {{domxref("PeriodicWave")}} to describe a custom waveform. Different waves will produce different tones. Standard values are `"sine"`, `"square"`, `"sawtooth"`, `"triangle"` and `"custom"`. The default is `"sine"`.
+  - : رشته‌ای که شکل موجِ مورد استفاده برای پخش را مشخص می‌کند؛ این رشته می‌تواند یکی از چند مقدار استاندارد باشد، یا `custom` برای استفاده از {{domxref("PeriodicWave")}} به‌منظور توصیف یک شکل موج سفارشی. موج‌های مختلف تُن‌های متفاوتی تولید می‌کنند. مقادیر استاندارد عبارت‌اند از `"sine"`، `"square"`، `"sawtooth"`، `"triangle"` و `"custom"`. مقدار پیش‌فرض `"sine"` است.
 
-## Instance methods
+## متدهای نمونه
 
-_Also inherits methods from its parent, {{domxref("AudioScheduledSourceNode")}}._
+_همچنین متدهای والد خود، {{domxref("AudioScheduledSourceNode")}} را به ارث می‌برد._
 
 - {{domxref("OscillatorNode.setPeriodicWave()")}}
-  - : Sets a {{domxref("PeriodicWave")}} which describes a periodic waveform to be used instead of one of the standard waveforms; calling this sets the `type` to `custom`.
+  - : یک {{domxref("PeriodicWave")}} تنظیم می‌کند که شکل موج تناوبی مورد استفاده به‌جای یکی از شکل‌های موج استاندارد را توصیف می‌کند؛ فراخواندن این متد، `type` را به `custom` تنظیم می‌کند.
 - {{domxref("AudioScheduledSourceNode.start()")}}
-  - : Specifies the exact time to start playing the tone.
+  - : زمان دقیق شروع پخش تُن را مشخص می‌کند.
 - {{domxref("AudioScheduledSourceNode.stop()")}}
-  - : Specifies the time to stop playing the tone.
+  - : زمان توقف پخش تُن را مشخص می‌کند.
 
-## Events
+## رویدادها
 
-_Also inherits events from its parent, {{domxref("AudioScheduledSourceNode")}}._
+_همچنین رویدادهای والد خود، {{domxref("AudioScheduledSourceNode")}} را به ارث می‌برد._
 
-## Examples
+## مثال‌ها
 
-### Using an OscillatorNode
+### استفاده از OscillatorNode
 
-The following example shows basic usage of an {{domxref("AudioContext")}} to create an oscillator node and to start playing a tone on it. For an applied example, check out our [Violent Theremin demo](https://mdn.github.io/webaudio-examples/violent-theremin/) ([see app.js](https://github.com/mdn/webaudio-examples/blob/main/violent-theremin/scripts/app.js) for relevant code).
+مثال زیر کاربرد پایهٔ {{domxref("AudioContext")}} را برای ساخت یک گره نوسان‌ساز و شروع پخش یک تُن با آن نشان می‌دهد. برای یک مثال کاربردی، به [دموی Violent Theremin](https://mdn.github.io/webaudio-examples/violent-theremin/) مراجعه کنید ([کد مربوطه را در app.js](https://github.com/mdn/webaudio-examples/blob/main/violent-theremin/scripts/app.js) ببینید).
 
 ```js
 // create web audio api context
@@ -92,9 +86,9 @@ oscillator.connect(audioCtx.destination);
 oscillator.start();
 ```
 
-### Different oscillator node types
+### انواع مختلف گره‌های نوسان‌ساز
 
-The four built-in oscillator [types](/en-US/docs/Web/API/OscillatorNode/type) are `sine`, `square`, `triangle` and `sawtooth`. They are the shape of the waveform generated by an oscillator. Fun fact: These are the defaults for most synths because they are waveforms which are easy to generate electronically. This example visualizes the waveforms for the different types at different frequencies.
+چهار [نوع](/en-US/docs/Web/API/OscillatorNode/type) داخلیِ نوسان‌ساز عبارت‌اند از `sine`، `square`، `triangle` و `sawtooth`. این‌ها شکل موجِ تولیدشده توسط یک نوسان‌ساز هستند. نکتهٔ جالب: این‌ها شکل موج‌های پیش‌فرض برای بیشتر سینث‌سایزرها هستند، زیرا موج‌هایی هستند که تولید الکترونیکی آن‌ها آسان است. این مثال، شکل موج انواع مختلف را در فرکانس‌های متفاوت به‌صورت تصویری نشان می‌دهد.
 
 ```html
 <div class="controls">
@@ -139,7 +133,7 @@ The four built-in oscillator [types](/en-US/docs/Web/API/OscillatorNode/type) ar
 }
 ```
 
-The code is in two parts: in the first part, we set up the sound stuff.
+کد در دو بخش ارائه شده است: در بخش نخست، امور مربوط به صدا را راه‌اندازی می‌کنیم.
 
 ```js
 const typeSelect = document.getElementById("type-select");
@@ -190,7 +184,7 @@ playButton.addEventListener("click", () => {
 });
 ```
 
-As for the second part, we draw the waveform on a canvas using the {{domxref("AnalyserNode")}} we created above.
+در بخش دوم نیز با استفاده از {{domxref("AnalyserNode")}} که در بالا ساختیم، شکل موج را روی یک canvas رسم می‌کنیم.
 
 ```js
 const dpr = window.devicePixelRatio;
@@ -240,18 +234,18 @@ draw();
 ```
 
 > [!WARNING]
-> This example makes a noise!
+> این مثال سروصدا تولید می‌کند!
 
 {{EmbedLiveSample("Different oscillator node types", "", 500)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
