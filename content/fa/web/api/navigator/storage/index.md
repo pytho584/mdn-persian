@@ -1,11 +1,5 @@
 ---
 title: "Navigator: storage property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/storage"
-status: "needs-translation"
----
-
----
-title: "Navigator: storage property"
 short-title: storage
 slug: Web/API/Navigator/storage
 page-type: web-api-instance-property
@@ -14,27 +8,21 @@ browser-compat: api.Navigator.storage
 
 {{securecontext_header}}{{APIRef("Storage")}}
 
-The **`Navigator.storage`**
-read-only property returns the singleton {{domxref("StorageManager")}} object used to
-access the overall storage capabilities of the browser for the current site or app.
-The returned object lets you examine and configure persistence of data stores and
-learn approximately how much more space your browser has available for local storage
-use.
+خاصیت فقطخواندنی **`Navigator.storage`**، شئ تک‌نمونهٔ {{domxref("StorageManager")}} را برمی‌گرداند. این شئ برای دسترسی به قابلیت‌های کلی ذخیره‌سازی مرورگر برای سایت یا برنامهٔ فعلی استفاده می‌شود. با استفاده از شئ بازگشت‌داده‌شده می‌توانید ماندگاری داده‌های ذخیره‌شده را بررسی و پیکربندی کنید و به‌طور تقریبی از فضای بیشتری که مرورگر شما برای ذخیره‌سازی محلی در اختیار دارد، مطلع شوید.
 
-## Value
+## مقدار
 
-A {{domxref("StorageManager")}} object you can use to maintain persistence for stored
-data, as well as to determine roughly how much room there is for data to be stored.
+یک شئ {{domxref("StorageManager")}} که می‌توانید برای حفظ ماندگاری داده‌های ذخیره‌شده و همچنین تعیین تقریبی ظرفیت موجود برای ذخیره‌سازی داده‌ها از آن استفاده کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("StorageManager")}}
 - {{domxref("Navigator")}}
