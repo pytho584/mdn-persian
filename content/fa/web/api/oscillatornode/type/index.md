@@ -1,11 +1,5 @@
 ---
 title: "OscillatorNode: type property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/OscillatorNode/type"
-status: "needs-translation"
----
-
----
-title: "OscillatorNode: type property"
 short-title: type
 slug: Web/API/OscillatorNode/type
 page-type: web-api-instance-property
@@ -14,43 +8,33 @@ browser-compat: api.OscillatorNode.type
 
 {{ APIRef("Web Audio API") }}
 
-The **`type`** property of the {{domxref("OscillatorNode")}} interface specifies what shape of [waveform](https://en.wikipedia.org/wiki/Waveform) the
-oscillator will output. There are several common waveforms available, as well as an
-option to specify a custom waveform shape. The shape of the waveform will affect the
-tone that is produced.
+ویژگی **`type`** از رابط {{domxref("OscillatorNode")}} مشخص می‌کند که نوسان‌ساز چه شکلی از [شکل موج](https://en.wikipedia.org/wiki/Waveform) را خروجی دهد. چندین شکل موج رایج در دسترس هستند، و همچنین گزینه‌ای برای تعیین یک شکل موج سفارشی وجود دارد. شکل موج بر تُن تولید شده تأثیر می‌گذارد.
 
-## Value
+## مقدار
 
-A string specifying the shape of oscillator wave. The different
-available values are:
+یک رشته که شکل موج نوسان‌ساز را مشخص می‌کند. مقادیر مختلف موجود عبارتند از:
 
 - `sine`
-  - : A [sine wave](https://en.wikipedia.org/wiki/Sine_wave). This is the default value.
+  - : یک [موج سینوسی](https://en.wikipedia.org/wiki/Sine_wave). این مقدار پیش‌فرض است.
 - `square`
-  - : A [square wave](https://en.wikipedia.org/wiki/Square_wave) with a [duty cycle](https://en.wikipedia.org/wiki/Duty_cycle) of 0.5; that is, the signal is "high" for half of each period.
+  - : یک [موج مربعی](https://en.wikipedia.org/wiki/Square_wave) با [چرخه وظیفه](https://en.wikipedia.org/wiki/Duty_cycle) 0.5؛ یعنی سیگنال به مدت نیمی از هر دوره «بالا» است.
 - `sawtooth`
-  - : A [sawtooth wave](https://en.wikipedia.org/wiki/Sawtooth_wave).
+  - : یک [موج دندانه‌اره‌ای](https://en.wikipedia.org/wiki/Sawtooth_wave).
 - `triangle`
-  - : A [triangle wave](https://en.wikipedia.org/wiki/Triangle_wave).
+  - : یک [موج مثلثی](https://en.wikipedia.org/wiki/Triangle_wave).
 - `custom`
-  - : A custom waveform. You never set `type` to `custom` manually;
-    instead, use the {{domxref("OscillatorNode.setPeriodicWave", "setPeriodicWave()")}}
-    method to provide the data representing the waveform. Doing so automatically sets the
-    `type` to `custom`.
+  - : یک شکل موج سفارشی. شما هرگز `type` را به صورت دستی روی `custom` تنظیم نمی‌کنید؛ بلکه از روش {{domxref("OscillatorNode.setPeriodicWave", "setPeriodicWave()")}} برای ارائه داده‌های نمایانگر شکل موج استفاده کنید. انجام این کار به‌طور خودکار `type` را روی `custom` تنظیم می‌کند.
 
-Also see [different oscillator node types](/en-US/docs/Web/API/OscillatorNode#different_oscillator_node_types) for a visualization of the different waveform shapes.
+همچنین [انواع مختلف گره نوسان‌ساز](/en-US/docs/Web/API/OscillatorNode#different_oscillator_node_types) را برای نمایش تصویری شکل‌های موج مختلف ببینید.
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the value `custom` was specified. To set a custom waveform, just call
-    {{domxref("OscillatorNode.setPeriodicWave", "setPeriodicWave()")}}. Doing so
-    automatically sets the type for you.
+  - : اگر مقدار `custom` مشخص شده باشد پرتاب می‌شود. برای تنظیم یک شکل موج سفارشی، کافی است {{domxref("OscillatorNode.setPeriodicWave", "setPeriodicWave()")}} را فراخوانی کنید. انجام این کار به‌طور خودکار نوع را برای شما تنظیم می‌کند.
 
-## Examples
+## مثال‌ها
 
-The following example shows basic usage of an {{ domxref("AudioContext") }} to create
-an oscillator node. For an applied example, check out our [Violent Theremin demo](https://mdn.github.io/webaudio-examples/violent-theremin/) ([see app.js](https://github.com/mdn/webaudio-examples/blob/main/violent-theremin/scripts/app.js) for relevant code).
+مثال زیر نحوه استفاده پایه از یک {{ domxref("AudioContext") }} برای ایجاد یک گره نوسان‌ساز را نشان می‌دهد. برای یک مثال کاربردی، [نمونه Violent Theremin](https://mdn.github.io/webaudio-examples/violent-theremin/) ما را بررسی کنید ([app.js](https://github.com/mdn/webaudio-examples/blob/main/violent-theremin/scripts/app.js) را برای کد مرتبط ببینید).
 
 ```js
 // create web audio api context
@@ -64,14 +48,14 @@ oscillator.frequency.setValueAtTime(440, audioCtx.currentTime); // value in hert
 oscillator.start();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
