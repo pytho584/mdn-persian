@@ -1,11 +1,5 @@
 ---
 title: "Navigator: userActivation property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/userActivation"
-status: "needs-translation"
----
-
----
-title: "Navigator: userActivation property"
 short-title: userActivation
 slug: Web/API/Navigator/userActivation
 page-type: web-api-instance-property
@@ -14,17 +8,17 @@ browser-compat: api.Navigator.userActivation
 
 {{APIRef("HTML DOM")}}
 
-The read-only **`userActivation`** property of the {{domxref("Navigator")}} interface returns a {{domxref("UserActivation")}} object which contains information about the current window's user activation state.
+ویژگی فقطخواندنی **`userActivation`** در رابط {{domxref("Navigator")}} یک شیء {{domxref("UserActivation")}} برمی‌گرداند که شامل اطلاعاتی دربارهٔ وضعیت فعال‌سازی کاربر برای پنجرهٔ فعلی است.
 
-## Value
+## مقدار
 
-A {{domxref("UserActivation")}} object.
+یک شیء {{domxref("UserActivation")}}.
 
-## Examples
+## مثال‌ها
 
-### Checking if a user gesture was recently performed
+### بررسی اینکه آیا یک کنش کاربر اخیراً انجام شده است
 
-Use {{domxref("UserActivation.isActive")}} to check whether the user is currently interacting with the page ({{Glossary("Transient activation")}}).
+برای بررسی اینکه آیا کاربر در حال حاضر با صفحه در تعامل است ({{Glossary("Transient activation")}}) از {{domxref("UserActivation.isActive")}} استفاده کنید.
 
 ```js
 if (navigator.userActivation.isActive) {
@@ -32,9 +26,9 @@ if (navigator.userActivation.isActive) {
 }
 ```
 
-### Checking if a user gesture was ever performed
+### بررسی اینکه آیا کاربر تاکنون کنشی انجام داده است
 
-Use {{domxref("UserActivation.hasBeenActive")}} to check whether the user has ever interacted with the page ({{Glossary("Sticky activation")}}).
+برای بررسی اینکه آیا کاربر تاکنون با صفحه تعامل داشته است ({{Glossary("Sticky activation")}}) از {{domxref("UserActivation.hasBeenActive")}} استفاده کنید.
 
 ```js
 if (navigator.userActivation.hasBeenActive) {
@@ -42,15 +36,15 @@ if (navigator.userActivation.hasBeenActive) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("UserActivation")}}
 - {{domxref("UserActivation.hasBeenActive")}}
