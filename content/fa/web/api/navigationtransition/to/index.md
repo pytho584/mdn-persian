@@ -1,11 +1,5 @@
 ---
 title: "NavigationTransition: to property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigationTransition/to"
-status: "needs-translation"
----
-
----
-title: "NavigationTransition: to property"
 short-title: to
 slug: Web/API/NavigationTransition/to
 page-type: web-api-instance-property
@@ -16,35 +10,35 @@ browser-compat: api.NavigationTransition.to
 
 {{APIRef("Navigation API")}}{{seecompattable}}
 
-The **`to`** read-only property of the {{domxref("NavigationTransition")}} interface returns the {{domxref("NavigationDestination")}} that the transition is navigating to.
+ویژگی فقط‌خواندنی **`to`** در رابط {{domxref("NavigationTransition")}}، شیء {{domxref("NavigationDestination")}} را برمی‌گرداند که انتقال به سمت آن در حال انجام است.
 
-This mirrors the {{domxref("NavigateEvent.destination")}} property but, unlike that, is available outside of the {{domxref("Navigation.navigate_event", "navigate")}} event handler. It is especially useful when calling functions prior to the URL changing (e.g., during precommit or on error).
+این ویژگی معادل {{domxref("NavigateEvent.destination")}} است، اما برخلاف آن، خارج از کنترل‌کننده رویداد {{domxref("Navigation.navigate_event", "navigate")}} نیز در دسترس است. این ویژگی به‌ویژه زمانی مفید است که بخواهید قبل از تغییر URL تابعی را فراخوانی کنید (مثلاً در مرحله پیش از تأیید یا هنگام بروز خطا).
 
-## Value
+## مقدار
 
-A {{domxref("NavigationDestination")}} object.
+یک شیء {{domxref("NavigationDestination")}}.
 
-## Examples
+## مثال‌ها
 
-### Handling a navigation error
+### مدیریت خطای ناوبری
 
 ```js
 navigation.onnavigateerror = (e) => {
   if (navigation.transition?.to?.url === loginPageURL) {
-    /* do something when failing to go to login page */
+    /* زمانی که رفتن به صفحه ورود با شکست مواجه می‌شود، کاری انجام بده */
   }
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
-- [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
+- [مسیریابی مدرن سمت کلاینت: API ناوبری](https://developer.chrome.com/docs/web-platform/navigation-api/)
+- [توضیح API ناوبری](https://github.com/WICG/navigation-api/blob/main/README.md)
