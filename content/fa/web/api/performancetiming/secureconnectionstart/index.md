@@ -1,11 +1,5 @@
 ---
 title: "PerformanceTiming: secureConnectionStart property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/secureConnectionStart"
-status: "needs-translation"
----
-
----
-title: "PerformanceTiming: secureConnectionStart property"
 short-title: secureConnectionStart
 slug: Web/API/PerformanceTiming/secureConnectionStart
 page-type: web-api-instance-property
@@ -17,26 +11,22 @@ browser-compat: api.PerformanceTiming.secureConnectionStart
 {{APIRef("Performance API")}}{{Deprecated_Header}}
 
 > [!WARNING]
-> This interface of this property is deprecated in the [Navigation Timing Level 2 specification](https://w3c.github.io/navigation-timing/#obsolete). Please use the {{domxref("PerformanceNavigationTiming")}} interface instead.
+> رابطِ این ویژگی در [نسخهٔ دوم مشخصات زمانبندی ناوبری](https://w3c.github.io/navigation-timing/#obsolete) منسوخ شده است. لطفاً بهجای آن از رابط {{domxref("PerformanceNavigationTiming")}} استفاده کنید.
 
-The legacy
-**`PerformanceTiming.secureConnectionStart`**
-read-only property returns an `unsigned long long` representing the moment,
-in milliseconds since the UNIX epoch, where the secure connection handshake starts. If
-no such connection is requested, it returns `0`.
+ویژگی فقطخواندنی قدیمی **`PerformanceTiming.secureConnectionStart`** یک `unsigned long long` برمیگرداند که لحظهٔ شروع دستدادن اتصال امن را بر حسب میلیثانیه از مبدأ یونیکس (UNIX epoch) نشان میدهد. اگر چنین اتصالی درخواست نشده باشد، مقدار `0` برمیگرداند.
 
-## Value
+## مقدار
 
-An `unsigned long long`.
+یک `unsigned long long`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- The {{domxref("PerformanceTiming")}} interface it belongs to.
+- رابط {{domxref("PerformanceTiming")}} که این ویژگی به آن تعلق دارد.
