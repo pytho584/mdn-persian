@@ -1,11 +1,5 @@
 ---
 title: "Notification: renotify property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Notification/renotify"
-status: "needs-translation"
----
-
----
-title: "Notification: renotify property"
 short-title: renotify
 slug: Web/API/Notification/renotify
 page-type: web-api-instance-property
@@ -16,21 +10,15 @@ browser-compat: api.Notification.renotify
 
 {{APIRef("Web Notifications")}}{{SecureContext_Header}}{{SeeCompatTable}} {{AvailableInWorkers}}
 
-The **`renotify`** read-only property of the
-{{domxref("Notification")}} interface specifies whether the user should be notified
-after a new notification replaces an old one, as specified in the `renotify`
-option of the {{domxref("Notification.Notification","Notification()")}} constructor.
+ویژگی فقط‌خواندنی **`renotify`** در رابط {{domxref("Notification")}} مشخص می‌کند که آیا کاربر باید پس از جایگزینی یک اعلان قدیمی با اعلان جدید، دوباره مطلع شود یا خیر. این رفتار با گزینه `renotify` در سازنده {{domxref("Notification.Notification","Notification()")}} تعیین می‌شود.
 
-## Value
+## مقدار
 
-A boolean value. `false` is the default; `true` makes
-the notification renotify the user.
+یک مقدار بولی. مقدار پیش‌فرض `false` است؛ `true` باعث می‌شود که اعلان دوباره کاربر را مطلع کند.
 
-## Examples
+## مثال‌ها
 
-The following snippet is intended to fire a notification that renotifies the user after
-it has been replaced; a simple `options` object is created, and then the
-notification is fired using the `Notification()` constructor.
+قطعه کد زیر یک اعلان ایجاد می‌کند که پس از جایگزینی، دوباره کاربر را مطلع می‌کند؛ یک شیء ساده `options` ساخته می‌شود و سپس اعلان با استفاده از سازنده `Notification()` فرستاده می‌شود.
 
 ```js
 const options = {
@@ -43,14 +31,14 @@ const n = new Notification("New review activity", options);
 console.log(n.renotify); // true
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Notifications API](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
+- [استفاده از Notifications API](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
