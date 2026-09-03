@@ -1,11 +1,5 @@
 ---
 title: "PaintWorkletGlobalScope: registerPaint() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaintWorkletGlobalScope/registerPaint"
-status: "needs-translation"
----
-
----
-title: "PaintWorkletGlobalScope: registerPaint() method"
 short-title: registerPaint()
 slug: Web/API/PaintWorkletGlobalScope/registerPaint
 page-type: web-api-instance-method
@@ -16,41 +10,35 @@ browser-compat: api.PaintWorkletGlobalScope.registerPaint
 
 {{APIRef("CSS Painting API")}}{{SeeCompatTable}}
 
-The **`registerPaint()`** method of the
-{{domxref("PaintWorkletGlobalScope")}} interface registers a class to programmatically generate an
-image where a CSS property expects a file.
+{{domxref("PaintWorkletGlobalScope")}} 接口的 **`registerPaint()`** 方法用于注册一个类，以便在 CSS 属性需要图像时以编程方式生成该图像。
 
-## Syntax
+## 语法
 
 ```js-nolint
 registerPaint(name, classRef)
 ```
 
-### Parameters
+### 参数
 
 - `name`
-  - : The name of the worklet class to register.
+  - : 要注册的 worklet 类的名称。
 - `classRef`
-  - : A reference to the class that implements the worklet.
+  - : 对实现该 worklet 的类的引用。
 
-### Return value
+### 返回值
 
-None ({{jsxref("undefined")}}).
+无（{{jsxref("undefined")}}）。
 
-### Exceptions
+### 异常
 
 - {{jsxref("TypeError")}}
-  - : Thrown when one of the arguments is invalid or missing.
+  - : 当任一参数无效或缺失时抛出。
 - `InvalidModificationError` {{domxref("DOMException")}}
-  - : Thrown when the a worklet already exists with the specified name.
+  - : 当指定名称的 worklet 已存在时抛出。
 
-## Examples
+## 示例
 
-The following shows registering an example worklet module. This should be in a separate
-js file. Note that `registerPaint()` is called without a reference to
-`PaintWorkletGlobalScope`. The file itself is loaded
-through `CSS.paintWorklet.addModule()` (documented here on the parent class
-of PaintWorklet, at {{domxref('Worklet.addModule()')}}.
+以下示例演示了如何注册一个示例 worklet 模块。该代码应放在一个独立的 js 文件中。请注意，`registerPaint()` 调用时没有引用 `PaintWorkletGlobalScope`。该文件本身通过 `CSS.paintWorklet.addModule()` 加载（参见 PaintWorklet 的父类 {{domxref('Worklet.addModule()')}} 中的文档）。
 
 ```js
 /* checkboardWorklet.js */
@@ -76,16 +64,13 @@ class CheckerboardPainter {
 registerPaint("checkerboard", CheckerboardPainter);
 ```
 
-The first step in using a paintworklet is defining the paint worklet using the
-`registerPaint()` function, as done above. To use it, you register it with
-the `CSS.paintWorklet.addModule()` method:
+使用 paint worklet 的第一步是像上面那样，通过 `registerPaint()` 函数定义 paint worklet。要使用它，你需要用 `CSS.paintWorklet.addModule()` 方法将其注册：
 
 ```js
 CSS.paintWorklet.addModule("checkboardWorklet.js");
 ```
 
-You can then use the {{cssxref('image/paint', 'paint()')}} CSS function in your
-CSS anywhere an {{cssxref('&lt;image&gt;')}} value is valid.
+然后，你可以在 CSS 中任何接受 {{cssxref('&lt;image&gt;')}} 值的地方，使用 {{cssxref('image/paint', 'paint()')}} CSS 函数。
 
 ```css
 li {
@@ -93,15 +78,15 @@ li {
 }
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
 - [CSS Painting API](/en-US/docs/Web/API/CSS_Painting_API)
 - [Houdini APIs](/en-US/docs/Web/API/Houdini_APIs)
