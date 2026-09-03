@@ -1,10 +1,4 @@
 ---
-title: "PresentationConnectionList"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnectionList"
-status: "needs-translation"
----
-
----
 title: PresentationConnectionList
 slug: Web/API/PresentationConnectionList
 page-type: web-api-interface
@@ -15,24 +9,24 @@ browser-compat: api.PresentationConnectionList
 
 {{securecontext_header}}{{SeeCompatTable}}{{APIRef("Presentation API")}}
 
-`PresentationConnectionList` is the collection of incoming presentation connections.
+`PresentationConnectionList` مجموعهای از اتصالهای ارائهٔ ورودی (incoming presentation connections) است.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref('PresentationConnectionList.connections')}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns the non-terminated set of {{DOMxRef("PresentationConnection")}}s in the [set of presentation controllers](https://www.w3.org/TR/presentation-api/#dfn-set-of-presentation-controllers).
+  - : مجموعهٔ اتصال‌های خاتمه‌نیافته از نوع {{DOMxRef("PresentationConnection")}} موجود در [مجموعهٔ کنترل‌کننده‌های ارائه](https://www.w3.org/TR/presentation-api/#dfn-set-of-presentation-controllers) را برمی‌گرداند.
 
-## Events
+## رویدادها
 
 - {{domxref('PresentationConnectionList/connectionavailable_event', "connectionavailable")}} {{Experimental_Inline}}
-  - : Fired whenever a new [presentation connection](https://www.w3.org/TR/presentation-api/#dfn-presentation-connection) becomes available.
+  - هرگاه یک [اتصال ارائه](https://www.w3.org/TR/presentation-api/#dfn-presentation-connection) جدید در دسترس قرار گیرد، این رویداد صادر می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
