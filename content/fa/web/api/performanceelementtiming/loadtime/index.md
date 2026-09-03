@@ -1,11 +1,5 @@
 ---
 title: "PerformanceElementTiming: loadTime property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceElementTiming/loadTime"
-status: "needs-translation"
----
-
----
-title: "PerformanceElementTiming: loadTime property"
 short-title: loadTime
 slug: Web/API/PerformanceElementTiming/loadTime
 page-type: web-api-instance-property
@@ -16,17 +10,17 @@ browser-compat: api.PerformanceElementTiming.loadTime
 
 {{APIRef("Performance API")}}{{SeeCompatTable}}
 
-The **`loadTime`** read-only property of the {{domxref("PerformanceElementTiming")}} interface always returns `0` for text. For images it returns the time which is the latest between the time the image resource is loaded and the time it is attached to the element.
+ویژگی فقط‌خواندنی **`loadTime`** از رابط {{domxref("PerformanceElementTiming")}} برای متن همیشه `0` برمی‌گرداند. برای تصاویر، این ویژگی زمانی را برمی‌گرداند که برابر با جدیدترین زمان بین بارگذاری منبع تصویر و زمان اتصال آن به عنصر است.
 
-## Value
+## مقدار
 
-A {{domxref("DOMHighResTimeStamp")}} with the `loadTime` of the element. Always `0` for text.
+یک {{domxref("DOMHighResTimeStamp")}} که `loadTime` عنصر را نشان می‌دهد. برای متن همیشه `0` است.
 
-## Examples
+## مثال‌ها
 
-### Logging `loadTime`
+### ثبت `loadTime`
 
-In this example an {{HTMLElement("img")}} element is being observed by adding the [`elementtiming`](/en-US/docs/Web/HTML/Reference/Attributes/elementtiming) attribute. A {{domxref("PerformanceObserver")}} is registered to get all performance entries of type `"element"`. The `buffered` flag is used to access data from before the observer was created. Calling `entry.loadTime` returns the loadTime of the image element.
+در این مثال، یک عنصر {{HTMLElement("img")}} با افزودن ویژگی [`elementtiming`](/en-US/docs/Web/HTML/Reference/Attributes/elementtiming) مشاهده می‌شود. یک {{domxref("PerformanceObserver")}} ثبت شده است تا تمام ورودی‌های عملکرد از نوع `"element"` را دریافت کند. پرچم `buffered` برای دسترسی به داده‌های قبل از ایجاد observer استفاده می‌شود. فراخوانی `entry.loadTime` زمان بارگذاری عنصر تصویر را برمی‌گرداند.
 
 ```html
 <img
@@ -47,10 +41,10 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "element", buffered: true });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
