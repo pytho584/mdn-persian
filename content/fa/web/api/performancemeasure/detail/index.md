@@ -1,7 +1,5 @@
 ---
 title: "PerformanceMeasure: detail property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceMeasure/detail"
-status: "needs-translation"
 ---
 
 ---
@@ -14,15 +12,15 @@ browser-compat: api.PerformanceMeasure.detail
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The read-only **`detail`** property returns arbitrary metadata that was included in the mark upon construction (when using {{domxref("Performance.measure","performance.measure()")}}.
+ویژگی فقط‌خواندنی **`detail`** فراداده‌ی دلخواهی را برمی‌گرداند که هنگام ساخت نشان (mark) در آن گنجانده شده است (زمانی که از {{domxref("Performance.measure","performance.measure()")}} استفاده می‌کنید).
 
 ## Value
 
-Returns the value it was set to (from `markOptions` of {{domxref("Performance.measure","performance.measure()")}}).
+مقداری را برمی‌گرداند که روی آن تنظیم شده است (از `markOptions` مربوط به {{domxref("Performance.measure","performance.measure()")}}).
 
 ## Examples
 
-The following example demonstrates the `detail` property.
+مثال زیر ویژگی `detail` را نشان می‌دهد.
 
 ```js
 performance.measure("dog", { detail: "labrador", start: 0, end: 12345 });
@@ -39,3 +37,4 @@ dogEntries[0].detail; // labrador
 ## Browser compatibility
 
 {{Compat}}
+```
