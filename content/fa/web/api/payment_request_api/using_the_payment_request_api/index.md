@@ -1,10 +1,4 @@
 ---
-title: "Using the Payment Request API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Payment_Request_API/Using_the_Payment_Request_API"
-status: "needs-translation"
----
-
----
 title: Using the Payment Request API
 slug: Web/API/Payment_Request_API/Using_the_Payment_Request_API
 page-type: guide
@@ -12,24 +6,24 @@ page-type: guide
 
 {{DefaultAPISidebar("Payment Request API")}}
 
-The [Payment Request API](/en-US/docs/Web/API/Payment_Request_API) provides a browser-based method of connecting users and their preferred payment systems and platforms to merchants that they want to pay for goods and services. This article is a guide to making use of the [Payment Request API](/en-US/docs/Web/API/Payment_Request_API), with examples and suggested best practices.
+[Payment Request API](/en-US/docs/Web/API/Payment_Request_API) یک روش مبتنی بر مرورگر برای اتصال کاربران و سیستم‌ها و پلتفرم‌های پرداخت ترجیحی آن‌ها به فروشندگانی است که می‌خواهند برای کالاها و خدمات هزینه پرداخت کنند، فراهم می‌کند. این مقاله راهنمایی برای استفاده از [Payment Request API](/en-US/docs/Web/API/Payment_Request_API) با مثال‌ها و بهترین روش‌های پیشنهادی است.
 
-## The basics of making a payment
+## اصول اولیه پرداخت
 
-This section details the basics of using the Payment Request API to make a payment.
+این بخش اصول اولیه استفاده از Payment Request API برای انجام پرداخت را شرح می‌دهد.
 
 > [!NOTE]
-> The code snippets from this section are from our [Feature detect support demo](https://github.com/mdn/dom-examples/blob/main/payment-request/feature-detect-support.html).
+> قطعه کدهای این بخش از [دموی تشخیص پشتیبانی از ویژگی](https://github.com/mdn/dom-examples/blob/main/payment-request/feature-detect-support.html) ما گرفته شده است.
 
-### Creating a new payment request object
+### ایجاد یک شیء درخواست پرداخت جدید
 
-A payment request always starts with the creation of a new {{domxref("PaymentRequest")}} object — using the {{domxref("PaymentRequest.PaymentRequest", "PaymentRequest()")}} constructor. This takes two mandatory parameters and one option parameter:
+یک درخواست پرداخت همیشه با ایجاد یک شیء جدید {{domxref("PaymentRequest")}} آغاز می‌شود - با استفاده از سازنده {{domxref("PaymentRequest.PaymentRequest", "PaymentRequest()")}}. این سازنده دو پارامتر اجباری و یک پارامتر اختیاری می‌گیرد:
 
-- `methodData` — an object containing information concerning the payment provider, such as what payment methods are supported, etc.
-- `details` — an object containing information concerning the specific payment, such as the total payment amount, tax, shipping cost, etc.
-- `options` (optional) — an object containing additional options related to the payment.
+- `methodData` - یک شیء حاوی اطلاعات مربوط به ارائه‌دهنده پرداخت، مانند اینکه چه روش‌های پرداختی پشتیبانی می‌شوند و غیره.
+- `details` - یک شیء حاوی اطلاعات مربوط به پرداخت خاص، مانند مبلغ کل پرداخت، مالیات، هزینه حمل و نقل و غیره.
+- `options` (اختیاری) - یک شیء حاوی گزینه‌های اضافی مرتبط با پرداخت.
 
-So for example, you could create a new `PaymentRequest` instance like so:
+بنابراین برای مثال، می‌توانید یک نمونه جدید از `PaymentRequest` به شکل زیر ایجاد کنید:
 
 ```js
 const request = new PaymentRequest(
@@ -38,7 +32,7 @@ const request = new PaymentRequest(
 );
 ```
 
-The functions invoked inside the constructor return the required object parameters:
+توابع فراخوانی شده در داخل سازنده، پارامترهای شیء مورد نیاز را برمی‌گردانند:
 
 ```js
 function buildSupportedPaymentMethodData() {
@@ -64,9 +58,9 @@ function buildShoppingCartDetails() {
 }
 ```
 
-### Starting the payment process
+### شروع فرآیند پرداخت
 
-Once the `PaymentRequest` object has been created, you call the {{domxref("PaymentRequest.show()")}} method on it to initiate the payment request. This returns a promise that fulfills with a {{domxref("PaymentResponse")}} object if the payment is successful:
+پس از ایجاد شیء `PaymentRequest`، متد {{domxref("PaymentRequest.show()")}} را روی آن فراخوانی می‌کنید تا درخواست پرداخت آغاز شود. این متد یک promise برمی‌گرداند که در صورت موفقیت‌آمیز بودن پرداخت، با یک شیء {{domxref("PaymentResponse")}} fulfilled می‌شود:
 
 ```js
 request.show().then((paymentResponse) => {
@@ -79,13 +73,13 @@ request.show().then((paymentResponse) => {
 });
 ```
 
-This object provides the developer with access to details they can use to complete the logical steps required after the payment completes, such as an email address to contact the customer, a shipping address for mailing goods out to them, etc. In the code above, you'll see that we've called the {{domxref("PaymentResponse.complete()")}} method to signal that the interaction has finished — you'd use this to carry out finishing steps, like updating the user interface to tell the user the transaction is complete, etc.
+این شیء به توسعه‌دهنده دسترسی به جزئیاتی را می‌دهد که می‌تواند برای تکمیل مراحل منطقی مورد نیاز پس از اتمام پرداخت استفاده کند، مانند یک آدرس ایمیل برای تماس با مشتری، یک آدرس حمل و نقل برای ارسال کالا و غیره. در کد بالا، می‌بینید که ما متد {{domxref("PaymentResponse.complete()")}} را برای علامت‌دادن به پایان تعامل فراخوانی کرده‌ایم - از این برای انجام مراحل پایانی، مانند به‌روزرسانی رابط کاربری برای اطلاع‌رسانی به کاربر مبنی بر تکمیل تراکنش، استفاده می‌کنید.
 
-### Other useful payment request methods
+### سایر متدهای مفید درخواست پرداخت
 
-There are some other useful payment request methods worth knowing about.
+چند متد مفید دیگر درخواست پرداخت وجود دارد که ارزش دانستن دارند.
 
-{{domxref("PaymentRequest.canMakePayment()")}} can be used to check whether the `PaymentRequest` object is capable of making a payment before you start the payment process. It returns a promise that fulfills with a boolean indicating whether it is or not, for example:
+از {{domxref("PaymentRequest.canMakePayment()")}} می‌توان برای بررسی اینکه آیا شیء `PaymentRequest` قادر به انجام پرداخت است قبل از شروع فرآیند پرداخت استفاده کرد. این متد یک promise برمی‌گرداند که با یک مقدار boolean نشان‌دهنده توانایی یا عدم توانایی fulfilled می‌شود، به عنوان مثال:
 
 ```js
 // Dummy payment request to check whether payment can be made
@@ -110,13 +104,13 @@ new PaymentRequest(buildSupportedPaymentMethodData(), {
   });
 ```
 
-{{domxref("PaymentRequest.abort()")}} can be used to abort the payment request if required.
+از {{domxref("PaymentRequest.abort()")}} می‌توان در صورت نیاز برای لغو درخواست پرداخت استفاده کرد.
 
-## Detecting availability of the Payment Request API
+## تشخیص در دسترس بودن Payment Request API
 
-You can effectively detect support for the Payment Request API by checking if the user's browser supports {{domxref("PaymentRequest")}}, i.e., `if (window.PaymentRequest)`.
+می‌توانید با بررسی اینکه مرورگر کاربر از {{domxref("PaymentRequest")}} پشتیبانی می‌کند، یعنی `if (window.PaymentRequest)`، به طور مؤثر پشتیبانی از Payment Request API را تشخیص دهید.
 
-In the following snippet, a merchant page performs this check, and if it returns `true` updates the checkout button to use `PaymentRequest` instead of legacy web forms.
+در قطعه کد زیر، یک صفحه فروشنده این بررسی را انجام می‌دهد و اگر `true` برگرداند، دکمه تسویه حساب را به‌روز می‌کند تا به جای فرم‌های وب قدیمی از `PaymentRequest` استفاده کند.
 
 ```js
 const checkoutButton = document.getElementById("checkout-button");
@@ -149,17 +143,17 @@ if (window.PaymentRequest) {
 ```
 
 > [!NOTE]
-> See our [Feature detect support demo](https://mdn.github.io/dom-examples/payment-request/feature-detect-support.html) for the full code.
+> برای کد کامل به [دموی تشخیص پشتیبانی از ویژگی](https://mdn.github.io/dom-examples/payment-request/feature-detect-support.html) ما مراجعه کنید.
 
-## Checking whether users can make payments
+## بررسی اینکه آیا کاربران می‌توانند پرداخت انجام دهند
 
-Checking whether users can make payments is always useful. Here's a couple of related techniques.
+بررسی اینکه آیا کاربران می‌توانند پرداخت انجام دهند همیشه مفید است. در اینجا چند تکنیک مرتبط آورده شده است.
 
-### Customizing the payment button
+### سفارشی‌سازی دکمه پرداخت
 
-One useful technique to employ is customizing the payment request button depending on whether users can make payments.
+یک تکنیک مفید که می‌توان به کار برد، سفارشی‌سازی دکمه درخواست پرداخت بسته به اینکه کاربران می‌توانند پرداخت انجام دهند یا خیر است.
 
-In the following snippet we do just this — depending on whether the user can make a fast payment or needs to add payment credentials first, the title of the checkout button changes between "Fast Checkout with W3C" and "Setup W3C Checkout". In both cases, the checkout button calls {{domxref("PaymentRequest.show()")}}.
+در قطعه کد زیر دقیقاً این کار را انجام می‌دهیم - بسته به اینکه کاربر می‌تواند یک پرداخت سریع انجام دهد یا نیاز به افزودن اعتبار پرداخت دارد، عنوان دکمه تسویه حساب بین "Fast Checkout with W3C" و "Setup W3C Checkout" تغییر می‌کند. در هر دو حالت، دکمه تسویه حساب {{domxref("PaymentRequest.show()")}} را فراخوانی می‌کند.
 
 ```js
 const checkoutButton = document.getElementById("checkout-button");
@@ -186,11 +180,11 @@ if (window.PaymentRequest) {
 ```
 
 > [!NOTE]
-> See our [Customizing the payment button demo](https://mdn.github.io/dom-examples/payment-request/customize-button-can-make-payment.html) for the full code.
+> برای کد کامل به [دموی سفارشی‌سازی دکمه پرداخت](https://mdn.github.io/dom-examples/payment-request/customize-button-can-make-payment.html) ما مراجعه کنید.
 
-### Checking before all prices are known
+### بررسی قبل از مشخص شدن قیمت‌ها
 
-If the checkout flow needs to know whether {{domxref("PaymentRequest.canMakePayment()")}} will return `true` even before all line items and their prices are known, you can instantiate `PaymentRequest` with dummy data and pre-query `.canMakePayment()`. If you call `.canMakePayment()` multiple times, keep in mind that the first parameter to the `PaymentRequest` constructor should contain the same method names and data.
+اگر فرآیند تسویه حساب نیاز دارد بداند که آیا {{domxref("PaymentRequest.canMakePayment()")}} حتی قبل از مشخص شدن همه اقلام و قیمت‌های آن‌ها `true` برمی‌گرداند، می‌توانید `PaymentRequest` را با داده‌های ساختگی نمونه‌سازی کرده و `.canMakePayment()` را از پیش پرس‌وجو کنید. اگر `.canMakePayment()` را چندین بار فراخوانی می‌کنید، به خاطر داشته باشید که اولین پارامتر سازنده `PaymentRequest` باید شامل همان نام‌ها و داده‌های روش باشد.
 
 ```js
 // The page has loaded. Should the page use PaymentRequest?
@@ -248,13 +242,13 @@ function onServerCheckoutDetailsRetrieved(checkoutObject) {
 ```
 
 > [!NOTE]
-> See our [Checking user can make payments before prices are known demo](https://mdn.github.io/dom-examples/payment-request/check-user-can-make-payment.html) for the full code.
+> برای کد کامل به [دموی بررسی توانایی کاربر برای پرداخت قبل از مشخص شدن قیمت‌ها](https://mdn.github.io/dom-examples/payment-request/check-user-can-make-payment.html) ما مراجعه کنید.
 
-## Recommending a payment app when user has no apps
+## توصیه یک برنامه پرداخت زمانی که کاربر برنامه‌ای ندارد
 
-If you select to pay with the BobBucks demo payment provider on this merchant page, it tries to call `PaymentRequest.show()`, while intercepting the `NotSupportedError` {{domxref("DOMException")}}. If this payment method is not supported, it redirects to the signup page for BobBucks.
+اگر در این صفحه فروشنده، ارائه‌دهنده پرداخت دموی BobBucks را برای پرداخت انتخاب کنید، سعی می‌کند `PaymentRequest.show()` را فراخوانی کند، در حالی که `NotSupportedError` {{domxref("DOMException")}} را رهگیری می‌کند. اگر این روش پرداخت پشتیبانی نشود، به صفحه ثبت‌نام BobBucks هدایت می‌شود.
 
-The code looks something like this:
+کد به شکل زیر است:
 
 ```js
 checkoutButton.addEventListener("click", () => {
@@ -285,11 +279,11 @@ checkoutButton.addEventListener("click", () => {
 ```
 
 > [!NOTE]
-> See our [Recommending a payment app when user has no apps demo](https://mdn.github.io/dom-examples/payment-request/recommend-payment-app.html) for the full code.
+> برای کد کامل به [دموی توصیه یک برنامه پرداخت زمانی که کاربر برنامه‌ای ندارد](https://mdn.github.io/dom-examples/payment-request/recommend-payment-app.html) ما مراجعه کنید.
 
-## Showing additional user interface after successful payments
+## نمایش رابط کاربری اضافی پس از پرداخت‌های موفق
 
-If the merchant desires to collect additional information not part of the API (e.g., additional delivery instructions), the merchant can show a page with additional `<input type="text">` fields after the checkout.
+اگر فروشنده تمایل به جمع‌آوری اطلاعات اضافی که بخشی از API نیست (مانند دستورالعمل‌های تحویل اضافی) داشته باشد، می‌تواند پس از تسویه حساب، صفحه‌ای با فیلدهای `<input type="text">` اضافی نمایش دهد.
 
 ```js
 request
@@ -311,13 +305,13 @@ request
 ```
 
 > [!NOTE]
-> See our [Show additional user interface after successful payment demo](https://mdn.github.io/dom-examples/payment-request/show-additional-ui-after-payment.html) for the full code.
+> برای کد کامل به [دموی نمایش رابط کاربری اضافی پس از پرداخت موفق](https://mdn.github.io/dom-examples/payment-request/show-additional-ui-after-payment.html) ما مراجعه کنید.
 
-## Pre-authorizing transactions
+## پیش‌مجوزدهی تراکنش‌ها
 
-Some use cases (e.g., paying for fuel at a service station) involve pre-authorizing payment. One way to do this is through a Web-based Payment Handler (see the {{domxref("Web-based Payment Handler API", "", "", "nocode")}}). At the time of writing, that specification includes a `canmakepayment` event that a Web-based Payment Handler could make use of to return authorization status.
+برخی موارد استفاده (مانند پرداخت سوخت در پمپ بنزین) شامل پیش‌مجوزدهی پرداخت است. یکی از راه‌های انجام این کار از طریق یک Payment Handler مبتنی بر وب است (به {{domxref("Web-based Payment Handler API", "", "", "nocode")}} مراجعه کنید). در زمان نگارش این مقاله، آن مشخصات شامل یک رویداد `canmakepayment` است که یک Payment Handler مبتنی بر وب می‌تواند از آن برای برگرداندن وضعیت مجوز استفاده کند.
 
-The merchant code would look like this:
+کد فروشنده به شکل زیر خواهد بود:
 
 ```js
 const paymentRequest = new PaymentRequest(
@@ -341,7 +335,7 @@ paymentRequest
   });
 ```
 
-The web-based payment handler would include the following code:
+Payment handler مبتنی بر وب شامل کد زیر خواهد بود:
 
 ```js
 self.addEventListener("canmakepayment", (evt) => {
@@ -351,11 +345,11 @@ self.addEventListener("canmakepayment", (evt) => {
 });
 ```
 
-This payment handler would need to live in a service worker at `https://example.com/preauth` scope.
+این Payment handler باید در یک service worker در محدوده `https://example.com/preauth` قرار داشته باشد.
 
 > [!NOTE]
-> See our [Pre-authorizing transactions demo](https://mdn.github.io/dom-examples/payment-request/pre-authorize-transaction.html) for the full code.
+> برای کد کامل به [دموی پیش‌مجوزدهی تراکنش‌ها](https://mdn.github.io/dom-examples/payment-request/pre-authorize-transaction.html) ما مراجعه کنید.
 
-## See also
+## همچنین ببینید
 
-- [Google PaymentRequest Samples](https://googlechrome.github.io/samples/paymentrequest/)
+- [نمونه‌های Google PaymentRequest](https://googlechrome.github.io/samples/paymentrequest/)
