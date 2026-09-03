@@ -1,11 +1,5 @@
 ---
 title: "Presentation: receiver property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Presentation/receiver"
-status: "needs-translation"
----
-
----
-title: "Presentation: receiver property"
 short-title: receiver
 slug: Web/API/Presentation/receiver
 page-type: web-api-instance-property
@@ -16,31 +10,19 @@ browser-compat: api.Presentation.receiver
 
 {{APIRef("Presentation")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **read-only** {{domxref("Presentation")}} attribute
-`receiver`, which is only available in browser contexts which are
-**receiving** a presentation, returns the
-{{domxref("PresentationReceiver")}} object which can be used to access and communicate
-with the browser context which controls the presentation. This property is always
-`null` when accessed from outside a browser context which is receiving a
-presentation.
+ویژگی **فقط‑خواندنی** {{domxref("Presentation")}} با نام `receiver` که تنها در زمینه‌های مرورگری در دسترس است که در **حال دریافت یک ارائه** هستند، شیء {{domxref("PresentationReceiver")}} را برمی‌گرداند. این شیء برای دسترسی و ارتباط با زمینه‌ای از مرورگر که ارائه را کنترل می‌کند، قابل استفاده است. این ویژگی وقتی از خارج از زمینه‌ای که در حال دریافت ارائه است، فراخوانی شود، همیشه `null` است.
 
-## Value
+## مقدار
 
-If the code is running in a context which is receiving a presentation, the returned
-value is a {{domxref("PresentationReceiver")}} which can then be used to communicate
-with the context which is the source of the presentation.
+اگر کد در زمینه‌ای اجرا شود که در حال دریافت یک ارائه است، مقدار بازگشتی یک {{domxref("PresentationReceiver")}} خواهد بود که می‌توان از آن برای ارتباط با زمینه‌ای که منبع ارائه است استفاده کرد.
 
-If the current context is not receiving a presentation, `receiver` is
-`null`.
+اگر زمینه‌ی فعلی در حال دریافت ارائه نباشد، `receiver` برابر با `null` است.
 
-## Examples
+## مثال‌ها
 
-### Determining whether or not the context is receiving a presentation
+### تشخیص اینکه آیا زمینه در حال دریافت ارائه است یا نه
 
-You can easily determine whether or not the context is the receiver for a presentation
-by checking the value of `navigator.presentation.receiver`. If it's a non-null value, then
-the context is indeed receiving a presentation. If it's `null`, there's no
-incoming presentation.
+به راحتی می‌توانید تشخیص دهید که آیا زمینه دریافت‌کننده‌ی یک ارائه است یا نه، با بررسی مقدار `navigator.presentation.receiver`. اگر این مقدار غیر از `null` باشد، زمینه واقعاً در حال دریافت یک ارائه است. اگر `null` باشد، هیچ ارائه‌ی ورودی‌ای وجود ندارد.
 
 ```js
 footer.textContent = navigator.presentation.receiver
@@ -48,10 +30,9 @@ footer.textContent = navigator.presentation.receiver
   : "(idle)";
 ```
 
-### Accessing the connection list
+### دسترسی به لیست اتصال‌ها
 
-This example uses `receiver` to access the list of incoming connections and
-to build and display a list of those connections' ID strings.
+این مثال از `receiver` برای دسترسی به لیست اتصال‌های ورودی و ساخت و نمایش لیستی از رشته‌های شناسه‌ی آن اتصال‌ها استفاده می‌کند.
 
 ```js
 const listElem = document.getElementById("connection-view");
@@ -64,26 +45,19 @@ navigator.presentation.receiver.connectionList.then((connections) => {
 });
 ```
 
-After getting access to the output list element in the variable
-`connectionView`, `navigator.presentation.receiver` is used to get a
-reference to the {{domxref("PresentationReceiver")}} object for this context, and its
-{{domxref("PresentationReceiver.connectionList", "connectionList")}} is used to get a
-{{jsxref("Promise")}} which will be called when the list is available.
+پس از دسترسی به عنصر لیست خروجی در متغیر `connectionView`، از `navigator.presentation.receiver` برای دریافت یک ارجاع به شیء {{domxref("PresentationReceiver")}} مربوط به این زمینه استفاده می‌شود، و از {{domxref("PresentationReceiver.connectionList", "connectionList")}} آن برای دریافت یک {{jsxref("Promise")}} استفاده می‌شود که وقتی لیست در دسترس باشد فراخوانی می‌شود.
 
-The promise handler receives as its input parameter an array of the incoming
-connections. We iterate over these using {{jsxref("Array.forEach", "forEach()")}},
-appending a new item to the `connectionView` list element for each
-connection.
+مدیر وعده (handler) یک آرایه از اتصال‌های ورودی را به عنوان پارامتر ورودی خود دریافت می‌کند. با استفاده از {{jsxref("Array.forEach", "forEach()")}} روی آن‌ها پیمایش می‌کنیم و برای هر اتصال یک آیتم جدید به عنصر لیست `connectionView` اضافه می‌کنیم.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - Presentation API
 - {{domxref("Presentation")}}
