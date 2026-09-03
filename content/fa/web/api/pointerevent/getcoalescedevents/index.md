@@ -1,11 +1,5 @@
 ---
 title: "PointerEvent: getCoalescedEvents() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent/getCoalescedEvents"
-status: "needs-translation"
----
-
----
-title: "PointerEvent: getCoalescedEvents() method"
 short-title: getCoalescedEvents()
 slug: Web/API/PointerEvent/getCoalescedEvents
 page-type: web-api-instance-method
@@ -14,30 +8,27 @@ browser-compat: api.PointerEvent.getCoalescedEvents
 
 {{APIRef("Pointer Events")}} {{secureContext_header}}
 
-The **`getCoalescedEvents()`** method of the {{domxref("PointerEvent")}} interface returns a sequence of `PointerEvent` instances that were coalesced (merged) into a single {{domxref('Element/pointermove_event', 'pointermove')}} or {{domxref('Element/pointerrawupdate_event', 'pointerrawupdate')}} event.
-Instead of a stream of many {{domxref('Element/pointermove_event', 'pointermove')}} events, user agents coalesce multiple updates into a single event.
-This helps with performance as the user agent has less event handling to perform, but there is a reduction in the granularity and accuracy when tracking, especially with fast and large movements.
+متد **`getCoalescedEvents()`** در رابط (interface) {{domxref("PointerEvent")}} دنباله‌ای از نمونه‌های `PointerEvent` را برمی‌گرداند که در یک رویداد {{domxref('Element/pointermove_event', 'pointermove')}} یا {{domxref('Element/pointerrawupdate_event', 'pointerrawupdate')}} ادغام (coalesce) شده‌اند. عامل کاربر (user agent) به جای ایجاد جریانی از رویدادهای متعدد {{domxref('Element/pointermove_event', 'pointermove')}}، چندین به‌روزرسانی را در قالب یک رویداد واحد ترکیب می‌کند. این کار به بهبود کارایی کمک می‌کند، زیرا عامل کاربر باید رویدادهای کمتری را پردازش کند؛ اما در عوض، میزان جزئیات و دقت ردیابی، به‌ویژه در حرکت‌های سریع و با دامنه بزرگ، کاهش می‌یابد.
 
-The **`getCoalescedEvents()`** method lets applications access all un-coalesced position changes for precise handling of pointer movement data where necessary.
-Un-coalesced position changes are desirable in drawing applications, for instance, where having access to all events helps to build smoother curves that better match the movement of a pointer.
+متد **`getCoalescedEvents()`** به برنامه‌ها امکان می‌دهد در صورت نیاز به تمام تغییرات موقعیتِ ادغام‌نشده دسترسی داشته باشند تا داده‌های حرکت اشاره‌گر با دقت پردازش شوند. برای نمونه، تغییرات موقعیت ادغام‌نشده در برنامه‌های نقاشی مطلوب هستند؛ زیرا دسترسی به همه رویدادها به ایجاد منحنی‌های نرم‌تری کمک می‌کند که با حرکت واقعی اشاره‌گر هماهنگی بهتری دارند.
 
-For an illustration of coalesced events, see [Figure 7 in the specification](https://w3c.github.io/pointerevents/#figure_coalesced).
+برای مشاهده تصویری از رویدادهای ادغام‌شده، به [شکل ۷ در مشخصات](https://w3c.github.io/pointerevents/#figure_coalesced) مراجعه کنید.
 
-## Syntax
+## نحو
 
 ```js-nolint
 getCoalescedEvents()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A sequence of {{domxref('PointerEvent')}} instances.
+دنباله‌ای از نمونه‌های {{domxref('PointerEvent')}}.
 
-## Example
+## مثال
 
 ### HTML
 
@@ -82,14 +73,14 @@ canvas.addEventListener("pointermove", (e) => {
 });
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Example", "", "320")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
