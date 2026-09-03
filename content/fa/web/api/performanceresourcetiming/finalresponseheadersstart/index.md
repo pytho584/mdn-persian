@@ -1,11 +1,5 @@
 ---
 title: "PerformanceResourceTiming: finalResponseHeadersStart property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceResourceTiming/finalResponseHeadersStart"
-status: "needs-translation"
----
-
----
-title: "PerformanceResourceTiming: finalResponseHeadersStart property"
 short-title: finalResponseHeadersStart
 slug: Web/API/PerformanceResourceTiming/finalResponseHeadersStart
 page-type: web-api-instance-property
@@ -14,32 +8,32 @@ browser-compat: api.PerformanceResourceTiming.finalResponseHeadersStart
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The **`finalResponseHeadersStart`** read-only property returns a {{domxref("DOMHighResTimeStamp","timestamp")}} immediately after the browser receives the first byte of the final document response (for example, {{httpstatus(200, "200 OK")}}) from the server.
+ویژگی فقط‌خواندنی **`finalResponseHeadersStart`** یک {{domxref("DOMHighResTimeStamp","timestamp")}} را بلافاصله پس از آن‌که مرورگر نخستین بایت پاسخ نهایی سند (مثلاً {{httpstatus(200, "200 OK")}}) را از سرور دریافت می‌کند، برمی‌گرداند.
 
-This differs from **{{domxref("PerformanceResourceTiming.requestStart", "requestStart")}}** (which may also be represented as **{{domxref("PerformanceResourceTiming.firstInterimResponseStart", "firstInterimResponseStart")}}**), as this starts from the first bytes of any response including interim responses (for example, 103 Early Hints) with the final response coming potentially much later.
+این ویژگی با **{{domxref("PerformanceResourceTiming.requestStart", "requestStart")}}** تفاوت دارد (که ممکن است به‌صورت **{{domxref("PerformanceResourceTiming.firstInterimResponseStart", "firstInterimResponseStart")}}** نیز نمایش داده شود)، زیرا این زمان از نخستین بایت‌های هر پاسخی، از جمله پاسخ‌های میانی (مثلاً 103 Early Hints) شروع می‌شود و ممکن است پاسخ نهایی خیلی دیرتر برسد.
 
-When there are no interim responses, `requestStart` is the same as `finalResponseHeadersStart` and `firstInterimResponseStart` is 0.
+وقتی هیچ پاسخ میانی وجود نداشته باشد، `requestStart` با `finalResponseHeadersStart` یکسان است و `firstInterimResponseStart` برابر 0 است.
 
-There is no _end_ property for `finalResponseHeadersStart`.
+هیچ ویژگی `_end_` برای `finalResponseHeadersStart` وجود ندارد.
 
-## Value
+## مقدار
 
-The `finalResponseHeadersStart` property can have the following values:
+ویژگی `finalResponseHeadersStart` می‌تواند مقادیر زیر را داشته باشد:
 
-- A {{domxref("DOMHighResTimeStamp")}} immediately after the browser receives the first bytes of the final response from the server.
-- `0` if the resource is a cross-origin request and no {{HTTPHeader("Timing-Allow-Origin")}} HTTP response header is used.
+- یک {{domxref("DOMHighResTimeStamp")}} بلافاصله پس از دریافت نخستین بایت‌های پاسخ نهایی از سرور توسط مرورگر.
+- `0`، اگر منبع (resource) با یک درخواست متقاطع-منشأ (cross-origin) دریافت شده باشد و هیچ هدر پاسخ HTTP با نام {{HTTPHeader("Timing-Allow-Origin")}} استفاده نشده باشد.
 
-## Examples
+## مثال‌ها
 
-### Measuring request time
+### اندازه‌گیری زمان درخواست
 
-The `finalResponseHeadersStart` and {{domxref("PerformanceResourceTiming.requestStart", "requestStart")}} properties can be used to measure how long it takes for the browser to start receive the final response after the sending the request.
+از ویژگی‌های `finalResponseHeadersStart` و {{domxref("PerformanceResourceTiming.requestStart", "requestStart")}} می‌توان برای اندازه‌گیری مدت زمانی استفاده کرد که مرورگر پس از ارسال درخواست، صرف می‌کند تا دریافت پاسخ نهایی را آغاز کند.
 
 ```js
 const request = entry.finalResponseHeadersStart - entry.requestStart;
 ```
 
-The following example uses a {{domxref("PerformanceObserver")}} to notify of new `resource` performance entries as they are recorded in the browser's performance timeline. The `buffered` option is used for accessing entries from before the observer creation.
+مثال زیر از یک {{domxref("PerformanceObserver")}} استفاده می‌کند تا وقتی ورودی‌های کارایی `resource` جدید در خط زمانی کارایی مرورگر ثبت می‌شوند، آن‌ها را اعلان کند. گزینهٔ `buffered` برای دسترسی به ورودی‌هایی استفاده می‌شود که پیش از ایجاد observer ثبت شده‌اند.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -54,7 +48,7 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "resource", buffered: true });
 ```
 
-The following example uses {{domxref("Performance.getEntriesByType()")}}, which only shows `resource` performance entries present in the browser's performance timeline at the time you call the method.
+مثال زیر از {{domxref("Performance.getEntriesByType()")}} استفاده می‌کند؛ این متد فقط ورودی‌های کارایی `resource` را نشان می‌دهد که در هنگام فراخوانیِ متد، در خط زمانی کارایی مرورگر وجود دارند.
 
 ```js
 const resources = performance.getEntriesByType("resource");
@@ -66,7 +60,7 @@ resources.forEach((entry) => {
 });
 ```
 
-The following example shows how to measure the time between the first and final response headers.
+مثال زیر نحوهٔ اندازه‌گیری زمان بین آغاز هدرهای نخستین پاسخ و آغاز هدرهای پاسخ نهایی را نشان می‌دهد.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -83,25 +77,25 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "resource", buffered: true });
 ```
 
-### Cross-origin timing information
+### اطلاعات زمان‌بندی متقاطع-منشأ
 
-If the value of the `finalResponseHeadersStart` property is `0`, the resource might be a cross-origin request. To allow seeing cross-origin timing information, the {{HTTPHeader("Timing-Allow-Origin")}} HTTP response header needs to be set.
+اگر مقدار ویژگی `finalResponseHeadersStart` برابر `0` باشد، احتمالاً منبع از طریق یک درخواست متقاطع-منشأ (cross-origin) دریافت شده است. برای اینکه امکان مشاهدهٔ اطلاعات زمان‌بندی متقاطع-منشأ فراهم شود، باید هدر پاسخ HTTP با نام {{HTTPHeader("Timing-Allow-Origin")}} تنظیم شود.
 
-For example, to allow `https://developer.mozilla.org` to see timing resources, the cross-origin resource should send:
+برای مثال، برای اینکه به `https://developer.mozilla.org` اجازه داده شود اطلاعات زمان‌بندی منابع را ببیند، منبع متقاطع-منشأ باید هدر زیر را ارسال کند:
 
 ```http
 Timing-Allow-Origin: https://developer.mozilla.org
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTTPHeader("Timing-Allow-Origin")}}
 - {{domxref("PerformanceResourceTiming.firstInterimResponseStart", "firstInterimResponseStart")}}
