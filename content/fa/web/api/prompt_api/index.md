@@ -1,11 +1,5 @@
 ---
 title: "Prompt API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Prompt_API"
-status: "needs-translation"
----
-
----
-title: Prompt API
 slug: Web/API/Prompt_API
 page-type: web-api-overview
 browser-compat: api.LanguageModel
@@ -15,74 +9,74 @@ spec-urls: https://webmachinelearning.github.io/prompt-api/
 {{DefaultAPISidebar("Prompt API")}}{{SecureContext_Header}}
 
 > [!WARNING]
-> This feature is currently opposed by two browser vendor(s). See the [Standards positions](#standards_positions) section below for details of opposition.
+> این ویژگی در حال حاضر از سوی دو سازندهٔ مرورگر با مخالفت روبه‌رو است. برای جزئیات، بخش [مواضع استانداردها](#standards_positions) را در پایین ببینید.
 
-The **Prompt API** allows web pages to directly prompt a language model provided by the user agent via a JavaScript interface, without needing to manage implementation-specific details of the AI model being used.
+**Prompt API** به صفحه‌های وب امکان می‌دهد بدون نیاز به مدیریت جزئیات پیاده‌سازیِ خاصِ مدل هوش مصنوعی مورد استفاده، مستقیماً از طریق یک رابط جاوااسکریپتی به مدل زبانی‌ای که عامل کاربر (user agent) فراهم کرده است پرامپت بفرستند.
 
-## Concepts and usage
+## مفاهیم و کاربرد
 
-Using AI prompts to return information is very common on the web, with examples including rapid information look up, code and content generation, chatbots to provide customer service functions, image identification and description, audio transcription, and more.
+ارسال پرامپت به هوش مصنوعی برای دریافت اطلاعات در وب بسیار رایج است؛ مواردی مانند جست‌وجوی سریع اطلاعات، تولید کد و محتوا، چت‌بات‌های خدمات مشتریان، شناسایی و توصیف تصویر و رونویسی صوتی نمونه‌هایی از آن هستند.
 
-The Prompt API provides an asynchronous ({{jsxref("Promise")}}-based) mechanism for a website to prompt the browser's own internal AI model. Having an on-device model is useful and efficient because sensitive data can stay on the user's device, the model is available offline, and developers can avoid the cost and latency of API calls to external services. The API abstracts away model-specific details such as tokenization and templating, so developers don't need to handle those differences across different implementations.
+Prompt API سازوکاری ناهمزمان (مبتنی بر {{jsxref("Promise")}}) در اختیار وب‌سایت‌ها می‌گذارد تا بتوانند به مدل هوش مصنوعی داخلیِ خودِ مرورگر پرامپت بفرستند. در اختیار داشتن مدلی روی خودِ دستگاه (on-device) مفید و کارآمد است؛ زیرا داده‌های حساس می‌توانند روی دستگاه کاربر باقی بمانند، مدل به‌صورت آفلاین در دسترس است و توسعه‌دهندگان از هزینه و تأخیر فراخوانی‌های API به سرویس‌های خارجی بی‌نیاز می‌شوند.
 
-All interaction with the language model happens through a {{domxref("LanguageModel")}} session.
-You can use this session to specify context for the model, such as providing documents, background information, or conversation history, and to prompt it for responses to specific questions.
+این API جزئیات وابسته به مدل، مانند توکن‌سازی (tokenization) و الگوسازی (templating) را در سطح خود پنهان می‌کند؛ بنابراین توسعه‌دهندگان لازم نیست این تفاوت‌ها را در پیاده‌سازی‌های مختلف مدیریت کنند.
 
-Before creating a session, you can call the static {{domxref("LanguageModel.availability_static", "LanguageModel.availability()")}} method to determine whether the language model supports a given configuration on the current device. This allows pages to adapt gracefully if data for the desired configuration can't be provided or is not downloaded. For example, you could display a download prompt or fall back to a cloud-based AI service, rather than creating a session only to have it fail.
+تمام تعامل با مدل زبانی از طریق یک نشست (session) از نوع {{domxref("LanguageModel")}} انجام می‌شود. می‌توانید از این نشست برای تعیین زمینه (context) مدل استفاده کنید؛ برای مثال اسناد، اطلاعات پیش‌زمینه یا تاریخچهٔ گفت‌وگو را به مدل بدهید و سپس از آن بخواهید به پرسش‌های مشخص پاسخ دهد.
 
-A session is created by calling the static {{domxref("LanguageModel.create_static", "create()")}} method. Once you have a session, you can call {{domxref("LanguageModel.append()", "append()")}} to preload content into the session without generating a response, and {{domxref("LanguageModel.prompt()","prompt()")}} or {{domxref("LanguageModel.promptStreaming()", "promptStreaming()")}} to send text or multimodal input and receive the response.
+پیش از ایجاد نشست، می‌توانید متد ایستای {{domxref("LanguageModel.availability_static", "LanguageModel.availability()")}} را فراخوانی کنید تا مشخص شود آیا مدل زبانی از پیکربندی معیّنی روی دستگاه فعلی پشتیبانی می‌کند یا نه. این کار به صفحه‌ها اجازه می‌دهد اگر داده‌های پیکربندی موردنظر در دسترس نباشند یا بارگیری نشده باشند، به‌شکلی سازگار عمل کنند. برای مثال، می‌توانید اعلانی برای بارگیری نمایش دهید یا به یک سرویس هوش مصنوعی ابری بازگردید؛ به‌جای اینکه نشستی بسازید که در نهایت با شکست مواجه شود.
 
-You can cancel pending operations such as `create()`, `prompt()`, and `append()` using an {{domxref("AbortController")}}.
+برای ایجاد نشست، متد ایستای {{domxref("LanguageModel.create_static", "create()")}} را فراخوانی کنید. پس از ایجاد نشست، می‌توانید {{domxref("LanguageModel.append()", "append()")}} را برای بارگذاریِ از پیشِ محتوا در نشست بدون تولید پاسخ، و {{domxref("LanguageModel.prompt()","prompt()")}} یا {{domxref("LanguageModel.promptStreaming()", "promptStreaming()")}} را برای ارسال ورودی متنی یا چندوجهی (multimodal) و دریافت پاسخ فراخوانی کنید.
 
-After a `LanguageModel` instance has been created, you can release its assigned resources and stop any further activity by calling its {{domxref("LanguageModel.destroy()")}} method. You are encouraged to do this after you've finished with the object as it can consume a lot of resources.
+می‌توانید عملیات در حال انتظار مانند `create()`، `prompt()` و `append()` را با استفاده از یک {{domxref("AbortController")}} لغو کنید.
 
-To get started, check out [Using the Prompt API](/en-US/docs/Web/API/Prompt_API/Using) for a walkthrough of the basics.
+پس از ساخته‌شدن یک نمونه (instance) از `LanguageModel`، می‌توانید با فراخوانی متد {{domxref("LanguageModel.destroy()")}} منابع اختصاص‌داده‌شده به آن را آزاد کنید و از ادامهٔ هرگونه فعالیت جلوگیری کنید. توصیه می‌شود این کار را پس از پایان کار با این شیء انجام دهید، زیرا ممکن است منابع زیادی مصرف کند.
 
-## Interfaces
+برای شروع، راهنمای [استفاده از Prompt API](/en-US/docs/Web/API/Prompt_API/Using) را ببینید که مفاهیم پایه را گام‌به‌گام توضیح می‌دهد.
+
+## رابط‌ها
 
 - {{domxref("CreateMonitor")}} {{Experimental_Inline}}
-  - : Provides information on the progress of an AI model download, for example a language pack or some fine-tuning data.
+  - : اطلاعاتی درباره پیشرفت بارگیری یک مدل هوش مصنوعی فراهم می‌کند؛ برای مثال، یک بستهٔ زبانی (language pack) یا برخی داده‌های تنظیم دقیق (fine-tuning).
 - {{domxref("LanguageModel")}} {{Experimental_Inline}}
-  - : Represents a session with a browser-provided language model. Provides static methods for creating sessions and checking availability, and instance methods for prompting the model, managing context, cloning sessions, etc.
+  - : نشان‌دهندهٔ نشستی با مدل زبانی ارائه‌شده توسط مرورگر است. متدهای ایستایی برای ایجاد نشست و بررسی در دسترس‌بودن، و متدهای نمونه (instance) برای پرامپت‌دادن به مدل، مدیریت زمینه، همانندسازی نشست‌ها و مانند آن ارائه می‌دهد.
 
-## HTTP headers
+## هدرهای HTTP
 
-- {{httpheader("Permissions-Policy")}}; the {{httpheader("Permissions-Policy/language-model", "language-model")}} directive {{Experimental_Inline}}
-  - : Controls access to the prompt functionality.
-    Where a policy specifically disallows its use, the {{domxref("LanguageModel.availability_static", "LanguageModel.availability()")}} static method will return `unavailable`, and any attempts to call other `LanguageModel` methods will fail with a `NotAllowedError` {{domxref("DOMException")}}.
+- {{httpheader("Permissions-Policy")}}؛ دایرکتیو {{httpheader("Permissions-Policy/language-model", "language-model")}} {{Experimental_Inline}}
+  - : دسترسی به قابلیت پرامپت را کنترل می‌کند.
+    اگر خط‌مشی به‌طور خاص استفاده از آن را منع کند، متد ایستای {{domxref("LanguageModel.availability_static", "LanguageModel.availability()")}} مقدار `unavailable` را برمی‌گرداند و هرگونه تلاش برای فراخوانی سایر متدهای `LanguageModel` با `NotAllowedError` از نوع {{domxref("DOMException")}} ناموفق خواهد بود.
 
-## Security considerations
+## ملاحظات امنیتی
 
-The Prompt API is restricted to [secure contexts](/en-US/docs/Web/Security/Defenses/Secure_Contexts) (HTTPS). In addition, creation of `LanguageModel` objects requires that the user has recently interacted with the page ([transient user activation](/en-US/docs/Web/Security/Defenses/User_activation) is required).
+این API به [زمینه‌های امن](/en-US/docs/Web/Security/Defenses/Secure_Contexts) (HTTPS) محدود است. علاوه بر این، ایجاد اشیاء `LanguageModel` مستلزم این است که کاربر اخیراً با صفحه تعامل کرده باشد ([فعال‌سازی گذرای کاربر](/en-US/docs/Web/Security/Defenses/User_activation) لازم است).
 
-Access to the API is also controlled via the {{httpheader("Permissions-Policy/language-model", "language-model")}} {{httpheader("Permissions-Policy")}} directive.
+دسترسی به این API همچنین از طریق دایرکتیو {{httpheader("Permissions-Policy/language-model", "language-model")}} در {{httpheader("Permissions-Policy")}} کنترل می‌شود.
 
-## Examples
+## مثال‌ها
 
-For full examples, check out our guides, starting with [Using the Prompt API](/en-US/docs/Web/API/Prompt_API/Using).
+برای مثال‌های کامل، راهنماهای ما را ببینید؛ از [استفاده از Prompt API](/en-US/docs/Web/API/Prompt_API/Using) شروع کنید.
 
-Also see the Chrome dev rel team's demos:
+همچنین دموهای تیم Chrome DevRel را ببینید:
 
 - [Prompt API playground](https://chrome.dev/web-ai-demos/prompt-api-playground/)
 - [MediaRecorder audio transcription](https://chrome.dev/web-ai-demos/mediarecorder-audio-prompt/)
 - [Canvas API image prompt](https://chrome.dev/web-ai-demos/canvas-image-prompt/)
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-### Standards positions
+### مواضع استانداردها
 
-Two browser vendors [oppose](/en-US/docs/Glossary/Web_standards#opposing_standards) this specification.
-Known standards positions are as follows:
+دو سازندهٔ مرورگر با این مشخصات [مخالفت کرده‌اند](/en-US/docs/Glossary/Web_standards#opposing_standards). مواضع شناخته‌شدهٔ استاندارد به این شرح است:
 
-- Mozilla (Firefox): [Negative](https://github.com/mozilla/standards-positions/issues/1213)
-- Apple (WebKit): [Negative](https://github.com/WebKit/standards-positions/issues/495)
+- Mozilla (Firefox): [نظر منفی](https://github.com/mozilla/standards-positions/issues/1213)
+- Apple (WebKit): [نظر منفی](https://github.com/WebKit/standards-positions/issues/495)
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [The Prompt API](https://developer.chrome.com/docs/ai/prompt-api) on developer.chrome.com (2026)
+- [The Prompt API](https://developer.chrome.com/docs/ai/prompt-api) در developer.chrome.com (2026)
