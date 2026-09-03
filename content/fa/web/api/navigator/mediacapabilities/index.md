@@ -1,11 +1,5 @@
 ---
 title: "Navigator: mediaCapabilities property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/mediaCapabilities"
-status: "needs-translation"
----
-
----
-title: "Navigator: mediaCapabilities property"
 short-title: mediaCapabilities
 slug: Web/API/Navigator/mediaCapabilities
 page-type: web-api-instance-property
@@ -14,13 +8,13 @@ browser-compat: api.Navigator.mediaCapabilities
 
 {{APIRef("Media Capabilities API")}}
 
-The **`mediaCapabilities`** read-only property of the {{domxref("Navigator")}} interface references a {{domxref("MediaCapabilities")}} object that can expose information about the decoding and encoding capabilities for a given media format and output capabilities.
+ویژگی فقط خواندنی **`mediaCapabilities`** از رابط {{domxref("Navigator")}} به یک شیء {{domxref("MediaCapabilities")}} اشاره می‌کند که می‌تواند اطلاعاتی درباره قابلیت‌های رمزگشایی و رمزگذاری برای یک فرمت رسانه و قابلیت‌های خروجی مشخص ارائه دهد.
 
-## Value
+## مقدار
 
-A {{domxref("MediaCapabilities")}} object.
+یک شیء {{domxref("MediaCapabilities")}}.
 
-## Examples
+## مثال‌ها
 
 ```js
 navigator.mediaCapabilities
@@ -42,15 +36,15 @@ navigator.mediaCapabilities
   });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Media Capabilities API](/en-US/docs/Web/API/Media_Capabilities_API)
 - {{domxref("Navigator")}}
