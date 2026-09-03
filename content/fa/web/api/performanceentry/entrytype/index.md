@@ -1,11 +1,5 @@
 ---
 title: "PerformanceEntry: entryType property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEntry/entryType"
-status: "needs-translation"
----
-
----
-title: "PerformanceEntry: entryType property"
 short-title: entryType
 slug: Web/API/PerformanceEntry/entryType
 page-type: web-api-instance-property
@@ -14,99 +8,99 @@ browser-compat: api.PerformanceEntry.entryType
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The read-only **`entryType`** property returns a string representing the type of performance metric that this entry represents.
+خاصیت فقط‌خواندنی **`entryType`** یک رشته برمی‌گرداند که نوع معیار عملکردی را که این ورودی نشان می‌دهد مشخص می‌کند.
 
-All supported `entryTypes` are available using the static property {{domxref("PerformanceObserver.supportedEntryTypes_static", "PerformanceObserver.supportedEntryTypes")}}.
+همه `entryType`های پشتیبانی‌شده با استفاده از خاصیت ایستا {{domxref("PerformanceObserver.supportedEntryTypes_static", "PerformanceObserver.supportedEntryTypes")}} در دسترس هستند.
 
-## Value
+## مقدار
 
-A string. The return value depends on the subtype of the `PerformanceEntry` object. Some subtypes have more than one `entryType`.
+یک رشته. مقدار بازگشتی به زیرنوع شیء `PerformanceEntry` بستگی دارد. برخی زیرنوع‌ها بیش از یک `entryType` دارند.
 
 - `element`
-  - : Reports load time of elements.
+  - : زمان بارگذاری عناصر را گزارش می‌دهد.
 
-    The entry instance will be a {{domxref("PerformanceElementTiming")}} object.
+    نمونه ورودی یک شیء {{domxref("PerformanceElementTiming")}} خواهد بود.
 
 - `event`
-  - : Reports event latencies.
+  - : تأخیر رویدادها را گزارش می‌دهد.
 
-    The entry instance will be a {{domxref("PerformanceEventTiming")}} object.
+    نمونه ورودی یک شیء {{domxref("PerformanceEventTiming")}} خواهد بود.
 
 - `first-input`
-  - : Reports the {{Glossary("First Input Delay")}} (FID).
+  - : {{Glossary("First Input Delay")}} (FID) را گزارش می‌دهد.
 
-    The entry instance will be a {{domxref("PerformanceEventTiming")}} object.
+    نمونه ورودی یک شیء {{domxref("PerformanceEventTiming")}} خواهد بود.
 
 - `interaction-contentful-paint`
-  - : Reports the largest paint an element triggered on screen after an interaction.
+  - : بزرگ‌ترین نقاشی (paint) را که یک عنصر پس از یک تعامل روی صفحه ایجاد کرده است گزارش می‌دهد.
 
-    The entry instance will be a {{domxref("InteractionContentfulPaint")}} object.
+    نمونه ورودی یک شیء {{domxref("InteractionContentfulPaint")}} خواهد بود.
 
 - `largest-contentful-paint`
-  - : Reports the largest paint an element triggered on screen.
+  - : بزرگ‌ترین نقاشی را که یک عنصر روی صفحه ایجاد کرده است گزارش می‌دهد.
 
-    The entry instance will be a {{domxref("LargestContentfulPaint")}} object.
+    نمونه ورودی یک شیء {{domxref("LargestContentfulPaint")}} خواهد بود.
 
 - `layout-shift`
-  - : Reports layout stability of web pages based on movements of the elements on the page.
+  - : پایداری چیدمان صفحات وب را بر اساس جابه‌جایی عناصر در صفحه گزارش می‌دهد.
 
-    The entry instance will be a {{domxref("LayoutShift")}} object.
+    نمونه ورودی یک شیء {{domxref("LayoutShift")}} خواهد بود.
 
 - `long-animation-frame`
-  - : Reports instances of [long animation frames (LoAFs)](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing#what_is_a_long_animation_frame).
+  - : نمونه‌هایی از [فریم‌های انیمیشن طولانی (LoAFها)](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing#what_is_a_long_animation_frame) را گزارش می‌دهد.
 
-    The entry instance will be a {{domxref("PerformanceLongAnimationFrameTiming")}} object.
+    نمونه ورودی یک شیء {{domxref("PerformanceLongAnimationFrameTiming")}} خواهد بود.
 
 - `longtask`
-  - : Reports instances of long tasks.
+  - : نمونه‌هایی از وظایف طولانی را گزارش می‌دهد.
 
-    The entry instance will be a {{domxref("PerformanceLongTaskTiming")}} object.
+    نمونه ورودی یک شیء {{domxref("PerformanceLongTaskTiming")}} خواهد بود.
 
 - `mark`
-  - : Reports your own custom performance markers.
+  - : نشانگرهای عملکرد سفارشی شما را گزارش می‌دهد.
 
-    The entry instance will be a {{domxref("PerformanceMark")}} object.
+    نمونه ورودی یک شیء {{domxref("PerformanceMark")}} خواهد بود.
 
 - `measure`
-  - : Reports your own custom performance measures.
+  - : اندازه‌گیری‌های عملکرد سفارشی شما را گزارش می‌دهد.
 
-    The entry instance will be a {{domxref("PerformanceMeasure")}} object.
+    نمونه ورودی یک شیء {{domxref("PerformanceMeasure")}} خواهد بود.
 
 - `navigation`
-  - : Reports document navigation timing.
+  - : زمان‌بندی ناوبری سند را گزارش می‌دهد.
 
-    The entry instance will be a {{domxref("PerformanceNavigationTiming")}} object.
+    نمونه ورودی یک شیء {{domxref("PerformanceNavigationTiming")}} خواهد بود.
 
 - `paint`
-  - : Reports key moments of document rendering (first paint, first contentful paint) during page load.
+  - : لحظه‌های کلیدی رندر سند (اولین نقاشی، اولین نقاشی با محتوا) را هنگام بارگذاری صفحه گزارش می‌دهد.
 
-    The entry instance will be a {{domxref("PerformancePaintTiming")}} object.
+    نمونه ورودی یک شیء {{domxref("PerformancePaintTiming")}} خواهد بود.
 
 - `resource`
-  - : Reports timing information for resources in a document.
+  - : اطلاعات زمان‌بندی منابع در یک سند را گزارش می‌دهد.
 
-    The entry instance will be a {{domxref("PerformanceResourceTiming")}} object.
+    نمونه ورودی یک شیء {{domxref("PerformanceResourceTiming")}} خواهد بود.
 
 - `soft-navigation`
-  - : Reports the paints triggered on screen after a user interaction and a URL update triggered a {{Glossary("soft navigation")}}.
+  - : نقاشی‌هایی را گزارش می‌دهد که پس از تعامل کاربر و به‌روزرسانی URL که یک {{Glossary("soft navigation")}} را فعال کرده است، روی صفحه ایجاد می‌شوند.
 
-    The entry instance will be a {{domxref("PerformanceSoftNavigation")}} object.
+    نمونه ورودی یک شیء {{domxref("PerformanceSoftNavigation")}} خواهد بود.
 
 - `taskattribution`
-  - : Reports the type of work that contributed significantly to the long task.
+  - : نوع کاری را گزارش می‌دهد که به‌طور قابل توجهی در وظیفه طولانی نقش داشته است.
 
-    The entry instance will be a {{domxref("TaskAttributionTiming")}} object.
+    نمونه ورودی یک شیء {{domxref("TaskAttributionTiming")}} خواهد بود.
 
 - `visibility-state`
-  - : Reports the timing of page visibility state changes, i.e., when a tab changes from the foreground to the background or vice versa.
+  - : زمان تغییر وضعیت دید صفحه را گزارش می‌دهد، یعنی زمانی که یک تب از پس‌زمینه به پیش‌زمینه می‌آید یا برعکس.
 
-    The entry instance will be a {{domxref("VisibilityStateEntry")}} object.
+    نمونه ورودی یک شیء {{domxref("VisibilityStateEntry")}} خواهد بود.
 
-## Examples
+## مثال‌ها
 
-### Filtering performance entries by type
+### فیلتر کردن ورودی‌های عملکرد بر اساس نوع
 
-The `entryType` property can be useful when filtering out specific performance entries. For example, you might want to check all script resources, so you would check for an `entryType` of `"resource"` and an {{domxref("PerformanceResourceTiming.initiatorType", "initiatorType")}} of `"script"`.
+خاصیت `entryType` می‌تواند هنگام فیلتر کردن ورودی‌های عملکرد خاص مفید باشد. برای مثال، ممکن است بخواهید همه منابع اسکریپت را بررسی کنید، بنابراین باید به دنبال `entryType` برابر با `"resource"` و {{domxref("PerformanceResourceTiming.initiatorType", "initiatorType")}} برابر با `"script"` بگردید.
 
 ```js
 const scriptResources = performance
@@ -118,21 +112,21 @@ const scriptResources = performance
 console.log(scriptResources);
 ```
 
-### Getting performance entries by type
+### دریافت ورودی‌های عملکرد بر اساس نوع
 
-Both, {{domxref("Performance")}} and {{domxref("PerformanceObserver")}}, provide methods that allow you to get performance entries by type directly. You don't necessarily need the `entryType` property for that, instead you might use {{domxref("Performance.getEntriesByType()")}} or {{domxref("PerformanceObserverEntryList.getEntriesByType()")}}.
+هم {{domxref("Performance")}} و هم {{domxref("PerformanceObserver")}} روش‌هایی را ارائه می‌دهند که به شما امکان می‌دهند ورودی‌های عملکرد را مستقیماً بر اساس نوع دریافت کنید. لزوماً برای این کار به خاصیت `entryType` نیاز ندارید؛ در عوض می‌توانید از {{domxref("Performance.getEntriesByType()")}} یا {{domxref("PerformanceObserverEntryList.getEntriesByType()")}} استفاده کنید.
 
-Also, when observing with a {{domxref("PerformanceObserver")}}, the {{domxref("PerformanceObserver.observe", "observe()")}} method takes an array of `entryTypes` in its options object where you can decide which entry types to observe.
+همچنین، هنگام مشاهده با {{domxref("PerformanceObserver")}}، روش {{domxref("PerformanceObserver.observe", "observe()")}} یک آرایه از `entryTypes` را در شیء گزینه‌های خود دریافت می‌کند که می‌توانید تعیین کنید کدام نوع ورودی‌ها را مشاهده کنید.
 
 ```js
-// Log all resource entries at this point
+// همه ورودی‌های resource را در این نقطه ثبت کنید
 const resources = performance.getEntriesByType("resource");
 resources.forEach((entry) => {
   console.log(`${entry.name}'s duration: ${entry.duration}`);
 });
 
-// PerformanceObserver version
-// Log all resource entries when they are available
+// نسخه PerformanceObserver
+// همه ورودی‌های resource را زمانی که در دسترس هستند ثبت کنید
 function perfObserver(list, observer) {
   list.getEntriesByType("resource").forEach((entry) => {
     console.log(`${entry.name}'s duration: ${entry.duration}`);
@@ -142,15 +136,15 @@ const observer = new PerformanceObserver(perfObserver);
 observer.observe({ entryTypes: ["resource", "navigation"] });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("PerformanceObserver.supportedEntryTypes_static", "PerformanceObserver.supportedEntryTypes")}}
 - {{domxref("Performance.getEntriesByType()")}}
