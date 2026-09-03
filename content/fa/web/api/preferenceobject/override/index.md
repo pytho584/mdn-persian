@@ -1,7 +1,5 @@
 ---
 title: "PreferenceObject: override property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PreferenceObject/override"
-status: "needs-translation"
 ---
 
 ---
@@ -17,17 +15,17 @@ spec-urls: https://drafts.csswg.org/mediaqueries-5/#override-attribute
 
 {{APIRef("User Preferences API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`override`** read-only property of the {{domxref("PreferenceObject")}} interface returns the override of a preference if one is set, `null` otherwise.
+ویژگی فقط‌خواندنیِ **`override`** در رابط {{domxref("PreferenceObject")}}، اگر برای یک ترجیح (preference) مقدار جایگزین (override) تنظیم شده باشد، آن را برمی‌گرداند؛ در غیر این صورت، `null` را برمی‌گرداند.
 
-## Value
+## مقدار
 
-The override of the {{domxref("PreferenceObject")}} interface, if set, or `null` if an override is not set.
+مقدار override رابط {{domxref("PreferenceObject")}}، در صورتی که تنظیم شده باشد؛ در غیر این صورت، اگر هیچ override تنظیم نشده باشد، `null` خواهد بود.
 
-## Examples
+## مثال‌ها
 
-## Basic usage
+## استفادهٔ پایه
 
-This example demonstrates how to disambiguate between the color scheme preference set by the user agent vs a programmatic override.
+این مثال نشان می‌دهد که چگونه می‌توان بین ترجیحِ «طرح‌رنگ» (color scheme) تنظیم‌شده توسط عامل کاربر (user agent) و یک override برنامه‌ای تمایز قائل شد.
 
 ```js
 if (navigator.preferences.colorScheme.override === null) {
@@ -43,10 +41,10 @@ if (navigator.preferences.colorScheme.override === null) {
 }
 ```
 
-## Specifications
+## مشخصات فنی
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
