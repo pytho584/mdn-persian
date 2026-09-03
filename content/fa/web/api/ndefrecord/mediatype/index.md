@@ -1,7 +1,5 @@
 ---
 title: "NDEFRecord: mediaType property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NDEFRecord/mediaType"
-status: "needs-translation"
 ---
 
 ---
@@ -16,17 +14,15 @@ browser-compat: api.NDEFRecord.mediaType
 
 {{SecureContext_Header}}{{SeeCompatTable}}{{APIRef("Web NFC API")}}
 
-The **`mediaType`**
-property of the {{DOMxRef("NDEFRecord")}} interface returns the {{Glossary("MIME type")}} of the record. This value will be `null` if `recordType` is not equal to `"mime"`.
+خاصیت **`mediaType`** از رابط {{DOMxRef("NDEFRecord")}}، {{Glossary("MIME type")}} رکورد را برمی‌گرداند. اگر `recordType` برابر با `"mime"` نباشد، این مقدار `null` خواهد بود.
 
-## Value
+## مقدار
 
-A string, containing the {{Glossary("MIME type")}} of the record
-payload.
+یک رشته است که شامل {{Glossary("MIME type")}} بار (payload) رکورد می‌شود.
 
-## Examples
+## مثال‌ها
 
-The following example loops over the records in an {{domxref("NDEFMessage")}} object, which is retrieved from {{domxref("NDEFReadingEvent.message")}}. It then uses the `mediaType` property to determine which of the records to parse.
+مثال زیر رکوردهای داخل یک شیء {{domxref("NDEFMessage")}} را پیمایش می‌کند که از {{domxref("NDEFReadingEvent.message")}} گرفته شده است. سپس از خاصیت `mediaType` برای تعیین اینکه کدام‌یک از رکوردها باید پردازش شوند استفاده می‌کند.
 
 ```js
 const ndef = new NDEFReader();
@@ -43,10 +39,10 @@ ndef.onreading = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
