@@ -1,11 +1,5 @@
 ---
 title: "Performance: eventCounts property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Performance/eventCounts"
-status: "needs-translation"
----
-
----
-title: "Performance: eventCounts property"
 short-title: eventCounts
 slug: Web/API/Performance/eventCounts
 page-type: web-api-instance-property
@@ -14,46 +8,46 @@ browser-compat: api.Performance.eventCounts
 
 {{APIRef("Performance API")}}
 
-The read-only `performance.eventCounts` property is an {{domxref("EventCounts")}} map containing the number of events which have been dispatched per event type since the page was loaded.
+خاصیت read-only **`performance.eventCounts`** یک {{domxref("EventCounts")}} map (نقشه) است که تعداد رویدادهای ارسال‌شده به ازای هر نوع رویداد را از زمان بارگذاری صفحه نگه می‌دارد.
 
-Not all event types are exposed. You can only get counts for event types supported by the {{domxref("PerformanceEventTiming")}} interface.
+همه انواع رویدادها در معرض دید قرار نمی‌گیرند. شما فقط می‌توانید تعداد رویدادهایی را دریافت کنید که توسط رابط {{domxref("PerformanceEventTiming")}} پشتیبانی می‌شوند.
 
-## Value
+## مقدار
 
-An {{domxref("EventCounts")}} map.
-(A read-only {{jsxref("Map")}} without the `clear()`, `delete()`, and `set()` methods).
+یک {{domxref("EventCounts")}} map.
+(یک {{jsxref("Map")}} فقط خواندنی بدون متدهای `clear()`، `delete()` و `set()`).
 
-## Examples
+## مثال‌ها
 
-### Reporting event types and their counts
+### گزارش انواع رویدادها و تعدادشان
 
-If you like to send event counts to your analytics, you may want to implement a function like `sendToEventAnalytics` which takes the event counts from the `performance.eventCounts` map and then uses the [Fetch API](/en-US/docs/Web/API/Fetch_API) to post the data to your endpoint.
+اگر می‌خواهید تعداد رویدادها را به سامانه تحلیل خود ارسال کنید، می‌توانید تابعی مانند `sendToEventAnalytics` پیاده‌سازی کنید که تعداد رویدادها را از `performance.eventCounts` map گرفته و سپس با استفاده از [Fetch API](/en-US/docs/Web/API/Fetch_API) داده‌ها را به endpoint خود ارسال کند.
 
 ```js
-// Report all exposed events
+// گزارش تمام رویدادهای در معرض دید
 for (entry of performance.eventCounts.entries()) {
   const type = entry[0];
   const count = entry[1];
   // sendToEventAnalytics(type, count);
 }
 
-// Report a specific event
+// گزارش یک رویداد خاص
 const clickCount = performance.eventCounts.get("click");
 // sendToEventAnalytics("click", clickCount);
 
-// Check if an event count is exposed for a type
+// بررسی کنید که آیا تعداد یک رویداد برای یک نوع خاص در معرض دید است
 const isExposed = performance.eventCounts.has("mousemove"); // false
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("EventCounts")}}
 - {{domxref("PerformanceEventTiming")}}
