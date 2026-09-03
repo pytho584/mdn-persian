@@ -1,10 +1,4 @@
 ---
-title: "PluginArray"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PluginArray"
-status: "needs-translation"
----
-
----
 title: PluginArray
 slug: Web/API/PluginArray
 page-type: web-api-interface
@@ -15,28 +9,28 @@ browser-compat: api.PluginArray
 
 {{APIRef("HTML DOM")}}{{deprecated_header}}
 
-The `PluginArray` interface is used to store a list of {{DOMxRef("Plugin")}} objects; it's returned by the {{DOMxRef("Navigator.plugins", "navigator.plugins")}} property. The `PluginArray` is not a JavaScript array, but has the `length` property and supports accessing individual items using bracket notation (`plugins[2]`), as well as via `item(index)` and `namedItem("name")` methods.
+رابط `PluginArray` برای نگهداری فهرستی از اشیاء {{DOMxRef("Plugin")}} به‌کار می‌رود و توسط ویژگی {{DOMxRef("Navigator.plugins", "navigator.plugins")}} بازگردانده می‌شود. `PluginArray` یک آرایهٔ جاوااسکریپت نیست، اما دارای ویژگی `length` است و امکان دسترسی به تک‌تک آیتم‌ها را هم از طریق نشانه‌گذاری براکت (`plugins[2]`) و هم از طریق متدهای `item(index)` و `namedItem("name")` فراهم می‌کند.
 
 > [!NOTE]
-> Own properties of `PluginArray` objects are no longer enumerable in the latest browser versions.
+> در جدیدترین نسخه‌های مرورگرها، ویژگی‌های اختصاصی اشیای `PluginArray` دیگر شمارش‌پذیر نیستند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{DOMxRef("PluginArray.length")}} {{ReadOnlyInline}} {{Deprecated_Inline}}
-  - : The number of plugins in the array.
+  - : تعداد پلاگین‌های موجود در آرایه.
 
-## Instance methods
+## متدهای نمونه
 
 - {{DOMxRef("PluginArray.item")}} {{Deprecated_Inline}}
-  - : Returns the {{DOMxRef("Plugin")}} at the specified index into the array.
+  - : شیء {{DOMxRef("Plugin")}} را در ایندکسِ مشخص‌شده در آرایه بازمی‌گرداند.
 - {{DOMxRef("PluginArray.namedItem")}} {{Deprecated_Inline}}
-  - : Returns the {{DOMxRef("Plugin")}} with the specified name.
+  - : شیء {{DOMxRef("Plugin")}} را با نام مشخص‌شده بازمی‌گرداند.
 - {{DOMxRef("PluginArray.refresh")}} {{Deprecated_Inline}}
-  - : Refreshes all plugins on the current page, optionally reloading documents.
+  - : همهٔ پلاگین‌های صفحهٔ جاری را تازه‌سازی می‌کند و به‌صورت اختیاری اسناد را نیز از نو بارگذاری می‌کند.
 
-## Examples
+## مثال‌ها
 
-The following example function returns the version of the Shockwave Flash plugin.
+مثال زیر، نسخهٔ پلاگین شاک‌ویو فلش را به دست می‌دهد.
 
 ```js
 const pluginsLength = navigator.plugins.length;
@@ -58,7 +52,7 @@ for (let i = 0; i < pluginsLength; i++) {
 }
 ```
 
-The following example displays information about the installed plugin(s).
+مثال زیر اطلاعاتی دربارهٔ پلاگین(های) نصب‌شده نمایش می‌دهد.
 
 ```js
 const pluginsLength = navigator.plugins.length;
@@ -75,12 +69,12 @@ for (let i = 0; i < pluginsLength; i++) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-In addition to listing each plugin as a pseudo-array by zero-indexed numeric properties, Firefox provides properties that are the plugin name directly on the PluginArray object.
+علاوه بر اینکه هر پلاگین از طریق ویژگی‌های عددی با ایندکسِ صفر به‌صورت یک شبه‌آرایه فهرست می‌شود، فایرفاکس ویژگی‌هایی را نیز مستقیماً روی شیء `PluginArray` ارائه می‌کند که نامِ همان پلاگین هستند.
