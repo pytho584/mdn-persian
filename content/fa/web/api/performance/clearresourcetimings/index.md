@@ -1,11 +1,5 @@
 ---
 title: "Performance: clearResourceTimings() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Performance/clearResourceTimings"
-status: "needs-translation"
----
-
----
-title: "Performance: clearResourceTimings() method"
 short-title: clearResourceTimings()
 slug: Web/API/Performance/clearResourceTimings
 page-type: web-api-instance-method
@@ -14,41 +8,40 @@ browser-compat: api.Performance.clearResourceTimings
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The **`clearResourceTimings()`** method removes all performance entries with an {{domxref("PerformanceEntry.entryType","entryType")}} of `"resource"` from the browser's performance timeline and sets the size of the performance resource data buffer to zero.
+متد **`clearResourceTimings()`** تمام ورودی‌های عملکرد (PerformanceEntry) با {{domxref("PerformanceEntry.entryType","entryType")}} برابر با `"resource"` را از جدول زمانی عملکرد مرورگر حذف می‌کند و اندازه بافر داده منابع عملکرد را به صفر بازنشانی می‌کند.
 
-To set the size of the browser's performance resource data buffer, use the
-{{domxref("Performance.setResourceTimingBufferSize()")}} method.
+برای تنظیم اندازه بافر داده منابع عملکرد مرورگر، از متد {{domxref("Performance.setResourceTimingBufferSize()")}} استفاده کنید.
 
-To get notified when the browser's resource timing buffer is full, listen for the {{domxref("Performance.resourcetimingbufferfull_event", "resourcetimingbufferfull")}} event.
+برای دریافت اعلان هنگام پر شدن بافر زمان‌بندی منابع مرورگر، به رویداد {{domxref("Performance.resourcetimingbufferfull_event", "resourcetimingbufferfull")}} گوش دهید.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 clearResourceTimings()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-### Clearing the performance resource data buffer
+### پاک کردن بافر داده منابع عملکرد
 
-To remove all resource performance entries from the buffer, call the `clearResourceTimings()` at an appropriate point in your code or paste it into the console.
+برای حذف تمام ورودی‌های عملکرد منابع از بافر، متد `clearResourceTimings()` را در نقطه مناسب کد خود فراخوانی کنید یا آن را در کنسول قرار دهید.
 
 ```js
 performance.clearResourceTimings();
 performance.getEntriesByType("resource").length; // 0
 ```
 
-### Taking records and emptying performance observers
+### ثبت رکوردها و خالی کردن PerformanceObserver
 
-When using {{domxref("PerformanceObserver")}} objects (especially with the `buffered` flag set to `true`), the performance resource buffer might get full quickly. However, instead of clearing the buffer, you can also store the current list of performance entries and empty the performance observer using the {{domxref("PerformanceObserver.takeRecords()")}} method. This works with all kinds of performance entry types, not just `"resource"` entries.
+هنگام استفاده از اشیاء {{domxref("PerformanceObserver")}} (به‌ویژه وقتی پرچم `buffered` روی `true` تنظیم شده باشد)، بافر منابع عملکرد ممکن است به سرعت پر شود. با این حال، به جای پاک کردن بافر، می‌توانید فهرست فعلی ورودی‌های عملکرد را ذخیره کرده و با استفاده از متد {{domxref("PerformanceObserver.takeRecords()")}} مشاهده‌گر عملکرد را خالی کنید. این روش با انواع مختلف ورودی‌های عملکرد کار می‌کند، نه فقط ورودی‌های `"resource"`.
 
 ```js
 function perfObserver(list, observer) {
@@ -63,15 +56,15 @@ observer.observe({ type: "resource", buffered: true });
 const records = observer.takeRecords();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Performance.setResourceTimingBufferSize()")}}
 - {{domxref("Performance.resourcetimingbufferfull_event", "resourcetimingbufferfull")}}
