@@ -1,11 +1,5 @@
 ---
 title: "PerformanceTiming: loadEventEnd property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/loadEventEnd"
-status: "needs-translation"
----
-
----
-title: "PerformanceTiming: loadEventEnd property"
 short-title: loadEventEnd
 slug: Web/API/PerformanceTiming/loadEventEnd
 page-type: web-api-instance-property
@@ -17,28 +11,24 @@ browser-compat: api.PerformanceTiming.loadEventEnd
 {{APIRef("Performance API")}}{{Deprecated_Header}}
 
 > [!WARNING]
-> This interface of this property is deprecated in the [Navigation Timing Level 2 specification](https://w3c.github.io/navigation-timing/#obsolete). Please use the {{domxref("PerformanceNavigationTiming")}}
-> interface's {{domxref("PerformanceNavigationTiming.loadEventEnd")}} read-only property instead.
+> این ویژگی در [مشخصات سطح ۲ زمان‌بندی پیمایش](https://w3c.github.io/navigation-timing/#obsolete) منسوخ شده است. لطفاً به‌جای آن از ویژگی فقط‌خواندنی {{domxref("PerformanceNavigationTiming.loadEventEnd")}} در رابط {{domxref("PerformanceNavigationTiming")}} استفاده کنید.
 
-The legacy
+ویژگی فقط‌خواندنی قدیمی
 **`PerformanceTiming.loadEventEnd`**
-read-only property returns an `unsigned long long` representing the moment,
-in milliseconds since the UNIX epoch, when the {{domxref("Window/load_event", "load")}} event handler
-terminated, that is when the load event is completed. If this event has not yet been
-sent, or is not yet completed, it returns `0`.
+یک `unsigned long long` برمی‌گرداند که نشان‌دهنده لحظه‌ای (به میلی‌ثانیه از مبدأ UNIX) است که مدیریت‌کننده رویداد {{domxref("Window/load_event", "load")}} پایان یافته است؛ یعنی زمانی که رویداد load تکمیل شده است. اگر این رویداد هنوز ارسال نشده باشد یا هنوز کامل نشده باشد، مقدار `0` برمی‌گرداند.
 
-## Value
+## مقدار
 
-An `unsigned long long`.
+یک `unsigned long long`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("PerformanceTiming")}} interface it belongs to.
+- رابط {{domxref("PerformanceTiming")}} که این ویژگی به آن تعلق دارد.
