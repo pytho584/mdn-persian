@@ -1,7 +1,6 @@
+```
 ---
 title: "PresentationConnectionAvailableEvent: PresentationConnectionAvailableEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnectionAvailableEvent/PresentationConnectionAvailableEvent"
-status: "needs-translation"
 ---
 
 ---
@@ -16,32 +15,32 @@ browser-compat: api.PresentationConnectionAvailableEvent.PresentationConnectionA
 
 {{APIRef("Presentation API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`PresentationConnectionAvailableEvent()`** constructor creates a new {{domxref("PresentationConnectionAvailableEvent")}} object.
+سازندهٔ **`PresentationConnectionAvailableEvent()`** یک شیء جدید از جنس {{domxref("PresentationConnectionAvailableEvent")}} می‌سازد.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 new PresentationConnectionAvailableInit(type, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string with the name of the event.
-    It is case-sensitive and browsers set it to `connectionavailable`.
+  - : رشته‌ای که نام رویداد را مشخص می‌کند. این نام به بزرگی و کوچکی حروف حساس است و مرورگرها آن را روی `connectionavailable` تنظیم می‌کنند.
 - `options`
-  - : An object that, _in addition of the properties defined in {{domxref("Event/Event", "Event()")}}_, can have the following properties:
+  - : شیءای که _علاوه بر ویژگی‌های تعریف‌شده در {{domxref("Event/Event", "Event()")}}_، می‌تواند ویژگی‌های زیر را داشته باشد:
     - `connection`
-      - : The association {{domxref("PresentationConnection")}} object.
+      - : شیء {{domxref("PresentationConnection")}} مرتبط.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("PresentationConnectionAvailableEvent")}} object.
+یک شیء جدید از {{domxref("PresentationConnectionAvailableEvent")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
+```
