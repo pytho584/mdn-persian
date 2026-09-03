@@ -1,10 +1,4 @@
 ---
-title: "NotRestoredReasons"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NotRestoredReasons"
-status: "needs-translation"
----
-
----
 title: NotRestoredReasons
 slug: Web/API/NotRestoredReasons
 page-type: web-api-interface
@@ -15,43 +9,43 @@ browser-compat: api.NotRestoredReasons
 
 {{APIRef("Performance API")}}{{SeeCompatTable}}
 
-The **`NotRestoredReasons`** interface of the {{domxref("Performance API", "Performance API", "", "nocode")}} provides report data containing reasons why the current document was blocked from using the back/forward cache ({{Glossary("bfcache")}}) on navigation.
+رابطهٔ **`NotRestoredReasons`** در {{domxref("Performance API", "Performance API", "", "nocode")}} داده‌های گزارشی را فراهم می‌کند که شامل دلایلی است که باعث شده‌اند سند فعلی در هنگام پیمایش از استفاده از حافظهٔ نهان رفت و برگشت ({{Glossary("bfcache")}}) مسدود شود.
 
-These objects are accessed via the {{domxref("PerformanceNavigationTiming.notRestoredReasons")}} property.
+این اشیاء از طریق ویژگی {{domxref("PerformanceNavigationTiming.notRestoredReasons")}} قابل دسترسی هستند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("NotRestoredReasons.children", "children")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : An array of `NotRestoredReasons` objects, one for each child {{htmlelement("iframe")}} embedded in the current document, which may contain reasons why the top-level frame was blocked relating to the child frames. Each object has the same structure as the parent object — this way, any number of levels of embedded `<iframe>`s can be represented inside the object recursively. If the frame has no children, the array will be empty; if the document is in a cross-origin `<iframe>`, `children` will return `null`.
+  - : آرایه‌ای از اشیاء `NotRestoredReasons`، یکی برای هر {{htmlelement("iframe")}} فرزندی که در سند فعلی جاسازی شده است. این اشیاء ممکن است حاوی دلایل مسدود شدن فریم سطح بالا مربوط به فریم‌های فرزند باشند. هر شیء همان ساختار شیء والد را دارد — به این ترتیب، هر تعداد سطح از `<iframe>`های تودرتو می‌توانند به صورت بازگشتی در داخل شیء نمایش داده شوند. اگر فریم فرزندی نداشته باشد، آرایه خالی خواهد بود؛ اگر سند در یک `<iframe>` متقاطع‌المنشأ (cross-origin) باشد، `children` مقدار `null` برمی‌گرداند.
 - {{domxref("NotRestoredReasons.id", "id")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : A string representing the `id` attribute value of the `<iframe>` the document is contained in (for example `<iframe id="foo" src="...">`). If the document is not in an `<iframe>` or the `<iframe>` has no `id` set, `id` will return `null`.
+  - : رشته‌ای که مقدار ویژگی `id` مربوط به `<iframe>`ای که سند در آن قرار دارد را نشان می‌دهد (مثلاً `<iframe id="foo" src="...">`). اگر سند در یک `<iframe>` نباشد یا `<iframe>` ویژگی `id` را تنظیم نکرده باشد، `id` مقدار `null` برمی‌گرداند.
 - {{domxref("NotRestoredReasons.name", "name")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : A string representing the `name` attribute value of the `<iframe>` the document is contained in (for example `<iframe name="bar" src="...">`). If the document is not in an `<iframe>` or the `<iframe>` has no `name` set, `name` will return `null`.
+  - : رشته‌ای که مقدار ویژگی `name` مربوط به `<iframe>`ای که سند در آن قرار دارد را نشان می‌دهد (مثلاً `<iframe name="bar" src="...">`). اگر سند در یک `<iframe>` نباشد یا `<iframe>` ویژگی `name` را تنظیم نکرده باشد، `name` مقدار `null` برمی‌گرداند.
 - {{domxref("NotRestoredReasons.reasons", "reasons")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : An array of {{domxref("NotRestoredReasonDetails")}} objects, each representing a reason why the navigated page was blocked from using the bfcache. If the document is in a cross-origin `<iframe>`, `reasons` will return `null`, but the parent document may show a `reason` of `"masked"` if any `<iframe>`s blocked bfcache usage for the top-level frame.
+  - : آرایه‌ای از اشیاء {{domxref("NotRestoredReasonDetails")}} که هر کدام دلیلی را نشان می‌دهد که باعث مسدود شدن صفحهٔ پیمایش‌شده از استفاده از bfcache شده است. اگر سند در یک `<iframe>` متقاطع‌المنشأ باشد، `reasons` مقدار `null` برمی‌گرداند، اما سند والد ممکن است دلیلی به صورت `"masked"` نشان دهد اگر هر یک از `<iframe>`ها استفاده از bfcache را برای فریم سطح بالا مسدود کرده باشند.
 - {{domxref("NotRestoredReasons.src", "src")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : A string representing the path to the source of the `<iframe>` the document is contained in (for example `<iframe src="exampleframe.html">`). If the document is not in an `<iframe>`, `src` will return `null`.
+  - : رشته‌ای که مسیر منبع `<iframe>`ای که سند در آن قرار دارد را نشان می‌دهد (مثلاً `<iframe src="exampleframe.html">`). اگر سند در یک `<iframe>` نباشد، `src` مقدار `null` برمی‌گرداند.
 - {{domxref("NotRestoredReasons.url", "url")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : A string representing the URL of the navigated page or `<iframe>`. If the document is in a cross-origin `<iframe>`, `url` will return `null`.
+  - : رشته‌ای که URL صفحهٔ پیمایش‌شده یا `<iframe>` را نشان می‌دهد. اگر سند در یک `<iframe>` متقاطع‌المنشأ باشد، `url` مقدار `null` برمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("NotRestoredReasons.toJSON", "toJSON()")}} {{Experimental_Inline}}
-  - : A {{Glossary("Serialization","serializer")}}; returns a JSON representation of the `NotRestoredReasons` object.
+  - : یک {{Glossary("Serialization","سریال‌ساز")}}؛ یک نمایش JSON از شیء `NotRestoredReasons` برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-See [Monitoring bfcache blocking reasons](/en-US/docs/Web/API/Performance_API/Monitoring_bfcache_blocking_reasons) for examples.
+برای مثال‌ها به [پایش دلایل مسدودسازی bfcache](/en-US/docs/Web/API/Performance_API/Monitoring_bfcache_blocking_reasons) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Monitoring bfcache blocking reasons](/en-US/docs/Web/API/Performance_API/Monitoring_bfcache_blocking_reasons)
+- [پایش دلایل مسدودسازی bfcache](/en-US/docs/Web/API/Performance_API/Monitoring_bfcache_blocking_reasons)
 - {{domxref("PerformanceNavigationTiming.notRestoredReasons")}}
