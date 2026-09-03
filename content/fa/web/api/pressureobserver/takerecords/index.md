@@ -1,7 +1,5 @@
 ---
 title: "PressureObserver: takeRecords() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PressureObserver/takeRecords"
-status: "needs-translation"
 ---
 
 ---
@@ -16,29 +14,29 @@ browser-compat: api.PressureObserver.takeRecords
 
 {{APIRef("Compute Pressure API")}}{{SeeCompatTable}}{{AvailableInWorkers("window_and_worker_except_service")}}{{securecontext_header}}
 
-The **`takeRecords()`** method of the {{domxref('PressureObserver')}} interface returns the current list of pressure records stored in the pressure observer, emptying it out.
+متد **`takeRecords()`** از رابط {{domxref('PressureObserver')}} فهرست فعلیِ سوابق فشار ذخیره‌شده در ناظر فشار را بازمی‌گرداند و آن را خالی می‌کند.
 
-It is useful when you want to a stop observing a source but would like to be sure to get any records that have not yet been passed into the observer callback.
+این متد زمانی مفید است که می‌خواهید مشاهده یک منبع را متوقف کنید، اما مطمئن شوید که همه رکوردهایی را که هنوز به callback ناظر ارسال نشده‌اند، دریافت کرده‌اید.
 
-## Syntax
+## نحو
 
 ```js-nolint
 takeRecords()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-An {{jsxref("Array")}} of {{domxref("PressureRecord")}} objects.
+یک {{jsxref("Array")}} شامل اشیاء {{domxref("PressureRecord")}}.
 
-## Examples
+## نمونه‌ها
 
-### Taking records
+### برداشتن سوابق
 
-The following example stores the current list of pressure records into `records` and empties the pressure observer.
+در مثال زیر، فهرست فعلیِ سوابق فشار در `records` ذخیره و ناظر فشار خالی می‌شود.
 
 ```js
 const observer = new PressureObserver(callback);
@@ -53,10 +51,10 @@ if (records.length > 0) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
