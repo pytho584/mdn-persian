@@ -1,7 +1,5 @@
 ---
 title: "PictureInPictureEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PictureInPictureEvent"
-status: "needs-translation"
 ---
 
 ---
@@ -13,34 +11,34 @@ browser-compat: api.PictureInPictureEvent
 
 {{APIRef("Picture-in-Picture API")}}
 
-The **`PictureInPictureEvent`** interface represents picture-in-picture-related events, including {{domxref("HTMLVideoElement/enterpictureinpicture_event", "enterpictureinpicture")}}, {{domxref("HTMLVideoElement/leavepictureinpicture_event", "leavepictureinpicture")}} and {{domxref("PictureInPictureWindow/resize_event", "resize")}}.
+اینترفیس **`PictureInPictureEvent`** نمایانگر رویدادهای مرتبط با Picture-in-Picture (تصویر در تصویر) است، از جمله {{domxref("HTMLVideoElement/enterpictureinpicture_event", "enterpictureinpicture")}}، {{domxref("HTMLVideoElement/leavepictureinpicture_event", "leavepictureinpicture")}} و {{domxref("PictureInPictureWindow/resize_event", "resize")}}.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("PictureInPictureEvent.PictureInPictureEvent", "PictureInPictureEvent()")}}
-  - : Creates a `PictureInPictureEvent` event with the given parameters.
+  - : یک رویداد `PictureInPictureEvent` را با پارامترهای داده‌شده ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface also inherits properties from its parent {{domxref("Event")}}_.
+_این اینترفیس همچنین ویژگی‌های والد خود، {{domxref("Event")}}، را به ارث می‌برد._
 
 - {{domxref("PictureInPictureEvent.pictureInPictureWindow")}}
-  - : Returns the {{domxref("PictureInPictureWindow")}} the event relates to.
+  - : شیء {{domxref("PictureInPictureWindow")}} مرتبط با رویداد را برمی‌گرداند.
 
-## Instance methods
+## متدهای نمونه
 
-_This interface also inherits methods from its parent {{domxref("Event")}}_.
+_این اینترفیس همچنین متدهای والد خود، {{domxref("Event")}}، را به ارث می‌برد._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- The {{domxref("Event")}} base interface
+- اینترفیس پایه {{domxref("Event")}}
