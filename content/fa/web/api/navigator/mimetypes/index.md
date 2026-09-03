@@ -1,11 +1,5 @@
 ---
 title: "Navigator: mimeTypes property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/mimeTypes"
-status: "needs-translation"
----
-
----
-title: "Navigator: mimeTypes property"
 short-title: mimeTypes
 slug: Web/API/Navigator/mimeTypes
 page-type: web-api-instance-property
@@ -14,48 +8,39 @@ browser-compat: api.Navigator.mimeTypes
 
 {{ ApiRef("HTML DOM") }}
 
-Returns a {{domxref("MimeTypeArray")}} object, which contains a list of {{domxref("MimeType")}} objects representing the MIME types recognized and supported by the browser.
-The array can be queried for information about the enabled plugin that is used to handle a file of the specified type.
-Named properties of the returned object are not enumerable (except in very old browser versions).
+یک شیء {{domxref("MimeTypeArray")}} را برمی‌گرداند که شامل فهرستی از اشیاء {{domxref("MimeType")}} است و نشان‌دهندهٔ انواع MIME است که توسط مرورگر شناسایی و پشتیبانی می‌شوند. می‌توان از این آرایه برای دریافت اطلاعات دربارهٔ افزونهٔ فعال (plugin) استفاده کرد که برای مدیریت یک فایل از نوع مشخص به کار می‌رود. ویژگی‌های نام‌دار شیء بازگشتی قابل شمارش نیستند (به جز در نسخه‌های بسیار قدیمی مرورگر).
 
-Recent versions of the specification hard-code the returned set of MIME types.
-If PDF files can be displayed inline then `application/pdf` and `text/pdf` are listed.
-Otherwise an empty list is returned.
+نسخه‌های اخیر مشخصات، مجموعهٔ بازگشتی از انواع MIME را به صورت ثابت (hard-coded) تعیین می‌کنند. اگر فایل‌های PDF بتوانند به صورت درون‌خطی (inline) نمایش داده شوند، مقادیر `application/pdf` و `text/pdf` در فهرست قرار می‌گیرند. در غیر این صورت یک فهرست خالی بازگردانده می‌شود.
 
 > [!NOTE]
-> Use {{domxref("Navigator.pdfViewerEnabled")}} to determine if inline viewing of PDF files is supported. Do not infer it from this property.
+> برای تعیین اینکه آیا نمایش درون‌خطی فایل‌های PDF پشتیبانی می‌شود، از {{domxref("Navigator.pdfViewerEnabled")}} استفاده کنید. این ویژگی را از این خاصیت استنباط نکنید.
 
-Legacy browser versions do not hard-code the list returned by the property, and might return other MIME types.
+نسخه‌های قدیمی مرورگر فهرست بازگشتی را به صورت ثابت تعیین نمی‌کنند و ممکن است انواع MIME دیگری را برگردانند.
 
-## Value
+## مقدار
 
-A `MimeTypeArray` object which has a `length` property as well as `item(index)` and `namedItem(name)` methods.
+یک شیء `MimeTypeArray` که دارای خاصیت `length` و همچنین متدهای `item(index)` و `namedItem(name)` است. اگر نمایش درون‌خطی PDF پشتیبانی شود، این شیء شامل ورودی‌هایی برای انواع MIME `application/pdf` و `text/pdf` است. در غیر این صورت یک `MimeTypeArray` خالی بازگردانده می‌شود. توضیحات و پسوندهای فایل پشتیبانی‌شده توسط افزونه‌های فعال به ترتیب به صورت `'pdf'` و `'Portable Document Format'` ثابت شده‌اند.
 
-If PDF inline viewing is supported this has entries for MIME types `application/pdf` and `text/pdf`.
-Otherwise an empty `MimeTypeArray` is returned.
-The description and file suffixes supported by enabled plugins are hard coded to `'pdf'` and `'Portable Document Format'`, respectively.
+## مثال‌ها
 
-## Examples
-
-The code below tests whether PDF files can be viewed inline, and then prints the description of the plugin and the file suffixes it supports.
+کد زیر بررسی می‌کند که آیا فایل‌های PDF می‌توانند به صورت درون‌خطی نمایش داده شوند و سپس توضیحات افزونه و پسوندهای فایل پشتیبانی‌شده را چاپ می‌کند.
 
 ```js
 if ("application/pdf" in navigator.mimeTypes) {
-  // browser supports inline viewing of PDF files.
+  // مرورگر از نمایش درون‌خطی فایل‌های PDF پشتیبانی می‌کند.
 
   const { description, suffixes } = navigator.mimeTypes["application/pdf"];
   console.log(`Description: ${description}, Suffix: ${suffixes}`);
-  // expected output: Description: Portable Document Format, Suffix: pdf
+  // خروجی مورد انتظار: Description: Portable Document Format, Suffix: pdf
 }
 ```
 
-Note that while the above code tests for `application/pdf` you could equally well check `text/pdf`. (Either both or neither MIME type will be true.)
-In addition, on current browsers you don't actually need to get the plugin description and suffixes, because this information is also hard-coded.
+توجه کنید که در کد بالا برای `application/pdf` بررسی شده است، اما می‌توانستید به همان اندازه `text/pdf` را نیز بررسی کنید. (هر دو نوع MIME یا هر دو درست هستند یا هیچ‌کدام.) علاوه بر این، در مرورگرهای فعلی نیازی به دریافت توضیحات و پسوندهای افزونه نیست، زیرا این اطلاعات نیز ثابت شده‌اند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
