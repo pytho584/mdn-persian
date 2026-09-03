@@ -1,7 +1,5 @@
 ---
 title: "PointerEvent: azimuthAngle property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent/azimuthAngle"
-status: "needs-translation"
 ---
 
 ---
@@ -14,22 +12,21 @@ browser-compat: api.PointerEvent.azimuthAngle
 
 {{ APIRef("Pointer Events") }}
 
-The **`azimuthAngle`** read-only property of the {{domxref("PointerEvent")}} interface represents the angle between the Y-Z plane and the plane containing both the transducer (pointer or stylus) axis and the Y axis.
+ویژگی فقط‌خواندنیِ **`azimuthAngle`** از رابط {{domxref("PointerEvent")}} نمایانگر زاویهٔ بین صفحهٔ Y-Z و صفحه‌ای است که هم محورِ مبدل (نشانگر یا قلم) و هم محور Y را در بر می‌گیرد.
 
-Depending on the specific hardware and platform, user agents will likely only receive one set of values for the transducer orientation relative to the screen plane — either {{domxref("PointerEvent.tiltX", "tiltX")}} and {{domxref("PointerEvent.tiltY", "tiltY")}} or {{domxref("PointerEvent.altitudeAngle", "altitudeAngle")}} and `azimuthAngle`.
+بسته به سخت‌افزار و پلتفرمِ خاص، عامل‌های کاربر به احتمال زیاد تنها یکی از مجموعه‌های مقادیرِ جهت‌گیریِ مبدل را نسبت به صفحهٔ نمایش دریافت می‌کنند: یا {{domxref("PointerEvent.tiltX", "tiltX")}} و {{domxref("PointerEvent.tiltY", "tiltY")}}، یا {{domxref("PointerEvent.altitudeAngle", "altitudeAngle")}} و `azimuthAngle`.
 
 ![The azimuth angle of a pointer compared to the altitude angle](azimuth_altitude_angles.svg)
 
-For an additional illustration of this property, see [Figure 5 in the specification](https://w3c.github.io/pointerevents/#figure_azimuthAngle).
+برای تصویرسازی بیشتر از این ویژگی، به [شکل ۵ در مشخصات](https://w3c.github.io/pointerevents/#figure_azimuthAngle) مراجعه کنید.
 
-## Value
+## مقدار
 
-An angle in radians between `0` and `2π` where `0` represents a transducer whose cap is pointing in the direction of increasing X values (point to "3 o'clock" if looking straight down) on the X-Y plane, and the values progressively increase when going clockwise (`π/2` at "6 o'clock", `π` at "9 o'clock", `3π/2` at "12 o'clock").
+زاویه‌ای بر حسب رادیان بین `0` و `2π`؛ مقدار `0` حالتی را نشان می‌دهد که سرِ مبدل در صفحهٔ X-Y به سمت مقادیرِ فزایندهٔ X اشاره می‌کند (اگر از بالا مستقیم به پایین نگاه کنید، به سمت «ساعت ۳» است). این زاویه با حرکت در جهت عقربه‌های ساعت به‌تدریج افزایش می‌یابد (`π/2` در «ساعت ۶»، `π` در «ساعت ۹»، `3π/2` در «ساعت ۱۲»).
 
-When the transducer is perpendicular to the surface ({{domxref("PointerEvent.altitudeAngle", "altitudeAngle")}} of `π/2`), the value is 0.
-For hardware and platforms that do not report tilt or angle, the value is `0`.
+هنگامی که مبدل عمود بر سطح باشد ({{domxref("PointerEvent.altitudeAngle", "altitudeAngle")}} برابر `π/2`)، مقدار این ویژگی `0` است. برای سخت‌افزارها و پلتفرم‌هایی که شیب یا زاویه را گزارش نمی‌کنند نیز مقدار `0` است.
 
-## Example
+## مثال
 
 ```js
 someElement.addEventListener("pointerdown", (event) => {
@@ -37,15 +34,15 @@ someElement.addEventListener("pointerdown", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{ domxref("PointerEvent.altitudeAngle") }}
 - {{ domxref("PointerEvent.tiltX") }}
