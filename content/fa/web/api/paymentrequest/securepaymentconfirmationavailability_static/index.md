@@ -1,11 +1,5 @@
 ---
 title: "PaymentRequest: securePaymentConfirmationAvailability() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/securePaymentConfirmationAvailability_static"
-status: "needs-translation"
----
-
----
-title: "PaymentRequest: securePaymentConfirmationAvailability() static method"
 short-title: securePaymentConfirmationAvailability()
 slug: Web/API/PaymentRequest/securePaymentConfirmationAvailability_static
 page-type: web-api-static-method
@@ -16,36 +10,36 @@ browser-compat: api.PaymentRequest.securePaymentConfirmationAvailability_static
 
 {{securecontext_header}}{{APIRef("Payment Request API")}}{{SeeCompatTable}}
 
-The **`securePaymentConfirmationAvailability()`** static method of the {{domxref("PaymentRequest")}} interface indicates whether the [Secure payment confirmation](/en-US/docs/Web/API/Payment_Request_API/Using_secure_payment_confirmation) (SPC) feature is available.
+متد ایستای **`securePaymentConfirmationAvailability()`** در رابط {{domxref("PaymentRequest")}} نشان می‌دهد که آیا قابلیت [تأیید پرداخت امن](/en-US/docs/Web/API/Payment_Request_API/Using_secure_payment_confirmation) (SPC) در دسترس است یا خیر.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 securePaymentConfirmationAvailability()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with an enumerated value indicating whether SPC is available, and if not, a reason for non-availability.
+یک {{jsxref("Promise")}} که با یک مقدار شمارشی (enumerated value) resolved می‌شود و نشان می‌دهد که آیا SPC در دسترس است و اگر نیست، دلیل عدم دسترسی چیست.
 
-Possible values are:
+مقادیر احتمالی عبارتند از:
 
 - `available`
-  - : SPC is available in the calling frame. This doesn't guarantee that an [SPC-compatible credential](/en-US/docs/Web/API/Payment_Request_API/Using_secure_payment_confirmation#creating_a_credential) is available to authenticate against.
+  - : SPC در فریم فراخوان (calling frame) در دسترس است. این تضمین نمی‌کند که یک [اعتبارنامه سازگار با SPC](/en-US/docs/Web/API/Payment_Request_API/Using_secure_payment_confirmation#creating_a_credential) برای احراز هویت موجود باشد.
 - `unavailable-unknown-reason`
-  - : SPC is not available in the calling frame, for an unknown reason. The browser may return this result instead of a more specific reason, in order to protect user privacy.
+  - : SPC در فریم فراخوان به دلیلی نامشخص در دسترس نیست. مرورگر ممکن است این نتیجه را به جای یک دلیل دقیق‌تر بازگرداند تا از حریم خصوصی کاربر محافظت کند.
 - `unavailable-feature-not-enabled`
-  - : SPC is not available in the calling frame because it is not enabled.
+  - : SPC در فریم فراخوان در دسترس نیست، زیرا فعال نشده است.
 - `unavailable-no-permission-policy`
-  - : SPC is not available in the calling frame, because it is blocked by a [`payment`](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy/payment) [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy).
+  - : SPC در فریم فراخوان در دسترس نیست، زیرا توسط [سیاست مجوز (Permissions Policy)](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) [`payment`](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy/payment) مسدود شده است.
 - `unavailable-no-user-verifying-platform-authenticator`
-  - : SPC is not available in the calling frame, because there is no user-verifying platform authenticator available ({{domxref("PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable()")}} can also be used to discern this information).
+  - : SPC در فریم فراخوان در دسترس نیست، زیرا هیچ احراز هویت‌کننده پلتفرمی تأییدکننده کاربر (user-verifying platform authenticator) در دسترس نیست (برای تشخیص این اطلاعات می‌توان از {{domxref("PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable()")}} نیز استفاده کرد).
 
-## Examples
+## مثال‌ها
 
 ```js
 async function spcSupport() {
@@ -58,14 +52,14 @@ async function spcSupport() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using Secure Payment Confirmation](/en-US/docs/Web/API/Payment_Request_API/Using_secure_payment_confirmation)
+- [استفاده از تأیید پرداخت امن](/en-US/docs/Web/API/Payment_Request_API/Using_secure_payment_confirmation)
