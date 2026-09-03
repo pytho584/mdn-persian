@@ -1,11 +1,5 @@
 ---
 title: "NDEFReadingEvent: serialNumber property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NDEFReadingEvent/serialNumber"
-status: "needs-translation"
----
-
----
-title: "NDEFReadingEvent: serialNumber property"
 short-title: serialNumber
 slug: Web/API/NDEFReadingEvent/serialNumber
 page-type: web-api-instance-property
@@ -16,15 +10,15 @@ browser-compat: api.NDEFReadingEvent.serialNumber
 
 {{APIRef("Web NFC API")}}{{securecontext_header}}{{SeeCompatTable}}
 
-The **`serialNumber`** property of the {{domxref("NDEFReadingEvent")}} interface returns the serial number of the device, which is used for anti-collision and identification, or an empty string if no serial number is available.
+ویژگی **`serialNumber`** از واسط {{domxref("NDEFReadingEvent")}}، شمارهٔ سریال دستگاهی را بازمی‌گرداند که برای جلوگیری از برخورد (anti-collision) و شناسایی استفاده می‌شود؛ یا اگر شمارهٔ سریالی در دسترس نباشد، یک رشتهٔ خالی بازگردانده می‌شود.
 
-## Value
+## مقدار
 
-A string containing the device's serial number.
+یک رشته (string) شامل شمارهٔ سریال دستگاه.
 
-## Examples
+## مثال‌ها
 
-This example shows how to create a convenience function that reads a single tag and then stops polling, saving battery life by cutting unneeded work. The example could easily be extended to time out after a given amount of milliseconds.
+این مثال نشان می‌دهد که چگونه می‌توان یک تابع کمکی نوشت که یک برچسب (tag) را می‌خواند و سپس جست‌وجوی پیوسته (polling) را متوقف می‌کند تا با حذف کارهای غیرضروری، عمر باتری حفظ شود. این مثال را به‌سادگی می‌توان گسترش داد تا پس از مدت زمان مشخصی بر حسب میلی‌ثانیه منقضی شود (timeout).
 
 ```js
 const ndefReader = new NDEFReader();
@@ -50,10 +44,10 @@ read().then(({ serialNumber }) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
