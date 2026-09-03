@@ -1,11 +1,5 @@
 ---
 title: "Navigator: keyboard property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/keyboard"
-status: "needs-translation"
----
-
----
-title: "Navigator: keyboard property"
 short-title: keyboard
 slug: Web/API/Navigator/keyboard
 page-type: web-api-instance-property
@@ -16,19 +10,16 @@ browser-compat: api.Navigator.keyboard
 
 {{SeeCompatTable}}{{APIRef("Keyboard API")}}{{SecureContext_Header}}
 
-The **`keyboard`** read-only property
-of the {{domxref("Navigator")}} interface returns a {{domxref('Keyboard')}} object
-which provides access to functions that retrieve keyboard layout maps and toggle
-capturing of key presses from the physical keyboard.
+ویژگی فقط‌خواندنی **`keyboard`** در رابط {{domxref("Navigator")}} یک شیء {{domxref('Keyboard')}} برمی‌گرداند که دسترسی به توابعی را فراهم می‌کند که نقشه‌های چیدمان صفحه‌کلید را بازیابی کرده و ضبطِ فشردن کلیدها از صفحه‌کلید فیزیکی را روشن/خاموش می‌کنند.
 
-## Value
+## مقدار
 
-A {{domxref('Keyboard')}} object.
+یک شیء {{domxref('Keyboard')}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
