@@ -1,11 +1,5 @@
 ---
 title: "PerformanceObserver: supportedEntryTypes static property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver/supportedEntryTypes_static"
-status: "needs-translation"
----
-
----
-title: "PerformanceObserver: supportedEntryTypes static property"
 short-title: supportedEntryTypes
 slug: Web/API/PerformanceObserver/supportedEntryTypes_static
 page-type: web-api-static-property
@@ -14,19 +8,19 @@ browser-compat: api.PerformanceObserver.supportedEntryTypes_static
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The static **`supportedEntryTypes`** read-only property of the {{domxref("PerformanceObserver")}} interface returns an array of the {{domxref("PerformanceEntry.entryType","entryType")}} values supported by the user agent.
+ویژگی static و فقط‌خواندنی **`supportedEntryTypes`** در رابط {{domxref("PerformanceObserver")}} آرایه‌ای از مقادیر {{domxref("PerformanceEntry.entryType","entryType")}} را که عامل کاربر از آن‌ها پشتیبانی می‌کند برمی‌گرداند.
 
-As the list of supported entries varies per browser and is evolving, this property allows web developers to check which are available.
+از آنجا که فهرست ورودی‌های پشتیبانی‌شده در مرورگرهای مختلف متفاوت است و همچنان در حال تکامل است، این ویژگی به توسعه‌دهندگان وب امکان می‌دهد بررسی کنند که کدام انواع در دسترس هستند.
 
-## Value
+## مقدار
 
-An array of {{domxref("PerformanceEntry.entryType")}} values.
+آرایه‌ای از مقادیر {{domxref("PerformanceEntry.entryType")}}.
 
-## Examples
+## مثال‌ها
 
-### Using the console to check supported types
+### بررسی انواع پشتیبانی‌شده با استفاده از کنسول
 
-To find out which {{domxref("PerformanceEntry.entryType","entryType")}} values a browser supports, enter <kbd>PerformanceObserver.supportedEntryTypes</kbd> into the console. This will return an array of supported values.
+برای اینکه بدانید یک مرورگر از کدام مقادیر {{domxref("PerformanceEntry.entryType","entryType")}} پشتیبانی می‌کند، عبارت <kbd>PerformanceObserver.supportedEntryTypes</kbd> را در کنسول وارد کنید. این کار آرایه‌ای از مقادیر پشتیبانی‌شده را برمی‌گرداند.
 
 ```js
 PerformanceObserver.supportedEntryTypes;
@@ -35,9 +29,9 @@ PerformanceObserver.supportedEntryTypes;
 // returns ["mark", "measure", "resource"] in a worker thread in Chrome 129
 ```
 
-### Checking for unsupported types
+### بررسی انواع پشتیبانی‌نشده
 
-The following function checks for support of an array of possible entry types. The unsupported types are logged to the console, however this information could be logged to client-side analytics to indicate that the particular type could not be observed.
+تابع زیر پشتیبانی از آرایه‌ای از انواع ورودی ممکن را بررسی می‌کند. انواع پشتیبانی‌نشده در کنسول ثبت می‌شوند؛ با این حال، این اطلاعات می‌توانند در تحلیل‌های سمت کلاینت نیز ثبت شوند تا نشان دهند که نوع خاصی قابل مشاهده نبوده است.
 
 ```js
 function detectSupport(entryTypes) {
@@ -51,10 +45,10 @@ function detectSupport(entryTypes) {
 detectSupport(["resource", "mark", "first-input", "largest-contentful-paint"]);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
