@@ -1,11 +1,5 @@
 ---
 title: "PerformanceResourceTiming: initiatorType property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceResourceTiming/initiatorType"
-status: "needs-translation"
----
-
----
-title: "PerformanceResourceTiming: initiatorType property"
 short-title: initiatorType
 slug: Web/API/PerformanceResourceTiming/initiatorType
 page-type: web-api-instance-property
@@ -14,65 +8,65 @@ browser-compat: api.PerformanceResourceTiming.initiatorType
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The **`initiatorType`** read-only property is a string representing web platform feature that initiated the resource load.
+خاصیت فقط‌خواندنی **`initiatorType`** یک رشته (string) است که ویژگی پلتفرم وب که بارگذاری منبع را آغاز کرده است را نشان می‌دهد.
 
 > [!NOTE]
-> This property does not represent the type of content fetched. A `.css` file can be fetched using a {{HTMLElement("link")}} element leading to an `initiatorType` of `link`. When loading images using `background: url()` in a CSS file, the `initiatorType` will be `css` and not `img`.
+> این خاصیت نشان‌دهنده نوع محتوای دریافت‌شده نیست. یک فایل `.css` می‌تواند با استفاده از عنصر {{HTMLElement("link")}} دریافت شود که در این صورت مقدار `initiatorType` برابر با `link` خواهد بود. هنگام بارگذاری تصاویر با استفاده از `background: url()` در یک فایل CSS، مقدار `initiatorType` برابر با `css` خواهد بود و نه `img`.
 
-## Value
+## مقدار
 
-The `initiatorType` property can have the following values, or `other` if none of the conditions match.
+خاصیت `initiatorType` می‌تواند مقادیر زیر را داشته باشد، یا اگر هیچ‌کدام از شرایط مطابقت نداشتند، مقدار `other` را.
 
 - `audio`
-  - : If the request was initiated by an {{HTMLElement("audio")}} element's `src` attribute.
+  - : اگر درخواست توسط ویژگی `src` عنصر {{HTMLElement("audio")}} آغاز شده باشد.
 - `beacon`
-  - : If the request was initiated by a {{domxref("navigator.sendBeacon()")}} method.
+  - : اگر درخواست توسط روش {{domxref("navigator.sendBeacon()")}} آغاز شده باشد.
 - `body`
-  - : If the request was initiated by a {{HTMLElement("body")}} element's `background` attribute.
+  - : اگر درخواست توسط ویژگی `background` عنصر {{HTMLElement("body")}} آغاز شده باشد.
 - `css`
-  - : If the request was initiated by a CSS `url()` function.
+  - : اگر درخواست توسط تابع `url()` در CSS آغاز شده باشد.
 - `early-hint`
-  - : If the request was initiated by an {{HTTPStatus("103")}} `Early Hint` response.
+  - : اگر درخواست توسط پاسخ {{HTTPStatus("103")}} `Early Hint` آغاز شده باشد.
 - `embed`
-  - : If the request was initiated by an {{HTMLElement("embed")}} element's `src` attribute.
+  - : اگر درخواست توسط ویژگی `src` عنصر {{HTMLElement("embed")}} آغاز شده باشد.
 - `fetch`
-  - : If the request was initiated by a {{domxref("Window/fetch", "fetch()")}} method.
+  - : اگر درخواست توسط روش {{domxref("Window/fetch", "fetch()")}} آغاز شده باشد.
 - `frame`
-  - : If the request was initiated by loading a {{HTMLElement("frame")}} element.
+  - : اگر درخواست با بارگذاری یک عنصر {{HTMLElement("frame")}} آغاز شده باشد.
 - `iframe`
-  - : If the request was initiated by an {{HTMLElement("iframe")}} element's `src` attribute.
+  - : اگر درخواست توسط ویژگی `src` عنصر {{HTMLElement("iframe")}} آغاز شده باشد.
 - `icon` {{non-standard_inline}}
-  - : If the request was initiated by a favicon. Non-standard and only reported by Safari.
+  - : اگر درخواست توسط favicon آغاز شده باشد. غیراستاندارد و فقط توسط Safari گزارش می‌شود.
 - `image`
-  - : If the request was initiated by an {{SVGElement("image")}} element.
+  - : اگر درخواست توسط عنصر {{SVGElement("image")}} آغاز شده باشد.
 - `img`
-  - : If the request was initiated by an {{HTMLElement("img")}} element's `src` or `srcset` attribute.
+  - : اگر درخواست توسط ویژگی `src` یا `srcset` عنصر {{HTMLElement("img")}} آغاز شده باشد.
 - `input`
-  - : If the request was initiated by an {{HTMLElement("input")}} element of type `image`.
+  - : اگر درخواست توسط عنصر {{HTMLElement("input")}} از نوع `image` آغاز شده باشد.
 - `link`
-  - : If the request was initiated by a {{HTMLElement("link")}} element.
+  - : اگر درخواست توسط عنصر {{HTMLElement("link")}} آغاز شده باشد.
 - `navigation`
-  - : If the request was initiated by a navigation request.
+  - : اگر درخواست توسط یک درخواست ناوبری آغاز شده باشد.
 - `object`
-  - : If the request was initiated by an {{HTMLElement("object")}} element.
+  - : اگر درخواست توسط عنصر {{HTMLElement("object")}} آغاز شده باشد.
 - `ping`
-  - : If the request was initiated by an {{HTMLElement("a")}} element's `ping`.
+  - : اگر درخواست توسط ویژگی `ping` عنصر {{HTMLElement("a")}} آغاز شده باشد.
 - `script`
-  - : If the request was initiated by a {{HTMLElement("script")}} element.
+  - : اگر درخواست توسط عنصر {{HTMLElement("script")}} آغاز شده باشد.
 - `track`
-  - : If the request was initiated by a {{HTMLElement("track")}} element's `src`.
+  - : اگر درخواست توسط ویژگی `src` عنصر {{HTMLElement("track")}} آغاز شده باشد.
 - `video`
-  - : If the request was initiated by a {{HTMLElement("video")}} element's `poster` or `src`.
+  - : اگر درخواست توسط ویژگی `poster` یا `src` عنصر {{HTMLElement("video")}} آغاز شده باشد.
 - `xmlhttprequest`
-  - : If the request was initiated by an {{domxref("XMLHttpRequest")}}.
+  - : اگر درخواست توسط {{domxref("XMLHttpRequest")}} آغاز شده باشد.
 
-## Examples
+## مثال‌ها
 
-### Filtering resources
+### فیلتر کردن منابع
 
-The `initiatorType` property can be used to get specific resource timing entries only. For example, only those that were initiated by {{HTMLElement("script")}} elements.
+از خاصیت `initiatorType` می‌توان برای دریافت فقط برخی از ورودی‌های زمان‌بندی منابع استفاده کرد. به عنوان مثال، فقط آن‌هایی که توسط عناصر {{HTMLElement("script")}} آغاز شده‌اند.
 
-Example using a {{domxref("PerformanceObserver")}}, which notifies of new `resource` performance entries as they are recorded in the browser's performance timeline. Use the `buffered` option to access entries from before the observer creation.
+مثال با استفاده از {{domxref("PerformanceObserver")}}، که با ثبت شدن ورودی‌های جدید عملکرد `resource` در خط زمانی عملکرد مرورگر، آن‌ها را اطلاع‌رسانی می‌کند. از گزینه `buffered` برای دسترسی به ورودی‌های قبل از ایجاد observer استفاده کنید.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -85,7 +79,7 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "resource", buffered: true });
 ```
 
-Example using {{domxref("Performance.getEntriesByType()")}}, which only shows `resource` performance entries present in the browser's performance timeline at the time you call this method:
+مثال با استفاده از {{domxref("Performance.getEntriesByType()")}}، که فقط ورودی‌های عملکرد `resource` موجود در خط زمانی عملکرد مرورگر را در زمان فراخوانی این روش نشان می‌دهد:
 
 ```js
 const scripts = performance
@@ -94,10 +88,10 @@ const scripts = performance
 console.log(scripts);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
