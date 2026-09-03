@@ -1,11 +1,5 @@
 ---
 title: "PannerNode: rolloffFactor property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PannerNode/rolloffFactor"
-status: "needs-translation"
----
-
----
-title: "PannerNode: rolloffFactor property"
 short-title: rolloffFactor
 slug: Web/API/PannerNode/rolloffFactor
 page-type: web-api-instance-property
@@ -14,27 +8,27 @@ browser-compat: api.PannerNode.rolloffFactor
 
 {{ APIRef("Web Audio API") }}
 
-The `rolloffFactor` property of the {{ domxref("PannerNode") }} interface is a double value describing how quickly the volume is reduced as the source moves away from the listener. This value is used by all distance models. The `rolloffFactor` property's default value is `1`.
+ویژگی `rolloffFactor` از رابط {{ domxref("PannerNode") }} یک مقدار اعشاری است که میزان کاهش سریع صدا را با دور شدن منبع صدا از شنونده توصیف می‌کند. این مقدار در تمام مدل‌های فاصله استفاده می‌شود. مقدار پیش‌فرض ویژگی `rolloffFactor` برابر `1` است.
 
-## Value
+## مقدار
 
-A number whose range depends on the {{ domxref("PannerNode.distanceModel", "distanceModel") }} of the panner as follows (negative values are not allowed):
+یک عدد که محدوده آن به {{ domxref("PannerNode.distanceModel", "distanceModel") }} پنر بستگی دارد (مقادیر منفی مجاز نیستند):
 
 - `"linear"`
-  - : The range is 0 to 1.
+  - : محدوده ۰ تا ۱.
 - `"inverse"`
-  - : The range is 0 to `Infinity`.
+  - : محدوده ۰ تا `Infinity`.
 - `"exponential"`
-  - : The range is 0 to `Infinity`.
+  - : محدوده ۰ تا `Infinity`.
 
-### Exceptions
+### استثناها
 
 - {{jsxref("RangeError")}}
-  - : Thrown if the property has been given a value that is outside the accepted range.
+  - : زمانی پرتاب می‌شود که به ویژگی مقداری خارج از محدوده مجاز داده شده باشد.
 
-## Examples
+## مثال‌ها
 
-This example demonstrates how different `rolloffFactor` values affect how the volume of the test tone decreases with increasing distance from the listener:
+این مثال نحوه تأثیر مقادیر مختلف `rolloffFactor` بر کاهش حجم صدای آزمایشی با افزایش فاصله از شنونده را نشان می‌دهد:
 
 ```js
 const context = new AudioContext();
@@ -70,19 +64,19 @@ scheduleTestTone(0.5, context.currentTime + NOTE_LENGTH);
 scheduleTestTone(0.1, context.currentTime + NOTE_LENGTH * 2);
 ```
 
-After running this code, the resulting waveforms should look something like this:
+پس از اجرای این کد، شکل موج‌های حاصل باید چیزی شبیه به این باشد:
 
-![A waveform visualization of three oscillator tones produced in Web Audio. Each oscillator moves away from the listener at the same speed, but with different rolloffFactors affecting the resulting volume decay.](screen_shot_2018-10-11_at_23.22.37.png)
+![یک نمایش بصری از شکل موج سه تُن نوسان‌گر تولید شده در Web Audio. هر نوسان‌گر با سرعت یکسان از شنونده دور می‌شود، اما با rolloffFactorهای متفاوت که بر کاهش حجم نهایی تأثیر می‌گذارد.](screen_shot_2018-10-11_at_23.22.37.png)
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
-- [Web Audio spatialization basics](/en-US/docs/Web/API/Web_Audio_API/Web_audio_spatialization_basics)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [مبانی مکانی‌سازی صدا در Web Audio](/en-US/docs/Web/API/Web_Audio_API/Web_audio_spatialization_basics)
