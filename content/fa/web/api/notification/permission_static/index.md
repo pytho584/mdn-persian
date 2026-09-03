@@ -1,11 +1,5 @@
 ---
 title: "Notification: permission static property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Notification/permission_static"
-status: "needs-translation"
----
-
----
-title: "Notification: permission static property"
 short-title: permission
 slug: Web/API/Notification/permission_static
 page-type: web-api-static-property
@@ -14,67 +8,60 @@ browser-compat: api.Notification.permission_static
 
 {{APIRef("Web Notifications")}}{{securecontext_header}} {{AvailableInWorkers}}
 
-The **`permission`** read-only static property of the {{domxref("Notification")}}
-interface indicates the current permission granted by the user for the current origin to
-display web notifications.
+خاصیت ایستا و فقط‑خواندنی **`permission`** در رابط {{domxref("Notification")}} مجوز فعلی اعطاشده توسط کاربر برای نمایش اعلان‌های وب در مبدأ (origin) جاری را نشان می‌دهد.
 
-## Value
+## مقدار
 
-A string representing the current permission. The value can be:
+یک رشته که مجوز فعلی را نمایش می‌دهد. مقدار می‌تواند یکی از موارد زیر باشد:
 
 - `granted`
-  - : The user has explicitly granted permission for the current
-    origin to display system notifications.
+  - : کاربر به‌طور صریح برای نمایش اعلان‌های سیستمی از مبدأ جاری مجوز داده است.
 - `denied`
-  - : The user has explicitly denied permission for the current
-    origin to display system notifications.
+  - : کاربر به‌طور صریح از نمایش اعلان‌های سیستمی از مبدأ جاری خودداری کرده است.
 - `default`
-  - : The user decision is unknown; in this case the application
-    will act as if permission was `denied`.
+  - : تصمیم کاربر نامشخص است؛ در این حالت برنامه طوری عمل می‌کند که گویی مجوز رد شده است (`denied`).
 
-## Examples
+## مثال‌ها
 
-The following snippet could be used if you wanted to first check whether notifications
-are supported, then check if permission has been granted for the current origin to send
-notifications, then request permission if required, before then sending a notification.
+قطعه کد زیر می‌تواند برای بررسی اینکه آیا اعلان‌ها پشتیبانی می‌شوند، سپس بررسی اینکه آیا مجوز ارسال اعلان از مبدأ جاری داده شده است، و در صورت نیاز درخواست مجوز قبل از ارسال اعلان، استفاده شود.
 
 ```js
 function notifyMe() {
   if (!("Notification" in window)) {
-    // Check if the browser supports notifications
-    alert("This browser does not support desktop notification");
+    // بررسی اینکه آیا مرورگر از اعلان‌ها پشتیبانی می‌کند
+    alert("این مرورگر از اعلان دسکتاپ پشتیبانی نمی‌کند");
   } else if (Notification.permission === "granted") {
-    // Check whether notification permissions have already been granted;
-    // if so, create a notification
-    const notification = new Notification("Hi there!");
+    // بررسی اینکه آیا مجوز اعلان قبلاً داده شده است؛
+    // اگر بله، یک اعلان ایجاد کنید
+    const notification = new Notification("سلام!");
     // …
   } else if (Notification.permission !== "denied") {
-    // We need to ask the user for permission
+    // باید از کاربر مجوز بخواهیم
     Notification.requestPermission().then((permission) => {
-      // If the user accepts, let's create a notification
+      // اگر کاربر پذیرفت، یک اعلان ایجاد کنیم
       if (permission === "granted") {
-        const notification = new Notification("Hi there!");
+        const notification = new Notification("سلام!");
         // …
       }
     });
   }
 
-  // At last, if the user has denied notifications, and you
-  // want to be respectful there is no need to bother them anymore.
+  // در نهایت، اگر کاربر اعلان‌ها را رد کرده است و شما می‌خواهید
+  // محترمانه رفتار کنید، نیازی به اذیت کردن دوباره او نیست.
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Notifications API](/en-US/docs/Web/API/Notifications_API)
-- [Using the Notifications API](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
+- [استفاده از Notifications API](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
 - [Permissions API](/en-US/docs/Web/API/Permissions_API)
-- [Using the Permissions API](/en-US/docs/Web/API/Permissions_API/Using_the_Permissions_API)
+- [استفاده از Permissions API](/en-US/docs/Web/API/Permissions_API/Using_the_Permissions_API)
