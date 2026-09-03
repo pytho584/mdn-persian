@@ -1,9 +1,6 @@
 ---
 title: "OES_draw_buffers_indexed: blendEquationiOES() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/OES_draw_buffers_indexed/blendEquationiOES"
-status: "needs-translation"
 ---
-
 ---
 title: "OES_draw_buffers_indexed: blendEquationiOES() method"
 short-title: blendEquationiOES()
@@ -14,9 +11,9 @@ browser-compat: api.OES_draw_buffers_indexed.blendEquationiOES
 
 {{APIRef("WebGL")}}
 
-The `blendEquationiOES()` method of the `OES_draw_buffers_indexed` WebGL extension sets both the RGB blend and alpha blend equations for a particular draw buffer.
+روش `blendEquationiOES()` در افزونهٔ WebGL با نام `OES_draw_buffers_indexed`، معادلات ترکیب RGB و آلفا را برای یک بافر ترسیمی مشخص تنظیم می‌کند.
 
-See {{DOMxRef("OES_draw_buffers_indexed.blendEquationSeparateiOES()")}} for setting RGB and alpha separately and {{DOMxRef("WebGLRenderingContext.blendEquation()")}} for the WebGL 1 version of this method.
+برای تنظیم جداگانهٔ RGB و آلفا به {{DOMxRef("OES_draw_buffers_indexed.blendEquationSeparateiOES()")}} و برای نسخهٔ WebGL 1 این روش به {{DOMxRef("WebGLRenderingContext.blendEquation()")}} مراجعه کنید.
 
 ## Syntax
 
@@ -27,24 +24,24 @@ blendEquationiOES(buf, mode)
 ### Parameters
 
 - `buf`
-  - : An integer `i` specifying the draw buffer associated with the constant `gl.DRAW_BUFFERi`, see [WebGL draw buffer constants](/en-US/docs/Web/API/WebGL_API/Constants#draw_buffers).
+  - : یک عدد صحیح `i` که بافر ترسیمی مرتبط با ثابت `gl.DRAW_BUFFERi` را مشخص می‌کند؛ به [ثابت‌های بافر ترسیمی WebGL](/en-US/docs/Web/API/WebGL_API/Constants#draw_buffers) مراجعه کنید.
 - `mode`
-  - : A {{domxref("WebGL_API/Types", "GLenum")}} specifying how source and destination colors are combined. Accepts the same enums as the `mode` parameter in {{DOMxRef("WebGLRenderingContext.blendEquation()")}}.
+  - : یک {{domxref("WebGL_API/Types", "GLenum")}} که نحوهٔ ترکیب رنگ مبدأ و مقصد را مشخص می‌کند. همان enumهای پارامتر `mode` در {{DOMxRef("WebGLRenderingContext.blendEquation()")}} را می‌پذیرد.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
 ### Exceptions
 
-- If `buf` is not a valid value, a `gl.INVALID_VALUE` error is thrown.
-- If `mode` is not one of the possible values, a `gl.INVALID_ENUM` error is thrown.
+- اگر `buf` مقدار معتبری نباشد، خطای `gl.INVALID_VALUE` پرتاب می‌شود.
+- اگر `mode` یکی از مقادیر ممکن نباشد، خطای `gl.INVALID_ENUM` پرتاب می‌شود.
 
 ## Examples
 
-### Setting and getting blend equations
+### تنظیم و دریافت معادلات ترکیب
 
-You can set the blend equations for the `gl.DRAW_BUFFER0` and `gl.DRAW_BUFFER1` draw buffers like this:
+می‌توانید معادلات ترکیب را برای بافرهای ترسیمی `gl.DRAW_BUFFER0` و `gl.DRAW_BUFFER1` به این صورت تنظیم کنید:
 
 ```js
 const ext = gl.getExtension("OES_draw_buffers_indexed");
@@ -53,7 +50,7 @@ ext.blendEquationiOES(0, gl.FUNC_ADD);
 ext.blendEquationiOES(1, gl.FUNC_SUBTRACT);
 ```
 
-To get the blend equations for the `gl.DRAW_BUFFER0` and `gl.DRAW_BUFFER1` draw buffers, query the `BLEND_EQUATION_RGB` and `BLEND_EQUATION_ALPHA` constants using {{domxref("WebGL2RenderingContext.getIndexedParameter()")}}:
+برای دریافت معادلات ترکیب بافرهای ترسیمی `gl.DRAW_BUFFER0` و `gl.DRAW_BUFFER1`، ثابت‌های `BLEND_EQUATION_RGB` و `BLEND_EQUATION_ALPHA` را با استفاده از {{domxref("WebGL2RenderingContext.getIndexedParameter()")}} پرس‌وجو کنید:
 
 ```js
 // For gl.DRAW_BUFFER0
