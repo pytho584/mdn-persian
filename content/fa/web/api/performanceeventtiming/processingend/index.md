@@ -1,11 +1,5 @@
 ---
 title: "PerformanceEventTiming: processingEnd property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEventTiming/processingEnd"
-status: "needs-translation"
----
-
----
-title: "PerformanceEventTiming: processingEnd property"
 short-title: processingEnd
 slug: Web/API/PerformanceEventTiming/processingEnd
 page-type: web-api-instance-property
@@ -14,19 +8,19 @@ browser-compat: api.PerformanceEventTiming.processingEnd
 
 {{APIRef("Performance API")}}
 
-The read-only **`processingEnd`** property returns the time the last event handler finished executing.
+ویژگی فقط‌خواندنی **`processingEnd`** زمان پایان اجرای آخرین مدیریت‌کننده رویداد (event handler) را برمی‌گرداند.
 
-It's equal to {{domxref("PerformanceEventTiming.processingStart")}} when there are no such event handlers.
+در نبود چنین مدیریت‌کننده‌های رویدادی، مقدار آن با {{domxref("PerformanceEventTiming.processingStart")}} برابر است.
 
-## Value
+## مقدار
 
-A {{domxref("DOMHighResTimeStamp")}} timestamp.
+یک برچسب زمانی از نوع {{domxref("DOMHighResTimeStamp")}}.
 
-## Examples
+## مثال‌ها
 
-### Using the processingEnd property
+### استفاده از ویژگی processingEnd
 
-The `processingEnd` property can be used when observing event-timing entries ({{domxref("PerformanceEventTiming")}}). For example, to calculate input delay or event processing times.
+از ویژگی `processingEnd` می‌توان هنگام مشاهده ورودی‌های زمان‌بندی رویداد ({{domxref("PerformanceEventTiming")}}) استفاده کرد؛ مثلاً برای محاسبه تأخیر ورودی یا زمان‌های پردازش رویداد.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -44,14 +38,14 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "event", buffered: true });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("PerformanceEventTiming.processingStart")}}
