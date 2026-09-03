@@ -1,11 +1,5 @@
 ---
 title: "OffscreenCanvas: OffscreenCanvas() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas/OffscreenCanvas"
-status: "needs-translation"
----
-
----
-title: "OffscreenCanvas: OffscreenCanvas() constructor"
 short-title: OffscreenCanvas()
 slug: Web/API/OffscreenCanvas/OffscreenCanvas
 page-type: web-api-constructor
@@ -14,39 +8,38 @@ browser-compat: api.OffscreenCanvas.OffscreenCanvas
 
 {{APIRef("Canvas API")}}{{AvailableInWorkers}}
 
-The **`OffscreenCanvas()`** constructor returns a newly instantiated {{domxref("OffscreenCanvas")}} object.
+سازنده **`OffscreenCanvas()`** یک شیء {{domxref("OffscreenCanvas")}} تازه نمونه‌سازی‌شده را برمی‌گرداند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 new OffscreenCanvas(width, height)
 ```
 
-### Parameters
+### پارامترها
 
 - `width`
-  - : The width of the offscreen canvas.
+  - : عرض بوم خارج از صفحه (offscreen canvas).
 - `height`
-  - : The height of the offscreen canvas.
+  - : ارتفاع بوم خارج از صفحه.
 
-## Examples
+## مثال‌ها
 
-This example creates a new offscreen canvas using the `OffscreenCanvas()` constructor.
-We then initialize a [WebGL](/en-US/docs/Web/API/WebGL_API) context on it using the {{domxref("OffscreenCanvas.getContext()", "getContext()")}} method.
+این مثال یک بوم خارج از صفحه جدید با استفاده از سازنده `OffscreenCanvas()` ایجاد می‌کند. سپس با استفاده از متد {{domxref("OffscreenCanvas.getContext()", "getContext()")}} یک زمینه [WebGL](/en-US/docs/Web/API/WebGL_API) روی آن مقداردهی اولیه می‌کنیم.
 
 ```js
 const offscreen = new OffscreenCanvas(256, 256);
 const gl = offscreen.getContext("webgl");
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- {{domxref("OffscreenCanvas")}}, the interface this constructor belongs to
+- {{domxref("OffscreenCanvas")}}، رابطی که این سازنده به آن تعلق دارد.
