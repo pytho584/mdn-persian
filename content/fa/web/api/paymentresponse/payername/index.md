@@ -1,11 +1,5 @@
 ---
 title: "PaymentRequest: payerName property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse/payerName"
-status: "needs-translation"
----
-
----
-title: "PaymentRequest: payerName property"
 short-title: payerName
 slug: Web/API/PaymentResponse/payerName
 page-type: web-api-instance-property
@@ -14,20 +8,16 @@ browser-compat: api.PaymentResponse.payerName
 
 {{securecontext_header}}{{APIRef("Payment Request API")}}
 
-The **`payerName`** read-only property of the
-{{domxref("PaymentResponse")}} interface returns the name supplied by the user. This
-option is only present when the `requestPayerName` option is set to
-`true` in the options parameter of the
-{{domxref('PaymentRequest.PaymentRequest','PaymentRequest()')}} constructor.
+ویژگی فقط‌خواندنی **`payerName`** در رابط {{domxref("PaymentResponse")}} نامی را که کاربر ارائه کرده است برمی‌گرداند. این گزینه تنها زمانی وجود دارد که گزینه `requestPayerName` در پارامتر options سازنده {{domxref('PaymentRequest.PaymentRequest','PaymentRequest()')}} روی `true` تنظیم شده باشد.
 
-## Value
+## مقدار
 
-A string containing the payer name.
+یک رشته (string) شامل نام پرداخت‌کننده.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
