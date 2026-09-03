@@ -1,11 +1,5 @@
 ---
 title: "PerformanceResourceTiming: firstInterimResponseStart property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceResourceTiming/firstInterimResponseStart"
-status: "needs-translation"
----
-
----
-title: "PerformanceResourceTiming: firstInterimResponseStart property"
 short-title: firstInterimResponseStart
 slug: Web/API/PerformanceResourceTiming/firstInterimResponseStart
 page-type: web-api-instance-property
@@ -14,34 +8,34 @@ browser-compat: api.PerformanceResourceTiming.firstInterimResponseStart
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The **`firstInterimResponseStart`** read-only property returns a {{domxref("DOMHighResTimeStamp","timestamp")}} immediately after the browser receives the first byte of the interim 1xx response (for example, {{httpstatus(100, "100 Continue")}} or {{httpstatus(103, "103 Early Hints")}}) from the server.
+خاصیت فقط‌خواندنی **`firstInterimResponseStart`** یک {{domxref("DOMHighResTimeStamp","زمان‌سنج")}} را بلافاصله پس از دریافت اولین بایت از پاسخ موقت 1xx (برای مثال {{httpstatus(100, "100 Continue")}} یا {{httpstatus(103, "103 Early Hints")}}) از سرور توسط مرورگر برمی‌گرداند.
 
-There is no _end_ property for `firstInterimResponseStart`.
+هیچ خاصیت _end_ای برای `firstInterimResponseStart` وجود ندارد.
 
-## Value
+## مقدار
 
-The `firstInterimResponseStart` property can have the following values:
+خاصیت `firstInterimResponseStart` می‌تواند مقادیر زیر را داشته باشد:
 
-- A {{domxref("DOMHighResTimeStamp")}} immediately after the browser receives the first interim bytes of the response from the server.
-- `0` if the resource sent no interim response.
-- `0` if the resource is a cross-origin request and no {{HTTPHeader("Timing-Allow-Origin")}} HTTP response header is used.
+- یک {{domxref("DOMHighResTimeStamp")}} بلافاصله پس از دریافت اولین بایت‌های موقت پاسخ از سرور توسط مرورگر.
+- `0` اگر منبع هیچ پاسخ موقتی ارسال نکرده باشد.
+- `0` اگر منبع یک درخواست بین‌المنشأ (cross-origin) باشد و هیچ هدر پاسخ HTTP {{HTTPHeader("Timing-Allow-Origin")}} استفاده نشده باشد.
 
 > [!NOTE]
-> As Early Hints are typically only supported on the main navigation request, which is by definition same-origin, a `0` typically indicates Early Hints were **not** used.
+> از آنجا که Early Hints معمولاً فقط در درخواست ناوبری اصلی پشتیبانی می‌شوند که ذاتاً هم‌منشأ است، مقدار `0` معمولاً نشان می‌دهد که Early Hints **استفاده نشده** است.
 
-When the `firstInterimResponseStart` is non-zero, that indicates it should be the same value as {{domxref("PerformanceResourceTiming.requestStart", "requestStart")}} for [supporting browsers](#browser_compatibility).
+زمانی که `firstInterimResponseStart` غیرصفر است، این نشان می‌دهد که باید با {{domxref("PerformanceResourceTiming.requestStart", "requestStart")}} برای [مرورگرهای پشتیبانی‌کننده](#browser_compatibility) یکسان باشد.
 
-## Examples
+## مثال‌ها
 
-### Measuring request time
+### اندازه‌گیری زمان درخواست
 
-The `firstInterimResponseStart` and `requestStart` properties can be used to measure how long it takes to the browser to receive an interim response after the sending the request.
+از خاصیت‌های `firstInterimResponseStart` و `requestStart` می‌توان برای اندازه‌گیری مدت زمانی که مرورگر پس از ارسال درخواست برای دریافت یک پاسخ موقت صرف می‌کند، استفاده کرد.
 
 ```js
 const request = entry.firstInterimResponseStart - entry.requestStart;
 ```
 
-The following example uses a {{domxref("PerformanceObserver")}} to notify of new `resource` performance entries as they are recorded in the browser's performance timeline. The `buffered` option is used for accessing entries from before the observer creation.
+مثال زیر از یک {{domxref("PerformanceObserver")}} برای اطلاع‌یابی از ورودی‌های جدید عملکرد `resource` در زمان ثبت آن‌ها در جدول زمانی عملکرد مرورگر استفاده می‌کند. گزینه `buffered` برای دسترسی به ورودی‌های قبل از ایجاد observer به کار رفته است.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -56,7 +50,7 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "resource", buffered: true });
 ```
 
-The following example uses {{domxref("Performance.getEntriesByType()")}}, which only shows `resource` performance entries present in the browser's performance timeline at the time you call the method.
+مثال زیر از {{domxref("Performance.getEntriesByType()")}} استفاده می‌کند که فقط ورودی‌های عملکرد `resource` موجود در جدول زمانی عملکرد مرورگر در زمان فراخوانی متد را نشان می‌دهد.
 
 ```js
 const resources = performance.getEntriesByType("resource");
@@ -68,25 +62,25 @@ resources.forEach((entry) => {
 });
 ```
 
-### Cross-origin timing information
+### اطلاعات زمان‌بندی بین‌المنشأ
 
-If the value of the `firstInterimResponseStart` property is `0`, the resource might be a cross-origin request. To allow seeing cross-origin timing information, the {{HTTPHeader("Timing-Allow-Origin")}} HTTP response header needs to be set.
+اگر مقدار خاصیت `firstInterimResponseStart` برابر `0` باشد، ممکن است منبع یک درخواست بین‌المنشأ باشد. برای امکان مشاهده اطلاعات زمان‌بندی بین‌المنشأ، باید هدر پاسخ HTTP {{HTTPHeader("Timing-Allow-Origin")}} تنظیم شود.
 
-For example, to allow `https://developer.mozilla.org` to see timing resources, the cross-origin resource should send:
+برای مثال، برای اجازه دادن به `https://developer.mozilla.org` برای دیدن منابع زمان‌بندی، منبع بین‌المنشأ باید ارسال کند:
 
 ```http
 Timing-Allow-Origin: https://developer.mozilla.org
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTTPHeader("Timing-Allow-Origin")}}
 - {{domxref("PerformanceResourceTiming.finalResponseHeadersStart", "finalResponseHeadersStart")}}
