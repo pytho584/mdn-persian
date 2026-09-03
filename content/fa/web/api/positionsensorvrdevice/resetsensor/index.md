@@ -1,11 +1,5 @@
 ---
 title: "PositionSensorVRDevice: resetSensor() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PositionSensorVRDevice/resetSensor"
-status: "needs-translation"
----
-
----
-title: "PositionSensorVRDevice: resetSensor() method"
 short-title: resetSensor()
 slug: Web/API/PositionSensorVRDevice/resetSensor
 page-type: web-api-instance-method
@@ -17,25 +11,25 @@ browser-compat: api.PositionSensorVRDevice.resetSensor
 
 {{deprecated_header}}{{APIRef("WebVR API")}}{{Non-standard_header}}
 
-The **`resetSensor()`** method of the {{domxref("VRDisplay")}} interface _can be used to reset the sensor if desired, returning the_ position and orientation values to zero.
+**`resetSensor()`** 方法属于 {{domxref("VRDisplay")}} 接口，_可以在需要时用于重置传感器_，使位置和方向值归零。
 
-## Syntax
+## 语法
 
 ```js-nolint
 resetSensor()
 ```
 
-### Parameters
+### 参数
 
-None.
+无。
 
-### Return value
+### 返回值
 
-None ({{jsxref("undefined")}}).
+无（{{jsxref("undefined")}}）。
 
-## Examples
+## 示例
 
-The following demo uses the WebVR API to update the view of a simple {{domxref("CanvasRenderingContext2D")}} scene on each frame of a {{domxref("window.requestAnimationFrame()","requestAnimationFrame")}} loop. It features, among other things, a "Reset Sensor" button in the UI, which when pressed runs the `resetSensor()` function on the position sensor. The JavaScript looks like this:
+下面的演示使用 WebVR API 在 {{domxref("window.requestAnimationFrame()","requestAnimationFrame")}} 循环的每一帧上更新一个简单的 {{domxref("CanvasRenderingContext2D")}} 场景视图。它除了其他功能外，还在界面中提供了一个「重置传感器」按钮，按下该按钮时会对位置传感器执行 `resetSensor()` 函数。JavaScript 代码如下：
 
 ```js
 document.querySelector("button").onclick = () => {
@@ -43,12 +37,12 @@ document.querySelector("button").onclick = () => {
 };
 ```
 
-When the button is pressed, the current position, orientation, etc. of the sensor/head mounted display is set to be 0 — this makes the method useful for calibration when an app is first loaded.
+按下按钮时，传感器/头戴式显示器的当前位置、方向等会被设为零——这使得该方法在应用首次加载时可用于校准。
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
 - [WebVR API](/en-US/docs/Web/API/WebVR_API)
