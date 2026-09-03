@@ -1,7 +1,5 @@
 ---
 title: "PasswordCredential: PasswordCredential() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PasswordCredential/PasswordCredential"
-status: "needs-translation"
 ---
 
 ---
@@ -16,7 +14,7 @@ browser-compat: api.PasswordCredential.PasswordCredential
 
 {{APIRef("Credential Management API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`PasswordCredential()`** constructor creates a new {{domxref("PasswordCredential")}} object.
+سازنده **`PasswordCredential()`** یک شیء {{domxref("PasswordCredential")}} جدید ایجاد می‌کند.
 
 ## Syntax
 
@@ -25,38 +23,36 @@ new PasswordCredential(data)
 new PasswordCredential(form)
 ```
 
-### Parameters
+### پارامترها
 
-Either of the following:
+یکی از موارد زیر:
 
 - `data`
-  - : An object with the following properties:
+  - : یک شیء با ویژگی‌های زیر:
     - `iconURL` {{optional_inline}}
-      - : A string representing the URL of an icon or avatar to be associated with the credential.
+      - : یک رشته که نشان‌دهنده URL یک آیکون یا آواتار است که باید با این اعتبارنامه (credential) مرتبط شود.
     - `id`
-      - : A string representing the username portion of the username/password combination.
+      - : یک رشته که بخش نام کاربری (username) از ترکیب نام کاربری/رمز عبور را نشان می‌دهد.
     - `name` {{optional_inline}}
-      - : A string representing a human-understandable name associated with the credential, intended to help the user select this credential in a user interface.
+      - : یک رشته که یک نام قابل فهم برای انسان را نشان می‌دهد که با این اعتبارنامه مرتبط است و برای کمک به کاربر در انتخاب این اعتبارنامه در یک رابط کاربری طراحی شده است.
     - `origin`
-      - : A string representing the credential's origin. {{domxref("PasswordCredential")}} objects are origin-bound, which means that they will only be usable on the specified origin they were intended to be used on.
+      - : یک رشته که خاستگاه (origin) اعتبارنامه را نشان می‌دهد. اشیاء {{domxref("PasswordCredential")}} به خاستگاه وابسته هستند، به این معنی که فقط در همان خاستگاه مشخص‌شده قابل استفاده خواهند بود.
     - `password`
-      - : A string representing the credential password.
+      - : یک رشته که رمز عبور اعتبارنامه را نشان می‌دهد.
 
 - `form`
-  - : A reference to an {{domxref("HTMLFormElement")}} with appropriate input fields.
-    The form should, at the very least, contain an id and password.
-    It could also require a CSRF token.
+  - : یک ارجاع به یک {{domxref("HTMLFormElement")}} با فیلدهای ورودی مناسب. فرم باید حداقل شامل یک id و یک password باشد. همچنین ممکن است به یک توکن CSRF نیاز داشته باشد.
 
-### Exceptions
+### استثناها
 
 - {{jsxref("TypeError")}}
-  - : Thrown if one of the `id`, `origin` or `password` option is empty.
+  - : اگر یکی از گزینه‌های `id`، `origin` یا `password` خالی باشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-This example shows how to set up an {{domxref("HTMLFormElement")}} to capture data which we'll use to create a {{domxref("PasswordCredential")}} object.
+این مثال نحوه تنظیم یک {{domxref("HTMLFormElement")}} برای دریافت داده‌هایی را نشان می‌دهد که از آن برای ایجاد یک شیء {{domxref("PasswordCredential")}} استفاده خواهیم کرد.
 
-Starting with the form element.
+با عنصر فرم شروع می‌کنیم.
 
 ```html
 <form id="form" method="post">
@@ -68,7 +64,7 @@ Starting with the form element.
 </form>
 ```
 
-Then, a reference to this form element, using it to create a {{domxref("PasswordCredential")}} object, and storing it in the browser's password system.
+سپس یک ارجاع به این عنصر فرم گرفته و با استفاده از آن یک شیء {{domxref("PasswordCredential")}} ایجاد می‌کنیم و آن را در سیستم رمز عبور مرورگر ذخیره می‌کنیم.
 
 ```js
 const form = document.querySelector("#form");
