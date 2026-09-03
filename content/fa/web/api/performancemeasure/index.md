@@ -1,10 +1,4 @@
 ---
-title: "PerformanceMeasure"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceMeasure"
-status: "needs-translation"
----
-
----
 title: PerformanceMeasure
 slug: Web/API/PerformanceMeasure
 page-type: web-api-interface
@@ -13,45 +7,45 @@ browser-compat: api.PerformanceMeasure
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-**`PerformanceMeasure`** is an _abstract_ interface for {{domxref("PerformanceEntry")}} objects with an {{domxref("PerformanceEntry.entryType","entryType")}} of `"measure"`. Entries of this type are created by calling {{domxref("Performance.measure","performance.measure()")}} to add a _named_ {{domxref("DOMHighResTimeStamp")}} (the _measure_) between two _marks_ to the browser's _performance timeline_.
+**`PerformanceMeasure`** یک _رابط انتزاعی_ برای اشیاء {{domxref("PerformanceEntry")}} است که {{domxref("PerformanceEntry.entryType","entryType")}} آن‌ها `"measure"` است. ورودی‌های این نوع با فراخوانی {{domxref("Performance.measure","performance.measure()")}} ایجاد می‌شوند تا یک {{domxref("DOMHighResTimeStamp")}} _نام‌دار_ (همان _اندازه‌گیری_) را بین دو _نشان_ به _خط زمانی کارایی_ مرورگر اضافه کنند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("PerformanceMeasure.detail")}}
-  - : Contains arbitrary metadata about the measure.
+  - : شامل ابرداده‌های دلخواه دربارهٔ اندازه‌گیری است.
 
-This interface extends the following {{domxref("PerformanceEntry")}} properties by qualifying/constraining the properties as follows:
+این رابط، ویژگی‌های زیر را از {{domxref("PerformanceEntry")}} به ارث می‌برد و آن‌ها را به شکل زیر محدود می‌کند:
 
 - {{domxref("PerformanceEntry.entryType")}}
-  - : Returns `"measure"`.
+  - : مقدار `"measure"` را برمی‌گرداند.
 - {{domxref("PerformanceEntry.name")}}
-  - : Returns the name given to the measure when it was created via a call to {{domxref("Performance.measure()","performance.measure()")}}.
+  - : نامی را که هنگام ایجادِ اندازه‌گیری از طریق فراخوانی {{domxref("Performance.measure()","performance.measure()")}} به آن داده شده است، برمی‌گرداند.
 - {{domxref("PerformanceEntry.startTime")}}
-  - : Returns a {{domxref("DOMHighResTimeStamp","timestamp")}} given to the measure when {{domxref("Performance.measure()","performance.measure()")}} was called.
+  - : یک {{domxref("DOMHighResTimeStamp","timestamp")}} را برمی‌گرداند که هنگام فراخوانی {{domxref("Performance.measure()","performance.measure()")}} به اندازه‌گیری داده شده است.
 - {{domxref("PerformanceEntry.duration")}}
-  - : Returns a {{domxref("DOMHighResTimeStamp")}} that is the duration of the measure (typically, the measure's end mark timestamp minus its start mark timestamp).
+  - : یک {{domxref("DOMHighResTimeStamp")}} برمی‌گرداند که مدت‌زمان اندازه‌گیری است (معمولاً timestamp نشانِ پایان منهای timestamp نشانِ آغاز).
 
-## Instance methods
+## متدهای نمونه
 
-This interface has no methods.
+این رابط هیچ متدی ندارد.
 
-## Example
+## مثال
 
-See the example in [Using the User Timing API](/en-US/docs/Web/API/Performance_API/User_timing).
+مثال را در [استفاده از API زمان‌بندی کاربر](/en-US/docs/Web/API/Performance_API/User_timing) ببینید.
 
-Chrome DevTools uses `performance.measure()` and in particular a structured `detail` property as part of its extensibility API that surfaces these in custom tracks in performance traces. See the example in [Performance: measure() method](/en-US/docs/Web/API/Performance/measure) page and the [Chrome's extensibility API documentation](https://developer.chrome.com/docs/devtools/performance/extension#inject_your_data_with_the_user_timings_api) for more information and examples.
+Chrome DevTools از `performance.measure()` و به‌ویژه از ویژگی ساختاریافتهٔ `detail` به‌عنوان بخشی از API توسعه‌پذیری خود استفاده می‌کند که این موارد را در ترک‌های سفارشی در traceهای کارایی نمایش می‌دهد. برای اطلاعات و مثال‌های بیشتر، به مثال در صفحهٔ [Performance: متد measure()](/en-US/docs/Web/API/Performance/measure) و [مستندات API توسعه‌پذیری Chrome](https://developer.chrome.com/docs/devtools/performance/extension#inject_your_data_with_the_user_timings_api) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [User Timing (Overview)](/en-US/docs/Web/API/Performance_API/User_timing)
-- [Using the User Timing API](/en-US/docs/Web/API/Performance_API/User_timing)
+- [User Timing (مرور کلی)](/en-US/docs/Web/API/Performance_API/User_timing)
+- [استفاده از API زمان‌بندی کاربر](/en-US/docs/Web/API/Performance_API/User_timing)
