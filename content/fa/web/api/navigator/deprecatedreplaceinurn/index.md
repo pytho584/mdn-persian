@@ -1,11 +1,5 @@
 ---
 title: "Navigator: deprecatedReplaceInURN() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/deprecatedReplaceInURN"
-status: "needs-translation"
----
-
----
-title: "Navigator: deprecatedReplaceInURN() method"
 short-title: deprecatedReplaceInURN()
 slug: Web/API/Navigator/deprecatedReplaceInURN
 page-type: web-api-instance-method
@@ -16,43 +10,43 @@ browser-compat: api.Navigator.deprecatedReplaceInURN
 
 {{APIRef("Fenced Frame API")}}{{seecompattable}}
 
-The **`deprecatedReplaceInURN()`** method of the {{domxref("Navigator")}} interface substitutes specified strings inside the mapped URL corresponding to a given opaque URN or `FencedFrameConfig`'s internal `url` property.
+متد **`deprecatedReplaceInURN()`** در رابط {{domxref("Navigator")}} رشته‌های مشخص‌شده را درون URL نگاشت‌شده‌ای جایگزین می‌کند که متناظر با یک URN ناشفاف (opaque URN) یا ویژگی داخلی `url` از یک `FencedFrameConfig` است.
 
-A `FencedFrameConfig` or opaque URN is returned from a source such as the [Protected Audience API](https://privacysandbox.google.com/private-advertising/protected-audience) `runAdAuction()` method, and then set as the value of {{domxref("HTMLFencedFrameElement.config")}}. The content URL associated with the `FencedFrameConfig` or opaque URN is mapped to it internally by the browser, and can't be accessed via JavaScript.
+یک `FencedFrameConfig` یا URN ناشفاف از منبعی مانند متد `runAdAuction()` در [Protected Audience API](https://privacysandbox.google.com/private-advertising/protected-audience) بازگردانده می‌شود و سپس به عنوان مقدار {{domxref("HTMLFencedFrameElement.config")}} تنظیم می‌شود. URL محتوای مرتبط با آن `FencedFrameConfig` یا URN ناشفاف توسط مرورگر به‌صورت داخلی به آن نگاشت می‌شود و از طریق جاوااسکریپت قابل دسترسی نیست.
 
-However, you may wish to substitute parts of that internal URL. This is a common approach for passing runtime data into ad creatives to use in rendering. `deprecatedReplaceInURN()` has been made available as a temporary measure to enable that substitution for fenced frame URLs, helping ad tech providers to migrate existing implementations across to [privacy sandbox](https://privacysandbox.google.com/) APIs.
+با این حال، ممکن است بخواهید بخش‌هایی از آن URL داخلی را جایگزین کنید. این کار رویکردی رایج برای انتقال داده‌های زمان اجرا (runtime data) به کریتیوهای تبلیغاتی (ad creatives) برای استفاده در رندر است. تابع `deprecatedReplaceInURN()` به عنوان یک اقدام موقت در دسترس قرار گرفته است تا این جایگزینی را برای URLهای fenced frame ممکن کند و به ارائه‌دهندگان فناوری تبلیغات (ad tech) کمک کند تا پیاده‌سازی‌های موجود خود را به APIهای [privacy sandbox](https://privacysandbox.google.com/) منتقل کنند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 deprecatedReplaceInURN(UrnOrConfig, replacements)
 ```
 
-### Parameters
+### پارامترها
 
 - `UrnOrConfig`
-  - : A `FencedFrameConfig` object or an opaque URN for which you want to substitute parts of the corresponding internal URL.
+  - : یک شیء `FencedFrameConfig` یا یک URN ناشفاف که می‌خواهید بخش‌هایی از URL داخلی متناظر با آن را جایگزین کنید.
 - `replacements`
-  - : An object containing one or more properties representing the substitutions you wish to make in the internal URL. Each property key is a URL subsection you wish to replace, and each property value is the string to replace it with. Note that:
-    - The URL subsections to replace must be in one of the following formats:
+  - : یک شیء شامل یک یا چند ویژگی که بیانگر جایگزینی‌هایی است که می‌خواهید در URL داخلی انجام دهید. کلید هر ویژگی یک زیربخش از URL است که می‌خواهید جایگزین شود و مقدار هر ویژگی رشته‌ای است که با آن جایگزین می‌شود. توجه داشته باشید که:
+    - زیربخش‌های URL که باید جایگزین شوند باید در یکی از قالب‌های زیر باشند:
       - `${string}`
       - `%%string%%`
-    - If a URL subsection is in a correct format, but the subsection is not found in the URL, the returned promise still fulfills but no substitution is made.
+    - اگر یک زیربخش URL در قالب صحیح باشد، اما آن زیربخش در URL یافت نشود، پرامیسی بازگشتی همچنان fulfilled می‌شود (یعنی با موفقیت تکمیل می‌شود)، اما هیچ جایگزینی صورت نمی‌گیرد.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that fulfills with {{jsxref("undefined")}}.
+یک {{jsxref("Promise")}} که با مقدار {{jsxref("undefined")}} تکمیل می‌شود.
 
-### Exceptions
+### استثناها
 
 - `TypeError` {{domxref("DOMException")}}
-  - : Thrown if:
-    - `UrnOrConfig` is not a valid `FencedFrameConfig` object or opaque URN.
-    - Any of the specified replacement keys do not match the allowed formats.
+  - : در موارد زیر پرتاب می‌شود:
+    - `UrnOrConfig` یک شیء معتبر `FencedFrameConfig` یا URN ناشفاف نباشد.
+    - هر یک از کلیدهای جایگزینی مشخص‌شده با قالب‌های مجاز مطابقت نداشته باشند.
 
-## Examples
+## مثال‌ها
 
-The following call could be used to return an opaque URN:
+از فراخوانی زیر می‌توان برای بازگرداندن یک URN ناشفاف استفاده کرد:
 
 ```js
 const exampleURN = await navigator.runAdAuction({
@@ -61,7 +55,7 @@ const exampleURN = await navigator.runAdAuction({
 });
 ```
 
-You can then substitute URL subsections using a `deprecatedReplaceInURN()` call like the following:
+سپس می‌توانید زیربخش‌های URL را با استفاده از یک فراخوانی `deprecatedReplaceInURN()` مانند زیر جایگزین کنید:
 
 ```js
 await navigator.deprecatedReplaceInURN(exampleURN, {
@@ -71,26 +65,26 @@ await navigator.deprecatedReplaceInURN(exampleURN, {
 });
 ```
 
-If the internal URL associated with the URN is initially:
+اگر URL داخلی مرتبط با URN در ابتدا به این صورت باشد:
 
 ```http
 https://example.com/a=${foo}&b=${bar}&c=%%baz%%
 ```
 
-After the substitution it will become:
+پس از جایگزینی، به این صورت خواهد بود:
 
 ```http
 https://example.com/a=1&b=2&c=3
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Fenced Frame API](/en-US/docs/Web/API/Fenced_frame_API)
