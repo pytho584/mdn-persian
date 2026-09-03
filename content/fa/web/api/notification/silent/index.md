@@ -1,11 +1,5 @@
 ---
 title: "Notification: silent property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Notification/silent"
-status: "needs-translation"
----
-
----
-title: "Notification: silent property"
 short-title: silent
 slug: Web/API/Notification/silent
 page-type: web-api-instance-property
@@ -14,21 +8,15 @@ browser-compat: api.Notification.silent
 
 {{APIRef("Web Notifications")}}{{SecureContext_Header}} {{AvailableInWorkers}}
 
-The **`silent`** read-only property of the
-{{domxref("Notification")}} interface specifies whether the notification should be
-silent, i.e., no sounds or vibrations should be issued regardless of the device
-settings. This is controlled via the `silent` option of the
-{{domxref("Notification.Notification","Notification()")}} constructor.
+ویژگی فقط‌خواندنی **`silent`** در رابط {{domxref("Notification")}} مشخص می‌کند که آیا اعلان باید بی‌صدا باشد، یعنی بدون توجه به تنظیمات دستگاه، هیچ صدا یا لرزشی تولید نشود. این رفتار از طریق گزینهٔ `silent` در سازندهٔ {{domxref("Notification.Notification","Notification()")}} کنترل می‌شود.
 
-## Value
+## مقدار
 
-A boolean value or `null`. If set to `true`, the notification is silent; if set to `null` (the default value), the device's default settings are respected.
+یک مقدار بولین یا `null`. اگر `true` باشد، اعلان بی‌صدا است؛ اگر `null` (مقدار پیش‌فرض) باشد، تنظیمات پیش‌فرض دستگاه رعایت می‌شود.
 
-## Examples
+## مثال‌ها
 
-The following snippet fires a silent notification. An
-`options` object is created, and the notification is fired in response to a button click using the
-{{DOMxRef("Notification.Notification","Notification()")}} constructor. The code also includes rudimentary permissions handling, requesting permission from the user to fire notifications if it has not already been granted.
+قطعه کد زیر یک اعلان بی‌صدا را فعال می‌کند. یک شیء `options` ساخته می‌شود و اعلان در پاسخ به کلیک دکمه با استفاده از سازندهٔ {{DOMxRef("Notification.Notification","Notification()")}} ارسال می‌شود. کد همچنین شامل مدیریت اولیهٔ مجوز است و در صورت عدم اعطای مجوز قبلی، درخواست اجازه از کاربر برای ارسال اعلان را می‌دهد.
 
 ```js
 const btn = document.querySelector("button");
@@ -58,14 +46,14 @@ btn.addEventListener("click", () => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Notifications API](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
+- [استفاده از API اعلان‌ها](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
