@@ -1,11 +1,5 @@
 ---
 title: "Node: parentElement property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Node/parentElement"
-status: "needs-translation"
----
-
----
-title: "Node: parentElement property"
 short-title: parentElement
 slug: Web/API/Node/parentElement
 page-type: web-api-instance-property
@@ -14,20 +8,17 @@ browser-compat: api.Node.parentElement
 
 {{APIRef("DOM")}}
 
-The read-only **`parentElement`** property of {{domxref("Node")}} interface
-returns the DOM node's parent {{DOMxRef("Element")}}, or `null` if the node either has no
-parent, or its parent isn't a DOM {{DOMxRef("Element")}}. {{domxref("Node.parentNode")}} on the other hand returns any kind of parent, regardless of its type.
+خاصیت فقط خواندنی **`parentElement`** در رابط {{domxref("Node")}}، عنصر والد ({{DOMxRef("Element")}}) گره DOM را برمی‌گرداند، یا اگر گره والد نداشته باشد یا والد آن یک {{DOMxRef("Element")}} نباشد، `null` را برمی‌گرداند. در مقابل، {{domxref("Node.parentNode")}} هر نوع والدی را بدون توجه به نوع آن برمی‌گرداند.
 
-## Value
+## مقدار
 
-An {{domxref("Element")}} that is the parent element of the current node,
-or `null` if there isn't one.
+یک {{domxref("Element")}} که عنصر والد گره جاری است، یا اگر وجود نداشته باشد `null`.
 
-## Example
+## مثال
 
-### Using parentElement
+### استفاده از parentElement
 
-This example sets the parent of `node` to have a red text color.
+این مثال، والد `node` را طوری تنظیم می‌کند که رنگ متن قرمز داشته باشد.
 
 ```js
 if (node.parentElement) {
@@ -35,9 +26,9 @@ if (node.parentElement) {
 }
 ```
 
-### parentElement being null
+### null بودن parentElement
 
-`parentElement` can be `null` if the node has no parent (for example, because it isn't attached to a tree) or its parent is not an `Element`. On the other hand, {{domxref("Node.parentNode")}} always returns the parent node, which may be a {{domxref("Document")}} or other node types.
+`parentElement` می‌تواند `null` باشد اگر گره والد نداشته باشد (مثلاً چون به درخت متصل نیست) یا والد آن یک `Element` نباشد. از سوی دیگر، {{domxref("Node.parentNode")}} همیشه گره والد را برمی‌گرداند که ممکن است یک {{domxref("Document")}} یا انواع دیگر گره باشد.
 
 ```html
 <!doctype html>
@@ -52,14 +43,14 @@ if (node.parentElement) {
 </html>
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Node.parentNode")}}
