@@ -1,7 +1,6 @@
 ---
 title: "Navigator: getUserMedia() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/getUserMedia"
-status: "needs-translation"
 ---
 
 ---
@@ -16,16 +15,16 @@ browser-compat: api.Navigator.getUserMedia
 
 {{APIRef("Media Capture and Streams")}}{{deprecated_header}}{{SecureContext_Header}}
 
-The deprecated **`Navigator.getUserMedia()`** method prompts the user for permission to use up to one video input device (such as a camera or shared screen) and up to one audio input device (such as a microphone) as the source for a {{domxref("MediaStream")}}.
+متد منسوخ‌شدهٔ **`Navigator.getUserMedia()`** از کاربر برای دریافت اجازهٔ استفاده از حداکثر یک دستگاه ورودی ویدیو (مانند دوربین یا صفحهٔ به‌اشتراک‌گذاری‌شده) و حداکثر یک دستگاه ورودی صدا (مانند میکروفون) به‌عنوان منبع یک {{domxref("MediaStream")}} درخواست می‌کند.
 
-If permission is granted, a `MediaStream` whose video and/or audio tracks come from those devices is delivered to the specified success callback.
-If permission is denied, no compatible input devices exist, or any other error condition occurs, the error callback is executed with an object describing what went wrong.
-If the user instead doesn't make a choice at all, neither callback is executed.
+اگر اجازه داده شود، یک `MediaStream` که مسیرهای ویدیویی و/یا صوتی آن از آن دستگاه‌ها می‌آیند، به تابع موفقیت (success callback) مشخص‌شده تحویل داده می‌شود.
+اگر اجازه رد شود، هیچ دستگاه ورودی سازگاری وجود نداشته باشد، یا هر شرایط خطای دیگری رخ دهد، تابع خطا با یک شیء که شرح می‌دهد چه چیزی اشتباه شده است، اجرا می‌شود.
+اگر کاربر اصلاً انتخابی انجام ندهد، هیچ‌کدام از توابع فراخوانی اجرا نمی‌شوند.
 
 > [!NOTE]
-> This is a legacy method.
-> Please use the newer {{domxref("MediaDevices.getUserMedia", "navigator.mediaDevices.getUserMedia()")}} instead.
-> While technically not deprecated, this old callback version is marked as such, since the specification strongly encourages using the newer promise returning version.
+> این یک متد قدیمی است.
+> لطفاً به‌جای آن از نسخهٔ جدیدتر {{domxref("MediaDevices.getUserMedia", "navigator.mediaDevices.getUserMedia()")}} استفاده کنید.
+> اگرچه از نظر فنی منسوخ نشده است، این نسخهٔ قدیمی مبتنی بر تابع فراخوانی به‌عنوان منسوخ علامت‌گذاری شده است، زیرا مشخصات به‌شدت استفاده از نسخهٔ جدیدتر مبتنی بر وعده (Promise) را توصیه می‌کند.
 
 ## Syntax
 
@@ -36,16 +35,9 @@ getUserMedia(constraints, successCallback, errorCallback)
 ### Parameters
 
 - `constraints`
-  - : An object specifying the types of media to
-    request, along with any requirements for each type. For details, see the [constraints](/en-US/docs/Web/API/MediaDevices/getUserMedia#parameters)
-    section under the modern {{domxref("MediaDevices.getUserMedia()")}} method, as well
-    as the article [Capabilities, constraints, and settings](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints).
+  - : یک شیء که انواع رسانه‌ای را که باید درخواست شوند، همراه با هرگونه الزامات برای هر نوع، مشخص می‌کند. برای جزئیات، بخش [constraints](/en-US/docs/Web/API/MediaDevices/getUserMedia#parameters) را در متد مدرن {{domxref("MediaDevices.getUserMedia()")}} و همچنین مقالهٔ [Capabilities, constraints, and settings](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Constraints) را ببینید.
 - `successCallback`
-  - : A function which is invoked when the request for media access is approved. The
-    function is called with one parameter: the {{domxref("MediaStream")}} object that
-    contains the media stream. Your callback can then assign the stream to the desired
-    object (such as an {{HTMLElement("audio")}} or {{HTMLElement("video")}} element), as
-    shown in the following example:
+  - : تابعی که وقتی درخواست دسترسی به رسانه تأیید می‌شود فراخوانی می‌شود. این تابع با یک پارامتر فراخوانی می‌شود: شیء {{domxref("MediaStream")}} که جریان رسانه را شامل می‌شود. تابع فراخوانی شما سپس می‌تواند جریان را به شیء موردنظر (مانند یک عنصر {{HTMLElement("audio")}} یا {{HTMLElement("video")}}) اختصاص دهد، همان‌گونه که در مثال زیر نشان داده شده است:
 
     ```js
     function successCallback(stream) {
@@ -58,22 +50,17 @@ getUserMedia(constraints, successCallback, errorCallback)
     ```
 
 - `errorCallback`
-  - : When the call fails, the function specified in the `errorCallback` is
-    invoked with an object as its sole argument; this
-    object is modeled on {{domxref("DOMException")}}.
+  - : وقتی فراخوانی با شکست مواجه شود، تابع مشخص‌شده در `errorCallback` با یک شیء به‌عنوان تنها آرگومان خود فراخوانی می‌شود؛ این شیء بر اساس {{domxref("DOMException")}} مدل‌سازی شده است.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
 ## Examples
 
-### Width and height
+### عرض و ارتفاع
 
-Here's an example of using `getUserMedia()`, including code to cope with
-various browsers' prefixes. Note that this is the deprecated way of doing it: See the
-[Examples](/en-US/docs/Web/API/MediaDevices/getUserMedia#frame_rate) section
-under the {{domxref("MediaDevices.getUserMedia()")}} for modern examples.
+در اینجا نمونه‌ای از استفاده از `getUserMedia()`، شامل کدی برای مقابله با پیشوندهای مختلف مرورگرها آورده شده است. توجه داشته باشید که این روش منسوخ انجام این کار است: برای نمونه‌های مدرن، بخش [Examples](/en-US/docs/Web/API/MediaDevices/getUserMedia#frame_rate) را در زیر {{domxref("MediaDevices.getUserMedia()")}} ببینید.
 
 ```js
 navigator.getUserMedia =
@@ -110,9 +97,7 @@ if (navigator.getUserMedia) {
 
 ## See also
 
-- {{domxref("MediaDevices.getUserMedia()")}} that replaces this deprecated method.
-- [WebRTC](/en-US/docs/Web/API/WebRTC_API) - the introductory page to the API
-- [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API) - the API for the
-  media stream objects
-- [Taking webcam photos](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Taking_still_photos) - a
-  tutorial on using `getUserMedia()` for taking photos rather than video.
+- {{domxref("MediaDevices.getUserMedia()")}} که جایگزین این متد منسوخ‌شده می‌شود.
+- [WebRTC](/en-US/docs/Web/API/WebRTC_API) - صفحهٔ مقدماتی این API
+- [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API) - API مربوط به اشیاء جریان رسانه
+- [Taking webcam photos](/en-US/docs/Web/API/Media_Capture_and_Streams_API/Taking_still_photos) - یک آموزش برای استفاده از `getUserMedia()` جهت گرفتن عکس به‌جای ویدیو.
