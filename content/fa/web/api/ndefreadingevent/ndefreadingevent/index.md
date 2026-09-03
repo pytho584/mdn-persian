@@ -1,11 +1,5 @@
 ---
 title: "NDEFReadingEvent: NDEFReadingEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NDEFReadingEvent/NDEFReadingEvent"
-status: "needs-translation"
----
-
----
-title: "NDEFReadingEvent: NDEFReadingEvent() constructor"
 short-title: NDEFReadingEvent()
 slug: Web/API/NDEFReadingEvent/NDEFReadingEvent
 page-type: web-api-constructor
@@ -16,60 +10,60 @@ browser-compat: api.NDEFReadingEvent.NDEFReadingEvent
 
 {{APIRef("Web NFC API")}}{{securecontext_header}}{{SeeCompatTable}}
 
-The **`NDEFReadingEvent()`** constructor creates a new {{domxref("NDEFReadingEvent")}} object which represents events dispatched on new NFC readings obtained by {{DOMxRef("NDEFReader")}}.
+سازنده‌ی **`NDEFReadingEvent()`** یک شیء جدید از نوع {{domxref("NDEFReadingEvent")}} می‌سازد که رویدادهای ارسال‌شده در خوانش‌های جدید NFC را که توسط {{DOMxRef("NDEFReader")}} به دست می‌آیند، نشان می‌دهد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 new NDEFReadingEvent(type, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string with the name of the event.
-    It is case-sensitive and browsers always set it to `reading`.
+  - : رشته‌ای شامل نام رویداد.
+    این رشته به بزرگی/کوچکی حروف حساس است و مرورگرها همواره آن را روی `"reading"` قرار می‌دهند.
 - `options`
-  - : An object that, _in addition of the properties defined in {{domxref("Event/Event", "Event()")}}_, can have the following properties:
+  - : شیءای که _علاوه بر ویژگی‌های تعریف‌شده در {{domxref("Event/Event", "Event()")}}_، می‌تواند ویژگی‌های زیر را داشته باشد:
     - `serialNumber` {{optional_inline}}
-      - : The serial number of the device a message was read from. It default to `""`, and can be set to `null`.
+      - : شماره سریال دستگاهی که پیام از آن خوانده شده است. مقدار پیش‌فرض آن `""` است و می‌توان آن را روی `null` نیز تنظیم کرد.
     - `message`
-      - : An object with the following members:
+      - : شیءای با اعضای زیر:
         - `data` {{optional_inline}}
-          - : Contains the data to be transmitted. It can be a string, an {{jsxref("ArrayBuffer")}}, a {{jsxref("TypedArray")}}, a {{jsxref("DataView")}}, or an array of nested records.
+          - : حاوی داده‌ای است که قرار است ارسال شود. می‌تواند یک رشته، یک {{jsxref("ArrayBuffer")}}، یک {{jsxref("TypedArray")}}، یک {{jsxref("DataView")}} یا آرایه‌ای از رکوردهای تودرتو باشد.
         - `encoding` {{optional_inline}}
-          - : A string specifying the record's encoding.
+          - : رشته‌ای که رمزگذاری (encoding) رکورد را مشخص می‌کند.
         - `id` {{optional_inline}}
-          - : A developer-defined identifier for the record.
+          - : شناسه‌ای تعریف‌شده توسط توسعه‌دهنده برای رکورد.
         - `lang` {{optional_inline}}
-          - : A valid {{glossary("BCP 47 language tag")}}.
+          - : یک {{glossary("BCP 47 language tag")}} معتبر.
         - `mediaType` {{optional_inline}}
-          - : A valid [MIME type](/en-US/docs/Web/HTTP/Guides/MIME_types).
+          - : یک [نوع MIME](/en-US/docs/Web/HTTP/Guides/MIME_types) معتبر.
         - `recordType`
-          - : A string indicating the type of data stored in `data`. It must be one of the following values:
+          - : رشته‌ای که نوع داده ذخیره‌شده در `data` را نشان می‌دهد. باید یکی از مقادیر زیر باشد:
             - `"absolute-url"`
-              - : An absolute URL to the data.
+              - : یک URL مطلق برای داده.
             - `"empty"`
-              - : An empty {{domxref("NDEFRecord")}}.
+              - : یک {{domxref("NDEFRecord")}} خالی.
             - `"mime"`
-              - : A valid [MIME type](/en-US/docs/Web/HTTP/Guides/MIME_types).
+              - : یک [نوع MIME](/en-US/docs/Web/HTTP/Guides/MIME_types) معتبر.
             - `"smart-poster"`
-              - : A smart poster as defined by the [NDEF-SMARTPOSTER](https://w3c.github.io/web-nfc/#bib-ndef-smartposter) specification.
+              - : یک پوستر هوشمند (smart poster) طبق مشخصات [NDEF-SMARTPOSTER](https://w3c.github.io/web-nfc/#bib-ndef-smartposter).
             - `"text"`
-              - : Text as defined by the [NDEF-TEXT](https://w3c.github.io/web-nfc/#bib-ndef-text) specification.
+              - : متن طبق مشخصات [NDEF-TEXT](https://w3c.github.io/web-nfc/#bib-ndef-text).
             - `"unknown"`
-              - : The record type is not known.
+              - : نوع رکورد مشخص نیست.
             - `"URL"`
-              - : A URL as defined by the [NDEF-URI](https://w3c.github.io/web-nfc/#bib-ndef-uri) specification.
+              - : یک URL طبق مشخصات [NDEF-URI](https://w3c.github.io/web-nfc/#bib-ndef-uri).
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("NDEFReadingEvent")}} object.
+یک شیء جدید از نوع {{domxref("NDEFReadingEvent")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
