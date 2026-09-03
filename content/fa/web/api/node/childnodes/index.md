@@ -1,11 +1,5 @@
 ---
 title: "Node: childNodes property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Node/childNodes"
-status: "needs-translation"
----
-
----
-title: "Node: childNodes property"
 short-title: childNodes
 slug: Web/API/Node/childNodes
 page-type: web-api-instance-property
@@ -14,78 +8,66 @@ browser-compat: api.Node.childNodes
 
 {{APIRef("DOM")}}
 
-The read-only **`childNodes`** property of the {{domxref("Node")}} interface returns a live
-{{domxref("NodeList")}} of child {{domxref("Node","nodes")}} of the given element where
-the first child node is assigned index `0`. Child nodes include elements, text and
-comments.
+ویژگی فقط‌خواندنی **`childNodes`** در رابط {{domxref("Node")}} یک {{domxref("NodeList")}} زنده از {{domxref("Node","گره‌های")}} فرزند عنصر داده‌شده را برمی‌گرداند، به‌طوری‌که اولین گره فرزند ایندکس `0` را می‌گیرد. گره‌های فرزند شامل عناصر، متن و کامنت‌ها هستند.
 
 > [!NOTE]
-> The {{domxref("NodeList")}} being live means that its content is changed each time
-> new children are added or removed.
+> زنده بودن {{domxref("NodeList")}} به این معناست که محتوای آن با هر بار افزوده‌شدن یا حذف‌شدن فرزندان جدید تغییر می‌کند.
 >
-> Browsers insert text nodes into a document to represent whitespace in the source markup.
-> Therefore a node obtained, for example, using `Node.childNodes[0]`
-> may refer to a whitespace text node rather than the actual element the author intended to get.
+> مرورگرها برای نمایش فاصله‌های خالی (whitespace) در نشانه‌گذاری منبع، گره‌های متنی را در سند وارد می‌کنند. بنابراین، گره‌ای که مثلاً با `Node.childNodes[0]` به دست می‌آید ممکن است به یک گره متنی حاوی فاصله اشاره کند، نه عنصر واقعی‌ای که نویسنده قصد دریافت آن را داشته است.
 >
-> See [Working with whitespace in the DOM](/en-US/docs/Web/CSS/Guides/Text/Whitespace#working_with_whitespace_in_the_dom) for more information.
+> برای اطلاعات بیشتر به [کار با فاصله‌های خالی در DOM](/en-US/docs/Web/CSS/Guides/Text/Whitespace#working_with_whitespace_in_the_dom) مراجعه کنید.
 
-The items in the collection of nodes are objects, not strings. To get data from node
-objects, use their properties. For example, to get the name of the first
-childNode, you can use `elementNodeReference.childNodes[0].nodeName`.
+آیتم‌های موجود در مجموعه گره‌ها، آبجکت هستند نه رشته. برای دریافت داده از گره‌ها، از ویژگی‌های آن‌ها استفاده کنید. مثلاً برای دریافت نام اولین گره فرزند، می‌توانید از `elementNodeReference.childNodes[0].nodeName` استفاده کنید.
 
-The {{domxref("document")}} object itself has two children: the Doctype declaration and the
-root element, typically referred to as `documentElement`. In HTML
-documents the latter is the {{HTMLElement("html")}} element.
+خود شیء {{domxref("document")}} دو فرزند دارد: اعلان Doctype و عنصر ریشه که معمولاً با نام `documentElement` شناخته می‌شود. در اسناد HTML، دومی عنصر {{HTMLElement("html")}} است.
 
-It is important to keep in mind that `childNodes` includes _all_ child nodes,
-including non-element nodes like text and comment.
-To get a collection containing only elements, use {{domxref("Element.children")}} instead.
+مهم است به خاطر داشته باشید که `childNodes` شامل _همه_ گره‌های فرزند می‌شود، از جمله گره‌های غیرعنصری مانند متن و کامنت. برای دریافت مجموعه‌ای که فقط عناصر را شامل می‌شود، از {{domxref("Element.children")}} استفاده کنید.
 
-## Value
+## مقدار
 
-A live {{domxref("NodeList")}} containing the children of the node.
+یک {{domxref("NodeList")}} زنده شامل فرزندان آن گره.
 
 > [!NOTE]
-> Several calls to `childNodes` return the _same_ {{domxref("NodeList")}}.
+> چند بار فراخوانی `childNodes` همان {{domxref("NodeList")}} را برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-### Simple usage
+### استفاده ساده
 
 ```js
-// Note that para is an object reference to a <p> element
+// توجه کنید که para یک ارجاع به یک عنصر <p> است
 
-// First check that the element has child nodes
+// ابتدا بررسی کنید که عنصر گره فرزند دارد
 if (para.hasChildNodes()) {
   let children = para.childNodes;
 
   for (const node of children) {
-    // Do something with each child as children[i]
-    // NOTE: List is live! Adding or removing children will change the list's `length`
+    // با هر فرزند به عنوان children[i] کاری انجام دهید
+    // توجه: لیست زنده است! افزودن یا حذف فرزندان، `length` لیست را تغییر می‌دهد
   }
 }
 ```
 
-### Remove all children from a node
+### حذف همه فرزندان از یک گره
 
 ```js
-// This is one way to remove all children from a node
-// box is an object reference to an element
+// این یکی از راه‌های حذف همه فرزندان از یک گره است
+// box یک ارجاع به یک عنصر است
 while (box.firstChild) {
-  // The list is LIVE so it will re-index each call
+  // لیست زنده است، بنابراین هر بار فراخوانی، ایندکس‌ها دوباره محاسبه می‌شوند
   box.removeChild(box.firstChild);
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Node.firstChild")}}
 - {{domxref("Node.lastChild")}}
