@@ -1,10 +1,4 @@
 ---
-title: "Using the Permissions API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Permissions_API/Using_the_Permissions_API"
-status: "needs-translation"
----
-
----
 title: Using the Permissions API
 slug: Web/API/Permissions_API/Using_the_Permissions_API
 page-type: guide
@@ -12,44 +6,42 @@ page-type: guide
 
 {{DefaultAPISidebar("Permissions API")}}
 
-This article provides a basic guide to using the [Permissions API](/en-US/docs/Web/API/Permissions_API), which provides a programmatic way to query the status of API permissions attributed to the current context.
+این مقاله راهنمای مقدماتی استفاده از [Permissions API](/en-US/docs/Web/API/Permissions_API) است؛ API‌ای که روش برنامه‌نویسی‌شده‌ای برای بررسی وضعیت مجوزهای APIِ مرتبط با بافتار کنونی فراهم می‌کند.
 
-## The trouble with asking for permission…
+## دردسرِ درخواست مجوز…
 
-Permissions on the Web are a necessary evil, but they are not much fun to deal with as developers.
+مجوزها در وب یک «شرّ لازم» هستند؛ اما برای توسعه‌دهندگان، سروکار داشتن با آن‌ها چندان خوشایند نیست.
 
-Historically, different APIs handle their own permissions inconsistently — for example the [Notifications API](/en-US/docs/Web/API/Notifications_API) had its own methods for checking the permission status and requesting permission, whereas the [Geolocation API](/en-US/docs/Web/API/Geolocation_API) did not.
+از نظر تاریخی، APIهای مختلف هرکدام رفتار ناسازگاری با مجوزهای خود داشتند؛ برای مثال، [Notifications API](/en-US/docs/Web/API/Notifications_API) متدهای مخصوص خود را برای بررسی وضعیت مجوز و درخواست مجوز داشت، در حالی که [Geolocation API](/en-US/docs/Web/API/Geolocation_API) چنین نبود.
 
-The [Permissions API](/en-US/docs/Web/API/Permissions_API) provides a consistent approach for developers, and allows them to implement a better user experience as far as permissions are concerned.
-Specifically, developers can use {{domxref("Permissions.query()")}} to check whether permission to use a particular API in the current context is granted, denied, or requires specific user permission via a prompt.
-Querying permissions in the main thread is [broadly supported](/en-US/docs/Web/API/Permissions_API#api.navigator.permissions), and also in [Workers](/en-US/docs/Web/API/Permissions_API#api.workernavigator.permissions) (with a notable exception).
+[Permissions API](/en-US/docs/Web/API/Permissions_API) رویکردی یکپارچه برای توسعه‌دهندگان فراهم می‌کند و به آن‌ها اجازه می‌دهد تا در زمینهٔ مجوزها، تجربهٔ کاربری بهتری پیاده‌سازی کنند. به‌طور مشخص، توسعه‌دهندگان می‌توانند از {{domxref("Permissions.query()")}} برای بررسی اینکه آیا مجوز استفاده از یک API خاص در بافتار کنونی «اعطا شده» (granted)، «رد شده» (denied) یا نیازمند اجازهٔ صریح کاربر از طریق یک اعلان (prompt) است استفاده کنند. پرس‌وجوی مجوزها در رشتهٔ اصلی (main thread) به‌طور گسترده پشتیبانی می‌شود؛ همچنین در [Workers](/en-US/docs/Web/API/Permissions_API#api.workernavigator.permissions) نیز (با یک استثنای قابل توجه) پشتیبانی می‌شود.
 
-Many APIs now enable permission querying, such as the [Clipboard API](/en-US/docs/Web/API/Clipboard_API), [Notifications API](/en-US/docs/Web/API/Notifications_API), [Push API](/en-US/docs/Web/API/Push_API), and [Web MIDI API](/en-US/docs/Web/API/Web_MIDI_API). A list of many permission enabled APIs is provided in the [API Overview](/en-US/docs/Web/API/Permissions_API#permission-aware_apis), and you can get a sense of browser support in the [compatibility table here](/en-US/docs/Web/API/Permissions_API#api.permissions).
+بسیاری از APIها امروزه امکان پرس‌وجوی مجوز را فراهم می‌کنند؛ از جمله [Clipboard API](/en-US/docs/Web/API/Clipboard_API)، [Notifications API](/en-US/docs/Web/API/Notifications_API)، [Push API](/en-US/docs/Web/API/Push_API) و [Web MIDI API](/en-US/docs/Web/API/Web_MIDI_API). فهرستی از این APIها در [مرور API](/en-US/docs/Web/API/Permissions_API#permission-aware_apis) آمده است و می‌توانید وضعیت پشتیبانی مرورگرها را در [جدول سازگاری اینجا](/en-US/docs/Web/API/Permissions_API#api.permissions) ببینید.
 
-{{domxref("Permissions")}} has other methods to specifically request permission to use an API, and to revoke permission, but these are deprecated (non-standard, and/or not broadly supported).
+{{domxref("Permissions")}} همچنین متدهای دیگری دارد که مخصوصاً برای درخواست مجوز استفاده از یک API یا لغو مجوز به کار می‌روند؛ اما این متدها منسوخ شده‌اند (غیراستاندارد هستند و/یا پشتیبانی گسترده‌ای ندارند).
 
-## A simple example
+## یک مثال ساده
 
-For this article, we have put together a simple demo called Location Finder. It uses Geolocation to query the user's current location and plot it out on a Google Map:
+برای این مقاله، یک دموی ساده به نام Location Finder آماده کرده‌ایم. این دمو با استفاده از موقعیت جغرافیایی (Geolocation)، موقعیت کنونی کاربر را دریافت و روی نقشهٔ Google نمایش می‌دهد:
 
-![Screenshot showing a map of Greenfield, UK.](location-finder-with-permissions-api.png)
+![تصویری که نقشه‌ای از گرینفیلد، بریتانیا را نشان می‌دهد](location-finder-with-permissions-api.png)
 
-You can [run the example live](https://chrisdavidmills.github.io/location-finder-permissions-api/), or [view the source code on GitHub](https://github.com/chrisdavidmills/location-finder-permissions-api/tree/gh-pages). Most of the code is simple and unremarkable — below we'll just be walking through the Permissions API-related code, so check the code yourself if you want to study any of the other parts.
+می‌توانید [مثال را به‌صورت زنده اجرا کنید](https://chrisdavidmills.github.io/location-finder-permissions-api/) یا [کد منبع را در GitHub ببینید](https://github.com/chrisdavidmills/location-finder-permissions-api/tree/gh-pages). بیشتر کدها ساده و معمولی هستند؛ در ادامه فقط به بخش‌های مرتبط با Permissions API می‌پردازیم. اگر قصد مطالعهٔ بخش‌های دیگر را دارید، می‌توانید خودتان کد را بررسی کنید.
 
-### Accessing the Permissions API
+### دسترسی به Permissions API
 
-The {{domxref("Navigator.permissions")}} property has been added to the browser to allow access to the global {{domxref("Permissions")}} object. This object will eventually include methods for querying, requesting, and revoking permissions, although currently it only contains {{domxref("Permissions.query()")}}; see below.
+ویژگی {{domxref("Navigator.permissions")}} به مرورگر اضافه شده تا دسترسی به شیء سراسری {{domxref("Permissions")}} ممکن شود. انتظار می‌رود این شیء در نهایت متدهایی برای پرس‌وجو، درخواست و لغو مجوزها داشته باشد؛ اگرچه در حال حاضر فقط شامل {{domxref("Permissions.query()")}} است؛ در ادامه ببینید.
 
-### Querying permission state
+### بررسی وضعیت مجوز
 
-In our example, the Permissions functionality is handled by one function — `handlePermission()`. This starts off by querying the permission status using {{domxref("Permissions.query()")}}. Depending on the value of the {{domxref("PermissionStatus.state", "state")}} property of the {{domxref("PermissionStatus")}} object returned when the promise resolves, it reacts differently:
+در مثال ما، کارکرد مجوزها در یک تابع به نام `handlePermission()` مدیریت می‌شود. این تابع ابتدا وضعیت مجوز را با استفاده از {{domxref("Permissions.query()")}} بررسی می‌کند. سپس بسته به مقدار ویژگی {{domxref("PermissionStatus.state", "state")}} از شیء {{domxref("PermissionStatus")}} که پس از resolve شدن Promise بازگردانده می‌شود، واکنش متفاوتی نشان می‌دهد:
 
 - `"granted"`
-  - : The "Enable Geolocation" button is hidden, as it isn't needed if Geolocation is already active.
+  - : دکمهٔ «Enable Geolocation» پنهان می‌شود، زیرا اگر موقعیت جغرافیایی از قبل فعال باشد، این دکمه لازم نیست.
 - `"prompt"`
-  - : The "Enable Geolocation" button is hidden, as it isn't needed if the user will be prompted to grant permission for Geolocation. The {{domxref("Geolocation.getCurrentPosition()")}} function is then run, which prompts the user for permission; it runs the `revealPosition()` function if permission is granted (which shows the map), or the `positionDenied()` function if permission is denied (which makes the "Enable Geolocation" button appear).
+  - : دکمهٔ «Enable Geolocation» پنهان می‌شود، زیرا اگر قرار باشد برای اعطای مجوزِ موقعیت جغرافیایی از کاربر پرسیده شود، این دکمه لازم نیست. سپس تابع {{domxref("Geolocation.getCurrentPosition()")}} اجرا می‌شود و از کاربر اجازه می‌خواهد؛ اگر اجازه داده شود، تابع `revealPosition()` اجرا می‌شود (که نقشه را نشان می‌دهد) و اگر اجازه رد شود، تابع `positionDenied()` اجرا می‌شود (که باعث ظاهرشدن دکمهٔ «Enable Geolocation» می‌شود).
 - `"denied"`
-  - : The "Enable Geolocation" button is revealed (this code needs to be here too, in case the permission state is already set to denied for this origin when the page is first loaded).
+  - : دکمهٔ «Enable Geolocation» نمایش داده می‌شود (این کد باید اینجا نیز وجود داشته باشد؛ برای زمانی که هنگام بارگذاری اولیهٔ صفحه، وضعیت مجوز این خاستگاه از ابتدا روی «denied» تنظیم شده باشد).
 
 ```js
 function handlePermission() {
@@ -82,10 +74,10 @@ function report(state) {
 handlePermission();
 ```
 
-### Permission descriptors
+### توصیف‌گرهای مجوز
 
-The {{domxref("Permissions.query()")}} method takes a `PermissionDescriptor` dictionary as a parameter — this contains the name of the API you are interested in. Some APIs have more complex `PermissionDescriptor`s containing additional information, which inherit from the default `PermissionDescriptor`. For example, the `PushPermissionDescriptor` should also contain a Boolean that specifies if [`userVisibleOnly`](/en-US/docs/Web/API/PushManager/subscribe#parameters) is `true` or `false`.
+متد {{domxref("Permissions.query()")}} یک دیکشنری `PermissionDescriptor` را به‌عنوان پارامتر می‌پذیرد که شامل نام API موردنظر شماست. برخی APIها دارای `PermissionDescriptor`های پیچیده‌تری هستند که اطلاعات اضافی را حمل می‌کنند و از `PermissionDescriptor` پیش‌فرض ارث می‌برند. برای نمونه، `PushPermissionDescriptor` باید یک مقدار بولین نیز داشته باشد که مشخص می‌کند [`userVisibleOnly`](/en-US/docs/Web/API/PushManager/subscribe#parameters) برابر `true` است یا `false`.
 
-### Responding to permission state changes
+### واکنش به تغییرات وضعیت مجوز
 
-You'll notice that we're listening to the {{domxref("PermissionStatus.change_event", "change")}} event in the code above, attached to the {{domxref("PermissionStatus")}} object — this allows us to respond to any changes in the permission status for the API we are interested in. At the moment we are just reporting the change in state.
+حتماً توجه کرده‌اید که در کد بالا به رویداد {{domxref("PermissionStatus.change_event", "change")}} متصل به شیء {{domxref("PermissionStatus")}} گوش می‌دهیم؛ این کار به ما امکان می‌دهد به هر تغییری در وضعیت مجوزِ API موردنظر واکنش نشان دهیم. در حال حاضر فقط تغییر وضعیت را گزارش می‌کنیم.
