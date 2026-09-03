@@ -1,11 +1,5 @@
 ---
 title: "PresentationConnectionAvailableEvent: connection property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnectionAvailableEvent/connection"
-status: "needs-translation"
----
-
----
-title: "PresentationConnectionAvailableEvent: connection property"
 short-title: connection
 slug: Web/API/PresentationConnectionAvailableEvent/connection
 page-type: web-api-instance-property
@@ -16,14 +10,14 @@ browser-compat: api.PresentationConnectionAvailableEvent.connection
 
 {{APIRef("Presentation API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-When an incoming connection is created, a [receiving user agent](https://www.w3.org/TR/presentation-api/#dfn-receiving-user-agent) [fires](https://www.w3.org/TR/presentation-api/#dfn-firing-an-event) a [trusted event](https://www.w3.org/TR/presentation-api/#dfn-trusted-event), named [`connectionavailable`](https://www.w3.org/TR/presentation-api/#dfn-connectionavailable), on a [`PresentationReceiver`](https://www.w3.org/TR/presentation-api/#idl-def-presentationreceiver). The [trusted event](https://www.w3.org/TR/presentation-api/#dfn-trusted-event) is fired at the [presentation controller's monitor](https://www.w3.org/TR/presentation-api/#dfn-presentation-controllers-monitor), using the [`PresentationConnectionAvailableEvent`](https://www.w3.org/TR/presentation-api/#idl-def-presentationconnectionavailableevent) interface, with the [`connection`](https://www.w3.org/TR/presentation-api/#idl-def-presentationconnectionavailableevent-connection) attribute set to the [`PresentationConnection`](https://www.w3.org/TR/presentation-api/#idl-def-presentationconnection) object that was created.
+هنگامی که یک اتصال ورودی ایجاد می‌شود، یک [عامل کاربرِ دریافت‌کننده](https://www.w3.org/TR/presentation-api/#dfn-receiving-user-agent) یک [رویدادِ مورد اعتماد](https://www.w3.org/TR/presentation-api/#dfn-trusted-event) به نام [`connectionavailable`](https://www.w3.org/TR/presentation-api/#dfn-connectionavailable) را روی یک [`PresentationReceiver`](https://www.w3.org/TR/presentation-api/#idl-def-presentationreceiver) [صادر می‌کند](https://www.w3.org/TR/presentation-api/#dfn-firing-an-event). این [رویدادِ مورد اعتماد](https://www.w3.org/TR/presentation-api/#dfn-trusted-event) با استفاده از واسطِ [`PresentationConnectionAvailableEvent`](https://www.w3.org/TR/presentation-api/#idl-def-presentationconnectionavailableevent) روی [پایشگرِ کنترل‌کنندهٔ ارائه](https://www.w3.org/TR/presentation-api/#dfn-presentation-controllers-monitor) صادر می‌شود و ویژگی [`connection`](https://www.w3.org/TR/presentation-api/#idl-def-presentationconnectionavailableevent-connection) آن برابر با شیءِ [`PresentationConnection`](https://www.w3.org/TR/presentation-api/#idl-def-presentationconnection) که ایجاد شده است قرار می‌گیرد.
 
-The event is fired for all connections that are created when [monitoring incoming presentation connections](https://www.w3.org/TR/presentation-api/#dfn-monitoring-incoming-presentation-connections).
+این رویداد برای همهٔ اتصال‌هایی صادر می‌شود که هنگام [پایش اتصال‌های ورودیِ ارائه](https://www.w3.org/TR/presentation-api/#dfn-monitoring-incoming-presentation-connections) ایجاد می‌شوند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
