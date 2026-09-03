@@ -1,11 +1,5 @@
 ---
 title: "PerformanceTimingConfidence: value property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTimingConfidence/value"
-status: "needs-translation"
----
-
----
-title: "PerformanceTimingConfidence: value property"
 short-title: value
 slug: Web/API/PerformanceTimingConfidence/value
 page-type: web-api-instance-property
@@ -16,24 +10,24 @@ browser-compat: api.PerformanceTimingConfidence.value
 
 {{APIRef("Performance API")}}{{SeeCompatTable}}
 
-The **`value`** read-only property of the {{domxref("PerformanceTimingConfidence")}} interface is a broad confidence measure of whether a performance record reflects typical application performance, or is likely affected by external factors.
+ویژگی فقط‌خواندنی **`value`** در رابط {{domxref("PerformanceTimingConfidence")}} یک معیار کلی اطمینان است دربارهٔ این‌که آیا یک رکورد عملکرد، عملکرد معمول برنامه را بازتاب می‌دهد یا احتمالاً از عوامل خارجی تأثیر گرفته است.
 
-## Value
+## مقدار
 
-An enumerated value of `low` or `high`, indicating low or high confidence, respectively.
+یک مقدار شمارشی از `low` یا `high` است که به‌ترتیب نشان‌دهندهٔ اطمینان پایین یا زیاد است.
 
-## Examples
+## مثال‌ها
 
-See the main {{domxref("PerformanceTimingConfidence")}} page for an example.
+برای مثال، به صفحهٔ اصلی {{domxref("PerformanceTimingConfidence")}} مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("PerformanceTimingConfidence")}}
