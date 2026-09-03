@@ -1,7 +1,5 @@
 ---
 title: "Server timing"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Performance_API/Server_timing"
-status: "needs-translation"
 ---
 
 ---
@@ -12,15 +10,15 @@ page-type: guide
 
 {{DefaultAPISidebar("Performance API")}}
 
-Server-Timing is a part of the Performance API and allows servers to communicate metrics about the request-response cycle to the user agent. You can collect this information and act on server-side metrics in the same way as all the other metrics processed with the Performance API.
+Server-Timing بخشی از Performance API است و به سرورها امکان می‌دهد معیارهای چرخه‌ی درخواست-پاسخ را به عامل کاربر (user agent) منتقل کنند. می‌توانید این اطلاعات را جمع‌آوری کنید و دقیقاً مانند سایر معیارهایی که با Performance API پردازش می‌شوند، بر اساس معیارهای سمت سرور عمل کنید.
 
-## Sending server metrics
+## ارسال معیارهای سرور
 
-The {{HTTPHeader("Server-Timing")}} HTTP header is used to surface any backend server timing metrics. For example, you might want to send database read/write operation times, CPU time, and file system access.
+هدر HTTP {{HTTPHeader("Server-Timing")}} برای نمایش معیارهای زمان‌بندی سمت سرور (backend) استفاده می‌شود. برای مثال، ممکن است بخواهید زمان عملیات خواندن/نوشتن پایگاه داده، زمان CPU و دسترسی به سیستم فایل را ارسال کنید.
 
-You can send metrics with or without values. The metrics can optionally contain a description. It is advised to keep names, descriptions, and data as short as possible to minimize the HTTP overhead.
+می‌توانید معیارها را همراه با مقدار یا بدون مقدار ارسال کنید. معیارها به‌صورت اختیاری می‌توانند توضیحاتی داشته باشند. توصیه می‌شود نام‌ها، توضیحات و داده‌ها را تا حد امکان کوتاه نگه دارید تا سربار HTTP کاهش یابد.
 
-Examples of `Server-Timing` headers:
+نمونه‌هایی از هدرهای `Server-Timing`:
 
 ```http
 // Single metric without value
@@ -41,23 +39,23 @@ Trailer: Server-Timing
 Server-Timing: total;dur=123.4
 ```
 
-To calculate real server-side metrics, consult the documentation of your server-side CMS, framework, or programming language for how to measure performance within the backend application. If your server uses Node.js, the performance measurement APIs will look very familiar to the Performance API in browsers. This is because the Node.js performance module is a subset of the W3C Web Performance APIs as well as additional APIs for Node.js-specific performance measurements. See the [Node.js performance documentation](https://nodejs.org/api/perf_hooks.html#performance-measurement-apis) for more information.
+برای محاسبه‌ی معیارهای واقعی سمت سرور، به مستندات CMS، فریمورک یا زبان برنامه‌نویسی سمت سرور خود مراجعه کنید تا نحوه‌ی اندازه‌گیری کارایی در برنامه‌ی backend را بیاموزید. اگر سرور شما از Node.js استفاده می‌کند، APIهای اندازه‌گیری کارایی آن بسیار شبیه به Performance API در مرورگرها خواهند بود؛ زیرا ماژول performance در Node.js زیرمجموعه‌ای از W3C Web Performance APIs به‌همراه APIهای اضافی برای اندازه‌گیری‌های مخصوص Node.js است. برای اطلاعات بیشتر، [مستندات performance در Node.js](https://nodejs.org/api/perf_hooks.html#performance-measurement-apis) را ببینید.
 
-Note that there is no clock synchronization between the server, the client, and any intermediate proxies. This means that if your server sends timestamps or a `startTime`, the value might not meaningfully map to the {{domxref("PerformanceEntry.startTime", "startTime")}} of the client's timeline.
+توجه داشته باشید که هیچ همگام‌سازی ساعتی بین سرور، کلاینت و هر پروکسی میانی وجود ندارد. این بدان معناست که اگر سرور شما برچسب‌های زمانی (timestamp) یا `startTime` ارسال کند، ممکن است مقدار آن به‌طور معناداری با `startTime` در خط زمانی کلاینت مطابقت نداشته باشد.
 
-Once you have calculated your desired metrics, the server needs to send the `Server-Timing` header in its response. See the {{HTTPHeader("Server-Timing")}} reference page for an example of how to send the header in Node.js.
+هنگامی که معیارهای مورد نظر خود را محاسبه کردید، سرور باید هدر `Server-Timing` را در پاسخ خود ارسال کند. برای نمونه‌ی نحوه‌ی ارسال این هدر در Node.js، به صفحه‌ی مرجع {{HTTPHeader("Server-Timing")}} مراجعه کنید.
 
-## Retrieving server metrics
+## بازیابی معیارهای سرور
 
-The server timing metrics usually appear in the developer tools of the browser, but they are also stored as {{domxref("PerformanceServerTiming")}} performance entries that you can access like other [performance data](/en-US/docs/Web/API/Performance_API/Performance_data). However, there are no `"server-timing"` entries on their own. The `PerformanceServerTiming` objects are observable from `"navigation"` and `"resource"` performance entries. You access the server metrics from the {{domxref("PerformanceResourceTiming.serverTiming")}} property, which is an array of `PerformanceServerTiming` objects.
+معیارهای زمان‌بندی سرور معمولاً در ابزار توسعه‌دهنده‌ی مرورگر ظاهر می‌شوند، اما به‌صورت ورودی‌های کارایی (performance entries) از نوع {{domxref("PerformanceServerTiming")}} نیز ذخیره می‌شوند و می‌توانید مانند سایر [داده‌های کارایی](/en-US/docs/Web/API/Performance_API/Performance_data) به آن‌ها دسترسی داشته باشید. با این حال، هیچ ورودی مستقلی با نام `"server-timing"` وجود ندارد. اشیاء `PerformanceServerTiming` از طریق ورودی‌های کارایی `"navigation"` و `"resource"` قابل مشاهده هستند. شما می‌توانید معیارهای سرور را از خاصیت {{domxref("PerformanceResourceTiming.serverTiming")}} که آرایه‌ای از اشیاء `PerformanceServerTiming` است، به‌دست آورید.
 
-Given a {{HTTPHeader("Server-Timing")}} like this:
+با یک {{HTTPHeader("Server-Timing")}} مانند این:
 
 ```http
 Server-Timing: cache;desc="Cache Read";dur=23.2,db;dur=53,app;dur=47.2
 ```
 
-A `PerformanceObserver` can log the entries on the client side with the following code:
+یک `PerformanceObserver` می‌تواند ورودی‌ها را در سمت کلاینت با کد زیر ثبت کند:
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -78,8 +76,8 @@ const observer = new PerformanceObserver((list) => {
 );
 ```
 
-## Privacy and security considerations
+## ملاحظات حریم خصوصی و امنیت
 
-The `Server-Timing` header may expose potentially sensitive application and infrastructure information. Therefore, you need to control when the metrics are returned and to whom on the server side. For example, you could show metrics only to authenticated users and nothing to the public.
+هدر `Server-Timing` ممکن است اطلاعات حساس بالقوه‌ای درباره‌ی برنامه و زیرساخت افشا کند. بنابراین، باید در سمت سرور کنترل کنید که معیارها چه زمانی و به چه کسانی بازگردانده شوند. برای مثال، می‌توانید معیارها را فقط به کاربران احرازهویتشده نشان دهید و هیچ داده‌ای را در دسترس عموم قرار ندهید.
 
-The `PerformanceServerTiming` interface is restricted to the same origin, but you can use the {{HTTPHeader("Timing-Allow-Origin")}} header to specify the domains that are allowed to access the server metrics. Also, note that this interface is only available in secure contexts (HTTPS) in some browsers.
+رابط `PerformanceServerTiming` به همان مبدأ (same-origin) محدود است، اما می‌توانید از هدر {{HTTPHeader("Timing-Allow-Origin")}} برای تعیین دامنه‌هایی استفاده کنید که اجازه‌ی دسترسی به معیارهای سرور را دارند. همچنین توجه داشته باشید که در برخی مرورگرها این رابط فقط در زمینه‌های امن (HTTPS) در دسترس است.
