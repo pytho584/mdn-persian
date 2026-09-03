@@ -1,10 +1,4 @@
 ---
-title: "PreferenceManager"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PreferenceManager"
-status: "needs-translation"
----
-
----
 title: PreferenceManager
 slug: Web/API/PreferenceManager
 page-type: web-api-interface
@@ -16,32 +10,32 @@ spec-urls: https://drafts.csswg.org/mediaqueries-5/#preference-manager
 
 {{APIRef("User Preferences API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`PreferenceManager`** interface of the [User Preferences API](/en-US/docs/Web/API/User_Preferences_API) provides access to {{domxref("PreferenceObject")}} objects used to query and modify user preferences.
+رابط **`PreferenceManager`** از [User Preferences API](/en-US/docs/Web/API/User_Preferences_API) دسترسی به اشیاء {{domxref("PreferenceObject")}} را فراهم می‌کند که برای جست‌وجو و تغییر ترجیحات کاربر استفاده می‌شوند.
 
-The `PreferenceManager` for the current document can be accessed via the {{domxref("Navigator.preferences")}} property.
+`PreferenceManager` سند جاری از طریق ویژگی {{domxref("Navigator.preferences")}} قابل دسترسی است.
 
-The `PreferenceManager` interface inherits from {{domxref("EventTarget")}}.
+رابط `PreferenceManager` از {{domxref("EventTarget")}} ارث می‌برد.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("PreferenceManager.colorScheme")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : A {{domxref("PreferenceObject")}} used to override the user's preference for the [color scheme](/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-color-scheme) of the site.
+  - : یک {{domxref("PreferenceObject")}} که برای بازنویسی ترجیح کاربر برای [طرح رنگ](/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-color-scheme) سایت استفاده می‌شود.
 - {{domxref("PreferenceManager.contrast")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : A {{domxref("PreferenceObject")}} used to override the user's preference for the [contrast](/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-contrast) of the site.
+  - : یک {{domxref("PreferenceObject")}} که برای بازنویسی ترجیح کاربر برای [کنتراست](/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-contrast) سایت استفاده می‌شود.
 - {{domxref("PreferenceManager.reducedMotion")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : A {{domxref("PreferenceObject")}} used to override the user's preference for the [reduced motion](/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-motion) of the site.
+  - : یک {{domxref("PreferenceObject")}} که برای بازنویسی ترجیح کاربر برای [حرکت کاهش‌یافته](/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-motion) سایت استفاده می‌شود.
 - {{domxref("PreferenceManager.reducedTransparency")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : A {{domxref("PreferenceObject")}} used to override the user's preference for the [reduced transparency](/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-transparency) of the site.
+  - : یک {{domxref("PreferenceObject")}} که برای بازنویسی ترجیح کاربر برای [شفافیت کاهش‌یافته](/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-transparency) سایت استفاده می‌شود.
 - {{domxref("PreferenceManager.reducedData")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : A {{domxref("PreferenceObject")}} used to override the user's preference for the [reduced data](/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-data) of the site.
+  - : یک {{domxref("PreferenceObject")}} که برای بازنویسی ترجیح کاربر برای [داده کاهش‌یافته](/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-data) سایت استفاده می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
-This example demonstrates how to query the user's preferred color scheme.
+این مثال نشان می‌دهد که چگونه می‌توان طرح رنگ ترجیحی کاربر را پرس‌وجو کرد.
 
 ```js
 if (navigator.preferences.colorScheme.value === "dark") {
@@ -51,10 +45,10 @@ if (navigator.preferences.colorScheme.value === "dark") {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
