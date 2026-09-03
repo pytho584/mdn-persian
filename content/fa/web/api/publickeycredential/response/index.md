@@ -1,11 +1,5 @@
 ---
 title: "PublicKeyCredential: response property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredential/response"
-status: "needs-translation"
----
-
----
-title: "PublicKeyCredential: response property"
 short-title: response
 slug: Web/API/PublicKeyCredential/response
 page-type: web-api-instance-property
@@ -14,46 +8,29 @@ browser-compat: api.PublicKeyCredential.response
 
 {{APIRef("Web Authentication API")}}{{securecontext_header}}
 
-The **`response`** read-only property of the
-{{domxref("PublicKeyCredential")}} interface is an {{domxref("AuthenticatorResponse")}}
-object which is sent from the authenticator to the user agent for the creation/fetching
-of credentials. The information contained in this response will be used by the relying
-party's server to verify the demand is legitimate.
+ویژگی فقط‌خواندنی **`response`** در رابط {{domxref("PublicKeyCredential")}} یک شیء {{domxref("AuthenticatorResponse")}} است که از سمت authenticator به عامل کاربر (user agent) ارسال می‌شود تا اعتبارنامه‌ها ساخته یا دریافت شوند. اطلاعات موجود در این پاسخ، توسط سرور طرف وابسته (relying party) برای تأیید قانونی‌بودن درخواست استفاده خواهد شد.
 
-An `AuthenticatorResponse` is either:
+یک `AuthenticatorResponse` به یکی از دو شکل زیر است:
 
-- an {{domxref("AuthenticatorAttestationResponse")}} (when the
-  `PublicKeyCredential` is created via
-  {{domxref("CredentialsContainer.create()")}})
-- an {{domxref("AuthenticatorAssertionResponse")}} (when the
-  `PublicKeyCredential` is obtained via
-  {{domxref("CredentialsContainer.get()")}}).
+- یک {{domxref("AuthenticatorAttestationResponse")}} (زمانی که `PublicKeyCredential` از طریق {{domxref("CredentialsContainer.create()")}} ساخته شده باشد)
+- یک {{domxref("AuthenticatorAssertionResponse")}} (زمانی که `PublicKeyCredential` از طریق {{domxref("CredentialsContainer.get()")}} به‌دست آمده باشد).
 
-In order to validate the _creation_ of credentials, a relying party's server
-needs both:
+برای اعتبارسنجی _ساخت_ اعتبارنامه‌ها، سرور طرف وابسته به هر دوی موارد زیر نیاز دارد:
 
-- this response
-- the extensions of the client (given by
-  {{domxref("PublicKeyCredential.getClientExtensionResults()")}}) to validate the
-  demand.
+- همین پاسخ
+- افزونه‌های کلاینت (که با {{domxref("PublicKeyCredential.getClientExtensionResults()")}} به دست می‌آیند) برای اعتبارسنجی درخواست.
 
 > [!NOTE]
-> When validating the fetching of existing credentials, the
-> whole `PublicKeyCredential` object and the client extensions are necessary
-> for the relying party's server.
+> هنگام اعتبارسنجی دریافت اعتبارنامه‌های موجود، کل شیء `PublicKeyCredential` و افزونه‌های کلاینت برای سرور طرف وابسته لازم هستند.
 
 > [!NOTE]
-> This property may only be used in top-level contexts and will
-> not be available in an {{HTMLElement("iframe")}} for example.
+> این ویژگی فقط در زمینه‌های سطح بالا (top-level contexts) قابل استفاده است و به‌عنوان مثال در یک {{HTMLElement("iframe")}} در دسترس نخواهد بود.
 
-## Value
+## مقدار
 
-An {{domxref("AuthenticatorResponse")}} object containing the data a relying party's
-script will receive and which should be sent to the relying party's server in order to
-validate the demand for creation or fetching. This object contains data from the client
-({{domxref("AuthenticatorResponse/clientDataJSON")}}) and from the authenticator.
+یک شیء {{domxref("AuthenticatorResponse")}} شامل داده‌هایی است که اسکریپت طرف وابسته دریافت می‌کند و باید برای اعتبارسنجی درخواست ساخت یا دریافت، به سرور طرف وابسته ارسال شود. این شیء شامل داده‌هایی از سمت کلاینت ({{domxref("AuthenticatorResponse/clientDataJSON")}}) و داده‌هایی از سمت authenticator است.
 
-## Examples
+## مثال‌ها
 
 ```js
 const options = {
@@ -88,10 +65,10 @@ navigator.credentials
   });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
