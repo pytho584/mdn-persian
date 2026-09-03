@@ -1,11 +1,5 @@
 ---
 title: "PictureInPictureEvent: pictureInPictureWindow property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PictureInPictureEvent/pictureInPictureWindow"
-status: "needs-translation"
----
-
----
-title: "PictureInPictureEvent: pictureInPictureWindow property"
 short-title: pictureInPictureWindow
 slug: Web/API/PictureInPictureEvent/pictureInPictureWindow
 page-type: web-api-instance-property
@@ -14,20 +8,20 @@ browser-compat: api.PictureInPictureEvent.pictureInPictureWindow
 
 {{APIRef("Picture-in-Picture API")}}
 
-The read-only **`pictureInPictureWindow`** property of the {{domxref("PictureInPictureEvent")}} interface returns the {{domxref("PictureInPictureWindow")}} the event relates to.
+خاصیت فقط‌خواندنی **`pictureInPictureWindow`** در رابط {{domxref("PictureInPictureEvent")}}، شیء {{domxref("PictureInPictureWindow")}} مربوط به رویداد را بازمی‌گرداند.
 
-## Value
+## مقدار
 
-A {{domxref("PictureInPictureWindow")}}.
+یک {{domxref("PictureInPictureWindow")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Picture-in-Picture API](/en-US/docs/Web/API/Picture-in-Picture_API)
