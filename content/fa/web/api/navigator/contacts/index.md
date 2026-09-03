@@ -1,11 +1,5 @@
 ---
 title: "Navigator: contacts property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/contacts"
-status: "needs-translation"
----
-
----
-title: "Navigator: contacts property"
 short-title: contacts
 slug: Web/API/Navigator/contacts
 page-type: web-api-instance-property
@@ -16,32 +10,29 @@ browser-compat: api.Navigator.contacts
 
 {{APIRef("Contact Picker API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`contacts`** read-only property of the
-{{domxref("Navigator")}} interface returns a {{domxref('ContactsManager')}} interface
-which allows users to select entries from their contact list and share limited details
-of the selected entries with a website or application.
+ویژگی فقط‌خواندنی **`contacts`** در رابط {{domxref("Navigator")}} یک رابط {{domxref('ContactsManager')}} برمی‌گرداند که به کاربران امکان می‌دهد ورودی‌هایی را از فهرست مخاطبان خود انتخاب کنند و جزئیات محدودی از ورودی‌های انتخاب‌شده را با یک وب‌سایت یا برنامه به اشتراک بگذارند.
 
-## Value
+## مقدار
 
-A {{domxref('ContactsManager')}} object. Two successive calls return the same object.
+یک شیء {{domxref('ContactsManager')}}. دو فراخوانی متوالی همان شیء را برمی‌گردانند.
 
-## Examples
+## مثال‌ها
 
-The following code checks whether the Contact Picker API is supported.
+کد زیر بررسی می‌کند که آیا Contact Picker API پشتیبانی می‌شود یا نه.
 
 ```js
 const supported = "contacts" in navigator && "ContactsManager" in window;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [A Contact Picker for the Web](https://developer.chrome.com/docs/capabilities/web-apis/contact-picker)
 - [Contact Picker API live demo](https://mdn.github.io/dom-examples/contact-picker/)
