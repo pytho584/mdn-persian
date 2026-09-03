@@ -1,9 +1,4 @@
----
-title: "High precision timing"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Performance_API/High_precision_timing"
-status: "needs-translation"
----
-
+```
 ---
 title: High precision timing
 slug: Web/API/Performance_API/High_precision_timing
@@ -12,48 +7,47 @@ page-type: guide
 
 {{DefaultAPISidebar("Performance API")}}
 
-The Performance API allows high precision measurements that are based on time in potential sub-millisecond resolution and a stable monotonic clock that is not subject to system clock skew or adjustments.
-The high resolution timers are needed for accurate benchmarking instead of the less precise and non-monotonic {{jsxref("Date")}} timestamps.
+Performance API اندازه‌گیری‌هایی با دقت بالا را ممکن می‌سازد؛ اندازه‌گیری‌هایی که بر پایهٔ زمان با وضوح بالقوهٔ زیرمیلی‌ثانیه‌ای و یک ساعت یکنواخت و پایا (monotonic clock) هستند که تحت تأثیر انحراف یا تنظیم ساعت سیستم قرار نمی‌گیرد. برای معیارگذاری دقیق (benchmarking)، به تایمرهای با وضوح بالا نیاز است، نه به مهرهای زمانیِ کمتر دقیق و غیریکنواختِ {{jsxref("Date")}}.
 
-This page provides an overview about how high precision time works within the Performance API and how it compares to {{jsxref("Date")}} timestamps.
+این صفحه مروری بر این موضوع ارائه می‌دهد که زمان با دقت بالا در Performance API چگونه کار می‌کند و با مهرهای زمانی {{jsxref("Date")}} چه تفاوتی دارد.
 
 ## `DOMHighResTimeStamp`
 
-High precision timing is achieved by using the {{domxref("DOMHighResTimeStamp")}} type for time values. The unit is milliseconds and should be accurate to 5 µs (microseconds). However, if the browser is unable to provide a time value accurate to 5 microseconds, the browser can represent the value as a time in milliseconds accurate to a millisecond. This might occur because of hardware/software constraints, or security and privacy reasons. For more information, see the section on [reduced precision](#reduced_precision) below.
+زمان‌بندی با دقت بالا با استفاده از نوع {{domxref("DOMHighResTimeStamp")}} برای مقادیر زمان به‌دست می‌آید. واحد این مقادیر میلی‌ثانیه است و دقت آن‌ها باید تا ۵ میکروثانیه (µs) باشد. با این حال، اگر مرورگر نتواند مقدار زمانی با دقت ۵ میکروثانیه ارائه دهد، می‌تواند مقدار را به‌صورت میلی‌ثانیه‌ای که فقط تا یک میلی‌ثانیه دقیق است نمایش دهد. این شرایط ممکن است به دلیل محدودیت‌های سخت‌افزاری/نرم‌افزاری یا ملاحظات امنیتی و حریم خصوصی رخ دهد. برای اطلاعات بیشتر، بخش [دقت کاهش‌یافته](#reduced_precision) را در ادامه ببینید.
 
-All timestamps in the Performance API use the {{domxref("DOMHighResTimeStamp")}} type. Previously, the Performance API (and other Web APIs) used the `EpochTimeStamp` type (previously known as `DOMTimeStamp`). These types are now discouraged.
+همه مهرهای زمانی در Performance API از نوع {{domxref("DOMHighResTimeStamp")}} استفاده می‌کنند. پیش‌تر، Performance API (و سایر Web APIها) از نوع `EpochTimeStamp` (که قبلاً با نام `DOMTimeStamp` شناخته می‌شد) استفاده می‌کردند. استفاده از این نوع‌ها اکنون توصیه نمی‌شود.
 
-## `Performance.now()` vs. `Date.now()`
+## `Performance.now()` در مقایسه با `Date.now()`
 
-JavaScript defines {{jsxref("Date.now()")}} as the number of milliseconds elapsed since the [epoch](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#the_epoch_timestamps_and_invalid_date), which is defined as the midnight at the beginning of January 1, 1970, UTC. The `performance.now()` method on the other hand is relative to the {{domxref("Performance.timeOrigin")}} property. For more information, see the [time origins section](#time_origins) below.
+در جاوااسکریپت، {{jsxref("Date.now()")}} تعداد میلی‌ثانیه‌های سپری‌شده از [مبدأ زمان (epoch)](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#the_epoch_timestamps_and_invalid_date) تعریف می‌شود؛ مبدأی که به‌صورت نیمه‌شب آغاز ۱ ژانویه ۱۹۷۰، UTC تعریف شده است. از سوی دیگر، متد `performance.now()` نسبت به ویژگی {{domxref("Performance.timeOrigin")}} سنجیده می‌شود. برای اطلاعات بیشتر، [بخش مبدأهای زمانی](#time_origins) را در ادامه ببینید.
 
-JavaScript `Date` times are subject to system clock skew or adjustments. This means that the value of time may not always be monotonically increasing. The main purpose of `Date` objects is to display time and date information to the user and so many operating systems run a daemon which regularly synchronizes time. It might be that the clock is tweaked a few milliseconds several times per hour.
+زمان‌های `Date` در جاوااسکریپت ممکن است دچار انحراف ساعت سیستم شده یا تحت تنظیمات ساعت قرار گیرند. این یعنی مقدار زمان ممکن است همیشه به‌صورت یکنواخت و افزایشی نباشد. هدف اصلی اشیاء `Date` نمایش اطلاعات تاریخ و زمان به کاربر است؛ بنابراین بسیاری از سیستم‌عامل‌ها یک برنامهٔ کمکی (daemon) اجرا می‌کنند که به‌طور منظم زمان را همگام‌سازی می‌کند. ممکن است ساعت چند بار در ساعت، چند میلی‌ثانیه تصحیح شود.
 
-The `performance.now()` method (and all other `DOMHighResTimeStamp` values) provide monotonically increasing time values and aren't subject to clock adjustments. This means that it is guaranteed `DOMHighResTimeStamp` values will be at least equal to, if not greater than, the last time you accessed it.
+متد `performance.now()` (و سایر مقادیر `DOMHighResTimeStamp`) مقادیری زمانی یکنواخت و افزایشی فراهم می‌کند و تحت تأثیر تنظیم ساعت قرار نمی‌گیرد. این یعنی تضمین می‌شود مقادیر `DOMHighResTimeStamp` حداقل برابر با (و نه کمتر از) آخرین باری که مقدار را خوانده‌اید باشند.
 
 ```js
 Date.now(); // 1678889977578
 performance.now(); // 233936
 ```
 
-For measuring performance, calculating precise frame rates (FPS), animation loops, etc., use monotonically increasing high resolution time available with {{domxref("Performance.now()")}} instead of JavaScript's {{jsxref("Date.now()")}}.
+برای اندازه‌گیری کارایی، محاسبهٔ نرخ فریم دقیق (FPS)، حلقه‌های انیمیشن و مانند این‌ها، به‌جای {{jsxref("Date.now()")}} جاوااسکریپت، از زمان با وضوح بالا و افزایشیِ یکنواختِ موجود در {{domxref("Performance.now()")}} استفاده کنید.
 
-To summarize:
+به‌طور خلاصه:
 
 | -                        | {{domxref("Performance.now()")}}      | {{jsxref("Date.now()")}}          |
 | ------------------------ | ------------------------------------- | --------------------------------- |
-| Resolution               | sub-milliseconds                      | milliseconds                      |
-| Origin                   | {{domxref("Performance.timeOrigin")}} | Unix Epoch (January 1, 1970, UTC) |
-| Use clock adjustments    | No                                    | Yes                               |
-| Monotonically increasing | Yes                                   | No                                |
+| وضوح                     | زیر میلی‌ثانیه                        | میلی‌ثانیه                          |
+| مبدأ                     | {{domxref("Performance.timeOrigin")}} | Unix Epoch (۱ ژانویه ۱۹۷۰، UTC) |
+| تأثیرپذیری از تنظیم ساعت | خیر                                  | بله                                |
+| افزایش یکنواخت           | بله                                  | خیر                               |
 
-## Time origins
+## مبدأهای زمانی
 
-The Performance API uses the {{domxref("Performance.timeOrigin")}} property to determine the baseline for performance-related timestamps. All `DOMHighResTimeStamp` times are relative to the `timeOrigin` property.
+Performance API از ویژگی {{domxref("Performance.timeOrigin")}} برای تعیین خط پایهٔ مهرهای زمانی مرتبط با کارایی استفاده می‌کند. همه زمان‌های `DOMHighResTimeStamp` نسبت به ویژگی `timeOrigin` سنجیده می‌شوند.
 
-In Window contexts, this time origin is the time when navigation has started. In {{domxref("Worker")}} and {{domxref("ServiceWorker")}} contexts, the time origin is the time when the worker is run.
+در بافتارهای Window، این مبدأ زمانی، زمان شروع ناوبری است. در بافتارهای {{domxref("Worker")}} و {{domxref("ServiceWorker")}}، مبدأ زمانی، زمانی است که Worker اجرا می‌شود.
 
-In the previous version of the specification (Level 1), the `performance.now()` method used to be relative to [`performance.timing.navigationStart`](/en-US/docs/Web/API/PerformanceTiming/navigationStart) property from the Navigation Timing specification. However, this changed in a later version of the specification (Level 2) and `performance.now()` is now relative to {{domxref("Performance.timeOrigin")}} which avoids clock change risks when comparing timestamps across webpages.
+در نسخهٔ پیشین مشخصات (Level 1)، متد `performance.now()` نسبت به ویژگی [`performance.timing.navigationStart`](/en-US/docs/Web/API/PerformanceTiming/navigationStart) در مشخصات Navigation Timing سنجیده می‌شد. اما این موضوع در نسخهٔ بعدی مشخصات (Level 2) تغییر کرد و اکنون `performance.now()` نسبت به {{domxref("Performance.timeOrigin")}} سنجیده می‌شود؛ این کار هنگام مقایسهٔ مهرهای زمانی در میان صفحات وب، خطر تغییر ساعت را از بین می‌برد.
 
 ```js
 // Level 1 (clock change risks)
@@ -63,32 +57,29 @@ currentTime = performance.timing.navigationStart + performance.now();
 currentTime = performance.timeOrigin + performance.now();
 ```
 
-### Synchronizing time origins between contexts
+### همگام‌سازی مبدأهای زمانی بین بافتارها
 
-To account for the different time origins in window and worker contexts, you should translate the timestamps coming from worker scripts with the help of the `timeOrigin` property, so the timings synchronize for the entire application. See the examples section on the {{domxref("Performance.timeOrigin")}} page for example code to synchronize time.
+برای در نظر گرفتن مبدأهای زمانی متفاوت در بافتارهای window و worker، باید مهرهای زمانیِ حاصل از اسکریپت‌های worker را با کمک ویژگی `timeOrigin` انتقال دهید تا زمان‌بندی‌ها برای کل برنامه همگام شوند. برای کد نمونه جهت همگام‌سازی زمان، بخش مثال‌ها را در صفحهٔ {{domxref("Performance.timeOrigin")}} ببینید.
 
-## Reduced precision
+## دقت کاهش‌یافته
 
-To offer protection against timing attacks and [fingerprinting](/en-US/docs/Glossary/Fingerprinting), `DOMHighResTimeStamp` types are coarsened based on site isolation status.
+به‌منظور محافظت در برابر حملات زمان‌بندی (timing attacks) و [اثرانگشت (fingerprinting)](/en-US/docs/Glossary/Fingerprinting)، انواع `DOMHighResTimeStamp` بر اساس وضعیت ایزوله بودن سایت، با دقت کاهش‌یافته ارائه می‌شوند.
 
-- Resolution in isolated contexts: 5 microseconds
-- Resolution in non-isolated contexts: 100 microseconds
+- وضوح در بافتارهای ایزوله: ۵ میکروثانیه
+- وضوح در بافتارهای غیرایزوله: ۱۰۰ میکروثانیه
 
-To apply cross-origin isolation to your site, use the {{HTTPHeader("Cross-Origin-Opener-Policy")}} (COOP) and
-{{HTTPHeader("Cross-Origin-Embedder-Policy")}} (COEP) headers:
+برای اعمال ایزوله‌سازی متقاطع-منشأ (cross-origin isolation) روی سایت خود، از هدرهای {{HTTPHeader("Cross-Origin-Opener-Policy")}} (COOP) و {{HTTPHeader("Cross-Origin-Embedder-Policy")}} (COEP) استفاده کنید:
 
 ```http
 Cross-Origin-Opener-Policy: same-origin
 Cross-Origin-Embedder-Policy: require-corp
 ```
 
-These headers ensure a top-level document does not share a browsing context group with
-cross-origin documents. {{HTTPHeader("Cross-Origin-Opener-Policy")}} process-isolates your document and potential attackers
-can't access to your global object if they were opening it in a popup, preventing a set
-of cross-origin attacks dubbed [XS-Leaks](https://github.com/xsleaks/xsleaks).
+این هدرها تضمین می‌کنند که یک سند سطح بالا، گروه بافتار مرورگری را با اسناد متقاطع-منشأ به اشتراک نمی‌گذارد. {{HTTPHeader("Cross-Origin-Opener-Policy")}} سند شما را در سطح فرایند ایزوله می‌کند و اگر مهاجمان آن را در یک پنجرهٔ بازشو (popup) باز کرده باشند، به شیء سراسری شما دسترسی نخواهند داشت؛ در نتیجه مجموعه‌ای از حملات متقاطع-منشأ که با نام [XS-Leaks](https://github.com/xsleaks/xsleaks) شناخته می‌شوند، مسدود می‌شود.
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("DOMHighResTimeStamp")}}
 - {{domxref("Performance.timeOrigin")}}
 - {{domxref("Performance.now()")}} / {{jsxref("Date.now()")}}
+```
