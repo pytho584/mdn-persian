@@ -1,11 +1,5 @@
 ---
 title: "Performance: setResourceTimingBufferSize() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Performance/setResourceTimingBufferSize"
-status: "needs-translation"
----
-
----
-title: "Performance: setResourceTimingBufferSize() method"
 short-title: setResourceTimingBufferSize()
 slug: Web/API/Performance/setResourceTimingBufferSize
 page-type: web-api-instance-method
@@ -14,41 +8,40 @@ browser-compat: api.Performance.setResourceTimingBufferSize
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The **`setResourceTimingBufferSize()`** method sets the desired size of the browser's resource timing buffer which stores the `"resource"` performance entries.
+متد **`setResourceTimingBufferSize()`** اندازه دلخواه بافر زمان‌بندی منابع مرورگر را تعیین می‌کند؛ بافری که ورودی‌های عملکرد `"resource"` را ذخیره می‌کند.
 
-The specification requires the resource timing buffer initially to be 250 or greater.
+طبق مشخصات، بافر زمان‌بندی منابع باید در ابتدا اندازه‌ای برابر با ۲۵۰ یا بیشتر داشته باشد.
 
-To clear the browser's performance resource data buffer, use the
-{{domxref("Performance.clearResourceTimings()")}} method.
+برای پاک‌کردن بافر داده‌های عملکرد منابع مرورگر، از متد {{domxref("Performance.clearResourceTimings()")}} استفاده کنید.
 
-To get notified when the browser's resource timing buffer is full, listen for the {{domxref("Performance.resourcetimingbufferfull_event", "resourcetimingbufferfull")}} event.
+برای دریافت اعلان وقتی بافر زمان‌بندی منابع مرورگر پر می‌شود، به رویداد {{domxref("Performance.resourcetimingbufferfull_event", "resourcetimingbufferfull")}} گوش دهید.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 setResourceTimingBufferSize(maxSize)
 ```
 
-### Parameters
+### پارامترها
 
 - `maxSize`
-  - : A `number` representing the maximum number of {{domxref("PerformanceEntry")}} objects the browser should hold in its performance entry buffer.
+  - : یک `number` که حداکثر تعداد اشیاء {{domxref("PerformanceEntry")}} را که مرورگر باید در بافر ورودی‌های عملکرد خود نگه دارد، مشخص می‌کند.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-### Setting a resource timing buffer size
+### تنظیم اندازه بافر زمان‌بندی منابع
 
-The following call allows 500 `"resource"` performance entries in the browser's performance timeline.
+فراخوانی زیر اجازه می‌دهد ۵۰۰ ورودی عملکرد `"resource"` در خط زمانی عملکرد مرورگر ذخیره شود.
 
 ```js
 performance.setResourceTimingBufferSize(500);
 ```
 
-If you set the buffer size to a number lower than the amount of current entries in the buffer, no entries will be removed. Instead, to clear the buffer, call {{domxref("Performance.clearResourceTimings()")}}.
+اگر اندازه بافر را عددی کمتر از تعداد ورودی‌های فعلی بافر تنظیم کنید، هیچ ورودی‌ای حذف نمی‌شود. در عوض، برای پاک‌کردن بافر، متد {{domxref("Performance.clearResourceTimings()")}} را فراخوانی کنید.
 
 ```js
 performance.getEntriesByType("resource").length; // 20
@@ -59,15 +52,15 @@ performance.clearResourceTimings();
 performance.getEntriesByType("resource").length; // 0
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("Performance.clearResourceTimings()")}}
 - {{domxref("Performance.resourcetimingbufferfull_event", "resourcetimingbufferfull")}}
