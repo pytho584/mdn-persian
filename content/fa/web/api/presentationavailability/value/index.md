@@ -1,11 +1,5 @@
 ---
 title: "PresentationAvailability: value property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PresentationAvailability/value"
-status: "needs-translation"
----
-
----
-title: "PresentationAvailability: value property"
 short-title: value
 slug: Web/API/PresentationAvailability/value
 page-type: web-api-instance-property
@@ -16,14 +10,14 @@ browser-compat: api.PresentationAvailability.value
 
 {{APIRef("Presentation API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`value`** attribute _MUST_ return the last value from which it was set. The value is updated by the [monitor the list of available presentation displays](https://www.w3.org/TR/presentation-api/#dfn-monitor-the-list-of-available-presentation-displays) algorithm.
+ویژگی **`value`** _باید_ آخرین مقدار تنظیم‌شده را بازگرداند. این مقدار توسط الگوریتم [پایش فهرست نمایشگرهای ارائهٔ در دسترس](https://www.w3.org/TR/presentation-api/#dfn-monitor-the-list-of-available-presentation-displays) به‌روزرسانی می‌شود.
 
-The `onchange` attribute is an [event handler](https://www.w3.org/TR/presentation-api/#dfn-event-handler) whose corresponding [event handler event type](https://www.w3.org/TR/presentation-api/#dfn-event-handler-event-type) is `change`.
+ویژگی `onchange` یک [مدیر رویداد](https://www.w3.org/TR/presentation-api/#dfn-event-handler) است که [نوع رویداد](https://www.w3.org/TR/presentation-api/#dfn-event-handler-event-type) متناظر با آن `change` است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
