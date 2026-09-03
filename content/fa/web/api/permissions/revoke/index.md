@@ -1,11 +1,5 @@
 ---
 title: "Permissions: revoke() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Permissions/revoke"
-status: "needs-translation"
----
-
----
-title: "Permissions: revoke() method"
 short-title: revoke()
 slug: Web/API/Permissions/revoke
 page-type: web-api-instance-method
@@ -16,52 +10,49 @@ browser-compat: api.Permissions.revoke
 
 {{APIRef("Permissions API")}}{{AvailableInWorkers}}{{deprecated_header}}
 
-The **`revoke()`** method of the {{domxref("Permissions")}} interface reverts a currently set permission back to its default state, which is usually `prompt`.
-This method is called on the global {{domxref("Permissions")}} object {{domxref("navigator.permissions")}}.
+متد **`revoke()`** از رابط {{domxref("Permissions")}} یک مجوزِ تنظیم‌شده را به حالت پیش‌فرض خود بازمی‌گرداند؛ حالتی که معمولاً `prompt` است. این متد روی شیء سراسری {{domxref("Permissions")}}، یعنی {{domxref("navigator.permissions")}}، فراخوانی می‌شود.
 
-This method is removed from the main permissions API specification because its use case is unclear.
-Permissions are managed by the browser and the current permission model does not involve the site developer being able to imperatively request or revoke permissions. Browsers have shipped this API behind preferences but it's unlikely to reach the standards track.
-For more context, see the [original discussion to remove `permissions.revoke()`](https://github.com/w3c/permissions/issues/46).
+این متد از مشخصات اصلی Permissions API حذف شده است، زیرا کاربرد آن چندان واضح نیست. مدیریت مجوزها بر عهدهٔ مرورگر است و در مدل فعلی مجوزها، توسعه‌دهندهٔ سایت نمی‌تواند به‌صورت امری مجوزی را درخواست یا لغو کند. مرورگرها این API را پشت گزینه‌های آزمایشی (preferences) عرضه کرده‌اند، اما بعید است که در مسیر استانداردسازی قرار گیرد. برای زمینهٔ بیشتر، [بحث اصلیِ حذف `permissions.revoke()`](https://github.com/w3c/permissions/issues/46) را ببینید.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 revoke(permissionDescriptor)
 ```
 
-### Parameters
+### پارامترها
 
 - `permissionDescriptor`
-  - : An object that sets options for the `revoke` operation.
-    The available options for this descriptor depend on the permission type.
+  - : آبجکتی که گزینه‌های عملیات `revoke` را تنظیم می‌کند.
+    گزینه‌های موجود برای این توصیفگر به نوع مجوز بستگی دارد.
 
-    All permissions have a name:
+    همهٔ مجوزها یک نام دارند:
     - `name`
-      - : A string containing the name of the API whose permissions you want to query.
-        The returned {{jsxref("Promise")}} will reject with a {{jsxref("TypeError")}} if the permission name is not supported by the browser.
+      - : رشته‌ای شامل نام APIای که می‌خواهید مجوزهای آن را جستجو کنید.
+        اگر نام مجوز توسط مرورگر پشتیبانی نشود، {{jsxref("Promise")}} برگشتی با یک {{jsxref("TypeError")}} رد خواهد شد.
 
-    For the `push` permissions you can also specify:
+    برای مجوزهای `push` همچنین می‌توانید موارد زیر را مشخص کنید:
     - `userVisibleOnly` {{optional_inline}}
-      - : (Push only, not supported in Firefox — see the Browser Support section below) Indicates whether you want to show a notification for every message or be able to send silent push notifications.
-        The default is `false`.
+      - : (فقط برای push؛ در Firefox پشتیبانی نمی‌شود — بخش «سازگاری مرورگر» را در پایین ببینید) مشخص می‌کند که آیا می‌خواهید برای هر پیام یک اعلان نمایش داده شود یا بتوانید اعلان‌های push بی‌صدا ارسال کنید.
+        پیش‌فرض `false` است.
 
-    For the `midi` permission you can also specify:
+    برای مجوز `midi` همچنین می‌توانید موارد زیر را مشخص کنید:
     - `sysex` {{optional_inline}}
-      - : Indicates whether you need and/or receive system exclusive messages.
-        The default is `false`.
+      - : مشخص می‌کند که آیا به پیام‌های system exclusive نیاز دارید و/یا آن‌ها را دریافت می‌کنید.
+        پیش‌فرض `false` است.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that calls its fulfillment handler with a {{domxref("PermissionStatus")}} object indicating the result of the request.
+یک {{jsxref("Promise")}} که در صورت موفقیت با یک شیء {{domxref("PermissionStatus")}} resolve می‌شود؛ این شیء نتیجهٔ درخواست را نشان می‌دهد.
 
-### Exceptions
+### استثناها
 
 - {{jsxref("TypeError")}}
-  - : Retrieving the `PermissionDescriptor` information failed in some way, or the permission doesn't exist or is currently unsupported (e.g., `midi`, or `push` with `userVisibleOnly`).
+  - : بازیابی اطلاعات `PermissionDescriptor` به نحوی ناموفق بوده است، یا مجوز وجود ندارد یا در حال حاضر پشتیبانی نمی‌شود (مثلاً `midi`، یا `push` همراه با `userVisibleOnly`).
 
-## Examples
+## مثال‌ها
 
-This function can be used by an app to request that its own Geolocation API permission be revoked.
+این تابع می‌تواند توسط یک برنامه استفاده شود تا درخواست لغو مجوز مختص به Geolocation API خودش را بدهد.
 
 ```js
 function revokePermission() {
@@ -71,10 +62,10 @@ function revokePermission() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
