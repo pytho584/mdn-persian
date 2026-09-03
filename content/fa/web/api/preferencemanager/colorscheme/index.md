@@ -1,9 +1,4 @@
----
-title: "PreferenceManager: colorScheme property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PreferenceManager/colorScheme"
-status: "needs-translation"
----
-
+```markdown
 ---
 title: "PreferenceManager: colorScheme property"
 short-title: colorScheme
@@ -17,19 +12,19 @@ spec-urls: https://drafts.csswg.org/mediaqueries-5/#color-scheme-attribute
 
 {{APIRef("User Preferences API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`colorScheme`** read-only property of the {{domxref("PreferenceManager")}} interface returns a {{domxref("PreferenceObject")}} used to override the user's preference for the [color scheme](/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-color-scheme) of the site.
+ویژگی فقط‌خواندنی **`colorScheme`** در رابط {{domxref("PreferenceManager")}} یک {{domxref("PreferenceObject")}} برمی‌گرداند که برای لغو (override) ترجیح کاربر برای [طرح رنگ](/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-color-scheme) سایت استفاده می‌شود.
 
-Valid `colorScheme` {{domxref("PreferenceObject.value")}} settings are `dark` and `light`.
+مقادیر معتبر برای تنظیم {{domxref("PreferenceObject.value")}} در `colorScheme`، `dark` و `light` هستند.
 
-## Value
+## مقدار
 
-A {{domxref("PreferenceObject")}} used to override the user's preference for the [color scheme](/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-color-scheme) of the site.
+یک {{domxref("PreferenceObject")}} که برای لغو ترجیح کاربر برای [طرح رنگ](/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-color-scheme) سایت استفاده می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
-This example demonstrates how to query the user's preferred color scheme.
+این مثال نحوه پرس‌وجو از طرح رنگ ترجیحی کاربر را نشان می‌دهد.
 
 ```js
 if (navigator.preferences.colorScheme.value === "dark") {
@@ -39,10 +34,11 @@ if (navigator.preferences.colorScheme.value === "dark") {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
+```
