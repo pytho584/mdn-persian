@@ -1,10 +1,4 @@
 ---
-title: "Multi-touch interaction"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Pointer_events/Multi-touch_interaction"
-status: "needs-translation"
----
-
----
 title: Multi-touch interaction
 slug: Web/API/Pointer_events/Multi-touch_interaction
 page-type: guide
@@ -12,19 +6,19 @@ page-type: guide
 
 {{DefaultAPISidebar("Pointer Events")}}
 
-Pointer events extend DOM input events to support various pointing input devices such as pen/stylus and touch screens as well as mouse. The _pointer_ is a hardware-agnostic device that can target a specific set of screen coordinates. Having a single event model for pointers can simplify creating websites, applications and provide a good user experience regardless of the user's hardware.
+رویدادهای اشاره‌گر، رویدادهای ورودی DOM را گسترش می‌دهند تا از انواع دستگاه‌های ورودی اشاره‌گر مانند قلم/استایلوس و صفحه‌های لمسی و همچنین ماوس پشتیبانی کنند. _اشاره‌گر_ دستگاهی مستقل از سخت‌افزار است که می‌تواند مجموعه‌ای خاص از مختصات صفحه را هدف قرار دهد. داشتن یک مدل رویداد واحد برای اشاره‌گرها می‌تواند ایجاد وب‌سایت‌ها و برنامه‌ها را ساده‌تر کند و بدون توجه به سخت‌افزار کاربر، تجربه کاربری خوبی ارائه دهد.
 
-Pointer events have many similarities to mouse events but they support multiple simultaneous pointers such as multiple fingers on a touch screen. This additional feature can be used to provide richer user interaction models but at the cost of additional complexity in the multi-touch interaction handling. This document demonstrates via example code, using pointer events with different multi-touch interactions.
+رویدادهای اشاره‌گر شباهت‌های زیادی به رویدادهای ماوس دارند، اما از چند اشاره‌گر همزمان، مانند چند انگشت روی صفحه لمسی، پشتیبانی می‌کنند. این قابلیت اضافه می‌تواند برای ارائه مدل‌های تعامل غنی‌تر به کار رود، اما به بهای پیچیدگی بیشتر در مدیریت تعامل‌های چندلمسی تمام می‌شود. این سند با مثال کدنویسی نشان می‌دهد که چگونه می‌توان از رویدادهای اشاره‌گر با تعامل‌های مختلف چندلمسی استفاده کرد.
 
-A _live_ version of this application is available on [GitHub](https://mdn.github.io/dom-examples/pointerevents/Multi-touch_interaction.html). The [source code is available on GitHub](https://github.com/mdn/dom-examples/blob/main/pointerevents/Multi-touch_interaction.html); pull requests and [bug reports](https://github.com/mdn/dom-examples/issues) are welcome.
+نسخه _زنده_ این برنامه در [GitHub](https://mdn.github.io/dom-examples/pointerevents/Multi-touch_interaction.html) در دسترس است. [کد منبع در GitHub](https://github.com/mdn/dom-examples/blob/main/pointerevents/Multi-touch_interaction.html) موجود است؛ Pull Requestها و [گزارش‌های خطا](https://github.com/mdn/dom-examples/issues) مورد استقبال هستند.
 
-## Example
+## مثال
 
-This example demonstrates using pointer events' various event types ({{domxref("Element/pointerdown_event", "pointerdown")}}, {{domxref("Element/pointermove_event", "pointermove")}}, {{domxref("Element/pointerup_event", "pointerup")}} {{domxref("Element/pointercancel_event", "pointercancel")}}, etc.) for different multi-touch interactions.
+این مثال استفاده از انواع رویدادهای اشاره‌گر ({{domxref("Element/pointerdown_event", "pointerdown")}}، {{domxref("Element/pointermove_event", "pointermove")}}، {{domxref("Element/pointerup_event", "pointerup")}}، {{domxref("Element/pointercancel_event", "pointercancel")}} و غیره) را برای تعامل‌های مختلف چندلمسی نشان می‌دهد.
 
-### Define touch targets
+### تعریف اهداف لمس
 
-The application uses {{HTMLElement("div")}} to define three different touch target areas.
+این برنامه برای تعریف سه ناحیه هدف لمس مختلف از {{HTMLElement("div")}} استفاده می‌کند.
 
 ```css
 div {
@@ -45,9 +39,9 @@ div {
 }
 ```
 
-### Global state
+### وضعیت سراسری
 
-To support multi-touch interaction, preserving a pointer's event state during various event phases is required. This application uses three arrays to cache event state, one cache per target element.
+برای پشتیبانی از تعامل چندلمسی، باید وضعیت رویداد اشاره‌گر در طول فازهای مختلف رویداد حفظ شود. این برنامه از سه آرایه برای کش کردن وضعیت رویداد استفاده می‌کند؛ برای هر عنصر هدف یک کش.
 
 ```js
 // Log events flag
@@ -59,9 +53,9 @@ const evCache2 = [];
 const evCache3 = [];
 ```
 
-### Register event handlers
+### ثبت دستگیرنده‌های رویداد
 
-Event handlers are registered for the following pointer events: {{domxref("Element/pointerdown_event", "pointerdown")}}, {{domxref("Element/pointermove_event", "pointermove")}} and {{domxref("Element/pointerup_event", "pointerup")}}. The handler for {{domxref("Element/pointerup_event", "pointerup")}} is used for the {{domxref("Element/pointercancel_event", "pointercancel")}}, {{domxref("Element/pointerout_event", "pointerout")}} and {{domxref("Element/pointerleave_event", "pointerleave")}} events, since these four events have the same semantics in this application.
+دستگیرنده‌های رویداد برای رویدادهای اشاره‌گر زیر ثبت می‌شوند: {{domxref("Element/pointerdown_event", "pointerdown")}}، {{domxref("Element/pointermove_event", "pointermove")}} و {{domxref("Element/pointerup_event", "pointerup")}}. از دستگیرنده رویداد {{domxref("Element/pointerup_event", "pointerup")}} برای رویدادهای {{domxref("Element/pointercancel_event", "pointercancel")}}، {{domxref("Element/pointerout_event", "pointerout")}} و {{domxref("Element/pointerleave_event", "pointerleave")}} نیز استفاده می‌شود، زیرا این چهار رویداد در این برنامه معنای یکسانی دارند.
 
 ```js
 function setHandlers(name) {
@@ -83,11 +77,11 @@ setHandlers("target2");
 setHandlers("target3");
 ```
 
-### Pointer down
+### رویداد pointerdown
 
-The {{domxref("Element/pointerdown_event", "pointerdown")}} event is fired when a pointer (mouse, pen/stylus or touch point on a touchscreen) makes contact with the _contact surface_. The event's state must be cached, in case this down event is part of a multi-touch interaction.
+رویداد {{domxref("Element/pointerdown_event", "pointerdown")}} زمانی رخ می‌دهد که یک اشاره‌گر (ماوس، قلم/استایلوس یا نقطه لمس روی صفحه لمسی) با _سطح تماس_ تماس برقرار کند. وضعیت رویداد باید در کش ذخیره شود، در صورتی که این رویداد فشردن، بخشی از یک تعامل چندلمسی باشد.
 
-In this application, when a pointer is placed down on an element, the background color of the element changes, depending on the number of active touch points the element has. See the [`update_background`](#update_background_color) function for more details about the color changes.
+در این برنامه، وقتی اشاره‌گری روی یک عنصر قرار می‌گیرد، رنگ پس‌زمینه عنصر با توجه به تعداد نقاط لمس فعال آن عنصر تغییر می‌کند. برای جزئیات بیشتر درباره تغییر رنگ‌ها به تابع [`update_background`](#update_background_color) مراجعه کنید.
 
 ```js
 function pointerdownHandler(ev) {
@@ -102,11 +96,11 @@ function pointerdownHandler(ev) {
 }
 ```
 
-### Pointer move
+### رویداد pointermove
 
-The {{domxref("Element/pointermove_event", "pointermove")}} handler is called when the pointer moves. It may be called multiple times (for example, if the user moves the pointer) before a different event type is fired.
+دستگیرنده رویداد pointermove زمانی فراخوانی می‌شود که اشاره‌گر حرکت کند. ممکن است این دستگیرنده چندین بار (مثلاً اگر کاربر اشاره‌گر را حرکت دهد) فراخوانی شود، پیش از آنکه نوع رویداد دیگری به وقوع بپیوندد.
 
-In this application, a pointer move is represented by the target's border being set to `dashed` to provide a clear visual indication that the element has received this event.
+در این برنامه، حرکت اشاره‌گر با قرار دادن حاشیه عنصر هدف روی `dashed` نمایش داده می‌شود تا نشانه تصویری واضحی ارائه شود که عنصر این رویداد را دریافت کرده است.
 
 ```js
 function pointermoveHandler(ev) {
@@ -123,11 +117,11 @@ function pointermoveHandler(ev) {
 }
 ```
 
-### Pointer up
+### رویداد pointerup
 
-The {{domxref("Element/pointerup_event", "pointerup")}} event is fired when a pointer is raised from the _contact surface_. When this occurs, the event is removed from the associated event cache.
+رویداد {{domxref("Element/pointerup_event", "pointerup")}} زمانی رخ می‌دهد که یک اشاره‌گر از _سطح تماس_ برداشته شود. وقتی این اتفاق می‌افتد، رویداد از کش رویداد مرتبط حذف می‌شود.
 
-In this application, this handler is also used for {{domxref("Element/pointercancel_event", "pointercancel")}}, {{domxref("Element/pointerleave_event", "pointerleave")}} and {{domxref("Element/pointerout_event", "pointerout")}} events.
+در این برنامه، این دستگیرنده برای رویدادهای {{domxref("Element/pointercancel_event", "pointercancel")}}، {{domxref("Element/pointerleave_event", "pointerleave")}} و {{domxref("Element/pointerout_event", "pointerout")}} نیز استفاده می‌شود.
 
 ```js
 function pointerupHandler(ev) {
@@ -142,11 +136,11 @@ function pointerupHandler(ev) {
 }
 ```
 
-### Application UI
+### رابط کاربری برنامه
 
-The application uses {{HTMLElement("div")}} elements for the touch areas and provides buttons to enable logging and to clear the log.
+این برنامه از عناصر {{HTMLElement("div")}} برای نواحی لمس استفاده می‌کند و دکمه‌هایی برای فعال کردن ثبت رویدادها (logging) و پاک کردن گزارش فراهم می‌آورد.
 
-To prevent the browser's default touch behavior from overriding this application's pointer handling, the {{cssxref("touch-action")}} property is applied to the {{HTMLElement("body")}} element.
+برای جلوگیری از اینکه رفتار پیش‌فرض لمس مرورگر، مدیریت اشاره‌گر این برنامه را تحت‌الشعاع قرار دهد، ویژگی {{cssxref("touch-action")}} روی عنصر {{HTMLElement("body")}} اعمال شده است.
 
 ```html
 <div id="target1">Tap, Hold or Swipe me 1</div>
@@ -166,13 +160,13 @@ body {
 }
 ```
 
-### Miscellaneous functions
+### سایر توابع
 
-These functions support the application but aren't directly involved with the event flow.
+این توابع از برنامه پشتیبانی می‌کنند، اما مستقیماً در جریان رویدادها دخالت ندارند.
 
-#### Cache management
+#### مدیریت کش
 
-These functions manage the global event caches `evCache1`, `evCache2` and `evCache3`.
+این توابع کش‌های سراسری رویداد `evCache1`، `evCache2` و `evCache3` را مدیریت می‌کنند.
 
 ```js
 function getCache(ev) {
@@ -205,9 +199,9 @@ function removeEvent(ev) {
 }
 ```
 
-#### Update background color
+#### به‌روزرسانی رنگ پس‌زمینه
 
-The background color of the touch areas will change as follows: no active touches is `white`; one active touch is `yellow`; two simultaneous touches is `pink` and three or more simultaneous touches is `lightblue`.
+رنگ پس‌زمینه نواحی لمس به صورت زیر تغییر می‌کند: وقتی هیچ لمس فعالی وجود نداشته باشد، رنگ `white`؛ با یک لمس فعال، `yellow`؛ با دو لمس همزمان، `pink`؛ و با سه لمس همزمان یا بیشتر، `lightblue` خواهد بود.
 
 ```js
 function updateBackground(ev) {
@@ -238,9 +232,9 @@ function updateBackground(ev) {
 }
 ```
 
-#### Event logging
+#### ثبت رویدادها
 
-These functions are used to send event activity to the application window (to support debugging and learning about the event flow).
+این توابع برای ارسال فعالیت رویدادها به پنجره برنامه استفاده می‌شوند (برای پشتیبانی از اشکال‌زدایی و یادگیری در مورد جریان رویدادها).
 
 ```js
 // Log events flag
