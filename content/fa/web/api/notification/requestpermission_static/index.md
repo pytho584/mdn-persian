@@ -1,11 +1,5 @@
 ---
 title: "Notification: requestPermission() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Notification/requestPermission_static"
-status: "needs-translation"
----
-
----
-title: "Notification: requestPermission() static method"
 short-title: requestPermission()
 slug: Web/API/Notification/requestPermission_static
 page-type: web-api-static-method
@@ -14,9 +8,9 @@ browser-compat: api.Notification.requestPermission_static
 
 {{APIRef("Web Notifications")}}{{securecontext_header}}
 
-The **`requestPermission()`** static method of the {{domxref("Notification")}} interface requests permission from the user for the current origin to display notifications.
+متد ایستایی **`requestPermission()`** از رابط {{domxref("Notification")}} از کاربر برای نمایش اعلان‌ها (notifications) از مبدأ جاری (current origin) درخواست مجوز می‌کند.
 
-The method returns a {{jsxref("Promise")}} that fulfills with a string indicating whether permission was granted or denied.
+این متد یک {{jsxref("Promise")}} برمی‌گرداند که با یک رشته (string) نشان‌دهندهٔ اعطا یا رد مجوز به‌انجام می‌رسد.
 
 ## Syntax
 
@@ -27,37 +21,35 @@ Notification.requestPermission()
 Notification.requestPermission(callback)
 ```
 
-### Parameters
+### پارامترها
 
 - `callback` {{optional_inline}} {{deprecated_inline}}
-  - : An optional callback function that is called with the permission value.
-    Deprecated in favor of the {{jsxref("Promise")}} return value.
+  - : یک تابع callback اختیاری که با مقدار مجوز فراخوانی می‌شود. به نفع مقدار بازگشتی {{jsxref("Promise")}} منسوخ شده است.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves to a string with the permission picked by the user.
-Possible values for this string are:
+یک {{jsxref("Promise")}} که به رشته‌ای با مجوز انتخاب‌شده توسط کاربر تبدیل می‌شود. مقادیر ممکن برای این رشته عبارتند از:
 
 - `granted`
-  - : The user has explicitly granted permission for the current origin to display system notifications.
+  - : کاربر به‌طور صریح مجوز نمایش اعلان‌های سیستمی را برای مبدأ جاری اعطا کرده است.
 - `denied`
-  - : The user has explicitly denied permission for the current origin to display system notifications.
+  - : کاربر به‌طور صریح مجوز نمایش اعلان‌های سیستمی را برای مبدأ جاری رد کرده است.
 - `default`
-  - : The user decision is unknown; in this case the application will act as if permission was `denied`.
+  - : تصمیم کاربر نامشخص است؛ در این حالت برنامه طوری عمل می‌کند که گویا مجوز رد شده است.
 
-The deprecated version of the method returns `undefined`.
+نسخهٔ منسوخ شدهٔ متد `undefined` برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-Assume this basic HTML:
+فرض کنید این HTML ابتدایی را داریم:
 
 ```html
 <button>Notify me!</button>
 ```
 
-It's possible to send a notification as follows — here we present a fairly verbose and complete set of code you could use if you wanted to first check whether notifications are supported, then check if permission has been granted for the current origin to send notifications, then request permission if required, before then sending a notification.
+می‌توان یک اعلان را به صورت زیر ارسال کرد — در اینجا یک مجموعه کد نسبتاً مفصل و کامل ارائه می‌دهیم که می‌توانید اگر بخواهید ابتدا بررسی کنید که آیا اعلان‌ها پشتیبانی می‌شوند، سپس بررسی کنید که آیا مجوز برای مبدأ جاری برای ارسال اعلان اعطا شده است، در صورت نیاز مجوز درخواست کنید و سپس یک اعلان ارسال کنید.
 
-Note that the request should be made in response to user interaction: below, the method is called in the click event handler.
+توجه داشته باشید که درخواست باید در پاسخ به تعامل کاربر انجام شود: در زیر، متد درون handler رویداد کلیک فراخوانی می‌شود.
 
 ```js
 document.querySelector("button").addEventListener("click", notifyMe);
@@ -87,16 +79,16 @@ function notifyMe() {
 }
 ```
 
-We no longer show a live sample on this page, as Chrome and Firefox no longer allow notification permissions to be requested from cross-origin {{htmlelement("iframe")}}s, with other browsers to follow. To see an example in action, check out our [To-do list example](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) (also see [the app running live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+ما دیگر یک نمونهٔ زنده در این صفحه نمایش نمی‌دهیم، زیرا Chrome و Firefox دیگر اجازه درخواست مجوز اعلان از {{htmlelement("iframe")}}های با مبدأ متفاوت (cross-origin) را نمی‌دهند و مرورگرهای دیگر نیز به همین ترتیب عمل خواهند کرد. برای مشاهده یک مثال عملی، به [مثال لیست کارها](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) مراجعه کنید (همچنین [برنامهٔ در حال اجرا](https://mdn.github.io/dom-examples/to-do-notifications/) را ببینید).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Notifications API](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
+- [استفاده از API اعلان‌ها](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
