@@ -1,11 +1,5 @@
 ---
 title: "NotRestoredReasons: url property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NotRestoredReasons/url"
-status: "needs-translation"
----
-
----
-title: "NotRestoredReasons: url property"
 short-title: url
 slug: Web/API/NotRestoredReasons/url
 page-type: web-api-instance-property
@@ -16,28 +10,27 @@ browser-compat: api.NotRestoredReasons.url
 
 {{APIRef("Performance API")}}{{SeeCompatTable}}
 
-The **`url`** read-only property of the
-{{domxref("NotRestoredReasons")}} interface returns a string representing the URL of the navigated page or {{htmlelement("iframe")}}.
+**`url`** 只读属性属于 {{domxref("NotRestoredReasons")}} 接口，返回一个字符串，表示被导航页面或 {{htmlelement("iframe")}} 的 URL。
 
-## Value
+## 值
 
-A string.
+一个字符串。
 
-If the document is in a cross-origin `<iframe>`, `url` will return `null`.
+如果文档位于跨源 `<iframe>` 中，`url` 将返回 `null`。
 
-## Examples
+## 示例
 
-See [Monitoring bfcache blocking reasons](/en-US/docs/Web/API/Performance_API/Monitoring_bfcache_blocking_reasons) for examples.
+有关示例，请参阅 [监控 bfcache 阻塞原因](/en-US/docs/Web/API/Performance_API/Monitoring_bfcache_blocking_reasons)。
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
-- [Monitoring bfcache blocking reasons](/en-US/docs/Web/API/Performance_API/Monitoring_bfcache_blocking_reasons)
+- [监控 bfcache 阻塞原因](/en-US/docs/Web/API/Performance_API/Monitoring_bfcache_blocking_reasons)
 - {{domxref("PerformanceNavigationTiming.notRestoredReasons")}}
