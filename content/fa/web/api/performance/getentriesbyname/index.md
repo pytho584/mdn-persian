@@ -1,11 +1,5 @@
 ---
 title: "Performance: getEntriesByName() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Performance/getEntriesByName"
-status: "needs-translation"
----
-
----
-title: "Performance: getEntriesByName() method"
 short-title: getEntriesByName()
 slug: Web/API/Performance/getEntriesByName
 page-type: web-api-instance-method
@@ -14,15 +8,14 @@ browser-compat: api.Performance.getEntriesByName
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The **`getEntriesByName()`** method returns an array of {{domxref("PerformanceEntry")}} objects currently present in the performance timeline with the given _name_ and _type_.
+متد **`getEntriesByName()`** آرایه‌ای از اشیای {{domxref("PerformanceEntry")}} را برمی‌گرداند که در حال حاضر در خط زمانی عملکرد (performance timeline) با نام و نوع داده شده وجود دارند.
 
-If you are interested in performance entries of certain types, see {{domxref("Performance.getEntriesByType", "getEntriesByType()")}}. For all performance entries, see {{domxref("Performance.getEntries", "getEntries()")}}.
+اگر به ورودی‌های عملکرد از انواع خاصی علاقه‌مندید، به {{domxref("Performance.getEntriesByType", "getEntriesByType()")}} مراجعه کنید. برای همه ورودی‌های عملکرد، {{domxref("Performance.getEntries", "getEntries()")}} را ببینید.
 
 > [!NOTE]
-> This method does not notify you about new performance entries; you will only get entries that are present in the performance timeline at the time you call this method.
-> To receive notifications about entries as they become available, use a {{domxref("PerformanceObserver")}}.
+> این متد شما را از ورودی‌های جدید عملکرد مطلع نمی‌کند؛ شما فقط ورودی‌هایی را دریافت می‌کنید که در زمان فراخوانی این متد در خط زمانی عملکرد وجود دارند. برای دریافت اعلان‌ها درباره ورودی‌ها به محض در دسترس شدن، از یک {{domxref("PerformanceObserver")}} استفاده کنید.
 
-The following entry types are not supported by this method at all and won't be returned even if entries for these types might exist:
+انواع ورودی زیر توسط این متد اصلاً پشتیبانی نمی‌شوند و حتی اگر ورودی‌هایی برای این انواع وجود داشته باشد، بازگردانده نخواهند شد:
 
 - `"element"` ({{domxref("PerformanceElementTiming")}})
 - `"event"` ({{domxref("PerformanceEventTiming")}})
@@ -30,7 +23,7 @@ The following entry types are not supported by this method at all and won't be r
 - `"layout-shift"` ({{domxref("LayoutShift")}})
 - `"longtask"` ({{domxref("PerformanceLongTaskTiming")}})
 
-To access entries of these types, you must use a {{domxref("PerformanceObserver")}} instead.
+برای دسترسی به ورودی‌های این انواع، باید به جای آن از یک {{domxref("PerformanceObserver")}} استفاده کنید.
 
 ## Syntax
 
@@ -42,22 +35,19 @@ getEntriesByName(name, type)
 ### Parameters
 
 - `name`
-  - : The name of the entries to retrieve.
+  - : نام ورودی‌هایی که باید بازیابی شوند.
 - `type` {{optional_inline}}
-  - : The type of entries to retrieve such as `"mark"`. The valid entry types are
-    listed in {{domxref("PerformanceEntry.entryType")}}.
+  - : نوع ورودی‌هایی که باید بازیابی شوند، مانند `"mark"`. انواع معتبر ورودی در {{domxref("PerformanceEntry.entryType")}} فهرست شده‌اند.
 
 ### Return value
 
-An {{jsxref("Array")}} of {{domxref("PerformanceEntry")}} objects that have the specified `name` and `type`.
-The items will be in chronological order based on the entries' {{domxref("PerformanceEntry.startTime","startTime")}}. If no objects meet the
-specified criteria, an empty array is returned.
+یک {{jsxref("Array")}} از اشیای {{domxref("PerformanceEntry")}} که دارای `name` و `type` مشخص شده هستند. موارد به ترتیب زمانی بر اساس {{domxref("PerformanceEntry.startTime","startTime")}} ورودی‌ها مرتب خواهند شد. اگر هیچ شیئی با معیارهای مشخص شده مطابقت نداشته باشد، یک آرایه خالی بازگردانده می‌شود.
 
 ## Examples
 
-### Logging performance markers
+### ثبت نشانگرهای عملکرد
 
-The following example logs all {{domxref("PerformanceMark")}} objects named `"debug-mark"`.
+مثال زیر همه اشیای {{domxref("PerformanceMark")}} به نام `"debug-mark"` را ثبت می‌کند.
 
 ```js
 const debugMarks = performance.getEntriesByName("debug-mark", "mark");
