@@ -1,11 +1,5 @@
 ---
 title: "PerformanceObserver: PerformanceObserver() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver/PerformanceObserver"
-status: "needs-translation"
----
-
----
-title: "PerformanceObserver: PerformanceObserver() constructor"
 short-title: PerformanceObserver()
 slug: Web/API/PerformanceObserver/PerformanceObserver
 page-type: web-api-constructor
@@ -14,39 +8,39 @@ browser-compat: api.PerformanceObserver.PerformanceObserver
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The **`PerformanceObserver()`** constructor creates a new {{domxref("PerformanceObserver")}} object with the given observer `callback`. The observer callback is invoked when {{domxref("PerformanceEntry","performance entry events", '', 'true')}} are recorded for the {{domxref("PerformanceEntry.entryType","entry types",'','true')}} that have been registered, via the {{domxref("PerformanceObserver.observe","observe()")}} method.
+سازنده **`PerformanceObserver()`** یک شیء جدید {{domxref("PerformanceObserver")}} با `callback` مشاهده‌گر داده شده ایجاد می‌کند. این callback مشاهده‌گر زمانی فراخوانی می‌شود که {{domxref("PerformanceEntry","رویدادهای ورودی عملکرد", '', 'true')}} برای {{domorphism("PerformanceEntry.entryType","انواع ورودی",'','true')}} که ثبت شده‌اند، از طریق متد {{domxref("PerformanceObserver.observe","observe()")}} ثبت شوند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 new PerformanceObserver(callback)
 ```
 
-### Parameters
+### پارامترها
 
 - `callback`
-  - : A `PerformanceObserverCallback` callback that will be invoked when observed performance events are recorded. When the callback is invoked, the following parameters are available:
+  - : یک callback از نوع `PerformanceObserverCallback` که هنگام ثبت رویدادهای عملکرد مشاهده‌شده فراخوانی می‌شود. هنگامی که callback فراخوانی می‌شود، پارامترهای زیر در دسترس هستند:
     - `entries`
-      - : The {{domxref("PerformanceObserverEntryList","list of performance observer entries", '', 'true')}}.
+      - : {{domxref("PerformanceObserverEntryList","فهرست ورودی‌های مشاهده‌گر عملکرد", '', 'true')}}.
     - `observer`
-      - : The {{domxref("PerformanceObserver","observer")}} object that is receiving the above entries.
+      - : شیء {{domorphism("PerformanceObserver","مشاهده‌گر", '', 'true')}} که ورودی‌های فوق را دریافت می‌کند.
     - `options`
-      - : An object with the following properties:
+      - : یک شیء با ویژگی‌های زیر:
         - `droppedEntriesCount`
-          - : The number of entries which could not be recorded because the {{domxref("Performance")}} object's internal buffer was full.
+          - : تعداد ورودی‌هایی که به دلیل پر بودن بافر داخلی شیء {{domorphism("Performance")}} نتوانستند ثبت شوند.
 
-            Note that this is only provided the first time the observer calls the callback, when the buffered entries are replayed. Once the observer starts making future observations, it no longer needs to use the buffer. After the first time, `options` will be an empty object (`{}`).
+            توجه داشته باشید که این مقدار فقط در اولین باری که مشاهده‌گر callback را فراخوانی می‌کند (زمانی که ورودی‌های بافر شده بازپخش می‌شوند) ارائه می‌شود. پس از آن که مشاهده‌گر شروع به انجام مشاهدات آینده کرد، دیگر نیازی به استفاده از بافر ندارد. پس از اولین بار، `options` یک شیء خالی (`{}`) خواهد بود.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("PerformanceObserver")}} object which will call the specified `callback` when observed performance events occur.
+یک شیء جدید {{domorphism("PerformanceObserver")}} که هنگام وقوع رویدادهای عملکرد مشاهده‌شده، `callback` مشخص‌شده را فراخوانی می‌کند.
 
-## Examples
+## مثال‌ها
 
-### Creating a PerformanceObserver
+### ایجاد یک PerformanceObserver
 
-The following example creates a `PerformanceObserver` watching for "mark" ({{domxref("PerformanceMark")}}) and "measure" ({{domxref("PerformanceMeasure")}}) events.
-The `perfObserver` callback provides a `list` ({{domxref("PerformanceObserverEntryList")}}) which allows you get observed performance entries.
+مثال زیر یک `PerformanceObserver` ایجاد می‌کند که رویدادهای "mark" ({{domorphism("PerformanceMark")}}) و "measure" ({{domorphism("PerformanceMeasure")}}) را زیر نظر می‌گیرد.
+callback `perfObserver` یک `list` ({{domorphism("PerformanceObserverEntryList")}}) ارائه می‌دهد که به شما امکان می‌دهد ورودی‌های عملکرد مشاهده‌شده را دریافت کنید.
 
 ```js
 function perfObserver(list, observer) {
@@ -63,19 +57,18 @@ const observer = new PerformanceObserver(perfObserver);
 observer.observe({ entryTypes: ["measure", "mark"] });
 ```
 
-### Dropped buffer entries
+### ورودی‌های بافر افتاده
 
-You can use {{domxref("PerformanceObserver")}} with a `buffered` flag to listen to past performance entries.
-There is a buffer size limit, though. The performance observer callback contains an `options` object: the first time the observer calls the callback, the `options` parameter will have a `droppedEntriesCount` property that tells you how many entries were dropped due to the buffer storage being full. Subsequent callbacks will have an empty `options` parameter.
+می‌توانید از {{domorphism("PerformanceObserver")}} با پرچم `buffered` برای گوش دادن به ورودی‌های عملکرد گذشته استفاده کنید. با این حال، محدودیتی برای اندازه بافر وجود دارد. callback مشاهده‌گر عملکرد شامل یک شیء `options` است: در اولین باری که مشاهده‌گر callback را فراخوانی می‌کند، پارامتر `options` دارای ویژگی `droppedEntriesCount` خواهد بود که به شما می‌گوید چند ورودی به دلیل پر بودن فضای ذخیره‌سازی بافر افتاده است. فراخوانی‌های بعدی یک پارامتر `options` خالی خواهند داشت.
 
 ```js
 function perfObserver(list, observer, options) {
   list.getEntries().forEach((entry) => {
-    // do something with the entries
+    // با ورودی‌ها کاری انجام دهید
   });
   if (options?.droppedEntriesCount > 0) {
     console.warn(
-      `${options?.droppedEntriesCount} entries got dropped due to the buffer being full.`,
+      `${options?.droppedEntriesCount} ورودی به دلیل پر بودن بافر افتاده است.`,
     );
   }
 }
@@ -84,12 +77,12 @@ const observer = new PerformanceObserver(perfObserver);
 observer.observe({ type: "resource", buffered: true });
 ```
 
-Usually, there are a lot of resource timing entries, and for these entries specifically, you can also set a larger buffer using {{domxref("performance.setResourceTimingBufferSize()")}} and watch for the {{domxref("Performance/resourcetimingbufferfull_event", "resourcetimingbufferfull")}} event.
+معمولاً ورودی‌های زمان‌بندی منابع زیادی وجود دارد، و به‌طور خاص برای این ورودی‌ها، می‌توانید یک بافر بزرگ‌تر با استفاده از {{domorphism("performance.setResourceTimingBufferSize()")}} تنظیم کنید و رویداد {{domorphism("Performance/resourcetimingbufferfull_event", "resourcetimingbufferfull")}} را زیر نظر بگیرید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
