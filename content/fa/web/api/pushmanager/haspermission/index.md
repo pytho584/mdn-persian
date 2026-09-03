@@ -1,9 +1,4 @@
----
-title: "PushManager: hasPermission() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PushManager/hasPermission"
-status: "needs-translation"
----
-
+```
 ---
 title: "PushManager: hasPermission() method"
 short-title: hasPermission()
@@ -17,35 +12,36 @@ browser-compat: api.PushManager.hasPermission
 
 {{ApiRef("Push API")}}{{deprecated_header}}{{non-standard_header}}{{AvailableInWorkers}}
 
-The **`PushManager.hasPermission()`** method of the {{domxref("PushManager")}} interface returns a {{jsxref("Promise")}} that resolves to the `PushPermissionStatus` of the requesting webapp, which will be one of `granted`, `denied`, or `default`.
+متد **`PushManager.hasPermission()`** از رابط {{domxref("PushManager")}} یک {{jsxref("Promise")}} برمی‌گرداند که به `PushPermissionStatus` برنامهٔ وب درخواست‌کننده حل می‌شود؛ این وضعیت یکی از مقادیر `granted`، `denied` یا `default` خواهد بود.
 
 > [!NOTE]
-> This feature has been superseded by the {{domxref("PushManager.permissionState()")}} method.
+> این قابلیت با متد {{domxref("PushManager.permissionState()")}} جایگزین شده است.
 
-## Syntax
+## نحو
 
 ```js-nolint
 hasPermission()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves to the `PushPermissionStatus`.
+یک {{jsxref("Promise")}} که به `PushPermissionStatus` حل می‌شود.
 
-## Examples
+## مثال‌ها
 
 ```js
 // TBD
 ```
 
-## Specifications
+## مشخصات
 
-This feature is not part of any specification anymore. It is no longer on track to become a standard.
+این ویژگی دیگر بخشی از هیچ مشخصاتی نیست و دیگر در مسیر استاندارد شدن قرار ندارد.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
+```
