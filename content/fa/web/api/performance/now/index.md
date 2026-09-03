@@ -1,7 +1,5 @@
 ---
 title: "Performance: now() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Performance/now"
-status: "needs-translation"
 ---
 
 ---
@@ -14,41 +12,40 @@ browser-compat: api.Performance.now
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The **`performance.now()`** method returns a high resolution timestamp in milliseconds. It represents the time elapsed since {{domxref("Performance.timeOrigin")}} (the time when navigation has started in window contexts, or the time when the worker is run in {{domxref("Worker")}} and {{domxref("ServiceWorker")}} contexts).
+متد **`performance.now()`** یک برچسب زمانی با دقت بالا را بر حسب میلی‌ثانیه برمی‌گرداند. این مقدار بیانگر زمان سپری‌شده از {{domxref("Performance.timeOrigin")}} است (زمانی که ناوبری در بافتارهای پنجره آغاز شده است، یا زمانی که کارگر (worker) در بافتارهای {{domxref("Worker")}} و {{domxref("ServiceWorker")}} اجرا می‌شود).
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 now()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-Returns a {{domxref("DOMHighResTimeStamp")}} measured in milliseconds.
+یک {{domxref("DOMHighResTimeStamp")}} را بر حسب میلی‌ثانیه برمی‌گرداند.
 
-## Description
+## توضیحات
 
-### `Performance.now` vs. `Date.now`
+### مقایسه `Performance.now` با `Date.now`
 
-Unlike [`Date.now`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/now), the timestamps returned by `performance.now()` are not limited to one-millisecond resolution. Instead, they represent times as floating-point numbers with up to microsecond precision.
+برخلاف [`Date.now`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/now)، برچسب‌های زمانی بازگردانده‌شده توسط `performance.now()` به دقت یک میلی‌ثانیه محدود نیستند. در عوض، آن‌ها زمان‌ها را به‌صورت اعداد اعشاری (floating-point) با دقت تا حد میکروثانیه نمایش می‌دهند.
 
-Also, `Date.now()` may have been impacted by system and user clock adjustments, clock skew, etc. as it is relative to the Unix epoch (1970-01-01T00:00:00Z) and dependent on the system clock.
-The `performance.now()` method on the other hand is relative to the `timeOrigin` property which is a [monotonic clock](https://w3c.github.io/hr-time/#dfn-monotonic-clock): its current time never decreases and isn't subject to adjustments.
+همچنین، `Date.now()` ممکن است تحت تأثیر تنظیم ساعت توسط سیستم یا کاربر، انحراف ساعت (clock skew) و موارد مشابه قرار گیرد، زیرا نسبت به مبدأ یونیکس (1970-01-01T00:00:00Z) محاسبه می‌شود و به ساعت سیستم وابسته است. از سوی دیگر، متد `performance.now()` نسبت به خاصیت `timeOrigin` است که یک [ساعت یکنواخت (monotonic clock)](https://w3c.github.io/hr-time/#dfn-monotonic-clock) به شمار می‌رود: زمان جاری آن هرگز کاهش نمی‌یابد و در معرض تنظیم قرار نمی‌گیرد.
 
-### `performance.now` specification changes
+### تغییرات مشخصات `performance.now`
 
-The semantics of the `performance.now()` method changed between High Resolution Time Level 1 and Level 2.
+معناشناسی متد `performance.now()` بین سطح ۱ و سطح ۲ مشخصات High Resolution Time تغییر کرده است.
 
-| Changes               | Level 1                                                                                       | Level 2                                                                                                                                                     |
+| تغییرات | سطح ۱ | سطح ۲ |
 | --------------------- | --------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Relative to           | [`performance.timing.navigationStart`](/en-US/docs/Web/API/PerformanceTiming/navigationStart) | {{domxref("Performance.timeOrigin")}}                                                                                                                       |
-| Triggering conditions | Document fetch or unload prompt (if any).                                                     | Creation of the browsing context (if no prior document), unload prompt (if any), or start of the navigation (as defined in HTML, a few steps before fetch). |
+| نسبت به | [`performance.timing.navigationStart`](/en-US/docs/Web/API/PerformanceTiming/navigationStart) | {{domxref("Performance.timeOrigin")}} |
+| شرایط فعال‌سازی | واکشی سند یا اعلان ترک صفحه (در صورت وجود). | ایجاد بافتار مرور (در صورت نبود سند قبلی)، اعلان ترک صفحه (در صورت وجود)، یا شروع ناوبری (طبق تعریف HTML، چند گام پیش از واکشی). |
 
-The `performance.now()` method used to be relative to [`performance.timing.navigationStart`](/en-US/docs/Web/API/PerformanceTiming/navigationStart) property from the Navigation Timing specification. This changed and `performance.now()` is now relative to {{domxref("Performance.timeOrigin")}} which avoids clock change risks when comparing timestamps across webpages.
+متد `performance.now()` پیش‌تر نسبت به خاصیت [`performance.timing.navigationStart`](/en-US/docs/Web/API/PerformanceTiming/navigationStart) از مشخصات Navigation Timing بود. این رفتار تغییر کرده است و اکنون `performance.now()` نسبت به {{domxref("Performance.timeOrigin")}} است که هنگام مقایسه برچسب‌های زمانی بین صفحات وب، خطر تغییر ساعت را از میان برمی‌دارد.
 
 ```js
 // Level 1 (clock change risks)
@@ -58,26 +55,26 @@ currentTime = performance.timing.navigationStart + performance.now();
 currentTime = performance.timeOrigin + performance.now();
 ```
 
-### Ticking during sleep
+### تیک زدن در هنگام خواب
 
-The specification (Level 2) requires that `performance.now()` should tick when the operating system sleeps or the browser process freezes in any other way. It appears that only browsers on Windows keep ticking during sleep. Relevant browser bugs for other operating systems:
+مشخصات (سطح ۲) الزام می‌کند که `performance.now()` باید هنگام خواب رفتن سیستم‌عامل یا منجمد شدن فرایند مرورگر به هر شکل دیگری، به تیک زدن ادامه دهد. به نظر می‌رسد که تنها مرورگرهای ویندوز در طول خواب به تیک زدن ادامه می‌دهند. باگ‌های مربوط به مرورگرها در سایر سیستم‌عامل‌ها:
 
-- Chrome/Chromium ([bug](https://crbug.com/1206450))
-- Firefox ([bug](https://bugzil.la/1709767))
-- Safari/WebKit ([bug](https://webkit.org/b/225610))
+- Chrome/Chromium ([باگ](https://crbug.com/1206450))
+- Firefox ([باگ](https://bugzil.la/1709767))
+- Safari/WebKit ([باگ](https://webkit.org/b/225610))
 
-Depending on your use case, this divergence may or may not be significant. For example, if you are timing short operations such as loading an image, during which time the system is unlikely to sleep, this may not cause any issues. If you are timing a long operation, you may find {{jsxref("Date.now()")}} more useful to avoid these limitations, since the high precision of `performance.now()` may not be as critical anyway.
+بسته به مورد استفاده شما، این اختلاف ممکن است قابل توجه باشد یا نباشد. برای مثال، اگر زمان عملیات کوتاهی مانند بارگذاری یک تصویر را اندازه‌گیری می‌کنید (کاری که در آن مدت، خواب رفتن سیستم احتمال کمی دارد)، این موضوع ممکن است مشکلی ایجاد نکند. اگر زمان یک عملیات طولانی را اندازه‌گیری می‌کنید، ممکن است {{jsxref("Date.now()")}} را برای دور زدن این محدودیت‌ها مفیدتر بیابید، زیرا به هر حال دقت بالای `performance.now()` ممکن است چندان حیاتی نباشد.
 
-More details can also be found in the specification issue [hr-time#115](https://github.com/w3c/hr-time/issues/115#issuecomment-1172985601).
+جزئیات بیشتر را می‌توانید در بحث مربوط به مشخصات، [hr-time#115](https://github.com/w3c/hr-time/issues/115#issuecomment-1172985601)، بیابید.
 
-## Security requirements
+## الزامات امنیتی
 
-To offer protection against timing attacks and [fingerprinting](/en-US/docs/Glossary/Fingerprinting), `performance.now()` is coarsened based on whether or not the document is {{domxref("Window.crossOriginIsolated","cross-origin isolated","","nocode")}}.
+برای محافظت در برابر حملات زمان‌سنجی و [اثر انگشت دیجیتال (fingerprinting)](/en-US/docs/Glossary/Fingerprinting)، دقت `performance.now()` بر اساس اینکه سند {{domxref("Window.crossOriginIsolated","cross-origin isolated","","nocode")}} باشد یا نباشد، کاهش می‌یابد (coarsened).
 
-- Resolution in isolated contexts: 5 microseconds
-- Resolution in non-isolated contexts: 100 microseconds
+- دقت در بافتارهای ایزوله‌شده: ۵ میکروثانیه
+- دقت در بافتارهای غیرایزوله‌شده: ۱۰۰ میکروثانیه
 
-You can use the {{domxref("Window.crossOriginIsolated")}} and {{domxref("WorkerGlobalScope.crossOriginIsolated")}} properties to check if the document is cross-origin isolated:
+برای بررسی اینکه آیا سند به‌صورت متقاطع-مبدأ ایزوله شده است، می‌توانید از خاصیت‌های {{domxref("Window.crossOriginIsolated")}} و {{domxref("WorkerGlobalScope.crossOriginIsolated")}} استفاده کنید:
 
 ```js
 if (crossOriginIsolated) {
@@ -85,11 +82,11 @@ if (crossOriginIsolated) {
 }
 ```
 
-## Examples
+## مثال‌ها
 
-### Using `performance.now()`
+### استفاده از `performance.now()`
 
-To determine how much time has elapsed since a particular point in your code, you can do something like this:
+برای تعیین اینکه چه مقدار زمان از یک نقطه مشخص در کد شما سپری شده است، می‌توانید کاری شبیه به این انجام دهید:
 
 ```js
 const t0 = performance.now();
@@ -98,14 +95,14 @@ const t1 = performance.now();
 console.log(`Call to doSomething took ${t1 - t0} milliseconds.`);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("Performance.timeOrigin")}}
