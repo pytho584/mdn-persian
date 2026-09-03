@@ -1,11 +1,5 @@
 ---
 title: "Navigator: mediaDevices property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/mediaDevices"
-status: "needs-translation"
----
-
----
-title: "Navigator: mediaDevices property"
 short-title: mediaDevices
 slug: Web/API/Navigator/mediaDevices
 page-type: web-api-instance-property
@@ -14,21 +8,21 @@ browser-compat: api.Navigator.mediaDevices
 
 {{securecontext_header}}{{APIRef("Media Capture and Streams")}}
 
-The **`mediaDevices`** read-only property of the {{domxref("Navigator")}} interface returns a {{domxref("MediaDevices")}} object, which provides access to connected media input devices like cameras and microphones, as well as screen sharing.
+ویژگی فقط‌خواندنی **`mediaDevices`** در رابط {{domxref("Navigator")}} یک شیء {{domxref("MediaDevices")}} را برمی‌گرداند که دسترسی به دستگاه‌های ورودی رسانه‌ای متصل مانند دوربین‌ها و میکروفون‌ها و همچنین اشتراک‌گذاری صفحه را فراهم می‌کند.
 
-## Value
+## مقدار
 
-The {{domxref("MediaDevices")}} singleton object. Usually, you just use this object's members directly, such as by calling {{domxref("MediaDevices.getUserMedia", "navigator.mediaDevices.getUserMedia()")}}.
+این شیء، شیءِ تکنمونه (singleton) {{domxref("MediaDevices")}} است. معمولاً به‌طور مستقیم از اعضای این شیء استفاده می‌کنید؛ مثلاً با فراخوانی {{domxref("MediaDevices.getUserMedia", "navigator.mediaDevices.getUserMedia()")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API): The entry point to the documentation about the entire Media Capture and Streams API.
-- [WebRTC API](/en-US/docs/Web/API/WebRTC_API): Documentation about the WebRTC API, which is closely related.
+- [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API): نقطه ورود به مستندات کل API ضبط رسانه و جریان‌ها (Media Capture and Streams).
+- [WebRTC API](/en-US/docs/Web/API/WebRTC_API): مستندات مربوط به WebRTC API که ارتباط نزدیکی با این ویژگی دارد.
