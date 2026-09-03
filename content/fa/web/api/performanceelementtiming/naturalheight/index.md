@@ -1,11 +1,5 @@
 ---
 title: "PerformanceElementTiming: naturalHeight property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceElementTiming/naturalHeight"
-status: "needs-translation"
----
-
----
-title: "PerformanceElementTiming: naturalHeight property"
 short-title: naturalHeight
 slug: Web/API/PerformanceElementTiming/naturalHeight
 page-type: web-api-instance-property
@@ -16,17 +10,17 @@ browser-compat: api.PerformanceElementTiming.naturalHeight
 
 {{APIRef("Performance API")}}{{SeeCompatTable}}
 
-The **`naturalHeight`** read-only property of the {{domxref("PerformanceElementTiming")}} interface returns the intrinsic height of the image element.
+ویژگی فقط‌خواندنی **`naturalHeight`** در رابط {{domxref("PerformanceElementTiming")}} ارتفاع ذاتی عنصر تصویر را برمی‌گرداند.
 
-## Value
+## مقدار
 
-An unsigned 32-bit integer (unsigned long) which is the intrinsic height of the image if this is applied to an image, `0` for text.
+یک عدد صحیح بدون علامت ۳۲ بیتی (unsigned long) که اگر روی یک تصویر اعمال شده باشد، ارتفاع ذاتی تصویر است و برای متن `0` است.
 
-## Examples
+## مثال‌ها
 
-### Logging `naturalHeight`
+### ثبت `naturalHeight`
 
-In this example an {{HTMLElement("img")}} element is being observed by adding the [`elementtiming`](/en-US/docs/Web/HTML/Reference/Attributes/elementtiming) attribute. A {{domxref("PerformanceObserver")}} is registered to get all performance entries of type `"element"` and the `buffered` flag is used to access data from before observer creation. The image file has a width of 1000px and a height of 750px. Calling `entry.naturalHeight` returns `750`, that being the intrinsic height in pixels.
+در این مثال، یک عنصر {{HTMLElement("img")}} با افزودن ویژگی [`elementtiming`](/en-US/docs/Web/HTML/Reference/Attributes/elementtiming) تحت مشاهده قرار می‌گیرد. یک {{domxref("PerformanceObserver")}} ثبت می‌شود تا تمام ورودی‌های عملکرد از نوع `"element"` را دریافت کند و از پرچم `buffered` برای دسترسی به داده‌های قبل از ایجاد observer استفاده می‌شود. فایل تصویر دارای عرض ۱۰۰۰ پیکسل و ارتفاع ۷۵۰ پیکسل است. فراخوانی `entry.naturalHeight` مقدار `750` را برمی‌گرداند که ارتفاع ذاتی بر حسب پیکسل است.
 
 ```html
 <img
@@ -47,10 +41,10 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "element", buffered: true });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
