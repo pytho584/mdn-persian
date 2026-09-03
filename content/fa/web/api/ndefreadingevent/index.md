@@ -1,7 +1,5 @@
 ---
 title: "NDEFReadingEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NDEFReadingEvent"
-status: "needs-translation"
 ---
 
 ---
@@ -15,32 +13,32 @@ browser-compat: api.NDEFReadingEvent
 
 {{APIRef("Web NFC API")}}{{securecontext_header}}{{SeeCompatTable}}
 
-The **`NDEFReadingEvent`** interface of the [Web NFC API](/en-US/docs/Web/API/Web_NFC_API) represents events dispatched on new NFC readings obtained by {{DOMxRef("NDEFReader")}}.
+رابط **`NDEFReadingEvent`** در [Web NFC API](/en-US/docs/Web/API/Web_NFC_API) نشان‌دهنده رویدادهایی است که وقتی {{DOMxRef("NDEFReader")}} خوانش‌های جدید NFC را به دست می‌آورد، ارسال می‌شوند.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{DOMxRef("NDEFReadingEvent.NDEFReadingEvent", "NDEFReadingEvent.NDEFReadingEvent()")}} {{Experimental_Inline}}
-  - : Creates a new `NDEFReadingEvent`.
+  - : یک `NDEFReadingEvent` جدید ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{DOMxRef("Event")}}_.
+_ویژگی‌های خود را از والدش، {{DOMxRef("Event")}}، به ارث می‌برد._
 
 - {{DOMxRef("NDEFReadingEvent.message")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns an {{DOMxRef("NDEFMessage")}} object containing the received message.
+  - : یک شیء {{DOMxRef("NDEFMessage")}} حاوی پیام دریافتی را برمی‌گرداند.
 - {{DOMxRef("NDEFReadingEvent.serialNumber")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns the serial number of the device, which is used for anti-collision and identification, or an empty string if no serial number is available.
+  - : شماره سریال دستگاه را برمی‌گرداند؛ این شماره برای جلوگیری از برخورد (anti-collision) و شناسایی استفاده می‌شود. اگر شماره سریالی موجود نباشد، رشته خالی برمی‌گرداند.
 
-## Instance methods
+## متدهای نمونه
 
-_Inherits methods from its parent, {{DOMxRef("Event")}}_.
+_متدهای خود را از والدش، {{DOMxRef("Event")}}، به ارث می‌برد._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
