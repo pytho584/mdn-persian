@@ -1,11 +1,5 @@
 ---
 title: "PerformanceNavigationTiming: activationStart property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceNavigationTiming/activationStart"
-status: "needs-translation"
----
-
----
-title: "PerformanceNavigationTiming: activationStart property"
 short-title: activationStart
 slug: Web/API/PerformanceNavigationTiming/activationStart
 page-type: web-api-instance-property
@@ -16,19 +10,19 @@ browser-compat: api.PerformanceNavigationTiming.activationStart
 
 {{APIRef("Performance API")}}{{SeeCompatTable}}
 
-The **`activationStart`** read-only property represents the time between when a document starts prerendering and when it is activated.
+خاصیت فقط‌خواندنی **`activationStart`** نشان‌دهندهٔ مدت زمان بین شروع پیش‌رندر کردن یک سند و فعال‌سازی آن است.
 
-## Value
+## مقدار
 
-A {{domxref("DOMHighResTimeStamp")}} representing the duration between document prerendering start and activation in milliseconds.
+یک {{domxref("DOMHighResTimeStamp")}} که مدت زمان بین شروع پیش‌رندر کردن سند و فعال‌سازی را به میلی‌ثانیه نشان می‌دهد.
 
-The value is `0` if the page has not prerendered or is still prerendering.
+اگر صفحه پیش‌رندر نشده باشد یا هنوز در حال پیش‌رندر باشد، مقدار `0` است.
 
-## Examples
+## مثال‌ها
 
-### Detecting prerendered pages
+### تشخیص صفحات پیش‌رندر شده
 
-When a prerendered document is activated, `activationStart` is set to the current time. The following function can check whether a page is {{DOMxRef("Document.prerendering","prerendering")}} or has already prerendered:
+هنگامی که یک سند پیش‌رندر شده فعال می‌شود، `activationStart` به زمان فعلی تنظیم می‌شود. تابع زیر می‌تواند بررسی کند که آیا یک صفحه در حال {{DOMxRef("Document.prerendering","پیش‌رندر")}} است یا قبلاً پیش‌رندر شده است:
 
 ```js
 function pagePrerendered() {
@@ -39,38 +33,38 @@ function pagePrerendered() {
 }
 ```
 
-### Measuring user-perceived performance milestones
+### اندازه‌گیری نقاط عطف عملکرد درک‌شده توسط کاربر
 
-With prerendered pages, a page may have been created long before it was actually navigated to. When using the [Performance API](/en-US/docs/Web/API/Performance_API) on prerendered pages, it is vital to compare returned values with `activationStart` in order to avoid misleading measurements.
+با صفحات پیش‌رندر شده، ممکن است یک صفحه مدت‌ها قبل از مراجعهٔ واقعی به آن ایجاد شده باشد. هنگام استفاده از [Performance API](/en-US/docs/Web/API/Performance_API) در صفحات پیش‌رندر شده، مقایسهٔ مقادیر بازگشتی با `activationStart` ضروری است تا از اندازه‌گیری‌های گمراه‌کننده جلوگیری شود.
 
 ```js
-// Time to when activation occurred
+// زمان تا لحظهٔ فعال‌سازی
 let activationStart =
   performance.getEntriesByType("navigation")[0].activationStart;
 
-// Time to first paint
+// زمان تا اولین نمایش (first paint)
 let firstPaint = performance.getEntriesByName("first-paint")[0].startTime;
 
-// Time to first contentful paint
+// زمان تا اولین نمایش محتوایی (first contentful paint)
 let firstContentfulPaint = performance.getEntriesByName(
   "first-contentful-paint",
 )[0].startTime;
 
-console.log(`time to first paint: ${firstPaint - activationStart}`);
+console.log(`زمان تا اولین نمایش: ${firstPaint - activationStart}`);
 console.log(
-  `time to first-contentful-paint: ${firstContentfulPaint - activationStart}`,
+  `زمان تا اولین نمایش محتوایی: ${firstContentfulPaint - activationStart}`,
 );
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Speculation Rules API](/en-US/docs/Web/API/Speculation_Rules_API)
-- [Speculative loading](/en-US/docs/Web/Performance/Guides/Speculative_loading)
+- [بارگذاری حدسی (Speculative loading)](/en-US/docs/Web/Performance/Guides/Speculative_loading)
