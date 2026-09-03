@@ -1,7 +1,5 @@
 ---
 title: "PerformanceLongTaskTiming: attribution property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceLongTaskTiming/attribution"
-status: "needs-translation"
 ---
 
 ---
@@ -16,15 +14,15 @@ browser-compat: api.PerformanceLongTaskTiming.attribution
 
 {{SeeCompatTable}}{{APIRef("Performance API")}}
 
-The **`attribution`** read-only property of the {{domxref("PerformanceLongTaskTiming")}} interface returns an array of {{domxref('TaskAttributionTiming')}} objects.
+{{domxref("PerformanceLongTaskTiming")}} 接口的 **`attribution`** 只读属性返回一个 {{domxref('TaskAttributionTiming')}} 对象的数组。
 
-## Value
+## 值
 
-An {{jsxref("Array")}} of {{domxref('TaskAttributionTiming')}} objects.
+一个由 {{domxref('TaskAttributionTiming')}} 对象组成的 {{jsxref("Array")}}。
 
-## Examples
+## 示例
 
-### Logging attributions for long tasks
+### 记录长任务的 attribution
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -38,14 +36,14 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "longtask", buffered: true });
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
 - {{domxref('TaskAttributionTiming')}}
