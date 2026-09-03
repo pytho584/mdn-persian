@@ -1,11 +1,5 @@
 ---
 title: "PaymentResponse: shippingOption property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse/shippingOption"
-status: "needs-translation"
----
-
----
-title: "PaymentResponse: shippingOption property"
 short-title: shippingOption
 slug: Web/API/PaymentResponse/shippingOption
 page-type: web-api-instance-property
@@ -14,25 +8,18 @@ browser-compat: api.PaymentResponse.shippingOption
 
 {{securecontext_header}}{{APIRef("Payment Request API")}}
 
-The **`shippingOption`** read-only property of
-the `PaymentRequest` interface returns the ID attribute of the shipping
-option selected by the user. This option is only present when the
-`requestShipping` option is set to `true` in the
-`options` object passed to the
-{{domxref('PaymentRequest.PaymentRequest','PaymentRequest')}} constructor.
+ویژگی فقط‌خواندنی **`shippingOption`** از رابط `PaymentRequest`، شناسه (ID) گزینه‌ی حمل‌ونقل انتخاب‌شده توسط کاربر را برمی‌گرداند. این گزینه فقط زمانی وجود دارد که گزینه‌ی `requestShipping` در شیء `options` که به سازنده‌ی {{domxref('PaymentRequest.PaymentRequest','PaymentRequest')}} ارسال شده است، روی `true` تنظیم شده باشد.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
-In the example below, the {{domxref('PaymentRequest.shippingoptionchange_event', 'shippingoptionchange')}} event
-is called. It calls `updateDetails()` to toggle the shipping method between
-"standard" and "express".
+در مثال زیر، رویداد {{domxref('PaymentRequest.shippingoptionchange_event', 'shippingoptionchange')}} فراخوانی می‌شود. این رویداد تابع `updateDetails()` را برای جابجایی بین روش‌های حمل‌ونقل «standard» و «express» صدا می‌زند.
 
 ```js
-// Initialization of PaymentRequest arguments are excerpted for brevity.
+// مقداردهی اولیه آرگومان‌های PaymentRequest برای اختصار حذف شده است.
 const payment = new PaymentRequest(supportedInstruments, details, options);
 
 request.addEventListener("shippingoptionchange", (evt) => {
@@ -46,10 +33,10 @@ request.addEventListener("shippingoptionchange", (evt) => {
 payment
   .show()
   .then((paymentResponse) => {
-    // Processing of paymentResponse excerpted for the same of brevity.
+    // پردازش paymentResponse برای اختصار حذف شده است.
   })
   .catch((err) => {
-    console.error("Uh oh, something bad happened", err.message);
+    console.error("اوه، اتفاق بدی افتاد", err.message);
   });
 
 function updateDetails(details, shippingOption, resolve, reject) {
@@ -64,7 +51,7 @@ function updateDetails(details, shippingOption, resolve, reject) {
     otherShippingOption = details.shippingOptions[0];
     details.total.amount.value = "67.00";
   } else {
-    reject(`Unknown shipping option '${shippingOption}'`);
+    reject(`گزینه‌ی حمل‌ونقل ناشناخته '${shippingOption}'`);
     return;
   }
   selectedShippingOption.selected = true;
@@ -74,10 +61,10 @@ function updateDetails(details, shippingOption, resolve, reject) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
