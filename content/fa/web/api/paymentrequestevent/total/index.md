@@ -1,11 +1,5 @@
 ---
 title: "PaymentRequestEvent: total property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/total"
-status: "needs-translation"
----
-
----
-title: "PaymentRequestEvent: total property"
 short-title: total
 slug: Web/API/PaymentRequestEvent/total
 page-type: web-api-instance-property
@@ -16,19 +10,18 @@ browser-compat: api.PaymentRequestEvent.total
 
 {{SeeCompatTable}}{{APIRef("Web-Based Payment Handler API")}}{{AvailableInWorkers("service")}}
 
-The **`total`** read-only property of the {{domxref("PaymentRequestEvent")}} interface returns a
-`PaymentCurrencyAmount` object containing the total amount being requested for payment.
+ویژگی فقطخواندنی **`total`** از رابط {{domxref("PaymentRequestEvent")}} یک شیء `PaymentCurrencyAmount` شامل مبلغ کل درخواست‌شده برای پرداخت را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A `PaymentCurrencyAmount` object. This object contains the following properties:
+یک شیء `PaymentCurrencyAmount`. این شیء دارای ویژگی‌های زیر است:
 
 - `currency`
-  - : A string containing a three-letter [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html) standard currency code representing the currency of the payment. Examples include `USD`, `CAN`, and `GBP`.
+  - : یک رشته شامل کد ارز استاندارد سه‌حرفی [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html) که ارز پرداخت را نشان می‌دهد. مثال‌ها عبارتند از `USD`، `CAN` و `GBP`.
 - `value`
-  - : A string containing a decimal monetary value, e.g., `2.55`.
+  - : یک رشته شامل یک مقدار پولی اعشاری، به‌عنوان مثال `2.55`.
 
-## Examples
+## مثال‌ها
 
 ```js
 self.addEventListener("paymentrequest", (e) => {
@@ -36,18 +29,18 @@ self.addEventListener("paymentrequest", (e) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Web-based payment apps overview](https://web.dev/articles/web-based-payment-apps-overview)
-- [Setting up a payment method](https://web.dev/articles/setting-up-a-payment-method)
-- [Life of a payment transaction](https://web.dev/articles/life-of-a-payment-transaction)
-- [Using the Payment Request API](/en-US/docs/Web/API/Payment_Request_API/Using_the_Payment_Request_API)
-- [Payment processing concepts](/en-US/docs/Web/API/Payment_Request_API/Concepts)
+- [نمای کلی برنامه‌های پرداخت مبتنی بر وب](https://web.dev/articles/web-based-payment-apps-overview)
+- [راه‌اندازی یک روش پرداخت](https://web.dev/articles/setting-up-a-payment-method)
+- [چرخه حیات یک تراکنش پرداخت](https://web.dev/articles/life-of-a-payment-transaction)
+- [استفاده از API درخواست پرداخت](/en-US/docs/Web/API/Payment_Request_API/Using_the_Payment_Request_API)
+- [مفاهیم پردازش پرداخت](/en-US/docs/Web/API/Payment_Request_API/Concepts)
