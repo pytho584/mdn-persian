@@ -1,10 +1,4 @@
 ---
-title: "Using Secure Payment Confirmation"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Payment_Request_API/Using_secure_payment_confirmation"
-status: "needs-translation"
----
-
----
 title: Using Secure Payment Confirmation
 slug: Web/API/Payment_Request_API/Using_secure_payment_confirmation
 page-type: guide
@@ -16,40 +10,42 @@ spec-urls:
 
 {{DefaultAPISidebar("Payment Request API")}}
 
-Secure Payment Confirmation (SPC), available through the Payment Request API, provides a mechanism for strong customer authentication during checkout, thereby protecting against online payment fraud.
+Secure Payment Confirmation (SPC) که از طریق Payment Request API در دسترس است، سازوکاری برای احراز هویت قوی مشتری هنگام پرداخت فراهم می‌کند و بدین ترتیب از کلاهبرداری در پرداخت‌های آنلاین جلوگیری می‌کند.
 
-## Overview
+## نمای کلی
 
-To protect against online payment fraud, it is common to authenticate the account holder. Strong authentication lowers the risk of fraud, but increases the likelihood that friction during checkout will lead to shopping cart abandonment. Banks, merchants, payment services providers, and other entities in a payments ecosystem therefore consider a number of factors when deciding what type and strength of authentication to use for each transaction, including the amount, the items being purchased, the user's payment history, which party bears liability in the case of fraud, and regulatory requirements (such as [European Payment Services Directive 2](<https://en.wikipedia.org/wiki/Payment_Services_Directive#Revised_Directive_on_Payment_Services_(PSD2)>) requirements for strong customer authentication and evidence of user consent).
+برای جلوگیری از کلاهبرداری در پرداخت‌های آنلاین، معمولاً هویت صاحب حساب احراز می‌شود. احراز هویت قوی خطر کلاهبرداری را کاهش می‌دهد، اما احتمالِ رها شدن سبد خرید را به دلیل اصطکاکِ ایجادشده در فرایند خرید افزایش می‌دهد.
 
-A number of mechanisms are used in combination for strong authentication, including passwords, one-time SMS codes, mobile applications, and Web Authentication. Each one has its advantages and disadvantages. For example, one-time SMS codes are now familiar to users but can involve usability issues (such as device unavailability) and security vulnerabilities. Web Authentication offers better security and is available in all major browsers and all modern mobile devices and computers. However, Web Authentication alone does not provide evidence of user consent to make a payment.
+بنابراین بانک‌ها، فروشندگان، ارائه‌دهندگان خدمات پرداخت و سایر فعالانِ زیست‌بوم پرداخت هنگام انتخاب نوع و قدرت احراز هویت برای هر تراکنش، عوامل متعددی را در نظر می‌گیرند؛ از جمله مبلغ تراکنش، اقلام خریداری‌شده، سابقه پرداخت کاربر، اینکه در صورت کلاهبرداری کدام طرف مسئولیت خسارت را بر عهده می‌گیرد، و الزامات قانونی (مانند الزامات [دستورالعمل دوم خدمات پرداخت اروپا](<https://en.wikipedia.org/wiki/Payment_Services_Directive#Revised_Directive_on_Payment_Services_(PSD2)>) درباره احراز هویت قوی مشتری و ارائهٔ شواهد رضایت کاربر).
 
-SPC is designed to enable streamlined strong customer authentication (SCA) in a variety of payment systems, and to provide cryptographic evidence that the user has consented to the terms of a transaction. When the API is called, the browser displays elements of the transaction in a dialog box: the name of the merchant, payment instrument, and amount and currency of payment. For example, here is the Chrome browser (version M118) transaction dialog for SPC:
+برای احراز هویت قوی، معمولاً چند سازوکار به‌صورت ترکیبی استفاده می‌شود؛ از جمله گذرواژه، کدهای یک‌بارمصرف پیامکی، اپلیکیشن‌های موبایل و Web Authentication. هر یک از این‌ها مزایا و معایب خود را دارند. برای مثال، کدهای یک‌بارمصرف پیامکی اکنون برای کاربران آشنا هستند اما ممکن است مشکلات کاربری (مانند در دسترس نبودن دستگاه موردنظر) و آسیب‌پذیری‌های امنیتی به همراه داشته باشند. Web Authentication امنیت بهتری ارائه می‌دهد و در تمام مرورگرهای اصلی و تمام گوشی‌ها و رایانه‌های مدرن در دسترس است. با وجود این، Web Authentication به‌تنهایی شواهدی مبنی بر رضایت کاربر برای انجام پرداخت فراهم نمی‌کند.
+
+SPC برای فعال‌سازیِ احراز هویت قوی مشتری (SCA) به شکلی ساده و روان در انواع سیستم‌های پرداخت طراحی شده است و شواهد رمزنگاری‌شده‌ای فراهم می‌کند که نشان می‌دهد کاربر با شرایط تراکنش موافقت کرده است. وقتی این API فراخوانی می‌شود، مرورگر عناصر تراکنش را در یک کادر محاوره‌ای نشان می‌دهد: نام فروشنده، ابزار پرداخت و مبلغ و واحد پول. برای نمونه، کادر محاوره‌ای تراکنش مرورگر Chrome (نسخه M118) برای SPC به این شکل است:
 
 ![Chrome M118 transaction dialog for SPC](chrome-tx-dialog.png)
 
-Selecting "Verify" initiates a Web Authentication flow. When the user successfully authenticates (e.g., using biometric authenticators on their phone or laptop), the browser passes the data displayed in the dialog to the authenticator, which signs it and returns it as part of the resulting Web Authentication assertion. The assertion can then be passed to the Relying Party for validation. Because the browser passes the displayed data directly to the authenticator (with no JavaScript code able to alter the data), the Relying Party can have high confidence that the user consented to the displayed transaction data.
+با انتخاب «Verify» یک فرایند Web Authentication شروع می‌شود. وقتی کاربر با موفقیت احراز هویت می‌کند (مثلاً با استفاده از ابزارهای زیست‌سنجی تلفن یا لپ‌تاپ خود)، مرورگر داده‌های نمایش‌داده‌شده در کادر محاوره‌ای را به ابزار احراز هویت (authenticator) می‌فرستد. ابزار احراز هویت آن داده‌ها را امضا می‌کند و آن‌ها را به‌عنوان بخشی از تأییدیه Web Authentication (assertion) حاصل، به مرورگر برمی‌گرداند. سپس این تأییدیه برای اعتبارسنجی به طرف اتکا (Relying Party) ارسال می‌شود. چون مرورگر داده‌های نمایش‌داده‌شده را مستقیماً در اختیار ابزار احراز هویت قرار می‌دهد (بدون آنکه هیچ کد جاوااسکریپتی بتواند آن داده‌ها را تغییر دهد)، طرف اتکا می‌تواند با اطمینان بالایی مطمئن باشد که کاربر با داده‌های تراکنشِ نمایش‌داده‌شده موافقت کرده است.
 
-Thus, SPC builds on Web Authentication to enable sites to perform streamlined strong authentication and provide evidence of user consent. SPC will typically be used as part of the authentication framework of a given payment system. For example, SPC is supported by both EMV® 3-D Secure (version 2.3.1) and EMV® Secure Remote Commerce (version 1.3) but is designed to work with a wide variety of payment types, including "push payments" like direct credit transfers and wallet payments.
+به این ترتیب، SPC بر پایه Web Authentication ساخته شده است تا سایَت‌ها بتوانند احراز هویت قویِ بدون‌اصطکاک انجام دهند و شواهدی از رضایت کاربر فراهم کنند. SPC به‌طور معمول به‌عنوان بخشی از چارچوب احراز هویتِ یک سیستم پرداخت مشخص به کار می‌رود. برای مثال، SPC هم در EMV® 3-D Secure نسخهٔ 2.3.1 و هم در EMV® Secure Remote Commerce نسخهٔ 1.3 پشتیبانی می‌شود، اما طوری طراحی شده است که با طیف گسترده‌ای از انواع پرداخت، از جمله پرداخت‌های «push» مانند انتقال مستقیم اعتباری و پرداخت‌های کیف پول، سازگار باشد.
 
-## Payment request method
+## روش درخواست پرداخت
 
-Secure Payment Confirmation leverages underlying capabilities of the Payment Request API. The standardized payment method identifier for the Secure Payment Confirmation payment handler is [`"secure-payment-confirmation"`](/en-US/docs/Web/API/Payment_Request_API/Concepts#secure-payment-confirmation).
+Secure Payment Confirmation از قابلیت‌های زیربنایی Payment Request API بهره می‌گیرد. شناسهٔ استانداردِ روش پرداختِ مورد استفاده برای Secure Payment Confirmation، [`"secure-payment-confirmation"`](/en-US/docs/Web/API/Payment_Request_API/Concepts#secure-payment-confirmation) است.
 
-## Web authentication extension
+## افزونهٔ Web Authentication
 
-Secure Payment Confirmation defines a [Web Authentication extension](/en-US/docs/Web/API/Web_Authentication_API/WebAuthn_extensions), [`payment`](/en-US/docs/Web/API/Web_Authentication_API/WebAuthn_extensions#payment), which adds three payments-specific capabilities on top of traditional Web Authentication:
+Secure Payment Confirmation یک [افزونهٔ Web Authentication](/en-US/docs/Web/API/Web_Authentication_API/WebAuthn_extensions) به نام [`payment`](/en-US/docs/Web/API/Web_Authentication_API/WebAuthn_extensions#payment) تعریف می‌کند که سه قابلیت ویژهٔ پرداخت را به Web Authentication سنتی اضافه می‌کند:
 
-1. When the Relying Party opts in, allows entities other than the Relying Party to initiate a payments authentication ceremony with the Relying Party's credentials. SPC decouples the authentication ceremony from validation of the authentication results. This allows merchants (or their payment service providers in a cross-origin iframe) to retain control over the user experience of authentication, without forwarding the user (via a redirect) to another Website or mobile app. If the Relying Party is the bank, for example, this enables a merchant to manage the user experience of authentication, while the bank can still validate the results of the authentication. Communication between parties (of credentials and authentication results) typically happens over payment system-specific rails such as EMV® 3-D Secure.
-2. Enforces that the User Agent appropriately communicates to the user that they are authenticating a transaction and the transaction details. Those details are then included in the assertion signed by the authenticator.
-3. Allows calling navigator.credentials.create in a cross-origin iframe, as long as a "payment" permission policy is set on the iframe.
-   Note: This ability is now part of WebAuthn Level 3, where it uses the "publickey-credential-create" permission policy instead. Developers are encouraged to use that where available, instead of relying on SPC's "payment" permission.
+1. وقتی طرف اتکا استفاده از آن را فعال کند، به نهادهایی غیر از طرف اتکا اجازه می‌دهد با استفاده از اعتبارنامه‌های طرف اتکا، فرایند احراز هویتِ پرداخت را آغاز کنند. SPC فرایند احراز هویت را از اعتبارسنجی نتایج احراز هویت جدا می‌کند. این کار به فروشندگان (یا ارائه‌دهندگان خدمات پرداختِ آن‌ها در یک iframe با مبدأ متفاوت) اجازه می‌دهد کنترل تجربهٔ کاربری احراز هویت را در دست بگیرند، بدون اینکه کاربر را از طریق تغییر مسیر (redirect) به وب‌سایت یا اپلیکیشن موبایل دیگری منتقل کنند. اگر طرف اتکا مثلاً بانک باشد، این ویژگی به فروشنده اجازه می‌دهد تجربه کاربری احراز هویت را مدیریت کند، در حالی که بانک همچنان می‌تواند نتایج احراز هویت را اعتبارسنجی کند. ارتباط بین طرف‌ها (برای تبادل اعتبارنامه‌ها و نتایج احراز هویت) معمولاً از طریق زیرساخت‌های خاصِ همان سیستم پرداخت، مانند EMV® 3-D Secure، انجام می‌شود.
+2. تضمین می‌کند که عامل کاربر (User Agent) به‌شکل مناسبی به کاربر اطلاع دهد که در حال احراز هویتِ یک تراکنش است و جزئیات آن تراکنش چیست. سپس این جزئیات در تأییدیه‌ای که ابزار احراز هویت امضا کرده است گنجانده می‌شوند.
+3. اجازه می‌دهد navigator.credentials.create در یک iframe با مبدأ متفاوت فراخوانی شود، به شرطی که خط‌مشی مجوزِ «payment» روی آن iframe تنظیم شده باشد.
+   توجه: این قابلیت اکنون بخشی از WebAuthn Level 3 است و در آنجا در عوض از خط‌مشی مجوزِ «publickey-credential-create» استفاده می‌شود. به توسعه‌دهندگان توصیه می‌شود هرجا در دسترس بود از آن استفاده کنند، نه از مجوزِ «payment» مخصوص SPC.
 
-## Examples
+## مثال‌ها
 
-### Creating a credential
+### ایجاد یک اعتبارنامه
 
-Creating a credential in Secure Payment Confirmation is done by the same {{domxref("CredentialsContainer.create()", "navigator.credentials.create()")}} call as with Web Authentication, but with a `payment` extension specified.
+ایجاد یک اعتبارنامه در Secure Payment Confirmation با همان فراخوانی {{domxref("CredentialsContainer.create()", "navigator.credentials.create()")}} در Web Authentication انجام می‌شود، با این تفاوت که افزونهٔ `payment` نیز مشخص شده است.
 
 ```js
 const publicKey = {
@@ -95,14 +91,11 @@ navigator.credentials
   });
 ```
 
-### Creating a credential in a cross-origin iframe
+### ایجاد یک اعتبارنامه در iframe با مبدأ متفاوت
 
-SPC allows a credential to be created in a cross-origin iframe (e.g., if `merchant.com` embeds an iframe from `bank.com`).
+SPC اجازه می‌دهد اعتبارنامه‌ای در یک iframe با مبدأ متفاوت ایجاد شود (مثلاً اگر `merchant.com` یک iframe از `bank.com` را درون صفحه خود جا دهد).
 
-In this flow, as part of a transaction, the Relying Party (e.g., a bank) authenticates the account holder through some mechanism other than SPC (e.g., by using a one-time passcode or some other mechanism). The Relying Party then offers the user the option of registering an SPC credential to streamline future transactions. The user registers an SPC credential with the Relying Party.
-In order for these steps to happen in the merchant context (that is, without a redirect), the cross-origin iframe must have the [`payment`](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy/payment) permission policy set.
-
-For example:
+در این جریان، به‌عنوان بخشی از یک تراکنش، طرف اتکا (مثلاً بانک) هویت صاحب حساب را از طریق سازوکاری غیر از SPC احراز می‌کند (مثلاً با استفاده از گذرواژهٔ یک‌بارمصرف یا سازوکاری دیگر). سپس طرف اتکا این گزینه را به کاربر پیشنهاد می‌دهد که برای تسهیل تراکنش‌های آینده، یک اعتبارنامهٔ SPC ثبت کند. کاربر نیز آن اعتبارنامهٔ SPC را برای طرف اتکا ثبت می‌کند. برای اینکه این مراحل در بافت فروشنده (بدون تغییر مسیر) انجام شوند، iframe با مبدأ متفاوت باید خط‌مشیِ مجوزِ [`payment`](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy/payment) را تنظیم شده داشته باشد.
 
 ```html
 <!-- Assume parent origin is merchant.com -->
@@ -110,12 +103,12 @@ For example:
 <iframe src="https://example.org" allow="payment"></iframe>
 ```
 
-### Authenticating a payment
+### احراز هویت یک پرداخت
 
-An origin may invoke the Payment Request API with the `"secure-payment-confirmation"` payment method to prompt the user to verify a Secure Payment Confirmation credential created by any other origin. The browser will display a native user interface (the "transaction dialog") with transaction details (e.g., the payment currency and amount and the payee origin).
+یک مبدأ می‌تواند Payment Request API را با روش پرداخت `"secure-payment-confirmation"` فراخوانی کند تا از کاربر بخواهد با استفاده از اعتبارنامهٔ Secure Payment Confirmation که توسط مبدأ دیگری ایجاد شده است، هویت خود را تأیید کند. مرورگر یک رابط کاربری بومی (به‌نام «کادر محاوره‌ای تراکنش») با جزئیات تراکنش نمایش می‌دهد (برای مثال واحد پول، مبلغ و مبدأ دریافت‌کننده).
 
 > [!NOTE]
-> Per the Payment Request API, if `PaymentRequest` is used within a cross-origin iframe (e.g., if `merchant.com` embeds an iframe from `psp.com`, and `psp.com` wishes to use `PaymentRequest`), that iframe must have the `payment` permission policy set.
+> طبق Payment Request API، اگر `PaymentRequest` در یک iframe با مبدأ متفاوت استفاده شود (مثلاً اگر `merchant.com` یک iframe از `psp.com` را تعبیه کند و `psp.com` بخواهد از `PaymentRequest` استفاده کند)، آن iframe باید خط‌مشی مجوزِ `payment` را تنظیم شده داشته باشد.
 
 ```js
 const request = new PaymentRequest(
@@ -166,7 +159,7 @@ try {
 }
 ```
 
-Before starting a payment flow, you can determine whether SPC is available by calling the {{domxref('PaymentRequest.securePaymentConfirmationAvailability_static', 'PaymentRequest.securePaymentConfirmationAvailability()')}} static method. For example:
+پیش از شروع فرایند پرداخت، می‌توانید با فراخوانی متد ایستای {{domxref('PaymentRequest.securePaymentConfirmationAvailability_static', 'PaymentRequest.securePaymentConfirmationAvailability()')}} تعیین کنید که آیا SPC در دسترس است یا خیر. برای نمونه:
 
 ```js
 async function spcSupport() {
@@ -179,18 +172,18 @@ async function spcSupport() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
 - [Payment Request API](/en-US/docs/Web/API/Payment_Request_API)
 - [Payment Method Identifiers](/en-US/docs/Web/API/Payment_Request_API/Concepts#payment_method_identifiers)
 - [Web Authentication](/en-US/docs/Web/API/Web_Authentication_API)
 - [Secure Payment Confirmation Explainer](https://github.com/w3c/secure-payment-confirmation/blob/main/explainer.md)
 - [Secure Payment Confirmation Scope](https://github.com/w3c/secure-payment-confirmation/blob/main/scope.md)
-- General [flow diagram for SPC during a payment](https://github.com/w3c/wpsig/blob/gh-pages/spc-general.png)
+- نمودار کلی [جریان SPC در هنگام یک پرداخت](https://github.com/w3c/wpsig/blob/gh-pages/spc-general.png)
 - [Secure Payment Confirmation Test Suite](https://wpt.fyi/results/secure-payment-confirmation?label=master&label=experimental&aligned)
 - [Chrome developer documentation for SPC](https://developer.chrome.com/docs/payments/secure-payment-confirmation)
 - [EMV® 3-D Secure (version 2.3)](https://www.emvco.com/emv-technologies/3-d-secure/)
