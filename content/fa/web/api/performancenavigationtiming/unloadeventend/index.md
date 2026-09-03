@@ -1,11 +1,5 @@
 ---
 title: "PerformanceNavigationTiming: unloadEventEnd property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceNavigationTiming/unloadEventEnd"
-status: "needs-translation"
----
-
----
-title: "PerformanceNavigationTiming: unloadEventEnd property"
 short-title: unloadEventEnd
 slug: Web/API/PerformanceNavigationTiming/unloadEventEnd
 page-type: web-api-instance-property
@@ -14,23 +8,23 @@ browser-compat: api.PerformanceNavigationTiming.unloadEventEnd
 
 {{APIRef("Performance API")}}
 
-The **`unloadEventEnd`** read-only property returns a {{domxref("DOMHighResTimeStamp")}} representing the time immediately after the previous document's [`unload`](/en-US/docs/Web/API/Window/unload_event) event handler completes.
+خاصیت **`unloadEventEnd`** (فقط خواندنی) یک {{domxref("DOMHighResTimeStamp")}} را برمی‌گرداند که نشان‌دهندهٔ زمان دقیقاً پس از اتمام اجرای مدیریت‌کنندهٔ رویداد [`unload`](/en-US/docs/Web/API/Window/unload_event) سند قبلی است.
 
-## Value
+## مقدار
 
-The `unloadEventEnd` property can have the following values:
+خاصیت `unloadEventEnd` می‌تواند مقادیر زیر را داشته باشد:
 
-- A {{domxref("DOMHighResTimeStamp")}} representing the time immediately after the previous document's [`unload`](/en-US/docs/Web/API/Window/unload_event) event handler completes.
-- `0` if there is no previous document.
-- `0` if the previous page was on another origin.
+- یک {{domxref("DOMHighResTimeStamp")}} که نشان‌دهندهٔ زمان دقیقاً پس از اتمام اجرای مدیریت‌کنندهٔ رویداد [`unload`](/en-US/docs/Web/API/Window/unload_event) سند قبلی است.
+- `0` در صورتی که سند قبلی وجود نداشته باشد.
+- `0` در صورتی که صفحهٔ قبلی در یک خاستگاه دیگر بوده باشد.
 
-## Examples
+## مثال‌ها
 
-### Measuring `unload` event handler time
+### اندازه‌گیری زمان مدیریت‌کنندهٔ رویداد `unload`
 
-The `unloadEventEnd` property can be used to measure how long it takes to process the [`unload`](/en-US/docs/Web/API/Window/unload_event) event handler.
+از خاصیت `unloadEventEnd` می‌توان برای اندازه‌گیری مدت زمان پردازش مدیریت‌کنندهٔ رویداد [`unload`](/en-US/docs/Web/API/Window/unload_event) استفاده کرد.
 
-This is useful to measure the time of long running [`unload`](/en-US/docs/Web/API/Window/load_event) event handlers.
+این کار برای اندازه‌گیری زمان اجرای مدیریت‌کننده‌های رویداد [`unload`](/en-US/docs/Web/API/Window/load_event) طولانی‌مدت مفید است.
 
 ```js
 window.addEventListener("unload", (event) => {
@@ -38,7 +32,7 @@ window.addEventListener("unload", (event) => {
 });
 ```
 
-Example using a {{domxref("PerformanceObserver")}}, which notifies of new `navigation` performance entries as they are recorded in the browser's performance timeline. Use the `buffered` option to access entries from before the observer creation.
+مثال با استفاده از {{domxref("PerformanceObserver")}} که به محض ثبت ورودی‌های جدید عملکرد `navigation` در جدول زمانی عملکرد مرورگر، آن‌ها را اعلام می‌کند. از گزینهٔ `buffered` برای دسترسی به ورودی‌های قبل از ایجاد ناظر استفاده کنید.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -55,7 +49,7 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "navigation", buffered: true });
 ```
 
-Example using {{domxref("Performance.getEntriesByType()")}}, which only shows `navigation` performance entries present in the browser's performance timeline at the time you call this method:
+مثال با استفاده از {{domxref("Performance.getEntriesByType()")}} که فقط ورودی‌های عملکرد `navigation` موجود در جدول زمانی عملکرد مرورگر را در زمان فراخوانی این متد نشان می‌دهد:
 
 ```js
 const entries = performance.getEntriesByType("navigation");
@@ -68,14 +62,14 @@ entries.forEach((entry) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [`unload`](/en-US/docs/Web/API/Window/unload_event) event
+- رویداد [`unload`](/en-US/docs/Web/API/Window/unload_event)
