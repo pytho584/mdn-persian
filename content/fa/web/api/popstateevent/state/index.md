@@ -1,11 +1,5 @@
 ---
 title: "PopStateEvent: state property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PopStateEvent/state"
-status: "needs-translation"
----
-
----
-title: "PopStateEvent: state property"
 short-title: state
 slug: Web/API/PopStateEvent/state
 page-type: web-api-instance-property
@@ -14,18 +8,17 @@ browser-compat: api.PopStateEvent.state
 
 {{ APIRef("History API") }}
 
-The **`state`** read-only property of the {{domxref("PopStateEvent")}} interface represents the state stored when the event was created.
+ویژگی فقط‌خواندنی **`state`** از رابط {{domxref("PopStateEvent")}}، وضعیت (state) ذخیره‌شده هنگام ایجاد رویداد را نشان می‌دهد.
 
-Practically it is a value provided by the call to {{domxref("history.pushState()")}} or {{domxref("history.replaceState()")}}
+در عمل، این همان `state`ای است که هنگام فراخوانی {{domxref("history.pushState()")}} یا {{domxref("history.replaceState()")}} تنظیم شده است.
 
-## Value
+## مقدار
 
-An object, or `null`.
+یک شیء، یا `null`.
 
-## Examples
+## مثال‌ها
 
-The code below logs the value of `state` when using the
-{{domxref("History.pushState","pushState()")}} method to push a value to the history.
+کد زیر مقدار `state` را هنگام استفاده از متد {{domxref("History.pushState","pushState()")}} برای افزودن یک مقدار به تاریخچه، در لاگ ثبت می‌کند.
 
 ```js
 // Log the state of
@@ -42,22 +35,22 @@ history.pushState(
 );
 ```
 
-This will log:
+خروجی زیر در لاگ ثبت می‌شود:
 
 ```plain
 State received: { name: "Example" }
 State received: { name: "Another example" }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("PopStateEvent()")}} constructor
+- سازنده {{domxref("PopStateEvent()")}}
 - {{domxref("History.state")}}
