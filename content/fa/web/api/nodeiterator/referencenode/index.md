@@ -1,7 +1,5 @@
 ---
 title: "NodeIterator: referenceNode property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/referenceNode"
-status: "needs-translation"
 ---
 
 ---
@@ -14,15 +12,13 @@ browser-compat: api.NodeIterator.referenceNode
 
 {{APIRef("DOM")}}
 
-The **`NodeIterator.referenceNode`** read-only property returns the
-{{domxref("Node")}} to which the iterator is anchored; as new nodes are inserted, the
-iterator remains anchored to the reference node as specified by this property.
+خاصیت فقطخواندنی **`NodeIterator.referenceNode`**، {{domxref("Node")}}ای را برمی‌گرداند که تکرارکننده به آن متصل است؛ با درج شدن گره‌های جدید، تکرارکننده همان‌طور که توسط این خاصیت تعیین شده، به گره مرجع متصل باقی می‌ماند.
 
-## Value
+## مقدار
 
-A {{domxref("Node")}}.
+یک {{domxref("Node")}}.
 
-## Examples
+## مثال‌ها
 
 ```js
 const nodeIterator = document.createNodeIterator(
@@ -37,14 +33,14 @@ const nodeIterator = document.createNodeIterator(
 node = nodeIterator.referenceNode;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface it belongs to: {{domxref("NodeIterator")}}
+- واسطی که این خاصیت به آن تعلق دارد: {{domxref("NodeIterator")}}
