@@ -1,10 +1,4 @@
 ---
-title: "OES_element_index_uint extension"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/OES_element_index_uint"
-status: "needs-translation"
----
-
----
 title: OES_element_index_uint extension
 short-title: OES_element_index_uint
 slug: Web/API/OES_element_index_uint
@@ -14,20 +8,20 @@ browser-compat: api.OES_element_index_uint
 
 {{APIRef("WebGL")}}
 
-The **`OES_element_index_uint`** extension is part of the [WebGL API](/en-US/docs/Web/API/WebGL_API) and adds support for `gl.UNSIGNED_INT` types to {{domxref("WebGLRenderingContext.drawElements()")}}.
+افزونهٔ **`OES_element_index_uint`** بخشی از [WebGL API](/en-US/docs/Web/API/WebGL_API) است و پشتیبانی از نوع `gl.UNSIGNED_INT` را به {{domxref("WebGLRenderingContext.drawElements()")}} اضافه می‌کند.
 
-WebGL extensions are available using the {{domxref("WebGLRenderingContext.getExtension()")}} method. For more information, see also [Using Extensions](/en-US/docs/Web/API/WebGL_API/Using_Extensions) in the [WebGL tutorial](/en-US/docs/Web/API/WebGL_API/Tutorial).
+افزونه‌های WebGL از طریق روش {{domxref("WebGLRenderingContext.getExtension()")}} در دسترس هستند. برای اطلاعات بیشتر، به [استفاده از افزونه‌ها](/en-US/docs/Web/API/WebGL_API/Using_Extensions) در [آموزش WebGL](/en-US/docs/Web/API/WebGL_API/Tutorial) مراجعه کنید.
 
 > [!NOTE]
-> This extension is only available to {{domxref("WebGLRenderingContext", "WebGL1", "", 1)}} contexts. In {{domxref("WebGL2RenderingContext", "WebGL2", "", 1)}}, the functionality of this extension is available on the WebGL2 context by default.
+> این افزونه فقط در زمینه‌های {{domxref("WebGLRenderingContext", "WebGL1", "", 1)}} در دسترس است. در {{domxref("WebGL2RenderingContext", "WebGL2", "", 1)}}، قابلیت‌های این افزونه به‌صورت پیش‌فرض در زمینهٔ WebGL2 موجود است.
 
-## Extended methods
+## روش‌های توسعه‌یافته
 
-This extension extends {{domxref("WebGLRenderingContext.drawElements()")}}:
+این افزونه {{domxref("WebGLRenderingContext.drawElements()")}} را گسترش می‌دهد:
 
-- The `type` parameter now accepts `gl.UNSIGNED_INT`.
+- پارامتر `type` اکنون مقدار `gl.UNSIGNED_INT` را می‌پذیرد.
 
-## Examples
+## مثال‌ها
 
 ```js
 const ext = gl.getExtension("OES_element_index_uint");
@@ -35,15 +29,15 @@ const ext = gl.getExtension("OES_element_index_uint");
 gl.drawElements(gl.POINTS, 8, gl.UNSIGNED_INT, 0);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("WebGLRenderingContext.getExtension()")}}
 - {{domxref("WebGLRenderingContext.drawElements()")}}
