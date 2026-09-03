@@ -1,11 +1,5 @@
 ---
 title: "PeriodicSyncEvent: tag property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PeriodicSyncEvent/tag"
-status: "needs-translation"
----
-
----
-title: "PeriodicSyncEvent: tag property"
 short-title: tag
 slug: Web/API/PeriodicSyncEvent/tag
 page-type: web-api-instance-property
@@ -16,21 +10,15 @@ browser-compat: api.PeriodicSyncEvent.tag
 
 {{APIRef("Periodic Background Sync")}}{{SeeCompatTable}}{{AvailableInWorkers("service")}}
 
-The **`tag`** read-only property of the
-{{domxref("PeriodicSyncEvent")}} interface returns the developer-defined identifier for
-the {{domxref('PeriodicSyncEvent')}}. This is specified when calling the
-{{domxref('PeriodicSyncManager.register()')}} method of the
-{{domxref('PeriodicSyncManager')}} interface. Multiple tags can be used by the web app
-to run different periodic tasks at different frequencies.
+ویژگی فقط‌خواندنی **`tag`** در رابط {{domxref("PeriodicSyncEvent")}}، شناسه‌ای را برمی‌گرداند که توسعه‌دهنده برای {{domxref('PeriodicSyncEvent')}} تعریف کرده است. این شناسه هنگام فراخوانی متد {{domxref('PeriodicSyncManager.register()')}} از رابط {{domxref('PeriodicSyncManager')}} مشخص می‌شود. برنامه وب می‌تواند از چندین برچسب استفاده کند تا کارهای دوره‌ای متفاوتی را با فرکانس‌های مختلف اجرا کند.
 
-## Value
+## مقدار
 
-Returns a {{jsxref('String')}} of the defined identifier.
+یک {{jsxref('String')}} شامل شناسه تعریف‌شده را برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-The following example demonstrates listening for a periodic sync event in the service
-worker, and accessing the `tag` property.
+مثال زیر نحوه گوش دادن به رویداد همگام‌سازی دوره‌ای در سرویس‌ورکر و دسترسی به ویژگی `tag` را نشان می‌دهد.
 
 ```js
 self.addEventListener("periodicsync", (event) => {
@@ -38,14 +26,14 @@ self.addEventListener("periodicsync", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Richer offline experiences with the Periodic Background Sync API](https://developer.chrome.com/docs/capabilities/periodic-background-sync)
+- [تجربه‌های آفلاین غنی‌تر با Periodic Background Sync API](https://developer.chrome.com/docs/capabilities/periodic-background-sync)
