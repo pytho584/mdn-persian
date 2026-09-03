@@ -1,11 +1,5 @@
 ---
 title: "PublicKeyCredential: toJSON() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredential/toJSON"
-status: "needs-translation"
----
-
----
-title: "PublicKeyCredential: toJSON() method"
 short-title: toJSON()
 slug: Web/API/PublicKeyCredential/toJSON
 page-type: web-api-instance-method
@@ -14,57 +8,54 @@ browser-compat: api.PublicKeyCredential.toJSON
 
 {{APIRef("Web Authentication API")}}{{securecontext_header}}
 
-The **`toJSON()`** method of the {{domxref("PublicKeyCredential")}} interface returns a {{glossary("JSON type representation")}} of a {{domxref("PublicKeyCredential")}}.
+متد **`toJSON()`** از واسط {{domxref("PublicKeyCredential")}} یک {{glossary("JSON type representation")}} از یک {{domxref("PublicKeyCredential")}} را برمی‌گرداند.
 
-The properties of the returned object depend on whether the credential is returned by [`navigator.credentials.create()`](/en-US/docs/Web/API/CredentialsContainer/create) when [creating a key pair and registering a user](/en-US/docs/Web/API/Web_Authentication_API#creating_a_key_pair_and_registering_a_user), or [`navigator.credentials.get()`](/en-US/docs/Web/API/CredentialsContainer/get) when [authenticating a user](/en-US/docs/Web/API/Web_Authentication_API#authenticating_a_user).
+ویژگی‌های شیء بازگشتی بستگی به این دارد که آن اعتبارنامه (credential) هنگام [ایجاد جفت‌کلید و ثبت‌نام کاربر](/en-US/docs/Web/API/Web_Authentication_API#creating_a_key_pair_and_registering_a_user) توسط [`navigator.credentials.create()`](/en-US/docs/Web/API/CredentialsContainer/create) بازگردانده شده باشد یا هنگام [احراز هویت کاربر](/en-US/docs/Web/API/Web_Authentication_API#authenticating_a_user) توسط [`navigator.credentials.get()`](/en-US/docs/Web/API/CredentialsContainer/get).
 
-This method is automatically invoked when web app code calls [`JSON.stringify()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) to serialize a {{domxref("PublicKeyCredential")}} so that it can be sent to relying party server when registering or authenticating a user.
-It not intended to be called directly in web app code.
+هنگامی که کد برنامهٔ وب برای ارسال یک {{domxref("PublicKeyCredential")}} به سرورِ طرفِ معتمد (relying party) هنگام ثبت‌نام یا احراز هویت، آن را سریال‌سازی می‌کند، این متد به‌صورت خودکار در پاسخ به [`JSON.stringify()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) فراخوانی می‌شود. این متد برای فراخوانی مستقیم از کد برنامهٔ وب در نظر گرفته نشده است.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 toJSON()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{glossary("JSON type representation")}} of a [`PublicKeyCredential`](/en-US/docs/Web/API/PublicKeyCredential) object.
+یک {{glossary("JSON type representation")}} از یک شیء [`PublicKeyCredential`](/en-US/docs/Web/API/PublicKeyCredential).
 
-The included properties depend on whether the credential was returned by [`navigator.credentials.create()`](/en-US/docs/Web/API/CredentialsContainer/create) on registration, or [`navigator.credentials.get()`](/en-US/docs/Web/API/CredentialsContainer/get) when authenticating a user.
-The values and types of included properties are the same as for [`PublicKeyCredential`](/en-US/docs/Web/API/PublicKeyCredential), with the exception that [base64url](/en-US/docs/Glossary/Base64)-encoded strings are used in place of buffer properties.
+ویژگی‌های موجود به این بستگی دارند که اعتبارنامه هنگام ثبت‌نام توسط [`navigator.credentials.create()`](/en-US/docs/Web/API/CredentialsContainer/create) بازگردانده شده باشد یا هنگام احراز هویت کاربر توسط [`navigator.credentials.get()`](/en-US/docs/Web/API/CredentialsContainer/get). مقادیر و انواع ویژگی‌های موجود مانند [`PublicKeyCredential`](/en-US/docs/Web/API/PublicKeyCredential) هستند، با این تفاوت که به‌جای ویژگی‌های بافر (buffer) از رشته‌های کدگذاری‌شده با [base64url](/en-US/docs/Glossary/Base64) استفاده می‌شود.
 
-The object properties are:
+ویژگی‌های شیء عبارت‌اند از:
 
 - `id`
-  - : The value returned by {{domxref("PublicKeyCredential.id")}}.
+  - : مقداری که توسط {{domxref("PublicKeyCredential.id")}} بازگردانده می‌شود.
 - `rawId`
-  - : A [base64url](/en-US/docs/Glossary/Base64)-encoded version of {{domxref("PublicKeyCredential.rawId")}}.
+  - : نسخهٔ کدگذاری‌شده با [base64url](/en-US/docs/Glossary/Base64) از {{domxref("PublicKeyCredential.rawId")}}.
 - `authenticatorAttachment` {{optional_inline}}
-  - : The value returned by {{domxref("PublicKeyCredential.authenticatorAttachment")}}.
+  - : مقداری که توسط {{domxref("PublicKeyCredential.authenticatorAttachment")}} بازگردانده می‌شود.
 - `type`
-  - : The string `"public-key"`.
+  - : رشتهٔ `"public-key"`.
 - `clientExtensionResults`
-  - : An array containing [base64url](/en-US/docs/Glossary/Base64)-encoded versions of the values returned by {{domxref("PublicKeyCredential.getClientExtensionResults()")}}.
+  - : آرایه‌ای شامل نسخه‌های کدگذاری‌شده با [base64url](/en-US/docs/Glossary/Base64) از مقادیری که توسط {{domxref("PublicKeyCredential.getClientExtensionResults()")}} بازگردانده شده‌اند.
 - `response`
-  - : The response property object depends on whether the credentials are returned following a registration or authentication operation.
-    - When registering a new user `response` will be a JSON-type representation of {{domxref("AuthenticatorAttestationResponse")}} where buffer values have been [base64url](/en-US/docs/Glossary/Base64) encoded.
+  - : شیء موجود در ویژگی `response` بستگی دارد به اینکه اعتبارنامه‌ها پس از یک عملیات ثبت‌نام یا یک عملیات احراز هویت بازگردانده شده باشند.
+    - هنگام ثبت‌نام یک کاربر جدید، `response` یک {{glossary("JSON type representation")}} از {{domxref("AuthenticatorAttestationResponse")}} خواهد بود که در آن مقادیر بافر با [base64url](/en-US/docs/Glossary/Base64) کدگذاری شده‌اند.
 
-    - When authenticating a user the returned value will be a JSON-type representation version of {{domxref("AuthenticatorAssertionResponse")}} where buffer values have been [base64url](/en-US/docs/Glossary/Base64) encoded.
+    - هنگام احراز هویت یک کاربر، مقدار بازگشتی نسخه‌ای از {{glossary("JSON type representation")}} مربوط به {{domxref("AuthenticatorAssertionResponse")}} خواهد بود که در آن مقادیر بافر با [base64url](/en-US/docs/Glossary/Base64) کدگذاری شده‌اند.
 
-### Exceptions
+### استثناها
 
 - `SecurityError` {{domxref("DOMException")}}
-  - : The RP domain is not valid.
+  - : دامنهٔ طرف معتمد (RP) نامعتبر است.
 
-## Examples
+## مثال‌ها
 
-When registering a new user, a relying party server will supply information about the expected credentials to the web app.
-The web app calls [`navigator.credentials.create()`](/en-US/docs/Web/API/CredentialsContainer/create) with the received information (`createCredentialOptions` below), which returns a promise that fulfills with the new credential (a {{domxref("PublicKeyCredential")}}).
+هنگام ثبت‌نام یک کاربر جدید، سرورِ طرف معتمد (relying party) اطلاعاتی دربارهٔ اعتبارنامه‌های مورد انتظار در اختیار برنامهٔ وب قرار می‌دهد. برنامهٔ وب، [`navigator.credentials.create()`](/en-US/docs/Web/API/CredentialsContainer/create) را با اطلاعات دریافتی (`createCredentialOptions` در زیر) فراخوانی می‌کند؛ این فراخوانی یک Promise برمی‌گرداند که با اعتبارنامهٔ جدید (یک {{domxref("PublicKeyCredential")}}) برآورده می‌شود.
 
 ```js
 const newCredentialInfo = await navigator.credentials.create({
@@ -72,7 +63,7 @@ const newCredentialInfo = await navigator.credentials.create({
 });
 ```
 
-The web app then serializes the returned credential using `JSON.stringify()` (which in turn calls `toJSON()`) and posts it back to the server.
+سپس برنامهٔ وب، اعتبارنامهٔ بازگشتی را با استفاده از `JSON.stringify()` سریال‌سازی می‌کند (که به نوبهٔ خود `toJSON()` را فراخوانی می‌کند) و آن را دوباره برای سرور ارسال می‌کند.
 
 ```js
 const registrationURL = "https://example.com/registration";
@@ -83,15 +74,15 @@ const apiRegOptsResp = await fetch(registrationURL, {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Authentication API](/en-US/docs/Web/API/Web_Authentication_API)
 - {{domxref("PublicKeyCredential.parseCreationOptionsFromJSON_static", "PublicKeyCredential.parseCreationOptionsFromJSON()")}}
