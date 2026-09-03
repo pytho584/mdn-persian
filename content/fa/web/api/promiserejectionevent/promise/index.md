@@ -1,7 +1,6 @@
 ---
 title: "PromiseRejectionEvent: promise property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/PromiseRejectionEvent/promise"
-status: "needs-translation"
 ---
 
 ---
@@ -14,26 +13,17 @@ browser-compat: api.PromiseRejectionEvent.promise
 
 {{APIRef("HTML DOM")}}{{AvailableInWorkers}}
 
-The {{domxref("PromiseRejectionEvent")}} interface's
-**`promise`** read-only property indicates the JavaScript
-{{jsxref("Promise")}} which was rejected. You can examine the event's
-{{domxref("PromiseRejectionEvent.reason")}} property to learn why the promise was
-rejected.
+ویژگی فقط‌خواندنی **`promise`** در رابط {{domxref("PromiseRejectionEvent")}}، نشانی از {{jsxref("Promise")}} جاوااسکریپتی است که رد شده است. می‌توانید با بررسی ویژگی {{domxref("PromiseRejectionEvent.reason")}} رویداد، دلیل رد شدن promise را بیابید.
 
-## Value
+## مقدار
 
-The JavaScript {{jsxref("Promise")}} which was rejected, and whose rejection went
-unhandled.
+{{jsxref("Promise")}} جاوااسکریپتی که رد شده و رد شدن آن بدون رسیدگی باقی مانده است.
 
-## Examples
+## نمونه‌ها
 
-This example listens for unhandled promises and, if the
-{{domxref("PromiseRejectionEvent.reason", "reason")}} is an object with a
-`code` field containing the text "Module not ready", it sets up an idle
-callback that will retry the task that failed to execute correctly.
+این مثال به رویدادهای promise‌های بدون رسیدگی گوش می‌دهد و اگر {{domxref("PromiseRejectionEvent.reason", "reason")}} یک شیء با فیلد `code` به متن «Module not ready» باشد، یک callback بیکار (idle callback) تنظیم می‌کند که وظیفه‌ی شکست‌خورده را دوباره تلاش کند.
 
-{{domxref("event.preventDefault()")}} is called to indicate that the promise has now
-been handled.
+{{domxref("event.preventDefault()")}} فراخوانی می‌شود تا نشان دهد که اکنون به این promise رسیدگی شده است.
 
 ```js
 window.onunhandledrejection = (event) => {
@@ -46,17 +36,17 @@ window.onunhandledrejection = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Promise rejection events](/en-US/docs/Web/JavaScript/Guide/Using_promises#promise_rejection_events)
+- [رویدادهای رد شدن promise](/en-US/docs/Web/JavaScript/Guide/Using_promises#promise_rejection_events)
 - {{jsxref("Promise")}}
 - {{domxref("PromiseRejectionEvent")}}
 - {{domxref("Window.rejectionhandled_event", "rejectionhandled")}}
