@@ -1,12 +1,5 @@
 ---
 title: "PerformanceResourceTiming: secureConnectionStart property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceResourceTiming/secureConnectionStart"
-status: "needs-translation"
----
-
----
-title: "PerformanceResourceTiming: secureConnectionStart property"
-short-title: secureConnectionStart
 slug: Web/API/PerformanceResourceTiming/secureConnectionStart
 page-type: web-api-instance-property
 browser-compat: api.PerformanceResourceTiming.secureConnectionStart
@@ -14,28 +7,28 @@ browser-compat: api.PerformanceResourceTiming.secureConnectionStart
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The **`secureConnectionStart`** read-only property returns a {{domxref("DOMHighResTimeStamp","timestamp")}} immediately before the browser starts the handshake process to secure the current connection. If a secure connection is not used, the property returns zero.
+ویژگی فقط‌خواندنی **`secureConnectionStart`** یک {{domxref("DOMHighResTimeStamp","timestamp")}} را درست پیش از شروع فرآیند دست‌دهی (handshake) توسط مرورگر برای امن‌سازی اتصال فعلی برمی‌گرداند. اگر از اتصال امن استفاده نشود، این ویژگی صفر برمی‌گرداند.
 
-## Value
+## مقدار
 
-The `secureConnectionStart` property can have the following values:
+ویژگی `secureConnectionStart` می‌تواند مقادیر زیر را داشته باشد:
 
-- A {{domxref("DOMHighResTimeStamp")}} indicating the time immediately before the browser starts the handshake process to secure the current connection if the resource is fetched over a secure connection.
-- `0` if no secure connection is used.
-- `0` if the resource was instantaneously retrieved from a cache.
-- `0` if the resource is a cross-origin request and no {{HTTPHeader("Timing-Allow-Origin")}} HTTP response header is used.
+- یک {{domxref("DOMHighResTimeStamp")}} که زمان درست پیش از شروع فرآیند دست‌دهی برای امن‌سازی اتصال فعلی را نشان می‌دهد، به شرطی که منبع از طریق یک اتصال امن واکشی شده باشد.
+- `0` اگر از اتصال امن استفاده نشده باشد.
+- `0` اگر منبع به‌صورت آنی از حافظهٔ نهان (cache) بازیابی شده باشد.
+- `0` اگر منبع یک درخواست متقاطع‌المنشأ (cross-origin) باشد و هیچ هدر پاسخ HTTP {{HTTPHeader("Timing-Allow-Origin")}} استفاده نشده باشد.
 
-## Examples
+## مثال‌ها
 
-### Measuring TLS negotiation time
+### اندازه‌گیری زمان مذاکرهٔ TLS
 
-The `secureConnectionStart` and {{domxref("PerformanceResourceTiming.requestStart", "requestStart")}} properties can be used to measure how long it takes for the TLS negotiation to happen.
+ویژگی‌های `secureConnectionStart` و {{domxref("PerformanceResourceTiming.requestStart", "requestStart")}} می‌توانند برای اندازه‌گیری مدت زمان لازم برای انجام مذاکرهٔ TLS استفاده شوند.
 
 ```js
 const tls = entry.requestStart - entry.secureConnectionStart;
 ```
 
-Example using a {{domxref("PerformanceObserver")}}, which notifies of new `resource` performance entries as they are recorded in the browser's performance timeline. Use the `buffered` option to access entries from before the observer creation.
+مثال با استفاده از {{domxref("PerformanceObserver")}} که هنگام ثبت ورودی‌های performance از نوع `resource` در جدول زمانی عملکرد مرورگر، اطلاع‌رسانی می‌کند. برای دسترسی به ورودی‌های قبل از ایجاد observer از گزینهٔ `buffered` استفاده کنید.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -50,7 +43,7 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "resource", buffered: true });
 ```
 
-Example using {{domxref("Performance.getEntriesByType()")}}, which only shows `resource` performance entries present in the browser's performance timeline at the time you call this method:
+مثال با استفاده از {{domxref("Performance.getEntriesByType()")}} که فقط ورودی‌های performance از نوع `resource` موجود در جدول زمانی عملکرد مرورگر را در زمان فراخوانی این متد نشان می‌دهد:
 
 ```js
 const resources = performance.getEntriesByType("resource");
@@ -62,24 +55,24 @@ resources.forEach((entry) => {
 });
 ```
 
-### Cross-origin timing information
+### اطلاعات زمان‌بندی متقاطع‌المنشأ
 
-If the value of the `secureConnectionStart` property is `0`, the resource is either not using a secure connection or it is a cross-origin request. To allow seeing cross-origin timing information, the {{HTTPHeader("Timing-Allow-Origin")}} HTTP response header needs to be set.
+اگر مقدار ویژگی `secureConnectionStart` برابر `0` باشد، منبع یا از اتصال امن استفاده نمی‌کند و یا یک درخواست متقاطع‌المنشأ است. برای اجازه دادن به مشاهدهٔ اطلاعات زمان‌بندی متقاطع‌المنشأ، باید هدر پاسخ HTTP {{HTTPHeader("Timing-Allow-Origin")}} تنظیم شود.
 
-For example, to allow `https://developer.mozilla.org` to see timing resources, the cross-origin resource should send:
+برای مثال، برای اجازه دادن به `https://developer.mozilla.org` برای مشاهدهٔ منابع زمان‌بندی، منبع متقاطع‌المنشأ باید ارسال کند:
 
 ```http
 Timing-Allow-Origin: https://developer.mozilla.org
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTTPHeader("Timing-Allow-Origin")}}
