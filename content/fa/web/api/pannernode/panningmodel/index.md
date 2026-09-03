@@ -1,11 +1,5 @@
 ---
 title: "PannerNode: panningModel property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PannerNode/panningModel"
-status: "needs-translation"
----
-
----
-title: "PannerNode: panningModel property"
 short-title: panningModel
 slug: Web/API/PannerNode/panningModel
 page-type: web-api-instance-property
@@ -14,29 +8,29 @@ browser-compat: api.PannerNode.panningModel
 
 {{ APIRef("Web Audio API") }}
 
-The `panningModel` property of the {{ domxref("PannerNode") }} interface is an enumerated value determining which spatialization algorithm to use to position the audio in 3D space.
+ویژگی `panningModel` از رابط {{ domxref("PannerNode") }} یک مقدار شمارشی است که تعیین می‌کند از کدام الگوریتم فضاسازی برای قرار دادن صدا در فضای سه‌بعدی استفاده شود.
 
-The possible values are:
+مقدارهای ممکن عبارتند از:
 
-- `equalpower`: Represents the equal-power panning algorithm, generally regarded as simple and efficient. `equalpower` is the default value.
-- `HRTF`: Renders a stereo output of higher quality than `equalpower` — it uses a convolution with measured impulse responses from human subjects.
+- `equalpower`: الگوریتم پنینگ توان-مساوی را نشان می‌دهد که عموماً ساده و کارآمد در نظر گرفته می‌شود. `equalpower` مقدار پیش‌فرض است.
+- `HRTF`: خروجی استریوی با کیفیت بالاتر از `equalpower` ارائه می‌دهد — آن از کانولوشن با پاسخ‌های ضربه‌ی اندازه‌گیری‌شده از افراد انسانی استفاده می‌کند.
 
-## Value
+## مقدار
 
-An enum — see [`PanningModelType`](https://webaudio.github.io/web-audio-api/#idl-def-PanningModelType).
+یک enum — به [`PanningModelType`](https://webaudio.github.io/web-audio-api/#idl-def-PanningModelType) مراجعه کنید.
 
-## Examples
+## مثال‌ها
 
-See [`BaseAudioContext.createPanner()`](/en-US/docs/Web/API/BaseAudioContext/createPanner#examples) for example code.
+برای کد نمونه، [`BaseAudioContext.createPanner()`](/en-US/docs/Web/API/BaseAudioContext/createPanner#examples) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
