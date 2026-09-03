@@ -1,11 +1,5 @@
 ---
 title: "Navigator: appName property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/appName"
-status: "needs-translation"
----
-
----
-title: "Navigator: appName property"
 short-title: appName
 slug: Web/API/Navigator/appName
 page-type: web-api-instance-property
@@ -14,26 +8,24 @@ browser-compat: api.Navigator.appName
 
 {{APIRef("HTML DOM")}}
 
-The value of the **`Navigator.appName`** property is always
-`"Netscape"`, in any browser. This property is kept only for compatibility
-purposes.
+مقدار ویژگی **`Navigator.appName`** در هر مرورگری همواره «Netscape» است. این ویژگی فقط برای سازگاری با نسخه‌های قدیمی نگهداری می‌شود.
 
 > [!NOTE]
-> Do not rely on this property to return a real browser name. All browsers return `"Netscape"` as the value of this property.
+> به این ویژگی برای به‌دست آوردن نام واقعی مرورگر اعتماد نکنید. همه مرورگرها مقدار «Netscape» را برمی‌گردانند.
 
-## Value
+## مقدار
 
-The string `"Netscape"`.
+رشته `"Netscape"`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Navigator.appCodeName")}}
 - {{domxref("Navigator.product")}}
