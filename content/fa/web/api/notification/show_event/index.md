@@ -1,11 +1,5 @@
 ---
 title: "Notification: show event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Notification/show_event"
-status: "needs-translation"
----
-
----
-title: "Notification: show event"
 short-title: show
 slug: Web/API/Notification/show_event
 page-type: web-api-event
@@ -14,11 +8,11 @@ browser-compat: api.Notification.show_event
 
 {{APIRef("Web Notifications")}}{{securecontext_header}} {{AvailableInWorkers}}
 
-The **`show`** event of the {{domxref("Notification")}} interface fires when a {{domxref("Notification")}} is displayed.
+رویداد **`show`** از رابط {{domxref("Notification")}} زمانی رخ می‌دهد که یک {{domxref("Notification")}} نمایش داده می‌شود.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی مدیریت رویداد را تنظیم نمایید.
 
 ```js-nolint
 addEventListener("show", (event) => { })
@@ -26,18 +20,18 @@ addEventListener("show", (event) => { })
 onshow = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Notifications API](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
+- [استفاده از Notifications API](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
