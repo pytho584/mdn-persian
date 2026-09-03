@@ -1,11 +1,5 @@
 ---
 title: "PerformanceEntry: startTime property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEntry/startTime"
-status: "needs-translation"
----
-
----
-title: "PerformanceEntry: startTime property"
 short-title: startTime
 slug: Web/API/PerformanceEntry/startTime
 page-type: web-api-instance-property
@@ -14,49 +8,48 @@ browser-compat: api.PerformanceEntry.startTime
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The read-only **`startTime`** property returns the first {{domxref("DOMHighResTimeStamp","timestamp", "", "no-code")}} recorded for this {{domxref("PerformanceEntry")}}. The meaning of this property depends on the value of this entry's {{domxref("PerformanceEntry.entryType", "entryType")}}.
+ویژگی فقط‌خواندنی **`startTime`** اولین {{domxref("DOMHighResTimeStamp","timestamp", "", "no-code")}} ثبت‌شده برای این {{domxref("PerformanceEntry")}} را برمی‌گرداند. معنای این ویژگی به مقدار {{domxref("PerformanceEntry.entryType", "entryType")}} این ورودی بستگی دارد.
 
-## Value
+## مقدار
 
-A {{domxref("DOMHighResTimeStamp")}} representing the first timestamp when the
-{{domxref("PerformanceEntry")}} was created.
+یک {{domxref("DOMHighResTimeStamp")}} که نشان‌دهندهٔ اولین زمان‌سنج (timestamp) هنگام ایجاد {{domxref("PerformanceEntry")}} است.
 
-The meaning of this property depends on the value of this performance entry's {{domxref("PerformanceEntry.entryType","entryType")}}:
+معنای این ویژگی به مقدار {{domxref("PerformanceEntry.entryType","entryType")}} این ورودی عملکرد بستگی دارد:
 
 - `element`
-  - : Either the value of this entry's {{domxref("PerformanceElementTiming.renderTime", "renderTime")}} if it is not `0`, otherwise the value of this entry's {{domxref("PerformanceElementTiming.loadTime", "loadTime")}}.
+  - یا مقدار {{domxref("PerformanceElementTiming.renderTime", "renderTime")}} این ورودی اگر `0` نباشد، در غیر این صورت مقدار {{domxref("PerformanceElementTiming.loadTime", "loadTime")}} آن.
 - `event`
-  - : The time the event was created, i.e., the event's [`timeStamp`](/en-US/docs/Web/API/Event/timeStamp) property.
+  - زمان ایجاد رویداد، یعنی ویژگی [`timeStamp`](/en-US/docs/Web/API/Event/timeStamp) آن.
 - `first-input`
-  - : The time the first input event was created, i.e., that event's [`timeStamp`](/en-US/docs/Web/API/Event/timeStamp).
+  - زمان ایجاد اولین رویداد ورودی، یعنی [`timeStamp`](/en-US/docs/Web/API/Event/timeStamp) آن رویداد.
 - `largest-contentful-paint`
-  - : The value of this entry's {{domxref("LargestContentfulPaint.renderTime", "renderTime")}} if it is not `0`, otherwise the value of this entry's {{domxref("LargestContentfulPaint.loadTime", "loadTime")}}.
+  - مقدار {{domxref("LargestContentfulPaint.renderTime", "renderTime")}} این ورودی اگر `0` نباشد، در غیر این صورت مقدار {{domxref("LargestContentfulPaint.loadTime", "loadTime")}} آن.
 - `layout-shift`
-  - : The time when the layout shift started.
+  - زمانی که تغییر چیدمان (layout shift) شروع شد.
 - `longtask`
-  - : The time when the task started.
+  - زمانی که وظیفه (task) شروع شد.
 - `mark`
-  - : The time at which the mark was created by a call to {{domxref("Performance.mark","performance.mark()")}}.
+  - زمانی که نشان (mark) با فراخوانی {{domxref("Performance.mark","performance.mark()")}} ایجاد شد.
 - `measure`
-  - : The time at which the measure was created by a call to {{domxref("Performance.measure","performance.measure()")}}.
+  - زمانی که اندازه‌گیری (measure) با فراخوانی {{domxref("Performance.measure","performance.measure()")}} ایجاد شد.
 - `navigation`
-  - : Always `0`.
+  - همیشه `0`.
 - `paint`
-  - : The time when the paint occurred.
+  - زمانی که رنگ‌آمیزی (paint) رخ داد.
 - `resource`
-  - : The value of this entry's {{domxref("PerformanceResourceTiming.fetchStart", "fetchStart")}} property.
+  - مقدار ویژگی {{domxref("PerformanceResourceTiming.fetchStart", "fetchStart")}} این ورودی.
 - `taskattribution`
-  - : Always `0`.
+  - همیشه `0`.
 - `visibility-state`
-  - : The time when the visibility state change occurred.
+  - زمانی که تغییر وضعیت visibility رخ داد.
 
-## Examples
+## مثال‌ها
 
-### Using the startTime property
+### استفاده از ویژگی startTime
 
-The following example shows the use of the `startTime` property which you can log during performance observation.
+مثال زیر کاربرد ویژگی `startTime` را نشان می‌دهد که می‌توانید آن را در هنگام مشاهدهٔ عملکرد (performance observation) ثبت کنید.
 
-Note: The {{domxref("performance.mark()")}} method allows you to set your own `startTime`, and the {{domxref("performance.measure()")}} method allows to set the start of the measure.
+توجه: متد {{domxref("performance.mark()")}} به شما امکان می‌دهد تا `startTime` خودتان را تنظیم کنید، و متد {{domxref("performance.measure()")}} امکان تنظیم شروع اندازه‌گیری را فراهم می‌کند.
 
 ```js
 performance.mark("my-mark");
@@ -80,10 +73,10 @@ const observer = new PerformanceObserver(perfObserver);
 observer.observe({ entryTypes: ["measure", "mark"] });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
