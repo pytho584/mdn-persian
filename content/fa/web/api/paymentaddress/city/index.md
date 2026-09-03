@@ -1,11 +1,5 @@
 ---
 title: "PaymentAddress: city property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaymentAddress/city"
-status: "needs-translation"
----
-
----
-title: "PaymentAddress: city property"
 short-title: city
 slug: Web/API/PaymentAddress/city
 page-type: web-api-instance-property
@@ -17,15 +11,12 @@ browser-compat: api.PaymentAddress.city
 
 {{APIRef("Payment Request API")}}{{SecureContext_Header}}{{Deprecated_Header}}{{Non-standard_Header}}
 
-The **`city`** read-only property of
-the {{domxref('PaymentAddress')}} interface returns a string containing the city or
-town portion of the address.
+ویژگی فقط‌خواندنی **`city`** در رابط {{domxref('PaymentAddress')}} یک رشته برمی‌گرداند که بخش شهر یا شهرکِ آدرس را شامل می‌شود.
 
-## Value
+## مقدار
 
-A string indicating the city or town portion of the address described
-by the {{domxref("PaymentAddress")}} object.
+رشته‌ای که شهر یا شهرکِ بخشی از آدرس توصیف‌شده توسط شیء {{domxref("PaymentAddress")}} را نشان می‌دهد.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
