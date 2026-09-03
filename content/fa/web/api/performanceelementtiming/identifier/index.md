@@ -1,11 +1,5 @@
 ---
 title: "PerformanceElementTiming: identifier property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceElementTiming/identifier"
-status: "needs-translation"
----
-
----
-title: "PerformanceElementTiming: identifier property"
 short-title: identifier
 slug: Web/API/PerformanceElementTiming/identifier
 page-type: web-api-instance-property
@@ -16,17 +10,17 @@ browser-compat: api.PerformanceElementTiming.identifier
 
 {{APIRef("Performance API")}}{{SeeCompatTable}}
 
-The **`identifier`** read-only property of the {{domxref("PerformanceElementTiming")}} interface returns the value of the [`elementtiming`](/en-US/docs/Web/HTML/Reference/Attributes/elementtiming) attribute on the element.
+**`identifier`** 只读属性属于 {{domxref("PerformanceElementTiming")}} 接口，返回元素上 [`elementtiming`](/en-US/docs/Web/HTML/Reference/Attributes/elementtiming) 属性的值。
 
-## Value
+## 值
 
-A string.
+一个字符串。
 
-## Examples
+## 示例
 
-### Using `identifier`
+### 使用 `identifier`
 
-In this example an {{HTMLElement("img")}} element is being observed by adding the [`elementtiming`](/en-US/docs/Web/HTML/Reference/Attributes/elementtiming) attribute. A {{domxref("PerformanceObserver")}} is registered to get all performance entries of type `"element"` and the `buffered` flag is used to access data from before observer creation. The value of [`elementtiming`](/en-US/docs/Web/HTML/Reference/Attributes/elementtiming) is `big-image`. Calling `entry.identifier` therefore returns the string `big-image`.
+在此示例中，通过添加 [`elementtiming`](/en-US/docs/Web/HTML/Reference/Attributes/elementtiming) 属性来观察一个 {{HTMLElement("img")}} 元素。注册了一个 {{domxref("PerformanceObserver")}} 来获取所有类型为 `"element"` 的性能条目，并使用 `buffered` 标志来访问观察器创建之前的数据。 [`elementtiming`](/en-US/docs/Web/HTML/Reference/Attributes/elementtiming) 的值为 `big-image`。因此，调用 `entry.identifier` 会返回字符串 `big-image`。
 
 ```html
 <img
@@ -47,10 +41,10 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "element", buffered: true });
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
