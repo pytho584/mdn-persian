@@ -1,11 +1,5 @@
 ---
 title: "PayerResponse: payerPhone property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse/payerPhone"
-status: "needs-translation"
----
-
----
-title: "PayerResponse: payerPhone property"
 short-title: payerPhone
 slug: Web/API/PaymentResponse/payerPhone
 page-type: web-api-instance-property
@@ -14,20 +8,16 @@ browser-compat: api.PaymentResponse.payerPhone
 
 {{securecontext_header}}{{APIRef("Payment Request API")}}
 
-The `payerPhone` read-only property of the {{domxref("PaymentResponse")}}
-interface returns the phone number supplied by the user. This option is only present
-when the `requestPayerPhone` option is set to `true` in the
-`options` object passed to the
-{{domxref('PaymentRequest.PaymentRequest','PaymentRequest')}} constructor.
+ویژگی فقط‑خواندنی `payerPhone` از رابط {{domxref("PaymentResponse")}} شماره تلفن ارائه‌شده توسط کاربر را بازمی‌گرداند. این گزینه تنها زمانی وجود دارد که گزینه `requestPayerPhone` در شیء `options` که به سازنده {{domxref('PaymentRequest.PaymentRequest','PaymentRequest')}} ارسال شده است، به `true` تنظیم شده باشد.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
