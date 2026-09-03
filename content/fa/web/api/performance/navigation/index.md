@@ -1,11 +1,5 @@
 ---
 title: "Performance: navigation property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Performance/navigation"
-status: "needs-translation"
----
-
----
-title: "Performance: navigation property"
 short-title: navigation
 slug: Web/API/Performance/navigation
 page-type: web-api-instance-property
@@ -16,30 +10,27 @@ browser-compat: api.Performance.navigation
 
 {{APIRef("Performance API")}}{{Deprecated_Header}}
 
-The legacy
+ویژگی فقط‌خواندنی قدیمی
 **`Performance.navigation`**
-read-only property returns a {{domxref("PerformanceNavigation")}} object representing
-the type of navigation that occurs in the given browsing context, such as the number of
-redirections needed to fetch the resource.
+یک شیء {{domxref("PerformanceNavigation")}} برمی‌گرداند که نوع پیمایش انجام‌شده در زمینۀ مرور معین را نشان می‌دهد، مانند تعداد تغییرمسیرهای لازم برای دریافت منبع.
 
-This property is not available in workers.
+این ویژگی در workerها در دسترس نیست.
 
 > [!WARNING]
-> This property is deprecated in the [Navigation Timing Level 2 specification](https://w3c.github.io/navigation-timing/#obsolete). Please use the
-> {{domxref("PerformanceNavigationTiming")}} interface instead.
+> این ویژگی در [مشخصات Navigation Timing Level 2](https://w3c.github.io/navigation-timing/#obsolete) منسوخ شده است. لطفاً به جای آن از رابط {{domxref("PerformanceNavigationTiming")}} استفاده کنید.
 
-## Value
+## مقدار
 
-A {{domxref("PerformanceNavigation")}} object.
+یک شیء {{domxref("PerformanceNavigation")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("Performance")}} interface it belongs to.
+- رابط {{domxref("Performance")}} که این ویژگی به آن تعلق دارد.
