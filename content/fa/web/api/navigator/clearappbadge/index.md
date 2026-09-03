@@ -1,11 +1,5 @@
 ---
 title: "Navigator: clearAppBadge() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/clearAppBadge"
-status: "needs-translation"
----
-
----
-title: "Navigator: clearAppBadge() method"
 short-title: clearAppBadge()
 slug: Web/API/Navigator/clearAppBadge
 page-type: web-api-instance-method
@@ -14,47 +8,47 @@ browser-compat: api.Navigator.clearAppBadge
 
 {{APIRef("Badging API")}}{{securecontext_header}}
 
-The **`clearAppBadge()`** method of the {{domxref("Navigator")}} interface clears a badge on the current app's icon by setting it to `nothing`. The value `nothing` indicates that no badge is currently set, and the status of the badge is _cleared_.
+متد **`clearAppBadge()`** از رابط {{domxref("Navigator")}} نشان (badge) روی آیکون برنامهٔ جاری را با تنظیم آن به `nothing` پاک می‌کند. مقدار `nothing` نشان می‌دهد که هیچ نشانی در حال حاضر تنظیم نشده است، و وضعیت نشان _پاک شده_ است.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 clearAppBadge()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with {{jsxref("undefined")}}.
+یک {{jsxref("Promise")}} که با {{jsxref("undefined")}} حل می‌شود.
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the document is not fully active.
+  - : اگر سند کاملاً فعال نباشد پرتاب می‌شود.
 - `SecurityError` {{domxref("DOMException")}}
-  - : Thrown if the call was blocked by the [same-origin policy](/en-US/docs/Web/Security/Defenses/Same-origin_policy).
+  - : اگر فراخوانی توسط [سیاست همان‌مبدأ](/en-US/docs/Web/Security/Defenses/Same-origin_policy) مسدود شده باشد پرتاب می‌شود.
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if {{domxref('PermissionStatus.state')}} is not `granted`.
+  - : اگر {{domxref('PermissionStatus.state')}} برابر با `granted` نباشد پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-Once all messages in an application have been read, call `clearAppBadge()` to clear the badge and remove the notification.
+پس از خوانده شدن تمام پیام‌ها در یک برنامه، `clearAppBadge()` را فراخوانی کنید تا نشان پاک شود و اعلان حذف شود.
 
 ```js
 navigator.clearAppBadge();
 ```
 
-## Specifications
+## مشخصات (Specifications)
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر (Browser compatibility)
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Badging for app icons](https://developer.chrome.com/docs/capabilities/web-apis/badging-api/)
+- [نشان‌گذاری برای آیکون‌های برنامه](https://developer.chrome.com/docs/capabilities/web-apis/badging-api/)
