@@ -1,11 +1,5 @@
 ---
 title: "PerformanceEntry: duration property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEntry/duration"
-status: "needs-translation"
----
-
----
-title: "PerformanceEntry: duration property"
 short-title: duration
 slug: Web/API/PerformanceEntry/duration
 page-type: web-api-instance-property
@@ -14,28 +8,28 @@ browser-compat: api.PerformanceEntry.duration
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The read-only **`duration`** property returns a {{domxref("DOMHighResTimeStamp","timestamp", "", "no-code")}} that is the duration of the {{domxref("PerformanceEntry","performance entry", "", "no-code")}}. The meaning of this property depends on the value of this entry's {{domxref("PerformanceEntry.entryType", "entryType")}}.
+ویژگی فقط خواندنی **`duration`** یک {{domxref("DOMHighResTimeStamp","timestamp", "", "no-code")}} (زمان‌سنج) را برمی‌گرداند که مدت زمان {{domxref("PerformanceEntry","performance entry", "", "no-code")}} (ورودی عملکرد) است. معنای این ویژگی به مقدار {{domxref("PerformanceEntry.entryType", "entryType")}} این ورودی بستگی دارد.
 
-## Value
+## مقدار
 
-A {{domxref("DOMHighResTimeStamp")}} representing the duration of the {{domxref("PerformanceEntry","performance entry", "", "no-code")}}. If the duration concept doesn't apply for a particular performance metric, a duration of `0` is returned.
+یک {{domxref("DOMHighResTimeStamp")}} که نشان‌دهنده مدت زمان {{domxref("PerformanceEntry","performance entry", "", "no-code")}} است. اگر مفهوم مدت زمان برای یک معیار عملکرد خاص قابل اعمال نباشد، مقدار `0` برگردانده می‌شود.
 
-The meaning of this property depends on the value of this performance entry's {{domxref("PerformanceEntry.entryType","entryType")}}:
+معنای این ویژگی به مقدار {{domxref("PerformanceEntry.entryType","entryType")}} این ورودی عملکرد بستگی دارد:
 
 - `event`
-  - : The time from the event's `startTime` to the next rendering paint (rounded to the nearest 8ms).
+  - : زمان از `startTime` رویداد تا رنگ‌آمیزی (paint) بعدی (به نزدیک‌ترین 8 میلی‌ثانیه گرد شده).
 - `first-input`
-  - : The time from the first input event's `startTime` to the next rendering paint (rounded to the nearest 8ms).
+  - : زمان از `startTime` اولین رویداد ورودی تا رنگ‌آمیزی بعدی (به نزدیک‌ترین 8 میلی‌ثانیه گرد شده).
 - `longtask`
-  - : The elapsed time between the start and end of task, with a 1ms granularity.
+  - : زمان سپری شده بین شروع و پایان کار، با دقت 1 میلی‌ثانیه.
 - `measure`
-  - : The duration of the measure.
+  - : مدت زمان اندازه‌گیری.
 - `navigation`
-  - : The difference between the entry's {{domxref("PerformanceNavigationTiming.loadEventEnd", "loadEventEnd")}} and {{domxref("PerformanceEntry.startTime", "startTime")}} properties.
+  - : تفاوت بین ویژگی‌های {{domxref("PerformanceNavigationTiming.loadEventEnd", "loadEventEnd")}} و {{domxref("PerformanceEntry.startTime", "startTime")}} ورودی.
 - `resource`
-  - : The entry's {{domxref("PerformanceResourceTiming/responseEnd", "responseEnd")}} value minus the entry's {{domxref("PerformanceEntry.startTime","startTime")}} value.
+  - : مقدار {{domxref("PerformanceResourceTiming/responseEnd", "responseEnd")}} ورودی منهای مقدار {{domxref("PerformanceEntry.startTime","startTime")}} آن.
 
-For the following entry types, `duration` is not applicable, and in this case the value is always `0`:
+برای انواع ورودی زیر، `duration` قابل اعمال نیست و در این حالت مقدار همیشه `0` است:
 
 - `element`
 - `largest-contentful-paint`
@@ -45,11 +39,11 @@ For the following entry types, `duration` is not applicable, and in this case th
 - `taskattribution`
 - `visibility-state`
 
-## Examples
+## مثال‌ها
 
-### Using the duration property
+### استفاده از ویژگی duration
 
-The following example logs all observed performance entries with a `duration` larger than `0`.
+مثال زیر تمام ورودی‌های عملکرد مشاهده‌شده با `duration` بزرگتر از `0` را ثبت می‌کند.
 
 ```js
 function perfObserver(list, observer) {
@@ -63,10 +57,10 @@ const observer = new PerformanceObserver(perfObserver);
 observer.observe({ entryTypes: ["measure", "mark", "resource"] });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
