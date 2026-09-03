@@ -1,11 +1,5 @@
 ---
 title: "NetworkInformation: type property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation/type"
-status: "needs-translation"
----
-
----
-title: "NetworkInformation: type property"
 short-title: type
 slug: Web/API/NetworkInformation/type
 page-type: web-api-instance-property
@@ -16,11 +10,11 @@ browser-compat: api.NetworkInformation.type
 
 {{apiref("Network Information API")}}{{SeeCompatTable}} {{AvailableInWorkers}}
 
-The **`type`** read-only property of the {{domxref("NetworkInformation")}} interface returns the type of connection a device is using to communicate with the network.
+خاصیت فقط‌خواندنی **`type`** در رابط {{domxref("NetworkInformation")}} نوع اتصالی را که دستگاه برای برقراری ارتباط با شبکه استفاده می‌کند، برمی‌گرداند.
 
-## Value
+## مقدار
 
-An enumerated value that is one of the following values:
+یک مقدار شمارشی (enumerated) که یکی از مقادیر زیر است:
 
 - `"bluetooth"`
 - `"cellular"`
@@ -31,10 +25,10 @@ An enumerated value that is one of the following values:
 - `"other"`
 - `"unknown"`
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
