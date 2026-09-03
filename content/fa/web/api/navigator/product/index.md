@@ -1,11 +1,5 @@
 ---
 title: "Navigator: product property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/product"
-status: "needs-translation"
----
-
----
-title: "Navigator: product property"
 short-title: product
 slug: Web/API/Navigator/product
 page-type: web-api-instance-property
@@ -14,26 +8,24 @@ browser-compat: api.Navigator.product
 
 {{APIRef("HTML DOM")}}
 
-The value of the **`Navigator.product`** property is always
-`"Gecko"`, in any browser. This property is kept only for compatibility
-purposes.
+مقدار ویژگی **`Navigator.product`** در هر مرورگری همیشه `"Gecko"` است. این ویژگی فقط برای سازگاری با نسخه‌های قدیمی نگهداری می‌شود.
 
 > [!NOTE]
-> Do not rely on this property to return a real product name. All browsers return `"Gecko"` as the value of this property.
+> برای دریافت نام واقعی محصول به این ویژگی تکیه نکنید. همه مرورگرها مقدار `"Gecko"` را به‌عنوان مقدار این ویژگی برمی‌گردانند.
 
-## Value
+## مقدار
 
-The string `"Gecko"`.
+رشته `"Gecko"`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Navigator.appCodeName")}}
 - {{domxref("Navigator.appName")}}
