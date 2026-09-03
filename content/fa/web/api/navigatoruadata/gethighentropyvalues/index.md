@@ -1,11 +1,5 @@
 ---
 title: "NavigatorUAData: getHighEntropyValues() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigatorUAData/getHighEntropyValues"
-status: "needs-translation"
----
-
----
-title: "NavigatorUAData: getHighEntropyValues() method"
 short-title: getHighEntropyValues()
 slug: Web/API/NavigatorUAData/getHighEntropyValues
 page-type: web-api-instance-method
@@ -16,16 +10,12 @@ browser-compat: api.NavigatorUAData.getHighEntropyValues
 
 {{APIRef("User-Agent Client Hints API")}}{{SeeCompatTable}}{{AvailableInWorkers}}
 
-The **`getHighEntropyValues()`** method of the {{domxref("NavigatorUAData")}} interface returns a {{jsxref("Promise")}} that resolves with a dictionary object containing low entropy information and requested high entropy information about the browser.
+متد **`getHighEntropyValues()`** از رابط {{domxref("NavigatorUAData")}} یک {{jsxref("Promise")}} را برمی‌گرداند که با یک شیء دیکشنری شامل اطلاعات آنتروپی پایین (low-entropy) و اطلاعات آنتروپی بالای (high-entropy) درخواست‌شده درباره مرورگر، resolve می‌شود.
 
-The resolved object has the ["low entropy" properties](/en-US/docs/Web/API/NavigatorUAData#instance_properties) available on the `NavigatorUAData` object included by default — these are the values that are unlikely to enable fingerprinting of the user.
-It also contains the subset of "high entropy" values requested in the parameter object, and for which permission has been granted.
-These are the values that are more likely to enable fingerprinting.
-Note that meaning of the terms [low entropy](/en-US/docs/Web/HTTP/Guides/Client_hints#low_entropy_hints) and [high entropy](/en-US/docs/Web/HTTP/Guides/Client_hints#high_entropy_hints) is the same as defined in the HTTP [User Agent Client Hints](/en-US/docs/Web/HTTP/Guides/Client_hints) mechanism.
+شیء resolve شده به‌صورت پیش‌فرض حاوی [ویژگی‌های «آنتروپی پایین»](/en-US/docs/Web/API/NavigatorUAData#instance_properties) است که روی شیء `NavigatorUAData` در دسترس هستند – این مقادیر آنهایی هستند که احتمال کمی برای اثرانگشت‌گذاری کاربر دارند. همچنین شامل زیرمجموعه‌ای از مقادیر «آنتروپی بالا» است که در پارامتر `hints` درخواست شده‌اند و مجوز آن‌ها صادر شده است. این مقادیر آنهایی هستند که احتمال بیشتری برای اثرانگشت‌گذاری دارند. توجه داشته باشید که معنی اصطلاحات [آنتروپی پایین](/en-US/docs/Web/HTTP/Guides/Client_hints#low_entropy_hints) و [آنتروپی بالا](/en-US/docs/Web/HTTP/Guides/Client_hints#high_entropy_hints) همان است که در مکانیزم [نشانه‌های کاربر-عامل (User-Agent Client Hints)](/en-US/docs/Web/HTTP/Guides/Client_hints) HTTP تعریف شده است.
 
 > [!NOTE]
-> Usage of the `getHighEntropyValues()` method to retrieve high-entropy user-agent data can be controlled via the {{HTTPHeader('Permissions-Policy/ch-ua-high-entropy-values', 'ch-ua-high-entropy-values')}} {{HTTPHeader('Permissions-Policy')}}.
-> If the permission is not allowed, the method will only return the `brands`, `mobile`, and `platform` low-entropy data.
+> استفاده از متد `getHighEntropyValues()` برای بازیابی داده‌های کاربر-عامل با آنتروپی بالا می‌تواند از طریق {{HTTPHeader('Permissions-Policy/ch-ua-high-entropy-values', 'ch-ua-high-entropy-values')}} {{HTTPHeader('Permissions-Policy')}} کنترل شود. اگر مجوز داده نشود، متد فقط داده‌های آنتروپی پایین `brands`، `mobile` و `platform` را برمی‌گرداند.
 
 ## Syntax
 
@@ -33,11 +23,10 @@ Note that meaning of the terms [low entropy](/en-US/docs/Web/HTTP/Guides/Client_
 getHighEntropyValues(hints)
 ```
 
-### Parameters
+### پارامترها
 
 - `hints`
-  - : An array containing the high-entropy hints to be returned.
-    This may include one or more of:
+  - : آرایه‌ای حاوی نشانه‌های آنتروپی بالا که باید برگردانده شوند. می‌تواند شامل یک یا چند مورد از موارد زیر باشد:
     - `"architecture"`
     - `"bitness"`
     - `"formFactors"`
@@ -47,55 +36,41 @@ getHighEntropyValues(hints)
     - `"uaFullVersion"` {{Deprecated_Inline}}
     - `"wow64"`
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves to an object containing some or all of the following values (based on the hints requested and granted):
+یک {{jsxref("Promise")}} که به یک شیء حاوی برخی یا همه مقادیر زیر (بر اساس نشانه‌های درخواست‌شده و اعطاشده) resolve می‌شود:
 
 - `brands`
-  - : Returns an array of objects containing `brand` and `version` specifying the browser brand and its version (the same information as provided by {{domxref("NavigatorUAData.brands")}}).
-    Note that this information can be sent to a server in the {{HTTPHeader("Sec-CH-UA")}} header (a [low-entropy client hint](/en-US/docs/Web/HTTP/Guides/Client_hints#low_entropy_hints)).
+  - : آرایه‌ای از اشیاء حاوی `brand` و `version` که مشخص‌کننده نام و نسخه مرورگر است (همان اطلاعاتی که توسط {{domxref("NavigatorUAData.brands")}} ارائه می‌شود). توجه داشته باشید که این اطلاعات می‌تواند در هدر {{HTTPHeader("Sec-CH-UA")}} (یک [نشانه کاربر-عامل با آنتروپی پایین](/en-US/docs/Web/HTTP/Guides/Client_hints#low_entropy_hints)) به سرور ارسال شود.
 - `mobile`
-  - : Returns `true` if the user agent is running on a mobile device (the same information as provided by {{domxref("NavigatorUAData.mobile")}}).
-    Note that this information can be sent to a server in the {{HTTPHeader("Sec-CH-UA-Mobile")}} header (a [low-entropy client hint](/en-US/docs/Web/HTTP/Guides/Client_hints#low_entropy_hints)).
+  - : اگر کاربر-عامل روی یک دستگاه همراه اجرا شود، `true` برمی‌گرداند (همان اطلاعاتی که توسط {{domxref("NavigatorUAData.mobile")}} ارائه می‌شود). توجه داشته باشید که این اطلاعات می‌تواند در هدر {{HTTPHeader("Sec-CH-UA-Mobile")}} (یک [نشانه کاربر-عامل با آنتروپی پایین](/en-US/docs/Web/HTTP/Guides/Client_hints#low_entropy_hints)) به سرور ارسال شود.
 - `platform`
-  - : Returns a string describing the platform the user agent is running on, like `"Windows"` (the same information as provided by {{domxref("NavigatorUAData.platform")}}).
-    Note that this information can be sent to a server in the {{HTTPHeader("Sec-CH-UA-Platform")}} header (a [low-entropy client hint](/en-US/docs/Web/HTTP/Guides/Client_hints#low_entropy_hints)).
+  - : رشته‌ای که پلتفرم اجرای کاربر-عامل را توصیف می‌کند، مانند `"Windows"` (همان اطلاعاتی که توسط {{domxref("NavigatorUAData.platform")}} ارائه می‌شود). توجه داشته باشید که این اطلاعات می‌تواند در هدر {{HTTPHeader("Sec-CH-UA-Platform")}} (یک [نشانه کاربر-عامل با آنتروپی پایین](/en-US/docs/Web/HTTP/Guides/Client_hints#low_entropy_hints)) به سرور ارسال شود.
 - `architecture`
-  - : A string containing the platform architecture. For example, `"x86"`.
-    Note that this information can be sent to a server in the {{HTTPHeader("Sec-CH-UA-Arch")}} header after the server explicitly requests it in the {{HTTPHeader("Accept-CH")}} header.
+  - : رشته‌ای حاوی معماری پلتفرم. به‌عنوان مثال، `"x86"`. توجه داشته باشید که این اطلاعات می‌تواند در هدر {{HTTPHeader("Sec-CH-UA-Arch")}} پس از درخواست صریح سرور در هدر {{HTTPHeader("Accept-CH")}} به سرور ارسال شود.
 - `bitness`
-  - : A string containing the architecture bitness. For example, `"32"` or `"64"`.
-    Note that this information can be sent to a server in the {{HTTPHeader("Sec-CH-UA-Bitness")}} header if the server explicitly requests it in the {{HTTPHeader("Accept-CH")}} header.
+  - : رشته‌ای حاوی بیت‌نِس (bitness) معماری. به‌عنوان مثال، `"32"` یا `"64"`. توجه داشته باشید که این اطلاعات می‌تواند در هدر {{HTTPHeader("Sec-CH-UA-Bitness")}} در صورت درخواست صریح سرور در هدر {{HTTPHeader("Accept-CH")}} به سرور ارسال شود.
 - `formFactors`
-  - : An array of strings containing the form-factors of a device. For example, `["Tablet", "XR"]`.
-    Note that this information can be sent to a server in the {{HTTPHeader("Sec-CH-UA-Form-Factors")}} header if the server explicitly requests it in the {{HTTPHeader("Accept-CH")}} header.
+  - : آرایه‌ای از رشته‌ها حاوی فاکتورهای فرم (form-factors) یک دستگاه. به‌عنوان مثال، `["Tablet", "XR"]`. توجه داشته باشید که این اطلاعات می‌تواند در هدر {{HTTPHeader("Sec-CH-UA-Form-Factors")}} در صورت درخواست صریح سرور در هدر {{HTTPHeader("Accept-CH")}} به سرور ارسال شود.
 - `fullVersionList`
-  - : An array of objects with properties `"brand"` and `"version"` representing the browser name and full version respectively.
-    For example, `{"brand": "Google Chrome", "version": "103.0.5060.134"}, {"brand": "Chromium", "version": "103.0.5060.134"}`.
-    Please note that one object may intentionally contain invalid information to prevent sites from relying on a fixed list of browsers.
-    Note that this information can be sent to a server in the {{HTTPHeader("Sec-CH-UA-Full-Version-List")}} header if the server explicitly requests it in the {{HTTPHeader("Accept-CH")}} header.
+  - : آرایه‌ای از اشیاء با ویژگی‌های `"brand"` و `"version"` که به ترتیب نام و نسخه کامل مرورگر را نشان می‌دهند. به‌عنوان مثال، `{"brand": "Google Chrome", "version": "103.0.5060.134"}, {"brand": "Chromium", "version": "103.0.5060.134"}`. لطفاً توجه داشته باشید که یک شیء ممکن است عمداً اطلاعات نامعتبر داشته باشد تا از وابستگی سایت‌ها به یک لیست ثابت از مرورگرها جلوگیری کند. توجه داشته باشید که این اطلاعات می‌تواند در هدر {{HTTPHeader("Sec-CH-UA-Full-Version-List")}} در صورت درخواست صریح سرور در هدر {{HTTPHeader("Accept-CH")}} به سرور ارسال شود.
 - `model`
-  - : A string containing the model of mobile device. For example, `"Pixel 2XL"`. If device is not a mobile device or if device model is not known, `model` will be `""`.
-    Note that this information can be sent to a server in the {{HTTPHeader("Sec-CH-UA-Model")}} header if the server explicitly requests it in the {{HTTPHeader("Accept-CH")}} header.
+  - : رشته‌ای حاوی مدل دستگاه همراه. به‌عنوان مثال، `"Pixel 2XL"`. اگر دستگاه یک دستگاه همراه نباشد یا مدل دستگاه ناشناخته باشد، `model` برابر `""` خواهد بود. توجه داشته باشید که این اطلاعات می‌تواند در هدر {{HTTPHeader("Sec-CH-UA-Model")}} در صورت درخواست صریح سرور در هدر {{HTTPHeader("Accept-CH")}} به سرور ارسال شود.
 - `platformVersion`
-  - : A string containing the platform version. Platform name itself is always available as low-entropy hint `platform`. For example, `"10.0"`.
-    Note that this information can be sent to a server in the {{HTTPHeader("Sec-CH-UA-Platform-Version")}} header if the server explicitly requests it in the {{HTTPHeader("Accept-CH")}} header.
+  - : رشته‌ای حاوی نسخه پلتفرم. نام خود پلتفرم همیشه به‌عنوان یک نشانه آنتروپی پایین به نام `platform` در دسترس است. به‌عنوان مثال، `"10.0"`. توجه داشته باشید که این اطلاعات می‌تواند در هدر {{HTTPHeader("Sec-CH-UA-Platform-Version")}} در صورت درخواست صریح سرور در هدر {{HTTPHeader("Accept-CH")}} به سرور ارسال شود.
 - `uaFullVersion` {{Deprecated_Inline}}
-  - : A string containing the full browser version. For example, `"103.0.5060.134"`. Deprecated in favor of `fullVersionList`.
-    Note that this information can be sent to a server in the {{HTTPHeader("Sec-CH-UA-Full-Version")}} header if the server explicitly requests it in the {{HTTPHeader("Accept-CH")}} header.
+  - : رشته‌ای حاوی نسخه کامل مرورگر. به‌عنوان مثال، `"103.0.5060.134"`. این ویژگی منسوخ شده و به جای آن از `fullVersionList` استفاده می‌شود. توجه داشته باشید که این اطلاعات می‌تواند در هدر {{HTTPHeader("Sec-CH-UA-Full-Version")}} در صورت درخواست صریح سرور در هدر {{HTTPHeader("Accept-CH")}} به سرور ارسال شود.
 - `wow64`
-  - : A boolean indicating if the user agent's binary is running in 32-bit mode on 64-bit Windows.
-    Note that this information can be sent to a server in the {{HTTPHeader("Sec-CH-UA-WoW64")}} header if the server explicitly requests it in the {{HTTPHeader("Accept-CH")}} header.
+  - : یک مقدار بولی که نشان می‌دهد آیا باینری کاربر-عامل در حالت ۳۲ بیتی روی ویندوز ۶۴ بیتی اجرا می‌شود یا خیر. توجه داشته باشید که این اطلاعات می‌تواند در هدر {{HTTPHeader("Sec-CH-UA-WoW64")}} در صورت درخواست صریح سرور در هدر {{HTTPHeader("Accept-CH")}} به سرور ارسال شود.
 
-### Exceptions
+### استثناها
 
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if the user-agent decides that one or more of the `hints` requested should not be returned.
+  - : اگر کاربر-عامل تشخیص دهد که یک یا چند نشانه از `hints` درخواست‌شده نباید برگردانده شوند، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-In the following example a number of hints are requested using the `getHighEntropyValues()` method.
-When the promise resolves, this information is printed to the console.
+در مثال زیر، تعدادی نشانه با استفاده از متد `getHighEntropyValues()` درخواست می‌شوند. وقتی promise resolve می‌شود، این اطلاعات در کنسول چاپ می‌شوند.
 
 ```js
 navigator.userAgentData
@@ -108,22 +83,22 @@ navigator.userAgentData
   .then((values) => console.log(values));
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- These values are also available as via HTTP request headers:
-  - [Low-entropy client hints](/en-US/docs/Web/HTTP/Guides/Client_hints#low_entropy_hints) are sent automatically:
+- این مقادیر از طریق هدرهای درخواست HTTP نیز در دسترس هستند:
+  - [نشانه‌های کاربر-عامل با آنتروپی پایین](/en-US/docs/Web/HTTP/Guides/Client_hints#low_entropy_hints) به‌طور خودکار ارسال می‌شوند:
     - {{HTTPHeader("Sec-CH-UA")}}
     - {{HTTPHeader("Sec-CH-UA-Mobile")}}
     - {{HTTPHeader("Sec-CH-UA-Platform")}}
-  - Servers can request to receive high-entropy client hints on subsequent requests, using the {{HTTPHeader("Accept-CH")}} header:
+  - سرورها می‌توانند با استفاده از هدر {{HTTPHeader("Accept-CH")}} درخواست دریافت نشانه‌های کاربر-عامل با آنتروپی بالا در درخواست‌های بعدی را بدهند:
     - {{HTTPHeader("Sec-CH-UA-Arch")}}
     - {{HTTPHeader("Sec-CH-UA-Bitness")}}
     - {{HTTPHeader("Sec-CH-UA-Full-Version")}}
