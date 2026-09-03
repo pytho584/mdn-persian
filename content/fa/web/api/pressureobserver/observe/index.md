@@ -1,11 +1,5 @@
 ---
 title: "PressureObserver: observe() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PressureObserver/observe"
-status: "needs-translation"
----
-
----
-title: "PressureObserver: observe() method"
 short-title: observe()
 slug: Web/API/PressureObserver/observe
 page-type: web-api-instance-method
@@ -16,42 +10,42 @@ browser-compat: api.PressureObserver.observe
 
 {{APIRef("Compute Pressure API")}}{{SeeCompatTable}}{{AvailableInWorkers("window_and_worker_except_service")}}{{securecontext_header}}
 
-The **`observe()`** method of the {{domxref("PressureObserver")}} interface tells the pressure observer to start observing pressure changes. After this method is called, the observer will call its callback function when a pressure record for the specified `source` is observed.
+متد **`observe()`** در رابط {{domxref("PressureObserver")}} به observer می‌گوید که نظارت بر تغییرات فشار را آغاز کند. پس از فراخوانی این متد، هر زمان که رکورد فشاری برای `source` مشخص‌شده مشاهده شود، observer تابع callback خود را صدا می‌زند.
 
-When a matching {{domxref("PressureRecord")}} is obtained, the pressure observer's callback function is invoked.
+هنگامی که یک {{domxref("PressureRecord")}} منطبق به دست آید، تابع callback مربوط به observer فشار فراخوانی می‌شود.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 observe(source)
 observe(source, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `source`
-  - : A string specifying which {{domxref("PressureRecord.source", "source")}} to observe. See {{domxref("PressureRecord.source")}} for a list of sources and {{domxref("PressureObserver.knownSources_static", "PressureObserver.knownSources")}} for a list of sources the user agent supports.
+  - : رشته‌ای که مشخص می‌کند کدام {{domxref("PressureRecord.source", "source")}} باید مشاهده شود. فهرست منابع را در {{domxref("PressureRecord.source")}} و فهرست منابعی را که عامل کاربر (user agent) پشتیبانی می‌کند در {{domxref("PressureObserver.knownSources_static", "PressureObserver.knownSources")}} ببینید.
 - `options` {{optional_inline}}
-  - : An object to configure observation with the following properties:
+  - : شیئی برای پیکربندی مشاهده با ویژگی‌های زیر:
     - `sampleInterval` {{optional_inline}}
-      - : A number representing the requested sampling interval expressed in milliseconds. Defaults to 0 meaning it will get updates as fast as the system can handle it.
+      - : عددی که بازه نمونه‌برداری درخواستی را بر حسب میلی‌ثانیه مشخص می‌کند. مقدار پیش‌فرض آن ۰ است؛ یعنی به‌روزرسانی‌ها با سریع‌ترین نرخی که سیستم بتواند مدیریت کند دریافت می‌شوند.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that fulfils with {{jsxref("undefined")}}.
+یک {{jsxref("Promise")}} که با {{jsxref("undefined")}} تکمیل (fulfill) می‌شود.
 
-### Exceptions
+### استثناها
 
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if the [Compute Pressure API](/en-US/docs/Web/API/Compute_Pressure_API) is disallowed by a {{httpheader('Permissions-Policy/compute-pressure','compute-pressure')}} [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy).
+  - : در صورتی پرتاب می‌شود که [Compute Pressure API](/en-US/docs/Web/API/Compute_Pressure_API) توسط {{httpheader('Permissions-Policy/compute-pressure','compute-pressure')}} [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) مجاز نشده باشد.
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Thrown if the `source` parameter is not one of the supported sources for this user agent.
+  - : در صورتی پرتاب می‌شود که پارامتر `source` جزو منابع پشتیبانی‌شده توسط این عامل کاربر نباشد.
 
-## Examples
+## مثال‌ها
 
-### Log current pressure
+### ثبت فشار فعلی
 
-This example creates a {{domxref("PressureObserver")}} and takes action whenever there is a pressure change. The sample interval is set to 1000ms, meaning that there will be updates at most every second.
+این مثال یک {{domxref("PressureObserver")}} می‌سازد و در هر بار تغییر فشار اقدام می‌کند. بازه نمونه‌برداری روی ۱۰۰۰ میلی‌ثانیه تنظیم شده است؛ یعنی حداکثر یک بار در هر ثانیه به‌روزرسانی انجام می‌شود.
 
 ```js
 function callback(records) {
@@ -76,10 +70,10 @@ try {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
