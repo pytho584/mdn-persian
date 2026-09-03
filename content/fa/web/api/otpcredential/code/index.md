@@ -1,11 +1,5 @@
 ---
 title: "OTPCredential: code property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/OTPCredential/code"
-status: "needs-translation"
----
-
----
-title: "OTPCredential: code property"
 short-title: code
 slug: Web/API/OTPCredential/code
 page-type: web-api-instance-property
@@ -16,15 +10,15 @@ browser-compat: api.OTPCredential.code
 
 {{SecureContext_Header}}{{APIRef("WebOTP API")}}{{SeeCompatTable}}
 
-The **`code`** read-only property of the {{domxref("OTPCredential")}} interface contains the one-time password (OTP).
+ویژگی فقط‌خواندنی **`code`** در رابط {{domxref("OTPCredential")}} شامل رمز یک‌بارمصرف (OTP) است.
 
-## Value
+## مقدار
 
-A string containing the OTP.
+رشته‌ای (string) شامل OTP.
 
-## Examples
+## مثال‌ها
 
-The below code triggers the browser's permission flow when an SMS message arrives. If permission is granted, then the promise resolves with an `OTPCredential` object. The contained `code` value is then set as the value of an {{htmlelement("input")}} form element, which is then submitted.
+کد زیر وقتی یک پیامک می‌رسد، فرایند مجوز مرورگر را فعال می‌کند. اگر مجوز داده شود، پرامیس با یک شیء `OTPCredential` resolve می‌شود. مقدار `code` موجود در آن سپس به‌عنوان مقدار یک عنصر فرم {{htmlelement("input")}} تنظیم شده و فرم ارسال می‌شود.
 
 ```js
 navigator.credentials
@@ -42,12 +36,12 @@ navigator.credentials
 ```
 
 > [!NOTE]
-> For a full explanation of the code, see the {{domxref('WebOTP API','','',' ')}} landing page. You can also [see this code as part of a full working demo](https://chrome.dev/web-otp-demo/).
+> برای توضیح کامل کد، به صفحهٔ اصلی {{domxref('WebOTP API','','',' ')}} مراجعه کنید. همچنین می‌توانید [این کد را به‌عنوان بخشی از یک دموی کامل و قابل اجرا](https://chrome.dev/web-otp-demo/) ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
