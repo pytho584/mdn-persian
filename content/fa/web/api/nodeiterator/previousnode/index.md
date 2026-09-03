@@ -1,11 +1,5 @@
 ---
 title: "NodeIterator: previousNode() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/previousNode"
-status: "needs-translation"
----
-
----
-title: "NodeIterator: previousNode() method"
 short-title: previousNode()
 slug: Web/API/NodeIterator/previousNode
 page-type: web-api-instance-method
@@ -14,33 +8,27 @@ browser-compat: api.NodeIterator.previousNode
 
 {{APIRef("DOM")}}
 
-The **`NodeIterator.previousNode()`** method returns the
-previous node in the set represented by the {{domxref("NodeIterator")}} and moves the
-position of the iterator backwards within the set.
+متد **`NodeIterator.previousNode()`** گره قبلی در مجموعه‌ای را که توسط {{domxref("NodeIterator")}} نمایش داده می‌شود، برمی‌گرداند و موقعیت پیمایشگر را درون مجموعه به عقب می‌برد.
 
-This method returns `null` when the current node is the first node in the
-set.
+این متد در صورتی که گره جاری اولین گره در مجموعه باشد، `null` برمی‌گرداند.
 
-In old browsers, as specified in old versions of the specifications, the method may
-throws the `INVALID_STATE_ERR` {{domxref("DOMException")}} if this method
-is called after the {{domxref("NodeIterator.detach()")}} method. Recent browsers never
-throw.
+در مرورگرهای قدیمی، مطابق نسخه‌های قدیمی مشخصات، در صورت فراخوانی این متد پس از متد {{domxref("NodeIterator.detach()")}}، ممکن است استثنای `INVALID_STATE_ERR` {{domxref("DOMException")}} پرتاب شود. مرورگرهای جدید هیچگاه استثنا پرتاب نمی‌کنند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 previousNode()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("Node")}} representing the node before the current node in the set represented by this `NodeIterator`, or `null` if the current node is the first node in the set.
+یک {{domxref("Node")}} که نشان‌دهنده گره قبل از گره جاری در مجموعه نمایش داده شده توسط این `NodeIterator` است، یا اگر گره جاری اولین گره در مجموعه باشد، `null` برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
 ```js
 const nodeIterator = document.createNodeIterator(
@@ -52,18 +40,18 @@ const nodeIterator = document.createNodeIterator(
     },
   },
 );
-currentNode = nodeIterator.nextNode(); // returns the next node
-previousNode = nodeIterator.previousNode(); // same result, since we backtracked to the previous node
+currentNode = nodeIterator.nextNode(); // گره بعدی را برمی‌گرداند
+previousNode = nodeIterator.previousNode(); // نتیجه مشابه، زیرا به گره قبلی بازگشته‌ایم
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface it belongs to: {{domxref("NodeIterator")}}.
+- رابطی که این متد به آن تعلق دارد: {{domxref("NodeIterator")}}.
