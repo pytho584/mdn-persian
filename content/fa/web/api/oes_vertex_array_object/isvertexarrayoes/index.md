@@ -1,11 +1,5 @@
 ---
 title: "OES_vertex_array_object: isVertexArrayOES() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/OES_vertex_array_object/isVertexArrayOES"
-status: "needs-translation"
----
-
----
-title: "OES_vertex_array_object: isVertexArrayOES() method"
 short-title: isVertexArrayOES()
 slug: Web/API/OES_vertex_array_object/isVertexArrayOES
 page-type: webgl-extension-method
@@ -14,28 +8,24 @@ browser-compat: api.OES_vertex_array_object.isVertexArrayOES
 
 {{APIRef("WebGL")}}
 
-The **`OES_vertex_array_object.isVertexArrayOES()`** method of
-the [WebGL API](/en-US/docs/Web/API/WebGL_API) returns `true` if
-the passed object is a {{domxref("WebGLVertexArrayObject")}} object.
+متد **`OES_vertex_array_object.isVertexArrayOES()`** در [WebGL API](/en-US/docs/Web/API/WebGL_API) اگر شیء ارسال‌شده یک شیء {{domxref("WebGLVertexArrayObject")}} باشد، مقدار `true` را برمی‌گرداند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 isVertexArrayOES(arrayObject)
 ```
 
-### Parameters
+### پارامترها
 
 - `arrayObject`
-  - : A {{domxref("WebGLVertexArrayObject")}} (VAO) object to test.
+  - : یک شیء {{domxref("WebGLVertexArrayObject")}} (VAO) برای آزمایش.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("WebGL_API.Types", "GLboolean")}} indicating whether the given object is a
-{{domxref("WebGLVertexArrayObject")}} object (`true`) or not
-(`false`).
+یک {{domxref("WebGL_API.Types", "GLboolean")}} که نشان می‌دهد آیا شیء داده‌شده یک شیء {{domxref("WebGLVertexArrayObject")}} است (`true`) یا خیر (`false`).
 
-## Examples
+## مثال‌ها
 
 ```js
 const ext = gl.getExtension("OES_vertex_array_object");
@@ -47,16 +37,16 @@ ext.bindVertexArrayOES(vao);
 ext.isVertexArrayOES(vao);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("WebGLRenderingContext.getExtension()")}}
 - {{domxref("WebGLRenderingContext.vertexAttribPointer()")}}
-- WebGL2 equivalent: {{domxref("WebGL2RenderingContext.isVertexArray()")}}
+- معادل WebGL2: {{domxref("WebGL2RenderingContext.isVertexArray()")}}
