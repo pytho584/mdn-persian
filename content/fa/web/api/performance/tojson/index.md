@@ -1,11 +1,5 @@
 ---
 title: "Performance: toJSON() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Performance/toJSON"
-status: "needs-translation"
----
-
----
-title: "Performance: toJSON() method"
 short-title: toJSON()
 slug: Web/API/Performance/toJSON
 page-type: web-api-instance-method
@@ -14,38 +8,38 @@ browser-compat: api.Performance.toJSON
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The **`toJSON()`** method of the {{domxref("Performance")}} interface is a {{Glossary("Serialization","serializer")}}; it returns a JSON representation of the {{domxref("Performance")}} object.
+متد **`toJSON()`** از رابط {{domxref("Performance")}} یک {{Glossary("Serialization","serializer")}} است؛ این متد یک نمایش JSON از شیء {{domxref("Performance")}} برمی‌گرداند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 toJSON()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("JSON")}} object that is the serialization of the {{domxref("Performance")}} object.
+یک شیء {{jsxref("JSON")}} که سریال‌سازیِ شیء {{domxref("Performance")}} است.
 
-The returned JSON doesn't contain the {{domxref("Performance.eventCounts", "eventCounts")}} property because it is of type {{domxref("EventCounts")}}, which doesn't provide a `toJSON()` operation.
+JSON بازگشتی شامل ویژگی {{domxref("Performance.eventCounts", "eventCounts")}} نمی‌شود، زیرا از نوع {{domxref("EventCounts")}} است که عملیات `toJSON()` را ارائه نمی‌دهد.
 
 > [!NOTE]
-> The JSON object contains the serialization of the deprecated {{domxref("performance.timing")}} and {{domxref("performance.navigation")}} properties. To get a JSON representation of the newer {{domxref("PerformanceNavigationTiming")}} interface, call {{domxref("PerformanceNavigationTiming.toJSON()")}} instead.
+> شیء JSON شامل سریال‌سازیِ ویژگی‌های منسوخ‌شده {{domxref("performance.timing")}} و {{domxref("performance.navigation")}} است. برای دریافت نمایش JSON از رابط جدیدتر {{domxref("PerformanceNavigationTiming")}}، به‌جای آن از {{domxref("PerformanceNavigationTiming.toJSON()")}} استفاده کنید.
 
-## Examples
+## مثال‌ها
 
-### Using the toJSON method
+### استفاده از متد toJSON
 
-In this example, calling `performance.toJSON()` returns a JSON representation of the `Performance` object.
+در این مثال، فراخوانی `performance.toJSON()` یک نمایش JSON از شیء `Performance` برمی‌گرداند.
 
 ```js
 performance.toJSON();
 ```
 
-This would log a JSON object like so:
+این کار یک شیء JSON مانند زیر را لاگ می‌کند:
 
 ```json
 {
@@ -80,16 +74,16 @@ This would log a JSON object like so:
 }
 ```
 
-To get a JSON string, you can use [`JSON.stringify(performance)`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) directly; it will call `toJSON()` automatically.
+برای دریافت یک رشته JSON، می‌توانید مستقیماً از [`JSON.stringify(performance)`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) استفاده کنید؛ این متد به‌صورت خودکار `toJSON()` را فراخوانی می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{jsxref("JSON")}}
