@@ -1,10 +1,4 @@
 ---
-title: "OffscreenCanvas"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas"
-status: "needs-translation"
----
-
----
 title: OffscreenCanvas
 slug: Web/API/OffscreenCanvas
 page-type: web-api-interface
@@ -13,63 +7,61 @@ browser-compat: api.OffscreenCanvas
 
 {{APIRef("Canvas API")}}{{AvailableInWorkers}}
 
-When using the {{HtmlElement("canvas")}} element or the [Canvas API](/en-US/docs/Web/API/Canvas_API), rendering, animation, and user interaction usually happen on the main execution thread of a web application.
-The computation relating to canvas animations and rendering can have a significant impact on application performance.
+هنگام استفاده از عنصر {{HtmlElement("canvas")}} یا [Canvas API](/en-US/docs/Web/API/Canvas_API)، رندرینگ، انیمیشن و تعامل با کاربر معمولاً در رشته اجرای اصلی یک برنامه وب انجام می‌شود. محاسبات مربوط به انیمیشن‌های بوم و رندرینگ می‌توانند تأثیر چشمگیری بر کارایی برنامه داشته باشند.
 
-The **`OffscreenCanvas`** interface provides a canvas that can be rendered off screen, decoupling the DOM and the Canvas API so that the {{HtmlElement("canvas")}} element is no longer entirely dependent on the DOM.
-Rendering operations can also be run inside a [worker](/en-US/docs/Web/API/Web_Workers_API) context, allowing you to run some tasks in a separate thread and avoid heavy work on the main thread.
+رابط **`OffscreenCanvas`** بومی را فراهم می‌کند که می‌توان آن را خارج از صفحه رندر کرد و به این ترتیب DOM و Canvas API را از یکدیگر جدا می‌کند؛ به طوری که عنصر {{HtmlElement("canvas")}} دیگر کاملاً به DOM وابسته نیست. همچنین عملیات رندرینگ را می‌توان درون یک زمینه [worker](/en-US/docs/Web/API/Web_Workers_API) اجرا کرد؛ این امکان به شما می‌دهد برخی وظایف را در یک رشته جداگانه اجرا کنید و از کارهای سنگین روی رشته اصلی جلوگیری کنید.
 
-`OffscreenCanvas` is a [transferable object](/en-US/docs/Web/API/Web_Workers_API/Transferable_objects).
+`OffscreenCanvas` یک [شیء قابل انتقال](/en-US/docs/Web/API/Web_Workers_API/Transferable_objects) است.
 
 {{InheritanceDiagram}}
 
-## Constructors
+## سازنده‌ها
 
 - {{domxref("OffscreenCanvas.OffscreenCanvas", "OffscreenCanvas()")}}
-  - : `OffscreenCanvas` constructor. Creates a new `OffscreenCanvas` object.
+  - : سازنده `OffscreenCanvas`. یک شیء جدید `OffscreenCanvas` می‌سازد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("OffscreenCanvas.height")}}
-  - : The height of the offscreen canvas.
+  - : ارتفاع بوم خارج از صفحه.
 - {{domxref("OffscreenCanvas.width")}}
-  - : The width of the offscreen canvas.
+  - : عرض بوم خارج از صفحه.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("OffscreenCanvas.getContext()")}}
-  - : Returns a drawing context for the offscreen canvas, or [`null`](/en-US/docs/Web/JavaScript/Reference/Operators/null) if the context identifier is not supported, or the offscreen canvas has already been set to a different context mode.
+  - : یک زمینه ترسیم برای بوم خارج از صفحه برمی‌گرداند، یا اگر شناسه زمینه پشتیبانی نشود، یا بوم خارج از صفحه از قبل روی حالت زمینه‌ای متفاوت تنظیم شده باشد، [`null`](/en-US/docs/Web/JavaScript/Reference/Operators/null) برمی‌گرداند.
 - {{domxref("OffscreenCanvas.convertToBlob()")}}
-  - : Creates a {{domxref("Blob")}} object representing the image contained in the canvas.
+  - : یک شیء {{domxref("Blob")}} می‌سازد که نمایانگر تصویر موجود در بوم است.
 - {{domxref("OffscreenCanvas.transferToImageBitmap()")}}
-  - : Creates an {{domxref("ImageBitmap")}} object from the most recently rendered image of the `OffscreenCanvas`. See its reference for important notes on managing this {{domxref("ImageBitmap")}}.
+  - : از آخرین تصویر رندر شده `OffscreenCanvas` یک شیء {{domxref("ImageBitmap")}} می‌سازد. برای نکات مهم درباره مدیریت این {{domxref("ImageBitmap")}} به صفحه مرجع آن مراجعه کنید.
 
-## Events
+## رویدادها
 
-_Inherits events from its parent, {{domxref("EventTarget")}}._
+_رویدادها را از والد خود، {{domxref("EventTarget")}}، به ارث می‌برد._
 
-Listen to these events using {{DOMxRef("EventTarget.addEventListener", "addEventListener()")}} or by assigning an event listener to the `oneventname` property of this interface.
+برای گوش دادن به این رویدادها از {{DOMxRef("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید یا یک شنونده رویداد را به ویژگی `oneventname` این رابط نسبت دهید.
 
 - [`contextlost`](/en-US/docs/Web/API/OffscreenCanvas/contextlost_event)
-  - : Fired if the browser detects that an [`OffscreenCanvasRenderingContext2D`](/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D) context is lost.
+  - : اگر مرورگر تشخیص دهد که یک زمینه [`OffscreenCanvasRenderingContext2D`](/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D) از دست رفته است، این رویداد صادر می‌شود.
 - [`contextrestored`](/en-US/docs/Web/API/OffscreenCanvas/contextrestored_event)
-  - : Fired if the browser successfully restores an [`OffscreenCanvasRenderingContext2D`](/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D) context.
+  - : اگر مرورگر با موفقیت یک زمینه [`OffscreenCanvasRenderingContext2D`](/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D) را بازیابی کند، این رویداد صادر می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Synchronous display of frames produced by an `OffscreenCanvas`
+### نمایش همزمان فریم‌های تولیدشده توسط یک `OffscreenCanvas`
 
-One way to use the `OffscreenCanvas` API is to use a rendering context that has been obtained from an `OffscreenCanvas` object to generate new frames. Once a new frame has finished rendering in this context, the {{domxref("OffscreenCanvas.transferToImageBitmap", "transferToImageBitmap()")}} method can be called to save the most recent rendered image. This method returns an {{domxref("ImageBitmap")}} object, which can be used in a variety of Web APIs and also in a second canvas without creating a transfer copy.
+یکی از راه‌های استفاده از API `OffscreenCanvas` این است که از یک زمینه رندر که از یک شیء `OffscreenCanvas` به دست آمده برای تولید فریم‌های جدید استفاده کنید. پس از اینکه رندر یک فریم جدید در این زمینه به پایان رسید، می‌توان متد {{domxref("OffscreenCanvas.transferToImageBitmap", "transferToImageBitmap()")}} را برای ذخیره آخرین تصویر رندر شده فراخوانی کرد. این متد یک شیء {{domxref("ImageBitmap")}} برمی‌گرداند که می‌توان از آن در انواع Web APIها و همچنین در یک بوم دوم بدون ایجاد یک کپی انتقالی استفاده کرد.
 
-To display the `ImageBitmap`, you can use an {{domxref("ImageBitmapRenderingContext")}} context, which can be created by calling `canvas.getContext("bitmaprenderer")` on a (visible) canvas element. This context only provides functionality to replace the canvas's contents with the given `ImageBitmap`. A call to {{domxref("ImageBitmapRenderingContext.transferFromImageBitmap()")}} with the previously rendered and saved `ImageBitmap` from the OffscreenCanvas, will display the `ImageBitmap` on the canvas and transfer its ownership to the canvas. A single `OffscreenCanvas` may transfer frames into an arbitrary number of other `ImageBitmapRenderingContext` objects.
+برای نمایش `ImageBitmap` می‌توانید از یک زمینه {{domxref("ImageBitmapRenderingContext")}} استفاده کنید که با فراخوانی `canvas.getContext("bitmaprenderer")` روی یک عنصر بوم (نمایان) ایجاد می‌شود. این زمینه فقط قابلیت جایگزینی محتوای بوم با `ImageBitmap` داده‌شده را فراهم می‌کند. فراخوانی {{domxref("ImageBitmapRenderingContext.transferFromImageBitmap()")}} همراه با `ImageBitmap` رندر شده و ذخیره‌شده قبلی از `OffscreenCanvas`، باعث نمایش `ImageBitmap` روی بوم و انتقال مالکیت آن به بوم می‌شود. یک `OffscreenCanvas` واحد می‌تواند فریم‌ها را به هر تعداد دلخواهی از اشیاء `ImageBitmapRenderingContext` دیگر منتقل کند.
 
-Given these two {{HTMLElement("canvas")}} elements
+با این دو عنصر {{HTMLElement("canvas")}}:
 
 ```html
 <canvas id="one"></canvas> <canvas id="two"></canvas>
 ```
 
-the following code will provide the rendering using `OffscreenCanvas` as described above.
+کد زیر رندرگیری را با استفاده از `OffscreenCanvas` همانطور که در بالا توضیح داده شد فراهم می‌کند.
 
 ```js
 const one = document.getElementById("one").getContext("bitmaprenderer");
@@ -87,11 +79,11 @@ const bitmapTwo = offscreen.transferToImageBitmap();
 two.transferFromImageBitmap(bitmapTwo);
 ```
 
-### Asynchronous display of frames produced by an `OffscreenCanvas`
+### نمایش ناهمزمان فریم‌های تولیدشده توسط یک `OffscreenCanvas`
 
-Another way to use the `OffscreenCanvas` API, is to call {{domxref("HTMLCanvasElement.transferControlToOffscreen", "transferControlToOffscreen()")}} on a {{HTMLElement("canvas")}} element, either on a [worker](/en-US/docs/Web/API/Web_Workers_API) or the main thread, which will return an `OffscreenCanvas` object from an {{domxref("HTMLCanvasElement")}} object from the main thread. Calling {{domxref("OffscreenCanvas.getContext", "getContext()")}} will then obtain a rendering context from that `OffscreenCanvas`.
+راه دیگر استفاده از API `OffscreenCanvas` این است که {{domxref("HTMLCanvasElement.transferControlToOffscreen", "transferControlToOffscreen()")}} را روی یک عنصر {{HTMLElement("canvas")}} فراخوانی کنید؛ چه روی یک [worker](/en-US/docs/Web/API/Web_Workers_API) و چه روی رشته اصلی. این متد از روی یک شیء {{domxref("HTMLCanvasElement")}} در رشته اصلی، یک شیء `OffscreenCanvas` برمی‌گرداند. سپس با فراخوانی {{domxref("OffscreenCanvas.getContext", "getContext()")}} یک زمینه رندرگیری از آن `OffscreenCanvas` دریافت می‌کنید.
 
-The `main.js` script (main thread) may look like this:
+اسکریپت `main.js` (رشته اصلی) ممکن است به این شکل باشد:
 
 ```js
 const htmlCanvas = document.getElementById("canvas");
@@ -101,7 +93,7 @@ const worker = new Worker("offscreen-canvas.js");
 worker.postMessage({ canvas: offscreen }, [offscreen]);
 ```
 
-While the `offscreen-canvas.js` script (worker thread) can look like this:
+اسکریپت `offscreen-canvas.js` (رشته worker) می‌تواند به این شکل باشد:
 
 ```js
 onmessage = (evt) => {
@@ -111,7 +103,7 @@ onmessage = (evt) => {
 };
 ```
 
-It's also possible to use {{domxref("Window.requestAnimationFrame", "requestAnimationFrame()")}} in workers:
+همچنین می‌توان از {{domxref("Window.requestAnimationFrame", "requestAnimationFrame()")}} در workerها استفاده کرد:
 
 ```js
 onmessage = (evt) => {
@@ -126,17 +118,17 @@ onmessage = (evt) => {
 };
 ```
 
-For a full example, see the [OffscreenCanvas example source](https://github.com/mdn/dom-examples/tree/main/web-workers/offscreen-canvas-worker) on GitHub or run the [OffscreenCanvas example live](https://mdn.github.io/dom-examples/web-workers/offscreen-canvas-worker/).
+برای یک مثال کامل، [سورس مثال OffscreenCanvas](https://github.com/mdn/dom-examples/tree/main/web-workers/offscreen-canvas-worker) را در GitHub ببینید یا [مثال زنده OffscreenCanvas](https://mdn.github.io/dom-examples/web-workers/offscreen-canvas-worker/) را اجرا کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("CanvasRenderingContext2D")}}
 - {{domxref("OffscreenCanvasRenderingContext2D")}}
