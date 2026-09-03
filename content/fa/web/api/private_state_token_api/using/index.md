@@ -1,7 +1,5 @@
 ---
 title: "Using the Private State Token API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Private_State_Token_API/Using"
-status: "needs-translation"
 ---
 
 ---
@@ -12,91 +10,91 @@ page-type: web-api-overview
 
 {{DefaultAPISidebar("Private State Token API")}}
 
-This page explains how to use the Private State Tokens API to conveying trust in a user's authenticity from one browsing context to another.
+این صفحه نحوه استفاده از API توکن‌های حالت خصوصی برای انتقال اعتماد به اصالت کاربر از یک بافت مرورگر به بافت دیگر را توضیح می‌دهد.
 
-## High-level overview
+## نمای کلی سطح بالا
 
-The process by which private state tokens are used can be split up into three phases:
+فرآیند استفاده از توکن‌های حالت خصوصی را می‌توان به سه مرحله تقسیم کرد:
 
-1. Issuing tokens
-2. Redeeming tokens
-3. Redemption record usage
+1. صدور توکن‌ها
+2. بازخرید توکن‌ها
+3. استفاده از رکورد بازخرید
 
-This section summarizes those phases. We will look at the these in more detail in subsequent sections.
+این بخش خلاصه‌ای از این مراحل ارائه می‌دهد. در بخش‌های بعدی این مراحل را با جزئیات بیشتری بررسی خواهیم کرد.
 
-Private state tokens use the [Privacy Pass protocol](https://privacypass.github.io/) in the background to handle the issuing and transport of tokens, etc.
+توکن‌های حالت خصوصی در پس‌زمینه از [پروتکل Privacy Pass](https://privacypass.github.io/) برای مدیریت صدور و انتقال توکن‌ها و موارد دیگر استفاده می‌کنند.
 
-### Issuing tokens
+### صدور توکن‌ها
 
-1. Let's say a user visits a website, `issuer.example`.
-2. `issuer.example` can take steps to _establish_ trust in the user. This can be done using a method such as a [CAPTCHA](https://en.wikipedia.org/wiki/CAPTCHA), verifying their email address, keeping a record of the user making legitimate purchases, or a combination of multiple such methods.
+1. فرض کنید کاربری از وب‌سایتی به نام `issuer.example` بازدید می‌کند.
+2. `issuer.example` می‌تواند اقداماتی برای _ایجاد_ اعتماد نسبت به کاربر انجام دهد. این کار می‌تواند با روشی مانند [CAPTCHA](https://en.wikipedia.org/wiki/CAPTCHA)، تأیید آدرس ایمیل، ثبت سابقه خریدهای معتبر کاربر، یا ترکیبی از چندین روش انجام شود.
    > [!NOTE]
-   > Private state tokens are not a replacement for CAPTCHAs or other trust establishing mechanisms. Private state tokens provide a way to _convey_ trust in a user, not _establish_ trust in a user.
-3. Once trust has been established, `issuer.example` can make a request to a server to issue a **private state token** — a cryptographic token that represents trust in the verified user. In this context, `issuer.example` is called an **issuer**. The server is called an **issuer server**.
-4. If the request is successful, the token is then stored securely by the user's browser.
+   > توکن‌های حالت خصوصی جایگزینی برای CAPTCHA یا سایر مکانیزم‌های ایجاد اعتماد نیستند. توکن‌های حالت خصوصی راهی برای _انتقال_ اعتماد به کاربر فراهم می‌کنند، نه _ایجاد_ اعتماد نسبت به کاربر.
+3. پس از ایجاد اعتماد، `issuer.example` می‌تواند به یک سرور درخواست صدور یک **توکن حالت خصوصی** بدهد — توکنی رمزنگاری‌شده که نشان‌دهنده اعتماد به کاربر تأییدشده است. در این بافت، به `issuer.example` یک **صادرکننده (issuer)** گفته می‌شود. سرور نیز **سرور صادرکننده** نامیده می‌شود.
+4. اگر درخواست موفقیت‌آمیز باشد، توکن به‌صورت امن توسط مرورگر کاربر ذخیره می‌شود.
 
-### Redeeming tokens
+### بازخرید توکن‌ها
 
-If another website wants to establish trust in the same user, it can do so by redeeming a private state token issued to the user's browser by another website, rather than having to go through the process of establishing trust from scratch.
+اگر وب‌سایت دیگری بخواهد به همان کاربر اعتماد کند، می‌تواند با بازخرید یک توکن حالت خصوصی که توسط وب‌سایت دیگری برای مرورگر کاربر صادر شده است، این کار را انجام دهد، به جای اینکه فرآیند ایجاد اعتماد از ابتدا را طی کند.
 
-1. Let's say the user visits a different website, `redeemer.example`.
-2. `redeemer.example` can make a request to a server to redeem a token for that specific user and device.
-3. The browser checks to see whether it has a token stored for that user and device. If it does, and the token is good to use (it has not already been redeemed, and it has not expired), it sends the token to a server to be redeemed. In this context, `redeemer.example` is called a **redeemer**. The server is called a **redeemer server**.
-4. If the token is redeemed successfully, the redeemer server sends a **redemption record** to the browser to verify the user trust.
+1. فرض کنید کاربر از وب‌سایت متفاوتی به نام `redeemer.example` بازدید می‌کند.
+2. `redeemer.example` می‌تواند به یک سرور درخواست بازخرید یک توکن برای آن کاربر و دستگاه خاص بدهد.
+3. مرورگر بررسی می‌کند که آیا توکنی برای آن کاربر و دستگاه ذخیره کرده است یا خیر. اگر داشته باشد و توکن قابل استفاده باشد (قبلاً بازخرید نشده باشد و منقضی نشده باشد)، آن را به یک سرور برای بازخرید می‌فرستد. در این بافت، به `redeemer.example` یک **بازخریدکننده (redeemer)** گفته می‌شود. سرور نیز **سرور بازخریدکننده** نامیده می‌شود.
+4. اگر توکن با موفقیت بازخرید شود، سرور بازخریدکننده یک **رکورد بازخرید** به مرورگر می‌فرستد تا اعتماد کاربر تأیید شود.
 
-### Redemption record usage
+### استفاده از رکورد بازخرید
 
-Once the browser has received the redemption record, it can use it as a trust signal for the current user in various contexts, for example when letting them perform a sensitive action like signing in, purchasing a product, or posting a comment. This trust signal can also be forwarded to other parties to convey trust.
+هنگامی که مرورگر رکورد بازخرید را دریافت کرد، می‌تواند از آن به عنوان یک سیگنال اعتماد برای کاربر فعلی در بافت‌های مختلف استفاده کند، مثلاً زمانی که به کاربر اجازه می‌دهد عملی حساس مانند ورود به سیستم، خرید محصول یا ارسال نظر را انجام دهد. این سیگنال اعتماد همچنین می‌تواند به طرف‌های دیگر ارسال شود تا اعتماد منتقل شود.
 
-## Example implementation
+## پیاده‌سازی نمونه
 
-You can find an example private state tokens implementation at [Private State Token Demo Issuer](https://privatetokens.dev/) (see the [source code](https://github.com/GoogleChromeLabs/private-state-token-demo/)).
+یک پیاده‌سازی نمونه از توکن‌های حالت خصوصی را می‌توانید در [Private State Token Demo Issuer](https://privatetokens.dev/) بیابید (به [کد منبع](https://github.com/GoogleChromeLabs/private-state-token-demo/) مراجعه کنید).
 
-## Issuing tokens
+## صدور توکن‌ها
 
-This section takes you through the process of setting up an issuer server and issuing tokens via the issuer website.
+این بخش شما را با فرآیند راه‌اندازی یک سرور صادرکننده و صدور توکن‌ها از طریق وب‌سایت صادرکننده آشنا می‌کند.
 
-### Signing up to become an issuer
+### ثبت‌نام برای تبدیل شدن به یک صادرکننده
 
-If you want to become an issuer, and have your website issue private state tokens, you first need to register by completing the [Issuer registration process](https://github.com/GoogleChrome/private-tokens/blob/main/PST-Registration.md). Open a new [issue](https://github.com/GoogleChrome/private-tokens/issues/new) on the [Google private-tokens GitHub repository](https://github.com/GoogleChrome/private-tokens) using the "New PST Issuer" template. Follow the guidance on the repository to fill out the issue. Once an endpoint has been verified, it will be merged into this repository and Chrome server-side infrastructure will begin fetching those keys.
+اگر می‌خواهید به یک صادرکننده تبدیل شوید و وب‌سایت شما توکن‌های حالت خصوصی صادر کند، ابتدا باید با تکمیل [فرآیند ثبت‌نام صادرکننده](https://github.com/GoogleChrome/private-tokens/blob/main/PST-Registration.md) ثبت‌نام کنید. یک [issue](https://github.com/GoogleChrome/private-tokens/issues/new) جدید در [مخزن GitHub خصوصی-توکن‌های گوگل](https://github.com/GoogleChrome/private-tokens) با استفاده از الگوی «New PST Issuer» باز کنید. برای تکمیل issue از راهنمای موجود در مخزن پیروی کنید. پس از تأیید یک endpoint، در این مخزن ادغام می‌شود و زیرساخت سمت سرور کروم شروع به دریافت آن کلیدها می‌کند.
 
 > [!NOTE]
-> This process is run by Google and controls token issuance via Chromium browsers; other implementations may choose to use a different process.
+> این فرآیند توسط گوگل اجرا می‌شود و صدور توکن را از طریق مرورگرهای Chromium کنترل می‌کند؛ سایر پیاده‌سازی‌ها ممکن است فرآیند متفاوتی را انتخاب کنند.
 
-### Creating an issuer server
+### ایجاد یک سرور صادرکننده
 
-To implement the token issuer server you will need to build your own server side application exposing HTTP endpoints. The issuer component is composed of two main modules:
+برای پیاده‌سازی سرور صادرکننده توکن، باید برنامه سمت سرور خود را بسازید که endpointهای HTTP را در معرض دید قرار دهد. مؤلفه صادرکننده از دو ماژول اصلی تشکیل شده است:
 
-1. The issuer app
-2. The token issuer
+1. برنامه صادرکننده
+2. صادرکننده توکن
 
-![The main components of the issuer server: Issuer app built with for example, Node.js, and token issuer (cryptographic component responsible for issuing tokens](issuer.png)
+![مؤلفه‌های اصلی سرور صادرکننده: برنامه صادرکننده ساخته‌شده با مثلاً Node.js، و صادرکننده توکن (مؤلفه رمزنگاری مسئول صدور توکن‌ها)](issuer.png)
 
-In the example implementation:
+در پیاده‌سازی نمونه:
 
-1. The issuer app is a [Node.js server that uses the Express framework](/en-US/docs/Learn_web_development/Extensions/Server-side/Express_Nodejs) to host the issuer HTTP endpoints. Check out the [app sample code](https://github.com/GoogleChromeLabs/private-state-token-demo/blob/main/src/index.js).
-2. The token issuer cryptographic component doesn't require any specific language but due to the performance requirements of this component, we're providing a C implementation as an example, which uses the [Boring SSL](https://boringssl.googlesource.com/boringssl/) library to manage tokens. Check out the [cryptographic component code example and more information about the installation](https://github.com/GoogleChromeLabs/private-state-token-demo/tree/main?tab=readme-ov-file#private-state-token-demo).
-3. The token issuer component uses custom elliptic curve (EC) keys to encrypt tokens. These keys must be protected and stored in secure storage.
+1. برنامه صادرکننده یک [سرور Node.js است که از فریم‌ورک Express](/en-US/docs/Learn_web_development/Extensions/Server-side/Express_Nodejs) برای میزبانی endpointهای HTTP صادرکننده استفاده می‌کند. به [کد نمونه برنامه](https://github.com/GoogleChromeLabs/private-state-token-demo/blob/main/src/index.js) مراجعه کنید.
+2. مؤلفه رمزنگاری صادرکننده توکن به زبان خاصی نیاز ندارد، اما به دلیل الزامات عملکردی این مؤلفه، ما یک پیاده‌سازی به زبان C به عنوان مثال ارائه می‌دهیم که از کتابخانه [Boring SSL](https://boringssl.googlesource.com/boringssl/) برای مدیریت توکن‌ها استفاده می‌کند. به [نمونه کد مؤلفه رمزنگاری و اطلاعات بیشتر درباره نصب](https://github.com/GoogleChromeLabs/private-state-token-demo/tree/main?tab=readme-ov-file#private-state-token-demo) مراجعه کنید.
+3. مؤلفه صادرکننده توکن برای رمزنگاری توکن‌ها از کلیدهای منحنی بیضوی (EC) اختصاصی استفاده می‌کند. این کلیدها باید محافظت شده و در ذخیره‌گاه امن نگهداری شوند.
 
-#### Issuer server technical requirements
+#### الزامات فنی سرور صادرکننده
 
-As per the Privacy Pass protocol, you will need to implement at least two HTTP endpoints in your issuer server:
+طبق پروتکل Privacy Pass، باید حداقل دو endpoint HTTP در سرور صادرکننده خود پیاده‌سازی کنید:
 
-- Key commitment: This endpoint is where your encryption public key details will be available to browsers to confirm that your server is legitimate. This endpoint must be inside a well-known directory located at the {{glossary("registrable domain")}} of the issuer server at `/.well-known/private-state-token/key-commitment`. Check out the [Key-commitment endpoint example](https://github.com/GoogleChromeLabs/private-state-token-demo/blob/bf173919620f2b8203a628c3a1094c8846e6aff1/src/index.js#L55).
-- Token issuance: The token issuing endpoint is where all token requests will be handled. This endpoint will be the integration point for the token issuer component. It must be located on the issuer server at `/.well-known/private-state-token/issuance`. Check out the [Token issuance endpoint example](https://github.com/GoogleChromeLabs/private-state-token-demo/blob/bf173919620f2b8203a628c3a1094c8846e6aff1/src/index.js#L81).
+- تعهد کلید (Key commitment): این endpoint جایی است که جزئیات کلید عمومی رمزنگاری شما برای مرورگرها در دسترس قرار می‌گیرد تا تأیید کنند سرور شما معتبر است. این endpoint باید در یک دایرکتوری شناخته‌شده در {{glossary("registrable domain")}} سرور صادرکننده در مسیر `/.well-known/private-state-token/key-commitment` قرار گیرد. به [نمونه endpoint تعهد کلید](https://github.com/GoogleChromeLabs/private-state-token-demo/blob/bf173919620f2b8203a628c3a1094c8846e6aff1/src/index.js#L55) مراجعه کنید.
+- صدور توکن: endpoint صدور توکن جایی است که همه درخواست‌های توکن مدیریت می‌شوند. این endpoint نقطه اتصال مؤلفه صادرکننده توکن خواهد بود. باید در سرور صادرکننده در مسیر `/.well-known/private-state-token/issuance` قرار گیرد. به [نمونه endpoint صدور توکن](https://github.com/GoogleChromeLabs/private-state-token-demo/blob/bf173919620f2b8203a628c3a1094c8846e6aff1/src/index.js#L81) مراجعه کنید.
 
-Due to the high traffic expected on such a server, we recommend you deploy it using a scalable infrastructure (for example, in a cloud environment) to be able to adjust your backend based on a variable demand.
+با توجه به ترافیک بالای مورد انتظار در چنین سروری، توصیه می‌کنیم آن را با زیرساخت مقیاس‌پذیر (مثلاً در محیط ابری) مستقر کنید تا بتوانید backend خود را بر اساس تقاضای متغیر تنظیم کنید.
 
-### Issuing a token via your server
+### صدور یک توکن از طریق سرور خود
 
-With the issuer server set up, your issuer website can now issue a new token by making a fetch request to your token issuance endpoint. The fetch request needs to include a `privateToken` object, the mandatory properties of which are:
+با راه‌اندازی سرور صادرکننده، وب‌سایت صادرکننده شما اکنون می‌تواند با ارسال یک درخواست fetch به endpoint صدور توکن شما، یک توکن جدید صادر کند. درخواست fetch باید شامل یک شیء `privateToken` باشد که ویژگی‌های اجباری آن عبارتند از:
 
 - `version`
-  - : The version of the cryptographic protocol you wish to use when generating the token. Currently this is always set to `1`, which is the only version that the specification supports.
+  - : نسخه پروتکل رمزنگاری که می‌خواهید هنگام تولید توکن استفاده کنید. در حال حاضر این مقدار همیشه `1` است که تنها نسخه پشتیبانی‌شده توسط مشخصات است.
 - `operation`
-  - : The token operation you are trying to complete. In this case, we set it to `token-request`.
+  - : عملیات توکنی که می‌خواهید انجام دهید. در این مورد، آن را روی `token-request` قرار می‌دهیم.
 
-You can handle this using a {{domxref("fetch()")}} call with the `method` set to `POST`, and a `privateToken` option specified:
+می‌توانید این کار را با یک فراخوانی {{domxref("fetch()")}} با `method` برابر با `POST` و گزینه `privateToken` مشخص‌شده انجام دهید:
 
 ```js
 const hasToken = await Document.hasPrivateToken(`issuer.example`);
@@ -115,126 +113,44 @@ if (!hasToken) {
 ```
 
 > [!NOTE]
-> You can also issue token operation requests using:
+> همچنین می‌توانید درخواست‌های عملیات توکن را با استفاده از موارد زیر صادر کنید:
 >
-> - {{domxref("XMLHttpRequest")}} with the `privateToken` specified inside an {{domxref("XMLHttpRequest.setPrivateToken()")}} call
-> - {{htmlelement("iframe")}} elements with the `privateToken` included as a string inside the [`privateToken`](/en-US/docs/Web/HTML/Reference/Elements/iframe#privatetoken) attribute.
+> - {{domxref("XMLHttpRequest")}} با `privateToken` مشخص‌شده در داخل یک فراخوانی {{domxref("XMLHttpRequest.setPrivateToken()")}}
+> - عناصر {{htmlelement("iframe")}} با `privateToken` به صورت رشته در ویژگی [`privateToken`](/en-US/docs/Web/HTML/Reference/Elements/iframe#privatetoken) گنجانده شده است.
 
-Behind the scenes, the browser generates a set of nonces needed to generate the token, blinds then, and sends them to the issuer server in a {{httpheader("Sec-Private-State-Token")}} request header as part of the fetch request. In addition, the version of the cryptographic protocol used to generate the nonces is sent to the issuer server in a {{httpheader("Sec-Private-State-Token-Crypto-Version")}} request header. At the time of writing, there is only one version supported, but this mechanism makes it possible to support multiple versions in the future.
+در پس‌زمینه، مرورگر مجموعه‌ای از nonceهای لازم برای تولید توکن را تولید می‌کند، آن‌ها را blind می‌کند و به سرور صادرکننده در یک هدر درخواست {{httpheader("Sec-Private-State-Token")}} به عنوان بخشی از درخواست fetch ارسال می‌کند. علاوه بر این، نسخه پروتکل رمزنگاری مورد استفاده برای تولید nonceها در یک هدر درخواست {{httpheader("Sec-Private-State-Token-Crypto-Version")}} به سرور صادرکننده ارسال می‌شود. در زمان نگارش، فقط یک نسخه پشتیبانی می‌شود، اما این مکانیزم امکان پشتیبانی از چندین نسخه را در آینده فراهم می‌کند.
 
-Note how you can use the {{domxref("Document.hasPrivateToken()")}} method to check whether the browser already has a token stored from our issuer, before attempting to request another one.
+توجه کنید که چگونه می‌توانید از روش {{domxref("Document.hasPrivateToken()")}} برای بررسی اینکه آیا مرورگر قبلاً توکنی از صادرکننده ما ذخیره کرده است، قبل از تلاش برای درخواست توکن دیگر استفاده کنید.
 
-If the token request is successful, the response will include a {{httpheader("Sec-Private-State-Token")}} response header containing blind signatures. The browser unblinds them and stores them along with the original unblinded nonces in a secure token store. This pairing of signatures and nonces constitutes a private state token, which can be redeemed later on. The raw tokens are not accessible to JavaScript.
+اگر درخواست توکن موفقیت‌آمیز باشد، پاسخ شامل یک هدر پاسخ {{httpheader("Sec-Private-State-Token")}} حاوی امضاهای blind خواهد بود. مرورگر آن‌ها را unblind می‌کند و همراه با nonceهای unblind اصلی در یک فروشگاه امن توکن ذخیره می‌کند. این جفت‌شدن امضاها و nonceها یک توکن حالت خصوصی را تشکیل می‌دهد که می‌تواند بعداً بازخرید شود. توکن‌های خام برای جاوااسکریپت قابل دسترسی نیستند.
 
-### Token issue limitations
+### محدودیت‌های صدور توکن
 
-Each device can store up to 500 tokens per top-level website and issuer. The maximum number of issuers per top level origin is two.
+هر دستگاه می‌تواند حداکثر ۵۰۰ توکن به ازای هر وب‌سایت سطح بالا و صادرکننده ذخیره کند. حداکثر تعداد صادرکنندگان به ازای هر origin سطح بالا دو است.
 
-Each token has metadata indicating which key the issuer used to issue it. That information can be used to decide to redeem tokens (or not) during the redeeming process. Each token can be issued using one and only one cryptographic key and each issuer can have a maximum of 6 keys. One potential way to use this variable is to define a range of trust to your tokens based on your cryptographic keys (for example, key 1: high trust; key 6: no trust).
+هر توکن دارای متادیتایی است که نشان می‌دهد صادرکننده از کدام کلید برای صدور آن استفاده کرده است. از این اطلاعات می‌توان برای تصمیم‌گیری درباره بازخرید توکن‌ها (یا عدم بازخرید) در فرآیند بازخرید استفاده کرد. هر توکن را می‌توان با یک و تنها یک کلید رمزنگاری صادر کرد و هر صادرکننده می‌تواند حداکثر ۶ کلید داشته باشد. یکی از روش‌های بالقوه استفاده از این متغیر، تعریف محدوده‌ای از اعتماد برای توکن‌های خود بر اساس کلیدهای رمزنگاری است (مثلاً کلید ۱: اعتماد بالا؛ کلید ۶: بدون اعتماد).
 
-The browser can get the issuer's current set of valid keys from the key commitment endpoint. Keys should be rotated regularly; this can be done every 60 days at a minimum; any rotation faster than that will be ignored. All tokens issued with invalid keys are also considered invalid.
+مرورگر می‌تواند مجموعه کلیدهای معتبر فعلی صادرکننده را از endpoint تعهد کلید دریافت کند. کلیدها باید به‌طور منظم چرخش شوند؛ این کار می‌تواند حداقل هر ۶۰ روز انجام شود؛ هر چرخشی سریع‌تر از این نادیده گرفته می‌شود. تمام توکن‌هایی که با کلیدهای نامعتبر صادر شده‌اند نیز نامعتبر در نظر گرفته می‌شوند.
 
-## Redeeming tokens
+## بازخرید توکن‌ها
 
-This section takes you through the process of setting up a redeemer server, redeeming tokens, and issuing redemption records.
+این بخش شما را با فرآیند راه‌اندازی یک سرور بازخریدکننده، بازخرید توکن‌ها و صدور رکوردهای بازخرید آشنا می‌کند.
 
-### Creating a redeemer server
+### ایجاد یک سرور بازخریدکننده
 
-You need to build a redeemer server to read the tokens issued by the issuer server. The following steps outline how to redeem tokens as well as how to read the redemption records that are associated with those tokens.
+برای خواندن توکن‌های صادرشده توسط سرور صادرکننده، باید یک سرور بازخریدکننده بسازید. مراحل زیر نحوه بازخرید توکن‌ها و همچنین نحوه خواندن رکوردهای بازخرید مرتبط با آن توکن‌ها را شرح می‌دهد.
 
-The redeemer component is composed of two main modules:
+مؤلفه بازخریدکننده از دو ماژول اصلی تشکیل شده است:
 
-1. The redeemer app
-2. The token redeemer
+1. برنامه بازخریدکننده
+2. بازخریدکننده توکن
 
-![The main components of the redeemer server: Redeemer app built with for example, Node.js, and Token redeemer (cryptographic component responsible for verifying signatures and tokens within the redemption process)](redeemer.png)
+![مؤلفه‌های اصلی سرور بازخریدکننده: برنامه بازخریدکننده ساخته‌شده با مثلاً Node.js، و بازخریدکننده توکن (مؤلفه رمزنگاری مسئول تأیید امضاها و توکن‌ها در فرآیند بازخرید)](redeemer.png)
 
-You can opt to run the issuer and the redeemer in the same server (or group of servers) and cryptographic component. In fact, this is what has been done in the example implementation, to make it a bit easier to follow. Again, check out the [app sample code](https://github.com/GoogleChromeLabs/private-state-token-demo/blob/main/src/index.js) and the [cryptographic component code example and information about the installation](https://github.com/GoogleChromeLabs/private-state-token-demo/tree/main?tab=readme-ov-file#private-state-token-demo).
+می‌توانید انتخاب کنید که صادرکننده و بازخریدکننده را در همان سرور (یا گروهی از سرورها) و مؤلفه رمزنگاری یکسان اجرا کنید. در واقع، این کاری است که در پیاده‌سازی نمونه انجام شده است تا دنبال کردن آن کمی آسان‌تر شود. دوباره به [کد نمونه برنامه](https://github.com/GoogleChromeLabs/private-state-token-demo/blob/main/src/index.js) و [نمونه کد مؤلفه رمزنگاری و اطلاعات نصب](https://github.com/GoogleChromeLabs/private-state-token-demo/tree/main?tab=readme-ov-file#private-state-token-demo) مراجعه کنید.
 
-#### Redeemer server technical requirements
+#### الزامات فنی سرور بازخریدکننده
 
-As per the Privacy Pass protocol, you will need to implement at least one HTTP endpoint in your redeemer server:
+طبق پروتکل Privacy Pass، باید حداقل یک endpoint HTTP در سرور بازخریدکننده خود پیاده‌سازی کنید:
 
-- Token redemption: This is where all token redemption will be handled. This endpoint will be the integration point for the token redeemer component. It must be located on the issuer server at `/.well-known/private-state-token/redemption`. Check out our [Token redemption endpoint example](https://github.com/GoogleChromeLabs/private-state-token-demo/blob/bf173919620f2b8203a628c3a1094c8846e6aff1/src/index.js#L98).
-
-### Redeeming a token via your server
-
-With the redeemer server set up, your redeemer website can now redeem a previously-stored token by making a fetch request to your token redemption endpoint. The fetch request needs to include a `privateToken` object, the same as in the token issuing request, except that the specified `operation` should be `token-redemption`.
-
-You can handle this using a {{domxref("fetch()")}} call with the `method` set to {{httpmethod("POST")}}, and a `privateToken` option specified.
-
-```js
-await fetch(
-  "https://issuer.example/.well-known/private-state-token/redemption",
-  {
-    method: "POST",
-    privateToken: {
-      version: 1,
-      operation: "token-redemption",
-      refreshPolicy: "none",
-    },
-  },
-);
-```
-
-Here we also set the `refreshPolicy` property to `none`, which means that, if there is a previously-set, non-expired redemption record for this user and site, this redemption record should be used, and a new one should not be issued. If we set `refreshPolicy: "refresh"`, a new redemption record would always be issued. Note that `none` is the default value, as this is the behavior you'll want in most cases, but we wanted to draw attention to it.
-
-Behind the scenes, the browser sends the token (along with associated redemption metadata) attached in a {{httpheader("Sec-Private-State-Token")}} request header. The redeemer then sends a Redemption Record in a `Sec-Private-State-Token` response header to provide a redemption attestation to use for conveying user trust. The redemption record is stored in a secure data store that isn't directly accessible via JavaScript.
-
-Additionally, the redeemer may include a {{httpheader("Sec-Private-State-Token-Lifetime")}} header in the response to indicate to the browser how long (in seconds) the redemption record should be cached for. If the `Sec-Private-State-Token-Lifetime` header is omitted, the lifetime of the redemption record will be tied to the lifetime of the token verification key that confirmed the redeemed token's issuance.
-
-### Redemption record limitations
-
-Two tokens can be redeemed every 48 hours, per device, page and issuer.
-
-The resulting redemption records are considered active until expiration (as specified by the `Sec-Private-State-Token-Lifetime` response header).
-
-## Redemption record usage
-
-Once the browser has received the redemption record, it can be used as a trust signal for the current user in other contexts, for example when letting them perform a sensitive action like signing in, purchasing a product, or posting a comment.
-
-This trust signal can be forwarded to other parties to convey trust. To do so, include a `privateToken` option in fetch calls for future resources, with an `operation` of `send-redemption-record`:
-
-```js
-const hasRR = await Document.hasRedemptionRecord(`issuer.example`);
-if (hasRR) {
-  await fetch("some-resource.example", {
-    method: "POST",
-    privateToken: {
-      version: 1,
-      operation: "send-redemption-record",
-      issuers: ["https://issuer.example"],
-    },
-  });
-}
-```
-
-The `send-redemption-record` token operation is only available on `fetch()` calls made in the top-level document.
-
-We also set the `issuers` property to `[issuer.example]`, which specifies which issuer we are expecting the redemption record to have come from. If there are no redemption records available for the specified issuer(s), the request header will be empty. Note how you can use the {{domxref("Document.hasRedemptionRecord()")}} method to check whether the browser has a redemption record originating from a particular issuer, before attempting to forward it.
-
-Behind the scenes, The redemption record(s) will be included on a {{httpheader("Sec-Redemption-Record")}} request header. The header contains a list of issuer and redemption record pairs corresponding to each redemption record.
-
-## Permissions policy integration
-
-`token-request` operations are controlled by the {{httpheader('Permissions-Policy/private-state-token-issuance','private-state-token-issuance')}} {{httpheader("Permissions-Policy")}} directive, whereas `token-redemption` and `send-redemption-record` operations are controlled by the {{httpheader('Permissions-Policy/private-state-token-redemption','private-state-token-redemption')}} directive. The allowlist for these directives is set to `*` (all origins) by default. This means that the feature is available to the top-level page, same-origin {{htmlelement("iframe")}} elements, and cross-origin `<iframe>` elements without explicit delegation.
-
-You can opt out of token issuance or redemption for specific pages on your site by including `private-state-token-issuance=()` and `private-state-token-redemption=()` in the `Permissions-Policy` header for each page.
-
-You can also use the `Permissions-Policy` header to control third-party access to token operations. As parameters to the header origin list, use self and any origins you would like to allow access to the API. For example, to completely disable use of private state tokens within all browsing contexts except for your own origin and `https://example.com`, set the following HTTP response header:
-
-```http
-Permissions-Policy: private-state-token-issuance=(self "https://example.com"), private-state-token-redemption=(self "https://example.com")
-```
-
-To enable the API for all cross-origin resources, set the origin list to `*`.
-
-Even though the default policy is `*`, an `<iframe>` still needs to include the `private-state-token-issuance` and `private-state-token-redemption` directives in its allow attribute to gain access to the feature. For example, to allow both features to be used on `example.com`:
-
-```html
-<iframe
-  src="https://example.com"
-  allow="private-state-token-issuance 'self';
-  private-state-token-redemption 'self'">
-</iframe>
-```
+- بازخرید توکن: این جایی است که همه بازخریدهای توکن مدیریت می‌شوند. این endpoint
