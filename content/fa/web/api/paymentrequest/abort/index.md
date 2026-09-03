@@ -1,11 +1,5 @@
 ---
 title: "PaymentRequest: abort() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/abort"
-status: "needs-translation"
----
-
----
-title: "PaymentRequest: abort() method"
 short-title: abort()
 slug: Web/API/PaymentRequest/abort
 page-type: web-api-instance-method
@@ -14,28 +8,25 @@ browser-compat: api.PaymentRequest.abort
 
 {{securecontext_header}}{{APIRef("Payment Request API")}}
 
-The `PaymentRequest.abort()` method of the {{domxref('PaymentRequest')}}
-interface causes the user agent to end the payment request and to remove any user
-interface that might be shown.
+متد `PaymentRequest.abort()` از رابط {{domxref('PaymentRequest')}} باعث می‌شود که عامل کاربر (user agent) درخواست پرداخت را پایان دهد و هر رابط کاربری‌ای را که ممکن است نمایش داده شده باشد حذف کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 abort()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref('undefined')}}).
+هیچ‌کدام ({{jsxref('undefined')}}).
 
-## Examples
+## مثال‌ها
 
-The following example sets up a timeout to clear the payment request that might have
-been abandoned or neglected.
+مثال زیر یک تایمر (timeout) تنظیم می‌کند تا درخواست پرداختی را که ممکن است رها شده یا نادیده گرفته شده باشد لغو کند.
 
 ```js
 const request = new PaymentRequest(supportedInstruments, details, options);
@@ -59,10 +50,10 @@ const paymentTimeout = setTimeout(
 ); /* 20 minutes */
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
