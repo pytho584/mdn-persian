@@ -1,11 +1,5 @@
 ---
 title: "Navigator: taintEnabled() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/taintEnabled"
-status: "needs-translation"
----
-
----
-title: "Navigator: taintEnabled() method"
 short-title: taintEnabled()
 slug: Web/API/Navigator/taintEnabled
 page-type: web-api-instance-method
@@ -14,34 +8,32 @@ browser-compat: api.Navigator.taintEnabled
 
 {{APIRef("HTML DOM")}}
 
-The **`Navigator.taintEnabled()`** method always returns
-`false`.
+متد **`Navigator.taintEnabled()`** همیشه `false` را بازمی‌گرداند.
 
-Tainting was a security method used by JavaScript 1.2. It has long been removed; this
-method only stays for maintaining compatibility with very old scripts.
+Tainting روشی امنیتی بود که در JavaScript 1.2 استفاده می‌شد. این قابلیت مدت‌ها پیش حذف شده است؛ این متد فقط برای حفظ سازگاری با اسکریپت‌های بسیار قدیمی باقی مانده است.
 
-## Syntax
+## نحو
 
 ```js-nolint
 taintEnabled()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-Always returns `false`.
+همیشه `false` را بازمی‌گرداند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Navigator")}}
