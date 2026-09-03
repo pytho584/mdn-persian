@@ -1,11 +1,5 @@
 ---
 title: "PerformancePaintTiming: paintTime property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformancePaintTiming/paintTime"
-status: "needs-translation"
----
-
----
-title: "PerformancePaintTiming: paintTime property"
 short-title: paintTime
 slug: Web/API/PerformancePaintTiming/paintTime
 page-type: web-api-instance-property
@@ -14,26 +8,26 @@ browser-compat: api.PerformancePaintTiming.paintTime
 
 {{APIRef("Performance API")}}
 
-The **`paintTime`** read-only property of the {{domxref("PerformancePaintTiming")}} interface returns the {{domxref("DOMHighResTimeStamp","timestamp")}} when the rendering phase ended and the paint phase started.
+ویژگی فقط‌خواندنی **`paintTime`** از رابط {{domxref("PerformancePaintTiming")}}، {{domxref("DOMHighResTimeStamp","زمان‌سنج")}} مربوط به پایان مرحله‌ی رندرینگ و آغاز مرحله‌ی paint (نقاشی) را برمی‌گرداند.
 
-The `paintTime` is broadly interoperable: The value should be the same across different implementations.
+مقدار `paintTime` در مرورگرهای مختلف سازگار است: مقدار آن باید در پیاده‌سازی‌های مختلف یکسان باشد.
 
-## Value
+## مقدار
 
-A {{domxref("DOMHighResTimeStamp")}}.
+یک {{domxref("DOMHighResTimeStamp")}}.
 
-## Examples
+## مثال‌ها
 
-See [Getting separate paint and presentation timings](/en-US/docs/Web/API/PerformancePaintTiming#getting_separate_paint_and_presentation_timings).
+به [دریافت زمان‌بندی‌های جداگانه‌ی paint و presentation](/en-US/docs/Web/API/PerformancePaintTiming#getting_separate_paint_and_presentation_timings) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("PerformancePaintTiming.presentationTime")}}
