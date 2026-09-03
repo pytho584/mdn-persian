@@ -1,11 +1,5 @@
 ---
 title: "PreferenceManager: reducedMotion property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PreferenceManager/reducedMotion"
-status: "needs-translation"
----
-
----
-title: "PreferenceManager: reducedMotion property"
 short-title: reducedMotion
 slug: Web/API/PreferenceManager/reducedMotion
 page-type: web-api-instance-property
@@ -17,32 +11,32 @@ spec-urls: https://drafts.csswg.org/mediaqueries-5/#reduced-motion-attribute
 
 {{APIRef("User Preferences API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`reducedMotion`** read-only property of the {{domxref("PreferenceManager")}} interface returns the {{domxref("PreferenceObject")}} used to override the user's preference for the [reduced motion](/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-motion) of the site.
+خاصیت فقط‌خواندنی **`reducedMotion`** در رابط {{domxref("PreferenceManager")}}، شیء {{domxref("PreferenceObject")}} را برمی‌گرداند که برای لغو ترجیح کاربر نسبت به [حرکت کم‌شده](/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-motion) سایت استفاده می‌شود.
 
-Valid `reducedMotion` {{domxref("PreferenceObject.value")}} settings are `reduce` and `no-preference`.
+مقادیر معتبر برای {{domxref("PreferenceObject.value")}} در `reducedMotion` عبارت‌اند از `reduce` و `no-preference`.
 
-## Value
+## مقدار
 
-A {{domxref("PreferenceObject")}} used to override the user's preference for the [reduced motion](/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-motion) of the site.
+یک {{domxref("PreferenceObject")}} که برای لغو ترجیح کاربر نسبت به [حرکت کم‌شده](/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-motion) سایت استفاده می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده اولیه
 
-This example demonstrates how to query the user's reduced motion preference.
+این مثال نحوه پرس‌وجو از ترجیح کاربر برای حرکت کم‌شده را نشان می‌دهد.
 
 ```js
 if (navigator.preferences.reducedMotion.value === "reduce") {
-  // The user prefers reduced motion.
+  // کاربر حرکت کم‌شده را ترجیح می‌دهد.
 } else {
-  // The user has stated no preference regarding motion.
+  // کاربر ترجیحی در مورد حرکت اعلام نکرده است.
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
