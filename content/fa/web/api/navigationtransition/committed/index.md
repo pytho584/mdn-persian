@@ -1,11 +1,5 @@
 ---
 title: "NavigationTransition: committed property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigationTransition/committed"
-status: "needs-translation"
----
-
----
-title: "NavigationTransition: committed property"
 short-title: committed
 slug: Web/API/NavigationTransition/committed
 page-type: web-api-instance-property
@@ -14,33 +8,32 @@ browser-compat: api.NavigationTransition.committed
 
 {{APIRef("Navigation API")}}
 
-The **`committed`** read-only property of the
-{{domxref("NavigationTransition")}} interface returns a {{jsxref("Promise")}} that fulfills when {{domxref("Navigation.currentEntry")}} is updated and the new URL is displayed in the browser, marking the navigation as committed. This happens after all [precommit handlers](/en-US/docs/Web/API/NavigateEvent/intercept#handling_precommit_actions_with_precommithandler) for the navigation are fulfilled.
+ویژگی فقط‌خواندنی **`committed`** در رابط {{domxref("NavigationTransition")}} یک {{jsxref("Promise")}} برمی‌گرداند که زمانی وفا می‌شود که {{domxref("Navigation.currentEntry")}} به‌روزرسانی شده و URL جدید در مرورگر نمایش داده شود، یعنی ناوبری به عنوان committed (ثبت‌شده) علامت‌گذاری می‌شود. این اتفاق پس از اجرای تمام [مدیران پیش‌ازثبت (precommit handlers)](/en-US/docs/Web/API/NavigateEvent/intercept#handling_precommit_actions_with_precommithandler) برای آن ناوبری رخ می‌دهد.
 
-The `committed` promise rejects if any precommit handler rejects.
+اگر هر یک از مدیران پیش‌ازثبت رد شوند، پرامیس `committed` نیز رد می‌شود.
 
-## Value
+## مقدار
 
-A {{jsxref("Promise")}} that resolves to `undefined`.
+یک {{jsxref("Promise")}} که به `undefined` تبدیل می‌شود.
 
-## Examples
+## مثال‌ها
 
 ```js
 async function lockInNavigation() {
   await navigation.transition.committed;
-  // Navigation has committed successfully
+  // ناوبری با موفقیت ثبت شد
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
-- [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
+- [مسیریابی مدرن سمت کلاینت: API Navigation](https://developer.chrome.com/docs/web-platform/navigation-api/)
+- [توضیح API Navigation](https://github.com/WICG/navigation-api/blob/main/README.md)
