@@ -1,7 +1,5 @@
 ---
 title: "Navigator: usb property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/usb"
-status: "needs-translation"
 ---
 
 ---
@@ -14,11 +12,11 @@ browser-compat: api.Navigator.usb
 
 {{APIRef("WebUSB API")}}{{SecureContext_Header}}
 
-The **`usb`** read-only property of the {{domxref("Navigator")}} interface returns a {{domxref("USB")}} object for the current document, providing access to [WebUSB API](/en-US/docs/Web/API/WebUSB_API) functionality.
+**`usb`** ویژگی فقط‌خواندنی رابط {{domxref("Navigator")}}، یک شیء {{domxref("USB")}} برای سند جاری بازمی‌گرداند و دسترسی به قابلیت‌های [WebUSB API](/en-US/docs/Web/API/WebUSB_API) را فراهم می‌کند.
 
 ## Value
 
-A {{domxref('USB')}} object.
+یک شیء {{domxref('USB')}}.
 
 ## Specifications
 
