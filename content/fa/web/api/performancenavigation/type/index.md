@@ -1,11 +1,5 @@
 ---
 title: "PerformanceNavigation: type property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceNavigation/type"
-status: "needs-translation"
----
-
----
-title: "PerformanceNavigation: type property"
 short-title: type
 slug: Web/API/PerformanceNavigation/type
 page-type: web-api-instance-property
@@ -16,27 +10,26 @@ browser-compat: api.PerformanceNavigation.type
 
 {{APIRef("Performance API")}}{{Deprecated_Header}}
 
-The legacy
+خاصیت فقط‌خواندنی قدیمی
 **`PerformanceNavigation.type`**
-read-only property returns an `unsigned short` containing a constant
-describing how the navigation to this page was done.
+یک `unsigned short` برمی‌گرداند که شامل یک ثابت توصیف‌کننده نحوه ناوبری به این صفحه است.
 
 > [!WARNING]
-> This interface of this property is deprecated in the [Navigation Timing Level 2 specification](https://w3c.github.io/navigation-timing/#obsolete).
-> Please use the {{domxref("PerformanceNavigationTiming")}} interface instead.
+> این رابط و خاصیت آن در [مشخصات سطح ۲ زمان‌بندی ناوبری](https://w3c.github.io/navigation-timing/#obsolete) منسوخ اعلام شده است.
+> لطفاً به‌جای آن از رابط {{domxref("PerformanceNavigationTiming")}} استفاده کنید.
 
-## Value
+## مقدار
 
-An `unsigned short`.
+یک `unsigned short`.
 
-Possible values are:
+مقادیر ممکن عبارتند از:
 
 <table class="no-markdown">
   <thead>
     <tr>
-      <th scope="col">Value</th>
-      <th scope="col">Constant name</th>
-      <th scope="col">Meaning</th>
+      <th scope="col">مقدار</th>
+      <th scope="col">نام ثابت</th>
+      <th scope="col">معنی</th>
     </tr>
   </thead>
   <tbody>
@@ -44,42 +37,40 @@ Possible values are:
       <td><code>0</code></td>
       <td><code>TYPE_NAVIGATE</code></td>
       <td>
-        The page was accessed by following a link, a bookmark, a form
-        submission, a script, or typing the URL in the address bar.
+        صفحه از طریق دنبال کردن یک پیوند، نشانک، ارسال فرم، اسکریپت یا تایپ URL در نوار آدرس باز شده است.
       </td>
     </tr>
     <tr>
       <td><code>1</code></td>
       <td><code>TYPE_RELOAD</code></td>
       <td>
-        The page was accessed by clicking the Reload button or via the
-        {{domxref("Location.reload()")}} method.
+        صفحه با کلیک روی دکمه بارگذاری مجدد یا از طریق روش {{domxref("Location.reload()")}} باز شده است.
       </td>
     </tr>
     <tr>
       <td><code>2</code></td>
       <td><code>TYPE_BACK_FORWARD</code></td>
-      <td>The page was accessed by navigating into the history.</td>
+      <td>صفحه با ناوبری به داخل تاریخچه باز شده است.</td>
     </tr>
     <tr>
       <td><code>255</code></td>
       <td><code>TYPE_RESERVED</code></td>
-      <td>Any other way.</td>
+      <td>هر روش دیگری.</td>
     </tr>
   </tbody>
 </table>
 
 > [!NOTE]
-> Historically, developers tested for a `type` of `"TYPE_BACK_FORWARD"` to get an indication of back/forward cache ({{glossary("bfcache")}}) hit rate. This however did not provide any reasons for bfcache blocking, or any other data. The {{domxref("PerformanceNavigationTiming.notRestoredReasons")}} property should be used to monitor the bfcache, going forward. See [Monitoring bfcache blocking reasons](/en-US/docs/Web/API/Performance_API/Monitoring_bfcache_blocking_reasons) for more information.
+> در گذشته، توسعه‌دهندگان برای دریافت نشانه‌ای از نرخ برخورد حافظه نهان عقب/جلو ({{glossary("bfcache")}})، مقدار `"TYPE_BACK_FORWARD"` را بررسی می‌کردند. اما این کار دلایل مسدود شدن bfcache یا داده دیگری ارائه نمی‌داد. برای پایش bfcache از این پس باید از خاصیت {{domxref("PerformanceNavigationTiming.notRestoredReasons")}} استفاده شود. اطلاعات بیشتر در [پایش دلایل مسدود شدن bfcache](/en-US/docs/Web/API/Performance_API/Monitoring_bfcache_blocking_reasons) موجود است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("PerformanceNavigation")}} interface it belongs to.
+- رابط {{domxref("PerformanceNavigation")}} که این خاصیت به آن تعلق دارد.
