@@ -1,7 +1,5 @@
 ---
 title: "NodeList"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NodeList"
-status: "needs-translation"
 ---
 
 ---
@@ -13,21 +11,21 @@ browser-compat: api.NodeList
 
 {{APIRef("DOM")}}
 
-**`NodeList`** objects are collections of [nodes](/en-US/docs/Web/API/Node), usually returned by properties such as {{domxref("Node.childNodes")}} and methods such as {{domxref("document.querySelectorAll()")}}.
+**`NodeList`** اشیایی هستند که مجموعه‌ای از [گره‌ها](/en-US/docs/Web/API/Node) را در بر می‌گیرند و معمولاً توسط ویژگی‌هایی مانند {{domxref("Node.childNodes")}} و روش‌هایی مانند {{domxref("document.querySelectorAll()")}} بازگردانده می‌شوند.
 
-This interface was an [attempt to create an unmodifiable list](https://stackoverflow.com/questions/74630989/why-use-domstringlist-rather-than-an-array/74641156#74641156) and only continues to be supported to not break code that's already using it. Modern APIs represent list structures using types based on JavaScript [arrays](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array), thus making many array methods available, and at the same time imposing additional semantics on their usage (such as making their items read-only).
+این رابط در اصل [تلاشی برای ساخت یک فهرست تغییرناپذیر](https://stackoverflow.com/questions/74630989/why-use-domstringlist-rather-than-an-array/74641156#74641156) بود و تنها برای اینکه کدهایی که قبلاً از آن استفاده می‌کنند دچار مشکل نشوند، همچنان پشتیبانی می‌شود. APIهای مدرن ساختارهای فهرستی را با استفاده از نوع‌های مبتنی بر [آرایه‌های](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) جاوااسکریپت نمایش می‌دهند؛ بنابراین بسیاری از روش‌های آرایه را در دسترس قرار می‌دهند و در عین حال معناشناسی بیشتری را بر نحوه استفاده از آن‌ها اعمال می‌کنند (مانند فقط‌خواندنی کردن آیتم‌هایشان).
 
-These historical reasons do not mean that you as a developer should avoid `NodeList`. You don't create `NodeList` objects yourself, but you get them from APIs such as {{domxref("Document.querySelectorAll()")}}, and these APIs are not deprecated. However, be careful of the semantic differences from a real array.
+این دلایل تاریخی به این معنا نیستند که شما به‌عنوان توسعه‌دهنده باید از `NodeList` اجتناب کنید. شما خودتان اشیاء `NodeList` را نمی‌سازید، بلکه آن‌ها را از APIهایی مانند {{domxref("Document.querySelectorAll()")}} دریافت می‌کنید و این APIها منسوخ (deprecated) نشده‌اند. با این حال، مراقب تفاوت‌های معنایی آن با یک آرایه واقعی باشید.
 
-Although `NodeList` is not an `Array`, it is possible to iterate over it with `forEach()`. It can also be converted to a real `Array` using {{jsxref("Array.from()")}}.
+اگرچه `NodeList` یک `Array` نیست، می‌توان با `forEach()` روی آن پیمایش کرد. همچنین می‌توان آن را با {{jsxref("Array.from()")}} به یک `Array` واقعی تبدیل کرد.
 
-## Live vs. Static NodeLists
+## NodeList های زنده در برابر ایستا
 
-Although they are both considered `NodeList` objects, there are 2 varieties of NodeList: _live_ and _static_.
+اگرچه هر دو به‌عنوان اشیاء `NodeList` در نظر گرفته می‌شوند، دو نوع NodeList وجود دارد: _زنده_ (_live_) و _ایستا_ (_static_).
 
-In most cases, the `NodeList` is _live_, which means that changes in the DOM automatically update the collection.
+در بیشتر موارد، `NodeList` از نوع _زنده_ است، یعنی تغییرات DOM به‌طور خودکار مجموعه را به‌روزرسانی می‌کنند.
 
-For example, {{domxref("Node.childNodes")}} is live:
+برای مثال، {{domxref("Node.childNodes")}} زنده است:
 
 ```js
 const parent = document.getElementById("parent");
@@ -37,34 +35,37 @@ parent.appendChild(document.createElement("div"));
 console.log(childNodes.length); // outputs "3"
 ```
 
-In other cases, the `NodeList` is _static,_ where any changes in the DOM do not affect the content of the collection. The ubiquitous {{domxref("document.querySelectorAll()")}} method is the only API that returns a _static_ `NodeList`.
+در موارد دیگر، `NodeList` از نوع _ایستا_ است؛ یعنی هر تغییری در DOM بر محتوای مجموعه تأثیری نمی‌گذارد. روش پرکاربرد {{domxref("document.querySelectorAll()")}} تنها API است که یک `NodeList` _ایستا_ بازمی‌گرداند.
 
-It's good to keep this distinction in mind when you choose how to iterate over the items in the `NodeList`, and whether you should cache the list's `length`.
+بهتر است این تفاوت را هنگام انتخاب روش پیمایش آیتم‌های `NodeList` و اینکه آیا باید `length` فهرست را کش کنید، در نظر داشته باشید.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("NodeList.length")}} {{ReadOnlyInline}}
-  - : The number of nodes in the `NodeList`.
+  - : تعداد گره‌های موجود در `NodeList`.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("NodeList.item()")}}
-  - : Returns an item in the list by its index, or `null` if the index is out-of-bounds.
+  - : یک آیتم از فهرست را بر اساس اندیس آن بازمی‌گرداند، یا اگر اندیس خارج از محدوده باشد `null` برمی‌گرداند.
 
-    An alternative to accessing `nodeList[i]` (which instead returns `undefined` when `i` is out-of-bounds). This is mostly useful for non-JavaScript DOM implementations.
+    این روش جایگزینی برای دسترسی به `nodeList[i]` است (که در صورت خارج بودن `i` از محدوده، `undefined` بازمی‌گرداند). این روش عمدتاً برای پیاده‌سازی‌های DOM که مبتنی بر جاوااسکریپت نیستند مفید است.
 
 - {{domxref("NodeList.entries()")}}
-  - : Returns an {{jsxref("Iteration_protocols","iterator")}}, allowing code to go through all key/value pairs contained in the collection. (In this case, the keys are integers starting from `0` and the values are nodes.)
+  - : یک {{jsxref("Iteration_protocols","iterator")}} برمی‌گرداند که به کد اجازه می‌دهد از تمام جفت‌های کلید/مقدار موجود در مجموعه عبور کند. (در این حالت، کلیدها اعداد صحیح شروع‌شونده از `0` و مقدارها گره‌ها هستند.)
+
 - {{domxref("NodeList.forEach()")}}
-  - : Executes a provided function once per `NodeList` element, passing the element as an argument to the function.
+  - : یک تابع داده‌شده را یک‌بار برای هر عنصر `NodeList` اجرا می‌کند و آن عنصر را به‌عنوان آرگومان به تابع می‌دهد.
+
 - {{domxref("NodeList.keys()")}}
-  - : Returns an {{jsxref("Iteration_protocols", "iterator")}}, allowing code to go through all the keys of the key/value pairs contained in the collection. (In this case, the keys are integers starting from `0`.)
+  - : یک {{jsxref("Iteration_protocols", "iterator")}} برمی‌گرداند که به کد اجازه می‌دهد از تمام کلیدهای جفت‌های کلید/مقدار موجود در مجموعه عبور کند. (در این حالت، کلیدها اعداد صحیح شروع‌شونده از `0` هستند.)
+
 - {{domxref("NodeList.values()")}}
-  - : Returns an {{jsxref("Iteration_protocols", "iterator")}} allowing code to go through all values (nodes) of the key/value pairs contained in the collection.
+  - : یک {{jsxref("Iteration_protocols", "iterator")}} برمی‌گرداند که به کد اجازه می‌دهد از تمام مقدارها (گره‌ها)ی جفت‌های کلید/مقدار موجود در مجموعه عبور کند.
 
-## Example
+## مثال
 
-It's possible to loop over the items in a `NodeList` using a [for](/en-US/docs/Web/JavaScript/Reference/Statements/for) loop:
+می‌توان با استفاده از حلقه [for](/en-US/docs/Web/JavaScript/Reference/Statements/for) روی آیتم‌های یک `NodeList` پیمایش کرد:
 
 ```js
 for (let i = 0; i < myNodeList.length; i++) {
@@ -72,9 +73,9 @@ for (let i = 0; i < myNodeList.length; i++) {
 }
 ```
 
-**Don't use [`for...in`](/en-US/docs/Web/JavaScript/Reference/Statements/for...in) to enumerate the items in `NodeList`s**, since they will _also_ enumerate its `length` and `item` properties and cause errors if your script assumes it only has to deal with {{domxref("element")}} objects. Also, `for...in` is not guaranteed to visit the properties in any particular order.
+**برای شمارش آیتم‌های `NodeList` از [`for...in`](/en-US/docs/Web/JavaScript/Reference/Statements/for...in) استفاده نکنید**، زیرا این حلقه ویژگی‌های `length` و `item` را نیز _شمارش_ می‌کند و اگر اسکریپت شما فرض کند که فقط با اشیاء {{domxref("element")}} سروکار دارد، خطا ایجاد می‌کند. همچنین، `for...in` ترتیب خاصی را برای بازدید از ویژگی‌ها تضمین نمی‌کند.
 
-[`for...of`](/en-US/docs/Web/JavaScript/Reference/Statements/for...of) loops over `NodeList` objects correctly:
+[`for...of`](/en-US/docs/Web/JavaScript/Reference/Statements/for...of) به‌درستی روی اشیاء `NodeList` پیمایش می‌کند:
 
 ```js
 const list = document.querySelectorAll("input[type=checkbox]");
@@ -83,12 +84,12 @@ for (const checkbox of list) {
 }
 ```
 
-Browsers also support the iterator method ({{domxref("NodeList.forEach()", "forEach()")}}) as well as {{domxref("NodeList.entries()", "entries()")}}, {{domxref("NodeList.values()", "values()")}}, and {{domxref("NodeList.keys()", "keys()")}}.
+مرورگرها همچنین از روش iterator یعنی {{domxref("NodeList.forEach()", "forEach()")}} و نیز {{domxref("NodeList.entries()", "entries()")}}، {{domxref("NodeList.values()", "values()")}} و {{domxref("NodeList.keys()", "keys()")}} پشتیبانی می‌کنند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
