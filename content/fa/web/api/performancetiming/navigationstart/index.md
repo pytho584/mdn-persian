@@ -1,11 +1,5 @@
 ---
 title: "PerformanceTiming: navigationStart property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/navigationStart"
-status: "needs-translation"
----
-
----
-title: "PerformanceTiming: navigationStart property"
 short-title: navigationStart
 slug: Web/API/PerformanceTiming/navigationStart
 page-type: web-api-instance-property
@@ -17,28 +11,23 @@ browser-compat: api.PerformanceTiming.navigationStart
 {{APIRef("Performance API")}}{{Deprecated_Header}}
 
 > [!WARNING]
-> This interface of this property is deprecated in the [Navigation Timing Level 2 specification](https://w3c.github.io/navigation-timing/#obsolete).
-> Please use the {{domxref("PerformanceNavigationTiming")}} interface instead.
+> رابطِ مربوط به این ویژگی در [مشخصات Navigation Timing Level 2](https://w3c.github.io/navigation-timing/#obsolete) منسوخ شده است.
+> لطفاً به جای آن از رابط {{domxref("PerformanceNavigationTiming")}} استفاده کنید.
 
-The legacy
-**`PerformanceTiming.navigationStart`**
-read-only property returns an `unsigned long long` representing the moment,
-in milliseconds since the UNIX epoch, right after the prompt for unload terminates on
-the previous document in the same browsing context. If there is no previous document,
-this value will be the same as {{domxref("PerformanceTiming.fetchStart")}}.
+ویژگیِ قدیمیِ فقط‌خواندنی **`PerformanceTiming.navigationStart`** یک مقدار `unsigned long long` برمی‌گرداند که نشان‌دهندهٔ لحظه‌ای بر حسب میلی‌ثانیه از مبدأ یونیکس (UNIX epoch) است؛ دقیقاً پس از آن‌که اعلانِ unload (تخلیه) برای سند قبلی در همان بافت مرور (browsing context) پایان می‌یابد. اگر سند قبلی‌ای وجود نداشته باشد، این مقدار با {{domxref("PerformanceTiming.fetchStart")}} یکسان خواهد بود.
 
-## Value
+## مقدار
 
-An `unsigned long long`.
+یک `unsigned long long`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("PerformanceTiming")}} interface it belongs to.
+- رابط {{domxref("PerformanceTiming")}} که این ویژگی به آن تعلق دارد.
