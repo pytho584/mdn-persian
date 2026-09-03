@@ -1,11 +1,5 @@
 ---
 title: "PreferenceObject: requestOverride() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PreferenceObject/requestOverride"
-status: "needs-translation"
----
-
----
-title: "PreferenceObject: requestOverride() method"
 short-title: requestOverride()
 slug: Web/API/PreferenceObject/requestOverride
 page-type: web-api-instance-method
@@ -17,43 +11,43 @@ spec-urls: https://drafts.csswg.org/mediaqueries-5/#request-override-method
 
 {{APIRef("User Preferences API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`requestOverride`** method of the {{domxref("PreferenceObject")}} interface sets an {{domxref("PreferenceObject.override", "override")}} value for a particular preference.
+متد **`requestOverride`** در واسط {{domxref("PreferenceObject")}}، مقدار {{domxref("PreferenceObject.override", "override")}} را برای یک ترجیح مشخص تنظیم می‌کند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 requestOverrides(value)
 ```
 
-### Parameters
+### پارامترها
 
 - `value`
-  - : The value to request an override with.
+  - : مقداری که با آن درخواستِ override انجام می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} which resolves to {{jsxref("undefined")}} on success, or rejects on failure.
+یک {{jsxref("Promise")}} که در صورت موفقیت به {{jsxref("undefined")}} resolve می‌شود و در صورت شکست reject می‌شود.
 
-### Exceptions
+### استثناها
 
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if the given value is not allowed.
+  - : در صورتی که مقدار داده‌شده مجاز نباشد پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفادهٔ پایه
 
-The following example requests an override of the {{domxref("PreferenceObject.colorScheme", "colorScheme")}}.
+در مثال زیر یک override برای {{domxref("PreferenceObject.colorScheme", "colorScheme")}} درخواست می‌شود:
 
 ```js
 await navigator.preferences.colorScheme.requestOverride("dark");
 console.log(navigator.preferences.colorScheme.override);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
