@@ -1,10 +1,4 @@
 ---
-title: "Performance data"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Performance_API/Performance_data"
-status: "needs-translation"
----
-
----
 title: Performance data
 slug: Web/API/Performance_API/Performance_data
 page-type: guide
@@ -12,52 +6,52 @@ page-type: guide
 
 {{DefaultAPISidebar("Performance API")}}
 
-The Performance API measures and exposes performance data that can be collected as performance metrics for your web application. It provides methods to observe aspects of application performance. It doesn't provide performance data analysis, or visualizations. However, the Performance API is integrated well with developer tools in browsers and its data is often sent to analytics end points and libraries to record performance metrics which help you to evaluate the data to find performance bottlenecks affecting your users.
+API عملکرد، داده‌های عملکرد را اندازه‌گیری کرده و در معرض دید قرار می‌دهد که می‌توان آن‌ها را به‌عنوان معیارهای عملکرد (performance metrics) برای برنامه وب شما جمع‌آوری کرد. این API روش‌هایی برای مشاهده جنبه‌های مختلف عملکرد برنامه فراهم می‌کند. این API تحلیل داده‌های عملکرد یا تجسم آن‌ها را ارائه نمی‌دهد. با این حال، Performance API به‌خوبی با ابزارهای توسعه‌دهنده در مرورگرها یکپارچه شده است و داده‌های آن اغلب به نقاط پایانی تحلیل و کتابخانه‌ها ارسال می‌شود تا معیارهای عملکرد را ثبت کنند؛ این کار به شما کمک می‌کند داده‌ها را ارزیابی کرده و گلوگاه‌های عملکردی را که بر کاربران تأثیر می‌گذارند پیدا کنید.
 
-This page provides an overview about what sorts of Performance API data exists, how it is collected, and how it can be accessed.
+این صفحه یک نمای کلی از انواع داده‌های Performance API، نحوه جمع‌آوری آن‌ها و نحوه دسترسی به آن‌ها ارائه می‌دهد.
 
-## Collecting data
+## جمع‌آوری داده‌ها
 
-Most of the metrics exposed by the Performance API are automatically collected by the browser, and you don't have to tell it to collect them: you just have to retrieve them.
+بیشتر معیارهای ارائه‌شده توسط Performance API به‌طور خودکار توسط مرورگر جمع‌آوری می‌شوند و شما نیازی به دستور دادن به مرورگر برای جمع‌آوری آن‌ها ندارید؛ فقط باید آن‌ها را بازیابی کنید.
 
-For some metrics you do have to tell the browser what to measure:
+برای برخی از معیارها باید به مرورگر بگویید چه چیزی را اندازه‌گیری کند:
 
-- the [Element Timing](/en-US/docs/Web/API/PerformanceElementTiming) metric measures the time it takes to load and render certain DOM elements. This metric is opt-in: to ask the browser to include metrics for a particular element you must add the `elementtiming` attribute to it.
-- the [User Timing](/en-US/docs/Web/API/Performance_API/User_timing) metric enables you to measure the time between arbitrary points in your program, that might map to application-defined operations (such as logging in a user). To collect these metrics you need to add Performance API calls at the relevant points.
-- the [Server Timing](/en-US/docs/Web/API/Performance_API/Server_timing) metric enables you to measure the time taken for application-defined server-side operations. To collect these metrics your server must send the `Server-Timing` HTTP header.
+- معیار [Element Timing](/en-US/docs/Web/API/PerformanceElementTiming) زمان لازم برای بارگذاری و رندر کردن عناصر خاصی از DOM را اندازه‌گیری می‌کند. این معیار اختیاری (opt-in) است: برای اینکه از مرورگر بخواهید معیارهای مربوط به یک عنصر خاص را شامل شود، باید ویژگی `elementtiming` را به آن عنصر اضافه کنید.
+- معیار [User Timing](/en-US/docs/Web/API/Performance_API/User_timing) به شما امکان می‌دهد زمان بین نقاط دلخواه در برنامه‌تان را اندازه‌گیری کنید، که ممکن است به عملیات‌های تعریف‌شده توسط برنامه (مانند ورود کاربر) نگاشت شوند. برای جمع‌آوری این معیارها باید فراخوانی‌های Performance API را در نقاط مربوطه اضافه کنید.
+- معیار [Server Timing](/en-US/docs/Web/API/Performance_API/Server_timing) به شما امکان می‌دهد زمان صرف‌شده برای عملیات‌های سمت سرور تعریف‌شده توسط برنامه را اندازه‌گیری کنید. برای جمع‌آوری این معیارها، سرور شما باید هدر HTTP `Server-Timing` را ارسال کند.
 
-## Performance data structure
+## ساختار داده‌های عملکرد
 
-With the Performance API you can collect performance data in both {{domxref("Window.performance", "Window")}} and {{domxref("WorkerGlobalScope.performance", "Worker")}} global contexts. If you are collecting performance metrics for multiple contexts, take a look at {{domxref("performance.timeOrigin")}} to synchronize time origins between contexts.
+با استفاده از Performance API می‌توانید داده‌های عملکرد را در هر دو بافت (context) سراسری {{domxref("Window.performance", "Window")}} و {{domxref("WorkerGlobalScope.performance", "Worker")}} جمع‌آوری کنید. اگر معیارهای عملکرد را برای چند بافت جمع‌آوری می‌کنید، به {{domxref("performance.timeOrigin")}} نگاهی بیندازید تا مبدأ زمان را بین بافت‌ها همگام‌سازی کنید.
 
-Within these contexts, individual performance data is represented by performance entries.
+در این بافت‌ها، داده‌های عملکردِ تکتک به‌صورت ورودی‌های عملکرد (performance entries) نمایش داده می‌شوند.
 
-### Performance entries
+### ورودی‌های عملکرد
 
-A single recorded performance data point is called a _performance entry_ and is represented by an instance of the {{domxref("PerformanceEntry")}} interface.
+یک نقطه داده عملکرد ثبت‌شده، _perfomance entry_ (ورودی عملکرد) نامیده می‌شود و با نمونه‌ای از رابط {{domxref("PerformanceEntry")}} نمایش داده می‌شود.
 
-The Performance API records various different types of performance data, and the `PerformanceEntry` has an {{domxref("PerformanceEntry.entryType", "entryType")}} property which is a string describing the type of this performance entry:
+Performance API انواع مختلفی از داده‌های عملکرد را ثبت می‌کند و `PerformanceEntry` دارای ویژگی {{domxref("PerformanceEntry.entryType", "entryType")}} است که رشته‌ای است و نوع این ورودی عملکرد را توصیف می‌کند:
 
-- `"element"` records how long it takes an element to load and render.
-- `"event"` records how long it took the browser to start running an event handler in response to its trigger, and how long the event handler took to run. Used to measure {{Glossary("Interaction to Next Paint")}}.
-- `"first-input"` records the {{Glossary("First Input Delay")}}.
-- `"largest-contentful-paint"` records the largest paint during page load.
-- `"layout-shift"` records a metric representing how much the page layout has shifted in each animation frame.
-- `"longtask"` records tasks that took 50ms or more.
-- `"mark"` records a custom timestamp made by the developer.
-- `"measure"` records a custom measurement between two timestamps made by the developer.
-- `"navigation"` records metrics associated with navigating to and initial load of the page.
-- `"paint"` records key moments of rendering during page load.
-- `"resource"` records how long it took the browser to fetch a resource.
-- `"visibility-state"` records the timing of page visibility state changes, i.e., when a tab changes from the foreground to the background or vice versa.
+- `"element"` مدت زمان بارگذاری و رندر یک عنصر را ثبت می‌کند.
+- `"event"` مدت زمانی که طول کشیده تا مرورگر در پاسخ به رویداد، اجرای یک event handler را آغاز کند و همچنین مدت زمان اجرای event handler را ثبت می‌کند. برای اندازه‌گیری {{Glossary("Interaction to Next Paint")}} استفاده می‌شود.
+- `"first-input"` مقدار {{Glossary("First Input Delay")}} را ثبت می‌کند.
+- `"largest-contentful-paint"` بزرگ‌ترین نقاشی (paint) را در طول بارگذاری صفحه ثبت می‌کند.
+- `"layout-shift"` معیاری را ثبت می‌کند که میزان جابه‌جایی چیدمان (layout) صفحه را در هر فریم انیمیشن نشان می‌دهد.
+- `"longtask"` وظایفی (tasks) را ثبت می‌کند که ۵۰ میلی‌ثانیه یا بیشتر طول کشیده‌اند.
+- `"mark"` یک برچسب زمانی سفارشی که توسط توسعه‌دهنده ساخته شده را ثبت می‌کند.
+- `"measure"` یک اندازه‌گیری سفارشی بین دو برچسب زمانی که توسط توسعه‌دهنده ساخته شده را ثبت می‌کند.
+- `"navigation"` معیارهای مرتبط با ناوبری به صفحه و بارگذاری اولیه آن را ثبت می‌کند.
+- `"paint"` لحظات کلیدی رندر را در طول بارگذاری صفحه ثبت می‌کند.
+- `"resource"` مدت زمانی که مرورگر برای واکشی (fetch) یک منبع صرف کرده است را ثبت می‌کند.
+- `"visibility-state"` زمان تغییر وضعیت قابلیت مشاهده صفحه را ثبت می‌کند، یعنی زمانی که یک تب از پیش‌زمینه به پس‌زمینه می‌رود یا برعکس.
 
-### Performance entry subclasses
+### زیرکلاس‌های ورودی عملکرد
 
-Particular entry types typically include extra type-specific data: for example, the `"resource"` type captures the time at which DNS lookup started and ended. So entries are represented by subclasses that extend the basic `PerformanceEntry` interface. For example, a `"resource"` entry is represented by an instance of {{domxref("PerformanceResourceTiming")}}, which inherits from `PerformanceEntry`, and which adds properties to record DNS lookup timestamps.
+انواع خاصی از ورودی‌ها معمولاً داده‌های اضافی مخصوص به نوع خود را شامل می‌شوند: برای مثال، نوع «resource» زمان شروع و پایان جستجوی DNS را ثبت می‌کند. بنابراین ورودی‌ها توسط زیرکلاس‌هایی نمایش داده می‌شوند که رابط پایه `PerformanceEntry` را توسعه می‌دهند. برای مثال، یک ورودی «resource» با نمونه‌ای از {{domxref("PerformanceResourceTiming")}} نمایش داده می‌شود که از `PerformanceEntry` ارث می‌برد و ویژگی‌هایی برای ثبت زمان‌های جستجوی DNS اضافه می‌کند.
 
-The subclasses of `PerformanceEntry` also define the semantics of the properties belonging to `PerformanceEntry` itself: for example, `PerformanceEntry` has a {{domxref("PerformanceEntry.name", "name")}} property whose meaning depends on the subclass.
+زیرکلاس‌های `PerformanceEntry` همچنین معنای ویژگی‌های متعلق به خود `PerformanceEntry` را تعریف می‌کنند: برای مثال، `PerformanceEntry` دارای ویژگی {{domxref("PerformanceEntry.name", "name")}} است که معنای آن به زیرکلاس بستگی دارد.
 
-The following interfaces inherit from `PerformanceEntry`:
+رابط‌های زیر از `PerformanceEntry` ارث می‌برند:
 
 - {{domxref("LargestContentfulPaint")}}
 - {{domxref("LayoutShift")}}
@@ -72,9 +66,9 @@ The following interfaces inherit from `PerformanceEntry`:
 - {{domxref("TaskAttributionTiming")}}
 - {{domxref("VisibilityStateEntry")}}
 
-## Accessing data
+## دسترسی به داده‌ها
 
-You can access performance entries in one of two ways. The preferred way is to use the {{domxref("PerformanceObserver")}} interface, which is constructed with a callback function to be called when particular performance entries are recorded. You then call its {{domxref("PerformanceObserver.observe", "observe")}} method, passing in the types to observe and using the `buffered` option to retrieve entries that occurred before observation.
+می‌توانید به ورودی‌های عملکرد به یکی از دو روش دسترسی پیدا کنید. روش ترجیحی استفاده از رابط {{domxref("PerformanceObserver")}} است که با یک تابع callback ساخته می‌شود که وقتی ورودی‌های عملکرد خاصی ثبت می‌شوند فراخوانی می‌شود. سپس متد {{domxref("PerformanceObserver.observe", "observe")}} آن را فراخوانی می‌کنید و نوع‌هایی را که باید مشاهده شوند پاس می‌دهید و از گزینه `buffered` برای بازیابی ورودی‌هایی که قبل از مشاهده رخ داده‌اند استفاده می‌کنید.
 
 ```js
 function logEventDuration(entries) {
@@ -92,7 +86,7 @@ const observer = new PerformanceObserver(logEventDuration);
 observer.observe({ type: "event", buffered: true });
 ```
 
-Alternatively, you can use the {{domxref("Performance.getEntries()")}}, {{domxref("Performance.getEntriesByName()")}}, and {{domxref("Performance.getEntriesByType()")}} methods to retrieve all performance entries for a page, or entries matching the given name or type.
+از طرف دیگر، می‌توانید از متدهای {{domxref("Performance.getEntries()")}}، {{domxref("Performance.getEntriesByName()")}} و {{domxref("Performance.getEntriesByType()")}} برای بازیابی همه ورودی‌های عملکرد برای یک صفحه، یا ورودی‌های منطبق با نام یا نوع داده‌شده استفاده کنید.
 
 ```js
 const events = performance.getEntriesByType("event");
@@ -106,38 +100,38 @@ for (const event of events) {
 }
 ```
 
-The `PerformanceObserver` option is preferred because:
+گزینه `PerformanceObserver` ترجیح داده می‌شود زیرا:
 
-- The `getEntries*` methods will always return all relevant entries since the start of the timeline, so if you call it twice, you will see the same entries again and will need to filter out entries that you've seen before.
-- Observer notifications are delivered asynchronously, so the browser can dispatch them during idle time to minimize their performance impact.
-- Not all entry types work with the `getEntries*` methods. For some you have to use performance observers to access them.
+- متدهای `getEntries*` همیشه همه ورودی‌های مربوطه را از آغاز خط زمانی (timeline) برمی‌گردانند؛ بنابراین اگر دوباره آن‌ها را فراخوانی کنید، دوباره همان ورودی‌ها را خواهید دید و باید ورودی‌هایی را که قبلاً دیده‌اید فیلتر کنید.
+- اعلان‌های observer به‌صورت ناهمگام (asynchronously) تحویل داده می‌شوند، بنابراین مرورگر می‌تواند آن‌ها را در زمان بیکاری ارسال کند تا تأثیر آن‌ها بر عملکرد به حداقل برسد.
+- همه انواع ورودی با متدهای `getEntries*` کار نمی‌کنند. برای برخی از آن‌ها باید از performance observer برای دسترسی به آن‌ها استفاده کنید.
 
-## Managing buffer sizes
+## مدیریت اندازه بافرها
 
-There is a buffer limit for performance entries for each global object. It ensures that the browser doesn't consume indefinite memory when holding performance data. Especially when your website or application fetches a lot of resources (e.g., when using polling), you might need to look into the limits for the buffers:
+برای هر شیء سراسری، محدودیت بافر برای ورودی‌های عملکرد وجود دارد. این محدودیت تضمین می‌کند که مرورگر هنگام نگهداری داده‌های عملکرد، حافظه نامحدودی مصرف نکند. به‌ویژه وقتی وب‌سایت یا برنامه شما منابع زیادی را واکشی می‌کند (مثلاً هنگام استفاده از polling)، ممکن است لازم باشد محدودیت‌های بافرها را بررسی کنید:
 
-| {{domxref("PerformanceEntry.entryType", "entryType")}} identifier | Interface                                  | Maximum number of buffer entries |
+| شناسه {{domxref("PerformanceEntry.entryType", "entryType")}} | رابط | حداکثر تعداد ورودی‌های بافر |
 | ----------------------------------------------------------------- | ------------------------------------------ | -------------------------------- |
-| `"mark"`                                                          | {{domxref("PerformanceMark")}}             | Infinite                         |
-| `"measure"`                                                       | {{domxref("PerformanceMeasure")}}          | Infinite                         |
-| `"navigation"`                                                    | {{domxref("PerformanceNavigationTiming")}} | Infinite                         |
-| `"resource"`                                                      | {{domxref("PerformanceResourceTiming")}}   | 250 (adjustable, see below)      |
-| `"longtask"`                                                      | {{domxref("PerformanceLongTaskTiming")}}   | 200                              |
-| `"paint"`                                                         | {{domxref("PerformancePaintTiming")}}      | 2 (there won't be more)          |
-| `"element"`                                                       | {{domxref("PerformanceElementTiming")}}    | 150                              |
-| `"event"`                                                         | {{domxref("PerformanceEventTiming")}}      | 150                              |
-| `"first-input"`                                                   | {{domxref("PerformanceEventTiming")}}      | 1 (there won't be more)          |
-| `"layout-shift"`                                                  | {{domxref("LayoutShift")}}                 | 150                              |
-| `"largest-contentful-paint"`                                      | {{domxref("LargestContentfulPaint")}}      | 150                              |
-| `"visibility-state"`                                              | {{domxref("VisibilityStateEntry")}}        | 50                               |
+| `"mark"`                                                          | {{domxref("PerformanceMark")}}             | نامحدود                         |
+| `"measure"`                                                       | {{domxref("PerformanceMeasure")}}          | نامحدود                         |
+| `"navigation"`                                                    | {{domxref("PerformanceNavigationTiming")}} | نامحدود                         |
+| `"resource"`                                                      | {{domxref("PerformanceResourceTiming")}}   | ۲۵۰ (قابل تنظیم، به پایین مراجعه کنید)      |
+| `"longtask"`                                                      | {{domxref("PerformanceLongTaskTiming")}}   | ۲۰۰                             |
+| `"paint"`                                                         | {{domxref("PerformancePaintTiming")}}      | ۲ (بیشتر از این نخواهد بود)          |
+| `"element"`                                                       | {{domxref("PerformanceElementTiming")}}    | ۱۵۰                             |
+| `"event"`                                                         | {{domxref("PerformanceEventTiming")}}      | ۱۵۰                             |
+| `"first-input"`                                                   | {{domxref("PerformanceEventTiming")}}      | ۱ (بیشتر از این نخواهد بود)          |
+| `"layout-shift"`                                                  | {{domxref("LayoutShift")}}                 | ۱۵۰                             |
+| `"largest-contentful-paint"`                                      | {{domxref("LargestContentfulPaint")}}      | ۱۵۰                             |
+| `"visibility-state"`                                              | {{domxref("VisibilityStateEntry")}}        | ۵۰                              |
 
-Table 1. Buffer sizes ([source](https://w3c.github.io/timing-entrytypes-registry/#registry)).
+جدول ۱. اندازه بافرها ([منبع](https://w3c.github.io/timing-entrytypes-registry/#registry)).
 
-For `"resource"` entry types, see [Managing resource buffer sizes](/en-US/docs/Web/API/Performance_API/Resource_timing#managing_resource_buffer_sizes) for how to set a different buffer size.
+برای نوع ورودی «resource»، به [مدیریت اندازه بافر منابع](/en-US/docs/Web/API/Performance_API/Resource_timing#managing_resource_buffer_sizes) مراجعه کنید تا نحوه تنظیم اندازه بافر متفاوت را ببینید.
 
-For `"first-input"` and `"paint"`, the limitation is inherent in the metric's definition. There won't be more entries than one (or two).
+برای «first-input» و «paint»، محدودیت ذاتاً در تعریف معیار وجود دارد. ورودی‌های بیشتری بیش از یک (یا دو) وجود نخواهد داشت.
 
-The [performance observer callback](/en-US/docs/Web/API/PerformanceObserver/PerformanceObserver) contains an optional `droppedEntriesCount` parameter that tells you how many entries were lost because the buffer storage was full.
+callback [performance observer](/en-US/docs/Web/API/PerformanceObserver/PerformanceObserver) شامل یک پارامتر اختیاری `droppedEntriesCount` است که به شما می‌گوید چند ورودی به دلیل پر بودن فضای بافر از دست رفته‌اند.
 
 ```js
 function perfObserver(list, observer, droppedEntriesCount) {
@@ -154,11 +148,11 @@ const observer = new PerformanceObserver(perfObserver);
 observer.observe({ type: "resource", buffered: true });
 ```
 
-Another useful method is {{domxref("PerformanceObserver.takeRecords()")}} which returns the current list of performance entries stored in the performance observer while also emptying it out.
+یک روش مفید دیگر {{domxref("PerformanceObserver.takeRecords()")}} است که فهرست فعلی ورودی‌های عملکرد ذخیره‌شده در performance observer را بازمی‌گرداند و همچنین آن را خالی می‌کند.
 
-## JSON data
+## داده‌های JSON
 
-All performance entries provide a `toJSON()` {{Glossary("Serialization","serializer")}} which returns a {{jsxref("JSON")}} representation of the entry. This can be useful if you want to collect all of the available data and store it somewhere.
+همه ورودی‌های عملکرد یک {{Glossary("Serialization","serializer")}} به نام `toJSON()` ارائه می‌دهند که یک نمایش {{jsxref("JSON")}} از ورودی برمی‌گرداند. اگر بخواهید همه داده‌های موجود را جمع‌آوری کرده و در جایی ذخیره کنید، این می‌تواند مفید باشد.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -170,7 +164,7 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "event", buffered: true });
 ```
 
-This would log a JSON object like so:
+این یک شیء JSON را به شکل زیر ثبت می‌کند:
 
 ```json
 {
@@ -184,9 +178,9 @@ This would log a JSON object like so:
 }
 ```
 
-To get a string representation of the entry, you can use [`JSON.stringify(entry)`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) with any `PerformanceEntry` object directly; it will call the entry's `toJSON()` method automatically.
+برای دریافت نمایش رشته‌ای از ورودی، می‌توانید [`JSON.stringify(entry)`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) را مستقیماً با هر شیء `PerformanceEntry` استفاده کنید؛ این کار به‌طور خودکار متد `toJSON()` ورودی را فراخوانی می‌کند.
 
-## See also
+## همچنین ببینید
 
 - {{domxref("PerformanceEntry")}}
 - {{domxref("PerformanceObserver.observe()")}}
