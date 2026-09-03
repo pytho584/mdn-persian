@@ -1,10 +1,4 @@
 ---
-title: "PerformanceMark"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceMark"
-status: "needs-translation"
----
-
----
 title: PerformanceMark
 slug: Web/API/PerformanceMark
 page-type: web-api-interface
@@ -13,52 +7,52 @@ browser-compat: api.PerformanceMark
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-**`PerformanceMark`** is an interface for {{domxref("PerformanceEntry")}} objects with an {{domxref("PerformanceEntry.entryType","entryType")}} of `"mark"`.
+**`PerformanceMark`** یک رابط (interface) برای اشیاء {{domxref("PerformanceEntry")}} با {{domxref("PerformanceEntry.entryType","entryType")}} برابر با `"mark"` است.
 
-Entries of this type are typically created by calling {{domxref("Performance.mark","performance.mark()")}} to add a _named_ {{domxref("DOMHighResTimeStamp")}} (the _mark_) to the browser's performance timeline. To create a performance mark that isn't added to the browser's performance timeline, use the constructor.
+ورودی‌های این نوع معمولاً با فراخوانی {{domxref("Performance.mark","performance.mark()")}} برای افزودن یک {{domxref("DOMHighResTimeStamp")}} _نام‌گذاری شده_ (نشانه یا _mark_) به جدول زمانی عملکرد (performance timeline) مرورگر ایجاد می‌شوند. برای ایجاد یک نشانه عملکرد که به جدول زمانی عملکرد مرورگر اضافه نمی‌شود، از سازنده (constructor) استفاده کنید.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده (Constructor)
 
 - {{domxref("PerformanceMark.PerformanceMark", "PerformanceMark()")}}
-  - : Creates a new `PerformanceMark` object that isn't added to the browser's performance timeline.
+  - : یک شیء `PerformanceMark` جدید ایجاد می‌کند که به جدول زمانی عملکرد مرورگر اضافه نمی‌شود.
 
-## Instance properties
+## ویژگی‌های نمونه (Instance properties)
 
 - {{domxref("PerformanceMark.detail")}}
-  - : Contains arbitrary metadata about the measure.
+  - : حاوی ابرداده‌های دلخواه درباره اندازه‌گیری (measure) است.
 
-This interface extends the following {{domxref("PerformanceEntry")}} properties by qualifying/constraining the properties as follows:
+این رابط (interface) ویژگی‌های زیر را از {{domxref("PerformanceEntry")}} با تعیین/محدود کردن آنها به صورت زیر گسترش می‌دهد:
 
 - {{domxref("PerformanceEntry.entryType")}} {{ReadOnlyInline}}
-  - : Returns `"mark"`.
+  - : مقدار `"mark"` را برمی‌گرداند.
 - {{domxref("PerformanceEntry.name")}} {{ReadOnlyInline}}
-  - : Returns the name given to the mark when it was created via a call to {{domxref("Performance.mark()","performance.mark()")}}.
+  - : نامی که هنگام ایجاد نشانه از طریق فراخوانی {{domxref("Performance.mark()","performance.mark()")}} به آن داده شده است را برمی‌گرداند.
 - {{domxref("PerformanceEntry.startTime")}} {{ReadOnlyInline}}
-  - : Returns the {{domxref("DOMHighResTimeStamp")}} when {{domxref("Performance.mark()","performance.mark()")}} was called.
+  - : {{domxref("DOMHighResTimeStamp")}} مربوط به زمان فراخوانی {{domxref("Performance.mark()","performance.mark()")}} را برمی‌گرداند.
 - {{domxref("PerformanceEntry.duration")}} {{ReadOnlyInline}}
-  - : Returns `0`. (A mark has no _duration_.)
+  - : مقدار `0` را برمی‌گرداند. (یک نشانه _مدت زمان_ ندارد.)
 
-## Instance methods
+## روش‌های نمونه (Instance methods)
 
-This interface has no methods.
+این رابط هیچ روشی ندارد.
 
-## Example
+## مثال
 
-See the example in [Using the User Timing API](/en-US/docs/Web/API/Performance_API/User_timing).
+مثال را در [استفاده از User Timing API](/en-US/docs/Web/API/Performance_API/User_timing) ببینید.
 
-Chrome DevTools uses `performance.mark()` and in particular a structured `detail` property as part of its extensibility API that surfaces these in custom tracks in performance traces. See the example in [Performance: mark() method](/en-US/docs/Web/API/Performance/mark) page and the [Chrome's extensibility API documentation](https://developer.chrome.com/docs/devtools/performance/extension#inject_your_data_with_the_user_timings_api) for more information and examples.
+Chrome DevTools از `performance.mark()` و به طور خاص از ویژگی ساختاریافته `detail` به عنوان بخشی از API توسعه‌پذیری خود استفاده می‌کند که این موارد را در ردیابی‌های سفارشی در ردیابی‌های عملکرد (performance traces) نمایش می‌دهد. برای اطلاعات بیشتر و مثال‌ها، به مثال در صفحه [Performance: mark() method](/en-US/docs/Web/API/Performance/mark) و [مستندات API توسعه‌پذیری Chrome](https://developer.chrome.com/docs/devtools/performance/extension#inject_your_data_with_the_user_timings_api) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [User Timing (Overview)](/en-US/docs/Web/API/Performance_API/User_timing)
 - [Using the User Timing API](/en-US/docs/Web/API/Performance_API/User_timing)
