@@ -1,11 +1,5 @@
 ---
 title: "PerformanceScriptTiming: executionStart property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceScriptTiming/executionStart"
-status: "needs-translation"
----
-
----
-title: "PerformanceScriptTiming: executionStart property"
 short-title: executionStart
 slug: Web/API/PerformanceScriptTiming/executionStart
 page-type: web-api-instance-property
@@ -16,25 +10,25 @@ browser-compat: api.PerformanceScriptTiming.executionStart
 
 {{SeeCompatTable}}{{APIRef("Performance API")}}
 
-The **`executionStart`** read-only property of the {{domxref("PerformanceScriptTiming")}} interface returns a {{domxref("DOMHighResTimeStamp")}} indicating the time when the script compilation finished and execution started.
+خاصیت فقط خواندنی **`executionStart`** در رابط {{domxref("PerformanceScriptTiming")}} یک {{domxref("DOMHighResTimeStamp")}} برمی‌گرداند که زمان اتمام کامپایل اسکریپت و شروع اجرا را نشان می‌دهد.
 
-## Value
+## مقدار
 
-A {{domxref("DOMHighResTimeStamp")}}.
+یک {{domxref("DOMHighResTimeStamp")}}.
 
-## Examples
+## مثال‌ها
 
-See [Long animation frame timing](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing#examples) for examples related to the Long Animation Frames API.
+برای مثال‌های مرتبط با API فریم‌های انیمیشن طولانی، به [زمان‌بندی فریم انیمیشن طولانی](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Long animation frame timing](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing)
+- [زمان‌بندی فریم انیمیشن طولانی](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing)
 - {{domxref("PerformanceLongAnimationFrameTiming")}}
