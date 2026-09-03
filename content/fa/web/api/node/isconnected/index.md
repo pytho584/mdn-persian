@@ -1,11 +1,5 @@
 ---
 title: "Node: isConnected property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Node/isConnected"
-status: "needs-translation"
----
-
----
-title: "Node: isConnected property"
 short-title: isConnected
 slug: Web/API/Node/isConnected
 page-type: web-api-instance-property
@@ -14,22 +8,22 @@ browser-compat: api.Node.isConnected
 
 {{APIRef("DOM")}}
 
-The read-only **`isConnected`** property of the {{domxref("Node")}} interface returns a boolean indicating whether the node is connected (directly or indirectly) to a {{domxref("Document")}} object.
+خاصیتِ فقط‌خواندنی **`isConnected`** در رابط {{domxref("Node")}} یک مقدار بولین برمی‌گرداند که نشان می‌دهد آیا گره به صورت مستقیم یا غیرمستقیم به یک شیء {{domxref("Document")}} متصل است یا نه.
 
-## Value
+## مقدار
 
-A boolean value that is `true` if the node is connected to its relevant context object, and `false` if not.
+یک مقدار بولین که اگر گره به شیء زمینه‌ی مرتبط خود متصل باشد `true` است و در غیر این صورت `false`.
 
 > [!NOTE]
-> An {{domxref("Attr")}} node always returns `false` for `isConnected`, even when its {{domxref("Attr.ownerElement", "ownerElement")}} is connected.
-> This is because, even though an attribute is associated with an element via `ownerElement`, it is not part of the node tree — it has no parent node, and it is its own root node.
-> Since `isConnected` is only true when a node's root is a document, an `Attr` node is never considered connected.
+> یک گره {{domxref("Attr")}} همیشه برای `isConnected` مقدار `false` برمی‌گرداند، حتی وقتی {{domxref("Attr.ownerElement", "ownerElement")}} آن متصل باشد.
+> دلیل این است که اگرچه یک ویژگی (attribute) از طریق `ownerElement` با یک عنصر مرتبط است، اما بخشی از درخت گره نیست — هیچ گره والد ندارد و خودش گره ریشه‌ی خودش است.
+> از آنجا که `isConnected` فقط زمانی `true` است که ریشه‌ی یک گره یک سند (document) باشد، یک گره `Attr` هرگز متصل در نظر گرفته نمی‌شود.
 
-## Examples
+## مثال‌ها
 
-### Standard DOM
+### DOM استاندارد
 
-A standard DOM example:
+یک مثال DOM استاندارد:
 
 ```js
 let test = document.createElement("p");
@@ -40,7 +34,7 @@ console.log(test.isConnected); // Returns true
 
 ### Shadow DOM
 
-A shadow DOM example:
+یک مثال Shadow DOM:
 
 ```js
 // Create a shadow root
@@ -78,10 +72,10 @@ shadow.appendChild(style);
 console.log(style.isConnected); // Returns true
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
