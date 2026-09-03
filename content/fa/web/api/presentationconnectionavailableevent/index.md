@@ -1,10 +1,4 @@
 ---
-title: "PresentationConnectionAvailableEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnectionAvailableEvent"
-status: "needs-translation"
----
-
----
 title: PresentationConnectionAvailableEvent
 slug: Web/API/PresentationConnectionAvailableEvent
 page-type: web-api-interface
@@ -15,26 +9,26 @@ browser-compat: api.PresentationConnectionAvailableEvent
 
 {{SeeCompatTable}}{{securecontext_header}}{{APIRef("Presentation API")}}
 
-The **`PresentationConnectionAvailableEvent`** interface of the [Presentation API](/en-US/docs/Web/API/Presentation_API) is fired on a {{domxref("PresentationRequest")}} when a connection associated with the object is created.
+اینترفیس **`PresentationConnectionAvailableEvent`** در [Presentation API](/en-US/docs/Web/API/Presentation_API) زمانی روی یک {{domxref("PresentationRequest")}} فراخوانی می‌شود که یک اتصال مرتبط با آن شیء ایجاد شده باشد.
 
-A [controlling user agent](https://www.w3.org/TR/presentation-api/#dfn-controlling-user-agent) [fires](https://www.w3.org/TR/presentation-api/#dfn-firing-an-event) a [trusted event](https://www.w3.org/TR/presentation-api/#dfn-trusted-event) named [`connectionavailable`](https://www.w3.org/TR/presentation-api/#dfn-connectionavailable) on a [`PresentationRequest`](https://www.w3.org/TR/presentation-api/#idl-def-presentationrequest) when a connection associated with the object is created. It is fired at the `PresentationRequest` instance, using the [`PresentationConnectionAvailableEvent`](https://www.w3.org/TR/presentation-api/#idl-def-presentationconnectionavailableevent) interface, with the [`connection`](https://www.w3.org/TR/presentation-api/#idl-def-presentationconnectionavailableevent-connection) attribute set to the [`PresentationConnection`](https://www.w3.org/TR/presentation-api/#idl-def-presentationconnection) object that was created. The event is fired for each connection that is created for the [controller](https://www.w3.org/TR/presentation-api/#dfn-controller), either by the [controller](https://www.w3.org/TR/presentation-api/#dfn-controller) calling `start()` or `reconnect()`, or by the [controlling user agent](https://www.w3.org/TR/presentation-api/#dfn-controlling-user-agent) creating a connection on the controller's behalf via [`defaultRequest`](https://www.w3.org/TR/presentation-api/#dom-presentation-defaultrequest).
+یک [عامل کاربر کنترل‌کننده](https://www.w3.org/TR/presentation-api/#dfn-controlling-user-agent) یک [رویداد مورد اعتماد](https://www.w3.org/TR/presentation-api/#dfn-trusted-event) به نام [`connectionavailable`](https://www.w3.org/TR/presentation-api/#dfn-connectionavailable) را روی یک [`PresentationRequest`](https://www.w3.org/TR/presentation-api/#idl-def-presentationrequest) [به‌راه می‌اندازد](https://www.w3.org/TR/presentation-api/#dfn-firing-an-event) زمانی که یک اتصال مرتبط با آن شیء ایجاد شود. این رویداد روی نمونه `PresentationRequest` با استفاده از اینترفیس [`PresentationConnectionAvailableEvent`](https://www.w3.org/TR/presentation-api/#idl-def-presentationconnectionavailableevent) فراخوانی می‌شود و ویژگی [`connection`](https://www.w3.org/TR/presentation-api/#idl-def-presentationconnectionavailableevent-connection) آن روی شیء [`PresentationConnection`](https://www.w3.org/TR/presentation-api/#idl-def-presentationconnection) ایجادشده تنظیم می‌شود. این رویداد برای هر اتصالی که برای [کنترل‌کننده](https://www.w3.org/TR/presentation-api/#dfn-controller) ایجاد می‌شود، فراخوانی می‌شود، چه توسط خود [کنترل‌کننده](https://www.w3.org/TR/presentation-api/#dfn-controller) با فراخوانی `start()` یا `reconnect()`، و چه توسط [عامل کاربر کنترل‌کننده](https://www.w3.org/TR/presentation-api/#dfn-controlling-user-agent) که به نمایندگی از کنترل‌کننده از طریق [`defaultRequest`](https://www.w3.org/TR/presentation-api/#dom-presentation-defaultrequest) اتصالی ایجاد کند.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("PresentationConnectionAvailableEvent.PresentationConnectionAvailableEvent", "PresentationConnectionAvailableEvent()")}} {{Experimental_Inline}}
-  - : Creates a new PresentationConnectionAvailableEvent.
+  - : یک PresentationConnectionAvailableEvent جدید ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("PresentationConnectionAvailableEvent.connection")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a references to the {{domxref("PresentationConnection")}} object that fired the event.
+  - : ارجاعی به شیء {{domxref("PresentationConnection")}} که رویداد را فراخوانی کرده است برمی‌گرداند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
