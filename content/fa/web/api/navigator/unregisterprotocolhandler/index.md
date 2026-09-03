@@ -1,11 +1,5 @@
 ---
 title: "Navigator: unregisterProtocolHandler() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/unregisterProtocolHandler"
-status: "needs-translation"
----
-
----
-title: "Navigator: unregisterProtocolHandler() method"
 short-title: unregisterProtocolHandler()
 slug: Web/API/Navigator/unregisterProtocolHandler
 page-type: web-api-instance-method
@@ -14,9 +8,9 @@ browser-compat: api.Navigator.unregisterProtocolHandler
 
 {{APIRef("HTML DOM")}}{{securecontext_header}}
 
-The **{{domxref("Navigator")}}** method **`unregisterProtocolHandler()`** removes a protocol handler for a given URL [scheme](#permitted_schemes).
+متد **`unregisterProtocolHandler()`** از {{domxref("Navigator")}}، یک مدیریت‌کنندهٔ پروتکل (protocol handler) را برای یک [طرح (scheme)](#permitted_schemes) مشخص از URL حذف می‌کند.
 
-This method is the inverse of **`registerProtocolHandler()`**.
+این متد معکوس **`registerProtocolHandler()`** است.
 
 ## Syntax
 
@@ -24,44 +18,44 @@ This method is the inverse of **`registerProtocolHandler()`**.
 unregisterProtocolHandler(scheme, url)
 ```
 
-### Parameters
+### پارامترها
 
 - `scheme`
-  - : A string containing the [permitted scheme](#permitted_schemes) in the protocol handler that will be unregistered.
-    For example, you can unregister the handler for SMS text message links by passing the `"sms"` scheme.
+  - : یک رشته شامل [طرح مجاز](#permitted_schemes) در مدیریت‌کنندهٔ پروتکلی که قرار است لغو ثبت شود.
+    برای مثال، می‌توانید با ارسال طرح `"sms"`، مدیریت‌کنندهٔ لینک‌های پیام متنی SMS را لغو ثبت کنید.
 - `url`
-  - : A string containing the URL of the handler.
-    **This URL should match the one that was used to register the handler (e.g., it must include `%s`)**.
+  - : یک رشته شامل URL مدیریت‌کننده.
+    **این URL باید با همان چیزی که برای ثبت مدیریت‌کننده استفاده شده است مطابقت داشته باشد (مثلاً باید شامل `%s` باشد)**.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `SecurityError` {{domxref("DOMException")}}
-  - : The user agent blocked unregistration.
-    This might happen if:
-    - The scheme (protocol) is invalid, such as a scheme the browser handles itself (`https:`, `about:`, etc.)
-    - The handler URL's {{Glossary("origin")}} does not match the origin of the page calling this API.
-    - The browser requires that this function is called from a secure context.
-    - The browser requires that the handler's URL be over HTTPS.
+  - : عامل کاربر (user agent) لغو ثبت را مسدود کرد.
+    این حالت ممکن است رخ دهد اگر:
+    - طرح (پروتکل) نامعتبر باشد، مانند طرحی که خود مرورگر مدیریت می‌کند (`https:`، `about:` و غیره).
+    - {{Glossary("origin", "مبدأ")}} URL مدیریت‌کننده با مبدأ صفحه‌ای که این API را فراخوانی می‌کند مطابقت نداشته باشد.
+    - مرورگر ایجاب کند که این تابع از یک بافت امن (secure context) فراخوانی شود.
+    - مرورگر ایجاب کند که URL مدیریت‌کننده از طریق HTTPS باشد.
 - `SyntaxError` {{domxref("DOMException")}}
-  - : The `%s` placeholder is missing from the handler URL.
+  - : جایگاه `%s` در URL مدیریت‌کننده وجود ندارد.
 
-## Permitted schemes
+## طرح‌های مجاز
 
-For security reasons, `unregisterProtocolHandler()` restricts which schemes can be unregistered.
+به دلایل امنیتی، `unregisterProtocolHandler()` طرح‌هایی را که می‌توان لغو ثبت کرد محدود می‌کند.
 
-A **custom scheme** may be unregistered as long as:
+یک **طرح سفارشی** تا زمانی قابل لغو ثبت است که:
 
-- The custom scheme's name begins with `web+`
-- The custom scheme's name includes at least 1 letter after the `web+` prefix
-- The custom scheme has only lowercase ASCII letters in its name.
+- نام طرح سفارشی با `web+` شروع شود.
+- نام طرح سفارشی حداقل ۱ حرف بعد از پیشوند `web+` داشته باشد.
+- نام طرح سفارشی فقط شامل حروف ASCII کوچک (a-z) باشد.
 
-For example, `web+burger`, as shown in the [Example](#examples) below.
+برای مثال، `web+burger` همان‌طور که در [مثال](#examples) زیر نشان داده شده است.
 
-Otherwise, the scheme must be one of the following:
+در غیر این صورت، طرح باید یکی از موارد زیر باشد:
 
 - `bitcoin`
 - `ftp`
@@ -88,9 +82,9 @@ Otherwise, the scheme must be one of the following:
 - `wtai`
 - `xmpp`
 
-## Examples
+## مثال‌ها
 
-If your site is `burgers.example.com`, and you have a `web+burger:` scheme, you can unregister the handler for it like so:
+اگر سایت شما `burgers.example.com` است و یک طرح `web+burger:` دارید، می‌توانید مدیریت‌کنندهٔ آن را به این صورت لغو ثبت کنید:
 
 ```js
 navigator.unregisterProtocolHandler(
@@ -99,12 +93,12 @@ navigator.unregisterProtocolHandler(
 );
 ```
 
-This script must be run from the same origin as the handler URL (so any page at `https://burgers.example.com`), and the handler URL must be `http` or `https`.
+این اسکریپت باید از همان مبدأ URL مدیریت‌کننده اجرا شود (یعنی هر صفحه‌ای در `https://burgers.example.com`)، و URL مدیریت‌کننده باید `http` یا `https` باشد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
