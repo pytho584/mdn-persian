@@ -1,11 +1,5 @@
 ---
 title: "PerformanceTiming: responseStart property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/responseStart"
-status: "needs-translation"
----
-
----
-title: "PerformanceTiming: responseStart property"
 short-title: responseStart
 slug: Web/API/PerformanceTiming/responseStart
 page-type: web-api-instance-property
@@ -17,27 +11,24 @@ browser-compat: api.PerformanceTiming.responseStart
 {{APIRef("Performance API")}}{{Deprecated_Header}}
 
 > [!WARNING]
-> This interface of this property is deprecated in the [Navigation Timing Level 2 specification](https://w3c.github.io/navigation-timing/#obsolete). Please use the {{domxref("PerformanceNavigationTiming")}}
-> interface instead.
+> این ویژگی در [مشخصات Navigation Timing Level 2](https://w3c.github.io/navigation-timing/#obsolete) منسوخ شده است. لطفاً بهجای آن از رابط {{domxref("PerformanceNavigationTiming")}} استفاده کنید.
 
-The legacy
+ویژگی فقط‌خواندنی قدیمی
 **`PerformanceTiming.responseStart`**
-read-only property returns an `unsigned long long` representing the moment in
-time (in milliseconds since the UNIX epoch) when the browser received the first byte of
-the response from the server, cache, or local resource.
+یک `unsigned long long` برمی‌گرداند که نمایانگر لحظه‌ای است (به میلی‌ثانیه از مبدأ UNIX) که مرورگر اولین بایت پاسخ را از سرور، حافظهٔ پنهان (cache)، یا منبع محلی دریافت کرد.
 
-## Value
+## مقدار
 
-An `unsigned long long`.
+یک `unsigned long long`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("PerformanceTiming")}} interface it belongs to.
+- رابط {{domxref("PerformanceTiming")}} که این ویژگی به آن تعلق دارد.
