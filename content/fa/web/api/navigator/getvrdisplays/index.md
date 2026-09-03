@@ -1,11 +1,5 @@
 ---
 title: "Navigator: getVRDisplays() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/getVRDisplays"
-status: "needs-translation"
----
-
----
-title: "Navigator: getVRDisplays() method"
 short-title: getVRDisplays()
 slug: Web/API/Navigator/getVRDisplays
 page-type: web-api-instance-method
@@ -17,7 +11,7 @@ browser-compat: api.Navigator.getVRDisplays
 
 {{APIRef("WebVR API")}}{{Deprecated_Header}}{{Non-standard_Header}}
 
-The **`getVRDisplays()`** method of the {{domxref("Navigator")}} interface returns a promise that resolves to an array of {{domxref("VRDisplay")}} objects representing any available VR displays connected to the computer.
+متد **`getVRDisplays()`** در接口 {{domxref("Navigator")}} یک وعده (Promise) برمی‌گرداند که به آرایه‌ای از اشیاء {{domxref("VRDisplay")}} تبدیل می‌شود که نمایانگر هر نمایشگر VR متصل به رایانه هستند.
 
 ## Syntax
 
@@ -27,21 +21,21 @@ getVRDisplays()
 
 ### Parameters
 
-None.
+هیچ‌کدام.
 
 ### Return value
 
-A promise that resolves to an array of {{domxref("VRDisplay")}} objects.
+یک وعده که به آرایه‌ای از اشیاء {{domxref("VRDisplay")}} تبدیل می‌شود.
 
 ## Examples
 
-See [`VRDisplay`](/en-US/docs/Web/API/VRDisplay#examples) for example code.
+برای کد نمونه، به [`VRDisplay`](/en-US/docs/Web/API/VRDisplay#examples) مراجعه کنید.
 
 ## Specifications
 
-This method was part of the old [WebVR API](https://immersive-web.github.io/webvr/spec/1.1/) that has been superseded by the [WebXR Device API](https://immersive-web.github.io/webxr/). It is no longer on track to becoming a standard.
+این متد بخشی از [WebVR API](https://immersive-web.github.io/webvr/spec/1.1/) قدیمی بود که توسط [WebXR Device API](https://immersive-web.github.io/webxr/) جایگزین شده است. دیگر در مسیر تبدیل شدن به یک استاندارد قرار ندارد.
 
-Until all browsers have implemented the new [WebXR APIs](/en-US/docs/Web/API/WebXR_Device_API/Fundamentals), it is recommended to rely on frameworks, like [A-Frame](https://aframe.io/), [Babylon.js](https://www.babylonjs.com/), or [Three.js](https://threejs.org/), or a [polyfill](https://github.com/immersive-web/webxr-polyfill), to develop WebXR applications that will work across all browsers. Read [Meta's Porting from WebVR to WebXR](https://developers.meta.com/horizon/documentation/web/port-vr-xr/) guide for more information.
+تا زمانی که همه مرورگرها [WebXR APIهای](/en-US/docs/Web/API/WebXR_Device_API/Fundamentals) جدید را پیاده‌سازی نکرده‌اند، توصیه می‌شود برای توسعه برنامه‌های WebXR که در همه مرورگرها کار کنند، به چارچوب‌هایی مانند [A-Frame](https://aframe.io/)، [Babylon.js](https://www.babylonjs.com/) یا [Three.js](https://threejs.org/) یا یک [polyfill](https://github.com/immersive-web/webxr-polyfill) تکیه کنید. برای اطلاعات بیشتر، راهنمای [انتقال از WebVR به WebXR در Meta](https://developers.meta.com/horizon/documentation/web/port-vr-xr/) را مطالعه کنید.
 
 ## Browser compatibility
 
@@ -49,4 +43,4 @@ Until all browsers have implemented the new [WebXR APIs](/en-US/docs/Web/API/Web
 
 ## See also
 
-- [WebVR API homepage](/en-US/docs/Web/API/WebVR_API)
+- [صفحه اصلی WebVR API](/en-US/docs/Web/API/WebVR_API)
