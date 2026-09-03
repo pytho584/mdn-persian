@@ -1,11 +1,5 @@
 ---
 title: "NotRestoredReasons: children property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NotRestoredReasons/children"
-status: "needs-translation"
----
-
----
-title: "NotRestoredReasons: children property"
 short-title: children
 slug: Web/API/NotRestoredReasons/children
 page-type: web-api-instance-property
@@ -16,30 +10,29 @@ browser-compat: api.NotRestoredReasons.children
 
 {{APIRef("Performance API")}}{{SeeCompatTable}}
 
-The **`children`** read-only property of the
-{{domxref("NotRestoredReasons")}} interface returns an array of {{domxref("NotRestoredReasons")}} objects, one for each child {{htmlelement("iframe")}} embedded in the current document, which may contain reasons why the top-level frame was blocked relating to the child frames.
+ویژگی فقط‌خواندنی **`children`** از رابط {{domxref("NotRestoredReasons")}} آرایه‌ای از اشیاء {{domxref("NotRestoredReasons")}} برمی‌گرداند؛ یک شیء برای هر {{htmlelement("iframe")}} فرزندی که در سند فعلی جاسازی شده است. این اشیاء ممکن است شامل دلایل مسدود شدن فریم سطح بالا در رابطه با فریم‌های فرزند باشند.
 
-Each object has the same structure as the parent object — this way, any number of levels of embedded `<iframe>`s can be represented inside the object recursively.
+هر شیء ساختاری مشابه شیء والد دارد؛ به این ترتیب، هر تعداد سطح از `<iframe>`های جاسازی‌شده می‌توانند به‌صورت بازگشتی در داخل شیء نمایش داده شوند.
 
-## Value
+## مقدار
 
-An array of {{domxref("NotRestoredReasons")}} objects.
+آرایه‌ای از اشیاء {{domxref("NotRestoredReasons")}}.
 
-If the frame has no children, the array will be empty; if the document is in a cross-origin `<iframe>`, `children` will return `null`.
+اگر فریم فرزندی نداشته باشد، آرایه خالی خواهد بود؛ اگر سند در یک `<iframe>` متقاطع-ریشه (cross-origin) قرار داشته باشد، `children` مقدار `null` برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-See [Monitoring bfcache blocking reasons](/en-US/docs/Web/API/Performance_API/Monitoring_bfcache_blocking_reasons) for examples.
+برای مثال‌ها، به [Monitoring bfcache blocking reasons](/en-US/docs/Web/API/Performance_API/Monitoring_bfcache_blocking_reasons) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Monitoring bfcache blocking reasons](/en-US/docs/Web/API/Performance_API/Monitoring_bfcache_blocking_reasons)
 - {{domxref("PerformanceNavigationTiming.notRestoredReasons")}}
