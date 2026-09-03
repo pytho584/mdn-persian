@@ -1,11 +1,5 @@
 ---
 title: "PaymentRequest: paymentmethodchange event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/paymentmethodchange_event"
-status: "needs-translation"
----
-
----
-title: "PaymentRequest: paymentmethodchange event"
 short-title: paymentmethodchange
 slug: Web/API/PaymentRequest/paymentmethodchange_event
 page-type: web-api-event
@@ -14,15 +8,15 @@ browser-compat: api.PaymentRequest.paymentmethodchange_event
 
 {{securecontext_header}}{{APIRef("Payment Request API")}}
 
-The **`paymentmethodchange`** event is delivered the [Payment Request API](/en-US/docs/Web/API/Payment_Request_API) to a {{domxref("PaymentRequest")}} object when the user changes the payment method within a given payment handler.
+رویداد **`paymentmethodchange`** توسط [Payment Request API](/en-US/docs/Web/API/Payment_Request_API) به یک شیء {{domxref("PaymentRequest")}} تحویل داده می‌شود هنگامی که کاربر روش پرداخت را درون یک پردازشگر پرداخت مشخص تغییر می‌دهد.
 
-For example, if the user switches from one credit card to another on their [Apple Pay](https://www.apple.com/apple-pay/) account, a `paymentmethodchange` event is fired to let you know about the change.
+برای مثال، اگر کاربر در حساب [Apple Pay](https://www.apple.com/apple-pay/) خود از یک کارت اعتباری به کارت دیگری تغییر وضعیت دهد، یک رویداد `paymentmethodchange` برای اطلاع‌رسانی درباره‌ی این تغییر فعال می‌شود.
 
-This event is not cancelable and does not bubble.
+این رویداد قابل لغو (cancelable) نیست و منتشر (bubble) نمی‌شود.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی event handler تنظیم کنید.
 
 ```js-nolint
 addEventListener("paymentmethodchange", (event) => { })
@@ -30,17 +24,17 @@ addEventListener("paymentmethodchange", (event) => { })
 onpaymentmethodchange = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("PaymentMethodChangeEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("PaymentMethodChangeEvent")}} که از {{domxref("Event")}} ارث‌بری می‌کند.
 
 {{InheritanceDiagram("PaymentMethodChangeEvent")}}
 
-## Examples
+## مثال‌ها
 
-Let's take a look at an example. This code creates a new {{domxref("PaymentRequest")}}, adds a handler for the `paymentmethodchange` event by calling the request's {{domxref("EventTarget.addEventListener", "addEventListener()")}}, then calls {{domxref("PaymentRequest.show", "show()")}} to present the payment interface to the user.
+بیایید یک مثال را بررسی کنیم. این کد یک {{domxref("PaymentRequest")}} جدید ایجاد می‌کند، یک handler برای رویداد `paymentmethodchange` با فراخوانی {{domxref("EventTarget.addEventListener", "addEventListener()")}} درخواست اضافه می‌کند، و سپس {{domxref("PaymentRequest.show", "show()")}} را فراخوانی می‌کند تا رابط پرداخت را به کاربر نمایش دهد.
 
-The code assumes the existence of a method `detailsForTransaction()`, which will return an object that can be passed as the [`details`](/en-US/docs/Web/API/PaymentRequest/PaymentRequest#details) argument to the `PaymentRequest` constructor.
+این کد وجود یک متد به نام `detailsForTransaction()` را فرض می‌گیرد که شیئی را برمی‌گرداند که می‌تواند به عنوان آرگومان [`details`](/en-US/docs/Web/API/PaymentRequest/PaymentRequest#details) به سازنده‌ی `PaymentRequest` ارسال شود.
 
 ```js
 const paymentRequest = new PaymentRequest(
@@ -56,7 +50,7 @@ paymentRequest
   .catch((err) => console.error(`Error handling payment request: ${err}`));
 ```
 
-The event handler function itself, `handlePaymentChange()`, looks like this:
+خود تابع handler رویداد، یعنی `handlePaymentChange()`، به این صورت است:
 
 ```js
 handlePaymentChange = (event) => {
@@ -71,22 +65,22 @@ handlePaymentChange = (event) => {
 };
 ```
 
-This begins by looking at the event's {{domxref("PaymentMethodChangeEvent.methodName", "methodName")}} property; if that indicates that the user is trying to use Apple Pay, we pass the {{domxref("PaymentMethodChangeEvent.methodDetails", "methodDetails")}} into a function called `calculateServiceFee()`, which we might create to take the information about the transaction, such as the underlying credit card being used to service the Apple Pay request, and compute and return an object that specifies changes to be applied to the {{domxref("PaymentRequest")}} in order to add any service fees that the payment method might require.
+این کد با بررسی ویژگی {{domxref("PaymentMethodChangeEvent.methodName", "methodName")}} رویداد شروع می‌شود. اگر این ویژگی نشان دهد که کاربر در حال استفاده از Apple Pay است، {{domxref("PaymentMethodChangeEvent.methodDetails", "methodDetails")}} را به تابعی به نام `calculateServiceFee()` ارسال می‌کنیم. این تابع (که می‌توانیم ایجاد کنیم) اطلاعات مربوط به تراکنش، مانند کارت اعتباری زیربنایی که برای سرویس‌دهی به درخواست Apple Pay استفاده می‌شود، را دریافت می‌کند و شیئی را محاسبه و برمی‌گرداند که تغییرات مورد نیاز برای اعمال به {{domxref("PaymentRequest")}} را مشخص می‌کند تا هرگونه هزینه سرویس که روش پرداخت ممکن است نیاز داشته باشد، اضافه شود.
 
-Before the event handler returns, it calls the event's {{domxref("PaymentRequestUpdateEvent.updateWith()", "updateWith()")}} method to integrate the changes into the request.
+پیش از بازگشت handler رویداد، متد {{domxref("PaymentRequestUpdateEvent.updateWith()", "updateWith()")}} رویداد را فراخوانی می‌کند تا تغییرات را در درخواست ادغام کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Payment Request API](/en-US/docs/Web/API/Payment_Request_API)
-- [Using the Payment Request API](/en-US/docs/Web/API/Payment_Request_API/Using_the_Payment_Request_API)
-- {{domxref("PaymentRequest.merchantvalidation_event", "merchantvalidation")}} event
-- {{domxref("PaymentRequest.shippingaddresschange_event", "shippingaddresschange")}} event
-- {{domxref("PaymentRequest.shippingoptionchange_event", "shippingoptionchange")}} event
+- [استفاده از Payment Request API](/en-US/docs/Web/API/Payment_Request_API/Using_the_Payment_Request_API)
+- رویداد {{domxref("PaymentRequest.merchantvalidation_event", "merchantvalidation")}}
+- رویداد {{domxref("PaymentRequest.shippingaddresschange_event", "shippingaddresschange")}}
+- رویداد {{domxref("PaymentRequest.shippingoptionchange_event", "shippingoptionchange")}}
