@@ -1,11 +1,5 @@
 ---
 title: "Notification: data property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Notification/data"
-status: "needs-translation"
----
-
----
-title: "Notification: data property"
 short-title: data
 slug: Web/API/Notification/data
 page-type: web-api-instance-property
@@ -14,23 +8,17 @@ browser-compat: api.Notification.data
 
 {{APIRef("Web Notifications")}}{{securecontext_header}} {{AvailableInWorkers}}
 
-The **`data`** read-only property of the
-{{domxref("Notification")}} interface returns a structured clone of the notification's
-data, as specified in the `data` option of the
-{{domxref("Notification.Notification","Notification()")}} constructor.
+خاصیتِ فقط‌خواندنی **`data`** در رابط {{domxref("Notification")}} یک شبیه‌سازیشدهٔ ساختاریافته (structured clone) از داده‌های اعلان را برمی‌گرداند؛ همان‌طور که در گزینهٔ `data` سازندهٔ {{domxref("Notification.Notification","Notification()")}} مشخص شده است.
 
-The notification's data can be any arbitrary data that you want associated with the
-notification.
+دادهٔ اعلان می‌تواند هر دادهٔ دلخواهی باشد که می‌خواهید با اعلان مرتبط کنید.
 
-## Value
+## مقدار
 
-A structured clone.
+یک شبیه‌سازیشدهٔ ساختاریافته.
 
-## Examples
+## مثال‌ها
 
-The following snippet fires a notification; a simple `options` object is
-created, then the notification is fired using the `Notification()`
-constructor.
+در قطعه‌کد زیر یک اعلان ارسال می‌شود؛ یک شیء سادهٔ `options` ساخته می‌شود و سپس اعلان با استفاده از سازندهٔ `Notification()` ارسال می‌گردد.
 
 ```js
 const options = {
@@ -46,14 +34,14 @@ const n = new Notification("New review activity", options);
 console.log(n.data); // Logs the data object
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Notifications API](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
+- [استفاده از API اعلان‌ها](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
