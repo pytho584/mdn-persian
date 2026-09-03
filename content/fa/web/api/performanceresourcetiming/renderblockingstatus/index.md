@@ -1,11 +1,5 @@
 ---
 title: "PerformanceResourceTiming: renderBlockingStatus property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceResourceTiming/renderBlockingStatus"
-status: "needs-translation"
----
-
----
-title: "PerformanceResourceTiming: renderBlockingStatus property"
 short-title: renderBlockingStatus
 slug: Web/API/PerformanceResourceTiming/renderBlockingStatus
 page-type: web-api-instance-property
@@ -14,39 +8,39 @@ browser-compat: api.PerformanceResourceTiming.renderBlockingStatus
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The **`renderBlockingStatus`** read-only property returns the render-blocking status of the resource.
+ویژگی فقط‌خواندنی **`renderBlockingStatus`** وضعیت مسدودسازی رندرِ منبع را برمی‌گرداند.
 
-It is useful to determine resources that:
+این ویژگی برای شناسایی منابعی مفید است که:
 
-- weren't render-blocking and therefore could be delayed, or
-- were render-blocking and therefore could be preloaded.
+- مسدودکننده‌ی رندر نبوده‌اند و بنابراین می‌توانسته‌اند به تعویق بیفتند، یا
+- مسدودکننده‌ی رندر بوده‌اند و بنابراین می‌توانسته‌اند از پیش بارگذاری شوند.
 
-## Description
+## توضیحات
 
-Render-blocking resources are static files, such as fonts, CSS, and JavaScript that block or delay the browser from rendering page content to the screen. The browser determines these blocking resources automatically and doesn't render any pixel to the screen before all stylesheets and synchronous scripts are loaded and evaluated. This prevents Flash of Unstyled Contents ("FOUC").
+منابع مسدودکننده‌ی رندر، فایل‌های ایستایی مانند فونت‌ها، CSS و جاوااسکریپت هستند که رندر کردن محتوای صفحه در مرورگر را مسدود یا به تأخیر می‌اندازند. مرورگر این منابع مسدودکننده را به‌طور خودکار تعیین می‌کند و پیش از بارگذاری و ارزیابی همه‌ی برگه‌های سبک و اسکریپت‌های همگام، هیچ پیکسلی را روی صفحه نمایش نمی‌دهد. این کار از نمایش فلشِ محتوای بدون استایل («FOUC») جلوگیری می‌کند.
 
-In addition to the automatic render-blocking mechanism, `blocking="render"` can be provided as an attribute and value to {{HTMLElement("script")}}, {{HTMLElement("style")}} or {{HTMLElement("link")}} elements to specify explicit render-blocking. For example:
+علاوه بر سازوکار خودکار مسدودسازی رندر، می‌توان ویژگی `blocking="render"` را به عناصر {{HTMLElement("script")}}، {{HTMLElement("style")}} یا {{HTMLElement("link")}} اضافه کرد تا مسدودسازی رندر به‌صورت صریح مشخص شود. برای مثال:
 
 ```html
 <script blocking="render" src="important.js" defer></script>
 ```
 
-## Value
+## مقدار
 
-The `renderBlockingStatus` property can have the following values:
+ویژگی `renderBlockingStatus` می‌تواند مقادیر زیر را داشته باشد:
 
 - `"blocking"`
-  - : The resource might potentially block rendering.
+  - : منبع احتمالاً رندر را مسدود می‌کند.
 - `"non-blocking"`
-  - : The resource does not block rendering.
+  - : منبع رندر را مسدود نمی‌کند.
 
-## Examples
+## مثال‌ها
 
-### Logging resources that block rendering
+### ثبت منابعی که رندر را مسدود می‌کنند
 
-The `renderBlockingStatus` property can be used to see resources that block rendering.
+از ویژگی `renderBlockingStatus` می‌توان برای مشاهده‌ی منابعی که رندر را مسدود می‌کنند استفاده کرد.
 
-Example using a {{domxref("PerformanceObserver")}}, which notifies of new `resource` performance entries as they are recorded in the browser's performance timeline. Use the `buffered` option to access entries from before the observer creation.
+مثال زیر با استفاده از {{domxref("PerformanceObserver")}}، که هنگام ثبت ورودی‌های جدید عملکرد `resource` در جدول زمانی عملکرد مرورگر، آن‌ها را اطلاع‌رسانی می‌کند. از گزینه‌ی `buffered` برای دسترسی به ورودی‌های قبل از ایجاد observer استفاده کنید.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -60,7 +54,7 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "resource", buffered: true });
 ```
 
-Example using {{domxref("Performance.getEntriesByType()")}}, which only shows `resource` performance entries present in the browser's performance timeline at the time you call this method:
+مثال زیر با استفاده از {{domxref("Performance.getEntriesByType()")}}، که فقط ورودی‌های عملکرد `resource` موجود در جدول زمانی عملکرد مرورگر را در زمان فراخوانی این متد نشان می‌دهد:
 
 ```js
 const resources = performance.getEntriesByType("resource");
@@ -71,10 +65,10 @@ resources.forEach((entry) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
