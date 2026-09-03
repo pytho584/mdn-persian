@@ -1,11 +1,5 @@
 ---
 title: "Notification: badge property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Notification/badge"
-status: "needs-translation"
----
-
----
-title: "Notification: badge property"
 short-title: badge
 slug: Web/API/Notification/badge
 page-type: web-api-instance-property
@@ -14,16 +8,16 @@ browser-compat: api.Notification.badge
 
 {{APIRef("Web Notifications")}}{{SecureContext_Header}} {{AvailableInWorkers}}
 
-The **`badge`** read-only property of the {{domxref("Notification")}} interface returns a string containing the URL of an image to represent the notification when there is not enough space to display the notification itself such as for example, the Android Notification Bar. On Android devices, the badge should accommodate devices up to 4x resolution, about 96 by 96 px, and the image will be automatically masked.
+ویژگی فقط‌خواندنی **`badge`** در رابط {{domxref("Notification")}} یک رشته شامل URL تصویری را برمی‌گرداند که برای نمایش اعلان زمانی که فضای کافی برای نمایش خود اعلان وجود ندارد (مثلاً نوار اعلان اندروید) استفاده می‌شود. در دستگاه‌های اندرویدی، نشان باید برای وضوح تصویر تا ۴ برابر، حدود ۹۶ در ۹۶ پیکسل، طراحی شود و تصویر به‌صورت خودکار ماسک می‌شود.
 
-## Value
+## مقدار
 
-A string containing a URL.
+یک رشته شامل URL.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
