@@ -1,11 +1,5 @@
 ---
 title: "PaintWorkletGlobalScope: devicePixelRatio property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaintWorkletGlobalScope/devicePixelRatio"
-status: "needs-translation"
----
-
----
-title: "PaintWorkletGlobalScope: devicePixelRatio property"
 short-title: devicePixelRatio
 slug: Web/API/PaintWorkletGlobalScope/devicePixelRatio
 page-type: web-api-instance-property
@@ -16,21 +10,21 @@ browser-compat: api.PaintWorkletGlobalScope.devicePixelRatio
 
 {{APIRef("CSS Painting API")}}{{SeeCompatTable}}
 
-The **`devicePixelRatio`** read-only property of the {{domxref("PaintWorkletGlobalScope")}} interface returns the current device's ratio of physical pixels to logical pixels.
+ویژگی فقط‌خواندنی **`devicePixelRatio`** در رابط {{domxref("PaintWorkletGlobalScope")}} نسبت پیکسل‌های فیزیکی به پیکسل‌های منطقی دستگاهِ فعلی را بازمی‌گرداند.
 
-## Value
+## مقدار
 
-A double-precision integer.
+یک عدد صحیح با دقت دوگانه.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [CSS.paintWorklet](/en-US/docs/Web/API/CSS/paintWorklet_static)
 - [Worklet](/en-US/docs/Web/API/Worklet)
