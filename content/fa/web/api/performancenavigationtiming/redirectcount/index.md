@@ -1,11 +1,5 @@
 ---
 title: "PerformanceNavigationTiming: redirectCount property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceNavigationTiming/redirectCount"
-status: "needs-translation"
----
-
----
-title: "PerformanceNavigationTiming: redirectCount property"
 short-title: redirectCount
 slug: Web/API/PerformanceNavigationTiming/redirectCount
 page-type: web-api-instance-property
@@ -14,28 +8,28 @@ browser-compat: api.PerformanceNavigationTiming.redirectCount
 
 {{APIRef("Performance API")}}
 
-The **`redirectCount`** read-only property returns a number representing the number of redirects since the last non-redirect navigation in the current browsing context.
+خاصیت فقط‌خواندنی **`redirectCount`** یک عدد را برمی‌گرداند که تعداد ریدایرکت‌ها را از آخرین ناوبری غیر-ریدایرکت در بافت مرور فعلی نشان می‌دهد.
 
-The higher the number of redirects on a page, the longer the page load time. To improve the performance of your web page, avoid multiple redirects.
+هرچه تعداد ریدایرکت‌ها در یک صفحه بیشتر باشد، زمان بارگذاری صفحه طولانی‌تر است. برای بهبود کارایی صفحه وب خود، از ریدایرکت‌های متعدد خودداری کنید.
 
-The {{domxref("PerformanceResourceTiming.redirectStart", "redirectStart")}} and {{domxref("PerformanceResourceTiming.redirectEnd", "redirectEnd")}} properties can be used to measure redirection time. Note that they will return `0` for cross-origin redirects.
+از ویژگی‌های {{domxref("PerformanceResourceTiming.redirectStart", "redirectStart")}} و {{domxref("PerformanceResourceTiming.redirectEnd", "redirectEnd")}} می‌توان برای اندازه‌گیری زمان ریدایرکت استفاده کرد. توجه داشته باشید که این مقادیر برای ریدایرکت‌های متقابل-دامنه (cross-origin) مقدار `0` برمی‌گردانند.
 
-Note that client side redirects, such as `<meta http-equiv="refresh" content="0; url=https://example.com/">` are not considered here.
+توجه داشته باشید که ریدایرکت‌های سمت کلاینت، مانند `<meta http-equiv="refresh" content="0; url=https://example.com/">`، در اینجا در نظر گرفته نمی‌شوند.
 
-## Value
+## مقدار
 
-The `redirectCount` property can have the following values:
+ویژگی `redirectCount` می‌تواند مقادیر زیر را داشته باشد:
 
-- A number representing the number of redirects since the last non-redirect navigation in the current browsing context.
-- `0` if the redirect is cross-origin.
+- یک عدد که تعداد ریدایرکت‌ها را از آخرین ناوبری غیر-ریدایرکت در بافت مرور فعلی نشان می‌دهد.
+- اگر ریدایرکت متقابل-دامنه باشد، مقدار `0`.
 
-## Examples
+## مثال‌ها
 
-### Logging entries with redirects
+### ثبت ورودی‌ها با ریدایرکت‌ها
 
-The `redirectCount` property can be used to check whether there are one or more redirects. We log the entry's name and the redirection time if it is available.
+ویژگی `redirectCount` می‌تواند برای بررسی وجود یک یا چند ریدایرکت استفاده شود. ما نام ورودی و زمان ریدایرکت را در صورت موجود بودن، ثبت می‌کنیم.
 
-Example using a {{domxref("PerformanceObserver")}}, which notifies of new `navigation` performance entries as they are recorded in the browser's performance timeline. Use the `buffered` option to access entries from before the observer creation.
+مثال با استفاده از {{domxref("PerformanceObserver")}}، که با ثبت شدن ورودی‌های جدید عملکرد `navigation` در جدول زمانی عملکرد مرورگر، اطلاع می‌دهد. از گزینه `buffered` برای دسترسی به ورودی‌های قبل از ایجاد observer استفاده کنید.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -55,7 +49,7 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "navigation", buffered: true });
 ```
 
-Example using {{domxref("Performance.getEntriesByType()")}}, which only shows `navigation` performance entries present in the browser's performance timeline at the time you call this method:
+مثال با استفاده از {{domxref("Performance.getEntriesByType()")}}، که فقط ورودی‌های عملکرد `navigation` موجود در جدول زمانی عملکرد مرورگر را در زمان فراخوانی این متد نشان می‌دهد:
 
 ```js
 const entries = performance.getEntriesByType("navigation");
@@ -72,15 +66,15 @@ entries.forEach((entry) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("PerformanceResourceTiming.redirectStart")}}
 - {{domxref("PerformanceResourceTiming.redirectEnd")}}
