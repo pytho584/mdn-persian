@@ -1,7 +1,6 @@
 ---
 title: "OES_vertex_array_object: bindVertexArrayOES() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/OES_vertex_array_object/bindVertexArrayOES"
-status: "needs-translation"
 ---
 
 ---
@@ -14,26 +13,26 @@ browser-compat: api.OES_vertex_array_object.bindVertexArrayOES
 
 {{APIRef("WebGL")}}
 
-The **`OES_vertex_array_object.bindVertexArrayOES()`** method
-of the [WebGL API](/en-US/docs/Web/API/WebGL_API) binds a
-passed {{domxref("WebGLVertexArrayObject")}} object to the buffer.
+متد **`OES_vertex_array_object.bindVertexArrayOES()`** از
+[WebGL API](/en-US/docs/Web/API/WebGL_API) یک شیء
+{{domxref("WebGLVertexArrayObject")}} داده‌شده را به بافر متصل می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 bindVertexArrayOES(arrayObject)
 ```
 
-### Parameters
+### پارامترها
 
 - `arrayObject`
-  - : A {{domxref("WebGLVertexArrayObject")}} (VAO) object to bind.
+  - : یک شیء {{domxref("WebGLVertexArrayObject")}} (VAO) که باید متصل شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
 ```js
 const ext = gl.getExtension("OES_vertex_array_object");
@@ -41,21 +40,21 @@ const vao = ext.createVertexArrayOES();
 ext.bindVertexArrayOES(vao);
 
 // …
-// calls to bindBuffer or vertexAttribPointer
-// which will be "recorded" in the VAO
+// فراخوانی‌های bindBuffer یا vertexAttribPointer
+// که در VAO «ثبت» خواهند شد
 // …
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("WebGLRenderingContext.getExtension()")}}
 - {{domxref("WebGLRenderingContext.vertexAttribPointer()")}}
-- WebGL2 equivalent: {{domxref("WebGL2RenderingContext.bindVertexArray()")}}
+- معادل WebGL2: {{domxref("WebGL2RenderingContext.bindVertexArray()")}}
