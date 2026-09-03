@@ -1,11 +1,5 @@
 ---
 title: "PresentationConnection: id property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnection/id"
-status: "needs-translation"
----
-
----
-title: "PresentationConnection: id property"
 short-title: id
 slug: Web/API/PresentationConnection/id
 page-type: web-api-instance-property
@@ -16,12 +10,12 @@ browser-compat: api.PresentationConnection.id
 
 {{APIRef("Presentation API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`id`** attribute specifies the [presentation identifier](https://www.w3.org/TR/presentation-api/#dfn-presentation-identifier) of a [presentation connection](https://www.w3.org/TR/presentation-api/#dfn-presentation-connection).
+ویژگی **`id`**، [شناسهٔ ارائه](https://www.w3.org/TR/presentation-api/#dfn-presentation-identifier) یک [اتصال ارائه](https://www.w3.org/TR/presentation-api/#dfn-presentation-connection) را مشخص می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
