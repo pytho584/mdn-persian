@@ -1,10 +1,4 @@
 ---
-title: "NotRestoredReasonDetails"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NotRestoredReasonDetails"
-status: "needs-translation"
----
-
----
 title: NotRestoredReasonDetails
 slug: Web/API/NotRestoredReasonDetails
 page-type: web-api-interface
@@ -15,33 +9,33 @@ browser-compat: api.NotRestoredReasonDetails
 
 {{APIRef("Performance API")}}{{SeeCompatTable}}
 
-The **`NotRestoredReasonDetails`** interface of the {{domxref("Performance API", "Performance API", "", "nocode")}} represents a single reason why a navigated page was blocked from using the back/forward cache ({{Glossary("bfcache")}}).
+رابط **`NotRestoredReasonDetails`** از {{domxref("Performance API", "Performance API", "", "nocode")}} یک دلیل خاص برای مسدود شدن یک صفحهٔ مرور شده از استفاده از حافظهٔ نهان بازگشت/پیشرو ({{Glossary("bfcache")}}) را نشان می‌دهد.
 
-An array of `NotRestoredReasonDetails` objects can be accessed via the {{domxref("NotRestoredReasons.reasons")}} property.
+یک آرایه از اشیاء `NotRestoredReasonDetails` از طریق ویژگی {{domxref("NotRestoredReasons.reasons")}} قابل دسترسی است.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("NotRestoredReasonDetails.reason", "reason")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : A string describing a reason that the page was blocked from using the back/forward cache.
+  - : یک رشته که دلیلی را توصیف می‌کند که صفحه از استفاده از حافظهٔ نهان بازگشت/پیشرو مسدود شده است.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("NotRestoredReasonDetails.toJSON", "toJSON()")}} {{Experimental_Inline}}
-  - : A {{Glossary("Serialization","serializer")}}; returns a JSON representation of the `NotRestoredReasonDetails` object.
+  - : یک {{Glossary("Serialization","سریال‌کننده")}}؛ یک نمایش JSON از شیء `NotRestoredReasonDetails` بازمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-See [Monitoring bfcache blocking reasons](/en-US/docs/Web/API/Performance_API/Monitoring_bfcache_blocking_reasons) for examples.
+برای مثال‌ها به [نظارت بر دلایل مسدودسازی bfcache](/en-US/docs/Web/API/Performance_API/Monitoring_bfcache_blocking_reasons) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Monitoring bfcache blocking reasons](/en-US/docs/Web/API/Performance_API/Monitoring_bfcache_blocking_reasons)
+- [نظارت بر دلایل مسدودسازی bfcache](/en-US/docs/Web/API/Performance_API/Monitoring_bfcache_blocking_reasons)
 - {{domxref("PerformanceNavigationTiming.notRestoredReasons")}}
