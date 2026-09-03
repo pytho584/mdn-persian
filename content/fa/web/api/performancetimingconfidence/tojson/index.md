@@ -1,11 +1,5 @@
 ---
 title: "PerformanceTimingConfidence: toJSON() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTimingConfidence/toJSON"
-status: "needs-translation"
----
-
----
-title: "PerformanceTimingConfidence: toJSON() method"
 short-title: toJSON()
 slug: Web/API/PerformanceTimingConfidence/toJSON
 page-type: web-api-instance-method
@@ -16,27 +10,27 @@ browser-compat: api.PerformanceTimingConfidence.toJSON
 
 {{APIRef("Performance API")}}{{SeeCompatTable}}
 
-The **`toJSON()`** method of the {{domxref("PerformanceTimingConfidence")}} interface is a {{Glossary("Serialization","serializer")}} that returns a JSON representation of the {{domxref("PerformanceTimingConfidence")}} object.
+متد **`toJSON()`** در رابط {{domxref("PerformanceTimingConfidence")}} یک {{Glossary("Serialization","serializer")}} (سریال‌ساز) است که بازنمایی JSON از شیء {{domxref("PerformanceTimingConfidence")}} را برمی‌گرداند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 toJSON()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("JSON")}} object that is the serialization of the {{domxref("PerformanceTimingConfidence")}} object.
+یک شیء {{jsxref("JSON")}} که حاصل سریال‌سازیِ شیء {{domxref("PerformanceTimingConfidence")}} است.
 
-## Examples
+## مثال‌ها
 
-### Using the toJSON method
+### استفاده از متد toJSON
 
-This example uses a {{domxref("PerformanceObserver")}} to retrieve a JSON serialization of the confidence data for observed {{domxref("PerformanceNavigationTiming")}} entries.
+این مثال از یک {{domxref("PerformanceObserver")}} برای دریافت سریال‌سازی JSON از داده‌های اطمینانِ ورودی‌های {{domxref("PerformanceNavigationTiming")}} که مشاهده شده‌اند استفاده می‌کند.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -48,7 +42,7 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "navigation", buffered: true });
 ```
 
-This would log a JSON object like so:
+این کار شیء JSON زیر را در کنسول ثبت می‌کند:
 
 ```json
 {
@@ -57,17 +51,17 @@ This would log a JSON object like so:
 }
 ```
 
-To get a JSON string, you can use [`JSON.stringify(entry)`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) directly; it will call `toJSON()` automatically.
+برای دریافت یک رشته‌ی JSON، می‌توانید مستقیماً از [`JSON.stringify(entry)`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) استفاده کنید؛ این تابع به‌طور خودکار `toJSON()` را فراخوانی می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("PerformanceTimingConfidence")}}
 - {{jsxref("JSON")}}
