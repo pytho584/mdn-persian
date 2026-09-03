@@ -1,11 +1,5 @@
 ---
 title: "PerformanceResourceTiming: deliveryType property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceResourceTiming/deliveryType"
-status: "needs-translation"
----
-
----
-title: "PerformanceResourceTiming: deliveryType property"
 short-title: deliveryType
 slug: Web/API/PerformanceResourceTiming/deliveryType
 page-type: web-api-instance-property
@@ -14,26 +8,26 @@ browser-compat: api.PerformanceResourceTiming.deliveryType
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The **`deliveryType`** read-only property is a string indicating how the resource was delivered — for example from the cache or from a navigational prefetch.
+ویژگی فقط‌خواندنی **`deliveryType`** یک رشته است که نحوه تحویل منبع را مشخص می‌کند — برای مثال از حافظه نهان (cache) یا از یک پیش‌واکشی ناوبری (navigational prefetch).
 
-## Value
+## مقدار
 
-A string, which can be one of the following values:
+یک رشته که می‌تواند یکی از مقادیر زیر باشد:
 
 - `"cache"`
-  - : The resource was retrieved from the cache.
+  - : منبع از حافظه نهان (cache) بازیابی شده است.
 - `"navigational-prefetch"` {{experimental_inline}} {{non-standard_inline}}
-  - : The resource was retrieved from a prefetched response stored in an in-memory cache via the [Speculation Rules API](/en-US/docs/Web/API/Speculation_Rules_API).
-- `""` (empty string)
-  - : Returned if none of the above delivery types apply.
+  - : منبع از یک پاسخ پیش‌واکشی شده که در حافظه نهان درون‌حافظه‌ای (in-memory cache) از طریق [API قوانین حدس (Speculation Rules API)](/en-US/docs/Web/API/Speculation_Rules_API) ذخیره شده است، بازیابی شده است.
+- `""` (رشته خالی)
+  - : در صورتی که هیچ‌یک از انواع تحویل فوق اعمال نشوند، بازگردانده می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Filtering resources
+### فیلتر کردن منابع
 
-The `deliveryType` property can be used to get specific resource timing entries only; for example, only those that were cached.
+از ویژگی `deliveryType` می‌توان برای دریافت فقط ورودی‌های زمان‌بندی منبع خاص استفاده کرد؛ برای مثال فقط آن‌هایی که در حافظه نهان ذخیره شده‌اند.
 
-The following example uses a {{domxref("PerformanceObserver")}} to notify of new `resource` performance entries as they are recorded in the browser's performance timeline. The `buffered` option is used for accessing entries from before the observer creation.
+مثال زیر از یک {{domxref("PerformanceObserver")}} استفاده می‌کند تا ورودی‌های عملکرد `resource` جدید را هنگام ثبت در خط زمانی عملکرد مرورگر اعلام کند. گزینه `buffered` برای دسترسی به ورودی‌های قبل از ایجاد ناظر استفاده می‌شود.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -46,7 +40,7 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "resource", buffered: true });
 ```
 
-The following example uses {{domxref("Performance.getEntriesByType()")}}, which only shows `resource` performance entries present in the browser's performance timeline at the time you call the method.
+مثال زیر از {{domxref("Performance.getEntriesByType()")}} استفاده می‌کند که فقط ورودی‌های عملکرد `resource` موجود در خط زمانی عملکرد مرورگر را در زمان فراخوانی متد نشان می‌دهد.
 
 ```js
 const scripts = performance
@@ -55,10 +49,10 @@ const scripts = performance
 console.log(scripts);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
