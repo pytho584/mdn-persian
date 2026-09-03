@@ -1,11 +1,5 @@
 ---
 title: "Node: lookupNamespaceURI() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Node/lookupNamespaceURI"
-status: "needs-translation"
----
-
----
-title: "Node: lookupNamespaceURI() method"
 short-title: lookupNamespaceURI()
 slug: Web/API/Node/lookupNamespaceURI
 page-type: web-api-instance-method
@@ -14,9 +8,7 @@ browser-compat: api.Node.lookupNamespaceURI
 
 {{APIRef("DOM")}}
 
-The **`lookupNamespaceURI()`** method of the {{domxref("Node")}} interface
-takes a prefix as parameter and returns the namespace URI associated with it on the given node if found (and
-`null` if not). This method's existence allows `Node` objects to be passed as a namespace resolver to {{domxref("XPathEvaluator.createExpression()")}} and {{domxref("XPathEvaluator.evaluate()")}}.
+می‌توان از متد **`lookupNamespaceURI()`** در رابط {{domxref("Node")}} یک پیشوند (prefix) به عنوان پارامتر دریافت کرد و URI فضای نام مرتبط با آن پیشوند را در گره موردنظر، در صورت یافتن، بازمی‌گرداند (و در صورت عدم یافتن، `null`). وجود این متد باعث می‌شود که اشیاء `Node` بتوانند به عنوان تفکیک‌گر فضای نام به {{domxref("XPathEvaluator.createExpression()")}} و {{domxref("XPathEvaluator.evaluate()")}} ارسال شوند.
 
 ## Syntax
 
@@ -27,24 +19,24 @@ lookupNamespaceURI(prefix)
 ### Parameters
 
 - `prefix`
-  - : The prefix to look for. The empty string is equivalent to `null`, meaning the default namespace.
+  - : پیشوندی که باید جستجو شود. رشتهٔ خالی معادل `null` است و به معنای فضای نام پیش‌فرض می‌باشد.
     > [!NOTE]
-    > This parameter is not optional, but can be set to `null`.
+    > این پارامتر اختیاری نیست، اما می‌توان آن را `null` قرار داد.
 
 ### Return value
 
-A string containing the namespace URI corresponding to the prefix.
+رشته‌ای شامل URI فضای نام متناظر با پیشوند.
 
-- Always returns `null` if the node is a {{domxref("DocumentFragment")}}, {{domxref("DocumentType")}}, {{domxref("Document")}} with no {{domxref("Document/documentElement", "documentElement")}}, or {{domxref("Attr")}} with no associated element.
-- If `prefix` is `"xml"`, the return value is always `"http://www.w3.org/XML/1998/namespace"`.
-- If `prefix` is `"xmlns"`, the return value is always `"http://www.w3.org/2000/xmlns/"`.
-- If the `prefix` is `null`, the return value is the default namespace URI.
-- If the prefix is not found, the return value is `null`.
+- اگر گره یک {{domxref("DocumentFragment")}}، {{domxref("DocumentType")}}، {{domxref("Document")}} بدون {{domxref("Document/documentElement", "documentElement")}}، یا {{domxref("Attr")}} بدون عنصر مرتبط باشد، همیشه `null` برمی‌گرداند.
+- اگر `prefix` برابر با `"xml"` باشد، مقدار بازگشتی همیشه `"http://www.w3.org/XML/1998/namespace"` است.
+- اگر `prefix` برابر با `"xmlns"` باشد، مقدار بازگشتی همیشه `"http://www.w3.org/2000/xmlns/"` است.
+- اگر `prefix` برابر با `null` باشد، مقدار بازگشتی URI فضای نام پیش‌فرض است.
+- اگر پیشوند یافت نشود، مقدار بازگشتی `null` است.
 
 ## Example
 
 > [!NOTE]
-> This example runs in an HTML document, where `xmlns:` attributes are ignored (except `xmlns:xlink`). Firefox sets all elements' namespace URIs to `null`, while Chrome and Safari appropriately set HTML, SVG, and MathML elements' default namespace URIs. If you want to conduct more meaningful tests, you can open a standalone [SVG](/en-US/docs/Web/SVG) document and execute scripts in its context.
+> این مثال در یک سند HTML اجرا می‌شود، جایی که ویژگی‌های `xmlns:` نادیده گرفته می‌شوند (به جز `xmlns:xlink`). فایرفاکس URI فضای نام همهٔ عناصر را `null` قرار می‌دهد، در حالی که کروم و سافاری به‌درستی URI فضای نام پیش‌فرض عناصر HTML، SVG و MathML را تنظیم می‌کنند. اگر می‌خواهید آزمایش‌های معنادارتری انجام دهید، می‌توانید یک سند مستقل [SVG](/en-US/docs/Web/SVG) باز کرده و اسکریپت‌ها را در بافت آن اجرا کنید.
 
 ```html
 <div class="hidden">
