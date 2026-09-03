@@ -1,7 +1,5 @@
 ---
 title: "PerformanceScriptTiming: windowAttribution property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceScriptTiming/windowAttribution"
-status: "needs-translation"
 ---
 
 ---
@@ -16,36 +14,36 @@ browser-compat: api.PerformanceScriptTiming.windowAttribution
 
 {{SeeCompatTable}}{{APIRef("Performance API")}}
 
-The **`windowAttribution`** read-only property of the {{domxref("PerformanceScriptTiming")}} interface returns an enumerated value describing the relationship of the container (i.e., either the top-level document or an {{htmlelement("iframe")}}) in which the long animation frame (LoAF)-causing script was executed, relative to the window running the current document.
+خصوصیت فقطخواندنی **`windowAttribution`** در رابط {{domxref("PerformanceScriptTiming")}} یک مقدار شمارشی (enumerated) برمی‌گرداند که رابطهٔ ظرف (container) را توصیف می‌کند — خواه سند سطح بالا (top-level document) باشد، خواه یک {{htmlelement("iframe")}} — که اسکریپتِ عاملِ فریم انیمیشن طولانی (LoAF) در آن اجرا شده است، نسبت به پنجره‌ای که سند جاری را اجرا می‌کند.
 
-## Value
+## مقدار
 
-An enumerated value, which can be one of:
+یک مقدار شمارشی که می‌تواند یکی از موارد زیر باشد:
 
 - `"ancestor"`
-  - : The current document is a descendant of the document in which the script was executed, embedded inside it in an `<iframe>`.
+  - : سندِ جاری از نوادگان (descendant) سندی است که اسکریپت در آن اجرا شده است؛ یعنی سند جاری درون همان سند و داخل یک `<iframe>` جاسازی شده است.
 - `"descendant"`
-  - : The script was executed in a descendant document embedded inside the current document in an `<iframe>`.
+  - : اسکریپت در سندی از نوادگان (descendant) اجرا شده است که درون سند جاری و داخل یک `<iframe>` جاسازی شده است.
 - `"other"`
-  - : The location of the document the script was executed in could not be determined.
+  - : مکان سندی که اسکریپت در آن اجرا شده است قابل تعیین نبود.
 - `"same-page"`
-  - : The script was executed in a version of the current document embedded within the current document in an `<iframe>`.
+  - : اسکریپت در نسخه‌ای از سند جاری اجرا شده است که درون خودِ سند جاری و در یک `<iframe>` جاسازی شده است.
 - `"self"`
-  - : The script was executed in the current document.
+  - : اسکریپت در سند جاری اجرا شده است.
 
-## Examples
+## مثال‌ها
 
-See [Long animation frame timing](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing#examples) for examples related to the Long Animation Frames API.
+برای نمونه‌های مرتبط با Long Animation Frames API، به [زمان‌بندی فریم انیمیشن طولانی](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Long animation frame timing](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing)
+- [زمان‌بندی فریم انیمیشن طولانی](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing)
 - {{domxref("PerformanceLongAnimationFrameTiming")}}
