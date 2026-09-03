@@ -1,7 +1,6 @@
+```
 ---
 title: "Notification: image property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Notification/image"
-status: "needs-translation"
 ---
 
 ---
@@ -16,23 +15,21 @@ browser-compat: api.Notification.image
 
 {{APIRef("Web Notifications")}}{{SecureContext_Header}}{{SeeCompatTable}} {{AvailableInWorkers}}
 
-The **`image`** read-only property of the
-{{domxref("Notification")}} interface contains the URL of an image to be displayed as
-part of the notification, as specified in the `image` option of the
-{{domxref("Notification.Notification","Notification()")}} constructor.
+ویژگی فقطخواندنیِ **`image`** از رابط {{domxref("Notification")}}، شامل URL تصویری است که به‌عنوان بخشی از اعلان نمایش داده می‌شود و در گزینهٔ `image` سازندهٔ {{domxref("Notification.Notification","Notification()")}} مشخص شده است.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Notifications API](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
+- [استفاده از API اعلان‌ها](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
+```
