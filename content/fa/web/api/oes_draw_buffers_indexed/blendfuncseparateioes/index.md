@@ -1,11 +1,5 @@
 ---
 title: "OES_draw_buffers_indexed: blendFuncSeparateiOES() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/OES_draw_buffers_indexed/blendFuncSeparateiOES"
-status: "needs-translation"
----
-
----
-title: "OES_draw_buffers_indexed: blendFuncSeparateiOES() method"
 short-title: blendFuncSeparateiOES()
 slug: Web/API/OES_draw_buffers_indexed/blendFuncSeparateiOES
 page-type: web-api-instance-method
@@ -14,44 +8,44 @@ browser-compat: api.OES_draw_buffers_indexed.blendFuncSeparateiOES
 
 {{APIRef("WebGL")}}
 
-The `blendFuncSeparateiOES()` method of the {{DOMxRef("OES_draw_buffers_indexed")}} WebGL extension defines which function is used when blending pixels for RGB and alpha components separately for a particular draw buffer.
+متد `blendFuncSeparateiOES()` از افزونهٔ WebGL با نام {{DOMxRef("OES_draw_buffers_indexed")}} مشخص می‌کند که برای یک بافر ترسیمی خاص، هنگام ترکیب پیکسل‌ها برای اجزای RGB و آلفا به‌طور جداگانه از چه تابعی استفاده شود.
 
-See {{DOMxRef("OES_draw_buffers_indexed.blendFunciOES()")}} for setting RGB and alpha together and {{DOMxRef("WebGLRenderingContext.blendFuncSeparate()")}} for the WebGL 1 version of this method.
+برای تنظیم همزمان RGB و آلفا، به {{DOMxRef("OES_draw_buffers_indexed.blendFunciOES()")}} و برای نسخهٔ WebGL 1 این متد، به {{DOMxRef("WebGLRenderingContext.blendFuncSeparate()")}} مراجعه کنید.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 blendFuncSeparateiOES(buf, srcRGB, dstRGB, srcAlpha, dstAlpha)
 ```
 
-### Parameters
+### پارامترها
 
 - `buf`
-  - : An integer `i` specifying the draw buffer associated with the constant `gl.DRAW_BUFFERi`, see [WebGL draw buffer constants](/en-US/docs/Web/API/WebGL_API/Constants#draw_buffers).
+  - : یک عدد صحیح `i` که بافر ترسیمی مرتبط با ثابت `gl.DRAW_BUFFERi` را مشخص می‌کند؛ به [ثابت‌های بافر ترسیمی WebGL](/en-US/docs/Web/API/WebGL_API/Constants#draw_buffers) مراجعه کنید.
 - `srcRGB`
-  - : A {{domxref("WebGL_API/Types", "GLenum")}} specifying a multiplier for the red, green and blue (RGB) source blending factors. Accepts the same enums as the `srcRGB` parameter in {{DOMxRef("WebGLRenderingContext.blendFuncSeparate()")}}.
+  - : یک {{domxref("WebGL_API/Types", "GLenum")}} که ضریب عوامل ترکیب مبدأ برای رنگ‌های قرمز، سبز و آبی (RGB) را مشخص می‌کند. همان enumهایی را می‌پذیرد که پارامتر `srcRGB` در {{DOMxRef("WebGLRenderingContext.blendFuncSeparate()")}} می‌پذیرد.
 - `dstRGB`
-  - : A {{domxref("WebGL_API/Types", "GLenum")}} specifying a multiplier for the red, green and blue (RGB) destination blending factors. Accepts the same enums as the `dstRGB` parameter in {{DOMxRef("WebGLRenderingContext.blendFuncSeparate()")}}.
+  - : یک {{domxref("WebGL_API/Types", "GLenum")}} که ضریب عوامل ترکیب مقصد برای رنگ‌های قرمز، سبز و آبی (RGB) را مشخص می‌کند. همان enumهایی را می‌پذیرد که پارامتر `dstRGB` در {{DOMxRef("WebGLRenderingContext.blendFuncSeparate()")}} می‌پذیرد.
 - `srcAlpha`
-  - : A {{domxref("WebGL_API/Types", "GLenum")}} specifying a multiplier for the alpha source blending factor. Accepts the same enums as the `srcAlpha` parameter in {{DOMxRef("WebGLRenderingContext.blendFuncSeparate()")}}.
+  - : یک {{domxref("WebGL_API/Types", "GLenum")}} که ضریب عامل ترکیب مبدأ برای آلفا را مشخص می‌کند. همان enumهایی را می‌پذیرد که پارامتر `srcAlpha` در {{DOMxRef("WebGLRenderingContext.blendFuncSeparate()")}} می‌پذیرد.
 - `dstAlpha`
-  - : A {{domxref("WebGL_API/Types", "GLenum")}} specifying a multiplier for the alpha destination blending factor. Accepts the same enums as the `srcAlpha` parameter in {{DOMxRef("WebGLRenderingContext.blendFuncSeparate()")}}.
+  - : یک {{domxref("WebGL_API/Types", "GLenum")}} که ضریب عامل ترکیب مقصد برای آلفا را مشخص می‌کند. همان enumهایی را می‌پذیرد که پارامتر `srcAlpha` در {{DOMxRef("WebGLRenderingContext.blendFuncSeparate()")}} می‌پذیرد.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
-- If `buf` is not a valid value, a `gl.INVALID_VALUE` error is thrown.
-- If `srcRGB`, `dstRGB`, `srcAlpha` or `dstAlpha` are not one of the possible values, a `gl.INVALID_ENUM` error is thrown.
-- The same blending limitations as for {{DOMxRef("WebGLRenderingContext.blendFuncSeparate()")}} apply: If a constant color and a constant alpha value are used together as source and destination factors, a `gl.INVALID_ENUM` error is thrown.
+- اگر `buf` مقدار معتبری نباشد، خطای `gl.INVALID_VALUE` پرتاب می‌شود.
+- اگر `srcRGB`، `dstRGB`، `srcAlpha` یا `dstAlpha` یکی از مقادیر ممکن نباشند، خطای `gl.INVALID_ENUM` پرتاب می‌شود.
+- همان محدودیت‌های ترکیب که برای {{DOMxRef("WebGLRenderingContext.blendFuncSeparate()")}} وجود دارد اعمال می‌شود: اگر یک رنگ ثابت و یک مقدار آلفای ثابت با هم به عنوان عوامل مبدأ و مقصد استفاده شوند، خطای `gl.INVALID_ENUM` پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Setting and getting blend functions
+### تنظیم و دریافت توابع ترکیب
 
-The following sets the blend functions for the draw buffers `gl.DRAW_BUFFER0` (call where `buf` is 0) and `gl.DRAW_BUFFER1` (call where `buf` is 1).
+در ادامه، توابع ترکیب برای بافرهای ترسیمی `gl.DRAW_BUFFER0` (فراخوانی با `buf` برابر 0) و `gl.DRAW_BUFFER1` (فراخوانی با `buf` برابر 1) تنظیم می‌شوند.
 
 ```js
 const ext = gl.getExtension("OES_draw_buffers_indexed");
@@ -66,7 +60,7 @@ ext.blendFuncSeparateiOES(
 );
 ```
 
-To get the blend functions for the `gl.DRAW_BUFFER0` and `gl.DRAW_BUFFER1` draw buffers, query the `BLEND_SRC_RGB`, `BLEND_SRC_ALPHA`, `BLEND_DST_RGB`, and `BLEND_DST_ALPHA` constants using {{domxref("WebGL2RenderingContext.getIndexedParameter()")}}:
+برای دریافت توابع ترکیب مربوط به بافرهای ترسیمی `gl.DRAW_BUFFER0` و `gl.DRAW_BUFFER1`، ثابت‌های `BLEND_SRC_RGB`، `BLEND_SRC_ALPHA`، `BLEND_DST_RGB` و `BLEND_DST_ALPHA` را با استفاده از {{domxref("WebGL2RenderingContext.getIndexedParameter()")}} پرس‌وجو کنید:
 
 ```js
 // For gl.DRAW_BUFFER0
@@ -82,15 +76,15 @@ gl.getIndexedParameter(gl.BLEND_DST_RGB, 1);
 gl.getIndexedParameter(gl.BLEND_DST_ALPHA, 1);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{DOMxRef("OES_draw_buffers_indexed.blendFunciOES()")}}
 - {{DOMxRef("WebGLRenderingContext.blendFuncSeparate()")}}
