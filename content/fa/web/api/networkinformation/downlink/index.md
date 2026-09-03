@@ -1,11 +1,5 @@
 ---
 title: "NetworkInformation: downlink property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation/downlink"
-status: "needs-translation"
----
-
----
-title: "NetworkInformation: downlink property"
 short-title: downlink
 slug: Web/API/NetworkInformation/downlink
 page-type: web-api-instance-property
@@ -14,26 +8,20 @@ browser-compat: api.NetworkInformation.downlink
 
 {{APIRef("Network Information API")}} {{AvailableInWorkers}}
 
-The **`downlink`** read-only property of the
-{{domxref("NetworkInformation")}} interface returns the effective bandwidth estimate in
-megabits per second, rounded to the nearest multiple of 25 kilobits per seconds. This
-value is based on recently observed application layer throughput across recently active
-connections, excluding connections made to a private address space. In the absence of
-recent bandwidth measurement data, the attribute value is determined by the properties
-of the underlying connection technology.
+ویژگی فقط‌خواندنی **`downlink`** در رابط {{domxref("NetworkInformation")}} تخمین پهنای باند مؤثر را بر حسب مگابیت بر ثانیه برمی‌گرداند، که به نزدیک‌ترین مضرب ۲۵ کیلوبیت بر ثانیه گرد شده است. این مقدار بر اساس توان عملیاتی لایه کاربردی است که اخیراً در اتصالات فعال مشاهده شده است، به استثنای اتصالاتی که به فضای آدرس خصوصی برقرار شده‌اند. در نبود داده‌های اخیر اندازه‌گیری پهنای باند، مقدار این ویژگی توسط ویژگی‌های فناوری اتصال زیرین تعیین می‌شود.
 
-## Value
+## مقدار
 
-A number.
+یک عدد (number).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTTPHeader("Downlink")}}
