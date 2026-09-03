@@ -1,11 +1,5 @@
 ---
 title: "PublicKeyCredential: getClientCapabilities() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredential/getClientCapabilities_static"
-status: "needs-translation"
----
-
----
-title: "PublicKeyCredential: getClientCapabilities() static method"
 short-title: getClientCapabilities()
 slug: Web/API/PublicKeyCredential/getClientCapabilities_static
 page-type: web-api-static-method
@@ -14,9 +8,9 @@ browser-compat: api.PublicKeyCredential.getClientCapabilities_static
 
 {{APIRef("Web Authentication API")}}{{securecontext_header}}
 
-The **`getClientCapabilities()`** static method of the {{domxref("PublicKeyCredential")}} interface returns a {{jsxref("Promise")}} that resolves with an object that can be used to check whether or not particular WebAuthn client capabilities and [extensions](/en-US/docs/Web/API/Web_Authentication_API/WebAuthn_extensions) are supported.
+متد ایستای **`getClientCapabilities()`** از رابط {{domxref("PublicKeyCredential")}} یک {{jsxref("Promise")}} برمی‌گرداند که با یک شیء resolve می‌شود و می‌توان از آن برای بررسی پشتیبانی یا عدم پشتیبانی از قابلیت‌های خاص کلاینت WebAuthn و [افزونه‌ها](/en-US/docs/Web/API/Web_Authentication_API/WebAuthn_extensions) استفاده کرد.
 
-A relying party (RP) can use this information to appropriately customize its sign-in and sign-up user interfaces and workflows.
+یک طرف اتکا (relying party یا RP) می‌تواند از این اطلاعات استفاده کند تا رابط‌های کاربری و فرایندهای ورود و ثبت‌نام خود را به‌شکل مناسبی سفارشی کند.
 
 ## Syntax
 
@@ -26,74 +20,57 @@ PublicKeyCredential.getClientCapabilities()
 
 ### Parameters
 
-None.
+هیچ.
 
 ### Return value
 
-A {{jsxref("Promise")}} that resolves to an object where the property names are the client capability strings, and the values are boolean values that indicate whether or not the corresponding capability or extension is supported.
+یک {{jsxref("Promise")}} که به شیءای resolve می‌شود؛ نام ویژگی‌های این شیء رشته‌های قابلیت کلاینت هستند و مقادیر آن‌ها بولین‌هایی هستند که نشان می‌دهند قابلیت یا افزونهٔ مربوطه پشتیبانی می‌شود یا خیر.
 
-The WebAuthn client capability strings are:
+رشته‌های قابلیت کلاینت WebAuthn عبارت‌اند از:
 
 - `"conditionalCreate"`
-  - : The client is capable of creating [discoverable credentials](/en-US/docs/Web/API/Web_Authentication_API#discoverable_and_non-discoverable_credentials).
+  - : کلاینت قادر به ایجاد [اعتبارنامه‌های قابل‌کشف](/en-US/docs/Web/API/Web_Authentication_API#discoverable_and_non-discoverable_credentials) است.
 - `"conditionalGet"`
-  - : The client is capable of [conditional mediation](/en-US/docs/Web/API/Web_Authentication_API#autofill_ui).
-    This capability is equivalent to [`isConditionalMediationAvailable()`](/en-US/docs/Web/API/PublicKeyCredential/isConditionalMediationAvailable_static) resolving to `true`.
+  - : کلاینت از [میانجیگری شرطی](/en-US/docs/Web/API/Web_Authentication_API#autofill_ui) پشتیبانی می‌کند. این قابلیت معادل این است که [`isConditionalMediationAvailable()`](/en-US/docs/Web/API/PublicKeyCredential/isConditionalMediationAvailable_static) با مقدار `true` resolve شود.
 - `"hybridTransport"`
-  - : The client supports usage of the [hybrid](/en-US/docs/Web/API/AuthenticatorAttestationResponse/getTransports#hybrid) transport.
-    This means that the client can use authenticators that rely on Bluetooth, NFC, or USB.
+  - : کلاینت استفاده از ترابرد [هیبرید](/en-US/docs/Web/API/AuthenticatorAttestationResponse/getTransports#hybrid) را پشتیبانی می‌کند. این به آن معناست که کلاینت می‌تواند از احرازکننده‌هایی استفاده کند که به بلوتوث، NFC یا USB متکی هستند.
 - `"passkeyPlatformAuthenticator"`
-  - : The client allows usage of a passkey authenticator that supports {{glossary("multi-factor authentication")}} mechanisms such as a PIN or biometric check.
-    The authenticator can be part of the same platform (device) as the client, or connected via a hybrid transport such as Bluetooth or USB.
-    The credentials are stored on the authenticator.
-    See [Passkeys developer guide for relying parties](https://developers.google.com/identity/passkeys/developer-guides).
+  - : کلاینت امکان استفاده از یک احرازکنندهٔ passkey را فراهم می‌کند که از سازوکارهای {{glossary("multi-factor authentication")}} مانند PIN یا بررسی زیست‌سنجی پشتیبانی می‌کند. این احرازکننده می‌تواند بخشی از همان پلتفرم (دستگاه) کلاینت باشد یا از طریق یک ترابرد هیبرید مانند بلوتوث یا USB متصل شود. اعتبارنامه‌ها روی احرازکننده ذخیره می‌شوند. به [راهنمای توسعه‌دهندگان passkey برای طرف‌های اتکا](https://developers.google.com/identity/passkeys/developer-guides) مراجعه کنید.
 - `userVerifyingPlatformAuthenticator`
-  - : The client has a platform authenticator (part of the same device) that supports {{glossary("multi-factor authentication")}} mechanisms, such as a PIN or biometric check.
-    The credentials may be stored on either the RP or the authenticator.
+  - : کلاینت یک احرازکنندهٔ پلتفرمی (بخشی از همان دستگاه) دارد که از سازوکارهای {{glossary("multi-factor authentication")}} مانند PIN یا بررسی زیست‌سنجی پشتیبانی می‌کند. اعتبارنامه‌ها ممکن است روی RP یا روی احرازکننده ذخیره شوند.
 - `relatedOrigins`
-  - : The client supports [Related Origin Requests](https://web.dev/articles/webauthn-related-origin-requests).
-    These clients allow a passkey to be used across multiple sites that have the same origin.
+  - : کلاینت از [درخواست‌های مبدأ مرتبط](https://web.dev/articles/webauthn-related-origin-requests) پشتیبانی می‌کند. این کلاینت‌ها اجازه می‌دهند از یک passkey در چندین سایتی که مبدأ یکسانی دارند استفاده شود.
 - `signalAllAcceptedCredentials`
-  - : The client supports the [`PublicKeyCredential.signalAllAcceptedCredentials()`](/en-US/docs/Web/API/PublicKeyCredential/signalAllAcceptedCredentials_static) static method.
-    If not supported, RP workflows will need to prompt the user to manually delete credentials on the authenticator.
+  - : کلاینت از متد ایستای [`PublicKeyCredential.signalAllAcceptedCredentials()`](/en-US/docs/Web/API/PublicKeyCredential/signalAllAcceptedCredentials_static) پشتیبانی می‌کند. اگر پشتیبانی نشود، فرایندهای RP باید از کاربر بخواهند که اعتبارنامه‌ها را به‌صورت دستی روی احرازکننده حذف کند.
 - `signalCurrentUserDetails`
-  - : The client supports the [`PublicKeyCredential.signalCurrentUserDetails()`](/en-US/docs/Web/API/PublicKeyCredential/signalCurrentUserDetails_static) static method.
-    If not supported, RP workflows will need to prompt the user to manually update user details on the authenticator.
+  - : کلاینت از متد ایستای [`PublicKeyCredential.signalCurrentUserDetails()`](/en-US/docs/Web/API/PublicKeyCredential/signalCurrentUserDetails_static) پشتیبانی می‌کند. اگر پشتیبانی نشود، فرایندهای RP باید از کاربر بخواهند که جزئیات کاربر را به‌صورت دستی روی احرازکننده به‌روزرسانی کند.
 - `signalUnknownCredential`
-  - : The client supports the [`PublicKeyCredential.signalUnknownCredential()`](/en-US/docs/Web/API/PublicKeyCredential/signalUnknownCredential_static) static method.
-    If not supported, RP workflows will need to prompt the user to manually delete credentials from the authenticator.
+  - : کلاینت از متد ایستای [`PublicKeyCredential.signalUnknownCredential()`](/en-US/docs/Web/API/PublicKeyCredential/signalUnknownCredential_static) پشتیبانی می‌کند. اگر پشتیبانی نشود، فرایندهای RP باید از کاربر بخواهند که اعتبارنامه‌ها را به‌صورت دستی از احرازکننده حذف کند.
 
-The [web extension](/en-US/docs/Web/API/Web_Authentication_API/WebAuthn_extensions) strings are formatted by prefixing the [extension identifier](/en-US/docs/Web/API/Web_Authentication_API/WebAuthn_extensions#available_extensions) with the prefix `extension:`.
-For example, the key `extension:appid` can be used to check if the [`appid` extension](/en-US/docs/Web/API/Web_Authentication_API/WebAuthn_extensions#appid) is supported.
+رشته‌های مربوط به [افزونه‌های وب](/en-US/docs/Web/API/Web_Authentication_API/WebAuthn_extensions) با افزودن پیشوند `extension:` به [شناسهٔ افزونه](/en-US/docs/Web/API/Web_Authentication_API/WebAuthn_extensions#available_extensions) قالب‌بندی می‌شوند. برای مثال، برای بررسی پشتیبانی از [افزونهٔ `appid`](/en-US/docs/Web/API/Web_Authentication_API/WebAuthn_extensions#appid) می‌توان از کلید `extension:appid` استفاده کرد.
 
 ### Exceptions
 
-The returned {{jsxref("Promise")}} may be rejected with the following values:
+{{jsxref("Promise")}} بازگشتی ممکن است با مقادیر زیر رد شود:
 
 - `SecurityError` {{domxref("DOMException")}}
-  - : The RP domain is not valid.
+  - : دامنهٔ طرف اتکا (RP) معتبر نیست.
 
 ## Description
 
-`getClientCapabilities()` allows you to check if a given capability or extension is supported, and use the information to offer an appropriate user experience.
+`getClientCapabilities()` به شما امکان می‌دهد بررسی کنید که آیا یک قابلیت یا افزونهٔ مشخص پشتیبانی می‌شود یا خیر و از این اطلاعات برای ارائهٔ تجربهٔ کاربری مناسب استفاده کنید.
 
-For example, support for the `userVerifyingPlatformAuthenticator` capability indicates that biometrics such as a fingerprint sensor are allowed.
-A web application could use this to display a fingerprint icon if the capability is supported, or a password input if it is not.
-If biometric login is required, then it could instead provide notification that the site cannot authenticate using this browser or device.
-Similarly, `conditionalGet` indicates that the client supports conditional mediation when signing in a user, which means the browser can provide auto-filled discoverable credentials in a login form (for example an autocompleting text field or a drop-down list), along with a sign-in button.
+برای مثال، پشتیبانی از قابلیت `userVerifyingPlatformAuthenticator` نشان می‌دهد که امکانات زیست‌سنجی مانند حسگر اثر انگشت مجاز هستند. یک برنامهٔ وب می‌تواند در صورت پشتیبانی از این قابلیت، آیکون اثر انگشت نمایش دهد و در غیر این صورت، یک فیلد ورود رمز عبور نشان دهد. اگر ورود با زیست‌سنجی ضروری باشد، برنامه می‌تواند به‌جای آن اطلاع‌رسانی کند که این مرورگر یا دستگاه امکان احراز هویت کاربر را در آن سایت ندارد. به‌طور مشابه، `conditionalGet` نشان می‌دهد که کلاینت هنگام ورود کاربر از میانجیگری شرطی پشتیبانی می‌کند؛ یعنی مرورگر می‌تواند اعتبارنامه‌های قابل‌کشف را در فرم ورود (مثلاً در یک فیلد متنی با تکمیل خودکار یا یک فهرست کشویی) به‌صورت خودکار ارائه دهد و در کنار آن‌ها دکمهٔ ورود را نیز نمایش دهد.
 
-If the value of a given capability is present in the returned object, then `true` indicates that the capability is currently supported, and `false` indicates that it is not.
-However, if a key is not present for a particular capability, no assumptions can be made about the availability of the associated feature.
+اگر مقدار یک قابلیت در شیء بازگشتی وجود داشته باشد، `true` به این معناست که آن قابلیت در حال حاضر پشتیبانی می‌شود و `false` به این معناست که پشتیبانی نمی‌شود. با این حال، اگر کلید مربوط به یک قابلیت خاص وجود نداشته باشد، نمی‌توان هیچ فرضی دربارهٔ در دسترس بودن ویژگی مرتبط داشت.
 
-For an extension the assumptions are the same.
-Note though, that even if the extension is supported by the client a particular authenticator may not support that extension, so RPs must not assume that this is a guarantee that the authenticator processing steps for that extension will be performed.
-If the key is not present for an extension, an RP can't assume that the client processing steps for that extension will be carried out by this client, or that the extension will be forwarded to the authenticator.
+برای افزونه‌ها نیز همین قاعده برقرار است. توجه داشته باشید که حتی اگر افزونه‌ای توسط کلاینت پشتیبانی شود، ممکن است یک احرازکنندهٔ خاص از آن افزونه پشتیبانی نکند؛ بنابراین RPها نباید این را تضمینی برای انجام مراحل پردازش سمت احرازکننده برای آن افزونه بدانند. اگر کلید مربوط به یک افزونه وجود نداشته باشد، RP نمی‌تواند فرض کند که مراحل پردازش سمت کلاینت برای آن افزونه توسط این کلاینت انجام می‌شود یا اینکه افزونه به احرازکننده ارسال خواهد شد.
 
 ## Examples
 
-### Check all capabilities
+### بررسی همهٔ قابلیت‌ها
 
-This example shows how to get the capabilities object and iterate its values.
+این مثال نشان می‌دهد که چگونه شیء قابلیت‌ها را دریافت کرده و روی مقادیر آن پیمایش کنید.
 
 ```html hidden
 <pre id="log"></pre>
@@ -118,8 +95,7 @@ function log(text) {
 
 #### JavaScript
 
-First we await `getClientCapabilities()` to get an object containing the capabilities.
-We then iterate the object and log the result (logging code not shown):
+ابتدا منتظر `getClientCapabilities()` می‌مانیم تا شیء حاوی قابلیت‌ها را دریافت کنیم. سپس روی شیء پیمایش می‌کنیم و نتیجه را ثبت می‌کنیم (کد ثبت لاگ در اینجا نمایش داده نشده است):
 
 ```js
 async function checkClientCapabilities() {
@@ -135,7 +111,7 @@ async function checkClientCapabilities() {
 }
 ```
 
-Before calling the function we check that it is defined, and log the result.
+قبل از فراخوانی تابع، بررسی می‌کنیم که تعریف شده باشد و نتیجه را ثبت می‌کنیم.
 
 ```js
 // Call the function to check capabilities.
@@ -152,9 +128,9 @@ if (PublicKeyCredential.getClientCapabilities) {
 
 {{EmbedLiveSample("Check all capabilities", "", "280")}}
 
-### Test for user verifying platform authenticator
+### بررسی احرازکنندهٔ پلتفرمی تأییدکنندهٔ کاربر
 
-This example checks a single capability, `userVerifyingPlatformAuthenticator`. A real application might use the result to configure the user interface.
+این مثال یک قابلیت مشخص، یعنی `userVerifyingPlatformAuthenticator` را بررسی می‌کند. یک برنامهٔ واقعی ممکن است از نتیجه برای پیکربندی رابط کاربری استفاده کند.
 
 ```html hidden
 <pre id="log"></pre>
@@ -179,7 +155,7 @@ function log(text) {
 
 #### JavaScript
 
-The code is similar to the previous example, except that we check a particular returned capability, and we use `try...catch` to catch the case where `getClientCapabilities()` is not supported.
+کد شبیه به مثال قبلی است، با این تفاوت که یک قابلیت مشخصِ بازگشتی را بررسی می‌کنیم و برای مدیریت حالتی که `getClientCapabilities()` پشتیبانی نمی‌شود از `try...catch` استفاده می‌کنیم.
 
 ```js
 checkIsUserVerifyingPlatformAuthenticatorAvailable();
@@ -205,12 +181,11 @@ async function checkIsUserVerifyingPlatformAuthenticatorAvailable() {
 }
 ```
 
-Note that here we log the result of a check.
-In a real application we might update the user interface to show appropriate options for verifying the user.
+توجه کنید که در اینجا نتیجهٔ بررسی را ثبت می‌کنیم. در یک برنامهٔ واقعی، ممکن است رابط کاربری را به‌روزرسانی کنیم تا گزینه‌های مناسب برای تأیید هویت کاربر نمایش داده شود.
 
 #### Result
 
-The log below displays either a string indicating the method is not supported, or one that indicates whether biometric or password login is supported.
+گزارش زیر یا رشته‌ای را نشان می‌دهد که بیانگر پشتیبانی نشدن این متد است، یا رشته‌ای که مشخص می‌کند ورود با زیست‌سنجی یا رمز عبور پشتیبانی می‌شود.
 
 {{EmbedLiveSample("Test for user verifying platform authenticator", "", "90")}}
 
