@@ -1,11 +1,5 @@
 ---
 title: "NDEFReadingEvent: message property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NDEFReadingEvent/message"
-status: "needs-translation"
----
-
----
-title: "NDEFReadingEvent: message property"
 short-title: message
 slug: Web/API/NDEFReadingEvent/message
 page-type: web-api-instance-property
@@ -16,15 +10,15 @@ browser-compat: api.NDEFReadingEvent.message
 
 {{APIRef("Web NFC API")}}{{securecontext_header}}{{SeeCompatTable}}
 
-The **`message`** property of the {{domxref("NDEFReadingEvent")}} interface returns an {{DOMxRef("NDEFMessage")}} object containing the received message.
+ویژگی **`message`** از رابط {{domxref("NDEFReadingEvent")}} یک شیء {{DOMxRef("NDEFMessage")}} شامل پیام دریافت‌شده را برمی‌گرداند.
 
-## Value
+## مقدار
 
-An {{domxref("NDEFMessage")}} object.
+یک شیء {{domxref("NDEFMessage")}}.
 
-## Examples
+## مثال‌ها
 
-This example shows how to create a convenience function that reads a single tag and then stops polling, saving battery life by cutting unneeded work. The example could easily be extended to time out after a given amount of milliseconds.
+این مثال نحوه ایجاد یک تابع کمکی را نشان می‌دهد که یک تگ را می‌خواند و سپس polling را متوقف می‌کند و با حذف کارهای غیرضروری، عمر باتری را حفظ می‌کند. این مثال به راحتی می‌تواند برای زمان‌بندی پس از مدت مشخصی (به میلی‌ثانیه) گسترش یابد.
 
 ```js
 const ndefReader = new NDEFReader();
@@ -50,10 +44,10 @@ read().then(({ serialNumber }) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
