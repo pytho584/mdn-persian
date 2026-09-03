@@ -1,11 +1,5 @@
 ---
 title: "PerformanceTiming: domainLookupEnd property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/domainLookupEnd"
-status: "needs-translation"
----
-
----
-title: "PerformanceTiming: domainLookupEnd property"
 short-title: domainLookupEnd
 slug: Web/API/PerformanceTiming/domainLookupEnd
 page-type: web-api-instance-property
@@ -17,28 +11,22 @@ browser-compat: api.PerformanceTiming.domainLookupEnd
 {{APIRef("Performance API")}}{{Deprecated_Header}}
 
 > [!WARNING]
-> This interface of this property is deprecated in the [Navigation Timing Level 2 specification](https://w3c.github.io/navigation-timing/#obsolete). Please use the {{domxref("PerformanceNavigationTiming")}}
-> interface instead.
+> این ویژگی از این رابط در [نسخهٔ دوم مشخصات Navigation Timing](https://w3c.github.io/navigation-timing/#obsolete) منسوخ شده است. لطفاً به‌جای آن از رابط {{domxref("PerformanceNavigationTiming")}} استفاده کنید.
 
-The legacy
-**`PerformanceTiming.domainLookupEnd`**
-read-only property returns an `unsigned long long` representing the moment,
-in milliseconds since the UNIX epoch, where the domain lookup is finished. If a
-persistent connection is used, or the information is stored in a cache or a local
-resource, the value will be the same as {{domxref("PerformanceTiming.fetchStart")}}.
+ویژگی فقط‌خواندنیِ قدیمی **`PerformanceTiming.domainLookupEnd`** یک `unsigned long long` برمی‌گرداند که لحظهٔ پایان جستجوی دامنه را بر حسب میلی‌ثانیه از مبدأ یونیکس (UNIX epoch) نشان می‌دهد. اگر از اتصال پایدار استفاده شود، یا اطلاعات در حافظهٔ پنهان (cache) یا یک منبع محلی ذخیره شده باشد، مقدار آن با {{domxref("PerformanceTiming.fetchStart")}} یکسان خواهد بود.
 
-## Value
+## مقدار
 
-An `unsigned long long`.
+یک `unsigned long long`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- The {{domxref("PerformanceTiming")}} interface it belongs to.
+- رابط {{domxref("PerformanceTiming")}} که این ویژگی به آن تعلق دارد.
