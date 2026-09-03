@@ -1,11 +1,5 @@
 ---
 title: "PaymentResponse"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse"
-status: "needs-translation"
----
-
----
-title: PaymentResponse
 slug: Web/API/PaymentResponse
 page-type: web-api-interface
 browser-compat: api.PaymentResponse
@@ -13,49 +7,49 @@ browser-compat: api.PaymentResponse
 
 {{SecureContext_Header}}{{APIRef("Payment Request API")}}
 
-The **`PaymentResponse`** interface of the [Payment Request API](/en-US/docs/Web/API/Payment_Request_API) is returned after a user selects a payment method and approves a payment request.
+رابط **`PaymentResponse`** از [Payment Request API](/en-US/docs/Web/API/Payment_Request_API) پس از آن که کاربر یک روش پرداخت را انتخاب کرد و درخواست پرداخت را تأیید کرد، بازگردانده می‌شود.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref('PaymentResponse.details')}} {{ReadOnlyInline}}
-  - : Returns a JSON-serializable object that provides a payment method specific message used by the merchant to process the transaction and determine successful fund transfer. The contents of the object depend on the payment method being used. Developers need to consult whomever controls the URL for the expected shape of the details object.
+  - : یک شیء قابل سریال‌سازی به JSON بازمی‌گرداند که یک پیام خاص روش پرداخت را ارائه می‌دهد و توسط فروشنده برای پردازش تراکنش و تعیین موفقیت انتقال وجه استفاده می‌شود. محتویات این شیء به روش پرداخت مورد استفاده بستگی دارد. توسعه‌دهندگان باید با شخصی که URL را کنترل می‌کند، برای شکل مورد انتظار شیء جزئیات مشورت کنند.
 - {{domxref('PaymentResponse.methodName')}} {{ReadOnlyInline}}
-  - : Returns the payment method identifier for the payment method that the user selected, for example, Visa, Mastercard, PayPal, etc.
+  - : شناسه روش پرداخت برای روش پرداختی که کاربر انتخاب کرده است را بازمی‌گرداند، به عنوان مثال Visa، Mastercard، PayPal و غیره.
 - {{domxref('PaymentResponse.payerEmail')}} {{ReadOnlyInline}}
-  - : Returns the email address supplied by the user. This option is only present when the `requestPayerEmail` option is set to `true` in the `options` parameter of the {{domxref('PaymentRequest.PaymentRequest','PaymentRequest()')}} constructor.
+  - : آدرس ایمیلی که کاربر ارائه داده است را بازمی‌گرداند. این گزینه تنها زمانی وجود دارد که گزینه `requestPayerEmail` در پارامتر `options` سازنده {{domxref('PaymentRequest.PaymentRequest','PaymentRequest()')}} برابر با `true` تنظیم شده باشد.
 - {{domxref('PaymentResponse.payerName')}} {{ReadOnlyInline}}
-  - : Returns the name supplied by the user. This option is only present when the `requestPayerName` option is set to true in the `options` parameter of the {{domxref('PaymentRequest.PaymentRequest','PaymentRequest()')}} constructor.
+  - : نامی که کاربر ارائه داده است را بازمی‌گرداند. این گزینه تنها زمانی وجود دارد که گزینه `requestPayerName` در پارامتر `options` سازنده {{domxref('PaymentRequest.PaymentRequest','PaymentRequest()')}} برابر با `true` تنظیم شده باشد.
 - {{domxref('PaymentResponse.payerPhone')}} {{ReadOnlyInline}}
-  - : Returns the phone number supplied by the user. This option is only present when the `requestPayerPhone` option is set to `true` in the `options` parameter of the {{domxref('PaymentRequest.PaymentRequest','PaymentRequest()')}} constructor.
+  - : شماره تلفنی که کاربر ارائه داده است را بازمی‌گرداند. این گزینه تنها زمانی وجود دارد که گزینه `requestPayerPhone` در پارامتر `options` سازنده {{domxref('PaymentRequest.PaymentRequest','PaymentRequest()')}} برابر با `true` تنظیم شده باشد.
 - {{domxref('PaymentResponse.requestId')}} {{ReadOnlyInline}}
-  - : Returns the identifier of the {{domxref('PaymentRequest')}} that produced the current response. This is the same value supplied in the {{domxref('PaymentRequest.PaymentRequest','PaymentRequest()')}} constructor by `details.id`.
+  - : شناسه {{domxref('PaymentRequest')}} که پاسخ فعلی را تولید کرده است بازمی‌گرداند. این همان مقداری است که در سازنده {{domxref('PaymentRequest.PaymentRequest','PaymentRequest()')}} توسط `details.id` ارائه شده است.
 - {{domxref('PaymentResponse.shippingAddress')}} {{ReadOnlyInline}}
-  - : Returns the shipping Address supplied by the user. This option is only present when the `requestShipping` option is set to `true` in the `options` parameter of the {{domxref('PaymentRequest.PaymentRequest','PaymentRequest()')}} constructor.
+  - : آدرس حمل و نقلی که کاربر ارائه داده است را بازمی‌گرداند. این گزینه تنها زمانی وجود دارد که گزینه `requestShipping` در پارامتر `options` سازنده {{domxref('PaymentRequest.PaymentRequest','PaymentRequest()')}} برابر با `true` تنظیم شده باشد.
 - {{domxref('PaymentResponse.shippingOption')}} {{ReadOnlyInline}}
-  - : Returns the ID attribute of the shipping option selected by the user. This option is only present when the `requestShipping` option is set to `true` in the `options` parameter of the {{domxref('PaymentRequest.PaymentRequest','PaymentRequest()')}} constructor.
+  - : ویژگی ID گزینه حمل و نقلی که کاربر انتخاب کرده است را بازمی‌گرداند. این گزینه تنها زمانی وجود دارد که گزینه `requestShipping` در پارامتر `options` سازنده {{domxref('PaymentRequest.PaymentRequest','PaymentRequest()')}} برابر با `true` تنظیم شده باشد.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref('PaymentResponse.retry()')}}
-  - : If something is wrong with the payment response's data (and there is a recoverable error), this method allows a merchant to request that the user retry the payment. The method takes an object as argument, which is used to signal to the user exactly what is wrong with the payment response so they can try to correct any issues.
+  - : اگر مشکلی در داده‌های پاسخ پرداخت وجود داشته باشد (و خطا قابل بازیابی باشد)، این روش به فروشنده اجازه می‌دهد از کاربر بخواهد پرداخت را دوباره امتحان کند. این روش یک شیء به عنوان آرگومان می‌گیرد که برای اطلاع دقیق کاربر از مشکل موجود در پاسخ پرداخت استفاده می‌شود تا بتواند سعی در رفع مشکلات کند.
 - {{domxref('PaymentResponse.complete()')}}
-  - : Notifies the user agent that the user interaction is over. This causes any remaining user interface to be closed. This method should only be called after the Promise returned by the {{domxref('PaymentRequest.show()')}} method.
+  - : به عامل کاربر اطلاع می‌دهد که تعامل کاربر به پایان رسیده است. این کار باعث بسته شدن هر رابط کاربری باقی‌مانده می‌شود. این روش فقط پس از حل شدن Promise بازگردانده شده توسط روش {{domxref('PaymentRequest.show()')}} باید فراخوانی شود.
 - {{domxref("PaymentResponse.toJSON()")}}
-  - : Returns a [JSON object](/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON) representing this `PaymentResponse` object.
+  - : یک [شیء JSON](/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON) بازمی‌گرداند که نمایانگر این شیء `PaymentResponse` است.
 
-## Events
+## رویدادها
 
-Listen to this event using [`addEventListener()`](/en-US/docs/Web/API/EventTarget/addEventListener) or by assigning an event listener to the `oneventname` property of this interface.
+به این رویداد با استفاده از [`addEventListener()`](/en-US/docs/Web/API/EventTarget/addEventListener) یا با اختصاص یک شنونده رویداد به ویژگی `oneventname` این رابط گوش دهید.
 
 - [`payerdetailchange`](/en-US/docs/Web/API/PaymentResponse/payerdetailchange_event)
-  - : Fired during a retry when the user makes changes to their personal information while filling out a payment request form. Allows the developer to revalidate any requested user data (e.g., the phone number or the email address) if it changes.
+  - : در طول یک تلاش مجدد زمانی که کاربر تغییراتی در اطلاعات شخصی خود هنگام پر کردن فرم درخواست پرداخت ایجاد می‌کند، فعال می‌شود. به توسعه‌دهنده اجازه می‌دهد هر داده کاربر درخواست شده (مانند شماره تلفن یا آدرس ایمیل) را در صورت تغییر، دوباره اعتبارسنجی کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
