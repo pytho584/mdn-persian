@@ -1,7 +1,5 @@
 ---
 title: "PerformanceTiming: domainLookupStart property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/domainLookupStart"
-status: "needs-translation"
 ---
 
 ---
@@ -17,28 +15,24 @@ browser-compat: api.PerformanceTiming.domainLookupStart
 {{APIRef("Performance API")}}{{Deprecated_Header}}
 
 > [!WARNING]
-> This interface of this property is deprecated in the [Navigation Timing Level 2 specification](https://w3c.github.io/navigation-timing/#obsolete). Please use the {{domxref("PerformanceNavigationTiming")}}
-> interface instead.
+> رابطِ این ویژگی در [مشخصات سطح ۲ زمان‌بندی ناوبری](https://w3c.github.io/navigation-timing/#obsolete) منسوخ شده است. لطفاً به‌جای آن از رابط {{domxref("PerformanceNavigationTiming")}} استفاده کنید.
 
-The legacy
+ویژگی فقط‌خواندنی قدیمی
 **`PerformanceTiming.domainLookupStart`**
-read-only property returns an `unsigned long long` representing the moment,
-in milliseconds since the UNIX epoch, where the domain lookup starts. If a persistent
-connection is used, or the information is stored in a cache or a local resource, the
-value will be the same as {{domxref("PerformanceTiming.fetchStart")}}.
+یک مقدار `unsigned long long` را برمی‌گرداند که لحظه شروع جستجوی دامنه (domain lookup) را بر حسب میلی‌ثانیه از شروع عصر یونیکس (UNIX epoch) نشان می‌دهد. اگر از اتصال پایدار (persistent connection) استفاده شود، یا اطلاعات در حافظه نهان (cache) یا یک منبع محلی ذخیره شده باشد، مقدار آن با {{domxref("PerformanceTiming.fetchStart")}} یکسان خواهد بود.
 
-## Value
+## مقدار
 
-An `unsigned long long`.
+یک `unsigned long long`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- The {{domxref("PerformanceTiming")}} interface it belongs to.
+- رابط {{domxref("PerformanceTiming")}} که این ویژگی به آن تعلق دارد.
