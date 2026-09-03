@@ -1,11 +1,5 @@
 ---
 title: "NDEFRecord: encoding property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NDEFRecord/encoding"
-status: "needs-translation"
----
-
----
-title: "NDEFRecord: encoding property"
 short-title: encoding
 slug: Web/API/NDEFRecord/encoding
 page-type: web-api-instance-property
@@ -16,14 +10,11 @@ browser-compat: api.NDEFRecord.encoding
 
 {{SecureContext_Header}}{{SeeCompatTable}}{{APIRef("Web NFC API")}}
 
-The **`encoding`**
-property of the {{DOMxRef("NDEFRecord")}} interface returns the encoding of
-a textual payload, or `null` otherwise.
+خاصیت **`encoding`** در رابط {{DOMxRef("NDEFRecord")}} رمزگذاری یک بار متنی (payload) را برمی‌گرداند، یا در غیر این صورت `null` برمی‌گرداند.
 
-## Value
+## مقدار
 
-A string which can be one of the following: `"utf-8"`,
-`"utf-16"`, `"utf-16le"`, or `"utf-16be"`.
+یک رشته که می‌تواند یکی از مقادیر زیر باشد: `"utf-8"`، `"utf-16"`، `"utf-16le"` یا `"utf-16be"`.
 
 ## Specifications
 
