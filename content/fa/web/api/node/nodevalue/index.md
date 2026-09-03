@@ -1,11 +1,5 @@
 ---
 title: "Node: nodeValue property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeValue"
-status: "needs-translation"
----
-
----
-title: "Node: nodeValue property"
 short-title: nodeValue
 slug: Web/API/Node/nodeValue
 page-type: web-api-instance-property
@@ -14,33 +8,33 @@ browser-compat: api.Node.nodeValue
 
 {{APIRef("DOM")}}
 
-The **`nodeValue`** property of the {{domxref("Node")}} interface returns or sets the value of the current node.
+ویژگی **`nodeValue`** از رابط {{domxref("Node")}} مقدار گره جاری را بازگردانده یا تنظیم می‌کند.
 
-## Value
+## مقدار
 
-A string containing the value of the current node, if any.
-For the document itself, `nodeValue` returns `null`.
-For text, comment, and CDATA nodes, `nodeValue` returns the content of the node.
-For attribute nodes, the value of the attribute is returned.
+یک رشته شامل مقدار گره جاری، در صورت وجود.
+برای خود سند، `nodeValue` مقدار `null` را برمی‌گرداند.
+برای گره‌های متنی، توضیح (comment) و CDATA، `nodeValue` محتوای گره را برمی‌گرداند.
+برای گره‌های ویژگی (attribute)، مقدار ویژگی بازگردانده می‌شود.
 
-The following table shows the return values for different types of nodes.
+جدول زیر مقادیر بازگشتی را برای انواع مختلف گره‌ها نشان می‌دهد.
 
-| Node                                 | Value of nodeValue                  |
-| ------------------------------------ | ----------------------------------- |
-| {{domxref("CDATASection")}}          | Content of the CDATA section        |
-| {{domxref("Comment")}}               | Content of the comment              |
-| {{domxref("Document")}}              | `null`                              |
-| {{domxref("DocumentFragment")}}      | `null`                              |
-| {{domxref("DocumentType")}}          | `null`                              |
-| {{domxref("Element")}}               | `null`                              |
-| {{domxref("NamedNodeMap")}}          | `null`                              |
-| {{domxref("ProcessingInstruction")}} | Entire content excluding the target |
-| {{domxref("Text")}}                  | Content of the text node            |
+| گره                                 | مقدار `nodeValue`                    |
+| ------------------------------------ | ------------------------------------ |
+| {{domxref("CDATASection")}}          | محتوای بخش CDATA                     |
+| {{domxref("Comment")}}               | محتوای توضیح                         |
+| {{domxref("Document")}}              | `null`                               |
+| {{domxref("DocumentFragment")}}      | `null`                               |
+| {{domxref("DocumentType")}}          | `null`                               |
+| {{domxref("Element")}}               | `null`                               |
+| {{domxref("NamedNodeMap")}}          | `null`                               |
+| {{domxref("ProcessingInstruction")}} | تمام محتوا به جز هدف (target)         |
+| {{domxref("Text")}}                  | محتوای گره متنی                      |
 
 > [!NOTE]
-> When `nodeValue` is defined to be `null`, setting it has no effect.
+> زمانی که `nodeValue` به صورت `null` تعریف شده باشد، تنظیم آن هیچ اثری ندارد.
 
-## Example
+## مثال
 
 ```html
 <div id="d1">Hello world</div>
@@ -48,7 +42,7 @@ The following table shows the return values for different types of nodes.
 <output id="result">Not calculated yet.</output>
 ```
 
-and the following script:
+و اسکریپت زیر:
 
 ```js
 let node = document.querySelector("body").firstChild;
@@ -62,12 +56,12 @@ const output = document.getElementById("result");
 output.innerText = result;
 ```
 
-{{ EmbedLiveSample("Example", "100%", "250")}}
+{{ EmbedLiveSample("Example", "100%", "250") }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
