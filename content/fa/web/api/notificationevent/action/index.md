@@ -1,11 +1,5 @@
 ---
 title: "NotificationEvent: action property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NotificationEvent/action"
-status: "needs-translation"
----
-
----
-title: "NotificationEvent: action property"
 short-title: action
 slug: Web/API/NotificationEvent/action
 page-type: web-api-instance-property
@@ -14,13 +8,13 @@ browser-compat: api.NotificationEvent.action
 
 {{APIRef("Web Notifications")}}{{AvailableInWorkers("service")}}
 
-The **`action`** read-only property of the {{domxref("NotificationEvent")}} interface returns the string ID of the notification button the user clicked. This value returns an empty string if the user clicked the notification somewhere other than an action button, or the notification does not have a button. The notification id is set during the creation of the Notification via the actions array attribute and can't be modified unless the notification is replaced.
+خاصیت فقط‌خواندنی **`action`** از رابط {{domxref("NotificationEvent")}}، شناسه رشته‌ای دکمه اعلانی را که کاربر کلیک کرده است، برمی‌گرداند. این مقدار در صورتی که کاربر روی جایی غیر از دکمه اقدام (action button) کلیک کرده باشد، یا اعلان (notification) دکمه‌ای نداشته باشد، یک رشته خالی برمی‌گرداند. شناسه دکمه اقدام در زمان ایجاد اعلان از طریق ویژگی آرایه‌ای `actions` تنظیم می‌شود و تا زمانی که اعلان جایگزین نشود، قابل تغییر نیست.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```js
 self.registration.showNotification("New articles available", {
@@ -37,10 +31,10 @@ self.addEventListener("notificationclick", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
