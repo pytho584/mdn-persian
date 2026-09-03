@@ -1,11 +1,5 @@
 ---
 title: "NDEFRecord: lang property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NDEFRecord/lang"
-status: "needs-translation"
----
-
----
-title: "NDEFRecord: lang property"
 short-title: lang
 slug: Web/API/NDEFRecord/lang
 page-type: web-api-instance-property
@@ -16,26 +10,23 @@ browser-compat: api.NDEFRecord.lang
 
 {{SecureContext_Header}}{{SeeCompatTable}}{{APIRef("Web NFC API")}}
 
-The **`lang`**
-property of the {{DOMxRef("NDEFRecord")}} interface returns the language of
-a textual payload, or `null` if one was not supplied.
+ویژگی **`lang`** در رابط {{DOMxRef("NDEFRecord")}} زبان بار متنی (textual payload) را برمی‌گرداند، یا اگر زبانی ارائه نشده باشد، مقدار `null` را برمی‌گرداند.
 
-The record might be missing a language tag, for example, if the recorded information is
-not locale-specific.
+ممکن است رکورد برچسب زبان (language tag) نداشته باشد، برای مثال اگر اطلاعات ثبت‌شده مختص به یک منطقه (locale) خاص نباشد.
 
-## Value
+## مقدار
 
-A string.
+یک رشته (string).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [HTML `lang` attribute](/en-US/docs/Web/HTML/Reference/Global_attributes/lang), that declares content language of the document or its elements
-- HTTP headers that declare content language: {{HTTPHeader("Content-Language")}} and {{HTTPHeader("Accept-Language")}}
+- [ویژگی `lang` در HTML](/en-US/docs/Web/HTML/Reference/Global_attributes/lang) که زبان محتوای سند یا عناصر آن را تعیین می‌کند
+- هدرهای HTTP که زبان محتوا را اعلام می‌کنند: {{HTTPHeader("Content-Language")}} و {{HTTPHeader("Accept-Language")}}
