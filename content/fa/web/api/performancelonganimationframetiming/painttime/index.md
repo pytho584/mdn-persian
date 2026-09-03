@@ -1,11 +1,5 @@
 ---
 title: "PerformanceLongAnimationFrameTiming: paintTime property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceLongAnimationFrameTiming/paintTime"
-status: "needs-translation"
----
-
----
-title: "PerformanceLongAnimationFrameTiming: paintTime property"
 short-title: paintTime
 slug: Web/API/PerformanceLongAnimationFrameTiming/paintTime
 page-type: web-api-instance-property
@@ -16,26 +10,26 @@ browser-compat: api.PerformanceLongAnimationFrameTiming.paintTime
 
 {{APIRef("Performance API")}}{{SeeCompatTable}}
 
-The **`paintTime`** read-only property of the {{domxref("PerformanceLongAnimationFrameTiming")}} interface returns the {{domxref("DOMHighResTimeStamp","timestamp")}} when the rendering phase ended and the animation frame started.
+ویژگی فقط‌خواندنی **`paintTime`** در رابط {{domxref("PerformanceLongAnimationFrameTiming")}}، {{domxref("DOMHighResTimeStamp","timestamp")}} زمانی را برمی‌گرداند که فاز رندر پایان یافته و فریم انیمیشن شروع شده است.
 
-The `paintTime` is broadly interoperable: The value should be the same across different implementations.
+`paintTime` به‌طور گسترده‌ای سازگار است: مقدار آن باید در پیاده‌سازی‌های مختلف یکسان باشد.
 
-## Value
+## مقدار
 
-A {{domxref("DOMHighResTimeStamp")}}.
+یک {{domxref("DOMHighResTimeStamp")}}.
 
-## Examples
+## نمونه‌ها
 
-See [Long animation frame timing](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing#examples) for examples related to the Long Animation Frames API.
+برای نمونه‌های مربوط به API فریم‌های انیمیشن طولانی، به [زمان‌بندی فریم انیمیشن طولانی](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("PerformanceLongAnimationFrameTiming.presentationTime")}}
