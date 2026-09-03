@@ -1,11 +1,5 @@
 ---
 title: "ProcessingInstruction: target property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ProcessingInstruction/target"
-status: "needs-translation"
----
-
----
-title: "ProcessingInstruction: target property"
 short-title: target
 slug: Web/API/ProcessingInstruction/target
 page-type: web-api-instance-property
@@ -14,24 +8,23 @@ browser-compat: api.ProcessingInstruction.target
 
 {{ApiRef("DOM")}}
 
-The read-only **`target`** property of the {{domxref("ProcessingInstruction")}} interface
-represent the application to which the `ProcessingInstruction` is targeted.
+ویژگی فقط‌خواندنی **`target`** در رابط {{domxref("ProcessingInstruction")}} نمایانگر برنامه‌ای است که این `ProcessingInstruction` به آن ارسال شده است.
 
-For example:
+برای مثال:
 
 ```html
 <?xml version="1.0"?>
 ```
 
-is a processing instruction whose `target` is `xml`.
+یک دستور پردازش است که `target` آن `xml` است.
 
-## Value
+## مقدار
 
-A string containing the name of the application.
+رشته‌ای شامل نام برنامه.
 
-## Example
+## مثال
 
-### In an XML document
+### در یک سند XML
 
 ```html hidden
 <output></output>
@@ -55,9 +48,9 @@ output.textContent = `This processing instruction's target is: ${doc.firstChild.
 
 {{EmbedLiveSample("In an XML document", "100%", 50)}}
 
-### In an HTML document
+### در یک سند HTML
 
-The processing instruction line will be considered, and represented, as a {{domxref("Comment")}} object.
+خط دستور پردازش به‌عنوان یک شیء {{domxref("Comment")}} در نظر گرفته شده و نمایش داده می‌شود.
 
 ```html
 <?xml version="1.0"?>
@@ -72,14 +65,14 @@ document.querySelector("pre").textContent = result;
 
 {{EmbedLiveSample("In an HTML document", "100%", 50)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [DOM API](/en-US/docs/Web/API/Document_Object_Model)
+- [DOM API](/en-US/docs/Web/API/Document_Object_Model)
