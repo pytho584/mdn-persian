@@ -1,11 +1,5 @@
 ---
 title: "Navigator: bluetooth property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/bluetooth"
-status: "needs-translation"
----
-
----
-title: "Navigator: bluetooth property"
 short-title: bluetooth
 slug: Web/API/Navigator/bluetooth
 page-type: web-api-instance-property
@@ -16,20 +10,20 @@ browser-compat: api.Navigator.bluetooth
 
 {{APIRef("Bluetooth API")}}{{SeeCompatTable}}{{secureContext_header}}
 
-The **`bluetooth`** read-only property of the {{domxref("Navigator")}} interface returns a {{domxref("Bluetooth")}} object for the current document, providing access to [Web Bluetooth API](/en-US/docs/Web/API/Web_Bluetooth_API) functionality.
+خاصیت **`bluetooth`** (فقطخواندنی) از رابط {{domxref("Navigator")}} یک شیء {{domxref("Bluetooth")}} برای سند جاری برمیگرداند که دسترسی به قابلیتهای [Web Bluetooth API](/en-US/docs/Web/API/Web_Bluetooth_API) را فراهم میکند.
 
-## Value
+## مقدار
 
-A {{domxref("Bluetooth")}} object.
+یک شیء {{domxref("Bluetooth")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Bluetooth API](/en-US/docs/Web/API/Web_Bluetooth_API)
