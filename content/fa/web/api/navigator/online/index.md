@@ -1,11 +1,5 @@
 ---
 title: "Navigator: onLine property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/onLine"
-status: "needs-translation"
----
-
----
-title: "Navigator: onLine property"
 short-title: onLine
 slug: Web/API/Navigator/onLine
 page-type: web-api-instance-property
@@ -14,20 +8,19 @@ browser-compat: api.Navigator.onLine
 
 {{ApiRef("HTML DOM")}}
 
-The **`onLine`** property of the {{domxref("Navigator")}} interface returns whether the device is connected to the network, with `true` meaning online and `false` meaning offline. The property's value changes after the browser checks its network connection, usually when the user follows links or when a script requests a remote page. For example, the property should return `false` when users click links soon after they lose internet connection. When its value changes, an [`online`](/en-US/docs/Web/API/Window/online_event) or [`offline`](/en-US/docs/Web/API/Window/offline_event) event is fired on the `window`.
+ویژگی **`onLine`** در رابط {{domxref("Navigator")}} مشخص می‌کند که آیا دستگاه به شبکه متصل است یا خیر؛ مقدار `true` به معنای آنلاین بودن و `false` به معنای آفلاین بودن است. مقدار این ویژگی پس از آن‌که مرورگر اتصال شبکه خود را بررسی می‌کند تغییر می‌کند؛ معمولاً زمانی که کاربر روی پیوندها کلیک می‌کند یا زمانی که یک اسکریپت صفحه‌ای از راه دور درخواست می‌کند. برای مثال، این ویژگی باید زمانی که کاربران مدت‌کوتاهی پس از قطع اتصال اینترنت روی پیوندها کلیک می‌کنند، مقدار `false` را برگرداند. وقتی مقدار آن تغییر کند، یک رویداد [`online`](/en-US/docs/Web/API/Window/online_event) یا [`offline`](/en-US/docs/Web/API/Window/offline_event) روی `window` فعال می‌شود.
 
-Browsers and operating systems leverage different heuristics to determine whether the device is online. In general, connection to LAN is considered online, even though the LAN may not have Internet access. For example, the computer may be running a virtualization software that has virtual ethernet adapters that are always "connected". On Windows, the online status is determined by whether it can reach a Microsoft home server, which may be blocked by firewalls or VPNs, even if the computer has Internet access. Therefore, this property is inherently unreliable, and you should not disable features based on the online status, only provide hints when the user may seem offline.
+مرورگرها و سیستم‌های عامل از روش‌های ابتکاری متفاوتی برای تعیین آنلاین بودن دستگاه استفاده می‌کنند. به‌طور کلی، اتصال به شبکه محلی (LAN) به‌عنوان آنلاین در نظر گرفته می‌شود، حتی اگر آن شبکه به اینترنت دسترسی نداشته باشد. برای مثال، ممکن است رایانه نرم‌افزار مجازی‌سازی‌ای اجرا کند که آداپتورهای اترنت مجازی «همیشه متصل» دارد. در ویندوز، وضعیت آنلاین بودن بر اساس این تعیین می‌شود که آیا دستگاه می‌تواند به یک سرور خانگی مایکروسافت دسترسی پیدا کند؛ سروری که ممکن است توسط فایروال‌ها یا VPNها مسدود شده باشد، حتی اگر رایانه به اینترنت دسترسی داشته باشد. بنابراین، این ویژگی ذاتاً قابل اعتماد نیست و نباید ویژگی‌ها را بر اساس وضعیت آنلاین بودن غیرفعال کنید؛ فقط زمانی که کاربر احتمالاً آفلاین به نظر می‌رسد، نکاتی را ارائه دهید.
 
-## Value
+## مقدار
 
-A boolean.
+یک مقدار بولی (boolean).
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده ابتدایی
 
-To check if you are online, query `window.navigator.onLine`, as in the
-following example:
+برای بررسی آنلاین بودن خود، `window.navigator.onLine` را پرس‌وجو کنید، همان‌گونه که در مثال زیر آمده است:
 
 ```js
 if (navigator.onLine) {
@@ -37,15 +30,13 @@ if (navigator.onLine) {
 }
 ```
 
-If the browser doesn't support `navigator.onLine` the above example will
-always come out as `false`/`undefined`.
+اگر مرورگر از `navigator.onLine` پشتیبانی نکند، مثال بالا همیشه به‌صورت `false`/`undefined` در می‌آید.
 
-### Listening for changes in network status
+### گوش دادن به تغییرات وضعیت شبکه
 
-To see changes in the network state, use
-[`addEventListener`](/en-US/docs/Web/API/EventTarget/addEventListener) to
-listen for the events on `window.online` and `window.offline`, as
-in the following example:
+برای مشاهده تغییرات در وضعیت شبکه، از
+[`addEventListener`](/en-US/docs/Web/API/EventTarget/addEventListener)
+برای شنیدن رویدادهای `window.online` و `window.offline` استفاده کنید، همان‌گونه که در مثال زیر آمده است:
 
 ```js
 window.addEventListener("offline", (e) => {
@@ -57,10 +48,10 @@ window.addEventListener("online", (e) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
