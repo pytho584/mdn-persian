@@ -1,11 +1,5 @@
 ---
 title: "PerformanceTiming: redirectEnd property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/redirectEnd"
-status: "needs-translation"
----
-
----
-title: "PerformanceTiming: redirectEnd property"
 short-title: redirectEnd
 slug: Web/API/PerformanceTiming/redirectEnd
 page-type: web-api-instance-property
@@ -17,28 +11,22 @@ browser-compat: api.PerformanceTiming.redirectEnd
 {{APIRef("Performance API")}}{{Deprecated_Header}}
 
 > [!WARNING]
-> This interface of this property is deprecated in the [Navigation Timing Level 2 specification](https://w3c.github.io/navigation-timing/#obsolete). Please use the {{domxref("PerformanceNavigationTiming")}}
-> interface instead.
+> این رابط کاربری (interface) در [نسخه دوم مشخصات زمان‌بندی ناوبری](https://w3c.github.io/navigation-timing/#obsolete) منسوخ شده است. لطفاً به جای آن از رابط {{domxref("PerformanceNavigationTiming")}} استفاده کنید.
 
-The legacy
-**`PerformanceTiming.redirectEnd`**
-read-only property returns an `unsigned long long` representing the moment,
-in milliseconds since the UNIX epoch, the last HTTP redirect is completed, that is when
-the last byte of the HTTP response has been received. If there is no redirect, or if one
-of the redirect is not of the same origin, the value returned is `0`.
+خاصیت فقط خواندنی قدیمی **`PerformanceTiming.redirectEnd`** یک `unsigned long long` را برمی‌گرداند که نشان‌دهنده لحظه‌ای (به میلی‌ثانیه از مبدأ UNIX) است که آخرین تغییرمسیر HTTP کامل شده است؛ یعنی زمانی که آخرین بایت از پاسخ HTTP دریافت شده است. اگر هیچ تغییرمسیری وجود نداشته باشد، یا اگر یکی از تغییرمسیرها از همان مبدأ (same origin) نباشد، مقدار بازگشتی `0` خواهد بود.
 
-## Value
+## مقدار
 
-An `unsigned long long`.
+یک `unsigned long long`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("Performance")}} interface it belongs to.
+- رابط {{domxref("Performance")}} که این خاصیت به آن تعلق دارد.
