@@ -1,7 +1,5 @@
 ---
 title: "PerformanceResourceTiming: serverTiming property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceResourceTiming/serverTiming"
-status: "needs-translation"
 ---
 
 ---
@@ -14,27 +12,27 @@ browser-compat: api.PerformanceResourceTiming.serverTiming
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}{{securecontext_header}}
 
-The **`serverTiming`** read-only property returns an array of {{domxref("PerformanceServerTiming")}} entries containing server timing metrics.
+ویژگی فقط‌خواندنی **`serverTiming`** آرایه‌ای از ورودی‌های {{domxref("PerformanceServerTiming")}} حاوی معیارهای زمان‌بندی سرور را برمی‌گرداند.
 
-Server timing metrics require the server to send the {{HTTPHeader("Server-Timing")}} header. For example:
+معیارهای زمان‌بندی سرور مستلزم آن هستند که سرور هدر {{HTTPHeader("Server-Timing")}} را ارسال کند. برای مثال:
 
 ```http
 Server-Timing: cache;desc="Cache Read";dur=23.2
 ```
 
-The `serverTiming` entries can live on `navigation` and `resource` entries.
+ورودی‌های `serverTiming` می‌توانند در ورودی‌های `navigation` و `resource` قرار گیرند.
 
-## Value
+## مقدار
 
-An array of {{domxref("PerformanceServerTiming")}} entries.
+آرایه‌ای از ورودی‌های {{domxref("PerformanceServerTiming")}}.
 
-## Examples
+## مثال‌ها
 
-### Logging server timing entries
+### ثبت ورودی‌های زمان‌بندی سرور در لاگ
 
-You can use a {{domxref("PerformanceObserver")}} to watch for {{domxref("PerformanceServerTiming")}} entries. Each server entry's duration is logged to the console.
+می‌توانید از {{domxref("PerformanceObserver")}} برای مشاهدهٔ ورودی‌های {{domxref("PerformanceServerTiming")}} استفاده کنید. مدت‌زمان هر ورودی سرور در کنسول ثبت می‌شود.
 
-Example using a {{domxref("PerformanceObserver")}}, which notifies of new `resource` performance entries as they are recorded in the browser's performance timeline. Use the `buffered` option to access entries from before the observer creation.
+مثالی با استفاده از {{domxref("PerformanceObserver")}}، که هنگام ثبت ورودی‌های عملکرد جدید `resource` در خط زمانی عملکرد مرورگر اعلان می‌دهد. از گزینهٔ `buffered` برای دسترسی به ورودی‌های ثبت‌شده پیش از ایجاد observer استفاده کنید.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -50,7 +48,7 @@ const observer = new PerformanceObserver((list) => {
 );
 ```
 
-Example using {{domxref("Performance.getEntriesByType()")}}, which only shows `resource` performance entries present in the browser's performance timeline at the time you call this method:
+مثالی با استفاده از {{domxref("Performance.getEntriesByType()")}}، که فقط ورودی‌های عملکرد `resource` را نشان می‌دهد که در زمان فراخوانی این متد در خط زمانی عملکرد مرورگر موجود هستند:
 
 ```js
 for (const entryType of ["navigation", "resource"]) {
@@ -66,25 +64,25 @@ for (const entryType of ["navigation", "resource"]) {
 }
 ```
 
-### Cross-origin server timing information
+### اطلاعات زمان‌بندی سرور در مبدأ متقاطع (Cross-origin)
 
-Access to server timing information is restricted to the same origin. To expose cross-origin timing information, the {{HTTPHeader("Timing-Allow-Origin")}} HTTP response header needs to be set.
+دسترسی به اطلاعات زمان‌بندی سرور به همان مبدأ محدود است. برای نمایش اطلاعات زمان‌بندی در مبدأ متقاطع، باید هدر پاسخ HTTP {{HTTPHeader("Timing-Allow-Origin")}} تنظیم شود.
 
-For example, to allow `https://developer.mozilla.org` to see server timing information, the cross-origin resource should send:
+برای مثال، برای اینکه به `https://developer.mozilla.org` اجازه داده شود اطلاعات زمان‌بندی سرور را ببیند، منبع مبدأ متقاطع باید هدر زیر را ارسال کند:
 
 ```http
 Timing-Allow-Origin: https://developer.mozilla.org
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("PerformanceServerTiming")}}
 - {{HTTPHeader("Server-Timing")}}
