@@ -1,11 +1,5 @@
 ---
 title: "Profiler: Profiler() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Profiler/Profiler"
-status: "needs-translation"
----
-
----
-title: "Profiler: Profiler() constructor"
 short-title: Profiler()
 slug: Web/API/Profiler/Profiler
 page-type: web-api-constructor
@@ -16,9 +10,9 @@ browser-compat: api.Profiler.Profiler
 
 {{APIRef("JS Self-Profiling API")}}{{SeeCompatTable}}
 
-The **`Profiler()`** constructor creates a new {{domxref("Profiler")}} object.
+سازندهٔ **`Profiler()`** یک شیء جدید {{domxref("Profiler")}} می‌سازد.
 
-Once created, the new profiler will start collecting samples.
+پس از ساخته‌شدن، پروفایلرِ جدید شروع به جمع‌آوری نمونه‌ها می‌کند.
 
 ## Syntax
 
@@ -29,22 +23,22 @@ new Profiler(options)
 ### Parameters
 
 - `options`
-  - : Options for this profiler. This is an object containing the following properties:
+  - : تنظیمات این پروفایلر. این یک شیء است که شامل ویژگی‌های زیر می‌باشد:
     - `maxBufferSize`
-      - : A number indicating the maximum number of samples to take. Once this number is reached, the browser will fire the {{domxref("Profiler.samplebufferfull_event", "samplebufferfull")}} event at the profiler, and no more samples will be recorded.
+      - : عددی که حداکثر تعداد نمونه‌هایی را مشخص می‌کند که قرار است گرفته شوند. وقتی تعداد نمونه‌ها به این عدد برسد، مرورگر رویداد {{domxref("Profiler.samplebufferfull_event", "samplebufferfull")}} را برای پروفایلر صادر می‌کند و دیگر هیچ نمونه‌ای ثبت نخواهد شد.
     - `sampleInterval`
-      - : The time interval between samples, in milliseconds.
+      - : فاصلهٔ زمانی بین هر دو نمونه‌برداری، بر حسب میلی‌ثانیه.
 
 ### Exceptions
 
 - `RangeError` {{domxref("DOMException")}}
-  - : Thrown if the `sampleInterval` option is less than zero.
+  - : اگر گزینهٔ `sampleInterval` کمتر از صفر باشد، این خطا پرتاب می‌شود.
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if the document was not served with a [document policy](https://wicg.github.io/document-policy/) that included the `"js-profiling"` configuration point.
+  - : اگر سند با [document policy](https://wicg.github.io/document-policy/) که شامل نقطهٔ پیکربندی `"js-profiling"` است ارائه نشده باشد، این خطا پرتاب می‌شود.
 
 ## Examples
 
-This example creates a profiler which will take up to 1000 samples, sampling every 10 milliseconds.
+این مثال یک پروفایلر می‌سازد که حداکثر ۱۰۰۰ نمونه برمی‌دارد و هر ۱۰ میلی‌ثانیه یک بار نمونه‌برداری می‌کند.
 
 ```js
 const profiler = new Profiler({ sampleInterval: 10, maxBufferSize: 1000 });
