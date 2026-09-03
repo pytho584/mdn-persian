@@ -1,7 +1,5 @@
 ---
 title: "PaymentMethodChangeEvent: methodName property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaymentMethodChangeEvent/methodName"
-status: "needs-translation"
 ---
 
 ---
@@ -14,26 +12,17 @@ browser-compat: api.PaymentMethodChangeEvent.methodName
 
 {{securecontext_header}}{{APIRef("Payment Request API")}}
 
-The read-only **`methodName`** property of the {{domxref("PaymentMethodChangeEvent")}} interface is a string which
-uniquely identifies the payment handler currently selected by the user. The
-payment handler may be a payment technology, such as Apple Pay or Android Pay, and each
-payment handler may support multiple payment methods; changes to the payment method
-within the payment handler are described by the `PaymentMethodChangeEvent`.
+ویژگی فقط‌خواندنی **`methodName`** در رابط {{domxref("PaymentMethodChangeEvent")}} رشته‌ای است که پردازندهٔ پرداختی را که کاربر در حال حاضر انتخاب کرده است، به‌صورت یکتا شناسایی می‌کند. پردازندهٔ پرداخت می‌تواند یک فناوری پرداخت مانند Apple Pay یا Android Pay باشد و هر پردازندهٔ پرداخت ممکن است از چند روش پرداخت پشتیبانی کند؛ تغییرات روش پرداخت درون پردازندهٔ پرداخت توسط `PaymentMethodChangeEvent` توصیف می‌شوند.
 
-## Value
+## مقدار
 
-A string which uniquely identifies the currently-selected payment
-handler. This may be a string chosen from the list of standardized payment method
-identifiers, or a URL used by the payment processing service. See
-[Payment method identifiers](/en-US/docs/Web/API/Payment_Request_API/Concepts#payment_method_identifiers) for more information.
+یک رشته است که پردازندهٔ پرداختی را که در حال حاضر انتخاب شده است به‌صورت یکتا شناسایی می‌کند. این مقدار می‌تواند رشته‌ای انتخاب‌شده از فهرست شناسه‌های استانداردشدهٔ روش پرداخت باشد، یا یک URL که سرویس پردازش پرداخت از آن استفاده می‌کند. برای اطلاعات بیشتر، [شناسه‌های روش پرداخت](/en-US/docs/Web/API/Payment_Request_API/Concepts#payment_method_identifiers) را ببینید.
 
-The default value is the empty string, `""`.
+مقدار پیش‌فرض، رشتهٔ خالی `""` است.
 
-## Examples
+## مثال‌ها
 
-This example uses the {{domxref("PaymentRequest.paymentmethodchange_event", "paymentmethodchange")}} event to watch for changes to
-the payment method selected for Apple Pay, in order to compute a discount if the user
-chooses to use a Visa card as their payment method.
+این مثال از رویداد {{domxref("PaymentRequest.paymentmethodchange_event", "paymentmethodchange")}} برای نظارت بر تغییرات روش پرداختی که برای Apple Pay انتخاب شده است استفاده می‌کند تا اگر کاربر کارت ویزا (Visa) را به‌عنوان روش پرداخت خود انتخاب کند، تخفیف محاسبه شود.
 
 ```js
 request.onpaymentmethodchange = (ev) => {
@@ -56,12 +45,12 @@ request.onpaymentmethodchange = (ev) => {
 const response = await request.show();
 ```
 
-Note that the `methodDetails` property is being used by the `calculateDiscount()` function to compute any payment discount, then {{domxref("PaymentRequestUpdateEvent.updateWith", "updateWith()")}} is called to update the event with the computed update.
+توجه داشته باشید که ویژگی `methodDetails` در تابع `calculateDiscount()` برای محاسبهٔ تخفیف پرداخت استفاده می‌شود و سپس {{domxref("PaymentRequestUpdateEvent.updateWith", "updateWith()")}} فراخوانی می‌شود تا رویداد را با به‌روزرسانیِ محاسبه‌شده به‌روزرسانی کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
