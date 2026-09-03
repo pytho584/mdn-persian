@@ -1,11 +1,5 @@
 ---
 title: "PopStateEvent: hasUAVisualTransition property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PopStateEvent/hasUAVisualTransition"
-status: "needs-translation"
----
-
----
-title: "PopStateEvent: hasUAVisualTransition property"
 short-title: hasUAVisualTransition
 slug: Web/API/PopStateEvent/hasUAVisualTransition
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.PopStateEvent.hasUAVisualTransition
 
 {{APIRef("History API")}}
 
-The **`hasUAVisualTransition`** read-only property of the {{domxref("PopStateEvent")}} interface returns `true` if the user agent performed a visual transition for this navigation before dispatching this event, or `false` otherwise.
+ویژگی فقط‌خواندنی **`hasUAVisualTransition`** در رابط {{domxref("PopStateEvent")}} اگر عامل کاربر (user agent) پیش از صدور این رویداد، یک گذار بصری برای این ناوبری انجام داده باشد، `true` برمی‌گرداند؛ در غیر این صورت `false` برمی‌گرداند.
 
-User agents may provide a built-in visual transition when executing site navigations. If the site author also adds a visual transition, user agent and author transitions may conflict and confuse a visitor. The property lets you detect whether a UA transition was provided so that you can skip author transitions for a better user experience.
+عامل‌های کاربر ممکن است هنگام اجرای ناوبری‌های سایت یک گذار بصری داخلی ارائه دهند. اگر نویسندهٔ سایت نیز گذار بصری خود را اضافه کند، ممکن است گذار عامل کاربر و گذار نویسنده با هم تداخل پیدا کنند و بازدیدکننده را سردرگم کنند. این ویژگی به شما امکان می‌دهد تشخیص دهید که آیا گذاری از سوی عامل کاربر ارائه شده است یا نه؛ بنابراین می‌توانید برای تجربهٔ کاربری بهتر، از اعمال گذارهای سمت خودتان صرف‌نظر کنید.
 
-## Value
+## مقدار
 
-A boolean value.
+یک مقدار بولین (boolean).
 
-## Examples
+## مثال‌ها
 
 ```js
 window.addEventListener("popstate", async (event) => {
@@ -44,15 +38,15 @@ window.addEventListener("popstate", async (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
 - [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
