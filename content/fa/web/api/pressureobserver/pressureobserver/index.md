@@ -1,7 +1,5 @@
 ---
 title: "PressureObserver: PressureObserver() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PressureObserver/PressureObserver"
-status: "needs-translation"
 ---
 
 ---
@@ -16,37 +14,37 @@ browser-compat: api.PressureObserver.PressureObserver
 
 {{APIRef("Compute Pressure API")}}{{SeeCompatTable}}{{AvailableInWorkers("window_and_worker_except_service")}}{{securecontext_header}}
 
-The **`PressureObserver()`** constructor creates a new {{domxref("PressureObserver")}} object to watch for changes to pressure changes of system resources such as the CPU.
+سازنده‌ی **`PressureObserver()`** یک شیء جدید {{domxref("PressureObserver")}} می‌سازد که برای مشاهده‌ی تغییرات فشار منابع سیستمی مانند CPU به کار می‌رود.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 new PressureObserver(callback)
 ```
 
-### Parameters
+### پارامترها
 
 - `callback`
-  - : A callback that will be invoked when pressure records are observed. When the callback is invoked, the following parameters are available:
+  - : تابع بازخوردی که هنگام مشاهده شدن رکوردهای فشار فراخوانی می‌شود. هنگام فراخوانی این تابع، پارامترهای زیر در دسترس هستند:
     - `changes`
-      - : An array containing all {{domxref("PressureRecord")}} objects recorded since the last time the callback was called, or the last time the observer's {{domxref("PressureObserver.takeRecords", "takeRecords()")}} method was called.
+      - : آرایه‌ای شامل تمام اشیاء {{domxref("PressureRecord")}} که از آخرین بار فراخوانی تابع بازخورد، یا آخرین باری که متد {{domxref("PressureObserver.takeRecords", "takeRecords()")}} مشاهده‌گر فراخوانی شده است، ثبت شده‌اند.
     - `observer`
-      - : The {{domxref("PressureObserver","observer")}} object that is receiving the above records.
+      - : شیء {{domxref("PressureObserver","observer")}} که رکوردهای بالا را دریافت می‌کند.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("PressureObserver")}} object with the specified `callback` function that will be invoked when {{domxref("PressureObserver.observe()")}} was called to watch pressure changes.
+یک شیء جدید {{domxref("PressureObserver")}} به‌همراه تابع `callback` مشخص‌شده برگردانده می‌شود. این تابع، زمانی که متد {{domxref("PressureObserver.observe()")}} برای مشاهده تغییرات فشار فراخوانی شده باشد، صدا زده خواهد شد.
 
-### Exceptions
+### استثناها
 
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if the [Compute Pressure API](/en-US/docs/Web/API/Compute_Pressure_API) is disallowed by a {{httpheader('Permissions-Policy/compute-pressure','compute-pressure')}} [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy).
+  - : اگر [Compute Pressure API](/en-US/docs/Web/API/Compute_Pressure_API) به‌واسطه یک [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) از نوع {{httpheader('Permissions-Policy/compute-pressure','compute-pressure')}} مجاز شناخته نشود، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Log current pressure
+### ثبت فشار فعلی
 
-This example creates a {{domxref("PressureObserver")}} and takes action whenever there is a pressure change. The sample interval is set to 1000ms, meaning that there will be updates at most every second.
+در این مثال یک {{domxref("PressureObserver")}} ساخته می‌شود و هر زمان که تغییری در فشار رخ دهد، اقدام لازم انجام می‌گیرد. بازه نمونه‌برداری روی ۱۰۰۰ میلی‌ثانیه تنظیم شده است؛ یعنی حداکثر هر ثانیه یک‌بار به‌روزرسانی انجام می‌شود.
 
 ```js
 function callback(records) {
@@ -71,10 +69,10 @@ try {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
