@@ -1,11 +1,5 @@
 ---
 title: "PermissionStatus: state property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PermissionStatus/state"
-status: "needs-translation"
----
-
----
-title: "PermissionStatus: state property"
 short-title: state
 slug: Web/API/PermissionStatus/state
 page-type: web-api-instance-property
@@ -14,23 +8,18 @@ browser-compat: api.PermissionStatus.state
 
 {{APIRef("Permissions API")}}{{AvailableInWorkers}}
 
-The **`state`** read-only property of the
-{{domxref("PermissionStatus")}} interface returns the state of a requested permission.
-This property returns one of `'granted'`, `'denied'`, or
-`'prompt'`.
+ویژگی فقط‌خواندنی **`state`** از رابط {{domxref("PermissionStatus")}}، وضعیت یک مجوز درخواست‌شده را برمی‌گرداند. این ویژگی یکی از مقادیر `'granted'`، `'denied'` یا `'prompt'` را برمی‌گرداند.
 
-## Value
-
-One of the following:
+## مقدار
 
 - `'granted'`
-  - : The user, or the user agent on the user's behalf, has given express permission to use a [powerful feature](https://w3c.github.io/permissions/#dfn-powerful-feature). The caller can use the feature possibly without having the user agent ask the user's permission.
+  - : کاربر، یا عامل کاربر به نمایندگی از کاربر، اجازه صریح برای استفاده از یک [قابلیت قدرتمند](https://w3c.github.io/permissions/#dfn-powerful-feature) را داده است. فراخواننده می‌تواند از آن قابلیت استفاده کند، بدون اینکه الزاماً عامل کاربر از کاربر اجازه بگیرد.
 - `'denied'`
-  - : The user, or the user agent on the user's behalf, has denied access to this [powerful feature](https://w3c.github.io/permissions/#dfn-powerful-feature). The caller can't use the feature.
+  - : کاربر، یا عامل کاربر به نمایندگی از کاربر، دسترسی به این [قابلیت قدرتمند](https://w3c.github.io/permissions/#dfn-powerful-feature) را رد کرده است. فراخواننده نمی‌تواند از آن قابلیت استفاده کند.
 - `'prompt'`
-  - : The user has not given express permission to use the feature (_i.e., it's the same as denied_). It also means that if a caller attempts to use the feature, the user agent will either be prompting the user for permission or access to the feature will be denied.
+  - : کاربر اجازه صریح برای استفاده از قابلیت را نداده است (_یعنی همانند وضعیت «denied» است_). همچنین این به این معناست که اگر یک فراخواننده تلاش کند از قابلیت استفاده کند، عامل کاربر یا از کاربر درخواست اجازه خواهد کرد، یا دسترسی به آن قابلیت رد خواهد شد.
 
-## Examples
+## مثال‌ها
 
 ```js
 navigator.permissions
@@ -45,10 +34,10 @@ navigator.permissions
   });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
