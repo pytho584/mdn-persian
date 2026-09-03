@@ -1,7 +1,5 @@
 ---
 title: "PromiseRejectionEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PromiseRejectionEvent"
-status: "needs-translation"
 ---
 
 ---
@@ -13,40 +11,40 @@ browser-compat: api.PromiseRejectionEvent
 
 {{APIRef("HTML DOM")}}{{AvailableInWorkers}}
 
-The **`PromiseRejectionEvent`** interface represents events which are sent to the global script context when JavaScript {{jsxref("Promise")}}s are rejected. These events are particularly useful for telemetry and debugging purposes.
+رابطِ **`PromiseRejectionEvent`** رویدادهایی را نشان می‌دهد که وقتی یک {{jsxref("Promise")}} در جاوااسکریپت رد (reject) می‌شود، به بافتارِ سراسری اسکریپت ارسال می‌شوند. این رویدادها به‌ویژه برای تله‌متری و اشکال‌زدایی مفید هستند.
 
-For details, see [Promise rejection events](/en-US/docs/Web/JavaScript/Guide/Using_promises#promise_rejection_events).
+برای جزئیات بیشتر، به [رویدادهای رد شدن پرامیس](/en-US/docs/Web/JavaScript/Guide/Using_promises#promise_rejection_events) مراجعه کنید.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("PromiseRejectionEvent.PromiseRejectionEvent", "PromiseRejectionEvent()")}}
-  - : Creates a `PromiseRejectionEvent` event, given the type of event ([`unhandledrejection`](/en-US/docs/Web/API/Window/unhandledrejection_event) or [`rejectionhandled`](/en-US/docs/Web/API/Window/rejectionhandled_event)) and other details.
+  - : با در نظر گرفتن نوع رویداد ([`unhandledrejection`](/en-US/docs/Web/API/Window/unhandledrejection_event) یا [`rejectionhandled`](/en-US/docs/Web/API/Window/rejectionhandled_event)) و سایر جزئیات، یک رویداد `PromiseRejectionEvent` می‌سازد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Also inherits properties from its parent {{domxref("Event")}}_.
+_همچنین ویژگی‌ها را از والد خود، {{domxref("Event")}}، به ارث می‌برد._
 
 - {{domxref("PromiseRejectionEvent.promise")}} {{ReadOnlyInline}}
-  - : The JavaScript {{jsxref("Promise")}} that was rejected.
+  - : شیء {{jsxref("Promise")}} جاوااسکریپتی که رد شده است.
 - {{domxref("PromiseRejectionEvent.reason")}} {{ReadOnlyInline}}
-  - : A value or {{jsxref("Object")}} indicating why the promise was rejected, as passed to {{jsxref("Promise.reject()")}}.
+  - : یک مقدار یا {{jsxref("Object")}} که دلیل رد شدنِ پرامیس را نشان می‌دهد؛ همان مقداری که به {{jsxref("Promise.reject()")}} ارسال شده است.
 
-## Instance methods
+## روش‌های نمونه
 
-_This interface has no unique methods; inherits methods from its parent {{domxref("Event")}}_.
+_این رابط هیچ روش منحصربه‌فردی ندارد و روش‌ها را از والد خود، {{domxref("Event")}}، به ارث می‌برد._
 
-## Events
+## رویدادها
 
 - {{domxref("Window/rejectionhandled_event", "rejectionhandled")}}
-  - : Fired when a JavaScript {{jsxref("Promise")}} is rejected, and after the rejection is handled by the promise's rejection handling code.
+  - : زمانی رخ می‌دهد که یک {{jsxref("Promise")}} در جاوااسکریپت رد شده باشد و سپس، این رد شدن توسط کدِ رسیدگی به رد شدنِ همان پرامیس مدیریت شود.
 - {{domxref("Window/unhandledrejection_event", "unhandledrejection")}}
-  - : Fired when a JavaScript {{jsxref("Promise")}} is rejected but there is no rejection handler to deal with the rejection.
+  - : زمانی رخ می‌دهد که یک {{jsxref("Promise")}} در جاوااسکریپت رد شده باشد، اما هیچ مدیریت‌کنندهٔ رد شدن (rejection handler) برای رسیدگی به آن وجود نداشته باشد.
 
-## Examples
+## مثال‌ها
 
-This simple example catches unhandled promise rejections and logs them for debugging purposes.
+این مثال ساده، رویدادهای رد شدنِ مدیریت‌نشدهٔ پرامیس را دریافت می‌کند و برای اهداف اشکال‌زدایی در لاگ ثبت می‌کند.
 
 ```js
 window.onunhandledrejection = (e) => {
@@ -54,17 +52,17 @@ window.onunhandledrejection = (e) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using promises](/en-US/docs/Web/JavaScript/Guide/Using_promises)
+- [استفاده از پرامیس‌ها](/en-US/docs/Web/JavaScript/Guide/Using_promises)
 - {{jsxref("Promise")}}
 - {{domxref("Window/rejectionhandled_event", "rejectionhandled")}}
 - {{domxref("Window/unhandledrejection_event", "unhandledrejection")}}
