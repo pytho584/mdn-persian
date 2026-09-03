@@ -1,11 +1,5 @@
 ---
 title: "PerformanceResourceTiming: requestStart property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceResourceTiming/requestStart"
-status: "needs-translation"
----
-
----
-title: "PerformanceResourceTiming: requestStart property"
 short-title: requestStart
 slug: Web/API/PerformanceResourceTiming/requestStart
 page-type: web-api-instance-property
@@ -14,34 +8,34 @@ browser-compat: api.PerformanceResourceTiming.requestStart
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The **`requestStart`** read-only property returns a {{domxref("DOMHighResTimeStamp","timestamp")}} of the time immediately before the browser starts requesting the resource from the server, cache, or local resource. If the transport connection fails and the browser retries the request, the value returned will be the start of the retry request.
+ویژگی فقط‌خواندنی **`requestStart`** یک {{domxref("DOMHighResTimeStamp","timestamp")}} (برچسب زمانی) را بلافاصله قبل از شروع درخواست مرورگر از سرور، حافظه نهان یا منبع محلی بازمی‌گرداند. اگر اتصال انتقال خراب شود و مرورگر درخواست را دوباره ارسال کند، مقدار بازگشتی شروع درخواست مجدد خواهد بود.
 
-There is no _end_ property for `requestStart`. To measure the request time, calculate {{domxref("PerformanceResourceTiming.responseStart", "responseStart")}} - `requestStart` (see the example below).
+هیچ ویژگی _end_ برای `requestStart` وجود ندارد. برای اندازه‌گیری زمان درخواست، مقدار {{domxref("PerformanceResourceTiming.responseStart", "responseStart")}} - `requestStart` را محاسبه کنید (به مثال زیر مراجعه کنید).
 
-## Value
+## مقدار
 
-The `requestStart` property can have the following values:
+ویژگی `requestStart` می‌تواند مقادیر زیر را داشته باشد:
 
-- A {{domxref("DOMHighResTimeStamp")}} representing the time immediately before the browser starts requesting the resource from the server.
-- `0` if the resource was instantaneously retrieved from a cache.
-- `0` if the resource is a cross-origin request and no {{HTTPHeader("Timing-Allow-Origin")}} HTTP response header is used.
-- `0` if the resource is a canceled request.
+- یک {{domxref("DOMHighResTimeStamp")}} که نشان‌دهنده زمان بلافاصله قبل از شروع درخواست مرورگر از سرور است.
+- `0` اگر منبع فوراً از حافظه نهان بازیابی شود.
+- `0` اگر درخواست منبع یک درخواست cross-origin باشد و هیچ هدر پاسخ HTTP {{HTTPHeader("Timing-Allow-Origin")}} استفاده نشود.
+- `0` اگر درخواست منبع لغو شده باشد.
 
-When the {{domxref("PerformanceResourceTiming.firstInterimResponseStart", "firstInterimResponseStart")}} is non-zero, that indicates it should be the same value as `requestStart` for [supporting browsers](#browser_compatibility).
+زمانی که {{domxref("PerformanceResourceTiming.firstInterimResponseStart", "firstInterimResponseStart")}} غیرصفر است، نشان می‌دهد که باید برای [مرورگرهای پشتیبانی‌کننده](#browser_compatibility) همان مقدار `requestStart` باشد.
 
-When there are no interim responses, `requestStart` is the same as `finalResponseHeadersStart` and `firstInterimResponseStart` is 0.
+وقتی هیچ پاسخ میانی وجود ندارد، `requestStart` با `finalResponseHeadersStart` برابر است و `firstInterimResponseStart` صفر است.
 
-## Examples
+## مثال‌ها
 
-### Measuring request time
+### اندازه‌گیری زمان درخواست
 
-The `requestStart` and {{domxref("PerformanceResourceTiming.responseStart", "responseStart")}} properties can be used to measure how long the request takes.
+از ویژگی‌های `requestStart` و {{domxref("PerformanceResourceTiming.responseStart", "responseStart")}} می‌توان برای اندازه‌گیری مدت زمان درخواست استفاده کرد.
 
 ```js
 const request = entry.responseStart - entry.requestStart;
 ```
 
-Example using a {{domxref("PerformanceObserver")}}, which notifies of new `resource` performance entries as they are recorded in the browser's performance timeline. Use the `buffered` option to access entries from before the observer creation.
+مثال با استفاده از {{domxref("PerformanceObserver")}} که هنگام ثبت ورودی‌های عملکرد `resource` در جدول زمانی عملکرد مرورگر، اطلاع می‌دهد. از گزینه `buffered` برای دسترسی به ورودی‌های قبل از ایجاد ناظر استفاده کنید.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -56,7 +50,7 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "resource", buffered: true });
 ```
 
-Example using {{domxref("Performance.getEntriesByType()")}}, which only shows `resource` performance entries present in the browser's performance timeline at the time you call this method:
+مثال با استفاده از {{domxref("Performance.getEntriesByType()")}} که فقط ورودی‌های عملکرد `resource` موجود در جدول زمانی عملکرد مرورگر را در زمان فراخوانی این متد نشان می‌دهد:
 
 ```js
 const resources = performance.getEntriesByType("resource");
@@ -68,24 +62,24 @@ resources.forEach((entry) => {
 });
 ```
 
-### Cross-origin timing information
+### اطلاعات زمان‌بندی درخواست‌های cross-origin
 
-If the value of the `requestStart` property is `0`, the resource might be a cross-origin request. To allow seeing cross-origin timing information, the {{HTTPHeader("Timing-Allow-Origin")}} HTTP response header needs to be set.
+اگر مقدار ویژگی `requestStart` صفر باشد، ممکن است منبع یک درخواست cross-origin باشد. برای اجازه مشاهده اطلاعات زمان‌بندی cross-origin، باید هدر پاسخ HTTP {{HTTPHeader("Timing-Allow-Origin")}} تنظیم شود.
 
-For example, to allow `https://developer.mozilla.org` to see timing resources, the cross-origin resource should send:
+برای مثال، برای اجازه دادن به `https://developer.mozilla.org` برای دیدن منابع زمان‌بندی، منبع cross-origin باید ارسال کند:
 
 ```http
 Timing-Allow-Origin: https://developer.mozilla.org
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTTPHeader("Timing-Allow-Origin")}}
