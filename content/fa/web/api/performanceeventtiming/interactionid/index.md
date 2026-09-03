@@ -1,11 +1,5 @@
 ---
 title: "PerformanceEventTiming: interactionId property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEventTiming/interactionId"
-status: "needs-translation"
----
-
----
-title: "PerformanceEventTiming: interactionId property"
 short-title: interactionId
 slug: Web/API/PerformanceEventTiming/interactionId
 page-type: web-api-instance-property
@@ -14,32 +8,30 @@ browser-compat: api.PerformanceEventTiming.interactionId
 
 {{APIRef("Performance API")}}
 
-The read-only **`interactionId`** property of the {{domxref("PerformanceEventTiming")}} interface returns an ID that uniquely identifies a user interaction which triggered a series of associated events.
+ویژگی فقط‌خواندنی **`interactionId`** در رابط (interface) {{domxref("PerformanceEventTiming")}} یک شناسه برمی‌گرداند که به‌طور یکتا یک تعامل کاربری را مشخص می‌کند که مجموعه‌ای از رویدادهای مرتبط را فعال کرده‌است.
 
-## Value
+## مقدار
 
-A number. For event types where an interaction ID is not calculated the value is 0.
+یک عدد. برای انواع رویدادهایی که شناسه تعامل برای آن‌ها محاسبه نمی‌شود، مقدار ۰ است.
 
-## Description
+## توضیحات
 
-When a user interacts with a web page, a user interaction (for example a click) usually triggers a sequence of events, such as `pointerdown`, `pointerup`, and `click` events.
-To measure the latency of this series of events, the events share the same `interactionId`.
+هنگامی که کاربر با یک صفحه وب تعامل می‌کند، یک تعامل کاربری (مثلاً کلیک) معمولاً دنباله‌ای از رویدادها مانند `pointerdown`، `pointerup` و `click` را فعال می‌کند. برای اندازه‌گیری تأخیر این سری رویدادها، همه آن‌ها `interactionId` یکسانی دارند.
 
-An `interactionId` is only computed for the following event types belonging to a user interaction. It is `0` otherwise.
+`interactionId` فقط برای انواع رویدادهای زیر که متعلق به یک تعامل کاربری هستند محاسبه می‌شود. در غیر این صورت مقدار آن `0` است.
 
-| Event types                                                                                                                                               | User interaction   |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
-| {{domxref("Element/pointerdown_event", "pointerdown")}}, {{domxref("Element/pointerup_event", "pointerup")}}, {{domxref("Element/click_event", "click")}} | click / tap / drag |
-| {{domxref("Element/keydown_event", "keydown")}}, {{domxref("Element/keyup_event", "keyup")}}                                                              | key press          |
+| انواع رویداد                                                                                                                                               | تعامل کاربری        |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- |
+| {{domxref("Element/pointerdown_event", "pointerdown")}}, {{domxref("Element/pointerup_event", "pointerup")}}, {{domxref("Element/click_event", "click")}} | کلیک / لمس / کشیدن |
+| {{domxref("Element/keydown_event", "keydown")}}, {{domxref("Element/keyup_event", "keyup")}}                                                              | فشردن کلید         |
 
-The `interactionId` is also needed to calculate the {{glossary("Interaction to next paint")}} metric, which helps analyze responsiveness to user interaction over the lifetime of a page.
+`interactionId` همچنین برای محاسبه معیار {{glossary("Interaction to next paint")}} مورد نیاز است که به تحلیل پاسخگویی به تعامل کاربر در طول عمر یک صفحه کمک می‌کند.
 
-## Examples
+## مثال‌ها
 
-### Using interactionId
+### استفاده از interactionId
 
-The following example collects event duration for all events corresponding to an interaction.
-The `eventLatencies` map can then be used to find events with maximum duration for a user interaction, for example.
+مثال زیر مدت‌زمان رویدادها را برای همه رویدادهای مربوط به یک تعامل جمع‌آوری می‌کند. سپس می‌توان از نقشه `eventLatencies` برای یافتن رویدادهای با بیشترین مدت‌زمان برای یک تعامل کاربری استفاده کرد، به‌عنوان مثال.
 
 ```js
 // The key is the interaction ID.
@@ -65,10 +57,10 @@ Object.entries(eventLatencies).forEach(([k, v]) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
