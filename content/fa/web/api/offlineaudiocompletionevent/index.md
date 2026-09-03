@@ -1,10 +1,4 @@
 ---
-title: "OfflineAudioCompletionEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/OfflineAudioCompletionEvent"
-status: "needs-translation"
----
-
----
 title: OfflineAudioCompletionEvent
 slug: Web/API/OfflineAudioCompletionEvent
 page-type: web-api-interface
@@ -13,37 +7,37 @@ browser-compat: api.OfflineAudioCompletionEvent
 
 {{APIRef("Web Audio API")}}
 
-The [Web Audio API](/en-US/docs/Web/API/Web_Audio_API) `OfflineAudioCompletionEvent` interface represents events that occur when the processing of an {{domxref("OfflineAudioContext")}} is terminated. The {{domxref("OfflineAudioContext/complete_event", "complete")}} event uses this interface.
+رابط کاربری `OfflineAudioCompletionEvent` در [Web Audio API](/en-US/docs/Web/API/Web_Audio_API) رویدادهایی را نشان می‌دهد که هنگام پایان پردازش یک {{domxref("OfflineAudioContext")}} رخ می‌دهند. رویداد {{domxref("OfflineAudioContext/complete_event", "complete")}} از این رابط استفاده می‌کند.
 
 > [!NOTE]
-> This interface is marked as deprecated; it is still supported for legacy reasons, but it will soon be superseded when the promise version of {{domxref("OfflineAudioContext.startRendering")}} is supported in browsers, which will no longer need it.
+> این رابط به‌عنوان منسوخ (deprecated) علامت‌گذاری شده است؛ همچنان به دلایل سازگاری با نسخه‌های قبلی پشتیبانی می‌شود، اما به‌زودی وقتی نسخهٔ مبتنی بر Promise از {{domxref("OfflineAudioContext.startRendering")}} در مرورگرها پشتیبانی شود، جایگزین خواهد شد و دیگر به این رابط نیازی نخواهد بود.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("OfflineAudioCompletionEvent.OfflineAudioCompletionEvent", "OfflineAudioCompletionEvent()")}}
-  - : Creates a new `OfflineAudioCompletionEvent` object instance.
+  - : یک نمونهٔ جدید از شیء `OfflineAudioCompletionEvent` ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Also inherits properties from its parent, {{domxref("Event")}}_.
+_همچنین ویژگی‌های والد خود، {{domxref("Event")}} را به ارث می‌برد._
 
 - {{domxref("OfflineAudioCompletionEvent.renderedBuffer")}} {{ReadOnlyInline}}
-  - : An {{domxref("AudioBuffer")}} containing the result of processing an {{domxref("OfflineAudioContext")}}.
+  - : یک {{domxref("AudioBuffer")}} که نتیجهٔ پردازش یک {{domxref("OfflineAudioContext")}} را包含 می‌کند.
 
-## Instance methods
+## روش‌های نمونه
 
-_Inherits methods from its parent, {{domxref("Event")}}_.
+_روش‌ها را از والد خود، {{domxref("Event")}}، به ارث می‌برد._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
