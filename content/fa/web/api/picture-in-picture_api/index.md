@@ -1,11 +1,5 @@
 ---
 title: "Picture-in-Picture API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Picture-in-Picture_API"
-status: "needs-translation"
----
-
----
-title: Picture-in-Picture API
 slug: Web/API/Picture-in-Picture_API
 page-type: web-api-overview
 browser-compat: api.PictureInPictureWindow
@@ -13,85 +7,82 @@ browser-compat: api.PictureInPictureWindow
 
 {{DefaultAPISidebar("Picture-in-Picture API")}}
 
-The **Picture-in-Picture API** allow websites to create a floating, always-on-top video window. This allows users to continue consuming media while they interact with other sites or applications on their device.
+**Picture-in-Picture API** به وب‌سایت‌ها امکان می‌دهد یک پنجره ویدئویی شناور و همیشه در بالای پنجره‌ها ایجاد کنند. این ویژگی به کاربران اجازه می‌دهد در حین تعامل با سایر سایت‌ها یا برنامه‌های روی دستگاه خود، به مصرف محتوای رسانه‌ای ادامه دهند.
 
-> [!NOTE]
-> The [Document Picture-in-Picture API](/en-US/docs/Web/API/Document_Picture-in-Picture_API) extends the Picture-in-Picture API to allow the always-on-top window to be populated with _any_ arbitrary HTML content, not just a video.
+> **توجه:** [Document Picture-in-Picture API](/en-US/docs/Web/API/Document_Picture-in-Picture_API) قابلیت‌های Picture-in-Picture API را گسترش می‌دهد تا پنجره همیشه در بالا بتواند با _هر_ محتوای HTML دلخواه (نه فقط یک ویدئو) پر شود.
 
-> [!NOTE]
-> You can run code when the always-on-top window is programmatically opened, using the {{domxref("HTMLVideoElement.enterpictureinpicture_event", "enterpictureinpicture")}} event. However, this event isn't fired when the browser itself (rather than your code) triggers moving content into the always-on-top window. This can occur, for example, due to the content being occluded, by the displayed tab being switched, or by the user selecting a "picture-in-picture" option from a video's context menu or the browser chrome.
+> **توجه:** می‌توانید هنگام باز شدن برنامه‌نویسی شده پنجره همیشه در بالا، با استفاده از رویداد {{domxref("HTMLVideoElement.enterpictureinpicture_event", "enterpictureinpicture")}} کد را اجرا کنید. اما این رویداد زمانی که خود مرورگر (و نه کد شما) باعث انتقال محتوا به پنجره همیشه در بالا می‌شود، فعال نمی‌شود. این حالت می‌تواند به عنوان مثال در نتیجه پنهان شدن محتوا، تغییر برگه نمایش داده شده، یا انتخاب گزینه «تصویر در تصویر» توسط کاربر از منوی زمینه ویدئو یا کروم مرورگر رخ دهد.
 >
-> To run code in response to such actions, set up a media session action handler using {{domxref("MediaSession.setActionHandler()")}} with a `type` of `enterpictureinpicture`.
+> برای اجرای کد در پاسخ به چنین اقداماتی، یک کنترل‌کننده اکشن جلسه رسانه با استفاده از {{domxref("MediaSession.setActionHandler()")}} با `type` برابر با `enterpictureinpicture` تنظیم کنید.
 
-## Interfaces
+## رابط‌ها
 
 - {{DOMxRef("PictureInPictureWindow")}}
-  - : Represents the floating video window; contains {{domxref("PictureInPictureWindow/width", "width")}} and {{domxref("PictureInPictureWindow/height", "height")}} properties, and an {{domxref("PictureInPictureWindow/resize_event", "onresize")}} event handler property.
+  - : نمایانگر پنجره ویدئویی شناور است؛ شامل ویژگی‌های {{domxref("PictureInPictureWindow/width", "width")}} و {{domxref("PictureInPictureWindow/height", "height")}} و یک ویژگی کنترل‌کننده رویداد {{domxref("PictureInPictureWindow/resize_event", "onresize")}} است.
 - {{DOMxRef("PictureInPictureEvent")}}
-  - : Represents picture-in-picture-related events, including {{domxref("HTMLVideoElement/enterpictureinpicture_event", "enterpictureinpicture")}}, {{domxref("HTMLVideoElement/leavepictureinpicture_event", "leavepictureinpicture")}} and {{domxref("PictureInPictureWindow/resize_event", "resize")}}.
+  - : نمایانگر رویدادهای مرتبط با تصویر در تصویر، از جمله {{domxref("HTMLVideoElement/enterpictureinpicture_event", "enterpictureinpicture")}}، {{domxref("HTMLVideoElement/leavepictureinpicture_event", "leavepictureinpicture")}} و {{domxref("PictureInPictureWindow/resize_event", "resize")}} است.
 
-## Instance methods
+## روش‌های نمونه
 
-The Picture-in-Picture API adds methods to the {{DOMxRef("HTMLVideoElement")}} and {{DOMxRef("Document")}} interfaces to allow toggling of the floating video window.
+Picture-in-Picture API روش‌هایی را به رابط‌های {{DOMxRef("HTMLVideoElement")}} و {{DOMxRef("Document")}} اضافه می‌کند تا امکان جابجایی پنجره ویدئویی شناور فراهم شود.
 
-### Instance methods on the HTMLVideoElement interface
+### روش‌های نمونه در رابط HTMLVideoElement
 
 - {{DOMxRef("HTMLVideoElement.requestPictureInPicture()")}}
-  - : Requests that the user agent enters the video into picture-in-picture mode
+  - : درخواست می‌کند که عامل کاربر ویدئو را به حالت تصویر در تصویر وارد کند.
 
-### Instance methods on the Document interface
+### روش‌های نمونه در رابط Document
 
 - {{DOMxRef("Document.exitPictureInPicture()")}}
-  - : Requests that the user agent returns the element in picture-in-picture mode back into its original box.
+  - : درخواست می‌کند که عامل کاربر عنصر موجود در حالت تصویر در تصویر را به جعبه اصلی خود بازگرداند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-The Picture-in-Picture API augments the {{DOMxRef("HTMLVideoElement")}}, {{DOMxRef("Document")}}, and {{DOMxRef("ShadowRoot")}} interfaces with properties that can be used to determine if the floating video window mode is supported and available, if picture-in-picture mode is currently active, and which video is floating.
+Picture-in-Picture API رابط‌های {{DOMxRef("HTMLVideoElement")}}، {{DOMxRef("Document")}} و {{DOMxRef("ShadowRoot")}} را با ویژگی‌هایی گسترش می‌دهد که می‌توانند برای تعیین پشتیبانی و در دسترس بودن حالت پنجره ویدئویی شناور، فعال بودن حالت تصویر در تصویر در حال حاضر، و اینکه کدام ویدئو شناور است، استفاده شوند.
 
-### Instance properties on the HTMLVideoElement interface
+### ویژگی‌های نمونه در رابط HTMLVideoElement
 
 - {{DOMxRef("HTMLVideoElement.disablePictureInPicture")}}
-  - : The `disablePictureInPicture` property will provide a hint to the user agent to not suggest the picture-in-picture to users or to request it automatically.
+  - : ویژگی `disablePictureInPicture` به عامل کاربر راهنمایی می‌کند که تصویر در تصویر را به کاربران پیشنهاد ندهد یا به طور خودکار درخواست نکند.
 
-### Instance properties on the Document interface
+### ویژگی‌های نمونه در رابط Document
 
 - {{DOMxRef("Document.pictureInPictureEnabled")}}
-  - : The `pictureInPictureEnabled` property tells you whether or not it is possible to engage picture-in-picture mode. This is `false` if picture-in-picture mode is not available for any reason (e.g., the [`"picture-in-picture"` feature](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy/picture-in-picture) has been disallowed, or picture-in-picture mode is not supported).
+  - : ویژگی `pictureInPictureEnabled` به شما می‌گوید که آیا امکان ورود به حالت تصویر در تصویر وجود دارد یا خیر. اگر حالت تصویر در تصویر به هر دلیلی در دسترس نباشد (مثلاً [`"picture-in-picture"` feature](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy/picture-in-picture) غیرفعال شده باشد یا حالت تصویر در تصویر پشتیبانی نشود)، این مقدار `false` است.
 
-### Instance properties on the Document or ShadowRoot interfaces
+### ویژگی‌های نمونه در رابط‌های Document یا ShadowRoot
 
 - {{DOMxRef("Document.pictureInPictureElement")}} / {{DOMxRef("ShadowRoot.pictureInPictureElement")}}
-  - : The `pictureInPictureElement` property tells you which {{DOMxRef("Element")}} is currently being displayed in the floating window (or in the shadow DOM). If this is `null`, the document (or shadow DOM) has no node currently in picture-in-picture mode.
+  - : ویژگی `pictureInPictureElement` به شما می‌گوید کدام {{DOMxRef("Element")}} در حال حاضر در پنجره شناور (یا در DOM سایه‌ای) نمایش داده می‌شود. اگر این مقدار `null` باشد، سند (یا DOM سایه‌ای) هیچ گره‌ای در حالت تصویر در تصویر ندارد.
 
-## Events
+## رویدادها
 
-_The Picture-in-Picture API defines three events, which can be used to detect when picture-in-picture mode is toggled and when the floating video window is resized._
+_Picture-in-Picture API سه رویداد را تعریف می‌کند که می‌توان از آن‌ها برای تشخیص زمان جابجایی حالت تصویر در تصویر و تغییر اندازه پنجره ویدئویی شناور استفاده کرد._
 
 - {{domxref("HTMLVideoElement.enterpictureinpicture_event", "enterpictureinpicture")}}
-  - : Sent to a {{DOMxRef("HTMLVideoElement")}} when it enters picture-in-picture mode.
+  - : به یک {{DOMxRef("HTMLVideoElement")}} هنگامی که وارد حالت تصویر در تصویر می‌شود، ارسال می‌شود.
 - {{domxref("HTMLVideoElement.leavepictureinpicture_event", "leavepictureinpicture")}}
-  - : Sent to a {{DOMxRef("HTMLVideoElement")}} when it leaves picture-in-picture mode.
+  - : به یک {{DOMxRef("HTMLVideoElement")}} هنگامی که از حالت تصویر در تصویر خارج می‌شود، ارسال می‌شود.
 - {{domxref("PictureInPictureWindow.resize_event", "resize")}}
-  - : Sent to a {{DOMxRef("PictureInPictureWindow")}} when it changes size.
+  - : به یک {{DOMxRef("PictureInPictureWindow")}} هنگامی که اندازه آن تغییر می‌کند، ارسال می‌شود.
 
-## Adding Controls
+## افزودن کنترل‌ها
 
-If media action handlers have been set via the [Media Session API](/en-US/docs/Web/API/Media_Session_API), then appropriate controls for those actions will be added by the browser to the picture-in-picture overlay. For example, if a `"nexttrack"` action has been set, then a skip button might be displayed in the picture-in-picture view. There is no support for adding custom HTML buttons or controls.
+اگر کنترل‌کننده‌های اکشن رسانه از طریق [Media Session API](/en-US/docs/Web/API/Media_Session_API) تنظیم شده باشند، مرورگر کنترل‌های مناسب برای آن اکشن‌ها را به پوشش تصویر در تصویر اضافه می‌کند. به عنوان مثال، اگر یک اکشن `"nexttrack"` تنظیم شده باشد، یک دکمه پرش به جلو ممکن است در نمای تصویر در تصویر نمایش داده شود. پشتیبانی از افزودن دکمه‌ها یا کنترل‌های HTML سفارشی وجود ندارد.
 
-## Controlling styling
+## کنترل سبک‌دهی
 
-The {{cssxref(":picture-in-picture")}} [CSS](/en-US/docs/Web/CSS) [pseudo-class](/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-classes) matches the video element currently in picture-in-picture mode, allowing you to configure your stylesheets to automatically adjust the size, style, or layout of content when a video switches back and forth between picture-in-picture and traditional presentation modes.
+[شبه-کلاس](/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-classes) {{cssxref(":picture-in-picture")}} [CSS](/en-US/docs/Web/CSS) با عنصر ویدئویی که در حال حاضر در حالت تصویر در تصویر است مطابقت دارد و به شما امکان می‌دهد شیوه‌نامه‌های خود را طوری پیکربندی کنید که به طور خودکار اندازه، سبک یا چیدمان محتوا را زمانی که یک ویدئو بین حالت تصویر در تصویر و حالت نمایش سنتی جابجا می‌شود، تنظیم کنند.
 
-## Controlling access
+## کنترل دسترسی
 
-The availability of picture-in-picture mode can be controlled using [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy). The picture-in-picture mode feature is identified by the string `"picture-in-picture"`, with a default allowlist value of `*`, meaning that picture-in-picture mode is permitted in top-level document contexts, as well as to nested browsing contexts loaded from the same origin as the top-most document.
+در دسترس بودن حالت تصویر در تصویر می‌تواند با استفاده از [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) کنترل شود. ویژگی حالت تصویر در تصویر با رشته `"picture-in-picture"` شناسایی می‌شود و مقدار لیست مجاز پیش‌فرض آن `*` است، به این معنی که حالت تصویر در تصویر در زمینه‌های سند سطح بالا و همچنین در زمینه‌های مرور تودرتو که از همان مبدأ سند بالایی بارگذاری شده‌اند، مجاز است.
 
-## Examples
+## مثال‌ها
 
-### Toggling picture-in-picture mode
+### جابجایی حالت تصویر در تصویر
 
-In this example, we have a {{HTMLElement("video")}} element in a web page, a {{HTMLElement("button")}} to toggle picture-in-picture, and an element to log information relevant for the example.
-The {{HTMLElement("button")}} element is `disabled` initially until we've determined browser support.
+در این مثال، یک عنصر {{HTMLElement("video")}} در یک صفحه وب، یک {{HTMLElement("button")}} برای جابجایی تصویر در تصویر، و یک عنصر برای ثبت اطلاعات مرتبط با مثال داریم. عنصر {{HTMLElement("button")}} در ابتدا `disabled` است تا زمانی که پشتیبانی مرورگر را تعیین کنیم.
 
 ```html
 <video
@@ -120,16 +111,12 @@ button {
 }
 ```
 
-We first check if the browser supports PiP with `document.pictureInPictureEnabled`, and if it's not supported, we log that information to the `<pre>` element.
-If it is available in the browser, we can enable the toggle to enter and exit PiP.
+ابتدا با `document.pictureInPictureEnabled` بررسی می‌کنیم که آیا مرورگر از PiP پشتیبانی می‌کند یا خیر، و اگر پشتیبانی نمی‌کند، آن اطلاعات را در عنصر `<pre>` ثبت می‌کنیم. اگر در مرورگر در دسترس باشد، می‌توانیم دکمه جابجایی را برای ورود و خروج از PiP فعال کنیم.
 
-For the controls, an event listener on the {{HTMLElement("button")}} element calls a `togglePictureInPicture()` function that we've defined.
-In `togglePictureInPicture()`, an `if` statement checks the value of the {{DOMxRef("Document", "document")}}'s `pictureInPictureElement` attribute.
+برای کنترل‌ها، یک شنونده رویداد روی عنصر {{HTMLElement("button")}} تابع `togglePictureInPicture()` که تعریف کرده‌ایم را فراخوانی می‌کند. در `togglePictureInPicture()`، یک دستور `if` مقدار ویژگی `pictureInPictureElement` {{DOMxRef("Document", "document")}} را بررسی می‌کند.
 
-- If the value is `null`, no video is in a floating window, so we can request the video to enter picture-in-picture mode.
-  We do that by calling {{DOMxRef("HTMLVideoElement.requestPictureInPicture()")}} on the {{HTMLElement("video")}} element.
-- If the value is not `null`, an element is currently in picture-in-picture mode.
-  We can then call {{DOMxRef("Document.exitPictureInPicture", "document.exitPictureInPicture()")}} to bring the video back into its initial box, exiting picture-in-picture mode.
+- اگر مقدار `null` باشد، هیچ ویدئویی در پنجره شناور نیست، بنابراین می‌توانیم درخواست کنیم که ویدئو وارد حالت تصویر در تصویر شود. این کار را با فراخوانی {{DOMxRef("HTMLVideoElement.requestPictureInPicture()")}} روی عنصر {{HTMLElement("video")}} انجام می‌دهیم.
+- اگر مقدار `null` نباشد، یک عنصر در حال حاضر در حالت تصویر در تصویر است. سپس می‌توانیم {{DOMxRef("Document.exitPictureInPicture", "document.exitPictureInPicture()")}} را فراخوانی کنیم تا ویدئو به جعبه اولیه خود بازگردد و از حالت تصویر در تصویر خارج شود.
 
 ```js
 const video = document.getElementById("video");
@@ -159,19 +146,19 @@ pipButton.addEventListener("click", togglePictureInPicture);
 }
 ```
 
-Clicking the "Toggle PiP" button lets the user toggle between playing the video in the page and in a floating window:
+با کلیک روی دکمه "Toggle PiP" کاربر می‌تواند بین پخش ویدئو در صفحه و در یک پنجره شناور جابجا شود:
 
 {{embedlivesample("toggling_picture-in-picture", , "350")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{DOMxRef("HTMLVideoElement.requestPictureInPicture()")}}
 - {{DOMxRef("HTMLVideoElement.disablePictureInPicture")}}
@@ -179,4 +166,4 @@ Clicking the "Toggle PiP" button lets the user toggle between playing the video 
 - {{DOMxRef("Document.exitPictureInPicture()")}}
 - {{DOMxRef("Document.pictureInPictureElement")}}
 - {{CSSxRef(":picture-in-picture")}}
-- The [Document Picture-in-Picture API](/en-US/docs/Web/API/Document_Picture-in-Picture_API)
+- [Document Picture-in-Picture API](/en-US/docs/Web/API/Document_Picture-in-Picture_API)
