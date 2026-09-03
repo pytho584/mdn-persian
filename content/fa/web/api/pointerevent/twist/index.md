@@ -1,7 +1,6 @@
 ---
 title: "PointerEvent: twist property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent/twist"
-status: "needs-translation"
 ---
 
 ---
@@ -14,42 +13,36 @@ browser-compat: api.PointerEvent.twist
 
 {{ APIRef("Pointer Events") }}
 
-The **`twist`** read-only property of the
-{{domxref("PointerEvent")}} interface represents the clockwise rotation of the pointer
-(e.g., pen stylus) around its major axis, in degrees.
+خاصیتِ خواندنی **`twist`** در رابط {{domxref("PointerEvent")}} میزان چرخشِ ساعتگردِ نشانگر (مثلاً قلمِ دیجیتال) را حول محور اصلی‌اش، بر حسب درجه، نشان می‌دهد.
 
-## Value
+## مقدار
 
-A `long` value representing the amount of twist, in degrees, applied to the
-transducer (pointer). The value is in the range `0` to `359`,
-inclusive. For devices that do not report `twist`, the value is
-`0`.
+یک مقدار از نوع `long` که میزان چرخش واردشده بر مبدلِ (نشانگر) را بر حسب درجه نشان می‌دهد. این مقدار در بازهٔ `0` تا `359` است. برای دستگاه‌هایی که `twist` را گزارش نمی‌کنند، مقدار `0` است.
 
-## Examples
+## مثال‌ها
 
-When a {{domxref("Element/pointerdown_event", "pointerdown")}} event is fired, different functions are called
-depending on the value of the event's `twist` property.
+هنگامی که رویداد {{domxref("Element/pointerdown_event", "pointerdown")}} رخ می‌دهد، بسته به مقدار خاصیت `twist` رویداد، توابع مختلفی فراخوانی می‌شوند.
 
 ```js
 someElement.addEventListener("pointerdown", (event) => {
   if (event.twist === 0) {
-    // No twist
+    // بدون چرخش
     process_no_twist(event);
   } else {
-    // Default
+    // حالت پیش‌فرض
     process_twist(event);
   }
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{ domxref("Touch.force") }}
