@@ -1,11 +1,5 @@
 ---
 title: "OES_fbo_render_mipmap extension"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/OES_fbo_render_mipmap"
-status: "needs-translation"
----
-
----
-title: OES_fbo_render_mipmap extension
 short-title: OES_fbo_render_mipmap
 slug: Web/API/OES_fbo_render_mipmap
 page-type: webgl-extension
@@ -14,26 +8,26 @@ browser-compat: api.OES_fbo_render_mipmap
 
 {{APIRef("WebGL")}}
 
-The `OES_fbo_render_mipmap` extension is part of the [WebGL API](/en-US/docs/Web/API/WebGL_API) and makes it possible to attach any level of a texture to a framebuffer object.
+افزونهٔ `OES_fbo_render_mipmap` بخشی از [WebGL API](/en-US/docs/Web/API/WebGL_API) است و امکان پیوست کردن هر سطحی از یک بافت (texture) به یک شیء فریم‌بافر (framebuffer object) را فراهم می‌کند.
 
-WebGL extensions are available using the {{domxref("WebGLRenderingContext.getExtension()")}} method. For more information, see also [Using Extensions](/en-US/docs/Web/API/WebGL_API/Using_Extensions) in the [WebGL tutorial](/en-US/docs/Web/API/WebGL_API/Tutorial).
+افزونه‌های WebGL با استفاده از متد {{domxref("WebGLRenderingContext.getExtension()")}} در دسترس هستند. برای اطلاعات بیشتر، به [استفاده از افزونه‌ها](/en-US/docs/Web/API/WebGL_API/Using_Extensions) در [آموزش WebGL](/en-US/docs/Web/API/WebGL_API/Tutorial) مراجعه کنید.
 
 > [!NOTE]
-> This extension is only available to {{domxref("WebGLRenderingContext", "WebGL 1", "", 1)}}.
-> In WebGL2, the functionality of this extension is available in the WebGL 2 context by default.
+> این افزونه فقط برای {{domxref("WebGLRenderingContext", "WebGL 1", "", 1)}} در دسترس است.
+> در WebGL2، قابلیت‌های این افزونه به‌صورت پیش‌فرض در زمینهٔ WebGL 2 موجود است.
 
-## Examples
+## مثال‌ها
 
-See the [sample code](https://registry.khronos.org/webgl/extensions/OES_fbo_render_mipmap/) in the Khronos specification.
+[نمونه کد](https://registry.khronos.org/webgl/extensions/OES_fbo_render_mipmap/) را در مشخصات Khronos ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("WebGLRenderingContext.getExtension()")}}
