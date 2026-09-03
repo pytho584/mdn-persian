@@ -1,7 +1,5 @@
 ---
 title: "Navigator: globalPrivacyControl property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/globalPrivacyControl"
-status: "needs-translation"
 ---
 
 ---
@@ -16,33 +14,33 @@ browser-compat: api.Navigator.globalPrivacyControl
 
 {{APIRef("DOM")}}{{SeeCompatTable}}
 
-The **`Navigator.globalPrivacyControl`** read-only property returns the user's [Global Privacy Control](https://globalprivacycontrol.org/) setting for the current website.
-This setting indicates whether the user consents to the website or service selling or sharing their personal information with third parties.
+ویژگی فقط‌خواندنی **`Navigator.globalPrivacyControl`** تنظیمات [Global Privacy Control](https://globalprivacycontrol.org/) کاربر را برای وب‌سایت فعلی برمی‌گرداند.
+این تنظیم نشان می‌دهد که آیا کاربر با فروش یا به اشتراک‌گذاری اطلاعات شخصی خود با اشخاص ثالث توسط وب‌سایت یا سرویس موافقت دارد یا خیر.
 
-The value of the property reflects that of the {{httpheader("Sec-GPC")}} HTTP header.
+مقدار این ویژگی منعکس‌کنندهٔ هدر HTTP {{httpheader("Sec-GPC")}} است.
 
-## Value
+## مقدار
 
-`true` if the user explicitly _does not_ provide consent to sell or share their data.
-`false` if the user either grants consent, or has not indicated a preference.
+`true` اگر کاربر به صراحت رضایت خود را برای فروش یا به اشتراک‌گذاری داده‌هایش _ندهد_.
+`false` اگر کاربر رضایت داده باشد، یا ترجیحی مشخص نکرده باشد.
 
-## Example
+## مثال
 
 ```js
 console.log(navigator.globalPrivacyControl);
 // "true" if the user has specifically indicated they do not want their data shared or sold, otherwise "false".
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{HTTPHeader("Sec-GPC")}} header
+- {{HTTPHeader("Sec-GPC")}} هدر
 - [GlobalPrivacyControl.org](https://globalprivacycontrol.org/)
-- [Do Not Track](https://en.wikipedia.org/wiki/Do_Not_Track) on Wikipedia
+- [Do Not Track](https://en.wikipedia.org/wiki/Do_Not_Track) در ویکی‌پدیا
