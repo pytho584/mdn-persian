@@ -1,11 +1,5 @@
 ---
 title: "NDEFReader: scan() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NDEFReader/scan"
-status: "needs-translation"
----
-
----
-title: "NDEFReader: scan() method"
 short-title: scan()
 slug: Web/API/NDEFReader/scan
 page-type: web-api-instance-method
@@ -16,7 +10,7 @@ browser-compat: api.NDEFReader.scan
 
 {{SecureContext_Header}}{{SeeCompatTable}}{{APIRef("Web NFC API")}}
 
-The `scan()` method of the {{DOMxRef("NDEFReader")}} interface activates a reading device and returns a {{jsxref("Promise")}} that either resolves when an NFC tag read operation is scheduled or rejects if a hardware or permission error is encountered. This method triggers a permission prompt if the "nfc" permission has not been previously granted.
+متد `scan()` در رابط {{DOMxRef("NDEFReader")}} دستگاه خواننده را فعال می‌کند و یک {{jsxref("Promise")}} برمی‌گرداند که یا زمانی که یک عملیات خواندن تگ NFC زمان‌بندی می‌شود با موفقیت resolve می‌شود و یا در صورت بروز خطای سخت‌افزاری یا مجوز reject می‌شود. اگر مجوز «nfc» قبلاً داده نشده باشد، این متد یک درخواست مجوز (permission prompt) را فعال می‌کند.
 
 ## Syntax
 
@@ -27,35 +21,32 @@ scan(options)
 ### Parameters
 
 - `options` {{optional_inline}}
-  - : An object with the following properties:
+  - : یک شیء با ویژگی‌های زیر:
     - `signal`
-      - : An {{DOMxRef("AbortSignal")}} that allows cancelling this `scan()` operation.
+      - : یک {{DOMxRef("AbortSignal")}} که امکان لغو این عملیات `scan()` را فراهم می‌کند.
 
 ### Return value
 
-A {{JSxRef("Promise")}} that resolves immediately after
-scheduling read operations for the NFC adapter.
+یک {{JSxRef("Promise")}} که بلافاصله پس از زمان‌بندی عملیات خواندن برای آداپتور NFC resolve می‌شود.
 
 ### Exceptions
 
-This method doesn't throw exceptions; instead, it rejects the returned promise,
-passing a {{domxref("DOMException")}} whose `name` is one of the
-following:
+این متد استثنا پرتاب نمی‌کند؛ در عوض، promise برگشتی را reject می‌کند و یک {{domxref("DOMException")}} ارسال می‌کند که `name` آن یکی از موارد زیر است:
 
 - `AbortError` {{domxref("DOMException")}}
-  - : Returned if the scan operation was aborted with the {{DOMxRef("AbortSignal")}} passed in the `options` argument.
+  - : اگر عملیات scan با {{DOMxRef("AbortSignal")}} ارسال‌شده در آرگومان `options` لغو شده باشد، برگردانده می‌شود.
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Returned if there's already an ongoing scan.
+  - : اگر از قبل یک scan در حال انجام باشد، برگردانده می‌شود.
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Returned if the permission for this operation was rejected.
+  - : اگر مجوز این عملیات رد شده باشد، برگردانده می‌شود.
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Returned if there is no NFC adapter compatible with Web NFC or a connection cannot be established.
+  - : اگر هیچ آداپتور NFC سازگار با Web NFC وجود نداشته باشد یا اتصال برقرار نشود، برگردانده می‌شود.
 
 ## Examples
 
 ### Handle scanning errors
 
-This example shows what happens when a scan promise rejects and `readingerror` is thrown.
+این مثال نشان می‌دهد که وقتی promise مربوط به scan رد می‌شود و `readingerror` رخ می‌دهد، چه اتفاقی می‌افتد.
 
 ```js
 const ndef = new NDEFReader();
