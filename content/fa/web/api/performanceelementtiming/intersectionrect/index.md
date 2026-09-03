@@ -1,11 +1,5 @@
 ---
 title: "PerformanceElementTiming: intersectionRect property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceElementTiming/intersectionRect"
-status: "needs-translation"
----
-
----
-title: "PerformanceElementTiming: intersectionRect property"
 short-title: intersectionRect
 slug: Web/API/PerformanceElementTiming/intersectionRect
 page-type: web-api-instance-property
@@ -16,19 +10,19 @@ browser-compat: api.PerformanceElementTiming.intersectionRect
 
 {{APIRef("Performance API")}}{{SeeCompatTable}}
 
-The **`intersectionRect`** read-only property of the {{domxref("PerformanceElementTiming")}} interface returns the rectangle of the element within the viewport.
+خاصیت فقط‌خواندنی **`intersectionRect`** در رابط {{domxref("PerformanceElementTiming")}}، مستطیل عنصر را درون viewport برمی‌گرداند.
 
-## Value
+## مقدار
 
-A {{domxref("DOMRectReadOnly")}} which is the rectangle of the element within the viewport.
+یک {{domxref("DOMRectReadOnly")}} که مستطیل عنصر درون viewport است.
 
-For display images this is the display rectangle of the image within the viewport. For text this is the display rectangle of the node in the viewport. This being the smallest rectangle that contains the union of all text nodes that belong to the element.
+برای تصاویر نمایش‌داده‌شده، این مستطیل نمایش تصویر درون viewport است. برای متن، این مستطیل نمایش گره (node) درون viewport است. این مقدار کوچک‌ترین مستطیلی است که包含了 اتحاد همهٔ گره‌های متنی متعلق به عنصر را در بر می‌گیرد.
 
-## Examples
+## مثال‌ها
 
-### Logging `intersectionRect`
+### ثبت `intersectionRect`
 
-In this example an {{HTMLElement("img")}} element is being observed by adding the [`elementtiming`](/en-US/docs/Web/HTML/Reference/Attributes/elementtiming) attribute. A {{domxref("PerformanceObserver")}} is registered to get all performance entries of type `"element"` and the `buffered` flag is used to access data from before observer creation. Calling `entry.intersectionRect` returns a {{domxref("DOMRectReadOnly")}} object with the display rectangle of the image.
+در این مثال، یک عنصر {{HTMLElement("img")}} با افزودن ویژگی [`elementtiming`](/en-US/docs/Web/HTML/Reference/Attributes/elementtiming) مشاهده می‌شود. یک {{domxref("PerformanceObserver")}} ثبت می‌شود تا تمام ورودی‌های عملکرد از نوع `"element"` را دریافت کند و از پرچم `buffered` برای دسترسی به داده‌های قبل از ایجاد observer استفاده می‌شود. فراخوانی `entry.intersectionRect` یک شیء {{domxref("DOMRectReadOnly")}} شامل مستطیل نمایش تصویر برمی‌گرداند.
 
 ```html
 <img
@@ -49,10 +43,10 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "element", buffered: true });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
