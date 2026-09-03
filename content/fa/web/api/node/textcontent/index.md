@@ -1,11 +1,5 @@
 ---
 title: "Node: textContent property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent"
-status: "needs-translation"
----
-
----
-title: "Node: textContent property"
 short-title: textContent
 slug: Web/API/Node/textContent
 page-type: web-api-instance-property
@@ -14,55 +8,54 @@ browser-compat: api.Node.textContent
 
 {{APIRef("DOM")}}
 
-The **`textContent`** property of the {{domxref("Node")}} interface represents the text content of the node and its descendants.
+ویژگی **`textContent`** در رابط {{domxref("Node")}} محتوای متنی گره و تمام فرزندان آن را نشان می‌دهد.
 
 > [!NOTE]
-> `textContent` and {{domxref("HTMLElement.innerText")}} are easily confused, but the two properties are [different in important ways](#differences_from_innertext).
+> `textContent` و {{domxref("HTMLElement.innerText")}} به راحتی با یکدیگر اشتباه گرفته می‌شوند، اما این دو ویژگی [تفاوت‌های مهمی](#differences_from_innertext) با هم دارند.
 
-## Value
+## مقدار
 
-A string, or [`null`](/en-US/docs/Web/JavaScript/Reference/Operators/null). Its value depends on the situation:
+یک رشته (string)، یا [`null`](/en-US/docs/Web/JavaScript/Reference/Operators/null). مقدار آن به موقعیت بستگی دارد:
 
-- If the node is a {{domxref("document")}} or a {{glossary("doctype")}}, `textContent` returns [`null`](/en-US/docs/Web/JavaScript/Reference/Operators/null).
+- اگر گره یک {{domxref("document")}} یا {{glossary("doctype")}} باشد، `textContent` مقدار [`null`](/en-US/docs/Web/JavaScript/Reference/Operators/null) برمی‌گرداند.
 
   > [!NOTE]
-  > To get _all_ of the text and [CDATA data](/en-US/docs/Web/API/CDATASection) for the whole document, use `document.documentElement.textContent`.
+  > برای دریافت _همه_ متن و [داده‌های CDATA](/en-US/docs/Web/API/CDATASection) کل سند، از `document.documentElement.textContent` استفاده کنید.
 
-- If the node is a [CDATA section](/en-US/docs/Web/API/CDATASection), a comment, a [processing instruction](/en-US/docs/Web/API/ProcessingInstruction), or a [text node](/en-US/docs/Web/API/Text), `textContent` returns, or sets, the text inside the node, i.e., the {{domxref("Node.nodeValue")}}.
-- For other node types, `textContent` returns the concatenation of the `textContent` of every child node, excluding comments and processing instructions. (This is an empty string if the node has no children.)
+- اگر گره یک [بخش CDATA](/en-US/docs/Web/API/CDATASection)، یک نظر (comment)، یک [دستورالعمل پردازش](/en-US/docs/Web/API/ProcessingInstruction) یا یک [گره متنی](/en-US/docs/Web/API/Text) باشد، `textContent` متن داخل گره را برمی‌گرداند یا تنظیم می‌کند، یعنی همان {{domxref("Node.nodeValue")}}.
+- برای سایر انواع گره، `textContent` الحاق (concatenation) `textContent` تمام گره‌های فرزند را برمی‌گرداند، به جز نظرات و دستورالعمل‌های پردازش. (اگر گره فرزندی نداشته باشد، این یک رشته خالی است.)
 
 > [!WARNING]
-> Setting `textContent` on a node removes _all_ of the node's children and replaces them with a single text node with the given string value.
+> تنظیم `textContent` روی یک گره، _تمام_ فرزندان آن گره را حذف کرده و آن‌ها را با یک گره متنی واحد حاوی رشته داده شده جایگزین می‌کند.
 
-### Differences from innerText
+### تفاوت‌ها با innerText
 
-Don't get confused by the differences between `Node.textContent` and {{domxref("HTMLElement.innerText")}}. Although the names seem similar, there are important differences:
+تفاوت‌های بین `Node.textContent` و {{domxref("HTMLElement.innerText")}} را با هم اشتباه نگیرید. اگرچه نام‌ها مشابه به نظر می‌رسند، تفاوت‌های مهمی وجود دارد:
 
-- `textContent` gets the content of _all_ elements, including {{HTMLElement("script")}} and {{HTMLElement("style")}} elements. In contrast, `innerText` only shows "human-readable" elements.
-- `textContent` returns every element in the node. In contrast, `innerText` is aware of styling and won't return the text of "hidden" elements.
-  - Moreover, since `innerText` takes CSS styles into account, reading the value of `innerText` triggers a {{glossary("reflow")}} to ensure up-to-date computed styles. (Reflows can
-    be computationally expensive, and thus should be avoided when possible.)
+- `textContent` محتوای _همه_ عناصر، از جمله عناصر {{HTMLElement("script")}} و {{HTMLElement("style")}} را دریافت می‌کند. در مقابل، `innerText` فقط عناصر «قابل خواندن برای انسان» را نشان می‌دهد.
+- `textContent` هر عنصری را که در گره وجود دارد برمی‌گرداند. در مقابل، `innerText` از سبک‌دهی (styling) آگاه است و متن عناصر «پنهان» را برنمی‌گرداند.
+  - علاوه بر این، از آنجایی که `innerText` سبک‌های CSS را در نظر می‌گیرد، خواندن مقدار `innerText` باعث ایجاد {{glossary("reflow")}} می‌شود تا سبک‌های محاسبه‌شده به‌روز تضمین شوند. (بازچینی (reflow) می‌تواند از نظر محاسباتی پرهزینه باشد، بنابراین باید در صورت امکان از آن اجتناب کرد.)
 
-### Differences from innerHTML
+### تفاوت‌ها با innerHTML
 
-{{domxref("Element.innerHTML")}} gets or sets HTML, as its name indicates. We advise against using `innerHTML` to get or set text inside an element because it deals with raw HTML rather than plain text and can be susceptible to {{glossary("Cross-site_scripting", "XSS attacks")}}. Even if you are sure that the text never contains HTML syntax, it is still less semantic and slower because it needs to invoke the HTML parser.
+{{domxref("Element.innerHTML")}} همانطور که از نامش پیداست، HTML را دریافت یا تنظیم می‌کند. توصیه می‌کنیم از `innerHTML` برای دریافت یا تنظیم متن داخل یک عنصر استفاده نکنید، زیرا با HTML خام سروکار دارد نه متن ساده، و ممکن است در معرض {{glossary("Cross-site_scripting", "حملات XSS")}} قرار گیرد. حتی اگر مطمئن باشید که متن هرگز شامل نحو HTML نیست، باز هم معنایی (semantic) کمتری دارد و کندتر است، زیرا نیاز به فراخوانی تجزیه‌کننده HTML دارد.
 
-## Examples
+## مثال‌ها
 
-Start with this HTML fragment.
+با این قطعه HTML شروع کنید.
 
 ```html
 <div id="divA">This is <span>some</span> text!</div>
 ```
 
-You can use `textContent` to get the element's text content:
+می‌توانید از `textContent` برای دریافت محتوای متنی عنصر استفاده کنید:
 
 ```js
 let text = document.getElementById("divA").textContent;
 // The text variable is now: 'This is some text!'
 ```
 
-If you prefer to set the element's text content, you can do:
+اگر ترجیح می‌دهید محتوای متنی عنصر را تنظیم کنید، می‌توانید این کار را انجام دهید:
 
 ```js
 document.getElementById("divA").textContent = "This text is different!";
@@ -70,16 +63,16 @@ document.getElementById("divA").textContent = "This text is different!";
 // <div id="divA">This text is different!</div>
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("HTMLScriptElement.textContent")}} and {{domxref("HTMLScriptElement.text")}}
+- {{domxref("HTMLScriptElement.textContent")}} و {{domxref("HTMLScriptElement.text")}}
 - {{domxref("HTMLElement.innerText")}}
 - {{domxref("Element.innerHTML")}}
