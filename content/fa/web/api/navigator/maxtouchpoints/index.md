@@ -1,11 +1,5 @@
 ---
 title: "Navigator: maxTouchPoints property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/maxTouchPoints"
-status: "needs-translation"
----
-
----
-title: "Navigator: maxTouchPoints property"
 short-title: maxTouchPoints
 slug: Web/API/Navigator/maxTouchPoints
 page-type: web-api-instance-property
@@ -14,17 +8,15 @@ browser-compat: api.Navigator.maxTouchPoints
 
 {{APIRef("HTML DOM")}}
 
-The **`maxTouchPoints`** read-only property of the
-{{domxref("Navigator")}} interface returns the maximum number of simultaneous touch
-contact points that are supported by the current device.
+خاصیتِ فقط‌خواندنیِ **`maxTouchPoints`** در واسطِ {{domxref("Navigator")}}، حداکثر تعداد نقاط تماسِ همزمانی را برمی‌گرداند که توسط دستگاه فعلی پشتیبانی می‌شود.
 
-## Value
+## مقدار
 
-A number.
+یک عدد.
 
-This value is hardware-dependent. Desktop computers without a touchscreen (Mac, Windows and Linux) return 0 while smartphones (Android and iOS) typically return 5.
+این مقدار به سخت‌افزار وابسته است. رایانه‌های رومیزی بدون صفحه‌لمسی (مک، ویندوز و لینوکس) مقدار ۰ را برمی‌گردانند، در حالی که گوشی‌های هوشمند (اندروید و iOS) معمولاً مقدار ۵ را برمی‌گردانند.
 
-## Example
+## مثال
 
 ```js
 if (navigator.maxTouchPoints > 1) {
@@ -36,10 +28,10 @@ if (navigator.maxTouchPoints > 1) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
