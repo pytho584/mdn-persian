@@ -1,11 +1,5 @@
 ---
 title: "Navigator: xr property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/xr"
-status: "needs-translation"
----
-
----
-title: "Navigator: xr property"
 short-title: xr
 slug: Web/API/Navigator/xr
 page-type: web-api-instance-property
@@ -16,45 +10,35 @@ browser-compat: api.Navigator.xr
 
 {{APIRef("WebXR Device API")}}{{SecureContext_Header}}{{SeeCompatTable}}
 
-The read-only **`xr`** property
-provided by the {{domxref("Navigator")}} interface returns an {{domxref("XRSystem")}} object
-which can be used to access the [WebXR Device API](/en-US/docs/Web/API/WebXR_Device_API).
+ویژگی فقط‌خواندنی **`xr`** که توسط رابط {{domxref("Navigator")}} ارائه می‌شود، یک شیء {{domxref("XRSystem")}} برمی‌گرداند که برای دسترسی به [WebXR Device API](/en-US/docs/Web/API/WebXR_Device_API) قابل استفاده است.
 
-## Value
+## مقدار
 
-The {{domxref("XRSystem")}} object used to interface with the [WebXR Device API](/en-US/docs/Web/API/WebXR_Device_API) in the current
-context. This can be used to present augmented and/or virtual reality imagery to the
-user.
+شیء {{domxref("XRSystem")}} که برای تعامل با [WebXR Device API](/en-US/docs/Web/API/WebXR_Device_API) در زمینهٔ فعلی استفاده می‌شود. از این شیء می‌توان برای نمایش تصاویر واقعیت افزوده و/یا واقعیت مجازی به کاربر استفاده کرد.
 
-## Examples
+## مثال‌ها
 
-Each {{domxref("Window")}} has its own instance of {{domxref("Navigator")}}, which can
-be accessed as {{domxref("Window.navigator","window.navigator")}} or as
-{{domxref("Window.navigator", "navigator")}}. At the same time, a new
-{{domxref("XRSystem")}} instance is also created and attached to
-the `navigator` instance as `navigator.xr`. If
-the `xr` property exists, you can use it to access the [WebXR Device API](/en-US/docs/Web/API/WebXR_Device_API).
+هر {{domxref("Window")}} نمونهٔ مخصوص به خود از {{domxref("Navigator")}} را دارد که می‌توان از طریق {{domxref("Window.navigator","window.navigator")}} یا {{domxref("Window.navigator", "navigator")}} به آن دسترسی داشت. همزمان، یک نمونهٔ جدید از {{domxref("XRSystem")}} نیز ساخته شده و به‌عنوان `navigator.xr` به نمونهٔ `navigator` متصل می‌شود. اگر ویژگی `xr` وجود داشته باشد، می‌توانید از آن برای دسترسی به [WebXR Device API](/en-US/docs/Web/API/WebXR_Device_API) استفاده کنید.
 
-To determine if WebXR is available, you can do something like this:
+برای تعیین اینکه آیا WebXR در دسترس است یا نه، می‌توانید کاری شبیه به این انجام دهید:
 
 ```js
 if ("xr" in window.navigator) {
-  /* WebXR can be used! */
+  /* WebXR قابل استفاده است! */
 } else {
-  /* WebXR isn't available */
+  /* WebXR در دسترس نیست */
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [WebGL API](/en-US/docs/Web/API/WebGL_API): 2D and 3D accelerated
-  graphics for the web
-- [Canvas API](/en-US/docs/Web/API/Canvas_API): 2D graphics API
+- [WebGL API](/en-US/docs/Web/API/WebGL_API): گرافیک شتاب‌گرفتهٔ دوبعدی و سه‌بعدی برای وب
+- [Canvas API](/en-US/docs/Web/API/Canvas_API): رابط برنامه‌نویسی گرافیک دوبعدی
