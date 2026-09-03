@@ -1,11 +1,5 @@
 ---
 title: "PaymentRequestEvent: PaymentRequestEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/PaymentRequestEvent"
-status: "needs-translation"
----
-
----
-title: "PaymentRequestEvent: PaymentRequestEvent() constructor"
 short-title: PaymentRequestEvent()
 slug: Web/API/PaymentRequestEvent/PaymentRequestEvent
 page-type: web-api-constructor
@@ -16,7 +10,7 @@ browser-compat: api.PaymentRequestEvent.PaymentRequestEvent
 
 {{APIRef("Web-Based Payment Handler API")}}{{SeeCompatTable}}{{AvailableInWorkers("service")}}
 
-The **`PaymentRequestEvent`** constructor creates a new {{domxref("PaymentRequestEvent")}} object instance.
+سازنده **`PaymentRequestEvent()`** یک نمونه جدید از شی {{domxref("PaymentRequestEvent")}} می‌سازد.
 
 ## Syntax
 
@@ -25,34 +19,32 @@ new PaymentRequestEvent(type)
 new PaymentRequestEvent(type, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string with the name of the event.
-    It is case-sensitive and browsers set it to `paymentrequest`.
+  - : یک رشته شامل نام رویداد. این مقدار به حروف بزرگ و کوچک حساس است و مرورگرها آن را به `paymentrequest` تنظیم می‌کنند.
 - `options` {{optional_inline}}
-  - : An object that, in addition of the properties defined in {{domxref("ExtendableEvent/ExtendableEvent", "ExtendableEvent()")}}, can have the following properties:
+  - : یک شی که علاوه بر ویژگی‌های تعریف‌شده در {{domxref("ExtendableEvent/ExtendableEvent", "ExtendableEvent()")}}، می‌تواند ویژگی‌های زیر را داشته باشد:
     - `methodData`
-      - : An array of `PaymentMethodData` objects (see [`methodData` > Value](/en-US/docs/Web/API/PaymentRequestEvent/methodData#value)) containing payment method identifiers for the payment methods
-        that the website accepts and any associated payment method-specific data.
+      - : آرایه‌ای از اشیاء `PaymentMethodData` (به [`methodData` > مقدار](/en-US/docs/Web/API/PaymentRequestEvent/methodData#value) مراجعه کنید) که شامل شناسه‌های روش پرداخت برای روش‌های پرداخت پذیرفته‌شده توسط وب‌سایت و هر داده مرتبط با روش پرداخت خاص است.
     - `modifiers`
-      - : An array of objects containing changes to payment details.
+      - : آرایه‌ای از اشیاء حاوی تغییرات در جزئیات پرداخت.
     - `paymentRequestId`
-      - : The ID of the {{domxref("PaymentRequest")}} object.
+      - : شناسه شی {{domxref("PaymentRequest")}}.
     - `paymentRequestOrigin`
-      - : The origin where the {{domxref("PaymentRequest")}} object was initialized.
+      - : مبدأ (origin) جایی که شی {{domxref("PaymentRequest")}} مقداردهی اولیه شده است.
     - `topOrigin`
-      - : The top-level origin where the {{domxref("PaymentRequest")}} object was initialized.
+      - : مبدأ سطح بالایی که شی {{domxref("PaymentRequest")}} در آن مقداردهی اولیه شده است.
     - `total`
-      - : The total amount being requested for payment.
+      - : کل مبلغ درخواست‌شده برای پرداخت.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("PaymentRequestEvent")}} object.
+یک شی جدید {{domxref("PaymentRequestEvent")}}.
 
-## Examples
+## مثال‌ها
 
-A developer would not use this constructor manually. A new `PaymentRequestEvent` object is constructed when a handler is invoked as a result of the {{domxref("ServiceWorkerGlobalScope.paymentrequest_event", "paymentrequest")}} event firing.
+یک توسعه‌دهنده معمولاً از این سازنده به صورت دستی استفاده نمی‌کند. یک شی `PaymentRequestEvent` جدید وقتی ساخته می‌شود که یک handler در نتیجه فعال شدن رویداد {{domxref("ServiceWorkerGlobalScope.paymentrequest_event", "paymentrequest")}} فراخوانی شود.
 
 ```js
 self.addEventListener("paymentrequest", (e) => {
@@ -60,18 +52,18 @@ self.addEventListener("paymentrequest", (e) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Web-based payment apps overview](https://web.dev/articles/web-based-payment-apps-overview)
-- [Setting up a payment method](https://web.dev/articles/setting-up-a-payment-method)
-- [Life of a payment transaction](https://web.dev/articles/life-of-a-payment-transaction)
-- [Using the Payment Request API](/en-US/docs/Web/API/Payment_Request_API/Using_the_Payment_Request_API)
-- [Payment processing concepts](/en-US/docs/Web/API/Payment_Request_API/Concepts)
+- [مروری بر برنامه‌های پرداخت مبتنی بر وب](https://web.dev/articles/web-based-payment-apps-overview)
+- [تنظیم یک روش پرداخت](https://web.dev/articles/setting-up-a-payment-method)
+- [زندگی یک تراکنش پرداخت](https://web.dev/articles/life-of-a-payment-transaction)
+- [استفاده از Payment Request API](/en-US/docs/Web/API/Payment_Request_API/Using_the_Payment_Request_API)
+- [مفاهیم پردازش پرداخت](/en-US/docs/Web/API/Payment_Request_API/Concepts)
