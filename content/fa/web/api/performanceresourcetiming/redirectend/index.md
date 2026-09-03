@@ -1,11 +1,5 @@
 ---
 title: "PerformanceResourceTiming: redirectEnd property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceResourceTiming/redirectEnd"
-status: "needs-translation"
----
-
----
-title: "PerformanceResourceTiming: redirectEnd property"
 short-title: redirectEnd
 slug: Web/API/PerformanceResourceTiming/redirectEnd
 page-type: web-api-instance-property
@@ -14,31 +8,31 @@ browser-compat: api.PerformanceResourceTiming.redirectEnd
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The **`redirectEnd`** read-only property returns a {{domxref("DOMHighResTimeStamp","timestamp")}} immediately after receiving the last byte of the response of the last redirect.
+ویژگی فقط‌خواندنی **`redirectEnd`** یک {{domxref("DOMHighResTimeStamp","timestamp")}} را بلافاصله پس از دریافت آخرین بایت از پاسخ آخرین تغییرمسیر (redirect) برمی‌گرداند.
 
-When fetching a resource, if there are multiple HTTP redirects, and any of the redirects have an origin that is different from the current document, and the timing allow check algorithm passes for each redirected resource, this property returns the time immediately after receiving the last byte of the response of the last redirect; otherwise, zero is returned.
+هنگام واکشی یک منبع، اگر چندین تغییرمسیر HTTP وجود داشته باشد، و هر یک از تغییرمسیرها مبدأیی متفاوت با سند فعلی داشته باشند، و الگوریتم بررسی مجاز بودن زمان‌بندی (timing allow check) برای هر منبع تغییرمسیر یافته با موفقیت اجرا شود، این ویژگی زمان بلافاصله پس از دریافت آخرین بایت از پاسخ آخرین تغییرمسیر را برمی‌گرداند؛ در غیر این صورت، صفر برگردانده می‌شود.
 
-To get the amount of redirects, see also {{domxref("PerformanceNavigationTiming.redirectCount")}}.
+برای دریافت تعداد تغییرمسیرها، به {{domxref("PerformanceNavigationTiming.redirectCount")}} نیز مراجعه کنید.
 
-## Value
+## مقدار
 
-The `redirectEnd` property can have the following values:
+ویژگی `redirectEnd` می‌تواند مقادیر زیر را داشته باشد:
 
-- A {{domxref("DOMHighResTimeStamp","timestamp")}} immediately after receiving the last byte of the response of the last redirect.
-- `0` if there is no redirect.
-- `0` if the resource is a cross-origin request and no {{HTTPHeader("Timing-Allow-Origin")}} HTTP response header is used.
+- یک {{domxref("DOMHighResTimeStamp","timestamp")}} بلافاصله پس از دریافت آخرین بایت از پاسخ آخرین تغییرمسیر.
+- `0` اگر هیچ تغییرمسیری وجود نداشته باشد.
+- `0` اگر درخواست، یک درخواست متقاطع‌المنشأ (cross-origin) باشد و از هدر پاسخ {{HTTPHeader("Timing-Allow-Origin")}} استفاده نشده باشد.
 
-## Examples
+## مثال‌ها
 
-### Measuring redirection time
+### اندازه‌گیری زمان تغییرمسیر
 
-The `redirectEnd` and {{domxref("PerformanceResourceTiming.redirectStart", "redirectStart")}} properties can be used to measure how long the redirection takes.
+ویژگی‌های `redirectEnd` و {{domxref("PerformanceResourceTiming.redirectStart", "redirectStart")}} می‌توانند برای اندازه‌گیری مدت زمان تغییرمسیر استفاده شوند.
 
 ```js
 const redirect = entry.redirectEnd - entry.redirectStart;
 ```
 
-Example using a {{domxref("PerformanceObserver")}}, which notifies of new `resource` performance entries as they are recorded in the browser's performance timeline. Use the `buffered` option to access entries from before the observer creation.
+مثال با استفاده از {{domxref("PerformanceObserver")}}، که ورودی‌های جدید عملکرد `resource` را هنگام ثبت در خط زمانی عملکرد مرورگر اطلاع‌رسانی می‌کند. برای دسترسی به ورودی‌های مربوط به قبل از ایجاد observer از گزینه `buffered` استفاده کنید.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -53,7 +47,7 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "resource", buffered: true });
 ```
 
-Example using {{domxref("Performance.getEntriesByType()")}}, which only shows `resource` performance entries present in the browser's performance timeline at the time you call this method:
+مثال با استفاده از {{domxref("Performance.getEntriesByType()")}}، که فقط ورودی‌های عملکرد `resource` موجود در خط زمانی عملکرد مرورگر را در زمان فراخوانی این متد نشان می‌دهد:
 
 ```js
 const resources = performance.getEntriesByType("resource");
@@ -65,25 +59,25 @@ resources.forEach((entry) => {
 });
 ```
 
-### Cross-origin timing information
+### اطلاعات زمان‌بندی متقاطع‌المنشأ
 
-If the value of the `redirectEnd` property is `0`, the resource might be a cross-origin request. To allow seeing cross-origin timing information, the {{HTTPHeader("Timing-Allow-Origin")}} HTTP response header needs to be set.
+اگر مقدار ویژگی `redirectEnd` برابر با `0` باشد، ممکن است منبع یک درخواست متقاطع‌المنشأ باشد. برای مشاهده اطلاعات زمان‌بندی متقاطع‌المنشأ، باید هدر پاسخ {{HTTPHeader("Timing-Allow-Origin")}} تنظیم شود.
 
-For example, to allow `https://developer.mozilla.org` to see timing resources, the cross-origin resource should send:
+به عنوان مثال، برای اینکه `https://developer.mozilla.org` بتواند زمان‌بندی منابع را مشاهده کند، منبع متقاطع‌المنشأ باید ارسال کند:
 
 ```http
 Timing-Allow-Origin: https://developer.mozilla.org
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("PerformanceNavigationTiming.redirectCount")}}
 - {{HTTPHeader("Timing-Allow-Origin")}}
