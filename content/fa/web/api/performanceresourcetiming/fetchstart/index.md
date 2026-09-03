@@ -1,11 +1,5 @@
 ---
 title: "PerformanceResourceTiming: fetchStart property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceResourceTiming/fetchStart"
-status: "needs-translation"
----
-
----
-title: "PerformanceResourceTiming: fetchStart property"
 short-title: fetchStart
 slug: Web/API/PerformanceResourceTiming/fetchStart
 page-type: web-api-instance-property
@@ -14,35 +8,34 @@ browser-compat: api.PerformanceResourceTiming.fetchStart
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The **`fetchStart`** read-only property represents a {{domxref("DOMHighResTimeStamp","timestamp")}} immediately before the browser starts to fetch the resource.
+ویژگی فقط خواندنی **`fetchStart`** یک {{domxref("DOMHighResTimeStamp","زمان‌سنج")}} را بلافاصله قبل از شروع مرورگر به واکشی (fetch) منبع، نشان می‌دهد.
 
-If there are HTTP redirects, the property returns the time immediately before the user agent starts to fetch the final resource in the redirection.
+اگر تغییرمسیرهای HTTP وجود داشته باشد، این ویژگی زمان را بلافاصله قبل از اینکه عامل کاربر شروع به واکشی منبع نهایی در تغییرمسیر کند، برمی‌گرداند.
 
-Unlike many other `PerformanceResourceTiming` properties, the `fetchStart` property is available for cross-origin requests without the need of the {{HTTPHeader("Timing-Allow-Origin")}} HTTP response header.
+برخلاف بسیاری از ویژگی‌های دیگر `PerformanceResourceTiming`، ویژگی `fetchStart` برای درخواست‌های بین‌نشانی (cross-origin) بدون نیاز به هدر پاسخ HTTP {{HTTPHeader("Timing-Allow-Origin")}} در دسترس است.
 
-## Value
+## مقدار
 
-A {{domxref("DOMHighResTimeStamp")}} immediately before the browser starts to fetch the
-resource.
+یک {{domxref("DOMHighResTimeStamp")}} بلافاصله قبل از شروع مرورگر به واکشی منبع.
 
-## Examples
+## مثال‌ها
 
-### Measuring time to fetch (without redirects)
+### اندازه‌گیری زمان واکشی (بدون تغییرمسیر)
 
-The `fetchStart` and {{domxref("PerformanceResourceTiming.responseEnd", "responseEnd")}} properties can be used to measure the overall time it took to fetch the final resource (without redirects). If you want to include redirects, the overall time to fetch is provided in the {{domxref("PerformanceEntry.duration", "duration")}} property.
+از ویژگی‌های `fetchStart` و {{domxref("PerformanceResourceTiming.responseEnd", "responseEnd")}} می‌توان برای اندازه‌گیری زمان کل مورد نیاز برای واکشی منبع نهایی (بدون تغییرمسیر) استفاده کرد. اگر می‌خواهید تغییرمسیرها را نیز شامل کنید، زمان کل واکشی در ویژگی {{domxref("PerformanceEntry.duration", "duration")}} ارائه می‌شود.
 
 ```js
 const timeToFetch = entry.responseEnd - entry.fetchStart;
 ```
 
-Example using a {{domxref("PerformanceObserver")}}, which notifies of new `resource` performance entries as they are recorded in the browser's performance timeline. Use the `buffered` option to access entries from before the observer creation.
+مثال با استفاده از {{domxref("PerformanceObserver")}} که هنگام ثبت ورودی‌های عملکرد `resource` جدید در جدول زمانی عملکرد مرورگر، اطلاع‌رسانی می‌کند. از گزینه `buffered` برای دسترسی به ورودی‌های قبل از ایجاد ناظر استفاده کنید.
 
 ```js
 const observer = new PerformanceObserver((list) => {
   list.getEntries().forEach((entry) => {
     const timeToFetch = entry.responseEnd - entry.fetchStart;
     if (timeToFetch > 0) {
-      console.log(`${entry.name}: Time to fetch: ${timeToFetch}ms`);
+      console.log(`${entry.name}: زمان واکشی: ${timeToFetch}ms`);
     }
   });
 });
@@ -50,22 +43,22 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "resource", buffered: true });
 ```
 
-Example using {{domxref("Performance.getEntriesByType()")}}, which only shows `resource` performance entries present in the browser's performance timeline at the time you call this method:
+مثال با استفاده از {{domxref("Performance.getEntriesByType()")}} که فقط ورودی‌های عملکرد `resource` موجود در جدول زمانی عملکرد مرورگر را در زمان فراخوانی این متد نشان می‌دهد:
 
 ```js
 const resources = performance.getEntriesByType("resource");
 resources.forEach((entry) => {
   const timeToFetch = entry.responseEnd - entry.fetchStart;
   if (timeToFetch > 0) {
-    console.log(`${entry.name}: Time to fetch: ${timeToFetch}ms`);
+    console.log(`${entry.name}: زمان واکشی: ${timeToFetch}ms`);
   }
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
