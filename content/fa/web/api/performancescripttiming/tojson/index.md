@@ -1,11 +1,5 @@
 ---
 title: "PerformanceScriptTiming: toJSON() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceScriptTiming/toJSON"
-status: "needs-translation"
----
-
----
-title: "PerformanceScriptTiming: toJSON() method"
 short-title: toJSON()
 slug: Web/API/PerformanceScriptTiming/toJSON
 page-type: web-api-instance-method
@@ -16,27 +10,27 @@ browser-compat: api.PerformanceScriptTiming.toJSON
 
 {{APIRef("Performance API")}}{{SeeCompatTable}}
 
-The **`toJSON()`** method of the {{domxref("PerformanceScriptTiming")}} interface is a {{Glossary("Serialization","serializer")}}; it returns a JSON representation of the `PerformanceScriptTiming` object.
+متد **`toJSON()`** در رابط {{domxref("PerformanceScriptTiming")}} یک {{Glossary("Serialization","سریال‌ساز")}} است؛ این متد یک نمایش JSON از شیء `PerformanceScriptTiming` را برمی‌گرداند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 toJSON()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("JSON")}} object that is the serialization of the {{domxref("PerformanceScriptTiming")}} object.
+یک شیء {{jsxref("JSON")}} که سریال‌سازی شده‌ی شیء {{domxref("PerformanceScriptTiming")}} است.
 
-## Examples
+## مثال‌ها
 
-### Using the `toJSON` method
+### استفاده از متد `toJSON`
 
-In this example, calling `entry.toJSON()` returns a JSON representation of the first `PerformanceScriptTiming` object available in an observed long animation frame.
+در این مثال، فراخوانی `entry.toJSON()` یک نمایش JSON از اولین شیء `PerformanceScriptTiming` موجود در یک فریم انیمیشن طولانی مشاهده‌شده را برمی‌گرداند.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -48,7 +42,7 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "long-animation-frame", buffered: true });
 ```
 
-This would log an object like so:
+این کد چیزی شبیه به شیء زیر را در کنسول ثبت می‌کند:
 
 ```js
 ({
@@ -68,17 +62,17 @@ This would log an object like so:
 });
 ```
 
-To get a JSON string, you can use [`JSON.stringify(entry)`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) directly; it will call `toJSON()` automatically.
+برای دریافت یک رشته‌ی JSON، می‌توانید مستقیماً از [`JSON.stringify(entry)`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) استفاده کنید؛ این متد به‌طور خودکار `toJSON()` را فراخوانی می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Long animation frame timing](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing)
+- [زمان‌بندی فریم انیمیشن طولانی](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing)
 - {{jsxref("JSON")}}
