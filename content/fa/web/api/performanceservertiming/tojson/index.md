@@ -1,11 +1,5 @@
 ---
 title: "PerformanceServerTiming: toJSON() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceServerTiming/toJSON"
-status: "needs-translation"
----
-
----
-title: "PerformanceServerTiming: toJSON() method"
 short-title: toJSON()
 slug: Web/API/PerformanceServerTiming/toJSON
 page-type: web-api-instance-method
@@ -14,7 +8,7 @@ browser-compat: api.PerformanceServerTiming.toJSON
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The **`toJSON()`** method of the {{domxref("PerformanceServerTiming")}} interface is a {{Glossary("Serialization","serializer")}}; it returns a JSON representation of the {{domxref("PerformanceServerTiming")}} object.
+متد **`toJSON()`** از رابط {{domxref("PerformanceServerTiming")}} یک {{Glossary("Serialization","سریال‌ساز")}} است؛ یک نمایش JSON از شیء {{domxref("PerformanceServerTiming")}} را برمی‌گرداند.
 
 ## Syntax
 
@@ -22,27 +16,27 @@ The **`toJSON()`** method of the {{domxref("PerformanceServerTiming")}} interfac
 toJSON()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("JSON")}} object that is the serialization of the {{domxref("PerformanceServerTiming")}} object.
+یک شیء {{jsxref("JSON")}} که سریال‌سازی شده‌ی شیء {{domxref("PerformanceServerTiming")}} است.
 
-## Examples
+## مثال‌ها
 
-### Logging server timing entries
+### ثبت ورودی‌های زمان‌بندی سرور
 
-Server timing metrics require the server to send the {{HTTPHeader("Server-Timing")}} header. For example:
+معیارهای زمان‌بندی سرور نیاز دارند که سرور هدر {{HTTPHeader("Server-Timing")}} را ارسال کند. برای مثال:
 
 ```http
 Server-Timing: cache;desc="Cache Read";dur=23.2
 ```
 
-The `serverTiming` entries can live on `navigation` and `resource` entries.
+ورودی‌های `serverTiming` می‌توانند روی ورودی‌های `navigation` و `resource` قرار داشته باشند.
 
-Example using a {{domxref("PerformanceObserver")}}, which notifies of new `navigation` and `resource` performance entries as they are recorded in the browser's performance timeline. Use the `buffered` option to access entries from before the observer creation.
+مثال با استفاده از {{domxref("PerformanceObserver")}}، که وقتی ورودی‌های عملکرد جدید `navigation` و `resource` در جدول زمانی عملکرد مرورگر ثبت می‌شوند، اطلاع‌رسانی می‌کند. از گزینه `buffered` برای دسترسی به ورودی‌های قبل از ایجاد observer استفاده کنید.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -58,7 +52,7 @@ const observer = new PerformanceObserver((list) => {
 );
 ```
 
-This would log a JSON object like so:
+این کار یک شیء JSON مانند زیر را ثبت می‌کند:
 
 ```json
 {
@@ -68,7 +62,7 @@ This would log a JSON object like so:
 }
 ```
 
-To get a JSON string, you can use [`JSON.stringify(serverEntry)`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) directly; it will call `toJSON()` automatically.
+برای دریافت یک رشته JSON، می‌توانید مستقیماً از [`JSON.stringify(serverEntry)`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) استفاده کنید؛ این متد به طور خودکار `toJSON()` را فراخوانی می‌کند.
 
 ## Specifications
 
