@@ -1,10 +1,4 @@
 ---
-title: "PushEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PushEvent"
-status: "needs-translation"
----
-
----
 title: PushEvent
 slug: Web/API/PushEvent
 page-type: web-api-interface
@@ -13,29 +7,29 @@ browser-compat: api.PushEvent
 
 {{APIRef("Push API")}}{{SecureContext_Header}}{{AvailableInWorkers("service")}}
 
-The **`PushEvent`** interface of the [Push API](/en-US/docs/Web/API/Push_API) represents a push message that has been received. This event is sent to the [global scope](/en-US/docs/Web/API/ServiceWorkerGlobalScope) of a {{domxref("ServiceWorker")}}. It contains the information sent from an application server to a {{domxref("PushSubscription")}}.
+رابط **`PushEvent`** در [Push API](/en-US/docs/Web/API/Push_API) نمایانگر یک پیام پوش (Push) دریافت‌شده است. این رویداد به [حوزهٔ سراسری](/en-US/docs/Web/API/ServiceWorkerGlobalScope) یک {{domxref("ServiceWorker")}} ارسال می‌شود و شامل اطلاعاتی است که از سرور اپلیکیشن به یک {{domxref("PushSubscription")}} ارسال شده است.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("PushEvent.PushEvent", "PushEvent()")}}
-  - : Creates a new `PushEvent` object.
+  - : یک شیء `PushEvent` جدید می‌سازد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("ExtendableEvent")}}. Additional properties:_
+_ویژگی‌ها را از والد خود، {{domxref("ExtendableEvent")}} به ارث می‌برد. ویژگی‌های اضافی:_
 
 - {{domxref("PushEvent.data")}} {{ReadOnlyInline}}
-  - : Returns a reference to a {{domxref("PushMessageData")}} object containing data sent to the {{domxref("PushSubscription")}}.
+  - : ارجاعی به یک شیء {{domxref("PushMessageData")}} برمی‌گرداند که شامل داده‌های ارسال‌شده به {{domxref("PushSubscription")}} است.
 
-## Instance methods
+## متدهای نمونه
 
-_Inherits methods from its parent, {{domxref("ExtendableEvent")}}_.
+_متدها را از والد خود، {{domxref("ExtendableEvent")}} به ارث می‌برد._
 
-## Examples
+## مثال‌ها
 
-The following example takes data from a `PushEvent` and displays it on all of the service worker's clients.
+مثال زیر داده‌ها را از یک `PushEvent` می‌گیرد و آن‌ها را روی همهٔ کلاینت‌های آن سرویس‌ورکر نمایش می‌دهد.
 
 ```js
 self.addEventListener("push", (event) => {
@@ -63,15 +57,15 @@ self.addEventListener("push", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Push API](/en-US/docs/Web/API/Push_API)
 - [Service Worker API](/en-US/docs/Web/API/Service_Worker_API)
