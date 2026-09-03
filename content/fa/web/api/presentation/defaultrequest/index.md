@@ -1,7 +1,5 @@
 ---
 title: "Presentation: defaultRequest property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Presentation/defaultRequest"
-status: "needs-translation"
 ---
 
 ---
@@ -16,22 +14,22 @@ browser-compat: api.Presentation.defaultRequest
 
 {{APIRef("Presentation API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-In a [controlling user agent](https://www.w3.org/TR/presentation-api/#dfn-controlling-user-agent), the **`defaultRequest`** attribute _MUST_ return the [default presentation request](https://www.w3.org/TR/presentation-api/#dfn-default-presentation-request) if any, otherwise `null`. In a [receiving browsing context](https://www.w3.org/TR/presentation-api/#dfn-receiving-browsing-context), it _MUST_ return `null`.
+در یک [عامل کاربرِ کنترل‌کننده](https://www.w3.org/TR/presentation-api/#dfn-controlling-user-agent)، ویژگی **`defaultRequest`** _باید_ در صورت وجود، [درخواستِ ارائهٔ پیش‌فرض](https://www.w3.org/TR/presentation-api/#dfn-default-presentation-request) را بازگرداند و در غیر این صورت، `null` را برگرداند. در یک [زمینهٔ مرورِ دریافت‌کننده](https://www.w3.org/TR/presentation-api/#dfn-receiving-browsing-context)، این ویژگی _باید_ `null` برگرداند.
 
-If set by the [controller](https://www.w3.org/TR/presentation-api/#dfn-controller), the value of the `defaultRequest` attribute _SHOULD_ be used by the [controlling user agent](https://www.w3.org/TR/presentation-api/#dfn-controlling-user-agent) as the _default presentation request_ for that [controlling browsing context](https://www.w3.org/TR/presentation-api/#dfn-controlling-browsing-context). If the document object's [active sandboxing flag set](https://www.w3.org/TR/presentation-api/#dfn-active-sandboxing-flag-set) has the [sandboxed presentation browsing context flag](https://www.w3.org/TR/presentation-api/#sandboxed-presentation-browsing-context-flag) set, the [controlling user agent](https://www.w3.org/TR/presentation-api/#dfn-controlling-user-agent) _SHOULD_ act as if the default request is not set for that browsing context. When the [controlling user agent](https://www.w3.org/TR/presentation-api/#dfn-controlling-user-agent) wishes to initiate a {{DOMxRef("PresentationConnection")}} on the behalf of that browsing context, it _MUST_ [start a presentation](https://www.w3.org/TR/presentation-api/#dfn-start-a-presentation) using the [default presentation request](https://www.w3.org/TR/presentation-api/#dfn-default-presentation-request) for the [controller](https://www.w3.org/TR/presentation-api/#dfn-controller) (as if the controller had called {{DOMxRef("PresentationRequest.start","defaultRequest.start()")}}).
+اگر مقداردهی اولیه توسط [کنترل‌کننده](https://www.w3.org/TR/presentation-api/#dfn-controller) انجام شده باشد، [عامل کاربرِ کنترل‌کننده](https://www.w3.org/TR/presentation-api/#dfn-controlling-user-agent) _بایستی_ از مقدار ویژگی `defaultRequest` به‌عنوان _درخواستِ ارائهٔ پیش‌فرض_ برای آن [زمینهٔ مرورِ کنترل‌کننده](https://www.w3.org/TR/presentation-api/#dfn-controlling-browsing-context) استفاده کند. اگر [مجموعهٔ پرچم‌های شن‌باکسِ فعال](https://www.w3.org/TR/presentation-api/#dfn-active-sandboxing-flag-set) شیء سند شامل [پرچمِ زمینهٔ مرورِ شن‌باکس‌شده برای ارائه](https://www.w3.org/TR/presentation-api/#sandboxed-presentation-browsing-context-flag) باشد، [عامل کاربرِ کنترل‌کننده](https://www.w3.org/TR/presentation-api/#dfn-controlling-user-agent) _بایستی_ طوری رفتار کند که گویی درخواستِ پیش‌فرض برای آن زمینهٔ مرور تنظیم نشده است. هرگاه [عامل کاربرِ کنترل‌کننده](https://www.w3.org/TR/presentation-api/#dfn-controlling-user-agent) بخواهد به نمایندگی از آن زمینهٔ مرور یک {{DOMxRef("PresentationConnection")}} را آغاز کند، _باید_ با استفاده از [درخواستِ ارائهٔ پیش‌فرض](https://www.w3.org/TR/presentation-api/#dfn-default-presentation-request) برای [کنترل‌کننده](https://www.w3.org/TR/presentation-api/#dfn-controller) اقدام به [شروع یک ارائه](https://www.w3.org/TR/presentation-api/#dfn-start-a-presentation) کند (درست مانند این است که کنترل‌کننده متد {{DOMxRef("PresentationRequest.start","defaultRequest.start()")}} را فراخوانده باشد).
 
-The [controlling user agent](https://www.w3.org/TR/presentation-api/#dfn-controlling-user-agent) _SHOULD_ initiate presentation using the [default presentation request](https://www.w3.org/TR/presentation-api/#dfn-default-presentation-request), only when the user has expressed an intention to do so via a user gesture. For example, by clicking a button in the browser.
-
-> [!NOTE]
-> Some [controlling user agents](https://www.w3.org/TR/presentation-api/#dfn-controlling-user-agent) may allow the user to initiate a default [presentation connection](https://www.w3.org/TR/presentation-api/#dfn-presentation-connection) and select a [presentation display](https://www.w3.org/TR/presentation-api/#dfn-presentation-display) with the same user gesture. For example, the browser chrome could allow the user to pick a display from a menu, or allow the user to tap on a [Near Field Communications (NFC)](https://nfc-forum.org/) enabled display. In this case, when the [controlling user agent](https://www.w3.org/TR/presentation-api/#dfn-controlling-user-agent) asks for permission while [starting a presentation](https://www.w3.org/TR/presentation-api/#dfn-start-a-presentation), the browser could offer that display as the default choice, or consider the gesture as granting permission for the display and bypass display selection entirely.
+[عامل کاربرِ کنترل‌کننده](https://www.w3.org/TR/presentation-api/#dfn-controlling-user-agent) _بایستی_ تنها در صورتی ارائه را با استفاده از [درخواستِ ارائهٔ پیش‌فرض](https://www.w3.org/TR/presentation-api/#dfn-default-presentation-request) شروع کند که کاربر با یک ژست کاربری قصد خود را ابراز کرده باشد؛ برای نمونه با کلیک کردن روی دکمه‌ای در مرورگر.
 
 > [!NOTE]
-> If a [controlling user agent](https://www.w3.org/TR/presentation-api/#dfn-controlling-user-agent) does not support initiation of a [presentation connection](https://www.w3.org/TR/presentation-api/#dfn-presentation-connection) from the browser chrome, setting `defaultRequest` will have no effect.
+> برخی از [عامل‌های کاربرِ کنترل‌کننده](https://www.w3.org/TR/presentation-api/#dfn-controlling-user-agent) ممکن است به کاربر اجازه دهند با همان ژست کاربری، یک [اتصالِ ارائهٔ پیش‌فرض](https://www.w3.org/TR/presentation-api/#dfn-presentation-connection) را آغاز کند و یک [نمایشگرِ ارائه](https://www.w3.org/TR/presentation-api/#dfn-presentation-display) را نیز انتخاب کند. برای مثال، رابطِ مرورگر (browser chrome) ممکن است به کاربر اجازه دهد نمایشگری را از یک فهرست انتخاب کند، یا روی نمایشگری که از [ارتباطات میدان‌نزدیک (NFC)](https://nfc-forum.org/) پشتیبانی می‌کند ضربه بزند. در این حالت، وقتی [عامل کاربرِ کنترل‌کننده](https://www.w3.org/TR/presentation-api/#dfn-controlling-user-agent) هنگام [شروعِ یک ارائه](https://www.w3.org/TR/presentation-api/#dfn-start-a-presentation) درخواستِ اجازه می‌کند، مرورگر می‌تواند آن نمایشگر را به‌عنوان گزینهٔ پیش‌فرض پیشنهاد دهد، یا ژست کاربر را به منزلهٔ اعطای مجوز برای آن نمایشگر در نظر بگیرد و انتخابِ نمایشگر را به‌کلی حذف کند.
 
-## Specifications
+> [!NOTE]
+> اگر [عامل کاربرِ کنترل‌کننده](https://www.w3.org/TR/presentation-api/#dfn-controlling-user-agent) از آغازِ [اتصالِ ارائه](https://www.w3.org/TR/presentation-api/#dfn-presentation-connection) از طریق رابطِ مرورگر پشتیبانی نکند، تنظیم `defaultRequest` هیچ تأثیری نخواهد داشت.
+
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
