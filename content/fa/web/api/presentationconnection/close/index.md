@@ -1,11 +1,5 @@
 ---
 title: "PresentationConnection: close() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnection/close"
-status: "needs-translation"
----
-
----
-title: "PresentationConnection: close() method"
 short-title: close()
 slug: Web/API/PresentationConnection/close
 page-type: web-api-instance-method
@@ -16,7 +10,7 @@ browser-compat: api.PresentationConnection.close
 
 {{APIRef("Presentation API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-When the `close()` method is called on a {{domxref("PresentationConnection")}}, the {{Glossary("user agent")}} begins the process of closing the connection by sending an empty `closeMessage` with the `closeReason` set to `closed`.
+هنگامی که متد `close()` روی یک {{domxref("PresentationConnection")}} فراخوانی میشود، {{Glossary("user agent")}} فرایند بستن اتصال را با ارسال یک `closeMessage` خالی که در آن `closeReason` برابر با `closed` تنظیم شده است، آغاز میکند.
 
 ## Syntax
 
@@ -26,11 +20,11 @@ close()
 
 ### Parameters
 
-None.
+بدون پارامتر.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
 ## Specifications
 
