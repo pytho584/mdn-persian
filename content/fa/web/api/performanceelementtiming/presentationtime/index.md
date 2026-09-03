@@ -1,11 +1,5 @@
 ---
 title: "PerformanceElementTiming: presentationTime property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceElementTiming/presentationTime"
-status: "needs-translation"
----
-
----
-title: "PerformanceElementTiming: presentationTime property"
 short-title: presentationTime
 slug: Web/API/PerformanceElementTiming/presentationTime
 page-type: web-api-instance-property
@@ -16,26 +10,26 @@ browser-compat: api.PerformanceElementTiming.presentationTime
 
 {{APIRef("Performance API")}}{{SeeCompatTable}}
 
-The **`presentationTime`** read-only property of the {{domxref("PerformanceElementTiming")}} interface returns the {{domxref("DOMHighResTimeStamp","timestamp")}} when the element was actually drawn on the screen.
+خاصیت فقط‌خواندنی **`presentationTime`** از رابط {{domxref("PerformanceElementTiming")}}، {{domxref("DOMHighResTimeStamp","timestamp")}} زمانی را برمی‌گرداند که عنصر واقعاً روی صفحه ترسیم شده است.
 
-The `presentationTime` is optional — some browsers may choose always to return `0` or not to expose the value at all. The value is also implementation-dependent — it may differ across browsers that choose to expose it.
+`presentationTime` اختیاری است — برخی مرورگرها ممکن است همیشه `0` برگردانند یا اصلاً مقدار را در معرض نمایش قرار ندهند. همچنین این مقدار وابسته به پیاده‌سازی است — ممکن است در میان مرورگرهایی که آن را در معرض نمایش قرار می‌دهند، متفاوت باشد.
 
-## Value
+## مقدار
 
-A {{domxref("DOMHighResTimeStamp")}} or {{jsxref("null")}} if the value is not exposed.
+یک {{domxref("DOMHighResTimeStamp")}} یا {{jsxref("null")}} اگر مقدار در معرض نمایش قرار نگرفته باشد.
 
-## Examples
+## مثال‌ها
 
-See [Observing separate paint and presentation timings](/en-US/docs/Web/API/PerformanceElementTiming#observing_separate_paint_and_presentation_timings).
+مشاهده کنید: [مشاهده زمان‌بندی‌های جداگانه ترسیم و نمایش](/en-US/docs/Web/API/PerformanceElementTiming#observing_separate_paint_and_presentation_timings).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("PerformanceElementTiming.paintTime")}}
