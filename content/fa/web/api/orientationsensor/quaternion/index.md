@@ -1,11 +1,5 @@
 ---
 title: "OrientationSensor: quaternion property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/OrientationSensor/quaternion"
-status: "needs-translation"
----
-
----
-title: "OrientationSensor: quaternion property"
 short-title: quaternion
 slug: Web/API/OrientationSensor/quaternion
 page-type: web-api-instance-property
@@ -14,29 +8,24 @@ browser-compat: api.OrientationSensor.quaternion
 
 {{securecontext_header}}{{APIRef("Sensor API")}}
 
-The **`quaternion`** read-only
-property of the {{domxref("OrientationSensor")}} interface returns a four element
-{{jsxref('Array')}} whose elements contain the components of the unit
-{{Glossary("quaternion")}} representing the device's orientation.
+ویژصیت فقط‌خواندنی **`quaternion`** در interfacedر رابط {{domxref("OrientationSensor")}} یک {{jsxref('Array')}} چهار عنصری بازمی‌گرداند که عناصر آن، مؤلفه‌های {{Glossary("quaternion")}} یکه (unit quaternion) نمایانگر جهت‌گیری دستگاه را شامل می‌شوند.
 
-Because {{domxref('OrientationSensor')}} is a base class, `quaternion` may
-only be read from one of its derived classes.
+از آنجا که {{domxref('OrientationSensor')}} یک کلاس پایه است، `quaternion` تنها از طریق یکی از کلاس‌های مشتق‌شده از آن قابل خواندن است.
 
-## Value
+## مقدار
 
-An {{jsxref('Array')}} whose values are the x, y, z, and w components of the quaternion
-representing the device orientation.
+یک {{jsxref('Array')}} که مقادیر آن مؤلفه‌های x، y، z و w چهارتایی (quaternion) نمایانگر جهت‌گیری دستگاه است.
 
-## Examples
+## مثال‌ها
 
 ```js
 // TBD
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
