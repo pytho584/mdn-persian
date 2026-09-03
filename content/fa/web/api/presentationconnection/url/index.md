@@ -1,11 +1,5 @@
 ---
 title: "PresentationConnection: url property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnection/url"
-status: "needs-translation"
----
-
----
-title: "PresentationConnection: url property"
 short-title: url
 slug: Web/API/PresentationConnection/url
 page-type: web-api-instance-property
@@ -16,18 +10,16 @@ browser-compat: api.PresentationConnection.url
 
 {{SeeCompatTable}}{{APIRef("Presentation API")}}{{SecureContext_Header}}
 
-The **`url`** read-only property of the
-{{domxref("PresentationConnection")}} interface returns the URL used to create or
-reconnect to the presentation.
+ویژگی فقط‌خواندنی **`url`** از رابط {{domxref("PresentationConnection")}}، URL مورد استفاده برای ایجاد یا اتصال مجدد به ارائه را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A string containing a URL.
+یک رشته شامل یک URL.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
