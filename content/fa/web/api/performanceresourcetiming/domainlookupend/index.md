@@ -1,11 +1,5 @@
 ---
 title: "PerformanceResourceTiming: domainLookupEnd property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceResourceTiming/domainLookupEnd"
-status: "needs-translation"
----
-
----
-title: "PerformanceResourceTiming: domainLookupEnd property"
 short-title: domainLookupEnd
 slug: Web/API/PerformanceResourceTiming/domainLookupEnd
 page-type: web-api-instance-property
@@ -14,36 +8,36 @@ browser-compat: api.PerformanceResourceTiming.domainLookupEnd
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The **`domainLookupEnd`** read-only property returns the {{domxref("DOMHighResTimeStamp","timestamp")}} immediately after the browser finishes the domain-name lookup for the resource.
+ویژگی فقط‌خواندنی **`domainLookupEnd`**، {{domxref("DOMHighResTimeStamp","timestamp")}} را بلافاصله پس از پایان جستجوی نام دامنه (DNS lookup) توسط مرورگر برای منبع بازمی‌گرداند.
 
-If the user agent has the domain information in cache, {{domxref("PerformanceResourceTiming.domainLookupStart","domainLookupStart")}} and `domainLookupEnd` represent the times when the user agent starts and ends the domain data retrieval from the cache.
+اگر عامل کاربر اطلاعات دامنه را در حافظه نهان (cache) داشته باشد، {{domxref("PerformanceResourceTiming.domainLookupStart","domainLookupStart")}} و `domainLookupEnd` نشان‌دهنده زمان شروع و پایان بازیابی داده‌های دامنه از حافظه نهان هستند.
 
-## Value
+## مقدار
 
-The `domainLookupEnd` property can have the following values:
+خاصیت `domainLookupEnd` می‌تواند مقادیر زیر را داشته باشد:
 
-- A {{domxref("DOMHighResTimeStamp")}} representing the time immediately after the browser finishes the domain name lookup for the resource.
-- `0` if the resource was instantaneously retrieved from a cache.
-- `0` if the resource is a cross-origin request and no {{HTTPHeader("Timing-Allow-Origin")}} HTTP response header is used.
+- یک {{domxref("DOMHighResTimeStamp")}} که زمان بلافاصله پس از پایان جستجوی نام دامنه توسط مرورگر برای منبع را نشان می‌دهد.
+- `0` اگر منبع به‌طور لحظه‌ای از حافظه نهان بازیابی شده باشد.
+- `0` اگر منبع یک درخواست متقاطع-ریشه (cross-origin) باشد و هیچ هدر پاسخ HTTP {{HTTPHeader("Timing-Allow-Origin")}} استفاده نشده باشد.
 
-## Examples
+## مثال‌ها
 
-### Measuring DNS lookup time
+### اندازه‌گیری زمان جستجوی DNS
 
-The `domainLookupEnd` and {{domxref("PerformanceResourceTiming.domainLookupStart", "domainLookupStart")}} properties can be used to measure how long it takes for the DNS lookup to happen.
+از خاصیت‌های `domainLookupEnd` و {{domxref("PerformanceResourceTiming.domainLookupStart", "domainLookupStart")}} می‌توان برای اندازه‌گیری مدت زمان جستجوی DNS استفاده کرد.
 
 ```js
 const dns = entry.domainLookupEnd - entry.domainLookupStart;
 ```
 
-Example using a {{domxref("PerformanceObserver")}}, which notifies of new `resource` performance entries as they are recorded in the browser's performance timeline. Use the `buffered` option to access entries from before the observer creation.
+مثال با استفاده از {{domxref("PerformanceObserver")}}، که با ثبت ورودی‌های جدید `resource` در جدول زمانی عملکرد مرورگر، آن‌ها را اعلام می‌کند. از گزینه `buffered` برای دسترسی به ورودی‌های قبل از ایجاد observer استفاده کنید.
 
 ```js
 const observer = new PerformanceObserver((list) => {
   list.getEntries().forEach((entry) => {
     const dns = entry.domainLookupEnd - entry.domainLookupStart;
     if (dns > 0) {
-      console.log(`${entry.name}: DNS lookup duration: ${dns}ms`);
+      console.log(`${entry.name}: مدت زمان جستجوی DNS: ${dns}ms`);
     }
   });
 });
@@ -51,36 +45,36 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "resource", buffered: true });
 ```
 
-Example using {{domxref("Performance.getEntriesByType()")}}, which only shows `resource` performance entries present in the browser's performance timeline at the time you call this method:
+مثال با استفاده از {{domxref("Performance.getEntriesByType()")}}، که فقط ورودی‌های عملکرد `resource` موجود در جدول زمانی عملکرد مرورگر را در زمان فراخوانی این متد نشان می‌دهد:
 
 ```js
 const resources = performance.getEntriesByType("resource");
 resources.forEach((entry) => {
   const dns = entry.domainLookupEnd - entry.domainLookupStart;
   if (dns > 0) {
-    console.log(`${entry.name}: DNS lookup duration: ${dns}ms`);
+    console.log(`${entry.name}: مدت زمان جستجوی DNS: ${dns}ms`);
   }
 });
 ```
 
-### Cross-origin timing information
+### اطلاعات زمان‌بندی درخواست‌های متقاطع-ریشه
 
-If the value of the `domainLookupEnd` property is `0`, the resource might be a cross-origin request. To allow seeing cross-origin timing information, the {{HTTPHeader("Timing-Allow-Origin")}} HTTP response header needs to be set.
+اگر مقدار خاصیت `domainLookupEnd` برابر `0` باشد، ممکن است منبع یک درخواست متقاطع-ریشه باشد. برای مشاهده اطلاعات زمان‌بندی متقاطع-ریشه، باید هدر پاسخ HTTP {{HTTPHeader("Timing-Allow-Origin")}} تنظیم شود.
 
-For example, to allow `https://developer.mozilla.org` to see timing resources, the cross-origin resource should send:
+به عنوان مثال، برای اجازه دادن به `https://developer.mozilla.org` برای دیدن منابع زمان‌بندی، منبع متقاطع-ریشه باید ارسال کند:
 
 ```http
 Timing-Allow-Origin: https://developer.mozilla.org
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTTPHeader("Timing-Allow-Origin")}}
