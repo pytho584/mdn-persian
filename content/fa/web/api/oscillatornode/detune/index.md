@@ -1,11 +1,5 @@
 ---
 title: "OscillatorNode: detune property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/OscillatorNode/detune"
-status: "needs-translation"
----
-
----
-title: "OscillatorNode: detune property"
 short-title: detune
 slug: Web/API/OscillatorNode/detune
 page-type: web-api-instance-property
@@ -14,40 +8,40 @@ browser-compat: api.OscillatorNode.detune
 
 {{ APIRef("Web Audio API") }}
 
-The `detune` property of the {{ domxref("OscillatorNode") }} interface is an [a-rate](/en-US/docs/Web/API/AudioParam#a-rate) {{domxref("AudioParam")}} representing detuning of oscillation in [cents](https://en.wikipedia.org/wiki/Cent_%28music%29).
+ویژگی `detune` از رابط {{ domxref("OscillatorNode") }} یک {{domxref("AudioParam")}} با نرخ-a ([a-rate](/en-US/docs/Web/API/AudioParam#a-rate)) است که میزان انحراف از کوک (detuning) نوسان را بر حسب [سنت](https://en.wikipedia.org/wiki/Cent_%28music%29) نشان می‌دهد.
 
 > [!NOTE]
-> Though the `AudioParam` returned is read-only, the value it represents is not.
+> اگرچه شیء `AudioParam` بازگردانده‌شده فقط‌خواندنی است، مقداری که نشان می‌دهد فقط‌خواندنی نیست.
 
-## Value
+## مقدار
 
-An [a-rate](/en-US/docs/Web/API/AudioParam#a-rate) {{domxref("AudioParam")}}.
+یک {{domxref("AudioParam")}} با نرخ-a ([a-rate](/en-US/docs/Web/API/AudioParam#a-rate)).
 
-## Examples
+## مثال‌ها
 
-The following example shows basic usage of an {{ domxref("AudioContext") }} to create an oscillator node. For applied examples/information, check out our [Violent Theremin demo](https://mdn.github.io/webaudio-examples/violent-theremin/) ([see app.js](https://github.com/mdn/webaudio-examples/blob/main/violent-theremin/scripts/app.js) for relevant code).
+مثال زیر کاربرد پایه‌ای {{ domxref("AudioContext") }} را برای ساخت یک گره نوسان‌گر نشان می‌دهد. برای مثال‌ها و اطلاعات کاربردی، به [دموی Violent Theremin](https://mdn.github.io/webaudio-examples/violent-theremin/) مراجعه کنید ([کد مرتبط را در app.js](https://github.com/mdn/webaudio-examples/blob/main/violent-theremin/scripts/app.js) ببینید).
 
 ```js
-// create web audio api context
+// ایجاد context برای Web Audio API
 const audioCtx = new AudioContext();
 
-// create Oscillator node
+// ایجاد گره Oscillator
 const oscillator = audioCtx.createOscillator();
 
 oscillator.type = "square";
-oscillator.frequency.setValueAtTime(440, audioCtx.currentTime); // value in hertz
-oscillator.detune.setValueAtTime(100, audioCtx.currentTime); // value in cents
+oscillator.frequency.setValueAtTime(440, audioCtx.currentTime); // مقدار بر حسب هرتز
+oscillator.detune.setValueAtTime(100, audioCtx.currentTime); // مقدار بر حسب سنت
 oscillator.start();
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
