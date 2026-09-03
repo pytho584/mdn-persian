@@ -1,11 +1,5 @@
 ---
 title: "Notification: lang property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Notification/lang"
-status: "needs-translation"
----
-
----
-title: "Notification: lang property"
 short-title: lang
 slug: Web/API/Notification/lang
 page-type: web-api-instance-property
@@ -14,22 +8,17 @@ browser-compat: api.Notification.lang
 
 {{APIRef("Web Notifications")}}{{securecontext_header}} {{AvailableInWorkers}}
 
-The **`lang`** read-only property of the
-{{domxref("Notification")}} interface indicates the language used in the notification,
-as specified in the `lang` option of the
-{{domxref("Notification.Notification","Notification()")}} constructor.
+ویژگی فقط‌خواندنی **`lang`** از رابط {{domxref("Notification")}} نشان‌دهندهٔ زبانی است که در اعلان استفاده شده است، همان‌طور که در گزینهٔ `lang` سازندهٔ {{domxref("Notification.Notification","Notification()")}} مشخص شده است.
 
-The language itself is specified using a string representing a {{glossary("BCP 47 language tag")}}.
+زبان با استفاده از یک رشته که نشان‌دهندهٔ یک {{glossary("BCP 47 language tag")}} است مشخص می‌شود.
 
-## Value
+## مقدار
 
-A string specifying the language tag.
+یک رشته که برچسب زبان را مشخص می‌کند.
 
-## Examples
+## مثال‌ها
 
-The following snippet fires a notification; a simple `options` object is
-created, then the notification is fired using the `Notification()`
-constructor.
+قطعه کد زیر یک اعلان را راه‌اندازی می‌کند؛ یک شیء ساده `options` ساخته شده و سپس اعلان با استفاده از سازندهٔ `Notification()` راه‌اندازی می‌شود.
 
 ```js
 const options = {
@@ -42,14 +31,14 @@ const n = new Notification("New review activity", options);
 console.log(n.lang); // "en-US"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Notifications API](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
+- [استفاده از API اعلان‌ها](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
