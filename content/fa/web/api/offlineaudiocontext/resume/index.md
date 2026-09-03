@@ -1,11 +1,5 @@
 ---
 title: "OfflineAudioContext: resume() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/OfflineAudioContext/resume"
-status: "needs-translation"
----
-
----
-title: "OfflineAudioContext: resume() method"
 short-title: resume()
 slug: Web/API/OfflineAudioContext/resume
 page-type: web-api-instance-method
@@ -14,36 +8,33 @@ browser-compat: api.OfflineAudioContext.resume
 
 {{ APIRef("Web Audio API") }}
 
-The **`resume()`** method of the
-{{domxref("OfflineAudioContext")}} interface resumes the progression of time in an audio
-context that has been suspended. The promise resolves immediately because the
-`OfflineAudioContext` does not require the audio hardware.
+متد **`resume()`** در رابط {{domxref("OfflineAudioContext")}}، پیشروی زمان را در زمینه‌ی صوتی‌ای که معلق شده است، از سر می‌گیرد. این پرامیس بلافاصله حل می‌شود، زیرا `OfflineAudioContext` به سخت‌افزار صوتی نیازی ندارد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 resume()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} resolving to {{jsxref('undefined')}}.
+یک {{jsxref("Promise")}} که به {{jsxref('undefined')}} حل می‌شود.
 
-### Exceptions
+### استثناها
 
-The promise is rejected when an exception is encountered.
+در صورت بروز استثنا، پرامیس رد می‌شود.
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Returned if the context is not currently suspended or the rendering has not started.
+  - : اگر زمینه در حال حاضر معلق نباشد یا رندرینگ شروع نشده باشد، بازگردانده می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
