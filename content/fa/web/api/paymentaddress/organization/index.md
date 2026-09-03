@@ -1,11 +1,5 @@
 ---
 title: "PaymentAddress: organization property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaymentAddress/organization"
-status: "needs-translation"
----
-
----
-title: "PaymentAddress: organization property"
 short-title: organization
 slug: Web/API/PaymentAddress/organization
 page-type: web-api-instance-property
@@ -17,17 +11,12 @@ browser-compat: api.PaymentAddress.organization
 
 {{APIRef("Payment Request API")}}{{SecureContext_Header}}{{Deprecated_Header}}{{Non-standard_Header}}
 
-The **`organization`** read-only
-property of the {{domxref('PaymentAddress')}} interface returns a string containing
-the name of the organization, firm, company, or institution at the address.
+ویژگی فقط‌خواندنی **`organization`** از رابط {{domxref('PaymentAddress')}} یک رشته شامل نام سازمان، شرکت، مؤسسه یا نهاد مرتبط با آن آدرس را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A string whose value is the name of the organization or company
-located at the address described by the `PaymentAddress` object. This should
-be the name of the organization that is to receive the shipment for shipping addresses,
-or which is responsible for payment addresses.
+یک رشته که مقدار آن نام سازمان یا شرکتی است که در آدرس توصیف‌شده توسط شیء `PaymentAddress` قرار دارد. این مقدار باید نام سازمانی باشد که برای آدرس‌های حمل‌ونقل، محموله را دریافت می‌کند یا برای آدرس‌های پرداخت، مسئول پرداخت است.
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
