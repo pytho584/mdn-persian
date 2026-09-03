@@ -1,7 +1,5 @@
 ---
 title: "PageSwapEvent: PageSwapEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PageSwapEvent/PageSwapEvent"
-status: "needs-translation"
 ---
 
 ---
@@ -14,38 +12,37 @@ browser-compat: api.PageSwapEvent.PageSwapEvent
 
 {{APIRef("HTML DOM")}}
 
-The **`PageSwapEvent()`** constructor creates a new
-{{domxref("PageSwapEvent")}} object instance.
+سازندهٔ **`PageSwapEvent()`** یک نمونهٔ جدید از شیء {{domxref("PageSwapEvent")}} می‌سازد.
 
-## Syntax
+## نحو
 
 ```js-nolint
 new PageSwapEvent(type, init)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string representing the type of event. In the case of `PageSwapEvent` this is always `pageswap`.
+  - : رشته‌ای که نوع رویداد را نشان می‌دهد. در مورد `PageSwapEvent` این مقدار همیشه `pageswap` است.
 - `init`
-  - : An object containing the following properties:
+  - : شیءای شامل ویژگی‌های زیر:
     - `activation`
-      - : A {{domxref("NavigationActivation")}} object representing the navigation type and current and destination document history entries. Defaults to `null` if the associated navigation is a cross-origin navigation.
+      - : یک شیء {{domxref("NavigationActivation")}} که نوع ناوبری و ورودی‌های تاریخچهٔ سند فعلی و مقصد را نشان می‌دهد. اگر ناوبری مرتبط یک ناوبری متقابل-مبدأ (cross-origin) باشد، پیش‌فرض آن `null` است.
     - `viewTransition`
-      - : A {{domxref("ViewTransition")}} object representing the active view transition for the related navigation. Defaults to `null` if there is no active view transition.
+      - : یک شیء {{domxref("ViewTransition")}} که انتقال نمای فعال برای ناوبری مرتبط را نشان می‌دهد. اگر انتقال نمای فعالی وجود نداشته باشد، پیش‌فرض آن `null` است.
 
-## Examples
+## مثال‌ها
 
-A developer would not use this constructor manually. A new `PageSwapEvent` object is constructed when a handler is invoked as a result of the {{domxref("Window.pageswap_event", "pageswap")}} event firing.
+یک توسعه‌دهنده معمولاً این سازنده را به‌صورت دستی استفاده نمی‌کند. یک شیء جدید `PageSwapEvent` زمانی ساخته می‌شود که یک مدیریت‌کننده در نتیجهٔ رخ دادن رویداد {{domxref("Window.pageswap_event", "pageswap")}} فراخوانده می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [View Transition API](/en-US/docs/Web/API/View_Transition_API)
