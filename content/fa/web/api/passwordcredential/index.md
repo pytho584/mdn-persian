@@ -1,10 +1,4 @@
 ---
-title: "PasswordCredential"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PasswordCredential"
-status: "needs-translation"
----
-
----
 title: PasswordCredential
 slug: Web/API/PasswordCredential
 page-type: web-api-interface
@@ -15,34 +9,34 @@ browser-compat: api.PasswordCredential
 
 {{SeeCompatTable}}{{APIRef("Credential Management API")}}{{securecontext_header}}
 
-The **`PasswordCredential`** interface of the [Credential Management API](/en-US/docs/Web/API/Credential_Management_API) provides information about a username/password pair. In supporting browsers an instance of this class may be passed in the `credential` member of the `init` object for global {{domxref("Window/fetch", "fetch()")}}.
+رابط **`PasswordCredential`** از [API مدیریت اعتبارنامه](/en-US/docs/Web/API/Credential_Management_API) اطلاعات مربوط به یک جفت نام کاربری/گذرواژه را فراهم می‌کند. در مرورگرهای پشتیبان، نمونه‌ای از این کلاس می‌تواند در عضو `credential` آبجکت `init` برای {{domxref("Window/fetch", "fetch()")}} سراسری ارسال شود.
 
 > [!NOTE]
-> This interface is restricted to top-level contexts and cannot be used from an {{HTMLElement("iframe")}}.
+> این رابط به زمینه‌های سطح بالا محدود است و نمی‌توان آن را از یک {{HTMLElement("iframe")}} استفاده کرد.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("PasswordCredential.PasswordCredential()","PasswordCredential()")}} {{Experimental_Inline}}
-  - : Creates a new `PasswordCredential` object.
+  - : یک شیء `PasswordCredential` جدید می‌سازد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its ancestor, {{domxref("Credential")}}._
+_ویژگی‌هایی را از ancestor خود، {{domxref("Credential")}} به ارث می‌برد._
 
 - {{domxref("PasswordCredential.iconURL")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : A string containing a URL pointing to an image for an icon. This image is intended for display in a credential chooser. The URL must be accessible without authentication.
+  - : رشته‌ای شامل یک URL که به تصویری برای یک آیکن اشاره می‌کند. این تصویر برای نمایش در انتخابگر اعتبارنامه در نظر گرفته شده است. URL باید بدون احراز هویت قابل دسترسی باشد.
 - {{domxref("PasswordCredential.name")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : A human-readable string that provides public name for display in a credential chooser.
+  - : رشته‌ای قابل خواندن برای انسان که نام عمومی را برای نمایش در انتخابگر اعتبارنامه فراهم می‌کند.
 - {{domxref("PasswordCredential.password")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : A string containing the password of the credential.
+  - : رشته‌ای شامل گذرواژه اعتبارنامه.
 
-## Instance methods
+## روش‌های نمونه
 
-None.
+هیچ.
 
-## Examples
+## مثال‌ها
 
 ```js
 const cred = new PasswordCredential({
@@ -57,10 +51,10 @@ navigator.credentials.store(cred).then(() => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
