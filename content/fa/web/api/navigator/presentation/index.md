@@ -1,11 +1,5 @@
 ---
 title: "Navigator: presentation property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/presentation"
-status: "needs-translation"
----
-
----
-title: "Navigator: presentation property"
 short-title: presentation
 slug: Web/API/Navigator/presentation
 page-type: web-api-instance-property
@@ -14,17 +8,15 @@ browser-compat: api.Navigator.presentation
 
 {{securecontext_header}}{{APIRef("Presentation API")}}
 
-The `presentation` read-only property of {{DOMxRef("Navigator")}} serves as the entry
-point for the [Presentation API](/en-US/docs/Web/API/Presentation_API) and
-returns a reference to {{DOMxRef("Presentation")}} object.
+ویژگی فقط‑خواندنی `presentation` از {{DOMxRef("Navigator")}} به عنوان نقطه ورود برای [Presentation API](/en-US/docs/Web/API/Presentation_API) عمل می‌کند و یک ارجاع به شیء {{DOMxRef("Presentation")}} برمی‌گرداند.
 
-## Value
+## مقدار
 
-A reference to {{DOMxRef("Presentation")}} object.
+یک ارجاع به شیء {{DOMxRef("Presentation")}}.
 
-## Examples
+## مثال‌ها
 
-Currently, the `navigator.presentation` property is most useful for feature checking, and, for the receiving user agent, to access the {{domxref("PresentationReceiver")}}.
+در حال حاضر، ویژگی `navigator.presentation` بیشتر برای بررسی وجود ویژگی (feature checking) و در عامل کاربری دریافت‌کننده (receiving user agent) برای دسترسی به {{domxref("PresentationReceiver")}} مفید است.
 
 ```js
 // Check if the Presentation API is available in the current browser
@@ -37,15 +29,15 @@ if ("presentation" in navigator) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Presentation API](/en-US/docs/Web/API/Presentation_API)
 - {{DOMxRef("Presentation")}}
