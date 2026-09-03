@@ -1,11 +1,5 @@
 ---
 title: "PerformanceTiming: domContentLoadedEventEnd property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/domContentLoadedEventEnd"
-status: "needs-translation"
----
-
----
-title: "PerformanceTiming: domContentLoadedEventEnd property"
 short-title: domContentLoadedEventEnd
 slug: Web/API/PerformanceTiming/domContentLoadedEventEnd
 page-type: web-api-instance-property
@@ -17,27 +11,22 @@ browser-compat: api.PerformanceTiming.domContentLoadedEventEnd
 {{APIRef("Performance API")}}{{Deprecated_Header}}
 
 > [!WARNING]
-> This interface of this property is deprecated in the [Navigation Timing Level 2 specification](https://w3c.github.io/navigation-timing/#obsolete). Please use the {{domxref("PerformanceNavigationTiming")}}
-> interface instead.
+> رابط (interface) مربوط به این ویژگی در [مشخصات سطح ۲ زمان‌بندی ناوبری](https://w3c.github.io/navigation-timing/#obsolete) منسوخ (deprecated) شده است. لطفاً به‌جای آن از رابط {{domxref("PerformanceNavigationTiming")}} استفاده کنید.
 
-The legacy
-**`PerformanceTiming.domContentLoadedEventEnd`**
-read-only property returns an `unsigned long long` representing the moment,
-in milliseconds since the UNIX epoch, right after all the scripts that need to be
-executed as soon as possible, in order or not, has been executed.
+ویژگی قدیمی (legacy) **`PerformanceTiming.domContentLoadedEventEnd`** فقط‌خواندنی است و مقدار `unsigned long long` را برمی‌گرداند که لحظه‌ای را، بر حسب میلی‌ثانیه از مبدأ زمانی UNIX، نشان می‌دهد؛ این لحظه دقیقاً پس از اجرای همه اسکریپت‌هایی است که باید در سریع‌ترین زمان ممکن اجرا شوند، چه به‌ترتیب اجرا شده باشند و چه بدون ترتیب.
 
-## Value
+## مقدار
 
-An `unsigned long long`.
+یک `unsigned long long`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("PerformanceTiming")}} interface it belongs to.
+- رابط {{domxref("PerformanceTiming")}} که این ویژگی به آن تعلق دارد.
