@@ -1,11 +1,5 @@
 ---
 title: "PaymentAddress: toJSON() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaymentAddress/toJSON"
-status: "needs-translation"
----
-
----
-title: "PaymentAddress: toJSON() method"
 short-title: toJSON()
 slug: Web/API/PaymentAddress/toJSON
 page-type: web-api-instance-method
@@ -17,7 +11,7 @@ browser-compat: api.PaymentAddress.toJSON
 
 {{APIRef("Payment Request API")}}{{SecureContext_Header}}{{Deprecated_Header}}{{Non-standard_Header}}
 
-The **`toJSON()`** method of the {{domxref("PaymentAddress")}} interface is a standard serializer that returns a JSON representation of the PaymentAddress object's properties.
+متد **`toJSON()`** در رابط {{domxref("PaymentAddress")}} یک سریال‌ساز استاندارد است که نمایش JSON از ویژگی‌های شیء PaymentAddress را برمی‌گرداند.
 
 ## Syntax
 
@@ -25,14 +19,14 @@ The **`toJSON()`** method of the {{domxref("PaymentAddress")}} interface is a st
 toJSON()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A JSON object.
+یک شیء JSON.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
