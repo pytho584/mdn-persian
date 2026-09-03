@@ -1,11 +1,5 @@
 ---
 title: "NDEFRecord: data property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NDEFRecord/data"
-status: "needs-translation"
----
-
----
-title: "NDEFRecord: data property"
 short-title: data
 slug: Web/API/NDEFRecord/data
 page-type: web-api-instance-property
@@ -16,19 +10,15 @@ browser-compat: api.NDEFRecord.data
 
 {{SecureContext_Header}}{{SeeCompatTable}}{{APIRef("Web NFC API")}}
 
-The **`data`**
-property of the {{DOMxRef("NDEFRecord")}} interface returns a
-{{jsxref("DataView")}} containing the raw bytes of the record's payload.
+خاصیت **`data`** از رابط {{DOMxRef("NDEFRecord")}} یک {{jsxref("DataView")}} شامل بایت‌های خام بارِ مفید رکورد را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A {{jsxref("DataView")}} that contains encoded payload data of the record.
+یک {{jsxref("DataView")}} که شامل داده‌های بارِ مفید رمزگذاری‌شدهٔ رکورد است.
 
-## Examples
+## نمونه‌ها
 
-The following example loops over the records in an {{domxref("NDEFMessage")}}
-object, which is retrieved from {{domxref("NDEFReadingEvent.message")}}. After
-selecting a record based on its {{domxref("NDEFRecord.mediaType", "mediaType")}}, it then decodes what's stored in the `data` property.
+مثال زیر در میان رکوردهای یک شیء {{domxref("NDEFMessage")}} که از {{domxref("NDEFReadingEvent.message")}} گرفته شده است، پیمایش می‌کند. پس از انتخاب یک رکورد بر اساس {{domxref("NDEFRecord.mediaType", "mediaType")}} آن، آنچه در خاصیت `data` ذخیره شده است را رمزگشایی می‌کند.
 
 ```js
 const ndef = new NDEFReader();
@@ -45,10 +35,10 @@ ndef.onreading = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
