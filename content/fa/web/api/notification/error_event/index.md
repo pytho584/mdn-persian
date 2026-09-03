@@ -1,11 +1,5 @@
 ---
 title: "Notification: error event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Notification/error_event"
-status: "needs-translation"
----
-
----
-title: "Notification: error event"
 short-title: error
 slug: Web/API/Notification/error_event
 page-type: web-api-event
@@ -14,11 +8,11 @@ browser-compat: api.Notification.error_event
 
 {{APIRef("Web Notifications")}}{{securecontext_header}} {{AvailableInWorkers}}
 
-The **`error`** event of the {{domxref("Notification")}} interface fires when something goes wrong with a {{domxref("Notification")}} (in many cases an error preventing the notification from being displayed.)
+رویداد **`error`** از رابط {{domxref("Notification")}} زمانی رخ می‌دهد که مشکلی برای یک {{domxref("Notification")}} پیش بیاید (در بسیاری از موارد، خطایی که از نمایش اعلان جلوگیری می‌کند).
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("error", (event) => { })
@@ -26,18 +20,18 @@ addEventListener("error", (event) => { })
 onerror = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Notifications API](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
+- [استفاده از Notifications API](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
