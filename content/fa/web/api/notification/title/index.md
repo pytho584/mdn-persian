@@ -1,11 +1,5 @@
 ---
 title: "Notification: title property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Notification/title"
-status: "needs-translation"
----
-
----
-title: "Notification: title property"
 short-title: title
 slug: Web/API/Notification/title
 page-type: web-api-instance-property
@@ -14,16 +8,13 @@ browser-compat: api.Notification.title
 
 {{APIRef("Web Notifications")}}{{securecontext_header}} {{AvailableInWorkers}}
 
-The **`title`** read-only property of the
-{{domxref("Notification")}} interface indicates the title of the notification, as
-specified in the `title` parameter of the
-{{domxref("Notification.Notification","Notification()")}} constructor.
+ویژگی فقط‌خواندنی **`title`** در رابط {{domxref("Notification")}} عنوان اعلان را نشان می‌دهد، همان‌طور که در پارامتر `title` سازندهٔ {{domxref("Notification.Notification","Notification()")}} مشخص شده است.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```js
 function spawnNotification(theBody, theIcon, theTitle) {
@@ -38,14 +29,14 @@ function spawnNotification(theBody, theIcon, theTitle) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Notifications API](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
+- [استفاده از API اعلان‌ها](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
