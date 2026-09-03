@@ -1,11 +1,5 @@
 ---
 title: "PresentationRequest: getAvailability() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PresentationRequest/getAvailability"
-status: "needs-translation"
----
-
----
-title: "PresentationRequest: getAvailability() method"
 short-title: getAvailability()
 slug: Web/API/PresentationRequest/getAvailability
 page-type: web-api-instance-method
@@ -16,48 +10,48 @@ browser-compat: api.PresentationRequest.getAvailability
 
 {{APIRef("Presentation API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-When the `getAvailability()` method is called, the user agent _MUST_ run the following steps:
+هنگامی که متد `getAvailability()` فراخوانی می‌شود، عامل کاربر (_user agent_) _باید_ مراحل زیر را اجرا کند:
 
-- Input
-  - : _presentationUrls_, a list of [presentation request URLs](https://www.w3.org/TR/presentation-api/#dfn-presentation-request-urls)
-- Output
-  - : _P_, a [Promise](https://www.w3.org/TR/presentation-api/#dfn-promise)
+- ورودی
+  - : _presentationUrls_، فهرستی از [URLهای درخواست ارائه](https://www.w3.org/TR/presentation-api/#dfn-presentation-request-urls)
+- خروجی
+  - : _P_، یک [Promise](https://www.w3.org/TR/presentation-api/#dfn-promise)
 
-1. If one of the following conditions is true:
-   - The result of running the [prohibits mixed security contexts algorithm](https://www.w3.org/TR/presentation-api/#dfn-prohibits-mixed-security-contexts-algorithm) on the document's [settings object](https://www.w3.org/TR/presentation-api/#dfn-settings-object) is `"Prohibits Mixed Security Contexts"` and _presentationUrl_ is an [a priori unauthenticated URL](https://www.w3.org/TR/presentation-api/#dfn-a-priori-unauthenticated-url).
-   - The document object's [active sandboxing flag set](https://www.w3.org/TR/presentation-api/#dfn-active-sandboxing-flag-set) has the [sandboxed presentation browsing context flag](https://www.w3.org/TR/presentation-api/#sandboxed-presentation-browsing-context-flag) set.
+1. اگر یکی از شرایط زیر برقرار باشد:
+   - نتیجه اجرای [الگوریع ممنوعیت بافت‌های امنیتی مختلط](https://www.w3.org/TR/presentation-api/#dfn-prohibits-mixed-security-contexts-algorithm) روی [شی تنظیمات](https://www.w3.org/TR/presentation-api/#dfn-settings-object) سند، «ممنوعیت بافت‌های امنیتی مختلط» باشد و _presentationUrl_ یک [URL از پیش تأییدنشده](https://www.w3.org/TR/presentation-api/#dfn-a-priori-unauthenticated-url) باشد.
+   - [مجموعه پرچم‌های sandboxing فعال](https://www.w3.org/TR/presentation-api/#dfn-active-sandboxing-flag-set) شی سند، [پرچم بافت مرورگری ارائه sandbox شده](https://www.w3.org/TR/presentation-api/#sandboxed-presentation-browsing-context-flag) را تنظیم کرده باشد.
 
-   Run the following substeps:
-   1. Return a [Promise](https://www.w3.org/TR/presentation-api/#dfn-promise) rejected with a `SecurityError` {{domxref("DOMException")}}.
-   2. Abort these steps.
+   مراحل فرعی زیر را اجرا کن:
+   1. یک [Promise](https://www.w3.org/TR/presentation-api/#dfn-promise) برگردان که با یک `SecurityError` {{domxref("DOMException")}} رد شده باشد.
+   2. این مراحل را خاتمه بده.
 
-2. Let _P_ be a new [Promise](https://www.w3.org/TR/presentation-api/#dfn-promise).
-3. Return _P_, but continue running these steps [in parallel](https://www.w3.org/TR/presentation-api/#dfn-in-parallel).
-4. If the user agent is unable to [monitor the list of available presentation displays](https://www.w3.org/TR/presentation-api/#dfn-monitor-the-list-of-available-presentation-displays) for the entire duration of the [controlling browsing context](https://www.w3.org/TR/presentation-api/#dfn-controlling-browsing-context) (e.g., because the user has disabled this feature), then:
-   1. [Resolve](https://www.w3.org/TR/presentation-api/#dfn-resolving-a-promise) _P_ with a new `PresentationAvailability` object with its `value` property set to `false`.
-   2. Abort all the remaining steps.
+2. بگذارید _P_ یک [Promise](https://www.w3.org/TR/presentation-api/#dfn-promise) جدید باشد.
+3. _P_ را برگردان، اما این مراحل را [به صورت موازی](https://www.w3.org/TR/presentation-api/#dfn-in-parallel) ادامه بده.
+4. اگر عامل کاربر قادر به [نظارت بر فهرست نمایشگرهای ارائه موجود](https://www.w3.org/TR/presentation-api/#dfn-monitor-the-list-of-available-presentation-displays) برای کل مدت [بافت مرورگری کنترل‌کننده](https://www.w3.org/TR/presentation-api/#dfn-controlling-browsing-context) نباشد (مثلاً به دلیل غیرفعال کردن این ویژگی توسط کاربر)، آنگاه:
+   1. _P_ را با یک شی `PresentationAvailability` جدید که ویژگی `value` آن روی `false` تنظیم شده است، [پذیرفته](https://www.w3.org/TR/presentation-api/#dfn-resolving-a-promise) کن.
+   2. تمام مراحل باقی‌مانده را خاتمه بده.
 
-5. If the user agent is unable to continuously [monitor the list of available presentation displays](https://www.w3.org/TR/presentation-api/#dfn-monitor-the-list-of-available-presentation-displays) but can find presentation displays in order to start a connection, then:
-   1. [Reject](https://www.w3.org/TR/presentation-api/#dfn-rejecting-a-promise) _P_ with a `NotSupportedError` {{domxref("DOMException")}}.
-   2. Abort all the remaining steps.
+5. اگر عامل کاربر قادر به [نظارت مداوم بر فهرست نمایشگرهای ارائه موجود](https://www.w3.org/TR/presentation-api/#dfn-monitor-the-list-of-available-presentation-displays) نباشد اما بتواند برای شروع یک اتصال، نمایشگرهای ارائه را پیدا کند، آنگاه:
+   1. _P_ را با یک `NotSupportedError` {{domxref("DOMException")}} [رد](https://www.w3.org/TR/presentation-api/#dfn-rejecting-a-promise) کن.
+   2. تمام مراحل باقی‌مانده را خاتمه بده.
 
-6. If there exists a tuple (_A_, _presentationUrls_) in the [set of availability objects](https://www.w3.org/TR/presentation-api/#dfn-set-of-availability-objects), then:
-   1. [Resolve](https://www.w3.org/TR/presentation-api/#dfn-resolving-a-promise) _P_ with _A_.
-   2. Abort all the remaining steps.
+6. اگر یک tuple (_A_, _presentationUrls_) در [مجموعه اشیاء در دسترس بودن](https://www.w3.org/TR/presentation-api/#dfn-set-of-availability-objects) وجود داشته باشد، آنگاه:
+   1. _P_ را با _A_ [پذیرفته](https://www.w3.org/TR/presentation-api/#dfn-resolving-a-promise) کن.
+   2. تمام مراحل باقی‌مانده را خاتمه بده.
 
-7. Let _A_ be a new `PresentationAvailability` object with its `value` property set as follows:
-   1. `false` if the [list of available presentation displays](https://www.w3.org/TR/presentation-api/#dfn-list-of-available-presentation-displays) is empty.
-   2. `true` if there is at least one [compatible presentation display](https://www.w3.org/TR/presentation-api/#dfn-compatible-presentation-display) for some member of _presentationUrls_. Meaning there is an entry _(presentationUrl, display)_ in the [list of available presentation displays](https://www.w3.org/TR/presentation-api/#dfn-list-of-available-presentation-displays) for some _presentationUrl_ in _presentationUrls_.
-   3. `false` otherwise.
+7. بگذارید _A_ یک شی `PresentationAvailability` جدید باشد که ویژگی `value` آن به صورت زیر تنظیم شده است:
+   1. اگر [فهرست نمایشگرهای ارائه موجود](https://www.w3.org/TR/presentation-api/#dfn-list-of-available-presentation-displays) خالی باشد، `false`.
+   2. اگر حداقل یک [نمایشگر ارائه سازگار](https://www.w3.org/TR/presentation-api/#dfn-compatible-presentation-display) برای برخی از اعضای _presentationUrls_ وجود داشته باشد، `true`. یعنی یک ورودی _(presentationUrl, display)_ در [فهرست نمایشگرهای ارائه موجود](https://www.w3.org/TR/presentation-api/#dfn-list-of-available-presentation-displays) برای برخی _presentationUrl_ در _presentationUrls_ وجود داشته باشد.
+   3. در غیر این صورت، `false`.
 
-8. Create a tuple (_A_, _presentationUrls_) and add it to the [set of availability objects](https://www.w3.org/TR/presentation-api/#dfn-set-of-availability-objects).
-9. Run the algorithm to [monitor the list of available presentation displays](https://www.w3.org/TR/presentation-api/#dfn-monitor-the-list-of-available-presentation-displays).
-10. [Resolve](https://www.w3.org/TR/presentation-api/#dfn-resolving-a-promise) _P_ with _A_.
+8. یک tuple (_A_, _presentationUrls_) ایجاد کن و آن را به [مجموعه اشیاء در دسترس بودن](https://www.w3.org/TR/presentation-api/#dfn-set-of-availability-objects) اضافه کن.
+9. الگوریتم [نظارت بر فهرست نمایشگرهای ارائه موجود](https://www.w3.org/TR/presentation-api/#dfn-monitor-the-list-of-available-presentation-displays) را اجرا کن.
+10. _P_ را با _A_ [پذیرفته](https://www.w3.org/TR/presentation-api/#dfn-resolving-a-promise) کن.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
