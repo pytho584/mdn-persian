@@ -1,11 +1,5 @@
 ---
 title: "Navigator: clipboard property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/clipboard"
-status: "needs-translation"
----
-
----
-title: "Navigator: clipboard property"
 short-title: clipboard
 slug: Web/API/Navigator/clipboard
 page-type: web-api-instance-property
@@ -14,17 +8,17 @@ browser-compat: api.Navigator.clipboard
 
 {{APIRef("Clipboard API")}} {{securecontext_header}}
 
-The **`clipboard`** read-only property of the {{domxref("Navigator")}} interface returns a {{domxref("Clipboard")}} object used to read and write the clipboard's contents.
+ویژگی فقط‌خواندنی **`clipboard`** در رابط {{domxref("Navigator")}} یک شیء {{domxref("Clipboard")}} برمی‌گرداند که برای خواندن و نوشتن محتویات کلیپ‌بورد استفاده می‌شود.
 
-This is the entry point to the [Clipboard API](/en-US/docs/Web/API/Clipboard_API), which can be used to implement cut, copy, and paste features within a web application.
+این نقطه ورود به [Clipboard API](/en-US/docs/Web/API/Clipboard_API) است که می‌توان از آن برای پیاده‌سازی قابلیت‌های برش، کپی و چسباندن در یک برنامه وب استفاده کرد.
 
-## Value
+## مقدار
 
-The {{domxref("Clipboard")}} object used to access the system clipboard.
+شیء {{domxref("Clipboard")}} که برای دسترسی به کلیپ‌بورد سیستم استفاده می‌شود.
 
-## Examples
+## مثال‌ها
 
-The following code uses `navigator.clipboard` to access the system clipboard in order to read text contents from the clipboard.
+کد زیر از `navigator.clipboard` برای دسترسی به کلیپ‌بورد سیستم به منظور خواندن محتوای متنی از کلیپ‌بورد استفاده می‌کند.
 
 ```js
 navigator.clipboard
@@ -34,16 +28,16 @@ navigator.clipboard
   );
 ```
 
-This snippet replaces the contents of the element whose class is `"clip-text"` with the text contents of the clipboard.
-Perhaps this code is being used in a browser extension that displays the current clipboard contents, automatically updating periodically or when specific events fire.
+این قطعه کد محتویات عنصری را که کلاس آن `"clip-text"` است با محتوای متنی کلیپ‌بورد جایگزین می‌کند.
+احتمالاً این کد در یک افزونه مرورگر استفاده می‌شود که محتوای فعلی کلیپ‌بورد را نمایش می‌دهد و به‌طور خودکار به‌صورت دوره‌ای یا هنگام رویدادهای خاص به‌روزرسانی می‌شود.
 
-If the clipboard is empty or doesn't contain text, the `"clip-text"` element's contents are cleared.
-This happens because {{domxref("Clipboard.readText", "readText()")}} returns an empty string if the clipboard is empty or doesn't contain text.
+اگر کلیپ‌بورد خالی باشد یا متنی نداشته باشد، محتوای عنصر `"clip-text"` پاک می‌شود.
+این اتفاق به این دلیل رخ می‌دهد که {{domxref("Clipboard.readText", "readText()")}} اگر کلیپ‌بورد خالی باشد یا متنی نداشته باشد، یک رشته خالی برمی‌گرداند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
