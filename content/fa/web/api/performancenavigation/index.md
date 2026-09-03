@@ -1,10 +1,4 @@
 ---
-title: "PerformanceNavigation"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceNavigation"
-status: "needs-translation"
----
-
----
 title: PerformanceNavigation
 slug: Web/API/PerformanceNavigation
 page-type: web-api-interface
@@ -15,48 +9,48 @@ browser-compat: api.PerformanceNavigation
 
 {{APIRef("Performance API")}}{{Deprecated_Header}}
 
-The legacy **`PerformanceNavigation`** interface represents information about how the navigation to the current document was done.
+遗留的 **`PerformanceNavigation`** 接口表示与如何导航到当前文档有关的信息。
 
 > [!WARNING]
-> This interface is deprecated in the [Navigation Timing Level 2 specification](https://w3c.github.io/navigation-timing/#obsolete).
-> Please use the {{domxref("PerformanceNavigationTiming")}} interface instead.
+> 该接口已在 [Navigation Timing Level 2 规范](https://w3c.github.io/navigation-timing/#obsolete) 中弃用。
+> 请改用 {{domxref("PerformanceNavigationTiming")}} 接口。
 
-An object of this type can be obtained by calling the {{domxref("Performance.navigation")}} read-only attribute.
+可以通过调用 {{domxref("Performance.navigation")}} 只读属性来获得此类型的对象。
 
-## Instance properties
+## 实例属性
 
-_The `PerformanceNavigation` interface doesn't inherit any properties._
+_`PerformanceNavigation` 接口不继承任何属性。_
 
 - {{domxref("PerformanceNavigation.type")}} {{ReadOnlyInline}} {{deprecated_inline}}
-  - : An `unsigned short` which indicates how the navigation to this page was done. Possible values are:
+  - : 一个 `unsigned short`，指示如何导航到此页面。可能的值有：
     - `TYPE_NAVIGATE` (0)
-      - : The page was accessed by following a link, a bookmark, a form submission, or a script, or by typing the URL in the address bar.
+      - : 页面通过点击链接、书签、表单提交、脚本，或在地址栏中输入 URL 来访问。
     - `TYPE_RELOAD` (1)
-      - : The page was accessed by clicking the Reload button or via the {{domxref("Location.reload()")}} method.
+      - : 页面通过点击“重新加载”按钮或使用 {{domxref("Location.reload()")}} 方法来访问。
     - `TYPE_BACK_FORWARD` (2)
-      - : The page was accessed by navigating into the history.
+      - : 页面通过历史记录导航来访问。
     - `TYPE_RESERVED` (255)
-      - : Any other way.
+      - : 使用其他任何方式。
 
 - {{domxref("PerformanceNavigation.redirectCount")}} {{ReadOnlyInline}} {{deprecated_inline}}
-  - : An `unsigned short` representing the number of REDIRECTs done before reaching the page.
+  - : 一个 `unsigned short`，表示在到达该页面之前执行的重定向次数。
 
-## Instance methods
+## 实例方法
 
-_The `Performance` interface doesn't inherit any methods._
+_`PerformanceNavigation` 接口不继承任何方法。_
 
 - {{domxref("PerformanceNavigation.toJSON()")}} {{deprecated_inline}}
-  - : A {{Glossary("Serialization","serializer")}} returning a JSON object representing the `PerformanceNavigation` object.
+  - : 一个 {{Glossary("Serialization","序列化器")}}，返回表示 `PerformanceNavigation` 对象的 JSON 对象。
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
-- The {{domxref("Performance")}} that allows access to an object of this type.
-- {{domxref("PerformanceNavigationTiming")}} (part of Navigation Timing Level 2) that has superseded this API.
+- 允许访问此类型对象的 {{domxref("Performance")}}。
+- {{domxref("PerformanceNavigationTiming")}}（Navigation Timing Level 2 的一部分），已取代此 API。
