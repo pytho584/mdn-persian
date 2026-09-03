@@ -1,10 +1,4 @@
 ---
-title: "PeriodicSyncEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PeriodicSyncEvent"
-status: "needs-translation"
----
-
----
 title: PeriodicSyncEvent
 slug: Web/API/PeriodicSyncEvent
 page-type: web-api-interface
@@ -15,31 +9,31 @@ browser-compat: api.PeriodicSyncEvent
 
 {{APIRef("Periodic Background Sync")}}{{SeeCompatTable}}{{AvailableInWorkers("service")}}
 
-The **`PeriodicSyncEvent`** interface of the {{domxref('Web Periodic Background Synchronization API', '', '', 'nocode')}} provides a way to run tasks in the service worker with network connectivity.
+رابط **`PeriodicSyncEvent`** از {{domxref('Web Periodic Background Synchronization API', '', '', 'nocode')}} راهی برای اجرای وظایف در سرویس‌ورکر هنگام برقراری اتصال شبکه فراهم می‌کند.
 
-An instance of this event is passed to the {{domxref('ServiceWorkerGlobalScope.periodicsync_event', 'periodicsync')}} handler. This happens periodically, at an interval greater than or equal to that set in the {{domxref('PeriodicSyncManager.register()')}} method. Other implementation-specific factors such as the user's engagement with the site decide the actual interval.
+یک نمونه از این رویداد به هندلر {{domxref('ServiceWorkerGlobalScope.periodicsync_event', 'periodicsync')}} ارسال می‌شود. این اتفاق به‌صورت دوره‌ای، با بازه‌ای بزرگ‌تر یا مساوی بازهٔ تنظیم‌شده در متد {{domxref('PeriodicSyncManager.register()')}} رخ می‌دهد. عوامل دیگری که به پیاده‌سازی مرورگر بستگی دارند، مانند میزان تعامل کاربر با سایت، بازهٔ واقعی را تعیین می‌کنند.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("PeriodicSyncEvent.PeriodicSyncEvent", "PeriodicSyncEvent()")}} {{Experimental_Inline}}
-  - : Creates a new `PeriodicSyncEvent` object. This constructor is not typically used. The browser creates these objects itself and provides them to {{domxref('ServiceWorkerGlobalScope.periodicsync_event', 'onperiodicsync')}} callback.
+  - : یک شیء `PeriodicSyncEvent` جدید می‌سازد. این سازنده معمولاً به‌طور مستقیم استفاده نمی‌شود؛ مرورگر خودش این اشیاء را می‌سازد و آن‌ها را در اختیار فراخوان {{domxref('ServiceWorkerGlobalScope.periodicsync_event', 'onperiodicsync')}} قرار می‌دهد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref('ExtendableEvent')}}._
+_ویژگی‌های زیر را از والد خود، {{domxref('ExtendableEvent')}} به ارث می‌برد._
 
 - {{domxref('PeriodicSyncEvent.tag')}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns the developer-defined identifier for this `PeriodicSyncEvent`. Multiple tags can be used by the web app to run different periodic tasks at different frequencies.
+  - : شناسهٔ تعریف‌شده توسط توسعه‌دهنده را برای این `PeriodicSyncEvent` بازمی‌گرداند. وب‌اپلیکیشن می‌تواند از چندین برچسب برای اجرای وظایف دوره‌ای مختلف با بسامدهای مختلف استفاده کند.
 
-## Instance methods
+## متدهای نمونه
 
-_Inherits methods from its parent, {{domxref('ExtendableEvent')}}._
+_متدهای زیر را از والد خود، {{domxref('ExtendableEvent')}} به ارث می‌برد._
 
-## Examples
+## مثال‌ها
 
-The following example shows how to respond to a periodic sync event in the service worker.
+مثال زیر نشان می‌دهد که چگونه می‌توان به یک رویداد همگام‌سازی دوره‌ای در سرویس‌ورکر پاسخ داد.
 
 ```js
 self.addEventListener("periodicsync", (event) => {
@@ -49,16 +43,16 @@ self.addEventListener("periodicsync", (event) => {
 });
 ```
 
-`fetchAndCacheLatestNews` is a developer defined function.
+تابع `fetchAndCacheLatestNews` تابعی است که توسعه‌دهنده آن را تعریف می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Richer offline experiences with the Periodic Background Sync API](https://developer.chrome.com/docs/capabilities/periodic-background-sync)
+- [تجربه‌های آفلاین غنی‌تر با Periodic Background Sync API](https://developer.chrome.com/docs/capabilities/periodic-background-sync)
