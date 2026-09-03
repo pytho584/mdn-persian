@@ -1,11 +1,5 @@
 ---
 title: "PaymentRequestEvent: respondWith() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/respondWith"
-status: "needs-translation"
----
-
----
-title: "PaymentRequestEvent: respondWith() method"
 short-title: respondWith()
 slug: Web/API/PaymentRequestEvent/respondWith
 page-type: web-api-instance-method
@@ -16,30 +10,30 @@ browser-compat: api.PaymentRequestEvent.respondWith
 
 {{APIRef("Web-Based Payment Handler API")}}{{SeeCompatTable}}{{AvailableInWorkers("service")}}
 
-The **`respondWith()`** method of the {{domxref("PaymentRequestEvent")}} interface prevents the default event handling and allows you to provide a {{jsxref("Promise")}} for a payment handler response object yourself.
+متد **`respondWith()`** در رابط {{domxref("PaymentRequestEvent")}} از رفتار پیش‌فرض رویداد جلوگیری می‌کند و به شما امکان می‌دهد یک {{jsxref("Promise")}} برای شیء پاسخِ پردازندهٔ پرداخت ارائه دهید.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 respondWith(promise)
 ```
 
-### Parameters
+### پارامترها
 
 - `promise`
-  - : A payment handler response object or a {{jsxref('Promise')}} that resolves to one. This object should contain the following properties:
+  - : یک شیء پاسخِ پردازندهٔ پرداخت یا یک {{jsxref('Promise')}} که به چنین شیءای حل می‌شود. این شیء باید دارای ویژگی‌های زیر باشد:
     - `methodName`
-      - : The payment method identifier for the payment method that the user selected to fulfill the transaction.
+      - : شناسهٔ روش پرداختی که کاربر برای انجام تراکنش انتخاب کرده است.
     - `details`
-      - : A JSON-serializable object that provides a payment method-specific message used by the merchant to process the transaction and determine a successful fund transfer. See [8.1.2 `details` attribute](https://w3c.github.io/web-based-payment-handler/#details-attribute) for more details.
+      - : یک شیء قابل تبدیل به JSON که حاوی پیامی مخصوص روش پرداخت است و فروشنده برای پردازش تراکنش و تعیین موفقیت‌آمیز بودن انتقال وجه از آن استفاده می‌کند. برای جزئیات بیشتر به [ویژگی `details` در بخش ۸.۱.۲](https://w3c.github.io/web-based-payment-handler/#details-attribute) مراجعه کنید.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-The example below is taken from [Open the payment handler window to display the web-based payment app frontend](https://web.dev/articles/orchestrating-payment-transactions#open-payment-handler-window). Read the article to understand the context of the code.
+مثال زیر از [باز کردن پنجرهٔ پردازندهٔ پرداخت برای نمایش رابط کاربری برنامهٔ پرداخت مبتنی بر وب](https://web.dev/articles/orchestrating-payment-transactions#open-payment-handler-window) گرفته شده است. برای درک زمینهٔ کد، مقاله را مطالعه کنید.
 
 ```js
 self.addEventListener("paymentrequest", async (e) => {
@@ -63,18 +57,18 @@ self.addEventListener("paymentrequest", async (e) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Web-based payment apps overview](https://web.dev/articles/web-based-payment-apps-overview)
-- [Setting up a payment method](https://web.dev/articles/setting-up-a-payment-method)
-- [Life of a payment transaction](https://web.dev/articles/life-of-a-payment-transaction)
-- [Using the Payment Request API](/en-US/docs/Web/API/Payment_Request_API/Using_the_Payment_Request_API)
-- [Payment processing concepts](/en-US/docs/Web/API/Payment_Request_API/Concepts)
+- [مرور کلی برنامه‌های پرداخت مبتنی بر وب](https://web.dev/articles/web-based-payment-apps-overview)
+- [راه‌اندازی یک روش پرداخت](https://web.dev/articles/setting-up-a-payment-method)
+- [چرخهٔ عمر یک تراکنش پرداخت](https://web.dev/articles/life-of-a-payment-transaction)
+- [استفاده از Payment Request API](/en-US/docs/Web/API/Payment_Request_API/Using_the_Payment_Request_API)
+- [مفاهیم پردازش پرداخت](/en-US/docs/Web/API/Payment_Request_API/Concepts)
