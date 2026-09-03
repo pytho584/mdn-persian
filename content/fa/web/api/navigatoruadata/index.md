@@ -1,10 +1,4 @@
 ---
-title: "NavigatorUAData"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigatorUAData"
-status: "needs-translation"
----
-
----
 title: NavigatorUAData
 slug: Web/API/NavigatorUAData
 page-type: web-api-interface
@@ -15,42 +9,42 @@ browser-compat: api.NavigatorUAData
 
 {{APIRef("User-Agent Client Hints API")}}{{SeeCompatTable}}{{AvailableInWorkers}}
 
-The **`NavigatorUAData`** interface of the {{domxref("User-Agent Client Hints API", "", "", "nocode")}} returns information about the browser and operating system of a user.
+رابط **`NavigatorUAData`** از {{domxref("User-Agent Client Hints API", "", "", "nocode")}} اطلاعاتی درباره مرورگر و سیستم‌عامل کاربر بازمی‌گرداند.
 
-An instance of this object is returned by calling {{domxref("Navigator.userAgentData")}} or {{domxref("WorkerNavigator.userAgentData")}}. Therefore, this interface has no constructor.
+یک نمونه از این شیء با فراخوانی {{domxref("Navigator.userAgentData")}} یا {{domxref("WorkerNavigator.userAgentData")}} بازگردانده می‌شود. بنابراین، این رابط سازنده‌ای ندارد.
 
 > [!NOTE]
-> The terms _high entropy_ and _low entropy_ refer to the amount of information these values reveal about the browser. The values returned as properties are deemed [low entropy](/en-US/docs/Web/HTTP/Guides/Client_hints#low_entropy_hints), which are unlikely to identify a user. The {{domxref("NavigatorUAData.getHighEntropyValues()")}} can be used to request additional [high entropy](/en-US/docs/Web/HTTP/Guides/Client_hints#high_entropy_hints) values, which could potentially reveal more identifying information. These values are therefore retrieved via a {{jsxref("Promise")}}, allowing time for the browser to request user permission, or make other checks.
+> اصطلاحات _آنتروپی بالا_ و _آنتروپی پایین_ به میزان اطلاعاتی اشاره دارند که این مقادیر درباره مرورگر فاش می‌کنند. مقادیر بازگردانده شده به عنوان ویژگی‌ها، [آنتروپی پایین](/en-US/docs/Web/HTTP/Guides/Client_hints#low_entropy_hints) در نظر گرفته می‌شوند که بعید است کاربر را شناسایی کنند. از {{domxref("NavigatorUAData.getHighEntropyValues()")}} می‌توان برای درخواست مقادیر [آنتروپی بالا](/en-US/docs/Web/HTTP/Guides/Client_hints#high_entropy_hints) اضافی استفاده کرد که ممکن است اطلاعات شناسایی‌کننده بیشتری را فاش کنند. بنابراین این مقادیر از طریق یک {{jsxref("Promise")}} بازیابی می‌شوند تا به مرورگر زمان دهد برای درخواست اجازه کاربر یا انجام بررسی‌های دیگر.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("NavigatorUAData.brands")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns an array of brand information containing the browser name and version.
+  - : یک آرایه از اطلاعات برند شامل نام و نسخه مرورگر بازمی‌گرداند.
 - {{domxref("NavigatorUAData.mobile")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns `true` if the user-agent is running on a mobile device.
+  - : اگر عامل کاربر روی یک دستگاه تلفن‌همراه در حال اجرا باشد، `true` بازمی‌گرداند.
 - {{domxref("NavigatorUAData.platform")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns the platform brand the user-agent is running on.
+  - : برند سکویی که عامل کاربر روی آن اجرا می‌شود را بازمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("NavigatorUAData.getHighEntropyValues()")}} {{Experimental_Inline}}
-  - : Returns a {{jsxref("Promise")}} that resolves with a dictionary object containing low entropy information and requested high entropy information about the browser.
+  - : یک {{jsxref("Promise")}} بازمی‌گرداند که با یک شیء فرهنگ‌واره حاوی اطلاعات آنتروپی پایین و اطلاعات آنتروپی بالای درخواست‌شده درباره مرورگر حل می‌شود.
 - {{domxref("NavigatorUAData.toJSON()")}} {{Experimental_Inline}}
-  - : A _serializer_ that returns a JSON representation of the _low entropy_ properties of the `NavigatorUAData` object.
+  - : یک _سریالایزر_ که یک نمایش JSON از ویژگی‌های _آنتروپی پایین_ شیء `NavigatorUAData` بازمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-### Getting the brands
+### دریافت برندها
 
-The following example prints the value of {{domxref("NavigatorUAData.brands")}} to the console.
+مثال زیر مقدار {{domxref("NavigatorUAData.brands")}} را در کنسول چاپ می‌کند.
 
 ```js
 console.log(navigator.userAgentData.brands);
 ```
 
-### Returning high entropy values
+### بازگرداندن مقادیر آنتروپی بالا
 
-In the following value a number of hints are requested using the {{domxref("NavigatorUAData.getHighEntropyValues()")}} method. When the promise resolves, this information is printed to the console.
+در مثال زیر، تعدادی راهنما با استفاده از روش {{domxref("NavigatorUAData.getHighEntropyValues()")}} درخواست می‌شود. هنگامی که وعده حل می‌شود، این اطلاعات در کنسول چاپ می‌شوند.
 
 ```js
 navigator.userAgentData
@@ -66,14 +60,14 @@ navigator.userAgentData
   });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Improving user privacy and developer experience with User-Agent Client Hints](https://developer.chrome.com/docs/privacy-security/user-agent-client-hints)
+- [بهبود حریم خصوصی کاربر و تجربه توسعه‌دهنده با User-Agent Client Hints](https://developer.chrome.com/docs/privacy-security/user-agent-client-hints)
