@@ -1,7 +1,6 @@
+```
 ---
 title: "Navigator: languages property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/languages"
-status: "needs-translation"
 ---
 
 ---
@@ -14,35 +13,30 @@ browser-compat: api.Navigator.languages
 
 {{APIRef("HTML DOM")}}
 
-The **`languages`** read-only property of the {{domxref("Navigator")}} interface
-returns an array of strings representing the user's preferred
-languages. The language is described using a {{glossary("BCP 47 language tag")}}. In the returned
-array they are ordered by preference with the most preferred language first.
+ویژگی فقط‑خواندنی **`languages`** از رابط {{domxref("Navigator")}} یک آرایه از رشته‌ها را برمی‌گرداند که زبان‌های ترجیحی کاربر را نشان می‌دهد. هر زبان با استفاده از یک {{glossary("BCP 47 language tag")}} (برچسب زبان BCP 47) توصیف می‌شود. در آرایه بازگشتی، آن‌ها به ترتیب اولویت مرتب شده‌اند و زبان با بیشترین اولویت در ابتدا قرار دارد.
 
-The value of {{domxref("Navigator.language","navigator.language")}} is the
-first element of the returned array.
+مقدار {{domxref("Navigator.language","navigator.language")}} اولین عنصر آرایه بازگشتی است.
 
-When its value changes, as the user's preferred languages are changed a
-{{domxref("Window.languagechange_event", "languagechange")}} event is fired on the {{domxref("Window")}} object.
+هنگامی که مقدار آن تغییر می‌کند، یعنی با تغییر زبان‌های ترجیحی کاربر، یک رویداد {{domxref("Window.languagechange_event", "languagechange")}} روی شیء {{domxref("Window")}} شلیک می‌شود.
 
-The {{HTTPHeader("Accept-Language")}} HTTP header in every HTTP request from the user's browser generally lists the same locales as the `navigator.languages` property, with decreasing `q` values (quality values). Some browsers (Chrome and Safari) add language-only fallback tags in `Accept-Language`—for example, `en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7` when `navigator.languages` is `["en-US", "zh-CN"]`. For privacy purposes (reducing {{Glossary("fingerprinting")}}), both `Accept-Language` and `navigator.languages` may not include the full list of user preferences, such as in Safari (always) and Chrome's incognito mode, where only one language is listed.
+هدر HTTP {{HTTPHeader("Accept-Language")}} در هر درخواست HTTP از مرورگر کاربر معمولاً همان مکان‌ها (locale) را که در ویژگی `navigator.languages` وجود دارد، با مقادیر `q` (کیفیت) کاهش‌یافته فهرست می‌کند. برخی مرورگرها (Chrome و Safari) برچسب‌های بازگشتی فقط‑زبان را در `Accept-Language` اضافه می‌کنند — برای مثال، `en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7` وقتی `navigator.languages` برابر با `["en-US", "zh-CN"]` است. به دلایل حفظ حریم خصوصی (کاهش {{Glossary("fingerprinting")}})، ممکن است هر دو `Accept-Language` و `navigator.languages` فهرست کامل ترجیحات کاربر را شامل نشوند، مانند Safari (همیشه) و حالت ناشناس Chrome، که در آن‌ها فقط یک زبان فهرست می‌شود.
 
-## Value
+## مقدار
 
-An array of strings.
+یک آرایه از رشته‌ها.
 
-## Examples
+## نمونه‌ها
 
-### Listing the contents of navigator.language and navigator.languages
+### فهرست کردن محتویات navigator.language و navigator.languages
 
 ```js
 navigator.language; // "en-US"
 navigator.languages; // ["en-US", "zh-CN", "ja-JP"]
 ```
 
-### Using Intl constructors to do language-specific formatting, with fallback
+### استفاده از سازنده‌های Intl برای قالب‌بندی مختص زبان، با بازگشت
 
-The array of language identifiers contained in `navigator.languages` can be passed directly to the {{jsxref("Intl")}} constructors to implement preference-based fallback selection of locales, where the first entry in the list that matches a locale supported by `Intl` is used:
+آرایه شناسه‌های زبان موجود در `navigator.languages` می‌تواند مستقیماً به سازنده‌های {{jsxref("Intl")}} ارسال شود تا انتخاب بازگشتی مبتنی بر اولویت مکان‌ها پیاده‌سازی شود، به‌طوری‌که اولین ورودی در فهرست که با یک مکان پشتیبانی‌شده توسط `Intl` مطابقت دارد، استفاده می‌شود:
 
 ```js
 const date = new Date("2012-05-24");
@@ -50,17 +44,18 @@ const date = new Date("2012-05-24");
 const formattedDate = new Intl.DateTimeFormat(navigator.languages).format(date);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("navigator.language")}}
 - {{domxref("navigator")}}
-- {{domxref("Window.languagechange_event", "languagechange")}} event
+- رویداد {{domxref("Window.languagechange_event", "languagechange")}}
 - {{jsxref("Intl")}}
+```
