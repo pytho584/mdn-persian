@@ -1,10 +1,4 @@
 ---
-title: "Popover API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Popover_API"
-status: "needs-translation"
----
-
----
 title: Popover API
 slug: Web/API/Popover_API
 page-type: web-api-overview
@@ -16,114 +10,128 @@ browser-compat:
 
 {{DefaultAPISidebar("Popover API")}}
 
-The **Popover API** provides developers with a standard, consistent, flexible mechanism for displaying popover content on top of other page content. Popover content can be controlled either using HTML attributes, or via JavaScript.
+**Popover API** سازوکاری استاندارد، سازگار و انعطاف‌پذیر در اختیار توسعه‌دهندگان قرار می‌دهد تا محتوای پاپاور را روی سایر محتوای صفحه نمایش دهند. محتوای پاپاور را می‌توان با ویژگی‌های HTML یا از طریق جاوااسکریپت کنترل کرد.
 
-## Concepts and usage
+## مفاهیم و کاربرد
 
-A very common pattern on the web is to show content over the top of other content, drawing the user's attention to specific important information or actions that need to be taken. This content can take several different names — overlays, popups, popovers, dialogs, etc. We will refer to them as popovers through the documentation. Generally speaking, these can be:
+یک الگوی بسیار رایج در وب این است که محتوایی روی محتوای دیگر نمایش داده می‌شود تا توجه کاربر به اطلاعات مهم یا اقداماتی که باید انجام شوند جلب شود. برای چنین محتوایی نام‌های مختلفی به کار می‌رود: overlay، popup، popover، dialog و جز این‌ها. در این مستندات، همهٔ این‌ها را «پاپاور» می‌نامیم. به‌طور کلی، این محتواها می‌توانند:
 
-- **modal**, meaning that while a popover is being shown, the rest of the page is rendered non-interactive until the popover is actioned in some way (for example an important choice is made).
-- **non-modal**, meaning that the rest of the page can be interacted with while the popover is being shown.
+- **modal**: به این معنا که وقتی پاپاور نمایش داده می‌شود، بقیهٔ صفحه تا زمانی که به نحوی با پاپاور تعامل نشود (مثلاً انتخاب مهمی انجام نشود) غیرقابل‌تعامل می‌ماند.
+- **non-modal**: به این معنا که وقتی پاپاور نمایش داده می‌شود، بقیهٔ صفحه همچنان قابل‌تعامل است.
 
-Popovers created using the Popover API are always non-modal. If you want to create a modal popover, a {{htmlelement("dialog")}} element is the right way to go. There is significant overlap between the two — you might for example want to create a popover that persists, but control it using HTML. You can turn a `<dialog>` element into a popover (`<dialog popover>` is perfectly valid) if you want to combine popover control with dialog semantics.
+پاپاورهای ساخته‌شده با Popover API همیشه غیرمودال هستند. اگر می‌خواهید یک پاپاور مودال ایجاد کنید، راه درست استفاده از عنصر {{htmlelement("dialog")}} است. بین این دو هم‌پوشانی قابل‌توجهی وجود دارد؛ برای نمونه، ممکن است بخواهید پاپاوری بسازید که ماندگار است ولی آن را با HTML کنترل کنید. اگر می‌خواهید کنترل پاپاور را با معنای dialog ترکیب کنید، می‌توانید عنصر `<dialog>` را به پاپاور تبدیل کنید (`<dialog popover>` کاملاً معتبر است).
 
-Typical use cases for the popover API include user-interactive elements like action menus, custom "toast" notifications, form element suggestions, content pickers, or teaching UI.
+مهم‌ترین کاربردهای Popover API شامل عناصر تعاملی مانند منوهای عملیات، اعلان‌های «toast» سفارشی، پیشنهادهای عناصر فرم، انتخاب‌گرهای محتوا یا رابط‌های کاربری آموزشی است.
 
-You can create popovers in multiple ways:
+پاپاورها را می‌توان به چند روش ساخت:
 
-- Via a set of new HTML attributes. A simple popover with a toggle button can be created using the following code:
+- از طریق مجموعه‌ای از ویژگی‌های جدید HTML. یک پاپاور ساده که دکمهٔ تغییر وضعیت (toggle) دارد را می‌توان با کد زیر ایجاد کرد:
 
   ```html
   <button popovertarget="mypopover">Toggle the popover</button>
   <div id="mypopover" popover>Popover content</div>
   ```
 
-- Via a JavaScript API. For example, {{domxref("HTMLElement.togglePopover()")}} can be used to toggle a popover between shown and hidden.
+- از طریق یک API جاوااسکریپتی. مثلاً {{domxref("HTMLElement.togglePopover()")}} می‌تواند برای جابه‌جا کردن وضعیت پاپاور بین نمایش و پنهان بودن به کار رود.
 
-The Popover API also provides events to react to a popover being toggled and CSS features to aid in styling popovers. See [Using the popover API](/en-US/docs/Web/API/Popover_API/Using) for a detailed guide to the API.
+Popover API همچنین رویدادهایی برای واکنش به تغییر وضعیت پاپاور و امکانات CSS برای استایل‌دهی به پاپاورها فراهم می‌کند. برای راهنمای دقیق API، مستندات [استفاده از Popover API](/en-US/docs/Web/API/Popover_API/Using) را ببینید.
 
-A related feature — **interest invokers** — can be used to show popovers on hover/focus, without requiring JavaScript. Check out [Using interest invokers](/en-US/docs/Web/API/Popover_API/Using_interest_invokers) to learn more.
+یک قابلیت مرتبط به نام **interest invoker** نیز می‌تواند بدون نیاز به جاوااسکریپت، پاپاورها را هنگام hover یا فوکوس نمایش دهد. برای اطلاعات بیشتر به [استفاده از interest invoker](/en-US/docs/Web/API/Popover_API/Using_interest_invokers) مراجعه کنید.
 
-## HTML attributes
+## ویژگی‌های HTML
 
 - [`interestfor`](/en-US/docs/Web/HTML/Reference/Elements/button#interestfor) {{experimental_inline}}
-  - : Defines an HTML {{htmlelement("a")}}, {{htmlelement("button")}}, or {{htmlelement("area")}} element, or an SVG [`<a>`](/en-US/docs/Web/SVG/Reference/Element/a) element, as an interest invoker. Its value is the `id` of the target element, which will be affected in some way (normally shown or hidden) when interest is shown or lost on the invoker element.
-- [`popover`](/en-US/docs/Web/HTML/Reference/Global_attributes/popover)
-  - : A global attribute that turns an element into a popover element; takes a popover state (`"auto"`, `"hint"`, or `"manual"`) as its value.
-- [`popovertarget`](/en-US/docs/Web/HTML/Reference/Elements/button#popovertarget)
-  - : Turns a {{htmlelement("button")}} or {{htmlelement("input")}} element into a popover control button; takes the ID of the popover element to control as its value.
-- [`popovertargetaction`](/en-US/docs/Web/HTML/Reference/Elements/button#popovertargetaction)
-  - : Specifies the action to be performed (`"hide"`, `"show"`, or `"toggle"`) on the popover element being controlled by a control {{htmlelement("button")}} or {{htmlelement("input")}}.
+  - : عنصر HTML {{htmlelement("a")}}، {{htmlelement("button")}} یا {{htmlelement("area")}} یا عنصر [`<a>`](/en-US/docs/Web/SVG/Reference/Element/a) در SVG را به‌عنوان interest invoker تعریف می‌کند. مقدار این ویژگی، `id` عنصر هدف است؛ عنصری که وقتی نسبت به عنصر invoker علاقه (interest) ابراز شود یا از بین برود، به‌گونه‌ای (معمولاً نمایش یا پنهان‌سازی) تحت تأثیر قرار می‌گیرد.
 
-## CSS features
+- [`popover`](/en-US/docs/Web/HTML/Reference/Global_attributes/popover)
+  - : یک ویژگی سراسری که عنصر را به یک پاپاور تبدیل می‌کند؛ مقدار آن یکی از حالت‌های پاپاور (`"auto"`، `"hint"` یا `"manual"`) است.
+
+- [`popovertarget`](/en-US/docs/Web/HTML/Reference/Elements/button#popovertarget)
+  - : عنصر {{htmlelement("button")}} یا {{htmlelement("input")}} را به دکمهٔ کنترل پاپاور تبدیل می‌کند؛ مقدار آن شناسهٔ عنصر پاپاوری است که باید کنترل شود.
+
+- [`popovertargetaction`](/en-US/docs/Web/HTML/Reference/Elements/button#popovertargetaction)
+  - : عملیاتی را که باید روی عنصر پاپاورِ کنترل‌شده توسط یک {{htmlelement("button")}} یا {{htmlelement("input")}} کنترلی انجام شود (`"hide"`، `"show"` یا `"toggle"`) مشخص می‌کند.
+
+## امکانات CSS
 
 - {{cssxref("::backdrop")}}
-  - : The `::backdrop` pseudo-element is a full-screen element placed directly behind popover elements, allowing effects to be added to the page content behind the popover(s) if desired (for example blurring it out).
-- {{cssxref("interest-delay")}}, {{cssxref("interest-delay-start")}}, and {{cssxref("interest-delay-end")}} {{experimental_inline}}
-  - : The `interest-delay` shorthand property and its related `interest-delay-start` and `interest-delay-end` longhands can be used to add a delay between the user showing or losing interest and the browser acting on that change.
-- {{cssxref(":interest-source")}} and {{cssxref(":interest-target")}}
-  - : These selectors can be used to apply styles to the interest invoker and its associated target element, respectively, only when interest is indicated.
-- {{cssxref(":popover-open")}}
-  - : The `:popover-open` pseudo-class matches a popover element only when it is in the showing state — it can be used to style popover elements when they are showing.
+  - : شبه‌عنصر `::backdrop` عنصری تمام‌صفحه است که دقیقاً پشت عناصر پاپاور قرار می‌گیرد و در صورت نیاز امکان افزودن افکت به محتوای پشت پاپاور را فراهم می‌کند (مثلاً محوکردن آن).
 
-## Interfaces
+- {{cssxref("interest-delay")}}، {{cssxref("interest-delay-start")}} و {{cssxref("interest-delay-end")}} {{experimental_inline}}
+  - : ویژگی ترکیبی `interest-delay` و ویژگی‌های جزء (longhand) مرتبط با آن، یعنی `interest-delay-start` و `interest-delay-end`، برای افزودن تأخیر بین ابراز علاقه یا از دست رفتن آن توسط کاربر و واکنش مرورگر به این تغییر به کار می‌روند.
+
+- {{cssxref(":interest-source")}} و {{cssxref(":interest-target")}}
+  - : این انتخاب‌گرها را می‌توان برای اعمال استایل به‌ترتیب روی interest invoker و عنصر هدفِ مرتبط با آن، فقط وقتی که علاقه (interest) ابراز شده است به کار برد.
+
+- {{cssxref(":popover-open")}}
+  - : شبه‌کلاس `:popover-open` فقط زمانی با یک عنصر پاپاور مطابقت می‌کند که آن عنصر در حالت نمایش باشد؛ می‌توان از آن برای استایل‌دهی به عناصر پاپاور هنگام نمایش استفاده کرد.
+
+## رابط‌ها
 
 - {{domxref("InterestEvent")}} {{experimental_inline}}
-  - : The event object for the {{domxref("HTMLElement.interest_event", "interest")}} and {{domxref("HTMLElement.loseinterest_event", "loseinterest")}} events. This includes a `source` property that contains a reference to the associated interest invoker element.
+  - : شیء رویداد برای رویدادهای {{domxref("HTMLElement.interest_event", "interest")}} و {{domxref("HTMLElement.loseinterest_event", "loseinterest")}}. این شیء شامل خصوصیت `source` است که ارجاعی به عنصر interest invoker مرتبط را نگه می‌دارد.
+
 - {{domxref("ToggleEvent")}}
-  - : Represents an event that fires when a popover element is toggled between being shown and hidden. It is the event object for the {{domxref("HTMLElement.beforetoggle_event", "beforetoggle")}} and {{domxref("HTMLElement.toggle_event", "toggle")}} events, which fire on popovers when their state changes.
+  - : نمایانگر رویدادی است که هنگام جابه‌جایی وضعیت یک عنصر پاپاور بین نمایش و پنهان‌بودن فعال می‌شود. این شیء، شیء رویداد برای رویدادهای {{domxref("HTMLElement.beforetoggle_event", "beforetoggle")}} و {{domxref("HTMLElement.toggle_event", "toggle")}} است که هنگام تغییر وضعیت پاپاورها روی آن‌ها فعال می‌شوند.
 
-## Extensions to other interfaces
+## توسعه‌های اعمال‌شده بر سایر رابط‌ها
 
-### Instance properties
+### خصوصیت‌های نمونه
 
 - {{domxref("HTMLButtonElement.interestForElement", "interestForElement")}} {{experimental_inline}}
-  - : Gets or sets a reference to the element being targeted by an interest invoker. If an HTML or SVG interest invoker references a target element in its `interestfor` attribute, that element will be referenced in the equivalent DOM object's `interestForElement` property. Available on the {{domxref("HTMLButtonElement")}}, {{domxref("HTMLAnchorElement")}}, {{domxref("HTMLAreaElement")}}, and {{domxref("SVGAElement")}} interfaces.
-- {{domxref("HTMLElement.popover")}}
-  - : Gets and sets an element's popover state via JavaScript (`"auto"`, `"hint"`, or `"manual"`), and can be used for feature detection. Reflects the value of the [`popover`](/en-US/docs/Web/HTML/Reference/Global_attributes/popover) global HTML attribute.
-- {{domxref("HTMLButtonElement.popoverTargetElement")}} and {{domxref("HTMLInputElement.popoverTargetElement")}}
-  - : Gets and sets the popover element being controlled by the control button. The JavaScript equivalent of the [`popovertarget`](/en-US/docs/Web/HTML/Reference/Elements/button#popovertarget) HTML attribute.
-- {{domxref("HTMLButtonElement.popoverTargetAction")}} and {{domxref("HTMLInputElement.popoverTargetAction")}}
-  - : Gets and sets the action to be performed (`"hide"`, `"show"`, or `"toggle"`) on the popover element being controlled by the control button. Reflects the value of the [`popovertargetaction`](/en-US/docs/Web/HTML/Reference/Elements/button#popovertargetaction) HTML attribute.
+  - : ارجاع به عنصر هدفِ یک interest invoker را می‌خواند یا تنظیم می‌کند. اگر یک interest invoker در HTML یا SVG در ویژگیِ `interestfor` خود به عنصر هدفی ارجاع دهد، آن عنصر در خصوصیتِ `interestForElement` شیء DOM متناظر ارجاع داده می‌شود. این خصوصیت در رابط‌های {{domxref("HTMLButtonElement")}}، {{domxref("HTMLAnchorElement")}}، {{domxref("HTMLAreaElement")}} و {{domxref("SVGAElement")}} در دسترس است.
 
-### Instance methods
+- {{domxref("HTMLElement.popover")}}
+  - : وضعیت پاپاورِ یک عنصر را از طریق جاوااسکریپت (`"auto"`، `"hint"` یا `"manual"`) می‌خواند و تنظیم می‌کند و می‌توان از آن برای تشخیص پشتیبانی مرورگر از این قابلیت استفاده کرد. مقدار ویژگی سراسری [`popover`](/en-US/docs/Web/HTML/Reference/Global_attributes/popover) در HTML را منعکس می‌کند.
+
+- {{domxref("HTMLButtonElement.popoverTargetElement")}} و {{domxref("HTMLInputElement.popoverTargetElement")}}
+  - : عنصر پاپاوری را که توسط کنترل‌کننده مدیریت می‌شود می‌خوانند یا تنظیم می‌کنند. این خصوصیت‌ها معادل جاوااسکریپتیِ ویژگی HTML [`popovertarget`](/en-US/docs/Web/HTML/Reference/Elements/button#popovertarget) هستند.
+
+- {{domxref("HTMLButtonElement.popoverTargetAction")}} و {{domxref("HTMLInputElement.popoverTargetAction")}}
+  - : عملیاتی که باید روی عنصر پاپاورِ کنترل‌شده توسط کنترل‌کننده انجام شود (`"hide"`، `"show"` یا `"toggle"`) را می‌خوانند یا تنظیم می‌کنند. این خصوصیت‌ها مقدار ویژگی HTML [`popovertargetaction`](/en-US/docs/Web/HTML/Reference/Elements/button#popovertargetaction) را منعکس می‌کنند.
+
+### متدهای نمونه
 
 - {{domxref("HTMLElement.hidePopover()")}}
-  - : Hides a popover element by removing it from the top layer and styling it with `display: none`.
+  - : یک عنصر پاپاور را با حذف کردن از لایهٔ بالا (top layer) و اعمال `display: none` پنهان می‌کند.
+
 - {{domxref("HTMLElement.showPopover()")}}
-  - : Shows a popover element by adding it to the top layer.
+  - : یک عنصر پاپاور را با افزودن به لایهٔ بالا (top layer) نمایش می‌دهد.
+
 - {{domxref("HTMLElement.togglePopover()")}}
-  - : Toggles a popover element between the showing and hidden states.
+  - : وضعیت یک عنصر پاپاور را بین حالت نمایش و حالت پنهان جابه‌جا می‌کند.
 
-### Events
+### رویدادها
 
-- {{domxref("HTMLElement.beforetoggle_event","beforetoggle")}} event
-  - : Fired just before a popover element's state changes between showing and hidden, or vice versa.
-    Can be used to prevent a popover from opening, or to update other elements that need to be triggered by popover state.
-- {{domxref("HTMLElement.toggle_event", "toggle")}} event
-  - : Fired just after a popover element's state changes between showing and hidden, or vice versa.
+- رویداد {{domxref("HTMLElement.beforetoggle_event","beforetoggle")}}
+  - : دقیقاً پیش از تغییر وضعیت یک عنصر پاپاور بین نمایش و پنهان‌بودن (یا برعکس) فعال می‌شود. می‌توان از آن برای جلوگیری از باز شدن پاپاور یا به‌روزرسانی عناصر دیگری که باید بر اساس وضعیت پاپاور فعال شوند استفاده کرد.
+
+- رویداد {{domxref("HTMLElement.toggle_event", "toggle")}}
+  - : دقیقاً پس از تغییر وضعیت یک عنصر پاپاور بین نمایش و پنهان‌بودن (یا برعکس) فعال می‌شود.
+
 - {{domxref("HTMLElement.interest_event", "interest")}} {{experimental_inline}}
-  - : Fired on an interest invoker's target element when interest is shown, allowing code to be run in response.
+  - : زمانی که علاقه (interest) ابراز می‌شود روی عنصر هدفِ یک interest invoker فعال می‌شود و امکان اجرای کد در پاسخ به آن را فراهم می‌کند.
+
 - {{domxref("HTMLElement.loseinterest_event", "loseinterest")}} {{experimental_inline}}
-  - : Fired on an interest invoker's target element when interest is lost, allowing code to be run in response.
+  - : زمانی که علاقه (interest) از بین می‌رود روی عنصر هدفِ یک interest invoker فعال می‌شود و امکان اجرای کد در پاسخ به آن را فراهم می‌کند.
 
-## Examples
+## نمونه‌ها
 
-- See our collection of [Popover API examples](https://mdn.github.io/dom-examples/popover-api/).
-- See our collection of [interest invoker examples](https://mdn.github.io/dom-examples/interest-invokers/).
+- مجموعه [نمونه‌های Popover API](https://mdn.github.io/dom-examples/popover-api/) را ببینید.
+- مجموعه [نمونه‌های interest invoker](https://mdn.github.io/dom-examples/interest-invokers/) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [`popover`](/en-US/docs/Web/HTML/Reference/Global_attributes/popover) HTML global attribute
-- [`popovertarget`](/en-US/docs/Web/HTML/Reference/Elements/button#popovertarget) HTML attribute
-- [`popovertargetaction`](/en-US/docs/Web/HTML/Reference/Elements/button#popovertargetaction) HTML attribute
-- {{cssxref("::backdrop")}} CSS pseudo-element
-- {{cssxref(":popover-open")}} CSS pseudo-class
+- [`popover`](/en-US/docs/Web/HTML/Reference/Global_attributes/popover) — ویژگی سراسری HTML
+- [`popovertarget`](/en-US/docs/Web/HTML/Reference/Elements/button#popovertarget) — ویژگی HTML
+- [`popovertargetaction`](/en-US/docs/Web/HTML/Reference/Elements/button#popovertargetaction) — ویژگی HTML
+- {{cssxref("::backdrop")}} — شبه‌عنصر CSS
+- {{cssxref(":popover-open")}} — شبه‌کلاس CSS
