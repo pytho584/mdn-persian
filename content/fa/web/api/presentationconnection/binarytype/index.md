@@ -1,7 +1,5 @@
 ---
 title: "PresentationConnection: binaryType property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnection/binaryType"
-status: "needs-translation"
 ---
 
 ---
@@ -16,15 +14,15 @@ browser-compat: api.PresentationConnection.binaryType
 
 {{APIRef("Presentation API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-When a {{DOMxRef("PresentationConnection")}} object is created, its `binaryType` IDL attribute _MUST_ be set to the string `"arraybuffer"`. Upon getting, the attribute _MUST_ return its most recent value (the value it was last set as). Upon setting, the user agent _MUST_ set the IDL attribute to the new value.
+هنگامی که یک شیء {{DOMxRef("PresentationConnection")}} ایجاد میشود، خصوصیت IDL آن با نام `binaryType` _باید_ روی رشته `"arraybuffer"` تنظیم شود. هنگام خواندن، خصوصیت _باید_ آخرین مقدار خود (مقداری که در آخرین بار تنظیم شده) را بازگرداند. هنگام تنظیم، عامل کاربر _باید_ خصوصیت IDL را روی مقدار جدید تنظیم کند.
 
 > [!NOTE]
-> The `binaryType` attribute allows authors to control how binary data is exposed to scripts. By setting the attribute to `"blob"`, binary data is returned in `Blob` form; by setting it to `"arraybuffer"`, it is returned in {{JSxRef("ArrayBuffer")}} form. The attribute defaults to `"arraybuffer"`. This attribute has no effect on data sent in a string form.
+> خصوصیت `binaryType` به توسعه‌دهندگان امکان می‌دهد نحوه در دسترس قرار گرفتن داده‌های باینری برای اسکریپت‌ها را کنترل کنند. با تنظیم این خصوصیت روی `"blob"`، داده‌های باینری به صورت `Blob` بازگردانده می‌شوند؛ با تنظیم آن روی `"arraybuffer"`، این داده‌ها به صورت {{JSxRef("ArrayBuffer")}} بازگردانده می‌شوند. مقدار پیش‌فرض این خصوصیت `"arraybuffer"` است. این خصوصیت هیچ تأثیری بر داده‌هایی که به صورت رشته ارسال می‌شوند ندارد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
