@@ -1,11 +1,5 @@
 ---
 title: "PerformanceTiming: unloadEventStart property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/unloadEventStart"
-status: "needs-translation"
----
-
----
-title: "PerformanceTiming: unloadEventStart property"
 short-title: unloadEventStart
 slug: Web/API/PerformanceTiming/unloadEventStart
 page-type: web-api-instance-property
@@ -17,28 +11,24 @@ browser-compat: api.PerformanceTiming.unloadEventStart
 {{APIRef("Performance API")}}{{Deprecated_Header}}
 
 > [!WARNING]
-> This interface of this property is deprecated in the [Navigation Timing Level 2 specification](https://w3c.github.io/navigation-timing/#obsolete). Please use the {{domxref("PerformanceNavigationTiming")}}
-> interface instead.
+> این رابط کاربری (interface) این ویژگی در [مشخصات Navigation Timing Level 2](https://w3c.github.io/navigation-timing/#obsolete) منسوخ (deprecated) شده است. لطفاً به جای آن از رابط {{domxref("PerformanceNavigationTiming")}} استفاده کنید.
 
-The legacy
+ویژگی فقط خواندنی (read-only) قدیمی
 **`PerformanceTiming.unloadEventStart`**
-read-only property returns an `unsigned long long` representing the moment,
-in milliseconds since the UNIX epoch, the {{domxref("Window/unload_event", "unload")}} event has been thrown. If
-there is no previous document, or if the previous document, or one of the needed
-redirects, is not of the same origin, the value returned is `0`.
+یک `unsigned long long` را برمی‌گرداند که نشان‌دهنده لحظه‌ای (به میلی‌ثانیه از مبدأ UNIX) است که رویداد {{domxref("Window/unload_event", "unload")}} پرتاب شده است. اگر سند قبلی وجود نداشته باشد، یا اگر سند قبلی، یا یکی از تغییر مسیرهای (redirects) مورد نیاز، از همان مبدأ (same origin) نباشد، مقدار بازگشتی `0` خواهد بود.
 
-## Value
+## مقدار
 
-An `unsigned long long`.
+یک `unsigned long long`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("PerformanceTiming")}} interface it belongs to.
+- رابط {{domxref("PerformanceTiming")}} که این ویژگی به آن تعلق دارد.
