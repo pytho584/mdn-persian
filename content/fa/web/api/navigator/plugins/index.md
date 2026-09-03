@@ -1,11 +1,5 @@
 ---
 title: "Navigator: plugins property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/plugins"
-status: "needs-translation"
----
-
----
-title: "Navigator: plugins property"
 short-title: plugins
 slug: Web/API/Navigator/plugins
 page-type: web-api-instance-property
@@ -14,52 +8,47 @@ browser-compat: api.Navigator.plugins
 
 {{APIRef("HTML DOM")}}
 
-Returns a {{DOMxRef("PluginArray")}} object, listing the {{DOMxRef("Plugin")}} objects describing the plugins installed in the application.
-Named properties of the returned object are not enumerable (except in very old browser versions).
+یک شیء {{DOMxRef("PluginArray")}} برمی‌گرداند که شامل اشیاء {{DOMxRef("Plugin")}} مربوط به افزونه‌های نصب‌شده در برنامه است. ویژگی‌های نام‌دارِ شیءِ بازگردانده‌شده قابل شمارش نیستند (به‌جز در نسخه‌های بسیار قدیمی مرورگر).
 
-Recent versions of the specification hard-code the returned list.
-If inline viewing of PDF files is supported the property lists five standard plugins.
-If inline PDF viewing is not supported then an empty list is returned.
+نسخه‌های اخیر مشخصات، فهرست بازگردانده‌شده را به‌صورت ثابت (hard-code) تعیین کرده‌اند. اگر نمایش درون‌خطی فایل‌های PDF پشتیبانی شود، این ویژگی پنج افزونه استاندارد را فهرست می‌کند. اگر نمایش درون‌خطی PDF پشتیبانی نشود، یک فهرست خالی بازگردانده می‌شود.
 
 > [!NOTE]
-> Use {{domxref("Navigator.pdfViewerEnabled")}} to determine if inline viewing of PDF files is supported. Do not infer it from this property.
+> برای تعیین اینکه آیا نمایش درون‌خطی فایل‌های PDF پشتیبانی می‌شود یا خیر، از {{domxref("Navigator.pdfViewerEnabled")}} استفاده کنید. این موضوع را از روی این ویژگی استنتاج نکنید.
 >
-> The "five standard plugins" are those that developers have most commonly used to feature detect inline PDF viewing.
-> Returning these ensures that legacy code can more reliably determine whether inline viewing is supported.
-> However this approach is not recommended for new code because this property may eventually be removed.
+> «پنج افزونه استاندارد» مواردی هستند که توسعه‌دهندگان معمولاً برای تشخیص ویژگی نمایش درون‌خطی PDF از آن‌ها استفاده کرده‌اند. بازگرداندن این موارد اطمینان می‌دهد که کدهای قدیمی بتوانند با قابلیت اطمینان بیشتری تشخیص دهند که آیا نمایش درون‌خطی پشتیبانی می‌شود یا خیر. با این حال، این رویکرد برای کدهای جدید توصیه نمی‌شود، زیرا ممکن است این ویژگی در نهایت حذف شود.
 
-Legacy browser versions also list plugins for Adobe Flash and PDF viewer extensions.
+نسخه‌های قدیمی‌تر مرورگرها همچنین افزونه‌های Adobe Flash و افزونه‌های نمایشگر PDF را فهرست می‌کردند.
 
-## Value
+## مقدار
 
-`plugins` is a {{DOMxRef("PluginArray")}} object used to access {{DOMxRef("Plugin")}} objects either by name or as a list of items.
+`plugins` یک شیء {{DOMxRef("PluginArray")}} است که برای دسترسی به اشیاء {{DOMxRef("Plugin")}} یا بر اساس نام و یا به‌صورت فهرستی از آیتم‌ها استفاده می‌شود.
 
-The returned value is not a JavaScript array, but has the `length` property and supports accessing individual items using bracket notation (`plugins[2]`), as well as via `item(index)` and `namedItem("name")` methods.
+مقدار بازگردانده‌شده یک آرایه جاوااسکریپتی نیست، اما دارای ویژگی `length` است و از دسترسی به آیتم‌های جداگانه با استفاده از نماد براکت (`plugins[2]`) و همچنین از طریق روش‌های `item(index)` و `namedItem("name")` پشتیبانی می‌کند.
 
-If PDF inline viewing is supported this will contain entries for the following plugins:
+اگر نمایش درون‌خطی PDF پشتیبانی شود، این شامل ورودی‌هایی برای افزونه‌های زیر خواهد بود:
 
-- "PDF Viewer"
-- "Chrome PDF Viewer"
-- "Chromium PDF Viewer"
-- "Microsoft Edge PDF Viewer"
-- "WebKit built-in PDF"
+- «PDF Viewer»
+- «Chrome PDF Viewer»
+- «Chromium PDF Viewer»
+- «Microsoft Edge PDF Viewer»
+- «WebKit built-in PDF»
 
-If inline viewing of PDFs is not supported then an empty object is returned.
+اگر نمایش درون‌خطی PDFها پشتیبانی نشود، یک شیء خالی بازگردانده می‌شود.
 
-## Examples
+## مثال‌ها
 
-This code shows how to check if PDF files can be displayed inline:
+این کد نشان می‌دهد که چگونه بررسی کنید آیا فایل‌های PDF می‌توانند به‌صورت درون‌خطی نمایش داده شوند:
 
 ```js
 if ("PDF Viewer" in navigator.plugins) {
-  // browser supports inline viewing of PDF files.
+  // مرورگر از نمایش درون‌خطی فایل‌های PDF پشتیبانی می‌کند.
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
