@@ -1,7 +1,5 @@
 ---
 title: "Navigator: pdfViewerEnabled property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/pdfViewerEnabled"
-status: "needs-translation"
 ---
 
 ---
@@ -14,20 +12,20 @@ browser-compat: api.Navigator.pdfViewerEnabled
 
 {{APIRef("HTML DOM")}}
 
-The **`pdfViewerEnabled`** read-only property of the {{domxref("Navigator")}} interface indicates whether the browser supports inline display of PDF files when navigating to them.
+ویژگی فقط‌خواندنی **`pdfViewerEnabled`** در رابط {{domxref("Navigator")}} مشخص می‌کند که آیا مرورگر هنگام پیمایش به فایل‌های PDF، نمایش درون‌خطی آن‌ها را پشتیبانی می‌کند یا نه.
 
-If inline viewing is not supported the PDF is downloaded and may then be handled by some external application.
+اگر نمایش درون‌خطی پشتیبانی نشود، فایل PDF دانلود می‌شود و ممکن است سپس توسط یک برنامهٔ خارجی مدیریت شود.
 
 > [!NOTE]
-> This method replaces a number of legacy methods of inferring support for inline viewing of PDF files.
+> این ویژگی جایگزین چند روش قدیمی برای تشخیص پشتیبانی از نمایش درون‌خطی فایل‌های PDF است.
 
-## Value
+## مقدار
 
-`true` if the browser can display PDF files inline when navigating to the file (using either an internal viewer or a PDF viewer extension); otherwise `false`.
+اگر مرورگر هنگام پیمایش به فایل بتواند فایل PDF را به‌صورت درون‌خطی نمایش دهد (چه با نمایشگر داخلی و چه با افزونهٔ نمایشگر PDF)، مقدار `true` است؛ در غیر این صورت `false`.
 
-## Examples
+## مثال‌ها
 
-To check PDF inline viewing support:
+برای بررسی پشتیبانی از نمایش درون‌خطی PDF:
 
 ```js
 if (!navigator.pdfViewerEnabled) {
@@ -35,10 +33,10 @@ if (!navigator.pdfViewerEnabled) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
