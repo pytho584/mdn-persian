@@ -1,11 +1,5 @@
 ---
 title: "PerformanceTiming: responseEnd property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/responseEnd"
-status: "needs-translation"
----
-
----
-title: "PerformanceTiming: responseEnd property"
 short-title: responseEnd
 slug: Web/API/PerformanceTiming/responseEnd
 page-type: web-api-instance-property
@@ -17,28 +11,22 @@ browser-compat: api.PerformanceTiming.responseEnd
 {{APIRef("Performance API")}}{{Deprecated_Header}}
 
 > [!WARNING]
-> This interface of this property is deprecated in the [Navigation Timing Level 2 specification](https://w3c.github.io/navigation-timing/#obsolete). Please use the {{domxref("PerformanceNavigationTiming")}}
-> interface instead.
+> رابط مربوط به این ویژگی در [مشخصات Navigation Timing Level 2](https://w3c.github.io/navigation-timing/#obsolete) منسوخ شده است. لطفاً به‌جای آن از رابط {{domxref("PerformanceNavigationTiming")}} استفاده کنید.
 
-The legacy
-**`PerformanceTiming.responseEnd`**
-read-only property returns an `unsigned long long` representing the moment,
-in milliseconds since the UNIX epoch, when the browser received the last byte of the
-response, or when the connection is closed if this happened first, from the server from
-a cache or from a local resource.
+**`PerformanceTiming.responseEnd`** یک ویژگی فقط‌خواندنی قدیمی است که یک مقدار `unsigned long long` برمی‌گرداند. این مقدار نشان‌دهندهٔ لحظه‌ای به میلی‌ثانیه از مبدأ زمان یونیکس است که مرورگر آخرین بایت پاسخ را از سرور، از حافظهٔ نهان (cache) یا از یک منبع محلی دریافت کرده است؛ اگر بسته‌شدن اتصال زودتر از دریافت آخرین بایت رخ داده باشد، این مقدار، زمان بسته‌شدن اتصال را بازمی‌گرداند.
 
-## Value
+## مقدار
 
-An `unsigned long long`.
+یک `unsigned long long`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("PerformanceTiming")}} interface it belongs to.
+- رابط {{domxref("PerformanceTiming")}} که این ویژگی به آن تعلق دارد.
