@@ -1,11 +1,5 @@
 ---
 title: "NavigatorLogin"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigatorLogin"
-status: "needs-translation"
----
-
----
-title: NavigatorLogin
 slug: Web/API/NavigatorLogin
 page-type: web-api-interface
 browser-compat: api.NavigatorLogin
@@ -13,20 +7,20 @@ browser-compat: api.NavigatorLogin
 
 {{securecontext_header}}{{APIRef("FedCM API")}}
 
-The **`NavigatorLogin`** interface of the [Federated Credential Management (FedCM) API](/en-US/docs/Web/API/FedCM_API) defines login functionality for federated identity providers (IdPs). Specifically, it enables a federated identity provider (IdP) to set its login status when a user signs into or out of the IdP.
+رابط **`NavigatorLogin`** از [API مدیریت اعتبارنامه فدرال (FedCM)](/en-US/docs/Web/API/FedCM_API) عملکرد ورود به سیستم را برای ارائه‌دهندگان هویت فدرال (IdP) تعریف می‌کند. به طور خاص، این رابط به یک ارائه‌دهنده هویت فدرال (IdP) اجازه می‌دهد تا وضعیت ورود خود را هنگامی که کاربر وارد IdP می‌شود یا از آن خارج می‌شود، تنظیم کند.
 
-See [Update login status using the Login Status API](/en-US/docs/Web/API/FedCM_API/IDP_integration#update_login_status_using_the_login_status_api) for more details of how this is used.
+برای جزئیات بیشتر در مورد نحوه استفاده از این قابلیت، به [به‌روزرسانی وضعیت ورود با استفاده از Login Status API](/en-US/docs/Web/API/FedCM_API/IDP_integration#update_login_status_using_the_login_status_api) مراجعه کنید.
 
-`NavigatorLogin` is accessed via the {{domxref("Navigator.login")}} property.
+`NavigatorLogin` از طریق ویژگی {{domxref("Navigator.login")}} قابل دسترسی است.
 
 {{InheritanceDiagram}}
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("NavigatorLogin.setStatus", "setStatus()")}}
-  - : Sets the login status of a federated identity provider (IdP), when called from the IdP's origin. By "login status", we mean "whether any users are logged into the IdP on the current browser or not".
+  - وضعیت ورود یک ارائه‌دهنده هویت فدرال (IdP) را هنگامی که از مبدأ IdP فراخوانی می‌شود، تنظیم می‌کند. منظور از "وضعیت ورود" این است که "آیا کاربرانی در مرورگر فعلی وارد IdP شده‌اند یا خیر".
 
-## Examples
+## نمونه‌ها
 
 ```js
 /* Set logged-in status */
@@ -36,14 +30,14 @@ navigator.login.setStatus("logged-in");
 navigator.login.setStatus("logged-out");
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Federated Credential Management (FedCM) API](/en-US/docs/Web/API/FedCM_API)
