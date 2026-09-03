@@ -1,11 +1,5 @@
 ---
 title: "NDEFMessage: records property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NDEFMessage/records"
-status: "needs-translation"
----
-
----
-title: "NDEFMessage: records property"
 short-title: records
 slug: Web/API/NDEFMessage/records
 page-type: web-api-instance-property
@@ -16,17 +10,15 @@ browser-compat: api.NDEFMessage.records
 
 {{SecureContext_Header}}{{SeeCompatTable}}{{APIRef("Web NFC API")}}
 
-The `records` property of
-{{DOMxRef("NDEFMessage")}} interface represents a list of {{DOMxRef("NDEFRecord")}}s
-present in the NDEF message.
+ویژگی `records` در رابط {{DOMxRef("NDEFMessage")}} فهرستی از {{DOMxRef("NDEFRecord")}}هایی را نشان می‌دهد که در پیام NDEF وجود دارند.
 
-## Value
+## مقدار
 
-A list of {{DOMxRef("NDEFRecord")}} object that represent data recorded in the message.
+فهرستی از اشیاء {{DOMxRef("NDEFRecord")}} که داده‌های ثبت‌شده در پیام را نمایش می‌دهند.
 
-## Examples
+## مثال‌ها
 
-The following example shows how to read the contents of an NDEF message. It first sets up an event handler for {{domxref("NDEFReader.reading_event", "onreading")}}, which is passed an instance of {{domxref("NDEFReadingEvent")}}. An `NDEFMessage` object is returned from {{domxref("NDEFReadingEvent.message")}}. It loops through `message.records` and processes each record based on its message type. The data member is a {{jsxref("DataView")}}, which allows handling data encoded in {{glossary("UTF-16")}}.
+مثال زیر نحوه خواندن محتویات یک پیام NDEF را نشان می‌دهد. ابتدا یک کنترل‌کننده رویداد برای {{domxref("NDEFReader.reading_event", "onreading")}} تنظیم می‌شود که یک نمونه از {{domxref("NDEFReadingEvent")}} دریافت می‌کند. یک شیء `NDEFMessage` از {{domxref("NDEFReadingEvent.message")}} بازگردانده می‌شود. سپس روی `message.records` حلقه زده و هر رکورد بر اساس نوع پیام آن پردازش می‌شود. عضو `data` یک {{jsxref("DataView")}} است که امکان پردازش داده‌های رمزگذاری‌شده با {{glossary("UTF-16")}} را فراهم می‌کند.
 
 ```js
 ndefReaderInst.onreading = (event) => {
@@ -49,10 +41,10 @@ ndefReaderInst.onreading = (event) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
