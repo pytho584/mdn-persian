@@ -1,11 +1,5 @@
 ---
 title: "Performance: clearMarks() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Performance/clearMarks"
-status: "needs-translation"
----
-
----
-title: "Performance: clearMarks() method"
 short-title: clearMarks()
 slug: Web/API/Performance/clearMarks
 page-type: web-api-instance-method
@@ -14,7 +8,7 @@ browser-compat: api.Performance.clearMarks
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The **`clearMarks()`** method removes all or specific {{domxref("PerformanceMark")}} objects from the browser's performance timeline.
+متد **`clearMarks()`** همهٔ اشیاء {{domxref("PerformanceMark")}} یا برخی از آن‌ها را از خط زمانی عملکرد مرورگر حذف می‌کند.
 
 ## Syntax
 
@@ -26,17 +20,17 @@ clearMarks(name)
 ### Parameters
 
 - `name` {{optional_inline}}
-  - : A string representing the {{domxref("PerformanceEntry.name", "name")}} of the {{domxref("PerformanceMark")}} object. If this argument is omitted, all entries with an {{domxref("PerformanceEntry.entryType","entryType")}} of `"mark"` will be removed.
+  - : رشته‌ای که {{domxref("PerformanceEntry.name", "name")}} مربوط به شیء {{domxref("PerformanceMark")}} را نشان می‌دهد. اگر این آرگومان حذف شود، همهٔ ورودی‌هایی که {{domxref("PerformanceEntry.entryType","entryType")}} آن‌ها `"mark"` است حذف خواهند شد.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
 ## Examples
 
-### Removing markers
+### حذف نشانگرها
 
-To clean up all performance marks, or just specific entries, use the `clearMarks()` method like this:
+برای پاک‌سازی همهٔ نشانگرهای عملکرد یا فقط برخی ورودی‌های خاص، از متد `clearMarks()` به شکل زیر استفاده کنید:
 
 ```js
 // Create a bunch of marks
