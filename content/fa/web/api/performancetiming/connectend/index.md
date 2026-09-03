@@ -1,7 +1,5 @@
 ---
 title: "PerformanceTiming: connectEnd property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/connectEnd"
-status: "needs-translation"
 ---
 
 ---
@@ -17,31 +15,24 @@ browser-compat: api.PerformanceTiming.connectEnd
 {{APIRef("Performance API")}}{{Deprecated_Header}}
 
 > [!WARNING]
-> This interface of this property is deprecated in the [Navigation Timing Level 2 specification](https://w3c.github.io/navigation-timing/#obsolete). Please use the {{domxref("PerformanceNavigationTiming")}}
-> interface instead.
+> این ویژگی در [مشخصات سطح ۲ Navigation Timing](https://w3c.github.io/navigation-timing/#obsolete) منسوخ شده است. لطفاً به جای آن از {{domxref("PerformanceNavigationTiming")}} استفاده کنید.
 
-The legacy
+ویژگی فقط‌خواندنی قدیمی
 **`PerformanceTiming.connectEnd`**
-read-only property returns an `unsigned long long` representing the moment,
-in milliseconds since the UNIX epoch, where the connection is opened network. If the
-transport layer reports an error and the connection establishment is started again, the
-last connection establishment end time is given. If a persistent connection is used, the
-value will be the same as {{domxref("PerformanceTiming.fetchStart")}}. A connection is
-considered as opened when all secure connection handshake, or SOCKS authentication, is
-terminated.
+یک `unsigned long long` برمی‌گرداند که نشان‌دهندهٔ لحظه‌ای، بر حسب میلی‌ثانیه از مبدأ UNIX، است که اتصال به شبکه برقرار شده است. اگر لایهٔ انتقال خطایی گزارش دهد و برقراری اتصال دوباره آغاز شود، زمان پایان آخرین تلاش برای برقراری اتصال داده می‌شود. اگر از اتصال پایدار (persistent connection) استفاده شود، مقدار آن با {{domxref("PerformanceTiming.fetchStart")}} یکسان خواهد بود. اتصال زمانی باز در نظر گرفته می‌شود که تمام مراحل دست‌دهی اتصال امن یا احراز هویت SOCKS پایان یافته باشد.
 
-## Value
+## مقدار
 
-An `unsigned long long`.
+یک `unsigned long long`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- The {{domxref("PerformanceTiming")}} interface it belongs to.
+- رابط {{domxref("PerformanceTiming")}} که این ویژگی به آن تعلق دارد.
