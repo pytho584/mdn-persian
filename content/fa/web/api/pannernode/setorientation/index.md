@@ -1,11 +1,5 @@
 ---
 title: "PannerNode: setOrientation() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PannerNode/setOrientation"
-status: "needs-translation"
----
-
----
-title: "PannerNode: setOrientation() method"
 short-title: setOrientation()
 slug: Web/API/PannerNode/setOrientation
 page-type: web-api-instance-method
@@ -17,13 +11,13 @@ browser-compat: api.PannerNode.setOrientation
 {{APIRef("Web Audio API")}}{{Deprecated_Header}}
 
 > [!NOTE]
-> The suggested replacement for this deprecated method is to instead set the [`orientationX`](/en-US/docs/Web/API/PannerNode/orientationX), [`orientationY`](/en-US/docs/Web/API/PannerNode/orientationY), and [`orientationZ`](/en-US/docs/Web/API/PannerNode/orientationZ) attributes directly.
+> جایگزین پیشنهادی برای این متد منسوخ‌شده، تنظیم مستقیم ویژگی‌های [`orientationX`](/en-US/docs/Web/API/PannerNode/orientationX)، [`orientationY`](/en-US/docs/Web/API/PannerNode/orientationY) و [`orientationZ`](/en-US/docs/Web/API/PannerNode/orientationZ) است.
 
-The `setOrientation()` method of the {{ domxref("PannerNode") }} Interface defines the direction the audio source is playing in.
+متد `setOrientation()` از رابط {{ domxref("PannerNode") }} جهت پخش منبع صوتی را تعریف می‌کند.
 
-This can have a big effect if the sound is very directional — controlled by the three cone-related attributes {{domxref("PannerNode.coneInnerAngle")}}, {{domxref("PannerNode.coneOuterAngle")}}, and {{domxref("PannerNode.coneOuterGain")}}. In such a case, a sound pointing away from the listener can be very quiet or even silent.
+اگر صدا بسیار جهتی باشد — که توسط سه ویژگی مربوط به مخروط، یعنی {{domxref("PannerNode.coneInnerAngle")}}، {{domxref("PannerNode.coneOuterAngle")}} و {{domxref("PannerNode.coneOuterGain")}} کنترل می‌شود — این موضوع می‌تواند تأثیر زیادی داشته باشد. در چنین حالتی، صدایی که در جهت مخالف شنونده پخش شود ممکن است بسیار آرام یا حتی کاملاً بی‌صدا باشد.
 
-The three parameters `x`, `y` and `z` are unitless and describe a direction vector in 3D space using the right-hand Cartesian coordinate system. The default value of the direction vector is `(1, 0, 0)`.
+سه پارامتر `x`، `y` و `z` بدون واحد هستند و یک بردار جهت در فضای سه‌بعدی را با استفاده از دستگاه مختصات دکارتی راست‌گرد توصیف می‌کنند. مقدار پیش‌فرض بردار جهت `(1, 0, 0)` است.
 
 ## Syntax
 
@@ -34,19 +28,19 @@ setOrientation(x, y, z)
 ### Parameters
 
 - `x`
-  - : The x value of the panner's direction vector in 3D space.
+  - : مقدار x بردار جهت panner در فضای سه‌بعدی.
 - `y`
-  - : The y value of the panner's direction vector in 3D space.
+  - : مقدار y بردار جهت panner در فضای سه‌بعدی.
 - `z`
-  - : The z value of the panner's direction vector in 3D space.
+  - : مقدار z بردار جهت panner در فضای سه‌بعدی.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
 ## Examples
 
-See [`BaseAudioContext.createPanner()`](/en-US/docs/Web/API/BaseAudioContext/createPanner#examples) for example code.
+برای کد نمونه، [`BaseAudioContext.createPanner()`](/en-US/docs/Web/API/BaseAudioContext/createPanner#examples) را ببینید.
 
 ## Specifications
 
@@ -58,4 +52,4 @@ See [`BaseAudioContext.createPanner()`](/en-US/docs/Web/API/BaseAudioContext/cre
 
 ## See also
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
