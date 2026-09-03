@@ -1,11 +1,5 @@
 ---
 title: "PointerEvent: tiltY property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent/tiltY"
-status: "needs-translation"
----
-
----
-title: "PointerEvent: tiltY property"
 short-title: tiltY
 slug: Web/API/PointerEvent/tiltY
 page-type: web-api-instance-property
@@ -14,24 +8,24 @@ browser-compat: api.PointerEvent.tiltY
 
 {{ APIRef("Pointer Events") }}
 
-The **`tiltY`** read-only property of the {{domxref("PointerEvent")}} interface is the angle (in degrees) between the _X-Z plane_ of the pointer and the screen.
-This property is typically only useful for a pen/stylus pointer type.
+ویژگی فقطخواندنی **`tiltY`** در رابط {{domxref("PointerEvent")}}، زاویه (برحسب درجه) بین _صفحهٔ X-Z_ اشاره‌گر و صفحه‌نمایش است.
+این ویژگی معمولاً فقط برای نوع اشاره‌گر قلم/استایلوس مفید است.
 
-Depending on the specific hardware and platform, user agents will likely only receive one set of values for the transducer orientation relative to the screen plane — either {{domxref("PointerEvent.tiltX", "tiltX")}} and `tiltY` or {{domxref("PointerEvent.altitudeAngle", "altitudeAngle")}} and {{domxref("PointerEvent.azimuthAngle", "azimuthAngle")}}.
+بسته به سخت‌افزار و پلتفرم خاص، عامل‌های کاربر به‌احتمال زیاد تنها یکی از مجموعه‌های مقادیر جهت‌گیری مبدل را نسبت به صفحهٔ نمایش دریافت می‌کنند: یا {{domxref("PointerEvent.tiltX", "tiltX")}} و `tiltY`، یا {{domxref("PointerEvent.altitudeAngle", "altitudeAngle")}} و {{domxref("PointerEvent.azimuthAngle", "azimuthAngle")}}.
 
-![The tiltX angle of a pointer compared to the tiltY angle](tilt_x_y_angles.svg)
+![زاویهٔ tiltX یک اشاره‌گر در مقایسه با زاویهٔ tiltY](tilt_x_y_angles.svg)
 
-For an additional illustration of this property, see [Figure 3 in the specification](https://w3c.github.io/pointerevents/#dom-pointerevent-tilty).
+برای تصویر تکمیلی از این ویژگی، [شکل ۳ در مشخصات](https://w3c.github.io/pointerevents/#dom-pointerevent-tilty) را ببینید.
 
-## Value
+## مقدار
 
-The angle in degrees between the X-Z plane of the pointer (stylus) and the screen.
-The range of values is `-90` to `90`, inclusive, where a positive value is a tilt towards the user.
-For devices that do not support this property, the value is `0`.
+زاویه برحسب درجه بین صفحهٔ X-Z اشاره‌گر (قلم) و صفحه‌نمایش.
+بازهٔ مقادیر از `-90` تا `90` است (هر دو کران شامل می‌شوند)؛ در این بازه، مقدار مثبت به معنای کج‌شدن به سمت کاربر است.
+برای دستگاه‌هایی که از این ویژگی پشتیبانی نمی‌کنند، مقدار `0` است.
 
-## Examples
+## مثال‌ها
 
-This example illustrates simple accessing of the {{domxref("PointerEvent.tiltX","tiltX")}} and `tiltY` properties.
+این مثال دسترسی ساده به ویژگی‌های {{domxref("PointerEvent.tiltX","tiltX")}} و `tiltY` را نشان می‌دهد.
 
 ```js
 someElement.addEventListener("pointerdown", (event) => {
@@ -39,15 +33,15 @@ someElement.addEventListener("pointerdown", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("PointerEvent.tiltX")}}
 - {{domxref("PointerEvent.altitudeAngle")}}
