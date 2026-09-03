@@ -1,11 +1,5 @@
 ---
 title: "PerformanceMark: PerformanceMark() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceMark/PerformanceMark"
-status: "needs-translation"
----
-
----
-title: "PerformanceMark: PerformanceMark() constructor"
 short-title: PerformanceMark()
 slug: Web/API/PerformanceMark/PerformanceMark
 page-type: web-api-constructor
@@ -14,9 +8,9 @@ browser-compat: api.PerformanceMark.PerformanceMark
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The **`PerformanceMark()`** constructor creates a {{domxref("DOMHighResTimeStamp","timestamp")}} with the given name.
+سازنده **`PerformanceMark()`** یک {{domxref("DOMHighResTimeStamp","timestamp")}} با نام مشخص‌شده ایجاد می‌کند.
 
-Unlike {{domxref("Performance.mark","performance.mark()")}}, performance marks created by the constructor aren't added to the browser's performance timeline. This means that calls to the {{domxref("Performance")}} interface's `getEntries*()` methods ({{domxref("Performance.getEntries","getEntries()")}}, {{domxref("Performance.getEntriesByName","getEntriesByName()")}} or {{domxref("Performance.getEntriesByType","getEntriesByType()")}}) won't show entries for these marks.
+برخلاف {{domxref("Performance.mark","performance.mark()")}}، نشانه‌های عملکرد (performance marks) ایجادشده توسط سازنده به خط زمانی عملکرد (performance timeline) مرورگر اضافه نمی‌شوند. این بدان معناست که فراخوانی‌های متدهای `getEntries*()` در رابط {{domxref("Performance")}} (شامل {{domxref("Performance.getEntries","getEntries()")}}، {{domxref("Performance.getEntriesByName","getEntriesByName()")}} و {{domxref("Performance.getEntriesByType","getEntriesByType()")}}) ورودی‌هایی برای این نشانه‌ها نمایش نخواهند داد.
 
 ## Syntax
 
@@ -28,38 +22,40 @@ new PerformanceMark(name, markOptions)
 ### Parameters
 
 - `name`
-  - : A string representing the name of the mark.
+  - : یک رشته (string) که نام نشانه را مشخص می‌کند.
 - `markOptions` {{optional_inline}}
-  - : An object for specifying a timestamp and additional metadata for the mark.
+  - : یک شیء برای مشخص‌کردن یک timestamp و ابرداده (metadata) اضافی برای نشانه.
     - `detail` {{optional_inline}}
-      - : Arbitrary metadata to include in the mark. Defaults to `null`.
+      - : ابرداده دلخواه برای گنجاندن در نشانه. پیش‌فرض `null` است.
         - `devtools` {{optional_inline}} {{experimental_inline}}
-          - : Some browsers have use a structured `devtools` object within the `detail` object as part of an Extensibility API that surfaces these in custom tracks in performance traces. See the [Chrome's Extensibility API documentation](https://developer.chrome.com/docs/devtools/performance/extension#inject_your_data_with_the_user_timings_api) for more information.
+          - : برخی مرورگرها از یک شیء ساختاریافته `devtools` درون شیء `detail` به عنوان بخشی از یک API توسعه‌پذیری (Extensibility API) استفاده می‌کنند که این موارد را در مسیرهای سفارشی در ردیابی‌های عملکرد (performance traces) نمایش می‌دهد. برای اطلاعات بیشتر به [مستندات API توسعه‌پذیری کروم](https://developer.chrome.com/docs/devtools/performance/extension#inject_your_data_with_the_user_timings_api) مراجعه کنید.
             - `dataType` {{experimental_inline}}
-              - : A string which must be set to `marker`. Identifies as a marker.
+              - : یک رشته که باید روی `marker` تنظیم شود. به عنوان یک نشانه (marker) شناسایی می‌شود.
             - `color` {{optional_inline}} {{experimental_inline}}
-              - : Defaults to `"primary"`. Must be one of `"primary"`, `"primary-light"`, `"primary-dark"`, `"secondary"`, `"secondary-light"`, `"secondary-dark"`, `"tertiary"`, `"tertiary-light"`, `"tertiary-dark"`, `"error"`.
+              - : پیش‌فرض `"primary"` است. باید یکی از مقادیر `"primary"`, `"primary-light"`, `"primary-dark"`, `"secondary"`, `"secondary-light"`, `"secondary-dark"`, `"tertiary"`, `"tertiary-light"`, `"tertiary-dark"`, `"error"` باشد.
             - `properties` {{optional_inline}} {{experimental_inline}}
-              - : Array of key-value pairs. Values can be any JSON-compatible type.
+              - : آرایه‌ای از جفت‌های کلید-مقدار. مقادیر می‌توانند هر نوع سازگار با JSON باشند.
             - `tooltipText` {{optional_inline}} {{experimental_inline}}
-              - : Short description for tooltip.
+              - : توضیح کوتاه برای tooltip.
     - `startTime` {{optional_inline}}
-      - : {{domxref("DOMHighResTimeStamp")}} to use as the mark time. Defaults to {{domxref("performance.now()")}}.
+      - : یک {{domxref("DOMHighResTimeStamp")}} برای استفاده به عنوان زمان نشانه. پیش‌فرض {{domxref("performance.now()")}} است.
 
 ### Return value
 
-A {{domxref("PerformanceMark")}} object.
+یک شیء {{domxref("PerformanceMark")}}.
 
 ### Exceptions
 
-- {{jsxref("SyntaxError")}}: Thrown if the `name` given to this method already exists in the {{domxref("PerformanceTiming")}} interface.
-- {{jsxref("TypeError")}}: Thrown if `startTime` is negative.
+- {{jsxref("SyntaxError")}}
+  - : اگر `name` داده‌شده به این متد از قبل در رابط {{domxref("PerformanceTiming")}} وجود داشته باشد، پرتاب می‌شود.
+- {{jsxref("TypeError")}}
+  - : اگر `startTime` منفی باشد، پرتاب می‌شود.
 
 ## Examples
 
-### Creating named markers
+### ایجاد نشانه‌های نام‌دار (named markers)
 
-The following example shows how {{domxref("PerformanceMark")}} entries are constructed and then aren't part of the browser's performance timeline.
+مثال زیر نشان می‌دهد که چگونه ورودی‌های {{domxref("PerformanceMark")}} ساخته می‌شوند و سپس بخشی از خط زمانی عملکرد مرورگر نیستند.
 
 ```js
 new PerformanceMark("squirrel");
@@ -71,9 +67,9 @@ console.log(allEntries.length);
 // 0
 ```
 
-### DevTools Extensibility API
+### API توسعه‌پذیری DevTools
 
-For browsers that support the [Extensibility API](https://developer.chrome.com/docs/devtools/performance/extension) you can use the `detail` parameter to provide more details in a `devtools` object that will be used to display this in performance profiles:
+برای مرورگرهایی که از [API توسعه‌پذیری](https://developer.chrome.com/docs/devtools/performance/extension) پشتیبانی می‌کنند، می‌توانید از پارامتر `detail` برای ارائه جزئیات بیشتر در یک شیء `devtools` استفاده کنید که برای نمایش این مورد در پروفایل‌های عملکرد استفاده خواهد شد:
 
 ```js
 // Marker indicating when the processed image was uploaded
