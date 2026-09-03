@@ -1,11 +1,5 @@
 ---
 title: "PerformanceElementTiming: element property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceElementTiming/element"
-status: "needs-translation"
----
-
----
-title: "PerformanceElementTiming: element property"
 short-title: element
 slug: Web/API/PerformanceElementTiming/element
 page-type: web-api-instance-property
@@ -16,17 +10,17 @@ browser-compat: api.PerformanceElementTiming.element
 
 {{APIRef("Performance API")}}{{SeeCompatTable}}
 
-The **`element`** read-only property of the {{domxref("PerformanceElementTiming")}} interface returns an {{domxref("Element")}} which is a pointer to the observed element.
+ویژگی فقط‑خواندنی **`element`** از رابط {{domxref("PerformanceElementTiming")}} یک {{domxref("Element")}} برمی‌گرداند که اشاره‌گری به عنصر تحت نظارت است.
 
-## Value
+## مقدار
 
-An {{domxref("Element")}}, or [`null`](/en-US/docs/Web/JavaScript/Reference/Operators/null) if the element is a [shadow DOM](/en-US/docs/Web/API/Web_components/Using_shadow_DOM) element.
+یک {{domxref("Element")}}، یا اگر عنصر یک عنصر [DOM سایه‌ای](/en-US/docs/Web/API/Web_components/Using_shadow_DOM) باشد، [`null`](/en-US/docs/Web/JavaScript/Reference/Operators/null) برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-### Logging the observed element
+### ثبت عنصر تحت نظارت
 
-In this example an {{HTMLElement("img")}} element is being observed by adding the [`elementtiming`](/en-US/docs/Web/HTML/Reference/Attributes/elementtiming) attribute. A {{domxref("PerformanceObserver")}} is registered to get all performance entries of type `"element"` and the `buffered` flag is used to access data from before observer creation. The DOM element that is observed is logged to the console.
+در این مثال، یک عنصر {{HTMLElement("img")}} با افزودن ویژگی [`elementtiming`](/en-US/docs/Web/HTML/Reference/Attributes/elementtiming) تحت نظارت قرار گرفته است. یک {{domxref("PerformanceObserver")}} ثبت می‌شود تا همه ورودی‌های عملکرد از نوع `"element"` را دریافت کند و از پرچم `buffered` برای دسترسی به داده‌های قبل از ایجاد observer استفاده می‌شود. عنصر DOM که تحت نظارت است در کنسول ثبت می‌شود.
 
 ```html
 <img src="image.jpg" alt="a nice image" elementtiming="big-image" />
@@ -43,10 +37,10 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "element", buffered: true });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
