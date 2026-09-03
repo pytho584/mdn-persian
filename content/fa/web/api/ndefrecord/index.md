@@ -1,7 +1,5 @@
 ---
 title: "NDEFRecord"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NDEFRecord"
-status: "needs-translation"
 ---
 
 ---
@@ -15,39 +13,39 @@ browser-compat: api.NDEFRecord
 
 {{SecureContext_Header}}{{SeeCompatTable}}{{APIRef("Web NFC API")}}
 
-The **`NDEFRecord`** interface of the [Web NFC API](/en-US/docs/Web/API/Web_NFC_API) provides data that can be read from, or written to, compatible NFC devices, e.g., NFC tags supporting NDEF.
+**`NDEFRecord`** 接口属于 [Web NFC API](/en-US/docs/Web/API/Web_NFC_API)，提供可从兼容 NFC 设备（例如支持 NDEF 的 NFC 标签）读取或写入的数据。
 
-## Constructor
+## 构造函数
 
 - {{DOMxRef("NDEFRecord.NDEFRecord", "NDEFRecord()")}} {{Experimental_Inline}}
-  - : Returns a new `NDEFRecord`.
+  - : 返回一个新的 `NDEFRecord` 实例。
 
-## Instance properties
+## 实例属性
 
 - {{DOMxRef("NDEFRecord.recordType")}} {{Experimental_Inline}} {{ReadOnlyInline}}
-  - : Returns the record type of the record. Records must have either a standardized well-known type name such as `"empty"`, `"text"`, `"url"`, `"smart-poster"`, `"absolute-url"`, `"mime"`, or `"unknown"` or else an external type name, which consists of a domain name and custom type name separated by a colon (":").
+  - : 返回记录的类型。记录必须具有标准的已知类型名称，如 `"empty"`、`"text"`、`"url"`、`"smart-poster"`、`"absolute-url"`、`"mime"` 或 `"unknown"`，或者具有外部类型名称，外部类型名称由域名、冒号 (":") 和自定义类型名称组成。
 - {{DOMxRef("NDEFRecord.mediaType")}} {{Experimental_Inline}} {{ReadOnlyInline}}
-  - : Returns the {{Glossary("MIME type")}} of the record. This value will be `null` if `recordType` is not equal to `"mime"`.
+  - : 返回记录的 {{Glossary("MIME type", "MIME 类型")}}。如果 `recordType` 不等于 `"mime"`，则此值为 `null`。
 - {{DOMxRef("NDEFRecord.id")}} {{Experimental_Inline}} {{ReadOnlyInline}}
-  - : Returns the record identifier, which is an absolute or relative URL used to identify the record.
+  - : 返回记录标识符，它是一个用于标识记录的绝对或相对 URL。
     > [!NOTE]
-    > The uniqueness of the identifier is enforced only by the generator of the record.
+    > 标识符的唯一性仅由记录的生成者保证。
 - {{DOMxRef("NDEFRecord.data")}} {{Experimental_Inline}} {{ReadOnlyInline}}
-  - : Returns a {{jsxref("DataView")}} containing the raw bytes of the record's payload.
+  - : 返回一个 {{jsxref("DataView")}}，其中包含记录负载的原始字节。
 - {{DOMxRef("NDEFRecord.encoding")}} {{Experimental_Inline}} {{ReadOnlyInline}}
-  - : Returns the encoding of a textual payload, or `null` otherwise.
+  - : 返回文本负载的编码，否则返回 `null`。
 - {{DOMxRef("NDEFRecord.lang")}} {{Experimental_Inline}} {{ReadOnlyInline}}
-  - : Returns the language of a textual payload, or `null` if one was not supplied.
+  - : 返回文本负载的语言；如果未提供，则返回 `null`。
 
-## Instance methods
+## 实例方法
 
 - {{DOMxRef("NDEFRecord.toRecords", "NDEFRecord.toRecords()")}} {{Experimental_Inline}}
-  - : Converts {{DOMxRef("NDEFRecord.data")}} to a sequence of records. This allows parsing the payloads of record types which may contain nested records, such as smart poster and external type records.
+  - : 将 {{DOMxRef("NDEFRecord.data")}} 转换为记录序列。这允许解析可能包含嵌套记录的记录类型的负载，例如智能海报和外部类型记录。
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
