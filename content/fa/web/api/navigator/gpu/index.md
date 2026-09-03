@@ -1,11 +1,5 @@
 ---
 title: "Navigator: gpu property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/gpu"
-status: "needs-translation"
----
-
----
-title: "Navigator: gpu property"
 short-title: gpu
 slug: Web/API/Navigator/gpu
 page-type: web-api-instance-property
@@ -14,13 +8,13 @@ browser-compat: api.Navigator.gpu
 
 {{APIRef("WebGPU API")}}{{SecureContext_Header}}
 
-The **`Navigator.gpu`** read-only property returns the {{domxref("GPU")}} object for the current browsing context, which is the entry point for the {{domxref("WebGPU_API", "WebGPU API", "", "nocode")}}.
+ویژگی فقط‌خواندنی **`Navigator.gpu`** شیء {{domxref("GPU")}} را برای بافت مرورِ جاری (browsing context) برمی‌گرداند؛ این شیء نقطهٔ ورود به {{domxref("WebGPU_API", "WebGPU API", "", "nocode")}} است.
 
-## Value
+## مقدار
 
-A {{domxref("GPU")}} object.
+یک شیء {{domxref("GPU")}}.
 
-## Examples
+## مثال‌ها
 
 ```js
 async function init() {
@@ -39,14 +33,14 @@ async function init() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("WebGPU_API", "WebGPU API", "", "nocode")}}
