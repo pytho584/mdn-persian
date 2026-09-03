@@ -1,11 +1,5 @@
 ---
 title: "PerformanceTimingConfidence: randomizedTriggerRate property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTimingConfidence/randomizedTriggerRate"
-status: "needs-translation"
----
-
----
-title: "PerformanceTimingConfidence: randomizedTriggerRate property"
 short-title: randomizedTriggerRate
 slug: Web/API/PerformanceTimingConfidence/randomizedTriggerRate
 page-type: web-api-instance-property
@@ -16,26 +10,26 @@ browser-compat: api.PerformanceTimingConfidence.randomizedTriggerRate
 
 {{APIRef("Performance API")}}{{SeeCompatTable}}
 
-The **`randomizedTriggerRate`** read-only property of the {{domxref("PerformanceTimingConfidence")}} interface indicates how often noise is applied when exposing the {{domxref("PerformanceTimingConfidence.value")}}.
+خاصیت فقط‌خواندنی **`randomizedTriggerRate`** از رابط {{domxref("PerformanceTimingConfidence")}} نشان می‌دهد که هر چند وقت یکبار نویز هنگام نمایش {{domxref("PerformanceTimingConfidence.value")}} اعمال می‌شود.
 
-Noise is added to the data to improve privacy (so that each data item is less easily identifiable). When noise is added, a `low` or `high` confidence `value` is returned with equal probability, rather than the true `value`, to obfuscate the results.
+نویز به داده‌ها اضافه می‌شود تا حریم خصوصی بهبود یابد (به‌طوری که هر آیتم داده کمتر قابل شناسایی باشد). وقتی نویز اضافه می‌شود، یک `value` با اطمینان `low` یا `high` با احتمال برابر برگردانده می‌شود، نه `value` واقعی، تا نتایج مبهم شوند.
 
-## Value
+## مقدار
 
-A number between `0` to `1`, inclusive, which represents a percentage value. A value of `0` is equivalent to `0%`, which means that noise is never added, while `1` is equivalent to `100%`, meaning that noise is always added.
+یک عدد بین `0` تا `1`، شامل هر دو، که یک مقدار درصدی را نشان می‌دهد. مقدار `0` معادل `0%` است، به این معنی که هرگز نویز اضافه نمی‌شود، در حالی که `1` معادل `100%` است، به این معنی که همیشه نویز اضافه می‌شود.
 
-## Examples
+## مثال‌ها
 
-See the main {{domxref("PerformanceTimingConfidence")}} page for an example.
+برای مثال به صفحه اصلی {{domxref("PerformanceTimingConfidence")}} مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("PerformanceTimingConfidence")}}
