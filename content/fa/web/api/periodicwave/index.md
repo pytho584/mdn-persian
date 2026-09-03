@@ -1,11 +1,5 @@
 ---
 title: "PeriodicWave"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PeriodicWave"
-status: "needs-translation"
----
-
----
-title: PeriodicWave
 slug: Web/API/PeriodicWave
 page-type: web-api-interface
 browser-compat: api.PeriodicWave
@@ -13,35 +7,35 @@ browser-compat: api.PeriodicWave
 
 {{ APIRef("Web Audio API") }}
 
-The **`PeriodicWave`** interface defines a periodic waveform that can be used to shape the output of an {{domxref("OscillatorNode")}}.
+رابط (`PeriodicWave`) **`PeriodicWave`** یک شکل موج دوره‌ای را تعریف می‌کند که می‌تواند برای شکل‌دهی به خروجی یک {{domxref("OscillatorNode")}} استفاده شود.
 
-`PeriodicWave` has no inputs or outputs; it is used to define custom oscillators when calling {{domxref("OscillatorNode.setPeriodicWave()")}}. The `PeriodicWave` itself is created/returned by {{domxref("BaseAudioContext.createPeriodicWave")}}.
+`PeriodicWave` هیچ ورودی یا خروجی ندارد؛ از آن برای تعریف اسیلاتورهای سفارشی هنگام فراخوانی {{domxref("OscillatorNode.setPeriodicWave()")}} استفاده می‌شود. خود `PeriodicWave` توسط {{domxref("BaseAudioContext.createPeriodicWave")}} ایجاد/بازگردانده می‌شود.
 
-## Constructor
+## سازنده (Constructor)
 
 - {{domxref("PeriodicWave.PeriodicWave", "PeriodicWave()")}}
-  - : Creates a new `PeriodicWave` object instance using the default values for all properties. If you wish to establish custom property values at the outset, use the {{domxref("BaseAudioContext.createPeriodicWave")}} factory method instead.
+  - : یک نمونه جدید از شیء `PeriodicWave` با استفاده از مقادیر پیش‌فرض برای همه ویژگی‌ها ایجاد می‌کند. اگر می‌خواهید مقادیر ویژگی سفارشی را از ابتدا تنظیم کنید، به جای آن از متد کارخانه {{domxref("BaseAudioContext.createPeriodicWave")}} استفاده کنید.
 
-## Instance properties
+## ویژگی‌های نمونه (Instance properties)
 
-None; also, `PeriodicWave` doesn't inherit any properties.
+هیچکدام؛ همچنین `PeriodicWave` هیچ ویژگیای به ارث نمی‌برد.
 
-## Instance methods
+## روش‌های نمونه (Instance methods)
 
-None; also, `PeriodicWave` doesn't inherit any methods.
+هیچکدام؛ همچنین `PeriodicWave` هیچ روشی به ارث نمی‌برد.
 
-## Example
+## مثال
 
-See {{domxref("BaseAudioContext.createPeriodicWave")}} for simple example code that shows how to create a `PeriodicWave` object containing a simple sine wave.
+برای یک مثال ساده از کد که نحوه ایجاد یک شیء `PeriodicWave` حاوی یک موج سینوسی ساده را نشان می‌دهد، به {{domxref("BaseAudioContext.createPeriodicWave")}} مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
