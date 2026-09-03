@@ -1,11 +1,5 @@
 ---
 title: "PerformanceNavigationTiming: loadEventEnd property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceNavigationTiming/loadEventEnd"
-status: "needs-translation"
----
-
----
-title: "PerformanceNavigationTiming: loadEventEnd property"
 short-title: loadEventEnd
 slug: Web/API/PerformanceNavigationTiming/loadEventEnd
 page-type: web-api-instance-property
@@ -14,19 +8,19 @@ browser-compat: api.PerformanceNavigationTiming.loadEventEnd
 
 {{APIRef("Performance API")}}
 
-The **`loadEventEnd`** read-only property returns a {{domxref("DOMHighResTimeStamp")}} representing the time immediately after the current document's [`load`](/en-US/docs/Web/API/Window/load_event) event handler completes.
+خاصیت فقط‌خواندنی **`loadEventEnd`** یک {{domxref("DOMHighResTimeStamp")}} را برمی‌گرداند که نشان‌دهنده زمان بلافاصله پس از اتمام پردازش‌گر رویداد [`load`](/en-US/docs/Web/API/Window/load_event) سند جاری است.
 
-## Value
+## مقدار
 
-A {{domxref("DOMHighResTimeStamp")}} representing the time immediately after the current document's [`load`](/en-US/docs/Web/API/Window/load_event) event handler completes.
+یک {{domxref("DOMHighResTimeStamp")}} که نشان‌دهنده زمان بلافاصله پس از اتمام پردازش‌گر رویداد [`load`](/en-US/docs/Web/API/Window/load_event) سند جاری است.
 
-## Examples
+## مثال‌ها
 
-### Measuring `load` event handler time
+### اندازه‌گیری زمان پردازش‌گر رویداد `load`
 
-The `loadEventEnd` property can be used to measure how long it takes to process the [`load`](/en-US/docs/Web/API/Window/load_event) event handler.
+از خاصیت `loadEventEnd` می‌توان برای اندازه‌گیری مدت زمان پردازش رویداد [`load`](/en-US/docs/Web/API/Window/load_event) استفاده کرد.
 
-This is useful to measure the time of long running [`load`](/en-US/docs/Web/API/Window/load_event) event handlers.
+این کار برای اندازه‌گیری زمان اجرای پردازش‌گرهای رویداد `load` طولانی مدت مفید است.
 
 ```js
 window.addEventListener("load", (event) => {
@@ -34,7 +28,7 @@ window.addEventListener("load", (event) => {
 });
 ```
 
-Example using a {{domxref("PerformanceObserver")}}, which notifies of new `navigation` performance entries as they are recorded in the browser's performance timeline. Use the `buffered` option to access entries from before the observer creation.
+مثال با استفاده از {{domxref("PerformanceObserver")}} که با ثبت ورودی‌های جدید `navigation` در گاهشمار عملکرد مرورگر، آن‌ها را اطلاع‌رسانی می‌کند. از گزینه `buffered` برای دسترسی به ورودی‌های قبل از ایجاد observer استفاده کنید.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -49,7 +43,7 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "navigation", buffered: true });
 ```
 
-Example using {{domxref("Performance.getEntriesByType()")}}, which only shows `navigation` performance entries present in the browser's performance timeline at the time you call this method:
+مثال با استفاده از {{domxref("Performance.getEntriesByType()")}} که فقط ورودی‌های `navigation` موجود در گاهشمار عملکرد مرورگر را در زمان فراخوانی این متد نشان می‌دهد:
 
 ```js
 const entries = performance.getEntriesByType("navigation");
@@ -62,14 +56,14 @@ entries.forEach((entry) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [`load`](/en-US/docs/Web/API/Window/load_event) event
+- رویداد [`load`](/en-US/docs/Web/API/Window/load_event)
