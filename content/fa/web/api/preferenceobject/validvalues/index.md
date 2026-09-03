@@ -1,11 +1,5 @@
 ---
 title: "PreferenceObject: validValues property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PreferenceObject/validValues"
-status: "needs-translation"
----
-
----
-title: "PreferenceObject: validValues property"
 short-title: validValues
 slug: Web/API/PreferenceObject/validValues
 page-type: web-api-instance-property
@@ -17,26 +11,26 @@ spec-urls: https://drafts.csswg.org/mediaqueries-5/#valid-values-attribute
 
 {{APIRef("User Preferences API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`validValues`** read-only property of the {{domxref("PreferenceObject")}} interface returns a read-only array of values that are accepted by the override.
+ویژگی فقط‌خواندنی **`validValues`** از اینترفیس {{domxref("PreferenceObject")}} یک آرایه‌ی فقط‌خواندنی از مقدارهایی را برمی‌گرداند که هنگام بازنویسی (override) پذیرفته می‌شوند.
 
 ## validValues
 
-An array containing the valid values to override the {{domxref("PreferenceObject")}} value with.
+آرایه‌ای شامل مقدارهای معتبر برای بازنویسی مقدار {{domxref("PreferenceObject")}}.
 
-## Examples
+## نمونه‌ها
 
-### Basic usage
+### استفاده‌ی پایه
 
-This example demonstrates how to log all possible contrast values.
+این مثال نشان می‌دهد که چگونه می‌توان تمام مقدارهای کنتراست ممکن را در کنسول ثبت کرد.
 
 ```js
 console.log(navigator.preferences.contrast.validValues);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
