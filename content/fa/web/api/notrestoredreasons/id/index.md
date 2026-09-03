@@ -1,11 +1,5 @@
 ---
 title: "NotRestoredReasons: id property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NotRestoredReasons/id"
-status: "needs-translation"
----
-
----
-title: "NotRestoredReasons: id property"
 short-title: id
 slug: Web/API/NotRestoredReasons/id
 page-type: web-api-instance-property
@@ -16,28 +10,27 @@ browser-compat: api.NotRestoredReasons.id
 
 {{APIRef("Performance API")}}{{SeeCompatTable}}
 
-The **`id`** read-only property of the
-{{domxref("NotRestoredReasons")}} interface returns a string representing the `id` attribute value of the {{htmlelement("iframe")}} the document is contained in (for example `<iframe id="foo" src="...">`).
+ویژگی فقط‑خواندنی **`id`** از رابط {{domxref("NotRestoredReasons")}} یک رشته برمی‌گرداند که مقدار ویژگی `id` عنصر {{htmlelement("iframe")}} حاوی سند را نشان می‌دهد (مثلاً `<iframe id="foo" src="...">`).
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-If the document is not in an `<iframe>` or the `<iframe>` has no `id` set, `id` will return `null`.
+اگر سند درون یک `<iframe>` نباشد یا `<iframe>` ویژگی `id` تنظیم‌شده‌ای نداشته باشد، `id` مقدار `null` را برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-See [Monitoring bfcache blocking reasons](/en-US/docs/Web/API/Performance_API/Monitoring_bfcache_blocking_reasons) for examples.
+برای مشاهده مثال‌ها به [نظارت بر دلایل مسدودسازی حافظه نهان bfcache](/en-US/docs/Web/API/Performance_API/Monitoring_bfcache_blocking_reasons) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Monitoring bfcache blocking reasons](/en-US/docs/Web/API/Performance_API/Monitoring_bfcache_blocking_reasons)
+- [نظارت بر دلایل مسدودسازی حافظه نهان bfcache](/en-US/docs/Web/API/Performance_API/Monitoring_bfcache_blocking_reasons)
 - {{domxref("PerformanceNavigationTiming.notRestoredReasons")}}
