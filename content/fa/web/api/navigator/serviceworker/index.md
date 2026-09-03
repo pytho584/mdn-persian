@@ -1,11 +1,5 @@
 ---
 title: "Navigator: serviceWorker property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/serviceWorker"
-status: "needs-translation"
----
-
----
-title: "Navigator: serviceWorker property"
 short-title: serviceWorker
 slug: Web/API/Navigator/serviceWorker
 page-type: web-api-instance-property
@@ -14,19 +8,19 @@ browser-compat: api.Navigator.serviceWorker
 
 {{securecontext_header}}{{APIRef("Service Workers API")}}
 
-The **`serviceWorker`** read-only property of the {{domxref("Navigator")}} interface returns the {{domxref("ServiceWorkerContainer")}} object for the [associated document](https://html.spec.whatwg.org/multipage/browsers.html#concept-document-window), which provides access to registration, removal, upgrade, and communication with the {{domxref("ServiceWorker")}}.
+ویژگی فقط‌خواندنی **`serviceWorker`** در رابط {{domxref("Navigator")}}، شیء {{domxref("ServiceWorkerContainer")}} را برای [سند مرتبط](https://html.spec.whatwg.org/multipage/browsers.html#concept-document-window) برمی‌گرداند که دسترسی به ثبت، حذف، ارتقا و ارتباط با {{domxref("ServiceWorker")}} را فراهم می‌کند.
 
-The feature may not be available in private mode.
+این قابلیت ممکن است در حالت خصوصی (Private Mode) در دسترس نباشد.
 
-Note that a worker can similarly access the {{domxref("ServiceWorkerContainer")}} for a document using {{domxref("WorkerNavigator.serviceWorker")}}.
+توجه داشته باشید که یک worker نیز می‌تواند به‌طور مشابه با استفاده از {{domxref("WorkerNavigator.serviceWorker")}} به {{domxref("ServiceWorkerContainer")}} مربوط به یک سند دسترسی یابد.
 
-## Value
+## مقدار
 
-{{domxref("ServiceWorkerContainer")}}.
+یک شیء {{domxref("ServiceWorkerContainer")}}.
 
-## Examples
+## مثال‌ها
 
-This code checks if the browser supports service workers.
+این کد بررسی می‌کند که آیا مرورگر از service workerها پشتیبانی می‌کند یا نه.
 
 ```js
 if ("serviceWorker" in navigator) {
@@ -34,15 +28,15 @@ if ("serviceWorker" in navigator) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("Service Worker API", "", "", "nocode")}}
-- [Using Service Workers](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
+- [استفاده از Service Workers](/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
