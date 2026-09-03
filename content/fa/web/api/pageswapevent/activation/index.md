@@ -1,7 +1,5 @@
 ---
 title: "PageSwapEvent: activation property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PageSwapEvent/activation"
-status: "needs-translation"
 ---
 
 ---
@@ -14,24 +12,24 @@ browser-compat: api.PageSwapEvent.activation
 
 {{APIRef("HTML DOM")}}
 
-The **`activation`** read-only property of the {{domxref("PageSwapEvent")}} interface contains a {{domxref("NavigationActivation")}} object containing the navigation type and current and destination document history entries for a same-origin navigation.
+خاصیت فقط‌خواندنی **`activation`** در رابط {{domxref("PageSwapEvent")}} شامل یک شیء {{domxref("NavigationActivation")}} است که نوع ناوبری و ورودی‌های تاریخچه سند جاری و مقصد را برای یک ناوبری هم‌خاستگاه در خود دارد.
 
-## Value
+## مقدار
 
-A {{domxref("NavigationActivation")}} object, or `null` if the associated navigation has a cross-origin URL anywhere in the redirect chain.
+یک شیء {{domxref("NavigationActivation")}}، یا `null` اگر ناوبری مرتبط در هر نقطه از زنجیره تغییر مسیر، یک URL غیر هم‌خاستگاه (cross-origin) داشته باشد.
 
-## Examples
+## مثال‌ها
 
-See the main {{domxref("PageSwapEvent")}} page.
+به صفحه اصلی {{domxref("PageSwapEvent")}} مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - [View Transition API](/en-US/docs/Web/API/View_Transition_API)
