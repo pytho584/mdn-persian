@@ -1,11 +1,5 @@
 ---
 title: "PerformanceResourceTiming: domainLookupStart property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceResourceTiming/domainLookupStart"
-status: "needs-translation"
----
-
----
-title: "PerformanceResourceTiming: domainLookupStart property"
 short-title: domainLookupStart
 slug: Web/API/PerformanceResourceTiming/domainLookupStart
 page-type: web-api-instance-property
@@ -14,27 +8,27 @@ browser-compat: api.PerformanceResourceTiming.domainLookupStart
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The **`domainLookupStart`** read-only property returns the {{domxref("DOMHighResTimeStamp","timestamp")}} immediately before the browser starts the domain name lookup for the resource.
+ویژگی فقط‌خواندنی **`domainLookupStart`**، {{domxref("DOMHighResTimeStamp","timestamp")}} را درست پیش از آن‌که مرورگر جست‌وجوی نام دامنه را برای منبع آغاز کند بازمی‌گرداند.
 
-## Value
+## مقدار
 
-The `domainLookupStart` property can have the following values:
+ویژگی `domainLookupStart` می‌تواند مقادیر زیر را داشته باشد:
 
-- A {{domxref("DOMHighResTimeStamp")}} immediately before the browser starts the domain name lookup for the resource.
-- `0` if the resource was instantaneously retrieved from a cache.
-- `0` if the resource is a cross-origin request and no {{HTTPHeader("Timing-Allow-Origin")}} HTTP response header is used.
+- یک {{domxref("DOMHighResTimeStamp")}} بلافاصله پیش از آن‌که مرورگر جست‌وجوی نام دامنه را برای منبع آغاز کند.
+- `0` اگر منبع فوراً از حافظه پنهان (cache) بازیابی شده باشد.
+- `0` اگر منبع یک درخواست متقاطع-مبدأ (cross-origin) باشد و هیچ هدر پاسخ HTTP‌ای با نام {{HTTPHeader("Timing-Allow-Origin")}} استفاده نشده باشد.
 
-## Examples
+## مثال‌ها
 
-### Measuring DNS lookup time
+### اندازه‌گیری زمان جست‌وجوی DNS
 
-The `domainLookupStart` and {{domxref("PerformanceResourceTiming.domainLookupEnd", "domainLookupEnd")}} properties can be used to measure how long it takes for the DNS lookup to happen.
+از ویژگی‌های `domainLookupStart` و {{domxref("PerformanceResourceTiming.domainLookupEnd", "domainLookupEnd")}} می‌توان برای اندازه‌گیری مدت‌زمان جست‌وجوی DNS استفاده کرد.
 
 ```js
 const dns = entry.domainLookupEnd - entry.domainLookupStart;
 ```
 
-Example using a {{domxref("PerformanceObserver")}}, which notifies of new `resource` performance entries as they are recorded in the browser's performance timeline. Use the `buffered` option to access entries from before the observer creation.
+مثال زیر با استفاده از {{domxref("PerformanceObserver")}} است که هنگام ثبت ورودی‌های کارایی جدید از نوع `resource` در خط زمانی کارایی مرورگر اطلاع می‌دهد. برای دسترسی به ورودی‌هایی که پیش از ایجاد observer ثبت شده‌اند، از گزینه `buffered` استفاده کنید.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -49,7 +43,7 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "resource", buffered: true });
 ```
 
-Example using {{domxref("Performance.getEntriesByType()")}}, which only shows `resource` performance entries present in the browser's performance timeline at the time you call this method:
+مثال زیر از {{domxref("Performance.getEntriesByType()")}} استفاده می‌کند که فقط ورودی‌های کارایی از نوع `resource` موجود در خط زمانی کارایی مرورگر را هنگام فراخوانی این متد نشان می‌دهد:
 
 ```js
 const resources = performance.getEntriesByType("resource");
@@ -61,24 +55,24 @@ resources.forEach((entry) => {
 });
 ```
 
-### Cross-origin timing information
+### اطلاعات زمان‌بندی درخواست‌های متقاطع-مبدأ
 
-If the value of the `domainLookupStart` property is `0`, the resource might be a cross-origin request. To allow seeing cross-origin timing information, the {{HTTPHeader("Timing-Allow-Origin")}} HTTP response header needs to be set.
+اگر مقدار ویژگی `domainLookupStart` برابر با `0` باشد، احتمالاً منبع از طریق یک درخواست متقاطع-مبدأ (cross-origin) دریافت شده است. برای امکان مشاهده اطلاعات زمان‌بندی درخواست‌های متقاطع-مبدأ، باید هدر پاسخ HTTP {{HTTPHeader("Timing-Allow-Origin")}} تنظیم شود.
 
-For example, to allow `https://developer.mozilla.org` to see timing resources, the cross-origin resource should send:
+برای مثال، برای اینکه `https://developer.mozilla.org` بتواند اطلاعات زمان‌بندی منابع را مشاهده کند، منبع متقاطع-مبدأ باید پاسخ زیر را ارسال کند:
 
 ```http
 Timing-Allow-Origin: https://developer.mozilla.org
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTTPHeader("Timing-Allow-Origin")}}
