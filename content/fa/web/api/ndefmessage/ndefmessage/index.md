@@ -1,11 +1,5 @@
 ---
 title: "NDEFMessage: NDEFMessage() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NDEFMessage/NDEFMessage"
-status: "needs-translation"
----
-
----
-title: "NDEFMessage: NDEFMessage() constructor"
 short-title: NDEFMessage()
 slug: Web/API/NDEFMessage/NDEFMessage
 page-type: web-api-constructor
@@ -16,7 +10,7 @@ browser-compat: api.NDEFMessage.NDEFMessage
 
 {{SecureContext_Header}}{{APIRef("Web NFC API")}}{{SeeCompatTable}}
 
-The **`NDEFMessage()`** constructor creates a new {{domxref("NDEFMessage")}} object, initialized with the given NDEF records.
+سازنده‌ی **`NDEFMessage()`** یک شیء جدید {{domxref("NDEFMessage")}} ایجاد می‌کند که با رکوردهای NDEF داده شده مقداردهی اولیه می‌شود.
 
 ## Syntax
 
@@ -27,33 +21,33 @@ new NDEFMessage(records)
 ### Parameters
 
 - `records`
-  - : An array of objects with the following members:
+  - : آرایه‌ای از اشیاء با اعضای زیر:
     - `data` {{optional_inline}}
-      - : Contains the data to be transmitted; one of a string, an {{jsxref("ArrayBuffer")}}, a {{jsxref("TypedArray")}}, a {{jsxref("DataView")}}, or an array of nested records.
+      - : شامل داده‌ای است که باید ارسال شود؛ یکی از یک رشته (string)، یک {{jsxref("ArrayBuffer")}}، یک {{jsxref("TypedArray")}}، یک {{jsxref("DataView")}}، یا یک آرایه از رکوردهای تو در تو.
     - `encoding` {{optional_inline}}
-      - : A string specifying the record's encoding.
+      - : رشته‌ای که encoding رکورد را مشخص می‌کند.
     - `id` {{optional_inline}}
-      - : A developer-defined identifier for the record.
+      - : یک شناسه تعریف‌شده توسط توسعه‌دهنده برای رکورد.
     - `lang` {{optional_inline}}
-      - : A valid {{glossary("BCP 47 language tag")}}.
+      - : یک {{glossary("BCP 47 language tag")}} معتبر.
     - `mediaType` {{optional_inline}}
-      - : A valid [MIME type](/en-US/docs/Web/HTTP/Guides/MIME_types).
+      - : یک [نوع MIME](/en-US/docs/Web/HTTP/Guides/MIME_types) معتبر.
     - `recordType`
-      - : A string indicating the type of data stored in `data`. It must be one of the following values:
+      - : رشته‌ای که نوع داده‌های ذخیره‌شده در `data` را نشان می‌دهد. باید یکی از مقادیر زیر باشد:
         - `"absolute-url"`
-          - : An absolute URL to the data.
+          - : یک URL مطلق به داده.
         - `"empty"`
-          - : An empty {{domxref("NDEFRecord")}}.
+          - : یک {{domxref("NDEFRecord")}} خالی.
         - `"mime"`
-          - : A valid [MIME type](/en-US/docs/Web/HTTP/Guides/MIME_types).
+          - : یک [نوع MIME](/en-US/docs/Web/HTTP/Guides/MIME_types) معتبر.
         - `"smart-poster"`
-          - : A smart poster as defined by the [NDEF-SMARTPOSTER](https://w3c.github.io/web-nfc/#bib-ndef-smartposter) specification.
+          - : یک پوستر هوشمند (smart poster) مطابق تعریف مشخصات [NDEF-SMARTPOSTER](https://w3c.github.io/web-nfc/#bib-ndef-smartposter).
         - `"text"`
-          - : Text as defined by the [NDEF-TEXT](https://w3c.github.io/web-nfc/#bib-ndef-text) specification.
+          - : متن مطابق تعریف مشخصات [NDEF-TEXT](https://w3c.github.io/web-nfc/#bib-ndef-text).
         - `"unknown"`
-          - : The record type is not known.
+          - : نوع رکورد ناشناخته است.
         - `"URL"`
-          - : A URL as defined by the [NDEF-URI](https://w3c.github.io/web-nfc/#bib-ndef-uri) specification.
+          - : یک URL مطابق تعریف مشخصات [NDEF-URI](https://w3c.github.io/web-nfc/#bib-ndef-uri).
 
 ## Specifications
 
