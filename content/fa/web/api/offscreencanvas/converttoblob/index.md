@@ -1,11 +1,5 @@
 ---
 title: "OffscreenCanvas: convertToBlob() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas/convertToBlob"
-status: "needs-translation"
----
-
----
-title: "OffscreenCanvas: convertToBlob() method"
 short-title: convertToBlob()
 slug: Web/API/OffscreenCanvas/convertToBlob
 page-type: web-api-instance-method
@@ -14,53 +8,53 @@ browser-compat: api.OffscreenCanvas.convertToBlob
 
 {{APIRef("Canvas API")}}{{AvailableInWorkers}}
 
-The **`OffscreenCanvas.convertToBlob()`** method creates a {{domxref("Blob")}} object representing the image contained in the canvas.
+متد **`OffscreenCanvas.convertToBlob()`** یک شیء {{domxref("Blob")}} می‌سازد که تصویر موجود در بوم (canvas) را نمایش می‌دهد.
 
-The desired file format and image quality may be specified.
-If the file format is not specified, or if the given format is not supported, then the data will be exported as `image/png`.
-Browsers are required to support `image/png`; many will support additional formats including `image/jpeg` and `image/webp`.
+قالب فایل دلخواه و کیفیت تصویر را می‌توان مشخص کرد.
+اگر قالب فایل مشخص نشود، یا اگر قالب داده‌شده پشتیبانی نشود، داده‌ها به صورت `image/png` خروجی گرفته می‌شوند.
+مرورگرها موظف به پشتیبانی از `image/png` هستند؛ بسیاری از آن‌ها از قالب‌های اضافی مانند `image/jpeg` و `image/webp` نیز پشتیبانی می‌کنند.
 
-The created image will have a resolution of 96dpi for file formats that support encoding resolution metadata.
+تصویر ایجادشده برای قالب‌های فایلی که از ذخیره‌سازی فراداده‌های وضوح تصویر پشتیبانی می‌کنند، وضوحی برابر با ۹۶dpi خواهد داشت.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 convertToBlob()
 convertToBlob(options)
 ```
 
-### Parameters
+### پارامترها
 
 - `options` {{optional_inline}}
-  - : An object with the following properties:
+  - : یک شیء با ویژگی‌های زیر:
     - `type`
-      - : A string indicating the image format.
-        The default type is `image/png`; this image format will be also used if the specified type is not supported.
+      - : رشته‌ای که قالب تصویر را مشخص می‌کند.
+        نوع پیش‌فرض `image/png` است؛ اگر نوع مشخص‌شده پشتیبانی نشود نیز از همین قالب استفاده خواهد شد.
     - `quality`
-      - : A {{jsxref("Number")}} between `0` and `1` indicating the image quality to be used when creating images using file formats that support lossy compression (such as `image/jpeg` or `image/webp`).
-        A user agent will use its default quality value if this option is not specified, or if the number is outside the allowed range.
+      - : یک {{jsxref("Number")}} بین `0` و `1` که کیفیت تصویر را هنگام ایجاد تصاویر با استفاده از قالب‌های فایل دارای فشرده‌سازی اتلافی (مانند `image/jpeg` یا `image/webp`) مشخص می‌کند.
+        اگر این گزینه مشخص نشود، یا اگر عدد خارج از بازه مجاز باشد، عامل کاربر (user agent) از مقدار کیفیت پیش‌فرض خود استفاده می‌کند.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} returning a {{domxref("Blob")}} object representing the image contained in the canvas.
+یک {{jsxref("Promise")}} که یک شیء {{domxref("Blob")}} بازمی‌گرداند و تصویر موجود در بوم را نمایش می‌دهد.
 
-### Exceptions
+### استثناها (Exceptions)
 
-The promise may be rejected with the following exceptions:
+ممکن است promise با استثناهای زیر رد شود:
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : The `OffscreenCanvas` is not detached; in other words it still associated with the DOM and not the current worker.
+  - : شیء `OffscreenCanvas` جدا (detached) نشده است؛ به عبارت دیگر همچنان با DOM مرتبط است و با worker فعلی مرتبط نیست.
 
 - `SecurityError` {{domxref("DOMException")}}
-  - : The canvas context mode is 2d and the bitmap is not origin-clean; at least some of its contents have or may have been loaded from a site other than the one from which the document itself was loaded.
+  - : حالت بافت (context mode) بوم 2d است و نقشه بیت (bitmap) دارای مبدا پاک (origin-clean) نیست؛ دست‌کم بخشی از محتوای آن از سایتی غیر از سایتی که خود سند از آن بارگذاری شده، بارگذاری شده یا ممکن است بارگذاری شده باشد.
 
 - `IndexSizeError` {{domxref("DOMException")}}
-  - : The canvas bitmap has no pixels (either the horizontal or vertical dimension is zero).
+  - : نقشه بیت بوم هیچ پیکسلی ندارد (یا بُعد افقی یا عمودی آن صفر است).
 
 - `EncodingError` {{domxref("DOMException")}}
-  - : The blob could not be created due to an encoding error.
+  - : به دلیل خطای رمزگذاری، امکان ایجاد blob وجود نداشت.
 
-## Examples
+## مثال‌ها
 
 ```js
 const offscreen = new OffscreenCanvas(256, 256);
@@ -72,14 +66,14 @@ offscreen.convertToBlob().then((blob) => console.log(blob));
 // Blob { size: 334, type: "image/png" }
 ```
 
-## Specifications
+## مشخصات (Specifications)
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface defining this method, {{domxref("OffscreenCanvas")}}.
+- رابط تعریف‌کننده این متد، {{domxref("OffscreenCanvas")}}.
