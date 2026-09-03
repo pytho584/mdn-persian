@@ -1,11 +1,5 @@
 ---
 title: "PushManager: getSubscription() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PushManager/getSubscription"
-status: "needs-translation"
----
-
----
-title: "PushManager: getSubscription() method"
 short-title: getSubscription()
 slug: Web/API/PushManager/getSubscription
 page-type: web-api-instance-method
@@ -14,27 +8,27 @@ browser-compat: api.PushManager.getSubscription
 
 {{ApiRef("Push API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`PushManager.getSubscription()`** method of the {{domxref("PushManager")}} interface retrieves an existing push subscription.
+متد **`PushManager.getSubscription()`** از رابط {{domxref("PushManager")}} یک اشتراک push موجود را بازیابی می‌کند.
 
-It returns a {{jsxref("Promise")}} that resolves to a {{domxref("PushSubscription")}} object containing details of an existing subscription. If no existing subscription exists, this resolves to a `null` value.
+این متد یک {{jsxref("Promise")}} برمی‌گرداند که به یک شیء {{domxref("PushSubscription")}} حاوی جزئیات اشتراک موجود تبدیل می‌شود. اگر هیچ اشتراکی وجود نداشته باشد، این Promise به مقدار `null` تبدیل می‌شود.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 getSubscription()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار برگشتی
 
-A {{jsxref("Promise")}} that resolves to a {{domxref("PushSubscription")}} object or `null`.
+یک {{jsxref("Promise")}} که به یک شیء {{domxref("PushSubscription")}} یا `null` تبدیل می‌شود.
 
-## Examples
+## مثال‌ها
 
-This code snippet is taken from a [push messaging and notification sample](https://github.com/GoogleChrome/samples/tree/gh-pages/push-messaging-and-notifications). (No live demo is available.)
+این قطعه کد از یک [نمونه پیام‌رسانی و اعلان‌های push](https://github.com/GoogleChrome/samples/tree/gh-pages/push-messaging-and-notifications) گرفته شده است. (هیچ نسخه نمایشی زنده‌ای در دسترس نیست.)
 
 ```js
 // We need the service worker registration to check for a subscription
@@ -70,10 +64,10 @@ navigator.serviceWorker.ready.then((serviceWorkerRegistration) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
