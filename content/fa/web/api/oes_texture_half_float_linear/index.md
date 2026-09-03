@@ -1,10 +1,4 @@
 ---
-title: "OES_texture_half_float_linear extension"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/OES_texture_half_float_linear"
-status: "needs-translation"
----
-
----
 title: OES_texture_half_float_linear extension
 short-title: OES_texture_half_float_linear
 slug: Web/API/OES_texture_half_float_linear
@@ -14,20 +8,20 @@ browser-compat: api.OES_texture_half_float_linear
 
 {{APIRef("WebGL")}}
 
-The **`OES_texture_half_float_linear`** extension is part of the [WebGL API](/en-US/docs/Web/API/WebGL_API) and allows linear filtering with half floating-point pixel types for textures.
+افزونهٔ **`OES_texture_half_float_linear`** بخشی از [WebGL API](/en-US/docs/Web/API/WebGL_API) است و فیلتر خطی را برای انواع پیکسل ممیز شناورِ نصفه (half floating-point) در بافت‌ها فراهم می‌کند.
 
-WebGL extensions are available using the {{domxref("WebGLRenderingContext.getExtension()")}} method. For more information, see also [Using Extensions](/en-US/docs/Web/API/WebGL_API/Using_Extensions) in the [WebGL tutorial](/en-US/docs/Web/API/WebGL_API/Tutorial).
+افزونه‌های WebGL از طریق متد {{domxref("WebGLRenderingContext.getExtension()")}} در دسترس هستند. برای اطلاعات بیشتر، به [استفاده از افزونه‌ها](/en-US/docs/Web/API/WebGL_API/Using_Extensions) در [آموزش WebGL](/en-US/docs/Web/API/WebGL_API/Tutorial) نیز مراجعه کنید.
 
 > [!NOTE]
-> This extension is only available to {{domxref("WebGLRenderingContext", "WebGL1", "", 1)}} contexts. In {{domxref("WebGL2RenderingContext", "WebGL2", "", 1)}}, the functionality of this extension is available on the WebGL2 context by default and the extension is not needed.
+> این افزونه فقط در زمینه‌های {{domxref("WebGLRenderingContext", "WebGL1", "", 1)}} در دسترس است. در {{domxref("WebGL2RenderingContext", "WebGL2", "", 1)}}، عملکرد این افزونه به‌صورت پیش‌فرض در زمینهٔ WebGL2 موجود است و نیازی به این افزونه نیست.
 
-## Linear filtering
+## فیلتر خطی
 
-The {{domxref("OES_texture_half_float")}} extension alone does not allow linear filtering with half floating-point textures. This extension enables this ability.
+افزونهٔ {{domxref("OES_texture_half_float")}} به تنهایی اجازهٔ فیلتر خطی با بافت‌های ممیز شناورِ نصفه را نمی‌دهد. این افزونه این قابلیت را فعال می‌کند.
 
-With the help of this extension, you can now set the magnification or minification filter in the {{domxref("WebGLRenderingContext.texParameter()")}} method to one of `gl.LINEAR`, `gl.LINEAR_MIPMAP_NEAREST`, `gl.NEAREST_MIPMAP_LINEAR`, or `gl.LINEAR_MIPMAP_LINEAR`, and use half floating-point textures.
+با کمک این افزونه، اکنون می‌توانید فیلتر بزرگنمایی یا کوچک‌نمایی را در متد {{domxref("WebGLRenderingContext.texParameter()")}} روی یکی از مقادیر `gl.LINEAR`، `gl.LINEAR_MIPMAP_NEAREST`، `gl.NEAREST_MIPMAP_LINEAR` یا `gl.LINEAR_MIPMAP_LINEAR` تنظیم کنید و از بافت‌های ممیز شناورِ نصفه استفاده کنید.
 
-## Examples
+## مثال
 
 ```js
 const halfFloat = gl.getExtension("OES_texture_half_float");
@@ -47,15 +41,15 @@ gl.texImage2D(
 );
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("WebGLRenderingContext.getExtension()")}}
 - {{domxref("WebGLRenderingContext.texImage2D()")}}
