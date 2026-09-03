@@ -1,11 +1,5 @@
 ---
 title: "PointerEvent: getPredictedEvents() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent/getPredictedEvents"
-status: "needs-translation"
----
-
----
-title: "PointerEvent: getPredictedEvents() method"
 short-title: getPredictedEvents()
 slug: Web/API/PointerEvent/getPredictedEvents
 page-type: web-api-instance-method
@@ -14,28 +8,27 @@ browser-compat: api.PointerEvent.getPredictedEvents
 
 {{APIRef("Pointer Events")}}
 
-The **`getPredictedEvents()`** method of the {{domxref("PointerEvent")}} interface returns a sequence of `PointerEvent` instances that are estimated future pointer positions.
-How the predicted positions are calculated depends on the user agent, but they are based on past points, current velocity, and trajectory.
+متد **`getPredictedEvents()`** متعلق به رابط {{domxref("PointerEvent")}} دنباله‌ای از نمونه‌های `PointerEvent` را بازمی‌گرداند که موقعیت‌های آیندهٔ تخمینی اشاره‌گر را نشان می‌دهند. روش محاسبهٔ این موقعیت‌های پیش‌بینی‌شده به عامل کاربر (user agent) بستگی دارد؛ اما آن‌ها بر اساس نقاط گذشته، سرعت کنونی و مسیر حرکت به دست می‌آیند.
 
-Applications can use the predicted events to "draw ahead" to a predicted position which may reduce perceived latency depending on the application's interpretation of the predicted events and the use case.
+برنامه‌ها می‌توانند از رویدادهای پیش‌بینی‌شده برای «ترسیم پیش‌دستانه» تا یک موقعیت پیش‌بینی‌شده استفاده کنند؛ این کار می‌تواند بسته به تفسیر برنامه از رویدادهای پیش‌بینی‌شده و مورد استفاده، تأخیر درک‌شده را کاهش دهد.
 
-For an illustration of predicted events, see [Figure 8 in the specification](https://w3c.github.io/pointerevents/#figure_predicted).
+برای تصویری از رویدادهای پیش‌بینی‌شده، به [شکل ۸ در مشخصات](https://w3c.github.io/pointerevents/#figure_predicted) مراجعه کنید.
 
-## Syntax
+## نحو
 
 ```js-nolint
 getPredictedEvents()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A sequence of {{domxref('PointerEvent')}} instances.
+دنباله‌ای از نمونه‌های {{domxref('PointerEvent')}}.
 
-## Example
+### مثال
 
 ### HTML
 
@@ -80,14 +73,14 @@ canvas.addEventListener("pointermove", (e) => {
 });
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("Example", "", "320")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
