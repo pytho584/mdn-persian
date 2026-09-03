@@ -1,11 +1,5 @@
 ---
 title: "PerformanceResourceTiming: connectStart property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceResourceTiming/connectStart"
-status: "needs-translation"
----
-
----
-title: "PerformanceResourceTiming: connectStart property"
 short-title: connectStart
 slug: Web/API/PerformanceResourceTiming/connectStart
 page-type: web-api-instance-property
@@ -14,27 +8,27 @@ browser-compat: api.PerformanceResourceTiming.connectStart
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The **`connectStart`** read-only property returns the {{domxref("DOMHighResTimeStamp","timestamp")}} immediately before the user agent starts establishing the connection to the server to retrieve the resource.
+ویژگی فقط‌خواندنی **`connectStart`**، {{domxref("DOMHighResTimeStamp","timestamp")}} را بلافاصله قبل از شروع عامل کاربر (user agent) برای برقراری اتصال به سرور جهت بازیابی منبع (resource) برمی‌گرداند.
 
-## Value
+## مقدار
 
-The `connectStart` property can have the following values:
+ویژگی `connectStart` می‌تواند مقادیر زیر را داشته باشد:
 
-- A {{domxref("DOMHighResTimeStamp")}} immediately before the browser starts to establish the connection to the server to retrieve the resource.
-- `0` if the resource was instantaneously retrieved from a cache.
-- `0` if the resource is a cross-origin request and no {{HTTPHeader("Timing-Allow-Origin")}} HTTP response header is used.
+- یک {{domxref("DOMHighResTimeStamp")}} بلافاصله قبل از اینکه مرورگر شروع به برقراری اتصال به سرور برای بازیابی منبع کند.
+- اگر منبع به‌طور آنی از حافظهٔ پنهان (cache) بازیابی شود، مقدار `0`.
+- اگر منبع یک درخواست متقاطع (cross-origin) باشد و هیچ هدر پاسخ HTTP {{HTTPHeader("Timing-Allow-Origin")}} استفاده نشود، مقدار `0`.
 
-## Examples
+## مثال‌ها
 
-### Measuring TCP handshake time
+### اندازه‌گیری زمان دست‌دهی TCP
 
-The `connectStart` and {{domxref("PerformanceResourceTiming.connectEnd", "connectEnd")}} properties can be used to measure how long it takes for the TCP handshake to happen.
+از ویژگی‌های `connectStart` و {{domxref("PerformanceResourceTiming.connectEnd", "connectEnd")}} می‌توان برای اندازه‌گیری مدت‌زمان لازم برای انجام دست‌دهی TCP استفاده کرد.
 
 ```js
 const tcp = entry.connectEnd - entry.connectStart;
 ```
 
-Example using a {{domxref("PerformanceObserver")}}, which notifies of new `resource` performance entries as they are recorded in the browser's performance timeline. Use the `buffered` option to access entries from before the observer creation.
+مثال با استفاده از {{domxref("PerformanceObserver")}}، که هنگام ثبت ورودی‌های جدید performance از نوع `resource` در جدول زمانی عملکرد مرورگر، اطلاع می‌دهد. برای دسترسی به ورودی‌های قبل از ایجاد مشاهده‌گر، از گزینهٔ `buffered` استفاده کنید.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -49,7 +43,7 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "resource", buffered: true });
 ```
 
-Example using {{domxref("Performance.getEntriesByType()")}}, which only shows `resource` performance entries present in the browser's performance timeline at the time you call this method:
+مثال با استفاده از {{domxref("Performance.getEntriesByType()")}}، که فقط ورودی‌های performance از نوع `resource` موجود در جدول زمانی عملکرد مرورگر را در زمان فراخوانی این متد نشان می‌دهد:
 
 ```js
 const resources = performance.getEntriesByType("resource");
@@ -61,24 +55,24 @@ resources.forEach((entry) => {
 });
 ```
 
-### Cross-origin timing information
+### اطلاعات زمان‌بندی متقاطع (Cross-origin)
 
-If the value of the `connectStart` property is `0`, the resource might be a cross-origin request. To allow seeing cross-origin timing information, the {{HTTPHeader("Timing-Allow-Origin")}} HTTP response header needs to be set.
+اگر مقدار ویژگی `connectStart` برابر `0` باشد، منبع ممکن است یک درخواست متقاطع باشد. برای فراهم کردن امکان دیدن اطلاعات زمان‌بندی متقاطع، باید هدر پاسخ HTTP {{HTTPHeader("Timing-Allow-Origin")}} تنظیم شود.
 
-For example, to allow `https://developer.mozilla.org` to see timing resources, the cross-origin resource should send:
+برای مثال، برای اینکه `https://developer.mozilla.org` اجازهٔ دیدن منابع زمان‌بندی را داشته باشد، منبع متقاطع باید ارسال کند:
 
 ```http
 Timing-Allow-Origin: https://developer.mozilla.org
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTTPHeader("Timing-Allow-Origin")}}
