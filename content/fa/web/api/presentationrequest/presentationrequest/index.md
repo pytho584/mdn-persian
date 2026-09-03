@@ -1,11 +1,5 @@
 ---
 title: "PresentationRequest: PresentationRequest() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PresentationRequest/PresentationRequest"
-status: "needs-translation"
----
-
----
-title: "PresentationRequest: PresentationRequest() constructor"
 short-title: PresentationRequest()
 slug: Web/API/PresentationRequest/PresentationRequest
 page-type: web-api-constructor
@@ -16,27 +10,24 @@ browser-compat: api.PresentationRequest.PresentationRequest
 
 {{APIRef("Presentation API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`PresentationRequest()`**
-constructor creates a new {{domxref("PresentationRequest")}} object which creates a
-new PresentationRequest.
+سازندهٔ **`PresentationRequest()`** یک شیء جدید از نوع {{domxref("PresentationRequest")}} می‌سازد که یک درخواست ارائه (PresentationRequest) جدید ایجاد می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 new PresentationRequest(url)
 new PresentationRequest(urls)
 ```
 
-### Parameters
+### پارامترها
 
-- `url` or `urls\[]`
-  - : A URL or array of URLs that are possible URLs used to create, or reconnect, a
-    presentation for the PresentationRequest instance.
+- `url` یا `urls[]`
+  - : یک URL یا آرایه‌ای از URLها که آدرس‌های ممکن برای ایجاد یا اتصال مجدد یک ارائه (Presentation)، برای نمونهٔ PresentationRequest هستند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
