@@ -1,11 +1,5 @@
 ---
 title: "PerformanceLongAnimationFrameTiming: toJSON() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceLongAnimationFrameTiming/toJSON"
-status: "needs-translation"
----
-
----
-title: "PerformanceLongAnimationFrameTiming: toJSON() method"
 short-title: toJSON()
 slug: Web/API/PerformanceLongAnimationFrameTiming/toJSON
 page-type: web-api-instance-method
@@ -16,27 +10,27 @@ browser-compat: api.PerformanceLongAnimationFrameTiming.toJSON
 
 {{APIRef("Performance API")}}{{SeeCompatTable}}
 
-The **`toJSON()`** method of the {{domxref("PerformanceLongAnimationFrameTiming")}} interface is a {{Glossary("Serialization","serializer")}}; it returns a JSON representation of the `PerformanceLongAnimationFrameTiming` object.
+متد **`toJSON()`** در رابط {{domxref("PerformanceLongAnimationFrameTiming")}} یک {{Glossary("Serialization","سریال‌ساز")}} است؛ این متد یک نمایش JSON از شیء `PerformanceLongAnimationFrameTiming` برمی‌گرداند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 toJSON()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("JSON")}} object that is the serialization of the {{domxref("PerformanceLongAnimationFrameTiming")}} object.
+یک شیء {{jsxref("JSON")}} که سریال‌سازی شیء {{domxref("PerformanceLongAnimationFrameTiming")}} است.
 
-## Examples
+## مثال‌ها
 
-### Using the `toJSON` method
+### استفاده از متد `toJSON`
 
-In this example, calling `entry.toJSON()` returns a JSON representation of the `PerformanceLongAnimationFrameTiming` object.
+در این مثال، فراخوانی `entry.toJSON()` یک نمایش JSON از شیء `PerformanceLongAnimationFrameTiming` برمی‌گرداند.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -48,7 +42,7 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "long-animation-frame", buffered: true });
 ```
 
-This would log an object like so:
+این کار شیئی شبیه به زیر را در کنسول ثبت می‌کند:
 
 ```js
 ({
@@ -73,7 +67,7 @@ This would log an object like so:
       sourceCharPosition: 17796,
       startTime: 11803.199999999255,
       window: {
-        // …Window object…
+        // …شیء Window…
       },
       windowAttribution: "self",
     },
@@ -83,17 +77,17 @@ This would log an object like so:
 });
 ```
 
-To get a JSON string, you can use [`JSON.stringify(entry)`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) directly; it will call `toJSON()` automatically.
+برای دریافت رشته JSON، می‌توانید مستقیماً از [`JSON.stringify(entry)`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) استفاده کنید؛ این تابع به‌طور خودکار `toJSON()` را فراخوانی می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Long animation frame timing](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing)
+- [زمان‌بندی فریم انیمیشن طولانی](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing)
 - {{jsxref("JSON")}}
