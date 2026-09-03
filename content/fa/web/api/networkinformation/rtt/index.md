@@ -1,7 +1,5 @@
 ---
 title: "NetworkInformation: rtt property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation/rtt"
-status: "needs-translation"
 ---
 
 ---
@@ -14,23 +12,20 @@ browser-compat: api.NetworkInformation.rtt
 
 {{apiref("Network Information API")}} {{AvailableInWorkers}}
 
-The **`rtt`** read-only property of the {{domxref("NetworkInformation")}} interface returns the estimated effective round-trip time of the current connection, rounded to the nearest multiple of 25 milliseconds.
-This value is based on recently observed application-layer RTT measurements across recently active connections.
-It excludes connections made to a private address space.
-If no recent measurement data is available, the value is based on the properties of the underlying connection technology.
+خاصیت فقطخواندنی **`rtt`** در رابط {{domxref("NetworkInformation")}} زمان رفتوبرگشت مؤثر تخمینی اتصال فعلی را برمی‌گرداند که به نزدیک‌ترین مضرب ۲۵ میلی‌ثانیه گرد شده است. این مقدار بر اساس اندازه‌گیری‌های اخیر RTT در لایه کاربردی (application layer) روی اتصال‌هایی که اخیراً فعال بوده‌اند محاسبه می‌شود و اتصال‌هایی که به فضای آدرس خصوصی برقرار شده‌اند را شامل نمی‌شود. اگر داده اندازه‌گیری اخیری در دسترس نباشد، این مقدار بر اساس ویژگی‌های فناوری اتصال زیرین تعیین می‌شود.
 
-## Value
+## مقدار
 
-A number.
+یک عدد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{HTTPHeader("RTT")}}
