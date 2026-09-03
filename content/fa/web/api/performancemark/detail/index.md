@@ -1,11 +1,5 @@
 ---
 title: "PerformanceMark: detail property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceMark/detail"
-status: "needs-translation"
----
-
----
-title: "PerformanceMark: detail property"
 short-title: detail
 slug: Web/API/PerformanceMark/detail
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.PerformanceMark.detail
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The read-only **`detail`** property returns arbitrary metadata that was included in the mark upon construction (either when using {{domxref("Performance.mark","performance.mark()")}} or the {{domxref("PerformanceMark.PerformanceMark","PerformanceMark()")}} constructor).
+ویژگی فقط‌خواندنی **`detail`** فراداده‌های دلخواهی را برمی‌گرداند که هنگام ساخت علامت (mark) در آن گنجانده شده است (چه هنگام استفاده از {{domxref("Performance.mark","performance.mark()")}} چه سازنده {{domxref("PerformanceMark.PerformanceMark","PerformanceMark()")}}).
 
-## Value
+## مقدار
 
-Returns the value it is set to (from `markOptions` of {{domxref("Performance.mark","performance.mark()")}} or the {{domxref("PerformanceMark.PerformanceMark","PerformanceMark()")}} constructor).
+مقداری را که روی آن تنظیم شده است برمی‌گرداند (از `markOptions` مربوط به {{domxref("Performance.mark","performance.mark()")}} یا سازنده {{domxref("PerformanceMark.PerformanceMark","PerformanceMark()")}}).
 
-## Examples
+## مثال‌ها
 
-The following example demonstrates the `detail` property.
+مثال زیر ویژگی `detail` را نشان می‌دهد:
 
 ```js
 performance.mark("dog", { detail: "labrador" });
@@ -32,10 +26,10 @@ const dogEntries = performance.getEntriesByName("dog");
 dogEntries[0].detail; // labrador
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
