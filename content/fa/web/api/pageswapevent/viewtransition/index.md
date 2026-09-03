@@ -1,11 +1,5 @@
 ---
 title: "PageSwapEvent: viewTransition property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PageSwapEvent/viewTransition"
-status: "needs-translation"
----
-
----
-title: "PageSwapEvent: viewTransition property"
 short-title: viewTransition
 slug: Web/API/PageSwapEvent/viewTransition
 page-type: web-api-instance-property
@@ -14,27 +8,27 @@ browser-compat: api.PageSwapEvent.viewTransition
 
 {{APIRef("HTML DOM")}}
 
-The **`viewTransition`** read-only property of the {{domxref("PageRevealEvent")}} interface contains a {{domxref("ViewTransition")}} object representing the active view transition for the cross-document navigation.
+خاصیت فقط خواندنی **`viewTransition`** از رابط {{domxref("PageRevealEvent")}}، یک شیء {{domxref("ViewTransition")}} را برمی‌گرداند که نمایانگر انتقال نمای فعال برای ناوبری بین سندها است.
 
 > [!NOTE]
-> The active view transition can also be accessed via the {{domxref("Document.activeViewTransition")}} property.
+> انتقال نمای فعال همچنین می‌تواند از طریق خاصیت {{domxref("Document.activeViewTransition")}} قابل دسترسی باشد.
 
-## Value
+## مقدار
 
-A {{domxref("ViewTransition")}} object, or `null` if no view transition is active when the event is fired.
+یک شیء {{domxref("ViewTransition")}}، یا در صورت عدم وجود انتقال نمای فعال در زمان رویداد، `null` است.
 
-## Examples
+## مثال‌ها
 
-See the main {{domxref("PageSwapEvent")}} page.
+به صفحه اصلی {{domxref("PageSwapEvent")}} مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [View Transition API](/en-US/docs/Web/API/View_Transition_API)
