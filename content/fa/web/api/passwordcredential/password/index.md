@@ -1,11 +1,5 @@
 ---
 title: "PasswordCredential: password property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PasswordCredential/password"
-status: "needs-translation"
----
-
----
-title: "PasswordCredential: password property"
 short-title: password
 slug: Web/API/PasswordCredential/password
 page-type: web-api-instance-property
@@ -16,18 +10,16 @@ browser-compat: api.PasswordCredential.password
 
 {{SeeCompatTable}}{{APIRef("Credential Management API")}}{{SecureContext_Header}}
 
-The **`password`** read-only property
-of the {{domxref("PasswordCredential")}} interface returns a string
-containing the password of the credential.
+خاصیت فقط‌خواندنی **`password`** در واسط {{domxref("PasswordCredential")}} یک رشته حاوی رمز عبور آن اعتبارنامه را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A string containing a password.
+یک رشته حاوی رمز عبور.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
