@@ -1,11 +1,5 @@
 ---
 title: "Navigator: login property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/login"
-status: "needs-translation"
----
-
----
-title: "Navigator: login property"
 short-title: login
 slug: Web/API/Navigator/login
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.Navigator.login
 
 {{securecontext_header}}{{APIRef("FedCM API")}}
 
-The **`login`** read-only property of the {{domxref("Navigator")}} interface provides access to the browser's {{domxref("NavigatorLogin")}} object, which a federated identity provider (IdP) can use to set its login status when a user signs into or out of the IdP.
+خاصیت فقط‌خواندنی **`login`** در رابط {{domxref("Navigator")}} دسترسی به شیء {{domxref("NavigatorLogin")}} مرورگر را فراهم می‌کند. یک ارائه‌دهنده هویت فدرال (IdP) می‌تواند از این شیء برای تنظیم وضعیت ورود خود هنگام ورود یا خروج کاربر از IdP استفاده کند.
 
-See [Update login status using the Login Status API](/en-US/docs/Web/API/FedCM_API/IDP_integration#update_login_status_using_the_login_status_api) for more details of how this is used.
+برای جزئیات بیشتر درباره نحوه استفاده از این ویژگی، به [به‌روزرسانی وضعیت ورود با استفاده از API وضعیت ورود](/en-US/docs/Web/API/FedCM_API/IDP_integration#update_login_status_using_the_login_status_api) مراجعه کنید.
 
-## Value
+## مقدار
 
-A {{domxref("NavigatorLogin")}} object.
+یک شیء از نوع {{domxref("NavigatorLogin")}}.
 
-## Examples
+## مثال‌ها
 
 ```js
 /* Set logged-in status */
@@ -32,14 +26,14 @@ navigator.login.setStatus("logged-in");
 navigator.login.setStatus("logged-out");
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Federated Credential Management (FedCM) API](/en-US/docs/Web/API/FedCM_API)
+- [API مدیریت اعتبار فدرال (FedCM)](/en-US/docs/Web/API/FedCM_API)
