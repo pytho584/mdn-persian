@@ -1,11 +1,5 @@
 ---
 title: "PresentationConnection: terminate() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnection/terminate"
-status: "needs-translation"
----
-
----
-title: "PresentationConnection: terminate() method"
 short-title: terminate()
 slug: Web/API/PresentationConnection/terminate
 page-type: web-api-instance-method
@@ -16,26 +10,26 @@ browser-compat: api.PresentationConnection.terminate
 
 {{APIRef("Presentation API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-When the `terminate()` method is called on a {{domxref("PresentationConnection")}}, the {{Glossary("user agent")}} begins the process of terminating the presentation. The exact process differs depending on whether `terminate()` is called in the controlling or the presenting context.
+هنگامی که متد `terminate()` روی یک {{domxref("PresentationConnection")}} فراخوانده می‌شود، {{Glossary("user agent")}} فرایند خاتمه‌دادن به ارائه را آغاز می‌کند. روند دقیق آن بسته به اینکه `terminate()` در بافت کنترل‌کننده فراخوانده شود یا در بافت ارائه‌دهنده، متفاوت است.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 terminate()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
