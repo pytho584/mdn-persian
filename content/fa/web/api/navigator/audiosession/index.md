@@ -1,11 +1,5 @@
 ---
 title: "Navigator: audioSession property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/audioSession"
-status: "needs-translation"
----
-
----
-title: "Navigator: audioSession property"
 short-title: audioSession
 slug: Web/API/Navigator/audioSession
 page-type: web-api-instance-property
@@ -16,24 +10,24 @@ browser-compat: api.Navigator.audioSession
 
 {{APIRef("Audio Session API")}}{{SeeCompatTable}}
 
-The **`audioSession`** read-only property of the {{domxref("Navigator")}} interface returns the {{domxref("AudioSession")}} object for the current document.
+ویژگی فقط‌خواندنی **`audioSession`** از رابط {{domxref("Navigator")}}، شیء {{domxref("AudioSession")}} مربوط به سند جاری را بازمی‌گرداند.
 
-The {{domxref("AudioSession")}} interface can be used to control how audio from a web application interacts with other audio playing on a device, for example, allowing developers to specify whether their application's audio should play on its own, or along with other device audio.
+رابط {{domxref("AudioSession")}} می‌تواند برای کنترل نحوه تعامل صدا از یک برنامه وب با سایر صداهای در حال پخش روی دستگاه استفاده شود. برای مثال، به توسعه‌دهندگان اجازه می‌دهد مشخص کنند که صدای برنامه‌شان باید به تنهایی پخش شود یا همراه با سایر صداهای دستگاه.
 
-## Value
+## مقدار
 
-An {{domxref("AudioSession")}} object.
+یک شیء {{domxref("AudioSession")}}.
 
-## Examples
+## مثال‌ها
 
-### Setting the audio session type
+### تنظیم نوع نشست صوتی
 
-The following example sets the audio session type to `"play-and-record"` before starting a video call:
+مثال زیر نوع نشست صوتی را قبل از شروع یک تماس ویدیویی روی `"play-and-record"` تنظیم می‌کند:
 
 ```js
 navigator.audioSession.type = "play-and-record";
 
-// Start video call
+// شروع تماس ویدیویی
 const stream = await navigator.mediaDevices.getUserMedia({
   audio: true,
   video: true,
@@ -41,15 +35,15 @@ const stream = await navigator.mediaDevices.getUserMedia({
 localVideo.srcObject = stream;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("AudioSession")}}
 - {{domxref("AudioSession.type")}}
