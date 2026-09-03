@@ -1,11 +1,5 @@
 ---
 title: "PermissionStatus: name property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PermissionStatus/name"
-status: "needs-translation"
----
-
----
-title: "PermissionStatus: name property"
 short-title: name
 slug: Web/API/PermissionStatus/name
 page-type: web-api-instance-property
@@ -14,13 +8,13 @@ browser-compat: api.PermissionStatus.name
 
 {{APIRef("Permissions API")}}{{AvailableInWorkers}}
 
-The **`name`** read-only property of the {{domxref("PermissionStatus")}} interface returns the name of a requested permission.
+ویژگی فقط‌خواندنی **`name`** در رابط {{domxref("PermissionStatus")}}، نام مجوز درخواست‌شده را بازمی‌گرداند.
 
-## Value
+## مقدار
 
-A read-only value that is identical to the `name` argument passed to {{domxref("Permissions.query", "navigator.permissions.query()")}}.
+مقداری فقط‌خواندنی که با آرگومان `name` ارسال‌شده به {{domxref("Permissions.query", "navigator.permissions.query()")}} یکسان است.
 
-## Examples
+## مثال‌ها
 
 ```js
 function stateChangeListener() {
@@ -40,10 +34,10 @@ queryAndTrackPermission("geolocation");
 queryAndTrackPermission("midi");
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
