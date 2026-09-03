@@ -1,7 +1,5 @@
 ---
 title: "Navigator: webdriver property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/webdriver"
-status: "needs-translation"
 ---
 
 ---
@@ -14,31 +12,25 @@ browser-compat: api.Navigator.webdriver
 
 {{APIRef("WebDriver")}}
 
-The **`webdriver`** read-only property
-of the {{domxref("navigator")}} interface indicates whether the user agent is
-controlled by automation.
+ویژگی فقط خواندنی **`webdriver`** از رابط {{domxref("navigator")}} نشان می‌دهد که آیا عامل کاربر (user agent) توسط خودکارسازی (automation) کنترل می‌شود یا خیر.
 
-It defines a standard way for co-operating user agents to inform the document that it
-is controlled by [WebDriver](/en-US/docs/Web/WebDriver), for example, so that
-alternate code paths can be triggered during automation.
+این ویژگی یک روش استاندارد برای عامل‌های کاربر همکار تعریف می‌کند تا به سند اطلاع دهند که توسط [WebDriver](/en-US/docs/Web/WebDriver) کنترل می‌شود، به عنوان مثال، تا مسیرهای کد جایگزین در طول خودکارسازی فعال شوند.
 
-The `navigator.webdriver` property is true when in:
+ویژگی `navigator.webdriver` در شرایط زیر `true` است:
 
 - Chrome
-  - : The `--enable-automation` or `--headless` flag is used, or the
-    `--remote-debugging-port` flag specifying port 0 is used.
+  - : پرچم `--enable-automation` یا `--headless` استفاده شود، یا پرچم `--remote-debugging-port` با پورت 0 مشخص شده باشد.
 - Firefox
-  - : The `marionette.enabled` preference or `--marionette` flag is
-    passed.
+  - : تنظیمات (preference) `marionette.enabled` فعال باشد یا پرچم `--marionette` ارسال شود.
 
-## Value
+## مقدار
 
-A {{JSxRef("Boolean")}}
+یک {{JSxRef("Boolean")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
