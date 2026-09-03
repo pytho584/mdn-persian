@@ -1,11 +1,5 @@
 ---
 title: "PreferenceManager: contrast property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PreferenceManager/contrast"
-status: "needs-translation"
----
-
----
-title: "PreferenceManager: contrast property"
 short-title: contrast
 slug: Web/API/PreferenceManager/contrast
 page-type: web-api-instance-property
@@ -17,34 +11,34 @@ spec-urls: https://drafts.csswg.org/mediaqueries-5/#contrast-attribute
 
 {{APIRef("User Preferences API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`contrast`** read-only property of the {{domxref("PreferenceManager")}} interface returns a {{domxref("PreferenceObject")}} used to override the user's preference for the [contrast](/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-contrast) of the site.
+ویژگی فقط خواندنی **`contrast`** از رابط {{domxref("PreferenceManager")}} یک {{domxref("PreferenceObject")}} را برمی‌گرداند که برای نادیده گرفتن ترجیح کاربر برای [کنتراست](/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-contrast) سایت استفاده می‌شود.
 
-Valid `contrast` {{domxref("PreferenceObject.value")}} settings are `more`, `less`, and `no-preference`.
+مقادیر معتبر برای تنظیم `contrast` {{domxref("PreferenceObject.value")}} عبارتند از `more`، `less` و `no-preference`.
 
-## Value
+## مقدار
 
-A {{domxref("PreferenceObject")}} used to override the user's preference for the [contrast](/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-contrast) of the site.
+یک {{domxref("PreferenceObject")}} که برای نادیده گرفتن ترجیح کاربر برای [کنتراست](/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-contrast) سایت استفاده می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
-This example demonstrates how to query the user's contrast preference.
+این مثال نحوه پرس‌وجو از ترجیح کنتراست کاربر را نشان می‌دهد.
 
 ```js
 if (navigator.preferences.contrast.value === "more") {
-  // The user prefers a high color contrast.
+  // کاربر کنتراست رنگی بالا را ترجیح می‌دهد.
 } else if (navigator.preferences.contrast.value === "less") {
-  // The user prefers a low color contrast.
+  // کاربر کنتراست رنگی پایین را ترجیح می‌دهد.
 } else {
-  // The user has stated no preference regarding color contrast.
+  // کاربر هیچ ترجیحی در مورد کنتراست رنگی اعلام نکرده است.
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
