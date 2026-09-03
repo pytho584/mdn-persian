@@ -1,11 +1,5 @@
 ---
 title: "PerformanceNavigationTiming: criticalCHRestart property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceNavigationTiming/criticalCHRestart"
-status: "needs-translation"
----
-
----
-title: "PerformanceNavigationTiming: criticalCHRestart property"
 short-title: criticalCHRestart
 slug: Web/API/PerformanceNavigationTiming/criticalCHRestart
 page-type: web-api-instance-property
@@ -16,42 +10,42 @@ browser-compat: api.PerformanceNavigationTiming.criticalCHRestart
 
 {{APIRef("Performance API")}}{{SeeCompatTable}}
 
-A website can indicate that a particular [Client Hint](/en-US/docs/Web/HTTP/Guides/Client_hints) is critical to the page by including it in a {{HTTPHeader("Critical-CH")}} HTTP response header (as well as the {{HTTPHeader("Accept-CH")}} HTTP request header which is needed for all client hints whether critical or not). Doing so will trigger a connection restart if the hint listed in the `Critical-CH` HTTP response header could have been, but wasn't, included in the HTTP request initially sent. If the browser does not support that client hint, it is ignored and no connection restart occurs.
+یک وب‌سایت می‌تواند با درج یک [Client Hint](/en-US/docs/Web/HTTP/Guides/Client_hints) خاص در هدر پاسخ HTTP {{HTTPHeader("Critical-CH")}} (به همراه هدر درخواست HTTP {{HTTPHeader("Accept-CH")}} که برای همه Client Hint‌ها، چه بحرانی و چه غیربحرانی، لازم است) نشان دهد که آن Client Hint برای صفحه بحرانی است. این کار باعث راه‌اندازی مجدد اتصال (connection restart) می‌شود اگر آن hint که در هدر پاسخ `Critical-CH` فهرست شده می‌توانست در درخواست HTTP اولیه فرستاده شود اما فرستاده نشده بود. اگر مرورگر از آن Client Hint پشتیبانی نکند، نادیده گرفته می‌شود و راه‌اندازی مجدد اتصال رخ نمی‌دهد.
 
-The **`criticalCHRestart`** read-only property represents the time at which the connection restart occurred.
+خاصیت فقط خواندنی **`criticalCHRestart`** زمان وقوع راه‌اندازی مجدد اتصال را نشان می‌دهد.
 
-## Value
+## مقدار
 
-A {{domxref("DOMHighResTimeStamp")}} representing the number of milliseconds elapsed since {{domxref("PerformanceEntry.startTime")}} when the connection restart occurred in milliseconds.
+یک {{domxref("DOMHighResTimeStamp")}} که تعداد میلی‌ثانیه‌های سپری‌شده از {{domxref("PerformanceEntry.startTime")}} تا زمان وقوع راه‌اندازی مجدد اتصال را بر حسب میلی‌ثانیه نشان می‌دهد.
 
-If the value is `0` the connection was not restarted.
+اگر مقدار `0` باشد، اتصال راه‌اندازی مجدد نشده است.
 
-## Examples
+## مثال‌ها
 
-### Detecting connection restart pages
+### تشخیص صفحاتی که راه‌اندازی مجدد اتصال داشته‌اند
 
-The following JavaScript can be used to see if the connection was restarted:
+کد جاوااسکریپت زیر می‌تواند برای بررسی اینکه آیا اتصال راه‌اندازی مجدد شده است استفاده شود:
 
 ```js
 const restartTime =
   performance?.getEntriesByType?.("navigation")[0]?.criticalCHRestart;
 if (restartTime > 0) {
-  console.log("Time at which connection restart happened:", restartTime);
+  console.log("زمان وقوع راه‌اندازی مجدد اتصال:", restartTime);
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Client hints](/en-US/docs/Web/HTTP/Guides/Client_hints)
 - [User-Agent Client Hints API](/en-US/docs/Web/API/User-Agent_Client_Hints_API)
-- [Improving user privacy and developer experience with User-Agent Client Hints](https://developer.chrome.com/docs/privacy-security/user-agent-client-hints) (developer.chrome.com)
+- [بهبود حریم خصوصی کاربر و تجربه توسعه‌دهنده با User-Agent Client Hints](https://developer.chrome.com/docs/privacy-security/user-agent-client-hints) (developer.chrome.com)
 - {{HTTPHeader("Accept-CH")}}
 - {{HTTPHeader("Critical-CH")}}
