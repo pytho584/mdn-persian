@@ -1,7 +1,5 @@
 ---
 title: "PaymentAddress: dependentLocality property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaymentAddress/dependentLocality"
-status: "needs-translation"
 ---
 
 ---
@@ -17,23 +15,13 @@ browser-compat: api.PaymentAddress.dependentLocality
 
 {{APIRef("Payment Request API")}}{{SecureContext_Header}}{{Deprecated_Header}}{{Non-standard_Header}}
 
-The read-only **`dependentLocality`**
-property of the {{domxref('PaymentAddress')}} interface is a string containing a
-sublocality designation within a city, such as a neighborhood, borough, district, or,
-in the United Kingdom, a dependent locality. Also known as a _post
-town_.
+ویژگی فقط‌خواندنی **`dependentLocality`** از رابط {{domxref('PaymentAddress')}} رشته‌ای (string) است که شامل نام زیرمحله‌ای (sublocality) درون یک شهر می‌شود؛ مانند محله (neighborhood)، ناحیهٔ شهری (borough)، منطقه (district) یا در بریتانیا، محلهٔ وابسته (dependent locality). این ویژگی با نام _post town_ (شهر پستی) نیز شناخته می‌شود.
 
 ## Value
 
-A string indicating the sublocality portion of the address. This may
-be an empty string if no sublocality is available or required. It's used to provide
-disambiguation when a city may include areas that duplicate street names
+رشته‌ای که بخش زیرمحلهٔ آدرس را نشان می‌دهد. اگر زیرمحله‌ای در دسترس نباشد یا به آن نیازی نباشد، این مقدار ممکن است یک رشتهٔ خالی باشد. از این ویژگی برای رفع ابهام استفاده می‌شود؛ زمانی که شهری ممکن است مناطقی داشته باشد که نام خیابان‌ها در آن‌ها تکراری است.
 
-A sublocality is an area within a city, such as a neighborhood, borough, or district.
-In the United Kingdom, this is used to indicate the **post town** in the
-United Kingdom (known officially by the Royal Mail as the **dependent
-locality**). This is a disambiguating feature of addresses in places where a
-city may have areas that duplicate street names.
+زیرمحله، ناحیه‌ای درون یک شهر است؛ مانند محله، ناحیهٔ شهری یا منطقه. در بریتانیا، از این ویژگی برای اشاره به **post town** (شهر پستی) استفاده می‌شود؛ اصطلاحی که رویال میل (Royal Mail) رسماً آن را **dependent locality** (محلهٔ وابسته) می‌نامد. این یک ویژگی ابهام‌زدا برای آدرس‌ها در مکان‌هایی است که شهری ممکن است مناطقی با نام خیابان‌های تکراری داشته باشد.
 
 ## Browser compatibility
 
