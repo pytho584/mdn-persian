@@ -1,10 +1,4 @@
 ---
-title: "PointerEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent"
-status: "needs-translation"
----
-
----
 title: PointerEvent
 slug: Web/API/PointerEvent
 page-type: web-api-interface
@@ -13,105 +7,105 @@ browser-compat: api.PointerEvent
 
 {{ APIRef("Pointer Events") }}
 
-The **`PointerEvent`** interface represents the state of a DOM event produced by a pointer such as the geometry of the contact point, the device type that generated the event, the amount of pressure that was applied on the contact surface, etc.
+رابط `PointerEvent` وضعیت یک رویداد DOM را نشان می‌دهد که توسط یک اشاره‌گر تولید شده است؛ مانند هندسهٔ نقطهٔ تماس، نوع دستگاهی که رویداد را ایجاد کرده، میزان فشاری که روی سطح تماس اعمال شده و موارد دیگر.
 
-A _pointer_ is a hardware agnostic representation of input devices (such as a mouse, pen or contact point on a touch-enable surface). The pointer can target a specific coordinate (or set of coordinates) on the contact surface such as a screen.
+یک «اشاره‌گر» بازنمایی مستقل از سخت‌افزارِ دستگاه‌های ورودی (مانند ماوس، قلم یا نقطهٔ تماس روی یک سطح لمسی) است. اشاره‌گر می‌تواند یک مختصات مشخص (یا مجموعه‌ای از مختصات) را روی سطح تماس، مانند صفحهٔ نمایش، هدف بگیرد.
 
-A pointer's _hit test_ is the process a browser uses to determine the target element for a pointer event. Typically, this is determined by considering the pointer's location and also the visual layout of elements in a document on screen media.
+«آزمون برخورد» (hit test) یک اشاره‌گر، فرایندی است که مرورگر با آن عنصر هدف را برای یک رویداد اشاره‌گر تعیین می‌کند. معمولاً این هدف با در نظر گرفتن مکان اشاره‌گر و همچنین چیدمان بصری عناصر موجود در سند روی رسانهٔ صفحه تعیین می‌شود.
 
 {{InheritanceDiagram}}
 
-## Constructors
+## سازنده‌ها
 
 - {{domxref("PointerEvent.PointerEvent", "PointerEvent()")}}
-  - : Creates a synthetic—and untrusted—`PointerEvent`.
+  - : یک `PointerEvent` ساختگی و غیرقابل‌اعتماد ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface inherits properties from {{domxref("MouseEvent")}} and {{domxref("Event")}}._
+_این رابط ویژگی‌های {{domxref("MouseEvent")}} و {{domxref("Event")}} را به ارث می‌برد._
 
 - {{domxref('PointerEvent.altitudeAngle')}} {{ReadOnlyInline}}
-  - : Represents the angle between a transducer (a pointer or stylus) axis and the X-Y plane of a device screen.
+  - : زاویهٔ بین محور یک مبدل (اشاره‌گر یا قلم) و صفحهٔ XY دستگاه نمایشگر را نشان می‌دهد.
 - {{domxref('PointerEvent.azimuthAngle')}} {{ReadOnlyInline}}
-  - : Represents the angle between the Y-Z plane and the plane containing both the transducer (a pointer or stylus) axis and the Y axis.
+  - : زاویهٔ بین صفحهٔ Y-Z و صفحه‌ای را نشان می‌دهد که هم محور مبدل (اشاره‌گر یا قلم) و هم محور Y را در بر می‌گیرد.
 - {{domxref('PointerEvent.persistentDeviceId')}} {{ReadOnlyInline}}
-  - : A unique identifier for the pointing device generating the `PointerEvent`.
+  - : شناسهٔ یکتای دستگاه اشاره‌گری که رویداد `PointerEvent` را تولید می‌کند.
 - {{domxref('PointerEvent.pointerId')}} {{ReadOnlyInline}}
-  - : A unique identifier for the pointer causing the event.
+  - : شناسهٔ یکتای اشاره‌گری که رویداد را سبب شده است.
 - {{domxref('PointerEvent.width')}} {{ReadOnlyInline}}
-  - : The width (magnitude on the X axis), in CSS pixels, of the contact geometry of the pointer.
+  - : عرض (بزرگی در راستای محور X) هندسهٔ تماس اشاره‌گر، برحسب پیکسل CSS.
 - {{domxref('PointerEvent.height')}} {{ReadOnlyInline}}
-  - : The height (magnitude on the Y axis), in CSS pixels, of the contact geometry of the pointer.
+  - : ارتفاع (بزرگی در راستای محور Y) هندسهٔ تماس اشاره‌گر، برحسب پیکسل CSS.
 - {{domxref('PointerEvent.pressure')}} {{ReadOnlyInline}}
-  - : The normalized pressure of the pointer input in the range `0` to `1`, where `0` and `1` represent the minimum and maximum pressure the hardware is capable of detecting, respectively.
+  - : فشار نرمال‌شدهٔ ورودی اشاره‌گر در بازهٔ ۰ تا ۱؛ که در آن ۰ و ۱ به‌ترتیب نشان‌دهندهٔ کمترین و بیشترین فشاری هستند که سخت‌افزار قادر به تشخیص آن است.
 - {{domxref('PointerEvent.tangentialPressure')}} {{ReadOnlyInline}}
-  - : The normalized tangential pressure of the pointer input (also known as barrel pressure or [cylinder stress](https://en.wikipedia.org/wiki/Cylinder_stress)) in the range `-1` to `1`, where `0` is the neutral position of the control.
+  - : فشار مماسیِ نرمال‌شدهٔ ورودی اشاره‌گر (که با نام فشار بشکه‌ای یا [تنش استوانه‌ای](https://en.wikipedia.org/wiki/Cylinder_stress) نیز شناخته می‌شود) در بازهٔ منفی ۱ تا ۱؛ مقدار ۰ حالت خنثی کنترل است.
 - {{domxref('PointerEvent.tiltX')}} {{ReadOnlyInline}}
-  - : The plane angle (in degrees, in the range of `-90` to `90`) between the Y–Z plane and the plane containing both the pointer (e.g., pen stylus) axis and the Y axis.
+  - : زاویهٔ صفحه‌ای (برحسب درجه، در بازهٔ منفی ۹۰ تا ۹۰) بین صفحهٔ Y–Z و صفحه‌ای که هم محور اشاره‌گر (مثلاً قلم) و هم محور Y را در بر می‌گیرد.
 - {{domxref('PointerEvent.tiltY')}} {{ReadOnlyInline}}
-  - : The plane angle (in degrees, in the range of `-90` to `90`) between the X–Z plane and the plane containing both the pointer (e.g., pen stylus) axis and the X axis.
+  - : زاویهٔ صفحه‌ای (برحسب درجه، در بازهٔ منفی ۹۰ تا ۹۰) بین صفحهٔ X–Z و صفحه‌ای که هم محور اشاره‌گر (مثلاً قلم) و هم محور X را در بر می‌گیرد.
 - {{domxref('PointerEvent.twist')}} {{ReadOnlyInline}}
-  - : The clockwise rotation of the pointer (e.g., pen stylus) around its major axis in degrees, with a value in the range `0` to `359`.
+  - : چرخش ساعت‌گرد اشاره‌گر (مثلاً قلم) به دور محور اصلی آن برحسب درجه، با مقداری در بازهٔ ۰ تا ۳۵۹.
 - {{domxref('PointerEvent.pointerType')}} {{ReadOnlyInline}}
-  - : Indicates the device type that caused the event (mouse, pen, touch, etc.).
+  - : نوع دستگاهی را نشان می‌دهد که رویداد را سبب شده است (ماوس، قلم، لمس و غیره).
 - {{domxref('PointerEvent.isPrimary')}} {{ReadOnlyInline}}
-  - : Indicates if the pointer represents the primary pointer of this pointer type.
+  - : نشان می‌دهد که آیا این اشاره‌گر، اشاره‌گر اصلیِ این نوع اشاره‌گر است.
 
-## Instance methods
+## متدهای نمونه
 
 - {{DOMxRef('PointerEvent.getCoalescedEvents()')}} {{SecureContext_Inline}}
-  - : Returns a sequence of all `PointerEvent` instances that were coalesced into the dispatched {{domxref("Element/pointermove_event", "pointermove")}} event.
+  - : دنباله‌ای از همهٔ نمونه‌های `PointerEvent` را برمی‌گرداند که در رویداد `pointermove` منتشرشده ادغام شده‌اند.
 - {{DOMxRef('PointerEvent.getPredictedEvents()')}}
-  - : Returns a sequence of `PointerEvent` instances that the browser predicts will follow the dispatched {{domxref("Element/pointermove_event", "pointermove")}} event's coalesced events.
+  - : دنباله‌ای از نمونه‌های `PointerEvent` را برمی‌گرداند که مرورگر پیش‌بینی می‌کند پس از رویدادهای ادغام‌شدهٔ رویداد `pointermove` منتشرشده رخ خواهند داد.
 
-## Pointer event types
+## انواع رویداد اشاره‌گر
 
-The `PointerEvent` interface has several event types. To determine which event fired, look at the event's {{domxref("Event.type", "type")}} property.
+رابط `PointerEvent` چند نوع رویداد دارد. برای تعیین اینکه کدام رویداد رخ داده است، به ویژگی {{domxref("Event.type", "type")}} رویداد نگاه کنید.
 
 > [!NOTE]
-> It's important to note that in many cases, both pointer and mouse events get sent (in order to let non-pointer-specific code still interact with the user). If you use pointer events, you should call {{domxref("Event.preventDefault()", "preventDefault()")}} to keep the mouse event from being sent as well.
+> توجه به این نکته مهم است که در بسیاری از موارد، هم رویدادهای اشاره‌گر و هم رویدادهای ماوس ارسال می‌شوند (تا کدهایی که مختص به رویدادهای اشاره‌گر نیستند همچنان بتوانند با کاربر تعامل کنند). اگر از رویدادهای اشاره‌گر استفاده می‌کنید، باید {{domxref("Event.preventDefault()", "preventDefault()")}} را فراخوانی کنید تا از ارسال هم‌زمان رویداد ماوس نیز جلوگیری شود.
 
 - {{domxref('Element/pointerover_event', 'pointerover')}}
-  - : This event is fired when a pointing device is moved into an element's hit test boundaries.
+  - : این رویداد زمانی شلیک می‌شود که یک دستگاه اشاره‌گر به درون مرزهای آزمون برخورد یک عنصر منتقل شود.
 - {{domxref('Element/pointerenter_event', 'pointerenter')}}
-  - : This event is fired when a pointing device is moved into the hit test boundaries of an element or one of its descendants, including as a result of a `pointerdown` event from a device that does not support hover (see `pointerdown`). This event type is similar to `pointerover`, but differs in that it does not bubble.
+  - : این رویداد زمانی شلیک می‌شود که یک دستگاه اشاره‌گر به درون مرزهای آزمون برخورد یک عنصر یا یکی از فرزندان آن منتقل شود، از جمله در نتیجهٔ رویداد `pointerdown` از دستگاهی که از حالت شناور (hover) پشتیبانی نمی‌کند (به `pointerdown` مراجعه کنید). این نوع رویداد مشابه `pointerover` است، اما برخلاف آن، حباب نمی‌زند.
 - {{domxref('Element/pointerdown_event', 'pointerdown')}}
-  - : The event is fired when a pointer becomes _active_. For mouse, it is fired when the device transitions from no buttons pressed to at least one button pressed. For touch, it is fired when physical contact is made with the digitizer. For pen, it is fired when the stylus makes physical contact with the digitizer.
+  - : این رویداد زمانی شلیک می‌شود که یک اشاره‌گر _فعال_ می‌شود. برای ماوس، زمانی شلیک می‌شود که دستگاه از حالت بدون فشردن هیچ دکمه‌ای به حالت فشردن حداقل یک دکمه تغییر وضعیت دهد. برای لمس، زمانی شلیک می‌شود که تماس فیزیکی با دیجیتایزر برقرار شود. برای قلم، زمانی شلیک می‌شود که قلم با دیجیتایزر تماس فیزیکی برقرار کند.
 
     > [!NOTE]
-    > For touchscreen browsers that allow [direct manipulation](https://w3c.github.io/pointerevents/#dfn-direct-manipulation), a `pointerdown` event triggers [implicit pointer capture](https://w3c.github.io/pointerevents/#dfn-implicit-pointer-capture), which causes the target to capture all subsequent pointer events as if they were occurring over the capturing target. Accordingly, `pointerover`, `pointerenter`, `pointerleave`, and `pointerout` **will not fire** as long as this capture is set. The capture can be released manually by calling {{ domxref('element.releasePointerCapture') }} on the target element, or it will be implicitly released after a `pointerup` or `pointercancel` event.
+    > در مرورگرهای لمسی که [دستکاری مستقیم](https://w3c.github.io/pointerevents/#dfn-direct-manipulation) را پشتیبانی می‌کنند، رویداد `pointerdown` باعث [گرفتن ضمنی اشاره‌گر](https://w3c.github.io/pointerevents/#dfn-implicit-pointer-capture) می‌شود؛ در نتیجه هدف، تمام رویدادهای اشاره‌گر بعدی را چنان دریافت می‌کند که گویی روی همان هدفِ دریافت‌کننده رخ داده‌اند. بنابراین تا وقتی این دریافت فعال است، رویدادهای `pointerover`، `pointerenter`، `pointerleave` و `pointerout` **شلیک نخواهند شد**. این دریافت را می‌توان به‌صورت دستی با فراخوانی {{ domxref('element.releasePointerCapture') }} روی عنصر هدف آزاد کرد؛ همچنین پس از رویداد `pointerup` یا `pointercancel` به‌طور ضمنی آزاد می‌شود.
 
 - {{domxref('Element/pointermove_event', 'pointermove')}}
-  - : This event is fired when a pointer changes coordinates.
+  - : این رویداد زمانی شلیک می‌شود که مختصات یک اشاره‌گر تغییر کند.
 - {{domxref('Element/pointerrawupdate_event', 'pointerrawupdate')}} {{experimental_inline}}
-  - : This event is fired when any of a pointer's properties change.
+  - : این رویداد زمانی شلیک می‌شود که هر یک از ویژگی‌های یک اشاره‌گر تغییر کند.
 - {{domxref('Element/pointerup_event', 'pointerup')}}
-  - : This event is fired when a pointer is no longer _active_.
+  - : این رویداد زمانی شلیک می‌شود که یک اشاره‌گر دیگر _فعال_ نباشد.
 - {{domxref('Element/pointercancel_event', 'pointercancel')}}
-  - : A browser fires this event if it concludes the pointer will no longer be able to generate events (for example the related device is deactivated).
+  - : مرورگر این رویداد را شلیک می‌کند اگر به این نتیجه برسد که اشاره‌گر دیگر قادر به تولید رویداد نخواهد بود (مثلاً دستگاه مربوطه غیرفعال شده باشد).
 - {{domxref('Element/pointerout_event', 'pointerout')}}
-  - : This event is fired for several reasons including: pointing device is moved out of the hit test boundaries of an element; firing the `pointerup` event for a device that does not support hover (see `pointerup`); after firing the `pointercancel` event (see `pointercancel`); when a pen stylus leaves the hover range detectable by the digitizer.
+  - : این رویداد به دلایل متعددی شلیک می‌شود، از جمله: خارج شدن دستگاه اشاره‌گر از مرزهای آزمون برخورد یک عنصر؛ شلیک رویداد `pointerup` برای دستگاهی که از حالت شناور پشتیبانی نمی‌کند (به `pointerup` مراجعه کنید)؛ پس از شلیک رویداد `pointercancel` (به `pointercancel` مراجعه کنید)؛ و زمانی که قلم از محدودهٔ شناوری قابل‌تشخیص توسط دیجیتایزر خارج شود.
 - {{domxref('Element/pointerleave_event', 'pointerleave')}}
-  - : This event is fired when a pointing device is moved out of the hit test boundaries of an element. For pen devices, this event is fired when the stylus leaves the hover range detectable by the digitizer.
+  - : این رویداد زمانی شلیک می‌شود که یک دستگاه اشاره‌گر از مرزهای آزمون برخورد یک عنصر خارج شود. برای دستگاه‌های قلم، این رویداد زمانی شلیک می‌شود که قلم از محدودهٔ شناوری قابل‌تشخیص توسط دیجیتایزر خارج شود.
 - {{domxref('Element/gotpointercapture_event', 'gotpointercapture')}}
-  - : This event is fired when an element receives pointer capture.
+  - : این رویداد زمانی شلیک می‌شود که یک عنصر، گرفتن اشاره‌گر را دریافت کند.
 - {{domxref('Element/lostpointercapture_event', 'lostpointercapture')}}
-  - : This event is fired after pointer capture is released for a pointer.
+  - : این رویداد پس از آزاد شدن گرفتن اشاره‌گر برای یک اشاره‌گر شلیک می‌شود.
 
-## Example
+## مثال
 
-Examples of each property, event type, and global event handler are included in their respective reference pages.
+نمونه‌هایی از هر ویژگی، نوع رویداد و کنترل‌کنندهٔ رویداد سراسری در صفحات مرجع مربوط به آن‌ها ارائه شده است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Touch events](/en-US/docs/Web/API/Touch_events)
+- [رویدادهای لمسی](/en-US/docs/Web/API/Touch_events)
 - {{domxref("GestureEvent")}}
 - {{cssxref("touch-action")}}
