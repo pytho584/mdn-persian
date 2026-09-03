@@ -1,11 +1,5 @@
 ---
 title: "PaymentRequestUpdateEvent: updateWith() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestUpdateEvent/updateWith"
-status: "needs-translation"
----
-
----
-title: "PaymentRequestUpdateEvent: updateWith() method"
 short-title: updateWith()
 slug: Web/API/PaymentRequestUpdateEvent/updateWith
 page-type: web-api-instance-method
@@ -14,56 +8,54 @@ browser-compat: api.PaymentRequestUpdateEvent.updateWith
 
 {{APIRef("Payment Request API")}}{{securecontext_header}}
 
-The **`updateWith()`** method of the
-{{domxref("PaymentRequestUpdateEvent")}} interface updates the details of an existing
-{{domxref("PaymentRequest")}}.
+متد **`updateWith()`** از رابط {{domxref("PaymentRequestUpdateEvent")}}، جزئیات یک {{domxref("PaymentRequest")}} موجود را به‌روزرسانی می‌کند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 updateWith(details)
 ```
 
-### Parameters
+### پارامترها
 
 - `details`
-  - : Either an object or a {{jsxref("Promise")}} that resolves to an object, specifying the changes applied to the payment request:
+  - : یک شیء یا یک {{jsxref("Promise")}} که به یک شیء resolve می‌شود و تغییرات اعمال‌شده به درخواست پرداخت را مشخص می‌کند:
     - `displayItems` {{optional_inline}}
-      - : An array of objects, each describing one line item for the payment request. These represent the line items on a receipt or invoice, each with the following properties:
+      - : آرایه‌ای از اشیاء که هر کدام یک آیتم ردیف (line item) برای درخواست پرداخت را توصیف می‌کند. این اشیاء بیانگر ردیف‌های یک رسید یا فاکتور هستند و هر کدام ویژگی‌های زیر را دارند:
         - `amount`
-          - : An object describing the monetary value of the item. This object includes the following fields:
+          - : شیئی که ارزش پولی آیتم را توصیف می‌کند. این شیء شامل فیلدهای زیر است:
             - `currency`
-              - : A string containing a valid 3-letter [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html) currency identifier ([ISO 4217](https://en.wikipedia.org/wiki/ISO_4217)) indicating the currency used for the payment `value`.
+              - : رشته‌ای حاوی شناسهٔ ارز معتبر سه‌حرفی [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html) (استاندارد [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217)) که ارز مورد استفاده برای `value` پرداخت را نشان می‌دهد.
             - `value`
-              - : A string containing a valid decimal value representing the mount of currency constituting the payment amount. This string must only contain an optional leading "-" to indicate a negative value, then one or more digits from 0 to 9, and an optional decimal point (".", regardless of locale) followed by at least one more digit. No whitespace is permitted.
+              - : رشته‌ای حاوی مقدار اعشاری معتبر که مقدار پول تشکیل‌دهندهٔ مبلغ پرداخت را نشان می‌دهد. این رشته فقط می‌تواند شامل یک «-» اختیاری در ابتدا برای نشان دادن مقدار منفی، سپس یک یا چند رقم از 0 تا 9، و یک نقطهٔ اعشار اختیاری (".", بدون توجه به locale) باشد که پس از آن حداقل یک رقم دیگر بیاید. هیچ فاصلهٔ خالی (whitespace) مجاز نیست.
         - `label`
-          - : A string specifying a human-readable name or description of the item or service being charged for. This may be displayed to the user by the {{Glossary("user agent")}}, depending on the design of the interface.
+          - : رشته‌ای که نام یا توضیح قابل‌خواندن برای انسان از آیتم یا خدمتی که برای آن هزینه دریافت می‌شود را مشخص می‌کند. این مقدار ممکن است بسته به طراحی رابط توسط {{Glossary("user agent")}} به کاربر نمایش داده شود.
         - `pending`
-          - : A Boolean value which is `true` if the specified `amount` has not yet been finalized. This can be used to show items such as shipping or tax amounts that depend upon the selection of shipping address, shipping option, or so forth. The user agent may show this information but is not required to do so.
+          - : یک مقدار بولی که اگر `amount` مشخص‌شده هنوز نهایی نشده باشد، `true` است. می‌توان از آن برای نمایش مواردی مانند هزینهٔ حمل یا مالیات استفاده کرد که به انتخاب آدرس حمل، گزینهٔ حمل و مانند آن بستگی دارند. {{Glossary("user agent")}} ممکن است این اطلاعات را نمایش دهد، اما الزامی به این کار ندارد.
 
     - `error` {{optional_inline}} {{deprecated_inline}} {{non-standard_inline}}
-      - : A string specifying an error message to present to the user. When calling `updateWith()`, including `error` in the updated data causes the {{Glossary("user agent")}} to display the text as a general error message. For address field-specific errors, use the `shippingAddressErrors` field.
+      - : رشته‌ای که پیام خطایی را برای نمایش به کاربر مشخص می‌کند. هنگام فراخوانی `updateWith()`، گنجاندن `error` در داده‌های به‌روزشده باعث می‌شود {{Glossary("user agent")}} متن را به‌عنوان یک پیام خطای عمومی نمایش دهد. برای خطاهای مربوط به فیلد خاصی از آدرس، از فیلد `shippingAddressErrors` استفاده کنید.
 
     - `modifiers` {{optional_inline}}
-      - : An {{jsxref("Array")}} of `PaymentDetailsModifier` objects, whose properties are described in {{domxref("PaymentRequestEvent.modifiers")}}.
+      - : یک {{jsxref("Array")}} از اشیاء `PaymentDetailsModifier` که ویژگی‌های آن‌ها در {{domxref("PaymentRequestEvent.modifiers")}} توضیح داده شده است.
 
-        For example, you can use one to adjust the total payment amount based on the selected payment method ("5% cash discount!").
+        مثلاً می‌توانید از آن برای تنظیم مبلغ کل پرداخت بر اساس روش پرداخت انتخاب‌شده استفاده کنید («۵٪ تخفیف نقدی!»).
 
     - `shippingAddressErrors` {{optional_inline}} {{deprecated_inline}} {{non-standard_inline}}
-      - : An object which includes an error message for each property of the shipping address that could not be validated.
+      - : شیئی که برای هر ویژگی از آدرس حمل که نتوانسته اعتبارسنجی شود، یک پیام خطا در بر می‌گیرد.
     - `shippingOptions` {{optional_inline}} {{deprecated_inline}} {{non-standard_inline}}
-      - : An array of objects, each describing one available shipping option from which the user may choose.
+      - : آرایه‌ای از اشیاء که هر کدام یکی از گزینه‌های حمل موجود را که کاربر می‌تواند از بین آن‌ها انتخاب کند، توصیف می‌کند.
     - `total` {{optional_inline}}
-      - : An object with the same properties as the objects in `displayItems` providing an updated total for the payment. Make sure this equals the sum of all of the items in `displayItems`. _This is not calculated automatically_. You must update this value yourself anytime the total amount due changes. This lets you have flexibility for how to handle things like tax, discounts, and other adjustments to the total price charged.
+      - : شیئی با همان ویژگی‌های اشیاء موجود در `displayItems` که مبلغ کل به‌روزشدهٔ پرداخت را فراهم می‌کند. مطمئن شوید که این مقدار با مجموع همهٔ آیتم‌های `displayItems` برابر است. _این مقدار به‌صورت خودکار محاسبه نمی‌شود_. هر زمان که مبلغ کل قابل‌پرداخت تغییر کند، باید این مقدار را خودتان به‌روزرسانی کنید. این امر به شما امکان می‌دهد برای مدیریت مواردی مانند مالیات، تخفیف‌ها و سایر تعدیل‌های قیمت کل انعطاف‌پذیری داشته باشید.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
