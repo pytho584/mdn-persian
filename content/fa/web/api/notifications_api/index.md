@@ -1,10 +1,4 @@
 ---
-title: "Notifications API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API"
-status: "needs-translation"
----
-
----
 title: Notifications API
 slug: Web/API/Notifications_API
 page-type: web-api-overview
@@ -17,36 +11,32 @@ spec-urls: https://notifications.spec.whatwg.org/
 
 {{DefaultAPISidebar("Web Notifications")}}{{securecontext_header}} {{AvailableInWorkers}}
 
-The Notifications API allows web pages to control the display of system notifications to the end user.
+API اعلان‌ها (Notifications API) به صفحات وب اجازه می‌دهد نمایش اعلان‌های سیستمی را برای کاربر نهایی کنترل کنند.
 
-## Concepts and usage
+## مفاهیم و کاربرد
 
-A web notification is a message box used to inform users when events occur on web apps. Web notifications are rendered by the operating system's native notification system, making them display identically to notifications from any other app on the platform.
-Because the underlying OS renders web notifications, they are outside the top-level browsing context viewport, and can be shown even when the user has switched tabs or moved to a different app.
+اعلان وب، جعبهٔ پیامی است که برای اطلاع‌رسانی به کاربران هنگام وقوع رویدادها در برنامه‌های وب استفاده می‌شود. اعلان‌های وب توسط سیستم اعلان بومیِ سیستم عامل نمایش داده می‌شوند، بنابراین دقیقاً همانند اعلان‌های هر برنامهٔ دیگری روی همان پلتفرم نمایش داده می‌شوند. از آنجا که سیستم عاملِ زیرین اعلان‌های وب را رندر می‌کند، این اعلان‌ها خارج از viewport (نمای دید) زمینهٔ مرور سطح بالا قرار دارند و حتی زمانی که کاربر تب را عوض کرده یا به برنامهٔ دیگری رفته باشد نیز می‌توانند نمایش داده شوند.
 
-### Persistent and non-persistent notifications
+### اعلان‌های ماندگار و غیرماندگار
 
-The Notifications API supports two types of notifications:
+API اعلان‌ها از دو نوع اعلان پشتیبانی می‌کند:
 
-- **Non-persistent notifications** are created in a browsing context, such as a web page or tab.
-  Their lifetime is tied to the lifetime of the page — if the page is closed, the notification can no longer be interacted with.
+- **اعلان‌های غیرماندگار** در یک زمینهٔ مرور، مانند یک صفحهٔ وب یا تب، ایجاد می‌شوند.
+  طول عمر آن‌ها به طول عمر صفحه وابسته است — اگر صفحه بسته شود، دیگر نمی‌توان با اعلان تعامل کرد.
 
-  They are created using the {{domxref("Notification.Notification","Notification()")}} constructor and fire events such as {{domxref("Notification/click_event", "click")}} directly on the `Notification` instance.
+  آن‌ها با استفاده از سازندهٔ {{domxref("Notification.Notification","Notification()")}} ایجاد می‌شوند و رویدادهایی مانند {{domxref("Notification/click_event", "click")}} را مستقیماً روی نمونهٔ `Notification` صادر می‌کنند.
 
-- **Persistent notifications** are created from a service worker, and can remain interactive beyond the lifetime of an individual page.
+- **اعلان‌های ماندگار** از یک service worker ایجاد می‌شوند و می‌توانند فراتر از طول عمر یک صفحهٔ مشخص، تعامل‌پذیر باقی بمانند.
 
-  They are created by calling {{domxref("ServiceWorkerRegistration.showNotification()")}} from inside a service worker and fire {{domxref("ServiceWorkerGlobalScope/notificationclick_event", "notificationclick")}} and {{domxref("ServiceWorkerGlobalScope/notificationclose_event", "notificationclose")}} events on the {{domxref("ServiceWorkerGlobalScope")}}.
+  آن‌ها با فراخوانی {{domxref("ServiceWorkerRegistration.showNotification()")}} از داخل یک service worker ایجاد می‌شوند و رویدادهای {{domxref("ServiceWorkerGlobalScope/notificationclick_event", "notificationclick")}} و {{domxref("ServiceWorkerGlobalScope/notificationclose_event", "notificationclose")}} را روی {{domxref("ServiceWorkerGlobalScope")}} صادر می‌کنند.
 
 > [!NOTE]
-> If your code needs to run on mobile devices then you **must** use persistent notifications!
-> The {{domxref("Notification.Notification","Notification()")}} constructor will throw a {{jsxref("TypeError")}} on most mobile browsers.
+> اگر کد شما باید روی دستگاه‌های همراه اجرا شود، **باید** از اعلان‌های ماندگار استفاده کنید!
+> سازندهٔ {{domxref("Notification.Notification","Notification()")}} در بیشتر مرورگرهای موبایل یک {{jsxref("TypeError")}} پرتاب می‌کند.
 
-### Notifications require user permission
+### اعلان‌ها به اجازهٔ کاربر نیاز دارند
 
-In order to use notifications, the user needs to grant the current origin permission to display system notifications.
-This is generally done when the app or site initializes, using the {{domxref("Notification.requestPermission_static", "Notification.requestPermission()")}} method.
-This method should only be called when handling a user gesture, such as when handling a mouse click.
-For example:
+برای استفاده از اعلان‌ها، کاربر باید به مبدأِ فعلی اجازه دهد که اعلان‌های سیستمی را نمایش دهد. این کار معمولاً هنگام راه‌اندازی برنامه یا سایت، با استفاده از متد {{domxref("Notification.requestPermission_static", "Notification.requestPermission()")}} انجام می‌شود. این متد فقط باید هنگام رسیدگی به یک ژست کاربر (مانند رسیدگی به کلیک ماوس) فراخوانی شود. برای مثال:
 
 ```js
 btn.addEventListener("click", () => {
@@ -55,19 +45,17 @@ btn.addEventListener("click", () => {
 });
 ```
 
-This will spawn a request dialog, along the following lines:
+این کار یک کادر گفت‌وگوی درخواست را نمایش می‌دهد، تقریباً به این شکل:
 
-![A dialog box asking the user to allow notifications from that origin. There are options to never allow or allow notifications.](screen_shot_2019-12-11_at_9.59.14_am.png)
+![کادر گفتگویی که از کاربر می‌خواهد نمایش اعلان‌ها از آن مبدأ را مجاز کند؛ با گزینه‌های «هرگز اجازه نده» و «اجازه دادن به اعلان‌ها».](screen_shot_2019-12-11_at_9.59.14_am.png)
 
-From here the user can choose to allow notifications from this origin, or block them.
-Once a choice has been made, the setting will generally persist for the current session.
+کاربر از این‌جا می‌تواند انتخاب کند که به اعلان‌ها از این مبدأ اجازه دهد یا آن‌ها را مسدود کند. پس از انتخاب، این تنظیم معمولاً برای جلسهٔ جاری حفظ می‌شود.
 
-### Notification display and handling
+### نمایش و مدیریت اعلان‌ها
 
-Notifications are created using the {{domxref("Notification.Notification","Notification()")}} constructor.
-This must be passed a title argument, and can optionally be passed a parameter to specify options such as text direction, body text, icon to display, notification sound to play, and more.
+اعلان‌ها با استفاده از سازندهٔ {{domxref("Notification.Notification","Notification()")}} ایجاد می‌شوند. این سازنده باید یک آرگومان عنوان به آن ارسال شود، و به‌صورت اختیاری می‌توان پارامتری برای مشخص کردن گزینه‌هایی مانند جهت متن، متن بدنه، آیکنی که نمایش داده شود، صدای اعلانی که پخش شود و موارد دیگر به آن ارسال کرد.
 
-For example, the following code shows how you might create a notification that sets the [`navigate`](/en-US/docs/Web/API/Notification/Notification#navigate) option, specifying a URL that will be opened if the notification is accepted (you can also define click handlers to process notification actions).
+برای مثال، کد زیر نشان می‌دهد که چگونه می‌توانید اعلانی ایجاد کنید که گزینهٔ [`navigate`](/en-US/docs/Web/API/Notification/Notification#navigate) را تنظیم می‌کند؛ این گزینه نشانی اینترنتی را تعیین می‌کند که در صورت پذیرفته‌شدن اعلان باز می‌شود (همچنین می‌توانید کنترل‌کننده‌های کلیک را برای پردازش اقدامات اعلان تعریف کنید).
 
 ```js
 if (Notification.permission === "granted") {
@@ -78,35 +66,35 @@ if (Notification.permission === "granted") {
 }
 ```
 
-For more usage examples see [Using the Notifications API](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API).
+برای نمونه‌های کاربرد بیشتر، [استفاده از Notifications API](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API) را ببینید.
 
-## Interfaces
+## رابط‌ها
 
 - {{domxref("Notification")}}
-  - : Defines a notification object.
-    When activated, a non-persistent notification fires a {{domxref("Notification.click_event", "click")}} event, unless a {{domxref("Notification.navigate", "navigate")}} URL is set, in which case the user agent navigates to that URL instead.
+  - : یک شیء اعلان را تعریف می‌کند.
+    هنگام فعال‌شدن، یک اعلان غیرماندگار رویداد {{domxref("Notification.click_event", "click")}} را صادر می‌کند، مگر اینکه یک URL با {{domxref("Notification.navigate", "navigate")}} تنظیم شده باشد، که در این صورت عامل کاربر (user agent) به‌جای آن به آن URL می‌رود.
 - {{domxref("NotificationEvent")}}
-  - : Represents a notification event dispatched on the {{domxref("ServiceWorkerGlobalScope")}} of a {{domxref("ServiceWorker")}}.
+  - : نمایانگر رویداد اعلانی است که روی {{domxref("ServiceWorkerGlobalScope")}} یک {{domxref("ServiceWorker")}} ارسال می‌شود.
 
-### Extensions to other interfaces
+### توسعه‌های رابط‌های دیگر
 
-- {{domxref("ServiceWorkerGlobalScope/notificationclick_event", "notificationclick")}} event
-  - : Occurs when a user clicks on a displayed persistent notification, unless a {{domxref("Notification.navigate", "navigate")}} URL is set.
-- {{domxref("ServiceWorkerGlobalScope/notificationclose_event", "notificationclose")}} event
-  - : Occurs when a user closes a displayed notification.
+- رویداد {{domxref("ServiceWorkerGlobalScope/notificationclick_event", "notificationclick")}}
+  - : هنگامی رخ می‌دهد که کاربر روی یک اعلان ماندگارِ نمایش‌داده‌شده کلیک می‌کند، مگر اینکه یک URL با {{domxref("Notification.navigate", "navigate")}} تنظیم شده باشد.
+- رویداد {{domxref("ServiceWorkerGlobalScope/notificationclose_event", "notificationclose")}}
+  - : هنگامی رخ می‌دهد که کاربر یک اعلان نمایش‌داده‌شده را می‌بندد.
 - {{domxref("ServiceWorkerRegistration.getNotifications()")}}
-  - : Returns a list of the notifications in the order that they were created from the current origin via the current service worker registration.
+  - : فهرستی از اعلان‌ها را به ترتیبی که از مبدأ فعلی و از طریق ثبت (registration) جاریِ service worker ایجاد شده‌اند برمی‌گرداند.
 - {{domxref("ServiceWorkerRegistration.showNotification()")}}
-  - : Displays the notification with the requested title.
+  - : اعلان را با عنوان درخواستی نمایش می‌دهد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Notifications API](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
+- [استفاده از Notifications API](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
