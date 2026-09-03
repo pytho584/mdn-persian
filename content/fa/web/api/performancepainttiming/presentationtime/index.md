@@ -1,11 +1,5 @@
 ---
 title: "PerformancePaintTiming: presentationTime property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformancePaintTiming/presentationTime"
-status: "needs-translation"
----
-
----
-title: "PerformancePaintTiming: presentationTime property"
 short-title: presentationTime
 slug: Web/API/PerformancePaintTiming/presentationTime
 page-type: web-api-instance-property
@@ -14,26 +8,26 @@ browser-compat: api.PerformancePaintTiming.presentationTime
 
 {{APIRef("Performance API")}}
 
-The **`presentationTime`** read-only property of the {{domxref("PerformancePaintTiming")}} interface returns the {{domxref("DOMHighResTimeStamp","timestamp")}} when the painted pixels were actually drawn on the screen.
+**`presentationTime`** خاصیت فقطخواندنی رابط {{domxref("PerformancePaintTiming")}}، {{domxref("DOMHighResTimeStamp","timestamp")}} را هنگامی که پیکسلهای نقاشیشده واقعاً روی صفحه نمایش داده شدند، برمیگرداند.
 
-The `presentationTime` is optional — some browsers may choose always to return `0` or not to expose the value at all. The value is also implementation-dependent — it may differ across browsers that choose to expose it.
+`presentationTime` اختیاری است — برخی مرورگرها ممکن است همیشه `0` برگردانند یا اصلاً مقدار را در دسترس قرار ندهند. این مقدار همچنین به پیادهسازی وابسته است — ممکن است در مرورگرهایی که آن را در دسترس قرار میدهند متفاوت باشد.
 
-## Value
+## مقدار
 
-A {{domxref("DOMHighResTimeStamp")}} or {{jsxref("null")}} if the value is not exposed.
+یک {{domxref("DOMHighResTimeStamp")}} یا {{jsxref("null")}} اگر مقدار در دسترس نباشد.
 
-## Examples
+## مثالها
 
-See [Getting separate paint and presentation timings](/en-US/docs/Web/API/PerformancePaintTiming#getting_separate_paint_and_presentation_timings).
+به [دریافت زمانبندیهای جداگانه paint و presentation](/en-US/docs/Web/API/PerformancePaintTiming#getting_separate_paint_and_presentation_timings) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("PerformancePaintTiming.paintTime")}}
