@@ -1,11 +1,5 @@
 ---
 title: "PublicKeyCredential: id property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredential/id"
-status: "needs-translation"
----
-
----
-title: "PublicKeyCredential: id property"
 short-title: id
 slug: Web/API/PublicKeyCredential/id
 page-type: web-api-instance-property
@@ -14,22 +8,18 @@ browser-compat: api.PublicKeyCredential.id
 
 {{APIRef("Web Authentication API")}}{{securecontext_header}}
 
-The **`id`** read-only property of the
-{{domxref("PublicKeyCredential")}} interface is a string, inherited
-from {{domxref("Credential")}}, which represents the identifier of the current
-`PublicKeyCredential` instance.
+ویژگی فقطخواندنی **`id`** در رابط {{domxref("PublicKeyCredential")}} یک رشته است که از {{domxref("Credential")}} به ارث می‌رسد و نمایانگر شناسهٔ نمونهٔ فعلی `PublicKeyCredential` است.
 
-This property is a [base64url encoded](/en-US/docs/Glossary/Base64) version of {{domxref("PublicKeyCredential.rawId")}}.
+این ویژگی نسخهٔ [کدگذاری‌شده با base64url](/en-US/docs/Glossary/Base64) از {{domxref("PublicKeyCredential.rawId")}} است.
 
 > [!NOTE]
-> This property may only be used in top-level contexts and will
-> not be available in an {{HTMLElement("iframe")}} for example.
+> این ویژگی فقط در زمینه‌های سطح بالا (top-level contexts) قابل استفاده است و برای مثال در یک {{HTMLElement("iframe")}} در دسترس نخواهد بود.
 
-## Value
+## مقدار
 
-A string being the [base64url encoded](/en-US/docs/Glossary/Base64) version of {{domxref("PublicKeyCredential.rawId")}}.
+یک رشته که نسخهٔ [کدگذاری‌شده با base64url](/en-US/docs/Glossary/Base64) از {{domxref("PublicKeyCredential.rawId")}} است.
 
-## Examples
+## مثال‌ها
 
 ```js
 const publicKey = {
@@ -66,14 +56,14 @@ navigator.credentials
   });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Credential.id")}}
