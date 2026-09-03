@@ -1,11 +1,5 @@
 ---
 title: "PerformanceResourceTiming: transferSize property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceResourceTiming/transferSize"
-status: "needs-translation"
----
-
----
-title: "PerformanceResourceTiming: transferSize property"
 short-title: transferSize
 slug: Web/API/PerformanceResourceTiming/transferSize
 page-type: web-api-instance-property
@@ -14,25 +8,25 @@ browser-compat: api.PerformanceResourceTiming.transferSize
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The **`transferSize`** read-only property represents the size (in octets) of the fetched resource. The size includes the response header fields plus the response payload body (as defined by [RFC7230](https://httpwg.org/specs/rfc7230.html#message.body)).
+ویژگی فقط‌خواندنی **`transferSize`** اندازهٔ منبع واکشی‌شده را بر حسب اکتت (octet) نشان می‌دهد. این اندازه شامل فیلدهای هدرِ پاسخ و همچنین بدنهٔ بارِ پاسخ است (طبق تعریف [RFC7230](https://httpwg.org/specs/rfc7230.html#message.body)).
 
-If the resource is fetched from a local cache, or if it is a cross-origin resource, this property returns zero.
+اگر منبع از کش محلی دریافت شود، یا اگر منبعی با مبدأ متفاوت (cross-origin) باشد، این ویژگی مقدار صفر برمی‌گرداند.
 
-## Value
+## مقدار
 
-The `transferSize` property can have the following values:
+ویژگی `transferSize` می‌تواند یکی از مقادیر زیر را داشته باشد:
 
-- A number representing the size (in octets) of the fetched resource. The size includes the response header fields plus the [response payload body](https://httpwg.org/specs/rfc7230.html#message.body) (RFC7230).
-- `0` if the resource was instantaneously retrieved from a cache.
-- `0` if the resource is a cross-origin request and no {{HTTPHeader("Timing-Allow-Origin")}} HTTP response header is used.
+- عددی که اندازهٔ منبع واکشی‌شده را بر حسب اکتت نشان می‌دهد. این اندازه شامل فیلدهای هدرِ پاسخ و [بدنهٔ بارِ پاسخ](https://httpwg.org/specs/rfc7230.html#message.body) می‌شود (RFC7230).
+- در صورتی که منبع بلافاصله از یک کش بازیابی شده باشد، مقدار `0`.
+- در صورتی که منبع نتیجهٔ یک درخواست متقاطع-مبدأ (cross-origin) باشد و هیچ هدر پاسخ HTTP با نام {{HTTPHeader("Timing-Allow-Origin")}} استفاده نشده باشد، مقدار `0`.
 
-## Examples
+## مثال‌ها
 
-### Checking if a cache was hit
+### بررسی اینکه آیا محتوا از کش بارگذاری شده است
 
-For environments not supporting the {{domxref("PerformanceResourceTiming.responseStatus", "responseStatus")}} property, the `transferSize` property can be used to determine cache hits. If `transferSize` is zero and the resource has a non-zero decoded body size (meaning the resource is same-origin or has {{HTTPHeader("Timing-Allow-Origin")}}), the resource was fetched from a local cache.
+در محیط‌هایی که از ویژگی {{domxref("PerformanceResourceTiming.responseStatus", "responseStatus")}} پشتیبانی نمی‌کنند، می‌توان از ویژگی `transferSize` برای تشخیص cache hit استفاده کرد. اگر مقدار `transferSize` صفر باشد و اندازهٔ بدنهٔ رمزگشایی‌شدهٔ منبع غیرصفر باشد (به این معنی که منبع هم‌مبدأ است یا هدر {{HTTPHeader("Timing-Allow-Origin")}} را دارد)، آن منبع از کش محلی دریافت شده است.
 
-Example using a {{domxref("PerformanceObserver")}}, which notifies of new `resource` performance entries as they are recorded in the browser's performance timeline. Use the `buffered` option to access entries from before the observer creation.
+مثال زیر از {{domxref("PerformanceObserver")}} استفاده می‌کند. این observer هنگام ثبت ورودی‌های عملکرد (performance entries) جدید از نوع `resource` در خط زمانی عملکردِ مرورگر، رویداد مربوط به آن‌ها را اطلاع می‌دهد. برای دسترسی به ورودی‌هایی که پیش از ایجاد observer ثبت شده‌اند، از گزینهٔ `buffered` استفاده کنید.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -46,7 +40,7 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "resource", buffered: true });
 ```
 
-Example using {{domxref("Performance.getEntriesByType()")}}, which only shows `resource` performance entries present in the browser's performance timeline at the time you call this method:
+مثال زیر از {{domxref("Performance.getEntriesByType()")}} استفاده می‌کند که فقط ورودی‌های عملکردِ `resource` موجود در خط زمانی عملکرد مرورگر را در لحظهٔ فراخوانی این متد نشان می‌دهد:
 
 ```js
 const resources = performance.getEntriesByType("resource");
@@ -57,24 +51,24 @@ resources.forEach((entry) => {
 });
 ```
 
-### Cross-origin content size information
+### اطلاعات اندازهٔ محتوای متقاطع-مبدأ
 
-If the value of the `transferSize` property is `0` and wasn't loaded from a local cache, the resource might be a cross-origin request. To expose cross-origin content size information, the {{HTTPHeader("Timing-Allow-Origin")}} HTTP response header needs to be set.
+اگر مقدار ویژگی `transferSize` برابر `0` باشد و محتوا از کش محلی بارگذاری نشده باشد، احتمالاً منبع یک درخواست متقاطع-مبدأ (cross-origin) است. برای افشای اطلاعات اندازهٔ محتوای متقاطع-مبدأ، لازم است هدر پاسخ HTTP {{HTTPHeader("Timing-Allow-Origin")}} تنظیم شده باشد.
 
-For example, to allow `https://developer.mozilla.org` to see content sizes, the cross-origin resource should send:
+برای مثال، برای اینکه به `https://developer.mozilla.org` اجازه داده شود اندازهٔ محتوا را ببیند، منبع متقاطع-مبدأ باید این هدر را ارسال کند:
 
 ```http
 Timing-Allow-Origin: https://developer.mozilla.org
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTTPHeader("Timing-Allow-Origin")}}
