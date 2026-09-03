@@ -1,11 +1,5 @@
 ---
 title: "PerformanceResourceTiming: nextHopProtocol property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceResourceTiming/nextHopProtocol"
-status: "needs-translation"
----
-
----
-title: "PerformanceResourceTiming: nextHopProtocol property"
 short-title: nextHopProtocol
 slug: Web/API/PerformanceResourceTiming/nextHopProtocol
 page-type: web-api-instance-property
@@ -14,30 +8,30 @@ browser-compat: api.PerformanceResourceTiming.nextHopProtocol
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The **`nextHopProtocol`** read-only property is a string representing the network protocol used to fetch the resource, as identified by the [ALPN Protocol ID (RFC7301)](https://www.iana.org/assignments/tls-extensiontype-values/tls-extensiontype-values.xhtml#alpn-protocol-ids).
+ویژگی فقط‌خواندنی **`nextHopProtocol`** رشته‌ای است که پروتکل شبکه‌ای مورد استفاده برای دریافت منبع را نشان می‌دهد، همان‌طور که توسط [شناسه پروتکل ALPN (RFC7301)](https://www.iana.org/assignments/tls-extensiontype-values/tls-extensiontype-values.xhtml#alpn-protocol-ids) مشخص شده است.
 
-When a proxy is used, if a tunnel connection is established, this property returns the ALPN Protocol ID of the tunneled protocol. Otherwise, this property returns the ALPN Protocol ID of the first hop to the proxy.
+وقتی از پروکسی استفاده می‌شود، اگر اتصال تونلی برقرار شده باشد، این ویژگی شناسه پروتکل ALPN پروتکل تونل‌شده را برمی‌گرداند. در غیر این صورت، این ویژگی شناسه پروتکل ALPN اولین پرش به سمت پروکسی را برمی‌گرداند.
 
-## Value
+## مقدار
 
-The `nextHopProtocol` property can have the following values:
+ویژگی `nextHopProtocol` می‌تواند مقادیر زیر را داشته باشد:
 
-- A string representing the network protocol used to fetch the resource, as identified by the [ALPN Protocol ID (RFC7301)](https://www.iana.org/assignments/tls-extensiontype-values/tls-extensiontype-values.xhtml#alpn-protocol-ids). Typical values are:
+- رشته‌ای که پروتکل شبکه‌ای مورد استفاده برای دریافت منبع را نشان می‌دهد، همان‌طور که توسط [شناسه پروتکل ALPN (RFC7301)](https://www.iana.org/assignments/tls-extensiontype-values/tls-extensiontype-values.xhtml#alpn-protocol-ids) مشخص شده است. مقادیر معمول عبارت‌اند از:
   - `"http/0.9"`
   - `"http/1.0"`
   - `"http/1.1"`
   - `"h2"`
   - `"h2c"`
   - `"h3"`
-- An empty string if the resource is a cross-origin request and no {{HTTPHeader("Timing-Allow-Origin")}} HTTP response header is used.
+- اگر منبع یک درخواست متقاطع (cross-origin) باشد و هیچ هدر پاسخ HTTP {‎{HTTPHeader("Timing-Allow-Origin")}} استفاده نشده باشد، یک رشته خالی.
 
-## Examples
+## مثال‌ها
 
-### Logging resources that use neither HTTP/2 nor HTTP/3
+### ثبت منابعی که نه HTTP/2 استفاده می‌کنند و نه HTTP/3
 
-The `nextHopProtocol` property can be used to see resources that don't use the HTTP/2 or HTTP/3 protocols.
+ویژگی `nextHopProtocol` می‌تواند برای مشاهده مناطقی استفاده شود که از پروتکل HTTP/2 یا HTTP/3 استفاده نمی‌کنند.
 
-Example using a {{domxref("PerformanceObserver")}}, which notifies of new `resource` performance entries as they are recorded in the browser's performance timeline. Use the `buffered` option to access entries from before the observer creation.
+مثال زیر از {{domxref("PerformanceObserver")}} استفاده می‌کند که با ثبت ورودی‌های عملکرد جدید `resource` در زمان‌بند عملکرد مرورگر، اطلاع می‌دهد. از گزینه `buffered` برای دسترسی به ورودی‌های قبل از ایجاد observer استفاده کنید.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -52,7 +46,7 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "resource", buffered: true });
 ```
 
-Example using {{domxref("Performance.getEntriesByType()")}}, which only shows `resource` performance entries present in the browser's performance timeline at the time you call this method:
+مثال زیر از {{domxref("Performance.getEntriesByType()")}} استفاده می‌کند که فقط ورودی‌های عملکرد `resource` موجود در زمان‌بند عملکرد مرورگر را در زمان فراخوانی این متد نشان می‌دهد:
 
 ```js
 const resources = performance.getEntriesByType("resource");
@@ -64,25 +58,25 @@ resources.forEach((entry) => {
 });
 ```
 
-### Cross-origin network protocol information
+### اطلاعات پروتکل شبکه منابع متقاطع
 
-If the value of the `nextHopProtocol` property is an empty string, the resource might be a cross-origin request. To expose cross-origin network protocol information, the {{HTTPHeader("Timing-Allow-Origin")}} HTTP response header needs to be set.
+اگر مقدار ویژگی `nextHopProtocol` یک رشته خالی باشد، ممکن است منبع یک درخواست متقاطع باشد. برای افشای اطلاعات پروتکل شبکه متقاطع، باید هدر پاسخ HTTP {‎{HTTPHeader("Timing-Allow-Origin")}} تنظیم شود.
 
-For example, to allow `https://developer.mozilla.org` to see network protocol information, the cross-origin resource should send:
+برای مثال، برای اجازه دادن به `https://developer.mozilla.org` برای دیدن اطلاعات پروتکل شبکه، منبع متقاطع باید ارسال کند:
 
 ```http
 Timing-Allow-Origin: https://developer.mozilla.org
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTTPHeader("Timing-Allow-Origin")}}
 - {{Glossary("HTTP 2", "HTTP/2")}}
