@@ -1,11 +1,5 @@
 ---
 title: "PeriodicSyncManager: unregister() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PeriodicSyncManager/unregister"
-status: "needs-translation"
----
-
----
-title: "PeriodicSyncManager: unregister() method"
 short-title: unregister()
 slug: Web/API/PeriodicSyncManager/unregister
 page-type: web-api-instance-method
@@ -16,34 +10,30 @@ browser-compat: api.PeriodicSyncManager.unregister
 
 {{APIRef("Periodic Background Sync")}}{{SeeCompatTable}}{{AvailableInWorkers}}
 
-The **`unregister()`** method of the
-{{domxref("PeriodicSyncManager")}} interface unregisters the periodic sync request
-corresponding to the specified tag and returns a {{jsxref('Promise')}} that resolves
-when unregistration completes.
+متد **`unregister()`** از رابط {{domxref("PeriodicSyncManager")}} درخواست همگام‌سازی دوره‌ایِ متناظر با برچسب (tag) مشخص‌شده را لغو ثبت می‌کند و یک {{jsxref('Promise')}} برمی‌گرداند که وقتی فرایند لغو ثبت کامل شد، resolve می‌شود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 unregister(tag)
 ```
 
-### Parameters
+### پارامترها
 
-- tag
-  - : The unique {{jsxref('String')}} descriptor for the specific background sync.
+- `tag`
+  - : یک {{jsxref('String')}} یکتا که همگام‌سازی پس‌زمینهٔ مورد نظر را توصیف می‌کند.
 
-### Return value
+### مقدار بازگشتی
 
-Returns a {{jsxref("Promise")}} that resolves with {{jsxref('undefined')}}.
+یک {{jsxref("Promise")}} برمی‌گرداند که با {{jsxref('undefined')}} resolve می‌شود.
 
-### Exceptions
+### استثناها
 
-None.
+هیچ‌کدام.
 
-## Examples
+## مثال‌ها
 
-The following example removes a periodic sync to stop syncing articles in the
-background.
+مثال زیر یک همگام‌سازی دوره‌ای را حذف می‌کند تا از همگام‌سازی مقاله‌ها در پس‌زمینه جلوگیری شود:
 
 ```js
 navigator.serviceWorker.ready.then((registration) => {
@@ -51,14 +41,14 @@ navigator.serviceWorker.ready.then((registration) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Richer offline experiences with the Periodic Background Sync API](https://developer.chrome.com/docs/capabilities/periodic-background-sync)
+- [تجربه‌های آفلاین غنی‌تر با Periodic Background Sync API](https://developer.chrome.com/docs/capabilities/periodic-background-sync)
