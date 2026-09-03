@@ -1,7 +1,5 @@
 ---
 title: "NotRestoredReasons: name property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NotRestoredReasons/name"
-status: "needs-translation"
 ---
 
 ---
@@ -16,28 +14,27 @@ browser-compat: api.NotRestoredReasons.name
 
 {{APIRef("Performance API")}}{{SeeCompatTable}}
 
-The **`name`** read-only property of the
-{{domxref("NotRestoredReasons")}} interface returns a string representing the `name` attribute value of the {{htmlelement("iframe")}} the document is contained in (for example `<iframe name="bar" src="...">`).
+خاصیت فقط خواندنی **`name`** از رابط {{domxref("NotRestoredReasons")}} یک رشته را برمی‌گرداند که مقدار ویژگی `name` عنصر {{htmlelement("iframe")}} حاوی سند را نشان می‌دهد (برای مثال `<iframe name="bar" src="...">`).
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-If the document is not in an `<iframe>` or the `<iframe>` has no `name` set, `name` will return `null`.
+اگر سند درون یک `<iframe>` نباشد یا `<iframe>` ویژگی `name` تنظیم شده نداشته باشد، `name` مقدار `null` را برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-See [Monitoring bfcache blocking reasons](/en-US/docs/Web/API/Performance_API/Monitoring_bfcache_blocking_reasons) for examples.
+برای مثال‌ها به [نظارت بر دلایل مسدودسازی حافظه پنهان برگشت به عقب (bfcache)](/en-US/docs/Web/API/Performance_API/Monitoring_bfcache_blocking_reasons) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Monitoring bfcache blocking reasons](/en-US/docs/Web/API/Performance_API/Monitoring_bfcache_blocking_reasons)
+- [نظارت بر دلایل مسدودسازی حافظه پنهان برگشت به عقب (bfcache)](/en-US/docs/Web/API/Performance_API/Monitoring_bfcache_blocking_reasons)
 - {{domxref("PerformanceNavigationTiming.notRestoredReasons")}}
