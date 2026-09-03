@@ -1,11 +1,5 @@
 ---
 title: "Navigator: doNotTrack property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/doNotTrack"
-status: "needs-translation"
----
-
----
-title: "Navigator: doNotTrack property"
 short-title: doNotTrack
 slug: Web/API/Navigator/doNotTrack
 page-type: web-api-instance-property
@@ -17,33 +11,33 @@ browser-compat: api.Navigator.doNotTrack
 
 {{ApiRef("HTML DOM")}}{{Deprecated_header}}{{non-standard_header}}
 
-The **`Navigator.doNotTrack`** property returns the user's Do Not Track setting, which indicates whether the user is requesting websites and advertisers to not track them.
+**`Navigator.doNotTrack`** ویژگی تنظیمات «Do Not Track» کاربر را بازمی‌گرداند؛ تنظیماتی که نشان می‌دهد آیا کاربر از وب‌سایت‌ها و تبلیغ‌کنندگان می‌خواهد که او را ردیابی نکنند.
 
-The value of the property reflects that of the {{httpheader("DNT")}} HTTP header, i.e., values of `"1"`, `"0"`, or `null`.
+مقدار این ویژگی، همان مقدار هدر HTTP {{httpheader("DNT")}} را بازتاب می‌دهد؛ یعنی مقادیر `"1"`، `"0"` یا `null`.
 
-The whole DNT (Do Not Track) specification has been discontinued. The mechanism design was flawed, because it was a cooperative feature between users, websites, and browsers. The idea is that the user tells the _website_ to not track them, and the _website_ would comply. However, there is no strict enforcement of this policy, so advertisement websites ignored the DNT header and tracked users anyway. The feature is therefore useless. Moreover, it is harmful as it leaves more user [fingerprint](/en-US/docs/Glossary/Fingerprinting) in the header, which can be used to track users even more.
+کل مشخصات DNT (Do Not Track) متوقف شده است. طراحی این سازوکار معیوب بود، زیرا یک ویژگی مشارکتی بین کاربران، وب‌سایت‌ها و مرورگرها بود. ایده این بود که کاربر به _وب‌سایت_ می‌گوید او را ردیابی نکند و _وب‌سایت_ نیز از این درخواست پیروی می‌کرد. با این حال، هیچ اجرای سخت‌گیرانه‌ای برای این سیاست وجود نداشت، بنابراین وب‌سایت‌های تبلیغاتی هدر DNT را نادیده می‌گرفتند و همچنان کاربران را ردیابی می‌کردند. بنابراین این ویژگی بی‌فایده است. علاوه بر این، مضر نیز هست، زیرا [اثر انگشت (fingerprint)](/en-US/docs/Glossary/Fingerprinting) بیشتری از کاربر را در هدر باقی می‌گذارد، که می‌تواند برای ردیابی بیشتر کاربران مورد استفاده قرار گیرد.
 
-Browsers are exploring other more enforceable privacy features, such as [global privacy control](/en-US/docs/Web/API/Navigator/globalPrivacyControl), restriction to third-party cookies, and more.
+مرورگرها در حال بررسی ویژگی‌های حریم خصوصی دیگری هستند که قابلیت اجرای بیشتری دارند، مانند [کنترل حریم خصوصی سراسری (global privacy control)](/en-US/docs/Web/API/Navigator/globalPrivacyControl)، محدودسازی کوکی‌های شخص ثالث و موارد دیگر.
 
-## Value
+## مقدار
 
-A string or `null`.
+یک رشته (`string`) یا `null`.
 
-## Examples
+## نمونه‌ها
 
 ```js
 console.log(navigator.doNotTrack);
 // prints "1" if DNT is enabled; "0" if the user opted-in for tracking; otherwise null
 ```
 
-## Specifications
+## مشخصات
 
-Part of the discontinued [Tracking Preference Expression (DNT)](https://w3c.github.io/dnt/drafts/tracking-dnt.html#dom-navigator-donottrack) specification.
+بخشی از مشخصات منسوخ‌شده‌ی [Tracking Preference Expression (DNT)](https://w3c.github.io/dnt/drafts/tracking-dnt.html#dom-navigator-donottrack).
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{httpheader("DNT")}} HTTP header
+- هدر HTTP {{httpheader("DNT")}}
