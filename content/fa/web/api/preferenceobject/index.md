@@ -1,8 +1,6 @@
 ---
 title: "PreferenceObject"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/PreferenceObject"
-status: "needs-translation"
----
 
 ---
 title: PreferenceObject
@@ -16,39 +14,39 @@ spec-urls: https://drafts.csswg.org/mediaqueries-5/#preference-object-interface
 
 {{APIRef("User Preferences API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`PreferenceObject`** interface of the [User Preferences API](/en-US/docs/Web/API/User_Preferences_API) provides attributes and methods for reading and overriding user preferences.
+رابط **`PreferenceObject`** در [User Preferences API](/en-US/docs/Web/API/User_Preferences_API) ویژگی‌ها و روش‌هایی برای خواندن و تغییر ترجیحات کاربر ارائه می‌دهد.
 
-Use the document's {{domxref("PreferenceManager")}} (accessed via {{domxref("Navigator.preferences")}}) to get access to the `PreferenceObject` objects representing each available preference.
+برای دسترسی به اشیاء `PreferenceObject` که نمایانگر هر ترجیح موجود هستند، از {{domxref("PreferenceManager")}} سند (از طریق {{domxref("Navigator.preferences")}}) استفاده کنید.
 
-The `PreferenceManager` interface inherits from {{domxref("EventTarget")}}.
+رابط `PreferenceManager` از {{domxref("EventTarget")}} ارث‌بری می‌کند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("PreferenceObject.override")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : The override value if set, `null` otherwise.
+  - : مقدار جایگزین در صورت تنظیم شدن، در غیر این صورت `null`.
 - {{domxref("PreferenceObject.value")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : The override value if set, the UA default otherwise.
+  - : مقدار جایگزین در صورت تنظیم شدن، در غیر این صورت مقدار پیش‌فرض کاربر عامل (UA).
 - {{domxref("PreferenceObject.validValues")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : The valid values for the override.
+  - : مقادیر معتبر برای مقدار جایگزین.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("PreferenceObject.clearOverride()")}} {{Experimental_Inline}}
-  - : Resets any previously set override to `null` and fires the {{domxref("PreferenceObject.change_event", "change")}} event.
+  - : هر مقدار جایگزین قبلی را به `null` بازنشانی می‌کند و رویداد {{domxref("PreferenceObject.change_event", "change")}} را فعال می‌کند.
 - {{domxref("PreferenceObject.requestOverride()")}} {{Experimental_Inline}}
-  - : Requests an override of the preference and fires the {{domxref("PreferenceObject.change_event", "change")}} event on success.
+  - : درخواست جایگزینی برای ترجیح می‌دهد و در صورت موفقیت رویداد {{domxref("PreferenceObject.change_event", "change")}} را فعال می‌کند.
 
-## Events
+## رویدادها
 
 - {{domxref("PreferenceObject.change_event", "change")}} {{Experimental_Inline}}
-  - : Fired when the override is set or reset.
+  - : زمانی که مقدار جایگزین تنظیم یا بازنشانی می‌شود فعال می‌گردد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
