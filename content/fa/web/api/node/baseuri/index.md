@@ -1,11 +1,5 @@
 ---
 title: "Node: baseURI property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Node/baseURI"
-status: "needs-translation"
----
-
----
-title: "Node: baseURI property"
 short-title: baseURI
 slug: Web/API/Node/baseURI
 page-type: web-api-instance-property
@@ -14,27 +8,24 @@ browser-compat: api.Node.baseURI
 
 {{APIRef("DOM")}}
 
-The read-only **`baseURI`** property of the {{domxref("Node")}} interface
-returns the absolute base URL of the document containing the node.
+خصوصیتِ فقط‌خواندنی **`baseURI`** در رابط {{domxref("Node")}}، آدرس پایهٔ مطلق (absolute base URL) سندِ حاوی آن گره را بازمی‌گرداند.
 
-The base URL is used to resolve relative URLs when the browser needs to obtain an absolute URL, for example when processing the HTML {{HTMLElement("img")}} element's `src` attribute or the `xlink:href` {{deprecated_inline}} or `href` attributes in SVG.
+از آدرس پایه برای تبدیل آدرس‌های نسبی به آدرس مطلق استفاده می‌شود، مثلاً وقتی مرورگر نیاز به دریافت آدرس مطلق دارد؛ مانند پردازش ویژگیِ `src` عنصر HTML {{HTMLElement("img")}}، یا ویژگی‌های `xlink:href` {{deprecated_inline}} و `href` در SVG.
 
-Although this property is read-only, its value is determined by an algorithm each time
-the property is accessed, and may change if the conditions changed.
+اگرچه این خصوصیت فقط‌خواندنی است، مقدار آن هر بار که به خصوصیت دسترسی پیدا می‌شود توسط یک الگوریتم تعیین می‌گردد و در صورت تغییر شرایط، ممکن است تغییر کند.
 
-The base URL is determined as follows:
+آدرس پایه به ترتیب زیر تعیین می‌شود:
 
-1. By default, the base URL is the location of the document (as determined by {{domxref("window.location")}}).
-2. If it is an HTML Document and there is a {{HTMLElement("Base")}} element in the document,
-   the `href` value of the _first_ `Base` element with such an attribute is used instead.
+1. به‌طور پیش‌فرض، آدرس پایه همان مکان سند است (که توسط {{domxref("window.location")}} تعیین می‌شود).
+2. اگر سند، یک سند HTML باشد و عنصر {{HTMLElement("Base")}} در آن وجود داشته باشد، مقدار ویژگیِ `href` از _اولین_ عنصر `Base` که دارای چنین ویژگی‌ای باشد، جایگزین می‌شود.
 
-## Value
+## مقدار
 
-A string representing the base URL of the {{domxref("Node")}}.
+یک رشته (string) که نشان‌دهندهٔ آدرس پایهٔ {{domxref("Node")}} است.
 
-## Examples
+## مثال‌ها
 
-### Without \<base>
+### بدون `<base>`
 
 ```html
 <output>Not calculated</output>
@@ -47,7 +38,7 @@ output.value = output.baseURI;
 
 {{EmbedLiveSample("Without_base", "100%", 40)}}
 
-### With \<base>
+### با `<base>`
 
 ```html
 <base href="https://developer.mozilla.org/modified_base_uri/" />
@@ -61,14 +52,14 @@ output.value = output.baseURI;
 
 {{EmbedLiveSample("With_base", "100%", 40)}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{HTMLElement("base")}} element.
+- عنصر {{HTMLElement("base")}}
