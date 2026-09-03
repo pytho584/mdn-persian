@@ -1,10 +1,4 @@
 ---
-title: "PerformanceObserver"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver"
-status: "needs-translation"
----
-
----
 title: PerformanceObserver
 slug: Web/API/PerformanceObserver
 page-type: web-api-interface
@@ -13,33 +7,33 @@ browser-compat: api.PerformanceObserver
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The **`PerformanceObserver`** interface is used to observe performance measurement events and be notified of new {{domxref("PerformanceEntry","performance entries", '', 'true')}} as they are recorded in the browser's _performance timeline_.
+اینترفیس **`PerformanceObserver`** برای مشاهده رویدادهای اندازه‌گیری عملکرد و اطلاع‌یافتن از {{domxref("PerformanceEntry","ورودی‌های عملکرد", '', 'true')}} جدید به محض ثبت‌شدن در _خط زمانی عملکرد_ مرورگر استفاده می‌شود.
 
-## Constructor
+## سازنده
 
 - {{domxref("PerformanceObserver.PerformanceObserver","PerformanceObserver()")}}
-  - : Creates and returns a new `PerformanceObserver` object.
+  - : یک شیء جدید `PerformanceObserver` ایجاد و برمی‌گرداند.
 
-## Static properties
+## ویژگی‌های ایستا
 
 - {{domxref("PerformanceObserver.supportedEntryTypes_static", "PerformanceObserver.supportedEntryTypes")}} {{ReadOnlyInline}}
-  - : Returns an array of the {{domxref("PerformanceEntry.entryType","entryType")}} values supported by the user agent.
+  - : آرایه‌ای از مقادیر {{domxref("PerformanceEntry.entryType","entryType")}} که توسط عامل کاربر پشتیبانی می‌شوند را برمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("PerformanceObserver.observe","PerformanceObserver.observe()")}}
-  - : Specifies the set of entry types to observe. The performance observer's callback function will be invoked when performance entry is recorded for one of the specified `entryTypes`.
+  - : مجموعه انواع ورودی‌هایی که باید مشاهده شوند را مشخص می‌کند. تابع callback ناظر عملکرد زمانی فراخوانی می‌شود که یک ورودی عملکرد برای یکی از `entryType`های مشخص‌شده ثبت شود.
 - {{domxref("PerformanceObserver.disconnect","PerformanceObserver.disconnect()")}}
-  - : Stops the performance observer callback from receiving performance entries.
+  - : دریافت ورودی‌های عملکرد توسط callback ناظر عملکرد را متوقف می‌کند.
 - {{domxref("PerformanceObserver.takeRecords","PerformanceObserver.takeRecords()")}}
-  - : Returns the current list of performance entries stored in the performance observer, emptying it out.
+  - : فهرست فعلی ورودی‌های عملکرد ذخیره‌شده در ناظر عملکرد را برمی‌گرداند و آن را خالی می‌کند.
 
-## Examples
+## مثال‌ها
 
-### Creating a PerformanceObserver
+### ایجاد یک PerformanceObserver
 
-The following example creates a `PerformanceObserver` watching for "mark" ({{domxref("PerformanceMark")}}) and "measure" ({{domxref("PerformanceMeasure")}}) events.
-The `perfObserver` callback provides a `list` ({{domxref("PerformanceObserverEntryList")}}) which allows you to get observed performance entries.
+مثال زیر یک `PerformanceObserver` ایجاد می‌کند که رویدادهای "mark" ({{domxref("PerformanceMark")}}) و "measure" ({{domxref("PerformanceMeasure")}}) را تماشا می‌کند.
+تابع callback یعنی `perfObserver` یک `list` ({{domxref("PerformanceObserverEntryList")}}) ارائه می‌دهد که به شما امکان می‌دهد ورودی‌های عملکرد مشاهده‌شده را دریافت کنید.
 
 ```js
 function perfObserver(list, observer) {
@@ -56,15 +50,15 @@ const observer = new PerformanceObserver(perfObserver);
 observer.observe({ entryTypes: ["measure", "mark"] });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref('MutationObserver')}}
 - {{domxref('ResizeObserver')}}
