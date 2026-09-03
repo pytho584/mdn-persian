@@ -1,11 +1,5 @@
 ---
 title: "Navigator: setAppBadge() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/setAppBadge"
-status: "needs-translation"
----
-
----
-title: "Navigator: setAppBadge() method"
 short-title: setAppBadge()
 slug: Web/API/Navigator/setAppBadge
 page-type: web-api-instance-method
@@ -14,7 +8,7 @@ browser-compat: api.Navigator.setAppBadge
 
 {{APIRef("Badging API")}}{{securecontext_header}}
 
-The **`setAppBadge()`** method of the {{domxref("Navigator")}} interface sets a badge on the icon associated with this app. If a value is passed to the method, this will be set as the value of the badge. Otherwise the badge will display as a dot, or other indicator as defined by the platform.
+متد **`setAppBadge()`** از رابط {{domxref("Navigator")}} یک نشان (badge) روی نماد مرتبط با این برنامه تنظیم می‌کند. اگر مقداری به متد ارسال شود، آن مقدار به عنوان مقدار نشان تنظیم خواهد شد. در غیر این صورت، نشان به صورت یک نقطه یا سایر نشانگرهای تعریف‌شده توسط سکو (platform) نمایش داده می‌شود.
 
 ## Syntax
 
@@ -26,24 +20,24 @@ setAppBadge(contents)
 ### Parameters
 
 - `contents` {{optional_inline}}
-  - : A {{jsxref("Number")}} which will be used as the value of the badge. If `contents` is `0` then the badge will be set to `nothing`, indicating a cleared badge.
+  - : یک {{jsxref("Number")}} که به عنوان مقدار نشان استفاده می‌شود. اگر `contents` برابر `0` باشد، نشان به `nothing` تنظیم می‌شود که نشان‌دهنده پاک شدن نشان است.
 
 ### Return value
 
-A {{jsxref("Promise")}} that resolves with {{jsxref("undefined")}}.
+یک {{jsxref("Promise")}} که با {{jsxref("undefined")}} حل می‌شود.
 
 ### Exceptions
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the document is not fully active.
+  - : اگر سند به طور کامل فعال نباشد پرتاب می‌شود.
 - `SecurityError` {{domxref("DOMException")}}
-  - : Thrown if the call was blocked by the [same-origin policy](/en-US/docs/Web/Security/Defenses/Same-origin_policy).
+  - : اگر فراخوانی توسط [سیاست همان‌خاستگاهی](/en-US/docs/Web/Security/Defenses/Same-origin_policy) مسدود شده باشد پرتاب می‌شود.
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if {{domxref('PermissionStatus.state')}} is not `granted`.
+  - : اگر {{domxref('PermissionStatus.state')}} برابر `granted` نباشد پرتاب می‌شود.
 
 ## Examples
 
-In the example below an unread count is passed to `setAppBadge()`. The badge should then display `30`.
+در مثال زیر، تعداد پیام‌های خوانده‌نشده به `setAppBadge()` ارسال شده است. سپس نشان باید عدد `30` را نمایش دهد.
 
 ```js
 const unread = 30;
