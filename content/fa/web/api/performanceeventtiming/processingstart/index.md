@@ -1,11 +1,5 @@
 ---
 title: "PerformanceEventTiming: processingStart property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEventTiming/processingStart"
-status: "needs-translation"
----
-
----
-title: "PerformanceEventTiming: processingStart property"
 short-title: processingStart
 slug: Web/API/PerformanceEventTiming/processingStart
 page-type: web-api-instance-property
@@ -14,17 +8,17 @@ browser-compat: api.PerformanceEventTiming.processingStart
 
 {{APIRef("Performance API")}}
 
-The read-only **`processingStart`** property returns the time at which event dispatch started. This is when event handlers are about to be executed.
+ویژگی فقط‌خواندنی **`processingStart`**، زمانی را برمی‌گرداند که ارسال رویداد (event dispatch) آغاز شده است؛ یعنی زمانی که کنترل‌کننده‌های رویداد در آستانهٔ اجرا قرار دارند.
 
-## Value
+## مقدار
 
-A {{domxref("DOMHighResTimeStamp")}} timestamp.
+یک مهر زمانی از نوع {{domxref("DOMHighResTimeStamp")}}.
 
-## Examples
+## مثال‌ها
 
-### Using the processingStart property
+### استفاده از ویژگی processingStart
 
-The `processingStart` property can be used when observing event timing entries ({{domxref("PerformanceEventTiming")}}). For example, to calculate input delay or event processing times.
+ویژگی `processingStart` را می‌توان هنگام مشاهدهٔ ورودی‌های زمان‌بندی رویداد ({{domxref("PerformanceEventTiming")}}) به کار برد؛ برای مثال، برای محاسبهٔ تأخیر ورودی یا زمان‌های پردازش رویداد.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -42,14 +36,14 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "event", buffered: true });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("PerformanceEventTiming.processingEnd")}}
