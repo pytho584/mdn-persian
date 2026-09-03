@@ -1,10 +1,4 @@
 ---
-title: "OVR_multiview2 extension"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/OVR_multiview2"
-status: "needs-translation"
----
-
----
 title: OVR_multiview2 extension
 short-title: OVR_multiview2
 slug: Web/API/OVR_multiview2
@@ -14,45 +8,45 @@ browser-compat: api.OVR_multiview2
 
 {{APIRef("WebGL")}}
 
-The `OVR_multiview2` extension is part of the [WebGL API](/en-US/docs/Web/API/WebGL_API) and adds support for rendering into multiple views simultaneously. This especially useful for virtual reality (VR) and WebXR.
+افزونهٔ `OVR_multiview2` بخشی از [WebGL API](/en-US/docs/Web/API/WebGL_API) است و پشتیبانی از رندر همزمان به چند نما (view) را اضافه می‌کند. این قابلیت به‌ویژه برای واقعیت مجازی (VR) و WebXR مفید است.
 
-For more information, see also:
+برای اطلاعات بیشتر، همچنین ببینید:
 
 - [Multiview on WebXR](https://error.ghost.org/)
 - [Multiview in babylon.js](https://doc.babylonjs.com/features/featuresDeepDive/cameras/multiViewsPart1)
 - [Optimizing Virtual Reality: Understanding Multiview](https://developer.arm.com/community/arm-community-blogs/b/mobile-graphics-and-gaming-blog/posts/optimizing-virtual-reality-understanding-multiview)
 - [Multiview WebGL Rendering for Meta Quest](https://developers.meta.com/horizon/documentation/web/web-multiview/)
 
-WebGL extensions are available using the {{domxref("WebGLRenderingContext.getExtension()")}} method. For more information, see also [Using Extensions](/en-US/docs/Web/API/WebGL_API/Using_Extensions) in the [WebGL tutorial](/en-US/docs/Web/API/WebGL_API/Tutorial).
+افزونه‌های WebGL از طریق متد {{domxref("WebGLRenderingContext.getExtension()")}} در دسترس قرار می‌گیرند. برای اطلاعات بیشتر، همچنین به [Using Extensions](/en-US/docs/Web/API/WebGL_API/Using_Extensions) در [WebGL tutorial](/en-US/docs/Web/API/WebGL_API/Tutorial) مراجعه کنید.
 
 > [!NOTE]
-> Support depends on the system's graphics driver (Windows+ANGLE and Android are supported; Windows+GL, Mac, Linux are not supported).
+> پشتیبانی به درایور گرافیکی سیستم بستگی دارد (Windows+ANGLE و Android پشتیبانی می‌شوند؛ Windows+GL، Mac و Linux پشتیبانی نمی‌شوند).
 >
-> This extension is only available to {{domxref("WebGL2RenderingContext", "WebGL 2", "", 1)}} contexts as it needs GLSL 3.00 and texture arrays.
+> این افزونه فقط در context‌های {{domxref("WebGL2RenderingContext", "WebGL 2", "", 1)}} در دسترس است، زیرا به GLSL 3.00 و آرایه‌های بافت (texture arrays) نیاز دارد.
 >
-> Currently, there is no way to use multiview to render to a multisampled backbuffer, so you should create contexts with `antialias: false`. However, the Oculus browser (6+) also supports multisampling using the [`OCULUS_multiview`](https://developers.meta.com/horizon/documentation/web/web-multiview/#using-oculus_multiview-in-webgl-20) extension. See also [this WebGL issue](https://github.com/KhronosGroup/WebGL/issues/2912).
+> در حال حاضر، هیچ راهی برای استفاده از multiview به‌منظور رندر به backbuffer با نمونه‌برداری چندگانه وجود ندارد، بنابراین باید context‌ها را با `antialias: false` ایجاد کنید. با این حال، مرورگر Oculus (نسخهٔ ۶+) همچنین با استفاده از افزونهٔ [`OCULUS_multiview`](https://developers.meta.com/horizon/documentation/web/web-multiview/#using-oculus_multiview-in-webgl-20) از نمونه‌برداری چندگانه پشتیبانی می‌کند. همچنین به [this WebGL issue](https://github.com/KhronosGroup/WebGL/issues/2912) مراجعه کنید.
 
-## Constants
+## ثابت‌ها
 
-This extension exposes 4 constants that can be used in [`getParameter()`](/en-US/docs/Web/API/WebGLRenderingContext/getParameter) or [`getFramebufferAttachmentParameter()`](/en-US/docs/Web/API/WebGLRenderingContext/getFramebufferAttachmentParameter).
+این افزونه ۴ ثابت را در دسترس قرار می‌دهد که می‌توانند در [`getParameter()`](/en-US/docs/Web/API/WebGLRenderingContext/getParameter) یا [`getFramebufferAttachmentParameter()`](/en-US/docs/Web/API/WebGLRenderingContext/getFramebufferAttachmentParameter) استفاده شوند.
 
 - `FRAMEBUFFER_ATTACHMENT_TEXTURE_NUM_VIEWS_OVR`
-  - : Number of views of the framebuffer object attachment.
+  - : تعداد نماهای (views) پیوستِ شیءِ فریم‌بافر.
 - `FRAMEBUFFER_ATTACHMENT_TEXTURE_BASE_VIEW_INDEX_OVR`
-  - : Base view index of the framebuffer object attachment.
+  - : شاخص نمای پایه (base view index) پیوستِ شیءِ فریم‌بافر.
 - `MAX_VIEWS_OVR`
-  - : The maximum number of views. Most VR headsets have two views, but there are prototypes of headset with ultra-wide FOV using 4 views which is currently the maximum number of views supported by multiview.
+  - : حداکثر تعداد نماها. اکثر هدست‌های واقعیت مجازی دو نما دارند، اما نمونه‌های اولیه‌ای از هدست‌ها با میدان دید فوق‌عریض (ultra-wide FOV) وجود دارند که از ۴ نما استفاده می‌کنند؛ در حال حاضر ۴ نما حداکثر تعداد پشتیبانی‌شده توسط multiview است.
 - `FRAMEBUFFER_INCOMPLETE_VIEW_TARGETS_OVR`
-  - : If baseViewIndex is not the same for all framebuffer attachment points where the value of `FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE` is not `NONE`, the framebuffer is considered incomplete. Calling [`checkFramebufferStatus`](/en-US/docs/Web/API/WebGLRenderingContext/checkFramebufferStatus) for a framebuffer in this state returns `FRAMEBUFFER_INCOMPLETE_VIEW_TARGETS_OVR`.
+  - : اگر baseViewIndex برای همهٔ نقاط پیوست فریم‌بافر که در آن‌ها مقدار `FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE` برابر با `NONE` نیست یکسان نباشد، فریم‌بافر ناقص (incomplete) در نظر گرفته می‌شود. فراخوانی [`checkFramebufferStatus`](/en-US/docs/Web/API/WebGLRenderingContext/checkFramebufferStatus) برای فریم‌بافری در این حالت، مقدار `FRAMEBUFFER_INCOMPLETE_VIEW_TARGETS_OVR` را برمی‌گرداند.
 
-## Instance methods
+## متدهای نمونه
 
 - [`framebufferTextureMultiviewOVR()`](/en-US/docs/Web/API/OVR_multiview2/framebufferTextureMultiviewOVR)
-  - : Simultaneously renders to multiple elements of a 2D texture array.
+  - : به‌طور همزمان به چند عنصر از یک آرایه بافت دوبعدی (2D texture array) رندر می‌کند.
 
-## Examples
+## مثال‌ها
 
-This example is taken from the [specification](https://registry.khronos.org/webgl/extensions/OVR_multiview2/).
+این مثال از [specification](https://registry.khronos.org/webgl/extensions/OVR_multiview2/) گرفته شده است.
 
 ```js
 const gl = document
@@ -89,7 +83,7 @@ ext.framebufferTextureMultiviewOVR(
 gl.drawElements(/* … */); // draw will be broadcasted to the layers of colorTex and depthStencilTex.
 ```
 
-Shader code
+کد شیدر
 
 ```glsl
 #version 300 es
@@ -103,17 +97,17 @@ void main() {
 }
 ```
 
-Also, see this [three.js](https://threejs.org/examples/?q=mult#webgl_multiple_views) demo for a live multiview example.
+همچنین، برای مشاهدهٔ یک مثال زنده از multiview، این [three.js](https://threejs.org/examples/?q=mult#webgl_multiple_views) دمو را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("WebGLRenderingContext.getExtension()")}}
 - {{domxref("WebGLRenderingContext.getParameter()")}}
