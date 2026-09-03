@@ -1,10 +1,4 @@
 ---
-title: "PaymentRequestEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent"
-status: "needs-translation"
----
-
----
 title: PaymentRequestEvent
 slug: Web/API/PaymentRequestEvent
 page-type: web-api-interface
@@ -15,42 +9,42 @@ browser-compat: api.PaymentRequestEvent
 
 {{SeeCompatTable}}{{APIRef("Web-Based Payment Handler API")}}{{AvailableInWorkers("service")}}
 
-The **`PaymentRequestEvent`** interface of the {{domxref("Web-based Payment Handler API", "", "", "nocode")}} is the object passed to a payment handler when a {{domxref("PaymentRequest")}} is made.
+رابط **`PaymentRequestEvent`** از {{domxref("Web-based Payment Handler API", "", "", "nocode")}}، شیءای است که هنگام ایجاد یک {{domxref("PaymentRequest")}} به پردازنده‌ی پرداخت ارسال می‌شود.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("PaymentRequestEvent.PaymentRequestEvent","PaymentRequestEvent()")}} {{Experimental_Inline}}
-  - : Creates a new `PaymentRequestEvent` object instance.
+  - : یک نمونه‌ی جدید از شیء `PaymentRequestEvent` ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("PaymentRequestEvent.methodData","methodData")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns an array of objects containing payment method identifiers for the payment methods that the website accepts and any associated payment method specific data.
+  - : آرایه‌ای از اشیاء شامل شناسه‌های روش پرداخت برای روش‌های پرداختی که وب‌سایت می‌پذیرد، و همچنین داده‌های اختصاصی مرتبط با هر روش پرداخت را برمی‌گرداند.
 - {{domxref("PaymentRequestEvent.modifiers","modifiers")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns an array of objects containing changes to payment details.
+  - : آرایه‌ای از اشیاء شامل تغییرات اعمال‌شده در جزئیات پرداخت را برمی‌گرداند.
 - {{domxref("PaymentRequestEvent.paymentRequestId","paymentRequestId")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns the ID of the {{domxref("PaymentRequest")}} object.
+  - : شناسه‌ی شیء {{domxref("PaymentRequest")}} را برمی‌گرداند.
 - {{domxref("PaymentRequestEvent.paymentRequestOrigin","paymentRequestOrigin")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns the origin where the {{domxref("PaymentRequest")}} object was initialized.
+  - : مبدأ (origin) ای را برمی‌گرداند که شیء {{domxref("PaymentRequest")}} در آن مقداردهی اولیه شده است.
 - {{domxref("PaymentRequestEvent.topOrigin","topOrigin")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns the top-level origin where the {{domxref("PaymentRequest")}} object was initialized.
+  - : مبدأ سطح بالا (top-level origin) را برمی‌گرداند که شیء {{domxref("PaymentRequest")}} در آن مقداردهی اولیه شده است.
 - {{domxref("PaymentRequestEvent.total","total")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns the total amount being requested for payment.
+  - : مبلغ کل درخواست‌شده برای پرداخت را برمی‌گرداند.
 
-## Instance methods
+## متدهای نمونه
 
 - {{domxref("PaymentRequestEvent.changePaymentMethod","changePaymentMethod()")}} {{Experimental_Inline}}
-  - : Gets an updated total, given payment method details.
+  - : با در نظر گرفتن جزئیات روش پرداخت، مبلغ کل به‌روزرسانی‌شده را دریافت می‌کند.
 - {{domxref("PaymentRequestEvent.openWindow","openWindow()")}} {{Experimental_Inline}}
-  - : Opens the specified URL in a new window, if and only if the given URL is on the same origin as the calling page. It returns a {{jsxref("Promise")}} that resolves with a reference to a {{domxref("WindowClient")}}.
+  - : URL داده‌شده را در یک پنجره‌ی جدید باز می‌کند، فقط و فقط اگر URL داده‌شده با مبدأ صفحه‌ی فراخوان‌کننده یکسان باشد. این متد یک {{jsxref("Promise")}} برمی‌گرداند که با ارجاعی به {{domxref("WindowClient")}} حل می‌شود.
 - {{domxref("PaymentRequestEvent.respondWith","respondWith()")}} {{Experimental_Inline}}
-  - : Prevents the default event handling and allows you to provide a {{jsxref("Promise")}} for a {{domxref("PaymentResponse")}} object yourself.
+  - : از مدیریت پیش‌فرض رویداد جلوگیری می‌کند و به شما امکان می‌دهد خودتان یک {{jsxref("Promise")}} برای یک شیء {{domxref("PaymentResponse")}} فراهم کنید.
 
-## Examples
+## مثال‌ها
 
-When the {{domxref("PaymentRequest.show()")}} method is invoked, a {{domxref("ServiceWorkerGlobalScope.paymentrequest_event", "paymentrequest")}} event is fired on the service worker of the payment app. This event is listened for inside the payment app's service worker to begin the next stage of the payment process.
+هنگامی که متد {{domxref("PaymentRequest.show()")}} فراخوانی می‌شود، یک رویداد {{domxref("ServiceWorkerGlobalScope.paymentrequest_event", "paymentrequest")}} روی سرویس‌ورکر اپلیکیشن پرداخت پرتاب می‌شود. به این رویداد درون سرویس‌ورکر اپلیکیشن پرداخت گوش داده می‌شود تا مرحله‌ی بعدی فرایند پرداخت آغاز شود.
 
 ```js
 let paymentRequestEvent;
@@ -70,24 +64,24 @@ self.addEventListener("paymentrequest", async (e) => {
 });
 ```
 
-When a `paymentrequest` event is received, the payment app can open a payment handler window by calling {{domxref("PaymentRequestEvent.openWindow()")}}. The payment handler window will present the customers with a payment app interface where they can authenticate, choose shipping address and options, and authorize the payment.
+هنگامی که یک رویداد `paymentrequest` دریافت می‌شود، اپلیکیشن پرداخت می‌تواند با فراخوانی {{domxref("PaymentRequestEvent.openWindow()")}} پنجره‌ی پردازنده‌ی پرداخت را باز کند. این پنجره، رابطی از اپلیکیشن پرداخت را به مشتریان نمایش می‌دهد که در آن می‌توانند احراز هویت کنند، آدرس و گزینه‌های حمل‌ونقل را انتخاب کنند و پرداخت را تأیید نمایند.
 
-When the payment has been handled, {{domxref("PaymentRequestEvent.respondWith()")}} is used to pass the payment result back to the merchant website.
+هنگامی که پرداخت پردازش شد، از {{domxref("PaymentRequestEvent.respondWith()")}} برای بازگرداندن نتیجه‌ی پرداخت به وب‌سایت فروشنده استفاده می‌شود.
 
-See [Receive a payment request event from the merchant](https://web.dev/articles/orchestrating-payment-transactions#receive-payment-request-event) for more details of this stage.
+برای جزئیات بیشتر درباره‌ی این مرحله، [دریافت رویداد درخواست پرداخت از فروشنده](https://web.dev/articles/orchestrating-payment-transactions#receive-payment-request-event) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Web-based payment apps overview](https://web.dev/articles/web-based-payment-apps-overview)
-- [Setting up a payment method](https://web.dev/articles/setting-up-a-payment-method)
-- [Life of a payment transaction](https://web.dev/articles/life-of-a-payment-transaction)
-- [Using the Payment Request API](/en-US/docs/Web/API/Payment_Request_API/Using_the_Payment_Request_API)
-- [Payment processing concepts](/en-US/docs/Web/API/Payment_Request_API/Concepts)
+- [مروری بر اپلیکیشن‌های پرداخت مبتنی بر وب](https://web.dev/articles/web-based-payment-apps-overview)
+- [راه‌اندازی یک روش پرداخت](https://web.dev/articles/setting-up-a-payment-method)
+- [چرخه‌ی حیات یک تراکنش پرداخت](https://web.dev/articles/life-of-a-payment-transaction)
+- [استفاده از Payment Request API](/en-US/docs/Web/API/Payment_Request_API/Using_the_Payment_Request_API)
+- [مفاهیم پردازش پرداخت](/en-US/docs/Web/API/Payment_Request_API/Concepts)
