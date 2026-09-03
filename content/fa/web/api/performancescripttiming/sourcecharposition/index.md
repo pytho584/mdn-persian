@@ -1,11 +1,5 @@
 ---
 title: "PerformanceScriptTiming: sourceCharPosition property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceScriptTiming/sourceCharPosition"
-status: "needs-translation"
----
-
----
-title: "PerformanceScriptTiming: sourceCharPosition property"
 short-title: sourceCharPosition
 slug: Web/API/PerformanceScriptTiming/sourceCharPosition
 page-type: web-api-instance-property
@@ -16,27 +10,27 @@ browser-compat: api.PerformanceScriptTiming.sourceCharPosition
 
 {{SeeCompatTable}}{{APIRef("Performance API")}}
 
-The **`sourceCharPosition`** read-only property of the {{domxref("PerformanceScriptTiming")}} interface returns a number representing the script character position of the script feature that contributed to the long animation frame (LoAF).
+ویژگی فقط‌خواندنی **`sourceCharPosition`** از رابط {{domxref("PerformanceScriptTiming")}} یک عدد را برمی‌گرداند که موقعیت نویسهٔ اسکریپتِ ویژگی اسکریپتی را نشان می‌دهد که در فریم انیمیشن طولانی (LoAF) نقش داشته است.
 
-It is important to note that the reported function location will be the "entry point" of the script, that is, the top level of the stack, not any specific slow sub-function. See {{domxref("PerformanceScriptTiming.sourceFunctionName")}} for more discussion around this.
+توجه به این نکته مهم است که مکان گزارش‌شدهٔ تابع، «نقطهٔ ورود» اسکریپت خواهد بود؛ یعنی سطح بالای پشته، نه هر تابع فرعی کند خاص. برای بحث بیشتر در این مورد، {{domxref("PerformanceScriptTiming.sourceFunctionName")}} را ببینید.
 
-## Value
+## مقدار
 
-A number. Returns `-1` if the script character position was not found.
+یک عدد. اگر موقعیت نویسهٔ اسکریپت پیدا نشود، `-1-` برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-See [Long animation frame timing](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing#examples) for examples related to the Long Animation Frames API.
+برای مثال‌های مرتبط با API فریم‌های انیمیشن طولانی، به [زمان‌بندی فریم انیمیشن طولانی](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Long animation frame timing](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing)
+- [زمان‌بندی فریم انیمیشن طولانی](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing)
 - {{domxref("PerformanceLongAnimationFrameTiming")}}
