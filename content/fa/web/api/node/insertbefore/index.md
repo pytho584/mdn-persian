@@ -1,11 +1,5 @@
 ---
 title: "Node: insertBefore() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Node/insertBefore"
-status: "needs-translation"
----
-
----
-title: "Node: insertBefore() method"
 short-title: insertBefore()
 slug: Web/API/Node/insertBefore
 page-type: web-api-instance-method
@@ -14,56 +8,45 @@ browser-compat: api.Node.insertBefore
 
 {{APIRef("DOM")}}
 
-The **`insertBefore()`** method of the {{domxref("Node")}} interface
-inserts a node before a _reference node_ as a child of a specified _parent node_.
+متد **`insertBefore()`** از رابط {{domxref("Node")}} یک گره را به‌عنوان فرزندِ یک _گره والدِ_ مشخص، قبل از یک _گره مرجع_ درج می‌کند.
 
-If the given node already exists in the document,
-`insertBefore()` moves it from its current position to the new position.
-(That is, it will automatically be removed from its existing parent
-before appending it to the specified new parent.)
+اگر گره داده‌شده از قبل در سند وجود داشته باشد، `insertBefore()` آن را از موقعیت فعلی‌اش به موقعیت جدید منتقل می‌کند. (یعنی به‌طور خودکار از والدِ فعلی خود حذف می‌شود و سپس به والدِ جدیدِ مشخص‌شده اضافه می‌گردد.)
 
-This means that a node cannot be in two locations of the document simultaneously.
+بنابراین، یک گره نمی‌تواند هم‌زمان در دو مکان از سند قرار بگیرد.
 
 > [!NOTE]
-> The {{domxref("Node.cloneNode()")}} can be used to make a copy
-> of the node before appending it under the new parent. Note that the copies made with
-> `cloneNode()` will not be automatically kept in sync.
+> برای کپی کردن گره قبل از افزودن آن به والدِ جدید می‌توان از {{domxref("Node.cloneNode()")}} استفاده کرد. توجه داشته باشید که کپی‌های ساخته‌شده با `cloneNode()` به‌طور خودکار با گره اصلی همگام نمی‌مانند.
 
-If the given child is a {{domxref("DocumentFragment")}}, the entire contents of the
-`DocumentFragment` are moved into the child list of the specified parent
-node.
+اگر گره داده‌شده یک {{domxref("DocumentFragment")}} باشد، تمام محتوای آن `DocumentFragment` به فهرست فرزندانِ والدِ مشخص‌شده منتقل می‌شود.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 insertBefore(newNode, referenceNode)
 ```
 
-### Parameters
+### پارامترها
 
 - `newNode`
-  - : The node to be inserted.
+  - : گره‌ای که باید درج شود.
 - `referenceNode`
-  - : The node before which `newNode` is inserted. If this is
-    `null`, then `newNode` is inserted at the end of
-    node's child nodes.
+  - : گره‌ای که `newNode` قبل از آن درج می‌شود. اگر این مقدار `null` باشد، `newNode` در انتهای فرزندانِ آن گره درج می‌شود.
     > [!NOTE]
-    > `referenceNode` is **not** an optional parameter.
-    > You must explicitly pass a {{domxref("Node")}} or `null`.
-    > Failing to provide it or passing invalid values may [behave](https://crbug.com/419780) [differently](https://bugzil.la/119489) in different browser versions.
+    > `referenceNode` یک پارامتر **اختیاری نیست**.
+    > باید به‌صراحت یک {{domxref("Node")}} یا `null` به آن پاس دهید.
+    > اگر آن را ارائه ندهید یا مقادیر نامعتبر پاس دهید، ممکن است در نسخه‌های مختلف مرورگرها [رفتار](https://crbug.com/419780) [متفاوتی](https://bugzil.la/119489) داشته باشد.
 
-### Return value
+### مقدار بازگشتی
 
-Returns the added child (unless `newNode` is a {{domxref("DocumentFragment")}},
-in which case the empty {{domxref("DocumentFragment")}} is returned).
+فرزند اضافه‌شده را برمی‌گرداند؛ مگر اینکه `newNode` یک {{domxref("DocumentFragment")}} باشد که در آن صورت، {{domxref("DocumentFragment")}} خالی بازگردانده می‌شود.
 
-### Exceptions
+### استثناها
 
-Pre-insert validity
+اعتبار پیش از درج
 
-## Example
+## مثال
 
-### Example 1
+### مثال ۱
 
 ```html
 <div id="parentElement">
@@ -94,7 +77,7 @@ parentDiv.insertBefore(newNode, sp2); // Generates "Type Error: Invalid Argument
 // End test case [ 3 ]
 ```
 
-### Example 2
+### مثال ۲
 
 ```html
 <div id="parentElement">
@@ -116,24 +99,20 @@ parentDiv.insertBefore(sp1, sp2);
 ```
 
 > [!NOTE]
-> There is no `insertAfter()` method.
-> It can be emulated by combining the `insertBefore` method
-> with {{domxref("Node.nextSibling")}}.
+> متد `insertAfter()` وجود ندارد.
+> می‌توان آن را با ترکیب متد `insertBefore` و {{domxref("Node.nextSibling")}} شبیه‌سازی کرد.
 >
-> In the previous example, `sp1` could be inserted after `sp2` using:
+> در مثال قبلی، می‌توان `sp1` را با کد زیر بعد از `sp2` درج کرد:
 >
 > ```js
 > parentDiv.insertBefore(sp1, sp2.nextSibling);
 > ```
 >
-> If `sp2` does not have a next sibling, then it must be the last child —
-> `sp2.nextSibling` returns `null`, and `sp1` is inserted
-> at the end of the child node list (immediately after `sp2`).
+> اگر `sp2` گره همسایه‌ی بعدی (`next sibling`) نداشته باشد، یعنی باید آخرین فرزند باشد؛ در این حالت، `sp2.nextSibling` مقدار `null` برمی‌گرداند و `sp1` در انتهای فهرست گره‌های فرزند، بلافاصله بعد از `sp2`، درج می‌شود.
 
-### Example 3
+### مثال ۳
 
-Insert an element before the first child element, using the
-{{domxref("Node/firstChild", "firstChild")}} property.
+یک عنصر را با استفاده از ویژگی {{domxref("Node/firstChild", "firstChild")}} قبل از اولین فرزند درج کنید.
 
 ```js
 // Get the parent element
@@ -148,21 +127,19 @@ const newElement = document.createElement("div");
 parentElement.insertBefore(newElement, theFirstChild);
 ```
 
-When the element does not have a first child, then `firstChild` is
-`null`. The element is still appended to the parent, after the last child.
+وقتی عنصر اولین فرزند را نداشته باشد، `firstChild` برابر `null` است. در این حالت، عنصر همچنان به والد اضافه می‌شود؛ یعنی بعد از آخرین فرزندِ والد قرار می‌گیرد.
 
-Since the parent element did not have a first child, it did not have a last child,
-either. Consequently, the newly inserted element is the _only_ element.
+چون والدِ موردنظر اولین فرزند را نداشته، آخرین فرزند را نیز نداشته است. در نتیجه، عنصر تازه‌درج‌شده، _تنها_ فرزند آن والد است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Node.removeChild()")}}
 - {{domxref("Node.replaceChild()")}}
