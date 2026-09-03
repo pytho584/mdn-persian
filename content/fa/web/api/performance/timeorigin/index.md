@@ -1,11 +1,5 @@
 ---
 title: "Performance: timeOrigin property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Performance/timeOrigin"
-status: "needs-translation"
----
-
----
-title: "Performance: timeOrigin property"
 short-title: timeOrigin
 slug: Web/API/Performance/timeOrigin
 page-type: web-api-instance-property
@@ -14,32 +8,32 @@ browser-compat: api.Performance.timeOrigin
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The **`timeOrigin`** read-only property of the {{domxref("Performance")}} interface returns the high resolution timestamp that is used as the baseline for performance-related timestamps.
+ویژگی فقط‌خواندنی **`timeOrigin`** از رابط {{domxref("Performance")}}، یک زمان‌سنج با وضوح بالا (high resolution timestamp) را بازمی‌گرداند که به عنوان پایه‌ای برای زمان‌سنج‌های مرتبط با عملکرد استفاده می‌شود.
 
-In Window contexts, this value represents the time when navigation has started. In {{domxref("Worker")}} and {{domxref("ServiceWorker")}} contexts, this value represents the time when the worker is run. You can use this property to synchronize the time origins between the contexts (see example below).
+در زمینه‌های Window، این مقدار نشان‌دهنده زمانی است که ناوبری (navigation) آغاز شده است. در زمینه‌های {{domxref("Worker")}} و {{domxref("ServiceWorker")}}، این مقدار نشان‌دهنده زمانی است که worker اجرا می‌شود. می‌توانید از این ویژگی برای همگام‌سازی مبدأهای زمانی بین زمینه‌های مختلف استفاده کنید (مثال زیر را ببینید).
 
 > [!NOTE]
-> The value of `performance.timeOrigin` may differ from the value returned by {{jsxref("Date.now()")}} executed at the time origin, because `Date.now()` may have been impacted by system and user clock adjustments, clock skew, etc. The `timeOrigin` property is a [monotonic clock](https://w3c.github.io/hr-time/#dfn-monotonic-clock) which current time never decreases and which isn't subject to these adjustments.
+> مقدار `performance.timeOrigin` ممکن است با مقدار بازگردانده‌شده توسط {{jsxref("Date.now()")}} که در مبدأ زمانی اجرا شده است متفاوت باشد، زیرا `Date.now()` ممکن است تحت تأثیر تنظیمات سیستم و کاربر، انحراف ساعت (clock skew) و موارد دیگر قرار گیرد. ویژگی `timeOrigin` یک [ساعت یکنواخت (monotonic clock)](https://w3c.github.io/hr-time/#dfn-monotonic-clock) است که زمان فعلی آن هرگز کاهش نمی‌یابد و تحت تأثیر این تنظیمات قرار نمی‌گیرد.
 
-## Value
+## مقدار
 
-A high resolution timestamp which considered to be the beginning of the current document's lifetime. It's calculated like this:
+یک زمان‌سنج با وضوح بالا که به عنوان آغاز طول عمر سند جاری در نظر گرفته می‌شود. به صورت زیر محاسبه می‌شود:
 
-- If the script's {{Glossary("global object")}} is a {{domxref("Window")}}, the time origin is determined as follows:
-  - If the current {{domxref("Document")}} is the first one loaded in the `Window`, the time origin is the time at which the browser context was created.
-  - If during the process of unloading the previous document which was loaded in the window, a confirmation dialog was displayed to let the user confirm whether or not to leave the previous page, the time origin is the time at which the user confirmed that navigating to the new page was acceptable.
-  - If neither of the above determines the time origin, then the time origin is the time at which the navigation responsible for creating the window's current `Document` took place.
+- اگر {{Glossary("global object","شیء سراسری")}} اسکریپت یک {{domxref("Window")}} باشد، مبدأ زمانی به صورت زیر تعیین می‌شود:
+  - اگر {{domxref("Document")}} جاری اولین سندی است که در `Window` بارگذاری شده است، مبدأ زمانی زمانی است که زمینه مرورگر (browser context) ایجاد شده است.
+  - اگر در فرآیند تخلیه (unloading) سند قبلی که در پنجره بارگذاری شده بود، یک کادر تأیید (confirmation dialog) برای دریافت تأیید کاربر برای ترک صفحه قبلی نمایش داده شده باشد، مبدأ زمانی زمانی است که کاربر تأیید کرده است که ناوبری به صفحه جدید قابل قبول است.
+  - اگر هیچ‌یک از موارد بالا مبدأ زمانی را تعیین نکند، آنگاه مبدأ زمانی زمانی است که ناوبری مسئول ایجاد `Document` جاری پنجره انجام شده است.
 
-- If the script's global object is a {{domxref("WorkerGlobalScope")}} (that is, the script is running as a web worker), the time origin is the moment at which the worker was created.
-- In all other cases, the time origin is undefined.
+- اگر شیء سراسری اسکریپت یک {{domxref("WorkerGlobalScope")}} باشد (یعنی اسکریپت به عنوان یک web worker اجرا می‌شود)، مبدأ زمانی لحظه‌ای است که worker ایجاد شده است.
+- در سایر موارد، مبدأ زمانی تعریف‌نشده (undefined) است.
 
-## Examples
+## مثال‌ها
 
-### Synchronizing time between contexts
+### همگام‌سازی زمان بین زمینه‌ها
 
-To account for the different time origins in window and worker contexts, you can translate the timestamps coming from worker scripts with the help of the `timeOrigin` property, so the timings synchronize for the entire application.
+برای در نظر گرفتن مبدأهای زمانی متفاوت در زمینه‌های window و worker، می‌توانید با کمک ویژگی `timeOrigin`، زمان‌سنج‌های دریافتی از اسکریپت‌های worker را ترجمه کنید تا زمان‌بندی‌ها برای کل برنامه همگام شوند.
 
-In worker.js
+در worker.js
 
 ```js
 self.addEventListener("connect", (event) => {
@@ -59,7 +53,7 @@ self.addEventListener("connect", (event) => {
 });
 ```
 
-In main.js
+در main.js
 
 ```js
 const worker = new SharedWorker("worker.js");
@@ -73,10 +67,10 @@ worker.port.addEventListener("message", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
