@@ -1,10 +1,4 @@
 ---
-title: "Notification"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Notification"
-status: "needs-translation"
----
-
----
 title: Notification
 slug: Web/API/Notification
 page-type: web-api-interface
@@ -13,103 +7,103 @@ browser-compat: api.Notification
 
 {{APIRef("Web Notifications")}}{{securecontext_header}} {{AvailableInWorkers}}
 
-The **`Notification`** interface of the {{domxref("Notifications API", "", "", "nocode")}} is used to configure and display desktop notifications to the user.
+رابط **`Notification`** از {{domxref("Notifications API", "", "", "nocode")}} برای پیکربندی و نمایش اعلان‌های دسکتاپ به کاربر استفاده می‌شود.
 
-These notifications' appearance and specific functionality vary across platforms but generally they provide a way to asynchronously provide information to the user.
+ظاهر و عملکرد خاص این اعلان‌ها در پلتفرم‌های مختلف متفاوت است، اما به طور کلی راهی برای ارائه اطلاعات به صورت ناهمزمان (asynchronous) به کاربر فراهم می‌کنند.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده (Constructor)
 
 - {{domxref("Notification.Notification", "Notification()")}}
-  - : Creates a new instance of the `Notification` object.
+  - : یک نمونه جدید از شیء `Notification` ایجاد می‌کند.
 
-## Static properties
+## ویژگی‌های ایستا (Static properties)
 
-_Also inherits properties from its parent interface, {{domxref("EventTarget")}}_.
+_همچنین ویژگی‌هایی را از رابط والد خود، {{domxref("EventTarget")}}، به ارث می‌برد._
 
 - {{domxref("Notification.permission_static", "Notification.permission")}} {{ReadOnlyInline}}
-  - : A string representing the current permission to display notifications. Possible values are:
-    - `denied` — The user refuses to have notifications displayed.
-    - `granted` — The user accepts having notifications displayed.
-    - `default` — The user choice is unknown and therefore the browser will act as if the value were denied.
+  - : رشته‌ای که نشان‌دهنده مجوز فعلی برای نمایش اعلان‌ها است. مقادیر ممکن عبارتند از:
+    - `denied` — کاربر از نمایش اعلان‌ها خودداری کرده است.
+    - `granted` — کاربر با نمایش اعلان‌ها موافقت کرده است.
+    - `default` — انتخاب کاربر ناشناخته است و بنابراین مرورگر طوری عمل می‌کند که گویی مقدار denied است.
 
 - {{domxref("Notification.maxActions_static", "Notification.maxActions")}} {{ReadOnlyInline}}
-  - : The maximum number of actions supported by the device and the User Agent.
+  - : حداکثر تعداد اقداماتی (actions) که توسط دستگاه و عامل کاربر (User Agent) پشتیبانی می‌شود.
 
-## Instance properties
+## ویژگی‌های نمونه (Instance properties)
 
-_Also inherits properties from its parent interface, {{domxref("EventTarget")}}_.
+_همچنین ویژگی‌هایی را از رابط والد خود، {{domxref("EventTarget")}}، به ارث می‌برد._
 
 - {{domxref("Notification.actions")}} {{ReadOnlyInline}}
-  - : The actions array of the notification as specified in the constructor's `options` parameter.
+  - : آرایه اقدامات (actions) اعلان، مطابق آنچه در پارامتر `options` سازنده مشخص شده است.
 - {{domxref("Notification.badge")}} {{ReadOnlyInline}}
-  - : A string containing the URL of an image to represent the notification when there is not enough space to display the notification itself such as for example, the Android Notification Bar. On Android devices, the badge should accommodate devices up to 4x resolution, about 96 by 96 px, and the image will be automatically masked.
+  - : رشته‌ای حاوی URL یک تصویر برای نمایش اعلان زمانی که فضای کافی برای نمایش خود اعلان وجود ندارد، مانند مثلاً نوار اعلان اندروید (Android Notification Bar). در دستگاه‌های اندروید، نشان (badge) باید تا وضوح ۴ برابر، حدود ۹۶ در ۹۶ پیکسل را پشتیبانی کند و تصویر به طور خودکار ماسک می‌شود.
 - {{domxref("Notification.body")}} {{ReadOnlyInline}}
-  - : The body string of the notification as specified in the constructor's `options` parameter.
+  - : رشته بدنه (body) اعلان، مطابق آنچه در پارامتر `options` سازنده مشخص شده است.
 - {{domxref("Notification.data")}} {{ReadOnlyInline}}
-  - : Returns a structured clone of the notification's data.
+  - : یک کلون ساختاریافته (structured clone) از داده‌های اعلان را برمی‌گرداند.
 - {{domxref("Notification.dir")}} {{ReadOnlyInline}}
-  - : The text direction of the notification as specified in the constructor's `options` parameter.
+  - : جهت متن اعلان، مطابق آنچه در پارامتر `options` سازنده مشخص شده است.
 - {{domxref("Notification.icon")}} {{ReadOnlyInline}}
-  - : The URL of the image used as an icon of the notification as specified in the constructor's `options` parameter.
+  - : URL تصویری که به عنوان آیکون اعلان استفاده می‌شود، مطابق آنچه در پارامتر `options` سازنده مشخص شده است.
 - {{domxref("Notification.image")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : The URL of an image to be displayed as part of the notification, as specified in the constructor's `options` parameter.
+  - : URL تصویری که به عنوان بخشی از اعلان نمایش داده می‌شود، مطابق آنچه در پارامتر `options` سازنده مشخص شده است.
 - {{domxref("Notification.lang")}} {{ReadOnlyInline}}
-  - : The language code of the notification as specified in the constructor's `options` parameter.
+  - : کد زبان اعلان، مطابق آنچه در پارامتر `options` سازنده مشخص شده است.
 - {{domxref("Notification.navigate")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : The navigation URL of the notification. When set, activating the notification navigates to this URL instead of firing the {{domxref("Notification.click_event", "click")}} or {{domxref("ServiceWorkerGlobalScope.notificationclick_event", "notificationclick")}} event.
+  - : URL ناوبری اعلان. هنگامی که تنظیم شود، فعال‌سازی اعلان به جای فعال‌سازی رویداد {{domxref("Notification.click_event", "click")}} یا {{domxref("ServiceWorkerGlobalScope.notificationclick_event", "notificationclick")}}، به این URL هدایت می‌کند.
 - {{domxref("Notification.renotify")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Specifies whether the user should be notified after a new notification replaces an old one.
+  - : مشخص می‌کند که آیا پس از جایگزینی یک اعلان قدیمی با اعلان جدید، باید به کاربر اطلاع داده شود یا خیر.
 - {{domxref("Notification.requireInteraction")}} {{ReadOnlyInline}}
-  - : A boolean value indicating that a notification should remain active until the user clicks or dismisses it, rather than closing automatically.
+  - : یک مقدار بولی که نشان می‌دهد یک اعلان باید تا زمانی که کاربر روی آن کلیک کند یا آن را رد کند، فعال باقی بماند، به جای اینکه به طور خودکار بسته شود.
 - {{domxref("Notification.silent")}} {{ReadOnlyInline}}
-  - : Specifies whether the notification should be silent — i.e., no sounds or vibrations should be issued regardless of the device settings.
+  - : مشخص می‌کند که آیا اعلان باید بی‌صدا باشد — یعنی بدون توجه به تنظیمات دستگاه، هیچ صدایی یا لرزشی پخش نشود.
 - {{domxref("Notification.tag")}} {{ReadOnlyInline}}
-  - : The ID of the notification (if any) as specified in the constructor's `options` parameter.
+  - : شناسه (ID) اعلان (در صورت وجود)، مطابق آنچه در پارامتر `options` سازنده مشخص شده است.
 - {{domxref("Notification.timestamp")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Specifies the time at which a notification is created or applicable (past, present, or future).
+  - : زمانی را مشخص می‌کند که یک اعلان در آن ایجاد شده یا قابل اعمال است (گذشته، حال یا آینده).
 - {{domxref("Notification.title")}} {{ReadOnlyInline}}
-  - : The title of the notification as specified in the first parameter of the constructor.
+  - : عنوان اعلان، مطابق آنچه در اولین پارامتر سازنده مشخص شده است.
 - {{domxref("Notification.vibrate")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Specifies a vibration pattern for devices with vibration hardware to emit.
+  - : یک الگوی لرزش (vibration pattern) برای دستگاه‌هایی که سخت‌افزار لرزش دارند، مشخص می‌کند.
 
-## Static methods
+## روش‌های ایستا (Static methods)
 
-_Also inherits methods from its parent interface, {{domxref("EventTarget")}}_.
+_همچنین روش‌هایی را از رابط والد خود، {{domxref("EventTarget")}}، به ارث می‌برد._
 
 - {{domxref("Notification.requestPermission_static", "Notification.requestPermission()")}}
-  - : Requests permission from the user to display notifications.
+  - : از کاربر برای نمایش اعلان‌ها درخواست مجوز می‌کند.
 
-## Instance methods
+## روش‌های نمونه (Instance methods)
 
-_Also inherits methods from its parent interface, {{domxref("EventTarget")}}_.
+_همچنین روش‌هایی را از رابط والد خود، {{domxref("EventTarget")}}، به ارث می‌برد._
 
 - {{domxref("Notification.close()")}}
-  - : Programmatically closes a notification instance.
+  - : یک نمونه اعلان را به صورت برنامه‌ریزی شده (programmatically) می‌بندد.
 
-## Events
+## رویدادها (Events)
 
-_Also inherits events from its parent interface, {{domxref("EventTarget")}}_.
+_همچنین رویدادهایی را از رابط والد خود، {{domxref("EventTarget")}}، به ارث می‌برد._
 
 - {{domxref("Notification.click_event", "click")}}
-  - : Fires when the user clicks the notification.
+  - : زمانی که کاربر روی اعلان کلیک می‌کند، فعال می‌شود.
 - {{domxref("Notification.close_event", "close")}}
-  - : Fires when the user closes the notification.
+  - : زمانی که کاربر اعلان را می‌بندد، فعال می‌شود.
 - {{domxref("Notification.error_event", "error")}}
-  - : Fires when the notification encounters an error.
+  - : زمانی که اعلان با خطایی مواجه می‌شود، فعال می‌شود.
 - {{domxref("Notification.show_event", "show")}}
-  - : Fires when the notification is displayed.
+  - : زمانی که اعلان نمایش داده می‌شود، فعال می‌شود.
 
-## Examples
+## مثال‌ها
 
-Assume this basic HTML:
+این HTML پایه را در نظر بگیرید:
 
 ```html
 <button>Notify me!</button>
 ```
 
-It's possible to send a notification as follows — here we present a fairly verbose and complete set of code you could use if you wanted to first check whether notifications are supported, then check if permission has been granted for the current origin to send notifications, then request permission if required, before then sending a notification.
+می‌توان یک اعلان را به صورت زیر ارسال کرد — در اینجا مجموعه‌ای نسبتاً طولانی و کامل از کد ارائه می‌دهیم که می‌توانید در صورت تمایل به بررسی ابتدا پشتیبانی از اعلان‌ها، سپس بررسی اینکه آیا مجوز برای مبدأ فعلی برای ارسال اعلان‌ها داده شده است، و در صورت نیاز درخواست مجوز، و سپس ارسال اعلان، از آن استفاده کنید.
 
 ```js
 document.querySelector("button").addEventListener("click", notifyMe);
@@ -139,19 +133,19 @@ function notifyMe() {
 }
 ```
 
-We no longer show a live sample on this page, as Chrome and Firefox no longer allow notification permissions to be requested from cross-origin {{htmlelement("iframe")}}s, with other browsers to follow. To see an example in action, check out our [To-do list example](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) (also see [the app running live](https://mdn.github.io/dom-examples/to-do-notifications/)).
+ما دیگر یک نمونه زنده در این صفحه نشان نمی‌دهیم، زیرا کروم و فایرفاکس دیگر اجازه درخواست مجوز اعلان از {{htmlelement("iframe")}}های متقابل-مبدأ (cross-origin) را نمی‌دهند، و مرورگرهای دیگر نیز به زودی این کار را انجام خواهند داد. برای دیدن یک مثال عملی، به [مثال لیست کارهای](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ما مراجعه کنید (همچنین [برنامه در حال اجرا](https://mdn.github.io/dom-examples/to-do-notifications/) را ببینید).
 
 > [!NOTE]
-> In the above example we spawn notifications in response to a user gesture (clicking a button). This is not only best practice — you should not be spamming users with notifications they didn't agree to — but going forward browsers will explicitly disallow notifications not triggered in response to a user gesture. Firefox is already doing this from version 72, for example.
+> در مثال بالا، ما اعلان‌ها را در پاسخ به یک کنش کاربر (کلیک روی دکمه) ایجاد می‌کنیم. این نه تنها بهترین روش است — شما نباید کاربران را با اعلان‌هایی که با آن موافقت نکرده‌اند بمباران کنید — بلکه در آینده مرورگرها به صراحت از اعلان‌هایی که در پاسخ به یک کنش کاربر ایجاد نشده‌اند، جلوگیری خواهند کرد. برای مثال، فایرفاکس از نسخه ۷۲ این کار را انجام می‌دهد.
 
-## Specifications
+## مشخصات (Specifications)
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر (Browser compatibility)
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Notifications API](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
+- [استفاده از API اعلان‌ها](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
