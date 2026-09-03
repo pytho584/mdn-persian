@@ -1,10 +1,4 @@
 ---
-title: "Adding context with initial and ongoing prompt inputs"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Prompt_API/Adding_context"
-status: "needs-translation"
----
-
----
 title: Adding context with initial and ongoing prompt inputs
 short-title: Adding context
 slug: Web/API/Prompt_API/Adding_context
@@ -13,17 +7,17 @@ page-type: guide
 
 {{DefaultAPISidebar("Prompt API")}}
 
-In our basic [Prompt API guide](/en-US/docs/Web/API/Prompt_API/Using), we covered everything you need to get up and running with the [Prompt API](/en-US/docs/Web/API/Prompt_API). However, this only really covers creating a generic AI prompt app. To give your app different personalities, get it to respond in different ways, and remember past conversations, you need to provide additional context. The Prompt API has a few different mechanisms to allow you to do this, which are covered in this article.
+در [راهنمای اصلی Prompt API](/en-US/docs/Web/API/Prompt_API/Using)، همه چیزهایی را که برای شروع کار با [Prompt API](/en-US/docs/Web/API/Prompt_API) لازم دارید پوشش دادیم. با این حال، آن راهنما فقط ساخت یک اپلیکیشن عمومی هوش مصنوعی برای پرامپت را پوشش می‌دهد. اگر می‌خواهید به اپلیکیشن خود شخصیت‌های گوناگون بدهید، آن را به شیوه‌های متفاوت پاسخ دهید، یا گفتگوهای گذشته را به خاطر بسپارد، باید زمینه (context) بیشتری برایش فراهم کنید. Prompt API برای این کار چند سازوکار مختلف در اختیار شما قرار می‌دهد که در این مقاله به آن‌ها پرداخته می‌شود.
 
-## Prompt input syntax
+## دستور زبان ورودی prompt
 
-When {{domxref("LanguageModel.prompt()")}} is called, it takes an `input` parameter containing the inputs to respond to:
+هنگامی که {{domxref("LanguageModel.prompt()")}} فراخوانده می‌شود، یک پارامتر `input` می‌گیرد که حاوی ورودی‌هایی است که باید به آن‌ها پاسخ داده شود:
 
 ```js
 const response = await session.prompt(inputElem.value);
 ```
 
-The previous `prompt()` call only receives a single string as a parameter. This is a shorthand form, available for the common situation where you only want to pass the model a single user text prompt. You can expand this to explicitly declare the `role` of the `input` object:
+فراخوانی قبلی `prompt()` فقط یک رشته را به‌عنوان پارامتر دریافت می‌کند. این یک شکل کوتاه‌نوشته است که برای وضعیت رایجی ارائه شده که می‌خواهید فقط یک پیام متنی از کاربر به مدل بدهید. می‌توانید این شکل را بسط دهید تا `role` (نقش) شیء `input` را به‌صراحت تعیین کنید:
 
 ```js
 const response = await session.prompt([
@@ -34,18 +28,18 @@ const response = await session.prompt([
 ]);
 ```
 
-The three available `role` types are:
+سه نوع `role` موجود عبارت‌اند از:
 
 - `user`
-  - : Inputs that come from the `user`, which the API should respond to.
+  - : ورودی‌هایی که از طرف `user` می‌آیند و API باید به آن‌ها پاسخ دهد.
 - `assistant`
-  - : Inputs that are written from the point of view of the AI assistant, which mainly serve to provide context/history, and further shape how the model responds. These are commonly used for [preserving sessions](/en-US/docs/Web/API/Prompt_API/Preserving_sessions) and [few-shot prompts](#few-shot_prompts).
+  - : ورودی‌هایی که از دید دستیار هوش مصنوعی نوشته می‌شوند و عمدتاً برای فراهم کردن زمینه/تاریخچه گفتگو و شکل‌دهی بیشتر به نحوه پاسخ مدل به کار می‌روند. این‌ها معمولاً برای [حفظ نشست‌ها](/en-US/docs/Web/API/Prompt_API/Preserving_sessions) و [پرامپت‌های چند نمونه‌ای (few-shot)](#few-shot_prompts) استفاده می‌شوند.
 - `system`
-  - : Global inputs from the overall system that give the model instructions on how to respond. If a `system` input is included, it must come first in the provided inputs, otherwise the returned promise will reject with an exception. `system` inputs are usually only included as [initial prompts](#providing_initial_prompts_during_session_creation).
+  - : ورودی‌های سراسری از کل سیستم که به مدل دستورالعمل می‌دهند چگونه پاسخ دهد. اگر یک ورودی `system` وجود داشته باشد، باید در ابتدای ورودی‌های ارائه‌شده بیاید؛ در غیر این صورت، پرامیسی که برگردانده می‌شود با یک استثنا رد (reject) خواهد شد. ورودی‌های `system` معمولاً فقط به‌عنوان [پرامپت‌های اولیه هنگام ایجاد نشست](#providing_initial_prompts_during_session_creation) گنجانده می‌شوند.
 
-### Multiple inputs
+### چند ورودی
 
-You can provide multiple inputs in the array, for example:
+می‌توانید چند ورودی را در آرایه قرار دهید، برای مثال:
 
 ```js
 const response = await session.prompt([
@@ -60,11 +54,11 @@ const response = await session.prompt([
 ]);
 ```
 
-This is useful because you can provide extra context to help the model build a response along with the actual input taken from the page, which might only be one word.
+این کار مفید است، زیرا می‌توانید زمینه بیشتری برای کمک به مدل در ساختن پاسخ فراهم کنید، در کنار ورودی واقعی که از صفحه گرفته می‌شود و ممکن است فقط یک کلمه باشد.
 
-### Specifying input type
+### مشخص کردن نوع ورودی
 
-By default, the `input` type is `text`. To explicitly declare the `type`, you can further expand the previous form to the full longhand equivalent, which looks like this:
+به‌طور پیش‌فرض، نوع `input` برابر با `text` است. برای تعیین صریح `type`، می‌توانید شکل قبلی را به معادل کامل و بلندنویسی (longhand) گسترش دهید که به این صورت است:
 
 ```js
 const response = await session.prompt([
@@ -80,7 +74,7 @@ const response = await session.prompt([
 ]);
 ```
 
-You don't need this form unless you are providing the assistant with `image` and/or `audio` inputs (see [multimodal prompts](/en-US/docs/Web/API/Prompt_API/Multimodal)):
+به این شکل نیازی ندارید، مگر اینکه به دستیار ورودی `image` و/یا `audio` بدهید (به [پرامپت‌های چندحالته](/en-US/docs/Web/API/Prompt_API/Multimodal) مراجعه کنید):
 
 ```js
 const response = await session.prompt([
@@ -95,7 +89,7 @@ const response = await session.prompt([
 ]);
 ```
 
-However, you could rewrite the previous multiple-user-input example into this form, which includes both messages in a single input object. You might find this version easier to understand:
+با این حال، می‌توانید مثال قبلی را با چند ورودی `user` به این شکل بازنویسی کنید؛ در این حالت هر دو پیام در یک شیء ورودی واحد قرار می‌گیرند. شاید این نسخه را برای درک ساده‌تر بیابید:
 
 ```js
 const response = await session.prompt([
@@ -112,11 +106,11 @@ const response = await session.prompt([
 ]);
 ```
 
-## Providing initial prompts during session creation
+## ارائه پرامپت‌های اولیه هنگام ایجاد نشست
 
-The {{domxref("LanguageModel.create_static", "create()")}} method can take an [`initialPrompts`](/en-US/docs/Web/API/LanguageModel/create_static#initialprompts) option that contains an array of input prompts, just like the `inputs` array passed to `prompt()` and other methods. This allows you to pass an initial set of prompts into the session as it is created, so the model immediately has some context to work with.
+متد {{domxref("LanguageModel.create_static", "create()")}} می‌تواند گزینه [`initialPrompts`](/en-US/docs/Web/API/LanguageModel/create_static#initialprompts) را بپذیرد که شامل آرایه‌ای از پرامپت‌های ورودی است، دقیقاً مانند آرایه ورودی‌هایی که به `prompt()` و سایر متدها داده می‌شود. این امکان را به شما می‌دهد که هنگام ایجاد نشست، مجموعه‌ای اولیه از پرامپت‌ها را به آن بدهید تا مدل بلافاصله زمینه‌ای برای کار داشته باشد.
 
-For example:
+برای مثال:
 
 ```js
 const session = await LanguageModel.create({
@@ -138,16 +132,16 @@ const session = await LanguageModel.create({
 });
 ```
 
-As well as telling the model what kind of personality it should have, `initialPrompts` is also useful for loading a previous saved conversation into the session after a page reload or subsequent visit to the app. See [preserving sessions across reloads](/en-US/docs/Web/API/Prompt_API/Preserving_sessions).
+`initialPrompts` علاوه بر اینکه به مدل می‌گوید چه شخصیتی باید داشته باشد، برای بارگذاری یک گفتگوی ذخیره‌شده قبلی در نشست نیز مفید است، مثلاً پس از بارگذاری مجدد صفحه یا مراجعه بعدی کاربر به اپلیکیشن. به [حفظ نشست‌ها در طول بارگذاری مجدد](/en-US/docs/Web/API/Prompt_API/Preserving_sessions) مراجعه کنید.
 
 > [!NOTE]
-> The text string shorthand form discussed at the top of [Prompt input syntax](#prompt_input_syntax) cannot be used in the `initialPrompts` option of a `create()` call.
+> شکل کوتاه‌نوشته متنی که در ابتدای بخش [دستور زبان ورودی prompt](#prompt_input_syntax) بحث شد، نمی‌تواند در گزینه `initialPrompts` در فراخوانی `create()` استفاده شود.
 
-## Few-shot prompts
+## پرامپت‌های چند نمونه‌ای (few-shot)
 
-A few-shot prompt is a set of `user` role and `assistant` role input pairs passed as an example to the API to train it how to respond to a particular type of input, before asking it to complete a similar task.
+پرامپت چند نمونه‌ای (few-shot) مجموعه‌ای از جفت‌ورودی‌های نقش `user` و نقش `assistant` است که به‌عنوان مثال به API داده می‌شود تا نحوه پاسخ به نوع خاصی از ورودی را بیاموزد، پیش از آنکه از آن خواسته شود کاری مشابه را انجام دهد.
 
-The following example shows how to use a few-shot prompt to request a French translation in a specific format, providing sample inputs and outputs to demonstrate the expected structure.
+مثال زیر نشان می‌دهد که چگونه می‌توان با استفاده از یک پرامپت چند نمونه‌ای، ترجمه فرانسوی را در قالبی مشخص درخواست کرد و نمونه ورودی‌ها و خروجی‌ها را برای نمایش ساختار مورد انتظار ارائه داد.
 
 ```js
 const session = await LanguageModel.create({
@@ -180,13 +174,13 @@ const result = await session.prompt("Window");
 console.log(result); // "Window: Fenêtre"
 ```
 
-You could include just the `system` initial prompt and the example would still work, but it would be less likely to provide responses in the desired format.
+می‌توانید فقط پرامپت اولیه `system` را قرار دهید و مثال همچنان کار کند، اما احتمال اینکه پاسخ‌ها در قالب دلخواه ارائه شوند کمتر است.
 
-## Initial and multiple inputs example
+## مثالی از ورودی‌های اولیه و چندگانه
 
-Let's look at an example that makes use of initial and multiple inputs for extra context. In this example, the user is prompted to enter their name, and the API provides a whimsical review of it.
+بیایید مثالی را ببینیم که از ورودی‌های اولیه و چندگانه برای ایجاد زمینه بیشتر استفاده می‌کند. در این مثال، از کاربر خواسته می‌شود نام خود را وارد کند و API یک بررسی بامزه و غیرجدی از آن ارائه می‌دهد.
 
-Technically, this is very similar to the [complete example](/en-US/docs/Web/API/Prompt_API/Using#complete_example) from the previous guide, the only real differences being that user input is provided via a single line text {{htmlelement("input")}} rather than a {{htmlelement("textarea")}}, and the `create()` and `prompt()` calls are different. As a result, we won't walk through the entire codebase again. To check out the codebase in more detail, see the previous article's descriptions, and press the "Play" button in the rendered live output to open the full code in MDN Playground.
+از نظر فنی، این مثال بسیار شبیه به [مثال کامل](/en-US/docs/Web/API/Prompt_API/Using#complete_example) در راهنمای قبلی است؛ تنها تفاوت‌های واقعی این است که ورودی کاربر از طریق یک {{htmlelement("input")}} تک‌خطی ارائه می‌شود نه یک {{htmlelement("textarea")}}، و فراخوانی‌های `create()` و `prompt()` متفاوت هستند. بنابراین دوباره کل کد را بررسی نمی‌کنیم. برای بررسی جزئیات بیشتر کد، به توضیحات مقاله قبلی مراجعه کنید و دکمه «Play» را در خروجی زنده نمایش‌داده‌شده فشار دهید تا کد کامل در MDN Playground باز شود.
 
 ```html hidden live-sample___rate-my-name
 <h1>Prompt API rate my name!</h1>
@@ -370,9 +364,9 @@ async function getSession() {
 }
 ```
 
-### JavaScript
+### جاوااسکریپت
 
-When the {{domxref("LanguageModel.create_static", "create()")}} method is called to create the session `LanguageModel` instance, we pass in an `initialPrompts` option that includes a `system` input to tell the model exactly how we want it to respond to each user prompt:
+هنگامی که متد {{domxref("LanguageModel.create_static", "create()")}} برای ایجاد نمونه نشست `LanguageModel` فراخوانده می‌شود، یک گزینه `initialPrompts` به آن می‌دهیم که شامل یک ورودی `system` است تا دقیقاً به مدل بگوید می‌خواهیم به هر پرامپت کاربر چگونه پاسخ دهد:
 
 ```js
 return await LanguageModel.create({
@@ -388,7 +382,7 @@ return await LanguageModel.create({
 });
 ```
 
-When we call {{domxref("LanguageModel.prompt", "prompt()")}} on our `session` object, we pass two `user` input objects to it. The first one makes it clear what the user is asking of the API, and the second provides the user's name entered into the `<input>` element for the API to review.
+وقتی {{domxref("LanguageModel.prompt", "prompt()")}} را روی شیء `session` صدا می‌زنیم، دو شیء ورودی `user` به آن می‌دهیم. اولی مشخص می‌کند که کاربر چه چیزی از API خواسته است، و دومی نام کاربر را که در عنصر `<input>` وارد شده در اختیار API می‌گذارد تا آن را بررسی کند.
 
 ```js
 const response = await session.prompt(
@@ -408,17 +402,17 @@ const response = await session.prompt(
 );
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("rate-my-name", , "600px", , , , "language-model", "allow-forms")}}
 
-Try entering a name into the `<input>`, then press the submit button to prompt the AI model for a whimsical review of the name.
+سعی کنید یک نام را در `<input>` وارد کنید و سپس دکمه ثبت (submit) را فشار دهید تا از مدل هوش مصنوعی یک بررسی بامزه درباره آن نام بخواهید.
 
-## Adding response constraints
+## افزودن محدودیت‌های پاسخ
 
-The `prompt()` and {{domxref("LanguageModel.promptStreaming", "promptStreaming()")}} methods both accept a [`responseConstraint`](/en-US/docs/Web/API/LanguageModel/prompt#responseconstraint) option that takes as its value a [JSON Schema](https://json-schema.org/) object that defines the exact format expected for the assistant's responses. This delivers more controlled results than just asking the API to respond in a particular way via a `system` prompt.
+هر دو متد `prompt()` و {{domxref("LanguageModel.promptStreaming", "promptStreaming()")}} یک گزینه [`responseConstraint`](/en-US/docs/Web/API/LanguageModel/prompt#responseconstraint) می‌پذیرند که مقدار آن یک شیء [JSON Schema](https://json-schema.org/) است و قالب دقیق مورد انتظار برای پاسخ‌های دستیار را تعریف می‌کند. این کار نتایج کنترل‌شده‌تری نسبت به صرفاً درخواستِ پاسخ به روشی خاص از طریق پرامپت `system` ارائه می‌دهد.
 
-A very simple schema might define a response that should contain a single boolean value:
+یک schema بسیار ساده می‌تواند پاسخی تعریف کند که فقط شامل یک مقدار بولی باشد:
 
 ```js
 const schema = {
@@ -426,7 +420,7 @@ const schema = {
 };
 ```
 
-To use this, you set the schema as the value of the `responseConstraint` option:
+برای استفاده از آن، schema را به‌عنوان مقدار گزینه `responseConstraint` قرار می‌دهید:
 
 ```js
 const response = await session.prompt(
@@ -442,14 +436,14 @@ const response = await session.prompt(
 );
 ```
 
-In this case, we set the prompt content to "Is this a color:" followed by an `<input>` element `value`. As a result, the API will evaluate whether the user's input is a color or not, and return a value of `true` or `false`.
+در این حالت، محتوای پرامپت را به «Is this a color:» و به‌دنبال آن `value` یک عنصر `<input>` تنظیم می‌کنیم. در نتیجه، API بررسی می‌کند که آیا ورودی کاربر یک رنگ است یا نه و مقدار `true` یا `false` را برمی‌گرداند.
 
-### A more complex constraint example
+### مثال پیچیده‌تری از محدودیت پاسخ
 
-Let's look at a more complex example, to give you more of an idea of what is possible with response constraints. In this case, the schema specifies that the API response should be delivered as JSON containing:
+بیایید مثال پیچیده‌تری را ببینیم تا ایده بهتری از امکانات محدودیت‌های پاسخ به دست آورید. در این مورد، schema مشخص می‌کند که پاسخ API باید به‌صورت JSON ارائه شود که شامل موارد زیر است:
 
-- A single string representing a summary description.
-- An array of exactly three strings representing three supporting bullet points.
+- یک رشته که توصیف خلاصه‌ای را نشان می‌دهد.
+- یک آرایه شامل دقیقاً سه رشته که سه نکته تأییدکننده را نشان می‌دهد.
 
 ```js
 const schema = {
@@ -478,7 +472,7 @@ const schema = {
 };
 ```
 
-This is included in the `prompt()` call's `responseConstraint` option, as before:
+این، مانند قبل، در گزینه `responseConstraint` فراخوانی `prompt()` قرار می‌گیرد:
 
 ```js
 const response = await session.prompt(textarea.value, {
@@ -486,7 +480,7 @@ const response = await session.prompt(textarea.value, {
 });
 ```
 
-Because the response is specified as a JSON string, we can parse the response into an object, and then use the object's properties in our response:
+چون پاسخ به‌صورت یک رشته JSON تعیین شده، می‌توانیم آن را به یک شیء تبدیل (parse) کنیم و سپس ویژگی‌های شیء را در پاسخ خود به کار ببریم:
 
 ```js
 const structuredOutput = JSON.parse(response);
@@ -494,7 +488,7 @@ const structuredOutput = JSON.parse(response);
 promptOutput.innerHTML = `${structuredOutput.description}<br><br>- ${structuredOutput.bullets[0]}<br>- ${structuredOutput.bullets[1]}<br>- ${structuredOutput.bullets[2]}`;
 ```
 
-You can try this demo out in the following live example:
+می‌توانید این نسخه نمایشی را در مثال زنده زیر امتحان کنید:
 
 ```html hidden live-sample___constraint-example
 <h1>Prompt API constraint demo</h1>
@@ -640,15 +634,15 @@ async function getSession() {
 
 {{EmbedLiveSample("constraint-example", , "660px", , , , "language-model", "allow-forms")}}
 
-## Appending extra messages to the context
+## افزودن پیام‌های اضافی به زمینه (context)
 
-Inferring a response to a user question or statement can take a long time, especially when the API has to deal with large, complex text inputs, or multimodal inputs.
+استنتاج پاسخ برای یک سؤال یا جمله کاربر می‌تواند زمان زیادی طول بکشد، به‌ویژه وقتی API مجبور است با ورودی‌های متنی بزرگ و پیچیده یا ورودی‌های چندحالته کار کند.
 
-To reduce the perceived latency between the user's prompt and the response, it can be a good idea to start the API processing the request as soon as possible — providing useful context before the user submits their actual input — or adding further context afterwards.
+برای کاهش تأخیر درک‌شده بین prompt کاربر و پاسخ، ایده خوبی است که پردازش درخواست توسط API را هرچه زودتر شروع کنید — یعنی پیش از ارسال ورودی اصلی توسط کاربر، زمینه مفیدی را فراهم کنید — یا بعد از آن، زمینه بیشتری اضافه کنید.
 
-The {{domxref("LanguageModel.append()")}} method exists to provide such context — it adds further inputs for the API to process, without generating a model response.
+متد {{domxref("LanguageModel.append()")}} دقیقاً برای فراهم کردن چنین زمینه‌ای وجود دارد؛ این متد ورودی‌های بیشتری برای پردازش به API اضافه می‌کند بدون اینکه پاسخی از مدل تولید کند.
 
-For example, in the following snippet we provide an excerpt from a fairly famous book. We use `append()` to feed the excerpt into the API session, and then ask a question about it using a `prompt()` call. The browser can get a head start on processing the excerpt while it waits for the question to be asked.
+برای مثال، در قطعه کد زیر گزیده‌ای از یک کتاب نسبتاً مشهور را ارائه می‌دهیم. با `append()` آن را به نشست API می‌دهیم و بعد با یک فراخوانی `prompt()` یک سؤال درباره آن می‌پرسیم. مرورگر می‌تواند پردازش گزیده را زودتر شروع کند، در حالی که منتظر است سؤال پرسیده شود.
 
 ```js
 const excerpt =
@@ -666,11 +660,11 @@ const response = await session.prompt([
 ]);
 ```
 
-### An append example
+### یک مثال از append
 
-Let's look at a real implementation of the excerpt example mentioned previously. In this case, you can enter a passage of text into one input and a question about that text into another input. When submitted, the API response will answer the question specifically in the context of the provided text passage.
+بیایید پیاده‌سازی واقعی مثال گزیده متن را که پیش‌تر به آن اشاره شد ببینیم. در اینجا می‌توانید یک بخش از متن را در یک ورودی و یک سؤال درباره آن متن را در ورودی دیگری وارد کنید. پس از ارسال، پاسخ API به سؤال دقیقاً در زمینه متنی که ارائه شده پاسخ خواهد داد.
 
-It works similarly to previous examples, so we won't walk through all the code exhaustively. To study the full code, press the "Play" button in the rendered live output to open the full code in MDN Playground.
+این مثال مشابه مثال‌های قبلی کار می‌کند، بنابراین همه کد را به‌طور کامل مرور نمی‌کنیم. برای مطالعه کد کامل، دکمه «Play» را در خروجی زنده نمایش‌داده‌شده فشار دهید تا کد کامل در MDN Playground باز شود.
 
 ```html hidden live-sample___excerpt-question
 <h1>Prompt API excerpt question demo</h1>
@@ -812,9 +806,9 @@ async function getSession() {
 }
 ```
 
-#### JavaScript
+### جاوااسکریپت
 
-In this example, the excerpt is entered into a `<textarea>`. Once the `<textarea>`'s `change` event fires (meaning the user has entered some text into it and then moved focus somewhere else), we run the `appendExcerpt()` function. This checks whether the `<textarea>` contains any text. If so, the text is passed into the session via `append()` so processing can start. At this point, we also enable the form's submit button (we previously disabled it so that a question cannot be submitted without an excerpt being entered).
+در این مثال، گزیده متن در یک `<textarea>` وارد می‌شود. وقتی رویداد `change` عنصر `<textarea>` رخ می‌دهد (یعنی کاربر متنی را در آن وارد کرده و سپس فوکوس را جای دیگری برده است)، تابع `appendExcerpt()` را اجرا می‌کنیم. این تابع بررسی می‌کند که آیا `<textarea>` متنی دارد یا نه. اگر داشته باشد، متن از طریق `append()` به نشست داده می‌شود تا پردازش آغاز شود. در این مرحله، دکمه ثبت فرم را نیز فعال می‌کنیم (قبلاً آن را غیرفعال کرده بودیم تا بدون وارد کردن گزیده متن، امکان ارسال سؤال وجود نداشته باشد).
 
 ```js
 textareaElem.addEventListener("change", appendExcerpt);
@@ -829,7 +823,7 @@ async function appendExcerpt() {
 }
 ```
 
-The question is entered into a text `<input>`. Once the `<form>` containing the input is submitted (the `submit` event is fired), we run the `handleSubmission()` function. The most significant part of the function body is the `prompt()` call. We pass two `user` inputs into it — one stating that the question will be about the provided text (passed earlier via the `append()` call), and one containing the actual question taken from the `<input>` element's `value`.
+سؤال در یک `<input>` متنی وارد می‌شود. وقتی `<form>` شامل آن ورودی ارسال می‌شود (رویداد `submit` رخ می‌دهد)، تابع `handleSubmission()` را اجرا می‌کنیم. مهم‌ترین بخش بدنه این تابع، فراخوانی `prompt()` است. دو ورودی `user` به آن می‌دهیم — یکی اعلام می‌کند که سؤال درباره متن ارائه‌شده خواهد بود (متنی که قبلاً از طریق فراخوانی `append()` داده شده است) و دیگری شامل خود سؤال است که از `value` عنصر `<input>` گرفته می‌شود.
 
 ```js
 form.addEventListener("submit", handleSubmission);
@@ -859,8 +853,8 @@ async function handleSubmission(e) {
 }
 ```
 
-#### Result
+### نتیجه
 
 {{EmbedLiveSample("excerpt-question", , "730px", , , , "language-model", "allow-forms")}}
 
-Try entering a passage of text into the text area, and a question about the passage into the single-line input, then submitting the form.
+سعی کنید یک بخش از متن را در ناحیه متن (textarea) وارد کنید و سؤالی درباره آن بخش را در ورودی تک‌خطی بنویسید و سپس فرم را ارسال کنید.
