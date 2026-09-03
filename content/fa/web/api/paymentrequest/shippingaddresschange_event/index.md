@@ -1,11 +1,5 @@
 ---
 title: "PaymentRequest: shippingaddresschange event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/shippingaddresschange_event"
-status: "needs-translation"
----
-
----
-title: "PaymentRequest: shippingaddresschange event"
 short-title: shippingaddresschange
 slug: Web/API/PaymentRequest/shippingaddresschange_event
 page-type: web-api-event
@@ -17,13 +11,13 @@ browser-compat: api.PaymentRequest.shippingaddresschange_event
 
 {{APIRef("Payment Request API")}}{{SecureContext_Header}}{{Deprecated_Header}}{{Non-standard_Header}}
 
-The **`shippingaddresschange`** event is sent to the {{domxref("PaymentRequest")}} object when the user selects a shipping address or changes details of their shipping address.
+رویداد **`shippingaddresschange`** وقتی به شیء {{domxref("PaymentRequest")}} ارسال می‌شود که کاربر یک آدرس حمل‌ونقل را انتخاب کند یا جزئیات آدرس حمل‌ونقل خود را تغییر دهد.
 
-This event is not cancelable and does not bubble.
+این رویداد قابل لغو (cancelable) نیست و حباب (bubble) نمی‌شود.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای استفاده از نام رویداد می‌توانید از روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی handler رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("shippingaddresschange", (event) => { })
@@ -31,19 +25,19 @@ addEventListener("shippingaddresschange", (event) => { })
 onshippingaddresschange = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("PaymentRequestUpdateEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("PaymentRequestUpdateEvent")}}. از {{domxref("Event")}} به ارث می‌برد.
 
 {{InheritanceDiagram("PaymentRequestUpdateEvent")}}
 
-## Usage notes
+## نکات استفاده
 
-Depending on the browser, the shipping address information may be redacted for privacy reasons. That is, the {{domxref("PaymentAddress")}} which contains the shipping address may have some portions of its content altered, obscured, or left out entirely in order to prevent identifying the user without their consent (since if they choose to have you ship products to them, you'll need their address).
+بسته به مرورگر، ممکن است اطلاعات آدرس حمل‌ونقل به دلایل حفظ حریم خصوصی ویرایش شود. به عبارت دیگر، {{domxref("PaymentAddress")}} که شامل آدرس حمل‌ونقل است ممکن است بخش‌هایی از محتوایش تغییر کند، مبهم شود یا به‌کلی حذف شود تا از شناسایی کاربر بدون رضایت او جلوگیری شود (زیرا اگر کاربر بخواهد محصولی برای او ارسال کنید، به آدرسش نیاز دارید).
 
-## Example
+## مثال
 
-In this example, a handler for the `shippingaddresschange` event is set up to validate that the address meets requirements set by the web application.
+در این مثال، یک handler برای رویداد `shippingaddresschange` تنظیم شده است تا بررسی کند که آدرس با الزامات تعیین‌شده توسط برنامه وب مطابقت دارد.
 
 ```js
 const paymentRequest = new PaymentRequest(methodData, details, options);
@@ -62,7 +56,7 @@ function checkAddress(theAddress) {
 }
 ```
 
-You can also establish a handler for `shippingaddresschange` using the `onshippingaddresschange` event handler property:
+همچنین می‌توانید با استفاده از ویژگی handler رویداد `onshippingaddresschange` یک handler برای `shippingaddresschange` تنظیم کنید:
 
 ```js
 paymentRequest.onshippingaddresschange = (event) => {
@@ -71,6 +65,6 @@ paymentRequest.onshippingaddresschange = (event) => {
 };
 ```
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
