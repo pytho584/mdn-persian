@@ -1,11 +1,5 @@
 ---
 title: "PublicKeyCredential: signalUnknownCredential() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredential/signalUnknownCredential_static"
-status: "needs-translation"
----
-
----
-title: "PublicKeyCredential: signalUnknownCredential() static method"
 short-title: signalUnknownCredential()
 slug: Web/API/PublicKeyCredential/signalUnknownCredential_static
 page-type: web-api-static-method
@@ -14,61 +8,63 @@ browser-compat: api.PublicKeyCredential.signalUnknownCredential_static
 
 {{APIRef("Web Authentication API")}}{{securecontext_header}}
 
-The **`signalUnknownCredential()`** static method of the {{domxref("PublicKeyCredential")}} interface signals to the authenticator that a [credential ID](/en-US/docs/Web/API/PublicKeyCredentialRequestOptions#id) was not recognized by the [relying party](https://en.wikipedia.org/wiki/Relying_party) (RP) server.
+متد استاتیک **`signalUnknownCredential()`** در رابط {{domxref("PublicKeyCredential")}} به اصالت‌سنج (authenticator) اطلاع می‌دهد که [شناسهٔ اعتبارنامه](/en-US/docs/Web/API/PublicKeyCredentialRequestOptions#id) توسط سرورِ [طرف اتکا](https://en.wikipedia.org/wiki/Relying_party) (relying party یا به‌اختصار RP) شناسایی نشده است.
 
-This allows the authenticator to remove credentials that are not allowed by the RP, such as those for deleted accounts, or accounts that were created and stored on the authenticator but not properly updated on the server. Generally the method is called after sign in fails because the account details were not available to the RP. It can be used even when the current user is not authenticated because it does not expose sensitive information.
+این کار به اصالت‌سنج امکان می‌دهد اعتبارنامه‌هایی را که طرف اتکا مجاز نمی‌داند حذف کند؛ مانند اعتبارنامه‌های حساب‌های حذف‌شده، یا حساب‌هایی که روی اصالت‌سنج ساخته و ذخیره شده‌اند اما اطلاعاتشان به‌درستی روی سرور به‌روزرسانی نشده است.
 
-## Syntax
+معمولاً این متد پس از آن فراخوانی می‌شود که ورود کاربر به دلیل در دسترس نبودن اطلاعات حساب برای طرف اتکا ناموفق بوده است. از آنجا که این متد اطلاعات حساسی را افشا نمی‌کند، حتی وقتی کاربرِ فعلی احراز هویت نشده باشد نیز می‌توان از آن استفاده کرد.
+
+## سینتکس
 
 ```js-nolint
 signalUnknownCredential(options)
 ```
 
-### Parameters
+### پارامترها
 
 - `options`
-  - : An object representing the unrecognized credential, which contains the following properties:
+  - : شیئی که نمایانگر اعتبارنامهٔ شناسایی‌نشده است و ویژگی‌های زیر را دارد:
     - `credentialId`
-      - : A base64url-encoded string representing the [`id` of the credential](/en-US/docs/Web/API/PublicKeyCredentialRequestOptions#id) that was unrecognized.
+      - : رشته‌ای کدگذاری‌شده با base64url که [`id` همان اعتبارنامه‌ای که ناشناخته مانده](/en-US/docs/Web/API/PublicKeyCredentialRequestOptions#id) را نشان می‌دهد.
     - `rpId`
-      - : A string representing the [`id` of the RP](/en-US/docs/Web/API/PublicKeyCredentialCreationOptions#id_2) that sent the signal.
+      - : رشته‌ای که [`id` طرف اتکا](/en-US/docs/Web/API/PublicKeyCredentialCreationOptions#id_2) را نشان می‌دهد؛ همان طرف اتکایی که این سیگنال را ارسال کرده است.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves to {{jsxref("undefined")}}.
+یک {{jsxref("Promise")}} که با {{jsxref("undefined")}} resolve می‌شود.
 
-### Exceptions
+### استثناها
 
-The promise rejects with the following exceptions:
+این Promise با استثناهای زیر رد (reject) می‌شود:
 
 - `SecurityError` {{domxref("DOMException")}}
-  - : The RP domain is not valid.
+  - : دامنهٔ طرف اتکا (RP) معتبر نیست.
 - `TypeError` {{domxref("DOMException")}}
-  - : The `credentialId` is not a valid base64url-encoded string.
+  - : مقدار `credentialId` یک رشتهٔ معتبر کدگذاری‌شده با base64url نیست.
 
-## Description
+## توضیحات
 
-It is possible for the information stored in a user's authenticator about a [discoverable credential](/en-US/docs/Web/API/Web_Authentication_API#discoverable_and_non-discoverable_credentials) (for example, a [passkey](/en-US/docs/Web/Security/Authentication/Passkeys)) to go out sync with the server. This usually occurs when the user deletes a credential from the RP web app without updating the authenticator.
+ممکن است اطلاعات مربوط به یک [اعتبارنامهٔ قابل‌کشف (discoverable credential)](/en-US/docs/Web/API/Web_Authentication_API#discoverable_and_non-discoverable_credentials) که روی اصالت‌سنج کاربر ذخیره شده است (مثلاً یک [passkey](/en-US/docs/Web/Security/Authentication/Passkeys)) با اطلاعات سمت سرور هماهنگ نباشد. این اتفاق معمولاً وقتی رخ می‌دهد که کاربر یک اعتبارنامه را از برنامهٔ وبِ طرف اتکا حذف می‌کند، بدون آنکه اصالت‌سنج را به‌روزرسانی کند.
 
-When a user attempts to log in using discoverable credentials, they are presented with a set of credentials from the authenticator to choose from, and the selected credential is returned to the RP web app to log in with. If the user selects a credential that has been deleted from the RP server, it won't be recognized, and the login will fail. This is a confusing experience for users, who expect to only be offered credentials that should succeed.
+وقتی کاربر می‌خواهد با استفاده از اعتبارنامه‌های قابل‌کشف وارد شود، فهرستی از اعتبارنامه‌های موجود روی اصالت‌سنج برای انتخاب به او نمایش داده می‌شود و اعتبارنامهٔ انتخاب‌شده برای ورود به برنامهٔ وبِ طرف اتکا بازگردانده می‌شود. اگر کاربر اعتبارنامه‌ای را انتخاب کند که از سرورِ طرف اتکا حذف شده باشد، آن اعتبارنامه شناسایی نمی‌شود و ورود با شکست مواجه می‌شود. این تجربه‌ای گیج‌کننده برای کاربر است؛ کاربر انتظار دارد فقط اعتبارنامه‌هایی به او پیشنهاد شود که ورود با آن‌ها موفق خواهد بود.
 
-To mitigate this issue, `signalUnknownCredential()` should be called on the RP web app each time a discoverable credential-based sign-in fails, to inform the authenticator that the credential ID was not recognized.
+برای کاهش این مشکل، هر بار که ورود مبتنی بر اعتبارنامهٔ قابل‌کشف ناموفق می‌ماند، باید `signalUnknownCredential()` را در برنامهٔ وبِ طرف اتکا فراخوانی کرد تا به اصالت‌سنج اطلاع داده شود که شناسهٔ آن اعتبارنامه شناسایی نشده است.
 
-It is up to the authenticator how to handle this information, but the expectation is that it will delete the relevant credential so that there is no mismatch in the data stored on the authenticator and relying party.
+اینکه اصالت‌سنج این اطلاعات را چگونه پردازش کند به خودش بستگی دارد؛ اما انتظار می‌رود اعتبارنامهٔ مربوطه را حذف کند تا دیگر ناهماهنگی میان داده‌های ذخیره‌شده روی اصالت‌سنج و داده‌های طرف اتکا وجود نداشته باشد.
 
-In addition, `signalUnknownCredential()` might also be called if a web app is able to create a discoverable credential on the authenticator but is, for any reason, unable to upload the credential information to the server.
+علاوه بر این، `signalUnknownCredential()` ممکن است در شرایطی هم فراخوانی شود که یک برنامهٔ وب می‌تواند اعتبارنامهٔ قابل‌کشفی روی اصالت‌سنج بسازد اما به هر دلیلی امکان بارگذاری (upload) اطلاعات آن اعتبارنامه روی سرور را ندارد.
 
-`signalUnknownCredential()` can be called even when the current user is not authenticated because it does not expose sensitive information.
+`signalUnknownCredential()` حتی وقتی کاربرِ فعلی احراز هویت نشده باشد نیز قابل فراخوانی است، زیرا این متد اطلاعات حساسی را افشا نمی‌کند.
 
-## Examples
+## مثال‌ها
 
-### Signaling an unknown credential
+### اعلام یک اعتبارنامهٔ ناشناخته
 
-In this example, a login attempt is made using discoverable credentials via a [`get()`](/en-US/docs/Web/API/CredentialsContainer/get) call. The credential is returned successfully, and the credential ID and payload are stored in constants.
+در این مثال، تلاش برای ورود با استفاده از اعتبارنامه‌های قابل‌کشف از طریق یک فراخوانی [`get()`](/en-US/docs/Web/API/CredentialsContainer/get) انجام می‌شود. اعتبارنامه با موفقیت بازگردانده می‌شود و شناسهٔ اعتبارنامه و بار داده (payload) در ثابت‌ها ذخیره می‌شوند.
 
-The payload is sent to the RP server via a [`fetch()`](/en-US/docs/Web/API/Window/fetch) request to log the user in, but the request fails with a {{httpstatus("404")}} response because the RP doesn't recognize that user (for example because that credential was previously deleted from the RP).
+سپس بار داده با یک درخواست [`fetch()`](/en-US/docs/Web/API/Window/fetch) برای ورود کاربر به سرورِ طرف اتکا ارسال می‌شود؛ اما درخواست با پاسخ {{httpstatus("404")}} شکست می‌خورد، زیرا طرف اتکا آن کاربر را نمی‌شناسد (مثلاً به این دلیل که آن اعتبارنامه قبلاً از سمت طرف اتکا حذف شده است).
 
-As a result of this, we invoke the `signalUnknownCredential()` method, passing it the `rpId` and credential ID, to inform the authenticator that the credential is unknown to the RP. The authenticator should then delete the credential so it does not cause the same problem again.
+در نتیجه، متد `signalUnknownCredential()` را فراخوانی می‌کنیم و `rpId` و شناسهٔ اعتبارنامه را به آن پاس می‌دهیم تا به اصالت‌سنج اطلاع دهیم که این اعتبارنامه برای طرف اتکا ناشناخته است. انتظار می‌رود اصالت‌سنج سپس آن اعتبارنامه را حذف کند تا مشکل مشابهی دوباره رخ ندهد.
 
 ```js
 const credential = await navigator.credentials.get({
@@ -102,16 +98,16 @@ if (result.status === 404) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("PublicKeyCredential.signalAllAcceptedCredentials_static", "PublicKeyCredential.signalAllAcceptedCredentials()")}}
 - {{domxref("PublicKeyCredential.signalCurrentUserDetails_static", "PublicKeyCredential.signalCurrentUserDetails()")}}
-- [Keep passkeys consistent with credentials on your server with the Signal API](https://developer.chrome.com/docs/identity/webauthn-signal-api) on developer.chrome.com (2024)
+- [با Signal API، passkeyها را با اعتبارنامه‌های روی سرور خود هماهنگ نگه دارید](https://developer.chrome.com/docs/identity/webauthn-signal-api) در developer.chrome.com (2024)
