@@ -1,11 +1,5 @@
 ---
 title: "Navigator: vendor property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/vendor"
-status: "needs-translation"
----
-
----
-title: "Navigator: vendor property"
 short-title: vendor
 slug: Web/API/Navigator/vendor
 page-type: web-api-instance-property
@@ -14,16 +8,16 @@ browser-compat: api.Navigator.vendor
 
 {{APIRef("HTML DOM")}}
 
-The value of the {{DomXref("Navigator")}} **`vendor`** property is always either `"Google Inc."`, `"Apple Computer, Inc."`, or (in Firefox) the empty string.
+مقدار ویژگی **‎`vendor`‎** آبجکت {{DomXref("Navigator")}} همیشه یکی از این موارد است: `"Google Inc."`، `"Apple Computer, Inc."`، یا (در فایرفاکس) رشتهٔ خالی.
 
-## Value
+## مقدار
 
-Either `"Google Inc."`, `"Apple Computer, Inc."`, or (in Firefox) the empty string.
+یکی از `"Google Inc."`، `"Apple Computer, Inc."` یا (در فایرفاکس) رشتهٔ خالی.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
