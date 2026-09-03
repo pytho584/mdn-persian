@@ -1,11 +1,5 @@
 ---
 title: "Node: previousSibling property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Node/previousSibling"
-status: "needs-translation"
----
-
----
-title: "Node: previousSibling property"
 short-title: previousSibling
 slug: Web/API/Node/previousSibling
 page-type: web-api-instance-property
@@ -14,36 +8,31 @@ browser-compat: api.Node.previousSibling
 
 {{APIRef("DOM")}}
 
-The read-only **`previousSibling`** property of the {{domxref("Node")}} interface
-returns the node immediately preceding the specified one in its parent's
-{{domxref("Node.childNodes", "childNodes")}} list,
-or `null` if the specified node is the first in that list.
+ویژگی فقط‌خواندنی **`previousSibling`** در رابط {{domxref("Node")}}، گره‌ای را برمی‌گرداند که بلافاصله قبل از گره مشخص‌شده در فهرست {{domxref("Node.childNodes", "childNodes")}} والد آن قرار دارد، یا اگر گره مشخص‌شده اولین گره در آن فهرست باشد، `null` را برمی‌گرداند.
 
 > [!NOTE]
-> Browsers insert text nodes into a document to represent whitespace in the source markup.
-> Therefore a node obtained, for example, using [`Node.firstChild`](/en-US/docs/Web/API/Node/firstChild)
-> or `Node.previousSibling`
-> may refer to a whitespace text node rather than the actual element the author intended to get.
+> مرورگرها برای نمایش فاصله‌های خالی در نشانه‌گذاری منبع، گره‌های متنی را در سند وارد می‌کنند.
+> بنابراین ممکن است گره‌ای که مثلاً با استفاده از [`Node.firstChild`](/en-US/docs/Web/API/Node/firstChild)
+> یا `Node.previousSibling` به دست می‌آید، به یک گره متنی حاوی فاصله اشاره کند، نه عنصر واقعی‌ای که نویسنده قصد دریافت آن را داشته است.
 >
-> See [Working with whitespace in the DOM](/en-US/docs/Web/CSS/Guides/Text/Whitespace#working_with_whitespace_in_the_dom) for more information.
+> برای اطلاعات بیشتر، [کار با فاصله‌های خالی در DOM](/en-US/docs/Web/CSS/Guides/Text/Whitespace#working_with_whitespace_in_the_dom) را ببینید.
 >
-> You can use [`previousElementSibling`](/en-US/docs/Web/API/Element/previousElementSibling)
-> to get the previous element node (skipping text nodes and any other non-element nodes).
+> می‌توانید از [`previousElementSibling`](/en-US/docs/Web/API/Element/previousElementSibling)
+> برای دریافت گره عنصر قبلی استفاده کنید (با رد شدن از گره‌های متنی و هر گره غیرعنصر دیگری).
 >
-> To navigate the opposite way through the child nodes list use [Node.nextSibling](/en-US/docs/Web/API/Node/nextSibling).
+> برای پیمایش در جهت مخالف در فهرست گره‌های فرزند، از [Node.nextSibling](/en-US/docs/Web/API/Node/nextSibling) استفاده کنید.
 
-## Value
+## مقدار
 
-A {{domxref("Node")}} representing the previous sibling of the current node,
-or `null` if there are none.
+یک {{domxref("Node")}} که خواهر/برادر قبلی گره فعلی را نشان می‌دهد، یا اگر وجود نداشته باشد، `null`.
 
-## Examples
+## مثال‌ها
 
-The following examples demonstrate how `previousSibling` works with and without text nodes mixed in with elements.
+مثال‌های زیر نشان می‌دهند که `previousSibling` چگونه با وجود گره‌های متنی در کنار عناصر و بدون آن‌ها کار می‌کند.
 
-### First example
+### مثال اول
 
-In this example, we have a series of {{HTMLElement("span")}} elements directly adjacent to each other, with no whitespace between them.
+در این مثال، یک سری عنصر {{HTMLElement("span")}} مستقیماً در کنار یکدیگر قرار دارند و هیچ فاصله‌ای بین آن‌ها نیست.
 
 ```html
 <span id="b0"></span><span id="b1"></span><span id="b2"></span>
@@ -54,9 +43,9 @@ document.getElementById("b1").previousSibling; // <span id="b0">
 document.getElementById("b2").previousSibling.id; // "b1"
 ```
 
-### Second example
+### مثال دوم
 
-In this example, there are whitespace text nodes (line breaks) between the {{htmlelement("span")}} elements.
+در این مثال، بین عناصر {{htmlelement("span")}} گره‌های متنی حاوی فاصله (شکست خط) وجود دارد.
 
 ```html
 <span id="b0"></span>
@@ -72,15 +61,15 @@ document.getElementById("b2").previousSibling; // #text
 document.getElementById("b2").previousSibling.id; // undefined
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Node.nextSibling")}}
 - {{domxref("Element.previousElementSibling")}}
