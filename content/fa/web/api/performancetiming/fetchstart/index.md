@@ -1,11 +1,5 @@
 ---
 title: "PerformanceTiming: fetchStart property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/fetchStart"
-status: "needs-translation"
----
-
----
-title: "PerformanceTiming: fetchStart property"
 short-title: fetchStart
 slug: Web/API/PerformanceTiming/fetchStart
 page-type: web-api-instance-property
@@ -17,27 +11,22 @@ browser-compat: api.PerformanceTiming.fetchStart
 {{APIRef("Performance API")}}{{Deprecated_Header}}
 
 > [!WARNING]
-> This interface of this property is deprecated in the [Navigation Timing Level 2 specification](https://w3c.github.io/navigation-timing/#obsolete). Please use the {{domxref("PerformanceNavigationTiming")}}
-> interface instead.
+> رابطِ مربوط به این ویژگی در [مشخصات Navigation Timing Level 2](https://w3c.github.io/navigation-timing/#obsolete) منسوخ شده است. لطفاً به‌جای آن از رابط {{domxref("PerformanceNavigationTiming")}} استفاده کنید.
 
-The legacy
-**`PerformanceTiming.fetchStart`**
-read-only property returns an `unsigned long long` representing the moment,
-in milliseconds since the UNIX epoch, the browser is ready to fetch the document using
-an HTTP request. This moment is _before_ the check to any application cache.
+ویژگی فقط‌خواندنی منسوخ **`PerformanceTiming.fetchStart`** یک `unsigned long long` برمی‌گرداند که لحظه‌ای را بر حسب میلی‌ثانیه از مبدأ UNIX نشان می‌دهد که مرورگر آماده است سند را با استفاده از یک درخواست HTTP واکشی کند. این لحظه _پیش از_ بررسی هرگونه حافظهٔ پنهانِ برنامه (application cache) است.
 
-## Value
+## مقدار
 
-An `unsigned long long`.
+یک `unsigned long long`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("PerformanceTiming")}} interface it belongs to.
+- رابط {{domxref("PerformanceTiming")}} که این ویژگی به آن تعلق دارد.
