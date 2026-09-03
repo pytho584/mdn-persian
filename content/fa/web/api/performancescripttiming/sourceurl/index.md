@@ -1,11 +1,5 @@
 ---
 title: "PerformanceScriptTiming: sourceURL property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceScriptTiming/sourceURL"
-status: "needs-translation"
----
-
----
-title: "PerformanceScriptTiming: sourceURL property"
 short-title: sourceURL
 slug: Web/API/PerformanceScriptTiming/sourceURL
 page-type: web-api-instance-property
@@ -16,27 +10,27 @@ browser-compat: api.PerformanceScriptTiming.sourceURL
 
 {{SeeCompatTable}}{{APIRef("Performance API")}}
 
-The **`sourceURL`** read-only property of the {{domxref("PerformanceScriptTiming")}} interface returns a string representing the URL of the script.
+خاصیت فقط‌خواندنی **`sourceURL`** از رابط {{domxref("PerformanceScriptTiming")}} یک رشته را برمی‌گرداند که نشانی اینترنتی (URL) اسکریپت را نشان می‌دهد.
 
-It is important to note that the reported function location will be the "entry point" of the script, that is, the top level of the stack, not any specific slow sub-function. See {{domxref("PerformanceScriptTiming.sourceFunctionName")}} for more discussion around this.
+توجه به این نکته مهم است که مکان گزارش‌شدهٔ تابع، «نقطهٔ ورود» اسکریپت خواهد بود، یعنی بالاترین سطح پشته، نه هیچ زیرتابع کند خاصی. برای بحث بیشتر در این زمینه به {{domxref("PerformanceScriptTiming.sourceFunctionName")}} مراجعه کنید.
 
-## Value
+## مقدار
 
-A string. Returns an empty string if the URL was not found.
+یک رشته. اگر نشانی اینترنتی پیدا نشود، یک رشتهٔ خالی برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-See [Long animation frame timing](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing#examples) for examples related to the Long Animation Frames API.
+برای مثال‌های مرتبط با API فریم‌های انیمیشن طولانی، به [زمان‌بندی فریم انیمیشن طولانی](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Long animation frame timing](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing)
+- [زمان‌بندی فریم انیمیشن طولانی](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing)
 - {{domxref("PerformanceLongAnimationFrameTiming")}}
