@@ -1,10 +1,4 @@
 ---
-title: "Using Pointer Events"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Pointer_events/Using_Pointer_Events"
-status: "needs-translation"
----
-
----
 title: Using Pointer Events
 slug: Web/API/Pointer_events/Using_Pointer_Events
 page-type: guide
@@ -13,27 +7,27 @@ browser-compat: api.PointerEvent
 
 {{DefaultAPISidebar("Pointer Events")}}
 
-This guide demonstrates how to use [pointer events](/en-US/docs/Web/API/Pointer_events) and the HTML {{HTMLElement("canvas")}} element to build a multi-touch enabled drawing application. This example is based on the one in the [touch events overview](/en-US/docs/Web/API/Touch_events), except it uses the {{domxref("PointerEvent","pointer events", "", 1)}} input event model. Another difference is that because pointer events are pointer device agnostic, the application accepts coordinate-based inputs from a mouse, a pen, or a fingertip using the same code.
+این راهنما نحوهٔ استفاده از [رویدادهای اشاره‌گر](/en-US/docs/Web/API/Pointer_events) و عنصر HTML {{HTMLElement("canvas")}} را برای ساخت یک برنامهٔ نقاشی با پشتیبانی از لمسِ چندگانه نشان می‌دهد. این مثال بر پایهٔ [مرور رویدادهای لمسی](/en-US/docs/Web/API/Touch_events) است، با این تفاوت که از مدل رویدادِ ورودیِ {{domxref("PointerEvent","pointer events", "", 1)}} استفاده می‌کند. تفاوت دیگر این است که چون رویدادهای اشاره‌گر مستقل از دستگاه اشاره‌گر هستند، برنامه با همان کد، ورودی‌های مختصاتی را از ماوس، قلم یا نوک انگشت می‌پذیرد.
 
-This application will only work on a browser that supports pointer events.
+این برنامه فقط در مرورگری کار می‌کند که از رویدادهای اشاره‌گر پشتیبانی کند.
 
-## Definitions
+## تعاریف
 
-- Surface
-  - : A touch-sensitive surface. This may be a trackpad, a touch screen, or even a virtual mapping of a user's desk surface (or mousepad) with the physical screen.
-- Touch point
-  - : A point of contact with the surface. This may be a finger (or elbow, ear, nose, whatever, but typically a finger), stylus, mouse, or any other method for specifying a single point on the surface.
+- سطح
+  - : سطحی حساس به لمس. این سطح می‌تواند یک ترک‌پد، یک صفحه‌نمایش لمسی، یا حتی نگاشت مجازی سطح میز کاربر (یا زیرِ ماوس) نسبت به صفحهٔ فیزیکی باشد.
+- نقطهٔ لمس
+  - : نقطه‌ای از تماس با سطح. این نقطه می‌تواند یک انگشت (یا آرنج، گوش، بینی و مانند آن، اما معمولاً انگشت)، قلم، ماوس، یا هر روش دیگری برای تعیین یک نقطهٔ واحد روی سطح باشد.
 
-## Examples
+## مثال‌ها
 
 > [!NOTE]
-> The text below uses the term "finger" when describing the contact with the surface, but it could, of course, also be a stylus, mouse, or other method of pointing at a location.
+> متن زیر هنگام توصیف تماس با سطح از واژهٔ «انگشت» استفاده می‌کند، اما البته ممکن است این تماس یک قلم، ماوس، یا روش دیگری برای اشاره به یک نقطه باشد.
 
-### Drawing application
+### برنامهٔ نقاشی
 
 #### HTML
 
-The HTML consists of a single {{HTMLElement("canvas")}} element. Curves will be drawn in response to the user's touch gestures. A button is also included to clear the canvas.
+اچ‌تی‌ام‌ال فقط شامل یک عنصر {{HTMLElement("canvas")}} است. منحنی‌ها در پاسخ به ژست‌های لمسی کاربر رسم می‌شوند. همچنین یک دکمه برای پاک کردن بوم اضافه شده است.
 
 ```html
 <canvas id="canvas" width="600" height="600">
@@ -44,7 +38,7 @@ The HTML consists of a single {{HTMLElement("canvas")}} element. Curves will be 
 
 #### CSS
 
-The {{cssxref("touch-action")}} property is set to `none` to prevent the browser from applying its default touch behavior to the application.
+خاصیت {{cssxref("touch-action")}} روی `none` تنظیم شده است تا مرورگر رفتار پیش‌فرض لمس را روی این برنامه اعمال نکند.
 
 ```css
 #canvas {
@@ -56,7 +50,7 @@ The {{cssxref("touch-action")}} property is set to `none` to prevent the browser
 
 #### JavaScript
 
-We will keep track of all ongoing touches and draw lines for each of them. The `colors` are used to distinguish between different fingers.
+ما همهٔ لمس‌های در جریان را پیگیری می‌کنیم و برای هرکدام خط‌هایی رسم می‌کنیم. از `colors` برای تمایز بین انگشت‌های مختلف استفاده می‌شود.
 
 ```js
 const canvas = document.getElementById("canvas");
@@ -67,7 +61,7 @@ const ongoingTouches = new Map();
 const colors = ["red", "green", "blue"];
 ```
 
-The `handleStart` function listens to the {{domxref("Element/pointerdown_event", "pointerdown")}} event and draws a circle at the start of the touch.
+تابع `handleStart` به رویداد {{domxref("Element/pointerdown_event", "pointerdown")}} گوش می‌دهد و در شروع لمس یک دایره رسم می‌کند.
 
 ```js
 function handleStart(event) {
@@ -87,7 +81,7 @@ function handleStart(event) {
 canvas.addEventListener("pointerdown", handleStart);
 ```
 
-The `handleEnd` function listens to the {{domxref("Element/pointerup_event", "pointerup")}} event and draws a square at the end of the touch.
+تابع `handleEnd` به رویداد {{domxref("Element/pointerup_event", "pointerup")}} گوش می‌دهد و در پایان لمس یک مربع رسم می‌کند.
 
 ```js
 function handleEnd(event) {
@@ -110,7 +104,7 @@ function handleEnd(event) {
 canvas.addEventListener("pointerup", handleEnd);
 ```
 
-The `handleCancel` function listens to the {{domxref("Element/pointercancel_event", "pointercancel")}} event and stops tracking the touch.
+تابع `handleCancel` به رویداد {{domxref("Element/pointercancel_event", "pointercancel")}} گوش می‌دهد و پیگیری لمس را متوقف می‌کند.
 
 ```js
 function handleCancel(event) {
@@ -127,7 +121,7 @@ function handleCancel(event) {
 canvas.addEventListener("pointercancel", handleCancel);
 ```
 
-The `handleMove` function listens to the {{domxref("Element/pointermove_event", "pointermove")}} event and draws a line between the start and end of the touch.
+تابع `handleMove` به رویداد {{domxref("Element/pointermove_event", "pointermove")}} گوش می‌دهد و خطی بین ابتدا و انتهای لمس رسم می‌کند.
 
 ```js
 function handleMove(event) {
@@ -157,7 +151,7 @@ function handleMove(event) {
 canvas.addEventListener("pointermove", handleMove);
 ```
 
-Finally, add clearing functionality.
+در پایان، قابلیت پاک‌کردن بوم را اضافه می‌کنیم.
 
 ```js
 document.getElementById("clear").addEventListener("click", () => {
@@ -167,15 +161,15 @@ document.getElementById("clear").addEventListener("click", () => {
 
 {{EmbedLiveSample("drawing_application", "", "700")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Pointer events](/en-US/docs/Web/API/Pointer_events)
-- [Touch events](/en-US/docs/Web/API/Touch_events)
+- [رویدادهای اشاره‌گر](/en-US/docs/Web/API/Pointer_events)
+- [رویدادهای لمسی](/en-US/docs/Web/API/Touch_events)
