@@ -1,11 +1,5 @@
 ---
 title: "Navigator: windowControlsOverlay property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/windowControlsOverlay"
-status: "needs-translation"
----
-
----
-title: "Navigator: windowControlsOverlay property"
 short-title: windowControlsOverlay
 slug: Web/API/Navigator/windowControlsOverlay
 page-type: web-api-instance-property
@@ -14,22 +8,17 @@ browser-compat: api.Navigator.windowControlsOverlay
 
 {{SecureContext_Header}}{{APIRef("Window Controls Overlay API")}}
 
-The **`windowControlsOverlay`** read-only property of the {{domxref("Navigator")}}
-interface returns the {{domxref("WindowControlsOverlay")}} interface, which exposes
-information about the title bar geometry in desktop Progressive Web Apps that use the [Window Controls Overlay API](/en-US/docs/Web/API/Window_Controls_Overlay_API).
+خاصیت فقط-خواندنی **`windowControlsOverlay`** از رابط {{domxref("Navigator")}}، رابط {{domxref("WindowControlsOverlay")}} را بازمی‌گرداند. این رابط اطلاعاتی در مورد هندسهٔ نوار عنوان در برنامه‌های وب پیش‌روندهٔ دسکتاپ که از [Window Controls Overlay API](/en-US/docs/Web/API/Window_Controls_Overlay_API) استفاده می‌کنند، ارائه می‌دهد.
 
-Progressive Web Apps installed on desktop Operating Systems can opt-in to the
-Window Controls Overlay feature by using the `window-controls-overlay` value in the
-[`display_override`](/en-US/docs/Web/Progressive_web_apps/Manifest/Reference/display_override) web app manifest member.
+برنامه‌های وب پیش‌رونده نصب‌شده روی سیستم‌عامل‌های دسکتاپ می‌توانند با استفاده از مقدار `window-controls-overlay` در عضو `display_override` از [بیانیهٔ برنامهٔ وب](/en-US/docs/Web/Progressive_web_apps/Manifest/Reference/display_override) خود، قابلیت Window Controls Overlay را انتخاب کنند.
 
-Doing so hides the default window title bar and gives the app access to the full area
-of the app window.
+این کار نوار عنوان پیش‌فرض پنجره را مخفی کرده و به برنامه دسترسی به تمام ناحیهٔ پنجرهٔ برنامه را می‌دهد.
 
-## Value
+## مقدار
 
-The {{domxref("WindowControlsOverlay")}} interface.
+رابط {{domxref("WindowControlsOverlay")}}.
 
-## Examples
+## مثال‌ها
 
 ```js
 if ("windowControlsOverlay" in navigator) {
@@ -40,10 +29,10 @@ if ("windowControlsOverlay" in navigator) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
