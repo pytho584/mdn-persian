@@ -1,11 +1,5 @@
 ---
 title: "PublicKeyCredential: isUserVerifyingPlatformAuthenticatorAvailable() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredential/isUserVerifyingPlatformAuthenticatorAvailable_static"
-status: "needs-translation"
----
-
----
-title: "PublicKeyCredential: isUserVerifyingPlatformAuthenticatorAvailable() static method"
 short-title: isUserVerifyingPlatformAuthenticatorAvailable()
 slug: Web/API/PublicKeyCredential/isUserVerifyingPlatformAuthenticatorAvailable_static
 page-type: web-api-static-method
@@ -14,42 +8,42 @@ browser-compat: api.PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvai
 
 {{APIRef("Web Authentication API")}}{{securecontext_header}}
 
-The **`isUserVerifyingPlatformAuthenticatorAvailable()`** static method of the {{domxref("PublicKeyCredential")}} interface returns a {{jsxref("Promise")}} which resolves to `true` if a user-verifying platform authenticator is present.
+متد استاتیک **`isUserVerifyingPlatformAuthenticatorAvailable()`** از اینترفیس {{domxref("PublicKeyCredential")}} یک {{jsxref("Promise")}} برمی‌گرداند که اگر یک احراز هویت‌کنندهٔ پلتفرمیِ تأییدکنندهٔ کاربر موجود باشد، با مقدار `true` resolve می‌شود.
 
-A user-verifying platform authenticator is a kind of {{glossary("multi-factor authentication", "multi-factor authenticator")}} that is part of the client device (it is generally not removable) and that involves an action from the user in order to identify them. Common user-verifying platform authenticators include:
+احراز هویت‌کنندهٔ پلتفرمیِ تأییدکنندهٔ کاربر، نوعی {{glossary("multi-factor authentication", "multi-factor authenticator")}} است که بخشی از دستگاه کلاینت محسوب می‌شود (و معمولاً جداشدنی نیست) و برای شناسایی کاربر، به انجام عملی از سوی او نیاز دارد. نمونه‌های رایج این احراز هویت‌کننده‌ها عبارت‌اند از:
 
-- Touch ID or Face ID (macOS and iOS)
-- Windows Hello (Windows)
-- Device unlock (fingerprint, face, PIN, etc.) on Android
+- Touch ID یا Face ID (در macOS و iOS)
+- Windows Hello (در Windows)
+- باز کردن قفل دستگاه (اثر انگشت، چهره، PIN و غیره) در Android
 
 > [!NOTE]
-> This method may only be used in top-level contexts and will not be available in an {{HTMLElement("iframe")}} for example.
+> این متد فقط در زمینه‌های سطح بالا (top-level contexts) قابل استفاده است و برای مثال در یک {{HTMLElement("iframe")}} در دسترس نخواهد بود.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} which resolves to a boolean value indicating whether or a not a user-verifying platform authenticator is available.
+یک {{jsxref("Promise")}} که به یک مقدار بولی resolve می‌شود و نشان می‌دهد آیا احراز هویت‌کنندهٔ پلتفرمیِ تأییدکنندهٔ کاربر موجود است یا نه.
 
 > [!NOTE]
-> In earlier versions of the specification, the boolean also conveyed the consent of the user to disclose such an authenticator existed.
+> در نسخه‌های پیشین مشخصات (specification)، این مقدار بولی همچنین رضایت کاربر برای افشای وجودِ چنین احراز هویت‌کننده‌ای را منتقل می‌کرد.
 
-### Exceptions
+### استثناها
 
-The returned {{jsxref("Promise")}} may be rejected with the following values:
+{{jsxref("Promise")}} برگشتی ممکن است با مقادیر زیر رد (reject) شود:
 
 - `SecurityError` {{domxref("DOMException")}}
-  - : The RP domain is not valid.
+  - : دامنهٔ RP (Relying Party) معتبر نیست.
 
-## Examples
+## نمونه‌ها
 
 ```js
 PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable()
@@ -68,15 +62,15 @@ PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable()
   });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Windows Hello](https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/windows-hello)
-- [Web Authentication and Windows Hello - MSDN Guide](https://learn.microsoft.com/en-us/archive/microsoft-edge/legacy/developer/) and especially the [special considerations mentioning `isUserVerifyingPlatformAuthenticator()`](https://learn.microsoft.com/en-us/archive/microsoft-edge/legacy/developer/#special-considerations-for-windows-hello)
+- [Web Authentication و Windows Hello — راهنمای MSDN](https://learn.microsoft.com/en-us/archive/microsoft-edge/legacy/developer/) و به‌ویژه [ملاحظات ویژه دربارهٔ `isUserVerifyingPlatformAuthenticator()`](https://learn.microsoft.com/en-us/archive/microsoft-edge/legacy/developer/#special-considerations-for-windows-hello)
