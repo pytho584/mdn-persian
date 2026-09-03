@@ -1,7 +1,5 @@
 ---
 title: "NavigationPreloadManager: getState() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigationPreloadManager/getState"
-status: "needs-translation"
 ---
 
 ---
@@ -14,36 +12,35 @@ browser-compat: api.NavigationPreloadManager.getState
 
 {{APIRef("Service Workers API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`getState()`** method of the {{domxref("NavigationPreloadManager")}} interface returns a {{jsxref("Promise")}} that resolves to an object with properties that indicate whether preload is enabled and what value will be sent in the {{HTTPHeader("Service-Worker-Navigation-Preload")}} HTTP header.
+متد **`getState()`** از رابط {{domxref("NavigationPreloadManager")}} یک {{jsxref("Promise")}} برمی‌گرداند که به یک شیء resolve می‌شود. ویژگی‌های این شیء نشان می‌دهند که آیا پیش‌بارگذاری فعال است و چه مقداری در هدر HTTP {{HTTPHeader("Service-Worker-Navigation-Preload")}} ارسال خواهد شد.
 
-## Syntax
+## نحو
 
 ```js-nolint
 getState()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with an object that has the following properties:
+یک {{jsxref("Promise")}} که با یک شیء شامل ویژگی‌های زیر resolve می‌شود:
 
 - `enabled`
-  - : `true` if preloading is enabled, and `false` otherwise.
+  - : اگر پیش‌بارگذاری فعال باشد، `true` و در غیر این صورت `false`.
 - `headerValue`
-  - : A string containing the value that will be sent in the `Service-Worker-Navigation-Preload` HTTP header following a preloading {{domxref("Window/fetch", "fetch()")}}.
-    This defaults to `true` unless the value was changed using {{domxref("NavigationPreloadManager.setHeaderValue()")}}.
+  - : رشته‌ای حاوی مقداری است که هنگام یک فراخوانی {{domxref("Window/fetch", "fetch()")}} در حالت پیش‌بارگذاری، در هدر HTTP `Service-Worker-Navigation-Preload` ارسال می‌شود. این مقدار به‌طور پیش‌فرض `true` است، مگر اینکه با استفاده از {{domxref("NavigationPreloadManager.setHeaderValue()")}} تغییر کرده باشد.
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : There is no active worker associated with the registration to which this {{domxref("NavigationPreloadManager")}} belongs.
+  - : هیچ worker فعالی با ثبتی (registration) که این {{domxref("NavigationPreloadManager")}} به آن تعلق دارد، مرتبط نیست.
 
-## Examples
+## مثال‌ها
 
-The code below shows a request for the current state, made once the service worker is ready.
+کد زیر درخواست وضعیت فعلی را نشان می‌دهد؛ این درخواست پس از آماده‌شدن service worker انجام می‌شود.
 
 ```js
 navigator.serviceWorker.ready
@@ -57,10 +54,10 @@ navigator.serviceWorker.ready
   );
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
