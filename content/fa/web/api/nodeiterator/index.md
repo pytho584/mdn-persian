@@ -1,7 +1,5 @@
 ---
 title: "NodeIterator"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator"
-status: "needs-translation"
 ---
 
 ---
@@ -13,52 +11,49 @@ browser-compat: api.NodeIterator
 
 {{APIRef("DOM")}}
 
-The **`NodeIterator`** interface represents an iterator to traverse nodes of a DOM subtree in document order.
+رابطهٔ **`NodeIterator`** یک تکرارکننده (iterator) را نشان می‌دهد که برای پیمایش گره‌های یک زیردرخت DOM به ترتیب سند استفاده می‌شود.
 
-A `NodeIterator` can be created using the {{domxref("Document.createNodeIterator()")}} method, as follows:
+یک `NodeIterator` را می‌توان با استفاده از متد {{domxref("Document.createNodeIterator()")}} به شکل زیر ایجاد کرد:
 
 ```js
 const nodeIterator = document.createNodeIterator(root, whatToShow, filter);
 ```
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface doesn't inherit any property._
+_این رابط هیچ ویژگی‌ای را به ارث نمی‌برد._
 
 - {{domxref("NodeIterator.root")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref("Node")}} representing the root node, as specified when the
-    `NodeIterator` was created.
+  - : یک {{domxref("Node")}} را برمی‌گرداند که گره ریشه را نشان می‌دهد، همان‌طور که هنگام ایجاد `NodeIterator` مشخص شده است.
 - {{domxref("NodeIterator.whatToShow")}} {{ReadOnlyInline}}
-  - : Returns an `unsigned long` bitmask that describes the types of {{domxref("Node")}}
-    to be matched. Non-matching nodes are skipped, but relevant child nodes may be included.
+  - : یک بیت‌ماسک (bitmask) از نوع `unsigned long` را برمی‌گرداند که انواع {{domxref("Node")}}هایی را که باید مطابقت داده شوند توصیف می‌کند. گره‌های نامطابق رد می‌شوند، اما گره‌های فرزند مرتبط ممکن است شامل شوند.
 - {{domxref("NodeIterator.filter")}} {{ReadOnlyInline}}
-  - : Returns a `NodeFilter` used to select the relevant nodes.
+  - : یک `NodeFilter` را برمی‌گرداند که برای انتخاب گره‌های مرتبط استفاده می‌شود.
 - {{domxref("NodeIterator.referenceNode")}} {{ReadOnlyInline}}
-  - : Returns the {{domxref("Node")}} to which the iterator is anchored.
+  - : {{domxref("Node")}}ای را برمی‌گرداند که تکرارکننده به آن متصل است.
 - {{domxref("NodeIterator.pointerBeforeReferenceNode")}} {{ReadOnlyInline}}
-  - : Returns a boolean indicating whether or not the `NodeIterator` is anchored _before_ the {{domxref("NodeIterator.referenceNode")}}. If `false`, it indicates that the iterator is anchored _after_ the reference node.
+  - : یک مقدار بولی برمی‌گرداند که نشان می‌دهد آیا `NodeIterator` _قبل از_ {{domxref("NodeIterator.referenceNode")}} متصل است یا خیر. اگر `false` باشد، نشان می‌دهد که تکرارکننده _بعد از_ گره مرجع متصل است.
 
-## Instance methods
+## روش‌های نمونه
 
-_This interface doesn't inherit any method._
+_این رابط هیچ روشی را به ارث نمی‌برد._
 
 - {{domxref("NodeIterator.detach()")}} {{deprecated_inline}}
-  - : This is a legacy method, and no longer has any effect. Previously it served to mark a
-    `NodeIterator` as disposed, so it could be reclaimed by garbage collection.
+  - : این یک روش قدیمی است و دیگر هیچ اثری ندارد. قبلاً برای علامت‌گذاری یک `NodeIterator` به عنوان غیرفعال استفاده می‌شد تا بتواند توسط جمع‌آوری زباله (garbage collection) بازیابی شود.
 - {{domxref("NodeIterator.previousNode()")}}
-  - : Returns the previous {{domxref("Node")}} in the document, or `null` if there are none.
+  - : گره {{domxref("Node")}} قبلی را در سند برمی‌گرداند، یا اگر وجود نداشته باشد `null` را برمی‌گرداند.
 - {{domxref("NodeIterator.nextNode()")}}
-  - : Returns the next {{domxref("Node")}} in the document, or `null` if there are none.
+  - : گره {{domxref("Node")}} بعدی را در سند برمی‌گرداند، یا اگر وجود نداشته باشد `null` را برمی‌گرداند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The creator method: {{domxref("Document.createNodeIterator()")}}.
-- Related interface: {{domxref("TreeWalker")}}
+- روش ایجادکننده: {{domxref("Document.createNodeIterator()")}}.
+- رابط مرتبط: {{domxref("TreeWalker")}}
