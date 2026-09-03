@@ -1,30 +1,16 @@
 ---
 title: "NodeIterator: pointerBeforeReferenceNode property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/pointerBeforeReferenceNode"
-status: "needs-translation"
----
-
----
-title: "NodeIterator: pointerBeforeReferenceNode property"
-short-title: pointerBeforeReferenceNode
-slug: Web/API/NodeIterator/pointerBeforeReferenceNode
-page-type: web-api-instance-property
-browser-compat: api.NodeIterator.pointerBeforeReferenceNode
 ---
 
 {{APIRef("DOM")}}
 
-The **`NodeIterator.pointerBeforeReferenceNode`** read-only
-property returns a boolean flag that indicates whether the
-`NodeFilter` is anchored before (if this value is `true`) or
-after (if this value is `false`) the anchor node indicated by the
-{{domxref("NodeIterator.referenceNode")}} property.
+ویژگی فقط‑خواندنی **`NodeIterator.pointerBeforeReferenceNode`** یک پرچم بولی (Boolean) برمی‌گرداند که نشان می‌دهد آیا `NodeFilter` قبل از گره لنگر (anchor node) که توسط ویژگی {{domxref("NodeIterator.referenceNode")}} مشخص شده است، لنگر انداخته (اگر این مقدار `true` باشد) یا بعد از آن (اگر این مقدار `false` باشد).
 
-## Value
+## مقدار
 
-A boolean.
+یک مقدار بولی.
 
-## Examples
+## مثال‌ها
 
 ```js
 const nodeIterator = document.createNodeIterator(
@@ -39,14 +25,14 @@ const nodeIterator = document.createNodeIterator(
 flag = nodeIterator.pointerBeforeReferenceNode;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface it belongs to: {{domxref("NodeIterator")}}
+- رابطی که به آن تعلق دارد: {{domxref("NodeIterator")}}
