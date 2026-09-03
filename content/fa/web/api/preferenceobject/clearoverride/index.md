@@ -1,9 +1,4 @@
----
-title: "PreferenceObject: clearOverride() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PreferenceObject/clearOverride"
-status: "needs-translation"
----
-
+```
 ---
 title: "PreferenceObject: clearOverride() method"
 short-title: clearOverride()
@@ -17,37 +12,38 @@ spec-urls: https://drafts.csswg.org/mediaqueries-5/#clear-override-method
 
 {{APIRef("User Preferences API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`clearOverride`** method of the {{domxref("PreferenceObject")}} interface resets the {{domxref("PreferenceObject.override", "override")}} value.
+متد `clearOverride` از رابط {{domxref("PreferenceObject")}} مقدار {{domxref("PreferenceObject.override", "override")}} را بازنشانی می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 clearOverrides()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفادهٔ پایه
 
-The following example clears the override of the [color scheme](/en-US/docs/Web/API/PreferenceObject/colorScheme).
+مثال زیر، مقدار override مربوط به [طرح رنگی](/en-US/docs/Web/API/PreferenceObject/colorScheme) را پاک می‌کند.
 
 ```js
 navigator.preferences.colorScheme.clearOverride();
 console.log(navigator.preferences.colorScheme.override);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
+```
