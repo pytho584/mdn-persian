@@ -1,11 +1,5 @@
 ---
 title: "OffscreenCanvas: width property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas/width"
-status: "needs-translation"
----
-
----
-title: "OffscreenCanvas: width property"
 short-title: width
 slug: Web/API/OffscreenCanvas/width
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.OffscreenCanvas.width
 
 {{APIRef("Canvas API")}}{{AvailableInWorkers}}
 
-The **`width`** property returns and sets the width of an {{domxref("OffscreenCanvas")}} object.
+ویژگی **`width`** عرض یک شیء {{domxref("OffscreenCanvas")}} را برمی‌گرداند و تنظیم می‌کند.
 
-## Value
+## مقدار
 
-A positive integer representing the width of the offscreen canvas in CSS pixels.
+یک عدد صحیح مثبت که عرض بوم خارج از صفحه را بر حسب پیکسل CSS نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
-Creating a new offscreen canvas and returning or setting the width of the offscreen canvas:
+ایجاد یک بوم خارج از صفحه جدید و برگرداندن یا تنظیم عرض آن:
 
 ```js
 const offscreen = new OffscreenCanvas(256, 256);
@@ -30,14 +24,14 @@ offscreen.width; // 256
 offscreen.width = 512;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("OffscreenCanvas")}}, the interface this property belongs to.
+- {{domxref("OffscreenCanvas")}}، واسطی که این ویژگی به آن تعلق دارد.
