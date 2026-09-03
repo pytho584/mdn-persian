@@ -1,11 +1,5 @@
 ---
 title: "PaymentRequest: shippingAddress property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/shippingAddress"
-status: "needs-translation"
----
-
----
-title: "PaymentRequest: shippingAddress property"
 short-title: shippingAddress
 slug: Web/API/PaymentRequest/shippingAddress
 page-type: web-api-instance-property
@@ -17,26 +11,17 @@ browser-compat: api.PaymentRequest.shippingAddress
 
 {{securecontext_header}}{{APIRef("Payment Request API")}}{{Deprecated_header}}{{Non-standard_header}}
 
-The **`shippingAddress`** read-only property of
-the {{domxref('PaymentRequest')}} interface returns the shipping address provided by the
-user. It is `null` by default.
+ویژگی فقط‌خواندنی **`shippingAddress`** در رابط {{domxref('PaymentRequest')}}، آدرس حمل‌ونقل ارائه‌شده توسط کاربر را بازمی‌گرداند. مقدار پیش‌فرض آن `null` است.
 
-## Value
+## مقدار
 
-A {{domxref('PaymentAddress')}} object or `null`.
+یک شیء {{domxref('PaymentAddress')}} یا `null`.
 
-## Examples
+## مثال‌ها
 
-Generally, the user agent will fill the `shippingAddress` property value.
-You can trigger this by setting
-`options.requestShipping` to `true` when calling
-the `PaymentRequest` constructor.
+به‌طور معمول، عامل کاربر (user agent) مقدار ویژگی `shippingAddress` را پر می‌کند. می‌توانید با قرار دادن `options.requestShipping` روی `true` هنگام فراخوانی سازندهٔ `PaymentRequest`، این کار را فعال کنید.
 
-In the example below, the cost of shipping varies by geography. When the
-{{domxref('PaymentRequest.shippingaddresschange_event', 'shippingaddresschange')}} is
-called, `updateDetails()` is called to update the details of
-the `PaymentRequest`, using `shippingAddress` to set the correct
-shipping cost.
+در مثال زیر، هزینهٔ حمل‌ونقل بسته به منطقهٔ جغرافیایی متفاوت است. وقتی رویداد {{domxref('PaymentRequest.shippingaddresschange_event', 'shippingaddresschange')}} صدا زده می‌شود، تابع `updateDetails()` برای به‌روزرسانی جزئیات `PaymentRequest` فراخوانی می‌شود و از `shippingAddress` برای تنظیم هزینهٔ صحیح حمل‌ونقل استفاده می‌کند.
 
 ```js
 // Initialization of PaymentRequest arguments are excerpted for the sake of
@@ -87,6 +72,6 @@ function updateDetails(details, shippingAddress, resolve) {
 }
 ```
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
