@@ -1,11 +1,5 @@
 ---
 title: "PaymentRequestEvent: openWindow() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/openWindow"
-status: "needs-translation"
----
-
----
-title: "PaymentRequestEvent: openWindow() method"
 short-title: openWindow()
 slug: Web/API/PaymentRequestEvent/openWindow
 page-type: web-api-instance-method
@@ -16,7 +10,7 @@ browser-compat: api.PaymentRequestEvent.openWindow
 
 {{APIRef("Web-Based Payment Handler API")}}{{SeeCompatTable}}{{AvailableInWorkers("service")}}
 
-The **`openWindow()`** method of the {{domxref("PaymentRequestEvent")}} interface opens the specified URL in a new window, only if the given URL is on the same origin as the calling page. It returns a {{jsxref("Promise")}} that resolves with a reference to a {{domxref("WindowClient")}}.
+متد **`openWindow()`** از رابط {{domxref("PaymentRequestEvent")}} نشانی وب مشخص‌شده را در یک پنجرهٔ جدید باز می‌کند، فقط به شرطی که آن نشانی وب هم‌مبدأ با صفحهٔ فراخوان باشد. این متد یک {{jsxref("Promise")}} برمی‌گرداند که با ارجاعی به یک {{domxref("WindowClient")}} resolve می‌شود.
 
 ## Syntax
 
@@ -27,13 +21,11 @@ openWindow(url)
 ### Parameters
 
 - `url`
-  - : The URL to open in the new window. It must be on the same origin as the calling
-    page.
+  - : نشانی وب موردنظر برای باز شدن در پنجرهٔ جدید. این نشانی باید هم‌مبدأ با صفحهٔ فراخوان باشد.
 
 ### Return value
 
-A {{jsxref("Promise")}} that resolves with a reference to a
-{{domxref("WindowClient")}}.
+یک {{jsxref("Promise")}} که با ارجاعی به یک {{domxref("WindowClient")}} resolve می‌شود.
 
 ## Examples
 
@@ -61,7 +53,7 @@ self.addEventListener("paymentrequest", async (e) => {
 });
 ```
 
-See [Open the payment handler window to display the web-based payment app frontend](https://web.dev/articles/orchestrating-payment-transactions#open-payment-handler-window) for more details about how this would be used.
+برای جزئیات بیشتر در مورد نحوهٔ استفاده از این قابلیت، به [Open the payment handler window to display the web-based payment app frontend](https://web.dev/articles/orchestrating-payment-transactions#open-payment-handler-window) مراجعه کنید.
 
 ## Specifications
 
