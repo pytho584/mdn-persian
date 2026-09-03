@@ -1,7 +1,5 @@
 ---
 title: "Notification: Notification() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Notification/Notification"
-status: "needs-translation"
 ---
 
 ---
@@ -14,108 +12,86 @@ browser-compat: api.Notification.Notification
 
 {{APIRef("Web Notifications")}}{{securecontext_header}} {{AvailableInWorkers}}
 
-The **`Notification()`** constructor creates a new {{domxref("Notification")}} object instance, which represents a user notification.
+سازندهٔ **`Notification()`** یک نمونهٔ جدید از شیء {{domxref("Notification")}} می‌سازد که نمایانگر یک اعلان کاربر است.
 
 > [!WARNING]
-> This constructor throws a {{jsxref("TypeError")}} when called in nearly all mobile browsers.
-> Instead, you need to register a service worker and use {{domxref("ServiceWorkerRegistration.showNotification()")}}.
+> این سازنده تقریباً در همهٔ مرورگرهای موبایل هنگام فراخوانی یک {{jsxref("TypeError")}} پرتاب می‌کند.
+> در عوض، باید یک service worker ثبت کنید و از {{domxref("ServiceWorkerRegistration.showNotification()")}} استفاده کنید.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 new Notification(title)
 new Notification(title, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `title`
-  - : Defines a title for the notification, which is shown at the top of the notification window.
+  - : عنوانی برای اعلان تعیین می‌کند که در بالای پنجرهٔ اعلان نمایش داده می‌شود.
 - `options` {{optional_inline}}
-  - : An options object containing any custom settings that you want to apply to the notification.
-    The possible options are:
+  - : یک شیء گزینه‌ها شامل هرگونه تنظیمات سفارشی که می‌خواهید روی اعلان اعمال کنید. گزینه‌های ممکن عبارت‌اند از:
     - `actions` {{optional_inline}}
-      - : Must be unspecified or an empty array.
-        `actions` is only supported for [persistent notifications](/en-US/docs/Web/API/Notifications_API#persistent_and_non-persistent_notifications) fired from a service worker using {{domxref("ServiceWorkerRegistration.showNotification()")}}.
+      - : باید تعیین‌نشده یا یک آرایهٔ خالی باشد. `actions` فقط برای [اعلان‌های ماندگار](/en-US/docs/Web/API/Notifications_API#persistent_and_non-persistent_notifications) که از یک service worker با استفاده از {{domxref("ServiceWorkerRegistration.showNotification()")}} ارسال می‌شوند، پشتیبانی می‌شود.
     - `badge` {{optional_inline}}
-      - : A string containing the URL of the image used to represent the notification when there isn't enough space to display the notification itself; for example, the Android Notification Bar.
-        On Android devices, the badge should support devices with up to 4x resolution, about 96x96px, and the image will be automatically masked.
+      - : رشته‌ای شامل URL تصویری که وقتی فضای کافی برای نمایش خود اعلان وجود ندارد برای نمایش آن استفاده می‌شود؛ برای مثال، نوار اعلان اندروید. در دستگاه‌های اندرویدی، نشان (badge) باید دستگاه‌هایی با وضوح تا ۴ برابر (حدود ۹۶×۹۶ پیکسل) را پشتیبانی کند و تصویر به‌صورت خودکار ماسک می‌شود.
     - `body` {{optional_inline}}
-      - : A string representing the body text of the notification, which is displayed below the title.
-        The default is the empty string.
+      - : رشته‌ای شامل متن اصلی اعلان که در زیر عنوان نمایش داده می‌شود. مقدار پیش‌فرض رشتهٔ خالی است.
     - `data` {{optional_inline}}
-      - : Arbitrary data that you want associated with the notification.
-        This can be of any [structured-clonable](/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm#supported_types) data type.
-        The default is `null`.
+      - : داده‌های دلخواهی که می‌خواهید با اعلان مرتبط شوند. این داده می‌تواند از هر نوع [دادهٔ ساختاریافته-کلون‌شدنی](/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm#supported_types) باشد. مقدار پیش‌فرض `null` است.
     - `dir` {{optional_inline}}
-      - : The direction in which to display the notification.
-        It defaults to `auto`, which just adopts the browser's language setting behavior, but you can override that behavior by setting values of `ltr` and `rtl` (although most browsers seem to ignore these settings.)
+      - : جهتی که اعلان باید در آن نمایش داده شود. مقدار پیش‌فرض `auto` است که رفتار تنظیم زبان مرورگر را به کار می‌گیرد، اما می‌توانید با تنظیم مقادیر `ltr` و `rtl` این رفتار را لغو کنید (اگرچه به نظر می‌رسد بیشتر مرورگرها این تنظیمات را نادیده می‌گیرند).
     - `icon` {{optional_inline}}
-      - : A string containing the URL of an icon to be displayed in the notification.
+      - : رشته‌ای شامل URL نمادی که در اعلان نمایش داده می‌شود.
     - `image` {{optional_inline}}
-      - : A string containing the URL of an image to be displayed in the notification.
+      - : رشته‌ای شامل URL تصویری که در اعلان نمایش داده می‌شود.
     - `lang` {{optional_inline}}
-      - : The notification's language, as specified using a string representing a {{glossary("BCP 47 language tag")}}.
-        The default is the empty string.
+      - : زبان اعلان که با رشته‌ای شامل یک {{glossary("BCP 47 language tag")}} مشخص می‌شود. مقدار پیش‌فرض رشتهٔ خالی است.
     - `navigate` {{optional_inline}} {{experimental_inline}}
-      - : A string containing a URL to navigate to when the user activates the notification.
-        When set, the user agent navigates to this URL instead of firing the {{domxref("Notification.click_event", "click")}} event.
-        The value is parsed relative to the base URL of the page.
-        See {{domxref("Notification.navigate")}} for more information.
+      - : رشته‌ای شامل URL که وقتی کاربر اعلان را فعال می‌کند به آن هدایت شود. وقتی این مقدار تنظیم شود، عامل کاربر (user agent) به‌جای صدور رویداد {{domxref("Notification.click_event", "click")}} به این URL هدایت می‌شود. این مقدار نسبت به URL پایهٔ صفحه تفسیر می‌شود. برای اطلاعات بیشتر به {{domxref("Notification.navigate")}} مراجعه کنید.
     - `renotify` {{optional_inline}}
-      - : A boolean value specifying whether the user should be notified after a new notification replaces an old one.
-        The default is `false`, which means they won't be notified.
-        If `true`, `tag` must also be set.
+      - : یک مقدار بولی که مشخص می‌کند آیا پس از جایگزینی اعلان جدید با اعلان قبلی، کاربر دوباره آگاه شود یا نه. مقدار پیش‌فرض `false` است، یعنی کاربر آگاه نخواهد شد. اگر `true` باشد، باید `tag` نیز تنظیم شود.
     - `requireInteraction` {{optional_inline}}
-      - : Indicates that a notification should remain active until the user clicks or dismisses it, rather than closing automatically.
-        The default value is `false`.
+      - : مشخص می‌کند که اعلان باید تا زمانی که کاربر روی آن کلیک کند یا آن را رد کند فعال بماند، نه این‌که خودکار بسته شود. مقدار پیش‌فرض `false` است.
     - `silent` {{optional_inline}}
-      - : A boolean value specifying whether the notification should be silent, i.e., no sounds or vibrations should be issued regardless of the device settings.
-        If set to `true`, the notification is silent; if set to `null` (the default value), the device's default settings are respected.
+      - : یک مقدار بولی که مشخص می‌کند آیا اعلان باید بی‌صدا باشد، یعنی بدون توجه به تنظیمات دستگاه، هیچ صدا یا لرزشی تولید نشود. اگر روی `true` تنظیم شود، اعلان بی‌صدا است؛ اگر روی `null` تنظیم شود (مقدار پیش‌فرض)، تنظیمات پیش‌فرض دستگاه رعایت می‌شود.
     - `tag` {{optional_inline}}
-      - : A string representing an identifying tag for the notification.
-        The default is the empty string.
+      - : رشته‌ای که یک برچسب شناسایی برای اعلان را نشان می‌دهد. مقدار پیش‌فرض رشتهٔ خالی است.
     - `timestamp` {{optional_inline}}
-      - : A timestamp, given as {{glossary("Unix time")}} in milliseconds, representing the time associated with the notification.
-        This could be in the past when a notification is used for a message that couldn't immediately be delivered because the device was offline, or in the future for a meeting that is about to start.
+      - : یک برچسب زمانی که به‌صورت {{glossary("Unix time")}} در میلی‌ثانیه داده می‌شود و زمان مرتبط با اعلان را نشان می‌دهد. این زمان می‌تواند در گذشته باشد، مثلاً وقتی اعلان برای پیامی استفاده می‌شود که به دلیل آفلاین بودن دستگاه نتوانسته فوراً تحویل داده شود، یا در آینده برای جلسه‌ای که به‌زودی آغاز می‌شود.
     - `vibrate` {{optional_inline}}
-      - : A [vibration pattern](/en-US/docs/Web/API/Vibration_API#vibration_patterns) for the device's vibration hardware to emit with the notification.
-        If specified, `silent` must not be `true`.
+      - : یک [الگوی لرزش](/en-US/docs/Web/API/Vibration_API#vibration_patterns) برای سخت‌افزار لرزش دستگاه تا همراه با اعلان تولید شود. اگر این گزینه مشخص شده باشد، `silent` نباید `true` باشد.
 
-### Return value
+### مقدار بازگشتی
 
-An instance of the {{domxref("Notification")}} object.
+یک نمونه از شیء {{domxref("Notification")}}.
 
-### Exceptions
+### استثناها
 
 - {{jsxref("TypeError")}}
-  - : Thrown if:
-    - The constructor is called within the {{domxref("ServiceWorkerGlobalScope")}}.
-    - The `actions` option is specified and is not empty.
-    - The `silent` option is `true` and the `vibrate` option is specified.
-    - The `renotify` option is `true` but the `tag` option is empty.
+  - : در این موارد پرتاب می‌شود:
+    - سازنده درون {{domxref("ServiceWorkerGlobalScope")}} فراخوانده شود.
+    - گزینهٔ `actions` مشخص شده باشد و خالی نباشد.
+    - گزینهٔ `silent` برابر با `true` باشد و گزینهٔ `vibrate` مشخص شده باشد.
+    - گزینهٔ `renotify` برابر با `true` باشد اما گزینهٔ `tag` خالی باشد.
 - `DataCloneError` {{domxref("DOMException")}}
-  - : Thrown if serializing the `data` option failed for some reason.
+  - : اگر به هر دلیلی سریال‌سازی گزینهٔ `data` با شکست مواجه شود، پرتاب می‌شود.
 
-## Description
+## توضیحات
 
-The constructor creates a new {{domxref("Notification")}} object instance, which represents a user notification.
+سازنده یک نمونهٔ جدید از شیء {{domxref("Notification")}} می‌سازد که نمایانگر یک اعلان کاربر است.
 
-You must get permission to display notifications using {{domxref("Notification.requestPermission_static", "Notification.requestPermission()")}}.
-The permission may not be grantable, for example if the page is in private browsing mode.
+برای نمایش اعلان‌ها باید با استفاده از {{domxref("Notification.requestPermission_static", "Notification.requestPermission()")}} اجازه بگیرید. ممکن است اجازه قابل اعطا نباشد، مثلاً اگر صفحه در حالت مرور خصوصی باشد.
 
-This constructor throws a {{jsxref("TypeError")}} when called in nearly all mobile browsers, and this is unlikely to change, because web pages on mobile devices almost never "run in the background", which is the main use case for notifications.
-Instead, you need to register a service worker and use {{domxref("ServiceWorkerRegistration.showNotification()")}}.
-See [Chrome issue #481856](https://crbug.com/481856) for more information.
+این سازنده تقریباً در همهٔ مرورگرهای موبایل هنگام فراخوانی یک {{jsxref("TypeError")}} پرتاب می‌کند و تغییر این وضعیت بعید است، زیرا صفحه‌های وب در دستگاه‌های موبایل تقریباً هرگز «در پس‌زمینه اجرا نمی‌شوند» که کاربرد اصلی اعلان‌هاست. در عوض، باید یک service worker ثبت کنید و از {{domxref("ServiceWorkerRegistration.showNotification()")}} استفاده کنید. برای اطلاعات بیشتر به [مشکل Chrome با شمارهٔ 481856](https://crbug.com/481856) مراجعه کنید.
 
-## Examples
+## مثال‌ها
 
-For more examples, see the {{domxref("Notification")}} page and [Using the Notifications API](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API).
+برای مثال‌های بیشتر، صفحهٔ {{domxref("Notification")}} و راهنمای [استفاده از Notifications API](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API) را ببینید.
 
-### Basic example
+### مثال ساده
 
-This is a basic example that shows a notification if permission is already granted.
-This will not work on mobile devices.
+این یک مثال ساده است که اگر اجازه قبلاً داده شده باشد، یک اعلان نشان می‌دهد. این روش روی دستگاه‌های موبایل کار نخواهد کرد.
 
 ```js
 if (Notification.permission === "granted") {
@@ -123,13 +99,11 @@ if (Notification.permission === "granted") {
 }
 ```
 
-### Using Notification() as a fallback
+### استفاده از Notification() به‌عنوان گزینهٔ جایگزین
 
-This example shows a more robust approach that allows showing notifications on both desktop and mobile devices.
+این مثال یک رویکرد مقاوم‌تر را نشان می‌دهد که امکان نمایش اعلان‌ها را روی دستگاه‌های رومیزی و موبایل فراهم می‌کند.
 
-First we check if {{domxref("Notification")}} is supported, and if permission has been granted, returning early if either condition is not met.
-We then check if there is an active service worker.
-If so, we use it to call {{domxref("ServiceWorkerRegistration.showNotification()")}}; if not, we fall back to calling the constructor.
+ابتدا بررسی می‌کنیم که آیا {{domxref("Notification")}} پشتیبانی می‌شود و آیا اجازه داده شده است؛ اگر هر یک از این شرایط برقرار نباشد، زودتر از تابع بازمی‌گردیم. سپس بررسی می‌کنیم که آیا یک service worker فعال وجود دارد یا نه. اگر وجود داشت، از آن برای فراخوانی {{domxref("ServiceWorkerRegistration.showNotification()")}} استفاده می‌کنیم؛ در غیر این صورت، به فراخوانی سازنده برمی‌گردیم.
 
 ```js
 async function showNotification(title, options = {}) {
@@ -149,17 +123,16 @@ async function showNotification(title, options = {}) {
 }
 ```
 
-Note that this will still throw an error on a mobile device if the page does not have a service worker ready.
-Depending on your application, you might wrap this code in a `try...catch` block.
+توجه داشته باشید که اگر صفحه روی دستگاه موبایل service worker آماده‌ای نداشته باشد، این کد همچنان خطا پرتاب می‌کند. بسته به برنامهٔ خود، می‌توانید این کد را در یک بلوک `try...catch` قرار دهید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Using the Notifications API](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
+- [استفاده از Notifications API](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
