@@ -1,11 +1,5 @@
 ---
 title: "PointerEvent: isPrimary property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent/isPrimary"
-status: "needs-translation"
----
-
----
-title: "PointerEvent: isPrimary property"
 short-title: isPrimary
 slug: Web/API/PointerEvent/isPrimary
 page-type: web-api-instance-property
@@ -14,41 +8,21 @@ browser-compat: api.PointerEvent.isPrimary
 
 {{ APIRef("Pointer Events") }}
 
-The **`isPrimary`** read-only property of the
-{{domxref("PointerEvent")}} interface indicates whether or not the pointer device that
-created the event is the _primary_ pointer. It returns `true` if the
-pointer that caused the event to be fired is the primary one and returns
-`false` otherwise.
+ویژگی فقط‌خواندنی **`isPrimary`** از رابط {{domxref("PointerEvent")}} مشخص می‌کند که آیا دستگاه اشاره‌گری که رویداد را ایجاد کرده، اشاره‌گرِ _اصلی_ است یا نه. اگر اشاره‌گری که باعث فعال شدن رویداد شده، اصلی باشد مقدار `true` و در غیر این صورت مقدار `false` برمی‌گرداند.
 
-In a multi-pointer scenario (such as a touch screen that supports more than one touch
-point), this property is used to identify a _master pointer_ among the set of
-active pointers for each pointer type. Only a primary pointer will produce
-_compatibility mouse events_. Authors who desire only single-pointer interaction
-can achieve that by ignoring non-primary pointers.
+در یک سناریوی چنداشاره‌گری (مانند صفحه لمسی که بیش از یک نقطه لمس را پشتیبانی می‌کند)، از این ویژگی برای شناسایی یک _اشاره‌گر اصلی_ در میان مجموعه اشاره‌گرهای فعالِ هر نوع اشاره‌گر استفاده می‌شود. تنها اشاره‌گر اصلی است که _رویدادهای سازگاری ماوس_ تولید می‌کند. نویسندگانی که خواهان تعامل تک‌اشاره‌گری هستند، می‌توانند با نادیده گرفتن اشاره‌گرهای غیراصلی به این خواسته برسند.
 
-A pointer is considered primary if the pointer represents a mouse device. A pointer
-representing pen input is considered the primary pen input if its
-{{domxref("Element/pointerdown_event", "pointerdown")}} event was dispatched when no other active pointers representing
-pen input existed. A pointer representing touch input is considered the primary touch
-input if its {{domxref("Element/pointerdown_event", "pointerdown")}} event was dispatched when no other active pointers
-representing touch input existed.
+یک اشاره‌گر زمانی اصلی در نظر گرفته می‌شود که نمایانگر یک دستگاه ماوس باشد. یک اشاره‌گر نمایانگر ورودی قلم، در صورتی ورودی قلم اصلی در نظر گرفته می‌شود که رویداد {{domxref("Element/pointerdown_event", "pointerdown")}} آن زمانی ارسال شود که هیچ اشاره‌گر فعال دیگری که نمایانگر ورودی قلم باشد وجود نداشته باشد. به همین ترتیب، یک اشاره‌گر نمایانگر ورودی لمسی، در صورتی ورودی لمسی اصلی در نظر گرفته می‌شود که رویداد {{domxref("Element/pointerdown_event", "pointerdown")}} آن زمانی ارسال شود که هیچ اشاره‌گر فعال دیگری که نمایانگر ورودی لمسی باشد وجود نداشته باشد.
 
-When two or more pointer device types are being used concurrently, multiple pointers
-(one for each {{domxref("PointerEvent.pointerType", "pointerType")}}) are considered
-primary. For example, a touch contact and a mouse cursor moved simultaneously will
-produce pointers that are both considered primary. If there are multiple primary
-pointers, these pointers will all produce _compatibility mouse events_ (see
-[Pointer events](/en-US/docs/Web/API/Pointer_events) for more information about pointer, mouse and touch
-interaction).
+هنگامی که دو یا چند نوع دستگاه اشاره‌گر به‌طور هم‌زمان استفاده می‌شوند، چندین اشاره‌گر (برای هر {{domxref("PointerEvent.pointerType", "pointerType")}} یکی) اصلی در نظر گرفته می‌شوند. برای مثال، یک تماس لمسی و یک نشانگر ماوس که هم‌زمان حرکت می‌کنند، اشاره‌گرهایی تولید می‌کنند که هر دوی آن‌ها اصلی در نظر گرفته می‌شوند. اگر چند اشاره‌گر اصلی وجود داشته باشد، همه آن‌ها _رویدادهای سازگاری ماوس_ تولید خواهند کرد (برای اطلاعات بیشتر درباره تعامل اشاره‌گر، ماوس و لمس، [رویدادهای اشاره‌گر](/en-US/docs/Web/API/Pointer_events) را ببینید).
 
-## Value
+## مقدار
 
-A boolean, `true` if the pointer for this event is the primary pointer and returns `false` otherwise.
+یک مقدار بولی؛ اگر اشاره‌گر این رویداد اصلی باشد `true` و در غیر این صورت `false` برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-This example illustrates using the value of `isPrimary` to call the
-appropriate processing function.
+این مثال استفاده از مقدار `isPrimary` را برای فراخوانی تابع پردازش مناسب نشان می‌دهد.
 
 ```js
 target.addEventListener("pointerdown", (event) => {
@@ -60,10 +34,10 @@ target.addEventListener("pointerdown", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
