@@ -1,11 +1,5 @@
 ---
 title: "OffscreenCanvas: transferToImageBitmap() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas/transferToImageBitmap"
-status: "needs-translation"
----
-
----
-title: "OffscreenCanvas: transferToImageBitmap() method"
 short-title: transferToImageBitmap()
 slug: Web/API/OffscreenCanvas/transferToImageBitmap
 page-type: web-api-instance-method
@@ -14,67 +8,67 @@ browser-compat: api.OffscreenCanvas.transferToImageBitmap
 
 {{APIRef("Canvas API")}}{{AvailableInWorkers}}
 
-The **`transferToImageBitmap()`** method of the {{domxref("OffscreenCanvas")}} interface creates an {{domxref("ImageBitmap")}} object from the most recently rendered image of the `OffscreenCanvas`. The image in the `OffscreenCanvas` is replaced with a new blank image for subsequent rendering.
+متد **`transferToImageBitmap()`** از رابط {{domxref("OffscreenCanvas")}} یک شیء {{domxref("ImageBitmap")}} از آخرین تصویر رندر شده‌ی `OffscreenCanvas` ایجاد می‌کند. تصویر درون `OffscreenCanvas` با یک تصویر خالی جدید برای رندرهای بعدی جایگزین می‌شود.
 
-If you only need to copy the current `OffscreenCanvas` content into another canvas, use that canvas context's {{domxref("CanvasRenderingContext2D.drawImage()")}} method with the `OffscreenCanvas` as input.
+اگر فقط نیاز به کپی کردن محتوای فعلی `OffscreenCanvas` در یک بوم‌نقاشی دیگر دارید، از متد {{domxref("CanvasRenderingContext2D.drawImage()")}} آن بافت با ورودی `OffscreenCanvas` استفاده کنید.
 
-## Syntax
+## دستور زبان
 
 ```js-nolint
 transferToImageBitmap()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-A newly-allocated {{domxref("ImageBitmap")}}.
+یک {{domxref("ImageBitmap")}} تازه تخصیص‌یافته.
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Throws if:
-    - the canvas has transferred to another context scope, such as a worker
-    - the canvas context mode has not been set by calling {{domxref("OffscreenCanvas.getContext()")}}.
+  - : در موارد زیر پرتاب می‌شود:
+    - بوم‌نقاشی به محدوده‌ی بافت دیگری (مانند یک worker) منتقل شده باشد.
+    - حالت بافت بوم‌نقاشی با فراخوانی {{domxref("OffscreenCanvas.getContext()")}} تنظیم نشده باشد.
 
-## Description
+## توضیحات
 
-This `ImageBitmap` references a potentially large graphics resource, and to ensure your web application remains robust, it is important to avoid allocating too many of these resources at any point in time. For this reason it is important to ensure that the `ImageBitmap` is either _consumed_ or _closed_.
+این `ImageBitmap` به یک منبع گرافیکی بالقوه بزرگ ارجاع می‌دهد. برای اطمینان از استحکام برنامه‌ی وب، مهم است که از تخصیص تعداد زیادی از این منابع در هر لحظه خودداری کنید. به همین دلیل، ضروری است که اطمینان حاصل شود `ImageBitmap` یا _مصرف_ می‌شود یا _بسته_ می‌شود.
 
-As described in the {{domxref("OffscreenCanvas")}} examples, passing this `ImageBitmap` to {{domxref("ImageBitmapRenderingContext.transferFromImageBitmap()")}} _consumes_ the `ImageBitmap` object; it no longer references the underlying graphics resource, and can not be passed to any other web APIs.
+همانطور که در مثال‌های {{domxref("OffscreenCanvas")}} توضیح داده شده، ارسال این `ImageBitmap` به {{domxref("ImageBitmapRenderingContext.transferFromImageBitmap()")}} باعث _مصرف_ شیء `ImageBitmap` می‌شود؛ دیگر به منبع گرافیکی زیرین ارجاع نمی‌دهد و نمی‌توان آن را به هیچ API وب دیگری منتقل کرد.
 
-If your goal is to pass the `ImageBitmap` to other web APIs which do not consume it - for example, {{domxref("CanvasRenderingContext2D.drawImage()")}} - then you should _close_ it when you're done with it by calling {{domxref("ImageBitmap.close()")}}. Don't simply drop the JavaScript reference to the `ImageBitmap`; doing so will keep its graphics resource alive until the next time the garbage collector runs.
+اگر هدف شما ارسال `ImageBitmap` به APIهای وب دیگری است که آن را مصرف نمی‌کنند - مثلاً {{domxref("CanvasRenderingContext2D.drawImage()")}} - پس باید پس از اتمام کار آن را با فراخوانی {{domxref("ImageBitmap.close()")}} _ببندید_. صرفاً رها کردن ارجاع جاوااسکریپتی به `ImageBitmap` کافی نیست؛ این کار منبع گرافیکی آن را تا اجرای بعدی زباله‌روب (garbage collector) زنده نگه می‌دارد.
 
-If you call `transferToImageBitmap()` and don't intend to pass it to {{domxref("ImageBitmapRenderingContext.transferFromImageBitmap()")}}, consider whether you need to call `transferToImageBitmap()` at all. Many web APIs which accept `ImageBitmap` also accept `OffscreenCanvas` as an argument, including {{domxref("CanvasRenderingContext2D.drawImage()")}}.
+اگر `transferToImageBitmap()` را فراخوانی می‌کنید و قصد ارسال آن به {{domxref("ImageBitmapRenderingContext.transferFromImageBitmap()")}} را ندارید، در نظر بگیرید که آیا اصلاً نیاز به فراخوانی `transferToImageBitmap()` دارید یا خیر. بسیاری از APIهای وب که `ImageBitmap` را می‌پذیرند، `OffscreenCanvas` را نیز به عنوان آرگومان قبول می‌کنند، از جمله {{domxref("CanvasRenderingContext2D.drawImage()")}}.
 
-## Examples
+## مثال‌ها
 
 ```js
 const offscreen = new OffscreenCanvas(256, 256);
 const gl = offscreen.getContext("webgl");
 
-// Perform some drawing using the gl context
+// انجام ترسیم با استفاده از بافت gl
 
 offscreen.transferToImageBitmap();
 // ImageBitmap { width: 256, height: 256 }
 
-// Either:
-// Pass this `ImageBitmap` to `ImageBitmapRenderingContext.transferFromImageBitmap`
-// or:
-// Use the `ImageBitmap` with other web APIs, and call `ImageBitmap.close()`!
+// یا:
+// این `ImageBitmap` را به `ImageBitmapRenderingContext.transferFromImageBitmap` ارسال کنید
+// یا:
+// از `ImageBitmap` با سایر APIهای وب استفاده کنید و `ImageBitmap.close()` را فراخوانی کنید!
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface defining this method, {{domxref("OffscreenCanvas")}}
+- رابط تعریف‌کننده‌ی این متد، {{domxref("OffscreenCanvas")}}
 - {{domxref("ImageBitmapRenderingContext.transferFromImageBitmap")}}
