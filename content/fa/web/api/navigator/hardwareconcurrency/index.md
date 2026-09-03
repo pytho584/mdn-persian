@@ -1,11 +1,5 @@
 ---
 title: "Navigator: hardwareConcurrency property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/hardwareConcurrency"
-status: "needs-translation"
----
-
----
-title: "Navigator: hardwareConcurrency property"
 short-title: hardwareConcurrency
 slug: Web/API/Navigator/hardwareConcurrency
 page-type: web-api-instance-property
@@ -14,32 +8,19 @@ browser-compat: api.Navigator.hardwareConcurrency
 
 {{APIRef("HTML DOM")}}
 
-The **`navigator.hardwareConcurrency`** read-only property
-returns the number of logical processors available to run threads on the user's
-computer.
+ویژگی فقط‌خواندنی **`navigator.hardwareConcurrency`** تعداد پردازنده‌های منطقی موجود برای اجرای ریسمان‌ها (threads) در رایانه کاربر را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A number between 1 and the number of logical processors potentially available to the user agent.
+عددی بین ۱ و تعداد پردازنده‌های منطقی که به طور بالقوه در دسترس عامل کاربر (user agent) است.
 
-Modern computers have multiple physical processor cores in their CPU (two or four cores
-is typical), but each physical core is also usually able to run more than one thread at
-a time using advanced scheduling techniques. So a four-core CPU may offer eight
-**logical processor cores**, for example. The number of logical processor
-cores can be used to measure the number of threads which can effectively be run at once
-without them having to context switch.
+رایانه‌های مدرن دارای چندین هسته پردازش فیزیکی در CPU خود هستند (معمولاً دو یا چهار هسته)، اما هر هسته فیزیکی معمولاً می‌تواند با استفاده از تکنیک‌های پیشرفته زمان‌بندی، بیش از یک ریسمان را همزمان اجرا کند. بنابراین یک CPU چهار هسته‌ای ممکن است هشت **هسته پردازش منطقی** ارائه دهد، برای مثال. تعداد هسته‌های منطقی پردازش می‌تواند برای اندازه‌گیری تعداد ریسمان‌هایی که می‌توانند بدون نیاز به تعویض زمینه (context switch) به طور مؤثر همزمان اجرا شوند، استفاده شود.
 
-The browser may, however, choose to report a lower number of logical cores in order to
-represent more accurately the number of {{domxref("Worker")}}s that can run at once, so
-don't treat this as an absolute measurement of the number of cores in the user's system.
+با این حال، ممکن است مرورگر تعداد کمتری از هسته‌های منطقی را گزارش دهد تا تعداد {{domxref("Worker")}}هایی را که می‌توانند همزمان اجرا شوند، دقیق‌تر نشان دهد؛ بنابراین این را به عنوان یک اندازه‌گیری مطلق از تعداد هسته‌های سیستم کاربر در نظر نگیرید.
 
-## Examples
+## مثال‌ها
 
-In this example, one {{domxref("Worker")}} is created for each logical processor
-reported by the browser and a record is created which includes a reference to the new
-worker as well as a Boolean value indicating whether or not we're using that worker yet;
-these objects are, in turn, stored into an array for later use. This creates a pool of
-workers we can use to process requests later.
+در این مثال، برای هر پردازنده منطقی که توسط مرورگر گزارش شده است، یک {{domxref("Worker")}} ایجاد می‌شود و یک رکورد شامل ارجاع به worker جدید و همچنین یک مقدار بولی (Boolean) که نشان می‌دهد آیا از آن worker استفاده می‌کنیم یا خیر، ساخته می‌شود. این اشیاء به نوبه خود در یک آرایه برای استفاده بعدی ذخیره می‌شوند. این کار یک استخر از workerها ایجاد می‌کند که می‌توانیم از آنها برای پردازش درخواست‌های بعدی استفاده کنیم.
 
 ```js
 let workerList = [];
@@ -53,15 +34,15 @@ for (let i = 0; i < window.navigator.hardwareConcurrency; i++) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Navigator")}}
 - {{domxref("WorkerNavigator")}}
