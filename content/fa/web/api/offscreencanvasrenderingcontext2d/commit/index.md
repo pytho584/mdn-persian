@@ -1,11 +1,5 @@
 ---
 title: "OffscreenCanvasRenderingContext2D: commit() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D/commit"
-status: "needs-translation"
----
-
----
-title: "OffscreenCanvasRenderingContext2D: commit() method"
 short-title: commit()
 slug: Web/API/OffscreenCanvasRenderingContext2D/commit
 page-type: web-api-instance-method
@@ -17,26 +11,23 @@ browser-compat: api.OffscreenCanvasRenderingContext2D.commit
 
 {{APIRef("Canvas API")}}{{AvailableInWorkers}}{{deprecated_header}}{{non-standard_header}}
 
-The
-**`OffscreenCanvasRenderingContext2D.commit()`**
-method of the [Canvas 2D API](/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D) was intended to copy the rendering context's bitmap to the bitmap of the placeholder {{HtmlElement("canvas")}} element of the associated `OffscreenCanvas` object.
-The copy operation is synchronous. Calling this method is not needed for the transfer, since it happens automatically during the event-loop execution.
+متد **`OffscreenCanvasRenderingContext2D.commit()`** از [Canvas 2D API](/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D) قرار بود بیت‌مپِ زمینهٔ رندر را در بیت‌مپِ عنصر {{HtmlElement("canvas")}} جایگزینِ مرتبط با آبجکت `OffscreenCanvas` کپی کند. عملیات کپی به‌صورت همگام (synchronous) انجام می‌شود. برای انجام این انتقال نیازی به فراخواندن این متد نیست؛ زیرا این انتقال به‌طور خودکار هنگام اجرای حلقهٔ رویداد (event loop) صورت می‌گیرد.
 
-## Syntax
+## نحو
 
 ```js-nolint
 commit()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
 ```js
 const placeholder = document.createElement("canvas");
@@ -51,14 +42,14 @@ ctx.fillRect(0, 0, 10, 10);
 ctx.commit();
 ```
 
-## Specifications
+## مشخصات
 
-Not part of any specification.
+این متد بخشی از هیچ مشخصاتی نیست.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface defining this method: {{domxref("OffscreenCanvasRenderingContext2D")}}
+- رابط تعریف‌کنندهٔ این متد: {{domxref("OffscreenCanvasRenderingContext2D")}}
