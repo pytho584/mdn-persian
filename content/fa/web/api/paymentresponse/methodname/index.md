@@ -1,11 +1,5 @@
 ---
 title: "PaymentResponse: methodName property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse/methodName"
-status: "needs-translation"
----
-
----
-title: "PaymentResponse: methodName property"
 short-title: methodName
 slug: Web/API/PaymentResponse/methodName
 page-type: web-api-instance-property
@@ -14,45 +8,36 @@ browser-compat: api.PaymentResponse.methodName
 
 {{securecontext_header}}{{APIRef("Payment Request API")}}
 
-The **`methodName`** read-only
-property of the {{domxref("PaymentResponse")}} interface returns a string uniquely
-identifying the payment handler selected by the user.
+ویژگی فقط‌خواندنی **`methodName`** از رابط {{domxref("PaymentResponse")}}، رشته‌ای را برمی‌گرداند که پردازشگر پرداختی را که کاربر انتخاب کرده است، به‌طور یکتا شناسایی می‌کند.
 
-This string may be either
-one of the standardized payment method identifiers or a URL used by the payment handler
-to process payments.
+این رشته می‌تواند یکی از شناسه‌های استاندارد روش پرداخت باشد یا یک URL که پردازشگر پرداخت برای پردازش مبلغ‌ها از آن استفاده می‌کند.
 
-## Value
+## مقدار
 
-A string uniquely identifying the payment handler being used to
-process the payment. This may be either a standardized identifier, or a URL used by the
-payment processor to handle payments. See
-how [merchant validation](/en-US/docs/Web/API/Payment_Request_API/Concepts#merchant_validation) works.
+رشته‌ای که پردازشگر پرداختی را که برای پردازش مبلغ استفاده می‌شود، به‌طور یکتا شناسایی می‌کند. این مقدار می‌تواند یک شناسه استاندارد یا یک URL باشد که پردازشگر پرداخت برای مدیریت مبلغ‌ها از آن استفاده می‌کند. نحوه عملکرد [تأیید فروشنده](/en-US/docs/Web/API/Payment_Request_API/Concepts#merchant_validation) را ببینید.
 
-## Examples
+## مثال‌ها
 
-The following example extracts the method name from the {{domxref('PaymentResponse')}}
-object to the promise returned from {{domxref('PaymentRequest.show()')}}. In a
-real-world implementation this data would then be sent to a payment server.
+مثال زیر نام روش پرداخت را از شیء {{domxref('PaymentResponse')}} به پرامیسی که از {{domxref('PaymentRequest.show()')}} برگردانده می‌شود استخراج می‌کند. در یک پیاده‌سازی واقعی، این داده‌ها سپس به سرور پرداخت ارسال می‌شوند.
 
 ```js
 payment.show().then((paymentResponse) => {
   const paymentData = {
-    // payment method string
+    // رشته روش پرداخت
     method: paymentResponse.methodName,
-    // payment details as you requested
+    // جزئیات پرداخت همان‌طور که درخواست کرده‌اید
     details: paymentResponse.details,
-    // shipping address information
+    // اطلاعات آدرس حمل‌ونقل
     address: toDict(paymentResponse.shippingAddress),
   };
-  // Send information to the server
+  // ارسال اطلاعات به سرور
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
