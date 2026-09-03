@@ -1,11 +1,5 @@
 ---
 title: "PerformanceScriptTiming: sourceFunctionName property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceScriptTiming/sourceFunctionName"
-status: "needs-translation"
----
-
----
-title: "PerformanceScriptTiming: sourceFunctionName property"
 short-title: sourceFunctionName
 slug: Web/API/PerformanceScriptTiming/sourceFunctionName
 page-type: web-api-instance-property
@@ -16,13 +10,13 @@ browser-compat: api.PerformanceScriptTiming.sourceFunctionName
 
 {{SeeCompatTable}}{{APIRef("Performance API")}}
 
-The **`sourceFunctionName`** read-only property of the {{domxref("PerformanceScriptTiming")}} interface returns a string representing the name of the function that contributed to the long animation frame (LoAF).
+ویژگی فقط‌خواندنی **`sourceFunctionName`** در رابط {{domxref("PerformanceScriptTiming")}} رشته‌ای را برمی‌گرداند که نام تابع مؤثر در ایجاد فریم انیمیشن طولانی (LoAF) را نشان می‌دهد.
 
-It is important to note that the reported function name will be the "entry point" of the script, that is, the top level of the stack, not any specific slow sub-function.
+توجه به این نکته مهم است که نام تابع گزارش‌شده، «نقطه ورود» اسکریپت است؛ یعنی سطح بالای پشته، نه یک زیرتابع کند مشخص.
 
-For example, if an event handler calls a top-level function, which then calls a slow sub-function, the `source*` fields will report the name and location of the top-level function, not the slow sub-function — the function that was passed to the platform API is always the one reported. This is because of performance reasons; a full stack trace is costly.
+برای مثال، اگر یک رویدادگردان (event handler) تابعی سطح بالا را فراخوانی کند و آن تابع به‌نوبه خود زیرتابعی کند را صدا بزند، فیلدهای `source*` نام و مکان تابع سطح بالا را گزارش می‌کنند، نه زیرتابع کند را — همیشه تابعی گزارش می‌شود که به API پلتفرم ارسال شده است. دلیل این کار ملاحظات کارایی است؛ زیرا دریافت ردیابی کامل پشته (full stack trace) پرهزینه است.
 
-In the following snippet:
+در قطعه‌کد زیر:
 
 ```js
 setTimeout(function libFunc() {
@@ -30,25 +24,25 @@ setTimeout(function libFunc() {
 });
 ```
 
-`sourceFunctionName` would report `libFunc`, not `slowFunction`.
+مقدار `sourceFunctionName` تابع `libFunc` را گزارش می‌کند، نه `slowFunction` را.
 
-## Value
+## مقدار
 
-A string. Returns an empty string if the function name was not found.
+یک رشته. اگر نام تابع پیدا نشود، یک رشتهٔ خالی برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-See [Long animation frame timing](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing#examples) for examples related to the Long Animation Frames API.
+برای مثال‌های مرتبط با API فریم‌های انیمیشن طولانی، به [زمان‌بندی فریم انیمیشن طولانی](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Long animation frame timing](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing)
+- [زمان‌بندی فریم انیمیشن طولانی](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing)
 - {{domxref("PerformanceLongAnimationFrameTiming")}}
