@@ -1,11 +1,5 @@
 ---
 title: "Navigator: virtualKeyboard property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/virtualKeyboard"
-status: "needs-translation"
----
-
----
-title: "Navigator: virtualKeyboard property"
 short-title: virtualKeyboard
 slug: Web/API/Navigator/virtualKeyboard
 page-type: web-api-instance-property
@@ -16,19 +10,18 @@ browser-compat: api.Navigator.virtualKeyboard
 
 {{APIRef("VirtualKeyboard")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`virtualKeyboard`** read-only property
-of the {{domxref("navigator")}} interface returns a reference to the {{domxref("VirtualKeyboard")}} instance object.
+ویژگی فقط‌خواندنی **`virtualKeyboard`** در رابط {{domxref("navigator")}} ارجاعی به شیء نمونه {{domxref("VirtualKeyboard")}} برمی‌گرداند.
 
-The {{domxref("VirtualKeyboard_API", "VirtualKeyboard API", "", "nocode")}} gives developers control over the layout of their applications when the on-screen virtual keyboard appears and disappears on devices such as tablets, mobile phones, or other devices where a hardware keyboard may not be available.
+{{domxref("VirtualKeyboard_API", "VirtualKeyboard API", "", "nocode")}} به توسعه‌دهندگان کنترل چیدمان برنامه‌هایشان را می‌دهد وقتی که صفحه‌کلید مجازی روی صفحه در دستگاه‌هایی مانند تبلت‌ها، تلفن‌های همراه یا سایر دستگاه‌هایی که ممکن است صفحه‌کلید سخت‌افزاری در دسترس نباشد، ظاهر یا ناپدید می‌شود.
 
-## Value
+## مقدار
 
-A {{domxref("VirtualKeyboard")}} object you can use to opt-out of the automatic virtual keyboard behavior, show or hide the virtual keyboard programmatically, and get the current position and size of the virtual keyboard.
+شیء {{domxref("VirtualKeyboard")}} که می‌توانید از آن برای انصراف از رفتار خودکار صفحه‌کلید مجازی، نمایش یا پنهان‌کردن برنامه‌نویسی‌شده صفحه‌کلید مجازی، و دریافت موقعیت و اندازه فعلی صفحه‌کلید مجازی استفاده کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
