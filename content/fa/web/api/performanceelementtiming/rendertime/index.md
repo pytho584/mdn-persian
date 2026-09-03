@@ -1,36 +1,24 @@
 ---
 title: "PerformanceElementTiming: renderTime property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceElementTiming/renderTime"
-status: "needs-translation"
----
-
----
-title: "PerformanceElementTiming: renderTime property"
-short-title: renderTime
-slug: Web/API/PerformanceElementTiming/renderTime
-page-type: web-api-instance-property
-status:
-  - experimental
-browser-compat: api.PerformanceElementTiming.renderTime
 ---
 
 {{APIRef("Performance API")}}{{SeeCompatTable}}
 
-The **`renderTime`** read-only property of the {{domxref("PerformanceElementTiming")}} interface returns the render time of the associated element.
+خاصیت فقط‌خواندنی **`renderTime`** از رابط {{domxref("PerformanceElementTiming")}} زمان رندر المان مرتبط را بازمی‌گرداند.
 
-## Value
+## مقدار
 
-A {{domxref("DOMHighResTimeStamp")}} with the render time of the element.
+یک {{domxref("DOMHighResTimeStamp")}} شامل زمان رندر المان.
 
-For images this will be the **image rendering timestamp**. This is defined as the next paint that occurs after the image becomes fully loaded. If the timing allow check fails (as defined by the [Timing-allow-origin](/en-US/docs/Web/HTTP/Reference/Headers/Timing-Allow-Origin) header) this will return `0`.
+برای تصاویر، این مقدار **زمان‌نمای رندر تصویر** خواهد بود. این مقدار به عنوان اولین نقاشی (paint) پس از بارگذاری کامل تصویر تعریف می‌شود. اگر بررسی مجوز زمان‌بندی (timing allow check) مطابق هدر [Timing-allow-origin](/en-US/docs/Web/HTTP/Reference/Headers/Timing-Allow-Origin) ناموفق باشد، این ویژگی `0` را بازمی‌گرداند.
 
-For text nodes this will be the **text rendering timestamp**. This is defined as when the element becomes text painted.
+برای گره‌های متنی، این مقدار **زمان‌نمای رندر متن** خواهد بود. این زمان به لحظه‌ای گفته می‌شود که المان به صورت متن نقاشی می‌شود (text painted).
 
-## Examples
+## مثال‌ها
 
-### Logging `renderTime`
+### ثبت `renderTime`
 
-In this example an {{HTMLElement("img")}} element is being observed by adding the [`elementtiming`](/en-US/docs/Web/HTML/Reference/Attributes/elementtiming) attribute. A {{domxref("PerformanceObserver")}} is registered to get all performance entries of type `"element"` and the `buffered` flag is used to access data from before observer creation. Calling `entry.renderTime` returns the render time of the image element.
+در این مثال، یک المان {{HTMLElement("img")}} با افزودن صفت [`elementtiming`](/en-US/docs/Web/HTML/Reference/Attributes/elementtiming) تحت نظارت قرار می‌گیرد. یک {{domxref("PerformanceObserver")}} ثبت می‌شود تا تمام ورودی‌های عملکرد از نوع `"element"` را دریافت کند و از پرچم `buffered` برای دسترسی به داده‌های قبل از ایجاد observer استفاده می‌شود. فراخوانی `entry.renderTime` زمان رندر المان تصویر را بازمی‌گرداند.
 
 ```html
 <img
@@ -51,32 +39,32 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "element", buffered: true });
 ```
 
-### Cross-origin image render time
+### زمان رندر تصویر مبدأ متقاطع
 
-For security reasons, the value of the `renderTime` property was originally `0` if the resource is a cross-origin request. Instead the `loadTime` property should be used as a fallback.
+به دلایل امنیتی، مقدار ویژگی `renderTime` در اصل برای درخواست‌های مبدأ متقاطع (cross-origin) `0` بود. در عوض باید از ویژگی `loadTime` به عنوان جایگزین استفاده کرد.
 
-Browsers [may now expose a slightly coarsened render time](https://github.com/w3c/paint-timing/issues/104) in these situations. Check for [browser support](#browser_compatibility).
+مرورگرها [اکنون ممکن است زمان رندر کمی درشت‌تر (coarsened) را](https://github.com/w3c/paint-timing/issues/104) در این شرایط آشکار کنند. برای [پشتیبانی مرورگر](#browser_compatibility) بررسی کنید.
 
-To expose more accurate cross-origin render-time information, the {{HTTPHeader("Timing-Allow-Origin")}} HTTP response header needs to be set.
+برای آشکارسازی اطلاعات دقیق‌تر زمان رندر مبدأ متقاطع، باید هدر پاسخ HTTP {{HTTPHeader("Timing-Allow-Origin")}} تنظیم شود.
 
-For example, to allow `https://developer.mozilla.org` to see an accurate `renderTime`, the cross-origin resource should send:
+به عنوان مثال، برای اجازه دادن به `https://developer.mozilla.org` برای دیدن یک `renderTime` دقیق، منبع مبدأ متقاطع باید ارسال کند:
 
 ```http
 Timing-Allow-Origin: https://developer.mozilla.org
 ```
 
-Alternatively, you can use {{domxref("PerformanceEntry.startTime", "startTime")}} which returns the value of the entry's `renderTime` if it is not `0`, and otherwise the value of this entry's {{domxref("PerformanceElementTiming.loadTime", "loadTime")}}. However, it is recommended to set the {{HTTPHeader("Timing-Allow-Origin")}} header so that the metrics will be more accurate.
+از طرفی، می‌توانید از {{domxref("PerformanceEntry.startTime", "startTime")}} استفاده کنید که اگر `renderTime` مخالف `0` باشد مقدار آن را بازمی‌گرداند، و در غیر این صورت مقدار {{domxref("PerformanceElementTiming.loadTime", "loadTime")}} این ورودی را. با این حال، توصیه می‌شود هدر {{HTTPHeader("Timing-Allow-Origin")}} را تنظیم کنید تا معیارها دقیق‌تر باشند.
 
-If you use `startTime`, you can flag any inaccuracies by checking if `renderTime` was used:
+اگر از `startTime` استفاده می‌کنید، می‌توانید با بررسی اینکه آیا `renderTime` استفاده شده است، هرگونه نادقتی را علامت‌گذاری کنید:
 
 ```js
 const isRenderTime = Boolean(entry.renderTime);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
