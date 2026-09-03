@@ -1,11 +1,5 @@
 ---
 title: "PerformanceLongAnimationFrameTiming: presentationTime property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceLongAnimationFrameTiming/presentationTime"
-status: "needs-translation"
----
-
----
-title: "PerformanceLongAnimationFrameTiming: presentationTime property"
 short-title: presentationTime
 slug: Web/API/PerformanceLongAnimationFrameTiming/presentationTime
 page-type: web-api-instance-property
@@ -16,26 +10,26 @@ browser-compat: api.PerformanceLongAnimationFrameTiming.presentationTime
 
 {{APIRef("Performance API")}}{{SeeCompatTable}}
 
-The **`presentationTime`** read-only property of the {{domxref("PerformanceLongAnimationFrameTiming")}} interface returns the {{domxref("DOMHighResTimeStamp","timestamp")}} when the UI update was actually drawn on the screen.
+ویژگی فقط‑خواندنی **`presentationTime`** از رابط {{domxref("PerformanceLongAnimationFrameTiming")}}، {{domxref("DOMHighResTimeStamp","زمان‌مهر")}}ای را بازمی‌گرداند که نشان‌دهنده‌ی لحظه‌ای است که به‌روزرسانی رابط کاربری واقعاً روی صفحه نمایش داده شده است.
 
-The `presentationTime` is optional — some browsers may choose always to return `0` or not to expose the value at all. The value is also implementation-dependent — it may differ across browsers that choose to expose it.
+`presentationTime` اختیاری است – ممکن است برخی مرورگرها همواره مقدار `0` برگردانند یا اصلاً این مقدار را در معرض دید قرار ندهند. مقدار آن همچنین وابسته به پیاده‌سازی است – ممکن است در مرورگرهای مختلفی که آن را در معرض دید قرار می‌دهند متفاوت باشد.
 
-## Value
+## مقدار
 
-A {{domxref("DOMHighResTimeStamp")}} or {{jsxref("null")}} if the value is not exposed.
+یک {{domxref("DOMHighResTimeStamp")}} یا {{jsxref("null")}} اگر مقدار در معرض دید قرار نگرفته باشد.
 
-## Examples
+## مثال‌ها
 
-See [Long animation frame timing](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing#examples) for examples related to the Long Animation Frames API.
+برای نمونه‌های مرتبط با رابط برنامه‌نویسی فریم‌های انیمیشن طولانی (Long Animation Frames API)، به [زمان‌بندی فریم‌های انیمیشن طولانی](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("PerformanceLongAnimationFrameTiming.paintTime")}}
