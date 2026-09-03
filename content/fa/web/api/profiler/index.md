@@ -1,10 +1,4 @@
 ---
-title: "Profiler"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Profiler"
-status: "needs-translation"
----
-
----
 title: Profiler
 slug: Web/API/Profiler
 page-type: web-api-interface
@@ -15,28 +9,28 @@ browser-compat: api.Profiler
 
 {{APIRef("JS Self-Profiling API")}}{{SeeCompatTable}}
 
-The **`Profiler`** interface of the [JS Self-Profiling API](/en-US/docs/Web/API/JS_Self-Profiling_API) enables you to create a [profile](/en-US/docs/Web/API/JS_Self-Profiling_API/Profile_content_and_format) of some part of your web application's execution.
+رابط **`Profiler`** در [JS Self-Profiling API](/en-US/docs/Web/API/JS_Self-Profiling_API) به شما این امکان را می‌دهد که از بخشی از اجرای برنامهٔ وب خود یک [پروفایل](/en-US/docs/Web/API/JS_Self-Profiling_API/Profile_content_and_format) ایجاد کنید.
 
-## Constructor
+## سازنده
 
 - {{domxref("Profiler.Profiler","Profiler()")}} {{experimental_inline}}
-  - : Creates a new `Profiler` object, and starts collecting samples.
+  - : یک شیء `Profiler` جدید می‌سازد و شروع به جمع‌آوری نمونه‌ها می‌کند.
 
-## Instance methods
+## متدهای نمونه
 
 - {{domxref("Profiler.stop()")}} {{experimental_inline}}
-  - : Stops the profiler, returning a {{jsxref("Promise")}} that resolves to the [profile](/en-US/docs/Web/API/JS_Self-Profiling_API/Profile_content_and_format).
+  - : پروفایلر را متوقف می‌کند و یک {{jsxref("Promise")}} برمی‌گرداند که به [پروفایل](/en-US/docs/Web/API/JS_Self-Profiling_API/Profile_content_and_format) resolve می‌شود.
 
-## Events
+## رویدادها
 
 - {{domxref("Profiler.samplebufferfull_event", "samplebufferfull")}}
-  - : Fired when the profile has recorded enough samples to fill its internal buffer.
+  - : هنگامی رخ می‌دهد که پروفایل به اندازهٔ کافی نمونه ضبط کرده باشد تا بافر داخلی آن پر شود.
 
-## Examples
+## مثال‌ها
 
-### Recording a profile
+### ثبت یک پروفایل
 
-The following code profiles the `doWork()` operation, and logs the result.
+کد زیر عملیات `doWork()` را پروفایل می‌کند و نتیجه را در کنسول لاگ می‌کند.
 
 ```js
 const profiler = new Profiler({ sampleInterval: 10, maxBufferSize: 10000 });
@@ -47,9 +41,9 @@ const profile = await profiler.stop();
 console.log(JSON.stringify(profile));
 ```
 
-### Profiling page load
+### پروفایل‌گیری از بارگذاری صفحه
 
-The following code profiles the time between the script first running and the window's {{domxref("Window.load_event", "load")}} event firing.
+کد زیر مدت زمان بین اجرای اولیهٔ اسکریپت و رخ دادن رویداد {{domxref("Window.load_event", "load")}} پنجره را پروفایل می‌کند.
 
 ```js
 const profiler = new Profiler({ sampleInterval: 10, maxBufferSize: 10000 });
@@ -60,10 +54,10 @@ window.addEventListener("load", async () => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
