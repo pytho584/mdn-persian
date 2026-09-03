@@ -1,11 +1,5 @@
 ---
 title: "OffscreenCanvas: contextlost event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas/contextlost_event"
-status: "needs-translation"
----
-
----
-title: "OffscreenCanvas: contextlost event"
 short-title: contextlost
 slug: Web/API/OffscreenCanvas/contextlost_event
 page-type: web-api-event
@@ -14,15 +8,13 @@ browser-compat: api.OffscreenCanvas.contextlost_event
 
 {{APIRef("Canvas API")}}
 
-The **`contextlost`** event of the {{domxref("OffscreenCanvas")}} interface is fired if the browser detects that the [`OffscreenCanvasRenderingContext2D`](/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D) context is lost.
-Contexts can be lost for several reasons, such as an associated GPU driver crashes, or the application runs out of memory, and so on.
+رویداد **`contextlost`** از رابط {{domxref("OffscreenCanvas")}} زمانی رخ می‌دهد که مرورگر تشخیص دهد زمینه [`OffscreenCanvasRenderingContext2D`](/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D) از بین رفته است. زمینه‌ها می‌توانند به دلایل مختلفی از بین بروند، مانند خراب شدن درایور GPU مرتبط یا تمام شدن حافظه برنامه، و غیره.
 
-By default the user agent will attempt to restore the context and then fire the [`contextrestored` event](/en-US/docs/Web/API/OffscreenCanvas/contextrestored_event).
-User code can prevent the context from being restored by calling [`Event.preventDefault()`](/en-US/docs/Web/API/Event/preventDefault) during event handling.
+به‌طور پیش‌فرض، عامل کاربر تلاش می‌کند زمینه را بازیابی کند و سپس رویداد [`contextrestored`](/en-US/docs/Web/API/OffscreenCanvas/contextrestored_event) را فعال کند. کد کاربر می‌تواند با فراخوانی [`Event.preventDefault()`](/en-US/docs/Web/API/Event/preventDefault) در هنگام پردازش رویداد، از بازیابی زمینه جلوگیری کند.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("contextlost", (event) => { })
@@ -30,26 +22,26 @@ addEventListener("contextlost", (event) => { })
 oncontextlost = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## مثال‌ها
 
-The code fragment below detects the `contextlost` event.
+قطعه کد زیر رویداد `contextlost` را شناسایی می‌کند.
 
 ```js
 const canvas = new OffscreenCanvas(256, 256);
 const gl = offscreen.getContext("2d");
 
-// Do drawing etc
+// انجام ترسیم و ...
 
 canvas.addEventListener("contextlost", (event) => {
   console.log(event);
 });
 ```
 
-To prevent the context from being restored the event handler code might instead look like this:
+برای جلوگیری از بازیابی زمینه، کد کنترل‌کننده رویداد می‌تواند به این شکل باشد:
 
 ```js
 canvas.addEventListener("contextlost", (event) => {
@@ -57,16 +49,16 @@ canvas.addEventListener("contextlost", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [`OffScreenCanvas: contextrestored` event](/en-US/docs/Web/API/OffscreenCanvas/contextrestored_event)
+- [رویداد `OffScreenCanvas: contextrestored`](/en-US/docs/Web/API/OffscreenCanvas/contextrestored_event)
 - [`OffscreenCanvasRenderingContext2D.isContextLost()`](/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D#canvasrenderingcontext2d.iscontextlost)
-- [`HTMLCanvasElement: contextlost` event](/en-US/docs/Web/API/HTMLCanvasElement/contextlost_event)
+- [رویداد `HTMLCanvasElement: contextlost`](/en-US/docs/Web/API/HTMLCanvasElement/contextlost_event)
