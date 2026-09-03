@@ -1,11 +1,5 @@
 ---
 title: "PaymentRequest: id property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/id"
-status: "needs-translation"
----
-
----
-title: "PaymentRequest: id property"
 short-title: id
 slug: Web/API/PaymentRequest/id
 page-type: web-api-instance-property
@@ -14,16 +8,13 @@ browser-compat: api.PaymentRequest.id
 
 {{securecontext_header}}{{APIRef("Payment Request API")}}
 
-The **`id`** read-only attribute of the
-{{domxref("PaymentRequest")}} interface returns a unique identifier for a particular
-{{domxref("PaymentRequest")}} instance.
+{{domxref("PaymentRequest")}} 接口的 **`id`** 只读属性返回一个唯一标识符，用于标识特定的 {{domxref("PaymentRequest")}} 实例。
 
-When constructing an instance of the {{domxref("PaymentRequest")}}, you are able to
-supply a custom id. If none is provided, the browser automatically sets the id value to a UUID.
+在构造 {{domxref("PaymentRequest")}} 实例时，你可以提供自定义的 `id`。如果没有提供，浏览器会自动将 `id` 设置为一个 UUID。
 
-## Example
+## 示例
 
-This example shows how to give a {{domxref("PaymentRequest")}} instance a custom id.
+此示例演示如何为 {{domxref("PaymentRequest")}} 实例设置自定义 id。
 
 ```js
 const details = {
@@ -37,9 +28,7 @@ const request = new PaymentRequest(methodData, details);
 console.log(request.id); // super-store-order-123-12312
 ```
 
-The `id` is then also available in the {{domxref("PaymentResponse")}}
-returned from the `show()` method, but under the `requestId`
-attribute.
+`id` 同样可在从 `show()` 方法返回的 {{domxref("PaymentResponse")}} 中获得，但属性名是 `requestId`。
 
 ```js
 const response = await request.show();
@@ -50,14 +39,14 @@ const json = response.toJSON();
 console.log(json.requestId, response.requestId, request.id);
 ```
 
-## Value
+## 值
 
-A string.
+一个字符串。
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
