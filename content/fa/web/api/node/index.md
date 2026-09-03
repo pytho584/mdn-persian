@@ -1,10 +1,4 @@
 ---
-title: "Node"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Node"
-status: "needs-translation"
----
-
----
 title: Node
 slug: Web/API/Node
 page-type: web-api-interface
@@ -13,63 +7,36 @@ browser-compat: api.Node
 
 {{APIRef("DOM")}}
 
-The {{Glossary("DOM")}} **`Node`** interface is an abstract base
-class upon which many other DOM API objects are based, thus letting those object types
-be used similarly and often interchangeably. As an abstract class, there is
-no such thing as a plain `Node` object. All objects that implement
-`Node` functionality are based on one of its subclasses. Most notable are
-{{domxref("Document")}}, {{domxref("Element")}}, and {{domxref("DocumentFragment")}}.
+رابط {{Glossary("DOM")}} **`Node`** یک کلاس پایه انتزاعی است که بسیاری از اشیای API دیگر DOM بر اساس آن ساخته شده‌اند، بنابراین به این نوع اشیا اجازه می‌دهد به طور مشابه و اغلب به جای یکدیگر استفاده شوند. به عنوان یک کلاس انتزاعی، چیزی به عنوان یک شی `Node` ساده وجود ندارد. تمام اشیایی که عملکرد `Node` را پیاده‌سازی می‌کنند بر اساس یکی از زیرکلاس‌های آن هستند. قابل توجه‌ترین آنها {{domxref("Document")}}، {{domxref("Element")}} و {{domxref("DocumentFragment")}} هستند.
 
-In addition, every kind of DOM node is represented by an interface based on
-`Node`. These include {{DOMxRef("Attr")}}, {{DOMxRef("CharacterData")}}
-(which {{DOMxRef("Text")}}, {{DOMxRef("Comment")}}, {{DOMxRef("CDATASection")}} and
-{{DOMxRef("ProcessingInstruction")}} are all based on), and {{DOMxRef("DocumentType")}}.
+علاوه بر این، هر نوع گره DOM توسط یک رابط مبتنی بر `Node` نمایش داده می‌شود. این‌ها شامل {{DOMxRef("Attr")}}، {{DOMxRef("CharacterData")}} (که {{DOMxRef("Text")}}، {{DOMxRef("Comment")}}، {{DOMxRef("CDATASection")}} و {{DOMxRef("ProcessingInstruction")}} همگی بر اساس آن هستند) و {{DOMxRef("DocumentType")}} می‌شوند.
 
-In some cases, a particular feature of the base `Node` interface may not
-apply to one of its child interfaces; in that case, the inheriting node may
-return `null` or throw an exception, depending on circumstances. For example,
-attempting to add children to a node type that cannot have children will throw an
-exception.
+در برخی موارد، ممکن است یک ویژگی خاص از رابط پایه `Node` برای یکی از رابط‌های فرزند آن اعمال نشود؛ در آن صورت، گره ارث‌برنده ممکن است بسته به شرایط `null` برگرداند یا یک استثنا پرتاب کند. به عنوان مثال، تلاش برای افزودن فرزندان به نوع گرهی که نمی‌تواند فرزند داشته باشد، یک استثنا پرتاب می‌کند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_In addition to the properties below, `Node` inherits properties from its parent, {{DOMxRef("EventTarget")}}_.
+_علاوه بر ویژگی‌های زیر، `Node` ویژگی‌هایی را از والد خود، {{DOMxRef("EventTarget")}}، به ارث می‌برد._
 
 - {{DOMxRef("Node.baseURI")}} {{ReadOnlyInline}}
-  - : Returns a string representing the base URL of the document
-    containing the `Node`.
+  - : یک رشته (string) را برمی‌گرداند که نشان‌دهنده URL پایه سند حاوی این `Node` است.
 - {{DOMxRef("Node.childNodes")}} {{ReadOnlyInline}}
-  - : Returns a live {{DOMxRef("NodeList")}} containing all the children of this node
-    (including elements, text and comments). {{DOMxRef("NodeList")}} being live means that
-    if the children of the `Node` change, the {{DOMxRef("NodeList")}} object is
-    automatically updated.
+  - : یک {{DOMxRef("NodeList")}} زنده شامل تمام فرزندان این گره (اعم از عناصر، متن و نظرات) را برمی‌گرداند. زنده بودن {{DOMxRef("NodeList")}} به این معنی است که اگر فرزندان `Node` تغییر کنند، شی {{DOMxRef("NodeList")}} به طور خودکار به‌روز می‌شود.
 - {{DOMxRef("Node.firstChild")}} {{ReadOnlyInline}}
-  - : Returns a `Node` representing the first direct child node of the node,
-    or `null` if the node has no child.
+  - : یک `Node` را برمی‌گرداند که نشان‌دهنده اولین گره فرزند مستقیم گره است، یا اگر گره فرزندی نداشته باشد `null` را برمی‌گرداند.
 - {{DOMxRef("Node.isConnected")}} {{ReadOnlyInline}}
-  - : A boolean indicating whether or not the Node is connected (directly or indirectly)
-    to the context object, e.g., the {{DOMxRef("Document")}} object in the case of the
-    normal DOM, or the {{DOMxRef("ShadowRoot")}} in the case of a shadow DOM.
+  - : یک مقدار بولی که نشان می‌دهد آیا Node به شی زمینه متصل است (به طور مستقیم یا غیرمستقیم) یا خیر، به عنوان مثال، شی {{DOMxRef("Document")}} در مورد DOM عادی، یا {{DOMxRef("ShadowRoot")}} در مورد DOM سایه.
 - {{DOMxRef("Node.lastChild")}} {{ReadOnlyInline}}
-  - : Returns a `Node` representing the last direct child node of the node,
-    or `null` if the node has no child.
+  - : یک `Node` را برمی‌گرداند که نشان‌دهنده آخرین گره فرزند مستقیم گره است، یا اگر گره فرزندی نداشته باشد `null` را برمی‌گرداند.
 - {{DOMxRef("Node.nextSibling")}} {{ReadOnlyInline}}
-  - : Returns a `Node` representing the next node in the tree, or
-    `null` if there isn't such node.
+  - : یک `Node` را برمی‌گرداند که نشان‌دهنده گره بعدی در درخت است، یا اگر چنین گره‌ای وجود نداشته باشد `null` را برمی‌گرداند.
 - {{DOMxRef("Node.nodeName")}} {{ReadOnlyInline}}
-  - : Returns a string containing the name of the `Node`. The
-    structure of the name will differ with the node type. E.g. An
-    {{DOMxRef("HTMLElement")}} will contain the name of the corresponding tag, like
-    `'AUDIO'` for an {{DOMxRef("HTMLAudioElement")}}, a {{DOMxRef("Text")}}
-    node will have the `'#text'` string, or a {{DOMxRef("Document")}} node will
-    have the `'#document'` string.
+  - : یک رشته حاوی نام `Node` را برمی‌گرداند. ساختار نام با نوع گره متفاوت خواهد بود. به عنوان مثال، یک {{DOMxRef("HTMLElement")}} حاوی نام تگ مربوطه خواهد بود، مانند `'AUDIO'` برای یک {{DOMxRef("HTMLAudioElement")}}، یک گره {{DOMxRef("Text")}} رشته `'#text'` را خواهد داشت، یا یک گره {{DOMxRef("Document")}} رشته `'#document'` را خواهد داشت.
 - {{DOMxRef("Node.nodeType")}} {{ReadOnlyInline}}
-  - : Returns an `unsigned short` representing the type of the node. Possible
-    values are:
+  - : یک `unsigned short` را برمی‌گرداند که نشان‌دهنده نوع گره است. مقادیر ممکن:
 
-    | Name                          | Value |
+    | نام                          | مقدار |
     | ----------------------------- | ----- |
     | `ELEMENT_NODE`                | `1`   |
     | `ATTRIBUTE_NODE`              | `2`   |
@@ -82,84 +49,63 @@ _In addition to the properties below, `Node` inherits properties from its parent
     | `DOCUMENT_FRAGMENT_NODE`      | `11`  |
 
 - {{DOMxRef("Node.nodeValue")}}
-  - : Returns / Sets the value of the current node.
+  - : مقدار گره فعلی را برمی‌گرداند/تنظیم می‌کند.
 - {{DOMxRef("Node.ownerDocument")}} {{ReadOnlyInline}}
-  - : Returns the {{DOMxRef("Document")}} that this node belongs to. If the node is itself
-    a document, returns `null`.
+  - : {{DOMxRef("Document")}}ای که این گره به آن تعلق دارد را برمی‌گرداند. اگر خود گره یک سند باشد، `null` را برمی‌گرداند.
 - {{DOMxRef("Node.parentNode")}} {{ReadOnlyInline}}
-  - : Returns a `Node` that is the parent of this node. If there is no such
-    node — for example, if this node is the top of the tree, or if it doesn't participate in a tree —
-    this property returns `null`.
+  - : یک `Node` که والد این گره است را برمی‌گرداند. اگر چنین گره‌ای وجود نداشته باشد — برای مثال، اگر این گره رأس درخت باشد، یا در درختی شرکت نداشته باشد — این ویژگی `null` را برمی‌گرداند.
 - {{DOMxRef("Node.parentElement")}} {{ReadOnlyInline}}
-  - : Returns an {{DOMxRef("Element")}} that is the parent of this node. If the node has
-    no parent, or if that parent is not an {{DOMxRef("Element")}}, this property returns
-    `null`.
+  - : یک {{DOMxRef("Element")}} که والد این گره است را برمی‌گرداند. اگر گره والد نداشته باشد، یا اگر آن والد یک {{DOMxRef("Element")}} نباشد، این ویژگی `null` را برمی‌گرداند.
 - {{DOMxRef("Node.previousSibling")}} {{ReadOnlyInline}}
-  - : Returns a `Node` representing the previous node in the tree, or
-    `null` if there isn't such node.
+  - : یک `Node` را برمی‌گرداند که نشان‌دهنده گره قبلی در درخت است، یا اگر چنین گره‌ای وجود نداشته باشد `null` را برمی‌گرداند.
 - {{DOMxRef("Node.textContent")}}
-  - : Returns / Sets the textual content of an element and all its descendants.
+  - : محتوای متنی یک عنصر و تمام نوادگان آن را برمی‌گرداند/تنظیم می‌کند.
 
-## Instance methods
+## روش‌های نمونه
 
-_In addition to the methods below, `Node` inherits methods from its parent, {{DOMxRef("EventTarget")}}._
+_علاوه بر روش‌های زیر، `Node` روش‌هایی را از والد خود، {{DOMxRef("EventTarget")}}، به ارث می‌برد._
 
 - {{DOMxRef("Node.appendChild()")}}
-  - : Adds the specified `childNode` argument as the last child to the current node.
-    If the argument referenced an existing node on the DOM tree, the node will be detached
-    from its current position and attached at the new position.
+  - : آرگومان `childNode` مشخص شده را به عنوان آخرین فرزند به گره فعلی اضافه می‌کند. اگر آرگومان به یک گره موجود در درخت DOM اشاره کند، آن گره از موقعیت فعلی خود جدا شده و در موقعیت جدید قرار می‌گیرد.
 - {{DOMxRef("Node.cloneNode()")}}
-  - : Clone a `Node`, and optionally, all of its contents. By default, it
-    clones the content of the node.
+  - : یک `Node` و به صورت اختیاری، تمام محتویات آن را کلون می‌کند. به طور پیش‌فرض، محتوای گره را کلون می‌کند.
 - {{DOMxRef("Node.compareDocumentPosition()")}}
-  - : Compares the position of the current node against another node in any other document.
+  - : موقعیت گره فعلی را نسبت به گره دیگری در هر سند دیگری مقایسه می‌کند.
 - {{DOMxRef("Node.contains()")}}
-  - : Returns `true` or `false` value indicating whether or not a node is a
-    descendant of the calling node.
+  - : یک مقدار `true` یا `false` را برمی‌گرداند که نشان می‌دهد آیا یک گره از نوادگان گره فراخواننده است یا خیر.
 - {{DOMxRef("Node.getRootNode()")}}
-  - : Returns the context object's root which optionally includes the shadow root if it is available.
+  - : ریشه شی زمینه را برمی‌گرداند که به صورت اختیاری شامل ریشه سایه (shadow root) نیز می‌شود.
 - {{DOMxRef("Node.hasChildNodes()")}}
-  - : Returns a boolean value indicating whether or not the element has any child nodes.
+  - : یک مقدار بولی را برمی‌گرداند که نشان می‌دهد آیا عنصر دارای هیچ گره فرزندی است یا خیر.
 - {{DOMxRef("Node.insertBefore()")}}
-  - : Inserts a `Node` before the reference node as a child of a specified
-    parent node.
+  - : یک `Node` را قبل از گره مرجع به عنوان فرزندی از یک گره والد مشخص شده درج می‌کند.
 - {{DOMxRef("Node.isDefaultNamespace()")}}
-  - : Accepts a namespace URI as an argument and returns a boolean value with a
-    value of `true` if the namespace is the default namespace on the given node
-    or `false` if not.
+  - : یک URI namespace را به عنوان آرگومان می‌پذیرد و یک مقدار بولی برمی‌گرداند که اگر namespace، namespace پیش‌فرض در گره داده شده باشد `true` و در غیر این صورت `false` است.
 - {{DOMxRef("Node.isEqualNode()")}}
-  - : Returns a boolean value which indicates whether or not two nodes are of the
-    same type and all their defining data points match.
+  - : یک مقدار بولی را برمی‌گرداند که نشان می‌دهد آیا دو گره از یک نوع هستند و تمام نقاط داده تعریف‌کننده آنها مطابقت دارد یا خیر.
 - {{DOMxRef("Node.isSameNode()")}}
-  - : Returns a boolean value indicating whether or not the two nodes are
-    the same (that is, they reference the same object).
+  - : یک مقدار بولی را برمی‌گرداند که نشان می‌دهد آیا دو گره یکسان هستند (یعنی به یک شی اشاره می‌کنند) یا خیر.
 - {{DOMxRef("Node.lookupPrefix()")}}
-  - : Returns a string containing the prefix for a given namespace URI,
-    if present, and `null` if not. When multiple prefixes are possible, the
-    result is implementation-dependent.
+  - : یک رشته حاوی پیشوند (prefix) برای یک URI namespace داده شده را برمی‌گرداند، در صورت وجود، و در غیر این صورت `null` را برمی‌گرداند. هنگامی که چندین پیشوند ممکن است، نتیجه به پیاده‌سازی بستگی دارد.
 - {{DOMxRef("Node.lookupNamespaceURI()")}}
-  - : Accepts a prefix and returns the namespace URI associated with it on the given node
-    if found (and `null` if not). Supplying `null` for the prefix
-    will return the default namespace.
+  - : یک پیشوند را می‌پذیرد و URI namespace مرتبط با آن را در گره داده شده در صورت یافتن برمی‌گرداند (و در غیر این صورت `null`). ارائه `null` برای پیشوند، namespace پیش‌فرض را برمی‌گرداند.
 - {{DOMxRef("Node.normalize()")}}
-  - : Clean up all the text nodes under this element (merge adjacent, remove empty).
+  - : تمام گره‌های متنی زیر این عنصر را تمیز می‌کند (مجاورها را ادغام کرده، خالی‌ها را حذف می‌کند).
 - {{DOMxRef("Node.removeChild()")}}
-  - : Removes a child node from the current element, which must be a child of the current
-    node.
+  - : یک گره فرزند را از عنصر فعلی حذف می‌کند که باید فرزند گره فعلی باشد.
 - {{DOMxRef("Node.replaceChild()")}}
-  - : Replaces one child `Node` of the current one with the second one given
-    in parameter.
+  - : یک گره فرزند `Node` از گره فعلی را با دومی که در پارامتر داده شده جایگزین می‌کند.
 
-## Events
+## رویدادها
 
 - {{domxref("Node/selectstart_event", "selectstart")}}
-  - : Fires when the user starts a new selection in this node.
+  - : هنگامی که کاربر یک انتخاب جدید را در این گره شروع می‌کند، فعال می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Remove all children nested within a node
+### حذف همه فرزندان تو در تو درون یک گره
 
-This function remove each first child of an element, until there are none left.
+این تابع هر فرزند اول یک عنصر را تا زمانی که هیچ‌کدام باقی نمانده است حذف می‌کند.
 
 ```js
 function removeAllChildren(element) {
@@ -169,18 +115,17 @@ function removeAllChildren(element) {
 }
 ```
 
-Using this function is a single call. Here we empty the body of the document:
+استفاده از این تابع یک فراخوانی واحد است. در اینجا بدنه سند را خالی می‌کنیم:
 
 ```js
 removeAllChildren(document.body);
 ```
 
-An alternative could be to set the textContent to the empty string: `document.body.textContent = ""`.
+یک جایگزین می‌تواند تنظیم `textContent` به رشته خالی باشد: `document.body.textContent = ""`.
 
-### Recurse through child nodes
+### پیمایش بازگشتی در گره‌های فرزند
 
-The following function recursively calls a callback function for each node contained by
-a root node (including the root itself):
+تابع زیر به صورت بازگشتی یک تابع callback را برای هر گره موجود در یک گره ریشه (از جمله خود ریشه) فراخوانی می‌کند:
 
 ```js
 function eachNode(rootNode, callback) {
@@ -206,32 +151,22 @@ function eachNode(rootNode, callback) {
 }
 ```
 
-The function recursively calls a function for each descendant node of
-`rootNode` (including the root itself).
+این تابع به صورت بازگشتی یک تابع را برای هر گره از نوادگان `rootNode` (از جمله خود ریشه) فراخوانی می‌کند.
 
-If `callback` is omitted, the function returns an
-{{jsxref("Array")}} instead, which contains `rootNode` and all
-nodes contained within.
+اگر `callback` حذف شود، تابع به جای آن یک {{jsxref("Array")}} شامل `rootNode` و تمام گره‌های موجود درون آن برمی‌گرداند.
 
-If `callback` is provided, and it returns
-`false` when called, the current recursion level is aborted, and the function
-resumes execution at the last parent's level. This can be used to abort loops once a
-node has been found (such as searching for a text node which contains a certain string).
+اگر `callback` ارائه شود و در هنگام فراخوانی `false` برگرداند، سطح بازگشت فعلی لغو می‌شود و تابع اجرا را از آخرین سطح والد از سر می‌گیرد. این می‌تواند برای لغو حلقه‌ها پس از یافتن یک گره استفاده شود (مانند جستجوی یک گره متنی که حاوی یک رشته خاص است).
 
-The function has two parameters:
+تابع دو پارامتر دارد:
 
 - `rootNode`
-  - : The `Node` object whose descendants will be recursed through.
+  - : شی `Node`ای که نوادگان آن پیمایش خواهند شد.
 - `callback` {{optional_inline}}
-  - : An optional callback [function](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function) that
-    receives a `Node` as its only argument. If omitted, `eachNode`
-    returns an {{jsxref("Array")}} of every node contained within
-    `rootNode` (including the root itself).
+  - : یک تابع callback اختیاری که یک `Node` را به عنوان تنها آرگومان خود دریافت می‌کند. اگر حذف شود، `eachNode` یک {{jsxref("Array")}} از تمام گره‌های موجود درون `rootNode` (از جمله خود ریشه) برمی‌گرداند.
 
-The following demonstrates a real-world use of the `eachNode()` function:
-searching for text on a web-page.
+مثال زیر یک استفاده واقعی از تابع `eachNode()` را نشان می‌دهد: جستجوی متن در یک صفحه وب.
 
-We use a wrapper function named `grep` to do the searching:
+ما از یک تابع wrapper به نام `grep` برای انجام جستجو استفاده می‌کنیم:
 
 ```js
 function grep(parentNode, pattern) {
@@ -264,10 +199,10 @@ function grep(parentNode, pattern) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
