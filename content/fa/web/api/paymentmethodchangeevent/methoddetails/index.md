@@ -1,11 +1,5 @@
 ---
 title: "PaymentMethodChangeEvent: methodDetails property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaymentMethodChangeEvent/methodDetails"
-status: "needs-translation"
----
-
----
-title: "PaymentMethodChangeEvent: methodDetails property"
 short-title: methodDetails
 slug: Web/API/PaymentMethodChangeEvent/methodDetails
 page-type: web-api-instance-property
@@ -14,26 +8,17 @@ browser-compat: api.PaymentMethodChangeEvent.methodDetails
 
 {{securecontext_header}}{{APIRef("Payment Request API")}}
 
-The read-only **`methodDetails`** property of the {{domxref("PaymentMethodChangeEvent")}} interface is an object
-containing any data the payment handler may provide to describe the change the user
-has made to their payment method. The value is `null` if no details
-are available.
+خاصیت فقط خواندنی **`methodDetails`** از رابط {{domxref("PaymentMethodChangeEvent")}} یک شیء است که شامل هر داده‌ای است که پردازشگر پرداخت ممکن است برای توصیف تغییری که کاربر در روش پرداخت خود ایجاد کرده است، ارائه دهد. اگر جزئیاتی در دسترس نباشد، مقدار `null` است.
 
-## Value
+## مقدار
 
-An object containing any data needed to describe the changes made to the payment
-method. The contents vary depending on the actual payment method chosen, so you will
-need to refer to the {{domxref("PaymentMethodChangeEvent.methodName", "methodName")}}
-property first, then interpret the `methodDetails` after that.
+یک شیء شامل هر داده‌ای که برای توصیف تغییرات ایجاد شده در روش پرداخت لازم است. محتوا بسته به روش پرداخت واقعی انتخاب شده متفاوت است، بنابراین ابتدا باید به خاصیت {{domxref("PaymentMethodChangeEvent.methodName", "methodName")}} مراجعه کنید و سپس `methodDetails` را تفسیر کنید.
 
-The default value is `null`, indicating that no additional details are
-available.
+مقدار پیش‌فرض `null` است، که نشان می‌دهد هیچ جزئیات اضافی در دسترس نیست.
 
-## Examples
+## مثال‌ها
 
-This example uses the {{domxref("PaymentRequest.paymentmethodchange_event", "paymentmethodchange")}} event to watch for changes to
-the payment method selected for Apple Pay, in order to compute a discount if the user
-chooses to use a Visa card as their payment method.
+این مثال از رویداد {{domxref("PaymentRequest.paymentmethodchange_event", "paymentmethodchange")}} برای نظارت بر تغییرات روش پرداخت انتخاب شده برای Apple Pay استفاده می‌کند تا در صورت انتخاب کارت ویزا به عنوان روش پرداخت، تخفیف محاسبه شود.
 
 ```js
 request.onpaymentmethodchange = (ev) => {
@@ -56,12 +41,12 @@ request.onpaymentmethodchange = (ev) => {
 const response = await request.show();
 ```
 
-Note that the `methodDetails` property is being used by the `calculateDiscount()` function to compute any payment discount, then {{domxref("PaymentRequestUpdateEvent.updateWith", "updateWith()")}} is called to update the event with the computed update.
+توجه کنید که خاصیت `methodDetails` توسط تابع `calculateDiscount()` برای محاسبه هرگونه تخفیف پرداخت استفاده می‌شود، سپس {{domxref("PaymentRequestUpdateEvent.updateWith", "updateWith()")}} فراخوانی می‌شود تا رویداد را با به‌روزرسانی محاسبه‌شده به‌روز کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
