@@ -1,11 +1,5 @@
 ---
-title: "PannerNode: orientationX property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PannerNode/orientationX"
-status: "needs-translation"
----
-
----
-title: "PannerNode: orientationX property"
+title: "خاصیت orientationX از PannerNode"
 short-title: orientationX
 slug: Web/API/PannerNode/orientationX
 page-type: web-api-instance-property
@@ -14,68 +8,43 @@ browser-compat: api.PannerNode.orientationX
 
 {{ APIRef("Web Audio API") }}
 
-The **`orientationX`** property of the {{domxref("PannerNode")}} interface indicates the X (horizontal) component of the
-direction in which the audio source is facing, in a 3D Cartesian coordinate space.
+خاصیت **`orientationX`** از رابط {{domxref("PannerNode")}}، مؤلفه X (افقی) جهتی را مشخص می‌کند که منبع صدا به آن سمت است، در یک فضای مختصات دکارتی سه‌بعدی.
 
-The complete vector is defined by the position of the audio source, given as
-({{domxref("PannerNode.positionX", "positionX")}}, {{domxref("PannerNode.positionY", "positionY")}},
-{{domxref("PannerNode.positionZ", "positionZ")}}), and the orientation
-of the audio source (that is, the direction in which it's facing), given as
-(`orientationX`,
-{{domxref("PannerNode.orientationY", "orientationY")}},
-{{domxref("PannerNode.orientationZ", "orientationZ")}}).
+بردار کامل با موقعیت منبع صدا، یعنی ({{domxref("PannerNode.positionX", "positionX")}}، {{domxref("PannerNode.positionY", "positionY")}}، {{domxref("PannerNode.positionZ", "positionZ")}}) و جهت منبع صدا (جهتی که به آن سمت است) یعنی (`orientationX`، {{domxref("PannerNode.orientationY", "orientationY")}}، {{domxref("PannerNode.orientationZ", "orientationZ")}}) تعریف می‌شود.
 
-Depending on the directionality of the sound (as specified using the attributes
-{{domxref("PannerNode.coneInnerAngle", "coneInnerAngle")}},
-{{domxref("PannerNode.coneOuterAngle", "coneOuterAngle")}}, and
-{{domxref("PannerNode.coneOuterGain", "coneOuterGain")}}), the orientation of the
-sound may alter the perceived volume of the sound as it's being played. If the sound
-is pointing toward the listener, it will be louder than if the sound is pointed away
-from the listener.
+بسته به جهت‌داری صدا (که با استفاده از ویژگی‌های {{domxref("PannerNode.coneInnerAngle", "coneInnerAngle")}}، {{domxref("PannerNode.coneOuterAngle", "coneOuterAngle")}} و {{domxref("PannerNode.coneOuterGain", "coneOuterGain")}} مشخص می‌شود)، جهت صدا ممکن است بلندی صدای درک شده را در حین پخش تغییر دهد. اگر صدا به سمت شنونده باشد، بلندتر از حالتی خواهد بود که از شنونده دور شود.
 
-The {{domxref("AudioParam")}} contained by this property is read only; however, you
-can still change the value of the parameter by assigning a new value to its
-{{domxref("AudioParam.value")}} property.
+{{domxref("AudioParam")}} موجود در این خاصیت فقط خواندنی است؛ اما می‌توانید با اختصاص یک مقدار جدید به خاصیت {{domxref("AudioParam.value")}} آن، مقدار پارامتر را تغییر دهید.
 
-## Value
+## مقدار
 
-An {{domxref("AudioParam")}} whose `value` is the X component of the
-direction in which the audio source is facing, in 3D Cartesian coordinate space.
+یک {{domxref("AudioParam")}} که `value` آن مؤلفه X جهتی است که منبع صدا به آن سمت است، در فضای مختصات دکارتی سه‌بعدی.
 
-## Example
+## مثال
 
-In this example, we'll demonstrate how changing the orientation parameters of a
-{{domxref("PannerNode")}} in combination with {{domxref("PannerNode.coneInnerAngle", "coneInnerAngle")}} and
-{{domxref("PannerNode.coneOuterAngle", "coneOuterAngle")}} affects volume. To help us visualize how the orientation vector
-affects, we can use the [Right-hand rule](https://en.wikipedia.org/wiki/Right-hand_rule):
+در این مثال، نحوه تأثیر تغییر پارامترهای جهت یک {{domxref("PannerNode")}} در ترکیب با {{domxref("PannerNode.coneInnerAngle", "coneInnerAngle")}} و {{domxref("PannerNode.coneOuterAngle", "coneOuterAngle")}} بر بلندی صدا را نشان می‌دهیم. برای کمک به تجسم نحوه تأثیر بردار جهت، می‌توانیم از [قانون دست راست](https://en.wikipedia.org/wiki/Right-hand_rule) استفاده کنیم:
 
-![This chart visualizes how the PannerNode orientation vectors affect the direction of the sound cone.](pannernode-orientation.png)
+![این نمودار نحوه تأثیر بردارهای جهت PannerNode بر جهت مخروط صدا را نشان می‌دهد.](pannernode-orientation.png)
 
-First, let's start by writing a utility function to figure out our _orientation vector._
-The X and Z components are always at a 90° to each other, so we can
-use the sine and cosine functions, which are offset by the same amount in radians.
-However, normally this would mean the {{ domxref("PannerNode") }} points to
-the **left** of the listener at 0° rotation – since `x = cos(0) = 1` and `z = sin(0) = 0`.
-It's more useful to offset the angle by -90°, which means the {{domxref("PannerNode")}} will point **directly at the listener** at 0° rotation.
+ابتدا، یک تابع کمکی برای محاسبه _بردار جهت_ خود می‌نویسیم. مؤلفه‌های X و Z همیشه با زاویه ۹۰ درجه نسبت به یکدیگر هستند، بنابراین می‌توانیم از توابع سینوس و کسینوس استفاده کنیم که به همان میزان بر حسب رادیان偏移 دارند. با این حال، معمولاً این بدان معناست که {{ domxref("PannerNode") }} در چرخش ۰ درجه به **سمت چپ** شنونده اشاره می‌کند – زیرا `x = cos(0) = 1` و `z = sin(0) = 0`. مفیدتر است که زاویه را با ۹۰- درجه偏移 دهیم، که باعث می‌شود {{domxref("PannerNode")}} در چرخش ۰ درجه **مستقیماً به سمت شنونده** اشاره کند.
 
 ```js
-// this utility converts amount of rotation around the Y axis
-// (i.e. rotation in the 'horizontal plane') to an orientation vector
+// این تابع مقدار چرخش حول محور Y را
+// (یعنی چرخش در 'صفحه افقی') به یک بردار جهت تبدیل می‌کند
 const yRotationToVector = (degrees) => {
-  // convert degrees to radians and offset the angle so 0 points towards the listener
+  // تبدیل درجه به رادیان و offset زاویه به طوری که ۰ به سمت شنونده باشد
   const radians = (degrees - 90) * (Math.PI / 180);
-  // using cosine and sine here ensures the output values are always normalized
-  // i.e. they range between -1 and 1
+  // استفاده از کسینوس و سینوس در اینجا تضمین می‌کند که خروجی‌ها همیشه نرمال شده هستند
+  // یعنی بین ۱- و ۱ قرار دارند
   const x = Math.cos(radians);
   const z = Math.sin(radians);
 
-  // we hard-code the Y component to 0, as Y is the axis of rotation
+  // مؤلفه Y را به صورت ثابت ۰ قرار می‌دهیم، زیرا Y محور چرخش است
   return [x, 0, z];
 };
 ```
 
-Now we can create our {{ domxref("AudioContext") }}, an oscillator and a
-{{domxref("PannerNode")}}:
+اکنون می‌توانیم {{ domxref("AudioContext") }}، یک نوسان‌ساز و یک {{domxref("PannerNode")}} ایجاد کنیم:
 
 ```js
 const context = new AudioContext();
@@ -87,50 +56,45 @@ const panner = new PannerNode(context);
 panner.panningModel = "HRTF";
 ```
 
-Next, we set up the _cone_ of our spatialized sound, determining the area in
-which it can be heard:
+سپس، _مخروط_ صدای فضایی‌سازی شده خود را تنظیم می‌کنیم و ناحیه‌ای که در آن صدا قابل شنیدن است را مشخص می‌کنیم:
 
 ```js
-// this value determines the size of the area in which the sound volume is constant
-// if coneInnerAngle === 30, it means that when the sound is rotated
-// by at most 15 (30/2) degrees either direction, the volume won't change
+// این مقدار اندازه ناحیه‌ای را تعیین می‌کند که در آن بلندی صدا ثابت است
+// اگر coneInnerAngle === 30 باشد، به این معنی است که وقتی صدا حداکثر ۱۵ (۳۰/۲) درجه به هر طرف بچرخد، بلندی صدا تغییر نمی‌کند
 panner.coneInnerAngle = 30;
-// this value determines the size of the area in which the sound volume decreases gradually
-// if coneOuterAngle === 45 and coneInnerAngle === 30, it means that when the sound is rotated
-// by between 15 (30/2) and 22.5 (45/2) degrees either direction,
-// the volume will decrease gradually
+// این مقدار اندازه ناحیه‌ای را تعیین می‌کند که در آن بلندی صدا به تدریج کاهش می‌یابد
+// اگر coneOuterAngle === 45 و coneInnerAngle === 30 باشد، به این معنی است که وقتی صدا بین ۱۵ (۳۰/۲) و ۲۲٫۵ (۴۵/۲) درجه به هر طرف بچرخد، بلندی صدا به تدریج کاهش می‌یابد
 panner.coneOuterAngle = 45;
-// this value determines the volume of the sound outside of both inner and outer cone
-// setting it to 0 means there is no sound, so we can clearly hear when we leave the cone
-// 0 is also the default
+// این مقدار بلندی صدای خارج از هر دو مخروط داخلی و خارجی را تعیین می‌کند
+// تنظیم آن به 0 به این معنی است که هیچ صدایی وجود ندارد، بنابراین می‌توانیم به وضوح بشنویم که از مخروط خارج می‌شویم
+// 0 همچنین مقدار پیش‌فرض است
 panner.coneOuterGain = 0;
-// increase the Z position to ensure the cone has an effect
-// (otherwise the sound is located at the same position as the listener)
+// افزایش موقعیت Z برای اطمینان از تأثیر مخروط
+// (در غیر این صورت صدا در همان موقعیت شنونده قرار دارد)
 panner.positionZ.setValueAtTime(1, context.currentTime);
 ```
 
-Having set up the {{ domxref("PannerNode") }}, we can now schedule some updates to its
-Y-axis rotation:
+پس از تنظیم {{ domxref("PannerNode") }}، اکنون می‌توانیم برخی به‌روزرسانی‌ها را برای چرخش حول محور Y آن برنامه‌ریزی کنیم:
 
 ```js
-// calculate the vector for no rotation
-// this means the sound will play at full volume
+// محاسبه بردار برای عدم چرخش
+// این بدان معناست که صدا با بلندی کامل پخش می‌شود
 const [x1, y1, z1] = yRotationToVector(0);
-// schedule the no-rotation vector immediately
+// برنامه‌ریزی بردار عدم چرخش بلافاصله
 panner.orientationX.setValueAtTime(x1, context.currentTime);
 panner.orientationY.setValueAtTime(y1, context.currentTime);
 panner.orientationZ.setValueAtTime(z1, context.currentTime);
 
-// calculate the vector for -22.4 degrees
-// since our coneOuterAngle is 45, this will just about make the sound audible
-// if we set it to +/-22.5, the sound volume will be 0, as the threshold is exclusive
+// محاسبه بردار برای ۲۲٫۴- درجه
+// از آنجایی که coneOuterAngle ما 45 است، این مقدار تقریباً صدا را قابل شنیدن می‌کند
+// اگر آن را روی +/-22.5 تنظیم کنیم، بلندی صدا 0 خواهد بود، زیرا آستانه انحصاری است
 const [x2, y2, z2] = yRotationToVector(-22.4);
 panner.orientationX.setValueAtTime(x2, context.currentTime + 2);
 panner.orientationY.setValueAtTime(y2, context.currentTime + 2);
 panner.orientationZ.setValueAtTime(z2, context.currentTime + 2);
 ```
 
-Finally, let's connect all our nodes and start the oscillator!
+در نهایت، تمام گره‌های خود را متصل کرده و نوسان‌ساز را شروع می‌کنیم!
 
 ```js
 osc.connect(panner).connect(context.destination);
@@ -138,16 +102,16 @@ osc.connect(panner).connect(context.destination);
 osc.start(0);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
-- [Web Audio spatialization basics](/en-US/docs/Web/API/Web_Audio_API/Web_audio_spatialization_basics)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [مبانی فضایی‌سازی Web Audio](/en-US/docs/Web/API/Web_Audio_API/Web_audio_spatialization_basics)
 - {{domxref("PannerNode")}}
