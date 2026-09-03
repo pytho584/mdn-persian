@@ -1,7 +1,5 @@
 ---
 title: "PaymentRequest: show() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/show"
-status: "needs-translation"
 ---
 
 ---
@@ -14,136 +12,95 @@ browser-compat: api.PaymentRequest.show
 
 {{securecontext_header}}{{APIRef("Payment Request API")}}
 
-The **{{domxref('PaymentRequest')}}** interface's
-**`show()`** method instructs the user agent to begin the
-process of showing and handling the user interface for the payment request to the
-user.
+متد **`show()`** در رابط {{domxref('PaymentRequest')}} به عامل کاربر (user agent) دستور می‌دهد تا فرایند نمایش و مدیریت رابط کاربری درخواست پرداخت را برای کاربر آغاز کند.
 
-Only one payment request can be in the process of being handled at once, across all
-documents. Once one `PaymentRequest`'s `show()` method has been
-called, any other call to `show()` will by rejected with an
-`AbortError` until the returned promise has been concluded, either by being
-fulfilled with a {{domxref("PaymentResponse")}} indicating the results of the payment
-request, or by being rejected with an error.
+در هر لحظه، تنها یک درخواست پرداخت می‌تواند در حال رسیدگی باشد، آن هم در تمام اسناد. به محض فراخوانی متد `show()` یک `PaymentRequest`، هر فراخوانی دیگری از `show()` با خطای `AbortError` رد می‌شود، تا زمانی که Promise بازگشتی به پایان برسد؛ یا با یک {{domxref("PaymentResponse")}} که نتایج درخواست پرداخت را نشان می‌دهد تکمیل شود، یا با یک خطا رد شود.
 
 > [!NOTE]
-> In reality, despite the fact that the specification says this
-> can't be done, some browsers, including Firefox, support multiple active payment
-> requests at a time.
+> در عمل، علیرغم اینکه مشخصات (specification) می‌گوید این کار امکان‌پذیر نیست، برخی مرورگرها از جمله Firefox از چند درخواست پرداخت فعال به طور همزمان پشتیبانی می‌کنند.
 
-If your architecture doesn't necessarily have all of the data ready to go at the moment
-it instantiates the payment interface by calling `show()`, specify the
-`detailsPromise` parameter, providing a {{jsxref("Promise")}} that is
-fulfilled once the data is ready. If this is provided, `show()` will not
-allow the user to interact with the payment interface until the promise is fulfilled, so
-that data can be updated prior to the user engaging with the payment process.
+اگر معماری شما لزوماً تمام داده‌ها را در لحظهٔ نمونه‌سازی رابط پرداخت با فراخوانی `show()` آماده ندارد، پارامتر `detailsPromise` را مشخص کنید و یک {{jsxref("Promise")}} ارائه دهید که به محض آماده شدن داده‌ها تکمیل شود. اگر این پارامتر ارائه شود، `show()` اجازه نمی‌دهد کاربر با رابط پرداخت تعامل کند تا زمانی که Promise تکمیل شود، تا داده‌ها پیش از درگیر شدن کاربر با فرایند پرداخت به‌روزرسانی شوند.
 
-Processing the result and, if necessary, calling {{domxref("PaymentResponse.retry()")}}
-to retry a failed payment can all be done either asynchronously or synchronously,
-depending on your needs. For the best user experience, asynchronous solutions are
-typically the best way to go. Most examples on MDN and elsewhere use
-[`async`](/en-US/docs/Web/JavaScript/Reference/Statements/async_function)/[`await`](/en-US/docs/Web/JavaScript/Reference/Operators/await)
-to wait asynchronously while results are validated and so forth.
+پردازش نتیجه و در صورت لزوم فراخوانی {{domxref("PaymentResponse.retry()")}} برای تلاش مجدد یک پرداخت ناموفق، بسته به نیاز شما می‌تواند به صورت ناهمزمان (asynchronous) یا همزمان (synchronous) انجام شود. برای بهترین تجربهٔ کاربری، راه‌حل‌های ناهمزمان معمولاً بهترین گزینه هستند. بیشتر مثال‌ها در MDN و جاهای دیگر از [`async`](/en-US/docs/Web/JavaScript/Reference/Statements/async_function)/[`await`](/en-US/docs/Web/JavaScript/Reference/Operators/await) برای انتظار ناهمزمان در حین اعتبارسنجی نتایج و موارد مشابه استفاده می‌کنند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 show()
 show(details)
 ```
 
-### Parameters
+### پارامترها
 
 - `details` {{optional_inline}}
-  - : Either an object or a {{jsxref("Promise")}} that resolves to an object. Provide this if your architecture requires
-    that the payment request's details need to be updated between instantiating the
-    payment interface and the user beginning to interact with it. The object should contain the updated information:
+  - : یک شیء یا یک {{jsxref("Promise")}} که به یک شیء resolve می‌شود. اگر معماری شما ایجاب می‌کند که جزئیات درخواست پرداخت بین نمونه‌سازی رابط پرداخت و شروع تعامل کاربر با آن به‌روزرسانی شوند، این پارامتر را ارائه دهید. شیء باید اطلاعات به‌روزرسانی‌شده را شامل شود:
     - `displayItems` {{optional_inline}}
-      - : An array of objects, each describing one line item for the payment request. These represent the line items on a receipt or invoice, each with the following properties:
+      - : آرایه‌ای از اشیاء که هر یک یک آیتم ردیفی (line item) از درخواست پرداخت را توصیف می‌کند. این‌ها نشان‌دهندهٔ آیتم‌های ردیفی در یک رسید یا فاکتور هستند که هر یک دارای ویژگی‌های زیر هستند:
         - `amount`
-          - : An object describing the monetary value of the item. This object includes the following fields:
+          - : شیئی که مقدار پولی آیتم را توصیف می‌کند. این شیء شامل فیلدهای زیر است:
             - `currency`
-              - : A string containing a valid 3-letter [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html) currency identifier ([ISO 4217](https://en.wikipedia.org/wiki/ISO_4217)) indicating the currency used for the payment `value`.
+              - : رشته‌ای حاوی یک شناسهٔ ارز معتبر سه‌حرفی [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html) ([ISO 4217](https://en.wikipedia.org/wiki/ISO_4217)) که ارز مورد استفاده برای `value` پرداخت را نشان می‌دهد.
             - `value`
-              - : A string containing a valid decimal value representing the mount of currency constituting the payment amount. This string must only contain an optional leading "-" to indicate a negative value, then one or more digits from 0 to 9, and an optional decimal point (".", regardless of locale) followed by at least one more digit. No whitespace is permitted.
+              - : رشته‌ای حاوی یک مقدار اعشاری معتبر که مبلغ ارز تشکیل‌دهندهٔ مقدار پرداخت را نشان می‌دهد. این رشته تنها می‌تواند یک «-» اختیاری در ابتدا برای نشان دادن مقدار منفی داشته باشد، سپس یک یا چند رقم از 0 تا 9، و یک اعشار اختیاری («.»، بدون توجه به locale) که حداقل یک رقم دیگر دنبال شود. هیچ فاصلهٔ خالی مجاز نیست.
         - `label`
-          - : A string specifying a human-readable name or description of the item or service being charged for. This may be displayed to the user by the {{Glossary("user agent")}}, depending on the design of the interface.
+          - : رشته‌ای که یک نام یا توضیح قابل خواندن برای انسان از آیتم یا خدمتی که هزینهٔ آن دریافت می‌شود را مشخص می‌کند. بسته به طراحی رابط، ممکن است این مقدار توسط {{Glossary("user agent")}} به کاربر نمایش داده شود.
         - `pending`
-          - : A Boolean value which is `true` if the specified `amount` has not yet been finalized. This can be used to show items such as shipping or tax amounts that depend upon the selection of shipping address, shipping option, or so forth. The user agent may show this information but is not required to do so.
+          - : یک مقدار بولی که اگر `amount` مشخص‌شده هنوز نهایی نشده باشد، `true` است. این می‌تواند برای نمایش مواردی مانند هزینه‌های حمل‌ونقل یا مالیات که به انتخاب آدرس حمل‌ونقل، گزینهٔ حمل‌ونقل و موارد مشابه وابسته هستند استفاده شود. عامل کاربر ممکن است این اطلاعات را نمایش دهد اما الزامی ندارد.
 
     - `error` {{optional_inline}} {{deprecated_inline}} {{non-standard_inline}}
-      - : A string specifying an error message to present to the user. When calling {{domxref("PaymentRequestUpdateEvent.updateWith", "updateWith()")}}, including `error` in the updated data causes the {{Glossary("user agent")}} to display the text as a general error message. For address-field specific errors, use the `shippingAddressErrors` field.
+      - : رشته‌ای که یک پیام خطا برای نمایش به کاربر مشخص می‌کند. هنگام فراخوانی {{domxref("PaymentRequestUpdateEvent.updateWith", "updateWith()")}}، گنجاندن `error` در داده‌های به‌روزرسانی‌شده باعث می‌شود {{Glossary("user agent")}} متن را به عنوان یک پیام خطای عمومی نمایش دهد. برای خطاهای خاص فیلد آدرس، از فیلد `shippingAddressErrors` استفاده کنید.
 
     - `modifiers` {{optional_inline}}
-      - : An array of objects, each describing a modifier for particular payment method identifiers, each with the following properties:
+      - : آرایه‌ای از اشیاء که هر یک یک اصلاح‌کننده (modifier) برای شناسه‌های روش پرداخت خاص را توصیف می‌کند، هر یک با ویژگی‌های زیر:
         - `supportedMethods`
-          - : A string that represents the payment method identifier. The payment method identifier only applies if the user selects this payment method.
+          - : رشته‌ای که شناسهٔ روش پرداخت را نشان می‌دهد. شناسهٔ روش پرداخت فقط در صورتی اعمال می‌شود که کاربر این روش پرداخت را انتخاب کند.
         - `total` {{optional_inline}}
-          - : An object that overrides the `total` property of the `detailsPromise` parameter if this payment method is selected by the user. The property takes the same input with the `total` property of the `detailsPromise` parameter.
+          - : شیئی که اگر کاربر این روش پرداخت را انتخاب کند، ویژگی `total` پارامتر `detailsPromise` را بازنویسی می‌کند. این ویژگی همان ورودی ویژگی `total` پارامتر `detailsPromise` را می‌پذیرد.
         - `additionalDisplayItems` {{optional_inline}}
-          - : An {{jsxref("Array")}} of objects provide additional display items that are appended to the `displayItems` property of the `detailsPromise` parameter if this payment method is selected by the user. This property is commonly used to add a discount or surcharge line item indicating the reason for the different total amount for the selected payment method that the user agent may display. The property takes the same input with the `displayItems` property of the `detailsPromise` parameter.
+          - : یک {{jsxref("Array")}} از اشیاء که آیتم‌های نمایشی اضافی ارائه می‌دهند که اگر کاربر این روش پرداخت را انتخاب کند، به ویژگی `displayItems` پارامتر `detailsPromise` اضافه می‌شوند. این ویژگی معمولاً برای افزودن یک آیتم ردیفی تخفیف یا هزینهٔ اضافی استفاده می‌شود که دلیل مبلغ کل متفاوت برای روش پرداخت انتخابی را نشان می‌دهد و ممکن است توسط عامل کاربر نمایش داده شود. این ویژگی همان ورودی ویژگی `displayItems` پارامتر `detailsPromise` را می‌پذیرد.
         - `data` {{optional_inline}}
-          - : A serializable object that provides optional information that might be needed by the supported payment methods.
+          - : یک شیء قابل سریال‌سازی که اطلاعات اختیاری مورد نیاز روش‌های پرداخت پشتیبانی‌شده را فراهم می‌کند.
 
-        For example, you can use one to adjust the total payment amount based on the selected payment method ("5% cash discount!").
+        برای مثال، می‌توانید از یکی برای تنظیم مبلغ کل پرداخت بر اساس روش پرداخت انتخابی استفاده کنید («۵٪ تخفیف نقدی!»).
 
     - `shippingAddressErrors` {{optional_inline}} {{deprecated_inline}} {{non-standard_inline}}
-      - : An object which includes an error message for each property of the shipping address that could not be validated.
+      - : شیئی که برای هر ویژگی از آدرس حمل‌ونقل که نتوانسته اعتبارسنجی شود، یک پیام خطا شامل می‌شود.
     - `shippingOptions` {{optional_inline}} {{deprecated_inline}} {{non-standard_inline}}
-      - : An array of objects, each describing one available shipping option from which the user may choose.
+      - : آرایه‌ای از اشیاء که هر یک یک گزینهٔ حمل‌ونقل موجود را که کاربر می‌تواند از بین آن‌ها انتخاب کند توصیف می‌کند.
     - `total` {{optional_inline}}
-      - : An object with the same properties as the objects in `displayItems` providing an updated total for the payment. Make sure this equals the sum of all of the items in `displayItems`. _This is not calculated automatically_. You must update this value yourself anytime the total amount due changes. This lets you have flexibility for how to handle things like tax, discounts, and other adjustments to the total price charged.
+      - : شیئی با همان ویژگی‌های اشیاء موجود در `displayItems` که مبلغ کل به‌روزرسانی‌شده‌ای برای پرداخت ارائه می‌دهد. مطمئن شوید که این مقدار با مجموع تمام آیتم‌های موجود در `displayItems` برابر است. _این مقدار به طور خودکار محاسبه نمی‌شود_. هر زمان که مبلغ کل تغییر کرد، باید این مقدار را خودتان به‌روزرسانی کنید. این به شما انعطاف می‌دهد که با مواردی مانند مالیات، تخفیف‌ها و سایر تنظیمات مبلغ کل شارژ شده به روش دلخواه برخورد کنید.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that eventually resolves with a {{domxref("PaymentResponse")}}.
-The promise is resolved when the user accepts the payment request (such as by clicking a
-"Pay" button in the browser's payment sheet).
+یک {{jsxref("Promise")}} که در نهایت با یک {{domxref("PaymentResponse")}} resolve می‌شود. این Promise زمانی resolve می‌شود که کاربر درخواست پرداخت را بپذیرد (مثلاً با کلیک بر دکمهٔ «پرداخت» در برگهٔ پرداخت مرورگر).
 
-### Exceptions
+### استثناها
 
-Exceptions are not thrown but returned when the {{jsxref("Promise")}} rejects.
+استثناها پرتاب نمی‌شوند، اما زمانی که {{jsxref("Promise")}} رد می‌شود (reject) بازگردانده می‌شوند.
 
 - `AbortError` {{domxref("DOMException")}}
-  - : Returned if the
-    {{Glossary("user agent")}} is already showing a payment panel. Only one payment
-    panel may be visible at a time _across all documents loaded by the user
-    agent_.
+  - : اگر {{Glossary("user agent")}} از قبل در حال نمایش برگهٔ پرداخت باشد بازگردانده می‌شود. تنها یک برگهٔ پرداخت ممکن است در هر زمان _در تمام اسناد بارگذاری‌شده توسط عامل کاربر_ قابل مشاهده باشد.
 
-    The promise is also rejected with `AbortError` if the user cancels the
-    payment request.
+    همچنین اگر کاربر درخواست پرداخت را لغو کند، Promise با `AbortError` رد می‌شود.
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Returned if the same payment has
-    already been shown for this request (its state is `interactive` because it
-    is being shown already).
+  - : اگر همان پرداخت قبلاً برای این درخواست نمایش داده شده باشد بازگردانده می‌شود (وضعیت آن `interactive` است چون در حال نمایش است).
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Returned if the user agent does not
-    support the payment methods specified when the
-    {{domxref("PaymentRequest.PaymentRequest","PaymentRequest")}} constructor was called.
+  - : اگر عامل کاربر از روش‌های پرداخت مشخص‌شده در زمان فراخوانی سازندهٔ {{domxref("PaymentRequest.PaymentRequest","PaymentRequest")}} پشتیبانی نکند بازگردانده می‌شود.
 - `SecurityError` {{domxref("DOMException")}}
-  - : Returned if the call to
-    `show()` was not in response to a user action, such as a {{domxref("Element/click_event", "click")}}
-    or {{domxref("Element/keyup_event", "keyup")}} event. Other reasons a `SecurityError` may be thrown
-    are at the discretion of the user agent, and may include situations such as too many
-    calls to `show()` being made in a short time or `show()` being
-    called while payment requests are blocked by parental controls.
+  - : اگر فراخوانی `show()` در پاسخ به یک اقدام کاربر مانند رویداد {{domxref("Element/click_event", "click")}} یا {{domxref("Element/keyup_event", "keyup")}} نباشد بازگردانده می‌شود. دلایل دیگری که ممکن است `SecurityError` پرتاب شود به صلاحدید عامل کاربر است و ممکن است شامل موقعیت‌هایی مانند فراخوانی‌های بیش از حد `show()` در مدت کوتاه یا فراخوانی `show()` در حالی که درخواست‌های پرداخت توسط کنترل‌های والدین مسدود شده‌اند باشد.
 
-## Security
+## امنیت
 
-[Transient user activation](/en-US/docs/Web/Security/Defenses/User_activation) is required. The user has to interact with the page or a UI element in order for this feature to work.
+[فعال‌سازی گذرای کاربر (Transient user activation)](/en-US/docs/Web/Security/Defenses/User_activation) لازم است. کاربر باید با صفحه یا یک عنصر رابط کاربری تعامل کند تا این ویژگی کار کند.
 
-## Usage notes
+## نکات استفاده
 
-The most common patterns for using `show()` involve either the
-[`async`](/en-US/docs/Web/JavaScript/Reference/Statements/async_function)/[`await`](/en-US/docs/Web/JavaScript/Reference/Operators/await)
-syntax or the use of `show().then().catch()` to handle the response and any
-possible rejection. Those look like this:
+رایج‌ترین الگوهای استفاده از `show()` شامل نحو [`async`](/en-US/docs/Web/JavaScript/Reference/Statements/async_function)/[`await`](/en-US/docs/Web/JavaScript/Reference/Operators/await) یا استفاده از `show().then().catch()` برای مدیریت پاسخ و هرگونه رد شدن احتمالی است. این‌ها به این شکل هستند:
 
-### async/await syntax
+### نحو async/await
 
-Using `await` to wait for a promise to be resolved makes it possible to
-write the code to handle payments particularly cleanly:
+استفاده از `await` برای انتظار برای تکمیل یک Promise، نوشتن کد رسیدگی به پرداخت‌ها را به‌طور خاص تمیز و خوانا می‌کند:
 
 ```js
 async function processPayment() {
@@ -163,15 +120,9 @@ async function processPayment() {
 }
 ```
 
-In this code, the methods `checkAddress()` and `checkShipping()`,
-respectively, check the shipping address and the shipping option changes and supply in
-response either an object or a promise to return one;
-this object contains the fields in the {{domxref("PaymentResponse")}} which have been or
-need to be changed.
+در این کد، متدهای `checkAddress()` و `checkShipping()`، به ترتیب، تغییرات آدرس حمل‌ونقل و گزینهٔ حمل‌ونقل را بررسی می‌کنند و در پاسخ یک شیء یا یک Promise برای بازگرداندن یک شیء ارائه می‌دهند؛ این شیء شامل فیلدهای موجود در {{domxref("PaymentResponse")}} است که تغییر کرده‌اند یا باید تغییر کنند.
 
-The `validateResponse()` method, below, is called once `show()`
-returns, in order to look at the returned `response` and either submit the
-payment or reject the payment as failed:
+متد `validateResponse()` در زیر، به محض بازگشت `show()` فراخوانی می‌شود تا `response` بازگشتی را بررسی کند و یا پرداخت را ارسال کند یا آن را به عنوان ناموفق رد کند:
 
 ```js
 async function validateResponse(response) {
@@ -187,30 +138,17 @@ async function validateResponse(response) {
 }
 ```
 
-Here, a custom function called `checkAllValues()` looks at each value in the
-`response` and ensures that they're valid, returning `true` if
-every field is valid or `false` if any are not. If and only if every field is
-valid, the {{domxref("PaymentResponse.complete", "complete()")}} method is called on the
-response with the string `"success"`, which indicates that everything is
-valid and that the payment can complete accordingly.
+در اینجا، یک تابع سفارشی به نام `checkAllValues()` هر مقدار در `response` را بررسی می‌کند و مطمئن می‌شود که معتبر هستند؛ اگر همهٔ فیلدها معتبر باشند `true` و اگر هر یک نامعتبر باشند `false` برمی‌گرداند. اگر و فقط اگر همهٔ فیلدها معتبر باشند، متد {{domxref("PaymentResponse.complete", "complete()")}} بر روی پاسخ با رشتهٔ `"success"` فراخوانی می‌شود که نشان می‌دهد همه‌چیز معتبر است و پرداخت می‌تواند بر این اساس تکمیل شود.
 
-If any fields have unacceptable values, or if an exception is thrown by the previous
-code, `complete()` is called with the string `"fail"`, which
-indicates that the payment process is complete and failed.
+اگر هر یک از فیلدها مقادیر غیرقابل قبولی داشته باشند، یا اگر استثنایی توسط کد قبلی پرتاب شود، `complete()` با رشتهٔ `"fail"` فراخوانی می‌شود که نشان می‌دهد فرایند پرداخت کامل شده و ناموفق بوده است.
 
-Instead of immediately failing, you could choose to call
-{{domxref("PaymentResponse.retry", "retry()")}} on the response object to ask the user
-agent to try to process the payment again; this should usually only be done after the
-user has made any needed corrections to the order.
+به جای شکست فوری، می‌توانید {{domxref("PaymentResponse.retry", "retry()")}} را بر روی شیء پاسخ فراخوانی کنید تا از عامل کاربر بخواهید دوباره تلاش کند پرداخت را پردازش کند؛ این کار معمولاً فقط باید پس از انجام اصلاحات لازم توسط کاربر در سفارش انجام شود.
 
-Starting the payment process, in the end, is as simple as calling the
-`processPayment()` method.
+شروع فرایند پرداخت، در نهایت، به سادگی فراخوانی متد `processPayment()` است.
 
-### then/catch syntax
+### نحو then/catch
 
-You can also use the older promise-based approach to work with payments, using the
-{{jsxref("Promise.then", "then()")}} and {{jsxref("Promise.catch", "catch()")}}
-functions on the promise returned by `show()`:
+همچنین می‌توانید از رویکرد مبتنی بر Promise قدیمی‌تر برای کار با پرداخت‌ها استفاده کنید، با استفاده از توابع {{jsxref("Promise.then", "then()")}} و {{jsxref("Promise.catch", "catch()")}} بر روی Promise بازگشتی از `show()`:
 
 ```js
 function processPayment() {
@@ -228,8 +166,7 @@ function processPayment() {
 }
 ```
 
-This is functionally equivalent to the `processPayment()` method using the
-`await` syntax.
+این به طور عملکردی معادل متد `processPayment()` با استفاده از نحو `await` است.
 
 ```js
 function validateResponse(response) {
@@ -239,8 +176,7 @@ function validateResponse(response) {
 }
 ```
 
-You could even have `checkAllValues()` be a synchronous function, although
-that may have performance implications you don't want to deal with:
+حتی می‌توانید `checkAllValues()` را به عنوان یک تابع همزمان داشته باشید، اگرچه این ممکن است پیامدهای عملکردی داشته باشد که نمی‌خواهید با آن‌ها دست و پنجه نرم کنید:
 
 ```js
 function validateResponse(response) {
@@ -252,83 +188,8 @@ function validateResponse(response) {
 }
 ```
 
-See the article [Using promises](/en-US/docs/Web/JavaScript/Guide/Using_promises) for more information if you need more information about working with
-promises.
+اگر به اطلاعات بیشتری دربارهٔ کار با Promiseها نیاز دارید، مقالهٔ [استفاده از promises](/en-US/docs/Web/JavaScript/Guide/Using_promises) را ببینید.
 
-## Examples
+## مثال‌ها
 
-In the following example, a `PaymentRequest` object is instantiated before
-the `show()` method is called. This method triggers the user agent's built-in
-process for retrieving payment information from the user. The `show()` method
-returns a {{jsxref('Promise')}} that resolves to a {{domxref("PaymentResponse")}} object
-when the user interaction is complete. The developer then uses the information in
-the `PaymentResponse` object to format and send payment data to the server.
-You should send the payment information to the server asynchronously so that the final
-call to {{domxref("paymentResponse.complete()")}} can indicate the success or failure of
-the payment.
-
-```js
-button.onclick = async () => {
-  // Initialization of PaymentRequest arguments are excerpted for the sake of
-  // brevity.
-  const payment = new PaymentRequest(methods, details, options);
-  try {
-    const response = await payment.show();
-    // Process response here, including sending payment instrument
-    // (e.g., credit card) information to the server.
-    // paymentResponse.methodName contains the selected payment method
-    // paymentResponse.details contains a payment method specific response
-    await response.complete("success");
-  } catch (err) {
-    console.error("Uh oh, something bad happened", err.message);
-  }
-};
-```
-
-The following example shows how to update the payment sheet as it's being presented to
-the end-user.
-
-```js
-async function requestPayment() {
-  // We start with AU$0 as the total.
-  const initialDetails = {
-    total: {
-      label: "Total",
-      amount: { value: "0", currency: "AUD" },
-    },
-  };
-  const request = new PaymentRequest(methods, initialDetails, options);
-  // Check if the user supports the `methods`
-  if (!(await request.canMakePayment())) {
-    return; // no, so use a web form instead.
-  }
-  // Let's update the total as the sheet is shown
-  const updatedDetails = {
-    total: {
-      label: "Total",
-      amount: { value: "20", currency: "AUD" },
-    },
-  };
-  const response = await request.show(updatedDetails);
-  // Check response, etc.
-}
-
-document.getElementById("buyButton").onclick = requestPayment;
-```
-
-## Specifications
-
-{{Specifications}}
-
-## Browser compatibility
-
-{{Compat}}
-
-## See also
-
-- [Payment Request API](/en-US/docs/Web/API/Payment_Request_API)
-- [Using the Payment Request API](/en-US/docs/Web/API/Payment_Request_API/Using_the_Payment_Request_API)
-- {{domxref('PaymentRequest.abort()')}}
-- {{domxref("PaymentResponse")}}
-- {{domxref("PaymentResponse.retry()")}}
-- {{domxref("PaymentResponse.complete()")}}
+در مثال زیر، یک شیء `PaymentRequest` قبل از فراخوانی متد `show()` نمونه‌سازی می‌شود. این متد فرایند داخلی عامل کاربر برای دریافت اطلاعات پرداخت از کاربر را آغاز می‌کند. متد `show()` یک {{jsxref('Promise')}} برمی‌گرداند که وقتی تعامل کاربر کامل شود به یک شیء {{domxref("PaymentResponse")}} resolve می‌شود. توسعه‌دهنده
