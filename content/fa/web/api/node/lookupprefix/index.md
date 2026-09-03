@@ -1,11 +1,5 @@
 ---
 title: "Node: lookupPrefix() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Node/lookupPrefix"
-status: "needs-translation"
----
-
----
-title: "Node: lookupPrefix() method"
 short-title: lookupPrefix()
 slug: Web/API/Node/lookupPrefix
 page-type: web-api-instance-method
@@ -14,36 +8,31 @@ browser-compat: api.Node.lookupPrefix
 
 {{APIRef("DOM")}}
 
-The **`lookupPrefix()`** method of the {{domxref("Node")}} interface
-returns a string containing the prefix for a given namespace URI, if present,
-and `null` if not.
-When multiple prefixes are possible, the first prefix is returned.
+متد **`lookupPrefix()`** از رابط {{domxref("Node")}} یک رشته حاوی پیشوند (prefix) برای یک URI فضای نام (namespace) مشخص، در صورت وجود، و در غیر این صورت `null` را برمی‌گرداند. در صورت وجود چندین پیشوند، اولین پیشوند بازگردانده می‌شود.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 lookupPrefix(namespace)
 ```
 
-### Parameters
+### پارامترها
 
 - `namespace`
-  - : A string containing the namespace to look the prefix up. The empty string is equivalent to `null`, both causing `null` to be returned.
+  - : رشته‌ای شامل فضای نامی که باید پیشوند آن جستجو شود. رشته خالی معادل `null` است و در هر دو حالت `null` بازگردانده می‌شود.
     > [!NOTE]
-    > This parameter is not optional but can be set to `null`.
+    > این پارامتر اختیاری نیست اما می‌توان آن را `null` قرار داد.
 
-### Return value
+### مقدار بازگشتی
 
-A string containing the corresponding prefix, or `null` if none has been found.
-If `namespace` is null, or the empty string, `lookupPrefix()` returns `null`.
+رشته‌ای حاوی پیشوند متناظر، یا در صورت عدم یافتن، `null`. اگر `namespace` برابر `null` یا رشته خالی باشد، `lookupPrefix()` مقدار `null` را برمی‌گرداند.
 
-If the node is a {{domxref("DocumentType")}} or a {{domxref("DocumentFragment")}},
-`lookupPrefix()` always returns `null`.
+اگر گره از نوع {{domxref("DocumentType")}} یا {{domxref("DocumentFragment")}} باشد، `lookupPrefix()` همیشه `null` برمی‌گرداند.
 
-## Example
+## مثال
 
 > [!NOTE]
-> This example runs in an HTML document, where `xmlns:` attributes are ignored (except `xmlns:xlink`). Firefox sets all elements' namespace URIs to `null`, while Chrome and Safari appropriately set HTML, SVG, and MathML elements' default namespace URIs. If you want to conduct more meaningful tests, you can open a standalone [SVG](/en-US/docs/Web/SVG) document and execute scripts in its context.
+> این مثال در یک سند HTML اجرا می‌شود، جایی که ویژگی‌های `xmlns:` نادیده گرفته می‌شوند (به جز `xmlns:xlink`). فایرفاکس URI فضای نام همه عناصر را `null` قرار می‌دهد، در حالی که کروم و سافاری به طور مناسب URI فضای نام پیش‌فرض عناصر HTML، SVG و MathML را تنظیم می‌کنند. اگر می‌خواهید آزمایش‌های معنادارتری انجام دهید، می‌توانید یک سند مستقل [SVG](/en-US/docs/Web/SVG) باز کرده و اسکریپت‌ها را در بافت آن اجرا کنید.
 
 ```html
 <div class="hidden">
@@ -110,10 +99,10 @@ for (const uri of [
 
 {{ EmbedLiveSample('Example','100%',190) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
