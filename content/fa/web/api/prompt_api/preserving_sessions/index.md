@@ -1,10 +1,4 @@
 ---
-title: "Preserving sessions across reloads"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Prompt_API/Preserving_sessions"
-status: "needs-translation"
----
-
----
 title: Preserving sessions across reloads
 short-title: Preserving sessions
 slug: Web/API/Prompt_API/Preserving_sessions
@@ -13,16 +7,16 @@ page-type: guide
 
 {{DefaultAPISidebar("Prompt API")}}
 
-One issue with the [Prompt API](/en-US/docs/Web/API/Prompt_API) is that the browser doesn't store session information across browser reloads — this is not a surprise, as the web is stateless by default, but it is an issue nonetheless. To restore session context after a reload or browser restart, you will have to implement a mechanism to save the conversation and restore it using a server- or client-side solution.
+یکی از مشکلات [API Prompt](/en-US/docs/Web/API/Prompt_API) این است که مرورگر اطلاعات نشست را هنگام بارگذاری مجدد صفحه ذخیره نمی‌کند. این موضوع چندان غافلگیرکننده نیست، چون وب به‌صورت پیش‌فرض بدون حالت (stateless) است، اما همچنان یک مشکل محسوب می‌شود. برای بازیابی زمینهٔ نشست پس از بارگذاری مجدد یا راه‌اندازی دوبارهٔ مرورگر، باید سازوکاری برای ذخیرهٔ گفتگو و بازیابی آن با بهره‌گیری از راهکار سمت سرور یا سمت کلاینت پیاده‌سازی کنید.
 
-This article shows you how to implement a basic query-and-respond example (much like the [complete example](/en-US/docs/Web/API/Prompt_API/Using#complete_example) in our first Prompt API guide) that includes a session-preserving solution created using [Web Storage](/en-US/docs/Web/API/Web_Storage_API).
+در این مقاله یاد می‌گیرید چگونه یک نمونهٔ پرسش‌وپاسخ ساده (بسیار شبیه به [مثال کامل](/en-US/docs/Web/API/Prompt_API/Using#complete_example) در نخستین راهنمای Prompt API ما) را پیاده‌سازی کنید که در آن راهکاری برای حفظ نشست با استفاده از [Web Storage](/en-US/docs/Web/API/Web_Storage_API) به‌کار رفته باشد.
 
 > [!NOTE]
-> To check out the complete codebase in more detail, view [the full source code](https://github.com/mdn/dom-examples/tree/main/prompt-api-web-storage).
+> برای بررسی دقیق‌تر کل پایگاه کد، [کد منبع کامل](https://github.com/mdn/dom-examples/tree/main/prompt-api-web-storage) را ببینید.
 
-## The user interface
+## رابط کاربری
 
-The HTML for this example features a {{htmlelement("textarea")}} element to enter prompts into, and a {{htmlelement("p")}} to write the API's responses into. It also features three {{htmlelement("button")}} elements — one to submit the prompt to the API, one to abort an ongoing prompt request, and one to clear the saved session history.
+در HTML این مثال از یک عنصر {{htmlelement("textarea")}} برای وارد کردن دستورها (prompt) و یک عنصر {{htmlelement("p")}} برای نمایش پاسخ‌های API استفاده شده است. همچنین سه عنصر {{htmlelement("button")}} وجود دارد: یکی برای ارسال دستور به API، یکی برای لغو درخواست دستور در حال انجام، و یکی برای پاک کردن تاریخچهٔ نشست ذخیره‌شده.
 
 ```html
 <h1>Prompt API demo</h1>
@@ -48,19 +42,19 @@ The HTML for this example features a {{htmlelement("textarea")}} element to ente
 <p class="prompt-output"></p>
 ```
 
-For brevity, we won't show the CSS; there is nothing significant to discuss, style-wise.
+برای اختصار، کد CSS را نشان نمی‌دهیم؛ از نظر استایل نکتهٔ قابل بحث چندانی وجود ندارد.
 
-## Retrieving the prompt history
+## بازیابی تاریخچهٔ دستورها
 
-When the page first loads, we need to check whether we have any prompt history saved, and if so, load it into the session.
+هنگامی که صفحه برای نخستین بار بارگذاری می‌شود، باید بررسی کنیم که آیا تاریخچه‌ای از دستورها ذخیره شده است یا نه؛ اگر ذخیره شده باشد، آن را در نشست بارگذاری می‌کنیم.
 
-We start by defining a variable called `promptHistory` to store the saved history:
+ابتدا متغیری به نام `promptHistory` تعریف می‌کنیم تا تاریخچهٔ ذخیره‌شده را در آن نگه داریم:
 
 ```js
 let promptHistory;
 ```
 
-We then check whether there is a property in {{domxref("Window.localStorage", "localStorage")}} called `promptHistory`, which is the key we will store our prompt history under. If there is, we retrieve that storage item using {{domxref("Storage.getItem", "getItem()")}}, parse it into an array using {{jsxref("JSON.parse()")}}, and store it in the variable. We also enable the delete `<button>` now that there is history to delete. If there is no stored key called `promptHistory`, we set the `promptHistory` variable to an empty array.
+سپس بررسی می‌کنیم که آیا خاصیتی به نام `promptHistory` در {{domxref("Window.localStorage", "localStorage")}} وجود دارد؛ این همان کلیدی است که تاریخچهٔ دستورها را زیر آن ذخیره می‌کنیم. اگر وجود داشت، آن را با استفاده از {{domxref("Storage.getItem", "getItem()")}} از حافظه برمی‌گردانیم، با {{jsxref("JSON.parse()")}} به یک آرایه تبدیل می‌کنیم و در متغیر ذخیره می‌کنیم. اکنون که تاریخی برای حذف وجود دارد، دکمهٔ حذف `<button>` را نیز فعال می‌کنیم. اگر کلید ذخیره‌شده‌ای به نام `promptHistory` وجود نداشته باشد، متغیر `promptHistory` را با یک آرایهٔ خالی مقداردهی می‌کنیم.
 
 ```js
 if (localStorage.promptHistory) {
@@ -71,11 +65,11 @@ if (localStorage.promptHistory) {
 }
 ```
 
-## Adding the prompt history to the session
+## افزودن تاریخچهٔ دستورها به نشست
 
-Next, we create a `session` variable to hold our session. Because using the API requires [transient activation](/en-US/docs/Glossary/Transient_activation), we populate `session` inside a `focus` event handler on the `<textarea>`. When the user focuses the `<textarea>`, we first check whether the API is supported; if not, we print a non-support message and `return` early. Next, we check whether `session` already has a value assigned (we don't want to create a new session each time). If not, we run the `init()` function, which generates a `LanguageModel` instance using the custom `getSession()` function. We pass `getSession()` the `promptHistory` variable from earlier to add the saved history to the session on creation.
+سپس متغیری به نام `session` برای نگهداری نشست می‌سازیم. از آنجا که استفاده از API به [فعال‌سازی گذرا (transient activation)](/en-US/docs/Glossary/Transient_activation) نیاز دارد، مقدار `session` را درون یک event handler از نوع `focus` روی `<textarea>` مقداردهی می‌کنیم. وقتی کاربر روی `<textarea>` تمرکز می‌کند، ابتدا بررسی می‌کنیم که آیا API پشتیبانی می‌شود یا نه؛ اگر پشتیبانی نمی‌شود، پیامی دربارهٔ عدم پشتیبانی نمایش می‌دهیم و زودتر (`return`) از تابع خارج می‌شویم. سپس بررسی می‌کنیم که آیا `session` از قبل مقداری دارد یا نه (نمی‌خواهیم در هر بار تمرکز یک نشست تازه بسازیم). اگر نداشت، تابع `init()` را اجرا می‌کنیم که با تابع سفارشی `getSession()` یک نمونهٔ `LanguageModel` می‌سازد. تاریخچهٔ `promptHistory` را که پیش‌تر تعریف کردیم به `getSession()` می‌دهیم تا هنگام ساخت نشست، تاریخچهٔ ذخیره‌شده به آن افزوده شود.
 
-Provided generation is successful, we assign the resulting `LanguageModel` instance to the `session` variable, print a success message to the output `<p>`, and enable the submit `<button>` (now the session is available, we can start prompting it).
+اگر ساخت نمونه با موفقیت انجام شود، نمونهٔ `LanguageModel` حاصل را در متغیر `session` قرار می‌دهیم، پیام موفقیت را در `<p>` خروجی چاپ می‌کنیم و دکمهٔ ثبت `<button>` را فعال می‌کنیم (حالا که نشست در دسترس است، می‌توانیم شروع به پرس‌وجو از آن کنیم).
 
 ```js
 let session;
@@ -97,11 +91,11 @@ async function init() {
 }
 ```
 
-Now we'll look at the `getSession()` function. The function starts by running our desired model requirements through the `availability()` method to see if it is available:
+حالا به تابع `getSession()` می‌پردازیم. این تابع ابتدا نیازمندی‌های موردنظر خود از مدل را از طریق متد `availability()` بررسی می‌کند تا ببیند آیا مدل در دسترس است یا نه:
 
-- If it returns `unavailable`, we print an appropriate error message to the output `<p>`.
-- If it returns `available`, we create a session using the `create()` method, passing it several options including `initialPrompts`, which we set to our history parameter. This is what gives the session the previous prompt history as context after each page load.
-- If it returns a different value (that is, `downloadable` or `downloading`), we run the same `create()` method call, but this time we include a `monitor` that prints out the percentage of the additional data downloaded to the output `<p>` each time the {{domxref("CreateMonitor.downloadprogress_event", "downloadprogress")}} event fires.
+- اگر مقدار `unavailable` برگردد، پیام خطای مناسبی در `<p>` خروجی چاپ می‌کنیم.
+- اگر مقدار `available` برگردد، با استفاده از متد `create()` نشستی ایجاد می‌کنیم و گزینه‌های مختلفی از جمله `initialPrompts` را به آن می‌فرستیم. مقدار `initialPrompts` را برابر پارامتر تاریخچه (history) که در اختیار تابع است قرار می‌دهیم. این همان چیزی است که به نشست اجازه می‌دهد پس از هر بار بارگذاری صفحه، تاریخچهٔ دستورهای قبلی را به‌عنوان زمینه در اختیار داشته باشد.
+- اگر مقدار دیگری برگردد (یعنی `downloadable` یا `downloading`)، همان فراخوانی متد `create()` را اجرا می‌کنیم، اما این بار گزینه‌ای به نام `monitor` را نیز شامل می‌شویم. هر بار که رویداد {{domxref("CreateMonitor.downloadprogress_event", "downloadprogress")}} رخ دهد، این گزینه درصد داده‌های اضافی دانلودشده را در `<p>` خروجی چاپ می‌کند.
 
 ```js
 async function getSession(history) {
@@ -133,11 +127,11 @@ async function getSession(history) {
 }
 ```
 
-## Updating the history after each prompt
+## به‌روزرسانی تاریخچه پس از هر دستور
 
-When the form is submitted, the contents of the `<textarea>` are included in a {{domxref("LanguageModel.prompt", "prompt()")}} call and the returned result is included in the output `<p>` so the user can see it.
+وقتی فرم ارسال می‌شود، محتوای `<textarea>` در یک فراخوانی {{domxref("LanguageModel.prompt", "prompt()")}} قرار می‌گیرد و نتیجهٔ بازگشتی در `<p>` خروجی نمایش داده می‌شود تا کاربر آن را ببیند.
 
-The most significant part of this example is how we store the history for later — note how after each successful operation, we {{jsxref("Array.push", "push()")}} two objects to the `promptHistory` array, one representing the `user` prompt and one representing the `assistant` response, in the correct format for the API to interpret. We then {{jsxref("JSON.stringify", "stringify()")}} the updated `promptHistory` and store it in the `promptHistory` web storage item using {{domxref("Storage.setItem", "setItem()")}}. At this point, we also enable the delete `<button>`, as there is definitely history to delete at this point.
+مهم‌ترین بخش این مثال، روش ذخیره‌سازی تاریخچه برای استفاده‌های بعدی است. توجه کنید که پس از هر عملیات موفق، دو شیء را با استفاده از {{jsxref("Array.push", "push()")}} به آرایهٔ `promptHistory` اضافه می‌کنیم: یکی نشان‌دهندهٔ دستور `user` و دیگری نشان‌دهندهٔ پاسخ `assistant`، آن هم در قالبی که API بتواند آن را تفسیر کند. سپس `promptHistory` به‌روزشده را با {{jsxref("JSON.stringify", "stringify()")}} به رشته تبدیل می‌کنیم و با استفاده از {{domxref("Storage.setItem", "setItem()")}} در آیتم حافظهٔ وب به نام `promptHistory` ذخیره می‌کنیم. در این مرحله دکمهٔ حذف `<button>` را نیز فعال می‌کنیم، چون قطعاً تاریخچه‌ای برای حذف وجود دارد.
 
 ```js
 form.addEventListener("submit", handleSubmission);
@@ -182,9 +176,9 @@ async function handleSubmission(e) {
 }
 ```
 
-## Wiring up the delete button
+## اتصال دکمهٔ حذف
 
-When the delete `<button>` is clicked, we remove the `promptHistory` item from local storage using {{domxref("Storage.removeItem", "removeItem()")}}. We also reload the page using {{domxref("Location.reload()")}} as a cheap way to avoid continuity issues between the local storage and the model session.
+هنگامی که دکمهٔ حذف `<button>` کلیک می‌شود، آیتم `promptHistory` را با استفاده از {{domxref("Storage.removeItem", "removeItem()")}} از حافظهٔ محلی حذف می‌کنیم. همچنین صفحه را با استفاده از {{domxref("Location.reload()")}} دوباره بارگذاری می‌کنیم؛ این کار راهی ساده و کم‌هزینه برای جلوگیری از ناسازگاری بین حافظهٔ محلی و نشست مدل است.
 
 ```js
 deleteBtn.addEventListener("click", () => {
@@ -193,10 +187,10 @@ deleteBtn.addEventListener("click", () => {
 });
 ```
 
-## Result
+## نتیجه
 
-[Run the demo](https://mdn.github.io/dom-examples/prompt-api-web-storage/) in a new tab to observe its functionality (see also [the full source code](https://github.com/mdn/dom-examples/tree/main/prompt-api-web-storage)). We weren't able to provide a working version of this demo embedded in the page because MDN clears out all the storage data.
+برای مشاهدهٔ عملکرد این دمو، [اجرای دمو](https://mdn.github.io/dom-examples/prompt-api-web-storage/) را در یک زبانهٔ جدید باز کنید (همچنین [کد منبع کامل](https://github.com/mdn/dom-examples/tree/main/prompt-api-web-storage) را ببینید). امکان ارائهٔ نسخهٔ کاری این دمو به‌صورت تعبیه‌شده در صفحه وجود نداشت، زیرا MDN تمام داده‌های ذخیره‌شده را پاک می‌کند.
 
-Try submitting a prompt such as "My favorite color is red", then reload the page and try submitting "What is my favorite color?", for example. The model should remember your previous conversation.
+برای نمونه، دستوری مانند "My favorite color is red" ارسال کنید، سپس صفحه را دوباره بارگذاری کنید و دستوری مانند "What is my favorite color?" بفرستید. مدل باید گفتگوی قبلی شما را به خاطر بسپارد.
 
-Now try the same thing, but press "Delete saved prompt history" in between. This time the model will not remember your previous conversation.
+حالا همین کار را تکرار کنید، اما در این فاصله دکمهٔ «Delete saved prompt history» را فشار دهید. این بار مدل گفتگوی قبلی شما را به خاطر نخواهد آورد.
