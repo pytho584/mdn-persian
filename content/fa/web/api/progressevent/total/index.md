@@ -1,11 +1,5 @@
 ---
 title: "ProgressEvent: total property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ProgressEvent/total"
-status: "needs-translation"
----
-
----
-title: "ProgressEvent: total property"
 short-title: total
 slug: Web/API/ProgressEvent/total
 page-type: web-api-instance-property
@@ -14,28 +8,28 @@ browser-compat: api.ProgressEvent.total
 
 {{APIRef("XMLHttpRequest API")}}{{AvailableInWorkers}}
 
-The **`ProgressEvent.total`** read-only property is a number indicating the total size of the data being transmitted or processed.
+ویژگی فقط‌خواندنی **`ProgressEvent.total`** عددی است که اندازهٔ کل داده‌های در حال انتقال یا پردازش را نشان می‌دهد.
 
-For `ProgressEvent`s dispatched by the browser, the value refers to the size, in bytes, of a resource and is derived from the `Content-Length` response header.
+برای رویدادهای `ProgressEvent` که توسط مرورگر ارسال می‌شوند، این مقدار به اندازهٔ منبع بر حسب بایت اشاره دارد و از هدر پاسخ `Content-Length` به دست می‌آید.
 
-In a `ProgressEvent` you create yourself, this may also be the total bytes of a resource, although this can be any number.
-For example, you may wish to normalize `total` to a value such as `100` or `1` if revealing the precise amount of bytes of a resource is a concern.
-If using `1` as a total, then {{domxref("ProgressEvent.loaded")}} would be a decimal value between `0` and `1`.
+در یک `ProgressEvent` که خودتان می‌سازید، این مقدار می‌تواند همچنان مجموع بایت‌های یک منبع باشد؛ هرچند می‌تواند هر عددی نیز باشد.
+برای مثال، اگر افشای مقدار دقیق بایت‌های یک منبع برایتان نگران‌کننده است، ممکن است بخواهید `total` را به مقداری مانند `100` یا `1` نرمال‌سازی کنید.
+اگر از `1` به‌عنوان مقدار کل استفاده کنید، آنگاه {{domxref("ProgressEvent.loaded")}} یک مقدار اعشاری بین `0` و `1` خواهد بود.
 
-If the event's {{domxref("ProgressEvent.lengthComputable", "lengthComputable")}} property is `false`, this value is meaningless and should be ignored.
+اگر ویژگی {{domxref("ProgressEvent.lengthComputable", "lengthComputable")}} رویداد برابر `false` باشد، این مقدار بی‌معنا است و باید نادیده گرفته شود.
 
-## Value
+## مقدار
 
-A number.
+یک عدد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("ProgressEvent")}} interface it belongs to.
+- رابط {{domxref("ProgressEvent")}} که این ویژگی به آن تعلق دارد.
