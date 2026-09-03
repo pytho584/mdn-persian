@@ -1,11 +1,5 @@
 ---
 title: "Navigator: hid property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/hid"
-status: "needs-translation"
----
-
----
-title: "Navigator: hid property"
 short-title: hid
 slug: Web/API/Navigator/hid
 page-type: web-api-instance-property
@@ -16,23 +10,22 @@ browser-compat: api.Navigator.hid
 
 {{APIRef("WebHID API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`Navigator.hid`**
-read-only property returns an {{domxref("HID")}} object providing methods for accessing HID device connections and events that fire when the user agent connects to or disconnects from a device.
+ویژگی فقط‌خواندنی **`Navigator.hid`** یک شیء {{domxref("HID")}} برمی‌گرداند که روش‌هایی برای دسترسی به اتصال‌های دستگاه HID و رویدادهایی که هنگام اتصال یا قطع اتصال عامل کاربر (user agent) به یک دستگاه رخ می‌دهند، فراهم می‌کند.
 
-Where a defined [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) blocks WebHID usage, the `Navigator.hid` property will not be available.
+در جایی که یک [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) تعریف‌شده استفاده از WebHID را مسدود کند، خاصیت `Navigator.hid` در دسترس نخواهد بود.
 
-## Value
+## مقدار
 
-An {{domxref("HID")}} object.
+یک {{domxref("HID")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [WebHID API](/en-US/docs/Web/API/WebHID_API)
