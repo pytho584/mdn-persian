@@ -1,10 +1,4 @@
 ---
-title: "OfflineAudioContext"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/OfflineAudioContext"
-status: "needs-translation"
----
-
----
 title: OfflineAudioContext
 slug: Web/API/OfflineAudioContext
 page-type: web-api-interface
@@ -13,58 +7,58 @@ browser-compat: api.OfflineAudioContext
 
 {{APIRef("Web Audio API")}}
 
-The `OfflineAudioContext` interface is an {{domxref("AudioContext")}} interface representing an audio-processing graph built from linked together {{domxref("AudioNode")}}s. In contrast with a standard {{domxref("AudioContext")}}, an `OfflineAudioContext` doesn't render the audio to the device hardware; instead, it generates it, as fast as it can, and outputs the result to an {{domxref("AudioBuffer")}}.
+رابط `OfflineAudioContext` یک رابط {{domxref("AudioContext")}} است که یک گراف پردازش صوتی ساخته‌شده از گره‌های صوتی ({{domxref("AudioNode")}}) متصل‌به‌هم را نمایش می‌دهد. برخلاف یک {{domxref("AudioContext")}} استاندارد، یک `OfflineAudioContext` صدا را به سخت‌افزار دستگاه خروجی نمی‌دهد؛ در عوض، آن را با سریع‌ترین سرعت ممکن تولید می‌کند و نتیجه را در یک {{domxref("AudioBuffer")}} قرار می‌دهد.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("OfflineAudioContext.OfflineAudioContext()", "OfflineAudioContext()")}}
-  - : Creates a new `OfflineAudioContext` instance.
+  - : یک نمونه جدید از `OfflineAudioContext` می‌سازد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Also inherits properties from its parent interface, {{domxref("BaseAudioContext")}}._
+_همچنین ویژگی‌های رابط والد خود، یعنی {{domxref("BaseAudioContext")}} را به ارث می‌برد._
 
 - {{domxref('OfflineAudioContext.length')}} {{ReadOnlyInline}}
-  - : An integer representing the size of the buffer in sample-frames.
+  - : یک عدد صحیح که اندازه بافر را بر حسب فریم‌های نمونه (sample-frames) نشان می‌دهد.
 
-## Instance methods
+## روش‌های نمونه
 
-_Also inherits methods from its parent interface, {{domxref("BaseAudioContext")}}._
+_همچنین روش‌های رابط والد خود، یعنی {{domxref("BaseAudioContext")}} را به ارث می‌برد._
 
 - {{domxref("OfflineAudioContext.suspend()")}}
-  - : Schedules a suspension of the time progression in the audio context at the specified time and returns a promise.
+  - : تعلیق پیشروی زمان در زمینه صوتی را در زمان مشخص‌شده زمان‌بندی می‌کند و یک promise برمی‌گرداند.
 - {{domxref("OfflineAudioContext.startRendering()")}}
-  - : Starts rendering the audio, taking into account the current connections and the current scheduled changes. This page covers both the event-based version and the promise-based version.
+  - : رندر صدا را با در نظر گرفتن اتصالات فعلی و تغییرات زمان‌بندی‌شده فعلی آغاز می‌کند. این صفحه هم نسخه مبتنی بر رویداد و هم نسخه مبتنی بر promise را پوشش می‌دهد.
 
-### Deprecated methods
+### روش‌های منسوخ‌شده
 
 - {{domxref("OfflineAudioContext.resume()")}}
-  - : Resumes the progression of time in an audio context that has previously been suspended.
+  - : پیشروی زمان را در یک زمینه صوتی که قبلاً معلق شده است، از سر می‌گیرد.
 
 > [!NOTE]
-> The `resume()` method is still available — it is now defined on the {{domxref("BaseAudioContext")}} interface (see {{domxref("AudioContext.resume")}}) and thus can be accessed by both the {{domxref("AudioContext")}} and `OfflineAudioContext` interfaces.
+> روش `resume()` همچنان در دسترس است — اکنون در رابط {{domxref("BaseAudioContext")}} تعریف شده است (به {{domxref("AudioContext.resume")}} مراجعه کنید) و بنابراین از طریق هر دو رابط {{domxref("AudioContext")}} و `OfflineAudioContext` قابل دسترسی است.
 
-## Events
+## رویدادها
 
-Listen to these events using [`addEventListener()`](/en-US/docs/Web/API/EventTarget/addEventListener) or by assigning an event listener to the `oneventname` property of this interface:
+به این رویدادها با استفاده از [`addEventListener()`](/en-US/docs/Web/API/EventTarget/addEventListener) یا با اختصاص یک شنونده رویداد به ویژگی `oneventname` این رابط گوش دهید:
 
 - [`complete`](/en-US/docs/Web/API/OfflineAudioContext/complete_event)
-  - : Fired when the rendering of an offline audio context is complete.
+  - : زمانی فعال می‌شود که رندر یک زمینه صوتی آفلاین کامل شود.
 
-## Examples
+## مثال‌ها
 
-### Playing audio with an offline audio context
+### پخش صدا با یک زمینه صوتی آفلاین
 
-In this example, we declare both an {{domxref("AudioContext")}} and an `OfflineAudioContext` object. We use the `AudioContext` to load an audio track {{domxref("Window/fetch", "fetch()")}}, then the `OfflineAudioContext` to render the audio into an {{domxref("AudioBufferSourceNode")}} and play the track through. After the offline audio graph is set up, we render it to an {{domxref("AudioBuffer")}} using `OfflineAudioContext.startRendering()`.
+در این مثال، ما هم یک {{domxref("AudioContext")}} و هم یک شیء `OfflineAudioContext` تعریف می‌کنیم. از `AudioContext` برای بارگذاری یک قطعه صوتی با {{domxref("Window/fetch", "fetch()")}} استفاده می‌کنیم و سپس از `OfflineAudioContext` برای رندر کردن صدا در یک {{domxref("AudioBufferSourceNode")}} و پخش قطعه استفاده می‌کنیم. پس از تنظیم گراف صوتی آفلاین، آن را با استفاده از `OfflineAudioContext.startRendering()` در یک {{domxref("AudioBuffer")}} رندر می‌کنیم.
 
-When the `startRendering()` promise resolves, rendering has completed and the output `AudioBuffer` is returned out of the promise.
+وقتی promise مربوط به `startRendering()` با موفقیت انجام شود، رندر کامل شده و `AudioBuffer` خروجی از داخل promise بازگردانده می‌شود.
 
-At this point we create another audio context, create an {{domxref("AudioBufferSourceNode")}} inside it, and set its buffer to be equal to the promise `AudioBuffer`. This is then played as part of a simple standard audio graph.
+در این مرحله، یک زمینه صوتی دیگر می‌سازیم، یک {{domxref("AudioBufferSourceNode")}} در داخل آن ایجاد می‌کنیم و بافر آن را برابر با `AudioBuffer` حاصل از promise قرار می‌دهیم. سپس این به عنوان بخشی از یک گراف صوتی استاندارد ساده پخش می‌شود.
 
 > [!NOTE]
-> You can [run the full example live](https://mdn.github.io/webaudio-examples/offline-audio-context-promise/), or [view the source](https://github.com/mdn/webaudio-examples/tree/main/offline-audio-context-promise).
+> می‌توانید [نمونه کامل را به‌صورت زنده اجرا کنید](https://mdn.github.io/webaudio-examples/offline-audio-context-promise/)، یا [کد منبع را مشاهده کنید](https://github.com/mdn/webaudio-examples/tree/main/offline-audio-context-promise).
 
 ```js
 // Define both online and offline audio contexts
@@ -116,14 +110,14 @@ play.onclick = () => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
