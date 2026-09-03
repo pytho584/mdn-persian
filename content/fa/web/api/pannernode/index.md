@@ -1,10 +1,4 @@
 ---
-title: "PannerNode"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PannerNode"
-status: "needs-translation"
----
-
----
 title: PannerNode
 slug: Web/API/PannerNode
 page-type: web-api-interface
@@ -13,101 +7,101 @@ browser-compat: api.PannerNode
 
 {{ APIRef("Web Audio API") }}
 
-The `PannerNode` interface defines an audio-processing object that represents the location, direction, and behavior of an audio source signal in a simulated physical space. This {{domxref("AudioNode")}} uses right-hand Cartesian coordinates to describe the source's _position_ as a vector and its _orientation_ as a 3D directional cone.
+رابط `PannerNode` یک شیء پردازش صوتی را تعریف می‌کند که مکان، جهت و رفتار سیگنال منبع صوتی را در یک فضای فیزیکی شبیه‌سازی‌شده نشان می‌دهد. این {{domxref("AudioNode")}} از مختصات دکارتی راست‌گرد برای توصیف _موقعیت_ منبع به‌عنوان یک بردار و _جهت‌گیری_ آن به‌عنوان یک مخروط جهت‌دار سه‌بعدی استفاده می‌کند.
 
-A `PannerNode` always has exactly one input and one output: the input can be _mono_ or _stereo_ but the output is always _stereo_ (2 channels); you can't have panning effects without at least two audio channels!
+یک `PannerNode` همیشه دقیقاً یک ورودی و یک خروجی دارد: ورودی می‌تواند _مونو_ یا _استریو_ باشد، اما خروجی همیشه _استریو_ (۲ کانال) است؛ بدون حداقل دو کانال صوتی، افکت پننگ امکان‌پذیر نیست.
 
-![The PannerNode defines a spatial position and direction for a given signal.](webaudiopannernode.png)
+![PannerNode موقعیت و جهت فضایی یک سیگنال معین را تعریف می‌کند.](webaudiopannernode.png)
 
 {{InheritanceDiagram}}
 
 <table class="properties">
   <tbody>
     <tr>
-      <th scope="row">Number of inputs</th>
+      <th scope="row">تعداد ورودی‌ها</th>
       <td><code>1</code></td>
     </tr>
     <tr>
-      <th scope="row">Number of outputs</th>
+      <th scope="row">تعداد خروجی‌ها</th>
       <td><code>1</code></td>
     </tr>
     <tr>
-      <th scope="row">Channel count mode</th>
+      <th scope="row">حالت تعداد کانال</th>
       <td><code>"clamped-max"</code></td>
     </tr>
     <tr>
-      <th scope="row">Channel count</th>
+      <th scope="row">تعداد کانال</th>
       <td><code>2</code></td>
     </tr>
     <tr>
-      <th scope="row">Channel interpretation</th>
+      <th scope="row">تفسیر کانال</th>
       <td><code>"speakers"</code></td>
     </tr>
   </tbody>
 </table>
 
-## Constructor
+## سازنده
 
 - {{domxref("PannerNode.PannerNode", "PannerNode()")}}
-  - : Creates a new `PannerNode` object instance.
+  - : یک نمونه جدید از شیء `PannerNode` ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Inherits properties from its parent, {{domxref("AudioNode")}}_.
+_ویژگی‌های والد خود، {{domxref("AudioNode")}} را به ارث می‌برد._
 
 > [!NOTE]
-> The orientation and position value are set and retrieved using different syntaxes, since they're stored as {{domxref("AudioParam")}} values. Retrieval is done by accessing, for example, `PannerNode.positionX`. While setting the same property is done with `PannerNode.positionX.value`. This is why these values are not marked read only, which is how they appear in the WebIDL.
+> مقادیر جهت‌گیری و موقعیت با نحو متفاوتی تنظیم و بازیابی می‌شوند، زیرا به‌صورت مقادیر {{domxref("AudioParam")}} ذخیره شده‌اند. بازیابی مقدار با دسترسی مستقیم انجام می‌شود، مثلاً `PannerNode.positionX`، در حالی که تنظیم همان ویژگی با `PannerNode.positionX.value` صورت می‌گیرد. به همین دلیل این مقادیر فقط‌خواندنی علامت‌گذاری نشده‌اند و به همین شکل در WebIDL ظاهر می‌شوند.
 
 - {{domxref("PannerNode.coneInnerAngle")}}
-  - : A double value describing the angle, in degrees, of a cone inside of which there will be no volume reduction.
+  - : یک مقدار double که زاویه (بر حسب درجه) مخروط داخلی را توصیف می‌کند؛ در داخل این مخروط هیچ کاهش حجمی رخ نمی‌دهد.
 - {{domxref("PannerNode.coneOuterAngle")}}
-  - : A double value describing the angle, in degrees, of a cone outside of which the volume will be reduced by a constant value, defined by the `coneOuterGain` property.
+  - : یک مقدار double که زاویه (بر حسب درجه) مخروط بیرونی را توصیف می‌کند؛ خارج از این مخروط حجم صدا با مقدار ثابتی که توسط ویژگی `coneOuterGain` تعریف شده است کاهش می‌یابد.
 - {{domxref("PannerNode.coneOuterGain")}}
-  - : A double value describing the amount of volume reduction outside the cone defined by the `coneOuterAngle` attribute. Its default value is `0`, meaning that no sound can be heard.
+  - : یک مقدار double که میزان کاهش حجم صدا را در خارج از مخروط تعریف‌شده توسط ویژگی `coneOuterAngle` توصیف می‌کند. مقدار پیش‌فرض آن `0` است، به این معنی که هیچ صدایی شنیده نمی‌شود.
 - {{domxref("PannerNode.distanceModel")}}
-  - : An enumerated value determining which algorithm to use to reduce the volume of the audio source as it moves away from the listener. Possible values are `"linear"`, `"inverse"` and `"exponential"`. The default value is `"inverse"`.
+  - : یک مقدار شمارشی که تعیین می‌کند با دور شدن منبع صوتی از شنونده، از کدام الگوریتم برای کاهش حجم صدا استفاده شود. مقادیر ممکن شامل `"linear"`، `"inverse"` و `"exponential"` است. مقدار پیش‌فرض `"inverse"` است.
 - {{domxref("PannerNode.maxDistance")}}
-  - : A double value representing the maximum distance between the audio source and the listener, after which the volume is not reduced any further.
+  - : یک مقدار double که حداکثر فاصله بین منبع صوتی و شنونده را نشان می‌دهد؛ پس از این فاصله، دیگر حجم صدا کاهش نمی‌یابد.
 - {{domxref("PannerNode.orientationX")}}
-  - : Represents the horizontal position of the audio source's vector in a right-hand Cartesian coordinate system. While this {{domxref("AudioParam")}} cannot be directly changed, its value can be altered using its {{domxref("AudioParam.value", "value")}} property. The default is value is 1.
+  - : موقعیت افقی بردار منبع صوتی را در دستگاه مختصات دکارتی راست‌گرد نشان می‌دهد. اگرچه این {{domxref("AudioParam")}} را نمی‌توان مستقیماً تغییر داد، می‌توان مقدار آن را با استفاده از ویژگی {{domxref("AudioParam.value", "value")}} آن تغییر داد. مقدار پیش‌فرض ۱ است.
 - {{domxref("PannerNode.orientationY")}}
-  - : Represents the vertical position of the audio source's vector in a right-hand Cartesian coordinate system. The default is 0. While this {{domxref("AudioParam")}} cannot be directly changed, its value can be altered using its {{domxref("AudioParam.value", "value")}} property. The default is value is 0.
+  - : موقعیت عمودی بردار منبع صوتی را در دستگاه مختصات دکارتی راست‌گرد نشان می‌دهد. اگرچه این {{domxref("AudioParam")}} را نمی‌توان مستقیماً تغییر داد، می‌توان مقدار آن را با استفاده از ویژگی {{domxref("AudioParam.value", "value")}} آن تغییر داد. مقدار پیش‌فرض ۰ است.
 - {{domxref("PannerNode.orientationZ")}}
-  - : Represents the longitudinal (back and forth) position of the audio source's vector in a right-hand Cartesian coordinate system. The default is 0. While this {{domxref("AudioParam")}} cannot be directly changed, its value can be altered using its {{domxref("AudioParam.value", "value")}} property. The default is value is 0.
+  - : موقعیت طولی (عقب و جلو) بردار منبع صوتی را در دستگاه مختصات دکارتی راست‌گرد نشان می‌دهد. اگرچه این {{domxref("AudioParam")}} را نمی‌توان مستقیماً تغییر داد، می‌توان مقدار آن را با استفاده از ویژگی {{domxref("AudioParam.value", "value")}} آن تغییر داد. مقدار پیش‌فرض ۰ است.
 - {{domxref("PannerNode.panningModel")}}
-  - : An enumerated value determining which spatialization algorithm to use to position the audio in 3D space.
+  - : یک مقدار شمارشی که تعیین می‌کند برای قرار دادن صدا در فضای سه‌بعدی از کدام الگوریتم فضاسازی استفاده شود.
 - {{domxref("PannerNode.positionX")}}
-  - : Represents the horizontal position of the audio in a right-hand Cartesian coordinate system. The default is 0. While this {{domxref("AudioParam")}} cannot be directly changed, its value can be altered using its {{domxref("AudioParam.value", "value")}} property. The default is value is 0.
+  - : موقعیت افقی صدا را در دستگاه مختصات دکارتی راست‌گرد نشان می‌دهد. اگرچه این {{domxref("AudioParam")}} را نمی‌توان مستقیماً تغییر داد، می‌توان مقدار آن را با استفاده از ویژگی {{domxref("AudioParam.value", "value")}} آن تغییر داد. مقدار پیش‌فرض ۰ است.
 - {{domxref("PannerNode.positionY")}}
-  - : Represents the vertical position of the audio in a right-hand Cartesian coordinate system. The default is 0. While this {{domxref("AudioParam")}} cannot be directly changed, its value can be altered using its {{domxref("AudioParam.value", "value")}} property. The default is value is 0.
+  - : موقعیت عمودی صدا را در دستگاه مختصات دکارتی راست‌گرد نشان می‌دهد. اگرچه این {{domxref("AudioParam")}} را نمی‌توان مستقیماً تغییر داد، می‌توان مقدار آن را با استفاده از ویژگی {{domxref("AudioParam.value", "value")}} آن تغییر داد. مقدار پیش‌فرض ۰ است.
 - {{domxref("PannerNode.positionZ")}}
-  - : Represents the longitudinal (back and forth) position of the audio in a right-hand Cartesian coordinate system. The default is 0. While this {{domxref("AudioParam")}} cannot be directly changed, its value can be altered using its {{domxref("AudioParam.value", "value")}} property. The default is value is 0.
+  - : موقعیت طولی (عقب و جلو) صدا را در دستگاه مختصات دکارتی راست‌گرد نشان می‌دهد. اگرچه این {{domxref("AudioParam")}} را نمی‌توان مستقیماً تغییر داد، می‌توان مقدار آن را با استفاده از ویژگی {{domxref("AudioParam.value", "value")}} آن تغییر داد. مقدار پیش‌فرض ۰ است.
 - {{domxref("PannerNode.refDistance")}}
-  - : A double value representing the reference distance for reducing volume as the audio source moves further from the listener. For distances greater than this the volume will be reduced based on `rolloffFactor` and `distanceModel`.
+  - : یک مقدار double که فاصله مرجع برای کاهش حجم صدا را نشان می‌دهد؛ وقتی منبع صوتی از شنونده دورتر می‌شود، برای فاصله‌های بزرگ‌تر از این مقدار، حجم صدا بر اساس `rolloffFactor` و `distanceModel` کاهش می‌یابد.
 - {{domxref("PannerNode.rolloffFactor")}}
-  - : A double value describing how quickly the volume is reduced as the source moves away from the listener. This value is used by all distance models.
+  - : یک مقدار double که توصیف می‌کند با دور شدن منبع از شنونده، حجم صدا با چه سرعتی کاهش می‌یابد. این مقدار در همه مدل‌های فاصله استفاده می‌شود.
 
-## Instance methods
+## متدهای نمونه
 
-_Inherits methods from its parent, {{domxref("AudioNode")}}_.
+_متدهای والد خود، {{domxref("AudioNode")}} را به ارث می‌برد._
 
 - {{domxref("PannerNode.setPosition()")}} {{deprecated_inline}}
-  - : Defines the position of the audio source relative to the listener (represented by an {{domxref("AudioListener")}} object stored in the {{domxref("BaseAudioContext.listener")}} attribute.)
+  - : موقعیت منبع صوتی را نسبت به شنونده تعریف می‌کند (شنونده با یک شیء {{domxref("AudioListener")}} که در ویژگی {{domxref("BaseAudioContext.listener")}} ذخیره شده است نمایش داده می‌شود).
 - {{domxref("PannerNode.setOrientation()")}} {{deprecated_inline}}
-  - : Defines the direction the audio source is playing in.
+  - : جهتی که منبع صوتی در آن پخش می‌شود را تعریف می‌کند.
 
-## Examples
+## مثال‌ها
 
-See [`BaseAudioContext.createPanner()`](/en-US/docs/Web/API/BaseAudioContext/createPanner#examples) for example code.
+برای نمونه‌کد، [`BaseAudioContext.createPanner()`](/en-US/docs/Web/API/BaseAudioContext/createPanner#examples) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
