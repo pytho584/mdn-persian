@@ -1,10 +1,4 @@
 ---
-title: "PresentationRequest"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PresentationRequest"
-status: "needs-translation"
----
-
----
 title: PresentationRequest
 slug: Web/API/PresentationRequest
 page-type: web-api-interface
@@ -15,34 +9,34 @@ browser-compat: api.PresentationRequest
 
 {{SeeCompatTable}}{{securecontext_header}}{{APIRef("Presentation API")}}
 
-A `PresentationRequest` object is used to initiate or reconnect to a presentation made by a [controlling browsing context](https://www.w3.org/TR/presentation-api/#dfn-controlling-browsing-context). The `PresentationRequest` object _MUST_ be implemented in a [controlling browsing context](https://www.w3.org/TR/presentation-api/#dfn-controlling-browsing-context) provided by a [controlling user agent](https://www.w3.org/TR/presentation-api/#dfn-controlling-user-agent).
+از شیء `PresentationRequest` برای شروع یا اتصال مجدد به یک ارائه استفاده میشود که توسط یک [بافتِ مرورِ کنترلکننده (controlling browsing context)](https://www.w3.org/TR/presentation-api/#dfn-controlling-browsing-context) ایجاد شده است. شیء `PresentationRequest` _الزاماً باید_ در یک [بافتِ مرورِ کنترلکننده](https://www.w3.org/TR/presentation-api/#dfn-controlling-browsing-context) که توسط یک [عامل کاربرِ کنترلکننده (controlling user agent)](https://www.w3.org/TR/presentation-api/#dfn-controlling-user-agent) فراهم شده است، پیادهسازی شود.
 
-When a `PresentationRequest` is constructed, the given `urls` _MUST_ be used as the list of _presentation request URLs_ which are each a possible [presentation URL](https://www.w3.org/TR/presentation-api/#dfn-presentation-url) for the `PresentationRequest` instance.
+هنگامی که یک `PresentationRequest` ساخته میشود، `urls` دادهشده _الزاماً باید_ بهعنوان فهرست _نشانیهای درخواست ارائه (presentation request URLs)_ استفاده شوند؛ بهگونهای که هر یک از آنها میتواند یک [نشانی ارائه (presentation URL)](https://www.w3.org/TR/presentation-api/#dfn-presentation-url) ممکن برای نمونهٔ `PresentationRequest` باشد.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("PresentationRequest.PresentationRequest","PresentationRequest()")}} {{Experimental_Inline}}
-  - : Creates a `PresentationRequest`.
+  - : یک `PresentationRequest` میسازد.
 
-## Instance properties
+## ویژگیهای نمونه
 
-None
+هیچ ویژگی نمونهای ندارد.
 
-## Instance methods
+## روشهای نمونه
 
 - {{domxref("PresentationRequest.start()")}} {{Experimental_Inline}}
-  - : Returns a {{JSxRef("Promise")}} that resolves with a {{DOMxRef("PresentationConnection")}} after the user agent prompts the user to select a display and grant permission to use that display.
+  - : یک {{JSxRef("Promise")}} برمیگرداند که پس از آنکه عامل کاربر از کاربر میخواهد یک نمایشگر انتخاب کند و اجازهٔ استفاده از آن نمایشگر را بدهد، با یک {{DOMxRef("PresentationConnection")}} resolve میشود.
 - {{domxref("PresentationRequest.reconnect()")}} {{Experimental_Inline}}
-  - : When the `reconnect(presentationId)` method is called on a `PresentationRequest` _presentationRequest_, the [user agent](https://www.w3.org/TR/presentation-api/#dfn-user-agents) _MUST_ run the following steps to _reconnect to a presentation_.
+  - : وقتی متد `reconnect(presentationId)` روی یک `PresentationRequest` بهنام _presentationRequest_ فراخوانده شود، [عامل کاربر](https://www.w3.org/TR/presentation-api/#dfn-user-agents) _الزاماً باید_ مراحل زیر را برای _اتصال مجدد به یک ارائه_ اجرا کند.
 - {{domxref("PresentationRequest.getAvailability()")}} {{Experimental_Inline}}
-  - : When the `getAvailability()` method is called, the user agent _MUST_ run the steps as the link.
+  - : وقتی متد `getAvailability()` فراخوانده شود، عامل کاربر _الزاماً باید_ مراحل را همانگونه که در پیوند آمده است اجرا کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
