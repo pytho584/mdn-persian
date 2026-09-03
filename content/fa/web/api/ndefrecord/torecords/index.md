@@ -1,11 +1,5 @@
 ---
 title: "NDEFRecord: toRecords() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NDEFRecord/toRecords"
-status: "needs-translation"
----
-
----
-title: "NDEFRecord: toRecords() method"
 short-title: toRecords()
 slug: Web/API/NDEFRecord/toRecords
 page-type: web-api-instance-method
@@ -16,51 +10,36 @@ browser-compat: api.NDEFRecord.toRecords
 
 {{SecureContext_Header}}{{SeeCompatTable}}{{APIRef("Web NFC API")}}
 
-The **`toRecords()`**
-method of the {{DOMxRef("NDEFRecord")}} interface converts
-{{DOMxRef("NDEFRecord.data")}} to a sequence of records based on
-{{DOMxRef("NDEFRecord.recordType")}}, and returns the result. This allows
-parsing the payloads of record types which may contain nested records, such
-as smart poster and external type records.
+**`toRecords()`** メソッドは、{{DOMxRef("NDEFRecord")}} インターフェイスのメソッドで、{{DOMxRef("NDEFRecord.data")}} を {{DOMxRef("NDEFRecord.recordType")}} に基づいてレコードのシーケンスに変換し、その結果を返します。これにより、スマートポスターや外部型レコードなど、ネストされたレコードを含む可能性のあるレコードタイプのペイロードを解析できます。
 
-## Syntax
+## 構文
 
 ```js-nolint
 toRecords()
 ```
 
-### Parameters
+### 引数
 
-None.
+なし。
 
-### Return value
+### 戻り値
 
-A list of {{DOMxRef("NDEFRecord")}}s.
+{{DOMxRef("NDEFRecord")}} のリスト。
 
-### Exceptions
+### 例外
 
 - `NotSupported` {{domxref("DOMException")}}
-  - : Indicates that the {{Glossary("User Agent")}} does not know how to parse this combination of
-    {{DOMxRef("NDEFRecord.data")}} and {{DOMxRef("NDEFRecord.recordType")}}.
+  - : {{Glossary("User Agent")}} が、この {{DOMxRef("NDEFRecord.data")}} と {{DOMxRef("NDEFRecord.recordType")}} の組み合わせを解析する方法を知らないことを示します。
 
-## Examples
+## 例
 
-Read an external record with an NDEF message as payload
+NDEF メッセージをペイロードとして持つ外部レコードを読み取る
 
-The example uses external type records to create application-defined records.
-These records may contain an {{domxref("NDEFMessage")}} as payload, with its own
-{{domxref("NDEFRecord")}} objects, including local types that are used in the
-context of the application. Notice that the smart poster record type also
-contains an NDEF message as payload.
+この例では、外部型レコードを使用して、アプリケーション定義のレコードを作成します。これらのレコードには、ペイロードとして {{domxref("NDEFMessage")}} を含めることができ、独自の {{domxref("NDEFRecord")}} オブジェクト（アプリケーションのコンテキストで使用されるローカル型を含む）を持ちます。スマートポスターレコード型もペイロードとして NDEF メッセージを含むことに注意してください。
 
-Because NDEF gives no guarantee on the ordering of records, using an external
-type record with an NDEF message as payload can be useful for encapsulating
-related data.
+NDEF はレコードの順序を保証しないため、ペイロードとして NDEF メッセージを持つ外部型レコードを使用すると、関連データをカプセル化するのに役立ちます。
 
-This example shows how to read an external record for social posts, which
-contains an {{domxref("NDEFMessage")}}, containing a text record and a record
-with the local type "act" (action), with a definition borrowed from smart
-poster, but used in local application context.
+この例では、ソーシャル投稿用の外部レコードを読み取る方法を示します。このレコードには、{{domxref("NDEFMessage")}} が含まれており、テキストレコードと、スマートポスターから借用した定義を持つローカル型 "act"（アクション）のレコードが含まれていますが、ローカルアプリケーションのコンテキストで使用されます。
 
 ```js
 const ndefReader = new NDEFReader();
@@ -82,23 +61,23 @@ ndefReader.onreading = (event) => {
   }
 
   switch (action) {
-    case 0: // do the action
-      console.log(`Post "${text}" to timeline`);
+    case 0: // アクションを実行
+      console.log(`「${text}」をタイムラインに投稿`);
       break;
-    case 1: // save for later
-      console.log(`Save "${text}" as a draft`);
+    case 1: // 後で保存
+      console.log(`「${text}」を下書きとして保存`);
       break;
-    case 2: // open for editing
-      console.log(`Show editable post with "${text}"`);
+    case 2: // 編集用に開く
+      console.log(`「${text}」を含む編集可能な投稿を表示`);
       break;
   }
 };
 ```
 
-## Specifications
+## 仕様書
 
 {{Specifications}}
 
-## Browser compatibility
+## ブラウザー互換性
 
 {{Compat}}
