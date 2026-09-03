@@ -1,11 +1,5 @@
 ---
 title: "Navigator: locks property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/locks"
-status: "needs-translation"
----
-
----
-title: "Navigator: locks property"
 short-title: locks
 slug: Web/API/Navigator/locks
 page-type: web-api-instance-property
@@ -14,19 +8,16 @@ browser-compat: api.Navigator.locks
 
 {{APIRef("Web Locks API")}}{{securecontext_header}}
 
-The **`locks`** read-only property of
-the {{domxref("Navigator")}} interface returns a {{domxref("LockManager")}} object
-which provides methods for requesting a new {{domxref('Lock')}} object and querying
-for an existing `Lock` object.
+ویژگی فقط‌خواندنیِ **`locks`** در رابط {{domxref("Navigator")}} یک شیء {{domxref("LockManager")}} را بازمی‌گرداند که روش‌هایی برای درخواست یک شیء {{domxref('Lock')}} جدید و جست‌وجوی یک شیء `Lock` موجود فراهم می‌کند.
 
-## Value
+## مقدار
 
-A {{domxref("LockManager")}} object.
+یک شیء {{domxref("LockManager")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
