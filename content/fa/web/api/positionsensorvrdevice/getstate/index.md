@@ -1,11 +1,5 @@
 ---
 title: "PositionSensorVRDevice: getState() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PositionSensorVRDevice/getState"
-status: "needs-translation"
----
-
----
-title: "PositionSensorVRDevice: getState() method"
 short-title: getState()
 slug: Web/API/PositionSensorVRDevice/getState
 page-type: web-api-instance-method
@@ -17,25 +11,25 @@ browser-compat: api.PositionSensorVRDevice.getState
 
 {{deprecated_header}}{{APIRef("WebVR API")}}{{Non-standard_header}}
 
-The **`getState()`** method of the {{domxref("PositionSensorVRDevice")}} interface returns the current state of the position sensor for the current frame (e.g., within the current {{domxref("window.requestAnimationFrame")}} callback) or for the previous frame, contained with a {{domxref("VRPose")}} object. This is the method you'd normally want to use, vs. {{domxref("PositionSensorVRDevice.getImmediateState")}}.
+متد **`getState()`** از رابط {{domxref("PositionSensorVRDevice")}} وضعیت کنونی حسگر موقعیت را برای فریم جاری (مثلاً در درون callback کنونی {{domxref("window.requestAnimationFrame")}}) یا برای فریم قبلی، در قالب یک شیء {{domxref("VRPose")}} برمی‌گرداند. این همان متدی است که معمولاً بهتر است به‌جای {{domxref("PositionSensorVRDevice.getImmediateState")}} استفاده کنید.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 getState()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("VRPose")}} object.
+یک شیء {{domxref("VRPose")}}.
 
-## Examples
+## مثال‌ها
 
-The following example uses the WebVR API to update the view of a simple {{domxref("CanvasRenderingContext2D")}} scene on each frame of a {{domxref("window.requestAnimationFrame()","requestAnimationFrame")}} loop.
+مثال زیر از WebVR API استفاده می‌کند تا نمای یک صحنه ساده {{domxref("CanvasRenderingContext2D")}} را در هر فریم از یک حلقه {{domxref("window.requestAnimationFrame()","requestAnimationFrame")}} به‌روزرسانی کند.
 
 ```js
 function setView() {
@@ -62,14 +56,14 @@ function setView() {
 }
 ```
 
-Here we are grabbing a {{domxref("VRPose")}} object using `getState()` and storing it in `posState`. We then check to make sure that position and orientation info is present in the current frame using {{domxref("VRPose.position")}} and {{domxref("VRPose.orientation")}} (these return `null` if, for example the head mounted display is turned off or not pointing at the position sensor, which would cause an error.)
+در اینجا یک شیء {{domxref("VRPose")}} را با استفاده از `getState()` دریافت کرده و آن را در متغیر `posState` ذخیره می‌کنیم. سپس با استفاده از {{domxref("VRPose.position")}} و {{domxref("VRPose.orientation")}} بررسی می‌کنیم که اطلاعات موقعیت و جهت‌گیری در فریم جاری موجود باشد. این ویژگی‌ها اگر مثلاً نمایشگر سربند (هدست) خاموش باشد یا به سمت حسگر موقعیت نشانه نرفته باشد، مقدار `null` برمی‌گردانند و در صورت عدم بررسی، خطا ایجاد می‌شود.
 
-We then output the x, y and z position and orientation values for informational purposes, and use those values to update the `xPos`, `yPos`, `zPos`, `xOrient`, `yOrient`, and `zOrient` variables, which are used to update the scene rendering on each frame.
+سپس مقادیر موقعیت و جهت‌گیری در محورهای x، y و z را برای مقاصد اطلاعاتی نمایش می‌دهیم و از همین مقادیر برای به‌روزرسانی متغیرهای `xPos`، `yPos`، `zPos`، `xOrient`، `yOrient` و `zOrient` استفاده می‌کنیم؛ این متغیرها برای به‌روزرسانی رندر صحنه در هر فریم به کار می‌روند.
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [WebVR API](/en-US/docs/Web/API/WebVR_API)
