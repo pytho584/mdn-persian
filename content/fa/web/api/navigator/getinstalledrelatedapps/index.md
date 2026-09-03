@@ -1,11 +1,5 @@
 ---
 title: "Navigator: getInstalledRelatedApps() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/getInstalledRelatedApps"
-status: "needs-translation"
----
-
----
-title: "Navigator: getInstalledRelatedApps() method"
 short-title: getInstalledRelatedApps()
 slug: Web/API/Navigator/getInstalledRelatedApps
 page-type: web-api-instance-method
@@ -16,71 +10,71 @@ browser-compat: api.Navigator.getInstalledRelatedApps
 
 {{APIRef}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`getInstalledRelatedApps()`** method returns a promise that resolves with an array of objects representing any related platform-specific apps or [Progressive Web Apps](/en-US/docs/Web/Progressive_web_apps) that the user has installed. This could be used for content personalization such as removing "install our app" banners from the web app if the platform-specific app and/or PWA is already installed.
+متد **`getInstalledRelatedApps()`** یک Promise برمی‌گرداند که در صورت موفقیت با آرایه‌ای از اشیاء نمایانگر هر برنامهٔ مرتبط مخصوص پلتفرم یا [برنامهٔ وب پیشرونده](/en-US/docs/Web/Progressive_web_apps) که کاربر نصب کرده است، مقداردهی می‌شود. می‌توان از این روش برای شخصی‌سازی محتوا استفاده کرد؛ برای مثال اگر برنامهٔ مخصوص پلتفرم و/یا PWA از قبل نصب شده باشد، بنرهای «برنامهٔ ما را نصب کنید» از برنامهٔ وب حذف می‌شوند.
 
 > [!NOTE]
-> This method must be invoked in a top-level [secure context](/en-US/docs/Web/Security/Defenses/Secure_Contexts), that is, not embedded in an {{htmlelement("iframe")}}.
+> این روش باید در یک [زمینهٔ امن](/en-US/docs/Web/Security/Defenses/Secure_Contexts) سطح بالا فراخوانی شود؛ یعنی نباید داخل یک {{htmlelement("iframe")}} تعبیه شده باشد.
 
-## Description
+## توضیحات
 
-`getInstalledRelatedApps()` can be used to check for the installation of Universal Windows Platform (UWP) apps, Android apps, and PWAs that are related to the web app calling this method.
+`getInstalledRelatedApps()` را می‌توان برای بررسی نصب بودن برنامه‌های Universal Windows Platform (UWP)، برنامه‌های اندروید و PWAهایی که با برنامهٔ وب فراخوانندهٔ این روش مرتبط هستند استفاده کرد.
 
-To associate the invoking web app with a platform-specific app or PWA, two things must be done:
+برای مرتبط کردن برنامهٔ وب فراخواننده با یک برنامهٔ مخصوص پلتفرم یا PWA، دو کار باید انجام شود:
 
-1. The invoking web app must be specified in the [`related_applications`](/en-US/docs/Web/Progressive_web_apps/Manifest/Reference/related_applications) member of its [manifest file](/en-US/docs/Web/Progressive_web_apps/Manifest).
-2. The platform-specific app or PWA must have its relationship with the invoking app defined.
+1. برنامهٔ وب فراخواننده باید در عضو [`related_applications`](/en-US/docs/Web/Progressive_web_apps/Manifest/Reference/related_applications) از [فایل مانیفست](/en-US/docs/Web/Progressive_web_apps/Manifest) آن مشخص شده باشد.
+2. رابطهٔ برنامهٔ مخصوص پلتفرم یا PWA با برنامهٔ فراخواننده باید تعریف شده باشد.
 
-Defining the relationship is done in a different way depending on the type of app:
+تعریف این رابطه بسته به نوع برنامه به روش‌های متفاوتی انجام می‌شود:
 
-- An Android app does this via the [Digital Asset Links system](https://developers.google.com/digital-asset-links/v1/getting-started).
-- A Windows UWP app does this via [URI Handlers](https://learn.microsoft.com/en-us/windows/apps/develop/launch/web-to-app-linking).
-- A PWA does this via:
-  - A self-defining entry inside its own `related_applications` manifest member, specifying the `platform` and `id` properties, in the case of a PWA checking in the same scope if it is installed on the underlying platform.
-  - An `assetlinks.json` file in its [`/.well-known/`](https://datatracker.ietf.org/doc/html/rfc5785) directory in the case of an app outside the scope of the PWA checking whether it is installed on Android.
+- یک برنامهٔ اندروید این کار را از طریق [سیستم Digital Asset Links](https://developers.google.com/digital-asset-links/v1/getting-started) انجام می‌دهد.
+- یک برنامهٔ Windows UWP این کار را از طریق [گرداننده‌های URI (URI Handlers)](https://learn.microsoft.com/en-us/windows/apps/develop/launch/web-to-app-linking) انجام می‌دهد.
+- یک PWA این کار را از طریق موارد زیر انجام می‌دهد:
+  - یک ورودی خودتعریف‌شده در عضو `related_applications` مانیفست خودش، با مشخص کردن ویژگی‌های `platform` و `id`؛ در موردی که یک PWA در همان محدوده (scope) بررسی می‌کند که آیا روی پلتفرم زیرین نصب شده است.
+  - یک فایل `assetlinks.json` در پوشهٔ [`/.well-known/`](https://datatracker.ietf.org/doc/html/rfc5785) آن؛ در موردی که برنامه‌ای خارج از محدودهٔ آن PWA بررسی می‌کند که آیا روی اندروید نصب شده است.
 
-See [Is your app installed? getInstalledRelatedApps() will tell you!](https://developer.chrome.com/docs/capabilities/get-installed-related-apps) for more details on how to handle each one of these cases.
+برای جزئیات بیشتر دربارهٔ نحوهٔ برخورد با هر یک از این موارد، به [آیا برنامهٔ شما نصب است؟ getInstalledRelatedApps() به شما خواهد گفت!](https://developer.chrome.com/docs/capabilities/get-installed-related-apps) مراجعه کنید.
 
 > [!NOTE]
-> Most supporting browsers provide their own install UI when an installable PWA is detected, which won't appear if it is already installed — see [Making PWAs installable > Installation from the web](/en-US/docs/Web/Progressive_web_apps/Guides/Making_PWAs_installable#installation_from_the_web). This can be suppressed using the {{domxref("Window.beforeinstallprompt_event", "beforeinstallprompt")}} event, which could also be combined with `getInstalledRelatedApps()` to suppress it based on a platform-specific app being available. See [Trigger installation from your PWA](/en-US/docs/Web/Progressive_web_apps/How_to/Trigger_install_prompt#responding_to_platform-specific_apps_being_installed) for further useful information.
+> بیشتر مرورگرهای پشتیبان، هنگام شناسایی یک PWA قابل نصب، رابط کاربری نصب خودشان را ارائه می‌دهند؛ اگر آن PWA از قبل نصب شده باشد این رابط ظاهر نمی‌شود — به [قابل نصب کردن PWAها > نصب از وب](/en-US/docs/Web/Progressive_web_apps/Guides/Making_PWAs_installable#installation_from_the_web) مراجعه کنید. می‌توان با رویداد {{domxref("Window.beforeinstallprompt_event", "beforeinstallprompt")}} از نمایش این رابط جلوگیری کرد. همچنین می‌توان این رویداد را با `getInstalledRelatedApps()` ترکیب کرد تا بر اساس در دسترس بودن یک برنامهٔ مخصوص پلتفرم، رابط نصب نمایش داده نشود. برای اطلاعات مفید بیشتر به [راه‌اندازی نصب از PWA خود](/en-US/docs/Web/Progressive_web_apps/How_to/Trigger_install_prompt#responding_to_platform-specific_apps_being_installed) مراجعه کنید.
 
-## Syntax
+## نحو
 
 ```js-nolint
 getInstalledRelatedApps()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-A {{JSxRef("Promise")}} that fulfills with an array of objects representing any installed related apps. Each object can contain the following properties:
+یک {{JSxRef("Promise")}} که با آرایه‌ای از اشیاء نمایانگر هر برنامهٔ مرتبط نصب‌شده مقداردهی می‌شود. هر شیء می‌تواند ویژگی‌های زیر را داشته باشد:
 
 - `id` {{optional_inline}}
-  - : A string representing the ID used to represent the application on the specified platform. The exact form of the string will vary by platform.
+  - : یک رشته که شناسهٔ استفاده‌شده برای نمایش برنامه در پلتفرم مشخص‌شده را نشان می‌دهد. شکل دقیق این رشته بسته به پلتفرم متفاوت خواهد بود.
 - `platform`
-  - : A string representing the [platform](https://github.com/w3c/manifest/wiki/Platforms) (ecosystem or operating system) the related app is associated with. This can be:
-    - `"chrome_web_store"`: A [Google Chrome Web Store](https://chromewebstore.google.com/) app.
-    - `"play"`: A [Google Play Store](https://play.google.com/store/games) app.
-    - `"chromeos_play"`: A [ChromeOS Play](https://support.google.com/googleplay/answer/7021273) app.
-    - `"webapp"`: A [Progressive Web App](/en-US/docs/Web/Progressive_web_apps).
-    - `"windows"`: A [Windows Store](https://apps.microsoft.com/?rtc=1&hl=en-US&gl=US) app.
-    - `"f-droid"`: An [F-Droid](https://f-droid.org/) app.
-    - `"amazon"`: An [Amazon App Store](https://www.amazon.com/gp/browse.html?node=2350149011) app.
+  - : یک رشته که [پلتفرم](https://github.com/w3c/manifest/wiki/Platforms) (اکوسیستم یا سیستم‌عامل) مرتبط با برنامه را نشان می‌دهد. این مقدار می‌تواند یکی از موارد زیر باشد:
+    - `"chrome_web_store"`: یک برنامه از [Google Chrome Web Store](https://chromewebstore.google.com/).
+    - `"play"`: یک برنامه از [Google Play Store](https://play.google.com/store/games).
+    - `"chromeos_play"`: یک برنامه از [ChromeOS Play](https://support.google.com/googleplay/answer/7021273).
+    - `"webapp"`: یک [برنامهٔ وب پیشرونده](/en-US/docs/Web/Progressive_web_apps).
+    - `"windows"`: یک برنامه از [Windows Store](https://apps.microsoft.com/?rtc=1&hl=en-US&gl=US).
+    - `"f-droid"`: یک برنامه از [F-Droid](https://f-droid.org/).
+    - `"amazon"`: یک برنامه از [Amazon App Store](https://www.amazon.com/gp/browse.html?node=2350149011).
 - `url` {{optional_inline}}
-  - : A string representing the URL associated with the app. This is usually where you can read information about it and install it.
+  - : یک رشته که URL مرتبط با برنامه را نشان می‌دهد. این معمولاً جایی است که می‌توانید اطلاعاتی دربارهٔ آن برنامه بخوانید و آن را نصب کنید.
 - `version` {{optional_inline}}
-  - : A string representing the related app's version.
+  - : یک رشته که نسخهٔ برنامهٔ مرتبط را نشان می‌دهد.
 
-The related app information must have been previously specified in the [`related_applications`](/en-US/docs/Web/Progressive_web_apps/Manifest/Reference/related_applications) member of the invoking web app's [manifest file](/en-US/docs/Web/Progressive_web_apps/Manifest).
+اطلاعات برنامهٔ مرتبط باید قبلاً در عضو [`related_applications`](/en-US/docs/Web/Progressive_web_apps/Manifest/Reference/related_applications) از [فایل مانیفست](/en-US/docs/Web/Progressive_web_apps/Manifest) برنامهٔ وب فراخواننده مشخص شده باشد.
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : The method was not invoked in a top-level browsing context.
+  - : این روش در یک بافت مرور (browsing context) سطح بالا فراخوانی نشده است.
 
-## Examples
+## مثال‌ها
 
 ```js
 const relatedApps = await navigator.getInstalledRelatedApps();
@@ -99,16 +93,16 @@ if (psApp && doesVersionSendPushMessages(psApp.version)) {
 ```
 
 > [!NOTE]
-> In this example, `doesVersionSendPushMessages()` is a theoretical developer-defined function; it is not provided by the browser.
+> در این مثال، `doesVersionSendPushMessages()` یک تابع فرضی تعریف‌شده توسط توسعه‌دهنده است؛ این تابع توسط مرورگر ارائه نمی‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Is your app installed? getInstalledRelatedApps() will tell you!](https://developer.chrome.com/docs/capabilities/get-installed-related-apps)
+- [آیا برنامهٔ شما نصب است؟ getInstalledRelatedApps() به شما خواهد گفت!](https://developer.chrome.com/docs/capabilities/get-installed-related-apps)
