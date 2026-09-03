@@ -1,11 +1,5 @@
 ---
 title: "Performance: memory property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Performance/memory"
-status: "needs-translation"
----
-
----
-title: "Performance: memory property"
 short-title: memory
 slug: Web/API/Performance/memory
 page-type: web-api-instance-property
@@ -17,28 +11,28 @@ browser-compat: api.Performance.memory
 
 {{APIRef("Performance API")}}{{Deprecated_Header}}{{Non-standard_header}}
 
-The non-standard and legacy **`memory`** read-only property returns the size of the JavaScript heap which can be helpful to measure and reduce the memory footprint of websites.
+ویژگی فقط‌خواندنی **`memory`** که غیراستاندارد و قدیمی است، اندازهٔ heap جاوااسکریپت را برمی‌گرداند و می‌تواند برای اندازه‌گیری و کاهش ردپای حافظهٔ وب‌سایت‌ها مفید باشد.
 
-Note that the information this API provides is unreliable as it might overestimate actual memory usage if web pages share the same heap, or might underestimate actual memory usage if web pages use workers and/or cross-site iframes that are allocated in separate heaps. It is not standardized what "heap" means exactly. The API is only available in Chromium-based browsers.
+توجه داشته باشید که اطلاعات ارائه‌شده توسط این API قابل اعتماد نیست؛ زیرا اگر صفحات وب heap یکسانی را به اشتراک بگذارند، ممکن است مصرف واقعی حافظه را بیش‌ازحد تخمین بزند، یا اگر صفحات وب از workerها و/یا iframeهای بین‌سایتی استفاده کنند که در heapهای جداگانه تخصیص داده شده‌اند، ممکن است مصرف واقعی حافظه را کمتر از حد واقعی نشان دهد. همچنین مشخص نیست که «heap» دقیقاً به چه معناست. این API فقط در مرورگرهای مبتنی بر Chromium در دسترس است.
 
-A new API aiming to replace `performance.memory` is {{domxref("Performance.measureUserAgentSpecificMemory()")}}. It tries to estimate the memory used by a web page.
+API جدیدی که هدف آن جایگزینی `performance.memory` است، {{domxref("Performance.measureUserAgentSpecificMemory()")}} می‌باشد. این API سعی می‌کند حافظهٔ استفاده‌شده توسط یک صفحهٔ وب را تخمین بزند.
 
-## Value
+## مقدار
 
-Returns an object with the following properties:
+یک شیء با ویژگی‌های زیر برمی‌گرداند:
 
 - `jsHeapSizeLimit`
-  - : The maximum size of the heap, in bytes, that is available to the context.
+  - : حداکثر اندازهٔ heap بر حسب بایت که در دسترس context قرار دارد.
 - `totalJSHeapSize`
-  - : The total allocated heap size, in bytes.
+  - : کل اندازهٔ heap تخصیص‌یافته بر حسب بایت.
 - `usedJSHeapSize`
-  - : The currently active segment of JS heap, in bytes.
+  - : بخش فعال فعلی heap جاوااسکریپت بر حسب بایت.
 
-## Examples
+## مثال‌ها
 
-### Getting JavaScript heap sizes
+### دریافت اندازه‌های heap جاوااسکریپت
 
-Calling `performance.memory` returns an object like this:
+فراخوانی `performance.memory` یک شیء مانند زیر برمی‌گرداند:
 
 ```json
 {
@@ -48,14 +42,14 @@ Calling `performance.memory` returns an object like this:
 }
 ```
 
-## Specifications
+## مشخصات
 
-None.
+هیچ‌کدام.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Performance.measureUserAgentSpecificMemory()")}}
