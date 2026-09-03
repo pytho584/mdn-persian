@@ -1,7 +1,5 @@
 ---
 title: "Resource timing"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Performance_API/Resource_timing"
-status: "needs-translation"
 ---
 
 ---
@@ -12,56 +10,56 @@ page-type: web-api-overview
 
 {{DefaultAPISidebar("Performance API")}}
 
-Resource Timing is part of the Performance API and enables retrieving and analyzing detailed network timing data for the loading of an application's resources. An application can use the timing metrics to determine, for example, the length of time it takes to load a specific resource (such as an image or a script) either implicitly as part of page load or explicitly from JavaScript, for example using the {{domxref("Window/fetch", "fetch()")}} API.
+Resource Timing بخشی از Performance API است و امکان دریافت و تحلیل داده‌های زمانی دقیق شبکه را برای بارگذاری منابع یک برنامه فراهم می‌کند. برای نمونه، یک برنامه می‌تواند با استفاده از معیارهای زمان‌بندی تعیین کند که بارگذاری یک منبع خاص (مانند تصویر یا اسکریپت) چقدر طول می‌کشد؛ چه این بارگذاری به‌صورت ضمنی و به‌عنوان بخشی از بارگذاری صفحه انجام شود، چه به‌صورت صریح از طریق جاوااسکریپت، مثلاً با API واکشی {{domxref("Window/fetch", "fetch()")}}.
 
-Every resource on a document will be represented by a {{domxref("PerformanceResourceTiming")}} entry (extending the {{domxref("PerformanceEntry")}} interface) with the {{domxref("PerformanceEntry.entryType","entryType")}} of `"resource"`.
+هر منبع در یک سند با یک ورودی {{domxref("PerformanceResourceTiming")}} (که رابط {{domxref("PerformanceEntry")}} را گسترش می‌دهد) و با {{domxref("PerformanceEntry.entryType","entryType")}} برابر با `"resource"` نمایش داده می‌شود.
 
-For each `PerformanceResourceTiming` entry, a _resource loading timeline_ will be recorded, with {{domxref("DOMHighResTimeStamp","high-resolution timestamps", "", 1)}} for network events such as redirect start and end times, DNS lookup start and end times, request start, response start and end times, and so on. Besides the timestamps, other properties that provide information about the resource are included as well, such the size of the fetched resource, or the type of resource that initiated the fetch.
+برای هر ورودی `PerformanceResourceTiming`، یک _خط زمانی بارگذاری منبع_ ثبت می‌شود؛ این خط زمانی شامل {{domxref("DOMHighResTimeStamp","high-resolution timestamps", "", 1)}} برای رویدادهای شبکه مانند زمان شروع و پایان تغییر مسیر، زمان شروع و پایان جست‌وجوی DNS، زمان شروع درخواست، زمان شروع و پایان پاسخ و غیره است. افزون بر مهرهای زمانی، ویژگی‌های دیگری نیز درباره منبع در این ورودی ثبت می‌شود؛ از جمله اندازه منبع واکشی‌شده یا نوع منبعی که واکشی را آغاز کرده است.
 
-See [Typical resource timing metrics](/en-US/docs/Web/API/PerformanceResourceTiming#typical_resource_timing_metrics) in the reference page for the {{domxref("PerformanceResourceTiming")}} interface.
+برای آشنایی با [معیارهای متداول زمان‌بندی منابع](/en-US/docs/Web/API/PerformanceResourceTiming#typical_resource_timing_metrics)، به صفحه مرجع رابط {{domxref("PerformanceResourceTiming")}} مراجعه کنید.
 
-## Resource loading timestamps
+## مهرهای زمانی بارگذاری منابع
 
-![Timestamp diagram listing timestamps in the order in which they are recorded for the fetching of a resource](https://mdn.github.io/shared-assets/images/diagrams/api/performance/resource-timing/timestamp-diagram.svg)
-Figure 1. Resource loading timestamps ([source](https://w3c.github.io/resource-timing/#attribute-descriptions)).
+![نمودار مهرهای زمانی که ترتیب ثبت آن‌ها را هنگام واکشی یک منبع نشان می‌دهد](https://mdn.github.io/shared-assets/images/diagrams/api/performance/resource-timing/timestamp-diagram.svg)
+شکل ۱. مهرهای زمانی بارگذاری منابع ([منبع](https://w3c.github.io/resource-timing/#attribute-descriptions)).
 
-An application can get timestamps for the various stages used to load a resource. For example the {{domxref('PerformanceEntry.startTime','startTime')}}, DNS timestamps, connection set up times and then various resource download times.
+یک برنامه می‌تواند مهرهای زمانی مراحل مختلف بارگذاری یک منبع را به‌دست آورد؛ مثلاً {{domxref('PerformanceEntry.startTime','startTime')}}، مهرهای زمانی DNS، زمان برقراری اتصال و سپس زمان‌های مختلف دانلود منبع.
 
-See [timestamps](/en-US/docs/Web/API/PerformanceResourceTiming#timestamps) in the reference page for the {{domxref("PerformanceResourceTiming")}} interface.
+بخش [مهرهای زمانی](/en-US/docs/Web/API/PerformanceResourceTiming#timestamps) در صفحه مرجع رابط {{domxref("PerformanceResourceTiming")}} را ببینید.
 
-## Resource size
+## اندازه منبع
 
-The {{domxref("PerformanceResourceTiming")}} interface has three properties that can be used to obtain size data about a resource. The {{domxref('PerformanceResourceTiming.transferSize','transferSize')}} property returns the size (in bytes) of the fetched resource including the response header fields plus the response payload body.
+رابط {{domxref("PerformanceResourceTiming")}} سه ویژگی دارد که می‌توان برای به‌دست آوردن داده‌های اندازه منبع از آن‌ها استفاده کرد. ویژگی {{domxref('PerformanceResourceTiming.transferSize','transferSize')}} اندازه (به بایت) منبع واکشی‌شده را برمی‌گرداند؛ این اندازه شامل فیلدهای هدر پاسخ و بدنه بار پاسخ است.
 
-The {{domxref('PerformanceResourceTiming.encodedBodySize','encodedBodySize')}} property returns the size (in octets) received from the fetch (HTTP or cache), of the _payload body_, **before** removing any applied content-codings. {{domxref('PerformanceResourceTiming.decodedBodySize','decodedBodySize')}} returns the size (in octets) received from the fetch (HTTP or cache) of the _message body_, **after** removing any applied content-codings.
+ویژگی {{domxref('PerformanceResourceTiming.encodedBodySize','encodedBodySize')}} اندازه (به اکتت) _بدنه بار_ دریافت‌شده از فرایند واکشی (HTTP یا حافظه پنهان) را **پیش از** حذف کدگذاری‌های محتوای اعمال‌شده برمی‌گرداند. ویژگی {{domxref('PerformanceResourceTiming.decodedBodySize','decodedBodySize')}} اندازه (به اکتت) _بدنه پیام_ دریافت‌شده از فرایند واکشی (HTTP یا حافظه پنهان) را **پس از** حذف کدگذاری‌های محتوای اعمال‌شده برمی‌گرداند.
 
-## Other properties
+## سایر ویژگی‌ها
 
-The {{domxref("PerformanceResourceTiming")}} interface provides [additional resources information](/en-US/docs/Web/API/PerformanceResourceTiming#additional_resource_information). Consult the reference docs for the full list of properties.
+رابط {{domxref("PerformanceResourceTiming")}} [اطلاعات تکمیلی منابع](/en-US/docs/Web/API/PerformanceResourceTiming#additional_resource_information) را نیز در اختیار شما قرار می‌دهد. برای فهرست کامل ویژگی‌ها، به مستندات مرجع مراجعه کنید.
 
-## Managing resource buffer sizes
+## مدیریت اندازه بافر منابع
 
-If your website or application fetches more than 250 resources and you want to record more than 250 {{domxref("PerformanceResourceTiming")}} entries, you need to increase the size of the resource timing buffer.
+اگر وب‌سایت یا برنامه شما بیش از ۲۵۰ منبع را واکشی می‌کند و می‌خواهید بیش از ۲۵۰ ورودی {{domxref("PerformanceResourceTiming")}} ثبت شود، باید اندازه بافر زمان‌بندی منابع را افزایش دهید.
 
-To set the size of the browser's performance resource data buffer, use the {{domxref("Performance.setResourceTimingBufferSize()")}} method, and to clear the browser's performance resource data buffer, use the {{domxref("Performance.clearResourceTimings()")}} method.
+برای تنظیم اندازه بافر داده‌های کارایی منابع مرورگر، از متد {{domxref("Performance.setResourceTimingBufferSize()")}} و برای پاک‌کردن بافر داده‌های کارایی منابع مرورگر، از متد {{domxref("Performance.clearResourceTimings()")}} استفاده کنید.
 
-To get notified when the browser's resource timing buffer is full, listen for the {{domxref("Performance.resourcetimingbufferfull_event", "resourcetimingbufferfull")}} event.
+برای دریافت اعلان هنگام پر شدن بافر زمان‌بندی منابع مرورگر، به رویداد {{domxref("Performance.resourcetimingbufferfull_event", "resourcetimingbufferfull")}} گوش دهید.
 
-The following call allows 500 `"resource"` performance entries in the browser's performance timeline.
+فراخوانی زیر امکان ثبت ۵۰۰ ورودی کارایی با نوع `"resource"` را در خط زمانی کارایی مرورگر فراهم می‌کند.
 
 ```js
 performance.setResourceTimingBufferSize(500);
 ```
 
-For more information, see also [Managing buffer sizes](/en-US/docs/Web/API/Performance_API/Performance_data#managing_buffer_sizes).
+برای اطلاعات بیشتر، همچنین به [مدیریت اندازه بافرها](/en-US/docs/Web/API/Performance_API/Performance_data#managing_buffer_sizes) مراجعه کنید.
 
-## Cross-origin timing information
+## اطلاعات زمان‌بندی مبدأ متقاطع
 
-Many of the resource timing properties are restricted to return `0` or an empty string when the resource is a cross-origin request. To expose cross-origin timing information, the {{HTTPHeader("Timing-Allow-Origin")}} HTTP response header needs to be set.
+بسیاری از ویژگی‌های زمان‌بندی منابع، وقتی منبع از طریق یک درخواست مبدأ متقاطع (cross-origin) دریافت شود، به بازگرداندن `0` یا رشته خالی محدود می‌شوند. برای در دسترس قرار دادن اطلاعات زمان‌بندی مبدأ متقاطع، باید هدر پاسخ HTTP {{HTTPHeader("Timing-Allow-Origin")}} تنظیم شود.
 
-For more information on the fields affected, see [Cross-origin timing information](/en-US/docs/Web/API/PerformanceResourceTiming#cross-origin_timing_information) in the reference page for the {{domxref("PerformanceResourceTiming")}} interface.
+برای اطلاع از فیلدهای متأثر، بخش [اطلاعات زمان‌بندی مبدأ متقاطع](/en-US/docs/Web/API/PerformanceResourceTiming#cross-origin_timing_information) را در صفحه مرجع رابط {{domxref("PerformanceResourceTiming")}} ببینید.
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("PerformanceResourceTiming")}}
 - {{httpheader("Timing-Allow-Origin")}}
