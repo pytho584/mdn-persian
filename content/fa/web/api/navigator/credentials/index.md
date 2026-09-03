@@ -1,11 +1,5 @@
 ---
 title: "Navigator: credentials property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/credentials"
-status: "needs-translation"
----
-
----
-title: "Navigator: credentials property"
 short-title: credentials
 slug: Web/API/Navigator/credentials
 page-type: web-api-instance-property
@@ -14,13 +8,13 @@ browser-compat: api.Navigator.credentials
 
 {{securecontext_header}}{{APIRef("Credential Management API")}}
 
-The **`credentials`** read-only property of the {{domxref("Navigator")}} interface returns the {{domxref("CredentialsContainer")}} object associated with the current document, which exposes methods to request credentials. The {{domxref("CredentialsContainer")}} interface also notifies the user agent when an interesting event occurs, such as a successful sign-in or sign-out. This interface can be used for feature detection.
+ویژگی فقط‌خواندنی **`credentials`** در رابط {{domxref("Navigator")}}، شیء {{domxref("CredentialsContainer")}} مرتبط با سند فعلی را بازمی‌گرداند. این شیء روش‌هایی را برای درخواستِ اعتبارنامه (credential) ارائه می‌دهد. همچنین رابط {{domxref("CredentialsContainer")}} زمانی که رویداد مهمی رخ می‌دهد، مانند ورود یا خروج موفق، عامل کاربر (user agent) را مطلع می‌سازد. از این رابط می‌توان برای تشخیص ویژگی (feature detection) استفاده کرد.
 
-## Value
+## مقدار
 
-A {{domxref("CredentialsContainer")}} object.
+یک شیء {{domxref("CredentialsContainer")}}.
 
-## Examples
+## مثال‌ها
 
 ```js
 if ("credentials" in navigator) {
@@ -32,10 +26,10 @@ if ("credentials" in navigator) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
