@@ -1,11 +1,5 @@
 ---
 title: "OES_texture_float_linear extension"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/OES_texture_float_linear"
-status: "needs-translation"
----
-
----
-title: OES_texture_float_linear extension
 short-title: OES_texture_float_linear
 slug: Web/API/OES_texture_float_linear
 page-type: webgl-extension
@@ -14,20 +8,20 @@ browser-compat: api.OES_texture_float_linear
 
 {{APIRef("WebGL")}}
 
-The **`OES_texture_float_linear`** extension is part of the [WebGL API](/en-US/docs/Web/API/WebGL_API) and allows linear filtering with floating-point pixel types for textures.
+افزونه **`OES_texture_float_linear`** بخشی از [WebGL API](/en-US/docs/Web/API/WebGL_API) است و امکان فیلتر خطی (linear filtering) با انواع پیکسل ممیز شناور (floating-point) را برای بافت‌ها فراهم می‌کند.
 
-WebGL extensions are available using the {{domxref("WebGLRenderingContext.getExtension()")}} method. For more information, see also [Using Extensions](/en-US/docs/Web/API/WebGL_API/Using_Extensions) in the [WebGL tutorial](/en-US/docs/Web/API/WebGL_API/Tutorial).
+افزونه‌های WebGL با استفاده از روش {{domxref("WebGLRenderingContext.getExtension()")}} در دسترس هستند. برای اطلاعات بیشتر، به [Using Extensions](/en-US/docs/Web/API/WebGL_API/Using_Extensions) در [WebGL tutorial](/en-US/docs/Web/API/WebGL_API/Tutorial) مراجعه کنید.
 
 > [!NOTE]
-> This extension is available to both, {{domxref("WebGLRenderingContext", "WebGL1", "", 1)}} and {{domxref("WebGL2RenderingContext", "WebGL2", "", 1)}} contexts.
+> این افزونه برای هر دو زمینه {{domxref("WebGLRenderingContext", "WebGL1", "", 1)}} و {{domxref("WebGL2RenderingContext", "WebGL2", "", 1)}} در دسترس است.
 
-## Linear filtering
+## فیلتر خطی
 
-The {{domxref("OES_texture_float")}} extension alone does not allow linear filtering with floating-point textures. This extension enables this ability.
+افزونه {{domxref("OES_texture_float")}} به تنهایی اجازه فیلتر خطی با بافت‌های ممیز شناور را نمی‌دهد. این افزونه این قابلیت را فعال می‌کند.
 
-With the help of this extension, you can now set the magnification or minification filter in the {{domxref("WebGLRenderingContext.texParameter()")}} method to one of `gl.LINEAR`, `gl.LINEAR_MIPMAP_NEAREST`, `gl.NEAREST_MIPMAP_LINEAR`, or `gl.LINEAR_MIPMAP_LINEAR`, and use floating-point textures.
+با کمک این افزونه، اکنون می‌توانید فیلتر بزرگنمایی یا کوچک‌نمایی را در روش {{domxref("WebGLRenderingContext.texParameter()")}} به یکی از مقادیر `gl.LINEAR`، `gl.LINEAR_MIPMAP_NEAREST`، `gl.NEAREST_MIPMAP_LINEAR` یا `gl.LINEAR_MIPMAP_LINEAR` تنظیم کرده و از بافت‌های ممیز شناور استفاده کنید.
 
-## Examples
+## مثال
 
 ```js
 gl.getExtension("OES_texture_float");
@@ -40,15 +34,15 @@ gl.texParameterf(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
 gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.FLOAT, image);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("WebGLRenderingContext.getExtension()")}}
 - {{domxref("WebGLRenderingContext.texImage2D()")}}
