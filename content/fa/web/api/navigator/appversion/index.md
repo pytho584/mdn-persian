@@ -1,11 +1,5 @@
 ---
 title: "Navigator: appVersion property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/appVersion"
-status: "needs-translation"
----
-
----
-title: "Navigator: appVersion property"
 short-title: appVersion
 slug: Web/API/Navigator/appVersion
 page-type: web-api-instance-property
@@ -14,50 +8,50 @@ browser-compat: api.Navigator.appVersion
 
 {{APIRef("HTML DOM")}}
 
-The **`Navigator.appVersion`** read-only property of the {{domxref("Navigator")}} interface returns a string representing version information about the browser.
+خاصیت فقط خواندنی **`Navigator.appVersion`** از رابط {{domxref("Navigator")}} رشته‌ای را برمی‌گرداند که اطلاعات نسخه مرورگر را نشان می‌دهد.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Description
+## توضیحات
 
-The `appVersion` property returns information indicating the browser version.
+خاصیت `appVersion` اطلاعاتی را برمی‌گرداند که نسخه مرورگر را نشان می‌دهد.
 
-Note that the information returned varies significantly by browser. In some browsers, such as Chrome, this is nearly the same as the value returned by {{domxref("Navigator.userAgent")}}, with the `Mozilla/` prefix removed. For example:
+توجه داشته باشید که اطلاعات برگردانده شده بسته به مرورگر بسیار متفاوت است. در برخی مرورگرها مانند Chrome، این مقدار تقریباً مشابه مقداری است که توسط {{domxref("Navigator.userAgent")}} برگردانده می‌شود، با این تفاوت که پیشوند `Mozilla/` حذف شده است. به عنوان مثال:
 
 ```plain
 5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
 ```
 
-In other browsers, such as Firefox, this is cut down to a short string that hints at the platform/OS. For example:
+در مرورگرهای دیگر مانند Firefox، این مقدار به یک رشته کوتاه که به پلتفرم/سیستم عامل اشاره دارد، کاهش می‌یابد. به عنوان مثال:
 
 ```plain
 5.0 (Macintosh)
 ```
 
-Theoretically this information is useful for detecting the browser and serving code to work around browser-specific bugs or lack of feature support. However, this is **unreliable** and **is not recommended** for the reasons given in [User-Agent reduction](/en-US/docs/Web/HTTP/Guides/User-agent_reduction) and [Browser detection using the user agent](/en-US/docs/Web/HTTP/Guides/Browser_detection_using_the_user_agent).
+از نظر تئوری، این اطلاعات برای تشخیص مرورگر و ارائه کد برای دور زدن باگ‌های خاص مرورگر یا عدم پشتیبانی از ویژگی‌ها مفید است. با این حال، این روش **غیرقابل اعتماد** است و **توصیه نمی‌شود** به دلایلی که در [کاهش User-Agent](/en-US/docs/Web/HTTP/Guides/User-agent_reduction) و [تشخیص مرورگر با استفاده از user agent](/en-US/docs/Web/HTTP/Guides/Browser_detection_using_the_user_agent) ذکر شده است.
 
-[Feature detection](/en-US/docs/Learn_web_development/Extensions/Testing/Feature_detection) is a much more reliable strategy.
+[تشخیص ویژگی](/en-US/docs/Learn_web_development/Extensions/Testing/Feature_detection) یک استراتژی بسیار قابل اعتمادتر است.
 
-## Examples
+## مثال‌ها
 
 ```js
 console.log(navigator.appVersion);
-// On Chrome, logs something like "5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36" (reduced UA string)
+// در Chrome، چیزی شبیه به این لاگ می‌کند: "5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36" (رشته UA کاهش یافته)
 
-// On Firefox, logs something like "5.0 (Macintosh)"
+// در Firefox، چیزی شبیه به این لاگ می‌کند: "5.0 (Macintosh)"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Navigator.userAgent")}}
-- {{HTTPHeader("User-agent")}} HTTP header
+- هدر HTTP {{HTTPHeader("User-agent")}}
