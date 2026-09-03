@@ -1,11 +1,5 @@
 ---
 title: "PerformanceLongAnimationFrameTiming"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceLongAnimationFrameTiming"
-status: "needs-translation"
----
-
----
-title: PerformanceLongAnimationFrameTiming
 slug: Web/API/PerformanceLongAnimationFrameTiming
 page-type: web-api-interface
 status:
@@ -15,69 +9,69 @@ browser-compat: api.PerformanceLongAnimationFrameTiming
 
 {{SeeCompatTable}}{{APIRef("Performance API")}}
 
-The **`PerformanceLongAnimationFrameTiming`** interface is specified in the Long Animation Frames API and provides metrics on long animation frames (LoAFs) that occupy rendering and block other tasks from being executed.
+رابط **`PerformanceLongAnimationFrameTiming`** در API فریم‌های انیمیشن طولانی (Long Animation Frames API) مشخص شده است و معیارهایی را در مورد فریم‌های انیمیشن طولانی (LoAFs) که رندرینگ را اشغال کرده و اجرای سایر وظایف را مسدود می‌کنند، فراهم می‌کند.
 
-## Description
+## توضیحات
 
-Long animation frames (LoAFs) are rendering updates that are delayed beyond 50ms. LoAFs can result in slow user interface (UI) updates, making controls appear unresponsive and causing [janky](/en-US/docs/Glossary/Jank) (non-smooth) animated effects and scrolling. This often leads to user frustration.
+فریم‌های انیمیشن طولانی (LoAFs) به‌روزرسانی‌های رندرینگی هستند که بیش از ۵۰ میلی‌ثانیه به تأخیر می‌افتند. LoAFs می‌توانند منجر به به‌روزرسانی‌های کند رابط کاربری (UI) شوند، کنترل‌ها را غیرفعال نشان دهند و باعث ایجاد افکت‌های انیمیشنی و اسکرول‌های [لرزان](/en-US/docs/Glossary/Jank) (غیر روان) شوند. این موضوع اغلب باعث نارضایتی کاربر می‌شود.
 
-The `PerformanceLongAnimationFrameTiming` interface provides the following granular set of information on LoAFs, allowing developers to narrow down their root causes:
+رابط `PerformanceLongAnimationFrameTiming` مجموعه‌ای دقیق از اطلاعات زیر را در مورد LoAFs فراهم می‌کند که به توسعه‌دهندگان امکان می‌دهد علل ریشه‌ای آن‌ها را محدود کنند:
 
-- A detailed set of timestamps for each LoAF.
-- Detailed information on each script that contributed to creating the LoAF, via the {{domxref("PerformanceLongAnimationFrameTiming.scripts")}} property. This returns an array of {{domxref("PerformanceScriptTiming")}} objects, one for each script.
+- مجموعه‌ای دقیق از برچسب‌های زمانی برای هر LoAF.
+- اطلاعات دقیق در مورد هر اسکریپتی که در ایجاد LoAF نقش داشته است، از طریق ویژگی {{domxref("PerformanceLongAnimationFrameTiming.scripts")}}. این ویژگی آرایه‌ای از اشیاء {{domxref("PerformanceScriptTiming")}} را برمی‌گرداند، یکی برای هر اسکریپت.
 
-`PerformanceLongAnimationFrameTiming` inherits from {{domxref("PerformanceEntry")}}.
+`PerformanceLongAnimationFrameTiming` از {{domxref("PerformanceEntry")}} ارث‌بری می‌کند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-This interface directly defines the following properties:
+این رابط مستقیماً ویژگی‌های زیر را تعریف می‌کند:
 
 - {{domxref("PerformanceLongAnimationFrameTiming.blockingDuration")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a {{domxref("DOMHighResTimeStamp")}} indicating the total time in milliseconds that the main thread was blocked from responding to high priority tasks, such as user input. This is calculated by taking all the [long tasks](/en-US/docs/Web/API/PerformanceLongTaskTiming#description) within the LoAF that have a `duration` of more than `50ms`, subtracting `50ms` from each, adding the rendering time to the longest task time, and summing the results.
+  - : یک {{domxref("DOMHighResTimeStamp")}} را برمی‌گرداند که نشان‌دهنده کل زمان (بر حسب میلی‌ثانیه) است که نخ اصلی از پاسخ به وظایف با اولویت بالا، مانند ورودی کاربر، مسدود شده است. این مقدار با در نظر گرفتن تمام [وظایف طولانی](/en-US/docs/Web/API/PerformanceLongTaskTiming#description) درون LoAF که `duration` آن‌ها بیش از `50ms` است، کم کردن `50ms` از هر کدام، اضافه کردن زمان رندرینگ به زمان طولانی‌ترین وظیفه، و جمع نتایج محاسبه می‌شود.
 - {{domxref("PerformanceLongAnimationFrameTiming.firstUIEventTimestamp")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a {{domxref("DOMHighResTimeStamp")}} indicating the time of the first UI event — such as a mouse or keyboard event — to be queued during the current animation frame.
+  - : یک {{domxref("DOMHighResTimeStamp")}} را برمی‌گرداند که زمان اولین رویداد UI — مانند یک رویداد ماوس یا صفحه‌کلید — را که در طول فریم انیمیشن جاری در صف قرار گرفته است، نشان می‌دهد.
 - {{domxref("PerformanceLongAnimationFrameTiming.paintTime")}} {{experimental_inline}}
-  - : Returns the {{domxref("DOMHighResTimeStamp","timestamp")}} when the rendering phase ended and the animation frame started.
+  - : {{domxref("DOMHighResTimeStamp","برچسب زمانی")}} را برمی‌گرداند که فاز رندرینگ به پایان رسیده و فریم انیمیشن شروع شده است.
 - {{domxref("PerformanceLongAnimationFrameTiming.presentationTime")}} {{experimental_inline}}
-  - : Returns the {{domxref("DOMHighResTimeStamp","timestamp")}} when the UI update was actually drawn on the screen.
+  - : {{domxref("DOMHighResTimeStamp","برچسب زمانی")}} را برمی‌گرداند که به‌روزرسانی UI در واقع روی صفحه نمایش داده شده است.
 - {{domxref("PerformanceLongAnimationFrameTiming.renderStart")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a {{domxref("DOMHighResTimeStamp")}} indicating the start time of the rendering cycle, which includes {{domxref("Window.requestAnimationFrame()")}} callbacks, style and layout calculation, {{domxref("ResizeObserver")}} callbacks, and {{domxref("IntersectionObserver")}} callbacks.
+  - : یک {{domxref("DOMHighResTimeStamp")}} را برمی‌گرداند که زمان شروع چرخه رندرینگ را نشان می‌دهد، که شامل بازخوانی‌های {{domxref("Window.requestAnimationFrame()")}}، محاسبات استایل و طرح‌بندی، بازخوانی‌های {{domxref("ResizeObserver")}}، و بازخوانی‌های {{domxref("IntersectionObserver")}} می‌شود.
 - {{domxref("PerformanceLongAnimationFrameTiming.scripts")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns an array of {{domxref("PerformanceScriptTiming")}} instances.
+  - : آرایه‌ای از نمونه‌های {{domxref("PerformanceScriptTiming")}} را برمی‌گرداند.
 - {{domxref("PerformanceLongAnimationFrameTiming.styleAndLayoutStart")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a {{domxref("DOMHighResTimeStamp")}} indicating the beginning of the time period spent in style and layout calculations for the current animation frame.
+  - : یک {{domxref("DOMHighResTimeStamp")}} را برمی‌گرداند که آغاز دوره زمانی صرف‌شده در محاسبات استایل و طرح‌بندی برای فریم انیمیشن جاری را نشان می‌دهد.
 
-It also extends the following {{domxref("PerformanceEntry")}} properties, qualifying and constraining them as described:
+همچنین ویژگی‌های زیر از {{domxref("PerformanceEntry")}} را گسترش می‌دهد و آن‌ها را مطابق با توضیحات زیر محدود و واجد شرایط می‌کند:
 
 - {{domxref("PerformanceEntry.duration")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a {{domxref("DOMHighResTimeStamp")}} representing the time taken in milliseconds to process the LoAF in its entirety.
+  - : یک {{domxref("DOMHighResTimeStamp")}} را برمی‌گرداند که نشان‌دهنده زمان (بر حسب میلی‌ثانیه) صرف‌شده برای پردازش کامل LoAF است.
 - {{domxref("PerformanceEntry.entryType")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns the entry type, which is always `"long-animation-frame"`.
+  - : نوع ورودی را برمی‌گرداند که همیشه `"long-animation-frame"` است.
 - {{domxref("PerformanceEntry.name")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns the entry name, which is always `"long-animation-frame"`.
+  - : نام ورودی را برمی‌گرداند که همیشه `"long-animation-frame"` است.
 - {{domxref("PerformanceEntry.startTime")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a {{domxref("DOMHighResTimeStamp")}} representing the time when the animation frame started.
+  - : یک {{domxref("DOMHighResTimeStamp")}} را برمی‌گرداند که زمان شروع فریم انیمیشن را نشان می‌دهد.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("PerformanceLongAnimationFrameTiming.toJSON()")}} {{Experimental_Inline}}
-  - : Returns a JSON representation of the `PerformanceLongAnimationFrameTiming` object.
+  - : یک نمایش JSON از شیء `PerformanceLongAnimationFrameTiming` را برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-See [Long animation frame timing](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing#examples) for examples related to the Long Animation Frames API.
+برای مثال‌های مربوط به API فریم‌های انیمیشن طولانی، به [زمان‌بندی فریم انیمیشن طولانی](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Long animation frame timing](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing)
+- [زمان‌بندی فریم انیمیشن طولانی](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing)
 - {{domxref("PerformanceScriptTiming")}}
