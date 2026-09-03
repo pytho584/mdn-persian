@@ -1,11 +1,5 @@
 ---
 title: "PermissionStatus: change event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PermissionStatus/change_event"
-status: "needs-translation"
----
-
----
-title: "PermissionStatus: change event"
 short-title: change
 slug: Web/API/PermissionStatus/change_event
 page-type: web-api-event
@@ -14,11 +8,11 @@ browser-compat: api.PermissionStatus.change_event
 
 {{APIRef("Permissions API")}}{{AvailableInWorkers}}
 
-The **`change`** event of the {{domxref("PermissionStatus")}} interface fires whenever the {{domxref("PermissionStatus.state")}} property changes.
+رویداد **`change`** از رابط {{domxref("PermissionStatus")}} هر زمان که خاصیت {{domxref("PermissionStatus.state")}} تغییر کند، رخ می‌دهد.
 
-## Syntax
+## سینتکس
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+نام این رویداد را می‌توانید در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} به کار ببرید یا یک ویژگی مدیریت رویداد (event handler) تنظیم کنید.
 
 ```js-nolint
 addEventListener("change", (event) => { })
@@ -26,11 +20,11 @@ addEventListener("change", (event) => { })
 onchange = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Example
+## مثال
 
 ```js
 navigator.permissions
@@ -45,10 +39,10 @@ navigator.permissions
   });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
