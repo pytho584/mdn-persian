@@ -1,11 +1,5 @@
 ---
 title: "PerformanceResourceTiming: contentType property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceResourceTiming/contentType"
-status: "needs-translation"
----
-
----
-title: "PerformanceResourceTiming: contentType property"
 short-title: contentType
 slug: Web/API/PerformanceResourceTiming/contentType
 page-type: web-api-instance-property
@@ -14,38 +8,38 @@ browser-compat: api.PerformanceResourceTiming.contentType
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The **`contentType`** read-only property of the {{domxref("PerformanceResourceTiming")}} interface is a string indicating the content type of the fetched resource, formatted as a {{glossary("MIME type")}} and subtype separated by a forward slash.
+خاصیت فقط‌خواندنی **`contentType`** در رابط {{domxref("PerformanceResourceTiming")}} رشته‌ای است که نوع محتوای منبع واکشی‌شده را نشان می‌دهد و به شکل {{glossary("MIME type")}} و زیرنوع (subtype) که با یک اسلش (/) از هم جدا شده‌اند، قالب‌بندی می‌شود.
 
-The content type is a minimized and "standardized" version of the MIME type that is extracted from the {{httpheader("Content-Type")}} HTTP header sent in the resource's fetch response.
-For JavaScript, JSON, SVG, and XML, the MIME type is replaced by a representative MIME type/subtype string.
-Other types supported by the browser are represented by the MIME type/subtype string in the header (other information in the header is discarded).
+نوع محتوا نسخه‌ای «حداقلی‌شده» و «استانداردشده» از نوع MIME است که از هدر HTTP {{httpheader("Content-Type")}} ارسال‌شده در پاسخ واکشی منبع استخراج می‌شود.
+برای جاوااسکریپت، JSON، SVG و XML، نوع MIME با یک رشتهٔ نمایندهٔ نوع/زیرنوع MIME جایگزین می‌شود.
+سایر انواع پشتیبانی‌شده توسط مرورگر با رشتهٔ نوع/زیرنوع MIME موجود در هدر نمایش داده می‌شوند (سایر اطلاعات موجود در هدر کنار گذاشته می‌شوند).
 
-## Value
+## مقدار
 
-A string indicating the MIME type "essence" of the content.
-This may be one of the following values:
+رشته‌ای که «جوهره» نوع MIME محتوا را نشان می‌دهد.
+این مقدار می‌تواند یکی از موارد زیر باشد:
 
 - `text/javascript`
-  - : JavaScript content.
+  - : محتوای جاوااسکریپت.
 - `application/json`
-  - : JSON content.
+  - : محتوای JSON.
 - `image/svg+xml`
-  - : SVG content.
+  - : محتوای SVG.
 - `application/xml`
-  - : XML content (other than SVG).
-- MIME type/subtype
-  - : Any other MIME type/subtype supported by the user agent.
-- `""` (empty string)
-  - : Returned for MIME types that are not supported by the browser, or if the resource fetch failed due to [CORS](/en-US/docs/Web/HTTP/Guides/CORS) checks.
+  - : محتوای XML (به غیر از SVG).
+- نوع/زیرنوع MIME
+  - : هر نوع/زیرنوع MIME دیگری که توسط عامل کاربر پشتیبانی می‌شود.
+- `""` (رشتهٔ خالی)
+  - : برای انواع MIME که توسط مرورگر پشتیبانی نمی‌شوند، یا اگر واکشی منبع به دلیل بررسی‌های [CORS](/en-US/docs/Web/HTTP/Guides/CORS) ناموفق بوده باشد، بازگردانده می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Filtering resources
+### فیلتر کردن منابع
 
-The `contentType` property can be used to get specific resource timing entries only; for example, only those related to scripts.
+از خاصیت `contentType` می‌توان برای دریافت فقط ورودی‌های خاص زمان‌بندی منبع استفاده کرد؛ برای مثال، فقط ورودی‌های مربوط به اسکریپت‌ها.
 
-The following example uses a {{domxref("PerformanceObserver")}} to notify of new `resource` performance entries as they are recorded in the browser's performance timeline.
-The `buffered` option is used for accessing entries from before the observer creation.
+مثال زیر از یک {{domxref("PerformanceObserver")}} برای اطلاع‌یافتن از ورودی‌های جدید `resource` هنگام ثبت‌شدن در زمان‌خط مرورگر استفاده می‌کند.
+از گزینهٔ `buffered` برای دسترسی به ورودی‌های مربوط به قبل از ایجاد observer استفاده شده است.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -58,7 +52,7 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "resource", buffered: true });
 ```
 
-The following example uses {{domxref("Performance.getEntriesByType()")}}, which only shows `resource` performance entries present in the browser's performance timeline at the time you call the method.
+مثال زیر از {{domxref("Performance.getEntriesByType()")}} استفاده می‌کند که فقط ورودی‌های performance از نوع `resource` موجود در زمان‌خط مرورگر را هنگام فراخوانی متد نشان می‌دهد.
 
 ```js
 const scripts = performance
@@ -67,10 +61,10 @@ const scripts = performance
 console.log(scripts);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
