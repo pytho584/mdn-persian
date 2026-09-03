@@ -1,7 +1,5 @@
 ---
 title: "PerformanceTiming"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming"
-status: "needs-translation"
 ---
 
 ---
@@ -16,79 +14,79 @@ browser-compat: api.PerformanceTiming
 {{APIRef("Performance API")}}{{Deprecated_Header}}
 
 > [!WARNING]
-> This interface is deprecated in the [Navigation Timing Level 2 specification](https://w3c.github.io/navigation-timing/#obsolete). Please use the {{domxref("PerformanceNavigationTiming")}} interface instead.
+> این رابط در [مشخصات سطح ۲ زمان‌بندی ناوبری](https://w3c.github.io/navigation-timing/#obsolete) منسوخ شده است. لطفاً به جای آن از رابط {{domxref("PerformanceNavigationTiming")}} استفاده کنید.
 
-The **`PerformanceTiming`** interface is a legacy interface kept for backwards compatibility and contains properties that offer performance timing information for various events which occur during the loading and use of the current page. You get a `PerformanceTiming` object describing your page using the {{domxref("Performance.timing", "window.performance.timing")}} property.
+رابط **`PerformanceTiming`** یک رابط قدیمی است که برای سازگاری با نسخه‌های قبلی نگهداری می‌شود و شامل ویژگی‌هایی است که اطلاعات زمان‌بندی عملکرد را برای رویدادهای مختلف در هنگام بارگذاری و استفاده از صفحه فعلی ارائه می‌دهند. شما می‌توانید یک شیء `PerformanceTiming` که صفحه شما را توصیف می‌کند، با استفاده از ویژگی {{domxref("Performance.timing", "window.performance.timing")}} دریافت کنید.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_The `PerformanceTiming` interface doesn't inherit any properties._
+_رابط `PerformanceTiming` هیچ ویژگی‌ای را به ارث نمی‌برد._
 
-These properties each describe the time at which a particular point in the page loading process was reached. Some correspond to DOM events; others describe the time at which internal browser operations of interest took place.
+این ویژگی‌ها هر کدام زمان رسیدن به نقطه خاصی از فرآیند بارگذاری صفحه را توصیف می‌کنند. برخی از آنها با رویدادهای DOM هم‌خوانی دارند؛ برخی دیگر زمان انجام عملیات داخلی مرورگر را توصیف می‌کنند.
 
-Each time is provided as a number representing the moment, in milliseconds since the UNIX epoch.
+هر زمان به صورت یک عدد ارائه می‌شود که نشان‌دهنده لحظه مورد نظر به میلی‌ثانیه از شروع عصر یونیکس (UNIX epoch) است.
 
-These properties are listed in the order in which they occur during the navigation process.
+این ویژگی‌ها به ترتیب وقوع در طول فرآیند ناوبری فهرست شده‌اند.
 
 - {{domxref("PerformanceTiming.navigationStart")}} {{ReadOnlyInline}} {{Deprecated_Inline}}
-  - : When the prompt for unload terminates on the previous document in the same browsing context. If there is no previous document, this value will be the same as `PerformanceTiming.fetchStart`.
+  - : زمانی که اعلان پایان (prompt) رویداد unload در سند قبلی در همان بافت مرور (browsing context) پایان می‌یابد. اگر سند قبلی وجود نداشته باشد، این مقدار همان `PerformanceTiming.fetchStart` خواهد بود.
 - {{domxref("PerformanceTiming.unloadEventStart")}} {{ReadOnlyInline}} {{Deprecated_Inline}}
-  - : When the {{domxref("Window/unload_event", "unload")}} event has been thrown, indicating the time at which the previous document in the window began to unload. If there is no previous document, or if the previous document or one of the needed redirects is not of the same origin, the value returned is `0`.
+  - : زمانی که رویداد {{domxref("Window/unload_event", "unload")}} پرتاب شده است، که نشان‌دهنده زمان شروع تخلیه سند قبلی در پنجره است. اگر سند قبلی وجود نداشته باشد، یا اگر سند قبلی یا یکی از تغییر مسیرهای لازم (redirects) از همان مبدأ (same origin) نباشد، مقدار بازگشتی `0` است.
 - {{domxref("PerformanceTiming.unloadEventEnd")}} {{ReadOnlyInline}} {{Deprecated_Inline}}
-  - : When the {{domxref("Window/unload_event", "unload")}} event handler finishes. If there is no previous document, or if the previous document, or one of the needed redirects, is not of the same origin, the value returned is `0`.
+  - : زمانی که مدیریت‌کننده رویداد {{domxref("Window/unload_event", "unload")}} به پایان می‌رسد. اگر سند قبلی وجود نداشته باشد، یا اگر سند قبلی یا یکی از تغییر مسیرهای لازم از همان مبدأ نباشد، مقدار بازگشتی `0` است.
 - {{domxref("PerformanceTiming.redirectStart")}} {{ReadOnlyInline}} {{Deprecated_Inline}}
-  - : When the first HTTP redirect starts. If there is no redirect, or if one of the redirects is not of the same origin, the value returned is `0`.
+  - : زمانی که اولین تغییر مسیر HTTP شروع می‌شود. اگر هیچ تغییر مسیری وجود نداشته باشد، یا اگر یکی از تغییر مسیرها از همان مبدأ نباشد، مقدار بازگشتی `0` است.
 - {{domxref("PerformanceTiming.redirectEnd")}} {{ReadOnlyInline}} {{Deprecated_Inline}}
-  - : When the last HTTP redirect is completed, that is when the last byte of the HTTP response has been received. If there is no redirect, or if one of the redirects is not of the same origin, the value returned is `0`.
+  - : زمانی که آخرین تغییر مسیر HTTP تکمیل می‌شود، یعنی زمانی که آخرین بایت پاسخ HTTP دریافت شده است. اگر هیچ تغییر مسیری وجود نداشته باشد، یا اگر یکی از تغییر مسیرها از همان مبدأ نباشد، مقدار بازگشتی `0` است.
 - {{domxref("PerformanceTiming.fetchStart")}} {{ReadOnlyInline}} {{Deprecated_Inline}}
-  - : When the browser is ready to fetch the document using an HTTP request. This moment is _before_ the check to any application cache.
+  - : زمانی که مرورگر آماده است تا سند را با استفاده از یک درخواست HTTP دریافت کند. این لحظه _قبل از_ بررسی هر کش برنامه (application cache) است.
 - {{domxref("PerformanceTiming.domainLookupStart")}} {{ReadOnlyInline}} {{Deprecated_Inline}}
-  - : When the domain lookup starts. If a persistent connection is used, or the information is stored in a cache or a local resource, the value will be the same as `PerformanceTiming.fetchStart`.
+  - : زمانی که جستجوی دامنه (domain lookup) شروع می‌شود. اگر از یک اتصال پایدار (persistent connection) استفاده شود، یا اطلاعات در کش یا یک منبع محلی ذخیره شده باشد، مقدار همان `PerformanceTiming.fetchStart` خواهد بود.
 - {{domxref("PerformanceTiming.domainLookupEnd")}} {{ReadOnlyInline}} {{Deprecated_Inline}}
-  - : When the domain lookup is finished. If a persistent connection is used, or the information is stored in a cache or a local resource, the value will be the same as `PerformanceTiming.fetchStart`.
+  - : زمانی که جستجوی دامنه به پایان می‌رسد. اگر از یک اتصال پایدار استفاده شود، یا اطلاعات در کش یا یک منبع محلی ذخیره شده باشد، مقدار همان `PerformanceTiming.fetchStart` خواهد بود.
 - {{domxref("PerformanceTiming.connectStart")}} {{ReadOnlyInline}} {{Deprecated_Inline}}
-  - : When the request to open a connection is sent to the network. If the transport layer reports an error and the connection establishment is started again, the last connection establishment start time is given. If a persistent connection is used, the value will be the same as `PerformanceTiming.fetchStart`.
+  - : زمانی که درخواست باز کردن یک اتصال به شبکه ارسال می‌شود. اگر لایه انتقال خطایی گزارش کند و برقراری اتصال دوباره شروع شود، زمان شروع آخرین برقراری اتصال داده می‌شود. اگر از یک اتصال پایدار استفاده شود، مقدار همان `PerformanceTiming.fetchStart` خواهد بود.
 - {{domxref("PerformanceTiming.connectEnd")}} {{ReadOnlyInline}} {{Deprecated_Inline}}
-  - : When the connection is opened network. If the transport layer reports an error and the connection establishment is started again, the last connection establishment end time is given. If a persistent connection is used, the value will be the same as `PerformanceTiming.fetchStart`. A connection is considered as opened when all secure connection handshake, or SOCKS authentication, is terminated.
+  - : زمانی که اتصال به شبکه باز می‌شود. اگر لایه انتقال خطایی گزارش کند و برقراری اتصال دوباره شروع شود، زمان پایان آخرین برقراری اتصال داده می‌شود. اگر از یک اتصال پایدار استفاده شود، مقدار همان `PerformanceTiming.fetchStart` خواهد بود. یک اتصال زمانی باز در نظر گرفته می‌شود که تمام دست‌دهی اتصال امن (secure connection handshake) یا احراز هویت SOCKS خاتمه یابد.
 - {{domxref("PerformanceTiming.secureConnectionStart")}} {{ReadOnlyInline}} {{Deprecated_Inline}}
-  - : When the secure connection handshake starts. If no such connection is requested, it returns `0`.
+  - : زمانی که دست‌دهی اتصال امن شروع می‌شود. اگر چنین اتصالی درخواست نشده باشد، مقدار `0` برمی‌گرداند.
 - {{domxref("PerformanceTiming.requestStart")}} {{ReadOnlyInline}} {{Deprecated_Inline}}
-  - : When the browser sent the request to obtain the actual document, from the server or from a cache. If the transport layer fails after the start of the request and the connection is reopened, this property will be set to the time corresponding to the new request.
+  - : زمانی که مرورگر درخواست دریافت سند واقعی را از سرور یا از کش ارسال کرده است. اگر لایه انتقال پس از شروع درخواست دچار خطا شود و اتصال دوباره برقرار شود، این ویژگی به زمان مربوط به درخواست جدید تنظیم می‌شود.
 - {{domxref("PerformanceTiming.responseStart")}} {{ReadOnlyInline}} {{Deprecated_Inline}}
-  - : When the browser received the first byte of the response, from the server from a cache, or from a local resource.
+  - : زمانی که مرورگر اولین بایت پاسخ را از سرور، از کش یا از یک منبع محلی دریافت کرده است.
 - {{domxref("PerformanceTiming.responseEnd")}} {{ReadOnlyInline}} {{Deprecated_Inline}}
-  - : When the browser received the last byte of the response, or when the connection is closed if this happened first, from the server, the cache, or from a local resource.
+  - : زمانی که مرورگر آخرین بایت پاسخ را دریافت کرده است، یا اگر زودتر اتفاق بیفتد، زمانی که اتصال بسته شده است، از سرور، کش یا یک منبع محلی.
 - {{domxref("PerformanceTiming.domLoading")}} {{ReadOnlyInline}} {{Deprecated_Inline}}
-  - : When the parser started its work, that is when its {{domxref("Document.readyState")}} changes to `'loading'` and the corresponding {{domxref("Document/readystatechange_event", "readystatechange")}} event is thrown.
+  - : زمانی که تجزیه‌گر (parser) کار خود را شروع می‌کند، یعنی زمانی که {{domxref("Document.readyState")}} آن به `'loading'` تغییر می‌کند و رویداد متناظر {{domxref("Document/readystatechange_event", "readystatechange")}} پرتاب می‌شود.
 - {{domxref("PerformanceTiming.domInteractive")}} {{ReadOnlyInline}} {{Deprecated_Inline}}
-  - : When the parser finished its work on the main document, that is when its {{domxref("Document.readyState")}} changes to `'interactive'` and the corresponding {{domxref("Document/readystatechange_event", "readystatechange")}} event is thrown.
+  - : زمانی که تجزیه‌گر کار خود را بر روی سند اصلی به پایان می‌رساند، یعنی زمانی که {{domxref("Document.readyState")}} آن به `'interactive'` تغییر می‌کند و رویداد متناظر {{domxref("Document/readystatechange_event", "readystatechange")}} پرتاب می‌شود.
 - {{domxref("PerformanceTiming.domContentLoadedEventStart")}} {{ReadOnlyInline}} {{Deprecated_Inline}}
-  - : Right before the parser sent the {{domxref("Document/DOMContentLoaded_event", "DOMContentLoaded")}} event, that is right after all the scripts that need to be executed right after parsing have been executed.
+  - : درست قبل از اینکه تجزیه‌گر رویداد {{domxref("Document/DOMContentLoaded_event", "DOMContentLoaded")}} را ارسال کند، یعنی درست بعد از اجرای تمام اسکریپت‌هایی که باید بلافاصله پس از تجزیه اجرا شوند.
 - {{domxref("PerformanceTiming.domContentLoadedEventEnd")}} {{ReadOnlyInline}} {{Deprecated_Inline}}
-  - : Right after all the scripts that need to be executed as soon as possible, in order or not, have been executed.
+  - : درست بعد از اجرای تمام اسکریپت‌هایی که باید در اسرع وقت اجرا شوند، به ترتیب یا بدون ترتیب.
 - {{domxref("PerformanceTiming.domComplete")}} {{ReadOnlyInline}} {{Deprecated_Inline}}
-  - : When the parser finished its work on the main document, that is when its {{domxref("Document.readyState")}} changes to `'complete'` and the corresponding {{domxref("Document/readystatechange_event", "readystatechange")}} event is thrown.
+  - : زمانی که تجزیه‌گر کار خود را بر روی سند اصلی به پایان می‌رساند، یعنی زمانی که {{domxref("Document.readyState")}} آن به `'complete'` تغییر می‌کند و رویداد متناظر {{domxref("Document/readystatechange_event", "readystatechange")}} پرتاب می‌شود.
 - {{domxref("PerformanceTiming.loadEventStart")}} {{ReadOnlyInline}} {{Deprecated_Inline}}
-  - : When the {{domxref("Window/load_event", "load")}} event was sent for the current document. If this event has not yet been sent, it returns `0`.
+  - : زمانی که رویداد {{domxref("Window/load_event", "load")}} برای سند فعلی ارسال شده است. اگر این رویداد هنوز ارسال نشده باشد، مقدار `0` برمی‌گرداند.
 - {{domxref("PerformanceTiming.loadEventEnd")}} {{ReadOnlyInline}} {{Deprecated_Inline}}
-  - : When the {{domxref("Window/load_event", "load")}} event handler terminated, that is when the load event is completed. If this event has not yet been sent, or is not yet completed, it returns `0`.
+  - : زمانی که مدیریت‌کننده رویداد {{domxref("Window/load_event", "load")}} به پایان رسیده است، یعنی زمانی که رویداد load تکمیل می‌شود. اگر این رویداد هنوز ارسال نشده باشد، یا هنوز تکمیل نشده باشد، مقدار `0` برمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
-_The `PerformanceTiming`_ _interface doesn't inherit any methods._
+_رابط `PerformanceTiming` هیچ روشی را به ارث نمی‌برد._
 
 - {{domxref("PerformanceTiming.toJSON()")}} {{Deprecated_Inline}}
-  - : Returns a [JSON object](/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON) representing this `PerformanceTiming` object.
+  - : یک [شیء JSON](/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON) برمی‌گرداند که این شیء `PerformanceTiming` را نشان می‌دهد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("Performance.timing")}} property that creates such an object.
-- {{domxref("PerformanceNavigationTiming")}} (part of Navigation Timing Level 2) that has superseded this API.
+- ویژگی {{domxref("Performance.timing")}} که چنین شیئی را ایجاد می‌کند.
+- {{domxref("PerformanceNavigationTiming")}} (بخشی از Navigation Timing Level 2) که جایگزین این API شده است.
