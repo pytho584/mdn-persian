@@ -1,11 +1,5 @@
 ---
 title: "ProcessingInstruction: sheet property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ProcessingInstruction/sheet"
-status: "needs-translation"
----
-
----
-title: "ProcessingInstruction: sheet property"
 short-title: sheet
 slug: Web/API/ProcessingInstruction/sheet
 page-type: web-api-instance-property
@@ -14,16 +8,15 @@ browser-compat: api.ProcessingInstruction.sheet
 
 {{ApiRef("DOM")}}
 
-The read-only **`sheet`** property of the {{domxref("ProcessingInstruction")}} interface
-contains the stylesheet associated to the `ProcessingInstruction`.
+ویژگی فقط‌خواندنی **`sheet`** در رابط {{domxref("ProcessingInstruction")}} شامل شیوه‌نامه‌ای است که به این `ProcessingInstruction` مرتبط شده است.
 
-The `xml-stylesheet` processing instruction is used to associate a stylesheet in an XML file.
+دستور پردازشی `xml-stylesheet` برای مرتبط‌سازی یک شیوه‌نامه در یک فایل XML استفاده می‌شود.
 
-## Value
+## مقدار
 
-The associated {{DOMxref("Stylesheet")}} object, or `null` if there are none.
+شیء {{DOMxref("Stylesheet")}} مرتبط، یا اگر وجود نداشته باشد `null`.
 
-## Example
+## مثال
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -31,16 +24,16 @@ The associated {{DOMxref("Stylesheet")}} object, or `null` if there are none.
 …
 ```
 
-The `sheet` property of the processing instruction will return the {{domxref("StyleSheet")}} object describing `rule.css`.
+ویژگی `sheet` در دستور پردازشی، شیء {{domxref("StyleSheet")}} مربوط به `rule.css` را برمی‌گرداند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [DOM API](/en-US/docs/Web/API/Document_Object_Model)
+- [DOM API](/en-US/docs/Web/API/Document_Object_Model)
