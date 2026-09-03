@@ -1,11 +1,5 @@
 ---
 title: "PaymentRequest: shippingOption property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/shippingOption"
-status: "needs-translation"
----
-
----
-title: "PaymentRequest: shippingOption property"
 short-title: shippingOption
 slug: Web/API/PaymentRequest/shippingOption
 page-type: web-api-instance-property
@@ -17,21 +11,17 @@ browser-compat: api.PaymentRequest.shippingOption
 
 {{APIRef("Payment Request API")}}{{SecureContext_Header}}{{Deprecated_Header}}{{Non-standard_Header}}
 
-The **`shippingOption`** read-only attribute of the {{domxref('PaymentRequest')}} interface returns either the id of a selected shipping option, null (if no shipping option was set to be selected) or a shipping option selected by the user.
-It is initially `null` by when no "selected" shipping options are provided.
+ویژگی فقط‌خواندنی **`shippingOption`** در رابط {{domxref('PaymentRequest')}} یا شناسه یک گزینه حمل‌ونقل انتخاب‌شده را برمی‌گرداند، یا `null` (اگر هیچ گزینه حمل‌ونقلی برای انتخاب تنظیم نشده باشد)، یا گزینه حمل‌ونقلی که توسط کاربر انتخاب شده است. زمانی که هیچ گزینه حمل‌ونقلی با وضعیت «selected» ارائه نشود، این ویژگی به‌صورت اولیه `null` است.
 
-This attribute is only populated if the constructor is called with the `requestShipping` flag set to `true`.
-If `requestShipping` was `false` (or missing), `shippingOption` returns `null`, even the developer provides a selected a shipping option.
+این ویژگی فقط زمانی مقداردهی می‌شود که سازنده با پرچم `requestShipping` برابر با `true` فراخوانی شود. اگر `requestShipping` برابر با `false` باشد (یا وجود نداشته باشد)، `shippingOption` مقدار `null` برمی‌گرداند، حتی اگر توسعه‌دهنده یک گزینه حمل‌ونقل انتخاب‌شده ارائه کند.
 
-## Value
+## مقدار
 
-An object or `null`.
+یک شیء یا `null`.
 
-## Examples
+## مثال‌ها
 
-In the example below, the {{domxref('PaymentRequest.shippingaddresschange_event', 'shippingaddresschange')}} and the {{domxref('PaymentRequest.shippingoptionchange_event', 'shippingoptionchange')}} events are dispatched.
-In each event, `updateWith()` is called, one using a promise, and the other with a plain JS object.
-This demonstrates synchronous and asynchronous updates to a payment sheet.
+در مثال زیر، رویدادهای {{domxref('PaymentRequest.shippingaddresschange_event', 'shippingaddresschange')}} و {{domxref('PaymentRequest.shippingoptionchange_event', 'shippingoptionchange')}} ارسال می‌شوند. در هر رویداد، متد `updateWith()` فراخوانی می‌شود؛ یکی با استفاده از یک promise و دیگری با استفاده از یک شیء ساده جاوااسکریپت. این به‌روزرسانی هم‌زمان و غیرهم‌زمان برگه پرداخت را نشان می‌دهد.
 
 ```js
 const request = new PaymentRequest(methodData, details, options);
@@ -65,6 +55,6 @@ async function checkShipping(request) {
 }
 ```
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
