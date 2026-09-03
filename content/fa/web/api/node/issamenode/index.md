@@ -1,11 +1,5 @@
 ---
 title: "Node: isSameNode() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Node/isSameNode"
-status: "needs-translation"
----
-
----
-title: "Node: isSameNode() method"
 short-title: isSameNode()
 slug: Web/API/Node/isSameNode
 page-type: web-api-instance-method
@@ -14,36 +8,31 @@ browser-compat: api.Node.isSameNode
 
 {{APIRef("DOM")}}
 
-The **`isSameNode()`** method of the {{domxref("Node")}} interface
-is a legacy alias the [for the `===` strict equality operator](/en-US/docs/Web/JavaScript/Reference/Operators/Strict_equality).
-That is, it tests whether two nodes are the same
-(in other words, whether they reference the same object).
+متد **`isSameNode()`** از رابط {{domxref("Node")}} یک نام مستعار قدیمی برای [عملگر تساوی سختگیرانه `===`](/en-US/docs/Web/JavaScript/Reference/Operators/Strict_equality) است. به عبارت دیگر، بررسی می‌کند که آیا دو گره یکسان هستند (یعنی آیا به یک شیء اشاره می‌کنند).
 
 > [!NOTE]
-> There is no need to use `isSameNode()`; instead use the `===` strict equality operator.
+> نیازی به استفاده از `isSameNode()` نیست؛ به جای آن از عملگر تساوی سختگیرانه `===` استفاده کنید.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 isSameNode(otherNode)
 ```
 
-### Parameters
+### پارامترها
 
 - `otherNode`
-  - : The {{domxref("Node")}} to test against.
+  - : {{domxref("Node")}}ای که باید با آن مقایسه شود.
     > [!NOTE]
-    > This parameter is not optional, but can be set to `null`.
+    > این پارامتر اختیاری نیست، اما می‌توان آن را `null` تنظیم کرد.
 
-### Return value
+### مقدار بازگشتی
 
-A boolean value that is `true` if both nodes are strictly equal, `false` if not.
+یک مقدار بولی که اگر هر دو گره به‌طور سختگیرانه برابر باشند `true` است و در غیر این صورت `false`.
 
-## Example
+## مثال
 
-In this example, we create three {{HTMLElement("div")}} blocks. The first and third
-have the same contents and attributes, while the second is different. Then we run some
-JavaScript to compare the nodes using `isSameNode()` and output the results.
+در این مثال، سه بلوک {{HTMLElement("div")}} می‌سازیم. اولی و سومی محتوا و ویژگی‌های یکسانی دارند، در حالی که دومی متفاوت است. سپس با استفاده از جاوااسکریپت، گره‌ها را با `isSameNode()` مقایسه کرده و نتایج را نمایش می‌دهیم.
 
 ### HTML
 
@@ -66,7 +55,7 @@ JavaScript to compare the nodes using `isSameNode()` and output the results.
 }
 ```
 
-### JavaScript
+### جاوااسکریپت
 
 ```js
 const output = document.getElementById("output");
@@ -83,18 +72,18 @@ output.innerText += `div 0 same as div 2: ${divList[0].isSameNode(
 )}\n`;
 ```
 
-### Results
+### نتایج
 
 {{ EmbedLiveSample('Example', "100%", "205") }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Node.isEqualNode()")}}
