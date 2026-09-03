@@ -1,11 +1,5 @@
 ---
 title: "Performance: interactionCount property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Performance/interactionCount"
-status: "needs-translation"
----
-
----
-title: "Performance: interactionCount property"
 short-title: interactionCount
 slug: Web/API/Performance/interactionCount
 page-type: web-api-instance-property
@@ -14,22 +8,21 @@ browser-compat: api.Performance.interactionCount
 
 {{APIRef("Performance API")}}
 
-The read-only `performance.interactionCount` property represents the number of real-user interactions that have occurred on the page since it was loaded.
+خصوصیت فقط‑خواندنی `performance.interactionCount` تعداد تعامل‌های واقعی کاربر را که از زمان بارگذاری صفحه رخ داده‌اند، نشان می‌دهد.
 
-Only discrete interactions with an {{domxref("PerformanceEventTiming.interactionId", "interactionId")}} — such as clicks and key events — are counted. Other interactions, such as scroll interactions, are excluded.
+فقط تعامل‌های گسسته‌ای که دارای {{domxref("PerformanceEventTiming.interactionId", "interactionId")}} هستند — مانند کلیک‌ها و رویدادهای کلید — شمارش می‌شوند. سایر تعامل‌ها، مانند تعامل‌های اسکرول، مستثنی هستند.
 
-This is useful when calculating {{Glossary("Interaction_to_next_paint", "Interaction to Next Paint (INP)")}}, and in particular to exclude outliers for long-lived pages. INP takes the 98th percentile of interactions for a page and so excludes 1 in every 50 interactions as "outliers" that are not reflective of overall page responsiveness.
+این ویژگی هنگام محاسبه {{Glossary("Interaction_to_next_paint", "Interaction to Next Paint (INP)")}} مفید است، و به طور خاص برای حذف داده‌های پرت (outliers) در صفحات طولانی‌مدت کاربرد دارد. INP درصد نود و هشتم تعامل‌های یک صفحه را در نظر می‌گیرد و بنابراین از هر ۵۰ تعامل، یک تعامل را به عنوان «داده پرت» که منعکس‌کننده پاسخ‌گویی کلی صفحه نیست، حذف می‌کند.
 
 ## Value
 
-A number, which is initially `0`, and increments by `1` with each discrete interaction as measured by {{domxref("PerformanceEventTiming")}}, where an {{domxref("PerformanceEventTiming.interactionId", "interactionId")}} is assigned.
+یک عدد که در ابتدا `0` است و با هر تعامل گسسته که توسط {{domxref("PerformanceEventTiming")}} اندازه‌گیری می‌شود و یک {{domxref("PerformanceEventTiming.interactionId", "interactionId")}} به آن اختصاص می‌یابد، به میزان `1` افزایش می‌یابد.
 
 ## Examples
 
-### Checking the number of interactions to accurately calculate INP
+### بررسی تعداد تعامل‌ها برای محاسبه دقیق INP
 
-For pages with a large number of interactions, you can recalculate INP after
-excluding 1 out of every 50 outliers using the following pattern:
+برای صفحات با تعداد زیادی تعامل، می‌توانید INP را پس از حذف ۱ داده پرت از هر ۵۰ داده، با استفاده از الگوی زیر دوباره محاسبه کنید:
 
 ```js
 if (performance.interactionCount >= 50) {
