@@ -1,11 +1,5 @@
 ---
 title: "PaymentResponse: toJSON() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse/toJSON"
-status: "needs-translation"
----
-
----
-title: "PaymentResponse: toJSON() method"
 short-title: toJSON()
 slug: Web/API/PaymentResponse/toJSON
 page-type: web-api-instance-method
@@ -14,7 +8,7 @@ browser-compat: api.PaymentResponse.toJSON
 
 {{SecureContext_Header}}{{APIRef("Payment Request API")}}
 
-The **`toJSON()`** method of the {{domxref("PaymentResponse")}} interface is a {{Glossary("Serialization","serializer")}}; it returns a JSON representation of the {{domxref("PaymentResponse")}} object.
+متد **`toJSON()`** از رابط {{domxref("PaymentResponse")}} یک {{Glossary("Serialization","سریالساز")}} است؛ این متد یک نمایش JSON از شیء {{domxref("PaymentResponse")}} برمی‌گرداند.
 
 ## Syntax
 
@@ -24,17 +18,17 @@ toJSON()
 
 ### Parameters
 
-None.
+هیچکدام.
 
 ### Return value
 
-A {{jsxref("JSON")}} object that is the serialization of the {{domxref("PaymentResponse")}} object.
+یک شیء {{jsxref("JSON")}} که نمایش سریالسازی شده شیء {{domxref("PaymentResponse")}} است.
 
 ## Examples
 
-### Using the toJSON method
+### استفاده از متد toJSON
 
-In this example, calling `paymentResponse.toJSON()` returns a JSON representation of the `PaymentResponse` object.
+در این مثال، فراخوانی `paymentResponse.toJSON()` یک نمایش JSON از شیء `PaymentResponse` برمی‌گرداند.
 
 ```js
 payment.show().then((paymentResponse) => {
@@ -42,7 +36,7 @@ payment.show().then((paymentResponse) => {
 });
 ```
 
-To get a JSON string, you can use [`JSON.stringify(paymentResponse)`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) directly; it will call `toJSON()` automatically.
+برای دریافت یک رشته JSON، می‌توانید مستقیماً از [`JSON.stringify(paymentResponse)`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) استفاده کنید؛ این متد به طور خودکار `toJSON()` را فراخوانی می‌کند.
 
 ## Specifications
 
