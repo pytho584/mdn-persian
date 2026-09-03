@@ -1,10 +1,5 @@
 ---
 title: "NotificationEvent: NotificationEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NotificationEvent/NotificationEvent"
-status: "needs-translation"
----
-
----
 title: "NotificationEvent: NotificationEvent() constructor"
 short-title: NotificationEvent()
 slug: Web/API/NotificationEvent/NotificationEvent
@@ -14,7 +9,7 @@ browser-compat: api.NotificationEvent.NotificationEvent
 
 {{APIRef("Web Notifications")}}{{AvailableInWorkers("service")}}
 
-The **`NotificationEvent()`** constructor creates a new {{domxref("NotificationEvent")}} object.
+سازنده **`NotificationEvent()`** یک شیء {{domxref("NotificationEvent")}} جدید ایجاد می‌کند.
 
 ## Syntax
 
@@ -25,18 +20,18 @@ new NotificationEvent(type, options)
 ### Parameters
 
 - `type`
-  - : A string with the name of the event.
-    It is case-sensitive and browsers set it to `notificationclick` or `notificationclose`.
+  - : رشته‌ای با نام رویداد.
+    این مقدار به بزرگی و کوچکی حروف حساس است و مرورگرها آن را روی `notificationclick` یا `notificationclose` تنظیم می‌کنند.
 - `options`
-  - : An object that, _in addition of the properties defined in {{domxref("ExtendableEvent/ExtendableEvent", "ExtendableEvent()")}}_, can have the following properties:
+  - : شیءای که _علاوه بر ویژگی‌های تعریف‌شده در {{domxref("ExtendableEvent/ExtendableEvent", "ExtendableEvent()")}}_ می‌تواند ویژگی‌های زیر را داشته باشد:
     - `notification`
-      - : A {{domxref("Notification")}} object to be used as the notification the event is dispatched on.
+      - : یک شیء {{domxref("Notification")}} که به عنوان اعلانِ رویدادِ ارسال‌شده روی آن استفاده می‌شود.
     - `action` {{optional_inline}}
-      - : An action associated with the notification. It defaults to `""`.
+      - : عملی مرتبط با اعلان. مقدار پیش‌فرض آن `""` است.
 
 ### Return value
 
-A new {{domxref("NotificationEvent()")}} object.
+یک شیء جدید {{domxref("NotificationEvent()")}}.
 
 ## Examples
 
