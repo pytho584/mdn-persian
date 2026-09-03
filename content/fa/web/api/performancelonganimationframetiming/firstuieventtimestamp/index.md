@@ -1,11 +1,5 @@
 ---
 title: "PerformanceLongAnimationFrameTiming: firstUIEventTimestamp property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceLongAnimationFrameTiming/firstUIEventTimestamp"
-status: "needs-translation"
----
-
----
-title: "PerformanceLongAnimationFrameTiming: firstUIEventTimestamp property"
 short-title: firstUIEventTimestamp
 slug: Web/API/PerformanceLongAnimationFrameTiming/firstUIEventTimestamp
 page-type: web-api-instance-property
@@ -16,25 +10,25 @@ browser-compat: api.PerformanceLongAnimationFrameTiming.firstUIEventTimestamp
 
 {{SeeCompatTable}}{{APIRef("Performance API")}}
 
-The **`firstUIEventTimestamp`** read-only property of the {{domxref("PerformanceLongAnimationFrameTiming")}} interface returns a {{domxref("DOMHighResTimeStamp")}} indicating the time of the first UI event — such as a mouse or keyboard event — to be processed during the current animation frame. Note this timestamp can be before the start of this animation frame if there was a delay between the event happening and it being processed.
+خاصیت فقط‌خواندنی **`firstUIEventTimestamp`** از رابط {{domxref("PerformanceLongAnimationFrameTiming")}} یک {{domxref("DOMHighResTimeStamp")}} برمی‌گرداند که زمان اولین رویداد UI (مانند رویداد ماوس یا صفحه‌کلید) را که در طول فریم انیمیشن جاری پردازش شده است، نشان می‌دهد. توجه داشته باشید که این برچسب زمانی می‌تواند قبل از شروع این فریم انیمیشن باشد اگر بین وقوع رویداد و پردازش آن تأخیری وجود داشته باشد.
 
-## Value
+## مقدار
 
-A {{domxref("DOMHighResTimeStamp")}}.
+یک {{domxref("DOMHighResTimeStamp")}}.
 
-## Examples
+## مثال‌ها
 
-See [Long animation frame timing](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing#examples) for examples related to the Long Animation Frames API.
+برای مثال‌های مرتبط با API فریم‌های انیمیشن طولانی، به [زمان‌بندی فریم انیمیشن طولانی](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Long animation frame timing](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing)
+- [زمان‌بندی فریم انیمیشن طولانی](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing)
 - {{domxref("PerformanceScriptTiming")}}
