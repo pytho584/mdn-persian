@@ -1,11 +1,5 @@
 ---
 title: "PerformanceTiming: domComplete property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/domComplete"
-status: "needs-translation"
----
-
----
-title: "PerformanceTiming: domComplete property"
 short-title: domComplete
 slug: Web/API/PerformanceTiming/domComplete
 page-type: web-api-instance-property
@@ -17,29 +11,24 @@ browser-compat: api.PerformanceTiming.domComplete
 {{APIRef("Performance API")}}{{Deprecated_Header}}
 
 > [!WARNING]
-> This interface of this property is deprecated in the [Navigation Timing Level 2 specification](https://w3c.github.io/navigation-timing/#obsolete). Please use the {{domxref("PerformanceNavigationTiming")}}
-> interface instead.
+> این واسط (interface) از این ویژگی در [مشخصات Navigation Timing Level 2](https://w3c.github.io/navigation-timing/#obsolete) منسوخ شده است. لطفاً به جای آن از واسط {{domxref("PerformanceNavigationTiming")}} استفاده کنید.
 
-The legacy
+ویژگی فقط خواندنی قدیمی
 **`PerformanceTiming.domComplete`**
-read-only property returns an `unsigned long long` representing the moment,
-in milliseconds since the UNIX epoch, when the parser finished its work on the main
-document, that is when its {{domxref("Document.readyState")}} changes to
-`'complete'` and the corresponding {{domxref("Document/readystatechange_event", "readystatechange")}} event is
-thrown.
+یک `unsigned long long` را برمی‌گرداند که نشان‌دهندهٔ لحظه‌ای (به میلی‌ثانیه از زمان یونیکس) است که تجزیه‌گر (parser) کار خود را روی سند اصلی تمام کرده است؛ یعنی زمانی که {{domxref("Document.readyState")}} آن به `'complete'` تغییر می‌کند و رویداد متناظر {{domxref("Document/readystatechange_event", "readystatechange")}} پرتاب می‌شود.
 
-## Value
+## مقدار
 
-An `unsigned long long`.
+یک `unsigned long long`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("PerformanceTiming")}} interface it belongs to.
+- واسط {{domxref("PerformanceTiming")}} که این ویژگی به آن تعلق دارد.
