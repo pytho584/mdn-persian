@@ -1,11 +1,5 @@
 ---
 title: "NodeIterator: root property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/root"
-status: "needs-translation"
----
-
----
-title: "NodeIterator: root property"
 short-title: root
 slug: Web/API/NodeIterator/root
 page-type: web-api-instance-property
@@ -14,15 +8,13 @@ browser-compat: api.NodeIterator.root
 
 {{APIRef("DOM")}}
 
-The **`NodeIterator.root`** read-only property represents the
-{{DOMxref("Node")}} that is the root of what the {{DOMxref("NodeIterator")}}
-traverses.
+خاصیت فقط‑خواندنی **`NodeIterator.root`** گره‌ای ({{DOMxref("Node")}}) را نشان می‌دهد که ریشهٔ چیزی است که {{DOMxref("NodeIterator")}} آن را پیمایش می‌کند.
 
-## Value
+## مقدار
 
-A {{DOMxref("Node")}}.
+یک {{DOMxref("Node")}}.
 
-## Examples
+## نمونه‌ها
 
 ```js
 const nodeIterator = document.createNodeIterator(
@@ -34,17 +26,17 @@ const nodeIterator = document.createNodeIterator(
     },
   },
 );
-root = nodeIterator.root; // document.body in this case
+root = nodeIterator.root; // در اینجا document.body
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- The interface it belongs to: {{domxref("NodeIterator")}}.
+- واسطی که این ویژگی به آن تعلق دارد: {{domxref("NodeIterator")}}.
