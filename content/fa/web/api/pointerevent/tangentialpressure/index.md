@@ -1,11 +1,5 @@
 ---
 title: "PointerEvent: tangentialPressure property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent/tangentialPressure"
-status: "needs-translation"
----
-
----
-title: "PointerEvent: tangentialPressure property"
 short-title: tangentialPressure
 slug: Web/API/PointerEvent/tangentialPressure
 page-type: web-api-instance-property
@@ -14,25 +8,17 @@ browser-compat: api.PointerEvent.tangentialPressure
 
 {{ APIRef("Pointer Events") }}
 
-The **`tangentialPressure`** read-only property of the
-{{domxref("PointerEvent")}} interface represents the normalized tangential pressure of
-the pointer input (also known as barrel pressure or [cylinder stress](https://en.wikipedia.org/wiki/Cylinder_stress)).
+ویژگی فقط‌خواندنی **`tangentialPressure`** از رابط {{domxref("PointerEvent")}}، فشار مماسی نرمال‌شدهٔ ورودی اشاره‌گر را نشان می‌دهد (که با نام‌های فشار بشکه‌ای یا [تنش سیلندری](https://en.wikipedia.org/wiki/Cylinder_stress) نیز شناخته می‌شود).
 
-## Value
+## مقدار
 
-A `float` representing the normalized tangential pressure of the pointer
-input in the range `-1` to `1`, inclusive, where `0` is
-the neutral position of the control.
+یک `float` که فشار مماسی نرمال‌شدهٔ ورودی اشاره‌گر را در بازهٔ `1-` تا `1` (شامل هر دو) نشان می‌دهد؛ `0` حالت خنثیِ کنترل است.
 
-Note that some hardware may only support positive values in the range `0` to
-`1`. For hardware that does not support tangential pressure, the value will
-be `0`.
+توجه داشته باشید که برخی سخت‌افزارها فقط مقادیر مثبت در بازهٔ `0` تا `1` را پشتیبانی می‌کنند. برای سخت‌افزاری که فشار مماسی را پشتیبانی نمی‌کند، مقدار این ویژگی `0` خواهد بود.
 
-## Examples
+## مثال‌ها
 
-In this snippet, when a {{domxref("Element/pointerdown_event", "pointerdown")}} event is fired, different functions
-are called depending on the value of the event's `tangentialPressure`
-property.
+در این قطعه‌کد، وقتی یک رویداد {{domxref("Element/pointerdown_event", "pointerdown")}} رخ می‌دهد، بسته به مقدار ویژگی `tangentialPressure` آن رویداد، توابع متفاوتی فراخوانی می‌شوند.
 
 ```js
 someElement.addEventListener("pointerdown", (event) => {
@@ -49,14 +35,14 @@ someElement.addEventListener("pointerdown", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{ domxref("Touch.force") }}
