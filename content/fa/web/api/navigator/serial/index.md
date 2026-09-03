@@ -1,11 +1,5 @@
 ---
 title: "Navigator: serial property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/serial"
-status: "needs-translation"
----
-
----
-title: "Navigator: serial property"
 short-title: serial
 slug: Web/API/Navigator/serial
 page-type: web-api-instance-property
@@ -14,19 +8,19 @@ browser-compat: api.Navigator.serial
 
 {{APIRef("Web Serial API")}}{{SecureContext_Header}}
 
-The **`serial`** read-only property of the {{domxref("Navigator")}} interface returns a {{domxref("Serial")}} object, which represents the entry point into the [Web Serial API](/en-US/docs/Web/API/Web_Serial_API).
+ویژگی فقط‌خواندنی **`serial`** در رابط {{domxref("Navigator")}} یک شیء {{domxref("Serial")}} بازمی‌گرداند که نقطهٔ ورود به [Web Serial API](/en-US/docs/Web/API/Web_Serial_API) را نشان می‌دهد.
 
-The same instance of the {{domxref("Serial")}} object will always be returned.
+همواره همان نمونهٔ مشترک از شیء {{domxref("Serial")}} بازگردانده می‌شود.
 
-## Value
+## مقدار
 
-A {{domxref("Serial")}} object.
+یک شیء {{domxref("Serial")}}.
 
-## Examples
+## مثال‌ها
 
-### List available ports
+### فهرست کردن پورت‌های موجود
 
-The following example uses the `getPorts()` method to initialize a list of available ports.
+مثال زیر از متد `getPorts()` برای مقداردهی اولیهٔ فهرست پورت‌های موجود استفاده می‌کند.
 
 ```js
 navigator.serial.getPorts().then((ports) => {
@@ -34,15 +28,15 @@ navigator.serial.getPorts().then((ports) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Read from and write to a serial port](https://developer.chrome.com/docs/capabilities/serial)
-- [Getting started with the Web Serial API](https://codelabs.developers.google.com/codelabs/web-serial#0)
+- [خواندن و نوشتن در پورت سریال](https://developer.chrome.com/docs/capabilities/serial)
+- [شروع کار با Web Serial API](https://codelabs.developers.google.com/codelabs/web-serial#0)
