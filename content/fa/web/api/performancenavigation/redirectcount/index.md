@@ -1,11 +1,5 @@
 ---
 title: "PerformanceNavigation: redirectCount property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceNavigation/redirectCount"
-status: "needs-translation"
----
-
----
-title: "PerformanceNavigation: redirectCount property"
 short-title: redirectCount
 slug: Web/API/PerformanceNavigation/redirectCount
 page-type: web-api-instance-property
@@ -16,27 +10,24 @@ browser-compat: api.PerformanceNavigation.redirectCount
 
 {{APIRef("Performance API")}}{{Deprecated_Header}}
 
-The legacy
-**`PerformanceNavigation.redirectCount`**
-read-only property returns an `unsigned short` representing the number of
-REDIRECTs done before reaching the page.
+ویژگی فقط‌خواندنیِ قدیمی (legacy) **`PerformanceNavigation.redirectCount`**، مقداری از نوع `unsigned short` برمی‌گرداند که تعداد ریدایرکت‌های انجام‌شده پیش از رسیدن به صفحه را نشان می‌دهد.
 
 > [!WARNING]
-> This interface of this property is deprecated in the [Navigation Timing Level 2 specification](https://w3c.github.io/navigation-timing/#obsolete).
-> Please use the {{domxref("PerformanceNavigationTiming")}} interface instead.
+> این رابط (interface) که این ویژگی به آن تعلق دارد، در [مشخصات Navigation Timing Level 2](https://w3c.github.io/navigation-timing/#obsolete) منسوخ شده است.
+> لطفاً در عوض از رابط {{domxref("PerformanceNavigationTiming")}} استفاده کنید.
 
-## Value
+## مقدار
 
-An `unsigned short`.
+یک `unsigned short`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("PerformanceNavigation")}} interface it belongs to.
+- رابط {{domxref("PerformanceNavigation")}} که این ویژگی به آن تعلق دارد.
