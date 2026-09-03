@@ -1,11 +1,5 @@
 ---
 title: "PannerNode: refDistance property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PannerNode/refDistance"
-status: "needs-translation"
----
-
----
-title: "PannerNode: refDistance property"
 short-title: refDistance
 slug: Web/API/PannerNode/refDistance
 page-type: web-api-instance-property
@@ -14,22 +8,22 @@ browser-compat: api.PannerNode.refDistance
 
 {{ APIRef("Web Audio API") }}
 
-The `refDistance` property of the {{ domxref("PannerNode") }} interface is a double value representing the reference distance for reducing volume as the audio source moves further from the listener – i.e., the distance at which the volume reduction starts taking effect. This value is used by all distance models.
+ویژگی `refDistance` از رابط {{ domxref("PannerNode") }} یک مقدار اعشاری (double) است که فاصله مرجع برای کاهش حجم صدا را هنگام دور شدن منبع صوتی از شنونده نشان می‌دهد – یعنی فاصله‌ای که کاهش حجم از آن نقطه شروع به اثر می‌کند. این مقدار در تمام مدل‌های فاصله استفاده می‌شود.
 
-The `refDistance` property's default value is `1`.
+مقدار پیش‌فرض ویژگی `refDistance` برابر با `1` است.
 
-## Value
+## مقدار
 
-A non-negative number. If the value is set to less than 0, a {{jsxref("RangeError")}} is thrown.
+یک عدد غیرمنفی. اگر مقدار کمتر از 0 تنظیم شود، یک {{jsxref("RangeError")}} پرتاب می‌شود.
 
-### Exceptions
+### استثناها
 
 - {{jsxref("RangeError")}}
-  - : Thrown if the property has been given a value that is outside the accepted range.
+  - : اگر مقداری به ویژگی داده شود که خارج از محدوده مجاز باشد، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-This example demonstrates how different values of `refDistance` affect how the volume of a sound decays as it moves away from the listener. Unlike {{ domxref("PannerNode.rolloffFactor", "rolloffFactor") }}, changing this value also _delays_ the volume decay until the sound moves past the reference point.
+این مثال نشان می‌دهد که چگونه مقادیر مختلف `refDistance` بر نحوه کاهش حجم صدا در هنگام دور شدن از شنونده تأثیر می‌گذارند. برخلاف {{ domxref("PannerNode.rolloffFactor", "rolloffFactor") }}، تغییر این مقدار همچنین کاهش حجم را تا زمانی که صدا از نقطه مرجع عبور کند _به تأخیر می‌اندازد_.
 
 ```js
 const context = new AudioContext();
@@ -65,19 +59,19 @@ scheduleTestTone(4, context.currentTime + NOTE_LENGTH);
 scheduleTestTone(7, context.currentTime + NOTE_LENGTH * 2);
 ```
 
-After running this code, the resulting waveforms should look something like this:
+پس از اجرای این کد، شکل‌موج‌های حاصل باید چیزی شبیه به این باشند:
 
-![A waveform visualization of three oscillator tones produced in Web Audio. Each oscillator moves away from the listener at the same speed, but with different refDistances affecting the resulting volume decay.](screen_shot_2018-10-11_at_23.14.32.png)
+![تصویری از شکل‌موج سه تُن نوسان‌ساز تولید شده در Web Audio. هر نوسان‌ساز با سرعت یکسان از شنونده دور می‌شود، اما با refDistances مختلف که کاهش حجم حاصل را تحت تأثیر قرار می‌دهد.](screen_shot_2018-10-11_at_23.14.32.png)
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
-- [Web Audio spatialization basics](/en-US/docs/Web/API/Web_Audio_API/Web_audio_spatialization_basics)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [مبانی فضایی‌سازی Web Audio](/en-US/docs/Web/API/Web_Audio_API/Web_audio_spatialization_basics)
