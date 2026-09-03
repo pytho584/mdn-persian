@@ -1,11 +1,5 @@
 ---
 title: "PaymentResponse: shippingAddress property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse/shippingAddress"
-status: "needs-translation"
----
-
----
-title: "PaymentResponse: shippingAddress property"
 short-title: shippingAddress
 slug: Web/API/PaymentResponse/shippingAddress
 page-type: web-api-instance-property
@@ -14,27 +8,17 @@ browser-compat: api.PaymentResponse.shippingAddress
 
 {{securecontext_header}}{{APIRef("Payment Request API")}}
 
-The **`shippingAddress`** read-only property of
-the `PaymentRequest` interface returns a {{domxref('PaymentAddress')}} object
-containing the shipping address provided by the user.
+ویژگی فقط‌خواندنی **`shippingAddress`** در رابط `PaymentRequest` یک شیء {{domxref('PaymentAddress')}} شامل آدرس ارسال ارائه‌شده توسط کاربر را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A {{domxref("PaymentAddress")}} object providing details comprising the shipping
-address provided by the user.
+یک شیء {{domxref("PaymentAddress")}} که جزئیات آدرس ارسال ارائه‌شده توسط کاربر را فراهم می‌کند.
 
-## Examples
+## مثال‌ها
 
-Generally, the user agent will fill the `shippingAddress` property for you.
-You can trigger this by
-setting `options.requestShipping` to `true` when calling
-the {{domxref('PaymentRequest.paymentRequest','PaymentRequest')}} constructor.
+به‌طور معمول، عامل کاربر (user agent) ویژگی `shippingAddress` را برای شما پر می‌کند. می‌توانید با تنظیم `options.requestShipping` به `true` هنگام فراخوانی سازندهٔ {{domxref('PaymentRequest.paymentRequest','PaymentRequest')}} این کار را فعال کنید.
 
-In the example below, the cost of shipping varies by geography. When the
-{{domxref('PaymentRequest.shippingaddresschange_event', 'shippingaddresschange')}} event is
-fired and caught, `updateDetails()` is called to update the details of
-the `PaymentRequest`, using `shippingAddress` to set the correct
-shipping cost.
+در مثال زیر، هزینهٔ ارسال بسته به منطقهٔ جغرافیایی متفاوت است. وقتی رویداد {{domxref('PaymentRequest.shippingaddresschange_event', 'shippingaddresschange')}} رخ دهد و دریافت شود، تابع `updateDetails()` فراخوانی می‌شود تا جزئیات `PaymentRequest` را با استفاده از `shippingAddress` به‌روزرسانی کند و هزینهٔ ارسال صحیح را تنظیم نماید.
 
 ```js
 // Initialization of PaymentRequest arguments are excerpted for brevity.
@@ -85,10 +69,10 @@ function updateDetails(details, shippingAddress, resolve) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
