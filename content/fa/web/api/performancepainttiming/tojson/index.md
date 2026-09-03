@@ -1,11 +1,5 @@
 ---
 title: "PerformancePaintTiming: toJSON() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformancePaintTiming/toJSON"
-status: "needs-translation"
----
-
----
-title: "PerformancePaintTiming: toJSON() method"
 short-title: toJSON()
 slug: Web/API/PerformancePaintTiming/toJSON
 page-type: web-api-instance-method
@@ -14,27 +8,27 @@ browser-compat: api.PerformancePaintTiming.toJSON
 
 {{APIRef("Performance API")}}
 
-The **`toJSON()`** method of the {{domxref("PerformancePaintTiming")}} interface is a {{Glossary("Serialization","serializer")}}; it returns a JSON representation of the {{domxref("PerformancePaintTiming")}} object.
+متد **`toJSON()`** در رابط {{domxref("PerformancePaintTiming")}} یک {{Glossary("Serialization","سریالساز")}} است؛ این متد یک نمایش JSON از شیء {{domxref("PerformancePaintTiming")}} برمیگرداند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 toJSON()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("JSON")}} object that is the serialization of the {{domxref("PerformancePaintTiming")}} object.
+یک شیء {{jsxref("JSON")}} که سریالسازی شدهی شیء {{domxref("PerformancePaintTiming")}} است.
 
-## Examples
+## مثالها
 
-### Using the toJSON method
+### استفاده از متد toJSON
 
-In this example, calling `entry.toJSON()` returns a JSON representation of the `PerformancePaintTiming` object.
+در این مثال، فراخوانی `entry.toJSON()` یک نمایش JSON از شیء `PerformancePaintTiming` برمیگرداند.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -46,7 +40,7 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "paint", buffered: true });
 ```
 
-This would log a JSON object like so:
+این کار یک شیء JSON مانند زیر را ثبت (log) میکند:
 
 ```json
 {
@@ -57,16 +51,16 @@ This would log a JSON object like so:
 }
 ```
 
-To get a JSON string, you can use [`JSON.stringify(entry)`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) directly; it will call `toJSON()` automatically.
+برای دریافت یک رشته JSON، میتوانید مستقیماً از [`JSON.stringify(entry)`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) استفاده کنید؛ این تابع به صورت خودکار `toJSON()` را فراخوانی میکند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{jsxref("JSON")}}
