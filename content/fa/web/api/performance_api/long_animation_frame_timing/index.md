@@ -1,10 +1,4 @@
 ---
-title: "Long animation frame timing"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing"
-status: "needs-translation"
----
-
----
 title: Long animation frame timing
 slug: Web/API/Performance_API/Long_animation_frame_timing
 page-type: guide
@@ -12,19 +6,19 @@ page-type: guide
 
 {{DefaultAPISidebar("Performance API")}}
 
-**Long animation frames** (LoAFs) can impact the user experience of a website. They can cause slow user interface (UI) updates, resulting in seemingly unresponsive controls and [janky](/en-US/docs/Glossary/Jank) (or non-smooth) animated effects and scrolling, leading to user frustration. The [Long Animation Frames API](https://w3c.github.io/long-animation-frames/) allows developers to get information about the long animation frames and better understand their root causes. This article shows how to use the Long Animation Frames API.
+**فریم‌های انیمیشن طولانی** (LoAF) می‌توانند تجربه کاربری یک وب‌سایت را تحت تأثیر قرار دهند. این فریم‌ها باعث به‌روزرسانی‌های کند رابط کاربری (UI) می‌شوند که در نتیجه کنترل‌هایی به‌ظاهر غیرفعال، افکت‌های انیمیشنی ناهموار (janky) و اسکرول نامطلوب ایجاد کرده و باعث نارضایتی کاربر می‌شوند. [Long Animation Frames API](https://w3c.github.io/long-animation-frames/) به توسعه‌دهندگان امکان می‌دهد تا اطلاعاتی درباره فریم‌های انیمیشن طولانی به دست آورده و علل ریشه‌ای آن‌ها را بهتر درک کنند. این مقاله نحوه استفاده از Long Animation Frames API را نشان می‌دهد.
 
-## What is a long animation frame?
+## فریم انیمیشن طولانی چیست؟
 
-A long animation frame — or LoAF — is a rendering update that is delayed beyond 50ms.
+یک فریم انیمیشن طولانی — یا LoAF — به‌روزرسانی رندرینگی است که بیش از ۵۰ میلی‌ثانیه به تأخیر افتاده است.
 
-Good responsiveness means that a page responds quickly to interactions. This involves painting any updates needed by the user in a timely manner and avoiding anything that could block these updates. Google's [Interaction to Next Paint (INP)](https://web.dev/articles/inp) metric, for example, recommends that a website should respond to page interactions (such as clicks or key presses) within 200ms.
+پاسخ‌گویی خوب به این معناست که یک صفحه به سرعت به تعاملات کاربر واکنش نشان دهد. این شامل ترسیم به‌موقع هرگونه به‌روزرسانی مورد نیاز کاربر و اجتناب از هر چیزی است که ممکن است این به‌روزرسانی‌ها را مسدود کند. به عنوان مثال، معیار [Interaction to Next Paint (INP)](https://web.dev/articles/inp) گوگل توصیه می‌کند که یک وب‌سایت باید در عرض ۲۰۰ میلی‌ثانیه به تعاملات صفحه (مانند کلیک‌ها یا فشار دادن کلیدها) پاسخ دهد.
 
-For smooth animations, updates need to be fast — for an animation to run at a smooth 60 frames per second, each animation frame should render within around 16ms (1000/60).
+برای انیمیشن‌های روان، به‌روزرسانی‌ها باید سریع باشند — برای اینکه یک انیمیشن با نرخ روان ۶۰ فریم در ثانیه اجرا شود، هر فریم انیمیشن باید در حدود ۱۶ میلی‌ثانیه (۱۰۰۰/۶۰) رندر شود.
 
-## Observing long animation frames
+## مشاهده فریم‌های انیمیشن طولانی
 
-To obtain information on LoAFs and pinpoint troublemakers, you can observe performance timeline entries with an {{domxref("PerformanceEntry.entryType", "entryType")}} of `"long-animation-frame"` using a standard {{domxref("PerformanceObserver")}}:
+برای به‌دست آوردن اطلاعات در مورد LoAFها و شناسایی عوامل مشکل‌ساز، می‌توانید ورودی‌های جدول زمانی عملکرد (performance timeline) با {{domxref("PerformanceEntry.entryType", "entryType")}} برابر با `"long-animation-frame"` را با استفاده از یک {{domxref("PerformanceObserver")}} استاندارد مشاهده کنید:
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -34,19 +28,19 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "long-animation-frame", buffered: true });
 ```
 
-Previous long animation frames can also be queried, using a method such as {{domxref("Performance.getEntriesByType()")}}:
+همچنین می‌توان فریم‌های انیمیشن طولانی قبلی را با استفاده از روشی مانند {{domxref("Performance.getEntriesByType()")}} پرس‌وجو کرد:
 
 ```js
 const loafs = performance.getEntriesByType("long-animation-frame");
 ```
 
-Be aware, however, that the maximum buffer size for `"long-animation-frame"` entry types is 200, after which new entries are dropped, so using the `PerformanceObserver` approach is recommended.
+توجه داشته باشید که حداکثر اندازه بافر برای نوع ورودی `"long-animation-frame"` ۲۰۰ است و پس از آن ورودی‌های جدید حذف می‌شوند؛ بنابراین استفاده از روش `PerformanceObserver` توصیه می‌شود.
 
-## Examining `"long-animation-frame"` entries
+## بررسی ورودی‌های `"long-animation-frame"`
 
-Performance timeline entries returned with a type of `"long-animation-frame"` are represented by {{domxref("PerformanceLongAnimationFrameTiming")}} objects. This object has a {{domxref("PerformanceLongAnimationFrameTiming.scripts", "scripts")}} property containing an array of {{domxref("PerformanceScriptTiming")}} objects, each one of which contains information about a script that contributed to the long animation frame.
+ورودی‌های جدول زمانی عملکرد که با نوع `"long-animation-frame"` بازگردانده می‌شوند، توسط اشیاء {{domposxref("PerformanceLongAnimationFrameTiming")}} نمایش داده می‌شوند. این شیء دارای یک ویژگی {{domxref("PerformanceLongAnimationFrameTiming.scripts", "scripts")}} است که شامل آرایه‌ای از اشیاء {{domxref("PerformanceScriptTiming")}} می‌باشد. هر یک از این اشیاء حاوی اطلاعاتی درباره اسکریپتی است که در فریم انیمیشن طولانی نقش داشته است.
 
-The following is a complete `"long-animation-frame"` performance entry example, containing a single script:
+در زیر یک مثال کامل از یک ورودی عملکرد `"long-animation-frame"` با یک اسکریپت آورده شده است:
 
 ```js
 ({
@@ -73,7 +67,7 @@ The following is a complete `"long-animation-frame"` performance entry example, 
       sourceCharPosition: 17796,
       startTime: 11803.199999999255,
       window: {
-        // …Window object…
+        // …شیء Window…
       },
       windowAttribution: "self",
     },
@@ -83,69 +77,69 @@ The following is a complete `"long-animation-frame"` performance entry example, 
 });
 ```
 
-Beyond the standard data returned by a {{domxref("PerformanceEntry")}} entry, this contains the following noteworthy items:
+فراتر از داده‌های استاندارد بازگردانده شده توسط یک ورودی {{domxref("PerformanceEntry")}}، این موارد شامل موارد قابل توجه زیر است:
 
 - {{domxref("PerformanceLongAnimationFrameTiming.blockingDuration", "blockingDuration")}}
-  - : A {{domxref("DOMHighResTimeStamp")}} indicating the total time in milliseconds for which the main thread was blocked from responding to high priority tasks, such as user input. This is calculated by taking all the [long tasks](/en-US/docs/Web/API/PerformanceLongTaskTiming#description) within the LoAF that have a `duration` of more than `50ms`, subtracting `50ms` from each, adding the rendering time to the longest task time, and summing the results.
+  - : یک {{domxref("DOMHighResTimeStamp")}} که نشان‌دهنده کل زمان (بر حسب میلی‌ثانیه) است که در آن نخ اصلی از پاسخ‌دهی به وظایف با اولویت بالا، مانند ورودی کاربر، مسدود شده است. این مقدار با در نظر گرفتن تمام [وظایف طولانی](/en-US/docs/Web/API/PerformanceLongTaskTiming#description) در داخل LoAF که `duration` آن‌ها بیش از ۵۰ میلی‌ثانیه است، با کسر ۵۰ میلی‌ثانیه از هر یک، اضافه کردن زمان رندرینگ به طولانی‌ترین زمان وظیفه، و جمع نتایج محاسبه می‌شود.
 - {{domxref("PerformanceLongAnimationFrameTiming.firstUIEventTimestamp", "firstUIEventTimestamp")}}
-  - : A {{domxref("DOMHighResTimeStamp")}} indicating the time of the first UI event — such as a mouse or keyboard event — to be processed during the current animation frame. Note this timestamp can be before the start of this animation frame if there was a delay between the event happening and it being processed.
+  - : یک {{domxref("DOMHighResTimeStamp")}} که نشان‌دهنده زمان اولین رویداد UI (مانند رویداد ماوس یا صفحه کلید) است که در طول فریم انیمیشن جاری پردازش شده است. توجه داشته باشید که این مهر زمانی می‌تواند قبل از شروع این فریم انیمیشن باشد، اگر بین وقوع رویداد و پردازش آن تأخیر وجود داشته باشد.
 - {{domxref("PerformanceLongAnimationFrameTiming.paintTime", "paintTime")}}
-  - : Returns the {{domxref("DOMHighResTimeStamp","timestamp")}} when the rendering phase ended and the animation frame started.
+  - : {{domxref("DOMHighResTimeStamp","مهر زمانی")}} را که فاز رندرینگ به پایان رسید و فریم انیمیشن شروع شد، بازمی‌گرداند.
 - {{domxref("PerformanceLongAnimationFrameTiming.presentationTime", "presentationTime")}}
-  - : Returns the {{domxref("DOMHighResTimeStamp","timestamp")}} when the UI update was actually drawn on the screen.
+  - : {{domxref("DOMHighResTimeStamp","مهر زمانی")}} را که به‌روزرسانی UI در واقع روی صفحه نمایش داده شد، بازمی‌گرداند.
 - {{domxref("PerformanceLongAnimationFrameTiming.renderStart", "renderStart")}}
-  - : A {{domxref("DOMHighResTimeStamp")}} indicating the start time of the rendering cycle, which includes {{domxref("Window.requestAnimationFrame()")}} callbacks, style and layout calculation, {{domxref("ResizeObserver")}} callbacks, and {{domxref("IntersectionObserver")}} callbacks.
+  - : یک {{domxref("DOMHighResTimeStamp")}} که نشان‌دهنده زمان شروع چرخه رندرینگ است که شامل فراخوانی‌های {{domxref("Window.requestAnimationFrame()")}}، محاسبه استایل و طرح‌بندی، فراخوانی‌های {{domxref("ResizeObserver")}} و فراخوانی‌های {{domxref("IntersectionObserver")}} می‌شود.
 - {{domxref("PerformanceLongAnimationFrameTiming.styleAndLayoutStart", "styleAndLayoutStart")}}
-  - : A {{domxref("DOMHighResTimeStamp")}} indicating the beginning of the time period spent in style and layout calculations for the current animation frame.
-- {{domxref("PerformanceScriptTiming")}} properties:
-  - : Properties providing information on the script(s) that contributed to the LoAF:
+  - : یک {{domxref("DOMHighResTimeStamp")}} که نشان‌دهنده آغاز دوره زمانی صرف شده در محاسبات استایل و طرح‌بندی برای فریم انیمیشن جاری است.
+- ویژگی‌های {{domxref("PerformanceScriptTiming")}}:
+  - : ویژگی‌هایی که اطلاعاتی در مورد اسکریپت(هایی) که در LoAF نقش داشته‌اند ارائه می‌دهند:
     - {{domxref("PerformanceScriptTiming.executionStart", "script.executionStart")}}
-      - : A {{domxref("DOMHighResTimeStamp")}} indicating the time when the script compilation finished and execution started.
+      - : یک {{domxref("DOMHighResTimeStamp")}} که نشان‌دهنده زمان اتمام کامپایل اسکریپت و شروع اجرا است.
     - {{domxref("PerformanceScriptTiming.forcedStyleAndLayoutDuration", "script.forcedStyleAndLayoutDuration")}}
-      - : A {{domxref("DOMHighResTimeStamp")}} indicating the total time spent, in milliseconds, by the script processing forced layout/style. See [Avoid layout thrashing](https://web.dev/articles/avoid-large-complex-layouts-and-layout-thrashing#avoid_layout_thrashing) to understand what causes this.
-    - {{domxref("PerformanceScriptTiming.invoker", "script.invoker")}} and {{domxref("PerformanceScriptTiming.invokerType", "script.invokerType")}}
-      - : String values indicating how the script was called (for example, `"IMG#id.onload"` or `"Window.requestAnimationFrame"`) and the script entry point type (for example, `"event-listener"` or `"resolve-promise"`).
+      - : یک {{domxref("DOMHighResTimeStamp")}} که نشان‌دهنده کل زمان صرف شده (بر حسب میلی‌ثانیه) توسط اسکریپت برای پردازش استایل/طرح‌بندی اجباری است. برای درک علت این امر، به [Avoid layout thrashing](https://web.dev/articles/avoid-large-complex-layouts-and-layout-thrashing#avoid_layout_thrashing) مراجعه کنید.
+    - {{domxref("PerformanceScriptTiming.invoker", "script.invoker")}} و {{domxref("PerformanceScriptTiming.invokerType", "script.invokerType")}}
+      - : مقادیر رشته‌ای که نحوه فراخوانی اسکریپت (مثلاً `"IMG#id.onload"` یا `"Window.requestAnimationFrame"`) و نوع نقطه ورود اسکریپت (مثلاً `"event-listener"` یا `"resolve-promise"`) را نشان می‌دهند.
     - {{domxref("PerformanceScriptTiming.pauseDuration", "script.pauseDuration")}}
-      - : A {{domxref("DOMHighResTimeStamp")}} indicating the total time, in milliseconds, spent by the script on "pausing" synchronous operations (for example, {{domxref("Window.alert()")}} calls or synchronous {{domxref("XMLHttpRequest")}}s).
-    - {{domxref("PerformanceScriptTiming.sourceCharPosition", "script.sourceCharPosition")}}, {{domxref("PerformanceScriptTiming.sourceFunctionName", "script.sourceFunctionName")}}, and {{domxref("PerformanceScriptTiming.sourceURL", "script.sourceURL")}}
-      - : Values representing the script character position, function name, and script URL, respectively. It is important to note that the reported function name will be the "entry point" of the script (i.e., the top level of the stack), and not any specific slow sub-function.
+      - : یک {{domxref("DOMHighResTimeStamp")}} که نشان‌دهنده کل زمان (بر حسب میلی‌ثانیه) صرف شده توسط اسکریپت برای عملیات همزمان "مکث" (مانند فراخوانی‌های {{domxref("Window.alert()")}} یا {{domxref("XMLHttpRequest")}} همزمان) است.
+    - {{domxref("PerformanceScriptTiming.sourceCharPosition", "script.sourceCharPosition")}}، {{domxref("PerformanceScriptTiming.sourceFunctionName", "script.sourceFunctionName")}} و {{domxref("PerformanceScriptTiming.sourceURL", "script.sourceURL")}}
+      - : مقادیری که به ترتیب موقعیت کاراکتر اسکریپت، نام تابع و URL اسکریپت را نشان می‌دهند. توجه به این نکته مهم است که نام تابع گزارش شده "نقطه ورود" اسکریپت (یعنی سطح بالای پشته) خواهد بود، نه هیچ زیرتابع کند خاصی.
 
-        For example, if an event handler calls a top-level function, which in turn calls a slow sub-function, the `source*` fields will report the top-level function's name and location, not the slow sub-function. This is because of performance reasons — a full stack trace is costly.
+        به عنوان مثال، اگر یک کنترل‌کننده رویداد یک تابع سطح بالا را فراخوانی کند که به نوبه خود یک زیرتابع کند را فراخوانی می‌کند، فیلدهای `source*` نام و مکان تابع سطح بالا را گزارش می‌دهند، نه زیرتابع کند را. این به دلایل عملکردی است — ردیابی کامل پشته هزینه‌بر است.
 
-    - {{domxref("PerformanceScriptTiming.windowAttribution", "script.windowAttribution")}} a {{domxref("PerformanceScriptTiming.window", "script.window")}}
-      - : An enumerated value describing the relationship of the container (i.e., either the top-level document or and {{htmlelement("iframe")}}) this script was executed in to the top-level document, and a reference to its {{domxref("Window")}} object.
+    - {{domxref("PerformanceScriptTiming.windowAttribution", "script.windowAttribution")}} و {{domxref("PerformanceScriptTiming.window", "script.window")}}
+      - : یک مقدار شمارشی که رابطه کانتینر (یعنی سند سطح بالا یا یک {{htmlelement("iframe")}}) که این اسکریپت در آن اجرا شده است با سند سطح بالا را توصیف می‌کند، و یک ارجاع به شیء {{domxref("Window")}} آن.
 
     > [!NOTE]
-    > Script attribution is provided only for scripts running in the main thread of a page, including same-origin `<iframe>`s. However, cross-origin `<iframe>`s, [web workers](/en-US/docs/Web/API/Web_Workers_API), [service workers](/en-US/docs/Web/API/Service_Worker_API), and [extension](/en-US/docs/Mozilla/Add-ons/WebExtensions) code will not have script attribution in long animation frames, even if they impact the duration of one.
+    > انتساب اسکریپت فقط برای اسکریپت‌هایی که در نخ اصلی یک صفحه اجرا می‌شوند، از جمله `<iframe>`های هم‌منبع (same-origin) ارائه می‌شود. با این حال، `<iframe>`های متقاطع (cross-origin)، [web workerها](/en-US/docs/Web/API/Web_Workers_API)، [service workerها](/en-US/docs/Web/API/Service_Worker_API) و کدهای [افزونه‌ها](/en-US/docs/Mozilla/Add-ons/WebExtensions) در فریم‌های انیمیشن طولانی انتساب اسکریپت نخواهند داشت، حتی اگر بر مدت زمان آن تأثیر بگذارند.
 
-## Calculating timestamps
+## محاسبه مهرهای زمانی
 
-The timestamps provided in the {{domxref("PerformanceLongAnimationFrameTiming")}} class allow several further useful timings to be calculated for the long animation frame:
+مهرهای زمانی ارائه شده در کلاس {{domxref("PerformanceLongAnimationFrameTiming")}} امکان محاسبه چندین زمان‌بندی مفید دیگر را برای فریم انیمیشن طولانی فراهم می‌کنند:
 
-| Timing                            | Calculation                                                              |
-| --------------------------------- | ------------------------------------------------------------------------ |
-| Start time                        | `startTime`                                                              |
-| End time                          | `startTime + duration` (or `paintTime`/`presentationTime`)               |
-| Work duration                     | `renderStart ? renderStart - startTime : duration`                       |
-| Render duration                   | `renderStart ? (startTime + duration) - renderStart : 0`                 |
-| Render: Pre-layout duration       | `styleAndLayoutStart ? styleAndLayoutStart - renderStart : 0`            |
-| Render: Style and Layout duration | `styleAndLayoutStart ? (startTime + duration) - styleAndLayoutStart : 0` |
+| زمان‌بندی                      | محاسبه                                                                 |
+| ------------------------------ | ---------------------------------------------------------------------- |
+| زمان شروع                      | `startTime`                                                            |
+| زمان پایان                     | `startTime + duration` (یا `paintTime`/`presentationTime`)              |
+| مدت زمان کار                   | `renderStart ? renderStart - startTime : duration`                      |
+| مدت زمان رندر                  | `renderStart ? (startTime + duration) - renderStart : 0`                |
+| رندر: مدت زمان قبل از طرح‌بندی | `styleAndLayoutStart ? styleAndLayoutStart - renderStart : 0`           |
+| رندر: مدت زمان استایل و طرح‌بندی | `styleAndLayoutStart ? (startTime + duration) - styleAndLayoutStart : 0` |
 
-## Examples
+## مثال‌ها
 
-### Long Animation Frames API feature detection
+### تشخیص پشتیبانی از Long Animation Frames API
 
-You can test whether the Long Animation Frames API is supported using {{domxref("PerformanceObserver.supportedEntryTypes_static", "PerformanceObserver.supportedEntryTypes")}}:
+می‌توانید با استفاده از {{domxref("PerformanceObserver.supportedEntryTypes_static", "PerformanceObserver.supportedEntryTypes")}} بررسی کنید که آیا Long Animation Frames API پشتیبانی می‌شود:
 
 ```js
 if (PerformanceObserver.supportedEntryTypes.includes("long-animation-frame")) {
-  // Monitor LoAFs
+  // نظارت بر LoAFها
 }
 ```
 
-### Reporting LoAFs above a certain threshold
+### گزارش LoAFهای بالاتر از یک آستانه مشخص
 
-While LoAF thresholds are fixed at 50ms, this may lead to a large volume of reports when you first start performance optimization work. Initially, you may want to report LoAFs at a higher threshold value and gradually decrease the threshold as you improve the site and remove the worst LoAFs. The following code could be used to capture LoAFs above a specific threshold for further analysis (for example, by sending them back to an analytics endpoint):
+در حالی که آستانه‌های LoAF روی ۵۰ میلی‌ثانیه ثابت هستند، این ممکن است در ابتدای کار بهینه‌سازی عملکرد حجم زیادی از گزارش‌ها ایجاد کند. در ابتدا، ممکن است بخواهید LoAFها را با یک مقدار آستانه بالاتر گزارش کنید و به تدریج با بهبود سایت و حذف بدترین LoAFها، آستانه را کاهش دهید. کد زیر می‌تواند برای ضبط LoAFهای بالاتر از یک آستانه خاص برای تحلیل بیشتر استفاده شود (مثلاً با ارسال آن‌ها به یک نقطه پایانی تحلیلی):
 
 ```js
 const REPORTING_THRESHOLD_MS = 150;
@@ -153,7 +147,7 @@ const REPORTING_THRESHOLD_MS = 150;
 const observer = new PerformanceObserver((list) => {
   for (const entry of list.getEntries()) {
     if (entry.duration > REPORTING_THRESHOLD_MS) {
-      // Example here logs to console; real code could send to analytics endpoint
+      // مثال در اینجا در کنسول ثبت می‌کند؛ کد واقعی می‌تواند به نقطه پایانی تحلیلی ارسال کند
       console.log(entry.paintTime);
       console.log(entry.presentationTime);
     }
@@ -163,11 +157,11 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "long-animation-frame", buffered: true });
 ```
 
-Long animation frame entries can be quite large; therefore, think carefully about what data from each entry should be sent to analytics. For example, the summary times of the entries and the script URLs might be enough for what you need.
+ورودی‌های فریم انیمیشن طولانی می‌توانند بسیار بزرگ باشند؛ بنابراین درباره اینکه چه داده‌هایی از هر ورودی باید به تحلیل ارسال شود، با دقت فکر کنید. به عنوان مثال، زمان‌های خلاصه ورودی‌ها و URLهای اسکریپت ممکن است برای نیاز شما کافی باشد.
 
-### Observing the longest animation frames
+### مشاهده طولانی‌ترین فریم‌های انیمیشن
 
-You may wish to only collect data on the longest animation frames (say the top 5 or 10), to reduce the volume of data that needs to be collected. This could be handled as follows:
+ممکن است بخواهید فقط داده‌های مربوط به طولانی‌ترین فریم‌های انیمیشن (مثلاً ۵ یا ۱۰ مورد برتر) را جمع‌آوری کنید تا حجم داده‌های مورد نیاز برای جمع‌آوری کاهش یابد. این کار می‌تواند به صورت زیر انجام شود:
 
 ```js
 MAX_LOAFS_TO_CONSIDER = 10;
@@ -181,18 +175,18 @@ const observer = new PerformanceObserver((list) => {
 });
 observer.observe({ type: "long-animation-frame", buffered: true });
 
-// Report data on visibilitychange event
+// گزارش داده‌ها در رویداد visibilitychange
 document.addEventListener("visibilitychange", () => {
-  // Example here logs to console; real code could send to analytics endpoint
+  // مثال در اینجا در کنسول ثبت می‌کند؛ کد واقعی می‌تواند به نقطه پایانی تحلیلی ارسال کند
   console.log(longestBlockingLoAFs);
 });
 ```
 
-### Reporting long animation frames with interactions
+### گزارش فریم‌های انیمیشن طولانی با تعاملات
 
-Another useful technique is to send the largest LoAF entries where an interaction occurred during the frame, which can be detected by the presence of a {{domxref("PerformanceLongAnimationFrameTiming.firstUIEventTimestamp", "firstUIEventTimestamp")}} value.
+یکی دیگر از تکنیک‌های مفید، ارسال بزرگ‌ترین ورودی‌های LoAF است که در آن یک تعامل در طول فریم رخ داده است. این را می‌توان با وجود مقدار {{domxref("PerformanceLongAnimationFrameTiming.firstUIEventTimestamp", "firstUIEventTimestamp")}} تشخیص داد.
 
-The following code logs all LoAF entries greater than 150ms where an interaction occurred during the frame. You could choose a higher or lower value depending on your needs.
+کد زیر تمام ورودی‌های LoAF بزرگتر از ۱۵۰ میلی‌ثانیه را که در آن یک تعامل در طول فریم رخ داده است، ثبت می‌کند. بسته به نیاز خود می‌توانید مقدار بالاتر یا پایین‌تری را انتخاب کنید.
 
 ```js
 const REPORTING_THRESHOLD_MS = 150;
@@ -203,7 +197,7 @@ const observer = new PerformanceObserver((list) => {
       entry.duration > REPORTING_THRESHOLD_MS &&
       entry.firstUIEventTimestamp > 0
     ) {
-      // Example here logs to console; real code could send to analytics endpoint
+      // مثال در اینجا در کنسول ثبت می‌کند؛ کد واقعی می‌تواند به نقطه پایانی تحلیلی ارسال کند
       console.log(entry);
     }
   }
@@ -212,13 +206,13 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "long-animation-frame", buffered: true });
 ```
 
-### Identifying common script patterns in long animation frames
+### شناسایی الگوهای رایج اسکریپت در فریم‌های انیمیشن طولانی
 
-An alternative strategy is to look at which scripts appear most often in LoAF entries. Data could be reported at the level of a script and/or character position to identify the most problematic scripts. This is useful in cases where themes or plugins causing performance issues are used across multiple sites.
+یک استراتژی جایگزین این است که ببینیم کدام اسکریپت‌ها بیشتر در ورودی‌های LoAF ظاهر می‌شوند. داده‌ها می‌توانند در سطح یک اسکریپت و/یا موقعیت کاراکتر گزارش شوند تا مشکل‌دارترین اسکریپت‌ها شناسایی شوند. این در مواردی که تم‌ها یا افزونه‌های ایجاد کننده مشکلات عملکرد در چندین سایت استفاده می‌شوند، مفید است.
 
-The execution times of common scripts (or third-party origins) in LoAFs could be summed up and reported back to identify common contributors to LoAFs across a site or a collection of sites.
+زمان‌های اجرای اسکریپت‌های رایج (یا منابع شخص ثالث) در LoAFها می‌تواند جمع‌بندی شده و به عنوان مشارکت‌کنندگان رایج در LoAFها در یک سایت یا مجموعه‌ای از سایت‌ها گزارش شود.
 
-For example, to group scripts by URL and show total duration:
+به عنوان مثال، برای گروه‌بندی اسکریپت‌ها بر اساس URL و نمایش مدت زمان کل:
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -239,26 +233,26 @@ const observer = new PerformanceObserver((list) => {
     ),
   }));
   processedScripts.sort((a, b) => b.totalDuration - a.totalDuration);
-  // Example here logs to console; real code could send to analytics endpoint
+  // مثال در اینجا در کنسول ثبت می‌کند؛ کد واقعی می‌تواند به نقطه پایانی تحلیلی ارسال کند
   console.table(processedScripts);
 });
 
 observer.observe({ type: "long-animation-frame", buffered: true });
 ```
 
-## Comparing with the Long Tasks API
+## مقایسه با Long Tasks API
 
-The Long Animation Frames API was preceded by the [Long Tasks API](https://w3c.github.io/longtasks/) (see {{domxref("PerformanceLongTaskTiming")}}). Both the APIs have a similar purpose and usage — exposing information about [long tasks](/en-US/docs/Glossary/Long_task) that block the main thread for 50ms or more.
+Long Animation Frames API توسط [Long Tasks API](https://w3c.github.io/longtasks/) (به {{domxref("PerformanceLongTaskTiming")}} مراجعه کنید) پیشی گرفته است. هر دو API هدف و کاربرد مشابهی دارند — افشای اطلاعات درباره [وظایف طولانی](/en-US/docs/Glossary/Long_task) که نخ اصلی را به مدت ۵۰ میلی‌ثانیه یا بیشتر مسدود می‌کنند.
 
-Cutting down the number of long tasks that occur on your website is useful because long tasks can cause responsiveness issues. For example, if a user clicks a button while the main thread is dealing with a long task, the UI response to the click will be delayed until the long task is completed. Conventional wisdom is to break up long tasks into multiple smaller tasks so that important interactions can be handled in between.
+کاهش تعداد وظایف طولانی که در وب‌سایت شما رخ می‌دهد مفید است زیرا وظایف طولانی می‌توانند مشکلات پاسخ‌دهی ایجاد کنند. به عنوان مثال، اگر کاربر در حالی که نخ اصلی در حال پردازش یک وظیفه طولانی است، روی دکمه‌ای کلیک کند، پاسخ UI به کلیک تا زمانی که وظیفه طولانی کامل شود، به تأخیر می‌افتد. خرد متعارف این است که وظایف طولانی را به چندین وظیفه کوچکتر تقسیم کنید تا تعاملات مهم بتوانند در بین آن‌ها مدیریت شوند.
 
-However, the Long Tasks API has its limitations:
+با این حال، Long Tasks API محدودیت‌هایی دارد:
 
-- An animation frame could be composed of several tasks that fall below the 50ms threshold, yet still collectively block the main thread. The Long Animation Frames API solves this by considering the animation frame as a whole.
-- The {{domxref("PerformanceLongTaskTiming")}} entry type exposes more limited information than the {{domxref("PerformanceLongAnimationFrameTiming")}} type — it can tell you the container where a long task happened, but not the script or function that caused it, for example.
-- The Long Tasks API provides an incomplete view, as it may exclude some important tasks. Some updates (rendering, for example) happen in separate tasks that ideally should be included together with the preceding execution that caused that update to accurately measure the "total work" for that interaction.
+- یک فریم انیمیشن می‌تواند از چندین وظیفه تشکیل شده باشد که هر کدام زیر آستانه ۵۰ میلی‌ثانیه هستند، اما همچنان به طور جمعی نخ اصلی را مسدود می‌کنند. Long Animation Frames API این مشکل را با در نظر گرفتن فریم انیمیشن به عنوان یک کل حل می‌کند.
+- نوع ورودی {{domxref("PerformanceLongTaskTiming")}} اطلاعات محدودتری نسبت به نوع {{domxref("PerformanceLongAnimationFrameTiming")}} افشا می‌کند — به عنوان مثال، می‌تواند کانتینری را که یک وظیفه طولانی در آن رخ داده است بگوید، اما نه اسکریپت یا تابعی که باعث آن شده است را.
+- Long Tasks API یک دید ناقص ارائه می‌دهد، زیرا ممکن است برخی وظایف مهم را حذف کند. برخی به‌روزرسانی‌ها (رندرینگ، به عنوان مثال) در وظایف جداگانه‌ای رخ می‌دهند که باید به همراه اجرای قبلی که باعث آن به‌روزرسانی شده است، برای اندازه‌گیری دقیق "کل کار" برای آن تعامل، شامل شوند.
 
-## See also
+## همچنین ببینید
 
-- [Optimize long tasks](https://web.dev/articles/optimize-long-tasks) on web.dev (2024)
-- [Where long tasks fall short](https://github.com/w3c/long-animation-frames#where-long-tasks-fall-short), Long Animation Frames API explainer (2024)
+- [بهینه‌سازی وظایف طولانی](https://web.dev/articles/optimize-long-tasks) در web.dev (۲۰۲۴)
+- [جایی که وظایف طولانی کوتاه می‌آیند](https://github.com/w3c/long-animation-frames#where-long-tasks-fall-short)، توضیح‌دهنده Long Animation Frames API (۲۰۲۴)
