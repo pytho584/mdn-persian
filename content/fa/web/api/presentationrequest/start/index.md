@@ -1,7 +1,5 @@
 ---
 title: "PresentationRequest: start() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PresentationRequest/start"
-status: "needs-translation"
 ---
 
 ---
@@ -16,30 +14,30 @@ browser-compat: api.PresentationRequest.start
 
 {{APIRef("Presentation API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`start()`** property of the {{domxref("PresentationRequest")}} interface returns a {{jsxref("Promise")}} that resolves with a {{domxref("PresentationConnection")}} after the user agent prompts the user to select a display and grant permission to use that display.
+متد **`start()`** در {{domxref("PresentationRequest")}} یک {{jsxref("Promise")}} برمی‌گرداند که پس از آنکه عامل کاربر (user agent) از کاربر می‌خواهد یک نمایشگر را انتخاب کند و اجازه استفاده از آن را بدهد، با یک {{domxref("PresentationConnection")}} resolve می‌شود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 start()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with a {{domxref("PresentationConnection")}}.
+یک {{jsxref("Promise")}} که با یک {{domxref("PresentationConnection")}} resolve می‌شود.
 
-## Security
+## امنیت
 
-[Transient user activation](/en-US/docs/Web/Security/Defenses/User_activation) is required. The user has to interact with the page or a UI element in order for this feature to work.
+[فعال‌سازی گذرای کاربر](/en-US/docs/Web/Security/Defenses/User_activation) الزامی است. کاربر باید با صفحه یا یک عنصر رابط کاربری تعامل کند تا این قابلیت کار کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
