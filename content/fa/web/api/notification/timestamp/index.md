@@ -1,11 +1,5 @@
 ---
 title: "Notification: timestamp property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Notification/timestamp"
-status: "needs-translation"
----
-
----
-title: "Notification: timestamp property"
 short-title: timestamp
 slug: Web/API/Notification/timestamp
 page-type: web-api-instance-property
@@ -16,26 +10,17 @@ browser-compat: api.Notification.timestamp
 
 {{APIRef("Web Notifications")}}{{SecureContext_Header}}{{SeeCompatTable}} {{AvailableInWorkers}}
 
-The **`timestamp`** read-only property of the
-{{domxref("Notification")}} interface returns a number, as
-specified in the `timestamp` option of the
-{{domxref("Notification.Notification","Notification()")}} constructor.
+ویژگی فقط‌خواندنی **`timestamp`** در رابط {{domxref("Notification")}} عددی را برمی‌گرداند که مقدارش مطابق گزینهٔ `timestamp` در سازندهٔ {{domxref("Notification.Notification","Notification()")}} تعیین می‌شود.
 
-The notification's timestamp can represent the time, in milliseconds since 00:00:00 UTC
-on 1 January 1970, of the event for which the notification was created, or it can be an
-arbitrary timestamp that you want associated with the notification. For example, a
-timestamp for an upcoming meeting could be set in the future, whereas a timestamp for a
-missed message could be set in the past.
+برچسب زمانیِ اعلان می‌تواند زمانِ رویدادی را نشان دهد که اعلان برای آن ساخته شده است؛ این زمان بر حسب میلی‌ثانیه از ۰۰:۰۰:۰۰ UTC در ۱ ژانویهٔ ۱۹۷۰ سنجیده می‌شود. همچنین می‌تواند یک برچسب زمانیِ دلخواه باشد که بخواهید آن را با اعلان مرتبط کنید. برای نمونه، برچسب زمانی یک جلسهٔ آینده را می‌توان در آینده تنظیم کرد؛ در حالی که برچسب زمانی یک پیام از دست‌رفته را می‌توان در گذشته قرار داد.
 
-## Value
+## مقدار
 
-A number representing a timestamp, given as {{Glossary("Unix time")}} in milliseconds.
+عددی که یک برچسب زمانی را نشان می‌دهد و به‌صورت {{Glossary("Unix time")}} بر حسب میلی‌ثانیه بیان می‌شود.
 
-## Examples
+## نمونه‌ها
 
-The following snippet fires a notification; a simple `options` object is
-created, then the notification is fired using the `Notification()`
-constructor.
+قطعه‌کد زیر یک اعلان را اجرا می‌کند؛ یک شیء سادهٔ `options` ساخته می‌شود و سپس اعلان با استفاده از سازندهٔ `Notification()` ارسال می‌شود.
 
 ```js
 const dts = Math.floor(Date.now());
@@ -50,14 +35,14 @@ const n = new Notification("New review activity", options);
 console.log(n.timestamp); // Logs the timestamp
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Using the Notifications API](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
