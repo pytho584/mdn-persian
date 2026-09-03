@@ -1,11 +1,5 @@
 ---
 title: "Node: selectstart event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Node/selectstart_event"
-status: "needs-translation"
----
-
----
-title: "Node: selectstart event"
 short-title: selectstart
 slug: Web/API/Node/selectstart_event
 page-type: web-api-event
@@ -14,13 +8,13 @@ browser-compat: api.Node.selectstart_event
 
 {{APIRef("Selection API")}}
 
-The **`selectstart`** event of the [Selection API](/en-US/docs/Web/API/Selection) is fired when a user starts a new selection.
+رویداد **`selectstart`** از [Selection API](/en-US/docs/Web/API/Selection) زمانی رخ می‌دهد که کاربر یک انتخاب جدید را آغاز می‌کند.
 
-If the event is canceled, the selection is not changed.
+اگر رویداد لغو شود، انتخاب تغییر نمی‌کند.
 
 ## Syntax
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("selectstart", (event) => { })
@@ -28,19 +22,19 @@ addEventListener("selectstart", (event) => { })
 onselectstart = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## مثال‌ها
 
 ```js
-// addEventListener version
+// نسخه addEventListener
 document.addEventListener("selectstart", () => {
   console.log("Selection started");
 });
 
-// onselectstart version
+// نسخه onselectstart
 document.onselectstart = () => {
   console.log("Selection started.");
 };
@@ -50,10 +44,10 @@ document.onselectstart = () => {
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Document/selectionchange_event", "selectionchange")}}
