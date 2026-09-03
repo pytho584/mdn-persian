@@ -1,11 +1,5 @@
 ---
 title: "Navigator: registerProtocolHandler() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/registerProtocolHandler"
-status: "needs-translation"
----
-
----
-title: "Navigator: registerProtocolHandler() method"
 short-title: registerProtocolHandler()
 slug: Web/API/Navigator/registerProtocolHandler
 page-type: web-api-instance-method
@@ -14,33 +8,33 @@ browser-compat: api.Navigator.registerProtocolHandler
 
 {{APIRef("HTML DOM")}}{{securecontext_header}}
 
-The **{{domxref("Navigator")}}** method **`registerProtocolHandler()`** lets websites register their ability to open or handle particular URL schemes (also known as protocols).
+متد **{{domxref("Navigator")}}** به نام **`registerProtocolHandler()`** به وب‌سایت‌ها این امکان را می‌دهد که توانایی خود را برای باز کردن یا مدیریت طرح‌های خاص URL (که پروتکل نیز نامیده می‌شوند) ثبت کنند.
 
-For example, this API lets webmail sites open `mailto:` URLs, or VoIP sites open `tel:` URLs.
+برای مثال، این API به وب‌سایت‌های ایمیل مبتنی بر وب اجازه می‌دهد URLهای `mailto:` را باز کنند و به وب‌سایت‌های VoIP اجازه می‌دهد URLهای `tel:` را باز کنند.
 
-To register a protocol handler, a website calls `registerProtocolHandler()`, passing in the protocol to register and a template URL.
+برای ثبت یک کنترل‌کنندهٔ پروتکل، یک وب‌سایت `registerProtocolHandler()` را فراخوانی می‌کند و پروتکل موردنظر برای ثبت و یک قالب URL را به‌عنوان ورودی به آن پاس می‌دهد.
 
-When the user activates a link that uses the registered protocol, the browser will insert the [`href`](/en-US/docs/Web/HTML/Reference/Elements/a#href) from the activated link into the URL template supplied during handler registration, and navigate the current page to the resulting URL.
+وقتی کاربر پیوندی را فعال می‌کند که از پروتکلِ ثبت‌شده استفاده می‌کند، مرورگر [`href`](/en-US/docs/Web/HTML/Reference/Elements/a#href) همان پیوندِ فعال‌شده را درون قالب URL که هنگام ثبت کنترل‌کننده ارائه شده بود جایگذاری می‌کند و صفحهٔ فعلی را به URL حاصل هدایت می‌کند.
 
-The browser may ask the user to confirm that they want the page to be allowed to handle the protocol, either when the protocol is registered or when the user activates the link.
+ممکن است مرورگر هنگام ثبت پروتکل یا هنگام فعال کردن پیوند توسط کاربر، از کاربر بپرسد که آیا می‌خواهد به صفحه اجازه داده شود آن پروتکل را مدیریت کند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 registerProtocolHandler(scheme, url)
 ```
 
-### Parameters
+### پارامترها
 
 - `scheme`
-  - : A string containing the scheme for the protocol that the site wishes to handle.
+  - : رشته‌ای شامل طرح (scheme) پروتکلی که سایت می‌خواهد مدیریت کند.
 
-    This may be a custom scheme, in which case the scheme's name:
-    - Begins with `web+`
-    - Contains at least one letter after the `web+` prefix
-    - Contains only lowercase {{Glossary("ASCII")}} letters.
+    این طرح می‌تواند سفارشی باشد، که در این صورت نام طرح باید:
+    - با `web+` شروع شود
+    - پس از پیشوند `web+` حداقل یک حرف داشته باشد
+    - فقط شامل حروف کوچک {{Glossary("ASCII")}} باشد.
 
-    Otherwise, the scheme must be one of the following:
+    در غیر این صورت، طرح باید یکی از موارد زیر باشد:
     - `bitcoin`
     - `ftp`
     - `ftps`
@@ -69,50 +63,48 @@ registerProtocolHandler(scheme, url)
     <!-- This must match: https://html.spec.whatwg.org/multipage/system-state.html#safelisted-scheme -->
 
 - `url`
-  - : A string containing the URL of the handler.
-    This URL must include `%s`, as a placeholder that will be replaced with the [escaped](/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent) URL to be handled.
+  - : رشته‌ای شامل URL کنترل‌کننده. این URL باید شامل `%s` به‌عنوان یک جاینگهدار (placeholder) باشد که با [نسخهٔ کدگذاری (escape) شده](/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent) URLِ موردنظر جایگزین خواهد شد.
 
-    The handler URL must use the `https` scheme, and must be of the same {{glossary("origin")}} as the webpage that is attempting to register the handler.
+    URL کنترل‌کننده باید از طرح `https` استفاده کند و {{glossary("origin")}} آن باید با خاستگاه صفحهٔ وبی که در حال ثبت کنترل‌کننده است یکسان باشد.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-### Exceptions
+### استثناها
 
 - `SecurityError` {{domxref("DOMException")}}
-  - : The user agent blocked the registration.
-    This might happen if:
-    - The registered scheme (protocol) is invalid, such as a scheme the browser handles itself (`https:`, `about:`, etc.)
-    - The handler URL's {{Glossary("origin")}} does not match the origin of the page calling this API.
-    - The handler's URL's scheme is not `https`.
+  - : عامل کاربر (user agent) ثبت را مسدود کرده است. این وضعیت ممکن است در این موارد رخ دهد:
+    - طرح (پروتکل) ثبت‌شده نامعتبر باشد؛ مانند طرحی که خود مرورگر مدیریت می‌کند (`https:`، `about:` و غیره).
+    - {{Glossary("origin")}} در URL کنترل‌کننده با خاستگاه صفحهٔ فراخوانندهٔ این API یکسان نباشد.
+    - طرح URLِ کنترل‌کننده `https` نباشد.
 
 - `SyntaxError` {{domxref("DOMException")}}
-  - : The `%s` placeholder is missing from the handler URL.
+  - : جاینگهدار `%s` در URL کنترل‌کننده وجود ندارد.
 
-## Examples
+## مثال‌ها
 
-### Registering a handler for the mailto protocol
+### ثبت یک کنترل‌کننده برای پروتکل mailto
 
-It's fairly common for web pages to link to resources using non-`https` protocols. An example is the `mailto:` protocol. Web authors can use a `mailto` link when they want to provide a convenient way for users to send an email directly from the webpage:
+بسیار رایج است که صفحات وب برای پیوند به منابع از پروتکل‌هایی غیر از `https` استفاده کنند. یک نمونهٔ آن پروتکل `mailto:` است. نویسندگان وب می‌توانند هر وقت بخواهند راهی آسان برای ارسال مستقیم ایمیل از صفحهٔ وب در اختیار کاربران بگذارند، از پیوند `mailto` استفاده کنند:
 
 ```html
 <a href="mailto:webmaster@example.com">Web Master</a>
 ```
 
-When the link is activated, the browser should launch the default desktop application for handling email. You can think of this as a _desktop-based_ protocol handler.
+با فعال شدن پیوند، مرورگر باید برنامهٔ پیش‌فرض رومیزی برای مدیریت ایمیل را اجرا کند. می‌توانید این را به‌عنوان یک کنترل‌کنندهٔ پروتکلِ _مبتنی بر دسکتاپ_ در نظر بگیرید.
 
-Web-based protocol handlers allow web-based applications to participate in the process too. An email web app at `mail.example.org` can register to handle `mailto` links with code like this:
+کنترل‌کننده‌های پروتکل مبتنی بر وب به برنامه‌های تحت وب نیز اجازه می‌دهند در این فرایند مشارکت کنند. یک برنامهٔ ایمیل تحت وب در `mail.example.org` می‌تواند با کدی مانند زیر برای مدیریت پیوندهای `mailto` ثبت شود:
 
 ```js
 navigator.registerProtocolHandler("mailto", "https://mail.example.org/?to=%s");
 ```
 
-After this, when the user clicks a `mailto` link on any website, the browser will (after possibly asking the browser for confirmation) navigate to `https://mail.example.org/?to=mailto:webmaster@example.com`. This page could parse the URL parameter to extract the address, and use this to initialize an email.
+پس از این کار، وقتی کاربر روی یک پیوند `mailto` در هر وب‌سایتی کلیک کند، مرورگر (شاید پس از جلب تأیید کاربر) به `https://mail.example.org/?to=mailto:webmaster@example.com` هدایت می‌شود. این صفحه می‌تواند پارامتر URL را تجزیه کند تا آدرس را استخراج کند و از آن برای ساخت یک ایمیل استفاده کند.
 
-### Registering a handler for a custom protocol
+### ثبت یک کنترل‌کننده برای یک پروتکل سفارشی
 
-In this example, a page registers a handler for the `web+burger` protocol with code like this:
+در این مثال، یک صفحه با کدی مانند زیر، کنترل‌کننده‌ای برای پروتکل `web+burger` ثبت می‌کند:
 
 ```js
 navigator.registerProtocolHandler(
@@ -121,18 +113,18 @@ navigator.registerProtocolHandler(
 );
 ```
 
-Subsequently, the user visit a page containing a link like this:
+سپس، کاربر از صفحه‌ای بازدید می‌کند که پیوندی مانند زیر دارد:
 
 ```html
 <a href="web+burger:cheeseburger">cheeseburger</a>
 ```
 
-If the user activates the `web+burger` link, the browser will (after possibly asking the user for confirmation) navigate to `https://burgers.example.org/?burger=web+burger:cheeseburger`.
+اگر کاربر پیوند `web+burger` را فعال کند، مرورگر (شاید پس از جلب تأیید کاربر) به `https://burgers.example.org/?burger=web+burger:cheeseburger` هدایت می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
