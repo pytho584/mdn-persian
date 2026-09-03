@@ -1,11 +1,5 @@
 ---
 title: "PerformanceResourceTiming: encodedBodySize property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceResourceTiming/encodedBodySize"
-status: "needs-translation"
----
-
----
-title: "PerformanceResourceTiming: encodedBodySize property"
 short-title: encodedBodySize
 slug: Web/API/PerformanceResourceTiming/encodedBodySize
 page-type: web-api-instance-property
@@ -14,23 +8,22 @@ browser-compat: api.PerformanceResourceTiming.encodedBodySize
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The **`encodedBodySize`** read-only property represents the size (in octets) received from the fetch (HTTP or cache) of the payload body before removing any applied content encodings (like gzip or Brotli). If the resource is retrieved from an application cache or a local resource, it must
-return the size of the payload body before removing any applied content encoding.
+ویژگی فقط‌خواندنی **`encodedBodySize`** اندازهٔ (به اوکتت) بدنهٔ دادهٔ باری را نشان می‌دهد که از طریق واکشی (HTTP یا حافظهٔ نهان) دریافت شده است، پیش از حذف هرگونه رمزگذاری محتوای اعمال‌شده (مانند gzip یا Brotli). اگر منبع از حافظهٔ نهان برنامه یا یک منبع محلی بازیابی شود، این ویژگی باید اندازهٔ بدنهٔ دادهٔ بار را پیش از حذف هرگونه رمزگذاری محتوای اعمال‌شده بازگرداند.
 
-## Value
+## مقدار
 
-The `encodedBodySize` property can have the following values:
+ویژگی `encodedBodySize` می‌تواند مقادیر زیر را داشته باشد:
 
-- A number representing the size (in octets) received from the fetch (HTTP or cache), of the payload body, before removing any applied content encoding.
-- `0` if the resource is a cross-origin request and no {{HTTPHeader("Timing-Allow-Origin")}} HTTP response header is used.
+- عددی که اندازهٔ (به اوکتت) بدنهٔ دادهٔ بار دریافت‌شده از واکشی (HTTP یا حافظهٔ نهان) را پیش از حذف هرگونه رمزگذاری محتوای اعمال‌شده نشان می‌دهد.
+- `0` اگر منبع یک درخواست متقاطع-مبدأ (cross-origin) باشد و هیچ هدر پاسخ HTTP {{HTTPHeader("Timing-Allow-Origin")}} استفاده نشده باشد.
 
-## Examples
+## مثال‌ها
 
-### Checking if content was compressed
+### بررسی اینکه آیا محتوا فشرده شده است
 
-If the `encodedBodySize` and {{domxref("PerformanceResourceTiming.decodedBodySize", "decodedBodySize")}} properties are non-null and differ, the content was compressed (for example, gzip or Brotli).
+اگر ویژگی‌های `encodedBodySize` و {{domxref("PerformanceResourceTiming.decodedBodySize", "decodedBodySize")}} مقدار غیر از `null` داشته باشند و با هم تفاوت داشته باشند، محتوا فشرده شده است (مثلاً با gzip یا Brotli).
 
-Example using a {{domxref("PerformanceObserver")}}, which notifies of new `resource` performance entries as they are recorded in the browser's performance timeline. Use the `buffered` option to access entries from before the observer creation.
+مثالی با استفاده از {{domxref("PerformanceObserver")}}، که هنگام ثبت ورودی‌های عملکرد جدید از نوع `resource` در خط زمانی عملکرد مرورگر اعلان می‌فرستد. برای دسترسی به ورودی‌هایی که پیش از ساخته‌شدن observer ثبت شده‌اند، از گزینهٔ `buffered` استفاده کنید.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -46,7 +39,7 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "resource", buffered: true });
 ```
 
-Example using {{domxref("Performance.getEntriesByType()")}}, which only shows `resource` performance entries present in the browser's performance timeline at the time you call this method:
+مثالی با استفاده از {{domxref("Performance.getEntriesByType()")}}، که فقط ورودی‌های عملکرد `resource` موجود در خط زمانی عملکرد مرورگر را در لحظهٔ فراخوانی این متد نمایش می‌دهد:
 
 ```js
 const resources = performance.getEntriesByType("resource");
@@ -59,24 +52,24 @@ resources.forEach((entry) => {
 });
 ```
 
-### Cross-origin content size information
+### اطلاعات اندازهٔ محتوای متقاطع-مبدأ
 
-If the value of the `encodedBodySize` property is `0`, the resource might be a cross-origin request. To expose cross-origin content size information, the {{HTTPHeader("Timing-Allow-Origin")}} HTTP response header needs to be set.
+اگر مقدار ویژگی `encodedBodySize` برابر با `0` باشد، منبع احتمالاً یک درخواست متقاطع-مبدأ است. برای افشای اطلاعات اندازهٔ محتوای متقاطع-مبدأ، باید هدر پاسخ HTTP {{HTTPHeader("Timing-Allow-Origin")}} تنظیم شود.
 
-For example, to allow `https://developer.mozilla.org` to see content sizes, the cross-origin resource should send:
+برای مثال، برای آنکه `https://developer.mozilla.org` بتواند اندازه‌های محتوا را ببیند، منبع متقاطع-مبدأ باید هدر زیر را ارسال کند:
 
 ```http
 Timing-Allow-Origin: https://developer.mozilla.org
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTTPHeader("Timing-Allow-Origin")}}
