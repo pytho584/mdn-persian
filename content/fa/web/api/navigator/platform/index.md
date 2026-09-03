@@ -1,7 +1,5 @@
 ---
 title: "Navigator: platform property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/platform"
-status: "needs-translation"
 ---
 
 ---
@@ -14,32 +12,32 @@ browser-compat: api.Navigator.platform
 
 {{APIRef("HTML DOM")}}
 
-The **`platform`** property read-only property of the {{domxref("Navigator")}} interface returns a string identifying the platform on which the user's browser is running.
+ویژگی **`platform`** که یک ویژگی فقط‌خواندنیِ رابط {{domxref("Navigator")}} است، رشته‌ای را برمی‌گرداند که پلتفرمِ در حال اجرای مرورگر کاربر را شناسایی می‌کند.
 
-## Value
+## مقدار
 
-A string indicating a platform, for example:
+رشته‌ای که یک پلتفرم را نشان می‌دهد، برای مثال:
 
 - `"MacIntel"`
 - `"Win32"`
 - `"Linux x86_64"`
 
 > [!NOTE]
-> On Windows, modern browsers return `"Win32"` even if running on a 64-bit version of Windows.
+> در ویندوز، مرورگرهای مدرن حتی اگر روی نسخهٔ ۶۴ بیتی ویندوز اجرا شوند، مقدار `"Win32"` را برمی‌گردانند.
 
-## Description
+## توضیحات
 
-The `platform` property indicates the platform/OS the browser is running on.
+ویژگی `platform` پلتفرم/سیستم‌عاملی را که مرورگر روی آن اجرا می‌شود، نشان می‌دهد.
 
-Theoretically this information is useful for detecting the browser and serving code to work around browser-specific bugs or lack of feature support. However, this is **unreliable** and **is not recommended** for the reasons given in [User-Agent reduction](/en-US/docs/Web/HTTP/Guides/User-agent_reduction) and [Browser detection using the user agent](/en-US/docs/Web/HTTP/Guides/Browser_detection_using_the_user_agent).
+از نظر تئوری، این اطلاعات برای تشخیص مرورگر و ارائهٔ کدی برای دور زدن باگ‌های خاص مرورگر یا نبودِ پشتیبانی از قابلیت‌ها مفید است. با این حال، این روش **غیرقابل اعتماد** است و **توصیه نمی‌شود**؛ به دلایلی که در [کاهش User-Agent](/en-US/docs/Web/HTTP/Guides/User-agent_reduction) و [تشخیص مرورگر با استفاده از user agent](/en-US/docs/Web/HTTP/Guides/Browser_detection_using_the_user_agent) آمده است.
 
-[Feature detection](/en-US/docs/Learn_web_development/Extensions/Testing/Feature_detection) is a much more reliable strategy.
+[تشخیص قابلیت (Feature detection)](/en-US/docs/Learn_web_development/Extensions/Testing/Feature_detection) راهبرد بسیار قابل اعتمادتری است.
 
-## Examples
+## مثال‌ها
 
-### Determining the modifier key for the user's platform
+### تعیین کلید اصلاح‌گر (modifier key) برای پلتفرم کاربر
 
-One case where `navigator.platform` can be useful is when you need to show users advice about whether the modifier key for keyboard shortcuts is the `⌘` command key (found on Apple systems) rather than the `Ctrl` control key (on non-Apple systems):
+یک مورد استفاده که `navigator.platform` می‌تواند مفید باشد، زمانی است که نیاز دارید به کاربران راهنمایی نشان دهید که آیا کلید اصلاح‌گر میانبرهای صفحه‌کلید، کلید فرمان `⌘` (در سیستم‌های اپل) است یا کلید کنترل `Ctrl` (در سیستم‌های غیر اپل):
 
 ```js
 const modifierKeyPrefix =
@@ -48,17 +46,17 @@ const modifierKeyPrefix =
     : "Ctrl"; // control key
 ```
 
-This code checks if `navigator.platform` starts with `"Mac"` or else is an exact match for `"iPhone"`, and then based on whether either of those is `true`, sets a `modifierKeyPrefix` variable to the appropriate modifier key for the user's platform. This could be used in a web UI to tell users which modifier key they need when using keyboard shortcuts.
+این کد بررسی می‌کند که آیا `navigator.platform` با `"Mac"` شروع می‌شود یا دقیقاً با `"iPhone"` برابر است، و سپس بر اساس درست بودن هر یک از این دو شرط، متغیر `modifierKeyPrefix` را به کلید اصلاح‌گر مناسبِ پلتفرم کاربر تنظیم می‌کند. این کار می‌تواند در رابط کاربری وب برای نشان دادنِ این که کاربران هنگام استفاده از میانبرهای صفحه‌کلید به کدام کلید اصلاح‌گر نیاز دارند، به کار رود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Navigator.userAgent")}}
-- {{HTTPHeader("User-agent")}} HTTP header
+- {{HTTPHeader("User-agent")}} هدر HTTP
