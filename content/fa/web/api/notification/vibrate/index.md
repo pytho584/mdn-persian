@@ -1,11 +1,5 @@
 ---
 title: "Notification: vibrate property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Notification/vibrate"
-status: "needs-translation"
----
-
----
-title: "Notification: vibrate property"
 short-title: vibrate
 slug: Web/API/Notification/vibrate
 page-type: web-api-instance-property
@@ -16,21 +10,15 @@ browser-compat: api.Notification.vibrate
 
 {{APIRef("Web Notifications")}}{{SecureContext_Header}}{{SeeCompatTable}} {{AvailableInWorkers}}
 
-The **`vibrate`** read-only property of the {{domxref("Notification")}}
-interface specifies a [vibration pattern](/en-US/docs/Web/API/Vibration_API#vibration_patterns)
-for the device's vibration hardware to emit when the notification fires. This is
-specified in the `vibrate` option of the
-{{domxref("Notification.Notification","Notification()")}} constructor.
+ویژگی **`vibrate`** با وضعیت فقط‌خواندنی از رابط {{domxref("Notification")}} یک [الگوی لرزش](/en-US/docs/Web/API/Vibration_API#vibration_patterns) را برای سخت‌افزار لرزش دستگاه مشخص می‌کند که هنگام فعال‌شدن اعلان باید منتشر شود. این مقدار از طریق گزینهٔ `vibrate` در سازندهٔ {{domxref("Notification.Notification","Notification()")}} تعیین می‌شود.
 
-## Value
+## مقدار
 
-A [vibration pattern](/en-US/docs/Web/API/Vibration_API#vibration_patterns), as specified in the [Vibration API spec](https://w3c.github.io/vibration/).
+یک [الگوی لرزش](/en-US/docs/Web/API/Vibration_API#vibration_patterns)، همان‌طور که در [مشخصات Vibration API](https://w3c.github.io/vibration/) مشخص شده است.
 
-## Examples
+## مثال‌ها
 
-The following snippet is intended to create a notification that also triggers a device
-vibration; a simple `options` object is created, and then the notification is
-fired using the `Notification()` constructor.
+قطعه‌کد زیر برای ایجاد اعلانی در نظر گرفته شده است که لرزش دستگاه را نیز فعال می‌کند؛ یک شیء ساده به نام `options` ساخته می‌شود و سپس اعلان با استفاده از سازندهٔ `Notification()` فعال می‌شود.
 
 ```js
 const options = {
@@ -43,14 +31,14 @@ const n = new Notification("New review activity", options);
 console.log(n.vibrate); // [200, 100, 200]
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Notifications API](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
+- [استفاده از API اعلان‌ها](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
