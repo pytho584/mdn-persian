@@ -1,10 +1,4 @@
 ---
-title: "PictureInPictureWindow"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PictureInPictureWindow"
-status: "needs-translation"
----
-
----
 title: PictureInPictureWindow
 slug: Web/API/PictureInPictureWindow
 page-type: web-api-interface
@@ -13,35 +7,35 @@ browser-compat: api.PictureInPictureWindow
 
 {{APIRef("Picture-in-Picture API")}}
 
-The **`PictureInPictureWindow`** interface represents an object able to programmatically obtain the **`width`** and **`height`** and **`resize event`** of the floating video window.
+رابط **`PictureInPictureWindow`** شیئی را نشان می‌دهد که می‌تواند به صورت برنامه‌نویسی‌شده، **`width`**، **`height`** و **`resize event`** مربوط به پنجرهٔ ویدئوی شناور را در اختیار قرار دهد.
 
-An object with this interface is obtained using the {{domxref("HTMLVideoElement.requestPictureInPicture()")}} promise return value.
+یک شیء با این رابط از طریق مقدار بازگشتی {{domxref("HTMLVideoElement.requestPictureInPicture()")}} که از نوع Promise است به دست می‌آید.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_The `PictureInPictureWindow` interface doesn't inherit any properties._
+_رابط `PictureInPictureWindow` هیچ ویژگی‌ای را به ارث نمی‌برد._
 
 - {{domxref("PictureInPictureWindow.width")}} {{ReadOnlyInline}}
-  - : Determines the width of the floating video window.
+  - : عرض پنجرهٔ ویدئوی شناور را تعیین می‌کند.
 - {{domxref("PictureInPictureWindow.height")}} {{ReadOnlyInline}}
-  - : Determines the height of the floating video window.
+  - : ارتفاع پنجرهٔ ویدئوی شناور را تعیین می‌کند.
 
-## Instance methods
+## متدهای نمونه
 
-_The `PictureInPictureWindow` interface doesn't inherit any methods._
+_رابط `PictureInPictureWindow` هیچ متدی را به ارث نمی‌برد._
 
-## Events
+## رویدادها
 
-_The `PictureInPictureWindow` interface doesn't inherit any events._
+_رابط `PictureInPictureWindow` هیچ رویدادی را به ارث نمی‌برد._
 
 - {{domxref("PictureInPictureWindow.resize_event", "resize")}}
-  - : Sent to a `PictureInPictureWindow` when the floating video window is resized.
+  - : وقتی اندازهٔ پنجرهٔ ویدئوی شناور تغییر کند، به یک `PictureInPictureWindow` ارسال می‌شود.
 
-## Examples
+## مثال‌ها
 
-Given a `<button>` and a `<video>`, clicking the button will make the video enter the picture-in-picture mode; we then attach an event to print the floating video window dimensions to the console.
+در مثال زیر، یک `<button>` و یک `<video>` داریم؛ با کلیک روی دکمه، ویدئو وارد حالت تصویر-در-تصویر می‌شود. سپس یک رویداد به آن متصل می‌کنیم تا ابعاد پنجرهٔ شناور ویدئو را در کنسول چاپ کند.
 
 ```js
 const button = document.querySelector("button");
@@ -63,14 +57,14 @@ button.onclick = () => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Picture-in-Picture API](/en-US/docs/Web/API/Picture-in-Picture_API)
