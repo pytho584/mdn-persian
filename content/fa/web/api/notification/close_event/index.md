@@ -1,11 +1,5 @@
 ---
 title: "Notification: close event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Notification/close_event"
-status: "needs-translation"
----
-
----
-title: "Notification: close event"
 short-title: close
 slug: Web/API/Notification/close_event
 page-type: web-api-event
@@ -14,11 +8,11 @@ browser-compat: api.Notification.close_event
 
 {{APIRef("Web Notifications")}}{{securecontext_header}} {{AvailableInWorkers}}
 
-The **`close`** event of the {{domxref("Notification")}} interface fires when a {{domxref("Notification")}} is closed.
+رویداد **`close`** از رابط {{domxref("Notification")}} زمانی رخ می‌دهد که یک {{domxref("Notification")}} بسته می‌شود.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای استفاده از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} یا تنظیم ویژگی مدیریت رویداد (event handler property) می‌توانید به صورت زیر عمل کنید:
 
 ```js-nolint
 addEventListener("close", (event) => { })
@@ -26,18 +20,18 @@ addEventListener("close", (event) => { })
 onclose = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Notifications API](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
+- [استفاده از Notifications API](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
