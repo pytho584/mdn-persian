@@ -1,7 +1,6 @@
 ---
 title: "PerformanceResourceTiming: toJSON() method"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceResourceTiming/toJSON"
-status: "needs-translation"
 ---
 
 ---
@@ -14,27 +13,27 @@ browser-compat: api.PerformanceResourceTiming.toJSON
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The **`toJSON()`** method of the {{domxref("PerformanceResourceTiming")}} interface is a {{Glossary("Serialization","serializer")}}; it returns a JSON representation of the {{domxref("PerformanceResourceTiming")}} object.
+متد **`toJSON()`** در رابط {{domxref("PerformanceResourceTiming")}} یک {{Glossary("Serialization","سریالساز")}} است؛ این متد نمایش JSON از شیء {{domxref("PerformanceResourceTiming")}} را بازمیگرداند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 toJSON()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("JSON")}} object that is the serialization of the {{domxref("PerformanceResourceTiming")}} object.
+یک شیء {{jsxref("JSON")}} که سریالسازی شیء {{domxref("PerformanceResourceTiming")}} است.
 
-## Examples
+## مثالها
 
-### Using the toJSON method
+### استفاده از متد toJSON
 
-In this example, calling `entry.toJSON()` returns a JSON representation of the `PerformanceResourceTiming` object.
+در این مثال، فراخوانی `entry.toJSON()` یک نمایش JSON از شیء `PerformanceResourceTiming` بازمیگرداند.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -46,7 +45,7 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "resource", buffered: true });
 ```
 
-This would log a JSON object like so:
+این کار یک شیء JSON مانند زیر را در کنسول ثبت میکند:
 
 ```json
 {
@@ -88,16 +87,16 @@ This would log a JSON object like so:
 }
 ```
 
-To get a JSON string, you can use [`JSON.stringify(entry)`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) directly; it will call `toJSON()` automatically.
+برای دریافت رشته JSON میتوانید مستقیماً از [`JSON.stringify(entry)`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) استفاده کنید؛ این متد بهطور خودکار `toJSON()` را فراخوانی میکند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{jsxref("JSON")}}
