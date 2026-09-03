@@ -1,7 +1,6 @@
 ---
 title: "PointerEvent: width property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent/width"
-status: "needs-translation"
 ---
 
 ---
@@ -14,24 +13,17 @@ browser-compat: api.PointerEvent.width
 
 {{ APIRef("Pointer Events") }}
 
-The **`width`** read-only property of the
-{{domxref("PointerEvent")}} interface represents the width of the pointer's contact
-geometry along the x-axis, measured in CSS pixels. Depending on the source of the
-pointer device (such as a finger), for a given pointer, each event may produce a
-different value.
+ویژگی فقط‌خواندنی **`width`** در رابط {{domxref("PointerEvent")}}، عرض هندسه‌ی تماسِ اشاره‌گر را در امتداد محور x نشان می‌دهد که با واحد پیکسل CSS اندازه‌گیری می‌شود. بسته به منبع دستگاه اشاره‌گر (مانند انگشت)، ممکن است برای یک اشاره‌گر مشخص، هر رویداد مقدار متفاوتی تولید کند.
 
-If the input hardware cannot report the contact geometry to the browser, the width
-defaults to `1`.
+اگر سخت‌افزار ورودی قادر به گزارش هندسه‌ی تماس به مرورگر نباشد، مقدار `width` به‌صورت پیش‌فرض `1` خواهد بود.
 
-## Value
+## مقدار
 
-The width of the event's contact area (in CSS pixels).
+عرض ناحیه‌ی تماس رویداد (بر حسب پیکسل CSS).
 
-## Examples
+## مثال‌ها
 
-This example illustrates using the {{domxref("PointerEvent")}} interface's
-`width` and
-{{domxref("PointerEvent.height","height")}} properties to calculate the contact area.
+این مثال استفاده از ویژگی‌های `width` و {{domxref("PointerEvent.height","height")}} در رابط {{domxref("PointerEvent")}} را برای محاسبه‌ی ناحیه‌ی تماس نشان می‌دهد.
 
 ```js
 target.addEventListener("pointerdown", (ev) => {
@@ -40,10 +32,10 @@ target.addEventListener("pointerdown", (ev) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
