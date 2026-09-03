@@ -1,11 +1,5 @@
 ---
 title: "PerformanceResourceTiming: workerStart property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceResourceTiming/workerStart"
-status: "needs-translation"
----
-
----
-title: "PerformanceResourceTiming: workerStart property"
 short-title: workerStart
 slug: Web/API/PerformanceResourceTiming/workerStart
 page-type: web-api-instance-property
@@ -14,28 +8,27 @@ browser-compat: api.PerformanceResourceTiming.workerStart
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The **`workerStart`** read-only property of the {{domxref("PerformanceResourceTiming")}} interface returns a
-{{domxref("DOMHighResTimeStamp")}} immediately before dispatching the {{domxref("FetchEvent")}} if a Service Worker thread is already running, or immediately before starting the Service Worker thread if it is not already running. If the resource is not intercepted by a Service Worker the property will always return 0.
+ویژگی فقط‌خواندنی **`workerStart`** از رابط {{domxref("PerformanceResourceTiming")}} یک {{domxref("DOMHighResTimeStamp")}} را بلافاصله قبل از ارسال {{domxref("FetchEvent")}} برمی‌گرداند، اگر یک Service Worker از قبل در حال اجرا باشد، یا بلافاصله قبل از شروع‌کردن رشتهٔ Service Worker، اگر هنوز در حال اجرا نباشد. اگر منبع توسط یک Service Worker رهگیری نشده باشد، این ویژگی همیشه `0` برمی‌گرداند.
 
-## Value
+## مقدار
 
-The `workerStart` property can have the following values:
+ویژگی `workerStart` می‌تواند مقادیر زیر را داشته باشد:
 
-- A {{domxref("DOMHighResTimeStamp")}}.
-- `0` if no service worker is used.
-- `0` if the resource is a cross-origin request and no {{HTTPHeader("Timing-Allow-Origin")}} HTTP response header is used.
+- یک {{domxref("DOMHighResTimeStamp")}}.
+- در صورت عدم استفاده از سرویس‌کارگر، مقدار `0`.
+- اگر منبع یک درخواست متقاطع (cross-origin) باشد و از هدر پاسخ {{HTTPHeader("Timing-Allow-Origin")}} استفاده نشده باشد، مقدار `0`.
 
-## Examples
+## مثال‌ها
 
-### Measuring ServiceWorker processing time
+### اندازه‌گیری زمان پردازش ServiceWorker
 
-The `workerStart` and {{domxref("PerformanceResourceTiming.fetchStart", "fetchStart")}} properties can be used to measure the processing time of a {{domxref("ServiceWorker")}}.
+از ویژگی‌های `workerStart` و {{domxref("PerformanceResourceTiming.fetchStart", "fetchStart")}} می‌توان برای اندازه‌گیری زمان پردازش یک {{domxref("ServiceWorker")}} استفاده کرد.
 
 ```js
 const workerProcessingTime = entry.fetchStart - entry.workerStart;
 ```
 
-Example using a {{domxref("PerformanceObserver")}}, which notifies of new `resource` performance entries as they are recorded in the browser's performance timeline. Use the `buffered` option to access entries from before the observer creation.
+مثال استفاده از {{domxref("PerformanceObserver")}} که با ثبت هر ورودی `resource` جدید در خط زمانی عملکرد مرورگر، اطلاع می‌دهد. از گزینهٔ `buffered` برای دسترسی به ورودی‌های قبل از ایجاد observer استفاده کنید.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -52,7 +45,7 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "resource", buffered: true });
 ```
 
-Example using {{domxref("Performance.getEntriesByType()")}}, which only shows `resource` performance entries present in the browser's performance timeline at the time you call this method:
+مثال استفاده از {{domxref("Performance.getEntriesByType()")}}، که فقط ورودی‌های عملکرد `resource` موجود در خط زمانی عملکرد مرورگر را در زمان فراخوانی این متد نشان می‌دهد:
 
 ```js
 const resources = performance.getEntriesByType("resource");
@@ -66,24 +59,24 @@ resources.forEach((entry) => {
 });
 ```
 
-### Cross-origin timing information
+### اطلاعات زمان‌بندی متقاطع (Cross-origin)
 
-If the value of the `workerStart` property is `0`, the resource might be a cross-origin request. To allow seeing cross-origin timing information, the {{HTTPHeader("Timing-Allow-Origin")}} HTTP response header needs to be set.
+اگر مقدار ویژگی `workerStart` برابر با `0` باشد، منبع ممکن است یک درخواست متقاطع باشد. برای اجازه‌دادن به مشاهدهٔ اطلاعات زمان‌بندی متقاطع، باید هدر پاسخ {{HTTPHeader("Timing-Allow-Origin")}} تنظیم شود.
 
-For example, to allow `https://developer.mozilla.org` to see timing resources, the cross-origin resource should send:
+برای مثال، برای اجازه‌دادن به `https://developer.mozilla.org` جهت مشاهدهٔ منابع زمان‌بندی، منبع متقاطع باید ارسال کند:
 
 ```http
 Timing-Allow-Origin: https://developer.mozilla.org
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTTPHeader("Timing-Allow-Origin")}}
