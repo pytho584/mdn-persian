@@ -1,11 +1,5 @@
 ---
 title: "PerformanceTiming: unloadEventEnd property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/unloadEventEnd"
-status: "needs-translation"
----
-
----
-title: "PerformanceTiming: unloadEventEnd property"
 short-title: unloadEventEnd
 slug: Web/API/PerformanceTiming/unloadEventEnd
 page-type: web-api-instance-property
@@ -17,28 +11,24 @@ browser-compat: api.PerformanceTiming.unloadEventEnd
 {{APIRef("Performance API")}}{{Deprecated_Header}}
 
 > [!WARNING]
-> This interface of this property is deprecated in the [Navigation Timing Level 2 specification](https://w3c.github.io/navigation-timing/#obsolete). Please use the {{domxref("PerformanceNavigationTiming")}}
-> interface instead.
+> این رابط (interface) در [نسخه ۲ مشخصات زمان‌بندی ناوبری](https://w3c.github.io/navigation-timing/#obsolete) منسوخ شده است. لطفاً به جای آن از رابط {{domxref("PerformanceNavigationTiming")}} استفاده کنید.
 
-The legacy
+ویژگی فقط‑خواندنی قدیمی
 **`PerformanceTiming.unloadEventEnd`**
-read-only property returns an `unsigned long long` representing the moment,
-in milliseconds since the UNIX epoch, the {{domxref("Window/unload_event", "unload")}} event handler finishes. If
-there is no previous document, or if the previous document, or one of the needed
-redirects, is not of the same origin, the value returned is `0`.
+یک `unsigned long long` را برمی‌گرداند که نشان‌دهندهٔ لحظه‌ای (بر حسب میلی‌ثانیه از مبدأ UNIX) است که مدیریت‌کنندهٔ رویداد {{domxref("Window/unload_event", "unload")}} پایان می‌یابد. اگر سند قبلی وجود نداشته باشد، یا سند قبلی (یا یکی از تغییرمسیرهای مورد نیاز) از مبدأ یکسانی نباشد، مقدار بازگشتی `0` است.
 
-## Value
+## مقدار
 
-An `unsigned long long`.
+یک `unsigned long long`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("PerformanceTiming")}} interface it belongs to.
+- رابط {{domxref("PerformanceTiming")}} که این ویژگی به آن تعلق دارد.
