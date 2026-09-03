@@ -1,11 +1,5 @@
 ---
 title: "PeriodicSyncManager: getTags() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PeriodicSyncManager/getTags"
-status: "needs-translation"
----
-
----
-title: "PeriodicSyncManager: getTags() method"
 short-title: getTags()
 slug: Web/API/PeriodicSyncManager/getTags
 page-type: web-api-instance-method
@@ -16,34 +10,29 @@ browser-compat: api.PeriodicSyncManager.getTags
 
 {{APIRef("Periodic Background Sync")}}{{SeeCompatTable}}{{AvailableInWorkers}}
 
-The **`getTags()`** method of the
-{{domxref("PeriodicSyncManager")}} interface returns a {{jsxref('Promise')}} that
-resolves with a list of {{jsxref('String')}} objects representing the tags that are
-currently registered for periodic syncing.
+متد **`getTags()`** از رابط {{domxref("PeriodicSyncManager")}} یک {{jsxref('Promise')}} برمی‌گرداند که با فهرستی از آبجکت‌های {{jsxref('String')}} resolve می‌شود؛ این فهرست برچسب‌هایی را نشان می‌دهد که در حال حاضر برای همگام‌سازی دوره‌ای ثبت شده‌اند.
 
-## Syntax
+## دستور زبان
 
 ```js-nolint
 getTags()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref('Promise')}} which resolves with a list of {{jsxref('String')}} objects
-representing tags that are currently registered for periodic syncing.
+یک {{jsxref('Promise')}} که به فهرستی از آبجکت‌های {{jsxref('String')}} resolve می‌شود و برچسب‌هایی را نشان می‌دهد که در حال حاضر برای همگام‌سازی دوره‌ای ثبت شده‌اند.
 
-### Exceptions
+### استثناها
 
-None.
+هیچ.
 
-## Examples
+## مثال‌ها
 
-The following example uses the `getTags()` method to check if a periodic
-sync task with a given tag is registered.
+مثال زیر از متد `getTags()` استفاده می‌کند تا بررسی کند آیا کار همگام‌سازی دوره‌ای با یک برچسب مشخص ثبت شده است یا خیر.
 
 ```js
 navigator.serviceWorker.ready.then((registration) => {
@@ -53,16 +42,16 @@ navigator.serviceWorker.ready.then((registration) => {
 });
 ```
 
-`skipDownloadingLatestNewsOnPageLoad()` is a developer defined function.
+`skipDownloadingLatestNewsOnPageLoad()` یک تابع تعریف‌شده توسط توسعه‌دهنده است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Richer offline experiences with the Periodic Background Sync API](https://developer.chrome.com/docs/capabilities/periodic-background-sync)
+- [تجربه‌های آفلاین غنی‌تر با Periodic Background Sync API](https://developer.chrome.com/docs/capabilities/periodic-background-sync)
