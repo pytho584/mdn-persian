@@ -1,7 +1,5 @@
 ---
 title: "PressureRecord: state property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PressureRecord/state"
-status: "needs-translation"
 ---
 
 ---
@@ -16,22 +14,20 @@ browser-compat: api.PressureRecord.state
 
 {{APIRef("Compute Pressure API")}}{{SeeCompatTable}}{{AvailableInWorkers("window_and_worker_except_service")}}{{securecontext_header}}
 
-The read-only **`state`** property is a string indicating the pressure state recorded.
+ویژگی فقطخواندنی **`state`** یک رشته است که وضعیت فشارِ ثبت‌شده را نشان می‌دهد.
 
 ## Value
 
-A string indicating the pressure state recorded. The Compute Pressure API uses human-readable pressure states with the following semantics (see also the [specification](https://w3c.github.io/compute-pressure/#pressure-states)):
+یک رشته که وضعیت فشارِ ثبت‌شده را نشان می‌دهد. Compute Pressure API از وضعیت‌های فشارِ قابل‌خواندن برای انسان استفاده می‌کند که معانی زیر را دارند (همچنین به [specification](https://w3c.github.io/compute-pressure/#pressure-states) مراجعه کنید):
 
-- ⚪ `"nominal"`: The conditions of the target device are at an acceptable level with no noticeable adverse effects on the user.
-- 🟢 `"fair"`: Target device pressure, temperature and/or energy usage are slightly elevated, potentially resulting in reduced battery-life, as well as fans (or systems with fans) becoming active and audible. Apart from that the target device is running flawlessly and can take on additional work.
-- 🟡 `"serious"`: Target device pressure, temperature and/or energy usage is consistently highly elevated. The system may be throttling as a countermeasure to reduce thermals.
-- 🔴 `"critical"`: The temperature of the target device or system is significantly elevated and it requires cooling down to avoid any potential issues.
+- ⚪ `"nominal"`: شرایط دستگاه هدف در سطح قابل‌قبولی است و هیچ اثر نامطلوب محسوسی بر کاربر ندارد.
+- 🟢 `"fair"`: فشار، دما و/یا مصرف انرژی دستگاه هدف اندکی افزایش یافته است و به‌طور بالقوه می‌تواند عمر باتری را کاهش دهد و فن‌ها (یا سیستم‌های دارای فن) را فعال و قابل‌شنیدن کند. جدا از این، دستگاه هدف بدون نقص کار می‌کند و می‌تواند کارهای بیشتری را بر عهده بگیرد.
+- 🟡 `"serious"`: فشار، دما و/یا مصرف انرژی دستگاه هدف به‌طور مداوم و به‌شدت افزایش یافته است. ممکن است سیستم به‌عنوان اقدامی متقابل برای کاهش حرارت، throttling (کاهش سرعت) انجام دهد.
+- 🔴 `"critical"`: دمای دستگاه یا سیستم هدف به‌طور قابل‌توجهی افزایش یافته است و برای جلوگیری از هرگونه مشکل احتمالی، نیاز به خنک‌سازی دارد.
 
 ## Examples
 
-### Using the `state` property
-
-In the following example we log the value of the `state` property in the pressure observer callback.
+در مثال زیر، مقدار ویژگی `state` را در callback (تابع بازگشتی) مشاهده‌گر فشار ثبت می‌کنیم.
 
 ```js
 function callback(records) {
