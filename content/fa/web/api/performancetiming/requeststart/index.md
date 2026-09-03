@@ -1,9 +1,4 @@
----
-title: "PerformanceTiming: requestStart property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/requestStart"
-status: "needs-translation"
----
-
+```
 ---
 title: "PerformanceTiming: requestStart property"
 short-title: requestStart
@@ -17,29 +12,25 @@ browser-compat: api.PerformanceTiming.requestStart
 {{ APIRef("PerformanceTiming") }} {{Deprecated_Header}}
 
 > [!WARNING]
-> This interface of this property is deprecated in the [Navigation Timing Level 2 specification](https://w3c.github.io/navigation-timing/#obsolete). Please use the {{domxref("PerformanceNavigationTiming")}}
-> interface instead.
+> 此属性所属的接口已在 [Navigation Timing Level 2 规范](https://w3c.github.io/navigation-timing/#obsolete) 中被废弃。请改用 {{domxref("PerformanceNavigationTiming")}} 接口。
 
-The legacy
+传统的
 **`PerformanceTiming.requestStart`**
-read-only property returns an `unsigned long long` representing the moment,
-in milliseconds since the UNIX epoch, when the browser sent the request to obtain the
-actual document, from the server or from a cache. If the transport layer fails after the
-start of the request and the connection is reopened, this property will be set to the
-time corresponding to the new request.
+只读属性返回一个 `unsigned long long` 类型的时间戳，表示浏览器从服务器或缓存发起获取实际文档请求的时刻，单位是自 UNIX 纪元起的毫秒数。如果请求开始后传输层失败并重新建立连接，此属性将对应新请求的时间。
 
-## Value
+## 值
 
-An `unsigned long long`.
+一个 `unsigned long long` 类型的时间戳。
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
-- The {{domxref("PerformanceTiming")}} interface it belongs to.
+- 它所属的 {{domxref("PerformanceTiming")}} 接口。
+```
