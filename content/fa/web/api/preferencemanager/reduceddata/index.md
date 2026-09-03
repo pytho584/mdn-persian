@@ -1,11 +1,5 @@
 ---
 title: "PreferenceManager: reducedData property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PreferenceManager/reducedData"
-status: "needs-translation"
----
-
----
-title: "PreferenceManager: reducedData property"
 short-title: reducedData
 slug: Web/API/PreferenceManager/reducedData
 page-type: web-api-instance-property
@@ -17,19 +11,19 @@ spec-urls: https://drafts.csswg.org/mediaqueries-5/#reduced-data-attribute
 
 {{APIRef("User Preferences API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`reducedData`** read-only property of the {{domxref("PreferenceManager")}} interface returns a {{domxref("PreferenceObject")}} used to override the user's preference for the [reduced data](/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-data) of the site.
+ویژگی فقط-خواندنی **`reducedData`** از رابط {{domxref("PreferenceManager")}} یک {{domxref("PreferenceObject")}} برمی‌گرداند که برای لغو اولویت کاربر در مورد [کاهش داده](/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-data) سایت استفاده می‌شود.
 
-Valid `reducedData` {{domxref("PreferenceObject.value")}} settings are `reduce` and `no-preference`.
+مقادیر معتبر `reducedData` برای {{domxref("PreferenceObject.value")}} عبارتند از `reduce` و `no-preference`.
 
-## Value
+## مقدار
 
-A {{domxref("PreferenceObject")}} used to override the user's preference for the [reduced data](/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-data) of the site.
+یک {{domxref("PreferenceObject")}} که برای لغو اولویت کاربر در مورد [کاهش داده](/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-data) سایت استفاده می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
-This example demonstrates how to query the user's reduced data preference.
+این مثال نحوه پرس‌وجو از اولویت کاهش داده کاربر را نشان می‌دهد.
 
 ```js
 if (navigator.preferences.reducedData.value === "reduce") {
@@ -39,10 +33,10 @@ if (navigator.preferences.reducedData.value === "reduce") {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
