@@ -1,11 +1,5 @@
 ---
 title: "PerformanceNavigationTiming: domContentLoadedEventEnd property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceNavigationTiming/domContentLoadedEventEnd"
-status: "needs-translation"
----
-
----
-title: "PerformanceNavigationTiming: domContentLoadedEventEnd property"
 short-title: domContentLoadedEventEnd
 slug: Web/API/PerformanceNavigationTiming/domContentLoadedEventEnd
 page-type: web-api-instance-property
@@ -14,21 +8,21 @@ browser-compat: api.PerformanceNavigationTiming.domContentLoadedEventEnd
 
 {{APIRef("Performance API")}}
 
-The **`domContentLoadedEventEnd`** read-only property returns a {{domxref("DOMHighResTimeStamp")}} representing the time immediately after the current document's [`DOMContentLoaded`](/en-US/docs/Web/API/Document/DOMContentLoaded_event) event handler completes.
+ویژگی فقط‌خواندنی **`domContentLoadedEventEnd`** یک {{domxref("DOMHighResTimeStamp")}} برمی‌گرداند که زمان بلافاصله پس از اتمام اجرای مدیریت‌کننده رویداد [`DOMContentLoaded`](/en-US/docs/Web/API/Document/DOMContentLoaded_event) سند فعلی را نشان می‌دهد.
 
-Typically frameworks and libraries wait for the `DOMContentLoaded` event before starting to run their code. We can use the `domContentLoadedEventEnd` and the [`domContentLoadedEventStart`](/en-US/docs/Web/API/PerformanceNavigationTiming/domContentLoadedEventStart) properties to calculate how long this takes to run.
+معمولاً فریمورک‌ها و کتابخانه‌ها قبل از شروع به اجرای کد خود منتظر رویداد `DOMContentLoaded` می‌مانند. می‌توانیم از ویژگی‌های `domContentLoadedEventEnd` و [`domContentLoadedEventStart`](/en-US/docs/Web/API/PerformanceNavigationTiming/domContentLoadedEventStart) برای محاسبه مدت زمانی که این کار طول می‌کشد استفاده کنیم.
 
-## Value
+## مقدار
 
-A {{domxref("DOMHighResTimeStamp")}} representing the time immediately after the current document's [`DOMContentLoaded`](/en-US/docs/Web/API/Document/DOMContentLoaded_event) event handler completes.
+یک {{domxref("DOMHighResTimeStamp")}} که زمان بلافاصله پس از اتمام اجرای مدیریت‌کننده رویداد [`DOMContentLoaded`](/en-US/docs/Web/API/Document/DOMContentLoaded_event) سند فعلی را نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
-### Measuring `DOMContentLoaded` event handler time
+### اندازه‌گیری زمان اجرای مدیریت‌کننده رویداد `DOMContentLoaded`
 
-The `domContentLoadedEventEnd` property can be used to measure how long it takes process the [`DOMContentLoaded`](/en-US/docs/Web/API/Document/DOMContentLoaded_event) event handler.
+از ویژگی `domContentLoadedEventEnd` می‌توان برای اندازه‌گیری مدت زمان پردازش مدیریت‌کننده رویداد [`DOMContentLoaded`](/en-US/docs/Web/API/Document/DOMContentLoaded_event) استفاده کرد.
 
-Example using a {{domxref("PerformanceObserver")}}, which notifies of new `navigation` performance entries as they are recorded in the browser's performance timeline. Use the `buffered` option to access entries from before the observer creation.
+مثال با استفاده از {{domxref("PerformanceObserver")}}، که ورودی‌های عملکرد `navigation` جدید را هنگام ثبت شدن در خط زمانی عملکرد مرورگر اطلاع‌رسانی می‌کند. از گزینه `buffered` برای دسترسی به ورودی‌های قبل از ایجاد observer استفاده کنید.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -44,7 +38,7 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "navigation", buffered: true });
 ```
 
-Example using {{domxref("Performance.getEntriesByType()")}}, which only shows `navigation` performance entries present in the browser's performance timeline at the time you call this method:
+مثال با استفاده از {{domxref("Performance.getEntriesByType()")}}، که فقط ورودی‌های عملکرد `navigation` موجود در خط زمانی عملکرد مرورگر را در زمان فراخوانی این متد نشان می‌دهد:
 
 ```js
 const entries = performance.getEntriesByType("navigation");
@@ -57,14 +51,14 @@ entries.forEach((entry) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [DOMContentLoaded](/en-US/docs/Web/API/Document/DOMContentLoaded_event)
