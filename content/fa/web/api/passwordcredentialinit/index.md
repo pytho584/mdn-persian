@@ -1,10 +1,4 @@
 ---
-title: "PasswordCredentialInit"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PasswordCredentialInit"
-status: "needs-translation"
----
-
----
 title: PasswordCredentialInit
 slug: Web/API/PasswordCredentialInit
 page-type: web-api-interface
@@ -13,46 +7,46 @@ spec-urls: https://w3c.github.io/webappsec-credential-management/#typedefdef-pas
 
 {{APIRef("Credential Management API")}}
 
-The **`PasswordCredentialInit`** dictionary represents the object passed to {{domxref("CredentialsContainer.create()")}} as the value of the `password` option, when creating a password credential.
+دیکشنری **`PasswordCredentialInit`** همان شیئی است که هنگام ایجاد یک گواهینامه (credential) رمز عبور، به عنوان مقدار گزینهٔ `password` به {{domxref("CredentialsContainer.create()")}} ارسال می‌شود.
 
-## Initialization from a form
+## مقداردهی اولیه از یک فرم
 
-Instead of passing this dictionary directly, a website can pass an {{domxref("HTMLFormElement")}}, and the implementation of `create()` will populate the credential's data from the values of the form's submittable elements, based on the value of the element's [`autocomplete`](/en-US/docs/Web/HTML/Reference/Attributes/autocomplete) attribute.
+به‌جای ارسال مستقیم این دیکشنری، یک وب‌سایت می‌تواند یک {{domxref("HTMLFormElement")}} ارسال کند؛ در این صورت پیاده‌سازی `create()` داده‌های گواهینامه را بر اساس مقادیر عناصر قابل ارسالِ فرم، با توجه به مقدار ویژگی [`autocomplete`](/en-US/docs/Web/HTML/Reference/Attributes/autocomplete) آن عناصر، پر می‌کند.
 
-| `autocomplete` value                     | Credential property targeted |
-| ---------------------------------------- | ---------------------------- |
-| `"username"`                             | `id`                         |
-| `"name"` or `"nickname"`                 | `name`                       |
-| `"new-password"` or `"current-password"` | `password`                   |
-| `"photo"`                                | `iconURL`                    |
+| مقدارِ `autocomplete`                    | ویژگی هدف در گواهینامه |
+| ---------------------------------------- | ---------------------- |
+| `"username"`                             | `id`                   |
+| `"name"` یا `"nickname"`                 | `name`                 |
+| `"new-password"` یا `"current-password"` | `password`             |
+| `"photo"`                                | `iconURL`              |
 
-If the form contains both `"new-password"` and `"current-password"` elements, the value for `"new-password"` will be used.
+اگر فرم شامل هر دو عنصر `"new-password"` و `"current-password"` باشد، مقدارِ `"new-password"` استفاده خواهد شد.
 
-The `origin` property is set to the origin of the document the {{domxref("HTMLFormElement")}} is contained within.
+ویژگی `origin` برابر با مبدأ (origin) سندی که {{domxref("HTMLFormElement")}} در آن قرار دارد، تنظیم می‌شود.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - `iconURL` {{optional_inline}}
-  - : A string representing the URL of an icon or avatar to be associated with the credential.
+  - : یک رشته (string) که نشانی URL یک آیکون یا آواتار را نشان می‌دهد که باید با گواهینامه مرتبط شود.
 - `id`
-  - : A string representing the username portion of the username/password combination.
+  - : یک رشته که بخش نام کاربری از ترکیب نام کاربری/رمز عبور را نشان می‌دهد.
 - `name` {{optional_inline}}
-  - : A string representing a human-understandable name associated with the credential, intended to help the user select this credential in a user interface.
+  - : یک رشته که یک نام قابل‌فهم برای انسان را نشان می‌دهد که با گواهینامه مرتبط است و هدف آن کمک به کاربر برای انتخاب این گواهینامه در یک رابط کاربری است.
 - `origin`
-  - : A string representing the credential's origin. {{domxref("PasswordCredential")}} objects are origin-bound, which means that they will only be usable on the specified origin they were intended to be used on.
+  - : یک رشته که مبدأ گواهینامه را نشان می‌دهد. اشیاء {{domxref("PasswordCredential")}} به مبدأ وابسته هستند (origin-bound)؛ به این معنی که فقط در همان مبدأ مشخصی که برای آن در نظر گرفته شده‌اند قابل استفاده خواهند بود.
 - `password`
-  - : A string representing the credential password.
+  - : یک رشته که رمز عبور گواهینامه را نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
-### Creating a password credential from an object literal
+### ایجاد گواهینامه رمز عبور از یک شیء Literal
 
-This example constructs an object literal to initialize a password credential.
+این مثال یک شیء literal برای مقداردهی اولیه یک گواهینامه رمز عبور می‌سازد.
 
 ```js
 const credInit = {
-  id: "serpent1234", // "username" in a typical username/password pair
-  name: "Serpentina", // display name for credential
+  id: "serpent1234", // "username" در یک جفت نام کاربری/رمز عبور معمولی
+  name: "Serpentina", // نام نمایشی گواهینامه
   origin: "https://example.org",
   password: "the last visible dog",
 };
@@ -72,13 +66,13 @@ makeCredential.addEventListener("click", async () => {
 });
 ```
 
-### Creating a password credential from a form
+### ایجاد گواهینامه رمز عبور از یک فرم
 
-This example uses a form to initialize a password credential.
+این مثال از یک فرم برای مقداردهی اولیه یک گواهینامه رمز عبور استفاده می‌کند.
 
 #### HTML
 
-The HTML declares a {{HTMLElement("form")}} containing three submittable elements, representing the user ID, user's display name, and password.
+HTML یک {{HTMLElement("form")}} شامل سه عنصر قابل ارسال را اعلام می‌کند که به ترتیب شناسه کاربر، نام نمایشی کاربر و رمز عبور را نشان می‌دهند.
 
 ```html
 <form>
@@ -137,9 +131,9 @@ label {
 
 #### JavaScript
 
-The JavaScript passes the form into `create()`, and logs some of the values of the resulting credential.
+جاوااسکریپت، فرم را به `create()` منتقل می‌کند و برخی از مقادیر گواهینامهٔ حاصل را در خروجی (log) ثبت می‌کند.
 
-The promise returned by `create()` will reject if the form does not contain values for the mandatory credential properties.
+اگر فرم شامل مقادیر لازم برای ویژگی‌های اجباری گواهینامه نباشد، Promise برگشتی از `create()` رد (reject) خواهد شد.
 
 ```js
 const makeCredential = document.querySelector("#make-credential");
@@ -166,10 +160,10 @@ function log(text) {
 }
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample("Creating a password credential from a form", "", "260")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
