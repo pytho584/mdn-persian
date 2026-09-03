@@ -1,11 +1,5 @@
 ---
 title: "PerformanceResourceTiming: responseStatus property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceResourceTiming/responseStatus"
-status: "needs-translation"
----
-
----
-title: "PerformanceResourceTiming: responseStatus property"
 short-title: responseStatus
 slug: Web/API/PerformanceResourceTiming/responseStatus
 page-type: web-api-instance-property
@@ -14,25 +8,25 @@ browser-compat: api.PerformanceResourceTiming.responseStatus
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The **`responseStatus`** read-only property represents the HTTP response status code returned when fetching the resource.
+ویژگی فقط‌خواندنی **`responseStatus`**، کد وضعیت پاسخ HTTP را نشان می‌دهد که هنگام واکشی منبع برگردانده شده است.
 
-This property maps to {{domxref("Response.status")}} from the [Fetch API](/en-US/docs/Web/API/Fetch_API).
+این ویژگی به {{domxref("Response.status")}} در [Fetch API](/en-US/docs/Web/API/Fetch_API) نگاشت می‌شود.
 
-## Value
+## مقدار
 
-The `responseStatus` property can have the following values:
+ویژگی `responseStatus` می‌تواند مقادیر زیر را داشته باشد:
 
-- A number indicating the [HTTP response status code](/en-US/docs/Web/HTTP/Reference/Status) returned when fetching the resource.
-- `0` if the [CORS](/en-US/docs/Web/HTTP/Guides/CORS) check fails.
-- `0` for cross-origin {{HTMLElement("iframe")}} objects.
+- عددی که [کد وضعیت پاسخ HTTP](/en-US/docs/Web/HTTP/Reference/Status) برگردانده‌شده هنگام واکشی منبع را نشان می‌دهد.
+- اگر بررسی [CORS](/en-US/docs/Web/HTTP/Guides/CORS) ناموفق باشد، مقدار `0`.
+- برای اشیاء {{HTMLElement("iframe")}} با مبدأ متقاطع (cross-origin)، مقدار `0`.
 
-## Examples
+## نمونه‌ها
 
-### Checking if a cache was hit
+### بررسی اینکه آیا از کش استفاده شده است
 
-The `responseStatus` property can be used to check for cached resources with a {{HTTPStatus("304")}} `Not Modified` response status code.
+از ویژگی `responseStatus` می‌توان برای بررسی منابع کش‌شده‌ای استفاده کرد که کد وضعیت پاسخ {{HTTPStatus("304")}} `Not Modified` را دارند.
 
-Example using a {{domxref("PerformanceObserver")}}, which notifies of new `resource` performance entries as they are recorded in the browser's performance timeline. Use the `buffered` option to access entries from before the observer creation.
+مثال زیر از {{domxref("PerformanceObserver")}} استفاده می‌کند که با ثبت هر ورودی عملکرد جدید از نوع `resource` در جدول زمانی عملکرد مرورگر، اطلاع می‌دهد. از گزینهٔ `buffered` استفاده کنید تا بتوانید به ورودی‌هایی که پیش از ایجاد observer ثبت شده‌اند دسترسی داشته باشید.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -46,7 +40,7 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "resource", buffered: true });
 ```
 
-Example using {{domxref("Performance.getEntriesByType()")}}, which only shows `resource` performance entries present in the browser's performance timeline at the time you call this method:
+مثال زیر از {{domxref("Performance.getEntriesByType()")}} استفاده می‌کند که فقط ورودی‌های عملکردی `resource` موجود در جدول زمانی عملکرد مرورگر را در زمان فراخوانی این متد نشان می‌دهد:
 
 ```js
 const resources = performance.getEntriesByType("resource");
@@ -57,28 +51,28 @@ resources.forEach((entry) => {
 });
 ```
 
-Alternatively, if `responseStatus` is not available, you can check if the {{domxref("PerformanceResourceTiming.transferSize", "transferSize")}} property returned `0`.
+همچنین اگر `responseStatus` در دسترس نبود، می‌توانید بررسی کنید که آیا ویژگی {{domxref("PerformanceResourceTiming.transferSize", "transferSize")}} مقدار `0` را بازگردانده است.
 
-### Cross-origin response status codes
+### کدهای وضعیت پاسخ با مبدأ متقاطع
 
-If the value of the `responseStatus` property is `0`, the resource might be a cross-origin request. To allow seeing cross-origin response status codes, the [CORS](/en-US/docs/Web/HTTP/Guides/CORS) {{HTTPHeader("Access-Control-Allow-Origin")}} HTTP response header needs to be set.
+اگر مقدار ویژگی `responseStatus` برابر با `0` باشد، احتمالاً منبع یک درخواست با مبدأ متقاطع است. برای اینکه کدهای وضعیت پاسخ با مبدأ متقاطع قابل مشاهده باشند، باید هدر پاسخ HTTP [CORS](/en-US/docs/Web/HTTP/Guides/CORS) یعنی {{HTTPHeader("Access-Control-Allow-Origin")}} تنظیم شود.
 
-For example, to allow `https://developer.mozilla.org` to see response status codes, the cross-origin resource should send:
+برای مثال، برای اینکه به `https://developer.mozilla.org` اجازهٔ مشاهدهٔ کدهای وضعیت پاسخ داده شود، منبع با مبدأ متقاطع باید این هدر را ارسال کند:
 
 ```http
 Access-Control-Allow-Origin: https://developer.mozilla.org
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [HTTP response status code](/en-US/docs/Web/HTTP/Reference/Status)
+- [کد وضعیت پاسخ HTTP](/en-US/docs/Web/HTTP/Reference/Status)
 - {{domxref("Response.status")}}
 - [CORS](/en-US/docs/Web/HTTP/Guides/CORS)
