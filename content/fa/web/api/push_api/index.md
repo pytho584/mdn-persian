@@ -1,11 +1,5 @@
 ---
 title: "Push API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Push_API"
-status: "needs-translation"
----
-
----
-title: Push API
 slug: Web/API/Push_API
 page-type: web-api-overview
 browser-compat:
@@ -15,64 +9,64 @@ browser-compat:
 
 {{DefaultAPISidebar("Push API")}}{{AvailableInWorkers}}
 
-The **Push API** gives web applications the ability to receive messages pushed to them from a server, whether or not the web app is in the foreground, or even currently loaded, on a user agent. This lets developers deliver asynchronous notifications and updates to users that opt in, resulting in better engagement with timely new content.
+**Push API** به برنامه‌های وب این امکان را می‌دهد که پیام‌هایی را که سرور به سمت آن‌ها ارسال می‌کند دریافت کنند، چه برنامه در پیش‌زمینه باشد، چه در حال حاضر بارگذاری شده باشد یا حتی اصلاً در مرورگر باز نباشد. این قابلیت به توسعه‌دهندگان اجازه می‌دهد تا اعلان‌ها و به‌روزرسانی‌های ناهمگام را به کاربرانی که رضایت داده‌اند تحویل دهند و در نتیجه تعامل بهتری با محتوای جدید و به‌موقع ایجاد شود.
 
-## Push concepts and usage
+## مفاهیم و کاربرد Push
 
 > [!WARNING]
-> When implementing PushManager subscriptions, it is vitally important that you protect against CSRF/XSRF issues in your app. See the following articles for more information:
+> هنگام پیاده‌سازی اشتراک‌های PushManager، بسیار مهم است که از برنامه خود در برابر مشکلات CSRF/XSRF محافظت کنید. برای اطلاعات بیشتر مقالات زیر را ببینید:
 >
-> - [Cross-Site Request Forgery (CSRF) Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html)
-> - [Preventing CSRF and XSRF Attacks](https://blog.codinghorror.com/preventing-csrf-and-xsrf-attacks/)
+> - [برگه تقلب جلوگیری از جعل درخواست بین‌سایتی (CSRF)](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html)
+> - [جلوگیری از حملات CSRF و XSRF](https://blog.codinghorror.com/preventing-csrf-and-xsrf-attacks/)
 
-For an app to receive push messages, it has to have an active [service worker](/en-US/docs/Web/API/Service_Worker_API). When the service worker is active, it can subscribe to push notifications, using {{domxref("PushManager.subscribe()")}}.
+برای اینکه یک برنامه بتواند پیام‌های فشاری (push) دریافت کند، باید یک [service worker](/en-US/docs/Web/API/Service_Worker_API) فعال داشته باشد. وقتی service worker فعال شد، می‌تواند با استفاده از {{domxref("PushManager.subscribe()")}} در اعلان‌های فشاری مشترک شود.
 
-The resulting {{domxref("PushSubscription")}} includes all the information that the application needs to send a push message: an endpoint and the encryption key needed for sending data.
+{{domxref("PushSubscription")}} حاصل شامل تمام اطلاعات موردنیاز برنامه برای ارسال پیام فشاری است: یک آدرس endpoint و کلید رمزنگاری لازم برای ارسال داده.
 
-The service worker will be started as necessary to handle incoming push messages, which are delivered to the {{domxref("ServiceWorkerGlobalScope.push_event", "onpush")}} event handler. This allows apps to react to push messages being received, for example, by displaying a notification (using {{domxref("ServiceWorkerRegistration.showNotification()")}}.)
+service worker در صورت نیاز برای مدیریت پیام‌های فشاری ورودی راه‌اندازی می‌شود و این پیام‌ها به رویدادگردان {{domxref("ServiceWorkerGlobalScope.push_event", "onpush")}} تحویل داده می‌شوند. این امکان را به برنامه‌ها می‌دهد که به دریافت پیام‌های فشاری واکنش نشان دهند، مثلاً با نمایش یک اعلان (با استفاده از {{domxref("ServiceWorkerRegistration.showNotification()")}}).
 
-Each subscription is unique to a service worker. The endpoint for the subscription is a unique [capability URL](https://w3ctag.github.io/capability-urls/): knowledge of the endpoint is all that is necessary to send a message to your application. The endpoint URL therefore needs to be kept secret, or other applications might be able to send push messages to your application.
+هر اشتراک منحصر‌به‌فرد برای یک service worker است. endpoint اشتراک یک [URL قابلیت](https://w3ctag.github.io/capability-urls/) منحصربه‌فرد است: دانستن endpoint تنها چیزی است که برای ارسال پیام به برنامه شما لازم است. بنابراین آدرس endpoint باید محرمانه بماند؛ در غیر این صورت، برنامه‌های دیگر ممکن است بتوانند پیام‌های فشاری به برنامه شما ارسال کنند.
 
-Activating a service worker to deliver a push message can result in increased resource usage, particularly of the battery. Different browsers have different schemes for handling this, there is currently no standard mechanism. Firefox allows a limited number (quota) of push messages to be sent to an application, although Push messages that generate notifications are exempt from this limit. The limit is refreshed each time the site is visited. In Chrome there are no limits.
+فعال‌کردن یک service worker برای تحویل پیام فشاری می‌تواند مصرف منابع، به‌ویژه باتری را افزایش دهد. مرورگرهای مختلف روش‌های متفاوتی برای مدیریت این موضوع دارند و در حال حاضر هیچ سازوکار استانداردی وجود ندارد. فایرفاکس تعداد محدودی (سهمیه) پیام فشاری را برای ارسال به یک برنامه مجاز می‌داند، اگرچه پیام‌های فشاری که اعلان تولید می‌کنند از این محدودیت مستثنی هستند. این سهمیه هر بار که سایت بازدید می‌شود بازنشانی می‌شود. در کروم هیچ محدودیتی وجود ندارد.
 
-## Interfaces
+## رابط‌ها (Interfaces)
 
 - {{domxref("PushEvent")}}
-  - : Represents a push action, sent to the [global scope](/en-US/docs/Web/API/ServiceWorkerGlobalScope) of a {{domxref("ServiceWorker")}}. It contains information sent from an application to a {{domxref("PushSubscription")}}.
+  - : یک اقدام فشاری را نشان می‌دهد که به [حوزه سراسری](/en-US/docs/Web/API/ServiceWorkerGlobalScope) یک {{domxref("ServiceWorker")}} ارسال می‌شود. این رویداد حاوی اطلاعاتی است که از یک برنامه به یک {{domxref("PushSubscription")}} ارسال شده است.
 - {{domxref("PushManager")}}
-  - : Provides a way to receive notifications from third-party servers, as well as request URLs for push notifications.
+  - : راهی برای دریافت اعلان‌ها از سرورهای شخص ثالث و همچنین درخواست URL برای اعلان‌های فشاری فراهم می‌کند.
 - {{domxref("PushMessageData")}}
-  - : Provides access to push data sent by a server, and includes methods to manipulate the received data.
+  - : دسترسی به داده‌های فشاری ارسال‌شده توسط سرور را فراهم می‌کند و شامل روش‌هایی برای دستکاری داده‌های دریافتی است.
 - {{domxref("PushSubscription")}}
-  - : Provides a subscription's URL endpoint, and allows unsubscribing from a push service.
+  - : آدرس endpoint اشتراک را فراهم می‌کند و امکان لغو اشتراک از سرویس فشاری را می‌دهد.
 - {{domxref("PushSubscriptionOptions")}}
-  - : Represents the options associated with the push subscription.
+  - : گزینه‌های مرتبط با اشتراک فشاری را نشان می‌دهد.
 
-## Service worker additions
+## افزوده‌های service worker
 
-The following additions to the [Service Worker API](/en-US/docs/Web/API/Service_Worker_API) have been specified in the Push API spec to provide an entry point for using Push messages. They also monitor and respond to push and subscription change events.
+افزوده‌های زیر به [Service Worker API](/en-US/docs/Web/API/Service_Worker_API) در مشخصات Push API تعریف شده‌اند تا نقطه ورودی برای استفاده از پیام‌های فشاری فراهم کنند. این افزوده‌ها همچنین رویدادهای push و تغییر اشتراک را پایش و پاسخ می‌دهند.
 
 - {{domxref("ServiceWorkerRegistration.pushManager")}} {{ReadOnlyInline}}
-  - : Returns a reference to the {{domxref("PushManager")}} interface for managing push subscriptions including subscribing, getting an active subscription, and accessing push permission status. This is the entry point into using Push messaging.
+  - : ارجاعی به رابط {{domxref("PushManager")}} برای مدیریت اشتراک‌های فشاری، از جمله اشتراک‌گرفتن، دریافت اشتراک فعال و دسترسی به وضعیت مجوز فشاری برمی‌گرداند. این نقطه ورود به استفاده از پیام‌رسانی فشاری است.
 - {{domxref("ServiceWorkerGlobalScope.push_event", "onpush")}}
-  - : An event handler fired whenever a {{domxref("ServiceWorkerGlobalScope/push_event", "push")}} event occurs; that is, whenever a server push message is received.
+  - : رویدادگردانی که هر بار یک رویداد {{domxref("ServiceWorkerGlobalScope/push_event", "push")}} رخ می‌دهد فراخوانی می‌شود؛ یعنی هر زمان که یک پیام فشاری از سمت سرور دریافت شود.
 - {{domxref("ServiceWorkerGlobalScope.pushsubscriptionchange_event", "onpushsubscriptionchange")}}
-  - : An event handler fired whenever a {{domxref("ServiceWorkerGlobalScope/pushsubscriptionchange_event", "pushsubscriptionchange")}} event occurs; for example, when a push subscription has been invalidated, or is about to be invalidated (e.g., when a push service sets an expiration time.)
+  - : رویدادگردانی که هر بار یک رویداد {{domxref("ServiceWorkerGlobalScope/pushsubscriptionchange_event", "pushsubscriptionchange")}} رخ می‌دهد فراخوانی می‌شود؛ مثلاً وقتی یک اشتراک فشاری باطل شده یا در آستانه باطل‌شدن است (مثلاً وقتی سرویس فشاری زمان انقضا تعیین می‌کند).
 
-## Examples
+## مثال‌ها
 
-Mozilla's [ServiceWorker Cookbook](https://github.com/mdn/serviceworker-cookbook) contains many useful Push examples.
+[کتاب دستور پخت ServiceWorker مایلا](https://github.com/mdn/serviceworker-cookbook) شامل مثال‌های کاربردی بسیاری درباره Push است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Sending VAPID identified WebPush Notifications via Mozilla's Push Service](https://blog.mozilla.org/services/2016/08/23/sending-vapid-identified-webpush-notifications-via-mozillas-push-service/)
-- [Push notifications overview](https://web.dev/articles/push-notifications-overview)
+- [ارسال اعلان‌های وب WebPush شناسایی‌شده با VAPID از طریق سرویس Push مایلا](https://blog.mozilla.org/services/2016/08/23/sending-vapid-identified-webpush-notifications-via-mozillas-push-service/)
+- [نمای کلی اعلان‌های فشاری](https://web.dev/articles/push-notifications-overview)
 - [Service Worker API](/en-US/docs/Web/API/Service_Worker_API)
