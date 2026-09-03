@@ -1,11 +1,5 @@
 ---
 title: "PromiseRejectionEvent: PromiseRejectionEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PromiseRejectionEvent/PromiseRejectionEvent"
-status: "needs-translation"
----
-
----
-title: "PromiseRejectionEvent: PromiseRejectionEvent() constructor"
 short-title: PromiseRejectionEvent()
 slug: Web/API/PromiseRejectionEvent/PromiseRejectionEvent
 page-type: web-api-constructor
@@ -14,51 +8,36 @@ browser-compat: api.PromiseRejectionEvent.PromiseRejectionEvent
 
 {{APIRef("HTML DOM")}}{{AvailableInWorkers}}
 
-The **`PromiseRejectionEvent()`**
-constructor returns a new {{domxref("PromiseRejectionEvent")}} object, which
-represents events fired when a JavaScript {{jsxref("Promise")}} is rejected.
+سازنده‌ی **`PromiseRejectionEvent()`** یک شیء جدید {{domxref("PromiseRejectionEvent")}} برمی‌گرداند که رویدادهای مربوط به رد شدن (reject) یک {{jsxref("Promise")}} جاوااسکریپت را نشان می‌دهد.
 
-With promise rejection events, it becomes possible to detect and report promises which
-fail and whose failures go unnoticed. It also becomes easier to write a global handler
-for errors.
+با رویدادهای رد شدن وعده (Promise)، می‌توان وعده‌هایی را که ناموفق می‌شوند و خطای آن‌ها نادیده گرفته می‌شود شناسایی و گزارش کرد. همچنین نوشتن یک کنترل‌کننده‌ی سراسری برای خطاها آسان‌تر می‌شود.
 
-There are two types of `PromiseRejectionEvent`:
-{{domxref("Window.unhandledrejection_event", "unhandledrejection")}} is sent by the JavaScript runtime when a promise is
-rejected but the rejection goes unhandled. A {{domxref("Window.rejectionhandled_event", "rejectionhandled")}} event is
-emitted if a promise is rejected but the rejection is caught by a rejection handler.
+دو نوع `PromiseRejectionEvent` وجود دارد: رویداد {{domxref("Window.unhandledrejection_event", "unhandledrejection")}} توسط زمان‌اجرای جاوااسکریپت وقتی ارسال می‌شود که یک وعده رد می‌شود اما این رد شدن بدون رسیدگی باقی می‌ماند. اگر وعده‌ای رد شود اما این رد شدن توسط یک هندلرِ رسیدگی به خطا گرفته شود، رویداد {{domxref("Window.rejectionhandled_event", "rejectionhandled")}} صادر می‌شود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 new PromiseRejectionEvent(type, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string with the name of the event.
-    It is case-sensitive and browsers set it to `rejectionhandled` or `unhandledrejection`.
+  - : رشته‌ای شامل نام رویداد. این مقدار به بزرگی/کوچکی حروف حساس است و مرورگرها آن را روی `rejectionhandled` یا `unhandledrejection` تنظیم می‌کنند.
 - `options`
-  - : An object that, _in addition of the properties defined in {{domxref("Event/Event", "Event()")}}_, can have the following properties:
+  - : شیءای که _علاوه بر ویژگی‌های تعریف‌شده در {{domxref("Event/Event", "Event()")}}_ می‌تواند ویژگی‌های زیر را داشته باشد:
     - `promise`
-      - : The {{jsxref("Promise")}} that was rejected.
+      - : {{jsxref("Promise")}}ای که رد شده است.
     - `reason`
-      - : Any value or {{jsxref("Object")}} which represents the reason the promise was
-        rejected. This can be anything from a numeric error code to an error
-        string to an object which contains detailed information
-        describing the situation resulting in the promise being rejected.
+      - : هر مقدار یا {{jsxref("Object")}}ای که دلیل رد شدن وعده را نشان می‌دهد. این می‌تواند هر چیزی باشد، از یک کد خطای عددی گرفته تا یک رشته‌ی خطا یا یک شیء حاوی اطلاعات دقیق درباره‌ی شرایطی که منجر به رد شدن وعده شده است.
 
-### Return value
+### مقدار بازگشتی
 
-A new `PromiseRejectionEvent` object configured as specified by the parameters.
+یک شیء `PromiseRejectionEvent` جدید که مطابق پارامترهای داده‌شده پیکربندی شده است.
 
-## Examples
+## مثال‌ها
 
-This example creates a new {{domxref("Window.unhandledrejection_event", "unhandledrejection")}} event for the promise
-`myPromise` with the reason being the string "My house is on fire". The
-`reason` could just as easily be a number, or even an object with detailed
-information including the home address, how serious the fire is, and the phone number of
-an emergency contact who should be notified.
+این مثال یک رویداد جدید {{domxref("Window.unhandledrejection_event", "unhandledrejection")}} برای وعده‌ی `myPromise` با دلیلی به صورت رشته‌ی «My house is on fire» می‌سازد. `reason` می‌توانست به همین راحتی یک عدد یا حتی یک شیء با اطلاعات دقیق شامل آدرس خانه، میزان جدی بودن آتش‌سوزی و شماره تلفن یک فرد اضطراری که باید مطلع شود باشد.
 
 ```js
 let myRejectionEvent = new PromiseRejectionEvent("unhandledrejection", {
@@ -67,16 +46,16 @@ let myRejectionEvent = new PromiseRejectionEvent("unhandledrejection", {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Using promises](/en-US/docs/Web/JavaScript/Guide/Using_promises)
+- [استفاده از وعده‌ها](/en-US/docs/Web/JavaScript/Guide/Using_promises)
 - {{jsxref("Promise")}}
 - {{domxref("PromiseRejectionEvent")}}
