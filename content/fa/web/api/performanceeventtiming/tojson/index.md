@@ -1,11 +1,5 @@
 ---
 title: "PerformanceEventTiming: toJSON() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEventTiming/toJSON"
-status: "needs-translation"
----
-
----
-title: "PerformanceEventTiming: toJSON() method"
 short-title: toJSON()
 slug: Web/API/PerformanceEventTiming/toJSON
 page-type: web-api-instance-method
@@ -14,29 +8,29 @@ browser-compat: api.PerformanceEventTiming.toJSON
 
 {{APIRef("Performance API")}}
 
-The **`toJSON()`** method of the {{domxref("PerformanceEventTiming")}} interface is a {{Glossary("Serialization","serializer")}}; it returns a JSON representation of the {{domxref("PerformanceEventTiming")}} object.
+{{domxref("PerformanceEventTiming")}} 接口的 **`toJSON()`** 方法是一个 {{Glossary("Serialization","serializer")}}；它返回 {{domxref("PerformanceEventTiming")}} 对象的 JSON 表示。
 
-## Syntax
+## 语法
 
 ```js-nolint
 toJSON()
 ```
 
-### Parameters
+### 参数
 
-None.
+无。
 
-### Return value
+### 返回值
 
-A {{jsxref("JSON")}} object that is the serialization of the {{domxref("PerformanceEventTiming")}} object.
+一个 {{jsxref("JSON")}} 对象，它是 {{domxref("PerformanceEventTiming")}} 对象的序列化结果。
 
-The JSON doesn't contain the {{domxref("PerformanceEventTiming.target", "target")}} property because it is of type {{domxref("Node")}}, which doesn't provide a `toJSON()` operation.
+该 JSON 不包含 {{domxref("PerformanceEventTiming.target", "target")}} 属性，因为该属性的类型是 {{domxref("Node")}}，而 `Node` 不提供 `toJSON()` 操作。
 
-## Examples
+## 示例
 
-### Using the toJSON method
+### 使用 toJSON 方法
 
-In this example, calling `entry.toJSON()` returns a JSON representation of the `PerformanceEventTiming` object.
+在此示例中，调用 `entry.toJSON()` 会返回 `PerformanceEventTiming` 对象的 JSON 表示。
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -48,7 +42,7 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "event", buffered: true });
 ```
 
-This would log a JSON object like so:
+上述代码会输出如下 JSON 对象：
 
 ```json
 {
@@ -62,16 +56,16 @@ This would log a JSON object like so:
 }
 ```
 
-To get a JSON string, you can use [`JSON.stringify(entry)`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) directly; it will call `toJSON()` automatically.
+要获取 JSON 字符串，你可以直接使用 [`JSON.stringify(entry)`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify)；它会自动调用 `toJSON()`。
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 另请参阅
 
 - {{jsxref("JSON")}}
