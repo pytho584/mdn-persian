@@ -1,11 +1,5 @@
 ---
 title: "PerformanceScriptTiming: pauseDuration property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceScriptTiming/pauseDuration"
-status: "needs-translation"
----
-
----
-title: "PerformanceScriptTiming: pauseDuration property"
 short-title: pauseDuration
 slug: Web/API/PerformanceScriptTiming/pauseDuration
 page-type: web-api-instance-property
@@ -16,25 +10,25 @@ browser-compat: api.PerformanceScriptTiming.pauseDuration
 
 {{SeeCompatTable}}{{APIRef("Performance API")}}
 
-The **`pauseDuration`** read-only property of the {{domxref("PerformanceScriptTiming")}} interface returns a {{domxref("DOMHighResTimeStamp")}} indicating the total time, in milliseconds, spent by the script on "pausing" synchronous operations (for example, {{domxref("Window.alert()")}} calls or synchronous {{domxref("XMLHttpRequest")}}s).
+ویژگی فقط‌خواندنی **`pauseDuration`** در رابط {{domxref("PerformanceScriptTiming")}} یک {{domxref("DOMHighResTimeStamp")}} برمی‌گرداند که کل زمان صرف‌شده توسط اسکریپت بر روی عملیات همزمان «مکث‌کننده» (مانند فراخوانی‌های {{domxref("Window.alert()")}} یا {{domxref("XMLHttpRequest")}}های همزمان) را بر حسب میلی‌ثانیه نشان می‌دهد.
 
-## Value
+## مقدار
 
-A {{domxref("DOMHighResTimeStamp")}}.
+یک {{domxref("DOMHighResTimeStamp")}}.
 
-## Examples
+## مثال‌ها
 
-See [Long animation frame timing](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing#examples) for examples related to the Long Animation Frames API.
+برای مثال‌های مرتبط با API فریم‌های انیمیشن طولانی، به [زمان‌بندی فریم انیمیشن طولانی](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Long animation frame timing](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing)
+- [زمان‌بندی فریم انیمیشن طولانی](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing)
 - {{domxref("PerformanceLongAnimationFrameTiming")}}
