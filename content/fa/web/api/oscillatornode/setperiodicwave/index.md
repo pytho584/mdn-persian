@@ -1,11 +1,5 @@
 ---
 title: "OscillatorNode: setPeriodicWave() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/OscillatorNode/setPeriodicWave"
-status: "needs-translation"
----
-
----
-title: "OscillatorNode: setPeriodicWave() method"
 short-title: setPeriodicWave()
 slug: Web/API/OscillatorNode/setPeriodicWave
 page-type: web-api-instance-method
@@ -14,30 +8,26 @@ browser-compat: api.OscillatorNode.setPeriodicWave
 
 {{ APIRef("Web Audio API") }}
 
-The **`setPeriodicWave()`** method of the {{domxref("OscillatorNode")}} interface is used to point to a {{domxref("PeriodicWave")}}
-defining a periodic waveform that can be used to shape the oscillator's output, when
-{{domxref("OscillatorNode.type", "type")}} is `custom`.
+متد **`setPeriodicWave()`** در رابط {{domxref("OscillatorNode")}} برای اشاره به یک {{domxref("PeriodicWave")}} استفاده می‌شود که شکل موج دوره‌ای را تعریف می‌کند و هنگامی که {{domxref("OscillatorNode.type", "type")}} برابر با `custom` باشد، برای شکل‌دهی به خروجی نوسان‌ساز به کار می‌رود.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 setPeriodicWave(wave)
 ```
 
-### Parameters
+### پارامترها
 
 - `wave`
-  - : A {{domxref("PeriodicWave")}} object representing the waveform to use as the shape
-    of the oscillator's output.
+  - : یک شیء {{domxref("PeriodicWave")}} که نشان‌دهندهٔ شکل موج مورد استفاده برای شکل خروجی نوسان‌ساز است.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-The following example illustrates simple usage of `createPeriodicWave()`,
-recreating a sine wave from a periodic wave.
+مثال زیر کاربرد سادهٔ `createPeriodicWave()` را نشان می‌دهد و یک موج سینوسی را از یک موج دوره‌ای بازسازی می‌کند.
 
 ```js
 const real = new Float32Array(2);
@@ -60,29 +50,21 @@ osc.start();
 osc.stop(2);
 ```
 
-This works because a sound that contains only a fundamental tone is by definition a
-sine wave.
+این کار درست است، زیرا صدایی که فقط شامل یک تون اصلی (fundamental tone) باشد، ذاتاً یک موج سینوسی است.
 
-Here, we create a {{domxref("PeriodicWave")}} with two values. The first value is the DC
-offset, which is the value at which the oscillator starts. 0 is good here, because we
-want to start the curve at the middle of the \[-1.0; 1.0] range.
+در اینجا، یک {{domxref("PeriodicWave")}} با دو مقدار ایجاد می‌کنیم. مقدار اول، آفست DC است؛ یعنی مقداری که نوسان‌ساز از آن شروع می‌شود. صفر در اینجا مناسب است، زیرا می‌خواهیم منحنی را از وسط بازهٔ \[-1.0; 1.0] شروع کنیم.
 
-The second and subsequent values are sine and cosine components. You can think of it as
-the result of a Fourier transform, where you get frequency domain values from time
-domain value. Here, with `createPeriodicWave()`, you specify the frequencies,
-and the browser performs an inverse Fourier transform to get a time domain buffer for
-the frequency of the oscillator. Here, we only set one component at full volume (1.0) on
-the fundamental tone, so we get a sine wave.
+مقدار دوم و مقادیر بعدی، مؤلفه‌های سینوسی و کسینوسی هستند. می‌توانید آن را به‌عنوان نتیجهٔ تبدیل فوریه در نظر بگیرید، جایی که از مقادیر حوزهٔ زمان، مقادیر حوزهٔ فرکانس به دست می‌آورید. در اینجا، با `createPeriodicWave()` فرکانس‌ها را مشخص می‌کنید و مرورگر یک تبدیل فوریهٔ معکوس انجام می‌دهد تا بافری در حوزهٔ زمان برای فرکانس نوسان‌ساز به دست آورد. در این مثال، ما فقط یک مؤلفه را با حجم کامل (1.0) روی تون اصلی تنظیم کرده‌ایم، بنابراین یک موج سینوسی به دست می‌آید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
 - [AudioContext.createPeriodicWave](/en-US/docs/Web/API/BaseAudioContext/createPeriodicWave)
