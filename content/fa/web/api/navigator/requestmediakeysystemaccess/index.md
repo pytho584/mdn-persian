@@ -1,11 +1,5 @@
 ---
 title: "Navigator: requestMediaKeySystemAccess() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/requestMediaKeySystemAccess"
-status: "needs-translation"
----
-
----
-title: "Navigator: requestMediaKeySystemAccess() method"
 short-title: requestMediaKeySystemAccess()
 slug: Web/API/Navigator/requestMediaKeySystemAccess
 page-type: web-api-instance-method
@@ -14,13 +8,11 @@ browser-compat: api.Navigator.requestMediaKeySystemAccess
 
 {{APIRef("Encrypted Media Extensions")}}{{SecureContext_Header}}
 
-The **`requestMediaKeySystemAccess()`** method of the {{domxref("Navigator")}} interface returns a {{jsxref('Promise')}} which delivers a {{domxref('MediaKeySystemAccess')}} object that can be used to access a particular media key system, which can in turn be used to create keys for decrypting a media stream.
+متد **`requestMediaKeySystemAccess()`** از رابط {{domxref("Navigator")}} یک {{jsxref('Promise')}} برمی‌گرداند که یک شیء {{domxref('MediaKeySystemAccess')}} را تحویل می‌دهد. از این شیء می‌توان برای دسترسی به یک سیستم کلید رسانه‌ای خاص استفاده کرد و به نوبه خود برای ایجاد کلیدهای رمزگشایی جریان رسانه‌ای به کار می‌رود.
 
-This method is part of the [Encrypted Media Extensions API](/en-US/docs/Web/API/Encrypted_Media_Extensions_API), which brings support for encrypted media and DRM-protected video to the web.
+این متد بخشی از [API افزونه‌های رسانه‌ای رمزگذاری‌شده](/en-US/docs/Web/API/Encrypted_Media_Extensions_API) است که پشتیبانی از رسانه‌های رمزگذاری‌شده و ویدیوی محافظت‌شده با DRM را به وب می‌آورد.
 
-This method may have user-visible effects such as asking for permission to access one or more system resources.
-Consider that when deciding when to call `requestMediaKeySystemAccess()`; you don't want those requests to happen at inconvenient times.
-As a general rule, this function should be called only when it's about time to create and use a {{domxref("MediaKeys")}} object by calling the returned {{domxref("MediaKeySystemAccess")}} object's {{domxref("MediaKeySystemAccess.createMediaKeys", "createMediaKeys()")}} method.
+این متد ممکن است اثرات قابل مشاهده برای کاربر داشته باشد، مانند درخواست مجوز برای دسترسی به یک یا چند منبع سیستم. هنگام تصمیم‌گیری درباره زمان فراخوانی `requestMediaKeySystemAccess()` این نکته را در نظر بگیرید؛ شما نمی‌خواهید این درخواست‌ها در زمان‌های نامناسب رخ دهند. به عنوان یک قاعده کلی، این تابع فقط زمانی باید فراخوانی شود که نزدیک به زمان ایجاد و استفاده از یک شیء {{domxref("MediaKeys")}} از طریق فراخوانی متد {{domxref("MediaKeySystemAccess.createMediaKeys", "createMediaKeys()")}} شیء {{domxref("MediaKeySystemAccess")}} برگشتی باشیم.
 
 ## Syntax
 
@@ -31,86 +23,86 @@ requestMediaKeySystemAccess(keySystem, supportedConfigurations)
 ### Parameters
 
 - `keySystem`
-  - : A string identifying the key system.
-    For example `com.example.some-system` or `org.w3.clearkey`.
+  - : رشته‌ای که سیستم کلید را شناسایی می‌کند.
+    به عنوان مثال `com.example.some-system` یا `org.w3.clearkey`.
 - `supportedConfigurations`
-  - : A non-empty {{jsxref('Array')}} of objects conforming to the object returned by {{domxref("MediaKeySystemAccess.getConfiguration")}}.
-    The first element with a satisfiable configuration will be used.
+  - : یک {{jsxref('Array')}} غیر خالی از اشیایی که با شیء برگشتی از {{domxref("MediaKeySystemAccess.getConfiguration")}} مطابقت دارند.
+    اولین عنصری که پیکربندی قابل قبولی داشته باشد استفاده خواهد شد.
 
-    Each object may have the following properties:
+    هر شیء ممکن است ویژگی‌های زیر را داشته باشد:
 
     > [!NOTE]
-    > Either `videoCapabilities` or `audioCapabilities` may be empty, but not both!
+    > یا `videoCapabilities` یا `audioCapabilities` ممکن است خالی باشد، اما هر دو نه!
     - `label` {{optional_inline}}
-      - : An optional label for the configuration, which defaults to `""`.
-        This label is preserved for configurations fetched using {{domxref("MediaKeySystemAccess.getConfiguration")}}
+      - : یک برچسب اختیاری برای پیکربندی که پیش‌فرض آن `""` است.
+        این برچسب برای پیکربندی‌هایی که با استفاده از {{domxref("MediaKeySystemAccess.getConfiguration")}} واکشی می‌شوند حفظ می‌شود.
     - `initDataTypes`
-      - : An array of strings that indicate the data type names for the supported initialization data formats (defaults to an empty array).
-        These names are names like `"cenc"`, `"keyids"` and `"webm"` that are defined in the [Encrypted Media Extensions Initialization Data Format Registry](https://w3c.github.io/encrypted-media/format-registry/initdata/).
+      - : آرایه‌ای از رشته‌ها که نام نوع داده را برای فرمت‌های داده مقداردهی اولیه پشتیبانی‌شده نشان می‌دهد (پیش‌فرض یک آرایه خالی است).
+        این نام‌ها نام‌هایی مانند `"cenc"`، `"keyids"` و `"webm"` هستند که در [رجیستری فرمت داده مقداردهی اولیه افزونه‌های رسانه‌ای رمزگذاری‌شده](https://w3c.github.io/encrypted-media/format-registry/initdata/) تعریف شده‌اند.
     - `audioCapabilities`
-      - : An array of supported audio capabilities.
-        If the array is empty the content type does not support audio capabilities.
+      - : آرایه‌ای از قابلیت‌های صوتی پشتیبانی‌شده.
+        اگر آرایه خالی باشد، نوع محتوا از قابلیت‌های صوتی پشتیبانی نمی‌کند.
 
-        Each object in the array has the following properties:
+        هر شیء در آرایه ویژگی‌های زیر را دارد:
         - `contentType`
-          - : A string indicating the media MIME-type of the media resource, such as `"audio/mp4;codecs=\"mp4a.40.2\"`.
-            Note that the empty string is invalid, and that if the MIME-type definition includes parameters, such as `codecs`, these must also be included.
+          - : رشته‌ای که نوع MIME رسانه منبع رسانه‌ای را نشان می‌دهد، مانند `"audio/mp4;codecs=\"mp4a.40.2\""`.
+            توجه داشته باشید که رشته خالی نامعتبر است و اگر تعریف نوع MIME شامل پارامترهایی مانند `codecs` باشد، اینها نیز باید لحاظ شوند.
         - `encryptionScheme`
-          - : The encryption scheme associated with the content type, such as `cenc`, `cbcs`, `cbcs-1-9`.
-            This value should be set by an application (it defaults to `null`, indicating that any encryption scheme may be used).
+          - : طرح رمزگذاری مرتبط با نوع محتوا، مانند `cenc`، `cbcs`، `cbcs-1-9`.
+            این مقدار باید توسط یک برنامه تنظیم شود (پیش‌فرض آن `null` است که نشان می‌دهد هر طرح رمزگذاری ممکن است استفاده شود).
         - `robustness`
-          - : The robustness level associated with the content type.
-            The empty string indicates that any ability to decrypt and decode the content type is acceptable.
+          - : سطح استحکام مرتبط با نوع محتوا.
+            رشته خالی نشان می‌دهد که هر توانایی برای رمزگشایی و دیکد کردن نوع محتوا قابل قبول است.
 
     - `videoCapabilities`
-      - : An array of supported video capabilities.
-        The objects in the array have the same form as those in `audioCapabilities`.
+      - : آرایه‌ای از قابلیت‌های ویدیویی پشتیبانی‌شده.
+        اشیاء موجود در آرایه همان شکل اشیاء موجود در `audioCapabilities` را دارند.
 
     - `distinctiveIdentifier`
-      - : A string indicating whether the implementation may use "distinctive identifiers" (or distinctive permanent identifiers) for any operations associated with any object created from this configuration.
-        The allowed values are:
+      - : رشته‌ای که نشان می‌دهد آیا پیاده‌سازی ممکن است از «شناسه‌های متمایز» (یا شناسه‌های دائمی متمایز) برای هر عملیات مرتبط با هر شیء ایجاد شده از این پیکربندی استفاده کند یا خیر.
+        مقادیر مجاز عبارتند از:
         - `required`
-          - : The returned object must support this feature.
+          - : شیء برگشتی باید از این ویژگی پشتیبانی کند.
         - `optional`
-          - : The returned object may support this feature.
-            This is the default
+          - : شیء برگشتی ممکن است از این ویژگی پشتیبانی کند.
+            این مقدار پیش‌فرض است.
         - `not-allowed`
-          - : The returned object must not support or use this feature.
+          - : شیء برگشتی نباید از این ویژگی پشتیبانی کند یا از آن استفاده کند.
 
     - `persistentState`
-      - : A string indicating whether the returned object must be able to persist session data or any other type of state.
-        The values are the same as for `distinctiveIdentifier` and have the same meaning: `required`, `optional` (default), `not-allowed`.
-        Only "temporary" sessions may be created when persistent state is not allowed.
+      - : رشته‌ای که نشان می‌دهد آیا شیء برگشتی باید بتواند داده‌های نشست یا هر نوع وضعیت دیگری را ذخیره کند یا خیر.
+        مقادیر همانند `distinctiveIdentifier` هستند و معنای یکسانی دارند: `required`، `optional` (پیش‌فرض)، `not-allowed`.
+        وقتی حالت پایدار مجاز نیست، فقط نشست‌های «موقت» ممکن است ایجاد شوند.
 
     - `sessionTypes`
-      - : An array of strings indicating the session types that must be supported.
-        Permitted values include:
+      - : آرایه‌ای از رشته‌ها که انواع نشست‌هایی که باید پشتیبانی شوند را نشان می‌دهد.
+        مقادیر مجاز عبارتند از:
         - `temporary`
-          - : A session for which the license, key(s) and record of or data related to the session are not persisted.
-            The application does not need to manage such storage.
-            Implementations must support this option, and it is the default.
+          - : نشستی که مجوز، کلید(ها) و رکورد یا داده‌های مرتبط با نشست در آن ذخیره نمی‌شوند.
+            برنامه نیازی به مدیریت چنین فضای ذخیره‌سازی ندارد.
+            پیاده‌سازی‌ها باید از این گزینه پشتیبانی کنند و این گزینه پیش‌فرض است.
         - `persistent-license`
-          - : A session for which the license (and potentially other data related to the session) will be persisted.
-            A record of the license and associated keys persists even if the license is destroyed, providing an attestation that the license and key(s) it contains are no longer usable by the client.
+          - : نشستی که مجوز (و احتمالاً داده‌های دیگر مرتبط با نشست) در آن ذخیره خواهد شد.
+            رکوردی از مجوز و کلیدهای مرتبط حتی اگر مجوز از بین برود باقی می‌ماند و گواهی می‌دهد که مجوز و کلید(های) موجود در آن دیگر توسط کلاینت قابل استفاده نیستند.
 
 ### Return value
 
-A {{jsxref('Promise')}} that fulfils with a {{domxref('MediaKeySystemAccess')}} object representing the media key system configuration described by `keySystem` and `supportedConfigurations`.
+یک {{jsxref('Promise')}} که با یک شیء {{domxref('MediaKeySystemAccess')}} تکمیل می‌شود و پیکربندی سیستم کلید رسانه‌ای توصیف‌شده توسط `keySystem` و `supportedConfigurations` را نشان می‌دهد.
 
 ### Exceptions
 
-In case of an error, the returned {{jsxref('Promise')}} is rejected with a {{domxref('DOMException')}} whose name indicates what kind of error occurred.
+در صورت بروز خطا، {{jsxref('Promise')}} برگشتی با یک {{domxref('DOMException')}} رد می‌شود که نام آن نشان می‌دهد چه نوع خطایی رخ داده است.
 
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Either the specified `keySystem` isn't supported by the platform or the browser, or none of the configurations specified by `supportedConfigurations` can be satisfied (if, for example, none of the `codecs` specified in `contentType` are available).
+  - : یا `keySystem` مشخص‌شده توسط پلتفرم یا مرورگر پشتیبانی نمی‌شود، یا هیچ‌یک از پیکربندی‌های مشخص‌شده توسط `supportedConfigurations` قابل قبول نیستند (مثلاً اگر هیچ‌یک از `codec`های مشخص‌شده در `contentType` در دسترس نباشند).
 - `SecurityError` {{domxref("DOMException")}}
-  - : Use of this feature was blocked by [`Permissions-Policy: encrypted-media`](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy/encrypted-media).
+  - : استفاده از این ویژگی توسط [`Permissions-Policy: encrypted-media`](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy/encrypted-media) مسدود شده است.
 - {{jsxref("TypeError")}}
-  - : Either `keySystem` is an empty string or the `supportedConfigurations` array is empty.
+  - : یا `keySystem` یک رشته خالی است یا آرایه `supportedConfigurations` خالی است.
 
 ## Examples
 
-The example below shows how you might use `requestMediaKeySystemAccess()`, specifying a key system and configuration.
+مثال زیر نشان می‌دهد که چگونه ممکن است از `requestMediaKeySystemAccess()` استفاده کنید، با مشخص کردن یک سیستم کلید و پیکربندی.
 
 ```js
 const clearKeyOptions = [
