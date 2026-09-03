@@ -1,7 +1,5 @@
 ---
 title: "NodeList: forEach() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NodeList/forEach"
-status: "needs-translation"
 ---
 
 ---
@@ -14,41 +12,34 @@ browser-compat: api.NodeList.forEach
 
 {{APIRef("DOM")}}
 
-The **`forEach()`** method of the {{domxref("NodeList")}}
-interface calls the callback given in parameter once for each value pair in the list, in
-insertion order.
+متد **`forEach()`** از رابط {{domxref("NodeList")}}، تابع داده‌شده در پارامتر (callback) را یک بار برای هر مقدار در فهرست، به ترتیب درج، اجرا می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 forEach(callback)
 forEach(callback, thisArg)
 ```
 
-### Parameters
+### پارامترها
 
 - `callback`
-  - : A function to execute on each element of `someNodeList`. It
-    accepts 3 parameters:
+  - : تابعی است که روی هر عنصر از `someNodeList` اجرا می‌شود. این تابع ۳ پارامتر می‌پذیرد:
     - `currentValue`
-      - : The current element being processed in `someNodeList`.
+      - : عنصر جاری که در `someNodeList` پردازش می‌شود.
     - `currentIndex` {{Optional_inline}}
-      - : The index of the `currentValue` being processed in
-        `someNodeList`.
+      - : اندیس `currentValue` در حال پردازش در `someNodeList`.
     - `listObj` {{Optional_inline}}
-      - : The `someNodeList` that `forEach()` is being
-        applied to.
+      - : همان `someNodeList` است که متد `forEach()` روی آن اعمال می‌شود.
 
 - `thisArg` {{Optional_inline}}
-  - : Value to use as
-    [`this`](/en-US/docs/Web/JavaScript/Reference/Operators/this)
-    when executing `callback`.
+  - : مقداری که هنگام اجرای `callback` به‌عنوان [`this`](/en-US/docs/Web/JavaScript/Reference/Operators/this) استفاده می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
 {{jsxref('undefined')}}.
 
-## Example
+## مثال
 
 ```js
 const node = document.createElement("div");
@@ -67,7 +58,7 @@ list.forEach(function (currentValue, currentIndex, listObj) {
 }, "myThisArg");
 ```
 
-The above code results in the following:
+کد بالا نتیجهٔ زیر را به دست می‌دهد:
 
 ```plain
 [object HTMLParagraphElement], 0, myThisArg
@@ -75,16 +66,16 @@ The above code results in the following:
 [object HTMLSpanElement], 2, myThisArg
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Polyfill of `NodeList.prototype.forEach` in `core-js`](https://github.com/zloirock/core-js#iterable-dom-collections)
+- [پلی‌فیلِ `NodeList.prototype.forEach` در `core-js`](https://github.com/zloirock/core-js#iterable-dom-collections)
 - {{domxref("Node")}}
 - {{domxref("NodeList")}}
