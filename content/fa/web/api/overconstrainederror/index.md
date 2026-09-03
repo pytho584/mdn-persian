@@ -1,10 +1,4 @@
 ---
-title: "OverconstrainedError"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/OverconstrainedError"
-status: "needs-translation"
----
-
----
 title: OverconstrainedError
 slug: Web/API/OverconstrainedError
 page-type: web-api-interface
@@ -13,30 +7,30 @@ browser-compat: api.OverconstrainedError
 
 {{APIRef("Media Capture and Streams")}}
 
-The **`OverconstrainedError`** interface of the [Media Capture and Streams API](/en-US/docs/Web/API/Media_Capture_and_Streams_API) indicates that the set of desired capabilities for the current {{domxref('MediaStreamTrack')}} cannot currently be met. When this event is thrown on a MediaStreamTrack, it is muted until either the current constraints can be established or until satisfiable constraints are applied.
+رابط **`OverconstrainedError`** از [API ضبط و جریان‌های رسانه](/en-US/docs/Web/API/Media_Capture_and_Streams_API) نشان می‌دهد که مجموعه قابلیت‌های مورد نظر برای {{domxref('MediaStreamTrack')}} فعلی در حال حاضر قابل برآورده شدن نیست. هنگامی که این رویداد روی یک `MediaStreamTrack` صادر می‌شود، آن مسیر تا زمانی که محدودیت‌های فعلی قابل اعمال شوند یا محدودیت‌های قابل قبولی اعمال شوند، بی‌صدا می‌شود.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("OverconstrainedError.OverconstrainedError", "OverconstrainedError()")}}
-  - : Creates a new `OverconstrainedError` object.
+  - : یک شیء جدید `OverconstrainedError` ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Also inherits properties from its parent interface, {{domxref('DOMException')}}._
+_همچنین ویژگی‌هایی را از رابط والد خود، {{domxref('DOMException')}}، به ارث می‌برد._
 
 - {{domxref("OverconstrainedError.constraint")}} {{ReadOnlyInline}}
-  - : Returns the constraint that was supplied in the constructor, meaning the constraint that was not satisfied.
+  - : محدودیتی را که در سازنده ارائه شده بود، یعنی محدودیتی که برآورده نشده است، برمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
-_Also inherits methods from its parent interface, {{domxref('DOMException')}}._
+_همچنین روش‌هایی را از رابط والد خود، {{domxref('DOMException')}}، به ارث می‌برد._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
