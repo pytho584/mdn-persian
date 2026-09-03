@@ -1,7 +1,5 @@
 ---
 title: "PaymentManager: enableDelegations() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaymentManager/enableDelegations"
-status: "needs-translation"
 ---
 
 ---
@@ -16,12 +14,12 @@ browser-compat: api.PaymentManager.enableDelegations
 
 {{APIRef("Web-Based Payment Handler API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`enableDelegations()`** method of the {{domxref("PaymentManager")}} interface delegates responsibility for providing various parts of the required payment information to the payment app rather than collecting it from the browser (for example, via autofill).
+متد **`enableDelegations()`** از رابط {{domxref("PaymentManager")}} مسئولیت ارائه بخش‌های مختلف اطلاعات پرداخت مورد نیاز را به اپلیکیشن پرداخت واگذار می‌کند، به جای اینکه آن را از مرورگر (مثلاً از طریق تکمیل خودکار) جمع‌آوری کند.
 
-For example, if the `requestShipping` option is set to `true` in the options object when invoking the {{domxref("PaymentRequest.PaymentRequest", "PaymentRequest()")}} constructor, a shipping address will be returned.
+به عنوان مثال، اگر گزینه `requestShipping` در شیء options هنگام فراخوانی سازنده {{domxref("PaymentRequest.PaymentRequest", "PaymentRequest()")}} روی `true` تنظیم شده باشد، یک آدرس حمل و نقل بازگردانده می‌شود.
 
-- If `enableDelegations()` was used to delegate `shippingAddress`, that address will come from the payment app.
-- If not, it will come from the browser autofill.
+- اگر `enableDelegations()` برای واگذاری `shippingAddress` استفاده شده باشد، آن آدرس از اپلیکیشن پرداخت می‌آید.
+- در غیر این صورت، از تکمیل خودکار مرورگر می‌آید.
 
 ## Syntax
 
@@ -32,19 +30,19 @@ enableDelegations(delegations)
 ### Parameters
 
 - `delegations` {{optional_inline}}
-  - : An array containing one or more enumerated values that specify the payment information you want to delegate to the payment app. Possible values can be:
+  - : آرایه‌ای شامل یک یا چند مقدار شمارشی که اطلاعات پرداختی را که می‌خواهید به اپلیکیشن پرداخت واگذار کنید، مشخص می‌کند. مقادیر ممکن عبارتند از:
     - `payerEmail`
-      - : The payment app will provide the payer's email whenever it is needed.
+      - : اپلیکیشن پرداخت ایمیل پرداخت‌کننده را هر زمان که نیاز باشد، ارائه می‌دهد.
     - `payerName`
-      - : The payment app will provide the payer's name whenever it is needed.
+      - : اپلیکیشن پرداخت نام پرداخت‌کننده را هر زمان که نیاز باشد، ارائه می‌دهد.
     - `payerPhone`
-      - : The payment app will provide the payer's phone number whenever it is needed.
+      - : اپلیکیشن پرداخت شماره تلفن پرداخت‌کننده را هر زمان که نیاز باشد، ارائه می‌دهد.
     - `shippingAddress`
-      - : The payment app will provide the shipping address whenever it is needed.
+      - : اپلیکیشن پرداخت آدرس حمل و نقل را هر زمان که نیاز باشد، ارائه می‌دهد.
 
 ### Return value
 
-A {{jsxref("Promise")}} that resolves with a value of `undefined`.
+یک {{jsxref("Promise")}} که با مقدار `undefined` حل می‌شود.
 
 ## Examples
 
