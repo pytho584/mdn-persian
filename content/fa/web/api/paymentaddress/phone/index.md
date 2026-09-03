@@ -1,7 +1,5 @@
 ---
 title: "PaymentAddress: phone property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaymentAddress/phone"
-status: "needs-translation"
 ---
 
 ---
@@ -17,16 +15,12 @@ browser-compat: api.PaymentAddress.phone
 
 {{APIRef("Payment Request API")}}{{SecureContext_Header}}{{Deprecated_Header}}{{Non-standard_Header}}
 
-The read-only **`phone`** property of the
-{{domxref('PaymentAddress')}} interface returns a string containing the telephone number
-of the recipient or contact person.
+ویژگی فقط‌خواندنی **`phone`** از رابط {{domxref('PaymentAddress')}} رشته‌ای را برمی‌گرداند که شماره تلفن گیرنده یا شخص تماس را شامل می‌شود.
 
-## Value
+## مقدار
 
-A string containing the telephone number for the recipient of the
-shipment or of the responsible party for payment. If no phone number is available, this
-value is an empty string.
+رشته‌ای که شماره تلفن گیرنده محموله یا شخص مسئول پرداخت را دربر می‌گیرد. اگر شماره تلفنی در دسترس نباشد، این مقدار یک رشتهٔ خالی است.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
