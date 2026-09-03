@@ -1,11 +1,5 @@
 ---
 title: "PannerNode: positionY property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PannerNode/positionY"
-status: "needs-translation"
----
-
----
-title: "PannerNode: positionY property"
 short-title: positionY
 slug: Web/API/PannerNode/positionY
 page-type: web-api-instance-property
@@ -14,38 +8,19 @@ browser-compat: api.PannerNode.positionY
 
 {{ APIRef("Web Audio API") }}
 
-The **`positionY`** property of the {{ domxref("PannerNode") }} interface specifies the Y coordinate of the audio source's position in 3D Cartesian
-coordinates, corresponding to the _vertical_ axis (top-bottom). The complete
-vector is defined by the position of the audio source, given as
-({{domxref("PannerNode.positionX", "positionX")}}, `positionY`, {{domxref("PannerNode.positionZ", "positionZ")}}), and the orientation
-of the audio source (that is, the direction in which it's facing), given as
-({{domxref("PannerNode.orientationX", "orientationX")}},
-{{domxref("PannerNode.orientationY", "orientationY")}},
-{{domxref("PannerNode.orientationZ", "orientationZ")}}).
+ویژگی **`positionY`** از رابط {{ domxref("PannerNode") }} مختصات Y موقعیت منبع صوتی را در فضای سه‌بعدی دکارتی مشخص می‌کند که با محور _عمودی_ (بالا-پایین) متناظر است. بردار کامل توسط موقعیت منبع صوتی، که به صورت ({{domxref("PannerNode.positionX", "positionX")}}, `positionY`, {{domxref("PannerNode.positionZ", "positionZ")}}) تعریف می‌شود، و جهت‌گیری منبع صوتی (یعنی جهتی که به آن سمت نشانه رفته است) که به صورت ({{domxref("PannerNode.orientationX", "orientationX")}}, {{domxref("PannerNode.orientationY", "orientationY")}}, {{domxref("PannerNode.orientationZ", "orientationZ")}}) تعریف می‌شود، مشخص می‌گردد.
 
-Depending on the directionality of the sound (as specified using the attributes
-{{domxref("PannerNode.coneInnerAngle", "coneInnerAngle")}},
-{{domxref("PannerNode.coneOuterAngle", "coneOuterAngle")}}, and
-{{domxref("PannerNode.coneOuterGain", "codeOuterGain")}}), the orientation of the
-sound may alter the perceived volume of the sound as it's being played. If the sound
-is pointing toward the listener, it will be louder than if the sound is pointed away
-from the listener.
+بسته به جهت‌دار بودن صدا (که با استفاده از ویژگی‌های {{domxref("PannerNode.coneInnerAngle", "coneInnerAngle")}}، {{domxref("PannerNode.coneOuterAngle", "coneOuterAngle")}} و {{domxref("PannerNode.coneOuterGain", "codeOuterGain")}} مشخص می‌شود)، جهت‌گیری صدا ممکن است بلندیِ درک‌شده صدا را در حین پخش تغییر دهد. اگر صدا به سمت شنونده نشانه رفته باشد، نسبت به حالتی که از شنونده دور شده باشد، بلندتر خواهد بود.
 
-The {{domxref("AudioParam")}} contained by this property is read only; however, you
-can still change the value of the parameter by assigning a new value to its
-{{domxref("AudioParam.value")}} property.
+{{domxref("AudioParam")}} موجود در این ویژگی فقط خواندنی است؛ با این حال، شما می‌توانید با اختصاص یک مقدار جدید به ویژگی {{domxref("AudioParam.value")}} آن، مقدار پارامتر را تغییر دهید.
 
-## Value
+## مقدار
 
-An {{domxref("AudioParam")}} whose `value` is the Y coordinate of the audio
-source's position, in 3D Cartesian coordinates.
+یک {{domxref("AudioParam")}} که `value` آن مختصات Y موقعیت منبع صوتی را در فضای سه‌بعدی دکارتی نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
-The following example starts an oscillator and pans it above the listener after 1
-second, below the listener after 2 seconds, and back to the center after 3 seconds. Note
-that in this case, the change will mainly affect the timbre of the oscillator, as it's a
-simple mono wave.
+مثال زیر یک نوسان‌ساز (oscillator) را شروع کرده و آن را پس از ۱ ثانیه به بالای سر شنونده، پس از ۲ ثانیه به زیر پای شنونده و پس از ۳ ثانیه به مرکز برمی‌گرداند. توجه داشته باشید که در این مورد، تغییر عمدتاً بر تُن (timbre) نوسان‌ساز تأثیر می‌گذارد، زیرا یک موج سادهٔ مونو (تک‌کاناله) است.
 
 ```js
 const context = new AudioContext();
@@ -63,16 +38,16 @@ osc.connect(panner).connect(context.destination);
 osc.start(0);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
-- [Web Audio spatialization basics](/en-US/docs/Web/API/Web_Audio_API/Web_audio_spatialization_basics)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [مبانی فضاسازی صدا در Web Audio](/en-US/docs/Web/API/Web_Audio_API/Web_audio_spatialization_basics)
 - {{domxref("PannerNode")}}
