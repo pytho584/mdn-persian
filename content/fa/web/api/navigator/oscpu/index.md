@@ -1,11 +1,5 @@
 ---
 title: "Navigator: oscpu property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/oscpu"
-status: "needs-translation"
----
-
----
-title: "Navigator: oscpu property"
 short-title: oscpu
 slug: Web/API/Navigator/oscpu
 page-type: web-api-instance-property
@@ -14,27 +8,27 @@ browser-compat: api.Navigator.oscpu
 
 {{ ApiRef("HTML DOM") }}
 
-The **`Navigator.oscpu`** property returns a string that identifies the current operating system.
+ویژگی **`Navigator.oscpu`** رشته‌ای را بازمی‌گرداند که سیستم‌عامل فعلی را شناسایی می‌کند.
 
-## Value
+## مقدار
 
-A string providing a string which identifies the operating system on which the browser is running.
+رشته‌ای که سیستم‌عاملی را که مرورگر روی آن در حال اجرا است مشخص می‌کند.
 
-| Operating system              | `oscpuInfo` string format                         |
-| ----------------------------- | ------------------------------------------------- |
-| OS/2                          | `OS/2 Warp x (either 3, 4 or 4.5)`                |
-| Windows CE                    | `WindowsCE x.y`                                   |
-| Windows 64-bit (64-bit build) | `Windows NT x.y; Win64; x64`                      |
-| Windows 64-bit (32-bit build) | `Windows NT x.y; WOW64`                           |
-| Windows 32-bit                | `Windows NT x.y`                                  |
-| Mac OS X (PPC build)          | `PowerPC Mac OS X version x.y`                    |
-| Mac OS X (i386/x64 build)     | `Intel Mac OS X` or `macOS version x.y`           |
-| Linux 64-bit (32-bit build)   | Output of `uname -s` followed by `i686 on x86_64` |
-| Linux                         | Output of `uname -sm`                             |
+| سیستم‌عامل                              | قالب رشته `oscpuInfo`                              |
+| --------------------------------------- | -------------------------------------------------- |
+| OS/2                                    | `OS/2 Warp x (either 3, 4 or 4.5)`                 |
+| Windows CE                              | `WindowsCE x.y`                                    |
+| ویندوز ۶۴ بیتی (نسخهٔ ۶۴ بیتی)           | `Windows NT x.y; Win64; x64`                       |
+| ویندوز ۶۴ بیتی (نسخهٔ ۳۲ بیتی)           | `Windows NT x.y; WOW64`                            |
+| ویندوز ۳۲ بیتی                           | `Windows NT x.y`                                   |
+| Mac OS X (نسخهٔ PPC)                    | `PowerPC Mac OS X version x.y`                     |
+| Mac OS X (نسخهٔ i386/x64)               | `Intel Mac OS X` یا `macOS version x.y`            |
+| لینوکس ۶۴ بیتی (نسخهٔ ۳۲ بیتی)           | خروجی `uname -s` به همراه `i686 on x86_64`         |
+| لینوکس                                  | خروجی `uname -sm`                                  |
 
-In this table `x.y` refers to the version of the operating system
+در این جدول `x.y` به نسخهٔ سیستم‌عامل اشاره دارد.
 
-## Examples
+## مثال‌ها
 
 ```js
 function osInfo() {
@@ -44,14 +38,14 @@ function osInfo() {
 osInfo(); // alerts "Windows NT 6.0" for example
 ```
 
-## Usage notes
+## نکات استفاده
 
-Unless your code is privileged (chrome or at least has the UniversalBrowserRead privilege), it may get the value of the `general.oscpu.override` preference instead of the true platform.
+مگر اینکه کد شما امتیاز ویژه داشته باشد (chrome یا حداقل دارای امتیاز UniversalBrowserRead باشد)، ممکن است به جای پلتفرم واقعی، مقدار تنظیم `general.oscpu.override` را دریافت کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
