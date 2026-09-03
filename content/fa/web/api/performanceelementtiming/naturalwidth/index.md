@@ -1,11 +1,5 @@
 ---
 title: "PerformanceElementTiming: naturalWidth property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceElementTiming/naturalWidth"
-status: "needs-translation"
----
-
----
-title: "PerformanceElementTiming: naturalWidth property"
 short-title: naturalWidth
 slug: Web/API/PerformanceElementTiming/naturalWidth
 page-type: web-api-instance-property
@@ -16,17 +10,17 @@ browser-compat: api.PerformanceElementTiming.naturalWidth
 
 {{APIRef("Performance API")}}{{SeeCompatTable}}
 
-The **`naturalWidth`** read-only property of the {{domxref("PerformanceElementTiming")}} interface returns the intrinsic width of the image element.
+ویژگی فقط‌خواندنی **`naturalWidth`** در رابط {{domxref("PerformanceElementTiming")}} عرض ذاتی عنصر تصویر را بازمی‌گرداند.
 
-## Value
+## مقدار
 
-An unsigned 32-bit integer (unsigned long) which is the intrinsic width of the image if this is applied to an image, `0` for text.
+یک عدد صحیح بدون علامت ۳۲ بیتی (unsigned long) که عرض ذاتی تصویر است اگر این ویژگی روی یک تصویر اعمال شود؛ برای متن مقدار `0` برمی‌گردد.
 
-## Examples
+## مثال‌ها
 
-### Logging `naturalWidth`
+### ثبت `naturalWidth`
 
-In this example an {{HTMLElement("img")}} element is being observed by adding the [`elementtiming`](/en-US/docs/Web/HTML/Reference/Attributes/elementtiming) attribute. A {{domxref("PerformanceObserver")}} is registered to get all performance entries of type `"element"` and the `buffered` flag is used to access data from before observer creation. The image file has a width of 1000px and a height of 750px. Calling `entry.naturalWidth` returns `1000`, that being the intrinsic width in pixels.
+در این مثال، یک عنصر {{HTMLElement("img")}} با افزودن ویژگی [`elementtiming`](/en-US/docs/Web/HTML/Reference/Attributes/elementtiming) تحت نظارت قرار می‌گیرد. یک {{domxref("PerformanceObserver")}} ثبت می‌شود تا همه ورودی‌های عملکرد از نوع `"element"` را دریافت کند و از پرچم `buffered` برای دسترسی به داده‌های قبل از ایجاد observer استفاده می‌شود. فایل تصویر دارای عرض ۱۰۰۰ پیکسل و ارتفاع ۷۵۰ پیکسل است. فراخوانی `entry.naturalWidth` مقدار `1000` را برمی‌گرداند که همان عرض ذاتی بر حسب پیکسل است.
 
 ```html
 <img
@@ -47,10 +41,10 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "element", buffered: true });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
