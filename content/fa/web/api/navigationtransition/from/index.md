@@ -1,11 +1,5 @@
 ---
 title: "NavigationTransition: from property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigationTransition/from"
-status: "needs-translation"
----
-
----
-title: "NavigationTransition: from property"
 short-title: from
 slug: Web/API/NavigationTransition/from
 page-type: web-api-instance-property
@@ -14,28 +8,27 @@ browser-compat: api.NavigationTransition.from
 
 {{APIRef("Navigation API")}}
 
-The **`from`** read-only property of the
-{{domxref("NavigationTransition")}} interface returns the {{domxref("NavigationHistoryEntry")}} that the transition is coming from.
+ویژگی فقط خواندنی **`from`** از رابط {{domxref("NavigationTransition")}}، شیء {{domxref("NavigationHistoryEntry")}} را برمی‌گرداند که انتقال از آن انجام می‌شود.
 
-## Value
+## مقدار
 
-A {{domxref("NavigationHistoryEntry")}} object.
+یک شیء {{domxref("NavigationHistoryEntry")}}.
 
-## Examples
+## مثال‌ها
 
 ```js
 console.log(navigation.transition.from);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
 - [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
