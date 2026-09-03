@@ -1,10 +1,4 @@
 ---
-title: "PerformancePaintTiming"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformancePaintTiming"
-status: "needs-translation"
----
-
----
 title: PerformancePaintTiming
 slug: Web/API/PerformancePaintTiming
 page-type: web-api-interface
@@ -13,53 +7,53 @@ browser-compat: api.PerformancePaintTiming
 
 {{APIRef("Performance API")}}
 
-The **`PerformancePaintTiming`** interface provides timing information about "paint" (also called "render") operations during web page construction. "Paint" refers to conversion of the render tree to on-screen pixels.
+رابط **`PerformancePaintTiming`** اطلاعات زمان‌بندی عملیات «paint» (که «render» نیز نامیده می‌شود) را هنگام ساخت صفحه وب فراهم می‌کند. «paint» به تبدیل درخت رندر به پیکسل‌های روی صفحه اشاره دارد.
 
-There are two key paint moments this API provides:
+دو لحظه کلیدی paint که این API فراهم می‌کند عبارتند از:
 
-- {{Glossary("First Paint")}} (FP): Time when anything is rendered. Note that the marking of the first paint is optional, not all user agents report it.
-- {{Glossary("First Contentful Paint")}} (FCP): Time when the first bit of DOM text or image content is rendered.
+- {{Glossary("First Paint")}} (FP): زمانی که هر چیزی رندر می‌شود. توجه داشته باشید که ثبت اولین paint اختیاری است و همه user agentها آن را گزارش نمی‌دهند.
+- {{Glossary("First Contentful Paint")}} (FCP): زمانی که نخستین بخش از محتوای متنی یا تصویری DOM رندر می‌شود.
 
-A third key paint moment is provided by the {{domxref("LargestContentfulPaint")}} API:
+سومین لحظه کلیدی paint توسط API زیر فراهم می‌شود:
 
-- {{Glossary("Largest Contentful Paint")}} (LCP): Render time of the largest image or text block visible within the viewport, recorded from when the page first begins to load.
+- {{Glossary("Largest Contentful Paint")}} (LCP): زمان رندر بزرگ‌ترین تصویر یا بلوک متنی قابل مشاهده در viewport، که از زمانی که صفحه برای نخستین بار شروع به بارگذاری می‌کند ثبت می‌شود.
 
-The data this API provides helps you minimize the time that users have to wait before they can see the site's content start to appear. Decreasing the time until these key paint moments make sites feel more responsive, performant, and engaging for your users.
+داده‌های این API به شما کمک می‌کند تا مدت انتظار کاربران برای دیده‌شدن محتوای سایت را به حداقل برسانید. کاهش زمان رسیدن به این لحظات کلیدی paint باعث می‌شود سایت برای کاربران شما واکنش‌گراتر، پربازده‌تر و جذاب‌تر به نظر برسد.
 
-Like other Performance APIs, this API extends {{domxref("PerformanceEntry")}}.
+این API مانند سایر APIهای Performance، رابط {{domxref("PerformanceEntry")}} را گسترش می‌دهد.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-This interface directly defines the following properties:
+این رابط مستقیماً ویژگی‌های زیر را تعریف می‌کند:
 
 - {{domxref("PerformancePaintTiming.paintTime")}}
-  - : Returns the {{domxref("DOMHighResTimeStamp","timestamp")}} when the rendering phase ended and the paint phase started.
+  - : {{domxref("DOMHighResTimeStamp","timestamp")}} پایان فاز رندر و شروع فاز paint را برمی‌گرداند.
 - {{domxref("PerformancePaintTiming.presentationTime")}}
-  - : Returns the {{domxref("DOMHighResTimeStamp","timestamp")}} when the painted pixels were actually drawn on the screen.
+  - : {{domxref("DOMHighResTimeStamp","timestamp")}} زمانی که پیکسل‌های paint‌شده در واقع روی صفحه رسم شدند را برمی‌گرداند.
 
-It also extends the following {{domxref("PerformanceEntry")}} properties, qualifying and constraining them as described:
+همچنین ویژگی‌های زیر از {{domxref("PerformanceEntry")}} را گسترش می‌دهد و آن‌ها را به صورت توصیف‌شده محدود و مقید می‌کند:
 
 - {{domxref("PerformanceEntry.entryType")}}
-  - : Returns `"paint"`.
+  - : مقدار `"paint"` را برمی‌گرداند.
 - {{domxref("PerformanceEntry.name")}}
-  - : Returns either `"first-paint"` or `"first-contentful-paint"`.
+  - : یکی از مقادیر `"first-paint"` یا `"first-contentful-paint"` را برمی‌گرداند.
 - {{domxref("PerformanceEntry.startTime")}}
-  - : Returns the {{domxref("DOMHighResTimeStamp","timestamp")}} when the paint occurred.
+  - : {{domxref("DOMHighResTimeStamp","timestamp")}} زمان وقوع paint را برمی‌گرداند.
 - {{domxref("PerformanceEntry.duration")}}
-  - : Returns 0.
+  - : عدد 0 را برمی‌گرداند.
 
-## Instance methods
+## متدهای نمونه
 
 - {{domxref("PerformancePaintTiming.toJSON()")}}
-  - : Returns a JSON representation of the `PerformancePaintTiming` object.
+  - : یک نمایش JSON از شیء `PerformancePaintTiming` برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-### Getting basic paint timings
+### به دست آوردن زمان‌بندی‌های پایه paint
 
-Example using a {{domxref("PerformanceObserver")}}, which notifies of new `paint` performance entries as they are recorded in the browser's performance timeline. Use the `buffered` option to access entries from before the observer creation.
+مثالی با استفاده از {{domxref("PerformanceObserver")}} که هنگام ثبت ورودی‌های جدید عملکردی `paint` در خط زمانی عملکرد مرورگر اطلاع می‌دهد. با استفاده از گزینه `buffered` به ورودی‌هایی که قبل از ایجاد observer ثبت شده‌اند دسترسی پیدا کنید.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -75,7 +69,7 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "paint", buffered: true });
 ```
 
-Example using {{domxref("Performance.getEntriesByType()")}}, which only shows `paint` performance entries present in the browser's performance timeline at the time you call this method:
+مثالی با استفاده از {{domxref("Performance.getEntriesByType()")}} که فقط ورودی‌های عملکردی `paint` موجود در خط زمانی عملکرد مرورگر را در زمان فراخوانی این متد نشان می‌دهد:
 
 ```js
 const entries = performance.getEntriesByType("paint");
@@ -86,11 +80,11 @@ entries.forEach((entry) => {
 });
 ```
 
-### Getting separate paint and presentation timings
+### به دست آوردن زمان‌بندی‌های جداگانه paint و presentation
 
-The `paintTime` and `presentationTime` properties enable you to retrieve specific timings for the paint phase starting and the painted pixels being drawn on the screen. The `paintTime` is broadly interoperable, whereas the `presentationTime` is implementation-dependent.
+ویژگی‌های `paintTime` و `presentationTime` به شما امکان می‌دهند زمان‌بندی‌های خاص شروع فاز paint و رسم پیکسل‌های paint‌شده روی صفحه را بازیابی کنید. `paintTime` به طور گسترده‌ای سازگار است، در حالی که `presentationTime` وابسته به پیاده‌سازی مرورگر است.
 
-This example builds on the earlier {{domxref("Performance.getEntriesByType()")}} example, showing how to check for `paintTime` and `presentationTime` support and retrieve those values if they are available. In non-supporting browsers, the code retrieves the `loadTime`.
+این مثال بر پایه مثال قبلی {{domxref("Performance.getEntriesByType()")}} ساخته شده است و نشان می‌دهد چگونه پشتیبانی از `paintTime` و `presentationTime` را بررسی کنید و در صورت موجود بودن این مقادیر را بازیابی کنید. در مرورگرهای بدون پشتیبانی، کد `loadTime` را بازیابی می‌کند.
 
 ```js
 const entries = performance.getEntriesByType("paint");
@@ -110,14 +104,14 @@ entries.forEach((entry) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-### See also
+### همچنین ببینید
 
 - {{domxref("LargestContentfulPaint")}}
