@@ -1,7 +1,5 @@
 ---
 title: "Network Information API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API"
-status: "needs-translation"
 ---
 
 ---
@@ -14,28 +12,27 @@ spec-urls: https://wicg.github.io/netinfo/
 
 {{DefaultAPISidebar("Network Information API")}} {{AvailableInWorkers}}
 
-The **Network Information API** provides information about the system's connection in terms of general connection type (e.g., 'wifi, 'cellular', etc.).
-This can be used to select high definition content or low definition content based on the user's connection.
+**Network Information API** اطلاعاتی دربارهٔ نوع کلی اتصال سیستم (مثلاً «wifi»، «cellular» و غیره) فراهم می‌کند. از این اطلاعات می‌توان برای انتخاب محتوای با کیفیت بالا یا کیفیت پایین بر اساس اتصال کاربر استفاده کرد.
 
-The interface consists of a single {{domxref("NetworkInformation")}} object, an instance of which is returned by the {{domxref("Navigator.connection")}} property or the {{domxref("WorkerNavigator.connection")}} property.
+این رابط از یک شیء {{domxref("NetworkInformation")}} تشکیل شده است که نمونه‌ای از آن توسط خاصیت {{domxref("Navigator.connection")}} یا خاصیت {{domxref("WorkerNavigator.connection")}} بازگردانده می‌شود.
 
-## Interfaces
+## رابط‌ها
 
 - {{domxref("NetworkInformation")}}
-  - : Provides information about the connection a device is using to communicate with the network and provides a means for scripts to be notified if the connection type changes. The `NetworkInformation` interface cannot be instantiated. It is instead accessed through the {{domxref("Navigator")}} interface or the {{domxref("WorkerNavigator")}} interface.
+  - : اطلاعاتی دربارهٔ اتصالی که دستگاه برای برقراری ارتباط با شبکه استفاده می‌کند فراهم می‌کند و به اسکریپت‌ها امکان می‌دهد تا در صورت تغییر نوع اتصال مطلع شوند. رابط `NetworkInformation` قابل نمونه‌سازی نیست. در عوض از طریق رابط {{domxref("Navigator")}} یا رابط {{domxref("WorkerNavigator")}} قابل دسترسی است.
 
-### Extensions to other interfaces
+### توسعه‌های مربوط به رابط‌های دیگر
 
 - {{domxref("Navigator.connection")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref("NetworkInformation")}} object containing information about the network connection of a device.
+  - : یک شیء {{domxref("NetworkInformation")}} شامل اطلاعات مربوط به اتصال شبکهٔ یک دستگاه را بازمی‌گرداند.
 - {{domxref("WorkerNavigator.connection")}} {{ReadOnlyInline}}
-  - : Provides a {{domxref("NetworkInformation")}} object containing information about the network connection of a device.
+  - : یک شیء {{domxref("NetworkInformation")}} شامل اطلاعات مربوط به اتصال شبکهٔ یک دستگاه را فراهم می‌کند.
 
-## Examples
+## مثال‌ها
 
-### Detect connection changes
+### تشخیص تغییرات اتصال
 
-This example watches for changes to the user's connection.
+این مثال تغییرات اتصال کاربر را زیر نظر می‌گیرد.
 
 ```js
 let type = navigator.connection.effectiveType;
@@ -50,9 +47,9 @@ function updateConnectionStatus() {
 navigator.connection.addEventListener("change", updateConnectionStatus);
 ```
 
-### Preload large resources
+### پیش‌بارگذاری منابع حجیم
 
-The connection object is useful for deciding whether to preload resources that take large amounts of bandwidth or memory. This example would be called soon after page load to check for a connection type where preloading a video may not be desirable. If a cellular connection is found, then the `preloadVideo` flag is set to `false`. For simplicity and clarity, this example only tests for one connection type. A real-world use case would likely use a switch statement or some other method to check all of the possible values of {{domxref("NetworkInformation.type")}}. Regardless of the `type` value you can get an estimate of connection speed through the {{domxref("NetworkInformation.effectiveType")}} property.
+شیء connection برای تصمیم‌گیری دربارهٔ اینکه آیا منابعی که پهنای باند یا حافظهٔ زیادی مصرف می‌کنند پیش‌بارگذاری شوند یا نه مفید است. این مثال باید بلافاصله پس از بارگذاری صفحه فراخوانی شود تا نوع اتصالی را بررسی کند که شاید پیش‌بارگذاری ویدیو در آن مطلوب نباشد. اگر اتصال cellular یافت شود، پرچم `preloadVideo` روی `false` تنظیم می‌شود. برای سادگی و وضوح، این مثال فقط یک نوع اتصال را آزمایش می‌کند. در کاربرد واقعی، احتمالاً از دستور switch یا روش دیگری برای بررسی همهٔ مقادیر ممکن {{domxref("NetworkInformation.type")}} استفاده می‌شود. صرف‌نظر از مقدار `type`، می‌توانید تخمینی از سرعت اتصال را از طریق خاصیت {{domxref("NetworkInformation.effectiveType")}} به دست آورید.
 
 ```js
 let preloadVideo = true;
@@ -64,14 +61,14 @@ if (connection) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Online and offline events](/en-US/docs/Web/API/Navigator/onLine)
+- [رویدادهای آنلاین و آفلاین](/en-US/docs/Web/API/Navigator/onLine)
