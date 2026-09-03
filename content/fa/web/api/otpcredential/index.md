@@ -1,7 +1,5 @@
 ---
 title: "OTPCredential"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/OTPCredential"
-status: "needs-translation"
 ---
 
 ---
@@ -15,24 +13,24 @@ browser-compat: api.OTPCredential
 
 {{APIRef("WebOTP API")}}{{SecureContext_Header}}{{SeeCompatTable}}
 
-The **`OTPCredential`** interface of the {{domxref('WebOTP API','','',' ')}} is returned when a WebOTP {{domxref("CredentialsContainer.get", "navigator.credentials.get()")}} call (i.e., invoked with an `otp` option) fulfills. It includes a `code` property that contains the retrieved one-time password (OTP).
+رابط **`OTPCredential`** متعلق به {{domxref('WebOTP API','','',' ')}} زمانی بازگردانده می‌شود که یک فراخوانی {{domxref("CredentialsContainer.get", "navigator.credentials.get()")}} از نوع WebOTP (یعنی فراخوانی‌ای که با گزینهٔ `otp` انجام شده باشد) با موفقیت انجام شود. این رابط شامل یک ویژگی `code` است که رمز یکبارمصرف (OTP) بازیابی‌شده را در خود نگه می‌دارد.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface also inherits properties from {{domxref("Credential")}}._
+_این رابط همچنین ویژگی‌هایی را از {{domxref("Credential")}} به ارث می‌برد._
 
 - {{domxref("OTPCredential.code")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : The one-time password (OTP).
+  - : رمز یکبارمصرف (OTP).
 
-## Instance methods
+## روش‌های نمونه
 
-None.
+هیچ‌کدام.
 
-## Examples
+## مثال‌ها
 
-The below code triggers the browser's permission flow when an SMS message arrives. If permission is granted, then the promise resolves with an `OTPCredential` object. The contained `code` value is then set as the value of an {{htmlelement("input")}} form element, which is then submitted.
+کد زیر، هنگام رسیدن یک پیامک، فرایند درخواست مجوز مرورگر را فعال می‌کند. اگر مجوز صادر شود، پرامیس (Promise) با یک شیء `OTPCredential` حل می‌شود. سپس مقدار `code` موجود، به‌عنوان مقدار یک عنصر فرم {{htmlelement("input")}} تنظیم می‌شود و فرم ارسال می‌گردد.
 
 ```js
 navigator.credentials
@@ -50,12 +48,12 @@ navigator.credentials
 ```
 
 > [!NOTE]
-> For a full explanation of the code, see the {{domxref('WebOTP API','','',' ')}} landing page. You can also [see this code as part of a full working demo](https://chrome.dev/web-otp-demo/).
+> برای توضیح کامل کد، به صفحهٔ اصلی {{domxref('WebOTP API','','',' ')}} مراجعه کنید. همچنین می‌توانید [این کد را به‌عنوان بخشی از یک نسخهٔ نمایشی کامل و عملی](https://chrome.dev/web-otp-demo/) مشاهده کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
