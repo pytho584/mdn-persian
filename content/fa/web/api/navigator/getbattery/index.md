@@ -1,11 +1,5 @@
 ---
-title: "Navigator: getBattery() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/getBattery"
-status: "needs-translation"
----
-
----
-title: "Navigator: getBattery() method"
+title: "Navigator: روش getBattery()"
 short-title: getBattery()
 slug: Web/API/Navigator/getBattery
 page-type: web-api-instance-method
@@ -14,40 +8,40 @@ browser-compat: api.Navigator.getBattery
 
 {{ApiRef("Battery API")}}{{securecontext_header}}
 
-The **`getBattery()`** method provides information about the system's battery.
-It returns a battery promise, which resolves with a {{domxref("BatteryManager")}} object providing some properties to get the battery status also some events you can handle to monitor the battery status.
-This implements the {{domxref("Battery Status API", "", "", "nocode")}}; see that documentation for additional details, a guide to using the API, and sample code.
+روش **`getBattery()`** اطلاعاتی در مورد باتری سیستم ارائه می‌دهد.
+این روش یک قول (Promise) باتری بازمی‌گرداند که با یک شیء {{domxref("BatteryManager")}} حل می‌شود. این شیء ویژگی‌هایی برای دریافت وضعیت باتری و همچنین رویدادهایی برای نظارت بر تغییرات وضعیت باتری در اختیار شما قرار می‌دهد.
+این روش {{domxref("Battery Status API", "", "", "nocode")}} را پیاده‌سازی می‌کند؛ برای جزئیات بیشتر، راهنمای استفاده از API و نمونه کد، به آن مستندات مراجعه کنید.
 
-Since Chrome 103, the `Navigator.getBattery()` method of {{domxref("Battery Status API", "", "", "nocode")}} only expose to secure context.
+از Chrome 103 به بعد، روش `Navigator.getBattery()` از {{domxref("Battery Status API", "", "", "nocode")}} فقط در بافت‌های امن (secure context) در دسترس است.
 
 > [!NOTE]
-> Access to this feature may be controlled by the {{HTTPHeader("Permissions-Policy")}} directive {{HTTPHeader("Permissions-Policy/battery", "battery")}}.
+> دسترسی به این ویژگی ممکن است توسط دستور {{HTTPHeader("Permissions-Policy")}} با نام {{HTTPHeader("Permissions-Policy/battery", "battery")}} کنترل شود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 getBattery()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-A {{JSxRef("Promise")}} that fulfills with a {{DOMxRef("BatteryManager")}} object which you can use to get information about the battery's state.
+یک {{JSxRef("Promise")}} که با یک شیء {{DOMxRef("BatteryManager")}} حل می‌شود. از این شیء می‌توانید برای دریافت اطلاعات وضعیت باتری استفاده کنید.
 
-### Exceptions
+### استثناها
 
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Use of this feature was blocked by a [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy).
+  - : استفاده از این ویژگی توسط [خط‌مشی مجوزها](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) مسدود شده است.
 
 - `SecurityError` {{domxref("DOMException")}}
-  - : The User Agent does not expose battery information to insecure contexts and this method was called from an insecure context.
+  - : عامل کاربر (User Agent) اطلاعات باتری را در بافت‌های ناامن در معرض نمایش قرار نمی‌دهد و این روش از یک بافت ناامن فراخوانی شده است.
 
-## Examples
+## مثال‌ها
 
-This example fetches the current charging state of the battery and establishes a handler for the {{domxref("BatteryManager/chargingchange_event", "chargingchange")}} event, so that the charging state is recorded whenever it changes.
+این مثال وضعیت فعلی شارژ باتری را دریافت می‌کند و یک کنترل‌کننده برای رویداد {{domxref("BatteryManager/chargingchange_event", "chargingchange")}} تنظیم می‌کند تا وضعیت شارژ در هر بار تغییر ثبت شود.
 
 ```js
 let batteryIsCharging = false;
@@ -61,17 +55,17 @@ navigator.getBattery().then((battery) => {
 });
 ```
 
-For more examples and details, see {{domxref("Battery Status API", "", "", "nocode")}}.
+برای مثال‌ها و جزئیات بیشتر، به {{domxref("Battery Status API", "", "", "nocode")}} مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Battery Status API", "", "", "nocode")}}
-- {{HTTPHeader("Permissions-Policy")}} {{HTTPHeader("Permissions-Policy/battery", "battery")}} directive
+- دستور {{HTTPHeader("Permissions-Policy")}} با نام {{HTTPHeader("Permissions-Policy/battery", "battery")}}
