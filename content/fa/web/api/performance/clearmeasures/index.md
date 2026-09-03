@@ -1,11 +1,5 @@
 ---
 title: "Performance: clearMeasures() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Performance/clearMeasures"
-status: "needs-translation"
----
-
----
-title: "Performance: clearMeasures() method"
 short-title: clearMeasures()
 slug: Web/API/Performance/clearMeasures
 page-type: web-api-instance-method
@@ -14,32 +8,32 @@ browser-compat: api.Performance.clearMeasures
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The **`clearMeasures()`** method removes all or specific {{domxref("PerformanceMeasure")}} objects from the browser's performance timeline.
+متد **`clearMeasures()`** تمام یا اشیاء خاص {{domxref("PerformanceMeasure")}} را از خط زمانی عملکرد (performance timeline) مرورگر حذف می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 clearMeasures()
 clearMeasures(name)
 ```
 
-### Parameters
+### پارامترها
 
 - `name` {{optional_inline}}
-  - : A string representing the {{domxref("PerformanceEntry.name", "name")}} of the {{domxref("PerformanceMeasure")}} object. If this argument is omitted, all entries with an {{domxref("PerformanceEntry.entryType","entryType")}} of `"measure"` will be removed.
+  - : یک رشته که {{domxref("PerformanceEntry.name", "name")}} (نام) شیء {{domxref("PerformanceMeasure")}} را نشان می‌دهد. اگر این آرگومان حذف شود، تمام ورودی‌هایی که {{domxref("PerformanceEntry.entryType","entryType")}} آنها `"measure"` است حذف خواهند شد.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-### Removing measures
+### حذف اندازه‌گیری‌ها
 
-To clean up all performance measure, or just specific entries, use the `clearMeasures()` method like this:
+برای پاک کردن تمام اندازه‌گیری‌های عملکرد (performance measures) یا فقط ورودی‌های خاص، از متد `clearMeasures()` به این صورت استفاده کنید:
 
 ```js
-// Create a bunch of measures
+// ایجاد چندین اندازه‌گیری
 performance.measure("from navigation");
 performance.mark("a");
 performance.measure("from mark a", "a");
@@ -50,23 +44,23 @@ performance.measure("between a and b", "a", "b");
 
 performance.getEntriesByType("measure").length; // 5
 
-// Delete just the "from navigation" measure entries
+// فقط ورودی‌های اندازه‌گیری "from navigation" را حذف کن
 performance.clearMeasures("from navigation");
 performance.getEntriesByType("measure").length; // 3
 
-// Delete all of the measure entries
+// تمام ورودی‌های اندازه‌گیری را حذف کن
 performance.clearMeasures();
 performance.getEntriesByType("measure").length; // 0
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("PerformanceMeasure")}}
