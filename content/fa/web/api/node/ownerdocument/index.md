@@ -1,11 +1,5 @@
 ---
 title: "Node: ownerDocument property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Node/ownerDocument"
-status: "needs-translation"
----
-
----
-title: "Node: ownerDocument property"
 short-title: ownerDocument
 slug: Web/API/Node/ownerDocument
 page-type: web-api-instance-property
@@ -14,17 +8,15 @@ browser-compat: api.Node.ownerDocument
 
 {{APIRef("DOM")}}
 
-The read-only **`ownerDocument`** property of the {{domxref("Node")}} interface
-returns the top-level document object of the node.
+ویژگی فقط‌خواندنی **`ownerDocument`** در رابط {{domxref("Node")}}، شیء سند سطح بالای آن گره را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A {{domxref("Document")}} that is the top-level object in which all the
-child nodes are created.
+یک {{domxref("Document")}} که شیء سطح بالایی است که همهٔ گره‌های فرزند در آن ایجاد شده‌اند.
 
-If this property is used on a node that is itself a document, the value is `null`.
+اگر این ویژگی روی گره‌ای استفاده شود که خودش یک سند است، مقدار آن `null` خواهد بود.
 
-## Example
+## مثال
 
 ```js
 // Given a node "p", get the top-level HTML
@@ -34,10 +26,10 @@ const d = p.ownerDocument;
 const html = d.documentElement;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
