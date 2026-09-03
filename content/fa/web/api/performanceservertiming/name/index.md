@@ -1,11 +1,5 @@
 ---
 title: "PerformanceServerTiming: name property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceServerTiming/name"
-status: "needs-translation"
----
-
----
-title: "PerformanceServerTiming: name property"
 short-title: name
 slug: Web/API/PerformanceServerTiming/name
 page-type: web-api-instance-property
@@ -14,26 +8,25 @@ browser-compat: api.PerformanceServerTiming.name
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The **`name`** read-only property returns a
-string value of the server-specified metric name.
+خاصیت فقط خواندنی **`name`** یک رشته (string) شامل نام معیار (metric) مشخص‌شده توسط سرور را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
-### Logging server timing entries
+### ثبت ورودی‌های زمان‌بندی سرور
 
-Server timing metrics require the server to send the {{HTTPHeader("Server-Timing")}} header. For example:
+معیارهای زمان‌بندی سرور نیاز دارند که سرور هدر {{HTTPHeader("Server-Timing")}} را ارسال کند. به عنوان مثال:
 
 ```http
 Server-Timing: cache;desc="Cache Read";dur=23.2
 ```
 
-The `serverTiming` entries can live on `navigation` and `resource` entries.
+ورودی‌های `serverTiming` می‌توانند در ورودی‌های `navigation` و `resource` قرار داشته باشند.
 
-Example using a {{domxref("PerformanceObserver")}}, which notifies of new `navigation` and `resource` performance entries as they are recorded in the browser's performance timeline. Use the `buffered` option to access entries from before the observer creation.
+مثال با استفاده از {{domxref("PerformanceObserver")}} که هنگام ثبت ورودی‌های جدید عملکرد (performance) از نوع `navigation` و `resource` در جدول زمانی عملکرد مرورگر، اعلان می‌دهد. از گزینه `buffered` برای دسترسی به ورودی‌های قبل از ایجاد observer استفاده کنید.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -52,7 +45,7 @@ const observer = new PerformanceObserver((list) => {
 );
 ```
 
-Example using {{domxref("Performance.getEntriesByType()")}}, which only shows `navigation` and `resource` performance entries present in the browser's performance timeline at the time you call this method:
+مثال با استفاده از {{domxref("Performance.getEntriesByType()")}} که فقط ورودی‌های عملکرد `navigation` و `resource` موجود در جدول زمانی عملکرد مرورگر را در زمان فراخوانی این متد نشان می‌دهد:
 
 ```js
 for (const entryType of ["navigation", "resource"]) {
@@ -69,15 +62,15 @@ for (const entryType of ["navigation", "resource"]) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("PerformanceServerTiming")}}
 - {{HTTPHeader("Server-Timing")}}
