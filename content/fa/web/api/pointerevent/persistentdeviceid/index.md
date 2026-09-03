@@ -1,11 +1,5 @@
 ---
 title: "PointerEvent: persistentDeviceId property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent/persistentDeviceId"
-status: "needs-translation"
----
-
----
-title: "PointerEvent: persistentDeviceId property"
 short-title: persistentDeviceId
 slug: Web/API/PointerEvent/persistentDeviceId
 page-type: web-api-instance-property
@@ -14,33 +8,30 @@ browser-compat: api.PointerEvent.persistentDeviceId
 
 {{ APIRef("Pointer Events") }}
 
-The **`persistentDeviceId`** read-only property of the {{domxref("PointerEvent")}} interface is a unique identifier for the pointing device generating the `PointerEvent`.
-This provides a secure, reliable way to identify multiple pointing devices (such as pens) interacting with the screen simultaneously.
+ویژگی فقط‌خواندنی **`persistentDeviceId`** در رابط {{domxref("PointerEvent")}} یک شناسهٔ یکتا برای دستگاه اشاره‌گری است که رویداد `PointerEvent` را تولید می‌کند. این ویژگی راهی امن و قابل‌اعتماد برای شناسایی چند دستگاه اشاره‌گر (مانند قلم‌ها) که به‌طور هم‌زمان با صفحه در تعامل هستند فراهم می‌کند.
 
-A `persistentDeviceId` persists for the lifetime of a browsing session.
-To avoid the risk of fingerprinting/tracking, pointing devices are assigned a new `persistentDeviceId` at the start of each session.
+یک `persistentDeviceId` در طول عمر یک نشست مرورگر پایدار می‌ماند. برای جلوگیری از خطر اثرانگشت/ردیابی، در آغاز هر نشست یک `persistentDeviceId` جدید به دستگاه‌های اشاره‌گر اختصاص داده می‌شود.
 
-Pointer events whose generating device could not be identified are assigned a `persistentDeviceId` value of `0`.
+رویدادهای اشاره‌گری که دستگاه تولیدکنندهٔ آن‌ها قابل شناسایی نباشد، مقدار `persistentDeviceId` برابر با `0` به آن‌ها اختصاص داده می‌شود.
 
-## Value
+## مقدار
 
-An integer, or `0` if the device generating the `PointerEvent` could not be identified.
+یک عدد صحیح، یا اگر دستگاه تولیدکنندهٔ `PointerEvent` قابل شناسایی نباشد، مقدار `0`.
 
 > [!NOTE]
-> Due to digitizer and pointing device hardware constraints, a `persistentDeviceId` may not be available for all pointer events, particularly with older hardware.
-> For example, the pointing device might not report its hardware ID to the digitizer in time for `pointerdown` to receive a `persistentDeviceId`: it may initially be `0` and change to a valid value for later events in the stroke.
+> به دلیل محدودیت‌های سخت‌افزاری دیجیتایزر و دستگاه اشاره‌گر، ممکن است `persistentDeviceId` برای همهٔ رویدادهای اشاره‌گر در دسترس نباشد، به‌ویژه با سخت‌افزارهای قدیمی‌تر. برای مثال، ممکن است دستگاه اشاره‌گر شناسهٔ سخت‌افزاری خود را به‌موقع به دیجیتایزر گزارش ندهد و در نتیجه `persistentDeviceId` رویداد `pointerdown` در ابتدا `0` باشد و برای رویدادهای بعدی در همان stroke به مقدار معتبری تغییر کند.
 
-## Examples
+## مثال‌ها
 
-### Assign color for each persistentDeviceId
+### اختصاص رنگ به هر persistentDeviceId
 
-Assuming the following HTML:
+فرض کنید HTML زیر را داریم:
 
 ```html
 <canvas id="inking-surface" width="1280" height="720"></canvas>
 ```
 
-The following JavaScript assigns a different inking color to up to three unique pointers interacting with a canvas:
+جاوااسکریپت زیر یک رنگ جوهر متفاوت به حداکثر سه اشاره‌گر یکتا که با یک canvas در تعامل هستند اختصاص می‌دهد:
 
 ```js
 const colorBlue = 0;
@@ -74,10 +65,10 @@ canvas.addEventListener("pointermove", (e) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
