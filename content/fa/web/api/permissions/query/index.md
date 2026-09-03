@@ -1,11 +1,5 @@
 ---
 title: "Permissions: query() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Permissions/query"
-status: "needs-translation"
----
-
----
-title: "Permissions: query() method"
 short-title: query()
 slug: Web/API/Permissions/query
 page-type: web-api-instance-method
@@ -14,56 +8,54 @@ browser-compat: api.Permissions.query
 
 {{APIRef("Permissions API")}}{{AvailableInWorkers}}
 
-The **`query()`** method of the {{domxref("Permissions")}} interface returns the state of a user permission on the global scope.
+متد **`query()`** از رابط {{domxref("Permissions")}} وضعیتِ مجوز یک کاربر را در حوزهٔ سراسری (global scope) برمی‌گرداند.
 
-The user permission names are defined in the respective specifications for each feature.
-The permissions supported by different browser versions are listed in the [compatibility data of the `Permissions` interface](/en-US/docs/Web/API/Permissions#browser_compatibility) (see also the relevant source code for [Firefox values](https://searchfox.org/firefox-main/source/dom/webidl/Permissions.webidl#10), [Chromium values](https://chromium.googlesource.com/chromium/src/+/refs/heads/main/third_party/blink/renderer/modules/permissions/permission_descriptor.idl), and [WebKit values](https://github.com/WebKit/WebKit/blob/main/Source/WebCore/Modules/permissions/PermissionName.idl)).
+نام مجوزها در مشخصات (specifications) مربوط به هر ویژگی تعریف شده‌اند.
+فهرست مجوزهایی که نسخه‌های مختلف مرورگر از آن‌ها پشتیبانی می‌کنند، در [داده‌های سازگاری رابط `Permissions`](/en-US/docs/Web/API/Permissions#browser_compatibility) آمده است (همچنین به کد منبع مرتبط برای [مقادیر Firefox](https://searchfox.org/firefox-main/source/dom/webidl/Permissions.webidl#10)، [مقادیر Chromium](https://chromium.googlesource.com/chromium/src/+/refs/heads/main/third_party/blink/renderer/modules/permissions/permission_descriptor.idl) و [مقادیر WebKit](https://github.com/WebKit/WebKit/blob/main/Source/WebCore/Modules/permissions/PermissionName.idl) مراجعه کنید).
 
-The APIs that are gated by each permission are listed in [Permission-aware APIs](/en-US/docs/Web/API/Permissions_API#permission-aware_apis) in the [Permissions API](/en-US/docs/Web/API/Permissions_API) overview topic.
+APIهایی که دسترسی به آن‌ها توسط هر مجوز کنترل می‌شود، در بخش [APIهای مبتنی بر مجوز (Permission-aware APIs)](/en-US/docs/Web/API/Permissions_API#permission-aware_apis) از نمای کلی [Permissions API](/en-US/docs/Web/API/Permissions_API) فهرست شده‌اند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 query(permissionDescriptor)
 ```
 
-### Parameters
+### پارامترها
 
 - `permissionDescriptor`
-  - : An object that sets options for the `query` operation.
-    The available options for this descriptor depend on the permission type.
+  - : شیئی که گزینه‌های عملیات `query` را تنظیم می‌کند.
+    گزینه‌های موجود برای این توصیف‌گر به نوع مجوز بستگی دارند.
 
-    All permissions have a name:
+    همهٔ مجوزها دارای یک `name` هستند:
     - `name`
-      - : A string containing the name of the API whose permissions you want to query, such as `camera`, `bluetooth`, `microphone`, `geolocation` (see [`Permissions`](/en-US/docs/Web/API/Permissions#browser_compatibility) for a more complete list).
-        The returned {{jsxref("Promise")}} will reject with a {{jsxref("TypeError")}} if the permission name is not supported by the browser.
+      - : رشته‌ای شامل نامِ APIای که می‌خواهید وضعیت مجوز آن را بررسی کنید، مانند `camera`، `bluetooth`، `microphone`، `geolocation` (برای فهرست کامل‌تر به [`Permissions`](/en-US/docs/Web/API/Permissions#browser_compatibility) مراجعه کنید).
+        اگر نام مجوز توسط مرورگر پشتیبانی نشود، {{jsxref("Promise")}} بازگشتی با یک {{jsxref("TypeError")}} رد (reject) می‌شود.
 
-    For the `push` permissions you can also specify:
+    برای مجوزهای `push` نیز می‌توانید گزینهٔ زیر را مشخص کنید:
     - `userVisibleOnly` {{optional_inline}}
-      - : (Push only, not supported in Firefox — see the Browser Support section below) Indicates whether you want to show a notification for every message or be able to send silent push notifications.
-        The default is `false`.
+      - : (فقط برای Push است و در Firefox پشتیبانی نمی‌شود — به بخش «سازگاری مرورگر» در پایین مراجعه کنید.) مشخص می‌کند که آیا می‌خواهید برای هر پیام یک اعلان نمایش دهید یا بتوانید اعلان‌های فشاری بی‌صدا ارسال کنید. مقدار پیش‌فرض `false` است.
 
-    For the `midi` permission you can also specify:
+    برای مجوز `midi` نیز می‌توانید گزینهٔ زیر را مشخص کنید:
     - `sysex` {{optional_inline}}
-      - : Indicates whether you need and/or receive system exclusive messages.
-        The default is `false`.
+      - : مشخص می‌کند که آیا به پیام‌های System Exclusive نیاز دارید و/یا آن‌ها را دریافت می‌کنید. مقدار پیش‌فرض `false` است.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves to a {{domxref("PermissionStatus")}} object.
+یک {{jsxref("Promise")}} که به یک شیء {{domxref("PermissionStatus")}} حل می‌شود.
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if `query()` method is invoked in the browsing context and its associated document is not fully active.
+  - : اگر متد `query()` در یک زمینهٔ مرور (browsing context) فراخوانی شود و سند مرتبط با آن به‌طور کامل فعال (fully active) نباشد، پرتاب می‌شود.
 - {{jsxref("TypeError")}}
-  - : Thrown if retrieving the `PermissionDescriptor` information failed in some way, or the permission doesn't exist or is unsupported by the user agent.
+  - : اگر دریافت اطلاعات `PermissionDescriptor` به هر شکل با شکست مواجه شود، یا مجوز وجود نداشته باشد یا توسط عامل کاربر (user agent) پشتیبانی نشود، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Display news based on geolocation permission
+### نمایش اخبار بر اساس مجوز موقعیت جغرافیایی
 
-This example shows how you might display news related to the current location if the `geolocation` permission is granted, and otherwise prompt the user to enable granting access to the location.
+این مثال نشان می‌دهد که اگر مجوز `geolocation` صادر شده باشد، چگونه می‌توانید اخبار مرتبط با موقعیت کنونی را نمایش دهید؛ در غیر این صورت، از کاربر خواسته می‌شود تا دسترسی به موقعیت را فعال کند.
 
 ```js
 navigator.permissions.query({ name: "geolocation" }).then((result) => {
@@ -76,12 +68,12 @@ navigator.permissions.query({ name: "geolocation" }).then((result) => {
 });
 ```
 
-### Test support for various permissions
+### بررسی پشتیبانی از مجوزهای گوناگون
 
-This example shows the result of querying each of the permissions.
+این مثال نتیجهٔ پرس‌وجوی هر یک از مجوزها را نشان می‌دهد.
 
-The code uses `navigator.permissions.query()` to query each permission, logging either the permission status or the fact that the permission is not supported on the browser.
-Note that the `query()` is called inside a `try...catch` block because the associated `Promise` will reject if the permission is not supported.
+کد با استفاده از `navigator.permissions.query()` هر مجوز را پرس‌وجو می‌کند و یا وضعیت مجوز را در گزارش (log) ثبت می‌کند یا این واقعیت را که مجوز در مرورگر پشتیبانی نمی‌شود.
+توجه داشته باشید که `query()` درون یک بلوک `try...catch` فراخوانی می‌شود، زیرا اگر مجوز پشتیبانی نشود، {{jsxref("Promise")}} مربوطه رد خواهد شد.
 
 ```html hidden
 <pre id="log"></pre>
@@ -159,14 +151,14 @@ async function getPermission(permission) {
 }
 ```
 
-The log from running the code is shown below:
+خروجی اجرای کد در ادامه نمایش داده شده است:
 
 {{EmbedLiveSample('Test support for various permissions',"100%", "370px")}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
