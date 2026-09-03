@@ -1,11 +1,5 @@
 ---
 title: "Pbkdf2Params"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Pbkdf2Params"
-status: "needs-translation"
----
-
----
-title: Pbkdf2Params
 slug: Web/API/Pbkdf2Params
 page-type: web-api-interface
 spec-urls: https://w3c.github.io/webcrypto/#dfn-Pbkdf2Params
@@ -13,38 +7,38 @@ spec-urls: https://w3c.github.io/webcrypto/#dfn-Pbkdf2Params
 
 {{ APIRef("Web Crypto API") }}
 
-The **`Pbkdf2Params`** dictionary of the [Web Crypto API](/en-US/docs/Web/API/Web_Crypto_API) represents the object that should be passed as the `algorithm` parameter into {{domxref("SubtleCrypto.deriveKey()")}}, when using the [PBKDF2](/en-US/docs/Web/API/SubtleCrypto/deriveKey#pbkdf2) algorithm.
+دیکشنری **`Pbkdf2Params`** از [Web Crypto API](/en-US/docs/Web/API/Web_Crypto_API) شیءای را نشان می‌دهد که باید به عنوان پارامتر `algorithm` به متد {{domxref("SubtleCrypto.deriveKey()")}}، هنگام استفاده از الگوریتم [PBKDF2](/en-US/docs/Web/API/SubtleCrypto/deriveKey#pbkdf2)، ارسال شود.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - `name`
-  - : A string. This should be set to `PBKDF2`.
+  - : یک رشته. باید روی `PBKDF2` تنظیم شود.
 - `hash`
-  - : A string or an object containing a single property called `name` with a string value. It is an identifier for the [digest algorithm](/en-US/docs/Web/API/SubtleCrypto/digest) to use. This should be one of the following:
-    - `SHA-256`: selects the [SHA-256](/en-US/docs/Web/API/SubtleCrypto/digest#supported_algorithms) algorithm.
-    - `SHA-384`: selects the [SHA-384](/en-US/docs/Web/API/SubtleCrypto/digest#supported_algorithms) algorithm.
-    - `SHA-512`: selects the [SHA-512](/en-US/docs/Web/API/SubtleCrypto/digest#supported_algorithms) algorithm.
+  - : یک رشته یا یک شیء حاوی یک ویژگی واحد به نام `name` با مقدار رشته‌ای. این یک شناسه برای [الگوریتم چکیده‌ساز](/en-US/docs/Web/API/SubtleCrypto/digest) مورد استفاده است. باید یکی از موارد زیر باشد:
+    - `SHA-256`: الگوریتم [SHA-256](/en-US/docs/Web/API/SubtleCrypto/digest#supported_algorithms) را انتخاب می‌کند.
+    - `SHA-384`: الگوریتم [SHA-384](/en-US/docs/Web/API/SubtleCrypto/digest#supported_algorithms) را انتخاب می‌کند.
+    - `SHA-512`: الگوریتم [SHA-512](/en-US/docs/Web/API/SubtleCrypto/digest#supported_algorithms) را انتخاب می‌کند.
 
     > [!WARNING]
-    > `SHA-1` is considered vulnerable in most cryptographic applications, but is still considered safe in PBKDF2. However, it's advisable to transition away from it everywhere, so unless you need to use `SHA-1`, don't. Use a different digest algorithm instead.
+    > `SHA-1` در بیشتر کاربردهای رمزنگاری آسیب‌پذیر در نظر گرفته می‌شود، اما هنوز در PBKDF2 ایمن محسوب می‌شود. با این حال، توصیه می‌شود در همه جا از آن دوری کنید، مگر اینکه نیاز به استفاده از `SHA-1` داشته باشید. در عوض از یک الگوریتم چکیده‌ساز دیگر استفاده کنید.
 
 - `salt`
-  - : An {{jsxref("ArrayBuffer")}}, a {{jsxref("TypedArray")}}, or a {{jsxref("DataView")}}. This should be a random or pseudo-random value of at least 16 bytes. Unlike the input key material passed into [`deriveKey()`](/en-US/docs/Web/API/SubtleCrypto/deriveKey), `salt` does not need to be kept secret.
+  - : یک {{jsxref("ArrayBuffer")}}، یک {{jsxref("TypedArray")}}، یا یک {{jsxref("DataView")}}. باید یک مقدار تصادفی یا شبه‌تصادفی حداقل ۱۶ بایت باشد. برخلاف مواد کلید ورودی که به [`deriveKey()`](/en-US/docs/Web/API/SubtleCrypto/deriveKey) داده می‌شود، `salt` نیازی به مخفی نگه‌داشتن ندارد.
 - `iterations`
-  - : A `Number` representing the number of times the hash function will be executed in `deriveKey()`. This determines how computationally expensive (that is, slow) the `deriveKey()` operation will be. In this context, slow is good, since it makes it more expensive for an attacker to run a dictionary attack against the keys. The general guidance here is to use as many iterations as possible, subject to keeping an acceptable level of performance for your application.
+  - : یک `Number` که نشان‌دهنده تعداد دفعات اجرای تابع هش در `deriveKey()` است. این تعیین می‌کند که عملیات `deriveKey()` چقدر از نظر محاسباتی پرهزینه (یعنی کند) خواهد بود. در این زمینه، کند بودن خوب است، زیرا حمله‌کننده را برای اجرای حمله دیکشنری علیه کلیدها هزینه‌برتر می‌کند. راهنمای کلی این است که تا حد امکان از تکرارهای بیشتر استفاده کنید، مشروط به حفظ سطح قابل قبولی از عملکرد برای برنامه شما.
 
-## Examples
+## مثال‌ها
 
-See the examples for {{domxref("SubtleCrypto.deriveKey()")}}.
+مثال‌های مربوط به {{domxref("SubtleCrypto.deriveKey()")}} را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
-Browsers that support the "PBKDF2" algorithm for the {{domxref("SubtleCrypto.deriveKey()")}} method will support this type.
+مرورگرهایی که از الگوریتم "PBKDF2" برای متد {{domxref("SubtleCrypto.deriveKey()")}} پشتیبانی می‌کنند، از این نوع پشتیبانی خواهند کرد.
 
-## See also
+## همچنین ببینید
 
 - {{domxref("SubtleCrypto.deriveKey()")}}.
