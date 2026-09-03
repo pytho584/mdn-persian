@@ -1,11 +1,5 @@
 ---
 title: "NotRestoredReasons: toJSON() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NotRestoredReasons/toJSON"
-status: "needs-translation"
----
-
----
-title: "NotRestoredReasons: toJSON() method"
 short-title: toJSON()
 slug: Web/API/NotRestoredReasons/toJSON
 page-type: web-api-instance-method
@@ -17,25 +11,25 @@ spec-urls: https://html.spec.whatwg.org/multipage/nav-history-apis.html#notresto
 
 {{APIRef("Performance API")}}{{SeeCompatTable}}
 
-The **`toJSON()`** method of the {{domxref("NotRestoredReasons")}} interface is a {{Glossary("Serialization","serializer")}}; it returns a JSON representation of the {{domxref("NotRestoredReasons")}} object.
+روش **`toJSON()`** از رابط {{domxref("NotRestoredReasons")}} یک {{Glossary("Serialization","سریال‌ساز (serializer)")}} است؛ این روش یک نمایش JSON از شیء {{domxref("NotRestoredReasons")}} برمی‌گرداند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 toJSON()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("JSON")}} object that is the serialization of the {{domxref("NotRestoredReasons")}} object.
+یک شیء {{jsxref("JSON")}} که سریال‌سازی شیء {{domxref("NotRestoredReasons")}} است.
 
-## Examples
+## مثال‌ها
 
-The following function will return a JSON representation of the `NotRestoredReasons` object of the first `PerformanceNavigationTiming` object currently present in the performance timeline:
+تابع زیر یک نمایش JSON از شیء `NotRestoredReasons` اولین شیء `PerformanceNavigationTiming` که در حال حاضر در performance timeline وجود دارد، برمی‌گرداند:
 
 ```js
 function returnNRR() {
@@ -45,16 +39,16 @@ function returnNRR() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{jsxref("JSON")}}
-- [Monitoring bfcache blocking reasons](/en-US/docs/Web/API/Performance_API/Monitoring_bfcache_blocking_reasons)
+- [نظارت بر دلایل مسدودسازی bfcache](/en-US/docs/Web/API/Performance_API/Monitoring_bfcache_blocking_reasons)
 - {{domxref("PerformanceNavigationTiming.notRestoredReasons")}}
