@@ -1,12 +1,5 @@
 ---
-title: "PageTransitionEvent: PageTransitionEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PageTransitionEvent/PageTransitionEvent"
-status: "needs-translation"
----
-
----
-title: "PageTransitionEvent: PageTransitionEvent() constructor"
-short-title: PageTransitionEvent()
+title: "PageTransitionEvent: PageTransitionEvent() سازنده"
 slug: Web/API/PageTransitionEvent/PageTransitionEvent
 page-type: web-api-constructor
 browser-compat: api.PageTransitionEvent.PageTransitionEvent
@@ -14,40 +7,40 @@ browser-compat: api.PageTransitionEvent.PageTransitionEvent
 
 {{APIRef("HTML DOM")}}
 
-The **`PageTransitionEvent()`** constructor creates a new {{domxref("PageTransitionEvent")}} object, that is used by the {{domxref("Window/pageshow_event", "pageshow")}} or {{domxref("Window/pagehide_event", "pagehide")}} events, fired at the {{domxref("window")}} object when a page is loaded or unloaded.
+سازنده **`PageTransitionEvent()`** یک شیء جدید از نوع {{domxref("PageTransitionEvent")}} ایجاد می‌کند که توسط رویدادهای {{domxref("Window/pageshow_event", "pageshow")}} یا {{domxref("Window/pagehide_event", "pagehide")}} استفاده می‌شود. این رویدادها در شیء {{domxref("window")}} هنگام بارگذاری یا بارگیری‌نشدن یک صفحه رخ می‌دهند.
 
 > [!NOTE]
-> A web developer doesn't typically need to call this constructor, as the browser creates these objects itself when firing {{domxref("Window/pageshow_event", "pageshow")}} or {{domxref("Window/pagehide_event", "pagehide")}} events.
+> توسعه‌دهندگان وب معمولاً نیازی به فراخوانی این سازنده ندارند، زیرا مرورگر این اشیاء را هنگام فعال‌سازی رویدادهای {{domxref("Window/pageshow_event", "pageshow")}} یا {{domxref("Window/pagehide_event", "pagehide")}} به‌طور خودکار ایجاد می‌کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 new PageTransitionEvent(type, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string with the name of the event.
-    It is case-sensitive and browsers set it to `pageshow` or `pagehide`.
+  - : یک رشته که نام رویداد را مشخص می‌کند.
+    این مقدار به بزرگی/کوچکی حروف حساس است و مرورگر آن را به `pageshow` یا `pagehide` تنظیم می‌کند.
 - `options` {{optional_inline}}
-  - : An object that, _in addition to the properties defined in {{domxref("Event/Event", "Event()")}}_, has the following property:
+  - : یک شیء که _علاوه بر ویژگی‌های تعریف‌شده در {{domxref("Event/Event", "Event()")}}_، دارای ویژگی زیر است:
     - `persisted` {{optional_inline}}
-      - : A boolean indicating if the document is loading from a cache.
+      - : یک مقدار بولی که نشان می‌دهد آیا سند از حافظه پنهان (cache) بارگذاری شده است یا خیر.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("PageTransitionEvent")}} object.
+یک شیء جدید از نوع {{domxref("PageTransitionEvent")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [`pageshow`](/en-US/docs/Web/API/Window/pageshow_event) event
-- [`pagehide`](/en-US/docs/Web/API/Window/pagehide_event) event
+- رویداد [`pageshow`](/en-US/docs/Web/API/Window/pageshow_event)
+- رویداد [`pagehide`](/en-US/docs/Web/API/Window/pagehide_event)
