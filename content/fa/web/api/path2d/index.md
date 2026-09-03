@@ -1,10 +1,4 @@
 ---
-title: "Path2D"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Path2D"
-status: "needs-translation"
----
-
----
 title: Path2D
 slug: Web/API/Path2D
 page-type: web-api-interface
@@ -13,46 +7,46 @@ browser-compat: api.Path2D
 
 {{APIRef("Canvas API")}}{{AvailableInWorkers}}
 
-The **`Path2D`** interface of the Canvas 2D API is used to declare a path that can then be used on a {{domxref("CanvasRenderingContext2D")}} object. The [path methods](/en-US/docs/Web/API/CanvasRenderingContext2D#paths) of the `CanvasRenderingContext2D` interface are also present on this interface, which gives you the convenience of being able to retain and replay your path whenever desired.
+رابط **`Path2D`** از Canvas 2D API برای تعریف یک مسیر (path) استفاده می‌شود که سپس می‌توان از آن روی یک شیء {{domxref("CanvasRenderingContext2D")}} استفاده کرد. [روش‌های مسیر](/en-US/docs/Web/API/CanvasRenderingContext2D#paths) رابط `CanvasRenderingContext2D` نیز روی این رابط وجود دارند که این امکان را به شما می‌دهد تا مسیر خود را هر زمان که بخواهید ذخیره و دوباره اجرا کنید.
 
-## Constructors
+## سازنده‌ها
 
 - {{domxref("Path2D.Path2D", "Path2D()")}}
-  - : `Path2D` constructor. Creates a new `Path2D` object.
+  - : سازنده `Path2D`. یک شیء `Path2D` جدید ایجاد می‌کند.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("Path2D.addPath()")}}
-  - : Adds a path to the current path.
+  - : یک مسیر به مسیر فعلی اضافه می‌کند.
 - {{domxref("CanvasRenderingContext2D.closePath", "Path2D.closePath()")}}
-  - : Causes the point of the pen to move back to the start of the current sub-path. It tries to draw a straight line from the current point to the start. If the shape has already been closed or has only one point, this function does nothing.
+  - : باعث می‌شود نقطه قلم به ابتدای زیرمسیر فعلی بازگردد. سعی می‌کند از نقطه فعلی به ابتدا یک خط مستقیم رسم کند. اگر شکل از قبل بسته شده باشد یا فقط یک نقطه داشته باشد، این تابع هیچ کاری انجام نمی‌دهد.
 - {{domxref("CanvasRenderingContext2D.moveTo()", "Path2D.moveTo()")}}
-  - : Moves the starting point of a new sub-path to the (`x, y`) coordinates.
+  - : نقطه شروع یک زیرمسیر جدید را به مختصات (`x, y`) منتقل می‌کند.
 - {{domxref("CanvasRenderingContext2D.lineTo()", "Path2D.lineTo()")}}
-  - : Connects the last point in the subpath to the (`x, y`) coordinates with a straight line.
+  - : آخرین نقطه در زیرمسیر را با یک خط مستقیم به مختصات (`x, y`) متصل می‌کند.
 - {{domxref("CanvasRenderingContext2D.bezierCurveTo()", "Path2D.bezierCurveTo()")}}
-  - : Adds a cubic Bézier curve to the path. It requires three points. The first two points are control points and the third one is the end point. The starting point is the last point in the current path, which can be changed using `moveTo()` before creating the Bézier curve.
+  - : یک منحنی بزیه مکعبی به مسیر اضافه می‌کند. به سه نقطه نیاز دارد. دو نقطه اول نقاط کنترل و نقطه سوم نقطه پایان هستند. نقطه شروع، آخرین نقطه در مسیر فعلی است که می‌توان قبل از ایجاد منحنی بزیه با استفاده از `moveTo()` آن را تغییر داد.
 - {{domxref("CanvasRenderingContext2D.quadraticCurveTo()", "Path2D.quadraticCurveTo()")}}
-  - : Adds a quadratic Bézier curve to the current path.
+  - : یک منحنی بزیه درجه دوم به مسیر فعلی اضافه می‌کند.
 - {{domxref("CanvasRenderingContext2D.arc()", "Path2D.arc()")}}
-  - : Adds an arc to the path which is centered at (`x, y`) position with radius `r` starting at `startAngle` and ending at `endAngle` going in the given direction by `counterclockwise` (defaulting to clockwise).
+  - : یک کمان به مسیر اضافه می‌کند که مرکز آن در موقعیت (`x, y`) با شعاع `r` است، از `startAngle` شروع شده و به `endAngle` ختم می‌شود و در جهت مشخص شده توسط `counterclockwise` (پیش‌فرض جهت عقربه‌های ساعت) حرکت می‌کند.
 - {{domxref("CanvasRenderingContext2D.arcTo()", "Path2D.arcTo()")}}
-  - : Adds a circular arc to the path with the given control points and radius, connected to the previous point by a straight line.
+  - : یک کمان دایره‌ای به مسیر با نقاط کنترل و شعاع داده شده اضافه می‌کند که با یک خط مستقیم به نقطه قبلی متصل می‌شود.
 - {{domxref("CanvasRenderingContext2D.ellipse()", "Path2D.ellipse()")}}
-  - : Adds an elliptical arc to the path which is centered at (`x, y`) position with the radii `radiusX` and `radiusY` starting at `startAngle` and ending at `endAngle` going in the given direction by `counterclockwise` (defaulting to clockwise).
+  - : یک کمان بیضوی به مسیر اضافه می‌کند که مرکز آن در موقعیت (`x, y`) با شعاع‌های `radiusX` و `radiusY` است، از `startAngle` شروع شده و به `endAngle` ختم می‌شود و در جهت مشخص شده توسط `counterclockwise` (پیش‌فرض جهت عقربه‌های ساعت) حرکت می‌کند.
 - {{domxref("CanvasRenderingContext2D.rect()", "Path2D.rect()")}}
-  - : Creates a path for a rectangle at position (`x, y`) with a size that is determined by `width` and `height`.
+  - : یک مسیر برای یک مستطیل در موقعیت (`x, y`) با اندازه‌ای که توسط `width` و `height` تعیین می‌شود ایجاد می‌کند.
 - {{domxref("CanvasRenderingContext2D.roundRect()", "Path2D.roundRect()")}}
-  - : Creates a path for a rounded rectangle at position (`x, y`) with a size that is determined by `width` and `height` and the radii of the circular arc to be used for the corners of the rectangle is determined by `radii`.
+  - : یک مسیر برای یک مستطیل گرد در موقعیت (`x, y`) با اندازه‌ای که توسط `width` و `height` تعیین می‌شود ایجاد می‌کند و شعاع‌های کمان دایره‌ای که برای گوشه‌های مستطیل استفاده می‌شود توسط `radii` تعیین می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("CanvasRenderingContext2D")}}
