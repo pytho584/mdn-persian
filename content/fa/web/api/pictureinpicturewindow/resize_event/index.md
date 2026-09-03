@@ -1,11 +1,5 @@
 ---
 title: "PictureInPictureWindow: resize event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PictureInPictureWindow/resize_event"
-status: "needs-translation"
----
-
----
-title: "PictureInPictureWindow: resize event"
 short-title: resize
 slug: Web/API/PictureInPictureWindow/resize_event
 page-type: web-api-event
@@ -14,13 +8,13 @@ browser-compat: api.PictureInPictureWindow.resize_event
 
 {{APIRef("Picture-in-Picture API")}}
 
-The **`resize`** event fires when the floating video window has been resized.
+رویداد **`resize`** زمانی رخ می‌دهد که اندازهٔ پنجرهٔ شناور ویدیو تغییر کرده باشد.
 
-This event is not cancelable and does not bubble.
+این رویداد لغوپذیر نیست و حباب (bubble) نمی‌کند.
 
-## Syntax
+## سینتکس
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+نام رویداد را در متدهایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کنندهٔ رویداد را تنظیم کنید.
 
 ```js-nolint
 addEventListener("resize", (event) => { })
@@ -28,15 +22,15 @@ addEventListener("resize", (event) => { })
 onresize = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A {{domxref("PictureInPictureEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("PictureInPictureEvent")}} است و از {{domxref("Event")}} به ارث می‌رسد.
 
 {{InheritanceDiagram("PictureInPictureEvent")}}
 
-## Examples
+## نمونه‌ها
 
-### Window size logger
+### ثبت‌کنندهٔ اندازهٔ پنجره
 
 ```html
 <p>Resize the floating video window to fire the <code>resize</code> event.</p>
@@ -62,10 +56,10 @@ video.requestPictureInPicture().then((pictureInPictureWindow) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
