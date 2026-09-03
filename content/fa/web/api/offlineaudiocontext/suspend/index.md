@@ -1,11 +1,5 @@
 ---
 title: "OfflineAudioContext: suspend() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/OfflineAudioContext/suspend"
-status: "needs-translation"
----
-
----
-title: "OfflineAudioContext: suspend() method"
 short-title: suspend()
 slug: Web/API/OfflineAudioContext/suspend
 page-type: web-api-instance-method
@@ -14,16 +8,9 @@ browser-compat: api.OfflineAudioContext.suspend
 
 {{ APIRef("Web Audio API") }}
 
-The **`suspend()`** method of the {{domxref("OfflineAudioContext")}} interface schedules a suspension of the time
-progression in the audio context at the specified time and returns a promise. This is
-generally useful at the time of manipulating the audio graph synchronously on
-OfflineAudioContext.
+متد **`suspend()`** از رابط {{domxref("OfflineAudioContext")}} یک توقف موقت در پیشروی زمان در زمینه صوتی را در زمان مشخص شده زمان‌بندی کرده و یک promise بازمی‌گرداند. این معمولاً در زمان دستکاری همزمان گراف صوتی روی OfflineAudioContext مفید است.
 
-Note that the maximum precision of suspension is the size of the render quantum and the
-specified suspension time will be rounded down to the nearest render quantum boundary.
-For this reason, it is not allowed to schedule multiple suspends at the same quantized
-frame. Also scheduling should be done while the context is not running to ensure the
-precise suspension.
+توجه داشته باشید که حداکثر دقت توقف، اندازه کوانتوم رندر (render quantum) است و زمان توقف مشخص شده به نزدیک‌ترین مرز کوانتوم رندر گرد می‌شود. به همین دلیل، زمان‌بندی چندین توقف در همان فریم کوانتایز شده مجاز نیست. همچنین زمان‌بندی باید زمانی انجام شود که زمینه در حال اجرا نیست تا از توقف دقیق اطمینان حاصل شود.
 
 ## Syntax
 
@@ -31,30 +18,31 @@ precise suspension.
 suspend(suspendTime)
 ```
 
-### Parameters
+### پارامترها
 
 - `suspendTime`
-  - : A floating-point number specifying the suspend time, in seconds.
+  - : یک عدد اعشاری که زمان توقف را بر حسب ثانیه مشخص می‌کند.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} resolving to {{jsxref('undefined')}}.
+یک {{jsxref("Promise")}} که به {{jsxref('undefined')}} resolution می‌یابد.
 
-### Exceptions
+### استثناها
 
-The promise is rejected when any exception is encountered.
+زمانی که هر استثنایی رخ دهد، promise رد می‌شود.
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Returned if the quantized frame number is one of the following:
-    - a negative number
-    - less than or equal to the current time
-    - greater than or equal to the total render duration
-    - scheduled by another suspend for the same time
+  - : اگر شماره فریم کوانتایز شده یکی از موارد زیر باشد بازگردانده می‌شود:
+    - یک عدد منفی
+    - کمتر یا مساوی با زمان فعلی
+    - بزرگتر یا مساوی با کل مدت زمان رندر
+    - توسط یک توقف دیگر برای همان زمان زمان‌بندی شده باشد
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
+```
