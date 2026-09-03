@@ -1,11 +1,5 @@
 ---
 title: "PannerNode: setPosition() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PannerNode/setPosition"
-status: "needs-translation"
----
-
----
-title: "PannerNode: setPosition() method"
 short-title: setPosition()
 slug: Web/API/PannerNode/setPosition
 page-type: web-api-instance-method
@@ -17,43 +11,43 @@ browser-compat: api.PannerNode.setPosition
 {{APIRef("Web Audio API")}}{{Deprecated_Header}}
 
 > [!NOTE]
-> The suggested replacement for this deprecated method is to instead set the [`positionX`](/en-US/docs/Web/API/PannerNode/positionX), [`positionY`](/en-US/docs/Web/API/PannerNode/positionY), and [`positionZ`](/en-US/docs/Web/API/PannerNode/positionZ) attributes directly.
+> جایگزین پیشنهادی برای این متد منسوخ‌شده، تنظیم مستقیم ویژگی‌های [`positionX`](/en-US/docs/Web/API/PannerNode/positionX)، [`positionY`](/en-US/docs/Web/API/PannerNode/positionY) و [`positionZ`](/en-US/docs/Web/API/PannerNode/positionZ) است.
 
-The `setPosition()` method of the {{ domxref("PannerNode") }} Interface defines the position of the audio source relative to the listener (represented by an {{domxref("AudioListener")}} object stored in the {{domxref("BaseAudioContext.listener")}} attribute.) The three parameters `x`, `y` and `z` are unitless and describe the source's position in 3D space using the right-hand Cartesian coordinate system.
+متد `setPosition()` در رابط {{ domxref("PannerNode") }} موقعیت منبع صوتی را نسبت به شنونده تعیین می‌کند؛ شنونده با یک شیء {{domxref("AudioListener")}} نمایش داده می‌شود که در ویژگی {{domxref("BaseAudioContext.listener")}} ذخیره شده است. سه پارامتر `x`، `y` و `z` بدون واحد هستند و موقعیت منبع را در فضای سه‌بعدی با استفاده از دستگاه مختصات دکارتی راستگرد توصیف می‌کنند.
 
-The `setPosition()` method's default value of the position is `(0, 0, 0)`.
+مقدار پیش‌فرض موقعیت در متد `setPosition()` برابر با `(0, 0, 0)` است.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 setPosition(x, y, z)
 ```
 
-### Parameters
+### پارامترها
 
 - `x`
-  - : The x position of the panner in 3D space.
+  - : مختصات x موقعیت panner در فضای سه‌بعدی.
 - `y`
-  - : The y position of the panner in 3D space.
+  - : مختصات y موقعیت panner در فضای سه‌بعدی.
 - `z`
-  - : The z position of the panner in 3D space.
+  - : مختصات z موقعیت panner در فضای سه‌بعدی.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-See [`BaseAudioContext.createPanner()`](/en-US/docs/Web/API/BaseAudioContext/createPanner#examples) for example code.
+برای مشاهده کد مثال، به [`BaseAudioContext.createPanner()`](/en-US/docs/Web/API/BaseAudioContext/createPanner#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
