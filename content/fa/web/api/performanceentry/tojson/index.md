@@ -1,7 +1,5 @@
 ---
 title: "PerformanceEntry: toJSON() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEntry/toJSON"
-status: "needs-translation"
 ---
 
 ---
@@ -14,27 +12,27 @@ browser-compat: api.PerformanceEntry.toJSON
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The **`toJSON()`** method is a {{Glossary("Serialization","serializer")}}; it returns a JSON representation of the {{domxref("PerformanceEntry")}} object.
+متد **`toJSON()`** یک {{Glossary("Serialization","سریالساز")}} است؛ این متد یک نمایش JSON از شیء {{domxref("PerformanceEntry")}} برمیگرداند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 toJSON()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("JSON")}} object that is the serialization of the {{domxref("PerformanceEntry")}} object.
+یک شیء {{jsxref("JSON")}} که سریالسازی از شیء {{domxref("PerformanceEntry")}} است.
 
-## Examples
+## مثالها
 
-### Using the toJSON method
+### استفاده از متد toJSON
 
-In this example, calling `entry.toJSON()` returns a JSON representation of the {{domxref("PerformanceMark")}} object.
+در این مثال، فراخوانی `entry.toJSON()` یک نمایش JSON از شیء {{domxref("PerformanceMark")}} برمیگرداند.
 
 ```js
 performance.mark("debug-marker", {
@@ -50,7 +48,7 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ entryTypes: ["mark"] });
 ```
 
-This would log a JSON object like so:
+این کار یک شیء JSON را مانند زیر ثبت میکند:
 
 ```json
 {
@@ -61,18 +59,18 @@ This would log a JSON object like so:
 }
 ```
 
-Note that it doesn't contain `PerformanceMark`'s {{domxref("PerformanceMark.detail", "detail")}} property.
+توجه داشته باشید که این شیء شامل ویژگی {{domxref("PerformanceMark.detail", "detail")}} مربوط به `PerformanceMark` نیست.
 
-To get a JSON string, you can use [`JSON.stringify(entry)`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) directly; it will call `toJSON()` automatically.
+برای دریافت یک رشته JSON، میتوانید مستقیماً از [`JSON.stringify(entry)`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) استفاده کنید؛ این متد بهطور خودکار `toJSON()` را فراخوانی میکند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{jsxref("JSON")}}
