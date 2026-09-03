@@ -1,7 +1,6 @@
+```
 ---
 title: "Navigator: share() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share"
-status: "needs-translation"
 ---
 
 ---
@@ -14,78 +13,76 @@ browser-compat: api.Navigator.share
 
 {{APIRef("Web Share API")}}{{securecontext_header}}
 
-The **`share()`** method of the {{domxref("Navigator")}} interface invokes the native sharing mechanism of the device to share data such as text, URLs, or files. The available _share targets_ depend on the device, but might include the clipboard, contacts and email applications, websites, Bluetooth, etc.
+متد **`share()`** از رابط {{domxref("Navigator")}}، سازوکار اشتراک‌گذاری بومی دستگاه را برای به اشتراک‌گذاری داده‌هایی مانند متن، URL یا فایل‌ها فرامی‌خواند. *مقصدهای اشتراک‌گذاری* موجود به دستگاه بستگی دارند و ممکن است شامل کلیپ‌بورد، برنامه‌های مخاطبان و ایمیل، وب‌سایت‌ها، بلوتوث و غیره باشند.
 
-The method resolves a {{jsxref("Promise")}} with `undefined`.
-On Windows this happens when the share popup is launched, while on Android the promise resolves once the data has successfully been passed to the _share target_.
+این متد یک {{jsxref("Promise")}} را با مقدار `undefined` حل می‌کند. در ویندوز این اتفاق هنگام نمایش پنجرهٔ اشتراک‌گذاری رخ می‌دهد، در حالی که در اندروید، Promise پس از انتقال موفق داده‌ها به *مقصد اشتراک‌گذاری* حل می‌شود.
 
-The [Web Share API](/en-US/docs/Web/API/Web_Share_API) is gated by the [web-share](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy/web-share) permission policy.
-The `share()` method will throw exceptions if the permission is supported but has not been granted.
+[Web Share API](/en-US/docs/Web/API/Web_Share_API) توسط سیاستِ مجوزِ [web-share](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy/web-share) محدود می‌شود. اگر این مجوز پشتیبانی شود اما اعطا نشده باشد، متد `share()` استثنا پرتاب خواهد کرد.
 
-## Syntax
+## نحو
 
 ```js-nolint
 share(data)
 ```
 
-### Parameters
+### پارامترها
 
 - `data` {{optional_inline}}
-  - : An object containing data to share.
+  - : شیئی حاوی داده‌های قابل اشتراک‌گذاری.
 
-    Properties that are unknown to the user agent are ignored; share data is only assessed on properties understood by the user agent.
-    All properties are optional but at least one known data property must be specified.
+    ویژگی‌هایی که برای عامل کاربر (user agent) ناشناخته هستند نادیده گرفته می‌شوند؛ داده‌های اشتراک‌گذاری فقط بر اساس ویژگی‌هایی ارزیابی می‌شوند که عامل کاربر آن‌ها را درک می‌کند.
+    همهٔ ویژگی‌ها اختیاری هستند، اما باید حداقل یک ویژگی شناخته‌شده مشخص شده باشد.
 
-    Possible values are:
+    مقادیر ممکن عبارت‌اند از:
+
     - `url` {{optional_inline}}
-      - : A string representing a URL to be shared. An empty string (`""`) refers to the current page URL.
+      - : رشته‌ای که یک URL برای به اشتراک‌گذاری را نشان می‌دهد. رشتهٔ خالی (`""`) به URL صفحهٔ فعلی اشاره می‌کند.
     - `text` {{optional_inline}}
-      - : A string representing text to be shared.
+      - : رشته‌ای که متنی برای به اشتراک‌گذاری را نشان می‌دهد.
     - `title` {{optional_inline}}
-      - : A string representing a title to be shared. May be ignored by the target.
+      - : رشته‌ای که عنوانی برای به اشتراک‌گذاری را نشان می‌دهد. ممکن است توسط مقصد نادیده گرفته شود.
     - `files` {{optional_inline}}
-      - : An array of {{domxref("File")}} objects representing files to be shared. See [below](#shareable_file_types) for shareable file types.
+      - : آرایه‌ای از اشیاء {{domxref("File")}} که فایل‌های مورد اشتراک‌گذاری را نشان می‌دهد. برای انواع فایل‌های قابل اشتراک‌گذاری به [بخش پایین](#shareable_file_types) مراجعه کنید.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with `undefined`, or rejected with one of the [Exceptions](#exceptions) given below.
+یک {{jsxref("Promise")}} که با `undefined` حل می‌شود، یا با یکی از [استثناهای](#exceptions) زیر رد می‌شود.
 
-### Exceptions
+### استثناها
 
-The {{jsxref("Promise")}} may be rejected with one of the following `DOMException` values:
+ممکن است {{jsxref("Promise")}} با یکی از مقادیر `DOMException` زیر رد شود:
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : The document is not fully active, or other sharing operations are in progress.
+  - : سند کاملاً فعال نیست یا عملیات اشتراک‌گذاری دیگری در حال انجام است.
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : A `web-share` [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) has been used to block the use of this feature, the window does not have {{Glossary("transient activation")}}, or a file share is being blocked due to security considerations.
+  - : یک [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) از نوع `web-share` برای مسدود کردن استفاده از این قابلیت به‌کار رفته باشد، پنجره فاقد {{Glossary("transient activation")}} باشد، یا به دلایل امنیتی اشتراک‌گذاری فایل مسدود شده باشد.
 - {{jsxref("TypeError")}}
-  - : The specified share data cannot be validated. Possible reasons include:
-    - The `data` parameter was omitted completely or only contains properties with unknown values. Note that any properties that are not recognized by the user agent are ignored.
-    - A URL is badly formatted.
-    - Files are specified but the implementation does not support file sharing.
-    - Sharing the specified data would be considered a "hostile share" by the user-agent.
-
+  - : داده‌های اشتراک‌گذاری مشخص‌شده قابل اعتبارسنجی نیستند. دلایل احتمالی عبارت‌اند از:
+    - پارامتر `data` به‌طور کامل حذف شده باشد یا فقط شامل ویژگی‌هایی با مقادیر ناشناخته باشد. توجه داشته باشید که هر ویژگی‌ای که توسط عامل کاربر شناسایی نشود نادیده گرفته می‌شود.
+    - یک URL به‌درستی قالب‌بندی نشده باشد.
+    - فایل‌هایی مشخص شده باشند اما پیاده‌سازی از اشتراک‌گذاری فایل پشتیبانی نکند.
+    - اشتراک‌گذاری دادهٔ مشخص‌شده توسط عامل کاربر به‌عنوان یک «اشتراک‌گذاری خصمانه» تلقی شود.
 - `AbortError` {{domxref("DOMException")}}
-  - : The user canceled the share operation or there are no share targets available.
+  - : کاربر عملیات اشتراک‌گذاری را لغو کرده باشد یا هیچ مقصد اشتراک‌گذاری در دسترس نباشد.
 - `DataError` {{domxref("DOMException")}}
-  - : There was a problem starting the share target or transmitting the data.
+  - : در راه‌اندازی مقصد اشتراک‌گذاری یا انتقال داده‌ها مشکلی به وجود آمده باشد.
 
-## Shareable file types
+## انواع فایل‌های قابل اشتراک‌گذاری
 
-The following is a list of usually shareable file types. However, you should always test with {{domxref("navigator.canShare()")}} if sharing would succeed.
+در ادامه فهرستی از انواع فایل‌هایی آورده شده است که معمولاً قابل اشتراک‌گذاری هستند. با این حال، برای اطمینان از موفقیت اشتراک‌گذاری همیشه باید با {{domxref("navigator.canShare()")}} بررسی کنید.
 
-- Application
+- برنامه (Application)
   - `.pdf` - `application/pdf`
-- Audio
+- صوت (Audio)
   - `.flac` - `audio/flac`
   - `.m4a` - `audio/x-m4a`
-  - `.mp3` - `audio/mpeg` (also accepts `audio/mp3`)
+  - `.mp3` - `audio/mpeg` (همچنین `audio/mp3` را می‌پذیرد)
   - `.oga` - `audio/ogg`
   - `.ogg` - `audio/ogg`
   - `.opus` - `audio/ogg`
   - `.wav` - `audio/wav`
   - `.weba` - `audio/webm`
-- Image
+- تصویر (Image)
   - `.avif` - `image/avif`
   - `.bmp` - `image/bmp`
   - `.gif` - `image/gif`
@@ -102,7 +99,7 @@ The following is a list of usually shareable file types. However, you should alw
   - `.tiff` - `image/tiff`
   - `.webp` - `image/webp`
   - `.xbm` - `image/x-xbitmap`
-- Text
+- متن (Text)
   - `.css` - `text/css`
   - `.csv` - `text/csv`
   - `.ehtml` - `text/html`
@@ -112,7 +109,7 @@ The following is a list of usually shareable file types. However, you should alw
   - `.shtml` - `text/html`
   - `.text` - `text/plain`
   - `.txt` - `text/plain`
-- Video
+- ویدئو (Video)
   - `.m4v` - `video/mp4`
   - `.mp4` - `video/mp4`
   - `.mpeg` - `video/mpeg`
@@ -121,20 +118,19 @@ The following is a list of usually shareable file types. However, you should alw
   - `.ogv` - `video/ogg`
   - `.webm` - `video/webm`
 
-## Security
+## امنیت
 
-This method requires that the current document have the [web-share](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy/web-share) Permissions Policy and {{Glossary("transient activation")}}. (It must be triggered off a UI event like a button click and cannot be launched at arbitrary points by a script.) Further, the method must specify valid data that is supported for sharing by the native implementation.
+این متد مستلزم آن است که سندِ فعلی، سیاستِ مجوز [web-share](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy/web-share) و {{Glossary("transient activation")}} را داشته باشد. (باید از یک رویداد رابط کاربری مانند کلیک روی دکمه ناشی شود و اسکریپت نمی‌تواند آن را در نقاط دلخواه فراخوانی کند.) علاوه بر این، متد باید دادهٔ معتبری را مشخص کند که توسط پیاده‌سازی بومی برای اشتراک‌گذاری پشتیبانی می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Sharing a URL
+### اشتراک‌گذاری یک URL
 
-The example below shows a button click invoking the Web Share API to share MDN's URL.
-This is taken from our [Web share test](https://mdn.github.io/dom-examples/web-share/) ([see the source code](https://github.com/mdn/dom-examples/blob/main/web-share/index.html)).
+مثال زیر کلیک روی یک دکمه را نشان می‌دهد که با استفاده از Web Share API، نشانی MDN را به اشتراک می‌گذارد. این مثال از [آزمون Web share](https://mdn.github.io/dom-examples/web-share/) ما گرفته شده است ([مشاهدهٔ کد منبع](https://github.com/mdn/dom-examples/blob/main/web-share/index.html)).
 
 #### HTML
 
-The HTML just creates a button to trigger the share, and a paragraph in which to display the result of the test.
+HTML فقط یک دکمه برای آغاز اشتراک‌گذاری و یک پاراگراف برای نمایش نتیجهٔ آزمون ایجاد می‌کند.
 
 ```html
 <p><button>Share MDN!</button></p>
@@ -164,15 +160,15 @@ btn.addEventListener("click", async () => {
 });
 ```
 
-#### Result
+#### نتیجه
 
-Click the button to launch the share dialog on your platform. Text will appear below the button to indicate whether the share was successful or provide an error code.
+برای باز کردن گفت‌وگوی اشتراک‌گذاری در دستگاه خود روی دکمه کلیک کنید. در زیر دکمه متنی ظاهر می‌شود که نشان می‌دهد اشتراک‌گذاری موفق بوده است یا کد خطا را ارائه می‌دهد.
 
 {{EmbedLiveSample('Sharing a URL','','','','','','web-share')}}
 
-### Sharing files
+### اشتراک‌گذاری فایل‌ها
 
-To share files, first test for and call {{domxref("navigator.canShare()")}}. Then include the list of files in the call to `navigator.share()`.
+برای به اشتراک‌گذاری فایل‌ها، ابتدا {{domxref("navigator.canShare()")}} را بررسی کنید و آن را فراخوانی کنید. سپس فهرست فایل‌ها را در فراخوانی `navigator.share()` قرار دهید.
 
 #### HTML
 
@@ -187,7 +183,7 @@ To share files, first test for and call {{domxref("navigator.canShare()")}}. The
 
 #### JavaScript
 
-Note that the data object passed to the `navigator.canShare()` only includes the `files` property, as the `title` and `text` shouldn't matter.
+توجه داشته باشید که شیء داده ارسال‌شده به `navigator.canShare()` فقط شامل ویژگی `files` است؛ زیرا `title` و `text` نباید تأثیری داشته باشند.
 
 ```js
 const input = document.getElementById("files");
@@ -225,19 +221,20 @@ document.getElementById("share").addEventListener("click", async () => {
 });
 ```
 
-#### Result
+#### نتیجه
 
 {{EmbedLiveSample('Sharing files','','','','','','web-share')}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("navigator.canShare()")}}
 - <https://wpt.live/web-share/> (web platform tests)
+```
