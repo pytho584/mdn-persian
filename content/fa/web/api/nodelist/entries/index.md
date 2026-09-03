@@ -1,11 +1,5 @@
 ---
 title: "NodeList: entries() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NodeList/entries"
-status: "needs-translation"
----
-
----
-title: "NodeList: entries() method"
 short-title: entries()
 slug: Web/API/NodeList/entries
 page-type: web-api-instance-method
@@ -14,25 +8,23 @@ browser-compat: api.NodeList.entries
 
 {{APIRef("DOM")}}
 
-The **`NodeList.entries()`** method returns an
-{{jsxref("Iteration_protocols",'iterator')}} allowing to go through all key/value pairs
-contained in this object. The values are {{domxref("Node")}} objects.
+متد **`NodeList.entries()`** یک {{jsxref("Iteration_protocols","iterator")}} بازمی‌گرداند که امکان پیمایش همهٔ جفت‌های کلید/مقدار موجود در این شیء را فراهم می‌کند. مقادیر، اشیاء {{domxref("Node")}} هستند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 entries()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ پارامتری.
 
-### Return value
+### مقدار بازگشتی
 
-Returns an {{jsxref("Iteration_protocols","iterator")}}.
+یک {{jsxref("Iteration_protocols","iterator")}} بازمی‌گرداند.
 
-## Example
+## مثال
 
 ```js
 const node = document.createElement("div");
@@ -51,7 +43,7 @@ for (const entry of list.entries()) {
 }
 ```
 
-results in:
+خروجی به این صورت است:
 
 ```plain
 Array [ 0, <p> ]
@@ -59,16 +51,16 @@ Array [ 1, #text "hey" ]
 Array [ 2, <span> ]
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Polyfill of `NodeList.prototype.entries` in `core-js`](https://github.com/zloirock/core-js#iterable-dom-collections)
+- [پالیفیل `NodeList.prototype.entries` در `core-js`](https://github.com/zloirock/core-js#iterable-dom-collections)
 - {{domxref("Node")}}
 - {{domxref("NodeList")}}
