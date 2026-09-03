@@ -1,11 +1,5 @@
 ---
 title: "PannerNode: coneOuterGain property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PannerNode/coneOuterGain"
-status: "needs-translation"
----
-
----
-title: "PannerNode: coneOuterGain property"
 short-title: coneOuterGain
 slug: Web/API/PannerNode/coneOuterGain
 page-type: web-api-instance-property
@@ -14,32 +8,32 @@ browser-compat: api.PannerNode.coneOuterGain
 
 {{ APIRef("Web Audio API") }}
 
-The `coneOuterGain` property of the {{ domxref("PannerNode") }} interface is a double value, describing the amount of volume reduction outside the cone, defined by the {{domxref("PannerNode.coneOuterAngle", "coneOuterAngle")}} attribute.
+ویژگی `coneOuterGain` در رابط {{ domxref("PannerNode") }} یک مقدار double است که میزان کاهش حجم صدا در خارج از مخروط تعریف‌شده توسط ویژگی {{domxref("PannerNode.coneOuterAngle", "coneOuterAngle")}} را توصیف می‌کند.
 
-The `coneOuterGain` property's default value is `0`, meaning that no sound can be heard outside the cone.
+مقدار پیش‌فرض ویژگی `coneOuterGain` برابر با `0` است؛ یعنی هیچ صدایی در خارج از مخروط شنیده نمی‌شود.
 
-## Value
+## مقدار
 
-A double. The default is `0`, and its value can be in the range 0–1.
+یک مقدار double. پیش‌فرض آن `0` است و مقدار آن می‌تواند در بازه ۰ تا ۱ باشد.
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the property has been given a value outside the accepted range (0–1).
+  - : اگر به ویژگی مقداری خارج از محدوده مجاز (۰ تا ۱) داده شود، این خطا پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-See [`PannerNode.orientationX`](/en-US/docs/Web/API/PannerNode/orientationX#example) for example code that demonstrates how changing the {{domxref("PannerNode")}} orientation parameters in combination with {{domxref("PannerNode.coneInnerAngle", "coneInnerAngle")}} and {{domxref("PannerNode.coneOuterAngle", "coneOuterAngle")}} affects volume.
+برای مشاهده کد مثالی که نشان می‌دهد تغییر پارامترهای جهت‌گیری {{domxref("PannerNode")}} به‌همراه {{domxref("PannerNode.coneInnerAngle", "coneInnerAngle")}} و {{domxref("PannerNode.coneOuterAngle", "coneOuterAngle")}} چگونه بر حجم صدا تأثیر می‌گذارد، به [`PannerNode.orientationX`](/en-US/docs/Web/API/PannerNode/orientationX#example) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
-- [Web Audio spatialization basics](/en-US/docs/Web/API/Web_Audio_API/Web_audio_spatialization_basics)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [مبانی فضاسازی Web Audio](/en-US/docs/Web/API/Web_Audio_API/Web_audio_spatialization_basics)
