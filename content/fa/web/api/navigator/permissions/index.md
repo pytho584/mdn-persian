@@ -1,11 +1,5 @@
 ---
 title: "Navigator: permissions property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/permissions"
-status: "needs-translation"
----
-
----
-title: "Navigator: permissions property"
 short-title: permissions
 slug: Web/API/Navigator/permissions
 page-type: web-api-instance-property
@@ -14,15 +8,13 @@ browser-compat: api.Navigator.permissions
 
 {{APIRef("Permissions API")}}
 
-The **`permissions`** read-only property of the {{domxref("Navigator")}} interface returns a
-{{domxref("Permissions")}} object that can be used to query and update permission
-status of APIs covered by the [Permissions API](/en-US/docs/Web/API/Permissions_API).
+خاصیت فقط خواندنی **`permissions`** در رابط {{domxref("Navigator")}} یک شیء {{domxref("Permissions")}} را برمی‌گرداند که می‌توان از آن برای پرس‌وجو و به‌روزرسانی وضعیت مجوز APIهای تحت پوشش [Permissions API](/en-US/docs/Web/API/Permissions_API) استفاده کرد.
 
-## Value
+## مقدار
 
-A {{domxref("Permissions")}} object.
+یک شیء {{domxref("Permissions")}}.
 
-## Examples
+## مثال‌ها
 
 ```js
 navigator.permissions.query({ name: "geolocation" }).then((result) => {
@@ -35,15 +27,15 @@ navigator.permissions.query({ name: "geolocation" }).then((result) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Permissions API](/en-US/docs/Web/API/Permissions_API)
 - {{domxref("Navigator")}}
