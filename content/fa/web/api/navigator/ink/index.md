@@ -1,11 +1,5 @@
 ---
 title: "Navigator: ink property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/ink"
-status: "needs-translation"
----
-
----
-title: "Navigator: ink property"
 short-title: ink
 slug: Web/API/Navigator/ink
 page-type: web-api-instance-property
@@ -16,13 +10,13 @@ browser-compat: api.Navigator.ink
 
 {{SeeCompatTable}}{{APIRef("Ink API")}}
 
-The **`ink`** read-only property of the {{domxref("Navigator")}} interface returns an {{domxref("Ink")}} object for the current document, providing access to [Ink API](/en-US/docs/Web/API/Ink_API) functionality.
+خاصیت فقط‌خواندنی **`ink`** در رابط {{domxref("Navigator")}}، یک شیء {{domxref("Ink")}} برای سند جاری برمی‌گرداند که دسترسی به قابلیت‌های [Ink API](/en-US/docs/Web/API/Ink_API) را فراهم می‌کند.
 
-## Value
+## مقدار
 
-An {{domxref('Ink')}} object.
+یک شیء {{domxref('Ink')}}.
 
-## Example
+## مثال
 
 ```js
 async function inkInit() {
@@ -33,10 +27,10 @@ async function inkInit() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
