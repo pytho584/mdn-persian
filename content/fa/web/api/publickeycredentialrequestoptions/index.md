@@ -1,10 +1,4 @@
 ---
-title: "PublicKeyCredentialRequestOptions"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredentialRequestOptions"
-status: "needs-translation"
----
-
----
 title: PublicKeyCredentialRequestOptions
 slug: Web/API/PublicKeyCredentialRequestOptions
 page-type: web-api-interface
@@ -14,83 +8,83 @@ spec-urls: https://w3c.github.io/webauthn/#dictdef-publickeycredentialrequestopt
 
 {{APIRef("Web Authentication API")}}{{securecontext_header}}
 
-The **`PublicKeyCredentialRequestOptions`** dictionary represents the object passed to {{domxref("CredentialsContainer.get()")}} as the value of the `publicKey` option.
+دیکشنری **`PublicKeyCredentialRequestOptions`** نشان‌دهندهٔ شیءایی است که به‌عنوان مقدار گزینهٔ `publicKey` به {{domxref("CredentialsContainer.get()")}} منتقل می‌شود.
 
-It is used to request a {{domxref("PublicKeyCredential")}} provided by an {{glossary("authenticator")}} that supports the [Web Authentication API](/en-US/docs/Web/API/Web_Authentication_API).
+از آن برای درخواست یک {{domxref("PublicKeyCredential")}} استفاده می‌شود که توسط یک {{glossary("authenticator")}} پشتیبانِ [Web Authentication API](/en-US/docs/Web/API/Web_Authentication_API) فراهم می‌شود.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - `allowCredentials` {{optional_inline}}
-  - : An array of objects used to restrict the list of acceptable credentials. An empty array indicates that any credential is acceptable.
+  - : آرایه‌ای از اشیاء که برای محدود کردن فهرست اعتبارنامه‌های پذیرفتنی استفاده می‌شود. آرایه‌ای خالی به این معناست که هر اعتبارنامه‌ای پذیرفتنی است.
 
-    Each object in the array will contain the following properties:
+    هر شیء در این آرایه شامل ویژگی‌های زیر است:
+
     - `id`
-      - : An {{jsxref("ArrayBuffer")}}, {{jsxref("TypedArray")}}, or {{jsxref("DataView")}} representing the ID of the public key credential to retrieve. This value is mirrored by the {{domxref("PublicKeyCredential.rawId", "rawId")}} property of the {{domxref("PublicKeyCredential")}} object returned by a successful `get()` call.
-
+      - : یک {{jsxref("ArrayBuffer")}}، {{jsxref("TypedArray")}} یا {{jsxref("DataView")}} که شناسهٔ اعتبارنامهٔ کلید عمومی موردنظر برای بازیابی را نشان می‌دهد. این مقدار با ویژگی {{domxref("PublicKeyCredential.rawId", "rawId")}} شیء {{domxref("PublicKeyCredential")}} که در یک فراخوانی موفق `get()` بازگردانده می‌شود، مطابقت دارد.
     - `transports` {{optional_inline}}
-      - : An array of strings providing hints as to the methods the client could use to communicate with the relevant authenticator of the public key credential to retrieve. Possible transports are: `"ble"`, `"hybrid"`, `"internal"`, `"nfc"`, and `"usb"`.
+      - : آرایه‌ای از رشته‌ها که راهنمایی‌هایی در مورد روش‌هایی ارائه می‌دهد که کلاینت می‌تواند برای برقراری ارتباط با authenticator مربوط به اعتبارنامهٔ کلید عمومی موردنظر برای بازیابی استفاده کند. روش‌های انتقال ممکن عبارت‌اند از: `"ble"`، `"hybrid"`، `"internal"`، `"nfc"` و `"usb"`.
 
         > [!NOTE]
-        > This value is mirrored by the return value of the {{domxref("AuthenticatorAttestationResponse.getTransports", "PublicKeyCredential.response.getTransports()")}} method of the {{domxref("PublicKeyCredential")}} object returned by the `create()` call that originally created the credential.
-        > At that point, it should be stored by the app for later use.
+        > این مقدار با مقدار بازگشتی متد {{domxref("AuthenticatorAttestationResponse.getTransports", "PublicKeyCredential.response.getTransports()")}} در شیء {{domxref("PublicKeyCredential")}} که توسط فراخوانی `create()` سازندهٔ اصلی آن اعتبارنامه بازگردانده شده است، مطابقت دارد.
+        > در آن مرحله، برنامه باید این مقدار را برای استفادهٔ بعدی ذخیره کند.
 
     - `type`
-      - : A string defining the type of the public key credential to retrieve. This can currently take a single value, `"public-key"`, but more values may be added in the future. This value is mirrored by the {{domxref("Credential.type", "type")}} property of the {{domxref("PublicKeyCredential")}} object returned by a successful `get()` call.
+      - : رشته‌ای که نوع اعتبارنامهٔ کلید عمومی موردنظر برای بازیابی را مشخص می‌کند. این ویژگی در حال حاضر تنها یک مقدار می‌پذیرد: `"public-key"`. اما ممکن است در آینده مقادیر بیشتری به آن اضافه شود. این مقدار با ویژگی {{domxref("Credential.type", "type")}} در شیء {{domxref("PublicKeyCredential")}} که در یک فراخوانی موفق `get()` بازگردانده می‌شود، مطابقت دارد.
 
-    This value defaults to an empty array.
+    مقدار پیش‌فرض این ویژگی آرایه‌ای خالی است.
 
 - `challenge`
-  - : An {{jsxref("ArrayBuffer")}}, {{jsxref("TypedArray")}}, or {{jsxref("DataView")}} originating from the relying party's server and used as a [cryptographic challenge](https://en.wikipedia.org/wiki/Challenge%E2%80%93response_authentication). This value will be signed by the authenticator and the signature will be sent back as part of the {{domxref("AuthenticatorAssertionResponse.signature")}} (available in the {{domxref("PublicKeyCredential.response", "response")}} property of the {{domxref("PublicKeyCredential")}} object returned by a successful `get()` call).
+  - : یک {{jsxref("ArrayBuffer")}}، {{jsxref("TypedArray")}} یا {{jsxref("DataView")}} که از سمت سرورِ طرفِ اعتماد (relying party) می‌آید و به‌عنوان [چالش رمزنگاری](https://en.wikipedia.org/wiki/Challenge%E2%80%93response_authentication) استفاده می‌شود. این مقدار توسط authenticator امضا می‌شود و امضا به‌عنوان بخشی از {{domxref("AuthenticatorAssertionResponse.signature")}} (که در ویژگی {{domxref("PublicKeyCredential.response", "response")}} شیء {{domxref("PublicKeyCredential")}} بازگردانده‌شده از یک فراخوانی موفق `get()` موجود است) بازگردانده می‌شود.
 
 - `extensions` {{optional_inline}}
-  - : An object containing properties representing the input values for any requested extensions. These extensions are used to specific additional processing by the client or authenticator during the authentication process. Examples include dealing with legacy FIDO API credentials, and evaluating outputs from a pseudo-random function (PRF) associated with a credential.
+  - : شیءایی شامل ویژگی‌هایی که مقادیر ورودیِ هر افزونهٔ درخواست‌شده را نشان می‌دهند. این افزونه‌ها برای پردازش‌های اضافیِ خاص توسط کلاینت یا authenticator در فرایند احراز هویت استفاده می‌شوند. از جمله مثال‌ها می‌توان به کار با اعتبارنامه‌های قدیمی FIDO API و ارزیابی خروجی‌های یک تابع شبه‌تصادفی (PRF) مرتبط با یک اعتبارنامه اشاره کرد.
 
-    Extensions are optional and different browsers may recognize different extensions. Processing extensions is always optional for the client: if a browser does not recognize a given extension, it will just ignore it. For information on using extensions, and which ones are supported by which browsers, see [Web Authentication extensions](/en-US/docs/Web/API/Web_Authentication_API/WebAuthn_extensions).
+    افزونه‌ها اختیاری هستند و مرورگرهای مختلف ممکن است افزونه‌های متفاوتی را بشناسند. پردازش افزونه‌ها همیشه برای کلاینت اختیاری است: اگر مرورگری افزونه‌ای را نشناسد، صرفاً آن را نادیده می‌گیرد. برای اطلاعات دربارهٔ استفاده از افزونه‌ها و اینکه کدام مرورگر از کدام افزونه پشتیبانی می‌کند، به [افزونه‌های Web Authentication](/en-US/docs/Web/API/Web_Authentication_API/WebAuthn_extensions) مراجعه کنید.
 
 - `hints` {{optional_inline}} {{experimental_inline}}
-  - : An array of strings providing hints as to what UI the browser should provide for the user to authenticate with an existing public key credential.
+  - : آرایه‌ای از رشته‌ها که راهنمایی‌هایی در این مورد ارائه می‌دهد که مرورگر برای احراز هویتِ کاربر با یک اعتبارنامهٔ کلید عمومی موجود، چه رابط کاربری (UI) را باید در اختیار او بگذارد.
 
-    The strings can be any of the following:
+    رشته‌ها می‌توانند هر یک از مقادیر زیر باشند:
     - `"security-key"`
-      - : The UI should recommend requesting the credential from a separate physical security key (such as a YubiKey).
+      - : رابط کاربری باید پیشنهاد دهد که اعتبارنامه از یک کلید امنیتی فیزیکی جداگانه (مانند YubiKey) درخواست شود.
     - `"client-device"`
-      - : The UI should recommend requesting the credential from an authenticator available on the same device they are using to access the RP client.
+      - : رابط کاربری باید پیشنهاد دهد که اعتبارنامه از یک authenticator موجود روی همان دستگاهی که کاربر برای دسترسی به کلاینتِ طرفِ اعتماد استفاده می‌کند، درخواست شود.
     - `"hybrid"`
-      - : The UI should recommend requesting the credential from a general-purpose authenticator, such as a smartphone-based authenticator app. This favors using a cross-device approach to handling authentication, relying on a combination of laptop and smartphone, for example.
+      - : رابط کاربری باید پیشنهاد دهد که اعتبارنامه از یک authenticator همه‌منظوره، مانند یک برنامهٔ احراز هویت مبتنی بر گوشی هوشمند، درخواست شود. این گزینه رویکرد احراز هویتِ چنددستگاهی را ترجیح می‌دهد؛ برای مثال، ترکیبی از لپ‌تاپ و گوشی هوشمند.
 
-    When multiple strings are included in the array, their order denotes the order of preference, from high to low. Supporting browsers that respect the hints should use the first one that they understand.
+    وقتی چند رشته در آرایه گنجانده شود، ترتیب آن‌ها بیانگر اولویت از زیاد به کم است. مرورگرهای پشتیبانی‌کننده‌ای که به این راهنماها احترام می‌گذارند، باید از اولین مقداری که می‌شناسند استفاده کنند.
 
-    Specified `hints` may contradict hints provided in the [`transports`](#transports) option. When the provided `hints` contradict this option, the `hints` take precedence. `hints` may also be ignored by the browser under specific circumstances, for example if a hinted authenticator type is not usable on the user's device.
+    ممکن است `hints` مشخص‌شده با راهنمایی‌های ارائه‌شده در گزینهٔ [`transports`](#transports) تناقض داشته باشد. اگر `hints` ارائه‌شده با این گزینه تناقض داشته باشد، `hints` اولویت دارند. همچنین مرورگر ممکن است در شرایط خاصی `hints` را نادیده بگیرد؛ برای مثال، اگر نوعِ authenticator اشاره‌شده روی دستگاه کاربر قابل استفاده نباشد.
 
-    For some specific code and UI examples, see [Introducing hints, Related Origin Requests and JSON serialization for WebAuthn in Chrome](https://developer.chrome.com/blog/passkeys-updates-chrome-129#hints).
+    برای مشاهدهٔ چند مثال خاص از کد و رابط کاربری، به [معرفی hints، Related Origin Requests و سریال‌سازی JSON برای WebAuthn در Chrome](https://developer.chrome.com/blog/passkeys-updates-chrome-129#hints) مراجعه کنید.
 
 - `rpId` {{optional_inline}}
-  - : A string that specifies the relying party's identifier (for example `"login.example.org"`). For security purposes:
-    - The browser verifies that `rpId` matches the relying party's origin or is a domain suffix of the relying party's origin (for example, `example.org`).
-    - The authenticator verifies that `rpId` matches the `rpId` of the credential used for the authentication ceremony.
+  - : رشته‌ای که شناسهٔ طرفِ اعتماد را مشخص می‌کند (برای مثال `"login.example.org"`). به دلایل امنیتی:
+    - مرورگر بررسی می‌کند که `rpId` با خاستگاه (origin) طرفِ اعتماد مطابقت دارد یا پسوندِ دامنهٔ خاستگاهِ آن است (مثلاً `example.org`).
+    - authenticator بررسی می‌کند که `rpId` با `rpId` اعتبارنامه‌ای که در آیین احراز هویت استفاده شده است مطابقت دارد.
 
-    This value defaults to the current origin's domain.
+    مقدار پیش‌فرض این ویژگی، دامنهٔ خاستگاهِ فعلی است.
 
 - `timeout` {{optional_inline}}
-  - : A numerical hint, in milliseconds, indicating the time the relying party is willing to wait for the retrieval operation to complete. This hint may be overridden by the browser.
+  - : یک راهنمای عددی بر حسب میلی‌ثانیه که نشان‌دهندهٔ مدت زمانی است که طرفِ اعتماد حاضر است برای تکمیل عملیات بازیابی صبر کند. این راهنما ممکن است توسط مرورگر بازنویسی شود.
 
 - `userVerification` {{optional_inline}}
-  - : A string specifying the relying party's requirements for user verification of the authentication process. This verification is initiated by the authenticator, which will request the user to provide an available factor (for example a PIN or a biometric input of some kind).
+  - : رشته‌ای که الزامات طرفِ اعتماد را برای تأیید کاربر در فرایند احراز هویت مشخص می‌کند. این تأیید توسط authenticator آغاز می‌شود و از کاربر می‌خواهد یک عامل در دسترس (مثلاً PIN یا نوعی ورودی زیست‌سنجی) را ارائه دهد.
 
-    The value can be one of the following:
+    مقدار می‌تواند یکی از موارد زیر باشد:
     - `"required"`
-      - : The relying party requires user verification, and the operation will fail if it does not occur.
+      - : طرفِ اعتماد تأیید کاربر را الزامی می‌داند و اگر انجام نشود، عملیات با شکست مواجه می‌شود.
     - `"preferred"`
-      - : The relying party prefers user verification if possible, but the operation will not fail if it does not occur.
+      - : طرفِ اعتماد ترجیح می‌دهد که در صورت امکان تأیید کاربر انجام شود، اما اگر انجام نشود، عملیات شکست نمی‌خورد.
     - `"discouraged"`
-      - : The relying party does not want user verification, in the interests of making user interaction as smooth as possible.
+      - : طرفِ اعتماد برای آنکه تعامل کاربر تا حد امکان روان باشد، تمایلی به تأیید کاربر ندارد.
 
-    This value defaults to `"preferred"`.
+    مقدار پیش‌فرض این ویژگی `"preferred"` است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
