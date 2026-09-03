@@ -1,11 +1,5 @@
 ---
 title: "Navigator: userAgent property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/userAgent"
-status: "needs-translation"
----
-
----
-title: "Navigator: userAgent property"
 short-title: userAgent
 slug: Web/API/Navigator/userAgent
 page-type: web-api-instance-property
@@ -14,23 +8,23 @@ browser-compat: api.Navigator.userAgent
 
 {{ApiRef("HTML DOM")}}
 
-The **`Navigator.userAgent`** read-only property of the {{domxref("Navigator")}} interface returns the `User-Agent` (UA) string for the current browser.
+خاصیت فقط خواندنی **`Navigator.userAgent`** از رابط {{domxref("Navigator")}}، رشته `User-Agent` (UA) مربوط به مرورگر فعلی را بازمی‌گرداند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Description
+## توضیحات
 
-The `userAgent` property provides the current browser's UA string. The UA string is built on a formal structure, which can be decomposed into several pieces of information.
+خاصیت `userAgent` رشته UA مرورگر فعلی را ارائه می‌دهد. رشته UA بر اساس یک ساختار رسمی ساخته شده است که می‌توان آن را به چند بخش اطلاعاتی تجزیه کرد.
 
-The browser also provides the UA string via the {{HTTPHeader("User-Agent")}} HTTP header. Parts of this information are also available in {{Glossary("HTTP")}} headers such as [User-Agent client hints](/en-US/docs/Web/HTTP/Guides/Client_hints) and other related API features such as {{domxref("Navigator.appVersion")}} and {{domxref("Navigator.platform")}}.
+مرورگر همچنین رشته UA را از طریق هدر HTTP {{HTTPHeader("User-Agent")}} ارائه می‌دهد. بخش‌هایی از این اطلاعات در هدرهای {{Glossary("HTTP")}} مانند [راهنمای‌های مشتری User-Agent](/en-US/docs/Web/HTTP/Guides/Client_hints) و سایر ویژگی‌های API مرتبط مانند {{domxref("Navigator.appVersion")}} و {{domxref("Navigator.platform")}} نیز در دسترس هستند.
 
-Theoretically this information is useful for detecting the browser and serving code to work around browser-specific bugs or lack of feature support. However, this is **unreliable** and **is not recommended** for the reasons given in [User-Agent reduction](/en-US/docs/Web/HTTP/Guides/User-agent_reduction) and [Browser detection using the user agent](/en-US/docs/Web/HTTP/Guides/Browser_detection_using_the_user_agent).
+از نظر تئوری، این اطلاعات برای تشخیص مرورگر و ارائه کد برای رفع اشکالات خاص مرورگر یا عدم پشتیبانی از ویژگی‌ها مفید است. با این حال، این کار **غیرقابل اعتماد** است و **توصیه نمی‌شود** به دلایلی که در [کاهش User-Agent](/en-US/docs/Web/HTTP/Guides/User-agent_reduction) و [تشخیص مرورگر با استفاده از user agent](/en-US/docs/Web/HTTP/Guides/Browser_detection_using_the_user_agent) ذکر شده است.
 
-[Feature detection](/en-US/docs/Learn_web_development/Extensions/Testing/Feature_detection) is a much more reliable strategy.
+[تشخیص ویژگی](/en-US/docs/Learn_web_development/Extensions/Testing/Feature_detection) یک استراتژی بسیار قابل اطمینان‌تر است.
 
-## Examples
+## مثال‌ها
 
 ```js
 console.log(navigator.userAgent);
@@ -39,14 +33,14 @@ console.log(navigator.userAgent);
 // On Firefox on Windows, logs something like "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:124.0) Gecko/20100101 Firefox/124.0"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{httpheader("User-Agent")}} HTTP header
+- هدر HTTP {{httpheader("User-Agent")}}
