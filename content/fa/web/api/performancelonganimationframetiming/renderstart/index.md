@@ -1,11 +1,5 @@
 ---
 title: "PerformanceLongAnimationFrameTiming: renderStart property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceLongAnimationFrameTiming/renderStart"
-status: "needs-translation"
----
-
----
-title: "PerformanceLongAnimationFrameTiming: renderStart property"
 short-title: renderStart
 slug: Web/API/PerformanceLongAnimationFrameTiming/renderStart
 page-type: web-api-instance-property
@@ -16,25 +10,25 @@ browser-compat: api.PerformanceLongAnimationFrameTiming.renderStart
 
 {{SeeCompatTable}}{{APIRef("Performance API")}}
 
-The **`renderStart`** read-only property of the {{domxref("PerformanceLongAnimationFrameTiming")}} interface returns a {{domxref("DOMHighResTimeStamp")}} indicating the start time of the rendering cycle, which includes {{domxref("Window.requestAnimationFrame()")}} callbacks, style and layout calculation, {{domxref("ResizeObserver")}} callbacks, and {{domxref("IntersectionObserver")}} callbacks.
+ویژگی فقط‌خواندنی **`renderStart`** از رابط {{domxref("PerformanceLongAnimationFrameTiming")}}، یک {{domxref("DOMHighResTimeStamp")}} برمی‌گرداند که زمان شروع چرخهٔ رندر را نشان می‌دهد. این چرخه شامل فراخوانی‌های {{domxref("Window.requestAnimationFrame()")}}، محاسبهٔ استایل و چیدمان (layout)، فراخوانی‌های {{domxref("ResizeObserver")}} و فراخوانی‌های {{domxref("IntersectionObserver")}} است.
 
-## Value
+## مقدار
 
-A {{domxref("DOMHighResTimeStamp")}}.
+یک {{domxref("DOMHighResTimeStamp")}}.
 
-## Examples
+## مثال‌ها
 
-See [Long animation frame timing](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing#examples) for examples related to the Long Animation Frames API.
+برای مثال‌های مربوط به Long Animation Frames API، به [زمان‌بندی فریم انیمیشن طولانی](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Long animation frame timing](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing)
+- [زمان‌بندی فریم انیمیشن طولانی](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing)
 - {{domxref("PerformanceScriptTiming")}}
