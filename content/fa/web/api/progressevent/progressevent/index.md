@@ -1,11 +1,5 @@
 ---
 title: "ProgressEvent: ProgressEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ProgressEvent/ProgressEvent"
-status: "needs-translation"
----
-
----
-title: "ProgressEvent: ProgressEvent() constructor"
 short-title: ProgressEvent()
 slug: Web/API/ProgressEvent/ProgressEvent
 page-type: web-api-constructor
@@ -14,47 +8,37 @@ browser-compat: api.ProgressEvent.ProgressEvent
 
 {{APIRef("XMLHttpRequest API")}}{{AvailableInWorkers}}
 
-The **`ProgressEvent()`** constructor returns a new {{domxref("ProgressEvent")}} object, representing the current completion of a long process.
+سازندهٔ **`ProgressEvent()`** یک شیء جدید از نوع {{domxref("ProgressEvent")}} می‌سازد و آن را برمی‌گرداند. این شیء میزان تکمیل فعلی یک فرایند طولانی را نشان می‌دهد.
 
-## Syntax
+## دستور زبان
 
 ```js-nolint
 new ProgressEvent(type)
 new ProgressEvent(type, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string with the name of the event.
-    It is case-sensitive and browsers set it to `loadstart`, `progress`, `abort`, `error`, `load`, `timeout`, or `loadend`.
+  - : رشته‌ای شامل نام رویداد. این مقدار به بزرگی و کوچکی حروف حساس است (case-sensitive) و مرورگرها آن را روی یکی از مقادیر `loadstart`، `progress`، `abort`، `error`، `load`، `timeout` یا `loadend` قرار می‌دهند.
 - `options` {{optional_inline}}
-  - : An object that, _in addition of the properties defined in {{domxref("Event/Event", "Event()")}}_, can have the following properties:
+  - : یک شیء که _علاوه بر ویژگی‌های تعریف‌شده در {{domxref("Event/Event", "Event()")}}_، می‌تواند ویژگی‌های زیر را داشته باشد:
     - `lengthComputable` {{optional_inline}}
-      - : A boolean value indicating if the total work to be done, and the amount of work already done, by the underlying process is calculable.
-        In other words, it tells if the progress is measurable or not.
-        It defaults to `false`.
+      - : یک مقدار بولین که مشخص می‌کند آیا مجموع کاری که باید انجام شود و میزان کاری که تاکنون توسط فرایند زیرین انجام شده است، قابل محاسبه هستند یا خیر. به عبارت دیگر، می‌گوید که آیا پیشرفت قابل اندازه‌گیری است یا نه. مقدار پیش‌فرض آن `false` است.
     - `loaded` {{optional_inline}}
-      - : A number representing the amount of work already performed by the underlying process.
-        For a `ProgressEvent` dispatched by the browser in HTTP messages, the value refers to the size, in bytes, of the message body, excluding headers and other overhead.
-        In a `ProgressEvent` you create yourself, you can assign any numeric value to `loaded` that represents the amount of work completed relative to the `total` value.
-        It defaults to `0`.
+      - : عددی که میزان کاری را که فرایند زیرین تاکنون انجام داده است نشان می‌دهد. برای یک `ProgressEvent` که مرورگر در پیام‌های HTTP ارسال می‌کند، این مقدار به اندازهٔ بدنهٔ پیام بر حسب بایت اشاره دارد و سرآیندها (headers) و سایر سربارها (overhead) را شامل نمی‌شود. در یک `ProgressEvent` که خودتان می‌سازید، می‌توانید هر مقدار عددی را به `loaded` اختصاص دهید که نسبت به مقدار `total`، میزان کارِ تکمیل‌شده را بیان کند. مقدار پیش‌فرض آن `0` است.
     - `total` {{optional_inline}}
-      - : A number indicating the total size of the data being transmitted or processed.
-        For `ProgressEvent`s dispatched by the browser in HTTP messages, the value refers to the size, in bytes, of a resource and is derived from the `Content-Length` response header.
-        In a `ProgressEvent` you create yourself, you may wish to normalize `total` to a value such as `100` or `1` if revealing the precise amount of bytes of a resource is a concern.
-        If using `1` as a total, for example, then `loaded` should be a decimal value between `0` and `1`.
-        It defaults to `0`.
+      - : عددی که اندازهٔ کل داده‌های در حال انتقال یا پردازش را نشان می‌دهد. برای `ProgressEvent`هایی که مرورگر در پیام‌های HTTP ارسال می‌کند، این مقدار به اندازهٔ یک منبع بر حسب بایت اشاره دارد و از هدر پاسخ `Content-Length` به دست می‌آید. در یک `ProgressEvent` که خودتان می‌سازید، اگر نگران این هستید که تعداد دقیق بایت‌های یک منبع فاش شود، می‌توانید `total` را به مقداری مانند `100` یا `1` نرمال‌سازی کنید. برای نمونه، اگر از `1` به‌عنوان مقدار `total` استفاده کنید، آنگاه `loaded` باید یک مقدار اعشاری بین 0 و 1 باشد. مقدار پیش‌فرض آن `0` است.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("ProgressEvent")}} object.
+یک شیء جدید از نوع {{domxref("ProgressEvent")}}.
 
-## Example
+## مثال
 
-### File upload
+### بارگذاری فایل
 
-The example demonstrates how a `ProgressEvent` is built using a constructor. This is particularly useful for tracking the progress of processes like file uploads, downloads, or any long-running tasks.
+این مثال نشان می‌دهد که چگونه یک `ProgressEvent` با استفاده از سازندهٔ آن ساخته می‌شود. این کار به‌ویژه برای ردیابی پیشرفت فرایندهایی مانند بارگذاری فایل، بارگیری فایل یا هر کار طولانی‌مدت دیگری مفید است.
 
 ```js
 function updateProgress(loaded, total) {
@@ -74,9 +58,9 @@ document.addEventListener("progress", (event) => {
 updateProgress(50, 100);
 ```
 
-### Using fractions in a ProgressEvent
+### استفاده از کسرها در ProgressEvent
 
-The total number of bytes of a resource may reveal too much information about a download, so a number between 0 and 1 may be used instead:
+تعداد کل بایت‌های یک منبع ممکن است اطلاعات زیادی دربارهٔ یک بارگیری فاش کند؛ بنابراین می‌توان به‌جای آن از عددی بین 0 و 1 استفاده کرد:
 
 ```js
 function updateProgress(loaded, total) {
@@ -96,14 +80,14 @@ document.addEventListener("progress", (event) => {
 updateProgress(0.123456, 1);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("ProgressEvent")}} interface it belongs to.
+- رابط {{domxref("ProgressEvent")}} که این سازنده به آن تعلق دارد.
