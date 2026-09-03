@@ -1,7 +1,5 @@
 ---
 title: "PresentationAvailability"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PresentationAvailability"
-status: "needs-translation"
 ---
 
 ---
@@ -15,32 +13,32 @@ browser-compat: api.PresentationAvailability
 
 {{SeeCompatTable}}{{securecontext_header}}{{APIRef("Presentation API")}}
 
-A **`PresentationAvailability`** object is associated with available [presentation displays](https://www.w3.org/TR/presentation-api/#dfn-presentation-display) and represents the _presentation display availability_ for a presentation request. If the [controlling user agent](https://www.w3.org/TR/presentation-api/#dfn-controlling-user-agent) can [monitor the list of available presentation displays](https://www.w3.org/TR/presentation-api/#dfn-monitor-the-list-of-available-presentation-displays) in the background (without a pending request to `start()`), the `PresentationAvailability` object _MUST_ be implemented in a [controlling browsing context](https://www.w3.org/TR/presentation-api/#dfn-controlling-browsing-context).
+یک شیء **`PresentationAvailability`** با [نمایشگرهای ارائه](https://www.w3.org/TR/presentation-api/#dfn-presentation-display) موجود مرتبط است و _در دسترس بودن نمایشگر ارائه_ را برای یک درخواست ارائه نشان می‌دهد. اگر [عامل کاربر کنترل‌کننده](https://www.w3.org/TR/presentation-api/#dfn-controlling-user-agent) بتواند در پس‌زمینه [فهرست نمایشگرهای ارائه موجود را پایش کند](https://www.w3.org/TR/presentation-api/#dfn-monitor-the-list-of-available-presentation-displays) (بدون درخواست معلق برای `start()`)، شیء `PresentationAvailability` _باید_ در یک [زمینه مرور کنترل‌کننده](https://www.w3.org/TR/presentation-api/#dfn-controlling-browsing-context) پیاده‌سازی شود.
 
-The `value` attribute _MUST_ return the last value it was set to. The value is updated by the [monitor the list of available presentation displays](https://www.w3.org/TR/presentation-api/#dfn-monitor-the-list-of-available-presentation-displays) algorithm.
+ویژگی `value` _باید_ آخرین مقداری را که روی آن تنظیم شده است برگرداند. این مقدار توسط الگوریتم [پایش فهرست نمایشگرهای ارائه موجود](https://www.w3.org/TR/presentation-api/#dfn-monitor-the-list-of-available-presentation-displays) به‌روزرسانی می‌شود.
 
-The `onchange` attribute is an [event handler](https://www.w3.org/TR/presentation-api/#dfn-event-handler) whose corresponding [event handler event type](https://www.w3.org/TR/presentation-api/#dfn-event-handler-event-type) is `change`.
+ویژگی `onchange` یک [مدیر رویداد](https://www.w3.org/TR/presentation-api/#dfn-event-handler) است که [نوع رویدادِ مدیر رویداد](https://www.w3.org/TR/presentation-api/#dfn-event-handler-event-type) متناظر با آن `change` است.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("PresentationAvailability.value")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : A boolean value indicating whether the given presentation display is available. The `value` attribute _MUST_ return the last value it was set to.
+  - : یک مقدار بولی که نشان می‌دهد آیا نمایشگر ارائه موردنظر در دسترس است یا خیر. ویژگی `value` _باید_ آخرین مقداری را که روی آن تنظیم شده است برگرداند.
 
-### Event
+### رویداد
 
 - {{domxref("PresentationAvailability.change_event", "change")}} {{Experimental_Inline}}
-  - : Indicates that the availability of the presentation display has changed.
+  - : نشان می‌دهد که در دسترس بودن نمایشگر ارائه تغییر کرده است.
 
-## Instance methods
+## متدهای نمونه
 
-None.
+هیچ‌کدام.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
