@@ -1,9 +1,4 @@
----
-title: "Node: appendChild() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild"
-status: "needs-translation"
----
-
+```yaml
 ---
 title: "Node: appendChild() method"
 short-title: appendChild()
@@ -14,81 +9,80 @@ browser-compat: api.Node.appendChild
 
 {{APIRef("DOM")}}
 
-The **`appendChild()`** method of the {{domxref("Node")}} interface adds a node to the end of the list of children of a specified parent node.
+متد **`appendChild()`** از رابط {{domxref("Node")}} یک گره را به انتهای فهرست فرزندان یک گره والد مشخص اضافه می‌کند.
 
 > [!NOTE]
-> If the given child is a reference to an existing node in the document, `appendChild()` moves it from its current position to the new position.
+> اگر فرزند داده شده ارجاعی به یک گره موجود در سند باشد، `appendChild()` آن را از موقعیت فعلی خود به موقعیت جدید منتقل می‌کند.
 
-If the given child is a {{domxref("DocumentFragment")}}, the entire contents of the {{domxref("DocumentFragment")}} are moved into the child list of the specified parent node.
+اگر فرزند داده شده یک {{domxref("DocumentFragment")}} باشد، کل محتویات {{domxref("DocumentFragment")}} به لیست فرزندان گره والد مشخص منتقل می‌شود.
 
-`appendChild()` returns the newly appended node, or if the child is a {{domxref("DocumentFragment")}}, the emptied fragment.
+`appendChild()` گره تازه اضافه شده را برمی‌گرداند، یا اگر فرزند یک {{domxref("DocumentFragment")}} باشد، قطعه خالی را برمی‌گرداند.
 
 > [!NOTE]
-> Unlike this method, the {{domxref("Element.append()")}} method supports multiple arguments and appending strings. You can prefer using it if your node is an element.
+> بر خلاف این متد، متد {{domxref("Element.append()")}} از چندین آرگومان و اضافه کردن رشته‌ها پشتیبانی می‌کند. اگر گره شما یک عنصر است، می‌توانید استفاده از آن را ترجیح دهید.
 
-## Syntax
+## نحو
 
 ```js-nolint
 appendChild(child)
 ```
 
-### Parameters
+### پارامترها
 
 - `child`
-  - : The node to append to the given parent node (commonly an element).
+  - : گره‌ای که باید به گره والد مشخص شده (معمولاً یک عنصر) اضافه شود.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("Node")}} that is the appended child (`child`), except when `child` is a {{domxref("DocumentFragment")}}, in which case the empty {{domxref("DocumentFragment")}} is returned.
+یک {{domxref("Node")}} که همان فرزند اضافه شده (`child`) است، به جز زمانی که `child` یک {{domxref("DocumentFragment")}} باشد، که در آن صورت {{domxref("DocumentFragment")}} خالی برگردانده می‌شود.
 
-### Exceptions
+### استثناها
 
 - `HierarchyRequestError` {{domxref("DOMException")}}
-  - : Thrown when the constraints of the DOM tree are violated, that is if one of the following cases occurs:
-    - If the parent of `child` is not a {{domxref("Document")}}, {{domxref("DocumentFragment")}}, or an {{domxref("Element")}}.
-    - If the insertion of `child` would lead to a cycle, that is if `child` is an ancestor of the node.
-    - If `child` is not a {{domxref("DocumentFragment")}}, a {{domxref("DocumentType")}}, an {{domxref("Element")}}, or a {{domxref("CharacterData")}}.
-    - If the current node is a {{domxref("Text")}}, and its parent is a {{domxref("Document")}}.
-    - If the current node is a {{domxref("DocumentType")}} and its parent is _not_ a {{domxref("Document")}}, as a _doctype_ should always be a direct descendant of a _document_.
-    - If the parent of the node is a {{domxref("Document")}} and `child` is a {{domxref("DocumentFragment")}} with more than one {{domxref("Element")}} child, or that has a {{domxref("Text")}} child.
-    - If the insertion of `child` would lead to {{domxref("Document")}} with more than one {{domxref("Element")}} as child.
+  - : زمانی پرتاب می‌شود که محدودیت‌های درخت DOM نقض شود، یعنی اگر یکی از موارد زیر رخ دهد:
+    - اگر والد `child` یک {{domxref("Document")}}، {{domxref("DocumentFragment")}} یا {{domxref("Element")}} نباشد.
+    - اگر درج `child` منجر به یک چرخه شود، یعنی `child` جد گره باشد.
+    - اگر `child` یک {{domxref("DocumentFragment")}}، {{domxref("DocumentType")}}، {{domxref("Element")}} یا {{domxref("CharacterData")}} نباشد.
+    - اگر گره جاری یک {{domxref("Text")}} باشد و والد آن یک {{domxref("Document")}} باشد.
+    - اگر گره جاری یک {{domxref("DocumentType")}} باشد و والد آن _نه_ یک {{domxref("Document")}} باشد، زیرا یک _doctype_ باید همیشه فرزند مستقیم یک _document_ باشد.
+    - اگر والد گره یک {{domxref("Document")}} باشد و `child` یک {{domxref("DocumentFragment")}} با بیش از یک فرزند {{domxref("Element")}} باشد، یا یک فرزند {{domxref("Text")}} داشته باشد.
+    - اگر درج `child` منجر به {{domxref("Document")}} با بیش از یک {{domxref("Element")}} به عنوان فرزند شود.
 
-## Description
+## توضیحات
 
-If the given child is a reference to an existing node in the document, `appendChild()` moves it from its current position to the new position — there is no requirement to remove the node from its parent
-node before appending it to some other node. This means that a node can't be in two points of the document simultaneously. The {{domxref("Node.cloneNode()")}} method can be used to make a copy of the node before appending it under the new parent. Copies made with `cloneNode` are not automatically kept in sync.
+اگر فرزند داده شده ارجاعی به یک گره موجود در سند باشد، `appendChild()` آن را از موقعیت فعلی خود به موقعیت جدید منتقل می‌کند — نیازی به حذف گره از والد خود قبل از اضافه کردن آن به گره دیگر نیست. این بدان معناست که یک گره نمی‌تواند همزمان در دو نقطه از سند باشد. از متد {{domxref("Node.cloneNode()")}} می‌توان برای تهیه یک کپی از گره قبل از اضافه کردن آن به والد جدید استفاده کرد. کپی‌های ساخته شده با `cloneNode` به طور خودکار همگام نگه داشته نمی‌شوند.
 
-`appendChild()` returns the newly appended node, instead of the parent node. This means you can append the new node as soon as it's created without losing reference to it:
+`appendChild()` به جای گره والد، گره تازه اضافه شده را برمی‌گرداند. این بدان معناست که می‌توانید بلافاصله پس از ایجاد گره جدید، آن را اضافه کنید بدون اینکه مرجع آن را از دست بدهید:
 
 ```js
 const paragraph = document.body.appendChild(document.createElement("p"));
-// You can append more elements to the paragraph later
+// می‌توانید بعداً عناصر بیشتری به پاراگراف اضافه کنید
 ```
 
-On the other hand, you cannot use `appendChild()` in a [fluent API](https://en.wikipedia.org/wiki/Fluent_interface) fashion (like jQuery).
+از طرف دیگر، نمی‌توانید از `appendChild()` به صورت یک [API روان](https://en.wikipedia.org/wiki/Fluent_interface) (مانند jQuery) استفاده کنید.
 
 ```js example-bad
-// This doesn't append three paragraphs:
-// the three elements will be nested instead of siblings
+// این کار سه پاراگراف اضافه نمی‌کند:
+// سه عنصر به جای خواهر و برادر، تو در تو می‌شوند
 document.body
   .appendChild(document.createElement("p"))
   .appendChild(document.createElement("p"))
   .appendChild(document.createElement("p"));
 ```
 
-## Example
+## مثال
 
-### Append a paragraph to the body
+### اضافه کردن یک پاراگراف به بدنه
 
 ```js
-// Create a new paragraph element, and append it to the end of the document body
+// یک عنصر پاراگراف جدید ایجاد کنید و آن را به انتهای بدنه سند اضافه کنید
 const p = document.createElement("p");
 document.body.appendChild(p);
 ```
 
-### Creating a nested DOM structure
+### ایجاد یک ساختار DOM تو در تو
 
-In this example, we attempt to create a nested DOM structure using as few temporary variables as possible.
+در این مثال، سعی می‌کنیم یک ساختار DOM تو در تو را با استفاده از حداقل متغیرهای موقت ایجاد کنیم.
 
 ```js
 const fragment = document.createDocumentFragment();
@@ -101,7 +95,7 @@ li.textContent = "hello world";
 document.body.appendChild(fragment);
 ```
 
-It generates the following DOM tree:
+این درخت DOM زیر را تولید می‌کند:
 
 ```html
 <section>
@@ -111,15 +105,15 @@ It generates the following DOM tree:
 </section>
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Node.removeChild()")}}
 - {{domxref("Node.replaceChild()")}}
@@ -127,3 +121,4 @@ It generates the following DOM tree:
 - {{domxref("Node.hasChildNodes()")}}
 - {{domxref("Element.insertAdjacentElement()")}}
 - {{domxref("Element.append()")}}
+```
