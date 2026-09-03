@@ -1,10 +1,4 @@
 ---
-title: "PerformanceScriptTiming"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceScriptTiming"
-status: "needs-translation"
----
-
----
 title: PerformanceScriptTiming
 slug: Web/API/PerformanceScriptTiming
 page-type: web-api-interface
@@ -15,76 +9,76 @@ browser-compat: api.PerformanceScriptTiming
 
 {{SeeCompatTable}}{{APIRef("Performance API")}}
 
-The **`PerformanceScriptTiming`** interface is specified in the Long Animation Frames API and provides metrics on individual scripts that contribute to long animation frames (LoAFs).
+رابط **`PerformanceScriptTiming`** در Long Animation Frames API تعریف شده است و معیارهایی را برای هر اسکریپتی که در ایجاد فریم‌های انیمیشن طولانی (LoAF) نقش دارد ارائه می‌کند.
 
-## Description
+## توضیحات
 
-Long animation frames (LoAFs) are rendering updates that are delayed beyond 50ms. LoAFs can result in slow user interface (UI) updates, making controls appear unresponsive and causing [janky](/en-US/docs/Glossary/Jank) (non-smooth) animated effects and scrolling. This often leads to user frustration.
+فریم‌های انیمیشن طولانی (LoAFها) به‌روزرسانی‌های رندری هستند که بیش از ۵۰ میلی‌ثانیه به تأخیر افتاده‌اند. LoAFها می‌توانند باعث به‌روزرسانی‌های کند رابط کاربری (UI) شوند، کنترلها را واکنش‌ناپذیر نشان دهند و جلوه‌های متحرک و اسکرول‌کردن را [پرش‌دار (غیرنرم)](/en-US/docs/Glossary/Jank) کنند. این وضعیت اغلب به ناامیدی کاربر می‌انجامد.
 
-The `PerformanceScriptTiming` interface (instances of which are accessed via the {{domxref("PerformanceLongAnimationFrameTiming.scripts")}} property) provides the following granular set of information on individual scripts that contribute to LoAFs, allowing developers to narrow down their root causes:
+رابط `PerformanceScriptTiming` (نمونه‌های آن از طریق ویژگی {{domxref("PerformanceLongAnimationFrameTiming.scripts")}} در دسترس است) مجموعه اطلاعات دقیق زیر را درباره هر اسکریپتی که در LoAFها مشارکت دارد در اختیار توسعه‌دهندگان می‌گذارد تا بتوانند علت‌های ریشه‌ای را مشخص کنند:
 
-- A detailed set of timestamps for each script.
-- The identity and type of the invoker, i.e., the feature that, when invoked, ran the script.
-- Detailed information on each script source file, including the URL, and the function name and character position that contributed to the LoAF.
+- مجموعه‌ای دقیق از برچسب‌های زمانی برای هر اسکریپت.
+- هویت و نوع فراخواننده (invoker)؛ یعنی قابلیتی که با فراخوانده‌شدن، اسکریپت را اجرا کرد.
+- اطلاعات دقیق درباره هر فایل منبع اسکریپت، ازجمله URL، نام تابع و موقعیت نویسه (کاراکتر) که در ایجاد LoAF نقش داشت.
 
-`PerformanceScriptTiming` inherits from {{domxref("PerformanceEntry")}}.
+`PerformanceScriptTiming` از {{domxref("PerformanceEntry")}} ارث می‌برد.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-This interface extends the following {{domxref("PerformanceEntry")}} properties for long animation frame performance entries:
+این رابط ویژگی‌های {{domxref("PerformanceEntry")}} زیر را برای ورودی‌های Performance مربوط به فریم انیمیشن طولانی گسترش می‌دهد:
 
 - {{domxref("PerformanceEntry.duration")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a {{domxref("DOMHighResTimeStamp")}} representing the elapsed time in milliseconds between the start and end of the script's execution.
+  - : یک {{domxref("DOMHighResTimeStamp")}} برمی‌گرداند که زمان سپری‌شده بر حسب میلی‌ثانیه بین شروع و پایان اجرای اسکریپت را نشان می‌دهد.
 - {{domxref("PerformanceEntry.entryType")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns the entry type, which is always `"script"`.
+  - : نوع ورودی را برمی‌گرداند که همیشه `"script"` است.
 - {{domxref("PerformanceEntry.name")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns the entry name, which is always `"script"`.
+  - : نام ورودی را برمی‌گرداند که همیشه `"script"` است.
 - {{domxref("PerformanceEntry.startTime")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a {{domxref("DOMHighResTimeStamp")}} representing the time when the script execution started, in milliseconds.
+  - : یک {{domxref("DOMHighResTimeStamp")}} برمی‌گرداند که زمان شروع اجرای اسکریپت را بر حسب میلی‌ثانیه نشان می‌دهد.
 
-This interface also supports the following properties:
+این رابط همچنین از ویژگی‌های زیر پشتیبانی می‌کند:
 
 - {{domxref("PerformanceScriptTiming.executionStart")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a {{domxref("DOMHighResTimeStamp")}} indicating the time when the script compilation finished and execution started.
+  - : یک {{domxref("DOMHighResTimeStamp")}} برمی‌گرداند که زمان پایان کامپایل اسکریپت و شروع اجرای آن را نشان می‌دهد.
 - {{domxref("PerformanceScriptTiming.forcedStyleAndLayoutDuration")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a {{domxref("DOMHighResTimeStamp")}} indicating the total time spent, in milliseconds, by the script processing forced layout/style. See [Avoid layout thrashing](https://web.dev/articles/avoid-large-complex-layouts-and-layout-thrashing#avoid_layout_thrashing) to understand what causes this.
+  - : یک {{domxref("DOMHighResTimeStamp")}} برمی‌گرداند که مجموع زمان صرف‌شده توسط اسکریپت برای پردازش چیدمان/استایل اجباری را بر حسب میلی‌ثانیه نشان می‌دهد. برای درک اینکه چه چیزی باعث این وضعیت می‌شود، به بخش [اجتناب از layout thrashing](https://web.dev/articles/avoid-large-complex-layouts-and-layout-thrashing#avoid_layout_thrashing) مراجعه کنید.
 - {{domxref("PerformanceScriptTiming.invoker")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a string value indicating the identity of the feature that, when invoked, ran the script.
+  - : یک مقدار رشته‌ای برمی‌گرداند که هویت قابلیتی را نشان می‌دهد که هنگام فراخوانده‌شدن، اسکریپت را اجرا کرد.
 - {{domxref("PerformanceScriptTiming.invokerType")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a string value indicating the type of feature that, when invoked, ran the script.
+  - : یک مقدار رشته‌ای برمی‌گرداند که نوع قابلیتی را نشان می‌دهد که هنگام فراخوانده‌شدن، اسکریپت را اجرا کرد.
 - {{domxref("PerformanceScriptTiming.pauseDuration")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a {{domxref("DOMHighResTimeStamp")}} indicating the total time, in milliseconds, spent by the script on "pausing" synchronous operations (for example, {{domxref("Window.alert()")}} calls or synchronous {{domxref("XMLHttpRequest")}}s).
+  - : یک {{domxref("DOMHighResTimeStamp")}} برمی‌گرداند که مجموع زمان صرف‌شده توسط اسکریپت بر حسب میلی‌ثانیه برای «مکث» عملیات همگام (برای مثال، فراخوانی‌های {{domxref("Window.alert()")}} یا {{domxref("XMLHttpRequest")}}های همگام) را نشان می‌دهد.
 - {{domxref("PerformanceScriptTiming.sourceCharPosition")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a number representing the script character position of the script feature that contributed to the LoAF.
+  - : یک عدد برمی‌گرداند که موقعیت نویسه را در اسکریپتِ مربوط به قابلیتِ مشارکت‌کننده در LoAF نشان می‌دهد.
 - {{domxref("PerformanceScriptTiming.sourceFunctionName")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a string representing the name of the function that contributed to the LoAF.
+  - : یک رشته برمی‌گرداند که نام تابعِ مشارکت‌کننده در LoAF را نشان می‌دهد.
 - {{domxref("PerformanceScriptTiming.sourceURL")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a string representing the URL of the script.
+  - : یک رشته برمی‌گرداند که URL اسکریپت را نشان می‌دهد.
 - {{domxref("PerformanceScriptTiming.window")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a reference to a {{domxref("Window")}} object representing the `window` of the container (i.e., either the top-level document or an {{htmlelement("iframe")}}) in which the LoAF-causing script was executed.
+  - : یک ارجاع به شیء {{domxref("Window")}} برمی‌گرداند که نمایانگر `window` ظرف (container) است؛ یعنی سند سطح بالا یا یک {{htmlelement("iframe")}} که اسکریپت ایجادکنندهٔ LoAF در آن اجرا شده است.
 - {{domxref("PerformanceScriptTiming.windowAttribution")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns an enumerated value describing the relationship of the container (i.e., either the top-level document or an {{htmlelement("iframe")}}) in which the LoAF-causing script was executed, relative to the window running the current document.
+  - : یک مقدار شمارشی برمی‌گرداند که رابطهٔ ظرف (سند سطح بالا یا یک {{htmlelement("iframe")}}) محل اجرای اسکریپتِ ایجادکنندهٔ LoAF را نسبت به `window`ای که سند فعلی را اجرا می‌کند توصیف می‌کند.
 
-## Instance methods
+## متدهای نمونه
 
 - {{domxref("PerformanceScriptTiming.toJSON()")}} {{Experimental_Inline}}
-  - : Returns a JSON representation of the `PerformanceScriptTiming` object.
+  - : یک نمایش JSON از شیء `PerformanceScriptTiming` برمی‌گرداند.
 
-## Examples
+## نمونه‌ها
 
-See [Long animation frame timing](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing#examples) for examples related to the Long Animation Frames API.
+برای نمونه‌های مرتبط با Long Animation Frames API به [زمان‌بندی فریم انیمیشن طولانی](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Long animation frame timing](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing)
+- [زمان‌بندی فریم انیمیشن طولانی](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing)
 - {{domxref("PerformanceLongAnimationFrameTiming")}}
