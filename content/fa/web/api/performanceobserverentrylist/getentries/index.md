@@ -1,11 +1,5 @@
 ---
 title: "PerformanceObserverEntryList: getEntries() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserverEntryList/getEntries"
-status: "needs-translation"
----
-
----
-title: "PerformanceObserverEntryList: getEntries() method"
 short-title: getEntries()
 slug: Web/API/PerformanceObserverEntryList/getEntries
 page-type: web-api-instance-method
@@ -14,7 +8,7 @@ browser-compat: api.PerformanceObserverEntryList.getEntries
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The **`getEntries()`** method of the {{domxref("PerformanceObserverEntryList")}} interface returns a list of explicitly observed {{domxref("PerformanceEntry","performance entry", '', 'true')}} objects. The list's members are determined by the set of {{domxref("PerformanceEntry.entryType","entry types", '', 'true')}} specified in the call to the {{domxref("PerformanceObserver.observe","observe()")}} method. The list is available in the observer's callback function (as the first parameter in the callback).
+متد **`getEntries()`** از رابط {{domxref("PerformanceObserverEntryList")}} یک لیست از اشیاء {{domxref("PerformanceEntry","ورودی عملکرد", '', 'true')}} که به طور صریح مشاهده شده‌اند، برمی‌گرداند. اعضای این لیست توسط مجموعه‌ای از {{domxref("PerformanceEntry.entryType","انواع ورودی", '', 'true')}} که در فراخوانی متد {{domxref("PerformanceObserver.observe","observe()")}} مشخص شده‌اند، تعیین می‌شوند. این لیست در تابع callback ناظر (به عنوان اولین پارامتر در callback) در دسترس است.
 
 ## Syntax
 
@@ -22,19 +16,19 @@ The **`getEntries()`** method of the {{domxref("PerformanceObserverEntryList")}}
 getEntries()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-A list of explicitly observed {{domxref("PerformanceEntry")}} objects. The items will be in chronological order based on the entries' {{domxref("PerformanceEntry.startTime","startTime")}}. If no objects are found, an empty list is returned.
+یک لیست از اشیاء {{domxref("PerformanceEntry")}} که به طور صریح مشاهده شده‌اند. آیتم‌ها به ترتیب زمانی بر اساس {{domxref("PerformanceEntry.startTime","startTime")}} ورودی‌ها مرتب خواهند شد. اگر هیچ شیئی یافت نشود، یک لیست خالی بازگردانده می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Working with getEntries, getEntriesByName and getEntriesByType
+### کار با getEntries، getEntriesByName و getEntriesByType
 
-The following example shows the difference between the `getEntries()`, {{domxref("PerformanceObserverEntryList.getEntriesByName", "getEntriesByName()")}}, and {{domxref("PerformanceObserverEntryList.getEntriesByType", "getEntriesByType()")}} methods.
+مثال زیر تفاوت بین متدهای `getEntries()`، {{domxref("PerformanceObserverEntryList.getEntriesByName", "getEntriesByName()")}} و {{domxref("PerformanceObserverEntryList.getEntriesByType", "getEntriesByType()")}} را نشان می‌دهد.
 
 ```js
 const observer = new PerformanceObserver((list, obs) => {
@@ -63,10 +57,10 @@ observer.observe({
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
