@@ -1,11 +1,5 @@
 ---
 title: "PresentationConnection: send() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnection/send"
-status: "needs-translation"
----
-
----
-title: "PresentationConnection: send() method"
 short-title: send()
 slug: Web/API/PresentationConnection/send
 page-type: web-api-instance-method
@@ -16,32 +10,30 @@ browser-compat: api.PresentationConnection.send
 
 {{APIRef("Presentation")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`send()`** method of the
-{{domxref("PresentationConnection")}} interface tells a controlling browsing context to
-send binary or text data to a presenting browsing context.
+متد **`send()`** از رابط {{domxref("PresentationConnection")}} به یک زمینهٔ مرورگر کنترل‌کننده می‌گوید که داده‌های متنی یا باینری را به یک زمینهٔ مرورگر ارائه‌دهنده ارسال کند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 send(data)
 ```
 
-### Parameters
+### پارامترها
 
 - `data`
-  - : The data to send to the presentation context. It will be one of the following:
+  - : داده‌ای که به زمینهٔ ارائه ارسال می‌شود. این داده یکی از موارد زیر خواهد بود:
     - {{jsxref("String")}}
     - {{domxref("Blob")}}
     - {{jsxref("Array")}}
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
