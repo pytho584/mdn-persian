@@ -1,11 +1,5 @@
 ---
 title: "Performance: resourcetimingbufferfull event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Performance/resourcetimingbufferfull_event"
-status: "needs-translation"
----
-
----
-title: "Performance: resourcetimingbufferfull event"
 short-title: resourcetimingbufferfull
 slug: Web/API/Performance/resourcetimingbufferfull_event
 page-type: web-api-event
@@ -14,11 +8,11 @@ browser-compat: api.Performance.resourcetimingbufferfull_event
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The `resourcetimingbufferfull` event is fired when the browser's [resource timing buffer](/en-US/docs/Web/API/Performance/setResourceTimingBufferSize) is full.
+هنگامی که [بافر زمان‌بندی منابع](/en-US/docs/Web/API/Performance/setResourceTimingBufferSize) مرورگر پر می‌شود، رویداد `resourcetimingbufferfull` فعال می‌شود.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای استفاده از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} یا تنظیم ویژگی کنترل‌کننده رویداد:
 
 ```js-nolint
 addEventListener("resourcetimingbufferfull", (event) => { })
@@ -26,15 +20,15 @@ addEventListener("resourcetimingbufferfull", (event) => { })
 onresourcetimingbufferfull = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## مثال‌ها
 
-### Increasing size when buffer is full
+### افزایش اندازه بافر هنگام پر شدن آن
 
-The following example listens for the `resourcetimingbufferfull` event and increases the buffer size using the {{domxref("Performance.setResourceTimingBufferSize", "setResourceTimingBufferSize()")}} method.
+در مثال زیر، به رویداد `resourcetimingbufferfull` گوش داده می‌شود و با استفاده از روش {{domxref("Performance.setResourceTimingBufferSize", "setResourceTimingBufferSize()")}} اندازه بافر افزایش می‌یابد.
 
 ```js
 function increaseFilledBufferSize(event) {
@@ -50,15 +44,15 @@ performance.addEventListener(
 );
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Performance.clearResourceTimings()")}}
 - {{domxref("Performance.setResourceTimingBufferSize()")}}
