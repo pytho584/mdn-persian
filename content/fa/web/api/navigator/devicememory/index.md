@@ -1,11 +1,5 @@
 ---
 title: "Navigator: deviceMemory property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/deviceMemory"
-status: "needs-translation"
----
-
----
-title: "Navigator: deviceMemory property"
 short-title: deviceMemory
 slug: Web/API/Navigator/deviceMemory
 page-type: web-api-instance-property
@@ -14,34 +8,34 @@ browser-compat: api.Navigator.deviceMemory
 
 {{APIRef("Device Memory API")}}{{securecontext_header}}
 
-The **`deviceMemory`** read-only property of the {{domxref("Navigator")}} interface returns the approximate amount of device memory in gigabytes.
+خاصیت فقط‌خواندنی **`deviceMemory`** در رابط {{domxref("Navigator")}} مقدار تقریبی حافظه دستگاه را بر حسب گیگابایت برمی‌گرداند.
 
-The reported value is imprecise to curtail {{glossary("fingerprinting")}}.
-It's approximated by rounding the actual memory to the nearest power of 2, then dividing that number by 1024.
-It is then clamped within lower and upper bounds to protect the privacy of owners of very low-memory or high-memory devices.
-These bounds may change over time (see [browser compatibility table](#browser_compatibility)).
+مقدار گزارش‌شده عمداً نادقیق است تا {{glossary("fingerprinting")}} محدود شود.
+این مقدار با گرد کردن حافظه واقعی به نزدیک‌ترین توان ۲ و سپس تقسیم آن عدد بر ۱۰۲۴ تقریب زده می‌شود.
+سپس برای محافظت از حریم خصوصیِ دارندگان دستگاه‌های با حافظه خیلی کم یا خیلی زیاد، در حد پایین و بالایی محدود می‌شود.
+این حدود ممکن است در طول زمان تغییر کند (به [جدول سازگاری مرورگر](#browser_compatibility) مراجعه کنید).
 
-## Value
+## مقدار
 
-A floating point number coarsened to a power of two value, clamped to implement-defined limits.
+یک عدد اعشاری که به مقدار توان ۲ گرد شده و به محدوده‌های تعیین‌شده توسط پیاده‌سازی محدود شده است.
 
-For example, if a browser does not report below `2` or above `32` then the value is one of: `2`, `4`, `8`, `16`, `32`.
+برای مثال، اگر مرورگری مقادیر کمتر از `2` یا بیشتر از `32` را گزارش نکند، مقدار یکی از این‌ها خواهد بود: `2`، `4`، `8`، `16`، `32`.
 
-## Examples
+## مثال‌ها
 
 ```js
 const memory = navigator.deviceMemory;
 console.log(`This device approximately ${memory}GiB of RAM.`);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{HTTPHeader("Sec-CH-Device-Memory")}} HTTP header
+- هدر HTTP {{HTTPHeader("Sec-CH-Device-Memory")}}
