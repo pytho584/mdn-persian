@@ -1,10 +1,4 @@
 ---
-title: "PerformanceEntry"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEntry"
-status: "needs-translation"
----
-
----
 title: PerformanceEntry
 slug: Web/API/PerformanceEntry
 page-type: web-api-interface
@@ -13,13 +7,13 @@ browser-compat: api.PerformanceEntry
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The **`PerformanceEntry`** object encapsulates a single performance metric that is part of the browser's performance timeline.
+شیء **`PerformanceEntry`** یک معیار عملکرد واحد را که بخشی از زمان‌بند عملکرد (performance timeline) مرورگر است، کپسوله می‌کند.
 
-The Performance API offers built-in metrics which are specialized subclasses of `PerformanceEntry`. This includes entries for resource loading, event timing, and more.
+Performance API معیارهای داخلی ارائه می‌دهد که زیرکلاس‌های تخصصی `PerformanceEntry` هستند. این شامل ورودی‌هایی برای بارگذاری منابع، زمان‌بندی رویدادها و موارد دیگر است.
 
-A performance entry can also be created by calling the {{domxref("Performance.mark()")}} or {{domxref("Performance.measure()")}} methods at an explicit point in an application. This allows you to add your own metrics to the performance timeline.
+یک ورودی عملکرد همچنین می‌تواند با فراخوانی متدهای {{domxref("Performance.mark()")}} یا {{domxref("Performance.measure()")}} در یک نقطه مشخص از برنامه ایجاد شود. این به شما امکان می‌دهد معیارهای خود را به زمان‌بند عملکرد اضافه کنید.
 
-The `PerformanceEntry` instances will always be one of the following subclasses:
+نمونه‌های `PerformanceEntry` همیشه یکی از زیرکلاس‌های زیر خواهند بود:
 
 - {{domxref("LargestContentfulPaint")}}
 - {{domxref("LayoutShift")}}
@@ -36,37 +30,36 @@ The `PerformanceEntry` instances will always be one of the following subclasses:
 - {{domxref("TaskAttributionTiming")}}
 - {{domxref("VisibilityStateEntry")}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("PerformanceEntry.name")}} {{ReadOnlyInline}}
-  - : A string representing the name for a performance entry. The value depends on the subtype.
+  - : یک رشته که نام یک ورودی عملکرد را نشان می‌دهد. مقدار آن به زیرنوع بستگی دارد.
 - {{domxref("PerformanceEntry.entryType")}} {{ReadOnlyInline}}
-  - : A string representing the type of performance metric. For example, `"mark"` when {{domxref("PerformanceMark")}} is used.
+  - : یک رشته که نوع معیار عملکرد را نشان می‌دهد. به عنوان مثال، `"mark"` زمانی که از {{domxref("PerformanceMark")}} استفاده شود.
 - {{domxref("PerformanceEntry.startTime")}} {{ReadOnlyInline}}
-  - : A {{domxref("DOMHighResTimeStamp")}} representing the starting time for the performance metric.
+  - : یک {{domxref("DOMHighResTimeStamp")}} که زمان شروع معیار عملکرد را نشان می‌دهد.
 - {{domxref("PerformanceEntry.duration")}} {{ReadOnlyInline}}
-  - : A {{domxref("DOMHighResTimeStamp")}} representing the duration of the performance entry.
+  - : یک {{domxref("DOMHighResTimeStamp")}} که مدت زمان ورودی عملکرد را نشان می‌دهد.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("PerformanceEntry.toJSON","PerformanceEntry.toJSON()")}}
-  - : Returns a JSON representation of the `PerformanceEntry` object.
+  - : یک نمایش JSON از شیء `PerformanceEntry` برمی‌گرداند.
 
-## Example
+## مثال
 
-### Working with performance entries
+### کار با ورودی‌های عملکرد
 
-The following example creates `PerformanceEntry` objects that are of the types {{domxref("PerformanceMark")}} and {{domxref("PerformanceMeasure")}}.
-The `PerformanceMark` and `PerformanceMeasure` subclasses inherit the `duration`, `entryType`, `name`, and `startTime` properties from `PerformanceEntry` and set them to their appropriate values.
+مثال زیر اشیاء `PerformanceEntry` از نوع {{domxref("PerformanceMark")}} و {{domxref("PerformanceMeasure")}} ایجاد می‌کند. زیرکلاس‌های `PerformanceMark` و `PerformanceMeasure` ویژگی‌های `duration`، `entryType`، `name` و `startTime` را از `PerformanceEntry` به ارث برده و آن‌ها را به مقادیر مناسب خود تنظیم می‌کنند.
 
 ```js
-// Place at a location in the code that starts login
+// در مکانی از کد که ورود (login) شروع می‌شود قرار دهید
 performance.mark("login-started");
 
-// Place at a location in the code that finishes login
+// در مکانی از کد که ورود پایان می‌یابد قرار دهید
 performance.mark("login-finished");
 
-// Measure login duration
+// مدت زمان ورود را اندازه‌گیری کنید
 performance.measure("login-duration", "login-started", "login-finished");
 
 function perfObserver(list, observer) {
@@ -83,10 +76,10 @@ const observer = new PerformanceObserver(perfObserver);
 observer.observe({ entryTypes: ["measure", "mark"] });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
