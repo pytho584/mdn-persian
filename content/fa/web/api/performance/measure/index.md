@@ -1,11 +1,5 @@
 ---
 title: "Performance: measure() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Performance/measure"
-status: "needs-translation"
----
-
----
-title: "Performance: measure() method"
 short-title: measure()
 slug: Web/API/Performance/measure
 page-type: web-api-instance-method
@@ -14,12 +8,12 @@ browser-compat: api.Performance.measure
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The **`measure()`** method creates a named {{domxref("PerformanceMeasure")}} object representing a time measurement between two marks in the browser's performance timeline.
+متد **`measure()`** یک شیء {{domxref("PerformanceMeasure")}} نام‌گذاری‌شده ایجاد می‌کند که اندازه‌گیری زمان بین دو نشان (mark) را در خط زمانی عملکرد مرورگر نمایش می‌دهد.
 
-When measuring between two marks, there is a _start mark_ and _end mark_, respectively.
-The named timestamp is referred to as a _measure_.
+هنگام اندازه‌گیری بین دو نشان، به ترتیب یک _نشان شروع_ و یک _نشان پایان_ وجود دارد.
+مهر زمانی نام‌گذاری‌شده به عنوان _اندازه‌گیری (measure)_ شناخته می‌شود.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 measure(measureName)
@@ -29,107 +23,107 @@ measure(measureName, measureOptions)
 measure(measureName, measureOptions, endMark)
 ```
 
-If only `measureName` is specified, the start timestamp is set to zero, and the end timestamp (which is used to calculate the duration) is the value that would be returned by {{domxref("Performance.now()")}}.
+اگر فقط `measureName` مشخص شود، زمان شروع برابر صفر قرار می‌گیرد و زمان پایان (که برای محاسبه مدت‌زمان استفاده می‌شود) مقداری است که توسط {{domxref("Performance.now()")}} برگردانده می‌شود.
 
-You can use strings to identify {{domxref("PerformanceMark")}} objects as start and end marks.
+می‌توانید از رشته‌ها برای شناسایی اشیاء {{domxref("PerformanceMark")}} به عنوان نشان‌های شروع و پایان استفاده کنید.
 
-To only provide an `endMark`, you need to provide an empty `measureOptions` object:
+برای ارائه فقط یک `endMark`، باید یک شیء `measureOptions` خالی ارائه دهید:
 `performance.measure("myMeasure", {}, "myEndMarker")`.
 
-### Parameters
+### پارامترها
 
 - `measureName`
-  - : A string representing the name of the measure.
+  - : رشته‌ای که نام اندازه‌گیری را نشان می‌دهد.
 
 - `measureOptions` {{optional_inline}}
-  - : An object that may contain measure options.
+  - : شیءای که ممکن است شامل گزینه‌های اندازه‌گیری باشد.
     - `detail` {{optional_inline}}
-      - : Arbitrary metadata to be included in the measure. Defaults to `null`. Must be [structured-cloneable](/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm).
+      - : ابرداده دلخواه که در اندازه‌گیری گنجانده می‌شود. پیش‌فرض `null` است. باید [قابل شبیه‌سازی ساختاریافته (structured-cloneable)](/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm) باشد.
         - `devtools`
-          - : Some browsers have use a structured `devtools` object within the `detail` object as part of an Extensibility API that surfaces these in custom tracks in performance traces. See the [Chrome's Extensibility API documentation](https://developer.chrome.com/docs/devtools/performance/extension#inject_your_data_with_the_user_timings_api) for more information.
+          - : برخی مرورگرها از یک شیء `devtools` ساختاریافته در داخل شیء `detail` به عنوان بخشی از یک API قابلیت توسعه (Extensibility API) استفاده می‌کنند که این داده‌ها را در مسیرهای سفارشی در پروفایل‌های عملکرد نمایش می‌دهد. برای اطلاعات بیشتر به [مستندات API قابلیت توسعه Chrome](https://developer.chrome.com/docs/devtools/performance/extension#inject_your_data_with_the_user_timings_api) مراجعه کنید.
             - `dataType` {{experimental_inline}}
-              - : String with a value of `track-entry` (for defining a new track) or `marker` (for defining an entry in a track).
+              - : رشته‌ای با مقدار `track-entry` (برای تعریف یک مسیر جدید) یا `marker` (برای تعریف یک ورودی در یک مسیر).
             - `color` {{optional_inline}} {{experimental_inline}}
-              - : Defaults to `"primary"`. Must be one of `"primary"`, `"primary-light"`, `"primary-dark"`, `"secondary"`, `"secondary-light"`, `"secondary-dark"`, `"tertiary"`, `"tertiary-light"`, `"tertiary-dark"`, `"error"`.
+              - : پیش‌فرض `"primary"` است. باید یکی از مقادیر `"primary"`, `"primary-light"`, `"primary-dark"`, `"secondary"`, `"secondary-light"`, `"secondary-dark"`, `"tertiary"`, `"tertiary-light"`, `"tertiary-dark"`, `"error"` باشد.
             - `track` {{optional_inline}} {{experimental_inline}}
-              - : String of the name of the custom track (required for `track-entry`)
+              - : رشته‌ای شامل نام مسیر سفارشی (برای `track-entry` الزامی است)
             - `trackGroup` {{optional_inline}} {{experimental_inline}}
-              - : String of the name of the grouping within a custom track (required for `track-entry`)
+              - : رشته‌ای شامل نام گروه‌بندی در یک مسیر سفارشی (برای `track-entry` الزامی است)
             - `properties` {{optional_inline}} {{experimental_inline}}
-              - : Array of key-value pairs. Values can be any JSON-compatible type.
+              - : آرایه‌ای از جفت‌های کلید-مقدار. مقادیر می‌توانند هر نوع سازگار با JSON باشند.
             - `tooltipText` {{optional_inline}} {{experimental_inline}}
-              - : Short description for tooltip.
+              - : توضیح کوتاه برای راهنمای ابزار (tooltip).
 
     - `start` {{optional_inline}}
-      - : Timestamp ({{domxref("DOMHighResTimeStamp")}}) to be used as the start time, or string that names a {{domxref("PerformanceMark")}} to use for the start time.
+      - : مهر زمانی ({{domxref("DOMHighResTimeStamp")}}) که به عنوان زمان شروع استفاده می‌شود، یا رشته‌ای که نام یک {{domxref("PerformanceMark")}} را برای زمان شروع مشخص می‌کند.
 
-        If this is a string naming a {{domxref("PerformanceMark")}}, then it is defined in the same way as `startMark`.
+        اگر این یک رشته باشد که نام یک {{domxref("PerformanceMark")}} است، همانند `startMark` تعریف می‌شود.
 
     - `duration` {{optional_inline}}
-      - : Duration (in milliseconds) between the start and end mark times. If omitted, this defaults to {{domxref("performance.now()")}}; the time that has elapsed since the context was created. If provided, you must also specify either `start` or `end` but not both.
+      - : مدت‌زمان (به میلی‌ثانیه) بین زمان‌های نشان شروع و پایان. اگر حذف شود، پیش‌فرض آن {{domxref("performance.now()")}} است؛ یعنی زمانی که از ایجاد context گذشته است. اگر ارائه شود، باید `start` یا `end` را نیز مشخص کنید اما نه هر دو را.
 
     - `end` {{optional_inline}}
-      - : Timestamp ({{domxref("DOMHighResTimeStamp")}}) to be used as the end time, or string that names a {{domxref("PerformanceMark")}} to use for the end time.
+      - : مهر زمانی ({{domxref("DOMHighResTimeStamp")}}) که به عنوان زمان پایان استفاده می‌شود، یا رشته‌ای که نام یک {{domxref("PerformanceMark")}} را برای زمان پایان مشخص می‌کند.
 
-        If this is a string naming a {{domxref("PerformanceMark")}}, then it is defined in the same way as `endMark`.
+        اگر این یک رشته باشد که نام یک {{domxref("PerformanceMark")}} است، همانند `endMark` تعریف می‌شود.
 
 - `startMark` {{optional_inline}}
-  - : A string naming a {{domxref("PerformanceMark")}} in the performance timeline. The {{domxref("PerformanceEntry.startTime")}} property of this mark will be used for calculating the measure.
+  - : رشته‌ای که نام یک {{domxref("PerformanceMark")}} را در خط زمانی عملکرد مشخص می‌کند. ویژگی {{domxref("PerformanceEntry.startTime")}} این نشان برای محاسبه اندازه‌گیری استفاده خواهد شد.
 
 - `endMark` {{optional_inline}}
-  - : A string naming a {{domxref("PerformanceMark")}} in the performance timeline. The {{domxref("PerformanceEntry.startTime")}} property of this mark will be used for calculating the measure.
-    If you want to pass this argument, you must also pass either `startMark` or an empty `measureOptions` object.
+  - : رشته‌ای که نام یک {{domxref("PerformanceMark")}} را در خط زمانی عملکرد مشخص می‌کند. ویژگی {{domxref("PerformanceEntry.startTime")}} این نشان برای محاسبه اندازه‌گیری استفاده خواهد شد.
+    اگر می‌خواهید این آرگومان را ارسال کنید، باید `startMark` یا یک شیء `measureOptions` خالی نیز ارسال کنید.
 
-### Return value
+### مقدار بازگشتی
 
-The {{domxref("PerformanceMeasure")}} entry that was created.
+ورودی {{domxref("PerformanceMeasure")}} که ایجاد شده است.
 
-The returned _measure_ will have the following property values:
+_اندازه‌گیری_ بازگشتی مقادیر ویژگی زیر را خواهد داشت:
 
-- {{domxref("PerformanceEntry.entryType","entryType")}} - set to `"measure"`.
-- {{domxref("PerformanceEntry.name","name")}} - set to the `name` argument.
-- {{domxref("PerformanceEntry.startTime","startTime")}} - set to:
-  - a {{domxref("DOMHighResTimeStamp","timestamp")}}, if specified in `measureOptions.start`.
-  - the {{domxref("DOMHighResTimeStamp","timestamp")}} of a start mark, if specified in `measureOptions.start` or `startMark`
-  - a timestamp calculated from the `measureOptions.end` and `measureOptions.duration` (if `measureOptions.start` was not specified)
-  - 0, if it isn't specified and can't be determined from other values.
+- {{domxref("PerformanceEntry.entryType","entryType")}} - برابر با `"measure"` تنظیم می‌شود.
+- {{domxref("PerformanceEntry.name","name")}} - برابر با آرگومان `name` تنظیم می‌شود.
+- {{domxref("PerformanceEntry.startTime","startTime")}} - به یکی از موارد زیر تنظیم می‌شود:
+  - یک {{domxref("DOMHighResTimeStamp","timestamp")}}، اگر در `measureOptions.start` مشخص شده باشد.
+  - {{domxref("DOMHighResTimeStamp","timestamp")}} یک نشان شروع، اگر در `measureOptions.start` یا `startMark` مشخص شده باشد.
+  - مهر زمانی محاسبه‌شده از `measureOptions.end` و `measureOptions.duration` (اگر `measureOptions.start` مشخص نشده باشد)
+  - 0، اگر مشخص نشده باشد و نتوان از مقادیر دیگر تعیین کرد.
 
-- {{domxref("PerformanceEntry.duration","duration")}} - set to a {{domxref("DOMHighResTimeStamp")}} that is the duration of the measure calculated by subtracting the `startTime` from the end timestamp.
+- {{domxref("PerformanceEntry.duration","duration")}} - به یک {{domxref("DOMHighResTimeStamp")}} تنظیم می‌شود که مدت‌زمان اندازه‌گیری با کم کردن `startTime` از مهر زمانی پایان محاسبه می‌شود.
 
-  The end timestamp is one of:
-  - a {{domxref("DOMHighResTimeStamp","timestamp")}}, if specified in `measureOptions.end`.
-  - the {{domxref("DOMHighResTimeStamp","timestamp")}} of an end mark, if one is specified in `measureOptions.end` or `endMark`
-  - a timestamp calculated from the `measureOptions.start` and `measureOptions.duration` (if `measureOptions.end` was not specified)
-  - the value returned by {{domxref("Performance.now()")}}, if no end mark is specified or can be determined from other values.
+  مهر زمانی پایان یکی از موارد زیر است:
+  - یک {{domxref("DOMHighResTimeStamp","timestamp")}}، اگر در `measureOptions.end` مشخص شده باشد.
+  - {{domxref("DOMHighResTimeStamp","timestamp")}} یک نشان پایان، اگر در `measureOptions.end` یا `endMark` مشخص شده باشد.
+  - مهر زمانی محاسبه‌شده از `measureOptions.start` و `measureOptions.duration` (اگر `measureOptions.end` مشخص نشده باشد)
+  - مقدار بازگشتی {{domxref("Performance.now()")}}، اگر هیچ نشان پایانی مشخص نشده باشد یا نتوان از مقادیر دیگر تعیین کرد.
 
-- {{domxref("PerformanceMeasure","detail")}} - set to the value passed in `measureOptions`.
+- {{domxref("PerformanceMeasure","detail")}} - برابر با مقدار ارسال‌شده در `measureOptions` تنظیم می‌شود.
 
-### Exceptions
+### استثناها (Exceptions)
 
 - {{jsxref("TypeError")}}
-  - : This can be thrown in any case where the start, end or duration might be ambiguous:
-    - Both `endMark` and `measureOptions` are specified.
-    - `measureOptions` is specified with `duration` but without specifying either `start` or `end`.
-    - `measureOptions` is specified with all of `start`, `end`, and `duration`.
+  - : این خطا در هر حالتی که شروع، پایان یا مدت‌زمان ممکن است مبهم باشد پرتاب می‌شود:
+    - هر دو `endMark` و `measureOptions` مشخص شده باشند.
+    - `measureOptions` با `duration` مشخص شده باشد اما بدون تعیین `start` یا `end`.
+    - `measureOptions` با هر سه `start`، `end` و `duration` مشخص شده باشد.
 
 - `SyntaxError` {{domxref("DOMException")}}
-  - : The named mark does not exist.
-    - An end mark is specified using either `endMark` or `measureOptions.end`, but there is no {{domxref('PerformanceMark')}} in the performance buffer with the matching name.
-    - An end mark is specified using either `endMark` or `measureOptions.end`, but it cannot be converted to match that of a read only attribute in the {{domxref("PerformanceTiming")}} interface.
-    - A start mark is specified using either `startMark` or `measureOptions.start`, but there is no {{domxref('PerformanceMark')}} in the performance buffer with the matching name.
-    - A start mark is specified using either `startMark` or `measureOptions.start`, but it cannot be converted to match that of a read only attribute in the {{domxref("PerformanceTiming")}} interface.
+  - : نشان نام‌برده وجود ندارد.
+    - یک نشان پایان با استفاده از `endMark` یا `measureOptions.end` مشخص شده باشد، اما هیچ {{domxref('PerformanceMark')}} با نام منطبق در بافر عملکرد وجود نداشته باشد.
+    - یک نشان پایان با استفاده از `endMark` یا `measureOptions.end` مشخص شده باشد، اما نتوان آن را به ویژگی فقط‌خواندنی در رابط {{domxref("PerformanceTiming")}} تبدیل کرد.
+    - یک نشان شروع با استفاده از `startMark` یا `measureOptions.start` مشخص شده باشد، اما هیچ {{domxref('PerformanceMark')}} با نام منطبق در بافر عملکرد وجود نداشته باشد.
+    - یک نشان شروع با استفاده از `startMark` یا `measureOptions.start` مشخص شده باشد، اما نتوان آن را به ویژگی فقط‌خواندنی در رابط {{domxref("PerformanceTiming")}} تبدیل کرد.
 
 - `DataCloneError` {{domxref("DOMException")}}
-  - : The `measureOptions.detail` value is non-`null` and cannot be serialized using the HTML "StructuredSerialize" algorithm.
+  - : مقدار `measureOptions.detail` غیر از `null` باشد و نتوان با استفاده از الگوریتم "StructuredSerialize" در HTML سری‌سازی کرد.
 
 - {{jsxref("RangeError")}}
-  - : The `measureOptions.detail` value is non-`null` and memory cannot be allocated during serialization using the HTML "StructuredSerialize" algorithm.
+  - : مقدار `measureOptions.detail` غیر از `null` باشد و حافظه در طول سری‌سازی با استفاده از الگوریتم "StructuredSerialize" در HTML قابل تخصیص نباشد.
 
-## Examples
+## مثال‌ها
 
-### Measuring duration between named markers
+### اندازه‌گیری مدت‌زمان بین نشانگرهای نام‌گذاری‌شده
 
-Given two of your own markers `"login-started"` and `"login-finished"`, you can create a measurement called `"login-duration"` as shown in the following example. The returned {{domxref("PerformanceMeasure")}} object will then provide a `duration` property to tell you the elapsed time between the two markers.
+با دو نشانگر سفارشی خود مانند `"login-started"` و `"login-finished"`، می‌توانید یک اندازه‌گیری به نام `"login-duration"` ایجاد کنید، همان‌طور که در مثال زیر نشان داده شده است. شیء {{domxref("PerformanceMeasure")}} بازگشتی یک ویژگی `duration` فراهم می‌کند که مدت‌زمان سپری‌شده بین دو نشانگر را نشان می‌دهد.
 
 ```js
 const loginMeasure = performance.measure(
@@ -140,9 +134,9 @@ const loginMeasure = performance.measure(
 console.log(loginMeasure.duration);
 ```
 
-### Measuring duration with custom start and end times
+### اندازه‌گیری مدت‌زمان با زمان‌های شروع و پایان سفارشی
 
-To do more advanced measurements, you can pass a `measureOptions` parameter. For example, you can use the [`event.timeStamp`](/en-US/docs/Web/API/Event/timeStamp) property from a [`click` event](/en-US/docs/Web/API/Element/click_event) as the start time.
+برای اندازه‌گیری‌های پیشرفته‌تر، می‌توانید پارامتر `measureOptions` را ارسال کنید. برای مثال، می‌توانید از ویژگی [`event.timeStamp`](/en-US/docs/Web/API/Event/timeStamp) رویداد [`click`](/en-US/docs/Web/API/Element/click_event) به عنوان زمان شروع استفاده کنید.
 
 ```js
 performance.measure("login-click", {
@@ -151,9 +145,9 @@ performance.measure("login-click", {
 });
 ```
 
-### Providing additional measurement details
+### ارائه جزئیات اضافی اندازه‌گیری
 
-You can use the `details` property to provide additional information of any type. Maybe you want to record which HTML element was clicked, for example.
+می‌توانید از ویژگی `details` برای ارائه اطلاعات اضافی از هر نوع استفاده کنید. شاید بخواهید ثبت کنید کدام عنصر HTML کلیک شده است، برای مثال.
 
 ```js
 performance.measure("login-click", {
@@ -163,26 +157,26 @@ performance.measure("login-click", {
 });
 ```
 
-### DevTools Extensibility API
+### API قابلیت توسعه DevTools
 
-For browsers that support the [Extensibility API](https://developer.chrome.com/docs/devtools/performance/extension) you can use the `detail` parameter to provide more details in a `devtools` object that will be used to display this in performance profiles:
+برای مرورگرهایی که از [API قابلیت توسعه](https://developer.chrome.com/docs/devtools/performance/extension) پشتیبانی می‌کنند، می‌توانید از پارامتر `detail` برای ارائه جزئیات بیشتر در یک شیء `devtools` استفاده کنید که برای نمایش این مورد در پروفایل‌های عملکرد استفاده می‌شود:
 
 ```js
 const imageProcessingTimeStart = performance.now();
 
-// ... later in your code
+// ... بعداً در کد شما
 
 performance.measure("Image Processing Complete", {
   start: imageProcessingTimeStart,
   end: performance.now(),
   detail: {
-    // This data appears in the "Summary"
+    // این داده در بخش "Summary" ظاهر می‌شود
     extraInfo: {
       imageId: "xyz-123",
       source: "cache",
       checkUrl: "https://example.com/check/xyz-123",
     },
-    // The devtools object controls the track visualization
+    // شیء devtools نمایش مسیر را کنترل می‌کند
     devtools: {
       dataType: "track-entry",
       track: "Image Processing Tasks",
@@ -190,9 +184,9 @@ performance.measure("Image Processing Complete", {
       color: "tertiary-dark",
       properties: [
         ["Filter Type", "Gaussian Blur"],
-        // Values can be objects, arrays, or other types
+        // مقادیر می‌توانند اشیاء، آرایه‌ها یا انواع دیگر باشند
         ["Resize Dimensions", { w: 500, h: 300 }],
-        // String values that are URLs get linkified
+        // مقادیر رشته‌ای که URL هستند به پیوند تبدیل می‌شوند
         ["Image URL", "https://example.com/img.png"],
       ],
       tooltipText: "Image processed successfully",
@@ -201,10 +195,10 @@ performance.measure("Image Processing Complete", {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
