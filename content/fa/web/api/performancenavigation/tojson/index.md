@@ -1,7 +1,5 @@
 ---
 title: "PerformanceNavigation: toJSON() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceNavigation/toJSON"
-status: "needs-translation"
 ---
 
 ---
@@ -17,33 +15,32 @@ browser-compat: api.PerformanceNavigation.toJSON
 {{APIRef("Performance API")}} {{deprecated_header}}
 
 > [!WARNING]
-> This interface of this property is deprecated in the [Navigation Timing Level 2 specification](https://w3c.github.io/navigation-timing/#obsolete). Please use the {{domxref("PerformanceNavigationTiming")}}
-> interface instead.
+> این رابط در [مشخصات نسخه ۲ Navigation Timing](https://w3c.github.io/navigation-timing/#obsolete) منسوخ شده است. لطفاً به‌جای آن از رابط {{domxref("PerformanceNavigationTiming")}} استفاده کنید.
 
-The **`toJSON()`** method of the {{domxref("PerformanceNavigation")}} interface is a {{Glossary("Serialization","serializer")}}; it returns a JSON representation of the {{domxref("PerformanceNavigation")}} object.
+متد **`toJSON()`** از رابط {{domxref("PerformanceNavigation")}} یک {{Glossary("Serialization","سریال‌ساز")}} است؛ یک نمایش JSON از شیء {{domxref("PerformanceNavigation")}} را برمی‌گرداند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 toJSON()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("JSON")}} object that is the serialization of the {{domxref("PerformanceNavigation")}} object.
+یک شیء {{jsxref("JSON")}} که سریال‌سازی از شیء {{domxref("PerformanceNavigation")}} است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{jsxref("JSON")}}
