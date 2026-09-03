@@ -1,11 +1,5 @@
 ---
 title: "NDEFReader: write() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NDEFReader/write"
-status: "needs-translation"
----
-
----
-title: "NDEFReader: write() method"
 short-title: write()
 slug: Web/API/NDEFReader/write
 page-type: web-api-instance-method
@@ -16,7 +10,7 @@ browser-compat: api.NDEFReader.write
 
 {{SecureContext_Header}}{{SeeCompatTable}}{{APIRef("Web NFC API")}}
 
-The `write()` method of the {{DOMxRef("NDEFReader")}} interface attempts to write an NDEF message to a tag and returns a {{jsxref("Promise")}} that either resolves when a message has been written to the tag or rejects if a hardware or permission error is encountered. This method triggers a permission prompt if the "nfc" permission has not been previously granted.
+متد `write()` در رابط {{DOMxRef("NDEFReader")}} تلاش می‌کند یک پیام NDEF را روی یک تگ بنویسد و یک {{jsxref("Promise")}} برمی‌گرداند که یا زمانی که پیام با موفقیت نوشته شد حل می‌شود (resolve) یا در صورت بروز خطای سخت‌افزاری یا مجوز، رد می‌شود (reject). اگر مجوز «nfc» قبلاً داده نشده باشد، این متد یک پنجرهٔ درخواست مجوز (permission prompt) نمایش می‌دهد.
 
 ## Syntax
 
@@ -28,73 +22,65 @@ write(message, options)
 ### Parameters
 
 - `message`
-  - : The message to be written, either a string, an {{jsxref("ArrayBuffer")}}, a {{jsxref("TypedArray")}},
-    a {{jsxref("DataView")}}, or an array of records. A record has the following members:
+  - : پیامی که باید نوشته شود؛ می‌تواند یک رشته (string)، یک {{jsxref("ArrayBuffer")}}، یک {{jsxref("TypedArray")}}، یک {{jsxref("DataView")}} یا یک آرایه از رکوردها باشد. هر رکورد شامل اعضای زیر است:
     - `data` {{optional_inline}}
-      - : Contains the data to be transmitted, a string, an {{jsxref("ArrayBuffer")}}, a {{jsxref("TypedArray")}},
-        a {{jsxref("DataView")}}, or an array of nested records
+      - : داده‌ای که باید ارسال شود؛ یک رشته، یک {{jsxref("ArrayBuffer")}}، یک {{jsxref("TypedArray")}}، یک {{jsxref("DataView")}} یا آرایه‌ای از رکوردهای تو در تو.
     - `encoding` {{optional_inline}}
-      - : A string specifying the record's encoding.
+      - : رشته‌ای که encoding رکورد را مشخص می‌کند.
     - `id` {{optional_inline}}
-      - : A developer-defined identifier for the record.
+      - : شناسه‌ای تعریف‌شده توسط توسعه‌دهنده برای رکورد.
     - `lang` {{optional_inline}}
-      - : A valid {{glossary("BCP 47 language tag")}}.
+      - : یک {{glossary("BCP 47 language tag")}} معتبر.
     - `mediaType` {{optional_inline}}
-      - : A valid [MIME type](/en-US/docs/Web/HTTP/Guides/MIME_types).
+      - : یک [MIME type](/en-US/docs/Web/HTTP/Guides/MIME_types) معتبر.
     - `recordType`
-      - : A string indicating the type of data stored in `data`. It must be one of the following values:
+      - : رشته‌ای که نوع دادهٔ ذخیره‌شده در `data` را مشخص می‌کند. باید یکی از مقادیر زیر باشد:
         - `"absolute-url"`
-          - : An absolute URL to the data.
+          - : یک URL مطلق برای داده.
         - `"empty"`
-          - : An empty {{domxref("NDEFRecord")}}.
+          - : یک {{domxref("NDEFRecord")}} خالی.
         - `"mime"`
-          - : A valid [MIME type](/en-US/docs/Web/HTTP/Guides/MIME_types).
+          - : یک [MIME type](/en-US/docs/Web/HTTP/Guides/MIME_types) معتبر.
         - `"smart-poster"`
-          - : A smart poster as defined by the [NDEF-SMARTPOSTER](https://w3c.github.io/web-nfc/#bib-ndef-smartposter) specification.
+          - : پوستر هوشمند (smart poster) طبق تعریف مشخصات [NDEF-SMARTPOSTER](https://w3c.github.io/web-nfc/#bib-ndef-smartposter).
         - `"text"`
-          - : Text as defined by the [NDEF-TEXT](https://w3c.github.io/web-nfc/#bib-ndef-text) specification.
+          - : متن طبق تعریف مشخصات [NDEF-TEXT](https://w3c.github.io/web-nfc/#bib-ndef-text).
         - `"unknown"`
-          - : The record type is not known.
+          - : نوع رکورد ناشناخته است.
         - `"URL"`
-          - : A URL as defined by the [NDEF-URI](https://w3c.github.io/web-nfc/#bib-ndef-uri) specification.
+          - : یک URL طبق تعریف مشخصات [NDEF-URI](https://w3c.github.io/web-nfc/#bib-ndef-uri).
 
 - `options` {{optional_inline}}
-  - : An object with the following properties:
+  - : یک شیء با ویژگی‌های زیر:
     - `overwrite`
-      - : A boolean value specifying whether or not existing records should be overwritten, if such exists.
+      - : یک مقدار بولین که مشخص می‌کند آیا رکوردهای موجود در صورت وجود، بازنویسی شوند یا خیر.
     - `signal` {{optional_inline}}
-      - : An {{DOMxRef("AbortSignal")}} that allows the current write operation to be canceled.
+      - : یک {{DOMxRef("AbortSignal")}} که امکان لغو عملیات نوشتن فعلی را فراهم می‌کند.
 
 ### Return value
 
-A {{JSxRef("Promise")}} that either resolves when a message has been written to the tag or rejects if a hardware or permission error is encountered.
+یک {{JSxRef("Promise")}} که یا زمانی که پیام روی تگ نوشته شد حل می‌شود یا در صورت بروز خطای سخت‌افزاری یا مجوز، رد می‌شود.
 
 ### Exceptions
 
-This method doesn't throw exceptions; instead, it rejects the returned promise,
-passing a {{domxref("DOMException")}} whose `name` is one of the
-following:
+این متد استثنا پرتاب نمی‌کند؛ در عوض، پرامیسی که برمی‌گرداند را رد می‌کند و یک {{domxref("DOMException")}} به آن می‌دهد که `name` آن یکی از مقادیر زیر است:
 
 - `AbortError`
-  - : The scan operation was aborted with the {{DOMxRef("AbortSignal")}} passed in the `options` argument.
+  - : عملیات اسکن با استفاده از {{DOMxRef("AbortSignal")}} که در آرگومان `options` داده شده بود، لغو شد.
 - `NotAllowedError`
-  - : The permission for this operation was rejected or `overwrite` is
-    `false` and there are already records on the tag.
+  - : مجوز این عملیات رد شد یا `overwrite` برابر `false` است و از قبل رکوردهایی روی تگ وجود دارد.
 - `NotSupportedError`
-  - : There is no NFC adapter compatible with Web NFC, or the available NFC adapter does
-    not support pushing messages, or connection can not be established.
+  - : هیچ آداپتور NFC سازگار با Web NFC وجود ندارد، یا آداپتور NFC موجود از ارسال پیام پشتیبانی نمی‌کند، یا امکان برقراری اتصال وجود ندارد.
 - `NotReadableError`
-  - : The UA is not allowed to access underlying NFC adapter (e.g., due to user
-    preference).
+  - : مرورگر (UA) مجاز به دسترسی به آداپتور NFC زیرین نیست (مثلاً به دلیل ترجیحات کاربر).
 - `NetworkError`
-  - : Transfer failed after it already started (e.g., the tag was removed from the
-    reader).
+  - : انتقال پس از شروع، شکست خورد (مثلاً تگ از خواننده خارج شد).
 
 ## Examples
 
-### Write a text string
+### نوشتن یک رشته متنی
 
-The following example shows how to write a string to an NFC tag and process any errors that occur.
+مثال زیر نحوه نوشتن یک رشته روی تگ NFC و مدیریت خطاهای احتمالی را نشان می‌دهد.
 
 ```js
 const ndef = new NDEFReader();
@@ -108,9 +94,9 @@ ndef
   });
 ```
 
-### Write a URL
+### نوشتن یک URL
 
-The following example shows how to write a record object (described above) to an NFC tag and process any errors that occur.
+مثال زیر نحوه نوشتن یک شیء رکورد (که در بالا توضیح داده شد) روی تگ NFC و مدیریت خطاهای احتمالی را نشان می‌دهد.
 
 ```js
 const ndef = new NDEFReader();
@@ -123,9 +109,9 @@ try {
 }
 ```
 
-### Scheduling a write with a timeout
+### زمان‌بندی نوشتن با محدودیت زمانی
 
-It's sometimes useful to set a time limit on a write operation. For example, you ask the user to touch a tag, but no tag is found within a certain amount of time, then you time out.
+گاهی اوقات مفید است که برای عملیات نوشتن یک محدودیت زمانی تعیین کنید. مثلاً از کاربر می‌خواهید تگی را لمس کند، اما در مدت زمان معینی تگی پیدا نمی‌شود و سپس عملیات منقضی می‌شود.
 
 ```js
 const ndef = new NDEFReader();
@@ -150,7 +136,7 @@ function write(data, { timeout } = {}) {
 
 await ndef.scan();
 try {
-  // Let's wait for 5 seconds only.
+  // فقط ۵ ثانیه صبر می‌کنیم.
   await write("Hello World", { timeout: 5_000 });
 } catch (err) {
   console.error("Something went wrong", err);
