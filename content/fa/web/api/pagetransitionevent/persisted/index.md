@@ -1,11 +1,5 @@
 ---
 title: "PageTransitionEvent: persisted property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PageTransitionEvent/persisted"
-status: "needs-translation"
----
-
----
-title: "PageTransitionEvent: persisted property"
 short-title: persisted
 slug: Web/API/PageTransitionEvent/persisted
 page-type: web-api-instance-property
@@ -14,16 +8,16 @@ browser-compat: api.PageTransitionEvent.persisted
 
 {{APIRef("HTML DOM")}}
 
-The **`persisted`** read-only property indicates if a webpage is loading from a cache.
+ویژگی فقط‌خواندنی **`persisted`** نشان می‌دهد که آیا یک صفحه وب از حافظه پنهان (cache) بارگذاری شده است یا خیر.
 
-## Value
+## مقدار
 
-A boolean value.
+یک مقدار بولین (boolean).
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
