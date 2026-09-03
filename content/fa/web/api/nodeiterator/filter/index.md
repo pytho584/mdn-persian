@@ -1,7 +1,5 @@
 ---
 title: "NodeIterator: filter property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/filter"
-status: "needs-translation"
 ---
 
 ---
@@ -14,22 +12,15 @@ browser-compat: api.NodeIterator.filter
 
 {{APIRef("DOM")}}
 
-The **`NodeIterator.filter`** read-only property returns a
-`NodeFilter` object, that is an object which implements an
-`acceptNode(node)` method, used to screen nodes.
+ویژگی فقط‌خواندنی **`NodeIterator.filter`** یک شیء `NodeFilter` برمی‌گرداند؛ شیئی که متدی به نام `acceptNode(node)` را پیاده‌سازی می‌کند و برای پالایش گره‌ها استفاده می‌شود.
 
-When creating the {{domxref("NodeIterator")}}, the filter object is passed in as the
-third parameter, and the object method `acceptNode(node)` is
-called on every single node to determine whether or not to accept it. This function
-should return the constant `NodeFilter.FILTER_ACCEPT` for cases when the
-node should be accepted and `NodeFilter.FILTER_REJECT` for cases when the
-node should be rejected.
+هنگام ایجاد {{domxref("NodeIterator")}}، شیء فیلتر به‌عنوان پارامتر سوم ارسال می‌شود و متد `acceptNode(node)` روی تک‌تک گره‌ها فراخوانی می‌شود تا مشخص کند آیا آن گره پذیرفته شود یا نه. این تابع باید ثابت `NodeFilter.FILTER_ACCEPT` را در مواردی که گره باید پذیرفته شود و `NodeFilter.FILTER_REJECT` را در مواردی که گره باید رد شود برگرداند.
 
-## Value
+## مقدار
 
-A `NodeFilter` object.
+یک شیء `NodeFilter`.
 
-## Examples
+## مثال‌ها
 
 ```js
 const nodeIterator = document.createNodeIterator(
@@ -44,14 +35,14 @@ const nodeIterator = document.createNodeIterator(
 nodeFilter = nodeIterator.filter;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface this property belongs to: {{domxref("NodeIterator")}}.
+- رابطی که این ویژگی به آن تعلق دارد: {{domxref("NodeIterator")}}.
