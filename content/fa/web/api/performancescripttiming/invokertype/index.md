@@ -1,11 +1,5 @@
 ---
 title: "PerformanceScriptTiming: invokerType property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceScriptTiming/invokerType"
-status: "needs-translation"
----
-
----
-title: "PerformanceScriptTiming: invokerType property"
 short-title: invokerType
 slug: Web/API/PerformanceScriptTiming/invokerType
 page-type: web-api-instance-property
@@ -16,40 +10,40 @@ browser-compat: api.PerformanceScriptTiming.invokerType
 
 {{SeeCompatTable}}{{APIRef("Performance API")}}
 
-The **`invokerType`** read-only property of the {{domxref("PerformanceScriptTiming")}} interface returns a string value indicating the type of feature that, when invoked, ran the script.
+ویژگی فقط-خواندنی **`invokerType`** از رابط {{domxref("PerformanceScriptTiming")}} یک مقدار رشته‌ای برمی‌گرداند که نوع قابلیتی را نشان می‌دهد که هنگام فراخوانی، اسکریپت را اجرا کرده است.
 
-## Value
+## مقدار
 
-A string indicating the invoker type of the script entry point. Possible values are:
+یک رشته که نوع invoker نقطه ورود اسکریپت را نشان می‌دهد. مقادیر ممکن عبارتند از:
 
 - `"user-callback"`
-  - : A known callback invoked from within a web platform API, such as {{domxref("Window.setTimeout", "setTimeout()")}} or {{domxref("Window.requestAnimationFrame()")}}.
+  - : یک فراخوان (callback) شناخته‌شده که از درون یک API پلتفرم وب فراخوانی می‌شود، مانند {{domxref("Window.setTimeout", "setTimeout()")}} یا {{domxref("Window.requestAnimationFrame()")}}.
 - `"event-listener"`
-  - : An event listener for a web platform event, such as [`click`](/en-US/docs/Web/API/Element/click_event), [`load`](/en-US/docs/Web/API/Window/load_event), or [`keyup`](/en-US/docs/Web/API/Element/keyup_event).
+  - : یک شنونده رویداد (event listener) برای یک رویداد پلتفرم وب، مانند [`click`](/en-US/docs/Web/API/Element/click_event)، [`load`](/en-US/docs/Web/API/Window/load_event)، یا [`keyup`](/en-US/docs/Web/API/Element/keyup_event).
 - `"resolve-promise"`
-  - : A handler function for the resolved state of a web platform promise, such as {{domxref("Window/fetch", "fetch()")}}. Note that in the case of promises, all the handlers of the same promise are grouped together as a single `"script"` entry type.
+  - : یک تابع کنترل‌کننده (handler) برای حالت resolved یک promise پلتفرم وب، مانند {{domxref("Window/fetch", "fetch()")}}. توجه داشته باشید که در مورد promises، تمام کنترل‌کننده‌های یک promise به عنوان یک نوع ورودی `"script"` واحد گروه‌بندی می‌شوند.
 - `"reject-promise"`
-  - : A handler function for the rejected state of a web platform promise.
+  - : یک تابع کنترل‌کننده برای حالت rejected یک promise پلتفرم وب.
 - `"classic-script"`
-  - : The evaluation of a standard script (for example, via a {{htmlelement("script")}} element or an [`import()`](/en-US/docs/Web/JavaScript/Reference/Operators/import) statement).
+  - : ارزیابی یک اسکریپت استاندارد (به عنوان مثال، از طریق یک عنصر {{htmlelement("script")}} یا یک عبارت [`import()`](/en-US/docs/Web/JavaScript/Reference/Operators/import)).
 - `"module-script"`
-  - : The evaluation of a module script.
+  - : ارزیابی یک اسکریپت ماژول.
 
-The structure of the {{domxref("PerformanceScriptTiming.invoker")}} value depends on the script's `invokerType` value. Check out the `invoker` page for more details.
+ساختار مقدار {{domxref("PerformanceScriptTiming.invoker")}} به مقدار `invokerType` اسکریپت بستگی دارد. برای جزئیات بیشتر به صفحه `invoker` مراجعه کنید.
 
-## Examples
+## مثال‌ها
 
-See [Long animation frame timing](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing#examples) for examples related to the Long Animation Frames API.
+برای مثال‌های مرتبط با API فریم‌های انیمیشن طولانی، به [زمان‌بندی فریم انیمیشن طولانی](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Long animation frame timing](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing)
+- [زمان‌بندی فریم انیمیشن طولانی](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing)
 - {{domxref("PerformanceLongAnimationFrameTiming")}}
