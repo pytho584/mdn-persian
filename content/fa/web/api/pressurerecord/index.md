@@ -1,10 +1,4 @@
 ---
-title: "PressureRecord"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PressureRecord"
-status: "needs-translation"
----
-
----
 title: PressureRecord
 slug: Web/API/PressureRecord
 page-type: web-api-interface
@@ -15,27 +9,27 @@ browser-compat: api.PressureRecord
 
 {{APIRef("Compute Pressure API")}}{{SeeCompatTable}}{{AvailableInWorkers("window_and_worker_except_service")}}{{securecontext_header}}
 
-The **`PressureRecord`** interface is part of the [Compute Pressure API](/en-US/docs/Web/API/Compute_Pressure_API) and describes the pressure trend of a source at a specific moment of transition.
+رابط **`PressureRecord`** بخشی از [Compute Pressure API](/en-US/docs/Web/API/Compute_Pressure_API) است و روند فشار یک منبع را در یک لحظهٔ خاص از گذار توصیف می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("PressureRecord.source")}} {{ReadOnlyInline}} {{experimental_inline}}
-  - : A string indicating the origin source from which the record is coming.
+  - : یک رشته که منبعِ مبدأِ این رکورد را مشخص می‌کند.
 - {{domxref("PressureRecord.state")}} {{ReadOnlyInline}} {{experimental_inline}}
-  - : A string indicating the pressure state recorded.
+  - : یک رشته که وضعیت فشارِ ثبت‌شده را مشخص می‌کند.
 - {{domxref("PressureRecord.time")}} {{ReadOnlyInline}} {{experimental_inline}}
-  - : A {{domxref("DOMHighResTimeStamp")}} indicating the timestamp of the record.
+  - : یک {{domxref("DOMHighResTimeStamp")}} که زمان (timestamp) این رکورد را نشان می‌دهد.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("PressureRecord.toJSON()")}} {{experimental_inline}}
-  - : Returns a JSON representation of the `PressureRecord` object.
+  - : یک نمایش JSON از شیء `PressureRecord` برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-### Using the `PressureRecord` object
+### استفاده از شیء `PressureRecord`
 
-In the following example we log the properties of the `PressureRecord` object in the pressure observer callback.
+در مثال زیر، ویژگی‌های شیء `PressureRecord` را در تابع callback ناظر فشار ثبت (log) می‌کنیم.
 
 ```js
 function callback(records) {
@@ -55,10 +49,10 @@ try {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
