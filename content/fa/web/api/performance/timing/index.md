@@ -1,11 +1,5 @@
 ---
 title: "Performance: timing property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Performance/timing"
-status: "needs-translation"
----
-
----
-title: "Performance: timing property"
 short-title: timing
 slug: Web/API/Performance/timing
 page-type: web-api-instance-property
@@ -16,29 +10,25 @@ browser-compat: api.Performance.timing
 
 {{APIRef("Performance API")}}{{deprecated_header}}
 
-The legacy
-**`Performance.timing`** read-only
-property returns a {{domxref("PerformanceTiming")}} object containing latency-related
-performance information.
+خاصیت فقط-خواندنی قدیمی **`Performance.timing`** یک شیء {{domxref("PerformanceTiming")}} را برمی‌گرداند که حاوی اطلاعات عملکرد مرتبط با تأخیر است.
 
-This property is not available in workers.
+این خاصیت در workerها در دسترس نیست.
 
 > [!WARNING]
-> This property is deprecated in the [Navigation Timing Level 2 specification](https://w3c.github.io/navigation-timing/#obsolete). Please use the {{domxref("PerformanceNavigationTiming")}}
-> interface instead.
+> این خاصیت در [مشخصات Navigation Timing Level 2](https://w3c.github.io/navigation-timing/#obsolete) منسوخ شده است. لطفاً به جای آن از واسط {{domxref("PerformanceNavigationTiming")}} استفاده کنید.
 
-## Value
+## مقدار
 
-A {{domxref("PerformanceTiming")}} object.
+یک شیء {{domxref("PerformanceTiming")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("Performance")}} interface it belongs to.
+- واسط {{domxref("Performance")}} که این خاصیت به آن تعلق دارد.
