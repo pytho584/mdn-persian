@@ -1,7 +1,5 @@
 ---
 title: "Pinch zoom gestures"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Pointer_events/Pinch_zoom_gestures"
-status: "needs-translation"
 ---
 
 ---
@@ -12,19 +10,19 @@ page-type: guide
 
 {{DefaultAPISidebar("Pointer Events")}}
 
-Adding _gestures_ to an application can significantly improve the user experience. There are many types of gestures, from the simple single-touch _swipe_ gesture to the more complex multi-touch _twist_ gesture, where the touch points (aka _pointers_) move in different directions.
+افزودن _ژست‌ها_ به یک برنامه می‌تواند تجربهٔ کاربری را به‌طور چشمگیری بهبود بخشد. ژست‌ها انواع گوناگونی دارند، از ژست سادهٔ تک‌لمسیِ _کشیدن (swipe)_ گرفته تا ژست پیچیده‌ترِ چندلمسیِ _چرخاندن (twist)_، که در آن نقاط لمس (که _نشانگرها_ نیز نامیده می‌شوند) در جهت‌های مختلف حرکت می‌کنند.
 
-This example shows how to detect the _pinch/zoom_ gesture, which uses [pointer events](/en-US/docs/Web/API/Pointer_events) to detect whether the user moves two pointers closer or farther apart from each other.
+این مثال نشان می‌دهد که چگونه می‌توان ژست _پینچ/زوم (pinch/zoom)_ را شناسایی کرد؛ ژستی که از [رویدادهای نشانگر](/en-US/docs/Web/API/Pointer_events) استفاده می‌کند تا تشخیص دهد کاربر دو نشانگر را به یکدیگر نزدیک کرده یا آن‌ها را از هم دور کرده است.
 
-A _live_ version of this application is available on [GitHub](https://mdn.github.io/dom-examples/pointerevents/Pinch_zoom_gestures.html). The [source code is available on GitHub](https://github.com/mdn/dom-examples/blob/main/pointerevents/Pinch_zoom_gestures.html); pull requests and [bug reports](https://github.com/mdn/dom-examples/issues) are welcome.
+نسخهٔ _زندهٔ_ این برنامه در [GitHub](https://mdn.github.io/dom-examples/pointerevents/Pinch_zoom_gestures.html) در دسترس است. [کد منبع](https://github.com/mdn/dom-examples/blob/main/pointerevents/Pinch_zoom_gestures.html) نیز در GitHub قرار دارد؛ درخواست‌های Pull Request و [گزارش‌های باگ](https://github.com/mdn/dom-examples/issues) پذیرفته می‌شوند.
 
-## Example
+## مثال
 
-In this example, you use the [pointer events](/en-US/docs/Web/API/Pointer_events) to simultaneously detect two pointing devices of any type, including fingers, mice, and pens. The pinch in (zoom out) gesture, which moves the two pointers toward each other, changes the target element's background color to `lightblue`. The pinch out (zoom in) gesture, which moves the two pointers away from each other, changes the target element's background color to `pink`.
+در این مثال، از [رویدادهای نشانگر](/en-US/docs/Web/API/Pointer_events) استفاده می‌شود تا هم‌زمان دو دستگاه اشاره‌گر از هر نوع، از جمله انگشت، موس و قلم، شناسایی شوند. ژستِ _بستن پینچ_ (pinch in؛ کوچک‌نمایی) که دو نشانگر را به سمت یکدیگر حرکت می‌دهد، رنگ پس‌زمینهٔ عنصر هدف را به `lightblue` تغییر می‌دهد. ژستِ _باز کردن پینچ_ (pinch out؛ بزرگ‌نمایی) که دو نشانگر را از یکدیگر دور می‌کند، رنگ پس‌زمینهٔ عنصر هدف را به `pink` تغییر می‌دهد.
 
-### Define touch target
+### تعریف هدف لمس
 
-The application uses {{HTMLElement("div")}} to define the pointers' target areas.
+برنامه برای تعریف ناحیه‌های هدفِ نشانگرها از یک عنصر {{HTMLElement("div")}} استفاده می‌کند.
 
 ```css
 div {
@@ -37,9 +35,9 @@ div {
 }
 ```
 
-### Global state
+### حالت سراسری
 
-Supporting a two-pointer gesture requires preserving a pointer's event state during various event phases. This application uses two global variables to cache the event state.
+پشتیبانی از یک ژست دونشانگری مستلزم نگهداری حالت رویدادِ نشانگرها در فازهای مختلف رویداد است. این برنامه برای کش‌کردن حالت رویداد از دو متغیر سراسری استفاده می‌کند.
 
 ```js
 // Global vars to cache event state
@@ -47,9 +45,9 @@ const evCache = [];
 let prevDiff = -1;
 ```
 
-### Register event handlers
+### ثبت رویدادگردان‌ها
 
-Event handlers are registered for the following pointer events: {{domxref("Element/pointerdown_event", "pointerdown")}}, {{domxref("Element/pointermove_event", "pointermove")}} and {{domxref("Element/pointerup_event", "pointerup")}}. The handler for {{domxref("Element/pointerup_event", "pointerup")}} is used for the {{domxref("Element/pointercancel_event", "pointercancel")}}, {{domxref("Element/pointerout_event", "pointerout")}} and {{domxref("Element/pointerleave_event", "pointerleave")}} events since these four events have the same semantics in this application.
+برای رویدادهای نشانگر زیر، رویدادگردان ثبت می‌شود: {{domxref("Element/pointerdown_event", "pointerdown")}}، {{domxref("Element/pointermove_event", "pointermove")}} و {{domxref("Element/pointerup_event", "pointerup")}}. از رویدادگردانِ رویداد {{domxref("Element/pointerup_event", "pointerup")}} برای رویدادهای {{domxref("Element/pointercancel_event", "pointercancel")}}، {{domxref("Element/pointerout_event", "pointerout")}} و {{domxref("Element/pointerleave_event", "pointerleave")}} نیز استفاده می‌شود، زیرا در این برنامه این چهار رویداد معنای یکسانی دارند.
 
 ```js
 // Install event handlers for the pointer target
@@ -65,9 +63,9 @@ el.onpointerout = pointerupHandler;
 el.onpointerleave = pointerupHandler;
 ```
 
-### Pointer down
+### فشردن نشانگر
 
-The {{domxref("Element/pointerdown_event", "pointerdown")}} event is fired when a pointer (mouse, pen/stylus or touch point on a touchscreen) makes contact with the _contact surface_. In this application, the event's state must be cached in case this down event is part of a two-pointer pinch/zoom gesture.
+رویداد {{domxref("Element/pointerdown_event", "pointerdown")}} زمانی رخ می‌دهد که یک نشانگر (موس، قلم/استایلوس یا نقطهٔ لمس روی صفحهٔ لمسی) با _سطح تماس_ تماس برقرار کند. در این برنامه، حالت رویداد باید در حافظهٔ کش نگهداری شود، زیرا ممکن است این رویدادِ فشردن (down) بخشی از یک ژست پینچ/زوم دونشانگری باشد.
 
 ```js
 function pointerdownHandler(ev) {
@@ -78,11 +76,11 @@ function pointerdownHandler(ev) {
 }
 ```
 
-### Pointer move
+### حرکت نشانگر
 
-The {{domxref("Element/pointermove_event", "pointermove")}} event handler detects if a user is invoking a two-pointer pinch/zoom gesture. If two pointers are down, and the distance between the pointers is increasing (signifying a pinch out or zoom in), the element's background color is changed to `pink`, and if the distance between the pointers is decreasing (a pinch in or zoom out), the background color is changed to `lightblue`. In a more sophisticated application, pinch in or pinch out determination could be used to apply application-specific semantics.
+رویدادگردان {{domxref("Element/pointermove_event", "pointermove")}} تشخیص می‌دهد که آیا کاربر در حال اجرای یک ژست پینچ/زوم دونشانگری است. اگر دو نشانگر فعال باشند و فاصلهٔ بین آن دو افزایش یابد (یعنی باز شدن پینچ یا بزرگ‌نمایی)، رنگ پس‌زمینهٔ عنصر به `pink` تغییر می‌کند؛ و اگر فاصلهٔ بین دو نشانگر کاهش یابد (یعنی بسته شدن پینچ یا کوچک‌نمایی)، رنگ پس‌زمینه به `lightblue` تغییر می‌کند. در یک برنامهٔ پیچیده‌تر، می‌توان از تشخیصِ بسته یا باز شدن پینچ برای اعمال رفتارهای مختص آن برنامه استفاده کرد.
 
-When this event is processed, the target's border is set to `dashed` to provide a clear visual indication the element has received a move event.
+هنگام پردازش این رویداد، حاشیهٔ عنصر هدف به حالت `dashed` تنظیم می‌شود تا نشانهٔ بصری واضحی از دریافت رویداد حرکت توسط آن عنصر فراهم شود.
 
 ```js
 function pointermoveHandler(ev) {
@@ -130,11 +128,11 @@ function pointermoveHandler(ev) {
 }
 ```
 
-### Pointer up
+### رها کردن نشانگر
 
-The {{domxref("Element/pointerup_event", "pointerup")}} event is fired when a pointer is raised from the _contact surface_. When this occurs, the event is removed from the event cache and the target element's background color and border are restored to their original values.
+رویداد {{domxref("Element/pointerup_event", "pointerup")}} زمانی رخ می‌دهد که یک نشانگر از _سطح تماس_ برداشته شود. در این هنگام، رویداد از حافظهٔ کش رویدادها حذف می‌شود و رنگ پس‌زمینه و حاشیهٔ عنصر هدف به مقادیر اولیهٔ خود بازگردانده می‌شوند.
 
-In this application, this handler is also used for {{domxref("Element/pointercancel_event", "pointercancel")}}, {{domxref("Element/pointerleave_event", "pointerleave")}} and {{domxref("Element/pointerout_event", "pointerout")}} events.
+در این برنامه، از همین رویدادگردان برای رویدادهای {{domxref("Element/pointercancel_event", "pointercancel")}}، {{domxref("Element/pointerleave_event", "pointerleave")}} و {{domxref("Element/pointerout_event", "pointerout")}} نیز استفاده می‌شود.
 
 ```js
 function pointerupHandler(ev) {
@@ -152,11 +150,11 @@ function pointerupHandler(ev) {
 }
 ```
 
-### Application UI
+### رابط کاربری برنامه
 
-The application uses a {{HTMLElement("div")}} element for the touch area and provides buttons to enable logging and to clear the log.
+برنامه برای ناحیهٔ لمس از یک عنصر {{HTMLElement("div")}} استفاده می‌کند و دکمه‌هایی برای فعال‌کردن ثبت رویدادها و پاک‌کردن گزارش در اختیار کاربر قرار می‌دهد.
 
-To prevent the browser's default touch behavior from overriding this application's pointer handling, the {{cssxref("touch-action")}} property is applied to the {{HTMLElement("body")}} element.
+برای جلوگیری از بازنویسی مدیریت نشانگرِ این برنامه توسط رفتار لمس پیش‌فرض مرورگر، ویژگی {{cssxref("touch-action")}} روی عنصر {{HTMLElement("body")}} اعمال شده است.
 
 ```html
 <div id="target">
@@ -177,13 +175,13 @@ body {
 }
 ```
 
-### Miscellaneous functions
+### توابع متفرقه
 
-These functions support the application but aren't directly involved in the event flow.
+این توابع از برنامه پشتیبانی می‌کنند اما مستقیماً در جریان رویدادها دخالت ندارند.
 
-#### Cache management
+#### مدیریت حافظهٔ کش
 
-This function helps manage the global event caches `evCache`.
+این تابع به مدیریت کش سراسری رویدادها، یعنی `evCache`، کمک می‌کند.
 
 ```js
 function removeEvent(ev) {
@@ -195,9 +193,9 @@ function removeEvent(ev) {
 }
 ```
 
-#### Event logging
+#### ثبت رویدادها
 
-These functions are used to send event activity to the application's window (to support debugging and learning about the event flow).
+این توابع برای ارسال فعالیت رویدادها به پنجرهٔ برنامه استفاده می‌شوند (برای پشتیبانی از اشکال‌زدایی و یادگیری جریان رویدادها).
 
 ```js
 // Log events flag
@@ -227,8 +225,8 @@ function clearLog(event) {
 }
 ```
 
-## See also
+## همچنین ببینید
 
-- [Pointer Events now in Firefox Nightly](https://hacks.mozilla.org/2015/08/pointer-events-now-in-firefox-nightly/); Mozilla Hacks; by Matt Brubeck and Jason Weathersby; 2015-Aug-04
+- [Pointer Events now in Firefox Nightly](https://hacks.mozilla.org/2015/08/pointer-events-now-in-firefox-nightly/)؛ Mozilla Hacks؛ نوشتهٔ Matt Brubeck و Jason Weathersby؛ ۴ اوت ۲۰۱۵
 - [jQuery Pointer Events Polyfill](https://github.com/jquery-archive/PEP)
-- [Gestures](https://m2.material.io/design/interaction/gestures.html); Material Design
+- [ژست‌ها (Gestures)](https://m2.material.io/design/interaction/gestures.html)؛ Material Design
