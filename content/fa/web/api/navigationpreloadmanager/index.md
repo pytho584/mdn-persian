@@ -1,7 +1,5 @@
 ---
 title: "NavigationPreloadManager"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigationPreloadManager"
-status: "needs-translation"
 ---
 
 ---
@@ -13,47 +11,47 @@ browser-compat: api.NavigationPreloadManager
 
 {{APIRef("Service Workers API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`NavigationPreloadManager`** interface of the [Service Worker API](/en-US/docs/Web/API/Service_Worker_API) provides methods for managing the preloading of resources in parallel with service worker bootup.
+**`NavigationPreloadManager`** واسطهای در [Service Worker API](/en-US/docs/Web/API/Service_Worker_API) است که روشهایی را برای مدیریت بارگذاری از پیشِ منابع بهصورت موازی با راهاندازی سرویسورکر فراهم میکند.
 
-If supported, an object of this type is returned by {{domxref("ServiceWorkerRegistration.navigationPreload")}}.
-The result of a preload fetch request is waited on using the promise returned by {{domxref("FetchEvent.preloadResponse")}}.
+در صورت پشتیبانی، یک شیء از این نوع توسط {{domxref("ServiceWorkerRegistration.navigationPreload")}} بازگردانده میشود.
+نتیجهٔ یک درخواست واکشیِ از پیشبارگذاریشده با استفاده از پرامیسی که توسط {{domxref("FetchEvent.preloadResponse")}} بازگردانده میشود، انتظار کشیده میشود.
 
-## Instance methods
+## روشهای نمونه
 
 - {{domxref("NavigationPreloadManager.enable()")}}
-  - : Enables navigation preloading, returning a {{jsxref("Promise")}} that resolves with {{jsxref('undefined')}}.
+  - : پیشبارگذاری ناوبری را فعال میکند و یک {{jsxref("Promise")}} بازمیگرداند که با {{jsxref('undefined')}} resolve میشود.
 - {{domxref("NavigationPreloadManager.disable()")}}
-  - : Disables navigation preloading, returning a {{jsxref("Promise")}} that resolves with {{jsxref('undefined')}}.
+  - : پیشبارگذاری ناوبری را غیرفعال میکند و یک {{jsxref("Promise")}} بازمیگرداند که با {{jsxref('undefined')}} resolve میشود.
 - {{domxref("NavigationPreloadManager.setHeaderValue()")}}
-  - : Sets the value of the {{HTTPHeader("Service-Worker-Navigation-Preload")}} HTTP header sent in preloading requests and returns an empty {{jsxref("Promise")}}.
+  - : مقدار هدر HTTP {{HTTPHeader("Service-Worker-Navigation-Preload")}} را که در درخواستهای پیشبارگذاری ارسال میشود، تنظیم میکند و یک {{jsxref("Promise")}} خالی بازمیگرداند.
 - {{domxref("NavigationPreloadManager.getState()")}}
-  - : Returns a {{jsxref("Promise")}} that resolves to an object with properties that indicate whether preloading is enabled, and what value will be sent in the {{HTTPHeader("Service-Worker-Navigation-Preload")}} HTTP header in preloading requests.
+  - : یک {{jsxref("Promise")}} بازمیگرداند که به یک شیء با ویژگیهایی resolve میشود که نشان میدهند آیا پیشبارگذاری فعال است و چه مقداری در هدر HTTP {{HTTPHeader("Service-Worker-Navigation-Preload")}} در درخواستهای پیشبارگذاری ارسال خواهد شد.
 
-## Description
+## توضیحات
 
-Service workers handle {{domxref("Window/fetch", "fetch()")}} events on behalf of a site, for pages within a given scope.
-When a user navigates to a page that uses a service worker, the browser boots up the worker (if it isn't already running), then sends it a fetch event and waits for the result.
-On receiving an event, the worker returns the resource from a cache if it is present, or otherwise fetches the resource from the remote server (storing a copy for returning in future requests).
+سرویسورکرها رویدادهای {{domxref("Window/fetch", "fetch()")}} را از طرف یک وبسایت، برای صفحات درون یک محدودهٔ معین، مدیریت میکنند.
+وقتی کاربر به صفحهای میرود که از سرویسورکر استفاده میکند، مرورگر سرویسورکر را راهاندازی میکند (اگر از قبل در حال اجرا نباشد)، سپس یک رویداد fetch به آن ارسال میکند و منتظر نتیجه میماند.
+هنگام دریافت رویداد، سرویسورکر منبع را از کش برمیگرداند اگر موجود باشد، یا در غیر این صورت منبع را از سرور راه دور واکشی میکند (و یک نسخه برای درخواستهای آینده ذخیره میکند).
 
-A service worker cannot process events from the browser until it has booted.
-This is unavoidable, but usually doesn't have much impact.
-Service workers are often already started (they remain active for some time after processing other requests).
-Even if a service worker does have to boot, much of the time it may be returning values from a cache, which is very fast.
-However, in those cases where a worker has to boot before it can start fetching a remote resource, then the delay can be significant.
+یک سرویسورکر نمیتواند رویدادهای مرورگر را پردازش کند تا زمانی که راهاندازی شود.
+این امر اجتنابناپذیر است، اما معمولاً تأثیر زیادی ندارد.
+سرویسورکرها اغلب از قبل شروع به کار کردهاند (آنها مدتی پس از پردازش درخواستهای دیگر فعال میمانند).
+حتی اگر سرویسورکر مجبور باشد راهاندازی شود، در بسیاری از موارد ممکن است مقادیر را از کش برگرداند که بسیار سریع است.
+اما در مواردی که سرویسورکر باید قبل از شروع به واکشی یک منبع راه دور راهاندازی شود، تأخیر میتواند قابل توجه باشد.
 
-The `NavigationPreloadManager` provides a mechanism to allow fetching of the resources to run in parallel with service worker boot, so that by the time the worker is able to handle the fetch request from the browser, the resource may already have been fully or partially downloaded.
-This makes the case where the worker has to start up "no worse" than when the worker is already started, and in some cases better.
+`NavigationPreloadManager` مکانیزمی را فراهم میکند که امکان واکشی منابع را بهصورت موازی با راهاندازی سرویسورکر میدهد، بهگونهای که تا زمانی که سرویسورکر بتواند درخواست fetch را از مرورگر پردازش کند، ممکن است منبع قبلاً بهطور کامل یا جزئی دانلود شده باشد.
+این کار حالتی را که در آن سرویسورکر باید راهاندازی شود «بدتر از» حالتی که سرویسورکر از قبل شروع به کار کرده است نمیکند و در برخی موارد بهتر است.
 
-The preload manager sends the {{HTTPHeader("Service-Worker-Navigation-Preload")}} HTTP header with preload requests, allowing responses to be customized for preload requests.
-This might be used, for example, to reduce the data sent to just part of the original page, or to customize the response based on the user's log-in state.
+مدیر پیشبارگذاری هدر HTTP {{HTTPHeader("Service-Worker-Navigation-Preload")}} را با درخواستهای پیشبارگذاری ارسال میکند و امکان سفارشیسازی پاسخها برای درخواستهای پیشبارگذاری را فراهم میکند.
+برای مثال، ممکن است از این برای کاهش دادههای ارسالی به فقط بخشی از صفحهٔ اصلی، یا سفارشیسازی پاسخ بر اساس وضعیت ورود کاربر استفاده شود.
 
-## Examples
+## مثالها
 
-The examples here are from [Speed up Service Worker with Navigation Preloads](https://web.dev/blog/navigation-preload) (developer.chrome.com).
+مثالهای اینجا از [سرعت بخشیدن به سرویسورکر با پیشبارگذاری ناوبری](https://web.dev/blog/navigation-preload) (developer.chrome.com) گرفته شدهاند.
 
-### Feature detection and enabling navigation preloading
+### تشخیص ویژگی و فعالسازی پیشبارگذاری ناوبری
 
-Below we enable navigation preloading in the service worker's `activate` event handler, after first using {{domxref("ServiceWorkerRegistration.navigationPreload")}} to determine if the feature is supported (this returns either the `NavigationPreloadManager` for the service worker or `undefined` if the feature is not supported).
+در زیر، پیشبارگذاری ناوبری را در دستگیرهٔ رویداد `activate` سرویسورکر فعال میکنیم، ابتدا با استفاده از {{domxref("ServiceWorkerRegistration.navigationPreload")}} بررسی میکنیم که آیا این ویژگی پشتیبانی میشود (این یا `NavigationPreloadManager` را برای سرویسورکر برمیگرداند یا اگر ویژگی پشتیبانی نشود، `undefined` را).
 
 ```js
 addEventListener("activate", (event) => {
@@ -68,16 +66,16 @@ addEventListener("activate", (event) => {
 });
 ```
 
-### Using a preloaded response
+### استفاده از پاسخ از پیشبارگذاریشده
 
-The following code shows a service worker fetch event handler that uses a preloaded response ({{domxref("FetchEvent.preloadResponse")}}).
+کد زیر یک دستگیرهٔ رویداد fetch سرویسورکر را نشان میدهد که از یک پاسخ از پیشبارگذاریشده ({{domxref("FetchEvent.preloadResponse")}}) استفاده میکند.
 
-The `fetch` event handler calls {{domxref("FetchEvent.respondWith", "FetchEvent.respondWith()")}} to pass a promise back to the controlled page.
-This promise will resolve with the requested resource, which may be from the cache, a preloaded fetch request, or a new network request.
+دستگیرهٔ رویداد `fetch` متد {{domxref("FetchEvent.respondWith", "FetchEvent.respondWith()")}} را فراخوانی میکند تا یک پرامیس را به صفحهٔ کنترلشده بازگرداند.
+این پرامیس با منبع درخواستشده resolve میشود که ممکن است از کش، یک درخواست واکشیِ از پیشبارگذاریشده، یا یک درخواست شبکهٔ جدید باشد.
 
-If there is a matching URL request in the {{domxref("Cache")}} object, then the code returns a resolved promise for fetching the response from the cache.
-If no match is found in the cache, the code returns the resolved preloaded response ({{domxref("FetchEvent.preloadResponse")}}).
-If there is no matching cache entry or preloaded response, the code starts a new fetch operation from the network and returns the (unresolved) promise for that fetch operation.
+اگر یک درخواست URL منطبق در شیء {{domxref("Cache")}} وجود داشته باشد، کد یک پرامیس resolveشده برای واکشی پاسخ از کش برمیگرداند.
+اگر هیچ تطابقی در کش یافت نشود، کد پاسخ از پیشبارگذاریشدهٔ resolveشده را برمیگرداند ({{domxref("FetchEvent.preloadResponse")}}).
+اگر هیچ ورودی کش یا پاسخ از پیشبارگذاریشدهٔ مطابقی وجود نداشته باشد، کد یک عملیات fetch جدید از شبکه آغاز میکند و پرامیس (resolveنشده) را برای آن عملیات fetch برمیگرداند.
 
 ```js
 addEventListener("fetch", (event) => {
@@ -98,19 +96,19 @@ addEventListener("fetch", (event) => {
 });
 ```
 
-### Custom responses
+### پاسخهای سفارشی
 
-The browser sends the HTTP header {{HTTPHeader("Service-Worker-Navigation-Preload")}} with preload requests, with a default directive value of `true`.
-This allows servers to differentiate between normal and preload fetch requests, and to send different responses in each case if required.
+مرورگر هدر HTTP {{HTTPHeader("Service-Worker-Navigation-Preload")}} را با درخواستهای پیشبارگذاری ارسال میکند، با مقدار دستوری پیشفرض `true`.
+این به سرورها امکان میدهد بین درخواستهای واکشی عادی و پیشبارگذاری تمایز قائل شوند و در صورت نیاز، پاسخهای متفاوتی در هر مورد ارسال کنند.
 
 > [!NOTE]
-> If the response from preload and normal fetch operations can be different, then the server must set `Vary: Service-Worker-Navigation-Preload` to ensure that the different responses are cached.
+> اگر پاسخ عملیات پیشبارگذاری و واکشی عادی میتواند متفاوت باشد، سرور باید `Vary: Service-Worker-Navigation-Preload` را تنظیم کند تا اطمینان حاصل شود که پاسخهای مختلف ذخیره میشوند.
 
-The header value can be changed to any other string value using {{domxref("NavigationPreloadManager.setHeaderValue()")}} in order to provide additional context for the prefetch operation.
-For example, you might set the value to the ID of your most recently cached resource, so that the server won't return any resources unless they are actually needed.
-Similarly, you could configure the returned information based on authentication status instead of using cookies.
+مقدار هدر میتواند با استفاده از {{domxref("NavigationPreloadManager.setHeaderValue()")}} به هر رشتهٔ دیگری تغییر یابد تا زمینهٔ اضافی برای عملیات پیشواکشی فراهم شود.
+برای مثال، میتوانید مقدار را به شناسهٔ آخرین منبع ذخیرهشدهٔ خود تنظیم کنید تا سرور هیچ منبعی را برنگرداند مگر اینکه واقعاً مورد نیاز باشد.
+بهطور مشابه، میتوانید اطلاعات بازگرداندهشده را بر اساس وضعیت احراز هویت پیکربندی کنید، بهجای استفاده از کوکیها.
 
-The code below shows how to set the value of the header directive to some variable `newValue`.
+کد زیر نحوهٔ تنظیم مقدار دستور هدر را به متغیری به نام `newValue` نشان میدهد.
 
 ```js
 navigator.serviceWorker.ready
@@ -122,14 +120,13 @@ navigator.serviceWorker.ready
   });
 ```
 
-[Speed up Service Worker with Navigation Preloads > Custom responses for preloads](https://web.dev/blog/navigation-preload) provides a more complete example of a site where the response for an article web page is constructed from a cached header and footer, so that only the article content is returned for a prefetch.
+[سرعت بخشیدن به سرویسورکر با پیشبارگذاری ناوبری > پاسخهای سفارشی برای پیشبارگذاریها](https://web.dev/blog/navigation-preload) مثال کاملتری از یک وبسایت ارائه میدهد که در آن پاسخ یک صفحهٔ مقاله از یک هدر و فوتر ذخیرهشده ساخته میشود، بهطوری که فقط محتوای مقاله برای یک پیشواکشی بازگردانده شود.
 
-### Getting the state
+### دریافت وضعیت
 
-You can use {{domxref("NavigationPreloadManager.getState()")}} to check whether navigation preloading is enabled and to determine what directive value is sent with the
-{{HTTPHeader("Service-Worker-Navigation-Preload")}} HTTP header for preload requests.
+میتوانید از {{domxref("NavigationPreloadManager.getState()")}} برای بررسی اینکه آیا پیشبارگذاری ناوبری فعال است و برای تعیین اینکه چه مقدار دستوری با هدر HTTP {{HTTPHeader("Service-Worker-Navigation-Preload")}} برای درخواستهای پیشبارگذاری ارسال میشود، استفاده کنید.
 
-The code below shows how to get the promise that resolves to a `state` object and log the result.
+کد زیر نحوهٔ دریافت پرامیسی را نشان میدهد که به یک شیء `state` resolve میشود و نتیجه را ثبت میکند.
 
 ```js
 navigator.serviceWorker.ready
@@ -140,14 +137,14 @@ navigator.serviceWorker.ready
   });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Speed up Service Worker with Navigation Preloads](https://web.dev/blog/navigation-preload) (developer.chrome.com)
+- [سرعت بخشیدن به سرویسورکر با پیشبارگذاری ناوبری](https://web.dev/blog/navigation-preload) (developer.chrome.com)
