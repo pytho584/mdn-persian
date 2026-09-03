@@ -1,11 +1,5 @@
 ---
 title: "NodeIterator: nextNode() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/nextNode"
-status: "needs-translation"
----
-
----
-title: "NodeIterator: nextNode() method"
 short-title: nextNode()
 slug: Web/API/NodeIterator/nextNode
 page-type: web-api-instance-method
@@ -14,33 +8,27 @@ browser-compat: api.NodeIterator.nextNode
 
 {{APIRef("DOM")}}
 
-The **`NodeIterator.nextNode()`** method returns the next node
-in the set represented by the {{domxref("NodeIterator")}} and advances the position of
-the iterator within the set. The first call to `nextNode()` returns the
-first node in the set.
+متد **`NodeIterator.nextNode()`** گرهٔ بعدی را در مجموعهٔ نمایش‌داده‌شده توسط {{domxref("NodeIterator")}} برمی‌گرداند و موقعیت تکرارگر را در این مجموعه به جلو می‌برد. اولین فراخوانیِ `nextNode()`، اولین گرهٔ مجموعه را برمی‌گرداند.
 
-This method returns `null` when there are no nodes left in the set.
+این متد وقتی هیچ گره‌ای در مجموعه باقی نمانده باشد، مقدار `null` را برمی‌گرداند.
 
-In old browsers, as specified in old versions of the specifications, the method may
-throws the `INVALID_STATE_ERR` {{domxref("DOMException")}} if this method
-is called after the {{domxref("NodeIterator.detach()")}} method. Recent browsers never
-throw.
+در مرورگرهای قدیمی، آن‌گونه که در نسخه‌های قدیمی مشخصات تعیین شده بود، اگر این متد پس از فراخوانی {{domxref("NodeIterator.detach()")}} صدا زده می‌شد، ممکن بود استثنای `INVALID_STATE_ERR` از نوع {{domxref("DOMException")}} پرتاب شود. مرورگرهای به‌روز هرگز چنین استثنایی را پرتاب نمی‌کنند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 nextNode()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("Node")}} representing the node after the current node in the set represented by this `NodeIterator`, or `null` if the current node is the last node in the set.
+یک {{domxref("Node")}} که گرهٔ بعد از گرهٔ جاری را در مجموعه‌ای که این `NodeIterator` نشان می‌دهد نمایش می‌دهد؛ یا اگر گرهٔ جاری آخرین گرهٔ مجموعه باشد، مقدار `null`.
 
-## Examples
+## مثال‌ها
 
 ```js
 const nodeIterator = document.createNodeIterator(
@@ -55,14 +43,14 @@ const nodeIterator = document.createNodeIterator(
 currentNode = nodeIterator.nextNode(); // returns the next node
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface it belongs to: {{domxref("NodeIterator")}}.
+- رابطی که این متد به آن تعلق دارد: {{domxref("NodeIterator")}}.
