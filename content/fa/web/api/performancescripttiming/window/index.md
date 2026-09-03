@@ -1,7 +1,5 @@
 ---
 title: "PerformanceScriptTiming: window property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceScriptTiming/window"
-status: "needs-translation"
 ---
 
 ---
@@ -16,25 +14,25 @@ browser-compat: api.PerformanceScriptTiming.window
 
 {{SeeCompatTable}}{{APIRef("Performance API")}}
 
-The **`window`** read-only property of the {{domxref("PerformanceScriptTiming")}} interface returns a reference to a {{domxref("Window")}} object representing the `window` of the container (i.e., either the top-level document or an {{htmlelement("iframe")}}) in which the long animation frame (LoAF)-causing script was executed.
+ویژگی فقط‌خواندنی **`window`** از رابط {{domxref("PerformanceScriptTiming")}} یک ارجاع به یک شیء {{domxref("Window")}} برمی‌گرداند که نمایانگر `window` ظرف (یعنی سند سطح بالا یا یک {{htmlelement("iframe")}}) است که اسکریپت ایجادکننده فریم انیمیشن طولانی (LoAF) در آن اجرا شده است.
 
-## Value
+## مقدار
 
-A {{domxref("Window")}} object, or `null` if the window is no longer active (the object reference is a [`WeakRef`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakRef)).
+یک شیء {{domxref("Window")}}، یا `null` اگر پنجره دیگر فعال نباشد (ارجاع شیء یک [`WeakRef`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakRef) است).
 
-## Examples
+## مثال‌ها
 
-See [Long animation frame timing](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing#examples) for examples related to the Long Animation Frames API.
+برای مثال‌های مرتبط با API فریم‌های انیمیشن طولانی، به [زمان‌بندی فریم انیمیشن طولانی](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Long animation frame timing](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing)
+- [زمان‌بندی فریم انیمیشن طولانی](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing)
 - {{domxref("PerformanceLongAnimationFrameTiming")}}
