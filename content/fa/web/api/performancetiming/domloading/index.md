@@ -1,7 +1,5 @@
 ---
 title: "PerformanceTiming: domLoading property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/domLoading"
-status: "needs-translation"
 ---
 
 ---
@@ -17,28 +15,22 @@ browser-compat: api.PerformanceTiming.domLoading
 {{APIRef("Performance API")}}{{Deprecated_Header}}
 
 > [!WARNING]
-> This interface of this property is deprecated in the [Navigation Timing Level 2 specification](https://w3c.github.io/navigation-timing/#obsolete). Please use the {{domxref("PerformanceNavigationTiming")}}
-> interface instead.
+> رابطِ مربوط به این ویژگی در [مشخصات سطح ۲ زمان‌بندی ناوبری](https://w3c.github.io/navigation-timing/#obsolete) منسوخ شده است. لطفاً به جای آن از رابط {{domxref("PerformanceNavigationTiming")}} استفاده کنید.
 
-The legacy
-**`PerformanceTiming.domLoading`**
-read-only property returns an `unsigned long long` representing the moment,
-in milliseconds since the UNIX epoch, when the parser started its work, that is when its
-{{domxref("Document.readyState")}} changes to `'loading'` and the
-corresponding {{domxref("Document/readystatechange_event", "readystatechange")}} event is thrown.
+خصوصیت فقط‌خواندنی قدیمی **`PerformanceTiming.domLoading`** یک مقدار `unsigned long long` برمی‌گرداند که نشان‌دهنده لحظه‌ای (به میلی‌ثانیه از مبدأ UNIX) است که تجزیه‌گر کار خود را آغاز می‌کند؛ یعنی زمانی که {{domxref("Document.readyState")}} به `'loading'` تغییر می‌کند و رویداد متناظر {{domxref("Document/readystatechange_event", "readystatechange")}} صادر می‌شود.
 
-## Value
+## مقدار
 
-An `unsigned long long`.
+یک `unsigned long long`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("PerformanceTiming")}} interface it belongs to.
+- رابط {{domxref("PerformanceTiming")}} که این ویژگی به آن تعلق دارد.
