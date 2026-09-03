@@ -1,7 +1,5 @@
 ---
 title: "PageTransitionEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PageTransitionEvent"
-status: "needs-translation"
 ---
 
 ---
@@ -13,23 +11,23 @@ browser-compat: api.PageTransitionEvent
 
 {{APIRef("HTML DOM")}}
 
-The **`PageTransitionEvent`** event object is available inside handler functions for the [`pageshow`](/en-US/docs/Web/API/Window/pageshow_event) and [`pagehide`](/en-US/docs/Web/API/Window/pagehide_event) events, fired when a document is being loaded or unloaded.
+شیء رویداد **`PageTransitionEvent`** در داخل توابع مدیریت‌کننده رویدادهای [`pageshow`](/en-US/docs/Web/API/Window/pageshow_event) و [`pagehide`](/en-US/docs/Web/API/Window/pagehide_event) در دسترس است؛ این رویدادها هنگام بارگذاری یا بارگیری‌نشدن (unload) یک سند فعال می‌شوند.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده (Constructor)
 
 - {{domxref("PageTransitionEvent.PageTransitionEvent", "PageTransitionEvent()")}}
-  - : Creates a new `PageTransitionEvent` object.
+  - : یک شیء `PageTransitionEvent` جدید ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه (Instance properties)
 
-_This interface also inherits properties from its parent, {{domxref("Event")}}._
+_این رابط همچنین ویژگی‌های والد خود، {{domxref("Event")}} را به ارث می‌برد._
 
 - {{domxref("PageTransitionEvent.persisted")}} {{ReadOnlyInline}}
-  - : Indicates if the document is loading from a cache.
+  - : نشان می‌دهد که آیا سند از حافظه نهان (cache) بارگذاری شده است یا خیر.
 
-## Example
+## مثال
 
 ```js
 window.addEventListener("pageshow", (event) => {
@@ -41,15 +39,15 @@ window.addEventListener("pageshow", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [`pageshow`](/en-US/docs/Web/API/Window/pageshow_event) event
-- [`pagehide`](/en-US/docs/Web/API/Window/pagehide_event) event
+- رویداد [`pageshow`](/en-US/docs/Web/API/Window/pageshow_event)
+- رویداد [`pagehide`](/en-US/docs/Web/API/Window/pagehide_event)
