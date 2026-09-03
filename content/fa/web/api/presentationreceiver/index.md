@@ -1,10 +1,4 @@
 ---
-title: "PresentationReceiver"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PresentationReceiver"
-status: "needs-translation"
----
-
----
 title: PresentationReceiver
 slug: Web/API/PresentationReceiver
 page-type: web-api-interface
@@ -15,17 +9,17 @@ browser-compat: api.PresentationReceiver
 
 {{securecontext_header}}{{SeeCompatTable}}{{APIRef("Presentation API")}}
 
-The **`PresentationReceiver`** interface of the [Presentation API](/en-US/docs/Web/API/Presentation_API) provides a means for a receiving browsing context to access controlling browsing contexts and communicate with them.
+رابطهٔ **`PresentationReceiver`** در [Presentation API](/en-US/docs/Web/API/Presentation_API) به یک زمینهٔ مرورگرِ دریافت‌کننده امکان می‌دهد تا به زمینه‌های مرورگرِ کنترل‌کننده دسترسی پیدا کند و با آن‌ها ارتباط برقرار کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref('PresentationReceiver.connectionList')}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a {{jsxref('Promise')}} that resolves with a {{domxref('PresentationConnectionList')}} object containing a list of _incoming presentation connections._
+  - : یک {{jsxref('Promise')}} برمی‌گرداند که با یک شیء {{domxref('PresentationConnectionList')}} شامل فهرستی از _اتصال‌های ارائهٔ ورودی_ حل می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
