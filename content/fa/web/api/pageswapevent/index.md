@@ -1,11 +1,5 @@
 ---
 title: "PageSwapEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PageSwapEvent"
-status: "needs-translation"
----
-
----
-title: PageSwapEvent
 slug: Web/API/PageSwapEvent
 page-type: web-api-interface
 browser-compat: api.PageSwapEvent
@@ -13,23 +7,23 @@ browser-compat: api.PageSwapEvent
 
 {{APIRef("HTML DOM")}}
 
-The **`PageSwapEvent`** event object is made available inside handler functions for the {{domxref("Window.pageswap_event", "pageswap")}} event.
+شیء رویداد **`PageSwapEvent`** درون توابع کنترل‌کننده رویداد {{domxref("Window.pageswap_event", "pageswap")}} در دسترس قرار می‌گیرد.
 
-The `pageswap` event is fired when you navigate across documents, when the previous document is about to unload. During a cross-document navigation, the `PageSwapEvent` event object allows you to manipulate the related [view transition](/en-US/docs/Web/API/View_Transition_API) (providing access to the relevant {{domxref("ViewTransition")}} object) from the document being navigated _from_, if a view transition was triggered by the navigation. It also provides access to information on the navigation type and current and destination documents.
+رویداد `pageswap` زمانی فعال می‌شود که در حال پیمایش بین سندها هستید، درست زمانی که سند قبلی در آستانه تخلیه (unload) شدن است. در طول یک پیمایش بین سندی، شیء رویداد `PageSwapEvent` به شما امکان می‌دهد تا [انتقال نمای (view transition)](/en-US/docs/Web/API/View_Transition_API) مرتبط را از سندی که در حال پیمایش _از_ آن هستید، دستکاری کنید (دسترسی به شیء {{domxref("ViewTransition")}} مربوطه را فراهم می‌کند)، در صورتی که یک انتقال نمای توسط پیمایش آغاز شده باشد. همچنین دسترسی به اطلاعاتی درباره نوع پیمایش و سندهای جاری و مقصد را فراهم می‌کند.
 
-## Constructor
+## سازنده (Constructor)
 
 - {{domxref("PageSwapEvent.PageSwapEvent", "PageSwapEvent()")}}
-  - : Creates a new `PageSwapEvent` object instance.
+  - : یک نمونه جدید از شیء `PageSwapEvent` ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه (Instance properties)
 
 - {{domxref("PageSwapEvent.activation", "activation")}} {{ReadOnlyInline}}
-  - : Contains a {{domxref("NavigationActivation")}} object containing the navigation type and current and destination document history entries for a same-origin navigation. If the navigation has a cross-origin URL anywhere in the redirect chain, it returns `null`.
+  - : شامل یک شیء {{domxref("NavigationActivation")}} است که شامل نوع پیمایش و ورودی‌های تاریخچه سند جاری و مقصد برای یک پیمایش هم‌ریشه (same-origin) می‌باشد. اگر پیمایش دارای یک URL با منشأ متفاوت (cross-origin) در هر نقطه از زنجیره تغییرمسیر باشد، `null` برمی‌گرداند.
 - {{domxref("PageSwapEvent.viewTransition", "viewTransition")}} {{ReadOnlyInline}}
-  - : Contains a {{domxref("ViewTransition")}} object representing the active view transition for the cross-document navigation.
+  - : شامل یک شیء {{domxref("ViewTransition")}} است که نمایانگر انتقال نمای فعال برای پیمایش بین سندی است.
 
-## Examples
+## مثال‌ها
 
 ```js
 window.addEventListener("pageswap", async (e) => {
@@ -82,16 +76,16 @@ window.addEventListener("pageswap", async (e) => {
 ```
 
 > [!NOTE]
-> See [List of Chrome DevRel team members](https://view-transitions.chrome.dev/profiles/mpa/) for the live demo this code is taken from.
+> برای نسخه نمایشی زنده که این کد از آن گرفته شده است، به [فهرست اعضای تیم Chrome DevRel](https://view-transitions.chrome.dev/profiles/mpa/) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [View Transition API](/en-US/docs/Web/API/View_Transition_API)
+- {{domxref("View_Transition_API", "View Transition API")}}
