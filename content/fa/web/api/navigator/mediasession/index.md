@@ -1,11 +1,5 @@
 ---
 title: "Navigator: mediaSession property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/mediaSession"
-status: "needs-translation"
----
-
----
-title: "Navigator: mediaSession property"
 short-title: mediaSession
 slug: Web/API/Navigator/mediaSession
 page-type: web-api-instance-property
@@ -14,36 +8,19 @@ browser-compat: api.Navigator.mediaSession
 
 {{APIRef("Media Session API")}}
 
-The **`mediaSession`** read-only property of the {{domxref("Navigator")}}
-interface returns a {{domxref("MediaSession")}}
-object that can be used to share with the browser metadata and other information about
-the current playback state of media being handled by a document.
+خاصیت فقط خواندنی **`mediaSession`** از رابط {{domxref("Navigator")}} یک شیء {{domxref("MediaSession")}} برمی‌گرداند که می‌توان از آن برای اشتراک‌گذاری فراداده (metadata) و سایر اطلاعات مربوط به وضعیت پخش فعلی رسانه‌ای که توسط یک سند مدیریت می‌شود، با مرورگر استفاده کرد.
 
-This
-information may, in turn, be shared with the device and/or operating system in order to
-a device's standard media control user experience to describe and control the playback
-of the media.
+این اطلاعات ممکن است به نوبه خود با دستگاه و/یا سیستم عامل به اشتراک گذاشته شود تا تجربه کاربری استاندارد کنترل رسانه دستگاه، پخش رسانه را توصیف و کنترل کند.
 
-In addition, the `MediaSession` interface provides the
-{{domxref("MediaSession.setActionHandler", "setActionHandler()")}} method, which lets
-you receive events when the user engages device controls such as either onscreen or
-physical play, pause, seek, and other similar controls. An internet radio app, for
-example, can use `setActionHandler()` to let the media controls on a keyboard
-or elsewhere on the user's device be used to control the app's media playback.
+علاوه بر این، رابط `MediaSession` متد {{domxref("MediaSession.setActionHandler", "setActionHandler()")}} را ارائه می‌دهد که به شما امکان می‌دهد وقتی کاربر با کنترل‌های دستگاه مانند دکمه‌های پخش، توقف، جستجو و سایر کنترل‌های مشابه (چه روی صفحه و چه فیزیکی) تعامل می‌کند، رویدادهایی دریافت کنید. برای مثال، یک برنامه رادیوی اینترنتی می‌تواند از `setActionHandler()` استفاده کند تا کنترل‌های رسانه روی صفحه‌کلید یا جای دیگری از دستگاه کاربر برای کنترل پخش رسانه برنامه استفاده شود.
 
-## Value
+## مقدار
 
-A {{domxref("MediaSession")}} object the current document can use to share information
-about media it's playing and its current playback status. This information can include
-typical metadata such as the title, artist, and album name of the song being played as
-well as potentially one or more images containing things like album art, artist photos,
-and so forth.
+یک شیء {{domxref("MediaSession")}} که سند فعلی می‌تواند از آن برای اشتراک‌گذاری اطلاعات درباره رسانه‌ای که در حال پخش است و وضعیت پخش فعلی آن استفاده کند. این اطلاعات می‌تواند شامل فراداده‌های معمولی مانند عنوان، هنرمند و نام آلبوم آهنگ در حال پخش و همچنین احتمالاً یک یا چند تصویر حاوی مواردی مانند جلد آلبوم، عکس هنرمند و غیره باشد.
 
-## Examples
+## مثال‌ها
 
-In this example, metadata is submitted to the `mediaSession` object. Note
-that the code begins by ensuring that the `navigator.mediaSession` property
-is available before attempting to use it.
+در این مثال، فراداده به شیء `mediaSession` ارسال می‌شود. توجه داشته باشید که کد قبل از تلاش برای استفاده از `navigator.mediaSession`، ابتدا از در دسترس بودن آن اطمینان حاصل می‌کند.
 
 ```js
 if ("mediaSession" in navigator) {
@@ -56,10 +33,10 @@ if ("mediaSession" in navigator) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
