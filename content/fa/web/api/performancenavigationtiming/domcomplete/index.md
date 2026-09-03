@@ -1,11 +1,5 @@
 ---
 title: "PerformanceNavigationTiming: domComplete property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceNavigationTiming/domComplete"
-status: "needs-translation"
----
-
----
-title: "PerformanceNavigationTiming: domComplete property"
 short-title: domComplete
 slug: Web/API/PerformanceNavigationTiming/domComplete
 page-type: web-api-instance-property
@@ -14,21 +8,21 @@ browser-compat: api.PerformanceNavigationTiming.domComplete
 
 {{APIRef("Performance API")}}
 
-The **`domComplete`** read-only property returns a {{domxref("DOMHighResTimeStamp")}} representing the time immediately before the user agent sets the document's [`readyState`](/en-US/docs/Web/API/Document/readyState) to `"complete"`.
+ویژگی فقط‌خواندنی **`domComplete`** یک {{domxref("DOMHighResTimeStamp")}} برمی‌گرداند که زمانِ درست قبل از اینکه عامل کاربر (user agent) حالت [`readyState`](/en-US/docs/Web/API/Document/readyState) سند را روی `"complete"` تنظیم کند را نشان می‌دهد.
 
-See also the `complete` state of {{domxref("Document.readyState")}} which corresponds to this property and refers to the state in which the document and all sub-resources have finished loading. The state also indicates that the {{domxref("Window/load_event", "load")}} event is about to fire.
+همچنین به حالت `complete` در {{domxref("Document.readyState")}} توجه کنید که با این ویژگی متناظر است و به حالتی اشاره دارد که در آن سند و همه‌ی منابع فرعی (sub-resources) بارگذاری شده‌اند. این حالت همچنین نشان می‌دهد که رویداد {{domxref("Window/load_event", "load")}} در آستانه‌ی رخ دادن است.
 
-## Value
+## مقدار
 
-A {{domxref("DOMHighResTimeStamp")}} representing the time immediately before the user agent sets the document's [`readyState`](/en-US/docs/Web/API/Document/readyState) to `"complete"`.
+یک {{domxref("DOMHighResTimeStamp")}} که نشان‌دهنده‌ی زمان درست قبل از تنظیم [`readyState`](/en-US/docs/Web/API/Document/readyState) سند به `"complete"` توسط عامل کاربر است.
 
-## Examples
+## مثال‌ها
 
-### Logging DOM completion time
+### ثبت زمان تکمیل DOM
 
-The `domComplete` property can be used to log the time when the DOM is complete.
+از ویژگی `domComplete` می‌توان برای ثبت (log) زمان تکمیل شدن DOM استفاده کرد.
 
-Example using a {{domxref("PerformanceObserver")}}, which notifies of new `navigation` performance entries as they are recorded in the browser's performance timeline. Use the `buffered` option to access entries from before the observer creation.
+مثال زیر از {{domxref("PerformanceObserver")}} استفاده می‌کند که هنگام ثبت ورودی‌های عملکردی جدید از نوع `navigation` در خط زمانی عملکرد مرورگر، اطلاع می‌دهد. برای دسترسی به ورودی‌های مربوط به قبل از ایجاد observer، از گزینه‌ی `buffered` استفاده کنید.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -40,7 +34,7 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "navigation", buffered: true });
 ```
 
-Example using {{domxref("Performance.getEntriesByType()")}}, which only shows `navigation` performance entries present in the browser's performance timeline at the time you call this method:
+مثال زیر از {{domxref("Performance.getEntriesByType()")}} استفاده می‌کند که فقط ورودی‌های عملکردی `navigation` موجود در خط زمانی عملکرد مرورگر را در زمان فراخوانی این متد نشان می‌دهد:
 
 ```js
 const entries = performance.getEntriesByType("navigation");
@@ -49,14 +43,14 @@ entries.forEach((entry) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Document.readyState")}}
