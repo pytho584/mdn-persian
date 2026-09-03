@@ -1,11 +1,5 @@
 ---
 title: "PerformanceElementTiming: url property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceElementTiming/url"
-status: "needs-translation"
----
-
----
-title: "PerformanceElementTiming: url property"
 short-title: url
 slug: Web/API/PerformanceElementTiming/url
 page-type: web-api-instance-property
@@ -16,17 +10,17 @@ browser-compat: api.PerformanceElementTiming.url
 
 {{APIRef("Performance API")}}{{SeeCompatTable}}
 
-The **`url`** read-only property of the {{domxref("PerformanceElementTiming")}} interface returns the initial URL of the resource request when the element is an image.
+خاصیتِ فقط‌خواندنی **`url`** در رابط {{domxref("PerformanceElementTiming")}}، نشانی اولیه درخواست منبع را زمانی که عنصر یک تصویر است، برمی‌گرداند.
 
-## Value
+## مقدار
 
-A string which is the initial URL of the resources request for images or `0` for text.
+یک رشته که نشانی اولیه درخواست منبع برای تصاویر است، یا برای متن `0` است.
 
-## Examples
+## مثال‌ها
 
-### Logging `url`
+### ثبت `url`
 
-In this example an {{HTMLElement("img")}} element is being observed by adding the [`elementtiming`](/en-US/docs/Web/HTML/Reference/Attributes/elementtiming) attribute. A {{domxref("PerformanceObserver")}} is registered to get all performance entries of type `"element"` and the `buffered` flag is used to access data from before observer creation. Calling `entry.url` returns `https://example.com/image.jpg`.
+در این مثال، یک عنصر {{HTMLElement("img")}} با افزودن ویژگی [`elementtiming`](/en-US/docs/Web/HTML/Reference/Attributes/elementtiming) مشاهده می‌شود. یک {{domxref("PerformanceObserver")}} ثبت می‌شود تا همه ورودی‌های عملکرد از نوع `"element"` را دریافت کند و از پرچم `buffered` برای دسترسی به داده‌های قبل از ایجاد observer استفاده می‌شود. فراخوانی `entry.url` مقدار `https://example.com/image.jpg` را برمی‌گرداند.
 
 ```html
 <img
@@ -47,10 +41,11 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "element", buffered: true });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
+```
