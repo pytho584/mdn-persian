@@ -1,9 +1,4 @@
----
-title: "Notification: maxActions static property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Notification/maxActions_static"
-status: "needs-translation"
----
-
+```yaml
 ---
 title: "Notification: maxActions static property"
 short-title: maxActions
@@ -14,42 +9,41 @@ browser-compat: api.Notification.maxActions_static
 
 {{APIRef("Web Notifications")}}{{SecureContext_Header}} {{AvailableInWorkers}}
 
-The **`maxActions`** read-only static property of the {{domxref("Notification")}} interface returns the maximum number of actions that can be displayed in a notification.
+خاصیت **`maxActions`** (ایستا و فقط-خواندنی) از رابط {{domxref("Notification")}} حداکثر تعداد اقداماتی را که می‌توانند در یک اعلان نمایش داده شوند، برمی‌گرداند.
 
-## Value
+## مقدار
 
-An integer.
+یک عدد صحیح.
 
-## Description
+## توضیحات
 
-Notification actions are buttons or controls that appear within [persistent notifications](/en-US/docs/Web/API/Notifications_API#persistent_and_non-persistent_notifications).
-Actions are set using the [`actions`](/en-US/docs/Web/API/ServiceWorkerRegistration/showNotification#actions) option of the second argument of the {{domxref("ServiceWorkerRegistration.showNotification", "showNotification()")}} method.
+اقدامات اعلان، دکمه‌ها یا کنترل‌هایی هستند که درون [اعلان‌های پایدار](/en-US/docs/Web/API/Notifications_API#persistent_and_non-persistent_notifications) ظاهر می‌شوند. این اقدامات با استفاده از گزینه [`actions`](/en-US/docs/Web/API/ServiceWorkerRegistration/showNotification#actions) آرگومان دوم متد {{domxref("ServiceWorkerRegistration.showNotification", "showNotification()")}} تنظیم می‌شوند.
 
-Browsers typically limit the maximum number of actions they will display for a particular notification.
-The `maxActions` property returns that limit, which is the maximum number of elements in the {{domxref("Notification.actions")}} array that will be respected by the user agent.
+مرورگرها معمولاً حداکثر تعداد اقداماتی را که برای یک اعلان خاص نمایش می‌دهند، محدود می‌کنند. خاصیت `maxActions` این محدودیت را بازمی‌گرداند؛ یعنی بیشینه تعداد عناصری در آرایه {{domxref("Notification.actions")}} که توسط عامل کاربر رعایت خواهد شد.
 
-## Examples
+## مثال‌ها
 
-### Log the maximum possible number of actions
+### ثبت حداکثر تعداد ممکن اقدامات
 
-The following snippet logs the maximum number of supported actions.
+قطعه کد زیر حداکثر تعداد اقدامات پشتیبانی‌شده را ثبت می‌کند.
 
 ```js
 const maxActions = Notification.maxActions;
 console.log(
-  `This device can display at most ${maxActions} actions on each notification.`,
+  `این دستگاه می‌تواند حداکثر ${maxActions} اقدام را روی هر اعلان نمایش دهد.`,
 );
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Notifications API](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
+- [استفاده از API اعلان‌ها](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
 - {{domxref("Notification.actions")}}
+```
