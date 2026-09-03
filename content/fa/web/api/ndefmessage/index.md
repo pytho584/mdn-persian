@@ -1,11 +1,5 @@
 ---
 title: "NDEFMessage"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NDEFMessage"
-status: "needs-translation"
----
-
----
-title: NDEFMessage
 slug: Web/API/NDEFMessage
 page-type: web-api-interface
 status:
@@ -15,22 +9,22 @@ browser-compat: api.NDEFMessage
 
 {{securecontext_header}}{{SeeCompatTable}}{{APIRef("Web NFC API")}}
 
-The **`NDEFMessage`** interface of the [Web NFC API](/en-US/docs/Web/API/Web_NFC_API) represents the content of an NDEF message that has been read from or could be written to an NFC tag. An instance is acquired by calling the `NDEFMessage()` constructor or from the {{domxref("NDEFReadingEvent.message")}} property, which is passed to the {{domxref("NDEFReader.reading_event", "reading")}} event.
+رابط **`NDEFMessage`** از [Web NFC API](/en-US/docs/Web/API/Web_NFC_API) محتوای یک پیام NDEF را نشان می‌دهد که از یک برچسب NFC خوانده شده یا می‌تواند روی آن نوشته شود. یک نمونه از این رابط با فراخوانی سازنده `NDEFMessage()` یا از ویژگی {{domxref("NDEFReadingEvent.message")}} که به رویداد {{domxref("NDEFReader.reading_event", "reading")}} ارسال می‌شود، به دست می‌آید.
 
-## Constructor
+## سازنده
 
 - {{DOMxRef("NDEFMessage.NDEFMessage", "NDEFMessage()")}} {{Experimental_Inline}}
-  - : Creates a new `NDEFMessage` object, initialized with the given NDEF records.
+  - : یک شیء جدید `NDEFMessage` ایجاد می‌کند که با رکوردهای NDEF داده شده مقداردهی اولیه می‌شود.
 
-## Attributes
+## ویژگی‌ها
 
 - {{DOMxRef("NDEFMessage.records")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns the list of NDEF records contained in the message.
+  - : فهرست رکوردهای NDEF موجود در پیام را بازمی‌گرداند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
