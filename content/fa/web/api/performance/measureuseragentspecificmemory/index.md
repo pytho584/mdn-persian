@@ -1,11 +1,5 @@
 ---
 title: "Performance: measureUserAgentSpecificMemory() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Performance/measureUserAgentSpecificMemory"
-status: "needs-translation"
----
-
----
-title: "Performance: measureUserAgentSpecificMemory() method"
 short-title: measureUserAgentSpecificMemory()
 slug: Web/API/Performance/measureUserAgentSpecificMemory
 page-type: web-api-instance-method
@@ -16,44 +10,44 @@ browser-compat: api.Performance.measureUserAgentSpecificMemory
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}{{SeeCompatTable}}
 
-The **`measureUserAgentSpecificMemory()`** method is used to estimate the memory usage of a web application including all its iframes and workers.
+متد **`measureUserAgentSpecificMemory()`** برای تخمین میزان حافظه‌ی مصرفی یک برنامه‌ی وب، شامل تمام iframeها و workerهای آن، استفاده می‌شود.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 measureUserAgentSpecificMemory()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves to an object containing the following properties:
+یک {{jsxref("Promise")}} که به شیءای شامل ویژگی‌های زیر resolve می‌شود:
 
 - `bytes`
-  - : A number representing the total memory usage.
+  - : عددی که میزان کل حافظه‌ی مصرفی را نشان می‌دهد.
 - `breakdown`
-  - : An {{jsxref("Array")}} of objects partitioning the total `bytes` and providing attribution and type information. The object contains the following properties:
+  - : یک {{jsxref("Array")}} از اشیاء که کل `bytes` را بخش‌بندی کرده و اطلاعات مربوط به تخصیص (attribution) و نوع حافظه را فراهم می‌کند. این شیء شامل ویژگی‌های زیر است:
     - `bytes`
-      - : The size of the memory that this entry describes.
+      - : اندازه‌ی حافظه‌ای که این ورودی توصیف می‌کند.
     - `attribution`
-      - : An {{jsxref("Array")}} of container elements of the JavaScript realms that use the memory. This object has the following properties:
+      - : یک {{jsxref("Array")}} از عناصر ظرف (container) مربوط به قلمروهای جاوااسکریپت (JavaScript realms) که از این حافظه استفاده می‌کنند. این شیء ویژگی‌های زیر را دارد:
         - `url`
-          - : If this attribution corresponds to a same-origin JavaScript realm, then this property contains the realm's URL. Otherwise it is the string "cross-origin-url".
+          - : اگر این انتساب مربوط به یک قلمرو جاوااسکریپت هم‌خاستگاه (same-origin) باشد، این ویژگی شامل URL آن قلمرو است. در غیر این صورت، رشته‌ی `"cross-origin-url"` است.
         - `container`
-          - : An object describing the DOM element that contains this JavaScript realm. This object has the following properties:
+          - : شیءای که عنصر DOM شامل این قلمرو جاوااسکریپت را توصیف می‌کند. این شیء ویژگی‌های زیر را دارد:
             - `id`
-              - : The `id` attribute of the container element.
+              - : ویژگی `id` عنصر ظرف.
             - `src`
-              - : The `src` attribute of the container element. If the container element is an {{HTMLElement("object")}} element, then this field contains the value of the `data` attribute.
+              - : ویژگی `src` عنصر ظرف. اگر عنصر ظرف یک عنصر {{HTMLElement("object")}} باشد، این فیلد حاوی مقدار ویژگی `data` است.
         - `scope`
-          - : A string describing the type of the same-origin JavaScript realm. Either `"Window"`, `"DedicatedWorkerGlobalScope"`, `"SharedWorkerGlobalScope"`, `"ServiceWorkerGlobalScope"` or `"cross-origin-aggregated"` for the cross-origin case.
+          - : رشته‌ای که نوع قلمرو جاوااسکریپت هم‌خاستگاه را توصیف می‌کند: `"Window"`، `"DedicatedWorkerGlobalScope"`، `"SharedWorkerGlobalScope"`، `"ServiceWorkerGlobalScope"` یا در مورد cross-origin، `"cross-origin-aggregated"`.
     - `types`
-      - : An array of implementation-defined memory types associated with the memory.
+      - : آرایه‌ای از انواع حافظه‌ی تعریف‌شده توسط پیاده‌سازی (implementation-defined) که با این حافظه مرتبط هستند.
 
-An example return value looks like this:
+یک مثال از مقدار بازگشتی به این شکل است:
 
 ```json
 {
@@ -92,36 +86,36 @@ An example return value looks like this:
 }
 ```
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `SecurityError` {{domxref("DOMException")}}
-  - : Thrown if the [security requirements](#security_requirements) for preventing cross-origin information leaks aren't fulfilled.
+  - : اگر [الزامات امنیتی](#security_requirements) برای جلوگیری از نشت اطلاعات بین‌خاستگاهی (cross-origin) برآورده نشوند، پرتاب می‌شود.
 
-## Description
+## توضیحات
 
-The browser automatically allocates memory when objects are created and frees it when they are not reachable anymore (garbage collection). This garbage collection (GC) is an approximation since the general problem of determining whether or not a specific piece of memory is still needed is impossible (see also [JavaScript Memory Management](/en-US/docs/Web/JavaScript/Guide/Memory_management)). Developers need to make sure that objects are garbage collected, memory isn't leaked, and memory usage doesn't grow unnecessarily over time leading to slow and unresponsive web applications. Memory leaks are typically introduced by forgetting to unregister an event listener, not closing a worker, accumulating objects in arrays, and more.
+مرورگر هنگام ایجاد اشیاء به‌طور خودکار حافظه اختصاص می‌دهد و وقتی دیگر به آن‌ها دسترسی نباشد (جمع‌آوری زباله)، حافظه را آزاد می‌کند. این جمع‌آوری زباله (GC) یک تقریب است، زیرا مسئله‌ی کلی تعیین اینکه آیا یک قطعه‌ی خاص از حافظه هنوز مورد نیاز است یا نه، غیرممکن است (همچنین به [مدیریت حافظه‌ی جاوااسکریپت](/en-US/docs/Web/JavaScript/Guide/Memory_management) مراجعه کنید). توسعه‌دهندگان باید اطمینان حاصل کنند که اشیاء جمع‌آوری می‌شوند، حافظه نشت نمی‌کند، و مصرف حافظه در طول زمان به‌طور غیرضروری رشد نمی‌کند که منجر به برنامه‌های وب کند و بی‌پاسخ شود. نشت حافظه معمولاً در اثر فراموش کردن لغو ثبت یک شنونده‌ی رویداد (event listener)، نبستن یک worker، انباشتن اشیاء در آرایه‌ها و موارد دیگر ایجاد می‌شود.
 
-The `measureUserAgentSpecificMemory()` API aggregates memory usage data to help you find memory leaks. It can be used for memory regression detection or for A/B testing features to evaluate their memory impact. Rather than make single calls to this method, it's better to make periodic calls to track how memory usage changes over the duration of a session.
+API `measureUserAgentSpecificMemory()` داده‌های مصرف حافظه را جمع‌آوری می‌کند تا به شما در یافتن نشت حافظه کمک کند. می‌توان از آن برای تشخیص بازگشت مشکلات حافظه (memory regression) یا برای آزمایش A/B ویژگی‌ها به منظور ارزیابی تأثیر آن‌ها بر حافظه استفاده کرد. بهتر است به‌جای فراخوانی‌های تکی این متد، فراخوانی‌های دوره‌ای انجام دهید تا تغییرات مصرف حافظه در طول یک نشست (session) پیگیری شود.
 
-The `byte` values this API returns aren't comparable across browsers or between different versions of the same browser as these are highly implementation dependent. Also, how `breakdown` and `attribution` arrays are provided is up to the browser as well. It is best to not hardcode any assumptions about this data. This API is rather meant to be called periodically (with a randomized interval) to aggregate data and analyze the difference between the samples.
+مقادیر `byte` که این API برمی‌گرداند در بین مرورگرهای مختلف یا بین نسخه‌های مختلف یک مرورگر قابل مقایسه نیستند، زیرا این مقادیر به شدت به پیاده‌سازی وابسته هستند. همچنین نحوه‌ی ارائه‌ی آرایه‌های `breakdown` و `attribution` نیز به مرورگر بستگی دارد. بهتر است هیچ فرض ثابت و از پیش تعیین‌شده‌ای درباره‌ی این داده‌ها نداشته باشید. این API بیشتر برای فراخوانی دوره‌ای (با فاصله‌ی زمانی تصادفی) طراحی شده است تا داده‌ها جمع‌آوری و تفاوت بین نمونه‌ها تحلیل شود.
 
-## Security requirements
+## الزامات امنیتی
 
-To use this method your document must be in a [secure context](/en-US/docs/Web/Security/Defenses/Secure_Contexts) and {{domxref("Window.crossOriginIsolated","cross-origin isolated","","nocode")}}.
+برای استفاده از این متد، سند شما باید در یک [بافت امن (secure context)](/en-US/docs/Web/Security/Defenses/Secure_Contexts) باشد و همچنین {{domxref("Window.crossOriginIsolated","cross-origin isolated","","nocode")}} باشد.
 
-You can use the {{domxref("Window.crossOriginIsolated")}} and {{domxref("WorkerGlobalScope.crossOriginIsolated")}} properties to check if the document is cross-origin isolated:
+می‌توانید از ویژگی‌های {{domxref("Window.crossOriginIsolated")}} و {{domxref("WorkerGlobalScope.crossOriginIsolated")}} برای بررسی اینکه آیا سند cross-origin isolated است استفاده کنید:
 
 ```js
 if (crossOriginIsolated) {
-  // Use measureUserAgentSpecificMemory
+  // استفاده از measureUserAgentSpecificMemory
 }
 ```
 
-## Examples
+## مثال‌ها
 
-### Monitoring memory usage
+### نظارت بر مصرف حافظه
 
-The following code shows how to call the `measureUserAgentSpecificMemory()` method once every five minutes at a random interval using [Exponential distribution](https://en.wikipedia.org/wiki/Exponential_distribution#Random_variate_generation).
+کد زیر نحوه‌ی فراخوانی متد `measureUserAgentSpecificMemory()` را هر پنج دقیقه با یک فاصله‌ی زمانی تصادفی با استفاده از [توزیع نمایی (Exponential distribution)](https://en.wikipedia.org/wiki/Exponential_distribution#Random_variate_generation) نشان می‌دهد.
 
 ```js
 function runMemoryMeasurements() {
@@ -141,15 +135,15 @@ if (crossOriginIsolated) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Window.setTimeout", "setTimeout()")}}
 - [Monitor your web page's total memory usage with measureUserAgentSpecificMemory() - web.dev](https://web.dev/articles/monitor-total-page-memory-usage)
