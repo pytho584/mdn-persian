@@ -1,11 +1,5 @@
 ---
 title: "OfflineAudioContext: length property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/OfflineAudioContext/length"
-status: "needs-translation"
----
-
----
-title: "OfflineAudioContext: length property"
 short-title: length
 slug: Web/API/OfflineAudioContext/length
 page-type: web-api-instance-property
@@ -14,18 +8,16 @@ browser-compat: api.OfflineAudioContext.length
 
 {{ APIRef("Web Audio API") }}
 
-The **`length`** property of the
-{{domxref("OfflineAudioContext")}} interface returns an integer representing the size of
-the buffer in sample-frames.
+ویژگی **`length`** از رابط {{domxref("OfflineAudioContext")}} یک عدد صحیح را برمی‌گرداند که اندازهٔ بافر را بر حسب فریم نمونه (sample-frame) نشان می‌دهد.
 
-## Value
+## مقدار
 
-An integer representing the size of the buffer in sample-frames.
+یک عدد صحیح که اندازهٔ بافر را بر حسب فریم نمونه مشخص می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
