@@ -1,11 +1,5 @@
 ---
 title: "PasswordCredential: name property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PasswordCredential/name"
-status: "needs-translation"
----
-
----
-title: "PasswordCredential: name property"
 short-title: name
 slug: Web/API/PasswordCredential/name
 page-type: web-api-instance-property
@@ -16,18 +10,16 @@ browser-compat: api.PasswordCredential.name
 
 {{SeeCompatTable}}{{APIRef("Credential Management API")}}{{SecureContext_Header}}
 
-The **`name`** read-only property of
-the {{domxref("PasswordCredential")}} interface returns a string
-containing a human-readable public name for display in a credential chooser.
+ویژگی فقط‌خواندنی **`name`** در رابط {{domxref("PasswordCredential")}} یک رشته برمی‌گرداند که حاوی نام عمومی قابل‌خواندن برای انسان است که در انتخاب‌گر اعتبارنامه نمایش داده می‌شود.
 
-## Value
+## مقدار
 
-A string containing a name.
+یک رشته شامل نام.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
