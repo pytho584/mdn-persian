@@ -1,9 +1,4 @@
----
-title: "PaintSize: height property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaintSize/height"
-status: "needs-translation"
----
-
+```
 ---
 title: "PaintSize: height property"
 short-title: height
@@ -14,22 +9,23 @@ browser-compat: api.PaintSize.height
 
 {{APIRef("CSS Painting API")}}
 
-The **`height`** read-only property of the {{domxref("PaintSize")}} interface returns the height of the output bitmap that the author should draw.
+ویژگی فقط‌خواندنی **`height`** از رابط {{domxref("PaintSize")}}، ارتفاع بیت‌مپ خروجی را که توسعه‌دهنده باید در آن رسم کند، برمی‌گرداند.
 
-## Value
+## مقدار
 
-A floating point number.
+یک عدد ممیز شناور.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Using the CSS Painting API](/en-US/docs/Web/API/CSS_Painting_API/Guide)
+- [استفاده از CSS Painting API](/en-US/docs/Web/API/CSS_Painting_API/Guide)
 - [CSS Painting API](/en-US/docs/Web/API/CSS_Painting_API)
 - [Houdini APIs](/en-US/docs/Web/API/Houdini_APIs)
+```
