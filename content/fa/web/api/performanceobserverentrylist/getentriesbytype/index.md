@@ -1,11 +1,5 @@
 ---
 title: "PerformanceObserverEntryList: getEntriesByType() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserverEntryList/getEntriesByType"
-status: "needs-translation"
----
-
----
-title: "PerformanceObserverEntryList: getEntriesByType() method"
 short-title: getEntriesByType()
 slug: Web/API/PerformanceObserverEntryList/getEntriesByType
 page-type: web-api-instance-method
@@ -14,28 +8,28 @@ browser-compat: api.PerformanceObserverEntryList.getEntriesByType
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The **`getEntriesByType()`** method of the {{domxref("PerformanceObserverEntryList")}} returns a list of explicitly _observed_ {{domxref("PerformanceEntry","performance entry", '', 'true')}} objects for a given {{domxref("PerformanceEntry.entryType","performance entry type", '', 'true')}}. The list's members are determined by the set of {{domxref("PerformanceEntry.entryType","entry types", '', 'true')}} specified in the call to the {{domxref("PerformanceObserver.observe","observe()")}} method. The list is available in the observer's callback function (as the first parameter in the callback).
+متد **`getEntriesByType()`** از {{domxref("PerformanceObserverEntryList")}} فهرستی از اشیای {{domxref("PerformanceEntry","ورودی عملکرد", '', 'true')}} را که به‌طور صریح _مشاهده شده‌اند_، برای یک {{domxref("PerformanceEntry.entryType","نوع ورودی عملکرد", '', 'true')}} مشخص بازمی‌گرداند. اعضای این فهرست بر اساس مجموعه‌ای از {{domxref("PerformanceEntry.entryType","انواع ورودی", '', 'true')}} تعیین می‌شوند که در فراخوانی متد {{domxref("PerformanceObserver.observe","observe()")}} مشخص شده‌اند. این فهرست در تابع callback ناظر (به‌عنوان اولین پارامتر callback) در دسترس است.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 getEntriesByType(type)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : The type of entry to retrieve such as `"mark"`. The valid entry types are listed in {{domxref("PerformanceEntry.entryType")}}.
+  - : نوع ورودی مورد نظر برای بازیابی، مانند `"mark"`. انواع ورودی معتبر در {{domxref("PerformanceEntry.entryType")}} فهرست شده‌اند.
 
-### Return value
+### مقدار بازگشتی
 
-A list of explicitly _observed_ {{domxref("PerformanceEntry")}} objects that have the specified `type`. The items will be in chronological order based on the entries' {{domxref("PerformanceEntry.startTime","startTime")}}. If no objects have the specified `type`, or no argument is provided, an empty list is returned.
+فهرستی از اشیای {{domxref("PerformanceEntry")}} که به‌طور صریح _مشاهده شده‌اند_ و دارای `type` مشخص‌شده هستند. اقلام به ترتیب زمانی بر اساس {{domxref("PerformanceEntry.startTime","startTime")}} ورودی‌ها مرتب می‌شوند. اگر هیچ شیئی با `type` مشخص‌شده وجود نداشته باشد، یا آرگومانی ارائه نشود، یک فهرست خالی بازگردانده می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Working with getEntries, getEntriesByName and getEntriesByType
+### کار با getEntries، getEntriesByName و getEntriesByType
 
-The following example shows the difference between the {{domxref("PerformanceObserverEntryList.getEntries", "getEntries()")}}, {{domxref("PerformanceObserverEntryList.getEntriesByName", "getEntriesByName()")}}, and `getEntriesByType()` methods.
+مثال زیر تفاوت بین متدهای {{domxref("PerformanceObserverEntryList.getEntries", "getEntries()")}}، {{domxref("PerformanceObserverEntryList.getEntriesByName", "getEntriesByName()")}} و `getEntriesByType()` را نشان می‌دهد.
 
 ```js
 const observer = new PerformanceObserver((list, obs) => {
@@ -64,10 +58,10 @@ observer.observe({
 });
 ```
 
-## Specifications
+## مشخصات (Specifications)
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر (Browser compatibility)
 
 {{Compat}}
