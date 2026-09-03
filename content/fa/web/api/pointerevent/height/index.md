@@ -1,11 +1,5 @@
 ---
 title: "PointerEvent: height property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent/height"
-status: "needs-translation"
----
-
----
-title: "PointerEvent: height property"
 short-title: height
 slug: Web/API/PointerEvent/height
 page-type: web-api-instance-property
@@ -14,27 +8,22 @@ browser-compat: api.PointerEvent.height
 
 {{ APIRef("Pointer Events") }}
 
-The **`height`** read-only property of the
-{{domxref("PointerEvent")}} interface represents the height of the pointer's contact
-geometry, along the y-axis (in CSS pixels). Depending on the source of the pointer
-device (for example a finger), for a given pointer, each event may produce a different
-value.
+ویژگی فقط‌خواندنیِ **`height`** از رابط {{domxref("PointerEvent")}}، ارتفاع هندسهٔ تماس اشاره‌گر را در امتداد محور y (برحسب پیکسل CSS) نشان می‌دهد. بسته به منبع دستگاه اشاره‌گر (مثلاً انگشت)، ممکن است برای یک اشاره‌گر مشخص، هر رویداد مقدار متفاوتی تولید کند.
 
-If the input hardware cannot report the contact geometry to the browser, the height
-defaults to `1`.
+اگر سخت‌افزار ورودی نتواند هندسهٔ تماس را به مرورگر گزارش دهد، مقدار `height` به‌صورت پیش‌فرض برابر با `1` خواهد بود.
 
-## Value
+## مقدار
 
-The height of the event's contact area (in CSS pixels).
+ارتفاع ناحیهٔ تماس رویداد (برحسب پیکسل CSS).
 
-## Examples
+## مثال‌ها
 
-An example of this property is included in the [PointerEvent.width example](/en-US/docs/Web/API/PointerEvent/width#examples).
+مثالی از این ویژگی در [مثال PointerEvent.width](/en-US/docs/Web/API/PointerEvent/width#examples) ارائه شده است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
