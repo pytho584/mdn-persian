@@ -1,11 +1,5 @@
 ---
 title: "Navigator: cookieEnabled property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/cookieEnabled"
-status: "needs-translation"
----
-
----
-title: "Navigator: cookieEnabled property"
 short-title: cookieEnabled
 slug: Web/API/Navigator/cookieEnabled
 page-type: web-api-instance-property
@@ -14,29 +8,29 @@ browser-compat: api.Navigator.cookieEnabled
 
 {{ApiRef("HTML DOM")}}
 
-`navigator.cookieEnabled` returns a Boolean value that indicates whether cookies are enabled or not.
+`navigator.cookieEnabled` یک مقدار بولی (Boolean) برمی‌گرداند که نشان می‌دهد آیا کوکی‌ها فعال هستند یا خیر.
 
-The property is read-only.
+این ویژگی فقط خواندنی است.
 
-## Value
+## مقدار
 
-A boolean.
+یک مقدار بولی.
 
 > [!NOTE]
-> Web browsers may prevent writing certain cookies in certain scenarios. For example, Chrome-based browsers, as well as some experimental version of Firefox, does not allow creating cookies with [`SameSite=None`](/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie#samesitesamesite-value) attribute, unless they are created over HTTPS and with `Secure` attribute.
+> ممکن است مرورگرهای وب در برخی سناریوها از نوشتن برخی کوکی‌ها جلوگیری کنند. برای مثال، مرورگرهای مبتنی بر کروم، و همچنین برخی نسخه‌های آزمایشی فایرفاکس، اجازه ایجاد کوکی با ویژگی [`SameSite=None`](/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie#samesitesamesite-value) را نمی‌دهند، مگر اینکه از طریق HTTPS و با ویژگی `Secure` ایجاد شده باشند.
 
-## Examples
+## مثال‌ها
 
 ```js
 if (!navigator.cookieEnabled) {
-  // The browser does not support or is blocking cookies from being set.
+  // مرورگر از تنظیم کوکی‌ها پشتیبانی نمی‌کند یا از تنظیم آنها جلوگیری می‌کند.
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
