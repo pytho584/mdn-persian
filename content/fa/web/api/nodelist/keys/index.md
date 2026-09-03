@@ -1,7 +1,5 @@
 ---
 title: "NodeList: keys() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NodeList/keys"
-status: "needs-translation"
 ---
 
 ---
@@ -14,25 +12,23 @@ browser-compat: api.NodeList.keys
 
 {{APIRef("DOM")}}
 
-The **`NodeList.keys()`** method returns an
-{{jsxref("Iteration_protocols",'iterator')}} allowing to go through all keys contained
-in this object. The keys are `unsigned integer`.
+متد **`NodeList.keys()`** یک {{jsxref("Iteration_protocols",'iterator')}} (تکرارگر) برمی‌گرداند که امکان پیمایش همه کلیدهای موجود در این شیء را فراهم می‌کند. کلیدها از نوع `unsigned integer` هستند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 keys()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-Returns an {{jsxref("Iteration_protocols","iterator")}}.
+یک {{jsxref("Iteration_protocols","iterator")}} (تکرارگر) برمی‌گرداند.
 
-## Example
+## مثال
 
 ```js
 const node = document.createElement("div");
@@ -52,7 +48,7 @@ for (const key of list.keys()) {
 }
 ```
 
-The result is:
+نتیجه به صورت زیر است:
 
 ```plain
 0
@@ -60,16 +56,16 @@ The result is:
 2
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Polyfill of `NodeList.prototype.keys` in `core-js`](https://github.com/zloirock/core-js#iterable-dom-collections)
+- [پلی‌فیل `NodeList.prototype.keys` در `core-js`](https://github.com/zloirock/core-js#iterable-dom-collections)
 - {{domxref("Node")}}
 - {{domxref("NodeList")}}
