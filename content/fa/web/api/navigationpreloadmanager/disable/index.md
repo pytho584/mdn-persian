@@ -1,11 +1,5 @@
 ---
 title: "NavigationPreloadManager: disable() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigationPreloadManager/disable"
-status: "needs-translation"
----
-
----
-title: "NavigationPreloadManager: disable() method"
 short-title: disable()
 slug: Web/API/NavigationPreloadManager/disable
 page-type: web-api-instance-method
@@ -14,33 +8,32 @@ browser-compat: api.NavigationPreloadManager.disable
 
 {{APIRef("Service Workers API")}}{{SecureContext_Header}}{{AvailableInWorkers}}
 
-The **`disable()`** method of the {{domxref("NavigationPreloadManager")}} interface halts the automatic preloading of service-worker-managed resources previously started using {{domxref("NavigationPreloadManager.enable()","enable()")}}
-It returns a promise that resolves with `undefined`.
+**`disable()`** 方法属于 {{domxref("NavigationPreloadManager")}} 接口，用于停止先前通过 {{domxref("NavigationPreloadManager.enable()","enable()")}} 启动的由 service worker 管理的资源的自动预加载。它返回一个解析为 `undefined` 的 promise。
 
-The method may be called in the service worker's `activate` event handler (before the `fetch` event handler can be called).
+该方法可以在 service worker 的 `activate` 事件处理器中调用（在 `fetch` 事件处理器可以被调用之前）。
 
-## Syntax
+## 语法
 
 ```js-nolint
 disable()
 ```
 
-### Parameters
+### 参数
 
-None.
+无。
 
-### Return value
+### 返回值
 
-A {{jsxref("Promise")}} that resolves with {{jsxref('undefined')}}.
+一个解析为 {{jsxref('undefined')}} 的 {{jsxref("Promise")}}。
 
-### Exceptions
+### 异常
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : There is no active worker associated with the registration to which this {{domxref("NavigationPreloadManager")}} belongs.
+  - : 当没有与这个 {{domxref("NavigationPreloadManager")}} 所属的注册（registration）关联的活动 worker 时抛出。
 
-## Examples
+## 示例
 
-The code below shows how to disable preloading, after first using {{domxref("ServiceWorkerRegistration.navigationPreload")}} to test that it is supported.
+以下代码展示了如何禁用预加载，首先使用 {{domxref("ServiceWorkerRegistration.navigationPreload")}} 来测试其是否受支持。
 
 ```js
 addEventListener("activate", (event) => {
@@ -55,14 +48,14 @@ addEventListener("activate", (event) => {
 });
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
 - {{domxref("NavigationPreloadManager.enable()")}}
