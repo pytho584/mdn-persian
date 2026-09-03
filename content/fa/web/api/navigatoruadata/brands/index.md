@@ -1,11 +1,5 @@
 ---
 title: "NavigatorUAData: brands property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigatorUAData/brands"
-status: "needs-translation"
----
-
----
-title: "NavigatorUAData: brands property"
 short-title: brands
 slug: Web/API/NavigatorUAData/brands
 page-type: web-api-instance-property
@@ -16,33 +10,33 @@ browser-compat: api.NavigatorUAData.brands
 
 {{APIRef("User-Agent Client Hints API")}}{{SeeCompatTable}}{{AvailableInWorkers}}
 
-The **`brands`** read-only property of the {{domxref("NavigatorUAData")}} interface returns an array of brand information.
+ویژگی فقط‌خواندنی **`brands`** از رابط {{domxref("NavigatorUAData")}} یک آرایه از اطلاعات برند را برمی‌گرداند.
 
-## Value
+## مقدار
 
-An array containing the following information for each brand:
+یک آرایه شامل اطلاعات زیر برای هر برند:
 
 - `brand`
-  - : A string containing the brand. For example, `"Google Chrome"`.
+  - : یک رشته شامل نام برند. برای مثال، `"Google Chrome"`.
 - `version`
-  - : A string containing the version. For example, `"91"`.
+  - : یک رشته شامل نسخه. برای مثال، `"91"`.
 
-## Examples
+## مثال‌ها
 
-The following example prints the value of `brands` to the console.
+مثال زیر مقدار `brands` را در کنسول چاپ می‌کند.
 
 ```js
 console.log(navigator.userAgentData.brands);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{HTTPHeader("Sec-CH-UA")}} (a [low-entropy client hint](/en-US/docs/Web/HTTP/Guides/Client_hints#low_entropy_hints)) contains the same information.
+- {{HTTPHeader("Sec-CH-UA")}} (یک [نکته مشتری با آنتروپی پایین](/en-US/docs/Web/HTTP/Guides/Client_hints#low_entropy_hints)) حاوی همان اطلاعات است.
