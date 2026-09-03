@@ -1,11 +1,5 @@
 ---
 title: "PerformanceObserver: takeRecords() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver/takeRecords"
-status: "needs-translation"
----
-
----
-title: "PerformanceObserver: takeRecords() method"
 short-title: takeRecords()
 slug: Web/API/PerformanceObserver/takeRecords
 page-type: web-api-instance-method
@@ -14,27 +8,27 @@ browser-compat: api.PerformanceObserver.takeRecords
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The **`takeRecords()`** method of the {{domxref('PerformanceObserver')}} interface returns the current list of {{domxref("PerformanceEntry")}} objects stored in the performance observer, emptying it out.
+متد **`takeRecords()`** در رابط {{domxref('PerformanceObserver')}} فهرست کنونی از اشیاء {{domxref("PerformanceEntry")}} ذخیره‌شده در observer را برمی‌گرداند و آن را خالی می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 takeRecords()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A list of {{domxref("PerformanceEntry")}} objects.
+فهرستی از اشیاء {{domxref("PerformanceEntry")}}.
 
-## Examples
+## مثال‌ها
 
-### Taking records
+### گرفتن records
 
-The following example stores the current list of performance entries into `records` and empties the performance observer.
+مثال زیر فهرست کنونی از ورودی‌های عملکرد را در `records` ذخیره می‌کند و observer را خالی می‌کند.
 
 ```js
 const observer = new PerformanceObserver((list, obj) => {
@@ -49,10 +43,10 @@ console.log(records[0].startTime);
 console.log(records[0].duration);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
