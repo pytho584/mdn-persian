@@ -1,11 +1,5 @@
 ---
 title: "Node: hasChildNodes() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Node/hasChildNodes"
-status: "needs-translation"
----
-
----
-title: "Node: hasChildNodes() method"
 short-title: hasChildNodes()
 slug: Web/API/Node/hasChildNodes
 page-type: web-api-instance-method
@@ -14,26 +8,26 @@ browser-compat: api.Node.hasChildNodes
 
 {{APIRef("DOM")}}
 
-The **`hasChildNodes()`** method of the {{domxref("Node")}} interface
-returns a boolean value indicating
-whether the given {{domxref("Node")}} has [child nodes](/en-US/docs/Web/API/Node/childNodes) or not.
+متد **`hasChildNodes()`** در رابط {{domxref("Node")}}
+یک مقدار بولی برمی‌گرداند که نشان می‌دهد
+آیا {{domxref("Node")}} داده‌شده دارای [گره‌های فرزند](/en-US/docs/Web/API/Node/childNodes) است یا خیر.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 hasChildNodes()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A boolean value that is `true` if the node has child nodes, and
-`false` otherwise.
+یک مقدار بولی که اگر گره دارای گره‌های فرزند باشد `true` است و در غیر این صورت
+`false` است.
 
-## Example
+## مثال
 
 ```js
 let foo = document.getElementById("foo");
@@ -43,14 +37,14 @@ if (foo.hasChildNodes()) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Node.childNodes")}}
