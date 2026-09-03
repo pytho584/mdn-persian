@@ -1,11 +1,5 @@
 ---
 title: "PaymentAddress: region property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaymentAddress/region"
-status: "needs-translation"
----
-
----
-title: "PaymentAddress: region property"
 short-title: region
 slug: Web/API/PaymentAddress/region
 page-type: web-api-instance-property
@@ -17,25 +11,16 @@ browser-compat: api.PaymentAddress.region
 
 {{APIRef("Payment Request API")}}{{SecureContext_Header}}{{Deprecated_Header}}{{Non-standard_Header}}
 
-The read-only **`region`** property of the
-{{domxref('PaymentAddress')}} interface returns a string containing the top-level
-administrative subdivision of the country in which the address is located. For example,
-this may be a state, province, oblast, or prefecture.
+ویژگی فقط‌خواندنی **`region`** از رابط {{domxref('PaymentAddress')}} رشته‌ای را بازمی‌گرداند که شامل بالاترین سطح تقسیمات کشوری در کشورِ محلِ قرارگیری آدرس است. برای نمونه، این مقدار ممکن است یک ایالت (state)، استان (province)، اوبلاست (oblast) یا پریفکتور (prefecture) باشد.
 
-## Value
+## مقدار
 
-A string specifying the top-level administrative subdivision within
-the country in which the address is located. This region has different names in
-different countries, such as: state, province, oblast, prefecture, or county.
+یک رشته که بالاترین سطح تقسیمات اداری در کشورِ محلِ آدرس را مشخص می‌کند. این ناحیه در کشورهای مختلف نام‌های گوناگونی دارد؛ مانند: ایالت (state)، استان (province)، اوبلاست (oblast)، پریفکتور (prefecture) یا کانتی (county).
 
-## Usage notes
+## نکات استفاده
 
-In some countries, like Belgium, it's uncommon for people to provide a region as part
-of their postal address. In such cases, the browser returns an empty string as the value
-of `region`. However, the address should still be acceptable to use for its
-intended purpose (e.g., to ship a product). However, always verify addresses to make
-sure what the user provides is usable.
+در برخی کشورها مانند بلژیک، معمول نیست که افراد منطقه (region) را به‌عنوان بخشی از آدرس پستی خود وارد کنند. در چنین مواردی، مرورگر مقدار `region` را یک رشتهٔ خالی بازمی‌گرداند. با این حال، چنین آدرسی همچنان باید برای هدف موردنظر (مثلاً ارسال یک محصول) قابل قبول باشد. در هر صورت، همیشه آدرس‌ها را بررسی کنید تا مطمئن شوید آنچه کاربر ارائه کرده است قابل استفاده است.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
