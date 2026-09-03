@@ -1,7 +1,5 @@
 ---
 title: "Web Push API Notifications best practices"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Push_API/Best_Practices"
-status: "needs-translation"
 ---
 
 ---
@@ -12,55 +10,55 @@ page-type: guide
 
 {{DefaultAPISidebar("Push API") }}
 
-This article provides a useful summary of best practices to keep in mind when developing websites and applications that use Push Notifications for user engagement.
+این مقاله خلاصهٔ مفیدی از بهترین روش‌هایی ارائه می‌دهد که هنگام توسعهٔ وب‌سایت‌ها و برنامه‌هایی که از اعلان‌های فشاری (Push Notifications) برای تعامل با کاربر استفاده می‌کنند، باید در نظر داشته باشید.
 
-> "If done well, it's nice to have, but if not done well, it's really annoying." — Overheard conversation between two browser developers discussing the ethics of push notifications.
+> «اگر درست انجام شود، خوب است که وجود داشته باشد، اما اگر درست انجام نشود، واقعاً آزاردهنده است.» — گفت‌وگوی شنیده‌شده میان دو توسعه‌دهندهٔ مرورگر که دربارهٔ اخلاقیات اعلان‌های فشاری بحث می‌کردند.
 
-## Overview of web push notifications
+## مروری بر اعلان‌های فشاری وب
 
-Web Push Notifications (created using a combination of the [Notifications](/en-US/docs/Web/API/Notifications_API), [Push](/en-US/docs/Web/API/Push_API), and [Service Worker](/en-US/docs/Web/API/Service_Worker_API) APIs) are part of the rising noise that product developers and marketers are using to get attention for their sites. Searching the web for "web push notifications," you'll find articles from marketing experts who believe you should use push to re-engage people who have left your site so they can complete a purchase, or be sent the latest news, or receive links to recommended products.
+اعلان‌های فشاری وب (که با ترکیبی از [Notifications](/en-US/docs/Web/API/Notifications_API)، [Push](/en-US/docs/Web/API/Push_API)، و [Service Worker](/en-US/docs/Web/API/Service_Worker_API) ساخته می‌شوند) بخشی از سر و صدای فزاینده‌ای هستند که توسعه‌دهندگان محصول و بازاریاب‌ها برای جلب توجه به وب‌سایت‌هایشان استفاده می‌کنند. اگر در وب عبارت «اعلان‌های فشاری وب» را جست‌وجو کنید، مقاله‌هایی از کارشناسان بازاریابی خواهید دید که معتقدند باید از اعلان‌های فشاری برای درگیر کردن دوبارهٔ افرادی استفاده کنید که از سایت شما خارج شده‌اند؛ تا بتوانند خرید خود را کامل کنند، تازه‌ترین اخبار را دریافت کنند، یا لینک محصولات پیشنهادی به دستشان برسد.
 
-### The dark side
+### جنبهٔ تاریک
 
-Their novelty provides a new and unexploited opportunity for enterprising sites to reach potential customers. Has the customer switched tabs to answer an email? Win them back with an expiring offer of free shipping that they can't ignore!
+تازگی اعلان‌های فشاری فرصتی جدید و دست‌نخورده برای وب‌سایت‌های فعال فراهم می‌کند تا به مشتریان بالقوه دست پیدا کنند. آیا مشتری برای پاسخ دادن به یک ایمیل، برگه را عوض کرده است؟ با یک پیشنهادِ رو به انقضای ارسال رایگان که نمی‌تواند نادیده‌اش بگیرد، او را بازگردانید!
 
-But really, is this the best use of push notifications? Or is it a new iteration on the old and tired pop-up ad?
+اما واقعاً آیا این بهترین استفاده از اعلان‌های فشاری است؟ یا نسخهٔ تازه‌ای از همان تبلیغات پاپ‌آپ قدیمی و خسته‌کننده است؟
 
-> "Web push doesn't risk ending up in the spam folder. Nor can it be blocked by ad blockers. It shows right up on your desktop even when the website is shut. In mobile, it shows up in the notification tray, just like app push notifications, even when the browser is not running." — an unnamed marketing site
+> «اعلان‌های فشاری وب در خطر افتادن به پوشهٔ اسپم نیستند و مسدودکننده‌های تبلیغات هم نمی‌توانند آن‌ها را مسدود کنند. حتی وقتی وب‌سایت بسته است، درست روی دسکتاپ شما ظاهر می‌شوند. در موبایل هم درست مانند اعلان‌های فشاری برنامه‌ها، حتی وقتی مرورگر در حال اجرا نیست، در نوار اعلان‌ها نمایش داده می‌شوند.» — یک وب‌سایت بازاریابی ناشناس
 
-### Positive uses of push
+### کاربردهای مثبت اعلان‌های فشاری
 
-But there's a bright and useful side to push notifications, too. Let's say you and your team commonly use a chat program to communicate, but today you're happily working somewhere, and problem comes up. Say your program manager found a hiccup in the approvals and wants to get your feedback on something before she proceeds.
+اما اعلان‌های فشاری جنبهٔ روشن و مفیدی هم دارند. فرض کنید شما و تیم‌تان معمولاً برای ارتباط با یکدیگر از یک برنامهٔ چت استفاده می‌کنید، اما امروز با خیال راحت در جای دیگری مشغول کار هستید که یک مشکل پیش می‌آید. مثلاً مدیر برنامهٔ شما در فرایند تأییدها به یک اشکال کوچک برخورده است و می‌خواهد پیش از ادامه دادن، بازخورد شما را دربارهٔ چیزی بگیرد.
 
-After a few failed attempts to get your attention, they send you an email, and your email app produces a push notification that successfully alerts you, even though your mail web app is not open.
+پس از چند بار تلاش ناموفق برای جلب توجه شما، برایتان ایمیل می‌فرستند و برنامهٔ ایمیل شما اعلان فشاری تولید می‌کند که حتی با بسته بودن برنامهٔ وب ایمیل شما، با موفقیت شما را باخبر می‌کند.
 
-In this document, we'll talk about the ethical use of web push notifications. Sometimes they can eliminate frustration and annoyance, and sometimes they can cause them, and it's up to you as a developer to make wise recommendations (and decisions) about the use of push notifications.
+در این سند، دربارهٔ استفادهٔ اخلاقی از اعلان‌های فشاری وب صحبت خواهیم کرد. گاهی این اعلان‌ها می‌توانند سرخوردگی و آزردگی را از بین ببرند و گاهی می‌توانند باعث آن‌ها شوند؛ این به شما به‌عنوان توسعه‌دهنده بستگی دارد که دربارهٔ استفاده از اعلان‌های فشاری پیشنهادها (و تصمیم‌های) خردمندانه‌ای بدهید.
 
-## What are you hoping to achieve with this push notification?
+## با این اعلان فشاری امید دارید به چه چیزی برسید؟
 
-As with everything, with great power comes great responsibility. Every push notification should be useful and time-sensitive, and the user should always be asked for permission before sending the first one, and be offered an easy way to opt out of getting more in the future.
+مثل هر چیز دیگری، قدرت زیاد مسئولیت زیادی به همراه می‌آورد. هر اعلان فشاری باید مفید و به‌موقع باشد و پیش از ارسال نخستین اعلان، همیشه باید از کاربر اجازه گرفته شود و راه آسانی برای انصراف از دریافت اعلان‌های بعدی در آینده به او ارائه شود.
 
-There are some basic questions you can answer to determine if a push notification is needed:
+چند پرسش اساسی وجود دارد که می‌توانید به آن‌ها پاسخ دهید تا مشخص شود آیا اصلاً به یک اعلان فشاری نیاز است:
 
-- Is there someone waiting in real-time for a response? In our above example, the program manager is awaiting your response and so a push notification is appropriate.
-- Is up-to-the minute updating necessary? I use a service that aggregates different social media news sources. When a story I'm interested in is trending, I'd like to get a notification!
-- Is there breaking news that is timely? This is where it gets a little tricky. Sometimes news sites request push notifications so they can essentially say "Look at me! Look at me!" It all comes down to what the user wants, and you can use behavior to determine intent. For example, if the user views more than one article, or lingers on your page for several minutes, they may be interested in receiving updates.
+- آیا کسی در لحظه منتظر پاسخ است؟ در مثال بالا، مدیر برنامه منتظر پاسخ شماست و بنابراین اعلان فشاری مناسب است.
+- آیا به‌روزرسانی لحظه‌به‌لحظه ضروری است؟ من از سرویسی استفاده می‌کنم که منابع خبری شبکه‌های اجتماعی مختلف را جمع‌آوری می‌کند. وقتی داستانی که به آن علاقه‌مندم داغ می‌شود، دوست دارم اعلان دریافت کنم!
+- آیا خبر فوری و به‌موقعی وجود دارد؟ اینجا کار کمی پیچیده می‌شود. گاهی وب‌سایت‌های خبری درخواست اعلان فشاری می‌کنند تا عملاً بگویند «به من نگاه کن! به من نگاه کن!» همه‌چیز به خواستهٔ کاربر برمی‌گردد و شما می‌توانید از رفتار کاربر برای تعیین قصد او استفاده کنید. برای مثال، اگر کاربر بیش از یک مقاله را ببیند یا چند دقیقه در صفحهٔ شما بماند، ممکن است به دریافت به‌روزرسانی‌ها علاقه‌مند باشد.
 
-In addition to the question of whether a push notification is required at all, there are many different types of push notifications, ranging from casual-and-disappearing to persistent-and-requiring-interaction.
+جدای از این پرسش که آیا اصلاً اعلان فشاری لازم است، انواع مختلفی از اعلان‌های فشاری وجود دارند؛ از نوع بی‌اهمیت و زودگذر گرفته تا نوع ماندگار و نیازمند تعامل.
 
-We caution you to use the interaction-requiring ones very sparingly, since they can be the most annoying. Your notifications should be assistive, not disruptive.
+ما به شما هشدار می‌دهیم که از اعلان‌های نیازمند تعامل بسیار محدود و محتاطانه استفاده کنید، زیرا می‌توانند آزاردهنده‌ترین نوع باشند. اعلان‌های شما باید یاری‌دهنده باشند، نه مزاحم.
 
-## Building trust
+## ایجاد اعتماد
 
-Some studies have shown that as many as 60% of push notifications are blocked. Allowing your site to push notifications in realtime requires trust. You can build trust by having a well-designed website that provides good content that shows respect for the user, and a clear value to accepting push notifications.
+برخی مطالعات نشان داده‌اند که تا 60% از اعلان‌های فشاری مسدود می‌شوند. اجازه دادن به سایت شما برای ارسال اعلان‌های فشاری در لحظه، به اعتماد نیاز دارد. شما می‌توانید با داشتن وب‌سایتی خوش‌طراحی که محتوای خوب ارائه می‌دهد، احترام به کاربر را نشان می‌دهد و ارزش روشنی برای پذیرش اعلان‌های فشاری به همراه دارد، اعتماد ایجاد کنید.
 
-## Browser mitigations
+## اقدامات مرورگرها برای کاهش مشکل
 
-Because of abuses of push notifications in the past, web browser developers have begun to implement strategies to help mitigate this problem. For example, Safari 12.1 now requires—and other browsers either already do, or are planning to do so—that the user interact with the page in some way before the page can request permission to perform push notifications. This at least prevents the user from getting spontaneously asked this question on web pages that they've only glanced at once may rarely if ever look at again.
+به دلیل سوءاستفاده‌های گذشته از اعلان‌های فشاری، توسعه‌دهندگان مرورگرهای وب شروع به اجرای راهبردهایی برای کمک به کاهش این مشکل کرده‌اند. برای مثال، Safari 12.1 اکنون الزام می‌کند — و سایر مرورگرها یا قبلاً این کار را کرده‌اند یا در حال برنامه‌ریزی برای انجام آن هستند — که کاربر پیش از آن‌که صفحه بتواند درخواست اجازهٔ ارسال اعلان فشاری بدهد، به‌نحوی با آن صفحه تعامل داشته باشد. این کار دست‌کم مانع از آن می‌شود که کاربر به‌طور خودبه‌خود این پرسش را در وب‌سایت‌هایی ببیند که فقط یک بار گذرا به آن‌ها نگاه کرده و احتمالاً دیگر هیچ‌وقت به آن‌ها سر نمی‌زند.
 
-In the case of Firefox, see [Firefox bug 1524619](https://bugzil.la/1524619), in which we find that Firefox 68 implements this, disabled by default, behind the preference `dom.webnotifications.requireuserinteraction`.
+در مورد Firefox، به [Firefox bug 1524619](https://bugzil.la/1524619) مراجعه کنید؛ جایی که می‌بینیم Firefox 68 این ویژگی را با غیرفعال بودن پیش‌فرض، در پس تنظیمی به نام `dom.webnotifications.requireuserinteraction` پیاده‌سازی می‌کند.
 
-## See also
+## همچنین ببینید
 
 - [Notifications API](/en-US/docs/Web/API/Notifications_API)
 - [Using the Notifications API](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
