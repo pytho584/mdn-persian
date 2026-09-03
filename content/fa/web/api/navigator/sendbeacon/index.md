@@ -1,11 +1,5 @@
 ---
 title: "Navigator: sendBeacon() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon"
-status: "needs-translation"
----
-
----
-title: "Navigator: sendBeacon() method"
 short-title: sendBeacon()
 slug: Web/API/Navigator/sendBeacon
 page-type: web-api-instance-method
@@ -14,72 +8,58 @@ browser-compat: api.Navigator.sendBeacon
 
 {{APIRef("HTML DOM")}}
 
-The **`navigator.sendBeacon()`**
-method {{glossary("Asynchronous", "asynchronously")}} sends an [HTTP POST](/en-US/docs/Web/HTTP/Reference/Methods/POST) request containing a small amount of data to a web server.
+متد **`navigator.sendBeacon()`** به‌صورت {{glossary("Asynchronous", "ناهمزمان")}} یک درخواست [HTTP POST](/en-US/docs/Web/HTTP/Reference/Methods/POST) حاوی مقدار کمی داده را به یک سرور وب ارسال می‌کند.
 
-It's intended to be used for
-sending analytics data to a web server, and avoids some of the problems with
-legacy techniques for sending analytics, such as the use of
-{{domxref("XMLHttpRequest","XMLHttpRequest")}}.
+این متد برای ارسال داده‌های تحلیلی (analytics) به سرور وب در نظر گرفته شده است و از برخی مشکلات روش‌های قدیمی ارسال داده‌های تحلیلی، مانند استفاده از {{domxref("XMLHttpRequest","XMLHttpRequest")}}، جلوگیری می‌کند.
 
 > [!NOTE]
-> For use cases that need the ability to send requests with methods other than `POST`, or to change any request properties, or that need access to the server response, instead use the [`fetch()`](/en-US/docs/Web/API/Window/fetch) method with [`keepalive`](/en-US/docs/Web/API/RequestInit#keepalive) set to true.
+> برای موارد استفاده‌ای که نیاز به ارسال درخواست با متدهایی غیر از `POST` دارید، یا می‌خواهید ویژگی‌های درخواست را تغییر دهید، یا به پاسخ سرور نیاز دارید، به‌جای آن از متد [`fetch()`](/en-US/docs/Web/API/Window/fetch) با ویژگی [`keepalive`](/en-US/docs/Web/API/RequestInit#keepalive) تنظیم‌شده روی `true` استفاده کنید.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 sendBeacon(url)
 sendBeacon(url, data)
 ```
 
-### Parameters
+### پارامترها
 
 - `url`
-  - : The URL that will receive the _data_. Can be relative or absolute.
+  - : آدرس URL که _داده_ را دریافت می‌کند. می‌تواند نسبی یا مطلق باشد.
 - `data` {{Optional_inline}}
-  - : An {{jsxref("ArrayBuffer")}}, a {{jsxref("TypedArray")}}, a {{jsxref("DataView")}}, a {{domxref("Blob")}}, a string literal or object, a {{domxref("FormData")}} or a {{domxref("URLSearchParams")}} object containing the data to send. The total size of queued data is limited to 64 KiB (65,536 bytes).
+  - : یک {{jsxref("ArrayBuffer")}}، یک {{jsxref("TypedArray")}}، یک {{jsxref("DataView")}}، یک {{domxref("Blob")}}، یک رشته متنی (string literal) یا یک شیء، یک {{domxref("FormData")}} یا یک شیء {{domxref("URLSearchParams")}} حاوی داده‌هایی که قرار است ارسال شوند. اندازه کل داده‌های در صف‌گذاری‌شده به ۶۴ کیلوبایت (۶۵,۵۳۶ بایت) محدود است.
 
-### Return value
+### مقدار بازگشتی
 
-Returns `true` if the {{glossary("user agent")}} successfully queued the `data` for transfer. Otherwise, it returns `false`.
+اگر {{glossary("user agent", "عامل کاربر")}} با موفقیت `data` را برای انتقال در صف قرار داده باشد، `true` برمی‌گرداند. در غیر این صورت، `false` برمی‌گرداند.
 
-## Description
+## توضیحات
 
-This method is intended for analytics and diagnostics code to send data to a server.
+این متد برای کدهای تحلیلی و تشخیصی (analytics and diagnostics) در نظر گرفته شده است تا داده‌ها را به یک سرور ارسال کنند.
 
-A problem with sending analytics is that a site often wants to send analytics
-when the user has finished with a page: for example, when the user navigates
-to another page. In this situation the browser may be about to unload the page,
-and in that case the browser may choose not to send asynchronous
-{{domxref("XMLHttpRequest")}} requests.
+یکی از مشکلات ارسال داده‌های تحلیلی این است که یک وب‌سایت اغلب می‌خواهد زمانی که کاربر کارش با صفحه تمام شده است، داده‌های تحلیلی را ارسال کند؛ برای مثال، وقتی کاربر به صفحه دیگری منتقل می‌شود. در این وضعیت، مرورگر ممکن است در آستانه تخلیه (unload) صفحه باشد و در آن صورت ممکن است تصمیم بگیرد درخواست‌های ناهمزمان {{domxref("XMLHttpRequest")}} را ارسال نکند.
 
-In the past, web pages have tried to delay page unload long enough to send data. To do this they have
-used workarounds such as:
+در گذشته، صفحات وب سعی می‌کردند تخلیه صفحه را به اندازه کافی به تأخیر بیندازند تا داده‌ها ارسال شوند. برای این کار از راه‌حل‌های جایگزین مانند موارد زیر استفاده می‌کردند:
 
-- Submitting the data with a blocking synchronous `XMLHttpRequest` call.
-- Creating an {{HTMLElement("img")}} element and setting its `src`. Most user agents will delay the unload to load the image.
-- Creating a no-op loop for several seconds.
+- ارسال داده با یک فراخوانی مسدودکننده و همزمان (synchronous) `XMLHttpRequest`.
+- ایجاد یک عنصر {{HTMLElement("img")}} و تنظیم ویژگی `src` آن. اکثر عامل‌های کاربر، تخلیه صفحه را برای بارگذاری تصویر به تأخیر می‌اندازند.
+- ایجاد یک حلقه بدون عملیات (no-op loop) برای چند ثانیه.
 
-All these methods block unloading the document, which slows down navigation to the next page.
-There's nothing the next page can do to avoid this, so the new page seems
-slow, even though it's the fault of the previous page.
+همه این روش‌ها تخلیه سند را مسدود می‌کنند که این امر ناوبری به صفحه بعدی را کند می‌کند. صفحه بعدی هیچ کاری نمی‌تواند برای جلوگیری از این مشکل انجام دهد، بنابراین صفحه جدید کند به نظر می‌رسد، حتی اگر این تقصیر صفحه قبلی باشد.
 
-With the `sendBeacon()` method, the data is transmitted asynchronously when the user
-agent has an opportunity to do so, without delaying unload or the next navigation.
-This means:
+با متد `sendBeacon()`، داده‌ها به‌صورت ناهمزمان زمانی که عامل کاربر فرصت داشته باشد منتقل می‌شوند، بدون اینکه تخلیه صفحه یا ناوبری بعدی به تأخیر بیفتد. این یعنی:
 
-- The data is sent reliably
-- It's sent asynchronously
-- It doesn't impact the loading of the next page
+- داده‌ها به‌طور قابل‌اعتمادی ارسال می‌شوند
+- به‌صورت ناهمزمان ارسال می‌شوند
+- تأثیری بر بارگذاری صفحه بعدی ندارند
 
-The data is sent as an [HTTP POST](/en-US/docs/Web/HTTP/Reference/Methods/POST) request.
+داده به‌صورت یک درخواست [HTTP POST](/en-US/docs/Web/HTTP/Reference/Methods/POST) ارسال می‌شود.
 
-The limitation, however, is that the payload size is limited to about 64 KiB. For larger data transfers, consider using `fetch()` instead.
+با این حال، محدودیت این است که اندازه بار (payload) به حدود ۶۴ کیلوبایت محدود است. برای انتقال داده‌های حجیم‌تر، به‌جای آن از `fetch()` استفاده کنید.
 
-### Sending analytics at the end of a session
+### ارسال داده‌های تحلیلی در پایان یک نشست
 
-Websites often want to send analytics or diagnostics to the server when the user has finished with the page.
-The most reliable way to do this is to send the data on the [`visibilitychange`](/en-US/docs/Web/API/Document/visibilitychange_event) event:
+وب‌سایت‌ها اغلب می‌خواهند زمانی که کاربر کارش با صفحه تمام شده است، داده‌های تحلیلی یا تشخیصی را به سرور ارسال کنند. مطمئن‌ترین راه برای انجام این کار، ارسال داده در رویداد [`visibilitychange`](/en-US/docs/Web/API/Document/visibilitychange_event) است:
 
 ```js
 document.addEventListener("visibilitychange", () => {
@@ -89,31 +69,25 @@ document.addEventListener("visibilitychange", () => {
 });
 ```
 
-#### Avoid unload and beforeunload
+#### اجتناب از unload و beforeunload
 
-In the past, many websites have used the [`unload`](/en-US/docs/Web/API/Window/unload_event)
-or [`beforeunload`](/en-US/docs/Web/API/Window/beforeunload_event) events to send analytics at the end of a session.
-However, this is extremely unreliable. In many situations, especially on mobile, the browser will not fire the
-`unload`, `beforeunload`, or `pagehide` events. For example, these events will not fire in the following situation:
+در گذشته، بسیاری از وب‌سایت‌ها از رویدادهای [`unload`](/en-US/docs/Web/API/Window/unload_event) یا [`beforeunload`](/en-US/docs/Web/API/Window/beforeunload_event) برای ارسال داده‌های تحلیلی در پایان یک نشست استفاده می‌کردند. با این حال، این کار بسیار غیرقابل‌اعتماد است. در بسیاری از موقعیت‌ها، به‌ویژه در دستگاه‌های موبایل، مرورگر رویدادهای `unload`، `beforeunload` یا `pagehide` را فعال نمی‌کند. برای مثال، این رویدادها در شرایط زیر فعال نمی‌شوند:
 
-1. The user loads the page and interacts with it.
-2. When they are finished, they switch to a different app, instead of closing the tab.
-3. Later, they close the browser app using the phone's app manager.
+1. کاربر صفحه را بارگذاری می‌کند و با آن تعامل دارد.
+2. وقتی کارش تمام می‌شود، به‌جای بستن تب، به یک برنامه دیگر سوئیچ می‌کند.
+3. بعداً، با استفاده از مدیر برنامه‌های تلفن، برنامه مرورگر را می‌بندد.
 
-Additionally, the `unload` event is incompatible with the back/forward cache ([bfcache](https://web.dev/articles/bfcache))
-implemented in modern browsers. Some browsers, such as Firefox, handle this incompatibility by excluding pages from the bfcache if they contain unload handlers,
-thus hurting performance. Others, such as Safari and Chrome on Android, handle it by not firing the `unload` event when the user navigates to another page in the same tab.
+علاوه بر این، رویداد `unload` با حافظه نهان بازگشت/رفتن به جلو ([bfcache](https://web.dev/articles/bfcache)) که در مرورگرهای مدرن پیاده‌سازی شده است، سازگار نیست. برخی مرورگرها، مانند فایرفاکس، با این ناسازگاری به این صورت برخورد می‌کنند که اگر صفحات شامل کنترل‌کننده‌های `unload` باشند، آن صفحات را از bfcache حذف می‌کنند و در نتیجه عملکرد را تحت تأثیر قرار می‌دهند. برخی دیگر، مانند سافاری و کروم در اندروید، به این صورت برخورد می‌کنند که وقتی کاربر در همان تب به صفحه دیگری منتقل می‌شود، رویداد `unload` را فعال نمی‌کنند.
 
-Firefox will also exclude pages from the bfcache if they contain `beforeunload` handlers.
+فایرفاکس همچنین اگر صفحات شامل کنترل‌کننده‌های `beforeunload` باشند، آن صفحات را از bfcache حذف می‌کند.
 
-#### Use pagehide as a fallback
+#### استفاده از pagehide به عنوان راه‌حل جایگزین
 
-To support browsers which don't implement `visibilitychange`, use the [`pagehide`](/en-US/docs/Web/API/Window/pagehide_event) event.
-Like `beforeunload` and `unload`, this event is not reliably fired, especially on mobile. However, it is compatible with the bfcache.
+برای پشتیبانی از مرورگرهایی که `visibilitychange` را پیاده‌سازی نمی‌کنند، از رویداد [`pagehide`](/en-US/docs/Web/API/Window/pagehide_event) استفاده کنید. مانند `beforeunload` و `unload`، این رویداد نیز به‌طور قابل‌اعتمادی فعال نمی‌شود، به‌ویژه در موبایل. با این حال، با bfcache سازگار است.
 
-## Examples
+## مثال‌ها
 
-The following example specifies a handler for the {{domxref("document.visibilitychange_event", "visibilitychange")}} event. The handler calls `sendBeacon()` to send analytics.
+مثال زیر یک کنترل‌کننده برای رویداد {{domxref("document.visibilitychange_event", "visibilitychange")}} مشخص می‌کند. کنترل‌کننده برای ارسال داده‌های تحلیلی، `sendBeacon()` را فراخوانی می‌کند.
 
 ```js
 document.addEventListener("visibilitychange", () => {
@@ -123,22 +97,19 @@ document.addEventListener("visibilitychange", () => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The [`visibilitychange`](/en-US/docs/Web/API/Document/visibilitychange_event) event.
-- {{domxref("Beacon_API","Beacon API", "", "true")}} overview page.
-- [Don't lose user and app state, use Page Visibility](https://www.igvita.com/2015/11/20/dont-lose-user-and-app-state-use-page-visibility/) explains in
-  detail why you should use `visibilitychange`, not
-  `beforeunload`/`unload`.
-- [Page Lifecycle API](https://developer.chrome.com/docs/web-platform/page-lifecycle-api#developer-recommendations-for-each-state) gives best-practices guidance on handling
-  page lifecycle behavior in your web applications.
-- [PageLifecycle.js](https://github.com/GoogleChromeLabs/page-lifecycle): a JavaScript library that deals with cross-browser inconsistencies in page lifecycle behavior.
-- [Back/forward cache](https://web.dev/articles/bfcache) explains what the back/forward cache is, and its implications for various page lifecycle events.
+- رویداد [`visibilitychange`](/en-US/docs/Web/API/Document/visibilitychange_event).
+- صفحه نمای کلی {{domxref("Beacon_API","Beacon API", "", "true")}}.
+- [Don't lose user and app state, use Page Visibility](https://www.igvita.com/2015/11/20/dont-lose-user-and-app-state-use-page-visibility/) به‌طور مفصل توضیح می‌دهد که چرا باید از `visibilitychange` استفاده کنید، نه `beforeunload`/`unload`.
+- [Page Lifecycle API](https://developer.chrome.com/docs/web-platform/page-lifecycle-api#developer-recommendations-for-each-state) راهنمایی‌های بهترین روش‌ها را برای مدیریت رفتار چرخه حیات صفحه در برنامه‌های وب شما ارائه می‌دهد.
+- [PageLifecycle.js](https://github.com/GoogleChromeLabs/page-lifecycle): یک کتابخانه جاوااسکریپت که با ناسازگاری‌های بین مرورگرها در رفتار چرخه حیات صفحه مقابله می‌کند.
+- [Back/forward cache](https://web.dev/articles/bfcache) توضیح می‌دهد که حافظه نهان بازگشت/رفتن به جلو چیست و چه پیامدهایی برای رویدادهای مختلف چرخه حیات صفحه دارد.
