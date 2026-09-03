@@ -1,11 +1,5 @@
 ---
 title: "PaymentRequestEvent: modifiers property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/modifiers"
-status: "needs-translation"
----
-
----
-title: "PaymentRequestEvent: modifiers property"
 short-title: modifiers
 slug: Web/API/PaymentRequestEvent/modifiers
 page-type: web-api-instance-property
@@ -16,29 +10,28 @@ browser-compat: api.PaymentRequestEvent.modifiers
 
 {{SeeCompatTable}}{{APIRef("Web-Based Payment Handler API")}}{{AvailableInWorkers("service")}}
 
-The **`modifiers`** read-only property of the
-{{domxref("PaymentRequestEvent")}} interface returns an {{jsxref("Array")}} of `PaymentDetailsModifier` objects containing modifiers for payment details.
+ویژگی فقط‌خواندنی **`modifiers`** در رابط {{domxref("PaymentRequestEvent")}} یک {{jsxref("Array")}} از اشیاء `PaymentDetailsModifier` برمی‌گرداند که شامل اصلاح‌کننده‌هایی برای جزئیات پرداخت هستند.
 
-## Value
+## مقدار
 
-An array of objects containing modifiers for payment details. These objects contain the following properties:
+آرایه‌ای از اشیاء حاوی اصلاح‌کننده‌ها برای جزئیات پرداخت است. این اشیاء شامل ویژگی‌های زیر هستند:
 
 - `supportedMethods`
-  - : A payment method identifier. The members of the object only apply to the payment if the user selects this payment method.
+  - : یک شناسه‌ی روش پرداخت. اعضای این شیء فقط در صورتی روی پرداخت اعمال می‌شوند که کاربر این روش پرداخت را انتخاب کند.
 - `total`
-  - : A `PaymentItem` object containing the following properties:
+  - : یک شیء `PaymentItem` شامل ویژگی‌های زیر:
     - `label`
-      - : A string containing a human-readable description of the item, which may be displayed to the user.
+      - : رشته‌ای شامل توضیح قابل‌خواندن برای انسان درباره‌ی این مورد که ممکن است به کاربر نمایش داده شود.
     - `amount`
-      - : A `PaymentCurrencyAmount` object (see [`total` > Value](/en-US/docs/Web/API/PaymentRequestEvent/total#value)).
+      - : یک شیء `PaymentCurrencyAmount` (رجوع کنید به [`total` > Value](/en-US/docs/Web/API/PaymentRequestEvent/total#value)).
     - `pending`
-      - : A boolean. When set to true it means that the `amount` member is not final. This is commonly used to show items such as shipping or tax amounts that depend upon selection of shipping address or shipping option.
+      - : یک مقدار بولی. وقتی `true` باشد یعنی عضو `amount` نهایی نیست. این مورد معمولاً برای نمایش اقلامی مانند هزینه‌ی حمل‌ونقل یا مالیات استفاده می‌شود که به انتخاب آدرس حمل یا گزینه‌ی حمل بستگی دارند.
 - `additionalDisplayItems`
-  - : An array of `PaymentItem` objects providing additional display items to be included in the payment details. This member is commonly used to add a discount or surcharge line item indicating the reason for the different total amount for the selected payment method that the user agent MAY display.
+  - : آرایه‌ای از اشیاء `PaymentItem` که اقلام نمایشی اضافی را برای درج در جزئیات پرداخت فراهم می‌کنند. این عضو معمولاً برای افزودن یک ردیف تخفیف یا هزینه‌ی اضافه استفاده می‌شود که دلیل مبلغ کل متفاوت برای روش پرداخت انتخاب‌شده را نشان می‌دهد و عامل کاربر (user agent) ممکن است آن را نمایش دهد.
 - `data`
-  - : An object that provides optional information that might be needed by the supported payment methods. If supplied, it will be JSON-serialized.
+  - : شیءئی که اطلاعات اختیاری موردنیاز روش‌های پرداخت پشتیبانی‌شده را فراهم می‌کند. اگر ارائه شود، به‌صورت JSON سریال‌سازی خواهد شد.
 
-## Examples
+## مثال‌ها
 
 ```js
 self.addEventListener("paymentrequest", (e) => {
@@ -46,18 +39,18 @@ self.addEventListener("paymentrequest", (e) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Web-based payment apps overview](https://web.dev/articles/web-based-payment-apps-overview)
-- [Setting up a payment method](https://web.dev/articles/setting-up-a-payment-method)
-- [Life of a payment transaction](https://web.dev/articles/life-of-a-payment-transaction)
-- [Using the Payment Request API](/en-US/docs/Web/API/Payment_Request_API/Using_the_Payment_Request_API)
-- [Payment processing concepts](/en-US/docs/Web/API/Payment_Request_API/Concepts)
+- [مروری بر برنامه‌های پرداخت مبتنی بر وب](https://web.dev/articles/web-based-payment-apps-overview)
+- [راه‌اندازی یک روش پرداخت](https://web.dev/articles/setting-up-a-payment-method)
+- [مراحل یک تراکنش پرداخت](https://web.dev/articles/life-of-a-payment-transaction)
+- [استفاده از Payment Request API](/en-US/docs/Web/API/Payment_Request_API/Using_the_Payment_Request_API)
+- [مفاهیم پردازش پرداخت](/en-US/docs/Web/API/Payment_Request_API/Concepts)
