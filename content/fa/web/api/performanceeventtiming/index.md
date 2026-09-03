@@ -1,10 +1,4 @@
 ---
-title: "PerformanceEventTiming"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEventTiming"
-status: "needs-translation"
----
-
----
 title: PerformanceEventTiming
 slug: Web/API/PerformanceEventTiming
 page-type: web-api-interface
@@ -13,31 +7,31 @@ browser-compat: api.PerformanceEventTiming
 
 {{APIRef("Performance API")}}
 
-The `PerformanceEventTiming` interface of the Event Timing API provides insights into the latency of certain event types triggered by user interaction.
+رابط `PerformanceEventTiming` از Event Timing API اطلاعاتی درباره تأخیر (latency) انواع خاصی از رویدادهای ناشی از تعامل کاربر فراهم می‌کند.
 
-## Description
+## توضیحات
 
-This API enables visibility into slow events by providing event timestamps and duration for certain event types ([see below](#events_exposed)). For example, you can monitor the time between a user action and the start of its event handler, or the time an event handler takes to run.
+این API با ارائه زمان‌وقوع و مدت‌زمان برخی انواع رویداد (به [رویدادهای ارائه‌شده](#events_exposed) در ادامه مراجعه کنید)، امکان مشاهده رویدادهای کُند را می‌دهد. برای مثال، می‌توانید زمان بین اقدام کاربر و شروع اجرای مدیریت‌کننده رویداد (event handler) یا مدت‌زمان اجرای مدیریت‌کننده رویداد را پایش کنید.
 
-This API is particularly useful for measuring the {{Glossary("Interaction to Next Paint")}} (INP): the longest time (minus some outliers) from the point when a user interacts with your app to the point until the browser was actually able to respond to that interaction.
+این API به‌ویژه برای اندازه‌گیری {{Glossary("Interaction to Next Paint")}} (INP) مفید است: بلندترین مدت‌زمان (به‌جز برخی مقادیر پرت) از لحظه‌ای که کاربر با برنامه شما تعامل برقرار می‌کند تا لحظه‌ای که مرورگر واقعاً بتواند به آن تعامل پاسخ دهد.
 
-You typically work with `PerformanceEventTiming` objects by creating a {{domxref("PerformanceObserver")}} instance and then calling its [`observe()`](/en-US/docs/Web/API/PerformanceObserver/observe) method, passing in `"event"` or `"first-input"` as the value of the [`type`](/en-US/docs/Web/API/PerformanceEntry/entryType) option. The `PerformanceObserver` object's callback will then be called with a list of `PerformanceEventTiming` objects which you can analyze. See the [example below](#getting_event_timing_information) for more.
+معمولاً با ساختن یک نمونه از {{domxref("PerformanceObserver")}} و سپس فراخوانی متد [`observe()`](/en-US/docs/Web/API/PerformanceObserver/observe) روی آن، با آبجکت‌های `PerformanceEventTiming` کار می‌کنید؛ مقدار [`type`](/en-US/docs/Web/API/PerformanceEntry/entryType) را روی `"event"` یا `"first-input"` قرار می‌دهید. سپس callback آبجکت `PerformanceObserver` با فهرستی از آبجکت‌های `PerformanceEventTiming` فراخوانی می‌شود که می‌توانید آن‌ها را تحلیل کنید. برای جزئیات بیشتر به [مثال زیر](#getting_event_timing_information) مراجعه کنید.
 
-By default, `PerformanceEventTiming` entries are exposed when their `duration` is 104ms or greater. Research suggests that user input that is not handled within 100ms is considered slow and 104ms is the first multiple of 8 greater than 100ms (for security reasons, this API is rounded to the nearest multiple of 8ms).
-However, you can set the {{domxref("PerformanceObserver")}} to a different threshold using the `durationThreshold` option in the [`observe()`](/en-US/docs/Web/API/PerformanceObserver/observe) method.
+به‌صورت پیش‌فرض، ورودی‌های `PerformanceEventTiming` زمانی ارائه می‌شوند که `duration` آن‌ها ۱۰۴ میلی‌ثانیه یا بیشتر باشد. پژوهش‌ها نشان می‌دهد که ورودی کاربر که در کمتر از ۱۰۰ میلی‌ثانیه پردازش نشود، کُند تلقی می‌شود و ۱۰۴ میلی‌ثانیه نخستین مضرب ۸ بزرگ‌تر از ۱۰۰ است (به دلایل امنیتی، مقادیر این API به نزدیک‌ترین مضرب ۸ میلی‌ثانیه گرد می‌شوند).
+البته می‌توانید با استفاده از گزینه `durationThreshold` در متد [`observe()`](/en-US/docs/Web/API/PerformanceObserver/observe)، آستانه متفاوتی برای {{domxref("PerformanceObserver")}} تعیین کنید.
 
-This interface inherits methods and properties from its parent, {{domxref("PerformanceEntry")}}:
+این رابط، متدها و ویژگی‌های والد خود، {{domxref("PerformanceEntry")}} را به ارث می‌برد:
 
 {{InheritanceDiagram}}
 
-### Events exposed
+### رویدادهای ارائه‌شده
 
-The following event types are exposed by the Event Timing API:
+انواع رویداد زیر توسط Event Timing API ارائه می‌شوند:
 
 <table>
   <tbody>
     <tr>
-      <th scope="row">Click events</th>
+      <th scope="row">رویدادهای کلیک</th>
       <td>
         {{domxref("Element/auxclick_event", "auxclick")}},
         {{domxref("Element/click_event", "click")}},
@@ -46,7 +40,7 @@ The following event types are exposed by the Event Timing API:
       </td>
     </tr>
     <tr>
-      <th scope="row">Composition events</th>
+      <th scope="row">رویدادهای ترکیب</th>
       <td>
         {{domxref("Element/compositionend_event", "compositionend")}},
         {{domxref("Element/compositionstart_event", "compositionstart")}},
@@ -54,7 +48,7 @@ The following event types are exposed by the Event Timing API:
       </td>
     </tr>
     <tr>
-      <th scope="row">Drag &amp; drop events</th>
+      <th scope="row">رویدادهای کشیدن و رها کردن (drag &amp; drop)</th>
       <td>
         {{domxref("HTMLElement/dragend_event", "dragend")}},
         {{domxref("HTMLElement/dragenter_event", "dragenter")}},
@@ -65,14 +59,14 @@ The following event types are exposed by the Event Timing API:
       </td>
     </tr>
     <tr>
-      <th scope="row">Input events</th>
+      <th scope="row">رویدادهای ورودی</th>
       <td>
         {{domxref("Element/beforeinput_event", "beforeinput")}},
         {{domxref("Element/input_event", "input")}}
       </td>
     </tr>
     <tr>
-      <th scope="row">Keyboard events</th>
+      <th scope="row">رویدادهای صفحه‌کلید</th>
       <td>
         {{domxref("Element/keydown_event", "keydown")}},
         {{domxref("Element/keypress_event", "keypress")}},
@@ -80,7 +74,7 @@ The following event types are exposed by the Event Timing API:
       </td>
     </tr>
     <tr>
-      <th scope="row">Mouse events</th>
+      <th scope="row">رویدادهای ماوس</th>
       <td>
         {{domxref("Element/mousedown_event", "mousedown")}},
         {{domxref("Element/mouseenter_event", "mouseenter")}},
@@ -91,7 +85,7 @@ The following event types are exposed by the Event Timing API:
       </td>
     </tr>
     <tr>
-      <th scope="row">Pointer events</th>
+      <th scope="row">رویدادهای اشاره‌گر</th>
       <td>
         {{domxref("Element/pointerover_event", "pointerover")}},
         {{domxref("Element/pointerenter_event", "pointerenter")}},
@@ -105,7 +99,7 @@ The following event types are exposed by the Event Timing API:
       </td>
     </tr>
     <tr>
-      <th scope="row">Touch events</th>
+      <th scope="row">رویدادهای لمسی</th>
       <td>
         {{domxref("Element/touchstart_event", "touchstart")}},
         {{domxref("Element/touchend_event", "touchend")}},
@@ -115,55 +109,54 @@ The following event types are exposed by the Event Timing API:
   </tbody>
 </table>
 
-Note that the following events are not included in the list because they are continuous events and no meaningful event counts or performance metrics can be obtained at this point: {{domxref("Element/mousemove_event", "mousemove")}}, {{domxref("Element/pointermove_event", "pointermove")}},
-{{domxref("Element/pointerrawupdate_event", "pointerrawupdate")}}, {{domxref("Element/touchmove_event", "touchmove")}}, {{domxref("Element/wheel_event", "wheel")}}, {{domxref("HTMLElement/drag_event", "drag")}}.
+توجه داشته باشید که رویدادهای زیر در این فهرست گنجانده نشده‌اند، زیرا رویدادهای پیوسته‌ای هستند و در این مرحله نمی‌توان شمارش معنادار رویداد یا معیارهای عملکردی از آن‌ها به دست آورد: {{domxref("Element/mousemove_event", "mousemove")}}, {{domxref("Element/pointermove_event", "pointermove")}}, {{domxref("Element/pointerrawupdate_event", "pointerrawupdate")}}, {{domxref("Element/touchmove_event", "touchmove")}}, {{domxref("Element/wheel_event", "wheel")}}, {{domxref("HTMLElement/drag_event", "drag")}}.
 
-To get a list of all exposed events, you can also look up keys in the {{domxref("performance.eventCounts")}} map:
+برای دریافت فهرست همه رویدادهای ارائه‌شده، می‌توانید کلیدهای موجود در نگاشت {{domxref("performance.eventCounts")}} را نیز بررسی کنید:
 
 ```js
 const exposedEventsList = [...performance.eventCounts.keys()];
 ```
 
-## Constructor
+## سازنده
 
-This interface has no constructor on its own. See the [example below](#getting_event_timing_information) for how to typically get the information the `PerformanceEventTiming` interface holds.
+این رابط به‌تنهایی سازنده‌ای ندارد. برای روش معمول دریافت اطلاعاتی که رابط `PerformanceEventTiming` در خود نگه می‌دارد، به [مثال زیر](#getting_event_timing_information) مراجعه کنید.
 
-## Instance properties
+## خصوصیات نمونه
 
-This interface extends the following {{domxref("PerformanceEntry")}} properties for event timing performance entry types by qualifying them as follows:
+این رابط، ویژگی‌های زیر از {{domxref("PerformanceEntry")}} را برای انواع ورودی‌های performance مربوط به زمان‌بندی رویداد به شکل زیر بازتعریف می‌کند:
 
 - {{domxref("PerformanceEntry.duration")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref("DOMHighResTimeStamp")}} representing the time from `startTime` to the next rendering paint (rounded to the nearest 8ms).
+  - : یک {{domxref("DOMHighResTimeStamp")}} برمی‌گرداند که مدت‌زمان از `startTime` تا رندرِ بعدی (rendering paint) را نشان می‌دهد (به نزدیک‌ترین ۸ میلی‌ثانیه گرد شده است).
 - {{domxref("PerformanceEntry.entryType")}} {{ReadOnlyInline}}
-  - : Returns `"event"` (for long events) or `"first-input"` (for the first user interaction).
+  - : مقدار `"event"` (برای رویدادهای طولانی) یا `"first-input"` (برای نخستین تعامل کاربر) را برمی‌گرداند.
 - {{domxref("PerformanceEntry.name")}} {{ReadOnlyInline}}
-  - : Returns the associated event's type.
+  - : نوع رویداد مرتبط را برمی‌گرداند.
 - {{domxref("PerformanceEntry.startTime")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref("DOMHighResTimeStamp")}} representing the associated event's [`timestamp`](/en-US/docs/Web/API/Event/timeStamp) property. This is the time the event was created and can be considered as a proxy for the time the user interaction occurred.
+  - : یک {{domxref("DOMHighResTimeStamp")}} برمی‌گرداند که ویژگی [`timestamp`](/en-US/docs/Web/API/Event/timeStamp) رویداد مرتبط را نشان می‌دهد. این زمان، زمانِ ایجاد رویداد است و می‌توان آن را به‌عنوان برآوردی از زمان رخ دادن تعامل کاربر در نظر گرفت.
 
-This interface also supports the following properties:
+این رابط همچنین از ویژگی‌های زیر پشتیبانی می‌کند:
 
 - {{domxref("PerformanceEventTiming.cancelable")}} {{ReadOnlyInline}}
-  - : Returns the associated event's [`cancelable`](/en-US/docs/Web/API/Event/cancelable) property.
+  - : ویژگی [`cancelable`](/en-US/docs/Web/API/Event/cancelable) رویداد مرتبط را برمی‌گرداند.
 - {{domxref("PerformanceEventTiming.interactionId")}} {{ReadOnlyInline}}
-  - : Returns the ID that uniquely identifies the user interaction which triggered the associated event.
+  - : شناسه‌ای را برمی‌گرداند که تعامل کاربرِ محرکِ رویداد مرتبط را به‌شکلی یکتا شناسایی می‌کند.
 - {{domxref("PerformanceEventTiming.processingStart")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref("DOMHighResTimeStamp")}} representing the time at which event dispatch started. To measure the time between a user action and the time the event handler starts to run, calculate `processingStart-startTime`.
+  - : یک {{domxref("DOMHighResTimeStamp")}} برمی‌گرداند که زمان آغاز ارسال (dispatch) رویداد را نشان می‌دهد. برای اندازه‌گیری زمان بین اقدام کاربر و زمانی که مدیریت‌کننده رویداد شروع به اجرا می‌کند، `processingStart-startTime` را محاسبه کنید.
 - {{domxref("PerformanceEventTiming.processingEnd")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref("DOMHighResTimeStamp")}} representing the time at which the event dispatch ended. To measure the time the event handler took to run, calculate `processingEnd-processingStart`.
+  - : یک {{domxref("DOMHighResTimeStamp")}} برمی‌گرداند که زمان پایان ارسال رویداد را نشان می‌دهد. برای اندازه‌گیری مدت‌زمان اجرای مدیریت‌کننده رویداد، `processingEnd-processingStart` را محاسبه کنید.
 - {{domxref("PerformanceEventTiming.target")}} {{ReadOnlyInline}}
-  - : Returns the associated event's last target, if it is not removed.
+  - : آخرین هدف (target) رویداد مرتبط را برمی‌گرداند، اگر حذف نشده باشد.
 
-## Instance methods
+## متدهای نمونه
 
 - {{domxref("PerformanceEventTiming.toJSON()")}}
-  - : Returns a JSON representation of the `PerformanceEventTiming` object.
+  - : یک نمایش JSON از آبجکت `PerformanceEventTiming` برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-### Getting event timing information
+### دریافت اطلاعات زمان‌بندی رویداد
 
-To get event timing information, create a {{domxref("PerformanceObserver")}} instance and then call its [`observe()`](/en-US/docs/Web/API/PerformanceObserver/observe) method, passing in `"event"` or `"first-input"` as the value of the [`type`](/en-US/docs/Web/API/PerformanceEntry/entryType) option. You also need to set `buffered` to `true` to get access to events the user agent buffered while constructing the document. The `PerformanceObserver` object's callback will then be called with a list of `PerformanceEventTiming` objects which you can analyze.
+برای دریافت اطلاعات زمان‌بندی رویداد، یک نمونه از {{domxref("PerformanceObserver")}} بسازید و سپس متد [`observe()`](/en-US/docs/Web/API/PerformanceObserver/observe) را با مقدار `"event"` یا `"first-input"` برای [`type`](/en-US/docs/Web/API/PerformanceEntry/entryType) صدا بزنید. همچنین باید `buffered` را روی `true` قرار دهید تا به رویدادهایی که عامل کاربر هنگام ساخت سند در بافر قرار داده است دسترسی داشته باشید. سپس callback آبجکت `PerformanceObserver` با فهرستی از آبجکت‌های `PerformanceEventTiming` فراخوانی می‌شود که می‌توانید آن‌ها را تحلیل کنید.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -187,21 +180,21 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "event", buffered: true });
 ```
 
-You can also set a different [`durationThreshold`](/en-US/docs/Web/API/PerformanceObserver/observe#durationthreshold). The default is 104ms and the minimum possible duration threshold is 16ms.
+همچنین می‌توانید [`durationThreshold`](/en-US/docs/Web/API/PerformanceObserver/observe#durationthreshold) متفاوتی تعیین کنید. مقدار پیش‌فرض ۱۰۴ میلی‌ثانیه است و کمترین آستانه ممکن ۱۶ میلی‌ثانیه است.
 
 ```js
 observer.observe({ type: "event", durationThreshold: 16, buffered: true });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - [Intersection Observer API](/en-US/docs/Web/API/Intersection_Observer_API)
 - [Page Visibility API](/en-US/docs/Web/API/Page_Visibility_API)
