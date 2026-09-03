@@ -1,11 +1,5 @@
 ---
 title: "PannerNode: PannerNode() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PannerNode/PannerNode"
-status: "needs-translation"
----
-
----
-title: "PannerNode: PannerNode() constructor"
 short-title: PannerNode()
 slug: Web/API/PannerNode/PannerNode
 page-type: web-api-constructor
@@ -14,72 +8,64 @@ browser-compat: api.PannerNode.PannerNode
 
 {{APIRef("Web Audio API")}}
 
-The **`PannerNode()`** constructor of the [Web Audio API](/en-US/docs/Web/API/Web_Audio_API) creates a new {{domxref("PannerNode")}} object instance.
+سازنده **`PannerNode()`** در [Web Audio API](/en-US/docs/Web/API/Web_Audio_API) یک نمونه جدید از شیء {{domxref("PannerNode")}} ایجاد می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 new PannerNode(context)
 new PannerNode(context, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `context`
-  - : A {{domxref("BaseAudioContext")}} representing the audio context you want the node to be associated with.
+  - : یک {{domxref("BaseAudioContext")}} که نشان‌دهنده بافت (context) صوتی مورد نظر برای اتصال این گره است.
 - `options` {{optional_inline}}
-  - : A [`PannerOptions`](https://webaudio.github.io/web-audio-api/#idl-def-PannerOptions) dictionary object defining the properties you want the `PannerNode` to have:
+  - : یک شیء دیکشنری از نوع [`PannerOptions`](https://webaudio.github.io/web-audio-api/#idl-def-PannerOptions) که ویژگی‌های مورد نظر برای `PannerNode` را مشخص می‌کند:
     - `panningModel`
-      - : The {{domxref("PannerNode.panningModel")}} you want the {{domxref("PannerNode")}} to have (the default is `equalpower`.)
+      - : {{domxref("PannerNode.panningModel")}} مورد نظر برای {{domxref("PannerNode")}} (مقدار پیش‌فرض `equalpower` است).
     - `distanceModel`
-      - : The {{domxref("PannerNode.distanceModel")}} you want the {{domxref("PannerNode")}} to have (the default is `inverse`.)
+      - : {{domxref("PannerNode.distanceModel")}} مورد نظر برای {{domxref("PannerNode")}} (مقدار پیش‌فرض `inverse` است).
     - `positionX`
-      - : The {{domxref("PannerNode.positionX")}} you want the {{domxref("PannerNode")}} to have (the default is `0`.)
+      - : {{domxref("PannerNode.positionX")}} مورد نظر برای {{domxref("PannerNode")}} (مقدار پیش‌فرض `0` است).
     - `positionY`
-      - : The {{domxref("PannerNode.positionY")}} you want the {{domxref("PannerNode")}} to have (the default is `0`.)
+      - : {{domxref("PannerNode.positionY")}} مورد نظر برای {{domxref("PannerNode")}} (مقدار پیش‌فرض `0` است).
     - `positionZ`
-      - : The {{domxref("PannerNode.positionZ")}} you want the {{domxref("PannerNode")}} to have (the default is `0`.)
+      - : {{domxref("PannerNode.positionZ")}} مورد نظر برای {{domxref("PannerNode")}} (مقدار پیش‌فرض `0` است).
     - `orientationX`
-      - : The {{domxref("PannerNode.orientationX")}} you want the {{domxref("PannerNode")}} to have (the default is `1`.)
+      - : {{domxref("PannerNode.orientationX")}} مورد نظر برای {{domxref("PannerNode")}} (مقدار پیش‌فرض `1` است).
     - `orientationY`
-      - : The {{domxref("PannerNode.orientationY")}} you want the {{domxref("PannerNode")}} to have (the default is `0`.)
+      - : {{domxref("PannerNode.orientationY")}} مورد نظر برای {{domxref("PannerNode")}} (مقدار پیش‌فرض `0` است).
     - `orientationZ`
-      - : The {{domxref("PannerNode.orientationZ")}} you want the {{domxref("PannerNode")}} to have (the default is `0`.)
+      - : {{domxref("PannerNode.orientationZ")}} مورد نظر برای {{domxref("PannerNode")}} (مقدار پیش‌فرض `0` است).
     - `refDistance`
-      - : The {{domxref("PannerNode.refDistance")}} you want the {{domxref("PannerNode")}} to have. The default is `1`, and negative values are not allowed.
+      - : {{domxref("PannerNode.refDistance")}} مورد نظر برای {{domxref("PannerNode")}}. مقدار پیش‌فرض `1` است و مقادیر منفی مجاز نیستند.
     - `maxDistance`
-      - : The {{domxref("PannerNode.maxDistance")}} you want the {{domxref("PannerNode")}} to have. The default is `10000`, and non-positive values are not allowed.
+      - : {{domxref("PannerNode.maxDistance")}} مورد نظر برای {{domxref("PannerNode")}}. مقدار پیش‌فرض `10000` است و مقادیر غیرمثبت (صفر یا منفی) مجاز نیستند.
     - `rolloffFactor`
-      - : The {{domxref("PannerNode.rolloffFactor")}} you want the {{domxref("PannerNode")}} to have. The default is `1`, and negative values are not allowed.
+      - : {{domxref("PannerNode.rolloffFactor")}} مورد نظر برای {{domxref("PannerNode")}}. مقدار پیش‌فرض `1` است و مقادیر منفی مجاز نیستند.
     - `coneInnerAngle`
-      - : The {{domxref("PannerNode.coneInnerAngle")}} you want the {{domxref("PannerNode")}} to have (the default is `360`.)
+      - : {{domxref("PannerNode.coneInnerAngle")}} مورد نظر برای {{domxref("PannerNode")}} (مقدار پیش‌فرض `360` است).
     - `coneOuterAngle`
-      - : The {{domxref("PannerNode.coneOuterAngle")}} you want the {{domxref("PannerNode")}} to have (the default is `360`.)
+      - : {{domxref("PannerNode.coneOuterAngle")}} مورد نظر برای {{domxref("PannerNode")}} (مقدار پیش‌فرض `360` است).
     - `coneOuterGain`
-      - : The {{domxref("PannerNode.coneOuterGain")}} you want the {{domxref("PannerNode")}} to have. The default is `0`, and its value can be in the range 0–1.
+      - : {{domxref("PannerNode.coneOuterGain")}} مورد نظر برای {{domxref("PannerNode")}}. مقدار پیش‌فرض `0` است و مقدار آن می‌تواند در بازه ۰ تا ۱ باشد.
     - `channelCount`
-      - : Represents an integer used to determine how many channels are used when [up-mixing and down-mixing](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) connections to any inputs to the node. (See
-        {{domxref("AudioNode.channelCount")}} for more information.) Its usage and precise
-        definition depend on the value of `channelCountMode`.
+      - : یک عدد صحیح که مشخص می‌کند هنگام [up-mixing و down-mixing](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) اتصالات به ورودی‌های گره، از چند کانال استفاده شود. (برای اطلاعات بیشتر به {{domxref("AudioNode.channelCount")}} مراجعه کنید.) کاربرد و تعریف دقیق آن به مقدار `channelCountMode` بستگی دارد.
     - `channelCountMode`
-      - : Represents an enumerated value describing the way channels must be matched between
-        the node's inputs and outputs. (See {{domxref("AudioNode.channelCountMode")}} for more
-        information including default values.)
+      - : یک مقدار شمارشی (enumerated) که نحوه تطبیق کانال‌ها بین ورودی و خروجی گره را توصیف می‌کند. (برای اطلاعات بیشتر از جمله مقادیر پیش‌فرض به {{domxref("AudioNode.channelCountMode")}} مراجعه کنید.)
     - `channelInterpretation`
-      - : Represents an enumerated value describing the meaning of the channels. This
-        interpretation will define how audio [up-mixing and down-mixing](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) will happen.
-        The possible values are `"speakers"` or `"discrete"`. (See
-        {{domxref("AudioNode.channelCountMode")}} for more information including default
-        values.)
+      - : یک مقدار شمارشی که مفهوم کانال‌ها را توصیف می‌کند. این تفسیر مشخص می‌کند که [up-mixing و down-mixing](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) صدا چگونه انجام شود. مقادیر ممکن عبارتند از `"speakers"` یا `"discrete"`. (برای اطلاعات بیشتر از جمله مقادیر پیش‌فرض به {{domxref("AudioNode.channelCountMode")}} مراجعه کنید.)
 
-### Exceptions
+### استثناها (Exceptions)
 
 - {{jsxref("RangeError")}}
-  - : Thrown if the `refDistance`, `maxDistance`, or `rolloffFactor` properties have been given a value that is outside the accepted range.
+  - : اگر ویژگی‌های `refDistance`، `maxDistance` یا `rolloffFactor` مقداری خارج از محدوده مجاز داشته باشند، این خطا پرتاب می‌شود.
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the `coneOuterGain` property has been given a value outside the accepted range (0–1).
+  - : اگر ویژگی `coneOuterGain` مقداری خارج از محدوده مجاز (۰ تا ۱) داشته باشد، این خطا پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
 ```js
 const ctx = new AudioContext();
@@ -92,10 +78,10 @@ const options = {
 const myPanner = new PannerNode(ctx, options);
 ```
 
-## Specifications
+## مشخصات (Specifications)
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر (Browser compatibility)
 
 {{Compat}}
