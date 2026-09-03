@@ -1,7 +1,5 @@
 ---
 title: "Notification: tag property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Notification/tag"
-status: "needs-translation"
 ---
 
 ---
@@ -14,32 +12,26 @@ browser-compat: api.Notification.tag
 
 {{APIRef("Web Notifications")}}{{securecontext_header}} {{AvailableInWorkers}}
 
-The **`tag`** read-only property of the
-{{domxref("Notification")}} interface signifies an identifying tag for the notification,
-as specified in the `tag` option of the
-{{domxref("Notification.Notification","Notification()")}} constructor.
+ویژگی فقط‌خواندنی **`tag`** در رابط {{domxref("Notification")}} نشان‌دهندهٔ یک برچسب شناسایی برای اعلان است؛ همان‌گونه که در گزینهٔ `tag` سازندهٔ {{domxref("Notification.Notification","Notification()")}} مشخص شده است.
 
-The idea of notification tags is that more than one notification can share the same
-tag, linking them together. One notification can then be programmatically replaced with
-another to avoid the users' screen being filled up with a huge number of similar
-notifications.
+ایدهٔ برچسب‌های اعلان این است که بیش از یک اعلان بتوانند برچسب یکسانی داشته باشند و از این طریق به یکدیگر مرتبط شوند. سپس می‌توان یک اعلان را به‌صورت برنامه‌نویسی‌شده با اعلان دیگری جایگزین کرد تا صفحهٔ نمایش کاربر با تعداد بسیار زیادی اعلان مشابه پر نشود.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
-Our [Using the Notifications API](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API#replacing_existing_notifications) article has a good example of tag usage.
+مقالهٔ [استفاده از API اعلان‌ها](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API#replacing_existing_notifications) ما مثال خوبی از کاربرد برچسب ارائه می‌دهد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Using the Notifications API](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
+- [استفاده از API اعلان‌ها](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
