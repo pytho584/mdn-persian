@@ -1,7 +1,5 @@
 ---
 title: "PublicKeyCredential: signalAllAcceptedCredentials() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredential/signalAllAcceptedCredentials_static"
-status: "needs-translation"
 ---
 
 ---
@@ -14,11 +12,11 @@ browser-compat: api.PublicKeyCredential.signalAllAcceptedCredentials_static
 
 {{APIRef("Web Authentication API")}}{{securecontext_header}}
 
-The **`signalAllAcceptedCredentials()`** static method of the {{domxref("PublicKeyCredential")}} interface signals to the authenticator all of the valid [credential IDs](/en-US/docs/Web/API/PublicKeyCredentialRequestOptions#id) that the [relying party](https://en.wikipedia.org/wiki/Relying_party) (RP) server still holds for a particular user.
+متد ایستای **`signalAllAcceptedCredentials()`** از واسط {{domxref("PublicKeyCredential")}} به اصالت‌سنج (authenticator) اعلام می‌کند که همهٔ [شناسه‌های اعتبارنامه](/en-US/docs/Web/API/PublicKeyCredentialRequestOptions#id) معتبری که سرور [طرف اعتماد (relying party)](https://en.wikipedia.org/wiki/Relying_party) (RP) هنوز برای یک کاربر خاص نگه داشته است کدام‌اند.
 
-This allows the authenticator to update credential information, removing all credentials that are no longer recognized by the RP, such as those for deleted accounts. The method should be called each time a user authenticates with the RP.
+این کار به اصالت‌سنج اجازه می‌دهد اطلاعات اعتبارنامه‌ها را به‌روزرسانی کند و همهٔ اعتبارنامه‌هایی را که دیگر توسط RP شناسایی نمی‌شوند، مثلاً اعتبارنامه‌های مربوط به حساب‌های حذف‌شده، حذف کند. این متد باید هر بار که کاربر با RP احراز هویت می‌کند فراخوانی شود.
 
-`signalAllAcceptedCredentials()` should _only_ be called when the current user is authenticated — after sign up or sign-in, or when the user deletes a credential — as it exposes sensitive information belonging to the user.
+`signalAllAcceptedCredentials()` باید _فقط_ زمانی فراخوانی شود که کاربر فعلی احراز هویت شده است — پس از ثبت‌نام یا ورود، یا زمانی که کاربر یک اعتبارنامه را حذف می‌کند — زیرا این متد اطلاعات حساس متعلق به کاربر را افشا می‌کند.
 
 ## Syntax
 
@@ -29,53 +27,53 @@ signalAllAcceptedCredentials(options)
 ### Parameters
 
 - `options`
-  - : An object representing the valid credentials, which contains the following properties:
+  - : یک شیء که نشان‌دهندهٔ اعتبارنامه‌های معتبر است و شامل ویژگی‌های زیر می‌باشد:
     - `allAcceptedCredentialIds`
-      - : An array of base64url-encoded strings representing the [`id`s of the credentials](/en-US/docs/Web/API/PublicKeyCredentialRequestOptions#id) that are still valid.
+      - : آرایه‌ای از رشته‌های کدگذاری‌شده با base64url که نشان‌دهندهٔ [`id`های اعتبارنامه‌هایی](/en-US/docs/Web/API/PublicKeyCredentialRequestOptions#id) هستند که هنوز معتبرند.
     - `rpId`
-      - : A string representing the [`id` of the RP](/en-US/docs/Web/API/PublicKeyCredentialCreationOptions#id_2) that sent the signal.
+      - : رشته‌ای که [`id` طرف اعتماد](/en-US/docs/Web/API/PublicKeyCredentialCreationOptions#id_2) را که این سیگنال را ارسال کرده نشان می‌دهد.
     - `userId`
-      - : A base64url-encoded string representing the [`id` of the user](/en-US/docs/Web/API/PublicKeyCredentialCreationOptions#id_3) the credentials relate to.
+      - : رشته‌ای کدگذاری‌شده با base64url که [`id` کاربر](/en-US/docs/Web/API/PublicKeyCredentialCreationOptions#id_3) مرتبط با این اعتبارنامه‌ها را نشان می‌دهد.
 
 ### Return value
 
-A {{jsxref("Promise")}} that resolves to {{jsxref("undefined")}}.
+یک {{jsxref("Promise")}} که با {{jsxref("undefined")}} حل می‌شود.
 
 ### Exceptions
 
-The promise rejects with the following exceptions:
+این پرامیژ با استثناهای زیر رد می‌شود:
 
 - `SecurityError` {{domxref("DOMException")}}
-  - : The RP domain is not valid.
+  - : دامنهٔ RP معتبر نیست.
 - `TypeError` {{domxref("DOMException")}}
-  - : The `userId` or any of the `allAcceptedCredentialIds` elements are not valid base64url-encoded strings.
+  - : رشتهٔ `userId` یا هر یک از عناصر `allAcceptedCredentialIds` رشته‌های کدگذاری‌شدهٔ base64url معتبری نیستند.
 
 ## Description
 
-It is possible for the information stored in a user's authenticator about a [discoverable credential](/en-US/docs/Web/API/Web_Authentication_API#discoverable_and_non-discoverable_credentials) (for example, a [passkey](/en-US/docs/Web/Security/Authentication/Passkeys)) to go out sync with the server. This usually occurs when the user deletes a credential from the RP web app without updating the authenticator.
+ممکن است اطلاعات ذخیره‌شده در اصالت‌سنج کاربر دربارهٔ یک [اعتبارنامهٔ قابل‌کشف](/en-US/docs/Web/API/Web_Authentication_API#discoverable_and_non-discoverable_credentials) (مثلاً یک [passkey](/en-US/docs/Web/Security/Authentication/Passkeys)) با سرور از همگامی خارج شود. این معمولاً زمانی رخ می‌دهد که کاربر بدون به‌روزرسانی اصالت‌سنج، یک اعتبارنامه را از وب‌اپ RP حذف می‌کند.
 
-When a user attempts to log in using discoverable credentials, they are presented with a set of credentials from the authenticator to choose from, and the selected credential is returned to the RP web app to log in with. If the user selects a credential that has been deleted from the RP server, it won't be recognized, and the login will fail. This is a confusing experience for users, who expect to only be offered credentials that should succeed.
+هنگامی که کاربر می‌خواهد با استفاده از اعتبارنامه‌های قابل‌کشف وارد شود، مجموعه‌ای از اعتبارنامه‌ها از اصالت‌سنج به او نمایش داده می‌شود تا انتخاب کند، و اعتبارنامهٔ انتخاب‌شده برای ورود به وب‌اپ RP بازگردانده می‌شود. اگر کاربر اعتبارنامه‌ای را انتخاب کند که از سرور RP حذف شده است، شناسایی نمی‌شود و ورود ناموفق خواهد بود. این تجربه‌ای گیج‌کننده برای کاربران است، زیرا انتظار دارند فقط اعتبارنامه‌هایی به آن‌ها پیشنهاد شود که باید موفق باشند.
 
-To mitigate this issue, `signalAllAcceptedCredentials()` should be called by the RP web app each time a user deletes a credential or signs in, to tell the authenticator which credentials are still valid for the given user. It is up to the authenticator how to handle this information, but the expectation is that it will synchronize its information with the provided credentials list. Credentials that don't appear in the list should be removed so that the user won't be offered credentials that don't exist in the sign-in UI.
+برای کاهش این مشکل، وب‌اپ RP باید هر بار که کاربر یک اعتبارنامه را حذف می‌کند یا وارد می‌شود، `signalAllAcceptedCredentials()` را فراخوانی کند تا به اصالت‌سنج بگوید کدام اعتبارنامه‌ها برای آن کاربر همچنان معتبرند. نحوهٔ برخورد با این اطلاعات به عهدهٔ اصالت‌سنج است، اما انتظار می‌رود که اطلاعات خود را با فهرست اعتبارنامه‌های ارائه‌شده همگام کند. اعتبارنامه‌هایی که در فهرست نیستند باید حذف شوند تا کاربر اعتبارنامه‌هایی را که در رابط ورود وجود ندارند دریافت نکند.
 
 > [!WARNING]
-> Exercise caution when invoking `signalAllAcceptedCredentials()` — any valid credentials not included in the list are intended to be removed from the authenticator, which will prevent the user from signing in with them. Passing an empty list may remove all of the user's credentials. Some authenticators may support restoring credentials via a subsequent call to `signalAllAcceptedCredentials()` with the previously removed credential IDs included in the list.
+> هنگام فراخوانی `signalAllAcceptedCredentials()` احتیاط کنید — هر اعتبارنامهٔ معتبری که در فهرست گنجانده نشده باشد قرار است از اصالت‌سنج حذف شود، که مانع ورود کاربر با آن اعتبارنامه‌ها خواهد شد. ارسال یک فهرست خالی ممکن است همهٔ اعتبارنامه‌های کاربر را حذف کند. برخی اصالت‌سنج‌ها ممکن است از بازیابی اعتبارنامه‌ها از طریق فراخوانی بعدی `signalAllAcceptedCredentials()` با گنجاندن شناسهٔ اعتبارنامه‌های حذف‌شدهٔ قبلی در فهرست پشتیبانی کنند.
 
-`signalAllAcceptedCredentials()` should _only_ be called when the current user is authenticated because it exposes sensitive information belonging to the user. If the user is not authenticated because they tried to log in with a credential that does not exist on the RP server, you should instead call {{domxref("PublicKeyCredential.signalUnknownCredential_static", "PublicKeyCredential.signalUnknownCredential()")}} with the unrecognized credential, so the authenticator can delete it. See [Discoverable credential synchronization methods](/en-US/docs/Web/API/Web_Authentication_API#discoverable_credential_synchronization_methods) for a more detailed comparison.
+`signalAllAcceptedCredentials()` باید _فقط_ زمانی فراخوانی شود که کاربر فعلی احراز هویت شده است، زیرا اطلاعات حساس متعلق به کاربر را افشا می‌کند. اگر کاربر به دلیل تلاش برای ورود با اعتبارنامه‌ای که در سرور RP وجود ندارد احراز هویت نشده است، در عوض باید {{domxref("PublicKeyCredential.signalUnknownCredential_static", "PublicKeyCredential.signalUnknownCredential()")}} را با آن اعتبارنامهٔ ناشناخته فراخوانی کنید تا اصالت‌سنج بتواند آن را حذف کند. برای مقایسهٔ دقیق‌تر به [روش‌های همگام‌سازی اعتبارنامهٔ قابل‌کشف](/en-US/docs/Web/API/Web_Authentication_API#discoverable_credential_synchronization_methods) مراجعه کنید.
 
 ## Examples
 
-### Signaling the accepted credentials
+### اعلام اعتبارنامه‌های پذیرفته‌شده
 
-In this example, we invoke the `signalAllAcceptedCredentials()` method, passing it the details of all credentials belonging to the user, including those they just logged in with. As a result, the authenticator should update its own copy of the credentials so that they stay in sync with the RP.
+در این مثال، متد `signalAllAcceptedCredentials()` را فراخوانی می‌کنیم و جزئیات همهٔ اعتبارنامه‌های متعلق به کاربر، از جمله اعتبارنامه‌ای که همین حالا با آن وارد شده است، را به آن传递 می‌دهیم. در نتیجه، اصالت‌سنج باید نسخهٔ خود از اعتبارنامه‌ها را به‌روزرسانی کند تا با RP همگام بمانند.
 
 ```js
 if (PublicKeyCredential.signalAllAcceptedCredentials) {
   await PublicKeyCredential.signalAllAcceptedCredentials({
     rpId: "example.com",
-    userId: "M2YPl-KGnA8", // base64url-encoded user ID
+    userId: "M2YPl-KGnA8", // شناسهٔ کاربر کدگذاری‌شده با base64url
     allAcceptedCredentialIds: [
-      // A list of base64url-encoded credential IDs
+      // فهرستی از شناسه‌های اعتبارنامهٔ کدگذاری‌شده با base64url
       "vI0qOggiE3OT01ZRWBYz5l4MEgU0c7PmAA",
       // …
     ],
@@ -83,7 +81,7 @@ if (PublicKeyCredential.signalAllAcceptedCredentials) {
 }
 ```
 
-For further code examples, see [Keep passkeys consistent with credentials on your server with the Signal API](https://developer.chrome.com/docs/identity/webauthn-signal-api) on developer.chrome.com (2024).
+برای مثال‌های کد بیشتر، به [Keep passkeys consistent with credentials on your server with the Signal API](https://developer.chrome.com/docs/identity/webauthn-signal-api) در developer.chrome.com (2024) مراجعه کنید.
 
 ## Specifications
 
@@ -97,4 +95,4 @@ For further code examples, see [Keep passkeys consistent with credentials on you
 
 - {{domxref("PublicKeyCredential.signalCurrentUserDetails_static", "PublicKeyCredential.signalCurrentUserDetails()")}}
 - {{domxref("PublicKeyCredential.signalUnknownCredential_static", "PublicKeyCredential.signalUnknownCredential()")}}
-- [Keep passkeys consistent with credentials on your server with the Signal API](https://developer.chrome.com/docs/identity/webauthn-signal-api) on developer.chrome.com (2024)
+- [Keep passkeys consistent with credentials on your server with the Signal API](https://developer.chrome.com/docs/identity/webauthn-signal-api) در developer.chrome.com (2024)
