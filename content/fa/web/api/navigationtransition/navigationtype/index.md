@@ -1,11 +1,5 @@
 ---
 title: "NavigationTransition: navigationType property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigationTransition/navigationType"
-status: "needs-translation"
----
-
----
-title: "NavigationTransition: navigationType property"
 short-title: navigationType
 slug: Web/API/NavigationTransition/navigationType
 page-type: web-api-instance-property
@@ -14,35 +8,34 @@ browser-compat: api.NavigationTransition.navigationType
 
 {{APIRef("Navigation API")}}
 
-The **`navigationType`** read-only property of the
-{{domxref("NavigationTransition")}} interface returns the type of the ongoing navigation.
+ویژگی فقط خواندنی **`navigationType`** از رابط {{domxref("NavigationTransition")}} نوع پیمایش (navigation) در حال انجام را برمی‌گرداند.
 
-## Value
+## مقدار
 
-An enumerated value representing the type of ongoing navigation.
+یک مقدار شمارشی که نوع پیمایش در حال انجام را نشان می‌دهد.
 
-The possible values are:
+مقادیر ممکن عبارتند از:
 
-- `push`: A new location is navigated to, causing a new entry to be pushed onto the history list.
-- `reload`: The {{domxref("Navigation.currentEntry")}} is reloaded.
-- `replace`: The {{domxref("Navigation.currentEntry")}} is replaced with a new history entry. This new entry will reuse the same {{domxref("NavigationHistoryEntry.key", "key")}}, but be assigned a different {{domxref("NavigationHistoryEntry.id", "id")}}.
-- `traverse`: The browser navigates from one existing history entry to another existing history entry.
+- `push`: یک مکان جدید پیمایش می‌شود و یک ورودی جدید به فهرست تاریخچه اضافه می‌کند.
+- `reload`: {{domxref("Navigation.currentEntry")}} دوباره بارگذاری می‌شود.
+- `replace`: {{domxref("Navigation.currentEntry")}} با یک ورودی جدید در تاریخچه جایگزین می‌شود. این ورودی جدید از همان {{domxref("NavigationHistoryEntry.key", "key")}} استفاده می‌کند، اما یک {{domxref("NavigationHistoryEntry.id", "id")}} متفاوت به آن اختصاص داده می‌شود.
+- `traverse`: مرورگر از یک ورودی تاریخچه موجود به ورودی تاریخچه موجود دیگری پیمایش می‌کند.
 
-## Examples
+## مثال‌ها
 
 ```js
 console.log(navigation.transition.navigationType);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
-- [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
+- [مسیریابی مدرن در سمت کلاینت: API پیمایش](https://developer.chrome.com/docs/web-platform/navigation-api/)
+- [توضیح API پیمایش](https://github.com/WICG/navigation-api/blob/main/README.md)
