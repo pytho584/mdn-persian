@@ -1,7 +1,5 @@
 ---
 title: "Navigator: preferences property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/preferences"
-status: "needs-translation"
 ---
 
 ---
@@ -16,34 +14,34 @@ browser-compat: api.Navigator.preferences
 
 {{APIRef("User Preferences API")}}{{SeeCompatTable}}
 
-The **`preferences`** read-only property of the {{domxref("Navigator")}} interface returns a {{domxref("PreferenceManager")}} object for the current document. This is the entry point for the [User Preferences API](/en-US/docs/Web/API/User_Preferences_API) functionality.
+خاصیت فقط خواندنی **`preferences`** از رابط {{domxref("Navigator")}} یک شیء {{domxref("PreferenceManager")}} برای سند جاری بازمی‌گرداند. این نقطه ورود برای قابلیت‌های [User Preferences API](/en-US/docs/Web/API/User_Preferences_API) است.
 
-## Value
+## مقدار
 
-A {{domxref('PreferenceManager')}} object.
+یک شیء {{domxref('PreferenceManager')}}.
 
-## Examples
+## مثال‌ها
 
-### Get color scheme preference
+### دریافت ترجیح رنگ‌بندی
 
-This example demonstrates how to query the user's preferred color scheme.
+این مثال نحوه پرس‌وجوی ترجیح رنگ‌بندی کاربر را نشان می‌دهد.
 
 ```js
 if (navigator.preferences.colorScheme.value === "dark") {
-  // The user prefers a dark color scheme.
+  // کاربر رنگ‌بندی تیره را ترجیح می‌دهد.
 } else {
-  // The user prefers a light color scheme.
+  // کاربر رنگ‌بندی روشن را ترجیح می‌دهد.
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [User Preferences API](/en-US/docs/Web/API/User_Preferences_API)
