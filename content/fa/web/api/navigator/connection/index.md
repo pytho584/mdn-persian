@@ -1,11 +1,5 @@
 ---
 title: "Navigator: connection property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/connection"
-status: "needs-translation"
----
-
----
-title: "Navigator: connection property"
 short-title: connection
 slug: Web/API/Navigator/connection
 page-type: web-api-instance-property
@@ -14,22 +8,22 @@ browser-compat: api.Navigator.connection
 
 {{APIRef("Network Information API")}}
 
-The **`connection`** read-only property of the {{domxref("Navigator")}} interface returns a {{domxref("NetworkInformation")}} object containing information about the system's connection, such as the current bandwidth of the user's device or whether the connection is metered.
+ویژگی فقط‌خواندنی **`connection`** در رابط {{domxref("Navigator")}} یک شیء {{domxref("NetworkInformation")}} برمی‌گرداند؛ این شیء شامل اطلاعاتی دربارهٔ اتصال سیستم است، مانند پهنای باند فعلی دستگاه کاربر یا اینکه آیا اتصال مصرفی است (محدود به حجم داده).
 
-This could be used to select high definition content or low definition content based on the user's connection.
+از این ویژگی می‌توان برای انتخاب محتوای با کیفیت بالا یا کیفیت پایین بر اساس اتصال کاربر استفاده کرد.
 
-## Value
+## مقدار
 
-A {{domxref("NetworkInformation")}} object.
+یک شیء {{domxref("NetworkInformation")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Online and offline events](/en-US/docs/Web/API/Navigator/onLine)
+- [رویدادهای آنلاین و آفلاین](/en-US/docs/Web/API/Navigator/onLine)
