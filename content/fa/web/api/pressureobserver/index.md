@@ -1,10 +1,4 @@
 ---
-title: "PressureObserver"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PressureObserver"
-status: "needs-translation"
----
-
----
 title: PressureObserver
 slug: Web/API/PressureObserver
 page-type: web-api-interface
@@ -15,34 +9,34 @@ browser-compat: api.PressureObserver
 
 {{APIRef("Compute Pressure API")}}{{SeeCompatTable}}{{AvailableInWorkers("window_and_worker_except_service")}}{{securecontext_header}}
 
-The **`PressureObserver`** interface is part of the [Compute Pressure API](/en-US/docs/Web/API/Compute_Pressure_API) and is used to observe the pressure changes of system resources such as the CPU.
+رابط **`PressureObserver`** بخشی از [Compute Pressure API](/en-US/docs/Web/API/Compute_Pressure_API) است و برای مشاهدهٔ تغییرات فشار منابع سیستمی مانند CPU به کار می‌رود.
 
-## Constructor
+## سازنده
 
 - {{domxref("PressureObserver.PressureObserver","PressureObserver()")}} {{experimental_inline}}
-  - : Creates and returns a new `PressureObserver` object.
+  - : یک شیء `PressureObserver` جدید می‌سازد و آن را برمی‌گرداند.
 
-## Static properties
+## ویژگی‌های ایستا
 
 - {{domxref("PressureObserver.knownSources_static", "PressureObserver.knownSources")}} {{ReadOnlyInline}} {{experimental_inline}}
-  - : Returns an array of {{domxref("PressureRecord.source","source")}} values supported by the user agent.
+  - : آرایه‌ای از مقادیر {{domxref("PressureRecord.source","source")}} را برمی‌گرداند که توسط عامل کاربر پشتیبانی می‌شوند.
 
-## Instance methods
+## متدهای نمونه
 
 - {{domxref("PressureObserver.observe","PressureObserver.observe()")}} {{experimental_inline}}
-  - : Invokes the pressure observer's callback function when a pressure record for the specified `source` is observed.
+  - : هنگامی که یک رکورد فشار برای `source` مشخص‌شده مشاهده شود، تابع callback مربوط به مشاهده‌گر فشار را فراخوانی می‌کند.
 - {{domxref("PressureObserver.unobserve","PressureObserver.unobserve()")}} {{experimental_inline}}
-  - : Stops the pressure observer callback from receiving pressure records from the specified `source`.
+  - : دریافت رکوردهای فشار از `source` مشخص‌شده را برای تابع callback مربوط به مشاهده‌گر فشار متوقف می‌کند.
 - {{domxref("PressureObserver.disconnect","PressureObserver.disconnect()")}} {{experimental_inline}}
-  - : Stops the pressure observer callback from receiving pressure records from all sources.
+  - : دریافت رکوردهای فشار از همهٔ منابع را برای تابع callback مربوط به مشاهده‌گر فشار متوقف می‌کند.
 - {{domxref("PressureObserver.takeRecords","PressureObserver.takeRecords()")}} {{experimental_inline}}
-  - : Returns the current list of pressure records stored in the pressure observer, emptying it out.
+  - : فهرست کنونی رکوردهای فشار ذخیره‌شده در مشاهده‌گر فشار را برمی‌گرداند و آن را خالی می‌کند.
 
-## Examples
+## نمونه‌ها
 
-### Log current pressure
+### ثبت فشار کنونی
 
-This example creates a `PressureObserver` and takes action whenever there is a pressure change. The sample interval is set to 1000ms, meaning that there will be updates at most every second.
+این مثال یک `PressureObserver` می‌سازد و هرگاه تغییری در فشار رخ دهد اقدامی انجام می‌دهد. بازهٔ نمونه‌برداری روی ۱۰۰۰ میلی‌ثانیه تنظیم شده است؛ یعنی حداکثر هر ثانیه یک بار به‌روزرسانی دریافت می‌شود.
 
 ```js
 function callback(records) {
@@ -67,15 +61,15 @@ try {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref('PerformanceObserver')}}
 - {{domxref('MutationObserver')}}
