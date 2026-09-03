@@ -1,11 +1,5 @@
 ---
 title: "PopStateEvent: PopStateEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PopStateEvent/PopStateEvent"
-status: "needs-translation"
----
-
----
-title: "PopStateEvent: PopStateEvent() constructor"
 short-title: PopStateEvent()
 slug: Web/API/PopStateEvent/PopStateEvent
 page-type: web-api-constructor
@@ -14,10 +8,10 @@ browser-compat: api.PopStateEvent.PopStateEvent
 
 {{APIRef("History API")}}
 
-The **`PopStateEvent()`** constructor creates a new {{domxref("PopStateEvent")}} object.
+سازندهٔ **`PopStateEvent()`** یک شیء {{domxref("PopStateEvent")}} جدید می‌سازد.
 
 > [!NOTE]
-> A web developer doesn't typically need to call this constructor, as the browser creates these objects itself when firing {{domxref("Window/popstate_event", "popstate")}} events.
+> توسعه‌دهندگان وب معمولاً نیازی به فراخوانی این سازنده ندارند، زیرا مرورگر هنگام فعال‌سازی رویدادهای {{domxref("Window/popstate_event", "popstate")}} این اشیاء را به‌صورت خودکار می‌سازد.
 
 ## Syntax
 
@@ -28,16 +22,15 @@ new PopStateEvent(type, options)
 ### Parameters
 
 - `type`
-  - : A string with the name of the event.
-    It is case-sensitive and browsers set it to `popstate`.
+  - : رشته‌ای است که نام رویداد را مشخص می‌کند. این مقدار به حروف بزرگ و کوچک حساس است و مرورگر آن را روی `popstate` تنظیم می‌کند.
 - `options` {{optional_inline}}
-  - : An object that, _in addition to the properties defined in {{domxref("Event/Event", "Event()")}}_, has the following property:
+  - : شیءایی که _علاوه بر ویژگی‌های تعریف‌شده در {{domxref("Event/Event", "Event()")}}_، ویژگی زیر را دارد:
     - `state` {{optional_inline}}
-      - : An object representing the state. Practically it is a value provided by the call to {{domxref("history.pushState()")}} or {{domxref("history.replaceState()")}}. If not set, it defaults to `null`.
+      - : شیءایی است که حالت (state) را نشان می‌دهد. در عمل، این مقدار همان مقداری است که با فراخوانی {{domxref("history.pushState()")}} یا {{domxref("history.replaceState()")}} ارائه شده است. اگر تنظیم نشود، پیش‌فرض آن `null` است.
 
 ### Return value
 
-A new {{domxref("PopStateEvent")}} object.
+یک شیء {{domxref("PopStateEvent")}} جدید.
 
 ## Specifications
 
@@ -51,4 +44,4 @@ A new {{domxref("PopStateEvent")}} object.
 
 - {{domxref("history.pushState()")}}
 - {{domxref("history.replaceState()")}}
-- {{domxref("Window/popstate_event", "popstate")}} event
+- رویداد {{domxref("Window/popstate_event", "popstate")}}
