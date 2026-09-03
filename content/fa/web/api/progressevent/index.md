@@ -1,10 +1,4 @@
 ---
-title: "ProgressEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ProgressEvent"
-status: "needs-translation"
----
-
----
 title: ProgressEvent
 slug: Web/API/ProgressEvent
 page-type: web-api-interface
@@ -13,43 +7,35 @@ browser-compat: api.ProgressEvent
 
 {{APIRef("XMLHttpRequest API")}}{{AvailableInWorkers}}
 
-The **`ProgressEvent`** interface represents events that measure the progress of an underlying process, like an HTTP request (e.g., an `XMLHttpRequest`, or the loading of the underlying resource of an {{HTMLElement("img")}}, {{HTMLElement("audio")}}, {{HTMLElement("video")}}, {{HTMLElement("style")}} or {{HTMLElement("link")}}).
+رابط **`ProgressEvent`** نمایانگر رویدادهایی است که پیشرفت یک فرایند در حال انجام را اندازه‌گیری می‌کنند؛ مانند یک درخواست HTTP (مثلاً یک `XMLHttpRequest` یا بارگذاری منبعِ مرتبط با یک {{HTMLElement("img")}}، {{HTMLElement("audio")}}، {{HTMLElement("video")}}، {{HTMLElement("style")}} یا {{HTMLElement("link")}}).
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("ProgressEvent.ProgressEvent", "ProgressEvent()")}}
-  - : Creates a `ProgressEvent` event with the given parameters.
+  - : یک رویداد `ProgressEvent` را با پارامترهای داده‌شده می‌سازد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Also inherits properties from its parent {{domxref("Event")}}_.
+_ویژگی‌های والد خود، یعنی {{domxref("Event")}} را نیز به ارث می‌برد._
 
 - {{domxref("ProgressEvent.lengthComputable")}} {{ReadOnlyInline}}
-  - : A boolean flag indicating if the ratio between the size of the data already transmitted or processed (`loaded`), and the total size of the data (`total`), is calculable.
-    In other words, it tells if the progress is measurable or not.
+  - : یک پرچم بولی که نشان می‌دهد آیا نسبت بین حجم داده‌هایِ منتقل‌شده یا پردازش‌شده (`loaded`) و حجم کل داده‌ها (`total`) قابل محاسبه است یا نه. به عبارت دیگر، مشخص می‌کند که آیا پیشرفت قابل اندازه‌گیری است یا خیر.
 - {{domxref("ProgressEvent.loaded")}} {{ReadOnlyInline}}
-  - : A number indicating the size of the data already transmitted or processed.
-    For a `ProgressEvent` dispatched by the browser in HTTP messages, the value refers to the size, in bytes, of the message body, excluding headers and other overhead.
-    In compressed messages of unknown total size, `loaded` might refer to the size of the compressed or uncompressed data, depending on the browser.
-    As of 2024, it contains the size of the compressed data in Firefox, and the uncompressed data in Chrome.
-    In a `ProgressEvent` you create yourself, you can assign any numeric value to `loaded` that represents the amount of work completed relative to the `total` value.
+  - : عددی که حجم داده‌های ارسال‌شده یا پردازش‌شده را نشان می‌دهد. برای یک `ProgressEvent` که مرورگر در پیام‌های HTTP ارسال می‌کند، این مقدار به حجم بدنه پیام (body) بر حسب بایت اشاره دارد و هدرها و سایر سربارها را شامل نمی‌شود. در پیام‌های فشرده‌ای که حجم کل آن‌ها نامعلوم است، مقدار `loaded` بسته به مرورگر ممکن است به حجم داده فشرده یا حجم داده فشرده‌نشده اشاره کند. از سال ۲۰۲۴، این مقدار در فایرفاکس حجم داده فشرده و در کروم حجم داده فشرده‌نشده است. اگر خودتان یک `ProgressEvent` بسازید، می‌توانید هر مقدار عددی را به `loaded` اختصاص دهید که میزان کار انجام‌شده را نسبت به مقدار `total` نشان دهد.
 - {{domxref("ProgressEvent.total")}} {{ReadOnlyInline}}
-  - : A number indicating the total size of the data being transmitted or processed.
-    For `ProgressEvent`s dispatched by the browser in HTTP messages, the value refers to the size, in bytes, of a resource and is derived from the `Content-Length` header.
-    In a `ProgressEvent` you create yourself, you may wish to normalize `total` to a value such as `100` or `1` if revealing the precise amount of bytes of a resource is a concern.
-    If using `1` as a total, for example, then `loaded` would be a decimal value between `0` and `1`.
+  - : عددی که حجم کل داده‌های در حال انتقال یا پردازش را نشان می‌دهد. برای رویدادهای `ProgressEvent` که مرورگر در پیام‌های HTTP ارسال می‌کند، این مقدار به حجم یک منبع بر حسب بایت اشاره دارد و از هدر `Content-Length` به دست می‌آید. اگر خودتان یک `ProgressEvent` بسازید و نگران افشای حجم دقیق بایت‌های یک منبع هستید، می‌توانید مقدار `total` را به مقداری مانند `100` یا `1` نرمال‌سازی کنید. برای مثال، اگر مقدار کل `1` باشد، آنگاه `loaded` یک مقدار اعشاری بین `0` و `1` خواهد بود.
 
-## Instance methods
+## متدهای نمونه
 
-_Inherits methods from its parent, {{domxref("Event")}}._
+_متدهایی را از والد خود، یعنی {{domxref("Event")}}، به ارث می‌برد._
 
-## Examples
+## مثال‌ها
 
-### Showing the status of a request
+### نمایش وضعیت یک درخواست
 
-The following example adds a `ProgressEvent` to a new {{domxref("XMLHttpRequest")}} and uses it to display the status of the request.
+مثال زیر یک `ProgressEvent` را به یک {{domxref("XMLHttpRequest")}} جدید اضافه می‌کند و از آن برای نمایش وضعیت درخواست استفاده می‌کند.
 
 ```js
 const progressBar = document.getElementById("p"),
@@ -67,9 +53,9 @@ client.onloadend = (pe) => {
 client.send();
 ```
 
-### Using fractions in a ProgressEvent
+### استفاده از اعداد کسری در ProgressEvent
 
-The total number of bytes of a resource may reveal too much information about a resource, so a number between 0 and 1 may be used in a {{domxref("ProgressEvent.ProgressEvent", "ProgressEvent()")}} instead:
+حجم کل یک منبع بر حسب بایت ممکن است اطلاعات زیادی درباره آن منبع فاش کند؛ بنابراین می‌توان به‌جای آن از عددی بین ۰ و ۱ در یک {{domxref("ProgressEvent.ProgressEvent", "ProgressEvent()")}} استفاده کرد:
 
 ```js
 function updateProgress(loaded, total) {
@@ -89,14 +75,14 @@ document.addEventListener("progress", (event) => {
 updateProgress(0.123456, 1);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("Event")}} base interface.
+- رابط پایه {{domxref("Event")}}
