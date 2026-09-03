@@ -1,11 +1,5 @@
 ---
 title: "PerformanceNavigationTiming: domContentLoadedEventStart property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceNavigationTiming/domContentLoadedEventStart"
-status: "needs-translation"
----
-
----
-title: "PerformanceNavigationTiming: domContentLoadedEventStart property"
 short-title: domContentLoadedEventStart
 slug: Web/API/PerformanceNavigationTiming/domContentLoadedEventStart
 page-type: web-api-instance-property
@@ -14,21 +8,21 @@ browser-compat: api.PerformanceNavigationTiming.domContentLoadedEventStart
 
 {{APIRef("Performance API")}}
 
-The **`domContentLoadedEventStart`** read-only property returns a {{domxref("DOMHighResTimeStamp")}} representing the time immediately before the current document's [`DOMContentLoaded`](/en-US/docs/Web/API/Document/DOMContentLoaded_event) event handler starts.
+ویژگی فقط‌خواندنی **`domContentLoadedEventStart`** یک {{domxref("DOMHighResTimeStamp")}} را برمی‌گرداند که زمان دقیقاً قبل از شروع اجرای مدیریت‌کننده رویداد [`DOMContentLoaded`](/en-US/docs/Web/API/Document/DOMContentLoaded_event) سند فعلی را نشان می‌دهد.
 
-Typically frameworks and libraries wait for the `DOMContentLoaded` event before starting to run their code. We can use the `domContentLoadedEventStart` and the [`domContentLoadedEventEnd`](/en-US/docs/Web/API/PerformanceNavigationTiming/domContentLoadedEventEnd) properties to calculate how long this takes to run.
+معمولاً فریمورک‌ها و کتابخانه‌ها منتظر رویداد `DOMContentLoaded` می‌مانند تا اجرای کد خود را آغاز کنند. می‌توانیم از ویژگی‌های `domContentLoadedEventStart` و [`domContentLoadedEventEnd`](/en-US/docs/Web/API/PerformanceNavigationTiming/domContentLoadedEventEnd) برای محاسبه مدت زمانی که این اجرا طول می‌کشد استفاده کنیم.
 
-## Value
+## مقدار
 
-A {{domxref("DOMHighResTimeStamp")}} representing the time immediately before the current document's [`DOMContentLoaded`](/en-US/docs/Web/API/Document/DOMContentLoaded_event) event handler starts.
+یک {{domxref("DOMHighResTimeStamp")}} که زمان دقیقاً قبل از شروع اجرای مدیریت‌کننده رویداد [`DOMContentLoaded`](/en-US/docs/Web/API/Document/DOMContentLoaded_event) سند فعلی را نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
-### Measuring `DOMContentLoaded` event handler time
+### اندازه‌گیری زمان اجرای مدیریت‌کننده رویداد `DOMContentLoaded`
 
-The `domContentLoadedEventStart` property can be used to measure how long it takes process the [`DOMContentLoaded`](/en-US/docs/Web/API/Document/DOMContentLoaded_event) event handler.
+ویژگی `domContentLoadedEventStart` می‌تواند برای اندازه‌گیری مدت زمانی که برای پردازش مدیریت‌کننده رویداد [`DOMContentLoaded`](/en-US/docs/Web/API/Document/DOMContentLoaded_event) لازم است استفاده شود.
 
-Example using a {{domxref("PerformanceObserver")}}, which notifies of new `navigation` performance entries as they are recorded in the browser's performance timeline. Use the `buffered` option to access entries from before the observer creation.
+مثال با استفاده از {{domxref("PerformanceObserver")}}، که با ثبت ورودی‌های جدید عملکرد از نوع `navigation` در جدول زمانی عملکرد مرورگر، آن‌ها را اطلاع‌رسانی می‌کند. از گزینه `buffered` برای دسترسی به ورودی‌های قبل از ایجاد observer استفاده کنید.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -44,7 +38,7 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "navigation", buffered: true });
 ```
 
-Example using {{domxref("Performance.getEntriesByType()")}}, which only shows `navigation` performance entries present in the browser's performance timeline at the time you call this method:
+مثال با استفاده از {{domxref("Performance.getEntriesByType()")}}، که فقط ورودی‌های عملکرد `navigation` موجود در جدول زمانی عملکرد مرورگر را در زمان فراخوانی این متد نشان می‌دهد:
 
 ```js
 const entries = performance.getEntriesByType("navigation");
@@ -57,14 +51,14 @@ entries.forEach((entry) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [DOMContentLoaded](/en-US/docs/Web/API/Document/DOMContentLoaded_event)
