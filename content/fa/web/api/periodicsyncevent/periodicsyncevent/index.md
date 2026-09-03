@@ -1,11 +1,5 @@
 ---
 title: "PeriodicSyncEvent: PeriodicSyncEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PeriodicSyncEvent/PeriodicSyncEvent"
-status: "needs-translation"
----
-
----
-title: "PeriodicSyncEvent: PeriodicSyncEvent() constructor"
 short-title: PeriodicSyncEvent()
 slug: Web/API/PeriodicSyncEvent/PeriodicSyncEvent
 page-type: web-api-constructor
@@ -16,48 +10,44 @@ browser-compat: api.PeriodicSyncEvent.PeriodicSyncEvent
 
 {{APIRef("Periodic Background Sync")}}{{SeeCompatTable}}{{AvailableInWorkers("service")}}
 
-The **`PeriodicSyncEvent()`** constructor
-creates a new {{domxref("PeriodicSyncEvent")}} object. This constructor is not typically
-used. The browser creates these objects itself and provides them to
-{{domxref('ServiceWorkerGlobalScope.periodicsync_event', 'onperiodicsync')}} callback.
+سازندهٔ **`PeriodicSyncEvent()`** یک شیء جدید {{domxref("PeriodicSyncEvent")}} می‌سازد. معمولاً از این سازنده استفاده نمی‌شود. مرورگر این اشیاء را به‌تنهایی می‌سازد و آن‌ها را در اختیار فراخوانِ (callback) رویداد {{domxref('ServiceWorkerGlobalScope.periodicsync_event', 'onperiodicsync')}} قرار می‌دهد.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 new PeriodicSyncEvent(type, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string with the name of the event.
-    It is case-sensitive and browsers set it to `periodicsync`.
+  - : رشته‌ای است حاوی نام رویداد. این مقدار به بزرگی/کوچکی حروف حساس است و مرورگرها آن را روی `periodicsync` تنظیم می‌کنند.
 - `options`
-  - : An object that, _in addition of the properties defined in {{domxref("Event/Event", "Event()")}}_, can have the following properties:
+  - : شیءای که، _علاوه بر ویژگی‌های تعریف‌شده در {{domxref("Event/Event", "Event()")}}_، می‌تواند ویژگی‌های زیر را داشته باشد:
+
     - `tag`
-      - : The tag referencing the sync event.
+      - : برچسب مرتبط با رویداد همگام‌سازی.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("PeriodicSyncEvent")}} object configured using the given inputs.
+یک شیء جدید {{domxref("PeriodicSyncEvent")}} که با استفاده از ورودی‌های داده‌شده پیکربندی شده است.
 
-## Examples
+## مثال‌ها
 
-This example constructs a new {{domxref('PeriodicSyncEvent')}} with the relevant
-associated tag.
+این مثال یک {{domxref('PeriodicSyncEvent')}} جدید با برچسب مرتبط می‌سازد.
 
 ```js
 const psEvent = new ExtendableEvent("periodicsync", { tag: "unique-tag" });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Richer offline experiences with the Periodic Background Sync API](https://developer.chrome.com/docs/capabilities/periodic-background-sync)
+- [تجربه‌های آفلاین غنی‌تر با Periodic Background Sync API](https://developer.chrome.com/docs/capabilities/periodic-background-sync)
