@@ -1,11 +1,5 @@
 ---
 title: "PressureRecord: source property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PressureRecord/source"
-status: "needs-translation"
----
-
----
-title: "PressureRecord: source property"
 short-title: source
 slug: Web/API/PressureRecord/source
 page-type: web-api-instance-property
@@ -16,22 +10,22 @@ browser-compat: api.PressureRecord.source
 
 {{APIRef("Compute Pressure API")}}{{SeeCompatTable}}{{AvailableInWorkers("window_and_worker_except_service")}}{{securecontext_header}}
 
-The read-only **`source`** property is a string indicating the origin source from which the record is coming.
+ویژگی فقط‌خواندنی **`source`** یک رشته است که نشان می‌دهد رکورد از کدام منبع می‌آید.
 
-## Value
+## مقدار
 
-A string indicating the origin source from which the record is coming. The current version of the Compute Pressure API specification supports two main source types:
+یک رشته که نشان می‌دهد رکورد از کدام منبع می‌آید. نسخهٔ فعلی مشخصات Compute Pressure API دو نوع منبع اصلی را پشتیبانی می‌کند:
 
-- `"thermals"` represents the global thermal state of the entire system.
-- `"cpu"` represents the average pressure of the central processing unit (CPU) across all its cores. This state can be affected by other apps and sites than the observing site.
+- `"thermals"` نمایانگر وضعیت حرارتی سراسری کل سیستم است.
+- `"cpu"` نمایانگر میانگین فشار واحد پردازش مرکزی (CPU) روی تمام هسته‌های آن است. این وضعیت ممکن است توسط برنامه‌ها و وب‌سایت‌هایی غیر از سایتِ مشاهده‌گر تحت تأثیر قرار گیرد.
 
-Use the static {{domxref("PressureObserver.knownSources_static", "PressureObserver.knownSources")}} hint to see which source types are supported by your browser. Note that availability can also vary by your operating system and your hardware. Call {{domxref("PressureObserver.observe()", "observe()")}} and check for a `NotSupportedError` to see if pressure observation is possible.
+برای اینکه ببینید مرورگر شما از کدام نوع منابع پشتیبانی می‌کند، از سرنخ ایستای {{domxref("PressureObserver.knownSources_static", "PressureObserver.knownSources")}} استفاده کنید. توجه داشته باشید که در دسترس بودن ممکن است بسته به سیستم‌عامل و سخت‌افزار شما نیز متفاوت باشد. برای بررسی اینکه آیا مشاهدهٔ فشار امکان‌پذیر است، {{domxref("PressureObserver.observe()", "observe()")}} را فراخوانی کنید و به دنبال خطای `NotSupportedError` بگردید.
 
-## Examples
+## مثال‌ها
 
-### Using the `source` property
+### استفاده از ویژگی `source`
 
-In the following example we log the value of the `source` property in the pressure observer callback.
+در مثال زیر مقدار ویژگی `source` را در تابع بازگشتیِ ناظر فشار ثبت می‌کنیم.
 
 ```js
 function callback(records) {
@@ -49,10 +43,10 @@ try {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
