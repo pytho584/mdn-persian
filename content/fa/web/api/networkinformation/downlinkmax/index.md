@@ -1,7 +1,6 @@
 ---
 title: "NetworkInformation: downlinkMax property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation/downlinkMax"
-status: "needs-translation"
 ---
 
 ---
@@ -16,15 +15,15 @@ browser-compat: api.NetworkInformation.downlinkMax
 
 {{APIRef("Network Information API")}}{{SeeCompatTable}} {{AvailableInWorkers}}
 
-The **`downlinkMax`** read-only property of the {{domxref("NetworkInformation")}} interface returns the maximum downlink speed, in megabits per second (Mbps), for the underlying connection technology.
+خاصیتِ فقط‌خواندنی **`downlinkMax`** از رابط {{domxref("NetworkInformation")}}، حداکثر سرعت دانلود را بر حسب مگابیت بر ثانیه (Mbps) برای فناوری اتصالِ زیرین بازمی‌گرداند.
 
-## Value
+## مقدار
 
-A number representing the maximum downlink speed, in megabits per second (Mb/s), for the underlying connection technology.
+عددی که حداکثر سرعت دانلود را بر حسب مگابیت بر ثانیه (Mb/s) برای فناوری اتصالِ زیرین نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
-The following example monitors the connection using the `change` event and logs changes as they occur.
+مثال زیر اتصال را با استفاده از رویداد `change` پایش می‌کند و تغییرات را هنگام وقوع ثبت می‌کند.
 
 ```js
 function logConnectionType() {
@@ -48,10 +47,10 @@ logConnectionType();
 navigator.connection.addEventListener("change", logConnectionType);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
