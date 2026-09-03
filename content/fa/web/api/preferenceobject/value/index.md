@@ -1,11 +1,5 @@
 ---
 title: "PreferenceObject: value property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PreferenceObject/value"
-status: "needs-translation"
----
-
----
-title: "PreferenceObject: value property"
 short-title: value
 slug: Web/API/PreferenceObject/value
 page-type: web-api-instance-property
@@ -17,17 +11,17 @@ spec-urls: https://drafts.csswg.org/mediaqueries-5/#preference-value-attribute
 
 {{APIRef("User Preferences API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`value`** read-only property of the {{domxref("PreferenceManager")}} interface returns the override value of a preference if one is set, or the UA-defined value if an override value is not set.
+ویژگی فقط‌خواندنی **`value`** در رابط {{domxref("PreferenceManager")}}، مقدار جایگزین (override) یک ترجیح (preference) را در صورت تنظیم بودن برمی‌گرداند؛ در غیر این صورت، مقدار تعریف‌شده توسط عامل کاربر (UA) را بازمی‌گرداند.
 
-## Value
+## مقدار
 
-The override of the {{domxref("PreferenceObject")}} interface if one is set, or the UA-defined value otherwise.
+در صورت تنظیم بودن، مقدار جایگزین رابط {{domxref("PreferenceObject")}}؛ در غیر این صورت، مقدار تعریف‌شده توسط عامل کاربر.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفادهٔ پایه
 
-This example demonstrates how to query the user's reduced motion preference.
+این مثال نحوهٔ پرس‌وجو از ترجیح کاربر برای کاهش حرکت (reduced motion) را نشان می‌دهد.
 
 ```js
 if (navigator.preferences.reducedMotion.value === "reduce") {
@@ -37,10 +31,10 @@ if (navigator.preferences.reducedMotion.value === "reduce") {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
