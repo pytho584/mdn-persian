@@ -1,10 +1,4 @@
 ---
-title: "PerformanceNavigationTiming"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceNavigationTiming"
-status: "needs-translation"
----
-
----
 title: PerformanceNavigationTiming
 slug: Web/API/PerformanceNavigationTiming
 page-type: web-api-interface
@@ -13,80 +7,80 @@ browser-compat: api.PerformanceNavigationTiming
 
 {{APIRef("Performance API")}}
 
-The **`PerformanceNavigationTiming`** interface provides methods and properties to store and retrieve metrics regarding the browser's document navigation events. For example, this interface can be used to determine how much time it takes to load or unload a document.
+رابطه‌ی **`PerformanceNavigationTiming`** متدها و ویژگی‌هایی را برای ذخیره‌سازی و بازیابی معیارهای مربوط به رویدادهای ناوبری سند در مرورگر فراهم می‌کند. به عنوان مثال، می‌توان از این رابط برای تعیین مدت زمان لازم برای بارگذاری یا تخلیه‌ی یک سند استفاده کرد.
 
-Only the current document is included in the performance timeline, so there is only one `PerformanceNavigationTiming` object in the performance timeline. It inherits all of the properties and methods of {{domxref("PerformanceResourceTiming")}} and {{domxref("PerformanceEntry")}}.
+فقط سند فعلی در خط زمانی عملکرد قرار می‌گیرد، بنابراین تنها یک شیء `PerformanceNavigationTiming` در خط زمانی عملکرد وجود دارد. این رابط تمام ویژگی‌ها و متدهای {{domxref("PerformanceResourceTiming")}} و {{domxref("PerformanceEntry")}} را به ارث می‌برد.
 
 {{InheritanceDiagram}}
 
-The following diagram shows all of the timestamp properties defined in `PerformanceNavigationTiming`.
+نمودار زیر تمام ویژگی‌های برچسب زمانی تعریف‌شده در `PerformanceNavigationTiming` را نشان می‌دهد.
 
-![Timestamp diagram listing timestamps in the order in which they are recorded for the fetching of a document](https://mdn.github.io/shared-assets/images/diagrams/api/performance/timestamp-diagram.svg)
+![نمودار برچسب‌های زمانی که ترتیب ثبت آن‌ها را برای واکشی یک سند فهرست می‌کند](https://mdn.github.io/shared-assets/images/diagrams/api/performance/timestamp-diagram.svg)
 
-## Instance properties
+## ویژگی‌های نمونه
 
-This interface extends the following {{domxref('PerformanceEntry')}} properties by qualifying and constraining them as follows:
+این رابط ویژگی‌های زیر از {{domxref('PerformanceEntry')}} را با محدودسازی و قید زیر گسترش می‌دهد:
 
 - {{domxref("PerformanceEntry.entryType")}} {{ReadOnlyInline}}
-  - : Returns `"navigation"`.
+  - : مقدار `"navigation"` را برمی‌گرداند.
 - {{domxref("PerformanceEntry.name")}} {{ReadOnlyInline}}
-  - : Returns the [document's URL](/en-US/docs/Web/API/Document/URL).
-    Note that [text fragments](/en-US/docs/Web/URI/Reference/Fragment/Text_fragments), and any other fragment directives, are stripped from the URL.
+  - : [نشانی وب سند](/en-US/docs/Web/API/Document/URL) را برمی‌گرداند.
+    توجه داشته باشید که [قطعات متنی](/en-US/docs/Web/URI/Reference/Fragment/Text_fragments) و هر دستورالعمل قطعه‌ی دیگری از نشانی وب حذف می‌شوند.
 - {{domxref("PerformanceEntry.startTime")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref("DOMHighResTimeStamp")}} with a value of `0`.
+  - : یک {{domxref("DOMHighResTimeStamp")}} با مقدار `0` برمی‌گرداند.
 - {{domxref("PerformanceEntry.duration")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref("DOMHighResTimeStamp","timestamp")}} that is the difference between the {{domxref("PerformanceNavigationTiming.loadEventEnd")}} and {{domxref("PerformanceEntry.startTime")}} properties.
+  - : یک {{domxref("DOMHighResTimeStamp","برچسب زمانی")}} برمی‌گرداند که تفاوت بین ویژگی‌های {{domxref("PerformanceNavigationTiming.loadEventEnd")}} و {{domxref("PerformanceEntry.startTime")}} است.
 
-This interface also extends the following {{domxref('PerformanceResourceTiming')}} properties by qualifying and constraining them as follows:
+این رابط همچنین ویژگی‌های زیر از {{domxref('PerformanceResourceTiming')}} را با محدودسازی و قید زیر گسترش می‌دهد:
 
 - {{domxref('PerformanceResourceTiming.initiatorType')}} {{ReadOnlyInline}}
-  - : Returns `"navigation"`.
+  - : مقدار `"navigation"` را برمی‌گرداند.
 
-The interface also supports the following properties:
+این رابط همچنین از ویژگی‌های زیر پشتیبانی می‌کند:
 
 - {{domxref('PerformanceNavigationTiming.activationStart')}} {{ReadOnlyInline}} {{experimental_inline}}
-  - : A {{domxref("DOMHighResTimeStamp")}} representing the time between when a document starts prerendering and when it is activated.
+  - : یک {{domxref("DOMHighResTimeStamp")}} که نشان‌دهنده‌ی زمان بین شروع پیش‌رندر شدن یک سند و فعال‌سازی آن است.
 - {{domxref('PerformanceNavigationTiming.confidence')}} {{ReadOnlyInline}} {{experimental_inline}}
-  - : A {{domxref("PerformanceTimingConfidence")}} object containing information that indicates whether a performance record reflects typical application performance, or is likely affected by external factors.
+  - : یک شیء {{domxref("PerformanceTimingConfidence")}} حاوی اطلاعاتی که نشان می‌دهد آیا یک رکورد عملکرد منعکس‌کننده‌ی عملکرد معمولی برنامه است یا احتمالاً تحت تأثیر عوامل خارجی قرار دارد.
 - {{domxref('PerformanceNavigationTiming.criticalCHRestart')}} {{ReadOnlyInline}} {{experimental_inline}}
-  - : A {{domxref("DOMHighResTimeStamp")}} representing the time at which the connection restart occurred due to {{HTTPHeader("Critical-CH")}} HTTP response header mismatch.
+  - : یک {{domxref("DOMHighResTimeStamp")}} که زمان وقوع راه‌اندازی مجدد اتصال را به دلیل عدم تطابق هدر پاسخ {{HTTPHeader("Critical-CH")}} نشان می‌دهد.
 - {{domxref('PerformanceNavigationTiming.domComplete')}} {{ReadOnlyInline}}
-  - : A {{domxref("DOMHighResTimeStamp")}} representing the time immediately before the user agent sets the document's [`readyState`](/en-US/docs/Web/API/Document/readyState) to `"complete"`.
+  - : یک {{domxref("DOMHighResTimeStamp")}} که زمان درست قبل از تنظیم [`readyState`](/en-US/docs/Web/API/Document/readyState) سند به `"complete"` توسط عامل کاربر را نشان می‌دهد.
 - {{domxref('PerformanceNavigationTiming.domContentLoadedEventEnd')}} {{ReadOnlyInline}}
-  - : A {{domxref("DOMHighResTimeStamp")}} representing the time immediately after the current document's [`DOMContentLoaded`](/en-US/docs/Web/API/Document/DOMContentLoaded_event) event handler completes.
+  - : یک {{domxref("DOMHighResTimeStamp")}} که زمان درست پس از اتمام اجرای کنترل‌کننده‌ی رویداد [`DOMContentLoaded`](/en-US/docs/Web/API/Document/DOMContentLoaded_event) سند فعلی را نشان می‌دهد.
 - {{domxref('PerformanceNavigationTiming.domContentLoadedEventStart')}} {{ReadOnlyInline}}
-  - : A {{domxref("DOMHighResTimeStamp")}} representing the time immediately before the current document's [`DOMContentLoaded`](/en-US/docs/Web/API/Document/DOMContentLoaded_event) event handler starts.
+  - : یک {{domxref("DOMHighResTimeStamp")}} که زمان درست قبل از شروع اجرای کنترل‌کننده‌ی رویداد [`DOMContentLoaded`](/en-US/docs/Web/API/Document/DOMContentLoaded_event) سند فعلی را نشان می‌دهد.
 - {{domxref('PerformanceNavigationTiming.domInteractive')}} {{ReadOnlyInline}}
-  - : A {{domxref("DOMHighResTimeStamp")}} representing the time immediately before the user agent sets the document's [`readyState`](/en-US/docs/Web/API/Document/readyState) to `"interactive"`.
+  - : یک {{domxref("DOMHighResTimeStamp")}} که زمان درست قبل از تنظیم [`readyState`](/en-US/docs/Web/API/Document/readyState) سند به `"interactive"` توسط عامل کاربر را نشان می‌دهد.
 - {{domxref('PerformanceNavigationTiming.loadEventEnd')}} {{ReadOnlyInline}}
-  - : A {{domxref("DOMHighResTimeStamp")}} representing the time immediately after the current document's [`load`](/en-US/docs/Web/API/Window/load_event) event handler completes.
+  - : یک {{domxref("DOMHighResTimeStamp")}} که زمان درست پس از اتمام اجرای کنترل‌کننده‌ی رویداد [`load`](/en-US/docs/Web/API/Window/load_event) سند فعلی را نشان می‌دهد.
 - {{domxref('PerformanceNavigationTiming.loadEventStart')}} {{ReadOnlyInline}}
-  - : A {{domxref("DOMHighResTimeStamp")}} representing the time immediately before the current document's [`load`](/en-US/docs/Web/API/Window/load_event) event handler starts.
+  - : یک {{domxref("DOMHighResTimeStamp")}} که زمان درست قبل از شروع اجرای کنترل‌کننده‌ی رویداد [`load`](/en-US/docs/Web/API/Window/load_event) سند فعلی را نشان می‌دهد.
 - {{domxref('PerformanceNavigationTiming.notRestoredReasons')}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : A {{domxref("NotRestoredReasons")}} object providing report data on reasons why the current document was blocked from using the back/forward cache ({{Glossary("bfcache")}}) on navigation.
+  - : یک شیء {{domxref("NotRestoredReasons")}} که داده‌های گزارشی درباره‌ی دلایل مسدود شدن سند فعلی از استفاده‌ی حافظه‌ی پنهان عقب/جلو ({{Glossary("bfcache")}}) در هنگام ناوبری فراهم می‌کند.
 - {{domxref('PerformanceNavigationTiming.redirectCount')}} {{ReadOnlyInline}}
-  - : A number representing the number of redirects since the last non-redirect navigation in the current browsing context.
+  - : عددی که تعداد تغییر مسیرها از آخرین ناوبری غیر تغییر مسیر در بافت مرور فعلی را نشان می‌دهد.
 - {{domxref('PerformanceNavigationTiming.type')}} {{ReadOnlyInline}}
-  - : A string representing the navigation type. Either `"navigate"`, `"reload"`, or `"back_forward"`.
+  - : رشته‌ای که نوع ناوبری را نشان می‌دهد. یا `"navigate"`، یا `"reload"`، یا `"back_forward"`.
 - {{domxref('PerformanceNavigationTiming.unloadEventEnd')}} {{ReadOnlyInline}}
-  - : A {{domxref("DOMHighResTimeStamp")}} representing the time immediately after the current document's [`unload`](/en-US/docs/Web/API/Window/unload_event) event handler completes.
+  - : یک {{domxref("DOMHighResTimeStamp")}} که زمان درست پس از اتمام اجرای کنترل‌کننده‌ی رویداد [`unload`](/en-US/docs/Web/API/Window/unload_event) سند فعلی را نشان می‌دهد.
 - {{domxref('PerformanceNavigationTiming.unloadEventStart')}} {{ReadOnlyInline}}
-  - : A {{domxref("DOMHighResTimeStamp")}} representing the time immediately before the current document's [`unload`](/en-US/docs/Web/API/Window/unload_event) event handler starts.
+  - : یک {{domxref("DOMHighResTimeStamp")}} که زمان درست قبل از شروع اجرای کنترل‌کننده‌ی رویداد [`unload`](/en-US/docs/Web/API/Window/unload_event) سند فعلی را نشان می‌دهد.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("PerformanceNavigationTiming.toJSON()")}}
-  - : Returns a JSON representation of the `PerformanceNavigationTiming` object.
+  - : یک نمایش JSON از شیء `PerformanceNavigationTiming` برمی‌گرداند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("Performance.navigation")}}
 - {{domxref("PerformanceNavigation")}}
