@@ -1,11 +1,5 @@
 ---
 title: "PerformanceTiming: connectStart property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/connectStart"
-status: "needs-translation"
----
-
----
-title: "PerformanceTiming: connectStart property"
 short-title: connectStart
 slug: Web/API/PerformanceTiming/connectStart
 page-type: web-api-instance-property
@@ -17,30 +11,22 @@ browser-compat: api.PerformanceTiming.connectStart
 {{APIRef("Performance API")}}{{Deprecated_Header}}
 
 > [!WARNING]
-> This interface of this property is deprecated in the [Navigation Timing Level 2 specification](https://w3c.github.io/navigation-timing/#obsolete). Please use the {{domxref("PerformanceNavigationTiming")}}
-> interface instead.
+> رابطهای که این ویژگی به آن تعلق دارد در [مشخصات Navigation Timing Level 2](https://w3c.github.io/navigation-timing/#obsolete) منسوخ شده است. لطفاً بهجای آن از رابط {{domxref("PerformanceNavigationTiming")}} استفاده کنید.
 
-The legacy
-**`PerformanceTiming.connectStart`**
-read-only property returns an `unsigned long long` representing the moment,
-in milliseconds since the UNIX epoch, where the request to open a connection is sent to
-the network. If the transport layer reports an error and the connection establishment is
-started again, the last connection establishment start time is given. If a persistent
-connection is used, the value will be the same as
-{{domxref("PerformanceTiming.fetchStart")}}.
+ویژگی فقط‌خواندنی قدیمی **`PerformanceTiming.connectStart`** یک `unsigned long long` برمی‌گرداند که نشان‌دهندهٔ لحظه‌ای است، به میلی‌ثانیه از مبدأ یونیکس، که درخواست باز کردن یک اتصال به شبکه ارسال می‌شود. اگر لایهٔ انتقال خطایی گزارش دهد و برقراری اتصال دوباره آغاز شود، زمان شروع آخرین برقراری اتصال برگردانده می‌شود. اگر از اتصال پایدار (persistent connection) استفاده شود، مقدار این ویژگی با {{domxref("PerformanceTiming.fetchStart")}} یکسان خواهد بود.
 
-## Value
+## مقدار
 
-An `unsigned long long`.
+یک `unsigned long long`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("PerformanceTiming")}} interface it belongs to.
+- رابط {{domxref("PerformanceTiming")}} که این ویژگی به آن تعلق دارد.
