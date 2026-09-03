@@ -1,11 +1,5 @@
 ---
 title: "OfflineAudioCompletionEvent: OfflineAudioCompletionEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/OfflineAudioCompletionEvent/OfflineAudioCompletionEvent"
-status: "needs-translation"
----
-
----
-title: "OfflineAudioCompletionEvent: OfflineAudioCompletionEvent() constructor"
 short-title: OfflineAudioCompletionEvent()
 slug: Web/API/OfflineAudioCompletionEvent/OfflineAudioCompletionEvent
 page-type: web-api-constructor
@@ -14,38 +8,34 @@ browser-compat: api.OfflineAudioCompletionEvent.OfflineAudioCompletionEvent
 
 {{APIRef("Web Audio API")}}
 
-The **`OfflineAudioCompletionEvent()`** constructor of the [Web Audio API](/en-US/docs/Web/API/Web_Audio_API) creates a new
-{{domxref("OfflineAudioCompletionEvent")}} object.
+سازنده **`OfflineAudioCompletionEvent()`** از [Web Audio API](/en-US/docs/Web/API/Web_Audio_API) یک شیء جدید {{domxref("OfflineAudioCompletionEvent")}} ایجاد می‌کند.
 
 > [!NOTE]
-> You wouldn't generally use the constructor manually.
-> `OfflineAudioCompletionEvent` events are dispatched to
-> {{domxref("OfflineAudioContext")}} instances for legacy reasons.
+> معمولاً نیازی به استفاده دستی از این سازنده ندارید. رویدادهای `OfflineAudioCompletionEvent` به دلایل قدیمی به نمونه‌های {{domxref("OfflineAudioContext")}} ارسال می‌شوند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 new OfflineAudioCompletionEvent(type, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string with the name of the event.
-    It is case-sensitive and browsers set it to `complete`.
+  - : یک رشته که نام رویداد است. این مقدار به بزرگی و کوچکی حروف حساس است و مرورگرها آن را `complete` تنظیم می‌کنند.
 - `options`
-  - : An object that, _in addition of the properties defined in {{domxref("Event/Event", "Event()")}}_, can have the following properties:
+  - : یک شیء که علاوه بر ویژگی‌های تعریف‌شده در {{domxref("Event/Event", "Event()")}} می‌تواند ویژگی‌های زیر را داشته باشد:
     - `renderedBuffer`
-      - : The rendered {{domxref("AudioBuffer")}} containing the audio data.
+      - : {{domxref("AudioBuffer")}} رندر شده حاوی داده‌های صوتی.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("OfflineAudioCompletionEvent")}} object.
+یک شیء جدید {{domxref("OfflineAudioCompletionEvent")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
