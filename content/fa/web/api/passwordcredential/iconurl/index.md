@@ -1,7 +1,5 @@
 ---
 title: "PasswordCredential: iconURL property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PasswordCredential/iconURL"
-status: "needs-translation"
 ---
 
 ---
@@ -16,19 +14,16 @@ browser-compat: api.PasswordCredential.iconURL
 
 {{SeeCompatTable}}{{APIRef("Credential Management API")}}{{SecureContext_Header}}
 
-The **`iconURL`** read-only property
-of the {{domxref("PasswordCredential")}} interface returns a string
-containing a URL pointing to an image for an icon. This image is intended for display
-in a credential chooser. The URL must be accessible without authentication.
+خاصیت فقط خواندنی **`iconURL`** از رابط {{domxref("PasswordCredential")}} یک رشته شامل یک URL که به یک تصویر برای آیکون اشاره می‌کند، برمی‌گرداند. این تصویر برای نمایش در یک انتخاب‌گر اعتبارنامه در نظر گرفته شده است. URL باید بدون احراز هویت قابل دسترسی باشد.
 
-## Value
+## مقدار
 
-A string containing a URL.
+یک رشته شامل یک URL.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
