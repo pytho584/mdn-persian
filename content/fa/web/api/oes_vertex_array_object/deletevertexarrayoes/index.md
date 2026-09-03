@@ -1,11 +1,5 @@
 ---
 title: "OES_vertex_array_object: deleteVertexArrayOES() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/OES_vertex_array_object/deleteVertexArrayOES"
-status: "needs-translation"
----
-
----
-title: "OES_vertex_array_object: deleteVertexArrayOES() method"
 short-title: deleteVertexArrayOES()
 slug: Web/API/OES_vertex_array_object/deleteVertexArrayOES
 page-type: webgl-extension-method
@@ -14,26 +8,24 @@ browser-compat: api.OES_vertex_array_object.deleteVertexArrayOES
 
 {{APIRef("WebGL")}}
 
-The **`OES_vertex_array_object.deleteVertexArrayOES()`** method
-of the [WebGL API](/en-US/docs/Web/API/WebGL_API) deletes a given
-{{domxref("WebGLVertexArrayObject")}} object.
+متد **`OES_vertex_array_object.deleteVertexArrayOES()`** از [WebGL API](/en-US/docs/Web/API/WebGL_API) یک شیء {{domxref("WebGLVertexArrayObject")}} مشخص را حذف می‌کند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 deleteVertexArrayOES(arrayObject)
 ```
 
-### Parameters
+### پارامترها
 
 - `arrayObject`
-  - : A {{domxref("WebGLVertexArrayObject")}} (VAO) object to delete.
+  - : یک شیء {{domxref("WebGLVertexArrayObject")}} (VAO) که باید حذف شود.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
 ```js
 const ext = gl.getExtension("OES_vertex_array_object");
@@ -45,16 +37,16 @@ ext.bindVertexArrayOES(vao);
 ext.deleteVertexArrayOES(vao);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("WebGLRenderingContext.getExtension()")}}
 - {{domxref("WebGLRenderingContext.vertexAttribPointer()")}}
-- WebGL2 equivalent: {{domxref("WebGL2RenderingContext.deleteVertexArray()")}}
+- معادل WebGL2: {{domxref("WebGL2RenderingContext.deleteVertexArray()")}}
