@@ -1,7 +1,5 @@
 ---
 title: "PositionSensorVRDevice: getImmediateState() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PositionSensorVRDevice/getImmediateState"
-status: "needs-translation"
 ---
 
 ---
@@ -17,9 +15,9 @@ browser-compat: api.PositionSensorVRDevice.getImmediateState
 
 {{deprecated_header}}{{APIRef("WebVR API")}}{{Non-standard_header}}
 
-The **`getImmediateState()`** method of the {{domxref("VRDisplay")}} interface returns the current instantaneous position sensor state. This is intended to only be used rarely, for certain special uses, for example sampling the immediate position of a hand orientation sensor — or at least it will be, in the future.
+متد **`getImmediateState()`** از رابط {{domxref("VRDisplay")}} وضعیت لحظه‌ای فعلی حسگر موقعیت را برمی‌گرداند. این متد فقط برای استفاده‌های نادر و موارد خاص در نظر گرفته شده است؛ برای مثال نمونه‌برداری از موقعیت لحظه‌ای یک حسگر جهت دست — یا دست‌کم در آینده چنین کاربردی خواهد داشت.
 
-For most standard uses, you'll probably want to use {{domxref("PositionSensorVRDevice.getState")}} instead.
+برای بیشتر کاربردهای استاندارد، احتمالاً بهتر است از {{domxref("PositionSensorVRDevice.getState")}} استفاده کنید.
 
 ## Syntax
 
@@ -29,15 +27,15 @@ getImmediateState()
 
 ### Parameters
 
-None.
+هیچ.
 
 ### Return value
 
-A {{domxref("VRPose")}} object.
+یک شیء {{domxref("VRPose")}}.
 
 ## Examples
 
-The following demo uses the WebVR API to update the view of a simple {{domxref("CanvasRenderingContext2D")}} scene on each frame of a {{domxref("window.requestAnimationFrame()","requestAnimationFrame")}} loop. The main function that updates the view data is as follows:
+دموی زیر از WebVR API برای به‌روزرسانی نمای یک صحنهٔ سادهٔ {{domxref("CanvasRenderingContext2D")}} در هر فریم از حلقهٔ {{domxref("window.requestAnimationFrame()","requestAnimationFrame")}} استفاده می‌کند. تابع اصلی که داده‌های نما را به‌روزرسانی می‌کند به این صورت است:
 
 ```js
 function setView() {
@@ -64,9 +62,9 @@ function setView() {
 }
 ```
 
-Here we are grabbing a {{domxref("VRPose")}} object using `getImmediateState()` and storing it in `posState` (the actual live demo uses `getState()`, but both seem to do the same thing currently.) We then check to make sure that position and orientation info is present in the current frame using {{domxref("VRPose.position")}} and {{domxref("VRPose.orientation")}} (these return `null` if, for example the head mounted display is turned off or not pointing at the position sensor, which would cause an error.)
+در اینجا ما یک شیء {{domxref("VRPose")}} را با استفاده از `getImmediateState()` دریافت کرده و در `posState` ذخیره می‌کنیم (دموی زندهٔ واقعی از `getState()` استفاده می‌کند، اما در حال حاضر هر دو به نظر کار یکسانی انجام می‌دهند.) سپس با استفاده از {{domxref("VRPose.position")}} و {{domxref("VRPose.orientation")}} بررسی می‌کنیم که اطلاعات موقعیت و جهت در فریم فعلی موجود باشند (اگر مثلاً هدست نمایشگر خاموش باشد یا رو به حسگر موقعیت نباشد، این ویژگی‌ها `null` برمی‌گردانند که می‌تواند باعث خطا شود.)
 
-We then output the x, y and z position and orientation values for informational purposes, and use those values to update the `xPos`, `yPos`, `zPos`, `xOrient`, `yOrient`, and `zOrient` variables, which are used to update the scene rendering on each frame.
+سپس مقادیر x، y و z موقعیت و جهت را برای اهداف اطلاعاتی خروجی می‌گیریم و از آن مقادیر برای به‌روزرسانی متغیرهای `xPos`، `yPos`، `zPos`، `xOrient`، `yOrient` و `zOrient` استفاده می‌کنیم که برای به‌روزرسانی رندر صحنه در هر فریم به کار می‌روند.
 
 ## Browser compatibility
 
