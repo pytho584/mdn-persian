@@ -1,11 +1,5 @@
 ---
 title: "NDEFReader: readingerror event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NDEFReader/readingerror_event"
-status: "needs-translation"
----
-
----
-title: "NDEFReader: readingerror event"
 short-title: readingerror
 slug: Web/API/NDEFReader/readingerror_event
 page-type: web-api-event
@@ -16,11 +10,11 @@ browser-compat: api.NDEFReader.readingerror_event
 
 {{SecureContext_Header}}{{SeeCompatTable}}{{APIRef("Web NFC API")}}
 
-The `readingerror` event of the {{DOMxRef("NDEFReader")}} interface is fired whenever an error occurs during reading of NFC tags, e.g., when tags leave the reader's magnetic induction field.
+رویداد `readingerror` از رابط {{DOMxRef("NDEFReader")}} هرگاه خطایی در هنگام خواندن برچسب‌های NFC رخ دهد، به‌عنوان مثال زمانی که برچسب‌ها از میدان القای مغناطیسی خواننده خارج می‌شوند، فعال می‌شود.
 
-## Syntax
+## نحو
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("readingerror", (event) => { })
@@ -28,13 +22,13 @@ addEventListener("readingerror", (event) => { })
 onreadingerror = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## مثال‌ها
 
-The following example shows how to process events using both the `onreading` and `onreadingerror` event handlers.
+مثال زیر نحوه پردازش رویدادها را با استفاده از هر دو کنترل‌کننده رویداد `onreading` و `onreadingerror` نشان می‌دهد.
 
 ```js
 const ndef = new NDEFReader();
@@ -56,10 +50,10 @@ ndef
   });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
