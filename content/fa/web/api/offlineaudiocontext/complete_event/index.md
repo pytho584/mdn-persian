@@ -1,11 +1,5 @@
 ---
 title: "OfflineAudioContext: complete event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/OfflineAudioContext/complete_event"
-status: "needs-translation"
----
-
----
-title: "OfflineAudioContext: complete event"
 short-title: complete
 slug: Web/API/OfflineAudioContext/complete_event
 page-type: web-api-event
@@ -14,13 +8,13 @@ browser-compat: api.OfflineAudioContext.complete_event
 
 {{APIRef("Web Audio API")}}
 
-The `complete` event of the {{domxref("OfflineAudioContext")}} interface is fired when the rendering of an offline audio context is complete.
+رویداد `complete` در رابط {{domxref("OfflineAudioContext")}} زمانی رخ می‌دهد که رندرگیری یک زمینه صوتی آفلاین (offline audio context) کامل شود.
 
-This event is not cancelable and does not bubble.
+این رویداد قابل لغو نیست و حباب نمی‌زند.
 
-## Syntax
+## سینتکس
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی مدیریت‌کننده رویداد تنظیم کنید.
 
 ```js-nolint
 addEventListener("complete", (event) => { })
@@ -28,15 +22,15 @@ addEventListener("complete", (event) => { })
 oncomplete = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-An {{domxref("OfflineAudioCompletionEvent")}}. Inherits from {{domxref("Event")}}.
+یک رویداد از نوع {{domxref("OfflineAudioCompletionEvent")}} که از {{domxref("Event")}} ارث می‌برد.
 
 {{InheritanceDiagram("OfflineAudioCompletionEvent")}}
 
-## Examples
+## مثال‌ها
 
-When processing is complete, you might want to use the `complete` event handler to prompt the user that the audio can now be played, and enable the play button:
+پس از اتمام پردازش، می‌توانید از مدیریت‌کننده رویداد `complete` استفاده کنید تا به کاربر اعلام کنید صدا آماده پخش است و دکمه پخش را فعال کنید:
 
 ```js
 const offlineAudioCtx = new OfflineAudioContext();
@@ -48,7 +42,7 @@ offlineAudioCtx.addEventListener("complete", () => {
 });
 ```
 
-You can also set up the event handler using the `oncomplete` property:
+همچنین می‌توانید مدیریت‌کننده رویداد را با استفاده از ویژگی `oncomplete` تنظیم کنید:
 
 ```js
 const offlineAudioCtx = new OfflineAudioContext();
@@ -60,14 +54,14 @@ offlineAudioCtx.oncomplete = () => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Audio API](/en-US/docs/Web/API/Web_Audio_API)
