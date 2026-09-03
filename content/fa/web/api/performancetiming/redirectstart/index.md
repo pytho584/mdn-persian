@@ -1,7 +1,5 @@
 ---
 title: "PerformanceTiming: redirectStart property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/redirectStart"
-status: "needs-translation"
 ---
 
 ---
@@ -17,28 +15,22 @@ browser-compat: api.PerformanceTiming.redirectStart
 {{APIRef("Performance API")}}{{Deprecated_Header}}
 
 > [!WARNING]
-> This interface of this property is deprecated in the [Navigation Timing Level 2 specification](https://w3c.github.io/navigation-timing/#obsolete). Please use the {{domxref("PerformanceNavigationTiming")}}
-> interface instead.
+> رابط این ویژگی در [مشخصات Navigation Timing Level 2](https://w3c.github.io/navigation-timing/#obsolete) منسوخ شده است. لطفاً به جای آن از رابط {{domxref("PerformanceNavigationTiming")}} استفاده کنید.
 
-The legacy
-**`PerformanceTiming.redirectStart`**
-read-only property returns an `unsigned long long` representing the moment,
-in milliseconds since the UNIX epoch, the first HTTP redirect starts. If there is no
-redirect, or if one of the redirect is not of the same origin, the value returned is
-`0`.
+ویژگی فقط‌خواندنی قدیمی **`PerformanceTiming.redirectStart`** یک مقدار `unsigned long long` برمی‌گرداند که بیانگر لحظهٔ شروع اولین تغییرمسیر HTTP، بر حسب میلی‌ثانیه از مبدأ UNIX است. اگر هیچ تغییرمسیری وجود نداشته باشد، یا اگر یکی از تغییرمسیرها از همان مبدأ نباشد، مقدار بازگردانده‌شده `0` خواهد بود.
 
-## Value
+## مقدار
 
-An `unsigned long long`.
+یک `unsigned long long`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("PerformanceTiming")}} interface it belongs to.
+- رابط {{domxref("PerformanceTiming")}} که این ویژگی به آن تعلق دارد.
