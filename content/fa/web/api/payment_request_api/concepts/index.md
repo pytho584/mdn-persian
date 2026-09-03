@@ -1,10 +1,4 @@
 ---
-title: "Payment processing concepts"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Payment_Request_API/Concepts"
-status: "needs-translation"
----
-
----
 title: Payment processing concepts
 slug: Web/API/Payment_Request_API/Concepts
 page-type: guide
@@ -15,61 +9,61 @@ spec-urls:
 
 {{DefaultAPISidebar("Payment Request API")}}
 
-The [Payment Request API](/en-US/docs/Web/API/Payment_Request_API) makes it easy to handle payments in a website or app. In this article, we'll take a look at how the API operates and what each of its components does.
+رابط برنامه‌نویسی درخواست پرداخت ([Payment Request API](/en-US/docs/Web/API/Payment_Request_API)) پردازش پرداخت در یک وب‌سایت یا برنامه را آسان می‌کند. در این مقاله، نگاهی می‌اندازیم به اینکه این API چگونه کار می‌کند و هر یک از اجزای آن چه کاری انجام می‌دهد.
 
-## Terminology
+## اصطلاحات
 
-Before getting into the details of how the API operates, there are items you'll need to know.
+پیش از پرداختن به جزئیات نحوه عملکرد API، لازم است با چند مفهوم آشنا شوید.
 
 - payee (or merchant)
-  - : The merchant—either a person or an organization—whose website or app wishes to receive money through the Payment Request API.
+  - : فروشنده — شخص یا سازمان — که وب‌سایت یا برنامه‌اش می‌خواهد از طریق Payment Request API پول دریافت کند.
 - payer
-  - : The person or organization making a purchase using a website or app. The payer authenticates themselves, then authorizes payment, as required by the payment method.
+  - : شخص یا سازمانی که با استفاده از یک وب‌سایت یا برنامه خرید می‌کند. پرداخت‌کننده طبق الزام روش پرداخت، احراز هویت می‌کند و سپس پرداخت را مجاز می‌کند.
 - payment method
-  - : The instrument by which payment is submitted, such as a credit card or online payment service.
+  - : ابزاری که پرداخت با استفاده از آن انجام می‌شود، مانند کارت اعتباری یا سرویس پرداخت آنلاین.
 - payment method provider
-  - : An organization that provides the technology needed to submit payments using a given payment method. For example, when using a credit card to pay, the credit card processing service is the payment method provider.
+  - : سازمانی که فناوری لازم برای انجام پرداخت با یک روش پرداخت معین را فراهم می‌کند. برای مثال، هنگام پرداخت با کارت اعتباری، سرویس پردازش کارت اعتباری، ارائه‌دهنده روش پرداخت است.
 - payment handler
-  - : The implementation of the code needed to interface with a particular payment method provider in order to process payments.
+  - : پیاده‌سازی کدهای لازم برای ارتباط با یک ارائه‌دهنده روش پرداخت خاص به‌منظور پردازش پرداخت‌ها.
 
-Some payment handlers use **merchant validation**, which is the process of validating the identity of a merchant in some way, usually using some form of cryptographic response such as a public key. Validated merchants are allowed to interface with a payment handler.
+برخی از پردازنده‌های پرداخت از **merchant validation** (تأیید هویت فروشنده) استفاده می‌کنند؛ فرآیندی که در آن هویت فروشنده به نحوی اعتبارسنجی می‌شود، معمولاً با استفاده از نوعی پاسخ رمزنگاری مانند کلید عمومی. فروشندگان تأییدشده مجاز به ارتباط با یک پردازنده پرداخت هستند.
 
-## Payment method identifiers
+## شناسه‌های روش پرداخت
 
-Payment handlers are identified by **payment method identifiers**, which are strings uniquely identifying the payment handler. These may be either one of the standardized payment handler identifiers, or a URL used by the payment processing service to both identify itself and to handle payments.
+پردازنده‌های پرداخت با **شناسه‌های روش پرداخت** (payment method identifiers) شناسایی می‌شوند؛ رشته‌هایی که به‌صورت یکتا پردازنده پرداخت را مشخص می‌کنند. این شناسه‌ها می‌توانند یکی از شناسه‌های استانداردشده پردازنده پرداخت باشند یا یک URL که سرویس پردازش پرداخت هم برای شناسایی خود و هم برای مدیریت پرداخت‌ها از آن استفاده می‌کند.
 
-### Standardized payment method identifiers
+### شناسه‌های استاندارد روش پرداخت
 
-Standardized payment method identifiers are those listed in the [payment method registry](https://w3c.github.io/payment-method-id/#registry).
+شناسه‌های استاندارد روش پرداخت، شناسه‌هایی هستند که در [payment method registry](https://w3c.github.io/payment-method-id/#registry) فهرست شده‌اند.
 
 - `secure-payment-confirmation`
-  - : Identifies the [Secure Payment Confirmation](https://w3c.github.io/secure-payment-confirmation/) method. The payment request data for this method is defined by the {{domxref("SecurePaymentConfirmationRequest")}} dictionary. For more information see [Using Secure Payment Confirmation](/en-US/docs/Web/API/Payment_Request_API/Using_secure_payment_confirmation).
+  - : روش [Secure Payment Confirmation](https://w3c.github.io/secure-payment-confirmation/) را شناسایی می‌کند. داده‌های درخواست پرداخت برای این روش توسط دیکشنری {{domxref("SecurePaymentConfirmationRequest")}} تعریف می‌شود. برای اطلاعات بیشتر، [Using Secure Payment Confirmation](/en-US/docs/Web/API/Payment_Request_API/Using_secure_payment_confirmation) را ببینید.
 
 - `basic-card`
-  - : This payment method identifier was intended to facilitate card-based payments on the Web through the Payment Request API. **The [Web Payments Working Group](https://www.w3.org/groups/wg/payments) has deprecated this payment method.**
+  - : این شناسه روش پرداخت برای تسهیل پرداخت‌های مبتنی بر کارت در وب از طریق Payment Request API در نظر گرفته شده بود. **گروه [Web Payments Working Group](https://www.w3.org/groups/wg/payments) این روش پرداخت را منسوخ (deprecated) اعلام کرده است.**
 
-### URL-based payment method identifiers
+### شناسه‌های روش پرداخت مبتنی بر URL
 
-These identifiers are typically provided by payment service providers during onboarding or integration and may vary substantially depending on the specifics of the service, API version, and communication technology. Developers will usually obtain these identifiers directly from their chosen payment service provider's documentation rather than discovering them independently.
+این شناسه‌ها معمولاً توسط ارائه‌دهندگان سرویس پرداخت هنگام راه‌اندازی (onboarding) یا یکپارچه‌سازی ارائه می‌شوند و بسته به ویژگی‌های سرویس، نسخه API و فناوری ارتباطی ممکن است بسیار متفاوت باشند. توسعه‌دهندگان معمولاً این شناسه‌ها را مستقیماً از مستندات ارائه‌دهنده سرویس پرداخت انتخابی خود دریافت می‌کنند، نه اینکه به‌طور مستقل آن‌ها را کشف کنند.
 
 - `https://apple.com/apple-pay`
-  - : Payments are handled using the [Apple Pay](https://www.apple.com/apple-pay/) service. This payment method is primarily supported in Safari on compatible Apple devices.
+  - : پرداخت‌ها با استفاده از سرویس [Apple Pay](https://www.apple.com/apple-pay/) انجام می‌شوند. این روش پرداخت عمدتاً در Safari روی دستگاه‌های سازگار اپل پشتیبانی می‌شود.
 - `https://google.com/pay`
-  - : Payments are processed by [Google Pay](https://pay.google.com/payments/home/). Support depends on browsers that implement the Payment Handler API (currently primarily Chromium-based browsers).
+  - : پرداخت‌ها توسط [Google Pay](https://pay.google.com/payments/home/) پردازش می‌شوند. پشتیبانی از آن به مرورگرهایی بستگی دارد که Payment Handler API را پیاده‌سازی می‌کنند (در حال حاضر عمدتاً مرورگرهای مبتنی بر Chromium).
 
-## Functions of a payment handler
+## وظایف یک پردازنده پرداخت
 
-A {{Glossary("user agent")}} may provide built-in support for certain types of payments. In addition, the [Payment Handler API](https://w3c.github.io/web-based-payment-handler/) can be used to establish support for additional payment method providers, in browsers that support it. In either case, the payment handler is responsible for:
+یک {{Glossary("user agent")}} ممکن است پشتیبانی داخلی برای برخی از انواع پرداخت‌ها فراهم کند. علاوه بر این، می‌توان از [Payment Handler API](https://w3c.github.io/web-based-payment-handler/) برای ایجاد پشتیبانی از ارائه‌دهندگان روش پرداخت اضافی در مرورگرهایی که از آن پشتیبانی می‌کنند استفاده کرد. در هر صورت، پردازنده پرداخت مسئول موارد زیر است:
 
-1. **Making sure a payment can be made.** The conditions that make payment possible vary depending on the payment method and the user's payment request; for example, if the user chooses to pay using a credit card that isn't accepted by the payee, the payment can't be made.
-2. **If merchant validation is supported by the payment handler, respond to merchant validation requests from the user agent.** See [Merchant validation](#merchant_validation) for details.
-3. **Verify that the information provided by the user results in a valid transaction.** This results in the creation and returning of a payment method-specific object that contains the information needed to handle the transaction.
+1. **اطمینان از اینکه پرداخت امکان‌پذیر است.** شرایطی که پرداخت را ممکن می‌کنند بسته به روش پرداخت و درخواست پرداخت کاربر متفاوت است؛ برای مثال، اگر کاربر بخواهد با کارت اعتباری‌ای پرداخت کند که توسط فروشنده پذیرفته نشده است، پرداخت امکان‌پذیر نیست.
+2. **اگر پردازنده پرداخت از merchant validation پشتیبانی می‌کند، به درخواست‌های تأیید هویت فروشنده از سمت user agent پاسخ دهد.** برای جزئیات به [Merchant validation](#merchant_validation) مراجعه کنید.
+3. **تأیید اینکه اطلاعات ارائه‌شده توسط کاربر به یک تراکنش معتبر منجر می‌شود.** این امر منجر به ایجاد و بازگرداندن یک شیء خاص روش پرداخت می‌شود که حاوی اطلاعات لازم برای مدیریت تراکنش است.
 
 ## Merchant validation
 
-Some payment handlers use _merchant validation_, which is the process of validating the identity of a merchant in some way, usually using some form of cryptographic challenge. If the merchant doesn't successfully validate, it's not allowed to use the payment handler.
+برخی از پردازنده‌های پرداخت از _merchant validation_ (تأیید هویت فروشنده) استفاده می‌کنند؛ فرآیندی که در آن هویت فروشنده به نحوی اعتبارسنجی می‌شود، معمولاً با استفاده از نوعی چالش رمزنگاری. اگر فروشنده با موفقیت تأیید نشود، اجازه استفاده از پردازنده پرداخت را ندارد.
 
-The exact validation technology depends on the payment handler, and merchant validation is entirely optional. In the end, the only thing that the website or app is responsible for is fetching the merchant's validation key and passing it into the event's {{domxref("MerchantValidationEvent.complete", "complete()")}} method.
+فناوری دقیق تأیید هویت به پردازنده پرداخت بستگی دارد و merchant validation کاملاً اختیاری است. در نهایت، تنها کاری که وب‌سایت یا برنامه مسئول آن است، دریافت کلید تأیید هویت فروشنده و ارسال آن به متد {{domxref("MerchantValidationEvent.complete", "complete()")}} رویداد است.
 
 ```js
 paymentRequest.onmerchantvalidation = (event) => {
@@ -77,17 +71,17 @@ paymentRequest.onmerchantvalidation = (event) => {
 };
 ```
 
-In this example, `fetchValidationData()` is a function which loads the payment handler specific identifying information from the address given by `validationURL`. Note this function must go through the merchant server, because a client typically does not access the validation URL itself.
+در این مثال، `fetchValidationData()` تابعی است که اطلاعات شناسایی خاص پردازنده پرداخت را از آدرس داده‌شده توسط `validationURL` بارگذاری می‌کند. توجه داشته باشید که این تابع باید از طریق سرور فروشنده عمل کند، زیرا معمولاً کلاینت به خودِ URL تأیید هویت دسترسی ندارد.
 
-By then delivering this data (or a {{jsxref("Promise")}} which resolves to the loaded data) to the payment handler by passing it into `complete()`, the payment handler can use the retrieved data and whatever algorithm and other data to support in order to verify that the merchant can use the payment handler.
+سپس با ارسال این داده‌ها (یا یک {{jsxref("Promise")}} که به داده‌های بارگذاری‌شده resolve می‌شود) به پردازنده پرداخت از طریق `complete()`، پردازنده پرداخت می‌تواند از داده‌های بازیابی‌شده و هر الگوریتم و داده‌های دیگری که پشتیبانی می‌کند استفاده کند تا تأیید کند که فروشنده می‌تواند از پردازنده پرداخت استفاده کند.
 
-Thus, it's important to note that the {{Glossary("user agent")}} never sends a {{domxref("PaymentRequest.merchantvalidation_event", "merchantvalidation")}} event, unless the user agent itself implements a payment handler. For instance, Safari has integrated support for Apple Pay, so the Apple Pay payment handler uses this to ensure that Apple Pay can be used to pay the merchant by sending `merchantvalidation` to the client, instructing it to fetch the server's validation data and deliver it to the payment handler by calling `complete()`.
+بنابراین، توجه به این نکته مهم است که {{Glossary("user agent")}} هرگز رویداد {{domxref("PaymentRequest.merchantvalidation_event", "merchantvalidation")}} را ارسال نمی‌کند، مگر اینکه خود user agent یک پردازنده پرداخت پیاده‌سازی کرده باشد. برای مثال، Safari پشتیبانی یکپارچه‌ای از Apple Pay دارد؛ بنابراین پردازنده پرداخت Apple Pay با ارسال `merchantvalidation` به کلاینت و دستور دریافت داده‌های تأیید هویت سرور و تحویل آن به پردازنده پرداخت از طریق فراخوانی `complete()`، مطمئن می‌شود که Apple Pay می‌تواند برای پرداخت به فروشنده استفاده شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## See also
+## همچنین ببینید
 
 - [Payment Request API](/en-US/docs/Web/API/Payment_Request_API)
 - [Using the Payment Request API](/en-US/docs/Web/API/Payment_Request_API/Using_the_Payment_Request_API)
