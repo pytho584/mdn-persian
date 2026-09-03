@@ -1,11 +1,5 @@
 ---
 title: "NetworkInformation: effectiveType property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation/effectiveType"
-status: "needs-translation"
----
-
----
-title: "NetworkInformation: effectiveType property"
 short-title: effectiveType
 slug: Web/API/NetworkInformation/effectiveType
 page-type: web-api-instance-property
@@ -14,24 +8,21 @@ browser-compat: api.NetworkInformation.effectiveType
 
 {{APIRef("Network Information API")}} {{AvailableInWorkers}}
 
-The **`effectiveType`** read-only property of the
-{{domxref("NetworkInformation")}} interface returns the effective type of the connection
-meaning one of `slow-2g`, `2g`, `3g`, or `4g`. This value is determined using a
-combination of recently observed, round-trip time and downlink values.
+ویژگی فقط‌خواندنی **`effectiveType`** از رابط {{domxref("NetworkInformation")}} نوع مؤثر اتصال را برمی‌گرداند؛ یعنی یکی از مقادیر `slow-2g`، `2g`، `3g` یا `4g`. این مقدار با استفاده از ترکیبی از مقادیرِ زمان رفت‌وبرگشت (round-trip time) و سرعت دانلود (downlink) که اخیراً مشاهده شده‌اند تعیین می‌شود.
 
-## Value
+## مقدار
 
-A string that is either `slow-2g`, `2g`, `3g`, or `4g`.
+یک رشته (string) که یکی از مقادیر `slow-2g`، `2g`، `3g` یا `4g` است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Effective Connection Type](/en-US/docs/Glossary/Effective_connection_type)
+- [نوع اتصال مؤثر](/en-US/docs/Glossary/Effective_connection_type)
 - {{HTTPHeader("ECT")}}
