@@ -1,11 +1,5 @@
 ---
-title: "OfflineAudioCompletionEvent: renderedBuffer property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/OfflineAudioCompletionEvent/renderedBuffer"
-status: "needs-translation"
----
-
----
-title: "OfflineAudioCompletionEvent: renderedBuffer property"
+title: "خصوصیت renderedBuffer در OfflineAudioCompletionEvent"
 short-title: renderedBuffer
 slug: Web/API/OfflineAudioCompletionEvent/renderedBuffer
 page-type: web-api-instance-property
@@ -14,18 +8,16 @@ browser-compat: api.OfflineAudioCompletionEvent.renderedBuffer
 
 {{APIRef("Web Audio API")}}
 
-The **`renderedBuffer`** read-only property of the
-{{domxref("OfflineAudioCompletionEvent")}} interface is an {{domxref("AudioBuffer")}}
-containing the result of processing an {{domxref("OfflineAudioContext")}}.
+خصوصیت فقط‌خواندنی **`renderedBuffer`** در رابط {{domxref("OfflineAudioCompletionEvent")}} یک {{domxref("AudioBuffer")}} است که نتیجه پردازش یک {{domxref("OfflineAudioContext")}} را در خود جای می‌دهد.
 
-## Value
+## مقدار
 
-An {{domxref("AudioBuffer")}}.
+یک {{domxref("AudioBuffer")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
