@@ -1,25 +1,14 @@
 ---
 title: "NavigationTransition: finished property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigationTransition/finished"
-status: "needs-translation"
----
-
----
-title: "NavigationTransition: finished property"
-short-title: finished
-slug: Web/API/NavigationTransition/finished
-page-type: web-api-instance-property
-browser-compat: api.NavigationTransition.finished
 ---
 
 {{APIRef("Navigation API")}}
 
-The **`finished`** read-only property of the
-{{domxref("NavigationTransition")}} interface returns a {{jsxref("Promise")}} that fulfills at the same time the {{domxref("Navigation/navigatesuccess_event", "navigatesuccess")}} event fires, or rejects at the same time the {{domxref("Navigation/navigateerror_event", "navigateerror")}} event fires.
+ویژگی فقط خواندنی **`finished`** از رابط {{domxref("NavigationTransition")}} یک {{jsxref("Promise")}} برمی‌گرداند که همزمان با فعال شدن رویداد {{domxref("Navigation/navigatesuccess_event", "navigatesuccess")}} انجام می‌شود (resolve) یا همزمان با فعال شدن رویداد {{domxref("Navigation/navigateerror_event", "navigateerror")}} رد می‌شود (reject).
 
 ## Value
 
-A {{jsxref("Promise")}} that resolves to `undefined`.
+یک {{jsxref("Promise")}} که به `undefined` resolve می‌شود.
 
 ## Examples
 
