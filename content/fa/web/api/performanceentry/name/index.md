@@ -1,11 +1,5 @@
 ---
 title: "PerformanceEntry: name property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEntry/name"
-status: "needs-translation"
----
-
----
-title: "PerformanceEntry: name property"
 short-title: name
 slug: Web/API/PerformanceEntry/name
 page-type: web-api-instance-property
@@ -14,35 +8,35 @@ browser-compat: api.PerformanceEntry.name
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The read-only **`name`** property of the {{domxref("PerformanceEntry")}} interface is a string representing the name for a performance entry. It acts as an identifier, but it does not have to be unique. The value depends on the subclass.
+ویژگی فقط خواندنی **`name`** در رابط {{domxref("PerformanceEntry")}} یک رشته است که نام یک ورودی عملکرد را نشان می‌دهد. این ویژگی به‌عنوان یک شناسه عمل می‌کند، اما لزوماً یکتا نیست. مقدار آن به زیرکلاس (subclass) بستگی دارد.
 
-## Value
+## مقدار
 
-A string. The value depends on the subclass of the `PerformanceEntry` object as shown by the table below.
+یک رشته. مقدار آن به زیرکلاس شیء `PerformanceEntry` بستگی دارد، همان‌طور که در جدول زیر نشان داده شده است.
 
 <table class="no-markdown">
   <thead>
     <tr>
-      <th scope="col">Subclass</th>
-      <th scope="col">Value</th>
+      <th scope="col">زیرکلاس</th>
+      <th scope="col">مقدار</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>{{domxref('InteractionContentfulPaint')}}</td>
-      <td>Always returns an empty string.</td>
+      <td>همیشه یک رشتهٔ خالی برمی‌گرداند.</td>
     </tr>
     <tr>
       <td>{{domxref('LargestContentfulPaint')}}</td>
-      <td>Always returns an empty string.</td>
+      <td>همیشه یک رشتهٔ خالی برمی‌گرداند.</td>
     </tr>
     <tr>
       <td>{{domxref('LayoutShift')}}</td>
-      <td>Always returns <code>"layout-shift"</code>.</td>
+      <td>همیشه <code>"layout-shift"</code> را برمی‌گرداند.</td>
     </tr>
     <tr>
       <td>{{domxref('PerformanceElementTiming')}}</td>
-      <td>One of the following strings:
+      <td>یکی از رشته‌های زیر:
         <ul>
           <li><code>"image-paint"</code></li>
           <li><code>"text-paint"</code></li>
@@ -51,15 +45,15 @@ A string. The value depends on the subclass of the `PerformanceEntry` object as 
     </tr>
     <tr>
       <td>{{domxref('PerformanceEventTiming')}}</td>
-      <td>The associated event's type.</td>
+      <td>نوع رویداد مرتبط.</td>
     </tr>
     <tr>
       <td>{{domxref('PerformanceLongAnimationFrameTiming')}}</td>
-      <td>Always returns <code>"long-animation-frame"</code>.</td>
+      <td>همیشه <code>"long-animation-frame"</code> را برمی‌گرداند.</td>
     </tr>
     <tr>
       <td>{{domxref('PerformanceLongTaskTiming')}}</td>
-      <td>One of the following strings:
+      <td>یکی از رشته‌های زیر:
         <ul>
           <li><code>"cross-origin-ancestor"</code></li>
           <li><code>"cross-origin-descendant"</code></li>
@@ -76,27 +70,27 @@ A string. The value depends on the subclass of the `PerformanceEntry` object as 
     <tr>
       <td>{{domxref('PerformanceMark')}}</td>
       <td>
-        The name used when the mark was created by calling
-        {{domxref("Performance.mark","performance.mark()")}}.
+        نامی که هنگام ایجاد نشانه (mark) با فراخوانی
+        {{domxref("Performance.mark","performance.mark()")}} استفاده شده است.
       </td>
     </tr>
     <tr>
       <td>{{domxref('PerformanceMeasure')}}</td>
       <td>
-        The name used when the measure was created by calling
-        {{domxref("Performance.measure","performance.measure()")}}.
+        نامی که هنگام ایجاد اندازه‌گیری (measure) با فراخوانی
+        {{domxref("Performance.measure","performance.measure()")}} استفاده شده است.
       </td>
     </tr>
     <tr>
       <td>{{domxref('PerformanceNavigationTiming')}}</td>
-      <td>The resolved URL of the requested resource.
-      Note that this omits any <a href="/en-US/docs/Web/URI/Reference/Fragment/Text_fragments">text fragments</a> or other fragment directives.
-      The value doesn't change even if the request is redirected.
+      <td>URL تفکیک‌شدهٔ منبع درخواست‌شده.
+      توجه کنید که این مقدار شامل هیچ <a href="/en-US/docs/Web/URI/Reference/Fragment/Text_fragments">قطعه‌متن (text fragment)</a> یا دیگر دستورالعمل‌های قطعه (fragment directives) نمی‌شود.
+      این مقدار حتی اگر درخواست تغییر مسیر داده شود نیز تغییر نمی‌کند.
       </td>
     </tr>
     <tr>
       <td>{{domxref('PerformancePaintTiming')}}</td>
-      <td>One of the following strings:
+      <td>یکی از رشته‌های زیر:
         <ul>
           <li><code>"first-paint"</code></li>
           <li><code>"first-contentful-paint"</code></li>
@@ -105,19 +99,19 @@ A string. The value depends on the subclass of the `PerformanceEntry` object as 
     </tr>
     <tr>
       <td>{{domxref('PerformanceResourceTiming')}}</td>
-      <td>The resolved URL of the requested resource. This value doesn't change even if the request is redirected.</td>
+      <td>URL تفکیک‌شدهٔ منبع درخواست‌شده. این مقدار حتی اگر درخواست تغییر مسیر داده شود نیز تغییر نمی‌کند.</td>
     </tr>
     <tr>
       <td>{{domxref('PerformanceSoftNavigation')}}</td>
-      <td>The new URL navigated to.</td>
+      <td>URL جدیدی که به آن ناوبری شده است.</td>
     </tr>
     <tr>
       <td>{{domxref('TaskAttributionTiming')}}</td>
-      <td>Always returns <code>"unknown"</code>.</td>
+      <td>همیشه <code>"unknown"</code> را برمی‌گرداند.</td>
     </tr>
     <tr>
       <td>{{domxref('VisibilityStateEntry')}}</td>
-      <td>One of the following strings:
+      <td>یکی از رشته‌های زیر:
         <ul>
           <li><code>"visible"</code></li>
           <li><code>"hidden"</code></li>
@@ -127,15 +121,14 @@ A string. The value depends on the subclass of the `PerformanceEntry` object as 
   </tbody>
 </table>
 
-## Examples
+## مثال‌ها
 
-### Filtering performance entries by name
+### فیلتر کردن ورودی‌های عملکرد بر اساس نام
 
-When the `PerformanceEntry` is a {{domxref('PerformanceResourceTiming')}} object, the `name` property refers to the resolved URL of the requested resource.
-In this case, the `name` property can be useful to filter out specific resources, for example all SVG images.
+وقتی `PerformanceEntry` یک شیء {{domxref('PerformanceResourceTiming')}} باشد، ویژگی `name` به URL تفکیک‌شدهٔ منبع درخواست‌شده اشاره دارد. در این حالت، ویژگی `name` می‌تواند برای فیلتر کردن منابع خاص، مثلاً همهٔ تصاویر SVG، مفید باشد.
 
 ```js
-// Log durations of SVG resources
+// ثبت مدت‌زمان منابع SVG
 performance.getEntriesByType("resource").forEach((entry) => {
   if (entry.name.endsWith(".svg")) {
     console.log(`${entry.name}'s duration: ${entry.duration}`);
@@ -143,19 +136,19 @@ performance.getEntriesByType("resource").forEach((entry) => {
 });
 ```
 
-### Getting performance entries by name
+### دریافت ورودی‌های عملکرد بر اساس نام
 
-Both {{domxref("Performance")}} and {{domxref("PerformanceObserver")}} provide methods that allow you to get performance entries by name directly. You don't necessarily need the `name` property for that, instead you might use {{domxref("Performance.getEntriesByName()")}} or {{domxref("PerformanceObserverEntryList.getEntriesByName()")}}.
+هر دو {{domxref("Performance")}} و {{domxref("PerformanceObserver")}} روش‌هایی ارائه می‌دهند که به شما امکان می‌دهند ورودی‌های عملکرد را مستقیماً بر اساس نام دریافت کنید. لزوماً به ویژگی `name` برای این کار نیاز ندارید، در عوض می‌توانید از {{domxref("Performance.getEntriesByName()")}} یا {{domxref("PerformanceObserverEntryList.getEntriesByName()")}} استفاده کنید.
 
 ```js
-// Log all marks named "debug-marks" at this point in time
+// ثبت تمام نشانه‌هایی به نام "debug-marks" در این نقطه از زمان
 const debugMarks = performance.getEntriesByName("debug-mark", "mark");
 debugMarks.forEach((entry) => {
   console.log(`${entry.name}'s startTime: ${entry.startTime}`);
 });
 
-// PerformanceObserver version
-// Log all marks named "debug-marks" when they happen
+// نسخهٔ PerformanceObserver
+// ثبت تمام نشانه‌هایی به نام "debug-marks" هنگام وقوع
 function perfObserver(list, observer) {
   list.getEntriesByName("debug-mark", "mark").forEach((entry) => {
     console.log(`${entry.name}'s startTime: ${entry.startTime}`);
@@ -165,15 +158,15 @@ const observer = new PerformanceObserver(perfObserver);
 observer.observe({ entryTypes: ["measure", "mark"] });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Performance.getEntriesByName()")}}
 - {{domxref("PerformanceObserverEntryList.getEntriesByName()")}}
