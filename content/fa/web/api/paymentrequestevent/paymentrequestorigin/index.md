@@ -1,11 +1,5 @@
 ---
 title: "PaymentRequestEvent: paymentRequestOrigin property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/paymentRequestOrigin"
-status: "needs-translation"
----
-
----
-title: "PaymentRequestEvent: paymentRequestOrigin property"
 short-title: paymentRequestOrigin
 slug: Web/API/PaymentRequestEvent/paymentRequestOrigin
 page-type: web-api-instance-property
@@ -16,15 +10,13 @@ browser-compat: api.PaymentRequestEvent.paymentRequestOrigin
 
 {{SeeCompatTable}}{{APIRef("Web-Based Payment Handler API")}}{{AvailableInWorkers("service")}}
 
-The **`paymentRequestOrigin`** read-only property of the
-{{domxref("PaymentRequestEvent")}} interface returns the origin where the
-{{domxref("PaymentRequest")}} object was initialized.
+ویژگی فقط‌خواندنی **`paymentRequestOrigin`** از رابط {{domxref("PaymentRequestEvent")}}، مبدأ (origin)ای را برمی‌گرداند که شیء {{domxref("PaymentRequest")}} در آن مقداردهی اولیه شده است.
 
-## Value
+## مقدار
 
-A string.
+یک رشته (string).
 
-## Examples
+## مثال‌ها
 
 ```js
 self.addEventListener("paymentrequest", (e) => {
@@ -32,18 +24,18 @@ self.addEventListener("paymentrequest", (e) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Web-based payment apps overview](https://web.dev/articles/web-based-payment-apps-overview)
-- [Setting up a payment method](https://web.dev/articles/setting-up-a-payment-method)
-- [Life of a payment transaction](https://web.dev/articles/life-of-a-payment-transaction)
-- [Using the Payment Request API](/en-US/docs/Web/API/Payment_Request_API/Using_the_Payment_Request_API)
-- [Payment processing concepts](/en-US/docs/Web/API/Payment_Request_API/Concepts)
+- [مروری بر برنامه‌های پرداخت مبتنی بر وب](https://web.dev/articles/web-based-payment-apps-overview)
+- [راه‌اندازی یک روش پرداخت](https://web.dev/articles/setting-up-a-payment-method)
+- [چرخه‌ی یک تراکنش پرداخت](https://web.dev/articles/life-of-a-payment-transaction)
+- [استفاده از Payment Request API](/en-US/docs/Web/API/Payment_Request_API/Using_the_Payment_Request_API)
+- [مفاهیم پردازش پرداخت](/en-US/docs/Web/API/Payment_Request_API/Concepts)
