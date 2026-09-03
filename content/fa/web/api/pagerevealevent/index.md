@@ -1,10 +1,4 @@
 ---
-title: "PageRevealEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PageRevealEvent"
-status: "needs-translation"
----
-
----
 title: PageRevealEvent
 slug: Web/API/PageRevealEvent
 page-type: web-api-interface
@@ -13,11 +7,11 @@ browser-compat: api.PageRevealEvent
 
 {{APIRef("HTML DOM")}}
 
-The **`PageRevealEvent`** event object is made available inside handler functions for the {{domxref("Window.pagereveal_event", "pagereveal")}} event.
+شیء رویداد **`PageRevealEvent`** در داخل توابع مدیریت‌کنندهٔ رویداد {{domxref("Window.pagereveal_event", "pagereveal")}} در دسترس قرار می‌گیرد.
 
-During a cross-document navigation, it allows you to manipulate a related [view transition](/en-US/docs/Web/API/View_Transition_API) (providing access to the relevant {{domxref("ViewTransition")}} object) from the document being navigated _to_, if a view transition was triggered by the navigation.
+در یک پیمایش بین‌اسنادی (cross-document navigation)، این رویداد به شما امکان می‌دهد تا در سند مقصد، یک [view transition](/en-US/docs/Web/API/View_Transition_API) مرتبط را دستکاری کنید (با دسترسی به شیء {{domxref("ViewTransition")}} مربوطه)، مشروط بر اینکه پیمایش، view transition را فعال کرده باشد.
 
-Outside view transitions, this event is also useful for cases such as triggering a startup animation, or reporting a page view. It's equivalent to the first {{domxref("Window.requestAnimationFrame()")}} run after a cross-document navigation, if you were to trigger `requestAnimationFrame()` in the {{htmlelement("head")}} of the document. For example, if you ran the following `reveal()` function in the `<head>`:
+در خارج از view transitionها، این رویداد برای مواردی مانند اجرای انیمیشن شروع صفحه یا گزارش‌دهی بازدید صفحه نیز کاربرد دارد. این رویداد معادل اولین اجرای {{domxref("Window.requestAnimationFrame()")}} پس از پیمایش بین‌اسنادی است، به شرطی که `requestAnimationFrame()` را در {{htmlelement("head")}} سند فراخوانی کرده باشید. برای مثال، اگر تابع `reveal()` زیر را در `<head>` اجرا کنید:
 
 ```js
 function reveal() {
@@ -30,17 +24,17 @@ requestAnimationFrame(() => reveal());
 window.onpagehide = () => requestAnimationFrame(() => reveal());
 ```
 
-## Constructor
+## سازنده
 
 - {{domxref("PageRevealEvent.PageRevealEvent", "PageRevealEvent()")}}
-  - : Creates a new `PageRevealEvent` object instance.
+  - : یک نمونهٔ جدید از شیء `PageRevealEvent` می‌سازد.
 
-## Instance properties
+## خصوصیات نمونه
 
 - {{domxref("PageRevealEvent.viewTransition", "viewTransition")}} {{ReadOnlyInline}}
-  - : Contains a {{domxref("ViewTransition")}} object representing the active view transition for the cross-document navigation.
+  - : شامل یک شیء {{domxref("ViewTransition")}} است که نمایانگر view transition فعال برای پیمایش بین‌اسنادی است.
 
-## Examples
+## مثال‌ها
 
 ```js
 window.addEventListener("pagereveal", async (e) => {
@@ -94,16 +88,16 @@ window.addEventListener("pagereveal", async (e) => {
 ```
 
 > [!NOTE]
-> See [List of Chrome DevRel team members](https://view-transitions.chrome.dev/profiles/mpa/) for the live demo this code is taken from.
+> برای مشاهدهٔ نسخهٔ نمایشی زنده‌ای که این کد از آن گرفته شده است، به [فهرست اعضای تیم Chrome DevRel](https://view-transitions.chrome.dev/profiles/mpa/) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [View Transition API](/en-US/docs/Web/API/View_Transition_API)
