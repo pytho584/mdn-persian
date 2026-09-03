@@ -1,11 +1,5 @@
 ---
 title: "NodeList: values() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NodeList/values"
-status: "needs-translation"
----
-
----
-title: "NodeList: values() method"
 short-title: values()
 slug: Web/API/NodeList/values
 page-type: web-api-instance-method
@@ -14,25 +8,23 @@ browser-compat: api.NodeList.values
 
 {{APIRef("DOM")}}
 
-The **`NodeList.values()`** method returns an
-{{jsxref("Iteration_protocols",'iterator')}} allowing to go through all values contained
-in this object. The values are {{domxref("Node")}} objects.
+متد **`NodeList.values()`** یک {{jsxref("Iteration_protocols",'iterator')}} برمی‌گرداند که امکان پیمایش روی همهٔ مقادیر موجود در این شیء را فراهم می‌کند. این مقادیر، اشیاء {{domxref("Node")}} هستند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 values()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار برگشتی
 
-Returns an {{jsxref("Iteration_protocols","iterator")}}.
+یک {{jsxref("Iteration_protocols","iterator")}} برمی‌گرداند.
 
-## Example
+## مثال
 
 ```js
 const node = document.createElement("div");
@@ -52,7 +44,7 @@ for (const value of list.values()) {
 }
 ```
 
-The result is:
+نتیجه به این صورت است:
 
 ```plain
 <p>
@@ -60,16 +52,16 @@ The result is:
 <span>
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Polyfill of `NodeList.prototype.values` in `core-js`](https://github.com/zloirock/core-js#iterable-dom-collections)
+- [پالیفیلِ `NodeList.prototype.values` در `core-js`](https://github.com/zloirock/core-js#iterable-dom-collections)
 - {{domxref("Node")}}
 - {{domxref("NodeList")}}
