@@ -1,11 +1,5 @@
 ---
 title: "Node: parentNode property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Node/parentNode"
-status: "needs-translation"
----
-
----
-title: "Node: parentNode property"
 short-title: parentNode
 slug: Web/API/Node/parentNode
 page-type: web-api-instance-property
@@ -14,24 +8,19 @@ browser-compat: api.Node.parentNode
 
 {{APIRef("DOM")}}
 
-The read-only **`parentNode`** property of the {{domxref("Node")}} interface
-returns the parent of the specified node in the DOM tree.
+خاصیت فقط-خواندنی **`parentNode`** از واسط {{domxref("Node")}}، والد گره مشخص‌شده را در درخت DOM برمی‌گرداند.
 
-`Document` and `DocumentFragment` [nodes](/en-US/docs/Web/API/Node/nodeType) can never have a parent, so
-`parentNode` will always return `null`.
-It also returns `null` if the node has just been created
-and is not yet attached to the tree. {{domxref("Node.parentElement")}} on the other hand only returns `Element` nodes.
+گره‌های `Document` و `DocumentFragment` هیچ‌گاه نمی‌توانند والد داشته باشند، بنابراین `parentNode` همیشه `null` برمی‌گرداند. همچنین اگر گره تازه ایجاد شده باشد و هنوز به درخت متصل نشده باشد، `null` برمی‌گرداند. از سوی دیگر، {{domxref("Node.parentElement")}} فقط گره‌های `Element` را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A {{domxref("Node")}} that is the parent of the current node. The parent of an element is
-an `Element` node, a `Document` node, or a `DocumentFragment` node.
+یک {{domxref("Node")}} که والد گره جاری است. والد یک عنصر می‌تواند یک گره `Element`، یک گره `Document` یا یک گره `DocumentFragment` باشد.
 
-## Example
+## مثال
 
-### Using parentNode
+### استفاده از parentNode
 
-This example removes a node from the tree, unless it's not in the tree already.
+این مثال یک گره را از درخت حذف می‌کند، مگر اینکه از قبل در درخت نباشد.
 
 ```js
 if (node.parentNode) {
@@ -39,15 +28,15 @@ if (node.parentNode) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{Domxref("Node.firstChild")}}
 - {{Domxref("Node.lastChild")}}
