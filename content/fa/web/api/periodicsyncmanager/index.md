@@ -1,10 +1,4 @@
 ---
-title: "PeriodicSyncManager"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PeriodicSyncManager"
-status: "needs-translation"
----
-
----
 title: PeriodicSyncManager
 slug: Web/API/PeriodicSyncManager
 page-type: web-api-interface
@@ -15,28 +9,28 @@ browser-compat: api.PeriodicSyncManager
 
 {{APIRef("Periodic Background Sync")}}{{SeeCompatTable}}{{AvailableInWorkers}}
 
-The **`PeriodicSyncManager`** interface of the {{domxref('Web Periodic Background Synchronization API', '', '', 'nocode')}} provides a way to register tasks to be run in a service worker at periodic intervals with network connectivity. These tasks are referred to as periodic background sync requests. Access `PeriodicSyncManager` through the {{domxref('ServiceWorkerRegistration.periodicSync')}}.
+رابطِ **`PeriodicSyncManager`** از {{domxref('Web Periodic Background Synchronization API', '', '', 'nocode')}} راهی برای ثبت کارهایی فراهم می‌کند که باید در یک service worker در بازه‌های زمانی متناوب و هنگام برقراری اتصال شبکه اجرا شوند. به این کارها، درخواست‌های همگام‌سازی دوره‌ای در پس‌زمینه گفته می‌شود. از طریق {{domxref('ServiceWorkerRegistration.periodicSync')}} می‌توانید به `PeriodicSyncManager` دسترسی داشته باشید.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-None.
+هیچ‌کدام.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref('PeriodicSyncManager.register()')}} {{Experimental_Inline}}
-  - : Registers a periodic sync request with the browser with the specified tag and options. Returns a {{jsxref('Promise')}} that resolves when the registration completes.
+  - یک درخواست همگام‌سازی دوره‌ای را با برچسب (tag) و گزینه‌های مشخص‌شده در مرورگر ثبت می‌کند. یک {{jsxref('Promise')}} برمی‌گرداند که پس از تکمیل ثبت، resolve می‌شود.
 - {{domxref('PeriodicSyncManager.getTags()')}} {{Experimental_Inline}}
-  - : Returns a {{jsxref('Promise')}} that resolves with a list of {{jsxref('String','strings')}} representing the tags that are currently registered for periodic syncing.
+  - یک {{jsxref('Promise')}} برمی‌گرداند که با فهرستی از {{jsxref('String','strings')}} («رشته‌ها») resolve می‌شود؛ این فهرست نشان‌دهندهٔ برچسب‌هایی است که در حال حاضر برای همگام‌سازی دوره‌ای ثبت شده‌اند.
 - {{domxref('PeriodicSyncManager.unregister()')}} {{Experimental_Inline}}
-  - : Unregisters the periodic sync request corresponding to the specified tag and returns a {{jsxref('Promise')}} that resolves when unregistration completes.
+  - درخواست همگام‌سازی دوره‌ای مربوط به برچسب مشخص‌شده را لغو ثبت می‌کند و یک {{jsxref('Promise')}} برمی‌گرداند که پس از تکمیل لغو ثبت، resolve می‌شود.
 
-## Examples
+## مثال‌ها
 
-The following examples show how to use the interface.
+مثال‌های زیر چگونگی استفاده از این رابط را نشان می‌دهند.
 
-### Requesting a Periodic Background Sync
+### درخواست یک همگام‌سازی دوره‌ای در پس‌زمینه
 
-The following asynchronous function registers a periodic background sync at a minimum interval of one day from a browsing context:
+تابع ناهمگام زیر یک همگام‌سازی دوره‌ای در پس‌زمینه را با حداقل بازهٔ زمانی یک روز از یک بافت مرورگر (browsing context) ثبت می‌کند:
 
 ```js
 async function registerPeriodicNewsCheck() {
@@ -51,9 +45,9 @@ async function registerPeriodicNewsCheck() {
 }
 ```
 
-### Verifying a Background Periodic Sync by Tag
+### بررسی یک همگام‌سازی دوره‌ای در پس‌زمینه با برچسب
 
-This code checks to see if a Periodic Background Sync task with a given tag is registered.
+این کد بررسی می‌کند که آیا یک کار همگام‌سازی دوره‌ای در پس‌زمینه با برچسب معین ثبت شده است یا خیر.
 
 ```js
 navigator.serviceWorker.ready.then((registration) => {
@@ -63,9 +57,9 @@ navigator.serviceWorker.ready.then((registration) => {
 });
 ```
 
-### Removing a Periodic Background Sync Task
+### حذف یک کار همگام‌سازی دوره‌ای در پس‌زمینه
 
-The following code removes a Periodic Background Sync task to stop articles syncing in the background.
+کد زیر یک کار همگام‌سازی دوره‌ای در پس‌زمینه را حذف می‌کند تا مقاله‌ها دیگر در پس‌زمینه همگام‌سازی نشوند.
 
 ```js
 navigator.serviceWorker.ready.then((registration) => {
@@ -73,14 +67,14 @@ navigator.serviceWorker.ready.then((registration) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Richer offline experiences with the Periodic Background Sync API](https://developer.chrome.com/docs/capabilities/periodic-background-sync)
