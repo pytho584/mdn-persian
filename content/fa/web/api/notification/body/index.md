@@ -1,11 +1,5 @@
 ---
 title: "Notification: body property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Notification/body"
-status: "needs-translation"
----
-
----
-title: "Notification: body property"
 short-title: body
 slug: Web/API/Notification/body
 page-type: web-api-instance-property
@@ -14,16 +8,13 @@ browser-compat: api.Notification.body
 
 {{APIRef("Web Notifications")}}{{securecontext_header}} {{AvailableInWorkers}}
 
-The **`body`** read-only property of the
-{{domxref("Notification")}} interface indicates the body string of the notification, as
-specified in the `body` option of the
-{{domxref("Notification.Notification","Notification()")}} constructor.
+ویژگی فقطخواندنی **`body`** در رابط {{domxref("Notification")}}، رشته‌ای است که متن اعلان را نشان می‌دهد؛ همان رشته‌ای که در گزینهٔ `body` در سازندهٔ {{domxref("Notification.Notification","Notification()")}} تعیین می‌شود.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
 ```js
 function spawnNotification(theBody, theIcon, theTitle) {
@@ -37,14 +28,14 @@ function spawnNotification(theBody, theIcon, theTitle) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Notifications API](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
+- [استفاده از Notifications API](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
