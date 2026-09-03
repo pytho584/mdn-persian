@@ -1,10 +1,4 @@
 ---
-title: "Permissions"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Permissions"
-status: "needs-translation"
----
-
----
 title: Permissions
 slug: Web/API/Permissions
 page-type: web-api-interface
@@ -13,16 +7,16 @@ browser-compat: api.Permissions
 
 {{APIRef("Permissions API")}}{{AvailableInWorkers}}
 
-The **`Permissions`** interface of the [Permissions API](/en-US/docs/Web/API/Permissions_API) provides the core Permission API functionality, such as methods for querying and revoking permissions
+رابط **`Permissions`** در [Permissions API](/en-US/docs/Web/API/Permissions_API) قابلیت‌های اصلی این API را فراهم می‌کند؛ مانند متدهایی برای پرس‌وجو کردن و لغو مجوزها.
 
-## Instance methods
+## متدهای نمونه
 
 - {{domxref("Permissions.query","Permissions.query()")}}
-  - : Returns the user permission status for a given API.
+  - : وضعیت مجوز کاربر را برای یک API مشخص برمی‌گرداند.
 - {{domxref("Permissions.revoke","Permissions.revoke()")}} {{Deprecated_Inline}}
-  - : Revokes the permission currently set on a given API.
+  - : مجوزی را که در حال حاضر برای یک API مشخص تنظیم شده است لغو می‌کند.
 
-## Example
+## مثال
 
 ```js
 navigator.permissions.query({ name: "geolocation" }).then((result) => {
@@ -35,10 +29,10 @@ navigator.permissions.query({ name: "geolocation" }).then((result) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
