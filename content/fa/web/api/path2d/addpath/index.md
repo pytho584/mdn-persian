@@ -1,7 +1,5 @@
 ---
 title: "Path2D: addPath() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Path2D/addPath"
-status: "needs-translation"
 ---
 
 ---
@@ -14,34 +12,31 @@ browser-compat: api.Path2D.addPath
 
 {{APIRef("Canvas API")}}{{AvailableInWorkers}}
 
-The **`Path2D.addPath()`** method
-of the Canvas 2D API adds one {{domxref("Path2D")}} object to another
-`Path2D` object.
+متد **`Path2D.addPath()`** در Canvas 2D API یک شیء {{domxref("Path2D")}} را به یک شیء `Path2D` دیگر اضافه می‌کند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 addPath(path)
 addPath(path, transform)
 ```
 
-### Parameters
+### پارامترها
 
 - `path`
-  - : A {{domxref("Path2D")}} path to add.
+  - : مسیر {{domxref("Path2D")}} که باید اضافه شود.
 - `transform` {{optional_inline}}
-  - : A {{domxref("DOMMatrix")}} to be used as the transformation matrix for the path that
-    is added. (Technically an object that possesses the same properties as a `DOMMatrix` object.)
+  - : یک {{domxref("DOMMatrix")}} که به‌عنوان ماتریس تبدیل برای مسیر اضافه‌شده استفاده می‌شود. (از نظر فنی، شیئی که همان ویژگی‌های یک شیء `DOMMatrix` را دارد.)
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-### Adding a path to an existing path
+### افزودن مسیر به یک مسیر موجود
 
-This example adds one path to another.
+این مثال یک مسیر را به مسیر دیگری اضافه می‌کند.
 
 #### HTML
 
@@ -51,12 +46,7 @@ This example adds one path to another.
 
 #### JavaScript
 
-First, we create two separate {{domxref("Path2D")}} objects, each of which contains a
-rectangle made using the {{domxref("CanvasRenderingContext2D.rect()", "rect()")}}
-method. We then create a matrix using {{Domxref("DOMMatrix.DOMMatrix", "DOMMatrix()")}}. We then add the second path to the first using
-`addPath()`, also applying the matrix to move the second path to the right.
-Finally, we draw the first path (which now contains both rectangles) using
-{{domxref("CanvasRenderingContext2D.fill()", "fill()")}}.
+ابتدا، دو شیء جداگانه از {{domxref("Path2D")}} می‌سازیم که هرکدام شامل یک مستطیل ایجادشده با استفاده از متد {{domxref("CanvasRenderingContext2D.rect()", "rect()")}} است. سپس با استفاده از {{Domxref("DOMMatrix.DOMMatrix", "DOMMatrix()")}} یک ماتریس می‌سازیم. سپس با استفاده از `addPath()`، مسیر دوم را به مسیر اول اضافه می‌کنیم و ماتریس را نیز برای جابه‌جایی مسیر دوم به سمت راست اعمال می‌کنیم. در پایان، مسیر اول (که اکنون هر دو مستطیل را شامل می‌شود) را با استفاده از {{domxref("CanvasRenderingContext2D.fill()", "fill()")}} رسم می‌کنیم.
 
 ```js
 const canvas = document.getElementById("canvas");
@@ -86,18 +76,18 @@ p1.addPath(p2, m);
 ctx.fill(p1);
 ```
 
-#### Result
+#### نتیجه
 
 {{ EmbedLiveSample('Adding_a_path_to_an_existing_path', 700, 180) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface defining this method: {{domxref("Path2D")}}
+- رابط تعریف‌کننده‌ی این متد: {{domxref("Path2D")}}
