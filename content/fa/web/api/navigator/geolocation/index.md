@@ -1,11 +1,5 @@
 ---
 title: "Navigator: geolocation property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/geolocation"
-status: "needs-translation"
----
-
----
-title: "Navigator: geolocation property"
 short-title: geolocation
 slug: Web/API/Navigator/geolocation
 page-type: web-api-instance-property
@@ -14,28 +8,23 @@ browser-compat: api.Navigator.geolocation
 
 {{securecontext_header}}{{APIRef("Geolocation API")}}
 
-The **`Navigator.geolocation`** read-only property returns a
-{{domxref("Geolocation")}} object that gives Web content access to the location of the
-device. This allows a website or app to offer customized results based on the user's
-location.
+ویژگی فقط‑خواندنی **`Navigator.geolocation`** یک شیء {{domxref("Geolocation")}} را برمی‌گرداند که به محتوای وب امکان دسترسی به موقعیت دستگاه را می‌دهد. این امکان را به وب‌سایت یا برنامه می‌دهد تا نتایج سفارشی‌سازی‌شده بر اساس موقعیت کاربر ارائه دهد.
 
 > [!NOTE]
-> For security reasons, when a web page tries to access location
-> information, the user is notified and asked to grant permission. Be aware that each
-> browser has its own policies and methods for requesting this permission.
+> به دلایل امنیتی، هنگامی که یک صفحه وب تلاش می‌کند به اطلاعات موقعیت دسترسی پیدا کند، به کاربر اطلاع داده می‌شود و از او اجازه خواسته می‌شود. توجه داشته باشید که هر مرورگر خط مشی و روش‌های خاص خود را برای درخواست این مجوز دارد.
 
-## Value
+## مقدار
 
-A {{domxref("Geolocation")}} object.
+یک شیء {{domxref("Geolocation")}}.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Geolocation API](/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API)
+- [استفاده از API موقعیت‌یابی](/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API)
