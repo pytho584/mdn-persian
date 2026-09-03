@@ -1,11 +1,5 @@
 ---
 title: "NotRestoredReasonDetails: reason property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NotRestoredReasonDetails/reason"
-status: "needs-translation"
----
-
----
-title: "NotRestoredReasonDetails: reason property"
 short-title: reason
 slug: Web/API/NotRestoredReasonDetails/reason
 page-type: web-api-instance-property
@@ -16,54 +10,53 @@ browser-compat: api.NotRestoredReasonDetails.reason
 
 {{APIRef("Performance API")}}{{SeeCompatTable}}
 
-The **`reason`** read-only property of the
-{{domxref("NotRestoredReasonDetails")}} interface returns a string describing a reason that the page was blocked from using the back/forward cache ({{Glossary("bfcache")}}).
+خاصیت فقط-خواندنی **`reason`** از رابط {{domxref("NotRestoredReasonDetails")}} یک رشته (string) برمی‌گرداند که دلیلی را توصیف می‌کند که باعث شده صفحه از استفاده از حافظه نهان جلو/عقب ({{Glossary("bfcache")}}) مسدود شود.
 
-## Value
+## مقدار
 
-A string.
+یک رشته (string).
 
-There are many different reasons why blocking could occur, and browsers can choose to implement their own specific reasons for blocking, based on how they operate. Developers should avoid depending on specific wording for reasons and be prepared to handle new reasons being added and deleted.
+دلایل مختلفی برای وقوع مسدودیت وجود دارد و مرورگرها می‌توانند دلایل خاص خود را بر اساس نحوه عملکردشان پیاده‌سازی کنند. توسعه‌دهندگان باید از وابسته شدن به عبارت‌های خاص برای دلایل خودداری کرده و آماده مدیریت دلایل جدیدی باشند که اضافه یا حذف می‌شوند.
 
-The initial values listed in the specification are:
+مقادیر اولیه ذکر شده در مشخصات (specification) عبارتند از:
 
 - `"fetch"`
-  - : While unloading, a fetch initiated by the current document (e.g., via {{domxref("Window/fetch", "fetch()")}}) was canceled while ongoing. As a result, the page was not in a stable state that could be stored in the bfcache.
+  - : در حین تخلیه (unloading)، یک درخواست fetch که توسط سند جاری آغاز شده بود (مثلاً از طریق {{domxref("Window/fetch", "fetch()")}}) در حالی که هنوز در جریان بود لغو شد. در نتیجه، صفحه در وضعیت پایداری نبود که بتواند در bfcache ذخیره شود.
 - `"lock"`
-  - : While unloading, held locks and lock requests were terminated, so the page was not in a stable state that could be stored in the bfcache.
+  - : در حین تخلیه، قفل‌های نگه‌داشته شده و درخواست‌های قفل خاتمه یافتند، بنابراین صفحه در وضعیت پایداری نبود که بتواند در bfcache ذخیره شود.
 - `"masked"`
-  - : The exact reason is hidden for privacy purposes. This value can mean one of the following:
-    - The current document has children contained in a cross-origin {{htmlelement("iframe")}}, and they prevented storage in the bfcache.
-    - The current Document could not be stored in the bfcache for user agent-specific reasons.
+  - : دلیل دقیق به دلایل حریم خصوصی پنهان شده است. این مقدار می‌تواند یکی از موارد زیر را معنی دهد:
+    - سند جاری دارای فرزندانی (children) در یک {{htmlelement("iframe")}} با مبدأ متفاوت (cross-origin) است و آن‌ها از ذخیره‌سازی در bfcache جلوگیری کرده‌اند.
+    - سند (Document) جاری به دلایل خاص عامل کاربر (user agent) نتوانسته در bfcache ذخیره شود.
 - `"navigation-failure"`
-  - : The original navigation that created the current document errored, and storing the resulting error document in the bfcache was prevented.
+  - : پیمایش اصلی (original navigation) که سند جاری را ایجاد کرد با خطا مواجه شد و ذخیره سند خطای حاصل در bfcache مسدود شد.
 - `"parser-aborted"`
-  - : The current document never finished its initial HTML parsing, and storing the unfinished document in the bfcache was prevented.
+  - : سند جاری هرگز تجزیه (parsing) اولیه HTML خود را به پایان نرساند و ذخیره سند ناقص در bfcache مسدود شد.
 - `"websocket"`
-  - : While unloading, an open [WebSocket](/en-US/docs/Web/API/WebSockets_API) connect was shut down, so the page was not in a stable state that could be stored in the bfcache.
+  - : در حین تخلیه، یک اتصال [WebSocket](/en-US/docs/Web/API/WebSockets_API) باز بسته شد، بنابراین صفحه در وضعیت پایداری نبود که بتواند در bfcache ذخیره شود.
 
-Additional blocking reasons may be used by some browsers, for example:
+دلایل مسدودیت اضافی ممکن است توسط برخی مرورگرها استفاده شود، به عنوان مثال:
 
 - `"unload-listener"`
-  - : The page registers an [`unload`](/en-US/docs/Web/API/Window/unload_event) handler, which prevents bfcache usage. This serves as a useful warning, as `unload` is deprecated. See [usage notes](/en-US/docs/Web/API/Window/unload_event#usage_notes) for more information.
+  - : صفحه یک مدیریت‌کننده (handler) برای رویداد [`unload`](/en-US/docs/Web/API/Window/unload_event) ثبت کرده است که از استفاده از bfcache جلوگیری می‌کند. این یک هشدار مفید است زیرا `unload` منسوخ (deprecated) شده است. برای اطلاعات بیشتر به [یادداشت‌های استفاده](/en-US/docs/Web/API/Window/unload_event#usage_notes) مراجعه کنید.
 - `"response-cache-control-no-store"`
-  - : The page uses `no-store` as a {{httpheader("Cache-Control")}} header value.
+  - : صفحه از `no-store` به عنوان مقدار هدر {{httpheader("Cache-Control")}} استفاده می‌کند.
 - `"related-active-contents"`
-  - : The page was opened from another page that still has a reference to this page, for example using "duplicate tab" functionality.
+  - : صفحه از صفحه دیگری باز شده است که هنوز یک ارجاع (reference) به این صفحه دارد، برای مثال با استفاده از قابلیت «تب تکراری» (duplicate tab).
 
-## Examples
+## مثال‌ها
 
-See [Monitoring bfcache blocking reasons](/en-US/docs/Web/API/Performance_API/Monitoring_bfcache_blocking_reasons) for examples.
+برای مثال‌ها به [نظارت بر دلایل مسدودیت bfcache](/en-US/docs/Web/API/Performance_API/Monitoring_bfcache_blocking_reasons) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Monitoring bfcache blocking reasons](/en-US/docs/Web/API/Performance_API/Monitoring_bfcache_blocking_reasons)
+- [نظارت بر دلایل مسدودیت bfcache](/en-US/docs/Web/API/Performance_API/Monitoring_bfcache_blocking_reasons)
 - {{domxref("PerformanceNavigationTiming.notRestoredReasons")}}
