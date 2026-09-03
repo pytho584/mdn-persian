@@ -1,7 +1,5 @@
 ---
 title: "Navigator: vibrate() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/vibrate"
-status: "needs-translation"
 ---
 
 ---
@@ -14,43 +12,34 @@ browser-compat: api.Navigator.vibrate
 
 {{APIRef("Vibration API")}}
 
-The **`vibrate()`** method of the {{domxref("Navigator")}} interface pulses the vibration
-hardware on the device, if such hardware exists. If the device doesn't support
-vibration, this method has no effect. If a vibration pattern is already in progress when
-this method is called, the previous pattern is halted and the new one begins instead.
+متد **`vibrate()`** از رابط {{domxref("Navigator")}}، سخت‌افزار لرزش دستگاه را فعال می‌کند، در صورتی که چنین سخت‌افزاری وجود داشته باشد. اگر دستگاه از لرزش پشتیبانی نکند، این متد هیچ اثری ندارد. اگر در زمان فراخوانی این متد، یک الگوی لرزشی در حال اجرا باشد، الگوی قبلی متوقف شده و الگوی جدید جایگزین آن می‌شود.
 
-If the method was unable to vibrate because of invalid parameters, it will return
-`false`, else it returns `true`. If the pattern leads to a too
-long vibration, it is truncated: the max length depends on the implementation.
+اگر متد به دلیل پارامترهای نامعتبر قادر به لرزش نباشد، مقدار `false` برمی‌گرداند؛ در غیر این صورت `true` برمی‌گرداند. اگر الگو منجر به لرزش بیش از حد طولانی شود، کوتاه می‌شود: حداکثر طول به پیاده‌سازی بستگی دارد.
 
-Some devices may not vibrate if they are in Silent mode or Do Not Disturb (DND) mode. To ensure vibration works, make sure these modes are turned off and that vibration is enabled in the system settings.
+برخی دستگاه‌ها ممکن است در حالت بی‌صدا یا حالت «مزاحم نشوید» (DND) لرزش نداشته باشند. برای اطمینان از کارکرد لرزش، مطمئن شوید که این حالت‌ها خاموش هستند و لرزش در تنظیمات سیستم فعال است.
 
-## Syntax
+## نحو
 
 ```js-nolint
 vibrate(pattern)
 ```
 
-### Parameters
+### پارامترها
 
 - `pattern`
-  - : Provides a pattern of vibration and pause intervals. Each value indicates a number
-    of milliseconds to vibrate or pause, in alternation. You may provide either a single
-    value (to vibrate once for that many milliseconds) or an array of values to
-    alternately vibrate, pause, then vibrate again. See [Vibration API](/en-US/docs/Web/API/Vibration_API) for details.
+  - : الگوی لرزش و فواصل مکث را مشخص می‌کند. هر مقدار نشان‌دهنده تعداد میلی‌ثانیه لرزش یا مکث، به صورت متناوب است. می‌توانید یک مقدار واحد (برای لرزش یک‌بار به مدت آن میلی‌ثانیه) یا یک آرایه از مقادیر برای لرزش متناوب، مکث و سپس لرزش مجدد ارائه دهید. برای جزئیات بیشتر به [Vibration API](/en-US/docs/Web/API/Vibration_API) مراجعه کنید.
 
-Passing a value of `0`, an empty array, or an array containing all zeros
-will cancel any currently ongoing vibration pattern.
+ارسال مقدار `0`، یک آرایه خالی یا آرایه‌ای که همه عناصر آن صفر هستند، هر الگوی لرزشی در حال اجرا را لغو می‌کند.
 
-### Return value
+### مقدار بازگشتی
 
-A boolean.
+یک مقدار بولی.
 
-## Security
+## امنیت
 
-[Sticky user activation](/en-US/docs/Web/Security/Defenses/User_activation) is required. The user has to interact with the page or a UI element in order for this feature to work.
+[فعال‌شدن چسبنده کاربر](/en-US/docs/Web/Security/Defenses/User_activation) مورد نیاز است. کاربر باید با صفحه یا یک عنصر رابط کاربری تعامل داشته باشد تا این ویژگی کار کند.
 
-## Examples
+## مثال‌ها
 
 ```js
 navigator.vibrate(200); // vibrate for 200ms
@@ -59,14 +48,14 @@ navigator.vibrate([
 ]); // Vibrate 'SOS' in Morse.
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - [Vibration API](/en-US/docs/Web/API/Vibration_API)
