@@ -1,11 +1,5 @@
 ---
 title: "PerformanceTiming: toJSON() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/toJSON"
-status: "needs-translation"
----
-
----
-title: "PerformanceTiming: toJSON() method"
 short-title: toJSON()
 slug: Web/API/PerformanceTiming/toJSON
 page-type: web-api-instance-method
@@ -17,33 +11,32 @@ browser-compat: api.PerformanceTiming.toJSON
 {{APIRef("Performance API")}}{{deprecated_header}}
 
 > [!WARNING]
-> This interface of this property is deprecated in the [Navigation Timing Level 2 specification](https://w3c.github.io/navigation-timing/#obsolete). Please use the {{domxref("PerformanceNavigationTiming")}}
-> interface instead.
+> این ویژگی در [نسخه دوم مشخصات Navigation Timing](https://w3c.github.io/navigation-timing/#obsolete) منسوخ شده است. لطفاً به‌جای آن از رابط {{domxref("PerformanceNavigationTiming")}} استفاده کنید.
 
-The legacy **`toJSON()`** method of the {{domxref("PerformanceTiming")}} interface is a {{Glossary("Serialization","serializer")}}; it returns a JSON representation of the {{domxref("PerformanceTiming")}} object.
+متد قدیمی **`toJSON()`** در رابط {{domxref("PerformanceTiming")}} یک {{Glossary("Serialization","سریال‌ساز")}} است؛ این متد یک نمایش JSON از شیء {{domxref("PerformanceTiming")}} را برمی‌گرداند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 toJSON()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ‌کدام.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("JSON")}} object that is the serialization of the {{domxref("PerformanceTiming")}} object.
+یک شیء {{jsxref("JSON")}} که سریال‌سازی شیء {{domxref("PerformanceTiming")}} است.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{jsxref("JSON")}}
