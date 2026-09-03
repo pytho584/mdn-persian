@@ -1,11 +1,5 @@
 ---
 title: "PublicKeyCredential: signalCurrentUserDetails() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredential/signalCurrentUserDetails_static"
-status: "needs-translation"
----
-
----
-title: "PublicKeyCredential: signalCurrentUserDetails() static method"
 short-title: signalCurrentUserDetails()
 slug: Web/API/PublicKeyCredential/signalCurrentUserDetails_static
 page-type: web-api-static-method
@@ -14,55 +8,55 @@ browser-compat: api.PublicKeyCredential.signalCurrentUserDetails_static
 
 {{APIRef("Web Authentication API")}}{{securecontext_header}}
 
-The **`signalCurrentUserDetails()`** static method of the {{domxref("PublicKeyCredential")}} interface signals to the authenticator that a particular user has updated their user name and/or display name on the [relying party](https://en.wikipedia.org/wiki/Relying_party) (RP) server.
+متد ایستای **`signalCurrentUserDetails()``** در رابط {{domxref("PublicKeyCredential")}} به اصالت‌سنج (authenticator) اعلام می‌کند که یک کاربر خاص، نام کاربری و/یا نام نمایشی خود را در سرور [طرف وابسته (relying party)](https://en.wikipedia.org/wiki/Relying_party) (RP) به‌روزرسانی کرده است.
 
-This allows the authenticator to update user account details, to make sure they stay in sync with those held by the RP. It should only be used when the current user is authenticated — after sign in, or when they change the metadata associated with their credentials on the RP web app.
+این کار به اصالت‌سنج اجازه می‌دهد تا جزئیات حساب کاربری را به‌روزرسانی کند و مطمئن شود که با اطلاعات نگهداری‌شده در RP همگام می‌ماند. این متد فقط باید زمانی استفاده شود که کاربر فعلی احراز هویت شده است — پس از ورود به سیستم، یا زمانی که ابرداده‌های مرتبط با اعتبارنامه‌های خود را در برنامه وب RP تغییر می‌دهد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 signalCurrentUserDetails(options)
 ```
 
-### Parameters
+### پارامترها
 
 - `options`
-  - : An object representing the updated user information, which contains the following properties:
+  - : یک شیء که اطلاعات به‌روزرسانی‌شده کاربر را نمایش می‌دهد و شامل ویژگی‌های زیر است:
     - `displayName`
-      - : A string representing the updated user [`displayName`](/en-US/docs/Web/API/PublicKeyCredentialCreationOptions#displayname).
+      - : یک رشته که [`displayName`](/en-US/docs/Web/API/PublicKeyCredentialCreationOptions#displayname) به‌روزرسانی‌شده کاربر را نشان می‌دهد.
     - `name`
-      - : A string representing the updated user [`name`](/en-US/docs/Web/API/PublicKeyCredentialCreationOptions#name_2).
+      - : یک رشته که [`name`](/en-US/docs/Web/API/PublicKeyCredentialCreationOptions#name_2) به‌روزرسانی‌شده کاربر را نشان می‌دهد.
     - `rpId`
-      - : A string representing the [`id` of the RP](/en-US/docs/Web/API/PublicKeyCredentialCreationOptions#id_2) that sent the signal.
+      - : یک رشته که [`id` مربوط به RP](/en-US/docs/Web/API/PublicKeyCredentialCreationOptions#id_2) ارسال‌کنندهٔ سیگنال را نشان می‌دهد.
     - `userId`
-      - : A base64url-encoded string representing the [`id` of the user](/en-US/docs/Web/API/PublicKeyCredentialCreationOptions#id_3) the credentials relate to.
+      - : یک رشته کدگذاری‌شده base64url که [`id` کاربر](/en-US/docs/Web/API/PublicKeyCredentialCreationOptions#id_3) مرتبط با اعتبارنامه‌ها را نشان می‌دهد.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves to {{jsxref("undefined")}}.
+یک {{jsxref("Promise")}} که به {{jsxref("undefined")}} باز می‌شود.
 
-### Exceptions
+### استثناها
 
-The promise rejects with the following exceptions:
+این پرامیسی با استثناهای زیر رد می‌شود:
 
 - `SecurityError` {{domxref("DOMException")}}
-  - : The RP domain is not valid.
+  - : دامنهٔ RP معتبر نیست.
 - `TypeError` {{domxref("DOMException")}}
-  - : The `credentialId` is not a valid base64url-encoded string.
+  - : `credentialId` یک رشتهٔ معتبر کدگذاری‌شده base64url نیست.
 
-## Description
+## توضیحات
 
-It is possible for the information stored in a user's authenticator about a [discoverable credential](/en-US/docs/Web/API/Web_Authentication_API#discoverable_and_non-discoverable_credentials) (for example, a [passkey](/en-US/docs/Web/Security/Authentication/Passkeys)) to go out sync with the server. This can occur when the user updates their user name or display name on the RP web app without updating the authenticator.
+این امکان وجود دارد که اطلاعات ذخیره‌شده در اصالت‌سنج کاربر دربارهٔ یک [اعتبارنامهٔ قابل‌کشف (discoverable credential)](/en-US/docs/Web/API/Web_Authentication_API#discoverable_and_non-discoverable_credentials) (برای مثال، یک [گذرواژه کلید (passkey)](/en-US/docs/Web/Security/Authentication/Passkeys)) از سرور خارج از همگام‌سازی شود. این اتفاق می‌تواند زمانی رخ دهد که کاربر نام کاربری یا نام نمایشی خود را در برنامهٔ وب RP به‌روزرسانی کند اما اصالت‌سنج را به‌روزرسانی نکند.
 
-The next time they try to sign in with a discoverable credential, the credential will still be presented to them with the old user name/display name in the relevant UI, which can result in a confusing user experience.
+دفعهٔ بعد که کاربر بخواهد با یک اعتبارنامهٔ قابل‌کشف وارد شود، همچنان اعتبارنامه با نام کاربری/نام نمایشی قدیمی در رابط کاربری مربوطه به او نمایش داده می‌شود که می‌تواند تجربهٔ کاربری گیج‌کننده‌ای ایجاد کند.
 
-To avoid this issue, `signalCurrentUserDetails()` should be called on the RP web app each time a user updates their user account details or signs in, to tell the authenticator that the user information has been updated. It is up to the authenticator how to handle this information, but the expectation is that it will synchronize its user information with the provided update.
+برای جلوگیری از این مشکل، `signalCurrentUserDetails()` باید در برنامهٔ وب RP هر بار که کاربر جزئیات حساب کاربری خود را به‌روزرسانی می‌کند یا وارد سیستم می‌شود، فراخوانی شود تا به اصالت‌سنج اعلام کند که اطلاعات کاربر به‌روزرسانی شده است. نحوهٔ مدیریت این اطلاعات به عهدهٔ اصالت‌سنج است، اما انتظار می‌رود که اطلاعات کاربر خود را با به‌روزرسانی ارائه‌شده همگام کند.
 
-## Examples
+## مثال‌ها
 
-### Signaling the current user details
+### اعلام جزئیات فعلی کاربر
 
-In this example, we invoke the `signalCurrentUserDetail()` method, passing it the details of a credential the user has just edited on the RP. As a result, the authenticator should update its own copy of the credential so that it stays in sync with the RP.
+در این مثال، متد `signalCurrentUserDetail()` را فراخوانی می‌کنیم و جزئیات اعتبارنامه‌ای را که کاربر به‌تازگی در RP ویرایش کرده است به آن ارسال می‌کنیم. در نتیجه، اصالت‌سنج باید نسخهٔ خود از اعتبارنامه را به‌روزرسانی کند تا با RP همگام بماند.
 
 ```js
 if (PublicKeyCredential.signalCurrentUserDetails) {
@@ -77,18 +71,18 @@ if (PublicKeyCredential.signalCurrentUserDetails) {
 }
 ```
 
-For further code examples, see [Keep passkeys consistent with credentials on your server with the Signal API](https://developer.chrome.com/docs/identity/webauthn-signal-api) on developer.chrome.com (2024).
+برای مثال‌های کد بیشتر، به [Keep passkeys consistent with credentials on your server with the Signal API](https://developer.chrome.com/docs/identity/webauthn-signal-api) در developer.chrome.com (2024) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("PublicKeyCredential.signalAllAcceptedCredentials_static", "PublicKeyCredential.signalAllAcceptedCredentials()")}}
 - {{domxref("PublicKeyCredential.signalUnknownCredential_static", "PublicKeyCredential.signalUnknownCredential()")}}
-- [Keep passkeys consistent with credentials on your server with the Signal API](https://developer.chrome.com/docs/identity/webauthn-signal-api) on developer.chrome.com (2024)
+- [Keep passkeys consistent with credentials on your server with the Signal API](https://developer.chrome.com/docs/identity/webauthn-signal-api) در developer.chrome.com (2024)
