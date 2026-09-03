@@ -1,11 +1,5 @@
 ---
 title: "Navigator: getGamepads() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/getGamepads"
-status: "needs-translation"
----
-
----
-title: "Navigator: getGamepads() method"
 short-title: getGamepads()
 slug: Web/API/Navigator/getGamepads
 page-type: web-api-instance-method
@@ -14,32 +8,30 @@ browser-compat: api.Navigator.getGamepads
 
 {{APIRef("Gamepad API")}}
 
-The **`Navigator.getGamepads()`** method returns an array of
-{{domxref("Gamepad")}} objects, one for each gamepad connected to the device.
+متد **`Navigator.getGamepads()`** یک آرایه از اشیاء {{domxref("Gamepad")}} برمی‌گرداند، یکی برای هر گیم‌پدی که به دستگاه متصل است.
 
-Elements in the array may be `null` if a gamepad disconnects during a
-session, so that the remaining gamepads retain the same index.
+اگر در طول یک جلسه یک گیم‌پد از دستگاه جدا شود، عناصر آرایه ممکن است `null` باشند تا گیم‌پدهای باقی‌مانده همان اندیس خود را حفظ کنند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 getGamepads()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-An {{jsxref("Array")}} of {{domxref("Gamepad")}} objects, eventually empty.
+یک {{jsxref("Array")}} از اشیاء {{domxref("Gamepad")}} که ممکن است خالی باشد.
 
-### Exceptions
+### استثناها
 
 - `SecurityError` {{domxref("DOMException")}}
-  - : Use of this feature was blocked by a [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy).
+  - : استفاده از این ویژگی توسط یک [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) مسدود شده است.
 
-## Examples
+## نمونه‌ها
 
 ```js
 window.addEventListener("gamepadconnected", (e) => {
@@ -50,15 +42,15 @@ window.addEventListener("gamepadconnected", (e) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Gamepad API](/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API)
+- [استفاده از Gamepad API](/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API)
 - [Gamepad API](/en-US/docs/Web/API/Gamepad_API)
