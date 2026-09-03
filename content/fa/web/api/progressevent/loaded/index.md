@@ -1,11 +1,5 @@
 ---
 title: "ProgressEvent: loaded property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ProgressEvent/loaded"
-status: "needs-translation"
----
-
----
-title: "ProgressEvent: loaded property"
 short-title: loaded
 slug: Web/API/ProgressEvent/loaded
 page-type: web-api-instance-property
@@ -14,27 +8,24 @@ browser-compat: api.ProgressEvent.loaded
 
 {{APIRef("XMLHttpRequest API")}}{{AvailableInWorkers}}
 
-The **`ProgressEvent.loaded`** read-only property is a number indicating the size of the data already transmitted or processed.
-The progress ratio can be calculated by dividing the value of this property by {{domxref("ProgressEvent.total")}}.
+ویژگی فقط‌خواندنی **`ProgressEvent.loaded`** عددی است که اندازهٔ داده‌های ارسال‌شده یا پردازش‌شده را نشان می‌دهد. نسبت پیشرفت را می‌توان با تقسیم مقدار این ویژگی بر {{domxref("ProgressEvent.total")}} محاسبه کرد.
 
-For `ProgressEvent`s dispatched by the browser in HTTP messages, the value refers to the amount of bytes of a resource that are completed, and is derived from the `Content-Length` header.
-For compressed requests of unknown total size, `loaded` might contain the size of the compressed or decompressed data, depending on the browser.
-As of 2024, it contains the size of the compressed data in Firefox, and the size of the uncompressed data in Chrome.
+برای `ProgressEvent`هایی که مرورگر در پیام‌های HTTP ارسال می‌کند، این مقدار به تعداد بایت‌های تکمیل‌شدهٔ یک منبع اشاره دارد و از هدر `Content-Length` گرفته می‌شود. برای درخواست‌های فشرده با اندازهٔ کل نامعلوم، مقدار `loaded` ممکن است بسته به مرورگر، اندازهٔ دادهٔ فشرده یا فشرده‌نشده را در خود داشته باشد. از سال ۲۰۲۴، در Firefox این مقدار شامل اندازهٔ دادهٔ فشرده و در Chrome شامل اندازهٔ دادهٔ فشرده‌نشده است.
 
-In a `ProgressEvent` you create yourself, you can assign any numeric value to `loaded` that represents the amount of work completed relative to the `total` value.
+در یک `ProgressEvent` که خودتان می‌سازید، می‌توانید هر مقدار عددی را به `loaded` اختصاص دهید که بیانگر میزان کار انجام‌شده نسبت به مقدار `total` باشد.
 
-## Value
+## مقدار
 
-A number.
+یک عدد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("ProgressEvent")}} interface it belongs to.
+- رابط {{domxref("ProgressEvent")}} که این ویژگی به آن تعلق دارد.
