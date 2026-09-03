@@ -1,7 +1,5 @@
 ---
 title: "NodeList: length property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NodeList/length"
-status: "needs-translation"
 ---
 
 ---
@@ -14,18 +12,15 @@ browser-compat: api.NodeList.length
 
 {{APIRef("DOM")}}
 
-The **`NodeList.length`** property returns the number of items
-in a {{domxref("NodeList")}}.
+ویژگی **`NodeList.length`**، تعداد آیتم‌های یک {{domxref("NodeList")}} را برمی‌گرداند.
 
-## Value
+## مقدار
 
-An integer value representing the number of items in a `NodeList`.
+یک مقدار صحیح (integer) که تعداد آیتم‌های یک `NodeList` را نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
-The `length` property is often useful in DOM programming. It's often used to
-test the length of a list, to see if it exists at all. It's also commonly used as the
-iterator in a `for` loop, as in this example.
+ویژگی `length` اغلب در برنامه‌نویسی DOM مفید است و معمولاً برای بررسی طول یک فهرست و این‌که آیا اصلاً وجود دارد یا نه استفاده می‌شود. همچنین معمولاً به‌عنوان شمارنده در یک حلقه `for` به کار می‌رود، همان‌طور که در این مثال دیده می‌شود.
 
 ```js
 // All the paragraphs in the document
@@ -41,10 +36,10 @@ for (let i = 0; i < items.length; i++) {
 // gross is now all the HTML for the paragraphs
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
