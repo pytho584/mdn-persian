@@ -1,11 +1,5 @@
 ---
 title: "Notification: close() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Notification/close"
-status: "needs-translation"
----
-
----
-title: "Notification: close() method"
 short-title: close()
 slug: Web/API/Notification/close
 page-type: web-api-instance-method
@@ -14,39 +8,28 @@ browser-compat: api.Notification.close
 
 {{APIRef("Web Notifications")}}{{securecontext_header}} {{AvailableInWorkers}}
 
-The **`close()`** method of the {{domxref("Notification")}} interface is used to
-close/remove a previously displayed notification.
+**`close()`** 方法用于关闭/移除先前显示的通知，该接口属于 {{domxref("Notification")}}。
 
 > [!NOTE]
-> This API shouldn't be used just to have the notification
-> removed from the screen after a fixed delay since this method will also remove the
-> notification from any notification tray, preventing users from interacting with it
-> after it was initially shown. A valid use for this API would be to remove a
-> notification that is no longer relevant (e.g., the user already read the notification
-> on the webpage in the case of a messaging app or the following song is already playing
-> in a music app).
+> 此 API 不应当仅用于在固定延迟后将通知从屏幕上移除，因为此方法还会将通知从任何通知托盘中移除，从而阻止用户与通知进行交互。此 API 的合理用途是移除不再相关的通知（例如，在消息应用中用户已在网页上阅读了通知，或在音乐应用中下一首歌已经开始播放）。
 
-## Syntax
+## 语法
 
 ```js-nolint
 close()
 ```
 
-### Parameters
+### 参数
 
-None.
+无。
 
-### Return value
+### 返回值
 
-None ({{jsxref("undefined")}}).
+无（{{jsxref("undefined")}}）。
 
-## Examples
+## 示例
 
-In the following snippet, we have a function that when called creates an
-`options` object and then a new notification. At the end of the function, it
-also calls `close()` inside an
-{{domxref("EventTarget.addEventListener","addEventListener()")}} function to remove the
-notification when the relevant content has been read on the webpage.
+在下面的代码片段中，我们有一个函数，当被调用时会创建一个 `options` 对象，然后创建一个新通知。在函数末尾，它还在 {{domxref("EventTarget.addEventListener","addEventListener()")}} 函数内调用 `close()`，以便在网页上相关内容被阅读后移除该通知。
 
 ```js
 function spawnNotification(theBody, theIcon, theTitle) {
@@ -65,14 +48,14 @@ function spawnNotification(theBody, theIcon, theTitle) {
 }
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
-- [Using the Notifications API](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
+- [使用通知 API](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
