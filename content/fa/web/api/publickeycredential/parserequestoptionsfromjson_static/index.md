@@ -1,11 +1,5 @@
 ---
 title: "PublicKeyCredential: parseRequestOptionsFromJSON() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredential/parseRequestOptionsFromJSON_static"
-status: "needs-translation"
----
-
----
-title: "PublicKeyCredential: parseRequestOptionsFromJSON() static method"
 short-title: parseRequestOptionsFromJSON()
 slug: Web/API/PublicKeyCredential/parseRequestOptionsFromJSON_static
 page-type: web-api-static-method
@@ -14,45 +8,43 @@ browser-compat: api.PublicKeyCredential.parseRequestOptionsFromJSON_static
 
 {{APIRef("Web Authentication API")}}{{securecontext_header}}
 
-The **`parseRequestOptionsFromJSON()`** static method of the {{domxref("PublicKeyCredential")}} interface converts a {{glossary("JSON type representation")}} into a {{domxref("PublicKeyCredentialRequestOptions")}} instance.
+متد ایستای **`parseRequestOptionsFromJSON()`** از رابط {{domxref("PublicKeyCredential")}} یک {{glossary("JSON type representation")}} را به یک نمونه از {{domxref("PublicKeyCredentialRequestOptions")}} تبدیل می‌کند.
 
-The method is a convenience function for converting information provided by a relying server to a web app in order to request an existing credential.
+این متد یک تابع کمکی برای تبدیل اطلاعات ارائه‌شده توسط سرور طرف اتکا (relying party) به برنامه وب است تا بتواند یک اعتبارنامه (credential) موجود را درخواست کند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 PublicKeyCredential.parseRequestOptionsFromJSON(options)
 ```
 
-### Parameters
+### پارامترها
 
 - `options`
-  - : An object with the same structure as a {{domxref("PublicKeyCredentialRequestOptions")}} instance, but with [base64url](/en-US/docs/Glossary/Base64)-encoded strings used in place of buffer properties.
+  - : شیئی با همان ساختار یک نمونه {{domxref("PublicKeyCredentialRequestOptions")}}، اما به جای ویژگی‌های بافر (buffer) از رشته‌های [base64url](/en-US/docs/Glossary/Base64) استفاده شده است.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("PublicKeyCredentialRequestOptions")}} instance.
+یک نمونه از {{domxref("PublicKeyCredentialRequestOptions")}}.
 
-### Exceptions
+### استثناها
 
 - `EncodingError` {{domxref("DOMException")}}
-  - : Thrown if any part of the `options` object cannot be converted into a {{domxref("PublicKeyCredentialRequestOptions")}} instance.
+  - : اگر هر بخشی از شیء `options` نتواند به یک نمونه {{domxref("PublicKeyCredentialRequestOptions")}} تبدیل شود، پرتاب می‌شود.
 - `SecurityError` {{domxref("DOMException")}}
-  - : The RP domain is not valid.
+  - : دامنه طرف اتکا (RP) معتبر نیست.
 
-## Description
+## توضیحات
 
-The Web Authentication process for [authenticating a (registered) user](/en-US/docs/Web/API/Web_Authentication_API#authenticating_a_user) involves a relying party server sending the web app information needed to find an existing credential, including details about the user identity, the relying party, a "challenge", and optionally where to look for the credential: for example on a local built-in authenticator, or on an external one over USB, BLE, and so on.
-The web app passes this information to an authenticator to find the credential, by calling [`navigator.credentials.get()`](/en-US/docs/Web/API/CredentialsContainer/get) with an argument that contains the server-supplied data as a {{domxref("PublicKeyCredentialRequestOptions")}} instance
+فرایند Web Authentication برای [احراز هویت یک کاربر (از قبل ثبت‌نام‌شده)](/en-US/docs/Web/API/Web_Authentication_API#authenticating_a_user) شامل این است که سرور طرف اتکا اطلاعات لازم برای یافتن یک اعتبارنامه موجود را به برنامه وب ارسال کند؛ از جمله جزئیاتی درباره هویت کاربر، طرف اتکا، یک «چالش» (challenge) و به‌صورت اختیاری محل جستجوی اعتبارنامه: برای مثال در یک احرازکننده داخلی دستگاه، یا در یک احرازکننده خارجی متصل از طریق USB، BLE و غیره.
 
-The specification does not define how the information needed for requesting a credential is sent.
-A convenient approach is for the server to encapsulate the information in a {{glossary("JSON type representation")}} of a {{domxref("PublicKeyCredentialRequestOptions")}} instance, that mirrors its structure but encodes buffer properties such as the `challenge` as [base64url](/en-US/docs/Glossary/Base64) strings.
-This object can be serialized to a [JSON](/en-US/docs/Glossary/JSON) string, sent to the web app and deserialized, and then converted to a {{domxref("PublicKeyCredentialRequestOptions")}} instance using **`parseRequestOptionsFromJSON()`**.
+برنامه وب این اطلاعات را برای یافتن اعتبارنامه به یک احرازکننده منتقل می‌کند؛ بدین منظور تابع [`navigator.credentials.get()`](/en-US/docs/Web/API/CredentialsContainer/get) را با آرگومانی فراخوانی می‌کند که داده‌های ارائه‌شده توسط سرور را به‌صورت یک نمونه {{domxref("PublicKeyCredentialRequestOptions")}} در بر دارد.
 
-## Examples
+این مشخصات تعیین نمی‌کند که اطلاعات لازم برای درخواست یک اعتبارنامه چگونه ارسال شود. رویکردی مناسب این است که سرور اطلاعات را در یک {{glossary("JSON type representation")}} از نمونه {{domxref("PublicKeyCredentialRequestOptions")}} بسته‌بندی کند؛ بازنمایی‌ای که ساختار آن را منعکس می‌کند، اما ویژگی‌های بافر مانند `challenge` را به‌صورت رشته‌های [base64url](/en-US/docs/Glossary/Base64) کدگذاری می‌کند. این شیء را می‌توان به یک رشته [JSON](/en-US/docs/Glossary/JSON) سریال کرد، به برنامه وب فرستاد، از حالت سریال خارج کرد و سپس با استفاده از **`parseRequestOptionsFromJSON()`** به یک نمونه {{domxref("PublicKeyCredentialRequestOptions")}} تبدیل کرد.
 
-When authorizing an already registered user, a relying party server will supply the web app with information about the requested credentials, the relying party, and a challenge.
-The code below defines this information in the form described in the [`options` parameter](#options) above:
+## مثال‌ها
+
+هنگام اعطای مجوز به یک کاربر از قبل ثبت‌نام‌شده، سرور طرف اتکا اطلاعات مربوط به اعتبارنامه‌های درخواستی، طرف اتکا و یک چالش را در اختیار برنامه وب قرار می‌دهد. کد زیر این اطلاعات را به شکلی که در [پارامتر `options`](#options) در بالا توصیف شده تعریف می‌کند:
 
 ```js
 const requestCredentialOptionsJSON = {
@@ -68,14 +60,13 @@ const requestCredentialOptionsJSON = {
 };
 ```
 
-Because this object only uses JSON data types, it can be serialized to JSON using [`JSON.stringify()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) and sent to the web app.
+از آنجا که این شیء فقط از انواع داده JSON استفاده می‌کند، می‌توان آن را با [`JSON.stringify()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) به JSON سریال کرد و به برنامه وب فرستاد.
 
 ```js
 JSON.stringify(requestCredentialOptionsJSON);
 ```
 
-The web app can deserialize the JSON string back to a `requestCredentialOptionsJSON` object (not shown).
-The **`parseRequestOptionsFromJSON()`** method is used to convert that object to the form that can be used in `navigator.credentials.get()`:
+برنامه وب می‌تواند رشته JSON را دوباره به یک شیء `requestCredentialOptionsJSON` غیرسریال کند (در اینجا نشان داده نشده است). متد **`parseRequestOptionsFromJSON()`** برای تبدیل آن شیء به شکلی که بتوان در `navigator.credentials.get()` استفاده کرد به کار می‌رود:
 
 ```js
 // Convert options to form used by get()
@@ -93,15 +84,15 @@ navigator.credentials
   });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Authentication API](/en-US/docs/Web/API/Web_Authentication_API)
 - {{domxref("PublicKeyCredential.parseCreationOptionsFromJSON_static", "PublicKeyCredential.parseCreationOptionsFromJSON()")}}
