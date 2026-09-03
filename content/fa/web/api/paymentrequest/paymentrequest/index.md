@@ -1,11 +1,5 @@
 ---
 title: "PaymentRequest: PaymentRequest() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/PaymentRequest"
-status: "needs-translation"
----
-
----
-title: "PaymentRequest: PaymentRequest() constructor"
 short-title: PaymentRequest()
 slug: Web/API/PaymentRequest/PaymentRequest
 page-type: web-api-constructor
@@ -14,101 +8,69 @@ browser-compat: api.PaymentRequest.PaymentRequest
 
 {{securecontext_header}}{{APIRef("Payment Request API")}}
 
-The **`PaymentRequest()`** constructor
-creates a new {{domxref("PaymentRequest")}} object which will be used to handle the
-process of generating, validating, and submitting a payment request.
+سازندهٔ **`PaymentRequest()`** یک شیء {{domxref("PaymentRequest")}} جدید می‌سازد که برای مدیریت فرایند تولید، اعتبارسنجی و ارسال یک درخواست پرداخت استفاده می‌شود.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 new PaymentRequest(methodData, details)
 new PaymentRequest(methodData, details, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `methodData`
-  - : Contains an array of identifiers for the payment methods the merchant website
-    accepts and any associated payment method specific data. Each item in the array
-    contains the following fields:
+  - : شامل آرایه‌ای از شناسه‌های روش‌های پرداختی است که وب‌سایت فروشنده می‌پذیرد و همچنین هر دادهٔ مرتبط با آن روش‌های پرداخت. هر آیتم در این آرایه شامل فیلدهای زیر است:
     - `supportedMethods`
-      - : A string containing a [payment method identifier](/en-US/docs/Web/API/Payment_Request_API/Concepts#payment_method_identifiers). This is either a URL or one of the [standardized payment method identifiers](/en-US/docs/Web/API/Payment_Request_API/Concepts#standardized_payment_method_identifiers). The value and structure of the `data` field will vary depending on the value of the `supportedMethods` field.
+      - : رشته‌ای حاوی [شناسهٔ روش پرداخت](/en-US/docs/Web/API/Payment_Request_API/Concepts#payment_method_identifiers). این مقدار یا یک URL است یا یکی از [شناسه‌های استاندارد روش پرداخت](/en-US/docs/Web/API/Payment_Request_API/Concepts#standardized_payment_method_identifiers). مقدار و ساختار فیلد `data` بسته به مقدار فیلد `supportedMethods` متفاوت خواهد بود.
 
     - `data`
-      - : A JSON-serializable object that provides optional information that might be
-        needed by the supported payment methods. This has to conform to the type expected
-        by the payment handler indicated by `supportedMethods`. Developers need to consult
-        whomever controls the payment methods for the expected shape of the data object. If `supportedMethods` is `secure-payment-confirmation`, then `data` needs to conform to the {{domxref("SecurePaymentConfirmationRequest")}} dictionary.
+      - : یک شیء قابل تبدیل به JSON که اطلاعات اختیاری مورد نیاز روش‌های پرداخت پشتیبانی‌شده را فراهم می‌کند. این داده باید با نوع مورد انتظار پردازندهٔ پرداخت که توسط `supportedMethods` مشخص شده است مطابقت داشته باشد. توسعه‌دهندگان باید برای اطلاع از شکل مورد انتظار شیء داده، با کنترل‌کنندهٔ روش‌های پرداخت مشورت کنند. اگر `supportedMethods` برابر با `secure-payment-confirmation` باشد، `data` باید با دیکشنری {{domxref("SecurePaymentConfirmationRequest")}} مطابقت داشته باشد.
 
 - `details`
-  - : Provides information about the requested transaction. This parameter contains the
-    following fields:
+  - : اطلاعاتی دربارهٔ تراکنش درخواستی فراهم می‌کند. این پارامتر شامل فیلدهای زیر است:
     - `total`
-      - : The total amount of the payment request.
+      - : مبلغ کل درخواست پرداخت.
     - `id` {{optional_inline}}
-      - : A free-form identifier for this payment request. If a value is not supplied, the
-        browser will construct one.
+      - : یک شناسهٔ آزاد برای این درخواست پرداخت. اگر مقداری ارائه نشود، مرورگر یکی می‌سازد.
     - `displayItems`
-      - : An array of optional line items for the payment request that the user agent may
-        display, such as product details, tax, and shipping.
+      - : آرایه‌ای از آیتم‌های خطی (line items) اختیاری برای درخواست پرداخت که عامل کاربر ممکن است نمایش دهد، مانند جزئیات محصول، مالیات و حمل‌ونقل.
     - `shippingOptions`
-      - : The shipping options the user may choose from. If this sequence is blank, it
-        indicates the merchant cannot ship to the current shipping address. The default
-        shipping option may be indicated in this sequence.
+      - : گزینه‌های حمل‌ونقلی که کاربر می‌تواند از میان آن‌ها انتخاب کند. اگر این دنباله خالی باشد، نشان می‌دهد که فروشنده نمی‌تواند به آدرس حمل‌ونقل فعلی ارسال کند. گزینهٔ پیش‌فرض حمل‌ونقل ممکن است در این دنباله مشخص شده باشد.
     - `modifiers`
-      - : Modifiers for specific payment methods; for example, adjusting the total amount
-        based on the payment method. This parameter contains the following fields:
+      - : تغییردهنده‌هایی برای روش‌های پرداخت خاص؛ مثلاً تنظیم مبلغ کل بر اساس روش پرداخت. این پارامتر شامل فیلدهای زیر است:
         - `additionalDisplayItems`
-          - : An array of items to be appended to the `details.displayItems`
-            property. This property is commonly used to add a discount or surcharge line
-            item indicating the different amount in `details.modifiers.total`.
+          - : آرایه‌ای از آیتم‌ها که به ویژگی `details.displayItems`追加 می‌شود. این ویژگی معمولاً برای افزودن یک آیتم خطی تخفیف یا هزینهٔ اضافه استفاده می‌شود که مبلغ متفاوت را در `details.modifiers.total` نشان می‌دهد.
         - `data`
-          - : A JSON-serializable object that provides optional information that might be
-            needed by the supported payment methods.
+          - : یک شیء قابل تبدیل به JSON که اطلاعات اختیاری مورد نیاز روش‌های پرداخت پشتیبانی‌شده را فراهم می‌کند.
         - `total`
-          - : A total amount for the payment request that overrides value in
-            details.total. This is typically used when
-            `details.modifiers.additionalItems` adds a discount or a purchase
-            to the request.
+          - : مبلغ کل برای درخواست پرداخت که مقدار `details.total` را لغو می‌کند. این معمولاً زمانی استفاده می‌شود که `details.modifiers.additionalItems` یک تخفیف یا یک خرید به درخواست اضافه می‌کند.
 
 - `options` {{optional_inline}}
-  - : Lets you set options that control the behavior of the user agent. This parameter
-    contains the following fields:
+  - : به شما امکان می‌دهد گزینه‌هایی را تنظیم کنید که رفتار عامل کاربر را کنترل می‌کنند. این پارامتر شامل فیلدهای زیر است:
     - `requestPayerName`
-      - : A Boolean indicating whether the user agent should collect the payer's name and
-        submit it with the payment request. The default is `false`.
+      - : یک مقدار بولی که نشان می‌دهد آیا عامل کاربر باید نام پرداخت‌کننده را جمع‌آوری کرده و همراه با درخواست پرداخت ارسال کند. مقدار پیش‌فرض `false` است.
     - `requestPayerEmail`
-      - : A Boolean indicating whether the user agent should collect the payer's email
-        address and submit it with the payment request. The default is `false`.
+      - : یک مقدار بولی که نشان می‌دهد آیا عامل کاربر باید آدرس ایمیل پرداخت‌کننده را جمع‌آوری کرده و همراه با درخواست پرداخت ارسال کند. مقدار پیش‌فرض `false` است.
     - `requestPayerPhone`
-      - : A Boolean indicating whether the user agent should collect the payer's phone
-        number and submit it with the payment request. The default is `false`.
+      - : یک مقدار بولی که نشان می‌دهد آیا عامل کاربر باید شماره تلفن پرداخت‌کننده را جمع‌آوری کرده و همراه با درخواست پرداخت ارسال کند. مقدار پیش‌فرض `false` است.
     - `requestShipping`
-      - : A Boolean indicating whether the user agent should collect the payer's shipping
-        address and submit it with the payment request. If you set this type to true, you
-        should select an appropriate `shippingType`. The default is
-        `false`.
+      - : یک مقدار بولی که نشان می‌دهد آیا عامل کاربر باید آدرس حمل‌ونقل پرداخت‌کننده را جمع‌آوری کرده و همراه با درخواست پرداخت ارسال کند. اگر این نوع را روی `true` تنظیم کنید، باید یک `shippingType` مناسب انتخاب کنید. مقدار پیش‌فرض `false` است.
     - `shippingType`
-      - : Lets you specify how the user interface refers to shipping when the word
-        'shipping' isn't appropriate for your use case. For example, in English speaking
-        countries you would say "pizza delivery" not "pizza shipping". Valid values are
-        `"shipping"`, `"delivery"`, and `"pickup"`.
-        Quotation marks must be included. The default value is `"shipping"`.
+      - : به شما امکان می‌دهد مشخص کنید که رابط کاربری چگونه به حمل‌ونقل اشاره می‌کند، زمانی که کلمهٔ «shipping» برای مورد استفادهٔ شما مناسب نیست. برای مثال، در کشورهای انگلیسی‌زبان می‌گویید «pizza delivery» نه «pizza shipping». مقادیر معتبر عبارت‌اند از `"shipping"`، `"delivery"` و `"pickup"`. علامت‌های نقل‌قول باید گنجانده شوند. مقدار پیش‌فرض `"shipping"` است.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("PaymentRequest")}} object, configured for use as configured by the
-input parameters.
+یک شیء {{domxref("PaymentRequest")}} جدید که مطابق با پارامترهای ورودی پیکربندی شده است.
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `SecurityError` {{domxref("DOMException")}}
-  - : Use of this feature was blocked by a [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy).
+  - : استفاده از این ویژگی توسط [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) مسدود شده است.
 
-## Examples
+## مثال‌ها
 
-The following example shows minimal functionality and focuses instead on showing the
-complete context of instantiating a `PaymentRequest` object.
+مثال زیر حداقل قابلیت را نشان می‌دهد و در عوض تمرکز خود را بر نمایش زمینهٔ کامل instantiate کردن یک شیء `PaymentRequest` می‌گذارد.
 
 ```js
 const supportedInstruments = [
@@ -154,10 +116,10 @@ try {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
