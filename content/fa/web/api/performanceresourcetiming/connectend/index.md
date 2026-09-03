@@ -1,9 +1,4 @@
----
-title: "PerformanceResourceTiming: connectEnd property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceResourceTiming/connectEnd"
-status: "needs-translation"
----
-
+```
 ---
 title: "PerformanceResourceTiming: connectEnd property"
 short-title: connectEnd
@@ -14,34 +9,34 @@ browser-compat: api.PerformanceResourceTiming.connectEnd
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The **`connectEnd`** read-only property returns the {{domxref("DOMHighResTimeStamp","timestamp")}} immediately after the browser finishes establishing the connection to the server to retrieve the resource. The timestamp value includes the time interval to establish the transport connection, as well as other time intervals such as TLS handshake and [SOCKS](https://en.wikipedia.org/wiki/SOCKS) authentication.
+ویژگی فقط‑خواندنی **`connectEnd`**، {{domxref("DOMHighResTimeStamp","مهر زمانی")}} را بلافاصله پس از پایان برقراری اتصال مرورگر به سرور برای دریافت منبع (resource) برمی‌گرداند. مقدار این مهر زمانی شامل مدت زمان برقراری اتصال انتقال (transport connection) و همچنین سایر بازه‌های زمانی مانند دست‌دهی TLS و احراز هویت [SOCKS](https://en.wikipedia.org/wiki/SOCKS) می‌شود.
 
-## Value
+## مقدار
 
-The `connectEnd` property can have the following values:
+ویژگی `connectEnd` می‌تواند مقادیر زیر را داشته باشد:
 
-- A {{domxref("DOMHighResTimeStamp")}} representing the time after a connection is established.
-- `0` if the resource was instantaneously retrieved from a cache.
-- `0` if the resource is a cross-origin request and no {{HTTPHeader("Timing-Allow-Origin")}} HTTP response header is used.
+- یک {{domxref("DOMHighResTimeStamp")}} که نشان‌دهندهٔ زمان پس از برقراری اتصال است.
+- `0` اگر منبع به‌طور آنی از حافظهٔ نهان (cache) بازیابی شود.
+- `0` اگر منبع یک درخواست بین‌المللی (cross-origin) باشد و هدر پاسخ HTTP {{HTTPHeader("Timing-Allow-Origin")}} استفاده نشده باشد.
 
-## Examples
+## مثال‌ها
 
-### Measuring TCP handshake time
+### اندازه‌گیری زمان دست‌دهی TCP
 
-The `connectEnd` and {{domxref("PerformanceResourceTiming.connectStart", "connectStart")}} properties can be used to measure how long it takes for the TCP handshake to happen.
+ویژگی‌های `connectEnd` و {{domxref("PerformanceResourceTiming.connectStart", "connectStart")}} برای اندازه‌گیری مدت زمان دست‌دهی TCP قابل استفاده هستند.
 
 ```js
 const tcp = entry.connectEnd - entry.connectStart;
 ```
 
-Example using a {{domxref("PerformanceObserver")}}, which notifies of new `resource` performance entries as they are recorded in the browser's performance timeline. Use the `buffered` option to access entries from before the observer creation.
+مثال با استفاده از {{domxref("PerformanceObserver")}}، که با ثبت ورودی‌های عملکرد «resource» در جدول زمانی عملکرد مرورگر، آن‌ها را اعلام می‌کند. از گزینهٔ `buffered` برای دسترسی به ورودی‌های قبل از ایجاد observer استفاده کنید.
 
 ```js
 const observer = new PerformanceObserver((list) => {
   list.getEntries().forEach((entry) => {
     const tcp = entry.connectEnd - entry.connectStart;
     if (tcp > 0) {
-      console.log(`${entry.name}: TCP handshake duration: ${tcp}ms`);
+      console.log(`${entry.name}: مدت زمان دست‌دهی TCP: ${tcp}ms`);
     }
   });
 });
@@ -49,36 +44,37 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "resource", buffered: true });
 ```
 
-Example using {{domxref("Performance.getEntriesByType()")}}, which only shows `resource` performance entries present in the browser's performance timeline at the time you call this method:
+مثال با استفاده از {{domxref("Performance.getEntriesByType()")}}، که فقط ورودی‌های عملکرد «resource» موجود در جدول زمانی عملکرد مرورگر را در زمان فراخوانی این متد نشان می‌دهد:
 
 ```js
 const resources = performance.getEntriesByType("resource");
 resources.forEach((entry) => {
   const tcp = entry.connectEnd - entry.connectStart;
   if (tcp > 0) {
-    console.log(`${entry.name}: TCP handshake duration: ${tcp}ms`);
+    console.log(`${entry.name}: مدت زمان دست‌دهی TCP: ${tcp}ms`);
   }
 });
 ```
 
-### Cross-origin timing information
+### اطلاعات زمان‌بندی درخواست‌های بین‌المللی (cross-origin)
 
-If the value of the `connectEnd` property is `0`, the resource might be a cross-origin request. To allow seeing cross-origin timing information, the {{HTTPHeader("Timing-Allow-Origin")}} HTTP response header needs to be set.
+اگر مقدار ویژگی `connectEnd` برابر `0` باشد، ممکن است منبع یک درخواست بین‌المللی باشد. برای مشاهدهٔ اطلاعات زمان‌بندی درخواست‌های بین‌المللی، باید هدر پاسخ HTTP {{HTTPHeader("Timing-Allow-Origin")}} تنظیم شود.
 
-For example, to allow `https://developer.mozilla.org` to see timing resources, the cross-origin resource should send:
+برای مثال، برای اجازه دادن به `https://developer.mozilla.org` برای مشاهدهٔ زمان‌بندی منابع، منبع بین‌المللی باید ارسال کند:
 
 ```http
 Timing-Allow-Origin: https://developer.mozilla.org
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{HTTPHeader("Timing-Allow-Origin")}}
+```
