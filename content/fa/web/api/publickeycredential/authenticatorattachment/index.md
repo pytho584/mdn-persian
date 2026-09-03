@@ -1,11 +1,5 @@
 ---
 title: "PublicKeyCredential: authenticatorAttachment property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredential/authenticatorAttachment"
-status: "needs-translation"
----
-
----
-title: "PublicKeyCredential: authenticatorAttachment property"
 short-title: authenticatorAttachment
 slug: Web/API/PublicKeyCredential/authenticatorAttachment
 page-type: web-api-instance-property
@@ -14,18 +8,18 @@ browser-compat: api.PublicKeyCredential.authenticatorAttachment
 
 {{APIRef("Web Authentication API")}}{{securecontext_header}}
 
-The **`authenticatorAttachment`** read-only property of the {{domxref("PublicKeyCredential")}} interface is a string that indicates the general category of authenticator used during the associated {{domxref("CredentialsContainer.create()","navigator.credentials.create()")}} or {{domxref("CredentialsContainer.get()","navigator.credentials.get()")}} call.
+ویژگی فقط‌خواندنی **`authenticatorAttachment`** در رابط {{domxref("PublicKeyCredential")}} یک رشته است که دسته‌بندی کلی احرازگر (authenticator) مورد استفاده در فراخوانی متناظر {{domxref("CredentialsContainer.create()","navigator.credentials.create()")}} یا {{domxref("CredentialsContainer.get()","navigator.credentials.get()")}} را نشان می‌دهد.
 
-## Value
+## مقدار
 
-A string, which will be one of the following values:
+یک رشته که یکی از مقادیر زیر خواهد بود:
 
 - `"platform"`
-  - : The authenticator is part of the device WebAuthn is running on (termed a **platform authenticator**), therefore WebAuthn will communicate with it using a transport available to that platform, such as a platform-specific API. A public key credential bound to a platform authenticator is called a **platform credential**.
+  - : احرازگر بخشی از دستگاهی است که WebAuthn روی آن اجرا می‌شود (به آن **احرازگر پلتفرمی** گفته می‌شود)؛ بنابراین WebAuthn با استفاده از یک کانال ارتباطی موجود برای آن پلتفرم، مانند یک API مختص آن پلتفرم، با آن ارتباط برقرار می‌کند. اعتبارنامه کلید عمومی متصل به یک احرازگر پلتفرمی **اعتبارنامه پلتفرمی** نامیده می‌شود.
 - `"cross-platform"`
-  - : The authenticator is not a part of the device WebAuthn is running on (termed a **roaming authenticator** as it can roam between different devices), therefore WebAuthn will communicate with it using a cross-platform transport protocol such as Bluetooth or NFC. A public key credential bound to a roaming authenticator is called a **roaming credential**.
+  - : احرازگر بخشی از دستگاهی نیست که WebAuthn روی آن اجرا می‌شود (به دلیل امکان جابه‌جایی بین دستگاه‌های مختلف، **احرازگر سیار** نیز نامیده می‌شود)؛ بنابراین WebAuthn با استفاده از یک پروتکل ارتباطی بین‌پلتفرمی مانند بلوتوث یا NFC با آن ارتباط برقرار می‌کند. اعتبارنامه کلید عمومی متصل به یک احرازگر سیار **اعتبارنامه سیار** نامیده می‌شود.
 
-## Examples
+## مثال‌ها
 
 ```js
 const options = {
@@ -58,10 +52,10 @@ navigator.credentials
   });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
