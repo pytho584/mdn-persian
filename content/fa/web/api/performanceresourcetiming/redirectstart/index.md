@@ -1,11 +1,5 @@
 ---
 title: "PerformanceResourceTiming: redirectStart property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceResourceTiming/redirectStart"
-status: "needs-translation"
----
-
----
-title: "PerformanceResourceTiming: redirectStart property"
 short-title: redirectStart
 slug: Web/API/PerformanceResourceTiming/redirectStart
 page-type: web-api-instance-property
@@ -14,31 +8,31 @@ browser-compat: api.PerformanceResourceTiming.redirectStart
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The **`redirectStart`** read-only property returns a {{domxref("DOMHighResTimeStamp","timestamp")}} representing the start time of the fetch which that initiates the redirect.
+ویژگی فقط‌خواندنی **`redirectStart`** یک {{domxref("DOMHighResTimeStamp","timestamp")}} برمی‌گرداند که زمان شروع واکشی (fetch) آغازکنندهٔ تغییرمسیر را نشان می‌دهد.
 
-If there are HTTP redirects when fetching the resource and if any of the redirects are not from the same origin as the current document, but the timing allow check algorithm passes for each redirected resource, this property returns the starting time of the fetch that initiates the redirect; otherwise, zero is returned.
+اگر هنگام واکشی منبع، تغییرمسیرهای HTTP رخ دهد و هر تغییرمسیری که با مبدأ سند فعلی هم‌مبدأ نیست، الگوریتم بررسی مجاز بودن زمان (timing allow check) را با موفقیت بگذراند، این ویژگی زمان شروع واکشیِ آغازکنندهٔ تغییرمسیر را برمی‌گرداند؛ در غیر این صورت، صفر برمی‌گردد.
 
-To get the amount of redirects, see also {{domxref("PerformanceNavigationTiming.redirectCount")}}.
+برای دریافت تعداد تغییرمسیرها، همچنین به {{domxref("PerformanceNavigationTiming.redirectCount")}} مراجعه کنید.
 
-## Value
+## مقدار
 
-The `redirectStart` property can have the following values:
+ویژگی `redirectStart` می‌تواند مقادیر زیر را داشته باشد:
 
-- A {{domxref("DOMHighResTimeStamp","timestamp")}} representing the start time of the fetch which initiates the redirect.
-- `0` if there is no redirect.
-- `0` if the resource is a cross-origin request and no {{HTTPHeader("Timing-Allow-Origin")}} HTTP response header is used.
+- یک {{domxref("DOMHighResTimeStamp","timestamp")}} که زمان شروع واکشی‌ای را نشان می‌دهد که تغییرمسیر را آغاز می‌کند.
+- `0` اگر تغییرمسیری وجود نداشته باشد.
+- `0` اگر منبع یک درخواست بین‌مبدأ (cross-origin) باشد و هیچ هدر پاسخ HTTP {{HTTPHeader("Timing-Allow-Origin")}} استفاده نشده باشد.
 
-## Examples
+## مثال‌ها
 
-### Measuring redirection time
+### اندازه‌گیری زمان تغییرمسیر
 
-The `redirectStart` and {{domxref("PerformanceResourceTiming.redirectEnd", "redirectEnd")}} properties can be used to measure how long the redirection takes.
+از ویژگی‌های `redirectStart` و {{domxref("PerformanceResourceTiming.redirectEnd", "redirectEnd")}} می‌توان برای اندازه‌گیری مدت‌زمان تغییرمسیر استفاده کرد.
 
 ```js
 const redirect = entry.redirectEnd - entry.redirectStart;
 ```
 
-Example using a {{domxref("PerformanceObserver")}}, which notifies of new `resource` performance entries as they are recorded in the browser's performance timeline. Use the `buffered` option to access entries from before the observer creation.
+مثال زیر با استفاده از {{domxref("PerformanceObserver")}} کار می‌کند؛ این observer با ثبت ورودی‌های جدید عملکرد از نوع `resource` در بازه زمانی عملکرد مرورگر، اطلاع می‌دهد. از گزینهٔ `buffered` برای دسترسی به ورودی‌هایی استفاده کنید که پیش از ایجاد observer ثبت شده‌اند.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -53,7 +47,7 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "resource", buffered: true });
 ```
 
-Example using {{domxref("Performance.getEntriesByType()")}}, which only shows `resource` performance entries present in the browser's performance timeline at the time you call this method:
+مثال زیر از {{domxref("Performance.getEntriesByType()")}} استفاده می‌کند که فقط ورودی‌های عملکرد `resource` حاضر در بازه زمانی عملکرد مرورگر را در زمان فراخوانی این متد نشان می‌دهد:
 
 ```js
 const resources = performance.getEntriesByType("resource");
@@ -65,25 +59,25 @@ resources.forEach((entry) => {
 });
 ```
 
-### Cross-origin timing information
+### اطلاعات زمان‌بندی بین‌مبدأ
 
-If the value of the `redirectStart` property is `0`, the resource might be a cross-origin request. To allow seeing cross-origin timing information, the {{HTTPHeader("Timing-Allow-Origin")}} HTTP response header needs to be set.
+اگر مقدار ویژگی `redirectStart` برابر با `0` باشد، منبع احتمالاً یک درخواست بین‌مبدأ است. برای اینکه مشاهدهٔ اطلاعات زمان‌بندی بین‌مبدأ ممکن شود، باید هدر پاسخ HTTP {{HTTPHeader("Timing-Allow-Origin")}} تنظیم شود.
 
-For example, to allow `https://developer.mozilla.org` to see timing resources, the cross-origin resource should send:
+برای مثال، برای اینکه به `https://developer.mozilla.org` اجازه داده شود منابع زمان‌بندی را ببیند، منبع بین‌مبدأ باید هدر زیر را ارسال کند:
 
 ```http
 Timing-Allow-Origin: https://developer.mozilla.org
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("PerformanceNavigationTiming.redirectCount")}}
 - {{HTTPHeader("Timing-Allow-Origin")}}
