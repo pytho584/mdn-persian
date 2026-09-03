@@ -1,11 +1,5 @@
 ---
 title: "NetworkInformation: change event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation/change_event"
-status: "needs-translation"
----
-
----
-title: "NetworkInformation: change event"
 short-title: change
 slug: Web/API/NetworkInformation/change_event
 page-type: web-api-event
@@ -14,11 +8,11 @@ browser-compat: api.NetworkInformation.change_event
 
 {{apiref("Network Information API")}} {{AvailableInWorkers}}
 
-The **`change`** event of the {{domxref("NetworkInformation")}} interface fires when connection information changes, and the event is received by the {{domxref("NetworkInformation")}} object.
+رویداد **`change`** از رابط {{domxref("NetworkInformation")}} زمانی رخ می‌دهد که اطلاعات اتصال تغییر کند، و این رویداد توسط شیء {{domxref("NetworkInformation")}} دریافت می‌شود.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای استفاده، نام رویداد را در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} به کار ببرید، یا یک ویژگی کنترل‌کننده رویداد (event handler property) تنظیم کنید.
 
 ```js-nolint
 addEventListener("change", (event) => { })
@@ -26,30 +20,30 @@ addEventListener("change", (event) => { })
 onchange = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## مثال‌ها
 
 ```js
-// Get the connection type.
+// دریافت نوع اتصال.
 const type = navigator.connection.type;
 
 function changeHandler(e) {
-  // Handle change of connection type here.
+  // تغییر نوع اتصال را اینجا مدیریت کنید.
 }
 
-// Register for event changes:
+// ثبت برای تغییرات رویداد:
 navigator.connection.onchange = changeHandler;
 
-// Another way: navigator.connection.addEventListener('change', changeHandler);
+// روش دیگر: navigator.connection.addEventListener('change', changeHandler);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
