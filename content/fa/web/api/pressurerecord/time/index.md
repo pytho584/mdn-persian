@@ -1,7 +1,5 @@
 ---
 title: "PressureRecord: time property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PressureRecord/time"
-status: "needs-translation"
 ---
 
 ---
@@ -16,17 +14,17 @@ browser-compat: api.PressureRecord.time
 
 {{APIRef("Compute Pressure API")}}{{SeeCompatTable}}{{AvailableInWorkers("window_and_worker_except_service")}}{{securecontext_header}}
 
-The read-only **`time`** property returns the {{domxref("DOMHighResTimeStamp","timestamp", "", "no-code")}} recorded for a {{domxref("PressureRecord")}}. It corresponds to the time the data was obtained from the system relative to the [time origin of the global object](/en-US/docs/Web/API/Performance/timeOrigin) in which the {{domxref("PressureObserver")}} generated the notification.
+ویژگی **`time`** فقط‌خواندنی، {{domxref("DOMHighResTimeStamp","timestamp", "", "no-code")}} ثبت‌شده برای یک {{domxref("PressureRecord")}} را بازمی‌گرداند. این ویژگی با زمانی مطابقت دارد که داده از سیستم، نسبت به [مبدأ زمانی شیء سراسری](/en-US/docs/Web/API/Performance/timeOrigin) که در آن {{domxref("PressureObserver")}} اعلان را تولید کرده است، به دست آمده است.
 
-## Value
+## مقدار
 
-A {{domxref("DOMHighResTimeStamp")}} representing the timestamp when the {{domxref("PressureRecord")}} was created.
+یک {{domxref("DOMHighResTimeStamp")}} که زمان ایجاد {{domxref("PressureRecord")}} را نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
-### Using the `time` property
+### استفاده از ویژگی `time`
 
-In the following example we log the value of the `time` property in the pressure observer callback.
+در مثال زیر، مقدار ویژگی `time` را در تابع بازخورد ناظر فشار (pressure observer) ثبت می‌کنیم.
 
 ```js
 function callback(records) {
@@ -45,10 +43,10 @@ try {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
