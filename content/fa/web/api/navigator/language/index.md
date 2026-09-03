@@ -1,11 +1,5 @@
 ---
 title: "Navigator: language property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/language"
-status: "needs-translation"
----
-
----
-title: "Navigator: language property"
 short-title: language
 slug: Web/API/Navigator/language
 page-type: web-api-instance-property
@@ -14,19 +8,19 @@ browser-compat: api.Navigator.language
 
 {{APIRef("HTML DOM")}}
 
-The **`language`** read-only property of the {{domxref("Navigator")}} interface returns a string representing the preferred language of the user, usually the language of the browser UI.
+ویژگی فقط‌خواندنی **`language`** از رابط {{domxref("Navigator")}} یک رشته را برمی‌گرداند که زبان ترجیحی کاربر را نشان می‌دهد، معمولاً زبان رابط کاربری مرورگر.
 
-## Value
+## مقدار
 
-A string representing the language version in {{glossary("BCP 47 language tag")}} format. Examples of valid language tags include `en`, `en-US`, `fr`, `fr-FR`, `es-ES`, etc.
+یک رشته که نسخه زبان را در قالب {{glossary("BCP 47 language tag")}} نشان می‌دهد. نمونه‌هایی از برچسب‌های زبان معتبر عبارتند از `en`، `en-US`، `fr`، `fr-FR`، `es-ES` و غیره.
 
-Note that in Safari on iOS prior to 10.2, the country code returned is lowercase: "en-us", "fr-fr" etc.
+توجه داشته باشید که در Safari روی iOS پیش از نسخه ۱۰.۲، کد کشور برگردانده شده به حروف کوچک است: `"en-us"`، `"fr-fr"` و غیره.
 
-## Examples
+## مثال‌ها
 
-### Using Intl constructors to do language-specific formatting
+### استفاده از سازنده‌های Intl برای قالب‌بندی خاص زبان
 
-The {{jsxref("Intl")}} constructors allow formatting content to match the rules of a given locale. You can pass `navigator.language` to them to format content in the locale corresponding to the user's preferred language:
+سازنده‌های {{jsxref("Intl")}} امکان قالب‌بندی محتوا را مطابق با قوانین یک locale خاص فراهم می‌کنند. می‌توانید `navigator.language` را به آن‌ها ارسال کنید تا محتوا را در locale متناظر با زبان ترجیحی کاربر قالب‌بندی کنید:
 
 ```js
 const date = new Date("2012-05-24");
