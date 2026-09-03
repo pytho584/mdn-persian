@@ -1,11 +1,5 @@
 ---
 title: "Notification: actions property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Notification/actions"
-status: "needs-translation"
----
-
----
-title: "Notification: actions property"
 short-title: actions
 slug: Web/API/Notification/actions
 page-type: web-api-instance-property
@@ -14,43 +8,35 @@ browser-compat: api.Notification.actions
 
 {{APIRef("Web Notifications")}}{{SecureContext_Header}} {{AvailableInWorkers}}
 
-The **`actions`** read-only property of the {{domxref("Notification")}} interface provides the actions available for users to select when interacting with the notification.
+ویژگی فقط‌خواندنی **`actions`** در رابط {{domxref("Notification")}}، اکشن‌هایی را که کاربر هنگام تعامل با اعلان امکان انتخاب آن‌ها را دارد در اختیار قرار می‌دهد.
 
-## Value
+## مقدار
 
-A read-only array of actions.
-Each element in the array is an object with the following members:
+یک آرایه‌ی فقط‌خواندنی از اکشن‌ها. هر عنصر از این آرایه، یک شیء با اعضای زیر است:
 
 - `action`
-  - : A string identifying a user action to be displayed on the notification.
+  - : رشته‌ای که یک اکشن کاربر را برای نمایش روی اعلان مشخص می‌کند.
 - `title`
-  - : A string containing action text to be shown to the user.
+  - : رشته‌ای شامل متنی که برای کاربر نمایش داده می‌شود.
 - `icon`
-  - : A string containing the URL of an icon to display with the action.
+  - : رشته‌ای شامل URL آیکونی که همراه با اکشن نمایش داده می‌شود.
 - `navigate` {{optional_inline}} {{experimental_inline}}
-  - : A string containing a URL to navigate to when the user activates this action.
-    When set, the user agent navigates to this URL instead of firing the {{domxref("ServiceWorkerGlobalScope.notificationclick_event", "notificationclick")}} event.
-    See {{domxref("Notification.navigate")}} for more information.
+  - : رشته‌ای شامل URL مقصد برای هدایت، زمانی که کاربر این اکشن را فعال می‌کند. اگر این مقدار تنظیم شده باشد، عامل کاربر به جای صدور رویداد {{domxref("ServiceWorkerGlobalScope.notificationclick_event", "notificationclick")}} به این URL هدایت می‌شود. برای اطلاعات بیشتر به {{domxref("Notification.navigate")}} مراجعه کنید.
 
-## Description
+## توضیحات
 
-Notification actions are buttons or controls that appear within [persistent notifications](/en-US/docs/Web/API/Notifications_API#persistent_and_non-persistent_notifications).
-They are set using the [`actions`](/en-US/docs/Web/API/ServiceWorkerRegistration/showNotification#actions) option of the second argument of the {{domxref("ServiceWorkerRegistration.showNotification", "showNotification()")}} method.
-Note that actions are not available for non-persistent notifications.
-If you pass an `options` object with an `actions` property that is anything other than `null` to the {{domxref("Notification/Notification", "Notification()")}} constructor, a `TypeError` is thrown.
+اکشن‌های اعلان، دکمه‌ها یا کنترل‌هایی هستند که درون [اعلان‌های ماندگار](/en-US/docs/Web/API/Notifications_API#persistent_and_non-persistent_notifications) نمایش داده می‌شوند. این اکشن‌ها با استفاده از گزینه‌ی [`actions`](/en-US/docs/Web/API/ServiceWorkerRegistration/showNotification#actions) در آرگومان دوم متد {{domxref("ServiceWorkerRegistration.showNotification", "showNotification()")}} تنظیم می‌شوند. توجه داشته باشید که اکشن‌ها برای اعلان‌های غیرماندگار در دسترس نیستند. اگر یک شیء `options` با ویژگی `actions` که چیزی غیر از `null` است به سازنده‌ی {{domxref("Notification/Notification", "Notification()")}} ارسال کنید، یک `TypeError` پرتاب می‌شود.
 
-Clicking the button associated with an action navigates to the URL set in the [`navigate`](#navigate) option if one is specified.
-Otherwise, it fires a [`notificationclick`](/en-US/docs/Web/API/ServiceWorkerGlobalScope/notificationclick_event) event on the service worker that includes the action that was selected (and the associated `Notification` instance), so the worker can handle it without the user ever switching to your page.
+کلیک روی دکمه‌ی مربوط به هر اکشن، اگر URLای در گزینه‌ی [`navigate`](#navigate) تعیین شده باشد، به آن URL هدایت می‌کند. در غیر این صورت، رویداد [`notificationclick`](/en-US/docs/Web/API/ServiceWorkerGlobalScope/notificationclick_event) روی سرویس‌کارگر صادر می‌شود؛ این رویداد شامل اکشن انتخاب‌شده (و نمونه‌ی `Notification` مرتبط) است تا سرویس‌کارگر بتواند بدون اینکه کاربر به صفحه‌ی شما برود، آن را مدیریت کند.
 
 > [!NOTE]
-> Browsers typically limit the maximum number of actions they will display for a particular notification.
-> Check the static {{domxref("Notification.maxActions_static", "Notification.maxActions")}} property to determine the limit.
+> مرورگرها معمولاً حداکثر تعداد اکشن‌هایی را که برای یک اعلان خاص نمایش می‌دهند محدود می‌کنند. برای تعیین این حد، به ویژگی ایستای {{domxref("Notification.maxActions_static", "Notification.maxActions")}} مراجعه کنید.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده‌ی پایه
 
-The following code shows how a service worker might listen for the `notificationclick` event and use it to retrieve both the clicked action and an array of all actions.
+کد زیر نشان می‌دهد که چگونه یک سرویس‌کارگر می‌تواند به رویداد `notificationclick` گوش دهد و از آن برای دریافت اکشن کلیک‌شده و همچنین آرایه‌ای از همه‌ی اکشن‌ها استفاده کند.
 
 ```js
 // sw.js
@@ -65,15 +51,15 @@ self.addEventListener("notificationclick", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Notifications API](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
+- [استفاده از Notifications API](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
 - {{domxref("Notification.maxActions_static", "Notification.maxActions")}}
