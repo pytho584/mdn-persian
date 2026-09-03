@@ -1,11 +1,5 @@
 ---
 title: "PerformanceLongAnimationFrameTiming: scripts property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceLongAnimationFrameTiming/scripts"
-status: "needs-translation"
----
-
----
-title: "PerformanceLongAnimationFrameTiming: scripts property"
 short-title: scripts
 slug: Web/API/PerformanceLongAnimationFrameTiming/scripts
 page-type: web-api-instance-property
@@ -16,27 +10,27 @@ browser-compat: api.PerformanceLongAnimationFrameTiming.scripts
 
 {{SeeCompatTable}}{{APIRef("Performance API")}}
 
-The **`scripts`** read-only property of the {{domxref("PerformanceLongAnimationFrameTiming")}} interface returns an array of {{domxref("PerformanceScriptTiming")}} objects.
+ویژگی فقط‑خواندنی **`scripts`** از رابط {{domxref("PerformanceLongAnimationFrameTiming")}} یک آرایه از اشیاء {{domxref("PerformanceScriptTiming")}} برمی‌گرداند.
 
-Script attribution is provided only for scripts running in the main thread of a page, including same-origin `<iframe>`s. However, cross-origin `<iframe>`s, [web workers](/en-US/docs/Web/API/Web_Workers_API), [service workers](/en-US/docs/Web/API/Service_Worker_API), and [extension](/en-US/docs/Mozilla/Add-ons/WebExtensions) code will not have script attribution in long animation frames, even if they impact the duration of one.
+نسبت‌دهی اسکریپت فقط برای اسکریپت‌هایی که در ریسه اصلی (main thread) یک صفحه اجرا می‌شوند، از جمله `<iframe>`های هم‌مبدأ، ارائه می‌شود. با این حال، `<iframe>`های متقاطع‑مبدأ، [web workers](/en-US/docs/Web/API/Web_Workers_API)، [service workers](/en-US/docs/Web/API/Service_Worker_API)، و کد [افزونه‌ها](/en-US/docs/Mozilla/Add-ons/WebExtensions) در فریم‌های انیمیشن طولانی نسبت‌دهی اسکریپت نخواهند داشت، حتی اگر بر مدت زمان یک فریم تأثیر بگذارند.
 
-## Value
+## مقدار
 
-An array of {{domxref("PerformanceScriptTiming")}} objects.
+یک آرایه از اشیاء {{domxref("PerformanceScriptTiming")}}.
 
-## Examples
+## مثال‌ها
 
-See [Long animation frame timing](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing#examples) for examples related to the Long Animation Frames API.
+برای مثال‌های مرتبط با API فریم‌های انیمیشن طولانی، به [زمان‌بندی فریم انیمیشن طولانی](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Long animation frame timing](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing)
+- [زمان‌بندی فریم انیمیشن طولانی](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing)
 - {{domxref("PerformanceScriptTiming")}}
