@@ -1,11 +1,5 @@
 ---
 title: "Performance: getEntries() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Performance/getEntries"
-status: "needs-translation"
----
-
----
-title: "Performance: getEntries() method"
 short-title: getEntries()
 slug: Web/API/Performance/getEntries
 page-type: web-api-instance-method
@@ -14,15 +8,15 @@ browser-compat: api.Performance.getEntries
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The **`getEntries()`** method returns an array of all {{domxref("PerformanceEntry")}} objects currently present in the performance timeline.
+متد **`getEntries()`** یک آرایه از تمام اشیاء {{domxref("PerformanceEntry")}} که در حال حاضر در timeline عملکرد وجود دارند، برمی‌گرداند.
 
-If you are only interested in performance entries of certain types or that have certain names, see {{domxref("Performance.getEntriesByType", "getEntriesByType()")}} and {{domxref("Performance.getEntriesByName", "getEntriesByName()")}}.
+اگر فقط به ورودی‌های عملکرد از انواع خاص یا با نام‌های خاص علاقه‌مندید، به {{domxref("Performance.getEntriesByType", "getEntriesByType()")}} و {{domxref("Performance.getEntriesByName", "getEntriesByName()")}} مراجعه کنید.
 
 > [!NOTE]
-> This method does not notify you about new performance entries; you will only get entries that are present in the performance timeline at the time you call this method.
-> To receive notifications about entries as they become available, use a {{domxref("PerformanceObserver")}}.
+> این متد شما را از ورودی‌های جدید عملکرد مطلع نمی‌کند؛ شما فقط ورودی‌هایی را دریافت می‌کنید که در زمان فراخوانی این متد در timeline عملکرد وجود دارند.
+> برای دریافت اعلان‌ها درباره ورودی‌ها به محض در دسترس شدن، از یک {{domxref("PerformanceObserver")}} استفاده کنید.
 
-The following entry types are not supported by this method at all and won't be returned even if entries for these types might exist:
+انواع ورودی زیر به هیچ وجه توسط این متد پشتیبانی نمی‌شوند و حتی اگر ورودی‌هایی برای این انواع وجود داشته باشند، بازگردانده نخواهند شد:
 
 - `"element"` ({{domxref("PerformanceElementTiming")}})
 - `"event"` ({{domxref("PerformanceEventTiming")}})
@@ -30,7 +24,7 @@ The following entry types are not supported by this method at all and won't be r
 - `"layout-shift"` ({{domxref("LayoutShift")}})
 - `"longtask"` ({{domxref("PerformanceLongTaskTiming")}})
 
-To access entries of these types, you must use a {{domxref("PerformanceObserver")}} instead.
+برای دسترسی به ورودی‌های این انواع، باید به جای آن از {{domxref("PerformanceObserver")}} استفاده کنید.
 
 ## Syntax
 
@@ -40,17 +34,17 @@ getEntries()
 
 ### Parameters
 
-None.
+هیچ.
 
 ### Return value
 
-An {{jsxref("Array")}} of {{domxref("PerformanceEntry")}} objects. The items will be in chronological order based on the entries' {{domxref("PerformanceEntry.startTime","startTime")}}.
+یک {{jsxref("Array")}} از اشیاء {{domxref("PerformanceEntry")}}. موارد به ترتیب زمانی بر اساس {{domxref("PerformanceEntry.startTime","startTime")}} ورودی‌ها قرار خواهند گرفت.
 
 ## Examples
 
-### Logging all performance markers and measures
+### ثبت تمام نشانگرها و اندازه‌گیری‌های عملکرد
 
-Assuming you created your own {{domxref("PerformanceMark")}} and {{domxref("PerformanceMeasure")}} objects at appropriate places in your code, you might want to log all them to the console like this:
+با فرض اینکه اشیاء {{domxref("PerformanceMark")}} و {{domxref("PerformanceMeasure")}} خود را در مکان‌های مناسب کد خود ایجاد کرده‌اید، ممکن است بخواهید همه آنها را به صورت زیر در کنسول ثبت کنید:
 
 ```js
 // Example markers/measures
