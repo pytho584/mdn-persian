@@ -1,10 +1,4 @@
 ---
-title: "PaymentRequestUpdateEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestUpdateEvent"
-status: "needs-translation"
----
-
----
 title: PaymentRequestUpdateEvent
 slug: Web/API/PaymentRequestUpdateEvent
 page-type: web-api-interface
@@ -13,39 +7,39 @@ browser-compat: api.PaymentRequestUpdateEvent
 
 {{securecontext_header}}{{APIRef("Payment Request API")}}
 
-The **`PaymentRequestUpdateEvent`** interface is used for events sent to a {{domxref("PaymentRequest")}} instance when changes are made to shipping-related information for a pending {{domxref("PaymentRequest")}}. Those events are:
+رابطهٔ **`PaymentRequestUpdateEvent`** برای رویدادهایی استفاده می‌شود که وقتی تغییراتی در اطلاعات مربوط به حمل‌ونقل برای یک {{domxref("PaymentRequest")}} در انتظار ایجاد می‌شود، به یک نمونه ارسال می‌گردند. این رویدادها عبارت‌اند از:
 
 - {{domxref("PaymentRequest.shippingaddresschange_event", "shippingaddresschange")}}
-  - : Dispatched whenever the user changes their shipping address.
+  - : هر زمان که کاربر آدرس حمل‌ونقل خود را تغییر دهد، این رویداد ارسال می‌شود.
 - {{domxref("PaymentRequest.shippingoptionchange_event", "shippingoptionchange")}}
-  - : Dispatched whenever the user changes a shipping option.
+  - : هر زمان که کاربر یک گزینهٔ حمل‌ونقل را تغییر دهد، این رویداد ارسال می‌شود.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("PaymentRequestUpdateEvent.PaymentRequestUpdateEvent()","PaymentRequestUpdateEvent()")}}
-  - : Creates a new `PaymentRequestUpdateEvent` object.
+  - : یک شیء `PaymentRequestUpdateEvent` جدید ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Provides only the properties inherited from its parent interface, {{domxref("Event")}}._
+_فقط ویژگی‌های به‌ارث‌برده‌شده از رابط والد، یعنی {{domxref("Event")}} را فراهم می‌کند._
 
-## Instance methods
+## روش‌های نمونه
 
-_In addition to methods inherited from the parent interface, {{domxref("Event")}}, `PaymentRequestUpdateEvent` offers the following methods:_
+_علاوه بر روش‌های به‌ارث‌برده‌شده از رابط والد، یعنی {{domxref("Event")}}، `PaymentRequestUpdateEvent` روش‌های زیر را نیز ارائه می‌دهد:_
 
 - {{domxref("PaymentRequestUpdateEvent.updateWith()")}}
-  - : If the event handler determines that information included in the payment request needs to be changed, or that new information needs to be added, it calls `updateWith()` with the information that needs to be replaced or added.
+  - : اگر کنترل‌کنندهٔ رویداد تشخیص دهد که اطلاعات موجود در درخواست پرداخت باید تغییر کند یا اطلاعات جدیدی باید اضافه شود، `updateWith()` را با اطلاعاتی که باید جایگزین یا اضافه شوند فراخوانی می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Payment Request API](/en-US/docs/Web/API/Payment_Request_API/Using_the_Payment_Request_API)
+- [استفاده از Payment Request API](/en-US/docs/Web/API/Payment_Request_API/Using_the_Payment_Request_API)
