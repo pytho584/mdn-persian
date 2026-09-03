@@ -1,11 +1,5 @@
 ---
 title: "NodeIterator: whatToShow property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/whatToShow"
-status: "needs-translation"
----
-
----
-title: "NodeIterator: whatToShow property"
 short-title: whatToShow
 slug: Web/API/NodeIterator/whatToShow
 page-type: web-api-instance-property
@@ -14,15 +8,13 @@ browser-compat: api.NodeIterator.whatToShow
 
 {{APIRef("DOM")}}
 
-The **`NodeIterator.whatToShow`** read-only property represents
-an `unsigned integer` representing a bitmask signifying what types of nodes
-should be returned by the {{domxref("NodeIterator")}}.
+**`NodeIterator.whatToShow`** 只读属性表示一个 `unsigned integer`（无符号整数），该整数是一个位掩码，指示 {{domxref("NodeIterator")}} 应返回哪些类型的节点。
 
-## Value
+## 值
 
-A non-negative integer. For the list of possible values, see [`document.createNodeIterator()`](/en-US/docs/Web/API/Document/createNodeIterator#whattoshow).
+一个非负整数。有关可能值的列表，请参阅 [`document.createNodeIterator()`](/en-US/docs/Web/API/Document/createNodeIterator#whattoshow)。
 
-## Examples
+## 示例
 
 ```js
 const nodeIterator = document.createNodeIterator(
@@ -38,14 +30,14 @@ if (
 }
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
-- The interface this property belongs to: {{domxref("NodeIterator")}}.
+- 该属性所属的接口：{{domxref("NodeIterator")}}。
