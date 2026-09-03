@@ -1,11 +1,5 @@
 ---
 title: "PermissionStatus"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PermissionStatus"
-status: "needs-translation"
----
-
----
-title: PermissionStatus
 slug: Web/API/PermissionStatus
 page-type: web-api-interface
 browser-compat: api.PermissionStatus
@@ -13,23 +7,23 @@ browser-compat: api.PermissionStatus
 
 {{APIRef("Permissions API")}}{{AvailableInWorkers}}
 
-The **`PermissionStatus`** interface of the [Permissions API](/en-US/docs/Web/API/Permissions_API) provides the state of an object and an event handler for monitoring changes to said state.
+واسط **`PermissionStatus`** در [Permissions API](/en-US/docs/Web/API/Permissions_API) وضعیت یک شیء و یک مدیریت‌کننده رویداد برای پایش تغییرات آن وضعیت را فراهم می‌کند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("PermissionStatus.name")}} {{ReadOnlyInline}}
-  - : Returns the name of a requested permission, identical to the `name` passed to {{domxref("Permissions.query")}}.
+  - : نام مجوز درخواست‌شده را برمی‌گرداند؛ همان مقداری که به {{domxref("Permissions.query")}} ارسال شده است.
 - {{domxref("PermissionStatus.state")}} {{ReadOnlyInline}}
-  - : Returns the state of a requested permission; one of `'granted'`, `'denied'`, or `'prompt'`.
+  - : وضعیت مجوز درخواست‌شده را برمی‌گرداند؛ یکی از `'granted'`، `'denied'` یا `'prompt'`.
 
-### Events
+### رویدادها
 
 - {{domxref("PermissionStatus.change_event", "change")}}
-  - : Invoked upon changes to `PermissionStatus.state`.
+  - : هنگام تغییر در `PermissionStatus.state` فراخوانی می‌شود.
 
-## Example
+## مثال
 
 ```js
 navigator.permissions
@@ -44,10 +38,10 @@ navigator.permissions
   });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
