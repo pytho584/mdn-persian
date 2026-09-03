@@ -1,10 +1,4 @@
 ---
-title: "OES_vertex_array_object extension"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/OES_vertex_array_object"
-status: "needs-translation"
----
-
----
 title: OES_vertex_array_object extension
 short-title: OES_vertex_array_object
 slug: Web/API/OES_vertex_array_object
@@ -14,34 +8,34 @@ browser-compat: api.OES_vertex_array_object
 
 {{APIRef("WebGL")}}
 
-The **OES_vertex_array_object** extension is part of the [WebGL API](/en-US/docs/Web/API/WebGL_API) and provides vertex array objects (VAOs) which encapsulate vertex array states. These objects keep pointers to vertex data and provide names for different sets of vertex data.
+افزونهٔ **OES_vertex_array_object** بخشی از [WebGL API](/en-US/docs/Web/API/WebGL_API) است و شیءهای آرایه رأس (VAO) را فراهم می‌کند که وضعیت آرایه رأس را در خود کپسوله می‌کنند. این شیءها اشاره‌گرهایی به داده‌های رأس نگه می‌دارند و نام‌هایی برای مجموعه‌های مختلف داده رأس ارائه می‌دهند.
 
-WebGL extensions are available using the {{domxref("WebGLRenderingContext.getExtension()")}} method. For more information, see also [Using Extensions](/en-US/docs/Web/API/WebGL_API/Using_Extensions) in the [WebGL tutorial](/en-US/docs/Web/API/WebGL_API/Tutorial).
+افزونه‌های WebGL با استفاده از متد {{domxref("WebGLRenderingContext.getExtension()")}} در دسترس هستند. برای اطلاعات بیشتر، همچنین [استفاده از افزونه‌ها](/en-US/docs/Web/API/WebGL_API/Using_Extensions) را در [آموزش WebGL](/en-US/docs/Web/API/WebGL_API/Tutorial) ببینید.
 
 > [!NOTE]
-> This extension is only available to {{domxref("WebGLRenderingContext", "WebGL1", "", 1)}} contexts. In {{domxref("WebGL2RenderingContext", "WebGL2", "", 1)}}, the functionality of this extension is available on the WebGL2 context by default and the constants and methods are available without the `OES_` suffix.
+> این افزونه فقط برای زمینه‌های {{domxref("WebGLRenderingContext", "WebGL1", "", 1)}} در دسترس است. در {{domxref("WebGL2RenderingContext", "WebGL2", "", 1)}}، عملکرد این افزونه به‌صورت پیش‌فرض روی زمینهٔ WebGL2 موجود است و ثابت‌ها و روش‌ها بدون پسوندِ `OES_` در دسترس هستند.
 
-## Constants
+## ثابت‌ها
 
-This extension exposes one new constant, which can be used in the {{domxref("WebGLRenderingContext.getParameter()", "gl.getParameter()")}} method:
+این افزونه یک ثابت جدید ارائه می‌دهد که می‌توان در متد {{domxref("WebGLRenderingContext.getParameter()", "gl.getParameter()")}} از آن استفاده کرد:
 
 - `ext.VERTEX_ARRAY_BINDING_OES`
-  - : Returns a {{domxref("WebGLVertexArrayObject")}} object when used in the {{domxref("WebGLRenderingContext.getParameter()", "gl.getParameter()")}} method as the `pname` parameter.
+  - : وقتی در متد {{domxref("WebGLRenderingContext.getParameter()", "gl.getParameter()")}} به‌عنوان پارامتر `pname` استفاده شود، یک شیء {{domxref("WebGLVertexArrayObject")}} برمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
-This extension exposes four new methods.
+این افزونه چهار روش جدید ارائه می‌دهد.
 
 - {{domxref("OES_vertex_array_object.createVertexArrayOES()", "ext.createVertexArrayOES()")}}
-  - : Creates a new {{domxref("WebGLVertexArrayObject")}}.
+  - : یک {{domxref("WebGLVertexArrayObject")}} جدید ایجاد می‌کند.
 - {{domxref("OES_vertex_array_object.deleteVertexArrayOES()", "ext.deleteVertexArrayOES()")}}
-  - : Deletes a given {{domxref("WebGLVertexArrayObject")}}.
+  - : یک {{domxref("WebGLVertexArrayObject")}} معین را حذف می‌کند.
 - {{domxref("OES_vertex_array_object.isVertexArrayOES()", "ext.isVertexArrayOES()")}}
-  - : Returns `true` if a given object is a {{domxref("WebGLVertexArrayObject")}}.
+  - : اگر شیء داده‌شده یک {{domxref("WebGLVertexArrayObject")}} باشد، `true` برمی‌گرداند.
 - {{domxref("OES_vertex_array_object.bindVertexArrayOES()", "ext.bindVertexArrayOES()")}}
-  - : Binds a given {{domxref("WebGLVertexArrayObject")}} to the buffer.
+  - : یک {{domxref("WebGLVertexArrayObject")}} معین را به بافر متصل می‌کند.
 
-## Examples
+## مثال‌ها
 
 ```js
 const ext = gl.getExtension("OES_vertex_array_object");
@@ -54,19 +48,19 @@ ext.bindVertexArrayOES(vao);
 // …
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("WebGLRenderingContext.getExtension()")}}
 - {{domxref("WebGLRenderingContext.vertexAttribPointer()")}}
-- WebGL2 equivalent methods:
+- متدهای معادل در WebGL2:
   - {{domxref("WebGL2RenderingContext.createVertexArray()")}}
   - {{domxref("WebGL2RenderingContext.deleteVertexArray()")}}
   - {{domxref("WebGL2RenderingContext.isVertexArray()")}}
