@@ -1,7 +1,6 @@
+```markdown
 ---
 title: "NetworkInformation"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation"
-status: "needs-translation"
 ---
 
 ---
@@ -13,53 +12,54 @@ browser-compat: api.NetworkInformation
 
 {{APIRef("Network Information API")}} {{AvailableInWorkers}}
 
-The **`NetworkInformation`** interface of the [Network Information API](/en-US/docs/Web/API/Network_Information_API) provides information about the connection a device is using to communicate with the network and provides a means for scripts to be notified if the connection type changes.
-The `NetworkInformation` interface cannot be instantiated. It is instead accessed through the `connection` property of the {{domxref("Navigator")}} interface or the {{domxref("WorkerNavigator")}} interface.
+رابط کاربری **`NetworkInformation`** از [Network Information API](/en-US/docs/Web/API/Network_Information_API) اطلاعاتی درباره اتصالی که دستگاه برای برقراری ارتباط با شبکه از آن استفاده می‌کند فراهم می‌کند و همچنین مکانیزمی را برای اسکریپت‌ها فراهم می‌کند تا در صورت تغییر نوع اتصال، مطلع شوند.
+رابط کاربری `NetworkInformation` را نمی‌توان مستقیماً نمونه‌سازی کرد. در عوض، از طریق ویژگی `connection` در رابط کاربری {{domxref("Navigator")}} یا رابط کاربری {{domxref("WorkerNavigator")}} قابل دسترسی است.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface also inherits properties of its parent, {{domxref("EventTarget")}}._
+این رابط کاربری همچنین ویژگی‌های والد خود، {{domxref("EventTarget")}} را به ارث می‌برد.
 
 - {{domxref("NetworkInformation.downlink")}} {{ReadOnlyInline}}
-  - : Returns the effective bandwidth estimate in megabits per second, rounded to the nearest multiple of 25 kilobits per seconds.
+  - : برآورد پهنای باند مؤثر را بر حسب مگابیت بر ثانیه برمی‌گرداند که به نزدیک‌ترین مضرب ۲۵ کیلوبیت در ثانیه گرد شده است.
 - {{domxref("NetworkInformation.downlinkMax")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns the maximum downlink speed, in megabits per second (Mbps), for the underlying connection technology.
+  - : حداکثر سرعت دانلود را بر حسب مگابیت بر ثانیه (Mbps) برای فناوری اتصال زیرین برمی‌گرداند.
 - {{domxref("NetworkInformation.effectiveType")}} {{ReadOnlyInline}}
-  - : Returns the effective type of the connection meaning one of 'slow-2g', '2g', '3g', or '4g'. This value is determined using a combination of recently observed round-trip time and downlink values.
+  - : نوع مؤثر اتصال را برمی‌گرداند که یکی از مقادیر 'slow-2g'، '2g'، '3g' یا '4g' است. این مقدار با استفاده از ترکیبی از زمان رفت‌وبرگشت (round-trip time) مشاهده‌شده اخیر و مقادیر downlink تعیین می‌شود.
 - {{domxref("NetworkInformation.rtt")}} {{ReadOnlyInline}}
-  - : Returns the estimated effective round-trip time of the current connection, rounded to the nearest multiple of 25 milliseconds.
+  - : برآورد زمان رفت‌وبرگشت مؤثر اتصال فعلی را برمی‌گرداند که به نزدیک‌ترین مضرب ۲۵ میلی‌ثانیه گرد شده است.
 - {{domxref("NetworkInformation.saveData")}} {{ReadOnlyInline}}
-  - : Returns `true` if the user has set a reduced data usage option on the user agent.
+  - : در صورتی که کاربر گزینه کاهش مصرف داده را در عامل کاربر (user agent) فعال کرده باشد، `true` برمی‌گرداند.
 - {{domxref("NetworkInformation.type")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns the type of connection a device is using to communicate with the network. It will be one of the following values:
-    - `bluetooth`
-    - `cellular`
-    - `ethernet`
-    - `none`
-    - `wifi`
-    - `wimax`
-    - `other`
-    - `unknown`
+  - : نوع اتصالی که دستگاه برای برقراری ارتباط با شبکه استفاده می‌کند را برمی‌گرداند. این مقدار یکی از موارد زیر خواهد بود:
+    - `bluetooth` (بلوتوث)
+    - `cellular` (سلولی)
+    - `ethernet` (اترنت)
+    - `none` (هیچ)
+    - `wifi` (وای‌فای)
+    - `wimax` (وایمکس)
+    - `other` (سایر)
+    - `unknown` (ناشناخته)
 
-## Instance methods
+## روش‌های نمونه
 
-_This interface also inherits methods of its parent, {{domxref("EventTarget")}}._
+این رابط کاربری همچنین روش‌های والد خود، {{domxref("EventTarget")}} را به ارث می‌برد.
 
-## Events
+## رویدادها
 
 - {{domxref("NetworkInformation.change_event", "change")}}
-  - : The event that's fired when connection information changes.
+  - : رویدادی که هنگام تغییر اطلاعات اتصال رخ می‌دهد.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Online and offline events](/en-US/docs/Web/API/Navigator/onLine)
+- [رویدادهای آنلاین و آفلاین](/en-US/docs/Web/API/Navigator/onLine)
+```
