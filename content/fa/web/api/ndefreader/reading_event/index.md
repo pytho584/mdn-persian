@@ -1,11 +1,5 @@
 ---
 title: "NDEFReader: reading event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NDEFReader/reading_event"
-status: "needs-translation"
----
-
----
-title: "NDEFReader: reading event"
 short-title: reading
 slug: Web/API/NDEFReader/reading_event
 page-type: web-api-event
@@ -16,11 +10,11 @@ browser-compat: api.NDEFReader.reading_event
 
 {{SecureContext_Header}}{{SeeCompatTable}}{{APIRef("Web NFC API")}}
 
-The `reading` event of the {{DOMxRef("NDEFReader")}} interface is fired whenever a new reading is available from compatible NFC devices (e.g., NFC tags supporting NDEF) when these devices are within the reader's magnetic induction field.
+رویداد `reading` از رابط {{DOMxRef("NDEFReader")}} هرگاه یک خوانش جدید از دستگاه‌های NFC سازگار (مانند برچسب‌های NFC که از NDEF پشتیبانی می‌کنند) در دسترس باشد و این دستگاه‌ها در میدان القای مغناطیسی خواننده قرار داشته باشند، فعال می‌شود.
 
-## Syntax
+## نحو (Syntax)
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام رویداد در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد تنظیم نمایید.
 
 ```js-nolint
 addEventListener("reading", (event) => { })
@@ -28,13 +22,13 @@ addEventListener("reading", (event) => { })
 onreading = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## مثال‌ها
 
-The following example shows how to process events using both the `onreading` and `onreadingerror` event handlers.
+مثال زیر نحوه پردازش رویدادها را با استفاده از هر دو کنترل‌کننده رویداد `onreading` و `onreadingerror` نشان می‌دهد.
 
 ```js
 const ndef = new NDEFReader();
@@ -56,14 +50,14 @@ ndef
   });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{DOMxRef("NDEFReader.readingerror_event", "readingerror")}} event
+- رویداد {{DOMxRef("NDEFReader.readingerror_event", "readingerror")}}
