@@ -1,11 +1,5 @@
 ---
 title: "Notification: navigate property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Notification/navigate"
-status: "needs-translation"
----
-
----
-title: "Notification: navigate property"
 short-title: navigate
 slug: Web/API/Notification/navigate
 page-type: web-api-instance-property
@@ -16,60 +10,60 @@ browser-compat: api.Notification.navigate
 
 {{APIRef("Web Notifications")}}{{securecontext_header}}{{SeeCompatTable}} {{AvailableInWorkers}}
 
-The **`navigate`** read-only property of the {{domxref("Notification")}} interface contains the URL the user agent will navigate to when the user activates the notification.
+خصوصیت فقط‌خواندنی **`navigate`** در رابط {{domxref("Notification")}} شامل نشانی اینترنتی (URL) است که عامل کاربر (user agent) هنگام فعال‌سازی اعلان توسط کاربر به آن هدایت می‌شود.
 
-This is the resolved value of the URL, if any, that was specified in the `navigate` option of the {{domxref("Notification.Notification", "Notification()")}} constructor or {{domxref("ServiceWorkerRegistration.showNotification()")}}.
+این مقدارِ حل‌شدهٔ URLای است (در صورت وجود) که در گزینهٔ `navigate` سازندهٔ {{domxref("Notification.Notification", "Notification()")}} یا متد {{domxref("ServiceWorkerRegistration.showNotification()")}} مشخص شده است.
 
-Normally, activating a non-persistent notification fires the {{domxref("Notification.click_event", "click")}} event on its {{domxref("Notification")}} object, and activating a persistent notification fires the {{domxref("ServiceWorkerGlobalScope.notificationclick_event", "notificationclick")}} event on the {{domxref("ServiceWorkerGlobalScope")}}.
+به‌طور معمول، فعال‌سازی یک اعلان غیرماندگار (non-persistent) رویداد {{domxref("Notification.click_event", "click")}} را روی شیء {{domxref("Notification")}} آن، و فعال‌سازی یک اعلان ماندگار (persistent) رویداد {{domxref("ServiceWorkerGlobalScope.notificationclick_event", "notificationclick")}} را روی {{domxref("ServiceWorkerGlobalScope")}} آغاز می‌کند.
 
-When a notification with a navigation URL is activated by the user, the user agent navigates to the specified URL instead of firing either of these events. This allows notifications to direct users to a specific page without requiring an event handler.
+هنگامی که کاربر یک اعلان دارای URL ناوبری را فعال می‌کند، عامل کاربر به جای ایجاد هر یک از این رویدادها، به URL مشخص‌شده هدایت می‌شود. این امکان را می‌دهد که اعلان‌ها کاربران را بدون نیاز به یک کنترل‌کنندهٔ رویداد (event handler) به یک صفحهٔ خاص هدایت کنند.
 
-## Value
+## مقدار
 
-A string containing a {{glossary("URL")}}, or an empty string if no navigation URL has been set.
+یک رشته شامل یک {{glossary("URL")}}، یا یک رشتهٔ خالی اگر URL ناوبری تنظیم نشده باشد.
 
-## Examples
+## مثال‌ها
 
-### Reading the navigate property value
+### خواندن مقدار خصوصیت navigate
 
-The `navigate` property returns the resolved URL string when a navigation URL has been set, or an empty string otherwise.
+خصوصیت `navigate` وقتی URL ناوبری تنظیم شده باشد، رشتهٔ URL حل‌شده را برمی‌گرداند، در غیر این صورت یک رشتهٔ خالی.
 
 ```js
-const notification = new Notification("New message from Alice", {
-  body: "Hey, are you free for lunch?",
-  navigate: "/messages/alice",
+const notification = new Notification("پیام جدید از مریم", {
+  body: "سلام، برای ناهار وقت داری؟",
+  navigate: "/messages/maryam",
 });
 
-// The property contains the resolved absolute URL
-console.log(notification.navigate); // e.g. "https://example.com/messages/alice"
+// خصوصیت شامل URL مطلق حل‌شده است
+console.log(notification.navigate); // به‌عنوان مثال: "https://example.com/messages/maryam"
 
-// Without a navigate option, the property is an empty string
-const basic = new Notification("Hello!");
+// بدون گزینهٔ navigate، خصوصیت یک رشتهٔ خالی است
+const basic = new Notification("سلام!");
 console.log(basic.navigate); // ""
 ```
 
-### Using navigate with a service worker
+### استفاده از navigate با یک کارگر سرویس (service worker)
 
-When using persistent notifications through a service worker, the `navigate` option allows the notification to open a page when activated, without needing to handle the {{domxref("ServiceWorkerGlobalScope.notificationclick_event", "notificationclick")}} event.
+هنگام استفاده از اعلان‌های ماندگار از طریق یک کارگر سرویس، گزینهٔ `navigate` به اعلان اجازه می‌دهد که هنگام فعال‌سازی صفحه‌ای را باز کند، بدون نیاز به مدیریت رویداد {{domxref("ServiceWorkerGlobalScope.notificationclick_event", "notificationclick")}}.
 
 ```js
-// Inside a service worker
-self.registration.showNotification("Order shipped!", {
-  body: "Your order #1234 has been shipped.",
+// داخل یک کارگر سرویس
+self.registration.showNotification("سفارش ارسال شد!", {
+  body: "سفارش شماره ۱۲۳۴ شما ارسال شده است.",
   navigate: "/orders/1234",
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Notifications API](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
-- {{domxref("Notification.Notification", "Notification()")}} constructor
+- [استفاده از API Notifications](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
+- سازندهٔ {{domxref("Notification.Notification", "Notification()")}}
 - {{domxref("ServiceWorkerRegistration.showNotification()")}}
