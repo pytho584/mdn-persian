@@ -1,11 +1,5 @@
 ---
 title: "PannerNode: coneInnerAngle property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PannerNode/coneInnerAngle"
-status: "needs-translation"
----
-
----
-title: "PannerNode: coneInnerAngle property"
 short-title: coneInnerAngle
 slug: Web/API/PannerNode/coneInnerAngle
 page-type: web-api-instance-property
@@ -14,27 +8,27 @@ browser-compat: api.PannerNode.coneInnerAngle
 
 {{ APIRef("Web Audio API") }}
 
-The `coneInnerAngle` property of the {{ domxref("PannerNode") }} interface is a double value describing the angle, in degrees, of a cone inside of which there will be no volume reduction.
+خاصیت `coneInnerAngle` از رابط {{ domxref("PannerNode") }} یک مقدار اعشاری (double) است که زاویه (بر حسب درجه) یک مخروط را مشخص می‌کند؛ درون این مخروط هیچ کاهش حجمی رخ نخواهد داد.
 
-The `coneInnerAngle` property's default value is `360`, suitable for a non-directional source.
+مقدار پیش‌فرض خاصیت `coneInnerAngle` برابر `360` است که برای یک منبع غیرجهت‌دار مناسب می‌باشد.
 
-## Value
+## مقدار
 
-A double.
+یک عدد اعشاری (double).
 
-## Examples
+## مثال‌ها
 
-See [`PannerNode.orientationX`](/en-US/docs/Web/API/PannerNode/orientationX#example) for example code that demonstrates the effect on volume of changing the {{domxref("PannerNode")}} orientation parameters in combination with `coneInnerAngle` and {{domxref("PannerNode.coneOuterAngle", "coneOuterAngle")}}.
+برای مشاهده کد نمونه‌ای که تأثیر تغییر پارامترهای جهت‌گیری {{domxref("PannerNode")}} را در ترکیب با `coneInnerAngle` و {{domxref("PannerNode.coneOuterAngle", "coneOuterAngle")}} بر روی حجم صدا نشان می‌دهد، به [`PannerNode.orientationX`](/en-US/docs/Web/API/PannerNode/orientationX#example) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
-- [Web Audio spatialization basics](/en-US/docs/Web/API/Web_Audio_API/Web_audio_spatialization_basics)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [مبانی فضاسازی صوتی Web Audio](/en-US/docs/Web/API/Web_Audio_API/Web_audio_spatialization_basics)
