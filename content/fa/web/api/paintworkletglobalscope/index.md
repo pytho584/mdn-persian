@@ -1,10 +1,4 @@
 ---
-title: "PaintWorkletGlobalScope"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaintWorkletGlobalScope"
-status: "needs-translation"
----
-
----
 title: PaintWorkletGlobalScope
 slug: Web/API/PaintWorkletGlobalScope
 page-type: web-api-interface
@@ -15,46 +9,46 @@ browser-compat: api.PaintWorkletGlobalScope
 
 {{APIRef("CSS Painting API")}}{{SeeCompatTable}}
 
-The **`PaintWorkletGlobalScope`** interface of the [CSS Painting API](/en-US/docs/Web/API/CSS_Painting_API) represents the global object available inside a paint {{domxref("Worklet")}}.
+رابطهٔ **`PaintWorkletGlobalScope`** در [CSS Painting API](/en-US/docs/Web/API/CSS_Painting_API) نمایانگر شیء سراسری موجود در داخل یک {{domxref("Worklet")}} نقاشی است.
 
-## Privacy concerns
+## نگرانی‌های حریم خصوصی
 
-To avoid leaking visited links, this feature is currently disabled in Chrome-based browsers for {{HTMLElement("a")}} elements with an `href` attribute, and for children of such elements. For details, see the following:
+برای جلوگیری از درز اطلاعات لینک‌های بازدیدشده، این قابلیت در مرورگرهای مبتنی بر Chrome برای عناصر {{HTMLElement("a")}} دارای ویژگی `href` و همچنین عناصر فرزند آن‌ها در حال حاضر غیرفعال است. برای جزئیات بیشتر، به موارد زیر مراجعه کنید:
 
-- The CSS Painting API [Privacy Considerations section](https://drafts.css-houdini.org/css-paint-api/#privacy-considerations)
-- The CSS Painting API spec issue ["CSS Paint API leaks browsing history"](https://github.com/w3c/css-houdini-drafts/issues/791)
+- بخش [ملاحظات حریم خصوصی](https://drafts.css-houdini.org/css-paint-api/#privacy-considerations) در مشخصات CSS Painting API
+- بحث مربوط به مشخصات CSS Painting API با عنوان [«CSS Paint API سابقهٔ مرور را درز می‌دهد»](https://github.com/w3c/css-houdini-drafts/issues/791)
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface inherits properties from {{domxref('WorkletGlobalScope')}}._
+_این رابط ویژگی‌ها را از {{domxref('WorkletGlobalScope')}} به ارث می‌برد._
 
 - {{domxref('PaintWorkletGlobalScope.devicePixelRatio')}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns the current device's ratio of physical pixels to logical pixels.
+  - : نسبت پیکسل‌های فیزیکی به پیکسل‌های منطقی دستگاه فعلی را برمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
-_This interface inherits methods from {{domxref('WorkletGlobalScope')}}._
+_این رابط روش‌ها را از {{domxref('WorkletGlobalScope')}} به ارث می‌برد._
 
 - {{domxref('PaintWorkletGlobalScope.registerPaint()')}} {{Experimental_Inline}}
-  - : Registers a class to programmatically generate an image where a CSS property expects a file.
+  - : یک کلاس را ثبت می‌کند تا به صورت برنامه‌نویسی‌شده تصویری تولید کند که در جایی که یک ویژگی CSS انتظار یک فایل را دارد استفاده شود.
 
-## Examples
+## مثال‌ها
 
-The following three examples go together to show creating, loading, and using a paint `Worklet`.
+سه مثال زیر در کنار هم نشان می‌دهند که چگونه یک `Worklet` نقاشی ساخته، بارگذاری و استفاده می‌شود.
 
-### Create a paint worklet
+### ایجاد یک paint worklet
 
-The following shows an example worklet module. This should be in a separate js file. Note that `registerPaint()` is called without a reference to a paint `Worklet`.
+در زیر یک نمونه ماژول worklet نشان داده شده است. این کد باید در یک فایل جاوااسکریپت جداگانه قرار گیرد. توجه کنید که `registerPaint()` بدون ارجاع به یک paint `Worklet` فراخوانی می‌شود.
 
 ```js
 class CheckerboardPainter {
   paint(ctx, geom, properties) {
-    // The global object here is a PaintWorkletGlobalScope
-    // Methods and properties can be accessed directly
-    // as global features or prefixed using self
+    // شیء سراسری در اینجا یک PaintWorkletGlobalScope است
+    // متدها و ویژگی‌ها می‌توانند مستقیماً
+    // به عنوان قابلیت‌های سراسری یا با پیشوند self در دسترس باشند
     const dpr = self.devicePixelRatio;
 
-    // Use `ctx` as if it was a normal canvas
+    // از ctx طوری استفاده کنید که گویی یک بوم نقاشی معمولی است
     const colors = ["red", "green", "blue"];
     const size = 32;
     for (let y = 0; y < geom.height / size; y++) {
@@ -69,13 +63,13 @@ class CheckerboardPainter {
   }
 }
 
-// Register our class under a specific name
+// کلاس خود را با یک نام مشخص ثبت کنید
 registerPaint("checkerboard", CheckerboardPainter);
 ```
 
-### Load a paint worklet
+### بارگذاری یک paint worklet
 
-The following example demonstrates loading the above worklet from its js file and does so by feature detection.
+مثال زیر نحوهٔ بارگذاری worklet فوق را از فایل جاوااسکریپت آن با استفاده از تشخیص قابلیت نشان می‌دهد.
 
 ```js
 if ("paintWorklet" in CSS) {
@@ -83,18 +77,18 @@ if ("paintWorklet" in CSS) {
 }
 ```
 
-### Use a paint worklet
+### استفاده از یک paint worklet
 
-This example shows how to use a paint `Worklet` in a stylesheet, including the simplest way to provide a fallback if `CSS.paintWorklet` isn't supported.
+این مثال نحوهٔ استفاده از یک paint `Worklet` را در یک stylesheet نشان می‌دهد، از جمله ساده‌ترین روش برای ارائهٔ یک جایگزین در صورت عدم پشتیبانی از `CSS.paintWorklet`.
 
 ```css
 textarea {
-  background-image: url("checkerboard.png"); /* Fallback */
+  background-image: url("checkerboard.png"); /* جایگزین */
   background-image: paint(checkerboard);
 }
 ```
 
-You can also use the {{cssxref('@supports')}} at-rule.
+همچنین می‌توانید از at-rule مربوط به {{cssxref('@supports')}} استفاده کنید.
 
 ```css
 @supports (background: paint(id)) {
@@ -104,16 +98,16 @@ You can also use the {{cssxref('@supports')}} at-rule.
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the CSS Painting API](/en-US/docs/Web/API/CSS_Painting_API/Guide)
+- [استفاده از CSS Painting API](/en-US/docs/Web/API/CSS_Painting_API/Guide)
 - [CSS Painting API](/en-US/docs/Web/API/CSS_Painting_API)
 - [Houdini APIs](/en-US/docs/Web/API/Houdini_APIs)
