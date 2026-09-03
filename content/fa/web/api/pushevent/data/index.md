@@ -1,11 +1,5 @@
 ---
 title: "PushEvent: data property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PushEvent/data"
-status: "needs-translation"
----
-
----
-title: "PushEvent: data property"
 short-title: data
 slug: Web/API/PushEvent/data
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.PushEvent.data
 
 {{APIRef("Push API")}}{{SecureContext_Header}}{{AvailableInWorkers("service")}}
 
-The `data` read-only property of the **`PushEvent`** interface returns a reference to a {{domxref("PushMessageData")}} object containing data sent to the {{domxref("PushSubscription")}}.
+ویژگی فقط‌خواندنیِ `data` در رابط **`PushEvent`**، ارجاعی به یک شیء {{domxref("PushMessageData")}} برمی‌گرداند که داده‌های ارسال‌شده به {{domxref("PushSubscription")}} را در بر دارد.
 
-## Value
+## مقدار
 
-A {{domxref("PushMessageData")}} object or `null` if no `data` member is passed when the event instance initialized.
+یک شیء {{domxref("PushMessageData")}} یا اگر هنگام نمونه‌سازی رویداد، عضوی به نام `data` ارسال نشده باشد، `null`.
 
-## Examples
+## مثال‌ها
 
-The following example takes data from a PushEvent and displays it on all of the service workers' clients.
+مثال زیر داده‌ها را از یک PushEvent می‌گیرد و آن‌ها را در همهٔ کلاینت‌های service worker نمایش می‌دهد.
 
 ```js
 self.addEventListener("push", (event) => {
@@ -50,10 +44,10 @@ self.addEventListener("push", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
