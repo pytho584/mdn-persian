@@ -1,10 +1,4 @@
 ---
-title: "OrientationSensor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/OrientationSensor"
-status: "needs-translation"
----
-
----
 title: OrientationSensor
 slug: Web/API/OrientationSensor
 page-type: web-api-interface
@@ -13,41 +7,41 @@ browser-compat: api.OrientationSensor
 
 {{securecontext_header}}{{APIRef("Sensor API")}}
 
-The **`OrientationSensor`** interface of the [Sensor APIs](/en-US/docs/Web/API/Sensor_APIs) is the base class for orientation sensors. This interface cannot be used directly. Instead it provides properties and methods accessed by interfaces that inherit from it.
+**`OrientationSensor`** 接口是[传感器 API](/en-US/docs/Web/API/Sensor_APIs) 中方向传感器的基类。此接口不能直接使用，而是通过继承它的接口来提供属性和方法。
 
-This feature may be blocked by a [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) set on your server.
+此功能可能被服务器上设置的[权限策略](/en-US/docs/Web/HTTP/Guides/Permissions_Policy)阻止。
 
 {{InheritanceDiagram}}
 
-## Interfaces based on OrientationSensor
+## 基于 OrientationSensor 的接口
 
-Below is a list of interfaces based on the OrientationSensor interface.
+以下列表列出了基于 OrientationSensor 接口的接口。
 
 - {{domxref('AbsoluteOrientationSensor')}}
 - {{domxref('RelativeOrientationSensor')}}
 
-## Instance properties
+## 实例属性
 
 - {{domxref("OrientationSensor.quaternion")}} {{ReadOnlyInline}}
-  - : Returns a four element {{jsxref('Array')}} whose elements contain the components of the unit quaternion representing the device's orientation.
+  - : 返回一个包含四个元素的 {{jsxref('Array')}}，其元素表示设备方向的单位四元数的分量。
 
-## Instance methods
+## 实例方法
 
 - {{domxref("OrientationSensor.populateMatrix()")}}
-  - : Populates the given object with the rotation matrix based on the latest sensor reading.
+  - : 根据最新的传感器读数，用旋转矩阵填充给定对象。
 
-## Examples
+## 示例
 
-### Basic Example
+### 基本示例
 
-The following example, which is loosely based on [Intel's Orientation Phone demo](https://intel.github.io/generic-sensor-demos/orientation-phone/), instantiates an `AbsoluteOrientationSensor` with a frequency of 60 times a second. On each reading it uses {{domxref('OrientationSensor.quaternion')}} to rotate a visual model of a phone.
+以下示例大致基于 [Intel 的方向手机演示](https://intel.github.io/generic-sensor-demos/orientation-phone/)，它实例化了一个频率为每秒 60 次的 `AbsoluteOrientationSensor`。在每次读取时，它使用 {{domxref('OrientationSensor.quaternion')}} 旋转手机的视觉模型。
 
 ```js
 const options = { frequency: 60, referenceFrame: "device" };
 const sensor = new AbsoluteOrientationSensor(options);
 
 sensor.addEventListener("reading", () => {
-  // model is a Three.js object instantiated elsewhere.
+  // model 是在其他地方实例化的 Three.js 对象。
   model.quaternion.fromArray(sensor.quaternion).inverse();
 });
 sensor.addEventListener("error", (error) => {
@@ -58,9 +52,9 @@ sensor.addEventListener("error", (error) => {
 sensor.start();
 ```
 
-### Permissions Example
+### 权限示例
 
-Using orientation sensors requires requesting permissions for multiple device sensors. Because the {{domxref('Permissions')}} interface uses promises, a good way to request permissions is to use {{jsxref('Promise.all')}}.
+使用方向传感器需要请求多个设备传感器的权限。由于 {{domxref('Permissions')}} 接口使用 Promise，请求权限的一个好方法是使用 {{jsxref('Promise.all')}}。
 
 ```js
 const sensor = new AbsoluteOrientationSensor();
@@ -78,10 +72,10 @@ Promise.all([
 });
 ```
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
