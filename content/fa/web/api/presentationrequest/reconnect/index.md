@@ -1,11 +1,5 @@
 ---
 title: "PresentationRequest: reconnect() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PresentationRequest/reconnect"
-status: "needs-translation"
----
-
----
-title: "PresentationRequest: reconnect() method"
 short-title: reconnect()
 slug: Web/API/PresentationRequest/reconnect
 page-type: web-api-instance-method
@@ -16,46 +10,46 @@ browser-compat: api.PresentationRequest.reconnect
 
 {{APIRef("Presentation API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-When the `reconnect(presentationId)` method is called on a `PresentationRequest` _presentationRequest_, the [user agent](https://www.w3.org/TR/presentation-api/#dfn-user-agents) _MUST_ run the following steps to _reconnect to a presentation_:
+هنگامی که متد `reconnect(presentationId)` روی یک `PresentationRequest` _presentationRequest_ فراخوانی می‌شود، [عامل کاربر](https://www.w3.org/TR/presentation-api/#dfn-user-agents) _باید_ مراحل زیر را برای _اتصال مجدد به یک ارائه_ اجرا کند:
 
-## Input
+## ورودی
 
-- _presentationRequest_, the [`PresentationRequest`](https://www.w3.org/TR/presentation-api/#idl-def-presentationrequest) object that [`reconnect()`](https://www.w3.org/TR/presentation-api/#dom-presentationrequest-reconnect) was called on.
-- _presentationId_, a valid [presentation identifier](https://www.w3.org/TR/presentation-api/#dfn-presentation-identifier)
+- _presentationRequest_، شیء [`PresentationRequest`](https://www.w3.org/TR/presentation-api/#idl-def-presentationrequest) که [`reconnect()`](https://www.w3.org/TR/presentation-api/#dom-presentationrequest-reconnect) روی آن فراخوانی شده است.
+- _presentationId_، یک [شناسه ارائه](https://www.w3.org/TR/presentation-api/#dfn-presentation-identifier) معتبر
 
-## Output
+## خروجی
 
-_P_, a [Promise](https://www.w3.org/TR/presentation-api/#dfn-promise).
+_P_، یک [Promise](https://www.w3.org/TR/presentation-api/#dfn-promise).
 
-## Algorithm
+## الگوریتم
 
-1. Using the document's [settings object](https://www.w3.org/TR/presentation-api/#dfn-settings-object) run the [prohibits mixed security contexts algorithm](https://www.w3.org/TR/presentation-api/#dfn-prohibits-mixed-security-contexts-algorithm).
-2. If the result of the algorithm is `"Prohibits Mixed Security Contexts"` and the [presentation request URL](https://www.w3.org/TR/presentation-api/#dfn-presentation-request-urls) of _presentationRequest_ is an [a priori unauthenticated URL](https://www.w3.org/TR/presentation-api/#dfn-a-priori-unauthenticated-url), then return a [Promise](https://www.w3.org/TR/presentation-api/#dfn-promise) rejected with a [`SecurityError`](https://www.w3.org/TR/presentation-api/#dfn-securityerror) and abort these steps.
-3. If the document object's [active sandboxing flag set](https://www.w3.org/TR/presentation-api/#dfn-active-sandboxing-flag-set) has the [sandboxed presentation browsing context flag](https://www.w3.org/TR/presentation-api/#sandboxed-presentation-browsing-context-flag) set, then return a [Promise](https://www.w3.org/TR/presentation-api/#dfn-promise) rejected with a [`SecurityError`](https://www.w3.org/TR/presentation-api/#dfn-securityerror) and abort these steps.
-4. Let _P_ be a new [Promise](https://www.w3.org/TR/presentation-api/#dfn-promise).
-5. Return _P_ but continue running these steps in parallel.
-6. Search the [set of controlled presentations](https://www.w3.org/TR/presentation-api/#dfn-set-of-controlled-presentations) for a [`PresentationConnection`](https://www.w3.org/TR/presentation-api/#idl-def-presentationconnection) that meets the following criteria: its [controlling browsing context](https://www.w3.org/TR/presentation-api/#dfn-controlling-browsing-context) is the current [browsing context](https://www.w3.org/TR/presentation-api/#dfn-browsing-context), its [presentation connection state](https://www.w3.org/TR/presentation-api/#dfn-presentation-connection-state) is not [`terminated`](https://www.w3.org/TR/presentation-api/#dom-presentationconnectionstate-terminated), its [presentation URL](https://www.w3.org/TR/presentation-api/#dfn-presentation-url) is equal to one of the [presentation request URLs](https://www.w3.org/TR/presentation-api/#dfn-presentation-request-urls) of _presentationRequest_ and its [presentation identifier](https://www.w3.org/TR/presentation-api/#dfn-presentation-identifier) is equal to _presentationId_.
-7. If such a [`PresentationConnection`](https://www.w3.org/TR/presentation-api/#idl-def-presentationconnection) exists, run the following steps:
-   1. Let _S_ be that [`PresentationConnection`](https://www.w3.org/TR/presentation-api/#idl-def-presentationconnection).
-   2. [Resolve](https://www.w3.org/TR/presentation-api/#dfn-resolving-a-promise) _P_ with _S_.
-   3. If the [presentation connection state](https://www.w3.org/TR/presentation-api/#dfn-presentation-connection-state) of _S_ is [`connecting`](https://www.w3.org/TR/presentation-api/#dom-presentationconnectionstate-connecting) or [`connected`](https://www.w3.org/TR/presentation-api/#dom-presentationconnectionstate-connected), then abort all remaining steps.
-   4. Set the [presentation connection state](https://www.w3.org/TR/presentation-api/#dfn-presentation-connection-state) of _S_ to [`connecting`](https://www.w3.org/TR/presentation-api/#dom-presentationconnectionstate-connecting).
-   5. [Establish a presentation connection](https://www.w3.org/TR/presentation-api/#dfn-establish-a-presentation-connection) with _S_.
-   6. Abort all remaining steps.
+1. با استفاده از [شیء تنظیمات](https://www.w3.org/TR/presentation-api/#dfn-settings-object) سند، [الگوریتم ممنوعیت زمینه‌های امنیتی ترکیبی](https://www.w3.org/TR/presentation-api/#dfn-prohibits-mixed-security-contexts-algorithm) را اجرا کنید.
+2. اگر نتیجه الگوریتم `"Prohibits Mixed Security Contexts"` باشد و [URL درخواست ارائه](https://www.w3.org/TR/presentation-api/#dfn-presentation-request-urls) _presentationRequest_ یک [URL از پیش تأییدنشده](https://www.w3.org/TR/presentation-api/#dfn-a-priori-unauthenticated-url) باشد، یک [Promise](https://www.w3.org/TR/presentation-api/#dfn-promise) برگردانید که با یک [`SecurityError`](https://www.w3.org/TR/presentation-api/#dfn-securityerror) رد شده است و این مراحل را متوقف کنید.
+3. اگر [مجموعه پرچم‌های sandboxing فعال](https://www.w3.org/TR/presentation-api/#dfn-active-sandboxing-flag-set) شیء سند دارای [پرچم زمینه مرور ارائه sandboxed](https://www.w3.org/TR/presentation-api/#sandboxed-presentation-browsing-context-flag) است، یک [Promise](https://www.w3.org/TR/presentation-api/#dfn-promise) برگردانید که با یک [`SecurityError`](https://www.w3.org/TR/presentation-api/#dfn-securityerror) رد شده است و این مراحل را متوقف کنید.
+4. اجازه دهید _P_ یک [Promise](https://www.w3.org/TR/presentation-api/#dfn-promise) جدید باشد.
+5. _P_ را برگردانید اما اجرای این مراحل را به صورت موازی ادامه دهید.
+6. [مجموعه ارائه‌های تحت کنترل](https://www.w3.org/TR/presentation-api/#dfn-set-of-controlled-presentations) را برای یک [`PresentationConnection`](https://www.w3.org/TR/presentation-api/#idl-def-presentationconnection) جستجو کنید که معیارهای زیر را داشته باشد: [زمینه مرور کنترل‌کننده](https://www.w3.org/TR/presentation-api/#dfn-controlling-browsing-context) آن، [زمینه مرور](https://www.w3.org/TR/presentation-api/#dfn-browsing-context) فعلی است، [وضعیت اتصال ارائه](https://www.w3.org/TR/presentation-api/#dfn-presentation-connection-state) آن [`terminated`](https://www.w3.org/TR/presentation-api/#dom-presentationconnectionstate-terminated) نیست، [URL ارائه](https://www.w3.org/TR/presentation-api/#dfn-presentation-url) آن برابر با یکی از [URLهای درخواست ارائه](https://www.w3.org/TR/presentation-api/#dfn-presentation-request-urls) _presentationRequest_ است و [شناسه ارائه](https://www.w3.org/TR/presentation-api/#dfn-presentation-identifier) آن برابر با _presentationId_ است.
+7. اگر چنین [`PresentationConnection`](https://www.w3.org/TR/presentation-api/#idl-def-presentationconnection) وجود دارد، مراحل زیر را اجرا کنید:
+   1. اجازه دهید _S_ آن [`PresentationConnection`](https://www.w3.org/TR/presentation-api/#idl-def-presentationconnection) باشد.
+   2. _P_ را با _S_ [resolve](https://www.w3.org/TR/presentation-api/#dfn-resolving-a-promise) کنید.
+   3. اگر [وضعیت اتصال ارائه](https://www.w3.org/TR/presentation-api/#dfn-presentation-connection-state) _S_ [`connecting`](https://www.w3.org/TR/presentation-api/#dom-presentationconnectionstate-connecting) یا [`connected`](https://www.w3.org/TR/presentation-api/#dom-presentationconnectionstate-connected) است، تمام مراحل باقی‌مانده را متوقف کنید.
+   4. [وضعیت اتصال ارائه](https://www.w3.org/TR/presentation-api/#dfn-presentation-connection-state) _S_ را به [`connecting`](https://www.w3.org/TR/presentation-api/#dom-presentationconnectionstate-connecting) تنظیم کنید.
+   5. یک [اتصال ارائه برقرار کنید](https://www.w3.org/TR/presentation-api/#dfn-establish-a-presentation-connection) با _S_.
+   6. تمام مراحل باقی‌مانده را متوقف کنید.
 
-8. Search the [set of controlled presentations](https://www.w3.org/TR/presentation-api/#dfn-set-of-controlled-presentations) for the first [`PresentationConnection`](https://www.w3.org/TR/presentation-api/#idl-def-presentationconnection) that meets the following criteria: its [presentation connection state](https://www.w3.org/TR/presentation-api/#dfn-presentation-connection-state) is not [`terminated`](https://www.w3.org/TR/presentation-api/#dom-presentationconnectionstate-terminated), its [presentation URL](https://www.w3.org/TR/presentation-api/#dfn-presentation-url) is equal to one of the [presentation request URLs](https://www.w3.org/TR/presentation-api/#dfn-presentation-request-urls) of _presentationRequest_, and its [presentation identifier](https://www.w3.org/TR/presentation-api/#dfn-presentation-identifier) is equal to _presentationId_.
-9. If such a [`PresentationConnection`](https://www.w3.org/TR/presentation-api/#idl-def-presentationconnection) exists, let _E_ be that [`PresentationConnection`](https://www.w3.org/TR/presentation-api/#idl-def-presentationconnection), and run the following steps:
-   1. Create a new [`PresentationConnection`](https://www.w3.org/TR/presentation-api/#idl-def-presentationconnection) _S_.
-   2. Set the [presentation identifier](https://www.w3.org/TR/presentation-api/#dfn-presentation-identifier) of _S_ to _presentationId_.
-   3. Set the [presentation URL](https://www.w3.org/TR/presentation-api/#dfn-presentation-url) of _S_ to the [presentation URL](https://www.w3.org/TR/presentation-api/#dfn-presentation-url) of _E_.
-   4. Set the [presentation connection state](https://www.w3.org/TR/presentation-api/#dfn-presentation-connection-state) of _S_ to [`connecting`](https://www.w3.org/TR/presentation-api/#dom-presentationconnectionstate-connecting).
-   5. Add _S_ to the [set of controlled presentations](https://www.w3.org/TR/presentation-api/#dfn-set-of-controlled-presentations).
-   6. [Resolve](https://www.w3.org/TR/presentation-api/#dfn-resolving-a-promise) _P_ with _S_.
-   7. [Queue a task](https://www.w3.org/TR/presentation-api/#dfn-queue-a-task) to [fire](https://www.w3.org/TR/presentation-api/#dfn-firing-an-event) a [trusted event](https://www.w3.org/TR/presentation-api/#dfn-trusted-event) with the name [`connectionavailable`](https://www.w3.org/TR/presentation-api/#dfn-connectionavailable), that uses the [`PresentationConnectionAvailableEvent`](https://www.w3.org/TR/presentation-api/#idl-def-presentationconnectionavailableevent) interface with the [`connection`](https://www.w3.org/TR/presentation-api/#idl-def-presentationconnectionavailableevent-connection) attribute initialized to _S_, at _presentationRequest_. The event must not bubble and cancelable and should have no default action.
-   8. [Establish a presentation connection](https://www.w3.org/TR/presentation-api/#dfn-establish-a-presentation-connection) with _S_.
-   9. Abort all remaining steps.
+8. [مجموعه ارائه‌های تحت کنترل](https://www.w3.org/TR/presentation-api/#dfn-set-of-controlled-presentations) را برای اولین [`PresentationConnection`](https://www.w3.org/TR/presentation-api/#idl-def-presentationconnection) جستجو کنید که معیارهای زیر را داشته باشد: [وضعیت اتصال ارائه](https://www.w3.org/TR/presentation-api/#dfn-presentation-connection-state) آن [`terminated`](https://www.w3.org/TR/presentation-api/#dom-presentationconnectionstate-terminated) نیست، [URL ارائه](https://www.w3.org/TR/presentation-api/#dfn-presentation-url) آن برابر با یکی از [URLهای درخواست ارائه](https://www.w3.org/TR/presentation-api/#dfn-presentation-request-urls) _presentationRequest_ است و [شناسه ارائه](https://www.w3.org/TR/presentation-api/#dfn-presentation-identifier) آن برابر با _presentationId_ است.
+9. اگر چنین [`PresentationConnection`](https://www.w3.org/TR/presentation-api/#idl-def-presentationconnection) وجود دارد، اجازه دهید _E_ آن [`PresentationConnection`](https://www.w3.org/TR/presentation-api/#idl-def-presentationconnection) باشد و مراحل زیر را اجرا کنید:
+   1. یک [`PresentationConnection`](https://www.w3.org/TR/presentation-api/#idl-def-presentationconnection) جدید به نام _S_ ایجاد کنید.
+   2. [شناسه ارائه](https://www.w3.org/TR/presentation-api/#dfn-presentation-identifier) _S_ را به _presentationId_ تنظیم کنید.
+   3. [URL ارائه](https://www.w3.org/TR/presentation-api/#dfn-presentation-url) _S_ را به [URL ارائه](https://www.w3.org/TR/presentation-api/#dfn-presentation-url) _E_ تنظیم کنید.
+   4. [وضعیت اتصال ارائه](https://www.w3.org/TR/presentation-api/#dfn-presentation-connection-state) _S_ را به [`connecting`](https://www.w3.org/TR/presentation-api/#dom-presentationconnectionstate-connecting) تنظیم کنید.
+   5. _S_ را به [مجموعه ارائه‌های تحت کنترل](https://www.w3.org/TR/presentation-api/#dfn-set-of-controlled-presentations) اضافه کنید.
+   6. _P_ را با _S_ [resolve](https://www.w3.org/TR/presentation-api/#dfn-resolving-a-promise) کنید.
+   7. یک [کار](https://www.w3.org/TR/presentation-api/#dfn-queue-a-task) را در صف قرار دهید تا یک [رویداد مورد اعتماد](https://www.w3.org/TR/presentation-api/#dfn-trusted-event) با نام [`connectionavailable`](https://www.w3.org/TR/presentation-api/#dfn-connectionavailable) که از رابط [`PresentationConnectionAvailableEvent`](https://www.w3.org/TR/presentation-api/#idl-def-presentationconnectionavailableevent) با ویژگی [`connection`](https://www.w3.org/TR/presentation-api/#idl-def-presentationconnectionavailableevent-connection) مقداردهی‌شده به _S_ استفاده می‌کند، در _presentationRequest_ [fire](https://www.w3.org/TR/presentation-api/#dfn-firing-an-event) کند. رویداد نباید حباب بزند و قابل لغو باشد و نباید هیچ action پیش‌فرضی داشته باشد.
+   8. یک [اتصال ارائه برقرار کنید](https://www.w3.org/TR/presentation-api/#dfn-establish-a-presentation-connection) با _S_.
+   9. تمام مراحل باقی‌مانده را متوقف کنید.
 
-10. [Reject](https://www.w3.org/TR/presentation-api/#dfn-rejecting-a-promise) _P_ with a [`NotFoundError`](https://www.w3.org/TR/presentation-api/#dfn-notfounderror) exception.
+10. _P_ را با یک استثنا [`NotFoundError`](https://www.w3.org/TR/presentation-api/#dfn-notfounderror) [reject](https://www.w3.org/TR/presentation-api/#dfn-rejecting-a-promise) کنید.
 
 ## Specifications
 
