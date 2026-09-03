@@ -1,11 +1,5 @@
 ---
 title: "PerformanceObserver: disconnect() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver/disconnect"
-status: "needs-translation"
----
-
----
-title: "PerformanceObserver: disconnect() method"
 short-title: disconnect()
 slug: Web/API/PerformanceObserver/disconnect
 page-type: web-api-instance-method
@@ -14,27 +8,27 @@ browser-compat: api.PerformanceObserver.disconnect
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The **`disconnect()`** method of the {{domxref('PerformanceObserver')}} interface is used to stop the performance observer from receiving any {{domxref("PerformanceEntry","performance entry", '', 'true')}} events.
+متد **`disconnect()`** از رابط {{domxref('PerformanceObserver')}} باعث می‌شود که مشاهده‌گر عملکرد دیگر هیچ رویداد {{domxref("PerformanceEntry","performance entry", '', 'true')}} دریافت نکند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 disconnect()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-### Stopping a performance observer
+### توقف یک مشاهده‌گر عملکرد
 
-The following example disconnects the performance observer to disable receiving any more performance entry events.
+در مثال زیر، مشاهده‌گر عملکرد قطع می‌شود تا دیگر هیچ رویداد performance entry دریافت نکند.
 
 ```js
 const observer = new PerformanceObserver((list, obj) => {
@@ -48,10 +42,10 @@ const observer = new PerformanceObserver((list, obj) => {
 observer.observe({ entryTypes: ["mark", "measure"] });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
