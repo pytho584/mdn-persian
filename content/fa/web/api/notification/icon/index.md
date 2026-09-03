@@ -1,11 +1,5 @@
 ---
 title: "Notification: icon property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Notification/icon"
-status: "needs-translation"
----
-
----
-title: "Notification: icon property"
 short-title: icon
 slug: Web/API/Notification/icon
 page-type: web-api-instance-property
@@ -14,20 +8,15 @@ browser-compat: api.Notification.icon
 
 {{APIRef("Web Notifications")}}{{securecontext_header}} {{AvailableInWorkers}}
 
-The **`icon`** read-only property of the
-{{domxref("Notification")}} interface contains the URL of an icon to be displayed as
-part of the notification, as specified in the `icon` option of the
-{{domxref("Notification.Notification","Notification()")}} constructor.
+ویژگی فقط‌خواندنی **`icon`** در رابط {{domxref("Notification")}} حاوی URL آیکنی است که به‌عنوان بخشی از اعلان نمایش داده می‌شود؛ همان‌طور که در گزینه `icon` سازنده {{domxref("Notification.Notification","Notification()")}} مشخص شده است.
 
-## Value
+## مقدار
 
-A string.
+یک رشته (string).
 
-## Examples
+## مثال‌ها
 
-In our [To-do list app](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ([view the app running live](https://mdn.github.io/dom-examples/to-do-notifications/)), we use the {{domxref("Notification.Notification","Notification()")}}
-constructor to fire a notification, passing it arguments to specify the body, icon and
-title we want.
+در [برنامه فهرست کارها](https://github.com/mdn/dom-examples/tree/main/to-do-notifications) ما ([مشاهده اجرای زنده برنامه](https://mdn.github.io/dom-examples/to-do-notifications/))، از سازنده {{domxref("Notification.Notification","Notification()")}} برای ایجاد یک اعلان استفاده می‌کنیم و آرگومان‌هایی برای مشخص کردن متن، آیکن و عنوان موردنظر به آن می‌دهیم.
 
 ```js
 const notification = new Notification("To do list", {
@@ -36,14 +25,14 @@ const notification = new Notification("To do list", {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Notifications API](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
+- [استفاده از API اعلان‌ها](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
