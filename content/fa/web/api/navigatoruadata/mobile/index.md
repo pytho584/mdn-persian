@@ -1,11 +1,5 @@
 ---
 title: "NavigatorUAData: mobile property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigatorUAData/mobile"
-status: "needs-translation"
----
-
----
-title: "NavigatorUAData: mobile property"
 short-title: mobile
 slug: Web/API/NavigatorUAData/mobile
 page-type: web-api-instance-property
@@ -16,28 +10,28 @@ browser-compat: api.NavigatorUAData.mobile
 
 {{APIRef("User-Agent Client Hints API")}}{{SeeCompatTable}}{{AvailableInWorkers}}
 
-The **`mobile`** read-only property of the {{domxref("NavigatorUAData")}} interface returns a value indicating whether the device is a mobile device.
+ویژگی فقط خواندنی **`mobile`** از رابط {{domxref("NavigatorUAData")}} مقداری را برمی‌گرداند که نشان می‌دهد آیا دستگاه یک دستگاه همراه (موبایل) است یا خیر.
 
-## Value
+## مقدار
 
-A {{jsxref("Boolean")}}, `true` if this is a mobile device.
+یک {{jsxref("Boolean")}}؛ اگر دستگاه همراه باشد مقدار `true` است.
 
-## Examples
+## مثال‌ها
 
-The following example prints the value of `mobile` to the console.
+مثال زیر مقدار `mobile` را در کنسول چاپ می‌کند.
 
 ```js
 console.log(navigator.userAgentData.mobile);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{HTTPHeader("Sec-CH-UA-Mobile")}} header (a [low-entropy client hint](/en-US/docs/Web/HTTP/Guides/Client_hints#low_entropy_hints)) contains the same information.
+- هدر {{HTTPHeader("Sec-CH-UA-Mobile")}} (یک [نکته مشتری با آنتروپی پایین](/en-US/docs/Web/HTTP/Guides/Client_hints#low_entropy_hints)) حاوی همان اطلاعات است.
