@@ -1,11 +1,5 @@
 ---
 title: "PointerEvent: PointerEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent/PointerEvent"
-status: "needs-translation"
----
-
----
-title: "PointerEvent: PointerEvent() constructor"
 short-title: PointerEvent()
 slug: Web/API/PointerEvent/PointerEvent
 page-type: web-api-constructor
@@ -14,8 +8,7 @@ browser-compat: api.PointerEvent.PointerEvent
 
 {{APIRef("Pointer Events")}}
 
-The **`PointerEvent()`** constructor creates a new synthetic
-and untrusted {{domxref("PointerEvent")}} object instance.
+سازندهٔ **`PointerEvent()`** یک نمونه شیء جدید از {{domxref("PointerEvent")}} می‌سازد که مصنوعی (synthetic) و غیرقابل‌اعتماد (untrusted) است.
 
 ## Syntax
 
@@ -24,43 +17,42 @@ new PointerEvent(type)
 new PointerEvent(type, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string representing the name of the event
-    (see [PointerEvent event types](/en-US/docs/Web/API/PointerEvent#pointer_event_types)).
+  - : یک رشته که نام رویداد را نشان می‌دهد (به [انواع رویداد PointerEvent](/en-US/docs/Web/API/PointerEvent#pointer_event_types) مراجعه کنید).
 - `options` {{optional_inline}}
-  - : An object that, _in addition of the properties defined in {{domxref("MouseEvent/MouseEvent", "MouseEvent()")}}_, can have the following properties:
+  - : یک شیء که _علاوه بر ویژگی‌های تعریف‌شده در {{domxref("MouseEvent/MouseEvent", "MouseEvent()")}}_، می‌تواند ویژگی‌های زیر را داشته باشد:
     - `pointerId`
-      - : A number, defaulting to `0`, that sets the value of the instance's {{domxref("PointerEvent.pointerId")}}.
+      - : یک عدد، پیش‌فرض `0`، که مقدار {{domxref("PointerEvent.pointerId")}} نمونه را تنظیم می‌کند.
     - `width`
-      - : A number, defaulting to `1`, that sets the value of the instance's {{domxref("PointerEvent.width")}}.
+      - : یک عدد، پیش‌فرض `1`، که مقدار {{domxref("PointerEvent.width")}} نمونه را تنظیم می‌کند.
     - `height`
-      - : A number, defaulting to `1`, that sets the value of the instance's {{domxref("PointerEvent.height")}}.
+      - : یک عدد، پیش‌فرض `1`، که مقدار {{domxref("PointerEvent.height")}} نمونه را تنظیم می‌کند.
     - `pressure`
-      - : A number, defaulting to `0`, that sets the value of the instance's {{domxref("PointerEvent.pressure")}}.
+      - : یک عدد، پیش‌فرض `0`، که مقدار {{domxref("PointerEvent.pressure")}} نمونه را تنظیم می‌کند.
     - `tangentialPressure`
-      - : A number, defaulting to `0`, that sets the value of the instance's {{domxref("PointerEvent.tangentialPressure")}}.
+      - : یک عدد، پیش‌فرض `0`، که مقدار {{domxref("PointerEvent.tangentialPressure")}} نمونه را تنظیم می‌کند.
     - `altitudeAngle`
-      - : A number that sets the value of the instance's {{domxref("PointerEvent.altitudeAngle")}}.
+      - : یک عدد که مقدار {{domxref("PointerEvent.altitudeAngle")}} نمونه را تنظیم می‌کند.
     - `azimuthAngle`
-      - : A number that sets the value of the instance's {{domxref("PointerEvent.azimuthAngle")}}.
+      - : یک عدد که مقدار {{domxref("PointerEvent.azimuthAngle")}} نمونه را تنظیم می‌کند.
     - `tiltX`
-      - : A number that sets the value of the instance's {{domxref("PointerEvent.tiltX")}}.
+      - : یک عدد که مقدار {{domxref("PointerEvent.tiltX")}} نمونه را تنظیم می‌کند.
     - `tiltY`
-      - : A number that sets the value of the instance's {{domxref("PointerEvent.tiltY")}}.
+      - : یک عدد که مقدار {{domxref("PointerEvent.tiltY")}} نمونه را تنظیم می‌کند.
     - `twist`
-      - : A number, defaulting to `0`, that sets the value of the instance's {{domxref("PointerEvent.twist")}}.
+      - : یک عدد، پیش‌فرض `0`، که مقدار {{domxref("PointerEvent.twist")}} نمونه را تنظیم می‌کند.
     - `pointerType`
-      - : A string, defaulting to `""` that sets the value of the instance's {{domxref("PointerEvent.pointerType")}}.
+      - : یک رشته، پیش‌فرض `""`، که مقدار {{domxref("PointerEvent.pointerType")}} نمونه را تنظیم می‌کند.
     - `isPrimary`
-      - : A boolean value, defaulting to `false` that sets the value of the instance's {{domxref("PointerEvent.isPrimary")}}.
+      - : یک مقدار بولی، پیش‌فرض `false`، که مقدار {{domxref("PointerEvent.isPrimary")}} نمونه را تنظیم می‌کند.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("PointerEvent")}} object.
+یک شیء جدید {{domxref("PointerEvent")}}.
 
-## Examples
+## مثال‌ها
 
 ```js
 const moveEvent = new PointerEvent("pointermove");
@@ -76,10 +68,10 @@ const downEvent = new PointerEvent("pointerdown", {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
