@@ -1,11 +1,5 @@
 ---
 title: "PaymentRequestEvent: methodData property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/methodData"
-status: "needs-translation"
----
-
----
-title: "PaymentRequestEvent: methodData property"
 short-title: methodData
 slug: Web/API/PaymentRequestEvent/methodData
 page-type: web-api-instance-property
@@ -16,22 +10,18 @@ browser-compat: api.PaymentRequestEvent.methodData
 
 {{SeeCompatTable}}{{APIRef("Web-Based Payment Handler API")}}{{AvailableInWorkers("service")}}
 
-The **`methodData`** read-only property of the
-{{domxref("PaymentRequestEvent")}} interface returns an array of
-`PaymentMethodData` objects containing payment method identifiers for the
-payment methods that the website accepts and any associated payment method-specific
-data.
+ویژگی فقط‑خواندنی **`methodData`** در رابط {{domxref("PaymentRequestEvent")}} آرایه‌ای از اشیاء `PaymentMethodData` را بازمی‌گرداند که شامل شناسه‌های روش‌های پرداخت پذیرفته‌شده توسط وب‌سایت و هر داده اضافی مختص آن روش‌های پرداخت است.
 
-## Value
+## مقدار
 
-An array of `PaymentMethodData` objects. Each object contains the following properties:
+آرایه‌ای از اشیاء `PaymentMethodData`. هر شیء شامل ویژگی‌های زیر است:
 
 - `supportedMethods`
-  - : A payment method identifier for a payment method that the merchant website accepts.
+  - : یک شناسه روش پرداخت برای روش پرداختی که وب‌سایت فروشنده می‌پذیرد.
 - `data`
-  - : An object that provides optional information that might be needed by the supported payment methods. If supplied, it will be JSON-serialized.
+  - : یک شیء که اطلاعات اختیاری مورد نیاز احتمالی روش‌های پرداخت پشتیبانی‌شده را فراهم می‌کند. در صورت ارائه، به صورت JSON سریال‌سازی خواهد شد.
 
-## Examples
+## مثال‌ها
 
 ```js
 self.addEventListener("paymentrequest", (e) => {
@@ -39,18 +29,18 @@ self.addEventListener("paymentrequest", (e) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Web-based payment apps overview](https://web.dev/articles/web-based-payment-apps-overview)
-- [Setting up a payment method](https://web.dev/articles/setting-up-a-payment-method)
-- [Life of a payment transaction](https://web.dev/articles/life-of-a-payment-transaction)
-- [Using the Payment Request API](/en-US/docs/Web/API/Payment_Request_API/Using_the_Payment_Request_API)
-- [Payment processing concepts](/en-US/docs/Web/API/Payment_Request_API/Concepts)
+- [مروری بر برنامه‌های پرداخت مبتنی بر وب](https://web.dev/articles/web-based-payment-apps-overview)
+- [راه‌اندازی یک روش پرداخت](https://web.dev/articles/setting-up-a-payment-method)
+- [چرخه یک تراکنش پرداخت](https://web.dev/articles/life-of-a-payment-transaction)
+- [استفاده از Payment Request API](/en-US/docs/Web/API/Payment_Request_API/Using_the_Payment_Request_API)
+- [مفاهیم پردازش پرداخت](/en-US/docs/Web/API/Payment_Request_API/Concepts)
