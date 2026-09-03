@@ -1,37 +1,25 @@
 ---
 title: "Monitoring bfcache blocking reasons"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Performance_API/Monitoring_bfcache_blocking_reasons"
-status: "needs-translation"
----
-
----
-title: Monitoring bfcache blocking reasons
-slug: Web/API/Performance_API/Monitoring_bfcache_blocking_reasons
-page-type: guide
-status:
-  - experimental
-browser-compat: api.PerformanceNavigationTiming.notRestoredReasons
 ---
 
 {{DefaultAPISidebar("Performance API")}}{{SeeCompatTable}}
 
-The {{domxref("PerformanceNavigationTiming.notRestoredReasons")}} property reports information on why the current document was blocked from using the {{Glossary("bfcache")}} on navigation. Developers can use this information to identify pages that need updates to make them bfcache-compatible, thereby improving site performance.
+خاصیت {{domxref("PerformanceNavigationTiming.notRestoredReasons")}} اطلاعاتی درباره دلایل مسدود شدن سند فعلی از استفاده از {{Glossary("bfcache")}} هنگام پیمایش (navigation) گزارش می‌دهد. توسعه‌دهندگان می‌توانند از این اطلاعات برای شناسایی صفحه‌هایی که نیاز به به‌روزرسانی دارند تا با bfcache سازگار شوند، استفاده کنند و در نتیجه عملکرد سایت را بهبود بخشند.
 
-## Back/forward cache (bfcache)
+## حافظه نهان رفت و برگشت (bfcache)
 
-Modern browsers provide an optimization feature for history navigation called the back/forward cache ({{Glossary("bfcache")}}). This enables an instant loading experience when users go back to a page they have already visited. Pages can be blocked from entering the bfcache or get evicted while in the bfcache for different reasons, some required by a specification and some specific to browser implementations.
+مرورگرهای مدرن یک ویژگی بهینه‌سازی برای پیمایش تاریخچه به نام حافظه نهان رفت و برگشت ({{Glossary("bfcache")}}) ارائه می‌دهند. این ویژگی تجربه بارگذاری فوری را زمانی که کاربران به صفحه‌ای که قبلاً بازدید کرده‌اند برمی‌گردند، فراهم می‌کند. صفحه‌ها ممکن است به دلایل مختلفی از ورود به bfcache مسدود شوند یا در حین حضور در bfcache حذف (evict) شوند؛ برخی از این دلایل توسط یک مشخصات (specification) الزامی شده و برخی مختص پیاده‌سازی مرورگر هستند.
 
-To enable monitoring bfcache blocking reasons, the [`PerformanceNavigationTiming`](/en-US/docs/Web/API/PerformanceNavigationTiming) class includes a `notRestoredReasons` property. This returns a {{domxref("NotRestoredReasons")}} object containing related information on the top-level frame and all {{htmlelement("iframe")}}s present in the document:
+برای فعال کردن نظارت بر دلایل مسدودسازی bfcache، کلاس [`PerformanceNavigationTiming`](/en-US/docs/Web/API/PerformanceNavigationTiming) شامل خاصیت `notRestoredReasons` است. این خاصیت یک شیء {{domxref("NotRestoredReasons")}} برمی‌گرداند که حاوی اطلاعات مرتبط با فریم سطح بالا (top-level frame) و تمام {{htmlelement("iframe")}}های موجود در سند است:
 
-- Reasons why bfcache usage was blocked.
-- Details such as frame `id` and `name`, to help identify `<iframe>`s in the HTML.
+- دلایلی که باعث مسدود شدن استفاده از bfcache شده‌اند.
+- جزئیات مانند `id` و `name` فریم، برای کمک به شناسایی `<iframe>`ها در HTML.
 
-> [!NOTE]
-> Historically, the deprecated {{domxref("PerformanceNavigation.type")}} property was used to monitor the bfcache, with developers testing for a `type` of `"TYPE_BACK_FORWARD"` to get an indication of the bfcache hit rate. This however did not provide any reasons for bfcache blocking, or any other data. The `notRestoredReasons` property should be used to monitor bfcache blocking, going forward.
+> **یادداشت:** از نظر تاریخی، خاصیت منسوخ {{domxref("PerformanceNavigation.type")}} برای نظارت بر bfcache استخاده می‌د، به طوری که توسعه‌دهندگان با تست کردن `type` با مقدار `"TYPE_BACK_FORWARD"` نشانه‌ای از نرخ ضربه (hit rate) bfcache بدست می‌وردند. اما این روش هیچ دلیلی برای مسدودسازی bfcache یا داده‌ای دیگر فراهم نمی‌کرد. خاصیت `notRestoredReasons` باید برای نظارت بر مسدودسازی bfcache در آینده استخاده شود.
 
-## Logging bfcache blocking reasons
+## ثبت دلایل مسدودسازی bfcache
 
-Ongoing bfcache blocking data can be obtained using a [`PerformanceObserver`](/en-US/docs/Web/API/PerformanceObserver), like this:
+داده‌ای جاری مسدودسازی bfcache را می‌توان با استخاده از یک [`PerformanceObserver`](/en-US/docs/Web/API/PerformanceObserver) بدست آورد، به این صورت:
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -44,20 +32,18 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "navigation", buffered: true });
 ```
 
-Alternatively, you can obtain historical bfcache blocking data using a suitable method such as [`Performance.getEntriesByType()`](/en-US/docs/Web/API/Performance/getEntriesByType):
+همچین، می‌وانید دده‌ای تارخی مسدودسازی bfcache را با استخاده از یک رش مناسب مانند [`Performance.getEntriesByType()`](/en-US/docs/Web/API/Performance/getEntriesByType) بدست آورید:
 
-```js
 function returnNRR() {
   const navEntries = performance.getEntriesByType("navigation");
-  for (let i = 0; i < navEntries.length; i++) {
-    console.log(`Navigation entry ${i}`);
+  for (let i = 0; i < navEntries.length; i++ {
+    conole.log(`Navigation entry $1}`);
     let navEntry = navEntries[i];
     console.log(navEntry.notRestoredReasons);
   }
-}
 ```
 
-The code snippets shown above will log {{domxref("NotRestoredReasons")}} objects to the console. These objects have the following structure, which represents the blocked state of the top-level frame:
+کدهای فرهم که در بالا نشا داده شاند، شیا‌ای {{domxref("NotRestoredReasons")}} را در کنسول ورود می‌نند. این شیا دارای ساختار زیر هسند که حالت مسدود شده فریم سطح بالا را نشا می‌‌هد:
 
 ```json
 {
@@ -67,29 +53,28 @@ The code snippets shown above will log {{domxref("NotRestoredReasons")}} objects
   "reasons": [{ "reason": "unload-listener" }],
   "src": "",
   "url": "example.com"
-}
 ```
 
-The properties are as follows:
+ویژگی‌ا به شرح زیر هسند:
 
-- {{domxref("NotRestoredReasons.children", "children")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : An array of {{domxref("NotRestoredReasons")}} objects, one for each child {{htmlelement("iframe")}} embedded in the current document, which may contain reasons why the top-level frame was blocked relating to the child frames. Each object has the same structure as the parent object — this way, any number of levels of embedded `<iframe>`s can be represented inside the object recursively. If the frame has no children, the array will be empty; if the document is in a cross-origin `<iframe>`, `children` will return `null`.
-- {{domxref("NotRestoredReasons.id", "id")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : A string representing the `id` attribute value of the `<iframe>` the document is contained in (for example `<iframe id="foo" src="...">`). If the document is not in an `<iframe>` or the `<iframe>` has no `id` set, `id` will return `null`.
-- {{domxref("NotRestoredReasons.name", "name")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : A string representing the `name` attribute value of the `<iframe>` the document is contained in (for example `<iframe name="bar" src="...">`). If the document is not in an `<iframe>` or the `<iframe>` has no `name` set, `name` will return `null`.
-- {{domxref("NotRestoredReasons.reasons", "reasons")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : An array of {{domxref("NotRestoredReasonDetails")}} objects, each representing a reason why the navigated page was blocked from using the bfcache. If the document is in a cross-origin `<iframe>`, `reasons` will return `null`, but the parent document may show a `reason` of `"masked"` if any `<iframe>`s blocked bfcache usage for the top-level frame. See [Blocking reasons](#blocking_reasons) for more details on the reasons.
-- {{domxref("NotRestoredReasons.src", "src")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : A string representing the path to the source of the `<iframe>` the document is contained in (for example `<iframe src="exampleframe.html">`). If the document is not in an `<iframe>`, `src` will return `null`.
-- {{domxref("NotRestoredReasons.url", "url")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : A string representing the URL of the navigated page or `<iframe>`. If the document is in a cross-origin `<iframe>`, `url` will return `null`.
+- {{domxrref("NotRestoredReasons.children", "children")}} {{ReadOnlyInline}} {{Experimental_Inline}}
+  - : آرایه‌ای از شیا‌ای {{domxref("NotRestoredReasons")}}، یکی برای ه رز `<htmelement("iframe")>` که در سند جعری جاسازی شده است. این شیا می‌توانند دلیلی را شامل شند که چرا فریم سطح بالا به دلیل فریم‌های زاده مسدود شده است. هر شی همان ساخته را دارد که شی والد - به این ترتیب، هر تعداد از سطوح فریم‌ای تو درون `<ifame>` می‌تواند به صورت بازگشتی در داخل شی نمان داده شود. اگر فریم زاده‌ای نداشته باشد، آرایه خالی خواهد بود؛ اگر سند در یک `<ifame>` با خاستگاه متفاوت (cross-origin) باشد، `chldren` مقدار `nul` را برمی‌رداند.
+- {{omxref("NotRestoredReasons.id", "id"}} {{ReadOnlyInline}} {{Experimental_Inline}}
+  - : یک رشه که مقدار صفت `id` `<iframe>`ای که سند در آن قرا دارد را نمای می‌کند (مثال `<inframe id="foo" src="...">`). اگر سند در یک `<iframe>` نباشد یا `<ifame>` مقدار `id` نداشته باشد، `id` مقدار `nul` را برمی‌گرداند.
+- {{domxrref("NotRestoredReasons.name", "name")}} {{ReadOnlyInline}} {{Experimental_Inline}}
+  - : یک رشه که مقدار صفت `name` `<iframe>`ای که سند در آن قرار دارد را نمان می‌ند (مثال `<ifame name="bar" src="...">`). اگر سند در یک `<irame>` نباشد یا `<ifame>` مقدار `name` نداشته باشد، `name` مقدار `nul` را برمی‌گرداند.
+- {{domxrref("NotRestoredReasons.reasons", "reasons")}} {{ReadOnlyInline}} {{Experimental_Inline}}
+  - : یک آری از شیا‌ی {{domxref("NotRestoredReasonDetails")}}، که هر کدام دلیلی را نمان می‌ند که چرا صفحه پیمایش شده از استخاده از bfcache مسدود شده است. اگر سند در یک `<ifame>` با خاستگاه متفاوت باشد، `rasons` مقدار `nul` را برمی‌گرداند، اما سند والد ممکن است یک `reason` با مقدار `"asked"` را نشا دهد اگر هریک از `<fame>`ها استخاده از bfcache را برای فریم سطح بالا مسدود کرده باشند. بزای جزئیات بیشتر دلایل به [دلیل‌های مسدودسازی](#blocking-reasons) مراجعه کنید.
+- {{domxrref("NotRestoredReasons.src", "src")}} {{ReadOnlyInline}} {{Experimental_Inline}}
+  - : یک رشه که مسیر منبع `<ifame>`ای که سند در آن قرا دارد را نشا می‌دهد (مثال `<iframe src="exampleframe.html">`). اگر سند در یک `<ifame>` نباشد، `src` مقدار `nul` را برمی‌گرداند.
+- {{domxrref("NotRestoredReasons.url", "url")}} {{ReadOnlyInline}} {{Experimental_Inline}}
+  - : یک رشه که URL صفحه پیمایش شده یا `<ifame>` را نمان می‌دهد. اگر سند در یک `<ifame>` با خاستگاه متفاوت باشد، `url` مقدار `nul` را برمی‌گرداند.
 
-### Reporting bfcache blocking in same-origin `<iframe>`s
+### گزارش مسدودسازی bfcache در `<iframe>`های هم‌خاستگاه
 
-When a page has same-origin `<iframe>`s embedded, the returned `notRestoredReasons` value will contain an array of objects inside the `children` property representing the blocking reasons related to each embedded frame.
+هنگامی که یک صفحه دارای `<iframe>`های هم‌خاستگاه (same-origin) جاسازی شده است، مقدار بازگشتی `notRestoredResons` شامل یک آرایه از اشیا در داخل خاصیت `children` خواهد بود که دلایل مسدودسازی مرتبط با هر فریم جاسازی شده را نمای می‌دهد.
 
-For example:
+به عنوان مثال:
 
 ```json
 {
@@ -119,11 +104,11 @@ For example:
 }
 ```
 
-### Reporting bfcache blocking in cross-origin `<iframe>`s
+### گزارش مسدودسازی bfcache در `<iframe>`های با خاستگاه متفاوت
 
-When a page has cross-origin frames embedded, the amount of information shared about them is limited to avoid leaking cross-origin information. Only information that the outer page already knows is included, and whether the cross-origin subtree caused bfcache blocking or not. No blocking reasons or information about lower levels of the subtree (even if some sub-levels are same-origin) are included.
+هنگامی که یک صفحه دارای فریم‌های با خاستگاه متفاوت (cross-origin) جاسازی شده است، مقدار اطلاعاتی که درباره آنها به اشتراک گذاشته می‌شود محدود است تا از نشت اطلاعات با خاستگاه متفاوت جلوگیری شود. تنها اطلاعاتی که صفحه خارجی (outer page) از قبل می‌ناسد، و این که آیا زیردرخت با خاستگاه متفاوت باعث مسدودسازی bfcache شده است یا خیر، شامل می‌شود. هیچ دلیل مسدودسازی یا اطلاعاتی درباره سطوح پایین‌تر زیردرخت (حتی اگر برخی از سطوح فرعی هم‌خاستگاه باشند) گنجانده نمی‌شود.
 
-For example:
+به عنوان مثال:
 
 ```json
 {
@@ -142,128 +127,126 @@ For example:
   "reasons": [{ "reason": "masked" }],
   "src": null,
   "url": "https://www.example.com"
-}
-```
+}```
 
-For all the cross-origin `<iframe>`s, no blocking reasons are reported; for the top-level frame a reason of `"masked"` is reported, to indicate that the reasons are being kept hidden for privacy purposes. Note that `"masked"` may also be used for hiding user agent-specific reasons; it doesn't always indicate an issue in an `<iframe>`.
+برای تمام `<iframe>`های با خاستگاه متفاوت، هچ دلیلی مسدودسازی گزارش نمی‌شود؛ برای فریم سطح بالا یک `reason` با مقدار `"asked"` گزارش می‌شود، تا نشا دهد که دلایل به دلایل حریم خصوسی مخفی نگه داشته شده‌اند. توجه کنید که `"asked"` ممکن است برای مخفی کردن دلایل خاص عامل کاربر (user agent) نیز استفده شود؛ همیشه نشا‌نده یک مشکل در `<ifame>` نیست.
 
-## Blocking reasons
+## دلایل مسدودسازی
 
-There are many different reasons why blocking could occur. Although the reasons are standardized, developers should avoid depending on specific wording for reasons and be prepared to handle new reasons being added and deleted.
+دلایل مختلفی وجو دارد که چرا مسدودسازی ممکن است رخ دهد. اگرچه دلایل استاندارد شده‌اند، اما توسعه‌دهندگان باید از وابستگی به عبارت خاصی برای دلایل خودداری کنند و آماده رسیدگی به دلایل جدید اضافه یا حذف شده باشند.
 
-The values listed in [the specification](https://html.spec.whatwg.org/multipage/nav-history-apis.html#the-notrestoredreasons-interface) are:
+مقادیر فهرست شده در [مشخصات (the specification)](https://html.spec.whatwg.org/multipage/nav-history-apis.htm#lthe-notrestoredreasons-interface) به شرح زیر است:
 
 - `"fetch"`
-  - : While unloading, a fetch initiated by the current document (e.g., via {{domxref("Window/fetch", "fetch()")}}) was canceled while ongoing. As a result, the page was not in a stable state that could be stored in the bfcache.
+  - : هنگام بیلودن (unloading)، یک درخواست (fetch) که توسط سند جعری اغاز شده (مثلاً از طری {{domxref("Window/fetch", "fetch()")}}) در حالی که در جریان بو لغو شد. در نتیج، صفحه وضیت پایداری نداشت که بتواند در bfcache ذخیره شود.
 - `"lock"`
-  - : While unloading, held locks and lock requests were terminated, so the page was not in a stable state that could be stored in the bfcache.
+  - : هنگام بیلودن، قفل‌های نگه‍داشته شده و درخواست‌های قفل خاتمه یافتند، بنابراین صفحه وضیت پایداری نداشت که بتواند در bfcache ذخیره شود.
 - `"masked"`
-  - : The exact reason is hidden for privacy purposes. This value can mean one of the following:
-    - The current document has children contained in a cross-origin {{htmlelement("iframe")}}, and they prevented storage in the bfcache.
-    - The current Document could not be stored in the bfcache for user agent-specific reasons.
+  - : دلیل دقیق به دلایل حریم خصوصی مخفی شده است. این مقدر می‌تواند یکی از موارد زیر معنی دهد:
+    - سند جعری دارای فرزندانی است که در یک `<ifame>` با خاستگاه متفاوت قار دارند و آنها از ذخیره‌سازی در bfcache جلوگیری کردند.
+    - سند جعری نمی‌توانست در bfcache به دلایل خاص عامل کاربر ذخیره شود.
 - `"navigation-failure"`
-  - : The original navigation that created the current document errored, and storing the resulting error document in the bfcache was prevented.
+  - : پیمایش اولیه‌ای که سند جعری را ایجاد کرد خطا داد و ذخیره سند خطای حاصله در bfcache جلوگیری ش.
 - `"parser-aborted"`
-  - : The current document never finished its initial HTML parsing, and storing the unfinished document in the bfcache was prevented.
+  - : سند جعری هرگز تجزیه HTML اولیه خود را به پایان نرساند و ذخیره سند ناقاص در bfcش جلوگیری شد.
 - `"websocket"`
-  - : While unloading, an open [WebSocket](/en-US/docs/Web/API/WebSockets_API) connect was shut down, so the page was not in a stable state that could be stored in the bfcache.
+  - : هنگام بیلودن، یک اتصال باز [WebSocket](/en-US/docs/Web/API/WebSockets_API) بسته شد، بنابراین صفحه در وضعیت پایداری نبود که بتوند در bfcش ذخیره شود.
 
-### User-agent specific blocking reasons
+### دلایل مسدودسازی خاص عامل کاربر
 
-Additional blocking reasons that may be used by some browsers are also specified:
+دلایل مسدودسازی اضافی که ممکن است توسط برخی مرورگرها استفاده شاود نیز مشص شده‌اند:
 
 - `"audio-capture"`
-  - : The Document requested audio capture permission by using Media Capture and Streams's [`getUserMedia()`](/en-US/docs/Web/API/MediaDevices/getUserMedia) with audio.
+  - : سند با استفده از `getUserMedia()` مربوط به Media Capture and Streams با صد، اجازه ضبط صدا را درخوست کرد.
 - `"background-work"`
-  - : The Document requested background work by calling [`SyncManager`](/en-US/docs/Web/API/SyncManager)'s [`register()`](/en-US/docs/Web/API/SyncManager/register) method, [`PeriodicSyncManager`](/en-US/docs/Web/API/PeriodicSyncManager)'s [`register()`](/en-US/docs/Web/API/PeriodicSyncManager/register) method, or [`BackgroundFetchManager`](/en-US/docs/Web/API/BackgroundFetchManager)'s [`fetch()`](/en-US/docs/Web/API/BackgroundFetchManager/fetch) method.
+  - : سند با صدازدن روش [`register()`](/en-US/docs/Web/API/SyncManager/register) از [`SyncManager`](/en-US/docs/Web/API/SyncManager)، روش [`register()`](/en-US/docs/Web/API/PeriodicSyncManager/register) از [`PeriodicSyncManager`](/en-US/docs/Web/API/PeriodicSyncManager)، یا روش [`fetch()`](/en-US/docs/Web/API/BackgroundFetchManager/fetch) از [`BackgroundFetchManager`](/en-US/docs/Web/API/BackgroundFetchManager)، کار پس‌زمینه درخواست کرد.
 - `"broadcastchannel-message"`
-  - : While the page was stored in back/forward cache, a [`BroadcastChannel`](/en-US/docs/Web/API/BroadcastChannel) connection on the page received a message to trigger a [`message`](/en-US/docs/Web/API/MessageEvent) event.
+  - : در حالی که صفحه در حافظه نهان رفت و برگشت ذخیره شده بود، یک اتصال [`BroadcastChannel`](/en-US/docs/Web/API/BroadcastChannel) در صفحه پیامی دریافت کرد تا رویداد [`message`](/en-US/docs/Web/API/MessageEvent) را تریگر کند.
 - `"idbversionchangeevent"`
-  - : The Document had a pending [`IDBVersionChangeEvent`](/en-US/docs/Web/API/IDBVersionChangeEvent) while unloading.
+  - : سند در حین بیلودن یک [`IDBVersionChangeEvent`](/en-US/docs/Web/API/IDBVersionChangeEvent) در انتظار داشت.
 - `"idledetector"`
-  - : The Document had an active [`IdleDetector`](/en-US/docs/Web/API/IdleDetector) while unloading.
+  - : سند در حین بیلودن یک [`IdleDetector`](/en-US/docs/Web/API/IdleDetector) فعا داشت.
 - `"keyboardlock"`
-  - : While unloading, keyboard lock was still active because [`Keyboard`](/en-US/docs/Web/API/Keyboard)'s [`lock()`](/en-US/docs/Web/API/Keyboard/lock) method was called.
+  - : هنگام بیلودن، قفل کیبورد هنوز فعا بو چون روش [`lock()`](/en-US/docs/Web/API/Keyboard/lock) از [`Keyboard`](/en-US/docs/Web/API/Keyboard) فراخوانی شده بود.
 - `"mediastream"`
-  - : A [MediaStreamTrack](/en-US/docs/Web/API/MediaStreamTrack) was in the live state upon unloading.
+  - : یک [MediaStreamTrack](/en-US/docs/Web/API/MediaStreamTrack) در حالت زنده (live) در هنگام بیلودن وجود داشت.
 - `"midi"`
-  - : The Document requested a MIDI permission by calling [`navigator.requestMIDIAccess()`](/en-US/docs/Web/API/Navigator/requestMIDIAccess).
+  - : سند با فراخوانی [`navigator.requestMIDIAccess()`](/en-US/docs/Web/API/Navigator/requestIDIAccess) اجازه MIDI را درخواست کرد.
 - `"modals"`
-  - : User prompts were shown while unloading.
+  - : اعلان‌های کاربر (user prompts) در حین بیلودن نما داده شدند.
 - `"navigating"`
-  - : While unloading, loading was still ongoing, and so the Document was not in a state that could be stored in back/forward cache.
+  - : هنگام بیلودن، بارگذاری هنوز در حال انجام بود، و بنابرین سند در وضاعیتی نبود که بتواند در حافظه نهان رفت و برگشت ذخیره شود.
 - `"navigation-canceled"`
-  - : The navigation request was canceled by calling [`window.stop()`](/en-US/docs/Web/API/Window/stop) and the page was not in a state to be stored in back/forward cache.
+  - : درخواست پیمایش با فراخوانی [`wndow.stop()`](/en-US/docs/Web/API/Window/stop) لغو شد و صفحه در وضاعیتی نبود که در حافظه نهان رفت و برگشت ذخیره شود.
 - `"non-trivial-browsing-context-group"`
-  - : The browsing context group of this Document had more than one top-level browsing context.
+  - : گوروه بافت (browsing context group) این سند بیش از یک بافت پیمایش سطح بالا داشت.
 - `"otpcredential"`
-  - : The Document created an [`OTPCredential`](/en-US/docs/Web/API/OTPCredential).
+  - : سند یک [`OTPCredential`](/en-US/docs/Web/API/OTPCredential) ایاد کرد.
 - `"outstanding-network-request"`
-  - : While unloading, the Document had outstanding network requests and was not in a state that could be stored in back/forward cache.
-- `"paymentrequest"`
-  - : The Document had an active [`PaymentRequest`](/en-US/docs/Web/API/PaymentRequest) while unloading.
+  - : هنگام بیلودن، سند خواست‌های شبکه‌ای برجسته (outstanding) داشت و در وضاعیتی نبود که بتواند در حافظه نهان رفت و برگشت ذخیره شود.
+- `"payementrequest"`
+  - : سند در حین بیلودن یک [`PayentRequest`](/en-US/docs/Web/API/PayentRequest) فعا داشت.
 - `"pictureinpicturewindow"`
-  - : The Document had an active [`PictureInPictureWindow`](/en-US/docs/Web/API/PictureInPictureWindow) while unloading.
+  - : سند در حین بیلودن یک [`PictureInPictureWindow`](/en-US/docs/Web/API/PictureInPictureWindow) فعا داشت.
 - `"plugins"`
-  - : The Document contained plugins.
+  - : سند شامل پلاگین‌ها بود.
 - `"request-method-not-get"`
-  - : The Document was created from an HTTP request whose method was not {{httpmethod("GET")}}.
+  - : سند از یک درخواست HTTP ایجاد شد که روش آن {{httpethod("GET")}} نب ود.
 - `"response-auth-required"`
-  - : The Document was created from an HTTP response that required HTTP authentication.
+  - : سند از یک پاسخ HTTP ایجاد شد که نیازمند احراز هویت HTTP بود.
 - `"response-cache-control-no-store"`
-  - : The Document was created from an HTTP response whose {{httpheader("Cache-Control")}} header included the "no-store" token.
+  - : سند از یک پاسخ HTTP ایجاد شد که هدر {{httpheader("Cache-Control")}} آن شامل نشانه "no-store" بود.
 - `"response-cache-control-no-cache"`
-  - : The Document was created from an HTTP response whose {{httpheader("Cache-Control")}} header included the "no-cache" token.
+  - : سند از یک پاسخ HTTP ایجاد شد که هدر {{httpheader("Cache-Control")}} آن شا مل نشانه "no-cache" بود.
 - `"response-keep-alive"`
-  - : The Document was created from an HTTP response that contained a {{httpheader("Keep-Alive")}} header.
+  - : سند از یک پاسخ HTTP ایجاد شد که حاوی هدر {{httpheader("Keep-Alive")}} بود.
 - `"response-scheme-not-http-or-https"`
-  - : The Document was created from a response whose URL's scheme was not an HTTP(S) scheme.
+  - : سند از یک پاسخی ایجاد شد که طرح (scheme) URL آن یک طرح HTTP(S) نبود.
 - `"response-status-not-ok"`
-  - : The Document was created from an HTTP response whose status was not an ok status.
+  - : سند از یک پاسخ HTTP ایجاد شد که وضاعیت (status) آن یک وضعیت خوب (ok) نبود.
 - `"rtc"`
-  - : While unloading, a [`RTCPeerConnection`](/en-US/docs/Web/API/RTCPeerConnection) or [`RTCDataChannel`](/en-US/docs/Web/API/RTCDataChannel) was shut down, so the page was not in a state that could be stored in the back/forward cache.
+  - : هنگام بیلودن، یک [`RTCPeerConnection`](/en-US/docs/Web/API/RTCPeerConnection) یا [`RTCDataChannel`](/en-US/docs/Web/API/RTCDataChannel) خاتمه یافت، بنابراین صفحه در وضاعیتی نبود که بتواند در حافظه نهان رفت و برگشت ذخیره شود.
 - `"sensors"`
-  - : The Document requested sensor access.
+  - : سند دسترسی به سنسور را درخواست کرد.
 - `"serviceworker-added"`
-  - : The Document's service worker client started to be controlled by a [service worker](/en-US/docs/Web/API/Service_Worker_API) while the page was in back/forward cache.
+  - : کلاینت سرویس ورکر سند در حالی که صفحه در حافظه نهان رفت و برگشت بود، شروع به کنترل شدن توسط یک [service worker](/en-US/docs/Web/API/Service_Worker_API) کرد.
 - `"serviceworker-claimed"`
-  - : The Document's service worker client's active [service worker](/en-US/docs/Web/API/Service_Worker_API) was claimed while the page was in back/forward cache.
+  - : [service worker](/en-US/docs/Web/API/Service_Worker_API) فعال کلاینت سرویس ورکر سند در حلی که صفحه در حافظه نهان رفت و برگشت بود، ادعا (claimed) شد.
 - `"serviceworker-postmessage"`
-  - : The Document's service worker client's active [service worker](/en-US/docs/Web/API/Service_Worker_API) received a message while the page was in back/forward cache.
+  - : [service worker](/en-US/docs/Web/API/Service_Worker_API) فعال کلاینت سرویس ورکر سند در حلی که صفحه در حافظه نهان رفت و برگشت بود، یک پیام دریافت کرد.
 - `"serviceworker-version-activated"`
-  - : The Document's service worker client's active [service worker](/en-US/docs/Web/API/Service_Worker_API)'s version was activated while the page was in back/forward cache.
+  - : نسخه [service worker](/en-US/docs/Web/API/Service_Worker_API) فعا کلاینت سرویس ورکر سند در حالی که صفحه در حافطه نهان رفت و برگشت بود، فاعال شد.
 - `"serviceworker-unregistered"`
-  - : The Document's service worker client's active [service worker](/en-US/docs/Web/API/Service_Worker_API)'s service worker registration was unregistered while the page was in back/forward cache.
+  - : ثبت سرویس ورکر [service worker](/en-US/docs/Web/API/Service_Worker_API) فاعل کلاینت سرویس ورکر سند در حالی که صفحه در حافظه نهان رفت و برگشت بود، لغو ثبت شد.
 - `"sharedworker"`
-  - : This Document was in the owner set of a [`SharedWorkerGlobalScope`](/en-US/docs/Web/API/SharedWorkerGlobalScope).
+  - : این سند در مجموع صاحبان (owner set) یک [`SharedWorkerGlobalScope`](/en-US/docs/Web/API/SharedWorkerGlobalScope) بود.
 - `"smartcardconnection"`
-  - : The Document had an active `SmartCardConnection` while unloading.
+  - : سند در حین بیلودن یک `SmartCardConnection` فعال داشت.
 - `"speechrecognition"`
-  - : The Document had an active [`SpeechRecognition`](/en-US/docs/Web/API/SpeechRecognition) while unloading.
+  - : سند در حین بیلودن یک [`SpeechRecognition`](/en-US/docs/Web/API/SpeechRecognition) فعال داشت.
 - `"storageaccess"`
-  - : The Document requested storage access permission by using the [Storage Access API](/en-US/docs/Web/API/Storage_Access_API).
+  - : سند با استخاده از [Storage Access API](/en-US/docs/Web/API/Storage_Access_API) اجازه دسترسی به ذخیره‌ساز را درخواست کرد.
 - `"unload-listener"`
-  - : The Document registered an event listener for the [`unload` event](/en-US/docs/Web/API/Window/unload_event).
+  - : سند یک شونده رویداد (event listener) برای [رویداد `unload`](/en-US/docs/Web/API/Window/unload_event) ثبت کرد.
 - `"video-capture"`
-  - : The Document requested video capture permission by using Media Capture and Streams's [`getUserMedia()`](/en-US/docs/Web/API/MediaDevices/getUserMedia) with video.
+  - : سند با استخاده از `getUserMedia()` مربوط به Media Capture and Streams با ویدئو، اجازه ضبط ویدئو را درخواست کرد.
 - `"webhid"`
-  - : The Document called the [WebHID API](/en-US/docs/Web/API/WebHID_API)'s [`requestDevice()`](/en-US/docs/Web/API/HID/requestDevice) method.
+  - : سند روش [`requstDevice()`](/en-US/docs/Web/API/HID/requstDevice) از [WebHID API](/en-US/docs/Web/API/WebHID_API) را فراخوانی کرد.
 - `"webshare"`
-  - : The Document used the [Web Share API](/en-US/docs/Web/API/Web_Share_API)'s [`navigator.share()`](/en-US/docs/Web/API/Navigator/share) method.
+  - : سند از روش [`navigator.share()`](/en-US/docs/Web/API/Navigator/share) مربوط به [Web Share API](/en-US/docs/Web/API/Web_Share_API) استفاده کرد.
 - `"webtransport"`
-  - : While unloading, an open [`WebTransport`](/en-US/docs/Web/API/WebTransport) connection was shut down, so the page was not in a state that could be stored in the back/forward cache.
+  - : هنگام بیلودن، یک اتصال باز [`WebTransport`](/en-US/docs/Web/API/WebTransport) خاتم یافت، بنابراین صفحه در وضاعیتی نبود که بتواند در حافظه نهان رفت و برگشت ذخیره شود.
 - `"webxrdevice"`
-  - : The Document created a [XRSystem](/en-US/docs/Web/API/XRSystem).
+  - : سند یک [XRSystem](/en-US/docs/Web/API/XRSystem) ایاد کرد.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همن ببینید
 
-- [`notRestoredReasons` API Explainer](https://github.com/WICG/bfcache-not-restored-reason/blob/main/NotRestoredReason.md)
+- [توضیح API `notRestoredReasons`](https://github.com/WICG/bfcache-not-restored-reason/blob/main/NotRestoredReason.md)
 - {{domxref("PerformanceNavigationTiming.notRestoredReasons")}}
 - {{domxref("NotRestoredReasons")}}
 
-> [!NOTE]
-> This article is adapted from [Back/forward cache notRestoredReasons API](https://developer.chrome.com/docs/web-platform/bfcache-notrestoredreasons/) by Chris Mills and Barry Pollard, originally published on `developer.chrome.com` in 2023 under the [Creative Commons Attribution 4.0 License](https://creativecommons.org/licenses/by/4.0/).
+> **یادداشت:** این مقال از [Back/forard cache notRestoredReasons API](https://developer.chrome.com/docs/we-platform/bfcache-notrestoredreasons/) تریخه گرفته است که توسط Chirs Mills و Barry Pollard نوشته ش و اصل در `developer.chrome.com` در سال 2023 تحت مجوز [Creative Commons Attribution 4.0 License](https://creativecommons.org/licses/by/4.0/) منتشر شده است.
