@@ -1,7 +1,5 @@
 ---
 title: "PopStateEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PopStateEvent"
-status: "needs-translation"
 ---
 
 ---
@@ -13,43 +11,39 @@ browser-compat: api.PopStateEvent
 
 {{APIRef("History API")}}
 
-**`PopStateEvent`** is an interface for the {{domxref("Window/popstate_event", "popstate")}} event.
+**`PopStateEvent`** رابطی برای رویداد {{domxref("Window/popstate_event", "popstate")}} است.
 
-A `popstate` event is dispatched to the window every time the active history
-entry changes between two history entries for the same document. If the history entry
-being activated was created by a call to `history.pushState()` or was
-affected by a call to `history.replaceState()`, the `popstate`
-event's `state` property contains a copy of the history entry's state object.
+رویداد `popstate` هر بار به پنجره ارسال می‌شود که مدخل فعلی تاریخچه (active history entry) بین دو مدخل متعلق به یک سند تغییر کند. اگر مدخل تاریخچه‌ای که فعال می‌شود با فراخوانی `history.pushState()` ساخته شده باشد یا تحت تأثیر فراخوانی `history.replaceState()` قرار گرفته باشد، ویژگی `state` رویداد `popstate` حاوی یک کپی از شیء حالتِ همان مدخل تاریخچه خواهد بود.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("PopStateEvent.PopStateEvent", "PopStateEvent()")}}
-  - : Creates a new `PopStateEvent` object.
+  - : یک شیء `PopStateEvent` جدید می‌سازد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_This interface also inherits the properties of its parent, {{domxref("Event")}}._
+_این رابط، ویژگی‌های والد خود، {{domxref("Event")}} را نیز به ارث می‌برد._
 
 - {{domxref("PopStateEvent.state")}} {{ReadOnlyInline}}
-  - : Returns a copy of the information that was provided to `pushState()` or `replaceState()`.
+  - : یک کپی از اطلاعات ارائه‌شده به `pushState()` یا `replaceState()` را بازمی‌گرداند.
 - {{domxref("PopStateEvent.hasUAVisualTransition", "hasUAVisualTransition")}} {{ReadOnlyInline}}
-  - : Returns `true` if the user agent performed a visual transition for this navigation before dispatching this event, or `false` otherwise.
+  - : اگر عامل کاربر (user agent) پیش از ارسال این رویداد، یک انتقال بصری برای این ناوبری انجام داده باشد، `true` و در غیر این صورت `false` بازمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
-_This interface has no methods of its own, but inherits the methods of its parent, {{domxref("Event")}}._
+_این رابط هیچ روشی از خود ندارد، اما روش‌های والد خود، {{domxref("Event")}} را به ارث می‌برد._
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [`popstate`](/en-US/docs/Web/API/Window/popstate_event) event
-- [`hashchange`](/en-US/docs/Web/API/Window/hashchange_event) event
+- رویداد [`popstate`](/en-US/docs/Web/API/Window/popstate_event)
+- رویداد [`hashchange`](/en-US/docs/Web/API/Window/hashchange_event)
