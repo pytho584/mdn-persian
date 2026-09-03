@@ -1,11 +1,5 @@
 ---
 title: "Node: nodeName property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeName"
-status: "needs-translation"
----
-
----
-title: "Node: nodeName property"
 short-title: nodeName
 slug: Web/API/Node/nodeName
 page-type: web-api-instance-property
@@ -14,35 +8,35 @@ browser-compat: api.Node.nodeName
 
 {{APIRef("DOM")}}
 
-The read-only **`nodeName`** property of {{domxref("Node")}} returns the name of the current node as a string.
+ویژگی فقط خواندنی **`nodeName`** از {{domxref("Node")}} نام گره جاری را به صورت یک رشته بازمی‌گرداند.
 
-## Value
+## مقدار
 
-A string. Values for the different types of nodes are:
+یک رشته. مقادیر برای انواع مختلف گره‌ها به شرح زیر است:
 
 - {{domxref("Attr")}}
-  - : The value of {{domxref("Attr.name")}}, that is the _qualified name_ of the attribute.
+  - : مقدار {{domxref("Attr.name")}}، یعنی _نام واجد شرایط_ ویژگی.
 - {{domxref("CDATASection")}}
-  - : The string `"#cdata-section"`.
+  - : رشته `"#cdata-section"`.
 - {{domxref("Comment")}}
-  - : The string `"#comment"`.
+  - : رشته `"#comment"`.
 - {{domxref("Document")}}
-  - : The string `"#document"`.
+  - : رشته `"#document"`.
 - {{domxref("DocumentFragment")}}
-  - : The string `"#document-fragment"`.
+  - : رشته `"#document-fragment"`.
 - {{domxref("DocumentType")}}
-  - : The value of {{domxref("DocumentType.name")}}
+  - : مقدار {{domxref("DocumentType.name")}}
 - {{domxref("Element")}}
-  - : The value of {{domxref("Element.tagName")}}, that is the _uppercase_ name of the element tag if an HTML element,
-    or the _lowercase_ element tag if an XML element (like an SVG or MathML element).
+  - : مقدار {{domxref("Element.tagName")}}، یعنی _نام بزرگ_ (uppercase) تگ عنصر اگر یک عنصر HTML باشد،
+    یا _نام کوچک_ (lowercase) تگ عنصر اگر یک عنصر XML (مانند عناصر SVG یا MathML) باشد.
 - {{domxref("ProcessingInstruction")}}
-  - : The value of {{domxref("ProcessingInstruction.target")}}
+  - : مقدار {{domxref("ProcessingInstruction.target")}}
 - {{domxref("Text")}}
-  - : The string `"#text"`.
+  - : رشته `"#text"`.
 
-## Example
+## مثال
 
-This example displays the node names of several nodes
+این مثال نام گره‌های چند گره را نمایش می‌دهد.
 
 ```html
 This is some HTML:
@@ -56,7 +50,7 @@ Text <span>Text</span> Text<br />
 <output id="result">Not calculated yet.</output>
 ```
 
-and the following script:
+و اسکریپت زیر:
 
 ```js
 let node = document.querySelector("body").firstChild;
@@ -70,17 +64,17 @@ const output = document.getElementById("result");
 output.innerText = result;
 ```
 
-{{ EmbedLiveSample("Example", "100%", "450")}}
+{{ EmbedLiveSample("Example", "100%", "450") }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Element.tagName")}}
 - {{domxref("Attr.name")}}
