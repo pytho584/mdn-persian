@@ -1,7 +1,5 @@
 ---
 title: "Pointer Lock API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Pointer_Lock_API"
-status: "needs-translation"
 ---
 
 ---
@@ -16,28 +14,26 @@ spec-urls: https://w3c.github.io/pointerlock/
 
 {{DefaultAPISidebar("Pointer Lock API")}}
 
-The **Pointer Lock API** (formerly called _Mouse Lock API_) provides input methods based on the movement of the mouse over time (i.e., deltas), not just the absolute position of the mouse cursor in the viewport. It gives you access to raw mouse movement, locks the target of mouse events to a single element, eliminates limits on how far mouse movement can go in a single direction, and removes the cursor from view. It is ideal for first-person 3D games, for example.
+**Pointer Lock API** (که پیشتر *Mouse Lock API* نامیده میشد) روش‌های ورودی مبتنی بر حرکت ماوس در طول زمان (یعنی دلتاها) را فراهم می‌کند، نه صرفاً موقعیت مطلق مکان‌نمای ماوس در viewport (نمایشگر دید). این API به شما امکان دسترسی به حرکت خام ماوس را می‌دهد، هدف رویدادهای ماوس را به یک عنصر واحد قفل می‌کند، محدودیت‌های میزان حرکت ماوس در یک جهت را از بین می‌برد و مکان‌نما را از دید خارج می‌کند. برای مثال، برای بازی‌های سه‌بعدی اول‌شخص ایده‌آل است.
 
-More than that, the API is useful for any applications that require significant mouse input to control movements, rotate objects, and change entries, for example allowing users to control the viewing angle by moving the mouse around without any button clicking. The buttons are then freed up for other actions. Other examples include apps for viewing maps or satellite imagery.
+علاوه بر این، این API برای هر برنامه‌ای که به ورودی قابل توجه ماوس برای کنترل حرکات، چرخاندن اشیا و تغییر ورودی‌ها نیاز دارد، مفید است؛ برای مثال، به کاربران اجازه می‌دهد بدون کلیک کردن روی هیچ دکمه‌ای، با حرکت دادن ماوس، زاویه دید را کنترل کنند. بدین ترتیب دکمه‌ها برای سایر اقدامات آزاد می‌شوند. سایر مثال‌ها شامل برنامه‌های نمایش نقشه یا تصاویر ماهواره‌ای است.
 
-Pointer lock lets you access mouse events even when the cursor goes past the boundary of the browser or screen. For example, your users can continue to rotate or manipulate a 3D model by moving the mouse without end. Without Pointer lock, the rotation or manipulation stops the moment the pointer reaches the edge of the browser or screen. Game players can now click buttons and swipe the mouse cursor back and forth without worrying about leaving the game play area and accidentally clicking another application that would take mouse focus away from the game.
+Pointer lock به شما امکان می‌دهد حتی زمانی که مکان‌نما از مرز مرورگر یا صفحه نمایش عبور می‌کند، به رویدادهای ماوس دسترسی داشته باشید. برای مثال، کاربران شما می‌توانند بدون توقف، با حرکت دادن ماوس، یک مدل سه‌بعدی را بچرخانند یا دستکاری کنند. بدون Pointer lock، چرخش یا دستکاری، به محض رسیدن مکان‌نما به لبه مرورگر یا صفحه نمایش متوقف می‌شود. بازیکنان اکنون می‌توانند روی دکمه‌ها کلیک کنند و مکان‌نمای ماوس را به جلو و عقب بکشند، بدون نگرانی از ترک منطقه بازی و کلیک تصادفی روی برنامه دیگری که ممکن است تمرکز ماوس را از بازی بگیرد.
 
-## Basic concepts
+## مفاهیم پایه
 
-Pointer lock is related to [pointer capture](/en-US/docs/Web/API/Pointer_events#pointer_capture). Pointer capture provides continued delivery of events to a target element while a mouse is being dragged, but it stops when the mouse button is released. Pointer lock is different from pointer capture in the following ways:
+Pointer lock با [pointer capture (دریافت اشاره‌گر)](/en-US/docs/Web/API/Pointer_events#pointer_capture) مرتبط است. Pointer capture تحویل مداوم رویدادها را به یک عنصر هدف در حالی که ماوس در حال کشیده شدن است فراهم می‌کند، اما با رها شدن دکمه ماوس متوقف می‌شود. Pointer lock از جهات زیر با pointer capture متفاوت است:
 
-- It is persistent: Pointer lock does not release the mouse until an explicit API call is made or the user uses a specific release gesture.
-- It is not limited by browser or screen boundaries.
-- It continues to send events regardless of mouse button state.
-- It hides the cursor.
+- پایدار است: Pointer lock ماوس را آزاد نمی‌کند مگر اینکه یک فراخوانی صریح API انجام شود یا کاربر از یک ژست رهاسازی خاص استفاده کند.
+- توسط مرزهای مرورگر یا صفحه نمایش محدود نمی‌شود.
+- بدون توجه به وضعیت دکمه ماوس، به ارسال رویدادها ادامه می‌دهد.
+- مکان‌نما را پنهان می‌کند.
 
-## Method/properties overview
+## مرور کلی متدها و ویژگی‌ها
 
-This section provides a brief description of each property and method related to the pointer lock specification.
+### متد requestPointerLock()
 
-### requestPointerLock()
-
-The Pointer lock API, similar to the [Fullscreen API](/en-US/docs/Web/API/Fullscreen_API), extends DOM elements by adding a new method, {{domxref("Element.requestPointerLock","requestPointerLock()")}}. The following example requests pointer lock on a {{htmlelement("canvas")}} element:
+API Pointer lock، مشابه Fullscreen API، عناصر DOM را با افزودن متد جدیدی به نام {{domxref("Element.requestPointerLock","requestPointerLock()")}} گسترش می‌دهد. مثال زیر pointer lock را روی یک عنصر {{htmlelement("canvas")}} درخواست می‌کند:
 
 ```js
 canvas.addEventListener("click", async () => {
@@ -46,11 +42,11 @@ canvas.addEventListener("click", async () => {
 ```
 
 > [!NOTE]
-> If a user has exited pointer lock via the [default unlock gesture](https://w3c.github.io/pointerlock/#dfn-default-unlock-gesture), or pointer lock has not previously been entered for this document, an event generated as a result of an [engagement gesture](https://w3c.github.io/pointerlock/#dfn-engagement-gesture) must be received by the document before [`requestPointerLock`](https://w3c.github.io/pointerlock/#dom-element-requestpointerlock) will succeed. (from <https://w3c.github.io/pointerlock/#extensions-to-the-element-interface>)
+> اگر کاربر از طریق [ژست قفل‌گشایی پیش‌فرض](https://w3c.github.io/pointerlock/#dfn-default-unlock-gesture) از حالت pointer lock خارج شده باشد، یا pointer lock قبلاً برای این سند وارد نشده باشد، سند باید قبل از موفقیت [`requestPointerLock`](https://w3c.github.io/pointerlock/#dom-element-requestpointerlock)، رویدادی را که در نتیجه یک [ژست درگیری](https://w3c.github.io/pointerlock/#dfn-engagement-gesture) تولید شده است دریافت کند. (برگرفته از <https://w3c.github.io/pointerlock/#extensions-to-the-element-interface>)
 
-Operating systems enable mouse acceleration by default, which is useful when you sometimes want slow precise movement (think about you might use a graphics package), but also want to move great distances with a faster mouse movement (think about scrolling, and selecting several files). For some first-person perspective games however, raw mouse input data is preferred for controlling camera rotation — where the same distance movement, fast or slow, results in the same rotation. This results in a better gaming experience and higher accuracy, according to professional gamers.
+سیستم‌عامل‌ها شتاب ماوس را به‌طور پیش‌فرض فعال می‌کنند؛ این ویژگی زمانی مفید است که گاهی به حرکتی آهسته و دقیق نیاز دارید (به استفاده از یک نرم‌افزار گرافیکی فکر کنید) و در عین حال می‌خواهید با حرکت سریع‌تر ماوس مسافت‌های زیادی را طی کنید (به پیمایش و انتخاب چندین فایل فکر کنید). با این حال، برای برخی بازی‌های با دید اول‌شخص، داده‌های خام ورودی ماوس برای کنترل چرخش دوربین ترجیح داده می‌شوند — جایی که همان میزان حرکت، سریع یا آهسته، به چرخش یکسانی منجر می‌شود. به گفته گیمرهای حرفه‌ای، این امر تجربه بازی بهتر و دقت بالاتری را به همراه دارد.
 
-To disable OS-level mouse acceleration and access raw mouse input, you can set the `unadjustedMovement` to `true`:
+برای غیرفعال کردن شتاب ماوس در سطح سیستم‌عامل و دسترسی به ورودی خام ماوس، می‌توانید گزینه `unadjustedMovement` را روی `true` تنظیم کنید:
 
 ```js
 canvas.addEventListener("click", async () => {
@@ -60,11 +56,11 @@ canvas.addEventListener("click", async () => {
 });
 ```
 
-## Handling promise and non-promise versions of requestPointerLock()
+### مدیریت نسخه‌های Promise و غیر Promise مربوط به requestPointerLock()
 
-The above code snippet will still work in browsers that do not support the promise-based version of `requestPointerLock()` or the `unadjustedMovement` option — the [`await`](/en-US/docs/Web/JavaScript/Reference/Operators/await) operator is permitted in front of a function that does not return a promise, and the options object will just be ignored in non-supporting browsers.
+قطعه کد بالا همچنان در مرورگرهایی که از نسخه مبتنی بر Promise مربوط به `requestPointerLock()` یا گزینه `unadjustedMovement` پشتیبانی نمی‌کنند کار خواهد کرد؛ عملگر [`await`](/en-US/docs/Web/JavaScript/Reference/Operators/await) در جلوی تابعی که Promise برنمی‌گرداند مجاز است و شیء options در مرورگرهای غیرپشتیبان نادیده گرفته می‌شود.
 
-However, this could be confusing, and has other potential side-effects (for example, trying to use `requestPointerLock().then()` would throw an error in non-supporting browsers), so you may want to handle this explicitly using code along the following lines:
+با این حال، این موضوع می‌تواند گیج‌کننده باشد و عوارض جانبی بالقوه دیگری نیز داشته باشد (برای مثال، تلاش برای استفاده از `requestPointerLock().then()` در مرورگرهای غیرپشتیبان خطا ایجاد می‌کند)، بنابراین ممکن است بخواهید این موضوع را به‌طور صریح و با استفاده از کدی مشابه کد زیر مدیریت کنید:
 
 ```js
 function requestPointerLockWithUnadjustedMovement() {
@@ -89,16 +85,16 @@ function requestPointerLockWithUnadjustedMovement() {
 }
 ```
 
-### pointerLockElement and exitPointerLock()
+### ویژگی pointerLockElement و متد exitPointerLock()
 
-The Pointer lock API also extends the {{domxref("Document")}} interface, adding a new property and a new method:
+API Pointer lock همچنین رابط {{domxref("Document")}} را گسترش می‌دهد و یک ویژگی و یک متد جدید به آن اضافه می‌کند:
 
-- {{domxref("Document.pointerLockElement","pointerLockElement")}} is used for accessing the currently locked element (if any).
-- {{domxref("Document.exitPointerLock","exitPointerLock()")}} is used to exit the pointer lock.
+- {{domxref("Document.pointerLockElement","pointerLockElement")}} برای دسترسی به عنصر قفل‌شده فعلی (در صورت وجود) استفاده می‌شود.
+- {{domxref("Document.exitPointerLock","exitPointerLock()")}} برای خروج از حالت pointer lock استفاده می‌شود.
 
-The {{domxref("Document.pointerLockElement","pointerLockElement")}} property is useful for determining if any element is currently pointer locked (e.g., for doing a boolean check) and also for obtaining a reference to the locked element, if any.
+ویژگی {{domxref("Document.pointerLockElement","pointerLockElement")}} برای تعیین اینکه آیا عنصری در حال حاضر در حالت pointer lock قرار دارد (مثلاً برای انجام یک بررسی بولی) و همچنین برای دریافت ارجاعی به عنصر قفل‌شده، در صورت وجود، مفید است.
 
-Here is an example of using `pointerLockElement`:
+در اینجا نمونه‌ای از استفاده از `pointerLockElement` آورده شده است:
 
 ```js
 if (document.pointerLockElement === canvas) {
@@ -108,15 +104,15 @@ if (document.pointerLockElement === canvas) {
 }
 ```
 
-The {{domxref("Document.exitPointerLock()")}} method is used to exit pointer lock, and like {{domxref("Element.requestPointerLock","requestPointerLock")}}, works asynchronously using the {{domxref("Document/pointerlockchange_event", "pointerlockchange")}} and {{domxref("Document/pointerlockerror_event", "pointerlockerror")}} events, which you'll see more about below.
+متد {{domxref("Document.exitPointerLock()")}} برای خروج از حالت pointer lock استفاده می‌شود و مانند {{domxref("Element.requestPointerLock","requestPointerLock")}}، به‌صورت ناهمزمان با استفاده از رویدادهای {{domxref("Document/pointerlockchange_event", "pointerlockchange")}} و {{domxref("Document/pointerlockerror_event", "pointerlockerror")}} کار می‌کند که در ادامه درباره آن‌ها بیشتر خواهید دید.
 
 ```js
 document.exitPointerLock();
 ```
 
-## pointerlockchange event
+### رویداد pointerlockchange
 
-When the Pointer lock state changes—for example, when calling {{domxref("Element.requestPointerLock","requestPointerLock()")}} or {{domxref("Document.exitPointerLock","exitPointerLock()")}}, the user pressing the ESC key, etc.—the {{domxref("Document/pointerlockchange_event", "pointerlockchange")}} event is dispatched to the `document`. This is a simple event containing no extra data.
+هنگامی که وضعیت Pointer lock تغییر می‌کند — برای مثال، هنگام فراخوانی {{domxref("Element.requestPointerLock","requestPointerLock()")}} یا {{domxref("Document.exitPointerLock","exitPointerLock()")}}، فشردن کلید ESC توسط کاربر و غیره — رویداد {{domxref("Document/pointerlockchange_event", "pointerlockchange")}} به سند (`document`) ارسال می‌شود. این یک رویداد ساده و بدون داده اضافی است.
 
 ```js
 document.addEventListener("pointerlockchange", lockChangeAlert);
@@ -132,9 +128,9 @@ function lockChangeAlert() {
 }
 ```
 
-## pointerlockerror event
+### رویداد pointerlockerror
 
-When there is an error caused by calling {{domxref("Element.requestPointerLock","requestPointerLock()")}} or {{domxref("Document.exitPointerLock","exitPointerLock()")}}, the {{domxref("Document/pointerlockerror_event", "pointerlockerror")}} event is dispatched to the `document`. This is a simple event containing no extra data.
+هنگامی که خطایی ناشی از فراخوانی {{domxref("Element.requestPointerLock","requestPointerLock()")}} یا {{domxref("Document.exitPointerLock","exitPointerLock()")}} رخ دهد، رویداد {{domxref("Document/pointerlockerror_event", "pointerlockerror")}} به سند (`document`) ارسال می‌شود. این یک رویداد ساده و بدون داده اضافی است.
 
 ```js
 document.addEventListener("pointerlockerror", lockError);
@@ -144,32 +140,32 @@ function lockError(e) {
 }
 ```
 
-## Extensions to mouse events
+### توسعه‌های رویدادهای ماوس
 
-The Pointer lock API extends the normal {{domxref("MouseEvent")}} interface with movement attributes. Two new attributes to mouse events—{{domxref("MouseEvent.movementX","movementX")}} and {{domxref("MouseEvent.movementY","movementY")}}—provide the change in mouse positions. The values of the parameters are the same as the difference between the values of {{domxref("MouseEvent")}} properties, {{domxref("MouseEvent.screenX","screenX")}} and {{domxref("MouseEvent.screenY","screenY")}}, which are stored in two subsequent {{domxref("Element/mousemove_event", "mousemove")}} events, `eNow` and `ePrevious`. In other words, the Pointer lock parameter `movementX = eNow.screenX - ePrevious.screenX`.
+API Pointer lock رابط معمولی {{domxref("MouseEvent")}} را با ویژگی‌های حرکت گسترش می‌دهد. دو ویژگی جدید برای رویدادهای ماوس — {{domxref("MouseEvent.movementX","movementX")}} و {{domxref("MouseEvent.movementY","movementY")}} — تغییر موقعیت ماوس را فراهم می‌کنند. مقادیر این پارامترها معادل تفاوت بین مقادیر ویژگی‌های {{domxref("MouseEvent")}} یعنی {{domxref("MouseEvent.screenX","screenX")}} و {{domxref("MouseEvent.screenY","screenY")}} است که در دو رویداد متوالی {{domxref("Element/mousemove_event", "mousemove")}}، با نام‌های `eNow` و `ePrevious` ذخیره شده‌اند. به عبارت دیگر، پارامتر Pointer lock به صورت `movementX = eNow.screenX - ePrevious.screenX` خواهد بود.
 
-### Locked state
+#### حالت قفل‌شده
 
-When Pointer lock is enabled, the standard {{domxref("MouseEvent")}} properties {{domxref("MouseEvent.clientX","clientX")}}, {{domxref("MouseEvent.clientY","clientY")}}, {{domxref("MouseEvent.screenX","screenX")}}, and {{domxref("MouseEvent.screenY","screenY")}} are held constant, as if the mouse is not moving. The {{domxref("MouseEvent.movementX","movementX")}} and {{domxref("MouseEvent.movementY","movementY")}} properties continue to provide the mouse's change in position. There is no limit to {{domxref("MouseEvent.movementX","movementX")}} and {{domxref("MouseEvent.movementY","movementY")}} values if the mouse is continuously moving in a single direction. The concept of the mouse cursor does not exist and the cursor cannot move off the window or be clamped by a screen edge.
+هنگامی که Pointer lock فعال است، ویژگی‌های استاندارد {{domxref("MouseEvent")}} یعنی {{domxref("MouseEvent.clientX","clientX")}}، {{domxref("MouseEvent.clientY","clientY")}}، {{domxref("MouseEvent.screenX","screenX")}} و {{domxref("MouseEvent.screenY","screenY")}} ثابت نگه داشته می‌شوند، گویی ماوس در حال حرکت نیست. ویژگی‌های {{domxref("MouseEvent.movementX","movementX")}} و {{domxref("MouseEvent.movementY","movementY")}} همچنان تغییر موقعیت ماوس را فراهم می‌کنند. اگر ماوس به‌طور مداوم در یک جهت حرکت کند، هیچ محدودیتی برای مقادیر {{domxref("MouseEvent.movementX","movementX")}} و {{domxref("MouseEvent.movementY","movementY")}} وجود ندارد. مفهوم مکان‌نمای ماوس وجود ندارد و مکان‌نما نمی‌تواند از پنجره خارج شود یا توسط لبه صفحه نمایش محدود شود.
 
-### Unlocked state
+#### حالت قفل‌گشایی‌شده
 
-The parameters {{domxref("MouseEvent.movementX","movementX")}} and {{domxref("MouseEvent.movementY","movementY")}} are valid regardless of the mouse lock state, and are available even when unlocked for convenience.
+پارامترهای {{domxref("MouseEvent.movementX","movementX")}} و {{domxref("MouseEvent.movementY","movementY")}} بدون توجه به وضعیت قفل ماوس معتبر هستند و برای سهولت، حتی در حالت قفل‌گشایی‌شده نیز در دسترس هستند.
 
-When the mouse is unlocked, the system cursor can exit and re-enter the browser window. If that happens, {{domxref("MouseEvent.movementX","movementX")}} and {{domxref("MouseEvent.movementY","movementY")}} could be set to zero.
+هنگامی که ماوس قفل نیست، مکان‌نمای سیستم می‌تواند از پنجره مرورگر خارج شده و دوباره وارد شود. اگر این اتفاق بیفتد، {{domxref("MouseEvent.movementX","movementX")}} و {{domxref("MouseEvent.movementY","movementY")}} ممکن است روی صفر تنظیم شوند.
 
-## Simple example walkthrough
+### بررسی گام‌به‌گام یک مثال ساده
 
-We've written a [pointer lock demo](https://mdn.github.io/dom-examples/pointer-lock/) ([see source code](https://github.com/mdn/dom-examples/tree/main/pointer-lock)) to show you how to use it to set up a simple control system. This demo uses JavaScript to draw a ball on top of a {{ htmlelement("canvas") }} element. When you click the canvas, pointer lock is then used to remove the mouse pointer and allow you to move the ball directly using the mouse. Let's see how this works.
+ما یک [نسخه نمایشی pointer lock](https://mdn.github.io/dom-examples/pointer-lock/) ([مشاهده کد منبع](https://github.com/mdn/dom-examples/tree/main/pointer-lock)) نوشته‌ایم تا به شما نشان دهیم که چگونه می‌توانید از آن برای راه‌اندازی یک سیستم کنترلی ساده استفاده کنید. این نسخه نمایشی از JavaScript برای رسم یک توپ روی یک عنصر {{ htmlelement("canvas") }} استفاده می‌کند. هنگامی که روی canvas کلیک می‌کنید، pointer lock برای حذف مکان‌نمای ماوس استفاده می‌شود و به شما امکان می‌دهد توپ را مستقیماً با استفاده از ماوس حرکت دهید. بیایید ببینیم این چگونه کار می‌کند.
 
-We set initial x and y positions on the canvas:
+ما موقعیت‌های اولیه x و y را روی canvas تنظیم می‌کنیم:
 
 ```js
 let x = 50;
 let y = 50;
 ```
 
-Next we set up an event listener to run the `requestPointerLock()` method on the canvas when it is clicked, which initiates pointer lock. The `document.pointerLockElement` check is to see if there is already an active pointer lock — we don't want to keep calling `requestPointerLock()` on the canvas every time we click inside it if we already have pointer lock.
+در مرحله بعد، یک شنونده رویداد تنظیم می‌کنیم تا متد `requestPointerLock()` را روی canvas هنگام کلیک شدن اجرا کند، که pointer lock را آغاز می‌کند. بررسی `document.pointerLockElement` برای این است که ببینیم آیا قبلاً یک pointer lock فعال وجود دارد یا خیر — اگر قبلاً pointer lock داریم، نمی‌خواهیم هر بار که داخل آن کلیک می‌کنیم، `requestPointerLock()` را دوباره روی canvas فراخوانی کنیم.
 
 ```js
 canvas.addEventListener("click", async () => {
@@ -182,15 +178,15 @@ canvas.addEventListener("click", async () => {
 ```
 
 > [!NOTE]
-> The above snippet works in browsers that don't support the promise version of `requestPointerLock()`. See [Handling promise and non-promise versions of requestPointerLock()](#handling_promise_and_non-promise_versions_of_requestpointerlock) for an explanation.
+> قطعه کد بالا در مرورگرهایی که از نسخه promise مربوط به `requestPointerLock()` پشتیبانی نمی‌کنند کار می‌کند. برای توضیح، به بخش [مدیریت نسخه‌های Promise و غیر Promise مربوط به requestPointerLock()](#handling_promise_and_non-promise_versions_of_requestpointerlock) مراجعه کنید.
 
-Now for the dedicated pointer lock event listener: `pointerlockchange`. When this occurs, we run a function called `lockChangeAlert()` to handle the change.
+اکنون به سراغ شنونده رویداد اختصاصی pointer lock می‌رویم: رویداد `pointerlockchange`. وقتی این رویداد رخ می‌دهد، تابعی به نام `lockChangeAlert()` را برای مدیریت تغییر اجرا می‌کنیم.
 
 ```js
 document.addEventListener("pointerlockchange", lockChangeAlert);
 ```
 
-This function checks the `pointerLockElement` property to see if it is our canvas. If so, it attached an event listener to handle the mouse movements with the `updatePosition()` function. If not, it removes the event listener again.
+این تابع ویژگی `pointerLockElement` را بررسی می‌کند تا ببیند آیا عنصر مورد نظر canvas ما است یا خیر. اگر چنین بود، یک شنونده رویداد برای مدیریت حرکات ماوس با تابع `updatePosition()` متصل می‌کند. اگر نه، دوباره شنونده رویداد را حذف می‌کند.
 
 ```js
 function lockChangeAlert() {
@@ -204,7 +200,7 @@ function lockChangeAlert() {
 }
 ```
 
-The `updatePosition()` function updates the position of the ball on the canvas (`x` and `y`), and also includes `if ()` statements to check whether the ball has gone off the edges of the canvas. If so, it makes the ball wrap around to the opposite edge. It also includes a check whether a [`requestAnimationFrame()`](/en-US/docs/Web/API/Window/requestAnimationFrame) call has previously been made, and if so, calls it again as required, and calls the `canvasDraw()` function that updates the canvas scene. A tracker is also set up to write out the X and Y values to the screen, for reference.
+تابع `updatePosition()` موقعیت توپ را روی canvas (مختصات `x` و `y`) به‌روزرسانی می‌کند و همچنین شامل دستورات `if ()` است تا بررسی کند که آیا توپ از لبه‌های canvas خارج شده است یا خیر. در صورت خروج، باعث می‌شود توپ به لبه مخالف منتقل شود (wrap around). همچنین شامل یک بررسی است که آیا قبلاً فراخوانی [`requestAnimationFrame()`](/en-US/docs/Web/API/Window/requestAnimationFrame) انجام شده است یا خیر؛ اگر چنین باشد، در صورت نیاز دوباره آن را فراخوانی کرده و تابع `canvasDraw()` را که صحنه canvas را به‌روزرسانی می‌کند، فراخوانی می‌کند. یک ردیاب (tracker) نیز برای نمایش مقادیر X و Y روی صفحه، به عنوان مرجع، راه‌اندازی شده است.
 
 ```js
 const tracker = document.getElementById("tracker");
@@ -234,7 +230,7 @@ function updatePosition(e) {
 }
 ```
 
-The `canvasDraw()` function draws the ball in the current `x` and `y` positions:
+تابع `canvasDraw()` توپ را در موقعیت‌های فعلی `x` و `y` رسم می‌کند:
 
 ```js
 function canvasDraw() {
@@ -247,21 +243,21 @@ function canvasDraw() {
 }
 ```
 
-## IFrame limitations
+### محدودیت‌های IFrame
 
-Pointer lock can only lock one {{htmlelement("iframe")}} at a time. If you lock one `<iframe>`, you can't lock another one and transfer the target to it; pointer lock will error out. To avoid this limitation, first unlock the locked `<iframe>`, and then lock the other.
+Pointer lock می‌تواند تنها یک {{htmlelement("iframe")}} را در هر بار قفل کند. اگر یک `<iframe>` را قفل کنید، نمی‌توانید `<iframe>` دیگری را قفل کرده و هدف را به آن منتقل کنید؛ در این صورت pointer lock با خطا مواجه می‌شود. برای جلوگیری از این محدودیت، ابتدا `<iframe>` قفل‌شده را قفل‌گشایی کنید و سپس دیگری را قفل کنید.
 
-While `<iframe>` work by default, "sandboxed" `<iframe>`s block Pointer lock. To avoid this limitation, use `<iframe sandbox="allow-pointer-lock">`.
+در حالی که `<iframe>`ها به‌طور پیش‌فرض کار می‌کنند، `<iframe>`های «sandboxed» (جعبه‌شنی) Pointer lock را مسدود می‌کنند. برای جلوگیری از این محدودیت، از `<iframe sandbox="allow-pointer-lock">` استفاده کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("MouseEvent")}}
 - {{domxref("Element.requestPointerLock()")}}
