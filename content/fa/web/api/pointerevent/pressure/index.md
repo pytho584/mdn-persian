@@ -1,11 +1,5 @@
 ---
 title: "PointerEvent: pressure property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent/pressure"
-status: "needs-translation"
----
-
----
-title: "PointerEvent: pressure property"
 short-title: pressure
 slug: Web/API/PointerEvent/pressure
 page-type: web-api-instance-property
@@ -14,18 +8,15 @@ browser-compat: api.PointerEvent.pressure
 
 {{ APIRef("Pointer Events") }}
 
-The **`pressure`** read-only property of the
-{{domxref("PointerEvent")}} interface indicates the normalized pressure of the pointer
-input.
+ویژگی فقط‌خواندنی **`pressure`** در رابطِ {{domxref("PointerEvent")}}، فشار نرمال‌شدهٔ ورودیِ اشاره‌گر را نشان می‌دهد.
 
-## Value
+## مقدار
 
-The normalized pressure of the pointer input in the range of `0` to `1`, inclusive, where `0` and `1` represent the minimum and maximum pressure the hardware is capable of detecting, respectively. For hardware that does not support pressure, such as a mouse, the value is `0.5` when the pointer is active buttons state and `0` otherwise.
+مقدار فشار نرمال‌شدهٔ ورودیِ اشاره‌گر در بازهٔ `0` تا `1` است؛ جایی که `0` و `1` به‌ترتیب کمترین و بیشترین فشاری را نشان می‌دهند که سخت‌افزار قادر به تشخیص آن است. برای سخت‌افزارهایی که فشار را پشتیبانی نمی‌کنند، مانند ماوس، این مقدار وقتی اشاره‌گر در حالتِ دکمه‌های فعال (active buttons state) قرار دارد `0.5` و در غیر این صورت `0` است.
 
-## Examples
+## مثال‌ها
 
-In this snippet, when a {{domxref("Element/pointerdown_event", "pointerdown")}} event is fired, different functions
-are called depending on the value of the event's `pressure` property.
+در این قطعه‌کد، وقتی رویداد {{domxref("Element/pointerdown_event", "pointerdown")}} رخ می‌دهد، بسته به مقدارِ ویژگیِ `pressure` در رویداد، توابع متفاوتی فراخوانی می‌شوند.
 
 ```js
 someElement.addEventListener("pointerdown", (event) => {
@@ -42,14 +33,14 @@ someElement.addEventListener("pointerdown", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{ domxref("Touch.force") }}
