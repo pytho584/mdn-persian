@@ -1,10 +1,4 @@
 ---
-title: "PerformanceObserverEntryList"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserverEntryList"
-status: "needs-translation"
----
-
----
 title: PerformanceObserverEntryList
 slug: Web/API/PerformanceObserverEntryList
 page-type: web-api-interface
@@ -13,22 +7,22 @@ browser-compat: api.PerformanceObserverEntryList
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The **`PerformanceObserverEntryList`** interface is a list of {{domxref("PerformanceEntry","performance events", '', 'true')}} that were explicitly observed via the {{domxref("PerformanceObserver.observe","observe()")}} method.
+اینترفیس **`PerformanceObserverEntryList`** فهرستی از {{domxref("PerformanceEntry","رویدادهای کارایی", '', 'true')}} است که به‌طور صریح از طریق متد {{domxref("PerformanceObserver.observe","observe()")}} مشاهده شده‌اند.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("PerformanceObserverEntryList.getEntries","PerformanceObserverEntryList.getEntries()")}}
-  - : Returns a list of all explicitly observed {{domxref("PerformanceEntry")}} objects.
+  - : فهرستی از تمام اشیاء {{domxref("PerformanceEntry")}} که به‌طور صریح مشاهده شده‌اند را برمی‌گرداند.
 - {{domxref("PerformanceObserverEntryList.getEntriesByType","PerformanceObserverEntryList.getEntriesByType()")}}
-  - : Returns a list of all explicitly observed {{domxref("PerformanceEntry")}} objects of the given entry type.
+  - : فهرستی از تمام اشیاء {{domxref("PerformanceEntry")}} که به‌طور صریح مشاهده شده‌اند و دارای نوع ورودی مشخص‌شده هستند را برمی‌گرداند.
 - {{domxref("PerformanceObserverEntryList.getEntriesByName","PerformanceObserverEntryList.getEntriesByName()")}}
-  - : Returns a list of all explicitly observed {{domxref("PerformanceEntry")}} objects based on the given name and entry type.
+  - : فهرستی از تمام اشیاء {{domxref("PerformanceEntry")}} که به‌طور صریح مشاهده شده‌اند و بر اساس نام و نوع ورودی داده‌شده هستند را برمی‌گرداند.
 
-## Example
+## مثال
 
-### Using PerformanceObserverEntryList
+### استفاده از PerformanceObserverEntryList
 
-In the following example, `list` is the `PerformanceObserverEntryList` object. The {{domxref("PerformanceObserverEntryList.getEntries","getEntries()")}} method is called to get all explicitly observed {{domxref("PerformanceEntry")}} objects which are "measure" and "mark" in this case.
+در مثال زیر، `list` شیء `PerformanceObserverEntryList` است. متد {{domxref("PerformanceObserverEntryList.getEntries","getEntries()")}} فراخوانی می‌شود تا تمام اشیاء {{domxref("PerformanceEntry")}} که به‌طور صریح مشاهده شده‌اند و در این مورد «measure» و «mark» هستند، دریافت شوند.
 
 ```js
 function perfObserver(list, observer) {
@@ -45,10 +39,10 @@ const observer = new PerformanceObserver(perfObserver);
 observer.observe({ entryTypes: ["measure", "mark"] });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
