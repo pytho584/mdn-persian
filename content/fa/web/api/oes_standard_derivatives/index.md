@@ -1,10 +1,4 @@
 ---
-title: "OES_standard_derivatives extension"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/OES_standard_derivatives"
-status: "needs-translation"
----
-
----
 title: OES_standard_derivatives extension
 short-title: OES_standard_derivatives
 slug: Web/API/OES_standard_derivatives
@@ -14,23 +8,23 @@ browser-compat: api.OES_standard_derivatives
 
 {{APIRef("WebGL")}}
 
-The **`OES_standard_derivatives`** extension is part of the [WebGL API](/en-US/docs/Web/API/WebGL_API) and adds the GLSL derivative functions `dFdx`, `dFdy`, and `fwidth`.
+افزونهٔ **`OES_standard_derivatives`** بخشی از [WebGL API](/en-US/docs/Web/API/WebGL_API) است و توابع مشتق GLSL یعنی `dFdx`، `dFdy` و `fwidth` را اضافه می‌کند.
 
-WebGL extensions are available using the {{domxref("WebGLRenderingContext.getExtension()")}} method. For more information, see also [Using Extensions](/en-US/docs/Web/API/WebGL_API/Using_Extensions) in the [WebGL tutorial](/en-US/docs/Web/API/WebGL_API/Tutorial).
+افزونه‌های WebGL از طریق متد {{domxref("WebGLRenderingContext.getExtension()")}} در دسترس قرار می‌گیرند. برای اطلاعات بیشتر، به [استفاده از افزونه‌ها](/en-US/docs/Web/API/WebGL_API/Using_Extensions) در [آموزش WebGL](/en-US/docs/Web/API/WebGL_API/Tutorial) نیز مراجعه کنید.
 
 > [!NOTE]
-> This extension is only available to {{domxref("WebGLRenderingContext", "WebGL1", "", 1)}} contexts. In {{domxref("WebGL2RenderingContext", "WebGL2", "", 1)}}, the functionality of this extension is available on the WebGL2 context by default. In WebGL 2, the constant is available as `gl.FRAGMENT_SHADER_DERIVATIVE_HINT` and it requires GLSL `#version 300 es`.
+> این افزونه فقط در دسترس زمینه‌های {{domxref("WebGLRenderingContext", "WebGL1", "", 1)}} است. در {{domxref("WebGL2RenderingContext", "WebGL2", "", 1)}}، عملکرد این افزونه به‌صورت پیش‌فرض در زمینهٔ WebGL2 در دسترس است. در WebGL 2 این ثابت با نام `gl.FRAGMENT_SHADER_DERIVATIVE_HINT` در دسترس است و استفاده از آن به GLSL با `#version 300 es` نیاز دارد.
 
-## Constants
+## ثابت‌ها
 
-This extension exposes one new constant, which can be used in the {{domxref("WebGLRenderingContext.hint()", "hint()")}} and {{domxref("WebGLRenderingContext.getParameter()", "getParameter()")}} methods.
+این افزونه یک ثابت جدید ارائه می‌کند که می‌توان از آن در متدهای {{domxref("WebGLRenderingContext.hint()", "hint()")}} و {{domxref("WebGLRenderingContext.getParameter()", "getParameter()")}} استفاده کرد.
 
 - `ext.FRAGMENT_SHADER_DERIVATIVE_HINT_OES`
-  - : A {{domxref("WebGL_API.Types", "GLenum")}} indicating the accuracy of the derivative calculation for the GLSL built-in functions: `dFdx`, `dFdy`, and `fwidth`.
+  - : یک {{domxref("WebGL_API.Types", "GLenum")}} که دقت محاسبهٔ مشتق را برای توابع توکار GLSL مشخص می‌کند: `dFdx`، `dFdy` و `fwidth`.
 
-## GLSL built-in functions
+## توابع توکار GLSL
 
-The following new functions can be used in GLSL shader code, if this extension is enabled:
+اگر این افزونه فعال شده باشد، می‌توان از توابع جدید زیر در کد شیدر GLSL استفاده کرد:
 
 ```c
 genType dFdx(genType p)
@@ -39,24 +33,24 @@ genType fwidth(genType p)
 ```
 
 - `dFdx()`
-  - : Returns the derivative in `x` using local differencing for the input argument `p`.
+  - : مشتق نسبت به `x` را با استفاده از تفاضل محلی برای آرگومان ورودی `p` برمی‌گرداند.
 - `dFdy()`
-  - : Returns the derivative in `y` using local differencing for the input argument `p`.
+  - : مشتق نسبت به `y` را با استفاده از تفاضل محلی برای آرگومان ورودی `p` برمی‌گرداند.
 - `fwidth()`
-  - : Returns the sum of the absolute derivative in `x` and `y` using local differencing for the input argument `p`. That is, `abs(dFdx(p)) + abs(dFdy(p))`.
+  - : مجموع قدر مطلق مشتق نسبت به `x` و `y` را با استفاده از تفاضل محلی برای آرگومان ورودی `p` برمی‌گرداند. یعنی `abs(dFdx(p)) + abs(dFdy(p))`.
 
-`dFdx()` and `dFdy()` are commonly used to estimate the filter width used to anti-alias procedural textures.
+`dFdx()` و `dFdy()` معمولاً برای تخمین پهنای فیلتر مورد استفاده در ضدآلیاسینگ بافت‌های رویه‌ای (procedural textures) به کار می‌روند.
 
-## Examples
+## مثال‌ها
 
-Enabling the extensions:
+فعال‌کردن افزونه‌ها:
 
 ```js
 gl.getExtension("OES_standard_derivatives");
 gl.getExtension("EXT_shader_texture_lod");
 ```
 
-Shader code that avoids artifacts when wrapping texture coordinates:
+کد شیدری که هنگام پیچیدن (wrapping) مختصات بافت از بروز مصنوعات جلوگیری می‌کند:
 
 ```html
 <script type="x-shader/x-fragment">
@@ -73,15 +67,15 @@ Shader code that avoids artifacts when wrapping texture coordinates:
 </script>
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("WebGLRenderingContext.getExtension()")}}
 - {{domxref("EXT_shader_texture_lod")}}
