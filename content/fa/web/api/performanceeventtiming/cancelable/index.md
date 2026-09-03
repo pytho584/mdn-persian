@@ -1,7 +1,5 @@
 ---
 title: "PerformanceEventTiming: cancelable property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEventTiming/cancelable"
-status: "needs-translation"
 ---
 
 ---
@@ -14,17 +12,17 @@ browser-compat: api.PerformanceEventTiming.cancelable
 
 {{APIRef("Performance API")}}
 
-The read-only **`cancelable`** property returns the associated event's [`cancelable`](/en-US/docs/Web/API/Event/cancelable) property, indicating whether the event can be canceled.
+ویژگی فقط‌خواندنی **`cancelable`**، ویژگی [`cancelable`](/en-US/docs/Web/API/Event/cancelable) رویداد مرتبط را برمی‌گرداند و نشان می‌دهد که آیا رویداد قابل لغو است یا خیر.
 
-## Value
+## مقدار
 
-A boolean. `true` if the associated event is cancelable, `false` otherwise.
+یک مقدار بولی. اگر رویداد مرتبط قابل لغو باشد، `true` و در غیر این صورت `false` است.
 
-## Examples
+## مثال‌ها
 
-### Observing non-cancelable events
+### مشاهده رویدادهای غیرقابل لغو
 
-The `cancelable` property can be used when observing event-timing entries ({{domxref("PerformanceEventTiming")}}). For example, to log and measure non-cancelable events only.
+ویژگی `cancelable` می‌تواند هنگام مشاهده ورودی‌های زمان‌بندی رویداد ({{domxref("PerformanceEventTiming")}}) استفاده شود. برای مثال، می‌توان صرفاً رویدادهای غیرقابل لغو را ثبت و اندازه‌گیری کرد.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -40,10 +38,10 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "event", buffered: true });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
