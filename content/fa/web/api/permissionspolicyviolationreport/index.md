@@ -1,10 +1,4 @@
 ---
-title: "PermissionsPolicyViolationReport"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PermissionsPolicyViolationReport"
-status: "needs-translation"
----
-
----
 title: PermissionsPolicyViolationReport
 slug: Web/API/PermissionsPolicyViolationReport
 page-type: web-api-interface
@@ -15,54 +9,43 @@ browser-compat: api.ReportingObserver.ReportingObserver.options_parameter.types_
 
 {{APIRef("Reporting API")}}{{SeeCompatTable}}
 
-The `PermissionsPolicyViolationReport` dictionary of the [Reporting API](/en-US/docs/Web/API/Reporting_API) represents a report that is generated when a document violates its [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy).
+دیکشنری `PermissionsPolicyViolationReport` متعلق به [Reporting API](/en-US/docs/Web/API/Reporting_API) نشان‌دهندهٔ گزارشی است که هنگام نقض [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) توسط یک سند (document) تولید می‌شود.
 
-Reports of this type can be observed from within a page using a {{domxref("ReportingObserver")}}, and a serialized version can be sent to a reporting server endpoint.
+گزارش‌های این نوع را می‌توان از داخل یک صفحه با استفاده از {{domxref("ReportingObserver")}} مشاهده کرد و همچنین یک نسخهٔ سریالایز شده از آن‌ها را می‌توان به یک نقطهٔ پایانی (endpoint) سرور گزارش ارسال کرد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - `body`
-  - : The body of the report.
-    This is an object with the following properties:
+  - : بدنهٔ گزارش.
+    این یک شیء با ویژگی‌های زیر است:
     - `columnNumber`
-      - : The character position in the line of the script at which the violation occurred, or `null` if not known.
+      - : موقعیت نویسه (character) در خط اسکریپتی که تخلف در آن رخ داده است؛ یا اگر ناشناخته باشد، `null`.
     - `disposition`
-      - : A string indicating whether the policy that was violated was enforced or only reported.
-        This can have the value `"enforce"` for violations of policies set with {{httpheader("Permissions-Policy")}}, and `report` for violations set with `Permissions-Policy-Report-Only`.
+      - : رشته‌ای که نشان می‌دهد سیاستِ نقض‌شده اعمال شده است یا فقط گزارش شده است. این مقدار می‌تواند برای نقض سیاست‌های تنظیم‌شده با {{httpheader("Permissions-Policy")}} برابر `"enforce"` باشد و برای نقض‌های تنظیم‌شده با `Permissions-Policy-Report-Only` برابر `report` باشد.
     - `featureId`
-      - : A string representing the [Permissions Policy directive](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy#directives) that was violated (for example, `"geolocation"`).
+      - : رشته‌ای که نمایانگر [دستور Permissions Policy](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy#directives) نقض‌شده است (برای مثال، `"geolocation"`).
     - `lineNumber`
-      - : The line number in the script at which the violation occurred, or `null` if not known.
+      - : شمارهٔ خط در اسکریپتی که تخلف در آن رخ داده است؛ یا اگر ناشناخته باشد، `null`.
     - `message`
-      - : A string containing a human-readable description of the violation.
+      - : رشته‌ای شامل توصیفی قابل‌خواندن برای انسان از تخلف.
     - `sourceFile`
-      - : A string representing the URL of the script in which the violation occurred, or `null` if not known.
-        Both `columnNumber` and `lineNumber` should have non-null values if this property is not `null`.
+      - : رشته‌ای که نشانی URL اسکریپتی را نشان می‌دهد که تخلف در آن رخ داده است؛ یا اگر ناشناخته باشد، `null`. اگر این ویژگی `null` نباشد، هر دو ویژگی `columnNumber` و `lineNumber` باید مقادیری غیر از `null` داشته باشند.
 
 - `type`
-  - : The string `"permissions-policy-violation"`, indicating that this is a Permissions Policy violation report.
+  - : رشتهٔ `"permissions-policy-violation"` که نشان می‌دهد این یک گزارش نقض Permissions Policy است.
 - `url`
-  - : A string representing the URL of the document that generated the report.
+  - : رشته‌ای که نشانی URL سندِ تولیدکنندهٔ گزارش را نشان می‌دهد.
 
 > [!NOTE]
-> Chrome's server-side serialization uses `policyId` rather than `featureId` for the feature name in the body of a server report.
-> For cross-browser compatibility, developers will need to process both fields in reporting endpoints.
-> The report returned by a [`ReportingObserver`](/en-US/docs/Web/API/ReportingObserver) follows the specification.
+> سریالایز کردن سمت سرور در کروم برای نام ویژگی در بدنهٔ یک گزارش سرور، به‌جای `featureId` از `policyId` استفاده می‌کند. برای سازگاری بین مرورگرها، توسعه‌دهندگان باید هر دو فیلد را در نقطه‌های پایانی گزارش‌دهی پردازش کنند. گزارشی که توسط [`ReportingObserver`](/en-US/docs/Web/API/ReportingObserver) بازگردانده می‌شود مطابق با مشخصات (specification) است.
 
-## Description
+## توضیحات
 
-Permissions Policy violations are reported when a document attempts to use a browser feature that is blocked by its [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy).
-The policy is set using the {{httpheader("Permissions-Policy")}} HTTP header, or a `<meta http-equiv="permissions-policy">` element.
-Violations of the policy may also be reported but not enforced using the {{httpheader("Permissions-Policy-Report-Only")}} HTTP header, or a `<meta http-equiv="permissions-policy-report-only">` element.
+نقض‌های Permissions Policy زمانی گزارش می‌شوند که یک سند تلاش کند از قابلیتی در مرورگر استفاده کند که توسط [Permissions Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) آن مسدود شده است. این سیاست با استفاده از هدر HTTP {{httpheader("Permissions-Policy")}} یا یک عنصر `<meta http-equiv="permissions-policy">` تنظیم می‌شود. همچنین ممکن است نقض‌های سیاست بدون اعمال شدن، فقط با هدر HTTP {{httpheader("Permissions-Policy-Report-Only")}} یا یک عنصر `<meta http-equiv="permissions-policy-report-only">` گزارش شوند.
 
-You can monitor for Permissions-Policy violation reports within the page that sets the policy using the [Reporting API](/en-US/docs/Web/API/Reporting_API).
-To do this you create a {{domxref("ReportingObserver")}} object to listen for reports, passing a callback method and an (optional) `options` property specifying the types of reports that you want to report on.
-The callback method is then called with reports of the requested types, passing a report object.
-For `Permissions-Policy` or `Permissions-Policy-Report-Only` violations, the object will be a `PermissionsPolicyViolationReport` instance with `PermissionsPolicyViolationReport.type === "permissions-policy-violation"`.
+می‌توانید گزارش‌های نقض Permissions-Policy را در همان صفحه‌ای که سیاست را تنظیم کرده است و با استفاده از [Reporting API](/en-US/docs/Web/API/Reporting_API) پایش کنید. برای این کار یک شیء {{domxref("ReportingObserver")}} می‌سازید تا به گزارش‌ها گوش دهد؛ این سازنده یک متد بازخوانی (callback) و یک ویژگی (اختیاری) `options` شامل انواع گزارش‌هایی که می‌خواهید دریافت کنید را می‌گیرد. سپس متد بازخوانی با گزارش‌های نوع درخواستی فراخوانی می‌شود و یک شیء گزارش به آن داده می‌شود. برای نقض‌های `Permissions-Policy` یا `Permissions-Policy-Report-Only`، آن شیء یک نمونه از `PermissionsPolicyViolationReport` خواهد بود که در آن `PermissionsPolicyViolationReport.type === "permissions-policy-violation"` است.
 
-The structure of a typical in-page report is shown below.
-Note that we can see the URL of the page that had its policy violated (`url`), and from `body.featureId` we can see which feature was blocked.
-The `body.disposition` field shows that the violation was enforced or only reported.
+ساختار یک گزارش نمونهٔ درون‌صفحه‌ای در زیر نشان داده شده است. توجه کنید که می‌توانیم نشانی URL صفحه‌ای را ببینیم که سیاستش نقض شده است (`url`) و از روی `body.featureId` نیز می‌توانیم بفهمیم کدام قابلیت مسدود شده است. فیلد `body.disposition` نشان می‌دهد که تخلف اعمال شده است یا فقط گزارش شده است.
 
 ```json
 {
@@ -79,10 +62,9 @@ The `body.disposition` field shows that the violation was enforced or only repor
 }
 ```
 
-Violation reports may also be sent as a JSON object in a {{httpmethod("POST")}} request to the [reporting server endpoint](/en-US/docs/Web/API/Reporting_API#reporting_server_endpoints) indicated by name in a per-directive `report-to` parameter, with fallback to the [`default` reporting server endpoint](/en-US/docs/Web/HTTP/Reference/Headers/Reporting-Endpoints#default_reporting_endpoint) (if defined).
-The reporting server endpoint and its mapping to a particular URL are set using the {{httpheader("Reporting-Endpoints")}} response header.
+گزارش‌های تخلف همچنین ممکن است به‌صورت یک شیء JSON در یک درخواست {{httpmethod("POST")}} به [نقطهٔ پایانی سرور گزارش‌دهی](/en-US/docs/Web/API/Reporting_API#reporting_server_endpoints) ارسال شوند؛ این نقطهٔ پایانی با نام در پارامتر `report-to` مربوط به همان دستور (directive) مشخص می‌شود و در صورت تعریف‌نشدن، به [نقطهٔ پایانی پیش‌فرضِ گزارش‌دهی سرور](/en-US/docs/Web/HTTP/Reference/Headers/Reporting-Endpoints#default_reporting_endpoint) برمی‌گردد. نقطهٔ پایانی گزارش‌دهی و نگاشت آن به یک نشانی URL مشخص با استفاده از هدر پاسخ {{httpheader("Reporting-Endpoints")}} تنظیم می‌شود.
 
-The structure of the server report is almost exactly the same as `PermissionsPolicyViolationReport`, except that it additionally includes `age` and `user_agent` fields.
+ساختار گزارش سرور تقریباً دقیقاً مشابه `PermissionsPolicyViolationReport` است، با این تفاوت که فیلدهای `age` و `user_agent` را نیز به‌صورت اضافه شامل می‌شود.
 
 ```json
 [
@@ -103,25 +85,25 @@ The structure of the server report is almost exactly the same as `PermissionsPol
 ]
 ```
 
-## Examples
+## مثال‌ها
 
-### Using the `ReportingObserver` interface
+### استفاده از رابط `ReportingObserver`
 
-You can obtain a `PermissionsPolicyViolationReport` object by configuring your page to block a browser feature, and then attempting to use it.
+می‌توانید یک شیء `PermissionsPolicyViolationReport` به دست آورید؛ بدین منظور صفحه را طوری پیکربندی می‌کنید که یک قابلیت مرورگر را مسدود کند و سپس تلاش کنید از آن قابلیت استفاده کنید.
 
-In this example, we will block the Geolocation API for the current document using either the {{httpheader("Permissions-Policy")}} HTTP header:
+در این مثال، ما Geolocation API را برای سند جاری با استفاده از هدر HTTP {{httpheader("Permissions-Policy")}} مسدود می‌کنیم:
 
 ```http
 Permissions-Policy: geolocation=()
 ```
 
-Or equivalently via an HTML `<meta>` element:
+یا به‌طور معادل از طریق یک عنصر HTML `<meta>`:
 
 ```html
 <meta http-equiv="permissions-policy" content="geolocation=()" />
 ```
 
-Then we will attempt to use the Geolocation API:
+سپس تلاش می‌کنیم از Geolocation API استفاده کنیم:
 
 ```js
 // This should generate a Permissions Policy violation
@@ -131,7 +113,7 @@ navigator.geolocation.getCurrentPosition(
 );
 ```
 
-Finally, we will create a new {{domxref("ReportingObserver")}} object to listen for Permissions Policy violations (this will need to be loaded before the code that triggers the violation).
+در نهایت، یک شیء جدید {{domxref("ReportingObserver")}} می‌سازیم تا به نقض‌های Permissions Policy گوش دهد (این کد باید پیش از کدی که تخلف را فعال می‌کند بارگذاری شود).
 
 ```js
 const observer = new ReportingObserver(
@@ -150,8 +132,7 @@ const observer = new ReportingObserver(
 observer.observe();
 ```
 
-Above we log each violation report object and a JSON-string version of the object, which might look similar to the object below.
-Note that the `type` is `"permissions-policy-violation"` and `body.featureId` identifies the blocked feature.
+در بالا، هر شیء گزارش تخلف و نسخهٔ رشته JSON آن را در کنسول ثبت می‌کنیم؛ خروجی ممکن است شبیه به شیء زیر باشد. توجه کنید که `type` برابر `"permissions-policy-violation"` است و `body.featureId` قابلیت مسدودشده را مشخص می‌کند.
 
 ```json
 {
@@ -168,12 +149,11 @@ Note that the `type` is `"permissions-policy-violation"` and `body.featureId` id
 }
 ```
 
-### Sending a Permissions Policy violation report to a reporting endpoint
+### ارسال گزارش نقض Permissions Policy به یک نقطهٔ پایانی گزارش‌دهی
 
-This example shows how to configure reporting of `Permissions-Policy` violations to a server endpoint.
+این مثال نشان می‌دهد که چگونه گزارش نقض‌های `Permissions-Policy` را برای ارسال به یک نقطهٔ پایانی سرور پیکربندی کنید.
 
-The response headers below block geolocation and define the reporting endpoint name for the feature as "geo_endpoint".
-The {{HTTPHeader("Reporting-Endpoints")}} HTTP response header is used to define the URL of this endpoint name.
+هدرهای پاسخ زیر قابلیت موقعیت‌یاب را مسدود می‌کنند و نام نقطهٔ پایانی گزارش‌دهی این ویژگی را «geo_endpoint» تعیین می‌کنند. از هدر پاسخ HTTP {{HTTPHeader("Reporting-Endpoints")}} برای تعیین نشانی URL مربوط به این نام نقطهٔ پایانی استفاده شده است.
 
 ```http
 Reporting-Endpoints: geo_endpoint="https://example.com/reports"
@@ -181,14 +161,14 @@ Permissions-Policy: geolocation=();report-to=geo_endpoint
 ```
 
 > [!NOTE]
-> To send all violation reports to the same endpoint we might instead define the [`"default"` reporting endpoint](/en-US/docs/Web/HTTP/Reference/Headers/Reporting-Endpoints#default_reporting_endpoint):
+> برای ارسال همهٔ گزارش‌های تخلف به یک نقطهٔ پایانی واحد، می‌توانیم در عوض [نقطهٔ پایانی گزارش‌دهی «default»](/en-US/docs/Web/HTTP/Reference/Headers/Reporting-Endpoints#default_reporting_endpoint) را تعریف کنیم:
 >
 > ```http
 > Reporting-Endpoints: default="https://example.com/reports"
 > Permissions-Policy: geolocation=()
 > ```
 
-As before, a violation is triggered by attempting to use a blocked feature:
+مانند قبل، تخلف با تلاش برای استفاده از یک قابلیت مسدودشده فعال می‌شود:
 
 ```js
 // This should generate a Permissions Policy violation
@@ -198,8 +178,7 @@ navigator.geolocation.getCurrentPosition(
 );
 ```
 
-The violation report will then be sent to the default endpoint as a JSON array.
-Note that the `type` is `"permissions-policy-violation"` and the `body` property is a serialization of the `PermissionsPolicyViolationReport` object.
+سپس گزارش تخلف به‌صورت یک آرایه JSON به نقطهٔ پایانی پیش‌فرض ارسال می‌شود. توجه کنید که `type` برابر `"permissions-policy-violation"` است و ویژگی `body` یک سریالایز از شیء `PermissionsPolicyViolationReport` است.
 
 ```json
 [
@@ -220,15 +199,15 @@ Note that the `type` is `"permissions-policy-violation"` and the `body` property
 ]
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{domxref("ReportingObserver")}}
 - {{httpheader("Permissions-Policy")}}
