@@ -1,11 +1,5 @@
 ---
 title: "Node: contains() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Node/contains"
-status: "needs-translation"
----
-
----
-title: "Node: contains() method"
 short-title: contains()
 slug: Web/API/Node/contains
 page-type: web-api-instance-method
@@ -14,41 +8,33 @@ browser-compat: api.Node.contains
 
 {{APIRef("DOM")}}
 
-The **`contains()`** method of the {{domxref("Node")}} interface
-returns a boolean value indicating
-whether a node is a descendant of a given node, that is the node itself,
-one of its direct children ({{domxref("Node.childNodes", "childNodes")}}),
-one of the children's direct children, and so on.
+متد **`contains()`** از رابط {{domxref("Node")}} یک مقدار بولین (Boolean) برمی‌گرداند که نشان می‌دهد آیا یک گره (node) از نوادگان (descendant) گره مشخص‌شده است یا خیر؛ یعنی خود آن گره، یکی از فرزندان مستقیم آن ({{domxref("Node.childNodes", "childNodes")}})، یکی از فرزندان مستقیم آن فرزندان، و همین‌طور الی‌آخر.
 
 > [!NOTE]
-> A node is _contained_ inside itself.
+> یک گره درون _خودش_ قرار دارد.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 contains(otherNode)
 ```
 
-### Parameters
+### پارامترها
 
 - `otherNode`
-  - : The {{domxref("Node")}} to test with.
+  - : {{domxref("Node")}}ای که باید آزمایش شود.
     > [!NOTE]
-    > `otherNode` is not optional, but can be set to `null`.
+    > `otherNode` اختیاری نیست، اما می‌توان آن را `null` تنظیم کرد.
 
-### Return value
+### مقدار بازگشتی
 
-A boolean value that is `true` if `otherNode` is contained in the node,
-`false` if not.
+یک مقدار بولین که اگر `otherNode` درون گره (node) باشد `true` و در غیر این صورت `false` است.
 
-If the `otherNode` parameter is `null`,
-`contains()` always returns `false`.
+اگر پارامتر `otherNode` برابر با `null` باشد، `contains()` همیشه `false` برمی‌گرداند.
 
-## Example
+## مثال
 
-This function checks to see if an element is in the page's body. As
-`contains` is inclusive and determining if the body contains itself isn't the
-intention of `isInPage` this case explicitly returns `false`.
+این تابع بررسی می‌کند که آیا یک عنصر درون بدنه (body) صفحه قرار دارد یا خیر. از آنجایی که `contains` شامل خود گره نیز می‌شود و تعیین اینکه آیا بدنه خودش را شامل می‌شود هدف `isInPage` نیست، در این حالت به‌صراحت `false` برگردانده می‌شود.
 
 ```js
 function isInPage(node) {
@@ -56,15 +42,15 @@ function isInPage(node) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Node.compareDocumentPosition")}}
 - {{domxref("Node.hasChildNodes")}}
