@@ -1,10 +1,4 @@
 ---
-title: "NDEFReader"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NDEFReader"
-status: "needs-translation"
----
-
----
 title: NDEFReader
 slug: Web/API/NDEFReader
 page-type: web-api-interface
@@ -15,38 +9,38 @@ browser-compat: api.NDEFReader
 
 {{SecureContext_Header}}{{SeeCompatTable}}{{APIRef("Web NFC API")}}
 
-The **`NDEFReader`** interface of the [Web NFC API](/en-US/docs/Web/API/Web_NFC_API) is used to read from and write data to compatible NFC devices, e.g., NFC tags supporting NDEF, when these devices are within the reader's magnetic induction field.
+رابط **`NDEFReader`** متعلق به [Web NFC API](/en-US/docs/Web/API/Web_NFC_API) برای خواندن و نوشتنِ داده روی دستگاه‌های سازگار با NFC، مانند تگ‌های NFC که از NDEF پشتیبانی می‌کنند، به کار می‌رود؛ به شرط آنکه این دستگاه‌ها در میدان القای مغناطیسیِ خواننده قرار داشته باشند.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{DOMxRef("NDEFReader.NDEFReader", "NDEFReader()")}} {{Experimental_Inline}}
-  - : Returns a new `NDEFReader` object.
+  - : یک شیء `NDEFReader` جدید برمی‌گرداند.
 
-## Instance methods
+## متدهای نمونه
 
-_The `NDEFReader` interface inherits the methods of {{domxref("EventTarget")}}, its parent interface._
+رابطِ `NDEFReader` متدهای {{domxref("EventTarget")}} — رابط والد خود — را به ارث می‌برد.
 
 - {{DOMxRef("NDEFReader.scan", "NDEFReader.scan()")}} {{Experimental_Inline}}
-  - : Activates a reading device and returns a {{jsxref("Promise")}} that either resolves when an NFC tag read operation is scheduled or rejects if a hardware or permission error is encountered. This method triggers a permission prompt if the "nfc" permission has not been previously granted.
+  - : یک دستگاه خواننده را فعال می‌کند و یک {{jsxref("Promise")}} برمی‌گرداند. این Promise زمانی resolve می‌شود که عملیات خواندنِ تگ NFC برنامه‌ریزی شده باشد و در صورت بروز خطای سخت‌افزاری یا خطای مجوز، reject می‌شود. اگر مجوز «nfc» پیشتر صادر نشده باشد، این متد اعلان درخواست مجوز را نمایش می‌دهد.
 - {{DOMxRef("NDEFReader.write", "NDEFReader.write()")}} {{Experimental_Inline}}
-  - : Attempts to write an NDEF message to a tag and returns a {{jsxref("Promise")}} that either resolves when a message has been written to the tag or rejects if a hardware or permission error is encountered. This method triggers a permission prompt if the "nfc" permission has not been previously granted.
+  - : تلاش می‌کند یک پیام NDEF را روی یک تگ بنویسد و یک {{jsxref("Promise")}} برمی‌گرداند که یا پس از نوشته‌شدن پیام روی تگ resolve می‌شود و یا در صورت بروز خطای سخت‌افزاری یا خطای مجوز reject می‌شود. اگر مجوز «nfc» پیشتر صادر نشده باشد، این متد اعلان درخواست مجوز را نمایش می‌دهد.
 
-## Events
+## رویدادها
 
-_Inherits events from its parent, {{DOMxRef("EventTarget")}}._
+_رویدادها را از والد خود، {{DOMxRef("EventTarget")}}، به ارث می‌برد._
 
 - {{DOMxRef("NDEFReader.reading_event", "reading")}} {{Experimental_Inline}}
-  - : Fires when a new reading is available from compatible NFC devices.
+  - : وقتی یک خوانش جدید از دستگاه‌های NFC سازگار در دسترس باشد، این رویداد رخ می‌دهد.
 - {{DOMxRef("NDEFReader.readingerror_event", "readingerror")}} {{Experimental_Inline}}
-  - : Fires when a tag is in proximity of a reading device, but cannot be read.
+  - : وقتی یک تگ در مجاورت دستگاهِ خواننده قرار گرفته باشد اما امکان خواندنش نباشد، این رویداد رخ می‌دهد.
 
-## Examples
+## مثال‌ها
 
-### Handling initial reads while writing
+### مدیریت خوانش‌های اولیه هنگام نوشتن
 
-The example below shows how to coordinate between a common reading handler and one used specifically for a single write. In order to write, a tag needs to be found and read. This gives you the ability to check whether it is actually a tag that you want to write to. That's why it's recommended that you call `write()` from a reading event.
+مثال زیر نشان می‌دهد که چگونه می‌توان بین یک مدیریت‌کنندهٔ عمومیِ خوانش و مدیریت‌کننده‌ای که به‌طور خاص برای یک نوشتنِ منفرد استفاده می‌شود، هماهنگی ایجاد کرد. برای نوشتن، ابتدا باید یک تگ پیدا و خوانده شود؛ این کار به شما امکان می‌دهد بررسی کنید که آیا این تگ واقعاً همان تگی است که می‌خواهید روی آن بنویسید. به همین دلیل توصیه می‌شود `write()` را از داخل یک رویدادِ خوانش فراخوانی کنید.
 
 ```js
 const ndef = new NDEFReader();
@@ -86,10 +80,10 @@ try {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
