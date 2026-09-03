@@ -1,10 +1,4 @@
 ---
-title: "Prioritized Task Scheduling API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Prioritized_Task_Scheduling_API"
-status: "needs-translation"
----
-
----
 title: Prioritized Task Scheduling API
 slug: Web/API/Prioritized_Task_Scheduling_API
 page-type: web-api-overview
@@ -15,23 +9,23 @@ browser-compat:
 
 {{DefaultAPISidebar("Prioritized Task Scheduling API")}}{{AvailableInWorkers}}
 
-The **Prioritized Task Scheduling API** provides a standardized way to prioritize all tasks belonging to an application, whether they are defined in a website developer's code or in third-party libraries and frameworks.
+**رابط برنامه‌نویسی Prioritized Task Scheduling API** روشی استاندارد برای اولویت‌بندی همه وظایف متعلق به یک برنامه فراهم می‌کند؛ خواه این وظایف در کد توسعه‌دهنده وب‌سایت تعریف شده باشند یا در کتابخانه‌ها و فریمورک‌های شخص ثالث.
 
-The [task priorities](#task_priorities) are very coarse-grained and based around whether tasks block user interaction or otherwise impact the user experience, or can run in the background. Developers and frameworks may implement more fine-grained prioritization schemes within the broad categories defined by the API.
+اولویت‌های [وظیفه](#task_priorities) در سطح بسیار کلی تعریف شده‌اند و مبنای آن‌ها این است که آیا وظایف تعامل کاربر را مسدود می‌کنند یا به شکل دیگری تجربه کاربری را تحت تأثیر قرار می‌دهند، یا می‌توانند در پس‌زمینه اجرا شوند. توسعه‌دهندگان و فریمورک‌ها می‌توانند در درون همین دسته‌بندی‌های کلیِ تعریف‌شده توسط API، طرح‌های اولویت‌بندی دقیق‌تری پیاده‌سازی کنند.
 
-The API is promise-based and supports the ability to set and change task priorities, to delay tasks being added to the scheduler, to abort tasks, and to monitor for priority change and abort events.
+این API مبتنی بر Promise است و از این قابلیت‌ها پشتیبانی می‌کند: تنظیم و تغییر اولویت وظایف، تأخیر در افزوده‌شدن وظایف به زمان‌بند، لغو وظایف، و نظارت بر رویدادهای تغییر اولویت و لغو.
 
-## Concepts and usage
+## مفاهیم و کاربرد
 
-The Prioritized Task Scheduling API is available in both window and worker threads using the `scheduler` property on the global object.
+این API هم در ریسمان پنجره (window) و هم در ریسمان worker در دسترس است و از طریق خاصیت `scheduler` روی شیء سراسری (global object) قابل استفاده است.
 
-The main API methods are {{domxref('scheduler.postTask()')}} and {{domxref('scheduler.yield()')}}. `scheduler.postTask()` takes a callback function (the task) and returns a promise that resolves with the return value of the function or rejects with an error. `scheduler.yield()` turns any [`async`](/en-US/docs/Web/JavaScript/Reference/Statements/async_function) function into a task by yielding the main thread to the browser for other work, with execution continuing when the returned promise is resolved.
+متدهای اصلی API عبارت‌اند از {{domxref('scheduler.postTask()')}} و {{domxref('scheduler.yield()')}}. متد `scheduler.postTask()` یک تابع callback (وظیفه) دریافت می‌کند و یک promise برمی‌گرداند که با مقدار بازگشتی تابع resolve می‌شود یا با یک خطا reject می‌شود. متد `scheduler.yield()` نیز با واگذاری ریسمان اصلی به مرورگر برای انجام کارهای دیگر، هر تابع [`async`](/en-US/docs/Web/JavaScript/Reference/Statements/async_function) را به یک وظیفه تبدیل می‌کند و اجرا پس از resolve شدن promise بازگشتی ادامه می‌یابد.
 
-The two methods have similar functionality but different levels of control. `scheduler.postTask()` is more configurable — for example, it allows task priority to be explicitly set and task cancellation via an [`AbortSignal`](/en-US/docs/Web/API/AbortSignal). `scheduler.yield()` on the other hand is simpler and can be `await`ed in any `async` function without having to provide a followup task in another function.
+این دو متد عملکرد مشابهی دارند اما سطح کنترل متفاوتی ارائه می‌دهند. `scheduler.postTask()` پیکربندی‌پذیرتر است؛ برای مثال، امکان تعیین صریح اولویت وظیفه و لغو وظیفه را از طریق [`AbortSignal`](/en-US/docs/Web/API/AbortSignal) فراهم می‌کند. از سوی دیگر، `scheduler.yield()` ساده‌تر است و می‌توان در هر تابع `async` آن را `await` کرد، بدون آنکه لازم باشد وظیفه بعدی در تابع دیگری تعریف شود.
 
 ### `scheduler.yield()`
 
-To break up long-running JavaScript tasks so they don't block the main thread, insert a `scheduler.yield()` call to temporarily yield the main thread back to the browser, which creates a task to continue execution where it left off.
+برای این‌که وظایف طولانی‌مدت جاوااسکریپت را به بخش‌های کوچک‌تری تقسیم کنید تا ریسمان اصلی را مسدود نکنند، یک فراخوانی `scheduler.yield()` در کد قرار دهید تا ریسمان اصلی به‌طور موقت به مرورگر بازگردانده شود. مرورگر نیز وظیفه‌ای می‌سازد تا اجرا از همان جایی که متوقف شده ادامه یابد.
 
 ```js
 async function slowTask() {
@@ -41,19 +35,19 @@ async function slowTask() {
 }
 ```
 
-`scheduler.yield()` returns a promise that can be awaited to continue execution. This allows work belonging to the same function to be included there, without blocking the main thread when the function runs.
+`scheduler.yield()` یک promise برمی‌گرداند که می‌توان برای ادامه اجرا منتظر آن ماند. این امکان می‌دهد کارهای مربوط به همان تابع در همان‌جا ادامه پیدا کنند، بدون آن‌که هنگام اجرای تابع، ریسمان اصلی مسدود شود.
 
-`scheduler.yield()` takes no arguments. The task that triggers its continuation has a default [`user-visible`](#user-visible) priority; however, if `scheduler.yield()` is called within a `scheduler.postTask()` callback, it will [inherit the priority of the surrounding task](/en-US/docs/Web/API/Scheduler/yield#inheriting_task_priorities).
+`scheduler.yield()` هیچ آرگومانی نمی‌گیرد. وظیفه‌ای که ادامه اجرای آن را فعال می‌کند، به‌طور پیش‌فرض اولویت [`user-visible`](#user-visible) دارد؛ با این حال، اگر `scheduler.yield()` درون یک callback متعلق به `scheduler.postTask()` فراخوانده شود، [اولویت وظیفه‌ی فراگیر را به ارث می‌برد](/en-US/docs/Web/API/Scheduler/yield#inheriting_task_priorities).
 
 ### `scheduler.postTask()`
 
-When `scheduler.postTask()` is called with no arguments, it creates a task with a default [`user-visible`](#user-visible) priority that cannot be aborted or have its priority changed.
+وقتی `scheduler.postTask()` بدون آرگومان فراخوانده شود، وظیفه‌ای با اولویت پیش‌فرض [`user-visible`](#user-visible) می‌سازد که نه می‌توان آن را لغو کرد و نه اولویت آن را تغییر داد.
 
 ```js
 const promise = scheduler.postTask(myTask);
 ```
 
-Because the method returns a promise, you can wait on its resolution asynchronously using [`then()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then), and catch errors thrown by the task callback function (or when the task is aborted) using [`catch`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/catch). The callback function can be any kind of function (below we demonstrate an arrow function).
+چون این متد یک promise برمی‌گرداند، می‌توانید با استفاده از [`then()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then) به‌صورت ناهمگام منتظر resolve شدن آن بمانید و خطاهای پرتاب‌شده توسط تابع callback وظیفه (یا خطای مربوط به لغو وظیفه) را با [`catch`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/catch) بگیرید. تابع callback می‌تواند هر نوع تابعی باشد (در ادامه یک تابع پیکانی نشان داده شده است).
 
 ```js
 scheduler
@@ -64,7 +58,7 @@ scheduler
   .catch((error) => console.error(`Error: ${error}`));
 ```
 
-The same task might be waited on using `await`/`async` as shown below (note, this is run in an {{Glossary("IIFE", "Immediately Invoked Function Expression (IIFE)")}}):
+برای همین کار می‌توان از `await`/`async` نیز استفاده کرد؛ چنان‌که در پایین نشان داده شده است (توجه کنید که این نمونه درون یک {{Glossary("IIFE", "Immediately Invoked Function Expression (IIFE)")}} اجرا می‌شود):
 
 ```js
 (async () => {
@@ -78,17 +72,13 @@ The same task might be waited on using `await`/`async` as shown below (note, thi
 })();
 ```
 
-You can also specify an options object to the `postTask()` method if you want to change the default behavior.
-The options are:
+اگر بخواهید رفتار پیش‌فرض را تغییر دهید، می‌توانید یک شیء options نیز به متد `postTask()` بدهید. این گزینه‌ها عبارت‌اند از:
 
-- `priority` This allows you to specify a particular immutable priority.
-  Once set, the priority cannot be changed.
-- `signal` This allows you to specify a signal, which may be either a {{domxref("TaskSignal")}} or {{domxref("AbortSignal")}}
-  The signal is associated with a controller, which can be used to abort the task.
-  A {{domxref("TaskSignal")}} can also be used to set and change the task priority if the [task is mutable](#mutable_and_immutable_task_priority).
-- `delay` This allows you to specify the delay before the task is added for scheduling, in milliseconds.
+- `priority`: این گزینه به شما امکان می‌دهد یک اولویت خاص و تغییرناپذیر تعیین کنید. پس از تعیین، اولویت دیگر قابل تغییر نیست.
+- `signal`: این گزینه به شما امکان می‌دهد یک سیگنال مشخص کنید؛ این سیگنال می‌تواند یک {{domxref("TaskSignal")}} یا {{domxref("AbortSignal")}} باشد. سیگنال به یک کنترل‌کننده مرتبط است که می‌توان از آن برای لغو وظیفه استفاده کرد. همچنین اگر [وظیفه تغییرپذیر باشد](#mutable_and_immutable_task_priority)، می‌توان از {{domxref("TaskSignal")}} برای تنظیم و تغییر اولویت وظیفه استفاده کرد.
+- `delay`: این گزینه به شما امکان می‌دهد تأخیر پیش از افزوده‌شدن وظیفه به زمان‌بندی را بر حسب میلی‌ثانیه مشخص کنید.
 
-The same example as above with a priority option would look like this:
+مثال بالا با یک گزینه `priority` به این شکل خواهد بود:
 
 ```js
 scheduler
@@ -97,47 +87,40 @@ scheduler
   .catch((error) => console.error(`Error: ${error}`)); // Log any errors
 ```
 
-### Task priorities
+## اولویت‌های وظیفه
 
-Scheduled tasks are run in priority order, followed by the order that they were added to the scheduler queue.
+وظایف زمان‌بندی‌شده ابتدا بر اساس اولویت اجرا می‌شوند و سپس بر اساس ترتیبی که به صف زمان‌بند اضافه شده‌اند.
 
-There are just three priorities, which are listed below (ordered from highest to lowest):
+فقط سه سطح اولویت وجود دارد که در ادامه از بالاترین به پایین‌ترین فهرست شده‌اند:
 
 - `user-blocking`
-  - : Tasks that stop users from interacting with the page.
-    This includes rendering the page to the point where it can be used, or responding to user input.
+  - : وظایفی که مانع تعامل کاربر با صفحه می‌شوند؛ از جمله رندر کردن صفحه تا حدی که قابل استفاده باشد، یا پاسخ به ورودی کاربر.
 
 - `user-visible`
-  - : Tasks that are visible to the user but not necessarily blocking user actions.
-    This might include rendering non-essential parts of the page, such as non-essential images or animations.
+  - : وظایفی که برای کاربر قابل مشاهده‌اند اما لزوماً مانع اقدام‌های کاربر نمی‌شوند؛ مانند رندر کردن بخش‌های غیرضروری صفحه، مثل تصاویر یا انیمیشن‌های غیرضروری.
 
-    This is the default priority for `scheduler.postTask()` and `scheduler.yield()`.
+    این اولویت پیش‌فرض برای `scheduler.postTask()` و `scheduler.yield()` است.
 
 - `background`
-  - : Tasks that are not time-critical.
-    This might include log processing or initializing third party libraries that aren't required for rendering.
+  - : وظایفی که حساس به زمان نیستند؛ مانند پردازش لاگ‌ها یا مقداردهی اولیه کتابخانه‌های شخص ثالثی که برای رندر کردن صفحه ضروری نیستند.
 
-### Mutable and immutable task priority
+### اولویت وظیفه تغییرپذیر و تغییرناپذیر
 
-There are many use cases where the task priority never needs to change, while for others it does.
-For example fetching an image might change from a `background` task to `user-visible` as a carousel is scrolled into the viewing area.
+بسیاری از موارد استفاده وجود دارند که در آن‌ها هرگز نیازی به تغییر اولویت وظیفه نیست، در حالی که در موارد دیگر این تغییر لازم است. برای مثال، وقتی یک کاروسل به محدوده دید اسکرول می‌شود، اولویت دریافت تصویر ممکن است از یک وظیفه `background` به `user-visible` تغییر کند.
 
-Task priorities can be set as static (immutable) or dynamic (modifiable) depending on the arguments passed to {{domxref('Scheduler.postTask()')}}.
+بسته به آرگومان‌هایی که به {{domxref('Scheduler.postTask()')}} داده می‌شود، اولویت وظیفه می‌تواند ایستا (تغییرناپذیر) یا پویا (قابل تغییر) باشد.
 
-Task priority is immutable if a value is specified in the `options.priority` argument.
-The given value will be used for the task priority and cannot be changed.
+اگر در آرگومان `options.priority` مقداری مشخص شود، اولویت وظیفه تغییرناپذیر است. مقدار داده‌شده برای اولویت وظیفه استفاده می‌شود و نمی‌توان آن را تغییر داد.
 
-The priority is modifiable only if a {{domxref("TaskSignal")}} is passed to the `options.signal` argument **and** `options.priority` is **not set**.
-In this case the task will take its initial priority from the `signal` priority, and the priority can subsequently be changed by calling {{domxref("TaskController.setPriority()")}} on the controller associated with the signal.
+اولویت فقط زمانی قابل تغییر است که یک {{domxref("TaskSignal")}} به آرگومان `options.signal` داده شود **و** `options.priority` تنظیم نشده باشد. در این حالت، وظیفه اولویت اولیه خود را از اولویت سیگنال می‌گیرد و بعداً می‌توان با فراخواندن {{domxref("TaskController.setPriority()")}} روی کنترل‌کننده مرتبط با آن سیگنال، اولویت را تغییر داد.
 
-If the priority is not set with `options.priority` or by passing a {{domxref("TaskSignal")}} to `options.signal` then it defaults to `user-visible` (and is by definition immutable).
+اگر اولویت نه با `options.priority` تنظیم شده باشد و نه با دادن یک {{domxref("TaskSignal")}} به `options.signal`، آن‌گاه مقدار پیش‌فرض `user-visible` خواهد بود (و بنا به تعریف، تغییرناپذیر است).
 
-Note that a task that needs to be aborted must set `options.signal` to either {{domxref("TaskSignal")}} or {{domxref("AbortSignal")}}.
-However for a task with an immutable priority, {{domxref("AbortSignal")}} more clearly indicates that the task priority cannot be changed using the signal.
+توجه کنید که وظیفه‌ای که باید لغو شود، باید `options.signal` را روی {{domxref("TaskSignal")}} یا {{domxref("AbortSignal")}} تنظیم کند. با این حال، برای وظیفه‌ای با اولویت تغییرناپذیر، استفاده از {{domxref("AbortSignal")}} به‌وضوح بیشتری نشان می‌دهد که اولویت وظیفه را نمی‌توان با استفاده از سیگنال تغییر داد.
 
-Let's run through an example to demonstrate what we mean by this. When you have several tasks that are of roughly the same priority, it makes sense to break them down into separate functions to aid with maintenance, debugging, and many other reasons.
+برای روشن شدن منظور، مثالی را بررسی می‌کنیم. وقتی چند وظیفه دارید که اولویت تقریباً یکسانی دارند، منطقی است که آن‌ها را برای سهولت نگهداری، اشکال‌زدایی و دلایل بسیار دیگر به توابع جداگانه تقسیم کنید.
 
-For example:
+برای مثال:
 
 ```js
 function main() {
@@ -149,9 +132,9 @@ function main() {
 }
 ```
 
-However, this kind of structure doesn't help with main thread blocking. Since all five of the tasks are being run inside one main function, the browser runs them all as a single task.
+اما چنین ساختاری به رفع مسدود شدن ریسمان اصلی کمک نمی‌کند. چون هر پنج وظیفه درون یک تابع اصلی اجرا می‌شوند، مرورگر همه آن‌ها را به‌صورت یک وظیفه واحد اجرا می‌کند.
 
-To handle this, we tend to run a function periodically to get the code to _yield to the main thread_. This means that our code is split into multiple tasks, between the execution of which the browser is given the opportunity to handle high-priority tasks such as updating the UI. A common pattern for this function uses {{domxref("Window.setTimeout", "setTimeout()")}} to postpone execution into a separate task:
+برای مقابله با این مشکل، معمولاً تابعی را به‌صورت متناوب اجرا می‌کنیم تا کد به ریسمان اصلی «واگذار» شود. این یعنی کد ما به چند وظیفه تقسیم می‌شود و در فاصله اجرای این وظایف، مرورگر فرصت پیدا می‌کند وظایف با اولویت بالا مانند به‌روزرسانی رابط کاربری را انجام دهد. الگوی رایج برای چنین تابعی استفاده از {{domxref("Window.setTimeout", "setTimeout()")}} است تا اجرای ادامه کار به یک وظیفه جداگانه موکول شود:
 
 ```js
 function yield() {
@@ -161,7 +144,7 @@ function yield() {
 }
 ```
 
-This can be used inside a task runner pattern like so, to yield to the main thread after each task has been run:
+این تابع را می‌توان در الگوی task runner به شکل زیر استفاده کرد تا پس از اجرای هر وظیفه، کنترل به ریسمان اصلی بازگردانده شود:
 
 ```js
 async function main() {
@@ -182,7 +165,7 @@ async function main() {
 }
 ```
 
-To improve this further, we can use {{domxref("Scheduler.yield")}} when available to allow this code to continue executing ahead of other less critical tasks in the queue:
+برای بهبود بیشتر، می‌توانیم در صورت در دسترس بودن از {{domxref("Scheduler.yield")}} استفاده کنیم تا این کد بتواند پیش از سایر وظایف کم‌اهمیت‌تر در صف به اجرا ادامه دهد:
 
 ```js
 function yield() {
@@ -198,32 +181,30 @@ function yield() {
 }
 ```
 
-## Interfaces
+## رابط‌ها
 
 - {{domxref("Scheduler")}}
-  - : Contains the {{domxref('Scheduler.postTask', 'postTask()')}} and {{domxref('Scheduler.yield', 'yield()')}} methods for adding prioritized tasks to be scheduled.
-    An instance of this interface is available on the {{domxref("Window")}} or {{domxref("WorkerGlobalScope")}} global objects (`globalThis.scheduler`).
+  - : شامل متدهای {{domxref('Scheduler.postTask', 'postTask()')}} و {{domxref('Scheduler.yield', 'yield()')}} برای افزودن وظایف اولویت‌دار به زمان‌بندی است. نمونه‌ای از این رابط روی شیءهای سراسری {{domxref("Window")}} یا {{domxref("WorkerGlobalScope")}} در دسترس است (`globalThis.scheduler`).
 - {{domxref("TaskController")}}
-  - : Supports both aborting a task and changing its priority.
+  - : از لغو یک وظیفه و تغییر اولویت آن پشتیبانی می‌کند.
 - {{domxref("TaskSignal")}}
-  - : A signal object that allows you to abort a task and change its priority, if required, using a {{domxref("TaskController")}} object.
+  - : یک شیء سیگنال که با استفاده از یک شیء {{domxref("TaskController")}} به شما امکان می‌دهد در صورت نیاز وظیفه‌ای را لغو کنید و اولویت آن را تغییر دهید.
 - {{domxref("TaskPriorityChangeEvent")}}
-  - : The interface for the {{domxref("TaskSignal/prioritychange_event","prioritychange")}} event, which is sent when the priority for a task is changed.
+  - : رابط مربوط به رویداد {{domxref("TaskSignal/prioritychange_event","prioritychange")}} که هنگام تغییر اولویت یک وظیفه ارسال می‌شود.
 
 > [!NOTE]
-> If the [task priority](#task_priorities) never needs to be changed, you can use an {{domxref("AbortController")}} and its associated {{domxref("AbortSignal")}} instead of {{domxref("TaskController")}} and {{domxref("TaskSignal")}}.
+> اگر [اولویت وظیفه](#task_priorities) هرگز نیازی به تغییر ندارد، می‌توانید به‌جای {{domxref("TaskController")}} و {{domxref("TaskSignal")}} از {{domxref("AbortController")}} و {{domxref("AbortSignal")}} مرتبط با آن استفاده کنید.
 
-### Extensions to other interfaces
+### توسعه سایر رابط‌ها
 
-- {{domxref("Window.scheduler")}} and {{domxref("WorkerGlobalScope.scheduler")}}
-  - : These properties are the entry points for using the `Scheduler.postTask()` method in a window or a worker scope, respectively.
+- {{domxref("Window.scheduler")}} و {{domxref("WorkerGlobalScope.scheduler")}}
+  - : این ویژگی‌ها نقاط ورود برای استفاده از متد `Scheduler.postTask()` به‌ترتیب در محدوده (scope) یک پنجره یا یک worker هستند.
 
-## Examples
+## مثال‌ها
 
-Note that the examples below use `myLog()` to write to a text area.
-The code for the log area and method is generally hidden to not distract from more relevant code.
+توجه کنید که مثال‌های زیر از `myLog()` برای نوشتن در یک ناحیه متنی استفاده می‌کنند. کد مربوط به ناحیه لاگ و این متد معمولاً پنهان شده تا حواس را از کدهای مرتبط‌تر پرت نکند.
 
-```html
+```html hidden
 <textarea id="log"></textarea>
 ```
 
@@ -234,7 +215,7 @@ The code for the log area and method is generally hidden to not distract from mo
 }
 ```
 
-```js
+```js hidden
 // hidden logger code - simplifies example
 let log = document.getElementById("log");
 function myLog(text) {
@@ -242,11 +223,11 @@ function myLog(text) {
 }
 ```
 
-### Feature checking
+### بررسی پشتیبانی از ویژگی
 
-Check whether prioritized task scheduling is supported by testing for the `scheduler` property in the global scope.
+برای بررسی پشتیبانی از زمان‌بندی وظایف اولویت‌دار، وجود خاصیت `scheduler` را در محدوده سراسری (global scope) آزمایش کنید.
 
-The code below prints "Feature: Supported" if the API is supported on this browser.
+کد زیر اگر API در این مرورگر پشتیبانی شود، عبارت «Feature: Supported» را چاپ می‌کند.
 
 ```html hidden
 <textarea id="log"></textarea>
@@ -278,10 +259,9 @@ if ("scheduler" in globalThis) {
 
 {{EmbedLiveSample('Feature checking','400px','70px')}}
 
-### Basic usage
+### استفاده پایه
 
-Tasks are posted using {{domxref('Scheduler.postTask()')}}, specifying a callback function (task) in the first argument, and an optional second argument that can be used to specify a task priority, signal, and/or delay.
-The method returns a {{jsxref("Promise")}} that resolves with the return value of the callback function, or rejects with either an abort error or an error thrown in the function.
+وظایف با استفاده از {{domxref('Scheduler.postTask()')}} ارسال می‌شوند؛ تابع callback (وظیفه) در آرگومان اول مشخص می‌شود و آرگومان دوم اختیاری است و می‌توان از آن برای تعیین اولویت وظیفه، سیگنال و/یا تأخیر استفاده کرد. این متد یک {{jsxref("Promise")}} برمی‌گرداند که با مقدار بازگشتی تابع callback resolve می‌شود یا با خطای لغو (abort error) یا خطایی که در تابع پرتاب شده reject می‌شود.
 
 ```html hidden
 <textarea id="log"></textarea>
@@ -301,9 +281,7 @@ function myLog(text) {
 }
 ```
 
-Because it returns a promise, {{domxref('Scheduler.postTask()')}} can be [chained with other promises](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise#chained_promises).
-Below we show how to wait on the promise to resolve using [`then`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then).
-This uses the default priority (`user-visible`).
+چون این متد یک promise برمی‌گرداند، {{domxref('Scheduler.postTask()')}} را می‌توان با [سایر promiseها زنجیره کرد](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise#chained_promises). در پایین نشان می‌دهیم که چگونه با استفاده از [`then`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then) منتظر resolve شدن promise بمانیم. این کار از اولویت پیش‌فرض (`user-visible`) استفاده می‌کند.
 
 ```js
 // A function that defines a task
@@ -318,8 +296,7 @@ if ("scheduler" in this) {
 }
 ```
 
-The method can also be used with [`await`](/en-US/docs/Web/JavaScript/Reference/Operators/await) inside an [async function](/en-US/docs/Web/JavaScript/Reference/Statements/async_function).
-The code below shows how you might use this approach to wait on a `user-blocking` task.
+این متد را می‌توان با [`await`](/en-US/docs/Web/JavaScript/Reference/Operators/await) درون یک [تابع async](/en-US/docs/Web/JavaScript/Reference/Statements/async_function) نیز استفاده کرد. کد زیر نشان می‌دهد که چگونه می‌توانید از این روش برای منتظر ماندن روی یک وظیفه `user-blocking` استفاده کنید.
 
 ```js
 function myTask2() {
@@ -335,8 +312,7 @@ async function runTask2() {
 runTask2();
 ```
 
-In some cases you might not need to wait on completion at all.
-For simplicity many of the examples here simply log the result as the task executes.
+در برخی موارد ممکن است اصلاً نیازی به منتظر ماندن برای پایان کار نداشته باشید. برای سادگی، بسیاری از مثال‌های این صفحه، نتیجه را همان هنگام اجرای وظیفه در لاگ می‌نویسند.
 
 ```js
 // A function that defines a task
@@ -350,19 +326,15 @@ if ("scheduler" in this) {
 }
 ```
 
-The log below shows the output of the three tasks above.
-Note that the order they are run depends on the priority first, and then the declaration order.
+لاگ زیر خروجی سه وظیفه بالا را نشان می‌دهد. توجه کنید که ترتیب اجرای آن‌ها ابتدا بر اساس اولویت و سپس بر اساس ترتیب اعلان است.
 
 {{EmbedLiveSample('Basic usage','400px','170px')}}
 
-### Permanent priorities
+### اولویت‌های دائمی
 
-[Task priorities](#task_priorities) may be set using `priority` parameter in the optional second argument.
-Priorities that are set in this way are [immutable](#mutable_and_immutable_task_priority) (cannot be changed).
+[اولویت‌های وظیفه](#task_priorities) را می‌توان با استفاده از پارامتر `priority` در آرگومان اختیاری دوم تنظیم کرد. اولویت‌هایی که به این روش تنظیم می‌شوند [تغییرناپذیر](#mutable_and_immutable_task_priority) هستند و نمی‌توان آن‌ها را تغییر داد.
 
-Below we post two groups of three tasks, each member in reverse order of priority.
-The final task has the default priority.
-When run, each task simply logs it's expected order (we're not waiting on the result because we don't need to in order to show execution order).
+در ادامه دو گروه سه‌تایی از وظایف ارسال می‌کنیم که هر عضو آن‌ها به ترتیب معکوس اولویت قرار دارد. آخرین وظیفه اولویت پیش‌فرض دارد. هنگام اجرا، هر وظیفه صرفاً ترتیب مورد انتظار خود را در لاگ می‌نویسد (برای نمایش ترتیب اجرا منتظر نتیجه نمی‌مانیم، چون به آن نیازی نیست).
 
 ```js hidden
 let log = document.getElementById("log");
@@ -399,24 +371,22 @@ if ("scheduler" in this) {
 }
 ```
 
-The output below shows that the tasks are executed in priority order, and then declaration order.
+خروجی زیر نشان می‌دهد که وظایف ابتدا بر اساس اولویت و سپس بر اساس ترتیب اعلان اجرا می‌شوند.
 
 {{EmbedLiveSample("Permanent priorities",'400px','170px')}}
 
-### Changing task priorities
+### تغییر اولویت وظایف
 
-[Task priorities](#task_priorities) can also take their initial value from a {{domxref("TaskSignal")}} passed to `postTask()` in the optional second argument.
-If set in this way, the priority of the task [can then be changed](#mutable_and_immutable_task_priority) using the controller associated with the signal.
+[اولویت‌های وظیفه](#task_priorities) همچنین می‌توانند مقدار اولیه خود را از یک {{domxref("TaskSignal")}} بگیرند که در آرگومان اختیاری دوم به `postTask()` داده می‌شود. اگر اولویت به این روش تنظیم شود، می‌توان اولویت وظیفه را [سپس با استفاده از کنترل‌کننده مرتبط با سیگنال تغییر داد](#mutable_and_immutable_task_priority).
 
 > [!NOTE]
-> Setting and changing task priorities using a signal only works when the `options.priority` argument to `postTask()` is not set, and when the `options.signal` is a {{domxref("TaskSignal")}} (and not an {{domxref("AbortSignal")}}).
+> تنظیم و تغییر اولویت وظیفه با استفاده از سیگنال فقط زمانی کار می‌کند که آرگومان `options.priority` به `postTask()` تنظیم نشده باشد و `options.signal` یک {{domxref("TaskSignal")}} باشد (نه یک {{domxref("AbortSignal")}}).
 
-The code below first shows how to create a {{domxref("TaskController")}}, setting the initial priority of its signal to `user-blocking` in the {{domxref("TaskController.TaskController", "TaskController()")}} constructor.
+کد زیر ابتدا نشان می‌دهد که چگونه یک {{domxref("TaskController")}} بسازیم و اولویت اولیه سیگنال آن را در سازنده {{domxref("TaskController.TaskController", "TaskController()")}} روی `user-blocking` تنظیم کنیم.
 
-The code then uses `addEventListener()` to add an event listener to the controller's signal (we could alternatively use the `TaskSignal.onprioritychange` property to add an event handler).
-The event handler uses {{domxref('TaskPriorityChangeEvent.previousPriority', 'previousPriority')}} on the event to get the original priority and {{domxref("TaskSignal.priority")}} on the event target to get the new/current priority.
+سپس کد از `addEventListener()` برای افزودن یک شنونده رویداد به سیگنال کنترل‌کننده استفاده می‌کند (در عوض می‌توانستیم از خاصیت `TaskSignal.onprioritychange` برای افزودن یک کنترل‌کننده رویداد استفاده کنیم). کنترل‌کننده رویداد از {{domxref('TaskPriorityChangeEvent.previousPriority', 'previousPriority')}} روی رویداد برای به دست آوردن اولویت قبلی و از {{domxref("TaskSignal.priority")}} روی هدف رویداد برای به دست آوردن اولویت جدید/فعلی استفاده می‌کند.
 
-The task is then posted, passing in the signal, and then we immediately change the priority to `background` by calling {{domxref("TaskController.setPriority()")}} on the controller.
+سپس وظیفه با دادن سیگنال ارسال می‌شود و بلافاصله اولویت را با فراخواندن {{domxref("TaskController.setPriority()")}} روی کنترل‌کننده به `background` تغییر می‌دهیم.
 
 ```html hidden
 <textarea id="log"></textarea>
@@ -457,15 +427,13 @@ if ("scheduler" in this) {
 }
 ```
 
-The output below demonstrates that the priority was successfully changed to `background` from `user-blocking`.
-Note that in this case the priority is changed before the task is executed, but it could equally have been changed while the task was running.
+خروجی زیر نشان می‌دهد که اولویت با موفقیت از `user-blocking` به `background` تغییر کرده است. توجه کنید که در این مورد، اولویت پیش از اجرای وظیفه تغییر می‌کند؛ اما به همان اندازه می‌توانست هنگام اجرای وظیفه نیز تغییر کند.
 
 {{EmbedLiveSample("Changing task priorities",'400px','130px')}}
 
-### Aborting tasks
+### لغو وظایف
 
-Tasks can be aborted using either {{domxref("TaskController")}} and {{domxref("AbortController")}}, in exactly the same way.
-The only difference is that you must use {{domxref("TaskController")}} if you also want to set the task priority.
+وظایف را می‌توان دقیقاً به یک روش، با {{domxref("TaskController")}} یا {{domxref("AbortController")}} لغو کرد. تنها تفاوت این است که اگر بخواهید اولویت وظیفه را نیز تنظیم کنید، باید از {{domxref("TaskController")}} استفاده کنید.
 
 ```html hidden
 <textarea id="log"></textarea>
@@ -485,10 +453,7 @@ function myLog(text) {
 }
 ```
 
-The code below creates a controller and passes its signal to the task.
-The task is then immediately aborted.
-This causes the promise to be rejected with an `AbortError`, which is caught in the `catch` block and logged.
-Note that we could also have listened for the {{domxref("AbortSignal/abort_event", "abort")}} event fired on the {{domxref("TaskSignal")}} or {{domxref("AbortSignal")}} and logged the abort there.
+کد زیر یک کنترل‌کننده می‌سازد و سیگنال آن را به وظیفه می‌دهد. سپس وظیفه بلافاصله لغو می‌شود. این کار باعث می‌شود promise با یک `AbortError` reject شود که در بلوک `catch` گرفته و در لاگ نوشته می‌شود. توجه کنید که می‌توانستیم به رویداد {{domxref("AbortSignal/abort_event", "abort")}} که روی {{domxref("TaskSignal")}} یا {{domxref("AbortSignal")}} رخ می‌دهد نیز گوش دهیم و لغو شدن را آن‌جا ثبت کنیم.
 
 ```js
 if ("scheduler" in this) {
@@ -507,15 +472,13 @@ if ("scheduler" in this) {
 }
 ```
 
-The log below shows the aborted task.
+لاگ زیر وظیفه لغوشده را نشان می‌دهد.
 
 {{EmbedLiveSample("Aborting tasks",'400px','100px')}}
 
-### Delaying tasks
+### تأخیر انداختن وظایف
 
-Tasks can be delayed by specifying an integer number of milliseconds in the `options.delay` parameter to `postTask()`.
-This effectively adds the task to the prioritized queue on a timeout, as might be created using {{domxref("Window.setTimeout", "setTimeout()")}}.
-The `delay` is the minimum amount of time before the task is added to the scheduler; it may be longer.
+وظایف را می‌توان با تعیین یک عدد صحیح میلی‌ثانیه در پارامتر `options.delay` در `postTask()` به تأخیر انداخت. این کار عملاً وظیفه را با یک تأخیر زمانی به صف اولویت‌دار اضافه می‌کند؛ درست مانند چیزی که ممکن است با {{domxref("Window.setTimeout", "setTimeout()")}} ساخته شود. `delay` کمترین مقدار زمانی است که پیش از افزوده‌شدن وظیفه به زمان‌بند می‌گذرد و ممکن است بیشتر از آن نیز طول بکشد.
 
 ```html hidden
 <textarea id="log"></textarea>
@@ -535,7 +498,7 @@ function myLog(text) {
 }
 ```
 
-The code below shows two tasks added (as arrow functions) with a delay.
+کد زیر دو وظیفه را نشان می‌دهد که (به‌صورت تابع پیکانی) با تأخیر اضافه شده‌اند.
 
 ```js
 if ("scheduler" in this) {
@@ -549,20 +512,19 @@ if ("scheduler" in this) {
 }
 ```
 
-Refresh the page.
-Note that the second string appears in log after about 2 seconds.
+صفحه را تازه‌سازی کنید. توجه کنید که رشته دوم پس از حدود ۲ ثانیه در لاگ ظاهر می‌شود.
 
 {{EmbedLiveSample("Delaying tasks",'400px','100px')}}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Building a Faster Web Experience with the postTask Scheduler](https://medium.com/airbnb-engineering/building-a-faster-web-experience-with-the-posttask-scheduler-276b83454e91) on the Airbnb blog (2021)
-- [Optimizing long tasks](https://web.dev/articles/optimize-long-tasks) on web.dev (2022)
+- [Building a Faster Web Experience with the postTask Scheduler](https://medium.com/airbnb-engineering/building-a-faster-web-experience-with-the-posttask-scheduler-276b83454e91) در وبلاگ Airbnb (۲۰۲۱)
+- [Optimizing long tasks](https://web.dev/articles/optimize-long-tasks) در web.dev (۲۰۲۲)
