@@ -1,11 +1,5 @@
 ---
 title: "Navigator: javaEnabled() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/javaEnabled"
-status: "needs-translation"
----
-
----
-title: "Navigator: javaEnabled() method"
 short-title: javaEnabled()
 slug: Web/API/Navigator/javaEnabled
 page-type: web-api-instance-method
@@ -14,23 +8,23 @@ browser-compat: api.Navigator.javaEnabled
 
 {{APIRef("HTML DOM")}}
 
-This method always returns false.
+این متد همیشه `false` برمی‌گرداند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 javaEnabled()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ پارامتری ندارد.
 
-### Return value
+### مقدار بازگشتی
 
-The boolean value `false`.
+مقدار بولی `false` است.
 
-## Examples
+## مثال‌ها
 
 ```js
 if (window.navigator.javaEnabled()) {
@@ -38,10 +32,10 @@ if (window.navigator.javaEnabled()) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
