@@ -1,7 +1,5 @@
 ---
 title: "NotificationEvent: notification property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NotificationEvent/notification"
-status: "needs-translation"
 ---
 
 ---
@@ -14,13 +12,13 @@ browser-compat: api.NotificationEvent.notification
 
 {{APIRef("Web Notifications")}}{{AvailableInWorkers("service")}}
 
-The **`notification`** read-only property of the {{domxref("NotificationEvent")}} interface returns the instance of the {{domxref("Notification")}} that was clicked to fire the event. The {{domxref("Notification")}} provides read-only access to many properties that were set at the instantiation time of the Notification such as `tag` and `data` attributes that allow you to store information for deferred use in the `notificationclick` event.
+خاصیت فقط‌خواندنی **`notification`** از رابط {{domxref("NotificationEvent")}}، نمونه‌ای از {{domxref("Notification")}} را برمی‌گرداند که برای فعال‌کردن رویداد، روی آن کلیک شده است. {{domxref("Notification")}} دسترسی فقط‌خواندنی به ویژگی‌های زیادی فراهم می‌کند که در زمان نمونه‌سازی Notification تنظیم شده‌اند، مانند ویژگی‌های `tag` و `data` که به شما امکان می‌دهند اطلاعاتی را برای استفادهٔ تأخیری در رویداد `notificationclick` ذخیره کنید.
 
-## Value
+## مقدار
 
-A {{domxref("Notification")}} object.
+یک شیء {{domxref("Notification")}}.
 
-## Examples
+## نمونه‌ها
 
 ```js
 self.addEventListener("notificationclick", (event) => {
@@ -49,10 +47,10 @@ self.addEventListener("notificationclick", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
