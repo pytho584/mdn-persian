@@ -1,11 +1,5 @@
 ---
 title: "PerformanceLongAnimationFrameTiming: blockingDuration property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceLongAnimationFrameTiming/blockingDuration"
-status: "needs-translation"
----
-
----
-title: "PerformanceLongAnimationFrameTiming: blockingDuration property"
 short-title: blockingDuration
 slug: Web/API/PerformanceLongAnimationFrameTiming/blockingDuration
 page-type: web-api-instance-property
@@ -16,62 +10,62 @@ browser-compat: api.PerformanceLongAnimationFrameTiming.blockingDuration
 
 {{SeeCompatTable}}{{APIRef("Performance API")}}
 
-The **`blockingDuration`** read-only property of the {{domxref("PerformanceLongAnimationFrameTiming")}} interface returns a {{domxref("DOMHighResTimeStamp")}} indicating the total time in milliseconds for which the main thread was blocked from responding to high priority tasks, such as user input.
+ویژگی فقط‌خواندنی **`blockingDuration`** در رابط {{domxref("PerformanceLongAnimationFrameTiming")}} یک {{domxref("DOMHighResTimeStamp")}} برمی‌گرداند که نشان‌دهندهٔ مجموع زمان (به میلی‌ثانیه) است که در آن، ترد اصلی از پاسخ‌دهی به وظایف با اولویت بالا، مانند ورودی کاربر، مسدود شده است.
 
-## Description
+## توضیحات
 
-`blockingDuration` is calculated by taking all the [long tasks](/en-US/docs/Web/API/PerformanceLongTaskTiming#description) within the LoAF that have a `duration` of more than `50ms`, subtracting `50ms` from each, adding the rendering time to the longest task time, and summing the results. Let's look at an example to clarify what this means.
+`blockingDuration` با در نظر گرفتن همهٔ [کارهای طولانی](/en-US/docs/Web/API/PerformanceLongTaskTiming#description) درون LoAF که `duration` آن‌ها بیش از `50ms` است محاسبه می‌شود؛ برای هر کدام `50ms` کم می‌شود، زمان رندر به زمان طولانی‌ترین کار اضافه می‌شود و نتایج با هم جمع می‌شوند. برای روشن شدن منظور، به یک مثال نگاه می‌کنیم.
 
-Consider a JavaScript file that takes a total of 145ms to process. After the first major chunk of the script is processed in 65ms, we could consider breaking the execution of the remaining script into a second task, with this second one taking 80ms to execute. Splitting the processing in this way is preferable to the complete script execution as one task because it gives the browser a chance to handle user interactions between tasks. This approach is known as **yielding**. As an example, you can yield by inserting a {{domxref("Window.setTimeout", "setTimeout()")}} after the first major chunk of the script is executed.
+فایل جاوااسکریپتی را در نظر بگیرید که پردازش آن در مجموع ۱۴۵ میلی‌ثانیه طول می‌کشد. پس از پردازش اولین بخش بزرگ اسکریپت در ۶۵ میلی‌ثانیه، می‌توان اجرای باقی‌ماندهٔ اسکریپت را به یک کار دوم تقسیم کرد که این کار دوم ۸۰ میلی‌ثانیه زمان می‌برد. این روش تقسیم‌بندی بهتر از اجرای کل اسکریپت به‌صورت یک کار واحد است، زیرا به مرورگر فرصت می‌دهد تا بین کارها با تعاملات کاربری برخورد کند. به این رویکرد **yielding** (واگذاری) می‌گویند. برای مثال، می‌توانید با قرار دادن یک {{domxref("Window.setTimeout", "setTimeout()")}} پس از اجرای اولین بخش بزرگ اسکریپت، واگذاری انجام دهید.
 
-There are three options to consider here in how the script might end up being processed:
+در این‌جا سه گزینه برای نحوهٔ پردازش اسکریپت وجود دارد:
 
-1. If we yield after the first 65ms, the browser can decide to render a frame before running the rest of the script.
-2. Alternatively, the browser could run the rest of the script first, and then render the frame.
-3. We could also decide **not** to yield and let the browser process the entire script as a single task.
+1. اگر پس از ۶۵ میلی‌ثانیه اول واگذاری کنیم، مرورگر می‌تواند تصمیم بگیرد قبل از اجرای بقیهٔ اسکریپت، یک فریم رندر کند.
+2. در مقابل، مرورگر می‌تواند ابتدا بقیهٔ اسکریپت را اجرا کند و سپس فریم را رندر کند.
+3. همچنین می‌توانیم تصمیم بگیریم که **واگذاری** انجام ندهیم و به مرورگر اجازه دهیم کل اسکریپت را به‌صورت یک کار واحد پردازش کند.
 
 > [!NOTE]
-> The browser generally tries to prioritize important tasks, such as user interactions and rendering new frames, over less important tasks it might have queued. The browser _tries_ to render a new frame every 16ms.
+> مرورگر معمولاً سعی می‌کند وظایف مهم، مانند تعاملات کاربر و رندر فریم‌های جدید، را بر وظایف کم‌اهمیت‌تری که ممکن است در صف داشته باشد اولویت دهد. مرورگر _تلاش می‌کند_ هر ۱۶ میلی‌ثانیه یک فریم جدید رندر کند.
 
-We mentioned earlier that the total processing time for the script is 145ms. Assuming the time for rendering the UI update is 10ms, the timings for the LoAFs in each of the three options are as follows:
+قبلاً اشاره کردیم که مجموع زمان پردازش اسکریپت ۱۴۵ میلی‌ثانیه است. با فرض اینکه زمان رندر به‌روزرسانی رابط کاربری ۱۰ میلی‌ثانیه باشد، زمان‌بندی LoAFها در هر یک از سه گزینه به صورت زیر است:
 
-| Option | `duration` (LoAF 1) | `blockingDuration` (LoAF1)        | `duration` (LoAF2) | `blockingDuration` (LoAF2) |
-| ------ | ------------------- | --------------------------------- | ------------------ | -------------------------- |
-| 1      | 65ms                | 15ms (65 - 50)                    | 80ms               | 40ms (80 + 10 - 50)        |
-| 2      | 145ms (65 + 80)     | 55ms ((65 - 50) + (80 + 10 - 50)) | n/a\*              | n/a\*                      |
-| 3      | 145ms (65 + 80)     | 105ms ((65 + 80) + 10 - 50)       | n/a\*              | n/a\*                      |
+| گزینه | `duration` (LoAF 1) | `blockingDuration` (LoAF1)      | `duration` (LoAF2) | `blockingDuration` (LoAF2) |
+| ----- | ------------------- | ------------------------------- | ------------------ | -------------------------- |
+| ۱     | 65ms                | 15ms (65 - 50)                  | 80ms               | 40ms (80 + 10 - 50)        |
+| ۲     | 145ms (65 + 80)     | 55ms ((65 - 50) + (80 + 10 - 50)) | n/a\*              | n/a\*                      |
+| ۳     | 145ms (65 + 80)     | 105ms ((65 + 80) + 10 - 50)     | n/a\*              | n/a\*                      |
 
-`*` In options 2 and 3, there is only a single LoAF.
+`*` در گزینه‌های ۲ و ۳، فقط یک LoAF وجود دارد.
 
-Note that the total `blockingDuration` in the first two options is the same (55ms) — in each case the browser has decided to split the work in different ways.
+توجه داشته باشید که مجموع `blockingDuration` در دو گزینهٔ اول یکسان است (55ms) — در هر دو حالت، مرورگر تصمیم گرفته است کار را به روش‌های متفاوتی تقسیم کند.
 
-Option 3, however, has a much longer `blockingDuration` because the browser is completely blocked and unable to interrupt the long task at all. This highlights the importance of optimizing long tasks by yielding — regardless of how the browser decides to handle the tasks, the blocking duration will still be less than if you don't yield at all.
+با این حال، گزینهٔ ۳ `blockingDuration` بسیار طولانی‌تری دارد، زیرا مرورگر کاملاً مسدود شده و اصلاً نمی‌تواند کار طولانی را قطع کند. این موضوع اهمیت بهینه‌سازی کارهای طولانی را با واگذاری برجسته می‌کند — صرف‌نظر از اینکه مرورگر چگونه تصمیم می‌گیرد کارها را مدیریت کند، مدت زمان مسدودسازی همچنان کمتر از حالتی خواهد بود که اصلاً واگذاری انجام ندهید.
 
-The difference between `duration` and `blockingDuration` of LoAFs can be summarized as follows:
+تفاوت بین `duration` و `blockingDuration` در LoAFها را می‌توان چنین خلاصه کرد:
 
-- `duration` is a measure of the LoAF's total response time, which is useful for understanding whether the frame's layout, painting, etc. took a long time.
-- `blockingDuration` is a measure of the total time the LoAF blocked the main thread from responding to high priority tasks, such as user interactions, which can cause the UI to feel [janky](/en-US/docs/Glossary/Jank). To put it another way, it is a measure of the effect the LoAF will have on responsiveness.
+- `duration` معیاری از کل زمان پاسخ LoAF است که برای درک اینکه آیا چیدمان، نقاشی و غیره فریم زمان زیادی برده است مفید است.
+- `blockingDuration` معیاری از کل زمانی است که LoAF ترد اصلی را از پاسخ‌دهی به وظایف با اولویت بالا، مانند تعاملات کاربر، مسدود کرده است؛ چیزی که می‌تواند باعث شود رابط کاربری [لگ‌دار](/en-US/docs/Glossary/Jank) احساس شود. به عبارت دیگر، معیاری از تأثیری است که LoAF بر پاسخ‌گویی خواهد داشت.
 
-The reason why the `blockingDuration` of each task is calculated as `duration - 50ms` is that response delays of above 50ms start to be perceptible by users. This threshold is when users start noticing sluggishness; therefore, the time above the 50ms mark is important to measure for determining the severity of jank. See [Total Blocking Time (TBT)](https://web.dev/articles/tbt) for more details.
+دلیل اینکه `blockingDuration` هر کار به صورت `duration - 50ms` محاسبه می‌شود این است که تأخیرهای پاسخ‌دهی بالای ۵۰ میلی‌ثانیه برای کاربران قابل درک می‌شوند. این آستانه، نقطه‌ای است که کاربران شروع به مشاهدهٔ کندی می‌کنند؛ بنابراین، زمان بالای علامت ۵۰ میلی‌ثانیه برای تعیین شدت لگ مهم است. برای جزئیات بیشتر به [Total Blocking Time (TBT)](https://web.dev/articles/tbt) مراجعه کنید.
 
-## Value
+## مقدار
 
-A {{domxref("DOMHighResTimeStamp")}}.
+یک {{domxref("DOMHighResTimeStamp")}}.
 
-## Examples
+## مثال‌ها
 
-See [Long animation frame timing](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing#examples) for examples related to the Long Animation Frames API.
+برای مثال‌های مرتبط با API فریم‌های انیمیشن طولانی، به [زمان‌بندی فریم انیمیشن طولانی](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Long animation frame timing](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing)
+- [زمان‌بندی فریم انیمیشن طولانی](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing)
 - {{domxref("PerformanceScriptTiming")}}
-- [Optimize long tasks](https://web.dev/articles/optimize-long-tasks) on web.dev (2024)
+- [بهینه‌سازی کارهای طولانی](https://web.dev/articles/optimize-long-tasks) در web.dev (2024)
