@@ -1,55 +1,47 @@
 ---
-title: "PerformanceLongTaskTiming"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceLongTaskTiming"
-status: "needs-translation"
----
-
----
 title: PerformanceLongTaskTiming
 slug: Web/API/PerformanceLongTaskTiming
 page-type: web-api-interface
-status:
-  - experimental
 browser-compat: api.PerformanceLongTaskTiming
 ---
 
 {{SeeCompatTable}}{{APIRef("Performance API")}}
 
-The **`PerformanceLongTaskTiming`** interface provides information about tasks that occupy the UI thread for 50 milliseconds or more.
+رابط **`PerformanceLongTaskTiming`** اطلاعاتی درباره وظایفی (tasks) ارائه می‌دهد که نخ UI (واسط کاربری) را به مدت ۵۰ میلی‌ثانیه یا بیشتر اشغال می‌کنند.
 
-## Description
+## توضیحات
 
-Long tasks that block the main thread for 50ms or more cause, among other issues:
+وظایف طولانی که نخ اصلی را به مدت ۵۰ میلی‌ثانیه یا بیشتر مسدود می‌کنند، علاوه بر مشکلات دیگر، موارد زیر را به همراه دارند:
 
-- Delayed {{glossary("Time to interactive")}} (TTI).
-- High/variable input latency.
-- High/variable event handling latency.
-- Janky animations and scrolling.
+- تأخیر در {{glossary("Time to interactive")}} (زمان تا تعاملی شدن) (TTI).
+- تأخیر ورودی بالا/متغیر.
+- تأخیر بالای/متغیر در مدیریت رویدادها.
+- انیمیشن‌ها و اسکرول‌های ناپایدار (janky).
 
-A long task is any uninterrupted period where the main UI thread is busy for 50ms or longer. Common examples include:
+یک وظیفه طولانی هر دوره بدون وقفه‌ای است که نخ اصلی UI به مدت ۵۰ میلی‌ثانیه یا بیشتر مشغول باشد. نمونه‌های رایج عبارتند از:
 
-- Long-running event handlers.
-- Expensive reflows and other re-renders.
-- Work the browser does between different turns of the event loop that exceeds 50 ms.
+- مدیریت‌کننده‌های رویداد طولانی‌مدت.
+- reflowهای پرهزینه و سایر رندرگیری‌های مجدد.
+- کارهایی که مرورگر بین نوبت‌های مختلف حلقه رویداد انجام می‌دهد و بیش از ۵۰ میلی‌ثانیه طول می‌کشند.
 
-Long tasks refer to "culprit browsing context container", or "the container" for short, which is the top-level page, {{HTMLElement("iframe")}}, {{HTMLElement("embed")}} or {{HTMLElement("object")}} that the task occurred within.
+وظایف طولانی به «ظرف زمینه مرورگر مقصر» (culprit browsing context container) یا به اختصار «ظرف» (container) اشاره دارد که همان صفحه سطح بالا، {{HTMLElement("iframe")}}، {{HTMLElement("embed")}} یا {{HTMLElement("object")}} است که وظیفه در آن رخ داده است.
 
-For tasks that don't occur within the top-level page and for figuring out which container is responsible for the long task, the {{domxref("TaskAttributionTiming")}} interface provides the `containerId`, `containerName` and `containerSrc` properties, which may provide more information about the source of the task.
+برای وظایفی که درون صفحه سطح بالا رخ نمی‌دهند و برای تشخیص اینکه کدام ظرف مسئول وظیفه طولانی است، رابط {{domxref("TaskAttributionTiming")}} ویژگی‌های `containerId`، `containerName` و `containerSrc` را ارائه می‌دهد که ممکن است اطلاعات بیشتری درباره منبع وظیفه فراهم کند.
 
-`PerformanceLongTaskTiming` inherits from {{domxref("PerformanceEntry")}}.
+`PerformanceLongTaskTiming` از {{domxref("PerformanceEntry")}} به ارث می‌برد.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-This interface extends the following {{domxref("PerformanceEntry")}} properties for long task timing performance entry types by qualifying them as follows:
+این رابط ویژگی‌های زیر را از {{domxref("PerformanceEntry")}} برای انواع ورودی زمان‌بندی وظیفه طولانی با شرایط زیر گسترش می‌دهد:
 
 - {{domxref("PerformanceEntry.duration")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a {{domxref("DOMHighResTimeStamp")}} representing the elapsed time between the start and end of the task, with a 1ms granularity.
+  - : یک {{domxref("DOMHighResTimeStamp")}} را برمی‌گرداند که زمان سپری شده بین شروع و پایان وظیفه را با دقت ۱ میلی‌ثانیه نشان می‌دهد.
 - {{domxref("PerformanceEntry.entryType")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Always returns `"longtask"`
+  - : همیشه `"longtask"` را برمی‌گرداند.
 - {{domxref("PerformanceEntry.name")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns one of the following strings referring to the browsing context or frame that can be attributed to the long task:
+  - : یکی از رشته‌های زیر را برمی‌گرداند که به زمینه مرورگر یا فریمی اشاره دارد که می‌تواند به وظیفه طولانی نسبت داده شود:
     - `"cross-origin-ancestor"`
     - `"cross-origin-descendant"`
     - `"cross-origin-unreachable"`
@@ -60,23 +52,23 @@ This interface extends the following {{domxref("PerformanceEntry")}} properties 
     - `"self"`
     - `"unknown"`
 - {{domxref("PerformanceEntry.startTime")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a {{domxref("DOMHighResTimeStamp")}} representing the time when the task started.
+  - : یک {{domxref("DOMHighResTimeStamp")}} را برمی‌گرداند که زمان شروع وظیفه را نشان می‌دهد.
 
-This interface also supports the following properties:
+این رابط همچنین از ویژگی‌های زیر پشتیبانی می‌کند:
 
 - {{domxref("PerformanceLongTaskTiming.attribution")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a sequence of {{domxref('TaskAttributionTiming')}} instances.
+  - : یک دنباله از نمونه‌های {{domxref('TaskAttributionTiming')}} را برمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("PerformanceLongTaskTiming.toJSON()")}} {{Experimental_Inline}}
-  - : Returns a JSON representation of the `PerformanceLongTaskTiming` object.
+  - : یک نمایش JSON از شیء `PerformanceLongTaskTiming` را برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-### Getting long tasks
+### دریافت وظایف طولانی
 
-To get long task timing information, create a {{domxref("PerformanceObserver")}} instance and then call its [`observe()`](/en-US/docs/Web/API/PerformanceObserver/observe) method, passing in `"longtask"` as the value of the [`type`](/en-US/docs/Web/API/PerformanceEntry/entryType) option. You also need to set `buffered` to `true` to get access to long tasks the user agent buffered while constructing the document. The `PerformanceObserver` object's callback will then be called with a list of `PerformanceLongTaskTiming` objects which you can analyze.
+برای دریافت اطلاعات زمان‌بندی وظیفه طولانی، یک نمونه {{domxref("PerformanceObserver")}} ایجاد کنید و سپس متد [`observe()`](/en-US/docs/Web/API/PerformanceObserver/observe) آن را فراخوانی کنید، و `"longtask"` را به عنوان مقدار گزینه [`type`](/en-US/docs/Web/API/PerformanceEntry/entryType) وارد کنید. همچنین باید `buffered` را روی `true` تنظیم کنید تا به وظایف طولانی که عامل کاربر در حین ساخت سند بافر کرده است دسترسی داشته باشید. سپس callback شیء `PerformanceObserver` با لیستی از اشیاء `PerformanceLongTaskTiming` فراخوانی می‌شود که می‌توانید آن‌ها را تحلیل کنید.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -88,14 +80,14 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "longtask", buffered: true });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("TaskAttributionTiming")}}
