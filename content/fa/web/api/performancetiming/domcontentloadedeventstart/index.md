@@ -1,11 +1,5 @@
 ---
 title: "PerformanceTiming: domContentLoadedEventStart property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/domContentLoadedEventStart"
-status: "needs-translation"
----
-
----
-title: "PerformanceTiming: domContentLoadedEventStart property"
 short-title: domContentLoadedEventStart
 slug: Web/API/PerformanceTiming/domContentLoadedEventStart
 page-type: web-api-instance-property
@@ -17,19 +11,13 @@ browser-compat: api.PerformanceTiming.domContentLoadedEventStart
 {{APIRef("Performance API")}}{{Deprecated_Header}}
 
 > [!WARNING]
-> This interface of this property is deprecated in the [Navigation Timing Level 2 specification](https://w3c.github.io/navigation-timing/#obsolete). Please use the {{domxref("PerformanceNavigationTiming")}}
-> interface instead.
+> این رابط (interface) این ویژگی در [مشخصات Navigation Timing Level 2](https://w3c.github.io/navigation-timing/#obsolete) منسوخ شده است. لطفاً به جای آن از رابط {{domxref("PerformanceNavigationTiming")}} استفاده کنید.
 
-The legacy
-**`PerformanceTiming.domContentLoadedEventStart`**
-read-only property returns an `unsigned long long` representing the moment,
-in milliseconds since the UNIX epoch, right before the parser sent the
-{{domxref("Document/DOMContentLoaded_event", "DOMContentLoaded")}} event, that is right after all the scripts that need to be
-executed right after parsing has been executed.
+ویژگی فقط خواندنی قدیمی **`PerformanceTiming.domContentLoadedEventStart`** یک `unsigned long long` را برمی‌گرداند که نشان‌دهندهٔ لحظه‌ای (به میلی‌ثانیه از مبدأ UNIX) درست قبل از اینکه تحلیل‌گر (parser) رویداد {{domxref("Document/DOMContentLoaded_event", "DOMContentLoaded")}} را ارسال کند، یعنی درست بعد از اجرای تمام اسکریپت‌هایی که باید بلافاصله پس از تحلیل اجرا شوند.
 
 ## Value
 
-An `unsigned long long`.
+یک `unsigned long long`.
 
 ## Specifications
 
@@ -41,4 +29,4 @@ An `unsigned long long`.
 
 ## See also
 
-- The {{domxref("PerformanceTiming")}} interface it belongs to.
+- رابط {{domxref("PerformanceTiming")}} که این ویژگی به آن تعلق دارد.
