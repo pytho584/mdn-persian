@@ -1,10 +1,4 @@
 ---
-title: "PerformanceElementTiming"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceElementTiming"
-status: "needs-translation"
----
-
----
 title: PerformanceElementTiming
 slug: Web/API/PerformanceElementTiming
 page-type: web-api-interface
@@ -15,74 +9,74 @@ browser-compat: api.PerformanceElementTiming
 
 {{APIRef("Performance API")}}{{SeeCompatTable}}
 
-The **`PerformanceElementTiming`** interface contains render timing information for image and text node elements the developer annotated with an [`elementtiming`](/en-US/docs/Web/HTML/Reference/Attributes/elementtiming) attribute for observation.
+رابط **`PerformanceElementTiming`** حاوی اطلاعات زمان‌بندی رندر برای عناصر تصویر و گره‌های متنی است که توسعه‌دهنده با افزودن ویژگی [`elementtiming`](/en-US/docs/Web/HTML/Reference/Attributes/elementtiming) آن‌ها را برای مشاهده علامت‌گذاری کرده است.
 
-## Description
+## توضیحات
 
-The aim of the Element Timing API is to give web developers or analytics tools the ability to measure rendering timestamps of critical elements on a page.
+هدف API زمان‌بندی عنصر (Element Timing API) این است که به توسعه‌دهندگان وب یا ابزارهای تحلیلی امکان اندازه‌گیری زمان‌های رندر عناصر حیاتی در یک صفحه را بدهد.
 
-The API supports timing information on the following elements:
+این API از اطلاعات زمان‌بندی برای عناصر زیر پشتیبانی می‌کند:
 
-- {{htmlelement("img")}} elements,
-- {{SVGElement("image")}} elements inside an {{SVGElement("svg")}},
-- [poster](/en-US/docs/Web/HTML/Reference/Elements/video#poster) images of {{htmlelement("video")}} elements,
-- elements which have a contentful {{cssxref("background-image")}} property with a URL value for a resource that is actually available, and
-- groups of text nodes, such as a {{htmlelement("p")}}.
+- عناصر {{htmlelement("img")}}
+- عناصر {{SVGElement("image")}} درون یک {{SVGElement("svg")}}
+- تصاویر [پوستر](/en-US/docs/Web/HTML/Reference/Elements/video#poster) عناصر {{htmlelement("video")}}
+- عناصری که دارای ویژگی {{cssxref("background-image")}} با مقدار URL برای یک منبع موجود هستند
+- گروه‌هایی از گره‌های متنی، مانند یک {{htmlelement("p")}}
 
-The author flags an element for observation by adding the [`elementtiming`](/en-US/docs/Web/HTML/Reference/Attributes/elementtiming) attribute on the element.
+نویسنده با افزودن ویژگی [`elementtiming`](/en-US/docs/Web/HTML/Reference/Attributes/elementtiming) به عنصر، آن را برای مشاهده علامت‌گذاری می‌کند.
 
-`PerformanceElementTiming` inherits from {{domxref("PerformanceEntry")}}.
+`PerformanceElementTiming` از {{domxref("PerformanceEntry")}} ارث‌بری می‌کند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
-This interface directly defines the following properties:
+این رابط به طور مستقیم ویژگی‌های زیر را تعریف می‌کند:
 
 - {{domxref("PerformanceElementTiming.element")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : An {{domxref("Element")}} representing the element we are returning information about.
+  - : یک {{domxref("Element")}} که عنصری را که در مورد آن اطلاعات بازگردانده می‌شود، نشان می‌دهد.
 - {{domxref("PerformanceElementTiming.id")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : A string which is the [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) of the element.
+  - : یک رشته که [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) عنصر است.
 - {{domxref("PerformanceElementTiming.identifier")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : A string which is the value of the [`elementtiming`](/en-US/docs/Web/HTML/Reference/Attributes/for) attribute on the element.
+  - : یک رشته که مقدار ویژگی [`elementtiming`](/en-US/docs/Web/HTML/Reference/Attributes/for) روی عنصر است.
 - {{domxref("PerformanceElementTiming.intersectionRect")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : A {{domxref("DOMRectReadOnly")}} which is the rectangle of the element within the viewport.
+  - : یک {{domxref("DOMRectReadOnly")}} که مستطیل عنصر درون نمای دید (viewport) است.
 - {{domxref("PerformanceElementTiming.loadTime")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : A {{domxref("DOMHighResTimeStamp")}} with the loadTime of the element.
+  - : یک {{domxref("DOMHighResTimeStamp")}} با زمان بارگذاری عنصر.
 - {{domxref("PerformanceElementTiming.naturalHeight")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : An unsigned 32-bit integer (unsigned long) which is the intrinsic height of the image if this is applied to an image, 0 for text.
+  - : یک عدد صحیح ۳۲ بیتی بدون علامت (unsigned long) که ارتفاع ذاتی تصویر است اگر برای یک تصویر اعمال شود، و برای متن ۰ است.
 - {{domxref("PerformanceElementTiming.naturalWidth")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : An unsigned 32-bit integer (unsigned long) which is the intrinsic width of the image if this is applied to an image, 0 for text.
+  - : یک عدد صحیح ۳۲ بیتی بدون علامت (unsigned long) که عرض ذاتی تصویر است اگر برای یک تصویر اعمال شود، و برای متن ۰ است.
 - {{domxref("PerformanceElementTiming.paintTime")}} {{experimental_inline}}
-  - : Returns the {{domxref("DOMHighResTimeStamp","timestamp")}} when the rendering phase ended and the paint phase started.
+  - : {{domxref("DOMHighResTimeStamp","timestamp")}} زمانی که فاز رندر به پایان رسید و فاز نقاشی (paint) شروع شد را بازمی‌گرداند.
 - {{domxref("PerformanceElementTiming.presentationTime")}} {{experimental_inline}}
-  - : Returns the {{domxref("DOMHighResTimeStamp","timestamp")}} when the element was actually drawn on the screen.
+  - : {{domxref("DOMHighResTimeStamp","timestamp")}} زمانی که عنصر واقعاً روی صفحه رسم شد را بازمی‌گرداند.
 - {{domxref("PerformanceElementTiming.renderTime")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : A {{domxref("DOMHighResTimeStamp")}} with the renderTime of the element.
+  - : یک {{domxref("DOMHighResTimeStamp")}} با زمان رندر عنصر.
 - {{domxref("PerformanceElementTiming.url")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : A string which is the initial URL of the resources request for images, 0 for text.
+  - : یک رشته که URL اولیه درخواست منابع برای تصاویر است، و برای متن ۰ است.
 
-It also extends the following {{domxref("PerformanceEntry")}} properties, qualifying and constraining them as described:
+همچنین ویژگی‌های زیر را از {{domxref("PerformanceEntry")}} به ارث برده و آن‌ها را به شرح زیر محدود و واجد شرایط می‌کند:
 
 - {{domxref("PerformanceEntry.duration")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Always returns `0` as `duration` does not apply to this interface.
+  - : همیشه `0` را برمی‌گرداند زیرا `duration` برای این رابط کاربردی ندارد.
 - {{domxref("PerformanceEntry.entryType")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Always returns `"element"`.
+  - : همیشه `"element"` را برمی‌گرداند.
 - {{domxref("PerformanceEntry.name")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns `"image-paint"` for images and `"text-paint"` for text.
+  - : برای تصاویر `"image-paint"` و برای متن `"text-paint"` را برمی‌گرداند.
 - {{domxref("PerformanceEntry.startTime")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns the value of this entry's {{domxref("PerformanceElementTiming.renderTime", "renderTime")}} if it is not `0`, otherwise the value of this entry's {{domxref("PerformanceElementTiming.loadTime", "loadTime")}}.
+  - : مقدار {{domxref("PerformanceElementTiming.renderTime", "renderTime")}} این ورودی را اگر `0` نباشد، در غیر این صورت مقدار {{domxref("PerformanceElementTiming.loadTime", "loadTime")}} این ورودی را برمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref("PerformanceElementTiming.toJSON()")}} {{Experimental_Inline}}
-  - : Returns a JSON representation of the `PerformanceElementTiming` object.
+  - : یک نمایش JSON از شیء `PerformanceElementTiming` برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-### Observing render time of specific elements
+### مشاهده زمان رندر عناصر خاص
 
-In this example two elements are being observed by adding the [`elementtiming`](/en-US/docs/Web/HTML/Reference/Attributes/elementtiming) attribute. A {{domxref("PerformanceObserver")}} is registered to get all performance entries of type `"element"` and the `buffered` flag is used to access data from before observer creation.
+در این مثال دو عنصر با افزودن ویژگی [`elementtiming`](/en-US/docs/Web/HTML/Reference/Attributes/elementtiming) تحت مشاهده قرار می‌گیرند. یک {{domxref("PerformanceObserver")}} برای دریافت تمام ورودی‌های عملکرد از نوع `"element"` ثبت می‌شود و از پرچم `buffered` برای دسترسی به داده‌های قبل از ایجاد observer استفاده می‌شود.
 
 ```html
 <img src="image.jpg" elementtiming="big-image" />
@@ -98,13 +92,13 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "element", buffered: true });
 ```
 
-Two entries will be output to the console. The first containing details of the image, the second with details of the text node.
+دو ورودی در کنسول نمایش داده خواهد شد. اولی شامل جزئیات تصویر و دومی شامل جزئیات گره متنی است.
 
-### Observing separate paint and presentation timings
+### مشاهده زمان‌بندی‌های جداگانه نقاشی و نمایش
 
-The `paintTime` and `presentationTime` properties enable you to retrieve specific timings for the paint phase starting and the element being drawn on the screen. The `paintTime` is broadly interoperable, whereas the `presentationTime` is implementation-dependent.
+ویژگی‌های `paintTime` و `presentationTime` به شما امکان می‌دهند زمان‌بندی‌های خاصی را برای شروع فاز نقاشی و رسم عنصر روی صفحه دریافت کنید. `paintTime` به طور کلی بین مرورگرها یکسان است، در حالی که `presentationTime` وابسته به پیاده‌سازی است.
 
-This example uses a `PerformanceObserver` to observe all performance entries of type `"element"` (remember that, to be observed, elements need to have `elementtiming` attributes set on them). We check for `paintTime` and `presentationTime` support and retrieve those values if they are available. In non-supporting browsers, the code retrieves the `renderTime` or `loadTime`, depending on what is supported.
+این مثال از یک `PerformanceObserver` برای مشاهده تمام ورودی‌های عملکرد از نوع `"element"` استفاده می‌کند (به یاد داشته باشید که برای مشاهده، عناصر باید ویژگی‌های `elementtimity` روی آن‌ها تنظیم شده باشد). ما پشتیبانی از `paintTime` و `presentationTime` را بررسی می‌کنیم و در صورت وجود آن مقادیر را بازیابی می‌کنیم. در مرورگرهایی که از آن‌ها پشتیبانی نمی‌کنند، کد بسته به پشتیبانی، `renderTime` یا `loadTime` را بازیابی می‌کند.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -129,14 +123,14 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "element", buffered: true });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [`elementtiming`](/en-US/docs/Web/HTML/Reference/Attributes/elementtiming) HTML attribute
+- ویژگی HTML [`elementtiming`](/en-US/docs/Web/HTML/Reference/Attributes/elementtiming)
