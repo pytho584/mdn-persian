@@ -1,11 +1,5 @@
 ---
 title: "OffscreenCanvas: contextrestored event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas/contextrestored_event"
-status: "needs-translation"
----
-
----
-title: "OffscreenCanvas: contextrestored event"
 short-title: contextrestored
 slug: Web/API/OffscreenCanvas/contextrestored_event
 page-type: web-api-event
@@ -14,13 +8,13 @@ browser-compat: api.OffscreenCanvas.contextrestored_event
 
 {{APIRef("Canvas API")}}
 
-The **`contextrestored`** event of the {{domxref("OffscreenCanvas")}} interface is fired if the browser restores an [`OffscreenCanvasRenderingContext2D`](/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D) context that was [previously lost](/en-US/docs/Web/API/OffscreenCanvas/contextlost_event).
+رویداد **`contextrestored`** از رابط {{domxref("OffscreenCanvas")}} زمانی صادر می‌شود که مرورگر زمینه‌ای از [`OffscreenCanvasRenderingContext2D`](/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D) را که [قبلاً از دست رفته بود](/en-US/docs/Web/API/OffscreenCanvas/contextlost_event) بازیابی کند.
 
-You can redraw, re-retrieve resources, and reinitialize the state of your context after receiving this event.
+پس از دریافت این رویداد، می‌توانید دوباره ترسیم کنید، منابع را دوباره دریافت کنید و وضعیت زمینه خود را مجدداً مقداردهی کنید.
 
-## Syntax
+## سینتکس
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+برای استفاده از این رویداد، نام آن را در روش‌هایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} به کار ببرید، یا یک ویژگی کنترل‌کننده رویداد (event handler) تنظیم کنید.
 
 ```js-nolint
 addEventListener("contextrestored", (event) => { })
@@ -28,13 +22,13 @@ addEventListener("contextrestored", (event) => { })
 oncontextrestored = (event) => { }
 ```
 
-## Event type
+## نوع رویداد
 
-A generic {{domxref("Event")}}.
+یک {{domxref("Event")}} عمومی.
 
-## Examples
+## مثال‌ها
 
-The code fragment below detects the context restored event.
+قطعه کد زیر رویداد بازیابی‌شدن زمینه را شناسایی می‌کند.
 
 ```js
 const canvas = new OffscreenCanvas(256, 256);
@@ -46,15 +40,15 @@ canvas.addEventListener("contextrestored", (e) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [`OffscreenCanvas: contextlost` event](/en-US/docs/Web/API/OffscreenCanvas/contextlost_event)
 - [`OffscreenCanvasRenderingContext2D.isContextLost()`](/en-US/docs/Web/API/OffscreenCanvasRenderingContext2D#canvasrenderingcontext2d.iscontextlost)
