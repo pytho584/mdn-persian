@@ -1,11 +1,5 @@
 ---
 title: "OscillatorNode: OscillatorNode() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/OscillatorNode/OscillatorNode"
-status: "needs-translation"
----
-
----
-title: "OscillatorNode: OscillatorNode() constructor"
 short-title: OscillatorNode()
 slug: Web/API/OscillatorNode/OscillatorNode
 page-type: web-api-constructor
@@ -14,14 +8,9 @@ browser-compat: api.OscillatorNode.OscillatorNode
 
 {{APIRef("Web Audio API")}}
 
-The **`OscillatorNode()`** constructor of the [Web Audio API](/en-US/docs/Web/API/Web_Audio_API) creates a new
-{{domxref("OscillatorNode")}} object which is an {{domxref("AudioNode")}} that
-represents a periodic waveform, like a sine wave, optionally setting the node's
-properties' values to match values in a specified object.
+سازنده‌ی **`OscillatorNode()`** در [Web Audio API](/en-US/docs/Web/API/Web_Audio_API) یک شیء {{domxref("OscillatorNode")}} جدید می‌سازد که یک {{domxref("AudioNode")}} است و یک شکل‌موج دوره‌ای مانند موج سینوسی را نشان می‌دهد. به‌صورت اختیاری می‌توانید مقادیر ویژگی‌های این گره را طوری تنظیم کنید که با مقادیر موجود در یک شیء مشخص هماهنگ باشند.
 
-If the default values of the properties are acceptable, you can optionally use the
-{{domxref("BaseAudioContext.createOscillator()")}} factory method instead; see
-[Creating an AudioNode](/en-US/docs/Web/API/AudioNode#creating_an_audionode).
+اگر مقادیر پیش‌فرض ویژگی‌ها برایتان قابل قبول است، می‌توانید به‌جای آن از متد factory به نام {{domxref("BaseAudioContext.createOscillator()")}} استفاده کنید؛ همچنین ببینید [ایجاد یک AudioNode](/en-US/docs/Web/API/AudioNode#creating_an_audionode).
 
 ## Syntax
 
@@ -32,43 +21,27 @@ new OscillatorNode(context, options)
 ### Parameters
 
 - `context`
-  - : A reference to an {{domxref("AudioContext")}}.
+  - : ارجاعی به یک {{domxref("AudioContext")}}.
 - `options` {{optional_inline}}
-  - : An object whose properties specify the initial values for the oscillator node's
-    properties. Any properties omitted from the object will take on the default value
-    as documented.
+  - : شیءای که ویژگی‌های آن مقادیر اولیه‌ی ویژگی‌های گره‌ی نوسان‌ساز را مشخص می‌کنند. هر ویژگی که در این شیء ذکر نشود، مقدار پیش‌فرض مستند خود را خواهد گرفت.
     - `type`
-      - : The shape of the wave produced by the node. Valid values are
-        `"sine"`, `"square"`, `"sawtooth"`,
-        `"triangle"` and `"custom"`. The default is
-        `"sine"`.
+      - : شکل موج تولیدشده توسط گره. مقادیر معتبر عبارت‌اند از `"sine"`، `"square"`، `"sawtooth"`، `"triangle"` و `"custom"`. مقدار پیش‌فرض `"sine"` است.
     - `detune`
-      - : A detuning value (in cents) which will offset
-        the `frequency` by the given amount. Its default is 0.
+      - : مقدار انحراف گام (بر حسب سنت) که `frequency` را به‌اندازه‌ی مشخصی جابه‌جا می‌کند. پیش‌فرض آن 0 است.
     - `frequency`
-      - : The frequency (in [hertz](https://en.wikipedia.org/wiki/Hertz)) of the periodic
-        waveform. Its default is 440.
+      - : فرکانس شکل‌موج دوره‌ای (بر حسب [هرتز](https://en.wikipedia.org/wiki/Hertz)). پیش‌فرض آن 440 است.
     - `periodicWave`
-      - : An arbitrary period waveform described by a {{domxref("PeriodicWave")}}
-        object.
+      - : یک شکل‌موج دوره‌ای دلخواه که توسط یک شیء {{domxref("PeriodicWave")}} توصیف می‌شود.
     - `channelCount`
-      - : Represents an integer used to determine how many channels are used when [up-mixing and down-mixing](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) connections to any inputs to the node. (See
-        {{domxref("AudioNode.channelCount")}} for more information.) Its usage and precise
-        definition depend on the value of `channelCountMode`.
+      - : یک عدد صحیح که تعیین می‌کند هنگام [بالابردن و پایین‌آوردن تعداد کانال‌ها](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) در اتصال‌ها به ورودی‌های گره، چه تعداد کانال استفاده شود. (برای اطلاعات بیشتر به {{domxref("AudioNode.channelCount")}} مراجعه کنید.) کاربرد و تعریف دقیق آن به مقدار `channelCountMode` بستگی دارد.
     - `channelCountMode`
-      - : Represents an enumerated value describing the way channels must be matched between
-        the node's inputs and outputs. (See {{domxref("AudioNode.channelCountMode")}} for more
-        information including default values.)
+      - : یک مقدار شمارشی که نحوه‌ی تطبیق کانال‌ها بین ورودی‌ها و خروجی‌های گره را توصیف می‌کند. (برای اطلاعات بیشتر از جمله مقادیر پیش‌فرض، به {{domxref("AudioNode.channelCountMode")}} مراجعه کنید.)
     - `channelInterpretation`
-      - : Represents an enumerated value describing the meaning of the channels. This
-        interpretation will define how audio [up-mixing and down-mixing](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) will happen.
-        The possible values are `"speakers"` or `"discrete"`. (See
-        {{domxref("AudioNode.channelCountMode")}} for more information including default
-        values.)
+      - : یک مقدار شمارشی که معنای کانال‌ها را توصیف می‌کند. این تفسیر مشخص می‌کند که [بالابردن و پایین‌آوردن تعداد کانال‌ها](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) در صدا چگونه انجام شود. مقادیر ممکن `"speakers"` یا `"discrete"` هستند. (برای اطلاعات بیشتر از جمله مقادیر پیش‌فرض، به {{domxref("AudioNode.channelCountMode")}} مراجعه کنید.)
 
 ### Return value
 
-A new {{domxref("OscillatorNode")}} object instance.
+یک نمونه‌ی جدید از شیء {{domxref("OscillatorNode")}}.
 
 ## Specifications
 
