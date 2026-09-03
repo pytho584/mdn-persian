@@ -1,11 +1,5 @@
 ---
 title: "PaymentRequestEvent: changePaymentMethod() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/changePaymentMethod"
-status: "needs-translation"
----
-
----
-title: "PaymentRequestEvent: changePaymentMethod() method"
 short-title: changePaymentMethod()
 slug: Web/API/PaymentRequestEvent/changePaymentMethod
 page-type: web-api-instance-method
@@ -16,41 +10,40 @@ browser-compat: api.PaymentRequestEvent.changePaymentMethod
 
 {{APIRef("Web-Based Payment Handler API")}}{{SeeCompatTable}}{{AvailableInWorkers("service")}}
 
-The **`changePaymentMethod()`** method of the {{domxref("PaymentRequestEvent")}} interface is used by the payment handler to get an updated total, given such payment method details as the billing address.
+متد **`changePaymentMethod()`** از رابط {{domxref("PaymentRequestEvent")}} توسط پردازنده پرداخت برای دریافت جمع مبلغ به‌روزرسانی‌شده، با توجه به جزئیاتی مانند آدرس صورت‌حسابِ روش پرداخت، استفاده می‌شود.
 
-When this method is invoked, a {{domxref("PaymentMethodChangeEvent")}} is fired.
+هنگامی که این متد فراخوانی می‌شود، یک رویداد {{domxref("PaymentMethodChangeEvent")}} شلیک می‌شود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 changePaymentMethod(methodName)
 changePaymentMethod(methodName, methodDetails)
 ```
 
-### Parameters
+### پارامترها
 
 - `methodName`
-  - : The name of the payment method to be used.
+  - : نام روش پرداختی که قرار است استفاده شود.
 - `methodDetails` {{optional_inline}}
-  - : An object containing method-specific details that are being updated.
+  - : یک شیء حاوی جزئیات مخصوص روش پرداخت که در حال به‌روزرسانی هستند.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves with a `PaymentRequestDetailsUpdate` object. This object contains the following properties:
+یک {{jsxref("Promise")}} که با یک شیء `PaymentRequestDetailsUpdate` حل می‌شود. این شیء شامل ویژگی‌های زیر است:
 
 - `error`
-  - : A string that explains why the user-selected payment method cannot be used.
+  - : رشته‌ای که توضیح می‌دهد چرا روش پرداخت انتخاب‌شده توسط کاربر قابل استفاده نیست.
 - `total`
-  - : An updated total based on the changed payment method. The total can change, for example, because the billing address of the payment method selected by the user changes the applicable sales tax.
+  - : جمع مبلغ به‌روزرسانی‌شده بر اساس روش پرداخت تغییر یافته. جمع مبلغ ممکن است تغییر کند، برای مثال، به این دلیل که آدرس صورت‌حساب روش پرداختی که کاربر انتخاب کرده است، مالیات فروش قابل اعمال را تغییر می‌دهد.
 - `modifiers`
-  - : An {{jsxref("Array")}} of `PaymentDetailsModifier` objects, whose properties are described in {{domxref("PaymentRequestEvent.modifiers")}}.
-
+  - : یک {{jsxref("Array")}} از اشیاء `PaymentDetailsModifier` که ویژگی‌های آن‌ها در {{domxref("PaymentRequestEvent.modifiers")}} توضیح داده شده است.
 - `paymentMethodErrors`
-  - : An object containing validation errors for the payment method, if any.
+  - : شیئی حاوی خطاهای اعتبارسنجی برای روش پرداخت، در صورت وجود.
 
-## Examples
+## مثال‌ها
 
-The following shows a trivial code snippet that could be used in a service worker to send a payment method change notification to the main payment handler window. For a complete test example, see [Payment handler for testing payment method change event](https://rsolomakhin.github.io/pr/apps/pmc/).
+مثال زیر یک قطعه کد ساده را نشان می‌دهد که می‌توان از آن در یک سرویس‌کارگر (Service Worker) برای ارسال اعلان تغییر روش پرداخت به پنجرهٔ اصلی پردازنده پرداخت استفاده کرد. برای یک نمونه کامل آزمایش، به [پردازنده پرداخت برای آزمایش رویداد تغییر روش پرداخت](https://rsolomakhin.github.io/pr/apps/pmc/) مراجعه کنید.
 
 ```js
 function notifyPaymentMethodChanged(e) {
@@ -64,18 +57,18 @@ function notifyPaymentMethodChanged(e) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Web-based payment apps overview](https://web.dev/articles/web-based-payment-apps-overview)
-- [Setting up a payment method](https://web.dev/articles/setting-up-a-payment-method)
-- [Life of a payment transaction](https://web.dev/articles/life-of-a-payment-transaction)
-- [Using the Payment Request API](/en-US/docs/Web/API/Payment_Request_API/Using_the_Payment_Request_API)
-- [Payment processing concepts](/en-US/docs/Web/API/Payment_Request_API/Concepts)
+- [نمای کلی برنامه‌های پرداخت مبتنی بر وب](https://web.dev/articles/web-based-payment-apps-overview)
+- [راه‌اندازی یک روش پرداخت](https://web.dev/articles/setting-up-a-payment-method)
+- [چرخهٔ عمر یک تراکنش پرداخت](https://web.dev/articles/life-of-a-payment-transaction)
+- [استفاده از Payment Request API](/en-US/docs/Web/API/Payment_Request_API/Using_the_Payment_Request_API)
+- [مفاهیم پردازش پرداخت](/en-US/docs/Web/API/Payment_Request_API/Concepts)
