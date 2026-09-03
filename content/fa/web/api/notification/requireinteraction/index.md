@@ -1,11 +1,5 @@
 ---
 title: "Notification: requireInteraction property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Notification/requireInteraction"
-status: "needs-translation"
----
-
----
-title: "Notification: requireInteraction property"
 short-title: requireInteraction
 slug: Web/API/Notification/requireInteraction
 page-type: web-api-instance-property
@@ -14,23 +8,23 @@ browser-compat: api.Notification.requireInteraction
 
 {{APIRef("Web Notifications")}}{{SecureContext_Header}} {{AvailableInWorkers}}
 
-The **`requireInteraction`** read-only property of the {{domxref("Notification")}} interface returns a boolean value indicating that a notification should remain active until the user clicks or dismisses it, rather than closing automatically.
+ویژگی فقط‌خواندنی **`requireInteraction`** در رابط {{domxref("Notification")}} یک مقدار بولی برمی‌گرداند که نشان می‌دهد یک اعلان باید تا زمانی که کاربر روی آن کلیک کند یا آن را ببندد فعال بماند، نه اینکه به‌طور خودکار بسته شود.
 
 > [!NOTE]
-> This can be set when the notification is first created by setting the `requireInteraction` option to `true` in the options object of the {{domxref("Notification.Notification", "Notification()")}} constructor.
+> این مقدار را می‌توان هنگام ایجاد اعلان، با تنظیم گزینهٔ `requireInteraction` روی `true` در شیء options سازندهٔ {{domxref("Notification.Notification", "Notification()")}} تعیین کرد.
 
-## Value
+## مقدار
 
-A boolean value.
+یک مقدار بولی.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Notifications API](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
+- [استفاده از Notifications API](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
