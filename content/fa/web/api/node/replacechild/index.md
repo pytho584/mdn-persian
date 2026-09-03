@@ -1,11 +1,5 @@
 ---
 title: "Node: replaceChild() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Node/replaceChild"
-status: "needs-translation"
----
-
----
-title: "Node: replaceChild() method"
 short-title: replaceChild()
 slug: Web/API/Node/replaceChild
 page-type: web-api-instance-method
@@ -14,7 +8,7 @@ browser-compat: api.Node.replaceChild
 
 {{APIRef("DOM")}}
 
-The **`replaceChild()`** method of the {{domxref("Node")}} interface replaces a child node within the given (parent) node.
+متد **`replaceChild()`** در رابط {{domxref("Node")}}، یک گرهٔ فرزند را درون گرهٔ والدِ داده‌شده جایگزین می‌کند.
 
 ## Syntax
 
@@ -25,35 +19,35 @@ replaceChild(newChild, oldChild)
 ### Parameters
 
 - `newChild`
-  - : The new node to replace `oldChild`.
+  - : گرهٔ جدیدی که قرار است جایگزین `oldChild` شود.
     > [!WARNING]
-    > If the new node is already present somewhere else in the DOM, it is first removed from that position.
+    > اگر گرهٔ جدید از قبل در جای دیگری از DOM وجود داشته باشد، ابتدا از آن موقعیت حذف می‌شود.
 - `oldChild`
-  - : The child to be replaced.
+  - : فرزندی که قرار است جایگزین شود.
 
 > [!NOTE]
-> The parameter order, _new_ before _old_, is unusual.
-> [`Element.replaceWith()`](/en-US/docs/Web/API/Element/replaceWith), applying only to nodes that are elements,
-> may be easier to read and use.
+> ترتیب پارامترها، _new_ قبل از _old_، غیرعادی است.
+> متد [`Element.replaceWith()`](/en-US/docs/Web/API/Element/replaceWith) که فقط روی گره‌های عنصر اعمال می‌شود،
+> ممکن است خواناتر و آسان‌تر باشد.
 
 ### Return value
 
-The replaced {{domxref("Node")}}. This is the same node as `oldChild`.
+گرهٔ {{domxref("Node")}} جایگزین‌شده. این همان گرهٔ `oldChild` است.
 
 ### Exceptions
 
 - `HierarchyRequestError` {{domxref("DOMException")}}
-  - : Thrown when the constraints of the DOM tree are violated, that is if one of the following cases occurs:
-    - If the parent of `oldChild` is not a {{domxref("Document")}}, {{domxref("DocumentFragment")}}, or an {{domxref("Element")}}.
-    - If the replacement of `oldChild` by `newChild` would lead to a cycle, that is if `newChild` is an ancestor of the node.
-    - If `newChild` is not a {{domxref("DocumentFragment")}}, a {{domxref("DocumentType")}}, an {{domxref("Element")}}, or a {{domxref("CharacterData")}}.
-    - If the current node is a {{domxref("Text")}}, and its parent is a {{domxref("Document")}}.
-    - If the current node is a {{domxref("DocumentType")}} and its parent is _not_ a {{domxref("Document")}}, as a _doctype_ should always be a direct descendant of a _document_.
-    - If the parent of the node is a {{domxref("Document")}} and `newChild` is a {{domxref("DocumentFragment")}} with more than one {{domxref("Element")}} child, or that has a {{domxref("Text")}} child.
-    - If the replacement of `oldChild` by `newChild` would lead to {{domxref("Document")}} with more than one {{domxref("Element")}} as child.
-    - If the replacement of `oldChild` by `newChild` would lead to the presence of an {{domxref("Element")}} node before a {{domxref("DocumentType")}} node.
+  - : زمانی پرتاب می‌شود که محدودیت‌های درخت DOM نقض شود، یعنی اگر یکی از موارد زیر رخ دهد:
+    - اگر والدِ `oldChild` یک {{domxref("Document")}}، {{domxref("DocumentFragment")}} یا {{domxref("Element")}} نباشد.
+    - اگر جایگزینی `oldChild` با `newChild` منجر به ایجاد چرخه شود، یعنی اگر `newChild` یکی از اجداد گره باشد.
+    - اگر `newChild` یک {{domxref("DocumentFragment")}}، {{domxref("DocumentType")}}، {{domxref("Element")}} یا {{domxref("CharacterData")}} نباشد.
+    - اگر گرهٔ فعلی یک {{domxref("Text")}} باشد و والدِ آن یک {{domxref("Document")}} باشد.
+    - اگر گرهٔ فعلی یک {{domxref("DocumentType")}} باشد و والدِ آن _نه_ یک {{domxref("Document")}} باشد، زیرا _doctype_ باید همیشه فرزند مستقیم یک _document_ باشد.
+    - اگر والدِ گره یک {{domxref("Document")}} باشد و `newChild` یک {{domxref("DocumentFragment")}} با بیش از یک فرزند {{domxref("Element")}} باشد، یا دارای یک فرزند {{domxref("Text")}} باشد.
+    - اگر جایگزینی `oldChild` با `newChild` منجر به {{domxref("Document")}} با بیش از یک {{domxref("Element")}} به عنوان فرزند شود.
+    - اگر جایگزینی `oldChild` با `newChild` منجر به وجود یک گرهٔ {{domxref("Element")}} قبل از یک گرهٔ {{domxref("DocumentType")}} شود.
 - `NotFoundError` {{domxref("DOMException")}}
-  - : Thrown if the parent of `oldChild` is not the current node.
+  - : اگر والدِ `oldChild` گرهٔ فعلی نباشد پرتاب می‌شود.
 
 ## Example
 
