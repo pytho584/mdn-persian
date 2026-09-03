@@ -1,7 +1,5 @@
 ---
 title: "Navigator: appCodeName property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/appCodeName"
-status: "needs-translation"
 ---
 
 ---
@@ -14,27 +12,24 @@ browser-compat: api.Navigator.appCodeName
 
 {{APIRef("HTML DOM")}}
 
-The value of the **`Navigator.appCodeName`** property is
-always `"Mozilla"`, in any browser. This property is kept only for
-compatibility purposes.
+مقدار ویژگی **`Navigator.appCodeName`** در هر مرورگری همیشه `"Mozilla"` است. این ویژگی تنها برای سازگاری (compatibility) نگهداری می‌شود.
 
 > [!NOTE]
-> Do not rely on this property to return a real
-> product name. All browsers return `"Mozilla"` as the value of this property.
+> برای دریافت نام واقعی محصول به این ویژگی اعتماد نکنید. همه مرورگرها مقدار `"Mozilla"` را به‌عنوان مقدار این ویژگی برمی‌گردانند.
 
-## Value
+## مقدار
 
-The string `"Mozilla"`.
+رشته `"Mozilla"`.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Navigator.appName")}}
 - {{domxref("Navigator.product")}}
