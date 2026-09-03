@@ -1,11 +1,5 @@
 ---
 title: "PreferenceManager: reducedTransparency property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PreferenceManager/reducedTransparency"
-status: "needs-translation"
----
-
----
-title: "PreferenceManager: reducedTransparency property"
 short-title: reducedTransparency
 slug: Web/API/PreferenceManager/reducedTransparency
 page-type: web-api-instance-property
@@ -17,19 +11,19 @@ spec-urls: https://drafts.csswg.org/mediaqueries-5/#reduced-transparency-attribu
 
 {{APIRef("User Preferences API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`reducedTransparency`** read-only property of the {{domxref("PreferenceManager")}} interface returns the {{domxref("PreferenceObject")}} used to override the user's preference for the [reduced transparency](/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-transparency) of the site.
+ویژگی فقط‌خواندنی `reducedTransparency` از رابط {{domxref("PreferenceManager")}}، شیء {{domxref("PreferenceObject")}} را بازمی‌گرداند که برای بازنویسی ترجیح کاربر دربارهٔ [کاهش شفافیت](/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-transparency) سایت استفاده می‌شود.
 
-Valid `reducedTransparency` {{domxref("PreferenceObject.value")}} settings are `reduce` and `no-preference`.
+مقادیر معتبر برای {{domxref("PreferenceObject.value")}} در `reducedTransparency` عبارت‌اند از `reduce` و `no-preference`.
 
-## Value
+## مقدار
 
-A {{domxref("PreferenceObject")}} used to override the user's preference for the [reduced transparency](/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-transparency) of the site.
+یک {{domxref("PreferenceObject")}} که برای بازنویسی ترجیح کاربر دربارهٔ [کاهش شفافیت](/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-transparency) سایت استفاده می‌شود.
 
-## Examples
+## نمونه‌ها
 
-### Basic usage
+### استفادهٔ پایه
 
-This example demonstrates how to query the user's reduced transparency preference.
+این مثال نشان می‌دهد که چگونه می‌توان ترجیح کاربر در مورد کاهش شفافیت را بررسی کرد.
 
 ```js
 if (navigator.preferences.reducedTransparency.value === "reduce") {
@@ -39,10 +33,10 @@ if (navigator.preferences.reducedTransparency.value === "reduce") {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
