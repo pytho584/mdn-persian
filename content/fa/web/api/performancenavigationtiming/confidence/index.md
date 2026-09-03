@@ -1,7 +1,6 @@
 ---
 title: "PerformanceNavigationTiming: confidence property"
 source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceNavigationTiming/confidence"
-status: "needs-translation"
 ---
 
 ---
@@ -16,21 +15,21 @@ browser-compat: api.PerformanceNavigationTiming.confidence
 
 {{APIRef("Performance API")}}{{SeeCompatTable}}
 
-The **`confidence`** read-only property of the {{domxref("PerformanceNavigationTiming")}} interface returns a {{domxref("PerformanceTimingConfidence")}} object containing information that indicates whether a performance record reflects typical application performance, or is likely affected by external factors.
+خاصیت فقط‌خواندنی **`confidence`** در رابط {{domxref("PerformanceNavigationTiming")}} یک شیء {{domxref("PerformanceTimingConfidence")}} برمی‌گرداند که اطلاعاتی را نشان می‌دهد که آیا یک رکورد عملکرد نمایانگر عملکرد معمولی برنامه است یا احتمالاً تحت تأثیر عوامل خارجی قرار دارد.
 
-For example, if a website has loaded after a browser "cold start" or session restore, its pages may load more slowly as a result. In such cases, a `low` confidence {{domxref("PerformanceTimingConfidence.value", "value")}} would be returned for an associated performance record. On the other hand, if the browser determines a returned performance record to be representative of typical application performance, a `high` confidence value is returned.
+برای مثال، اگر یک وب‌سایت پس از «راه‌اندازی سرد» مرورگر یا بازیابی نشست بارگذاری شود، ممکن است صفحات آن در نتیجه کندتر بارگذاری شوند. در چنین مواردی، یک مقدار `low` برای {{domxref("PerformanceTimingConfidence.value", "value")}} مرتبط با رکورد عملکرد بازگردانده می‌شود. از سوی دیگر، اگر مرورگر تعیین کند که یک رکورد عملکرد بازگردانده‌شده نمایانگر عملکرد معمولی برنامه است، مقدار اطمینان `high` بازگردانده می‌شود.
 
-This confidence measure is useful for developers when trying to determine whether a performance issue is a legitimate concern, or an outlier being caused by external factors.
+این معیار اطمینان برای توسعه‌دهندگان زمانی مفید است که می‌خواهند تشخیص دهند آیا یک مشکل عملکرد یک نگرانی واقعی است یا یک مورد پرت که توسط عوامل خارجی ایجاد شده است.
 
-## Value
+## مقدار
 
-A {{domxref("PerformanceTimingConfidence")}} object.
+یک شیء {{domxref("PerformanceTimingConfidence")}}.
 
-## Examples
+## مثال‌ها
 
-### Basic usage
+### استفاده پایه
 
-This example uses a {{domxref("PerformanceObserver")}} to retrieve confidence data from observed {{domxref("PerformanceNavigationTiming")}} entries. The {{domxref("PerformanceTimingConfidence.value", "value")}} property is an enumerated value of `low` or `high`, indicating a broad confidence measure, whereas the {{domxref("PerformanceTimingConfidence.randomizedTriggerRate", "randomizedTriggerRate")}} property is a number inside the interval `0` to `1` inclusive, representing a percentage value that indicates how often noise is applied when exposing the `value`.
+این مثال از یک {{domxref("PerformanceObserver")}} برای بازیابی داده‌های اطمینان از ورودی‌های مشاهده‌شده {{domxref("PerformanceNavigationTiming")}} استفاده می‌کند. خاصیت {{domxref("PerformanceTimingConfidence.value", "value")}} یک مقدار شمارشی از `low` یا `high` است که یک معیار اطمینان کلی را نشان می‌دهد، در حالی که خاصیت {{domxref("PerformanceTimingConfidence.randomizedTriggerRate", "randomizedTriggerRate")}} عددی در بازه `0` تا `1` (شامل) است که یک مقدار درصدی را نشان می‌دهد که نشان می‌دهد هر چند وقت یک بار هنگام افشای `value` نویز اعمال می‌شود.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -45,14 +44,14 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "navigation", buffered: true });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("PerformanceTimingConfidence")}}
