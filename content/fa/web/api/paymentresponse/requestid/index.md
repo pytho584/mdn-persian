@@ -1,11 +1,5 @@
 ---
 title: "PaymentResponse: requestId property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse/requestId"
-status: "needs-translation"
----
-
----
-title: "PaymentResponse: requestId property"
 short-title: requestId
 slug: Web/API/PaymentResponse/requestId
 page-type: web-api-instance-property
@@ -14,18 +8,16 @@ browser-compat: api.PaymentResponse.requestId
 
 {{securecontext_header}}{{APIRef("Payment Request API")}}
 
-The **`requestId`** read-only property of the
-{{domxref("PaymentResponse")}} interface returns the free-form identifier supplied by
-the `PaymentResponse()` constructor by details.id.
+**`requestId`** یک ویژگی فقطخواندنی از رابط {{domxref("PaymentResponse")}} است که شناسهٔ بدون قالب خاص (free-form) را برمی‌گرداند؛ این شناسه توسط سازندهٔ `PaymentResponse()` از طریق `details.id` تأمین شده است.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
