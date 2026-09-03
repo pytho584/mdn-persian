@@ -1,7 +1,5 @@
 ---
 title: "NDEFReader: NDEFReader() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NDEFReader/NDEFReader"
-status: "needs-translation"
 ---
 
 ---
@@ -16,30 +14,26 @@ browser-compat: api.NDEFReader.NDEFReader
 
 {{SecureContext_Header}}{{APIRef("Web NFC API")}}{{SeeCompatTable}}
 
-The **`NDEFReader()`**
-constructor of the {{domxref("NDEFReader")}} interface returns a
-new `NDEFReader` object, which is used to read NDEF messages from
-compatible NFC devices, e.g., NDEF tags, within the reader's magnetic induction
-field.
+سازندهٔ **`NDEFReader()`** از رابط {{domxref("NDEFReader")}} یک شیء جدید `NDEFReader` می‌سازد که برای خواندن پیام‌های NDEF از دستگاه‌های NFC سازگار (مثلاً تگ‌های NDEF) در میدان القای مغناطیسی خواننده استفاده می‌شود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 new NDEFReader()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{DOMxRef("NDEFReader")}}.
+یک {{DOMxRef("NDEFReader")}} جدید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
