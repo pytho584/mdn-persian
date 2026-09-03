@@ -1,11 +1,5 @@
 ---
 title: "PerformanceEventTiming: target property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEventTiming/target"
-status: "needs-translation"
----
-
----
-title: "PerformanceEventTiming: target property"
 short-title: target
 slug: Web/API/PerformanceEventTiming/target
 page-type: web-api-instance-property
@@ -14,19 +8,19 @@ browser-compat: api.PerformanceEventTiming.target
 
 {{APIRef("Performance API")}}
 
-The read-only **`target`** property returns the associated event's last [`target`](/en-US/docs/Web/API/Event/target) which is the node onto which the event was last dispatched.
+ویژگی فقط‌خواندنی **`target`** آخرین [`target`](/en-US/docs/Web/API/Event/target) رویداد مرتبط را برمی‌گرداند که گره‌ای (node) است که رویداد آخرین بار به آن ارسال شده است.
 
-## Value
+## مقدار
 
-A {{domxref("Node")}} onto which the event was last dispatched.
+یک {{domxref("Node")}} که رویداد آخرین بار به آن ارسال شده است.
 
-Or [`null`](/en-US/docs/Web/JavaScript/Reference/Operators/null) if the `Node` is disconnected from the document's DOM or is in the [shadow DOM](/en-US/docs/Web/API/Web_components/Using_shadow_DOM).
+یا [`null`](/en-US/docs/Web/JavaScript/Reference/Operators/null) اگر `Node` از DOM سند جدا شده باشد یا در [shadow DOM](/en-US/docs/Web/API/Web_components/Using_shadow_DOM) باشد.
 
-## Examples
+## مثال‌ها
 
-### Observing events with a specific last target
+### مشاهده رویدادها با آخرین هدف مشخص
 
-The `target` property can be used when observing event-timing entries ({{domxref("PerformanceEventTiming")}}). For example, to log and measure events for a given last target only.
+ویژگی `target` می‌تواند هنگام مشاهده ورودی‌های زمان‌بندی رویداد ({{domxref("PerformanceEventTiming")}}) استفاده شود. به عنوان مثال، برای ثبت و اندازه‌گیری رویدادها فقط برای یک آخرین هدف مشخص.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -42,10 +36,10 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "event", buffered: true });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
