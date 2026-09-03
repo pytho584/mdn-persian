@@ -1,7 +1,5 @@
 ---
 title: "Navigator"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator"
-status: "needs-translation"
 ---
 
 ---
@@ -13,187 +11,187 @@ browser-compat: api.Navigator
 
 {{APIRef("DOM")}}
 
-The **`Navigator`** interface represents the state and the identity of the user agent. It allows scripts to query it and to register themselves to carry on some activities.
+رابط **`Navigator`** نمایانگر وضعیت و هویت عامل کاربر (user agent) است. این رابط به اسکریپت‌ها امکان می‌دهد که از آن پرس‌وجو کنند و خود را برای انجام برخی فعالیت‌ها ثبت کنند.
 
-A `Navigator` object can be retrieved using the read-only {{domxref("window.navigator")}} property.
+یک شیء `Navigator` را می‌توان با استفاده از ویژگی فقط‌خواندنی {{domxref("window.navigator")}} به دست آورد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Doesn't inherit any properties._
+هیچ ویژگی‌ای را به ارث نمی‌برد.
 
-### Standard properties
+### ویژگی‌های استاندارد
 
 - {{domxref("Navigator.audioSession")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns an {{domxref("AudioSession")}} object that can be used to control how audio from the web application interacts with other audio playing on the device.
+  - : یک شیء {{domxref("AudioSession")}} برمی‌گرداند که می‌توان از آن برای کنترل نحوه تعامل صدای برنامه وب با سایر صداهای در حال پخش روی دستگاه استفاده کرد.
 - {{domxref("Navigator.bluetooth")}} {{ReadOnlyInline}} {{Experimental_Inline}} {{SecureContext_Inline}}
-  - : Returns a {{domxref("Bluetooth")}} object for the current document, providing access to [Web Bluetooth API](/en-US/docs/Web/API/Web_Bluetooth_API) functionality.
+  - : یک شیء {{domxref("Bluetooth")}} برای سند جاری برمی‌گرداند که دسترسی به قابلیت‌های [Web Bluetooth API](/en-US/docs/Web/API/Web_Bluetooth_API) را فراهم می‌کند.
 - {{domxref("Navigator.clipboard")}} {{ReadOnlyInline}} {{securecontext_inline}}
-  - : Returns a {{domxref("Clipboard")}} object that provides read and write access to the system clipboard.
+  - : یک شیء {{domxref("Clipboard")}} برمی‌گرداند که دسترسی خواندن و نوشتن به کلیپ‌بورد سیستم را فراهم می‌کند.
 - {{domxref("Navigator.connection")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref("NetworkInformation")}} object containing information about the network connection of a device.
+  - : یک شیء {{domxref("NetworkInformation")}} حاوی اطلاعاتی درباره اتصال شبکه دستگاه برمی‌گرداند.
 - {{domxref("Navigator.contacts")}} {{ReadOnlyInline}} {{Experimental_Inline}} {{SecureContext_Inline}}
-  - : Returns a {{domxref('ContactsManager')}} interface which allows users to select entries from their contact list and share limited details of the selected entries with a website or application.
+  - : رابط {{domxref('ContactsManager')}} را برمی‌گرداند که به کاربران اجازه می‌دهد ورودی‌هایی از فهرست مخاطبان خود انتخاب کرده و جزئیات محدودی از ورودی‌های انتخاب‌شده را با یک وب‌سایت یا برنامه به اشتراک بگذارند.
 - {{domxref("Navigator.cookieEnabled")}} {{ReadOnlyInline}}
-  - : Returns false if setting a cookie will be ignored and true otherwise.
+  - : اگر تنظیم یک کوکی نادیده گرفته شود `false` و در غیر این صورت `true` برمی‌گرداند.
 - {{domxref("Navigator.credentials")}} {{ReadOnlyInline}} {{SecureContext_Inline}}
-  - : Returns the {{domxref("CredentialsContainer")}} interface which exposes methods to request credentials and notify the user agent when interesting events occur such as successful sign in or sign out.
+  - : رابط {{domxref("CredentialsContainer")}} را برمی‌گرداند که متدهایی برای درخواست اعتبارنامه و اطلاع‌دادن به عامل کاربر هنگام وقوع رویدادهای جالب مانند ورود یا خروج موفق را در معرض دید قرار می‌دهد.
 - {{domxref("Navigator.deviceMemory")}} {{ReadOnlyInline}} {{SecureContext_Inline}}
-  - : Returns the amount of device memory in gigabytes. This value is an approximation given by rounding to the nearest power of 2 and dividing that number by 1024.
+  - : مقدار حافظه دستگاه را بر حسب گیگابایت برمی‌گرداند. این مقدار یک تقریب است که با گرد کردن به نزدیک‌ترین توان ۲ و تقسیم آن عدد بر ۱۰۲۴ به دست می‌آید.
 - {{domxref("Navigator.devicePosture")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns the browser's {{domxref("DevicePosture")}} object, which allows developers to query the device's current posture (that is, whether the viewport is in a flat or folded state) and run code in response to posture changes.
+  - : شیء {{domxref("DevicePosture")}} مرورگر را برمی‌گرداند که به توسعه‌دهندگان اجازه می‌دهد وضعیت فعلی دستگاه (یعنی اینکه viewport در حالت صاف یا تا شده است) را پرس‌وجو کرده و در پاسخ به تغییرات وضعیت، کد اجرا کنند.
 - {{domxref("Navigator.geolocation")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref("Geolocation")}} object allowing accessing the location of the device.
+  - : یک شیء {{domxref("Geolocation")}} برمی‌گرداند که امکان دسترسی به موقعیت دستگاه را فراهم می‌کند.
 - {{domxref("Navigator.gpu")}} {{ReadOnlyInline}} {{SecureContext_Inline}}
-  - : Returns the {{domxref("GPU")}} object for the current browsing context. The entry point for the {{domxref("WebGPU_API", "WebGPU API", "", "nocode")}}.
+  - : شیء {{domxref("GPU")}} را برای بافت مرورگر جاری برمی‌گرداند. نقطه ورود به {{domxref("WebGPU_API", "WebGPU API", "", "nocode")}}.
 - {{domxref("Navigator.hardwareConcurrency")}} {{ReadOnlyInline}}
-  - : Returns the number of logical processor cores available.
+  - : تعداد هسته‌های پردازنده منطقی موجود را برمی‌گرداند.
 - {{domxref("Navigator.hid")}} {{ReadOnlyInline}} {{Experimental_Inline}} {{SecureContext_Inline}}
-  - : Returns an {{domxref("HID")}} object providing methods for connecting to HID devices, listing attached HID devices, and event handlers for connected HID devices.
+  - : یک شیء {{domxref("HID")}} برمی‌گرداند که متدهایی برای اتصال به دستگاه‌های HID، فهرست‌کردن دستگاه‌های HID متصل شده، و رویدادگردان‌هایی برای دستگاه‌های HID متصل شده فراهم می‌کند.
 - {{domxref("Navigator.ink")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns an {{domxref("Ink")}} object for the current document, providing access to [Ink API](/en-US/docs/Web/API/Ink_API) functionality.
+  - : یک شیء {{domxref("Ink")}} برای سند جاری برمی‌گرداند که دسترسی به قابلیت‌های [Ink API](/en-US/docs/Web/API/Ink_API) را فراهم می‌کند.
 - {{domxref('Navigator.keyboard')}} {{ReadOnlyInline}} {{Experimental_Inline}} {{SecureContext_Inline}}
-  - : Returns a {{domxref('Keyboard')}} object which provides access to functions that retrieve keyboard layout maps and toggle capturing of key presses from the physical keyboard.
+  - : یک شیء {{domxref('Keyboard')}} برمی‌گرداند که دسترسی به توابعی برای دریافت نقشه‌های طرح‌بندی صفحه‌کلید و فعال‌سازی ضبط فشارهای کلید از صفحه‌کلید فیزیکی را فراهم می‌کند.
 - {{domxref("Navigator.language")}} {{ReadOnlyInline}}
-  - : Returns a string representing the preferred language of the user, usually the language of the browser UI. The `null` value is returned when this is unknown.
+  - : یک رشته (string) نمایانگر زبان ترجیحی کاربر، معمولاً زبان رابط کاربری مرورگر، برمی‌گرداند. وقتی این مقدار ناشناخته باشد، مقدار `null` برگردانده می‌شود.
 - {{domxref("Navigator.languages")}} {{ReadOnlyInline}}
-  - : Returns an array of strings representing the languages known to the user, by order of preference.
+  - : یک آرایه از رشته‌ها نمایانگر زبان‌های شناخته‌شده برای کاربر، به ترتیب اولویت، برمی‌گرداند.
 - {{domxref("Navigator.locks")}} {{ReadOnlyInline}} {{SecureContext_Inline}}
-  - : Returns a {{domxref("LockManager")}} object that provides methods for requesting a new {{domxref('Lock')}} object and querying for an existing {{domxref('Lock')}} object.
+  - : یک شیء {{domxref("LockManager")}} برمی‌گرداند که متدهایی برای درخواست یک شیء {{domxref('Lock')}} جدید و پرس‌وجو برای یک شیء {{domxref('Lock')}} موجود فراهم می‌کند.
 - {{domxref("Navigator.login")}} {{ReadOnlyInline}} {{SecureContext_Inline}}
-  - : Provides access to the browser's {{domxref("NavigatorLogin")}} object, which a federated identity provider (IdP) can use to set a user's login status when they sign into or out of the IdP. See [Federated Credential Management (FedCM) API](/en-US/docs/Web/API/FedCM_API) for more details.
+  - : دسترسی به شیء {{domxref("NavigatorLogin")}} مرورگر را فراهم می‌کند که یک ارائه‌دهنده هویت فدرال (IdP) می‌تواند از آن برای تنظیم وضعیت ورود کاربر هنگام ورود یا خروج از IdP استفاده کند. برای جزئیات بیشتر به [Federated Credential Management (FedCM) API](/en-US/docs/Web/API/FedCM_API) مراجعه کنید.
 - {{domxref("Navigator.maxTouchPoints")}} {{ReadOnlyInline}}
-  - : Returns the maximum number of simultaneous touch contact points are supported by the current device.
+  - : حداکثر تعداد نقاط تماس لمسی همزمان را که توسط دستگاه جاری پشتیبانی می‌شود، برمی‌گرداند.
 - {{domxref("Navigator.mediaCapabilities")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref("MediaCapabilities")}} object that can expose information about the decoding and encoding capabilities for a given format and output capabilities.
+  - : یک شیء {{domxref("MediaCapabilities")}} برمی‌گرداند که می‌تواند اطلاعاتی درباره قابلیت‌های رمزگشایی و رمزگذاری برای یک قالب مشخص و قابلیت‌های خروجی در معرض دید قرار دهد.
 - {{domxref("Navigator.mediaDevices")}} {{ReadOnlyInline}} {{SecureContext_Inline}}
-  - : Returns a reference to a {{domxref("MediaDevices")}} object which can then be used to get information about available media devices ({{domxref("MediaDevices.enumerateDevices()")}}), find out what constrainable properties are supported for media on the user's computer and user agent ({{domxref("MediaDevices.getSupportedConstraints()")}}), and to request access to media using {{domxref("MediaDevices.getUserMedia()")}}.
+  - : یک ارجاع به یک شیء {{domxref("MediaDevices")}} برمی‌گرداند که سپس می‌تواند برای دریافت اطلاعات درباره دستگاه‌های رسانه‌ای موجود ({{domxref("MediaDevices.enumerateDevices()")}})، یافتن ویژگی‌های محدودکننده پشتیبانی‌شده برای رسانه در رایانه کاربر و عامل کاربر ({{domxref("MediaDevices.getSupportedConstraints()")}})، و درخواست دسترسی به رسانه با استفاده از {{domxref("MediaDevices.getUserMedia()")}} استفاده شود.
 - {{domxref("Navigator.mediaSession")}} {{ReadOnlyInline}}
-  - : Returns {{domxref("MediaSession")}} object which can be used to provide metadata that can be used by the browser to present information about the currently-playing media to the user, such as in a global media controls UI.
+  - : شیء {{domxref("MediaSession")}} را برمی‌گرداند که می‌تواند برای ارائه فراداده‌ای استفاده شود که مرورگر می‌تواند از آن برای نمایش اطلاعات درباره رسانه‌ای که در حال پخش است به کاربر استفاده کند، مانند در یک رابط کاربری کنترل رسانه سراسری.
 - {{domxref("Navigator.onLine")}} {{ReadOnlyInline}}
-  - : Returns a boolean value indicating whether the browser is working online.
+  - : یک مقدار بولی (boolean) برمی‌گرداند که نشان می‌دهد آیا مرورگر به صورت آنلاین کار می‌کند یا خیر.
 - {{domxref("Navigator.pdfViewerEnabled")}} {{ReadOnlyInline}}
-  - : Returns `true` if the browser can display PDF files inline when navigating to them, and `false` otherwise.
+  - : اگر مرورگر بتواند فایل‌های PDF را هنگام پیمایش به آنها به صورت درون‌خطی نمایش دهد `true`، و در غیر این صورت `false` برمی‌گرداند.
 - {{domxref("Navigator.permissions")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref("Permissions")}} object that can be used to query and update permission status of APIs covered by the [Permissions API](/en-US/docs/Web/API/Permissions_API).
+  - : یک شیء {{domxref("Permissions")}} برمی‌گرداند که می‌تواند برای پرس‌وجو و به‌روزرسانی وضعیت مجوز API‌های تحت پوشش [Permissions API](/en-US/docs/Web/API/Permissions_API) استفاده شود.
 - {{domxref("Navigator.preferences")}} {{ReadOnlyInline}} {{Experimental_Inline}} {{SecureContext_Inline}}
-  - : Returns the document's current {{domxref("PreferenceManager")}} object, which provides access to [user preference](/en-US/docs/Web/API/User_Preferences_API) information.
+  - : شیء {{domxref("PreferenceManager")}} جاری سند را برمی‌گرداند که دسترسی به اطلاعات [ترجیحات کاربر](/en-US/docs/Web/API/User_Preferences_API) را فراهم می‌کند.
 - {{domxref("Navigator.presentation")}} {{ReadOnlyInline}} {{SecureContext_Inline}}
-  - : Returns a reference to the {{domxref("Presentation")}} API.
+  - : یک ارجاع به API {{domxref("Presentation")}} برمی‌گرداند.
 - {{domxref("Navigator.scheduling")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a {{domxref("Scheduling")}} object for the current document.
+  - : یک شیء {{domxref("Scheduling")}} برای سند جاری برمی‌گرداند.
 - {{domxref("Navigator.serial")}} {{ReadOnlyInline}} {{SecureContext_Inline}}
-  - : Returns a {{domxref("Serial")}} object, which represents the entry point into the [Web Serial API](/en-US/docs/Web/API/Web_Serial_API) to enable the control of serial ports.
+  - : یک شیء {{domxref("Serial")}} برمی‌گرداند که نقطه ورود به [Web Serial API](/en-US/docs/Web/API/Web_Serial_API) را برای فعال‌سازی کنترل پورت‌های سریال نشان می‌دهد.
 - {{domxref("Navigator.serviceWorker")}} {{ReadOnlyInline}} {{SecureContext_Inline}}
-  - : Returns a {{domxref("ServiceWorkerContainer")}} object, which provides access to registration, removal, upgrade, and communication with the {{domxref("ServiceWorker")}} objects for the [associated document](https://html.spec.whatwg.org/multipage/browsers.html#concept-document-window).
+  - : یک شیء {{domxref("ServiceWorkerContainer")}} برمی‌گرداند که دسترسی به ثبت، حذف، ارتقا و ارتباط با اشیاء {{domxref("ServiceWorker")}} را برای [سند مرتبط](https://html.spec.whatwg.org/multipage/browsers.html#concept-document-window) فراهم می‌کند.
 - {{domxref("Navigator.storage")}} {{ReadOnlyInline}} {{SecureContext_Inline}}
-  - : Returns the singleton {{domxref('StorageManager')}} object used for managing persistence permissions and estimating available storage on a site-by-site/app-by-app basis.
+  - : شیء تکی {{domxref('StorageManager')}} را برمی‌گرداند که برای مدیریت مجوزهای ماندگاری و تخمین فضای ذخیره‌سازی موجود به صورت سایت‌به‌سایت/برنامه‌به‌برنامه استفاده می‌شود.
 - {{domxref("Navigator.usb")}} {{ReadOnlyInline}} {{SecureContext_Inline}}
-  - : Returns a {{domxref("USB")}} object for the current document, providing access to [WebUSB API](/en-US/docs/Web/API/WebUSB_API) functionality.
+  - : یک شیء {{domxref("USB")}} برای سند جاری برمی‌گرداند که دسترسی به قابلیت‌های [WebUSB API](/en-US/docs/Web/API/WebUSB_API) را فراهم می‌کند.
 - {{domxref("Navigator.userActivation")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref("UserActivation")}} object containing information about the current window's user activation state.
+  - : یک شیء {{domxref("UserActivation")}} حاوی اطلاعاتی درباره وضعیت فعال‌سازی کاربر پنجره جاری برمی‌گرداند.
 - {{domxref("Navigator.userAgent")}} {{ReadOnlyInline}}
-  - : Returns the user agent string for the current browser.
+  - : رشته عامل کاربر (user agent string) را برای مرورگر جاری برمی‌گرداند.
 - {{domxref("Navigator.userAgentData")}} {{ReadOnlyInline}} {{Experimental_Inline}} {{SecureContext_Inline}}
-  - : Returns a {{domxref("NavigatorUAData")}} object, which gives access to information about the browser and operating system of the user.
+  - : یک شیء {{domxref("NavigatorUAData")}} برمی‌گرداند که دسترسی به اطلاعاتی درباره مرورگر و سیستم عامل کاربر را فراهم می‌کند.
 - {{domxref("Navigator.virtualKeyboard")}} {{ReadOnlyInline}} {{Experimental_Inline}} {{SecureContext_Inline}}
-  - : Returns a reference to the {{domxref("VirtualKeyboard")}} API, to take control of the on-screen virtual keyboard.
+  - : یک ارجاع به API {{domxref("VirtualKeyboard")}} برمی‌گرداند تا کنترل صفحه‌کلید مجازی روی صفحه را به دست گیرد.
 - {{domxref("Navigator.wakeLock")}} {{ReadOnlyInline}} {{SecureContext_Inline}}
-  - : Returns a {{domxref("WakeLock")}} interface you can use to request screen wake locks and prevent screen from dimming, turning off, or showing a screen saver.
+  - : یک رابط {{domxref("WakeLock")}} برمی‌گرداند که می‌توانید از آن برای درخواست قفل بیدارماندن صفحه استفاده کرده و از کم‌نورشدن، خاموش‌شدن یا نمایش محافظ صفحه جلوگیری کنید.
 - {{domxref("Navigator.webdriver")}} {{ReadOnlyInline}}
-  - : Indicates whether the user agent is controlled by automation.
+  - : نشان می‌دهد که آیا عامل کاربر توسط اتوماسیون کنترل می‌شود یا خیر.
 - {{domxref("Navigator.windowControlsOverlay")}} {{ReadOnlyInline}} {{SecureContext_Inline}}
-  - : Returns the {{domxref("WindowControlsOverlay")}} interface which exposes information about the geometry of the title bar in desktop Progressive Web Apps, and an event to know whenever it changes.
+  - : رابط {{domxref("WindowControlsOverlay")}} را برمی‌گرداند که اطلاعاتی درباره هندسه نوار عنوان در برنامه‌های وب پیشرفته (Progressive Web Apps) دسکتاپ و یک رویداد برای اطلاع از تغییرات آن را در معرض دید قرار می‌دهد.
 - {{domxref("Navigator.xr")}} {{ReadOnlyInline}} {{Experimental_Inline}} {{SecureContext_Inline}}
-  - : Returns {{domxref("XRSystem")}} object, which represents the entry point into the [WebXR API](/en-US/docs/Web/API/WebXR_Device_API).
+  - : شیء {{domxref("XRSystem")}} را برمی‌گرداند که نقطه ورود به [WebXR API](/en-US/docs/Web/API/WebXR_Device_API) را نشان می‌دهد.
 
-### Non-standard properties
+### ویژگی‌های غیراستاندارد
 
 - {{domxref("Navigator.buildID")}} {{ReadOnlyInline}} {{Non-standard_Inline}}
-  - : Returns the build identifier of the browser. In modern browsers this property now returns a fixed timestamp as a privacy measure, e.g., `20181001000000` in Firefox 64 onwards.
+  - : شناسه ساخت (build identifier) مرورگر را برمی‌گرداند. در مرورگرهای مدرن، این ویژگی به عنوان یک اقدام حفظ حریم خصوصی، یک مهر زمانی ثابت برمی‌گرداند، مثلاً در Firefox 64 به بعد `20181001000000`.
 - {{domxref("Navigator.globalPrivacyControl")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns a boolean indicating a user's consent to their information being shared or sold.
+  - : یک مقدار بولی برمی‌گرداند که نشان‌دهنده رضایت کاربر برای به اشتراک‌گذاری یا فروش اطلاعاتش است.
 - {{domxref("Navigator.standalone")}} {{Non-standard_Inline}}
-  - : Returns a boolean indicating whether the browser is running in standalone mode. Available on Apple's iOS Safari only.
+  - : یک مقدار بولی برمی‌گرداند که نشان می‌دهد مرورگر در حالت مستقل (standalone) اجرا می‌شود یا خیر. فقط در Safari iOS اپل در دسترس است.
 
-### Deprecated properties
+### ویژگی‌های منسوخ‌شده
 
 - {{domxref("Navigator.activeVRDisplays")}} {{ReadOnlyInline}} {{Deprecated_Inline}} {{Non-standard_Inline}}
-  - : Returns an array containing every {{domxref("VRDisplay")}} object that is currently presenting ({{domxref("VRDisplay.isPresenting")}} is `true`).
+  - : یک آرایه شامل هر شیء {{domxref("VRDisplay")}} که در حال حاضر ارائه می‌دهد ({{domxref("VRDisplay.isPresenting")}} `true` است) برمی‌گرداند.
 - {{domxref("Navigator.appCodeName")}} {{ReadOnlyInline}}
-  - : Always returns `'Mozilla'`, in any browser.
+  - : همیشه `'Mozilla'` را در هر مرورگری برمی‌گرداند.
 - {{domxref("Navigator.appName")}} {{ReadOnlyInline}}
-  - : Always returns `'Netscape'`, in any browser.
+  - : همیشه `'Netscape'` را در هر مرورگری برمی‌گرداند.
 - {{domxref("Navigator.appVersion")}} {{ReadOnlyInline}}
-  - : Returns the version of the browser as a string. Do not rely on this property to return the correct value.
+  - : نسخه مرورگر را به صورت یک رشته برمی‌گرداند. برای دریافت مقدار صحیح به این ویژگی تکیه نکنید.
 - {{domxref("Navigator.doNotTrack")}} {{ReadOnlyInline}} {{Deprecated_Inline}} {{non-standard_inline}}
-  - : Reports the value of the user's do-not-track preference. When this value is "1", your website or application should not track the user.
+  - : مقدار ترجیح «دنبال نکن» (do-not-track) کاربر را گزارش می‌دهد. وقتی این مقدار "1" باشد، وب‌سایت یا برنامه شما نباید کاربر را ردیابی کند.
 - {{domxref("Navigator.mimeTypes")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref("MimeTypeArray")}} listing the MIME types supported by the browser.
+  - : یک {{domxref("MimeTypeArray")}} شامل انواع MIME پشتیبانی‌شده توسط مرورگر برمی‌گرداند.
 - {{domxref("Navigator.oscpu")}} {{ReadOnlyInline}}
-  - : Returns a string that represents the current operating system.
+  - : یک رشته نمایانگر سیستم عامل جاری برمی‌گرداند.
 - {{domxref("Navigator.platform")}} {{ReadOnlyInline}}
-  - : Returns a string representing the platform of the browser. Do not rely on this function to return a significant value.
+  - : یک رشته نمایانگر پلتفرم مرورگر برمی‌گرداند. برای دریافت یک مقدار معنی‌دار به این تابع تکیه نکنید.
 - {{domxref("Navigator.plugins")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref("PluginArray")}} listing the plugins installed in the browser.
+  - : یک {{domxref("PluginArray")}} شامل افزونه‌های نصب‌شده در مرورگر برمی‌گرداند.
 - {{domxref("Navigator.product")}} {{ReadOnlyInline}}
-  - : Always returns `'Gecko'`, in any browser.
+  - : همیشه `'Gecko'` را در هر مرورگری برمی‌گرداند.
 - {{domxref("Navigator.productSub")}} {{ReadOnlyInline}}
-  - : Returns either the string `'20030107'`, or `'"20100101'`.
+  - : یا رشته `'20030107'` یا `'20100101'` را برمی‌گرداند.
 - {{domxref("Navigator.vendor")}} {{ReadOnlyInline}}
-  - : Returns either the empty string, `'Apple Computer Inc.'`, or `'Google Inc.'`.
+  - : یا رشته خالی، یا `'Apple Computer Inc.'`، یا `'Google Inc.'` را برمی‌گرداند.
 - {{domxref("Navigator.vendorSub")}} {{ReadOnlyInline}}
-  - : Always returns the empty string.
+  - : همیشه رشته خالی را برمی‌گرداند.
 
-## Instance methods
+## روش‌های نمونه
 
-_Doesn't inherit any method._
+هیچ روشی را به ارث نمی‌برد.
 
 - {{domxref("Navigator.canShare()")}} {{SecureContext_Inline}}
-  - : Returns `true` if a call to `Navigator.share()` would succeed.
+  - : اگر فراخوانی `Navigator.share()` موفقیت‌آمیز باشد `true` برمی‌گرداند.
 - {{domxref("Navigator.clearAppBadge()")}} {{SecureContext_Inline}}
-  - : Clears a badge on the current app's icon and returns a {{jsxref("Promise")}} that resolves with {{jsxref("undefined")}}.
+  - : یک نشان (badge) را از روی آیکون برنامه جاری پاک کرده و یک {{jsxref("Promise")}} برمی‌گرداند که با {{jsxref("undefined")}} حل می‌شود.
 - {{domxref("Navigator.deprecatedReplaceInURN()")}} {{Experimental_Inline}}
-  - : Substitutes specified strings inside the mapped URL corresponding to a given opaque URN or `FencedFrameConfig`'s internal `url` property. This method has been made available as a temporary measure (hence "deprecated") to enable that substitution for fenced frame URLs, helping ad tech providers to migrate existing implementations across to [privacy sandbox](https://privacysandbox.google.com/) APIs.
+  - : رشته‌های مشخص شده را در داخل URL نگاشت‌شده متناظر با یک URN مبهم یا خاصیت `url` داخلی `FencedFrameConfig` جایگزین می‌کند. این روش به عنوان یک اقدام موقت (از این رو «منسوخ‌شده») در دسترس قرار گرفته است تا آن جایگزینی را برای URL‌های فریم حصاردار (fenced frame) امکان‌پذیر کند و به ارائه‌دهندگان فناوری تبلیغات کمک کند تا پیاده‌سازی‌های موجود را به API‌های [privacy sandbox](https://privacysandbox.google.com/) منتقل کنند.
 - {{domxref("Navigator.getAutoplayPolicy()")}} {{Experimental_Inline}}
-  - : Returns a value indicating whether the specified media element, audio context, or media feature "type" is allowed to autoplay.
+  - : یک مقدار برمی‌گرداند که نشان می‌دهد آیا عنصر رسانه‌ای، زمینه صوتی (audio context) یا «نوع» ویژگی رسانه‌ای مشخص شده مجاز به پخش خودکار (autoplay) است یا خیر.
 - {{domxref("Navigator.getBattery()")}} {{SecureContext_Inline}}
-  - : Returns a promise that resolves with a {{domxref("BatteryManager")}} object that returns information about the battery charging status.
+  - : یک promise برمی‌گرداند که با یک شیء {{domxref("BatteryManager")}} حل می‌شود که اطلاعاتی درباره وضعیت شارژ باتری را برمی‌گرداند.
 - {{domxref("Navigator.getGamepads()")}}
-  - : returns an array of {{domxref("Gamepad")}} objects, one for each gamepad connected to the device.
+  - : یک آرایه از اشیاء {{domxref("Gamepad")}} برمی‌گرداند، یکی برای هر گیم‌پد متصل به دستگاه.
 - {{domxref("Navigator.getInstalledRelatedApps()")}} {{Experimental_Inline}} {{SecureContext_Inline}}
-  - : Returns a promise that resolves with an array of objects representing any related native or [Progressive Web Applications](/en-US/docs/Web/Progressive_web_apps) that the user has installed.
+  - : یک promise برمی‌گرداند که با یک آرایه از اشیاء نمایانگر هر برنامه بومی یا [برنامه وب پیشرفته](/en-US/docs/Web/Progressive_web_apps) مرتبطی که کاربر نصب کرده است، حل می‌شود.
 - {{domxref("Navigator.registerProtocolHandler()")}} {{SecureContext_Inline}}
-  - : Allows websites to register themselves as a possible handler for a given protocol.
+  - : به وب‌سایت‌ها اجازه می‌دهد خود را به عنوان یک handler احتمالی برای یک پروتکل خاص ثبت کنند.
 - {{domxref("Navigator.requestMediaKeySystemAccess()")}} {{SecureContext_Inline}}
-  - : Returns a {{jsxref("Promise")}} for a MediaKeySystemAccess object.
+  - : یک {{jsxref("Promise")}} برای یک شیء MediaKeySystemAccess برمی‌گرداند.
 - {{domxref("Navigator.requestMIDIAccess()")}} {{SecureContext_Inline}}
-  - : Returns a {{jsxref('Promise')}} representing a request for access to MIDI devices on the user's system.
+  - : یک {{jsxref('Promise')}} نمایانگر درخواست دسترسی به دستگاه‌های MIDI روی سیستم کاربر برمی‌گرداند.
 - {{domxref("Navigator.sendBeacon()")}}
-  - : Used to asynchronously transfer a small amount of data using {{Glossary("HTTP")}} from the User Agent to a web server.
+  - : برای انتقال ناهمزمان مقدار کمی داده با استفاده از {{Glossary("HTTP")}} از عامل کاربر به یک وب سرور استفاده می‌شود.
 - {{domxref("Navigator.setAppBadge()")}} {{SecureContext_Inline}}
-  - : Sets a badge on the icon associated with this app and returns a {{jsxref("Promise")}} that resolves with {{jsxref("undefined")}}.
+  - : یک نشان روی آیکون مرتبط با این برنامه تنظیم می‌کند و یک {{jsxref("Promise")}} برمی‌گرداند که با {{jsxref("undefined")}} حل می‌شود.
 - {{domxref("Navigator.share()")}} {{SecureContext_Inline}}
-  - : Invokes the native sharing mechanism of the current platform.
+  - : مکانیزم اشتراک‌گذاری بومی پلتفرم جاری را فراخوانی می‌کند.
 - {{domxref("Navigator.vibrate()")}}
-  - : Causes vibration on devices with support for it. Does nothing if vibration support isn't available.
+  - : باعث لرزش در دستگاه‌هایی که از آن پشتیبانی می‌کنند می‌شود. اگر پشتیبانی از لرزش موجود نباشد، هیچ کاری انجام نمی‌دهد.
 - {{domxref("Navigator.unregisterProtocolHandler()")}} {{SecureContext_Inline}}
-  - : Unregister a website that is a handler for a given protocol.
+  - : یک وب‌سایت که handler برای یک پروتکل مشخص است را لغو ثبت می‌کند.
 
-### Deprecated methods
+### روش‌های منسوخ‌شده
 
 - {{domxref("Navigator.getUserMedia()")}} {{Deprecated_Inline}} {{SecureContext_Inline}}
-  - : After having prompted the user for permission, returns the audio or video stream associated to a camera or microphone on the local computer.
+  - : پس از درخواست اجازه از کاربر، جریان صوتی یا تصویری مرتبط با یک دوربین یا میکروفون روی رایانه محلی را برمی‌گرداند.
 - {{domxref("Navigator.getVRDisplays()")}} {{Deprecated_Inline}} {{Non-standard_Inline}}
-  - : Returns a promise that resolves to an array of {{domxref("VRDisplay")}} objects representing any available VR devices connected to the computer.
+  - : یک promise برمی‌گرداند که به یک آرایه از اشیاء {{domxref("VRDisplay")}} نمایانگر هر دستگاه VR موجود متصل به رایانه حل می‌شود.
 - {{domxref("Navigator.javaEnabled()")}}
-  - : Always returns false.
+  - : همیشه false برمی‌گرداند.
 - {{domxref("Navigator.taintEnabled()")}}
-  - : Returns `false`. JavaScript taint/untaint functions removed in JavaScript 1.2.
+  - : `false` برمی‌گرداند. توابع taint/untaint جاوااسکریپت در جاوااسکریپت 1.2 حذف شدند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
