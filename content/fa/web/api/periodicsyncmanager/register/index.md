@@ -1,11 +1,5 @@
 ---
 title: "PeriodicSyncManager: register() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PeriodicSyncManager/register"
-status: "needs-translation"
----
-
----
-title: "PeriodicSyncManager: register() method"
 short-title: register()
 slug: Web/API/PeriodicSyncManager/register
 page-type: web-api-instance-method
@@ -16,44 +10,39 @@ browser-compat: api.PeriodicSyncManager.register
 
 {{APIRef("Periodic Background Sync")}}{{SeeCompatTable}}{{AvailableInWorkers}}
 
-The **`register()`** method of the
-{{domxref("PeriodicSyncManager")}} interface registers a periodic sync request with the
-browser with the specified tag and options. It returns a {{jsxref('Promise')}} that
-resolves when the registration completes.
+متد **`register()`** از رابط {{domxref("PeriodicSyncManager")}} یک درخواست همگام‌سازی دوره‌ای را با برچسب و گزینه‌های مشخص‌شده در مرورگر ثبت می‌کند. این متد یک {{jsxref('Promise')}} برمی‌گرداند که پس از تکمیل ثبت نام، حل می‌شود.
 
-## Syntax
+## نحو
 
 ```js-nolint
 register(tag, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `tag`
-  - : A unique {{jsxref('String')}} identifier.
+  - : یک شناسه {{jsxref('String')}} یکتا.
 - `options` {{optional_inline}}
-  - : An {{jsxref('Object')}} containing the following optional data:
+  - : یک {{jsxref('Object')}} شامل داده‌های اختیاری زیر:
     - `minInterval`
-      - : The minimum interval time, in milliseconds, at which
-        the periodic sync should occur.
+      - : حداقل فاصله زمانی (بر حسب میلی‌ثانیه) که همگام‌سازی دوره‌ای باید در آن رخ دهد.
 
-### Return value
+### مقدار بازگشتی
 
-Returns a {{jsxref("Promise")}} that resolves with {{jsxref('undefined')}}.
+یک {{jsxref("Promise")}} برمی‌گرداند که با {{jsxref('undefined')}} حل می‌شود.
 
-### Exceptions
+### استثناها
 
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Returned if there is no active {{domxref('ServiceWorker')}} present.
+  - : در صورتی که هیچ {{domxref('ServiceWorker')}} فعالی وجود نداشته باشد، بازگردانده می‌شود.
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Returned if permission for background periodic sync is not granted.
+  - : در صورتی که مجوز همگام‌سازی دوره‌ای پس‌زمینه داده نشده باشد، بازگردانده می‌شود.
 - `InvalidAccessError` {{domxref("DOMException")}}
-  - : Returned if the active window is not the main window (not of `auxiliary` or `top-level` type).
+  - : در صورتی که پنجره فعال، پنجره اصلی نباشد (از نوع `auxiliary` یا `top-level` نباشد)، بازگردانده می‌شود.
 
-## Examples
+## مثال‌ها
 
-The following asynchronous function registers a periodic background sync at a minimum
-interval of one day from a browsing context:
+تابع ناهمگام زیر، یک همگام‌سازی دوره‌ای پس‌زمینه را با حداقل فاصله یک روز از یک بافت مرورگر ثبت می‌کند:
 
 ```js
 async function registerPeriodicNewsCheck() {
@@ -68,14 +57,14 @@ async function registerPeriodicNewsCheck() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Richer offline experiences with the Periodic Background Sync API](https://developer.chrome.com/docs/capabilities/periodic-background-sync)
+- [تجربه‌های آفلاین غنی‌تر با API همگام‌سازی دوره‌ای پس‌زمینه](https://developer.chrome.com/docs/capabilities/periodic-background-sync)
