@@ -1,9 +1,4 @@
----
-title: "PeriodicWave: PeriodicWave() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PeriodicWave/PeriodicWave"
-status: "needs-translation"
----
-
+```markdown
 ---
 title: "PeriodicWave: PeriodicWave() constructor"
 short-title: PeriodicWave()
@@ -14,8 +9,7 @@ browser-compat: api.PeriodicWave.PeriodicWave
 
 {{APIRef("Web Audio API")}}
 
-The **`PeriodicWave()`** constructor of the [Web Audio API](/en-US/docs/Web/API/Web_Audio_API) creates a new
-{{domxref("PeriodicWave")}} object instance.
+سازنده `PeriodicWave()` از رابط برنامه‌نویسی Web Audio API یک نمونه جدید از شیء {{domxref("PeriodicWave")}} ایجاد می‌کند.
 
 ## Syntax
 
@@ -27,42 +21,25 @@ new PeriodicWave(context, options)
 ### Parameters
 
 - `context`
-  - : A {{domxref("BaseAudioContext")}} representing the audio context you want the node
-    to be associated with.
+  - : یک {{domxref("BaseAudioContext")}} که زمینه صوتی مورد نظر برای ارتباط گره را نشان می‌دهد.
 - `options` {{optional_inline}}
-  - : A
-    [`PeriodicWaveOptions`](https://webaudio.github.io/web-audio-api/#idl-def-PeriodicWaveOptions)
-    dictionary object defining the properties you want the `PeriodicWave` to
-    have (It also inherits the options defined in the [PeriodicWaveConstraints](https://webaudio.github.io/web-audio-api/#idl-def-PeriodicWaveConstraints)
-    dictionary.):
+  - : یک شیء دیکشنری [`PeriodicWaveOptions`](https://webaudio.github.io/web-audio-api/#idl-def-PeriodicWaveOptions) که ویژگی‌های مورد نظر برای `PeriodicWave` را تعریف می‌کند (این شیء همچنین گزینه‌های تعریف‌شده در دیکشنری [PeriodicWaveConstraints](https://webaudio.github.io/web-audio-api/#idl-def-PeriodicWaveConstraints) را به ارث می‌برد):
     - `real`
-      - : A {{jsxref("Float32Array")}} containing the cosine terms
-        that you want to use to form the wave (equivalent to the `real`
-        parameter of {{domxref("BaseAudioContext.createPeriodicWave")}}).
+      - : یک {{jsxref("Float32Array")}} شامل عبارت‌های کسینوسی که برای تشکیل موج استفاده می‌شوند (معادل پارامتر `real` در {{domxref("BaseAudioContext.createPeriodicWave")}}).
     - `imag`
-      - : A {{jsxref("Float32Array")}} containing the sine terms that
-        you want to use to form the wave (equivalent to the `imag` parameter of
-        {{domxref("BaseAudioContext.createPeriodicWave")}}).
+      - : یک {{jsxref("Float32Array")}} شامل عبارت‌های سینوسی که برای تشکیل موج استفاده می‌شوند (معادل پارامتر `imag` در {{domxref("BaseAudioContext.createPeriodicWave")}}).
     - `channelCount`
-      - : Represents an integer used to determine how many channels are used when [up-mixing and down-mixing](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) connections to any inputs to the node. (See
-        {{domxref("AudioNode.channelCount")}} for more information.) Its usage and precise
-        definition depend on the value of `channelCountMode`.
+      - : یک عدد صحیح که مشخص می‌کند هنگام [up-mixing و down-mixing](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) اتصالات به ورودی‌های گره از چند کانال استفاده شود. (برای اطلاعات بیشتر به {{domxref("AudioNode.channelCount")}} مراجعه کنید.) کاربرد و تعریف دقیق آن به مقدار `channelCountMode` بستگی دارد.
     - `channelCountMode`
-      - : Represents an enumerated value describing the way channels must be matched between
-        the node's inputs and outputs. (See {{domxref("AudioNode.channelCountMode")}} for more
-        information including default values.)
+      - : یک مقدار شمارشی که نحوه تطبیق کانال‌ها بین ورودی‌ها و خروجی‌های گره را توصیف می‌کند. (برای اطلاعات بیشتر از جمله مقادیر پیش‌فرض به {{domxref("AudioNode.channelCountMode")}} مراجعه کنید.)
     - `channelInterpretation`
-      - : Represents an enumerated value describing the meaning of the channels. This
-        interpretation will define how audio [up-mixing and down-mixing](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) will happen.
-        The possible values are `"speakers"` or `"discrete"`. (See
-        {{domxref("AudioNode.channelCountMode")}} for more information including default
-        values.)
+      - : یک مقدار شمارشی که معنای کانال‌ها را توصیف می‌کند. این تفسیر مشخص می‌کند که [up-mixing و down-mixing](/en-US/docs/Web/API/Web_Audio_API/Basic_concepts_behind_Web_Audio_API#up-mixing_and_down-mixing) صدا چگونه انجام شود. مقادیر ممکن `"speakers"` یا `"discrete"` هستند. (برای اطلاعات بیشتر از جمله مقادیر پیش‌فرض به {{domxref("AudioNode.channelCountMode")}} مراجعه کنید.)
 
 ### Return value
 
-A new {{domxref("PeriodicWave")}} object instance.
+یک نمونه جدید از شیء {{domxref("PeriodicWave")}}.
 
-## Examples
+## نمونه‌ها
 
 ```js
 const real = new Float32Array(2);
@@ -88,3 +65,4 @@ const wave = new PeriodicWave(ac, {
 ## Browser compatibility
 
 {{Compat}}
+```
