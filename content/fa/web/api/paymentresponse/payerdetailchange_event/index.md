@@ -1,11 +1,5 @@
 ---
 title: "PaymentResponse: payerdetailchange event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse/payerdetailchange_event"
-status: "needs-translation"
----
-
----
-title: "PaymentResponse: payerdetailchange event"
 short-title: payerdetailchange
 slug: Web/API/PaymentResponse/payerdetailchange_event
 page-type: web-api-event
@@ -14,11 +8,11 @@ browser-compat: api.PaymentResponse.payerdetailchange_event
 
 {{APIRef("Payment Request API")}}{{SecureContext_Header}}
 
-A **`payerdetailchange`** event is fired by the [Payment Request API](/en-US/docs/Web/API/Payment_Request_API) to a {{domxref("PaymentResponse")}} object when the user makes changes to their personal information while filling out a payment request form. This can happen when the payer is retrying to submit its details after an error has been detected.
+رویداد **`payerdetailchange`** توسط [Payment Request API](/en-US/docs/Web/API/Payment_Request_API) به یک شیء {{domxref("PaymentResponse")}} زمانی که کاربر اطلاعات شخصی خود را در هنگام پر کردن فرم درخواست پرداخت تغییر می‌دهد، فرستاده می‌شود. این اتفاق می‌تواند زمانی رخ دهد که پرداخت‌کننده در حال تلاش مجدد برای ارسال جزئیات خود پس از تشخیص یک خطا است.
 
-The event handler for `payerdetailchange` should check each value in the form that has changed and ensure that the values are valid. If any are invalid, appropriate error messages should be configured and the {{domxref("PaymentResponse.retry", "retry()")}} method should be called on the {{domxref("PaymentResponse")}} to ask the user to update the invalid entries.
+مدیریت‌کننده رویداد برای `payerdetailchange` باید هر مقدار در فرم که تغییر کرده است را بررسی کند و اطمینان حاصل کند که مقادیر معتبر هستند. اگر هرکدام نامعتبر بود، باید پیام‌های خطای مناسب پیکربندی شود و متد {{domxref("PaymentResponse.retry", "retry()")}} روی {{domxref("PaymentResponse")}} فراخوانی شود تا از کاربر بخواهد ورودی‌های نامعتبر را تصحیح کند.
 
-This event is not cancelable and does not bubble.
+این رویداد قابل لغو نیست و bubble نمی‌کند.
 
 ## Syntax
 
@@ -32,13 +26,13 @@ onpayerdetailchange = (event) => { }
 
 ## Event type
 
-A {{domxref("PaymentRequestUpdateEvent")}}. Inherits from {{domxref("Event")}}.
+یک {{domxref("PaymentRequestUpdateEvent")}}. از {{domxref("Event")}} ارث‌بری می‌کند.
 
 {{InheritanceDiagram("PaymentRequestUpdateEvent")}}
 
 ## Examples
 
-In the example below, `onpayerdetailchange` is used to set up a listener for the `payerdetailchange` event in order to validate the information entered by the user, requesting that any mistakes be corrected
+در مثال زیر، `onpayerdetailchange` برای تنظیم یک شنونده برای رویداد `payerdetailchange` به منظور اعتبارسنجی اطلاعات وارد شده توسط کاربر استفاده شده است و درخواست می‌کند که هرگونه اشتباه تصحیح شود.
 
 ```js
 // Options for PaymentRequest(), indicating that shipping address,
@@ -113,7 +107,7 @@ await response.retry({
 
 ### addEventListener equivalent
 
-You could also set up the event handler using the `addEventListener()` method:
+همچنین می‌توانید مدیریت‌کننده رویداد را با استفاده از متد `addEventListener()` تنظیم کنید:
 
 ```js
 response.addEventListener("payerdetailchange", async (ev) => {
