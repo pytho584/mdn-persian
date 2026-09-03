@@ -1,11 +1,5 @@
 ---
 title: "PerformanceObserver: observe() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver/observe"
-status: "needs-translation"
----
-
----
-title: "PerformanceObserver: observe() method"
 short-title: observe()
 slug: Web/API/PerformanceObserver/observe
 page-type: web-api-instance-method
@@ -14,11 +8,11 @@ browser-compat: api.PerformanceObserver.observe
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The **`observe()`** method of the **{{domxref("PerformanceObserver")}}** interface is used to specify the set of performance entry types to observe.
+متد **`observe()`** از رابط **{{domxref("PerformanceObserver")}}** برای مشخص کردن مجموعه‌ای از انواع ورودی‌های عملکرد (performance entry types) که باید مشاهده شوند، استفاده می‌شود.
 
-See {{domxref("PerformanceEntry.entryType")}} for a list of entry types and {{domxref("PerformanceObserver.supportedEntryTypes_static", "PerformanceObserver.supportedEntryTypes")}} for a list of entry types the user agent supports.
+برای فهرست انواع ورودی‌ها به {{domxref("PerformanceEntry.entryType")}} مراجعه کنید و برای فهرست انواع ورودی‌هایی که عامل کاربر (user agent) پشتیبانی می‌کند، به {{domxref("PerformanceObserver.supportedEntryTypes_static", "PerformanceObserver.supportedEntryTypes")}} مراجعه کنید.
 
-When a matching performance entry is recorded, the performance observer's callback function—set when creating the {{domxref("PerformanceObserver")}}—is invoked.
+هنگامی که یک ورودی عملکرد منطبق ثبت می‌شود، تابع callback ناظر عملکرد (performance observer) — که هنگام ایجاد {{domxref("PerformanceObserver")}} تنظیم شده است — فراخوانی می‌شود.
 
 ## Syntax
 
@@ -29,29 +23,28 @@ observe(options)
 ### Parameters
 
 - `options`
-  - : An object with the following possible members:
+  - : یک شیء با اعضای احتمالی زیر:
     - `buffered`
-      - : A boolean flag to indicate whether buffered entries should be queued into the observer's buffer. Must be used only with the `type` option.
+      - : یک پرچم بولی (boolean) که نشان می‌دهد آیا ورودی‌های بافر شده باید در صف بافر ناظر قرار گیرند یا خیر. فقط باید با گزینه `type` استفاده شود.
     - `durationThreshold`
-      - : A {{domxref("DOMHighResTimeStamp")}} defining the threshold for {{domxref("PerformanceEventTiming")}} entries. Defaults to 104ms and is rounded to the nearest of 8ms. Lowest possible threshold is 16ms. May not be used together with the `entryTypes` option.
+      - : یک {{domxref("DOMHighResTimeStamp")}} که آستانه (threshold) را برای ورودی‌های {{domxref("PerformanceEventTiming")}} تعریف می‌کند. پیش‌فرض 104 میلی‌ثانیه است و به نزدیک‌ترین مضرب 8 میلی‌ثانیه گرد می‌شود. کمترین آستانه ممکن 16 میلی‌ثانیه است. نمی‌تواند همراه با گزینه `entryTypes` استفاده شود.
     - `entryTypes`
-      - : An array of strings, each specifying one performance entry type to observe. May not be used together with
-        the `type`, `buffered`, or `durationThreshold` options.
+      - : آرایه‌ای از رشته‌ها که هر کدام یک نوع ورودی عملکرد را برای مشاهده مشخص می‌کند. نمی‌تواند همراه با گزینه‌های `type`، `buffered` یا `durationThreshold` استفاده شود.
 
-        See {{domxref("PerformanceEntry.entryType")}} for a list of valid performance entry type names. Unrecognized types are ignored, though the browser may output a warning message to the console to help developers debug their code. If no valid types are found, `observe()` has no effect.
+        برای فهرست نام‌های معتبر انواع ورودی عملکرد به {{domxref("PerformanceEntry.entryType")}} مراجعه کنید. انواع ناشناخته نادیده گرفته می‌شوند، اگرچه ممکن است مرورگر یک پیام هشدار در کنسول برای کمک به توسعه‌دهندگان در اشکال‌زدایی کدشان نمایش دهد. اگر هیچ نوع معتبری یافت نشود، `observe()` هیچ اثری ندارد.
 
     - `type`
-      - : A single string specifying exactly one performance entry type to observe. May not be used together with the `entryTypes` option.
+      - : یک رشته منفرد که دقیقاً یک نوع ورودی عملکرد را برای مشاهده مشخص می‌کند. نمی‌تواند همراه با گزینه `entryTypes` استفاده شود.
 
 ### Return value
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
 ## Examples
 
-### Watching multiple performance entry types
+### مشاهده چندین نوع ورودی عملکرد
 
-This example creates a `PerformanceObserver` and watches for `"mark"` and `"measure"` entry types as specified by the `entryTypes` option given in the `observe()` method.
+این مثال یک `PerformanceObserver` ایجاد می‌کند و نوع‌های ورودی `"mark"` و `"measure"` را همانطور که توسط گزینه `entryTypes` در متد `observe()` مشخص شده، مشاهده می‌کند.
 
 ```js
 const observer = new PerformanceObserver((list, obj) => {
@@ -62,9 +55,9 @@ const observer = new PerformanceObserver((list, obj) => {
 observer.observe({ entryTypes: ["mark", "measure"] });
 ```
 
-### Watching a single performance entry type
+### مشاهده یک نوع ورودی عملکرد منفرد
 
-The following example retrieves buffered events and subscribes to newer events for resource timing events ({{domxref("PerformanceResourceTiming")}}) using the `buffered` and `type` configuration options. Whenever you need to configure the observer to use the `buffered` or `durationThreshold` option, use `type` instead of `entryType`. Collecting multiple types of performance entry types will not work otherwise.
+مثال زیر رویدادهای بافر شده را بازیابی می‌کند و برای رویدادهای جدیدتر مربوط به زمان‌بندی منابع (resource timing) ({{domxref("PerformanceResourceTiming")}}) با استفاده از گزینه‌های پیکربندی `buffered` و `type` مشترک می‌شود. هرگاه نیاز به پیکربندی ناظر برای استفاده از گزینه `buffered` یا `durationThreshold` دارید، به جای `entryType` از `type` استفاده کنید. در غیر این صورت جمع‌آوری چندین نوع ورودی عملکرد کار نخواهد کرد.
 
 ```js
 const observer = new PerformanceObserver((list, obj) => {
