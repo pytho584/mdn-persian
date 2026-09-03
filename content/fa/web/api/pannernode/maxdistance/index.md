@@ -1,11 +1,5 @@
 ---
 title: "PannerNode: maxDistance property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PannerNode/maxDistance"
-status: "needs-translation"
----
-
----
-title: "PannerNode: maxDistance property"
 short-title: maxDistance
 slug: Web/API/PannerNode/maxDistance
 page-type: web-api-instance-property
@@ -14,31 +8,31 @@ browser-compat: api.PannerNode.maxDistance
 
 {{ APIRef("Web Audio API") }}
 
-The `maxDistance` property of the {{ domxref("PannerNode") }} interface is a double value representing the maximum distance between the audio source and the listener, after which the volume is not reduced any further. This value is used only by the `linear` distance model.
+ویژگی `maxDistance` از رابط {{ domxref("PannerNode") }} یک مقدار اعشاری (double) است که حداکثر فاصله بین منبع صوتی و شنونده را نشان می‌دهد. پس از این فاصله، حجم صدا دیگر کاهش نمی‌یابد. این مقدار تنها در مدل فاصله `linear` استفاده می‌شود.
 
-The `maxDistance` property's default value is `10000`.
+مقدار پیش‌فرض ویژگی `maxDistance` برابر با `10000` است.
 
-## Value
+## مقدار
 
-A double. The default is `10000`, and non-positive values are not allowed.
+یک عدد اعشاری (double). مقدار پیش‌فرض `10000` است و مقادیر غیرمثبت مجاز نیستند.
 
-### Exceptions
+### استثناها
 
 - {{jsxref("RangeError")}}
-  - : Thrown if the property has been given a value that is outside the accepted range.
+  - : اگر به ویژگی مقداری خارج از محدوده مجاز داده شود، این خطا پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-See [`BaseAudioContext.createPanner()`](/en-US/docs/Web/API/BaseAudioContext/createPanner#examples) for example code.
+برای مشاهده کد مثال، به [`BaseAudioContext.createPanner()`](/en-US/docs/Web/API/BaseAudioContext/createPanner#examples) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
-- [Using the Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
+- [استفاده از Web Audio API](/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API)
