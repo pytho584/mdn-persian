@@ -1,7 +1,5 @@
 ---
 title: "NodeList: item() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NodeList/item"
-status: "needs-translation"
 ---
 
 ---
@@ -14,44 +12,41 @@ browser-compat: api.NodeList.item
 
 {{APIRef("DOM")}}
 
-Returns a node from a [`NodeList`](/en-US/docs/Web/API/NodeList) by index. This method
-doesn't throw exceptions as long as you provide arguments. A value of `null`
-is returned if the index is out of range, and a {{jsxref("TypeError")}} is thrown if no
-argument is provided.
+این متد یک گره را از یک [`NodeList`](/en-US/docs/Web/API/NodeList) بر اساس ایندکس برمی‌گرداند. تا زمانی که آرگومان ارائه کنید، هیچ استثنایی پرتاب نمی‌کند. اگر ایندکس خارج از محدوده باشد، مقدار `null` برگردانده می‌شود و اگر هیچ آرگومانی ارائه نشود، یک {{jsxref("TypeError")}} پرتاب می‌شود.
 
-In JavaScript, instead of calling `nodeList.item(index)`, you can also access the `index` directly, like `nodeList[index]`.
+در JavaScript، به جای فراخوانی `nodeList.item(index)`، می‌توانید مستقیماً به `index` دسترسی داشته باشید؛ مانند `nodeList[index]`.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 item(index)
 ```
 
-### Parameters
+### پارامترها
 
 - `index`
-  - : The index of the node to be fetched. The index is zero-based.
+  - : ایندکس گرهی که باید بازیابی شود. ایندکس از صفر شروع می‌شود.
 
-### Return value
+### مقدار بازگشتی
 
-The `index`th node in the `nodeList` returned by the `item` method.
+گره واقع در ایندکس `index` در `nodeList` که توسط متد `item` برگردانده می‌شود.
 
-### Exceptions
+### استثناها
 
 - {{jsxref("TypeError")}}
-  - : Thrown if no argument is provided.
+  - : اگر هیچ آرگومانی ارائه نشود، پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
 ```js
 const tables = document.getElementsByTagName("table");
 const firstTable = tables.item(1); // or tables[1] - returns the second table in the DOM
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
