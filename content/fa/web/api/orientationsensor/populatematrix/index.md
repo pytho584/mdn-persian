@@ -1,11 +1,5 @@
 ---
 title: "OrientationSensor: populateMatrix() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/OrientationSensor/populateMatrix"
-status: "needs-translation"
----
-
----
-title: "OrientationSensor: populateMatrix() method"
 short-title: populateMatrix()
 slug: Web/API/OrientationSensor/populateMatrix
 page-type: web-api-instance-method
@@ -14,48 +8,45 @@ browser-compat: api.OrientationSensor.populateMatrix
 
 {{securecontext_header}}{{APIRef("Sensor API")}}
 
-The **`populateMatrix()`** method of the
-{{domxref("OrientationSensor")}} interface populates the given target matrix with the
-rotation matrix based on the latest sensor reading. The rotation matrix is shown
-below.
+متد **`populateMatrix()`** در واسط {{domxref("OrientationSensor")}}، ماتریس هدف داده‌شده را بر اساس آخرین خوانش سنسور، با ماتریس چرخش پر می‌کند. ماتریس چرخش در زیر نشان داده شده است.
 
-![The formulas used to convert the sensor's quaternion to the provided matrix.](quaternion_to_rotation_matrix.png)
+![فرمول‌های مورد استفاده برای تبدیل چهارگان سنسور به ماتریس داده‌شده.](quaternion_to_rotation_matrix.png)
 
-where:
+که در آن:
 
 - W = cos(θ/2)
 - X = Vx \* sin(θ/2)
 - Y = Vy \* sin(θ/2)
 - Z = Vz \* sin(θ/2)
 
-## Syntax
+## نحو
 
 ```js-nolint
 populateMatrix(targetMatrix)
 ```
 
-Because {{domxref('OrientationSensor')}} is a base class, `populateMatrix`
-may only be read from one of its derived classes.
+از آنجا که {{domxref('OrientationSensor')}} یک کلاس پایه است، `populateMatrix` فقط می‌تواند از یکی از کلاس‌های مشتق‌شده از آن فراخوانی شود.
 
-### Parameters
+### پارامترها
 
 - `targetMatrix`
   - : TBD
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ‌کدام ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
 ```js
 // TBD
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
+```
