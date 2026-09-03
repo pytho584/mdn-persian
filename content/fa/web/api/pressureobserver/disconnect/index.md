@@ -1,11 +1,5 @@
 ---
 title: "PressureObserver: disconnect() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PressureObserver/disconnect"
-status: "needs-translation"
----
-
----
-title: "PressureObserver: disconnect() method"
 short-title: disconnect()
 slug: Web/API/PressureObserver/disconnect
 page-type: web-api-instance-method
@@ -16,27 +10,27 @@ browser-compat: api.PressureObserver.disconnect
 
 {{APIRef("Compute Pressure API")}}{{SeeCompatTable}}{{AvailableInWorkers("window_and_worker_except_service")}}{{securecontext_header}}
 
-The **`disconnect()`** method of the {{domxref('PressureObserver')}} interface stops the pressure observer callback from receiving pressure records from all sources.
+متد **`disconnect()`** در رابط {{domxref('PressureObserver')}}، فراخوان (callback) ناظر فشار را از دریافت رکوردهای فشار از همهٔ منابع متوقف می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 disconnect()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچ ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
-### Stopping a pressure observer
+### توقف یک ناظر فشار
 
-The following example collects 20 samples and then disconnects the pressure observer to disable receiving any more pressure records.
+مثال زیر ۲۰ نمونه جمع‌آوری می‌کند و سپس ناظر فشار را قطع می‌کند تا دریافت رکوردهای فشار بیشتر غیرفعال شود.
 
 ```js
 const samples = [];
@@ -62,10 +56,10 @@ try {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
