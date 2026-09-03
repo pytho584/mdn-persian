@@ -1,7 +1,5 @@
 ---
 title: "NotificationEvent"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NotificationEvent"
-status: "needs-translation"
 ---
 
 ---
@@ -13,34 +11,34 @@ browser-compat: api.NotificationEvent
 
 {{APIRef("Web Notifications")}}{{AvailableInWorkers("service")}}
 
-The **`NotificationEvent`** interface of the {{domxref("Notifications API", "", "", "nocode")}} represents a notification event dispatched on the {{domxref("ServiceWorkerGlobalScope")}} of a {{domxref("ServiceWorker")}}.
+رابط **`NotificationEvent`** در {{domxref("Notifications API", "", "", "nocode")}} نمایانگر یک رویداد اعلان است که روی {{domxref("ServiceWorkerGlobalScope")}} متعلق به یک {{domxref("ServiceWorker")}} ارسال می‌شود.
 
-This interface inherits from the {{domxref("ExtendableEvent")}} interface.
+این رابط از رابط {{domxref("ExtendableEvent")}} ارث می‌برد.
 
 > [!NOTE]
-> Only persistent notification events, fired at the {{domxref("ServiceWorkerGlobalScope")}} object, implement the `NotificationEvent` interface. Non-persistent notification events, fired at the {{domxref("Notification")}} object, implement the `Event` interface.
+> فقط رویدادهای اعلان ماندگار، که روی شیء {{domxref("ServiceWorkerGlobalScope")}} رخ می‌دهند، رابط `NotificationEvent` را پیاده‌سازی می‌کنند. رویدادهای اعلان غیرماندگار، که روی شیء {{domxref("Notification")}} رخ می‌دهند، رابط `Event` را پیاده‌سازی می‌کنند.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref("NotificationEvent.NotificationEvent","NotificationEvent()")}}
-  - : Creates a new `NotificationEvent` object.
+  - : یک شیء جدید از نوع `NotificationEvent` می‌سازد.
 
-## Instance properties
+## ویژگی‌های نمونه
 
-_Also inherits properties from its parent interface, {{domxref("ExtendableEvent")}}_.
+_همچنین ویژگی‌ها را از رابط والد خود، یعنی {{domxref("ExtendableEvent")}}، به ارث می‌برد._
 
 - {{domxref("NotificationEvent.notification")}} {{ReadOnlyInline}}
-  - : Returns a {{domxref("Notification")}} object representing the notification that was clicked to fire the event.
+  - : یک شیء {{domxref("Notification")}} برمی‌گرداند که نمایانگر اعلانی است که برای فعال‌سازی رویداد روی آن کلیک شده است.
 - {{domxref("NotificationEvent.action")}} {{ReadOnlyInline}}
-  - : Returns the string ID of the notification button the user clicked. This value returns an empty string if the user clicked the notification somewhere other than an action button, or the notification does not have a button.
+  - : شناسهٔ رشته‌ای دکمهٔ اعلان را برمی‌گرداند که کاربر روی آن کلیک کرده است. اگر کاربر روی نقطه‌ای از اعلان غیر از یک دکمهٔ عملیات کلیک کند، یا اگر اعلان دارای دکمه نباشد، این مقدار یک رشتهٔ خالی برمی‌گرداند.
 
-## Instance methods
+## متدهای نمونه
 
-_Also inherits methods from its parent interface, {{domxref("ExtendableEvent")}}_.
+_همچنین متدها را از رابط والد خود، یعنی {{domxref("ExtendableEvent")}}، به ارث می‌برد._
 
-## Example
+## مثال
 
 ```js
 self.addEventListener("notificationclick", (event) => {
@@ -64,13 +62,13 @@ self.addEventListener("notificationclick", (event) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
 > [!NOTE]
-> This interface is specified in the [Notifications API](/en-US/docs/Web/API/Notifications_API), but accessed through {{domxref("ServiceWorkerGlobalScope")}}.
+> این رابط در [Notifications API](/en-US/docs/Web/API/Notifications_API) مشخص شده است، اما از طریق {{domxref("ServiceWorkerGlobalScope")}} در دسترس است.
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
