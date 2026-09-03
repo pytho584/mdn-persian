@@ -1,11 +1,5 @@
 ---
 title: "PerformanceNavigationTiming: domInteractive property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceNavigationTiming/domInteractive"
-status: "needs-translation"
----
-
----
-title: "PerformanceNavigationTiming: domInteractive property"
 short-title: domInteractive
 slug: Web/API/PerformanceNavigationTiming/domInteractive
 page-type: web-api-instance-property
@@ -14,26 +8,26 @@ browser-compat: api.PerformanceNavigationTiming.domInteractive
 
 {{APIRef("Performance API")}}
 
-The **`domInteractive`** read-only property returns a {{domxref("DOMHighResTimeStamp")}} representing the time immediately before the user agent sets the document's [`readyState`](/en-US/docs/Web/API/Document/readyState) to `"interactive"`.
+ویژگی فقط‌خواندنی **`domInteractive`** یک {{domxref("DOMHighResTimeStamp")}} برمی‌گرداند که نشان‌دهندهٔ زمان دقیقاً قبل از آن است که عامل کاربر (user agent) [`readyState`](/en-US/docs/Web/API/Document/readyState) سند را روی `"interactive"` تنظیم کند.
 
 > [!NOTE]
-> This property is **not** {{Glossary("Time to interactive")}} (TTI). This property refers to the time when DOM construction is finished and interaction to it from JavaScript is possible. See also the `interactive` state of {{domxref("Document.readyState")}} which corresponds to this property.
+> این ویژگی **با** {{Glossary("Time to interactive")}} (TTI) یکی نیست. این ویژگی به زمانی اشاره دارد که ساخت DOM به پایان رسیده و تعامل با آن از طریق جاوااسکریپت ممکن است. همچنین به وضعیت `interactive` در {{domxref("Document.readyState")}} مراجعه کنید که با این ویژگی متناظر است.
 
-Measuring DOM processing time may not be consequential unless your site has a very large HTML source to a construct a Document Object Model from.
+اندازه‌گیری زمان پردازش DOM ممکن است اهمیت چندانی نداشته باشد، مگر اینکه سایت شما منبع HTML بسیار بزرگی برای ساخت مدل شیء سند (Document Object Model) داشته باشد.
 
-If there is no parser-blocking JavaScript then the [`DOMContentLoaded`](/en-US/docs/Web/API/Document/DOMContentLoaded_event) event (see [`domContentLoadedEventStart`](/en-US/docs/Web/API/PerformanceNavigationTiming/domContentLoadedEventStart) for the timestamp) will fire immediately after `domInteractive`.
+اگر جاوااسکریپت مسدودکنندهٔ تجزیه (parser-blocking) وجود نداشته باشد، رویداد [`DOMContentLoaded`](/en-US/docs/Web/API/Document/DOMContentLoaded_event) (برای زمان‌سنجی به [`domContentLoadedEventStart`](/en-US/docs/Web/API/PerformanceNavigationTiming/domContentLoadedEventStart) مراجعه کنید) بلافاصله پس از `domInteractive` رخ می‌دهد.
 
-## Value
+## مقدار
 
-A {{domxref("DOMHighResTimeStamp")}} representing the time immediately before the user agent sets the document's [`readyState`](/en-US/docs/Web/API/Document/readyState) to `"interactive"`.
+یک {{domxref("DOMHighResTimeStamp")}} که نشان‌دهندهٔ زمان دقیقاً قبل از تنظیم [`readyState`](/en-US/docs/Web/API/Document/readyState) سند روی `"interactive"` توسط عامل کاربر است.
 
-## Examples
+## مثال‌ها
 
-### Logging DOM interaction time
+### ثبت زمان تعامل با DOM
 
-The `domInteractive` property can be used to log the time when the DOM construction has finished and interaction with it is possible.
+از ویژگی `domInteractive` می‌توان برای ثبت زمانی که ساخت DOM به پایان رسیده و تعامل با آن ممکن است استفاده کرد.
 
-Example using a {{domxref("PerformanceObserver")}}, which notifies of new `navigation` performance entries as they are recorded in the browser's performance timeline. Use the `buffered` option to access entries from before the observer creation.
+مثال با استفاده از {{domxref("PerformanceObserver")}}، که ورودی‌های عملکرد `navigation` جدید را هنگام ثبت شدن در خط زمانی عملکرد مرورگر اطلاع‌رسانی می‌کند. از گزینهٔ `buffered` برای دسترسی به ورودی‌های قبل از ایجاد observer استفاده کنید.
 
 ```js
 const observer = new PerformanceObserver((list) => {
@@ -47,7 +41,7 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "navigation", buffered: true });
 ```
 
-Example using {{domxref("Performance.getEntriesByType()")}}, which only shows `navigation` performance entries present in the browser's performance timeline at the time you call this method:
+مثال با استفاده از {{domxref("Performance.getEntriesByType()")}}، که فقط ورودی‌های عملکرد `navigation` موجود در خط زمانی عملکرد مرورگر را در زمان فراخوانی این متد نشان می‌دهد:
 
 ```js
 const entries = performance.getEntriesByType("navigation");
@@ -56,14 +50,14 @@ entries.forEach((entry) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Document.readyState")}}
