@@ -1,11 +1,5 @@
 ---
 title: "Node: getRootNode() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Node/getRootNode"
-status: "needs-translation"
----
-
----
-title: "Node: getRootNode() method"
 short-title: getRootNode()
 slug: Web/API/Node/getRootNode
 page-type: web-api-instance-method
@@ -14,51 +8,42 @@ browser-compat: api.Node.getRootNode
 
 {{APIRef("DOM")}}
 
-The **`getRootNode()`** method of the {{domxref("Node")}} interface
-returns the context object's root,
-which optionally includes the shadow root if it is available.
+متد **`getRootNode()`** از رابط {{domxref("Node")}} ریشهٔ شیء زمینه را برمی‌گرداند که در صورت وجود، شامل shadow root نیز می‌شود.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 getRootNode()
 getRootNode(options)
 ```
 
-### Parameters
+### پارامترها
 
 - `options` {{optional_inline}}
-  - : An object that sets options for getting the root node. The available options are:
-    - `composed`: A boolean value that indicates whether the shadow
-      root should be returned (`false`, the default), or a root node beyond
-      shadow root (`true`).
+  - : شیءای که گزینه‌های دریافت ریشه را تنظیم می‌کند. گزینه‌های موجود عبارتند از:
+    - `composed`: یک مقدار بولی که مشخص می‌کند آیا shadow root باید برگردانده شود (`false`، مقدار پیش‌فرض)، یا ریشه‌ای فراتر از shadow root (`true`).
 
-### Return value
+### مقدار بازگشتی
 
-An object inheriting from {{domxref('Node')}}. This will differ in exact form depending
-on where you call `getRootNode()`; for example:
+شیءای که از {{domxref('Node')}} ارث‌بری می‌کند. شکل دقیق آن بسته به جایی که `getRootNode()` را فراخوانی می‌کنید متفاوت است؛ برای مثال:
 
-- Calling it on an element inside a standard web page will return an
-  {{domxref("HTMLDocument")}} object representing the entire page (or {{HTMLElement("iframe")}}).
-- Calling it on an element inside a shadow DOM will return the associated
-  {{domxref("ShadowRoot")}}.
-- Calling it on an element that is not attached to a document or a shadow tree will return
-  the root of the DOM tree it belongs to.
+- فراخوانی آن روی یک عنصر در یک صفحهٔ وب استاندارد، یک شیء {{domxref("HTMLDocument")}} برمی‌گرداند که کل صفحه (یا {{HTMLElement("iframe")}}) را نشان می‌دهد.
+- فراخوانی آن روی یک عنصر در داخل shadow DOM، {{domxref("ShadowRoot")}} مرتبط را برمی‌گرداند.
+- فراخوانی آن روی عنصری که به یک سند یا درخت shadow متصل نیست، ریشهٔ درخت DOM ای که به آن تعلق دارد را برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-### Example 1
+### مثال ۱
 
-The first simple example returns a reference to the HTML/document node:
+این مثال ساده ارجاعی به گره HTML/سند برمی‌گرداند:
 
 ```js
 const rootNode = node.getRootNode();
 ```
 
-### Example 2
+### مثال ۲
 
-This more complex example shows the difference between returning a normal root, and a
-root including the shadow root:
+این مثال پیچیده‌تر تفاوت بین برگرداندن ریشهٔ معمولی و ریشهٔ شامل shadow root را نشان می‌دهد:
 
 ```html
 <div class="parent">
@@ -97,10 +82,9 @@ output.innerText += `shadowChild.getRootNode({ composed:true }).nodeName : ${
 
 {{ EmbedLiveSample('Example 2', '100%', '200px') }}
 
-### Example 3
+### مثال ۳
 
-This example returns the root of the unmounted tree.
-Note `element` here is the root of the tree (as it has no parent), so by definition its root is itself:
+این مثال ریشهٔ درخت جدا از سند (unmounted tree) را برمی‌گرداند. توجه کنید که `element` در اینجا ریشهٔ درخت است (چون والد ندارد)، بنابراین طبق تعریف ریشهٔ آن خودش است:
 
 ```js
 const element = document.createElement("p");
@@ -114,10 +98,10 @@ element === rootNode; // true
 element === element.getRootNode(); // true
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
