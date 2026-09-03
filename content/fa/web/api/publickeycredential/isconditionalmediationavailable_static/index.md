@@ -1,11 +1,5 @@
 ---
 title: "PublicKeyCredential: isConditionalMediationAvailable() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredential/isConditionalMediationAvailable_static"
-status: "needs-translation"
----
-
----
-title: "PublicKeyCredential: isConditionalMediationAvailable() static method"
 short-title: isConditionalMediationAvailable()
 slug: Web/API/PublicKeyCredential/isConditionalMediationAvailable_static
 page-type: web-api-static-method
@@ -14,35 +8,35 @@ browser-compat: api.PublicKeyCredential.isConditionalMediationAvailable_static
 
 {{APIRef("Web Authentication API")}}{{securecontext_header}}
 
-The **`isConditionalMediationAvailable()`** static method of the {{domxref("PublicKeyCredential")}} interface returns a {{jsxref("Promise")}} which resolves to `true` if [conditional mediation](/en-US/docs/Web/API/Web_Authentication_API#autofill_ui) is available.
+متد ایستای **`isConditionalMediationAvailable()`** از رابط {{domxref("PublicKeyCredential")}} یک {{jsxref("Promise")}} برمی‌گرداند که اگر [میانجیگری شرطی](/en-US/docs/Web/API/Web_Authentication_API#autofill_ui) در دسترس باشد، به `true` resolve می‌شود.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 PublicKeyCredential.isConditionalMediationAvailable()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} which resolves to a boolean value indicating whether or not conditional mediation is available.
+یک {{jsxref("Promise")}} که با یک مقدار بولی resolve می‌شود و نشان می‌دهد که آیا میانجیگری شرطی در دسترس است یا نه.
 
-### Exceptions
+### استثناها
 
-The returned {{jsxref("Promise")}} may be rejected with the following values:
+{{jsxref("Promise")}} بازگشتی ممکن است با مقادیر زیر رد شود:
 
 - `SecurityError` {{domxref("DOMException")}}
-  - : The RP domain is not valid.
+  - : دامنهٔ RP معتبر نیست.
 
-## Examples
+## مثال‌ها
 
-Before invoking a conditional WebAuthn API call, check if:
+پیش از فراخوانی یک WebAuthn API شرطی، بررسی کنید که:
 
-- The browser supports the Web Authentication API.
-- The browser supports conditional mediation.
+- مرورگر از Web Authentication API پشتیبانی می‌کند.
+- مرورگر از میانجیگری شرطی پشتیبانی می‌کند.
 
 ```js
 // Availability of `window.PublicKeyCredential` means WebAuthn is usable.
@@ -71,10 +65,10 @@ if (
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
