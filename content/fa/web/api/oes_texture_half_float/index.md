@@ -1,10 +1,4 @@
 ---
-title: "OES_texture_half_float extension"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/OES_texture_half_float"
-status: "needs-translation"
----
-
----
 title: OES_texture_half_float extension
 short-title: OES_texture_half_float
 slug: Web/API/OES_texture_half_float
@@ -14,35 +8,35 @@ browser-compat: api.OES_texture_half_float
 
 {{APIRef("WebGL")}}
 
-The **`OES_texture_half_float`** extension is part of the [WebGL API](/en-US/docs/Web/API/WebGL_API) and adds texture formats with 16- (aka half float) and 32-bit floating-point components.
+افزونهٔ **`OES_texture_half_float`** بخشی از [WebGL API](/en-US/docs/Web/API/WebGL_API) است و قالب‌های بافت با مؤلفه‌های ممیز شناور ۱۶ بیتی (نیمه‌اعشاری) و ۳۲ بیتی را اضافه می‌کند.
 
-WebGL extensions are available using the {{domxref("WebGLRenderingContext.getExtension()")}} method. For more information, see also [Using Extensions](/en-US/docs/Web/API/WebGL_API/Using_Extensions) in the [WebGL tutorial](/en-US/docs/Web/API/WebGL_API/Tutorial).
+افزونه‌های WebGL با استفاده از متد {{domxref("WebGLRenderingContext.getExtension()")}} در دسترس هستند. برای اطلاعات بیشتر، به [استفاده از افزونه‌ها](/en-US/docs/Web/API/WebGL_API/Using_Extensions) در [آموزش WebGL](/en-US/docs/Web/API/WebGL_API/Tutorial) مراجعه کنید.
 
 > [!NOTE]
-> This extension is only available to {{domxref("WebGLRenderingContext", "WebGL1", "", 1)}} contexts. In {{domxref("WebGL2RenderingContext", "WebGL2", "", 1)}}, the functionality of this extension is available on the WebGL2 context by default. The constant in WebGL2 is `gl.HALF_FLOAT`.
+> این افزونه تنها در زمینه‌های {{domxref("WebGLRenderingContext", "WebGL1", "", 1)}} قابل استفاده است. در {{domxref("WebGL2RenderingContext", "WebGL2", "", 1)}}، عملکرد این افزونه به‌طور پیش‌فرض در دسترس است. ثابت مربوطه در WebGL2 `gl.HALF_FLOAT` است.
 
-## Constants
+## ثابت‌ها
 
 - `ext.HALF_FLOAT_OES`
-  - : Half floating-point type (16-bit).
+  - : نوع ممیز شناور نیمه‌اعشاری (16 بیتی).
 
-## Extended methods
+## متدهای گسترش‌یافته
 
-This extension extends {{domxref("WebGLRenderingContext.texImage2D()")}} and {{domxref("WebGLRenderingContext.texSubImage2D()")}}:
+این افزونه متد‌های {{domxref("WebGLRenderingContext.texImage2D()")}} و {{domxref("WebGLRenderingContext.texSubImage2D()")}} را گسترش می‌دهد:
 
-- The `type` parameter now accepts `ext.HALF_FLOAT_OES`.
+- پارامتر `type` اکنون مقدار `ext.HALF_FLOAT_OES` را می‌پذیرد.
 
-## Limitation: Linear filtering
+## محدودیت: فیلتر خطی
 
-Linear filtering on half floating-point textures is not allowed with this extension. If you set the magnification or minification filter in the {{domxref("WebGLRenderingContext.texParameter()")}} method to one of `gl.LINEAR`, `gl.LINEAR_MIPMAP_NEAREST`, `gl.NEAREST_MIPMAP_LINEAR`, or `gl.LINEAR_MIPMAP_LINEAR`, and use half floating-point textures, the texture will be marked as incomplete.
+فیلتر خطی روی بافت‌های ممیز شناور نیمه‌اعشاری با این افزونه مجاز نیست. اگر در متد {{domxref("WebGLRenderingContext.texParameter()")}} فیلتر بزرگ‌نمایی یا کوچک‌نمایی را روی یکی از مقادیر `gl.LINEAR`، `gl.LINEAR_MIPMAP_NEAREST`، `gl.NEAREST_MIPMAP_LINEAR` یا `gl.LINEAR_MIPMAP_LINEAR` تنظیم کنید و از بافت‌های نیمه‌اعشاری استفاده کنید، بافت ناقص علامت‌گذاری می‌شود.
 
-To use linear filtering on half floating-point textures, enable the {{domxref("OES_texture_half_float_linear")}} extension in addition to this extension.
+برای استفاده از فیلتر خطی روی بافت‌های نیمه‌اعشاری، افزونهٔ {{domxref("OES_texture_half_float_linear")}} را علاوه بر این افزونه فعال کنید.
 
-## Half floating-point color buffers
+## بافرهای رنگی ممیز شناور نیمه‌اعشاری
 
-This extension implicitly enables the {{domxref("EXT_color_buffer_half_float")}} extension (if supported), which allows rendering to 16-bit floating point formats.
+این افزونه به‌طور ضمنی افزونهٔ {{domxref("EXT_color_buffer_half_float")}} (در صورت پشتیبانی) را فعال می‌کند که امکان رندر کردن به قالب‌های ممیز شناور ۱۶ بیتی را فراهم می‌کند.
 
-## Examples
+## مثال
 
 ```js
 const ext = gl.getExtension("OES_texture_half_float");
@@ -53,15 +47,15 @@ gl.bindTexture(gl.TEXTURE_2D, texture);
 gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, ext.HALF_FLOAT_OES, image);
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("WebGLRenderingContext.getExtension()")}}
 - {{domxref("WebGLRenderingContext.texImage2D()")}}
