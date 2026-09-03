@@ -1,11 +1,5 @@
 ---
 title: "PaymentResponse: details property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse/details"
-status: "needs-translation"
----
-
----
-title: "PaymentResponse: details property"
 short-title: details
 slug: Web/API/PaymentResponse/details
 page-type: web-api-instance-property
@@ -14,20 +8,15 @@ browser-compat: api.PaymentResponse.details
 
 {{securecontext_header}}{{APIRef("Payment Request API")}}
 
-The **`details`** read-only property of the
-{{domxref("PaymentResponse")}} interface returns a JSON-serializable object that
-provides a payment method specific message used by the merchant to process the
-transaction and determine a successful funds transfer.
+ویژگی فقط خواندنی **`details`** از رابط {{domxref("PaymentResponse")}} یک شیء قابل سریال‌سازی به JSON برمی‌گرداند که یک پیام مختص روش پرداخت را ارائه می‌دهد که توسط فروشنده برای پردازش تراکنش و تعیین موفقیت انتقال وجه استفاده می‌شود.
 
-## Value
+## مقدار
 
-An object. This data is returned by the payment app that satisfies the payment request. Developers need to consult whomever controls the URL for the expected shape of the details object.
+یک شیء. این داده‌ها توسط برنامه پرداختی که درخواست پرداخت را برآورده می‌کند، بازگردانده می‌شوند. توسعه‌دهندگان باید با شخص یا نهادی که URL را کنترل می‌کند، برای شکل مورد انتظار شیء `details` مشورت کنند.
 
-## Examples
+## مثال‌ها
 
-The following example extracts the details from the {{domxref('PaymentResponse')}}
-object to the promise returned from {{domxref('PaymentRequest.show()')}}. In a
-real-world implementation this data would then be sent to a payment server.
+مثال زیر جزئیات را از شیء {{domxref('PaymentResponse')}} به قولی که از {{domxref('PaymentRequest.show()')}} برگردانده شده است، استخراج می‌کند. در یک پیاده‌سازی واقعی، این داده‌ها سپس به سرور پرداخت ارسال می‌شوند.
 
 ```js
 payment.show().then((paymentResponse) => {
@@ -43,10 +32,10 @@ payment.show().then((paymentResponse) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
