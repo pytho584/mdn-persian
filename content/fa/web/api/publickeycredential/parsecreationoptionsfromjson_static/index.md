@@ -1,11 +1,5 @@
 ---
 title: "PublicKeyCredential: parseCreationOptionsFromJSON() static method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredential/parseCreationOptionsFromJSON_static"
-status: "needs-translation"
----
-
----
-title: "PublicKeyCredential: parseCreationOptionsFromJSON() static method"
 short-title: parseCreationOptionsFromJSON()
 slug: Web/API/PublicKeyCredential/parseCreationOptionsFromJSON_static
 page-type: web-api-static-method
@@ -14,45 +8,41 @@ browser-compat: api.PublicKeyCredential.parseCreationOptionsFromJSON_static
 
 {{APIRef("Web Authentication API")}}{{securecontext_header}}
 
-The **`parseCreationOptionsFromJSON()`** static method of the {{domxref("PublicKeyCredential")}} interface creates a {{domxref("PublicKeyCredentialCreationOptions")}} object from a JSON representation of its properties.
+متد استاتیک **`parseCreationOptionsFromJSON()`** در رابط {{domxref("PublicKeyCredential")}} یک شیء {{domxref("PublicKeyCredentialCreationOptions")}} را از نمایش JSON ویژگی‌های آن می‌سازد.
 
-The method is a convenience function for converting credential options information provided by a relying party server to the form that a web app can use to [create a credential](/en-US/docs/Web/API/Web_Authentication_API#creating_a_key_pair_and_registering_a_user).
+این متد یک تابع کمکی برای تبدیل اطلاعات گزینه‌های اعتبارنامه است که سرورِ طرف معتمد (relying party) در اختیار برنامهٔ وب قرار می‌دهد، به شکلی که برنامهٔ وب بتواند از آن برای [ایجاد یک اعتبارنامه](/en-US/docs/Web/API/Web_Authentication_API#creating_a_key_pair_and_registering_a_user) استفاده کند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 PublicKeyCredential.parseCreationOptionsFromJSON(options)
 ```
 
-### Parameters
+### پارامترها
 
 - `options`
-  - : An object with the same structure as a {{domxref("PublicKeyCredentialCreationOptions")}}, but with [base64url](/en-US/docs/Glossary/Base64)-encoded strings used in place of buffer properties.
+  - : شیئی با همان ساختار {{domxref("PublicKeyCredentialCreationOptions")}}، اما با این تفاوت که ویژگی‌های بافری به‌صورت رشته‌های [base64url](/en-US/docs/Glossary/Base64) کدگذاری شده‌اند.
 
-### Return value
+### مقدار بازگشتی
 
-A {{domxref("PublicKeyCredentialCreationOptions")}} object.
+یک شیء {{domxref("PublicKeyCredentialCreationOptions")}}.
 
-### Exceptions
+### استثناها
 
 - `EncodingError` {{domxref("DOMException")}}
-  - : Thrown the `options` object cannot be converted into a {{domxref("PublicKeyCredentialCreationOptions")}} object.
+  - : در صورتی پرتاب می‌شود که شیء `options` نتواند به یک شیء {{domxref("PublicKeyCredentialCreationOptions")}} تبدیل شود.
 - `SecurityError` {{domxref("DOMException")}}
-  - : The RP domain is not valid.
+  - : دامنهٔ طرف معتمد (RP) معتبر نیست.
 
-## Description
+## توضیحات
 
-The Web Authentication process for [creating a key pair and registering a user](/en-US/docs/Web/API/Web_Authentication_API#creating_a_key_pair_and_registering_a_user) involves a relying party server sending the web app information needed to create a credential, including details about the user identity, the relying party, and a "challenge".
-The web app passes this information to an authenticator to create the credential, by calling [`navigator.credentials.create()`](/en-US/docs/Web/API/CredentialsContainer/create) with a {{domxref("PublicKeyCredentialCreationOptions")}} object as an argument.
+فرایند Web Authentication برای [ایجاد یک جفت‌کلید و ثبت‌نام کاربر](/en-US/docs/Web/API/Web_Authentication_API#creating_a_key_pair_and_registering_a_user) شامل ارسال اطلاعات لازم برای ایجاد یک اعتبارنامه از سمت سرور طرف معتمد به برنامهٔ وب است؛ اطلاعاتی مانند جزئیات هویت کاربر، اطلاعات مربوط به طرف معتمد و یک «چالش» (challenge). برنامهٔ وب این اطلاعات را با فراخوانی [`navigator.credentials.create()`](/en-US/docs/Web/API/CredentialsContainer/create) و با دادن یک شیء {{domxref("PublicKeyCredentialCreationOptions")}} به‌عنوان آرگومان، به یک احرازکننده (authenticator) می‌سپارد تا اعتبارنامه ساخته شود.
 
-The specification does not define how the information needed for creating a credential is sent.
-A convenient approach is for the server to encapsulate the information in a {{glossary("JSON type representation")}} of the {{domxref("PublicKeyCredentialCreationOptions")}} object that mirrors its structure but encodes buffer properties such as the `challenge` and `user.id` as [base64url](/en-US/docs/Glossary/Base64) strings.
-This object can be serialized to a [JSON](/en-US/docs/Glossary/JSON) string, sent to the web app and deserialized, and then converted to a {{domxref("PublicKeyCredentialCreationOptions")}} object using **`parseCreationOptionsFromJSON()`**.
+این مشخصات (specification) تعیین نمی‌کند که اطلاعات لازم برای ایجاد اعتبارنامه چگونه ارسال شوند. یک رویکرد راحت این است که سرور اطلاعات را در یک {{glossary("JSON type representation")}} از شیء {{domxref("PublicKeyCredentialCreationOptions")}} قرار دهد؛ نمایشی که ساختار شیء را منعکس می‌کند اما ویژگی‌های بافری مانند `challenge` و `user.id` را به‌صورت رشته‌های [base64url](/en-US/docs/Glossary/Base64) کدگذاری می‌کند. این شیء می‌تواند به یک رشتهٔ [JSON](/en-US/docs/Glossary/JSON) سریال‌سازی شود، به برنامهٔ وب ارسال و دوباره به شیء تبدیل شود، و سپس با استفاده از **`parseCreationOptionsFromJSON()`** به یک شیء {{domxref("PublicKeyCredentialCreationOptions")}} تبدیل گردد.
 
-## Examples
+## مثال‌ها
 
-When registering a new user, a relying party server will supply information about the expected credentials to the web app.
-The code below defines this information in the form described in the [`options` parameter](#options) above (taken from the ["getting an AuthenticatorAttestationResponse"](/en-US/docs/Web/API/AuthenticatorResponse#getting_an_authenticatorattestationresponse) in `AuthenticatorResponse`):
+هنگام ثبت‌نام یک کاربر جدید، سرور طرف معتمد اطلاعاتی دربارهٔ اعتبارنامه‌های مورد انتظار در اختیار برنامهٔ وب قرار می‌دهد. کد زیر این اطلاعات را به شکلی که در [پارامتر `options`](#options) در بالا شرح داده شد تعریف می‌کند (برگرفته از [«دریافت یک AuthenticatorAttestationResponse»](/en-US/docs/Web/API/AuthenticatorResponse#getting_an_authenticatorattestationresponse) در `AuthenticatorResponse`):
 
 ```js
 const createCredentialOptionsJSON = {
@@ -76,14 +66,13 @@ const createCredentialOptionsJSON = {
 };
 ```
 
-Because this object only uses JSON data types, it can be serialized to JSON using [`JSON.stringify()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) and sent to the web app.
+چون این شیء فقط از نوع‌های داده‌ای JSON استفاده می‌کند، می‌توان آن را با [`JSON.stringify()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) به JSON سریال‌سازی کرد و برای برنامهٔ وب فرستاد.
 
 ```js
 JSON.stringify(createCredentialOptionsJSON);
 ```
 
-The web app can deserialize the JSON string back to a `createCredentialOptionsJSON` object (not shown).
-The **`parseCreationOptionsFromJSON()`** method is used to convert that object to the form that can be used in `navigator.credentials.create()`:
+برنامهٔ وب می‌تواند رشتهٔ JSON را دوباره به یک شیء `createCredentialOptionsJSON` تبدیل کند (در اینجا نشان داده نشده است). از متد **`parseCreationOptionsFromJSON()`** برای تبدیل آن شیء به شکلی استفاده می‌شود که بتوان آن را در `navigator.credentials.create()` به کار برد:
 
 ```js
 // Convert options to form used by create()
@@ -102,15 +91,15 @@ navigator.credentials
   });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web Authentication API](/en-US/docs/Web/API/Web_Authentication_API)
 - {{domxref("PublicKeyCredential.parseRequestOptionsFromJSON_static", "PublicKeyCredential.parseRequestOptionsFromJSON()")}}
