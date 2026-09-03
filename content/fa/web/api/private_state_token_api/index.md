@@ -1,10 +1,4 @@
 ---
-title: "Private State Token API"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Private_State_Token_API"
-status: "needs-translation"
----
-
----
 title: Private State Token API
 slug: Web/API/Private_State_Token_API
 page-type: web-api-overview
@@ -16,83 +10,83 @@ spec-urls: https://wicg.github.io/trust-token-api/
 
 {{DefaultAPISidebar("Private State Token API")}}{{SeeCompatTable}}
 
-The **Private State Token API** provides a mechanism for conveying trust in a user's authenticity from one browsing context to another, without sharing the user's identity or allowing their activity across websites to be tracked.
+**Private State Token API** سازوکاری برای انتقال اعتماد به اصالت یک کاربر از یک بافت مرور (browsing context) به بافتی دیگر فراهم می‌کند، بدون آنکه هویت کاربر فاش شود یا فعالیت‌های او در وب‌سایت‌های مختلف قابل ردیابی باشد.
 
-## Concepts and usage
+## مفاهیم و کاربرد
 
-To prevent fraud on the web, websites and services need to establish and convey trust signals that prove a user is who they say they are, and is not a bot pretending to be a human or a malicious third party defrauding a real person or service.
+برای جلوگیری از کلاهبرداری در وب، وب‌سایت‌ها و سرویس‌ها باید سیگنال‌های اعتمادی ایجاد و منتقل کنند که اثبات کند کاربر همان کسی است که ادعا می‌کند و نه یک ربات که وانمود می‌کند انسان است و نه طرف سوم مخربی که از یک شخص یا سرویس واقعی کلاهبرداری می‌کند.
 
-- Trust is established using mechanisms such as [CAPTCHAs](https://en.wikipedia.org/wiki/CAPTCHA), verifying email addresses, or making purchases.
-- Trust is traditionally conveyed between different origins using mechanisms such as [third-party cookies](/en-US/docs/Web/Privacy/Guides/Third-party_cookies).
+- اعتماد با استفاده از سازوکارهایی مانند [کپچا](https://en.wikipedia.org/wiki/CAPTCHA)، تأیید آدرس ایمیل یا انجام خرید ایجاد می‌شود.
+- اعتماد به‌طور سنتی بین مبدأهای مختلف با سازوکارهایی مانند [کوکی‌های طرف سوم](/en-US/docs/Web/Privacy/Guides/Third-party_cookies) منتقل می‌شود.
 
-Unfortunately, current cookie-based techniques for conveying such information are not secure and can be used for {{glossary("fingerprinting")}} and tracking users, which is problematic for user privacy.
+متأسفانه، فنون مبتنی بر کوکی فعلی برای انتقال چنین اطلاعاتی امن نیستند و می‌توانند برای {{glossary("fingerprinting")}} و ردیابی کاربران استفاده شوند که برای حریم خصوصی کاربر مشکل‌ساز است.
 
-Private state tokens solve this problem, allowing trust signals to be conveyed across origins without passive tracking using the [Privacy Pass protocol](https://privacypass.github.io/) in the background.
+توکن‌های حالت خصوصی این مشکل را حل می‌کنند و اجازه می‌دهند سیگنال‌های اعتماد بدون ردیابی غیرفعال، با استفاده از [پروتکل Privacy Pass](https://privacypass.github.io/) در پس‌زمینه، بین مبدأها منتقل شوند.
 
 > [!NOTE]
-> Private state tokens are not a replacement for CAPTCHAs or other trust-establishing mechanisms. Private state tokens provide a way to _convey_ trust in a user, not _establish_ trust in a user.
+> توکن‌های حالت خصوصی جایگزینی برای کپچا یا سایر سازوکارهای ایجاد اعتماد نیستند. توکن‌های حالت خصوصی راهی برای _انتقالِ_ اعتماد به یک کاربر فراهم می‌کنند، نه _ایجادِ_ اعتماد در یک کاربر.
 
-### How do private state tokens work?
+### توکن‌های حالت خصوصی چگونه کار می‌کنند؟
 
-1. When a website has established trust in a user (for example via a CAPTCHA), it can issue a cryptographic token that is stored securely by the user's browser. This website is called an **issuer**.
-2. Another website can then verify that the same user is trustworthy by checking if their browser has a token stored that was issued by an issuer that the website trusts. If so, they can redeem that token to get a **redemption record**. This website is called a **redeemer**.
-3. The redemption record is then used to give the user access to services as if they were authenticated directly with that site, and can also be forwarded onto other parties to convey trust.
+1. هنگامی که یک وب‌سایت به اعتماد کاربر دست یافته است (مثلاً از طریق کپچا)، می‌تواند یک توکن رمزنگاری‌شده صادر کند که توسط مرورگر کاربر به‌طور امن ذخیره می‌شود. به این وب‌سایت **صادرکننده (issuer)** می‌گویند.
+2. وب‌سایت دیگری می‌تواند با بررسی اینکه آیا مرورگر کاربر توکنی را که توسط صادرکننده‌ای مورد اعتمادِ آن وب‌سایت صادر شده است ذخیره کرده، تأیید کند که همان کاربر قابل اعتماد است. اگر چنین بود، می‌تواند آن توکن را بازخرید کند تا یک **رکورد بازخرید (redemption record)** به دست آورد. به این وب‌سایت **بازخریدکننده (redeemer)** می‌گویند.
+3. سپس از رکورد بازخرید برای دادن دسترسی کاربر به سرویس‌ها استفاده می‌شود، گویی کاربر مستقیماً با آن وب‌سایت احراز هویت شده است؛ همچنین می‌توان آن را برای انتقال اعتماد به طرف‌های دیگر ارسال کرد.
 
-Private state tokens are encrypted, so it isn't possible to identify an individual or connect trusted and untrusted instances to discover user identity.
+توکن‌های حالت خصوصی رمزنگاری شده‌اند، بنابراین شناسایی یک فرد یا اتصال نمونه‌های معتمد و غیرمعتمد برای کشف هویت کاربر ممکن نیست.
 
-See [Using the Private State Token API](/en-US/docs/Web/API/Private_State_Token_API/Using) for a guide to using private state tokens.
+راهنمای استفاده از توکن‌های حالت خصوصی را در [استفاده از Private State Token API](/en-US/docs/Web/API/Private_State_Token_API/Using) ببینید.
 
-## Interfaces
+## رابط‌ها (Interfaces)
 
-The Private State Token API has no distinct interfaces of its own.
+Private State Token API هیچ رابط مجزای خود را ندارد.
 
-### Extensions to other interfaces
+### افزوده‌شده‌ها به رابط‌های دیگر
 
 - {{domxref("Document.hasPrivateToken()")}}
-  - : Returns a promise that fulfills with a boolean indicating whether the browser has a private state token stored from a particular issuer.
+  - : یک promise برمی‌گرداند که با یک مقدار بولین تکمیل می‌شود و نشان می‌دهد که آیا مرورگر یک توکن حالت خصوصی ذخیره‌شده از یک صادرکنندهٔ خاص دارد یا نه.
 - {{domxref("Document.hasRedemptionRecord()")}}
-  - : Returns a promise that fulfills with a boolean indicating whether the browser has a redemption record originating from a particular issuer.
+  - : یک promise برمی‌گرداند که با یک مقدار بولین تکمیل می‌شود و نشان می‌دهد که آیا مرورگر یک رکورد بازخرید متعلق به یک صادرکنندهٔ خاص دارد یا نه.
 - {{domxref("HTMLIFrameElement.privateToken")}}
-  - : Mirrors the value of the `<iframe>` `privateToken` attribute.
-- {{domxref("Window.fetch", "fetch()")}} / {{domxref("Request.Request", "Request()")}}, the [`privateToken`](/en-US/docs/Web/API/RequestInit#privatetoken) option
-  - : An object representing a private state token operation. Fetch calls with the `privateToken` option specified initiate operations such as issuing or redeeming tokens.
+  - : مقدار ویژگیِ `privateToken` عنصر `<iframe>` را منعکس می‌کند.
+- {{domxref("Window.fetch", "fetch()")}} / {{domxref("Request.Request", "Request()")}}، گزینهٔ [`privateToken`](/en-US/docs/Web/API/RequestInit#privatetoken)
+  - : شیئی که یک عملیات توکن حالت خصوصی را نمایش می‌دهد. فراخوانی‌های fetch با گزینهٔ `privateToken` عملیاتی مانند صدور یا بازخرید توکن‌ها را آغاز می‌کنند.
 - {{domxref("XMLHttpRequest.setPrivateToken()")}}
-  - : Adds private state token information to an `XMLHttpRequest` call, to initiate private state token operations.
+  - : اطلاعات توکن حالت خصوصی را به یک فراخوانی `XMLHttpRequest` اضافه می‌کند تا عملیات توکن حالت خصوصی آغاز شود.
 
-## HTML elements
+## عناصر HTML
 
-- {{htmlelement("iframe")}}, the [`privateToken`](/en-US/docs/Web/HTML/Reference/Elements/iframe#privatetoken) attribute
-  - : Contains a string representation of an options object representing a private state token operation. IFrames containing this attribute can be used to initiate operations such as issuing or redeeming tokens.
+- {{htmlelement("iframe")}}، ویژگی [`privateToken`](/en-US/docs/Web/HTML/Reference/Elements/iframe#privatetoken)
+  - : شامل یک نمایش رشته‌ای از یک شیء گزینه‌ها است که یک عملیات توکن حالت خصوصی را نشان می‌دهد. iframeهای دارای این ویژگی می‌توانند برای آغاز عملیاتی مانند صدور یا بازخرید توکن‌ها استفاده شوند.
 
-## HTTP headers
+## هدرهای HTTP
 
-- {{httpheader("Permissions-Policy")}}; the {{httpheader('Permissions-Policy/private-state-token-issuance','private-state-token-issuance')}} directive
-  - : Controls usage of `token-request` operations.
-- {{httpheader("Permissions-Policy")}}; the {{httpheader('Permissions-Policy/private-state-token-redemption','private-state-token-redemption')}} directive
-  - : Controls usage of `token-redemption` and `send-redemption-record` operations.
+- {{httpheader("Permissions-Policy")}}؛ دستور {{httpheader('Permissions-Policy/private-state-token-issuance','private-state-token-issuance')}}
+  - : استفاده از عملیات `token-request` را کنترل می‌کند.
+- {{httpheader("Permissions-Policy")}}؛ دستور {{httpheader('Permissions-Policy/private-state-token-redemption','private-state-token-redemption')}}
+  - : استفاده از عملیات `token-redemption` و `send-redemption-record` را کنترل می‌کند.
 - {{httpheader("Sec-Redemption-Record")}}
-  - : A request header that forwards a redemption record to another party to convey trust when a `send-redemption-record` fetch request is made.
+  - : یک هدر درخواست که هنگام انجام درخواست fetch از نوع `send-redemption-record`، یک رکورد بازخرید را برای انتقال اعتماد به طرف دیگر ارسال می‌کند.
 - {{httpheader("Sec-Private-State-Token")}}
-  - : Exists both as a request and a response header, used during issuance and redemption requests to transmit request data (such as blinded nonces used to generate tokens) and response data (such as tokens and redemption records).
+  - : هم به‌صورت هدر درخواست و هم به‌صورت هدر پاسخ وجود دارد؛ در درخواست‌های صدور و بازخرید برای انتقال داده‌های درخواست (مانند nonceهای کور (blinded nonce) که برای تولید توکن‌ها استفاده می‌شوند) و داده‌های پاسخ (مانند توکن‌ها و رکوردهای بازخرید) به‌کار می‌رود.
 - {{httpheader("Sec-Private-State-Token-Crypto-Version")}}
-  - : A request header sent to an issuer server that states which cryptographic protocol version should be used to sign blinded nonces when generating tokens.
+  - : یک هدر درخواست که به سرور صادرکننده ارسال می‌شود و مشخص می‌کند هنگام تولید توکن‌ها از کدام نسخهٔ پروتکل رمزنگاری برای امضای nonceهای کور استفاده شود.
 - {{httpheader("Sec-Private-State-Token-Lifetime")}}
-  - : A response header, sent by the redeemer server, to indicate to the browser how long it should cache a particular redemption record for.
+  - : یک هدر پاسخ که توسط سرور بازخریدکننده ارسال می‌شود تا به مرورگر بگوید یک رکورد بازخرید خاص را برای چه مدتی در حافظهٔ نهان نگه دارد.
 
-## Security considerations
+## ملاحظات امنیتی
 
-Private state token `token-request` operations are controlled by the {{httpheader('Permissions-Policy/private-state-token-issuance','private-state-token-issuance')}} {{httpheader("Permissions-Policy")}} directive, whereas `token-redemption` and `send-redemption-record` operations are controlled by the {{httpheader('Permissions-Policy/private-state-token-redemption','private-state-token-redemption')}} directive.
+عملیات `token-request` توکن حالت خصوصی توسط دستور {{httpheader('Permissions-Policy/private-state-token-issuance','private-state-token-issuance')}} هدر {{httpheader("Permissions-Policy")}} کنترل می‌شود؛ در حالی که عملیات `token-redemption` و `send-redemption-record` توسط دستور {{httpheader('Permissions-Policy/private-state-token-redemption','private-state-token-redemption')}} کنترل می‌شوند.
 
-Specifically, where a defined policy blocks usage, any attempts to initiate private state token operations via fetch requests will fail.
+به‌طور خاص، هر جا که یک خط‌مشی تعریف‌شده استفاده را مسدود کند، هر تلاش برای آغاز عملیات توکن حالت خصوصی از طریق درخواست‌های fetch ناموفق خواهد بود.
 
-## Examples
+## مثال‌ها
 
-See the [Private State Token Demo Issuer](https://privatetokens.dev/) for an example implementation.
+برای یک نمونه پیاده‌سازی، به [صادرکنندهٔ نمونهٔ Private State Token](https://privatetokens.dev/) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
