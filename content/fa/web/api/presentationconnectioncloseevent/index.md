@@ -1,7 +1,6 @@
 ---
-title: "PresentationConnectionCloseEvent"
+title: PresentationConnectionCloseEvent
 source: "https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnectionCloseEvent"
-status: "needs-translation"
 ---
 
 ---
@@ -15,26 +14,26 @@ browser-compat: api.PresentationConnectionCloseEvent
 
 {{SeeCompatTable}}{{securecontext_header}}{{APIRef("Presentation API")}}
 
-The **`PresentationConnectionCloseEvent`** interface of the [Presentation API](/en-US/docs/Web/API/Presentation_API) is fired on a {{domxref("PresentationConnection")}} when it is closed.
+**`PresentationConnectionCloseEvent`** 接口是 [Presentation API](/en-US/docs/Web/API/Presentation_API) 的一部分，当 {{domxref("PresentationConnection")}} 关闭时触发该事件。
 
 {{InheritanceDiagram}}
 
-## Constructor
+## 构造函数
 
 - {{domxref("PresentationConnectionCloseEvent.PresentationConnectionCloseEvent", "PresentationConnectionCloseEvent()")}} {{Experimental_Inline}}
-  - : Creates a new PresentationConnectionCloseEvent.
+  - : 创建一个新的 `PresentationConnectionCloseEvent` 实例。
 
-## Instance properties
+## 实例属性
 
 - {{DOMxRef("PresentationConnectionCloseEvent.message")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : A human-readable message that provides more information about why the connection was closed.
+  - : 一个人类可读的消息，提供更多关于连接为何关闭的信息。
 - {{DOMxRef("PresentationConnectionCloseEvent.reason")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Indicates why the connection was closed. This property takes one of the following values: `error`, `closed`, or `wentaway`.
+  - : 指示连接关闭的原因。该属性取以下值之一：`error`、`closed` 或 `wentaway`。
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
