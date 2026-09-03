@@ -1,11 +1,5 @@
 ---
 title: "Node: normalize() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Node/normalize"
-status: "needs-translation"
----
-
----
-title: "Node: normalize() method"
 short-title: normalize()
 slug: Web/API/Node/normalize
 page-type: web-api-instance-method
@@ -14,25 +8,23 @@ browser-compat: api.Node.normalize
 
 {{APIRef("DOM")}}
 
-The **`normalize()`** method of the {{domxref("Node")}} interface puts the specified node
-and all of its sub-tree into a _normalized_ form.
-In a normalized sub-tree, no text nodes in the sub-tree are empty and there are no adjacent text nodes.
+**`normalize()`** 方法属于 {{domxref("Node")}} 接口，会将指定节点及其整个子树规范化为 _规范化_ 形式。在规范化的子树中，子树中的文本节点不会为空，也不会存在相邻的文本节点。
 
-## Syntax
+## 语法
 
 ```js-nolint
 normalize()
 ```
 
-### Parameters
+### 参数
 
-None.
+无。
 
-### Return value
+### 返回值
 
-None.
+无。
 
-## Example
+## 示例
 
 ```html
 <output id="result"></output>
@@ -66,14 +58,14 @@ output.innerText = result;
 
 {{ EmbedLiveSample("Example", "100%", "170")}}
 
-## Specifications
+## 规范
 
 {{Specifications}}
 
-## Browser compatibility
+## 浏览器兼容性
 
 {{Compat}}
 
-## See also
+## 参见
 
-- {{domxref("Text.splitText()")}}, its opposite.
+- {{domxref("Text.splitText()")}}，其作用与此方法相反。
