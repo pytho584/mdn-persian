@@ -1,10 +1,4 @@
 ---
-title: "PresentationConnection"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnection"
-status: "needs-translation"
----
-
----
 title: PresentationConnection
 slug: Web/API/PresentationConnection
 page-type: web-api-interface
@@ -15,45 +9,45 @@ browser-compat: api.PresentationConnection
 
 {{SeeCompatTable}}{{securecontext_header}}{{APIRef("Presentation API")}}
 
-The **`PresentationConnection`** interface of the [Presentation API](/en-US/docs/Web/API/Presentation_API) provides methods and properties for managing a single presentation. Each [presentation connection](https://www.w3.org/TR/presentation-api/#dfn-presentation-connection) is represented by a `PresentationConnection` object. Both the [controlling user agent](https://www.w3.org/TR/presentation-api/#dfn-controlling-user-agent) and [receiving user agent](https://www.w3.org/TR/presentation-api/#dfn-receiving-user-agent) _MUST_ implement `PresentationConnection`.
+رابط `PresentationConnection` متعلق به [Presentation API](/en-US/docs/Web/API/Presentation_API) است و متدها و ویژگی‌هایی را برای مدیریت یک ارائه فراهم می‌کند. هر [اتصال ارائه](https://www.w3.org/TR/presentation-api/#dfn-presentation-connection) با یک شیء `PresentationConnection` نشان داده می‌شود. هم [عامل کاربر کنترل‌کننده](https://www.w3.org/TR/presentation-api/#dfn-controlling-user-agent) و هم [عامل کاربر دریافت‌کننده](https://www.w3.org/TR/presentation-api/#dfn-receiving-user-agent) _باید_ `PresentationConnection` را پیاده‌سازی کنند.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("PresentationConnection.binaryType")}} {{Experimental_Inline}}
-  - : Returns either blob or arrayBuffer. When a `PresentationConnection` object is created, its [`binaryType`](https://www.w3.org/TR/presentation-api/#idl-def-presentationconnection-binarytype) IDL attribute _MUST_ be set to the string [`"arraybuffer"`](https://www.w3.org/TR/presentation-api/#dom-binarytype-arraybuffer).
+  - : مقدار `blob` یا `arrayBuffer` را برمی‌گرداند. وقتی یک شیء `PresentationConnection` ساخته می‌شود، ویژگی IDL مربوط به [`binaryType`](https://www.w3.org/TR/presentation-api/#idl-def-presentationconnection-binarytype) آن، _باید_ روی رشته [`"arraybuffer"`](https://www.w3.org/TR/presentation-api/#dom-binarytype-arraybuffer) تنظیم شود.
 - {{domxref("PresentationConnection.id")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Provides the presentation connection identifier.
+  - : شناسه اتصال ارائه را فراهم می‌کند.
 - {{domxref("PresentationConnection.state")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns the [presentation connection](https://www.w3.org/TR/presentation-api/#dfn-presentation-connection)'s current state.
+  - : وضعیت فعلی [اتصال ارائه](https://www.w3.org/TR/presentation-api/#dfn-presentation-connection) را برمی‌گرداند.
 - {{domxref("PresentationConnection.url")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns the URL used to create or reconnect to the presentation.
+  - : نشانی اینترنتی (URL) مورد استفاده برای ایجاد یا اتصال مجدد به ارائه را برمی‌گرداند.
 
-## Instance methods
+## متدهای نمونه
 
 - {{domxref("PresentationConnection.close()")}} {{Experimental_Inline}}
-  - : Closes the current connection and sends a {{domxref("PresentationConnectionCloseEvent")}} to {{DOMxRef("PresentationConnection/close", "close")}} event.
+  - : اتصال فعلی را می‌بندد و یک رویداد {{domxref("PresentationConnectionCloseEvent")}} را برای رویداد {{DOMxRef("PresentationConnection/close", "close")}} ارسال می‌کند.
 - {{domxref("PresentationConnection.send()")}} {{Experimental_Inline}}
-  - : Sends either binary or text data between a controlling browsing context and a presenting browsing context.
+  - : داده‌های متنی یا دودویی را بین یک زمینه مرور کنترل‌کننده و یک زمینه مرور ارائه‌دهنده ارسال می‌کند.
 - {{domxref("PresentationConnection.terminate()")}} {{Experimental_Inline}}
-  - : Terminates the current connection and fires {{domxref("PresentationConnection/terminate_event", "terminate")}} event.
+  - : اتصال فعلی را خاتمه می‌دهد و رویداد {{domxref("PresentationConnection/terminate_event", "terminate")}} را صادر می‌کند.
 
-## Events
+## رویدادها
 
 - {{domxref("PresentationConnection/close_event", "close")}} {{Experimental_Inline}}
-  - : Fired when there is a call to {{DOMxRef("PresentationConnection.close", "PresentationConnection.close()")}}.
+  - : هنگام فراخوانی {{DOMxRef("PresentationConnection.close", "PresentationConnection.close()")}} صادر می‌شود.
 - {{domxref("PresentationConnection/connect_event", "connect")}} {{Experimental_Inline}}
-  - : Fired when a presentation connection is established.
+  - : وقتی یک اتصال ارائه برقرار می‌شود صادر می‌گردد.
 - {{domxref("PresentationConnection/message_event", "message")}} {{Experimental_Inline}}
-  - : Fired when there is a call to {{DOMxRef("PresentationConnection.send", "PresentationConnection.send()")}}.
+  - : هنگام فراخوانی {{DOMxRef("PresentationConnection.send", "PresentationConnection.send()")}} صادر می‌شود.
 - {{domxref("PresentationConnection/terminate_event", "terminate")}} {{Experimental_Inline}}
-  - : Fired when there is a call to {{DOMxRef("PresentationConnection.terminate", "PresentationConnection.terminate()")}}.
+  - : هنگام فراخوانی {{DOMxRef("PresentationConnection.terminate", "PresentationConnection.terminate()")}} صادر می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
