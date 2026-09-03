@@ -1,11 +1,5 @@
 ---
 title: "Navigator: productSub property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/productSub"
-status: "needs-translation"
----
-
----
-title: "Navigator: productSub property"
 short-title: productSub
 slug: Web/API/Navigator/productSub
 page-type: web-api-instance-property
@@ -14,13 +8,13 @@ browser-compat: api.Navigator.productSub
 
 {{ ApiRef("HTML DOM") }}
 
-The **`Navigator.productSub`** read-only property that returns either the string "20030107", or the string "20100101".
+خاصیت فقط‌خواندنی **`Navigator.productSub`** رشته «20030107» یا رشته «20100101» را برمی‌گرداند.
 
-## Value
+## مقدار
 
-Either "20030107", or "20100101".
+یا «20030107» است یا «20100101».
 
-## Examples
+## مثال‌ها
 
 ```js
 document.body.textContent = `productSub: ${navigator.productSub}`;
@@ -28,18 +22,18 @@ document.body.textContent = `productSub: ${navigator.productSub}`;
 
 {{ EmbedLiveSample("Examples") }}
 
-## Notes
+## نکات
 
-On IE, this property returns undefined.
+در IE، این خاصیت مقدار `undefined` را برمی‌گرداند.
 
-On Apple Safari and Google Chrome this property always returns `20030107`.
+در Apple Safari و Google Chrome، این خاصیت همیشه `20030107` را برمی‌گرداند.
 
-On Firefox, this property always returns `20100101`.
+در Firefox، این خاصیت همیشه `20100101` را برمی‌گرداند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
