@@ -1,11 +1,5 @@
 ---
 title: "PaymentResponse: payerEmail property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse/payerEmail"
-status: "needs-translation"
----
-
----
-title: "PaymentResponse: payerEmail property"
 short-title: payerEmail
 slug: Web/API/PaymentResponse/payerEmail
 page-type: web-api-instance-property
@@ -14,20 +8,16 @@ browser-compat: api.PaymentResponse.payerEmail
 
 {{securecontext_header}}{{APIRef("Payment Request API")}}
 
-The `payerEmail` read-only property of the {{domxref("PaymentResponse")}}
-interface returns the email address supplied by the user. This option is only present
-when the `requestPayerEmail` option is set to `true` in the
-`options` object passed to the
-{{domxref('PaymentRequest.PaymentRequest','PaymentRequest')}} constructor.
+ویژگی فقط‌خواندنی `payerEmail` در رابط {{domxref("PaymentResponse")}} نشانی ایمیل واردشده توسط کاربر را برمی‌گرداند. این گزینه تنها زمانی وجود دارد که گزینه `requestPayerEmail` در شیء `options` ارسال‌شده به سازنده {{domxref('PaymentRequest.PaymentRequest','PaymentRequest')}} روی `true` تنظیم شده باشد.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
