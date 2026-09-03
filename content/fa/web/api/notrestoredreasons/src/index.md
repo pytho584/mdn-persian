@@ -1,11 +1,5 @@
 ---
 title: "NotRestoredReasons: src property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NotRestoredReasons/src"
-status: "needs-translation"
----
-
----
-title: "NotRestoredReasons: src property"
 short-title: src
 slug: Web/API/NotRestoredReasons/src
 page-type: web-api-instance-property
@@ -16,28 +10,27 @@ browser-compat: api.NotRestoredReasons.src
 
 {{APIRef("Performance API")}}{{SeeCompatTable}}
 
-The **`src`** read-only property of the
-{{domxref("NotRestoredReasons")}} interface returns a string representing the path to the source of the {{htmlelement("iframe")}} the document is contained in (for example `<iframe src="b.html">`).
+خاصیت فقط‌خواندنی **`src`** از رابط {{domxref("NotRestoredReasons")}} یک رشته را برمی‌گرداند که مسیر منبع {{htmlelement("iframe")}}ای که سند در آن قرار دارد را نشان می‌دهد (برای مثال `<iframe src="b.html">`).
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-If the document is not in an `<iframe>`, `src` will return `null`.
+اگر سند در یک `<iframe>` نباشد، `src` مقدار `null` را برمی‌گرداند.
 
-## Examples
+## مثال‌ها
 
-See [Monitoring bfcache blocking reasons](/en-US/docs/Web/API/Performance_API/Monitoring_bfcache_blocking_reasons) for examples.
+برای مثال‌ها به [نظارت بر دلایل مسدودسازی bfcache](/en-US/docs/Web/API/Performance_API/Monitoring_bfcache_blocking_reasons) مراجعه کنید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Monitoring bfcache blocking reasons](/en-US/docs/Web/API/Performance_API/Monitoring_bfcache_blocking_reasons)
+- [نظارت بر دلایل مسدودسازی bfcache](/en-US/docs/Web/API/Performance_API/Monitoring_bfcache_blocking_reasons)
 - {{domxref("PerformanceNavigationTiming.notRestoredReasons")}}
