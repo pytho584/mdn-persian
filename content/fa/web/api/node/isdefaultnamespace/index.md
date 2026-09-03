@@ -1,7 +1,5 @@
 ---
 title: "Node: isDefaultNamespace() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Node/isDefaultNamespace"
-status: "needs-translation"
 ---
 
 ---
@@ -14,8 +12,7 @@ browser-compat: api.Node.isDefaultNamespace
 
 {{APIRef("DOM")}}
 
-The **`isDefaultNamespace()`** method of the {{domxref("Node")}} interface accepts a namespace URI as an argument.
-It returns a boolean value that is `true` if the namespace is the default namespace on the given node and `false` if not. The default namespace can be retrieved with {{domxref("Node.lookupNamespaceURI()")}} by passing `null` as the argument.
+متد **`isDefaultNamespace()`** از رابط {{domxref("Node")}} یک URI فضای نام را به عنوان آرگومان می‌پذیرد. این متد یک مقدار بولین برمی‌گرداند که اگر آن فضای نام، فضای نام پیش‌فرض روی گره موردنظر باشد `true` و در غیر این صورت `false` است. می‌توان فضای نام پیش‌فرض را با استفاده از {{domxref("Node.lookupNamespaceURI()")}} و با ارسال `null` به عنوان آرگومان به دست آورد.
 
 ## Syntax
 
@@ -26,18 +23,18 @@ isDefaultNamespace(namespaceURI)
 ### Parameters
 
 - `namespaceURI`
-  - : A string representing the namespace against which the element will be checked. The empty string is equivalent to `null`.
+  - : رشته‌ای که فضای نام مورد بررسی برای عنصر را مشخص می‌کند. رشته خالی معادل `null` است.
     > [!NOTE]
-    > `namespaceURI` is not an optional parameter, but can be `null`.
+    > `namespaceURI` یک پارامتر اختیاری نیست، اما می‌تواند `null` باشد.
 
 ### Return value
 
-A boolean value that holds the return value `true` or `false`, indicating if the parameter is the default namespace, or not. It is equivalent to `node.lookupNamespaceURI(null) === namespaceURI`.
+یک مقدار بولین که مقدار بازگشتی `true` یا `false` را نگه می‌دارد و نشان می‌دهد که آیا پارامتر، فضای نام پیش‌فرض است یا نه. این معادل عبارت `node.lookupNamespaceURI(null) === namespaceURI` است.
 
 ## Example
 
 > [!NOTE]
-> This example runs in an HTML document, where `xmlns:` attributes are ignored (except `xmlns:xlink`). Firefox sets all elements' namespace URI to `null`, while Chrome and Safari appropriately set HTML, SVG, and MathML elements' default namespace URIs. If you want to conduct more meaningful tests, you can open a standalone [SVG](/en-US/docs/Web/SVG) document and execute scripts in its context.
+> این مثال در یک سند HTML اجرا می‌شود، جایی که ویژگی‌های `xmlns:` نادیده گرفته می‌شوند (به‌جز `xmlns:xlink`). Firefox برای همه عناصر، URI فضای نام را `null` تنظیم می‌کند، در حالی که Chrome و Safari به‌درستی URI فضای نام پیش‌فرض عناصر HTML، SVG و MathML را تنظیم می‌کنند. اگر می‌خواهید آزمایش‌های معنادارتری انجام دهید، می‌توانید یک سند مستقل [SVG](/en-US/docs/Web/SVG) را باز کرده و اسکریپت‌ها را در بافت آن اجرا کنید.
 
 ```html
 <div class="hidden">
