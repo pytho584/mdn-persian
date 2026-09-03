@@ -1,11 +1,5 @@
 ---
 title: "Profiler: stop() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Profiler/stop"
-status: "needs-translation"
----
-
----
-title: "Profiler: stop() method"
 short-title: stop()
 slug: Web/API/Profiler/stop
 page-type: web-api-instance-method
@@ -16,7 +10,7 @@ browser-compat: api.Profiler.stop
 
 {{APIRef("JS Self-Profiling API")}}{{SeeCompatTable}}
 
-The **`stop()`** method of the {{domxref("Profiler")}} interface stops the profiler and returns a {{jsxref("Promise")}} which resolves to the profile itself.
+متد **`stop()`** از رابط {{domxref("Profiler")}} پروفایلر را متوقف می‌کند و یک {{jsxref("Promise")}} برمی‌گرداند که با خود پروفایل (profile) resolve می‌شود.
 
 ## Syntax
 
@@ -24,19 +18,19 @@ The **`stop()`** method of the {{domxref("Profiler")}} interface stops the profi
 stop()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} that resolves to an object containing the profile data. The format and interpretation of this object is described in [Profile anatomy and format](/en-US/docs/Web/API/JS_Self-Profiling_API/Profile_content_and_format).
+یک {{jsxref("Promise")}} که به یک شیء حاوی داده‌های پروفایل resolve می‌شود. قالب و تفسیر این شیء در [آناتومی و قالب پروفایل](/en-US/docs/Web/API/JS_Self-Profiling_API/Profile_content_and_format) توضیح داده شده است.
 
-## Examples
+## مثال‌ها
 
-### Recording a profile
+### ضبط یک پروفایل
 
-The following code profiles the `doWork()` operation, and logs the result.
+کد زیر عملیات `doWork()` را پروفایل می‌کند و نتیجه را در خروجی (log) نمایش می‌دهد.
 
 ```js
 const profiler = new Profiler({ sampleInterval: 10, maxBufferSize: 10000 });
@@ -47,10 +41,10 @@ const profile = await profiler.stop();
 console.log(JSON.stringify(profile));
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
