@@ -1,11 +1,5 @@
 ---
 title: "NodeIterator: detach() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/detach"
-status: "needs-translation"
----
-
----
-title: "NodeIterator: detach() method"
 short-title: detach()
 slug: Web/API/NodeIterator/detach
 page-type: web-api-instance-method
@@ -16,29 +10,25 @@ browser-compat: api.NodeIterator.detach
 
 {{APIRef("DOM")}}{{deprecated_header}}
 
-The **`NodeIterator.detach()`** method is a no-op, kept for
-backward compatibility only.
+متد **`NodeIterator.detach()`** یک عملیات بدون اثر (no-op) است که تنها برای سازگاری با نسخه‌های قبلی نگه داشته شده است.
 
-Originally, it detached the {{domxref("NodeIterator")}} from the set over which it
-iterates, releasing any resources used by the set and setting the iterator's state to
-`INVALID`. Once this method had been called, calls to other methods on
-`NodeIterator` would raise the `INVALID_STATE_ERR` exception.
+در ابتدا، این متد {{domxref("NodeIterator")}} را از مجموعه‌ای که روی آن تکرار می‌کند جدا می‌کرد، منابع استفاده شده توسط مجموعه را آزاد می‌کرد و وضعیت پیمایش‌گر را به `INVALID` تنظیم می‌نمود. پس از فراخوانی این متد، فراخوانی سایر متدهای `NodeIterator` باعث ایجاد استثنای `INVALID_STATE_ERR` می‌شد.
 
-## Syntax
+## نحو
 
 ```js-nolint
 detach()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچکدام.
 
-### Return value
+### مقدار بازگشتی
 
-None ({{jsxref("undefined")}}).
+هیچکدام ({{jsxref("undefined")}}).
 
-## Examples
+## مثال‌ها
 
 ```js
 const nodeIterator = document.createNodeIterator(
@@ -55,14 +45,14 @@ nodeIterator.detach(); // detaches the iterator
 nodeIterator.nextNode(); // throws an INVALID_STATE_ERR exception
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The interface it belongs to: {{domxref("NodeIterator")}}.
+- رابطی که به آن تعلق دارد: {{domxref("NodeIterator")}}.
