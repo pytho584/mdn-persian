@@ -1,11 +1,5 @@
 ---
 title: "Navigator: requestMIDIAccess() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/requestMIDIAccess"
-status: "needs-translation"
----
-
----
-title: "Navigator: requestMIDIAccess() method"
 short-title: requestMIDIAccess()
 slug: Web/API/Navigator/requestMIDIAccess
 page-type: web-api-instance-method
@@ -14,89 +8,87 @@ browser-compat: api.Navigator.requestMIDIAccess
 
 {{APIRef("Web MIDI API")}}{{SecureContext_Header}}
 
-The **`requestMIDIAccess()`** method of the {{domxref('Navigator')}} interface returns a {{jsxref('Promise')}} representing a request for access to MIDI devices on a user's system.
-This method is part of the [Web MIDI API](/en-US/docs/Web/API/Web_MIDI_API), which provides a means for accessing, enumerating, and manipulating MIDI devices.
+متد **`requestMIDIAccess()`** از رابط {{domxref('Navigator')}} یک {{jsxref('Promise')}} برمی‌گرداند که نمایانگر درخواست دسترسی به دستگاه‌های MIDI در سیستم کاربر است. این متد بخشی از [Web MIDI API](/en-US/docs/Web/API/Web_MIDI_API) است که راهی برای دسترسی، شمارش و دستکاری دستگاه‌های MIDI فراهم می‌کند.
 
-This method may prompt the user for access to MIDI devices available to their system, or it may use a previously established preference to grant or deny access.
-If permission is granted then the {{jsxref('Promise')}} resolves and a [`MIDIAccess`](/en-US/docs/Web/API/MIDIAccess) object is returned.
+این متد ممکن است از کاربر برای دسترسی به دستگاه‌های MIDI موجود در سیستمش درخواست مجوز کند، یا ممکن است از یک ترجیح قبلاً تعیین‌شده برای اعطا یا رد دسترسی استفاده کند. اگر مجوز داده شود، {{jsxref('Promise')}} حل می‌شود و یک شیء [`MIDIAccess`](/en-US/docs/Web/API/MIDIAccess) برگردانده می‌شود.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 requestMIDIAccess()
 requestMIDIAccess(MIDIOptions)
 ```
 
-### Parameters
+### پارامترها
 
 - `MIDIOptions` {{optional_inline}}
-  - : An {{jsxref('Object')}} representing options to pass into the method. These options are:
+  - : یک {{jsxref('Object')}} که گزینه‌هایی را برای ارسال به متد نشان می‌دهد. این گزینه‌ها عبارتند از:
     - `sysex`
-      - : A {{jsxref('Boolean')}} value that, if set to `true`, allows the ability to send and receive system exclusive (sysex) messages. The default value is `false`.
+      - : یک مقدار {{jsxref('Boolean')}} که اگر `true` تنظیم شود، امکان ارسال و دریافت پیام‌های سیستمی اختصاصی (sysex) را فراهم می‌کند. مقدار پیش‌فرض `false` است.
     - `software`
-      - : A {{jsxref('Boolean')}} value that, if set to `true`, allows the system to utilize any installed software synthesizers. The default value is `false`.
+      - : یک مقدار {{jsxref('Boolean')}} که اگر `true` تنظیم شود، به سیستم اجازه می‌دهد از هر سینت‌سایزر نرم‌افزاری نصب‌شده استفاده کند. مقدار پیش‌فرض `false` است.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref('Promise')}} that resolves with a [`MIDIAccess`](/en-US/docs/Web/API/MIDIAccess) object.
+یک {{jsxref('Promise')}} که با یک شیء [`MIDIAccess`](/en-US/docs/Web/API/MIDIAccess) حل می‌شود.
 
-### Exceptions
+### استثناها (Exceptions)
 
 - `AbortError` {{domxref("DOMException")}}
-  - : Thrown if the document or page is closed due to user navigation.
+  - : در صورت بسته شدن سند یا صفحه به دلیل پیمایش کاربر (navigation) پرتاب می‌شود.
 - `InvalidStateError` {{domxref("DOMException")}}
-  - : Thrown if the underlying system raises any errors.
+  - : در صورت بروز هر خطایی از سوی سیستم زیرین پرتاب می‌شود.
 - `NotSupportedError` {{domxref("DOMException")}}
-  - : Thrown if the feature or options are not supported by the system.
+  - : در صورت پشتیبانی نشدن ویژگی یا گزینه‌ها توسط سیستم پرتاب می‌شود.
 - `NotAllowedError` {{domxref("DOMException")}}
-  - : Thrown if the user or system denies the application from creating a [MIDIAccess](/en-US/docs/Web/API/MIDIAccess) object with the requested options, or if the document is not allowed to use the feature (for example, because of a [Permission Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy), or because the user previously denied a permission request).
+  - : در صورتی که کاربر یا سیستم از ایجاد یک شیء [MIDIAccess](/en-US/docs/Web/API/MIDIAccess) با گزینه‌های درخواستی جلوگیری کند، یا اگر سند مجاز به استفاده از این ویژگی نباشد (مثلاً به دلیل [Permission Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) یا اینکه کاربر قبلاً درخواست مجوز را رد کرده است) پرتاب می‌شود.
 
-## Security requirements
+## الزامات امنیتی
 
-Access to the API is subject to the following constraints:
+دسترسی به API مشروط به محدودیت‌های زیر است:
 
-- The method must be called in a [secure context](/en-US/docs/Web/Security/Defenses/Secure_Contexts).
-- Access may be gated by the [`midi`](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy/midi) HTTP [Permission Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy).
-- The user must explicitly grant permission to use the API though a user-agent specific mechanism, or have previously granted permission.
-  Note that if access is denied by a permission policy it cannot be granted by a user permission.
+- متد باید در یک [زمینه امن (secure context)](/en-US/docs/Web/Security/Defenses/Secure_Contexts) فراخوانی شود.
+- دسترسی ممکن است توسط [Permission Policy](/en-US/docs/Web/HTTP/Guides/Permissions_Policy) HTTP به نام [`midi`](/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy/midi) محدود شود.
+- کاربر باید صریحاً مجوز استفاده از API را از طریق یک مکانیزم خاص عامل کاربر (user-agent) اعطا کند، یا قبلاً مجوز داده باشد.
+  توجه داشته باشید که اگر دسترسی توسط یک permission policy رد شود، نمی‌توان آن را با مجوز کاربر اعطا کرد.
 
-The permission status can be queried using the [Permissions API](/en-US/docs/Web/API/Permissions_API) method [`navigator.permissions.query()`](/en-US/docs/Web/API/Permissions/query), passing a permission descriptor with the `midi` permission and (optional) `sysex` property:
+وضعیت مجوز را می‌توان با استفاده از متد [Permissions API](/en-US/docs/Web/API/Permissions_API) به نام [`navigator.permissions.query()`](/en-US/docs/Web/API/Permissions/query) پرس‌وجو کرد، و یک توصیف‌گر مجوز با permission `midi` و ویژگی (اختیاری) `sysex` به آن داد:
 
 ```js
 navigator.permissions.query({ name: "midi", sysex: true }).then((result) => {
   if (result.state === "granted") {
-    // Access granted.
+    // دسترسی اعطا شد.
   } else if (result.state === "prompt") {
-    // Using API will prompt for permission
+    // استفاده از API باعث درخواست مجوز خواهد شد
   }
-  // Permission was denied by user prompt or permission policy
+  // مجوز توسط درخواست کاربر یا permission policy رد شد
 });
 ```
 
-## Examples
+## مثال‌ها
 
-### Request MIDI access
+### درخواست دسترسی MIDI
 
-In the following example, the `Navigator.requestMIDIAccess()` method returns the {{domxref("MIDIAccess")}} object, which gives access to information about the input and output MIDI ports.
+در مثال زیر، متد `Navigator.requestMIDIAccess()` شیء {{domxref("MIDIAccess")}} را برمی‌گرداند که دسترسی به اطلاعات پورت‌های ورودی و خروجی MIDI را فراهم می‌کند.
 
 ```js
 navigator.requestMIDIAccess().then((access) => {
-  // Get lists of available MIDI controllers
+  // دریافت لیست کنترل‌کننده‌های MIDI موجود
   const inputs = access.inputs.values();
   const outputs = access.outputs.values();
   // …
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Web MIDI API](/en-US/docs/Web/API/Web_MIDI_API)
 - [Introduction to Web MIDI](https://code.tutsplus.com/introduction-to-web-midi--cms-25220t)
