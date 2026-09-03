@@ -1,11 +1,5 @@
 ---
 title: "PromiseRejectionEvent: reason property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PromiseRejectionEvent/reason"
-status: "needs-translation"
----
-
----
-title: "PromiseRejectionEvent: reason property"
 short-title: reason
 slug: Web/API/PromiseRejectionEvent/reason
 page-type: web-api-instance-property
@@ -14,18 +8,13 @@ browser-compat: api.PromiseRejectionEvent.reason
 
 {{APIRef("HTML DOM")}}{{AvailableInWorkers}}
 
-The {{domxref("PromiseRejectionEvent")}} **`reason`** read-only
-property is any JavaScript value or {{jsxref("Object")}} which provides the reason
-passed into {{jsxref("Promise.reject()")}}. This in theory provides information about
-why the promise was rejected.
+خاصیت فقط‌خواندنی **`reason`** در {{domxref("PromiseRejectionEvent")}}، هر مقدار یا {{jsxref("Object")}} در جاوااسکریپت است که دلیلی را که به {{jsxref("Promise.reject()")}} منتقل شده، فراهم می‌کند. این مقدار در تئوری اطلاعاتی دربارهٔ دلیل رد شدن پرامیس در اختیار شما قرار می‌دهد.
 
-## Value
+## مقدار
 
-A value or object which provides information you can use to understand why the promise
-was rejected. This could be anything from an error code to an object with text, links,
-and whatever else you might wish to include.
+مقدار یا شیءای که اطلاعاتی برای درک دلیل رد شدن پرامیس فراهم می‌کند. این می‌تواند هر چیزی باشد، از یک کد خطا تا شیءای شامل متن، پیوندها و هر آنچه که بخواهید در آن بگنجانید.
 
-## Examples
+## مثال‌ها
 
 ```js
 window.onunhandledrejection = (e) => {
@@ -33,15 +22,15 @@ window.onunhandledrejection = (e) => {
 };
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## جستارهای وابسته
 
 - {{jsxref("Promise")}}
 - {{domxref("PromiseRejectionEvent")}}
