@@ -1,11 +1,5 @@
 ---
 title: "PaymentResponse: retry() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaymentResponse/retry"
-status: "needs-translation"
----
-
----
-title: "PaymentResponse: retry() method"
 short-title: retry()
 slug: Web/API/PaymentResponse/retry
 page-type: web-api-instance-method
@@ -14,13 +8,9 @@ browser-compat: api.PaymentResponse.retry
 
 {{securecontext_header}}{{APIRef("Payment Request API")}}
 
-The {{domxref("PaymentResponse")}} interface's
-**`retry()`** method makes it possible to ask the user to
-retry a payment after an error occurs during processing.
+در رابط {{domxref("PaymentResponse")}}، متد **`retry()`** این امکان را فراهم می‌کند که پس از بروز خطا در هنگام پردازش، از کاربر بخواهید پرداخت را دوباره انجام دهد.
 
-This lets your app
-gracefully deal with situations such as invalid shipping addresses or declined credit
-cards.
+این کار به برنامه شما اجازه می‌دهد تا موقعیت‌هایی مانند آدرس حمل‌ونقل نامعتبر یا کارت اعتباری ردشده را به‌شکلی مناسب مدیریت کند.
 
 ## Syntax
 
@@ -31,42 +21,31 @@ retry(errorFields)
 ### Parameters
 
 - `errorFields`
-  - : An object, with the following properties:
+  - : یک شیء با ویژگی‌های زیر:
     - `error` {{optional_inline}}
-      - : A general description of a payment error from which the user may attempt to recover by retrying the payment, possibly after correcting mistakes in the payment information. `error` can be provided all by itself to provide only a generic error message, or in concert with the other properties to serve as an overview while other properties' values guide the user to errors in specific fields in the payment form.
+      - : توضیحی کلی درباره خطای پرداخت که کاربر ممکن است با تلاش مجدد برای پرداخت بتواند آن را برطرف کند، احتمالاً پس از اصلاح اشتباهات در اطلاعات پرداخت. می‌توان `error` را به تنهایی برای ارائه یک پیام خطای عمومی ارائه کرد، یا همراه با سایر ویژگی‌ها به‌عنوان نمای کلی استفاده کرد در حالی که مقادیر سایر ویژگی‌ها کاربر را به خطاهای موجود در فیلدهای خاص فرم پرداخت راهنمایی می‌کند.
     - `paymentMethod` {{optional_inline}}
-      - : Any payment-method-specific errors which may have occurred. This object's contents will vary depending on the payment method used.
+      - : هرگونه خطای مختص روش پرداخت که ممکن است رخ داده باشد. محتوای این شیء بسته به روش پرداخت استفاده‌شده متفاوت خواهد بود.
 
 ### Return value
 
-A {{jsxref("Promise")}} which is resolved when the payment is successfully completed.
-The promise is rejected with an appropriate exception value if the payment fails again.
+یک {{jsxref("Promise")}} که وقتی پرداخت با موفقیت انجام شود، resolve می‌شود. اگر پرداخت دوباره ناموفق باشد، این وعده (promise) با یک مقدار استثنای مناسب reject می‌شود.
 
-Typically you will use this by calling {{domxref("PaymentRequest.show", "show()")}},
-then entering a loop or recursive function that checks the
-{{domxref("PaymentResponse")}} for errors or other reasons to retry the payment request.
-If a retry is needed, the loop calls `retry()`, then loops back to check the
-response when it comes in. The loop exits only when the user either cancels the payment
-request or the request is successful.
+معمولاً از این متد به این صورت استفاده می‌کنید که ابتدا {{domxref("PaymentRequest.show", "show()")}} را فراخوانی می‌کنید و سپس یک حلقه یا تابع بازگشتی می‌سازید که {{domxref("PaymentResponse")}} را از نظر خطا یا دلایل دیگر برای تلاش مجدد درخواست پرداخت بررسی می‌کند. اگر نیاز به تلاش مجدد باشد، حلقه `retry()` را صدا می‌زند و سپس برای بررسی پاسخ وقتی که برسد، به ابتدای حلقه بازمی‌گردد. حلقه تنها زمانی خارج می‌شود که کاربر درخواست پرداخت را لغو کند یا درخواست با موفقیت انجام شود.
 
-See the [example](#examples) below for a thorough example, but the basic
-concept, in outline form, is:
+برای مشاهده یک مثال کامل، بخش [example](#examples) را ببینید، اما مفهوم اصلی به‌صورت خلاصه به این شکل است:
 
-1. Create a new {{domxref("PaymentRequest")}}
+1. یک {{domxref("PaymentRequest")}} جدید بسازید
    (`new` {{domxref("PaymentRequest.PaymentRequest", "PaymentRequest()")}})
-2. Display the payment request ({{domxref("PaymentRequest.show()")}}
-3. If `show()` resolves, the returned {{domxref("PaymentResponse")}}
-   describes the requested payment and the options chosen by the user. Continue with the following steps:
-   1. Validate the returned response; if there are any fields whose values are not
-      acceptable, call the response's {{domxref("PaymentResponse.complete", "complete()")}} method with a value of `"fail"` to indicate failure.
-   2. If the response's data is valid and acceptable, call
-      `complete("success")` to finalize the payment and process it.
+2. درخواست پرداخت را نمایش دهید ({{domxref("PaymentRequest.show()")}})
+3. اگر `show()` با موفقیت resolve شود، {{domxref("PaymentResponse")}} برگشتی، پرداخت درخواستی و گزینه‌های انتخاب‌شده توسط کاربر را توصیف می‌کند. مراحل زیر را ادامه دهید:
+   1. پاسخ برگشتی را اعتبارسنجی کنید؛ اگر هر فیلدی مقدار نامطلوبی داشت، متد {{domxref("PaymentResponse.complete", "complete()")}} پاسخ را با مقدار `"fail"` فراخوانی کنید تا شکست را نشان دهد.
+   2. اگر داده‌های پاسخ معتبر و قابل قبول هستند،
+      `complete("success")` را فراخوانی کنید تا پرداخت نهایی شود و پردازش انجام شود.
 
-4. If `show()` is rejected, the payment request failed, usually because
-   either there's already one being processed, because the {{Glossary("user agent")}}
-   doesn't support any of the specified payment methods, or because of a security issue.
-   See the [list of exceptions](/en-US/docs/Web/API/PaymentRequest/show#exceptions) for `show()` for further details. Call
-   `complete("fail")` to close the payment request.
+4. اگر `show()` reject شود، درخواست پرداخت ناموفق بوده است، معمولاً به این دلیل که یک درخواست پرداخت در حال پردازش وجود دارد، یا {{Glossary("user agent")}} از هیچ‌کدام از روش‌های پرداخت مشخص‌شده پشتیبانی نمی‌کند، یا به دلیل یک مشکل امنیتی.
+   برای جزئیات بیشتر به [فهرست استثناها](/en-US/docs/Web/API/PaymentRequest/show#exceptions) برای `show()` مراجعه کنید.
+   `complete("fail")` را فراخوانی کنید تا درخواست پرداخت بسته شود.
 
 ```js
 async function handlePayment() {
