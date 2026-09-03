@@ -1,11 +1,5 @@
 ---
 title: "OffscreenCanvas: height property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas/height"
-status: "needs-translation"
----
-
----
-title: "OffscreenCanvas: height property"
 short-title: height
 slug: Web/API/OffscreenCanvas/height
 page-type: web-api-instance-property
@@ -14,15 +8,15 @@ browser-compat: api.OffscreenCanvas.height
 
 {{APIRef("Canvas API")}}{{AvailableInWorkers}}
 
-The **`height`** property returns and sets the height of an {{domxref("OffscreenCanvas")}} object.
+ویژگی **`height`** ارتفاع یک شیء {{domxref("OffscreenCanvas")}} را بازمی‌گرداند و تنظیم می‌کند.
 
-## Value
+## مقدار
 
-A positive integer representing the height of the offscreen canvas in CSS pixels.
+یک عدد صحیح مثبت که ارتفاع بوم خارج از صفحه (offscreen canvas) را بر حسب پیکسل‌های CSS نشان می‌دهد.
 
-## Examples
+## مثال‌ها
 
-Creating a new offscreen canvas and returning or setting the height of the offscreen canvas:
+ایجاد یک بوم خارج از صفحه جدید و بازگرداندن یا تنظیم ارتفاع آن:
 
 ```js
 const offscreen = new OffscreenCanvas(256, 256);
@@ -30,14 +24,14 @@ offscreen.height; // 256
 offscreen.height = 512;
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("OffscreenCanvas")}}, the interface this property belongs to.
+- {{domxref("OffscreenCanvas")}}، واسطی که این ویژگی به آن تعلق دارد.
