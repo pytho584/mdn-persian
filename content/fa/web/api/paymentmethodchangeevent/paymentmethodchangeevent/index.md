@@ -1,11 +1,5 @@
 ---
-title: "PaymentMethodChangeEvent: PaymentMethodChangeEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaymentMethodChangeEvent/PaymentMethodChangeEvent"
-status: "needs-translation"
----
-
----
-title: "PaymentMethodChangeEvent: PaymentMethodChangeEvent() constructor"
+title: "PaymentMethodChangeEvent: PaymentMethodChangeEvent() سازنده"
 short-title: PaymentMethodChangeEvent()
 slug: Web/API/PaymentMethodChangeEvent/PaymentMethodChangeEvent
 page-type: web-api-constructor
@@ -14,54 +8,42 @@ browser-compat: api.PaymentMethodChangeEvent.PaymentMethodChangeEvent
 
 {{securecontext_header}}{{APIRef("Payment Request API")}}
 
-The **`PaymentMethodChangeEvent()`**
-constructor creates a new {{domxref("PaymentMethodChangeEvent")}} object providing
-details about a {{domxref("PaymentRequest.paymentmethodchange_event", "paymentmethodchange")}} event.
+سازنده **`PaymentMethodChangeEvent()`** یک شیء {{domxref("PaymentMethodChangeEvent")}} جدید می‌سازد که جزئیات مربوط به رویداد {{domxref("PaymentRequest.paymentmethodchange_event", "paymentmethodchange")}} را فراهم می‌کند.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 new PaymentMethodChangeEvent(type)
 new PaymentMethodChangeEvent(type, options)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : A string with the name of the event.
-    It is case-sensitive and browsers set it to `paymentmethodchange`.
+  - : یک رشته شامل نام رویداد. این مقدار به حروف بزرگ و کوچک حساس است و مرورگرها آن را روی `paymentmethodchange` تنظیم می‌کنند.
 - `options` {{optional_inline}}
-  - : An object that, _in addition of the properties defined in {{domxref("Event/Event", "Event()")}}_,
-    can have the following properties:
+  - : یک شیء که _علاوه بر ویژگی‌های تعریف‌شده در {{domxref("Event/Event", "Event()")}}_، می‌تواند ویژگی‌های زیر را داشته باشد:
     - `methodName` {{optional_inline}}
-      - : A string containing the payment method identifier for the
-        payment handler being used. This is an empty string by default.
+      - : رشته‌ای شامل شناسه روش پرداخت برای پردازنده پرداختی که در حال استفاده است. به‌طور پیش‌فرض این رشته خالی است.
     - `methodDetails` {{optional_inline}}
-      - : An object providing payment method-specific information describing the changes
-        made to the payment, or `null` if there is no additional information
-        available or required. This is `null` by default.
+      - : یک شیء که اطلاعات خاص روش پرداخت را فراهم می‌کند و تغییرات اعمال‌شده به پرداخت را توصیف می‌کند، یا اگر اطلاعات اضافی در دسترس یا مورد نیاز نباشد، `null` است. به‌طور پیش‌فرض این مقدار `null` است.
 
-### Return value
+### مقدار بازگشتی
 
-A new {{domxref("PaymentMethodChangeEvent")}} object describing a change to
-the options specified for the payment method given in the `methodName`
-property.
+یک شیء {{domxref("PaymentMethodChangeEvent")}} جدید که تغییری در گزینه‌های مشخص‌شده برای روش پرداخت داده‌شده در ویژگی `methodName` را توصیف می‌کند.
 
-The type of the `methodDetails` property depends on the payment method. For
-example, if `methodName` is `https://example.com/pay`, indicating that the
-Example Pay payment method is being used for validation, the shape of `methodDetails`
-is defined by the payment method.
+نوع ویژگی `methodDetails` به روش پرداخت بستگی دارد. برای مثال، اگر `methodName` برابر با `https://example.com/pay` باشد، که نشان می‌دهد روش پرداخت Example Pay برای تأیید استفاده می‌شود، شکل `methodDetails` توسط آن روش پرداخت تعریف می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Payment Request API](/en-US/docs/Web/API/Payment_Request_API)
-- [Using the Payment Request API](/en-US/docs/Web/API/Payment_Request_API/Using_the_Payment_Request_API)
-- [Payment processing concepts](/en-US/docs/Web/API/Payment_Request_API/Concepts)
+- [استفاده از Payment Request API](/en-US/docs/Web/API/Payment_Request_API/Using_the_Payment_Request_API)
+- [مفاهیم پردازش پرداخت](/en-US/docs/Web/API/Payment_Request_API/Concepts)
