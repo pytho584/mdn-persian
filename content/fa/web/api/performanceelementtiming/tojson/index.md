@@ -1,11 +1,5 @@
 ---
 title: "PerformanceElementTiming: toJSON() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceElementTiming/toJSON"
-status: "needs-translation"
----
-
----
-title: "PerformanceElementTiming: toJSON() method"
 short-title: toJSON()
 slug: Web/API/PerformanceElementTiming/toJSON
 page-type: web-api-instance-method
@@ -16,29 +10,29 @@ browser-compat: api.PerformanceElementTiming.toJSON
 
 {{APIRef("Performance API")}}{{SeeCompatTable}}
 
-The **`toJSON()`** method of the {{domxref("PerformanceElementTiming")}} interface is a {{Glossary("Serialization","serializer")}}; it returns a JSON representation of the {{domxref("PerformanceElementTiming")}} object.
+متد **`toJSON()`** در رابط {{domxref("PerformanceElementTiming")}} یک {{Glossary("Serialization","سریال‌ساز")}} است؛ یک نمایش JSON از شیء {{domxref("PerformanceElementTiming")}} برمی‌گرداند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 toJSON()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("JSON")}} object that is the serialization of the {{domxref("PerformanceElementTiming")}} object.
+یک شیء {{jsxref("JSON")}} که سریال‌سازی شیء {{domxref("PerformanceElementTiming")}} است.
 
-The JSON doesn't contain the {{domxref("PerformanceElementTiming.element", "element")}} property because it is of type {{domxref("Element")}}, which doesn't provide a `toJSON()` operation. The {{domxref("PerformanceElementTiming.id", "id")}} of the element is provided, though.
+JSON شامل ویژگی {{domxref("PerformanceElementTiming.element", "element")}} نمی‌شود، زیرا آن از نوع {{domxref("Element")}} است که عملیات `toJSON()` ارائه نمی‌دهد. با این حال، {{domxref("PerformanceElementTiming.id", "id")}} عنصر در آن وجود دارد.
 
-## Examples
+## مثال‌ها
 
-### Using the toJSON method
+### استفاده از متد toJSON
 
-In this example, calling `entry.toJSON()` returns a JSON representation of the `PerformanceElementTiming` object, with the information about the image element.
+در این مثال، فراخوانی `entry.toJSON()` یک نمایش JSON از شیء `PerformanceElementTiming` را با اطلاعات مربوط به عنصر تصویر برمی‌گرداند.
 
 ```html
 <img
@@ -59,7 +53,7 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "element", buffered: true });
 ```
 
-This would log a JSON object like so:
+این کار یک شیء JSON مانند زیر را ثبت می‌کند:
 
 ```json
 {
@@ -87,16 +81,16 @@ This would log a JSON object like so:
 }
 ```
 
-To get a JSON string, you can use [`JSON.stringify(entry)`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) directly; it will call `toJSON()` automatically.
+برای دریافت رشته JSON، می‌توانید مستقیماً از [`JSON.stringify(entry)`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) استفاده کنید؛ این متد به‌طور خودکار `toJSON()` را فراخوانی می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{jsxref("JSON")}}
