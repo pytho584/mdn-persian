@@ -1,11 +1,5 @@
 ---
 title: "PreferenceObject: change event"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PreferenceObject/change_event"
-status: "needs-translation"
----
-
----
-title: "PreferenceObject: change event"
 short-title: change
 slug: Web/API/PreferenceObject/change_event
 page-type: web-api-event
@@ -17,11 +11,11 @@ spec-urls: https://drafts.csswg.org/mediaqueries-5/#onchange-attribute
 
 {{APIRef("User Preferences API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
-The **`change`** event of the {{domxref("PreferenceObject")}} interface is fired when a `PreferenceObject` {{domxref("PreferenceObject.override", "override")}} value changes. This can happen due to {{domxref("PreferenceObject.requestOverride", "requestOverride")}} or {{domxref("PreferenceObject.clearOverride", "clearOverride")}} method calls.
+رویداد **`change`** از رابط {{domxref("PreferenceObject")}} زمانی صادر می‌شود که مقدار {{domxref("PreferenceObject.override", "override")}} در یک `PreferenceObject` تغییر کند. این اتفاق می‌تواند در نتیجه فراخوانی متدهای {{domxref("PreferenceObject.requestOverride", "requestOverride")}} یا {{domxref("PreferenceObject.clearOverride", "clearOverride")}} رخ دهد.
 
 ## Syntax
 
-Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
+از نام این رویداد در متدهایی مانند {{domxref("EventTarget.addEventListener", "addEventListener()")}} استفاده کنید، یا یک ویژگی کنترل‌کننده رویداد (event handler) تنظیم نمایید.
 
 ```js-nolint
 addEventListener("change", (event) => { })
@@ -31,13 +25,13 @@ onchange = (event) => { }
 
 ## Event type
 
-A generic {{domxref("Event")}}.
+یک رویداد عمومی از نوع {{domxref("Event")}}.
 
 ## Examples
 
 ### Basic usage
 
-The following snippet logs the user's preferred color scheme to the console when it changes.
+قطعه‌کد زیر، هر بار که طرح رنگ موردعلاقه کاربر تغییر کند، مقدار جدید را در کنسول ثبت می‌کند.
 
 ```js
 navigator.preferences.colorScheme.addEventListener("change", (event) => {
