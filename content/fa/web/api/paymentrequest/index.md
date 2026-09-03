@@ -1,7 +1,5 @@
 ---
 title: "PaymentRequest"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest"
-status: "needs-translation"
 ---
 
 ---
@@ -13,55 +11,55 @@ browser-compat: api.PaymentRequest
 
 {{APIRef("Payment Request API")}}{{SecureContext_Header}}
 
-The [Payment Request API's](/en-US/docs/Web/API/Payment_Request_API) **`PaymentRequest`** interface is the primary access point into the API, and lets web content and apps accept payments from the end user on behalf of the operator of the site or the publisher of the app.
+رابط **`PaymentRequest`** در [Payment Request API](/en-US/docs/Web/API/Payment_Request_API) نقطهٔ دسترسی اصلی به این API است و به محتوای وب و برنامه‌ها اجازه می‌دهد تا از طرف مالک سایت یا ناشر برنامه، پرداخت‌هایی را از کاربر نهایی دریافت کنند.
 
 {{InheritanceDiagram}}
 
-## Constructor
+## سازنده
 
 - {{domxref('PaymentRequest.PaymentRequest()','PaymentRequest()')}}
-  - : Creates a new `PaymentRequest` object.
+  - : یک شیء `PaymentRequest` جدید ایجاد می‌کند.
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref('PaymentRequest.id')}} {{ReadOnlyInline}}
-  - : A unique identifier for a particular `PaymentRequest`, which can be set via `details.id`. When none is set, it defaults to a UUID.
+  - : یک شناسهٔ یکتا برای یک `PaymentRequest` خاص که می‌تواند از طریق `details.id` تنظیم شود. اگر تنظیم نشده باشد، به‌طور پیش‌فرض یک UUID خواهد بود.
 - {{domxref('PaymentRequest.shippingAddress')}} {{ReadOnlyInline}} {{Deprecated_Inline}} {{Non-standard_Inline}}
-  - : If requested via payment options, returns the shipping address chosen by the user for the purposes of calculating shipping. This property is only populated if the constructor is called with the `requestShipping` flag set to true. Additionally, in some browsers, the parts of the address will be redacted for privacy until the user indicates they are ready to complete the transaction (i.e., they hit "Pay").
+  - : اگر از طریق گزینه‌های پرداخت درخواست شده باشد، آدرس حمل‌ونقل انتخابی کاربر را برای محاسبهٔ هزینهٔ ارسال برمی‌گرداند. این ویژگی فقط زمانی مقداردهی می‌شود که سازنده با پرچم `requestShipping` برابر با `true` فراخوانده شود. همچنین، در برخی مرورگرها، تا زمانی که کاربر آمادگی خود را برای تکمیل تراکنش اعلام نکند (یعنی دکمه «پرداخت» را فشار ندهد)، بخش‌هایی از آدرس به دلایل حریم خصوصی پنهان می‌شوند.
 - {{domxref('PaymentRequest.shippingOption')}} {{ReadOnlyInline}} {{Deprecated_Inline}} {{Non-standard_Inline}}
-  - : Returns the identifier of the selected shipping option. This property is only populated if the constructor is called with the `requestShipping` flag set to true.
+  - : شناسهٔ گزینهٔ حمل‌ونقل انتخاب‌شده را برمی‌گرداند. این ویژگی فقط زمانی مقداردهی می‌شود که سازنده با پرچم `requestShipping` برابر با `true` فراخوانده شود.
 - {{domxref('PaymentRequest.shippingType')}} {{ReadOnlyInline}} {{Deprecated_Inline}} {{Non-standard_Inline}}
-  - : Returns the type of shipping used to fulfill the transaction. This will be one of `shipping`, `delivery`, `pickup`, or `null` if a value was not provided in the constructor.
+  - : نوع حمل‌ونقل مورد استفاده برای انجام تراکنش را برمی‌گرداند. این مقدار می‌تواند یکی از `shipping`، `delivery`، `pickup` یا در صورت عدم ارائهٔ مقدار در سازنده، `null` باشد.
 
-## Static methods
+## روش‌های ایستا
 
 - {{domxref('PaymentRequest.securePaymentConfirmationAvailability_static', 'PaymentRequest.securePaymentConfirmationAvailability()')}} {{experimental_inline}}
-  - : Indicates whether the [Secure payment confirmation](/en-US/docs/Web/API/Payment_Request_API/Using_secure_payment_confirmation) feature is available.
+  - : نشان می‌دهد که آیا قابلیت [تأیید امن پرداخت](/en-US/docs/Web/API/Payment_Request_API/Using_secure_payment_confirmation) در دسترس است یا خیر.
 
-## Instance methods
+## روش‌های نمونه
 
 - {{domxref('PaymentRequest.canMakePayment()')}}
-  - : Indicates whether the `PaymentRequest` object can make a payment before calling `show()`.
+  - : نشان می‌دهد که آیا شیء `PaymentRequest` می‌تواند قبل از فراخوانی `show()` پرداختی انجام دهد یا خیر.
 - {{domxref('PaymentRequest.show()')}}
-  - : Causes the user agent to begin the user interaction for the payment request.
+  - : باعث می‌شود عامل کاربر (user agent) تعامل کاربر برای درخواست پرداخت را آغاز کند.
 - {{domxref('PaymentRequest.abort()')}}
-  - : Causes the user agent to end the payment request and to remove any user interface that might be shown.
+  - : باعث می‌شود عامل کاربر به درخواست پرداخت پایان دهد و هر رابط کاربری که ممکن است نمایش داده شده باشد را حذف کند.
 
-## Events
+## رویدادها
 
 - {{domxref("PaymentRequest.merchantvalidation_event", "merchantvalidation")}} {{Deprecated_Inline}} {{non-standard_inline}}
-  - : With some payment handlers (e.g., Apple Pay), this event handler is called to handle the {{domxref("PaymentRequest.merchantvalidation_event", "merchantvalidation")}} event, which is dispatched when the user agent requires that the merchant validate that the merchant or vendor requesting payment is legitimate.
+  - : با برخی از پردازشگرهای پرداخت (مانند Apple Pay)، این رویداد برای مدیریت رویداد {{domxref("PaymentRequest.merchantvalidation_event", "merchantvalidation")}} فراخوانی می‌شود. این رویداد زمانی ارسال می‌شود که عامل کاربر نیاز دارد فروشنده تأیید کند که فروشنده یا ارائه‌دهندهٔ درخواست‌کنندهٔ پرداخت معتبر است.
 - {{domxref("PaymentRequest.paymentmethodchange_event", "paymentmethodchange")}}
-  - : With some payment handlers (e.g., Apple Pay), dispatched whenever the user changes payment instrument, like switching from a credit card to a debit card.
+  - : با برخی از پردازشگرهای پرداخت (مانند Apple Pay)، هر زمان که کاربر ابزار پرداخت را تغییر دهد، مانند تغییر از کارت اعتباری به کارت نقدی، ارسال می‌شود.
 - {{domxref("PaymentRequest.shippingaddresschange_event", "shippingaddresschange")}}{{Deprecated_Inline}} {{Non-standard_Inline}}
-  - : Dispatched whenever the user changes their shipping address.
+  - : هر زمان که کاربر آدرس حمل‌ونقل خود را تغییر دهد، ارسال می‌شود.
 - {{domxref("PaymentRequest.shippingoptionchange_event", "shippingoptionchange")}} {{Deprecated_Inline}} {{Non-standard_Inline}}
-  - : Dispatched whenever the user changes a shipping option.
+  - : هر زمان که کاربر گزینهٔ حمل‌ونقل را تغییر دهد، ارسال می‌شود.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
