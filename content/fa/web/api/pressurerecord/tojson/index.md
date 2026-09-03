@@ -1,11 +1,5 @@
 ---
 title: "PressureRecord: toJSON() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PressureRecord/toJSON"
-status: "needs-translation"
----
-
----
-title: "PressureRecord: toJSON() method"
 short-title: toJSON()
 slug: Web/API/PressureRecord/toJSON
 page-type: web-api-instance-method
@@ -16,27 +10,27 @@ browser-compat: api.PressureRecord.toJSON
 
 {{APIRef("Compute Pressure API")}}{{SeeCompatTable}}{{AvailableInWorkers("window_and_worker_except_service")}}{{securecontext_header}}
 
-The **`toJSON()`** method is a {{Glossary("Serialization","serializer")}}; it returns a JSON representation of the {{domxref("PressureRecord")}} object.
+متد **`toJSON()`** یک {{Glossary("Serialization","serializer")}} است؛ یعنی نمایش JSON از شیء {{domxref("PressureRecord")}} را بازمی‌گرداند.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 toJSON()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("JSON")}} object that is the serialization of the {{domxref("PressureRecord")}} object.
+یک شیء {{jsxref("JSON")}} که سریال‌سازی شیء {{domxref("PressureRecord")}} است.
 
-## Examples
+## مثال‌ها
 
-### Using the `toJSON` method
+### استفاده از متد `toJSON`
 
-In this example, calling `lastRecord.toJSON()` returns a JSON representation of the {{domxref("PressureRecord")}} object.
+در این مثال، فراخوانی `lastRecord.toJSON()` یک نمایش JSON از شیء {{domxref("PressureRecord")}} برمی‌گرداند.
 
 ```js
 function callback(records) {
@@ -54,7 +48,7 @@ try {
 }
 ```
 
-This would log a JSON object like so:
+این کار یک شیء JSON مانند زیر را ثبت می‌کند:
 
 ```json
 {
@@ -64,16 +58,16 @@ This would log a JSON object like so:
 }
 ```
 
-To get a JSON string, you can use [`JSON.stringify(lastRecord)`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) directly; it will call `toJSON()` automatically.
+برای دریافت رشته JSON، می‌توانید مستقیماً از [`JSON.stringify(lastRecord)`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) استفاده کنید؛ این متد به‌طور خودکار `toJSON()` را فراخوانی می‌کند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{jsxref("JSON")}}
