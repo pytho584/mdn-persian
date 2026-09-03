@@ -1,11 +1,5 @@
 ---
 title: "PaymentAddress: postalCode property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaymentAddress/postalCode"
-status: "needs-translation"
----
-
----
-title: "PaymentAddress: postalCode property"
 short-title: postalCode
 slug: Web/API/PaymentAddress/postalCode
 page-type: web-api-instance-property
@@ -17,21 +11,13 @@ browser-compat: api.PaymentAddress.postalCode
 
 {{APIRef("Payment Request API")}}{{SecureContext_Header}}{{Deprecated_Header}}{{Non-standard_Header}}
 
-The **`postalCode`** read-only property of the
-{{domxref('PaymentAddress')}} interface returns a string containing a code used by a
-jurisdiction for mail routing, for example, the [ZIP Code](https://en.wikipedia.org/wiki/ZIP_Code)
-in the United States or the [Postal Index Number](https://en.wikipedia.org/wiki/Postal_Index_Number) (PIN code)
-in India.
+ویژگی فقط خواندنی **`postalCode`** از رابط {{domxref('PaymentAddress')}} یک رشته حاوی کد مورد استفاده یک حوزه قضایی برای مسیریابی مرسولات پستی را برمی‌گرداند، برای مثال، [کد ZIP](https://en.wikipedia.org/wiki/ZIP_Code) در ایالات متحده یا [شماره شاخص پستی](https://en.wikipedia.org/wiki/Postal_Index_Number) (کد PIN) در هند.
 
 ## Value
 
-A string which contains the postal code portion of the address. A
-postal code is a string (either numeric or alphanumeric) which is used by a postal
-service to optimize mail routing and delivery.
+یک رشته که بخش کد پستی آدرس را شامل می‌شود. کد پستی یک رشته (عددی یا الفبایی-عددی) است که توسط یک سرویس پستی برای بهینه‌سازی مسیریابی و تحویل مرسولات استفاده می‌شود.
 
-Various countries use different terms for this. In most of the world, it's known as the
-"post code" or "postal code." In the United States, the ZIP code is used. India uses PIN
-codes.
+کشورهای مختلف اصطلاحات متفاوتی برای این استفاده می‌کنند. در بیشتر نقاط جهان، به عنوان «post code» یا «postal code» (کد پستی) شناخته می‌شود. در ایالات متحده، از کد ZIP استفاده می‌شود. هند از کدهای PIN استفاده می‌کند.
 
 ## Browser compatibility
 
@@ -39,4 +25,4 @@ codes.
 
 ## See also
 
-- Universal Postal Union: [Universal Post\*Code® Database](https://www.upu.int/en/Postal-Solutions/Programmes-Services/Addressing-Solutions)
+- اتحادیه جهانی پست: [Universal Post\*Code® Database](https://www.upu.int/en/Postal-Solutions/Programmes-Services/Addressing-Solutions)
