@@ -1,11 +1,5 @@
 ---
 title: "PaymentRequest: canMakePayment() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/canMakePayment"
-status: "needs-translation"
----
-
----
-title: "PaymentRequest: canMakePayment() method"
 short-title: canMakePayment()
 slug: Web/API/PaymentRequest/canMakePayment
 page-type: web-api-instance-method
@@ -14,48 +8,32 @@ browser-compat: api.PaymentRequest.canMakePayment
 
 {{securecontext_header}}{{APIRef("Payment Request API")}}
 
-The {{domxref("PaymentRequest")}} method
-**`canMakePayment()`** determines whether or not the request
-is configured in a way that is compatible with at least one payment method supported
-by the {{Glossary("user agent")}}.
+متد **`canMakePayment()`** از {{domxref("PaymentRequest")}} تعیین می‌کند که آیا درخواست به‌گونه‌ای پیکربندی شده است که با حداقل یکی از روش‌های پرداخت پشتیبانی‌شده توسط {{Glossary("user agent")}} سازگار باشد یا خیر.
 
-You can call this before calling
-{{domxref("PaymentRequest.show", "show()")}} to provide a streamlined user experience
-when the user's browser can't handle any of the payment methods you accept.
+می‌توانید این متد را قبل از فراخوانی {{domxref("PaymentRequest.show", "show()")}} صدا بزنید تا در زمانی که مرورگر کاربر قادر به مدیریت هیچ‌یک از روش‌های پرداخت پذیرفته‌شده شما نیست، تجربه کاربری روان‌تری ارائه دهید.
 
-For instance, you might call `canMakePayment()` to determine if the browser
-will let the user pay using Payment Request API, and if it won't, you could fall back to
-another payment method, or offer a list of methods that aren't handled by Payment
-Request API (or even provide instructions for paying by mail or by phone).
+به‌عنوان مثال، می‌توانید `canMakePayment()` را فراخوانی کنید تا مشخص شود آیا مرورگر به کاربر امکان پرداخت از طریق Payment Request API را می‌دهد یا خیر؛ اگر این‌گونه نبود، می‌توانید به روش پرداخت دیگری بازگردید، یا فهرستی از روش‌هایی که توسط Payment Request API پشتیبانی نمی‌شوند ارائه دهید (یا حتی دستورالعمل‌هایی برای پرداخت از طریق پست یا تلفن ارائه کنید).
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 canMakePayment()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("Promise")}} to a boolean value that resolves to `true`
-if the user agent supports any of the payment methods supplied when instantiating the
-request using the {{domxref('PaymentRequest.PaymentRequest()','PaymentRequest')}}
-constructor. If the payment can't be processed, the promise receives a value of
-`false`.
+یک {{jsxref("Promise")}} که به یک مقدار بولین تبدیل می‌شود و اگر user agent از هر یک از روش‌های پرداختی که هنگام نمونه‌سازی درخواست با استفاده از سازنده {{domxref('PaymentRequest.PaymentRequest()','PaymentRequest')}} ارائه شده‌اند پشتیبانی کند، به `true` resolve می‌شود. اگر پرداخت قابل پردازش نباشد، پرامیز مقدار `false` دریافت می‌کند.
 
 > [!NOTE]
-> If you call this too often, the browser may reject the
-> returned promise with a `DOMException`.
+> اگر این متد را بیش از حد فراخوانی کنید، مرورگر ممکن است پرامیز بازگشتی را با یک `DOMException` رد کند.
 
-## Examples
+## مثال‌ها
 
-In the following example, is [excerpted from a demo](https://rsolomakhin.github.io/samples/paymentrequest/can-make-payment/) that asynchronously builds a `PaymentRequest` object for
-both Apple Pay and Example Pay. It wraps the call to `canMakePayment()` in
-feature detection, and calls an appropriate callback depending on the resolution of the
-`Promise`.
+در مثال زیر که [برگرفته از یک دمو](https://rsolomakhin.github.io/samples/paymentrequest/can-make-payment/) است، یک شیء `PaymentRequest` به‌صورت ناهمگام برای هر دو Apple Pay و Example Pay ساخته می‌شود. فراخوانی `canMakePayment()` در تشخیص ویژگی (feature detection) قرار گرفته و بسته به نتیجه `Promise`، یک تابع بازخورد مناسب فراخوانی می‌شود.
 
 ```js
 async function initPaymentRequest() {
@@ -95,14 +73,14 @@ async function initPaymentRequest() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref('PaymentRequest.show','PaymentRequest.show()')}}
