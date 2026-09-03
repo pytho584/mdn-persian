@@ -1,11 +1,5 @@
 ---
 title: "Performance: getEntriesByType() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Performance/getEntriesByType"
-status: "needs-translation"
----
-
----
-title: "Performance: getEntriesByType() method"
 short-title: getEntriesByType()
 slug: Web/API/Performance/getEntriesByType
 page-type: web-api-instance-method
@@ -14,15 +8,14 @@ browser-compat: api.Performance.getEntriesByType
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The **`getEntriesByType()`** method returns an array of {{domxref("PerformanceEntry")}} objects currently present in the performance timeline for a given _type_.
+متد **`getEntriesByType()`** یک آرایه از اشیاء {{domxref("PerformanceEntry")}} که در حال حاضر در زمان‌نمای عملکرد (performance timeline) برای یک _نوع_ مشخص وجود دارند، بازمی‌گرداند.
 
-If you are interested in performance entries of certain name, see {{domxref("Performance.getEntriesByName", "getEntriesByName()")}}. For all performance entries, see {{domxref("Performance.getEntries", "getEntries()")}}.
+اگر به ورودی‌های عملکرد با نام خاصی علاقه‌مندید، به {{domxref("Performance.getEntriesByName", "getEntriesByName()")}} مراجعه کنید. برای همهٔ ورودی‌های عملکرد، {{domxref("Performance.getEntries", "getEntries()")}} را ببینید.
 
 > [!NOTE]
-> This method does not notify you about new performance entries; you will only get entries that are present in the performance timeline at the time you call this method.
-> To receive notifications about entries as they become available, use a {{domxref("PerformanceObserver")}}.
+> این متد شما را از ورودی‌های جدید عملکرد مطلع نمی‌کند؛ شما فقط ورودی‌هایی را دریافت می‌کنید که در زمان فراخوانی این متد در زمان‌نمای عملکرد وجود دارند. برای دریافت اعلان‌ها در مورد ورودی‌ها به محض در دسترس شدن، از یک {{domxref("PerformanceObserver")}} استفاده کنید.
 
-The following entry types are not supported by this method at all and won't be returned even if entries for these types might exist:
+انواع ورودی زیر به هیچ‌وجه توسط این متد پشتیبانی نمی‌شوند و حتی اگر ورودی‌هایی برای این انواع وجود داشته باشند، بازگردانده نمی‌شوند:
 
 - `"element"` ({{domxref("PerformanceElementTiming")}})
 - `"event"` ({{domxref("PerformanceEventTiming")}})
@@ -30,28 +23,28 @@ The following entry types are not supported by this method at all and won't be r
 - `"layout-shift"` ({{domxref("LayoutShift")}})
 - `"longtask"` ({{domxref("PerformanceLongTaskTiming")}})
 
-To access entries of these types, you must use a {{domxref("PerformanceObserver")}} instead.
+برای دسترسی به ورودی‌های این انواع، باید به جای آن از یک {{domxref("PerformanceObserver")}} استفاده کنید.
 
-## Syntax
+## نحو (Syntax)
 
 ```js-nolint
 getEntriesByType(type)
 ```
 
-### Parameters
+### پارامترها
 
 - `type`
-  - : The type of entry to retrieve such as `"mark"`. The valid entry types are listed in {{domxref("PerformanceEntry.entryType")}}. The supported `entryTypes` can be retrieved using the static property {{domxref("PerformanceObserver.supportedEntryTypes_static", "PerformanceObserver.supportedEntryTypes")}}.
+  - : نوع ورودی که باید بازیابی شود، مانند `"mark"`. انواع ورودی معتبر در {{domxref("PerformanceEntry.entryType")}} فهرست شده‌اند. `entryTypes`های پشتیبانی‌شده را می‌توان با استفاده از ویژگی ایستا {{domxref("PerformanceObserver.supportedEntryTypes_static", "PerformanceObserver.supportedEntryTypes")}} به دست آورد.
 
-### Return value
+### مقدار بازگشتی
 
-An {{jsxref("Array")}} of {{domxref("PerformanceEntry")}} objects that have the specified `type`. The items will be in chronological order based on the entries' {{domxref("PerformanceEntry.startTime","startTime")}}. If no objects have the specified `type`, or no argument is provided, an empty array is returned.
+یک {{jsxref("Array")}} از اشیاء {{domxref("PerformanceEntry")}} که دارای `type` مشخص شده هستند. آیتم‌ها به ترتیب زمانی بر اساس {{domxref("PerformanceEntry.startTime","startTime")}} ورودی‌ها خواهند بود. اگر هیچ شیئی دارای `type` مشخص شده نباشد، یا آرگومانی ارائه نشود، یک آرایه خالی بازگردانده می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Logging resource entries
+### ثبت ورودی‌های منبع
 
-The following example logs all entries with the type `"resource"`.
+مثال زیر همهٔ ورودی‌های با نوع `"resource"` را ثبت می‌کند.
 
 ```js
 const resources = performance.getEntriesByType("resource");
@@ -60,15 +53,15 @@ resources.forEach((entry) => {
 });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Performance.getEntries()")}}
 - {{domxref("Performance.getEntriesByName()")}}
