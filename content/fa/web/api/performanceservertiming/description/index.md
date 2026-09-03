@@ -1,11 +1,5 @@
 ---
 title: "PerformanceServerTiming: description property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceServerTiming/description"
-status: "needs-translation"
----
-
----
-title: "PerformanceServerTiming: description property"
 short-title: description
 slug: Web/API/PerformanceServerTiming/description
 page-type: web-api-instance-property
@@ -14,36 +8,34 @@ browser-compat: api.PerformanceServerTiming.description
 
 {{APIRef("Performance API")}}{{AvailableInWorkers}}
 
-The **`description`** read-only property returns a
-string value of the server-specified metric description, or an empty
-string.
+خاصیت فقط-خواندنی **`description`** یک رشته از توضیح معیار (metric) مشخص‌شده توسط سرور را برمی‌گرداند، یا در صورت عدم وجود، یک رشته خالی.
 
-## Value
+## مقدار
 
-A string.
+یک مقدار از نوع رشته.
 
-## Examples
+## مثال‌ها
 
-### Logging server timing entries
+### ثبت ورودی‌های زمان‌بندی سرور
 
-Server timing metrics require the server to send the {{HTTPHeader("Server-Timing")}} header. For example:
+معیارهای زمان‌بندی سرور (server timing metrics) نیاز دارند که سرور هدر {{HTTPHeader("Server-Timing")}} را ارسال کند. برای مثال:
 
 ```http
 Server-Timing: cache;desc="Cache Read";dur=23.2
 ```
 
-The `serverTiming` entries can live on `navigation` and `resource` entries.
+ورودی‌های `serverTiming` می‌توانند در ورودی‌های `navigation` و `resource` قرار داشته باشند.
 
-Example using a {{domxref("PerformanceObserver")}}, which notifies of new `navigation` and `resource` performance entries as they are recorded in the browser's performance timeline. Use the `buffered` option to access entries from before the observer creation.
+مثالی با استفاده از {{domxref("PerformanceObserver")}}، که هنگام ثبت ورودی‌های جدید عملکرد `navigation` و `resource` در timeline عملکرد مرورگر، اطلاع‌رسانی می‌کند. از گزینه `buffered` برای دسترسی به ورودی‌های قبل از ایجاد observer استفاده کنید.
 
 ```js
 const observer = new PerformanceObserver((list) => {
   list.getEntries().forEach((entry) => {
     entry.serverTiming.forEach((serverEntry) => {
       console.log(
-        `${serverEntry.name} (${serverEntry.description}) duration: ${serverEntry.duration}`,
+        `${sererEntry.name} (${sererEntry.description}) duration: ${sererEntry.duration}`,
       );
-      // Logs "cache (Cache Read) duration: 23.2"
+      // لاگ می‌کند "cache (Cache Read) duration: 23.2"
     });
   });
 });
@@ -53,7 +45,7 @@ const observer = new PerformanceObserver((list) => {
 );
 ```
 
-Example using {{domxref("Performance.getEntriesByType()")}}, which only shows `navigation` and `resource` performance entries present in the browser's performance timeline at the time you call this method:
+مثالی با استفاده از {{domxref("Performance.getEntriesByType()")}}، که فقط ورودی‌های عملکرد `navigation` و `resource` موجود در timeline عملکرد مرورگر را در زمان فراخوانی این متد نشان می‌دهد:
 
 ```js
 for (const entryType of ["navigation", "resource"]) {
@@ -63,22 +55,22 @@ for (const entryType of ["navigation", "resource"]) {
     if (serverTiming) {
       for (const { name, description, duration } of serverTiming) {
         console.log(`${name} (${description}) duration: ${duration}`);
-        // Logs "cache (Cache Read) duration: 23.2"
+        // لاگ می‌کند "cache (Cache Read) duration: 23.2"
       }
     }
   }
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("PerformanceServerTiming")}}
 - {{HTTPHeader("Server-Timing")}}
