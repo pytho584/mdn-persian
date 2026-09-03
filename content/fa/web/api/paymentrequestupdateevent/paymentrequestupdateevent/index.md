@@ -1,11 +1,5 @@
 ---
 title: "PaymentRequestUpdateEvent: PaymentRequestUpdateEvent() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestUpdateEvent/PaymentRequestUpdateEvent"
-status: "needs-translation"
----
-
----
-title: "PaymentRequestUpdateEvent: PaymentRequestUpdateEvent() constructor"
 short-title: PaymentRequestUpdateEvent()
 slug: Web/API/PaymentRequestUpdateEvent/PaymentRequestUpdateEvent
 page-type: web-api-constructor
@@ -14,11 +8,7 @@ browser-compat: api.PaymentRequestUpdateEvent.PaymentRequestUpdateEvent
 
 {{APIRef("Payment Request API")}}{{securecontext_header}}
 
-The **`PaymentRequestUpdateEvent()`** constructor creates a new
-{{domxref("PaymentRequestUpdateEvent")}} object which enables a web page to update the
-details of a {{domxref("PaymentRequest")}} in response to a user action. Actual updates
-are made by passing options to the
-{{domxref('PaymentRequestUpdateEvent.updateWith','updateWith()')}} method.
+سازندهٔ **`PaymentRequestUpdateEvent()`** یک شیء جدید از نوع {{domxref("PaymentRequestUpdateEvent")}} می‌سازد که به یک صفحهٔ وب امکان می‌دهد جزئیات یک {{domxref("PaymentRequest")}} را در پاسخ به عملیات کاربر به‌روزرسانی کند. به‌روزرسانی‌های واقعی با ارسال گزینه‌ها به متد {{domxref('PaymentRequestUpdateEvent.updateWith','updateWith()')}} انجام می‌شود.
 
 ## Syntax
 
@@ -28,11 +18,11 @@ new PaymentRequestUpdateEvent()
 
 ### Parameters
 
-None.
+بدون پارامتر.
 
 ### Return value
 
-A new `PaymentRequestUpdateEvent`.
+یک شیء جدید از `PaymentRequestUpdateEvent`.
 
 ## Specifications
 
