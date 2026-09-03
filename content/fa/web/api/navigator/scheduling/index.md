@@ -1,11 +1,5 @@
 ---
 title: "Navigator: scheduling property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Navigator/scheduling"
-status: "needs-translation"
----
-
----
-title: "Navigator: scheduling property"
 short-title: scheduling
 slug: Web/API/Navigator/scheduling
 page-type: web-api-instance-property
@@ -16,31 +10,31 @@ browser-compat: api.Navigator.scheduling
 
 {{SeeCompatTable}}{{APIRef("Prioritized Task Scheduling API")}}
 
-The **`scheduling`** read-only property of the {{domxref("Navigator")}} interface returns a {{domxref("Scheduling")}} object for the current document, which provides methods and properties to control scheduling tasks.
+خاصیت فقط-خواندنی **`scheduling`** از رابط {{domxref("Navigator")}} یک شیء {{domxref("Scheduling")}} برای سند جاری برمی‌گرداند که متدها و ویژگی‌هایی برای کنترل زمان‌بندی وظایف ارائه می‌دهد.
 
 > [!WARNING]
-> The {{domxref("Scheduling")}} interface (which includes the {{domxref("Scheduling.isInputPending()", "isInputPending()")}} method) has been superseded by the {{domxref("Scheduler")}} interface, the features of which are better designed for addressing scheduling tasks. See [Don't use `isInputPending()`](https://web.dev/articles/optimize-long-tasks#isinputpending) for more details.
+> رابط {{domxref("Scheduling")}} (که شامل متد {{domxref("Scheduling.isInputPending()", "isInputPending()")}} است) توسط رابط {{domxref("Scheduler")}} جایگزین شده است، ویژگی‌های آن برای پرداختن به زمان‌بندی وظایف بهتر طراحی شده‌اند. برای جزئیات بیشتر به [از `isInputPending()` استفاده نکنید](https://web.dev/articles/optimize-long-tasks#isinputpending) مراجعه کنید.
 
-## Value
+## مقدار
 
-A {{domxref("Scheduling")}} object.
+یک شیء {{domxref("Scheduling")}}.
 
-## Example
+## مثال
 
-See the {{domxref("Scheduling.isInputPending()")}} page for a full example.
+برای یک مثال کامل، صفحه {{domxref("Scheduling.isInputPending()")}} را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("Scheduler")}} interface
-- {{domxref("Prioritized_task_scheduling_api", "Prioritized Task Scheduling API", "", "nocode")}}
-- [Faster input events with Facebook's first browser API contribution](https://engineering.fb.com/2019/04/22/developer-tools/isinputpending-api/) on engineering.fb.com (2019)
-- [Better JS scheduling with isInputPending()](https://developer.chrome.com/docs/capabilities/web-apis/isinputpending) on developer.chrome.com (2020)
-- [Optimizing long tasks](https://web.dev/articles/optimize-long-tasks) on web.dev (2022)
+- رابط {{domxref("Scheduler")}}
+- {{domxref("Prioritized_task_scheduling_api", "API زمان‌بندی وظایف اولویت‌بندی شده", "", "nocode")}}
+- [رویدادهای ورودی سریع‌تر با اولین مشارکت API مرورگر فیسبوک](https://engineering.fb.com/2019/04/22/developer-tools/isinputpending-api/) در engineering.fb.com (2019)
+- [زمان‌بندی بهتر JS با `isInputPending()`](https://developer.chrome.com/docs/capabilities/web-apis/isinputpending) در developer.chrome.com (2020)
+- [بهینه‌سازی وظایف طولانی](https://web.dev/articles/optimize-long-tasks) در web.dev (2022)
