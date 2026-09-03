@@ -1,11 +1,5 @@
 ---
 title: "PerformanceScriptTiming: forcedStyleAndLayoutDuration property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceScriptTiming/forcedStyleAndLayoutDuration"
-status: "needs-translation"
----
-
----
-title: "PerformanceScriptTiming: forcedStyleAndLayoutDuration property"
 short-title: forcedStyleAndLayoutDuration
 slug: Web/API/PerformanceScriptTiming/forcedStyleAndLayoutDuration
 page-type: web-api-instance-property
@@ -16,25 +10,25 @@ browser-compat: api.PerformanceScriptTiming.forcedStyleAndLayoutDuration
 
 {{SeeCompatTable}}{{APIRef("Performance API")}}
 
-The **`forcedStyleAndLayoutDuration`** read-only property of the {{domxref("PerformanceScriptTiming")}} interface returns a {{domxref("DOMHighResTimeStamp")}} indicating the total time spent, in milliseconds, by the script processing forced layout/style. See [Avoid layout thrashing](https://web.dev/articles/avoid-large-complex-layouts-and-layout-thrashing#avoid_layout_thrashing) to understand what causes this.
+خاصیت فقط‌خواندنی **`forcedStyleAndLayoutDuration`** از رابط {{domxref("PerformanceScriptTiming")}} یک {{domxref("DOMHighResTimeStamp")}} برمی‌گرداند که نشان‌دهندهٔ کل زمان صرف‌شده (به میلی‌ثانیه) توسط اسکریپت برای پردازش چیدمان/سبک اجباری است. برای درک اینکه چه چیزی موجب این وضعیت می‌شود، به مقالهٔ [پرهیز از نوسازی چیدمان (layout thrashing)](https://web.dev/articles/avoid-large-complex-layouts-and-layout-thrashing#avoid_layout_thrashing) مراجعه کنید.
 
-## Value
+## مقدار
 
-A {{domxref("DOMHighResTimeStamp")}}.
+یک {{domxref("DOMHighResTimeStamp")}}.
 
-## Examples
+## نمونه‌ها
 
-See [Long animation frame timing](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing#examples) for examples related to the Long Animation Frames API.
+برای نمونه‌های مرتبط با API فریم‌های انیمیشن طولانی، بخش [زمان‌بندی فریم انیمیشن طولانی](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing#examples) را ببینید.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Long animation frame timing](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing)
+- [زمان‌بندی فریم انیمیشن طولانی](/en-US/docs/Web/API/Performance_API/Long_animation_frame_timing)
 - {{domxref("PerformanceLongAnimationFrameTiming")}}
