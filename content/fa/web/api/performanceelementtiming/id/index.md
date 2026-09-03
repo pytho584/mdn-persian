@@ -1,11 +1,5 @@
 ---
 title: "PerformanceElementTiming: id property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceElementTiming/id"
-status: "needs-translation"
----
-
----
-title: "PerformanceElementTiming: id property"
 short-title: id
 slug: Web/API/PerformanceElementTiming/id
 page-type: web-api-instance-property
@@ -16,17 +10,17 @@ browser-compat: api.PerformanceElementTiming.id
 
 {{APIRef("Performance API")}}{{SeeCompatTable}}
 
-The **`id`** read-only property of the {{domxref("PerformanceElementTiming")}} interface returns the [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) of the associated element.
+ویژگی فقط‌خواندنی **`id`** در رابط {{domxref("PerformanceElementTiming")}}، [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) عنصر مرتبط را برمی‌گرداند.
 
-## Value
+## مقدار
 
-A string.
+یک رشته.
 
-## Examples
+## مثال‌ها
 
-### Using `id`
+### استفاده از `id`
 
-In this example an {{HTMLElement("img")}} element is being observed by adding the [`elementtiming`](/en-US/docs/Web/HTML/Reference/Attributes/elementtiming) attribute. A {{domxref("PerformanceObserver")}} is registered to get all performance entries of type `"element"` and the `buffered` flag is used to access data from before observer creation. It will log `myImage` to the console, this being the [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) of the image element.
+در این مثال، یک عنصر {{HTMLElement("img")}} با افزودن ویژگی [`elementtiming`](/en-US/docs/Web/HTML/Reference/Attributes/elementtiming) تحت نظارت قرار می‌گیرد. یک {{domxref("PerformanceObserver")}} ثبت شده است تا همهٔ ورودی‌های عملکرد از نوع `"element"` را دریافت کند و از پرچم `buffered` برای دسترسی به داده‌های پیش از ایجاد observer استفاده می‌شود. این کار مقدار `myImage` را در کنسول ثبت خواهد کرد که همان [`id`](/en-US/docs/Web/HTML/Reference/Global_attributes/id) عنصر تصویر است.
 
 ```html
 <img
@@ -47,10 +41,10 @@ const observer = new PerformanceObserver((list) => {
 observer.observe({ type: "element", buffered: true });
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
