@@ -1,11 +1,5 @@
 ---
 title: "Node: nodeType property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType"
-status: "needs-translation"
----
-
----
-title: "Node: nodeType property"
 short-title: nodeType
 slug: Web/API/Node/nodeType
 page-type: web-api-instance-property
@@ -14,39 +8,37 @@ browser-compat: api.Node.nodeType
 
 {{APIRef("DOM")}}
 
-The read-only **`nodeType`** property of a {{domxref("Node")}} interface is an integer
-that identifies what the node is. It distinguishes different kinds of nodes from each other,
-such as {{domxref("Element", "elements")}}, {{domxref("Text", "text")}}, and {{domxref("Comment", "comments")}}.
+ویژگی فقط‌خواندنی **`nodeType`** از رابط {{domxref("Node")}} یک عدد صحیح است که نوع گره را مشخص می‌کند. این ویژگی انواع مختلف گره‌ها مانند {{domxref("Element", "المان‌ها")}}، {{domxref("Text", "متن‌ها")}} و {{domxref("Comment", "کامنت‌ها")}} را از یکدیگر متمایز می‌کند.
 
-## Value
+## مقدار
 
-An integer which specifies the type of the node. Possible values are:
+یک عدد صحیح که نوع گره را مشخص می‌کند. مقادیر ممکن عبارتند از:
 
 - `Node.ELEMENT_NODE` (`1`)
-  - : An {{domxref("Element")}} node like {{HTMLElement("p")}} or {{HTMLElement("div")}}.
+  - : یک گره {{domxref("Element")}} مانند {{HTMLElement("p")}} یا {{HTMLElement("div")}}.
 - `Node.ATTRIBUTE_NODE` (`2`)
-  - : An {{domxref("Attr", "Attribute")}} of an {{domxref("Element")}}.
+  - : یک {{domxref("Attr", "صفت")}} از یک {{domxref("Element")}}.
 - `Node.TEXT_NODE` (`3`)
-  - : The actual {{domxref("Text")}} inside an {{domxref("Element")}} or {{domxref("Attr")}}.
+  - : {{domxref("Text", "متن")}} واقعی درون یک {{domxref("Element")}} یا {{domxref("Attr")}}.
 - `Node.CDATA_SECTION_NODE` (`4`)
-  - : A {{domxref("CDATASection")}}, such as `<!CDATA[[ … ]]>`
+  - : یک {{domxref("CDATASection")}}، مانند `<!CDATA[[ … ]]>`
 - `Node.PROCESSING_INSTRUCTION_NODE` (`7`)
-  - : A {{domxref("ProcessingInstruction")}} of an XML document, such as `<?xml-stylesheet … ?>`.
+  - : یک {{domxref("ProcessingInstruction")}} از یک سند XML، مانند `<?xml-stylesheet … ?>`.
 - `Node.COMMENT_NODE` (`8`)
-  - : A {{domxref("Comment")}} node, such as `<!-- … -->`.
+  - : یک گره {{domxref("Comment", "کامنت")}}، مانند `<!-- … -->`.
 - `Node.DOCUMENT_NODE` (`9`)
-  - : A {{domxref("Document")}} node.
+  - : یک گره {{domxref("Document")}}.
 - `Node.DOCUMENT_TYPE_NODE` (`10`)
-  - : A {{domxref("DocumentType")}} node, such as `<!doctype html>`.
+  - : یک گره {{domxref("DocumentType")}}، مانند `<!doctype html>`.
 - `Node.DOCUMENT_FRAGMENT_NODE` (`11`)
-  - : A {{domxref("DocumentFragment")}} node.
+  - : یک گره {{domxref("DocumentFragment")}}.
 
-The following constants have been deprecated and are not in use anymore: `Node.ENTITY_REFERENCE_NODE` (`5`),
-`Node.ENTITY_NODE` (`6`), and `Node.NOTATION_NODE` (`12`).
+ثابت‌های زیر منسوخ شده‌اند و دیگر استفاده نمی‌شوند: `Node.ENTITY_REFERENCE_NODE` (`5`)،
+`Node.ENTITY_NODE` (`6`) و `Node.NOTATION_NODE` (`12`).
 
-## Examples
+## مثال‌ها
 
-### Different types of nodes
+### انواع مختلف گره‌ها
 
 ```js
 document.nodeType === Node.DOCUMENT_NODE; // true
@@ -61,10 +53,9 @@ p.nodeType === Node.ELEMENT_NODE; // true
 p.firstChild.nodeType === Node.TEXT_NODE; // true
 ```
 
-### Comments
+### کامنت‌ها
 
-This example checks if the first node inside the document element is a comment, and
-displays a message if not.
+این مثال بررسی می‌کند که آیا اولین گره داخل المان سند یک کامنت است یا خیر، و در غیر این صورت یک پیام نمایش می‌دهد.
 
 ```js
 const node = document.documentElement.firstChild;
@@ -73,10 +64,10 @@ if (node.nodeType !== Node.COMMENT_NODE) {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگرها
 
 {{Compat}}
