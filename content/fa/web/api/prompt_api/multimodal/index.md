@@ -1,7 +1,5 @@
 ---
 title: "Multimodal prompts"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Prompt_API/Multimodal"
-status: "needs-translation"
 ---
 
 ---
@@ -12,11 +10,11 @@ page-type: guide
 
 {{DefaultAPISidebar("Prompt API")}}
 
-The [Prompt API](/en-US/docs/Web/API/Prompt_API) accepts multimodal inputs, including image and audio content. This article looks at how to handle multimodal inputs in your app.
+[Prompt API](/en-US/docs/Web/API/Prompt_API) ورودی‌های چندوجهی، از جمله محتوای تصویر و صدا را می‌پذیرد. این مقاله به نحوه کار با ورودی‌های چندوجهی در برنامه شما می‌پردازد.
 
-## Specifying expected input types
+## تعیین انواع ورودی مورد انتظار
 
-To declare that you want to use image and/or audio inputs in your session, you need to include them in the `expectedInputs` option of the {{domxref("LanguageModel.create_static", "create()")}} method:
+برای اعلام اینکه می‌خواهید در نشست خود از ورودی‌های تصویر و/یا صدا استفاده کنید، باید آن‌ها را در گزینه `expectedInputs` متد {{domxref("LanguageModel.create_static", "create()")}} قرار دهید:
 
 ```js
 return await LanguageModel.create({
@@ -29,11 +27,11 @@ return await LanguageModel.create({
 });
 ```
 
-## Providing multimodal input data
+## ارائه داده‌های ورودی چندوجهی
 
-When providing multimodal inputs — for example in a {{domxref("LanguageModel.prompt", "prompt()")}}, {{domxref("LanguageModel.promptStreaming", "promptStreaming()")}}, or {{domxref("LanguageModel.append", "append()")}} call, or in the [`initialPrompts`](/en-US/docs/Web/API/LanguageModel/create_static#initialprompts) option of a `create()` call — you need to specify the correct data `type` in your input objects, and point to the data source in your `value` properties.
+هنگام ارائه ورودی‌های چندوجهی — برای مثال در یک فراخوانی {{domxref("LanguageModel.prompt", "prompt()")}}، {{domxref("LanguageModel.promptStreaming", "promptStreaming()")}} یا {{domxref("LanguageModel.append", "append()")}}، یا در گزینه [`initialPrompts`](/en-US/docs/Web/API/LanguageModel/create_static#initialprompts) یک فراخوانی `create()` — باید `type` داده صحیح را در شیءهای ورودی خود مشخص کنید و در ویژگی‌های `value` به منبع داده اشاره نمایید.
 
-The following example passes three `user` inputs into a `prompt()` call, one of each type — `text`, `image`, and `audio`.
+مثال زیر سه ورودی `user` را در یک فراخوانی `prompt()` ارسال می‌کند — برای هر نوع یک ورودی: `text`، `image` و `audio`.
 
 ```js
 const response = await session.prompt([
@@ -48,19 +46,19 @@ const response = await session.prompt([
 ]);
 ```
 
-## What data types are accepted?
+## چه نوع داده‌هایی پذیرفته می‌شوند؟
 
-The Prompt API accepts several different formats for audio and image data:
+Prompt API چندین قالب مختلف برای داده‌های صوتی و تصویری می‌پذیرد:
 
-- Audio:
+- صدا:
   - {{domxref("AudioBuffer")}}
   - {{domxref("ArrayBufferView")}}
   - {{jsxref("ArrayBuffer")}}
   - {{domxref("Blob")}}
-- Image:
+- تصویر:
   - {{domxref("HTMLImageElement")}}
   - {{domxref("SVGImageElement")}}
-  - {{domxref("HTMLVideoElement")}} (uses the frame at the current `<video>` position)
+  - {{domxref("HTMLVideoElement")}} (از فریم در موقعیت فعلی `<video>` استفاده می‌کند)
   - {{domxref("HTMLCanvasElement")}}
   - {{domxref("ImageBitmap")}}
   - {{domxref("OffscreenCanvas")}}
@@ -68,15 +66,15 @@ The Prompt API accepts several different formats for audio and image data:
   - {{domxref("Blob")}}
   - {{domxref("ImageData")}}
 
-## Complete example
+## مثال کامل
 
-Let's look at a multimodal example, which allows you to select a local image file and have the API describe it for you.
+بیایید به یک مثال چندوجهی نگاه کنیم که به شما امکان می‌دهد یک فایل تصویری محلی را انتخاب کنید و API آن را برای‌تان توصیف کند.
 
-The overall app structure is very similar to examples in previous guides. We won't walk through all the code exhaustively; instead, we'll just explain the most relevant parts. To check out the complete codebase in more detail, press the "Play" button in the [rendered live output](#result) to open the full code in MDN Playground.
+ساختار کلی برنامه بسیار شبیه به نمونه‌های راهنماهای قبلی است. ما تمام کد را به‌طور مشروح مرور نمی‌کنیم؛ در عوض فقط مرتبط‌ترین بخش‌ها را توضیح می‌دهیم. برای بررسی دقیق‌تر کد کامل، دکمه «Play» را در [خروجی زنده نمایش‌داده‌شده](#result) فشار دهید تا کد کامل در MDN Playground باز شود.
 
 ### HTML
 
-The file to describe is chosen using an [`<input type="file">`](/en-US/docs/Web/HTML/Reference/Elements/input/file) element. The API's image description is output to a {{htmlelement("p")}} element. We also include an {{htmlelement("img")}} element to display the chosen image.
+فایلی که باید توصیف شود با استفاده از عنصر [`<input type="file">`](/en-US/docs/Web/HTML/Reference/Elements/input/file) انتخاب می‌شود. توصیف تصویر توسط API در یک عنصر {{htmlelement("p")}} خروجی داده می‌شود. همچنین یک عنصر {{htmlelement("img")}} برای نمایش تصویر انتخابی اضافه می‌کنیم.
 
 ```html live-sample___multimodal
 <h1>Prompt API demo</h1>
@@ -163,9 +161,9 @@ button {
 }
 ```
 
-### JavaScript
+### جاوااسکریپت
 
-We create a `session` variable to hold our session. Because using the API requires [transient activation](/en-US/docs/Glossary/Transient_activation), we populate `session` inside a `keydown` event handler on the demo window. When the user focuses the demo and presses a key, we first check whether the API is supported; if not, we print a non-support message. If support is available, we check whether `session` already has a value assigned (we don't want to create a new session each time). If not, we run the `init()` function.
+ما یک متغیر `session` برای نگهداری نشست خود ایجاد می‌کنیم. از آنجا که استفاده از API به [فعال‌سازی گذرا](/en-US/docs/Glossary/Transient_activation) نیاز دارد، `session` را درون یک کنترل‌کننده رویداد `keydown` در پنجره دمو مقداردهی می‌کنیم. وقتی کاربر دمو را فوکوس می‌کند و کلیدی را فشار می‌دهد، ابتدا بررسی می‌کنیم که آیا API پشتیبانی می‌شود؛ اگر نه، پیامی مبنی بر عدم پشتیبانی چاپ می‌کنیم. اگر پشتیبانی موجود باشد، بررسی می‌کنیم که آیا `session` از قبل مقداری به آن تخصیص داده شده است (نمی‌خواهیم هر بار یک نشست جدید ایجاد کنیم). اگر نه، تابع `init()` را اجرا می‌کنیم.
 
 ```js hidden live-sample___multimodal
 const form = document.querySelector("form");
@@ -190,9 +188,9 @@ window.addEventListener("keydown", () => {
 });
 ```
 
-The `init()` function generates a `LanguageModel` instance using the custom `getSession()` function.
+تابع `init()` با استفاده از تابع سفارشی `getSession()` یک نمونه از `LanguageModel` می‌سازد.
 
-Provided generation is successful, we assign the resulting `LanguageModel` instance to the `session` variable, print a success message to the output `<p>`, enable the `<input>` so that images can be chosen, and assign event listeners to update the UI when a new image is chosen in the file picker, and handle submission of a prompt query.
+اگر ساخت نمونه موفقیت‌آمیز باشد، نمونه حاصل از `LanguageModel` را به متغیر `session` اختصاص می‌دهیم، یک پیام موفقیت را در `<p>` خروجی چاپ می‌کنیم، `<input>` را فعال می‌کنیم تا بتوان تصویر انتخاب کرد، و شنونده‌های رویداد را برای به‌روزرسانی رابط کاربری هنگام انتخاب یک تصویر جدید در انتخابگر فایل و مدیریت ارسال پرس‌وجوی پرامپت، اختصاص می‌دهیم.
 
 ```js live-sample___multimodal
 async function init() {
@@ -205,7 +203,7 @@ async function init() {
 }
 ```
 
-The `getSession()` function works the same as in other examples ([`getSession()` is explained here](/en-US/docs/Web/API/Prompt_API/Using#complete_example:~:text=Now%20we%20define%20the%20getSession%28%29%20function)), except that we include `image` in our `expectedInputs` option as well as `text`:
+تابع `getSession()` مانند سایر مثال‌ها عمل می‌کند ([`getSession()` در اینجا توضیح داده شده است](/en-US/docs/Web/API/Prompt_API/Using#complete_example:~:text=Now%20we%20define%20the%20getSession%28%29%20function))، با این تفاوت که ما `image` را علاوه بر `text` در گزینه `expectedInputs` خود قرار می‌دهیم:
 
 ```js
 return await LanguageModel.create({
@@ -214,12 +212,12 @@ return await LanguageModel.create({
 });
 ```
 
-The `getImage()` function first checks whether a file is chosen in the `<input type="file">` picker. If not, we print a suitable error to the output `<p>` and then `return`. At the end of the function body, we set the `<img>` element's `src` attribute to an object URL created from the file selected in the file picker, so that the image will be displayed in the UI.
+تابع `getImage()` ابتدا بررسی می‌کند که آیا فایلی در انتخابگر `<input type="file">` انتخاب شده است. اگر نه، یک خطای مناسب در `<p>` خروجی چاپ می‌کنیم و سپس `return` می‌کنیم. در انتهای بدنه تابع، ویژگی `src` عنصر `<img>` را با یک URL شیء ساخته‌شده از فایل انتخاب‌شده در انتخابگر فایل تنظیم می‌کنیم تا تصویر در رابط کاربری نمایش داده شود.
 
-Above that, we add two event listeners to the `<img>`:
+علاوه بر این، دو شنونده رویداد به `<img>` اضافه می‌کنیم:
 
-- If an `error` event fires on the `<img>`, we print a suitable error to the output `<p>` and then `return`.
-- If a `load` event fires on the `<img>`, we print a success message to the output `<p>` to tell the user the app is ready to query the image, and then enable the submit `<button>` so the query can be submitted.
+- اگر رویداد `error` روی `<img>` رخ دهد، یک خطای مناسب در `<p>` خروجی چاپ می‌کنیم و سپس `return` می‌کنیم.
+- اگر رویداد `load` روی `<img>` رخ دهد، یک پیام موفقیت در `<p>` خروجی چاپ می‌کنیم تا به کاربر اطلاع دهیم برنامه برای پرس‌وجو درباره تصویر آماده است، و سپس دکمه ارسال `<button>` را فعال می‌کنیم تا پرس‌وجو ارسال شود.
 
 ```js live-sample___multimodal
 function getImage() {
@@ -243,7 +241,7 @@ function getImage() {
 }
 ```
 
-The `handleSubmission()` function uses the same flow as previous examples to prompt the language model and retrieve its output ([see explanation](/en-US/docs/Web/API/Prompt_API/Using#complete_example:~:text=Next%2C%20inside%20a%20try%20block%2C%20we)). The main difference is that in the `prompt()` call inputs, we first ask the API to describe the image, and then pass it a reference to the `<img>` element itself.
+تابع `handleSubmission()` از همان جریان مثال‌های قبلی برای پرامپت کردن مدل زبانی و دریافت خروجی آن استفاده می‌کند ([توضیح را ببینید](/en-US/docs/Web/API/Prompt_API/Using#complete_example:~:text=Next%2C%20inside%20a%20try%20block%2C%20we)). تفاوت اصلی این است که در ورودی‌های فراخوانی `prompt()`، ابتدا از API می‌خواهیم تصویر را توصیف کند و سپس یک ارجاع به خود عنصر `<img>` به آن می‌دهیم.
 
 ```js live-sample___multimodal
 async function handleSubmission(e) {
@@ -316,13 +314,13 @@ async function getSession() {
 }
 ```
 
-### Result
+### نتیجه
 
 {{EmbedLiveSample("multimodal", , "630px", , , , "language-model", "allow-forms")}}
 
-Focus the embedded demo window and press a key on your keyboard to start the app, then select an image using the file picker. When the image loads, press the "Submit query" button. After a short wait, the API's description of the image should appear in the output `<p>`.
+پنجره دموی تعبیه‌شده را فوکوس کنید و یک کلید از صفحه‌کلید خود را فشار دهید تا برنامه شروع شود؛ سپس با استفاده از انتخابگر فایل یک تصویر انتخاب کنید. پس از بارگیری تصویر، دکمه «Submit query» را فشار دهید. پس از اندکی انتظار، توصیف تصویر توسط API باید در `<p>` خروجی ظاهر شود.
 
-## See also
+## همچنین ببینید
 
-- [MediaRecorder + Audio Prompt API demo](https://chrome.dev/web-ai-demos/mediarecorder-audio-prompt/) on chrome.dev (2026)
-- [Prompt API with image input demo](https://chrome.dev/web-ai-demos/canvas-image-prompt/) on chrome.dev (2026)
+- [دموی MediaRecorder + Audio Prompt API](https://chrome.dev/web-ai-demos/mediarecorder-audio-prompt/) در chrome.dev (2026)
+- [دموی Prompt API با ورودی تصویر](https://chrome.dev/web-ai-demos/canvas-image-prompt/) در chrome.dev (2026)
