@@ -1,11 +1,5 @@
 ---
 title: "Node: removeChild() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild"
-status: "needs-translation"
----
-
----
-title: "Node: removeChild() method"
 short-title: removeChild()
 slug: Web/API/Node/removeChild
 page-type: web-api-instance-method
@@ -14,18 +8,17 @@ browser-compat: api.Node.removeChild
 
 {{APIRef("DOM")}}
 
-The **`removeChild()`** method of the {{domxref("Node")}} interface
-removes a child node from the DOM and returns the removed node.
+متد **`removeChild()`** از رابط {{domxref("Node")}} یک گرهٔ فرزند را از DOM حذف می‌کند و گرهٔ حذف‌شده را بازمی‌گرداند.
 
 > [!NOTE]
-> As long as a reference is kept on the removed child,
-> it still exists in memory, but is no longer part of the DOM.
-> It can still be reused later in the code.
+> تا زمانی که یک ارجاع (reference) به گرهٔ حذف‌شده نگه داشته شود،
+> آن گره همچنان در حافظه وجود دارد، اما دیگر بخشی از DOM نیست.
+> همچنان می‌توان بعداً در کد از آن استفاده کرد.
 >
-> If the return value of `removeChild()` is not stored, and no other reference is kept,
-> it will be [automatically deleted](/en-US/docs/Web/JavaScript/Guide/Memory_management) from memory after a short time.
+> اگر مقدار بازگشتیِ `removeChild()` ذخیره نشود و هیچ ارجاع دیگری نیز نگه داشته نشود،
+> پس از مدت کوتاهی به‌طور خودکار از حافظه [حذف خواهد شد](/en-US/docs/Web/JavaScript/Guide/Memory_management).
 
-Unlike {{domxref("Node.cloneNode()")}} the return value preserves the `EventListener` objects associated with it.
+برخلاف {{domxref("Node.cloneNode()")}}، مقدار بازگشتی، اشیاء `EventListener` مرتبط با خود را حفظ می‌کند.
 
 ## Syntax
 
@@ -33,27 +26,27 @@ Unlike {{domxref("Node.cloneNode()")}} the return value preserves the `EventList
 removeChild(child)
 ```
 
-### Parameters
+### پارامترها
 
 - `child`
-  - : A {{domxref("Node")}} that is the child node to be removed from the DOM.
+  - : یک {{domxref("Node")}} که گرهٔ فرزند موردنظر برای حذف از DOM است.
 
-### Return value
+### مقدار بازگشتی
 
-The removed `child` node.
+گرهٔ فرزند حذف‌شده (`child`).
 
-### Exceptions
+### استثناها
 
 - `NotFoundError` {{domxref("DOMException")}}
-  - : Thrown if the `child` is not a child of the node.
+  - : اگر `child` فرزند آن گره نباشد پرتاب می‌شود.
 - {{jsxref("TypeError")}}
-  - : Thrown if the `child` is `null`.
+  - : اگر `child` برابر با `null` باشد پرتاب می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Simple examples
+### مثال‌های ساده
 
-Given this HTML:
+با توجه به HTML زیر:
 
 ```html
 <div id="parent">
@@ -61,7 +54,7 @@ Given this HTML:
 </div>
 ```
 
-To remove a specified element when knowing its parent node:
+برای حذف یک عنصر مشخص وقتی گرهٔ والد آن را می‌دانیم:
 
 ```js
 const parent = document.getElementById("parent");
@@ -69,7 +62,7 @@ const child = document.getElementById("child");
 const throwawayNode = parent.removeChild(child);
 ```
 
-To remove a specified element without having to specify its parent node:
+برای حذف یک عنصر مشخص بدون نیاز به مشخص کردن گرهٔ والد آن:
 
 ```js
 const node = document.getElementById("child");
@@ -78,7 +71,7 @@ if (node.parentNode) {
 }
 ```
 
-To remove all children from an element:
+برای حذف همهٔ فرزندان یک عنصر:
 
 ```js
 const element = document.getElementById("idOfParent");
@@ -87,10 +80,10 @@ while (element.firstChild) {
 }
 ```
 
-### Causing a TypeError
+### ایجاد TypeError
 
 ```html
-<!--Sample HTML code-->
+<!--نمونه کد HTML-->
 <div id="parent"></div>
 ```
 
@@ -98,14 +91,14 @@ while (element.firstChild) {
 const parent = document.getElementById("parent");
 const child = document.getElementById("child");
 
-// Throws Uncaught TypeError
+// پرتاب خطای Uncaught TypeError
 const garbage = parent.removeChild(child);
 ```
 
-### Causing a NotFoundError
+### ایجاد NotFoundError
 
 ```html
-<!--Sample HTML code-->
+<!--نمونه کد HTML-->
 <div id="parent">
   <div id="child"></div>
 </div>
@@ -115,10 +108,10 @@ const garbage = parent.removeChild(child);
 const parent = document.getElementById("parent");
 const child = document.getElementById("child");
 
-// This first call correctly removes the node
+// این فراخوانی اول به‌درستی گره را حذف می‌کند
 const garbage = parent.removeChild(child);
 
-// Second call throws NotFoundError
+// فراخوانی دوم باعث ایجاد NotFoundError می‌شود
 parent.removeChild(child);
 ```
 
@@ -126,11 +119,11 @@ parent.removeChild(child);
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{domxref("Node.replaceChild()")}}
 - {{domxref("Node.parentNode")}}
