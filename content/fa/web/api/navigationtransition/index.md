@@ -1,10 +1,4 @@
 ---
-title: "NavigationTransition"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NavigationTransition"
-status: "needs-translation"
----
-
----
 title: NavigationTransition
 slug: Web/API/NavigationTransition
 page-type: web-api-interface
@@ -13,27 +7,27 @@ browser-compat: api.NavigationTransition
 
 {{APIRef("Navigation API")}}
 
-The **`NavigationTransition`** interface of the {{domxref("Navigation API", "Navigation API", "", "nocode")}} represents an ongoing navigation — a navigation that hasn't yet reached the {{domxref("Navigation/navigatesuccess_event", "navigatesuccess")}} or {{domxref("Navigation/navigateerror_event", "navigateerror")}} stage.
+رابطِ **`NavigationTransition`** از {{domxref("Navigation API", "Navigation API", "", "nocode")}} یک ناوبریِ در حال انجام را نمایش می‌دهد؛ ناوبری‌ای که هنوز به مرحلهٔ {{domxref("Navigation/navigatesuccess_event", "navigatesuccess")}} یا {{domxref("Navigation/navigateerror_event", "navigateerror")}} نرسیده است.
 
-It is accessed via the {{domxref("Navigation.transition")}} property.
-Note that this property is only populated while the [`intercept()`](/en-US/docs/Web/API/NavigateEvent/intercept) handler is unresolved (i.e., during a [navigation interception](/en-US/docs/Web/API/Navigation/navigate_event#handling_a_navigation_using_intercept)), and is otherwise `null`.
+از طریق ویژگی {{domxref("Navigation.transition")}} قابل دسترسی است.
+توجه داشته باشید که این ویژگی فقط تا زمانی مقدار دارد که هندلر [`intercept()`](/en-US/docs/Web/API/NavigateEvent/intercept) هنوز به نتیجه نرسیده باشد (یعنی هنگام [رهگیری ناوبری](/en-US/docs/Web/API/Navigation/navigate_event#handling_a_navigation_using_intercept))؛ در غیر این صورت مقدار آن `null` است.
 
 {{InheritanceDiagram}}
 
-## Instance properties
+## ویژگی‌های نمونه
 
 - {{domxref("NavigationTransition.committed", "committed")}} {{ReadOnlyInline}}
-  - : Returns a {{jsxref("Promise")}} that fulfills when {{domxref("Navigation.currentEntry")}} is updated and the new URL is displayed in the browser, marking the navigation as committed.
+  - : یک {{jsxref("Promise")}} برمی‌گرداند که وقتی {{domxref("Navigation.currentEntry")}} به‌روزرسانی می‌شود و نشانی وب جدید در مرورگر نمایش داده می‌شود، برآورده می‌شود؛ این یعنی ناوبری به‌عنوان قطعی‌شده (committed) علامت‌گذاری می‌گردد.
 - {{domxref("NavigationTransition.finished", "finished")}} {{ReadOnlyInline}}
-  - : Returns a {{jsxref("Promise")}} that fulfills at the same time the {{domxref("Navigation/navigatesuccess_event", "navigatesuccess")}} event fires, or rejects at the same time the {{domxref("Navigation/navigateerror_event", "navigateerror")}} event fires.
+  - : یک {{jsxref("Promise")}} برمی‌گرداند که هم‌زمان با رویداد {{domxref("Navigation/navigatesuccess_event", "navigatesuccess")}} برآورده می‌شود یا هم‌زمان با رویداد {{domxref("Navigation/navigateerror_event", "navigateerror")}} رد می‌شود.
 - {{domxref("NavigationTransition.from", "from")}} {{ReadOnlyInline}}
-  - : Returns the {{domxref("NavigationHistoryEntry")}} that the transition is coming from.
+  - : یک {{domxref("NavigationHistoryEntry")}} برمی‌گرداند که انتقال از آن آغاز شده است.
 - {{domxref("NavigationTransition.navigationType", "navigationType")}} {{ReadOnlyInline}}
-  - : Returns the type of the ongoing navigation.
+  - : نوع ناوبریِ در حال انجام را برمی‌گرداند.
 - {{domxref("NavigationTransition.to", "to")}} {{ReadOnlyInline}} {{Experimental_Inline}}
-  - : Returns the {{domxref("NavigationDestination")}} that the transition is navigating to.
+  - : یک {{domxref("NavigationDestination")}} برمی‌گرداند که ناوبری به سمت آن انجام می‌شود.
 
-## Examples
+## مثال‌ها
 
 ```js
 async function cleanupNavigation() {
@@ -43,16 +37,16 @@ async function cleanupNavigation() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Modern client-side routing: the Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
-- [Navigation API explainer](https://github.com/WICG/navigation-api/blob/main/README.md)
-- [Navigation API live demo](https://mdn.github.io/dom-examples/navigation-api/) ([view demo source](https://github.com/mdn/dom-examples/tree/main/navigation-api))
+- [مسیریابی مدرن سمت کلاینت: Navigation API](https://developer.chrome.com/docs/web-platform/navigation-api/)
+- [سند توضیحی Navigation API](https://github.com/WICG/navigation-api/blob/main/README.md)
+- [دموی زندهٔ Navigation API](https://mdn.github.io/dom-examples/navigation-api/) ([مشاهدهٔ سورس دمو](https://github.com/mdn/dom-examples/tree/main/navigation-api))
