@@ -1,11 +1,5 @@
 ---
 title: "Path2D: Path2D() constructor"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Path2D/Path2D"
-status: "needs-translation"
----
-
----
-title: "Path2D: Path2D() constructor"
 short-title: Path2D()
 slug: Web/API/Path2D/Path2D
 page-type: web-api-constructor
@@ -14,9 +8,9 @@ browser-compat: api.Path2D.Path2D
 
 {{APIRef("Canvas API")}}{{AvailableInWorkers}}
 
-The **`Path2D()`** constructor returns a newly instantiated `Path2D` object, optionally with another path as an argument (creates a copy), or optionally with a string consisting of [SVG path](/en-US/docs/Web/SVG/Tutorials/SVG_from_scratch/Paths) data.
+سازندهٔ `Path2D()` یک شیء `Path2D` جدید برمی‌گرداند. به‌صورت اختیاری می‌توان یک مسیر دیگر را به‌عنوان آرگومان به آن داد، که در این صورت یک کپی ساخته می‌شود. همچنین می‌توان رشته‌ای شامل داده‌های [مسیر SVG](/en-US/docs/Web/SVG/Tutorials/SVG_from_scratch/Paths) به آن داد تا مسیر جدید از روی آن توصیف ساخته شود.
 
-## Syntax
+## سینتکس
 
 ```js-nolint
 new Path2D()
@@ -24,18 +18,18 @@ new Path2D(path)
 new Path2D(d)
 ```
 
-### Parameters
+### پارامترها
 
 - `path` {{optional_inline}}
-  - : When invoked with another `Path2D` object, a copy of the `path` argument is created.
+  - : اگر این سازنده با یک شیء `Path2D` دیگر فراخوانده شود، یک کپی از آرگومان `path` ساخته می‌شود.
 - `d` {{optional_inline}}
-  - : When invoked with a string consisting of [SVG path](/en-US/docs/Web/SVG/Tutorials/SVG_from_scratch/Paths) data, a new path is created from that description.
+  - : اگر با رشته‌ای حاوی داده‌های [مسیر SVG](/en-US/docs/Web/SVG/Tutorials/SVG_from_scratch/Paths) فراخوانده شود، یک مسیر جدید از روی آن توصیف ساخته می‌شود.
 
-## Examples
+## مثال‌ها
 
-### Creating and copying paths
+### ایجاد و کپی کردن مسیرها
 
-This example creates and copies a `Path2D` path. First, `path1` is a rectangular path. Then, we copy `path1` into `path2` and add a circle to it. Finally, we stroke `path2`, which contains both the rectangle and the circle. Note that `path1` remains unchanged, although we never draw it to the canvas. Its only purpose is to show how you can build up a complex path by building on existing paths.
+این مثال یک مسیر `Path2D` را ایجاد و کپی می‌کند. ابتدا `path1` یک مسیر مستطیلی است. سپس `path1` را در `path2` کپی می‌کنیم و یک دایره به آن اضافه می‌کنیم. در نهایت، `path2` را خط‌کشی می‌کنیم که هم مستطیل و هم دایره را شامل می‌شود. توجه کنید که `path1` بدون تغییر باقی می‌ماند، حتی اگر هرگز آن را روی بوم (canvas) رسم نکنیم. تنها هدف آن نشان دادن این است که چگونه می‌توانید با تکیه بر مسیرهای موجود، یک مسیر پیچیده بسازید.
 
 ```html hidden
 <canvas id="canvas"></canvas>
@@ -57,9 +51,9 @@ ctx.stroke(path2);
 
 {{ EmbedLiveSample('Creating_and_copying_paths', 700, 180) }}
 
-### Using SVG paths
+### استفاده از مسیرهای SVG
 
-This example creates a `Path2D` path using [SVG path data](/en-US/docs/Web/SVG/Tutorials/SVG_from_scratch/Paths). The path will move to point (`M10 10`) and then move horizontally 80 points to the right (`h 80`), then 80 points down (`v 80`), then 80 points to the left (`h -80`), and then back to the start (`Z`).
+این مثال با استفاده از [داده‌های مسیر SVG](/en-US/docs/Web/SVG/Tutorials/SVG_from_scratch/Paths) یک مسیر `Path2D` ایجاد می‌کند. مسیر به نقطهٔ (`M10 10`) حرکت می‌کند؛ سپس ۸۰ واحد به سمت راست (`h 80`)، ۸۰ واحد به پایین (`v 80`)، ۸۰ واحد به سمت چپ (`h -80`) حرکت کرده و در نهایت به نقطهٔ شروع بازمی‌گردد (`Z`).
 
 ```html hidden
 <canvas id="canvas"></canvas>
@@ -75,14 +69,14 @@ ctx.fill(p);
 
 {{ EmbedLiveSample('Using_SVG_paths', 700, 180) }}
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- {{domxref("Path2D")}}, the interface this constructor belongs to
+- {{domxref("Path2D")}}، واسطی که این سازنده به آن تعلق دارد.
