@@ -1,11 +1,5 @@
 ---
 title: "PaymentRequestEvent: paymentRequestId property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequestEvent/paymentRequestId"
-status: "needs-translation"
----
-
----
-title: "PaymentRequestEvent: paymentRequestId property"
 short-title: paymentRequestId
 slug: Web/API/PaymentRequestEvent/paymentRequestId
 page-type: web-api-instance-property
@@ -16,13 +10,11 @@ browser-compat: api.PaymentRequestEvent.paymentRequestId
 
 {{SeeCompatTable}}{{APIRef("Web-Based Payment Handler API")}}{{AvailableInWorkers("service")}}
 
-The **`paymentRequestId`** read-only property of the
-{{domxref("PaymentRequestEvent")}} interface returns the ID of the
-{{domxref("PaymentRequest")}} object.
+ویژگی فقط‌خواندنی **`paymentRequestId`** از رابط {{domxref("PaymentRequestEvent")}}، شناسه (ID) شیء {{domxref("PaymentRequest")}} را بازمی‌گرداند.
 
 ## Value
 
-A string containing the ID.
+یک رشته شامل شناسه.
 
 ## Examples
 
