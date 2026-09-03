@@ -1,11 +1,5 @@
 ---
 title: "ProgressEvent: lengthComputable property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/ProgressEvent/lengthComputable"
-status: "needs-translation"
----
-
----
-title: "ProgressEvent: lengthComputable property"
 short-title: lengthComputable
 slug: Web/API/ProgressEvent/lengthComputable
 page-type: web-api-instance-property
@@ -14,24 +8,20 @@ browser-compat: api.ProgressEvent.lengthComputable
 
 {{APIRef("XMLHttpRequest API")}}{{AvailableInWorkers}}
 
-The
-**`ProgressEvent.lengthComputable`** read-only property is a
-boolean flag indicating if the resource concerned by the
-{{domxref("ProgressEvent")}} has a length that can be calculated. If not, the
-{{domxref("ProgressEvent.total")}} property has no significant value.
+ویژگی فقط‌خواندنی **`ProgressEvent.lengthComputable`** یک پرچم بولی است که نشان می‌دهد آیا منبع مربوط به {{domxref("ProgressEvent")}} طول قابل محاسبه‌ای دارد یا خیر. اگر نداشته باشد، ویژگی {{domxref("ProgressEvent.total")}} مقدار معنی‌داری نخواهد داشت.
 
-## Value
+## مقدار
 
-A boolean.
+یک بولی.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- The {{domxref("ProgressEvent")}} interface it belongs to.
+- رابط {{domxref("ProgressEvent")}} که این ویژگی به آن تعلق دارد.
