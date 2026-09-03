@@ -1,7 +1,5 @@
 ---
 title: "PictureInPictureWindow: width property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/PictureInPictureWindow/width"
-status: "needs-translation"
 ---
 
 ---
@@ -14,21 +12,21 @@ browser-compat: api.PictureInPictureWindow.width
 
 {{APIRef("Picture-in-Picture API")}}
 
-The read-only **`width`** property of the {{domxref("PictureInPictureWindow")}} interface returns the width of the floating video window in pixels.
+ویژگی فقطخواندنی **`width`** از رابط {{domxref("PictureInPictureWindow")}} عرض پنجره ویدیوی شناور را بر حسب پیکسل بازمی‌گرداند.
 
-## Value
+## مقدار
 
-An integer value indicating the width of the floating video window in pixels if the Picture-in-Picture window is open. Otherwise, it returns `0`.
+یک مقدار صحیح که عرض پنجره ویدیوی شناور را بر حسب پیکسل نشان می‌دهد، اگر پنجره تصویر-در-تصویر باز باشد. در غیر این صورت، مقدار `0` بازمی‌گرداند.
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - [Picture-in-Picture API](/en-US/docs/Web/API/Picture-in-Picture_API)
 - {{DOMxRef("PictureInPictureWindow.height")}}
