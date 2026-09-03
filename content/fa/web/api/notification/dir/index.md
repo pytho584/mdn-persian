@@ -1,11 +1,5 @@
 ---
 title: "Notification: dir property"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/Notification/dir"
-status: "needs-translation"
----
-
----
-title: "Notification: dir property"
 short-title: dir
 slug: Web/API/Notification/dir
 page-type: web-api-instance-property
@@ -14,25 +8,25 @@ browser-compat: api.Notification.dir
 
 {{APIRef("Web Notifications")}}{{securecontext_header}} {{AvailableInWorkers}}
 
-The **`dir`** read-only property of the {{domxref("Notification")}} interface indicates the text direction of the notification, as specified in the `dir` option of the {{domxref("Notification.Notification","Notification()")}} constructor.
+خاصیت فقط خواندنی **`dir`** از رابط {{domxref("Notification")}} جهت متن اعلان را نشان می‌دهد، همانطور که در گزینه `dir` سازنده {{domxref("Notification.Notification","Notification()")}} مشخص شده است.
 
-## Value
+## مقدار
 
-A string specifying the text direction. Possible values are:
+یک رشته که جهت متن را مشخص می‌کند. مقادیر ممکن عبارتند از:
 
 - `auto`
-  - : adopts the browser's language setting behavior (the default.)
+  - : رفتار تنظیمات زبان مرورگر را اتخاذ می‌کند (پیش‌فرض).
 - `ltr`
-  - : left to right.
+  - : چپ به راست.
 - `rtl`
-  - : right to left.
+  - : راست به چپ.
 
 > [!NOTE]
-> Most browsers seem to ignore explicit ltr and rtl settings, and just go with the browser-wide setting.
+> به نظر می‌رسد بیشتر مرورگرها تنظیمات صریح `ltr` و `rtl` را نادیده می‌گیرند و فقط از تنظیمات سراسری مرورگر پیروی می‌کنند.
 
-## Examples
+## مثال‌ها
 
-The following snippet fires a notification; a simple `options` object is created, then the notification is fired using the `Notification()` constructor.
+قطعه کد زیر یک اعلان را ایجاد می‌کند؛ یک شیء ساده `options` ساخته شده و سپس اعلان با استفاده از سازنده `Notification()` ایجاد می‌شود.
 
 ```js
 const options = {
@@ -45,14 +39,14 @@ const n = new Notification("New review activity", options);
 console.log(n.dir); // "rtl"
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
-- [Using the Notifications API](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
+- [استفاده از API اعلان‌ها](/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API)
