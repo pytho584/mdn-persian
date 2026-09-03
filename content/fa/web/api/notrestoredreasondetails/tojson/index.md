@@ -1,11 +1,5 @@
 ---
 title: "NotRestoredReasonDetails: toJSON() method"
-source: "https://developer.mozilla.org/en-US/docs/Web/API/NotRestoredReasonDetails/toJSON"
-status: "needs-translation"
----
-
----
-title: "NotRestoredReasonDetails: toJSON() method"
 short-title: toJSON()
 slug: Web/API/NotRestoredReasonDetails/toJSON
 page-type: web-api-instance-method
@@ -17,25 +11,25 @@ spec-urls: https://html.spec.whatwg.org/multipage/nav-history-apis.html#notresto
 
 {{APIRef("Performance API")}}{{SeeCompatTable}}
 
-The **`toJSON()`** method of the {{domxref("NotRestoredReasonDetails")}} interface is a {{Glossary("Serialization","serializer")}}; it returns a JSON representation of the {{domxref("NotRestoredReasonDetails")}} object.
+متد **`toJSON()`** در رابط {{domxref("NotRestoredReasonDetails")}} یک {{Glossary("Serialization","serializer")}} (سریال‌ساز) است؛ یک نمایش JSON از شیء {{domxref("NotRestoredReasonDetails")}} برمی‌گرداند.
 
-## Syntax
+## نحو
 
 ```js-nolint
 toJSON()
 ```
 
-### Parameters
+### پارامترها
 
-None.
+هیچ.
 
-### Return value
+### مقدار بازگشتی
 
-A {{jsxref("JSON")}} object that is the serialization of the {{domxref("NotRestoredReasonDetails")}} object.
+یک شیء {{jsxref("JSON")}} که سریال‌سازیِ شیء {{domxref("NotRestoredReasonDetails")}} است.
 
-## Examples
+## مثال‌ها
 
-The following function will return a JSON representation of the first `NotRestoredReasonDetails` object of the `NotRestoredReasons` object from the first `PerformanceNavigationTiming` object currently present in the performance timeline:
+تابع زیر، نمایش JSON از اولین شیء `NotRestoredReasonDetails` از شیء `NotRestoredReasons` مربوط به اولین شیء `PerformanceNavigationTiming` را که در حال حاضر در بازه زمانی عملکرد (performance timeline) موجود است، برمی‌گرداند:
 
 ```js
 function returnNRR() {
@@ -45,15 +39,15 @@ function returnNRR() {
 }
 ```
 
-## Specifications
+## مشخصات
 
 {{Specifications}}
 
-## Browser compatibility
+## سازگاری با مرورگر
 
 {{Compat}}
 
-## See also
+## همچنین ببینید
 
 - {{jsxref("JSON")}}
 - [Monitoring bfcache blocking reasons](/en-US/docs/Web/API/Performance_API/Monitoring_bfcache_blocking_reasons)
